@@ -295,18 +295,18 @@ const SLIDES = [
       </div>
     ),
   },
-  {
-    stage: "Quiz: Be-verbs & Will", time: "~5 min",
+  ...QUIZ_ITEMS.map((item, idx) => ({
+    stage: `Quiz: Be-verbs & Will (${idx + 1}/${QUIZ_ITEMS.length})`, time: idx === 0 ? "~5 min" : null,
     body: (
       <>
         <h2 className="gbw-h2">Quick Quiz</h2>
-        <p className="gbw-p-sm">All three patterns together. Pick the best answer for each.</p>
+        <p className="gbw-p-sm">All three patterns together. Pick the best answer.</p>
         <div className="gbw-quiz-list">
-          {QUIZ_ITEMS.map((item, idx) => <QuizItem key={item.q} item={item} index={idx} />)}
+          <QuizItem key={item.q} item={item} index={idx} />
         </div>
       </>
     ),
-  },
+  })),
   {
     stage: "Wrap-Up", time: null,
     body: (
