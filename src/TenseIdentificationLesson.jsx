@@ -4,33 +4,34 @@ const NAVY = "#1B2A4A";
 const CORAL = "#FF6B4A";
 const CORAL_DEEP = "#E0502F";
 
-// 24 sentences, two per tense, across all 12 English tenses -- Present
-// through Future, each pair building up from Simple to Perfect Continuous.
+// 24 sentences, two per tense, across all 12 English tenses -- shuffled so
+// the same tense never appears in consecutive questions (order no longer
+// matches the original Present -> Past -> Future grouping on purpose).
 const QUIZ_ITEMS = [
-  { sentence: "Maria works at a hospital every Monday.", options: ["Present Simple", "Present Continuous", "Past Simple", "Future Simple"], correct: 0 },
-  { sentence: "My brother plays basketball after school.", options: ["Present Continuous", "Present Simple", "Present Perfect", "Past Simple"], correct: 1 },
-  { sentence: "They are watching a movie right now.", options: ["Present Simple", "Present Continuous", "Present Perfect Continuous", "Past Continuous"], correct: 1 },
-  { sentence: "I am studying for my English test.", options: ["Present Continuous", "Present Perfect", "Present Simple", "Future Continuous"], correct: 0 },
-  { sentence: "She has visited London three times.", options: ["Past Simple", "Present Perfect", "Present Perfect Continuous", "Past Perfect"], correct: 1 },
-  { sentence: "We have finished our homework.", options: ["Present Perfect", "Past Simple", "Present Perfect Continuous", "Past Perfect"], correct: 0 },
-  { sentence: "He has been working since early this morning.", options: ["Present Perfect", "Present Perfect Continuous", "Past Continuous", "Present Continuous"], correct: 1 },
-  { sentence: "They have been waiting for the bus for 30 minutes.", options: ["Present Perfect Continuous", "Present Perfect", "Past Perfect Continuous", "Present Continuous"], correct: 0 },
-  { sentence: "I visited my grandmother last weekend.", options: ["Present Perfect", "Past Continuous", "Past Simple", "Past Perfect"], correct: 2 },
-  { sentence: "She bought a new phone yesterday.", options: ["Past Simple", "Present Perfect", "Past Continuous", "Future Simple"], correct: 0 },
-  { sentence: "We were having dinner when he called.", options: ["Past Simple", "Past Continuous", "Past Perfect Continuous", "Present Continuous"], correct: 1 },
-  { sentence: "He was driving home at 9 p.m. last night.", options: ["Past Continuous", "Past Simple", "Past Perfect", "Future Continuous"], correct: 0 },
-  { sentence: "The movie had already started when we arrived.", options: ["Past Simple", "Past Perfect", "Present Perfect", "Past Perfect Continuous"], correct: 1 },
-  { sentence: "She had finished her work before her boss came.", options: ["Past Perfect", "Past Simple", "Present Perfect", "Future Perfect"], correct: 0 },
   { sentence: "I had been studying for three hours before I took a break.", options: ["Past Perfect", "Past Perfect Continuous", "Present Perfect Continuous", "Past Continuous"], correct: 1 },
-  { sentence: "They had been living there for ten years before they moved.", options: ["Past Perfect Continuous", "Past Perfect", "Present Perfect Continuous", "Past Simple"], correct: 0 },
-  { sentence: "I will call you tomorrow.", options: ["Future Simple", "Future Continuous", "Present Simple", "Future Perfect"], correct: 0 },
-  { sentence: "She will help us with the project.", options: ["Future Continuous", "Future Simple", "Present Continuous", "Future Perfect"], correct: 1 },
-  { sentence: "This time tomorrow, I will be flying to Japan.", options: ["Future Simple", "Future Continuous", "Present Continuous", "Future Perfect Continuous"], correct: 1 },
-  { sentence: "At 8 p.m. tonight, they will be having dinner.", options: ["Future Continuous", "Future Simple", "Future Perfect", "Present Continuous"], correct: 0 },
-  { sentence: "By next Friday, we will have completed the project.", options: ["Future Simple", "Future Perfect", "Future Perfect Continuous", "Present Perfect"], correct: 1 },
+  { sentence: "They are watching a movie right now.", options: ["Present Simple", "Present Continuous", "Present Perfect Continuous", "Past Continuous"], correct: 1 },
   { sentence: "She will have finished the book by the end of the week.", options: ["Future Perfect", "Future Simple", "Present Perfect", "Future Perfect Continuous"], correct: 0 },
+  { sentence: "I visited my grandmother last weekend.", options: ["Present Perfect", "Past Continuous", "Past Simple", "Past Perfect"], correct: 2 },
+  { sentence: "She will help us with the project.", options: ["Future Continuous", "Future Simple", "Present Continuous", "Future Perfect"], correct: 1 },
+  { sentence: "We have finished our homework.", options: ["Present Perfect", "Past Simple", "Present Perfect Continuous", "Past Perfect"], correct: 0 },
+  { sentence: "He was driving home at 9 p.m. last night.", options: ["Past Continuous", "Past Simple", "Past Perfect", "Future Continuous"], correct: 0 },
   { sentence: "By December, he will have been working here for five years.", options: ["Future Perfect", "Future Perfect Continuous", "Present Perfect Continuous", "Past Perfect Continuous"], correct: 1 },
+  { sentence: "Maria works at a hospital every Monday.", options: ["Present Simple", "Present Continuous", "Past Simple", "Future Simple"], correct: 0 },
+  { sentence: "At 8 p.m. tonight, they will be having dinner.", options: ["Future Continuous", "Future Simple", "Future Perfect", "Present Continuous"], correct: 0 },
+  { sentence: "He has been working since early this morning.", options: ["Present Perfect", "Present Perfect Continuous", "Past Continuous", "Present Continuous"], correct: 1 },
+  { sentence: "The movie had already started when we arrived.", options: ["Past Simple", "Past Perfect", "Present Perfect", "Past Perfect Continuous"], correct: 1 },
+  { sentence: "I am studying for my English test.", options: ["Present Continuous", "Present Perfect", "Present Simple", "Future Continuous"], correct: 0 },
+  { sentence: "By next Friday, we will have completed the project.", options: ["Future Simple", "Future Perfect", "Future Perfect Continuous", "Present Perfect"], correct: 1 },
+  { sentence: "She bought a new phone yesterday.", options: ["Past Simple", "Present Perfect", "Past Continuous", "Future Simple"], correct: 0 },
+  { sentence: "They had been living there for ten years before they moved.", options: ["Past Perfect Continuous", "Past Perfect", "Present Perfect Continuous", "Past Simple"], correct: 0 },
+  { sentence: "They have been waiting for the bus for 30 minutes.", options: ["Present Perfect Continuous", "Present Perfect", "Past Perfect Continuous", "Present Continuous"], correct: 0 },
+  { sentence: "My brother plays basketball after school.", options: ["Present Continuous", "Present Simple", "Present Perfect", "Past Simple"], correct: 1 },
+  { sentence: "This time tomorrow, I will be flying to Japan.", options: ["Future Simple", "Future Continuous", "Present Continuous", "Future Perfect Continuous"], correct: 1 },
+  { sentence: "She had finished her work before her boss came.", options: ["Past Perfect", "Past Simple", "Present Perfect", "Future Perfect"], correct: 0 },
+  { sentence: "She has visited London three times.", options: ["Past Simple", "Present Perfect", "Present Perfect Continuous", "Past Perfect"], correct: 1 },
   { sentence: "Next month, they will have been studying English for two years.", options: ["Future Perfect Continuous", "Future Perfect", "Present Perfect Continuous", "Future Continuous"], correct: 0 },
+  { sentence: "We were having dinner when he called.", options: ["Past Simple", "Past Continuous", "Past Perfect Continuous", "Present Continuous"], correct: 1 },
+  { sentence: "I will call you tomorrow.", options: ["Future Simple", "Future Continuous", "Present Simple", "Future Perfect"], correct: 0 },
 ];
 
 function QuizItem({ item, index }) {
