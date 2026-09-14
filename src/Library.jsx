@@ -349,6 +349,13 @@ const CUSTOM_LESSONS = [
     level: "Beginner to Elementary",
     desc: "Usage rules and signal words for both tenses, plus a mixed activity that combines them in the same set of sentences.",
   },
+  {
+    slug: "verb-tense-identification",
+    title: "Verb Tense Identification",
+    tag: "Grammar",
+    level: "Intermediate to Advanced",
+    desc: "24 real sentences across all 12 English tenses, two per tense, one at a time, choose the tense each sentence is written in.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {
