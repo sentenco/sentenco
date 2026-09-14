@@ -1,8 +1,19 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { supabase } from "./supabaseClient";
+import { useAuth } from "./AuthContext";
+import ConfirmDialog from "./ConfirmDialog";
 
 const COLORS = ["#7C5CFC", "#FF8A4C", "#16BFAE", "#FFB648", "#FF6B8B", "#2B6FE0", "#3FCDAF", "#E4322B"];
 
 const DEFAULT_TEXT = "Alex\nJordan\nSam\nCasey\nRiley\nMorgan";
+
+const TIMER_PRESETS = [30, 60, 120, 300];
+
+function formatTime(totalSeconds) {
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
 
 function pointAt(cx, cy, r, angleDeg) {
   const rad = ((angleDeg - 90) * Math.PI) / 180;
@@ -17,12 +28,117 @@ function slicePath(cx, cy, r, startAngle, endAngle) {
 }
 
 export default function WheelPage() {
+  const { user } = useAuth();
   const [rawText, setRawText] = useState(DEFAULT_TEXT);
   const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [result, setResult] = useState(null);
   const [winnerIndex, setWinnerIndex] = useState(null);
   const spinCountRef = useRef(0);
+
+  const [savedLists, setSavedLists] = useState([]);
+  const [savedLoading, setSavedLoading] = useState(false);
+  const [showSaveInput, setShowSaveInput] = useState(false);
+  const [saveNameInput, setSaveNameInput] = useState("");
+  const [savingList, setSavingList] = useState(false);
+  const [deleteTarget, setDeleteTarget] = useState(null);
+
+  const [timerDuration, setTimerDuration] = useState(60);
+  const [timerRemaining, setTimerRemaining] = useState(null);
+  const [timerRunning, setTimerRunning] = useState(false);
+  const timerIntervalRef = useRef(null);
+
+  useEffect(() => {
+    if (!user) { setSavedLists([]); return; }
+    setSavedLoading(true);
+    supabase
+      .from("wheel_lists")
+      .select("id, name, content, created_at")
+      .eq("owner_id", user.id)
+      .order("created_at", { ascending: false })
+      .then(({ data }) => {
+        setSavedLists(data || []);
+        setSavedLoading(false);
+      });
+  }, [user]);
+
+  useEffect(() => {
+    if (!timerRunning) return;
+    timerIntervalRef.current = window.setInterval(() => {
+      setTimerRemaining((prev) => {
+        if (prev === null || prev <= 1) {
+          setTimerRunning(false);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => window.clearInterval(timerIntervalRef.current);
+  }, [timerRunning]);
+
+  useEffect(() => {
+    if (timerRemaining !== 0) return;
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.frequency.value = 880;
+      gain.gain.setValueAtTime(0.16, ctx.currentTime);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.5);
+    } catch {
+      // Web Audio unavailable -- the visual "Time's Up!" badge still shows.
+    }
+  }, [timerRemaining]);
+
+  function pickTimerDuration(sec) {
+    setTimerDuration(sec);
+    setTimerRunning(false);
+    setTimerRemaining(sec);
+  }
+  function startTimer() {
+    if (timerRemaining === null || timerRemaining === 0) setTimerRemaining(timerDuration);
+    setTimerRunning(true);
+  }
+  function pauseTimer() {
+    setTimerRunning(false);
+  }
+  function resetTimer() {
+    setTimerRunning(false);
+    setTimerRemaining(null);
+  }
+
+  async function saveCurrentList() {
+    if (!user || !saveNameInput.trim() || !rawText.trim() || savingList) return;
+    setSavingList(true);
+    const { data, error } = await supabase
+      .from("wheel_lists")
+      .insert({ owner_id: user.id, name: saveNameInput.trim(), content: rawText })
+      .select()
+      .single();
+    setSavingList(false);
+    if (!error && data) {
+      setSavedLists((prev) => [data, ...prev]);
+      setSaveNameInput("");
+      setShowSaveInput(false);
+    }
+  }
+
+  function loadSavedList(list) {
+    setRawText(list.content);
+    setResult(null);
+    setWinnerIndex(null);
+  }
+
+  async function confirmDeleteList() {
+    if (!deleteTarget) return;
+    const id = deleteTarget.id;
+    setDeleteTarget(null);
+    setSavedLists((prev) => prev.filter((l) => l.id !== id));
+    await supabase.from("wheel_lists").delete().eq("id", id);
+  }
 
   const words = useMemo(
     () => rawText.split("\n").map((w) => w.trim()).filter(Boolean),
@@ -94,10 +210,83 @@ export default function WheelPage() {
             spellCheck={false}
           />
           <div className="wp-count">{n} {n === 1 ? "slice" : "slices"}{n < 2 ? " — add at least 2" : ""}</div>
+
+          {user ? (
+            <div className="wp-saved-section">
+              <div className="wp-saved-head">
+                <span className="wp-label" style={{ marginBottom: 0 }}>Saved Lists</span>
+                <button type="button" className="wp-save-toggle" onClick={() => setShowSaveInput((s) => !s)}>
+                  + Save current
+                </button>
+              </div>
+              {showSaveInput && (
+                <div className="wp-save-row">
+                  <input
+                    type="text"
+                    className="wp-save-input"
+                    placeholder="Name this list…"
+                    value={saveNameInput}
+                    onChange={(e) => setSaveNameInput(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && saveCurrentList()}
+                    autoFocus
+                  />
+                  <button type="button" className="wp-save-confirm" onClick={saveCurrentList} disabled={savingList || !saveNameInput.trim()}>
+                    {savingList ? "…" : "Save"}
+                  </button>
+                </div>
+              )}
+              <div className="wp-saved-list">
+                {savedLoading ? (
+                  <div className="wp-saved-empty">Loading…</div>
+                ) : savedLists.length === 0 ? (
+                  <div className="wp-saved-empty">No saved lists yet.</div>
+                ) : (
+                  savedLists.map((l) => (
+                    <div key={l.id} className="wp-saved-item">
+                      <button type="button" className="wp-saved-item-name" onClick={() => loadSavedList(l)}>{l.name}</button>
+                      <button type="button" className="wp-saved-item-del" onClick={() => setDeleteTarget(l)} title="Delete list">×</button>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          ) : (
+            <p className="wp-login-hint">Log in to save and reuse your topic lists.</p>
+          )}
+
+          <div className="wp-timer-section">
+            <span className="wp-label">Timer</span>
+            <div className="wp-timer-display">{formatTime(timerRemaining === null ? timerDuration : timerRemaining)}</div>
+            <div className="wp-timer-presets">
+              {TIMER_PRESETS.map((sec) => (
+                <button
+                  key={sec}
+                  type="button"
+                  className={`wp-timer-preset ${timerDuration === sec && timerRemaining === null ? "is-active" : ""}`}
+                  onClick={() => pickTimerDuration(sec)}
+                >
+                  {sec < 60 ? `${sec}s` : `${sec / 60}m`}
+                </button>
+              ))}
+            </div>
+            <div className="wp-timer-controls">
+              {!timerRunning ? (
+                <button type="button" className="wp-timer-btn wp-timer-btn--start" onClick={startTimer}>▶ Start</button>
+              ) : (
+                <button type="button" className="wp-timer-btn" onClick={pauseTimer}>⏸ Pause</button>
+              )}
+              <button type="button" className="wp-timer-btn" onClick={resetTimer}>Reset</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="wp-stage">
+        {timerRemaining !== null && (
+          <div className={`wp-timer-badge ${timerRemaining === 0 ? "is-done" : ""} ${timerRunning ? "is-running" : ""}`}>
+            {timerRemaining === 0 ? "⏰ Time's Up!" : formatTime(timerRemaining)}
+          </div>
+        )}
         {result && (
           <div className="wp-winner-banner">
             <span className="wp-winner-tag">Winner</span>
@@ -166,6 +355,15 @@ export default function WheelPage() {
           </button>
         </div>
       </div>
+
+      <ConfirmDialog
+        open={!!deleteTarget}
+        title="Delete this list?"
+        message={deleteTarget ? `"${deleteTarget.name}" will be gone for good.` : ""}
+        confirmLabel="Delete"
+        onConfirm={confirmDeleteList}
+        onCancel={() => setDeleteTarget(null)}
+      />
     </div>
   );
 }
@@ -279,6 +477,61 @@ const CSS = `
 
 .wp-count { font-size: 11.5px; color: #5A6B92; margin: 8px 0 16px; }
 
+.wp-login-hint { font-size: 12px; color: #5A6B92; background: #FBF4F1; border: 1px dashed #EDE1DB; border-radius: 10px; padding: 10px 12px; margin: 0 0 18px; }
+
+.wp-saved-section { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #EDE1DB; }
+.wp-saved-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.wp-save-toggle {
+  font-size: 11px; font-weight: 700; color: #FF6B4A; background: #FDECE5; border: none;
+  border-radius: 999px; padding: 5px 11px; cursor: pointer;
+}
+.wp-save-row { display: flex; gap: 6px; margin-bottom: 10px; }
+.wp-save-input {
+  flex: 1; min-width: 0; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; color: #1B2A4A;
+  background: #FBF4F1; border: 1px solid #EDE1DB; border-radius: 8px; padding: 7px 10px; outline: none;
+}
+.wp-save-input:focus { border-color: #FF6B4A; }
+.wp-save-confirm {
+  font-size: 11.5px; font-weight: 800; color: #fff; background: #FF6B4A; border: none;
+  border-radius: 8px; padding: 0 12px; cursor: pointer;
+}
+.wp-save-confirm:disabled { opacity: 0.5; cursor: default; }
+
+.wp-saved-list { display: flex; flex-direction: column; gap: 6px; max-height: 160px; overflow-y: auto; }
+.wp-saved-empty { font-size: 11.5px; color: #A6ADC7; padding: 4px 2px; }
+.wp-saved-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 6px;
+  background: #FBF4F1; border: 1px solid #EDE1DB; border-radius: 8px; padding: 2px 4px 2px 10px;
+}
+.wp-saved-item-name {
+  flex: 1; min-width: 0; text-align: left; background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; color: #1B2A4A;
+  padding: 7px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.wp-saved-item-del {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: none; background: transparent;
+  color: #A6ADC7; font-size: 16px; line-height: 1; cursor: pointer;
+}
+.wp-saved-item-del:hover { background: #FDECE5; color: #E4322B; }
+
+.wp-timer-section { display: flex; flex-direction: column; gap: 10px; }
+.wp-timer-display {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 34px; color: #1B2A4A; text-align: center;
+  background: #FBF4F1; border: 1px solid #EDE1DB; border-radius: 12px; padding: 10px;
+}
+.wp-timer-presets { display: flex; gap: 6px; }
+.wp-timer-preset {
+  flex: 1; font-size: 12px; font-weight: 700; color: #5A6B92; background: #FBF4F1;
+  border: 1px solid #EDE1DB; border-radius: 8px; padding: 7px 0; cursor: pointer;
+}
+.wp-timer-preset.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
+.wp-timer-controls { display: flex; gap: 8px; }
+.wp-timer-btn {
+  flex: 1; font-size: 12.5px; font-weight: 800; color: #1B2A4A; background: #fff;
+  border: 1px solid #EDE1DB; border-radius: 8px; padding: 9px 0; cursor: pointer;
+}
+.wp-timer-btn--start { background: #FF6B4A; border-color: #FF6B4A; color: #fff; }
+
 .wp-stage {
   flex: 1;
   min-width: 0;
@@ -327,6 +580,31 @@ const CSS = `
 @keyframes wp-pop-in {
   0% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.85); }
   100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+.wp-timer-badge {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  z-index: 25;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1B2A4A;
+  background: #FFFFFF;
+  border: 2px solid #EDE1DB;
+  border-radius: 16px;
+  padding: 10px 20px;
+  box-shadow: 0 10px 24px rgba(27,42,74,0.16);
+}
+.wp-timer-badge.is-running { border-color: #FF6B4A; color: #FF6B4A; }
+.wp-timer-badge.is-done {
+  background: #E4322B; border-color: #E4322B; color: #fff; font-size: 18px;
+  animation: wp-timer-pulse 0.8s ease-in-out infinite;
+}
+@keyframes wp-timer-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
 }
 
 .wp-wheel-wrap {
