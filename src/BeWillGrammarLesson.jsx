@@ -57,6 +57,47 @@ const RULE_GROUPS = [
   },
 ];
 
+const QUIZ_ITEMS = [
+  { q: "I ___ very happy today.", options: ["am", "is", "are", "will"], correct: 0 },
+  { q: "The soup ___ too hot to eat.", options: ["am", "is", "are", "will"], correct: 1 },
+  { q: "My parents ___ proud of me.", options: ["am", "is", "are", "be"], correct: 2 },
+  { q: "She ___ a letter right now.", options: ["write", "writes", "is writing", "will write"], correct: 2 },
+  { q: "We ___ dinner at the moment.", options: ["cook", "are cooking", "will cook", "cooks"], correct: 1 },
+  { q: "I ___ my homework right now.", options: ["am doing", "do", "will do", "does"], correct: 0 },
+  { q: "He ___ the report tomorrow.", options: ["finish", "finishes", "is finishing", "will finish"], correct: 3 },
+  { q: "They ___ us next weekend.", options: ["will visit", "visits", "are visiting", "visit"], correct: 0 },
+  { q: "I promise I ___ you later.", options: ["call", "will call", "am calling", "calls"], correct: 1 },
+  { q: "Which sentence uses will + v1 correctly?", options: ["She will goes home.", "She will go home.", "She will going home.", "She is will go home."], correct: 1 },
+];
+
+function QuizItem({ item, index }) {
+  const [picked, setPicked] = useState(null);
+  const answered = picked !== null;
+  return (
+    <div className="gbw-quiz-item">
+      <p className="gbw-quiz-q">{index + 1}. {item.q}</p>
+      <div className="gbw-quiz-options">
+        {item.options.map((opt, idx) => {
+          const isCorrect = idx === item.correct;
+          const isPicked = idx === picked;
+          const cls = answered && isCorrect ? "is-correct" : answered && isPicked ? "is-wrong" : "";
+          return (
+            <button
+              key={opt}
+              type="button"
+              className={`gbw-quiz-opt ${cls}`}
+              onClick={() => setPicked(idx)}
+              disabled={answered}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function RuleBox({ group }) {
   return (
     <div className="gbw-rulebox" style={{ borderColor: group.accentLight }}>
@@ -151,6 +192,7 @@ export const LESSON_GUIDE = [
   { stage: "Will + V1", time: "~3 min", note: "Emphasize that will never changes for any subject, and the verb after it stays in its base (dictionary) form, no -s, no -ing." },
   { stage: "Practice: Will + V1", time: "~2 min", note: "Same drill: base verb given in parentheses, student adds will + that same base verb." },
   { stage: "Now You Try", time: "~3 min", note: "Free production mixing all three patterns. Keep corrections light, the goal is confident use of each pattern, not perfect grammar." },
+  { stage: "Quiz: Be-verbs & Will", time: "~5 min", note: "10 multiple-choice questions mixing all three patterns (be + adjective, be + v-ing, will + v1), ending with one error-spotting question. Let the student answer independently; each button locks and shows right/wrong immediately, so you don't need to grade it yourself." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -254,6 +296,18 @@ const SLIDES = [
     ),
   },
   {
+    stage: "Quiz: Be-verbs & Will", time: "~5 min",
+    body: (
+      <>
+        <h2 className="gbw-h2">Quick Quiz</h2>
+        <p className="gbw-p-sm">All three patterns together. Pick the best answer for each.</p>
+        <div className="gbw-quiz-list">
+          {QUIZ_ITEMS.map((item, idx) => <QuizItem key={item.q} item={item} index={idx} />)}
+        </div>
+      </>
+    ),
+  },
+  {
     stage: "Wrap-Up", time: null,
     body: (
       <div className="gbw-cover">
@@ -319,6 +373,18 @@ export const styles = `
 
 .gbw-qlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; max-width: 460px; }
 .gbw-qlist li { font-size: 14px; font-weight: 600; color: #3A4568; background: #FAFBFD; border: 1px solid #E4E9F5; border-radius: 10px; padding: 12px 16px; }
+
+.gbw-quiz-list { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 560px; }
+.gbw-quiz-item { background: #FAFBFD; border: 1px solid #E4E9F5; border-radius: 12px; padding: 14px 16px; }
+.gbw-quiz-q { font-family: 'Fraunces', serif; font-weight: 600; font-size: 14px; color: ${NAVY}; margin: 0 0 10px; text-align: left; }
+.gbw-quiz-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.gbw-quiz-opt {
+  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 12.5px; color: ${NAVY};
+  background: #fff; border: 1.5px solid #DCE2F0; border-radius: 999px; padding: 8px 14px; cursor: pointer;
+}
+.gbw-quiz-opt:disabled { cursor: default; }
+.gbw-quiz-opt.is-correct { background: #2EC4B6; border-color: #2EC4B6; color: #fff; }
+.gbw-quiz-opt.is-wrong { background: #ED1C24; border-color: #ED1C24; color: #fff; }
 
 @media (max-width: 640px) {
   .gbw-header { padding: 14px 18px; }
