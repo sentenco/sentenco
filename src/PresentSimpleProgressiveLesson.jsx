@@ -115,7 +115,9 @@ export default function PresentSimpleProgressiveLesson() {
           </button>
           <div className="psp-header">
             <div className="psp-brand">
-              <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
+              <span className="psp-brand-badge">
+                <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
+              </span>
               <span>entivo</span>
             </div>
             <div className="psp-stage-chip">
@@ -295,8 +297,9 @@ export const styles = `
 .psp-close { position: absolute; top: 14px; right: 14px; z-index: 4; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); color: #fff; }
 
 .psp-header { flex-shrink: 0; background: ${NAVY}; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; }
-.psp-brand { display: flex; align-items: center; gap: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; color: #fff; }
-.psp-brand-logo { height: 22px; width: auto; margin-right: -2px; }
+.psp-brand { display: flex; align-items: center; gap: 8px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; color: #fff; }
+.psp-brand-badge { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #fff; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
+.psp-brand-logo { height: 16px; width: auto; display: block; }
 .psp-stage-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.14); padding: 7px 15px; border-radius: 999px; }
 .psp-stage-name { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 11.5px; color: #fff; letter-spacing: 0.02em; }
 .psp-stage-time { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.14); padding: 3px 8px; border-radius: 999px; }

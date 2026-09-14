@@ -32,7 +32,9 @@ export default function TenseIdentificationGuide() {
           </button>
           <div className="tid-header">
             <div className="tid-brand">
-              <img className="tid-brand-logo" src="/logo-sentivo.png" alt="" />
+              <span className="tid-brand-badge">
+                <img className="tid-brand-logo" src="/logo-sentivo.png" alt="" />
+              </span>
               <span>entivo</span>
             </div>
             <div className="tid-stage-chip">

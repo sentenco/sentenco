@@ -32,7 +32,9 @@ export default function RealEstateVocabGuide() {
           </button>
           <div className="rev-header">
             <div className="rev-brand">
-              <img className="rev-brand-logo" src="/logo-sentivo.png" alt="" />
+              <span className="rev-brand-badge">
+                <img className="rev-brand-logo" src="/logo-sentivo.png" alt="" />
+              </span>
               <span>entivo</span>
             </div>
             <div className="rev-stage-chip">

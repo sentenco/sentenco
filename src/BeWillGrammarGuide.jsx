@@ -32,7 +32,9 @@ export default function BeWillGrammarGuide() {
           </button>
           <div className="gbw-header">
             <div className="gbw-brand">
-              <img className="gbw-brand-logo" src="/logo-sentivo.png" alt="" />
+              <span className="gbw-brand-badge">
+                <img className="gbw-brand-logo" src="/logo-sentivo.png" alt="" />
+              </span>
               <span>entivo</span>
             </div>
             <div className="gbw-stage-chip">

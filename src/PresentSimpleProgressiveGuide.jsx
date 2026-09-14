@@ -32,7 +32,9 @@ export default function PresentSimpleProgressiveGuide() {
           </button>
           <div className="psp-header">
             <div className="psp-brand">
-              <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
+              <span className="psp-brand-badge">
+                <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
+              </span>
               <span>entivo</span>
             </div>
             <div className="psp-stage-chip">
