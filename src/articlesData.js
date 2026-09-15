@@ -9068,6 +9068,252 @@ export const ARTICLES = [
       },
     ],
   },
+  {
+    slug: "gaming-real-growth-story-not-bigger-hits",
+    ready: true,
+    publishedAt: "2026-09-15",
+    emoji: "📊",
+    variant: "work",
+    topicLabel: "Work & Business",
+    topicTitle: "Worklife, Business & Careers",
+    title: "Gaming's Real Growth Story Is Not Just Bigger Hits",
+    dek: "The industry's next phase is being shaped by player spending, direct-to-consumer sales, and the pressure to build sustainable revenue.",
+    editions: {
+      plain: {
+        label: "Plain Edition",
+        range: "A1–A2",
+        readTime: "1 min read",
+        wordCount: 160,
+        blocks: [
+          { type: "p", parts: [
+            { t: "Gaming is growing in 2026, but the real story is not just that games are selling well. The bigger change is in how money moves through the industry." },
+          ] },
+          { type: "p", parts: [
+            { t: "Experts say the biggest forces right now are direct sales straight to players, changing spending habits, and more careful planning about how a game earns money over time. Success today is about having a strong structure, not just being popular." },
+          ] },
+          { type: "p", parts: [
+            { t: "This matters because the business side of gaming has become more careful and more planned. A hit game still matters, but companies also want players to keep coming back, and they want a good balance between how much it costs to find a new player and how much that player is worth over time." },
+          ] },
+          { type: "p", parts: [
+            { t: "This shows an industry that is trying to grow steadily, not just by hoping for a lucky, huge hit. The real story is how the business model keeps changing as players and spending habits change." },
+          ] },
+        ],
+      },
+      polished: {
+        label: "Polished Edition",
+        range: "B1–B2",
+        readTime: "2 min read",
+        wordCount: 245,
+        blocks: [
+          { type: "p", parts: [
+            { t: "The gaming industry in 2026 is growing, but the more interesting story is not simply that games are selling." },
+            { c: 1 },
+            { t: " The bigger shift is in how money moves through the industry." },
+            { c: 1 },
+            { t: " Analysts point to direct-to-consumer sales, changing player spending, and more careful revenue planning as the key forces shaping the market." },
+            { c: 2 },
+            { t: " That means success is increasingly about structure, not just popularity." },
+          ] },
+          { type: "p", parts: [
+            { t: "This matters because the business of games has become more disciplined." },
+            { c: 1 },
+            { t: " A hit title still matters, but companies now want recurring engagement, broader platform reach, and a better balance between " },
+            { g: "acquisition", pos: "noun", def: "the act of getting or gaining something, like a new customer" },
+            { t: " cost and long-term player value." },
+            { c: 3 },
+            { t: " That changes how studios develop, launch, and support games, and it changes how investors think about risk." },
+            { c: 3 },
+          ] },
+          { type: "quote", text: "The real question is no longer whether gaming is big. It is how the business model keeps adapting." },
+          { type: "p", parts: [
+            { t: "A one-time launch spike and a " },
+            { g: "durable", pos: "adjective", def: "able to last a long time, continuing to work well" },
+            { t: " player economy are very different things to build." },
+            { c: 1 },
+            { t: " Subscriptions, digital distribution, and multi-platform ecosystems matter because they turn a single good week into years of steady revenue, which is a much harder, more interesting problem to solve than simply shipping a hit." },
+            { c: 2 },
+          ] },
+        ],
+      },
+      precise: {
+        label: "Precise Edition",
+        range: "C1–C2",
+        readTime: "2 min read",
+        wordCount: 250,
+        blocks: [
+          { type: "p", parts: [
+            { t: "The gaming industry in 2026 continues to grow, yet the more compelling narrative is not merely that games are selling." },
+            { c: 1 },
+            { t: " The more consequential shift lies in how capital circulates through the industry." },
+            { c: 1 },
+            { t: " Analysts identify direct-to-consumer sales, evolving player spending patterns, and more disciplined revenue planning as the principal forces shaping the market." },
+            { c: 2 },
+            { t: " Success, accordingly, increasingly hinges on structure rather than popularity alone." },
+          ] },
+          { type: "p", parts: [
+            { t: "This matters because the business of games has grown markedly more disciplined." },
+            { c: 1 },
+            { t: " A hit title retains importance, yet companies now prioritize recurring engagement, broader platform reach, and a more favorable balance between " },
+            { g: "acquisition", pos: "noun", def: "the act of getting or gaining something, like a new customer" },
+            { t: " cost and long-term player value." },
+            { c: 3 },
+            { t: " This reconfigures how studios develop, launch, and sustain games, and how investors assess risk." },
+            { c: 3 },
+          ] },
+          { type: "quote", text: "The real question is no longer whether gaming is big. It is how the business model keeps adapting." },
+          { type: "p", parts: [
+            { t: "A one-time launch spike and a " },
+            { g: "durable", pos: "adjective", def: "able to last a long time, continuing to work well" },
+            { t: " player economy constitute fundamentally different achievements." },
+            { c: 1 },
+            { t: " Subscriptions, digital distribution, and multi-platform ecosystems matter because they convert a single strong week into years of steady revenue, a considerably harder and more consequential problem than merely shipping a hit." },
+            { c: 2 },
+          ] },
+        ],
+      },
+    },
+    references: [
+      { domain: "forbes.com", name: "Forbes", headline: "Three Trends Shaping The Gaming Industry In 2026" },
+      { domain: "precedenceresearch.com", name: "Precedence Research", headline: "Gaming Market Size, Share And Trends Report, 2025-2030" },
+      { domain: "bain.com", name: "Bain & Company", headline: "Gaming's Renaissance: From Ancient Origins to Digital Worlds" },
+    ],
+    discussionGuide: [
+      {
+        q: "The article says success in gaming is now 'about structure, not just popularity.' What do you think 'structure' means in a business, and why might it matter as much as having a popular product?",
+        follow: [],
+      },
+      {
+        q: "Would you rather invest in a company with one huge hit product, or one with many smaller, steady products? Why?",
+        follow: [],
+      },
+      {
+        q: "The article compares 'a one-time launch spike' to 'a durable player economy.' Can you think of another industry (movies, music, apps) where this same difference applies?",
+        follow: [],
+      },
+    ],
+  },
+  {
+    slug: "new-economics-of-player-attention",
+    ready: true,
+    publishedAt: "2026-09-15",
+    emoji: "🎯",
+    variant: "work",
+    topicLabel: "Work & Business",
+    topicTitle: "Worklife, Business & Careers",
+    title: "The New Economics of Player Attention",
+    dek: "In modern gaming, the hardest thing to win is not downloads — it is sustained attention.",
+    editions: {
+      plain: {
+        label: "Plain Edition",
+        range: "A1–A2",
+        readTime: "1 min read",
+        wordCount: 155,
+        blocks: [
+          { type: "p", parts: [
+            { t: "In gaming today, the hardest thing for a company to win is not just downloads. It is a player's attention, again and again." },
+          ] },
+          { type: "p", parts: [
+            { t: "Phones, computers, consoles, and cloud gaming are all competing for the same limited time. Because of this, studios have to design games that keep people playing across many days, not just once." },
+          ] },
+          { type: "p", parts: [
+            { t: "This matters because attention is limited everywhere. Games are competing with streaming shows, social media, and other apps for the same hours in a person's day. A great game cannot just depend on a strong first week anymore." },
+          ] },
+          { type: "p", parts: [
+            { t: "Companies now need ongoing updates, active communities, and a clear plan for different platforms to stay relevant. A game today is not just something you buy. It becomes part of a player's daily routine." },
+          ] },
+        ],
+      },
+      polished: {
+        label: "Polished Edition",
+        range: "B1–B2",
+        readTime: "2 min read",
+        wordCount: 240,
+        blocks: [
+          { type: "p", parts: [
+            { t: "The most valuable asset in gaming is increasingly player attention." },
+            { c: 1 },
+            { t: " With mobile, PC, console, and cloud ecosystems all competing for time, studios must design experiences that keep people engaged across multiple sessions and devices." },
+            { c: 2 },
+            { t: " That means retention, not just launch buzz, is now central to the economics of the industry." },
+            { c: 1 },
+          ] },
+          { type: "p", parts: [
+            { t: "This shift matters because attention is " },
+            { g: "scarce", pos: "adjective", def: "not easily available, in short supply" },
+            { t: " everywhere, and games are competing with streaming, social media, and other digital tools for the same hours." },
+            { c: 3 },
+            { t: " The old assumption that a great game could rely on a strong release window is less reliable than before." },
+            { c: 2 },
+            { t: " Publishers now need live updates, community management, and a clear platform strategy to stay relevant." },
+            { c: 1 },
+          ] },
+          { type: "quote", text: "A game is no longer only a product at launch. It is a relationship with players that has to be maintained over time." },
+          { type: "p", parts: [
+            { t: "This reveals a broader truth about digital culture: the competition is no longer only for initial interest." },
+            { c: 1 },
+            { t: " It is for repeat attention and the ability to stay part of a player's daily " },
+            { g: "routine", pos: "noun", def: "a fixed and regular way of doing things" },
+            { t: ", which is a much harder and more interesting business problem than simply getting someone to download a game once." },
+            { c: 1 },
+          ] },
+        ],
+      },
+      precise: {
+        label: "Precise Edition",
+        range: "C1–C2",
+        readTime: "2 min read",
+        wordCount: 245,
+        blocks: [
+          { type: "p", parts: [
+            { t: "The most valuable asset in gaming is increasingly player attention." },
+            { c: 1 },
+            { t: " With mobile, PC, console, and cloud ecosystems all competing for finite time, studios must engineer experiences capable of sustaining engagement across multiple sessions and devices." },
+            { c: 2 },
+            { t: " Retention, rather than mere launch buzz, has consequently become central to the industry's economics." },
+            { c: 1 },
+          ] },
+          { type: "p", parts: [
+            { t: "This shift matters because attention has grown " },
+            { g: "scarce", pos: "adjective", def: "not easily available, in short supply" },
+            { t: " across nearly every domain, with games now competing against streaming, social media, and other digital tools for identical hours." },
+            { c: 3 },
+            { t: " The once-reliable assumption that a strong release window alone could sustain a title no longer holds." },
+            { c: 2 },
+            { t: " Publishers increasingly require live updates, community stewardship, and a coherent platform strategy to remain relevant." },
+            { c: 1 },
+          ] },
+          { type: "quote", text: "A game is no longer only a product at launch. It is a relationship with players that has to be maintained over time." },
+          { type: "p", parts: [
+            { t: "This exposes a broader truth about digital culture: the competition is no longer confined to initial interest alone." },
+            { c: 1 },
+            { t: " It concerns repeat attention and the capacity to remain embedded within a player's daily " },
+            { g: "routine", pos: "noun", def: "a fixed and regular way of doing things" },
+            { t: ", a considerably harder and more consequential business problem than merely securing a single download." },
+            { c: 1 },
+          ] },
+        ],
+      },
+    },
+    references: [
+      { domain: "newzoo.com", name: "Newzoo", headline: "Video Gaming Report 2026: The Next Era of Growth" },
+      { domain: "forbes.com", name: "Forbes", headline: "Three Trends Shaping The Gaming Industry In 2026" },
+      { domain: "fortunebusinessinsights.com", name: "Fortune Business Insights", headline: "Global Gaming Market | 2019 – 2030" },
+    ],
+    discussionGuide: [
+      {
+        q: "The article says games now compete with streaming, social media, and other apps for the same hours. What competes for your attention the most in a normal day?",
+        follow: [],
+      },
+      {
+        q: "Do you think it's fair to call a game 'a relationship with players' rather than just a product? Why or why not?",
+        follow: [],
+      },
+      {
+        q: "What could a game do to become part of your daily routine, the way a favorite app or show might?",
+        follow: [],
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug) {
