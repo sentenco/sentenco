@@ -162,7 +162,7 @@ const styles = `
   padding: 22px 32px 20px;
   text-align: center;
   margin-bottom: 32px;
-  height: 220px;
+  height: 270px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
