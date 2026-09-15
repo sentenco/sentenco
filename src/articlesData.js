@@ -9808,6 +9808,252 @@ export const ARTICLES = [
       },
     ],
   },
+  {
+    slug: "ports-minerals-new-geography-of-power",
+    ready: true,
+    publishedAt: "2026-09-17",
+    emoji: "⛏️",
+    variant: "work",
+    topicLabel: "Work & Business",
+    topicTitle: "Worklife, Business & Careers",
+    title: "Ports, Minerals, and the New Geography of Power",
+    dek: "Global power is increasingly being defined by who controls the physical systems that move goods and resources.",
+    editions: {
+      plain: {
+        label: "Plain Edition",
+        range: "A1–A2",
+        readTime: "1 min read",
+        wordCount: 155,
+        blocks: [
+          { type: "p", parts: [
+            { t: "In 2026, the world economy is shaped by more than trade policy. Physical things like ports, mineral supplies, and shipping routes matter just as much." },
+          ] },
+          { type: "p", parts: [
+            { t: "Experts are paying closer attention to who controls these systems. A port is not just a place where ships stop. It can control how fast, how safe, and how cheap it is to move goods everywhere else." },
+          ] },
+          { type: "p", parts: [
+            { t: "Minerals are not just raw materials either. They are needed for energy, defense, and modern technology. Because of this, countries are not just competing to make money from trade. They are competing to be safe, to have good access, and to have more power in negotiations." },
+          ] },
+          { type: "p", parts: [
+            { t: "This changes how we should think about global trade. Instead of an abstract exchange of goods, it becomes a map of ports and important routes that decide who gets ahead and who falls behind." },
+          ] },
+        ],
+      },
+      polished: {
+        label: "Polished Edition",
+        range: "B1–B2",
+        readTime: "2 min read",
+        wordCount: 245,
+        blocks: [
+          { type: "p", parts: [
+            { t: "The world economy in 2026 is being shaped by infrastructure as much as by policy. One of the clearest examples is the growing attention to ports, mineral supply chains, and strategic transport routes." },
+            { c: 1 },
+            { c: 3 },
+            { t: " Foreign policy analysis increasingly treats control over these systems as a form of leverage, which makes the geography of trade a question of power, not just efficiency." },
+            { c: 1 },
+          ] },
+          { type: "p", parts: [
+            { t: "This is a valuable story because it connects the physical world to the political one." },
+            { c: 1 },
+            { t: " A port is not just a place where ships dock; it can determine the speed, cost, and security of entire supply chains, especially at a narrow " },
+            { g: "chokepoint", pos: "noun", def: "a narrow, critical point in a route or system that controls the flow of goods or traffic" },
+            { t: " that few alternate routes can replace." },
+            { c: 1 },
+            { t: " Mineral resources are not just raw materials; they are inputs for energy, defense, and technology." },
+            { c: 2 },
+          ] },
+          { type: "quote", text: "Countries are not merely competing for profit. They are competing for resilience, access, and bargaining power." },
+          { type: "p", parts: [
+            { t: "The strongest analysis explains how " },
+            { g: "extraction", pos: "noun", def: "the process of removing natural resources, like minerals, from the ground" },
+            { t: ", transport, and diplomacy interact: once readers see that connection, trade disputes start to look like strategic contests rather than simple pricing disagreements." },
+            { c: 2 },
+            { t: " That is a map of chokepoints and strategic assets, not just an abstract exchange." },
+            { c: 1 },
+          ] },
+        ],
+      },
+      precise: {
+        label: "Precise Edition",
+        range: "C1–C2",
+        readTime: "2 min read",
+        wordCount: 250,
+        blocks: [
+          { type: "p", parts: [
+            { t: "The world economy in 2026 is shaped as much by infrastructure as by policy. One of the clearest illustrations is the growing attention devoted to ports, mineral supply chains, and strategic transport routes." },
+            { c: 1 },
+            { c: 3 },
+            { t: " Foreign-policy analysis increasingly treats control over these systems as a form of leverage, rendering the geography of trade a question of power rather than mere efficiency." },
+            { c: 1 },
+          ] },
+          { type: "p", parts: [
+            { t: "This constitutes a valuable story because it connects the physical world to the political one." },
+            { c: 1 },
+            { t: " A port is not merely a place where ships dock; it can determine the speed, cost, and security of entire supply chains, particularly at a narrow " },
+            { g: "chokepoint", pos: "noun", def: "a narrow, critical point in a route or system that controls the flow of goods or traffic" },
+            { t: " for which few alternate routes exist." },
+            { c: 1 },
+            { t: " Mineral resources, similarly, are not simply raw materials; they are inputs for energy, defense, and technology." },
+            { c: 2 },
+          ] },
+          { type: "quote", text: "Countries are not merely competing for profit. They are competing for resilience, access, and bargaining power." },
+          { type: "p", parts: [
+            { t: "The most rigorous analysis explains how " },
+            { g: "extraction", pos: "noun", def: "the process of removing natural resources, like minerals, from the ground" },
+            { t: ", transport, and diplomacy interact: once this connection is grasped, trade disputes begin to resemble strategic contests rather than mere pricing disagreements." },
+            { c: 2 },
+            { t: " What emerges is a map of chokepoints and strategic assets, not an abstract exchange." },
+            { c: 1 },
+          ] },
+        ],
+      },
+    },
+    references: [
+      { domain: "foreignaffairs.com", name: "Foreign Affairs", headline: "The World's Mineral Powers Seize Their Moment" },
+      { domain: "foreignaffairs.com", name: "Foreign Affairs", headline: "Why Did China Buy Up the World's Ports?" },
+      { domain: "unctad.org", name: "UNCTAD", headline: "Trade and Development Foresights 2026" },
+    ],
+    discussionGuide: [
+      {
+        q: "The article says control over ports and mineral supply chains is 'a form of leverage.' Can you think of an everyday example where controlling access to something gives someone power, even outside of trade?",
+        follow: [],
+      },
+      {
+        q: "Why might a country be willing to pay more to control a port or mineral supply, instead of just buying from the cheapest seller?",
+        follow: [],
+      },
+      {
+        q: "The article says trade disputes are starting to 'look like strategic contests.' What's the difference between a normal business disagreement and a strategic contest between countries?",
+        follow: [],
+      },
+    ],
+  },
+  {
+    slug: "global-economy-runs-on-caution",
+    ready: true,
+    publishedAt: "2026-09-18",
+    emoji: "🧭",
+    variant: "work",
+    topicLabel: "Work & Business",
+    topicTitle: "Worklife, Business & Careers",
+    title: "The Global Economy Now Runs on Caution",
+    dek: "Firms, governments, and investors are making more decisions around risk management than around growth alone.",
+    editions: {
+      plain: {
+        label: "Plain Edition",
+        range: "A1–A2",
+        readTime: "1 min read",
+        wordCount: 155,
+        blocks: [
+          { type: "p", parts: [
+            { t: "One of the biggest business changes in 2026 is that being careful has become a strategy of its own. It is not just something companies do when times are bad." },
+          ] },
+          { type: "p", parts: [
+            { t: "Global growth is slowing, prices are still hard to control in some places, and unclear government policies are pushing leaders to think more defensively. This does not mean business has stopped." },
+          ] },
+          { type: "p", parts: [
+            { t: "It means more decisions are being made to avoid surprises, not just to grow fast. In the past, the main business question was how quickly to expand. Now, many leaders ask how exposed they are to problems in trade, energy, jobs, and money." },
+          ] },
+          { type: "p", parts: [
+            { t: "Planning for risk is no longer a small, separate task. It is becoming one of the most important skills a leader needs. A slower world economy changes how companies hire, set prices, invest, and think about their customers." },
+          ] },
+        ],
+      },
+      polished: {
+        label: "Polished Edition",
+        range: "B1–B2",
+        readTime: "2 min read",
+        wordCount: 245,
+        blocks: [
+          { type: "p", parts: [
+            { t: "One of the most important business shifts of 2026 is that caution has become a strategy." },
+            { c: 1 },
+            { c: 3 },
+            { t: " Global growth is slowing, inflation is still difficult to manage in some markets, and policy uncertainty is forcing leaders to think " },
+            { g: "defensively", pos: "adverb", def: "in a way that protects against possible problems, rather than to grow or attack" },
+            { t: "." },
+            { c: 2 },
+            { t: " That does not mean activity has stopped. It means more decisions are being shaped by the need to avoid surprises." },
+            { c: 1 },
+          ] },
+          { type: "p", parts: [
+            { t: "This is a major change because the old business question used to be how fast to expand." },
+            { c: 3 },
+            { t: " Now, many executives are asking how much " },
+            { g: "exposure", pos: "noun", def: "how much a person or company could be affected or harmed by a risk" },
+            { t: " they carry to shocks in trade, energy, labor, and finance." },
+            { c: 1 },
+            { c: 2 },
+            { t: " Risk planning is no longer a side function. It is becoming a core management skill." },
+            { c: 2 },
+          ] },
+          { type: "quote", text: "Business news becomes more meaningful when it explains how leaders adapt to uncertainty instead of pretending it does not exist." },
+          { type: "p", parts: [
+            { t: "That shift shows up in ordinary decisions: hiring more slowly, pricing more carefully, and holding back on investment until the picture is clearer." },
+            { c: 3 },
+            { t: " A slower world economy does not just change forecasts on a page. It changes what a company actually does on a Monday morning." },
+            { c: 1 },
+          ] },
+        ],
+      },
+      precise: {
+        label: "Precise Edition",
+        range: "C1–C2",
+        readTime: "2 min read",
+        wordCount: 250,
+        blocks: [
+          { type: "p", parts: [
+            { t: "One of the most consequential business shifts of 2026 is that caution has itself become a strategy." },
+            { c: 1 },
+            { c: 3 },
+            { t: " Global growth is decelerating, inflation remains difficult to manage in certain markets, and policy uncertainty is compelling leaders to think " },
+            { g: "defensively", pos: "adverb", def: "in a way that protects against possible problems, rather than to grow or attack" },
+            { t: "." },
+            { c: 2 },
+            { t: " This does not signify that activity has ceased; rather, more decisions are being shaped by the imperative to avoid surprises." },
+            { c: 1 },
+          ] },
+          { type: "p", parts: [
+            { t: "This constitutes a major shift, given that the prevailing business question once concerned how rapidly to expand." },
+            { c: 3 },
+            { t: " Executives now increasingly ask how much " },
+            { g: "exposure", pos: "noun", def: "how much a person or company could be affected or harmed by a risk" },
+            { t: " they carry to shocks in trade, energy, labor, and finance." },
+            { c: 1 },
+            { c: 2 },
+            { t: " Risk planning is no longer a peripheral function; it is becoming a core managerial competency." },
+            { c: 2 },
+          ] },
+          { type: "quote", text: "Business news becomes more meaningful when it explains how leaders adapt to uncertainty instead of pretending it does not exist." },
+          { type: "p", parts: [
+            { t: "That shift manifests in ordinary decisions: hiring more gradually, pricing more deliberately, and deferring investment until conditions clarify." },
+            { c: 3 },
+            { t: " A decelerating world economy does not merely revise forecasts on paper; it alters what a company actually does on any given Monday morning." },
+            { c: 1 },
+          ] },
+        ],
+      },
+    },
+    references: [
+      { domain: "imf.org", name: "International Monetary Fund", headline: "World Economic Outlook, April 2026" },
+      { domain: "worldbank.org", name: "World Bank", headline: "Global Economic Prospects" },
+      { domain: "standardchartered.com", name: "Standard Chartered", headline: "Top Five Policy Issues | 2026" },
+    ],
+    discussionGuide: [
+      {
+        q: "The article says 'caution has become a strategy' rather than just a reaction to bad times. What's the difference between being cautious as a strategy versus being cautious out of fear?",
+        follow: [],
+      },
+      {
+        q: "Think of a decision you've made recently (big or small) where you chose the 'safer' option instead of the faster or bigger one. What made you choose caution?",
+        follow: [],
+      },
+      {
+        q: "The article says risk planning is 'becoming a core management skill.' What kind of skills do you think a leader needs to plan well for risk?",
+        follow: [],
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug) {
