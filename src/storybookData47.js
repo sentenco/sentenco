@@ -36,11 +36,26 @@ export const CHAPTERS = [
       { text: "Beatriz thinks the phone can do nothing useful.", answer: false },
     ],
     buildSentence: [
-      { target: "I bought a new phone.", jumbled: ["bought", "a", "I", "new", "phone."] },
-      { target: "I open it slowly.", jumbled: ["open", "it", "I", "slowly."] },
-      { target: "I feel a little nervous.", jumbled: ["feel", "a", "I", "little", "nervous."] },
-      { target: "This phone looks more complicated.", jumbled: ["This", "phone", "looks", "more", "complicated."] },
-      { target: "Many useful things are possible with this phone.", jumbled: ["Many", "useful", "things", "are", "possible", "with", "this", "phone."] },
+      {
+        target: "My old phone finally stopped working last week, so I bought a new smartphone yesterday.",
+        jumbled: ["I", "new", "so", "smartphone", "working", "yesterday.", "stopped", "finally", "phone", "week,", "bought", "last", "My", "old", "a"],
+      },
+      {
+        target: "The box sits on my kitchen table, and I open it slowly and carefully.",
+        jumbled: ["I", "my", "it", "and", "carefully.", "open", "The", "table,", "box", "sits", "slowly", "kitchen", "on", "and"],
+      },
+      {
+        target: "Inside, I find the phone, a charging cable, and a small instruction pamphlet.",
+        jumbled: ["small", "charging", "cable,", "instruction", "pamphlet.", "a", "the", "I", "phone,", "find", "Inside,", "and", "a"],
+      },
+      {
+        target: "This new phone looks much more complicated, with a large screen and many small icons.",
+        jumbled: ["a", "new", "complicated,", "small", "screen", "phone", "with", "many", "icons.", "more", "much", "This", "looks", "large", "and"],
+      },
+      {
+        target: "“Beatriz, you can learn this,” I tell myself, even though I feel a little nervous about learning something so new at my age.",
+        jumbled: ["my", "new", "I", "tell", "though", "nervous", "something", "this,”", "I", "learning", "age.", "“Beatriz,", "about", "a", "feel", "little", "you", "so", "even", "can", "learn", "at", "myself,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning to use something new.",
     mySentenceExample: "I felt nervous learning to use my new computer.",
@@ -65,11 +80,26 @@ export const CHAPTERS = [
       { text: "Beatriz feels more worried after the call.", answer: false },
     ],
     buildSentence: [
-      { target: "I call Noah for help.", jumbled: ["call", "Noah", "I", "for", "help."] },
-      { target: "I feel relieved now.", jumbled: ["feel", "relieved", "I", "now."] },
-      { target: "He explains things patiently.", jumbled: ["He", "explains", "things", "patiently."] },
-      { target: "I thank him kindly today.", jumbled: ["thank", "him", "I", "kindly", "today."] },
-      { target: "I feel a little more hopeful now.", jumbled: ["I", "feel", "a", "little", "more", "hopeful", "now."] },
+      {
+        target: "Instead of guessing everything alone, I decide to call my nephew Noah for help.",
+        jumbled: ["to", "of", "alone,", "everything", "Instead", "for", "I", "help.", "call", "Noah", "nephew", "my", "guessing", "decide"],
+      },
+      {
+        target: "He is young and always seems to understand technology very quickly and easily.",
+        jumbled: ["and", "technology", "easily.", "quickly", "understand", "He", "to", "is", "young", "seems", "always", "very", "and"],
+      },
+      {
+        target: "“Aunt Beatriz, I can come over this weekend and help you,” he says kindly on the phone.",
+        jumbled: ["come", "phone.", "this", "you,”", "the", "over", "he", "kindly", "weekend", "“Aunt", "says", "Beatriz,", "help", "on", "and", "can", "I"],
+      },
+      {
+        target: "Noah always explains things patiently, without making me feel silly for asking simple questions.",
+        jumbled: ["asking", "Noah", "making", "things", "without", "simple", "for", "patiently,", "silly", "questions.", "explains", "feel", "always", "me"],
+      },
+      {
+        target: "I thank him and tell him I will have some tea and snacks ready.",
+        jumbled: ["him", "I", "and", "tea", "thank", "and", "I", "ready.", "tell", "some", "have", "will", "him", "snacks"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about asking someone for help with something new.",
     mySentenceExample: "I asked my daughter for help with my new computer.",
@@ -94,11 +124,26 @@ export const CHAPTERS = [
       { text: "Beatriz's nervousness grows stronger with each step.", answer: false },
     ],
     buildSentence: [
-      { target: "Let's start simple, he says.", jumbled: ["start", "simple,", "Let's", "he", "says."] },
-      { target: "I press it carefully now.", jumbled: ["press", "it", "I", "carefully", "now."] },
-      { target: "The screen lights up brightly.", jumbled: ["screen", "lights", "The", "up", "brightly."] },
-      { target: "He explains slowly, one at a time.", jumbled: ["He", "explains", "slowly,", "one", "at", "a", "time."] },
-      { target: "My nervousness slowly fades with each step.", jumbled: ["My", "nervousness", "slowly", "fades", "with", "each", "step."] },
+      {
+        target: "On Saturday, Noah arrives and sits beside me with a warm smile on his face.",
+        jumbled: ["sits", "me", "a", "arrives", "warm", "smile", "Saturday,", "and", "with", "face.", "his", "On", "beside", "Noah", "on"],
+      },
+      {
+        target: "“Let's start simple, Aunt Beatriz,” he says, picking up the new phone gently from the table.",
+        jumbled: ["start", "he", "new", "phone", "Aunt", "table.", "the", "up", "“Let's", "says,", "the", "from", "picking", "simple,", "gently", "Beatriz,”"],
+      },
+      {
+        target: "He shows me the small button on the side used to turn the phone on.",
+        jumbled: ["on.", "side", "the", "phone", "button", "the", "used", "me", "turn", "small", "shows", "on", "the", "He", "to"],
+      },
+      {
+        target: "“Don't worry, everything here is easy once you know where to look,” he reassures me kindly.",
+        jumbled: ["me", "to", "once", "“Don't", "worry,", "you", "is", "look,”", "reassures", "everything", "where", "easy", "he", "know", "here", "kindly."],
+      },
+      {
+        target: "He explains the icons slowly, one at a time, without rushing through any explanation.",
+        jumbled: ["explains", "at", "a", "He", "the", "icons", "through", "explanation.", "any", "slowly,", "one", "rushing", "without", "time,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone explaining something to you slowly and clearly.",
     mySentenceExample: "My teacher explained the lesson slowly and clearly to me.",
@@ -123,11 +168,26 @@ export const CHAPTERS = [
       { text: "Beatriz feels nothing seeing the reply.", answer: false },
     ],
     buildSentence: [
-      { target: "I type a short message.", jumbled: ["type", "a", "I", "short", "message."] },
-      { target: "I press the send button.", jumbled: ["press", "the", "I", "send", "button."] },
-      { target: "I feel proud right now.", jumbled: ["feel", "proud", "I", "right", "now."] },
-      { target: "My hands feel a little clumsy.", jumbled: ["My", "hands", "feel", "a", "little", "clumsy."] },
-      { target: "I feel a small burst of excitement.", jumbled: ["I", "feel", "a", "small", "burst", "of", "excitement."] },
+      {
+        target: "Next, Noah shows me how to open the messages app and find a contact.",
+        jumbled: ["how", "app", "contact.", "the", "to", "find", "a", "Next,", "Noah", "and", "shows", "messages", "me", "open"],
+      },
+      {
+        target: "“Nice work, Aunt Beatriz,” Noah says as I choose my sister's name from the contact list, feeling proud I found it myself.",
+        jumbled: ["list,", "says", "work,", "my", "myself.", "the", "Aunt", "“Nice", "it", "name", "Beatriz,”", "proud", "choose", "feeling", "I", "Noah", "as", "contact", "I", "sister's", "found", "from"],
+      },
+      {
+        target: "I type a short message slowly, checking each letter twice before sending it.",
+        jumbled: ["before", "it.", "twice", "slowly,", "message", "short", "each", "a", "sending", "type", "I", "checking", "letter"],
+      },
+      {
+        target: "“Hi Carmen, I have a new phone now,” I write with careful concentration.",
+        jumbled: ["Carmen,", "a", "write", "I", "careful", "phone", "with", "new", "concentration.", "“Hi", "now,”", "have", "I"],
+      },
+      {
+        target: "A minute later, my phone buzzes with a reply from my sister.",
+        jumbled: ["A", "a", "with", "from", "reply", "my", "buzzes", "sister.", "my", "later,", "minute", "phone"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about sending a message to someone important to you.",
     mySentenceExample: "I sent a message to my sister to share my good news.",
@@ -152,11 +212,26 @@ export const CHAPTERS = [
       { text: "Taking photos feels harder than Beatriz expected.", answer: false },
     ],
     buildSentence: [
-      { target: "I point the phone.", jumbled: ["point", "the", "I", "phone."] },
-      { target: "I press the round button.", jumbled: ["press", "the", "I", "round", "button."] },
-      { target: "I laugh too, surprised.", jumbled: ["laugh", "too,", "I", "surprised."] },
-      { target: "The photo appears instantly.", jumbled: ["photo", "appears", "The", "instantly."] },
-      { target: "Taking photos feels much easier than expected.", jumbled: ["Taking", "photos", "feels", "much", "easier", "than", "expected."] },
+      {
+        target: "Noah suggests we practice something more fun: taking a photo with the camera app.",
+        jumbled: ["camera", "taking", "photo", "Noah", "with", "a", "app.", "more", "practice", "suggests", "the", "we", "something", "fun:"],
+      },
+      {
+        target: "“Try this, Aunt Beatriz,” he says, showing me where the camera icon is and how to open it quickly.",
+        jumbled: ["camera", "this,", "open", "is", "showing", "where", "and", "“Try", "Beatriz,”", "me", "to", "he", "the", "it", "Aunt", "how", "quickly.", "says,", "icon"],
+      },
+      {
+        target: "I point the phone at him, and he makes a silly, funny pose for the picture.",
+        jumbled: ["the", "phone", "the", "a", "him,", "silly,", "picture.", "for", "funny", "and", "he", "point", "pose", "makes", "I", "at"],
+      },
+      {
+        target: "The photo appears on the screen instantly, showing Noah laughing in a funny position.",
+        jumbled: ["a", "laughing", "photo", "Noah", "on", "in", "The", "position.", "screen", "appears", "showing", "the", "funny", "instantly,"],
+      },
+      {
+        target: "Taking photos feels much easier than I expected it to be at first.",
+        jumbled: ["Taking", "be", "I", "it", "easier", "first.", "than", "feels", "at", "photos", "much", "expected", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about taking a photo of someone or something.",
     mySentenceExample: "I took a photo of my grandchildren at the park.",
@@ -181,11 +256,26 @@ export const CHAPTERS = [
       { text: "Fixing the mistake turns out to be very difficult.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel confused now.", jumbled: ["feel", "confused", "I", "now."] },
-      { target: "I think I broke it.", jumbled: ["think", "I", "I", "broke", "it."] },
-      { target: "Nothing is actually broken.", jumbled: ["is", "actually", "Nothing", "broken."] },
-      { target: "I feel relieved about this.", jumbled: ["feel", "relieved", "I", "about", "this."] },
-      { target: "Technology mistakes are usually not that serious.", jumbled: ["Technology", "mistakes", "are", "usually", "not", "that", "serious."] },
+      {
+        target: "Trying to explore on my own, I accidentally open several apps at the same time without understanding it.",
+        jumbled: ["several", "same", "explore", "at", "accidentally", "open", "apps", "I", "it.", "to", "understanding", "the", "on", "without", "Trying", "my", "own,", "time"],
+      },
+      {
+        target: "“I think I broke it,” I tell Noah, feeling a little worried about my mistake.",
+        jumbled: ["I", "broke", "tell", "little", "worried", "a", "mistake.", "Noah,", "I", "feeling", "about", "my", "it,”", "think", "“I"],
+      },
+      {
+        target: "Noah laughs gently.",
+        jumbled: ["Noah", "gently.", "laughs"],
+      },
+      {
+        target: "He shows me a simple button that closes extra apps and cleans up the screen easily.",
+        jumbled: ["the", "apps", "closes", "that", "button", "cleans", "He", "simple", "screen", "a", "me", "up", "and", "easily.", "shows", "extra"],
+      },
+      {
+        target: "I feel relieved that fixing my mistake was much simpler than I first thought.",
+        jumbled: ["relieved", "fixing", "I", "simpler", "I", "than", "mistake", "feel", "much", "that", "was", "my", "first", "thought."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a mistake that turned out to be less serious than you thought.",
     mySentenceExample: "My mistake with the printer was less serious than I thought.",
@@ -210,11 +300,26 @@ export const CHAPTERS = [
       { text: "Beatriz feels this feature is not worth it.", answer: false },
     ],
     buildSentence: [
-      { target: "This excites me completely.", jumbled: ["excites", "me", "This", "completely."] },
-      { target: "We call my daughter together.", jumbled: ["call", "my", "We", "daughter", "together."] },
-      { target: "I feel genuinely happy now.", jumbled: ["feel", "genuinely", "I", "happy", "now."] },
-      { target: "Her smiling face appears suddenly.", jumbled: ["Her", "smiling", "face", "appears", "suddenly."] },
-      { target: "This feature already makes the phone feel worth it.", jumbled: ["This", "feature", "already", "makes", "the", "phone", "feel", "worth", "it."] },
+      {
+        target: "“Aunt Beatriz, want to learn video calling?” Noah asks, so I can see my family more often.",
+        jumbled: ["I", "my", "so", "family", "can", "Beatriz,", "see", "often.", "to", "“Aunt", "asks,", "calling?”", "more", "learn", "Noah", "want", "video"],
+      },
+      {
+        target: "My daughter lives far away, and this idea excites me immediately and completely.",
+        jumbled: ["and", "completely.", "My", "and", "away,", "idea", "excites", "immediately", "far", "lives", "daughter", "this", "me"],
+      },
+      {
+        target: "We call my daughter together, and her smiling face appears on my screen suddenly.",
+        jumbled: ["screen", "my", "We", "her", "face", "on", "suddenly.", "call", "together,", "daughter", "and", "my", "smiling", "appears"],
+      },
+      {
+        target: "“Mom, you're using a smartphone now?” she asks, clearly surprised and happy about it.",
+        jumbled: ["“Mom,", "surprised", "smartphone", "a", "it.", "she", "now?”", "asks,", "using", "you're", "and", "about", "clearly", "happy"],
+      },
+      {
+        target: "We talk for several minutes, and I feel genuinely happy seeing her face so clearly.",
+        jumbled: ["happy", "feel", "seeing", "I", "talk", "We", "and", "several", "so", "her", "genuinely", "clearly.", "face", "for", "minutes,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about talking to a family member using video calling.",
     mySentenceExample: "I love talking to my daughter using video calling.",
@@ -239,11 +344,26 @@ export const CHAPTERS = [
       { text: "Beatriz feels nothing about this small progress.", answer: false },
     ],
     buildSentence: [
-      { target: "I practice a little more.", jumbled: ["practice", "a", "I", "little", "more."] },
-      { target: "I feel more comfortable now.", jumbled: ["feel", "more", "I", "comfortable", "now."] },
-      { target: "I fix it myself this time.", jumbled: ["fix", "it", "I", "myself", "this", "time."] },
-      { target: "I feel proud of my progress.", jumbled: ["I", "feel", "proud", "of", "my", "progress."] },
-      { target: "Learning something new alone feels genuinely rewarding.", jumbled: ["Learning", "something", "new", "alone", "feels", "genuinely", "rewarding."] },
+      {
+        target: "I decide to practice using my phone a little more by myself.",
+        jumbled: ["a", "to", "by", "myself.", "my", "practice", "decide", "little", "using", "more", "I", "phone"],
+      },
+      {
+        target: "I open the camera app again and take a few more photos around my apartment.",
+        jumbled: ["and", "a", "I", "take", "app", "more", "camera", "around", "again", "the", "apartment.", "few", "open", "my", "photos"],
+      },
+      {
+        target: "“Look at you, Beatriz,” I think with a smile, feeling more comfortable finding buttons and menus without asking anyone for help.",
+        jumbled: ["a", "anyone", "and", "comfortable", "you,", "smile,", "feeling", "Beatriz,”", "menus", "finding", "buttons", "help.", "with", "asking", "“Look", "more", "at", "for", "think", "I", "without"],
+      },
+      {
+        target: "I make a small mistake once, but I remember Noah's advice about the button that fixes things.",
+        jumbled: ["Noah's", "I", "remember", "button", "the", "I", "make", "small", "mistake", "fixes", "a", "things.", "once,", "advice", "that", "about", "but"],
+      },
+      {
+        target: "Fixing it myself this time makes me feel proud of my quick progress today.",
+        jumbled: ["today.", "feel", "this", "makes", "it", "myself", "my", "me", "quick", "proud", "Fixing", "time", "progress", "of"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing something new by yourself.",
     mySentenceExample: "I practiced my new skill by myself and felt proud.",
@@ -268,11 +388,26 @@ export const CHAPTERS = [
       { text: "Beatriz feels unhelpful sharing what she learned.", answer: false },
     ],
     buildSentence: [
-      { target: "I meet Rosa for coffee.", jumbled: ["meet", "Rosa", "I", "for", "coffee."] },
-      { target: "I show her my phone.", jumbled: ["show", "her", "I", "my", "phone."] },
-      { target: "I encourage her kindly today.", jumbled: ["encourage", "her", "I", "kindly", "today."] },
-      { target: "You learned all this quickly.", jumbled: ["learned", "all", "You", "this", "quickly."] },
-      { target: "I feel confident and helpful today.", jumbled: ["I", "feel", "confident", "and", "helpful", "today."] },
+      {
+        target: "The next day, I meet my friend Rosa for coffee at our favorite small café.",
+        jumbled: ["coffee", "favorite", "for", "I", "café.", "meet", "my", "our", "day,", "small", "at", "The", "next", "friend", "Rosa"],
+      },
+      {
+        target: "I proudly show her my new phone and the photos I took yesterday.",
+        jumbled: ["her", "and", "I", "show", "my", "photos", "the", "phone", "yesterday.", "took", "proudly", "new", "I"],
+      },
+      {
+        target: "“You learned all this so quickly, Beatriz,” Rosa says, clearly impressed by my new skills.",
+        jumbled: ["all", "my", "skills.", "learned", "“You", "impressed", "Beatriz,”", "new", "says,", "Rosa", "this", "quickly,", "so", "clearly", "by"],
+      },
+      {
+        target: "Rosa admits she also wants a new phone but feels nervous about learning it too.",
+        jumbled: ["phone", "it", "she", "Rosa", "learning", "too.", "about", "but", "feels", "admits", "nervous", "a", "wants", "also", "new"],
+      },
+      {
+        target: "I encourage her kindly, telling her it feels difficult at first but gets easier quickly.",
+        jumbled: ["her", "feels", "it", "gets", "quickly.", "easier", "difficult", "at", "encourage", "I", "telling", "but", "kindly,", "first", "her"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about teaching or showing a friend something new.",
     mySentenceExample: "I showed my friend how to use a new app.",
@@ -297,11 +432,26 @@ export const CHAPTERS = [
       { text: "Beatriz feels this experience was completely wasted.", answer: false },
     ],
     buildSentence: [
-      { target: "This feels completely normal now.", jumbled: ["feels", "completely", "This", "normal", "now."] },
-      { target: "I take photos of small moments.", jumbled: ["take", "photos", "I", "of", "small", "moments."] },
-      { target: "He checks in sometimes, proud.", jumbled: ["checks", "in", "He", "sometimes,", "proud."] },
-      { target: "My old worries feel a little silly now.", jumbled: ["My", "old", "worries", "feel", "a", "little", "silly", "now."] },
-      { target: "This felt scary at first, but now feels wonderful.", jumbled: ["This", "felt", "scary", "at", "first,", "but", "now", "feels", "wonderful."] },
+      {
+        target: "One week later, using my new phone feels completely normal, almost like a natural part of my day.",
+        jumbled: ["new", "of", "natural", "completely", "part", "a", "almost", "phone", "later,", "using", "like", "day.", "my", "feels", "One", "week", "normal,", "my"],
+      },
+      {
+        target: "I video call my daughter every few days now, something I never imagined doing so easily before.",
+        jumbled: ["days", "easily", "I", "I", "video", "few", "something", "imagined", "so", "daughter", "every", "my", "never", "call", "before.", "doing", "now,"],
+      },
+      {
+        target: "I take photos of small, simple moments, like my morning tea or a pretty flower outside.",
+        jumbled: ["simple", "take", "flower", "photos", "of", "I", "like", "outside.", "moments,", "tea", "pretty", "small,", "or", "my", "morning", "a"],
+      },
+      {
+        target: "My old worries about this new technology already feel a little silly looking back now.",
+        jumbled: ["already", "looking", "this", "worries", "little", "new", "about", "technology", "back", "a", "feel", "now.", "My", "old", "silly"],
+      },
+      {
+        target: "“You're a natural, Aunt Beatriz,” Noah says when he checks in sometimes, proud of how comfortable I have become with everything so quickly.",
+        jumbled: ["of", "when", "quickly.", "become", "a", "proud", "Aunt", "have", "in", "checks", "I", "he", "says", "natural,", "everything", "Noah", "sometimes,", "so", "Beatriz,”", "“You're", "with", "how", "comfortable"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something that felt scary at first but became comfortable.",
     mySentenceExample: "Using a computer felt scary at first but became comfortable for me.",

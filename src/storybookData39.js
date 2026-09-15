@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "Renee feels thrilled about having her own space.", answer: true },
     ],
     buildSentence: [
-      { target: "I finally decide it's time.", jumbled: ["finally", "decide", "I", "it's", "time."] },
-      { target: "This thrills me completely.", jumbled: ["thrills", "me", "This", "completely."] },
-      { target: "I scroll through apartment listings.", jumbled: ["scroll", "through", "I", "apartment", "listings."] },
-      { target: "My parents support the decision completely.", jumbled: ["My", "parents", "support", "the", "decision", "completely."] },
-      { target: "Living independently means budgeting carefully and cooking my own meals.", jumbled: ["Living", "independently", "means", "budgeting", "carefully", "and", "cooking", "my", "own", "meals."] },
+      {
+        target: "I finally decide it's time to move into my own apartment.",
+        jumbled: ["my", "decide", "finally", "to", "I", "own", "it's", "into", "time", "move", "apartment."],
+      },
+      {
+        target: "My parents support the decision completely, though my mother admits she'll miss having me around the house every evening.",
+        jumbled: ["miss", "mother", "she'll", "support", "though", "house", "My", "evening.", "around", "me", "parents", "the", "completely,", "my", "the", "admits", "decision", "every", "having"],
+      },
+      {
+        target: "Sitting on my childhood bedroom floor, surrounded by half-packed boxes, I scroll through apartment listings, saving my favorites into a folder I label “Renee's New Place,” with a mixture of nervous excitement and genuine uncertainty.",
+        jumbled: ["folder", "a", "Sitting", "of", "label", "“Renee's", "through", "into", "New", "scroll", "surrounded", "my", "and", "genuine", "mixture", "I", "uncertainty.", "bedroom", "apartment", "saving", "favorites", "nervous", "by", "childhood", "half-packed", "on", "a", "with", "my", "I", "listings,", "floor,", "Place,”", "excitement", "boxes,"],
+      },
+      {
+        target: "Living independently means budgeting carefully, cooking my own meals, and handling problems without anyone else nearby to help immediately.",
+        jumbled: ["carefully,", "problems", "my", "meals,", "immediately.", "independently", "means", "budgeting", "anyone", "help", "Living", "own", "and", "else", "handling", "without", "to", "nearby", "cooking"],
+      },
+      {
+        target: "Still, the idea of finally having my own space thrills me completely.",
+        jumbled: ["Still,", "having", "thrills", "finally", "me", "completely.", "the", "own", "of", "space", "my", "idea"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a big step toward independence you took or want to take.",
     mySentenceExample: "Getting my first job was a big step toward independence for me.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "The sixth apartment finally feels right to Renee.", answer: true },
     ],
     buildSentence: [
-      { target: "Diane offers to join me.", jumbled: ["offers", "to", "Diane", "join", "me."] },
-      { target: "This finally feels right.", jumbled: ["finally", "feels", "This", "right."] },
-      { target: "We visit five different apartments.", jumbled: ["visit", "five", "We", "different", "apartments."] },
-      { target: "Trust your gut when you find it.", jumbled: ["your", "gut", "Trust", "when", "you", "find", "it."] },
-      { target: "Each one reveals new compromises between location, price, and space.", jumbled: ["Each", "one", "reveals", "new", "compromises", "between", "location,", "price,", "and", "space."] },
+      {
+        target: "Diane, my closest friend, offers to join me for apartment viewings, insisting a second opinion always helps with such an important decision.",
+        jumbled: ["such", "decision.", "important", "opinion", "second", "me", "friend,", "my", "Diane,", "viewings,", "join", "a", "to", "an", "insisting", "helps", "for", "always", "closest", "with", "apartment", "offers"],
+      },
+      {
+        target: "Together, we visit five different apartments across two weekends, each one revealing new compromises between location, price, and available space.",
+        jumbled: ["new", "apartments", "available", "one", "each", "revealing", "space.", "we", "two", "different", "Together,", "compromises", "weekends,", "and", "across", "between", "five", "price,", "visit", "location,"],
+      },
+      {
+        target: "One apartment has beautiful natural light but sits far from public transportation, while another feels perfectly located but noticeably cramped and outdated inside.",
+        jumbled: ["located", "and", "has", "beautiful", "from", "sits", "another", "natural", "apartment", "noticeably", "but", "light", "inside.", "cramped", "transportation,", "feels", "far", "perfectly", "public", "but", "while", "One", "outdated"],
+      },
+      {
+        target: "“Trust your gut when you find the right one, Renee,” Diane advises, watching me hesitate over yet another listing with mixed feelings.",
+        jumbled: ["the", "“Trust", "another", "listing", "advises,", "me", "with", "one,", "Renee,”", "over", "you", "watching", "your", "feelings.", "hesitate", "find", "right", "mixed", "yet", "when", "gut", "Diane"],
+      },
+      {
+        target: "Finally, in a quiet building near a small park, something about the sixth apartment simply feels right.",
+        jumbled: ["apartment", "quiet", "about", "park,", "simply", "something", "a", "feels", "sixth", "building", "a", "right.", "near", "small", "in", "the", "Finally,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about searching for the right option among several choices.",
     mySentenceExample: "I searched for the right laptop among several different choices online.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Renee feels nothing significant about this commitment.", answer: false },
     ],
     buildSentence: [
-      { target: "My hands tremble slightly.", jumbled: ["tremble", "slightly.", "My", "hands"] },
-      { target: "I finally sign my name.", jumbled: ["finally", "sign", "I", "my", "name."] },
-      { target: "Take your time reading everything.", jumbled: ["your", "time", "Take", "reading", "everything."] },
-      { target: "This paperwork feels genuinely overwhelming.", jumbled: ["feels", "genuinely", "This", "paperwork", "overwhelming."] },
-      { target: "The reality of this commitment settles in slowly.", jumbled: ["The", "reality", "of", "this", "commitment", "settles", "in", "slowly."] },
+      {
+        target: "The following Monday, I meet the landlord to review the lease agreement, my hands trembling slightly as I hold the pen above the signature line.",
+        jumbled: ["I", "signature", "the", "the", "review", "my", "above", "the", "the", "landlord", "lease", "hands", "following", "The", "line.", "as", "Monday,", "to", "agreement,", "I", "meet", "pen", "hold", "trembling", "slightly"],
+      },
+      {
+        target: "He explains the monthly rent, security deposit, and building rules calmly, though the amount of paperwork feels genuinely overwhelming for my very first lease.",
+        jumbled: ["feels", "of", "genuinely", "He", "rules", "rent,", "amount", "my", "building", "very", "monthly", "overwhelming", "for", "the", "calmly,", "lease.", "the", "deposit,", "first", "explains", "security", "though", "paperwork", "and"],
+      },
+      {
+        target: "“Take your time reading through everything, Renee,” he says patiently, noticing my nervous hesitation over the lengthy document.",
+        jumbled: ["he", "noticing", "document.", "everything,", "says", "the", "over", "through", "“Take", "hesitation", "Renee,”", "your", "nervous", "patiently,", "time", "lengthy", "my", "reading"],
+      },
+      {
+        target: "I finally sign my name, officially becoming responsible for an entire apartment for the first time in my life.",
+        jumbled: ["officially", "I", "the", "time", "in", "for", "an", "becoming", "responsible", "my", "entire", "life.", "apartment", "first", "finally", "for", "my", "name,", "sign"],
+      },
+      {
+        target: "Walking outside afterward, the reality of this commitment settles in slowly.",
+        jumbled: ["this", "Walking", "settles", "slowly.", "of", "in", "reality", "afterward,", "outside", "commitment", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about signing something important for the first time.",
     mySentenceExample: "I felt nervous signing my first work contract last year.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "The apartment already feels like Renee's by evening.", answer: true },
     ],
     buildSentence: [
-      { target: "Moving day arrives finally.", jumbled: ["day", "arrives", "Moving", "finally."] },
-      { target: "This feels genuinely special today.", jumbled: ["feels", "genuinely", "This", "special", "today."] },
-      { target: "Our energy fades noticeably by midday.", jumbled: ["Our", "energy", "fades", "noticeably", "by", "midday."] },
-      { target: "Someone nearly drops a heavy box.", jumbled: ["Someone", "nearly", "drops", "a", "heavy", "box."] },
-      { target: "It already feels undeniably like mine by evening.", jumbled: ["It", "already", "feels", "undeniably", "like", "mine", "by", "evening."] },
+      {
+        target: "Moving day arrives with chaotic energy, as Diane and two other friends show up early to help carry boxes up three narrow flights of stairs.",
+        jumbled: ["early", "stairs.", "narrow", "help", "and", "energy,", "other", "arrives", "friends", "up", "Diane", "flights", "chaotic", "show", "boxes", "Moving", "three", "as", "carry", "two", "of", "up", "to", "with", "day"],
+      },
+      {
+        target: "By midday, our collective energy fades noticeably, replaced by exhausted laughter every time someone nearly drops a heavy box on the stairs.",
+        jumbled: ["collective", "drops", "heavy", "noticeably,", "someone", "By", "exhausted", "the", "a", "by", "fades", "midday,", "box", "nearly", "our", "replaced", "every", "stairs.", "time", "on", "laughter", "energy"],
+      },
+      {
+        target: "“Renee, whoever designed this staircase clearly hated movers,” Diane jokes, wiping sweat from her forehead between trips up and down.",
+        jumbled: ["up", "“Renee,", "staircase", "forehead", "clearly", "between", "trips", "this", "from", "wiping", "movers,”", "jokes,", "and", "her", "down.", "sweat", "designed", "hated", "whoever", "Diane"],
+      },
+      {
+        target: "Despite the exhausting physical labor, something feels genuinely special about filling an empty apartment with familiar furniture and belongings.",
+        jumbled: ["about", "familiar", "physical", "the", "and", "something", "exhausting", "an", "with", "genuinely", "Despite", "belongings.", "labor,", "feels", "filling", "special", "empty", "apartment", "furniture"],
+      },
+      {
+        target: "By evening, boxes fill every corner of the space, but it already feels undeniably like mine.",
+        jumbled: ["of", "By", "feels", "the", "space,", "every", "corner", "but", "fill", "already", "mine.", "boxes", "evening,", "undeniably", "like", "it"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a tiring day that friends helped you get through.",
     mySentenceExample: "My friends helped me get through a tiring moving day last summer.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Renee feels a deep sense of accomplishment afterward.", answer: true },
     ],
     buildSentence: [
-      { target: "I face my biggest challenge.", jumbled: ["face", "my", "I", "biggest", "challenge."] },
-      { target: "I feel a deep accomplishment.", jumbled: ["feel", "a", "I", "deep", "accomplishment."] },
-      { target: "One shelf looks noticeably crooked.", jumbled: ["One", "shelf", "looks", "noticeably", "crooked."] },
-      { target: "I attached one panel completely backward.", jumbled: ["I", "attached", "one", "panel", "completely", "backward."] },
-      { target: "I correct my mistake with newfound patience.", jumbled: ["I", "correct", "my", "mistake", "with", "newfound", "patience."] },
+      {
+        target: "Alone that evening, I face my biggest challenge yet: assembling a flat-pack bookshelf using only a small instruction booklet and a single tiny screwdriver.",
+        jumbled: ["small", "only", "screwdriver.", "a", "a", "using", "assembling", "a", "yet:", "tiny", "Alone", "bookshelf", "that", "I", "single", "my", "biggest", "challenge", "face", "instruction", "flat-pack", "and", "evening,", "booklet"],
+      },
+      {
+        target: "The diagrams seem straightforward at first, but somehow I end up with several mysterious extra screws and one noticeably crooked shelf.",
+        jumbled: ["crooked", "several", "The", "up", "extra", "and", "seem", "I", "screws", "straightforward", "end", "shelf.", "somehow", "but", "mysterious", "with", "one", "at", "diagrams", "first,", "noticeably"],
+      },
+      {
+        target: "I mutter, “Come on, Renee, think,” and finally realize I attached one panel completely backward from the very beginning.",
+        jumbled: ["one", "I", "backward", "beginning.", "Renee,", "the", "finally", "realize", "“Come", "on,", "I", "think,”", "from", "mutter,", "panel", "and", "very", "completely", "attached"],
+      },
+      {
+        target: "Rather than starting over entirely, I carefully disassemble just that section, correcting my mistake with newfound patience.",
+        jumbled: ["that", "correcting", "section,", "over", "I", "just", "my", "entirely,", "Rather", "starting", "disassemble", "carefully", "than", "with", "newfound", "patience.", "mistake"],
+      },
+      {
+        target: "I feel a surprisingly deep sense of accomplishment over something so seemingly small.",
+        jumbled: ["accomplishment", "feel", "over", "something", "so", "seemingly", "surprisingly", "I", "deep", "small.", "sense", "of", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about fixing a mistake you made while building or making something.",
     mySentenceExample: "I fixed a mistake I made while building a model airplane.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "Renee feels embarrassed rather than proud afterward.", answer: false },
     ],
     buildSentence: [
-      { target: "I notice a slow drip.", jumbled: ["notice", "a", "I", "slow", "drip."] },
-      { target: "The dripping finally stops completely.", jumbled: ["dripping", "finally", "The", "stops", "completely."] },
-      { target: "I research the problem online first.", jumbled: ["research", "the", "I", "problem", "online", "first."] },
-      { target: "I text Diane immediately about it.", jumbled: ["text", "Diane", "I", "immediately", "about", "it."] },
-      { target: "I feel oddly proud of solving this independently.", jumbled: ["I", "feel", "oddly", "proud", "of", "solving", "this", "independently."] },
+      {
+        target: "A week after moving in, I notice a slow, steady drip coming from beneath the kitchen sink, forming an annoying puddle each morning.",
+        jumbled: ["beneath", "an", "a", "after", "each", "notice", "sink,", "forming", "kitchen", "morning.", "in,", "from", "moving", "slow,", "A", "drip", "I", "annoying", "the", "puddle", "steady", "coming", "week"],
+      },
+      {
+        target: "Uncertain whether to call the landlord immediately or attempt fixing it myself, I decide to research the problem online first.",
+        jumbled: ["the", "to", "myself,", "it", "call", "or", "to", "Uncertain", "landlord", "decide", "the", "attempt", "I", "immediately", "problem", "fixing", "research", "first.", "online", "whether"],
+      },
+      {
+        target: "A helpful video tutorial explains the issue looks like a simple loose connection rather than anything seriously broken.",
+        jumbled: ["video", "issue", "broken.", "than", "helpful", "looks", "explains", "A", "a", "connection", "simple", "rather", "loose", "seriously", "the", "anything", "like", "tutorial"],
+      },
+      {
+        target: "Kneeling awkwardly under the sink with a wrench and flashlight, I carefully tighten the connection, feeling oddly proud of solving a real household problem independently.",
+        jumbled: ["flashlight,", "I", "with", "carefully", "real", "the", "connection,", "problem", "of", "proud", "independently.", "Kneeling", "a", "feeling", "under", "a", "sink", "solving", "household", "oddly", "the", "wrench", "awkwardly", "tighten", "and"],
+      },
+      {
+        target: "The dripping finally stops completely, and I text Diane immediately, “Renee: 1, faucet: 0,” practically bragging about my small victory.",
+        jumbled: ["0,”", "finally", "immediately,", "faucet:", "Diane", "my", "1,", "small", "text", "bragging", "I", "The", "and", "“Renee:", "completely,", "about", "practically", "victory.", "stops", "dripping"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about solving a small household problem on your own.",
     mySentenceExample: "I solved a small problem with my computer completely on my own.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Renee feels more alone after meeting Mr. Osei.", answer: false },
     ],
     buildSentence: [
-      { target: "I knock on his door.", jumbled: ["knock", "on", "I", "his", "door."] },
-      { target: "Mr. Osei answers warmly today.", jumbled: ["answers", "warmly", "Mr.", "Osei", "today."] },
-      { target: "He lends me a wrench.", jumbled: ["lends", "me", "He", "a", "wrench."] },
-      { target: "Feel free to knock anytime.", jumbled: ["free", "to", "Feel", "knock", "anytime."] },
-      { target: "I feel genuinely less alone in this new place.", jumbled: ["I", "feel", "genuinely", "less", "alone", "in", "this", "new", "place."] },
+      {
+        target: "I realize I don't actually own many tools yet in my new apartment.",
+        jumbled: ["my", "tools", "own", "actually", "in", "realize", "many", "I", "yet", "don't", "apartment.", "I", "new"],
+      },
+      {
+        target: "Nervously, I knock on my next-door neighbor's door, hoping he might have something I could borrow for a few minutes.",
+        jumbled: ["for", "borrow", "my", "minutes.", "a", "have", "knock", "on", "neighbor's", "could", "I", "might", "next-door", "he", "Nervously,", "few", "something", "hoping", "I", "door,"],
+      },
+      {
+        target: "Mr. Osei answers warmly.",
+        jumbled: ["Mr.", "warmly.", "Osei", "answers"],
+      },
+      {
+        target: "“You must be Renee, from 4B,” he says, introducing himself properly for the first time since I moved in two weeks earlier.",
+        jumbled: ["for", "says,", "himself", "in", "properly", "I", "introducing", "moved", "since", "must", "the", "4B,”", "earlier.", "Renee,", "from", "“You", "weeks", "first", "two", "time", "he", "be"],
+      },
+      {
+        target: "“Feel free to knock anytime you need something,” he says kindly, and I walk back to my apartment feeling genuinely less alone in this new place.",
+        jumbled: ["genuinely", "this", "knock", "feeling", "you", "I", "less", "to", "something,”", "he", "to", "place.", "anytime", "in", "kindly,", "apartment", "and", "alone", "need", "walk", "my", "says", "free", "back", "new", "“Feel"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about meeting a neighbor for the first time.",
     mySentenceExample: "I met my neighbor for the first time when I needed to borrow sugar.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "Renee feels oddly accomplished by this ordinary task.", answer: true },
     ],
     buildSentence: [
-      { target: "I do a proper shop.", jumbled: ["do", "a", "I", "proper", "shop."] },
-      { target: "I feel oddly accomplished today.", jumbled: ["feel", "oddly", "I", "accomplished", "today."] },
-      { target: "I buy modest portions carefully.", jumbled: ["buy", "modest", "I", "portions", "carefully."] },
-      { target: "My total feels surprisingly small this time.", jumbled: ["My", "total", "feels", "surprisingly", "small", "this", "time."] },
-      { target: "This is a strange but satisfying reminder of my new life.", jumbled: ["This", "is", "a", "strange", "but", "satisfying", "reminder", "of", "my", "new", "life."] },
+      {
+        target: "For the first time, I do a proper grocery shop entirely for myself, writing my own list under the heading “Renee's Groceries” instead of relying on my mother's usual list to guide every single purchase decision.",
+        jumbled: ["instead", "guide", "the", "writing", "decision.", "entirely", "grocery", "do", "every", "purchase", "mother's", "single", "on", "time,", "myself,", "heading", "first", "own", "“Renee's", "proper", "the", "relying", "Groceries”", "usual", "for", "list", "my", "list", "to", "under", "For", "I", "my", "a", "of", "shop"],
+      },
+      {
+        target: "Standing in the produce aisle, I realize I genuinely don't know how much of anything a single person actually needs for one week.",
+        jumbled: ["Standing", "week.", "actually", "one", "much", "for", "a", "needs", "anything", "know", "I", "in", "how", "aisle,", "realize", "I", "person", "produce", "the", "single", "genuinely", "don't", "of"],
+      },
+      {
+        target: "I buy modest portions of vegetables, a few basic proteins, and ingredients for two or three simple meals I already know how to cook confidently.",
+        jumbled: ["buy", "confidently.", "I", "proteins,", "know", "three", "meals", "simple", "how", "vegetables,", "basic", "a", "I", "cook", "two", "modest", "portions", "already", "and", "ingredients", "few", "for", "to", "of", "or"],
+      },
+      {
+        target: "At checkout, my total feels surprisingly small compared to family shopping trips, a strange but satisfying reminder of my new independent life.",
+        jumbled: ["my", "checkout,", "reminder", "a", "feels", "family", "total", "to", "trips,", "of", "small", "shopping", "new", "surprisingly", "life.", "strange", "At", "my", "satisfying", "compared", "independent", "but"],
+      },
+      {
+        target: "Carrying bags home alone, I feel oddly accomplished by something so ordinary.",
+        jumbled: ["something", "feel", "home", "oddly", "I", "alone,", "so", "bags", "accomplished", "ordinary.", "by", "Carrying"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about doing an everyday task independently for the first time.",
     mySentenceExample: "I cooked a full dinner independently for the first time last week.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Renee feels no different watching the city lights.", answer: false },
     ],
     buildSentence: [
-      { target: "The apartment falls silent completely.", jumbled: ["apartment", "falls", "The", "silent", "completely."] },
-      { target: "Loneliness creeps in unexpectedly.", jumbled: ["creeps", "in", "Loneliness", "unexpectedly."] },
-      { target: "I slowly feel calmer now.", jumbled: ["slowly", "feel", "I", "calmer", "now."] },
-      { target: "This adjustment period is completely normal.", jumbled: ["This", "adjustment", "period", "is", "completely", "normal."] },
-      { target: "Independence naturally includes both freedom and quiet moments.", jumbled: ["Independence", "naturally", "includes", "both", "freedom", "and", "quiet", "moments."] },
+      {
+        target: "That night, after Diane leaves and the apartment finally falls completely silent, I sit alone on the floor wrapped in a blanket, taking in my new surroundings.",
+        jumbled: ["I", "my", "surroundings.", "Diane", "blanket,", "new", "floor", "the", "on", "apartment", "and", "sit", "night,", "alone", "falls", "in", "finally", "the", "leaves", "That", "after", "a", "wrapped", "taking", "in", "completely", "silent,"],
+      },
+      {
+        target: "The quiet feels strange after years of family noise constantly filling every room of my parents' house.",
+        jumbled: ["parents'", "of", "feels", "my", "strange", "noise", "after", "every", "house.", "years", "room", "of", "quiet", "The", "constantly", "filling", "family"],
+      },
+      {
+        target: "For a brief, honest moment, loneliness creeps in unexpectedly, mixing uncomfortably with the pride I felt just hours earlier during moving day.",
+        jumbled: ["earlier", "I", "moment,", "the", "creeps", "pride", "during", "brief,", "mixing", "unexpectedly,", "with", "loneliness", "uncomfortably", "felt", "day.", "in", "just", "For", "moving", "hours", "a", "honest"],
+      },
+      {
+        target: "“You've got this, Renee,” I whisper, reminding myself this adjustment period is completely normal, and that independence naturally includes both wonderful freedom and occasional quiet moments like this one.",
+        jumbled: ["wonderful", "myself", "normal,", "“You've", "adjustment", "this", "naturally", "independence", "moments", "period", "and", "includes", "reminding", "Renee,”", "this", "I", "one.", "completely", "that", "like", "both", "is", "occasional", "this,", "freedom", "quiet", "whisper,", "and", "got"],
+      },
+      {
+        target: "Watching city lights through my window, I slowly feel calmer.",
+        jumbled: ["calmer.", "city", "through", "lights", "I", "window,", "my", "Watching", "slowly", "feel"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a quiet moment when you felt both proud and a little lonely.",
     mySentenceExample: "I felt both proud and a little lonely on my first night living alone.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Plants sit thriving near the window.", answer: true },
     ],
     buildSentence: [
-      { target: "This feels completely different now.", jumbled: ["feels", "completely", "This", "different", "now."] },
-      { target: "Plants sit thriving near the window.", jumbled: ["Plants", "sit", "thriving", "near", "the", "window."] },
-      { target: "Diane visits often these days.", jumbled: ["visits", "often", "Diane", "these", "days."] },
-      { target: "This genuinely feels like home now.", jumbled: ["This", "genuinely", "feels", "like", "home", "now."] },
-      { target: "Those earlier struggles feel like meaningful steps along this journey.", jumbled: ["Those", "earlier", "struggles", "feel", "like", "meaningful", "steps", "along", "this", "journey."] },
+      {
+        target: "Several weeks later, my apartment finally feels completely different from the empty, echoing space I first walked into with a set of new keys.",
+        jumbled: ["a", "later,", "Several", "I", "apartment", "weeks", "set", "different", "empty,", "feels", "into", "keys.", "first", "from", "completely", "with", "space", "walked", "of", "new", "finally", "the", "echoing", "my"],
+      },
+      {
+        target: "Framed photos hang on the walls, plants sit thriving near the window, and familiar smells from home-cooked meals now fill the kitchen regularly.",
+        jumbled: ["on", "kitchen", "now", "the", "familiar", "and", "sit", "thriving", "the", "home-cooked", "the", "near", "regularly.", "Framed", "plants", "walls,", "meals", "hang", "photos", "smells", "from", "window,", "fill"],
+      },
+      {
+        target: "Diane visits often.",
+        jumbled: ["visits", "Diane", "often."],
+      },
+      {
+        target: "“This is so you, Renee,” she says with a smile, always commenting on how much more like “me” the space feels with each passing week.",
+        jumbled: ["how", "much", "Renee,”", "you,", "is", "“me”", "space", "says", "on", "commenting", "feels", "so", "like", "always", "more", "week.", "she", "smile,", "a", "the", "passing", "each", "with", "with", "“This"],
+      },
+      {
+        target: "Looking back, the overwhelming lease-signing, the wobbly bookshelf, and even that lonely first night all feel like meaningful steps rather than mistakes along this journey.",
+        jumbled: ["along", "bookshelf,", "back,", "the", "first", "the", "lonely", "even", "overwhelming", "all", "Looking", "mistakes", "journey.", "wobbly", "this", "that", "feel", "meaningful", "steps", "like", "night", "lease-signing,", "than", "rather", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a place that grew to feel like home over time.",
     mySentenceExample: "My dorm room grew to feel like home after a few months at university.",

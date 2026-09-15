@@ -43,11 +43,26 @@ export const CHAPTERS = [
       { text: "Ms. Alvarez asks what they will perform.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel excited.", jumbled: ["feel", "excited.", "I"] },
-      { target: "We sign up together.", jumbled: ["sign", "up", "We", "together."] },
-      { target: "Cody wants to perform.", jumbled: ["wants", "to", "Cody", "perform."] },
-      { target: "We write our names down.", jumbled: ["write", "our", "We", "names", "down."] },
-      { target: "This feels like a big, exciting step.", jumbled: ["feels", "like", "This", "a", "big,", "exciting", "step."] },
+      {
+        target: "This morning, a poster on the wall announces the school talent show.",
+        jumbled: ["talent", "school", "the", "announces", "This", "a", "show.", "morning,", "wall", "on", "the", "poster"],
+      },
+      {
+        target: "My best friend Cody looks at me and says, “We should do this together, Zoe!”",
+        jumbled: ["says,", "at", "best", "Zoe!”", "looks", "“We", "together,", "this", "do", "Cody", "and", "friend", "My", "me", "should"],
+      },
+      {
+        target: "We write our names on the sign-up sheet outside the music room.",
+        jumbled: ["room.", "write", "on", "sign-up", "our", "We", "the", "the", "sheet", "music", "outside", "names"],
+      },
+      {
+        target: "Ms. Alvarez, the music teacher, smiles and says she cannot wait to see us.",
+        jumbled: ["us.", "cannot", "she", "see", "music", "the", "smiles", "Alvarez,", "to", "says", "wait", "teacher,", "Ms.", "and"],
+      },
+      {
+        target: "Signing up for the talent show feels like a big, exciting step.",
+        jumbled: ["exciting", "talent", "show", "like", "up", "step.", "for", "big,", "a", "feels", "the", "Signing"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about signing up for something new.",
     mySentenceExample: "I feel excited to try something new.",
@@ -72,11 +87,26 @@ export const CHAPTERS = [
       { text: "Ms. Alvarez says the song fits well.", answer: true },
     ],
     buildSentence: [
-      { target: "We choose a song.", jumbled: ["choose", "a", "We", "song."] },
-      { target: "I want something upbeat.", jumbled: ["want", "something", "I", "upbeat."] },
-      { target: "We feel relieved now.", jumbled: ["feel", "relieved", "We", "now."] },
-      { target: "We agree on a song.", jumbled: ["agree", "on", "We", "a", "song."] },
-      { target: "This song shows off both your voices.", jumbled: ["song", "shows", "This", "off", "both", "your", "voices."] },
+      {
+        target: "Cody and I sit in the music room to choose a song.",
+        jumbled: ["song.", "to", "and", "a", "room", "Cody", "choose", "I", "the", "sit", "music", "in"],
+      },
+      {
+        target: "We look through many songs, trying to find the perfect one.",
+        jumbled: ["perfect", "look", "one.", "the", "We", "to", "many", "through", "trying", "songs,", "find"],
+      },
+      {
+        target: "We agree on a fun, popular song we both love.",
+        jumbled: ["song", "we", "love.", "popular", "agree", "on", "both", "a", "We", "fun,"],
+      },
+      {
+        target: "Ms. Alvarez listens to our choice and says it sounds like a great fit.",
+        jumbled: ["fit.", "Alvarez", "listens", "it", "our", "a", "to", "sounds", "and", "says", "choice", "great", "like", "Ms."],
+      },
+      {
+        target: "We feel relieved to finally have our song chosen.",
+        jumbled: ["to", "song", "We", "chosen.", "finally", "feel", "our", "have", "relieved"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about choosing a song you like.",
     mySentenceExample: "I like songs that are upbeat and fun.",
@@ -101,11 +131,26 @@ export const CHAPTERS = [
       { text: "They feel worse by the end of rehearsal.", answer: false },
     ],
     buildSentence: [
-      { target: "My voice sounds shaky.", jumbled: ["voice", "sounds", "My", "shaky."] },
-      { target: "We feel confident now.", jumbled: ["feel", "confident", "We", "now."] },
-      { target: "Cody stays patient with me.", jumbled: ["stays", "patient", "Cody", "with", "me."] },
-      { target: "We try the song again.", jumbled: ["try", "the", "We", "song", "again."] },
-      { target: "This is not perfect, but it is a good beginning.", jumbled: ["is", "not", "This", "perfect,", "but", "it", "is", "a", "good", "beginning."] },
+      {
+        target: "Our first rehearsal happens in the empty auditorium after school.",
+        jumbled: ["the", "empty", "rehearsal", "auditorium", "first", "Our", "in", "school.", "after", "happens"],
+      },
+      {
+        target: "Cody stays patient and reminds me gently when I lose my place.",
+        jumbled: ["stays", "gently", "my", "and", "reminds", "me", "when", "patient", "place.", "I", "lose", "Cody"],
+      },
+      {
+        target: "“It's just the first try, Zoe, we'll get better,” Cody says encouragingly.",
+        jumbled: ["Cody", "better,”", "just", "the", "“It's", "we'll", "encouragingly.", "Zoe,", "says", "get", "first", "try,"],
+      },
+      {
+        target: "She tells us to relax our shoulders and breathe before singing.",
+        jumbled: ["breathe", "She", "shoulders", "to", "and", "our", "before", "singing.", "relax", "tells", "us"],
+      },
+      {
+        target: "By the end of rehearsal, we both feel more confident about our song.",
+        jumbled: ["rehearsal,", "confident", "both", "By", "the", "song.", "we", "feel", "about", "of", "our", "end", "more"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing something.",
     mySentenceExample: "I practice a lot before a performance.",
@@ -130,11 +175,26 @@ export const CHAPTERS = [
       { text: "Zoe decides to focus on having fun.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel worried tonight.", jumbled: ["feel", "worried", "I", "tonight."] },
-      { target: "I cannot sleep well.", jumbled: ["cannot", "sleep", "I", "well."] },
-      { target: "Cody gets scared too.", jumbled: ["gets", "scared", "Cody", "too."] },
-      { target: "I feel less alone now.", jumbled: ["feel", "less", "I", "alone", "now."] },
-      { target: "Stage fright means you care about doing well.", jumbled: ["Stage", "fright", "means", "you", "care", "about", "doing", "well."] },
+      {
+        target: "The night before our second rehearsal, I feel a wave of worry.",
+        jumbled: ["a", "I", "second", "feel", "worry.", "wave", "The", "our", "rehearsal,", "of", "before", "night"],
+      },
+      {
+        target: "What if I forget the words in front of the whole school?",
+        jumbled: ["school?", "if", "What", "whole", "of", "front", "forget", "the", "the", "in", "words", "I"],
+      },
+      {
+        target: "“I get scared too, Zoe, but we can be scared together,” Cody says kindly.",
+        jumbled: ["“I", "Zoe,", "we", "can", "but", "scared", "get", "together,”", "says", "be", "scared", "too,", "Cody", "kindly."],
+      },
+      {
+        target: "Ms. Alvarez tells us that even famous singers feel nervous sometimes.",
+        jumbled: ["sometimes.", "Ms.", "famous", "singers", "us", "even", "nervous", "feel", "that", "tells", "Alvarez"],
+      },
+      {
+        target: "I decide to focus on having fun instead of being perfect.",
+        jumbled: ["focus", "being", "of", "I", "on", "decide", "fun", "perfect.", "instead", "having", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling nervous before something important.",
     mySentenceExample: "I feel nervous before a big performance.",
@@ -159,11 +219,26 @@ export const CHAPTERS = [
       { text: "They know the song by heart by the end of the week.", answer: true },
     ],
     buildSentence: [
-      { target: "We practice every day.", jumbled: ["practice", "every", "We", "day."] },
-      { target: "We laugh a lot together.", jumbled: ["laugh", "a", "We", "lot", "together."] },
-      { target: "We know the song now.", jumbled: ["know", "the", "We", "song", "now."] },
-      { target: "His sister claps for us.", jumbled: ["sister", "claps", "His", "for", "us."] },
-      { target: "Practicing with a friend makes everything easier.", jumbled: ["Practicing", "with", "a", "friend", "makes", "everything", "easier."] },
+      {
+        target: "Every day after school, Cody and I practice our song together.",
+        jumbled: ["song", "I", "school,", "and", "together.", "practice", "Every", "day", "after", "our", "Cody"],
+      },
+      {
+        target: "Cody's little sister watches us and claps, shouting, “Go, Zoe and Cody!” after every practice session.",
+        jumbled: ["shouting,", "watches", "and", "practice", "little", "sister", "Cody!”", "after", "claps,", "“Go,", "and", "every", "Zoe", "session.", "us", "Cody's"],
+      },
+      {
+        target: "We work on hitting the high notes and staying together in rhythm.",
+        jumbled: ["work", "We", "together", "high", "in", "the", "on", "staying", "and", "hitting", "notes", "rhythm."],
+      },
+      {
+        target: "Other days, we focus completely and get through the whole song perfectly.",
+        jumbled: ["get", "focus", "days,", "the", "we", "Other", "and", "through", "song", "whole", "completely", "perfectly."],
+      },
+      {
+        target: "By the end of the week, we know the song by heart.",
+        jumbled: ["by", "end", "heart.", "song", "the", "week,", "the", "By", "of", "we", "know", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing with a friend.",
     mySentenceExample: "I practice better with a good friend.",
@@ -188,11 +263,26 @@ export const CHAPTERS = [
       { text: "Mom sews a button on the new outfit.", answer: true },
     ],
     buildSentence: [
-      { target: "The zipper is broken.", jumbled: ["zipper", "is", "The", "broken."] },
-      { target: "Mom helps me today.", jumbled: ["helps", "me", "Mom", "today."] },
-      { target: "I feel a little panic.", jumbled: ["feel", "a", "I", "little", "panic."] },
-      { target: "We find another outfit.", jumbled: ["find", "another", "We", "outfit."] },
-      { target: "A small problem does not ruin the show.", jumbled: ["small", "problem", "A", "does", "not", "ruin", "the", "show."] },
+      {
+        target: "Two days before the show, I try on my performance outfit at home.",
+        jumbled: ["days", "show,", "performance", "outfit", "try", "before", "the", "I", "Two", "at", "my", "on", "home."],
+      },
+      {
+        target: "To my surprise, the zipper on my favorite dress is broken!",
+        jumbled: ["To", "favorite", "dress", "broken!", "zipper", "my", "on", "the", "my", "is", "surprise,"],
+      },
+      {
+        target: "My mom offers to help me find a quick solution to the problem.",
+        jumbled: ["to", "find", "offers", "solution", "My", "to", "problem.", "the", "me", "mom", "help", "quick", "a"],
+      },
+      {
+        target: "Mom sews a small button on the new outfit to make it special.",
+        jumbled: ["special.", "the", "make", "on", "it", "a", "outfit", "button", "new", "to", "sews", "Mom", "small"],
+      },
+      {
+        target: "“Problem solved, and you look great too, Zoe,” Mom says with a proud smile.",
+        jumbled: ["look", "and", "you", "smile.", "too,", "solved,", "a", "“Problem", "says", "Mom", "Zoe,”", "proud", "great", "with"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about solving a small problem.",
     mySentenceExample: "I solve small problems with help from my family.",
@@ -217,11 +307,26 @@ export const CHAPTERS = [
       { text: "They feel excited for tomorrow.", answer: true },
     ],
     buildSentence: [
-      { target: "My hands shake slightly.", jumbled: ["hands", "shake", "My", "slightly."] },
-      { target: "We feel ready now.", jumbled: ["feel", "ready", "We", "now."] },
-      { target: "We sing together well.", jumbled: ["sing", "together", "We", "well."] },
-      { target: "Cody gives me a nod.", jumbled: ["gives", "me", "Cody", "a", "nod."] },
-      { target: "That was wonderful, you two are ready.", jumbled: ["was", "wonderful,", "That", "you", "two", "are", "ready."] },
+      {
+        target: "The day before the show, we have our full dress rehearsal on stage.",
+        jumbled: ["dress", "full", "on", "stage.", "show,", "The", "have", "our", "we", "before", "the", "day", "rehearsal"],
+      },
+      {
+        target: "My hands shake a little as the microphone turns on for us.",
+        jumbled: ["the", "on", "a", "for", "as", "hands", "us.", "little", "shake", "microphone", "My", "turns"],
+      },
+      {
+        target: "Cody gives me an encouraging nod, and we begin singing together.",
+        jumbled: ["we", "me", "together.", "begin", "encouraging", "nod,", "an", "Cody", "gives", "and", "singing"],
+      },
+      {
+        target: "“That was wonderful, Zoe and Cody, you two are ready,” she says when we finish.",
+        jumbled: ["finish.", "Cody,", "she", "says", "wonderful,", "“That", "when", "Zoe", "was", "we", "ready,”", "two", "you", "and", "are"],
+      },
+      {
+        target: "We walk off stage feeling excited and ready for tomorrow's show.",
+        jumbled: ["tomorrow's", "walk", "show.", "off", "ready", "feeling", "We", "for", "and", "stage", "excited"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a rehearsal or practice run.",
     mySentenceExample: "I feel more confident after a rehearsal.",
@@ -246,11 +351,26 @@ export const CHAPTERS = [
       { text: "Zoe falls asleep feeling ready.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel many emotions.", jumbled: ["feel", "many", "I", "emotions."] },
-      { target: "Cody texts me tonight.", jumbled: ["texts", "me", "Cody", "tonight."] },
-      { target: "I feel ready now.", jumbled: ["feel", "ready", "I", "now."] },
-      { target: "I review the lyrics quietly.", jumbled: ["review", "the", "I", "lyrics", "quietly."] },
-      { target: "Mom says to just have fun.", jumbled: ["says", "to", "Mom", "just", "have", "fun."] },
+      {
+        target: "The night before the show, I lie in bed feeling a mix of emotions.",
+        jumbled: ["a", "bed", "show,", "of", "emotions.", "feeling", "in", "I", "before", "lie", "The", "the", "night", "mix"],
+      },
+      {
+        target: "I feel excited, nervous, and proud all at the same time.",
+        jumbled: ["at", "all", "I", "same", "proud", "excited,", "nervous,", "feel", "the", "time.", "and"],
+      },
+      {
+        target: "I smile and text back, “I can't wait to sing with you.”",
+        jumbled: ["wait", "sing", "text", "you.”", "to", "can't", "“I", "with", "and", "smile", "I", "back,"],
+      },
+      {
+        target: "I go over the song lyrics quietly one more time in my head.",
+        jumbled: ["head.", "lyrics", "one", "I", "time", "go", "my", "song", "over", "the", "more", "quietly", "in"],
+      },
+      {
+        target: "“Just have fun up there, that's all that matters,” she says softly.",
+        jumbled: ["all", "up", "says", "that's", "matters,”", "“Just", "have", "she", "that", "there,", "fun", "softly."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about the night before something important.",
     mySentenceExample: "I feel nervous the night before a big event.",
@@ -275,11 +395,26 @@ export const CHAPTERS = [
       { text: "The audience claps and cheers.", answer: true },
     ],
     buildSentence: [
-      { target: "My heart pounds fast.", jumbled: ["heart", "pounds", "My", "fast."] },
-      { target: "We walk onto stage.", jumbled: ["walk", "onto", "We", "stage."] },
-      { target: "We sing confidently together.", jumbled: ["sing", "confidently", "We", "together."] },
-      { target: "The audience claps loudly.", jumbled: ["audience", "claps", "The", "loudly."] },
-      { target: "I will never forget this moment.", jumbled: ["will", "never", "I", "forget", "this", "moment."] },
+      {
+        target: "The auditorium is full of students, teachers, and excited parents tonight.",
+        jumbled: ["parents", "auditorium", "of", "full", "The", "tonight.", "excited", "students,", "teachers,", "is", "and"],
+      },
+      {
+        target: "Backstage, my heart pounds as we wait for our turn to perform.",
+        jumbled: ["perform.", "my", "to", "as", "turn", "we", "Backstage,", "our", "pounds", "wait", "heart", "for"],
+      },
+      {
+        target: "Our names are called, and we walk onto the bright, lit stage.",
+        jumbled: ["onto", "the", "Our", "called,", "bright,", "lit", "walk", "and", "stage.", "names", "we", "are"],
+      },
+      {
+        target: "My nervousness disappears as soon as I hear Cody's voice beside mine.",
+        jumbled: ["beside", "hear", "soon", "nervousness", "as", "voice", "as", "My", "disappears", "I", "Cody's", "mine."],
+      },
+      {
+        target: "Standing on that stage with Cody is a moment I will never forget.",
+        jumbled: ["a", "Standing", "stage", "forget.", "I", "is", "will", "moment", "Cody", "on", "never", "that", "with"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about performing in front of others.",
     mySentenceExample: "I feel proud after performing on stage.",
@@ -304,11 +439,26 @@ export const CHAPTERS = [
       { text: "Zoe says facing her fear was the real victory.", answer: true },
     ],
     buildSentence: [
-      { target: "We did it together.", jumbled: ["did", "it", "We", "together."] },
-      { target: "We hug each other.", jumbled: ["hug", "each", "We", "other."] },
-      { target: "Ms. Alvarez congratulates us.", jumbled: ["Alvarez", "congratulates", "Ms.", "us."] },
-      { target: "My mom gives me a hug.", jumbled: ["mom", "gives", "My", "me", "a", "hug."] },
-      { target: "Facing my fear was the real victory.", jumbled: ["Facing", "my", "fear", "was", "the", "real", "victory."] },
+      {
+        target: "Cody and I hug each other with huge smiles.",
+        jumbled: ["huge", "I", "other", "smiles.", "Cody", "each", "with", "and", "hug"],
+      },
+      {
+        target: "“We actually did it!” I say, still feeling the excitement in my chest.",
+        jumbled: ["“We", "still", "feeling", "my", "the", "did", "it!”", "say,", "excitement", "I", "actually", "in", "chest."],
+      },
+      {
+        target: "My parents find me in the crowd and give me a big, proud hug.",
+        jumbled: ["find", "proud", "big,", "the", "crowd", "give", "me", "and", "in", "My", "a", "hug.", "parents", "me"],
+      },
+      {
+        target: "We did not win first place, but that does not matter to me.",
+        jumbled: ["does", "me.", "not", "first", "to", "did", "that", "We", "place,", "win", "not", "but", "matter"],
+      },
+      {
+        target: "Our first talent show together is a memory I will always treasure.",
+        jumbled: ["a", "first", "is", "together", "I", "Our", "talent", "treasure.", "memory", "will", "always", "show"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about overcoming a fear.",
     mySentenceExample: "I feel proud when I face my fears.",

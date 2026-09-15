@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "They spend the evening replaying the band's songs.", answer: true },
     ],
     buildSentence: [
-      { target: "This is actually happening.", jumbled: ["actually", "happening.", "This", "is"] },
-      { target: "Naomi bursts into my room.", jumbled: ["bursts", "into", "Naomi", "my", "room."] },
-      { target: "I stare in disbelief today.", jumbled: ["stare", "in", "I", "disbelief", "today."] },
-      { target: "We memorized every lyric together.", jumbled: ["memorized", "every", "We", "lyric", "together."] },
-      { target: "We can't stop replaying their songs all evening.", jumbled: ["can't", "stop", "We", "replaying", "their", "songs", "all", "evening."] },
+      {
+        target: "Naomi bursts into my room waving her phone frantically.",
+        jumbled: ["her", "frantically.", "phone", "Naomi", "room", "into", "my", "bursts", "waving"],
+      },
+      {
+        target: "“Harper, I just bought us tickets to see them live!” she practically screams.",
+        jumbled: ["she", "“Harper,", "live!”", "us", "I", "tickets", "just", "practically", "screams.", "to", "see", "them", "bought"],
+      },
+      {
+        target: "I stare at the confirmation screen in disbelief, unable to process that we're actually going to see them perform in person next month.",
+        jumbled: ["unable", "next", "in", "in", "screen", "month.", "actually", "process", "that", "to", "the", "at", "I", "perform", "see", "going", "we're", "person", "confirmation", "to", "stare", "them", "disbelief,"],
+      },
+      {
+        target: "We have listened to this band's music together since middle school, memorizing every lyric during countless sleepovers and long bus rides.",
+        jumbled: ["middle", "this", "lyric", "during", "sleepovers", "memorizing", "every", "We", "have", "since", "band's", "rides.", "together", "listened", "long", "school,", "bus", "and", "to", "countless", "music"],
+      },
+      {
+        target: "For the rest of the evening, we can't stop replaying their songs, imagining what the actual concert will feel like.",
+        jumbled: ["concert", "actual", "replaying", "For", "evening,", "the", "stop", "rest", "will", "we", "feel", "of", "the", "what", "can't", "imagining", "the", "their", "songs,", "like."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about exciting news someone shared with you.",
     mySentenceExample: "My friend shared exciting news about winning a school award.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Harper feels no responsibility about this at all.", answer: false },
     ],
     buildSentence: [
-      { target: "Mom finally agrees today.", jumbled: ["finally", "agrees", "Mom", "today."] },
-      { target: "Relief floods through me.", jumbled: ["floods", "through", "Relief", "me."] },
-      { target: "I promise to text updates.", jumbled: ["promise", "to", "I", "text", "updates."] },
-      { target: "Her forehead creases with worry.", jumbled: ["creases", "with", "Her", "forehead", "worry."] },
-      { target: "I feel a new sense of responsibility.", jumbled: ["feel", "a", "I", "new", "sense", "of", "responsibility."] },
+      {
+        target: "Convincing Mom to let us attend without an adult chaperone turns out to be far more difficult than actually buying the tickets themselves.",
+        jumbled: ["Mom", "out", "to", "tickets", "the", "turns", "buying", "without", "actually", "themselves.", "be", "attend", "more", "adult", "Convincing", "far", "than", "chaperone", "let", "difficult", "an", "us", "to"],
+      },
+      {
+        target: "“You've never gone anywhere that crowded without me, Harper,” she says, her forehead creasing with obvious worry as I explain our plan.",
+        jumbled: ["Harper,”", "her", "says,", "as", "creasing", "“You've", "plan.", "she", "worry", "me,", "I", "our", "that", "forehead", "obvious", "without", "with", "gone", "explain", "never", "crowded", "anywhere"],
+      },
+      {
+        target: "I promise repeatedly to text updates throughout the night and establish a clear, reliable meeting point for afterward.",
+        jumbled: ["for", "throughout", "to", "repeatedly", "afterward.", "I", "updates", "reliable", "meeting", "a", "promise", "establish", "point", "clear,", "night", "text", "and", "the"],
+      },
+      {
+        target: "Mom finally agrees, though her conditions include a strict curfew and constant phone communication.",
+        jumbled: ["finally", "though", "communication.", "and", "curfew", "Mom", "constant", "her", "strict", "agrees,", "conditions", "include", "phone", "a"],
+      },
+      {
+        target: "Walking away, relief floods through me, mixed with a new sense of responsibility I hadn't quite expected to feel.",
+        jumbled: ["Walking", "to", "mixed", "with", "a", "I", "away,", "hadn't", "expected", "me,", "quite", "of", "new", "responsibility", "floods", "through", "sense", "relief", "feel."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about convincing a parent to let you do something new.",
     mySentenceExample: "I convinced my dad to let me stay out later for a school event.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Harper feels bored planning the details.", answer: false },
     ],
     buildSentence: [
-      { target: "We choose outfits together.", jumbled: ["choose", "outfits", "We", "together."] },
-      { target: "We mark a meeting spot.", jumbled: ["mark", "a", "We", "meeting", "spot."] },
-      { target: "This reassures Mom considerably.", jumbled: ["reassures", "Mom", "This", "considerably."] },
-      { target: "We plan every logistical detail.", jumbled: ["plan", "every", "We", "logistical", "detail."] },
-      { target: "Our plan feels almost as exciting as the concert.", jumbled: ["Our", "plan", "feels", "almost", "as", "exciting", "as", "the", "concert."] },
+      {
+        target: "With Mom's cautious approval secured, Naomi and I spend the following days meticulously planning every logistical detail of concert night.",
+        jumbled: ["spend", "following", "of", "meticulously", "detail", "Mom's", "night.", "With", "cautious", "I", "days", "concert", "logistical", "every", "planning", "Naomi", "approval", "the", "and", "secured,"],
+      },
+      {
+        target: "We choose outfits together, obsessing over what feels stylish yet practical enough for hours of standing in a crowd.",
+        jumbled: ["outfits", "hours", "of", "stylish", "crowd.", "for", "enough", "choose", "together,", "a", "feels", "yet", "practical", "over", "We", "obsessing", "what", "in", "standing"],
+      },
+      {
+        target: "Naomi's older cousin agrees to drop us off and pick us up afterward, which reassures Mom considerably during our final negotiation.",
+        jumbled: ["reassures", "drop", "us", "our", "considerably", "negotiation.", "Mom", "Naomi's", "which", "off", "up", "cousin", "older", "to", "and", "final", "us", "during", "afterward,", "pick", "agrees"],
+      },
+      {
+        target: "We mark a specific meeting spot near the venue's east entrance in case phones die or we somehow get separated inside.",
+        jumbled: ["entrance", "somehow", "separated", "case", "inside.", "or", "near", "we", "in", "the", "specific", "get", "east", "die", "a", "phones", "meeting", "spot", "venue's", "We", "mark"],
+      },
+      {
+        target: "By the night before, our carefully organized plan feels almost as exciting as the actual concert itself.",
+        jumbled: ["exciting", "organized", "By", "feels", "as", "our", "itself.", "carefully", "almost", "before,", "night", "plan", "as", "the", "actual", "concert", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about planning the details of something exciting.",
     mySentenceExample: "I planned every detail of my birthday outing with my friends.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "The line wraps around an entire city block.", answer: true },
     ],
     buildSentence: [
-      { target: "The line snakes around.", jumbled: ["snakes", "around.", "The", "line"] },
-      { target: "The crowd surges forward.", jumbled: ["surges", "forward.", "The", "crowd"] },
-      { target: "Naomi chats with strangers nearby.", jumbled: ["chats", "with", "Naomi", "strangers", "nearby."] },
-      { target: "The anticipation feels almost tangible.", jumbled: ["feels", "almost", "The", "anticipation", "tangible."] },
-      { target: "An electric current runs through every excited fan.", jumbled: ["An", "electric", "current", "runs", "through", "every", "excited", "fan."] },
+      {
+        target: "We arrive at the venue nearly two hours before doors open, only to find a line already snaking around an entire city block.",
+        jumbled: ["already", "nearly", "venue", "before", "at", "city", "snaking", "open,", "the", "to", "an", "block.", "entire", "hours", "only", "arrive", "a", "line", "find", "We", "doors", "two", "around"],
+      },
+      {
+        target: "Naomi immediately starts chatting with strangers nearby, discovering shared favorite songs and swapping predictions about the setlist enthusiastically.",
+        jumbled: ["Naomi", "and", "the", "predictions", "starts", "chatting", "immediately", "enthusiastically.", "songs", "setlist", "shared", "favorite", "with", "nearby,", "discovering", "swapping", "strangers", "about"],
+      },
+      {
+        target: "The anticipation building throughout the line feels almost tangible, an electric current running through every excited fan waiting alongside us.",
+        jumbled: ["waiting", "line", "excited", "current", "us.", "anticipation", "the", "running", "electric", "feels", "tangible,", "an", "through", "building", "every", "almost", "The", "throughout", "alongside", "fan"],
+      },
+      {
+        target: "Adding to the growing magic of the evening.",
+        jumbled: ["evening.", "to", "the", "growing", "Adding", "the", "of", "magic"],
+      },
+      {
+        target: "“Can you believe this, Harper?” Naomi shouts over the noise as the doors finally open and the crowd surges forward with a collective, overwhelming cheer.",
+        jumbled: ["collective,", "doors", "a", "the", "this,", "you", "surges", "shouts", "cheer.", "open", "finally", "the", "forward", "as", "“Can", "crowd", "over", "the", "Harper?”", "believe", "noise", "and", "with", "overwhelming", "Naomi"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting excitedly for something to begin.",
     mySentenceExample: "I waited excitedly in line for the amusement park to open.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Harper remembers their backup plan.", answer: true },
     ],
     buildSentence: [
-      { target: "Panic rises in my chest.", jumbled: ["rises", "in", "Panic", "my", "chest."] },
-      { target: "I feel genuinely small now.", jumbled: ["feel", "genuinely", "I", "small", "now."] },
-      { target: "My texts refuse to send.", jumbled: ["refuse", "to", "My", "texts", "send."] },
-      { target: "I scan unfamiliar faces desperately.", jumbled: ["scan", "unfamiliar", "I", "faces", "desperately."] },
-      { target: "Remembering our backup plan becomes my only comfort.", jumbled: ["Remembering", "our", "backup", "plan", "becomes", "my", "only", "comfort."] },
+      {
+        target: "Inside the venue, the crowd pushes and shifts constantly, and somewhere in that chaotic movement, Naomi's hand slips from mine completely.",
+        jumbled: ["slips", "chaotic", "Naomi's", "crowd", "the", "and", "Inside", "movement,", "hand", "that", "in", "shifts", "pushes", "from", "mine", "completely.", "constantly,", "the", "and", "venue,", "somewhere"],
+      },
+      {
+        target: "Panic rises quickly in my chest as I spin around, scanning unfamiliar faces desperately for any sign of her familiar denim jacket.",
+        jumbled: ["scanning", "around,", "rises", "spin", "any", "unfamiliar", "as", "quickly", "familiar", "my", "jacket.", "sign", "Panic", "denim", "her", "in", "chest", "of", "for", "desperately", "faces", "I"],
+      },
+      {
+        target: "My phone shows barely any signal in the packed space, and my texts refuse to send no matter how many times I try.",
+        jumbled: ["space,", "phone", "shows", "packed", "in", "signal", "many", "I", "to", "any", "send", "and", "my", "times", "barely", "no", "try.", "refuse", "the", "My", "how", "matter", "texts"],
+      },
+      {
+        target: "For several agonizing minutes, I feel genuinely small and frightened, surrounded by hundreds of strangers in an unfamiliar place without my best friend nearby.",
+        jumbled: ["friend", "agonizing", "nearby.", "genuinely", "For", "of", "by", "minutes,", "my", "best", "I", "feel", "without", "place", "several", "in", "surrounded", "unfamiliar", "hundreds", "small", "an", "strangers", "frightened,", "and"],
+      },
+      {
+        target: "“Think, Harper,” I tell myself, and remembering our backup plan becomes my only source of comfort.",
+        jumbled: ["source", "of", "myself,", "tell", "our", "“Think,", "Harper,”", "and", "I", "becomes", "remembering", "only", "plan", "comfort.", "my", "backup"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you got separated from someone in a crowd.",
     mySentenceExample: "I got separated from my mom once in a busy shopping mall.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Harper feels relief when they reunite.", answer: true },
     ],
     buildSentence: [
-      { target: "I take a deep breath.", jumbled: ["take", "a", "I", "deep", "breath."] },
-      { target: "Relief crashes over me.", jumbled: ["crashes", "over", "Relief", "me."] },
-      { target: "I finally spot Naomi's jacket.", jumbled: ["finally", "spot", "I", "Naomi's", "jacket."] },
-      { target: "My heart still pounds anxiously.", jumbled: ["still", "pounds", "My", "heart", "anxiously."] },
-      { target: "Having an actual plan makes this feel manageable.", jumbled: ["Having", "an", "actual", "plan", "makes", "this", "feel", "manageable."] },
+      {
+        target: "Taking a deep breath, I force myself to remember our carefully planned meeting spot near the east entrance, exactly as we had discussed the night before.",
+        jumbled: ["breath,", "a", "discussed", "had", "I", "exactly", "before.", "Taking", "we", "force", "as", "planned", "carefully", "near", "meeting", "entrance,", "the", "night", "the", "east", "deep", "spot", "remember", "myself", "to", "our"],
+      },
+      {
+        target: "Instead of panicking further, I calmly navigate toward that direction, weaving carefully through the dense, ever-shifting crowd around me.",
+        jumbled: ["through", "calmly", "direction,", "of", "further,", "weaving", "navigate", "I", "panicking", "toward", "around", "me.", "that", "ever-shifting", "dense,", "the", "carefully", "crowd", "Instead"],
+      },
+      {
+        target: "My heart still pounds anxiously, but having an actual plan makes the overwhelming situation feel manageable rather than completely hopeless.",
+        jumbled: ["makes", "manageable", "completely", "anxiously,", "actual", "than", "pounds", "having", "hopeless.", "plan", "situation", "feel", "overwhelming", "the", "still", "heart", "but", "rather", "My", "an"],
+      },
+      {
+        target: "I finally spot Naomi's distinctive denim jacket near the entrance.",
+        jumbled: ["denim", "entrance.", "near", "spot", "Naomi's", "distinctive", "I", "the", "finally", "jacket"],
+      },
+      {
+        target: "Relief crashes over me instantly as we reunite, hugging tightly amid the chaos.",
+        jumbled: ["over", "the", "Relief", "hugging", "reunite,", "we", "as", "amid", "me", "tightly", "crashes", "chaos.", "instantly"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm during a stressful moment.",
     mySentenceExample: "I stayed calm during the fire drill by remembering the exit plan.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Harper feels pure, uncontainable joy.", answer: true },
     ],
     buildSentence: [
-      { target: "The lights suddenly dim.", jumbled: ["suddenly", "dim.", "The", "lights"] },
-      { target: "I scream along happily.", jumbled: ["scream", "along", "I", "happily."] },
-      { target: "We jump together in rhythm.", jumbled: ["jump", "together", "We", "in", "rhythm."] },
-      { target: "Naomi grabs my hand again.", jumbled: ["grabs", "my", "Naomi", "hand", "again."] },
-      { target: "Nothing about this moment feels ordinary at all.", jumbled: ["Nothing", "about", "this", "moment", "feels", "ordinary", "at", "all."] },
+      {
+        target: "Reunited safely, Naomi and I push together toward a better spot just as the lights suddenly dim and the crowd erupts into deafening cheers.",
+        jumbled: ["lights", "crowd", "a", "safely,", "suddenly", "dim", "deafening", "together", "just", "into", "the", "toward", "Naomi", "and", "better", "push", "cheers.", "as", "erupts", "I", "spot", "and", "the", "Reunited"],
+      },
+      {
+        target: "The band walks onstage, and the opening chords of their most popular song send electric energy rippling through the entire crowd instantly.",
+        jumbled: ["chords", "most", "rippling", "song", "the", "energy", "their", "send", "and", "onstage,", "opening", "entire", "crowd", "The", "of", "band", "popular", "electric", "through", "walks", "the", "instantly."],
+      },
+      {
+        target: "I scream along with every lyric, my earlier panic completely forgotten, replaced entirely by pure, uncontainable joy.",
+        jumbled: ["joy.", "every", "by", "scream", "my", "panic", "uncontainable", "lyric,", "entirely", "I", "along", "replaced", "forgotten,", "with", "earlier", "completely", "pure,"],
+      },
+      {
+        target: "“This is it, Harper!” Naomi shouts over the music, grabbing my hand again, this time intentionally, and we jump together in perfect rhythm with thousands of other fans around us.",
+        jumbled: ["around", "hand", "fans", "of", "in", "perfect", "shouts", "again,", "it,", "thousands", "intentionally,", "other", "jump", "we", "my", "and", "rhythm", "grabbing", "this", "music,", "over", "together", "“This", "the", "with", "Naomi", "time", "is", "us.", "Harper!”"],
+      },
+      {
+        target: "Nothing about this moment feels ordinary; everything sparkles with an energy I have never experienced before.",
+        jumbled: ["energy", "sparkles", "have", "with", "I", "experienced", "everything", "feels", "about", "Nothing", "never", "ordinary;", "moment", "before.", "this", "an"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a moment when you felt pure joy.",
     mySentenceExample: "I felt pure joy watching fireworks with my whole family together.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "This moment feels less special than the loud songs.", answer: false },
     ],
     buildSentence: [
-      { target: "The crowd falls silent.", jumbled: ["falls", "silent.", "The", "crowd"] },
-      { target: "We exchange amazed glances.", jumbled: ["exchange", "amazed", "We", "glances."] },
-      { target: "Phones rise around us.", jumbled: ["rise", "around", "Phones", "us."] },
-      { target: "We recognize the song immediately.", jumbled: ["recognize", "the", "We", "song", "immediately."] },
-      { target: "This moment feels even more special than the loud songs.", jumbled: ["This", "moment", "feels", "even", "more", "special", "than", "the", "loud", "songs."] },
+      {
+        target: "Just when we assume the concert has ended, the lead singer walks back out alone, carrying only an acoustic guitar and a single spotlight.",
+        jumbled: ["out", "single", "concert", "we", "carrying", "acoustic", "guitar", "a", "spotlight.", "singer", "the", "has", "an", "alone,", "ended,", "Just", "and", "only", "back", "when", "assume", "the", "lead", "walks"],
+      },
+      {
+        target: "The entire crowd falls into a hushed, reverent silence as she begins an unplugged, stripped-down version of an older, lesser-known song.",
+        jumbled: ["stripped-down", "reverent", "an", "begins", "hushed,", "unplugged,", "entire", "crowd", "lesser-known", "an", "version", "as", "falls", "into", "song.", "a", "of", "she", "older,", "The", "silence"],
+      },
+      {
+        target: "“Harper, that's the song!” Naomi whispers, and we exchange amazed glances, recognizing it immediately from our earliest days as fans years ago.",
+        jumbled: ["earliest", "from", "years", "song!”", "Naomi", "amazed", "ago.", "glances,", "it", "and", "recognizing", "immediately", "fans", "our", "exchange", "“Harper,", "whispers,", "the", "as", "we", "that's", "days"],
+      },
+      {
+        target: "Phones rise around us, their small lights transforming the venue into something resembling a sea of tiny, twinkling stars.",
+        jumbled: ["venue", "around", "a", "tiny,", "sea", "stars.", "twinkling", "something", "resembling", "their", "small", "Phones", "transforming", "lights", "rise", "the", "of", "us,", "into"],
+      },
+      {
+        target: "This unexpected, intimate moment feels even more special than the loud, energetic songs performed earlier.",
+        jumbled: ["songs", "even", "loud,", "more", "than", "intimate", "unexpected,", "energetic", "earlier.", "feels", "This", "moment", "the", "performed", "special"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about an unexpected moment that surprised you.",
     mySentenceExample: "An unexpected surprise party surprised me completely on my last birthday.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Harper disagrees strongly with Naomi's statement.", answer: false },
     ],
     buildSentence: [
-      { target: "My legs ache slightly.", jumbled: ["ache", "slightly.", "My", "legs"] },
-      { target: "Best night ever, honestly.", jumbled: ["night", "ever,", "Best", "honestly."] },
-      { target: "We replay our favorite moments.", jumbled: ["replay", "our", "We", "favorite", "moments."] },
-      { target: "I completely agree without hesitation.", jumbled: ["completely", "agree", "I", "without", "hesitation."] },
-      { target: "Everything about tonight feels perfectly, unforgettably complete.", jumbled: ["Everything", "about", "tonight", "feels", "perfectly,", "unforgettably", "complete."] },
+      {
+        target: "Naomi and I walk together toward our designated pickup spot, ears still ringing pleasantly from hours of loud music.",
+        jumbled: ["still", "of", "our", "together", "pickup", "designated", "pleasantly", "I", "ears", "loud", "from", "ringing", "walk", "spot,", "hours", "and", "toward", "Naomi", "music."],
+      },
+      {
+        target: "My legs ache from standing and jumping for so long, but honestly, I barely notice the discomfort through my lingering excitement.",
+        jumbled: ["long,", "legs", "barely", "so", "excitement.", "jumping", "through", "honestly,", "ache", "discomfort", "and", "standing", "but", "for", "notice", "the", "my", "My", "from", "I", "lingering"],
+      },
+      {
+        target: "We replay our favorite moments from the entire night, especially the surprising acoustic encore that neither of us expected at all.",
+        jumbled: ["night,", "moments", "especially", "entire", "the", "at", "expected", "the", "replay", "that", "encore", "neither", "We", "us", "favorite", "all.", "of", "acoustic", "our", "from", "surprising"],
+      },
+      {
+        target: "“Best night ever, Harper,” Naomi declares confidently, and for once, I completely agree without any hesitation whatsoever.",
+        jumbled: ["without", "“Best", "night", "whatsoever.", "completely", "agree", "declares", "once,", "and", "confidently,", "Harper,”", "any", "ever,", "for", "hesitation", "Naomi", "I"],
+      },
+      {
+        target: "Under the streetlights, walking slowly toward her cousin's waiting car, everything about tonight feels perfectly, unforgettably complete.",
+        jumbled: ["Under", "waiting", "slowly", "feels", "about", "perfectly,", "complete.", "everything", "unforgettably", "cousin's", "walking", "toward", "car,", "the", "tonight", "her", "streetlights,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about walking home after a memorable event.",
     mySentenceExample: "I walked home smiling after a memorable day at the fair.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Mom's trust makes the night feel more meaningful.", answer: true },
     ],
     buildSentence: [
-      { target: "Mom waits up quietly.", jumbled: ["waits", "up", "Mom", "quietly."] },
-      { target: "I tell her everything honestly.", jumbled: ["tell", "her", "I", "everything", "honestly."] },
-      { target: "Sounds like you handled it perfectly.", jumbled: ["like", "you", "Sounds", "handled", "it", "perfectly."] },
-      { target: "Her trust makes tonight feel meaningful.", jumbled: ["trust", "makes", "Her", "tonight", "feel", "meaningful."] },
-      { target: "I already find myself dreaming about the next concert.", jumbled: ["I", "already", "find", "myself", "dreaming", "about", "the", "next", "concert."] },
+      {
+        target: "Back home safely before curfew, I find Mom waiting up in the living room, clearly relieved to see me walk through the door unharmed.",
+        jumbled: ["room,", "the", "to", "waiting", "me", "living", "door", "Mom", "Back", "through", "clearly", "walk", "the", "I", "up", "home", "find", "safely", "unharmed.", "curfew,", "see", "before", "relieved", "in"],
+      },
+      {
+        target: "I tell her everything, from the exciting anticipation of the long line to the terrifying few minutes when Naomi and I got separated inside.",
+        jumbled: ["her", "exciting", "long", "minutes", "inside.", "I", "when", "the", "anticipation", "from", "the", "to", "got", "everything,", "tell", "terrifying", "and", "of", "I", "line", "few", "the", "Naomi", "separated"],
+      },
+      {
+        target: "Instead of worrying more, Mom seems genuinely proud hearing how calmly I handled that scary moment using our backup plan.",
+        jumbled: ["proud", "scary", "seems", "how", "handled", "of", "more,", "genuinely", "using", "that", "calmly", "hearing", "Mom", "plan.", "worrying", "moment", "backup", "our", "Instead", "I"],
+      },
+      {
+        target: "“Sounds like you handled it perfectly, Harper,” she says warmly, and something about her trust makes tonight feel even more meaningful.",
+        jumbled: ["you", "more", "says", "handled", "feel", "about", "it", "“Sounds", "she", "like", "trust", "and", "makes", "her", "even", "tonight", "warmly,", "meaningful.", "perfectly,", "something", "Harper,”"],
+      },
+      {
+        target: "Lying in bed afterward, I already find myself dreaming about the next concert.",
+        jumbled: ["dreaming", "next", "afterward,", "in", "find", "bed", "myself", "already", "concert.", "about", "Lying", "I", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about earning someone's trust after handling something well.",
     mySentenceExample: "I earned my parents' trust after handling a difficult situation calmly.",

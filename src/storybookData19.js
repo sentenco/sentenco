@@ -40,9 +40,26 @@ export const CHAPTERS = [
       { text: "Nora wants to see the lions first.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel excited.", jumbled: ["feel", "excited.", "I"] },
-      { target: "We buy our tickets.", jumbled: ["buy", "our", "We", "tickets."] },
-      { target: "I want to see lions.", jumbled: ["want", "to", "I", "see", "lions."] },
+      {
+        target: "Today, Dad takes my little brother Finn and me to the zoo.",
+        jumbled: ["Dad", "my", "to", "Finn", "Today,", "and", "takes", "brother", "me", "the", "little", "zoo."],
+      },
+      {
+        target: "I feel very excited because I have never been to a zoo before.",
+        jumbled: ["zoo", "have", "I", "I", "excited", "a", "feel", "been", "never", "before.", "because", "very", "to"],
+      },
+      {
+        target: "A map shows us where all the animals live in the zoo.",
+        jumbled: ["where", "map", "live", "zoo.", "shows", "us", "A", "the", "the", "all", "in", "animals"],
+      },
+      {
+        target: "“Which animal do you want to see first, Nora?” Dad asks me.",
+        jumbled: ["Nora?”", "“Which", "me.", "asks", "see", "want", "animal", "do", "to", "Dad", "first,", "you"],
+      },
+      {
+        target: "We walk down the path, ready for a fun day of animals.",
+        jumbled: ["a", "path,", "down", "of", "day", "We", "ready", "walk", "the", "for", "animals.", "fun"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a place you want to visit.",
     mySentenceExample: "I want to visit the zoo.",
@@ -65,9 +82,26 @@ export const CHAPTERS = [
       { text: "Dad says lions roar to talk to other lions.", answer: true },
     ],
     buildSentence: [
-      { target: "The lion roars loudly.", jumbled: ["lion", "roars", "The", "loudly."] },
-      { target: "Finn jumps a little.", jumbled: ["jumps", "a", "Finn", "little."] },
-      { target: "We watch the lion.", jumbled: ["watch", "the", "We", "lion."] },
+      {
+        target: "We walk to the big lion area and look through the glass.",
+        jumbled: ["and", "look", "glass.", "lion", "area", "big", "to", "We", "walk", "through", "the", "the"],
+      },
+      {
+        target: "Suddenly, the lion opens his mouth and lets out a loud roar!",
+        jumbled: ["the", "and", "Suddenly,", "loud", "opens", "roar!", "mouth", "out", "his", "a", "lion", "lets"],
+      },
+      {
+        target: "“I saw you were not scared at all, Nora,” Dad says proudly.",
+        jumbled: ["you", "saw", "proudly.", "says", "Dad", "all,", "were", "at", "not", "Nora,”", "scared", "“I"],
+      },
+      {
+        target: "Dad tells us that lions roar to talk to other lions far away.",
+        jumbled: ["lions", "to", "that", "roar", "away.", "other", "Dad", "to", "tells", "far", "lions", "us", "talk"],
+      },
+      {
+        target: "We watch the lion for a long time before moving on.",
+        jumbled: ["moving", "long", "the", "before", "time", "lion", "for", "on.", "watch", "We", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a wild animal.",
     mySentenceExample: "The lion has a loud roar.",
@@ -90,9 +124,26 @@ export const CHAPTERS = [
       { text: "A baby monkey holds onto its mother.", answer: true },
     ],
     buildSentence: [
-      { target: "The monkeys jump around.", jumbled: ["monkeys", "jump", "The", "around."] },
-      { target: "Finn laughs a lot.", jumbled: ["laughs", "a", "Finn", "lot."] },
-      { target: "The monkeys play games.", jumbled: ["monkeys", "play", "The", "games."] },
+      {
+        target: "Next, we walk over to the monkey area of the zoo.",
+        jumbled: ["to", "the", "zoo.", "we", "walk", "the", "of", "Next,", "monkey", "over", "area"],
+      },
+      {
+        target: "One monkey hangs upside down and makes a funny face at us.",
+        jumbled: ["a", "funny", "makes", "and", "monkey", "face", "hangs", "us.", "down", "upside", "at", "One"],
+      },
+      {
+        target: "A baby monkey holds tightly onto its mother's back.",
+        jumbled: ["monkey", "holds", "mother's", "its", "A", "tightly", "back.", "baby", "onto"],
+      },
+      {
+        target: "“They are so funny!” Finn says, laughing again and again.",
+        jumbled: ["again", "funny!”", "are", "and", "“They", "says,", "so", "laughing", "again.", "Finn"],
+      },
+      {
+        target: "The monkey area is Finn's favorite part of the zoo so far.",
+        jumbled: ["is", "area", "of", "the", "monkey", "The", "favorite", "far.", "part", "Finn's", "zoo", "so"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something funny you saw.",
     mySentenceExample: "I laugh when the monkeys play.",
@@ -115,9 +166,26 @@ export const CHAPTERS = [
       { text: "Nora says the tongue feels funny.", answer: true },
     ],
     buildSentence: [
-      { target: "I feed the giraffe.", jumbled: ["feed", "the", "I", "giraffe."] },
-      { target: "Its tongue feels funny.", jumbled: ["tongue", "feels", "Its", "funny."] },
-      { target: "I want to feed them again.", jumbled: ["want", "to", "I", "feed", "them", "again."] },
+      {
+        target: "At the giraffe area, a zookeeper gives us small leaves to feed them.",
+        jumbled: ["us", "to", "giraffe", "At", "leaves", "feed", "gives", "the", "area,", "small", "zookeeper", "them.", "a"],
+      },
+      {
+        target: "“Hold the leaf up high, Nora, and the giraffe will reach it,” she says.",
+        jumbled: ["will", "“Hold", "leaf", "up", "the", "giraffe", "Nora,", "reach", "she", "says.", "the", "it,”", "and", "high,"],
+      },
+      {
+        target: "I hold the leaf up, and the giraffe's long tongue takes it softly.",
+        jumbled: ["takes", "the", "the", "leaf", "I", "giraffe's", "tongue", "it", "softly.", "and", "up,", "long", "hold"],
+      },
+      {
+        target: "The giraffe's neck is much taller than I ever imagined.",
+        jumbled: ["much", "taller", "imagined.", "I", "than", "The", "is", "giraffe's", "neck", "ever"],
+      },
+      {
+        target: "Feeding a real giraffe is the most exciting thing today.",
+        jumbled: ["giraffe", "Feeding", "most", "real", "is", "today.", "thing", "exciting", "a", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeding an animal.",
     mySentenceExample: "I like to feed the giraffes.",
@@ -140,9 +208,26 @@ export const CHAPTERS = [
       { text: "The elephant flaps its ears.", answer: true },
     ],
     buildSentence: [
-      { target: "The elephant is sleeping.", jumbled: ["elephant", "is", "The", "sleeping."] },
-      { target: "We watch quietly.", jumbled: ["watch", "quietly.", "We"] },
-      { target: "I feel amazed.", jumbled: ["feel", "amazed.", "I"] },
+      {
+        target: "We walk to the biggest area in the whole zoo, the elephants.",
+        jumbled: ["to", "walk", "zoo,", "area", "the", "the", "elephants.", "the", "We", "biggest", "in", "whole"],
+      },
+      {
+        target: "A huge, gray elephant stands quietly under a big shady tree.",
+        jumbled: ["under", "a", "quietly", "stands", "shady", "tree.", "gray", "elephant", "big", "huge,", "A"],
+      },
+      {
+        target: "“I think the elephant is sleeping, Nora,” Dad says with a smile.",
+        jumbled: ["a", "with", "sleeping,", "says", "is", "smile.", "“I", "elephant", "Dad", "Nora,”", "the", "think"],
+      },
+      {
+        target: "Its long trunk swings gently from side to side in the breeze.",
+        jumbled: ["to", "gently", "long", "from", "swings", "breeze.", "in", "trunk", "Its", "the", "side", "side"],
+      },
+      {
+        target: "The elephant opens its eyes and looks at us.",
+        jumbled: ["eyes", "opens", "elephant", "its", "looks", "and", "us.", "The", "at"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a big animal.",
     mySentenceExample: "The elephant is very big and gray.",
@@ -165,9 +250,26 @@ export const CHAPTERS = [
       { text: "The peacock's feathers help Finn feel braver.", answer: true },
     ],
     buildSentence: [
-      { target: "Finn feels scared.", jumbled: ["feels", "scared.", "Finn"] },
-      { target: "I hold Finn's hand.", jumbled: ["hold", "Finn's", "I", "hand."] },
-      { target: "Finn feels braver now.", jumbled: ["feels", "braver", "Finn", "now."] },
+      {
+        target: "Near the bird area, a large peacock suddenly makes a loud, strange sound.",
+        jumbled: ["suddenly", "large", "strange", "area,", "makes", "peacock", "bird", "a", "the", "loud,", "Near", "sound.", "a"],
+      },
+      {
+        target: "“It's okay, Finn, that is just how peacocks talk,” Dad says gently.",
+        jumbled: ["gently.", "Finn,", "talk,”", "“It's", "Dad", "says", "peacocks", "just", "okay,", "is", "that", "how"],
+      },
+      {
+        target: "“Good thinking, Nora,” Dad says, as I hold Finn's hand and say, “Look, its feathers are so pretty.”",
+        jumbled: ["as", "are", "its", "Nora,”", "thinking,", "pretty.”", "“Good", "and", "Finn's", "so", "I", "says,", "say,", "hold", "feathers", "hand", "Dad", "“Look,"],
+      },
+      {
+        target: "Finn slowly looks up and sees the peacock's colorful blue and green tail.",
+        jumbled: ["and", "Finn", "up", "the", "colorful", "peacock's", "blue", "and", "sees", "green", "looks", "tail.", "slowly"],
+      },
+      {
+        target: "“It's pretty, but still loud,” Finn says, feeling braver now.",
+        jumbled: ["now.", "braver", "Finn", "“It's", "but", "still", "feeling", "pretty,", "says,", "loud,”"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling scared and then feeling better.",
     mySentenceExample: "I feel scared, but then I feel better.",
@@ -190,9 +292,26 @@ export const CHAPTERS = [
       { text: "A baby penguin follows its mother.", answer: true },
     ],
     buildSentence: [
-      { target: "The penguins swim fast.", jumbled: ["penguins", "swim", "The", "fast."] },
-      { target: "It feels cold inside.", jumbled: ["feels", "cold", "It", "inside."] },
-      { target: "The penguins slide on ice.", jumbled: ["penguins", "slide", "The", "on", "ice."] },
+      {
+        target: "Inside a cool, icy building, we find the penguin area.",
+        jumbled: ["a", "building,", "find", "Inside", "cool,", "icy", "we", "area.", "the", "penguin"],
+      },
+      {
+        target: "“They swim like little rockets!” I say, laughing at how quick they are.",
+        jumbled: ["laughing", "little", "like", "at", "they", "quick", "rockets!”", "how", "are.", "“They", "say,", "I", "swim"],
+      },
+      {
+        target: "Finn presses his hand against the cold glass to feel the chill.",
+        jumbled: ["chill.", "the", "presses", "hand", "to", "cold", "the", "his", "feel", "Finn", "glass", "against"],
+      },
+      {
+        target: "We watch the penguins slide on their bellies down a small hill.",
+        jumbled: ["a", "the", "watch", "small", "bellies", "on", "penguins", "down", "hill.", "their", "We", "slide"],
+      },
+      {
+        target: "The penguin house is cold, but it is so much fun.",
+        jumbled: ["fun.", "much", "it", "is", "cold,", "The", "but", "penguin", "so", "is", "house"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about penguins or cold places.",
     mySentenceExample: "Penguins live in cold places.",
@@ -215,9 +334,26 @@ export const CHAPTERS = [
       { text: "A squirrel comes close during lunch.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel hungry.", jumbled: ["feel", "hungry.", "I"] },
-      { target: "We eat our lunch.", jumbled: ["eat", "our", "We", "lunch."] },
-      { target: "A squirrel comes close.", jumbled: ["comes", "close.", "A", "squirrel"] },
+      {
+        target: "At noon, we find a shady table for a picnic lunch.",
+        jumbled: ["lunch.", "table", "for", "a", "we", "picnic", "find", "noon,", "shady", "At", "a"],
+      },
+      {
+        target: "“Here you go, Nora,” he says, handing me a sandwich.",
+        jumbled: ["Nora,”", "go,", "“Here", "says,", "sandwich.", "he", "you", "a", "handing", "me"],
+      },
+      {
+        target: "Finn shares his cookies with me, and I share my grapes with him.",
+        jumbled: ["Finn", "I", "shares", "him.", "me,", "share", "my", "with", "with", "his", "cookies", "grapes", "and"],
+      },
+      {
+        target: "A friendly squirrel comes close, hoping for a small snack too.",
+        jumbled: ["A", "too.", "small", "a", "squirrel", "for", "snack", "friendly", "hoping", "close,", "comes"],
+      },
+      {
+        target: "A picnic at the zoo makes the day even more special.",
+        jumbled: ["at", "the", "picnic", "special.", "the", "A", "makes", "day", "zoo", "more", "even"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a picnic.",
     mySentenceExample: "I like to eat a picnic outside.",
@@ -240,9 +376,26 @@ export const CHAPTERS = [
       { text: "A blue butterfly lands on Finn's finger.", answer: true },
     ],
     buildSentence: [
-      { target: "Butterflies fly around us.", jumbled: ["fly", "around", "Butterflies", "us."] },
-      { target: "One lands on my shoulder.", jumbled: ["lands", "on", "One", "my", "shoulder."] },
-      { target: "We smile with wonder.", jumbled: ["smile", "with", "We", "wonder."] },
+      {
+        target: "Our last stop is a warm, colorful butterfly garden.",
+        jumbled: ["last", "warm,", "butterfly", "Our", "stop", "colorful", "is", "garden.", "a"],
+      },
+      {
+        target: "Hundreds of butterflies fly gently all around the flowers.",
+        jumbled: ["fly", "around", "butterflies", "of", "Hundreds", "the", "all", "flowers.", "gently"],
+      },
+      {
+        target: "“Don't move, Nora, it likes you!” Finn whispers with a big smile.",
+        jumbled: ["big", "likes", "you!”", "Nora,", "it", "a", "smile.", "whispers", "with", "“Don't", "Finn", "move,"],
+      },
+      {
+        target: "Finn holds out his hand, hoping a butterfly will land on him too.",
+        jumbled: ["holds", "on", "too.", "land", "out", "hand,", "will", "his", "butterfly", "Finn", "hoping", "him", "a"],
+      },
+      {
+        target: "We both smile with wonder at the beautiful butterflies around us.",
+        jumbled: ["butterflies", "wonder", "with", "at", "We", "beautiful", "both", "us.", "the", "smile", "around"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about butterflies or flowers.",
     mySentenceExample: "I like to watch butterflies fly.",
@@ -265,9 +418,26 @@ export const CHAPTERS = [
       { text: "They talk about their favorite animals.", answer: true },
     ],
     buildSentence: [
-      { target: "It is time to leave.", jumbled: ["is", "time", "It", "to", "leave."] },
-      { target: "I choose a giraffe.", jumbled: ["choose", "a", "I", "giraffe."] },
-      { target: "This was the best day.", jumbled: ["was", "the", "This", "best", "day."] },
+      {
+        target: "It is time to leave the zoo.",
+        jumbled: ["to", "It", "zoo.", "the", "is", "leave", "time"],
+      },
+      {
+        target: "We walk past the lions, monkeys, and giraffes one last time.",
+        jumbled: ["time.", "walk", "lions,", "one", "giraffes", "last", "and", "monkeys,", "the", "We", "past"],
+      },
+      {
+        target: "Dad buys us each a small stuffed animal from the gift shop.",
+        jumbled: ["stuffed", "Dad", "us", "the", "shop.", "each", "a", "from", "buys", "animal", "small", "gift"],
+      },
+      {
+        target: "“This was the best day ever,” I tell Dad with a big smile.",
+        jumbled: ["day", "big", "ever,”", "best", "tell", "a", "I", "the", "“This", "Dad", "was", "smile.", "with"],
+      },
+      {
+        target: "On the way home, Finn and I talk about all our favorite animals.",
+        jumbled: ["Finn", "On", "our", "about", "talk", "the", "animals.", "all", "I", "home,", "way", "favorite", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your favorite animal.",
     mySentenceExample: "My favorite animal is the giraffe.",

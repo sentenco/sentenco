@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "The practical details feel simple and effortless to Theo.", answer: false },
     ],
     buildSentence: [
-      { target: "I started making candles.", jumbled: ["started", "making", "I", "candles."] },
-      { target: "This idea excites me immediately.", jumbled: ["This", "idea", "excites", "me", "immediately."] },
-      { target: "I made them myself, I admit.", jumbled: ["made", "them", "I", "myself,", "I", "admit."] },
-      { target: "The practical details feel overwhelming.", jumbled: ["The", "practical", "details", "feel", "overwhelming."] },
-      { target: "Maybe this hobby could become something more substantial.", jumbled: ["Maybe", "this", "hobby", "could", "become", "something", "more", "substantial."] },
+      {
+        target: "Last month, I started making candles as a hobby, mostly to relax after stressful days at school.",
+        jumbled: ["I", "making", "to", "as", "candles", "days", "hobby,", "a", "Last", "after", "started", "month,", "stressful", "relax", "mostly", "school.", "at"],
+      },
+      {
+        target: "What began as simple experimentation gradually became something I genuinely looked forward to every single evening.",
+        jumbled: ["as", "single", "evening.", "every", "became", "forward", "What", "experimentation", "began", "looked", "gradually", "genuinely", "simple", "to", "something", "I"],
+      },
+      {
+        target: "My friends who saw the finished candles kept asking where I bought them, surprised when I admitted I made them myself.",
+        jumbled: ["myself.", "My", "the", "asking", "candles", "I", "when", "bought", "who", "kept", "surprised", "made", "them", "admitted", "I", "saw", "where", "finished", "them,", "friends", "I"],
+      },
+      {
+        target: "Maybe this hobby could become something more substantial than just a pastime.",
+        jumbled: ["Maybe", "this", "than", "hobby", "become", "more", "pastime.", "a", "could", "substantial", "something", "just"],
+      },
+      {
+        target: "Grandma Rosa, noticing my growing collection, says, “You should sell these at the farmers market, Theo.”",
+        jumbled: ["at", "growing", "says,", "noticing", "the", "Grandma", "sell", "collection,", "“You", "these", "my", "Theo.”", "market,", "farmers", "should", "Rosa,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a hobby that became more serious over time.",
     mySentenceExample: "My hobby of drawing became more serious over time.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Theo appreciates having experienced guidance.", answer: true },
     ],
     buildSentence: [
-      { target: "We calculate exact costs together.", jumbled: ["We", "calculate", "exact", "costs", "together."] },
-      { target: "This feels more complicated now.", jumbled: ["This", "feels", "more", "complicated", "now."] },
-      { target: "I'm surprised how much thought goes into this.", jumbled: ["I'm", "surprised", "how", "much", "thought", "goes", "into", "this."] },
-      { target: "I appreciate having someone experienced guiding me.", jumbled: ["I", "appreciate", "having", "someone", "experienced", "guiding", "me."] },
-      { target: "You need to know your costs before pricing fairly.", jumbled: ["You", "need", "to", "know", "your", "costs", "before", "pricing", "fairly."] },
+      {
+        target: "Grandma Rosa, who ran a small bakery years ago, offers to teach me the basics of running a genuine small business.",
+        jumbled: ["business.", "Rosa,", "bakery", "basics", "years", "small", "a", "offers", "a", "small", "of", "the", "ran", "teach", "me", "ago,", "genuine", "who", "Grandma", "running", "to"],
+      },
+      {
+        target: "We sit together calculating exact costs: wax, wicks, containers, and fragrance oils for each individual candle.",
+        jumbled: ["costs:", "calculating", "sit", "wicks,", "containers,", "oils", "candle.", "for", "together", "fragrance", "We", "exact", "and", "wax,", "each", "individual"],
+      },
+      {
+        target: "“You need to know your costs before you can decide a fair price, Theo,” she explains patiently, walking me through each calculation.",
+        jumbled: ["she", "costs", "each", "can", "need", "a", "before", "Theo,”", "through", "explains", "to", "your", "me", "patiently,", "decide", "“You", "walking", "you", "know", "fair", "calculation.", "price,"],
+      },
+      {
+        target: "I'm surprised how much thought goes into pricing something correctly, beyond simply guessing a reasonable-sounding number.",
+        jumbled: ["reasonable-sounding", "a", "I'm", "into", "much", "beyond", "thought", "number.", "correctly,", "how", "something", "simply", "goes", "surprised", "pricing", "guessing"],
+      },
+      {
+        target: "I appreciate having someone experienced guiding me through it.",
+        jumbled: ["experienced", "guiding", "having", "appreciate", "someone", "I", "through", "it.", "me"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning something practical from an older relative.",
     mySentenceExample: "I learned something practical about budgeting from my grandmother.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "This process required less preparation than expected.", answer: false },
     ],
     buildSentence: [
-      { target: "I experiment with different scents.", jumbled: ["experiment", "with", "I", "different", "scents."] },
-      { target: "I feel genuine nervousness building.", jumbled: ["I", "feel", "genuine", "nervousness", "building."] },
-      { target: "We create small price tags.", jumbled: ["We", "create", "small", "price", "tags."] },
-      { target: "This requires far more preparation than expected.", jumbled: ["This", "requires", "far", "more", "preparation", "than", "expected."] },
-      { target: "If nobody buys anything, I'm unsure how I'll feel.", jumbled: ["If", "nobody", "buys", "anything,", "I'm", "unsure", "how", "I'll", "feel."] },
+      {
+        target: "Over the following two weeks, I spend nearly every evening producing enough candles for my first market appearance.",
+        jumbled: ["every", "I", "evening", "weeks,", "nearly", "the", "following", "for", "Over", "first", "appearance.", "producing", "enough", "my", "candles", "two", "market", "spend"],
+      },
+      {
+        target: "I experiment with different scents, eventually settling on lavender, vanilla, and a fresh pine option for variety.",
+        jumbled: ["fresh", "with", "settling", "pine", "I", "on", "option", "different", "experiment", "lavender,", "a", "for", "variety.", "eventually", "and", "vanilla,", "scents,"],
+      },
+      {
+        target: "Grandma Rosa helps me design a simple handmade sign, and together we create small price tags for each candle.",
+        jumbled: ["sign,", "candle.", "price", "for", "helps", "handmade", "small", "Grandma", "tags", "together", "each", "Rosa", "create", "and", "design", "simple", "a", "we", "me"],
+      },
+      {
+        target: "This whole process requires far more preparation than I originally anticipated when this idea first started.",
+        jumbled: ["far", "I", "anticipated", "more", "started.", "originally", "whole", "process", "this", "than", "when", "This", "idea", "first", "preparation", "requires"],
+      },
+      {
+        target: "I'm honestly unsure how I'll feel about continuing further.",
+        jumbled: ["I'm", "feel", "honestly", "further.", "how", "unsure", "about", "continuing", "I'll"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about preparing carefully for something important.",
     mySentenceExample: "I prepared carefully for my first job interview.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Theo feels nothing when he makes his first sale.", answer: false },
     ],
     buildSentence: [
-      { target: "My hands shake slightly now.", jumbled: ["My", "hands", "shake", "slightly", "now."] },
-      { target: "She becomes my first customer.", jumbled: ["She", "becomes", "my", "first", "customer."] },
-      { target: "The first hour passes slowly today.", jumbled: ["The", "first", "hour", "passes", "slowly", "today."] },
-      { target: "Something inside me shifts hopefully.", jumbled: ["Something", "inside", "me", "shifts", "hopefully."] },
-      { target: "I start doubting whether this idea was realistic.", jumbled: ["I", "start", "doubting", "whether", "this", "idea", "was", "realistic."] },
+      {
+        target: "Saturday morning arrives, and I set up my small table at the farmers market before most vendors have even arrived.",
+        jumbled: ["have", "the", "table", "Saturday", "at", "vendors", "I", "my", "even", "arrived.", "before", "arrives,", "small", "set", "and", "farmers", "morning", "market", "most", "up"],
+      },
+      {
+        target: "My hands shake slightly arranging the candles, adjusting them repeatedly even though they already look perfectly fine.",
+        jumbled: ["My", "they", "already", "hands", "look", "shake", "though", "the", "fine.", "even", "adjusting", "candles,", "them", "repeatedly", "slightly", "arranging", "perfectly"],
+      },
+      {
+        target: "The first hour passes slowly, with people glancing at my table but continuing past without stopping to look closer.",
+        jumbled: ["without", "table", "but", "The", "people", "at", "look", "to", "glancing", "first", "closer.", "continuing", "slowly,", "passes", "my", "hour", "with", "stopping", "past"],
+      },
+      {
+        target: "\"Stay patient, Theo,\" I tell myself, though I start doubting whether this whole idea was genuinely realistic or simply an overly optimistic daydream.",
+        jumbled: ["Theo,\"", "patient,", "realistic", "myself,", "an", "whether", "this", "overly", "I", "optimistic", "daydream.", "tell", "doubting", "was", "genuinely", "though", "\"Stay", "start", "or", "simply", "idea", "I", "whole"],
+      },
+      {
+        target: "Just as discouragement begins settling in, an older woman stops, picks up a lavender candle, and smells it appreciatively.",
+        jumbled: ["a", "Just", "stops,", "begins", "and", "up", "in,", "an", "woman", "discouragement", "lavender", "settling", "appreciatively.", "candle,", "picks", "it", "smells", "older", "as"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about the first success in something new you tried.",
     mySentenceExample: "My first success in painting came after weeks of trying.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Theo feels today was a complete, total failure.", answer: false },
     ],
     buildSentence: [
-      { target: "Discouragement creeps in slowly.", jumbled: ["Discouragement", "creeps", "in", "slowly."] },
-      { target: "I calculate my earnings carefully.", jumbled: ["I", "calculate", "my", "earnings", "carefully."] },
-      { target: "This isn't failure exactly, just a step.", jumbled: ["This", "isn't", "failure", "exactly,", "just", "a", "step."] },
-      { target: "Her bakery struggled significantly during its first months too.", jumbled: ["Her", "bakery", "struggled", "significantly", "during", "its", "first", "months", "too."] },
-      { target: "I wonder if candles simply aren't in high demand here.", jumbled: ["I", "wonder", "if", "candles", "simply", "aren't", "in", "high", "demand", "here."] },
+      {
+        target: "By early afternoon, I've sold only four candles total, far fewer than I had optimistically hoped for today.",
+        jumbled: ["for", "afternoon,", "total,", "had", "I've", "sold", "By", "early", "today.", "far", "four", "only", "candles", "I", "optimistically", "than", "hoped", "fewer"],
+      },
+      {
+        target: "Watching nearby vendors selling produce and baked goods steadily makes me wonder if candles simply aren't in high demand here.",
+        jumbled: ["goods", "wonder", "if", "steadily", "aren't", "baked", "simply", "in", "vendors", "makes", "me", "Watching", "selling", "here.", "produce", "demand", "and", "nearby", "high", "candles"],
+      },
+      {
+        target: "I calculate my earnings against my costs and realize today's profit barely covers the gas money spent driving here.",
+        jumbled: ["here.", "the", "calculate", "earnings", "gas", "money", "my", "today's", "spent", "barely", "my", "I", "realize", "covers", "driving", "and", "costs", "profit", "against"],
+      },
+      {
+        target: "However, I remind myself that Grandma Rosa mentioned her bakery struggled significantly during its first few months too.",
+        jumbled: ["few", "significantly", "However,", "struggled", "Rosa", "that", "bakery", "Grandma", "remind", "its", "first", "myself", "months", "I", "during", "too.", "her", "mentioned"],
+      },
+      {
+        target: "Perhaps today isn't failure exactly, just an uncomfortable, necessary first step in a longer process.",
+        jumbled: ["first", "isn't", "exactly,", "failure", "just", "longer", "step", "an", "process.", "necessary", "Perhaps", "a", "uncomfortable,", "in", "today"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a slow or discouraging start to something new.",
     mySentenceExample: "My first week at a new job had a slow, discouraging start.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Sam's encouragement shifts Theo's mood positively.", answer: true },
     ],
     buildSentence: [
-      { target: "Sam wanders past and stops.", jumbled: ["Sam", "wanders", "past", "and", "stops."] },
-      { target: "We chat for a while.", jumbled: ["We", "chat", "for", "a", "while."] },
-      { target: "This genuinely shifts my mood.", jumbled: ["This", "genuinely", "shifts", "my", "mood."] },
-      { target: "He suggests posting photos online.", jumbled: ["He", "suggests", "posting", "photos", "online."] },
-      { target: "Talking with someone familiar helps ease my awkwardness.", jumbled: ["Talking", "with", "someone", "familiar", "helps", "ease", "my", "awkwardness."] },
+      {
+        target: "Just as I'm considering packing up early, my classmate Sam wanders past and stops, surprised to see me there.",
+        jumbled: ["surprised", "stops,", "to", "wanders", "packing", "early,", "considering", "Sam", "classmate", "past", "me", "and", "I'm", "up", "there.", "my", "as", "Just", "see"],
+      },
+      {
+        target: "“Wait, you made these, Theo? They smell incredible,” he says, picking up the vanilla candle and examining it closely.",
+        jumbled: ["vanilla", "made", "these,", "picking", "Theo?", "They", "candle", "examining", "incredible,”", "smell", "closely.", "up", "and", "it", "the", "“Wait,", "says,", "you", "he"],
+      },
+      {
+        target: "We chat for a while, and he mentions he'd genuinely love to buy one for his mom's upcoming birthday.",
+        jumbled: ["to", "love", "and", "for", "he", "a", "his", "birthday.", "chat", "while,", "mom's", "one", "mentions", "buy", "he'd", "We", "genuinely", "upcoming", "for"],
+      },
+      {
+        target: "Talking with someone familiar, rather than strangers, helps ease some of the awkwardness I'd been feeling all day.",
+        jumbled: ["day.", "with", "feeling", "rather", "I'd", "been", "of", "some", "ease", "awkwardness", "the", "someone", "familiar,", "all", "than", "strangers,", "helps", "Talking"],
+      },
+      {
+        target: "Sam also suggests posting photos online, mentioning that several classmates might be interested if they actually knew this existed.",
+        jumbled: ["if", "might", "that", "posting", "knew", "photos", "they", "interested", "several", "be", "suggests", "this", "Sam", "classmates", "actually", "also", "existed.", "mentioning", "online,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a friend's encouragement that improved a difficult day.",
     mySentenceExample: "My friend's encouragement improved a difficult day at school.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Theo feels this step is insignificant.", answer: false },
     ],
     buildSentence: [
-      { target: "I create a social media account.", jumbled: ["create", "a", "I", "social", "media", "account."] },
-      { target: "Writing captions feels awkward initially.", jumbled: ["Writing", "captions", "feels", "awkward", "initially."] },
-      { target: "This feels surprisingly significant now.", jumbled: ["This", "feels", "surprisingly", "significant", "now."] },
-      { target: "Several classmates comment with genuine interest.", jumbled: ["Several", "classmates", "comment", "with", "genuine", "interest."] },
-      { target: "This opens possibilities I hadn't fully considered before.", jumbled: ["This", "opens", "possibilities", "I", "hadn't", "fully", "considered", "before."] },
+      {
+        target: "That evening, following Sam's suggestion, I create a simple social media account specifically for my small candle business.",
+        jumbled: ["specifically", "my", "That", "account", "I", "social", "candle", "suggestion,", "simple", "a", "Sam's", "media", "create", "evening,", "for", "business.", "following", "small"],
+      },
+      {
+        target: "I photograph each candle carefully, using natural light near my bedroom window for the clearest, most appealing images.",
+        jumbled: ["carefully,", "each", "images.", "light", "window", "appealing", "the", "I", "most", "photograph", "for", "candle", "bedroom", "natural", "my", "clearest,", "near", "using"],
+      },
+      {
+        target: "Writing captions feels awkward initially, though I gradually find a comfortable, genuine voice describing each scent and its inspiration.",
+        jumbled: ["gradually", "though", "and", "inspiration.", "feels", "describing", "genuine", "captions", "voice", "I", "awkward", "find", "Writing", "a", "initially,", "comfortable,", "its", "each", "scent"],
+      },
+      {
+        target: "\"Just try it, Theo,\" I think, and I share the account with a few close friends first, nervous about a wider audience seeing something so personal.",
+        jumbled: ["think,", "share", "try", "wider", "close", "a", "and", "personal.", "I", "it,", "account", "nervous", "friends", "something", "Theo,\"", "a", "\"Just", "audience", "few", "so", "seeing", "the", "I", "first,", "with", "about"],
+      },
+      {
+        target: "Within an hour, several classmates comment, expressing genuine interest and asking questions about pricing and availability.",
+        jumbled: ["comment,", "hour,", "classmates", "asking", "several", "expressing", "Within", "interest", "an", "questions", "and", "pricing", "and", "genuine", "about", "availability."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about trying a new way to share something you made.",
     mySentenceExample: "I tried a new way to share my art by posting it online.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Today feels dramatically different from the first Saturday.", answer: true },
     ],
     buildSentence: [
-      { target: "I return to the market.", jumbled: ["return", "to", "I", "the", "market."] },
-      { target: "This genuinely surprises and delights me.", jumbled: ["This", "genuinely", "surprises", "and", "delights", "me."] },
-      { target: "Grandma Rosa joins me this time.", jumbled: ["Grandma", "Rosa", "joins", "me", "this", "time."] },
-      { target: "Today feels dramatically different from before.", jumbled: ["Today", "feels", "dramatically", "different", "from", "before."] },
-      { target: "I've already sold more than double what I sold before.", jumbled: ["I've", "already", "sold", "more", "than", "double", "what", "I", "sold", "before."] },
+      {
+        target: "Two weeks later, I return to the farmers market with a slightly larger selection and, thanks to social media, a bit more confidence.",
+        jumbled: ["weeks", "social", "farmers", "confidence.", "a", "thanks", "later,", "with", "a", "media,", "to", "to", "more", "I", "Two", "selection", "the", "bit", "market", "larger", "slightly", "return", "and,"],
+      },
+      {
+        target: "Several classmates who saw my posts actually show up specifically to purchase candles, which genuinely surprises and delights me.",
+        jumbled: ["my", "delights", "genuinely", "up", "posts", "Several", "purchase", "actually", "candles,", "and", "who", "to", "classmates", "surprises", "specifically", "show", "saw", "me.", "which"],
+      },
+      {
+        target: "Grandma Rosa joins me this time, helping with sales while offering encouragement whenever conversations with customers feel intimidating.",
+        jumbled: ["encouragement", "this", "sales", "joins", "offering", "feel", "Rosa", "time,", "with", "intimidating.", "conversations", "with", "helping", "Grandma", "me", "customers", "whenever", "while"],
+      },
+      {
+        target: "A regular market vendor nearby compliments my scents, offering small tips about attracting more foot traffic effectively.",
+        jumbled: ["small", "A", "effectively.", "foot", "my", "about", "regular", "market", "more", "scents,", "nearby", "attracting", "vendor", "compliments", "offering", "traffic", "tips"],
+      },
+      {
+        target: "Today feels dramatically different from that discouraging first Saturday just two weeks earlier.",
+        jumbled: ["first", "two", "discouraging", "different", "Saturday", "that", "dramatically", "just", "weeks", "feels", "from", "earlier.", "Today"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing real improvement after trying again.",
     mySentenceExample: "I noticed real improvement in my writing after trying again with feedback.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Theo feels nothing watching his hobby transform.", answer: false },
     ],
     buildSentence: [
-      { target: "We count earnings together tonight.", jumbled: ["We", "count", "earnings", "together", "tonight."] },
-      { target: "This feels remarkably satisfying tonight.", jumbled: ["This", "feels", "remarkably", "satisfying", "tonight."] },
-      { target: "I decide to invest in packaging.", jumbled: ["I", "decide", "to", "invest", "in", "packaging."] },
-      { target: "Sustainable businesses grow gradually, not too quickly.", jumbled: ["Sustainable", "businesses", "grow", "gradually,", "not", "too", "quickly."] },
-      { target: "I set aside a portion for buying more supplies.", jumbled: ["I", "set", "aside", "a", "portion", "for", "buying", "more", "supplies."] },
+      {
+        target: "That evening, Grandma Rosa and I sit down together to count earnings and plan our next practical steps carefully.",
+        jumbled: ["earnings", "Rosa", "next", "and", "carefully.", "our", "I", "evening,", "Grandma", "together", "down", "plan", "practical", "steps", "That", "sit", "count", "and", "to"],
+      },
+      {
+        target: "Following her advice, I set aside a portion specifically for buying more supplies rather than spending everything immediately.",
+        jumbled: ["Following", "supplies", "rather", "aside", "specifically", "a", "her", "immediately.", "than", "buying", "advice,", "set", "I", "everything", "more", "portion", "for", "spending"],
+      },
+      {
+        target: "We create a list of new scents to try, based on customer feedback and requests from the past two markets.",
+        jumbled: ["markets.", "list", "scents", "based", "try,", "create", "two", "customer", "a", "feedback", "from", "on", "and", "We", "to", "the", "past", "of", "new", "requests"],
+      },
+      {
+        target: "I also decide to invest slightly in better packaging, something a customer mentioned might increase perceived value noticeably.",
+        jumbled: ["perceived", "noticeably.", "might", "in", "customer", "invest", "a", "also", "I", "mentioned", "better", "increase", "decide", "slightly", "value", "packaging,", "to", "something"],
+      },
+      {
+        target: "“Sustainable businesses grow gradually, Theo, reinvesting steadily rather than expanding too quickly,” Grandma Rosa reminds me.",
+        jumbled: ["expanding", "too", "grow", "reinvesting", "Grandma", "gradually,", "steadily", "businesses", "reminds", "Rosa", "rather", "quickly,”", "me.", "Theo,", "“Sustainable", "than"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about planning carefully for the future of something you're building.",
     mySentenceExample: "I planned carefully for the future of my small savings.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Theo feels proud of what he has built.", answer: true },
     ],
     buildSentence: [
-      { target: "This has become a regular fixture.", jumbled: ["This", "has", "become", "a", "regular", "fixture."] },
-      { target: "I handle most decisions confidently now.", jumbled: ["I", "handle", "most", "decisions", "confidently", "now."] },
-      { target: "I barely recognize my former self.", jumbled: ["I", "barely", "recognize", "my", "former", "self."] },
-      { target: "Meaningful growth rarely happens instantly.", jumbled: ["Meaningful", "growth", "rarely", "happens", "instantly."] },
-      { target: "It builds slowly through persistence, feedback, and reinvestment.", jumbled: ["It", "builds", "slowly", "through", "persistence,", "feedback,", "and", "reinvestment."] },
+      {
+        target: "Three months later, my small candle stand has become a regular, recognizable fixture at the weekend farmers market.",
+        jumbled: ["a", "fixture", "small", "the", "regular,", "farmers", "weekend", "market.", "months", "has", "later,", "at", "my", "become", "recognizable", "Three", "candle", "stand"],
+      },
+      {
+        target: "I now have several repeat customers who greet me by name, along with a small but steadily growing online following too.",
+        jumbled: ["a", "me", "too.", "who", "by", "several", "have", "online", "repeat", "steadily", "following", "I", "name,", "small", "along", "greet", "customers", "but", "now", "growing", "with"],
+      },
+      {
+        target: "Grandma Rosa still helps occasionally, though I handle most decisions confidently on my own now, something that genuinely surprises me sometimes.",
+        jumbled: ["occasionally,", "that", "own", "decisions", "sometimes.", "Grandma", "handle", "still", "surprises", "my", "Rosa", "on", "something", "helps", "I", "most", "me", "though", "now,", "confidently", "genuinely"],
+      },
+      {
+        target: "This experience taught me that meaningful growth rarely happens instantly; it builds slowly through persistence, feedback, and reinvestment.",
+        jumbled: ["instantly;", "that", "reinvestment.", "builds", "This", "it", "taught", "me", "happens", "persistence,", "and", "feedback,", "through", "slowly", "growth", "experience", "rarely", "meaningful"],
+      },
+      {
+        target: "What started as simple stress relief has genuinely become something I'm authentically proud of building.",
+        jumbled: ["What", "started", "stress", "authentically", "simple", "genuinely", "as", "become", "relief", "building.", "I'm", "of", "has", "something", "proud"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something you built slowly through persistence.",
     mySentenceExample: "I built my confidence slowly through persistence and practice.",

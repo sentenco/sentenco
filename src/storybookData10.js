@@ -46,19 +46,25 @@ export const CHAPTERS = [
       { text: "Riley feels perfectly fine in the morning.", answer: false },
     ],
     buildSentence: [
-      { target: "I drink some water.", jumbled: ["drink", "some", "water.", "I"] },
-      { target: "She smiles at me.", jumbled: ["smiles", "at", "me.", "She"] },
       {
-        target: "Then I decide to visit the small clinic near my apartment.",
-        jumbled: ["the", "apartment.", "I", "decide", "visit", "small", "clinic", "my", "near", "Then", "to"],
+        target: "At first, I sit on my bed and hope I will feel better soon.",
+        jumbled: ["my", "sit", "At", "feel", "first,", "I", "and", "hope", "soon.", "on", "will", "bed", "I", "better"],
       },
       {
-        target: "This morning, I wake up with a sore throat and a heavy head.",
-        jumbled: ["and", "a", "up", "This", "heavy", "sore", "I", "morning,", "throat", "wake", "with", "head.", "a"],
+        target: "“Maybe it will pass, Riley,” I tell myself, but I do not feel any better.",
+        jumbled: ["do", "myself,", "will", "it", "I", "not", "tell", "I", "feel", "but", "any", "pass,", "“Maybe", "better.", "Riley,”"],
       },
       {
-        target: "As I sit in the quiet room, I still feel sick, but I also feel calm because I know help is coming.",
-        jumbled: ["I", "feel", "know", "in", "I", "calm", "because", "sit", "room,", "help", "also", "quiet", "the", "sick,", "but", "As", "coming.", "I", "still", "is", "feel", "I"],
+        target: "I put on a clean shirt, take my bag, and walk slowly down the street.",
+        jumbled: ["street.", "slowly", "I", "walk", "on", "and", "shirt,", "the", "clean", "a", "my", "bag,", "put", "take", "down"],
+      },
+      {
+        target: "She smiles and says, “Good morning, how can I help you?” I tell her, “I have a sore throat, and I do not feel well today.”",
+        jumbled: ["morning,", "throat,", "She", "I", "can", "I", "you?”", "do", "have", "her,", "well", "I", "“Good", "not", "how", "and", "and", "tell", "help", "“I", "smiles", "feel", "says,", "a", "sore", "today.”"],
+      },
+      {
+        target: "I still feel sick, but I also feel calm because I know help is coming.",
+        jumbled: ["because", "I", "I", "I", "know", "also", "calm", "help", "sick,", "coming.", "is", "feel", "feel", "still", "but"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about going to a clinic or doctor.",
@@ -84,19 +90,25 @@ export const CHAPTERS = [
       { text: "Grace refuses to help Riley.", answer: false },
     ],
     buildSentence: [
-      { target: "I write my details.", jumbled: ["write", "my", "details.", "I"] },
-      { target: "This is my first time.", jumbled: ["is", "my", "first", "time.", "This"] },
+      {
+        target: "At the desk, Grace, the kind receptionist, gives me a small white form to fill in.",
+        jumbled: ["in.", "the", "desk,", "form", "fill", "white", "small", "to", "Grace,", "a", "gives", "the", "me", "At", "kind", "receptionist,"],
+      },
       {
         target: "The form asks for my name, my age, and my phone number.",
-        jumbled: ["form", "asks", "The", "my", "for", "name,", "age,", "my", "my", "and", "number.", "phone"],
+        jumbled: ["my", "and", "form", "phone", "age,", "asks", "my", "The", "name,", "for", "number.", "my"],
+      },
+      {
+        target: "Then she asks, “Is this your first visit to our clinic?” I say, “Yes, this is my first time here today.”",
+        jumbled: ["this", "say,", "I", "this", "first", "today.”", "first", "she", "our", "my", "“Yes,", "clinic?”", "time", "your", "to", "“Is", "visit", "Then", "here", "is", "asks,"],
       },
       {
         target: "I tell her, “I have a sore throat and a headache since this morning.”",
-        jumbled: ["her,", "tell", "I", "have", "“I", "sore", "a", "throat", "a", "and", "since", "headache", "morning.”", "this"],
+        jumbled: ["morning.”", "“I", "sore", "this", "have", "her,", "headache", "and", "a", "tell", "since", "I", "throat", "a"],
       },
       {
-        target: "As I give back the form, I feel calm because Grace is helpful and kind.",
-        jumbled: ["give", "I", "back", "As", "form,", "the", "feel", "I", "calm", "because", "Grace", "helpful", "is", "kind.", "and"],
+        target: "She smiles and says, “Please sit down, Riley, and the doctor will call you soon.”",
+        jumbled: ["the", "She", "call", "Riley,", "doctor", "and", "“Please", "soon.”", "will", "sit", "smiles", "and", "says,", "you", "down,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about filling in a form.",
@@ -122,19 +134,25 @@ export const CHAPTERS = [
       { text: "Riley refuses to wait and leaves.", answer: false },
     ],
     buildSentence: [
-      { target: "The room is clean.", jumbled: ["room", "is", "clean.", "The"] },
-      { target: "A nurse calls a patient.", jumbled: ["nurse", "calls", "a", "patient.", "A"] },
       {
-        target: "I read a health poster about washing hands and drinking clean water.",
-        jumbled: ["a", "read", "health", "I", "about", "poster", "hands", "washing", "drinking", "and", "water.", "clean"],
+        target: "I sit down on a chair in the waiting room.",
+        jumbled: ["sit", "a", "on", "the", "chair", "in", "waiting", "I", "down", "room."],
       },
       {
-        target: "On the wall, there is a clock, some health posters, and a big plant.",
-        jumbled: ["the", "On", "there", "wall,", "a", "is", "clock,", "health", "some", "and", "posters,", "big", "a", "plant."],
+        target: "A few other people wait too, and some of them look a little tired.",
+        jumbled: ["look", "few", "and", "A", "people", "them", "other", "too,", "some", "tired.", "wait", "a", "of", "little"],
       },
       {
-        target: "As I wait quietly, I feel okay because I know the doctor will help me soon.",
-        jumbled: ["wait", "I", "quietly,", "As", "feel", "I", "okay", "because", "know", "I", "doctor", "the", "help", "will", "soon.", "me"],
+        target: "“Stay calm, Riley,” I whisper to myself, and my shoulders relax a little.",
+        jumbled: ["whisper", "myself,", "“Stay", "calm,", "Riley,”", "my", "little.", "shoulders", "I", "to", "a", "relax", "and"],
+      },
+      {
+        target: "My throat still hurts, but the calm room helps me feel less worried.",
+        jumbled: ["me", "calm", "the", "throat", "worried.", "hurts,", "but", "still", "helps", "feel", "room", "less", "My"],
+      },
+      {
+        target: "I feel okay because I know the doctor will help me soon.",
+        jumbled: ["feel", "okay", "I", "because", "I", "help", "will", "soon.", "doctor", "the", "know", "me"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about waiting at a clinic.",
@@ -160,19 +178,25 @@ export const CHAPTERS = [
       { text: "Dr. Santos ignores Riley's form.", answer: false },
     ],
     buildSentence: [
-      { target: "I stand up.", jumbled: ["stand", "up.", "I"] },
-      { target: "She reads my form.", jumbled: ["reads", "my", "form.", "She"] },
+      {
+        target: "Soon, the nurse opens a door and calls, “Riley, please come in, it is your turn.”",
+        jumbled: ["“Riley,", "opens", "turn.”", "it", "calls,", "in,", "and", "door", "come", "please", "the", "is", "nurse", "Soon,", "a", "your"],
+      },
+      {
+        target: "I sit on the chair next to her desk and put my bag on the floor.",
+        jumbled: ["my", "next", "to", "chair", "I", "on", "the", "the", "on", "bag", "her", "sit", "and", "floor.", "desk", "put"],
+      },
       {
         target: "Then she asks, “How are you feeling today, and what is the problem?”",
-        jumbled: ["she", "Then", "asks,", "are", "“How", "feeling", "you", "and", "today,", "is", "what", "problem?”", "the"],
+        jumbled: ["you", "today,", "are", "what", "is", "problem?”", "Then", "“How", "feeling", "and", "the", "she", "asks,"],
       },
       {
-        target: "She smiles and says, “Hello, my name is Dr. Santos, please sit down.”",
-        jumbled: ["smiles", "She", "says,", "and", "my", "“Hello,", "is", "name", "Santos,", "Dr.", "sit", "please", "down.”"],
+        target: "Her voice is soft and calm, so I do not feel nervous anymore.",
+        jumbled: ["I", "not", "is", "and", "voice", "soft", "anymore.", "nervous", "so", "feel", "Her", "do", "calm,"],
       },
       {
-        target: "As I sit with Dr. Santos, I feel calm because she is friendly and kind.",
-        jumbled: ["sit", "I", "with", "As", "Santos,", "Dr.", "feel", "I", "calm", "because", "is", "she", "friendly", "kind.", "and"],
+        target: "I feel calm because she is friendly and kind.",
+        jumbled: ["friendly", "and", "is", "kind.", "I", "she", "feel", "calm", "because"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about meeting a doctor.",
@@ -198,19 +222,25 @@ export const CHAPTERS = [
       { text: "The doctor never writes any notes.", answer: false },
     ],
     buildSentence: [
-      { target: "I cough sometimes.", jumbled: ["cough", "sometimes.", "I"] },
-      { target: "I feel a little hot.", jumbled: ["feel", "a", "little", "hot.", "I"] },
       {
-        target: "She listens carefully and writes some notes on her computer.",
-        jumbled: ["listens", "She", "and", "carefully", "some", "writes", "notes", "her", "on", "computer."],
+        target: "Dr. Santos asks me to tell her about my problem step by step.",
+        jumbled: ["asks", "step.", "me", "problem", "Santos", "her", "my", "Dr.", "tell", "to", "by", "step", "about"],
       },
       {
-        target: "I say, “Since this morning, I have a sore throat and a headache.”",
-        jumbled: ["say,", "I", "this", "“Since", "I", "morning,", "a", "have", "throat", "sore", "a", "and", "headache.”"],
+        target: "I say, “Since this morning, I have a sore throat and a headache.” She asks, “Do you have a fever or a cough too, Riley?” I tell her, “Yes, I feel a little hot, and I cough sometimes.” She asks when the problem started and how I feel now.",
+        jumbled: ["say,", "I", "She", "and", "asks", "have", "I", "and", "“Yes,", "too,", "asks,", "a", "feel", "this", "cough", "I", "a", "you", "tell", "morning,", "hot,", "I", "“Do", "have", "problem", "now.", "the", "or", "and", "throat", "when", "I", "a", "how", "She", "Riley?”", "feel", "a", "her,", "sore", "sometimes.”", "little", "I", "a", "fever", "cough", "headache.”", "started", "“Since"],
       },
       {
-        target: "As I describe my symptoms, I feel relieved because the doctor understands my problem clearly.",
-        jumbled: ["describe", "I", "symptoms,", "As", "my", "feel", "I", "relieved", "because", "doctor", "the", "my", "understands", "clearly.", "problem"],
+        target: "I explain that I woke up feeling weak and tired today.",
+        jumbled: ["weak", "and", "that", "explain", "I", "feeling", "I", "today.", "tired", "up", "woke"],
+      },
+      {
+        target: "Then she asks if I sleep well and drink enough water each day.",
+        jumbled: ["well", "drink", "sleep", "I", "if", "Then", "each", "and", "asks", "day.", "she", "enough", "water"],
+      },
+      {
+        target: "I feel relieved because the doctor understands my problem clearly.",
+        jumbled: ["doctor", "understands", "my", "clearly.", "the", "feel", "I", "problem", "because", "relieved"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about telling a doctor how you feel.",
@@ -236,19 +266,25 @@ export const CHAPTERS = [
       { text: "Dr. Santos says nothing about the fever.", answer: false },
     ],
     buildSentence: [
-      { target: "Her hands are gentle.", jumbled: ["hands", "are", "gentle.", "Her"] },
-      { target: "I open my mouth wide.", jumbled: ["open", "my", "mouth", "wide.", "I"] },
       {
-        target: "She puts a small thermometer under my arm to check my temperature.",
-        jumbled: ["puts", "She", "a", "thermometer", "small", "my", "under", "to", "arm", "my", "check", "temperature."],
+        target: "Next, Dr. Santos says, “Let me check you now, Riley, please do not worry.”",
+        jumbled: ["you", "Santos", "says,", "please", "“Let", "me", "do", "not", "now,", "Riley,", "Dr.", "Next,", "check", "worry.”"],
+      },
+      {
+        target: "Then she looks inside my throat with a little light and a stick.",
+        jumbled: ["little", "a", "looks", "my", "light", "a", "and", "inside", "she", "with", "Then", "throat", "stick."],
       },
       {
         target: "She listens to my chest and back with a stethoscope and asks me to breathe.",
-        jumbled: ["to", "listens", "She", "chest", "my", "back", "and", "a", "with", "stethoscope", "asks", "and", "to", "me", "breathe."],
+        jumbled: ["stethoscope", "my", "me", "She", "and", "a", "to", "listens", "with", "breathe.", "back", "asks", "to", "chest", "and"],
       },
       {
-        target: "As the check-up ends, I feel relieved because my problem is small and easy to treat.",
-        jumbled: ["check-up", "the", "ends,", "As", "feel", "I", "relieved", "because", "problem", "my", "small", "is", "to", "easy", "and", "treat."],
+        target: "She checks my temperature and says, “You have a small fever, but it is not serious.”",
+        jumbled: ["have", "small", "my", "checks", "and", "says,", "not", "a", "“You", "it", "fever,", "serious.”", "temperature", "is", "but", "She"],
+      },
+      {
+        target: "I feel relieved because my problem is small and easy to treat.",
+        jumbled: ["I", "to", "and", "problem", "is", "treat.", "my", "easy", "because", "relieved", "feel", "small"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a doctor's check-up.",
@@ -274,16 +310,25 @@ export const CHAPTERS = [
       { text: "Riley has many questions for the doctor.", answer: false },
     ],
     buildSentence: [
-      { target: "I listen carefully.", jumbled: ["listen", "carefully.", "I"] },
-      { target: "I repeat the instructions.", jumbled: ["repeat", "the", "instructions.", "I"] },
-      { target: "Take this medicine two times a day, after your meals.", jumbled: ["this", "Take", "two", "medicine", "a", "times", "after", "day,", "meals.", "your"] },
       {
-        target: "She also tells me to drink a lot of warm water and rest at home.",
-        jumbled: ["also", "tells", "She", "to", "me", "a", "drink", "of", "lot", "water", "warm", "rest", "and", "home.", "at"],
+        target: "Dr. Santos tells me what I need to do to get better.",
+        jumbled: ["what", "get", "need", "me", "do", "to", "Santos", "to", "I", "Dr.", "tells", "better."],
       },
       {
-        target: "As I take the prescription, I feel hopeful because now I know how to get better.",
-        jumbled: ["take", "I", "the", "As", "prescription,", "feel", "I", "hopeful", "because", "know", "I", "now", "to", "how", "better.", "get"],
+        target: "She says, “You have a small throat infection, Riley, so I will give you some medicine.”",
+        jumbled: ["will", "you", "throat", "medicine.”", "give", "small", "some", "have", "says,", "I", "a", "infection,", "“You", "Riley,", "She", "so"],
+      },
+      {
+        target: "She also tells me to drink a lot of warm water and rest at home.",
+        jumbled: ["a", "also", "and", "rest", "warm", "water", "tells", "lot", "at", "drink", "She", "me", "of", "to", "home."],
+      },
+      {
+        target: "“Do not drink cold drinks, and try to sleep well tonight,” she adds.",
+        jumbled: ["drink", "well", "adds.", "cold", "she", "“Do", "drinks,", "try", "and", "tonight,”", "sleep", "to", "not"],
+      },
+      {
+        target: "She asks, “Do you have any questions for me before you go?” I say, “No, thank you, Dr. Santos, you explain everything clearly.”",
+        jumbled: ["everything", "I", "go?”", "She", "Dr.", "any", "“Do", "you", "clearly.”", "have", "before", "you", "thank", "you", "Santos,", "for", "me", "asks,", "questions", "explain", "“No,", "you,", "say,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about medicine from a doctor.",
@@ -309,19 +354,25 @@ export const CHAPTERS = [
       { text: "The pharmacist cannot find the medicine.", answer: false },
     ],
     buildSentence: [
-      { target: "He smiles at me.", jumbled: ["smiles", "at", "me.", "He"] },
-      { target: "He reads the paper.", jumbled: ["reads", "the", "paper.", "He"] },
+      {
+        target: "I leave the doctor's room and walk to the small pharmacy in the clinic.",
+        jumbled: ["doctor's", "I", "clinic.", "leave", "to", "in", "walk", "the", "the", "the", "room", "and", "pharmacy", "small"],
+      },
       {
         target: "I give him the prescription from Dr. Santos and wait for a minute.",
-        jumbled: ["him", "give", "the", "I", "from", "prescription", "Santos", "Dr.", "wait", "and", "a", "for", "minute."],
+        jumbled: ["minute.", "him", "Dr.", "the", "wait", "a", "prescription", "give", "Santos", "I", "for", "and", "from"],
       },
       {
         target: "He puts the medicine in a small paper bag with a white label.",
-        jumbled: ["puts", "He", "the", "medicine", "a", "in", "paper", "small", "with", "bag", "white", "a", "label."],
+        jumbled: ["paper", "a", "He", "bag", "medicine", "white", "a", "with", "label.", "puts", "small", "the", "in"],
       },
       {
-        target: "As I leave the pharmacy, I feel ready because now I have everything I need to get better.",
-        jumbled: ["leave", "I", "the", "As", "pharmacy,", "feel", "I", "ready", "because", "have", "I", "now", "everything", "need", "I", "better.", "get", "to"],
+        target: "I pay for the medicine and put the bag safely in my hand.",
+        jumbled: ["the", "medicine", "and", "for", "bag", "the", "hand.", "pay", "I", "my", "safely", "put", "in"],
+      },
+      {
+        target: "I feel ready because now I have everything I need to get better.",
+        jumbled: ["I", "I", "get", "I", "to", "ready", "better.", "feel", "have", "need", "everything", "because", "now"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about getting medicine at a pharmacy.",
@@ -347,19 +398,25 @@ export const CHAPTERS = [
       { text: "Riley's throat feels worse after resting.", answer: false },
     ],
     buildSentence: [
-      { target: "I take off my shoes.", jumbled: ["take", "off", "my", "shoes.", "I"] },
-      { target: "I lie down on my bed.", jumbled: ["lie", "down", "on", "my", "bed.", "I"] },
+      {
+        target: "I take off my shoes and change into soft, warm clothes.",
+        jumbled: ["off", "take", "change", "warm", "into", "shoes", "my", "I", "soft,", "clothes.", "and"],
+      },
       {
         target: "I make a cup of warm tea with honey to help my sore throat.",
-        jumbled: ["a", "make", "cup", "I", "warm", "of", "with", "tea", "to", "honey", "my", "help", "throat.", "sore"],
+        jumbled: ["I", "throat.", "cup", "my", "sore", "make", "of", "warm", "tea", "help", "to", "honey", "a", "with"],
       },
       {
-        target: "I drink a big glass of warm water, just like the doctor tells me.",
-        jumbled: ["a", "drink", "big", "I", "of", "glass", "water,", "warm", "like", "just", "doctor", "the", "me.", "tells"],
+        target: "I turn off the bright lights and let my body rest in the quiet room.",
+        jumbled: ["my", "bright", "rest", "turn", "off", "quiet", "body", "lights", "I", "and", "the", "in", "the", "let", "room."],
       },
       {
-        target: "As I rest at home, I feel calm because I am taking good care of myself.",
-        jumbled: ["rest", "I", "at", "As", "home,", "feel", "I", "calm", "because", "am", "I", "good", "taking", "of", "care", "myself."],
+        target: "I do not use my phone too much, so my eyes can rest too.",
+        jumbled: ["my", "can", "not", "use", "too.", "so", "my", "I", "phone", "do", "too", "rest", "eyes", "much,"],
+      },
+      {
+        target: "I feel calm because I am taking good care of myself.",
+        jumbled: ["feel", "I", "taking", "because", "am", "good", "I", "myself.", "care", "calm", "of"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about resting when you are sick.",
@@ -385,19 +442,25 @@ export const CHAPTERS = [
       { text: "Riley forgets to finish the medicine.", answer: false },
     ],
     buildSentence: [
-      { target: "My head feels clear.", jumbled: ["head", "feels", "clear.", "My"] },
-      { target: "I finish all my medicine.", jumbled: ["finish", "all", "my", "medicine.", "I"] },
       {
-        target: "After a few days of medicine and rest, I wake up and feel much better.",
-        jumbled: ["a", "After", "days", "few", "medicine", "of", "rest,", "and", "wake", "I", "and", "up", "much", "feel", "better."],
+        target: "I wake up and feel much better.",
+        jumbled: ["wake", "and", "feel", "I", "up", "much", "better."],
       },
       {
-        target: "I understand now that going to the doctor early is a smart and good choice.",
-        jumbled: ["understand", "I", "now", "going", "that", "the", "to", "doctor", "is", "early", "smart", "a", "good", "and", "choice."],
+        target: "I do not have a fever, and my body feels strong and full of energy.",
+        jumbled: ["I", "feels", "energy.", "not", "my", "a", "and", "do", "fever,", "body", "strong", "have", "of", "and", "full"],
       },
       {
-        target: "As I feel healthy again, I feel happy and thankful because I got the help I needed.",
-        jumbled: ["feel", "I", "healthy", "As", "again,", "feel", "I", "happy", "thankful", "and", "because", "got", "I", "help", "the", "needed.", "I"],
+        target: "Now I am thankful for Dr. Santos, the kind nurse, and the friendly pharmacist.",
+        jumbled: ["I", "the", "am", "friendly", "the", "for", "and", "kind", "pharmacist.", "thankful", "Santos,", "Now", "nurse,", "Dr."],
+      },
+      {
+        target: "I finish all my medicine, exactly as the doctor tells me to.",
+        jumbled: ["all", "I", "to.", "as", "the", "medicine,", "me", "exactly", "finish", "doctor", "my", "tells"],
+      },
+      {
+        target: "I feel happy and thankful because I got the help I needed.",
+        jumbled: ["the", "happy", "help", "and", "I", "got", "I", "needed.", "thankful", "feel", "because", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about feeling better after being sick.",

@@ -36,11 +36,26 @@ export const CHAPTERS = [
       { text: "Priya grabs her reusable bags.", answer: true },
     ],
     buildSentence: [
-      { target: "I make a list.", jumbled: ["make", "a", "I", "list."] },
-      { target: "My fridge is almost empty.", jumbled: ["fridge", "is", "My", "almost", "empty."] },
-      { target: "I check each cupboard.", jumbled: ["check", "each", "I", "cupboard."] },
-      { target: "This helps me remember everything.", jumbled: ["helps", "me", "This", "remember", "everything."] },
-      { target: "I get ready to go to the store.", jumbled: ["get", "ready", "I", "to", "go", "to", "the", "store."] },
+      {
+        target: "I sit at my kitchen table and make a shopping list.",
+        jumbled: ["a", "my", "make", "table", "and", "I", "list.", "kitchen", "sit", "shopping", "at"],
+      },
+      {
+        target: "At the top, I write, “Priya's Shopping List.”",
+        jumbled: ["List.”", "I", "Shopping", "the", "“Priya's", "write,", "top,", "At"],
+      },
+      {
+        target: "My list gets longer as I check each cupboard in my kitchen.",
+        jumbled: ["kitchen.", "as", "list", "each", "my", "in", "longer", "cupboard", "check", "gets", "My", "I"],
+      },
+      {
+        target: "I like making a list because it helps me remember everything I need.",
+        jumbled: ["like", "making", "I", "it", "everything", "remember", "a", "because", "list", "me", "I", "need.", "helps"],
+      },
+      {
+        target: "Then I get my car keys and get ready to go to the store.",
+        jumbled: ["I", "car", "get", "get", "the", "keys", "store.", "and", "my", "ready", "go", "to", "to", "Then"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something you write a list for.",
     mySentenceExample: "I write a list before I go grocery shopping every week.",
@@ -65,11 +80,26 @@ export const CHAPTERS = [
       { text: "Priya pushes her cart carefully around other shoppers.", answer: true },
     ],
     buildSentence: [
-      { target: "I grab a cart.", jumbled: ["grab", "a", "I", "cart."] },
-      { target: "The store is busy today.", jumbled: ["store", "is", "The", "busy", "today."] },
-      { target: "I walk to the dairy section.", jumbled: ["walk", "to", "I", "the", "dairy", "section."] },
-      { target: "I push my cart carefully.", jumbled: ["push", "my", "I", "cart", "carefully."] },
-      { target: "Shopping on Saturday takes a little longer.", jumbled: ["Shopping", "on", "Saturday", "takes", "a", "little", "longer."] },
+      {
+        target: "I arrive at the grocery store and park my car near the entrance.",
+        jumbled: ["the", "at", "and", "my", "the", "park", "arrive", "grocery", "entrance.", "store", "near", "car", "I"],
+      },
+      {
+        target: "I scan my loyalty card, and a screen flashes, “Welcome back, Priya!”",
+        jumbled: ["flashes,", "I", "screen", "my", "a", "and", "“Welcome", "card,", "loyalty", "scan", "back,", "Priya!”"],
+      },
+      {
+        target: "I take out my list and check the first item: milk.",
+        jumbled: ["list", "first", "take", "item:", "milk.", "the", "my", "and", "out", "I", "check"],
+      },
+      {
+        target: "I know this store well, so I walk straight to the dairy section.",
+        jumbled: ["straight", "the", "well,", "to", "walk", "store", "this", "I", "I", "so", "section.", "dairy", "know"],
+      },
+      {
+        target: "Shopping on a Saturday always takes a little longer than usual.",
+        jumbled: ["Saturday", "little", "than", "longer", "Shopping", "a", "a", "takes", "usual.", "on", "always"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a busy place you visited recently.",
     mySentenceExample: "The market was very busy when I visited on Saturday.",
@@ -94,11 +124,26 @@ export const CHAPTERS = [
       { text: "Priya feels good about finding everything.", answer: true },
     ],
     buildSentence: [
-      { target: "I pick fresh apples.", jumbled: ["pick", "fresh", "I", "apples."] },
-      { target: "I check the prices carefully.", jumbled: ["check", "the", "I", "prices", "carefully."] },
-      { target: "I find rice and chicken.", jumbled: ["find", "rice", "I", "and", "chicken."] },
-      { target: "My cart slowly fills up.", jumbled: ["cart", "slowly", "My", "fills", "up."] },
-      { target: "Shopping feels easier when I know where things are.", jumbled: ["Shopping", "feels", "easier", "when", "I", "know", "where", "things", "are."] },
+      {
+        target: "I walk through the produce section and pick fresh apples and carrots.",
+        jumbled: ["section", "pick", "fresh", "the", "and", "carrots.", "I", "produce", "and", "through", "apples", "walk"],
+      },
+      {
+        target: "Some vegetables cost more than I expect, so I choose a cheaper option instead.",
+        jumbled: ["instead.", "I", "Some", "option", "a", "cheaper", "cost", "expect,", "choose", "vegetables", "more", "I", "than", "so"],
+      },
+      {
+        target: "Next, I find the bread aisle and pick a loaf of whole wheat bread.",
+        jumbled: ["wheat", "a", "Next,", "bread", "I", "and", "find", "pick", "aisle", "the", "whole", "loaf", "bread.", "of"],
+      },
+      {
+        target: "I check “Priya's Shopping List” again -- only a few items left.",
+        jumbled: ["left.", "“Priya's", "I", "only", "List”", "check", "again", "--", "items", "few", "Shopping", "a"],
+      },
+      {
+        target: "Shopping feels easier when I already know where things are in the store.",
+        jumbled: ["the", "Shopping", "where", "are", "easier", "things", "already", "feels", "know", "when", "I", "in", "store."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about checking prices while shopping.",
     mySentenceExample: "I check the prices carefully before I buy fruit.",
@@ -123,11 +168,26 @@ export const CHAPTERS = [
       { text: "Priya does not buy any canned tomatoes.", answer: false },
     ],
     buildSentence: [
-      { target: "I ask for help.", jumbled: ["ask", "for", "I", "help."] },
-      { target: "I thank him kindly.", jumbled: ["thank", "him", "I", "kindly."] },
-      { target: "He smiles at my question.", jumbled: ["smiles", "at", "He", "my", "question."] },
-      { target: "I find the pasta there.", jumbled: ["find", "the", "I", "pasta", "there."] },
-      { target: "I add two cans to my cart.", jumbled: ["add", "two", "I", "cans", "to", "my", "cart."] },
+      {
+        target: "I look for a special kind of pasta, but I cannot find it anywhere in the aisle.",
+        jumbled: ["the", "I", "for", "pasta,", "it", "but", "I", "look", "in", "find", "a", "of", "aisle.", "kind", "special", "anywhere", "cannot"],
+      },
+      {
+        target: "His name tag says Tom, and he smiles when I ask my question.",
+        jumbled: ["says", "and", "name", "when", "my", "Tom,", "ask", "he", "tag", "His", "question.", "I", "smiles"],
+      },
+      {
+        target: "“The pasta is on aisle six, next to the sauces, Priya,” he says kindly, reading my name from my loyalty card.",
+        jumbled: ["loyalty", "the", "says", "my", "card.", "kindly,", "sauces,", "my", "pasta", "six,", "name", "from", "“The", "next", "is", "reading", "Priya,”", "to", "on", "he", "aisle"],
+      },
+      {
+        target: "He is right, and I find the pasta exactly where he said.",
+        jumbled: ["exactly", "the", "he", "pasta", "where", "I", "and", "said.", "find", "He", "right,", "is"],
+      },
+      {
+        target: "I add two cans to my cart because I know I will use them soon.",
+        jumbled: ["them", "because", "use", "to", "two", "my", "cans", "I", "soon.", "I", "add", "I", "cart", "will", "know"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time a worker helped you find something.",
     mySentenceExample: "A worker helped me find the shoes I wanted at the store.",
@@ -152,11 +212,26 @@ export const CHAPTERS = [
       { text: "Priya feels bad about being responsible with money.", answer: false },
     ],
     buildSentence: [
-      { target: "I check my phone.", jumbled: ["check", "my", "I", "phone."] },
-      { target: "I need to be careful.", jumbled: ["need", "to", "I", "be", "careful."] },
-      { target: "I skip the expensive cheese.", jumbled: ["skip", "the", "I", "expensive", "cheese."] },
-      { target: "This feels good to me.", jumbled: ["feels", "good", "This", "to", "me."] },
-      { target: "I continue shopping with careful choices now.", jumbled: ["I", "continue", "shopping", "with", "careful", "choices", "now."] },
+      {
+        target: "Halfway through my shopping, I stop to check my phone's calculator.",
+        jumbled: ["calculator.", "Halfway", "shopping,", "check", "my", "stop", "I", "my", "to", "through", "phone's"],
+      },
+      {
+        target: "My banking app shows, “Hi Priya, here is your spending summary,” and I add up the prices of items already in my cart.",
+        jumbled: ["My", "prices", "cart.", "items", "and", "add", "summary,”", "the", "banking", "in", "I", "my", "app", "shows,", "up", "your", "already", "Priya,", "of", "spending", "is", "“Hi", "here"],
+      },
+      {
+        target: "The total is close to my budget, so I need to be careful with the rest.",
+        jumbled: ["with", "to", "be", "is", "The", "need", "to", "so", "total", "the", "my", "close", "careful", "I", "rest.", "budget,"],
+      },
+      {
+        target: "I decide to skip the expensive cheese and choose a cheaper brand instead.",
+        jumbled: ["the", "decide", "to", "brand", "and", "cheese", "skip", "a", "I", "choose", "expensive", "instead.", "cheaper"],
+      },
+      {
+        target: "Staying on budget takes some effort, but it feels good to be responsible with my money.",
+        jumbled: ["feels", "takes", "my", "but", "effort,", "it", "some", "budget", "good", "money.", "responsible", "on", "Staying", "with", "to", "be"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about staying on a budget.",
     mySentenceExample: "I stay on a budget by checking prices before I buy things.",
@@ -181,11 +256,26 @@ export const CHAPTERS = [
       { text: "Priya leaves the store without paying.", answer: false },
     ],
     buildSentence: [
-      { target: "I push my full cart.", jumbled: ["push", "my", "I", "full", "cart."] },
-      { target: "I wait patiently in line.", jumbled: ["wait", "patiently", "I", "in", "line."] },
-      { target: "The line moves slowly today.", jumbled: ["line", "moves", "The", "slowly", "today."] },
-      { target: "I reply to a message.", jumbled: ["reply", "to", "I", "a", "message."] },
-      { target: "It is finally my turn now.", jumbled: ["It", "is", "finally", "my", "turn", "now."] },
+      {
+        target: "I push my full cart toward the checkout area.",
+        jumbled: ["cart", "push", "toward", "my", "checkout", "full", "area.", "the", "I"],
+      },
+      {
+        target: "Many other people are also finishing their shopping, so the lines are long today.",
+        jumbled: ["people", "long", "finishing", "the", "are", "other", "their", "lines", "also", "so", "shopping,", "are", "today.", "Many"],
+      },
+      {
+        target: "The person in front of me has many items too, so the line moves slowly.",
+        jumbled: ["me", "of", "front", "line", "in", "too,", "has", "the", "moves", "slowly.", "so", "items", "person", "many", "The"],
+      },
+      {
+        target: "“Priya, how's the shopping going?” my sister texts, and I reply to her message.",
+        jumbled: ["shopping", "reply", "“Priya,", "message.", "I", "going?”", "her", "and", "my", "the", "how's", "to", "sister", "texts,"],
+      },
+      {
+        target: "I start putting my groceries on the counter for the cashier to scan.",
+        jumbled: ["on", "start", "my", "counter", "scan.", "cashier", "for", "the", "the", "I", "groceries", "putting", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting in a long line.",
     mySentenceExample: "I waited in a long line at the bank last week.",
@@ -210,11 +300,26 @@ export const CHAPTERS = [
       { text: "Priya ignores the receipt completely.", answer: false },
     ],
     buildSentence: [
-      { target: "I take out my card.", jumbled: ["take", "out", "I", "my", "card."] },
-      { target: "The machine prints a receipt.", jumbled: ["machine", "prints", "The", "a", "receipt."] },
-      { target: "I say thank you back.", jumbled: ["say", "thank", "I", "you", "back."] },
-      { target: "The bags feel heavy now.", jumbled: ["bags", "feel", "The", "heavy", "now."] },
-      { target: "I check the receipt to make sure it's correct.", jumbled: ["I", "check", "the", "receipt", "to", "make", "sure", "it's", "correct."] },
+      {
+        target: "The cashier scans all my items quickly and tells me the total price.",
+        jumbled: ["items", "all", "The", "quickly", "cashier", "total", "scans", "tells", "the", "and", "me", "my", "price."],
+      },
+      {
+        target: "I take out my card and tap it on the small machine.",
+        jumbled: ["and", "tap", "the", "I", "small", "take", "card", "on", "machine.", "my", "out", "it"],
+      },
+      {
+        target: "“Thank you, Priya, have a nice day,” the cashier says with a smile, glancing at my loyalty card.",
+        jumbled: ["card.", "a", "with", "my", "glancing", "you,", "nice", "“Thank", "Priya,", "a", "at", "day,”", "have", "says", "smile,", "the", "cashier", "loyalty"],
+      },
+      {
+        target: "I say thank you back and start putting my groceries into my reusable bags.",
+        jumbled: ["into", "my", "I", "groceries", "you", "thank", "back", "reusable", "putting", "start", "bags.", "my", "say", "and"],
+      },
+      {
+        target: "Everything looks right, so I fold the receipt and put it in my pocket.",
+        jumbled: ["put", "Everything", "receipt", "in", "I", "and", "so", "looks", "fold", "it", "pocket.", "my", "the", "right,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about paying for something at a store.",
     mySentenceExample: "I paid for my groceries with my card at the store.",
@@ -239,11 +344,26 @@ export const CHAPTERS = [
       { text: "Priya feels relieved when the trip is finished.", answer: true },
     ],
     buildSentence: [
-      { target: "I open the trunk.", jumbled: ["open", "the", "I", "trunk."] },
-      { target: "I lift the heavy bags.", jumbled: ["lift", "the", "I", "heavy", "bags."] },
-      { target: "I close the trunk now.", jumbled: ["close", "the", "I", "trunk", "now."] },
-      { target: "I walk carefully between the cars.", jumbled: ["walk", "carefully", "I", "between", "the", "cars."] },
-      { target: "I feel relieved that the trip is finished.", jumbled: ["I", "feel", "relieved", "that", "the", "trip", "is", "finished."] },
+      {
+        target: "I push my cart to my car and open the trunk carefully.",
+        jumbled: ["push", "I", "my", "carefully.", "to", "my", "the", "cart", "open", "and", "trunk", "car"],
+      },
+      {
+        target: "Some bags are heavier than others, so I organize them to keep the eggs safe on top.",
+        jumbled: ["top.", "others,", "Some", "keep", "so", "the", "bags", "safe", "heavier", "organize", "than", "to", "them", "I", "on", "are", "eggs"],
+      },
+      {
+        target: "I push the empty cart to the cart return area near my car.",
+        jumbled: ["the", "cart", "car.", "near", "push", "to", "area", "I", "the", "my", "return", "cart", "empty"],
+      },
+      {
+        target: "“Big shopping trip, Priya?” she asks with a smile.",
+        jumbled: ["trip,", "with", "Priya?”", "shopping", "a", "she", "asks", "smile.", "“Big"],
+      },
+      {
+        target: "Finally, I get into my car and feel relieved that the shopping trip is finished for another week.",
+        jumbled: ["shopping", "trip", "week.", "that", "into", "for", "another", "is", "Finally,", "I", "the", "my", "finished", "feel", "and", "car", "relieved", "get"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finishing an errand or task.",
     mySentenceExample: "I felt relieved when I finished cleaning my apartment.",
@@ -268,11 +388,26 @@ export const CHAPTERS = [
       { text: "Priya feels satisfied looking at her full fridge.", answer: true },
     ],
     buildSentence: [
-      { target: "I carry the bags inside.", jumbled: ["carry", "the", "I", "bags", "inside."] },
-      { target: "I feel satisfied now.", jumbled: ["feel", "satisfied", "I", "now."] },
-      { target: "I fold the empty bags.", jumbled: ["fold", "the", "I", "empty", "bags."] },
-      { target: "My kitchen looks more organized now.", jumbled: ["My", "kitchen", "looks", "more", "organized", "now."] },
-      { target: "This food will last me through the busy week.", jumbled: ["This", "food", "will", "last", "me", "through", "the", "busy", "week."] },
+      {
+        target: "At home, I carry all the bags into my kitchen and place them on the counter.",
+        jumbled: ["my", "them", "I", "carry", "the", "home,", "and", "on", "At", "into", "the", "kitchen", "bags", "place", "counter.", "all"],
+      },
+      {
+        target: "I start putting the cold items into the fridge first, like milk, eggs, and vegetables.",
+        jumbled: ["the", "fridge", "items", "vegetables.", "into", "milk,", "and", "first,", "start", "like", "putting", "I", "the", "eggs,", "cold"],
+      },
+      {
+        target: "My kitchen looks much more organized now than it did this morning.",
+        jumbled: ["organized", "now", "My", "than", "morning.", "much", "kitchen", "looks", "it", "more", "did", "this"],
+      },
+      {
+        target: "I fold the empty bags and put them in a drawer for next time.",
+        jumbled: ["in", "and", "them", "for", "I", "a", "bags", "empty", "time.", "the", "put", "drawer", "next", "fold"],
+      },
+      {
+        target: "All this food will last me through the busy week ahead.",
+        jumbled: ["ahead.", "through", "the", "me", "busy", "this", "last", "week", "All", "food", "will"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about organizing something in your home.",
     mySentenceExample: "I organized my closet last weekend and it feels good.",
@@ -297,11 +432,26 @@ export const CHAPTERS = [
       { text: "Priya worries about running out of food.", answer: false },
     ],
     buildSentence: [
-      { target: "I sit with warm tea.", jumbled: ["sit", "with", "I", "warm", "tea."] },
-      { target: "I feel good about this.", jumbled: ["feel", "good", "I", "about", "this."] },
-      { target: "I planned meals for the week.", jumbled: ["planned", "meals", "I", "for", "the", "week."] },
-      { target: "This feels comforting to me.", jumbled: ["feels", "comforting", "This", "to", "me."] },
-      { target: "It feels good to be prepared this week.", jumbled: ["It", "feels", "good", "to", "be", "prepared", "this", "week."] },
+      {
+        target: "That evening, I sit at my kitchen table with a warm cup of tea.",
+        jumbled: ["at", "sit", "with", "kitchen", "cup", "I", "a", "evening,", "table", "my", "warm", "of", "That", "tea."],
+      },
+      {
+        target: "I look at my full fridge and feel good about my Saturday shopping trip.",
+        jumbled: ["good", "shopping", "trip.", "about", "full", "fridge", "at", "my", "my", "and", "feel", "Saturday", "I", "look"],
+      },
+      {
+        target: "Tomorrow, I will cook chicken and rice for dinner, using the fresh ingredients I chose carefully.",
+        jumbled: ["using", "will", "carefully.", "dinner,", "cook", "rice", "chicken", "the", "and", "ingredients", "fresh", "I", "for", "Tomorrow,", "chose", "I"],
+      },
+      {
+        target: "I know I will not run out of food this week, and that feels comforting.",
+        jumbled: ["food", "I", "out", "comforting.", "of", "know", "run", "not", "week,", "and", "will", "this", "I", "feels", "that"],
+      },
+      {
+        target: "I finish my tea and think about how good it feels to be prepared.",
+        jumbled: ["to", "prepared.", "it", "about", "good", "think", "I", "finish", "tea", "how", "my", "and", "feels", "be"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling prepared for something.",
     mySentenceExample: "I feel prepared for the week after I go grocery shopping.",

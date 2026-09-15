@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "Tomas knows he needs to prepare a persuasive case.", answer: true },
     ],
     buildSentence: [
-      { target: "My supplier sends the renewal now.", jumbled: ["My", "supplier", "sends", "the", "renewal", "now."] },
-      { target: "I notice the prices have increased.", jumbled: ["I", "notice", "the", "prices", "have", "increased."] },
-      { target: "I decide this is the sensible approach.", jumbled: ["I", "decide", "this", "is", "the", "sensible", "approach."] },
-      { target: "This would genuinely hurt my business's profitability.", jumbled: ["This", "would", "genuinely", "hurt", "my", "business's", "profitability."] },
-      { target: "I've carefully developed this relationship over three years.", jumbled: ["I've", "carefully", "developed", "this", "relationship", "over", "three", "years."] },
+      {
+        target: "My current flour supplier sends their annual contract renewal, and I notice the proposed prices have increased more than I'd expected.",
+        jumbled: ["expected.", "I", "current", "contract", "notice", "their", "flour", "I'd", "proposed", "prices", "increased", "annual", "and", "than", "renewal,", "sends", "more", "supplier", "have", "the", "My"],
+      },
+      {
+        target: "Given how tight my bakery's margins already are, absorbing this increase without adjustment would genuinely hurt my business's profitability.",
+        jumbled: ["without", "genuinely", "are,", "adjustment", "business's", "increase", "profitability.", "my", "bakery's", "my", "how", "tight", "margins", "Given", "this", "hurt", "absorbing", "already", "would"],
+      },
+      {
+        target: "I consider simply switching suppliers, though doing so would mean rebuilding a relationship I'd carefully developed over three years.",
+        jumbled: ["simply", "developed", "doing", "over", "rebuilding", "so", "would", "mean", "though", "years.", "carefully", "relationship", "three", "suppliers,", "I", "I'd", "consider", "switching", "a"],
+      },
+      {
+        target: "Instead, I decide the more sensible approach is requesting a conversation about the proposed terms before committing to anything.",
+        jumbled: ["to", "is", "Instead,", "I", "about", "more", "decide", "sensible", "the", "committing", "a", "conversation", "approach", "terms", "requesting", "proposed", "anything.", "before", "the"],
+      },
+      {
+        target: "Given how much this decision affects my business, I know I'll need to prepare a genuinely persuasive case beforehand.",
+        jumbled: ["need", "how", "persuasive", "I", "prepare", "a", "Given", "much", "my", "to", "case", "genuinely", "decision", "affects", "I'll", "business,", "know", "this", "beforehand."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about deciding to negotiate rather than simply accepting a price increase.",
     mySentenceExample: "I decided to negotiate rather than simply accepting a price increase.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "Tomas feels more confident approaching Ms. Idowu.", answer: true },
     ],
     buildSentence: [
-      { target: "I research pricing from competitors now.", jumbled: ["I", "research", "pricing", "from", "competitors", "now."] },
-      { target: "This gives me leverage now.", jumbled: ["This", "gives", "me", "leverage", "now."] },
-      { target: "I feel considerably more confident now.", jumbled: ["I", "feel", "considerably", "more", "confident", "now."] },
-      { target: "This isn't dramatically out of line with the market.", jumbled: ["This", "isn't", "dramatically", "out", "of", "line", "with", "the", "market."] },
-      { target: "I calculate exactly how this would affect my monthly costs.", jumbled: ["I", "calculate", "exactly", "how", "this", "would", "affect", "my", "monthly", "costs."] },
+      {
+        target: "I research pricing from two competing suppliers, ensuring I'd understand the actual market rate genuinely.",
+        jumbled: ["ensuring", "actual", "competing", "suppliers,", "market", "the", "two", "I", "rate", "from", "understand", "genuinely.", "pricing", "research", "I'd"],
+      },
+      {
+        target: "I discover that while my current supplier's proposed price is indeed higher, it's not dramatically out of line with the broader market.",
+        jumbled: ["with", "line", "is", "out", "I", "dramatically", "it's", "current", "indeed", "while", "price", "proposed", "not", "that", "of", "higher,", "my", "supplier's", "the", "broader", "discover", "market."],
+      },
+      {
+        target: "This research, moreover, gives me leverage: I can reference specific competitor rates without necessarily needing to switch suppliers immediately.",
+        jumbled: ["gives", "leverage:", "immediately.", "This", "research,", "rates", "without", "specific", "reference", "I", "suppliers", "switch", "me", "can", "competitor", "needing", "to", "moreover,", "necessarily"],
+      },
+      {
+        target: "I also calculate exactly how much a smaller, more reasonable increase would affect my monthly costs specifically.",
+        jumbled: ["a", "my", "specifically.", "costs", "smaller,", "affect", "I", "more", "exactly", "reasonable", "calculate", "increase", "how", "also", "much", "monthly", "would"],
+      },
+      {
+        target: "Armed with this data, I feel considerably more confident approaching Ms. Idowu than I would have otherwise.",
+        jumbled: ["more", "data,", "Idowu", "otherwise.", "approaching", "would", "I", "confident", "with", "than", "I", "have", "Ms.", "feel", "considerably", "this", "Armed"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about researching the market before entering a business negotiation.",
     mySentenceExample: "I researched the market before entering the business negotiation.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Tomas feels cautiously optimistic about finding common ground.", answer: true },
     ],
     buildSentence: [
-      { target: "I request a meeting with her.", jumbled: ["I", "request", "a", "meeting", "with", "her."] },
-      { target: "She agrees readily to this.", jumbled: ["She", "agrees", "readily", "to", "this."] },
-      { target: "She listens attentively to this.", jumbled: ["She", "listens", "attentively", "to", "this."] },
-      { target: "I feel cautiously optimistic about this.", jumbled: ["I", "feel", "cautiously", "optimistic", "about", "this."] },
-      { target: "This exceeds what my current margins can comfortably absorb.", jumbled: ["This", "exceeds", "what", "my", "current", "margins", "can", "comfortably", "absorb."] },
+      {
+        target: "I request a meeting with Ms. Idowu, explaining upfront that I'd like to discuss the proposed contract terms before signing anything.",
+        jumbled: ["request", "that", "Ms.", "with", "anything.", "like", "I", "to", "upfront", "signing", "contract", "the", "before", "meeting", "explaining", "a", "discuss", "terms", "Idowu,", "I'd", "proposed"],
+      },
+      {
+        target: "She agrees readily, mentioning she genuinely values our long working relationship and prefers open discussion over losing a client abruptly.",
+        jumbled: ["client", "genuinely", "relationship", "abruptly.", "she", "mentioning", "agrees", "She", "values", "long", "open", "a", "over", "prefers", "discussion", "our", "working", "and", "readily,", "losing"],
+      },
+      {
+        target: "\"Of course, Tomas, let's talk it through,\" she says, taking a seat across from me.",
+        jumbled: ["talk", "says,", "\"Of", "from", "course,", "through,\"", "me.", "taking", "she", "let's", "seat", "across", "a", "Tomas,", "it"],
+      },
+      {
+        target: "I open by acknowledging the quality of her company's product, then explain that the proposed increase exceeds what my current margins can comfortably absorb.",
+        jumbled: ["increase", "my", "explain", "can", "acknowledging", "proposed", "I", "that", "the", "of", "company's", "product,", "quality", "current", "absorb.", "margins", "exceeds", "the", "comfortably", "open", "her", "then", "by", "what"],
+      },
+      {
+        target: "This respectful, business-like exchange, given how it begins, leaves me cautiously optimistic about finding common ground.",
+        jumbled: ["This", "leaves", "it", "finding", "optimistic", "begins,", "me", "business-like", "common", "about", "given", "ground.", "how", "exchange,", "cautiously", "respectful,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about opening a business negotiation respectfully and professionally.",
     mySentenceExample: "I opened the business negotiation respectfully and professionally.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "Ms. Idowu suggests there may be flexibility available.", answer: true },
     ],
     buildSentence: [
-      { target: "I present my cost breakdown now.", jumbled: ["I", "present", "my", "cost", "breakdown", "now."] },
-      { target: "She nods, acknowledging this now.", jumbled: ["She", "nods,", "acknowledging", "this", "now."] },
-      { target: "She'll need to consult her manager.", jumbled: ["She'll", "need", "to", "consult", "her", "manager."] },
-      { target: "I frame this as context, not pressure.", jumbled: ["I", "frame", "this", "as", "context,", "not", "pressure."] },
-      { target: "There may be flexibility available given our history.", jumbled: ["There", "may", "be", "flexibility", "available", "given", "our", "history."] },
+      {
+        target: "I present my cost breakdown, explaining specifically how the proposed increase would affect my bakery's monthly operating expenses.",
+        jumbled: ["expenses.", "my", "my", "breakdown,", "bakery's", "how", "increase", "proposed", "specifically", "affect", "operating", "I", "explaining", "monthly", "would", "the", "present", "cost"],
+      },
+      {
+        target: "I mention, respectfully, that I'd researched competitor pricing and found it somewhat more favorable, though not dramatically different overall.",
+        jumbled: ["dramatically", "different", "pricing", "I", "I'd", "mention,", "though", "somewhat", "competitor", "that", "favorable,", "found", "and", "it", "researched", "overall.", "respectfully,", "more", "not"],
+      },
+      {
+        target: "Rather than threatening to switch suppliers, I frame this as context, hoping to negotiate collaboratively rather than through implicit pressure.",
+        jumbled: ["Rather", "through", "implicit", "to", "suppliers,", "pressure.", "frame", "as", "than", "negotiate", "than", "context,", "collaboratively", "this", "I", "hoping", "to", "switch", "rather", "threatening"],
+      },
+      {
+        target: "Ms. Idowu nods, acknowledging that a valued, long-term client like myself deserves consideration beyond standard, blanket pricing policies.",
+        jumbled: ["that", "client", "pricing", "long-term", "nods,", "deserves", "acknowledging", "valued,", "policies.", "myself", "a", "Idowu", "consideration", "like", "Ms.", "beyond", "standard,", "blanket"],
+      },
+      {
+        target: "She mentions she'll need to consult her manager, but suggests there may be flexibility available given our history together.",
+        jumbled: ["available", "need", "to", "She", "given", "flexibility", "may", "suggests", "her", "history", "she'll", "together.", "but", "our", "consult", "be", "mentions", "manager,", "there"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about presenting a business case without threatening or pressuring the other side.",
     mySentenceExample: "I presented my case without threatening or pressuring the other side.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Tomas agrees this counteroffer seems considerably more reasonable.", answer: true },
     ],
     buildSentence: [
-      { target: "She steps away briefly now.", jumbled: ["She", "steps", "away", "briefly", "now."] },
-      { target: "I consider this carefully now.", jumbled: ["I", "consider", "this", "carefully", "now."] },
-      { target: "This benefits her company too.", jumbled: ["This", "benefits", "her", "company", "too."] },
-      { target: "Price stability itself has genuine value.", jumbled: ["Price", "stability", "itself", "has", "genuine", "value."] },
-      { target: "This counteroffer seems considerably more reasonable now.", jumbled: ["This", "counteroffer", "seems", "considerably", "more", "reasonable", "now."] },
+      {
+        target: "Ms. Idowu steps away briefly to call her manager, returning several minutes later with a revised offer to discuss together.",
+        jumbled: ["revised", "away", "with", "a", "offer", "to", "briefly", "her", "together.", "steps", "call", "discuss", "minutes", "several", "Idowu", "manager,", "to", "Ms.", "returning", "later"],
+      },
+      {
+        target: "Rather than the full proposed increase, she offers a smaller adjustment, paired with a locked-in rate for the following eighteen months.",
+        jumbled: ["months.", "proposed", "smaller", "than", "offers", "rate", "a", "the", "she", "eighteen", "adjustment,", "increase,", "with", "paired", "the", "locked-in", "a", "Rather", "full", "following", "for"],
+      },
+      {
+        target: "This longer commitment, she explains, benefits her company too, since it guarantees predictable, stable revenue from a reliable client.",
+        jumbled: ["too,", "reliable", "from", "client.", "company", "revenue", "This", "it", "stable", "commitment,", "guarantees", "since", "her", "predictable,", "longer", "benefits", "a", "explains,", "she"],
+      },
+      {
+        target: "\"This is what I could arrange for you, Tomas,\" she says, sliding the revised terms across the table.",
+        jumbled: ["Tomas,\"", "across", "you,", "table.", "terms", "sliding", "I", "says,", "is", "for", "could", "revised", "the", "the", "\"This", "she", "what", "arrange"],
+      },
+      {
+        target: "I consider this carefully, recognizing that price stability itself has genuine value beyond the immediate number involved.",
+        jumbled: ["consider", "involved.", "has", "value", "stability", "number", "I", "genuine", "that", "immediate", "the", "recognizing", "itself", "this", "price", "carefully,", "beyond"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about considering a counteroffer that benefited both sides of a negotiation.",
     mySentenceExample: "I considered a counteroffer that benefited both sides fairly.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "Tomas feels this strengthened their working relationship.", answer: true },
     ],
     buildSentence: [
-      { target: "We review the contract together now.", jumbled: ["We", "review", "the", "contract", "together", "now."] },
-      { target: "I ask a few clarifying questions.", jumbled: ["I", "ask", "a", "few", "clarifying", "questions."] },
-      { target: "We both sign the updated agreement.", jumbled: ["We", "both", "sign", "the", "updated", "agreement."] },
-      { target: "I feel genuinely satisfied about this.", jumbled: ["I", "feel", "genuinely", "satisfied", "about", "this."] },
-      { target: "This strengthened, rather than strained, our working relationship.", jumbled: ["This", "strengthened,", "rather", "than", "strained,", "our", "working", "relationship."] },
+      {
+        target: "We review the revised contract together, line by line, ensuring both of us fully understand every term before signing anything.",
+        jumbled: ["fully", "both", "understand", "ensuring", "We", "line", "the", "revised", "review", "of", "together,", "every", "anything.", "term", "us", "line,", "by", "before", "contract", "signing"],
+      },
+      {
+        target: "I ask a few clarifying questions about delivery schedules and minimum order quantities, wanting complete clarity beforehand.",
+        jumbled: ["beforehand.", "ask", "a", "clarifying", "questions", "about", "order", "wanting", "and", "clarity", "complete", "quantities,", "minimum", "I", "delivery", "schedules", "few"],
+      },
+      {
+        target: "Ms. Idowu answers each question thoroughly, adjusting one minor clause after I mention a scheduling conflict with my current ordering pattern.",
+        jumbled: ["answers", "one", "Idowu", "thoroughly,", "conflict", "a", "current", "with", "I", "after", "minor", "adjusting", "pattern.", "clause", "ordering", "my", "Ms.", "scheduling", "question", "each", "mention"],
+      },
+      {
+        target: "We both sign the updated agreement, shaking hands as a gesture of renewed, mutual commitment.",
+        jumbled: ["agreement,", "renewed,", "a", "shaking", "of", "commitment.", "mutual", "gesture", "hands", "as", "We", "the", "updated", "both", "sign"],
+      },
+      {
+        target: "Walking her out, I feel genuinely satisfied that this negotiation had strengthened, rather than strained, our working relationship.",
+        jumbled: ["feel", "this", "satisfied", "Walking", "relationship.", "strengthened,", "than", "negotiation", "our", "out,", "working", "genuinely", "rather", "strained,", "had", "her", "that", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finalizing a business agreement that both sides felt good about.",
     mySentenceExample: "We finalized a business agreement that both sides felt good about.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Tomas realizes written follow-up is part of successful negotiation.", answer: true },
     ],
     buildSentence: [
-      { target: "I draft a formal email tonight.", jumbled: ["I", "draft", "a", "formal", "email", "tonight."] },
-      { target: "I keep the tone professional here.", jumbled: ["I", "keep", "the", "tone", "professional", "here."] },
-      { target: "I thank her for this too.", jumbled: ["I", "thank", "her", "for", "this", "too."] },
-      { target: "This ensures a clear, documented reference later.", jumbled: ["This", "ensures", "a", "clear,", "documented", "reference", "later."] },
-      { target: "This is as much a part of negotiation as the conversation.", jumbled: ["This", "is", "as", "much", "a", "part", "of", "negotiation", "as", "the", "conversation."] },
+      {
+        target: "That evening, I draft a formal email to Ms. Idowu, summarizing the finalized terms for both our records going forward.",
+        jumbled: ["email", "our", "summarizing", "evening,", "Idowu,", "the", "for", "a", "finalized", "both", "draft", "to", "terms", "I", "formal", "Ms.", "forward.", "going", "That", "records"],
+      },
+      {
+        target: "I keep the tone professional, referencing specific numbers and dates rather than vague, general descriptions of what we'd agreed.",
+        jumbled: ["tone", "the", "of", "and", "specific", "keep", "general", "numbers", "vague,", "what", "descriptions", "agreed.", "rather", "I", "dates", "we'd", "referencing", "professional,", "than"],
+      },
+      {
+        target: "I also thank her for approaching this collaboratively, noting that I valued the flexibility her company had ultimately shown, and I sign off simply as \"Tomas.\"",
+        jumbled: ["had", "thank", "I", "valued", "shown,", "collaboratively,", "the", "and", "I", "as", "approaching", "ultimately", "also", "her", "for", "company", "this", "that", "off", "flexibility", "\"Tomas.\"", "sign", "noting", "simply", "I", "her"],
+      },
+      {
+        target: "Sending this email ensures there's a clear, documented reference should any confusion arise later regarding these specific terms.",
+        jumbled: ["should", "ensures", "confusion", "documented", "Sending", "email", "these", "this", "arise", "terms.", "reference", "clear,", "later", "any", "specific", "a", "regarding", "there's"],
+      },
+      {
+        target: "This written follow-up, I realize, is as much a part of successful negotiation as the actual conversation itself.",
+        jumbled: ["itself.", "realize,", "as", "negotiation", "actual", "the", "This", "I", "of", "conversation", "a", "part", "as", "written", "much", "is", "successful", "follow-up,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about writing a formal email to confirm the details of a business agreement.",
     mySentenceExample: "I wrote a formal email to confirm the details of our agreement.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "Tomas realizes this transparency matters for team trust too.", answer: true },
     ],
     buildSentence: [
-      { target: "I explain the new terms tomorrow.", jumbled: ["I", "explain", "the", "new", "terms", "tomorrow."] },
-      { target: "This directly affects our budget planning.", jumbled: ["This", "directly", "affects", "our", "budget", "planning."] },
-      { target: "Only minor adjustments should be necessary.", jumbled: ["Only", "minor", "adjustments", "should", "be", "necessary."] },
-      { target: "I appreciate that you negotiated rather than passing this along.", jumbled: ["I", "appreciate", "that", "you", "negotiated", "rather", "than", "passing", "this", "along."] },
-      { target: "This matters for maintaining trust within my small team too.", jumbled: ["This", "matters", "for", "maintaining", "trust", "within", "my", "small", "team", "too."] },
+      {
+        target: "The next morning, I explain the new supplier terms to my staff, since the adjusted pricing directly affects our overall budget planning.",
+        jumbled: ["pricing", "The", "my", "the", "to", "directly", "supplier", "overall", "planning.", "I", "budget", "staff,", "next", "new", "terms", "the", "explain", "affects", "since", "adjusted", "our", "morning,"],
+      },
+      {
+        target: "\"Does this mean we're raising menu prices, Tomas?\" one employee asks, wondering if we might need to adjust slightly to maintain our current margins.",
+        jumbled: ["wondering", "need", "our", "to", "employee", "adjust", "we're", "Tomas?\"", "we", "raising", "margins.", "asks,", "to", "one", "might", "maintain", "mean", "current", "slightly", "prices,", "\"Does", "if", "menu", "this"],
+      },
+      {
+        target: "I explain that, given the smaller-than-expected increase, only minor adjustments should actually be necessary going forward.",
+        jumbled: ["that,", "given", "actually", "smaller-than-expected", "be", "adjustments", "only", "forward.", "necessary", "I", "increase,", "minor", "the", "going", "should", "explain"],
+      },
+      {
+        target: "Another employee mentions appreciating that I'd negotiated rather than simply passing the full increase along without any pushback.",
+        jumbled: ["mentions", "any", "simply", "than", "employee", "passing", "appreciating", "full", "without", "negotiated", "increase", "the", "I'd", "rather", "pushback.", "that", "along", "Another"],
+      },
+      {
+        target: "This transparency, I realize, matters not just for practical planning, but for maintaining trust within my small team too.",
+        jumbled: ["realize,", "for", "trust", "too.", "team", "planning,", "practical", "maintaining", "for", "just", "but", "matters", "not", "This", "small", "I", "my", "within", "transparency,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about explaining a business decision transparently to your team.",
     mySentenceExample: "I explained the business decision transparently to my team.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Tomas recognizes respectful negotiation can strengthen relationships.", answer: true },
     ],
     buildSentence: [
-      { target: "She visits again several months later.", jumbled: ["She", "visits", "again", "several", "months", "later."] },
-      { target: "I admit this honestly now.", jumbled: ["I", "admit", "this", "honestly", "now."] },
-      { target: "This achieved the opposite outcome instead.", jumbled: ["This", "achieved", "the", "opposite", "outcome", "instead."] },
-      { target: "This influenced how she approaches other clients now.", jumbled: ["This", "influenced", "how", "she", "approaches", "other", "clients", "now."] },
-      { target: "Respectful negotiation can genuinely strengthen business relationships.", jumbled: ["Respectful", "negotiation", "can", "genuinely", "strengthen", "business", "relationships."] },
+      {
+        target: "Several months later, Ms. Idowu visits again to discuss an upcoming seasonal order, and our conversation feels noticeably more relaxed than before.",
+        jumbled: ["and", "discuss", "to", "visits", "our", "later,", "relaxed", "before.", "Idowu", "noticeably", "again", "an", "seasonal", "upcoming", "months", "Several", "order,", "feels", "more", "conversation", "than", "Ms."],
+      },
+      {
+        target: "\"You actually changed how I approach clients now, Tomas,\" she mentions, emphasizing flexibility over rigid, blanket policies.",
+        jumbled: ["I", "she", "\"You", "approach", "now,", "mentions,", "over", "clients", "flexibility", "emphasizing", "changed", "policies.", "blanket", "rigid,", "actually", "how", "Tomas,\""],
+      },
+      {
+        target: "I admit that I'd initially worried negotiating might damage our relationship, though it clearly achieved the opposite outcome instead.",
+        jumbled: ["might", "I'd", "instead.", "worried", "the", "it", "opposite", "I", "clearly", "admit", "that", "initially", "negotiating", "damage", "achieved", "though", "our", "outcome", "relationship,"],
+      },
+      {
+        target: "Given how smoothly this partnership now operates, I recognize that respectful negotiation, handled well, can genuinely strengthen business relationships rather than threaten them.",
+        jumbled: ["smoothly", "Given", "business", "strengthen", "rather", "negotiation,", "now", "this", "relationships", "handled", "how", "than", "recognize", "respectful", "them.", "threaten", "I", "well,", "operates,", "can", "that", "genuinely", "partnership"],
+      },
+      {
+        target: "This realization, more than the specific pricing terms, feels like the negotiation's most lasting outcome.",
+        jumbled: ["specific", "feels", "the", "outcome.", "pricing", "more", "like", "lasting", "This", "negotiation's", "realization,", "than", "the", "most", "terms,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a negotiation that ended up strengthening a business relationship.",
     mySentenceExample: "The negotiation ended up strengthening our business relationship.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Tomas learns advocating for his business requires preparation and respect.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this process now.", jumbled: ["I", "look", "back", "on", "this", "process", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "Negotiation isn't adversarial by nature.", jumbled: ["Negotiation", "isn't", "adversarial", "by", "nature."] },
-      { target: "This requires both preparation and genuine respect.", jumbled: ["This", "requires", "both", "preparation", "and", "genuine", "respect."] },
-      { target: "I likely would have quietly absorbed costs my business couldn't sustain.", jumbled: ["I", "likely", "would", "have", "quietly", "absorbed", "costs", "my", "business", "couldn't", "sustain."] },
+      {
+        target: "Looking back on the entire process, I realize how differently things might have unfolded had I simply accepted the original terms without question.",
+        jumbled: ["back", "I", "question.", "the", "differently", "simply", "terms", "how", "on", "have", "process,", "realize", "might", "entire", "without", "the", "things", "Looking", "had", "unfolded", "original", "I", "accepted"],
+      },
+      {
+        target: "I likely would have quietly absorbed costs my business genuinely couldn't sustain long-term.",
+        jumbled: ["costs", "my", "I", "likely", "sustain", "have", "quietly", "genuinely", "couldn't", "business", "would", "long-term.", "absorbed"],
+      },
+      {
+        target: "Instead, researching thoroughly and negotiating respectfully allowed me to protect my business while preserving a valuable, long-term relationship.",
+        jumbled: ["to", "protect", "allowed", "my", "a", "thoroughly", "researching", "preserving", "Instead,", "negotiating", "and", "respectfully", "valuable,", "relationship.", "long-term", "business", "while", "me"],
+      },
+      {
+        target: "I've learned that negotiation, done well, isn't adversarial by nature, but rather a genuine tool for finding sustainable, mutual solutions.",
+        jumbled: ["sustainable,", "adversarial", "a", "done", "mutual", "tool", "negotiation,", "nature,", "but", "by", "solutions.", "well,", "isn't", "genuine", "rather", "learned", "for", "that", "finding", "I've"],
+      },
+      {
+        target: "In the end, this experience taught me that advocating for my business requires both preparation and genuine respect for the other side.",
+        jumbled: ["requires", "preparation", "taught", "my", "side.", "end,", "me", "both", "In", "respect", "business", "the", "experience", "for", "advocating", "other", "and", "for", "the", "genuine", "this", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from negotiating a business agreement respectfully.",
     mySentenceExample: "I learned that respectful negotiation protects both sides of a deal.",

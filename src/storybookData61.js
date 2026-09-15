@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "Sofia realizes she needs to talk to her manager honestly.", answer: true },
     ],
     buildSentence: [
-      { target: "Three projects landed this week.", jumbled: ["Three", "projects", "landed", "this", "week."] },
-      { target: "I assume I can manage this.", jumbled: ["I", "assume", "I", "can", "manage", "this."] },
-      { target: "Quality would definitely suffer here.", jumbled: ["Quality", "would", "definitely", "suffer", "here."] },
-      { target: "I need to talk to my manager.", jumbled: ["I", "need", "to", "talk", "to", "my", "manager."] },
-      { target: "Finishing all three properly just isn't realistic.", jumbled: ["Finishing", "all", "three", "properly", "just", "isn't", "realistic."] },
+      {
+        target: "Three separate projects have landed on my desk this week, each with a deadline that somehow falls on the exact same day.",
+        jumbled: ["Three", "deadline", "week,", "landed", "have", "separate", "on", "falls", "on", "that", "the", "somehow", "projects", "exact", "day.", "my", "with", "desk", "same", "this", "a", "each"],
+      },
+      {
+        target: "A sticky note on my monitor, in my own handwriting, still reads “Sofia's Week” above the growing list.",
+        jumbled: ["growing", "note", "sticky", "handwriting,", "in", "above", "my", "monitor,", "“Sofia's", "still", "A", "on", "own", "Week”", "my", "reads", "the", "list."],
+      },
+      {
+        target: "At first, I assume I can simply manage everything through careful planning and a few extra hours of work.",
+        jumbled: ["of", "everything", "hours", "manage", "a", "extra", "At", "can", "I", "few", "I", "through", "and", "careful", "planning", "work.", "simply", "first,", "assume"],
+      },
+      {
+        target: "However, as I map out the actual timeline more carefully, it becomes obvious that finishing all three properly just isn't realistic.",
+        jumbled: ["actual", "obvious", "that", "more", "isn't", "all", "carefully,", "properly", "three", "out", "I", "just", "map", "timeline", "realistic.", "becomes", "as", "the", "it", "finishing", "However,"],
+      },
+      {
+        target: "I realize I'll need to talk to my manager honestly, rather than quietly struggling and hoping things somehow work out.",
+        jumbled: ["quietly", "than", "honestly,", "struggling", "rather", "manager", "need", "my", "things", "work", "realize", "hoping", "and", "to", "somehow", "out.", "to", "I", "I'll", "talk"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling overwhelmed with too much work at once.",
     mySentenceExample: "I felt overwhelmed with too much work at once.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "Sofia sends Mr. Whitfield a message asking to talk.", answer: true },
     ],
     buildSentence: [
-      { target: "I spend time preparing carefully.", jumbled: ["I", "spend", "time", "preparing", "carefully."] },
-      { target: "I write down each project's status.", jumbled: ["I", "write", "down", "each", "project's", "status."] },
-      { target: "I feel reasonably prepared now.", jumbled: ["I", "feel", "reasonably", "prepared", "now."] },
-      { target: "I want to propose an actual solution.", jumbled: ["I", "want", "to", "propose", "an", "actual", "solution."] },
-      { target: "Do you have a few minutes to talk today?", jumbled: ["Do", "you", "have", "a", "few", "minutes", "to", "talk", "today?"] },
+      {
+        target: "I spend some time preparing exactly what I want to say, rather than just walking in unprepared.",
+        jumbled: ["to", "I", "want", "say,", "walking", "exactly", "unprepared.", "rather", "I", "time", "than", "what", "just", "preparing", "spend", "in", "some"],
+      },
+      {
+        target: "I write down each project's current status, along with a realistic timeline for what could actually be finished by when.",
+        jumbled: ["could", "I", "what", "status,", "with", "timeline", "along", "write", "project's", "be", "a", "each", "current", "for", "by", "when.", "realistic", "actually", "finished", "down"],
+      },
+      {
+        target: "Rather than simply complaining about being overloaded, I want to propose an actual solution he could consider.",
+        jumbled: ["propose", "than", "want", "consider.", "about", "being", "overloaded,", "simply", "complaining", "he", "could", "actual", "an", "I", "Rather", "to", "solution"],
+      },
+      {
+        target: "I also think carefully about which project genuinely matters most, in case a full extension isn't something he can offer.",
+        jumbled: ["I", "something", "full", "a", "also", "offer.", "genuinely", "he", "extension", "which", "case", "matters", "can", "about", "in", "most,", "project", "carefully", "think", "isn't"],
+      },
+      {
+        target: "Feeling reasonably prepared, I send him a quick message asking whether he has a few minutes to talk sometime today.",
+        jumbled: ["I", "send", "whether", "asking", "message", "a", "reasonably", "talk", "few", "has", "quick", "a", "him", "he", "to", "minutes", "today.", "prepared,", "sometime", "Feeling"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about preparing carefully before a difficult conversation.",
     mySentenceExample: "I prepared carefully before a difficult conversation at work.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Mr. Whitfield listens carefully and seems interested.", answer: true },
     ],
     buildSentence: [
-      { target: "I walk into his office now.", jumbled: ["I", "walk", "into", "his", "office", "now."] },
-      { target: "He listens carefully to this.", jumbled: ["He", "listens", "carefully", "to", "this."] },
-      { target: "I feel nervous but reasonably confident.", jumbled: ["I", "feel", "nervous", "but", "reasonably", "confident."] },
-      { target: "This has made everything considerably harder.", jumbled: ["This", "has", "made", "everything", "considerably", "harder."] },
-      { target: "Would it be possible to adjust one timeline?", jumbled: ["Would", "it", "be", "possible", "to", "adjust", "one", "timeline?"] },
+      {
+        target: "Mr. Whitfield agrees to meet after lunch, and I walk into his office feeling nervous but reasonably confident about my plan.",
+        jumbled: ["confident", "after", "Mr.", "meet", "I", "but", "agrees", "office", "into", "walk", "about", "lunch,", "feeling", "my", "Whitfield", "plan.", "and", "his", "nervous", "reasonably", "to"],
+      },
+      {
+        target: "I explain honestly that three deadlines landing on the same day has made everything considerably harder to manage well.",
+        jumbled: ["the", "has", "day", "that", "explain", "I", "three", "same", "deadlines", "to", "honestly", "landing", "well.", "manage", "everything", "harder", "considerably", "on", "made"],
+      },
+      {
+        target: "“Would it be possible to discuss adjusting one of these timelines slightly?” I ask, trying to sound solution-focused rather than defeated.",
+        jumbled: ["to", "these", "than", "adjusting", "of", "slightly?”", "one", "it", "sound", "trying", "“Would", "discuss", "to", "possible", "solution-focused", "ask,", "be", "rather", "timelines", "defeated.", "I"],
+      },
+      {
+        target: "“I appreciate you bringing this to me directly, Sofia,” he says, listening carefully and nodding as I walk through each project's current status and realistic completion estimate.",
+        jumbled: ["to", "walk", "realistic", "says,", "status", "project's", "and", "you", "he", "I", "this", "“I", "each", "Sofia,”", "me", "nodding", "completion", "listening", "current", "carefully", "through", "estimate.", "appreciate", "directly,", "and", "bringing", "as"],
+      },
+      {
+        target: "To my relief, he doesn't seem annoyed, instead appearing genuinely interested in understanding the actual situation.",
+        jumbled: ["he", "in", "instead", "To", "genuinely", "appearing", "relief,", "the", "seem", "understanding", "situation.", "annoyed,", "interested", "doesn't", "my", "actual"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about explaining a difficult situation clearly and calmly.",
     mySentenceExample: "I explained the difficult situation clearly and calmly.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "Sofia confirms this arrangement would genuinely help.", answer: true },
     ],
     buildSentence: [
-      { target: "He reviews the three projects now.", jumbled: ["He", "reviews", "the", "three", "projects", "now."] },
-      { target: "I consider this carefully now.", jumbled: ["I", "consider", "this", "carefully", "now."] },
-      { target: "This absolutely cannot move now.", jumbled: ["This", "absolutely", "cannot", "move", "now."] },
-      { target: "This would genuinely help significantly.", jumbled: ["This", "would", "genuinely", "help", "significantly."] },
-      { target: "Would the remaining two feel manageable for you?", jumbled: ["Would", "the", "remaining", "two", "feel", "manageable", "for", "you?"] },
+      {
+        target: "Mr. Whitfield reviews the three projects, thinking out loud about which one might realistically allow for some flexibility.",
+        jumbled: ["allow", "realistically", "flexibility.", "out", "three", "for", "the", "about", "loud", "might", "which", "Mr.", "Whitfield", "some", "reviews", "one", "projects,", "thinking"],
+      },
+      {
+        target: "He mentions that the client presentation absolutely cannot move, since it's tied to an external meeting already scheduled.",
+        jumbled: ["already", "the", "move,", "mentions", "it's", "He", "client", "since", "absolutely", "an", "meeting", "that", "tied", "scheduled.", "cannot", "presentation", "external", "to"],
+      },
+      {
+        target: "However, the internal report, on the other hand, could potentially shift by a couple of days without causing major problems.",
+        jumbled: ["potentially", "couple", "on", "the", "by", "hand,", "shift", "of", "problems.", "other", "the", "causing", "report,", "a", "days", "without", "major", "However,", "internal", "could"],
+      },
+      {
+        target: "“If we moved that deadline, Sofia, would the remaining two feel manageable for you?” he asks thoughtfully.",
+        jumbled: ["you?”", "Sofia,", "we", "two", "manageable", "that", "for", "remaining", "feel", "asks", "the", "deadline,", "would", "moved", "he", "“If", "thoughtfully."],
+      },
+      {
+        target: "I consider this carefully, mentally reorganizing my week, before confirming that this arrangement would genuinely help significantly.",
+        jumbled: ["that", "my", "help", "this", "would", "before", "mentally", "carefully,", "genuinely", "week,", "confirming", "consider", "significantly.", "reorganizing", "this", "I", "arrangement"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about weighing different options before making a decision.",
     mySentenceExample: "I weighed different options before making my decision.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Mr. Whitfield simply refuses to help at all.", answer: false },
     ],
     buildSentence: [
-      { target: "We agree on this now.", jumbled: ["We", "agree", "on", "this", "now."] },
-      { target: "I thank him for this now.", jumbled: ["I", "thank", "him", "for", "this", "now."] },
-      { target: "This genuinely surprises me now.", jumbled: ["This", "genuinely", "surprises", "me", "now."] },
-      { target: "This gives me some much-needed breathing room.", jumbled: ["This", "gives", "me", "some", "much-needed", "breathing", "room."] },
-      { target: "I should have checked in with the team sooner.", jumbled: ["I", "should", "have", "checked", "in", "with", "the", "team", "sooner."] },
+      {
+        target: "We agree that the internal report deadline will move two days later, giving me some much-needed breathing room this week.",
+        jumbled: ["will", "two", "room", "internal", "We", "me", "the", "this", "much-needed", "later,", "some", "week.", "breathing", "report", "giving", "that", "days", "agree", "deadline", "move"],
+      },
+      {
+        target: "“Take the two days, Sofia,” he says, also suggesting I loop in a colleague who could assist with a smaller part of the third project.",
+        jumbled: ["two", "in", "assist", "“Take", "a", "days,", "Sofia,”", "says,", "also", "suggesting", "I", "the", "part", "could", "with", "third", "project.", "who", "loop", "of", "smaller", "colleague", "a", "the", "he"],
+      },
+      {
+        target: "“I should have checked in with the team sooner about workload balance generally,” he admits honestly, which genuinely surprises me.",
+        jumbled: ["sooner", "should", "in", "checked", "balance", "surprises", "generally,”", "admits", "team", "the", "genuinely", "“I", "with", "me.", "workload", "honestly,", "he", "which", "have", "about"],
+      },
+      {
+        target: "I thank him for being so understanding and flexible, especially since he easily could have simply said no.",
+        jumbled: ["understanding", "he", "so", "flexible,", "said", "simply", "him", "for", "I", "have", "being", "and", "no.", "since", "could", "easily", "especially", "thank"],
+      },
+      {
+        target: "Leaving his office, I feel considerably lighter than when I walked in less than twenty minutes ago.",
+        jumbled: ["when", "feel", "Leaving", "in", "I", "office,", "twenty", "considerably", "walked", "ago.", "I", "lighter", "than", "his", "less", "than", "minutes"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reaching a fair agreement after discussing a problem.",
     mySentenceExample: "We reached a fair agreement after discussing the problem.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "Sofia feels this conversation changed nothing about her week.", answer: false },
     ],
     buildSentence: [
-      { target: "I update my calendar now.", jumbled: ["I", "update", "my", "calendar", "now."] },
-      { target: "She responds enthusiastically to this.", jumbled: ["She", "responds", "enthusiastically", "to", "this."] },
-      { target: "I take a short break now.", jumbled: ["I", "take", "a", "short", "break", "now."] },
-      { target: "This suddenly feels genuinely manageable now.", jumbled: ["This", "suddenly", "feels", "genuinely", "manageable", "now."] },
-      { target: "A single honest conversation changed my entire week.", jumbled: ["A", "single", "honest", "conversation", "changed", "my", "entire", "week."] },
+      {
+        target: "Back at my desk, I update my calendar immediately, reflecting the new deadline and my slightly adjusted workload for the week.",
+        jumbled: ["update", "reflecting", "new", "desk,", "adjusted", "my", "I", "workload", "the", "at", "Back", "and", "week.", "the", "immediately,", "slightly", "calendar", "deadline", "my", "my", "for"],
+      },
+      {
+        target: "I also message the colleague Mr. Whitfield mentioned, explaining briefly what kind of help would actually be most useful.",
+        jumbled: ["I", "mentioned,", "useful.", "help", "Mr.", "what", "most", "of", "Whitfield", "message", "colleague", "be", "actually", "explaining", "also", "the", "briefly", "would", "kind"],
+      },
+      {
+        target: "“Of course, Sofia, happy to help,” she responds enthusiastically, saying she'd be glad to take on that particular task starting tomorrow morning.",
+        jumbled: ["starting", "Sofia,", "to", "morning.", "responds", "that", "on", "task", "to", "take", "she", "particular", "saying", "“Of", "help,”", "glad", "course,", "happy", "enthusiastically,", "tomorrow", "be", "she'd"],
+      },
+      {
+        target: "With everything reorganized, my three-project pile up suddenly feels genuinely manageable rather than completely overwhelming.",
+        jumbled: ["rather", "suddenly", "genuinely", "overwhelming.", "three-project", "reorganized,", "up", "manageable", "everything", "than", "With", "completely", "feels", "my", "pile"],
+      },
+      {
+        target: "I take a short break, feeling grateful that a single honest conversation changed my entire week so significantly.",
+        jumbled: ["feeling", "changed", "entire", "I", "a", "take", "that", "so", "single", "significantly.", "honest", "conversation", "short", "week", "break,", "my", "a", "grateful"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reorganizing your plans after a helpful conversation.",
     mySentenceExample: "I reorganized my plans after a helpful conversation with my manager.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "A colleague mentions how calm Sofia appeared.", answer: true },
     ],
     buildSentence: [
-      { target: "I rehearse this twice tonight.", jumbled: ["I", "rehearse", "this", "twice", "tonight."] },
-      { target: "Everything goes smoothly today.", jumbled: ["Everything", "goes", "smoothly", "today."] },
-      { target: "I'm able to focus fully now.", jumbled: ["I'm", "able", "to", "focus", "fully", "now."] },
-      { target: "The client seems genuinely impressed today.", jumbled: ["The", "client", "seems", "genuinely", "impressed", "today."] },
-      { target: "I came close to feeling completely overwhelmed.", jumbled: ["I", "came", "close", "to", "feeling", "completely", "overwhelmed."] },
+      {
+        target: "With more breathing room in my schedule, I'm able to focus fully on preparing the client presentation without constant distraction.",
+        jumbled: ["room", "client", "focus", "the", "without", "I'm", "my", "constant", "schedule,", "to", "breathing", "able", "With", "presentation", "distraction.", "in", "preparing", "fully", "on", "more"],
+      },
+      {
+        target: "I rehearse it twice the evening before, the title slide still reading “Prepared by Sofia” in the corner, catching a few small mistakes I probably would have missed otherwise.",
+        jumbled: ["by", "probably", "it", "would", "catching", "I", "still", "missed", "mistakes", "twice", "have", "in", "title", "evening", "the", "few", "small", "the", "otherwise.", "reading", "rehearse", "slide", "before,", "corner,", "“Prepared", "a", "Sofia”", "I", "the"],
+      },
+      {
+        target: "On presentation day, everything goes smoothly, and the client seems genuinely impressed by how organized and thorough the material feels.",
+        jumbled: ["everything", "thorough", "smoothly,", "client", "by", "organized", "day,", "On", "the", "seems", "the", "impressed", "genuinely", "feels.", "and", "material", "presentation", "and", "how", "goes"],
+      },
+      {
+        target: "Afterward, a colleague mentions how calm and confident I appeared throughout the entire meeting.",
+        jumbled: ["the", "a", "mentions", "appeared", "meeting.", "confident", "throughout", "how", "and", "Afterward,", "entire", "I", "colleague", "calm"],
+      },
+      {
+        target: "Little do they know how close I came to feeling completely overwhelmed just one week earlier.",
+        jumbled: ["Little", "know", "how", "close", "they", "feeling", "do", "came", "one", "completely", "week", "just", "overwhelmed", "I", "earlier.", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about performing well because you had enough time to prepare.",
     mySentenceExample: "I performed well because I had enough time to prepare.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "The colleague's comment makes Sofia reconsider her approach.", answer: true },
     ],
     buildSentence: [
-      { target: "I thank my colleague again today.", jumbled: ["I", "thank", "my", "colleague", "again", "today."] },
-      { target: "I admit this felt uncomfortable initially.", jumbled: ["I", "admit", "this", "felt", "uncomfortable", "initially."] },
-      { target: "Her comment sticks with me now.", jumbled: ["Her", "comment", "sticks", "with", "me", "now."] },
-      { target: "I usually prefer handling things independently.", jumbled: ["I", "usually", "prefer", "handling", "things", "independently."] },
-      { target: "A team functions better when people communicate honestly.", jumbled: ["A", "team", "functions", "better", "when", "people", "communicate", "honestly."] },
+      {
+        target: "During a coffee break, I thank my colleague again for taking on part of the third project so willingly last week.",
+        jumbled: ["break,", "third", "my", "a", "the", "project", "colleague", "During", "willingly", "for", "week.", "on", "coffee", "I", "part", "taking", "thank", "of", "so", "last", "again"],
+      },
+      {
+        target: "“I'm glad you asked directly, Sofia,” she mentions, rather than my quietly struggling through everything completely on my own.",
+        jumbled: ["Sofia,”", "quietly", "mentions,", "through", "rather", "my", "she", "directly,", "glad", "than", "asked", "own.", "my", "on", "struggling", "completely", "you", "“I'm", "everything"],
+      },
+      {
+        target: "I admit that asking for help initially felt uncomfortable, since I usually prefer handling things independently myself.",
+        jumbled: ["independently", "asking", "usually", "since", "admit", "felt", "I", "help", "for", "myself.", "things", "uncomfortable,", "I", "that", "handling", "prefer", "initially"],
+      },
+      {
+        target: "On the other hand, she points out that a team functions better when people communicate honestly about their actual workload.",
+        jumbled: ["team", "a", "when", "their", "points", "she", "people", "other", "communicate", "the", "honestly", "hand,", "about", "functions", "better", "workload.", "that", "out", "actual", "On"],
+      },
+      {
+        target: "Her comment sticks with me, making me reconsider how I'll approach similar situations going forward.",
+        jumbled: ["reconsider", "approach", "how", "me,", "sticks", "making", "me", "forward.", "I'll", "similar", "going", "with", "comment", "situations", "Her"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning that asking for help was actually a good idea.",
     mySentenceExample: "I learned that asking for help was actually a good idea.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Sofia feels no satisfaction about this outcome.", answer: false },
     ],
     buildSentence: [
-      { target: "He calls a short meeting now.", jumbled: ["He", "calls", "a", "short", "meeting", "now."] },
-      { target: "Several colleagues nod in agreement.", jumbled: ["Several", "colleagues", "nod", "in", "agreement."] },
-      { target: "I feel a quiet sense of satisfaction.", jumbled: ["I", "feel", "a", "quiet", "sense", "of", "satisfaction."] },
-      { target: "The team will check deadlines together weekly.", jumbled: ["The", "team", "will", "check", "deadlines", "together", "weekly."] },
-      { target: "This would genuinely help prevent similar situations.", jumbled: ["This", "would", "genuinely", "help", "prevent", "similar", "situations."] },
+      {
+        target: "The following week, Mr. Whitfield calls a short team meeting to discuss workload planning going forward more generally.",
+        jumbled: ["discuss", "planning", "going", "calls", "team", "a", "workload", "The", "to", "meeting", "more", "following", "forward", "Whitfield", "short", "Mr.", "week,", "generally."],
+      },
+      {
+        target: "He mentions, without naming anyone specifically, that overlapping deadlines had recently caused unnecessary stress for someone on the team.",
+        jumbled: ["overlapping", "that", "team.", "on", "for", "recently", "He", "had", "caused", "without", "anyone", "someone", "specifically,", "the", "stress", "mentions,", "naming", "unnecessary", "deadlines"],
+      },
+      {
+        target: "From now on, he explains, the team will check upcoming deadlines together weekly, rather than everyone managing things separately and silently.",
+        jumbled: ["things", "and", "now", "From", "he", "on,", "upcoming", "silently.", "team", "than", "deadlines", "managing", "weekly,", "will", "the", "check", "separately", "everyone", "rather", "together", "explains,"],
+      },
+      {
+        target: "Several colleagues nod, agreeing this would genuinely help prevent similar situations from happening again in the future.",
+        jumbled: ["genuinely", "situations", "again", "help", "nod,", "prevent", "happening", "future.", "Several", "similar", "from", "agreeing", "colleagues", "in", "would", "this", "the"],
+      },
+      {
+        target: "You started this, Sofia, I think quietly to myself, feeling a sense of satisfaction knowing my honest conversation helped create something useful for everyone.",
+        jumbled: ["create", "myself,", "honest", "Sofia,", "You", "everyone.", "knowing", "think", "sense", "started", "useful", "to", "feeling", "of", "for", "quietly", "this,", "my", "conversation", "satisfaction", "I", "a", "helped", "something"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small change that helps prevent a bigger problem later.",
     mySentenceExample: "This small change helps prevent bigger problems later on.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Sofia wishes she had simply pushed through silently instead.", answer: false },
     ],
     buildSentence: [
-      { target: "I look back on this week.", jumbled: ["I", "look", "back", "on", "this", "week."] },
-      { target: "I've learned something useful here.", jumbled: ["I've", "learned", "something", "useful", "here."] },
-      { target: "This is a genuinely useful professional skill.", jumbled: ["This", "is", "a", "genuinely", "useful", "professional", "skill."] },
-      { target: "Honest conversations usually lead to better outcomes.", jumbled: ["Honest", "conversations", "usually", "lead", "to", "better", "outcomes."] },
-      { target: "Had I stayed quiet, I likely would have burned out.", jumbled: ["Had", "I", "stayed", "quiet,", "I", "likely", "would", "have", "burned", "out."] },
+      {
+        target: "Looking back on the entire week, I write one line in my planner, “Note to self, Sofia: ask before you drown,” and realize how differently things could have gone if I had simply stayed quiet and struggled alone.",
+        jumbled: ["“Note", "had", "realize", "back", "stayed", "gone", "to", "if", "I", "drown,”", "entire", "I", "ask", "line", "the", "could", "self,", "quiet", "on", "differently", "simply", "alone.", "how", "have", "week,", "struggled", "Looking", "write", "and", "and", "one", "before", "planner,", "things", "Sofia:", "you", "my", "in"],
+      },
+      {
+        target: "Had I tried pushing through all three deadlines without saying anything, quality would have suffered, and I likely would have burned out completely.",
+        jumbled: ["Had", "would", "I", "have", "quality", "saying", "tried", "likely", "pushing", "suffered,", "deadlines", "I", "burned", "without", "have", "three", "would", "out", "all", "anything,", "completely.", "through", "and"],
+      },
+      {
+        target: "Instead, preparing carefully and asking clearly allowed Mr. Whitfield to actually understand and help with the situation properly.",
+        jumbled: ["help", "actually", "situation", "asking", "Instead,", "to", "preparing", "understand", "the", "properly.", "allowed", "Mr.", "and", "Whitfield", "with", "carefully", "and", "clearly"],
+      },
+      {
+        target: "I've learned that negotiating a deadline isn't a sign of weakness, but rather a genuinely useful professional skill.",
+        jumbled: ["a", "that", "learned", "useful", "of", "isn't", "genuinely", "sign", "professional", "negotiating", "but", "rather", "skill.", "deadline", "a", "weakness,", "a", "I've"],
+      },
+      {
+        target: "In the end, this experience taught me that honest, well-prepared conversations usually lead to better outcomes for everyone involved.",
+        jumbled: ["usually", "lead", "everyone", "for", "end,", "experience", "In", "to", "well-prepared", "that", "outcomes", "this", "the", "honest,", "conversations", "involved.", "taught", "me", "better"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from negotiating something difficult at work.",
     mySentenceExample: "I learned that negotiating deadlines calmly leads to better results.",

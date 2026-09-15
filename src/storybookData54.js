@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Sana feels ready to avoid this decision forever.", answer: false },
     ],
     buildSentence: [
-      { target: "Painting makes me feel alive.", jumbled: ["Painting", "makes", "me", "feel", "alive."] },
-      { target: "I finally admit this tonight.", jumbled: ["I", "finally", "admit", "this", "tonight."] },
-      { target: "This felt easier avoided than confronted.", jumbled: ["This", "felt", "easier", "avoided", "than", "confronted."] },
-      { target: "I can't keep avoiding this forever.", jumbled: ["I", "can't", "keep", "avoiding", "this", "forever."] },
-      { target: "If I mention this, it will likely lead to conflict.", jumbled: ["If", "I", "mention", "this,", "it", "will", "likely", "lead", "to", "conflict."] },
+      {
+        target: "For as long as I can remember, my dad has assumed I would eventually study engineering, just like him and my older brother.",
+        jumbled: ["my", "can", "as", "would", "older", "assumed", "I", "like", "study", "as", "eventually", "brother.", "For", "my", "engineering,", "and", "dad", "has", "remember,", "I", "just", "long", "him"],
+      },
+      {
+        target: "I've never directly disagreed with this plan, mostly because bringing it up always felt easier avoided than confronted.",
+        jumbled: ["never", "avoided", "because", "it", "felt", "up", "bringing", "this", "disagreed", "with", "than", "always", "easier", "mostly", "I've", "confronted.", "directly", "plan,"],
+      },
+      {
+        target: "Painting makes me feel genuinely alive in a way that math and science assignments simply never have.",
+        jumbled: ["have.", "a", "assignments", "Painting", "that", "math", "makes", "and", "me", "feel", "in", "alive", "simply", "science", "way", "genuinely", "never"],
+      },
+      {
+        target: "I know it will likely lead to a conversation I've been dreading for years.",
+        jumbled: ["for", "conversation", "dreading", "years.", "will", "a", "been", "know", "it", "to", "I", "lead", "I've", "likely"],
+      },
+      {
+        target: "Tonight, sitting between two brochures, I finally admit I can't keep avoiding this decision forever.",
+        jumbled: ["I", "can't", "brochures,", "between", "decision", "avoiding", "Tonight,", "this", "I", "admit", "forever.", "sitting", "two", "finally", "keep"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a decision you've been avoiding.",
     mySentenceExample: "I've been avoiding a decision about which classes to choose next year.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Sana feels only excitement with no anxiety.", answer: false },
     ],
     buildSentence: [
-      { target: "I've thought about it constantly.", jumbled: ["I've", "thought", "about", "it", "constantly."] },
-      { target: "Her words replay in my mind.", jumbled: ["Her", "words", "replay", "in", "my", "mind."] },
-      { target: "This shows genuine talent already.", jumbled: ["This", "shows", "genuine", "talent", "already."] },
-      { target: "I can't delay this decision much longer.", jumbled: ["I", "can't", "delay", "this", "decision", "much", "longer."] },
-      { target: "This mixes excitement with genuine, familiar anxiety.", jumbled: ["This", "mixes", "excitement", "with", "genuine,", "familiar", "anxiety."] },
+      {
+        target: "Ms. Okoro asks me to stay behind to look through my portfolio together more carefully.",
+        jumbled: ["to", "together", "stay", "look", "Ms.", "asks", "to", "carefully.", "behind", "my", "portfolio", "me", "Okoro", "more", "through"],
+      },
+      {
+        target: "She points to a painting I made last month, saying it shows genuine talent and a distinctive artistic voice already forming.",
+        jumbled: ["saying", "month,", "forming.", "and", "I", "voice", "talent", "painting", "to", "distinctive", "a", "made", "last", "it", "artistic", "a", "She", "already", "shows", "points", "genuine"],
+      },
+      {
+        target: "“Have you thought seriously about applying to art school, Sana?” she asks, watching my reaction closely and thoughtfully.",
+        jumbled: ["my", "school,", "about", "she", "asks,", "seriously", "to", "reaction", "“Have", "and", "thoughtfully.", "you", "applying", "art", "thought", "closely", "watching", "Sana?”"],
+      },
+      {
+        target: "I admit I've thought about it constantly, though I haven't told my parents anything about these feelings yet.",
+        jumbled: ["my", "I", "these", "it", "feelings", "thought", "constantly,", "parents", "though", "haven't", "admit", "about", "about", "yet.", "I", "told", "I've", "anything"],
+      },
+      {
+        target: "She explains applications are due in two months, which means I can't delay this decision much longer.",
+        jumbled: ["due", "delay", "months,", "two", "longer.", "can't", "explains", "applications", "decision", "She", "in", "which", "I", "this", "are", "much", "means"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who encouraged you to pursue something you loved.",
     mySentenceExample: "My teacher encouraged me to pursue writing after reading my story.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Sana feels completely ready after hours of practice.", answer: false },
     ],
     buildSentence: [
-      { target: "I stand in front of my mirror.", jumbled: ["stand", "in", "I", "front", "of", "my", "mirror."] },
-      { target: "I practice specific phrases carefully.", jumbled: ["I", "practice", "specific", "phrases", "carefully."] },
-      { target: "This only delays an inevitable moment.", jumbled: ["This", "only", "delays", "an", "inevitable", "moment."] },
-      { target: "I still don't feel remotely ready.", jumbled: ["I", "still", "don't", "feel", "remotely", "ready."] },
-      { target: "If I showed him my portfolio, he might understand.", jumbled: ["If", "I", "showed", "him", "my", "portfolio,", "he", "might", "understand."] },
+      {
+        target: "That night, I stand in front of my mirror, rehearsing exactly how I'll bring this up with my dad tomorrow.",
+        jumbled: ["of", "stand", "my", "exactly", "up", "That", "my", "night,", "tomorrow.", "with", "this", "rehearsing", "dad", "I'll", "front", "bring", "mirror,", "how", "I", "in"],
+      },
+      {
+        target: "Every version of the conversation I imagine ends with him looking disappointed, or worse, genuinely hurt by my decision.",
+        jumbled: ["genuinely", "him", "the", "with", "imagine", "conversation", "version", "hurt", "ends", "Every", "disappointed,", "worse,", "decision.", "I", "by", "of", "looking", "or", "my"],
+      },
+      {
+        target: "Maybe he would understand why this matters so much to me.",
+        jumbled: ["why", "he", "understand", "to", "much", "so", "would", "this", "matters", "me.", "Maybe"],
+      },
+      {
+        target: "I practice specific phrases, trying to sound confident rather than apologetic about something I actually care about deeply.",
+        jumbled: ["to", "confident", "I", "rather", "about", "I", "specific", "about", "sound", "care", "apologetic", "actually", "than", "phrases,", "trying", "something", "practice", "deeply."],
+      },
+      {
+        target: "Despite hours of rehearsal, I still don't feel remotely ready for tomorrow's actual conversation.",
+        jumbled: ["Despite", "still", "don't", "actual", "remotely", "rehearsal,", "for", "feel", "ready", "hours", "I", "of", "conversation.", "tomorrow's"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing a difficult conversation before having it.",
     mySentenceExample: "I practiced a difficult conversation before talking to my parents about my grades.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "This conversation feels completely finished already.", answer: false },
     ],
     buildSentence: [
-      { target: "My voice noticeably shakes now.", jumbled: ["My", "voice", "noticeably", "shakes", "now."] },
-      { target: "He gives me his full attention.", jumbled: ["He", "gives", "me", "his", "full", "attention."] },
-      { target: "I take a deep breath now.", jumbled: ["I", "take", "a", "deep", "breath", "now."] },
-      { target: "This conversation has only just begun.", jumbled: ["This", "conversation", "has", "only", "just", "begun."] },
-      { target: "I always assumed you enjoyed the engineering path.", jumbled: ["I", "always", "assumed", "you", "enjoyed", "the", "engineering", "path."] },
+      {
+        target: "The next evening, I ask Dad if we can talk about something important, my voice noticeably shaking as I speak.",
+        jumbled: ["something", "shaking", "can", "The", "I", "evening,", "about", "ask", "we", "speak.", "important,", "next", "talk", "my", "as", "Dad", "voice", "if", "noticeably", "I"],
+      },
+      {
+        target: "He sets down his newspaper immediately, giving me his full attention in a way that makes this feel even more real.",
+        jumbled: ["down", "way", "a", "giving", "even", "He", "that", "makes", "this", "feel", "attention", "immediately,", "full", "me", "sets", "real.", "his", "in", "his", "newspaper", "more"],
+      },
+      {
+        target: "I explain, as clearly as I can, how deeply painting matters to me and how engineering never felt genuinely right.",
+        jumbled: ["as", "as", "me", "how", "painting", "to", "I", "explain,", "never", "right.", "and", "engineering", "felt", "deeply", "how", "can,", "I", "clearly", "matters", "genuinely"],
+      },
+      {
+        target: "His expression shifts from confusion to something harder to read, somewhere between concern and quiet disappointment.",
+        jumbled: ["to", "something", "and", "expression", "to", "from", "concern", "quiet", "His", "shifts", "read,", "somewhere", "disappointment.", "harder", "between", "confusion"],
+      },
+      {
+        target: "“I always assumed you enjoyed the engineering path we discussed, Sana,” he says slowly, clearly processing this unexpected shift.",
+        jumbled: ["this", "you", "he", "always", "says", "unexpected", "shift.", "slowly,", "“I", "processing", "engineering", "assumed", "we", "the", "Sana,”", "path", "enjoyed", "clearly", "discussed,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about beginning a conversation that felt difficult but necessary.",
     mySentenceExample: "I began a difficult but necessary conversation with my parents about my future.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Dad seems willing to actually listen now.", answer: true },
     ],
     buildSentence: [
-      { target: "Dad explains his worries carefully.", jumbled: ["Dad", "explains", "his", "worries", "carefully."] },
-      { target: "I feel frustration building now.", jumbled: ["I", "feel", "frustration", "building", "now."] },
-      { target: "He seems willing to listen now.", jumbled: ["He", "seems", "willing", "to", "listen", "now."] },
-      { target: "Many artists build sustainable careers today.", jumbled: ["Many", "artists", "build", "sustainable", "careers", "today."] },
-      { target: "Understanding his perspective doesn't mean agreeing with it.", jumbled: ["Understanding", "his", "perspective", "doesn't", "mean", "agreeing", "with", "it."] },
+      {
+        target: "Dad explains his worries carefully, mentioning financial stability and how competitive the art world can genuinely be.",
+        jumbled: ["the", "financial", "competitive", "explains", "world", "be.", "Dad", "genuinely", "his", "carefully,", "how", "and", "can", "art", "mentioning", "worries", "stability"],
+      },
+      {
+        target: "He isn't trying to be unkind, I realize, only expressing fears rooted in wanting a secure future for me.",
+        jumbled: ["only", "a", "to", "be", "He", "unkind,", "rooted", "I", "isn't", "future", "realize,", "trying", "secure", "for", "fears", "me.", "in", "wanting", "expressing"],
+      },
+      {
+        target: "“Art is a wonderful hobby, Sana, but can it really support you long-term?” he asks, not dismissively, but with real concern.",
+        jumbled: ["you", "but", "dismissively,", "a", "but", "long-term?”", "can", "really", "not", "with", "it", "hobby,", "he", "real", "wonderful", "is", "support", "concern.", "asks,", "“Art", "Sana,"],
+      },
+      {
+        target: "I feel frustration building, though I try reminding myself that understanding his perspective doesn't mean automatically agreeing with it.",
+        jumbled: ["agreeing", "building,", "understanding", "automatically", "myself", "his", "it.", "perspective", "with", "frustration", "I", "reminding", "I", "doesn't", "though", "try", "that", "mean", "feel"],
+      },
+      {
+        target: "I explain that many artists build sustainable careers, mentioning illustration, design, and teaching as realistic possibilities.",
+        jumbled: ["mentioning", "and", "careers,", "that", "many", "sustainable", "illustration,", "design,", "I", "possibilities.", "build", "realistic", "explain", "as", "teaching", "artists"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about understanding someone's worry even if you disagree with it.",
     mySentenceExample: "I understood my parent's worry even though I disagreed with the conclusion.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Sana feels Dad still sees only his assumptions of her.", answer: false },
     ],
     buildSentence: [
-      { target: "I bring out my portfolio.", jumbled: ["bring", "out", "I", "my", "portfolio."] },
-      { target: "He flips through it slowly.", jumbled: ["He", "flips", "through", "it", "slowly."] },
-      { target: "I feel he's seeing me clearly.", jumbled: ["I", "feel", "he's", "seeing", "me", "clearly."] },
-      { target: "I didn't realize your skill had developed this much.", jumbled: ["I", "didn't", "realize", "your", "skill", "had", "developed", "this", "much."] },
-      { target: "Seeing tangible proof shifts how seriously he takes this.", jumbled: ["Seeing", "tangible", "proof", "shifts", "how", "seriously", "he", "takes", "this."] },
+      {
+        target: "I bring out my portfolio, something I've never actually shown him in this much detail before.",
+        jumbled: ["my", "much", "in", "shown", "out", "this", "before.", "portfolio,", "him", "I", "something", "never", "bring", "detail", "actually", "I've"],
+      },
+      {
+        target: "He flips through slowly, pausing longer on certain pieces, his expression shifting from politeness to genuine surprise.",
+        jumbled: ["shifting", "politeness", "pausing", "slowly,", "pieces,", "surprise.", "expression", "his", "flips", "from", "on", "genuine", "through", "He", "to", "certain", "longer"],
+      },
+      {
+        target: "“I didn't realize your skill had developed this much, Sana,” he admits, sounding almost embarrassed about not knowing sooner.",
+        jumbled: ["“I", "admits,", "almost", "skill", "had", "much,", "not", "knowing", "this", "developed", "didn't", "realize", "your", "Sana,”", "about", "he", "sounding", "embarrassed", "sooner."],
+      },
+      {
+        target: "I explain how many hours I've spent practicing after school, hours he assumed were spent on homework instead.",
+        jumbled: ["on", "practicing", "spent", "spent", "how", "were", "after", "assumed", "school,", "many", "homework", "hours", "explain", "I've", "he", "instead.", "hours", "I"],
+      },
+      {
+        target: "Seeing tangible proof of my dedication seems to shift something in how seriously he's taking this conversation now.",
+        jumbled: ["of", "Seeing", "how", "seriously", "he's", "tangible", "now.", "taking", "dedication", "in", "this", "shift", "something", "conversation", "my", "seems", "to", "proof"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about showing someone proof of your effort or dedication.",
     mySentenceExample: "I showed my parents proof of my dedication through my grades and projects.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "They spend another hour researching programs together.", answer: true },
     ],
     buildSentence: [
-      { target: "Dad suggests researching together now.", jumbled: ["Dad", "suggests", "researching", "together", "now."] },
-      { target: "This feels like genuine middle ground.", jumbled: ["This", "feels", "like", "genuine", "middle", "ground."] },
-      { target: "This seems worth seriously considering.", jumbled: ["This", "seems", "worth", "seriously", "considering."] },
-      { target: "We spend another hour researching together.", jumbled: ["We", "spend", "another", "hour", "researching", "together."] },
-      { target: "Many art graduates build stable, successful careers.", jumbled: ["Many", "art", "graduates", "build", "stable,", "successful", "careers."] },
+      {
+        target: "Dad suggests we research together, looking specifically at career outcomes for graduates from serious art programs.",
+        jumbled: ["looking", "at", "for", "we", "suggests", "research", "career", "Dad", "art", "graduates", "programs.", "specifically", "outcomes", "serious", "together,", "from"],
+      },
+      {
+        target: "Together, we find statistics showing many art graduates do build stable, successful careers across various creative industries.",
+        jumbled: ["showing", "build", "various", "find", "many", "careers", "we", "art", "Together,", "statistics", "across", "stable,", "successful", "do", "graduates", "creative", "industries."],
+      },
+      {
+        target: "“Just consider it, Sana,” he adds, suggesting I also apply to one or two universities offering both art and a practical minor.",
+        jumbled: ["two", "consider", "offering", "it,", "practical", "he", "art", "universities", "Sana,”", "apply", "a", "also", "minor.", "or", "and", "one", "suggesting", "“Just", "adds,", "I", "to", "both"],
+      },
+      {
+        target: "It feels like genuine middle ground rather than simple defeat.",
+        jumbled: ["than", "like", "rather", "It", "ground", "simple", "feels", "middle", "genuine", "defeat."],
+      },
+      {
+        target: "That seems worth seriously considering.",
+        jumbled: ["worth", "seems", "seriously", "That", "considering."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finding a compromise with someone you disagreed with.",
     mySentenceExample: "I found a compromise with my parents about my weekend plans.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Sana feels this experience taught her nothing valuable.", answer: false },
     ],
     buildSentence: [
-      { target: "She listens with genuine interest.", jumbled: ["She", "listens", "with", "genuine", "interest."] },
-      { target: "I feel a wave of relief.", jumbled: ["I", "feel", "a", "wave", "of", "relief."] },
-      { target: "Compromises aren't failures, she says.", jumbled: ["Compromises", "aren't", "failures,", "she", "says."] },
-      { target: "I have support both at home and here.", jumbled: ["I", "have", "support", "both", "at", "home", "and", "here."] },
-      { target: "Difficult conversations can genuinely lead somewhere worthwhile.", jumbled: ["Difficult", "conversations", "can", "genuinely", "lead", "somewhere", "worthwhile."] },
+      {
+        target: "The next day, I tell Ms. Okoro everything that happened during our long conversation the night before.",
+        jumbled: ["the", "Okoro", "day,", "happened", "our", "during", "Ms.", "everything", "conversation", "before.", "tell", "night", "The", "long", "next", "that", "I"],
+      },
+      {
+        target: "She listens with genuine interest, smiling warmly when I mention that Dad actually looked through my entire portfolio.",
+        jumbled: ["looked", "She", "mention", "listens", "when", "actually", "through", "smiling", "portfolio.", "that", "my", "Dad", "interest,", "entire", "with", "I", "warmly", "genuine"],
+      },
+      {
+        target: "“Compromises aren't failures, Sana. Sometimes they're just the beginning of a longer journey,” she reminds me kindly.",
+        jumbled: ["the", "beginning", "me", "journey,”", "of", "reminds", "longer", "aren't", "failures,", "a", "“Compromises", "she", "just", "Sometimes", "Sana.", "they're", "kindly."],
+      },
+      {
+        target: "She offers to help me research programs that combine strong art training with practical, career-focused coursework.",
+        jumbled: ["training", "to", "with", "programs", "that", "She", "coursework.", "career-focused", "offers", "me", "art", "help", "combine", "research", "strong", "practical,"],
+      },
+      {
+        target: "I feel a wave of relief knowing I have support both at home now and here at school.",
+        jumbled: ["a", "both", "here", "I", "of", "at", "at", "I", "now", "school.", "support", "have", "knowing", "home", "and", "relief", "feel", "wave"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a difficult experience that ended up teaching you something valuable.",
     mySentenceExample: "A difficult experience with my grades taught me the value of asking for help.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Dad shows no interest in understanding this world.", answer: false },
     ],
     buildSentence: [
-      { target: "We spend several evenings researching.", jumbled: ["We", "spend", "several", "evenings", "researching."] },
-      { target: "This feels genuinely meaningful now.", jumbled: ["This", "feels", "genuinely", "meaningful", "now."] },
-      { target: "He asks thoughtful questions throughout.", jumbled: ["He", "asks", "thoughtful", "questions", "throughout."] },
-      { target: "We narrow our list down to four.", jumbled: ["We", "narrow", "our", "list", "down", "to", "four."] },
-      { target: "Our relationship has grown stronger through this disagreement.", jumbled: ["Our", "relationship", "has", "grown", "stronger", "through", "this", "disagreement."] },
+      {
+        target: "Over the following weeks, Dad and I spend several evenings researching universities that offer exactly the combination we discussed.",
+        jumbled: ["the", "following", "and", "that", "Over", "the", "evenings", "universities", "we", "several", "exactly", "combination", "offer", "discussed.", "spend", "weeks,", "researching", "Dad", "I"],
+      },
+      {
+        target: "He asks thoughtful questions during our research, genuinely trying to understand this world that once felt completely foreign to him.",
+        jumbled: ["to", "He", "genuinely", "questions", "him.", "trying", "world", "felt", "asks", "foreign", "our", "this", "completely", "once", "that", "during", "understand", "research,", "thoughtful", "to"],
+      },
+      {
+        target: "I notice him researching art career statistics independently too, clearly wanting to feel more informed and confident about this decision.",
+        jumbled: ["notice", "independently", "statistics", "clearly", "confident", "wanting", "art", "too,", "researching", "and", "informed", "I", "career", "him", "this", "about", "feel", "to", "more", "decision."],
+      },
+      {
+        target: "Watching him engage this seriously with something that matters so much to me feels genuinely meaningful.",
+        jumbled: ["matters", "engage", "him", "so", "genuinely", "this", "Watching", "with", "feels", "meaningful.", "to", "seriously", "that", "me", "much", "something"],
+      },
+      {
+        target: "Our relationship, I realize, has actually grown stronger through navigating this disagreement honestly together.",
+        jumbled: ["Our", "I", "stronger", "together.", "relationship,", "has", "this", "grown", "realize,", "navigating", "disagreement", "honestly", "through", "actually"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a relationship that grew stronger through disagreement.",
     mySentenceExample: "My friendship grew stronger through disagreement when we talked honestly.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Sana feels grateful for how far they've come.", answer: true },
     ],
     buildSentence: [
-      { target: "I press submit finally.", jumbled: ["press", "submit", "I", "finally."] },
-      { target: "Something settles inside me now.", jumbled: ["Something", "settles", "inside", "me", "now."] },
-      { target: "I'm proud of you, he says.", jumbled: ["proud", "of", "I'm", "you,", "he", "says."] },
-      { target: "This didn't mean rejecting my family.", jumbled: ["This", "didn't", "mean", "rejecting", "my", "family."] },
-      { target: "If I hadn't found courage that evening, this wouldn't exist.", jumbled: ["If", "I", "hadn't", "found", "courage", "that", "evening,", "this", "wouldn't", "exist."] },
+      {
+        target: "Tonight, I sit at my laptop, finger hovering over the submit button for my first-choice art program application.",
+        jumbled: ["button", "Tonight,", "my", "sit", "the", "over", "hovering", "application.", "my", "program", "art", "I", "laptop,", "first-choice", "at", "submit", "finger", "for"],
+      },
+      {
+        target: "Dad stands behind me, having offered to be there when I finally send it, something I never expected weeks ago.",
+        jumbled: ["send", "behind", "finally", "having", "there", "offered", "stands", "me,", "ago.", "expected", "something", "weeks", "be", "when", "to", "Dad", "never", "I", "it,", "I"],
+      },
+      {
+        target: "“I'm proud of you, Sana, for knowing what you want and fighting for it respectfully,” he says quietly.",
+        jumbled: ["it", "quietly.", "says", "Sana,", "want", "of", "knowing", "what", "fighting", "for", "you", "for", "respectfully,”", "“I'm", "proud", "you,", "and", "he"],
+      },
+      {
+        target: "I press submit, and something settles inside me, a mixture of excitement, nervousness, and genuine gratitude for how far we've come.",
+        jumbled: ["settles", "how", "a", "far", "genuine", "of", "we've", "and", "nervousness,", "gratitude", "come.", "excitement,", "I", "and", "mixture", "submit,", "press", "for", "inside", "me,", "something"],
+      },
+      {
+        target: "This journey taught me that choosing my own path didn't mean rejecting my family, only inviting them to understand it.",
+        jumbled: ["my", "This", "choosing", "my", "understand", "taught", "journey", "me", "family,", "only", "to", "mean", "rejecting", "path", "own", "that", "it.", "inviting", "didn't", "them"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a moment when you finally acted on a decision you'd been considering.",
     mySentenceExample: "I finally acted on my decision to try out for the school play.",

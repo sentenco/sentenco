@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Jordan feels less prepared than ever before.", answer: false },
     ],
     buildSentence: [
-      { target: "My legs ache tonight.", jumbled: ["legs", "ache", "My", "tonight."] },
-      { target: "Try-outs are finally tomorrow.", jumbled: ["are", "finally", "Try-outs", "tomorrow."] },
-      { target: "I feel more prepared than ever.", jumbled: ["I", "feel", "more", "prepared", "than", "ever."] },
-      { target: "I've practiced almost every day.", jumbled: ["I've", "practiced", "almost", "every", "day."] },
-      { target: "If I make the team, it would prove my effort worthwhile.", jumbled: ["If", "I", "make", "the", "team,", "it", "would", "prove", "my", "effort", "worthwhile."] },
+      {
+        target: "For the past two months, I've practiced basketball almost every single day after school without exception.",
+        jumbled: ["two", "the", "exception.", "I've", "practiced", "For", "day", "months,", "single", "past", "almost", "school", "basketball", "without", "every", "after"],
+      },
+      {
+        target: "Making the varsity team has been my main goal since I started high school, and try-outs are finally tomorrow.",
+        jumbled: ["Making", "since", "high", "I", "try-outs", "tomorrow.", "been", "varsity", "school,", "my", "started", "team", "and", "the", "finally", "main", "are", "goal", "has"],
+      },
+      {
+        target: "It would prove all those early morning practices were genuinely worth the effort.",
+        jumbled: ["early", "were", "would", "morning", "practices", "It", "worth", "prove", "those", "the", "genuinely", "effort.", "all"],
+      },
+      {
+        target: "My legs ache tonight from today's final practice session, but I feel more prepared than I've ever felt before.",
+        jumbled: ["felt", "feel", "ache", "more", "today's", "I've", "practice", "legs", "from", "than", "session,", "but", "before.", "tonight", "prepared", "final", "I", "My", "ever"],
+      },
+      {
+        target: "Tomorrow will either confirm everything I've worked toward or force me to reconsider my whole plan.",
+        jumbled: ["whole", "either", "I've", "will", "confirm", "reconsider", "me", "my", "toward", "or", "Tomorrow", "to", "force", "plan.", "everything", "worked"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about preparing hard for something important.",
     mySentenceExample: "I prepared hard for my exam by studying every night.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Jordan feels completely confident about his performance.", answer: false },
     ],
     buildSentence: [
-      { target: "My hands feel slightly sweaty.", jumbled: ["hands", "feel", "My", "slightly", "sweaty."] },
-      { target: "I make a few solid plays.", jumbled: ["make", "a", "I", "few", "solid", "plays."] },
-      { target: "This makes me hopeful and nervous.", jumbled: ["This", "makes", "me", "hopeful", "and", "nervous."] },
-      { target: "I try to focus on my performance.", jumbled: ["I", "try", "to", "focus", "on", "my", "performance."] },
-      { target: "I have no idea how well I performed.", jumbled: ["I", "have", "no", "idea", "how", "well", "I", "performed."] },
+      {
+        target: "The gym feels crowded and tense as nearly thirty players stretch and warm up before try-outs officially begin.",
+        jumbled: ["The", "up", "feels", "begin.", "try-outs", "crowded", "stretch", "tense", "before", "warm", "thirty", "players", "and", "nearly", "and", "gym", "as", "officially"],
+      },
+      {
+        target: "Coach Reeves walks around with his clipboard, occasionally jotting down notes while watching everyone carefully.",
+        jumbled: ["Coach", "walks", "around", "jotting", "watching", "Reeves", "occasionally", "down", "carefully.", "everyone", "with", "while", "his", "notes", "clipboard,"],
+      },
+      {
+        target: "\"Just focus, Jordan,\" I tell myself, trying to concentrate on my own performance rather than comparing myself to others.",
+        jumbled: ["focus,", "I", "tell", "on", "Jordan,\"", "rather", "myself", "own", "\"Just", "comparing", "trying", "myself,", "than", "to", "others.", "concentrate", "to", "performance", "my"],
+      },
+      {
+        target: "During the scrimmage portion, I make a few solid plays, though I also miss an easy shot I normally never miss.",
+        jumbled: ["also", "solid", "though", "easy", "the", "an", "During", "I", "few", "shot", "never", "I", "portion,", "scrimmage", "a", "normally", "I", "miss.", "miss", "plays,", "make"],
+      },
+      {
+        target: "I notice Coach Reeves watching me specifically at one point, which makes me both hopeful and nervous simultaneously.",
+        jumbled: ["Reeves", "me", "both", "nervous", "point,", "and", "makes", "hopeful", "one", "at", "notice", "which", "I", "specifically", "simultaneously.", "me", "Coach", "watching"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being nervous during an important test or tryout.",
     mySentenceExample: "I felt nervous during my driving test but tried to focus.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Jordan feels this waiting period is easy to bear.", answer: false },
     ],
     buildSentence: [
-      { target: "This feels like an eternity.", jumbled: ["feels", "like", "This", "an", "eternity."] },
-      { target: "I check my phone constantly.", jumbled: ["check", "my", "I", "phone", "constantly."] },
-      { target: "She's right, logically speaking.", jumbled: ["is", "right,", "She's", "logically", "speaking."] },
-      { target: "I wonder if I could have done differently.", jumbled: ["I", "wonder", "if", "I", "could", "have", "done", "differently."] },
-      { target: "If results came out immediately, this wouldn't feel unbearable.", jumbled: ["If", "results", "came", "out", "immediately,", "this", "wouldn't", "feel", "unbearable."] },
+      {
+        target: "Coach Reeves announced the results would be posted three days later, which somehow feels like an eternity right now.",
+        jumbled: ["right", "results", "would", "three", "later,", "which", "the", "feels", "now.", "be", "an", "somehow", "Reeves", "like", "announced", "posted", "Coach", "days", "eternity"],
+      },
+      {
+        target: "Every hour that passes, I find myself checking my phone, half expecting some kind of early notification.",
+        jumbled: ["half", "Every", "checking", "early", "some", "phone,", "kind", "that", "find", "notification.", "I", "my", "of", "expecting", "myself", "hour", "passes,"],
+      },
+      {
+        target: "Mei, noticing my constant anxiety at lunch, tells me, “Overthinking this won't change the outcome, Jordan.”",
+        jumbled: ["lunch,", "Mei,", "anxiety", "“Overthinking", "at", "the", "this", "outcome,", "my", "tells", "change", "won't", "noticing", "me,", "Jordan.”", "constant"],
+      },
+      {
+        target: "She's right, logically, but knowing something intellectually doesn't always calm the nervous feeling in my stomach.",
+        jumbled: ["intellectually", "logically,", "in", "always", "my", "nervous", "but", "She's", "stomach.", "feeling", "the", "calm", "right,", "doesn't", "knowing", "something"],
+      },
+      {
+        target: "This waiting period wouldn't feel nearly as unbearable as it currently does.",
+        jumbled: ["does.", "feel", "wouldn't", "it", "currently", "as", "period", "This", "as", "unbearable", "waiting", "nearly"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting anxiously for important news.",
     mySentenceExample: "I waited anxiously for news about my college application.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Jordan celebrates loudly with everyone else.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart pounds now.", jumbled: ["heart", "pounds", "My", "now."] },
-      { target: "My name isn't there.", jumbled: ["name", "isn't", "My", "there."] },
-      { target: "I stand frozen, feeling invisible.", jumbled: ["I", "stand", "frozen,", "feeling", "invisible."] },
-      { target: "I quietly step back and walk away.", jumbled: ["I", "quietly", "step", "back", "and", "walk", "away."] },
-      { target: "I cannot process what that actually means.", jumbled: ["I", "cannot", "process", "what", "that", "actually", "means."] },
+      {
+        target: "On the third morning, a crowd already surrounds the gym doors before I even arrive at school.",
+        jumbled: ["morning,", "third", "already", "the", "I", "even", "arrive", "doors", "gym", "school.", "crowd", "On", "the", "at", "a", "surrounds", "before"],
+      },
+      {
+        target: "I push through gently, my heart pounding as I scan the list for my name among the others.",
+        jumbled: ["the", "push", "my", "others.", "the", "among", "I", "list", "scan", "I", "pounding", "name", "through", "for", "heart", "as", "my", "gently,"],
+      },
+      {
+        target: "\"Check again, Jordan,\" I think, reading the list once, then twice, my stomach sinking lower with each careful pass through the names.",
+        jumbled: ["I", "Jordan,\"", "\"Check", "then", "careful", "each", "list", "names.", "think,", "reading", "with", "the", "stomach", "sinking", "twice,", "pass", "once,", "lower", "the", "my", "again,", "through"],
+      },
+      {
+        target: "My name isn't there, and for a moment, I genuinely cannot process what that actually means.",
+        jumbled: ["there,", "and", "process", "name", "a", "actually", "genuinely", "what", "for", "moment,", "cannot", "I", "means.", "isn't", "My", "that"],
+      },
+      {
+        target: "Students around me celebrate loudly, hugging each other, while I stand frozen, feeling completely invisible in the noisy crowd.",
+        jumbled: ["Students", "loudly,", "each", "me", "the", "hugging", "I", "while", "crowd.", "in", "feeling", "noisy", "other,", "around", "stand", "invisible", "completely", "celebrate", "frozen,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a moment of disappointment you experienced.",
     mySentenceExample: "I felt disappointed when I didn't get the part in the school play.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Jordan feels completely fine and unaffected.", answer: false },
     ],
     buildSentence: [
-      { target: "I sit alone right now.", jumbled: ["sit", "alone", "I", "right", "now."] },
-      { target: "The disappointment sits heavy inside.", jumbled: ["disappointment", "sits", "The", "heavy", "inside."] },
-      { target: "I need time alone first.", jumbled: ["I", "need", "time", "alone", "first."] },
-      { target: "I wonder if that shot cost me my spot.", jumbled: ["I", "wonder", "if", "that", "shot", "cost", "me", "my", "spot."] },
-      { target: "Although I know this logically, it doesn't feel that way.", jumbled: ["Although", "I", "know", "this", "logically,", "it", "doesn't", "feel", "that", "way."] },
+      {
+        target: "I sit alone on a bench outside, unable to face going back into a school full of celebrating classmates.",
+        jumbled: ["on", "a", "school", "sit", "a", "of", "outside,", "face", "celebrating", "I", "to", "into", "back", "full", "alone", "classmates.", "going", "bench", "unable"],
+      },
+      {
+        target: "Two months of early mornings, sore muscles, and missed hangouts suddenly feel completely pointless in this exact moment.",
+        jumbled: ["in", "mornings,", "pointless", "exact", "suddenly", "months", "sore", "missed", "and", "moment.", "early", "feel", "completely", "of", "hangouts", "Two", "this", "muscles,"],
+      },
+      {
+        target: "I text my mom that I'll walk home instead of getting picked up, needing time alone before facing anyone.",
+        jumbled: ["picked", "I", "that", "before", "alone", "facing", "text", "up,", "mom", "instead", "I'll", "of", "needing", "time", "getting", "walk", "my", "anyone.", "home"],
+      },
+      {
+        target: "It certainly doesn't feel that way right now.",
+        jumbled: ["now.", "right", "that", "doesn't", "way", "certainly", "feel", "It"],
+      },
+      {
+        target: "I keep replaying that missed shot from try-out day, wondering if it single-handedly cost me my spot.",
+        jumbled: ["I", "cost", "spot.", "it", "me", "missed", "if", "my", "single-handedly", "keep", "day,", "replaying", "shot", "wondering", "try-out", "from", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about needing time alone after disappointing news.",
     mySentenceExample: "I needed time alone after hearing disappointing news about my grade.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Jordan feels her perspective offers him nothing at all.", answer: false },
     ],
     buildSentence: [
-      { target: "Mei shows up unannounced today.", jumbled: ["Mei", "shows", "up", "unannounced", "today."] },
-      { target: "I appreciate this more than expected.", jumbled: ["I", "appreciate", "this", "more", "than", "expected."] },
-      { target: "I love the sport itself deeply.", jumbled: ["I", "love", "the", "sport", "itself", "deeply."] },
-      { target: "She offers a slightly wider view.", jumbled: ["She", "offers", "a", "slightly", "wider", "view."] },
-      { target: "Maybe there are other ways to keep playing.", jumbled: ["Maybe", "there", "are", "other", "ways", "to", "keep", "playing."] },
+      {
+        target: "That evening, Mei shows up unannounced at my house, having heard the news from someone at school.",
+        jumbled: ["the", "at", "from", "evening,", "my", "unannounced", "That", "having", "at", "school.", "up", "Mei", "house,", "shows", "someone", "news", "heard"],
+      },
+      {
+        target: "She doesn't offer empty comfort or pretend the situation isn't genuinely disappointing, which I appreciate more than expected.",
+        jumbled: ["comfort", "more", "expected.", "which", "than", "offer", "I", "situation", "doesn't", "appreciate", "isn't", "genuinely", "She", "empty", "disappointing,", "pretend", "or", "the"],
+      },
+      {
+        target: "Instead, she asks thoughtful questions about what basketball actually means to me beyond just making this particular team.",
+        jumbled: ["to", "making", "thoughtful", "she", "team.", "asks", "basketball", "what", "actually", "just", "about", "Instead,", "beyond", "particular", "means", "this", "questions", "me"],
+      },
+      {
+        target: "I admit I love the sport itself deeply, not only the status of wearing a varsity jersey.",
+        jumbled: ["a", "love", "of", "jersey.", "varsity", "the", "deeply,", "sport", "I", "wearing", "itself", "not", "only", "I", "status", "the", "admit"],
+      },
+      {
+        target: "Her perspective doesn't erase my disappointment completely, but it does offer something I desperately needed: a slightly wider view.",
+        jumbled: ["my", "doesn't", "a", "something", "it", "perspective", "desperately", "completely,", "Her", "view.", "I", "but", "wider", "does", "needed:", "slightly", "disappointment", "offer", "erase"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a friend who helped you see a situation differently.",
     mySentenceExample: "My friend helped me see my failed test differently by asking good questions.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Jordan feels pure defeat walking out of the office.", answer: false },
     ],
     buildSentence: [
-      { target: "This stings, but it helps.", jumbled: ["This", "stings,", "but", "it", "helps."] },
-      { target: "I gather enough courage today.", jumbled: ["I", "gather", "enough", "courage", "today."] },
-      { target: "You have real potential, Jordan.", jumbled: ["have", "real", "You", "potential,", "Jordan."] },
-      { target: "I feel cautious hope instead of defeat.", jumbled: ["I", "feel", "cautious", "hope", "instead", "of", "defeat."] },
-      { target: "This feels more useful than wondering what went wrong.", jumbled: ["This", "feels", "more", "useful", "than", "wondering", "what", "went", "wrong."] },
+      {
+        target: "A few days later, I gather enough courage to ask Coach Reeves for honest feedback about my try-out performance.",
+        jumbled: ["my", "to", "performance.", "for", "feedback", "honest", "later,", "few", "gather", "about", "ask", "courage", "Reeves", "try-out", "A", "enough", "days", "Coach", "I"],
+      },
+      {
+        target: "He seems genuinely pleased I asked, explaining that my skills were actually solid, but my consistency needs more work overall.",
+        jumbled: ["overall.", "consistency", "needs", "my", "He", "skills", "pleased", "more", "but", "seems", "work", "that", "my", "explaining", "were", "I", "genuinely", "solid,", "actually", "asked,"],
+      },
+      {
+        target: "“You have real potential, Jordan, but there were three other players slightly more consistent this particular year,” he explains honestly.",
+        jumbled: ["three", "honestly.", "there", "consistent", "were", "this", "“You", "real", "but", "Jordan,", "particular", "year,”", "explains", "potential,", "other", "more", "players", "have", "slightly", "he"],
+      },
+      {
+        target: "Hearing this stings, but it also feels considerably more useful than simply wondering endlessly what went wrong.",
+        jumbled: ["more", "endlessly", "considerably", "feels", "but", "Hearing", "simply", "wrong.", "wondering", "it", "went", "stings,", "this", "useful", "what", "than", "also"],
+      },
+      {
+        target: "He mentions a summer development league that could help me improve specific weaknesses before next year's try-outs.",
+        jumbled: ["improve", "year's", "He", "a", "help", "that", "before", "specific", "me", "weaknesses", "could", "summer", "next", "mentions", "try-outs.", "league", "development"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about asking for honest feedback after a disappointment.",
     mySentenceExample: "I asked for honest feedback after failing my driving test the first time.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Jordan begins rebuilding his confidence too.", answer: true },
     ],
     buildSentence: [
-      { target: "I sign up for this league.", jumbled: ["sign", "up", "I", "for", "this", "league."] },
-      { target: "Some days feel discouraging still.", jumbled: ["Some", "days", "feel", "discouraging", "still."] },
-      { target: "Something finally clicks into place.", jumbled: ["Something", "finally", "clicks", "into", "place."] },
-      { target: "I work specifically on my consistency.", jumbled: ["I", "work", "specifically", "on", "my", "consistency."] },
-      { target: "I begin rebuilding my confidence in myself too.", jumbled: ["I", "begin", "rebuilding", "my", "confidence", "in", "myself", "too."] },
+      {
+        target: "I decide to sign up for the summer development league Coach Reeves mentioned, despite still feeling residual disappointment about missing varsity.",
+        jumbled: ["development", "to", "about", "residual", "despite", "league", "up", "still", "Coach", "missing", "summer", "sign", "I", "varsity.", "mentioned,", "disappointment", "decide", "for", "feeling", "the", "Reeves"],
+      },
+      {
+        target: "The league feels different from regular try-outs, focused more on genuine skill-building than immediate competition or comparison.",
+        jumbled: ["more", "competition", "skill-building", "or", "focused", "league", "on", "regular", "genuine", "immediate", "try-outs,", "than", "from", "different", "The", "feels", "comparison."],
+      },
+      {
+        target: "I work specifically on my consistency, practicing the same shots repeatedly until they feel completely automatic rather than uncertain.",
+        jumbled: ["rather", "until", "the", "work", "than", "same", "automatic", "completely", "on", "repeatedly", "feel", "uncertain.", "I", "shots", "they", "practicing", "specifically", "my", "consistency,"],
+      },
+      {
+        target: "\"Keep going, Jordan,\" I tell myself on the days that feel discouraging, especially when progress seems painfully slow compared to what I'm hoping for.",
+        jumbled: ["seems", "Jordan,\"", "hoping", "the", "compared", "that", "I'm", "going,", "to", "myself", "tell", "\"Keep", "I", "when", "progress", "discouraging,", "slow", "on", "feel", "especially", "painfully", "days", "for.", "what"],
+      },
+      {
+        target: "However, other days bring small breakthroughs, moments where something finally clicks into place after weeks of repetitive effort.",
+        jumbled: ["place", "other", "moments", "However,", "effort.", "something", "where", "into", "small", "finally", "repetitive", "days", "breakthroughs,", "after", "of", "bring", "weeks", "clicks"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about rebuilding your confidence after a setback.",
     mySentenceExample: "I rebuilt my confidence after a setback by practicing consistently.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Jordan feels this experience taught him nothing valuable.", answer: false },
     ],
     buildSentence: [
-      { target: "This group feels supportive now.", jumbled: ["This", "group", "feels", "supportive", "now."] },
-      { target: "We bond over shared disappointment.", jumbled: ["We", "bond", "over", "shared", "disappointment."] },
-      { target: "We push each other to improve.", jumbled: ["We", "push", "each", "other", "to", "improve."] },
-      { target: "This experience is teaching me something new.", jumbled: ["This", "experience", "is", "teaching", "me", "something", "new."] },
-      { target: "Missing that list might have led me somewhere valuable.", jumbled: ["Missing", "that", "list", "might", "have", "led", "me", "somewhere", "valuable."] },
+      {
+        target: "By midsummer, I've become genuinely close with several teammates from the development league, something I hadn't expected at all.",
+        jumbled: ["I've", "midsummer,", "with", "several", "from", "something", "close", "I", "become", "all.", "By", "teammates", "genuinely", "at", "hadn't", "development", "the", "league,", "expected"],
+      },
+      {
+        target: "Unlike the pressure-filled atmosphere of varsity try-outs, this group feels supportive, encouraging each other through mistakes rather than judging them harshly.",
+        jumbled: ["other", "this", "pressure-filled", "each", "group", "them", "rather", "try-outs,", "atmosphere", "varsity", "feels", "encouraging", "judging", "mistakes", "of", "the", "through", "supportive,", "than", "harshly.", "Unlike"],
+      },
+      {
+        target: "One teammate, Marcus, also didn't make varsity this year, and we bond over our shared disappointment and determination.",
+        jumbled: ["determination.", "One", "our", "varsity", "teammate,", "bond", "this", "Marcus,", "make", "also", "disappointment", "and", "and", "didn't", "we", "shared", "over", "year,"],
+      },
+      {
+        target: "I realize this experience is teaching me something varsity might not have: genuine teamwork built on mutual support instead of only competition.",
+        jumbled: ["mutual", "instead", "support", "realize", "experience", "teamwork", "on", "genuine", "competition.", "have:", "might", "something", "varsity", "this", "me", "of", "not", "is", "only", "teaching", "built", "I"],
+      },
+      {
+        target: "\"Maybe this is exactly where you needed to be, Jordan,\" I think.",
+        jumbled: ["\"Maybe", "to", "exactly", "Jordan,\"", "be,", "I", "think.", "you", "this", "where", "is", "needed"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a supportive group or team you've been part of.",
     mySentenceExample: "My study group was a supportive team that helped me through exams.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Jordan believes resilience matters less than results.", answer: false },
     ],
     buildSentence: [
-      { target: "My consistency has improved noticeably.", jumbled: ["My", "consistency", "has", "improved", "noticeably."] },
-      { target: "I'm planning to try out again.", jumbled: ["I'm", "planning", "to", "try", "out", "again."] },
-      { target: "Setbacks don't have to be endings.", jumbled: ["Setbacks", "don't", "have", "to", "be", "endings."] },
-      { target: "This summer taught me resilience matters more.", jumbled: ["This", "summer", "taught", "me", "resilience", "matters", "more."] },
-      { target: "If someone had told me this in spring, I wouldn't have believed them.", jumbled: ["If", "someone", "had", "told", "me", "this", "in", "spring,", "I", "wouldn't", "have", "believed", "them."] },
+      {
+        target: "I reflect on how differently this season turned out compared to what I had originally planned.",
+        jumbled: ["I", "out", "season", "to", "originally", "differently", "turned", "what", "planned.", "on", "compared", "how", "reflect", "this", "I", "had"],
+      },
+      {
+        target: "I probably wouldn't have believed them.",
+        jumbled: ["have", "I", "probably", "wouldn't", "believed", "them."],
+      },
+      {
+        target: "My consistency has improved noticeably, something Coach Reeves himself noticed when he stopped by one of our league games recently.",
+        jumbled: ["our", "stopped", "consistency", "My", "Reeves", "himself", "league", "Coach", "noticed", "noticeably,", "one", "he", "recently.", "by", "improved", "something", "of", "has", "when", "games"],
+      },
+      {
+        target: "I'm planning to try out again, though this time with a healthier perspective on what success actually means.",
+        jumbled: ["this", "means.", "success", "on", "with", "out", "planning", "perspective", "again,", "actually", "time", "a", "I'm", "what", "try", "healthier", "though", "to"],
+      },
+      {
+        target: "Whether or not I make the team, I now know that setbacks don't have to be endings, only unexpected redirections.",
+        jumbled: ["that", "to", "make", "setbacks", "don't", "now", "be", "not", "the", "have", "Whether", "I", "only", "team,", "unexpected", "I", "endings,", "or", "know", "redirections."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about what you learned from a difficult setback.",
     mySentenceExample: "I learned that setbacks can lead to unexpected growth if I keep trying.",

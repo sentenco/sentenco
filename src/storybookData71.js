@@ -41,11 +41,26 @@ export const CHAPTERS = [
       { text: "Amara realizes she needs to understand this more carefully.", answer: true },
     ],
     buildSentence: [
-      { target: "I notice this at lunch today.", jumbled: ["I", "notice", "this", "at", "lunch", "today."] },
-      { target: "This silence feels unusual to me.", jumbled: ["This", "silence", "feels", "unusual", "to", "me."] },
-      { target: "I ask Lucia casually what's going on.", jumbled: ["I", "ask", "Lucia", "casually", "what's", "going", "on."] },
-      { target: "Ben insists he doesn't actually know.", jumbled: ["Ben", "insists", "he", "doesn't", "actually", "know."] },
-      { target: "I might need to understand this more carefully.", jumbled: ["I", "might", "need", "to", "understand", "this", "more", "carefully."] },
+      {
+        target: "At lunch, I notice Lucia and Ben sitting at opposite ends of our usual table, neither one acknowledging the other directly.",
+        jumbled: ["neither", "other", "ends", "At", "notice", "of", "lunch,", "I", "Lucia", "opposite", "at", "usual", "the", "sitting", "acknowledging", "table,", "Ben", "our", "one", "and", "directly."],
+      },
+      {
+        target: "This silence feels unusual, given how close the three of us have been since freshman year without any real conflict.",
+        jumbled: ["conflict.", "have", "us", "freshman", "without", "three", "any", "feels", "year", "how", "close", "silence", "since", "the", "of", "been", "unusual,", "given", "This", "real"],
+      },
+      {
+        target: "I ask Lucia casually what's going on, and she simply shrugs, saying Ben knows exactly what he did.",
+        jumbled: ["casually", "saying", "he", "she", "Ben", "I", "ask", "exactly", "shrugs,", "and", "simply", "what's", "going", "did.", "what", "on,", "knows", "Lucia"],
+      },
+      {
+        target: "“Ask him, Amara,” is all she says.",
+        jumbled: ["all", "Amara,”", "“Ask", "says.", "him,", "is", "she"],
+      },
+      {
+        target: "Caught between two conflicting accounts, I realize I might need to understand this more carefully before choosing any side.",
+        jumbled: ["side.", "conflicting", "carefully", "I", "might", "this", "choosing", "need", "between", "understand", "Caught", "more", "any", "two", "accounts,", "I", "realize", "before", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing tension between two friends without knowing the reason.",
     mySentenceExample: "I noticed tension between two friends without knowing the reason.",
@@ -70,11 +85,26 @@ export const CHAPTERS = [
       { text: "Amara recognizes this seems to stem from something deeper.", answer: true },
     ],
     buildSentence: [
-      { target: "I catch Lucia alone now.", jumbled: ["I", "catch", "Lucia", "alone", "now."] },
-      { target: "She feels genuinely hurt about this.", jumbled: ["She", "feels", "genuinely", "hurt", "about", "this."] },
-      { target: "I listen carefully to her now.", jumbled: ["I", "listen", "carefully", "to", "her", "now."] },
-      { target: "He hadn't even apologized afterward.", jumbled: ["He", "hadn't", "even", "apologized", "afterward."] },
-      { target: "This touches on a pattern she's noticed before.", jumbled: ["This", "touches", "on", "a", "pattern", "she's", "noticed", "before."] },
+      {
+        target: "I catch Lucia alone and ask her to explain what actually happened between her and Ben.",
+        jumbled: ["alone", "and", "explain", "between", "I", "Lucia", "actually", "to", "her", "ask", "her", "catch", "what", "Ben.", "happened", "and"],
+      },
+      {
+        target: "She tells me that Ben had promised to help her prepare for a big presentation, then simply never showed up without any explanation.",
+        jumbled: ["any", "then", "explanation.", "tells", "big", "never", "a", "for", "had", "up", "simply", "Ben", "promised", "her", "without", "that", "showed", "prepare", "presentation,", "me", "help", "She", "to"],
+      },
+      {
+        target: "Worse, she says, he hadn't even apologized afterward, acting as though nothing significant had actually occurred at all.",
+        jumbled: ["as", "though", "had", "occurred", "actually", "even", "hadn't", "significant", "says,", "Worse,", "he", "afterward,", "all.", "she", "nothing", "at", "acting", "apologized"],
+      },
+      {
+        target: "Lucia admits she feels genuinely hurt, not just inconvenienced, since this touches on a pattern she's noticed before.",
+        jumbled: ["Lucia", "she's", "pattern", "touches", "since", "she", "on", "before.", "just", "feels", "genuinely", "inconvenienced,", "noticed", "hurt,", "admits", "this", "a", "not"],
+      },
+      {
+        target: "I listen carefully, recognizing that her frustration seems to stem from something deeper than this single incident alone.",
+        jumbled: ["alone.", "recognizing", "seems", "deeper", "this", "single", "something", "than", "her", "frustration", "I", "from", "that", "stem", "listen", "carefully,", "incident", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about listening to a friend explain why they feel genuinely hurt.",
     mySentenceExample: "I listened to my friend explain why she felt genuinely hurt.",
@@ -99,11 +129,26 @@ export const CHAPTERS = [
       { text: "Amara realizes both reactions are genuinely understandable.", answer: true },
     ],
     buildSentence: [
-      { target: "I find a moment to talk.", jumbled: ["I", "find", "a", "moment", "to", "talk."] },
-      { target: "He'd genuinely forgotten about the session.", jumbled: ["He'd", "genuinely", "forgotten", "about", "the", "session."] },
-      { target: "He tends to withdraw instead of confronting.", jumbled: ["He", "tends", "to", "withdraw", "instead", "of", "confronting."] },
-      { target: "He should have texted Lucia immediately.", jumbled: ["He", "should", "have", "texted", "Lucia", "immediately."] },
-      { target: "Both reactions stem from genuinely understandable feelings.", jumbled: ["Both", "reactions", "stem", "from", "genuinely", "understandable", "feelings."] },
+      {
+        target: "The next day, I find a moment to talk with Ben, curious to hear his perspective on the same situation.",
+        jumbled: ["day,", "Ben,", "I", "a", "moment", "talk", "the", "to", "on", "with", "hear", "to", "same", "perspective", "situation.", "his", "find", "curious", "next", "The"],
+      },
+      {
+        target: "He explains that he'd genuinely forgotten about their study session, since he'd been dealing with a family emergency that same evening.",
+        jumbled: ["explains", "he'd", "He", "their", "forgotten", "evening.", "family", "same", "dealing", "since", "been", "study", "about", "a", "that", "with", "session,", "emergency", "genuinely", "that", "he'd"],
+      },
+      {
+        target: "He admits he should have texted Lucia immediately, but he'd felt too overwhelmed to explain everything at the time.",
+        jumbled: ["explain", "everything", "He", "have", "immediately,", "overwhelmed", "he", "to", "admits", "the", "at", "felt", "texted", "but", "time.", "he'd", "too", "Lucia", "should"],
+      },
+      {
+        target: "Moreover, he says, whenever Lucia gets upset, he tends to withdraw rather than confront the situation directly, which he recognizes isn't ideal.",
+        jumbled: ["directly,", "Moreover,", "the", "isn't", "he", "which", "to", "rather", "upset,", "withdraw", "tends", "confront", "he", "ideal.", "gets", "says,", "recognizes", "Lucia", "he", "than", "situation", "whenever"],
+      },
+      {
+        target: "Hearing this, I realize both Ben's silence and Lucia's hurt stem from genuinely understandable, if conflicting, reactions.",
+        jumbled: ["stem", "genuinely", "Ben's", "and", "I", "understandable,", "conflicting,", "hurt", "Lucia's", "both", "reactions.", "from", "this,", "if", "realize", "Hearing", "silence"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about understanding someone's behavior better after hearing their full explanation.",
     mySentenceExample: "I understood his behavior better after hearing his full explanation.",
@@ -128,11 +173,26 @@ export const CHAPTERS = [
       { text: "Amara realizes reconnecting requires understanding, not just apologizing.", answer: true },
     ],
     buildSentence: [
-      { target: "I think through both perspectives carefully.", jumbled: ["I", "think", "through", "both", "perspectives", "carefully."] },
-      { target: "Reliability clearly matters deeply to her.", jumbled: ["Reliability", "clearly", "matters", "deeply", "to", "her."] },
-      { target: "Confrontation genuinely overwhelms him sometimes.", jumbled: ["Confrontation", "genuinely", "overwhelms", "him", "sometimes."] },
-      { target: "Neither of them is being unreasonable exactly.", jumbled: ["Neither", "of", "them", "is", "being", "unreasonable", "exactly."] },
-      { target: "Their different ways of handling stress collided badly.", jumbled: ["Their", "different", "ways", "of", "handling", "stress", "collided", "badly."] },
+      {
+        target: "That evening, I think through both perspectives carefully, trying to understand why this small incident escalated so significantly.",
+        jumbled: ["to", "That", "so", "incident", "escalated", "understand", "this", "significantly.", "through", "perspectives", "evening,", "why", "I", "small", "think", "both", "carefully,", "trying"],
+      },
+      {
+        target: "Lucia's hurt makes sense, given that reliability clearly matters deeply to her, especially regarding something as important as a presentation.",
+        jumbled: ["as", "her,", "makes", "given", "something", "Lucia's", "sense,", "presentation.", "a", "regarding", "clearly", "matters", "to", "deeply", "that", "hurt", "especially", "important", "reliability", "as"],
+      },
+      {
+        target: "Ben's withdrawal also makes sense, given that confrontation genuinely overwhelms him, particularly during an already stressful, emotional evening.",
+        jumbled: ["particularly", "confrontation", "stressful,", "also", "emotional", "him,", "already", "that", "evening.", "overwhelms", "given", "sense,", "during", "genuinely", "Ben's", "withdrawal", "makes", "an"],
+      },
+      {
+        target: "Neither of them is being unreasonable exactly, though their different ways of handling stress collided badly this particular time.",
+        jumbled: ["being", "handling", "them", "this", "particular", "different", "Neither", "of", "collided", "time.", "exactly,", "unreasonable", "stress", "ways", "badly", "though", "is", "their", "of"],
+      },
+      {
+        target: "I realize that helping them reconnect will require each of them understanding the other's perspective, not just apologizing.",
+        jumbled: ["reconnect", "realize", "each", "helping", "will", "apologizing.", "require", "of", "not", "understanding", "that", "other's", "them", "I", "the", "just", "perspective,", "them"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about realizing two people's reactions both made sense, even though they clashed.",
     mySentenceExample: "I realized two people's reactions both made sense, even though they clashed.",
@@ -157,11 +217,26 @@ export const CHAPTERS = [
       { text: "Lucia agrees to hear Ben out properly.", answer: true },
     ],
     buildSentence: [
-      { target: "I approach Lucia carefully now.", jumbled: ["I", "approach", "Lucia", "carefully", "now."] },
-      { target: "Her expression shifts slightly at this.", jumbled: ["Her", "expression", "shifts", "slightly", "at", "this."] },
-      { target: "She agrees to hear him out properly.", jumbled: ["She", "agrees", "to", "hear", "him", "out", "properly."] },
-      { target: "This doesn't fully excuse him not communicating.", jumbled: ["This", "doesn't", "fully", "excuse", "him", "not", "communicating."] },
-      { target: "She hadn't realized how differently they process emotions.", jumbled: ["She", "hadn't", "realized", "how", "differently", "they", "process", "emotions."] },
+      {
+        target: "I approach Lucia carefully, mentioning that Ben had actually been dealing with a family emergency that same evening.",
+        jumbled: ["been", "Ben", "family", "carefully,", "mentioning", "same", "I", "that", "approach", "had", "emergency", "with", "dealing", "actually", "Lucia", "evening.", "a", "that"],
+      },
+      {
+        target: "Her expression shifts slightly, though she admits this doesn't fully excuse him not communicating anything at all.",
+        jumbled: ["him", "though", "doesn't", "fully", "excuse", "communicating", "anything", "slightly,", "at", "this", "expression", "admits", "she", "shifts", "not", "Her", "all."],
+      },
+      {
+        target: "“Okay, Amara, I hear you,” she says, still a little guarded.",
+        jumbled: ["little", "hear", "guarded.", "I", "still", "“Okay,", "says,", "a", "she", "you,”", "Amara,"],
+      },
+      {
+        target: "I explain that Ben tends to withdraw under stress, not because he doesn't care, but because confrontation genuinely overwhelms him.",
+        jumbled: ["he", "not", "genuinely", "him.", "tends", "explain", "stress,", "withdraw", "to", "care,", "I", "because", "because", "but", "that", "doesn't", "overwhelms", "confrontation", "Ben", "under"],
+      },
+      {
+        target: "She agrees that, given this context, she'd be willing to hear him out properly before deciding how she feels.",
+        jumbled: ["that,", "how", "him", "this", "properly", "be", "agrees", "context,", "deciding", "she'd", "to", "she", "hear", "out", "before", "She", "feels.", "willing", "given"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about explaining someone's behavior to a friend without excusing it completely.",
     mySentenceExample: "I explained his behavior without excusing it completely.",
@@ -186,11 +261,26 @@ export const CHAPTERS = [
       { text: "Ben admits reaching out directly still feels intimidating.", answer: true },
     ],
     buildSentence: [
-      { target: "I approach Ben separately now.", jumbled: ["I", "approach", "Ben", "separately", "now."] },
-      { target: "Ben looks visibly uncomfortable now.", jumbled: ["Ben", "looks", "visibly", "uncomfortable", "now."] },
-      { target: "He agrees, though it still feels intimidating.", jumbled: ["He", "agrees,", "though", "it", "still", "feels", "intimidating."] },
-      { target: "Reliability seems to matter enormously to her.", jumbled: ["Reliability", "seems", "to", "matter", "enormously", "to", "her."] },
-      { target: "A brief, honest explanation would likely mean more to her.", jumbled: ["A", "brief,", "honest", "explanation", "would", "likely", "mean", "more", "to", "her."] },
+      {
+        target: "I approach Ben separately, explaining that Lucia's hurt runs deeper than just the missed study session itself.",
+        jumbled: ["than", "Lucia's", "I", "that", "session", "just", "Ben", "runs", "itself.", "hurt", "deeper", "separately,", "study", "the", "approach", "missed", "explaining"],
+      },
+      {
+        target: "I tell him that reliability seems to matter enormously to her, and his silence afterward may have felt like confirmation of a pattern she fears.",
+        jumbled: ["silence", "confirmation", "him", "his", "enormously", "fears.", "to", "and", "I", "of", "like", "her,", "a", "matter", "have", "afterward", "that", "tell", "she", "to", "pattern", "reliability", "may", "seems", "felt"],
+      },
+      {
+        target: "Ben looks visibly uncomfortable, admitting he hadn't considered how his silence might be interpreted, rather than simply forgotten and moved past.",
+        jumbled: ["his", "and", "moved", "be", "how", "might", "simply", "hadn't", "rather", "past.", "interpreted,", "uncomfortable,", "forgotten", "silence", "he", "admitting", "considered", "looks", "Ben", "than", "visibly"],
+      },
+      {
+        target: "“I really didn't mean it that way, Amara,” he says.",
+        jumbled: ["that", "he", "didn't", "Amara,”", "mean", "really", "“I", "says.", "way,", "it"],
+      },
+      {
+        target: "I encourage him gently, suggesting that even a brief, honest explanation would likely mean more to Lucia than he assumes.",
+        jumbled: ["I", "than", "assumes.", "he", "likely", "explanation", "that", "Lucia", "mean", "suggesting", "to", "honest", "brief,", "gently,", "him", "encourage", "even", "more", "a", "would"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about encouraging someone to be honest even though it feels intimidating.",
     mySentenceExample: "I encouraged him to be honest even though it felt intimidating.",
@@ -215,11 +305,26 @@ export const CHAPTERS = [
       { text: "Amara feels genuine relief they'd worked through it themselves.", answer: true },
     ],
     buildSentence: [
-      { target: "I notice this the next day.", jumbled: ["I", "notice", "this", "the", "next", "day."] },
-      { target: "I keep some distance now.", jumbled: ["I", "keep", "some", "distance", "now."] },
-      { target: "I feel genuine relief about this.", jumbled: ["I", "feel", "genuine", "relief", "about", "this."] },
-      { target: "This conversation needs to happen between them directly.", jumbled: ["This", "conversation", "needs", "to", "happen", "between", "them", "directly."] },
-      { target: "Ben promised to communicate better going forward.", jumbled: ["Ben", "promised", "to", "communicate", "better", "going", "forward."] },
+      {
+        target: "The next day, I notice Lucia and Ben sitting together, actually talking rather than avoiding each other's eyes across the table.",
+        jumbled: ["talking", "than", "actually", "other's", "and", "table.", "sitting", "rather", "the", "next", "notice", "day,", "avoiding", "The", "Lucia", "each", "I", "Ben", "together,", "eyes", "across"],
+      },
+      {
+        target: "Okay, Amara, let them handle this one, I remind myself, staying seated.",
+        jumbled: ["staying", "this", "them", "remind", "I", "seated.", "myself,", "Amara,", "handle", "Okay,", "let", "one,"],
+      },
+      {
+        target: "I keep some distance, sensing this conversation needs to happen between them directly, not with me mediating every word.",
+        jumbled: ["me", "some", "between", "every", "to", "not", "I", "distance,", "them", "with", "sensing", "directly,", "mediating", "this", "needs", "word.", "keep", "happen", "conversation"],
+      },
+      {
+        target: "Later, Ben tells me that he'd explained the family emergency, and Lucia had genuinely apologized for assuming the worst about him.",
+        jumbled: ["and", "him.", "me", "the", "worst", "about", "Lucia", "emergency,", "had", "family", "tells", "the", "he'd", "assuming", "apologized", "for", "explained", "Later,", "Ben", "genuinely", "that"],
+      },
+      {
+        target: "Lucia, separately, mentions that Ben had promised to communicate better going forward, rather than withdrawing silently whenever things felt overwhelming.",
+        jumbled: ["Lucia,", "forward,", "had", "withdrawing", "things", "felt", "rather", "silently", "whenever", "mentions", "Ben", "that", "communicate", "than", "promised", "to", "going", "overwhelming.", "separately,", "better"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about stepping back and letting two people work through a conflict themselves.",
     mySentenceExample: "I stepped back and let them work through the conflict themselves.",
@@ -244,11 +349,26 @@ export const CHAPTERS = [
       { text: "Amara feels proud their friendship survived this.", answer: true },
     ],
     buildSentence: [
-      { target: "We sit together at lunch again.", jumbled: ["We", "sit", "together", "at", "lunch", "again."] },
-      { target: "I feel proud about this now.", jumbled: ["I", "feel", "proud", "about", "this", "now."] },
-      { target: "Things aren't exactly identical to before.", jumbled: ["Things", "aren't", "exactly", "identical", "to", "before."] },
-      { target: "She's giving people a chance to explain now.", jumbled: ["She's", "giving", "people", "a", "chance", "to", "explain", "now."] },
-      { target: "This friendship survived something that could have ended it.", jumbled: ["This", "friendship", "survived", "something", "that", "could", "have", "ended", "it."] },
+      {
+        target: "By the following week, the three of us sit together at lunch again, the earlier tension seemingly resolved between them.",
+        jumbled: ["following", "the", "tension", "three", "again,", "lunch", "together", "between", "seemingly", "us", "them.", "at", "of", "resolved", "week,", "sit", "By", "the", "earlier", "the"],
+      },
+      {
+        target: "Things aren't exactly identical to before, though; both Lucia and Ben seem more mindful now about communicating directly.",
+        jumbled: ["and", "now", "Lucia", "Things", "aren't", "both", "before,", "more", "directly.", "Ben", "mindful", "though;", "about", "identical", "exactly", "to", "communicating", "seem"],
+      },
+      {
+        target: "Lucia mentions she's trying not to assume the worst immediately, giving people a chance to explain before reacting strongly.",
+        jumbled: ["giving", "mentions", "Lucia", "people", "worst", "immediately,", "a", "chance", "assume", "explain", "reacting", "the", "strongly.", "she's", "trying", "not", "before", "to", "to"],
+      },
+      {
+        target: "Ben, meanwhile, admits he's practicing sending even a short message rather than going completely silent when overwhelmed.",
+        jumbled: ["short", "even", "practicing", "completely", "he's", "than", "meanwhile,", "sending", "rather", "overwhelmed.", "going", "a", "Ben,", "silent", "admits", "when", "message"],
+      },
+      {
+        target: "Watching this small but genuine growth in both of them, I feel proud our friendship survived something that could have ended it.",
+        jumbled: ["something", "both", "them,", "have", "genuine", "feel", "of", "small", "Watching", "survived", "ended", "friendship", "but", "growth", "could", "proud", "I", "our", "it.", "this", "in", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about watching two friends grow after working through a conflict.",
     mySentenceExample: "I watched two friends grow after working through their conflict.",
@@ -273,11 +393,26 @@ export const CHAPTERS = [
       { text: "Amara says she trusted they could work it out themselves.", answer: true },
     ],
     buildSentence: [
-      { target: "We talk openly about this now.", jumbled: ["We", "talk", "openly", "about", "this", "now."] },
-      { target: "Both thank me for this now.", jumbled: ["Both", "thank", "me", "for", "this", "now."] },
-      { target: "This genuinely changed how she reacts now.", jumbled: ["This", "genuinely", "changed", "how", "she", "reacts", "now."] },
-      { target: "This motivated him more than any lecture could have.", jumbled: ["This", "motivated", "him", "more", "than", "any", "lecture", "could", "have."] },
-      { target: "I trusted they could work it out themselves.", jumbled: ["I", "trusted", "they", "could", "work", "it", "out", "themselves."] },
+      {
+        target: "A few weeks later, the three of us talk openly about what had happened, something I hadn't expected to become a comfortable topic.",
+        jumbled: ["what", "weeks", "had", "a", "comfortable", "of", "topic.", "openly", "to", "us", "the", "happened,", "A", "about", "something", "become", "three", "later,", "few", "expected", "talk", "hadn't", "I"],
+      },
+      {
+        target: "Lucia admits that hearing Ben's side, rather than just assuming intent, genuinely changed how she reacts to disappointment now.",
+        jumbled: ["that", "changed", "Lucia", "she", "just", "Ben's", "hearing", "than", "assuming", "to", "side,", "how", "reacts", "now.", "genuinely", "intent,", "rather", "admits", "disappointment"],
+      },
+      {
+        target: "Ben admits that seeing how much his silence had hurt Lucia motivated him more than any lecture could have.",
+        jumbled: ["Ben", "his", "than", "have.", "had", "more", "silence", "him", "that", "lecture", "Lucia", "how", "much", "hurt", "motivated", "any", "could", "admits", "seeing"],
+      },
+      {
+        target: "Both thank me for not simply taking a side, but instead helping them actually understand each other properly.",
+        jumbled: ["for", "other", "properly.", "each", "simply", "helping", "Both", "understand", "side,", "actually", "thank", "them", "not", "a", "instead", "me", "taking", "but"],
+      },
+      {
+        target: "I explain that I hadn't done much beyond listening carefully and trusting they could work it out themselves.",
+        jumbled: ["much", "listening", "that", "explain", "it", "could", "themselves.", "beyond", "trusting", "work", "out", "they", "hadn't", "I", "I", "done", "carefully", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about helping two people understand each other rather than choosing a side.",
     mySentenceExample: "I helped two people understand each other rather than choosing a side.",
@@ -302,11 +437,26 @@ export const CHAPTERS = [
       { text: "Patient understanding allowed them to reconnect rather than pick a winner.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this situation now.", jumbled: ["I", "look", "back", "on", "this", "situation", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "Genuine mediation requires trusting people to grow.", jumbled: ["Genuine", "mediation", "requires", "trusting", "people", "to", "grow."] },
-      { target: "Being a good friend sometimes means resisting choosing sides.", jumbled: ["Being", "a", "good", "friend", "sometimes", "means", "resisting", "choosing", "sides."] },
-      { target: "Had I chosen one side, I would have lost one friendship.", jumbled: ["Had", "I", "chosen", "one", "side,", "I", "would", "have", "lost", "one", "friendship."] },
+      {
+        target: "Looking back on the whole situation, I realize how differently things might have gone had I simply chosen one friend's side immediately.",
+        jumbled: ["things", "I", "differently", "Looking", "immediately.", "on", "the", "whole", "had", "back", "have", "how", "chosen", "simply", "realize", "situation,", "might", "one", "friend's", "I", "side", "gone"],
+      },
+      {
+        target: "You did the right thing, Amara, I think, closing my journal for the night.",
+        jumbled: ["night.", "closing", "for", "journal", "Amara,", "my", "I", "did", "the", "the", "right", "thing,", "You", "think,"],
+      },
+      {
+        target: "I likely would have lost one friendship trying to protect the other.",
+        jumbled: ["I", "protect", "the", "to", "trying", "other.", "friendship", "would", "one", "lost", "likely", "have"],
+      },
+      {
+        target: "Instead, patiently understanding both perspectives allowed me to help them actually reconnect rather than simply picking a winner.",
+        jumbled: ["simply", "Instead,", "reconnect", "perspectives", "actually", "allowed", "to", "rather", "me", "understanding", "both", "patiently", "help", "than", "picking", "a", "them", "winner."],
+      },
+      {
+        target: "In the end, this experience taught me that genuine mediation requires trusting people to grow, not just fixing things for them.",
+        jumbled: ["for", "grow,", "genuine", "end,", "taught", "mediation", "just", "trusting", "the", "things", "to", "that", "me", "fixing", "this", "requires", "In", "them.", "not", "experience", "people"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from helping two friends reconnect instead of choosing a side.",
     mySentenceExample: "I learned that helping friends reconnect matters more than choosing sides.",

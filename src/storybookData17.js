@@ -40,9 +40,26 @@ export const CHAPTERS = [
       { text: "Dad says to put on a helmet first.", answer: true },
     ],
     buildSentence: [
-      { target: "I get a new bike.", jumbled: ["get", "a", "I", "new", "bike."] },
-      { target: "I touch the handlebars.", jumbled: ["touch", "the", "I", "handlebars."] },
-      { target: "I put on my helmet.", jumbled: ["put", "on", "I", "my", "helmet."] },
+      {
+        target: "Today is my birthday, and I get a big surprise.",
+        jumbled: ["my", "and", "a", "Today", "get", "surprise.", "birthday,", "is", "big", "I"],
+      },
+      {
+        target: "It is purple with white stripes and a soft seat.",
+        jumbled: ["purple", "stripes", "is", "white", "and", "with", "seat.", "It", "a", "soft"],
+      },
+      {
+        target: "“Happy birthday, Zara!” Dad says with a big smile.",
+        jumbled: ["big", "smile.", "says", "a", "with", "“Happy", "birthday,", "Zara!”", "Dad"],
+      },
+      {
+        target: "Dad laughs and says, “First, let's put on your helmet.”",
+        jumbled: ["helmet.”", "laughs", "and", "your", "Dad", "put", "let's", "says,", "“First,", "on"],
+      },
+      {
+        target: "I put on my blue helmet and feel ready for an adventure.",
+        jumbled: ["put", "helmet", "for", "adventure.", "an", "feel", "blue", "on", "my", "and", "ready", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a birthday gift.",
     mySentenceExample: "I got a new toy for my birthday.",
@@ -65,9 +82,26 @@ export const CHAPTERS = [
       { text: "Zara feels scared and refuses to try.", answer: false },
     ],
     buildSentence: [
-      { target: "Dad attaches the wheels.", jumbled: ["attaches", "the", "Dad", "wheels."] },
-      { target: "I hold the handlebars.", jumbled: ["hold", "the", "I", "handlebars."] },
-      { target: "The bike starts to move.", jumbled: ["starts", "to", "The", "bike", "move."] },
+      {
+        target: "Dad attaches two small training wheels to my new bike.",
+        jumbled: ["attaches", "my", "small", "bike.", "training", "wheels", "Dad", "new", "two", "to"],
+      },
+      {
+        target: "I sit on the seat and hold the handlebars tightly.",
+        jumbled: ["handlebars", "on", "and", "sit", "hold", "the", "tightly.", "the", "seat", "I"],
+      },
+      {
+        target: "My feet reach the pedals just right, and I feel proud.",
+        jumbled: ["and", "pedals", "right,", "just", "proud.", "feel", "the", "reach", "feet", "I", "My"],
+      },
+      {
+        target: "“Are you ready to try?” Dad asks with a smile.",
+        jumbled: ["ready", "to", "asks", "try?”", "you", "Dad", "“Are", "a", "with", "smile."],
+      },
+      {
+        target: "Riding with training wheels feels safe and exciting at the same time.",
+        jumbled: ["feels", "the", "at", "same", "with", "and", "training", "time.", "Riding", "exciting", "wheels", "safe"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about trying something new.",
     mySentenceExample: "I feel excited to try something new.",
@@ -90,9 +124,26 @@ export const CHAPTERS = [
       { text: "Zara makes it to the end of the yard.", answer: true },
     ],
     buildSentence: [
-      { target: "The bike wobbles.", jumbled: ["bike", "wobbles.", "The"] },
-      { target: "I look forward.", jumbled: ["look", "forward.", "I"] },
-      { target: "I feel proud of myself.", jumbled: ["feel", "proud", "I", "of", "myself."] },
+      {
+        target: "I push the pedals, and the bike wobbles from side to side.",
+        jumbled: ["side", "push", "and", "the", "pedals,", "from", "wobbles", "the", "bike", "to", "I", "side."],
+      },
+      {
+        target: "I try to steer straight, but the bike zigzags on the path.",
+        jumbled: ["to", "bike", "the", "the", "path.", "but", "try", "straight,", "steer", "zigzags", "on", "I"],
+      },
+      {
+        target: "Slowly, the bike starts to feel a little more steady.",
+        jumbled: ["bike", "the", "to", "little", "feel", "a", "steady.", "starts", "Slowly,", "more"],
+      },
+      {
+        target: "I make it to the end of the yard without stopping!",
+        jumbled: ["the", "to", "I", "make", "without", "stopping!", "yard", "it", "end", "of", "the"],
+      },
+      {
+        target: "Learning something new takes practice, and I am ready to try again.",
+        jumbled: ["am", "takes", "Learning", "I", "something", "practice,", "again.", "new", "ready", "and", "to", "try"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing something.",
     mySentenceExample: "I practice every day to get better.",
@@ -115,9 +166,26 @@ export const CHAPTERS = [
       { text: "Zara feels alone and scared.", answer: false },
     ],
     buildSentence: [
-      { target: "Dad holds the seat.", jumbled: ["holds", "the", "Dad", "seat."] },
-      { target: "I push the pedals.", jumbled: ["push", "the", "I", "pedals."] },
-      { target: "I feel the wind.", jumbled: ["feel", "the", "I", "wind."] },
+      {
+        target: "The next day, Dad takes off the training wheels to help me balance better.",
+        jumbled: ["help", "me", "the", "balance", "off", "Dad", "to", "next", "day,", "wheels", "The", "better.", "takes", "training"],
+      },
+      {
+        target: "I climb onto the bike, and Dad holds on tightly behind me.",
+        jumbled: ["and", "onto", "holds", "behind", "I", "bike,", "tightly", "me.", "the", "on", "climb", "Dad"],
+      },
+      {
+        target: "I push the pedals, and Dad runs along beside the bike.",
+        jumbled: ["runs", "bike.", "the", "pedals,", "and", "the", "beside", "I", "along", "Dad", "push"],
+      },
+      {
+        target: "“You're doing great, Zara!” Dad says, a little out of breath.",
+        jumbled: ["a", "little", "great,", "Dad", "says,", "doing", "breath.", "out", "of", "Zara!”", "“You're"],
+      },
+      {
+        target: "Even without training wheels, I feel brave with Dad right there.",
+        jumbled: ["with", "right", "without", "there.", "feel", "training", "wheels,", "I", "Even", "brave", "Dad"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who helps you.",
     mySentenceExample: "My dad helps me learn new things.",
@@ -140,9 +208,26 @@ export const CHAPTERS = [
       { text: "Dad says falling is part of learning.", answer: true },
     ],
     buildSentence: [
-      { target: "I lose my balance.", jumbled: ["lose", "my", "I", "balance."] },
-      { target: "I fall on the grass.", jumbled: ["fall", "on", "I", "the", "grass."] },
-      { target: "Falling is part of learning.", jumbled: ["is", "part", "Falling", "of", "learning."] },
+      {
+        target: "Today, Dad lets go of the seat for a few seconds.",
+        jumbled: ["go", "for", "few", "the", "Dad", "of", "seconds.", "lets", "a", "Today,", "seat"],
+      },
+      {
+        target: "I ride on my own, but then I lose my balance.",
+        jumbled: ["but", "ride", "I", "then", "I", "balance.", "on", "lose", "own,", "my", "my"],
+      },
+      {
+        target: "My knee feels a little sore, and I want to cry.",
+        jumbled: ["little", "I", "sore,", "to", "want", "and", "a", "knee", "My", "cry.", "feels"],
+      },
+      {
+        target: "“Are you okay, Zara?” he asks with a worried face.",
+        jumbled: ["okay,", "he", "Zara?”", "face.", "“Are", "worried", "a", "asks", "with", "you"],
+      },
+      {
+        target: "Dad hugs me and says falling is part of learning to ride.",
+        jumbled: ["hugs", "part", "ride.", "and", "learning", "falling", "to", "of", "me", "Dad", "is", "says"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about falling down and trying again.",
     mySentenceExample: "I fall down, but I try again.",
@@ -165,9 +250,26 @@ export const CHAPTERS = [
       { text: "Zara rides further than before.", answer: true },
     ],
     buildSentence: [
-      { target: "I try again.", jumbled: ["try", "again.", "I"] },
-      { target: "I feel more confident.", jumbled: ["feel", "more", "I", "confident."] },
-      { target: "I ride a little further.", jumbled: ["ride", "a", "I", "little", "further."] },
+      {
+        target: "I feel a bit nervous to try again.",
+        jumbled: ["try", "to", "again.", "bit", "feel", "nervous", "I", "a"],
+      },
+      {
+        target: "Dad kneels beside me and says, “You can do this, Zara.”",
+        jumbled: ["kneels", "Zara.”", "Dad", "beside", "do", "says,", "me", "this,", "and", "can", "“You"],
+      },
+      {
+        target: "I push the pedals slowly and focus on looking straight ahead.",
+        jumbled: ["pedals", "on", "straight", "looking", "push", "the", "and", "focus", "slowly", "ahead.", "I"],
+      },
+      {
+        target: "Dad lets go again, and I ride a little further than before.",
+        jumbled: ["little", "go", "a", "before.", "and", "than", "ride", "I", "further", "again,", "Dad", "lets"],
+      },
+      {
+        target: "Trying again after a fall makes me feel strong and brave.",
+        jumbled: ["strong", "after", "and", "feel", "a", "makes", "me", "again", "brave.", "Trying", "fall"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being brave.",
     mySentenceExample: "I feel brave when I try again.",
@@ -190,9 +292,26 @@ export const CHAPTERS = [
       { text: "Zara rides on her own this time.", answer: true },
     ],
     buildSentence: [
-      { target: "I ride by myself.", jumbled: ["ride", "by", "I", "myself."] },
-      { target: "I keep my balance.", jumbled: ["keep", "my", "I", "balance."] },
-      { target: "Dad watches with a smile.", jumbled: ["watches", "with", "Dad", "a", "smile."] },
+      {
+        target: "Today, I tell Dad I am ready to ride all by myself.",
+        jumbled: ["I", "tell", "ready", "by", "Dad", "I", "am", "ride", "to", "all", "Today,", "myself."],
+      },
+      {
+        target: "“No training wheels and no holding on, Zara?” Dad asks with a smile.",
+        jumbled: ["holding", "wheels", "Dad", "smile.", "training", "a", "no", "with", "Zara?”", "asks", "and", "on,", "“No"],
+      },
+      {
+        target: "Dad checks my helmet and makes sure the bike is ready.",
+        jumbled: ["helmet", "the", "and", "my", "checks", "ready.", "Dad", "makes", "sure", "is", "bike"],
+      },
+      {
+        target: "My legs pedal steadily, and the bike moves forward smoothly.",
+        jumbled: ["bike", "and", "smoothly.", "forward", "legs", "My", "the", "moves", "pedal", "steadily,"],
+      },
+      {
+        target: "Dad watches from a distance with a proud smile on his face.",
+        jumbled: ["distance", "with", "Dad", "a", "on", "his", "from", "watches", "smile", "a", "face.", "proud"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about doing something on your own.",
     mySentenceExample: "I can ride my bike on my own now.",
@@ -215,9 +334,26 @@ export const CHAPTERS = [
       { text: "Felix gives Zara a high five.", answer: true },
     ],
     buildSentence: [
-      { target: "Felix cheers for me.", jumbled: ["cheers", "for", "Felix", "me."] },
-      { target: "I pedal faster.", jumbled: ["pedal", "faster.", "I"] },
-      { target: "Felix gives me a high five.", jumbled: ["gives", "me", "Felix", "a", "high", "five."] },
+      {
+        target: "My big brother Felix comes outside to watch me ride.",
+        jumbled: ["outside", "My", "me", "to", "comes", "ride.", "brother", "Felix", "watch", "big"],
+      },
+      {
+        target: "I smile and pedal a little faster down the path.",
+        jumbled: ["the", "I", "faster", "down", "a", "path.", "and", "little", "smile", "pedal"],
+      },
+      {
+        target: "“You're really good at this!” Felix says with a proud smile.",
+        jumbled: ["good", "“You're", "says", "really", "proud", "with", "at", "a", "this!”", "smile.", "Felix"],
+      },
+      {
+        target: "He gives me a high five when I stop safely at the end.",
+        jumbled: ["I", "He", "at", "high", "me", "gives", "safely", "five", "when", "a", "the", "stop", "end."],
+      },
+      {
+        target: "Having my brother's support makes riding my bike even more fun.",
+        jumbled: ["Having", "makes", "more", "even", "my", "support", "brother's", "bike", "fun.", "my", "riding"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who cheers for you.",
     mySentenceExample: "My brother cheers for me when I try hard things.",
@@ -240,9 +376,26 @@ export const CHAPTERS = [
       { text: "The wind feels hot and uncomfortable.", answer: false },
     ],
     buildSentence: [
-      { target: "I ride down the street.", jumbled: ["ride", "down", "I", "the", "street."] },
-      { target: "I wave to Mrs. Lopez.", jumbled: ["wave", "to", "I", "Mrs.", "Lopez."] },
-      { target: "This feels like a big adventure.", jumbled: ["feels", "like", "This", "a", "big", "adventure."] },
+      {
+        target: "Today, Dad says I can ride down our whole street.",
+        jumbled: ["ride", "Dad", "I", "our", "whole", "down", "street.", "Today,", "can", "says"],
+      },
+      {
+        target: "“Stay close to the side, Zara, and I'll walk with you,” Dad says.",
+        jumbled: ["Zara,", "and", "I'll", "“Stay", "says.", "Dad", "side,", "with", "walk", "you,”", "to", "close", "the"],
+      },
+      {
+        target: "The wind feels cool against my face as I ride along.",
+        jumbled: ["against", "I", "as", "ride", "cool", "feels", "along.", "my", "The", "face", "wind"],
+      },
+      {
+        target: "I ride all the way to the corner and turn around carefully.",
+        jumbled: ["around", "all", "and", "I", "the", "to", "the", "corner", "ride", "carefully.", "way", "turn"],
+      },
+      {
+        target: "Riding down the real street feels like a big, exciting adventure.",
+        jumbled: ["the", "real", "street", "Riding", "a", "feels", "exciting", "like", "down", "big,", "adventure."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about riding or traveling somewhere.",
     mySentenceExample: "I like to ride my bike down the street.",
@@ -265,9 +418,26 @@ export const CHAPTERS = [
       { text: "The family rides bikes together.", answer: true },
     ],
     buildSentence: [
-      { target: "I can ride fast.", jumbled: ["can", "ride", "I", "fast."] },
-      { target: "I remember my first ride.", jumbled: ["remember", "my", "I", "first", "ride."] },
-      { target: "Practice makes anything possible.", jumbled: ["makes", "anything", "Practice", "possible."] },
+      {
+        target: "It has been one month since I got my new bike.",
+        jumbled: ["I", "since", "month", "It", "has", "been", "bike.", "got", "one", "new", "my"],
+      },
+      {
+        target: "I remember my first wobbly ride and my little fall.",
+        jumbled: ["first", "my", "fall.", "my", "remember", "ride", "little", "and", "I", "wobbly"],
+      },
+      {
+        target: "“You're one of the best bike riders on our street, Zara,” Felix says.",
+        jumbled: ["street,", "Felix", "our", "best", "says.", "Zara,”", "“You're", "one", "riders", "of", "bike", "the", "on"],
+      },
+      {
+        target: "I feel the wind in my hair and a big smile on my face.",
+        jumbled: ["on", "my", "a", "smile", "big", "in", "feel", "and", "wind", "hair", "my", "the", "I", "face."],
+      },
+      {
+        target: "“I did it, I can really ride my bike!” I shout happily.",
+        jumbled: ["I", "bike!”", "happily.", "I", "“I", "ride", "shout", "did", "can", "really", "my", "it,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something practice helped you do.",
     mySentenceExample: "Practice helped me learn to ride my bike.",

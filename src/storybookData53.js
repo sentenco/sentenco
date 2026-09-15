@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "The guilty feeling lingers after Ethan closes the app.", answer: true },
     ],
     buildSentence: [
-      { target: "Something twists inside my chest.", jumbled: ["Something", "twists", "inside", "my", "chest."] },
-      { target: "I've known Nina since elementary school.", jumbled: ["I've", "known", "Nina", "since", "elementary", "school."] },
-      { target: "I close the app quietly.", jumbled: ["I", "close", "the", "app", "quietly."] },
-      { target: "The guilty feeling lingers afterward.", jumbled: ["The", "guilty", "feeling", "lingers", "afterward."] },
-      { target: "Staying silent feels almost like agreeing with this.", jumbled: ["Staying", "silent", "feels", "almost", "like", "agreeing", "with", "this."] },
+      {
+        target: "Scrolling through my phone before bed, I notice several unkind comments underneath a photo Nina posted earlier today.",
+        jumbled: ["photo", "a", "earlier", "comments", "Scrolling", "before", "today.", "bed,", "posted", "unkind", "through", "several", "notice", "underneath", "Nina", "phone", "my", "I"],
+      },
+      {
+        target: "Marcus and a few others are mocking her artwork, using words that feel deliberately cruel rather than simply teasing.",
+        jumbled: ["artwork,", "cruel", "simply", "others", "Marcus", "teasing.", "are", "and", "mocking", "her", "words", "rather", "few", "deliberately", "feel", "that", "a", "than", "using"],
+      },
+      {
+        target: "I've known Nina since elementary school, and seeing this makes something uncomfortable twist inside my chest.",
+        jumbled: ["Nina", "makes", "since", "and", "something", "I've", "twist", "uncomfortable", "known", "chest.", "elementary", "school,", "inside", "this", "my", "seeing"],
+      },
+      {
+        target: "Part of me wants to scroll past quickly, pretending I never saw it at all.",
+        jumbled: ["wants", "of", "it", "Part", "at", "saw", "to", "scroll", "all.", "me", "past", "quickly,", "pretending", "I", "never"],
+      },
+      {
+        target: "\"You should say something, Ethan,\" I think quietly, but I close the app without commenting, and the guilty feeling lingers long after I put my phone down.",
+        jumbled: ["my", "put", "app", "feeling", "something,", "the", "close", "I", "lingers", "think", "long", "after", "Ethan,\"", "but", "phone", "\"You", "quietly,", "down.", "should", "I", "without", "say", "commenting,", "I", "and", "guilty", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing something unfair that bothered you.",
     mySentenceExample: "I noticed something unfair when a classmate was excluded from a game.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Ethan finds it easy to keep ignoring this.", answer: false },
     ],
     buildSentence: [
-      { target: "The comments keep growing meaner.", jumbled: ["comments", "keep", "The", "growing", "meaner."] },
-      { target: "Nina keeps her head down.", jumbled: ["Nina", "keeps", "her", "head", "down."] },
-      { target: "I feel torn between two things.", jumbled: ["I", "feel", "torn", "between", "two", "things."] },
-      { target: "This will probably just keep escalating.", jumbled: ["This", "will", "probably", "just", "keep", "escalating."] },
-      { target: "If nobody says anything, this will keep escalating.", jumbled: ["If", "nobody", "says", "anything,", "this", "will", "keep", "escalating."] },
+      {
+        target: "Over the next few days, I notice the comments continuing, growing gradually meaner with each new post Nina shares.",
+        jumbled: ["shares.", "meaner", "notice", "growing", "days,", "gradually", "comments", "Nina", "the", "Over", "continuing,", "each", "post", "new", "next", "the", "few", "I", "with"],
+      },
+      {
+        target: "In class, Nina seems quieter than usual, keeping her head down and avoiding eye contact with almost everyone.",
+        jumbled: ["Nina", "contact", "with", "In", "keeping", "down", "avoiding", "than", "everyone.", "head", "class,", "almost", "and", "quieter", "usual,", "seems", "her", "eye"],
+      },
+      {
+        target: "During lunch, I overhear two classmates whispering about the situation, treating it more like entertainment than something serious.",
+        jumbled: ["two", "more", "lunch,", "something", "than", "entertainment", "treating", "it", "the", "whispering", "situation,", "During", "serious.", "about", "like", "overhear", "I", "classmates"],
+      },
+      {
+        target: "I feel torn between wanting to help and worrying about becoming a target myself if I speak up.",
+        jumbled: ["myself", "becoming", "I", "a", "to", "wanting", "between", "speak", "worrying", "target", "and", "help", "I", "up.", "about", "torn", "if", "feel"],
+      },
+      {
+        target: "Watching Nina retreat further into herself each day makes ignoring this feel increasingly impossible.",
+        jumbled: ["ignoring", "makes", "retreat", "this", "feel", "further", "day", "Nina", "herself", "each", "Watching", "into", "increasingly", "impossible."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing a problem that kept getting worse.",
     mySentenceExample: "I noticed a problem at school that kept getting worse over time.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Ethan decides staying silent isn't actually safe.", answer: true },
     ],
     buildSentence: [
-      { target: "This fear feels legitimate somehow.", jumbled: ["This", "fear", "feels", "legitimate", "somehow."] },
-      { target: "I keep thinking about Nina.", jumbled: ["I", "keep", "thinking", "about", "Nina."] },
-      { target: "Doing the right thing rarely feels comfortable.", jumbled: ["Doing", "the", "right", "thing", "rarely", "feels", "comfortable."] },
-      { target: "I decide staying silent isn't actually safe.", jumbled: ["I", "decide", "staying", "silent", "isn't", "actually", "safe."] },
-      { target: "If I were in her position, I would want support.", jumbled: ["If", "I", "were", "in", "her", "position,", "I", "would", "want", "support."] },
+      {
+        target: "That night, I sit in my room, weighing what would actually happen if I said something publicly online.",
+        jumbled: ["if", "That", "sit", "actually", "weighing", "my", "night,", "I", "said", "room,", "I", "publicly", "in", "what", "happen", "would", "something", "online."],
+      },
+      {
+        target: "Marcus is popular, and speaking against him could easily make me a target for the same treatment.",
+        jumbled: ["is", "the", "easily", "for", "me", "against", "speaking", "target", "could", "same", "a", "make", "him", "popular,", "and", "Marcus", "treatment."],
+      },
+      {
+        target: "I keep thinking about how alone Nina must feel right now, facing this without support.",
+        jumbled: ["support.", "feel", "keep", "right", "I", "facing", "must", "how", "now,", "about", "Nina", "without", "this", "alone", "thinking"],
+      },
+      {
+        target: "I remember something my dad once told me: doing the right thing rarely feels comfortable or convenient in the moment.",
+        jumbled: ["comfortable", "the", "me:", "remember", "something", "feels", "thing", "rarely", "right", "my", "or", "the", "in", "I", "once", "moment.", "dad", "doing", "convenient", "told"],
+      },
+      {
+        target: "Slowly, I decide that staying silent isn't actually the safe choice I've been telling myself it was.",
+        jumbled: ["it", "that", "been", "telling", "was.", "decide", "myself", "actually", "the", "choice", "silent", "Slowly,", "I", "I've", "safe", "isn't", "staying"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a difficult decision you made even though it felt risky.",
     mySentenceExample: "I made a difficult decision to speak up even though it felt risky.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Nina's shoulders tense up more after talking.", answer: false },
     ],
     buildSentence: [
-      { target: "I find her sitting alone.", jumbled: ["find", "her", "I", "sitting", "alone."] },
-      { target: "I've seen the comments, I say.", jumbled: ["I've", "seen", "the", "comments,", "I", "say."] },
-      { target: "Her shoulders relax slightly now.", jumbled: ["Her", "shoulders", "relax", "slightly", "now."] },
-      { target: "She's been struggling with feeling embarrassed.", jumbled: ["She's", "been", "struggling", "with", "feeling", "embarrassed."] },
-      { target: "This isn't acceptable at all, I tell her.", jumbled: ["This", "isn't", "acceptable", "at", "all,", "I", "tell", "her."] },
+      {
+        target: "The next day, instead of confronting Marcus immediately, I decide to reach out to Nina privately first.",
+        jumbled: ["instead", "Marcus", "reach", "confronting", "first.", "I", "to", "next", "immediately,", "privately", "of", "to", "Nina", "out", "The", "day,", "decide"],
+      },
+      {
+        target: "I find her sitting alone at lunch and ask quietly if I can join her, which clearly surprises her.",
+        jumbled: ["quietly", "sitting", "alone", "at", "can", "if", "and", "her,", "surprises", "clearly", "ask", "I", "join", "lunch", "which", "her.", "I", "her", "find"],
+      },
+      {
+        target: "She admits she's been struggling with feeling embarrassed and unsure whether anyone even noticed what was happening.",
+        jumbled: ["noticed", "she's", "was", "admits", "even", "whether", "embarrassed", "with", "struggling", "anyone", "been", "feeling", "what", "and", "She", "unsure", "happening."],
+      },
+      {
+        target: "I tell her honestly that I noticed, and that what's happening to her isn't acceptable at all.",
+        jumbled: ["tell", "noticed,", "that", "I", "I", "happening", "her", "that", "all.", "at", "what's", "acceptable", "to", "honestly", "her", "isn't", "and"],
+      },
+      {
+        target: "For the first time in days, Nina's shoulders relax slightly, like she's carrying a little less weight now.",
+        jumbled: ["Nina's", "shoulders", "a", "carrying", "little", "For", "slightly,", "now.", "days,", "first", "time", "the", "weight", "in", "like", "she's", "relax", "less"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reaching out to someone who seemed to be struggling.",
     mySentenceExample: "I reached out to a classmate who seemed to be struggling quietly.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Ethan's phone buzzes with notifications after he sends it.", answer: true },
     ],
     buildSentence: [
-      { target: "My hands feel slightly shaky.", jumbled: ["My", "hands", "feel", "slightly", "shaky."] },
-      { target: "I press send finally.", jumbled: ["press", "send", "I", "finally."] },
-      { target: "I read it three times.", jumbled: ["I", "read", "it", "three", "times."] },
-      { target: "I remind myself why I'm doing this.", jumbled: ["I", "remind", "myself", "why", "I'm", "doing", "this."] },
-      { target: "At least Nina will know someone spoke up for her.", jumbled: ["At", "least", "Nina", "will", "know", "someone", "spoke", "up", "for", "her."] },
+      {
+        target: "That evening, I open the group chat where the unkind comments have been posted most frequently.",
+        jumbled: ["comments", "That", "evening,", "been", "most", "where", "have", "frequently.", "I", "group", "the", "chat", "unkind", "the", "posted", "open"],
+      },
+      {
+        target: "My hands feel slightly shaky as I type a message defending Nina's artwork and calling out the mocking directly.",
+        jumbled: ["hands", "artwork", "defending", "type", "I", "out", "Nina's", "My", "calling", "shaky", "as", "directly.", "slightly", "mocking", "and", "feel", "a", "message", "the"],
+      },
+      {
+        target: "I read it three times, worried about how Marcus and others might react to this.",
+        jumbled: ["others", "how", "might", "this.", "react", "I", "it", "read", "worried", "to", "three", "Marcus", "about", "times,", "and"],
+      },
+      {
+        target: "\"Send it, Ethan,\" I tell myself, and I press send.",
+        jumbled: ["I", "press", "and", "Ethan,\"", "it,", "send.", "tell", "myself,", "I", "\"Send"],
+      },
+      {
+        target: "Whatever happens next, at least Nina will know that someone was willing to speak up for her.",
+        jumbled: ["at", "Whatever", "her.", "willing", "speak", "Nina", "least", "up", "that", "will", "for", "happens", "next,", "to", "know", "someone", "was"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about speaking up even though it felt scary.",
     mySentenceExample: "I spoke up in class even though it felt scary at first.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Ethan regrets sending the message.", answer: false },
     ],
     buildSentence: [
-      { target: "Marcus replies defensively today.", jumbled: ["Marcus", "replies", "defensively", "today."] },
-      { target: "My stomach tightens reading this.", jumbled: ["My", "stomach", "tightens", "reading", "this."] },
-      { target: "I don't regret sending that message.", jumbled: ["I", "don't", "regret", "sending", "that", "message."] },
-      { target: "They felt too afraid to say anything.", jumbled: ["They", "felt", "too", "afraid", "to", "say", "anything."] },
-      { target: "Two classmates thank me quietly for saying something.", jumbled: ["Two", "classmates", "thank", "me", "quietly", "for", "saying", "something."] },
+      {
+        target: "Within minutes, Marcus replies defensively, accusing me of overreacting and telling me to mind my own business instead.",
+        jumbled: ["minutes,", "my", "own", "instead.", "accusing", "to", "Within", "Marcus", "defensively,", "me", "of", "and", "replies", "business", "telling", "overreacting", "mind", "me"],
+      },
+      {
+        target: "A few of his friends pile on too, and my phone buzzes constantly with notifications that feel increasingly hostile.",
+        jumbled: ["too,", "few", "of", "phone", "hostile.", "A", "buzzes", "that", "constantly", "his", "notifications", "on", "and", "friends", "my", "feel", "with", "pile", "increasingly"],
+      },
+      {
+        target: "My stomach tightens reading each new message, and I briefly wonder if I made a serious mistake speaking up.",
+        jumbled: ["and", "wonder", "I", "message,", "a", "if", "tightens", "stomach", "each", "My", "I", "mistake", "up.", "new", "speaking", "made", "serious", "briefly", "reading"],
+      },
+      {
+        target: "However, I also notice something unexpected: two other classmates message me privately, thanking me quietly for saying something.",
+        jumbled: ["other", "two", "unexpected:", "me", "message", "I", "classmates", "However,", "thanking", "quietly", "me", "for", "notice", "saying", "also", "something", "something.", "privately,"],
+      },
+      {
+        target: "They admit they had noticed the comments too but felt too afraid to say anything themselves.",
+        jumbled: ["but", "afraid", "had", "too", "felt", "admit", "comments", "They", "they", "too", "to", "themselves.", "say", "noticed", "the", "anything"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about facing criticism after standing up for what you believed.",
     mySentenceExample: "I faced criticism after standing up for what I believed was right.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Ethan feels this decision was completely unnecessary.", answer: false },
     ],
     buildSentence: [
-      { target: "I visit the counselor today.", jumbled: ["visit", "the", "I", "counselor", "today."] },
-      { target: "She listens carefully to me.", jumbled: ["She", "listens", "carefully", "to", "me."] },
-      { target: "You did the right thing.", jumbled: ["did", "the", "You", "right", "thing."] },
-      { target: "I feel relieved this isn't only my responsibility.", jumbled: ["I", "feel", "relieved", "this", "isn't", "only", "my", "responsibility."] },
-      { target: "The school has clear policies about online harassment.", jumbled: ["The", "school", "has", "clear", "policies", "about", "online", "harassment."] },
+      {
+        target: "The next morning, I decide the situation needs more than just a message in a group chat.",
+        jumbled: ["just", "more", "needs", "morning,", "The", "the", "a", "situation", "in", "a", "decide", "message", "chat.", "than", "I", "next", "group"],
+      },
+      {
+        target: "I visit our school counselor, Ms. Delgado, and explain everything that's been happening to Nina online.",
+        jumbled: ["online.", "our", "I", "been", "Nina", "school", "Delgado,", "and", "that's", "counselor,", "everything", "explain", "happening", "visit", "to", "Ms."],
+      },
+      {
+        target: "She listens carefully, asking thoughtful questions rather than jumping immediately to conclusions or punishments.",
+        jumbled: ["thoughtful", "conclusions", "punishments.", "immediately", "asking", "or", "carefully,", "than", "to", "jumping", "listens", "She", "questions", "rather"],
+      },
+      {
+        target: "“Thank you for trusting me with this, Ethan. You did the right thing bringing it forward,” she says sincerely.",
+        jumbled: ["did", "the", "me", "with", "thing", "sincerely.", "bringing", "says", "trusting", "this,", "“Thank", "she", "right", "for", "you", "Ethan.", "forward,”", "it", "You"],
+      },
+      {
+        target: "I also feel relieved that this isn't only my responsibility anymore.",
+        jumbled: ["relieved", "also", "isn't", "my", "anymore.", "this", "I", "responsibility", "feel", "that", "only"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about asking an adult for help with a difficult situation.",
     mySentenceExample: "I asked a teacher for help with a difficult situation at school.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Ethan feels this conversation means nothing at all.", answer: false },
     ],
     buildSentence: [
-      { target: "Marcus approaches me later.", jumbled: ["Marcus", "approaches", "me", "later."] },
-      { target: "I appreciate this acknowledgment somewhat.", jumbled: ["I", "appreciate", "this", "acknowledgment", "somewhat."] },
-      { target: "Change doesn't happen instantly.", jumbled: ["Change", "doesn't", "happen", "instantly."] },
-      { target: "This feels like an important first step.", jumbled: ["This", "feels", "like", "an", "important", "first", "step."] },
-      { target: "I didn't think about how that would affect her.", jumbled: ["I", "didn't", "think", "about", "how", "that", "would", "affect", "her."] },
+      {
+        target: "Over the following days, the school addresses the situation directly, meeting separately with Marcus and the other students involved.",
+        jumbled: ["Marcus", "involved.", "the", "school", "with", "meeting", "days,", "the", "Over", "students", "the", "following", "separately", "other", "and", "directly,", "addresses", "situation", "the"],
+      },
+      {
+        target: "I don't know exactly what was said in those meetings, but Marcus's public comments about Nina noticeably stop appearing.",
+        jumbled: ["about", "stop", "was", "know", "Nina", "public", "don't", "appearing.", "in", "but", "Marcus's", "comments", "said", "exactly", "I", "those", "noticeably", "what", "meetings,"],
+      },
+      {
+        target: "Surprisingly, Marcus approaches me in the hallway a few days later, looking uncomfortable but clearly wanting to say something.",
+        jumbled: ["approaches", "uncomfortable", "few", "Marcus", "later,", "days", "to", "looking", "hallway", "a", "me", "but", "clearly", "the", "wanting", "in", "Surprisingly,", "say", "something."],
+      },
+      {
+        target: "“I didn't think about how that would actually affect her, Ethan,” he admits, avoiding direct eye contact throughout.",
+        jumbled: ["contact", "actually", "Ethan,”", "about", "would", "how", "he", "that", "think", "admits,", "avoiding", "eye", "her,", "direct", "“I", "didn't", "affect", "throughout."],
+      },
+      {
+        target: "I don't fully forgive him immediately, but I appreciate that he's at least acknowledging the harm he caused.",
+        jumbled: ["acknowledging", "fully", "don't", "immediately,", "caused.", "I", "that", "him", "forgive", "harm", "I", "at", "he", "but", "he's", "the", "least", "appreciate"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about seeing someone acknowledge a mistake they made.",
     mySentenceExample: "I saw my friend acknowledge a mistake and apologize sincerely.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Ethan feels this progress means nothing to him.", answer: false },
     ],
     buildSentence: [
-      { target: "Nina starts sharing her artwork.", jumbled: ["Nina", "starts", "sharing", "her", "artwork."] },
-      { target: "She thanks me specifically today.", jumbled: ["She", "thanks", "me", "specifically", "today."] },
-      { target: "This feels like real progress.", jumbled: ["This", "feels", "like", "real", "progress."] },
-      { target: "I couldn't watch it continue without speaking.", jumbled: ["I", "couldn't", "watch", "it", "continue", "without", "speaking."] },
-      { target: "Having someone say something made me feel less invisible.", jumbled: ["Having", "someone", "say", "something", "made", "me", "feel", "less", "invisible."] },
+      {
+        target: "Weeks later, I notice Nina gradually returning to her normal, confident self during lunch and class discussions.",
+        jumbled: ["returning", "class", "confident", "during", "normal,", "notice", "later,", "I", "gradually", "self", "her", "and", "to", "Weeks", "discussions.", "lunch", "Nina"],
+      },
+      {
+        target: "She starts sharing her artwork more openly again, no longer hesitant about posting new pieces online.",
+        jumbled: ["again,", "no", "sharing", "about", "pieces", "new", "posting", "more", "hesitant", "She", "starts", "online.", "her", "longer", "artwork", "openly"],
+      },
+      {
+        target: "One afternoon, she thanks me specifically for what I did, admitting it meant more to her than I probably realized.",
+        jumbled: ["for", "realized.", "did,", "to", "it", "specifically", "she", "I", "meant", "I", "admitting", "thanks", "afternoon,", "what", "her", "than", "One", "probably", "more", "me"],
+      },
+      {
+        target: "“Having someone actually say something made me feel less invisible, Ethan,” she explains honestly, her voice steady now.",
+        jumbled: ["invisible,", "steady", "me", "“Having", "her", "Ethan,”", "she", "something", "feel", "voice", "explains", "made", "actually", "less", "now.", "honestly,", "say", "someone"],
+      },
+      {
+        target: "I tell her I simply couldn't watch it continue without saying anything, that it genuinely wasn't a difficult choice morally.",
+        jumbled: ["watch", "continue", "couldn't", "simply", "difficult", "choice", "I", "that", "her", "a", "tell", "wasn't", "without", "morally.", "saying", "genuinely", "it", "I", "it", "anything,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about seeing a positive change after helping someone.",
     mySentenceExample: "I saw a positive change in my friend after I helped her through a hard time.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Ethan believes what he did didn't matter at all.", answer: false },
     ],
     buildSentence: [
-      { target: "I realize this looking back.", jumbled: ["realize", "this", "I", "looking", "back."] },
-      { target: "This faded quicker than expected.", jumbled: ["This", "faded", "quicker", "than", "expected."] },
-      { target: "I learned something important about fear.", jumbled: ["I", "learned", "something", "important", "about", "fear."] },
-      { target: "Silence quietly takes a side too.", jumbled: ["Silence", "quietly", "takes", "a", "side", "too."] },
-      { target: "Speaking up doesn't require being fearless, only willing to act.", jumbled: ["Speaking", "up", "doesn't", "require", "being", "fearless,", "only", "willing", "to", "act."] },
+      {
+        target: "Looking back on everything that happened, I realize how close I came to staying silent that very first night.",
+        jumbled: ["happened,", "how", "to", "everything", "realize", "that", "close", "I", "on", "first", "back", "staying", "silent", "came", "that", "very", "I", "night.", "Looking"],
+      },
+      {
+        target: "Nina's situation might have continued getting worse indefinitely.",
+        jumbled: ["worse", "have", "Nina's", "might", "situation", "getting", "indefinitely.", "continued"],
+      },
+      {
+        target: "The backlash from Marcus's friends was uncomfortable, but it faded far quicker than I had originally worried it would.",
+        jumbled: ["from", "Marcus's", "would.", "originally", "it", "I", "than", "faded", "worried", "friends", "had", "uncomfortable,", "quicker", "backlash", "it", "but", "was", "far", "The"],
+      },
+      {
+        target: "What mattered more, ultimately, was that Nina knew she wasn't facing this completely alone.",
+        jumbled: ["wasn't", "What", "alone.", "mattered", "more,", "was", "knew", "that", "she", "completely", "ultimately,", "Nina", "facing", "this"],
+      },
+      {
+        target: "I now understand that staying silent isn't neutral at all; sometimes, silence quietly takes a side too.",
+        jumbled: ["staying", "takes", "too.", "now", "a", "neutral", "at", "I", "silence", "side", "isn't", "understand", "silent", "sometimes,", "all;", "quietly", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something important you learned from standing up for someone.",
     mySentenceExample: "I learned that even small actions can make a real difference for someone.",

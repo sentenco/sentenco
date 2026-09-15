@@ -35,9 +35,26 @@ export const CHAPTERS = [
       { text: "Theo feels proud that Grandpa trusts him.", answer: true },
     ],
     buildSentence: [
-      { target: "Would you like to help?", jumbled: ["like", "to", "Would", "you", "help?"] },
-      { target: "I feel excited about the idea.", jumbled: ["feel", "excited", "I", "about", "the", "idea."] },
-      { target: "Grandpa teaches me step by step.", jumbled: ["teaches", "me", "Grandpa", "step", "by", "step."] },
+      {
+        target: "Every Saturday, I visit Grandpa's house, and today he takes me straight to his backyard garden.",
+        jumbled: ["today", "Grandpa's", "house,", "to", "and", "straight", "takes", "Every", "his", "me", "backyard", "Saturday,", "garden.", "I", "he", "visit"],
+      },
+      {
+        target: "“Would you like to help me plant vegetables this year, Theo?” he asks, handing me a small trowel.",
+        jumbled: ["you", "handing", "trowel.", "plant", "“Would", "vegetables", "to", "Theo?”", "small", "me", "asks,", "a", "me", "year,", "like", "this", "help", "he"],
+      },
+      {
+        target: "I look at the empty rows of soft brown dirt and feel excited about the idea.",
+        jumbled: ["at", "soft", "excited", "brown", "idea.", "empty", "I", "the", "about", "of", "look", "feel", "rows", "dirt", "the", "and"],
+      },
+      {
+        target: "“Tomatoes, carrots, and maybe some pumpkins,” Grandpa says, smiling under his straw hat.",
+        jumbled: ["carrots,", "under", "hat.", "and", "says,", "some", "pumpkins,”", "straw", "maybe", "“Tomatoes,", "smiling", "Grandpa", "his"],
+      },
+      {
+        target: "I have never grown anything before, but Grandpa promises to teach me everything step by step.",
+        jumbled: ["step.", "promises", "before,", "me", "everything", "never", "teach", "grown", "step", "I", "anything", "by", "Grandpa", "have", "to", "but"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something a family member taught you.",
     mySentenceExample: "My mom taught me how to bake bread.",
@@ -60,9 +77,26 @@ export const CHAPTERS = [
       { text: "Grandpa says good things take time.", answer: true },
     ],
     buildSentence: [
-      { target: "I make a small hole.", jumbled: ["make", "a", "I", "small", "hole."] },
-      { target: "Good things take time.", jumbled: ["take", "time", "Good", "things."] },
-      { target: "We plant a whole row.", jumbled: ["plant", "a", "We", "whole", "row."] },
+      {
+        target: "Grandpa shows me how to make a small hole in the soil with my finger, just deep enough for a seed.",
+        jumbled: ["hole", "to", "deep", "a", "Grandpa", "just", "make", "me", "enough", "seed.", "small", "how", "with", "the", "in", "for", "my", "soil", "shows", "a", "finger,"],
+      },
+      {
+        target: "“Not too deep, or the seed won't be able to grow,” he explains carefully.",
+        jumbled: ["seed", "“Not", "the", "be", "too", "won't", "deep,", "explains", "to", "he", "or", "carefully.", "grow,”", "able"],
+      },
+      {
+        target: "I drop a tiny tomato seed into each hole and gently cover it with soft dirt.",
+        jumbled: ["gently", "hole", "with", "tomato", "dirt.", "drop", "tiny", "each", "seed", "I", "and", "a", "cover", "soft", "into", "it"],
+      },
+      {
+        target: "“How long until it grows?” I ask eagerly.",
+        jumbled: ["until", "I", "eagerly.", "long", "“How", "grows?”", "ask", "it"],
+      },
+      {
+        target: "We plant an entire row together, and I already feel a strange excitement about watching something grow from nothing.",
+        jumbled: ["entire", "nothing.", "strange", "grow", "watching", "row", "excitement", "about", "plant", "We", "a", "and", "feel", "I", "an", "already", "from", "together,", "something"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something that takes a long time to happen.",
     mySentenceExample: "Growing a tall tree takes a very long time.",
@@ -85,9 +119,26 @@ export const CHAPTERS = [
       { text: "Grandpa says Theo is becoming a real gardener.", answer: true },
     ],
     buildSentence: [
-      { target: "Seeds need water and sunlight.", jumbled: ["need", "water", "Seeds", "and", "sunlight."] },
-      { target: "I pour water gently.", jumbled: ["pour", "water", "I", "gently."] },
-      { target: "I look forward to this time.", jumbled: ["look", "forward", "I", "to", "this", "time."] },
+      {
+        target: "Grandpa explains that seeds need water and sunlight every single day to grow properly.",
+        jumbled: ["need", "properly.", "Grandpa", "water", "to", "and", "single", "grow", "every", "sunlight", "that", "seeds", "explains", "day"],
+      },
+      {
+        target: "Now I visit the garden every afternoon after school, carrying a small green watering can.",
+        jumbled: ["visit", "after", "afternoon", "every", "a", "carrying", "Now", "school,", "can.", "I", "small", "watering", "green", "the", "garden"],
+      },
+      {
+        target: "I pour water gently over each row, careful not to drown the tiny seeds underneath.",
+        jumbled: ["water", "each", "careful", "pour", "over", "not", "underneath.", "the", "I", "gently", "to", "seeds", "tiny", "drown", "row,"],
+      },
+      {
+        target: "“You're becoming a real gardener, Theo,” Grandpa says, watching me from his porch chair.",
+        jumbled: ["“You're", "Grandpa", "his", "chair.", "me", "real", "a", "Theo,”", "gardener,", "watching", "becoming", "from", "porch", "says,"],
+      },
+      {
+        target: "It becomes part of my daily routine, and I actually start looking forward to this quiet time in the garden.",
+        jumbled: ["of", "the", "I", "daily", "time", "looking", "my", "start", "to", "and", "forward", "in", "becomes", "quiet", "actually", "It", "garden.", "routine,", "part", "this"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a daily routine you have.",
     mySentenceExample: "I brush my teeth every morning and night.",
@@ -110,9 +161,26 @@ export const CHAPTERS = [
       { text: "Grandpa says plants grow underground first.", answer: true },
     ],
     buildSentence: [
-      { target: "I don't see anything growing.", jumbled: ["don't", "see", "I", "anything", "growing."] },
-      { target: "Waiting feels really difficult.", jumbled: ["feels", "really", "Waiting", "difficult."] },
-      { target: "The seeds work hard underground.", jumbled: ["work", "hard", "The", "seeds", "underground."] },
+      {
+        target: "I stare at the soil, but nothing seems to be happening at all.",
+        jumbled: ["I", "nothing", "at", "soil,", "the", "happening", "stare", "but", "be", "all.", "to", "at", "seems"],
+      },
+      {
+        target: "“I don't see anything growing yet,” I complain, feeling frustrated.",
+        jumbled: ["“I", "see", "yet,”", "I", "feeling", "don't", "frustrated.", "complain,", "growing", "anything"],
+      },
+      {
+        target: "“Nothing worth having comes quickly, Theo,” he says gently.",
+        jumbled: ["gently.", "Theo,”", "he", "having", "comes", "worth", "“Nothing", "says", "quickly,"],
+      },
+      {
+        target: "“Plants grow underground first, where we cannot see them.”",
+        jumbled: ["we", "“Plants", "grow", "see", "underground", "them.”", "first,", "where", "cannot"],
+      },
+      {
+        target: "Grandpa reminds me that even though I cannot see progress, the seeds are working hard beneath the surface every single day.",
+        jumbled: ["working", "day.", "me", "cannot", "that", "the", "every", "see", "beneath", "hard", "Grandpa", "the", "I", "surface", "progress,", "single", "seeds", "even", "are", "though", "reminds"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something that was hard for you to wait for.",
     mySentenceExample: "It was hard for me to wait for my birthday to come.",
@@ -135,9 +203,26 @@ export const CHAPTERS = [
       { text: "This is Theo's first tomato plant.", answer: true },
     ],
     buildSentence: [
-      { target: "A tiny sprout is growing.", jumbled: ["is", "growing", "A", "tiny", "sprout."] },
-      { target: "That's your first tomato plant.", jumbled: ["is", "your", "That's", "first", "tomato", "plant."] },
-      { target: "My patience finally paid off.", jumbled: ["finally", "paid", "My", "patience", "off."] },
+      {
+        target: "Two weeks after planting, I run to the garden after school like every other day.",
+        jumbled: ["after", "garden", "other", "to", "Two", "weeks", "planting,", "I", "every", "after", "the", "day.", "school", "run", "like"],
+      },
+      {
+        target: "A tiny green sprout is poking up through the soil.",
+        jumbled: ["up", "tiny", "is", "A", "sprout", "soil.", "the", "poking", "green", "through"],
+      },
+      {
+        target: "“Grandpa! Grandpa! Come look!” I shout excitedly, waving my arms.",
+        jumbled: ["Come", "arms.", "I", "waving", "Grandpa!", "my", "excitedly,", "“Grandpa!", "look!”", "shout"],
+      },
+      {
+        target: "He hurries over and kneels beside me, a proud smile spreading across his face.",
+        jumbled: ["hurries", "me,", "spreading", "across", "proud", "over", "a", "face.", "kneels", "beside", "and", "his", "He", "smile"],
+      },
+      {
+        target: "I stare at the small green stem in amazement, hardly believing that this tiny seed actually turned into something alive.",
+        jumbled: ["believing", "at", "seed", "the", "this", "alive.", "amazement,", "something", "actually", "in", "I", "stem", "into", "turned", "small", "green", "stare", "hardly", "that", "tiny"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time your patience paid off.",
     mySentenceExample: "My patience paid off when I finally learned to swim.",
@@ -160,9 +245,26 @@ export const CHAPTERS = [
       { text: "Theo learns that gardening means solving problems.", answer: true },
     ],
     buildSentence: [
-      { target: "Those are weeds in our garden.", jumbled: ["are", "in", "Those", "weeds", "our", "garden."] },
-      { target: "We pull weeds by their roots.", jumbled: ["pull", "weeds", "We", "by", "their", "roots."] },
-      { target: "Gardening means solving problems.", jumbled: ["means", "solving", "Gardening", "problems."] },
+      {
+        target: "A few days later, I notice strange plants growing between our neat rows of vegetables.",
+        jumbled: ["vegetables.", "days", "I", "neat", "plants", "few", "our", "A", "of", "between", "notice", "growing", "rows", "strange", "later,"],
+      },
+      {
+        target: "“What are these?” I ask, pointing at the tall, spiky green plants.",
+        jumbled: ["I", "tall,", "“What", "these?”", "ask,", "pointing", "the", "green", "plants.", "at", "are", "spiky"],
+      },
+      {
+        target: "“Those are weeds,” Grandpa explains.",
+        jumbled: ["weeds,”", "explains.", "“Those", "Grandpa", "are"],
+      },
+      {
+        target: "“They steal water and sunlight from our real plants, so we need to remove them, Theo.”",
+        jumbled: ["water", "to", "real", "steal", "from", "plants,", "remove", "“They", "we", "and", "them,", "Theo.”", "so", "sunlight", "need", "our"],
+      },
+      {
+        target: "My hands get dirty and a little tired, but I understand that taking care of a garden means solving problems as they appear, not just planting and waiting.",
+        jumbled: ["tired,", "get", "waiting.", "care", "just", "and", "garden", "as", "of", "My", "appear,", "a", "understand", "little", "that", "and", "a", "means", "I", "but", "dirty", "not", "problems", "they", "solving", "planting", "taking", "hands"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a problem you had to solve.",
     mySentenceExample: "I had to solve a problem when my bike tire went flat.",
@@ -185,9 +287,26 @@ export const CHAPTERS = [
       { text: "Theo learns that not every bug is a problem.", answer: true },
     ],
     buildSentence: [
-      { target: "That's a helpful ladybug.", jumbled: ["is", "a", "That's", "helpful", "ladybug."] },
-      { target: "She eats the bad bugs.", jumbled: ["eats", "the", "She", "bad", "bugs."] },
-      { target: "Gardening needs close attention.", jumbled: ["needs", "close", "Gardening", "attention."] },
+      {
+        target: "I spot a small red bug with black spots resting on a leaf.",
+        jumbled: ["leaf.", "black", "red", "bug", "spot", "spots", "I", "with", "a", "a", "on", "resting", "small"],
+      },
+      {
+        target: "“Should I remove this too?” I ask, worried it might be harmful.",
+        jumbled: ["it", "worried", "harmful.", "be", "“Should", "this", "too?”", "remove", "I", "might", "ask,", "I"],
+      },
+      {
+        target: "“That's a ladybug, Theo. She actually eats the bad bugs that damage our plants,” he explains.",
+        jumbled: ["eats", "a", "the", "Theo.", "actually", "damage", "explains.", "“That's", "bad", "he", "plants,”", "our", "that", "ladybug,", "bugs", "She"],
+      },
+      {
+        target: "I learn that not every bug in the garden is a problem; some of them are actually helpful friends.",
+        jumbled: ["problem;", "are", "friends.", "not", "of", "every", "is", "helpful", "some", "actually", "learn", "them", "I", "bug", "in", "the", "garden", "that", "a"],
+      },
+      {
+        target: "Grandpa shows me a different, greenish bug nearby that does damage leaves, and we carefully remove that one instead.",
+        jumbled: ["bug", "different,", "and", "a", "carefully", "instead.", "damage", "leaves,", "we", "greenish", "me", "shows", "remove", "nearby", "that", "Grandpa", "does", "that", "one"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about an animal or insect that helps in nature.",
     mySentenceExample: "Bees help flowers grow by carrying pollen.",
@@ -210,9 +329,26 @@ export const CHAPTERS = [
       { text: "Theo feels proud explaining things to Ivy.", answer: true },
     ],
     buildSentence: [
-      { target: "Can I help too?", jumbled: ["I", "help", "Can", "too?"] },
-      { target: "We plant colorful flowers together.", jumbled: ["plant", "colorful", "We", "flowers", "together."] },
-      { target: "The afternoon flies by quickly.", jumbled: ["flies", "by", "The", "afternoon", "quickly."] },
+      {
+        target: "One afternoon, my neighbor Ivy sees me working in the garden and walks over curiously.",
+        jumbled: ["sees", "working", "curiously.", "over", "afternoon,", "and", "One", "the", "in", "garden", "me", "walks", "Ivy", "my", "neighbor"],
+      },
+      {
+        target: "“Can I help too, Theo?” she asks, peeking through the fence.",
+        jumbled: ["I", "help", "Theo?”", "too,", "“Can", "asks,", "peeking", "she", "the", "through", "fence."],
+      },
+      {
+        target: "“Of course!” I say happily, showing her how to water the plants correctly.",
+        jumbled: ["her", "correctly.", "course!”", "showing", "say", "happily,", "“Of", "the", "to", "water", "I", "plants", "how"],
+      },
+      {
+        target: "Grandpa gives Ivy her own small trowel, and together we plant colorful flowers along the garden's edge.",
+        jumbled: ["the", "we", "trowel,", "small", "gives", "together", "plant", "along", "own", "and", "garden's", "colorful", "Ivy", "edge.", "flowers", "her", "Grandpa"],
+      },
+      {
+        target: "Working together makes the afternoon fly by quickly, and the garden looks even more beautiful with two helpers instead of just one.",
+        jumbled: ["one.", "with", "even", "of", "the", "just", "the", "more", "beautiful", "quickly,", "helpers", "afternoon", "by", "together", "Working", "instead", "looks", "two", "makes", "and", "fly", "garden"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you taught a friend something new.",
     mySentenceExample: "I taught my friend how to play chess last weekend.",
@@ -235,9 +371,26 @@ export const CHAPTERS = [
       { text: "Theo feels disappointed with the harvest.", answer: false },
     ],
     buildSentence: [
-      { target: "It's time to harvest.", jumbled: ["time", "to", "It's", "harvest."] },
-      { target: "We grew all of this.", jumbled: ["grew", "all", "We", "of", "this."] },
-      { target: "This feels incredibly rewarding.", jumbled: ["feels", "incredibly", "This", "rewarding."] },
+      {
+        target: "Weeks later, Grandpa announces exciting news.",
+        jumbled: ["news.", "Weeks", "exciting", "Grandpa", "announces", "later,"],
+      },
+      {
+        target: "“I think it's time to harvest our vegetables, Theo,” he says with a wide smile.",
+        jumbled: ["it's", "says", "time", "Theo,”", "a", "vegetables,", "he", "our", "harvest", "smile.", "with", "to", "wide", "“I", "think"],
+      },
+      {
+        target: "We walk through the garden together, and I can hardly believe how much everything has grown.",
+        jumbled: ["believe", "garden", "the", "how", "through", "everything", "hardly", "I", "much", "has", "We", "can", "walk", "together,", "and", "grown."],
+      },
+      {
+        target: "I gently pick bright red tomatoes and pull up orange carrots from the soft soil, placing them carefully into a woven basket.",
+        jumbled: ["from", "red", "soft", "carefully", "I", "and", "woven", "pull", "them", "orange", "soil,", "the", "bright", "into", "tomatoes", "a", "gently", "basket.", "up", "placing", "pick", "carrots"],
+      },
+      {
+        target: "Seeing the finished results feels incredibly rewarding and worth every single moment of effort.",
+        jumbled: ["incredibly", "every", "Seeing", "feels", "finished", "of", "the", "and", "results", "single", "rewarding", "effort.", "moment", "worth"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finishing something you worked hard on.",
     mySentenceExample: "I felt proud after finishing my hard puzzle.",
@@ -260,9 +413,26 @@ export const CHAPTERS = [
       { text: "Theo feels proud and generous sharing the vegetables.", answer: true },
     ],
     buildSentence: [
-      { target: "Mom cooks a delicious dinner.", jumbled: ["cooks", "a", "Mom", "delicious", "dinner."] },
-      { target: "We should share with neighbors.", jumbled: ["should", "share", "We", "with", "neighbors."] },
-      { target: "This is the best feeling.", jumbled: ["is", "the", "This", "best", "feeling."] },
+      {
+        target: "That evening, we bring the harvested vegetables home, and Mom cooks a delicious dinner using our fresh tomatoes and carrots.",
+        jumbled: ["evening,", "our", "carrots.", "we", "a", "bring", "and", "home,", "vegetables", "cooks", "tomatoes", "fresh", "using", "the", "harvested", "dinner", "Mom", "delicious", "That", "and"],
+      },
+      {
+        target: "We invite Ivy's family over to share the meal, and everyone praises how delicious homegrown vegetables taste.",
+        jumbled: ["the", "delicious", "invite", "and", "praises", "to", "everyone", "homegrown", "meal,", "vegetables", "We", "share", "taste.", "how", "family", "over", "Ivy's"],
+      },
+      {
+        target: "“We should share some with the neighbors too, Theo,” Grandpa suggests, and I happily agree, filling small bags with extra vegetables.",
+        jumbled: ["agree,", "some", "the", "too,", "happily", "with", "filling", "should", "extra", "Grandpa", "I", "with", "suggests,", "Theo,”", "bags", "vegetables.", "share", "neighbors", "small", "and", "“We"],
+      },
+      {
+        target: "Walking around the neighborhood delivering our garden's gifts makes me feel proud and generous.",
+        jumbled: ["gifts", "feel", "me", "the", "our", "makes", "and", "Walking", "proud", "generous.", "around", "neighborhood", "garden's", "delivering"],
+      },
+      {
+        target: "I realize that helping something grow, and then sharing what it produces, might be one of the best feelings I have ever experienced.",
+        jumbled: ["grow,", "the", "it", "realize", "what", "then", "experienced.", "I", "and", "ever", "produces,", "I", "that", "one", "might", "have", "helping", "best", "sharing", "of", "feelings", "something", "be"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you shared something with someone.",
     mySentenceExample: "I shared my lunch with a friend who forgot theirs.",

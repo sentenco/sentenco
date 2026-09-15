@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "By midweek, Amara notices something considerably louder.", answer: true },
     ],
     buildSentence: [
-      { target: "I notice movers today.", jumbled: ["I", "notice", "movers", "today."] },
-      { target: "I introduce myself briefly now.", jumbled: ["I", "introduce", "myself", "briefly", "now."] },
-      { target: "We exchange a few polite words.", jumbled: ["We", "exchange", "a", "few", "polite", "words."] },
-      { target: "Everything seems perfectly normal today.", jumbled: ["Everything", "seems", "perfectly", "normal", "today."] },
-      { target: "He seems genuinely pleasant when we meet.", jumbled: ["He", "seems", "genuinely", "pleasant", "when", "we", "meet."] },
+      {
+        target: "Over the weekend, I notice movers carrying boxes and furniture into the previously empty apartment directly above mine.",
+        jumbled: ["the", "and", "I", "boxes", "Over", "previously", "mine.", "above", "directly", "apartment", "weekend,", "movers", "furniture", "into", "notice", "empty", "carrying", "the"],
+      },
+      {
+        target: "“I'm Amara, I live right below you,” I say, introducing myself briefly in the hallway to the new tenant, a friendly young man named Théo who seems genuinely pleasant.",
+        jumbled: ["a", "live", "pleasant.", "myself", "hallway", "to", "you,”", "the", "I", "below", "briefly", "the", "new", "right", "named", "genuinely", "young", "Théo", "Amara,", "in", "tenant,", "seems", "introducing", "friendly", "who", "say,", "“I'm", "I", "man"],
+      },
+      {
+        target: "We exchange a few polite words about the building, and he mentions he's just moved here for a new job downtown.",
+        jumbled: ["polite", "just", "We", "he's", "about", "words", "mentions", "for", "a", "downtown.", "the", "new", "moved", "a", "few", "and", "exchange", "job", "he", "building,", "here"],
+      },
+      {
+        target: "Everything seems perfectly normal for the first couple of days, with only the usual sounds of someone settling in.",
+        jumbled: ["sounds", "first", "the", "only", "of", "for", "usual", "someone", "in.", "settling", "days,", "seems", "the", "Everything", "with", "couple", "normal", "of", "perfectly"],
+      },
+      {
+        target: "However, by midweek, I start noticing something considerably louder than typical everyday apartment noise.",
+        jumbled: ["noticing", "midweek,", "everyday", "apartment", "noise.", "than", "However,", "start", "something", "typical", "I", "louder", "considerably", "by"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about meeting a new neighbor for the first time.",
     mySentenceExample: "I met a new neighbor for the first time last week.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "Amara has an early work meeting tomorrow.", answer: true },
     ],
     buildSentence: [
-      { target: "Music wakes me around midnight.", jumbled: ["Music", "wakes", "me", "around", "midnight."] },
-      { target: "I lie there for a while.", jumbled: ["I", "lie", "there", "for", "a", "while."] },
-      { target: "I check the time repeatedly now.", jumbled: ["I", "check", "the", "time", "repeatedly", "now."] },
-      { target: "This makes it genuinely difficult to sleep.", jumbled: ["This", "makes", "it", "genuinely", "difficult", "to", "sleep."] },
-      { target: "Tomorrow's early meeting looms uncomfortably close.", jumbled: ["Tomorrow's", "early", "meeting", "looms", "uncomfortably", "close."] },
+      {
+        target: "Around midnight, muffled music and what sounds like furniture being dragged across the floor wake me from a light sleep.",
+        jumbled: ["a", "across", "dragged", "what", "sounds", "wake", "the", "music", "and", "furniture", "from", "light", "muffled", "being", "sleep.", "like", "me", "Around", "midnight,", "floor"],
+      },
+      {
+        target: "I lie there for a while, hoping it's simply a one-time thing related to unpacking or rearranging furniture.",
+        jumbled: ["lie", "a", "related", "rearranging", "for", "I", "to", "thing", "simply", "a", "one-time", "there", "while,", "furniture.", "unpacking", "hoping", "it's", "or"],
+      },
+      {
+        target: "However, the noise continues steadily for nearly an hour, making it genuinely difficult to fall back asleep comfortably.",
+        jumbled: ["steadily", "continues", "However,", "nearly", "noise", "fall", "genuinely", "asleep", "to", "an", "the", "hour,", "for", "it", "back", "comfortably.", "making", "difficult"],
+      },
+      {
+        target: "I check my phone repeatedly, its lock screen reading “Amara's alarm: 6:30 AM,” growing increasingly frustrated as tomorrow's early work meeting looms uncomfortably close.",
+        jumbled: ["“Amara's", "close.", "frustrated", "work", "reading", "lock", "my", "growing", "as", "increasingly", "check", "uncomfortably", "screen", "its", "I", "meeting", "looms", "repeatedly,", "early", "AM,”", "6:30", "tomorrow's", "alarm:", "phone"],
+      },
+      {
+        target: "Eventually, exhaustion outweighs my frustration, and I manage to drift into an uneasy, restless sleep.",
+        jumbled: ["my", "manage", "drift", "and", "sleep.", "an", "Eventually,", "exhaustion", "I", "restless", "frustration,", "into", "uneasy,", "to", "outweighs"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being kept awake by noise at night.",
     mySentenceExample: "I was kept awake by loud noise at night.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Amara realizes this isn't simply her imagination.", answer: true },
     ],
     buildSentence: [
-      { target: "I try being patient here.", jumbled: ["I", "try", "being", "patient", "here."] },
-      { target: "This isn't simply my imagination.", jumbled: ["This", "isn't", "simply", "my", "imagination."] },
-      { target: "My patience has started wearing thin.", jumbled: ["My", "patience", "has", "started", "wearing", "thin."] },
-      { target: "This becomes an unwelcome nightly routine.", jumbled: ["This", "becomes", "an", "unwelcome", "nightly", "routine."] },
-      { target: "She admits she's noticed the noise too.", jumbled: ["She", "admits", "she's", "noticed", "the", "noise", "too."] },
+      {
+        target: "The following few nights bring more of the same, with loud music and heavy footsteps becoming an unwelcome nightly routine.",
+        jumbled: ["The", "with", "few", "and", "loud", "routine.", "same,", "becoming", "an", "music", "nightly", "more", "unwelcome", "following", "nights", "of", "bring", "heavy", "footsteps", "the"],
+      },
+      {
+        target: "I try being patient at first, reminding myself that Théo is still new and perhaps unaware of how sound travels here.",
+        jumbled: ["I", "sound", "at", "being", "try", "travels", "here.", "myself", "perhaps", "new", "and", "first,", "patient", "unaware", "is", "that", "still", "Théo", "reminding", "how", "of"],
+      },
+      {
+        target: "However, after nearly a week of interrupted sleep, my patience has genuinely started wearing thin considerably.",
+        jumbled: ["sleep,", "has", "interrupted", "patience", "genuinely", "However,", "week", "considerably.", "nearly", "thin", "started", "of", "after", "my", "wearing", "a"],
+      },
+      {
+        target: "I mention the situation briefly to another neighbor.",
+        jumbled: ["I", "situation", "briefly", "to", "another", "mention", "the", "neighbor."],
+      },
+      {
+        target: "Realizing this isn't simply my imagination reassures me slightly, though it doesn't actually solve the underlying problem.",
+        jumbled: ["doesn't", "slightly,", "isn't", "actually", "it", "the", "problem.", "simply", "imagination", "me", "underlying", "reassures", "Realizing", "solve", "though", "this", "my"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing a problem happening repeatedly, not just once.",
     mySentenceExample: "I noticed the noise problem happening repeatedly, not just once.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "Amara can still escalate this later if needed.", answer: true },
     ],
     buildSentence: [
-      { target: "I consider two possible approaches.", jumbled: ["I", "consider", "two", "possible", "approaches."] },
-      { target: "I feel somewhat more decisive now.", jumbled: ["I", "feel", "somewhat", "more", "decisive", "now."] },
-      { target: "I plan to knock on his door.", jumbled: ["I", "plan", "to", "knock", "on", "his", "door."] },
-      { target: "This seems like the more reasonable first step.", jumbled: ["This", "seems", "like", "the", "more", "reasonable", "first", "step."] },
-      { target: "I can always escalate this through official channels later.", jumbled: ["I", "can", "always", "escalate", "this", "through", "official", "channels", "later."] },
+      {
+        target: "Exhausted and increasingly frustrated, I write “Amara's Plan” at the top of a notepad page and consider two possible approaches: speaking with Théo directly or contacting building management instead.",
+        jumbled: ["at", "building", "approaches:", "and", "directly", "Théo", "with", "possible", "of", "contacting", "page", "management", "consider", "write", "“Amara's", "notepad", "a", "I", "Exhausted", "the", "frustrated,", "two", "increasingly", "instead.", "or", "and", "top", "speaking", "Plan”"],
+      },
+      {
+        target: "On the other hand, going straight to management feels slightly excessive for what could still be an easily fixable misunderstanding.",
+        jumbled: ["feels", "slightly", "going", "easily", "the", "could", "an", "excessive", "for", "On", "fixable", "straight", "be", "misunderstanding.", "management", "hand,", "to", "still", "other", "what"],
+      },
+      {
+        target: "I decide that approaching Théo calmly and directly seems like the more reasonable first step to take.",
+        jumbled: ["seems", "calmly", "Théo", "like", "to", "first", "directly", "approaching", "that", "the", "decide", "reasonable", "more", "and", "step", "take.", "I"],
+      },
+      {
+        target: "I can always escalate the situation through official channels later.",
+        jumbled: ["I", "situation", "through", "the", "can", "always", "channels", "later.", "official", "escalate"],
+      },
+      {
+        target: "Feeling somewhat more decisive now, I plan to knock on his door sometime after work today.",
+        jumbled: ["somewhat", "on", "plan", "knock", "after", "sometime", "Feeling", "door", "work", "today.", "decisive", "more", "I", "to", "his", "now,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about deciding on the best way to handle a conflict calmly.",
     mySentenceExample: "I decided on the best way to handle the conflict calmly.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Amara feels reassured by his reaction.", answer: true },
     ],
     buildSentence: [
-      { target: "I take a deep breath now.", jumbled: ["I", "take", "a", "deep", "breath", "now."] },
-      { target: "He opens the door now.", jumbled: ["He", "opens", "the", "door", "now."] },
-      { target: "I'm really sorry about that.", jumbled: ["I'm", "really", "sorry", "about", "that."] },
-      { target: "This reassures me considerably now.", jumbled: ["This", "reassures", "me", "considerably", "now."] },
-      { target: "I had honestly no idea it was traveling clearly.", jumbled: ["I", "had", "honestly", "no", "idea", "it", "was", "traveling", "clearly."] },
+      {
+        target: "Standing outside Théo's door that evening, I take a deep breath, reminding myself to stay calm and specifically friendly.",
+        jumbled: ["evening,", "outside", "stay", "Théo's", "reminding", "calm", "take", "breath,", "and", "myself", "friendly.", "that", "door", "a", "I", "deep", "Standing", "specifically", "to"],
+      },
+      {
+        target: "He opens the door, looking mildly surprised but greeting me warmly, clearly not expecting a serious conversation.",
+        jumbled: ["me", "mildly", "greeting", "the", "clearly", "conversation.", "looking", "expecting", "serious", "but", "door,", "opens", "not", "warmly,", "a", "surprised", "He"],
+      },
+      {
+        target: "I explain gently that the noise, particularly late at night, has been making it difficult for me to sleep well.",
+        jumbled: ["been", "noise,", "that", "has", "night,", "to", "making", "at", "late", "difficult", "the", "particularly", "it", "gently", "me", "for", "sleep", "explain", "I", "well."],
+      },
+      {
+        target: "“I had honestly no idea it was traveling that clearly, Amara. I'm really sorry about that,” he responds immediately, sounding genuinely embarrassed.",
+        jumbled: ["he", "embarrassed.", "had", "genuinely", "clearly,", "immediately,", "I'm", "that", "about", "no", "traveling", "idea", "sounding", "that,”", "honestly", "was", "Amara.", "it", "responds", "sorry", "really", "“I"],
+      },
+      {
+        target: "His reaction reassures me considerably, since I had quietly worried this conversation might become awkward or tense instead.",
+        jumbled: ["this", "since", "awkward", "His", "conversation", "me", "reaction", "or", "reassures", "instead.", "worried", "become", "had", "tense", "quietly", "considerably,", "I", "might"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about approaching a difficult conversation calmly and honestly.",
     mySentenceExample: "I approached the difficult conversation calmly and honestly.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "They agree Amara will mention future issues directly.", answer: true },
     ],
     buildSentence: [
-      { target: "He explains this calmly now.", jumbled: ["He", "explains", "this", "calmly", "now."] },
-      { target: "I appreciate his willingness here.", jumbled: ["I", "appreciate", "his", "willingness", "here."] },
-      { target: "We agree on this together.", jumbled: ["We", "agree", "on", "this", "together."] },
-      { target: "Would it help if I put down a rug?", jumbled: ["Would", "it", "help", "if", "I", "put", "down", "a", "rug?"] },
-      { target: "I'll simply mention it directly next time.", jumbled: ["I'll", "simply", "mention", "it", "directly", "next", "time."] },
+      {
+        target: "Théo explains that he'd been rearranging furniture and occasionally listening to music while unpacking boxes late at night.",
+        jumbled: ["listening", "and", "furniture", "night.", "to", "been", "music", "explains", "Théo", "unpacking", "rearranging", "at", "that", "while", "occasionally", "late", "boxes", "he'd"],
+      },
+      {
+        target: "He suggests wearing headphones during late hours and finishing any heavy furniture moving considerably earlier in the evening.",
+        jumbled: ["late", "considerably", "hours", "heavy", "in", "wearing", "furniture", "headphones", "finishing", "moving", "any", "during", "earlier", "evening.", "He", "the", "suggests", "and"],
+      },
+      {
+        target: "“Would it help if I also put down a rug under my speakers, Amara?” he asks thoughtfully, clearly wanting to actually fix this properly.",
+        jumbled: ["he", "put", "also", "under", "my", "rug", "it", "if", "properly.", "wanting", "clearly", "actually", "I", "asks", "help", "speakers,", "to", "fix", "a", "this", "Amara?”", "thoughtfully,", "down", "“Would"],
+      },
+      {
+        target: "I appreciate his willingness to problem-solve rather than simply apologizing without offering any real changes.",
+        jumbled: ["simply", "any", "I", "willingness", "offering", "real", "than", "changes.", "apologizing", "rather", "appreciate", "without", "his", "to", "problem-solve"],
+      },
+      {
+        target: "We agree that if anything comes up again, I'll simply mention it directly rather than letting frustration build silently.",
+        jumbled: ["comes", "simply", "than", "silently.", "build", "up", "frustration", "if", "mention", "We", "rather", "directly", "that", "it", "I'll", "anything", "again,", "agree", "letting"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about two people working together to solve a problem fairly.",
     mySentenceExample: "We worked together to solve the noise problem fairly.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Théo mentions feeling slightly guilty since their talk.", answer: true },
     ],
     buildSentence: [
-      { target: "My apartment stays quieter now.", jumbled: ["My", "apartment", "stays", "quieter", "now."] },
-      { target: "I sleep considerably better now.", jumbled: ["I", "sleep", "considerably", "better", "now."] },
-      { target: "I run into him briefly today.", jumbled: ["I", "run", "into", "him", "briefly", "today."] },
-      { target: "I genuinely appreciate him taking this seriously.", jumbled: ["I", "genuinely", "appreciate", "him", "taking", "this", "seriously."] },
-      { target: "He seems relieved to hear this.", jumbled: ["He", "seems", "relieved", "to", "hear", "this."] },
+      {
+        target: "That night, and for several nights afterward, my apartment stays noticeably quieter than it had been throughout the entire previous week.",
+        jumbled: ["it", "night,", "been", "apartment", "throughout", "for", "noticeably", "quieter", "than", "week.", "the", "several", "my", "afterward,", "previous", "and", "stays", "entire", "That", "nights", "had"],
+      },
+      {
+        target: "I sleep considerably better, and my morning routine feels less rushed without the exhaustion I'd been carrying around constantly.",
+        jumbled: ["been", "feels", "constantly.", "exhaustion", "less", "better,", "rushed", "around", "routine", "the", "my", "carrying", "I'd", "considerably", "without", "I", "and", "sleep", "morning"],
+      },
+      {
+        target: "I run into Théo briefly in the hallway a few days later.",
+        jumbled: ["few", "Théo", "the", "I", "a", "into", "later.", "hallway", "briefly", "in", "days", "run"],
+      },
+      {
+        target: "“Hey Amara, has it gotten better since we talked?” he asks.",
+        jumbled: ["since", "it", "has", "we", "“Hey", "gotten", "Amara,", "talked?”", "he", "better", "asks."],
+      },
+      {
+        target: "I confirm honestly that yes, it's been considerably better, and I genuinely appreciate him taking my concern seriously.",
+        jumbled: ["I", "that", "appreciate", "better,", "and", "it's", "been", "I", "considerably", "my", "taking", "him", "honestly", "confirm", "seriously.", "yes,", "genuinely", "concern"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing life feels better after a problem gets resolved.",
     mySentenceExample: "Life felt better after the noise problem got resolved.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "The other neighbor agrees to consider a similar approach.", answer: true },
     ],
     buildSentence: [
-      { target: "I mention this in the laundry room.", jumbled: ["I", "mention", "this", "in", "the", "laundry", "room."] },
-      { target: "She seems pleasantly surprised now.", jumbled: ["She", "seems", "pleasantly", "surprised", "now."] },
-      { target: "She agrees with me now.", jumbled: ["She", "agrees", "with", "me", "now."] },
-      { target: "This has genuinely improved considerably since then.", jumbled: ["This", "has", "genuinely", "improved", "considerably", "since", "then."] },
-      { target: "A direct conversation isn't always possible or appropriate.", jumbled: ["A", "direct", "conversation", "isn't", "always", "possible", "or", "appropriate."] },
+      {
+        target: "In the laundry room, I mention to the other neighbor that the noise situation with Théo has genuinely improved considerably since our conversation.",
+        jumbled: ["to", "improved", "conversation.", "neighbor", "other", "has", "I", "the", "that", "with", "room,", "genuinely", "the", "Théo", "since", "our", "situation", "mention", "noise", "considerably", "laundry", "In", "the"],
+      },
+      {
+        target: "“Really, Amara? I assumed you'd have to get management involved,” she says, pleasantly surprised.",
+        jumbled: ["assumed", "I", "says,", "“Really,", "Amara?", "management", "get", "involved,”", "have", "pleasantly", "to", "she", "surprised.", "you'd"],
+      },
+      {
+        target: "I explain that, in my experience, approaching someone directly and calmly often works better than escalating things immediately.",
+        jumbled: ["better", "often", "I", "immediately.", "experience,", "someone", "in", "explain", "escalating", "my", "than", "calmly", "that,", "and", "things", "works", "directly", "approaching"],
+      },
+      {
+        target: "On the other hand, I acknowledge that a direct conversation isn't always possible or appropriate, depending on the actual situation.",
+        jumbled: ["isn't", "the", "I", "direct", "on", "On", "depending", "conversation", "or", "other", "acknowledge", "appropriate,", "actual", "that", "situation.", "hand,", "the", "possible", "always", "a"],
+      },
+      {
+        target: "She agrees, saying she'll consider a similar approach if something ever bothers her about another neighbor.",
+        jumbled: ["ever", "if", "a", "about", "another", "She", "agrees,", "bothers", "her", "saying", "approach", "something", "consider", "neighbor.", "she'll", "similar"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about sharing advice with someone based on your own experience.",
     mySentenceExample: "I shared advice with my neighbor based on my own experience.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Amara feels genuinely glad she chose conversation over silence.", answer: true },
     ],
     buildSentence: [
-      { target: "He knocks on my door now.", jumbled: ["He", "knocks", "on", "my", "door", "now."] },
-      { target: "I'm pleasantly surprised by this.", jumbled: ["I'm", "pleasantly", "surprised", "by", "this."] },
-      { target: "This really wasn't necessary at all.", jumbled: ["This", "really", "wasn't", "necessary", "at", "all."] },
-      { target: "He insists it is necessary anyway.", jumbled: ["He", "insists", "it", "is", "necessary", "anyway."] },
-      { target: "My patience made this considerably easier for him.", jumbled: ["My", "patience", "made", "this", "considerably", "easier", "for", "him."] },
+      {
+        target: "A few days later, Théo knocks on my door, holding a small potted plant he says he thought I might genuinely like.",
+        jumbled: ["small", "knocks", "genuinely", "door,", "he", "he", "potted", "thought", "later,", "I", "plant", "my", "a", "on", "Théo", "might", "holding", "says", "like.", "days", "A", "few"],
+      },
+      {
+        target: "“This is just a small thank-you, Amara, for handling everything so kindly instead of getting angry,” he explains, smiling warmly.",
+        jumbled: ["instead", "is", "“This", "explains,", "warmly.", "small", "everything", "Amara,", "he", "handling", "of", "getting", "thank-you,", "smiling", "just", "a", "so", "kindly", "angry,”", "for"],
+      },
+      {
+        target: "I'm pleasantly surprised, accepting the gift while telling him honestly that it really wasn't necessary at all.",
+        jumbled: ["all.", "accepting", "while", "surprised,", "I'm", "gift", "that", "telling", "necessary", "wasn't", "it", "pleasantly", "really", "at", "the", "him", "honestly"],
+      },
+      {
+        target: "He insists it is, mentioning that my patience made an awkward situation considerably easier for him to navigate.",
+        jumbled: ["that", "considerably", "patience", "easier", "an", "navigate.", "made", "awkward", "for", "him", "mentioning", "situation", "is,", "to", "insists", "He", "my", "it"],
+      },
+      {
+        target: "This small, unexpected gesture makes me feel genuinely glad I chose conversation over silent frustration or formal complaints.",
+        jumbled: ["formal", "unexpected", "I", "frustration", "chose", "silent", "me", "or", "glad", "small,", "genuinely", "gesture", "over", "This", "makes", "feel", "conversation", "complaints."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving an unexpected thank-you gesture from someone.",
     mySentenceExample: "I received an unexpected thank-you gesture from my neighbor.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "This dispute became the start of a friendly relationship.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this now.", jumbled: ["I", "look", "back", "on", "this", "now."] },
-      { target: "I've learned something useful here.", jumbled: ["I've", "learned", "something", "useful", "here."] },
-      { target: "This could have escalated into something unpleasant.", jumbled: ["This", "could", "have", "escalated", "into", "something", "unpleasant."] },
-      { target: "Honest communication solves most conflicts between neighbors.", jumbled: ["Honest", "communication", "solves", "most", "conflicts", "between", "neighbors."] },
-      { target: "This unexpectedly became the beginning of a friendly relationship.", jumbled: ["This", "unexpectedly", "became", "the", "beginning", "of", "a", "friendly", "relationship."] },
+      {
+        target: "Looking back on the entire situation, I write one line in my journal, “Amara: talk first, escalate later,” and realize how easily this could have escalated into something far more tense and unpleasant.",
+        jumbled: ["line", "one", "tense", "situation,", "on", "far", "first,", "escalated", "this", "have", "later,”", "realize", "and", "my", "how", "journal,", "could", "entire", "back", "I", "the", "unpleasant.", "in", "write", "easily", "escalate", "into", "and", "“Amara:", "talk", "something", "Looking", "more"],
+      },
+      {
+        target: "Without speaking to Théo directly first, our relationship might have started off poorly.",
+        jumbled: ["to", "directly", "speaking", "might", "off", "Théo", "started", "poorly.", "our", "have", "first,", "Without", "relationship"],
+      },
+      {
+        target: "Instead, staying calm and approaching the conversation kindly allowed us to actually resolve things quickly and fairly.",
+        jumbled: ["things", "quickly", "and", "the", "calm", "conversation", "Instead,", "and", "to", "us", "kindly", "fairly.", "actually", "staying", "resolve", "approaching", "allowed"],
+      },
+      {
+        target: "I've learned that most conflicts between neighbors can be solved through simple, honest communication rather than avoidance or escalation.",
+        jumbled: ["neighbors", "I've", "avoidance", "through", "simple,", "or", "solved", "conflicts", "escalation.", "rather", "between", "that", "than", "be", "can", "most", "honest", "learned", "communication"],
+      },
+      {
+        target: "In the end, this small noise dispute unexpectedly became the beginning of a genuinely friendly neighborly relationship.",
+        jumbled: ["the", "dispute", "neighborly", "beginning", "the", "genuinely", "friendly", "end,", "of", "unexpectedly", "In", "small", "noise", "became", "a", "this", "relationship."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from resolving a conflict calmly and kindly.",
     mySentenceExample: "I learned that resolving conflicts calmly builds better relationships.",

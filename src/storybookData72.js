@@ -43,11 +43,26 @@ export const CHAPTERS = [
       { text: "Farah doesn't know which instinct she should trust.", answer: true },
     ],
     buildSentence: [
-      { target: "I've been drafting this for a week.", jumbled: ["I've", "been", "drafting", "this", "for", "a", "week."] },
-      { target: "Part of me genuinely wants to share it.", jumbled: ["Part", "of", "me", "genuinely", "wants", "to", "share", "it."] },
-      { target: "I don't know which instinct to trust.", jumbled: ["I", "don't", "know", "which", "instinct", "to", "trust."] },
-      { target: "This might help someone else feeling isolated.", jumbled: ["This", "might", "help", "someone", "else", "feeling", "isolated."] },
-      { target: "I've seen people mocked for sharing something too personal.", jumbled: ["I've", "seen", "people", "mocked", "for", "sharing", "something", "too", "personal."] },
+      {
+        target: "I've been drafting a post about my anxiety for nearly a week now, rewriting it more times than I can count.",
+        jumbled: ["times", "can", "for", "rewriting", "nearly", "a", "than", "a", "post", "anxiety", "been", "it", "count.", "more", "about", "drafting", "my", "I", "week", "I've", "now,"],
+      },
+      {
+        target: "Part of me genuinely wants to share it, hoping it might help someone else feeling similarly isolated and misunderstood.",
+        jumbled: ["Part", "it", "to", "else", "isolated", "feeling", "might", "hoping", "share", "someone", "of", "and", "wants", "genuinely", "misunderstood.", "it,", "help", "similarly", "me"],
+      },
+      {
+        target: "However, another part of me worries about how classmates, teachers, or even future employers might eventually perceive this vulnerability.",
+        jumbled: ["might", "how", "perceive", "part", "teachers,", "this", "about", "me", "future", "or", "classmates,", "employers", "another", "of", "even", "eventually", "vulnerability.", "However,", "worries"],
+      },
+      {
+        target: "I've read that authentic posts like this can genuinely resonate, though I've also seen people mocked for sharing something too personal online.",
+        jumbled: ["resonate,", "sharing", "too", "read", "can", "genuinely", "though", "mocked", "posts", "people", "personal", "online.", "for", "something", "I've", "seen", "that", "also", "I've", "this", "like", "authentic"],
+      },
+      {
+        target: "Staring at the unsent draft, I realize I genuinely don't know which instinct I should actually trust here.",
+        jumbled: ["here.", "at", "instinct", "Staring", "genuinely", "should", "unsent", "draft,", "I", "realize", "trust", "actually", "I", "the", "know", "which", "don't", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being torn between wanting to share something personal and worrying about the consequences.",
     mySentenceExample: "I felt torn between sharing something personal and worrying about consequences.",
@@ -72,11 +87,26 @@ export const CHAPTERS = [
       { text: "Farah notices Dahlia's encouragement feels genuine.", answer: true },
     ],
     buildSentence: [
-      { target: "I show the draft to Dahlia.", jumbled: ["I", "show", "the", "draft", "to", "Dahlia."] },
-      { target: "Her encouragement feels genuine to me.", jumbled: ["Her", "encouragement", "feels", "genuine", "to", "me."] },
-      { target: "Several classmates reached out privately afterward.", jumbled: ["Several", "classmates", "reached", "out", "privately", "afterward."] },
-      { target: "This could genuinely help someone struggling silently.", jumbled: ["This", "could", "genuinely", "help", "someone", "struggling", "silently."] },
-      { target: "Staying silent only reinforces the stigma we're fighting.", jumbled: ["Staying", "silent", "only", "reinforces", "the", "stigma", "we're", "fighting."] },
+      {
+        target: "I show the draft to Dahlia, curious what she'll think, given how openly she shares her own experiences online generally.",
+        jumbled: ["openly", "her", "experiences", "show", "draft", "to", "own", "she'll", "think,", "curious", "shares", "Dahlia,", "what", "the", "how", "online", "I", "given", "generally.", "she"],
+      },
+      {
+        target: "She reads it carefully, then tells me honestly that this could genuinely help someone struggling silently, exactly like I'd hoped.",
+        jumbled: ["tells", "help", "then", "someone", "honestly", "this", "could", "genuinely", "carefully,", "exactly", "I'd", "struggling", "it", "hoped.", "like", "me", "reads", "that", "She", "silently,"],
+      },
+      {
+        target: "She mentions that when she'd shared her own difficult experience last year, several classmates had reached out privately, saying it helped them feel less alone.",
+        jumbled: ["out", "feel", "last", "helped", "them", "she'd", "reached", "year,", "saying", "when", "her", "that", "own", "She", "experience", "shared", "classmates", "mentions", "several", "privately,", "less", "had", "difficult", "alone.", "it"],
+      },
+      {
+        target: "“You should really consider it, Farah,” she says.",
+        jumbled: ["really", "consider", "“You", "says.", "Farah,”", "it,", "she", "should"],
+      },
+      {
+        target: "Dahlia argues that staying silent out of fear only reinforces the stigma surrounding mental health that we're supposedly trying to fight.",
+        jumbled: ["trying", "to", "silent", "supposedly", "out", "we're", "fight.", "the", "fear", "mental", "surrounding", "health", "Dahlia", "only", "staying", "that", "argues", "stigma", "that", "of", "reinforces"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a friend encouraging you to share something you were nervous about.",
     mySentenceExample: "My friend encouraged me to share something I was nervous about.",
@@ -101,11 +131,26 @@ export const CHAPTERS = [
       { text: "Farah senses Colin might be overestimating the risk somewhat.", answer: true },
     ],
     buildSentence: [
-      { target: "I show the same draft to Colin.", jumbled: ["I", "show", "the", "same", "draft", "to", "Colin."] },
-      { target: "His caution feels valid too.", jumbled: ["His", "caution", "feels", "valid", "too."] },
-      { target: "This becomes searchable indefinitely, regardless of regret.", jumbled: ["This", "becomes", "searchable", "indefinitely,", "regardless", "of", "regret."] },
-      { target: "He questions whether a public post is genuinely necessary.", jumbled: ["He", "questions", "whether", "a", "public", "post", "is", "genuinely", "necessary."] },
-      { target: "This resurfaced unexpectedly during a college application process.", jumbled: ["This", "resurfaced", "unexpectedly", "during", "a", "college", "application", "process."] },
+      {
+        target: "I show the same draft to Colin, curious whether his more cautious perspective might reveal something Dahlia's enthusiasm had missed.",
+        jumbled: ["to", "show", "I", "Dahlia's", "had", "enthusiasm", "draft", "whether", "his", "reveal", "the", "something", "cautious", "Colin,", "missed.", "curious", "more", "might", "same", "perspective"],
+      },
+      {
+        target: "He reads it slowly, then admits he worries about permanence: once posted, this becomes searchable and screenshot-able indefinitely, regardless of future regret.",
+        jumbled: ["slowly,", "searchable", "of", "posted,", "admits", "regret.", "about", "once", "He", "this", "he", "future", "permanence:", "regardless", "reads", "becomes", "it", "and", "screenshot-able", "indefinitely,", "then", "worries"],
+      },
+      {
+        target: "He mentions a cousin who'd shared something vulnerable years ago, only to have it resurface unexpectedly during a college application process later.",
+        jumbled: ["only", "vulnerable", "have", "it", "during", "to", "process", "a", "ago,", "who'd", "He", "years", "cousin", "resurface", "college", "later.", "mentions", "unexpectedly", "shared", "a", "something", "application"],
+      },
+      {
+        target: "“Just think it through carefully, Farah,” he says.",
+        jumbled: ["“Just", "he", "think", "carefully,", "says.", "Farah,”", "it", "through"],
+      },
+      {
+        target: "Colin isn't against sharing exactly, but he questions whether a public post is genuinely necessary compared to more private, controlled alternatives.",
+        jumbled: ["alternatives.", "public", "isn't", "but", "to", "sharing", "genuinely", "private,", "more", "he", "questions", "a", "necessary", "Colin", "controlled", "whether", "compared", "is", "exactly,", "against", "post"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a friend raising a valid concern that made you think more carefully.",
     mySentenceExample: "My friend raised a valid concern that made me think more carefully.",
@@ -130,11 +175,26 @@ export const CHAPTERS = [
       { text: "This reframing helps Farah think about this more clearly.", answer: true },
     ],
     buildSentence: [
-      { target: "I think through both conversations now.", jumbled: ["I", "think", "through", "both", "conversations", "now."] },
-      { target: "Neither perspective feels wrong exactly.", jumbled: ["Neither", "perspective", "feels", "wrong", "exactly."] },
-      { target: "This reframing actually helps me think clearly.", jumbled: ["This", "reframing", "actually", "helps", "me", "think", "clearly."] },
-      { target: "The real question is which risk I'm willing to accept.", jumbled: ["The", "real", "question", "is", "which", "risk", "I'm", "willing", "to", "accept."] },
-      { target: "They aren't disagreeing about whether my experience matters.", jumbled: ["They", "aren't", "disagreeing", "about", "whether", "my", "experience", "matters."] },
+      {
+        target: "Thinking through both conversations, I realize Dahlia and Colin aren't actually disagreeing about whether my experience matters, but about risk and audience.",
+        jumbled: ["both", "conversations,", "audience.", "Colin", "disagreeing", "actually", "I", "matters,", "aren't", "Thinking", "Dahlia", "about", "about", "realize", "and", "through", "experience", "whether", "but", "and", "risk", "my"],
+      },
+      {
+        target: "Dahlia's perspective centers on potential benefit: helping others and reducing stigma through visible, authentic sharing of real struggles.",
+        jumbled: ["centers", "reducing", "of", "on", "perspective", "authentic", "helping", "stigma", "others", "benefit:", "through", "sharing", "struggles.", "Dahlia's", "potential", "and", "visible,", "real"],
+      },
+      {
+        target: "Colin's perspective centers on potential harm: protecting my future self from consequences I can't fully predict or control right now.",
+        jumbled: ["Colin's", "can't", "I", "or", "protecting", "control", "harm:", "from", "my", "on", "future", "right", "consequences", "now.", "predict", "perspective", "centers", "potential", "self", "fully"],
+      },
+      {
+        target: "Neither perspective feels wrong exactly, which means the real question isn't which friend is right, but which risk I'm personally willing to accept.",
+        jumbled: ["to", "feels", "accept.", "Neither", "willing", "is", "which", "question", "risk", "real", "I'm", "right,", "exactly,", "personally", "perspective", "but", "wrong", "means", "friend", "which", "the", "isn't", "which"],
+      },
+      {
+        target: "Okay, Farah, it's not about who's right, I think, underlining the word “risk” in my notes.",
+        jumbled: ["the", "Okay,", "about", "I", "underlining", "in", "think,", "word", "“risk”", "right,", "notes.", "it's", "my", "who's", "Farah,", "not"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about realizing two friends' different opinions weren't actually contradicting each other.",
     mySentenceExample: "I realized two friends' opinions weren't actually contradicting each other.",
@@ -159,11 +219,26 @@ export const CHAPTERS = [
       { text: "Farah realizes the choice is about how and with whom.", answer: true },
     ],
     buildSentence: [
-      { target: "I research this middle ground now.", jumbled: ["I", "research", "this", "middle", "ground", "now."] },
-      { target: "I could share with people I trust.", jumbled: ["I", "could", "share", "with", "people", "I", "trust."] },
-      { target: "I also consider writing anonymously instead.", jumbled: ["I", "also", "consider", "writing", "anonymously", "instead."] },
-      { target: "This separates the content from my actual identity.", jumbled: ["This", "separates", "the", "content", "from", "my", "actual", "identity."] },
-      { target: "The choice isn't simply share or don't share.", jumbled: ["The", "choice", "isn't", "simply", "share", "or", "don't", "share."] },
+      {
+        target: "Rather than choosing entirely public or entirely private, I research whether some middle ground might actually address both concerns simultaneously.",
+        jumbled: ["actually", "private,", "research", "than", "simultaneously.", "whether", "public", "or", "I", "entirely", "choosing", "middle", "both", "might", "some", "Rather", "address", "ground", "concerns", "entirely"],
+      },
+      {
+        target: "I discover a feature allowing posts visible only to a smaller, selected group rather than my entire public follower list.",
+        jumbled: ["group", "public", "allowing", "feature", "list.", "follower", "than", "smaller,", "posts", "a", "visible", "only", "I", "rather", "my", "to", "a", "discover", "entire", "selected"],
+      },
+      {
+        target: "This way, I could share with people I trust, potentially helping someone specific, without the permanence Colin worried about affecting strangers.",
+        jumbled: ["permanence", "about", "This", "potentially", "Colin", "someone", "with", "affecting", "specific,", "the", "way,", "worried", "without", "could", "helping", "I", "trust,", "share", "strangers.", "I", "people"],
+      },
+      {
+        target: "I also consider writing anonymously on a mental health forum instead, separating the content from my actual identity entirely.",
+        jumbled: ["I", "from", "actual", "identity", "my", "the", "forum", "also", "instead,", "a", "anonymously", "entirely.", "health", "mental", "content", "writing", "consider", "on", "separating"],
+      },
+      {
+        target: "Given these options, I realize the choice isn't simply share or don't share, but how and with whom.",
+        jumbled: ["Given", "but", "isn't", "choice", "don't", "realize", "how", "these", "the", "share", "with", "and", "or", "share,", "simply", "I", "options,", "whom."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finding a middle-ground solution instead of choosing between two extremes.",
     mySentenceExample: "I found a middle-ground solution instead of choosing between two extremes.",
@@ -188,11 +263,26 @@ export const CHAPTERS = [
       { text: "Farah feels she's found something workable.", answer: true },
     ],
     buildSentence: [
-      { target: "I bring this idea to them now.", jumbled: ["I", "bring", "this", "idea", "to", "them", "now."] },
-      { target: "Both nod, even hesitantly, at this.", jumbled: ["Both", "nod,", "even", "hesitantly,", "at", "this."] },
-      { target: "This could still genuinely help, she admits.", jumbled: ["This", "could", "still", "genuinely", "help,", "she", "admits."] },
-      { target: "This significantly reduces the permanence risk.", jumbled: ["This", "significantly", "reduces", "the", "permanence", "risk."] },
-      { target: "I've finally found something workable rather than an extreme.", jumbled: ["I've", "finally", "found", "something", "workable", "rather", "than", "an", "extreme."] },
+      {
+        target: "I bring my middle-ground idea to Dahlia and Colin together, curious whether this compromise might satisfy both of their concerns reasonably.",
+        jumbled: ["of", "and", "concerns", "reasonably.", "this", "their", "I", "my", "middle-ground", "whether", "idea", "both", "curious", "Dahlia", "to", "might", "Colin", "together,", "satisfy", "compromise", "bring"],
+      },
+      {
+        target: "Dahlia admits that a smaller, trusted audience could still genuinely help, even if it reaches fewer people than a fully public post.",
+        jumbled: ["a", "post.", "reaches", "admits", "smaller,", "Dahlia", "that", "a", "still", "people", "genuinely", "even", "fully", "than", "trusted", "if", "audience", "it", "help,", "public", "fewer", "could"],
+      },
+      {
+        target: "Colin agrees that this significantly reduces the permanence risk he'd worried about, since screenshots within trusted circles feel less threatening.",
+        jumbled: ["permanence", "threatening.", "this", "agrees", "feel", "significantly", "risk", "that", "since", "trusted", "the", "Colin", "he'd", "circles", "screenshots", "worried", "about,", "reduces", "less", "within"],
+      },
+      {
+        target: "“This could work, Farah,” Colin says, managing a small smile.",
+        jumbled: ["Colin", "says,", "work,", "could", "managing", "small", "a", "Farah,”", "“This", "smile."],
+      },
+      {
+        target: "Watching them both nod, even hesitantly, I feel like I've finally found something workable rather than choosing between two extremes.",
+        jumbled: ["extremes.", "I've", "rather", "I", "nod,", "choosing", "hesitantly,", "found", "two", "feel", "even", "workable", "Watching", "something", "between", "like", "both", "finally", "than", "them"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about presenting a compromise that partly satisfied two people with different concerns.",
     mySentenceExample: "I presented a compromise that partly satisfied two people's concerns.",
@@ -217,11 +307,26 @@ export const CHAPTERS = [
       { text: "Farah decides to check responses again tomorrow.", answer: true },
     ],
     buildSentence: [
-      { target: "I finalize the post tonight.", jumbled: ["I", "finalize", "the", "post", "tonight."] },
-      { target: "I finally post it now.", jumbled: ["I", "finally", "post", "it", "now."] },
-      { target: "I close my phone now.", jumbled: ["I", "close", "my", "phone", "now."] },
-      { target: "A few close friends respond supportively.", jumbled: ["A", "few", "close", "friends", "respond", "supportively."] },
-      { target: "I feel an odd mixture of relief and lingering vulnerability.", jumbled: ["I", "feel", "an", "odd", "mixture", "of", "relief", "and", "lingering", "vulnerability."] },
+      {
+        target: "That evening, I finalize the post, adjusting the audience setting to my smaller, trusted circle rather than fully public visibility.",
+        jumbled: ["I", "fully", "adjusting", "the", "to", "audience", "visibility.", "rather", "post,", "trusted", "setting", "public", "evening,", "smaller,", "the", "than", "my", "circle", "That", "finalize"],
+      },
+      {
+        target: "My finger hovers over the button longer than I expected, given how much thought had already gone into this decision.",
+        jumbled: ["button", "already", "the", "expected,", "this", "longer", "than", "given", "much", "finger", "how", "had", "decision.", "gone", "My", "thought", "I", "hovers", "into", "over"],
+      },
+      {
+        target: "Okay, Farah, this is it, I think, thumb hovering over the button.",
+        jumbled: ["Okay,", "Farah,", "thumb", "think,", "over", "I", "is", "it,", "button.", "hovering", "this", "the"],
+      },
+      {
+        target: "Taking a breath, I finally post it, immediately feeling an odd mixture of relief and lingering vulnerability simultaneously.",
+        jumbled: ["breath,", "simultaneously.", "and", "I", "lingering", "relief", "a", "mixture", "Taking", "immediately", "an", "it,", "finally", "odd", "vulnerability", "post", "feeling", "of"],
+      },
+      {
+        target: "Within minutes, a few close friends respond supportively, one even sharing that they'd been struggling with something similar themselves recently.",
+        jumbled: ["minutes,", "themselves", "sharing", "a", "friends", "struggling", "similar", "supportively,", "something", "recently.", "one", "respond", "few", "even", "with", "close", "Within", "they'd", "been", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finally taking an action you'd been nervous about for a long time.",
     mySentenceExample: "I finally took an action I'd been nervous about for a long time.",
@@ -246,11 +351,26 @@ export const CHAPTERS = [
       { text: "Farah realizes both Dahlia's hope and Colin's caution were partially correct.", answer: true },
     ],
     buildSentence: [
-      { target: "I check my phone the next morning.", jumbled: ["I", "check", "my", "phone", "the", "next", "morning."] },
-      { target: "This mild awkwardness stings briefly.", jumbled: ["This", "mild", "awkwardness", "stings", "briefly."] },
-      { target: "This helped her feel comfortable sharing too.", jumbled: ["This", "helped", "her", "feel", "comfortable", "sharing", "too."] },
-      { target: "This is nowhere near the harsh reaction he worried about.", jumbled: ["This", "is", "nowhere", "near", "the", "harsh", "reaction", "he", "worried", "about."] },
-      { target: "Both Dahlia's hope and Colin's caution were partially correct.", jumbled: ["Both", "Dahlia's", "hope", "and", "Colin's", "caution", "were", "partially", "correct."] },
+      {
+        target: "The next morning, I check my phone and find more responses than I'd honestly expected from such a small audience.",
+        jumbled: ["check", "I", "and", "my", "phone", "The", "responses", "more", "audience.", "expected", "I'd", "such", "morning,", "next", "small", "than", "honestly", "from", "a", "find"],
+      },
+      {
+        target: "Most messages are supportive, though one classmate seems slightly awkward afterward, unsure how to respond directly in person.",
+        jumbled: ["unsure", "person.", "are", "how", "supportive,", "to", "one", "though", "awkward", "messages", "slightly", "directly", "afterward,", "classmate", "Most", "in", "respond", "seems"],
+      },
+      {
+        target: "This mild awkwardness stings briefly, though it's nowhere near the harsh reaction Colin had worried about beforehand.",
+        jumbled: ["This", "near", "the", "about", "it's", "nowhere", "worried", "mild", "reaction", "harsh", "beforehand.", "awkwardness", "briefly,", "stings", "had", "Colin", "though"],
+      },
+      {
+        target: "On the other hand, a friend I hadn't been particularly close with reaches out, saying this helped her feel comfortable sharing her own struggle.",
+        jumbled: ["hand,", "reaches", "struggle.", "saying", "her", "her", "sharing", "own", "out,", "the", "a", "close", "hadn't", "feel", "been", "particularly", "with", "On", "I", "comfortable", "this", "helped", "other", "friend"],
+      },
+      {
+        target: "Weighing these mixed responses together, I realize both Dahlia's hope and Colin's caution had been partially, reasonably correct.",
+        jumbled: ["had", "partially,", "Colin's", "caution", "Weighing", "both", "been", "Dahlia's", "correct.", "these", "hope", "mixed", "reasonably", "responses", "together,", "and", "realize", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving mixed reactions after sharing something personal.",
     mySentenceExample: "I received mixed reactions after sharing something personal online.",
@@ -275,11 +395,26 @@ export const CHAPTERS = [
       { text: "Farah feels grateful she consulted both of them.", answer: true },
     ],
     buildSentence: [
-      { target: "I tell them how things turned out.", jumbled: ["I", "tell", "them", "how", "things", "turned", "out."] },
-      { target: "I feel grateful for this now.", jumbled: ["I", "feel", "grateful", "for", "this", "now."] },
-      { target: "Neither fully abandons their original view.", jumbled: ["Neither", "fully", "abandons", "their", "original", "view."] },
-      { target: "Both seem more willing to hold space for each other.", jumbled: ["Both", "seem", "more", "willing", "to", "hold", "space", "for", "each", "other."] },
-      { target: "This shifts his perspective somewhat toward her optimism.", jumbled: ["This", "shifts", "his", "perspective", "somewhat", "toward", "her", "optimism."] },
+      {
+        target: "I tell Dahlia and Colin how things turned out, sharing both the supportive messages and the mildly awkward moment afterward.",
+        jumbled: ["supportive", "out,", "and", "and", "the", "the", "messages", "moment", "awkward", "mildly", "tell", "both", "afterward.", "I", "how", "turned", "Colin", "Dahlia", "sharing", "things"],
+      },
+      {
+        target: "Dahlia seems pleased that her encouragement led somewhere positive, though she acknowledges Colin's caution about permanence remains genuinely valid.",
+        jumbled: ["acknowledges", "genuinely", "Colin's", "she", "Dahlia", "valid.", "permanence", "though", "seems", "somewhere", "encouragement", "positive,", "about", "that", "pleased", "her", "remains", "led", "caution"],
+      },
+      {
+        target: "Colin admits that seeing the actual outcome, rather than just imagining worst-case scenarios, shifts his perspective somewhat toward Dahlia's optimism.",
+        jumbled: ["than", "the", "that", "rather", "Colin", "somewhat", "perspective", "admits", "actual", "shifts", "worst-case", "Dahlia's", "toward", "just", "scenarios,", "optimism.", "imagining", "seeing", "outcome,", "his"],
+      },
+      {
+        target: "“I'm glad you told us, Farah,” he adds.",
+        jumbled: ["you", "Farah,”", "told", "“I'm", "adds.", "us,", "glad", "he"],
+      },
+      {
+        target: "Neither fully abandons their original view, but both seem more willing to hold space for the other's perspective now.",
+        jumbled: ["hold", "fully", "perspective", "willing", "abandons", "Neither", "to", "original", "their", "the", "but", "more", "seem", "for", "both", "now.", "view,", "other's", "space"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about two friends with different views both softening their positions slightly.",
     mySentenceExample: "Two friends with different views both softened their positions slightly.",
@@ -304,11 +439,26 @@ export const CHAPTERS = [
       { text: "Weighing both perspectives helped her honor benefit and caution together.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this decision now.", jumbled: ["I", "look", "back", "on", "this", "decision", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "This honored both benefit and caution simultaneously.", jumbled: ["This", "honored", "both", "benefit", "and", "caution", "simultaneously."] },
-      { target: "Difficult decisions often benefit more from synthesis.", jumbled: ["Difficult", "decisions", "often", "benefit", "more", "from", "synthesis."] },
-      { target: "Had I listened only to Colin, I would have stayed silent.", jumbled: ["Had", "I", "listened", "only", "to", "Colin,", "I", "would", "have", "stayed", "silent."] },
+      {
+        target: "Looking back on the whole decision, I realize how differently things might have gone had I simply followed one friend's advice exclusively.",
+        jumbled: ["differently", "back", "followed", "Looking", "exclusively.", "things", "realize", "I", "gone", "on", "have", "simply", "decision,", "how", "advice", "whole", "had", "might", "I", "friend's", "the", "one"],
+      },
+      {
+        target: "You made the right call, Farah, I think, closing the laptop gently.",
+        jumbled: ["Farah,", "the", "the", "made", "gently.", "call,", "I", "right", "closing", "laptop", "think,", "You"],
+      },
+      {
+        target: "I might have overlooked genuine risks Colin had reasonably identified beforehand.",
+        jumbled: ["Colin", "beforehand.", "overlooked", "have", "risks", "identified", "I", "had", "reasonably", "genuine", "might"],
+      },
+      {
+        target: "Had I listened only to Colin, I likely would have stayed silent, missing a connection that genuinely mattered to someone else.",
+        jumbled: ["likely", "I", "someone", "silent,", "only", "that", "stayed", "Had", "connection", "I", "else.", "to", "genuinely", "would", "have", "a", "missing", "Colin,", "listened", "to", "mattered"],
+      },
+      {
+        target: "In the end, this experience taught me that difficult decisions often benefit more from synthesis than from choosing a single, simple answer.",
+        jumbled: ["decisions", "me", "than", "a", "taught", "benefit", "end,", "simple", "In", "difficult", "often", "choosing", "experience", "answer.", "the", "from", "from", "single,", "more", "synthesis", "that", "this"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from weighing two friends' different advice before deciding.",
     mySentenceExample: "I learned that weighing different advice leads to better decisions.",

@@ -40,9 +40,26 @@ export const CHAPTERS = [
       { text: "Mom says no to the sleepover.", answer: false },
     ],
     buildSentence: [
-      { target: "Chloe gives me an invitation.", jumbled: ["gives", "me", "Chloe", "an", "invitation."] },
-      { target: "I feel excited and nervous.", jumbled: ["feel", "excited", "I", "and", "nervous."] },
-      { target: "Mom says yes to the sleepover.", jumbled: ["says", "yes", "Mom", "to", "the", "sleepover."] },
+      {
+        target: "On Friday, Chloe gives me a small card at school.",
+        jumbled: ["a", "at", "card", "On", "gives", "Friday,", "school.", "small", "Chloe", "me"],
+      },
+      {
+        target: "I feel excited, but I am also a little nervous because I have never slept at a friend's house before.",
+        jumbled: ["never", "but", "a", "have", "nervous", "friend's", "little", "also", "I", "excited,", "at", "am", "house", "before.", "feel", "I", "because", "slept", "a", "I"],
+      },
+      {
+        target: "“Will you come, Mia?” Chloe asks, smiling.",
+        jumbled: ["“Will", "asks,", "you", "Mia?”", "smiling.", "come,", "Chloe"],
+      },
+      {
+        target: "She says yes, and I jump up and down happily.",
+        jumbled: ["yes,", "happily.", "and", "I", "down", "and", "says", "She", "up", "jump"],
+      },
+      {
+        target: "That night, I keep thinking about what a sleepover is really like.",
+        jumbled: ["thinking", "I", "keep", "a", "like.", "what", "That", "is", "about", "night,", "really", "sleepover"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you felt excited and nervous at the same time.",
     mySentenceExample: "I felt excited and nervous before my first day at a new school.",
@@ -65,9 +82,26 @@ export const CHAPTERS = [
       { text: "Mia hides the bear under her clothes.", answer: true },
     ],
     buildSentence: [
-      { target: "I pack my favorite pajamas.", jumbled: ["pack", "my", "I", "favorite", "pajamas."] },
-      { target: "I feel shy about the bear.", jumbled: ["feel", "shy", "I", "about", "the", "bear."] },
-      { target: "I hide him under my clothes.", jumbled: ["hide", "him", "I", "under", "my", "clothes."] },
+      {
+        target: "On Saturday morning, I start packing my bag for the sleepover.",
+        jumbled: ["start", "morning,", "bag", "my", "packing", "On", "for", "the", "I", "Saturday", "sleepover."],
+      },
+      {
+        target: "Then I look at my old teddy bear on the bed.",
+        jumbled: ["on", "Then", "bed.", "bear", "old", "teddy", "I", "at", "my", "look", "the"],
+      },
+      {
+        target: "I have slept with him every night since I was small, but I feel shy about bringing him.",
+        jumbled: ["have", "every", "I", "was", "night", "small,", "but", "slept", "I", "I", "with", "him.", "feel", "bringing", "shy", "about", "him", "since"],
+      },
+      {
+        target: "I decide to pack him quietly at the bottom of my bag, under my clothes, so no one will notice.",
+        jumbled: ["bottom", "bag,", "no", "of", "so", "will", "the", "my", "pack", "him", "notice.", "my", "one", "to", "quietly", "decide", "I", "under", "clothes,", "at"],
+      },
+      {
+        target: "“All packed, Mia?” she asks, but she does not say anything about the bear.",
+        jumbled: ["say", "asks,", "the", "but", "about", "she", "packed,", "she", "Mia?”", "“All", "anything", "not", "does", "bear."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something special you like to bring with you.",
     mySentenceExample: "I always bring my lucky pencil when I take a test.",
@@ -90,9 +124,26 @@ export const CHAPTERS = [
       { text: "Mia feels completely calm when Mom leaves.", answer: false },
     ],
     buildSentence: [
-      { target: "Mrs. Park opens the door.", jumbled: ["opens", "the", "Mrs.", "Park", "door."] },
-      { target: "Mom gives me a tight hug.", jumbled: ["gives", "me", "Mom", "a", "tight", "hug."] },
-      { target: "Chloe grabs my hand happily.", jumbled: ["grabs", "my", "Chloe", "hand", "happily."] },
+      {
+        target: "Mrs. Park opens the door with a big smile.",
+        jumbled: ["Mrs.", "door", "Park", "smile.", "big", "opens", "the", "with", "a"],
+      },
+      {
+        target: "“Welcome, Mia! We are so happy you're here,” she says warmly.",
+        jumbled: ["are", "happy", "here,”", "says", "so", "she", "We", "warmly.", "you're", "Mia!", "“Welcome,"],
+      },
+      {
+        target: "Mom gives me a tight hug and says, “Have so much fun. I will pick you up tomorrow morning.”",
+        jumbled: ["a", "much", "“Have", "will", "up", "I", "and", "hug", "fun.", "me", "you", "Mom", "tomorrow", "gives", "so", "tight", "morning.”", "says,", "pick"],
+      },
+      {
+        target: "This is the first time I will sleep in a different house without my family.",
+        jumbled: ["my", "I", "in", "first", "This", "house", "sleep", "is", "without", "different", "time", "the", "a", "family.", "will"],
+      },
+      {
+        target: "Her excitement makes me smile, and my nervous feeling starts to disappear a little.",
+        jumbled: ["feeling", "smile,", "little.", "my", "excitement", "a", "makes", "nervous", "Her", "disappear", "starts", "to", "and", "me"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about saying goodbye to a family member.",
     mySentenceExample: "I waved goodbye to my dad before school started.",
@@ -115,9 +166,26 @@ export const CHAPTERS = [
       { text: "Mia is having more fun than she expected.", answer: true },
     ],
     buildSentence: [
-      { target: "We eat a big cheese pizza.", jumbled: ["eat", "a", "We", "big", "cheese", "pizza."] },
-      { target: "We laugh so hard together.", jumbled: ["laugh", "so", "We", "hard", "together."] },
-      { target: "This sleepover is already better.", jumbled: ["is", "already", "This", "sleepover", "better."] },
+      {
+        target: "For dinner, Mrs. Park orders a big cheese pizza, and Chloe and I sit on the couch to eat.",
+        jumbled: ["Mrs.", "and", "to", "on", "I", "a", "pizza,", "sit", "orders", "couch", "cheese", "Chloe", "the", "eat.", "and", "For", "Park", "big", "dinner,"],
+      },
+      {
+        target: "“This is my favorite kind of night, Mia,” Chloe says, and I agree completely.",
+        jumbled: ["and", "says,", "is", "Mia,”", "I", "Chloe", "night,", "completely.", "“This", "agree", "my", "kind", "of", "favorite"],
+      },
+      {
+        target: "We laugh so hard at one scene that pizza almost falls out of my mouth!",
+        jumbled: ["my", "pizza", "of", "out", "hard", "We", "almost", "scene", "at", "so", "one", "laugh", "mouth!", "that", "falls"],
+      },
+      {
+        target: "By the time the movie ends, I am not thinking about home anymore.",
+        jumbled: ["not", "time", "the", "anymore.", "the", "movie", "thinking", "am", "about", "By", "I", "ends,", "home"],
+      },
+      {
+        target: "“This sleepover is already better than I imagined,” I tell Chloe, and she grins proudly, happy that I am enjoying myself.",
+        jumbled: ["am", "happy", "than", "I", "grins", "that", "I", "better", "imagined,”", "Chloe,", "already", "she", "proudly,", "is", "and", "I", "“This", "myself.", "sleepover", "enjoying", "tell"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your favorite kind of movie.",
     mySentenceExample: "My favorite kind of movie is a funny cartoon.",
@@ -140,9 +208,26 @@ export const CHAPTERS = [
       { text: "They pretend the fort is a secret castle.", answer: true },
     ],
     buildSentence: [
-      { target: "Let's build a blanket fort.", jumbled: ["build", "a", "Let's", "blanket", "fort."] },
-      { target: "We crawl in with flashlights.", jumbled: ["crawl", "in", "We", "with", "flashlights."] },
-      { target: "We invent an adventure story.", jumbled: ["invent", "an", "We", "adventure", "story."] },
+      {
+        target: "Chloe has an amazing idea.",
+        jumbled: ["Chloe", "idea.", "an", "amazing", "has"],
+      },
+      {
+        target: "“Let's build a blanket fort, Mia!” she says excitedly.",
+        jumbled: ["build", "says", "“Let's", "Mia!”", "excitedly.", "she", "blanket", "a", "fort,"],
+      },
+      {
+        target: "It takes us almost thirty minutes, but soon we have a huge fort with a soft floor of pillows inside.",
+        jumbled: ["huge", "we", "a", "inside.", "almost", "minutes,", "a", "have", "soft", "soon", "thirty", "pillows", "of", "floor", "but", "fort", "It", "takes", "us", "with"],
+      },
+      {
+        target: "We crawl in with flashlights and pretend it is a secret castle.",
+        jumbled: ["and", "crawl", "flashlights", "is", "with", "in", "a", "castle.", "We", "pretend", "it", "secret"],
+      },
+      {
+        target: "We invent a whole adventure story together, and I realize this is the most fun I have had in a very long time.",
+        jumbled: ["story", "very", "a", "have", "most", "I", "long", "is", "invent", "We", "this", "whole", "the", "a", "had", "adventure", "time.", "I", "and", "realize", "together,", "in", "fun"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something fun you built or made.",
     mySentenceExample: "I built a tall tower out of blocks with my brother.",
@@ -165,9 +250,26 @@ export const CHAPTERS = [
       { text: "Mia quietly takes out her teddy bear.", answer: true },
     ],
     buildSentence: [
-      { target: "Chloe falls asleep quickly.", jumbled: ["falls", "asleep", "Chloe", "quickly."] },
-      { target: "I start to feel sad.", jumbled: ["start", "to", "I", "feel", "sad."] },
-      { target: "Holding him makes me calmer.", jumbled: ["makes", "me", "Holding", "him", "calmer."] },
+      {
+        target: "Later that night, Mrs. Park turns off the lights, and Chloe falls asleep quickly inside our fort.",
+        jumbled: ["inside", "Park", "off", "fort.", "and", "Mrs.", "that", "turns", "quickly", "our", "lights,", "the", "Later", "falls", "night,", "Chloe", "asleep"],
+      },
+      {
+        target: "I lie awake in my sleeping bag, listening to the quiet house.",
+        jumbled: ["listening", "lie", "bag,", "my", "I", "awake", "quiet", "sleeping", "house.", "in", "the", "to"],
+      },
+      {
+        target: "Slowly, I start to feel a little sad, and I miss my own bed and my mom's goodnight kiss.",
+        jumbled: ["feel", "I", "bed", "kiss.", "goodnight", "mom's", "start", "I", "to", "sad,", "miss", "my", "a", "and", "Slowly,", "my", "and", "own", "little"],
+      },
+      {
+        target: "Quietly, so no one can hear, I take my teddy bear out of my bag and hold him close.",
+        jumbled: ["so", "take", "my", "him", "bear", "of", "teddy", "out", "hear,", "I", "and", "one", "close.", "can", "my", "Quietly,", "no", "hold", "bag"],
+      },
+      {
+        target: "“It's okay, Mia,” I whisper to myself, and I close my eyes and try to think about the fun day we had instead.",
+        jumbled: ["my", "I", "fun", "about", "and", "Mia,”", "“It's", "eyes", "the", "close", "try", "think", "to", "and", "day", "whisper", "to", "we", "instead.", "okay,", "had", "I", "myself,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something that helps you feel calm.",
     mySentenceExample: "Listening to soft music helps me feel calm before bed.",
@@ -190,9 +292,26 @@ export const CHAPTERS = [
       { text: "Chloe has a hidden stuffed rabbit too.", answer: true },
     ],
     buildSentence: [
-      { target: "Chloe asks if I am okay.", jumbled: ["asks", "if", "Chloe", "I", "am", "okay."] },
-      { target: "I miss my mom a little.", jumbled: ["miss", "my", "I", "mom", "a", "little."] },
-      { target: "Talking about it helps me feel better.", jumbled: ["helps", "me", "Talking", "about", "it", "feel", "better."] },
+      {
+        target: "Suddenly, Chloe sits up and whispers, “Mia, are you okay?”",
+        jumbled: ["“Mia,", "are", "and", "whispers,", "sits", "up", "you", "Chloe", "Suddenly,", "okay?”"],
+      },
+      {
+        target: "I did not know she was still a little awake.",
+        jumbled: ["a", "did", "know", "not", "awake.", "little", "still", "she", "was", "I"],
+      },
+      {
+        target: "“I miss my mom a little,” I whisper back, holding my bear tighter.",
+        jumbled: ["my", "tighter.", "I", "bear", "back,", "miss", "little,”", "a", "my", "“I", "whisper", "mom", "holding"],
+      },
+      {
+        target: "Instead of laughing, Chloe smiles kindly and says, “I felt the same way at my first sleepover too.”",
+        jumbled: ["sleepover", "way", "“I", "says,", "at", "smiles", "laughing,", "felt", "same", "Chloe", "too.”", "the", "Instead", "first", "my", "kindly", "and", "of"],
+      },
+      {
+        target: "She shows me a small stuffed rabbit hidden in her own bag, and we both start laughing quietly.",
+        jumbled: ["rabbit", "start", "laughing", "stuffed", "She", "shows", "we", "small", "own", "me", "both", "and", "bag,", "her", "a", "quietly.", "hidden", "in"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time a friend helped you feel better.",
     mySentenceExample: "My friend told a joke and helped me feel better when I was sad.",
@@ -215,9 +334,26 @@ export const CHAPTERS = [
       { text: "Mia feels proud after breakfast.", answer: true },
     ],
     buildSentence: [
-      { target: "Delicious smells wake me up.", jumbled: ["smells", "wake", "Delicious", "me", "up."] },
-      { target: "We eat our star pancakes.", jumbled: ["eat", "our", "We", "star", "pancakes."] },
-      { target: "I feel proud of myself.", jumbled: ["feel", "proud", "I", "of", "myself."] },
+      {
+        target: "The next morning, delicious smells wake me up.",
+        jumbled: ["me", "The", "morning,", "smells", "up.", "wake", "delicious", "next"],
+      },
+      {
+        target: "I climb out of the fort and follow the smell to the kitchen.",
+        jumbled: ["to", "of", "and", "the", "fort", "the", "kitchen.", "smell", "follow", "I", "climb", "the", "out"],
+      },
+      {
+        target: "“Good morning, Mia and Chloe,” she says cheerfully.",
+        jumbled: ["“Good", "she", "and", "Chloe,”", "says", "Mia", "morning,", "cheerfully."],
+      },
+      {
+        target: "We eat our star pancakes with syrup, and the sunny kitchen feels warm and happy.",
+        jumbled: ["feels", "happy.", "and", "our", "sunny", "kitchen", "star", "pancakes", "with", "syrup,", "and", "the", "We", "warm", "eat"],
+      },
+      {
+        target: "I feel proud that I made it through my first whole night away from home.",
+        jumbled: ["whole", "away", "feel", "from", "it", "made", "that", "night", "my", "first", "through", "proud", "home.", "I", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your favorite breakfast food.",
     mySentenceExample: "My favorite breakfast food is pancakes with syrup.",
@@ -240,9 +376,26 @@ export const CHAPTERS = [
       { text: "Chloe wants to have another sleepover soon.", answer: true },
     ],
     buildSentence: [
-      { target: "Mom hugs me tightly.", jumbled: ["hugs", "me", "Mom", "tightly."] },
-      { target: "I had the best time ever.", jumbled: ["had", "the", "I", "best", "time", "ever."] },
-      { target: "Let's do this again soon.", jumbled: ["do", "this", "Let's", "again", "soon."] },
+      {
+        target: "Soon after breakfast, Mom's car pulls into the driveway.",
+        jumbled: ["into", "Soon", "car", "Mom's", "after", "the", "driveway.", "pulls", "breakfast,"],
+      },
+      {
+        target: "I feel happy to see her, but also a little sad that the sleepover is ending so quickly.",
+        jumbled: ["happy", "a", "quickly.", "but", "sleepover", "I", "feel", "that", "to", "her,", "the", "also", "so", "ending", "sad", "see", "little", "is"],
+      },
+      {
+        target: "“The best time ever!” I say, and I really mean it.",
+        jumbled: ["time", "it.", "really", "I", "“The", "best", "and", "mean", "I", "ever!”", "say,"],
+      },
+      {
+        target: "Chloe hugs me goodbye and says, “Let's do this again soon!”",
+        jumbled: ["again", "and", "this", "“Let's", "goodbye", "says,", "me", "soon!”", "do", "hugs", "Chloe"],
+      },
+      {
+        target: "I look out the window and think about everything that happened: the fort, the pancakes, and the quiet talk in the dark.",
+        jumbled: ["and", "dark.", "the", "pancakes,", "in", "out", "look", "the", "everything", "the", "I", "window", "talk", "the", "think", "and", "happened:", "about", "quiet", "fort,", "that", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a fun event you did not want to end.",
     mySentenceExample: "I did not want the birthday party to end because it was so much fun.",
@@ -265,9 +418,26 @@ export const CHAPTERS = [
       { text: "Mia cannot wait for the next sleepover.", answer: true },
     ],
     buildSentence: [
-      { target: "I tell Mom everything.", jumbled: ["tell", "Mom", "I", "everything."] },
-      { target: "That feeling is completely normal.", jumbled: ["is", "completely", "That", "feeling", "normal."] },
-      { target: "I already cannot wait.", jumbled: ["already", "cannot", "I", "wait."] },
+      {
+        target: "At home, I tell Mom everything about the sleepover, from the pizza and movie to the secret blanket fort.",
+        jumbled: ["to", "pizza", "tell", "the", "Mom", "and", "sleepover,", "secret", "from", "home,", "the", "I", "about", "movie", "blanket", "At", "the", "everything", "fort."],
+      },
+      {
+        target: "“It sounds like you had an incredible time, Mia,” Mom says, smiling.",
+        jumbled: ["says,", "Mom", "had", "“It", "sounds", "time,", "smiling.", "like", "Mia,”", "incredible", "you", "an"],
+      },
+      {
+        target: "I even tell her about missing home a little, and she says that feeling is completely normal for a first sleepover.",
+        jumbled: ["for", "and", "that", "home", "first", "she", "tell", "says", "her", "even", "normal", "sleepover.", "a", "about", "I", "missing", "is", "feeling", "a", "completely", "little,"],
+      },
+      {
+        target: "“Next time, it will feel even easier,” she promises.",
+        jumbled: ["will", "even", "time,", "“Next", "it", "promises.", "she", "easier,”", "feel"],
+      },
+      {
+        target: "That night, I hug my teddy bear in my own bed and think about how brave I was.",
+        jumbled: ["I", "my", "about", "bed", "in", "That", "teddy", "bear", "night,", "brave", "own", "was.", "and", "think", "how", "my", "I", "hug"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something new you were brave enough to try.",
     mySentenceExample: "I was brave enough to try swimming in the deep pool for the first time.",

@@ -38,16 +38,25 @@ export const CHAPTERS = [
       { text: "They have pizza for breakfast.", answer: false },
     ],
     buildSentence: [
-      { target: "Marco is in the kitchen.", jumbled: ["is", "the", "kitchen.", "Marco", "in"] },
-      { target: "The floor feels warm and bright.", jumbled: ["feels", "and", "warm", "bright.", "The", "floor"] },
-      { target: "I sit with my family and eat my breakfast.", jumbled: ["I", "my", "family", "eat", "my", "and", "breakfast.", "with", "sit"] },
       {
         target: "It is Saturday morning, and I wake up a little late in my room.",
-        jumbled: ["wake", "It", "and", "in", "Saturday", "room.", "little", "my", "late", "morning,", "a", "is", "I", "up"],
+        jumbled: ["Saturday", "a", "room.", "late", "morning,", "I", "up", "little", "my", "is", "It", "in", "and", "wake"],
+      },
+      {
+        target: "Sunlight comes through the window and makes the floor warm and bright.",
+        jumbled: ["the", "bright.", "warm", "and", "makes", "floor", "the", "and", "Sunlight", "window", "comes", "through"],
+      },
+      {
+        target: "I wash my face, fix my bed, and walk out of my room slowly.",
+        jumbled: ["fix", "of", "room", "my", "face,", "walk", "my", "my", "slowly.", "I", "wash", "out", "bed,", "and"],
       },
       {
         target: "On the table, I see bread, eggs, and a glass of juice for breakfast.",
-        jumbled: ["eggs,", "the", "breakfast.", "a", "On", "I", "bread,", "glass", "see", "and", "table,", "of", "juice", "for"],
+        jumbled: ["bread,", "eggs,", "see", "juice", "I", "and", "the", "glass", "for", "breakfast.", "a", "On", "of", "table,"],
+      },
+      {
+        target: "I sit with my family, eat my breakfast, and feel calm and happy at home.",
+        jumbled: ["calm", "sit", "at", "my", "feel", "eat", "I", "family,", "happy", "my", "breakfast,", "with", "home.", "and", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your morning at home.",
@@ -73,16 +82,25 @@ export const CHAPTERS = [
       { text: "Lena does not let Bea inside the gate.", answer: false },
     ],
     buildSentence: [
-      { target: "Someone calls my name.", jumbled: ["calls", "my", "name.", "Someone"] },
-      { target: "I laugh and open the gate.", jumbled: ["and", "laugh", "open", "the", "gate.", "I"] },
-      { target: "I feel glad to have a kind neighbor.", jumbled: ["a", "to", "have", "glad", "I", "kind", "neighbor.", "feel"] },
       {
-        target: "I walk to the gate and see my neighbor, Bea.",
-        jumbled: ["I", "gate", "walk", "see", "my", "to", "and", "Bea.", "neighbor,", "the"],
+        target: "I hear someone call my name outside the house: “Lena!”",
+        jumbled: ["the", "call", "outside", "name", "house:", "someone", "I", "my", "hear", "“Lena!”"],
+      },
+      {
+        target: "I walk to the gate and see my neighbor, Bea, with a small paper bag in her hand.",
+        jumbled: ["the", "with", "I", "a", "to", "hand.", "Bea,", "small", "paper", "neighbor,", "gate", "her", "my", "see", "walk", "in", "and", "bag"],
       },
       {
         target: "She says her mother made banana bread and wants to share some with us.",
-        jumbled: ["says", "made", "us.", "some", "mother", "share", "to", "wants", "banana", "with", "She", "and", "her", "bread"],
+        jumbled: ["and", "with", "some", "bread", "banana", "mother", "She", "wants", "us.", "share", "made", "to", "says", "her"],
+      },
+      {
+        target: "I laugh and open the gate for Bea.",
+        jumbled: ["Bea.", "I", "open", "gate", "laugh", "the", "for", "and"],
+      },
+      {
+        target: "I feel glad to have a kind neighbor.",
+        jumbled: ["kind", "I", "have", "a", "neighbor.", "to", "feel", "glad"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your neighbor.",
@@ -108,19 +126,25 @@ export const CHAPTERS = [
       { text: "The kitchen feels empty and quiet.", answer: false },
     ],
     buildSentence: [
-      { target: "Marco eats quickly.", jumbled: ["eats", "quickly.", "Marco"] },
-      { target: "Bea sits with us at the table.", jumbled: ["with", "sits", "us", "the", "table.", "Bea", "at"] },
-      {
-        target: "The bread smells sweet, and the whole kitchen feels warm.",
-        jumbled: ["feels", "bread", "whole", "and", "The", "warm.", "kitchen", "sweet,", "smells", "the"],
-      },
-      {
-        target: "We laugh, eat our snack, and talk about our favorite foods.",
-        jumbled: ["talk", "We", "eat", "our", "snack,", "favorite", "and", "foods.", "laugh,", "about", "our"],
-      },
       {
         target: "In the afternoon, Marco and I go to the kitchen because we feel hungry.",
-        jumbled: ["go", "Marco", "In", "we", "because", "kitchen", "the", "afternoon,", "feel", "hungry.", "and", "I", "to"],
+        jumbled: ["and", "afternoon,", "feel", "the", "I", "In", "Marco", "go", "we", "to", "the", "hungry.", "because", "kitchen"],
+      },
+      {
+        target: "Our mother puts the banana bread on a plate and cuts it into small pieces.",
+        jumbled: ["a", "plate", "the", "puts", "banana", "and", "Our", "mother", "into", "it", "bread", "pieces.", "small", "cuts", "on"],
+      },
+      {
+        target: "Bea comes in with two glasses of cold water and sits with us at the table.",
+        jumbled: ["in", "glasses", "Bea", "and", "sits", "us", "of", "with", "cold", "with", "water", "two", "table.", "at", "comes", "the"],
+      },
+      {
+        target: "“Here you go, Lena,” she says, handing me a glass.",
+        jumbled: ["you", "glass.", "me", "handing", "says,", "a", "“Here", "go,", "Lena,”", "she"],
+      },
+      {
+        target: "The kitchen feels full of happy voices.",
+        jumbled: ["of", "happy", "full", "The", "voices.", "kitchen", "feels"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your favorite snack.",
@@ -146,16 +170,25 @@ export const CHAPTERS = [
       { text: "Marco finishes his homework without any help.", answer: false },
     ],
     buildSentence: [
-      { target: "Marco brings his notebook.", jumbled: ["his", "brings", "notebook.", "Marco"] },
-      { target: "Bea stays and checks the spelling.", jumbled: ["and", "stays", "checks", "the", "spelling.", "Bea"] },
-      { target: "He smiles at us, and I feel proud.", jumbled: ["proud.", "at", "and", "smiles", "I", "feel", "He", "us,"] },
       {
-        target: "I sit beside him and read the questions slowly.",
-        jumbled: ["slowly.", "questions", "him", "and", "sit", "beside", "read", "the", "I"],
+        target: "Later that day, Marco brings his notebook to the dining table and looks at me.",
+        jumbled: ["and", "brings", "to", "notebook", "dining", "me.", "Marco", "day,", "looks", "the", "his", "at", "that", "Later", "table"],
       },
       {
         target: "He says, “Ate Lena, can you help me with my homework?”",
-        jumbled: ["with", "homework?”", "can", "me", "says,", "my", "“Ate", "you", "Lena,", "He", "help"],
+        jumbled: ["help", "my", "He", "Lena,", "can", "homework?”", "me", "you", "with", "“Ate", "says,"],
+      },
+      {
+        target: "Bea stays with us and checks the spelling on one page.",
+        jumbled: ["spelling", "on", "Bea", "checks", "page.", "stays", "us", "with", "and", "the", "one"],
+      },
+      {
+        target: "Marco writes the answers with his pencil and asks us small questions.",
+        jumbled: ["us", "answers", "his", "pencil", "and", "asks", "small", "writes", "questions.", "with", "the", "Marco"],
+      },
+      {
+        target: "He smiles at us, and I feel proud because we help him do his work.",
+        jumbled: ["He", "because", "smiles", "we", "him", "at", "do", "work.", "feel", "I", "proud", "us,", "and", "his", "help"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about homework at home.",
@@ -181,16 +214,25 @@ export const CHAPTERS = [
       { text: "Bea has met Nina many times before.", answer: false },
     ],
     buildSentence: [
-      { target: "Nina comes to visit.", jumbled: ["comes", "to", "visit.", "Nina"] },
-      { target: "Marco says hi to Nina.", jumbled: ["says", "hi", "to", "Nina.", "Marco"] },
-      { target: "Nina brings a small box of cookies for our family.", jumbled: ["small", "for", "Nina", "of", "brings", "our", "family.", "a", "box", "cookies"] },
       {
         target: "On Sunday morning, our cousin Nina comes to visit our house.",
-        jumbled: ["house.", "our", "cousin", "comes", "Nina", "On", "to", "visit", "Sunday", "our", "morning,"],
+        jumbled: ["our", "house.", "comes", "to", "cousin", "morning,", "Sunday", "our", "Nina", "On", "visit"],
       },
       {
-        target: "We sit in the living room, talk about school, and drink cold juice together.",
-        jumbled: ["the", "about", "together.", "room,", "and", "talk", "cold", "school,", "We", "in", "juice", "sit", "living", "drink"],
+        target: "Marco runs to the door and says, “Hi, Nina!” with a big smile, and Nina hugs him before turning to me.",
+        jumbled: ["“Hi,", "before", "him", "smile,", "me.", "and", "turning", "the", "Nina", "says,", "a", "Nina!”", "big", "hugs", "Marco", "and", "to", "with", "door", "runs", "to"],
+      },
+      {
+        target: "“Lena, I missed you!” she says.",
+        jumbled: ["she", "says.", "missed", "I", "“Lena,", "you!”"],
+      },
+      {
+        target: "Bea is still at our house, so she meets Nina for the first time.",
+        jumbled: ["at", "first", "the", "house,", "time.", "still", "our", "meets", "she", "for", "so", "Nina", "Bea", "is"],
+      },
+      {
+        target: "The room feels bright and full of life.",
+        jumbled: ["and", "life.", "room", "of", "full", "feels", "The", "bright"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your cousin.",
@@ -216,16 +258,25 @@ export const CHAPTERS = [
       { text: "Marco leaves the books on the floor.", answer: false },
     ],
     buildSentence: [
-      { target: "Nina folds a blanket.", jumbled: ["folds", "a", "blanket.", "Nina"] },
-      { target: "I open the window for air.", jumbled: ["the", "open", "window", "for", "air.", "I"] },
-      { target: "I feel happy because we did the work together.", jumbled: ["we", "happy", "I", "feel", "did", "together.", "the", "because", "work"] },
       {
-        target: "The room looks messy at first, but it becomes clean.",
-        jumbled: ["at", "The", "but", "becomes", "it", "clean.", "looks", "messy", "room", "first,"],
+        target: "Our mother asks us to help clean the living room.",
+        jumbled: ["mother", "room.", "living", "clean", "us", "help", "Our", "asks", "to", "the"],
       },
       {
-        target: "Before lunch, our mother asks us to help clean the living room.",
-        jumbled: ["Before", "asks", "the", "our", "lunch,", "us", "clean", "room.", "mother", "help", "to", "living"],
+        target: "Marco picks up the books on the floor and puts them on the shelf.",
+        jumbled: ["floor", "on", "shelf.", "up", "on", "the", "the", "Marco", "puts", "them", "and", "books", "picks", "the"],
+      },
+      {
+        target: "Nina folds a blanket and places it on the sofa.",
+        jumbled: ["a", "sofa.", "places", "the", "on", "it", "Nina", "blanket", "and", "folds"],
+      },
+      {
+        target: "Bea wipes the small table with a cloth and hums a happy song.",
+        jumbled: ["wipes", "hums", "the", "and", "a", "with", "cloth", "Bea", "happy", "a", "small", "song.", "table"],
+      },
+      {
+        target: "I feel happy because we did the work together.",
+        jumbled: ["happy", "because", "feel", "I", "work", "together.", "we", "did", "the"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about cleaning at home.",
@@ -251,16 +302,25 @@ export const CHAPTERS = [
       { text: "They watch a movie instead of playing a game.", answer: false },
     ],
     buildSentence: [
-      { target: "The rain starts to fall.", jumbled: ["starts", "rain", "to", "fall.", "The"] },
-      { target: "Marco claps and jumps in his chair.", jumbled: ["claps", "and", "jumps", "his", "chair.", "Marco", "in"] },
-      { target: "I do not feel bored because the game is fun.", jumbled: ["not", "do", "is", "bored", "I", "game", "feel", "fun.", "because", "the"] },
       {
-        target: "We cannot go outside, so Marco brings a board game to the table.",
-        jumbled: ["a", "outside,", "go", "the", "table.", "so", "board", "Marco", "brings", "cannot", "to", "game", "We"],
+        target: "In the afternoon, dark clouds cover the sky and the rain starts to fall.",
+        jumbled: ["In", "fall.", "starts", "the", "the", "dark", "the", "and", "afternoon,", "clouds", "rain", "to", "sky", "cover"],
       },
       {
-        target: "The rain makes a soft sound on the roof while we play together.",
-        jumbled: ["The", "together.", "while", "roof", "sound", "on", "play", "rain", "we", "soft", "makes", "a", "the"],
+        target: "We cannot go outside, so Marco brings a board game to the table.",
+        jumbled: ["game", "the", "so", "Marco", "a", "board", "outside,", "brings", "to", "table.", "cannot", "go", "We"],
+      },
+      {
+        target: "Bea laughs at the funny pictures on the box.",
+        jumbled: ["on", "the", "box.", "Bea", "pictures", "at", "laughs", "funny", "the"],
+      },
+      {
+        target: "I move my game piece carefully and try to win the first round.",
+        jumbled: ["first", "the", "my", "carefully", "to", "piece", "try", "game", "round.", "move", "and", "I", "win"],
+      },
+      {
+        target: "I do not feel bored because the rainy afternoon becomes fun.",
+        jumbled: ["feel", "bored", "afternoon", "I", "becomes", "the", "because", "not", "do", "fun.", "rainy"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a rainy day at home.",
@@ -286,16 +346,25 @@ export const CHAPTERS = [
       { text: "Nina says nothing about her town.", answer: false },
     ],
     buildSentence: [
-      { target: "Bea thanks our parents.", jumbled: ["thanks", "our", "parents.", "Bea"] },
-      { target: "Father comes home from work.", jumbled: ["comes", "home", "from", "work.", "Father"] },
-      { target: "I feel warm inside and very thankful.", jumbled: ["very", "and", "I", "thankful.", "inside", "warm", "feel"] },
       {
-        target: "Our father comes home from work and smiles at us.",
-        jumbled: ["comes", "us.", "Our", "smiles", "from", "and", "at", "home", "father", "work"],
+        target: "In the evening, our father comes home from work and smiles when he sees everyone together.",
+        jumbled: ["everyone", "sees", "he", "from", "In", "home", "together.", "the", "smiles", "work", "our", "evening,", "when", "father", "comes", "and"],
+      },
+      {
+        target: "The table is ready, and the smell of fish, rice, and vegetables fills the room.",
+        jumbled: ["the", "The", "vegetables", "room.", "and", "of", "ready,", "the", "smell", "table", "fish,", "is", "and", "fills", "rice,"],
+      },
+      {
+        target: "Marco tells Father about the board game, and Nina talks about her town.",
+        jumbled: ["tells", "town.", "talks", "board", "game,", "Nina", "about", "Marco", "and", "about", "her", "Father", "the"],
       },
       {
         target: "We eat dinner, pass the dishes, and listen to one another.",
-        jumbled: ["dishes,", "one", "another.", "dinner,", "We", "to", "and", "the", "listen", "eat", "pass"],
+        jumbled: ["We", "listen", "eat", "dinner,", "another.", "one", "dishes,", "the", "pass", "to", "and"],
+      },
+      {
+        target: "I feel warm inside and very thankful.",
+        jumbled: ["very", "inside", "thankful.", "I", "and", "feel", "warm"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about dinner with your family.",
@@ -321,19 +390,25 @@ export const CHAPTERS = [
       { text: "The lamp never turns back on.", answer: false },
     ],
     buildSentence: [
-      { target: "Marco looks worried.", jumbled: ["looks", "worried.", "Marco"] },
-      { target: "The lamp stops working.", jumbled: ["lamp", "stops", "working.", "The"] },
       {
         target: "That night, the lamp in the living room suddenly stops working.",
-        jumbled: ["That", "in", "stops", "the", "working.", "the", "night,", "lamp", "living", "suddenly", "room"],
+        jumbled: ["night,", "That", "the", "suddenly", "in", "working.", "living", "stops", "room", "the", "lamp"],
       },
       {
         target: "Our father checks the lamp and says it needs a new light bulb.",
-        jumbled: ["says", "father", "checks", "it", "needs", "bulb.", "the", "and", "a", "light", "new", "Our", "lamp"],
+        jumbled: ["needs", "lamp", "and", "new", "the", "it", "Our", "bulb.", "light", "a", "says", "father", "checks"],
       },
       {
-        target: "After a few minutes, the lamp shines again and fills the room with light.",
-        jumbled: ["again", "the", "fills", "room", "After", "shines", "lamp", "with", "light.", "and", "a", "few", "the", "minutes,"],
+        target: "“Lena, can you get the box?” he asks.",
+        jumbled: ["the", "box?”", "asks.", "get", "you", "can", "he", "“Lena,"],
+      },
+      {
+        target: "Nina brings a chair, and I hold the small box with the new bulb inside.",
+        jumbled: ["inside.", "hold", "Nina", "brings", "small", "bulb", "the", "the", "box", "I", "and", "with", "chair,", "a", "new"],
+      },
+      {
+        target: "We all clap, and I feel glad because the problem is small and easy to fix together.",
+        jumbled: ["feel", "easy", "is", "to", "all", "and", "because", "I", "We", "small", "fix", "glad", "together.", "clap,", "problem", "the", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about fixing something at home.",
@@ -359,19 +434,25 @@ export const CHAPTERS = [
       { text: "The house feels empty of memories.", answer: false },
     ],
     buildSentence: [
-      { target: "Bea waves goodbye.", jumbled: ["waves", "goodbye.", "Bea"] },
-      { target: "Nina gets ready to go home.", jumbled: ["ready", "gets", "to", "go", "home.", "Nina"] },
       {
         target: "On Sunday evening, the house feels quiet after our busy weekend together.",
-        jumbled: ["our", "feels", "Sunday", "the", "weekend", "quiet", "house", "busy", "after", "On", "evening,", "together."],
+        jumbled: ["On", "our", "feels", "after", "together.", "the", "weekend", "house", "busy", "quiet", "Sunday", "evening,"],
       },
       {
-        target: "I feel peaceful because home is warm and full of love.",
-        jumbled: ["warm", "peaceful", "home", "because", "is", "of", "and", "love.", "I", "feel", "full"],
+        target: "Nina gets ready to go home, and Marco gives her a quick hug at the gate.",
+        jumbled: ["ready", "a", "Marco", "her", "home,", "Nina", "to", "hug", "the", "gate.", "go", "at", "and", "gets", "gives", "quick"],
+      },
+      {
+        target: "I go back inside and look at the clean living room, the empty plates, and the games on the shelf.",
+        jumbled: ["games", "I", "look", "the", "room,", "inside", "living", "back", "and", "the", "clean", "empty", "plates,", "the", "at", "go", "on", "and", "the", "shelf."],
       },
       {
         target: "The house looks simple, but it feels full of good memories from the weekend.",
-        jumbled: ["weekend.", "looks", "of", "but", "the", "simple,", "memories", "good", "feels", "it", "house", "full", "The", "from"],
+        jumbled: ["weekend.", "simple,", "full", "it", "feels", "memories", "the", "looks", "good", "house", "of", "but", "from", "The"],
+      },
+      {
+        target: "I sit near the window and think about the food, the laughter, and the time with the people around me.",
+        jumbled: ["time", "the", "with", "near", "around", "the", "window", "I", "the", "me.", "about", "and", "food,", "and", "laughter,", "the", "the", "sit", "think", "people"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your home.",

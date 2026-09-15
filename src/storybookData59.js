@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "The assistant disappears briefly to get her bag.", answer: true },
     ],
     buildSentence: [
-      { target: "I stop by the pharmacy today.", jumbled: ["I", "stop", "by", "the", "pharmacy", "today."] },
-      { target: "The pharmacy is fairly busy now.", jumbled: ["The", "pharmacy", "is", "fairly", "busy", "now."] },
-      { target: "I give my name at the counter.", jumbled: ["I", "give", "my", "name", "at", "the", "counter."] },
-      { target: "This should take only a few minutes.", jumbled: ["This", "should", "take", "only", "a", "few", "minutes."] },
-      { target: "She disappears briefly to retrieve my bag.", jumbled: ["She", "disappears", "briefly", "to", "retrieve", "my", "bag."] },
+      {
+        target: "I stop by the pharmacy to pick up a prescription my doctor called in earlier this week.",
+        jumbled: ["stop", "prescription", "doctor", "by", "this", "pharmacy", "my", "called", "week.", "I", "the", "earlier", "pick", "in", "up", "a", "to"],
+      },
+      {
+        target: "The notification on my phone says it's ready, so I expect this errand to take only a few minutes at most.",
+        jumbled: ["so", "it's", "at", "notification", "I", "few", "says", "phone", "most.", "ready,", "only", "on", "take", "expect", "minutes", "The", "a", "errand", "this", "my", "to"],
+      },
+      {
+        target: "Inside, the pharmacy is fairly busy, with several people waiting in a short line ahead of me.",
+        jumbled: ["several", "with", "a", "in", "waiting", "busy,", "ahead", "people", "is", "short", "Inside,", "of", "line", "pharmacy", "me.", "the", "fairly"],
+      },
+      {
+        target: "I glance at my phone, mentally planning the rest of my evening once this quick stop is finished.",
+        jumbled: ["rest", "this", "mentally", "evening", "quick", "my", "phone,", "I", "once", "glance", "of", "at", "the", "finished.", "is", "planning", "stop", "my"],
+      },
+      {
+        target: "I give my name at the counter.",
+        jumbled: ["I", "at", "give", "counter.", "my", "name", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about running a quick errand after work.",
     mySentenceExample: "I ran a quick errand to the pharmacy after work.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "Elena decides to mention this to someone who works there.", answer: true },
     ],
     buildSentence: [
-      { target: "I check the label first.", jumbled: ["I", "check", "the", "label", "first."] },
-      { target: "Something catches my attention now.", jumbled: ["Something", "catches", "my", "attention", "now."] },
-      { target: "The difference is clear, unfortunately.", jumbled: ["The", "difference", "is", "clear,", "unfortunately."] },
-      { target: "I should mention this immediately.", jumbled: ["I", "should", "mention", "this", "immediately."] },
-      { target: "This seems different from what my doctor mentioned.", jumbled: ["This", "seems", "different", "from", "what", "my", "doctor", "mentioned."] },
+      {
+        target: "The assistant hands me a small bag, and out of habit, I check the label before leaving the counter, my own name, Elena, printed above the dosage.",
+        jumbled: ["a", "The", "assistant", "leaving", "name,", "label", "out", "my", "Elena,", "the", "own", "check", "dosage.", "me", "hands", "small", "and", "above", "I", "printed", "bag,", "the", "habit,", "counter,", "of", "before", "the"],
+      },
+      {
+        target: "Something immediately catches my attention: the dosage listed seems different from what my doctor had actually mentioned during my appointment.",
+        jumbled: ["actually", "immediately", "had", "attention:", "dosage", "Something", "what", "during", "doctor", "the", "listed", "different", "from", "appointment.", "my", "mentioned", "seems", "my", "my", "catches"],
+      },
+      {
+        target: "I pull up my doctor's instructions on my phone, comparing the numbers carefully to make sure I'm not simply misremembering something.",
+        jumbled: ["my", "phone,", "something.", "numbers", "doctor's", "sure", "misremembering", "make", "comparing", "not", "pull", "up", "instructions", "simply", "carefully", "on", "I'm", "to", "I", "the", "my"],
+      },
+      {
+        target: "Unfortunately, the difference is clear, which means either the prescription itself or the label has some kind of error.",
+        jumbled: ["which", "prescription", "either", "has", "or", "itself", "difference", "error.", "the", "kind", "some", "means", "of", "clear,", "the", "the", "label", "Unfortunately,", "is"],
+      },
+      {
+        target: "Rather than simply assuming it's fine, I decide I should mention this immediately to someone who actually works here.",
+        jumbled: ["works", "simply", "Rather", "who", "here.", "it's", "someone", "mention", "this", "than", "decide", "should", "fine,", "I", "I", "assuming", "immediately", "to", "actually"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing an error before it caused a bigger problem.",
     mySentenceExample: "I noticed the error before it caused a bigger problem.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Elena appreciates that he takes her concern seriously.", answer: true },
     ],
     buildSentence: [
-      { target: "I ask to speak with him.", jumbled: ["I", "ask", "to", "speak", "with", "him."] },
-      { target: "He takes the bottle carefully now.", jumbled: ["He", "takes", "the", "bottle", "carefully", "now."] },
-      { target: "You were right to bring this up.", jumbled: ["You", "were", "right", "to", "bring", "this", "up."] },
-      { target: "I appreciate that he doesn't dismiss this.", jumbled: ["I", "appreciate", "that", "he", "doesn't", "dismiss", "this."] },
-      { target: "Let me look into it more closely first.", jumbled: ["Let", "me", "look", "into", "it", "more", "closely", "first."] },
+      {
+        target: "I ask to speak with the pharmacist directly, and Mr. Diaz comes over, greeting me with a professional, attentive manner.",
+        jumbled: ["directly,", "with", "me", "ask", "to", "pharmacist", "speak", "with", "comes", "over,", "I", "the", "greeting", "Diaz", "Mr.", "attentive", "and", "a", "manner.", "professional,"],
+      },
+      {
+        target: "I explain calmly that the dosage on the label doesn't match what I remember my doctor telling me during our appointment.",
+        jumbled: ["telling", "during", "appointment.", "the", "label", "doesn't", "dosage", "on", "I", "the", "me", "what", "doctor", "calmly", "I", "my", "match", "explain", "that", "our", "remember"],
+      },
+      {
+        target: "He takes the bottle carefully, examining both the label and the original prescription order on his computer screen.",
+        jumbled: ["computer", "examining", "prescription", "He", "bottle", "original", "the", "the", "both", "carefully,", "screen.", "his", "and", "takes", "order", "the", "on", "label"],
+      },
+      {
+        target: "“You were right to bring this up, Elena. Let me look into it more closely before you take anything,” he says seriously.",
+        jumbled: ["before", "into", "says", "“You", "he", "it", "Elena.", "Let", "take", "closely", "me", "you", "look", "seriously.", "to", "up,", "more", "anything,”", "were", "this", "right", "bring"],
+      },
+      {
+        target: "I appreciate that he doesn't dismiss my concern, treating it instead as something genuinely worth investigating properly.",
+        jumbled: ["dismiss", "as", "I", "something", "appreciate", "he", "investigating", "properly.", "it", "worth", "instead", "that", "genuinely", "treating", "doesn't", "my", "concern,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone taking your concern seriously.",
     mySentenceExample: "The pharmacist took my concern seriously and checked it.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "Correcting this will only take a few more minutes.", answer: true },
     ],
     buildSentence: [
-      { target: "He confirms this after checking.", jumbled: ["He", "confirms", "this", "after", "checking."] },
-      { target: "I feel slightly uneasy now.", jumbled: ["I", "feel", "slightly", "uneasy", "now."] },
-      { target: "I'm genuinely sorry about this.", jumbled: ["I'm", "genuinely", "sorry", "about", "this."] },
-      { target: "This will only take a few minutes.", jumbled: ["This", "will", "only", "take", "a", "few", "minutes."] },
-      { target: "This could have caused some unpleasant side effects.", jumbled: ["This", "could", "have", "caused", "some", "unpleasant", "side", "effects."] },
+      {
+        target: "Mr. Diaz confirms that there was, in fact, a data entry error somewhere in the system.",
+        jumbled: ["Diaz", "confirms", "fact,", "a", "Mr.", "in", "somewhere", "that", "was,", "the", "system.", "in", "error", "entry", "data", "there"],
+      },
+      {
+        target: "Apparently, my prescription was accidentally mixed up with another patient's order that had a similar name on file.",
+        jumbled: ["another", "mixed", "accidentally", "prescription", "on", "a", "Apparently,", "that", "up", "order", "name", "similar", "patient's", "my", "with", "was", "file.", "had"],
+      },
+      {
+        target: "“I'm genuinely sorry about this, Elena. If you had taken this dosage, it could have caused you some unpleasant side effects,” he explains honestly.",
+        jumbled: ["dosage,", "If", "you", "this,", "this", "could", "caused", "you", "about", "unpleasant", "effects,”", "genuinely", "it", "explains", "honestly.", "he", "had", "taken", "side", "“I'm", "some", "sorry", "have", "Elena."],
+      },
+      {
+        target: "Hearing this makes me feel slightly uneasy, though I'm also relieved I caught the mistake before it actually became a problem.",
+        jumbled: ["uneasy,", "also", "feel", "I", "makes", "problem.", "before", "slightly", "a", "I'm", "me", "it", "actually", "this", "became", "relieved", "caught", "the", "mistake", "Hearing", "though"],
+      },
+      {
+        target: "He assures me that correcting this will only take a few more minutes now that the cause has been identified.",
+        jumbled: ["the", "a", "more", "minutes", "now", "this", "that", "take", "cause", "been", "only", "me", "will", "has", "that", "assures", "identified.", "few", "correcting", "He"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling relieved you caught a mistake in time.",
     mySentenceExample: "I felt relieved I caught the mistake in time.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Elena appreciates his honesty about the mistake.", answer: true },
     ],
     buildSentence: [
-      { target: "He prepares the prescription himself.", jumbled: ["He", "prepares", "the", "prescription", "himself."] },
-      { target: "I appreciate his honesty here.", jumbled: ["I", "appreciate", "his", "honesty", "here."] },
-      { target: "We take this extremely seriously.", jumbled: ["We", "take", "this", "extremely", "seriously."] },
-      { target: "Rare human errors can still slip through.", jumbled: ["Rare", "human", "errors", "can", "still", "slip", "through."] },
-      { target: "I'll personally be reporting this internally.", jumbled: ["I'll", "personally", "be", "reporting", "this", "internally."] },
+      {
+        target: "Mr. Diaz personally prepares the corrected prescription himself this time, double-checking every detail before sealing the new bag.",
+        jumbled: ["corrected", "the", "the", "bag.", "new", "every", "detail", "himself", "double-checking", "Diaz", "Mr.", "before", "sealing", "personally", "prescription", "this", "time,", "prepares"],
+      },
+      {
+        target: "I ask what typically happens in situations like this, curious whether such mix-ups occur often at pharmacies generally.",
+        jumbled: ["this,", "ask", "I", "at", "situations", "whether", "curious", "occur", "mix-ups", "happens", "pharmacies", "often", "in", "generally.", "typically", "such", "like", "what"],
+      },
+      {
+        target: "He explains that strict double-checking procedures usually prevent this, though rare human errors can still occasionally slip through the system.",
+        jumbled: ["slip", "usually", "that", "though", "through", "human", "rare", "explains", "double-checking", "occasionally", "this,", "can", "still", "strict", "prevent", "He", "errors", "the", "system.", "procedures"],
+      },
+      {
+        target: "“We take this extremely seriously, Elena, and I'll personally be reporting this internally so it gets reviewed properly,” he assures me.",
+        jumbled: ["gets", "assures", "Elena,", "so", "extremely", "personally", "reporting", "internally", "this", "he", "me.", "be", "seriously,", "it", "take", "reviewed", "properly,”", "this", "I'll", "“We", "and"],
+      },
+      {
+        target: "I appreciate his honesty, especially since he easily could have downplayed how serious this mistake actually was.",
+        jumbled: ["have", "his", "could", "he", "I", "since", "this", "appreciate", "actually", "especially", "was.", "easily", "serious", "honesty,", "downplayed", "how", "mistake"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone being honest about a mistake instead of hiding it.",
     mySentenceExample: "He was honest about the mistake instead of hiding it.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "Elena feels no reassurance from this extra caution.", answer: false },
     ],
     buildSentence: [
-      { target: "He asks a colleague to verify.", jumbled: ["He", "asks", "a", "colleague", "to", "verify."] },
-      { target: "This reassures me considerably now.", jumbled: ["This", "reassures", "me", "considerably", "now."] },
-      { target: "She checks every number carefully.", jumbled: ["She", "checks", "every", "number", "carefully."] },
-      { target: "He explains each instruction clearly and slowly.", jumbled: ["He", "explains", "each", "instruction", "clearly", "and", "slowly."] },
-      { target: "Call immediately if anything seems unclear later.", jumbled: ["Call", "immediately", "if", "anything", "seems", "unclear", "later."] },
+      {
+        target: "Mr. Diaz asks a colleague to independently verify the corrected prescription, just to be completely certain.",
+        jumbled: ["asks", "independently", "just", "to", "the", "certain.", "corrected", "Diaz", "prescription,", "completely", "colleague", "to", "Mr.", "be", "verify", "a"],
+      },
+      {
+        target: "His colleague checks the dosage against the original doctor's order, comparing every number carefully one final time.",
+        jumbled: ["against", "every", "dosage", "the", "number", "checks", "colleague", "order,", "doctor's", "original", "time.", "carefully", "His", "comparing", "the", "one", "final"],
+      },
+      {
+        target: "Mr. Diaz finally hands me the bag.",
+        jumbled: ["the", "hands", "Mr.", "finally", "me", "Diaz", "bag."],
+      },
+      {
+        target: "“Here you go, Elena, everything's been double-checked twice now,” he says, explaining each instruction clearly and slowly this time.",
+        jumbled: ["you", "clearly", "and", "now,”", "explaining", "everything's", "been", "go,", "time.", "Elena,", "twice", "“Here", "this", "says,", "he", "instruction", "each", "double-checked", "slowly"],
+      },
+      {
+        target: "He also writes his direct extension on a small card, telling me to call immediately if anything seems even slightly unclear later.",
+        jumbled: ["on", "his", "call", "writes", "telling", "unclear", "immediately", "slightly", "also", "small", "a", "seems", "even", "card,", "later.", "anything", "if", "to", "He", "extension", "me", "direct"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone double-checking something carefully to avoid a mistake.",
     mySentenceExample: "The pharmacist double-checked everything carefully to avoid a mistake.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Elena feels glad everyone took this seriously.", answer: true },
     ],
     buildSentence: [
-      { target: "I decide to call today.", jumbled: ["I", "decide", "to", "call", "today."] },
-      { target: "She thanks me for reporting it.", jumbled: ["She", "thanks", "me", "for", "reporting", "it."] },
-      { target: "I'm genuinely glad about this.", jumbled: ["I'm", "genuinely", "glad", "about", "this."] },
-      { target: "My original prescription itself was correct.", jumbled: ["My", "original", "prescription", "itself", "was", "correct."] },
-      { target: "The whole experience felt slightly unsettling.", jumbled: ["The", "whole", "experience", "felt", "slightly", "unsettling."] },
+      {
+        target: "That evening, I decide to call my doctor's office as well, just to mention what happened at the pharmacy earlier.",
+        jumbled: ["at", "my", "That", "as", "call", "the", "just", "doctor's", "earlier.", "mention", "well,", "evening,", "office", "happened", "I", "to", "decide", "to", "what", "pharmacy"],
+      },
+      {
+        target: "“Thank you for calling, Elena, the doctor will definitely want to know about this,” the receptionist says, given the potential seriousness involved.",
+        jumbled: ["for", "definitely", "the", "doctor", "the", "involved.", "seriousness", "given", "want", "says,", "receptionist", "will", "calling,", "about", "potential", "this,”", "“Thank", "to", "the", "you", "know", "Elena,"],
+      },
+      {
+        target: "I explain the situation clearly, including how it was caught and corrected before I actually took anything.",
+        jumbled: ["caught", "was", "and", "anything.", "corrected", "actually", "including", "the", "I", "explain", "took", "I", "situation", "how", "clearly,", "it", "before"],
+      },
+      {
+        target: "She reassures me that my original prescription itself was correct, and only the pharmacy's internal system had the error.",
+        jumbled: ["reassures", "itself", "and", "She", "me", "system", "original", "that", "the", "had", "pharmacy's", "prescription", "correct,", "error.", "was", "internal", "only", "my", "the"],
+      },
+      {
+        target: "I'm genuinely glad everyone involved took it as seriously as they did.",
+        jumbled: ["took", "it", "did.", "as", "genuinely", "as", "involved", "glad", "I'm", "seriously", "everyone", "they"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reporting a problem to make sure it gets fixed properly.",
     mySentenceExample: "I reported the problem to make sure it got fixed properly.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "Elena feels annoyed that they called to follow up.", answer: false },
     ],
     buildSentence: [
-      { target: "This honestly surprises me now.", jumbled: ["This", "honestly", "surprises", "me", "now."] },
-      { target: "I thank him again today.", jumbled: ["I", "thank", "him", "again", "today."] },
-      { target: "Everything seems fine so far.", jumbled: ["Everything", "seems", "fine", "so", "far."] },
-      { target: "This feels genuinely worthwhile in the end.", jumbled: ["This", "feels", "genuinely", "worthwhile", "in", "the", "end."] },
-      { target: "They added a step for similar patient names.", jumbled: ["They", "added", "a", "step", "for", "similar", "patient", "names."] },
+      {
+        target: "A few days later, the pharmacy calls to follow up, which honestly surprises me since I hadn't expected any further contact.",
+        jumbled: ["expected", "to", "follow", "contact.", "since", "A", "any", "surprises", "up,", "I", "days", "which", "hadn't", "me", "honestly", "the", "few", "later,", "calls", "pharmacy", "further"],
+      },
+      {
+        target: "It's Mr. Diaz himself.",
+        jumbled: ["Diaz", "It's", "Mr.", "himself."],
+      },
+      {
+        target: "“Hi Elena, just checking in on how the new prescription is working,” he says, asking whether the corrected medication has been working properly without any unexpected issues.",
+        jumbled: ["how", "without", "says,", "“Hi", "any", "the", "is", "issues.", "the", "new", "Elena,", "he", "medication", "on", "been", "whether", "properly", "has", "just", "working", "prescription", "working,”", "in", "unexpected", "corrected", "checking", "asking"],
+      },
+      {
+        target: "I confirm everything seems fine so far, and I thank him again for handling the entire situation so professionally.",
+        jumbled: ["I", "far,", "I", "and", "for", "seems", "the", "so", "professionally.", "confirm", "thank", "so", "again", "him", "handling", "fine", "situation", "everything", "entire"],
+      },
+      {
+        target: "He mentions that the pharmacy has since added an additional verification step specifically for prescriptions with similar patient names.",
+        jumbled: ["similar", "verification", "that", "step", "He", "pharmacy", "for", "specifically", "an", "since", "patient", "mentions", "additional", "prescriptions", "added", "names.", "has", "with", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving a follow-up call after reporting a problem.",
     mySentenceExample: "I received a follow-up call after reporting the problem.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Elena believes sharing this story is completely pointless.", answer: false },
     ],
     buildSentence: [
-      { target: "I mention this over coffee.", jumbled: ["I", "mention", "this", "over", "coffee."] },
-      { target: "She agrees with me now.", jumbled: ["She", "agrees", "with", "me", "now."] },
-      { target: "This is always worth double-checking.", jumbled: ["This", "is", "always", "worth", "double-checking."] },
-      { target: "She rarely checks her own labels.", jumbled: ["She", "rarely", "checks", "her", "own", "labels."] },
-      { target: "This might help prevent a similar mix-up.", jumbled: ["This", "might", "help", "prevent", "a", "similar", "mix-up."] },
+      {
+        target: "Over coffee with a friend, I mention the whole pharmacy situation, partly as a warning and partly out of genuine relief.",
+        jumbled: ["warning", "genuine", "pharmacy", "out", "a", "with", "situation,", "whole", "mention", "friend,", "the", "and", "of", "Over", "coffee", "partly", "relief.", "as", "partly", "I", "a"],
+      },
+      {
+        target: "“Wow, Elena, I don't think I've ever actually read my own label,” she admits, saying she usually trusts the process completely without a second thought.",
+        jumbled: ["actually", "admits,", "thought.", "label,”", "usually", "second", "without", "don't", "think", "I", "“Wow,", "the", "Elena,", "saying", "trusts", "read", "process", "my", "completely", "a", "I've", "she", "she", "ever", "own"],
+      },
+      {
+        target: "I explain that, on the other hand, this experience taught me it's always worth double-checking, however busy or trusting you normally feel.",
+        jumbled: ["worth", "always", "the", "experience", "you", "or", "that,", "I", "other", "me", "however", "taught", "double-checking,", "normally", "hand,", "explain", "feel.", "busy", "trusting", "this", "it's", "on"],
+      },
+      {
+        target: "She agrees, saying she'll probably start reading labels more carefully herself starting from now on.",
+        jumbled: ["labels", "carefully", "from", "herself", "now", "agrees,", "She", "starting", "on.", "she'll", "more", "reading", "start", "probably", "saying"],
+      },
+      {
+        target: "It feels strange, but sharing this story might actually help prevent a similar mix-up for someone else entirely.",
+        jumbled: ["story", "It", "similar", "but", "strange,", "mix-up", "sharing", "this", "might", "someone", "else", "help", "prevent", "a", "feels", "for", "entirely.", "actually"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about sharing a lesson you learned so it might help someone else.",
     mySentenceExample: "I shared my lesson so it might help someone else too.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Elena feels questioning something politely is usually pointless.", answer: false },
     ],
     buildSentence: [
-      { target: "I look back on this now.", jumbled: ["I", "look", "back", "on", "this", "now."] },
-      { target: "I've started keeping a checklist.", jumbled: ["I've", "started", "keeping", "a", "checklist."] },
-      { target: "Questioning something politely is always better.", jumbled: ["Questioning", "something", "politely", "is", "always", "better."] },
-      { target: "Staying alert allowed him to correct the problem.", jumbled: ["Staying", "alert", "allowed", "him", "to", "correct", "the", "problem."] },
-      { target: "If I hadn't checked, the outcome might have been dangerous.", jumbled: ["If", "I", "hadn't", "checked,", "the", "outcome", "might", "have", "been", "dangerous."] },
+      {
+        target: "Looking back on the entire experience, I realize how easily this small mix-up could have turned into something far more serious.",
+        jumbled: ["into", "Looking", "serious.", "experience,", "far", "on", "how", "entire", "the", "realize", "back", "more", "something", "easily", "mix-up", "have", "this", "I", "could", "small", "turned"],
+      },
+      {
+        target: "The outcome might have been genuinely dangerous.",
+        jumbled: ["been", "The", "genuinely", "might", "have", "outcome", "dangerous."],
+      },
+      {
+        target: "Instead, staying alert and speaking up calmly allowed Mr. Diaz to actually catch and correct the problem quickly.",
+        jumbled: ["Diaz", "Instead,", "and", "Mr.", "and", "staying", "allowed", "correct", "the", "catch", "up", "calmly", "actually", "to", "speaking", "problem", "quickly.", "alert"],
+      },
+      {
+        target: "I've started keeping a small checklist for anything health-related now, the first page titled simply “Elena's Health Checklist,” covering everything from prescriptions to appointment details.",
+        jumbled: ["everything", "small", "anything", "to", "started", "appointment", "page", "for", "from", "checklist", "“Elena's", "covering", "a", "now,", "first", "titled", "health-related", "Health", "the", "prescriptions", "details.", "keeping", "Checklist,”", "I've", "simply"],
+      },
+      {
+        target: "In the end, this experience reminded me that questioning something politely is always better than simply assuming it's fine.",
+        jumbled: ["is", "In", "politely", "than", "the", "me", "simply", "questioning", "better", "that", "experience", "fine.", "end,", "always", "reminded", "something", "it's", "this", "assuming"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from catching a mistake before it caused harm.",
     mySentenceExample: "I learned to always double-check before assuming something is correct.",

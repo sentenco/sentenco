@@ -48,11 +48,26 @@ export const CHAPTERS = [
       { text: "Zoe thinks comparing herself online isn't healthy.", answer: true },
     ],
     buildSentence: [
-      { target: "I felt strangely empty.", jumbled: ["felt", "strangely", "I", "empty."] },
-      { target: "Something has to change.", jumbled: ["has", "to", "Something", "change."] },
-      { target: "I can't seem to stop.", jumbled: ["can't", "seem", "I", "to", "stop."] },
-      { target: "I was scrolling when I felt this way.", jumbled: ["I", "was", "scrolling", "when", "I", "felt", "this", "way."] },
-      { target: "Although I'm not sure what that should look like, something has to change.", jumbled: ["Although", "I'm", "not", "sure", "what", "that", "should", "look", "like,", "something", "has", "to", "change."] },
+      {
+        target: "Lately, I've noticed that I check my phone almost constantly, even when nothing important is happening.",
+        jumbled: ["I", "my", "happening.", "that", "almost", "I've", "noticed", "Lately,", "constantly,", "important", "check", "is", "when", "even", "nothing", "phone"],
+      },
+      {
+        target: "Last night, I was scrolling through photos of a classmate's vacation when I suddenly felt strangely empty inside.",
+        jumbled: ["a", "empty", "night,", "I", "inside.", "of", "strangely", "I", "vacation", "through", "Last", "photos", "was", "when", "felt", "suddenly", "classmate's", "scrolling"],
+      },
+      {
+        target: "Everyone online seems to be having a more exciting, more successful life than I am, or at least that's how it feels.",
+        jumbled: ["than", "successful", "a", "or", "how", "more", "Everyone", "having", "feels.", "more", "be", "am,", "it", "online", "life", "I", "that's", "at", "least", "to", "exciting,", "seems"],
+      },
+      {
+        target: "I know comparing myself like this isn't healthy, but I can't seem to stop doing it anyway.",
+        jumbled: ["stop", "this", "but", "know", "it", "I", "to", "myself", "anyway.", "can't", "comparing", "doing", "healthy,", "I", "like", "seem", "isn't"],
+      },
+      {
+        target: "\"Something has to change, Zoe,\" I tell myself, although I'm not entirely sure what that should look like yet.",
+        jumbled: ["should", "has", "look", "I'm", "yet.", "that", "sure", "to", "not", "tell", "\"Something", "although", "entirely", "like", "Zoe,\"", "I", "change,", "myself,", "what"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a habit you noticed you wanted to change.",
     mySentenceExample: "I noticed I wanted to change how much time I spend online.",
@@ -77,11 +92,26 @@ export const CHAPTERS = [
       { text: "Zoe feels a little curious despite her fear.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel a flash of panic.", jumbled: ["feel", "a", "I", "flash", "of", "panic."] },
-      { target: "Priya suggests something bold today.", jumbled: ["Priya", "suggests", "something", "bold", "today."] },
-      { target: "I'm genuinely curious what would happen.", jumbled: ["I'm", "genuinely", "curious", "what", "would", "happen."] },
-      { target: "If you deleted the apps, you wouldn't be tempted.", jumbled: ["If", "you", "deleted", "the", "apps,", "you", "wouldn't", "be", "tempted."] },
-      { target: "Although the idea terrifies me, part of me is curious.", jumbled: ["Although", "the", "idea", "terrifies", "me,", "part", "of", "me", "is", "curious."] },
+      {
+        target: "The next day, I tell Priya how empty and exhausted social media has been making me feel.",
+        jumbled: ["Priya", "The", "feel.", "making", "I", "tell", "day,", "social", "how", "next", "and", "media", "been", "empty", "exhausted", "me", "has"],
+      },
+      {
+        target: "Instead of just sympathizing, she suggests something bold: a full week without any social media apps at all.",
+        jumbled: ["sympathizing,", "all.", "just", "any", "bold:", "week", "at", "Instead", "she", "without", "suggests", "apps", "social", "full", "media", "of", "a", "something"],
+      },
+      {
+        target: "“If you deleted the apps, Zoe, you wouldn't even be tempted to check them,” she reasons calmly.",
+        jumbled: ["the", "Zoe,", "tempted", "check", "deleted", "to", "you", "you", "even", "she", "apps,", "calmly.", "“If", "wouldn't", "them,”", "reasons", "be"],
+      },
+      {
+        target: "I feel a flash of panic just imagining it, since I've never gone more than a few hours without checking something.",
+        jumbled: ["hours", "just", "than", "few", "flash", "feel", "something.", "a", "since", "I", "a", "without", "panic", "never", "of", "it,", "more", "imagining", "I've", "checking", "gone"],
+      },
+      {
+        target: "Priya, who tried something similar last year, says the first two days were the hardest by far.",
+        jumbled: ["tried", "days", "were", "two", "far.", "year,", "who", "says", "hardest", "last", "the", "something", "the", "first", "Priya,", "by", "similar"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a bold idea a friend once suggested to you.",
     mySentenceExample: "My friend suggested a bold idea to try running a marathon together.",
@@ -106,11 +136,26 @@ export const CHAPTERS = [
       { text: "Zoe decides to reinstall the apps immediately.", answer: false },
     ],
     buildSentence: [
-      { target: "My thumb hovers over it.", jumbled: ["thumb", "hovers", "My", "over", "it."] },
-      { target: "There's no turning back now.", jumbled: ["is", "no", "There's", "turning", "back", "now."] },
-      { target: "I finally press delete now.", jumbled: ["I", "finally", "press", "delete", "now."] },
-      { target: "My hands are still shaking a little.", jumbled: ["My", "hands", "are", "still", "shaking", "a", "little."] },
-      { target: "Whatever happens this week, I have already committed.", jumbled: ["Whatever", "happens", "this", "week,", "I", "have", "already", "committed."] },
+      {
+        target: "That evening, I sit on my bed, staring at the apps I want to remove for the week ahead.",
+        jumbled: ["want", "evening,", "bed,", "I", "I", "staring", "ahead.", "That", "my", "for", "week", "sit", "the", "the", "to", "at", "on", "apps", "remove"],
+      },
+      {
+        target: "My thumb hovers over the first icon for almost a full minute before I finally press delete.",
+        jumbled: ["hovers", "delete.", "I", "icon", "the", "for", "finally", "over", "thumb", "minute", "My", "first", "before", "almost", "press", "a", "full"],
+      },
+      {
+        target: "My home screen looks strangely empty, almost like something is missing from my life already.",
+        jumbled: ["looks", "is", "already.", "almost", "missing", "life", "My", "something", "strangely", "from", "screen", "empty,", "my", "like", "home"],
+      },
+      {
+        target: "\"No turning back now, Zoe,\" I whisper to the empty room.",
+        jumbled: ["whisper", "to", "empty", "room.", "now,", "back", "turning", "Zoe,\"", "the", "\"No", "I"],
+      },
+      {
+        target: "I set a reminder for exactly seven days from now, when I will allow myself to reinstall everything.",
+        jumbled: ["everything.", "from", "I", "seven", "to", "allow", "a", "for", "exactly", "will", "days", "myself", "I", "reinstall", "set", "when", "reminder", "now,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about committing to a difficult decision.",
     mySentenceExample: "I committed to waking up earlier even though it felt hard at first.",
@@ -135,11 +180,26 @@ export const CHAPTERS = [
       { text: "This first day feels easier than Zoe expected.", answer: false },
     ],
     buildSentence: [
-      { target: "The silence feels uncomfortable now.", jumbled: ["silence", "feels", "The", "uncomfortable", "now."] },
-      { target: "I catch myself unlocking my phone.", jumbled: ["I", "catch", "myself", "unlocking", "my", "phone."] },
-      { target: "I feel a strange pang of exclusion.", jumbled: ["I", "feel", "a", "strange", "pang", "of", "exclusion."] },
-      { target: "This day feels harder than I expected.", jumbled: ["This", "day", "feels", "harder", "than", "I", "expected."] },
-      { target: "I had never realized how much I depended on this.", jumbled: ["I", "had", "never", "realized", "how", "much", "I", "depended", "on", "this."] },
+      {
+        target: "By the next morning, I already notice how many times I reach for my phone out of pure habit.",
+        jumbled: ["the", "my", "how", "times", "phone", "By", "I", "out", "of", "notice", "next", "reach", "already", "habit.", "pure", "many", "for", "morning,", "I"],
+      },
+      {
+        target: "I catch myself unlocking my phone at least six times, each time remembering there's nothing there now.",
+        jumbled: ["least", "catch", "now.", "myself", "remembering", "there's", "phone", "at", "nothing", "my", "there", "six", "time", "unlocking", "times,", "I", "each"],
+      },
+      {
+        target: "At lunch, I overhear friends discussing a video that went viral, and I feel a strange pang of exclusion.",
+        jumbled: ["discussing", "pang", "video", "exclusion.", "viral,", "of", "overhear", "I", "a", "lunch,", "strange", "that", "I", "went", "feel", "a", "At", "friends", "and"],
+      },
+      {
+        target: "I had never realized how much of my social life actually depended on staying constantly updated online.",
+        jumbled: ["actually", "much", "constantly", "never", "realized", "social", "staying", "how", "depended", "had", "I", "my", "of", "on", "life", "online.", "updated"],
+      },
+      {
+        target: "This first day feels much harder than I honestly expected it to be.",
+        jumbled: ["first", "to", "be.", "This", "feels", "it", "harder", "I", "much", "expected", "day", "honestly", "than"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a habit that was harder to break than you expected.",
     mySentenceExample: "Breaking my habit of checking messages was harder than I expected.",
@@ -164,11 +224,26 @@ export const CHAPTERS = [
       { text: "Rediscovering this hobby feels comforting to Zoe.", answer: true },
     ],
     buildSentence: [
-      { target: "I dig out my sketchbook.", jumbled: ["dig", "out", "I", "my", "sketchbook."] },
-      { target: "This feels unexpectedly comforting now.", jumbled: ["feels", "unexpectedly", "This", "comforting", "now."] },
-      { target: "I completely forgot to check the time.", jumbled: ["I", "completely", "forgot", "to", "check", "the", "time."] },
-      { target: "I used my phone to avoid boredom.", jumbled: ["I", "used", "my", "phone", "to", "avoid", "boredom."] },
-      { target: "While I was drawing, I forgot about everything else.", jumbled: ["While", "I", "was", "drawing,", "I", "forgot", "about", "everything", "else."] },
+      {
+        target: "Without endless scrolling to fill my free time, I suddenly realize how many empty hours I actually have.",
+        jumbled: ["have.", "Without", "how", "hours", "scrolling", "actually", "my", "time,", "I", "endless", "I", "fill", "many", "empty", "realize", "suddenly", "to", "free"],
+      },
+      {
+        target: "That evening, instead of reaching for my phone, I dig out an old sketchbook I hadn't touched in months.",
+        jumbled: ["in", "for", "old", "phone,", "hadn't", "reaching", "touched", "an", "of", "months.", "dig", "out", "That", "I", "instead", "sketchbook", "my", "I", "evening,"],
+      },
+      {
+        target: "I sit by my window and draw for almost an hour, something I used to genuinely love doing years ago.",
+        jumbled: ["by", "doing", "draw", "used", "almost", "window", "hour,", "my", "an", "something", "to", "genuinely", "sit", "I", "for", "ago.", "years", "love", "I", "and"],
+      },
+      {
+        target: "It occurs to me that I had been using my phone partly to avoid boredom, but also to avoid deeper, quieter thoughts.",
+        jumbled: ["also", "had", "avoid", "using", "partly", "to", "It", "to", "avoid", "deeper,", "to", "been", "me", "occurs", "my", "that", "but", "quieter", "boredom,", "I", "phone", "thoughts."],
+      },
+      {
+        target: "Rediscovering this small hobby feels unexpectedly comforting, like reconnecting with an old friend.",
+        jumbled: ["Rediscovering", "comforting,", "small", "friend.", "reconnecting", "old", "unexpectedly", "feels", "hobby", "with", "this", "an", "like"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about rediscovering a hobby you had forgotten about.",
     mySentenceExample: "I rediscovered painting after not doing it for years.",
@@ -193,11 +268,26 @@ export const CHAPTERS = [
       { text: "Zoe feels this text conversation is less genuine.", answer: false },
     ],
     buildSentence: [
-      { target: "I pause, remembering that day.", jumbled: ["pause,", "remembering", "I", "that", "day."] },
-      { target: "I text Priya directly instead.", jumbled: ["text", "Priya", "I", "directly", "instead."] },
-      { target: "My finger hovers over the button.", jumbled: ["My", "finger", "hovers", "over", "the", "button."] },
-      { target: "This feels like a genuine connection anyway.", jumbled: ["This", "feels", "like", "a", "genuine", "connection", "anyway."] },
-      { target: "If I reinstalled it now, my effort would be wasted.", jumbled: ["If", "I", "reinstalled", "it", "now,", "my", "effort", "would", "be", "wasted."] },
+      {
+        target: "On day four, something stressful happens at school, and my first instinct is to post about it online.",
+        jumbled: ["school,", "first", "instinct", "happens", "online.", "stressful", "it", "post", "at", "and", "my", "something", "about", "is", "to", "On", "day", "four,"],
+      },
+      {
+        target: "I open the app store without even thinking, my finger already hovering over the download button.",
+        jumbled: ["finger", "even", "app", "without", "hovering", "my", "over", "button.", "thinking,", "store", "the", "I", "the", "open", "already", "download"],
+      },
+      {
+        target: "I pause, remembering how I felt during that first uncomfortable day, and how proud I had been of getting through it.",
+        jumbled: ["I", "during", "I", "first", "that", "through", "I", "how", "had", "pause,", "uncomfortable", "day,", "proud", "remembering", "how", "it.", "been", "and", "felt", "getting", "of"],
+      },
+      {
+        target: "All that earlier effort would basically be wasted.",
+        jumbled: ["effort", "that", "basically", "be", "wasted.", "All", "would", "earlier"],
+      },
+      {
+        target: "She responds within minutes, and somehow, this feels like a more genuine kind of connection anyway.",
+        jumbled: ["feels", "connection", "responds", "She", "kind", "of", "within", "this", "genuine", "minutes,", "and", "like", "anyway.", "a", "more", "somehow,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about resisting a temptation to go back to an old habit.",
     mySentenceExample: "I resisted the temptation to skip practice when I felt tired.",
@@ -222,11 +312,26 @@ export const CHAPTERS = [
       { text: "Zoe feels this wasn't a particularly meaningful conversation.", answer: false },
     ],
     buildSentence: [
-      { target: "We talk uninterrupted today.", jumbled: ["talk", "uninterrupted", "We", "today."] },
-      { target: "This feels more vulnerable somehow.", jumbled: ["feels", "more", "This", "vulnerable", "somehow."] },
-      { target: "She admits she's been thinking too.", jumbled: ["She", "admits", "she's", "been", "thinking", "too."] },
-      { target: "Neither of us has that option today.", jumbled: ["Neither", "of", "us", "has", "that", "option", "today."] },
-      { target: "This might be the longest conversation we've had in months.", jumbled: ["This", "might", "be", "the", "longest", "conversation", "we've", "had", "in", "months."] },
+      {
+        target: "On day five, Priya and I meet at the park, and I notice something different about our conversation right away.",
+        jumbled: ["and", "something", "day", "Priya", "different", "five,", "On", "and", "the", "our", "away.", "I", "conversation", "about", "right", "meet", "I", "park,", "at", "notice"],
+      },
+      {
+        target: "Normally, we would both glance at our phones occasionally, even mid-conversation, without really meaning to.",
+        jumbled: ["glance", "would", "really", "Normally,", "phones", "to.", "both", "even", "our", "we", "mid-conversation,", "occasionally,", "without", "meaning", "at"],
+      },
+      {
+        target: "Today, neither of us has that option, so we talk uninterrupted for almost two hours straight.",
+        jumbled: ["uninterrupted", "that", "us", "straight.", "neither", "talk", "almost", "hours", "has", "so", "for", "option,", "two", "Today,", "we", "of"],
+      },
+      {
+        target: "I tell her things I probably wouldn't have shared over text, since talking in person feels more vulnerable somehow.",
+        jumbled: ["probably", "in", "text,", "tell", "shared", "person", "I", "her", "have", "talking", "over", "somehow.", "things", "vulnerable", "I", "since", "more", "wouldn't", "feels"],
+      },
+      {
+        target: "“I've been thinking about deleting mine too, Zoe, not just for this one week,” she admits.",
+        jumbled: ["too,", "one", "mine", "“I've", "deleting", "just", "for", "admits.", "about", "been", "this", "thinking", "not", "she", "week,”", "Zoe,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a meaningful conversation you had without distractions.",
     mySentenceExample: "I had a meaningful conversation with my grandmother without any distractions.",
@@ -251,11 +356,26 @@ export const CHAPTERS = [
       { text: "Zoe decides to rush the decision immediately.", answer: false },
     ],
     buildSentence: [
-      { target: "The reminder finally goes off.", jumbled: ["reminder", "finally", "The", "goes", "off."] },
-      { target: "I open my journal instead.", jumbled: ["open", "my", "I", "journal", "instead."] },
-      { target: "I feel calmer and more present.", jumbled: ["I", "feel", "calmer", "and", "more", "present."] },
-      { target: "I decide to think about this carefully.", jumbled: ["I", "decide", "to", "think", "about", "this", "carefully."] },
-      { target: "If I reinstall everything, I might slide back into old habits.", jumbled: ["If", "I", "reinstall", "everything,", "I", "might", "slide", "back", "into", "old", "habits."] },
+      {
+        target: "The reminder finally goes off: seven days have passed, and I'm technically free to reinstall everything now.",
+        jumbled: ["now.", "passed,", "to", "and", "reinstall", "goes", "off:", "The", "seven", "technically", "reminder", "finally", "I'm", "have", "days", "everything", "free"],
+      },
+      {
+        target: "Surprisingly, I don't feel the urgent excitement I expected to feel at this exact moment.",
+        jumbled: ["Surprisingly,", "moment.", "I", "expected", "I", "feel", "excitement", "this", "urgent", "exact", "the", "to", "don't", "at", "feel"],
+      },
+      {
+        target: "Instead, I open my journal, where I've been writing down thoughts and feelings all week instead of posting them.",
+        jumbled: ["I", "writing", "posting", "instead", "week", "down", "and", "them.", "all", "thoughts", "open", "been", "I've", "where", "of", "feelings", "my", "Instead,", "journal,"],
+      },
+      {
+        target: "Reading back through my entries, I notice how much calmer and more present I have generally felt lately.",
+        jumbled: ["how", "my", "Reading", "calmer", "lately.", "entries,", "I", "present", "generally", "notice", "I", "back", "felt", "more", "through", "and", "have", "much"],
+      },
+      {
+        target: "\"No rush, Zoe,\" I write at the bottom of the page, and I decide to think about this decision carefully rather than rushing into anything immediately.",
+        jumbled: ["I", "immediately.", "rushing", "write", "about", "carefully", "to", "this", "into", "I", "the", "page,", "of", "and", "than", "think", "anything", "rush,", "\"No", "decide", "rather", "bottom", "decision", "Zoe,\"", "the", "at"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reaching a goal and reflecting on what you learned.",
     mySentenceExample: "Reaching my goal taught me that I am stronger than I thought.",
@@ -280,11 +400,26 @@ export const CHAPTERS = [
       { text: "Zoe feels this new approach is unsustainable.", answer: false },
     ],
     buildSentence: [
-      { target: "I decide on a middle ground.", jumbled: ["decide", "on", "I", "a", "middle", "ground."] },
-      { target: "I turn off all notifications.", jumbled: ["turn", "off", "I", "all", "notifications."] },
-      { target: "I feel like I'm in charge now.", jumbled: ["I", "feel", "like", "I'm", "in", "charge", "now."] },
-      { target: "This feels more sustainable than either extreme.", jumbled: ["This", "feels", "more", "sustainable", "than", "either", "extreme."] },
-      { target: "If a notification isn't controlling me, I'm in charge.", jumbled: ["If", "a", "notification", "isn't", "controlling", "me,", "I'm", "in", "charge."] },
+      {
+        target: "I decide on a middle ground instead of an all-or-nothing choice.",
+        jumbled: ["choice.", "instead", "an", "ground", "I", "a", "decide", "of", "on", "all-or-nothing", "middle"],
+      },
+      {
+        target: "I reinstall only one app, the one I actually use to stay connected with distant relatives, nothing else.",
+        jumbled: ["reinstall", "the", "else.", "only", "I", "stay", "with", "one", "distant", "app,", "I", "one", "use", "to", "actually", "relatives,", "nothing", "connected"],
+      },
+      {
+        target: "I also turn off all notifications, so checking the app becomes a conscious choice rather than an automatic reflex.",
+        jumbled: ["I", "an", "so", "turn", "reflex.", "becomes", "notifications,", "a", "conscious", "off", "also", "the", "all", "rather", "than", "choice", "checking", "automatic", "app"],
+      },
+      {
+        target: "I feel like I'm the one actually in charge now.",
+        jumbled: ["like", "actually", "I", "the", "I'm", "now.", "charge", "in", "feel", "one"],
+      },
+      {
+        target: "This new approach feels more sustainable than either extreme, whether that's constant scrolling or complete avoidance.",
+        jumbled: ["or", "scrolling", "that's", "extreme,", "than", "more", "This", "either", "constant", "avoidance.", "sustainable", "complete", "feels", "new", "approach", "whether"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finding a balanced approach to something in your life.",
     mySentenceExample: "I found a balanced approach to studying and relaxing during exams.",
@@ -309,11 +444,26 @@ export const CHAPTERS = [
       { text: "Zoe learned that stepping back helps her see herself clearly.", answer: true },
     ],
     buildSentence: [
-      { target: "I still draw regularly now.", jumbled: ["still", "draw", "I", "regularly", "now."] },
-      { target: "My screen time has dropped significantly.", jumbled: ["My", "screen", "time", "has", "dropped", "significantly."] },
-      { target: "I barely recognize how anxious I felt.", jumbled: ["I", "barely", "recognize", "how", "anxious", "I", "felt."] },
-      { target: "We meet in person far more often now.", jumbled: ["We", "meet", "in", "person", "far", "more", "often", "now."] },
-      { target: "Stepping back sometimes helps you see yourself more clearly.", jumbled: ["Stepping", "back", "sometimes", "helps", "you", "see", "yourself", "more", "clearly."] },
+      {
+        target: "A month later, I look back at that first uncomfortable day and barely recognize how anxious I felt then.",
+        jumbled: ["A", "day", "felt", "look", "at", "recognize", "month", "I", "and", "back", "then.", "first", "later,", "that", "I", "how", "uncomfortable", "barely", "anxious"],
+      },
+      {
+        target: "My screen time has dropped significantly, not because I forced it, but because I genuinely don't need it as much anymore.",
+        jumbled: ["My", "because", "screen", "it", "it,", "not", "I", "has", "but", "significantly,", "need", "as", "anymore.", "much", "forced", "I", "dropped", "don't", "time", "genuinely", "because"],
+      },
+      {
+        target: "I remember how empty that feeling actually was.",
+        jumbled: ["empty", "feeling", "how", "I", "remember", "actually", "that", "was."],
+      },
+      {
+        target: "Priya and I meet in person far more often now, having real conversations instead of just liking each other's posts.",
+        jumbled: ["I", "Priya", "conversations", "each", "posts.", "other's", "more", "now,", "in", "real", "liking", "instead", "just", "person", "far", "having", "and", "meet", "often", "of"],
+      },
+      {
+        target: "Taking that break taught me that stepping back sometimes helps you see yourself more clearly.",
+        jumbled: ["stepping", "break", "that", "sometimes", "that", "helps", "you", "Taking", "back", "more", "yourself", "see", "me", "clearly.", "taught"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something a break or pause taught you about yourself.",
     mySentenceExample: "Taking a break from studying taught me that I needed more rest.",

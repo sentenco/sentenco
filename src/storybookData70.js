@@ -42,11 +42,26 @@ export const CHAPTERS = [
       { text: "Ms. Okonkwo says this mirrors real-world disagreement resolution.", answer: true },
     ],
     buildSentence: [
-      { target: "Ms. Okonkwo announces a new assignment.", jumbled: ["Ms.", "Okonkwo", "announces", "a", "new", "assignment."] },
-      { target: "I'm assigned to argue against limits.", jumbled: ["I'm", "assigned", "to", "argue", "against", "limits."] },
-      { target: "We won't simply declare a winner.", jumbled: ["We", "won't", "simply", "declare", "a", "winner."] },
-      { target: "This makes the assignment feel more challenging.", jumbled: ["This", "makes", "the", "assignment", "feel", "more", "challenging."] },
-      { target: "This mirrors how real-world disagreements actually get resolved.", jumbled: ["This", "mirrors", "how", "real-world", "disagreements", "actually", "get", "resolved."] },
+      {
+        target: "Ms. Okonkwo announces a new debate assignment: whether teens should have legally limited screen time, a topic that sparks immediate reactions.",
+        jumbled: ["debate", "topic", "limited", "a", "have", "Okonkwo", "teens", "sparks", "announces", "a", "that", "new", "reactions.", "assignment:", "should", "time,", "immediate", "legally", "whether", "screen", "Ms."],
+      },
+      {
+        target: "I'm assigned to argue against limits, paired with Petra, who's been assigned the opposing position instead.",
+        jumbled: ["against", "been", "Petra,", "position", "opposing", "argue", "instead.", "assigned", "limits,", "to", "the", "who's", "assigned", "I'm", "paired", "with"],
+      },
+      {
+        target: "“Rafael, you'll argue against limits,” she says, writing our pairing on the board.",
+        jumbled: ["writing", "limits,”", "you'll", "against", "argue", "board.", "the", "pairing", "our", "she", "on", "“Rafael,", "says,"],
+      },
+      {
+        target: "Privately, I actually lean toward supporting some limits myself, which makes this assignment feel more challenging than a topic I'd genuinely believed in.",
+        jumbled: ["than", "myself,", "this", "some", "believed", "toward", "actually", "genuinely", "Privately,", "in.", "challenging", "which", "topic", "assignment", "lean", "more", "feel", "makes", "a", "supporting", "limits", "I'd", "I"],
+      },
+      {
+        target: "Ms. Okonkwo explains that afterward, we won't simply declare a winner, but write a reflective synthesis considering both sides fairly.",
+        jumbled: ["synthesis", "write", "winner,", "considering", "Okonkwo", "that", "afterward,", "explains", "but", "simply", "both", "sides", "a", "reflective", "we", "declare", "Ms.", "a", "fairly.", "won't"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being assigned to argue a position you don't fully agree with.",
     mySentenceExample: "I was assigned to argue a position I didn't fully agree with.",
@@ -71,11 +86,26 @@ export const CHAPTERS = [
       { text: "Rafael develops a stronger case than he'd initially assumed.", answer: true },
     ],
     buildSentence: [
-      { target: "This proves harder than I expected.", jumbled: ["This", "proves", "harder", "than", "I", "expected."] },
-      { target: "I find studies suggesting this now.", jumbled: ["I", "find", "studies", "suggesting", "this", "now."] },
-      { target: "Screen time varies enormously in purpose.", jumbled: ["Screen", "time", "varies", "enormously", "in", "purpose."] },
-      { target: "I've developed a genuinely stronger case now.", jumbled: ["I've", "developed", "a", "genuinely", "stronger", "case", "now."] },
-      { target: "Teaching self-regulation ultimately matters more than external limits.", jumbled: ["Teaching", "self-regulation", "ultimately", "matters", "more", "than", "external", "limits."] },
+      {
+        target: "Researching arguments against screen-time limits proves harder than I expected, given that I personally find some limits reasonable.",
+        jumbled: ["given", "reasonable.", "find", "personally", "than", "harder", "that", "I", "I", "some", "screen-time", "Researching", "limits", "expected,", "against", "limits", "proves", "arguments"],
+      },
+      {
+        target: "I find studies suggesting that blanket restrictions often fail to address the actual underlying reasons teens overuse screens.",
+        jumbled: ["to", "actual", "underlying", "the", "teens", "fail", "restrictions", "studies", "blanket", "find", "reasons", "I", "address", "that", "often", "overuse", "screens.", "suggesting"],
+      },
+      {
+        target: "Moreover, some researchers argue that teaching self-regulation ultimately matters more than external limits imposed by adults or governments.",
+        jumbled: ["argue", "more", "governments.", "limits", "Moreover,", "than", "matters", "imposed", "adults", "self-regulation", "some", "external", "ultimately", "by", "or", "researchers", "that", "teaching"],
+      },
+      {
+        target: "I also discover that screen time varies enormously in purpose, from mindless scrolling to genuine creative work or meaningful social connection.",
+        jumbled: ["screen", "varies", "mindless", "scrolling", "genuine", "I", "that", "in", "creative", "or", "to", "enormously", "work", "discover", "from", "meaningful", "also", "connection.", "social", "purpose,", "time"],
+      },
+      {
+        target: "By the end of my research, I've developed a genuinely stronger case than I'd initially assumed existed.",
+        jumbled: ["research,", "the", "I've", "a", "I'd", "developed", "my", "existed.", "case", "of", "genuinely", "By", "end", "stronger", "initially", "assumed", "than"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about researching an argument and discovering it was stronger than you expected.",
     mySentenceExample: "I researched an argument and found it stronger than expected.",
@@ -100,11 +130,26 @@ export const CHAPTERS = [
       { text: "Rafael feels more prepared than he would have alone.", answer: true },
     ],
     buildSentence: [
-      { target: "We meet in the library beforehand.", jumbled: ["We", "meet", "in", "the", "library", "beforehand."] },
-      { target: "She shares compelling research too.", jumbled: ["She", "shares", "compelling", "research", "too."] },
-      { target: "I feel more prepared than alone.", jumbled: ["I", "feel", "more", "prepared", "than", "alone."] },
-      { target: "She hadn't considered that angle as thoroughly herself.", jumbled: ["She", "hadn't", "considered", "that", "angle", "as", "thoroughly", "herself."] },
-      { target: "This collaboration, in spite of opposing assignments, helped us both.", jumbled: ["This", "collaboration,", "in", "spite", "of", "opposing", "assignments,", "helped", "us", "both."] },
+      {
+        target: "Petra and I meet in the library beforehand, agreeing that even though we're opponents, preparing thoughtfully would benefit the whole class discussion.",
+        jumbled: ["whole", "we're", "would", "benefit", "preparing", "the", "meet", "that", "the", "opponents,", "even", "Petra", "I", "and", "class", "beforehand,", "discussion.", "thoughtfully", "in", "though", "agreeing", "library"],
+      },
+      {
+        target: "She shares that she's found compelling research too, particularly around sleep disruption and its measurable effects on teen mental health.",
+        jumbled: ["measurable", "particularly", "research", "she's", "effects", "She", "its", "shares", "and", "sleep", "teen", "that", "compelling", "found", "too,", "health.", "on", "disruption", "mental", "around"],
+      },
+      {
+        target: "“You should look into this too, Rafael,” she says, sliding her notes across the table.",
+        jumbled: ["“You", "across", "her", "sliding", "look", "this", "too,", "Rafael,”", "table.", "says,", "into", "should", "she", "notes", "the"],
+      },
+      {
+        target: "I mention my own findings about self-regulation, and she admits she hadn't considered that angle as thoroughly herself.",
+        jumbled: ["angle", "she", "that", "considered", "I", "as", "my", "thoroughly", "own", "herself.", "mention", "about", "admits", "self-regulation,", "she", "and", "findings", "hadn't"],
+      },
+      {
+        target: "Rather than treating each other as rivals, we end up exchanging genuinely useful sources neither of us had discovered independently.",
+        jumbled: ["we", "independently.", "Rather", "had", "us", "discovered", "of", "each", "treating", "as", "sources", "neither", "useful", "rivals,", "end", "up", "than", "other", "exchanging", "genuinely"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about collaborating with someone who has an opposing viewpoint from yours.",
     mySentenceExample: "I collaborated with someone who had an opposing viewpoint from mine.",
@@ -129,11 +174,26 @@ export const CHAPTERS = [
       { text: "The debate feels more like exploration than competition.", answer: true },
     ],
     buildSentence: [
-      { target: "The debate begins now.", jumbled: ["The", "debate", "begins", "now."] },
-      { target: "I present my argument first.", jumbled: ["I", "present", "my", "argument", "first."] },
-      { target: "Neither of us raises our voice.", jumbled: ["Neither", "of", "us", "raises", "our", "voice."] },
-      { target: "This feels more like exploration than competition.", jumbled: ["This", "feels", "more", "like", "exploration", "than", "competition."] },
-      { target: "Some structure genuinely protects developing brains from harm.", jumbled: ["Some", "structure", "genuinely", "protects", "developing", "brains", "from", "harm."] },
+      {
+        target: "“Rafael, you're up first,” Ms. Okonkwo says.",
+        jumbled: ["Okonkwo", "“Rafael,", "first,”", "Ms.", "you're", "says.", "up"],
+      },
+      {
+        target: "The debate begins, and I present my argument first, explaining that blanket limits ignore how differently teens actually use screens.",
+        jumbled: ["that", "use", "how", "debate", "actually", "teens", "my", "blanket", "and", "explaining", "The", "screens.", "differently", "ignore", "I", "present", "argument", "first,", "limits", "begins,"],
+      },
+      {
+        target: "I cite the self-regulation research, arguing that teaching skills ultimately serves teens better than simply restricting their access.",
+        jumbled: ["I", "arguing", "cite", "research,", "serves", "access.", "teens", "skills", "teaching", "than", "self-regulation", "that", "better", "their", "restricting", "the", "ultimately", "simply"],
+      },
+      {
+        target: "Petra responds calmly, presenting her sleep-disruption research and arguing that some structure genuinely protects developing brains from measurable harm.",
+        jumbled: ["Petra", "research", "arguing", "presenting", "and", "measurable", "calmly,", "that", "brains", "harm.", "protects", "sleep-disruption", "some", "genuinely", "her", "structure", "developing", "responds", "from"],
+      },
+      {
+        target: "Watching classmates take notes on both arguments, I realize this debate feels more like a genuine exploration than a competition.",
+        jumbled: ["exploration", "debate", "classmates", "feels", "both", "arguments,", "Watching", "take", "realize", "more", "genuine", "this", "like", "on", "a", "a", "notes", "competition.", "I", "than"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about presenting an argument calmly and respectfully in a debate.",
     mySentenceExample: "I presented my argument calmly and respectfully in the debate.",
@@ -158,11 +218,26 @@ export const CHAPTERS = [
       { text: "This questioning phase reveals nuance beneath a simple debate.", answer: true },
     ],
     buildSentence: [
-      { target: "Ms. Okonkwo opens the floor now.", jumbled: ["Ms.", "Okonkwo", "opens", "the", "floor", "now."] },
-      { target: "We both find ourselves nodding along.", jumbled: ["We", "both", "find", "ourselves", "nodding", "along."] },
-      { target: "This reveals just how much nuance exists.", jumbled: ["This", "reveals", "just", "how", "much", "nuance", "exists."] },
-      { target: "The real issue might actually be content quality.", jumbled: ["The", "real", "issue", "might", "actually", "be", "content", "quality."] },
-      { target: "Limits should differ based on how differently people use screens.", jumbled: ["Limits", "should", "differ", "based", "on", "how", "differently", "people", "use", "screens."] },
+      {
+        target: "Ms. Okonkwo opens the floor for questions, and classmates raise genuinely thoughtful points neither Petra nor I had fully anticipated beforehand.",
+        jumbled: ["nor", "anticipated", "classmates", "fully", "opens", "had", "floor", "for", "raise", "beforehand.", "the", "and", "thoughtful", "I", "points", "Okonkwo", "questions,", "genuinely", "Ms.", "neither", "Petra"],
+      },
+      {
+        target: "One student asks whether the real issue might actually be content quality rather than screen time itself.",
+        jumbled: ["screen", "issue", "the", "rather", "actually", "real", "quality", "be", "itself.", "student", "asks", "than", "whether", "content", "One", "might", "time"],
+      },
+      {
+        target: "Another wonders whether limits should differ based on age, given how differently a twelve-year-old and an eighteen-year-old might use screens.",
+        jumbled: ["whether", "based", "twelve-year-old", "limits", "a", "should", "might", "an", "differ", "how", "on", "age,", "differently", "Another", "wonders", "use", "given", "eighteen-year-old", "screens.", "and"],
+      },
+      {
+        target: "Petra and I both find ourselves nodding along to points that complicate our original, more simplified positions somewhat.",
+        jumbled: ["more", "Petra", "find", "complicate", "along", "to", "both", "original,", "points", "ourselves", "that", "nodding", "positions", "I", "somewhat.", "our", "simplified", "and"],
+      },
+      {
+        target: "This questioning phase, moreover, reveals just how much nuance exists beneath what initially seemed like a simple yes-or-no debate.",
+        jumbled: ["questioning", "yes-or-no", "phase,", "exists", "nuance", "debate.", "This", "a", "simple", "moreover,", "initially", "much", "like", "reveals", "just", "seemed", "beneath", "what", "how"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a question from someone else that made you rethink your position.",
     mySentenceExample: "A question from someone else made me rethink my position.",
@@ -187,11 +262,26 @@ export const CHAPTERS = [
       { text: "This conversation feels more valuable than winning or losing.", answer: true },
     ],
     buildSentence: [
-      { target: "We sit together comparing notes now.", jumbled: ["We", "sit", "together", "comparing", "notes", "now."] },
-      { target: "I admit this genuinely shifted my thinking.", jumbled: ["I", "admit", "this", "genuinely", "shifted", "my", "thinking."] },
-      { target: "Both of us see the issue differently now.", jumbled: ["Both", "of", "us", "see", "the", "issue", "differently", "now."] },
-      { target: "This feels more valuable than winning or losing.", jumbled: ["This", "feels", "more", "valuable", "than", "winning", "or", "losing."] },
-      { target: "This complicated her own certainty about blanket structure.", jumbled: ["This", "complicated", "her", "own", "certainty", "about", "blanket", "structure."] },
+      {
+        target: "Petra and I sit together, comparing notes and discussing which arguments actually seemed most persuasive to us personally.",
+        jumbled: ["arguments", "which", "and", "Petra", "I", "and", "us", "most", "seemed", "personally.", "comparing", "together,", "notes", "actually", "to", "persuasive", "sit", "discussing"],
+      },
+      {
+        target: "I admit that her sleep-disruption research genuinely shifted my thinking, even though I still believe self-regulation matters considerably too.",
+        jumbled: ["still", "research", "even", "matters", "admit", "thinking,", "believe", "self-regulation", "considerably", "shifted", "that", "genuinely", "though", "sleep-disruption", "my", "I", "I", "her", "too."],
+      },
+      {
+        target: "“That's fair, Rafael,” she says, smiling slightly.",
+        jumbled: ["she", "fair,", "smiling", "says,", "“That's", "slightly.", "Rafael,”"],
+      },
+      {
+        target: "She admits, in turn, that the content-quality question raised during questions had complicated her own certainty about blanket structure.",
+        jumbled: ["had", "blanket", "her", "that", "about", "question", "complicated", "own", "during", "certainty", "the", "content-quality", "in", "structure.", "turn,", "She", "raised", "admits,", "questions"],
+      },
+      {
+        target: "Neither of us has fully changed our original position, but both of us clearly see the issue differently now.",
+        jumbled: ["us", "position,", "clearly", "Neither", "see", "us", "issue", "original", "fully", "of", "our", "both", "has", "changed", "now.", "but", "differently", "the", "of"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a conversation with someone who disagreed with you that left you thinking differently.",
     mySentenceExample: "A conversation with someone who disagreed left me thinking differently.",
@@ -216,11 +306,26 @@ export const CHAPTERS = [
       { text: "Rafael feels proud this reflects actual thinking, not just defense.", answer: true },
     ],
     buildSentence: [
-      { target: "I sit down to write now.", jumbled: ["I", "sit", "down", "to", "write", "now."] },
-      { target: "I feel genuinely proud of this.", jumbled: ["I", "feel", "genuinely", "proud", "of", "this."] },
-      { target: "This reflects actual thinking, not defense.", jumbled: ["This", "reflects", "actual", "thinking,", "not", "defense."] },
-      { target: "Digital literacy might matter more than either extreme.", jumbled: ["Digital", "literacy", "might", "matter", "more", "than", "either", "extreme."] },
-      { target: "Perhaps the answer isn't strict limits or complete freedom.", jumbled: ["Perhaps", "the", "answer", "isn't", "strict", "limits", "or", "complete", "freedom."] },
+      {
+        target: "Ms. Okonkwo assigns the reflective synthesis, and I sit down to write something considerably more complex than a typical persuasive essay.",
+        jumbled: ["persuasive", "a", "typical", "to", "more", "sit", "Ms.", "essay.", "assigns", "than", "synthesis,", "I", "complex", "something", "the", "Okonkwo", "reflective", "considerably", "down", "write", "and"],
+      },
+      {
+        target: "Rather than declaring a winner, I try genuinely representing both the self-regulation argument and the sleep-disruption research fairly.",
+        jumbled: ["self-regulation", "than", "research", "argument", "sleep-disruption", "try", "declaring", "I", "genuinely", "representing", "and", "a", "Rather", "winner,", "both", "fairly.", "the", "the"],
+      },
+      {
+        target: "I write that perhaps the answer isn't strict limits or complete freedom, but flexible guidelines adjusted by age and content type.",
+        jumbled: ["freedom,", "perhaps", "age", "the", "flexible", "write", "adjusted", "guidelines", "and", "complete", "that", "by", "isn't", "type.", "limits", "or", "I", "content", "strict", "but", "answer"],
+      },
+      {
+        target: "Given everything I'd heard, I argue that teaching digital literacy might matter more than either extreme position alone.",
+        jumbled: ["everything", "extreme", "position", "Given", "heard,", "literacy", "might", "alone.", "either", "I", "than", "argue", "more", "teaching", "that", "matter", "I'd", "digital"],
+      },
+      {
+        target: "Finishing the draft, I feel genuinely proud that this reflects actual thinking, not simply defending my originally assigned position.",
+        jumbled: ["defending", "I", "Finishing", "that", "my", "the", "proud", "originally", "this", "thinking,", "actual", "draft,", "position.", "assigned", "genuinely", "simply", "not", "feel", "reflects"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about writing something that fairly represents two sides of an argument.",
     mySentenceExample: "I wrote something that fairly represented two sides of the argument.",
@@ -245,11 +350,26 @@ export const CHAPTERS = [
       { text: "This demonstrates what genuine intellectual engagement can produce.", answer: true },
     ],
     buildSentence: [
-      { target: "I decide to read mine aloud.", jumbled: ["I", "decide", "to", "read", "mine", "aloud."] },
-      { target: "I notice Petra nodding along.", jumbled: ["I", "notice", "Petra", "nodding", "along."] },
-      { target: "We'd independently converged on similar ideas.", jumbled: ["We'd", "independently", "converged", "on", "similar", "ideas."] },
-      { target: "This arrives at a surprisingly similar conclusion.", jumbled: ["This", "arrives", "at", "a", "surprisingly", "similar", "conclusion."] },
-      { target: "This demonstrates what genuine intellectual engagement can produce.", jumbled: ["This", "demonstrates", "what", "genuine", "intellectual", "engagement", "can", "produce."] },
+      {
+        target: "Ms. Okonkwo invites volunteers to share their synthesis aloud, and I decide, somewhat nervously, to read mine to the class.",
+        jumbled: ["invites", "and", "to", "synthesis", "their", "Okonkwo", "decide,", "class.", "mine", "volunteers", "aloud,", "to", "the", "Ms.", "somewhat", "nervously,", "to", "I", "share", "read"],
+      },
+      {
+        target: "“Go ahead, Rafael, whenever you're ready,” she says encouragingly.",
+        jumbled: ["whenever", "“Go", "Rafael,", "says", "she", "encouragingly.", "ahead,", "ready,”", "you're"],
+      },
+      {
+        target: "I notice Petra nodding along, seemingly recognizing echoes of her own thinking within it.",
+        jumbled: ["along,", "it.", "own", "thinking", "seemingly", "within", "her", "notice", "nodding", "I", "echoes", "of", "recognizing", "Petra"],
+      },
+      {
+        target: "Afterward, she shares her own synthesis, which arrives at a surprisingly similar conclusion from an entirely different starting position.",
+        jumbled: ["position.", "similar", "an", "different", "at", "surprisingly", "synthesis,", "a", "conclusion", "she", "shares", "her", "arrives", "starting", "own", "from", "Afterward,", "which", "entirely"],
+      },
+      {
+        target: "Ms. Okonkwo points out that despite being assigned opposing sides, we'd independently converged on a nuanced, shared understanding.",
+        jumbled: ["out", "on", "nuanced,", "opposing", "converged", "sides,", "assigned", "a", "we'd", "that", "understanding.", "points", "being", "shared", "Ms.", "despite", "independently", "Okonkwo"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about discovering someone else reached a similar conclusion from a different starting point.",
     mySentenceExample: "I discovered someone reached a similar conclusion from a different starting point.",
@@ -274,11 +394,26 @@ export const CHAPTERS = [
       { text: "Rafael feels genuinely grateful for this assignment.", answer: true },
     ],
     buildSentence: [
-      { target: "Petra mentions this in the hallway.", jumbled: ["Petra", "mentions", "this", "in", "the", "hallway."] },
-      { target: "I admit I'd felt similarly before.", jumbled: ["I", "admit", "I'd", "felt", "similarly", "before."] },
-      { target: "I feel genuinely grateful for this.", jumbled: ["I", "feel", "genuinely", "grateful", "for", "this."] },
-      { target: "This forced us both to think more carefully.", jumbled: ["This", "forced", "us", "both", "to", "think", "more", "carefully."] },
-      { target: "I'll approach future debates as opportunities, not battles.", jumbled: ["I'll", "approach", "future", "debates", "as", "opportunities,", "not", "battles."] },
+      {
+        target: "In the hallway afterward, Petra mentions she used to dread debate assignments, always assuming they meant simply defending a position stubbornly.",
+        jumbled: ["hallway", "mentions", "meant", "dread", "a", "position", "they", "always", "assignments,", "defending", "debate", "stubbornly.", "Petra", "to", "simply", "afterward,", "assuming", "used", "she", "the", "In"],
+      },
+      {
+        target: "“Honestly, Rafael, this one actually felt different,” she adds.",
+        jumbled: ["different,”", "adds.", "felt", "“Honestly,", "this", "she", "Rafael,", "actually", "one"],
+      },
+      {
+        target: "I admit I'd felt similarly before this particular assignment, expecting competition rather than genuine, collaborative exploration of an issue.",
+        jumbled: ["admit", "similarly", "than", "assignment,", "particular", "I", "an", "exploration", "collaborative", "rather", "expecting", "felt", "genuine,", "before", "issue.", "this", "of", "competition", "I'd"],
+      },
+      {
+        target: "We agree that being assigned an unfamiliar or even opposing position actually forced us both to think more carefully.",
+        jumbled: ["position", "unfamiliar", "carefully.", "to", "agree", "that", "even", "more", "actually", "being", "both", "think", "an", "opposing", "forced", "or", "assigned", "We", "us"],
+      },
+      {
+        target: "Walking to my next class, I feel genuinely grateful for an assignment that changed how I think about disagreement itself.",
+        jumbled: ["to", "that", "I", "grateful", "class,", "my", "I", "an", "genuinely", "think", "about", "itself.", "for", "disagreement", "feel", "next", "how", "changed", "Walking", "assignment"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about an assignment that changed how you think about something.",
     mySentenceExample: "This assignment changed how I think about disagreement itself.",
@@ -303,11 +438,26 @@ export const CHAPTERS = [
       { text: "Engaging with an opposing viewpoint gave him a more nuanced understanding.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this assignment now.", jumbled: ["I", "look", "back", "on", "this", "assignment", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "Debate isn't really about defeating someone's argument.", jumbled: ["Debate", "isn't", "really", "about", "defeating", "someone's", "argument."] },
-      { target: "Disagreement, approached openly, can be a genuine form of learning.", jumbled: ["Disagreement,", "approached", "openly,", "can", "be", "a", "genuine", "form", "of", "learning."] },
-      { target: "Had I ignored her research, my synthesis would have been weaker.", jumbled: ["Had", "I", "ignored", "her", "research,", "my", "synthesis", "would", "have", "been", "weaker."] },
+      {
+        target: "Looking back on the whole assignment, I realize how differently I might have approached it had I simply defended my assigned position stubbornly.",
+        jumbled: ["it", "defended", "had", "might", "I", "realize", "approached", "have", "whole", "assignment,", "how", "my", "back", "position", "stubbornly.", "Looking", "I", "on", "differently", "I", "simply", "the", "assigned"],
+      },
+      {
+        target: "You got lucky with this one, Rafael, I think, tapping my pen against the closed notebook.",
+        jumbled: ["against", "with", "one,", "the", "You", "closed", "this", "I", "got", "pen", "lucky", "Rafael,", "think,", "tapping", "my", "notebook."],
+      },
+      {
+        target: "I would have written a far weaker, less honest synthesis in the end.",
+        jumbled: ["the", "honest", "a", "synthesis", "end.", "have", "I", "far", "weaker,", "written", "less", "would", "in"],
+      },
+      {
+        target: "Instead, genuinely engaging with an opposing viewpoint allowed me to develop a more complete, nuanced understanding of the issue.",
+        jumbled: ["more", "understanding", "genuinely", "opposing", "nuanced", "Instead,", "to", "with", "complete,", "me", "a", "viewpoint", "allowed", "an", "develop", "engaging", "of", "the", "issue."],
+      },
+      {
+        target: "I've learned that debate, at its best, isn't really about defeating someone else's argument, but refining your own thinking.",
+        jumbled: ["defeating", "its", "best,", "but", "really", "refining", "isn't", "else's", "at", "argument,", "debate,", "thinking.", "your", "learned", "about", "someone", "own", "I've", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from genuinely engaging with an opposing viewpoint.",
     mySentenceExample: "I learned that engaging with opposing viewpoints refines my own thinking.",

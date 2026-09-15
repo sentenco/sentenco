@@ -40,9 +40,26 @@ export const CHAPTERS = [
       { text: "Jack sees swings and a slide.", answer: true },
     ],
     buildSentence: [
-      { target: "The sun shines bright.", jumbled: ["sun", "shines", "The", "bright."] },
-      { target: "I grab my hat.", jumbled: ["grab", "my", "I", "hat."] },
-      { target: "The park is my favorite place.", jumbled: ["is", "my", "The", "park", "favorite", "place."] },
+      {
+        target: "Today is Saturday, and the sun shines bright in the sky.",
+        jumbled: ["shines", "the", "and", "Saturday,", "the", "Today", "sun", "is", "in", "sky.", "bright"],
+      },
+      {
+        target: "We walk down the street and see the big green park ahead.",
+        jumbled: ["street", "We", "and", "green", "park", "the", "walk", "see", "ahead.", "big", "the", "down"],
+      },
+      {
+        target: "Many families are already there, playing and having fun.",
+        jumbled: ["are", "families", "having", "fun.", "playing", "and", "there,", "already", "Many"],
+      },
+      {
+        target: "Mom finds a bench and sits down to watch me play.",
+        jumbled: ["down", "a", "sits", "and", "finds", "Mom", "me", "to", "play.", "bench", "watch"],
+      },
+      {
+        target: "I run toward the playground with a big smile on my face.",
+        jumbled: ["big", "I", "face.", "the", "my", "smile", "with", "run", "a", "toward", "playground", "on"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a sunny day.",
     mySentenceExample: "I like to play outside on sunny days.",
@@ -65,9 +82,26 @@ export const CHAPTERS = [
       { text: "Jack feels sad on the swing.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel like flying.", jumbled: ["feel", "like", "I", "flying."] },
-      { target: "I hold the chains tightly.", jumbled: ["hold", "the", "I", "chains", "tightly."] },
-      { target: "The wind blows through my hair.", jumbled: ["blows", "through", "The", "wind", "my", "hair."] },
+      {
+        target: "First, I run to the big swings at the park.",
+        jumbled: ["swings", "park.", "at", "I", "the", "First,", "run", "the", "big", "to"],
+      },
+      {
+        target: "“Ready, Jack?” Mom asks, and she gives me a gentle push.",
+        jumbled: ["gentle", "“Ready,", "a", "push.", "asks,", "Mom", "and", "she", "Jack?”", "gives", "me"],
+      },
+      {
+        target: "The wind blows through my hair as I swing up high.",
+        jumbled: ["as", "through", "wind", "swing", "I", "The", "high.", "blows", "up", "hair", "my"],
+      },
+      {
+        target: "I feel like I am flying up into the blue sky.",
+        jumbled: ["flying", "like", "feel", "sky.", "the", "am", "I", "up", "blue", "into", "I"],
+      },
+      {
+        target: "Swinging at the park always makes me feel free and happy.",
+        jumbled: ["at", "the", "free", "makes", "always", "and", "feel", "Swinging", "happy.", "park", "me"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about swings or playgrounds.",
     mySentenceExample: "I like to swing very high.",
@@ -90,9 +124,26 @@ export const CHAPTERS = [
       { text: "Mom ignores the sandcastle.", answer: false },
     ],
     buildSentence: [
-      { target: "I scoop the sand.", jumbled: ["scoop", "the", "I", "sand."] },
-      { target: "I build a sandcastle.", jumbled: ["build", "a", "I", "sandcastle."] },
-      { target: "Mom takes a photo.", jumbled: ["takes", "a", "Mom", "photo."] },
+      {
+        target: "Next, I walk over to the big sandbox at the park.",
+        jumbled: ["walk", "big", "park.", "sandbox", "I", "at", "over", "the", "the", "Next,", "to"],
+      },
+      {
+        target: "I bring my small bucket and shovel from home.",
+        jumbled: ["shovel", "home.", "and", "from", "small", "my", "I", "bucket", "bring"],
+      },
+      {
+        target: "Then, I flip the bucket over and lift it up slowly.",
+        jumbled: ["slowly.", "the", "bucket", "over", "up", "it", "lift", "I", "flip", "Then,", "and"],
+      },
+      {
+        target: "I make three more towers and connect them together.",
+        jumbled: ["three", "towers", "more", "connect", "and", "make", "them", "I", "together."],
+      },
+      {
+        target: "“What a tall castle, Jack!” Mom says, and she takes a photo of it with her phone.",
+        jumbled: ["her", "Mom", "of", "a", "photo", "with", "says,", "tall", "Jack!”", "it", "a", "and", "she", "“What", "takes", "phone.", "castle,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about playing with sand.",
     mySentenceExample: "I like to build sandcastles.",
@@ -115,9 +166,26 @@ export const CHAPTERS = [
       { text: "The brave duck swims away quickly.", answer: false },
     ],
     buildSentence: [
-      { target: "I feed the ducks.", jumbled: ["feed", "the", "I", "ducks."] },
-      { target: "The ducks eat happily.", jumbled: ["eat", "happily.", "The", "ducks"] },
-      { target: "One duck comes close.", jumbled: ["comes", "close.", "One", "duck"] },
+      {
+        target: "Mom and I walk to the pond.",
+        jumbled: ["I", "Mom", "walk", "and", "to", "pond.", "the"],
+      },
+      {
+        target: "“Here, Jack, try this,” Mom says, and she gives me a small bag of duck food.",
+        jumbled: ["says,", "a", "she", "Mom", "small", "this,”", "try", "Jack,", "me", "and", "bag", "duck", "food.", "of", "gives", "“Here,"],
+      },
+      {
+        target: "The ducks swim quickly and eat the food happily.",
+        jumbled: ["the", "ducks", "eat", "The", "happily.", "and", "food", "quickly", "swim"],
+      },
+      {
+        target: "One brave duck comes close to the edge of the pond.",
+        jumbled: ["edge", "the", "the", "One", "brave", "comes", "of", "duck", "to", "close", "pond."],
+      },
+      {
+        target: "Feeding the ducks is a peaceful part of our day at the park.",
+        jumbled: ["ducks", "the", "peaceful", "day", "at", "the", "of", "our", "is", "a", "part", "Feeding", "park."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about animals at the park.",
     mySentenceExample: "I like to feed the ducks.",
@@ -140,9 +208,26 @@ export const CHAPTERS = [
       { text: "They decide to build a sandcastle together.", answer: true },
     ],
     buildSentence: [
-      { target: "Lily plays with a ball.", jumbled: ["plays", "with", "Lily", "a", "ball."] },
-      { target: "We throw the ball.", jumbled: ["throw", "the", "We", "ball."] },
-      { target: "We laugh a lot together.", jumbled: ["laugh", "a", "We", "lot", "together."] },
+      {
+        target: "Near the sandbox, I see a girl playing with a red ball.",
+        jumbled: ["I", "sandbox,", "a", "see", "a", "playing", "girl", "red", "ball.", "with", "the", "Near"],
+      },
+      {
+        target: "“Hi, my name is Lily,” she says with a friendly smile.",
+        jumbled: ["is", "Lily,”", "with", "a", "says", "friendly", "she", "name", "smile.", "“Hi,", "my"],
+      },
+      {
+        target: "We throw the ball back and forth and laugh a lot.",
+        jumbled: ["lot.", "and", "the", "laugh", "ball", "throw", "and", "a", "forth", "We", "back"],
+      },
+      {
+        target: "Lily tells me she comes to this park every Saturday too.",
+        jumbled: ["Lily", "tells", "comes", "she", "too.", "park", "to", "Saturday", "me", "every", "this"],
+      },
+      {
+        target: "Our moms talk and smile while we play happily.",
+        jumbled: ["play", "and", "we", "happily.", "Our", "smile", "while", "moms", "talk"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about meeting a new friend.",
     mySentenceExample: "I meet a new friend at the park.",
@@ -165,9 +250,26 @@ export const CHAPTERS = [
       { text: "Lily arrives and watches the kite.", answer: true },
     ],
     buildSentence: [
-      { target: "The kite flies high.", jumbled: ["flies", "high.", "The", "kite"] },
-      { target: "I run fast.", jumbled: ["run", "fast.", "I"] },
-      { target: "We take turns flying it.", jumbled: ["take", "turns", "We", "flying", "it."] },
+      {
+        target: "On a windy Saturday, I bring my new kite to the park.",
+        jumbled: ["Saturday,", "my", "On", "bring", "a", "to", "I", "new", "the", "park.", "windy", "kite"],
+      },
+      {
+        target: "Mom helps me hold the string tightly at first.",
+        jumbled: ["the", "first.", "tightly", "hold", "Mom", "string", "me", "at", "helps"],
+      },
+      {
+        target: "I run fast, and the kite lifts up into the sky.",
+        jumbled: ["lifts", "fast,", "the", "up", "I", "sky.", "kite", "and", "into", "the", "run"],
+      },
+      {
+        target: "The kite dances high above the trees in the blue sky.",
+        jumbled: ["The", "the", "dances", "high", "sky.", "in", "trees", "the", "blue", "above", "kite"],
+      },
+      {
+        target: "We take turns flying the kite until it is time to go home.",
+        jumbled: ["until", "is", "turns", "time", "flying", "We", "kite", "the", "go", "take", "it", "home.", "to"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about flying a kite or playing outside.",
     mySentenceExample: "I like to fly a kite on windy days.",
@@ -190,9 +292,26 @@ export const CHAPTERS = [
       { text: "Jack feels better after a few minutes.", answer: true },
     ],
     buildSentence: [
-      { target: "I fall down.", jumbled: ["fall", "down.", "I"] },
-      { target: "Mom cleans my knee.", jumbled: ["cleans", "my", "Mom", "knee."] },
-      { target: "I feel better soon.", jumbled: ["feel", "better", "I", "soon."] },
+      {
+        target: "I trip over a small rock.",
+        jumbled: ["a", "small", "trip", "rock.", "I", "over"],
+      },
+      {
+        target: "I fall down and scrape my knee on the ground.",
+        jumbled: ["fall", "knee", "scrape", "and", "on", "down", "ground.", "the", "I", "my"],
+      },
+      {
+        target: "“It's okay, Jack, let me see,” she says gently.",
+        jumbled: ["gently.", "see,”", "she", "let", "says", "“It's", "Jack,", "okay,", "me"],
+      },
+      {
+        target: "She cleans my knee and puts on a small bandage.",
+        jumbled: ["a", "bandage.", "small", "puts", "cleans", "She", "knee", "my", "on", "and"],
+      },
+      {
+        target: "I feel better and want to play again.",
+        jumbled: ["to", "want", "and", "better", "I", "feel", "play", "again."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about getting hurt a little.",
     mySentenceExample: "I fall down, but I feel better soon.",
@@ -215,9 +334,26 @@ export const CHAPTERS = [
       { text: "Lily chooses strawberry ice cream.", answer: true },
     ],
     buildSentence: [
-      { target: "I choose chocolate ice cream.", jumbled: ["choose", "chocolate", "I", "ice", "cream."] },
-      { target: "We eat our treats.", jumbled: ["eat", "our", "We", "treats."] },
-      { target: "We both laugh together.", jumbled: ["both", "laugh", "We", "together."] },
+      {
+        target: "Mom says, “Let's get ice cream, Jack!”",
+        jumbled: ["Mom", "“Let's", "ice", "says,", "Jack!”", "get", "cream,"],
+      },
+      {
+        target: "I choose a scoop of chocolate ice cream in a crunchy cone.",
+        jumbled: ["a", "in", "ice", "scoop", "cone.", "choose", "chocolate", "a", "crunchy", "cream", "of", "I"],
+      },
+      {
+        target: "We sit together on a bench and eat our cold, sweet treats.",
+        jumbled: ["together", "cold,", "a", "treats.", "eat", "on", "bench", "and", "sweet", "our", "sit", "We"],
+      },
+      {
+        target: "The ice cream drips a little, and we both laugh.",
+        jumbled: ["a", "laugh.", "little,", "both", "drips", "and", "cream", "ice", "we", "The"],
+      },
+      {
+        target: "Ice cream after a fun day at the park is the best treat.",
+        jumbled: ["treat.", "Ice", "park", "cream", "day", "best", "a", "fun", "after", "the", "the", "at", "is"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your favorite treat.",
     mySentenceExample: "I like to eat ice cream.",
@@ -240,9 +376,26 @@ export const CHAPTERS = [
       { text: "Mom takes out a blanket.", answer: true },
     ],
     buildSentence: [
-      { target: "Rain starts to fall.", jumbled: ["starts", "to", "Rain", "fall."] },
-      { target: "We run for cover.", jumbled: ["run", "for", "We", "cover."] },
-      { target: "We have a picnic.", jumbled: ["have", "a", "We", "picnic."] },
+      {
+        target: "One Saturday, dark clouds cover the sky at the park.",
+        jumbled: ["Saturday,", "One", "dark", "the", "clouds", "at", "the", "park.", "cover", "sky"],
+      },
+      {
+        target: "Mom and I hurry under a big tree near the bench.",
+        jumbled: ["under", "near", "the", "Mom", "and", "hurry", "bench.", "tree", "a", "I", "big"],
+      },
+      {
+        target: "“Our park day is not over yet, Jack,” Mom says with a smile.",
+        jumbled: ["a", "not", "yet,", "Jack,”", "Mom", "says", "park", "day", "with", "over", "“Our", "is", "smile."],
+      },
+      {
+        target: "We sit under the tree and have a cozy indoor-style picnic.",
+        jumbled: ["indoor-style", "tree", "and", "the", "have", "picnic.", "cozy", "We", "under", "sit", "a"],
+      },
+      {
+        target: "Even a rainy day at the park can turn into a fun memory.",
+        jumbled: ["the", "at", "fun", "Even", "park", "turn", "rainy", "memory.", "into", "can", "a", "day", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a surprise on a rainy day.",
     mySentenceExample: "I have a picnic inside when it rains.",
@@ -265,9 +418,26 @@ export const CHAPTERS = [
       { text: "Jack and Lily agree the park is their favorite place.", answer: true },
     ],
     buildSentence: [
-      { target: "I made a new friend.", jumbled: ["made", "a", "I", "new", "friend."] },
-      { target: "We watch the sunset.", jumbled: ["watch", "the", "We", "sunset."] },
-      { target: "This park is my favorite place.", jumbled: ["park", "is", "This", "my", "favorite", "place."] },
+      {
+        target: "It has been a whole summer of Saturdays at the park.",
+        jumbled: ["has", "whole", "summer", "Saturdays", "park.", "a", "of", "been", "at", "the", "It"],
+      },
+      {
+        target: "I flew my kite, ate ice cream, and made a new friend named Lily.",
+        jumbled: ["ate", "my", "flew", "friend", "made", "Lily.", "named", "kite,", "ice", "I", "cream,", "and", "a", "new"],
+      },
+      {
+        target: "I even learned that a scraped knee is not so scary.",
+        jumbled: ["knee", "that", "scary.", "scraped", "not", "a", "so", "I", "is", "learned", "even"],
+      },
+      {
+        target: "“This park is my favorite place in the whole world,” I say.",
+        jumbled: ["place", "park", "the", "world,”", "I", "my", "whole", "say.", "“This", "favorite", "in", "is"],
+      },
+      {
+        target: "I know I will keep coming back to this special place.",
+        jumbled: ["place.", "keep", "I", "I", "know", "to", "coming", "this", "back", "will", "special"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your favorite place.",
     mySentenceExample: "The park is my favorite place to play.",

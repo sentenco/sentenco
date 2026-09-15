@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "The newspaper office is described as cramped and cluttered.", answer: true },
     ],
     buildSentence: [
-      { target: "I finally join the staff.", jumbled: ["finally", "join", "I", "the", "staff."] },
-      { target: "Everyone starts somewhere, honestly.", jumbled: ["starts", "somewhere,", "Everyone", "honestly."] },
-      { target: "I feel a genuine thrill.", jumbled: ["feel", "a", "I", "genuine", "thrill."] },
-      { target: "Ms. Rivera welcomes me warmly.", jumbled: ["welcomes", "me", "Ms.", "Rivera", "warmly."] },
-      { target: "I imagine uncovering something important for the whole school.", jumbled: ["I", "imagine", "uncovering", "something", "important", "for", "the", "whole", "school."] },
+      {
+        target: "I finally work up the courage to join the staff myself.",
+        jumbled: ["join", "the", "to", "finally", "the", "work", "staff", "courage", "up", "myself.", "I"],
+      },
+      {
+        target: "Ms. Rivera welcomes me warmly into the cramped, cluttered office, explaining that new reporters usually start with smaller, simpler assignments before earning bigger stories.",
+        jumbled: ["assignments", "earning", "welcomes", "Rivera", "with", "usually", "that", "smaller,", "cramped,", "cluttered", "bigger", "Ms.", "simpler", "office,", "new", "into", "the", "reporters", "stories.", "explaining", "start", "me", "warmly", "before"],
+      },
+      {
+        target: "I nod eagerly, imagining myself uncovering something important and meaningful for the whole school to read about.",
+        jumbled: ["and", "important", "whole", "to", "myself", "for", "the", "about.", "uncovering", "I", "imagining", "meaningful", "read", "eagerly,", "nod", "something", "school"],
+      },
+      {
+        target: "“Everyone starts somewhere, Caleb,” she says, handing me a small stack of upcoming events to write about.",
+        jumbled: ["she", "a", "of", "Caleb,”", "about.", "upcoming", "events", "to", "me", "somewhere,", "handing", "“Everyone", "starts", "says,", "write", "small", "stack"],
+      },
+      {
+        target: "Walking out with my very first assignment, I feel a genuine thrill about officially becoming part of something real.",
+        jumbled: ["becoming", "about", "genuine", "feel", "assignment,", "something", "of", "part", "Walking", "my", "real.", "officially", "with", "very", "first", "out", "I", "thrill", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about joining a club or activity you were curious about.",
     mySentenceExample: "I joined the art club because I was curious about painting.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Caleb feels more discouraged after talking to Iris.", answer: false },
     ],
     buildSentence: [
-      { target: "This isn't very exciting.", jumbled: ["isn't", "very", "This", "exciting."] },
-      { target: "Iris notices my disappointment.", jumbled: ["notices", "my", "Iris", "disappointment."] },
-      { target: "We all start somewhere similar.", jumbled: ["all", "start", "We", "somewhere", "similar."] },
-      { target: "I struggle to make this interesting.", jumbled: ["struggle", "to", "I", "make", "this", "interesting."] },
-      { target: "Knowing everyone begins this way feels less discouraging.", jumbled: ["Knowing", "everyone", "begins", "this", "way", "feels", "less", "discouraging."] },
+      {
+        target: "My first assignment turns out to be reporting on a small change to the cafeteria menu, hardly the exciting investigative journalism I had imagined joining for.",
+        jumbled: ["had", "a", "My", "journalism", "for.", "hardly", "first", "cafeteria", "to", "investigative", "turns", "assignment", "imagined", "joining", "on", "exciting", "to", "be", "reporting", "the", "change", "out", "the", "small", "I", "menu,"],
+      },
+      {
+        target: "I interview the cafeteria manager, jot down uninspiring quotes about nutritional guidelines, and struggle to make three hundred words feel remotely interesting.",
+        jumbled: ["remotely", "manager,", "down", "hundred", "words", "interesting.", "and", "cafeteria", "to", "three", "I", "interview", "guidelines,", "feel", "struggle", "nutritional", "make", "jot", "quotes", "the", "about", "uninspiring"],
+      },
+      {
+        target: "Iris, another reporter who sits near me, notices my obvious disappointment and laughs sympathetically.",
+        jumbled: ["me,", "sympathetically.", "and", "Iris,", "disappointment", "obvious", "near", "sits", "my", "notices", "laughs", "reporter", "another", "who"],
+      },
+      {
+        target: "“We all start with menu changes and lost-and-found updates, Caleb,” she admits, sharing her own embarrassing first article about a broken water fountain.",
+        jumbled: ["embarrassing", "about", "with", "water", "lost-and-found", "menu", "admits,", "changes", "start", "first", "and", "updates,", "Caleb,”", "article", "broken", "“We", "all", "own", "her", "sharing", "she", "a", "fountain."],
+      },
+      {
+        target: "Somehow, knowing everyone begins this way makes the assignment feel slightly less discouraging.",
+        jumbled: ["discouraging.", "makes", "knowing", "less", "slightly", "everyone", "this", "the", "feel", "Somehow,", "way", "assignment", "begins"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a boring task that turned out okay once you started.",
     mySentenceExample: "Cleaning my room felt boring but turned out okay once I started.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Caleb ignores what he overhears completely.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart races unexpectedly.", jumbled: ["races", "unexpectedly.", "My", "heart"] },
-      { target: "I slow my pace.", jumbled: ["slow", "my", "I", "pace."] },
-      { target: "This catches my attention immediately.", jumbled: ["catches", "my", "This", "attention", "immediately."] },
-      { target: "I need to investigate this properly.", jumbled: ["need", "to", "I", "investigate", "this", "properly."] },
-      { target: "Students would genuinely want to know about this.", jumbled: ["Students", "would", "genuinely", "want", "to", "know", "about", "this."] },
+      {
+        target: "I overhear two teachers discussing the school's budget in hushed, worried tones near the art room.",
+        jumbled: ["overhear", "room.", "two", "the", "art", "worried", "tones", "discussing", "school's", "budget", "the", "in", "I", "teachers", "near", "hushed,"],
+      },
+      {
+        target: "Something about “cutting the art program” catches my attention immediately, and I slow my pace, straining to hear more details without seeming obvious.",
+        jumbled: ["art", "immediately,", "about", "attention", "straining", "and", "pace,", "without", "I", "more", "seeming", "to", "“cutting", "slow", "obvious.", "the", "my", "details", "hear", "catches", "program”", "Something", "my"],
+      },
+      {
+        target: "This sounds like something students would genuinely want to know about, unlike menu changes or lost umbrellas.",
+        jumbled: ["want", "about,", "something", "know", "or", "to", "like", "sounds", "changes", "menu", "umbrellas.", "students", "would", "genuinely", "unlike", "This", "lost"],
+      },
+      {
+        target: "My heart races with unexpected excitement as I realize I might have accidentally stumbled onto real, meaningful news.",
+        jumbled: ["races", "unexpected", "stumbled", "with", "real,", "might", "excitement", "accidentally", "I", "meaningful", "My", "I", "onto", "news.", "have", "heart", "realize", "as"],
+      },
+      {
+        target: "“This is it, Caleb,” I tell myself, deciding right there in the hallway that I need to investigate this story properly, whatever it takes.",
+        jumbled: ["it,", "I", "myself,", "takes.", "Caleb,”", "story", "“This", "need", "properly,", "I", "is", "to", "deciding", "hallway", "that", "this", "right", "it", "whatever", "investigate", "the", "in", "tell", "there"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about accidentally learning something important.",
     mySentenceExample: "I accidentally learned something important overhearing a conversation at school.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Caleb feels this story is just like his old assignments.", answer: false },
     ],
     buildSentence: [
-      { target: "I visit the art room.", jumbled: ["visit", "the", "I", "art", "room."] },
-      { target: "This feels like real journalism.", jumbled: ["feels", "like", "This", "real", "journalism."] },
-      { target: "I interview several students too.", jumbled: ["interview", "several", "I", "students", "too."] },
-      { target: "He confirms this cautiously to me.", jumbled: ["confirms", "this", "He", "cautiously", "to", "me."] },
-      { target: "This story involves real people with real concerns.", jumbled: ["This", "story", "involves", "real", "people", "with", "real", "concerns."] },
+      {
+        target: "I start by visiting the art room directly, asking Mr. Foster, the art teacher, whether the rumors about budget cuts hold any truth.",
+        jumbled: ["about", "art", "hold", "I", "the", "by", "rumors", "directly,", "room", "visiting", "whether", "truth.", "any", "cuts", "art", "asking", "budget", "Foster,", "start", "the", "the", "Mr.", "teacher,"],
+      },
+      {
+        target: "“There's truth to it, Caleb, but nothing official yet,” he confirms cautiously, noting that funding discussions are indeed happening, though nothing has been decided yet by the administration.",
+        jumbled: ["yet,”", "“There's", "to", "cautiously,", "that", "has", "it,", "funding", "official", "nothing", "yet", "administration.", "happening,", "but", "by", "though", "noting", "decided", "been", "Caleb,", "confirms", "the", "nothing", "indeed", "discussions", "are", "truth", "he"],
+      },
+      {
+        target: "Next, I interview several students in the hallway, discovering that many genuinely care about keeping the art program running for future classes.",
+        jumbled: ["the", "in", "about", "program", "that", "for", "keeping", "discovering", "genuinely", "interview", "classes.", "care", "art", "I", "future", "Next,", "hallway,", "many", "the", "running", "several", "students"],
+      },
+      {
+        target: "Taking careful notes, I realize this story involves real people with real concerns, unlike my previous, forgettable assignments.",
+        jumbled: ["real", "story", "with", "previous,", "realize", "my", "involves", "assignments.", "I", "concerns,", "people", "real", "notes,", "careful", "unlike", "this", "Taking", "forgettable"],
+      },
+      {
+        target: "Gathering these different perspectives feels like actual journalism, exactly what originally drew me toward joining the newspaper.",
+        jumbled: ["perspectives", "what", "exactly", "the", "feels", "newspaper.", "drew", "like", "joining", "originally", "different", "actual", "these", "Gathering", "journalism,", "me", "toward"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about interviewing or asking someone important questions.",
     mySentenceExample: "I interviewed my grandfather about his life for a school project.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Ms. Rivera eventually agrees to let him pursue it.", answer: true },
     ],
     buildSentence: [
-      { target: "This surprises me a little.", jumbled: ["surprises", "me", "This", "a", "little."] },
-      { target: "She finally nods cautiously.", jumbled: ["finally", "nods", "She", "cautiously."] },
-      { target: "I understand the importance of accuracy.", jumbled: ["understand", "the", "I", "importance", "of", "accuracy."] },
-      { target: "This is a serious, sensitive story.", jumbled: ["is", "a", "This", "serious,", "sensitive", "story."] },
-      { target: "Are you prepared to handle it responsibly?", jumbled: ["you", "prepared", "Are", "to", "handle", "it", "responsibly?"] },
+      {
+        target: "Excited about my findings, I bring my story pitch to Ms. Rivera, expecting immediate enthusiastic approval for such an important topic.",
+        jumbled: ["immediate", "story", "my", "important", "about", "Ms.", "such", "Rivera,", "for", "pitch", "I", "findings,", "Excited", "bring", "to", "my", "topic.", "expecting", "enthusiastic", "an", "approval"],
+      },
+      {
+        target: "Instead, she reads it slowly, her expression thoughtful rather than immediately encouraging, which honestly surprises and worries me a little.",
+        jumbled: ["slowly,", "worries", "encouraging,", "and", "immediately", "she", "a", "Instead,", "her", "thoughtful", "reads", "which", "rather", "honestly", "little.", "surprises", "than", "expression", "me", "it"],
+      },
+      {
+        target: "“This is a serious, sensitive story, Caleb. Are you prepared to handle it responsibly?” she asks carefully, not doubting my ability exactly, but emphasizing genuine journalistic responsibility.",
+        jumbled: ["serious,", "exactly,", "genuine", "story,", "is", "a", "to", "carefully,", "Caleb.", "you", "not", "my", "asks", "“This", "ability", "Are", "handle", "sensitive", "journalistic", "responsibility.", "she", "emphasizing", "but", "responsibly?”", "it", "doubting", "prepared"],
+      },
+      {
+        target: "I assure her I understand the importance of accuracy and fairness, especially regarding something affecting real students and teachers.",
+        jumbled: ["her", "understand", "affecting", "real", "and", "I", "regarding", "and", "I", "importance", "students", "especially", "assure", "the", "something", "teachers.", "accuracy", "of", "fairness,"],
+      },
+      {
+        target: "She finally nods, agreeing cautiously to let me pursue it under her guidance.",
+        jumbled: ["under", "guidance.", "pursue", "to", "She", "me", "agreeing", "cautiously", "her", "let", "finally", "it", "nods,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being trusted with a serious responsibility.",
     mySentenceExample: "I was trusted with a serious responsibility when I watched my younger cousin alone.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "The interview is scheduled for Thursday.", answer: true },
     ],
     buildSentence: [
-      { target: "Iris offers to help.", jumbled: ["offers", "to", "Iris", "help."] },
-      { target: "We prepare thoughtful questions.", jumbled: ["prepare", "thoughtful", "We", "questions."] },
-      { target: "I feel far more prepared now.", jumbled: ["feel", "far", "I", "more", "prepared", "now."] },
-      { target: "Good journalism asks hard questions respectfully.", jumbled: ["Good", "journalism", "asks", "hard", "questions", "respectfully."] },
-      { target: "We want to understand the actual financial reasoning.", jumbled: ["We", "want", "to", "understand", "the", "actual", "financial", "reasoning."] },
+      {
+        target: "With official permission secured, Iris offers to help me dig deeper, and together we schedule an interview with the school principal directly.",
+        jumbled: ["together", "schedule", "directly.", "offers", "we", "me", "with", "official", "secured,", "help", "the", "interview", "an", "dig", "With", "permission", "school", "and", "to", "deeper,", "principal", "Iris"],
+      },
+      {
+        target: "We prepare thoughtful, specific questions beforehand, wanting to understand the actual financial reasoning rather than relying only on hallway rumors.",
+        jumbled: ["the", "on", "beforehand,", "We", "to", "questions", "reasoning", "only", "prepare", "relying", "hallway", "rather", "thoughtful,", "than", "rumors.", "actual", "specific", "understand", "financial", "wanting"],
+      },
+      {
+        target: "Iris teaches me how to structure genuinely useful interview questions, avoiding anything that sounds accusatory or one-sided unfairly.",
+        jumbled: ["how", "questions,", "interview", "accusatory", "Iris", "avoiding", "genuinely", "anything", "to", "teaches", "useful", "or", "me", "unfairly.", "that", "sounds", "structure", "one-sided"],
+      },
+      {
+        target: "“Good journalism asks hard questions respectfully, Caleb,” she explains, reviewing my draft questions with her sharp editing eye.",
+        jumbled: ["sharp", "questions", "“Good", "with", "her", "respectfully,", "asks", "questions", "my", "reviewing", "Caleb,”", "draft", "eye.", "hard", "she", "editing", "journalism", "explains,"],
+      },
+      {
+        target: "By the time our interview is scheduled for Thursday, I feel far more prepared and considerably less nervous than I expected to feel.",
+        jumbled: ["is", "time", "considerably", "interview", "far", "and", "to", "feel", "By", "I", "scheduled", "for", "nervous", "feel.", "more", "expected", "our", "prepared", "the", "less", "I", "than", "Thursday,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about preparing carefully for something important.",
     mySentenceExample: "I prepared carefully for my job interview by practicing common questions.",
@@ -211,11 +301,22 @@ export const CHAPTERS = [
       { text: "Caleb feels the draft is honest and balanced.", answer: true },
     ],
     buildSentence: [
-      { target: "I sit down to write.", jumbled: ["sit", "down", "I", "to", "write."] },
-      { target: "I rewrite my opening paragraph.", jumbled: ["rewrite", "my", "I", "opening", "paragraph."] },
-      { target: "This proves harder than expected.", jumbled: ["proves", "harder", "This", "than", "expected."] },
-      { target: "I want to represent everyone's concerns fairly.", jumbled: ["want", "to", "I", "represent", "everyone's", "concerns", "fairly."] },
-      { target: "I finally produce a draft worth submitting for review.", jumbled: ["I", "finally", "produce", "a", "draft", "worth", "submitting", "for", "review."] },
+      {
+        target: "Armed with quotes from teachers, students, and the principal, I finally sit down to write the actual article, feeling the weight of responsibility more than ever.",
+        jumbled: ["more", "students,", "the", "the", "responsibility", "quotes", "down", "I", "teachers,", "Armed", "finally", "ever.", "than", "the", "from", "to", "and", "weight", "with", "actual", "write", "article,", "sit", "feeling", "of", "principal,"],
+      },
+      {
+        target: "Balancing every perspective fairly proves harder than I expected, since I genuinely want to represent everyone's concerns without appearing biased toward any particular side.",
+        jumbled: ["to", "every", "expected,", "perspective", "represent", "without", "than", "everyone's", "any", "toward", "Balancing", "I", "I", "want", "concerns", "particular", "proves", "appearing", "since", "fairly", "genuinely", "harder", "side.", "biased"],
+      },
+      {
+        target: "I rewrite my opening paragraph four separate times, searching for a tone that feels serious without becoming overly dramatic or sensational.",
+        jumbled: ["that", "without", "dramatic", "times,", "serious", "separate", "overly", "for", "sensational.", "feels", "four", "opening", "rewrite", "I", "my", "a", "searching", "tone", "becoming", "or", "paragraph"],
+      },
+      {
+        target: "“Keep going, Caleb,” I mutter, and late into the evening, surrounded by crumpled paper and empty tea cups, I finally produce a draft that feels honest, balanced, and genuinely worth submitting to Ms. Rivera for review.",
+        jumbled: ["empty", "into", "draft", "a", "paper", "that", "worth", "and", "genuinely", "review.", "the", "Caleb,”", "surrounded", "tea", "I", "by", "produce", "Ms.", "evening,", "honest,", "“Keep", "feels", "to", "crumpled", "I", "Rivera", "and", "cups,", "submitting", "late", "and", "for", "mutter,", "going,", "balanced,", "finally"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about revising something many times to get it right.",
     mySentenceExample: "I revised my essay many times to make it clear and correct.",
@@ -240,11 +341,26 @@ export const CHAPTERS = [
       { text: "The final article looks weaker than the original draft.", answer: false },
     ],
     buildSentence: [
-      { target: "Her feedback stings slightly.", jumbled: ["stings", "slightly.", "Her", "feedback"] },
-      { target: "We revise sentences together.", jumbled: ["revise", "sentences", "We", "together."] },
-      { target: "This part needs a source.", jumbled: ["part", "needs", "This", "a", "source."] },
-      { target: "She's genuinely helping me improve.", jumbled: ["genuinely", "helping", "She's", "me", "improve."] },
-      { target: "My article looks noticeably different but undeniably stronger.", jumbled: ["My", "article", "looks", "noticeably", "different", "but", "undeniably", "stronger."] },
+      {
+        target: "Ms. Rivera reads my draft slowly the next day, her red pen moving steadily across the paper while I sit nearby trying not to fidget nervously.",
+        jumbled: ["to", "pen", "the", "while", "nervously.", "reads", "next", "fidget", "my", "Rivera", "trying", "draft", "paper", "the", "I", "Ms.", "day,", "nearby", "moving", "slowly", "her", "red", "across", "sit", "not", "steadily"],
+      },
+      {
+        target: "“This part needs a source, Caleb,” she notes at one point, and “this sentence sounds like your opinion, not fact,” at another.",
+        jumbled: ["“This", "Caleb,”", "like", "not", "source,", "fact,”", "at", "“this", "a", "sentence", "another.", "your", "and", "at", "sounds", "part", "needs", "opinion,", "one", "notes", "point,", "she"],
+      },
+      {
+        target: "I recognize she's genuinely helping me become more precise and credible as a reporter.",
+        jumbled: ["and", "become", "helping", "as", "she's", "credible", "recognize", "more", "I", "reporter.", "genuinely", "a", "precise", "me"],
+      },
+      {
+        target: "We spend nearly an hour revising sentences together, cutting anything unnecessary and strengthening weaker, unclear arguments throughout the article.",
+        jumbled: ["spend", "We", "strengthening", "revising", "and", "arguments", "unclear", "hour", "unnecessary", "the", "anything", "an", "together,", "throughout", "article.", "nearly", "sentences", "cutting", "weaker,"],
+      },
+      {
+        target: "By the end, my article looks noticeably different, but undeniably stronger and more professionally polished than my original draft.",
+        jumbled: ["professionally", "and", "original", "than", "noticeably", "draft.", "different,", "By", "article", "my", "the", "my", "end,", "looks", "polished", "stronger", "undeniably", "more", "but"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving helpful feedback that improved your work.",
     mySentenceExample: "My teacher gave helpful feedback that improved my essay a lot.",
@@ -269,11 +385,26 @@ export const CHAPTERS = [
       { text: "This response feels better than any grade to Caleb.", answer: true },
     ],
     buildSentence: [
-      { target: "This feels surreal today.", jumbled: ["feels", "surreal", "This", "today."] },
-      { target: "My stomach flutters nervously.", jumbled: ["flutters", "nervously.", "My", "stomach"] },
-      { target: "Classmates thank me directly.", jumbled: ["thank", "me", "Classmates", "directly."] },
-      { target: "I have imagined this for two years.", jumbled: ["have", "imagined", "I", "this", "for", "two", "years."] },
-      { target: "This response feels better than any grade I've received.", jumbled: ["This", "response", "feels", "better", "than", "any", "grade", "I've", "received."] },
+      {
+        target: "On publication day, I arrive early to watch students grab copies of the newspaper from the stack near the main entrance, my stomach fluttering nervously.",
+        jumbled: ["my", "near", "grab", "entrance,", "watch", "the", "stomach", "day,", "fluttering", "I", "from", "newspaper", "nervously.", "stack", "of", "On", "the", "students", "publication", "to", "early", "the", "arrive", "copies", "main"],
+      },
+      {
+        target: "Seeing my name printed as the byline above the article feels surreal, something I have imagined for two entire years finally becoming real.",
+        jumbled: ["above", "surreal,", "printed", "something", "real.", "two", "I", "as", "years", "name", "my", "article", "byline", "becoming", "feels", "finally", "the", "have", "imagined", "the", "for", "entire", "Seeing"],
+      },
+      {
+        target: "Throughout the day, classmates approach me with genuine questions and opinions about the art program, several thanking me directly for investigating something they actually cared about.",
+        jumbled: ["me", "me", "cared", "several", "the", "and", "opinions", "directly", "thanking", "genuine", "about", "Throughout", "questions", "the", "art", "day,", "approach", "about.", "something", "program,", "with", "investigating", "classmates", "they", "actually", "for"],
+      },
+      {
+        target: "“Thanks for writing this, Caleb,” one classmate says with a grin.",
+        jumbled: ["this,", "says", "with", "one", "writing", "Caleb,”", "for", "classmate", "a", "grin.", "“Thanks"],
+      },
+      {
+        target: "Even a couple of skeptical teachers stop me in the hallway, acknowledging the article felt fair and well-researched despite the sensitive topic.",
+        jumbled: ["acknowledging", "well-researched", "Even", "sensitive", "despite", "skeptical", "and", "teachers", "a", "the", "stop", "fair", "hallway,", "the", "couple", "me", "felt", "topic.", "the", "of", "article", "in"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about seeing your work recognized by other people.",
     mySentenceExample: "I felt proud seeing my painting displayed in the school hallway.",
@@ -298,11 +429,26 @@ export const CHAPTERS = [
       { text: "Caleb feels eager to find his next story.", answer: true },
     ],
     buildSentence: [
-      { target: "You started this, honestly.", jumbled: ["started", "this,", "You", "honestly."] },
-      { target: "I feel a swell of pride.", jumbled: ["feel", "a", "I", "swell", "of", "pride."] },
-      { target: "Ms. Rivera smiles proudly today.", jumbled: ["smiles", "proudly", "Ms.", "Rivera", "today."] },
-      { target: "I already feel eager for my next story.", jumbled: ["already", "feel", "I", "eager", "for", "my", "next", "story."] },
-      { target: "Journalism's real purpose is giving people information that leads to change.", jumbled: ["Journalism's", "real", "purpose", "is", "giving", "people", "information", "that", "leads", "to", "change."] },
+      {
+        target: "Two weeks after publication, the administration announces they've reconsidered the budget decision, citing overwhelming student interest revealed through the newspaper article.",
+        jumbled: ["the", "publication,", "through", "interest", "newspaper", "citing", "they've", "the", "after", "reconsidered", "revealed", "budget", "student", "the", "Two", "administration", "announces", "decision,", "article.", "weeks", "overwhelming"],
+      },
+      {
+        target: "Standing outside the art room, watching students paint just like always, I feel a swell of pride unlike anything I've experienced from schoolwork before.",
+        jumbled: ["schoolwork", "swell", "watching", "pride", "outside", "of", "always,", "room,", "just", "paint", "art", "experienced", "from", "before.", "students", "I've", "anything", "the", "I", "unlike", "a", "Standing", "feel", "like"],
+      },
+      {
+        target: "“You started this, Caleb,” Iris reminds me, though I quickly credit her research help and Ms. Rivera's careful guidance throughout the entire process.",
+        jumbled: ["the", "Caleb,”", "process.", "guidance", "Iris", "I", "started", "throughout", "Ms.", "help", "reminds", "and", "me,", "careful", "“You", "entire", "Rivera's", "quickly", "research", "credit", "though", "her", "this,"],
+      },
+      {
+        target: "Ms. Rivera smiles proudly, mentioning that journalism's real purpose is exactly this: giving people information that leads to genuine, meaningful change.",
+        jumbled: ["Rivera", "proudly,", "mentioning", "that", "giving", "Ms.", "this:", "leads", "genuine,", "is", "exactly", "purpose", "journalism's", "to", "real", "change.", "that", "smiles", "people", "meaningful", "information"],
+      },
+      {
+        target: "Walking away, I already feel eager to find my next important story.",
+        jumbled: ["find", "important", "away,", "I", "already", "to", "feel", "eager", "story.", "next", "my", "Walking"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time your effort led to a real, positive change.",
     mySentenceExample: "My effort to recycle more led to a real change in my whole school.",

@@ -41,11 +41,26 @@ export const CHAPTERS = [
       { text: "Simone realizes this disagreement threatens their shared goal.", answer: true },
     ],
     buildSentence: [
-      { target: "Our club has recently learned this.", jumbled: ["Our", "club", "has", "recently", "learned", "this."] },
-      { target: "This decision seems shortsighted to everyone.", jumbled: ["This", "decision", "seems", "shortsighted", "to", "everyone."] },
-      { target: "Visibility creates real pressure, he argues.", jumbled: ["Visibility", "creates", "real", "pressure,", "he", "argues."] },
-      { target: "This threatens to derail our shared goal entirely.", jumbled: ["This", "threatens", "to", "derail", "our", "shared", "goal", "entirely."] },
-      { target: "This might alienate the administrators we'd need to persuade.", jumbled: ["This", "might", "alienate", "the", "administrators", "we'd", "need", "to", "persuade."] },
+      {
+        target: "Our Environmental Club has recently learned that the school plans to replace the community garden with a parking expansion.",
+        jumbled: ["community", "the", "has", "replace", "plans", "expansion.", "a", "Environmental", "parking", "Our", "that", "learned", "garden", "with", "Club", "school", "recently", "the", "to"],
+      },
+      {
+        target: "Everyone agrees this decision seems shortsighted, but the club has split sharply over how we should actually respond.",
+        jumbled: ["how", "split", "sharply", "respond.", "the", "decision", "but", "should", "actually", "seems", "shortsighted,", "over", "we", "Everyone", "agrees", "this", "has", "club"],
+      },
+      {
+        target: "Teodoro insists we organize a public protest outside the administration building, arguing that visibility creates real pressure for change.",
+        jumbled: ["real", "we", "arguing", "the", "public", "protest", "a", "visibility", "Teodoro", "insists", "that", "administration", "change.", "outside", "pressure", "organize", "for", "building,", "creates"],
+      },
+      {
+        target: "“We can't just sit back, Simone,” he says.",
+        jumbled: ["can't", "says.", "sit", "just", "he", "back,", "“We", "Simone,”"],
+      },
+      {
+        target: "I realize this disagreement threatens to derail our shared goal entirely, unless I can find some way to bridge it.",
+        jumbled: ["I", "this", "it.", "goal", "shared", "entirely,", "disagreement", "derail", "way", "to", "realize", "unless", "our", "threatens", "I", "some", "can", "to", "bridge", "find"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a group disagreeing over the best strategy to achieve a shared goal.",
     mySentenceExample: "The group disagreed over the best strategy to achieve their goal.",
@@ -70,11 +85,26 @@ export const CHAPTERS = [
       { text: "Simone wonders whether that situation genuinely applies to theirs.", answer: true },
     ],
     buildSentence: [
-      { target: "I ask Teodoro to explain more.", jumbled: ["I", "ask", "Teodoro", "to", "explain", "more."] },
-      { target: "I understand his frustration here.", jumbled: ["I", "understand", "his", "frustration", "here."] },
-      { target: "We simply can't afford a slow approach.", jumbled: ["We", "simply", "can't", "afford", "a", "slow", "approach."] },
-      { target: "This had dragged on for months without result.", jumbled: ["This", "had", "dragged", "on", "for", "months", "without", "result."] },
-      { target: "I wonder whether that situation genuinely applies to ours.", jumbled: ["I", "wonder", "whether", "that", "situation", "genuinely", "applies", "to", "ours."] },
+      {
+        target: "I ask Teodoro to explain his reasoning more fully, curious what's actually driving his strong conviction.",
+        jumbled: ["explain", "to", "actually", "fully,", "reasoning", "Teodoro", "curious", "ask", "strong", "his", "his", "I", "more", "what's", "conviction.", "driving"],
+      },
+      {
+        target: "He tells me about a similar situation at another school, where quiet lobbying had dragged on for months without any real result.",
+        jumbled: ["without", "had", "on", "another", "any", "He", "lobbying", "situation", "about", "me", "tells", "at", "dragged", "real", "months", "quiet", "school,", "similar", "result.", "a", "for", "where"],
+      },
+      {
+        target: "“Trust me, Simone, we don't have that kind of time,” he says.",
+        jumbled: ["Simone,", "time,”", "we", "kind", "he", "don't", "that", "“Trust", "me,", "have", "of", "says."],
+      },
+      {
+        target: "Only after students organized a visible, well-covered protest did the administration finally take the issue seriously enough to act.",
+        jumbled: ["well-covered", "issue", "a", "students", "enough", "seriously", "the", "to", "act.", "visible,", "the", "finally", "take", "organized", "administration", "protest", "after", "did", "Only"],
+      },
+      {
+        target: "He argues that given our limited time before the construction begins, we simply can't afford a slow, uncertain approach.",
+        jumbled: ["time", "we", "that", "simply", "limited", "argues", "uncertain", "begins,", "afford", "a", "can't", "construction", "slow,", "our", "He", "before", "approach.", "the", "given"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about listening carefully to understand why someone feels strongly about something.",
     mySentenceExample: "I listened carefully to understand why he felt so strongly.",
@@ -99,11 +129,26 @@ export const CHAPTERS = [
       { text: "Simone finds Winnie's reasoning compelling too.", answer: true },
     ],
     buildSentence: [
-      { target: "I have a similar conversation now.", jumbled: ["I", "have", "a", "similar", "conversation", "now."] },
-      { target: "I find her reasoning compelling too.", jumbled: ["I", "find", "her", "reasoning", "compelling", "too."] },
-      { target: "She pulls up research she'd compiled.", jumbled: ["She", "pulls", "up", "research", "she'd", "compiled."] },
-      { target: "This requires patience Teodoro feels we don't have.", jumbled: ["This", "requires", "patience", "Teodoro", "feels", "we", "don't", "have."] },
-      { target: "A protest might make the administration less likely to reverse course.", jumbled: ["A", "protest", "might", "make", "the", "administration", "less", "likely", "to", "reverse", "course."] },
+      {
+        target: "I have a similar conversation with Winnie, who pulls up research she'd compiled about the administration's decision-making patterns historically.",
+        jumbled: ["the", "a", "administration's", "similar", "research", "conversation", "who", "pulls", "historically.", "with", "have", "patterns", "compiled", "she'd", "about", "decision-making", "I", "Winnie,", "up"],
+      },
+      {
+        target: "She explains that our principal tends to respond defensively to public criticism, often digging in rather than reconsidering a position.",
+        jumbled: ["reconsidering", "often", "in", "respond", "digging", "position.", "public", "criticism,", "explains", "She", "to", "principal", "tends", "than", "defensively", "rather", "our", "to", "a", "that"],
+      },
+      {
+        target: "“Think about it, Simone,” she says, tapping the screen.",
+        jumbled: ["tapping", "about", "the", "says,", "Simone,”", "it,", "screen.", "she", "“Think"],
+      },
+      {
+        target: "Given this pattern, Winnie argues, a protest might actually make the administration less likely to reverse course, not more.",
+        jumbled: ["might", "to", "make", "not", "Given", "course,", "more.", "likely", "less", "the", "pattern,", "this", "protest", "Winnie", "a", "reverse", "actually", "administration", "argues,"],
+      },
+      {
+        target: "I find her reasoning compelling too, though I recognize it requires patience Teodoro clearly feels we don't currently have.",
+        jumbled: ["we", "currently", "clearly", "reasoning", "it", "patience", "I", "too,", "recognize", "feels", "have.", "don't", "find", "compelling", "Teodoro", "though", "requires", "I", "her"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone using data or research to support their point of view.",
     mySentenceExample: "She used research to support her point of view effectively.",
@@ -128,11 +173,26 @@ export const CHAPTERS = [
       { text: "Simone begins thinking about combining both approaches.", answer: true },
     ],
     buildSentence: [
-      { target: "I try mapping out both perspectives.", jumbled: ["I", "try", "mapping", "out", "both", "perspectives."] },
-      { target: "His urgency seems justified given the timeline.", jumbled: ["His", "urgency", "seems", "justified", "given", "the", "timeline."] },
-      { target: "Her caution also seems justified here.", jumbled: ["Her", "caution", "also", "seems", "justified", "here."] },
-      { target: "Perhaps the answer isn't choosing one approach exclusively.", jumbled: ["Perhaps", "the", "answer", "isn't", "choosing", "one", "approach", "exclusively."] },
-      { target: "We risk alienating either the timeline or the relationship.", jumbled: ["We", "risk", "alienating", "either", "the", "timeline", "or", "the", "relationship."] },
+      {
+        target: "Sitting alone that evening, I try mapping out both perspectives honestly, rather than simply picking whichever argument felt more persuasive emotionally.",
+        jumbled: ["whichever", "evening,", "out", "felt", "alone", "mapping", "honestly,", "Sitting", "I", "simply", "persuasive", "argument", "than", "more", "both", "perspectives", "rather", "emotionally.", "that", "picking", "try"],
+      },
+      {
+        target: "Teodoro's urgency seems justified, given how little time remains before construction genuinely begins on the site.",
+        jumbled: ["how", "little", "begins", "before", "seems", "given", "urgency", "justified,", "time", "on", "construction", "remains", "the", "site.", "Teodoro's", "genuinely"],
+      },
+      {
+        target: "Winnie's caution also seems justified, given what she knows specifically about how our particular administration tends to react.",
+        jumbled: ["administration", "caution", "Winnie's", "what", "our", "given", "react.", "seems", "specifically", "she", "also", "to", "tends", "about", "particular", "knows", "justified,", "how"],
+      },
+      {
+        target: "I realize that whichever approach we choose exclusively, we risk alienating either the timeline or the relationship we'd need for lasting success.",
+        jumbled: ["success.", "timeline", "that", "either", "we", "choose", "exclusively,", "approach", "I", "whichever", "realize", "relationship", "risk", "the", "or", "lasting", "we", "alienating", "the", "we'd", "need", "for"],
+      },
+      {
+        target: "Perhaps, Simone, I think, the answer isn't choosing one approach over the other, but finding a way to combine them.",
+        jumbled: ["other,", "them.", "Simone,", "to", "finding", "Perhaps,", "over", "think,", "isn't", "the", "approach", "the", "a", "choosing", "but", "way", "I", "combine", "one", "answer"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about realizing two opposing viewpoints might both have some truth to them.",
     mySentenceExample: "I realized two opposing viewpoints might both have some truth to them.",
@@ -157,11 +217,26 @@ export const CHAPTERS = [
       { text: "Teodoro admits the timeline gives him something concrete.", answer: true },
     ],
     buildSentence: [
-      { target: "I propose a two-phase plan now.", jumbled: ["I", "propose", "a", "two-phase", "plan", "now."] },
-      { target: "Teodoro looks skeptical initially about this.", jumbled: ["Teodoro", "looks", "skeptical", "initially", "about", "this."] },
-      { target: "This gives him something concrete to hold onto.", jumbled: ["This", "gives", "him", "something", "concrete", "to", "hold", "onto."] },
-      { target: "We're not choosing between patience and pressure.", jumbled: ["We're", "not", "choosing", "between", "patience", "and", "pressure."] },
-      { target: "We'd move forward with a public demonstration instead.", jumbled: ["We'd", "move", "forward", "with", "a", "public", "demonstration", "instead."] },
+      {
+        target: "At the next meeting, I propose a two-phase plan, hoping it might genuinely satisfy both Teodoro's urgency and Winnie's caution.",
+        jumbled: ["plan,", "I", "might", "it", "two-phase", "next", "a", "and", "hoping", "At", "satisfy", "caution.", "propose", "Teodoro's", "the", "genuinely", "urgency", "both", "Winnie's", "meeting,"],
+      },
+      {
+        target: "First, we'd request a formal meeting with data, giving the administration a fair, respectful chance to reconsider privately.",
+        jumbled: ["administration", "with", "request", "First,", "meeting", "giving", "fair,", "data,", "respectful", "formal", "we'd", "to", "reconsider", "the", "chance", "a", "privately.", "a"],
+      },
+      {
+        target: "However, if that meeting doesn't produce a real commitment within two weeks, we'd move forward with a public demonstration instead.",
+        jumbled: ["we'd", "move", "if", "real", "produce", "instead.", "two", "However,", "meeting", "doesn't", "commitment", "with", "forward", "public", "within", "weeks,", "a", "that", "a", "demonstration"],
+      },
+      {
+        target: "This way, I explain, we're not choosing between patience and pressure, but sequencing them strategically together.",
+        jumbled: ["pressure,", "together.", "explain,", "This", "but", "we're", "choosing", "I", "strategically", "between", "them", "not", "and", "way,", "sequencing", "patience"],
+      },
+      {
+        target: "“Fine, Simone — two weeks, but that's it,” he finally says, admitting the timeline gives him something concrete to hold onto.",
+        jumbled: ["him", "finally", "he", "to", "two", "admitting", "timeline", "hold", "the", "onto.", "that's", "it,”", "Simone", "gives", "but", "says,", "“Fine,", "concrete", "weeks,", "something", "—"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about proposing a plan that combines two different approaches.",
     mySentenceExample: "I proposed a plan that combined two different approaches.",
@@ -186,11 +261,26 @@ export const CHAPTERS = [
       { text: "Simone feels cautiously hopeful leaving the office.", answer: true },
     ],
     buildSentence: [
-      { target: "We request a formal meeting now.", jumbled: ["We", "request", "a", "formal", "meeting", "now."] },
-      { target: "I feel cautiously hopeful now.", jumbled: ["I", "feel", "cautiously", "hopeful", "now."] },
-      { target: "She agrees to review our proposal formally.", jumbled: ["She", "agrees", "to", "review", "our", "proposal", "formally."] },
-      { target: "This outcome remains genuinely uncertain either way.", jumbled: ["This", "outcome", "remains", "genuinely", "uncertain", "either", "way."] },
-      { target: "The decision wasn't made carelessly or without consideration.", jumbled: ["The", "decision", "wasn't", "made", "carelessly", "or", "without", "consideration."] },
+      {
+        target: "Winnie and I request a formal meeting with the principal, bringing carefully organized data about the garden's educational and environmental value.",
+        jumbled: ["I", "educational", "about", "garden's", "carefully", "bringing", "a", "formal", "with", "data", "value.", "the", "meeting", "environmental", "principal,", "and", "the", "organized", "and", "Winnie", "request"],
+      },
+      {
+        target: "The principal listens politely, though her expression remains difficult to read throughout most of our presentation.",
+        jumbled: ["though", "to", "read", "principal", "difficult", "remains", "politely,", "throughout", "expression", "most", "presentation.", "listens", "her", "our", "The", "of"],
+      },
+      {
+        target: "“Thank you both for putting this together, Simone,” she says, glancing at our folder.",
+        jumbled: ["Simone,”", "this", "says,", "at", "she", "you", "our", "putting", "for", "glancing", "both", "“Thank", "folder.", "together,"],
+      },
+      {
+        target: "She mentions budget pressures and safety requirements, explaining the parking decision wasn't made carelessly or without genuine consideration.",
+        jumbled: ["carelessly", "budget", "decision", "the", "mentions", "parking", "or", "made", "and", "requirements,", "explaining", "safety", "without", "wasn't", "consideration.", "She", "genuine", "pressures"],
+      },
+      {
+        target: "Leaving her office, I feel cautiously hopeful, though I remind myself this outcome remains genuinely uncertain either way.",
+        jumbled: ["her", "myself", "office,", "cautiously", "genuinely", "this", "hopeful,", "remind", "Leaving", "I", "remains", "way.", "feel", "uncertain", "either", "though", "I", "outcome"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about presenting a well-prepared case to someone in a position of authority.",
     mySentenceExample: "I presented a well-prepared case to someone in authority.",
@@ -215,11 +305,26 @@ export const CHAPTERS = [
       { text: "Simone learns patience and preparation aren't actually opposites.", answer: true },
     ],
     buildSentence: [
-      { target: "We begin quietly preparing now.", jumbled: ["We", "begin", "quietly", "preparing", "now."] },
-      { target: "He seems genuinely more at ease.", jumbled: ["He", "seems", "genuinely", "more", "at", "ease."] },
-      { target: "Winnie checks in occasionally too.", jumbled: ["Winnie", "checks", "in", "occasionally", "too."] },
-      { target: "Patience and preparation aren't actually opposites.", jumbled: ["Patience", "and", "preparation", "aren't", "actually", "opposites."] },
-      { target: "This doesn't mean giving up entirely, at least temporarily.", jumbled: ["This", "doesn't", "mean", "giving", "up", "entirely,", "at", "least", "temporarily."] },
+      {
+        target: "Teodoro and I begin quietly preparing for a potential demonstration, just in case it's actually needed.",
+        jumbled: ["in", "just", "for", "case", "demonstration,", "and", "actually", "quietly", "Teodoro", "preparing", "it's", "begin", "potential", "I", "needed.", "a"],
+      },
+      {
+        target: "He seems genuinely more at ease now, having accepted that patience, at least temporarily, doesn't mean giving up entirely.",
+        jumbled: ["now,", "He", "having", "entirely.", "that", "giving", "seems", "up", "ease", "patience,", "least", "mean", "temporarily,", "doesn't", "at", "genuinely", "accepted", "more", "at"],
+      },
+      {
+        target: "We sketch signs and plan logistics together, an odd but oddly productive collaboration between two people who'd initially disagreed sharply.",
+        jumbled: ["initially", "sharply.", "people", "two", "but", "collaboration", "together,", "productive", "who'd", "between", "oddly", "We", "and", "logistics", "signs", "an", "odd", "sketch", "disagreed", "plan"],
+      },
+      {
+        target: "Winnie checks in occasionally too, mentioning she respects that we're preparing responsibly rather than assuming the meeting will definitely succeed.",
+        jumbled: ["the", "responsibly", "assuming", "rather", "meeting", "succeed.", "in", "that", "than", "Winnie", "preparing", "she", "definitely", "mentioning", "occasionally", "checks", "respects", "will", "we're", "too,"],
+      },
+      {
+        target: "This waiting period, though tense, teaches me that patience and preparation aren't actually opposites after all.",
+        jumbled: ["and", "actually", "aren't", "waiting", "tense,", "that", "though", "after", "This", "me", "all.", "patience", "opposites", "teaches", "period,", "preparation"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about preparing for two possible outcomes while staying hopeful for the better one.",
     mySentenceExample: "I prepared for two possible outcomes while staying hopeful.",
@@ -244,11 +349,26 @@ export const CHAPTERS = [
       { text: "Simone feels this outcome came from combining both strategies.", answer: true },
     ],
     buildSentence: [
-      { target: "An email arrives exactly on the deadline.", jumbled: ["An", "email", "arrives", "exactly", "on", "the", "deadline."] },
-      { target: "Teodoro cheers loudly at this news.", jumbled: ["Teodoro", "cheers", "loudly", "at", "this", "news."] },
-      { target: "I feel enormous relief now.", jumbled: ["I", "feel", "enormous", "relief", "now."] },
-      { target: "This is a genuine compromise, she admits.", jumbled: ["This", "is", "a", "genuine", "compromise,", "she", "admits."] },
-      { target: "This outcome came from combining both strategies together.", jumbled: ["This", "outcome", "came", "from", "combining", "both", "strategies", "together."] },
+      {
+        target: "Exactly on the deadline, an email arrives from the principal's office, and I read it aloud to the gathered club members immediately.",
+        jumbled: ["it", "on", "an", "I", "gathered", "the", "deadline,", "from", "to", "arrives", "email", "aloud", "Exactly", "office,", "read", "the", "immediately.", "principal's", "club", "and", "members", "the"],
+      },
+      {
+        target: "She's decided to preserve most of the garden, redesigning the parking plan to require fewer spaces than originally proposed.",
+        jumbled: ["of", "originally", "redesigning", "most", "garden,", "plan", "the", "require", "proposed.", "to", "preserve", "fewer", "decided", "than", "spaces", "She's", "to", "parking", "the"],
+      },
+      {
+        target: "It's not a complete victory, she admits, but a genuine compromise that respects both the school's needs and the students' concerns.",
+        jumbled: ["and", "she", "respects", "students'", "needs", "It's", "the", "that", "admits,", "not", "a", "a", "school's", "the", "both", "but", "concerns.", "compromise", "victory,", "complete", "genuine"],
+      },
+      {
+        target: "Teodoro cheers loudly, while Winnie simply smiles, quietly satisfied that the patient approach had actually worked.",
+        jumbled: ["worked.", "quietly", "loudly,", "simply", "that", "approach", "Winnie", "actually", "Teodoro", "smiles,", "cheers", "the", "patient", "while", "satisfied", "had"],
+      },
+      {
+        target: "I feel enormous relief, grateful that combining both strategies had led to an outcome neither approach alone might have achieved.",
+        jumbled: ["approach", "relief,", "that", "to", "enormous", "might", "strategies", "achieved.", "I", "an", "have", "alone", "led", "grateful", "combining", "neither", "outcome", "feel", "both", "had"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving good news after a period of uncertainty.",
     mySentenceExample: "I received good news after a long period of uncertainty.",
@@ -273,11 +393,26 @@ export const CHAPTERS = [
       { text: "Simone feels mediating combined both perspectives' strengths.", answer: true },
     ],
     buildSentence: [
-      { target: "We sit together in the garden.", jumbled: ["We", "sit", "together", "in", "the", "garden."] },
-      { target: "I feel proud about this now.", jumbled: ["I", "feel", "proud", "about", "this", "now."] },
-      { target: "Both acknowledge this contributed something necessary.", jumbled: ["Both", "acknowledge", "this", "contributed", "something", "necessary."] },
-      { target: "The administration may have simply delayed responding indefinitely.", jumbled: ["The", "administration", "may", "have", "simply", "delayed", "responding", "indefinitely."] },
-      { target: "Mediating didn't mean silencing either perspective, but combining strengths.", jumbled: ["Mediating", "didn't", "mean", "silencing", "either", "perspective,", "but", "combining", "strengths."] },
+      {
+        target: "A few weeks later, the three of us sit together in the newly preserved garden, reflecting on how the whole process unfolded.",
+        jumbled: ["how", "unfolded.", "three", "few", "later,", "the", "the", "sit", "reflecting", "us", "of", "garden,", "A", "newly", "the", "whole", "process", "on", "preserved", "together", "in", "weeks"],
+      },
+      {
+        target: "Teodoro admits that, had we gone straight to a protest, he's not entirely sure it would have worked as smoothly as it eventually did.",
+        jumbled: ["straight", "would", "worked", "it", "protest,", "to", "sure", "entirely", "did.", "as", "he's", "we", "have", "admits", "Teodoro", "as", "not", "that,", "had", "smoothly", "a", "gone", "eventually", "it"],
+      },
+      {
+        target: "Winnie, meanwhile, admits that without the credible threat of a protest, the administration may have simply delayed responding indefinitely.",
+        jumbled: ["have", "simply", "may", "a", "administration", "protest,", "of", "without", "credible", "delayed", "admits", "the", "responding", "the", "meanwhile,", "indefinitely.", "Winnie,", "threat", "that"],
+      },
+      {
+        target: "Both acknowledge that the other's approach, however different from their own instinct, contributed something genuinely necessary to the outcome.",
+        jumbled: ["something", "Both", "other's", "contributed", "necessary", "the", "approach,", "instinct,", "different", "however", "the", "genuinely", "acknowledge", "that", "their", "to", "from", "own", "outcome."],
+      },
+      {
+        target: "Listening to them, I feel proud that mediating didn't mean silencing either perspective, but combining their strengths.",
+        jumbled: ["but", "didn't", "to", "mean", "either", "Listening", "combining", "their", "mediating", "I", "them,", "that", "silencing", "strengths.", "feel", "proud", "perspective,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about two people with different approaches realizing they both contributed something valuable.",
     mySentenceExample: "Two people with different approaches both contributed something valuable.",
@@ -302,11 +437,26 @@ export const CHAPTERS = [
       { text: "Understanding both perspectives allowed them to build something stronger.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this situation now.", jumbled: ["I", "look", "back", "on", "this", "situation", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "Mediation doesn't always mean everyone losing something.", jumbled: ["Mediation", "doesn't", "always", "mean", "everyone", "losing", "something."] },
-      { target: "Combining opposite strengths can produce unimagined outcomes.", jumbled: ["Combining", "opposite", "strengths", "can", "produce", "unimagined", "outcomes."] },
-      { target: "Had I chosen only one approach, we likely would have lost something.", jumbled: ["Had", "I", "chosen", "only", "one", "approach,", "we", "likely", "would", "have", "lost", "something."] },
+      {
+        target: "Looking back on the entire situation, I realize how differently things might have unfolded had I simply sided with one approach over the other.",
+        jumbled: ["the", "back", "I", "on", "had", "sided", "unfolded", "approach", "differently", "Looking", "over", "other.", "entire", "the", "might", "situation,", "things", "have", "realize", "how", "I", "with", "one", "simply"],
+      },
+      {
+        target: "You didn't have to choose, Simone, I think, closing my notebook as the sun sets.",
+        jumbled: ["I", "closing", "notebook", "think,", "to", "as", "sun", "choose,", "sets.", "Simone,", "have", "You", "my", "the", "didn't"],
+      },
+      {
+        target: "We likely would have lost either valuable time or a valuable relationship with the administration.",
+        jumbled: ["administration.", "lost", "with", "time", "either", "a", "valuable", "would", "or", "relationship", "We", "valuable", "have", "likely", "the"],
+      },
+      {
+        target: "Instead, taking the time to genuinely understand both perspectives allowed us to build something stronger than either alone.",
+        jumbled: ["Instead,", "taking", "to", "stronger", "something", "time", "allowed", "understand", "alone.", "us", "the", "than", "genuinely", "perspectives", "to", "both", "either", "build"],
+      },
+      {
+        target: "In the end, this experience taught me that combining seemingly opposite strengths can produce outcomes neither side imagined possible alone.",
+        jumbled: ["possible", "imagined", "combining", "opposite", "end,", "that", "the", "experience", "strengths", "can", "produce", "alone.", "taught", "outcomes", "me", "side", "this", "neither", "seemingly", "In"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from combining two different strategies instead of choosing just one.",
     mySentenceExample: "I learned that combining two strategies can work better than one.",

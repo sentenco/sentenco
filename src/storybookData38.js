@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Marcus can't wait to step onto it.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel a rush of excitement.", jumbled: ["feel", "a", "I", "rush", "of", "excitement."] },
-      { target: "You'll fall a lot first.", jumbled: ["fall", "a", "You'll", "lot", "first."] },
-      { target: "I can't wait to try.", jumbled: ["can't", "wait", "I", "to", "try."] },
-      { target: "I hold the smooth wooden deck.", jumbled: ["hold", "the", "I", "smooth", "wooden", "deck."] },
-      { target: "This barely dampens my enthusiasm at all.", jumbled: ["This", "barely", "dampens", "my", "enthusiasm", "at", "all."] },
+      {
+        target: "For my sixteenth birthday, my older cousin surprises me with something I've secretly wanted for months: a genuine, brand-new skateboard with bright orange wheels.",
+        jumbled: ["wheels.", "cousin", "orange", "a", "my", "bright", "brand-new", "with", "older", "skateboard", "wanted", "me", "For", "for", "I've", "secretly", "months:", "my", "with", "genuine,", "surprises", "sixteenth", "birthday,", "something"],
+      },
+      {
+        target: "I have watched skating videos online countless times, admiring how effortlessly experienced skaters glide, flip, and balance with apparent ease.",
+        jumbled: ["with", "glide,", "how", "experienced", "videos", "admiring", "effortlessly", "apparent", "online", "ease.", "have", "balance", "I", "flip,", "skating", "countless", "watched", "skaters", "and", "times,"],
+      },
+      {
+        target: "Holding the smooth wooden deck in my hands, I feel a rush of excitement mixed with sudden, unexpected nervousness about actually trying it myself.",
+        jumbled: ["mixed", "I", "trying", "myself.", "my", "feel", "smooth", "it", "of", "wooden", "rush", "deck", "sudden,", "Holding", "the", "about", "nervousness", "in", "unexpected", "hands,", "excitement", "actually", "with", "a"],
+      },
+      {
+        target: "“You'll fall a lot before you get good, Marcus,” my cousin warns honestly, though his warning barely dampens my enthusiasm.",
+        jumbled: ["warning", "though", "“You'll", "fall", "enthusiasm.", "my", "lot", "dampens", "good,", "get", "barely", "my", "warns", "his", "cousin", "before", "you", "Marcus,”", "a", "honestly,"],
+      },
+      {
+        target: "That evening, I can't wait to finally step onto it for the very first time.",
+        jumbled: ["can't", "time.", "very", "I", "step", "it", "evening,", "for", "first", "wait", "finally", "the", "to", "That", "onto"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving a gift you had wanted for a long time.",
     mySentenceExample: "I received a bicycle I had wanted for a long time on my birthday.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Marcus falls nearly a dozen times.", answer: true },
     ],
     buildSentence: [
-      { target: "My arms flail wildly.", jumbled: ["flail", "wildly.", "My", "arms"] },
-      { target: "I climb back on repeatedly.", jumbled: ["climb", "back", "I", "on", "repeatedly."] },
-      { target: "This is definitely harder than expected.", jumbled: ["is", "definitely", "This", "harder", "than", "expected."] },
-      { target: "I feel slightly foolish about this.", jumbled: ["feel", "slightly", "I", "foolish", "about", "this."] },
-      { target: "I manage a few wobbly, uncertain seconds of balance.", jumbled: ["I", "manage", "a", "few", "wobbly,", "uncertain", "seconds", "of", "balance."] },
+      {
+        target: "In our driveway, I step onto the skateboard for the first time, immediately discovering that standing still on wheels feels shockingly harder than any video suggested.",
+        jumbled: ["discovering", "on", "In", "our", "for", "driveway,", "immediately", "skateboard", "the", "harder", "wheels", "suggested.", "still", "the", "shockingly", "time,", "any", "standing", "video", "that", "first", "onto", "than", "step", "feels", "I"],
+      },
+      {
+        target: "My arms flail wildly for balance, and within seconds, I topple sideways onto the grass, feeling slightly foolish despite no one else being around.",
+        jumbled: ["feeling", "seconds,", "foolish", "the", "despite", "within", "topple", "around.", "balance,", "being", "one", "slightly", "I", "wildly", "and", "for", "arms", "onto", "My", "flail", "else", "grass,", "sideways", "no"],
+      },
+      {
+        target: "My little sister watches from the porch, giggling openly at my clumsy, uncoordinated attempts to simply stay upright.",
+        jumbled: ["openly", "upright.", "stay", "simply", "sister", "at", "watches", "from", "my", "giggling", "to", "porch,", "the", "clumsy,", "My", "little", "uncoordinated", "attempts"],
+      },
+      {
+        target: "Determined despite the embarrassment, I climb back on repeatedly, falling nearly a dozen times before managing even a few wobbly, uncertain seconds of actual balance.",
+        jumbled: ["a", "of", "managing", "balance.", "on", "falling", "repeatedly,", "back", "seconds", "the", "before", "times", "wobbly,", "uncertain", "Determined", "embarrassment,", "few", "I", "actual", "even", "dozen", "a", "despite", "nearly", "climb"],
+      },
+      {
+        target: "“Come on, Marcus,” I mutter, climbing back on again.",
+        jumbled: ["mutter,", "again.", "back", "I", "on", "“Come", "climbing", "on,", "Marcus,”"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something that was harder than it looked at first.",
     mySentenceExample: "Cooking rice was harder than it looked when I first tried it.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Marcus reminds himself everyone started somewhere.", answer: true },
     ],
     buildSentence: [
-      { target: "I muster enough courage finally.", jumbled: ["muster", "enough", "I", "courage", "finally."] },
-      { target: "I step through the gate.", jumbled: ["step", "through", "I", "the", "gate."] },
-      { target: "This looks impossibly graceful somehow.", jumbled: ["looks", "impossibly", "This", "graceful", "somehow."] },
-      { target: "My progress feels embarrassingly insignificant now.", jumbled: ["progress", "feels", "My", "embarrassingly", "insignificant", "now."] },
-      { target: "Everyone here started exactly where I'm standing now.", jumbled: ["Everyone", "here", "started", "exactly", "where", "I'm", "standing", "now."] },
+      {
+        target: "I finally muster enough courage to visit the local skate park everyone at school talks about constantly.",
+        jumbled: ["enough", "to", "muster", "constantly.", "visit", "at", "talks", "about", "everyone", "local", "I", "skate", "the", "courage", "school", "park", "finally"],
+      },
+      {
+        target: "Standing at the entrance, I watch several skilled skaters gliding smoothly across ramps, performing tricks that look impossibly graceful and effortless from where I stand.",
+        jumbled: ["look", "ramps,", "smoothly", "impossibly", "across", "where", "stand.", "that", "I", "Standing", "entrance,", "effortless", "from", "watch", "performing", "and", "several", "at", "graceful", "skilled", "I", "skaters", "tricks", "the", "gliding"],
+      },
+      {
+        target: "Suddenly, my modest driveway progress feels embarrassingly insignificant compared to their obvious expertise and confident, practiced movements.",
+        jumbled: ["modest", "obvious", "practiced", "Suddenly,", "movements.", "compared", "progress", "embarrassingly", "their", "to", "insignificant", "and", "driveway", "feels", "confident,", "my", "expertise"],
+      },
+      {
+        target: "Part of me considers turning around immediately, convinced everyone will notice how obviously inexperienced I actually am.",
+        jumbled: ["how", "notice", "obviously", "me", "I", "considers", "inexperienced", "immediately,", "everyone", "around", "of", "turning", "Part", "am.", "convinced", "actually", "will"],
+      },
+      {
+        target: "“You can do this, Marcus,” I tell myself, taking a deep breath and stepping through the gate, reminding myself everyone here started exactly where I'm standing now.",
+        jumbled: ["tell", "Marcus,”", "the", "“You", "myself", "and", "this,", "where", "breath", "through", "here", "I", "started", "everyone", "exactly", "a", "myself,", "stepping", "deep", "standing", "gate,", "taking", "now.", "I'm", "reminding", "can", "do"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling nervous entering a new place or group.",
     mySentenceExample: "I felt nervous entering the gym for the first time alone.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "The park feels more welcoming after Dev's help.", answer: true },
     ],
     buildSentence: [
-      { target: "Dev approaches with a smile.", jumbled: ["approaches", "with", "Dev", "a", "smile."] },
-      { target: "I remember mine too.", jumbled: ["remember", "mine", "I", "too."] },
-      { target: "He offers a few tips.", jumbled: ["offers", "a", "He", "few", "tips."] },
-      { target: "Dev demonstrates a simple pushing motion.", jumbled: ["demonstrates", "a", "Dev", "simple", "pushing", "motion."] },
-      { target: "This park suddenly feels considerably more welcoming.", jumbled: ["This", "park", "suddenly", "feels", "considerably", "more", "welcoming."] },
+      {
+        target: "Sitting awkwardly on a bench, watching rather than participating, I notice a friendly-looking guy named Dev approaching with an easy, welcoming smile.",
+        jumbled: ["guy", "easy,", "notice", "a", "awkwardly", "watching", "participating,", "approaching", "Dev", "an", "I", "on", "welcoming", "named", "rather", "than", "smile.", "with", "a", "bench,", "friendly-looking", "Sitting"],
+      },
+      {
+        target: "“First time here? I remember mine,” he says casually, sitting down beside me without any judgment in his tone whatsoever.",
+        jumbled: ["says", "his", "tone", "me", "mine,”", "down", "in", "without", "“First", "any", "beside", "remember", "whatsoever.", "here?", "casually,", "I", "sitting", "time", "judgment", "he"],
+      },
+      {
+        target: "“I'm Marcus,” I say, introducing myself, and he nods with an easy grin.",
+        jumbled: ["an", "easy", "say,", "I", "nods", "with", "he", "grin.", "introducing", "myself,", "Marcus,”", "“I'm", "and"],
+      },
+      {
+        target: "He offers a few beginner tips about foot placement and weight distribution, things I hadn't considered while practicing alone in my driveway.",
+        jumbled: ["a", "weight", "I", "and", "things", "considered", "hadn't", "placement", "about", "my", "tips", "alone", "while", "driveway.", "few", "practicing", "in", "foot", "distribution,", "offers", "He", "beginner"],
+      },
+      {
+        target: "Dev demonstrates a simple pushing motion, encouraging me to try it slowly on flat ground before attempting anything more ambitious.",
+        jumbled: ["encouraging", "me", "simple", "flat", "attempting", "demonstrates", "pushing", "a", "to", "on", "slowly", "motion,", "more", "before", "Dev", "anything", "ambitious.", "ground", "it", "try"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a stranger who helped you feel welcome somewhere.",
     mySentenceExample: "A stranger helped me feel welcome on my first day at a new gym.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Marcus questions whether skating is worth it.", answer: true },
     ],
     buildSentence: [
-      { target: "Pain shoots through my arm.", jumbled: ["shoots", "through", "Pain", "my", "arm."] },
-      { target: "I crash hard onto pavement.", jumbled: ["crash", "hard", "I", "onto", "pavement."] },
-      { target: "I seriously question this decision.", jumbled: ["seriously", "question", "I", "this", "decision."] },
-      { target: "My board shoots forward unexpectedly.", jumbled: ["board", "shoots", "My", "forward", "unexpectedly."] },
-      { target: "Embarrassed tears threaten to well up despite my effort.", jumbled: ["Embarrassed", "tears", "threaten", "to", "well", "up", "despite", "my", "effort."] },
+      {
+        target: "Feeling slightly more confident after Dev's tips, I attempt a gentle slope, gaining more speed than I anticipated and quickly losing complete control.",
+        jumbled: ["gaining", "and", "slightly", "after", "I", "slope,", "attempt", "Dev's", "a", "speed", "than", "gentle", "losing", "Feeling", "tips,", "confident", "more", "quickly", "more", "control.", "I", "complete", "anticipated"],
+      },
+      {
+        target: "My board shoots forward unexpectedly, and I crash hard onto the pavement, scraping my elbow painfully against the rough concrete surface.",
+        jumbled: ["shoots", "crash", "board", "My", "pavement,", "the", "rough", "onto", "I", "painfully", "elbow", "concrete", "unexpectedly,", "surface.", "against", "scraping", "and", "the", "forward", "hard", "my"],
+      },
+      {
+        target: "Pain shoots through my arm, and for a moment, embarrassed tears threaten to well up despite my genuine effort to stay composed in front of strangers.",
+        jumbled: ["to", "my", "stay", "arm,", "tears", "embarrassed", "despite", "well", "through", "shoots", "composed", "for", "in", "a", "to", "of", "strangers.", "up", "threaten", "Pain", "and", "front", "my", "moment,", "genuine", "effort"],
+      },
+      {
+        target: "Several skaters glance over with concern, though thankfully no one laughs or makes the situation feel worse than it already does.",
+        jumbled: ["situation", "concern,", "does.", "skaters", "the", "already", "thankfully", "no", "though", "over", "one", "glance", "Several", "it", "or", "with", "than", "feel", "makes", "laughs", "worse"],
+      },
+      {
+        target: "“Get up, Marcus,” I tell myself, sitting there clutching my throbbing elbow, seriously questioning whether skating is really worth this.",
+        jumbled: ["there", "throbbing", "“Get", "really", "my", "Marcus,”", "tell", "I", "sitting", "this.", "up,", "questioning", "myself,", "clutching", "seriously", "elbow,", "skating", "whether", "worth", "is"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a painful fall or accident you had.",
     mySentenceExample: "I had a painful fall while learning to rollerblade last year.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Marcus feels worse after talking to Jasmine.", answer: false },
     ],
     buildSentence: [
-      { target: "Jasmine offers a hand.", jumbled: ["offers", "a", "Jasmine", "hand."] },
-      { target: "Want to see something?", jumbled: ["to", "see", "Want", "something?"] },
-      { target: "Everyone here has stories.", jumbled: ["here", "has", "Everyone", "stories."] },
-      { target: "Quitting felt worse than pain.", jumbled: ["felt", "worse", "Quitting", "than", "pain."] },
-      { target: "Her honesty makes my embarrassment feel considerably lighter.", jumbled: ["Her", "honesty", "makes", "my", "embarrassment", "feel", "considerably", "lighter."] },
+      {
+        target: "An older skater named Jasmine walks over, offering a hand to help me up while examining my scraped elbow with practiced, unbothered casualness.",
+        jumbled: ["hand", "practiced,", "older", "a", "unbothered", "named", "me", "scraped", "to", "examining", "walks", "offering", "An", "while", "help", "with", "up", "casualness.", "Jasmine", "my", "elbow", "skater", "over,"],
+      },
+      {
+        target: "“Want to see something?” she asks, rolling up her pant leg to reveal an impressive collection of old scars and faded bruises across her knee.",
+        jumbled: ["leg", "reveal", "knee.", "and", "collection", "pant", "rolling", "asks,", "to", "bruises", "her", "old", "of", "see", "she", "up", "her", "an", "across", "something?”", "impressive", "“Want", "scars", "faded", "to"],
+      },
+      {
+        target: "“Everyone here has stories like yours, Marcus,” she explains, sitting down beside me on the edge of a ramp.",
+        jumbled: ["edge", "has", "like", "sitting", "she", "the", "here", "on", "beside", "explains,", "down", "me", "Marcus,”", "of", "stories", "yours,", "“Everyone", "ramp.", "a"],
+      },
+      {
+        target: "She shares how she broke her wrist during her second month of skating, yet kept practicing anyway because quitting felt worse than temporary pain ever could.",
+        jumbled: ["how", "she", "ever", "worse", "shares", "because", "felt", "anyway", "skating,", "yet", "quitting", "She", "practicing", "pain", "of", "kept", "wrist", "during", "than", "her", "could.", "temporary", "second", "broke", "month", "her"],
+      },
+      {
+        target: "Her honesty about struggling too somehow makes my own embarrassment feel considerably lighter.",
+        jumbled: ["own", "lighter.", "embarrassment", "my", "too", "considerably", "Her", "makes", "somehow", "about", "struggling", "feel", "honesty"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone sharing their own struggle to make you feel better.",
     mySentenceExample: "My coach shared his own struggle to make me feel better about losing.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Small successes motivate Marcus to keep returning.", answer: true },
     ],
     buildSentence: [
-      { target: "I notice small improvements.", jumbled: ["notice", "small", "I", "improvements."] },
-      { target: "I still fall occasionally now.", jumbled: ["still", "fall", "I", "occasionally", "now."] },
-      { target: "This feels less discouraging somehow.", jumbled: ["feels", "less", "This", "discouraging", "somehow."] },
-      { target: "Each small success motivates me.", jumbled: ["Each", "small", "success", "motivates", "me."] },
-      { target: "This becomes something closer to natural, automatic movement.", jumbled: ["This", "becomes", "something", "closer", "to", "natural,", "automatic", "movement."] },
+      {
+        target: "Over the following two weeks, I return to the skate park almost daily, gradually noticing small but genuinely encouraging improvements in my balance and confidence.",
+        jumbled: ["following", "to", "Over", "genuinely", "almost", "small", "weeks,", "the", "noticing", "improvements", "gradually", "return", "encouraging", "in", "park", "I", "and", "my", "but", "two", "skate", "daily,", "confidence.", "the", "balance"],
+      },
+      {
+        target: "Pushing off and gliding across flat ground no longer requires intense concentration, becoming instead something closer to natural, automatic movement.",
+        jumbled: ["no", "natural,", "off", "closer", "and", "something", "automatic", "Pushing", "flat", "concentration,", "ground", "longer", "instead", "to", "across", "intense", "becoming", "movement.", "gliding", "requires"],
+      },
+      {
+        target: "Dev and Jasmine both offer occasional encouragement whenever they spot me practicing.",
+        jumbled: ["they", "whenever", "Dev", "offer", "encouragement", "and", "Jasmine", "spot", "both", "occasional", "practicing.", "me"],
+      },
+      {
+        target: "“Looking good, Marcus!” Jasmine calls out one afternoon, shouting friendly tips as she skates past effortlessly.",
+        jumbled: ["Marcus!”", "friendly", "past", "Jasmine", "one", "out", "skates", "tips", "as", "good,", "calls", "she", "effortlessly.", "afternoon,", "“Looking", "shouting"],
+      },
+      {
+        target: "I still fall occasionally, though considerably less often than during my first painful week, and the falls themselves feel less discouraging now somehow.",
+        jumbled: ["the", "considerably", "than", "discouraging", "week,", "occasionally,", "painful", "I", "less", "first", "often", "somehow.", "themselves", "feel", "though", "less", "during", "fall", "falls", "my", "and", "now", "still"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing small improvements while practicing something.",
     mySentenceExample: "I noticed small improvements in my drawing after practicing every day.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Marcus gives up after one attempt.", answer: false },
     ],
     buildSentence: [
-      { target: "I attempt my first trick.", jumbled: ["attempt", "my", "I", "first", "trick."] },
-      { target: "My frustration builds steadily now.", jumbled: ["builds", "steadily", "My", "frustration", "now."] },
-      { target: "I try again and again.", jumbled: ["try", "again", "I", "and", "again."] },
-      { target: "Dev explains the technique patiently.", jumbled: ["explains", "the", "Dev", "technique", "patiently."] },
-      { target: "This trick took him nearly a month to master.", jumbled: ["This", "trick", "took", "him", "nearly", "a", "month", "to", "master."] },
+      {
+        target: "Feeling more confident after weeks of steady progress, I decide it's finally time to attempt my first actual trick, a basic jump called an ollie.",
+        jumbled: ["decide", "time", "an", "weeks", "progress,", "Feeling", "jump", "steady", "ollie.", "finally", "of", "trick,", "my", "confident", "basic", "after", "attempt", "called", "a", "more", "to", "it's", "first", "actual", "I"],
+      },
+      {
+        target: "Dev explains the technique patiently, demonstrating how pressing the tail down while sliding your front foot forward should launch the board upward smoothly.",
+        jumbled: ["upward", "your", "forward", "pressing", "how", "demonstrating", "the", "technique", "should", "the", "sliding", "foot", "the", "front", "patiently,", "launch", "board", "tail", "down", "Dev", "smoothly.", "while", "explains"],
+      },
+      {
+        target: "My first attempt sends the board flying sideways awkwardly, missing my feet entirely and rolling several feet away across the pavement.",
+        jumbled: ["feet", "pavement.", "my", "awkwardly,", "and", "the", "sends", "the", "several", "entirely", "away", "flying", "attempt", "first", "across", "rolling", "sideways", "missing", "My", "feet", "board"],
+      },
+      {
+        target: "I try again and again, each attempt slightly different but equally unsuccessful, my frustration building steadily with every failed try.",
+        jumbled: ["building", "but", "try.", "failed", "again,", "unsuccessful,", "attempt", "equally", "my", "slightly", "frustration", "every", "different", "steadily", "each", "again", "with", "try", "and", "I"],
+      },
+      {
+        target: "“This one took me nearly a month too, Marcus,” Dev reminds me patiently.",
+        jumbled: ["nearly", "me", "patiently.", "Dev", "too,", "one", "a", "reminds", "Marcus,”", "me", "“This", "month", "took"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about attempting something difficult for the first time.",
     mySentenceExample: "I attempted a backflip on the trampoline for the first time yesterday.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Dev runs over with an excited high-five.", answer: true },
     ],
     buildSentence: [
-      { target: "Something finally clicks now.", jumbled: ["finally", "clicks", "Something", "now."] },
-      { target: "You actually got it!", jumbled: ["actually", "got", "You", "it!"] },
-      { target: "I catch myself just in time.", jumbled: ["catch", "myself", "I", "just", "in", "time."] },
-      { target: "They erupt into enthusiastic cheers.", jumbled: ["erupt", "into", "They", "enthusiastic", "cheers."] },
-      { target: "The board hovers briefly before landing smoothly back.", jumbled: ["The", "board", "hovers", "briefly", "before", "landing", "smoothly", "back."] },
+      {
+        target: "Something finally clicks during my regular Saturday practice session at the park.",
+        jumbled: ["clicks", "session", "the", "Something", "Saturday", "at", "my", "regular", "finally", "during", "practice", "park."],
+      },
+      {
+        target: "My foot presses the tail at exactly the right angle, and suddenly the board pops cleanly into the air beneath me, hovering briefly before landing smoothly back under my feet.",
+        jumbled: ["at", "beneath", "smoothly", "the", "hovering", "presses", "feet.", "before", "tail", "under", "right", "exactly", "me,", "pops", "my", "cleanly", "landing", "My", "into", "and", "foot", "board", "air", "the", "the", "back", "angle,", "briefly", "suddenly", "the"],
+      },
+      {
+        target: "Stunned, I nearly forget to keep rolling forward, catching myself just in time to avoid another embarrassing fall immediately afterward.",
+        jumbled: ["to", "time", "in", "I", "avoid", "another", "just", "nearly", "forget", "afterward.", "rolling", "Stunned,", "myself", "fall", "forward,", "embarrassing", "immediately", "to", "keep", "catching"],
+      },
+      {
+        target: "Dev and Jasmine, who happened to be watching, erupt into genuine, enthusiastic cheers from across the park.",
+        jumbled: ["genuine,", "from", "happened", "the", "enthusiastic", "Dev", "and", "be", "erupt", "across", "watching,", "to", "into", "cheers", "Jasmine,", "park.", "who"],
+      },
+      {
+        target: "“You got it, Marcus! You actually got it!” Dev shouts, running over with an excited high-five waiting.",
+        jumbled: ["Marcus!", "over", "got", "with", "got", "waiting.", "it,", "excited", "“You", "actually", "it!”", "an", "running", "high-five", "shouts,", "You", "Dev"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finally succeeding after many failed attempts.",
     mySentenceExample: "I finally succeeded at whistling after many failed attempts all summer.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Marcus regrets all the scraped elbows along the way.", answer: false },
     ],
     buildSentence: [
-      { target: "Several others congratulate me warmly.", jumbled: ["Several", "others", "congratulate", "me", "warmly."] },
-      { target: "I feel genuinely different now.", jumbled: ["feel", "genuinely", "I", "different", "now."] },
-      { target: "This feels like a second home.", jumbled: ["feels", "like", "This", "a", "second", "home."] },
-      { target: "I'm finally starting to learn their names.", jumbled: ["I'm", "finally", "starting", "to", "learn", "their", "names."] },
-      { target: "Every scraped elbow along the way was completely worth this.", jumbled: ["Every", "scraped", "elbow", "along", "the", "way", "was", "completely", "worth", "this."] },
+      {
+        target: "By evening, word of my landed ollie has apparently spread among the regular skaters, and several others come over to congratulate me warmly on my progress.",
+        jumbled: ["congratulate", "the", "me", "to", "spread", "on", "apparently", "progress.", "warmly", "among", "word", "regular", "By", "of", "skaters,", "my", "has", "ollie", "landed", "evening,", "several", "over", "my", "and", "come", "others"],
+      },
+      {
+        target: "“Nice work out there, Marcus,” one of the regulars says with a grin.",
+        jumbled: ["one", "“Nice", "there,", "regulars", "with", "grin.", "says", "the", "of", "out", "Marcus,”", "a", "work"],
+      },
+      {
+        target: "Sitting on the edge of a ramp afterward, sharing snacks with Dev, Jasmine, and a few others whose names I'm finally starting to learn, I feel genuinely different than I did weeks earlier.",
+        jumbled: ["of", "ramp", "learn,", "weeks", "I", "and", "whose", "with", "finally", "feel", "edge", "afterward,", "snacks", "others", "sharing", "I", "Sitting", "Dev,", "on", "earlier.", "I'm", "genuinely", "to", "a", "Jasmine,", "names", "few", "starting", "than", "did", "the", "different", "a"],
+      },
+      {
+        target: "This place that once felt intimidating and unwelcoming now feels almost like a second home, filled with people who understand exactly what today's small victory meant.",
+        jumbled: ["with", "filled", "who", "second", "people", "place", "This", "now", "feels", "small", "today's", "home,", "like", "understand", "victory", "and", "meant.", "felt", "exactly", "what", "a", "almost", "that", "unwelcoming", "once", "intimidating"],
+      },
+      {
+        target: "Watching the sunset paint the ramps orange, I realize that every scraped elbow along the way was completely worth this feeling.",
+        jumbled: ["sunset", "completely", "Watching", "realize", "orange,", "I", "the", "this", "the", "feeling.", "way", "scraped", "every", "along", "the", "ramps", "paint", "was", "that", "elbow", "worth"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finally feeling like you belonged somewhere new.",
     mySentenceExample: "I finally felt like I belonged at my new school after joining the soccer team.",

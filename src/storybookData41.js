@@ -44,11 +44,26 @@ export const CHAPTERS = [
       { text: "A woman at the front desk smiles at him.", answer: true },
     ],
     buildSentence: [
-      { target: "I wake up early.", jumbled: ["wake", "up", "I", "early."] },
-      { target: "I feel very nervous.", jumbled: ["feel", "very", "I", "nervous."] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "I", "deep", "breath."] },
-      { target: "I walk inside the office.", jumbled: ["walk", "inside", "I", "the", "office."] },
-      { target: "You must be Carlos, she says.", jumbled: ["must", "be", "You", "Carlos,", "she", "says."] },
+      {
+        target: "Today is my first day at a new job.",
+        jumbled: ["job.", "new", "day", "first", "a", "at", "Today", "is", "my"],
+      },
+      {
+        target: "I eat a small breakfast, but I am too nervous to eat much.",
+        jumbled: ["too", "much.", "eat", "nervous", "to", "I", "eat", "I", "breakfast,", "a", "small", "but", "am"],
+      },
+      {
+        target: "The office is in a small gray building near the train station.",
+        jumbled: ["train", "in", "building", "small", "a", "The", "is", "near", "gray", "the", "office", "station."],
+      },
+      {
+        target: "A woman at the front desk smiles at me.",
+        jumbled: ["A", "desk", "at", "at", "me.", "smiles", "woman", "the", "front"],
+      },
+      {
+        target: "I smile back and say, “Yes, that's me.”",
+        jumbled: ["back", "smile", "I", "that's", "say,", "me.”", "“Yes,", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your first day at a new job or school.",
     mySentenceExample: "I felt nervous on my first day at a new school.",
@@ -73,11 +88,26 @@ export const CHAPTERS = [
       { text: "Carlos feels worse after meeting Fatima.", answer: false },
     ],
     buildSentence: [
-      { target: "Fatima shakes my hand.", jumbled: ["shakes", "my", "Fatima", "hand."] },
-      { target: "I feel a little better.", jumbled: ["feel", "a", "I", "little", "better."] },
-      { target: "She shows me my desk.", jumbled: ["shows", "me", "She", "my", "desk."] },
-      { target: "Just ask me, she says.", jumbled: ["ask", "me,", "Just", "she", "says."] },
-      { target: "We talk for a few minutes.", jumbled: ["talk", "for", "We", "a", "few", "minutes."] },
+      {
+        target: "The woman at the desk calls a coworker to help me.",
+        jumbled: ["me.", "at", "coworker", "The", "desk", "calls", "help", "the", "a", "to", "woman"],
+      },
+      {
+        target: "She has a friendly smile and a badge on her shirt.",
+        jumbled: ["badge", "on", "smile", "her", "a", "a", "has", "shirt.", "and", "She", "friendly"],
+      },
+      {
+        target: "She walks with me down the hallway and shows me my new desk.",
+        jumbled: ["down", "She", "with", "and", "hallway", "walks", "new", "shows", "me", "me", "my", "desk.", "the"],
+      },
+      {
+        target: "“If you have any questions, just ask me,” Fatima says kindly.",
+        jumbled: ["just", "“If", "any", "ask", "Fatima", "kindly.", "says", "have", "you", "me,”", "questions,"],
+      },
+      {
+        target: "We talk for a few minutes about the office and the people who work here.",
+        jumbled: ["We", "office", "few", "talk", "about", "a", "work", "here.", "minutes", "who", "people", "for", "and", "the", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who was kind to you when you were new somewhere.",
     mySentenceExample: "A classmate was kind to me on my first day at school.",
@@ -102,11 +132,26 @@ export const CHAPTERS = [
       { text: "Mr. Yang says never to forget anything.", answer: false },
     ],
     buildSentence: [
-      { target: "He shakes my hand.", jumbled: ["shakes", "my", "He", "hand."] },
-      { target: "I write down notes.", jumbled: ["write", "down", "I", "notes."] },
-      { target: "I feel more confident now.", jumbled: ["feel", "more", "I", "confident", "now."] },
-      { target: "He explains my job tasks.", jumbled: ["explains", "my", "He", "job", "tasks."] },
-      { target: "Everyone forgets things on their first day.", jumbled: ["Everyone", "forgets", "things", "on", "their", "first", "day."] },
+      {
+        target: "Fatima takes me to meet my manager, Mr. Yang.",
+        jumbled: ["my", "meet", "Fatima", "takes", "manager,", "me", "Yang.", "Mr.", "to"],
+      },
+      {
+        target: "“Welcome, Carlos. I am happy you are here,” he says.",
+        jumbled: ["Carlos.", "here,”", "happy", "he", "you", "are", "am", "I", "says.", "“Welcome,"],
+      },
+      {
+        target: "I write down important notes in my new notebook.",
+        jumbled: ["important", "notebook.", "notes", "write", "new", "my", "I", "in", "down"],
+      },
+      {
+        target: "Mr. Yang tells me the working hours and the lunch break time.",
+        jumbled: ["break", "the", "the", "and", "me", "hours", "working", "lunch", "Mr.", "time.", "Yang", "tells"],
+      },
+      {
+        target: "“Don't worry if you forget something today,” he says with a smile.",
+        jumbled: ["smile.", "says", "forget", "“Don't", "with", "if", "today,”", "a", "you", "worry", "he", "something"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who explained something new to you.",
     mySentenceExample: "My teacher explained the new lesson to me clearly.",
@@ -131,11 +176,26 @@ export const CHAPTERS = [
       { text: "Carlos feels bad after doing it correctly.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel confused now.", jumbled: ["feel", "confused", "I", "now."] },
-      { target: "She helps me kindly.", jumbled: ["helps", "me", "She", "kindly."] },
-      { target: "I make a small mistake.", jumbled: ["make", "a", "I", "small", "mistake."] },
-      { target: "This time, I do it correctly.", jumbled: ["time,", "I", "This", "do", "it", "correctly."] },
-      { target: "I feel proud of this small success.", jumbled: ["I", "feel", "proud", "of", "this", "small", "success."] },
+      {
+        target: "In the afternoon, I sit at my new desk and turn on the computer.",
+        jumbled: ["computer.", "my", "sit", "on", "turn", "at", "I", "the", "and", "In", "the", "afternoon,", "new", "desk"],
+      },
+      {
+        target: "I feel confused looking at all the icons and buttons.",
+        jumbled: ["at", "feel", "the", "and", "looking", "buttons.", "I", "all", "confused", "icons"],
+      },
+      {
+        target: "She shows me how to open my email and how to save a file.",
+        jumbled: ["file.", "to", "She", "save", "me", "email", "to", "open", "how", "shows", "how", "a", "and", "my"],
+      },
+      {
+        target: "“Don't worry, it looks hard now, but it gets easier,” she says kindly.",
+        jumbled: ["now,", "hard", "worry,", "she", "says", "but", "easier,”", "looks", "kindly.", "it", "“Don't", "it", "gets"],
+      },
+      {
+        target: "Fatima laughs gently and shows me again.",
+        jumbled: ["again.", "Fatima", "shows", "and", "gently", "laughs", "me"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning to use something new and difficult.",
     mySentenceExample: "I felt confused learning to use a new phone.",
@@ -160,11 +220,26 @@ export const CHAPTERS = [
       { text: "Carlos feels worse by the end of lunch.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel a little shy.", jumbled: ["feel", "a", "I", "little", "shy."] },
-      { target: "I laugh with them.", jumbled: ["laugh", "with", "I", "them."] },
-      { target: "We open our lunch bags.", jumbled: ["open", "our", "We", "lunch", "bags."] },
-      { target: "My shyness disappears little by little.", jumbled: ["My", "shyness", "disappears", "little", "by", "little."] },
-      { target: "I feel like part of the team already.", jumbled: ["I", "feel", "like", "part", "of", "the", "team", "already."] },
+      {
+        target: "At noon, Fatima invites me to eat lunch.",
+        jumbled: ["me", "eat", "invites", "Fatima", "At", "to", "noon,", "lunch."],
+      },
+      {
+        target: "I feel a little shy at first, sitting with people I just met.",
+        jumbled: ["I", "at", "people", "met.", "shy", "feel", "first,", "little", "sitting", "just", "a", "with", "I"],
+      },
+      {
+        target: "We sit at a small table near the window and open our lunch bags.",
+        jumbled: ["and", "We", "sit", "near", "bags.", "window", "small", "lunch", "table", "open", "our", "at", "a", "the"],
+      },
+      {
+        target: "They tell me funny stories about their own first days at the office.",
+        jumbled: ["funny", "at", "tell", "days", "stories", "about", "own", "first", "me", "the", "office.", "their", "They"],
+      },
+      {
+        target: "By the end of lunch, I feel like part of the team already.",
+        jumbled: ["of", "feel", "I", "By", "like", "team", "lunch,", "end", "already.", "the", "of", "part", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about eating lunch with new people.",
     mySentenceExample: "I felt shy eating lunch with new people at first.",
@@ -189,11 +264,26 @@ export const CHAPTERS = [
       { text: "The printer never works again that day.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel worried now.", jumbled: ["feel", "worried", "I", "now."] },
-      { target: "The printer stops working.", jumbled: ["stops", "working.", "The", "printer"] },
-      { target: "She removes the stuck paper.", jumbled: ["removes", "the", "She", "stuck", "paper."] },
-      { target: "I thank her again warmly.", jumbled: ["thank", "her", "I", "again", "warmly."] },
-      { target: "I feel grateful for such a helpful coworker.", jumbled: ["I", "feel", "grateful", "for", "such", "a", "helpful", "coworker."] },
+      {
+        target: "In the afternoon, Mr. Yang asks me to print some papers for a meeting.",
+        jumbled: ["print", "Yang", "for", "a", "papers", "meeting.", "me", "some", "In", "Mr.", "to", "asks", "the", "afternoon,"],
+      },
+      {
+        target: "But the printer makes a strange noise and stops working.",
+        jumbled: ["the", "strange", "stops", "working.", "printer", "makes", "a", "But", "and", "noise"],
+      },
+      {
+        target: "I look around, but no one is near to help me right away.",
+        jumbled: ["to", "look", "one", "no", "is", "around,", "me", "I", "away.", "near", "but", "help", "right"],
+      },
+      {
+        target: "“The printer gets paper stuck sometimes, Carlos,” she says calmly.",
+        jumbled: ["gets", "“The", "paper", "says", "calmly.", "printer", "she", "stuck", "sometimes,", "Carlos,”"],
+      },
+      {
+        target: "I thank her again, feeling grateful for such a helpful coworker on my first day.",
+        jumbled: ["for", "a", "grateful", "coworker", "helpful", "feeling", "on", "again,", "I", "first", "my", "such", "thank", "her", "day."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small problem someone helped you solve.",
     mySentenceExample: "My friend helped me solve a small problem with my computer.",
@@ -218,11 +308,26 @@ export const CHAPTERS = [
       { text: "Carlos feels nothing after the meeting.", answer: false },
     ],
     buildSentence: [
-      { target: "I listen carefully today.", jumbled: ["listen", "carefully", "I", "today."] },
-      { target: "My voice shakes a little.", jumbled: ["shakes", "a", "My", "voice", "little."] },
-      { target: "I introduce myself to the group.", jumbled: ["introduce", "myself", "I", "to", "the", "group."] },
-      { target: "Everyone welcomes me warmly to the team.", jumbled: ["Everyone", "welcomes", "me", "warmly", "to", "the", "team."] },
-      { target: "I feel relieved that the meeting is over.", jumbled: ["I", "feel", "relieved", "that", "the", "meeting", "is", "over."] },
+      {
+        target: "At three o'clock, the whole team has a meeting in a small conference room.",
+        jumbled: ["the", "in", "meeting", "conference", "a", "room.", "team", "At", "three", "small", "has", "a", "whole", "o'clock,"],
+      },
+      {
+        target: "Mr. Yang talks about the team's goals for the month.",
+        jumbled: ["talks", "goals", "for", "team's", "the", "Mr.", "about", "month.", "Yang", "the"],
+      },
+      {
+        target: "I do not understand every word, but I understand the main ideas.",
+        jumbled: ["I", "I", "understand", "not", "ideas.", "but", "main", "the", "word,", "do", "every", "understand"],
+      },
+      {
+        target: "My voice shakes a little, but I finish my short introduction.",
+        jumbled: ["my", "short", "little,", "I", "but", "shakes", "finish", "My", "introduction.", "voice", "a"],
+      },
+      {
+        target: "One coworker tells me, “You did a great job, Carlos.”",
+        jumbled: ["great", "me,", "tells", "Carlos.”", "a", "did", "“You", "coworker", "One", "job,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about introducing yourself to a new group of people.",
     mySentenceExample: "I felt nervous introducing myself to my new class.",
@@ -247,11 +352,26 @@ export const CHAPTERS = [
       { text: "Carlos feels more nervous about tomorrow.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel tired now.", jumbled: ["feel", "tired", "I", "now."] },
-      { target: "I pack my small bag.", jumbled: ["pack", "my", "I", "small", "bag."] },
-      { target: "See you tomorrow, Carlos!", jumbled: ["you", "tomorrow,", "See", "Carlos!"] },
-      { target: "The sky is turning orange.", jumbled: ["sky", "is", "The", "turning", "orange."] },
-      { target: "I already feel less nervous about tomorrow.", jumbled: ["I", "already", "feel", "less", "nervous", "about", "tomorrow."] },
+      {
+        target: "At five o'clock, my first day at the new job finally comes to an end.",
+        jumbled: ["finally", "my", "the", "at", "new", "job", "five", "end.", "an", "to", "first", "At", "comes", "o'clock,", "day"],
+      },
+      {
+        target: "I close my computer and pack my small bag slowly.",
+        jumbled: ["slowly.", "and", "my", "computer", "my", "close", "small", "I", "pack", "bag"],
+      },
+      {
+        target: "Mr. Yang stops by my desk too and says I did well for a first day.",
+        jumbled: ["and", "for", "a", "well", "too", "did", "first", "by", "desk", "Mr.", "my", "I", "Yang", "says", "stops", "day."],
+      },
+      {
+        target: "I walk outside, and the sky is turning orange with the sunset.",
+        jumbled: ["turning", "I", "sky", "outside,", "sunset.", "is", "the", "with", "walk", "and", "orange", "the"],
+      },
+      {
+        target: "Walking to the train station, I think about tomorrow, and I already feel less nervous about it.",
+        jumbled: ["and", "nervous", "to", "train", "I", "about", "think", "it.", "Walking", "less", "already", "tomorrow,", "feel", "station,", "the", "about", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about how you felt at the end of a busy day.",
     mySentenceExample: "I felt tired but happy at the end of a busy day.",
@@ -276,11 +396,26 @@ export const CHAPTERS = [
       { text: "Carlos feels more nervous than this morning.", answer: false },
     ],
     buildSentence: [
-      { target: "My phone buzzes now.", jumbled: ["phone", "buzzes", "My", "now."] },
-      { target: "I smile and read again.", jumbled: ["smile", "and", "I", "read", "again."] },
-      { target: "I write back to her.", jumbled: ["write", "back", "I", "to", "her."] },
-      { target: "I feel happy about my decision.", jumbled: ["I", "feel", "happy", "about", "my", "decision."] },
-      { target: "I feel more relaxed than this morning.", jumbled: ["I", "feel", "more", "relaxed", "than", "this", "morning."] },
+      {
+        target: "On the train home, my phone buzzes with a new message.",
+        jumbled: ["train", "phone", "On", "message.", "home,", "my", "the", "buzzes", "with", "a", "new"],
+      },
+      {
+        target: "“Great first day, Carlos! You did better than you think,” she writes.",
+        jumbled: ["better", "think,”", "than", "Carlos!", "you", "she", "did", "first", "“Great", "day,", "You", "writes."],
+      },
+      {
+        target: "It feels nice to know someone at work is thinking of me.",
+        jumbled: ["of", "feels", "know", "me.", "thinking", "someone", "is", "It", "to", "work", "nice", "at"],
+      },
+      {
+        target: "Looking out the train window, I feel happy about my decision to take this job.",
+        jumbled: ["window,", "I", "about", "job.", "feel", "this", "take", "Looking", "the", "my", "out", "happy", "to", "train", "decision"],
+      },
+      {
+        target: "The day was long and a little scary at times, but also full of kind people.",
+        jumbled: ["people.", "of", "kind", "but", "The", "was", "times,", "full", "little", "a", "day", "and", "scary", "at", "also", "long"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a kind message someone sent you.",
     mySentenceExample: "My friend sent me a kind message after my exam.",
@@ -305,11 +440,26 @@ export const CHAPTERS = [
       { text: "Carlos feels alone and worried going to bed.", answer: false },
     ],
     buildSentence: [
-      { target: "I make dinner tonight.", jumbled: ["make", "dinner", "I", "tonight."] },
-      { target: "I feel calm now.", jumbled: ["feel", "calm", "I", "now."] },
-      { target: "I lay out my clothes.", jumbled: ["lay", "out", "I", "my", "clothes."] },
-      { target: "Everything makes more sense now.", jumbled: ["Everything", "makes", "more", "sense", "now."] },
-      { target: "I know I am not alone there.", jumbled: ["I", "know", "I", "am", "not", "alone", "there."] },
+      {
+        target: "At home, I make dinner and think about my first day at the new job.",
+        jumbled: ["and", "new", "the", "day", "dinner", "At", "at", "my", "make", "about", "job.", "I", "home,", "first", "think"],
+      },
+      {
+        target: "It had many new things: a new desk, a new computer, and many new faces.",
+        jumbled: ["new", "a", "things:", "faces.", "had", "many", "new", "computer,", "It", "desk,", "new", "a", "and", "many", "new"],
+      },
+      {
+        target: "I lay out my clothes for tomorrow, just like I did today.",
+        jumbled: ["lay", "did", "like", "tomorrow,", "I", "my", "out", "today.", "just", "for", "clothes", "I"],
+      },
+      {
+        target: "At the top of one page, I had written, “Carlos's first day,” and I read the notes underneath it.",
+        jumbled: ["notes", "had", "one", "the", "written,", "it.", "top", "first", "At", "I", "of", "underneath", "“Carlos's", "and", "day,”", "the", "page,", "I", "read"],
+      },
+      {
+        target: "Tomorrow will still be new, but I know I am not alone there.",
+        jumbled: ["Tomorrow", "know", "I", "new,", "I", "am", "be", "there.", "but", "will", "still", "alone", "not"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about getting ready for a new day.",
     mySentenceExample: "I get ready for a new day by planning my clothes at night.",

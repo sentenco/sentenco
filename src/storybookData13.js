@@ -45,9 +45,26 @@ export const CHAPTERS = [
       { text: "Dad says she can play with the puppy.", answer: true },
     ],
     buildSentence: [
-      { target: "I see a puppy.", jumbled: ["see", "a", "puppy.", "I"] },
-      { target: "The puppy licks my hand.", jumbled: ["licks", "my", "puppy", "hand.", "The"] },
-      { target: "This is the best day ever!", jumbled: ["is", "best", "This", "day", "the", "ever!"] },
+      {
+        target: "Today is a special day.",
+        jumbled: ["a", "special", "is", "Today", "day."],
+      },
+      {
+        target: "I see a small brown puppy on the kitchen floor!",
+        jumbled: ["the", "I", "see", "kitchen", "a", "small", "on", "floor!", "puppy", "brown"],
+      },
+      {
+        target: "I feel so happy, and I want to jump and shout.",
+        jumbled: ["want", "so", "and", "I", "I", "jump", "shout.", "feel", "to", "happy,", "and"],
+      },
+      {
+        target: "The puppy runs to me and licks my hand.",
+        jumbled: ["licks", "and", "hand.", "The", "to", "me", "my", "runs", "puppy"],
+      },
+      {
+        target: "I sit on the floor and pet his soft fur.",
+        jumbled: ["on", "his", "floor", "pet", "I", "soft", "and", "sit", "the", "fur."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a pet you have or want.",
     mySentenceExample: "I want a small dog.",
@@ -70,9 +87,26 @@ export const CHAPTERS = [
       { text: "The puppy wags his tail.", answer: true },
     ],
     buildSentence: [
-      { target: "We sit together.", jumbled: ["sit", "together.", "We"] },
-      { target: "His name is Milo.", jumbled: ["name", "is", "His", "Milo."] },
-      { target: "The puppy wags his tail.", jumbled: ["wags", "his", "puppy", "tail.", "The"] },
+      {
+        target: "Dad says, “We need a good name for him, Ellie.”",
+        jumbled: ["for", "need", "says,", "“We", "Dad", "good", "a", "Ellie.”", "name", "him,"],
+      },
+      {
+        target: "I think of many names.",
+        jumbled: ["many", "of", "I", "names.", "think"],
+      },
+      {
+        target: "I look at the puppy's big brown eyes.",
+        jumbled: ["at", "I", "look", "the", "eyes.", "brown", "big", "puppy's"],
+      },
+      {
+        target: "Everyone smiles and says, “Good choice, Ellie! Milo is a good name!”",
+        jumbled: ["Milo", "a", "good", "says,", "smiles", "and", "is", "Ellie!", "name!”", "“Good", "choice,", "Everyone"],
+      },
+      {
+        target: "The puppy wags his tail.",
+        jumbled: ["his", "The", "wags", "tail.", "puppy"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a name you like.",
     mySentenceExample: "I like the name Luna.",
@@ -95,9 +129,26 @@ export const CHAPTERS = [
       { text: "Milo licks Ellie's face in the morning.", answer: true },
     ],
     buildSentence: [
-      { target: "Milo is awake.", jumbled: ["is", "awake.", "Milo"] },
-      { target: "I sit next to him.", jumbled: ["sit", "next", "I", "to", "him."] },
-      { target: "Milo licks my face.", jumbled: ["licks", "my", "Milo", "face."] },
+      {
+        target: "At night, Milo sleeps in a small bed in my room.",
+        jumbled: ["a", "At", "in", "bed", "small", "sleeps", "in", "my", "Milo", "night,", "room."],
+      },
+      {
+        target: "I get out of bed and sit next to him.",
+        jumbled: ["of", "sit", "get", "to", "out", "I", "him.", "bed", "and", "next"],
+      },
+      {
+        target: "I say, “It's okay, Milo. Ellie is here.”",
+        jumbled: ["“It's", "okay,", "Milo.", "say,", "Ellie", "here.”", "is", "I"],
+      },
+      {
+        target: "Milo stops crying and rests his head on my hand.",
+        jumbled: ["rests", "Milo", "and", "head", "crying", "stops", "hand.", "his", "my", "on"],
+      },
+      {
+        target: "In the morning, Mom peeks in and says, “Good morning, Ellie!”",
+        jumbled: ["“Good", "Mom", "Ellie!”", "in", "morning,", "peeks", "and", "the", "says,", "morning,", "In"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about nighttime.",
     mySentenceExample: "I sleep in my bed at night.",
@@ -120,9 +171,26 @@ export const CHAPTERS = [
       { text: "Milo gets a treat.", answer: true },
     ],
     buildSentence: [
-      { target: "Milo jumps up.", jumbled: ["jumps", "up.", "Milo"] },
-      { target: "Milo sits down!", jumbled: ["sits", "down!", "Milo"] },
-      { target: "We clap and cheer for him.", jumbled: ["clap", "and", "We", "cheer", "for", "him."] },
+      {
+        target: "Dad holds a small treat and says, “Watch this, Ellie! Sit, Milo!”",
+        jumbled: ["Milo!”", "and", "a", "Dad", "says,", "“Watch", "Ellie!", "this,", "small", "Sit,", "holds", "treat"],
+      },
+      {
+        target: "Milo looks confused and jumps up.",
+        jumbled: ["up.", "and", "looks", "confused", "Milo", "jumps"],
+      },
+      {
+        target: "“Sit, Milo,” he says softly.",
+        jumbled: ["he", "Milo,”", "says", "“Sit,", "softly."],
+      },
+      {
+        target: "Milo gets his treat and wags his tail.",
+        jumbled: ["Milo", "his", "and", "gets", "treat", "his", "tail.", "wags"],
+      },
+      {
+        target: "Puppy school is fun, and Milo learns fast.",
+        jumbled: ["fun,", "is", "fast.", "school", "learns", "Milo", "Puppy", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning something new.",
     mySentenceExample: "I learn to jump rope.",
@@ -145,9 +213,26 @@ export const CHAPTERS = [
       { text: "Milo and Grace's dog play together.", answer: true },
     ],
     buildSentence: [
-      { target: "Milo sniffs the grass.", jumbled: ["sniffs", "the", "Milo", "grass."] },
-      { target: "We sit on a bench.", jumbled: ["sit", "on", "We", "a", "bench."] },
-      { target: "It is a fun day at the park.", jumbled: ["is", "a", "It", "fun", "day", "at", "the", "park."] },
+      {
+        target: "On Saturday, I take Milo for his first walk.",
+        jumbled: ["his", "first", "walk.", "On", "take", "Saturday,", "I", "for", "Milo"],
+      },
+      {
+        target: "I hold his leash, and we walk to the park.",
+        jumbled: ["we", "to", "and", "hold", "walk", "leash,", "the", "I", "his", "park."],
+      },
+      {
+        target: "At the park, I see my friend Grace with her dog.",
+        jumbled: ["friend", "At", "her", "see", "dog.", "the", "my", "Grace", "park,", "with", "I"],
+      },
+      {
+        target: "Milo and Grace's dog play together and run in circles.",
+        jumbled: ["and", "together", "in", "circles.", "run", "and", "play", "Milo", "Grace's", "dog"],
+      },
+      {
+        target: "We sit on a bench and watch them play.",
+        jumbled: ["sit", "We", "them", "on", "and", "a", "play.", "bench", "watch"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about the park.",
     mySentenceExample: "I like to play at the park.",
@@ -170,9 +255,26 @@ export const CHAPTERS = [
       { text: "Dad gives Milo a chew toy.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel upset.", jumbled: ["feel", "upset.", "I"] },
-      { target: "Puppies make mistakes too.", jumbled: ["make", "mistakes", "Puppies", "too."] },
-      { target: "We clean up the mess together.", jumbled: ["clean", "up", "We", "the", "mess", "together."] },
+      {
+        target: "One afternoon, I come home and see something on the floor.",
+        jumbled: ["the", "I", "home", "come", "One", "floor.", "something", "afternoon,", "see", "on", "and"],
+      },
+      {
+        target: "I feel upset and want to shout.",
+        jumbled: ["shout.", "and", "upset", "I", "want", "feel", "to"],
+      },
+      {
+        target: "Mom hugs me and says, “Ellie, Milo is still a baby. He does not know yet.”",
+        jumbled: ["a", "yet.”", "does", "Milo", "still", "is", "hugs", "me", "“Ellie,", "says,", "baby.", "not", "and", "He", "know", "Mom"],
+      },
+      {
+        target: "Dad gives Milo a chew toy instead and says, “Don't worry, Ellie.”",
+        jumbled: ["gives", "instead", "Milo", "toy", "and", "a", "Dad", "worry,", "chew", "Ellie.”", "“Don't", "says,"],
+      },
+      {
+        target: "I hug Milo and say, “It's okay, Milo.”",
+        jumbled: ["say,", "Milo", "okay,", "I", "hug", "“It's", "Milo.”", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a mistake.",
     mySentenceExample: "I make a mistake, but it is okay.",
@@ -195,9 +297,26 @@ export const CHAPTERS = [
       { text: "Milo looks clean after the bath.", answer: true },
     ],
     buildSentence: [
-      { target: "Milo needs a bath.", jumbled: ["needs", "a", "Milo", "bath."] },
-      { target: "I start to laugh.", jumbled: ["start", "to", "I", "laugh."] },
-      { target: "Milo looks clean and fresh.", jumbled: ["looks", "clean", "Milo", "and", "fresh."] },
+      {
+        target: "I fill the tub with warm water.",
+        jumbled: ["water.", "tub", "with", "fill", "warm", "the", "I"],
+      },
+      {
+        target: "Water goes all over my clothes, and I start to laugh.",
+        jumbled: ["start", "goes", "over", "to", "clothes,", "all", "and", "laugh.", "I", "my", "Water"],
+      },
+      {
+        target: "“Ellie, you are as wet as Milo!” she says.",
+        jumbled: ["she", "Milo!”", "“Ellie,", "are", "as", "you", "as", "says.", "wet"],
+      },
+      {
+        target: "Milo looks clean and smells so fresh.",
+        jumbled: ["clean", "fresh.", "and", "so", "looks", "Milo", "smells"],
+      },
+      {
+        target: "“Now Ellie needs a bath too!”",
+        jumbled: ["bath", "too!”", "“Now", "a", "Ellie", "needs"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about bath time.",
     mySentenceExample: "I take a bath at night.",
@@ -220,9 +339,26 @@ export const CHAPTERS = [
       { text: "Milo picks up the ball on the fifth try.", answer: true },
     ],
     buildSentence: [
-      { target: "Milo runs fast.", jumbled: ["runs", "fast.", "Milo"] },
-      { target: "I clap my hands.", jumbled: ["clap", "my", "I", "hands."] },
-      { target: "Milo loves to play fetch.", jumbled: ["loves", "to", "Milo", "play", "fetch."] },
+      {
+        target: "In the yard, I throw a small ball for Milo.",
+        jumbled: ["yard,", "Milo.", "ball", "for", "In", "a", "small", "the", "I", "throw"],
+      },
+      {
+        target: "Milo runs fast, but he does not bring the ball back.",
+        jumbled: ["he", "runs", "ball", "does", "not", "but", "back.", "fast,", "bring", "Milo", "the"],
+      },
+      {
+        target: "I try again and again, but Milo does not understand yet.",
+        jumbled: ["Milo", "I", "but", "does", "and", "understand", "yet.", "try", "not", "again,", "again"],
+      },
+      {
+        target: "Then, on the fifth try, Milo picks up the ball and runs back to me!",
+        jumbled: ["Then,", "up", "Milo", "picks", "try,", "the", "the", "runs", "to", "fifth", "ball", "back", "on", "me!", "and"],
+      },
+      {
+        target: "Now Milo loves to play fetch every day.",
+        jumbled: ["every", "day.", "fetch", "loves", "play", "to", "Now", "Milo"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a game you like to play.",
     mySentenceExample: "I like to play with a ball.",
@@ -245,9 +381,26 @@ export const CHAPTERS = [
       { text: "Ellie feels proud.", answer: true },
     ],
     buildSentence: [
-      { target: "My classmates smile.", jumbled: ["classmates", "smile.", "My"] },
-      { target: "I bring photos of Milo.", jumbled: ["bring", "photos", "I", "of", "Milo."] },
-      { target: "I feel proud to share my puppy.", jumbled: ["feel", "proud", "I", "to", "share", "my", "puppy."] },
+      {
+        target: "I bring photos of Milo to show my class.",
+        jumbled: ["of", "class.", "Milo", "to", "photos", "bring", "I", "my", "show"],
+      },
+      {
+        target: "I stand at the front and hold up a photo.",
+        jumbled: ["a", "at", "the", "and", "front", "up", "I", "photo.", "stand", "hold"],
+      },
+      {
+        target: "“This is my puppy, Milo,” I say.",
+        jumbled: ["puppy,", "my", "“This", "is", "I", "say.", "Milo,”"],
+      },
+      {
+        target: "“What tricks does he know?” asks a girl.",
+        jumbled: ["a", "he", "know?”", "asks", "girl.", "“What", "does", "tricks"],
+      },
+      {
+        target: "Everyone claps and says, “Great job, Ellie! Milo looks very cute!”",
+        jumbled: ["looks", "Everyone", "cute!”", "Ellie!", "Milo", "“Great", "job,", "very", "and", "says,", "claps"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about show-and-tell.",
     mySentenceExample: "I want to show my toy at school.",
@@ -270,9 +423,26 @@ export const CHAPTERS = [
       { text: "Ellie calls Milo her best friend.", answer: true },
     ],
     buildSentence: [
-      { target: "Milo is bigger now.", jumbled: ["is", "bigger", "Milo", "now."] },
-      { target: "We play together in the yard.", jumbled: ["play", "together", "We", "in", "the", "yard."] },
-      { target: "He is my best friend.", jumbled: ["is", "my", "He", "best", "friend."] },
+      {
+        target: "It has been one month since Milo came home.",
+        jumbled: ["came", "has", "home.", "Milo", "been", "since", "It", "month", "one"],
+      },
+      {
+        target: "Every morning, he wakes me up with a lick on my face.",
+        jumbled: ["with", "wakes", "lick", "he", "face.", "up", "Every", "a", "me", "my", "morning,", "on"],
+      },
+      {
+        target: "I remember the first day, when Milo was scared and small.",
+        jumbled: ["the", "remember", "I", "small.", "was", "when", "scared", "and", "Milo", "first", "day,"],
+      },
+      {
+        target: "Now, Milo is happy and full of energy.",
+        jumbled: ["full", "Now,", "Milo", "is", "of", "happy", "and", "energy."],
+      },
+      {
+        target: "Mom smiles and says, “You and Milo are perfect together, Ellie.”",
+        jumbled: ["smiles", "and", "and", "together,", "says,", "Milo", "perfect", "are", "“You", "Ellie.”", "Mom"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your best friend.",
     mySentenceExample: "My best friend makes me happy.",

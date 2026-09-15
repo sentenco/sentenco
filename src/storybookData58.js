@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "The difference in pay turns out to be real.", answer: true },
     ],
     buildSentence: [
-      { target: "Something looks off immediately.", jumbled: ["Something", "looks", "off", "immediately."] },
-      { target: "I check the numbers twice.", jumbled: ["I", "check", "the", "numbers", "twice."] },
-      { target: "The difference is real, unfortunately.", jumbled: ["The", "difference", "is", "real,", "unfortunately."] },
-      { target: "I have to figure out what happened.", jumbled: ["I", "have", "to", "figure", "out", "what", "happened."] },
-      { target: "My pay is considerably lower than it should be.", jumbled: ["My", "pay", "is", "considerably", "lower", "than", "it", "should", "be."] },
+      {
+        target: "On Friday evening, I sit down to review my monthly budget, which usually starts with a quick glance at my payslip, my name, Marcus, printed at the top as always.",
+        jumbled: ["with", "at", "Friday", "budget,", "review", "payslip,", "printed", "my", "top", "at", "sit", "down", "evening,", "monthly", "the", "my", "On", "Marcus,", "name,", "to", "I", "which", "starts", "always.", "usually", "quick", "my", "a", "glance", "as"],
+      },
+      {
+        target: "Something looks off immediately, though it takes me a moment to figure out exactly what.",
+        jumbled: ["what.", "Something", "it", "figure", "looks", "exactly", "takes", "moment", "to", "though", "me", "out", "a", "immediately,", "off"],
+      },
+      {
+        target: "Comparing this month's number with last month's, I notice my pay is considerably lower than it should be.",
+        jumbled: ["this", "I", "notice", "number", "be.", "my", "considerably", "lower", "month's,", "with", "Comparing", "than", "month's", "should", "pay", "it", "last", "is"],
+      },
+      {
+        target: "At first, I assume I'm simply misreading something, so I check the numbers twice more, carefully.",
+        jumbled: ["numbers", "carefully.", "misreading", "I", "I", "twice", "At", "so", "assume", "check", "something,", "more,", "simply", "the", "first,", "I'm"],
+      },
+      {
+        target: "Unfortunately, the difference is real, and now I have to figure out what actually happened and who I should contact about it.",
+        jumbled: ["figure", "it.", "I", "real,", "have", "Unfortunately,", "what", "and", "out", "and", "contact", "the", "who", "should", "happened", "actually", "now", "about", "is", "to", "I", "difference"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about noticing something wrong with a bill or payment.",
     mySentenceExample: "I noticed something wrong with my payment last week.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "Marcus decides to ignore the problem completely.", answer: false },
     ],
     buildSentence: [
-      { target: "I look into this myself.", jumbled: ["I", "look", "into", "this", "myself."] },
-      { target: "This has never happened before.", jumbled: ["This", "has", "never", "happened", "before."] },
-      { target: "My bonus is completely missing now.", jumbled: ["My", "bonus", "is", "completely", "missing", "now."] },
-      { target: "I need to follow up on Monday.", jumbled: ["I", "need", "to", "follow", "up", "on", "Monday."] },
-      { target: "This might be a sign of a larger problem.", jumbled: ["This", "might", "be", "a", "sign", "of", "a", "larger", "problem."] },
+      {
+        target: "I decide to look into this myself first, opening the two PDFs, both still named “Marcus_Payslip,” and comparing them line by line.",
+        jumbled: ["comparing", "look", "by", "opening", "this", "named", "decide", "the", "I", "them", "myself", "line.", "first,", "both", "line", "PDFs,", "into", "two", "and", "still", "to", "“Marcus_Payslip,”"],
+      },
+      {
+        target: "I find that my usual monthly bonus, which normally appears automatically, is completely missing from this particular payslip.",
+        jumbled: ["completely", "payslip.", "is", "find", "appears", "bonus,", "monthly", "I", "usual", "normally", "automatically,", "this", "particular", "that", "from", "missing", "my", "which"],
+      },
+      {
+        target: "This has never happened before in my three years at the company, which makes the situation slightly more concerning.",
+        jumbled: ["the", "has", "at", "company,", "before", "happened", "This", "my", "which", "in", "slightly", "years", "makes", "the", "three", "concerning.", "more", "never", "situation"],
+      },
+      {
+        target: "I wonder whether this was simply a one-time mistake or possibly a sign of a larger, ongoing problem.",
+        jumbled: ["ongoing", "this", "whether", "was", "I", "simply", "sign", "a", "one-time", "of", "or", "a", "problem.", "mistake", "larger,", "possibly", "wonder", "a"],
+      },
+      {
+        target: "Either way, I know I'll need to follow up with someone in payroll first thing on Monday morning.",
+        jumbled: ["someone", "first", "follow", "I", "with", "Either", "in", "know", "to", "I'll", "on", "payroll", "thing", "up", "way,", "morning.", "Monday", "need"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about investigating a problem yourself before asking for help.",
     mySentenceExample: "I investigated the problem myself before asking for help.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Ms. Alvarez says she will check the payroll system.", answer: true },
     ],
     buildSentence: [
-      { target: "I write a polite email now.", jumbled: ["I", "write", "a", "polite", "email", "now."] },
-      { target: "I attach both payslips together.", jumbled: ["I", "attach", "both", "payslips", "together."] },
-      { target: "I try to keep my tone calm.", jumbled: ["I", "try", "to", "keep", "my", "tone", "calm."] },
-      { target: "I receive a reply within an hour.", jumbled: ["I", "receive", "a", "reply", "within", "an", "hour."] },
-      { target: "Could this be looked into as soon as possible?", jumbled: ["Could", "this", "be", "looked", "into", "as", "soon", "as", "possible?"] },
+      {
+        target: "On Monday morning, I write a polite but clear email to Ms. Alvarez in HR, explaining exactly what I noticed.",
+        jumbled: ["Ms.", "in", "exactly", "morning,", "clear", "a", "I", "On", "what", "write", "HR,", "Alvarez", "Monday", "explaining", "noticed.", "polite", "I", "to", "but", "email"],
+      },
+      {
+        target: "I attach both payslips, highlighting the missing bonus amount so she can see the difference immediately.",
+        jumbled: ["the", "attach", "the", "payslips,", "missing", "she", "amount", "I", "difference", "both", "highlighting", "see", "bonus", "can", "so", "immediately."],
+      },
+      {
+        target: "In my message, I ask whether this could be looked into as soon as possible, since it affects my monthly budget directly.",
+        jumbled: ["budget", "as", "directly.", "I", "since", "my", "as", "my", "be", "into", "this", "ask", "In", "monthly", "could", "soon", "affects", "it", "possible,", "looked", "message,", "whether"],
+      },
+      {
+        target: "I try to keep my tone professional and calm, even though I'm honestly a little frustrated underneath.",
+        jumbled: ["little", "my", "keep", "underneath.", "a", "even", "I'm", "honestly", "though", "try", "tone", "calm,", "I", "frustrated", "and", "to", "professional"],
+      },
+      {
+        target: "“Thanks for flagging this, Marcus, I'll check the payroll system and get back to you by the end of the day,” she writes.",
+        jumbled: ["of", "system", "she", "the", "“Thanks", "payroll", "by", "get", "day,”", "this,", "writes.", "the", "Marcus,", "and", "flagging", "I'll", "you", "end", "for", "to", "back", "check", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about writing a professional email to solve a problem.",
     mySentenceExample: "I wrote a professional email to solve the billing problem.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "Marcus feels no curiosity about when this will be fixed.", answer: false },
     ],
     buildSentence: [
-      { target: "The workday passes slowly today.", jumbled: ["The", "workday", "passes", "slowly", "today."] },
-      { target: "A message finally arrives now.", jumbled: ["A", "message", "finally", "arrives", "now."] },
-      { target: "My heart skips slightly at this.", jumbled: ["My", "heart", "skips", "slightly", "at", "this."] },
-      { target: "This affected several employees this month.", jumbled: ["This", "affected", "several", "employees", "this", "month."] },
-      { target: "Knowing it wasn't personal makes me feel better.", jumbled: ["Knowing", "it", "wasn't", "personal", "makes", "me", "feel", "better."] },
+      {
+        target: "The rest of the workday passes slowly, since part of my mind keeps wondering what Ms. Alvarez will eventually find.",
+        jumbled: ["eventually", "of", "keeps", "Alvarez", "find.", "will", "my", "passes", "the", "workday", "part", "Ms.", "since", "mind", "what", "rest", "slowly,", "The", "wondering", "of"],
+      },
+      {
+        target: "I try to focus on my regular tasks, though I check my email more often than I probably should.",
+        jumbled: ["to", "I", "than", "regular", "more", "try", "I", "should.", "focus", "on", "often", "probably", "my", "tasks,", "email", "I", "check", "my", "though"],
+      },
+      {
+        target: "Around four in the afternoon, a message finally arrives, and my heart skips slightly as I open it.",
+        jumbled: ["and", "afternoon,", "a", "message", "heart", "in", "the", "slightly", "skips", "it.", "as", "I", "Around", "four", "arrives,", "my", "finally", "open"],
+      },
+      {
+        target: "“Hi Marcus, I found the issue,” it begins.",
+        jumbled: ["“Hi", "issue,”", "begins.", "Marcus,", "I", "it", "found", "the"],
+      },
+      {
+        target: "She explains that there was, in fact, a system error affecting several employees' bonuses this month, not just mine.",
+        jumbled: ["fact,", "a", "affecting", "this", "there", "was,", "month,", "just", "She", "system", "several", "explains", "in", "that", "mine.", "bonuses", "not", "employees'", "error"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting anxiously for an answer to a problem.",
     mySentenceExample: "I waited anxiously for an answer to my complaint.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "The fix should be resolved within two business days.", answer: true },
     ],
     buildSentence: [
-      { target: "She shares her screen now.", jumbled: ["She", "shares", "her", "screen", "now."] },
-      { target: "I appreciate her transparency here.", jumbled: ["I", "appreciate", "her", "transparency", "here."] },
-      { target: "This should have been caught earlier.", jumbled: ["This", "should", "have", "been", "caught", "earlier."] },
-      { target: "The finance team is already working on it.", jumbled: ["The", "finance", "team", "is", "already", "working", "on", "it."] },
-      { target: "This should be resolved within two business days.", jumbled: ["This", "should", "be", "resolved", "within", "two", "business", "days."] },
+      {
+        target: "Ms. Alvarez suggests a short video call so she can walk me through exactly what went wrong, step by step.",
+        jumbled: ["video", "Ms.", "what", "Alvarez", "walk", "wrong,", "me", "a", "call", "by", "can", "through", "went", "exactly", "step.", "step", "short", "so", "she", "suggests"],
+      },
+      {
+        target: "During the call, she shares her screen, showing a spreadsheet where a formula had apparently calculated bonuses incorrectly for a specific group.",
+        jumbled: ["formula", "specific", "had", "for", "spreadsheet", "her", "apparently", "calculated", "she", "a", "a", "bonuses", "the", "call,", "a", "group.", "During", "where", "showing", "screen,", "incorrectly", "shares"],
+      },
+      {
+        target: "“This should have been caught earlier, Marcus, and I sincerely apologize for the stress this caused you,” she says honestly.",
+        jumbled: ["stress", "says", "caused", "“This", "for", "earlier,", "have", "sincerely", "should", "I", "the", "you,”", "she", "honestly.", "caught", "been", "Marcus,", "this", "and", "apologize"],
+      },
+      {
+        target: "I appreciate her transparency, especially since she could have simply given a vague, generic answer instead.",
+        jumbled: ["a", "could", "since", "vague,", "especially", "given", "transparency,", "appreciate", "instead.", "answer", "have", "her", "she", "I", "simply", "generic"],
+      },
+      {
+        target: "She explains that the finance team is already working on a fix, which should be resolved within the next two business days.",
+        jumbled: ["a", "within", "team", "already", "on", "finance", "the", "explains", "She", "the", "fix,", "days.", "next", "business", "is", "should", "two", "resolved", "working", "which", "be", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone explaining a mistake honestly and clearly.",
     mySentenceExample: "My manager explained the mistake honestly and clearly.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "Ms. Alvarez offers written confirmation of the amount owed.", answer: true },
     ],
     buildSentence: [
-      { target: "Two days pass slowly now.", jumbled: ["Two", "days", "pass", "slowly", "now."] },
-      { target: "I send a brief follow-up email.", jumbled: ["I", "send", "a", "brief", "follow-up", "email."] },
-      { target: "She responds quickly to this.", jumbled: ["She", "responds", "quickly", "to", "this."] },
-      { target: "I thank her for keeping me informed.", jumbled: ["I", "thank", "her", "for", "keeping", "me", "informed."] },
-      { target: "This might take one more business day to reflect.", jumbled: ["This", "might", "take", "one", "more", "business", "day", "to", "reflect."] },
+      {
+        target: "Two days pass, and although the finance team said the fix would come by now, my account still shows no change.",
+        jumbled: ["would", "fix", "and", "by", "come", "although", "shows", "change.", "account", "the", "my", "still", "pass,", "now,", "no", "team", "Two", "said", "the", "days", "finance"],
+      },
+      {
+        target: "I decide to send a brief, friendly follow-up email rather than assuming the worst has happened.",
+        jumbled: ["friendly", "email", "send", "happened.", "follow-up", "a", "assuming", "I", "brief,", "rather", "than", "has", "decide", "the", "to", "worst"],
+      },
+      {
+        target: "Ms. Alvarez responds quickly, explaining that the correction is being processed but might take one more business day to reflect.",
+        jumbled: ["Alvarez", "reflect.", "explaining", "being", "Ms.", "processed", "responds", "is", "business", "one", "might", "more", "the", "quickly,", "correction", "take", "to", "but", "day", "that"],
+      },
+      {
+        target: "On the other hand, she offers to send me written confirmation of the exact amount owed.",
+        jumbled: ["other", "send", "hand,", "of", "confirmation", "me", "amount", "the", "owed.", "written", "the", "offers", "to", "On", "exact", "she"],
+      },
+      {
+        target: "“I'll get that to you today, Marcus, just in case you need it for your own records,” she adds.",
+        jumbled: ["adds.", "just", "for", "it", "that", "records,”", "in", "she", "own", "today,", "get", "you", "your", "to", "you", "case", "“I'll", "Marcus,", "need"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about following up politely on an unresolved problem.",
     mySentenceExample: "I followed up politely on my unresolved refund request.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Marcus never replies to Ms. Alvarez's message.", answer: false },
     ],
     buildSentence: [
-      { target: "Relief spreads through me instantly.", jumbled: ["Relief", "spreads", "through", "me", "instantly."] },
-      { target: "I confirm this in the app.", jumbled: ["I", "confirm", "this", "in", "the", "app."] },
-      { target: "I reply thanking her now.", jumbled: ["I", "reply", "thanking", "her", "now."] },
-      { target: "She sends a brief written explanation.", jumbled: ["She", "sends", "a", "brief", "written", "explanation."] },
-      { target: "I appreciated how clearly everything was communicated.", jumbled: ["I", "appreciated", "how", "clearly", "everything", "was", "communicated."] },
+      {
+        target: "The following morning, I receive a notification from my bank showing an unexpected deposit had arrived overnight.",
+        jumbled: ["bank", "my", "The", "morning,", "I", "overnight.", "receive", "had", "a", "from", "following", "unexpected", "an", "deposit", "arrived", "showing", "notification"],
+      },
+      {
+        target: "Opening the app immediately, I confirm that the missing bonus amount has finally been added to my account correctly.",
+        jumbled: ["immediately,", "finally", "to", "that", "confirm", "my", "correctly.", "bonus", "I", "app", "missing", "has", "amount", "the", "account", "added", "the", "been", "Opening"],
+      },
+      {
+        target: "Relief spreads through me instantly, followed quickly by genuine appreciation for how the entire situation was ultimately handled.",
+        jumbled: ["by", "me", "instantly,", "ultimately", "situation", "quickly", "spreads", "appreciation", "genuine", "Relief", "through", "the", "followed", "how", "was", "entire", "for", "handled."],
+      },
+      {
+        target: "Ms. Alvarez even sends a short message confirming the correction.",
+        jumbled: ["Alvarez", "sends", "confirming", "short", "a", "Ms.", "correction.", "message", "the", "even"],
+      },
+      {
+        target: "“All fixed on our end, Marcus,” she writes, along with a brief written explanation for my personal records.",
+        jumbled: ["written", "end,", "for", "she", "fixed", "our", "writes,", "“All", "a", "my", "explanation", "records.", "brief", "with", "Marcus,”", "on", "personal", "along"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling relieved when a problem finally gets fixed.",
     mySentenceExample: "I felt relieved when my refund finally arrived correctly.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "The company's response reassured them about future issues.", answer: true },
     ],
     buildSentence: [
-      { target: "I mention this during lunch.", jumbled: ["I", "mention", "this", "during", "lunch."] },
-      { target: "We compare notes together now.", jumbled: ["We", "compare", "notes", "together", "now."] },
-      { target: "She confirms the exact same issue.", jumbled: ["She", "confirms", "the", "exact", "same", "issue."] },
-      { target: "This genuinely reassured both of us.", jumbled: ["This", "genuinely", "reassured", "both", "of", "us."] },
-      { target: "Payroll actually double-checks these situations carefully.", jumbled: ["Payroll", "actually", "double-checks", "these", "situations", "carefully."] },
+      {
+        target: "During lunch, I mention the whole situation to a coworker, curious whether her paycheck was affected as well.",
+        jumbled: ["the", "curious", "was", "as", "I", "well.", "whole", "whether", "paycheck", "a", "affected", "mention", "During", "her", "situation", "to", "coworker,", "lunch,"],
+      },
+      {
+        target: "“Same thing happened to me, Marcus,” she confirms, adding that she'd also contacted HR separately about it.",
+        jumbled: ["confirms,", "separately", "also", "she'd", "she", "contacted", "it.", "“Same", "adding", "Marcus,”", "happened", "HR", "that", "me,", "about", "to", "thing"],
+      },
+      {
+        target: "We compare notes, agreeing that Ms. Alvarez handled everything professionally, despite the initial inconvenience it caused everyone involved.",
+        jumbled: ["compare", "everything", "agreeing", "Ms.", "notes,", "involved.", "Alvarez", "caused", "despite", "that", "it", "professionally,", "everyone", "the", "inconvenience", "handled", "initial", "We"],
+      },
+      {
+        target: "My coworker jokes that at least now we know payroll actually double-checks these situations carefully when something goes wrong.",
+        jumbled: ["we", "now", "coworker", "know", "when", "these", "payroll", "at", "carefully", "goes", "double-checks", "wrong.", "least", "situations", "actually", "My", "something", "jokes", "that"],
+      },
+      {
+        target: "In the end, the company's response genuinely reassured both of us about how future issues might be handled.",
+        jumbled: ["us", "might", "In", "be", "how", "reassured", "end,", "handled.", "of", "response", "genuinely", "the", "about", "both", "issues", "future", "the", "company's"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about discovering a coworker had the same problem as you.",
     mySentenceExample: "I discovered my coworker had the same billing problem too.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Marcus feels nothing useful came from this experience.", answer: false },
     ],
     buildSentence: [
-      { target: "The company sends a short memo.", jumbled: ["The", "company", "sends", "a", "short", "memo."] },
-      { target: "I appreciate this response genuinely.", jumbled: ["I", "appreciate", "this", "response", "genuinely."] },
-      { target: "Something useful came out of this.", jumbled: ["Something", "useful", "came", "out", "of", "this."] },
-      { target: "An additional review step will be required.", jumbled: ["An", "additional", "review", "step", "will", "be", "required."] },
-      { target: "This says a lot about how seriously they take trust.", jumbled: ["This", "says", "a", "lot", "about", "how", "seriously", "they", "take", "trust."] },
+      {
+        target: "A week later, the company sends a short memo explaining new steps being added to prevent similar payroll errors going forward.",
+        jumbled: ["added", "later,", "similar", "the", "prevent", "company", "memo", "explaining", "a", "forward.", "sends", "short", "A", "being", "going", "week", "payroll", "errors", "new", "steps", "to"],
+      },
+      {
+        target: "I forward it to myself with a quick note, “Marcus — worth remembering for next year.”",
+        jumbled: ["next", "—", "“Marcus", "I", "a", "quick", "note,", "with", "for", "remembering", "forward", "it", "myself", "worth", "to", "year.”"],
+      },
+      {
+        target: "According to the memo, an additional review step will now be required before any bonus calculations are finalized each month.",
+        jumbled: ["required", "review", "bonus", "additional", "step", "be", "any", "will", "calculations", "to", "According", "finalized", "are", "memo,", "month.", "now", "before", "each", "an", "the"],
+      },
+      {
+        target: "I appreciate that the company didn't just fix my individual issue quietly but addressed the underlying cause for everyone.",
+        jumbled: ["quietly", "the", "the", "addressed", "company", "issue", "that", "underlying", "but", "fix", "cause", "appreciate", "for", "just", "I", "didn't", "individual", "my", "everyone."],
+      },
+      {
+        target: "This kind of response, in my opinion, says a lot about how seriously an organization takes its employees' trust.",
+        jumbled: ["seriously", "a", "This", "organization", "lot", "about", "of", "opinion,", "my", "how", "kind", "employees'", "takes", "response,", "an", "in", "its", "trust.", "says"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a company or organization fixing a problem for everyone, not just you.",
     mySentenceExample: "The company fixed the problem for everyone, not just me.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Marcus believes staying calm helped resolve things efficiently.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this now.", jumbled: ["I", "look", "back", "on", "this", "now."] },
-      { target: "I check my payslip more carefully.", jumbled: ["I", "check", "my", "payslip", "more", "carefully."] },
-      { target: "This taught me something genuinely useful.", jumbled: ["This", "taught", "me", "something", "genuinely", "useful."] },
-      { target: "Staying calm allowed her to help me efficiently.", jumbled: ["Staying", "calm", "allowed", "her", "to", "help", "me", "efficiently."] },
-      { target: "Had I reacted with anger, things might have felt tense.", jumbled: ["Had", "I", "reacted", "with", "anger,", "things", "might", "have", "felt", "tense."] },
+      {
+        target: "Looking back on the whole experience, I jot a quick note in my planner, “Lesson for Marcus: stay calm, follow up in writing,” and realize how differently things could have gone if I had reacted with anger instead of patience.",
+        jumbled: ["had", "planner,", "follow", "in", "things", "my", "have", "of", "note", "in", "Marcus:", "writing,”", "reacted", "patience.", "whole", "up", "gone", "how", "for", "anger", "with", "instead", "back", "quick", "stay", "realize", "a", "on", "jot", "I", "Looking", "could", "experience,", "if", "and", "calm,", "differently", "“Lesson", "I", "the"],
+      },
+      {
+        target: "Had I sent an angry, accusatory email that first Monday, the entire process might have felt more tense for everyone involved.",
+        jumbled: ["sent", "email", "process", "that", "involved.", "for", "accusatory", "the", "felt", "more", "an", "Had", "everyone", "angry,", "I", "have", "entire", "tense", "first", "might", "Monday,"],
+      },
+      {
+        target: "Instead, staying calm and communicating clearly allowed Ms. Alvarez to actually help me efficiently and honestly.",
+        jumbled: ["me", "Ms.", "efficiently", "staying", "allowed", "clearly", "and", "Alvarez", "communicating", "and", "help", "to", "Instead,", "actually", "calm", "honestly."],
+      },
+      {
+        target: "I've also learned to check my payslip more carefully each month, rather than only glancing at the final total.",
+        jumbled: ["rather", "total.", "check", "learned", "carefully", "I've", "glancing", "more", "the", "only", "also", "each", "month,", "at", "my", "payslip", "than", "final", "to"],
+      },
+      {
+        target: "In the end, this small workplace hiccup taught me something genuinely useful about handling problems calmly and professionally.",
+        jumbled: ["about", "hiccup", "handling", "workplace", "end,", "genuinely", "this", "useful", "the", "small", "In", "me", "taught", "calmly", "professionally.", "problems", "something", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from handling a workplace problem calmly.",
     mySentenceExample: "I learned that handling workplace problems calmly gets better results.",

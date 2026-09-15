@@ -38,13 +38,25 @@ export const CHAPTERS = [
       { text: "Other students laugh at Nina when the ball goes to the side.", answer: false },
     ],
     buildSentence: [
-      { target: "My hands shake a little.", jumbled: ["hands", "shake", "a", "little.", "My"] },
-      { target: "He gives me a ball.", jumbled: ["gives", "me", "a", "ball.", "He"] },
-      { target: "A tall hoop hangs above the shiny court.", jumbled: ["the", "shiny", "A", "court.", "hangs", "above", "hoop", "tall"] },
-      { target: "I take a deep breath and try again.", jumbled: ["try", "and", "breath", "again.", "take", "I", "deep", "a"] },
       {
-        target: "After school, I walk to the big gym next to the playground.",
-        jumbled: ["After", "big", "I", "to", "next", "the", "gym", "school,", "walk", "playground.", "the", "to"],
+        target: "The doors are open, and I can hear a ball bouncing on the floor.",
+        jumbled: ["the", "are", "on", "I", "ball", "hear", "and", "bouncing", "The", "open,", "can", "floor.", "a", "doors"],
+      },
+      {
+        target: "Inside the gym, the lights are bright, and a tall hoop hangs above the shiny court.",
+        jumbled: ["are", "tall", "gym,", "lights", "bright,", "court.", "Inside", "and", "hangs", "the", "a", "the", "shiny", "above", "hoop", "the"],
+      },
+      {
+        target: "I feel my hands shake a little, but I smile back at him.",
+        jumbled: ["my", "at", "I", "smile", "him.", "a", "I", "feel", "back", "little,", "hands", "shake", "but"],
+      },
+      {
+        target: "He gives me a ball and shows me how to hold it with both hands.",
+        jumbled: ["shows", "hold", "with", "gives", "both", "and", "a", "ball", "me", "He", "how", "me", "it", "to", "hands."],
+      },
+      {
+        target: "I take a deep breath, try again, and this time the ball comes back to my hand, so I feel scared and excited, but glad I came to the gym.",
+        jumbled: ["excited,", "comes", "try", "the", "ball", "I", "this", "time", "scared", "deep", "breath,", "came", "and", "so", "hand,", "take", "glad", "the", "to", "and", "a", "to", "again,", "back", "feel", "but", "my", "gym.", "I", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about basketball and you.",
@@ -70,19 +82,25 @@ export const CHAPTERS = [
       { text: "Nina refuses to tell the coach her name.", answer: false },
     ],
     buildSentence: [
-      { target: "I am Nina.", jumbled: ["am", "Nina.", "I"] },
-      { target: "We all shake hands.", jumbled: ["all", "shake", "hands.", "We"] },
       {
-        target: "My name is Coach Ben, and I am happy you joined.",
-        jumbled: ["I", "is", "you", "am", "name", "joined.", "My", "happy", "Coach", "Ben,", "and"],
+        target: "The next afternoon, I come to the gym a little early and sit on the wooden bench.",
+        jumbled: ["to", "early", "a", "wooden", "afternoon,", "bench.", "come", "gym", "The", "the", "I", "and", "little", "the", "sit", "on", "next"],
       },
       {
-        target: "I feel calm because I know my coach and new friends.",
-        jumbled: ["coach", "friends.", "because", "I", "calm", "new", "and", "my", "know", "I", "feel"],
+        target: "He says, “My name is Coach Ben, and I am happy you joined the team.” He asks me my name, my class, and if I like sports.",
+        jumbled: ["you", "if", "He", "Coach", "Ben,", "He", "my", "class,", "is", "I", "says,", "and", "name,", "and", "sports.", "happy", "like", "am", "me", "“My", "I", "my", "team.”", "joined", "name", "asks", "the"],
       },
       {
-        target: "The coach walks over to me and sits down beside me.",
-        jumbled: ["beside", "me.", "me", "down", "over", "The", "sits", "and", "coach", "walks", "to"],
+        target: "I tell him I am Nina, I am in class seven, and I want to learn basketball.",
+        jumbled: ["to", "him", "am", "basketball.", "and", "I", "in", "I", "Nina,", "want", "tell", "I", "class", "seven,", "am", "learn", "I"],
+      },
+      {
+        target: "Then two girls run over and say, “Hi, I'm Mia,” and “I'm Jay, welcome to the team.”",
+        jumbled: ["“Hi,", "and", "to", "over", "run", "Mia,”", "Then", "I'm", "and", "two", "say,", "Jay,", "girls", "team.”", "the", "welcome", "“I'm"],
+      },
+      {
+        target: "In that moment, I feel calm because now I know my coach and two new friends.",
+        jumbled: ["friends.", "and", "In", "my", "coach", "I", "now", "two", "new", "that", "feel", "calm", "know", "I", "because", "moment,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a coach or a teacher you like.",
@@ -108,19 +126,25 @@ export const CHAPTERS = [
       { text: "Coach Ben does not show the team how to dribble.", answer: false },
     ],
     buildSentence: [
-      { target: "Keep your hand soft.", jumbled: ["your", "hand", "soft.", "Keep"] },
-      { target: "Coach Ben claps for me.", jumbled: ["claps", "for", "me.", "Coach", "Ben"] },
       {
-        target: "Push the ball down with your fingers, not your whole hand.",
-        jumbled: ["down", "ball", "with", "not", "your", "Push", "hand.", "fingers,", "your", "the", "whole"],
+        target: "He stands in the middle of the court and shows us slowly with his own ball.",
+        jumbled: ["of", "court", "us", "shows", "ball.", "stands", "slowly", "with", "the", "and", "middle", "the", "He", "own", "in", "his"],
       },
       {
-        target: "I copy her, and slowly my ball stays close to my body.",
-        jumbled: ["her,", "ball", "close", "my", "I", "to", "and", "stays", "body.", "copy", "slowly", "my"],
+        target: "I try to bounce the ball, but at first it jumps too high and goes away from me.",
+        jumbled: ["but", "it", "too", "try", "I", "first", "goes", "the", "away", "ball,", "to", "high", "bounce", "at", "and", "me.", "jumps", "from"],
       },
       {
-        target: "I feel proud because I can bounce and walk with the ball.",
-        jumbled: ["can", "walk", "and", "bounce", "ball.", "because", "the", "feel", "I", "I", "with", "proud"],
+        target: "Mia laughs kindly and says, “Keep your hand soft, like this, Nina.”",
+        jumbled: ["soft,", "like", "your", "and", "says,", "Mia", "kindly", "laughs", "hand", "“Keep", "Nina.”", "this,"],
+      },
+      {
+        target: "Then Coach Ben asks us to walk and bounce the ball at the same time.",
+        jumbled: ["the", "the", "asks", "us", "and", "ball", "to", "walk", "at", "Ben", "bounce", "Then", "time.", "Coach", "same"],
+      },
+      {
+        target: "Coach Ben claps for me.",
+        jumbled: ["claps", "Coach", "me.", "Ben", "for"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about learning something new.",
@@ -146,16 +170,25 @@ export const CHAPTERS = [
       { text: "Coach Ben never shows the team how to shoot.", answer: false },
     ],
     buildSentence: [
-      { target: "Try again, Nina.", jumbled: ["again,", "Nina.", "Try"] },
-      { target: "The ball touches the ring.", jumbled: ["the", "touches", "ring.", "The", "ball"] },
-      { target: "Bend your knees, then push the ball up softly.", jumbled: ["knees,", "the", "then", "your", "up", "push", "Bend", "ball", "softly."] },
       {
-        target: "My friends cheer for me because I made my first basket.",
-        jumbled: ["My", "made", "for", "I", "me", "cheer", "my", "basket.", "first", "because", "friends"],
+        target: "On Thursday, Coach Ben says it is time to shoot the ball at the hoop.",
+        jumbled: ["the", "to", "is", "hoop.", "Ben", "shoot", "at", "the", "Thursday,", "says", "ball", "On", "Coach", "it", "time"],
       },
       {
-        target: "I bend my knees and push the ball up with both hands.",
-        jumbled: ["up", "my", "hands.", "bend", "ball", "both", "push", "I", "and", "knees", "with", "the"],
+        target: "He stands under the tall hoop and shows us how to hold the ball and look up.",
+        jumbled: ["hoop", "ball", "and", "how", "to", "look", "us", "stands", "the", "He", "the", "up.", "and", "hold", "tall", "under", "shows"],
+      },
+      {
+        target: "Jay stands next to me and says, “Try again, Nina, and use your legs, not only your arms.”",
+        jumbled: ["only", "your", "“Try", "legs,", "and", "and", "stands", "to", "me", "next", "Jay", "use", "says,", "your", "again,", "Nina,", "not", "arms.”"],
+      },
+      {
+        target: "I bend my knees, look at the hoop, and push the ball up with both hands.",
+        jumbled: ["at", "knees,", "push", "hoop,", "with", "my", "I", "ball", "up", "bend", "the", "hands.", "both", "look", "the", "and"],
+      },
+      {
+        target: "On my next try, the ball drops through the hoop, and I hear a soft sound.",
+        jumbled: ["through", "try,", "a", "On", "sound.", "next", "soft", "ball", "the", "and", "I", "hoop,", "my", "drops", "the", "hear"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about trying again after a mistake.",
@@ -181,16 +214,25 @@ export const CHAPTERS = [
       { text: "Coach Ben says falling means Nina must quit.", answer: false },
     ],
     buildSentence: [
-      { target: "My face feels hot.", jumbled: ["face", "feels", "hot.", "My"] },
-      { target: "Mia gives me her hand.", jumbled: ["gives", "me", "her", "hand.", "Mia"] },
-      { target: "Falling is normal, so do not be afraid to try.", jumbled: ["Falling", "to", "normal,", "so", "try.", "is", "afraid", "do", "be", "not"] },
       {
-        target: "Suddenly, I slip on the shiny floor and fall on my side.",
-        jumbled: ["on", "slip", "the", "I", "and", "Suddenly,", "fall", "shiny", "on", "floor", "my", "side."],
+        target: "During practice, we play a small game with two teams on the court.",
+        jumbled: ["game", "on", "two", "we", "the", "play", "practice,", "small", "court.", "with", "During", "a", "teams"],
+      },
+      {
+        target: "I run fast to catch the ball, but I do not look down at my feet.",
+        jumbled: ["but", "I", "the", "at", "down", "ball,", "catch", "my", "fast", "not", "to", "look", "feet.", "I", "do", "run"],
+      },
+      {
+        target: "Coach Ben runs to me quickly and asks, “Nina, are you okay?” I say yes, and Mia gives me her hand and helps me stand up.",
+        jumbled: ["asks,", "you", "gives", "runs", "quickly", "and", "Coach", "Mia", "Ben", "and", "are", "and", "I", "yes,", "helps", "okay?”", "her", "say", "me", "me", "“Nina,", "hand", "to", "stand", "me", "up."],
+      },
+      {
+        target: "Coach Ben tells the team, “Falling is normal, so do not be afraid to try.”",
+        jumbled: ["is", "not", "so", "afraid", "normal,", "Ben", "“Falling", "Coach", "be", "to", "tells", "the", "team,", "do", "try.”"],
       },
       {
         target: "In that moment, I feel brave because a small mistake did not stop me.",
-        jumbled: ["brave", "a", "moment,", "because", "feel", "small", "I", "did", "mistake", "that", "not", "In", "me.", "stop"],
+        jumbled: ["not", "I", "me.", "did", "a", "small", "brave", "mistake", "In", "that", "feel", "stop", "moment,", "because"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a small mistake you made.",
@@ -216,19 +258,25 @@ export const CHAPTERS = [
       { text: "Coach Ben says the team played badly today.", answer: false },
     ],
     buildSentence: [
-      { target: "We drink water together.", jumbled: ["drink", "water", "together.", "We"] },
-      { target: "Jay talks about her favourite player.", jumbled: ["talks", "her", "about", "favourite", "player.", "Jay"] },
       {
-        target: "Mia opens her bag and shares some small crackers with the team.",
-        jumbled: ["her", "opens", "and", "bag", "small", "Mia", "some", "shares", "team.", "crackers", "with", "the"],
+        target: "We sit on the bench and drink water during our break.",
+        jumbled: ["bench", "during", "sit", "and", "on", "the", "our", "break.", "water", "drink", "We"],
       },
       {
-        target: "I do not know many players yet, but I want to learn.",
-        jumbled: ["know", "do", "players", "but", "learn.", "I", "I", "yet,", "many", "want", "not", "to"],
+        target: "Jay talks about her favourite player and says, “She can jump so high and shoot from far away.” I tell them I do not know many players yet, but I want to learn more.",
+        jumbled: ["them", "want", "Jay", "do", "her", "players", "says,", "to", "about", "far", "“She", "favourite", "know", "jump", "I", "more.", "high", "many", "from", "yet,", "shoot", "so", "player", "can", "but", "away.”", "learn", "and", "I", "talks", "tell", "and", "I", "not"],
+      },
+      {
+        target: "Mia says, “We can watch a short game on my phone after school, Nina.”",
+        jumbled: ["a", "“We", "short", "Mia", "watch", "phone", "my", "says,", "game", "can", "Nina.”", "after", "school,", "on"],
+      },
+      {
+        target: "Coach Ben walks past us and says, “Good rest, team, you play well today.”",
+        jumbled: ["“Good", "you", "Ben", "walks", "past", "and", "Coach", "today.”", "play", "says,", "team,", "us", "well", "rest,"],
       },
       {
         target: "In that moment, I feel warm inside because these teammates feel like real friends.",
-        jumbled: ["inside", "warm", "feel", "moment,", "I", "because", "feel", "teammates", "these", "that", "like", "real", "In", "friends."],
+        jumbled: ["teammates", "that", "I", "feel", "because", "In", "inside", "moment,", "warm", "like", "feel", "real", "friends.", "these"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about talking with friends after sport.",
@@ -254,16 +302,25 @@ export const CHAPTERS = [
       { text: "Nina practises alone with no one else.", answer: false },
     ],
     buildSentence: [
-      { target: "My arms are tired.", jumbled: ["arms", "are", "tired.", "My"] },
-      { target: "We pick up the balls.", jumbled: ["pick", "up", "the", "balls.", "We"] },
-      { target: "I am getting better every day.", jumbled: ["I", "better", "am", "getting", "day.", "every"] },
-      {
-        target: "I feel proud because I work hard on my own.",
-        jumbled: ["my", "proud", "I", "I", "feel", "work", "hard", "own.", "because", "on"],
-      },
       {
         target: "On Friday, I stay in the gym for extra practice with Mia and Jay.",
-        jumbled: ["I", "gym", "stay", "Friday,", "practice", "the", "in", "for", "On", "extra", "with", "Mia", "and", "Jay."],
+        jumbled: ["extra", "Jay.", "for", "with", "the", "I", "in", "stay", "Mia", "gym", "Friday,", "and", "On", "practice"],
+      },
+      {
+        target: "We take three balls and stand in front of the tall hoop together.",
+        jumbled: ["three", "in", "hoop", "tall", "stand", "balls", "and", "take", "We", "front", "the", "together.", "of"],
+      },
+      {
+        target: "I dribble, bend my knees, and shoot the ball as many times as I can.",
+        jumbled: ["knees,", "I", "can.", "as", "ball", "shoot", "the", "many", "my", "as", "I", "and", "dribble,", "times", "bend"],
+      },
+      {
+        target: "Jay counts my baskets out loud and says, “Nina, you are getting better every day.”",
+        jumbled: ["and", "you", "out", "says,", "baskets", "getting", "are", "Jay", "“Nina,", "loud", "every", "better", "my", "day.”", "counts"],
+      },
+      {
+        target: "In that moment, I feel proud because I work hard even when no one asks me to.",
+        jumbled: ["one", "to.", "I", "even", "no", "In", "when", "hard", "I", "me", "that", "asks", "proud", "because", "work", "moment,", "feel"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about working hard at something.",
@@ -289,16 +346,25 @@ export const CHAPTERS = [
       { text: "The team never practises passing before the game.", answer: false },
     ],
     buildSentence: [
-      { target: "We say, “Team!”", jumbled: ["say,", "We", "“Team!”"] },
-      { target: "If we play as one team.", jumbled: ["play", "we", "as", "one", "If", "team."] },
-      { target: "Coach Ben tells us to wear our team shirts.", jumbled: ["team", "our", "Coach", "to", "shirts.", "tells", "wear", "us", "Ben"] },
       {
-        target: "Pass the ball, help each other, and do not be afraid.",
-        jumbled: ["the", "help", "ball,", "each", "Pass", "and", "not", "other,", "do", "afraid.", "be"],
+        target: "Next week, our team will play a mini game against another class in the gym.",
+        jumbled: ["our", "play", "another", "gym.", "the", "game", "will", "week,", "class", "in", "team", "a", "mini", "against", "Next"],
       },
       {
-        target: "In that moment, I feel nervous but ready because our team is prepared together.",
-        jumbled: ["nervous", "ready", "feel", "but", "moment,", "I", "because", "team", "our", "that", "is", "prepared", "In", "together."],
+        target: "He shows us a simple plan on a small white board with arrows and circles.",
+        jumbled: ["small", "plan", "white", "with", "a", "board", "He", "simple", "us", "and", "arrows", "a", "shows", "circles.", "on"],
+      },
+      {
+        target: "We practise passing and running in the right places on the court.",
+        jumbled: ["running", "the", "the", "on", "and", "in", "passing", "We", "court.", "right", "places", "practise"],
+      },
+      {
+        target: "Jay says, “If we play as one team, we can do our best.”",
+        jumbled: ["Jay", "we", "“If", "says,", "team,", "do", "play", "best.”", "our", "one", "can", "we", "as"],
+      },
+      {
+        target: "I go home and put my clean team shirt on my chair for the game.",
+        jumbled: ["go", "team", "chair", "my", "shirt", "the", "my", "on", "put", "for", "home", "clean", "I", "game.", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about getting ready for something important.",
@@ -324,19 +390,25 @@ export const CHAPTERS = [
       { text: "The team wins the game easily.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart beats fast.", jumbled: ["heart", "beats", "fast.", "My"] },
-      { target: "The whole gym cheers.", jumbled: ["whole", "gym", "cheers.", "The"] },
       {
-        target: "I run, pass, and try to stay close to my team.",
-        jumbled: ["team.", "to", "pass,", "to", "try", "stay", "my", "run,", "close", "and", "I"],
+        target: "Today is game day, and the gym is full of students who come to watch.",
+        jumbled: ["of", "come", "is", "is", "students", "who", "full", "Today", "to", "the", "and", "gym", "day,", "game", "watch."],
+      },
+      {
+        target: "I run, pass, and try to stay close to Mia and Jay.",
+        jumbled: ["Mia", "try", "close", "to", "I", "pass,", "and", "and", "Jay.", "stay", "run,", "to"],
+      },
+      {
+        target: "In the first half, the other class scores two baskets, and we feel a little worried.",
+        jumbled: ["feel", "we", "scores", "two", "worried.", "baskets,", "other", "In", "a", "and", "the", "class", "half,", "the", "first", "little"],
       },
       {
         target: "I bend my knees, look up, and shoot the ball into the basket.",
-        jumbled: ["knees,", "bend", "up,", "my", "look", "I", "the", "and", "into", "shoot", "basket.", "ball", "the"],
+        jumbled: ["up,", "basket.", "bend", "the", "knees,", "ball", "shoot", "the", "and", "I", "look", "into", "my"],
       },
       {
-        target: "In that moment, I feel proud because I scored in my very first game.",
-        jumbled: ["proud", "because", "I", "feel", "moment,", "scored", "I", "very", "in", "my", "that", "first", "In", "game."],
+        target: "We do not win, but we play well and never give up.",
+        jumbled: ["win,", "up.", "and", "we", "do", "well", "We", "play", "never", "not", "give", "but"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about doing your best.",
@@ -362,16 +434,25 @@ export const CHAPTERS = [
       { text: "Nina forgets her very first day at the gym.", answer: false },
     ],
     buildSentence: [
-      { target: "Mia waves at me.", jumbled: ["waves", "at", "me.", "Mia"] },
-      { target: "Jay throws me a ball.", jumbled: ["throws", "me", "a", "ball.", "Jay"] },
-      { target: "I feel proud because the team feels like my place.", jumbled: ["proud", "place.", "my", "the", "I", "team", "feel", "because", "feels", "like"] },
       {
-        target: "Coach Ben says, “Nina, you are a real part of this team now.”",
-        jumbled: ["says,", "Ben", "are", "“Nina,", "Coach", "a", "you", "part", "real", "this", "of", "now.”", "team"],
+        target: "On Monday, I walk into the gym, and it does not feel new or scary anymore.",
+        jumbled: ["into", "and", "Monday,", "anymore.", "walk", "On", "does", "not", "scary", "or", "it", "the", "feel", "gym,", "I", "new"],
       },
       {
-        target: "I can bounce, dribble, pass, and shoot, and I am not afraid to try.",
-        jumbled: ["bounce,", "dribble,", "can", "pass,", "I", "shoot,", "and", "am", "and", "not", "I", "try.", "afraid", "to"],
+        target: "We start our practice, and my hands move with the ball more easily now.",
+        jumbled: ["practice,", "hands", "easily", "start", "more", "with", "ball", "now.", "the", "our", "my", "We", "and", "move"],
+      },
+      {
+        target: "During a short break, Coach Ben says, “Nina, you are a real part of this team now.”",
+        jumbled: ["real", "short", "are", "part", "“Nina,", "break,", "Ben", "you", "says,", "this", "During", "a", "a", "now.”", "of", "team", "Coach"],
+      },
+      {
+        target: "I remember my first day, when my hands shook and the ball went to the side.",
+        jumbled: ["to", "my", "the", "shook", "went", "side.", "the", "and", "remember", "when", "first", "hands", "ball", "I", "day,", "my"],
+      },
+      {
+        target: "In that moment, I feel proud because the basketball team truly feels like my place.",
+        jumbled: ["like", "that", "feel", "moment,", "team", "my", "because", "the", "I", "proud", "feels", "place.", "In", "basketball", "truly"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a place where you feel you belong.",

@@ -50,11 +50,26 @@ export const CHAPTERS = [
       { text: "Mr. Ferris asks Nadia to organize a school-wide forum.", answer: true },
     ],
     buildSentence: [
-      { target: "The room splits into two camps.", jumbled: ["The", "room", "splits", "into", "two", "camps."] },
-      { target: "I'll need to hear both sides.", jumbled: ["I'll", "need", "to", "hear", "both", "sides."] },
-      { target: "Uniforms reduce visible inequality, Yuna argues.", jumbled: ["Uniforms", "reduce", "visible", "inequality,", "Yuna", "argues."] },
-      { target: "Both perspectives ought to be genuinely considered.", jumbled: ["Both", "perspectives", "ought", "to", "be", "genuinely", "considered."] },
-      { target: "Opinions had already formed before the discussion had even begun.", jumbled: ["Opinions", "had", "already", "formed", "before", "the", "discussion", "had", "even", "begun."] },
+      {
+        target: "At this week's student council meeting, Mr. Ferris announces that a formal proposal to abolish the school uniform has been submitted.",
+        jumbled: ["school", "submitted.", "council", "a", "has", "formal", "Ferris", "proposal", "student", "Mr.", "week's", "uniform", "announces", "meeting,", "that", "to", "this", "been", "abolish", "At", "the"],
+      },
+      {
+        target: "Immediately, the room splits into two camps, each side already forming opinions before the discussion has even properly begun.",
+        jumbled: ["the", "begun.", "two", "room", "camps,", "the", "splits", "before", "side", "properly", "into", "discussion", "has", "each", "forming", "already", "opinions", "Immediately,", "even"],
+      },
+      {
+        target: "Kwame argues passionately that uniforms suppress individual expression, while Yuna counters that they reduce visible inequality between students.",
+        jumbled: ["suppress", "expression,", "reduce", "they", "that", "visible", "Kwame", "between", "inequality", "individual", "uniforms", "counters", "that", "students.", "Yuna", "argues", "while", "passionately"],
+      },
+      {
+        target: "I realize I'll need to hear both sides fully before forming any conclusion myself.",
+        jumbled: ["myself.", "hear", "I'll", "I", "both", "forming", "any", "fully", "need", "conclusion", "to", "before", "realize", "sides"],
+      },
+      {
+        target: "Mr. Ferris asks me to organize a school-wide forum, where both perspectives can be presented and genuinely considered.",
+        jumbled: ["school-wide", "forum,", "to", "Ferris", "organize", "and", "Mr.", "presented", "perspectives", "where", "me", "can", "a", "both", "genuinely", "be", "considered.", "asks"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a topic where people in your school or community disagree strongly.",
     mySentenceExample: "Students disagree strongly about whether phones should be allowed in class.",
@@ -79,11 +94,26 @@ export const CHAPTERS = [
       { text: "Nadia tries to ensure neither side feels dismissed.", answer: true },
     ],
     buildSentence: [
-      { target: "I research uniform policies now.", jumbled: ["I", "research", "uniform", "policies", "now."] },
-      { target: "I draft discussion questions carefully.", jumbled: ["I", "draft", "discussion", "questions", "carefully."] },
-      { target: "This turns out considerably harder than expected.", jumbled: ["This", "turns", "out", "considerably", "harder", "than", "expected."] },
-      { target: "I've developed a far more complicated view.", jumbled: ["I've", "developed", "a", "far", "more", "complicated", "view."] },
-      { target: "Some studies suggest uniforms reduce pressure, whereas others disagree.", jumbled: ["Some", "studies", "suggest", "uniforms", "reduce", "pressure,", "whereas", "others", "disagree."] },
+      {
+        target: "Preparing for the forum turns out to be considerably harder than I had originally anticipated when I first agreed to organize it.",
+        jumbled: ["originally", "anticipated", "I", "when", "be", "I", "for", "it.", "to", "the", "agreed", "considerably", "turns", "forum", "had", "than", "out", "organize", "harder", "Preparing", "first", "to"],
+      },
+      {
+        target: "“Nadia, you have no idea what you signed up for,” I think, half-joking.",
+        jumbled: ["I", "half-joking.", "think,", "idea", "“Nadia,", "you", "you", "up", "no", "what", "signed", "have", "for,”"],
+      },
+      {
+        target: "I research uniform policies at other schools, discovering that the arguments on both sides are more nuanced than I'd initially assumed.",
+        jumbled: ["research", "nuanced", "arguments", "that", "at", "than", "I", "schools,", "assumed.", "more", "other", "both", "sides", "on", "I'd", "the", "are", "uniform", "policies", "initially", "discovering"],
+      },
+      {
+        target: "Some studies suggest uniforms genuinely reduce social pressure around clothing, whereas others argue they simply shift that pressure toward other visible markers instead.",
+        jumbled: ["simply", "social", "instead.", "shift", "markers", "other", "argue", "they", "toward", "uniforms", "whereas", "pressure", "studies", "that", "genuinely", "suggest", "visible", "others", "clothing,", "around", "reduce", "Some", "pressure"],
+      },
+      {
+        target: "I draft discussion questions carefully, trying to ensure neither side would feel dismissed or unfairly represented during the actual event.",
+        jumbled: ["feel", "discussion", "questions", "the", "would", "event.", "to", "draft", "neither", "ensure", "or", "side", "carefully,", "trying", "I", "during", "unfairly", "actual", "represented", "dismissed"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about researching an issue and discovering it was more complicated than you expected.",
     mySentenceExample: "I researched the issue and discovered it was more complicated than expected.",
@@ -108,11 +138,26 @@ export const CHAPTERS = [
       { text: "Nadia realizes this debate matters more personally than she understood.", answer: true },
     ],
     buildSentence: [
-      { target: "The auditorium fills quickly today.", jumbled: ["The", "auditorium", "fills", "quickly", "today."] },
-      { target: "Kwame speaks first at the forum.", jumbled: ["Kwame", "speaks", "first", "at", "the", "forum."] },
-      { target: "This matters more personally than I understood.", jumbled: ["This", "matters", "more", "personally", "than", "I", "understood."] },
-      { target: "The uniform had made him feel invisible.", jumbled: ["The", "uniform", "had", "made", "him", "feel", "invisible."] },
-      { target: "Before uniforms were introduced, she had constantly worried about judgment.", jumbled: ["Before", "uniforms", "were", "introduced,", "she", "had", "constantly", "worried", "about", "judgment."] },
+      {
+        target: "The auditorium fills quickly, with far more students attending than I had honestly expected for a policy discussion.",
+        jumbled: ["attending", "with", "fills", "auditorium", "I", "policy", "far", "expected", "for", "had", "a", "students", "The", "than", "more", "honestly", "discussion.", "quickly,"],
+      },
+      {
+        target: "I open the forum by explaining the ground rules: respectful language, no interrupting, and genuine listening rather than simply waiting to respond.",
+        jumbled: ["genuine", "interrupting,", "than", "rather", "simply", "respond.", "explaining", "listening", "open", "I", "forum", "ground", "the", "rules:", "the", "no", "by", "waiting", "to", "respectful", "and", "language,"],
+      },
+      {
+        target: "Yuna follows, explaining that before uniforms were introduced, she had constantly worried about being judged for what she couldn't afford.",
+        jumbled: ["Yuna", "constantly", "what", "she", "for", "she", "worried", "explaining", "before", "had", "follows,", "afford.", "about", "were", "being", "couldn't", "that", "uniforms", "introduced,", "judged"],
+      },
+      {
+        target: "She glances at me.",
+        jumbled: ["She", "me.", "glances", "at"],
+      },
+      {
+        target: "Listening to both accounts, I realize this debate matters more personally to people than I had initially understood.",
+        jumbled: ["personally", "Listening", "I", "debate", "had", "to", "people", "I", "understood.", "accounts,", "both", "realize", "to", "initially", "matters", "than", "this", "more"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about listening to someone's personal experience that changed how you saw an issue.",
     mySentenceExample: "Listening to her experience changed how I saw the issue.",
@@ -137,11 +182,26 @@ export const CHAPTERS = [
       { text: "Nadia realizes mediation is about finding what both sides need.", answer: true },
     ],
     buildSentence: [
-      { target: "Something unexpected happens now.", jumbled: ["Something", "unexpected", "happens", "now."] },
-      { target: "They begin to agree now.", jumbled: ["They", "begin", "to", "agree", "now."] },
-      { target: "This hadn't occurred to him before.", jumbled: ["This", "hadn't", "occurred", "to", "him", "before."] },
-      { target: "Mediation isn't really about choosing a winner.", jumbled: ["Mediation", "isn't", "really", "about", "choosing", "a", "winner."] },
-      { target: "This might address both concerns simultaneously, Yuna suggests.", jumbled: ["This", "might", "address", "both", "concerns", "simultaneously,", "Yuna", "suggests."] },
+      {
+        target: "Midway through the discussion, something unexpected happens: Kwame and Yuna actually begin to agree on certain underlying concerns.",
+        jumbled: ["something", "agree", "Yuna", "happens:", "certain", "through", "underlying", "actually", "to", "begin", "and", "Midway", "concerns.", "Kwame", "the", "unexpected", "on", "discussion,"],
+      },
+      {
+        target: "Both acknowledge that the real issue may not be uniforms themselves, but rather how visible economic difference feels to students generally.",
+        jumbled: ["rather", "Both", "that", "acknowledge", "students", "not", "the", "but", "may", "uniforms", "themselves,", "how", "feels", "real", "generally.", "economic", "be", "difference", "to", "issue", "visible"],
+      },
+      {
+        target: "Yuna suggests that a more flexible dress code, with some shared elements, might address both concerns simultaneously.",
+        jumbled: ["concerns", "code,", "flexible", "elements,", "Yuna", "a", "might", "dress", "more", "with", "address", "simultaneously.", "both", "that", "suggests", "some", "shared"],
+      },
+      {
+        target: "He looks over at me.",
+        jumbled: ["over", "me.", "He", "looks", "at"],
+      },
+      {
+        target: "Watching this shift happen live, I realize mediation isn't really about choosing a winner, but about finding what both sides actually need.",
+        jumbled: ["a", "this", "winner,", "isn't", "need.", "choosing", "about", "really", "finding", "shift", "mediation", "about", "live,", "but", "Watching", "happen", "actually", "both", "what", "sides", "I", "realize"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about two people with different opinions finding unexpected common ground.",
     mySentenceExample: "Two people with different opinions found unexpected common ground.",
@@ -166,11 +226,26 @@ export const CHAPTERS = [
       { text: "Nadia realizes no single solution will satisfy everyone.", answer: true },
     ],
     buildSentence: [
-      { target: "Hands shoot up immediately now.", jumbled: ["Hands", "shoot", "up", "immediately", "now."] },
-      { target: "I open the floor now.", jumbled: ["I", "open", "the", "floor", "now."] },
-      { target: "This new policy ought to be tested.", jumbled: ["This", "new", "policy", "ought", "to", "be", "tested."] },
-      { target: "No single solution will satisfy everyone completely.", jumbled: ["No", "single", "solution", "will", "satisfy", "everyone", "completely."] },
-      { target: "Uniforms had actually helped her feel like she belonged.", jumbled: ["Uniforms", "had", "actually", "helped", "her", "feel", "like", "she", "belonged."] },
+      {
+        target: "I open the floor to questions, and hands shoot up immediately from students eager to share their own perspectives.",
+        jumbled: ["and", "students", "own", "floor", "share", "perspectives.", "hands", "from", "the", "up", "to", "I", "shoot", "their", "questions,", "eager", "to", "immediately", "open"],
+      },
+      {
+        target: "One student mentions that, given the school's diverse population, any new policy ought to be tested before being fully implemented.",
+        jumbled: ["One", "before", "population,", "that,", "student", "ought", "to", "policy", "implemented.", "any", "given", "mentions", "school's", "fully", "be", "tested", "diverse", "new", "being", "the"],
+      },
+      {
+        target: "Another points out that whatever decision is made, some students will inevitably feel unheard, no matter how carefully it's handled.",
+        jumbled: ["it's", "students", "Another", "is", "that", "points", "some", "feel", "no", "decision", "how", "unheard,", "inevitably", "matter", "handled.", "will", "carefully", "made,", "out", "whatever"],
+      },
+      {
+        target: "A quieter student, who rarely speaks in large groups, mentions that uniforms had actually helped her feel like she belonged somewhere.",
+        jumbled: ["uniforms", "student,", "in", "A", "quieter", "groups,", "mentions", "belonged", "her", "large", "helped", "like", "feel", "rarely", "that", "somewhere.", "had", "who", "actually", "speaks", "she"],
+      },
+      {
+        target: "Okay, Nadia, don't let this turn into chaos, I tell myself, calling on the next raised hand.",
+        jumbled: ["into", "Nadia,", "this", "tell", "next", "myself,", "don't", "calling", "turn", "on", "I", "hand.", "Okay,", "chaos,", "let", "the", "raised"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about hearing a range of different opinions on the same issue.",
     mySentenceExample: "I heard a range of different opinions on the same issue.",
@@ -195,11 +270,26 @@ export const CHAPTERS = [
       { text: "Nadia feels proud this reflects a synthesis, not one side's victory.", answer: true },
     ],
     buildSentence: [
-      { target: "We draft a formal recommendation now.", jumbled: ["We", "draft", "a", "formal", "recommendation", "now."] },
-      { target: "I feel genuinely proud of this.", jumbled: ["I", "feel", "genuinely", "proud", "of", "this."] },
-      { target: "This reflects a synthesis, not a victory.", jumbled: ["This", "reflects", "a", "synthesis,", "not", "a", "victory."] },
-      { target: "I write the draft carefully now.", jumbled: ["I", "write", "the", "draft", "carefully", "now."] },
-      { target: "Yuna agrees, provided a trial period is included.", jumbled: ["Yuna", "agrees,", "provided", "a", "trial", "period", "is", "included."] },
+      {
+        target: "Mr. Ferris asks the three of us to draft a formal recommendation summarizing what we'd actually heard.",
+        jumbled: ["Mr.", "of", "asks", "actually", "what", "a", "the", "we'd", "to", "us", "three", "heard.", "formal", "draft", "Ferris", "recommendation", "summarizing"],
+      },
+      {
+        target: "Kwame suggests we propose a flexible policy: core shared colors, but more personal freedom within those guidelines.",
+        jumbled: ["Kwame", "personal", "propose", "flexible", "a", "guidelines.", "shared", "we", "suggests", "those", "within", "policy:", "more", "but", "core", "colors,", "freedom"],
+      },
+      {
+        target: "Yuna agrees, provided we include a trial period, so the council can gather feedback before making anything permanent.",
+        jumbled: ["Yuna", "a", "can", "permanent.", "we", "feedback", "the", "provided", "anything", "gather", "council", "so", "period,", "before", "include", "making", "trial", "agrees,"],
+      },
+      {
+        target: "“You're good at staying neutral, Nadia — you should write it,” Kwame suggests.",
+        jumbled: ["Kwame", "suggests.", "Nadia", "—", "neutral,", "it,”", "write", "you", "at", "should", "good", "staying", "“You're"],
+      },
+      {
+        target: "I write the draft, careful to represent both original positions fairly, rather than favoring whichever argument I personally found stronger.",
+        jumbled: ["draft,", "original", "I", "positions", "to", "careful", "argument", "represent", "write", "both", "fairly,", "personally", "I", "found", "favoring", "the", "than", "stronger.", "whichever", "rather"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about writing something that fairly represents two different points of view.",
     mySentenceExample: "I wrote something that fairly represented two different points of view.",
@@ -224,11 +314,26 @@ export const CHAPTERS = [
       { text: "The council approves the trial period with a scheduled review.", answer: true },
     ],
     buildSentence: [
-      { target: "I present our recommendation now.", jumbled: ["I", "present", "our", "recommendation", "now."] },
-      { target: "Several members nod, seemingly persuaded.", jumbled: ["Several", "members", "nod,", "seemingly", "persuaded."] },
-      { target: "I feel more nervous than anticipated.", jumbled: ["I", "feel", "more", "nervous", "than", "anticipated."] },
-      { target: "The council votes to approve the trial period.", jumbled: ["The", "council", "votes", "to", "approve", "the", "trial", "period."] },
-      { target: "Testing an idea carefully seemed wiser than assuming.", jumbled: ["Testing", "an", "idea", "carefully", "seemed", "wiser", "than", "assuming."] },
+      {
+        target: "The following week, I present our recommendation to the full student council, feeling more nervous than I'd anticipated beforehand.",
+        jumbled: ["anticipated", "The", "more", "to", "than", "I", "beforehand.", "I'd", "week,", "following", "feeling", "council,", "the", "present", "recommendation", "full", "student", "our", "nervous"],
+      },
+      {
+        target: "Just breathe, Nadia, I tell myself, before beginning.",
+        jumbled: ["breathe,", "tell", "Just", "before", "myself,", "Nadia,", "I", "beginning."],
+      },
+      {
+        target: "I notice several members nodding, seemingly persuaded by the reasoning behind it.",
+        jumbled: ["by", "the", "notice", "behind", "several", "it.", "members", "I", "persuaded", "reasoning", "nodding,", "seemingly"],
+      },
+      {
+        target: "One member asks whether this compromise might simply delay an inevitable, harder decision down the road.",
+        jumbled: ["this", "delay", "compromise", "the", "simply", "an", "asks", "member", "road.", "decision", "harder", "down", "One", "inevitable,", "whether", "might"],
+      },
+      {
+        target: "I respond honestly that it might, but that testing an idea carefully seemed wiser than deciding based on assumption alone.",
+        jumbled: ["alone.", "that", "respond", "I", "carefully", "wiser", "on", "idea", "testing", "might,", "deciding", "honestly", "assumption", "based", "that", "than", "seemed", "it", "an", "but"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about presenting an idea to a group and defending it under questioning.",
     mySentenceExample: "I presented my idea and defended it under questioning.",
@@ -253,11 +358,26 @@ export const CHAPTERS = [
       { text: "Nadia feels cautiously optimistic about the compromise.", answer: true },
     ],
     buildSentence: [
-      { target: "The trial period begins now.", jumbled: ["The", "trial", "period", "begins", "now."] },
-      { target: "I feel cautiously optimistic now.", jumbled: ["I", "feel", "cautiously", "optimistic", "now."] },
-      { target: "Kwame stops me in the hallway.", jumbled: ["Kwame", "stops", "me", "in", "the", "hallway."] },
-      { target: "The hallways look noticeably different than before.", jumbled: ["The", "hallways", "look", "noticeably", "different", "than", "before."] },
-      { target: "This caused far less disruption than she had feared.", jumbled: ["This", "caused", "far", "less", "disruption", "than", "she", "had", "feared."] },
+      {
+        target: "The trial period begins the following Monday, and the hallways look noticeably different than they had just days earlier.",
+        jumbled: ["they", "the", "noticeably", "begins", "than", "the", "look", "period", "following", "hallways", "had", "days", "The", "different", "and", "earlier.", "trial", "just", "Monday,"],
+      },
+      {
+        target: "Some students embrace the new flexibility enthusiastically, while others stick closely to the familiar, original uniform out of habit.",
+        jumbled: ["while", "others", "flexibility", "to", "the", "Some", "familiar,", "uniform", "original", "students", "new", "closely", "enthusiastically,", "out", "of", "the", "habit.", "stick", "embrace"],
+      },
+      {
+        target: "Kwame stops me in the hallway, admitting he feels genuinely happy, even though a few details still don't work perfectly.",
+        jumbled: ["he", "me", "don't", "details", "feels", "Kwame", "perfectly.", "work", "still", "happy,", "hallway,", "few", "in", "admitting", "stops", "the", "even", "genuinely", "a", "though"],
+      },
+      {
+        target: "“You pulled this off, Nadia,” he adds, grinning.",
+        jumbled: ["“You", "off,", "this", "pulled", "Nadia,”", "adds,", "he", "grinning."],
+      },
+      {
+        target: "Yuna mentions she's been surprised by how little actual disruption the change has caused, contrary to what she'd initially feared.",
+        jumbled: ["little", "surprised", "actual", "she'd", "disruption", "the", "initially", "to", "mentions", "has", "been", "feared.", "how", "change", "contrary", "Yuna", "caused,", "by", "she's", "what"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about watching a compromise actually work out in real life.",
     mySentenceExample: "I watched a compromise actually work out in real life.",
@@ -282,11 +402,26 @@ export const CHAPTERS = [
       { text: "Nadia learns that thorough mediation can produce better solutions.", answer: true },
     ],
     buildSentence: [
-      { target: "The council has collected survey data now.", jumbled: ["The", "council", "has", "collected", "survey", "data", "now."] },
-      { target: "This teaches me something valuable now.", jumbled: ["This", "teaches", "me", "something", "valuable", "now."] },
-      { target: "Most students report feeling more comfortable overall.", jumbled: ["Most", "students", "report", "feeling", "more", "comfortable", "overall."] },
-      { target: "Thorough mediation can genuinely produce better solutions.", jumbled: ["Thorough", "mediation", "can", "genuinely", "produce", "better", "solutions."] },
-      { target: "Had we voted immediately, we may have missed this outcome.", jumbled: ["Had", "we", "voted", "immediately,", "we", "may", "have", "missed", "this", "outcome."] },
+      {
+        target: "By the semester review, the council has collected survey data from students across every grade level about the trial.",
+        jumbled: ["students", "grade", "from", "every", "collected", "level", "has", "By", "survey", "council", "data", "semester", "the", "review,", "trial.", "about", "the", "across", "the"],
+      },
+      {
+        target: "The results, moreover, are more positive than even I had cautiously hoped for when we first proposed this compromise.",
+        jumbled: ["hoped", "moreover,", "positive", "more", "The", "had", "proposed", "when", "for", "compromise.", "cautiously", "are", "results,", "even", "we", "first", "I", "this", "than"],
+      },
+      {
+        target: "Most students report feeling more comfortable overall, though a small percentage still prefer the original, stricter uniform policy.",
+        jumbled: ["Most", "stricter", "the", "policy.", "students", "prefer", "report", "percentage", "still", "feeling", "overall,", "comfortable", "more", "original,", "small", "though", "a", "uniform"],
+      },
+      {
+        target: "Mr. Ferris notes that had we simply voted immediately after the forum, without a trial period, we may have missed this nuanced outcome entirely.",
+        jumbled: ["forum,", "nuanced", "outcome", "the", "voted", "period,", "have", "after", "without", "may", "trial", "a", "notes", "Ferris", "we", "missed", "simply", "that", "immediately", "we", "entirely.", "had", "Mr.", "this"],
+      },
+      {
+        target: "This experience teaches me that thorough mediation, given enough patience, can genuinely produce better solutions than quick decisions.",
+        jumbled: ["can", "than", "thorough", "mediation,", "quick", "decisions.", "me", "teaches", "patience,", "better", "This", "produce", "that", "enough", "genuinely", "given", "solutions", "experience"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from taking time to gather real feedback before deciding.",
     mySentenceExample: "I learned that gathering real feedback leads to better decisions.",
@@ -311,11 +446,26 @@ export const CHAPTERS = [
       { text: "Taking time to listen allowed them to find something more inclusive.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this process now.", jumbled: ["I", "look", "back", "on", "this", "process", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "Mediation isn't about avoiding conflict entirely.", jumbled: ["Mediation", "isn't", "about", "avoiding", "conflict", "entirely."] },
-      { target: "Disagreement often contains the seeds of a better solution.", jumbled: ["Disagreement", "often", "contains", "the", "seeds", "of", "a", "better", "solution."] },
-      { target: "Had we ignored the stories, we would have chosen a worse solution.", jumbled: ["Had", "we", "ignored", "the", "stories,", "we", "would", "have", "chosen", "a", "worse", "solution."] },
+      {
+        target: "Looking back on the entire process, I realize how differently things might have unfolded had the council simply voted without genuine discussion.",
+        jumbled: ["discussion.", "process,", "I", "might", "back", "realize", "how", "genuine", "on", "entire", "voted", "unfolded", "things", "Looking", "differently", "simply", "the", "have", "without", "council", "the", "had"],
+      },
+      {
+        target: "Nadia, you actually pulled this off, I think, allowing myself a small smile.",
+        jumbled: ["actually", "allowing", "smile.", "you", "think,", "pulled", "Nadia,", "off,", "I", "myself", "a", "small", "this"],
+      },
+      {
+        target: "We would likely have chosen a solution that satisfied only half the school.",
+        jumbled: ["likely", "school.", "would", "the", "satisfied", "have", "solution", "half", "chosen", "We", "only", "that", "a"],
+      },
+      {
+        target: "Instead, taking the time to listen, mediate, and test a compromise allowed us to find something genuinely more inclusive.",
+        jumbled: ["inclusive.", "genuinely", "Instead,", "mediate,", "a", "us", "test", "compromise", "and", "more", "listen,", "to", "the", "taking", "to", "find", "something", "time", "allowed"],
+      },
+      {
+        target: "I've learned that disagreement, however uncomfortable in the moment, often contains the seeds of a better shared solution.",
+        jumbled: ["a", "in", "often", "solution.", "seeds", "the", "the", "shared", "learned", "better", "however", "moment,", "disagreement,", "uncomfortable", "of", "I've", "contains", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from mediating a disagreement between others.",
     mySentenceExample: "I learned that patient mediation leads to more inclusive solutions.",

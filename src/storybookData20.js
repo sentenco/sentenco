@@ -41,9 +41,26 @@ export const CHAPTERS = [
       { text: "Ben feels proud and nervous.", answer: true },
     ],
     buildSentence: [
-      { target: "Her name is Rosie.", jumbled: ["name", "is", "Her", "Rosie."] },
-      { target: "I hold my sister.", jumbled: ["hold", "my", "I", "sister."] },
-      { target: "I feel proud and nervous.", jumbled: ["feel", "proud", "I", "and", "nervous."] },
+      {
+        target: "Today, Mom and Dad bring my new baby sister home from the hospital.",
+        jumbled: ["baby", "home", "my", "Today,", "Dad", "Mom", "from", "hospital.", "new", "bring", "and", "sister", "the"],
+      },
+      {
+        target: "Her name is Rosie, and she is very small and soft.",
+        jumbled: ["she", "small", "soft.", "Rosie,", "is", "name", "is", "and", "very", "Her", "and"],
+      },
+      {
+        target: "“Do you want to hold her, Ben?” Mom asks me gently.",
+        jumbled: ["“Do", "her,", "hold", "Ben?”", "to", "you", "Mom", "gently.", "me", "want", "asks"],
+      },
+      {
+        target: "Rosie opens her eyes for a second and looks at me.",
+        jumbled: ["Rosie", "eyes", "second", "a", "opens", "looks", "me.", "at", "her", "for", "and"],
+      },
+      {
+        target: "I feel proud and a little nervous at the same time.",
+        jumbled: ["and", "a", "nervous", "time.", "same", "I", "at", "feel", "proud", "the", "little"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a baby you know.",
     mySentenceExample: "My baby sister is very small.",
@@ -66,9 +83,26 @@ export const CHAPTERS = [
       { text: "Everyone feels tired in the morning.", answer: true },
     ],
     buildSentence: [
-      { target: "Rosie cries loudly.", jumbled: ["cries", "loudly.", "Rosie"] },
-      { target: "I cannot fall asleep.", jumbled: ["cannot", "fall", "I", "asleep."] },
-      { target: "Everyone feels tired today.", jumbled: ["feels", "tired", "Everyone", "today."] },
+      {
+        target: "That night, Rosie cries loudly, and I cannot fall asleep.",
+        jumbled: ["fall", "Rosie", "night,", "I", "cries", "loudly,", "asleep.", "and", "That", "cannot"],
+      },
+      {
+        target: "“Babies cry because it is how they talk to us,” Mom explains.",
+        jumbled: ["to", "is", "because", "they", "it", "“Babies", "cry", "Mom", "talk", "explains.", "us,”", "how"],
+      },
+      {
+        target: "I put my pillow over my ears, but I can still hear her.",
+        jumbled: ["pillow", "but", "ears,", "my", "her.", "can", "I", "hear", "my", "put", "still", "over", "I"],
+      },
+      {
+        target: "“Being a baby's family is hard work, Ben,” Dad says with a tired smile.",
+        jumbled: ["tired", "is", "a", "Ben,”", "“Being", "family", "with", "says", "hard", "smile.", "work,", "a", "baby's", "Dad"],
+      },
+      {
+        target: "I hope Rosie feels better and cries a little less tonight.",
+        jumbled: ["little", "better", "Rosie", "hope", "I", "less", "a", "cries", "tonight.", "feels", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling tired.",
     mySentenceExample: "I feel tired when I do not sleep well.",
@@ -91,9 +125,26 @@ export const CHAPTERS = [
       { text: "Ben feels proud of himself.", answer: true },
     ],
     buildSentence: [
-      { target: "I help Mom today.", jumbled: ["help", "Mom", "I", "today."] },
-      { target: "I bring a diaper.", jumbled: ["bring", "a", "I", "diaper."] },
-      { target: "I feel proud of myself.", jumbled: ["feel", "proud", "I", "of", "myself."] },
+      {
+        target: "The next day, I ask Mom if I can help with Rosie.",
+        jumbled: ["I", "with", "if", "Rosie.", "day,", "next", "help", "can", "I", "Mom", "ask", "The"],
+      },
+      {
+        target: "“You can bring me a clean diaper, Ben,” Mom says with a smile.",
+        jumbled: ["clean", "a", "diaper,", "says", "me", "smile.", "“You", "a", "bring", "Mom", "with", "can", "Ben,”"],
+      },
+      {
+        target: "I also help by holding Rosie's tiny socks while Mom dresses her.",
+        jumbled: ["Mom", "tiny", "I", "socks", "holding", "while", "by", "dresses", "help", "also", "Rosie's", "her."],
+      },
+      {
+        target: "I like feeling useful and important as a big brother.",
+        jumbled: ["I", "useful", "brother.", "a", "as", "feeling", "like", "important", "and", "big"],
+      },
+      {
+        target: "I make a silly face, and Rosie's eyes seem to smile a little.",
+        jumbled: ["smile", "Rosie's", "face,", "little.", "eyes", "and", "silly", "to", "I", "make", "a", "a", "seem"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about helping your family.",
     mySentenceExample: "I help my mom at home.",
@@ -116,9 +167,26 @@ export const CHAPTERS = [
       { text: "Mom takes a photo of them.", answer: true },
     ],
     buildSentence: [
-      { target: "Rosie sleeps peacefully.", jumbled: ["sleeps", "peacefully.", "Rosie"] },
-      { target: "I feel calm and warm.", jumbled: ["feel", "calm", "I", "and", "warm."] },
-      { target: "This moment feels special.", jumbled: ["moment", "feels", "This", "special."] },
+      {
+        target: "One afternoon, the house feels calm and quiet for a while.",
+        jumbled: ["calm", "One", "quiet", "and", "feels", "the", "while.", "a", "for", "house", "afternoon,"],
+      },
+      {
+        target: "I sit on the sofa, and Mom places sleepy Rosie in my arms.",
+        jumbled: ["sleepy", "Mom", "and", "on", "Rosie", "I", "my", "places", "sit", "arms.", "in", "sofa,", "the"],
+      },
+      {
+        target: "I look at her tiny eyelashes and small, round cheeks.",
+        jumbled: ["small,", "tiny", "eyelashes", "cheeks.", "I", "her", "round", "at", "and", "look"],
+      },
+      {
+        target: "“You two look so sweet together, Ben,” Mom whispers with a smile.",
+        jumbled: ["two", "Ben,”", "Mom", "whispers", "with", "a", "“You", "sweet", "look", "smile.", "together,", "so"],
+      },
+      {
+        target: "I stay very still so I do not wake Rosie up.",
+        jumbled: ["very", "do", "Rosie", "I", "so", "not", "wake", "up.", "stay", "still", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a quiet, calm moment.",
     mySentenceExample: "I feel calm when the house is quiet.",
@@ -141,9 +209,26 @@ export const CHAPTERS = [
       { text: "Mom feels happy about the smile.", answer: true },
     ],
     buildSentence: [
-      { target: "Rosie smiles at me.", jumbled: ["smiles", "at", "Rosie", "me."] },
-      { target: "I feel so proud.", jumbled: ["feel", "so", "I", "proud."] },
-      { target: "This is a happy moment.", jumbled: ["is", "a", "This", "happy", "moment."] },
+      {
+        target: "This morning, I lean over Rosie's crib to say good morning.",
+        jumbled: ["say", "morning.", "This", "I", "crib", "lean", "morning,", "to", "over", "Rosie's", "good"],
+      },
+      {
+        target: "I make a silly face and stick out my tongue playfully.",
+        jumbled: ["silly", "and", "out", "playfully.", "I", "a", "my", "tongue", "face", "stick", "make"],
+      },
+      {
+        target: "Mom and Dad rush over and see Rosie smiling at me again.",
+        jumbled: ["and", "Rosie", "smiling", "rush", "over", "again.", "Mom", "me", "at", "Dad", "see", "and"],
+      },
+      {
+        target: "I feel so proud that I made my baby sister smile first.",
+        jumbled: ["made", "sister", "feel", "proud", "I", "baby", "that", "first.", "my", "smile", "so", "I"],
+      },
+      {
+        target: "This is one of the happiest moments of my life.",
+        jumbled: ["my", "the", "is", "of", "of", "moments", "happiest", "This", "one", "life."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a happy moment.",
     mySentenceExample: "I feel happy when my family smiles.",
@@ -166,9 +251,26 @@ export const CHAPTERS = [
       { text: "Ben feels a little jealous.", answer: true },
     ],
     buildSentence: [
-      { target: "I feel jealous today.", jumbled: ["feel", "jealous", "I", "today."] },
-      { target: "I sit by myself.", jumbled: ["sit", "by", "I", "myself."] },
-      { target: "I feel a little sad.", jumbled: ["feel", "a", "I", "little", "sad."] },
+      {
+        target: "Lately, Mom and Dad spend most of their time with Rosie.",
+        jumbled: ["and", "Dad", "time", "their", "Lately,", "with", "most", "Rosie.", "Mom", "spend", "of"],
+      },
+      {
+        target: "Today, I wanted to show Dad my new drawing, but he was busy with Rosie.",
+        jumbled: ["show", "was", "new", "he", "Rosie.", "my", "but", "busy", "Today,", "with", "to", "wanted", "Dad", "drawing,", "I"],
+      },
+      {
+        target: "I feel a small knot of sadness in my stomach.",
+        jumbled: ["my", "I", "in", "small", "knot", "sadness", "of", "stomach.", "feel", "a"],
+      },
+      {
+        target: "I do not want to be mean, but I feel a little jealous.",
+        jumbled: ["a", "I", "want", "do", "I", "to", "but", "jealous.", "not", "mean,", "be", "feel", "little"],
+      },
+      {
+        target: "I wait to hear someone call, “Ben, are you okay?” but nobody notices that I am upset for a little while.",
+        jumbled: ["hear", "upset", "wait", "notices", "but", "I", "am", "that", "to", "for", "nobody", "little", "you", "while.", "okay?”", "“Ben,", "someone", "a", "I", "call,", "are"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling jealous or left out.",
     mySentenceExample: "I feel jealous sometimes, and that is okay.",
@@ -191,9 +293,26 @@ export const CHAPTERS = [
       { text: "Dad says he loves Ben just as much.", answer: true },
     ],
     buildSentence: [
-      { target: "Dad notices I am quiet.", jumbled: ["notices", "I", "Dad", "am", "quiet."] },
-      { target: "I tell Dad my feelings.", jumbled: ["tell", "Dad", "I", "my", "feelings."] },
-      { target: "Dad hugs me tightly.", jumbled: ["hugs", "me", "Dad", "tightly."] },
+      {
+        target: "That evening, Dad notices I am quiet and sits beside me.",
+        jumbled: ["am", "quiet", "notices", "I", "evening,", "That", "and", "me.", "beside", "sits", "Dad"],
+      },
+      {
+        target: "“What's wrong, Ben? You seem a little sad today,” he asks gently.",
+        jumbled: ["You", "gently.", "seem", "a", "today,”", "“What's", "little", "Ben?", "sad", "wrong,", "asks", "he"],
+      },
+      {
+        target: "“I feel like you and Mom only care about Rosie now,” I say quietly.",
+        jumbled: ["care", "Rosie", "like", "only", "say", "and", "feel", "Mom", "I", "about", "you", "quietly.", "“I", "now,”"],
+      },
+      {
+        target: "Dad hugs me tightly and says, “We love you just as much, Ben.” He explains that babies need extra help, but my feelings matter too.",
+        jumbled: ["much,", "explains", "me", "but", "as", "extra", "matter", "says,", "feelings", "too.", "that", "Ben.”", "just", "love", "and", "need", "hugs", "babies", "He", "tightly", "help,", "you", "my", "Dad", "“We"],
+      },
+      {
+        target: "We spend the next hour together, just Dad and me.",
+        jumbled: ["and", "hour", "together,", "me.", "the", "spend", "Dad", "next", "We", "just"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about talking about your feelings.",
     mySentenceExample: "I feel better when I talk about my feelings.",
@@ -216,9 +335,26 @@ export const CHAPTERS = [
       { text: "Rosie waves her little arms.", answer: true },
     ],
     buildSentence: [
-      { target: "I read to Rosie.", jumbled: ["read", "to", "I", "Rosie."] },
-      { target: "Rosie looks at me.", jumbled: ["looks", "at", "Rosie", "me."] },
-      { target: "I feel important and loved.", jumbled: ["feel", "important", "I", "and", "loved."] },
+      {
+        target: "Today, Mom asks if I want to read a book to Rosie.",
+        jumbled: ["book", "a", "Today,", "Rosie.", "want", "Mom", "to", "if", "I", "asks", "read", "to"],
+      },
+      {
+        target: "“She loves the sound of your voice, Ben,” Mom says kindly.",
+        jumbled: ["kindly.", "loves", "Ben,”", "voice,", "sound", "of", "says", "“She", "your", "the", "Mom"],
+      },
+      {
+        target: "I sit next to Rosie's crib and open the colorful book.",
+        jumbled: ["colorful", "and", "the", "sit", "book.", "I", "open", "Rosie's", "to", "next", "crib"],
+      },
+      {
+        target: "Rosie looks at me with wide, curious eyes the whole time.",
+        jumbled: ["with", "whole", "wide,", "eyes", "me", "curious", "at", "looks", "time.", "Rosie", "the"],
+      },
+      {
+        target: "“You are a wonderful big brother, Ben,” Mom says proudly.",
+        jumbled: ["proudly.", "brother,", "big", "are", "“You", "wonderful", "says", "Ben,”", "Mom", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reading a book.",
     mySentenceExample: "I like to read books out loud.",
@@ -241,9 +377,26 @@ export const CHAPTERS = [
       { text: "Mom says Rosie loves her big brother.", answer: true },
     ],
     buildSentence: [
-      { target: "Rosie holds my finger.", jumbled: ["holds", "my", "Rosie", "finger."] },
-      { target: "Her grip feels strong.", jumbled: ["grip", "feels", "Her", "strong."] },
-      { target: "I love being her brother.", jumbled: ["love", "being", "I", "her", "brother."] },
+      {
+        target: "This afternoon, I hold my finger near Rosie's tiny hand.",
+        jumbled: ["This", "afternoon,", "hand.", "tiny", "I", "near", "hold", "finger", "my", "Rosie's"],
+      },
+      {
+        target: "“Look, she's holding my finger!” I say with a big, happy smile.",
+        jumbled: ["big,", "smile.", "happy", "I", "finger!”", "holding", "with", "“Look,", "a", "say", "she's", "my"],
+      },
+      {
+        target: "Rosie's grip is surprisingly strong for such a tiny baby.",
+        jumbled: ["strong", "baby.", "such", "for", "grip", "a", "Rosie's", "surprisingly", "tiny", "is"],
+      },
+      {
+        target: "Mom watches us and says, “She really loves her big brother, Ben.”",
+        jumbled: ["brother,", "watches", "says,", "Ben.”", "big", "us", "really", "loves", "and", "Mom", "her", "“She"],
+      },
+      {
+        target: "This little moment makes me love being her big brother even more.",
+        jumbled: ["me", "brother", "big", "more.", "even", "moment", "makes", "little", "This", "her", "love", "being"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a sweet family moment.",
     mySentenceExample: "My baby sister holds my hand.",
@@ -266,9 +419,26 @@ export const CHAPTERS = [
       { text: "Ben understands love grows bigger.", answer: true },
     ],
     buildSentence: [
-      { target: "I help feed Rosie.", jumbled: ["help", "feed", "I", "Rosie."] },
-      { target: "Rosie smiles at me.", jumbled: ["smiles", "at", "Rosie", "me."] },
-      { target: "Love grows bigger and bigger.", jumbled: ["grows", "bigger", "Love", "and", "bigger."] },
+      {
+        target: "It has been one month since Rosie came home with us.",
+        jumbled: ["one", "home", "with", "has", "since", "It", "month", "been", "came", "us.", "Rosie"],
+      },
+      {
+        target: "I help feed her, sing to her, and make her laugh every day.",
+        jumbled: ["sing", "laugh", "her,", "I", "her,", "every", "feed", "her", "to", "and", "help", "make", "day."],
+      },
+      {
+        target: "Mom and Dad always make time for both Rosie and me.",
+        jumbled: ["time", "Mom", "for", "both", "Rosie", "make", "Dad", "and", "me.", "and", "always"],
+      },
+      {
+        target: "“You are the best big brother, Ben,” Dad says, ruffling my hair.",
+        jumbled: ["the", "says,", "hair.", "ruffling", "brother,", "are", "my", "Ben,”", "big", "“You", "best", "Dad"],
+      },
+      {
+        target: "Being Rosie's big brother is one of my favorite things in the whole world.",
+        jumbled: ["one", "Being", "in", "whole", "is", "world.", "brother", "things", "the", "of", "Rosie's", "my", "favorite", "big"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a sibling or family member you love.",
     mySentenceExample: "I love my little sister very much.",

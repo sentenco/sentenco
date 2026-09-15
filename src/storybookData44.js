@@ -36,11 +36,26 @@ export const CHAPTERS = [
       { text: "The morning air feels warm today.", answer: false },
     ],
     buildSentence: [
-      { target: "I leave my apartment early.", jumbled: ["leave", "my", "I", "apartment", "early."] },
-      { target: "I grab my coffee first.", jumbled: ["grab", "my", "I", "coffee", "first."] },
-      { target: "I walk to the bus stop.", jumbled: ["walk", "to", "I", "the", "bus", "stop."] },
-      { target: "This helps me wake up.", jumbled: ["helps", "me", "This", "wake", "up."] },
-      { target: "I try not to be late today.", jumbled: ["I", "try", "not", "to", "be", "late", "today."] },
+      {
+        target: "Every morning, I leave my apartment at exactly seven-fifteen to catch the bus to work.",
+        jumbled: ["seven-fifteen", "exactly", "the", "at", "catch", "morning,", "leave", "work.", "apartment", "to", "I", "bus", "to", "Every", "my"],
+      },
+      {
+        target: "I do not own a car, so the bus is my main way to travel.",
+        jumbled: ["travel.", "my", "to", "main", "car,", "so", "the", "bus", "own", "not", "do", "I", "a", "is", "way"],
+      },
+      {
+        target: "I grab my coffee, check my bag for my badge, and lock my door carefully.",
+        jumbled: ["for", "carefully.", "grab", "my", "check", "and", "I", "door", "coffee,", "my", "badge,", "my", "bag", "lock", "my"],
+      },
+      {
+        target: "The walk to the bus stop takes about five minutes down a quiet street.",
+        jumbled: ["down", "a", "stop", "takes", "to", "The", "about", "five", "minutes", "bus", "the", "quiet", "street.", "walk"],
+      },
+      {
+        target: "Today, the morning air feels a little cold, so I walk a bit faster than usual.",
+        jumbled: ["bit", "faster", "a", "so", "cold,", "walk", "a", "I", "feels", "little", "Today,", "morning", "usual.", "air", "the", "than"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your morning routine.",
     mySentenceExample: "My morning routine starts with a cup of coffee.",
@@ -65,11 +80,26 @@ export const CHAPTERS = [
       { text: "The city sounds nothing like a busy place.", answer: false },
     ],
     buildSentence: [
-      { target: "I check my phone now.", jumbled: ["check", "my", "I", "phone", "now."] },
-      { target: "I see Walter today.", jumbled: ["see", "Walter", "I", "today."] },
-      { target: "We nod at each other.", jumbled: ["nod", "at", "We", "each", "other."] },
-      { target: "He smiles at everyone politely.", jumbled: ["He", "smiles", "at", "everyone", "politely."] },
-      { target: "I have a little time to relax.", jumbled: ["I", "have", "a", "little", "time", "to", "relax."] },
+      {
+        target: "At the bus stop, a few other people are already waiting for the same bus.",
+        jumbled: ["other", "for", "few", "are", "waiting", "stop,", "already", "people", "bus.", "the", "a", "At", "the", "bus", "same"],
+      },
+      {
+        target: "I check my phone to see how many minutes until the bus arrives.",
+        jumbled: ["I", "the", "phone", "to", "see", "check", "many", "until", "minutes", "how", "my", "arrives.", "bus"],
+      },
+      {
+        target: "I check my badge, which reads “Angela,” before putting it back in my bag.",
+        jumbled: ["before", "“Angela,”", "I", "check", "badge,", "putting", "it", "bag.", "my", "back", "my", "reads", "which", "in"],
+      },
+      {
+        target: "I see Walter, a man I recognize from riding this bus almost every day.",
+        jumbled: ["bus", "see", "a", "this", "I", "almost", "from", "I", "Walter,", "recognize", "day.", "every", "man", "riding"],
+      },
+      {
+        target: "The morning traffic passes by slowly, and I hear the sounds of the busy city waking up around us.",
+        jumbled: ["around", "the", "slowly,", "and", "I", "waking", "hear", "of", "us.", "up", "The", "morning", "passes", "by", "the", "city", "sounds", "busy", "traffic"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone you see often but do not know well.",
     mySentenceExample: "I see my neighbor often but do not know him well.",
@@ -94,11 +124,26 @@ export const CHAPTERS = [
       { text: "Angela looks out the window as the bus moves.", answer: true },
     ],
     buildSentence: [
-      { target: "The bus finally arrives.", jumbled: ["finally", "arrives.", "The", "bus"] },
-      { target: "I step on carefully.", jumbled: ["step", "on", "I", "carefully."] },
-      { target: "I tap my transit card.", jumbled: ["tap", "my", "I", "transit", "card."] },
-      { target: "I look out the window.", jumbled: ["look", "out", "I", "the", "window."] },
-      { target: "My commute officially begins now.", jumbled: ["My", "commute", "officially", "begins", "now."] },
+      {
+        target: "The bus finally arrives, and the doors open with a soft hissing sound.",
+        jumbled: ["The", "hissing", "sound.", "and", "a", "with", "finally", "doors", "arrives,", "open", "bus", "the", "soft"],
+      },
+      {
+        target: "I step on carefully and tap my transit card on the small reader by the door.",
+        jumbled: ["my", "carefully", "step", "on", "transit", "tap", "reader", "the", "on", "small", "the", "card", "I", "by", "and", "door."],
+      },
+      {
+        target: "“Morning, Angela,” the driver says, recognizing a regular rider, and I walk toward an empty seat near the middle.",
+        jumbled: ["empty", "walk", "the", "a", "middle.", "Angela,”", "the", "rider,", "an", "toward", "near", "I", "recognizing", "driver", "says,", "and", "“Morning,", "seat", "regular"],
+      },
+      {
+        target: "The bus is not too crowded today, which makes the ride feel more comfortable.",
+        jumbled: ["feel", "the", "bus", "The", "crowded", "is", "comfortable.", "makes", "too", "today,", "not", "ride", "more", "which"],
+      },
+      {
+        target: "I look out the window as the bus starts moving through the busy city streets.",
+        jumbled: ["starts", "look", "the", "through", "as", "busy", "the", "I", "moving", "city", "bus", "streets.", "the", "window", "out"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about getting onto a bus or train.",
     mySentenceExample: "I tap my card and find a seat when I get on the bus.",
@@ -123,11 +168,26 @@ export const CHAPTERS = [
       { text: "Angela has no time left before work starts.", answer: false },
     ],
     buildSentence: [
-      { target: "Many people get on.", jumbled: ["get", "on.", "Many", "people"] },
-      { target: "I stand up now.", jumbled: ["stand", "up", "I", "now."] },
-      { target: "She thanks me kindly.", jumbled: ["thanks", "me", "She", "kindly."] },
-      { target: "I hold onto a pole.", jumbled: ["hold", "onto", "I", "a", "pole."] },
-      { target: "I still have fifteen minutes before work.", jumbled: ["I", "still", "have", "fifteen", "minutes", "before", "work."] },
+      {
+        target: "A few stops later, the bus arrives at a busy downtown corner near many office buildings.",
+        jumbled: ["downtown", "corner", "stops", "few", "a", "office", "later,", "busy", "many", "the", "bus", "arrives", "A", "buildings.", "near", "at"],
+      },
+      {
+        target: "Many people get on the bus at once, and it suddenly feels much more crowded than before.",
+        jumbled: ["feels", "once,", "get", "suddenly", "Many", "people", "at", "crowded", "than", "before.", "more", "bus", "the", "it", "on", "and", "much"],
+      },
+      {
+        target: "“Thank you, dear,” she says kindly, and I move toward the back to hold onto a pole instead.",
+        jumbled: ["“Thank", "hold", "onto", "dear,”", "a", "move", "the", "to", "I", "instead.", "and", "you,", "she", "says", "kindly,", "toward", "back", "pole"],
+      },
+      {
+        target: "The bus feels warm now with so many people standing close together.",
+        jumbled: ["feels", "with", "close", "now", "many", "The", "standing", "together.", "so", "bus", "warm", "people"],
+      },
+      {
+        target: "I check the time on my phone and see I still have fifteen minutes before work starts.",
+        jumbled: ["on", "the", "phone", "starts.", "still", "I", "before", "my", "work", "time", "and", "see", "fifteen", "minutes", "I", "have", "check"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about giving up your seat for someone.",
     mySentenceExample: "I gave up my seat for an elderly man on the train.",
@@ -152,11 +212,26 @@ export const CHAPTERS = [
       { text: "Angela decides to get off and walk immediately.", answer: false },
     ],
     buildSentence: [
-      { target: "The bus stops moving.", jumbled: ["stops", "moving.", "The", "bus"] },
-      { target: "I feel a small worry.", jumbled: ["feel", "a", "I", "small", "worry."] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "I", "deep", "breath."] },
-      { target: "There is an accident ahead.", jumbled: ["is", "an", "There", "accident", "ahead."] },
-      { target: "There is nothing I can do except wait.", jumbled: ["There", "is", "nothing", "I", "can", "do", "except", "wait."] },
+      {
+        target: "Suddenly, the bus stops moving and stays still for several minutes in heavy traffic.",
+        jumbled: ["and", "for", "heavy", "stops", "Suddenly,", "several", "traffic.", "moving", "the", "bus", "stays", "minutes", "still", "in"],
+      },
+      {
+        target: "I look out the window and see a long line of cars stopped ahead of us too.",
+        jumbled: ["us", "stopped", "a", "the", "of", "line", "cars", "see", "too.", "ahead", "I", "and", "window", "look", "out", "long", "of"],
+      },
+      {
+        target: "Other passengers also look a little impatient, checking their phones or watches quietly.",
+        jumbled: ["passengers", "checking", "watches", "Other", "look", "also", "a", "phones", "impatient,", "little", "or", "quietly.", "their"],
+      },
+      {
+        target: "The driver announces there is an accident ahead, causing this unexpected delay today.",
+        jumbled: ["accident", "there", "an", "causing", "ahead,", "announces", "delay", "unexpected", "driver", "is", "today.", "The", "this"],
+      },
+      {
+        target: "There is nothing I can really do except wait patiently now.",
+        jumbled: ["patiently", "I", "except", "now.", "do", "really", "can", "is", "nothing", "wait", "There"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting patiently during an unexpected delay.",
     mySentenceExample: "I waited patiently during an unexpected delay at the airport.",
@@ -181,11 +256,26 @@ export const CHAPTERS = [
       { text: "The time passes more slowly after they talk.", answer: false },
     ],
     buildSentence: [
-      { target: "Walter walks over now.", jumbled: ["walks", "over", "Walter", "now."] },
-      { target: "I laugh too, honestly.", jumbled: ["laugh", "too,", "I", "honestly."] },
-      { target: "He asks where I work.", jumbled: ["asks", "where", "He", "I", "work."] },
-      { target: "We talk easily together.", jumbled: ["talk", "easily", "We", "together."] },
-      { target: "I feel happy to finally know his name.", jumbled: ["I", "feel", "happy", "to", "finally", "know", "his", "name."] },
+      {
+        target: "During the delay, Walter walks over and stands near me, holding onto the same pole.",
+        jumbled: ["the", "over", "pole.", "onto", "me,", "walks", "During", "the", "Walter", "delay,", "near", "stands", "and", "same", "holding"],
+      },
+      {
+        target: "“Traffic like this happens more than I would like,” he says with a small laugh.",
+        jumbled: ["I", "happens", "“Traffic", "he", "like", "small", "more", "says", "than", "would", "laugh.", "a", "like,”", "with", "this"],
+      },
+      {
+        target: "He asks where I work, and I tell him about my office near the city center.",
+        jumbled: ["him", "office", "and", "I", "center.", "He", "where", "I", "about", "asks", "work,", "city", "near", "my", "the", "tell"],
+      },
+      {
+        target: "He tells me he works at a small bookstore not too far from my office building.",
+        jumbled: ["small", "He", "works", "bookstore", "tells", "from", "too", "office", "building.", "at", "he", "far", "a", "me", "not", "my"],
+      },
+      {
+        target: "The time passes much faster now, and I feel happy to finally know his name properly too.",
+        jumbled: ["his", "finally", "too.", "name", "now,", "properly", "much", "faster", "to", "happy", "feel", "I", "and", "passes", "know", "The", "time"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a conversation that made a boring wait better.",
     mySentenceExample: "A conversation with a coworker made a boring wait better.",
@@ -210,11 +300,26 @@ export const CHAPTERS = [
       { text: "Angela gathers her bag to get off soon.", answer: true },
     ],
     buildSentence: [
-      { target: "The traffic starts moving.", jumbled: ["starts", "moving.", "The", "traffic"] },
-      { target: "I feel relief now.", jumbled: ["feel", "relief", "I", "now."] },
-      { target: "I gather my bag now.", jumbled: ["gather", "my", "I", "bag", "now."] },
-      { target: "My stop is getting closer.", jumbled: ["My", "stop", "is", "getting", "closer."] },
-      { target: "I will only be a few minutes late now.", jumbled: ["I", "will", "only", "be", "a", "few", "minutes", "late", "now."] },
+      {
+        target: "The traffic finally starts moving again, and the bus continues its route.",
+        jumbled: ["its", "traffic", "again,", "the", "bus", "route.", "and", "finally", "The", "moving", "starts", "continues"],
+      },
+      {
+        target: "I feel relief as the bus picks up speed, moving smoothly through the remaining streets.",
+        jumbled: ["through", "speed,", "feel", "smoothly", "I", "moving", "relief", "streets.", "picks", "up", "the", "bus", "the", "as", "remaining"],
+      },
+      {
+        target: "I check my phone and calculate that I will only be a few minutes late now.",
+        jumbled: ["check", "now.", "my", "few", "calculate", "will", "and", "I", "be", "I", "a", "minutes", "that", "late", "phone", "only"],
+      },
+      {
+        target: "“Angela, your manager understands occasional delays,” I remind myself, so I do not feel too worried about it anymore.",
+        jumbled: ["do", "anymore.", "feel", "I", "your", "understands", "about", "“Angela,", "occasional", "too", "manager", "worried", "remind", "not", "so", "myself,", "I", "delays,”", "it"],
+      },
+      {
+        target: "The city passes by outside the window, and familiar buildings tell me my stop is getting closer.",
+        jumbled: ["city", "buildings", "getting", "outside", "me", "by", "stop", "window,", "my", "and", "The", "closer.", "the", "passes", "is", "familiar", "tell"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling relieved when a problem finally ends.",
     mySentenceExample: "I felt relieved when the long line finally ended.",
@@ -239,11 +344,26 @@ export const CHAPTERS = [
       { text: "Angela feels ready to start her workday.", answer: true },
     ],
     buildSentence: [
-      { target: "I press the button.", jumbled: ["press", "the", "I", "button."] },
-      { target: "I wave goodbye now.", jumbled: ["wave", "goodbye", "I", "now."] },
-      { target: "See you tomorrow, he says.", jumbled: ["you", "tomorrow,", "See", "he", "says."] },
-      { target: "This feels completely manageable to me.", jumbled: ["This", "feels", "completely", "manageable", "to", "me."] },
-      { target: "I already feel ready to start my workday.", jumbled: ["I", "already", "feel", "ready", "to", "start", "my", "workday."] },
+      {
+        target: "The bus finally reaches my stop, and I press the button to signal the driver to stop.",
+        jumbled: ["The", "to", "stop.", "the", "stop,", "the", "press", "button", "finally", "to", "I", "my", "and", "reaches", "bus", "signal", "driver"],
+      },
+      {
+        target: "I wave goodbye to Walter, who smiles and says, “See you tomorrow, Angela!”",
+        jumbled: ["wave", "you", "I", "Walter,", "who", "to", "tomorrow,", "smiles", "says,", "Angela!”", "“See", "goodbye", "and"],
+      },
+      {
+        target: "The fresh air feels nice after standing inside the warm, crowded bus for so long.",
+        jumbled: ["after", "inside", "nice", "The", "crowded", "feels", "warm,", "so", "for", "bus", "air", "standing", "the", "long.", "fresh"],
+      },
+      {
+        target: "I walk quickly toward the entrance, checking the time one more time on my phone.",
+        jumbled: ["more", "I", "checking", "the", "toward", "time", "the", "my", "entrance,", "walk", "time", "phone.", "on", "one", "quickly"],
+      },
+      {
+        target: "I am only five minutes late, which feels completely manageable and not too serious.",
+        jumbled: ["completely", "too", "not", "late,", "which", "minutes", "manageable", "only", "and", "am", "feels", "I", "serious.", "five"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about arriving somewhere a little late but feeling okay about it.",
     mySentenceExample: "I arrived a little late but felt okay because I had a good reason.",
@@ -268,11 +388,26 @@ export const CHAPTERS = [
       { text: "Angela feels annoyed by the ride home.", answer: false },
     ],
     buildSentence: [
-      { target: "The sky is turning orange.", jumbled: ["sky", "is", "The", "turning", "orange."] },
-      { target: "I sit near a window.", jumbled: ["sit", "near", "I", "a", "window."] },
-      { target: "I feel tired but satisfied.", jumbled: ["feel", "tired", "I", "but", "satisfied."] },
-      { target: "We chat briefly about our workdays.", jumbled: ["We", "chat", "briefly", "about", "our", "workdays."] },
-      { target: "This bus ride feels like a nice, quiet break.", jumbled: ["This", "bus", "ride", "feels", "like", "a", "nice,", "quiet", "break."] },
+      {
+        target: "I walk back to the same bus stop for my ride home in the evening.",
+        jumbled: ["evening.", "the", "same", "I", "for", "stop", "in", "ride", "my", "walk", "bus", "to", "back", "the", "home"],
+      },
+      {
+        target: "The sky is turning orange, and the streets feel calmer than during the busy morning rush.",
+        jumbled: ["orange,", "the", "The", "feel", "morning", "rush.", "is", "than", "sky", "busy", "streets", "and", "calmer", "during", "turning", "the"],
+      },
+      {
+        target: "I sit near a window this time, since the bus is much less crowded now.",
+        jumbled: ["near", "bus", "a", "I", "sit", "the", "crowded", "now.", "since", "less", "this", "window", "time,", "is", "much"],
+      },
+      {
+        target: "I see Walter again, and we chat briefly about our workdays before he gets off at his stop.",
+        jumbled: ["Walter", "off", "again,", "we", "workdays", "briefly", "gets", "his", "see", "our", "stop.", "and", "chat", "about", "at", "I", "before", "he"],
+      },
+      {
+        target: "I feel tired but satisfied after a full day of work, and the bus ride feels like a nice, quiet break.",
+        jumbled: ["a", "bus", "break.", "like", "and", "nice,", "ride", "tired", "the", "quiet", "satisfied", "day", "but", "after", "feel", "of", "work,", "feels", "a", "full", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a quiet moment at the end of a busy day.",
     mySentenceExample: "A quiet walk home is my favorite moment at the end of a busy day.",
@@ -297,11 +432,26 @@ export const CHAPTERS = [
       { text: "Taking the bus still feels like just a task to Angela.", answer: false },
     ],
     buildSentence: [
-      { target: "I think about my day.", jumbled: ["think", "about", "I", "my", "day."] },
-      { target: "This feels comfortable and familiar.", jumbled: ["feels", "comfortable", "This", "and", "familiar."] },
-      { target: "I will see Walter again tomorrow.", jumbled: ["will", "see", "I", "Walter", "again", "tomorrow."] },
-      { target: "This has become part of my daily life.", jumbled: ["This", "has", "become", "part", "of", "my", "daily", "life."] },
-      { target: "Taking the bus used to feel like just a task.", jumbled: ["Taking", "the", "bus", "used", "to", "feel", "like", "just", "a", "task."] },
+      {
+        target: "At home that evening, I think about my day and the small moments that happened on the bus.",
+        jumbled: ["moments", "the", "think", "day", "and", "evening,", "home", "At", "on", "the", "that", "I", "bus.", "small", "about", "that", "happened", "my"],
+      },
+      {
+        target: "The morning delay was frustrating at first, but talking with Walter made it feel much better.",
+        jumbled: ["delay", "feel", "at", "Walter", "made", "talking", "The", "with", "was", "better.", "but", "much", "morning", "frustrating", "it", "first,"],
+      },
+      {
+        target: "It has become a small, familiar part of my daily life, filled with routine and friendly faces.",
+        jumbled: ["daily", "friendly", "and", "It", "small,", "faces.", "a", "of", "become", "part", "with", "has", "filled", "routine", "my", "familiar", "life,"],
+      },
+      {
+        target: "“Angela, this is what your daily life looks like now,” I think with a smile.",
+        jumbled: ["smile.", "daily", "like", "your", "is", "with", "this", "what", "a", "I", "looks", "“Angela,", "now,”", "think", "life"],
+      },
+      {
+        target: "Tomorrow, I will see Walter again at the same stop, and we might talk about our days once more.",
+        jumbled: ["and", "about", "days", "Tomorrow,", "same", "again", "we", "the", "our", "once", "will", "stop,", "Walter", "at", "more.", "might", "see", "talk", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a routine that became more comfortable over time.",
     mySentenceExample: "My morning routine became more comfortable over time at my new job.",

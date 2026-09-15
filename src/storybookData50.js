@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Amir feels this idea is not worth trying.", answer: false },
     ],
     buildSentence: [
-      { target: "This bothers me more.", jumbled: ["bothers", "me", "This", "more."] },
-      { target: "She suggests a fundraiser immediately.", jumbled: ["She", "suggests", "a", "fundraiser", "immediately."] },
-      { target: "This idea feels ambitious somehow.", jumbled: ["This", "idea", "feels", "ambitious", "somehow."] },
-      { target: "The school doesn't have the budget.", jumbled: ["The", "school", "doesn't", "have", "the", "budget."] },
-      { target: "If nobody does something, these books will keep getting worse.", jumbled: ["If", "nobody", "does", "something,", "these", "books", "will", "keep", "getting", "worse."] },
+      {
+        target: "During library club, I notice how many of our books are falling apart, with torn pages and broken spines everywhere.",
+        jumbled: ["pages", "I", "falling", "apart,", "many", "spines", "everywhere.", "books", "club,", "our", "notice", "broken", "are", "library", "and", "torn", "of", "with", "how", "During"],
+      },
+      {
+        target: "She explains that the school simply doesn't have the budget this year.",
+        jumbled: ["have", "She", "simply", "this", "the", "the", "that", "doesn't", "year.", "budget", "explains", "school"],
+      },
+      {
+        target: "These books will just keep getting worse until students can't use them properly anymore.",
+        jumbled: ["worse", "until", "books", "can't", "anymore.", "them", "use", "getting", "properly", "just", "will", "keep", "students", "These"],
+      },
+      {
+        target: "I mention this to Lena at lunch, and she immediately suggests we organize a fundraiser ourselves.",
+        jumbled: ["immediately", "lunch,", "mention", "fundraiser", "she", "ourselves.", "a", "this", "I", "organize", "Lena", "and", "at", "to", "we", "suggests"],
+      },
+      {
+        target: "“We could actually do this, Amir,” she says, already sounding sure of it.",
+        jumbled: ["could", "sounding", "of", "sure", "she", "“We", "this,", "already", "it.", "says,", "actually", "Amir,”", "do"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a problem you noticed that you wanted to fix.",
     mySentenceExample: "I noticed a problem with litter and wanted to organize a cleanup.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Amir feels no nervousness about this at all.", answer: false },
     ],
     buildSentence: [
-      { target: "We write a short proposal.", jumbled: ["write", "a", "We", "short", "proposal."] },
-      { target: "I feel excitement and nervousness.", jumbled: ["feel", "excitement", "I", "and", "nervousness."] },
-      { target: "He reads it carefully today.", jumbled: ["He", "reads", "it", "carefully", "today."] },
-      { target: "We can figure this out together.", jumbled: ["We", "can", "figure", "this", "out", "together."] },
-      { target: "If you're serious, I'll support you, but you'll organize it.", jumbled: ["If", "you're", "serious,", "I'll", "support", "you,", "but", "you'll", "organize", "it."] },
+      {
+        target: "Lena and I know we need permission from a teacher to organize this properly.",
+        jumbled: ["properly.", "I", "this", "teacher", "organize", "know", "and", "to", "permission", "Lena", "from", "a", "we", "need"],
+      },
+      {
+        target: "We write a short proposal explaining our goal and bring it to Mr. Okafor after class.",
+        jumbled: ["explaining", "it", "goal", "class.", "after", "and", "Mr.", "a", "our", "bring", "We", "proposal", "Okafor", "to", "short", "write"],
+      },
+      {
+        target: "He reads it carefully, asking several questions about our plan and how we intend to collect donations.",
+        jumbled: ["how", "He", "plan", "collect", "questions", "it", "intend", "to", "several", "our", "reads", "and", "we", "asking", "about", "carefully,", "donations."],
+      },
+      {
+        target: "“If you're serious about this, Amir, I'll support you, but you'll need to handle most of the organizing yourselves,” he says.",
+        jumbled: ["handle", "need", "organizing", "but", "Amir,", "serious", "the", "most", "you're", "about", "yourselves,”", "of", "says.", "I'll", "he", "support", "you,", "you'll", "to", "this,", "“If"],
+      },
+      {
+        target: "I feel a mix of excitement and nervousness, since neither of us has organized something like this before.",
+        jumbled: ["of", "this", "feel", "I", "like", "excitement", "since", "before.", "a", "and", "organized", "has", "of", "nervousness,", "something", "us", "neither", "mix"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about asking someone for permission to do something.",
     mySentenceExample: "I asked my teacher for permission to start a school club.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Their plan feels completely unclear by the end.", answer: false },
     ],
     buildSentence: [
-      { target: "We decide on a talent show.", jumbled: ["decide", "on", "We", "a", "talent", "show."] },
-      { target: "We divide our tasks carefully.", jumbled: ["divide", "our", "We", "tasks", "carefully."] },
-      { target: "Our plan finally feels solid now.", jumbled: ["Our", "plan", "finally", "feels", "solid", "now."] },
-      { target: "We've never organized an event this large.", jumbled: ["We've", "never", "organized", "an", "event", "this", "large."] },
-      { target: "Although we've never done this, our plan feels solid.", jumbled: ["Although", "we've", "never", "done", "this,", "our", "plan", "feels", "solid."] },
+      {
+        target: "That weekend, Lena and I meet to brainstorm what kind of fundraiser would actually work for our school.",
+        jumbled: ["for", "Lena", "meet", "brainstorm", "and", "our", "kind", "weekend,", "of", "work", "what", "school.", "to", "fundraiser", "That", "I", "actually", "would"],
+      },
+      {
+        target: "We consider a bake sale, but Lena points out that several clubs already do that every semester.",
+        jumbled: ["consider", "points", "that", "semester.", "out", "a", "do", "several", "sale,", "already", "We", "bake", "every", "clubs", "Lena", "that", "but"],
+      },
+      {
+        target: "We figure the excitement might attract more donations than a simple sale would.",
+        jumbled: ["excitement", "more", "sale", "attract", "donations", "figure", "a", "the", "than", "might", "simple", "We", "would."],
+      },
+      {
+        target: "We divide our tasks carefully: I'll handle the venue and equipment, while Lena manages sign-ups and publicity.",
+        jumbled: ["our", "divide", "I'll", "publicity.", "the", "We", "tasks", "and", "handle", "and", "carefully:", "equipment,", "manages", "sign-ups", "while", "venue", "Lena"],
+      },
+      {
+        target: "By the end of our meeting, our sticky-note wall looks chaotic, but our plan finally feels solid.",
+        jumbled: ["our", "our", "plan", "solid.", "By", "our", "looks", "the", "meeting,", "chaotic,", "end", "sticky-note", "finally", "feels", "of", "but", "wall"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about dividing tasks with someone on a project.",
     mySentenceExample: "We divided our tasks so each person handled a different part.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Amir and Lena feel unsurprised by the response.", answer: false },
     ],
     buildSentence: [
-      { target: "I design and print flyers.", jumbled: ["design", "and", "I", "print", "flyers."] },
-      { target: "Five acts sign up already.", jumbled: ["Five", "acts", "sign", "up", "already."] },
-      { target: "This honestly surprises us both.", jumbled: ["This", "honestly", "surprises", "us", "both."] },
-      { target: "We spread the word throughout school.", jumbled: ["We", "spread", "the", "word", "throughout", "school."] },
-      { target: "Some students seemed enthusiastic while others ignored it.", jumbled: ["Some", "students", "seemed", "enthusiastic", "while", "others", "ignored", "it."] },
+      {
+        target: "With our plan set, Lena and I spend the next week spreading the word throughout school as widely as possible.",
+        jumbled: ["the", "as", "possible.", "Lena", "next", "word", "our", "and", "set,", "spreading", "week", "plan", "spend", "With", "throughout", "widely", "I", "school", "as", "the"],
+      },
+      {
+        target: "I design and print flyers, hanging them near the cafeteria, gym, and main entrance where everyone passes daily.",
+        jumbled: ["and", "passes", "daily.", "everyone", "gym,", "them", "design", "cafeteria,", "entrance", "the", "print", "and", "flyers,", "near", "hanging", "main", "I", "where"],
+      },
+      {
+        target: "Lena creates a sign-up sheet online and shares it through every class group chat she can access.",
+        jumbled: ["it", "she", "a", "sign-up", "every", "chat", "online", "group", "and", "Lena", "class", "access.", "sheet", "shares", "creates", "can", "through"],
+      },
+      {
+        target: "Some students seem enthusiastic immediately, while others walk past our flyers without even glancing at them.",
+        jumbled: ["immediately,", "walk", "flyers", "Some", "glancing", "seem", "past", "our", "students", "at", "while", "them.", "others", "without", "even", "enthusiastic"],
+      },
+      {
+        target: "Despite the mixed reactions, five acts sign up within just the first two days, which honestly surprises us both.",
+        jumbled: ["the", "us", "five", "both.", "first", "Despite", "the", "two", "sign", "up", "mixed", "within", "days,", "surprises", "acts", "just", "reactions,", "honestly", "which"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about spreading the word about an event or cause.",
     mySentenceExample: "I spread the word about our fundraiser through social media.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Lena stays remarkably calm about the situation.", answer: true },
     ],
     buildSentence: [
-      { target: "Panic rushes through me.", jumbled: ["rushes", "through", "Panic", "me."] },
-      { target: "She stays remarkably calm today.", jumbled: ["She", "stays", "remarkably", "calm", "today."] },
-      { target: "I call Lena right away.", jumbled: ["call", "Lena", "I", "right", "away."] },
-      { target: "This seems like exactly what we need.", jumbled: ["This", "seems", "like", "exactly", "what", "we", "need."] },
-      { target: "If we cancel now, all our momentum would disappear.", jumbled: ["If", "we", "cancel", "now,", "all", "our", "momentum", "would", "disappear."] },
+      {
+        target: "Ten days before the show, I receive a message that the gym has been double-booked for a sports event instead.",
+        jumbled: ["days", "double-booked", "that", "event", "gym", "before", "message", "I", "instead.", "for", "Ten", "the", "show,", "the", "a", "has", "been", "a", "sports", "receive"],
+      },
+      {
+        target: "Panic rushes through me immediately, since we had already promised performers a specific date and location.",
+        jumbled: ["Panic", "through", "date", "already", "rushes", "since", "had", "we", "immediately,", "location.", "performers", "specific", "and", "promised", "me", "a"],
+      },
+      {
+        target: "All the momentum we've built over the past week would completely disappear.",
+        jumbled: ["disappear.", "built", "past", "we've", "the", "All", "completely", "momentum", "week", "the", "over", "would"],
+      },
+      {
+        target: "I call Lena right away, and although she sounds worried too, she stays remarkably calm about the situation.",
+        jumbled: ["although", "call", "too,", "I", "situation.", "remarkably", "she", "the", "worried", "about", "stays", "calm", "she", "right", "sounds", "Lena", "and", "away,"],
+      },
+      {
+        target: "I hadn't even considered that option, but suddenly it seems like exactly the solution we desperately need.",
+        jumbled: ["considered", "we", "even", "hadn't", "like", "but", "I", "seems", "solution", "desperately", "it", "exactly", "that", "need.", "the", "option,", "suddenly"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm during an unexpected problem.",
     mySentenceExample: "I stayed calm when my plan suddenly changed at the last minute.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Their new plan feels weaker than before.", answer: false },
     ],
     buildSentence: [
-      { target: "We measure the space together.", jumbled: ["measure", "the", "We", "space", "together."] },
-      { target: "Nobody drops out, surprisingly.", jumbled: ["Nobody", "drops", "out,", "surprisingly."] },
-      { target: "Lena redesigns the seating chart.", jumbled: ["Lena", "redesigns", "the", "seating", "chart."] },
-      { target: "This brings us closer as partners.", jumbled: ["This", "brings", "us", "closer", "as", "partners."] },
-      { target: "Working through this together brings us closer as partners.", jumbled: ["Working", "through", "this", "together", "brings", "us", "closer", "as", "partners."] },
+      {
+        target: "Mr. Okafor agrees the cafeteria could work, though it means rearranging our entire setup completely from scratch.",
+        jumbled: ["rearranging", "Okafor", "it", "agrees", "Mr.", "our", "work,", "could", "cafeteria", "entire", "though", "scratch.", "completely", "setup", "means", "the", "from"],
+      },
+      {
+        target: "Together, we measure the space and realize we'll need a smaller stage than originally planned for the gym.",
+        jumbled: ["we'll", "and", "for", "measure", "space", "we", "originally", "planned", "need", "the", "the", "smaller", "a", "stage", "than", "realize", "Together,", "gym."],
+      },
+      {
+        target: "Lena redesigns the seating chart while I contact each performer to explain the sudden change of venue.",
+        jumbled: ["the", "contact", "performer", "each", "chart", "sudden", "to", "I", "of", "while", "redesigns", "venue.", "Lena", "the", "explain", "change", "seating"],
+      },
+      {
+        target: "Working through this setback together, rather than separately, actually brings Lena and me closer as genuine partners.",
+        jumbled: ["than", "genuine", "as", "rather", "me", "closer", "together,", "setback", "Working", "actually", "and", "partners.", "brings", "Lena", "separately,", "through", "this"],
+      },
+      {
+        target: "By the end of the day, exhausted but relieved, our new plan feels even more solid than before.",
+        jumbled: ["than", "day,", "before.", "but", "even", "end", "more", "exhausted", "the", "relieved,", "new", "the", "By", "of", "our", "plan", "feels", "solid"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about overcoming a setback together with someone.",
     mySentenceExample: "We overcame a setback together when our project plan changed suddenly.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Amir sleeps peacefully without any trouble.", answer: false },
     ],
     buildSentence: [
-      { target: "I lie awake tonight.", jumbled: ["lie", "awake", "I", "tonight."] },
-      { target: "My mind refuses to listen.", jumbled: ["mind", "refuses", "My", "to", "listen."] },
-      { target: "I review our checklist again.", jumbled: ["review", "our", "I", "checklist", "again."] },
-      { target: "Exhaustion wins over anxiety eventually.", jumbled: ["Exhaustion", "wins", "over", "anxiety", "eventually."] },
-      { target: "This should feel more comforting than it currently does.", jumbled: ["This", "should", "feel", "more", "comforting", "than", "it", "currently", "does."] },
+      {
+        target: "The night before the fundraiser, I lie awake, running through every possible thing that could go wrong tomorrow.",
+        jumbled: ["every", "awake,", "running", "night", "thing", "lie", "I", "through", "fundraiser,", "possible", "The", "wrong", "tomorrow.", "before", "the", "could", "that", "go"],
+      },
+      {
+        target: "What if not enough people show up, or what if the sound equipment fails during a performance?",
+        jumbled: ["up,", "the", "show", "if", "if", "what", "not", "fails", "performance?", "equipment", "What", "during", "or", "sound", "enough", "a", "people"],
+      },
+      {
+        target: "Lena had told me earlier, “Worrying won't change anything, Amir,” but my mind refuses to listen right now.",
+        jumbled: ["refuses", "had", "change", "right", "mind", "my", "anything,", "earlier,", "told", "now.", "listen", "Amir,”", "to", "but", "“Worrying", "me", "Lena", "won't"],
+      },
+      {
+        target: "I finally get up and review our checklist one more time, just to reassure myself everything is actually ready.",
+        jumbled: ["checklist", "finally", "to", "everything", "actually", "ready.", "get", "myself", "more", "review", "reassure", "I", "is", "one", "just", "up", "time,", "our", "and"],
+      },
+      {
+        target: "Ticket sales have already covered nearly half our fundraising goal, which should feel more comforting than it currently does.",
+        jumbled: ["have", "nearly", "feel", "our", "goal,", "half", "which", "currently", "Ticket", "comforting", "sales", "more", "it", "should", "fundraising", "than", "already", "covered", "does."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a night before an important event when you couldn't sleep well.",
     mySentenceExample: "I couldn't sleep well the night before my big exam.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Amir feels nothing watching it all come together.", answer: false },
     ],
     buildSentence: [
-      { target: "Students begin arriving steadily.", jumbled: ["Students", "begin", "arriving", "steadily."] },
-      { target: "My nervousness slowly starts fading.", jumbled: ["My", "nervousness", "slowly", "starts", "fading."] },
-      { target: "The room erupts into applause.", jumbled: ["room", "erupts", "The", "into", "applause."] },
-      { target: "This feels genuinely overwhelming in the best way.", jumbled: ["This", "feels", "genuinely", "overwhelming", "in", "the", "best", "way."] },
-      { target: "Watching this come together after weeks of planning feels overwhelming.", jumbled: ["Watching", "this", "come", "together", "after", "weeks", "of", "planning", "feels", "overwhelming."] },
+      {
+        target: "By six o'clock, the cafeteria looks completely transformed, with string lights and a small handmade stage in the corner.",
+        jumbled: ["the", "in", "with", "string", "a", "small", "the", "completely", "and", "By", "looks", "cafeteria", "lights", "stage", "transformed,", "corner.", "o'clock,", "six", "handmade"],
+      },
+      {
+        target: "Students begin arriving steadily, and within twenty minutes, nearly every seat has someone sitting in it.",
+        jumbled: ["begin", "nearly", "steadily,", "twenty", "in", "minutes,", "seat", "has", "within", "arriving", "every", "Students", "it.", "and", "sitting", "someone"],
+      },
+      {
+        target: "The room erupts into supportive applause, and my nervousness slowly starts fading.",
+        jumbled: ["The", "and", "slowly", "erupts", "into", "applause,", "fading.", "starts", "my", "room", "nervousness", "supportive"],
+      },
+      {
+        target: "Performance after performance goes smoothly, each one met with genuine enthusiasm from the packed, energetic crowd.",
+        jumbled: ["packed,", "after", "performance", "each", "one", "genuine", "Performance", "goes", "crowd.", "with", "enthusiasm", "the", "energetic", "from", "smoothly,", "met"],
+      },
+      {
+        target: "Watching everything come together after weeks of planning feels genuinely overwhelming, in the best possible way.",
+        jumbled: ["together", "planning", "everything", "feels", "the", "Watching", "after", "overwhelming,", "weeks", "best", "possible", "of", "genuinely", "way.", "come", "in"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about watching something you planned finally come together.",
     mySentenceExample: "Watching our project come together after weeks of work felt amazing.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "They plan to present the total tomorrow.", answer: true },
     ],
     buildSentence: [
-      { target: "We count everything tonight.", jumbled: ["count", "everything", "We", "tonight."] },
-      { target: "We actually did this, she says.", jumbled: ["actually", "did", "We", "this,", "she", "says."] },
-      { target: "We simply celebrate quietly together.", jumbled: ["We", "simply", "celebrate", "quietly", "together."] },
-      { target: "This adds up to more than we expected.", jumbled: ["This", "adds", "up", "to", "more", "than", "we", "expected."] },
-      { target: "Both of us were too stunned to speak for a moment.", jumbled: ["Both", "of", "us", "were", "too", "stunned", "to", "speak", "for", "a", "moment."] },
+      {
+        target: "Lena and I sit down to count everything we raised tonight.",
+        jumbled: ["to", "and", "Lena", "count", "I", "tonight.", "raised", "sit", "we", "down", "everything"],
+      },
+      {
+        target: "Ticket sales, plus a few generous extra donations, add up to more money than either of us had honestly expected.",
+        jumbled: ["than", "either", "expected.", "Ticket", "of", "us", "money", "generous", "sales,", "to", "donations,", "up", "extra", "had", "honestly", "few", "more", "a", "add", "plus"],
+      },
+      {
+        target: "We look at each other, both too stunned to speak for a moment.",
+        jumbled: ["look", "to", "for", "a", "stunned", "moment.", "each", "at", "too", "speak", "We", "other,", "both"],
+      },
+      {
+        target: "“We actually did this, Amir,” Lena finally says, her voice filled with disbelief and quiet pride.",
+        jumbled: ["says,", "her", "and", "disbelief", "this,", "voice", "did", "“We", "actually", "filled", "pride.", "quiet", "Lena", "with", "Amir,”", "finally"],
+      },
+      {
+        target: "Tomorrow, we'll present the total to Mr. Okafor and the librarian, but tonight, we simply celebrate quietly together.",
+        jumbled: ["librarian,", "Okafor", "present", "simply", "we'll", "tonight,", "quietly", "the", "Tomorrow,", "to", "Mr.", "we", "together.", "total", "but", "celebrate", "and", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a moment when hard work finally paid off.",
     mySentenceExample: "My hard work finally paid off when I saw my final grade.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Amir regrets mentioning the torn pages to Lena.", answer: false },
     ],
     buildSentence: [
-      { target: "New books arrive at the library.", jumbled: ["New", "books", "arrive", "at", "the", "library."] },
-      { target: "This feels even more satisfying.", jumbled: ["This", "feels", "even", "more", "satisfying."] },
-      { target: "The librarian nearly cries seeing this.", jumbled: ["The", "librarian", "nearly", "cries", "seeing", "this."] },
-      { target: "I never expected this to become so meaningful.", jumbled: ["I", "never", "expected", "this", "to", "become", "so", "meaningful."] },
-      { target: "If I hadn't mentioned it, none of this would have happened.", jumbled: ["If", "I", "hadn't", "mentioned", "it,", "none", "of", "this", "would", "have", "happened."] },
+      {
+        target: "Two weeks later, boxes of brand-new books arrive at the library, purchased entirely with the money we raised together.",
+        jumbled: ["with", "at", "weeks", "together.", "we", "arrive", "library,", "brand-new", "boxes", "entirely", "later,", "of", "the", "raised", "the", "books", "Two", "purchased", "money"],
+      },
+      {
+        target: "The librarian nearly cries when she sees the collection, thanking Amir and Lena repeatedly for their thoughtful effort.",
+        jumbled: ["and", "Amir", "she", "cries", "effort.", "sees", "thoughtful", "the", "thanking", "collection,", "when", "for", "Lena", "their", "repeatedly", "The", "librarian", "nearly"],
+      },
+      {
+        target: "Helping unpack and shelve the books feels even more satisfying than the fundraiser night itself somehow.",
+        jumbled: ["than", "feels", "the", "the", "somehow.", "unpack", "Helping", "fundraiser", "night", "more", "itself", "books", "satisfying", "and", "even", "shelve"],
+      },
+      {
+        target: "Several classmates who attended the show now stop by regularly, asking when the next fundraiser might happen.",
+        jumbled: ["show", "classmates", "when", "attended", "might", "the", "stop", "who", "Several", "by", "next", "fundraiser", "asking", "regularly,", "the", "happen.", "now"],
+      },
+      {
+        target: "None of this would have happened at all.",
+        jumbled: ["this", "have", "at", "happened", "None", "all.", "of", "would"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small action that led to a bigger, meaningful result.",
     mySentenceExample: "A small idea I shared led to a meaningful project at my school.",

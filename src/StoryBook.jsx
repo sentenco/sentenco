@@ -197,6 +197,7 @@ function BuildSentencePage({ chapter, index }) {
 
   const correctLen = correctPrefixLength(built);
   const isComplete = built.length === words.length && correctLen === words.length;
+  const isWrong = popup?.kind === "check" && !popup.correct && popup.wrongTail.length > 0;
 
   async function copySentence() {
     try {
@@ -281,7 +282,7 @@ function BuildSentencePage({ chapter, index }) {
         Build-a-Sentence <span className="sb-page-title-sub">({index + 1} of {chapter.buildSentence.length})</span>
       </h3>
       <p className="sb-page-hint">Tap the words in the correct order to build a sentence from the story.</p>
-      <div className={`sb-build-row ${isComplete ? "is-correct" : ""}`}>
+      <div className={`sb-build-row ${isComplete ? "is-correct" : ""} ${isWrong ? "is-wrong" : ""}`}>
         {built.length === 0 && <span className="sb-build-empty">Tap words below to start building…</span>}
         {built.map((w) => (
           <button type="button" key={w.id} className="sb-word-chip sb-word-chip--built" onClick={() => tapBuilt(w)}>
@@ -1115,9 +1116,9 @@ const CSS = `
 
 /* ── Check/Hint popup ── */
 .sb-popup-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(27,42,74,0.6);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;

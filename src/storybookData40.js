@@ -42,11 +42,26 @@ export const CHAPTERS = [
       { text: "Isaac decides to simply visit the shelter first.", answer: true },
     ],
     buildSentence: [
-      { target: "This stays with me.", jumbled: ["stays", "with", "This", "me."] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "I", "deep", "breath."] },
-      { target: "I research the responsibilities carefully.", jumbled: ["research", "the", "I", "responsibilities", "carefully."] },
-      { target: "My evenings feel genuinely lonely now.", jumbled: ["My", "evenings", "feel", "genuinely", "lonely", "now."] },
-      { target: "I decide to simply visit the shelter without promising anything.", jumbled: ["I", "decide", "to", "simply", "visit", "the", "shelter", "without", "promising", "anything."] },
+      {
+        target: "The quiet evenings gradually start feeling less peaceful and more genuinely lonely than I expected.",
+        jumbled: ["feeling", "lonely", "and", "start", "quiet", "genuinely", "less", "than", "The", "expected.", "evenings", "I", "peaceful", "gradually", "more"],
+      },
+      {
+        target: "A coworker mentions volunteering at the local animal shelter, and something about the idea of adopting a rescue dog stays with me for weeks afterward.",
+        jumbled: ["mentions", "shelter,", "for", "adopting", "animal", "the", "A", "about", "afterward.", "weeks", "me", "at", "stays", "local", "something", "coworker", "volunteering", "the", "idea", "dog", "with", "a", "and", "rescue", "of"],
+      },
+      {
+        target: "I research the responsibilities carefully, saving my notes in a file I title “Isaac's Adoption Checklist,” considering the time, cost, and commitment involved before making any final decision.",
+        jumbled: ["research", "final", "involved", "file", "the", "and", "any", "my", "“Isaac's", "I", "carefully,", "Adoption", "saving", "a", "commitment", "title", "I", "considering", "the", "before", "decision.", "time,", "making", "responsibilities", "Checklist,”", "in", "cost,", "notes"],
+      },
+      {
+        target: "Finally, one Saturday morning, I decide to simply visit the shelter, without promising myself anything beyond just looking.",
+        jumbled: ["Finally,", "looking.", "promising", "beyond", "the", "shelter,", "simply", "anything", "Saturday", "one", "myself", "morning,", "I", "decide", "just", "without", "visit", "to"],
+      },
+      {
+        target: "Standing outside the entrance, I take a deep breath before stepping through the door.",
+        jumbled: ["a", "stepping", "through", "deep", "outside", "I", "before", "entrance,", "the", "breath", "take", "the", "door.", "Standing"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a decision you thought about carefully before making.",
     mySentenceExample: "I thought carefully before deciding to change my career.",
@@ -71,11 +86,26 @@ export const CHAPTERS = [
       { text: "Isaac feels no interest in Ranger at all.", answer: false },
     ],
     buildSentence: [
-      { target: "That's Ranger, honestly.", jumbled: ["is", "Ranger,", "That's", "honestly."] },
-      { target: "He needs someone genuinely patient.", jumbled: ["He", "needs", "someone", "genuinely", "patient."] },
-      { target: "I feel strangely drawn toward him.", jumbled: ["feel", "strangely", "I", "drawn", "toward", "him."] },
-      { target: "He sits quietly in the back corner.", jumbled: ["He", "sits", "quietly", "in", "the", "back", "corner."] },
-      { target: "His shyness makes him harder to place here.", jumbled: ["His", "shyness", "makes", "him", "harder", "to", "place", "here."] },
+      {
+        target: "Ms. Alvarado, a shelter volunteer, walks me past rows of eager, tail-wagging dogs, each one jumping excitedly against their kennel doors.",
+        jumbled: ["past", "excitedly", "kennel", "eager,", "a", "against", "each", "Ms.", "their", "walks", "one", "shelter", "of", "me", "tail-wagging", "doors.", "Alvarado,", "jumping", "dogs,", "rows", "volunteer,"],
+      },
+      {
+        target: "One dog, however, sits quietly in the back corner of his kennel, barely lifting his head as I approach curiously.",
+        jumbled: ["quietly", "dog,", "One", "however,", "head", "approach", "lifting", "back", "as", "of", "I", "the", "in", "sits", "curiously.", "corner", "his", "kennel,", "barely", "his"],
+      },
+      {
+        target: "“That's Ranger, Isaac. He's been here longer than most, honestly, because his shyness makes him harder to place,” she explains softly.",
+        jumbled: ["explains", "longer", "here", "she", "makes", "Ranger,", "than", "softly.", "“That's", "Isaac.", "been", "place,”", "harder", "to", "because", "him", "most,", "He's", "shyness", "honestly,", "his"],
+      },
+      {
+        target: "Something about his cautious, watchful eyes stops me completely, unlike the more obviously excitable dogs surrounding him.",
+        jumbled: ["more", "Something", "unlike", "me", "cautious,", "his", "dogs", "about", "the", "watchful", "eyes", "him.", "obviously", "excitable", "completely,", "stops", "surrounding"],
+      },
+      {
+        target: "Despite every practical instinct suggesting an easier dog, I feel strangely drawn toward him.",
+        jumbled: ["practical", "dog,", "easier", "him.", "I", "feel", "drawn", "toward", "instinct", "every", "strangely", "Despite", "suggesting", "an"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being drawn to something or someone unexpected.",
     mySentenceExample: "I felt drawn to a quiet student who needed extra encouragement.",
@@ -100,11 +130,26 @@ export const CHAPTERS = [
       { text: "Ranger eats and drinks normally on the first evening.", answer: false },
     ],
     buildSentence: [
-      { target: "He hesitates immediately today.", jumbled: ["hesitates", "immediately", "He", "today."] },
-      { target: "I sit down quietly nearby.", jumbled: ["sit", "down", "I", "quietly", "nearby."] },
-      { target: "Ranger explores cautiously around him.", jumbled: ["Ranger", "explores", "cautiously", "around", "him."] },
-      { target: "He retreats completely under my bed.", jumbled: ["He", "retreats", "completely", "under", "my", "bed."] },
-      { target: "I give him space rather than forcing interaction.", jumbled: ["I", "give", "him", "space", "rather", "than", "forcing", "interaction."] },
+      {
+        target: "I carefully lead Ranger through my apartment door, unsure exactly what to expect from this next chapter.",
+        jumbled: ["to", "Ranger", "apartment", "this", "exactly", "lead", "unsure", "door,", "I", "through", "expect", "chapter.", "what", "from", "my", "next", "carefully"],
+      },
+      {
+        target: "He hesitates immediately at the threshold, pressing his body against the wall, tail tucked low between his legs nervously.",
+        jumbled: ["his", "his", "tucked", "hesitates", "tail", "at", "between", "body", "pressing", "the", "He", "against", "the", "immediately", "legs", "wall,", "low", "threshold,", "nervously."],
+      },
+      {
+        target: "I sit down quietly on the floor nearby.",
+        jumbled: ["the", "quietly", "floor", "on", "down", "I", "sit", "nearby."],
+      },
+      {
+        target: "“Slow down, Isaac, let him come to you,” I tell myself, giving him space rather than forcing any immediate interaction he clearly isn't ready for yet.",
+        jumbled: ["ready", "him", "come", "any", "tell", "giving", "forcing", "myself,", "you,”", "yet.", "“Slow", "immediate", "clearly", "I", "to", "interaction", "he", "space", "let", "him", "Isaac,", "for", "than", "down,", "rather", "isn't"],
+      },
+      {
+        target: "By evening, he retreats completely under my bed, refusing both food and water despite my gentle, repeated attempts.",
+        jumbled: ["refusing", "completely", "both", "food", "my", "my", "By", "repeated", "water", "gentle,", "retreats", "and", "evening,", "attempts.", "he", "bed,", "under", "despite"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about giving someone or something space and time to adjust.",
     mySentenceExample: "I gave my new coworker space and time to adjust to the office.",
@@ -129,11 +174,26 @@ export const CHAPTERS = [
       { text: "Isaac forces direct contact to speed things up.", answer: false },
     ],
     buildSentence: [
-      { target: "This is common, honestly.", jumbled: ["is", "common,", "This", "honestly."] },
-      { target: "These changes feel disproportionately significant.", jumbled: ["These", "changes", "feel", "disproportionately", "significant."] },
-      { target: "I never force direct contact.", jumbled: ["never", "force", "I", "direct", "contact."] },
-      { target: "Ranger only eats when unwatched.", jumbled: ["Ranger", "only", "eats", "when", "unwatched."] },
-      { target: "Each one represents genuine, hard-won progress.", jumbled: ["Each", "one", "represents", "genuine,", "hard-won", "progress."] },
+      {
+        target: "For several days, Ranger only eats when he believes I'm not watching, sneaking cautiously toward his bowl whenever I step into another room.",
+        jumbled: ["Ranger", "only", "his", "several", "he", "when", "into", "step", "For", "another", "cautiously", "believes", "not", "sneaking", "days,", "whenever", "toward", "eats", "watching,", "I", "room.", "I'm", "bowl"],
+      },
+      {
+        target: "Rather than feeling discouraged, I read that this behavior is common among rescue dogs adjusting slowly to unfamiliar surroundings and people.",
+        jumbled: ["behavior", "discouraged,", "to", "common", "adjusting", "surroundings", "among", "read", "unfamiliar", "rescue", "is", "this", "than", "Rather", "dogs", "slowly", "people.", "and", "feeling", "that", "I"],
+      },
+      {
+        target: "I begin keeping a small notebook, headed “Isaac's Patience Log,” and start leaving small treats scattered gently near wherever he chooses to rest, never forcing direct contact or demanding immediate affection from him.",
+        jumbled: ["keeping", "notebook,", "scattered", "“Isaac's", "Log,”", "gently", "headed", "a", "I", "and", "to", "contact", "demanding", "rest,", "wherever", "immediate", "him.", "chooses", "treats", "from", "Patience", "he", "direct", "affection", "small", "near", "forcing", "small", "begin", "or", "never", "start", "leaving"],
+      },
+      {
+        target: "Gradually, he starts eating while I sit quietly nearby, no longer requiring complete privacy for something as simple as a meal.",
+        jumbled: ["for", "eating", "a", "longer", "nearby,", "complete", "as", "I", "as", "starts", "Gradually,", "privacy", "while", "he", "simple", "no", "sit", "meal.", "something", "quietly", "requiring"],
+      },
+      {
+        target: "These tiny, incremental changes feel disproportionately significant, each one representing genuine, hard-won progress.",
+        jumbled: ["significant,", "feel", "representing", "tiny,", "changes", "These", "each", "disproportionately", "progress.", "hard-won", "one", "incremental", "genuine,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small sign of progress that meant a lot to you.",
     mySentenceExample: "A small sign of progress meant a lot when I finally understood a hard lesson.",
@@ -158,11 +218,26 @@ export const CHAPTERS = [
       { text: "Isaac feels no doubt about the adoption at all.", answer: false },
     ],
     buildSentence: [
-      { target: "Ranger completely panics tonight.", jumbled: ["completely", "panics", "Ranger", "tonight."] },
-      { target: "I sit on the floor.", jumbled: ["sit", "on", "I", "the", "floor."] },
-      { target: "He bolts immediately under the bed.", jumbled: ["He", "bolts", "immediately", "under", "the", "bed."] },
-      { target: "I feel exhausted and discouraged now.", jumbled: ["I", "feel", "exhausted", "and", "discouraged", "now."] },
-      { target: "I wonder if adopting him was genuinely selfish.", jumbled: ["I", "wonder", "if", "adopting", "him", "was", "genuinely", "selfish."] },
+      {
+        target: "Three weeks into our slow progress, a sudden, violent thunderstorm rolls through the city late one night, and Ranger completely panics at the noise.",
+        jumbled: ["a", "panics", "the", "night,", "thunderstorm", "weeks", "violent", "sudden,", "city", "slow", "into", "one", "noise.", "through", "our", "the", "completely", "Ranger", "and", "Three", "progress,", "rolls", "at", "late"],
+      },
+      {
+        target: "He bolts immediately under my bed, shaking uncontrollably, refusing to come out despite my gentle, worried coaxing for nearly an hour.",
+        jumbled: ["worried", "bed,", "shaking", "come", "refusing", "nearly", "uncontrollably,", "hour.", "out", "to", "despite", "bolts", "coaxing", "an", "for", "my", "He", "my", "immediately", "gentle,", "under"],
+      },
+      {
+        target: "Watching him regress so completely after weeks of careful progress leaves me questioning whether I'm actually equipped to help an animal with this much fear.",
+        jumbled: ["this", "Watching", "him", "weeks", "me", "I'm", "of", "to", "equipped", "whether", "much", "help", "careful", "an", "actually", "so", "progress", "questioning", "with", "regress", "leaves", "completely", "after", "fear.", "animal"],
+      },
+      {
+        target: "I wonder briefly if adopting him was genuinely selfish, prioritizing my own loneliness over what might actually be best for him.",
+        jumbled: ["genuinely", "might", "selfish,", "adopting", "him.", "for", "was", "own", "actually", "loneliness", "prioritizing", "briefly", "best", "I", "over", "wonder", "him", "my", "what", "be", "if"],
+      },
+      {
+        target: "Exhausted and discouraged, I whisper, “Get it together, Isaac,” before finally sitting on the floor beside the bed, simply waiting quietly.",
+        jumbled: ["floor", "sitting", "finally", "Exhausted", "beside", "it", "simply", "I", "before", "Isaac,”", "bed,", "the", "on", "discouraged,", "and", "whisper,", "together,", "waiting", "the", "quietly.", "“Get"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a moment of doubt during a difficult process.",
     mySentenceExample: "I felt doubt during a difficult process of learning a new skill.",
@@ -187,11 +262,26 @@ export const CHAPTERS = [
       { text: "Ranger stays exactly the same distance away every evening.", answer: false },
     ],
     buildSentence: [
-      { target: "I call Ms. Alvarado today.", jumbled: ["call", "Ms.", "I", "Alvarado", "today."] },
-      { target: "This is completely normal, honestly.", jumbled: ["is", "completely", "This", "normal,", "honestly."] },
-      { target: "I spend evenings quietly reading.", jumbled: ["spend", "evenings", "I", "quietly", "reading."] },
-      { target: "He rests slightly closer each evening.", jumbled: ["He", "rests", "slightly", "closer", "each", "evening."] },
-      { target: "She reassures me this isn't a sign of failure.", jumbled: ["She", "reassures", "me", "this", "isn't", "a", "sign", "of", "failure."] },
+      {
+        target: "The next morning, I call Ms. Alvarado, explaining my discouragement and genuine uncertainty about handling setbacks like the previous night's storm.",
+        jumbled: ["like", "handling", "and", "the", "storm.", "explaining", "my", "morning,", "I", "about", "discouragement", "setbacks", "Ms.", "next", "The", "night's", "previous", "genuine", "call", "Alvarado,", "uncertainty"],
+      },
+      {
+        target: "“Isaac, this is completely normal for a traumatized rescue animal,” she reassures me calmly, explaining that regression after progress is not a sign of my failure whatsoever.",
+        jumbled: ["traumatized", "a", "this", "me", "animal,”", "progress", "“Isaac,", "sign", "rescue", "normal", "is", "she", "not", "that", "a", "explaining", "failure", "calmly,", "of", "completely", "regression", "after", "reassures", "for", "whatsoever.", "is", "my"],
+      },
+      {
+        target: "She recommends simply existing calmly near Ranger daily, without demanding anything, letting him choose when and how to approach me instead.",
+        jumbled: ["and", "to", "approach", "how", "existing", "instead.", "letting", "me", "near", "when", "him", "choose", "daily,", "anything,", "without", "simply", "recommends", "Ranger", "demanding", "calmly", "She"],
+      },
+      {
+        target: "Following her advice, I spend evenings quietly reading nearby, deliberately ignoring him rather than seeking constant interaction or reassurance from his direction.",
+        jumbled: ["him", "I", "ignoring", "her", "Following", "from", "constant", "spend", "reading", "seeking", "or", "evenings", "nearby,", "than", "deliberately", "quietly", "reassurance", "direction.", "rather", "advice,", "his", "interaction"],
+      },
+      {
+        target: "Slowly, over several days, I notice him resting slightly closer to me each evening.",
+        jumbled: ["evening.", "Slowly,", "over", "days,", "closer", "notice", "me", "each", "I", "to", "him", "slightly", "several", "resting"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about advice that helped you handle a setback.",
     mySentenceExample: "My friend's advice helped me handle a setback at my new job.",
@@ -216,11 +306,26 @@ export const CHAPTERS = [
       { text: "Isaac feels nothing significant about this moment.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart races with hope.", jumbled: ["races", "with", "My", "heart", "hope."] },
-      { target: "He walks slowly toward me.", jumbled: ["He", "walks", "slowly", "toward", "me."] },
-      { target: "Tears unexpectedly well up.", jumbled: ["unexpectedly", "well", "Tears", "up."] },
-      { target: "I remain perfectly still, resisting every urge.", jumbled: ["I", "remain", "perfectly", "still,", "resisting", "every", "urge."] },
-      { target: "This small, quiet moment feels genuinely monumental after weeks of waiting.", jumbled: ["This", "small,", "quiet", "moment", "feels", "genuinely", "monumental", "after", "weeks", "of", "waiting."] },
+      {
+        target: "One quiet evening, while reading on the living room floor exactly as Ms. Alvarado suggested, I notice Ranger stand and stretch from his usual resting spot.",
+        jumbled: ["I", "from", "reading", "while", "spot.", "Alvarado", "usual", "Ranger", "One", "suggested,", "stretch", "his", "evening,", "room", "stand", "the", "and", "exactly", "resting", "on", "quiet", "Ms.", "floor", "living", "notice", "as"],
+      },
+      {
+        target: "Instead of retreating toward the bedroom as expected, he walks slowly and deliberately across the living room, directly toward me.",
+        jumbled: ["of", "room,", "deliberately", "toward", "the", "the", "he", "slowly", "across", "as", "toward", "and", "walks", "living", "Instead", "retreating", "bedroom", "expected,", "directly", "me."],
+      },
+      {
+        target: "My heart races with cautious hope.",
+        jumbled: ["with", "races", "hope.", "My", "heart", "cautious"],
+      },
+      {
+        target: "“Stay still, Isaac,” I tell myself, remaining perfectly still and resisting every urge to reach toward him immediately.",
+        jumbled: ["“Stay", "remaining", "still", "every", "immediately.", "perfectly", "I", "reach", "resisting", "Isaac,”", "tell", "to", "toward", "urge", "and", "myself,", "still,", "him"],
+      },
+      {
+        target: "Ranger stops just inches away, sniffing my outstretched hand carefully before finally resting his head gently against my knee.",
+        jumbled: ["head", "before", "resting", "gently", "away,", "knee.", "outstretched", "against", "stops", "finally", "his", "carefully", "hand", "Ranger", "just", "my", "my", "sniffing", "inches"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small moment that felt surprisingly meaningful to you.",
     mySentenceExample: "A small moment felt surprisingly meaningful when my cat finally sat on my lap.",
@@ -245,11 +350,26 @@ export const CHAPTERS = [
       { text: "Ranger seems purely fearful the entire walk.", answer: false },
     ],
     buildSentence: [
-      { target: "This is our first walk.", jumbled: ["is", "our", "This", "first", "walk."] },
-      { target: "His posture relaxes noticeably now.", jumbled: ["His", "posture", "relaxes", "noticeably", "now."] },
-      { target: "His tail begins a slow wag.", jumbled: ["His", "tail", "begins", "a", "slow", "wag."] },
-      { target: "The unfamiliar sounds overwhelm him at first.", jumbled: ["The", "unfamiliar", "sounds", "overwhelm", "him", "at", "first."] },
-      { target: "Something in him seems lighter by the walk's end.", jumbled: ["Something", "in", "him", "seems", "lighter", "by", "the", "walk's", "end."] },
+      {
+        target: "Building on our newfound connection, I decide it's finally time to attempt our first proper walk together at the small park nearby.",
+        jumbled: ["it's", "proper", "to", "first", "I", "walk", "together", "park", "on", "connection,", "nearby.", "our", "at", "newfound", "time", "small", "decide", "our", "Building", "finally", "attempt", "the"],
+      },
+      {
+        target: "Ranger hesitates at the front door initially.",
+        jumbled: ["front", "door", "the", "Ranger", "initially.", "hesitates", "at"],
+      },
+      {
+        target: "“Easy does it, Isaac,” I remind myself, and with gentle encouragement and a favorite treat, he steps outside cautiously beside me.",
+        jumbled: ["outside", "does", "I", "Isaac,”", "“Easy", "cautiously", "myself,", "a", "and", "with", "me.", "treat,", "steps", "favorite", "gentle", "it,", "he", "and", "encouragement", "remind", "beside"],
+      },
+      {
+        target: "The unfamiliar sounds and smells clearly overwhelm him at first, his body tense and alert to every passing car or stranger nearby.",
+        jumbled: ["nearby.", "passing", "body", "clearly", "unfamiliar", "car", "first,", "tense", "and", "sounds", "to", "alert", "every", "him", "at", "or", "smells", "and", "stranger", "overwhelm", "his", "The"],
+      },
+      {
+        target: "Gradually, though, his posture relaxes noticeably, his tail beginning a slow, uncertain wag as we walk along a quiet path.",
+        jumbled: ["along", "uncertain", "slow,", "his", "walk", "though,", "as", "quiet", "posture", "we", "wag", "tail", "relaxes", "Gradually,", "noticeably,", "path.", "his", "a", "beginning", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about trying something new together with someone or something you care about.",
     mySentenceExample: "I tried hiking for the first time together with my new puppy.",
@@ -274,11 +394,26 @@ export const CHAPTERS = [
       { text: "Ms. Alvarado says this proves patience doesn't matter much.", answer: false },
     ],
     buildSentence: [
-      { target: "He greets me enthusiastically now.", jumbled: ["He", "greets", "me", "enthusiastically", "now."] },
-      { target: "This feels almost unrecognizable now.", jumbled: ["This", "feels", "almost", "unrecognizable", "now."] },
-      { target: "Ranger has transformed into a different dog.", jumbled: ["Ranger", "has", "transformed", "into", "a", "different", "dog."] },
-      { target: "She seems genuinely amazed by this transformation.", jumbled: ["She", "seems", "genuinely", "amazed", "by", "this", "transformation."] },
-      { target: "This is exactly why patience matters so much.", jumbled: ["This", "is", "exactly", "why", "patience", "matters", "so", "much."] },
+      {
+        target: "Three months after that first hesitant step through my apartment door, Ranger has transformed into an entirely different dog than the timid creature I originally brought home.",
+        jumbled: ["dog", "my", "home.", "originally", "that", "the", "Ranger", "apartment", "into", "Three", "timid", "step", "transformed", "has", "hesitant", "door,", "after", "first", "months", "entirely", "I", "an", "creature", "brought", "than", "through", "different"],
+      },
+      {
+        target: "He greets me enthusiastically now whenever I return, tail wagging vigorously, sometimes even bringing a favorite toy directly to my feet.",
+        jumbled: ["feet.", "directly", "greets", "sometimes", "enthusiastically", "toy", "vigorously,", "I", "me", "even", "wagging", "to", "whenever", "now", "return,", "a", "tail", "bringing", "He", "my", "favorite"],
+      },
+      {
+        target: "Watching him play freely, bounding playfully across the living room floor, feels almost unrecognizable compared to those first anxious days hiding beneath my bed.",
+        jumbled: ["across", "days", "playfully", "almost", "beneath", "floor,", "feels", "the", "hiding", "him", "living", "anxious", "Watching", "first", "to", "bed.", "my", "those", "play", "bounding", "freely,", "room", "compared", "unrecognizable"],
+      },
+      {
+        target: "Ms. Alvarado, visiting recently for a follow-up check, seems genuinely amazed by his remarkable transformation over such a relatively short period.",
+        jumbled: ["a", "check,", "visiting", "amazed", "such", "over", "period.", "recently", "by", "genuinely", "follow-up", "for", "his", "a", "short", "remarkable", "transformation", "Ms.", "Alvarado,", "seems", "relatively"],
+      },
+      {
+        target: "“This is exactly why patience matters so much, Isaac,” she says, smiling warmly at us both.",
+        jumbled: ["why", "so", "matters", "she", "much,", "us", "is", "warmly", "patience", "at", "“This", "both.", "smiling", "says,", "Isaac,”", "exactly"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a transformation you witnessed over time.",
     mySentenceExample: "I witnessed a transformation in my little brother's confidence over the school year.",
@@ -303,11 +438,26 @@ export const CHAPTERS = [
       { text: "Isaac feels nothing meaningful looking back on this journey.", answer: false },
     ],
     buildSentence: [
-      { target: "I smile contentedly now.", jumbled: ["smile", "contentedly", "I", "now."] },
-      { target: "Ranger shifts closer to me.", jumbled: ["Ranger", "shifts", "closer", "to", "me."] },
-      { target: "We healed something in each other.", jumbled: ["We", "healed", "something", "in", "each", "other."] },
-      { target: "My apartment no longer feels lonely.", jumbled: ["My", "apartment", "no", "longer", "feels", "lonely."] },
-      { target: "Consistent patience eventually builds something lasting and real.", jumbled: ["Consistent", "patience", "eventually", "builds", "something", "lasting", "and", "real."] },
+      {
+        target: "Sitting on my couch this evening, Ranger curled comfortably beside me, I reflect on everything these past few months have genuinely taught me about patience and trust.",
+        jumbled: ["everything", "genuinely", "past", "months", "reflect", "couch", "patience", "evening,", "curled", "this", "I", "my", "comfortably", "taught", "me", "me,", "have", "trust.", "and", "beside", "about", "on", "few", "on", "Sitting", "these", "Ranger"],
+      },
+      {
+        target: "Adopting him wasn't simply about curing my own loneliness, as I once worried during that difficult, doubtful night of the thunderstorm.",
+        jumbled: ["wasn't", "him", "that", "night", "difficult,", "loneliness,", "curing", "my", "I", "during", "thunderstorm.", "doubtful", "own", "as", "the", "once", "Adopting", "of", "worried", "simply", "about"],
+      },
+      {
+        target: "Instead, we healed something in each other gradually, learning together how consistent patience eventually builds something lasting and real.",
+        jumbled: ["each", "gradually,", "patience", "healed", "lasting", "something", "real.", "other", "eventually", "how", "learning", "consistent", "we", "Instead,", "in", "and", "together", "something", "builds"],
+      },
+      {
+        target: "My apartment no longer feels quiet in that lonely way it once did, filled instead with the comfortable presence of genuine companionship.",
+        jumbled: ["did,", "of", "with", "filled", "instead", "the", "companionship.", "it", "apartment", "presence", "longer", "lonely", "that", "no", "in", "once", "genuine", "way", "My", "quiet", "comfortable", "feels"],
+      },
+      {
+        target: "“We did it, Isaac,” I think quietly, and I smile contentedly.",
+        jumbled: ["“We", "I", "quietly,", "did", "and", "Isaac,”", "think", "it,", "I", "smile", "contentedly."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a relationship or bond that grew stronger through patience.",
     mySentenceExample: "My friendship grew stronger through patience during a difficult year.",

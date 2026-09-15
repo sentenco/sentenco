@@ -44,11 +44,26 @@ export const CHAPTERS = [
       { text: "Maya has already reviewed everything she needs.", answer: false },
     ],
     buildSentence: [
-      { target: "My stomach drops suddenly.", jumbled: ["drops", "suddenly.", "My", "stomach"] },
-      { target: "I feel behind already.", jumbled: ["feel", "behind", "I", "already."] },
-      { target: "The exam decides my grade.", jumbled: ["decides", "my", "The", "exam", "grade."] },
-      { target: "A quiet groan spreads across the room.", jumbled: ["spreads", "across", "A", "quiet", "groan", "the", "room."] },
-      { target: "Two weeks doesn't sound like nearly enough time.", jumbled: ["doesn't", "sound", "Two", "weeks", "like", "nearly", "enough", "time."] },
+      {
+        target: "On Monday morning, Mr. Cole walks into class and writes something on the whiteboard that makes my stomach drop: “Final Exam — Two Weeks.”",
+        jumbled: ["Weeks.”", "on", "Mr.", "walks", "—", "Cole", "Two", "stomach", "into", "class", "writes", "drop:", "my", "and", "something", "Exam", "“Final", "Monday", "makes", "whiteboard", "that", "the", "morning,", "On"],
+      },
+      {
+        target: "A quiet groan spreads across the room, and I feel my chest tighten with sudden panic.",
+        jumbled: ["room,", "spreads", "panic.", "and", "chest", "my", "tighten", "sudden", "with", "the", "feel", "across", "A", "quiet", "groan", "I"],
+      },
+      {
+        target: "“Okay, Maya, just breathe,” I whisper to myself.",
+        jumbled: ["whisper", "breathe,”", "to", "“Okay,", "myself.", "Maya,", "I", "just"],
+      },
+      {
+        target: "This exam covers three whole months of material, and honestly, I have barely reviewed any of it so far.",
+        jumbled: ["material,", "and", "barely", "reviewed", "three", "This", "of", "exam", "so", "have", "covers", "far.", "of", "any", "I", "months", "whole", "it", "honestly,"],
+      },
+      {
+        target: "Two weeks doesn't sound like nearly enough time to learn everything I need to know before this exam decides so much of my grade.",
+        jumbled: ["need", "to", "weeks", "nearly", "Two", "exam", "much", "know", "like", "time", "to", "doesn't", "learn", "sound", "my", "this", "before", "grade.", "everything", "decides", "enough", "so", "I", "of"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you found out about a big deadline.",
     mySentenceExample: "I felt nervous when I found out my project was due in three days.",
@@ -73,11 +88,26 @@ export const CHAPTERS = [
       { text: "Maya feels a small spark of hope.", answer: true },
     ],
     buildSentence: [
-      { target: "Jordan is very organized.", jumbled: ["is", "very", "Jordan", "organized."] },
-      { target: "We divide the days.", jumbled: ["divide", "the", "We", "days."] },
-      { target: "We could help each other.", jumbled: ["could", "help", "We", "each", "other."] },
-      { target: "Let's make a real plan.", jumbled: ["make", "a", "Let's", "real", "plan."] },
-      { target: "Writing everything down makes the material feel more manageable.", jumbled: ["makes", "the", "Writing", "everything", "down", "material", "feel", "more", "manageable."] },
+      {
+        target: "At lunch, I explain my panic to Jordan, who has always been much more organized than I am about schoolwork.",
+        jumbled: ["I", "has", "schoolwork.", "organized", "At", "panic", "explain", "about", "than", "my", "who", "lunch,", "much", "Jordan,", "been", "to", "more", "am", "always", "I"],
+      },
+      {
+        target: "“Let's make a real plan instead of just worrying, Maya,” Jordan suggests calmly, pulling out a notebook.",
+        jumbled: ["out", "Maya,”", "worrying,", "make", "just", "Jordan", "“Let's", "pulling", "a", "of", "a", "calmly,", "real", "plan", "instead", "suggests", "notebook."],
+      },
+      {
+        target: "We divide the fourteen days into sections, deciding which subject we will focus on each afternoon after school.",
+        jumbled: ["which", "sections,", "days", "divide", "the", "focus", "deciding", "We", "on", "afternoon", "after", "subject", "we", "will", "each", "fourteen", "into", "school."],
+      },
+      {
+        target: "Jordan even suggests studying together at the library, since we struggle with different topics and could actually help each other.",
+        jumbled: ["could", "we", "different", "struggle", "at", "together", "since", "with", "even", "and", "the", "actually", "each", "other.", "library,", "topics", "help", "suggests", "studying", "Jordan"],
+      },
+      {
+        target: "Writing everything down somehow makes the huge amount of material feel a little more manageable.",
+        jumbled: ["everything", "down", "amount", "huge", "Writing", "of", "feel", "a", "more", "manageable.", "somehow", "material", "the", "little", "makes"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a plan you made to solve a problem.",
     mySentenceExample: "I made a plan to finish my homework before dinner every day.",
@@ -102,11 +132,26 @@ export const CHAPTERS = [
       { text: "Jordan suggests trying something different.", answer: true },
     ],
     buildSentence: [
-      { target: "My phone keeps buzzing.", jumbled: ["keeps", "buzzing.", "My", "phone"] },
-      { target: "An hour has passed.", jumbled: ["has", "passed.", "An", "hour"] },
-      { target: "I feel embarrassed about this.", jumbled: ["feel", "embarrassed", "I", "about", "this."] },
-      { target: "Twenty minutes disappear each time.", jumbled: ["disappear", "each", "Twenty", "minutes", "time."] },
-      { target: "Maybe we should try something different tomorrow.", jumbled: ["should", "try", "Maybe", "we", "something", "different", "tomorrow."] },
+      {
+        target: "Our first study session doesn't go nearly as well as I had hoped.",
+        jumbled: ["well", "study", "Our", "doesn't", "hoped.", "go", "as", "nearly", "session", "I", "had", "as", "first"],
+      },
+      {
+        target: "I sit down with my textbook open, determined to focus, but my phone keeps buzzing with messages from group chats.",
+        jumbled: ["determined", "with", "group", "messages", "but", "open,", "with", "sit", "keeps", "focus,", "chats.", "to", "textbook", "down", "buzzing", "I", "my", "my", "phone", "from"],
+      },
+      {
+        target: "Every few minutes, I check a notification, telling myself it will only take a second, but somehow twenty minutes disappear each time.",
+        jumbled: ["a", "each", "time.", "take", "notification,", "I", "telling", "minutes,", "will", "a", "second,", "somehow", "it", "only", "check", "disappear", "Every", "but", "minutes", "few", "twenty", "myself"],
+      },
+      {
+        target: "An entire hour has passed and I have barely read two pages.",
+        jumbled: ["An", "read", "entire", "have", "barely", "I", "hour", "and", "two", "pages.", "has", "passed"],
+      },
+      {
+        target: "“Maybe we should try something different tomorrow, Maya,” Jordan says gently, and I nod, embarrassed by how unfocused I have been.",
+        jumbled: ["been.", "I", "by", "try", "says", "“Maybe", "I", "different", "we", "unfocused", "and", "Maya,”", "Jordan", "embarrassed", "something", "tomorrow,", "have", "how", "should", "nod,", "gently,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something that distracts you when you try to focus.",
     mySentenceExample: "My phone distracts me a lot when I try to study.",
@@ -131,11 +176,26 @@ export const CHAPTERS = [
       { text: "Maya feels surprised at how much she accomplished.", answer: true },
     ],
     buildSentence: [
-      { target: "Mom offers some advice.", jumbled: ["offers", "some", "Mom", "advice."] },
-      { target: "I make flashcards instead.", jumbled: ["make", "flashcards", "I", "instead."] },
-      { target: "The timer finally rings.", jumbled: ["finally", "rings.", "The", "timer"] },
-      { target: "I remember information much better.", jumbled: ["remember", "information", "I", "much", "better."] },
-      { target: "Try studying in short bursts with real breaks.", jumbled: ["studying", "in", "Try", "short", "bursts", "with", "real", "breaks."] },
+      {
+        target: "That evening, Mom notices my frustration and offers some advice from her own school days.",
+        jumbled: ["some", "evening,", "days.", "her", "from", "Mom", "notices", "and", "my", "That", "own", "frustration", "offers", "advice", "school"],
+      },
+      {
+        target: "“Try studying in short bursts, with real breaks in between, Maya,” she suggests, setting a timer for twenty-five minutes.",
+        jumbled: ["timer", "for", "a", "“Try", "suggests,", "between,", "bursts,", "twenty-five", "short", "real", "she", "breaks", "studying", "Maya,”", "in", "with", "in", "setting", "minutes."],
+      },
+      {
+        target: "She also recommends leaving my phone in another room completely, which sounds painful but strangely necessary.",
+        jumbled: ["sounds", "in", "which", "but", "also", "completely,", "recommends", "painful", "strangely", "leaving", "necessary.", "She", "room", "phone", "my", "another"],
+      },
+      {
+        target: "I make a stack of flashcards for vocabulary words instead of just rereading my notes passively.",
+        jumbled: ["make", "vocabulary", "for", "flashcards", "notes", "instead", "just", "passively.", "a", "stack", "I", "of", "of", "rereading", "my", "words"],
+      },
+      {
+        target: "I feel surprised at how much I accomplished without constant interruptions pulling my attention away.",
+        jumbled: ["without", "I", "accomplished", "feel", "I", "my", "how", "pulling", "interruptions", "surprised", "away.", "attention", "at", "constant", "much"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about advice someone gave you that actually helped.",
     mySentenceExample: "My coach gave me advice about breathing that actually helped me relax.",
@@ -160,11 +220,26 @@ export const CHAPTERS = [
       { text: "Maya worries she might not be ready.", answer: true },
     ],
     buildSentence: [
-      { target: "Anxiety rushes through me.", jumbled: ["rushes", "through", "Anxiety", "me."] },
-      { target: "My confidence keeps sinking.", jumbled: ["keeps", "sinking.", "My", "confidence"] },
-      { target: "We're just better at different subjects.", jumbled: ["just", "better", "We're", "at", "different", "subjects."] },
-      { target: "Jordan's notebook looks perfectly organized.", jumbled: ["looks", "perfectly", "Jordan's", "notebook", "organized."] },
-      { target: "I can't shake this growing feeling of doubt.", jumbled: ["can't", "shake", "I", "this", "growing", "feeling", "of", "doubt."] },
+      {
+        target: "By the end of the first week, I glance over at Jordan's notes during our library session and feel a wave of anxiety rush through me.",
+        jumbled: ["wave", "notes", "and", "session", "I", "rush", "a", "end", "over", "of", "anxiety", "library", "first", "our", "By", "the", "week,", "me.", "through", "during", "Jordan's", "the", "at", "glance", "of", "feel"],
+      },
+      {
+        target: "Jordan's notebook is perfectly organized with color-coded sections, while mine looks messy and incomplete in comparison.",
+        jumbled: ["incomplete", "comparison.", "organized", "Jordan's", "is", "and", "mine", "messy", "perfectly", "with", "looks", "notebook", "in", "sections,", "while", "color-coded"],
+      },
+      {
+        target: "“You already know so much more than me,” I say quietly, my confidence sinking lower with every page I compare.",
+        jumbled: ["“You", "know", "quietly,", "so", "more", "page", "with", "than", "I", "compare.", "already", "confidence", "lower", "I", "say", "much", "my", "sinking", "every", "me,”"],
+      },
+      {
+        target: "Jordan looks up, surprised by my sudden discouragement.",
+        jumbled: ["up,", "looks", "by", "sudden", "discouragement.", "my", "surprised", "Jordan"],
+      },
+      {
+        target: "“We're just better at different subjects, Maya,” Jordan replies simply, but I can't shake the growing feeling that I might not be ready for this exam no matter how hard I try.",
+        jumbled: ["subjects,", "how", "I", "just", "exam", "ready", "Jordan", "might", "simply,", "growing", "that", "matter", "feeling", "but", "better", "I", "I", "shake", "at", "Maya,”", "no", "different", "can't", "not", "try.", "“We're", "this", "hard", "the", "replies", "be", "for"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you compared yourself to someone else.",
     mySentenceExample: "I compared my drawing to my friend's and felt a little discouraged.",
@@ -189,11 +264,26 @@ export const CHAPTERS = [
       { text: "Maya feels the exam is finally achievable.", answer: true },
     ],
     buildSentence: [
-      { target: "Jordan pauses our session.", jumbled: ["pauses", "our", "Jordan", "session."] },
-      { target: "This sounds more confident.", jumbled: ["sounds", "more", "This", "confident."] },
-      { target: "Everyone studies differently, honestly.", jumbled: ["studies", "differently,", "Everyone", "honestly."] },
-      { target: "This is actually better explained than mine.", jumbled: ["is", "actually", "This", "better", "explained", "than", "mine."] },
-      { target: "Let's just focus on getting a little better each day.", jumbled: ["just", "focus", "Let's", "on", "getting", "a", "little", "better", "each", "day."] },
+      {
+        target: "Noticing my discouragement, Jordan pauses our session and flips back through my notebook carefully.",
+        jumbled: ["notebook", "flips", "back", "Jordan", "and", "through", "carefully.", "discouragement,", "session", "our", "pauses", "my", "my", "Noticing"],
+      },
+      {
+        target: "“Look at this answer you wrote yesterday, Maya,” Jordan says, pointing to a paragraph I had completely forgotten about.",
+        jumbled: ["this", "had", "at", "answer", "Maya,”", "to", "Jordan", "paragraph", "a", "wrote", "forgotten", "pointing", "yesterday,", "completely", "“Look", "about.", "you", "I", "says,"],
+      },
+      {
+        target: "I stare at my own words, surprised that they sound more confident than I remembered feeling while writing them.",
+        jumbled: ["them.", "I", "surprised", "more", "words,", "while", "that", "they", "own", "confident", "writing", "remembered", "at", "feeling", "I", "sound", "than", "my", "stare"],
+      },
+      {
+        target: "Jordan explains that everyone studies differently, and comparing our progress isn't fair to either of us.",
+        jumbled: ["differently,", "Jordan", "explains", "comparing", "fair", "everyone", "studies", "isn't", "and", "our", "either", "progress", "to", "us.", "of", "that"],
+      },
+      {
+        target: "“Let's just focus on getting a little better each day instead,” Jordan suggests warmly.",
+        jumbled: ["suggests", "day", "little", "just", "getting", "on", "“Let's", "warmly.", "better", "a", "each", "instead,”", "focus", "Jordan"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time a friend helped you feel more confident.",
     mySentenceExample: "My friend helped me feel more confident before my presentation.",
@@ -218,11 +308,26 @@ export const CHAPTERS = [
       { text: "Maya feels exhausted but proud afterward.", answer: true },
     ],
     buildSentence: [
-      { target: "This is just practice.", jumbled: ["is", "just", "This", "practice."] },
-      { target: "My hands feel shaky.", jumbled: ["feel", "shaky.", "My", "hands"] },
-      { target: "The timer finally buzzes loudly.", jumbled: ["finally", "buzzes", "The", "timer", "loudly."] },
-      { target: "Some questions feel surprisingly familiar.", jumbled: ["feel", "surprisingly", "Some", "questions", "familiar."] },
-      { target: "I feel exhausted but oddly proud of pushing through it.", jumbled: ["feel", "exhausted", "I", "but", "oddly", "proud", "of", "pushing", "through", "it."] },
+      {
+        target: "With one week left, Mr. Cole hands out a practice test to help us prepare for the real exam's format and timing.",
+        jumbled: ["out", "prepare", "a", "practice", "exam's", "one", "Cole", "test", "the", "for", "format", "Mr.", "real", "and", "week", "hands", "to", "left,", "help", "With", "us", "timing."],
+      },
+      {
+        target: "Jordan and I decide to take it together under real exam conditions, setting a strict timer and sitting apart so we can't help each other.",
+        jumbled: ["under", "setting", "strict", "other.", "exam", "Jordan", "timer", "help", "sitting", "real", "to", "and", "I", "decide", "we", "a", "together", "it", "and", "each", "take", "can't", "apart", "conditions,", "so"],
+      },
+      {
+        target: "My hands feel slightly shaky as I turn the first page, but I remind myself, “This is just practice, Maya, not the actual grade.”",
+        jumbled: ["remind", "the", "is", "“This", "the", "I", "shaky", "myself,", "as", "just", "first", "Maya,", "not", "but", "page,", "feel", "actual", "grade.”", "I", "hands", "practice,", "My", "slightly", "turn"],
+      },
+      {
+        target: "Some questions feel surprisingly familiar from our study sessions, while others make me pause and think much harder.",
+        jumbled: ["and", "study", "sessions,", "our", "questions", "others", "think", "much", "me", "harder.", "feel", "Some", "make", "from", "while", "familiar", "pause", "surprisingly"],
+      },
+      {
+        target: "I feel exhausted but oddly proud of pushing through it.",
+        jumbled: ["exhausted", "but", "feel", "through", "oddly", "proud", "of", "pushing", "I", "it."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing before doing something important.",
     mySentenceExample: "I practiced my speech many times before presenting it to the class.",
@@ -247,11 +352,26 @@ export const CHAPTERS = [
       { text: "Reviewing errors helps them understand the material better.", answer: true },
     ],
     buildSentence: [
-      { target: "I check my score.", jumbled: ["check", "my", "I", "score."] },
-      { target: "We review every mistake.", jumbled: ["review", "every", "We", "mistake."] },
-      { target: "This is the most useful part.", jumbled: ["is", "the", "This", "most", "useful", "part."] },
-      { target: "It's better than I expected.", jumbled: ["is", "better", "It's", "than", "I", "expected."] },
-      { target: "Now we know exactly what to review.", jumbled: ["we", "know", "Now", "exactly", "what", "to", "review."] },
+      {
+        target: "The next day, Mr. Cole returns our graded practice tests, and I nervously flip to my score before reading any comments.",
+        jumbled: ["flip", "before", "my", "to", "score", "I", "practice", "next", "Mr.", "any", "Cole", "reading", "our", "The", "returns", "nervously", "graded", "and", "tests,", "day,", "comments."],
+      },
+      {
+        target: "It's not perfect, but it's better than I expected, especially considering how nervous I felt.",
+        jumbled: ["than", "It's", "I", "felt.", "considering", "I", "nervous", "how", "especially", "not", "it's", "expected,", "but", "perfect,", "better"],
+      },
+      {
+        target: "Jordan and I sit down together to review every single mistake, discussing why each wrong answer happened instead of just moving past it.",
+        jumbled: ["of", "discussing", "past", "to", "just", "Jordan", "together", "happened", "and", "moving", "I", "answer", "instead", "each", "single", "review", "sit", "every", "why", "wrong", "down", "it.", "mistake,"],
+      },
+      {
+        target: "“This is actually the most useful part, Maya,” Jordan explains, “because now we know exactly what to review.”",
+        jumbled: ["Jordan", "“because", "review.”", "know", "exactly", "to", "Maya,”", "now", "part,", "is", "actually", "“This", "we", "explains,", "most", "the", "useful", "what"],
+      },
+      {
+        target: "Going through our errors carefully, rather than feeling embarrassed about them, helps both of us understand the material in a way that simple rereading never could.",
+        jumbled: ["Going", "both", "carefully,", "them,", "never", "embarrassed", "feeling", "rather", "the", "that", "errors", "about", "than", "helps", "rereading", "simple", "material", "of", "way", "in", "our", "us", "through", "could.", "understand", "a"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning from a mistake you made.",
     mySentenceExample: "I learned to double-check my answers after making a careless mistake.",
@@ -276,11 +396,26 @@ export const CHAPTERS = [
       { text: "Maya reminds herself of everything they practiced.", answer: true },
     ],
     buildSentence: [
-      { target: "My stomach feels tight.", jumbled: ["feels", "tight.", "My", "stomach"] },
-      { target: "We've got this today.", jumbled: ["got", "this", "We've", "today."] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "I", "deep", "breath."] },
-      { target: "We exchange a nervous smile.", jumbled: ["exchange", "a", "We", "nervous", "smile."] },
-      { target: "I have prepared more than I realize.", jumbled: ["have", "prepared", "I", "more", "than", "I", "realize."] },
+      {
+        target: "The morning of the actual exam arrives faster than I expected, and my stomach feels tight with nervous energy as I get ready.",
+        jumbled: ["arrives", "the", "of", "with", "faster", "actual", "ready.", "nervous", "my", "than", "morning", "I", "exam", "energy", "feels", "and", "The", "as", "stomach", "expected,", "get", "tight", "I"],
+      },
+      {
+        target: "Mom makes my favorite breakfast, reminding me gently that I have prepared more than I realize over these past two weeks.",
+        jumbled: ["I", "over", "weeks.", "two", "makes", "favorite", "these", "breakfast,", "prepared", "than", "past", "more", "Mom", "I", "gently", "have", "realize", "me", "that", "reminding", "my"],
+      },
+      {
+        target: "At school, I meet Jordan outside the exam hall, and we exchange a quick, nervous smile.",
+        jumbled: ["exam", "and", "school,", "exchange", "quick,", "Jordan", "meet", "the", "nervous", "I", "smile.", "we", "hall,", "outside", "At", "a"],
+      },
+      {
+        target: "“We've got this, Maya,” Jordan says confidently, though I can tell they feel just as nervous as I do underneath their calm expression.",
+        jumbled: ["though", "got", "I", "can", "do", "expression.", "tell", "they", "“We've", "just", "feel", "Jordan", "as", "nervous", "their", "I", "says", "confidently,", "as", "Maya,”", "underneath", "calm", "this,"],
+      },
+      {
+        target: "Taking a deep breath, I remind myself of everything we practiced together and walk through the doors.",
+        jumbled: ["the", "together", "Taking", "remind", "I", "through", "of", "practiced", "myself", "and", "walk", "a", "breath,", "doors.", "deep", "everything", "we"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about how you felt before something important.",
     mySentenceExample: "I felt nervous but ready before my big soccer match.",
@@ -305,11 +440,26 @@ export const CHAPTERS = [
       { text: "Maya learns studying is about growing steadily.", answer: true },
     ],
     buildSentence: [
-      { target: "My hands tremble slightly.", jumbled: ["tremble", "slightly.", "My", "hands"] },
-      { target: "We actually did it.", jumbled: ["actually", "did", "We", "it."] },
-      { target: "Jordan grins widely too.", jumbled: ["grins", "widely", "Jordan", "too."] },
-      { target: "We've come so far together.", jumbled: ["come", "so", "We've", "far", "together."] },
-      { target: "Studying isn't about being perfect, it's about growing steadily.", jumbled: ["isn't", "about", "Studying", "being", "perfect,", "it's", "about", "growing", "steadily."] },
+      {
+        target: "A week later, Mr. Cole hands back our exam results, and my hands tremble slightly as I unfold the paper.",
+        jumbled: ["our", "Cole", "exam", "Mr.", "the", "tremble", "later,", "week", "back", "results,", "as", "unfold", "I", "and", "my", "hands", "hands", "A", "slightly", "paper."],
+      },
+      {
+        target: "My score is not perfect, but it's significantly better than I ever imagined possible two weeks ago.",
+        jumbled: ["but", "than", "weeks", "I", "ever", "is", "it's", "possible", "imagined", "score", "better", "significantly", "not", "My", "ago.", "two", "perfect,"],
+      },
+      {
+        target: "“Look at us, Maya,” Jordan grins widely at their own paper beside me, and we both realize how far we've come since that panicked Monday morning.",
+        jumbled: ["panicked", "at", "me,", "beside", "own", "that", "far", "realize", "come", "at", "us,", "their", "“Look", "we", "grins", "we've", "how", "morning.", "Monday", "paper", "widely", "both", "and", "Jordan", "Maya,”", "since"],
+      },
+      {
+        target: "“We actually did it,” I say, still a little in disbelief at how much we improved through consistent effort.",
+        jumbled: ["through", "much", "a", "how", "effort.", "at", "say,", "improved", "little", "did", "we", "still", "consistent", "actually", "“We", "in", "it,”", "disbelief", "I"],
+      },
+      {
+        target: "Walking home together, I understand now that studying isn't really about being perfect, it's about growing steadily and never giving up along the way.",
+        jumbled: ["way.", "it's", "about", "I", "the", "understand", "growing", "now", "being", "along", "together,", "Walking", "about", "studying", "up", "perfect,", "home", "isn't", "steadily", "and", "that", "really", "never", "giving"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something you achieved through steady effort.",
     mySentenceExample: "I improved my grades through steady effort over the whole semester.",

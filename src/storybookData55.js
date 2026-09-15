@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Yuki realizes something will eventually have to give.", answer: true },
     ],
     buildSentence: [
-      { target: "My eyes feel heavy tonight.", jumbled: ["My", "eyes", "feel", "heavy", "tonight."] },
-      { target: "I count five clubs total.", jumbled: ["I", "count", "five", "clubs", "total."] },
-      { target: "I agree almost automatically usually.", jumbled: ["I", "agree", "almost", "automatically", "usually."] },
-      { target: "Something will eventually have to give.", jumbled: ["Something", "will", "eventually", "have", "to", "give."] },
-      { target: "I can't remember the last time I relaxed.", jumbled: ["I", "can't", "remember", "the", "last", "time", "I", "relaxed."] },
+      {
+        target: "Looking at my planner tonight, I count five different clubs I've committed to this semester alone.",
+        jumbled: ["planner", "alone.", "Looking", "my", "to", "I", "semester", "I've", "count", "at", "clubs", "committed", "this", "different", "tonight,", "five"],
+      },
+      {
+        target: "Student council, yearbook committee, volunteer club, the debate team, and now tutoring younger students twice weekly.",
+        jumbled: ["yearbook", "committee,", "tutoring", "twice", "and", "council,", "volunteer", "now", "students", "the", "Student", "debate", "club,", "team,", "younger", "weekly."],
+      },
+      {
+        target: "I wonder, since I find myself agreeing almost automatically, without genuinely considering my own limits.",
+        jumbled: ["genuinely", "I", "myself", "wonder,", "my", "limits.", "agreeing", "since", "almost", "considering", "find", "without", "automatically,", "I", "own"],
+      },
+      {
+        target: "Tonight, I'm supposed to attend two meetings that overlap directly, and I haven't figured out which one to prioritize.",
+        jumbled: ["Tonight,", "and", "figured", "attend", "meetings", "supposed", "haven't", "prioritize.", "one", "two", "I'm", "overlap", "that", "I", "directly,", "which", "out", "to", "to"],
+      },
+      {
+        target: "My eyes feel heavy from exhaustion, and I realize I can't actually remember the last time I simply relaxed.",
+        jumbled: ["I", "can't", "and", "remember", "realize", "I", "I", "heavy", "feel", "the", "relaxed.", "exhaustion,", "simply", "eyes", "time", "last", "from", "actually", "My"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about taking on too many responsibilities at once.",
     mySentenceExample: "I took on too many responsibilities at once and felt exhausted.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Saying yes to everything hasn't affected Yuki at all.", answer: false },
     ],
     buildSentence: [
-      { target: "I immediately regret it now.", jumbled: ["I", "immediately", "regret", "it", "now."] },
-      { target: "I hear myself saying yes.", jumbled: ["I", "hear", "myself", "saying", "yes."] },
-      { target: "Saying no feels genuinely difficult.", jumbled: ["Saying", "no", "feels", "genuinely", "difficult."] },
-      { target: "This is clearly starting to affect me.", jumbled: ["This", "is", "clearly", "starting", "to", "affect", "me."] },
-      { target: "I worried that refusing might disappoint people.", jumbled: ["I", "worried", "that", "refusing", "might", "disappoint", "people."] },
+      {
+        target: "Between classes, a classmate approaches, asking if I'd help organize the upcoming school fair committee too.",
+        jumbled: ["asking", "organize", "classmate", "the", "fair", "approaches,", "too.", "Between", "classes,", "upcoming", "a", "school", "help", "I'd", "committee", "if"],
+      },
+      {
+        target: "Despite the exhaustion already weighing on me, I hear myself saying yes before I've even properly considered the request.",
+        jumbled: ["me,", "before", "hear", "yes", "myself", "even", "saying", "on", "exhaustion", "already", "weighing", "considered", "properly", "Despite", "the", "I've", "the", "I", "request."],
+      },
+      {
+        target: "Walking away, I immediately regret it, wondering why saying no feels so genuinely difficult for me.",
+        jumbled: ["for", "immediately", "saying", "no", "so", "regret", "away,", "wondering", "genuinely", "Walking", "it,", "why", "I", "me.", "difficult", "feels"],
+      },
+      {
+        target: "\"Enough, Yuki,\" I think.",
+        jumbled: ["Yuki,\"", "think.", "\"Enough,", "I"],
+      },
+      {
+        target: "That evening, I add the fair committee to my already overwhelming planner, feeling a familiar knot forming in my stomach.",
+        jumbled: ["stomach.", "overwhelming", "a", "familiar", "knot", "my", "already", "I", "That", "forming", "to", "in", "my", "feeling", "evening,", "fair", "committee", "the", "planner,", "add"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you said yes when you wanted to say no.",
     mySentenceExample: "I said yes to a project when I really wanted to say no.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Yuki feels Ben's words mean nothing to her.", answer: false },
     ],
     buildSentence: [
-      { target: "Ben stops by my room.", jumbled: ["Ben", "stops", "by", "my", "room."] },
-      { target: "His words linger uncomfortably now.", jumbled: ["His", "words", "linger", "uncomfortably", "now."] },
-      { target: "I try brushing off his concern.", jumbled: ["I", "try", "brushing", "off", "his", "concern."] },
-      { target: "When was the last time you rested?", jumbled: ["was", "the", "When", "last", "time", "you", "rested?"] },
-      { target: "Saying yes to everything isn't actually generous.", jumbled: ["Saying", "yes", "to", "everything", "isn't", "actually", "generous."] },
+      {
+        target: "My older brother Ben stops by my room that evening, noticing my exhausted expression and cluttered, overloaded planner immediately.",
+        jumbled: ["my", "evening,", "brother", "room", "overloaded", "older", "and", "expression", "immediately.", "my", "that", "by", "Ben", "stops", "My", "planner", "exhausted", "cluttered,", "noticing"],
+      },
+      {
+        target: "“You've been like this for weeks now, Yuki. When was the last time you actually rested?” he asks directly.",
+        jumbled: ["you", "Yuki.", "rested?”", "asks", "he", "been", "last", "time", "directly.", "like", "the", "weeks", "was", "actually", "“You've", "When", "this", "now,", "for"],
+      },
+      {
+        target: "I try brushing off his concern, insisting I'm managing everything fine, though my voice sounds unconvincing even to myself.",
+        jumbled: ["I'm", "managing", "sounds", "though", "brushing", "unconvincing", "everything", "fine,", "his", "voice", "off", "even", "I", "to", "concern,", "my", "insisting", "try", "myself."],
+      },
+      {
+        target: "Ben, who dealt with similar overcommitment during his own junior year, shares how burnout eventually forced him to reevaluate everything completely.",
+        jumbled: ["forced", "who", "dealt", "burnout", "similar", "reevaluate", "eventually", "to", "how", "year,", "overcommitment", "completely.", "with", "his", "junior", "Ben,", "him", "everything", "own", "shares", "during"],
+      },
+      {
+        target: "“Saying yes to everything isn't actually generous if it means saying no to your own health,” he points out gently.",
+        jumbled: ["actually", "no", "gently.", "your", "out", "points", "“Saying", "to", "isn't", "means", "yes", "own", "generous", "it", "if", "he", "health,”", "to", "everything", "saying"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who noticed you were overwhelmed and said something.",
     mySentenceExample: "My friend noticed I was overwhelmed and gently pointed it out to me.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Yuki decides nothing needs to change.", answer: false },
     ],
     buildSentence: [
-      { target: "I miss a deadline today.", jumbled: ["miss", "a", "I", "deadline", "today."] },
-      { target: "I can barely focus now.", jumbled: ["I", "can", "barely", "focus", "now."] },
-      { target: "My grades have dropped noticeably.", jumbled: ["My", "grades", "have", "dropped", "noticeably."] },
-      { target: "Something genuinely needs to change immediately.", jumbled: ["Something", "genuinely", "needs", "to", "change", "immediately."] },
-      { target: "This feels like a wake-up call I needed.", jumbled: ["This", "feels", "like", "a", "wake-up", "call", "I", "needed."] },
+      {
+        target: "This week proves Ben's point painfully clearly, as I rush frantically between commitments, forgetting important details along the way.",
+        jumbled: ["proves", "This", "clearly,", "frantically", "week", "important", "point", "as", "along", "between", "the", "Ben's", "forgetting", "rush", "way.", "painfully", "I", "commitments,", "details"],
+      },
+      {
+        target: "I miss a deadline for the yearbook committee, something I never would have done before this semester started.",
+        jumbled: ["this", "a", "miss", "the", "started.", "would", "done", "I", "yearbook", "before", "something", "committee,", "have", "deadline", "for", "semester", "I", "never"],
+      },
+      {
+        target: "During debate practice, I can barely focus, my mind constantly drifting toward everything else I still need to accomplish.",
+        jumbled: ["else", "toward", "During", "everything", "barely", "can", "focus,", "debate", "still", "constantly", "I", "accomplish.", "mind", "drifting", "practice,", "I", "my", "need", "to"],
+      },
+      {
+        target: "Hearing this feels like a wake-up call I desperately needed but had been avoiding acknowledging until now.",
+        jumbled: ["I", "until", "acknowledging", "feels", "but", "call", "had", "avoiding", "Hearing", "like", "this", "needed", "a", "now.", "been", "desperately", "wake-up"],
+      },
+      {
+        target: "That night, exhausted beyond words, I finally admit something genuinely needs to change immediately.",
+        jumbled: ["That", "needs", "exhausted", "genuinely", "admit", "to", "beyond", "immediately.", "finally", "something", "words,", "change", "night,", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a moment that felt like a wake-up call for you.",
     mySentenceExample: "Missing an important deadline felt like a wake-up call for me.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Yuki feels these words are completely inaccurate.", answer: false },
     ],
     buildSentence: [
-      { target: "I schedule an appointment today.", jumbled: ["schedule", "an", "I", "appointment", "today."] },
-      { target: "She listens without judgment.", jumbled: ["She", "listens", "without", "judgment."] },
-      { target: "Her words feel uncomfortably accurate.", jumbled: ["Her", "words", "feel", "uncomfortably", "accurate."] },
-      { target: "I've never seriously considered that possibility.", jumbled: ["I've", "never", "seriously", "considered", "that", "possibility."] },
-      { target: "What would happen if you actually said no?", jumbled: ["What", "would", "happen", "if", "you", "actually", "said", "no?"] },
+      {
+        target: "The next day, I schedule an appointment with our guidance counselor, Ms. Farah, hoping she can offer some genuine perspective.",
+        jumbled: ["our", "offer", "counselor,", "guidance", "hoping", "some", "The", "can", "Farah,", "next", "schedule", "she", "I", "genuine", "appointment", "an", "with", "Ms.", "perspective.", "day,"],
+      },
+      {
+        target: "I explain everything: the five commitments, the missed deadline, my dropping grades, and my constant exhaustion lately.",
+        jumbled: ["everything:", "and", "missed", "five", "I", "deadline,", "the", "the", "my", "exhaustion", "explain", "my", "constant", "commitments,", "dropping", "grades,", "lately."],
+      },
+      {
+        target: "She listens without judgment, then asks a simple question: “What would happen, Yuki, if you actually said no to something?”",
+        jumbled: ["would", "asks", "something?”", "She", "a", "no", "you", "actually", "then", "without", "Yuki,", "happen,", "to", "question:", "simple", "if", "said", "listens", "judgment,", "“What"],
+      },
+      {
+        target: "I admit I've never seriously considered that possibility, assuming refusing anything would somehow disappoint everyone involved.",
+        jumbled: ["assuming", "I've", "everyone", "that", "refusing", "possibility,", "somehow", "admit", "involved.", "considered", "seriously", "never", "I", "anything", "would", "disappoint"],
+      },
+      {
+        target: "She gently explains that overcommitting often stems from wanting approval, rather than genuinely wanting to do everything equally.",
+        jumbled: ["stems", "wanting", "that", "gently", "overcommitting", "to", "than", "rather", "explains", "everything", "wanting", "do", "equally.", "often", "genuinely", "She", "from", "approval,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a question someone asked that made you think differently.",
     mySentenceExample: "A question my counselor asked made me think differently about my habits.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "This exercise feels confusing rather than clarifying.", answer: false },
     ],
     buildSentence: [
-      { target: "I make a list now.", jumbled: ["make", "a", "I", "list", "now."] },
-      { target: "This feels surprisingly clarifying today.", jumbled: ["This", "feels", "surprisingly", "clarifying", "today."] },
-      { target: "Not every commitment deserves equal priority.", jumbled: ["Not", "every", "commitment", "deserves", "equal", "priority."] },
-      { target: "I only joined because refusing felt awkward.", jumbled: ["I", "only", "joined", "because", "refusing", "felt", "awkward."] },
-      { target: "If I release what drains me, I could enjoy the rest.", jumbled: ["If", "I", "release", "what", "drains", "me,", "I", "could", "enjoy", "the", "rest."] },
+      {
+        target: "Following Ms. Farah's suggestion, I make a list of every commitment and honestly rank how much each one genuinely matters to me.",
+        jumbled: ["commitment", "suggestion,", "I", "list", "to", "a", "and", "rank", "me.", "one", "Following", "Farah's", "of", "how", "Ms.", "much", "matters", "each", "make", "honestly", "every", "genuinely"],
+      },
+      {
+        target: "Debate team and volunteer club feel meaningful and worth keeping, something I actually chose because I cared about them.",
+        jumbled: ["keeping,", "meaningful", "club", "something", "cared", "I", "I", "them.", "and", "and", "because", "volunteer", "actually", "about", "Debate", "team", "chose", "feel", "worth"],
+      },
+      {
+        target: "Looking at this list clearly laid out helps me realize not every commitment deserves equal priority in my life.",
+        jumbled: ["realize", "me", "my", "list", "helps", "Looking", "out", "laid", "at", "priority", "life.", "commitment", "this", "every", "clearly", "in", "not", "equal", "deserves"],
+      },
+      {
+        target: "Maybe I could actually enjoy the ones remaining.",
+        jumbled: ["Maybe", "actually", "could", "I", "ones", "remaining.", "enjoy", "the"],
+      },
+      {
+        target: "This exercise feels surprisingly clarifying, like finally seeing a problem I'd been avoiding directly.",
+        jumbled: ["seeing", "feels", "like", "directly.", "avoiding", "problem", "finally", "a", "I'd", "exercise", "been", "clarifying,", "This", "surprisingly"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about ranking your priorities to figure out what truly matters.",
     mySentenceExample: "I ranked my priorities to figure out what truly mattered to me.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Yuki's fear turns out to be smaller than reality.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart pounds as I speak.", jumbled: ["My", "heart", "pounds", "as", "I", "speak."] },
-      { target: "Relief floods through me instantly.", jumbled: ["Relief", "floods", "through", "me", "instantly."] },
-      { target: "She simply nods, understanding fully.", jumbled: ["She", "simply", "nods,", "understanding", "fully."] },
-      { target: "This gives me unexpected confidence now.", jumbled: ["This", "gives", "me", "unexpected", "confidence", "now."] },
-      { target: "My fear had been considerably larger than reality.", jumbled: ["My", "fear", "had", "been", "considerably", "larger", "than", "reality."] },
+      {
+        target: "Gathering my courage, I approach the fair committee leader to explain I need to step back from this commitment.",
+        jumbled: ["to", "approach", "need", "explain", "from", "step", "commitment.", "the", "courage,", "fair", "I", "I", "to", "leader", "Gathering", "this", "my", "back", "committee"],
+      },
+      {
+        target: "My heart pounds as I speak, half expecting disappointment or frustration in response to my decision.",
+        jumbled: ["or", "half", "as", "to", "My", "my", "in", "speak,", "decision.", "disappointment", "pounds", "heart", "response", "expecting", "frustration", "I"],
+      },
+      {
+        target: "“I completely understand, Yuki, and thank you for being honest instead of just disappearing,” she says warmly.",
+        jumbled: ["just", "she", "and", "thank", "warmly.", "for", "disappearing,”", "you", "of", "Yuki,", "being", "honest", "instead", "understand,", "“I", "completely", "says"],
+      },
+      {
+        target: "Relief floods through me instantly, since I had built up this moment into something far scarier than it actually turned out being.",
+        jumbled: ["moment", "floods", "this", "turned", "instantly,", "into", "since", "out", "being.", "scarier", "actually", "built", "it", "than", "far", "I", "me", "up", "Relief", "had", "something", "through"],
+      },
+      {
+        target: "Walking away, I realize my fear of disappointing people had been considerably larger than reality itself.",
+        jumbled: ["considerably", "away,", "realize", "Walking", "itself.", "of", "larger", "my", "had", "than", "disappointing", "people", "been", "fear", "I", "reality"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a fear that turned out to be bigger than reality.",
     mySentenceExample: "My fear of asking for help turned out bigger than reality.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Yuki's planner feels like failure now.", answer: false },
     ],
     buildSentence: [
-      { target: "This decision feels harder somehow.", jumbled: ["This", "decision", "feels", "harder", "somehow."] },
-      { target: "I start declining requests consistently.", jumbled: ["I", "start", "declining", "requests", "consistently."] },
-      { target: "My planner looks noticeably lighter now.", jumbled: ["My", "planner", "looks", "noticeably", "lighter", "now."] },
-      { target: "This emptiness feels like genuine relief.", jumbled: ["This", "emptiness", "feels", "like", "genuine", "relief."] },
-      { target: "Each time I say no, it feels less terrifying.", jumbled: ["Each", "time", "I", "say", "no,", "it", "feels", "less", "terrifying."] },
+      {
+        target: "Encouraged by my first success, I reevaluate my other commitments, deciding to also step back from student council.",
+        jumbled: ["I", "student", "council.", "my", "first", "Encouraged", "to", "also", "by", "success,", "commitments,", "step", "other", "deciding", "reevaluate", "back", "from", "my"],
+      },
+      {
+        target: "This decision feels harder somehow, since student council carries more visibility and social expectation than the fair committee did.",
+        jumbled: ["somehow,", "and", "than", "committee", "council", "since", "This", "expectation", "did.", "decision", "fair", "harder", "student", "feels", "carries", "the", "social", "visibility", "more"],
+      },
+      {
+        target: "\"You don't owe everyone a yes, Yuki,\" I remind myself, thinking of Ms. Farah's words about approval-seeking versus genuine desire to participate.",
+        jumbled: ["everyone", "of", "remind", "Ms.", "\"You", "Yuki,\"", "thinking", "desire", "versus", "don't", "Farah's", "owe", "words", "participate.", "to", "myself,", "about", "I", "genuine", "yes,", "a", "approval-seeking"],
+      },
+      {
+        target: "I also start declining smaller requests more consistently, like extra tutoring sessions that overlap with time I need for myself.",
+        jumbled: ["for", "need", "declining", "smaller", "consistently,", "extra", "sessions", "that", "time", "tutoring", "start", "I", "overlap", "like", "requests", "also", "with", "more", "myself.", "I"],
+      },
+      {
+        target: "My planner looks noticeably lighter these days, and somehow, that emptiness feels like genuine relief instead of failure.",
+        jumbled: ["emptiness", "lighter", "genuine", "relief", "planner", "My", "of", "somehow,", "that", "these", "noticeably", "days,", "instead", "looks", "like", "and", "feels", "failure."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about setting a boundary that felt uncomfortable at first.",
     mySentenceExample: "Setting a boundary with my schedule felt uncomfortable at first but helped.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Yuki finds debate team less enjoyable now.", answer: false },
     ],
     buildSentence: [
-      { target: "I read a novel tonight.", jumbled: ["read", "a", "I", "novel", "tonight."] },
-      { target: "My grades have started improving.", jumbled: ["My", "grades", "have", "started", "improving."] },
-      { target: "Ben notices the change immediately.", jumbled: ["Ben", "notices", "the", "change", "immediately."] },
-      { target: "This balance feels unfamiliar but welcome.", jumbled: ["This", "balance", "feels", "unfamiliar", "but", "welcome."] },
-      { target: "I can actually focus without constant mental exhaustion.", jumbled: ["I", "can", "actually", "focus", "without", "constant", "mental", "exhaustion."] },
+      {
+        target: "With only two meaningful commitments remaining, I suddenly have actual free time appearing in my schedule for the first time in months.",
+        jumbled: ["first", "in", "free", "suddenly", "With", "schedule", "only", "appearing", "months.", "for", "the", "time", "remaining,", "actual", "commitments", "time", "meaningful", "in", "have", "two", "my", "I"],
+      },
+      {
+        target: "On Tuesday evening, I read an entire novel purely for enjoyment, something I genuinely can't remember doing recently.",
+        jumbled: ["for", "something", "read", "remember", "enjoyment,", "On", "evening,", "entire", "can't", "doing", "an", "recently.", "purely", "novel", "genuinely", "Tuesday", "I", "I"],
+      },
+      {
+        target: "“You seem so much calmer lately, Yuki, more like yourself again,” he comments.",
+        jumbled: ["yourself", "calmer", "so", "lately,", "he", "again,”", "like", "Yuki,", "seem", "much", "“You", "more", "comments."],
+      },
+      {
+        target: "My grades have already started improving slightly, likely because I can actually focus without constant mental exhaustion draining me.",
+        jumbled: ["likely", "can", "I", "exhaustion", "have", "without", "because", "me.", "started", "draining", "grades", "constant", "actually", "slightly,", "My", "focus", "mental", "improving", "already"],
+      },
+      {
+        target: "Debate team and volunteer club feel more enjoyable now too, since I'm not simultaneously worrying about four other obligations.",
+        jumbled: ["team", "about", "too,", "simultaneously", "worrying", "since", "club", "enjoyable", "four", "now", "more", "other", "and", "Debate", "I'm", "volunteer", "obligations.", "feel", "not"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about rediscovering free time after being very busy.",
     mySentenceExample: "I rediscovered free time to read after simplifying my schedule.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Yuki learned generosity requires no boundaries at all.", answer: false },
     ],
     buildSentence: [
-      { target: "I barely recognize my former self.", jumbled: ["I", "barely", "recognize", "my", "former", "self."] },
-      { target: "I still care deeply about helping.", jumbled: ["I", "still", "care", "deeply", "about", "helping."] },
-      { target: "Her question still echoes sometimes.", jumbled: ["Her", "question", "still", "echoes", "sometimes."] },
-      { target: "Saying no isn't selfish or unreliable.", jumbled: ["Saying", "no", "isn't", "selfish", "or", "unreliable."] },
-      { target: "Genuine generosity requires boundaries, not their complete absence.", jumbled: ["Genuine", "generosity", "requires", "boundaries,", "not", "their", "complete", "absence."] },
+      {
+        target: "A month later, I look at my planner and barely recognize the overwhelmed, exhausted version of myself from before.",
+        jumbled: ["later,", "overwhelmed,", "from", "myself", "version", "month", "exhausted", "A", "at", "the", "before.", "my", "recognize", "and", "of", "I", "planner", "barely", "look"],
+      },
+      {
+        target: "I've learned that saying no isn't selfish or unreliable, despite what I had always assumed throughout my life.",
+        jumbled: ["my", "isn't", "life.", "assumed", "always", "throughout", "what", "that", "or", "despite", "selfish", "no", "had", "I've", "I", "unreliable,", "saying", "learned"],
+      },
+      {
+        target: "Usually, the honest answer turns out to be far less catastrophic than my anxious mind originally predicted.",
+        jumbled: ["my", "out", "anxious", "Usually,", "honest", "catastrophic", "to", "than", "answer", "far", "originally", "turns", "mind", "predicted.", "the", "less", "be"],
+      },
+      {
+        target: "I still care deeply about helping others and staying involved, but now within limits that actually protect my well-being too.",
+        jumbled: ["but", "my", "protect", "well-being", "helping", "now", "involved,", "deeply", "actually", "and", "still", "limits", "that", "within", "too.", "about", "others", "I", "staying", "care"],
+      },
+      {
+        target: "This experience taught me that genuine generosity requires boundaries, not the complete absence of them entirely.",
+        jumbled: ["This", "boundaries,", "not", "complete", "absence", "the", "me", "them", "of", "entirely.", "generosity", "genuine", "requires", "taught", "experience", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something you learned about setting healthy boundaries.",
     mySentenceExample: "I learned that setting healthy boundaries helps me help others better.",

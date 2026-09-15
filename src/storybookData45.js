@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Mia asks if she can help too.", answer: true },
     ],
     buildSentence: [
-      { target: "I decide to cook dinner.", jumbled: ["decide", "to", "I", "cook", "dinner."] },
-      { target: "I feel a little nervous.", jumbled: ["feel", "a", "I", "little", "nervous."] },
-      { target: "I find a simple recipe.", jumbled: ["find", "a", "I", "simple", "recipe."] },
-      { target: "I plan a quick trip.", jumbled: ["plan", "a", "I", "quick", "trip."] },
-      { target: "Can we help too, Mia asks.", jumbled: ["we", "help", "Can", "too,", "Mia", "asks."] },
+      {
+        target: "Tonight, Sofia has to work late, so I decide to cook dinner for our family myself.",
+        jumbled: ["decide", "for", "cook", "to", "work", "late,", "Tonight,", "has", "to", "myself.", "I", "dinner", "family", "our", "so", "Sofia"],
+      },
+      {
+        target: "I do not cook very often, so I feel a little nervous about this plan.",
+        jumbled: ["often,", "nervous", "feel", "so", "I", "I", "this", "about", "cook", "plan.", "very", "not", "do", "a", "little"],
+      },
+      {
+        target: "I write down the ingredients I need and check what I already have at home.",
+        jumbled: ["home.", "down", "have", "I", "ingredients", "check", "need", "the", "what", "I", "write", "and", "already", "I", "at"],
+      },
+      {
+        target: "I am missing a few things, so I plan a quick trip to the store first.",
+        jumbled: ["first.", "a", "quick", "plan", "to", "I", "missing", "few", "I", "trip", "things,", "store", "am", "so", "a", "the"],
+      },
+      {
+        target: "“Can we help too, Miguel?” Mia asks with a big smile on her face.",
+        jumbled: ["Mia", "smile", "a", "with", "“Can", "too,", "on", "her", "we", "asks", "face.", "Miguel?”", "help", "big"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you tried cooking something new.",
     mySentenceExample: "I felt nervous the first time I tried cooking soup.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Miguel refuses to buy any dessert.", answer: false },
     ],
     buildSentence: [
-      { target: "I take them to the store.", jumbled: ["take", "them", "I", "to", "the", "store."] },
-      { target: "Lucas finds the chicken quickly.", jumbled: ["Lucas", "finds", "the", "chicken", "quickly."] },
-      { target: "I check my phone carefully.", jumbled: ["check", "my", "I", "phone", "carefully."] },
-      { target: "We choose a chocolate cake.", jumbled: ["choose", "a", "We", "chocolate", "cake."] },
-      { target: "Shopping together makes the trip go faster.", jumbled: ["Shopping", "together", "makes", "the", "trip", "go", "faster."] },
+      {
+        target: "I take Lucas and Mia with me to the store to buy the ingredients we need.",
+        jumbled: ["Mia", "with", "to", "the", "and", "Lucas", "me", "the", "take", "ingredients", "I", "need.", "to", "buy", "we", "store"],
+      },
+      {
+        target: "They enjoy walking through the aisles and helping me find items on my list.",
+        jumbled: ["and", "walking", "find", "the", "helping", "They", "on", "my", "me", "items", "enjoy", "aisles", "through", "list."],
+      },
+      {
+        target: "“Look, Miguel, I found the chicken!” Lucas says, and Mia picks out fresh carrots and potatoes carefully.",
+        jumbled: ["I", "“Look,", "chicken!”", "Mia", "potatoes", "carrots", "says,", "found", "the", "out", "carefully.", "Lucas", "Miguel,", "picks", "fresh", "and", "and"],
+      },
+      {
+        target: "The kids ask if we can also buy a small dessert for after dinner.",
+        jumbled: ["also", "The", "for", "if", "dessert", "dinner.", "we", "kids", "ask", "buy", "can", "after", "a", "small"],
+      },
+      {
+        target: "I agree, and we choose a small chocolate cake to share together later.",
+        jumbled: ["and", "chocolate", "to", "small", "choose", "together", "a", "I", "later.", "agree,", "cake", "we", "share"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about shopping with family or friends.",
     mySentenceExample: "Shopping with my children makes the trip more fun.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Sofia says you can do this.", answer: true },
     ],
     buildSentence: [
-      { target: "I put on my apron.", jumbled: ["put", "on", "I", "my", "apron."] },
-      { target: "I wash the vegetables carefully.", jumbled: ["wash", "the", "I", "vegetables", "carefully."] },
-      { target: "I feel a little slow.", jumbled: ["feel", "a", "I", "little", "slow."] },
-      { target: "Everything is going okay so far.", jumbled: ["Everything", "is", "going", "okay", "so", "far."] },
-      { target: "You can do this, she says encouragingly.", jumbled: ["can", "do", "You", "this,", "she", "says", "encouragingly."] },
+      {
+        target: "Back home, I put on my apron and set my phone on the counter for the recipe.",
+        jumbled: ["my", "the", "set", "phone", "apron", "Back", "the", "I", "home,", "my", "for", "and", "counter", "put", "on", "on", "recipe."],
+      },
+      {
+        target: "First, I wash the vegetables carefully under running water in the sink.",
+        jumbled: ["the", "First,", "sink.", "in", "the", "I", "under", "carefully", "water", "running", "wash", "vegetables"],
+      },
+      {
+        target: "I cut the carrots and potatoes into small pieces, just like the recipe shows.",
+        jumbled: ["potatoes", "pieces,", "shows.", "the", "small", "cut", "the", "and", "recipe", "I", "just", "into", "like", "carrots"],
+      },
+      {
+        target: "I feel a little slow at first, checking the recipe after almost every single step.",
+        jumbled: ["checking", "recipe", "first,", "single", "feel", "the", "a", "step.", "I", "little", "almost", "every", "at", "after", "slow"],
+      },
+      {
+        target: "Sofia calls to check on us, and I tell her everything is going okay so far.",
+        jumbled: ["Sofia", "and", "so", "her", "far.", "us,", "going", "I", "tell", "to", "okay", "is", "calls", "check", "on", "everything"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone who encouraged you to try something.",
     mySentenceExample: "My friend encouraged me to try cooking a new dish.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Miguel thanks the kids for helping.", answer: true },
     ],
     buildSentence: [
-      { target: "Lucas stirs the vegetables.", jumbled: ["stirs", "the", "Lucas", "vegetables."] },
-      { target: "Mia sets the table.", jumbled: ["sets", "the", "Mia", "table."] },
-      { target: "This makes me smile now.", jumbled: ["makes", "me", "This", "smile", "now."] },
-      { target: "I thank them both tonight.", jumbled: ["thank", "them", "I", "both", "tonight."] },
-      { target: "Cooking together feels more fun than cooking alone.", jumbled: ["Cooking", "together", "feels", "more", "fun", "than", "cooking", "alone."] },
+      {
+        target: "Lucas asks if he can stir the vegetables in the bowl, and I let him carefully help me.",
+        jumbled: ["I", "let", "if", "he", "stir", "me.", "vegetables", "carefully", "in", "the", "the", "can", "bowl,", "asks", "Lucas", "help", "him", "and"],
+      },
+      {
+        target: "He stirs slowly and proudly, happy to be part of making dinner tonight.",
+        jumbled: ["happy", "be", "tonight.", "and", "part", "of", "dinner", "stirs", "to", "making", "slowly", "He", "proudly,"],
+      },
+      {
+        target: "Mia decides to set the table instead, placing plates and forks in the right spots.",
+        jumbled: ["and", "spots.", "set", "Mia", "the", "right", "plates", "the", "table", "in", "to", "instead,", "decides", "forks", "placing"],
+      },
+      {
+        target: "Watching them help makes me smile, even though the kitchen is getting a little messy.",
+        jumbled: ["the", "them", "messy.", "is", "me", "help", "a", "little", "even", "makes", "though", "kitchen", "Watching", "smile,", "getting"],
+      },
+      {
+        target: "“Great job, Miguel!” Mia says proudly, and I thank them both for being such wonderful little helpers tonight.",
+        jumbled: ["both", "for", "I", "and", "such", "proudly,", "them", "being", "thank", "“Great", "says", "helpers", "Miguel!”", "little", "tonight.", "Mia", "job,", "wonderful"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about doing a task together with family.",
     mySentenceExample: "Cleaning the house together with my family feels more fun.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Miguel refuses to laugh about the mistake.", answer: false },
     ],
     buildSentence: [
-      { target: "I forget to check it.", jumbled: ["forget", "to", "I", "check", "it."] },
-      { target: "I smell something burning.", jumbled: ["smell", "something", "I", "burning."] },
-      { target: "I feel worried now.", jumbled: ["feel", "worried", "I", "now."] },
-      { target: "I turn off the stove immediately.", jumbled: ["I", "turn", "off", "the", "stove", "immediately."] },
-      { target: "I laugh a little at my mistake tonight.", jumbled: ["I", "laugh", "a", "little", "at", "my", "mistake", "tonight."] },
+      {
+        target: "I forget to check the chicken cooking in the pan on the stove.",
+        jumbled: ["the", "the", "chicken", "stove.", "check", "the", "on", "in", "pan", "I", "cooking", "forget", "to"],
+      },
+      {
+        target: "Suddenly, I smell something burning and rush over to check it quickly.",
+        jumbled: ["quickly.", "smell", "I", "something", "over", "Suddenly,", "check", "it", "to", "rush", "and", "burning"],
+      },
+      {
+        target: "“Stay calm, Miguel,” I tell myself, and I turn off the stove immediately, moving the pan to a cool spot.",
+        jumbled: ["spot.", "moving", "cool", "immediately,", "and", "I", "“Stay", "turn", "pan", "I", "Miguel,”", "myself,", "calm,", "tell", "the", "the", "to", "a", "stove", "off"],
+      },
+      {
+        target: "Looking closely, only the outside is a little too dark, but the inside still looks fine.",
+        jumbled: ["closely,", "is", "still", "inside", "the", "too", "outside", "only", "looks", "fine.", "but", "Looking", "dark,", "a", "little", "the"],
+      },
+      {
+        target: "I decide the dinner is not ruined completely, just slightly imperfect now.",
+        jumbled: ["ruined", "completely,", "I", "the", "is", "dinner", "slightly", "now.", "just", "imperfect", "not", "decide"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small mistake you made while cooking.",
     mySentenceExample: "I made a small mistake and burned the toast once.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "The kitchen starts to smell bad.", answer: false },
     ],
     buildSentence: [
-      { target: "I cut away the burnt part.", jumbled: ["cut", "away", "I", "the", "burnt", "part."] },
-      { target: "I check it with a fork.", jumbled: ["check", "it", "I", "with", "a", "fork."] },
-      { target: "It's completely fine now.", jumbled: ["is", "completely", "It's", "fine", "now."] },
-      { target: "I add the vegetables now.", jumbled: ["add", "the", "I", "vegetables", "now."] },
-      { target: "My confidence slowly starts coming back.", jumbled: ["My", "confidence", "slowly", "starts", "coming", "back."] },
+      {
+        target: "I carefully cut away the slightly burnt part of the chicken with a sharp knife.",
+        jumbled: ["sharp", "carefully", "a", "away", "part", "of", "with", "the", "burnt", "chicken", "slightly", "the", "knife.", "I", "cut"],
+      },
+      {
+        target: "I check it one more time with a fork to make sure it is fully cooked.",
+        jumbled: ["cooked.", "time", "make", "fully", "it", "with", "is", "sure", "check", "I", "it", "one", "more", "fork", "a", "to"],
+      },
+      {
+        target: "Lucas and Mia watch curiously.",
+        jumbled: ["curiously.", "Lucas", "and", "watch", "Mia"],
+      },
+      {
+        target: "“Yes, it's completely fine now,” I tell them, feeling more confident about the situation.",
+        jumbled: ["fine", "about", "situation.", "confident", "them,", "it's", "“Yes,", "I", "more", "feeling", "completely", "now,”", "tell", "the"],
+      },
+      {
+        target: "I add the vegetables to the pan and let everything cook together for a few more minutes.",
+        jumbled: ["I", "few", "pan", "everything", "to", "add", "cook", "minutes.", "and", "let", "for", "the", "more", "a", "together", "the", "vegetables"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about fixing something that went a little wrong.",
     mySentenceExample: "I fixed my drawing after making a small mistake.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "The dinner looks completely ruined despite the effort.", answer: false },
     ],
     buildSentence: [
-      { target: "The dinner finally looks ready.", jumbled: ["dinner", "finally", "The", "looks", "ready."] },
-      { target: "I serve everyone a portion.", jumbled: ["serve", "everyone", "I", "a", "portion."] },
-      { target: "We all sit down together.", jumbled: ["We", "all", "sit", "down", "together."] },
-      { target: "I feel proud looking at this.", jumbled: ["feel", "proud", "I", "looking", "at", "this."] },
-      { target: "Dinner looks surprisingly good tonight.", jumbled: ["Dinner", "looks", "surprisingly", "good", "tonight."] },
+      {
+        target: "The dinner finally looks ready, so I turn off the stove and prepare to serve it.",
+        jumbled: ["it.", "The", "so", "stove", "turn", "dinner", "serve", "looks", "to", "ready,", "off", "prepare", "I", "the", "and", "finally"],
+      },
+      {
+        target: "Mia already set the table earlier, so everything is neat and ready for us.",
+        jumbled: ["ready", "so", "for", "earlier,", "the", "table", "Mia", "already", "us.", "everything", "neat", "is", "set", "and"],
+      },
+      {
+        target: "I carry the pan carefully to the table and serve everyone a portion.",
+        jumbled: ["carry", "the", "serve", "a", "the", "and", "everyone", "carefully", "I", "pan", "to", "portion.", "table"],
+      },
+      {
+        target: "Lucas helps by pouring water into everyone's glasses at the table.",
+        jumbled: ["glasses", "water", "at", "Lucas", "table.", "pouring", "helps", "everyone's", "by", "into", "the"],
+      },
+      {
+        target: "“Great job, Miguel!” Lucas says as we all sit down together, and I feel proud looking at the meal I cooked.",
+        jumbled: ["Miguel!”", "proud", "“Great", "feel", "together,", "as", "I", "cooked.", "Lucas", "down", "at", "says", "all", "sit", "looking", "the", "job,", "we", "and", "I", "meal"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about sitting down to eat with your family.",
     mySentenceExample: "I feel happy sitting down to eat dinner with my family.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "Miguel feels the mistake ruined the whole meal.", answer: false },
     ],
     buildSentence: [
-      { target: "Sofia arrives home now.", jumbled: ["arrives", "home", "Sofia", "now."] },
-      { target: "Her eyes widen with surprise.", jumbled: ["Her", "eyes", "widen", "with", "surprise."] },
-      { target: "I invite her to sit down.", jumbled: ["invite", "her", "I", "to", "sit", "down."] },
-      { target: "This tastes really good tonight.", jumbled: ["This", "tastes", "really", "good", "tonight."] },
-      { target: "I feel proud that the meal wasn't ruined.", jumbled: ["I", "feel", "proud", "that", "the", "meal", "wasn't", "ruined."] },
+      {
+        target: "Just as we start eating, Sofia arrives home from her long day of work.",
+        jumbled: ["arrives", "of", "Sofia", "her", "Just", "home", "work.", "start", "long", "as", "eating,", "from", "we", "day"],
+      },
+      {
+        target: "She walks into the kitchen and sees us all sitting at the table together.",
+        jumbled: ["She", "the", "sees", "all", "together.", "the", "table", "and", "kitchen", "walks", "sitting", "at", "into", "us"],
+      },
+      {
+        target: "Her eyes widen with surprise, and she smiles warmly at the scene in front of her.",
+        jumbled: ["of", "surprise,", "at", "eyes", "warmly", "Her", "her.", "with", "smiles", "scene", "she", "widen", "in", "the", "and", "front"],
+      },
+      {
+        target: "I invite her to sit down and try a plate before it gets too cold.",
+        jumbled: ["sit", "try", "I", "too", "and", "it", "invite", "to", "a", "before", "gets", "her", "plate", "cold.", "down"],
+      },
+      {
+        target: "I feel proud that my small kitchen mistake did not ruin the whole meal.",
+        jumbled: ["I", "meal.", "kitchen", "small", "the", "that", "my", "whole", "feel", "proud", "not", "did", "ruin", "mistake"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about surprising someone with something you did.",
     mySentenceExample: "I surprised my mom by cleaning the whole house.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "This family moment feels cold and awkward.", answer: false },
     ],
     buildSentence: [
-      { target: "I bring out the cake.", jumbled: ["bring", "out", "I", "the", "cake."] },
-      { target: "Everyone's eyes light up.", jumbled: ["eyes", "light", "Everyone's", "up."] },
-      { target: "We eat dessert together.", jumbled: ["eat", "dessert", "We", "together."] },
-      { target: "Lucas talks proudly about helping.", jumbled: ["Lucas", "talks", "proudly", "about", "helping."] },
-      { target: "This family moment feels warm and special.", jumbled: ["This", "family", "moment", "feels", "warm", "and", "special."] },
+      {
+        target: "I bring out the small chocolate cake we bought earlier at the store.",
+        jumbled: ["cake", "small", "at", "earlier", "store.", "out", "the", "bought", "chocolate", "bring", "we", "the", "I"],
+      },
+      {
+        target: "Everyone's eyes light up, and Mia claps her hands excitedly at the table.",
+        jumbled: ["claps", "up,", "at", "excitedly", "the", "hands", "table.", "eyes", "Everyone's", "Mia", "her", "light", "and"],
+      },
+      {
+        target: "I cut the cake carefully and give everyone a slice on their plate.",
+        jumbled: ["a", "cake", "the", "and", "their", "cut", "slice", "on", "plate.", "give", "carefully", "I", "everyone"],
+      },
+      {
+        target: "“This cake was a great idea, Miguel,” Sofia says, telling us about her busy day at work while enjoying her piece of cake.",
+        jumbled: ["at", "of", "says,", "was", "while", "great", "idea,", "Sofia", "a", "us", "cake.", "busy", "telling", "cake", "her", "enjoying", "piece", "her", "about", "work", "“This", "day", "Miguel,”"],
+      },
+      {
+        target: "This simple family moment feels warm and special, even though tonight started with a small kitchen mistake.",
+        jumbled: ["small", "family", "special,", "moment", "simple", "mistake.", "started", "even", "warm", "feels", "kitchen", "though", "a", "tonight", "This", "with", "and"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a special moment with your family.",
     mySentenceExample: "Eating dessert together is a special moment for my family.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Miguel feels less confident about cooking again.", answer: false },
     ],
     buildSentence: [
-      { target: "We wash the dishes together.", jumbled: ["wash", "the", "We", "dishes", "together."] },
-      { target: "I'm proud of you, she says.", jumbled: ["proud", "of", "I'm", "you,", "she", "says."] },
-      { target: "I feel happy about this.", jumbled: ["feel", "happy", "I", "about", "this."] },
-      { target: "Everyone makes mistakes trying something new.", jumbled: ["Everyone", "makes", "mistakes", "trying", "something", "new."] },
-      { target: "I feel more confident about cooking again.", jumbled: ["I", "feel", "more", "confident", "about", "cooking", "again."] },
+      {
+        target: "Later that evening, Sofia and I wash the dishes together while the kids watch television.",
+        jumbled: ["the", "Sofia", "I", "watch", "that", "wash", "evening,", "dishes", "the", "and", "television.", "while", "together", "Later", "kids"],
+      },
+      {
+        target: "“I'm proud of you for cooking tonight, Miguel,” Sofia says, drying a plate beside me.",
+        jumbled: ["plate", "cooking", "you", "for", "tonight,", "Sofia", "a", "says,", "beside", "“I'm", "Miguel,”", "proud", "of", "me.", "drying"],
+      },
+      {
+        target: "I tell her about the small mistake with the chicken, and she laughs kindly about it.",
+        jumbled: ["the", "and", "mistake", "her", "small", "I", "about", "the", "laughs", "chicken,", "tell", "she", "it.", "with", "about", "kindly"],
+      },
+      {
+        target: "I feel happy that dinner turned out well despite my nervous start earlier today.",
+        jumbled: ["my", "dinner", "happy", "today.", "turned", "despite", "nervous", "earlier", "out", "I", "that", "feel", "start", "well"],
+      },
+      {
+        target: "Cooking for my family taught me something important about trying new things bravely.",
+        jumbled: ["taught", "things", "me", "bravely.", "for", "important", "trying", "Cooking", "something", "new", "about", "my", "family"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling proud after trying something new.",
     mySentenceExample: "I felt proud after trying something new and it went well.",

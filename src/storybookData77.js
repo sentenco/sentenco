@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "Desmond realizes he needs to understand this discrepancy.", answer: true },
     ],
     buildSentence: [
-      { target: "I discover significant damage now.", jumbled: ["I", "discover", "significant", "damage", "now."] },
-      { target: "I photograph everything methodically now.", jumbled: ["I", "photograph", "everything", "methodically", "now."] },
-      { target: "I receive her assessment a week later.", jumbled: ["I", "receive", "her", "assessment", "a", "week", "later."] },
-      { target: "This seems considerably lower than what contractors quoted.", jumbled: ["This", "seems", "considerably", "lower", "than", "what", "contractors", "quoted."] },
-      { target: "I'll need to understand why these numbers differ.", jumbled: ["I'll", "need", "to", "understand", "why", "these", "numbers", "differ."] },
+      {
+        target: "I discover significant damage to my roof, along with a fallen tree branch that had cracked a fence panel.",
+        jumbled: ["branch", "with", "significant", "fence", "had", "along", "a", "damage", "fallen", "my", "a", "cracked", "panel.", "I", "tree", "roof,", "to", "discover", "that"],
+      },
+      {
+        target: "I photograph everything methodically, documenting the damage from multiple angles before contacting my insurance company to file a claim.",
+        jumbled: ["angles", "to", "from", "I", "a", "the", "documenting", "multiple", "before", "contacting", "my", "file", "everything", "insurance", "damage", "photograph", "methodically,", "company", "claim."],
+      },
+      {
+        target: "Ms. Farrow, the assigned adjuster, visits within a few days.",
+        jumbled: ["a", "adjuster,", "assigned", "few", "the", "days.", "Ms.", "visits", "within", "Farrow,"],
+      },
+      {
+        target: "\"Desmond, walk me through what you've found,\" she says, inspecting the damage and taking her own measurements and photographs.",
+        jumbled: ["photographs.", "her", "\"Desmond,", "what", "she", "own", "you've", "and", "inspecting", "through", "measurements", "and", "walk", "says,", "taking", "me", "the", "damage", "found,\""],
+      },
+      {
+        target: "A week later, I receive her assessment, and the proposed settlement amount seems considerably lower than what local contractors had quoted me.",
+        jumbled: ["contractors", "I", "receive", "seems", "me.", "proposed", "and", "quoted", "A", "the", "assessment,", "later,", "amount", "considerably", "than", "settlement", "her", "local", "had", "lower", "what", "week"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about documenting damage carefully before filing an insurance claim.",
     mySentenceExample: "I documented the damage carefully before filing an insurance claim.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "Desmond feels confident his concern is genuinely justified.", answer: true },
     ],
     buildSentence: [
-      { target: "I decide to gather estimates now.", jumbled: ["I", "decide", "to", "gather", "estimates", "now."] },
-      { target: "I research typical costs in my area.", jumbled: ["I", "research", "typical", "costs", "in", "my", "area."] },
-      { target: "I feel confident about this now.", jumbled: ["I", "feel", "confident", "about", "this", "now."] },
-      { target: "Both estimates come in significantly higher.", jumbled: ["Both", "estimates", "come", "in", "significantly", "higher."] },
-      { target: "This concern is genuinely justified, not simply personal frustration.", jumbled: ["This", "concern", "is", "genuinely", "justified,", "not", "simply", "personal", "frustration."] },
+      {
+        target: "I decide to gather two additional independent estimates from local, licensed contractors for comparison.",
+        jumbled: ["comparison.", "gather", "contractors", "I", "decide", "estimates", "licensed", "local,", "two", "additional", "to", "for", "independent", "from"],
+      },
+      {
+        target: "Both estimates come in significantly higher than the insurance company's proposed amount, suggesting the initial assessment may have underestimated the actual repair costs.",
+        jumbled: ["the", "company's", "the", "suggesting", "have", "significantly", "insurance", "than", "may", "assessment", "actual", "estimates", "in", "the", "higher", "costs.", "amount,", "proposed", "Both", "repair", "initial", "come", "underestimated"],
+      },
+      {
+        target: "I also research typical material and labor costs in my area, wanting to understand whether recent price increases had been properly accounted for.",
+        jumbled: ["understand", "and", "to", "material", "also", "whether", "had", "price", "costs", "research", "typical", "my", "wanting", "I", "properly", "area,", "increases", "in", "labor", "been", "for.", "accounted", "recent"],
+      },
+      {
+        target: "This research, moreover, reveals that lumber and roofing material costs had risen considerably since the adjuster's original assessment guidelines were last updated.",
+        jumbled: ["since", "last", "and", "reveals", "had", "adjuster's", "guidelines", "moreover,", "assessment", "This", "costs", "lumber", "that", "roofing", "risen", "were", "material", "original", "the", "updated.", "considerably", "research,"],
+      },
+      {
+        target: "Armed with this concrete evidence, I feel confident that my concern is genuinely justified, not simply personal frustration.",
+        jumbled: ["frustration.", "confident", "concrete", "I", "concern", "with", "that", "personal", "evidence,", "my", "Armed", "simply", "feel", "not", "is", "genuinely", "this", "justified,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about gathering independent evidence before disputing a decision.",
     mySentenceExample: "I gathered independent evidence before disputing the decision.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Desmond feels this is heading toward a productive outcome.", answer: true },
     ],
     buildSentence: [
-      { target: "I call Ms. Farrow now.", jumbled: ["I", "call", "Ms.", "Farrow", "now."] },
-      { target: "She listens carefully to this.", jumbled: ["She", "listens", "carefully", "to", "this."] },
-      { target: "She acknowledges this is possible.", jumbled: ["She", "acknowledges", "this", "is", "possible."] },
-      { target: "This is heading toward a productive outcome.", jumbled: ["This", "is", "heading", "toward", "a", "productive", "outcome."] },
-      { target: "Guideline updates sometimes lag behind current market conditions.", jumbled: ["Guideline", "updates", "sometimes", "lag", "behind", "current", "market", "conditions."] },
+      {
+        target: "I call Ms. Farrow, explaining respectfully that I'd gathered independent estimates significantly higher than the company's proposed settlement amount.",
+        jumbled: ["gathered", "I", "Farrow,", "proposed", "company's", "estimates", "than", "independent", "settlement", "amount.", "Ms.", "call", "that", "I'd", "explaining", "respectfully", "significantly", "the", "higher"],
+      },
+      {
+        target: "She listens carefully, asking me to send documentation so she can formally review the discrepancy on her end.",
+        jumbled: ["so", "carefully,", "formally", "She", "the", "end.", "listens", "documentation", "can", "she", "on", "discrepancy", "send", "her", "to", "asking", "me", "review"],
+      },
+      {
+        target: "I mention specifically that material costs seem to have increased since the assessment guidelines were last updated, referencing my own research.",
+        jumbled: ["own", "updated,", "last", "guidelines", "I", "mention", "specifically", "material", "since", "increased", "referencing", "seem", "that", "to", "were", "the", "assessment", "costs", "my", "research.", "have"],
+      },
+      {
+        target: "\"That's possible, Desmond — our guideline updates sometimes lag behind the current market,\" she acknowledges.",
+        jumbled: ["possible,", "updates", "the", "she", "current", "\"That's", "Desmond", "—", "market,\"", "behind", "guideline", "sometimes", "our", "acknowledges.", "lag"],
+      },
+      {
+        target: "Given her willingness to genuinely reconsider, I feel this conversation is heading toward a productive, collaborative outcome rather than a confrontation.",
+        jumbled: ["Given", "to", "collaborative", "genuinely", "reconsider,", "this", "heading", "than", "her", "a", "willingness", "I", "toward", "a", "productive,", "is", "outcome", "feel", "conversation", "confrontation.", "rather"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about calling to request a review of a decision you believed was incorrect.",
     mySentenceExample: "I called to request a review of a decision I believed was incorrect.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "Desmond feels he's presented his case thoroughly and persuasively.", answer: true },
     ],
     buildSentence: [
-      { target: "I compile everything into a document.", jumbled: ["I", "compile", "everything", "into", "a", "document."] },
-      { target: "I keep the tone factual throughout.", jumbled: ["I", "keep", "the", "tone", "factual", "throughout."] },
-      { target: "I simply need to wait now.", jumbled: ["I", "simply", "need", "to", "wait", "now."] },
-      { target: "I highlight specific line items here.", jumbled: ["I", "highlight", "specific", "line", "items", "here."] },
-      { target: "I've presented my case as persuasively as possible.", jumbled: ["I've", "presented", "my", "case", "as", "persuasively", "as", "possible."] },
+      {
+        target: "I compile everything into a clear, organized document: photographs, both independent estimates, and a brief summary explaining the discrepancy in market pricing.",
+        jumbled: ["explaining", "the", "a", "in", "and", "into", "brief", "compile", "a", "photographs,", "pricing.", "both", "estimates,", "I", "organized", "market", "independent", "everything", "summary", "clear,", "document:", "discrepancy"],
+      },
+      {
+        target: "I keep the tone factual and professional throughout, avoiding language that might sound accusatory or overly emotional in nature.",
+        jumbled: ["in", "professional", "factual", "accusatory", "overly", "I", "tone", "might", "avoiding", "and", "keep", "the", "that", "nature.", "emotional", "sound", "language", "throughout,", "or"],
+      },
+      {
+        target: "Moreover, I highlight specific line items where the difference seems most significant, making it easier for Ms. Farrow to review efficiently.",
+        jumbled: ["where", "making", "easier", "review", "efficiently.", "significant,", "seems", "highlight", "I", "most", "Farrow", "items", "Ms.", "line", "it", "to", "specific", "the", "difference", "Moreover,", "for"],
+      },
+      {
+        target: "Sending this documentation, I feel I've presented my case as thoroughly and persuasively as reasonably possible.",
+        jumbled: ["persuasively", "as", "and", "possible.", "feel", "case", "Sending", "I've", "this", "presented", "I", "thoroughly", "my", "as", "reasonably", "documentation,"],
+      },
+      {
+        target: "Now, I simply need to wait for the formal review process to actually run its course.",
+        jumbled: ["review", "course.", "its", "simply", "run", "for", "to", "wait", "to", "I", "the", "actually", "Now,", "process", "need", "formal"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about compiling clear, factual documentation to support a claim.",
     mySentenceExample: "I compiled clear, factual documentation to support my claim.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Desmond decides this revised offer represents meaningful progress.", answer: true },
     ],
     buildSentence: [
-      { target: "She responds a week later.", jumbled: ["She", "responds", "a", "week", "later."] },
-      { target: "I consider this carefully now.", jumbled: ["I", "consider", "this", "carefully", "now."] },
-      { target: "This represents meaningful progress worth acknowledging.", jumbled: ["This", "represents", "meaningful", "progress", "worth", "acknowledging."] },
-      { target: "This seems genuinely grounded in reasonable criteria.", jumbled: ["This", "seems", "genuinely", "grounded", "in", "reasonable", "criteria."] },
-      { target: "The company can only adjust the amount partially.", jumbled: ["The", "company", "can", "only", "adjust", "the", "amount", "partially."] },
+      {
+        target: "A week later, Ms. Farrow responds.",
+        jumbled: ["Farrow", "week", "responds.", "Ms.", "later,", "A"],
+      },
+      {
+        target: "\"Desmond, the company has agreed to revise the settlement, though not fully to the amount you requested,\" she explains.",
+        jumbled: ["amount", "she", "to", "you", "\"Desmond,", "to", "explains.", "the", "the", "though", "requested,\"", "the", "not", "agreed", "revise", "has", "company", "fully", "settlement,"],
+      },
+      {
+        target: "She mentions that while material costs had indeed increased, some of my estimates included additional work beyond what the original damage strictly required.",
+        jumbled: ["of", "my", "original", "had", "additional", "indeed", "what", "beyond", "required.", "increased,", "material", "costs", "estimates", "that", "included", "work", "She", "mentions", "some", "strictly", "while", "damage", "the"],
+      },
+      {
+        target: "This distinction, she explains, means the company can only adjust the amount partially rather than matching my highest estimate exactly.",
+        jumbled: ["partially", "matching", "only", "highest", "This", "exactly.", "can", "the", "my", "means", "adjust", "explains,", "than", "distinction,", "she", "estimate", "amount", "company", "the", "rather"],
+      },
+      {
+        target: "I consider this carefully, recognizing that her reasoning, while disappointing, seems genuinely grounded in reasonable, defensible criteria rather than arbitrary refusal.",
+        jumbled: ["disappointing,", "consider", "in", "carefully,", "reasonable,", "seems", "defensible", "rather", "I", "criteria", "recognizing", "grounded", "arbitrary", "while", "this", "that", "genuinely", "than", "refusal.", "reasoning,", "her"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about accepting a partial win as meaningful progress in a negotiation.",
     mySentenceExample: "I accepted a partial win as meaningful progress in the negotiation.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "This clarification helps Desmond understand what would strengthen his case.", answer: true },
     ],
     buildSentence: [
-      { target: "I schedule a call now.", jumbled: ["I", "schedule", "a", "call", "now."] },
-      { target: "She walks me through this breakdown.", jumbled: ["She", "walks", "me", "through", "this", "breakdown."] },
-      { target: "I ask about removing the upgrades.", jumbled: ["I", "ask", "about", "removing", "the", "upgrades."] },
-      { target: "This could work, she agrees.", jumbled: ["This", "could", "work,", "she", "agrees."] },
-      { target: "This helps me understand what would strengthen my case.", jumbled: ["This", "helps", "me", "understand", "what", "would", "strengthen", "my", "case."] },
+      {
+        target: "Rather than simply accepting the partial revision, I schedule a call to clarify exactly which items were excluded and why specifically.",
+        jumbled: ["a", "the", "excluded", "Rather", "exactly", "items", "specifically.", "partial", "to", "schedule", "than", "revision,", "were", "clarify", "call", "why", "simply", "and", "accepting", "I", "which"],
+      },
+      {
+        target: "Ms. Farrow walks me through the itemized breakdown, explaining that one contractor's estimate included optional upgrades beyond basic, necessary repair work.",
+        jumbled: ["through", "repair", "optional", "the", "upgrades", "walks", "me", "Ms.", "breakdown,", "necessary", "itemized", "estimate", "one", "included", "Farrow", "work.", "explaining", "beyond", "basic,", "that", "contractor's"],
+      },
+      {
+        target: "I ask whether removing those specific upgrades from my estimate might allow the remaining costs to be fully covered instead.",
+        jumbled: ["instead.", "the", "specific", "fully", "allow", "removing", "costs", "covered", "estimate", "I", "ask", "upgrades", "my", "might", "to", "remaining", "whether", "be", "from", "those"],
+      },
+      {
+        target: "\"If you resubmit an estimate focused strictly on repair, not upgrade, Desmond, this could work,\" she agrees, reviewing this possibility.",
+        jumbled: ["resubmit", "could", "on", "this", "work,\"", "an", "you", "reviewing", "strictly", "upgrade,", "\"If", "not", "possibility.", "this", "agrees,", "repair,", "focused", "Desmond,", "she", "estimate"],
+      },
+      {
+        target: "This clarification, given how specific it becomes, helps me understand exactly what adjustments would actually strengthen my case.",
+        jumbled: ["it", "clarification,", "This", "becomes,", "me", "strengthen", "would", "given", "understand", "exactly", "actually", "case.", "specific", "adjustments", "what", "my", "helps", "how"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about clarifying specific details before resubmitting a revised request.",
     mySentenceExample: "I clarified specific details before resubmitting a revised request.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Desmond feels genuinely optimistic about a fair resolution.", answer: true },
     ],
     buildSentence: [
-      { target: "I contact the contractor now.", jumbled: ["I", "contact", "the", "contractor", "now."] },
-      { target: "He provides a new estimate promptly.", jumbled: ["He", "provides", "a", "new", "estimate", "promptly."] },
-      { target: "I feel genuinely optimistic now.", jumbled: ["I", "feel", "genuinely", "optimistic", "now."] },
-      { target: "She confirms receipt of this now.", jumbled: ["She", "confirms", "receipt", "of", "this", "now."] },
-      { target: "This process has felt collaborative lately.", jumbled: ["This", "process", "has", "felt", "collaborative", "lately."] },
+      {
+        target: "I contact the contractor, requesting a revised estimate focused strictly on necessary repairs, excluding the optional upgrades entirely.",
+        jumbled: ["I", "the", "entirely.", "focused", "the", "requesting", "upgrades", "contact", "estimate", "optional", "strictly", "repairs,", "a", "on", "excluding", "contractor,", "revised", "necessary"],
+      },
+      {
+        target: "He provides a new estimate promptly, which, once resubmitted, comes noticeably closer to the insurance company's revised offer amount.",
+        jumbled: ["provides", "promptly,", "revised", "a", "insurance", "to", "comes", "the", "new", "company's", "amount.", "estimate", "offer", "He", "resubmitted,", "once", "closer", "which,", "noticeably"],
+      },
+      {
+        target: "I send this updated estimate to Ms. Farrow, along with a brief note explaining the adjustment we'd discussed during our call.",
+        jumbled: ["a", "during", "updated", "adjustment", "discussed", "this", "to", "along", "with", "Farrow,", "I", "note", "Ms.", "our", "send", "brief", "explaining", "call.", "the", "we'd", "estimate"],
+      },
+      {
+        target: "\"Got it, Desmond, I'll process this final review within the next few business days,\" she confirms.",
+        jumbled: ["process", "she", "this", "I'll", "Desmond,", "few", "confirms.", "days,\"", "review", "next", "business", "\"Got", "within", "the", "final", "it,"],
+      },
+      {
+        target: "Given how collaborative this process has felt lately, I feel genuinely optimistic that we're approaching a fair, final resolution.",
+        jumbled: ["we're", "collaborative", "this", "lately,", "felt", "I", "feel", "a", "process", "Given", "how", "resolution.", "has", "fair,", "genuinely", "that", "optimistic", "approaching", "final"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about resubmitting a request after making a reasonable adjustment.",
     mySentenceExample: "I resubmitted my request after making a reasonable adjustment.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "Desmond feels genuine relief at this outcome.", answer: true },
     ],
     buildSentence: [
-      { target: "I receive final approval now.", jumbled: ["I", "receive", "final", "approval", "now."] },
-      { target: "I reply, thanking her now.", jumbled: ["I", "reply,", "thanking", "her", "now."] },
-      { target: "I feel genuine relief about this.", jumbled: ["I", "feel", "genuine", "relief", "about", "this."] },
-      { target: "Both parties reached a figure grounded in accurate conditions.", jumbled: ["Both", "parties", "reached", "a", "figure", "grounded", "in", "accurate", "conditions."] },
-      { target: "Patient, evidence-based negotiation ultimately produced a fair outcome.", jumbled: ["Patient,", "evidence-based", "negotiation", "ultimately", "produced", "a", "fair", "outcome."] },
+      {
+        target: "A few days later, I receive final approval, with the settlement amount now closely matching the revised, repair-focused estimate.",
+        jumbled: ["later,", "the", "amount", "approval,", "few", "settlement", "receive", "estimate.", "repair-focused", "matching", "A", "the", "closely", "revised,", "with", "I", "final", "now", "days"],
+      },
+      {
+        target: "Ms. Farrow's email explains the adjustment clearly, noting that both parties had ultimately reached a figure grounded in accurate, current market conditions.",
+        jumbled: ["both", "accurate,", "Ms.", "reached", "conditions.", "grounded", "parties", "that", "the", "current", "Farrow's", "adjustment", "explains", "a", "ultimately", "clearly,", "noting", "figure", "market", "in", "email", "had"],
+      },
+      {
+        target: "I reply, thanking her for handling this collaboratively rather than simply enforcing the original, outdated assessment without reconsideration.",
+        jumbled: ["her", "I", "than", "this", "original,", "assessment", "outdated", "thanking", "enforcing", "rather", "the", "simply", "collaboratively", "without", "reconsideration.", "for", "handling", "reply,"],
+      },
+      {
+        target: "\"I appreciate you approaching this with clear documentation, Desmond, rather than frustration or vague complaints,\" she responds briefly.",
+        jumbled: ["briefly.", "with", "documentation,", "you", "frustration", "vague", "complaints,\"", "than", "approaching", "responds", "Desmond,", "appreciate", "rather", "clear", "this", "she", "or", "\"I"],
+      },
+      {
+        target: "Reading this final confirmation, I feel genuine relief that patient, evidence-based negotiation had ultimately produced a fair outcome.",
+        jumbled: ["a", "confirmation,", "feel", "final", "fair", "this", "genuine", "I", "patient,", "outcome.", "that", "negotiation", "had", "evidence-based", "relief", "produced", "ultimately", "Reading"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about feeling relieved when a fair outcome was finally reached.",
     mySentenceExample: "I felt relieved when a fair outcome was finally reached.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "The neighbor says she'll reconsider her own settlement.", answer: true },
     ],
     buildSentence: [
-      { target: "My neighbor mentions this to me.", jumbled: ["My", "neighbor", "mentions", "this", "to", "me."] },
-      { target: "I share what I'd learned with her.", jumbled: ["I", "share", "what", "I'd", "learned", "with", "her."] },
-      { target: "She thanks me for this insight.", jumbled: ["She", "thanks", "me", "for", "this", "insight."] },
-      { target: "She hadn't realized settlements could actually be negotiated.", jumbled: ["She", "hadn't", "realized", "settlements", "could", "actually", "be", "negotiated."] },
-      { target: "Most adjusters are open to reasonable, well-documented requests.", jumbled: ["Most", "adjusters", "are", "open", "to", "reasonable,", "well-documented", "requests."] },
+      {
+        target: "My neighbor, whose house sustained similar storm damage, mentions she'd simply accepted her insurance company's first offer without question.",
+        jumbled: ["accepted", "she'd", "neighbor,", "My", "whose", "her", "without", "damage,", "company's", "house", "question.", "storm", "first", "mentions", "offer", "simply", "insurance", "similar", "sustained"],
+      },
+      {
+        target: "I share what I'd learned: gathering independent estimates, requesting clarification, and negotiating based on evidence rather than frustration alone.",
+        jumbled: ["clarification,", "rather", "I'd", "requesting", "independent", "than", "what", "evidence", "estimates,", "gathering", "and", "based", "learned:", "I", "frustration", "negotiating", "share", "alone.", "on"],
+      },
+      {
+        target: "She admits she hadn't realized insurance settlements could actually be negotiated, having assumed the initial offer was simply final.",
+        jumbled: ["insurance", "final.", "simply", "realized", "assumed", "initial", "She", "was", "settlements", "having", "she", "the", "could", "offer", "hadn't", "negotiated,", "admits", "actually", "be"],
+      },
+      {
+        target: "I explain that, in my experience, most adjusters are open to reasonable, well-documented requests, even if they can't guarantee full agreement.",
+        jumbled: ["adjusters", "explain", "full", "well-documented", "in", "reasonable,", "they", "to", "experience,", "if", "most", "guarantee", "requests,", "are", "can't", "my", "even", "I", "that,", "agreement.", "open"],
+      },
+      {
+        target: "\"Thanks for the insight, Desmond — I'll reconsider my own settlement before my repairs begin,\" she says.",
+        jumbled: ["—", "settlement", "Desmond", "I'll", "insight,", "for", "\"Thanks", "the", "own", "my", "begin,\"", "my", "before", "reconsider", "says.", "she", "repairs"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about sharing something you learned to help someone else negotiate confidently.",
     mySentenceExample: "I shared what I learned to help someone else negotiate confidently.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Desmond learns persistence paired with evidence produces better outcomes.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this process now.", jumbled: ["I", "look", "back", "on", "this", "process", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "This has more room for negotiation than expected.", jumbled: ["This", "has", "more", "room", "for", "negotiation", "than", "expected."] },
-      { target: "Persistence paired with solid evidence produces better outcomes.", jumbled: ["Persistence", "paired", "with", "solid", "evidence", "produces", "better", "outcomes."] },
-      { target: "Had I accepted the original settlement, I would have paid out of pocket.", jumbled: ["Had", "I", "accepted", "the", "original", "settlement,", "I", "would", "have", "paid", "out", "of", "pocket."] },
+      {
+        target: "Looking back on the entire process, I realize how differently things might have unfolded had I simply accepted the original settlement without question.",
+        jumbled: ["entire", "simply", "had", "the", "accepted", "differently", "on", "how", "process,", "might", "realize", "Looking", "settlement", "without", "unfolded", "back", "I", "question.", "I", "have", "the", "original", "things"],
+      },
+      {
+        target: "I likely would have paid a significant amount out of pocket for necessary repairs.",
+        jumbled: ["necessary", "would", "pocket", "significant", "likely", "out", "have", "of", "amount", "repairs.", "paid", "a", "for", "I"],
+      },
+      {
+        target: "Instead, gathering evidence, requesting clarification, and negotiating patiently allowed me to reach an outcome grounded in genuine accuracy.",
+        jumbled: ["clarification,", "negotiating", "allowed", "requesting", "to", "an", "outcome", "reach", "grounded", "accuracy.", "in", "Instead,", "and", "patiently", "genuine", "evidence,", "me", "gathering"],
+      },
+      {
+        target: "I've learned that insurance settlements, like many formal processes, often have more room for negotiation than they initially appear to allow.",
+        jumbled: ["they", "to", "room", "appear", "processes,", "I've", "negotiation", "many", "often", "have", "insurance", "allow.", "more", "for", "that", "initially", "settlements,", "learned", "like", "than", "formal"],
+      },
+      {
+        target: "In the end, this experience taught me that persistence, paired with solid evidence, tends to produce far better outcomes than passive acceptance.",
+        jumbled: ["acceptance.", "to", "with", "solid", "produce", "than", "taught", "evidence,", "paired", "persistence,", "this", "tends", "me", "end,", "experience", "that", "outcomes", "passive", "far", "In", "better", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from negotiating an insurance claim patiently.",
     mySentenceExample: "I learned that patient, evidence-based negotiation produces fairer outcomes.",

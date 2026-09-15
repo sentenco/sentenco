@@ -36,9 +36,26 @@ export const CHAPTERS = [
       { text: "They start making a list of things they need.", answer: true },
     ],
     buildSentence: [
-      { target: "I want to plan a surprise.", jumbled: ["want", "to", "I", "plan", "a", "surprise."] },
-      { target: "Can I help plan it?", jumbled: ["I", "help", "Can", "plan", "it?"] },
-      { target: "I am determined to help.", jumbled: ["am", "determined", "I", "to", "help."] },
+      {
+        target: "Mom pulls me into the kitchen and closes the door quietly.",
+        jumbled: ["closes", "quietly.", "Mom", "pulls", "me", "into", "the", "kitchen", "the", "and", "door"],
+      },
+      {
+        target: "“Max's birthday is next Saturday, and I want to plan a surprise party,” she whispers excitedly.",
+        jumbled: ["birthday", "is", "I", "Saturday,", "plan", "excitedly.", "surprise", "whispers", "“Max's", "to", "and", "a", "want", "party,”", "she", "next"],
+      },
+      {
+        target: "My eyes light up immediately because I love surprises, especially for my little brother.",
+        jumbled: ["eyes", "light", "immediately", "especially", "surprises,", "I", "for", "My", "because", "my", "little", "love", "up", "brother."],
+      },
+      {
+        target: "“Of course, Ella! I need your help with everything,” Mom says, smiling warmly.",
+        jumbled: ["help", "says,", "your", "I", "Ella!", "everything,”", "Mom", "course,", "need", "smiling", "“Of", "warmly.", "with"],
+      },
+      {
+        target: "Keeping this secret from Max for a whole week feels like a big challenge, but I am determined to make his birthday unforgettable.",
+        jumbled: ["make", "week", "his", "for", "a", "am", "but", "to", "Max", "from", "whole", "big", "birthday", "this", "I", "a", "secret", "determined", "unforgettable.", "Keeping", "like", "feels", "challenge,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a surprise you planned for someone.",
     mySentenceExample: "I planned a surprise breakfast for my dad's birthday.",
@@ -61,9 +78,26 @@ export const CHAPTERS = [
       { text: "The final list has fifteen names.", answer: true },
     ],
     buildSentence: [
-      { target: "We write a guest list.", jumbled: ["write", "a", "We", "guest", "list."] },
-      { target: "Don't forget Uncle Jake.", jumbled: ["forget", "Uncle", "Don't", "Jake."] },
-      { target: "This will be wonderful.", jumbled: ["will", "be", "This", "wonderful."] },
+      {
+        target: "That evening, Mom and I sit at the kitchen table with a notebook, writing down names for the guest list.",
+        jumbled: ["with", "kitchen", "at", "guest", "list.", "I", "names", "the", "and", "notebook,", "table", "a", "writing", "That", "the", "for", "sit", "evening,", "down", "Mom"],
+      },
+      {
+        target: "“Who are Max's best friends from preschool?” Mom asks me.",
+        jumbled: ["friends", "Max's", "me.", "are", "from", "best", "“Who", "preschool?”", "asks", "Mom"],
+      },
+      {
+        target: "I think carefully and name a few kids he always talks about, like Leo and Sofia.",
+        jumbled: ["he", "and", "about,", "Leo", "talks", "kids", "I", "name", "think", "a", "like", "carefully", "few", "Sofia.", "always", "and"],
+      },
+      {
+        target: "“Don't forget Uncle Jake, he always makes Max laugh,” I remind Mom.",
+        jumbled: ["he", "remind", "makes", "Uncle", "Mom.", "laugh,”", "“Don't", "I", "Max", "forget", "Jake,", "always"],
+      },
+      {
+        target: "“This is going to be a wonderful party, Ella,” Mom says, and I nod eagerly, already imagining Max's excited face.",
+        jumbled: ["excited", "Ella,”", "going", "says,", "face.", "a", "be", "Mom", "already", "“This", "nod", "I", "eagerly,", "wonderful", "is", "Max's", "and", "imagining", "to", "party,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone you would invite to a party.",
     mySentenceExample: "I would invite my best friend to my party first.",
@@ -86,9 +120,26 @@ export const CHAPTERS = [
       { text: "Ella chooses the dinosaur set with moving parts.", answer: true },
     ],
     buildSentence: [
-      { target: "He loves dinosaurs the most.", jumbled: ["loves", "dinosaurs", "He", "the", "most."] },
-      { target: "I cannot decide which one.", jumbled: ["cannot", "decide", "I", "which", "one."] },
-      { target: "This is the perfect choice.", jumbled: ["is", "the", "This", "perfect", "choice."] },
+      {
+        target: "On Wednesday, Dad takes me to the toy store to help pick Max's gift.",
+        jumbled: ["takes", "help", "On", "Dad", "me", "toy", "pick", "to", "Wednesday,", "the", "Max's", "to", "gift.", "store"],
+      },
+      {
+        target: "“He loves dinosaurs more than anything,” I tell Dad, walking straight to that aisle.",
+        jumbled: ["dinosaurs", "more", "Dad,", "straight", "aisle.", "loves", "“He", "tell", "walking", "than", "anything,”", "that", "to", "I"],
+      },
+      {
+        target: "I see a large dinosaur toy set and also a colorful dinosaur puzzle, and I cannot decide which one Max would love more.",
+        jumbled: ["love", "and", "Max", "set", "decide", "and", "I", "would", "colorful", "dinosaur", "one", "cannot", "which", "also", "toy", "a", "dinosaur", "I", "more.", "see", "puzzle,", "large", "a"],
+      },
+      {
+        target: "I remember how Max always pretends his toys are exploring, so I choose the dinosaur set with moving parts.",
+        jumbled: ["set", "I", "I", "his", "toys", "choose", "pretends", "remember", "parts.", "are", "always", "with", "so", "exploring,", "the", "Max", "dinosaur", "moving", "how"],
+      },
+      {
+        target: "I feel confident that Max will absolutely love unwrapping this gift.",
+        jumbled: ["Max", "this", "that", "will", "gift.", "feel", "unwrapping", "love", "confident", "I", "absolutely"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a gift you chose carefully for someone.",
     mySentenceExample: "I chose a book carefully for my friend who loves reading.",
@@ -111,9 +162,26 @@ export const CHAPTERS = [
       { text: "They have two hours to decorate.", answer: true },
     ],
     buildSentence: [
-      { target: "We decorate the house quickly.", jumbled: ["decorate", "the", "We", "house", "quickly."] },
-      { target: "We only have two hours.", jumbled: ["only", "have", "We", "two", "hours."] },
-      { target: "The room looks like a jungle.", jumbled: ["looks", "like", "The", "room", "a", "jungle."] },
+      {
+        target: "On Saturday morning, Grandma takes Max to the park so we can decorate secretly.",
+        jumbled: ["secretly.", "Grandma", "so", "park", "Saturday", "the", "morning,", "On", "takes", "decorate", "we", "to", "Max", "can"],
+      },
+      {
+        target: "Dad and I work quickly, hanging green dinosaur streamers across the living room and tying colorful balloons to every chair.",
+        jumbled: ["room", "tying", "Dad", "green", "living", "and", "the", "balloons", "to", "I", "every", "quickly,", "and", "chair.", "hanging", "colorful", "dinosaur", "across", "work", "streamers"],
+      },
+      {
+        target: "Mom arranges a big “Happy Birthday” banner above the fireplace, carefully checking that it hangs perfectly straight.",
+        jumbled: ["it", "arranges", "the", "“Happy", "a", "big", "checking", "perfectly", "fireplace,", "Birthday”", "hangs", "Mom", "banner", "that", "carefully", "above", "straight."],
+      },
+      {
+        target: "“We only have two hours before they come back, Ella,” Dad reminds us, so we move even faster.",
+        jumbled: ["only", "have", "back,", "come", "faster.", "Dad", "so", "even", "before", "two", "hours", "reminds", "“We", "we", "they", "move", "Ella,”", "us,"],
+      },
+      {
+        target: "By the time we finish, our living room looks like a magical dinosaur jungle.",
+        jumbled: ["living", "room", "finish,", "the", "jungle.", "like", "a", "dinosaur", "we", "our", "looks", "time", "magical", "By"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about decorating a room for a special event.",
     mySentenceExample: "We decorated our classroom for the winter holiday party.",
@@ -136,9 +204,26 @@ export const CHAPTERS = [
       { text: "The fixed cake looks even better than before.", answer: true },
     ],
     buildSentence: [
-      { target: "The cake sank in the middle.", jumbled: ["sank", "in", "The", "cake", "the", "middle."] },
-      { target: "I have an idea.", jumbled: ["have", "an", "I", "idea."] },
-      { target: "Problems have solutions.", jumbled: ["have", "solutions", "Problems."] },
+      {
+        target: "Mom calls me into the kitchen with a worried voice.",
+        jumbled: ["calls", "me", "worried", "Mom", "kitchen", "with", "into", "voice.", "a", "the"],
+      },
+      {
+        target: "“The cake sank in the middle, Ella,” she says, pointing at the slightly lopsided chocolate cake.",
+        jumbled: ["cake", "chocolate", "middle,", "she", "slightly", "the", "pointing", "in", "cake.", "the", "says,", "Ella,”", "lopsided", "“The", "at", "sank"],
+      },
+      {
+        target: "“What if we cover the middle with candy and dinosaur figures?”",
+        jumbled: ["dinosaur", "and", "if", "the", "candy", "with", "middle", "figures?”", "cover", "“What", "we"],
+      },
+      {
+        target: "Mom's face brightens instantly.",
+        jumbled: ["brightens", "instantly.", "Mom's", "face"],
+      },
+      {
+        target: "Together, we pile colorful candy and small plastic dinosaurs right over the sunken part, and honestly, it looks even better than a plain cake.",
+        jumbled: ["right", "even", "a", "candy", "we", "honestly,", "and", "plastic", "looks", "the", "and", "over", "small", "than", "better", "plain", "dinosaurs", "colorful", "it", "sunken", "cake.", "Together,", "part,", "pile"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a mistake you fixed with a good idea.",
     mySentenceExample: "I fixed my drawing mistake by turning it into a funny animal.",
@@ -161,9 +246,26 @@ export const CHAPTERS = [
       { text: "Ella distracts Max by asking about the park.", answer: true },
     ],
     buildSentence: [
-      { target: "Why are you smiling weird?", jumbled: ["are", "you", "Why", "smiling", "weird?"] },
-      { target: "My heart beats fast.", jumbled: ["beats", "fast", "My", "heart."] },
-      { target: "The surprise stays safe.", jumbled: ["stays", "safe", "The", "surprise."] },
+      {
+        target: "Right before Grandma brings Max home, Dad quickly hides the decorations behind closed doors, and we all act normal.",
+        jumbled: ["normal.", "Dad", "doors,", "behind", "Grandma", "hides", "quickly", "before", "and", "Max", "we", "all", "Right", "brings", "decorations", "the", "closed", "act", "home,"],
+      },
+      {
+        target: "He looks at me curiously.",
+        jumbled: ["He", "me", "looks", "curiously.", "at"],
+      },
+      {
+        target: "“Why are you smiling so weird, Ella?” he asks suspiciously.",
+        jumbled: ["weird,", "suspiciously.", "you", "he", "Ella?”", "“Why", "so", "asks", "are", "smiling"],
+      },
+      {
+        target: "He almost walks toward the living room, but I distract him by asking about his time at the park instead.",
+        jumbled: ["the", "about", "park", "asking", "the", "instead.", "almost", "toward", "at", "room,", "He", "living", "I", "time", "his", "walks", "but", "by", "him", "distract"],
+      },
+      {
+        target: "Thankfully, he gets distracted talking about the ducks he saw, and the surprise stays safe for now.",
+        jumbled: ["distracted", "stays", "the", "safe", "ducks", "gets", "he", "he", "about", "talking", "Thankfully,", "for", "and", "the", "saw,", "now.", "surprise"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a secret you kept for someone.",
     mySentenceExample: "I kept a secret about my sister's surprise gift.",
@@ -186,9 +288,26 @@ export const CHAPTERS = [
       { text: "Ella sees Grandma walking Max toward the door.", answer: true },
     ],
     buildSentence: [
-      { target: "Everyone hides behind the couch.", jumbled: ["hides", "behind", "Everyone", "the", "couch."] },
-      { target: "My stomach feels nervous.", jumbled: ["feels", "nervous", "My", "stomach."] },
-      { target: "We wait for the moment.", jumbled: ["wait", "for", "We", "the", "moment."] },
+      {
+        target: "Guests slowly start arriving through the back door to stay quiet.",
+        jumbled: ["start", "through", "to", "quiet.", "the", "slowly", "arriving", "door", "stay", "back", "Guests"],
+      },
+      {
+        target: "Leo, Sofia, Ben, and even Uncle Jake tiptoe inside, trying hard not to giggle too loudly.",
+        jumbled: ["trying", "Uncle", "even", "Sofia,", "giggle", "Jake", "and", "too", "tiptoe", "not", "hard", "Ben,", "inside,", "to", "Leo,", "loudly."],
+      },
+      {
+        target: "“Everyone, hide behind the couch and the kitchen counter,” Dad whispers, turning to me.",
+        jumbled: ["and", "Dad", "whispers,", "“Everyone,", "turning", "counter,”", "the", "kitchen", "to", "behind", "the", "me.", "hide", "couch"],
+      },
+      {
+        target: "“Get ready, Ella,” he adds, turning off the living room lights.",
+        jumbled: ["“Get", "Ella,”", "living", "lights.", "he", "ready,", "the", "room", "off", "adds,", "turning"],
+      },
+      {
+        target: "My stomach feels full of nervous butterflies as everyone crouches down, holding their breath, waiting for the perfect moment to surprise my little brother.",
+        jumbled: ["down,", "to", "full", "feels", "of", "moment", "waiting", "perfect", "little", "as", "crouches", "My", "brother.", "stomach", "the", "holding", "surprise", "my", "for", "breath,", "their", "nervous", "butterflies", "everyone"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a time you waited nervously for something.",
     mySentenceExample: "I waited nervously for my test results at school.",
@@ -211,9 +330,26 @@ export const CHAPTERS = [
       { text: "Ella feels the planning was worth it.", answer: true },
     ],
     buildSentence: [
-      { target: "Everyone shouts surprise together.", jumbled: ["shouts", "Everyone", "surprise", "together."] },
-      { target: "This is for me?", jumbled: ["is", "for", "This", "me?"] },
-      { target: "Happy birthday, Max!", jumbled: ["birthday,", "Max!", "Happy"] },
+      {
+        target: "The front door opens, and Max steps inside, rubbing his sleepy eyes.",
+        jumbled: ["steps", "rubbing", "his", "The", "and", "front", "inside,", "door", "opens,", "Max", "sleepy", "eyes."],
+      },
+      {
+        target: "“SURPRISE!” we all shout together, throwing confetti into the air.",
+        jumbled: ["we", "shout", "air.", "throwing", "the", "“SURPRISE!”", "confetti", "together,", "all", "into"],
+      },
+      {
+        target: "Max freezes for a moment, completely shocked, and then a huge smile spreads across his face.",
+        jumbled: ["huge", "for", "freezes", "across", "completely", "a", "and", "face.", "shocked,", "smile", "a", "moment,", "Max", "spreads", "then", "his"],
+      },
+      {
+        target: "His eyes fill with happy tears, and he hugs me back even tighter.",
+        jumbled: ["even", "happy", "hugs", "His", "fill", "and", "me", "back", "he", "tears,", "with", "eyes", "tighter."],
+      },
+      {
+        target: "“Way to go, Ella!” Dad calls out, grinning as confetti settles around us.",
+        jumbled: ["to", "around", "Dad", "out,", "“Way", "go,", "settles", "grinning", "confetti", "as", "us.", "calls", "Ella!”"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about the happiest surprise you ever received.",
     mySentenceExample: "The happiest surprise I ever received was a puppy for my birthday.",
@@ -236,9 +372,26 @@ export const CHAPTERS = [
       { text: "Ella feels warmth watching Max laugh.", answer: true },
     ],
     buildSentence: [
-      { target: "We play games in the backyard.", jumbled: ["play", "games", "We", "in", "the", "backyard."] },
-      { target: "Max giggles uncontrollably at Leo.", jumbled: ["giggles", "uncontrollably", "Max", "at", "Leo."] },
-      { target: "Everyone laughs and cheers.", jumbled: ["laughs", "and", "Everyone", "cheers."] },
+      {
+        target: "We move outside for party games in the backyard.",
+        jumbled: ["in", "outside", "for", "move", "backyard.", "the", "party", "We", "games"],
+      },
+      {
+        target: "We play a dinosaur-themed version of pin-the-tail, where each blindfolded kid tries to stick a paper tail on a giant dinosaur poster.",
+        jumbled: ["kid", "dinosaur", "tries", "We", "blindfolded", "each", "giant", "dinosaur-themed", "a", "play", "paper", "of", "a", "stick", "poster.", "tail", "on", "a", "where", "version", "pin-the-tail,", "to"],
+      },
+      {
+        target: "Next, we play musical chairs, and Sofia wins after a fierce final round against Ben.",
+        jumbled: ["Sofia", "and", "Ben.", "after", "wins", "fierce", "a", "play", "chairs,", "final", "Next,", "musical", "round", "against", "we"],
+      },
+      {
+        target: "Everyone laughs, cheers, and claps throughout the games.",
+        jumbled: ["Everyone", "games.", "cheers,", "throughout", "laughs,", "claps", "and", "the"],
+      },
+      {
+        target: "Watching Max laugh so freely with his friends fills me with warmth, and I realize this party is turning out even better than I imagined.",
+        jumbled: ["laugh", "warmth,", "so", "out", "turning", "with", "me", "realize", "this", "fills", "Watching", "with", "freely", "better", "imagined.", "party", "and", "friends", "is", "Max", "his", "than", "I", "I", "even"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a fun game you played at a party.",
     mySentenceExample: "I played a fun game of musical chairs at my cousin's party.",
@@ -261,9 +414,26 @@ export const CHAPTERS = [
       { text: "Ella feels closer to her brother by the end.", answer: true },
     ],
     buildSentence: [
-      { target: "This was the best birthday.", jumbled: ["was", "the", "This", "best", "birthday."] },
-      { target: "I helped plan the whole thing.", jumbled: ["helped", "plan", "I", "the", "whole", "thing."] },
-      { target: "I feel closer to my brother.", jumbled: ["feel", "closer", "I", "to", "my", "brother."] },
+      {
+        target: "Max climbs onto the couch beside me, clutching his new dinosaur toy set tightly.",
+        jumbled: ["set", "toy", "climbs", "his", "onto", "dinosaur", "tightly.", "clutching", "Max", "me,", "new", "couch", "the", "beside"],
+      },
+      {
+        target: "“This was the best birthday ever,” he says, resting his head on my shoulder.",
+        jumbled: ["resting", "ever,”", "the", "head", "he", "“This", "my", "on", "was", "shoulder.", "his", "best", "says,", "birthday"],
+      },
+      {
+        target: "“I helped plan the whole thing,” I tell him proudly, and his eyes widen with surprise.",
+        jumbled: ["his", "I", "and", "plan", "helped", "proudly,", "“I", "eyes", "widen", "the", "surprise.", "him", "whole", "thing,”", "tell", "with"],
+      },
+      {
+        target: "“You did? Thank you, Ella!” he says, hugging me tightly around the neck.",
+        jumbled: ["he", "says,", "me", "Thank", "hugging", "“You", "you,", "the", "did?", "neck.", "tightly", "around", "Ella!”"],
+      },
+      {
+        target: "Sitting there together, surrounded by wrapping paper and leftover balloons, I feel closer to my little brother than ever before.",
+        jumbled: ["ever", "by", "and", "to", "wrapping", "before.", "there", "paper", "little", "closer", "together,", "my", "than", "Sitting", "leftover", "balloons,", "brother", "surrounded", "feel", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a memory that made you feel close to a family member.",
     mySentenceExample: "Baking cookies with my grandma made me feel very close to her.",

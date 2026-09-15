@@ -40,11 +40,26 @@ export const CHAPTERS = [
       { text: "Rosalind decides to research whether negotiation is possible.", answer: true },
     ],
     buildSentence: [
-      { target: "I open an official letter today.", jumbled: ["I", "open", "an", "official", "letter", "today."] },
-      { target: "This feels considerably unfair to me.", jumbled: ["This", "feels", "considerably", "unfair", "to", "me."] },
-      { target: "I'll research whether there's room for negotiation.", jumbled: ["I'll", "research", "whether", "there's", "room", "for", "negotiation."] },
-      { target: "I hadn't fully realized this when I planted it.", jumbled: ["I", "hadn't", "fully", "realized", "this", "when", "I", "planted", "it."] },
-      { target: "This requests removal within thirty days or a fine.", jumbled: ["This", "requests", "removal", "within", "thirty", "days", "or", "a", "fine."] },
+      {
+        target: "I open an official letter from the homeowners association, informing me that my front-yard vegetable garden violates the community's landscaping guidelines.",
+        jumbled: ["I", "open", "the", "front-yard", "garden", "association,", "an", "from", "homeowners", "letter", "landscaping", "the", "violates", "informing", "me", "community's", "my", "official", "vegetable", "guidelines.", "that"],
+      },
+      {
+        target: "Apparently, the guidelines specify only ornamental plants are permitted in visible front areas, something I hadn't fully realized when I planted it.",
+        jumbled: ["I", "in", "something", "plants", "I", "ornamental", "front", "fully", "specify", "permitted", "when", "hadn't", "planted", "Apparently,", "only", "the", "are", "areas,", "guidelines", "it.", "visible", "realized"],
+      },
+      {
+        target: "The letter requests I remove the garden within thirty days or face a modest but recurring fine going forward.",
+        jumbled: ["thirty", "face", "the", "garden", "The", "a", "or", "recurring", "I", "letter", "modest", "fine", "within", "requests", "forward.", "going", "days", "but", "remove"],
+      },
+      {
+        target: "Given how much effort I'd invested, and how much I genuinely enjoy growing my own vegetables, this feels considerably unfair.",
+        jumbled: ["my", "much", "how", "enjoy", "genuinely", "much", "Given", "how", "I", "considerably", "effort", "unfair.", "and", "I'd", "own", "vegetables,", "invested,", "this", "feels", "growing"],
+      },
+      {
+        target: "Rather than simply complying immediately, I decide I'll research whether there's any room for genuine negotiation here.",
+        jumbled: ["than", "I", "research", "complying", "any", "genuine", "here.", "simply", "Rather", "negotiation", "decide", "room", "there's", "whether", "I'll", "for", "immediately,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving an official notice that seemed unfair at first.",
     mySentenceExample: "I received an official notice that seemed unfair at first.",
@@ -69,11 +84,26 @@ export const CHAPTERS = [
       { text: "This detail suggests negotiation might genuinely be possible.", answer: true },
     ],
     buildSentence: [
-      { target: "I request the full bylaws document.", jumbled: ["I", "request", "the", "full", "bylaws", "document."] },
-      { target: "I discover this provision now.", jumbled: ["I", "discover", "this", "provision", "now."] },
-      { target: "I decide to draft a formal request.", jumbled: ["I", "decide", "to", "draft", "a", "formal", "request."] },
-      { target: "Exceptions aren't entirely unprecedented here.", jumbled: ["Exceptions", "aren't", "entirely", "unprecedented", "here."] },
-      { target: "This suggests negotiation might genuinely be possible.", jumbled: ["This", "suggests", "negotiation", "might", "genuinely", "be", "possible."] },
+      {
+        target: "I request the full HOA bylaws document, reading through it carefully to understand exactly what's permitted and what genuinely isn't.",
+        jumbled: ["permitted", "understand", "HOA", "I", "exactly", "document,", "to", "full", "carefully", "genuinely", "the", "isn't.", "what's", "bylaws", "and", "reading", "it", "request", "what", "through"],
+      },
+      {
+        target: "I discover that while ornamental plants are indeed specified, the guidelines also include a provision allowing exceptions through formal board approval.",
+        jumbled: ["I", "a", "include", "the", "approval.", "specified,", "board", "guidelines", "that", "ornamental", "allowing", "also", "indeed", "provision", "while", "through", "are", "discover", "exceptions", "plants", "formal"],
+      },
+      {
+        target: "Moreover, I find that several other properties in the neighborhood have small, permitted gardens, suggesting exceptions aren't entirely unprecedented here.",
+        jumbled: ["other", "I", "that", "neighborhood", "Moreover,", "properties", "exceptions", "have", "gardens,", "aren't", "the", "small,", "unprecedented", "entirely", "in", "here.", "permitted", "several", "suggesting", "find"],
+      },
+      {
+        target: "This detail, given how it changes my understanding, suggests negotiation might genuinely be possible rather than simply futile.",
+        jumbled: ["understanding,", "futile.", "changes", "detail,", "my", "suggests", "This", "rather", "be", "simply", "possible", "how", "it", "given", "genuinely", "negotiation", "might", "than"],
+      },
+      {
+        target: "Armed with this information, I decide to draft a formal request for an exception rather than simply removing the garden.",
+        jumbled: ["a", "than", "this", "to", "information,", "decide", "request", "the", "for", "simply", "removing", "garden.", "an", "exception", "draft", "with", "I", "formal", "Armed", "rather"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about reading the fine print of a rule and discovering an exception existed.",
     mySentenceExample: "I read the fine print and discovered an exception existed.",
@@ -98,11 +128,26 @@ export const CHAPTERS = [
       { text: "Rosalind feels the letter strikes a professional, non-confrontational tone.", answer: true },
     ],
     buildSentence: [
-      { target: "I draft a formal letter now.", jumbled: ["I", "draft", "a", "formal", "letter", "now."] },
-      { target: "I include photographs as evidence.", jumbled: ["I", "include", "photographs", "as", "evidence."] },
-      { target: "I feel this strikes an appropriate tone.", jumbled: ["I", "feel", "this", "strikes", "an", "appropriate", "tone."] },
-      { target: "I frame this as a reasonable request.", jumbled: ["I", "frame", "this", "as", "a", "reasonable", "request."] },
-      { target: "This is grounded in both evidence and existing precedent.", jumbled: ["This", "is", "grounded", "in", "both", "evidence", "and", "existing", "precedent."] },
+      {
+        target: "I draft a formal letter to the board, explaining respectfully why I believe an exception is warranted in this particular case.",
+        jumbled: ["in", "why", "board,", "an", "exception", "this", "to", "letter", "particular", "warranted", "explaining", "a", "believe", "case.", "I", "draft", "I", "is", "formal", "the", "respectfully"],
+      },
+      {
+        target: "I include photographs showing the garden is well-maintained and, in my view, visually appealing despite not being strictly ornamental.",
+        jumbled: ["photographs", "visually", "appealing", "and,", "the", "is", "despite", "view,", "ornamental.", "I", "strictly", "showing", "garden", "not", "being", "in", "include", "well-maintained", "my"],
+      },
+      {
+        target: "I also reference the specific bylaw provision allowing exceptions, along with examples of similarly approved gardens elsewhere in the neighborhood.",
+        jumbled: ["along", "bylaw", "of", "with", "also", "the", "reference", "elsewhere", "provision", "I", "exceptions,", "the", "similarly", "in", "examples", "neighborhood.", "gardens", "specific", "allowing", "approved"],
+      },
+      {
+        target: "Rather than simply demanding compliance, I frame this as a reasonable request grounded in both evidence and existing precedent.",
+        jumbled: ["Rather", "reasonable", "both", "compliance,", "in", "as", "I", "than", "request", "precedent.", "existing", "a", "and", "simply", "evidence", "demanding", "this", "grounded", "frame"],
+      },
+      {
+        target: "Reading the letter back, I feel it strikes an appropriately professional, non-confrontational tone throughout, and I sign it simply, \"Sincerely, Rosalind.\"",
+        jumbled: ["and", "feel", "the", "letter", "appropriately", "\"Sincerely,", "throughout,", "simply,", "tone", "Rosalind.\"", "it", "an", "I", "it", "I", "strikes", "sign", "Reading", "non-confrontational", "professional,", "back,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about writing a formal request grounded in evidence rather than emotion.",
     mySentenceExample: "I wrote a formal request grounded in evidence rather than emotion.",
@@ -127,11 +172,26 @@ export const CHAPTERS = [
       { text: "This small gesture of support encourages Rosalind.", answer: true },
     ],
     buildSentence: [
-      { target: "I submit the formal appeal now.", jumbled: ["I", "submit", "the", "formal", "appeal", "now."] },
-      { target: "He confirms receipt promptly today.", jumbled: ["He", "confirms", "receipt", "promptly", "today."] },
-      { target: "This genuinely encourages me moving forward.", jumbled: ["This", "genuinely", "encourages", "me", "moving", "forward."] },
-      { target: "The board will review my request in two weeks.", jumbled: ["The", "board", "will", "review", "my", "request", "in", "two", "weeks."] },
-      { target: "She'd support my appeal if asked, a neighbor mentions.", jumbled: ["She'd", "support", "my", "appeal", "if", "asked,", "a", "neighbor", "mentions."] },
+      {
+        target: "I submit the formal appeal, along with a request to present my case in person at the board's next scheduled meeting.",
+        jumbled: ["scheduled", "the", "person", "in", "present", "appeal,", "at", "case", "board's", "meeting.", "next", "I", "with", "along", "submit", "to", "formal", "request", "the", "a", "my"],
+      },
+      {
+        target: "\"We've received your appeal, Rosalind, and the board will review it at our meeting in two weeks,\" Mr. Ashworth confirms promptly.",
+        jumbled: ["Mr.", "received", "board", "weeks,\"", "Rosalind,", "appeal,", "two", "\"We've", "will", "it", "our", "Ashworth", "at", "the", "meeting", "promptly.", "your", "and", "in", "review", "confirms"],
+      },
+      {
+        target: "I continue maintaining the garden carefully, wanting to demonstrate genuine commitment rather than treating this as a temporary display.",
+        jumbled: ["display.", "garden", "continue", "genuine", "this", "wanting", "to", "temporary", "a", "I", "demonstrate", "rather", "treating", "as", "than", "carefully,", "maintaining", "the", "commitment"],
+      },
+      {
+        target: "A neighbor mentions she'd support my appeal if asked, having admired the garden since I'd first planted it.",
+        jumbled: ["appeal", "I'd", "asked,", "admired", "mentions", "support", "my", "it.", "since", "neighbor", "garden", "first", "she'd", "the", "A", "having", "if", "planted"],
+      },
+      {
+        target: "This small gesture of support, given how uncertain the outcome feels, genuinely encourages me moving forward.",
+        jumbled: ["of", "support,", "given", "This", "how", "gesture", "feels,", "genuinely", "uncertain", "forward.", "encourages", "moving", "the", "outcome", "small", "me"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about submitting a formal appeal and waiting for a decision.",
     mySentenceExample: "I submitted a formal appeal and waited for their decision.",
@@ -156,11 +216,26 @@ export const CHAPTERS = [
       { text: "Rosalind senses the board is genuinely considering this request.", answer: true },
     ],
     buildSentence: [
-      { target: "I present my case calmly now.", jumbled: ["I", "present", "my", "case", "calmly", "now."] },
-      { target: "I answer honestly about this.", jumbled: ["I", "answer", "honestly", "about", "this."] },
-      { target: "I'd be willing to add borders.", jumbled: ["I'd", "be", "willing", "to", "add", "borders."] },
-      { target: "This looks less vibrant seasonally, I admit.", jumbled: ["This", "looks", "less", "vibrant", "seasonally,", "I", "admit."] },
-      { target: "I sense they're genuinely considering this request.", jumbled: ["I", "sense", "they're", "genuinely", "considering", "this", "request."] },
+      {
+        target: "At the meeting, I present my case calmly, walking the board through the photographs, the relevant bylaw, and the neighborhood precedent I'd found.",
+        jumbled: ["the", "I'd", "At", "my", "case", "present", "I", "meeting,", "relevant", "neighborhood", "board", "the", "bylaw,", "walking", "found.", "the", "and", "the", "precedent", "the", "photographs,", "through", "calmly,"],
+      },
+      {
+        target: "Mr. Ashworth asks several clarifying questions, particularly about long-term maintenance and how the garden might look during winter months.",
+        jumbled: ["the", "months.", "about", "how", "look", "clarifying", "long-term", "garden", "several", "asks", "and", "Mr.", "might", "during", "questions,", "particularly", "maintenance", "winter", "Ashworth"],
+      },
+      {
+        target: "I answer honestly, admitting the garden looks less vibrant seasonally, though I'd be willing to add borders for a more polished appearance.",
+        jumbled: ["borders", "vibrant", "for", "I'd", "I", "add", "to", "a", "appearance.", "honestly,", "the", "less", "garden", "more", "polished", "answer", "be", "though", "admitting", "seasonally,", "looks", "willing"],
+      },
+      {
+        target: "\"We appreciate that you've approached this respectfully, Rosalind, rather than ignoring the notice,\" one board member mentions.",
+        jumbled: ["mentions.", "this", "rather", "notice,\"", "Rosalind,", "\"We", "approached", "that", "member", "you've", "than", "board", "appreciate", "respectfully,", "the", "ignoring", "one"],
+      },
+      {
+        target: "Given the board's attentive questions, I sense they're genuinely considering this request rather than merely going through procedural motions.",
+        jumbled: ["procedural", "genuinely", "Given", "I", "through", "merely", "than", "motions.", "sense", "this", "board's", "going", "rather", "they're", "questions,", "the", "considering", "request", "attentive"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about presenting a case honestly, including its potential weaknesses.",
     mySentenceExample: "I presented my case honestly, including its potential weaknesses.",
@@ -185,11 +260,26 @@ export const CHAPTERS = [
       { text: "Rosalind feels proud this negotiation produced a positive outcome.", answer: true },
     ],
     buildSentence: [
-      { target: "He calls to inform me now.", jumbled: ["He", "calls", "to", "inform", "me", "now."] },
-      { target: "I agree readily to this.", jumbled: ["I", "agree", "readily", "to", "this."] },
-      { target: "I feel proud about this now.", jumbled: ["I", "feel", "proud", "about", "this", "now."] },
-      { target: "This will now be documented as precedent.", jumbled: ["This", "will", "now", "be", "documented", "as", "precedent."] },
-      { target: "A compromise had been reached, not an outright rejection.", jumbled: ["A", "compromise", "had", "been", "reached,", "not", "an", "outright", "rejection."] },
+      {
+        target: "A week later, Mr. Ashworth calls.",
+        jumbled: ["week", "A", "later,", "Mr.", "Ashworth", "calls."],
+      },
+      {
+        target: "\"Good news, Rosalind, the board has approved your exception, with one condition,\" he tells me.",
+        jumbled: ["exception,", "he", "tells", "approved", "Rosalind,", "\"Good", "has", "me.", "news,", "the", "condition,\"", "one", "board", "your", "with"],
+      },
+      {
+        target: "They'd like me to add a small decorative border, similar to what I'd already offered, to maintain visual consistency with neighboring properties.",
+        jumbled: ["what", "They'd", "visual", "I'd", "add", "similar", "neighboring", "consistency", "already", "like", "maintain", "decorative", "to", "properties.", "with", "to", "small", "a", "to", "border,", "me", "offered,"],
+      },
+      {
+        target: "I agree readily, genuinely relieved that a compromise had been reached rather than an outright rejection of my request.",
+        jumbled: ["had", "request.", "an", "compromise", "reached", "that", "my", "a", "rejection", "rather", "I", "relieved", "readily,", "genuinely", "of", "than", "been", "outright", "agree"],
+      },
+      {
+        target: "Mr. Ashworth mentions this exception will now be documented, potentially serving as precedent for similar future requests from other homeowners.",
+        jumbled: ["mentions", "this", "Ashworth", "potentially", "serving", "requests", "documented,", "now", "exception", "as", "similar", "homeowners.", "be", "from", "for", "other", "future", "precedent", "will", "Mr."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving approval after negotiating a fair compromise.",
     mySentenceExample: "I received approval after negotiating a fair compromise.",
@@ -214,11 +304,26 @@ export const CHAPTERS = [
       { text: "Rosalind feels this opened a door for others too.", answer: true },
     ],
     buildSentence: [
-      { target: "I install a decorative border now.", jumbled: ["I", "install", "a", "decorative", "border", "now."] },
-      { target: "A few neighbors stop by today.", jumbled: ["A", "few", "neighbors", "stop", "by", "today."] },
-      { target: "I feel satisfied about this now.", jumbled: ["I", "feel", "satisfied", "about", "this", "now."] },
-      { target: "The garden now looks noticeably more polished.", jumbled: ["The", "garden", "now", "looks", "noticeably", "more", "polished."] },
-      { target: "This opened a door for others too, in a small way.", jumbled: ["This", "opened", "a", "door", "for", "others", "too,", "in", "a", "small", "way."] },
+      {
+        target: "Over the following weekend, I install a simple decorative border, exactly as agreed upon during the board's approval process.",
+        jumbled: ["as", "a", "approval", "install", "exactly", "I", "simple", "the", "during", "board's", "weekend,", "Over", "agreed", "border,", "following", "upon", "decorative", "the", "process."],
+      },
+      {
+        target: "The garden now looks noticeably more polished, blending the practical vegetables with a more intentional, cohesive visual design overall.",
+        jumbled: ["now", "more", "overall.", "with", "visual", "design", "vegetables", "a", "The", "practical", "intentional,", "noticeably", "blending", "garden", "more", "cohesive", "looks", "polished,", "the"],
+      },
+      {
+        target: "A few neighbors stop by.",
+        jumbled: ["neighbors", "few", "A", "stop", "by."],
+      },
+      {
+        target: "\"This looks wonderful, Rosalind,\" one says, asking genuinely curious questions about the vegetables I'm growing.",
+        jumbled: ["genuinely", "\"This", "curious", "the", "one", "asking", "growing.", "looks", "vegetables", "I'm", "wonderful,", "says,", "about", "questions", "Rosalind,\""],
+      },
+      {
+        target: "One neighbor mentions she might request a similar exception herself, inspired by seeing how mine had ultimately turned out.",
+        jumbled: ["out.", "how", "seeing", "mine", "neighbor", "similar", "by", "ultimately", "a", "exception", "inspired", "request", "she", "herself,", "mentions", "One", "had", "might", "turned"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about completing a compromise you agreed to during a negotiation.",
     mySentenceExample: "I completed the compromise I agreed to during the negotiation.",
@@ -243,11 +348,26 @@ export const CHAPTERS = [
       { text: "Rosalind feels genuinely positive about the community's governance.", answer: true },
     ],
     buildSentence: [
-      { target: "I write a brief thank-you email.", jumbled: ["I", "write", "a", "brief", "thank-you", "email."] },
-      { target: "He replies warmly to this.", jumbled: ["He", "replies", "warmly", "to", "this."] },
-      { target: "I respect the board's role generally.", jumbled: ["I", "respect", "the", "board's", "role", "generally."] },
-      { target: "I express genuine gratitude for their flexibility.", jumbled: ["I", "express", "genuine", "gratitude", "for", "their", "flexibility."] },
-      { target: "This leaves me feeling genuinely positive about this relationship.", jumbled: ["This", "leaves", "me", "feeling", "genuinely", "positive", "about", "this", "relationship."] },
+      {
+        target: "I write a brief thank-you email to Mr. Ashworth and the board, appreciating their willingness to consider my request thoughtfully.",
+        jumbled: ["to", "consider", "request", "write", "to", "their", "and", "Mr.", "willingness", "I", "appreciating", "Ashworth", "my", "email", "thoughtfully.", "a", "brief", "thank-you", "the", "board,"],
+      },
+      {
+        target: "I mention that I understand guidelines exist for good reason, and I respect the board's role in maintaining neighborhood consistency generally.",
+        jumbled: ["board's", "I", "respect", "consistency", "in", "mention", "good", "that", "generally.", "and", "reason,", "maintaining", "I", "understand", "I", "role", "neighborhood", "exist", "guidelines", "for", "the"],
+      },
+      {
+        target: "Nevertheless, I express genuine gratitude that they'd been open to a reasonable exception rather than enforcing rigid, blanket compliance regardless of context.",
+        jumbled: ["to", "reasonable", "that", "regardless", "been", "compliance", "Nevertheless,", "rigid,", "rather", "a", "genuine", "context.", "blanket", "exception", "express", "enforcing", "of", "than", "open", "they'd", "I", "gratitude"],
+      },
+      {
+        target: "\"Thank you, Rosalind — you approached this whole situation professionally from the very beginning,\" Mr. Ashworth replies warmly.",
+        jumbled: ["approached", "from", "Ashworth", "you,", "the", "—", "beginning,\"", "professionally", "situation", "warmly.", "this", "you", "\"Thank", "Mr.", "replies", "very", "Rosalind", "whole"],
+      },
+      {
+        target: "This exchange, small as it is, leaves me feeling genuinely positive about my relationship with the community's governance.",
+        jumbled: ["as", "small", "me", "with", "genuinely", "positive", "it", "about", "governance.", "the", "is,", "community's", "leaves", "relationship", "exchange,", "feeling", "my", "This"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about writing a thank-you note after a fair resolution to a dispute.",
     mySentenceExample: "I wrote a thank-you note after a fair resolution to our dispute.",
@@ -272,11 +392,26 @@ export const CHAPTERS = [
       { text: "Rosalind realizes this experience had value beyond her own garden.", answer: true },
     ],
     buildSentence: [
-      { target: "She asks for my help now.", jumbled: ["She", "asks", "for", "my", "help", "now."] },
-      { target: "I walk her through this now.", jumbled: ["I", "walk", "her", "through", "this", "now."] },
-      { target: "She admits this about herself.", jumbled: ["She", "admits", "this", "about", "herself."] },
-      { target: "This stems from miscommunication, not irreconcilable disagreement.", jumbled: ["This", "stems", "from", "miscommunication,", "not", "irreconcilable", "disagreement."] },
-      { target: "This experience had value extending well beyond my own garden.", jumbled: ["This", "experience", "had", "value", "extending", "well", "beyond", "my", "own", "garden."] },
+      {
+        target: "\"Rosalind, could you help me draft my own exception request?\" the neighbor who'd mentioned interest earlier asks, inspired by how mine had unfolded.",
+        jumbled: ["who'd", "how", "inspired", "could", "exception", "mentioned", "request?\"", "earlier", "draft", "by", "interest", "help", "you", "own", "neighbor", "the", "mine", "me", "asks,", "\"Rosalind,", "unfolded.", "my", "had"],
+      },
+      {
+        target: "I walk her through what worked well: referencing specific bylaws, including photographic evidence, and framing the request collaboratively rather than confrontationally.",
+        jumbled: ["and", "collaboratively", "evidence,", "her", "I", "the", "what", "confrontationally.", "including", "referencing", "framing", "well:", "rather", "bylaws,", "worked", "specific", "request", "through", "photographic", "walk", "than"],
+      },
+      {
+        target: "She admits she'd initially assumed challenging an HOA decision meant automatic conflict, an assumption my experience had apparently corrected.",
+        jumbled: ["an", "She", "automatic", "corrected.", "challenging", "apparently", "my", "an", "meant", "had", "experience", "initially", "conflict,", "assumption", "admits", "decision", "assumed", "HOA", "she'd"],
+      },
+      {
+        target: "I explain that, in my experience, most disputes like this stem from miscommunication rather than genuine, irreconcilable disagreement.",
+        jumbled: ["in", "I", "most", "that,", "disagreement.", "miscommunication", "explain", "genuine,", "rather", "disputes", "like", "from", "my", "irreconcilable", "this", "stem", "experience,", "than"],
+      },
+      {
+        target: "Watching her leave feeling more confident, I realize this experience had value extending well beyond my own garden.",
+        jumbled: ["leave", "experience", "Watching", "feeling", "own", "I", "well", "my", "extending", "beyond", "more", "confident,", "this", "had", "her", "value", "realize", "garden."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about helping someone else using what you learned from your own experience.",
     mySentenceExample: "I helped someone else using what I learned from my own experience.",
@@ -301,11 +436,26 @@ export const CHAPTERS = [
       { text: "Rosalind learns advocating for something valued is worth the effort.", answer: true },
     ],
     buildSentence: [
-      { target: "I look back on this dispute now.", jumbled: ["I", "look", "back", "on", "this", "dispute", "now."] },
-      { target: "This taught me something valuable in the end.", jumbled: ["This", "taught", "me", "something", "valuable", "in", "the", "end."] },
-      { target: "This is worth the effort required to do it properly.", jumbled: ["This", "is", "worth", "the", "effort", "required", "to", "do", "it", "properly."] },
-      { target: "Formal disputes often have more flexibility than they appear.", jumbled: ["Formal", "disputes", "often", "have", "more", "flexibility", "than", "they", "appear."] },
-      { target: "Had I assumed this rule was absolute, I would have missed a solution.", jumbled: ["Had", "I", "assumed", "this", "rule", "was", "absolute,", "I", "would", "have", "missed", "a", "solution."] },
+      {
+        target: "Looking back on the entire dispute, I realize how differently things might have unfolded had I simply removed the garden without question.",
+        jumbled: ["removed", "unfolded", "on", "I", "the", "have", "Looking", "things", "differently", "garden", "might", "without", "back", "question.", "had", "dispute,", "I", "the", "realize", "simply", "how", "entire"],
+      },
+      {
+        target: "I would have missed a reasonable path that actually existed within the bylaws.",
+        jumbled: ["would", "the", "reasonable", "that", "I", "have", "bylaws.", "within", "actually", "path", "missed", "a", "existed"],
+      },
+      {
+        target: "Instead, researching thoroughly and approaching the board respectfully allowed me to reach an outcome that honored both the rules and my own genuine interests.",
+        jumbled: ["thoroughly", "the", "outcome", "interests.", "approaching", "allowed", "me", "honored", "and", "reach", "and", "an", "my", "researching", "both", "genuine", "the", "rules", "own", "to", "Instead,", "respectfully", "board", "that"],
+      },
+      {
+        target: "I've learned that formal disputes, approached with preparation rather than frustration, often have more flexibility than they initially appear to allow.",
+        jumbled: ["disputes,", "preparation", "allow.", "initially", "frustration,", "have", "more", "they", "rather", "flexibility", "that", "to", "formal", "than", "appear", "than", "with", "often", "learned", "I've", "approached"],
+      },
+      {
+        target: "In the end, this experience taught me that advocating for something you value is worth the effort required to do it properly.",
+        jumbled: ["In", "properly.", "to", "end,", "you", "experience", "this", "is", "required", "for", "advocating", "something", "that", "value", "do", "the", "effort", "worth", "it", "taught", "the", "me"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from negotiating a formal dispute respectfully.",
     mySentenceExample: "I learned that respectful negotiation often reveals more flexibility than expected.",

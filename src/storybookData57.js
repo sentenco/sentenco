@@ -48,11 +48,26 @@ export const CHAPTERS = [
       { text: "Priya expects checking in to be straightforward.", answer: true },
     ],
     buildSentence: [
-      { target: "I finally arrive tonight.", jumbled: ["finally", "arrive", "I", "tonight."] },
-      { target: "The lobby is quiet now.", jumbled: ["lobby", "is", "The", "quiet", "now."] },
-      { target: "I feel relieved about this.", jumbled: ["I", "feel", "relieved", "about", "this."] },
-      { target: "I could not have predicted this.", jumbled: ["I", "could", "not", "have", "predicted", "this."] },
-      { target: "All I want is to check in and sleep.", jumbled: ["All", "I", "want", "is", "to", "check", "in", "and", "sleep."] },
+      {
+        target: "I finally arrive at my hotel close to eleven at night.",
+        jumbled: ["at", "arrive", "hotel", "I", "night.", "to", "finally", "my", "close", "eleven", "at"],
+      },
+      {
+        target: "I'm here for a work conference starting early tomorrow, so all I want is to check in and sleep.",
+        jumbled: ["for", "and", "sleep.", "I'm", "here", "all", "in", "want", "to", "tomorrow,", "check", "work", "early", "so", "I", "starting", "is", "conference", "a"],
+      },
+      {
+        target: "The lobby is quiet, with only a single receptionist working behind the desk at this hour.",
+        jumbled: ["receptionist", "this", "hour.", "The", "with", "single", "only", "working", "lobby", "desk", "quiet,", "is", "at", "the", "behind", "a"],
+      },
+      {
+        target: "I pull up my confirmation email on my phone, the booking listed clearly under my name, Priya, and feel relieved that at least the booking itself should be straightforward.",
+        jumbled: ["phone,", "clearly", "the", "I", "name,", "booking", "should", "that", "and", "my", "be", "email", "the", "pull", "on", "under", "up", "booking", "at", "least", "itself", "Priya,", "my", "listed", "straightforward.", "feel", "my", "confirmation", "relieved"],
+      },
+      {
+        target: "Walking toward the desk, I rehearse nothing in particular, since checking in is usually the easiest part of traveling.",
+        jumbled: ["usually", "in", "particular,", "is", "easiest", "the", "desk,", "rehearse", "of", "nothing", "Walking", "the", "traveling.", "toward", "in", "checking", "part", "I", "since"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about arriving somewhere late and tired.",
     mySentenceExample: "I arrived late and tired after a long day of travel.",
@@ -77,11 +92,26 @@ export const CHAPTERS = [
       { text: "Priya asks if this can be sorted out tonight.", answer: true },
     ],
     buildSentence: [
-      { target: "My stomach drops slightly now.", jumbled: ["My", "stomach", "drops", "slightly", "now."] },
-      { target: "She checks again more carefully.", jumbled: ["She", "checks", "again", "more", "carefully."] },
-      { target: "Something has genuinely gone wrong.", jumbled: ["Something", "has", "genuinely", "gone", "wrong."] },
-      { target: "I ask if we can sort this out.", jumbled: ["I", "ask", "if", "we", "can", "sort", "this", "out."] },
-      { target: "Your reservation was accidentally cancelled during an update.", jumbled: ["Your", "reservation", "was", "accidentally", "cancelled", "during", "an", "update."] },
+      {
+        target: "The receptionist types my name into the system, then pauses, her expression shifting from routine to visibly puzzled.",
+        jumbled: ["The", "system,", "expression", "routine", "to", "my", "her", "visibly", "receptionist", "puzzled.", "name", "types", "into", "from", "the", "shifting", "then", "pauses,"],
+      },
+      {
+        target: "“I'm sorry, Priya, but I don't see a reservation under this name,” she says, checking again more carefully.",
+        jumbled: ["she", "a", "don't", "sorry,", "again", "reservation", "see", "checking", "I", "under", "this", "name,”", "but", "carefully.", "Priya,", "more", "“I'm", "says,"],
+      },
+      {
+        target: "My stomach drops slightly, and I show her the confirmation number on my phone, hoping it's simply a search error.",
+        jumbled: ["on", "My", "confirmation", "a", "show", "stomach", "and", "my", "the", "phone,", "search", "her", "hoping", "simply", "I", "error.", "slightly,", "it's", "number", "drops"],
+      },
+      {
+        target: "She looks it up manually this time, and after a moment, her face confirms my growing suspicion: something has genuinely gone wrong.",
+        jumbled: ["time,", "She", "up", "something", "genuinely", "gone", "suspicion:", "looks", "it", "this", "confirms", "after", "face", "and", "manually", "moment,", "wrong.", "a", "growing", "has", "my", "her"],
+      },
+      {
+        target: "“It looks like your reservation was accidentally cancelled during a system update earlier this week,” she explains apologetically.",
+        jumbled: ["was", "explains", "looks", "accidentally", "earlier", "this", "during", "apologetically.", "week,”", "your", "update", "cancelled", "“It", "system", "reservation", "a", "like", "she"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about discovering an unexpected problem while traveling.",
     mySentenceExample: "I discovered an unexpected problem with my ticket while traveling.",
@@ -106,11 +136,26 @@ export const CHAPTERS = [
       { text: "Priya decides getting angry would speed things up.", answer: false },
     ],
     buildSentence: [
-      { target: "I explain the situation calmly.", jumbled: ["explain", "the", "I", "situation", "calmly."] },
-      { target: "She picks up the phone.", jumbled: ["She", "picks", "up", "the", "phone."] },
-      { target: "Would it be possible to speak with someone?", jumbled: ["it", "be", "Would", "possible", "to", "speak", "with", "someone?"] },
-      { target: "Panicking certainly won't help resolve this.", jumbled: ["Panicking", "certainly", "won't", "help", "resolve", "this."] },
-      { target: "Getting angry probably wouldn't speed up the solution.", jumbled: ["Getting", "angry", "probably", "wouldn't", "speed", "up", "the", "solution."] },
+      {
+        target: "I explain that I have an important conference beginning at eight tomorrow morning and genuinely cannot handle finding another hotel tonight.",
+        jumbled: ["another", "I", "explain", "beginning", "an", "hotel", "genuinely", "and", "handle", "morning", "eight", "tonight.", "that", "I", "finding", "at", "have", "tomorrow", "cannot", "conference", "important"],
+      },
+      {
+        target: "The receptionist apologizes again, explaining that she doesn't have the authority to resolve booking errors of this particular size.",
+        jumbled: ["receptionist", "have", "of", "apologizes", "resolve", "particular", "authority", "this", "doesn't", "to", "booking", "the", "explaining", "errors", "again,", "size.", "she", "that", "The"],
+      },
+      {
+        target: "“Would it be possible to speak with someone who does?” I ask, trying to remain calm despite my mounting frustration.",
+        jumbled: ["someone", "I", "frustration.", "my", "speak", "trying", "remain", "“Would", "it", "to", "who", "despite", "be", "does?”", "possible", "calm", "to", "with", "mounting", "ask,"],
+      },
+      {
+        target: "“He'll be right down, Priya, just give him a few minutes,” she tells me.",
+        jumbled: ["be", "she", "him", "tells", "few", "right", "minutes,”", "just", "“He'll", "give", "Priya,", "down,", "me.", "a"],
+      },
+      {
+        target: "I remind myself that getting angry probably wouldn't speed up the solution anyway.",
+        jumbled: ["that", "solution", "probably", "anyway.", "angry", "up", "remind", "the", "I", "myself", "speed", "wouldn't", "getting"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm while explaining a problem to someone.",
     mySentenceExample: "I stayed calm while explaining a problem to customer service.",
@@ -135,11 +180,26 @@ export const CHAPTERS = [
       { text: "Mr. Bennett refuses to look into any solutions.", answer: false },
     ],
     buildSentence: [
-      { target: "He introduces himself apologetically.", jumbled: ["He", "introduces", "himself", "apologetically."] },
-      { target: "He checks the current occupancy.", jumbled: ["He", "checks", "the", "current", "occupancy."] },
-      { target: "I sincerely apologize for this.", jumbled: ["I", "sincerely", "apologize", "for", "this."] },
-      { target: "Let me see what options we have.", jumbled: ["Let", "me", "see", "what", "options", "we", "have."] },
-      { target: "If there are no rooms left, I'm unsure what to do.", jumbled: ["If", "there", "are", "no", "rooms", "left,", "I'm", "unsure", "what", "to", "do."] },
+      {
+        target: "A few minutes later, Mr. Bennett, the night manager, arrives and introduces himself with a genuinely apologetic expression.",
+        jumbled: ["and", "few", "introduces", "a", "minutes", "A", "arrives", "with", "Mr.", "expression.", "later,", "Bennett,", "the", "himself", "apologetic", "genuinely", "night", "manager,"],
+      },
+      {
+        target: "He reviews the situation on his own computer, confirming what the receptionist had already explained about the system error.",
+        jumbled: ["on", "computer,", "what", "the", "receptionist", "the", "confirming", "reviews", "about", "had", "explained", "He", "already", "situation", "error.", "his", "system", "own", "the"],
+      },
+      {
+        target: "“I sincerely apologize for this inconvenience, Priya. Let me see what options we have available,” he says professionally.",
+        jumbled: ["Let", "we", "Priya.", "apologize", "options", "sincerely", "available,”", "says", "inconvenience,", "this", "“I", "see", "for", "me", "he", "have", "what", "professionally."],
+      },
+      {
+        target: "He checks the hotel's current occupancy, though I can tell from his expression that tonight might be fully booked.",
+        jumbled: ["booked.", "I", "might", "He", "the", "hotel's", "from", "current", "occupancy,", "tell", "that", "can", "fully", "his", "expression", "though", "be", "checks", "tonight"],
+      },
+      {
+        target: "I'm not entirely sure what my next step would even be.",
+        jumbled: ["step", "next", "entirely", "not", "would", "sure", "what", "my", "even", "I'm", "be."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone trying to fix a mistake professionally.",
     mySentenceExample: "The manager tried to fix the mistake professionally and quickly.",
@@ -164,11 +224,26 @@ export const CHAPTERS = [
       { text: "Priya refuses this offer immediately.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart sinks slightly now.", jumbled: ["My", "heart", "sinks", "slightly", "now."] },
-      { target: "Relief washes over me instantly.", jumbled: ["Relief", "washes", "over", "me", "instantly."] },
-      { target: "We do have a suite available.", jumbled: ["We", "do", "have", "a", "suite", "available."] },
-      { target: "That would honestly solve everything.", jumbled: ["That", "would", "honestly", "solve", "everything."] },
-      { target: "I could offer it at your original price.", jumbled: ["I", "could", "offer", "it", "at", "your", "original", "price."] },
+      {
+        target: "Mr. Bennett returns with disappointing news: tonight, the hotel is indeed completely full because of a large event nearby.",
+        jumbled: ["full", "a", "nearby.", "because", "disappointing", "the", "large", "of", "event", "indeed", "is", "hotel", "news:", "tonight,", "Mr.", "completely", "with", "returns", "Bennett"],
+      },
+      {
+        target: "My heart sinks, and I briefly consider whether I'll need to search for another hotel this late at night.",
+        jumbled: ["to", "hotel", "at", "sinks,", "consider", "late", "heart", "need", "whether", "search", "I'll", "for", "another", "this", "briefly", "night.", "and", "I", "My"],
+      },
+      {
+        target: "However, he continues speaking before I can panic further, mentioning a possible alternative he'd like to suggest.",
+        jumbled: ["alternative", "I", "he'd", "speaking", "he", "a", "suggest.", "possible", "mentioning", "continues", "before", "panic", "like", "further,", "to", "However,", "can"],
+      },
+      {
+        target: "“We do have a suite available, Priya, normally at a much higher rate, but I could offer it at your original price,” he explains.",
+        jumbled: ["much", "do", "at", "available,", "price,”", "higher", "suite", "explains.", "at", "it", "“We", "normally", "a", "offer", "but", "could", "a", "have", "rate,", "original", "I", "Priya,", "your", "he"],
+      },
+      {
+        target: "Relief washes over me instantly, though I'm still slightly cautious about whether this solution will actually work smoothly.",
+        jumbled: ["smoothly.", "me", "though", "actually", "instantly,", "whether", "washes", "cautious", "this", "Relief", "still", "solution", "will", "work", "over", "slightly", "about", "I'm"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about receiving good news after expecting something bad.",
     mySentenceExample: "I received good news after expecting something bad about my appointment.",
@@ -193,11 +268,26 @@ export const CHAPTERS = [
       { text: "Priya finally allows herself to relax.", answer: true },
     ],
     buildSentence: [
-      { target: "The room turns out nicer.", jumbled: ["room", "turns", "The", "out", "nicer."] },
-      { target: "I thank him sincerely now.", jumbled: ["I", "thank", "him", "sincerely", "now."] },
-      { target: "I finally allow myself to relax.", jumbled: ["I", "finally", "allow", "myself", "to", "relax."] },
-      { target: "Please don't hesitate to call us.", jumbled: ["Please", "don't", "hesitate", "to", "call", "us."] },
-      { target: "This is ending considerably better than I feared.", jumbled: ["This", "is", "ending", "considerably", "better", "than", "I", "feared."] },
+      {
+        target: "Mr. Bennett personally walks me up to the suite, apologizing once more for the entire situation along the way.",
+        jumbled: ["Mr.", "personally", "to", "for", "the", "suite,", "Bennett", "the", "apologizing", "way.", "me", "more", "up", "situation", "entire", "along", "walks", "once", "the"],
+      },
+      {
+        target: "The room turns out to be considerably nicer than what I had originally booked, with a small sitting area and a much larger bathroom.",
+        jumbled: ["area", "booked,", "The", "small", "be", "turns", "bathroom.", "sitting", "a", "considerably", "nicer", "and", "with", "I", "much", "what", "room", "out", "than", "larger", "a", "had", "originally", "to"],
+      },
+      {
+        target: "“If anything else comes up tonight, Priya, please don't hesitate to call the front desk directly,” he says before leaving.",
+        jumbled: ["front", "anything", "directly,”", "hesitate", "“If", "he", "desk", "Priya,", "else", "please", "says", "tonight,", "don't", "comes", "before", "the", "leaving.", "call", "up", "to"],
+      },
+      {
+        target: "I thank him sincerely, genuinely appreciating how he handled what could have easily become a much worse situation.",
+        jumbled: ["worse", "genuinely", "appreciating", "situation.", "him", "easily", "a", "much", "could", "he", "thank", "handled", "how", "sincerely,", "become", "I", "what", "have"],
+      },
+      {
+        target: "Setting my suitcase down, I finally allow myself to relax after nearly an hour of stressful uncertainty.",
+        jumbled: ["stressful", "uncertainty.", "relax", "an", "I", "finally", "Setting", "suitcase", "after", "my", "of", "allow", "down,", "hour", "to", "nearly", "myself"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a difficult situation that ended better than expected.",
     mySentenceExample: "My difficult situation at the airport ended better than expected.",
@@ -222,11 +312,26 @@ export const CHAPTERS = [
       { text: "Priya's hotel crisis remains unresolved by morning.", answer: false },
     ],
     buildSentence: [
-      { target: "Sleep doesn't come easily tonight.", jumbled: ["Sleep", "doesn't", "come", "easily", "tonight."] },
-      { target: "I check my alarm repeatedly.", jumbled: ["I", "check", "my", "alarm", "repeatedly."] },
-      { target: "Everything worked out reasonably well.", jumbled: ["Everything", "worked", "out", "reasonably", "well."] },
-      { target: "I drift into a light, uneasy sleep.", jumbled: ["I", "drift", "into", "a", "light,", "uneasy", "sleep."] },
-      { target: "This crisis has been fully resolved by now.", jumbled: ["This", "crisis", "has", "been", "fully", "resolved", "by", "now."] },
+      {
+        target: "Despite the comfortable suite, sleep doesn't come easily, since my mind keeps replaying the evening's stressful events repeatedly.",
+        jumbled: ["since", "sleep", "suite,", "evening's", "comfortable", "easily,", "replaying", "Despite", "keeps", "repeatedly.", "come", "events", "stressful", "the", "doesn't", "the", "mind", "my"],
+      },
+      {
+        target: "I check my alarm three separate times, worried I might somehow oversleep after such an exhausting, chaotic arrival.",
+        jumbled: ["alarm", "after", "I", "an", "three", "my", "somehow", "oversleep", "might", "exhausting,", "I", "times,", "chaotic", "separate", "worried", "arrival.", "such", "check"],
+      },
+      {
+        target: "Tomorrow's conference presentation weighs on me too, and I check my laptop one last time, the title slide still glowing with my name, Priya, in the corner, adding another layer of anxiety to an already restless mind.",
+        jumbled: ["an", "another", "weighs", "my", "adding", "conference", "the", "name,", "the", "I", "of", "slide", "layer", "one", "anxiety", "presentation", "check", "me", "with", "my", "mind.", "to", "on", "time,", "in", "Priya,", "already", "restless", "glowing", "still", "too,", "laptop", "Tomorrow's", "title", "corner,", "last", "and"],
+      },
+      {
+        target: "I remind myself that everything worked out reasonably well, in the end, despite how frightening it felt in the moment.",
+        jumbled: ["in", "myself", "the", "that", "it", "worked", "remind", "end,", "reasonably", "felt", "moment.", "I", "frightening", "well,", "the", "in", "how", "everything", "despite", "out"],
+      },
+      {
+        target: "Eventually, exhaustion overtakes my racing thoughts, and I drift into a light, uneasy sleep before morning arrives.",
+        jumbled: ["sleep", "light,", "into", "arrives.", "a", "before", "and", "thoughts,", "racing", "uneasy", "Eventually,", "my", "drift", "overtakes", "morning", "exhaustion", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a restless night after a stressful day.",
     mySentenceExample: "I had a restless night after a stressful day at work.",
@@ -251,11 +356,26 @@ export const CHAPTERS = [
       { text: "Priya tells everyone about the hotel chaos immediately.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel surprisingly composed today.", jumbled: ["I", "feel", "surprisingly", "composed", "today."] },
-      { target: "My presentation goes well now.", jumbled: ["My", "presentation", "goes", "well", "now."] },
-      { target: "I check in smoothly this time.", jumbled: ["I", "check", "in", "smoothly", "this", "time."] },
-      { target: "I make a mental note now.", jumbled: ["I", "make", "a", "mental", "note", "now."] },
-      { target: "Professionalism sometimes requires quietly handling problems.", jumbled: ["Professionalism", "sometimes", "requires", "quietly", "handling", "problems."] },
+      {
+        target: "The next morning, I arrive at the conference feeling surprisingly composed, given everything that happened the night before.",
+        jumbled: ["composed,", "morning,", "arrive", "everything", "happened", "that", "the", "before.", "I", "conference", "night", "the", "feeling", "The", "at", "surprisingly", "next", "given"],
+      },
+      {
+        target: "Coffee in hand, I check in smoothly this time, without a single complication interrupting the straightforward process.",
+        jumbled: ["without", "time,", "single", "complication", "in", "this", "hand,", "interrupting", "process.", "smoothly", "check", "straightforward", "in", "I", "a", "Coffee", "the"],
+      },
+      {
+        target: "My presentation goes well, and afterward, several colleagues mention how organized and confident I appeared throughout the session.",
+        jumbled: ["how", "organized", "mention", "the", "goes", "appeared", "confident", "presentation", "session.", "colleagues", "throughout", "several", "and", "well,", "My", "I", "and", "afterward,"],
+      },
+      {
+        target: "Little do they know about the chaotic hotel situation that preceded this seemingly ordinary morning entirely.",
+        jumbled: ["preceded", "do", "know", "that", "this", "morning", "entirely.", "Little", "the", "ordinary", "situation", "seemingly", "about", "they", "hotel", "chaotic"],
+      },
+      {
+        target: "I make a mental note to always keep printed confirmations from now on, just in case something similar happens again.",
+        jumbled: ["I", "something", "on,", "now", "case", "mental", "happens", "make", "confirmations", "to", "similar", "just", "again.", "in", "a", "from", "always", "note", "keep", "printed"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about staying professional despite a difficult situation behind the scenes.",
     mySentenceExample: "I stayed professional despite a difficult situation earlier that morning.",
@@ -280,11 +400,26 @@ export const CHAPTERS = [
       { text: "Priya feels satisfied after sending the email.", answer: true },
     ],
     buildSentence: [
-      { target: "I decide to write an email.", jumbled: ["decide", "to", "I", "write", "an", "email."] },
-      { target: "This takes only a few minutes.", jumbled: ["This", "takes", "only", "a", "few", "minutes."] },
-      { target: "I mention him specifically by name.", jumbled: ["I", "mention", "him", "specifically", "by", "name."] },
-      { target: "I feel satisfied about this now.", jumbled: ["I", "feel", "satisfied", "about", "this", "now."] },
-      { target: "This could easily happen to someone less understanding.", jumbled: ["This", "could", "easily", "happen", "to", "someone", "less", "understanding."] },
+      {
+        target: "That evening, back in my room, I decide to write a short email thanking the hotel for how they handled last night's mistake.",
+        jumbled: ["I", "the", "for", "last", "my", "email", "back", "hotel", "thanking", "handled", "short", "they", "mistake.", "write", "a", "night's", "to", "how", "decide", "in", "evening,", "room,", "That"],
+      },
+      {
+        target: "I sign it simply, “Best regards, Priya,” before starting the first paragraph.",
+        jumbled: ["Priya,”", "“Best", "sign", "I", "before", "regards,", "it", "first", "simply,", "the", "starting", "paragraph."],
+      },
+      {
+        target: "Writing this note takes only a few minutes, but it feels important to acknowledge good service, not only complain about bad service.",
+        jumbled: ["important", "Writing", "acknowledge", "feels", "service.", "about", "minutes,", "few", "good", "but", "only", "only", "this", "complain", "not", "a", "service,", "takes", "note", "bad", "to", "it"],
+      },
+      {
+        target: "I also mention, gently, that a system error like this could easily happen to someone less understanding.",
+        jumbled: ["that", "error", "I", "gently,", "a", "this", "system", "to", "happen", "also", "mention,", "could", "understanding.", "like", "someone", "easily", "less"],
+      },
+      {
+        target: "This exact situation could have ruined someone's entire trip rather than simply becoming a memorable story.",
+        jumbled: ["have", "This", "could", "memorable", "someone's", "trip", "ruined", "simply", "exact", "becoming", "entire", "situation", "rather", "a", "than", "story."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about acknowledging someone who helped you handle a problem well.",
     mySentenceExample: "I acknowledged the worker who helped me handle a problem well.",
@@ -309,11 +444,26 @@ export const CHAPTERS = [
       { text: "Priya feels this became simply an unusual story to tell.", answer: true },
     ],
     buildSentence: [
-      { target: "I reflect on this trip now.", jumbled: ["reflect", "on", "I", "this", "trip", "now."] },
-      { target: "I now keep printed confirmations.", jumbled: ["I", "now", "keep", "printed", "confirmations."] },
-      { target: "Mistakes happen, but responses matter more.", jumbled: ["Mistakes", "happen,", "but", "responses", "matter", "more."] },
-      { target: "This became simply an unusual story worth telling.", jumbled: ["This", "became", "simply", "an", "unusual", "story", "worth", "telling."] },
-      { target: "If I had panicked, the situation might have escalated.", jumbled: ["If", "I", "had", "panicked,", "the", "situation", "might", "have", "escalated."] },
+      {
+        target: "On my flight home, I glance at my boarding pass, my name printed under the flight number, Priya, and reflect on how differently this entire trip could have unfolded without a bit of patience and clear communication.",
+        jumbled: ["home,", "number,", "flight", "how", "name", "I", "glance", "the", "On", "my", "communication.", "boarding", "patience", "Priya,", "without", "on", "and", "differently", "entire", "this", "of", "my", "have", "bit", "flight", "could", "unfolded", "trip", "under", "a", "reflect", "my", "pass,", "clear", "and", "at", "printed"],
+      },
+      {
+        target: "The situation might have escalated rather than resolved so smoothly.",
+        jumbled: ["so", "than", "rather", "smoothly.", "resolved", "situation", "have", "escalated", "might", "The"],
+      },
+      {
+        target: "Instead, staying calm and explaining my situation clearly allowed Mr. Bennett to actually help me effectively.",
+        jumbled: ["Mr.", "clearly", "actually", "staying", "effectively.", "me", "Instead,", "explaining", "help", "to", "my", "calm", "allowed", "situation", "and", "Bennett"],
+      },
+      {
+        target: "This experience taught me something valuable about business travel: mistakes happen, but how people respond genuinely matters more than the mistake itself.",
+        jumbled: ["This", "more", "something", "the", "mistake", "genuinely", "but", "travel:", "respond", "matters", "about", "experience", "mistakes", "valuable", "business", "taught", "me", "how", "itself.", "than", "people", "happen,"],
+      },
+      {
+        target: "I now keep printed confirmations for every trip, a small habit born directly from that chaotic hotel night.",
+        jumbled: ["chaotic", "born", "for", "that", "directly", "night.", "habit", "keep", "printed", "every", "a", "now", "trip,", "I", "from", "confirmations", "hotel", "small"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a lesson you learned from handling a stressful travel situation.",
     mySentenceExample: "I learned that staying calm helps resolve stressful travel situations.",

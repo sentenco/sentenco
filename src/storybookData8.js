@@ -40,16 +40,25 @@ export const CHAPTERS = [
       { text: "Casey ignores the shelves.", answer: false },
     ],
     buildSentence: [
-      { target: "I wake up early.", jumbled: ["wake", "up", "early.", "I"] },
-      { target: "She smiles when she sees me.", jumbled: ["smiles", "when", "she", "sees", "me.", "She"] },
-      { target: "I smile and say, “Good morning, how can I help you?”", jumbled: ["I", "you?”", "say,", "morning,", "help", "“Good", "can", "I", "how", "smile", "and"] },
       {
-        target: "I unlock the door, turn on the lights, and help open the shop for the day.",
-        jumbled: ["shop", "open", "the", "help", "turn", "I", "the", "day.", "unlock", "lights,", "the", "door,", "on", "and", "for", "the"],
+        target: "I put on my clean shirt, eat a quick breakfast, and leave my apartment before seven.",
+        jumbled: ["a", "my", "apartment", "quick", "my", "leave", "clean", "on", "seven.", "shirt,", "put", "I", "eat", "and", "before", "breakfast,"],
       },
       {
         target: "The shop is only ten minutes away, so I walk there with my bag on my shoulder.",
-        jumbled: ["only", "my", "shop", "there", "on", "away,", "shoulder.", "The", "with", "walk", "ten", "I", "bag", "so", "my", "is", "minutes"],
+        jumbled: ["is", "I", "so", "my", "shop", "walk", "bag", "ten", "on", "only", "shoulder.", "with", "away,", "The", "there", "minutes", "my"],
+      },
+      {
+        target: "My manager is already inside, and she smiles when she sees me.",
+        jumbled: ["manager", "and", "when", "smiles", "she", "she", "already", "My", "me.", "inside,", "sees", "is"],
+      },
+      {
+        target: "I unlock the door, turn on the lights, and help open the shop for the day.",
+        jumbled: ["I", "shop", "on", "the", "lights,", "turn", "and", "the", "help", "for", "the", "open", "unlock", "door,", "the", "day."],
+      },
+      {
+        target: "I feel a little busy, but I am ready to help people at the shop.",
+        jumbled: ["I", "at", "feel", "am", "shop.", "the", "ready", "to", "people", "little", "I", "a", "but", "help", "busy,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about helping customers.",
@@ -75,19 +84,25 @@ export const CHAPTERS = [
       { text: "Ms. Cruz is never busy in the morning.", answer: false },
     ],
     buildSentence: [
-      { target: "Ben checks the fridge.", jumbled: ["checks", "the", "fridge.", "Ben"] },
-      { target: "I take the chairs down.", jumbled: ["take", "the", "chairs", "down.", "I"] },
       {
-        target: "First, we open the big glass door and switch on all the lights.",
-        jumbled: ["we", "First,", "open", "big", "the", "door", "glass", "and", "on", "switch", "the", "all", "lights."],
+        target: "Her name is Ms. Cruz, and she is kind but always busy in the morning.",
+        jumbled: ["in", "morning.", "but", "the", "kind", "name", "always", "Cruz,", "Ms.", "is", "Her", "and", "is", "busy", "she"],
+      },
+      {
+        target: "I take the chairs down and put them near the small tables by the wall.",
+        jumbled: ["near", "chairs", "tables", "take", "put", "the", "small", "the", "wall.", "them", "by", "I", "and", "the", "down"],
       },
       {
         target: "Ms. Cruz counts the money in the cashier and writes it in a small book.",
-        jumbled: ["the", "counts", "Cruz", "Ms.", "money", "cashier", "the", "in", "and", "writes", "a", "it", "in", "book.", "small"],
+        jumbled: ["it", "money", "in", "counts", "book.", "in", "cashier", "the", "the", "a", "and", "small", "Cruz", "Ms.", "writes"],
       },
       {
-        target: "As we open the shop together, I feel proud because our team is ready for the day.",
-        jumbled: ["open", "we", "shop", "As", "the", "together,", "feel", "I", "proud", "because", "team", "our", "ready", "is", "day.", "the", "for"],
+        target: "I use a soft cloth to clean the counter and the front window.",
+        jumbled: ["I", "cloth", "and", "the", "to", "front", "soft", "the", "a", "window.", "use", "clean", "counter"],
+      },
+      {
+        target: "I feel proud because our team is ready for the day.",
+        jumbled: ["feel", "team", "for", "day.", "our", "proud", "is", "the", "I", "ready", "because"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about starting your workday.",
@@ -113,19 +128,25 @@ export const CHAPTERS = [
       { text: "Ben does not help any customers.", answer: false },
     ],
     buildSentence: [
-      { target: "She chooses two loaves.", jumbled: ["chooses", "two", "loaves.", "She"] },
-      { target: "Ben helps another customer.", jumbled: ["helps", "another", "customer.", "Ben"] },
+      {
+        target: "In the morning, the shop is quiet, and then the first customers come in.",
+        jumbled: ["morning,", "the", "In", "first", "in.", "customers", "the", "quiet,", "the", "is", "and", "come", "then", "shop"],
+      },
       {
         target: "I show her the shelf with fresh bread near the back of the shop.",
-        jumbled: ["her", "show", "the", "I", "with", "shelf", "bread", "fresh", "the", "near", "of", "back", "shop.", "the"],
+        jumbled: ["of", "her", "show", "with", "near", "the", "the", "fresh", "the", "back", "I", "bread", "shop.", "shelf"],
       },
       {
         target: "I walk with him to the fridge and help him find the fresh milk.",
-        jumbled: ["with", "walk", "him", "I", "the", "to", "and", "fridge", "him", "help", "the", "find", "milk.", "fresh"],
+        jumbled: ["him", "fresh", "fridge", "him", "with", "walk", "help", "I", "find", "and", "the", "the", "to", "milk."],
       },
       {
-        target: "As I help the first customers, I feel useful because people are glad for my help.",
-        jumbled: ["help", "I", "first", "As", "the", "customers,", "feel", "I", "useful", "because", "are", "people", "glad", "help.", "my", "for"],
+        target: "He says, “Thank you, you are very kind, Casey,” and I feel happy inside.",
+        jumbled: ["says,", "kind,", "you,", "and", "very", "I", "happy", "you", "are", "“Thank", "feel", "Casey,”", "inside.", "He"],
+      },
+      {
+        target: "I feel useful because people are glad for my help.",
+        jumbled: ["for", "help.", "I", "feel", "useful", "are", "people", "because", "glad", "my"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about helping someone find something.",
@@ -151,19 +172,25 @@ export const CHAPTERS = [
       { text: "The man leaves angry at the end.", answer: false },
     ],
     buildSentence: [
-      { target: "I check the shelf.", jumbled: ["check", "the", "shelf.", "I"] },
-      { target: "I search the boxes.", jumbled: ["search", "the", "boxes.", "I"] },
       {
-        target: "I bring them to the man and say, “Here you are, is this the right one?”",
-        jumbled: ["them", "bring", "to", "I", "man", "the", "say,", "and", "you", "“Here", "is", "are,", "the", "this", "one?”", "right"],
+        target: "In the afternoon, a man comes in and looks around the shop with a worried face.",
+        jumbled: ["a", "man", "in", "the", "shop", "worried", "comes", "the", "looks", "a", "face.", "and", "In", "with", "afternoon,", "around"],
       },
       {
         target: "I am not sure, so I say, “Let me check for you, please wait one minute.”",
-        jumbled: ["not", "am", "sure,", "I", "say,", "so", "I", "me", "“Let", "for", "check", "you,", "wait", "please", "minute.”", "one"],
+        jumbled: ["one", "am", "please", "“Let", "wait", "you,", "so", "I", "check", "me", "sure,", "not", "minute.”", "say,", "for", "I"],
       },
       {
-        target: "As the man leaves happy, I feel proud because I did not give up on his question.",
-        jumbled: ["man", "the", "leaves", "As", "happy,", "feel", "I", "proud", "because", "did", "I", "give", "not", "on", "up", "question.", "his"],
+        target: "I walk to the storage room and search the boxes one by one.",
+        jumbled: ["storage", "one.", "one", "I", "boxes", "the", "the", "by", "walk", "room", "search", "to", "and"],
+      },
+      {
+        target: "I bring them to the man and say, “Here you are, is this the right one?”",
+        jumbled: ["man", "them", "one?”", "I", "you", "and", "bring", "the", "the", "are,", "to", "this", "“Here", "say,", "is", "right"],
+      },
+      {
+        target: "I feel proud because I did not give up on his question.",
+        jumbled: ["proud", "because", "did", "his", "up", "on", "feel", "give", "question.", "I", "I", "not"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about finding something for someone.",
@@ -189,19 +216,25 @@ export const CHAPTERS = [
       { text: "No one pays with a card today.", answer: false },
     ],
     buildSentence: [
-      { target: "A line of customers waits.", jumbled: ["line", "of", "customers", "waits.", "A"] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "deep", "breath.", "I"] },
       {
-        target: "I scan each item slowly and read the price on the screen.",
-        jumbled: ["each", "scan", "item", "I", "and", "slowly", "read", "price", "the", "the", "on", "screen."],
+        target: "Today, Ms. Cruz asks me to work at the cashier near the door.",
+        jumbled: ["near", "Ms.", "cashier", "to", "asks", "work", "the", "Today,", "Cruz", "me", "door.", "the", "at"],
       },
       {
-        target: "She gives me the money, and I count her change carefully into her hand.",
-        jumbled: ["me", "gives", "the", "She", "money,", "I", "and", "count", "change", "her", "into", "carefully", "hand.", "her"],
+        target: "A line of customers waits, so I take a deep breath and smile.",
+        jumbled: ["so", "of", "breath", "and", "deep", "a", "waits,", "smile.", "A", "customers", "take", "line", "I"],
       },
       {
-        target: "As the line grows shorter, I feel confident because I can work the cashier well.",
-        jumbled: ["line", "the", "grows", "As", "shorter,", "feel", "I", "confident", "because", "can", "I", "cashier", "the", "work", "well."],
+        target: "I tell her, “That is three hundred pesos, please,” in a clear voice.",
+        jumbled: ["clear", "hundred", "her,", "tell", "in", "please,”", "voice.", "three", "“That", "pesos,", "a", "I", "is"],
+      },
+      {
+        target: "I put her food in a bag and say, “Thank you, have a nice day.”",
+        jumbled: ["I", "you,", "say,", "nice", "her", "put", "“Thank", "food", "have", "in", "a", "day.”", "a", "and", "bag"],
+      },
+      {
+        target: "The next customer pays with a card, so I show him where to tap it.",
+        jumbled: ["show", "where", "a", "him", "customer", "with", "tap", "I", "so", "card,", "next", "pays", "to", "The", "it."],
       },
     ],
     mySentencePrompt: "Write or say one sentence about paying or giving change.",
@@ -227,19 +260,25 @@ export const CHAPTERS = [
       { text: "The customer stays angry at the end.", answer: false },
     ],
     buildSentence: [
-      { target: "His voice is loud.", jumbled: ["voice", "is", "loud.", "His"] },
-      { target: "He picks the right one.", jumbled: ["picks", "the", "right", "one.", "He"] },
       {
-        target: "I walk with him to the fridge and show him the different flavours.",
-        jumbled: ["with", "walk", "him", "I", "the", "to", "and", "fridge", "him", "show", "different", "the", "flavours."],
+        target: "In the afternoon, a customer comes in with an angry face and a small bag.",
+        jumbled: ["angry", "the", "and", "a", "small", "customer", "bag.", "comes", "in", "a", "afternoon,", "face", "an", "with", "In"],
       },
       {
         target: "I stay calm and say, “I am sorry, sir, let me help you with that.”",
-        jumbled: ["calm", "stay", "I", "say,", "and", "am", "“I", "sir,", "sorry,", "me", "let", "you", "help", "that.”", "with"],
+        jumbled: ["say,", "calm", "sorry,", "help", "stay", "am", "and", "me", "you", "sir,", "that.”", "let", "I", "with", "“I"],
       },
       {
-        target: "As he walks out, I feel proud because I stayed calm and solved the problem.",
-        jumbled: ["he", "walks", "out,", "As", "feel", "I", "proud", "because", "stayed", "I", "calm", "solved", "and", "problem.", "the"],
+        target: "I look in the bag and see that he has the wrong flavour of juice.",
+        jumbled: ["look", "see", "flavour", "wrong", "I", "and", "he", "juice.", "of", "bag", "the", "that", "the", "in", "has"],
+      },
+      {
+        target: "I walk with him to the fridge and show him the different flavours.",
+        jumbled: ["the", "and", "I", "him", "walk", "with", "him", "to", "flavours.", "show", "different", "fridge", "the"],
+      },
+      {
+        target: "I change it at the cashier and say, “I am sorry for the mistake.” He says, “Thank you, you are very patient, Casey,” and leaves the shop happy.",
+        jumbled: ["the", "are", "I", "am", "mistake.”", "He", "sorry", "for", "happy.", "at", "Casey,”", "“Thank", "leaves", "you,", "the", "says,", "patient,", "the", "and", "very", "you", "shop", "cashier", "say,", "change", "and", "“I", "it"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm with a difficult person.",
@@ -265,19 +304,25 @@ export const CHAPTERS = [
       { text: "Casey eats lunch standing at the counter.", answer: false },
     ],
     buildSentence: [
-      { target: "We wash our hands.", jumbled: ["wash", "our", "hands.", "We"] },
-      { target: "Ben tells a funny story.", jumbled: ["tells", "a", "funny", "story.", "Ben"] },
       {
-        target: "We sit on two small chairs near the window and eat together.",
-        jumbled: ["on", "sit", "two", "We", "chairs", "small", "near", "the", "and", "window", "together.", "eat"],
+        target: "At one o'clock, Ms. Cruz says, “You can take your lunch break now, Casey.”",
+        jumbled: ["can", "Ms.", "says,", "lunch", "Casey.”", "take", "break", "“You", "one", "o'clock,", "At", "Cruz", "now,", "your"],
       },
       {
         target: "I open my own lunch box and take out rice, fish, and a banana.",
-        jumbled: ["my", "open", "own", "I", "box", "lunch", "take", "and", "rice,", "out", "fish,", "a", "and", "banana."],
+        jumbled: ["and", "fish,", "take", "banana.", "I", "open", "rice,", "my", "a", "and", "lunch", "box", "own", "out"],
       },
       {
-        target: "As I finish my lunch, I feel rested and happy to work with a good coworker.",
-        jumbled: ["finish", "I", "lunch,", "As", "my", "feel", "I", "rested", "happy", "and", "work", "to", "a", "with", "coworker.", "good"],
+        target: "We sit on two small chairs near the window and eat together.",
+        jumbled: ["small", "window", "together.", "near", "and", "sit", "two", "We", "eat", "on", "the", "chairs"],
+      },
+      {
+        target: "We talk about our families, our plans, and the busy morning at the shop.",
+        jumbled: ["at", "families,", "busy", "morning", "the", "shop.", "our", "plans,", "the", "talk", "and", "We", "our", "about"],
+      },
+      {
+        target: "I feel rested and happy to work with a good coworker.",
+        jumbled: ["feel", "to", "I", "coworker.", "rested", "and", "good", "a", "work", "happy", "with"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your lunch break at work.",
@@ -303,19 +348,25 @@ export const CHAPTERS = [
       { text: "The shelves stay empty all afternoon.", answer: false },
     ],
     buildSentence: [
-      { target: "Many shelves are empty.", jumbled: ["shelves", "are", "empty.", "Many"] },
-      { target: "Ben helps lift the boxes.", jumbled: ["helps", "lift", "the", "boxes.", "Ben"] },
       {
-        target: "I put the older items in the front and the new items behind them.",
-        jumbled: ["the", "put", "older", "I", "in", "items", "front", "the", "the", "and", "items", "new", "them.", "behind"],
+        target: "Ms. Cruz asks me to fill the shelves with new items from the storage room.",
+        jumbled: ["with", "to", "the", "the", "Cruz", "fill", "from", "shelves", "items", "Ms.", "room.", "asks", "storage", "new", "me"],
       },
       {
         target: "I take a small trolley and push it to the back of the shop.",
-        jumbled: ["a", "take", "small", "I", "and", "trolley", "it", "push", "the", "to", "of", "back", "shop.", "the"],
+        jumbled: ["the", "the", "take", "small", "it", "push", "I", "to", "and", "of", "trolley", "shop.", "back", "a"],
       },
       {
-        target: "As I finish filling the shelves, I feel satisfied because the shop looks fresh and ready.",
-        jumbled: ["finish", "I", "filling", "As", "shelves,", "the", "feel", "I", "satisfied", "because", "shop", "the", "fresh", "looks", "ready.", "and"],
+        target: "I put the older items in the front and the new items behind them.",
+        jumbled: ["the", "front", "I", "behind", "the", "older", "the", "them.", "in", "put", "and", "new", "items", "items"],
+      },
+      {
+        target: "I make each row neat and turn the labels so people can read them.",
+        jumbled: ["so", "can", "neat", "make", "each", "them.", "people", "turn", "I", "read", "labels", "row", "and", "the"],
+      },
+      {
+        target: "I feel satisfied because the shop looks fresh and ready.",
+        jumbled: ["the", "I", "looks", "feel", "because", "ready.", "satisfied", "shop", "and", "fresh"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your work in a shop.",
@@ -341,19 +392,25 @@ export const CHAPTERS = [
       { text: "Casey leaves the lights all on.", answer: false },
     ],
     buildSentence: [
-      { target: "The street becomes quiet.", jumbled: ["street", "becomes", "quiet.", "The"] },
-      { target: "I check the fridge doors.", jumbled: ["check", "the", "fridge", "doors.", "I"] },
       {
-        target: "I lock the front glass door and turn the small sign to “Closed.”",
-        jumbled: ["the", "lock", "front", "I", "door", "glass", "and", "the", "turn", "sign", "small", "“Closed.”", "to"],
+        target: "Ms. Cruz looks at the clock and says, “It is time to close the shop now.”",
+        jumbled: ["is", "Ms.", "at", "to", "Cruz", "and", "the", "clock", "looks", "now.”", "time", "“It", "says,", "the", "close", "shop"],
       },
       {
         target: "Ben and I clean the counter and the floor with soft cloths and a mop.",
-        jumbled: ["I", "and", "Ben", "clean", "counter", "the", "the", "and", "floor", "soft", "with", "cloths", "a", "and", "mop."],
+        jumbled: ["soft", "and", "Ben", "and", "the", "clean", "I", "a", "cloths", "the", "mop.", "with", "counter", "and", "floor"],
       },
       {
-        target: "As I leave the quiet shop, I feel tired but happy after a full day of work.",
-        jumbled: ["leave", "I", "quiet", "As", "the", "shop,", "feel", "I", "tired", "happy", "but", "a", "after", "full", "of", "day", "work."],
+        target: "Ms. Cruz counts the money in the cashier and writes the numbers in her book.",
+        jumbled: ["numbers", "the", "money", "the", "Cruz", "writes", "in", "and", "cashier", "her", "Ms.", "book.", "counts", "the", "in"],
+      },
+      {
+        target: "Then I put the chairs on the tables so we can clean the floor.",
+        jumbled: ["floor.", "I", "on", "clean", "the", "the", "chairs", "the", "so", "tables", "can", "put", "we", "Then"],
+      },
+      {
+        target: "I feel tired but happy after a full day of work.",
+        jumbled: ["I", "happy", "a", "feel", "day", "of", "full", "but", "tired", "work.", "after"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about the end of your workday.",
@@ -379,19 +436,25 @@ export const CHAPTERS = [
       { text: "Ben and Casey never eat lunch together.", answer: false },
     ],
     buildSentence: [
-      { target: "The shop feels like home.", jumbled: ["shop", "feels", "like", "home.", "The"] },
-      { target: "The street lamps are bright.", jumbled: ["street", "lamps", "are", "bright.", "The"] },
+      {
+        target: "On Friday evening, I sit for a moment and think about my whole week.",
+        jumbled: ["sit", "a", "evening,", "Friday", "I", "and", "whole", "my", "about", "moment", "think", "week.", "for", "On"],
+      },
       {
         target: "This week, I opened the shop, worked the cashier, and filled many shelves.",
-        jumbled: ["week,", "This", "opened", "I", "shop,", "the", "worked", "cashier,", "the", "filled", "and", "shelves.", "many"],
+        jumbled: ["many", "I", "the", "shelves.", "worked", "the", "shop,", "filled", "This", "week,", "opened", "and", "cashier,"],
       },
       {
         target: "Ms. Cruz walks to me and says, “You are a great help to this shop.”",
-        jumbled: ["to", "walks", "Cruz", "Ms.", "me", "says,", "and", "are", "“You", "help", "a", "great", "this", "to", "shop.”"],
+        jumbled: ["says,", "this", "Ms.", "help", "me", "shop.”", "great", "“You", "walks", "a", "and", "to", "Cruz", "to", "are"],
       },
       {
-        target: "As I walk home, I feel proud and thankful because I had a good week at the shop.",
-        jumbled: ["walk", "I", "home,", "As", "feel", "I", "proud", "thankful", "and", "because", "had", "I", "good", "a", "at", "week", "shop.", "the"],
+        target: "I smile and say, “Thank you, I really like working here with you.”",
+        jumbled: ["really", "working", "like", "I", "you.”", "and", "with", "“Thank", "smile", "you,", "I", "here", "say,"],
+      },
+      {
+        target: "I feel proud and thankful because I had a good week at the shop.",
+        jumbled: ["I", "I", "good", "thankful", "at", "had", "feel", "a", "shop.", "week", "and", "because", "proud", "the"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a good week at your job.",

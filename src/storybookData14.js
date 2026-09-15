@@ -40,9 +40,26 @@ export const CHAPTERS = [
       { text: "Noah sees a garden outside the window.", answer: true },
     ],
     buildSentence: [
-      { target: "Grandma waves at me.", jumbled: ["waves", "at", "Grandma", "me."] },
-      { target: "The house smells like bread.", jumbled: ["smells", "like", "The", "bread.", "house"] },
-      { target: "I put my bag on the bed.", jumbled: ["put", "my", "I", "bag", "on", "the", "bed."] },
+      {
+        target: "Today, Mom drives me to Grandma's house for a whole week.",
+        jumbled: ["Mom", "week.", "whole", "to", "house", "me", "Today,", "for", "a", "Grandma's", "drives"],
+      },
+      {
+        target: "I bring my small bag with my clothes and my favorite toy.",
+        jumbled: ["bag", "bring", "toy.", "my", "favorite", "my", "small", "clothes", "my", "with", "I", "and"],
+      },
+      {
+        target: "“Welcome, Noah!” she says, and she gives me a warm hug.",
+        jumbled: ["gives", "me", "Noah!”", "a", "“Welcome,", "she", "and", "warm", "hug.", "says,", "she"],
+      },
+      {
+        target: "I put my bag on the bed and look outside the window.",
+        jumbled: ["bed", "my", "window.", "I", "on", "the", "and", "look", "the", "bag", "put", "outside"],
+      },
+      {
+        target: "I feel happy and excited for my week with Grandma.",
+        jumbled: ["I", "with", "feel", "excited", "and", "happy", "Grandma.", "week", "my", "for"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about visiting a family member.",
     mySentenceExample: "I visit my grandma on weekends.",
@@ -65,9 +82,26 @@ export const CHAPTERS = [
       { text: "Noah finds a worm in the dirt.", answer: true },
     ],
     buildSentence: [
-      { target: "We water the flowers.", jumbled: ["water", "the", "We", "flowers."] },
-      { target: "I hold the watering can.", jumbled: ["hold", "the", "I", "watering", "can."] },
-      { target: "Worms help the garden grow.", jumbled: ["help", "the", "Worms", "garden", "grow."] },
+      {
+        target: "In the morning, Grandma takes me to see her garden.",
+        jumbled: ["takes", "me", "Grandma", "her", "to", "garden.", "see", "In", "morning,", "the"],
+      },
+      {
+        target: "“Come, Noah, let's water the flowers,” she says.",
+        jumbled: ["Noah,", "the", "flowers,”", "says.", "she", "let's", "“Come,", "water"],
+      },
+      {
+        target: "Grandma shows me a small green tomato on a plant.",
+        jumbled: ["a", "me", "on", "tomato", "Grandma", "plant.", "green", "shows", "small", "a"],
+      },
+      {
+        target: "I dig in the soft dirt and find a tiny worm.",
+        jumbled: ["and", "soft", "a", "tiny", "dirt", "in", "worm.", "find", "dig", "I", "the"],
+      },
+      {
+        target: "Grandma laughs and says worms help the garden grow.",
+        jumbled: ["grow.", "garden", "and", "Grandma", "laughs", "worms", "says", "help", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a garden or plants.",
     mySentenceExample: "I like to water the flowers.",
@@ -90,9 +124,26 @@ export const CHAPTERS = [
       { text: "The cookie tastes sour.", answer: false },
     ],
     buildSentence: [
-      { target: "I stir the bowl.", jumbled: ["stir", "the", "I", "bowl."] },
-      { target: "The kitchen smells sweet.", jumbled: ["smells", "sweet.", "The", "kitchen"] },
-      { target: "The cookie is soft and warm.", jumbled: ["is", "soft", "The", "and", "cookie", "warm."] },
+      {
+        target: "This afternoon, Grandma and I bake cookies in her warm kitchen.",
+        jumbled: ["Grandma", "This", "afternoon,", "cookies", "her", "in", "warm", "kitchen.", "and", "bake", "I"],
+      },
+      {
+        target: "“First, we mix the flour and sugar, Noah,” Grandma says.",
+        jumbled: ["Noah,”", "says.", "and", "flour", "mix", "“First,", "the", "Grandma", "we", "sugar,"],
+      },
+      {
+        target: "We put the cookies on a tray and place them in the oven.",
+        jumbled: ["and", "oven.", "them", "tray", "place", "a", "in", "cookies", "on", "We", "the", "the", "put"],
+      },
+      {
+        target: "Grandma lets me eat one first.",
+        jumbled: ["me", "eat", "first.", "Grandma", "one", "lets"],
+      },
+      {
+        target: "Baking with Grandma is one of my favorite things to do.",
+        jumbled: ["of", "with", "one", "things", "favorite", "do.", "to", "my", "is", "Grandma", "Baking"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about baking or cooking.",
     mySentenceExample: "I like to bake cookies with my family.",
@@ -115,9 +166,26 @@ export const CHAPTERS = [
       { text: "Noah feels bored during the story.", answer: false },
     ],
     buildSentence: [
-      { target: "The rain falls softly.", jumbled: ["rain", "falls", "The", "softly."] },
-      { target: "I sit close to her.", jumbled: ["sit", "close", "I", "to", "her."] },
-      { target: "I ask her many questions.", jumbled: ["ask", "her", "I", "many", "questions."] },
+      {
+        target: "Outside, the rain falls softly on Grandma's window.",
+        jumbled: ["on", "Outside,", "rain", "window.", "Grandma's", "the", "falls", "softly"],
+      },
+      {
+        target: "Grandma sits in her big chair and pats the seat next to her.",
+        jumbled: ["chair", "her.", "seat", "in", "sits", "to", "the", "her", "big", "next", "pats", "and", "Grandma"],
+      },
+      {
+        target: "Grandma tells me a story about when she was a little girl.",
+        jumbled: ["girl.", "a", "she", "a", "when", "Grandma", "was", "story", "tells", "little", "me", "about"],
+      },
+      {
+        target: "I ask her many questions, and she smiles at each one.",
+        jumbled: ["her", "and", "each", "ask", "she", "questions,", "one.", "smiles", "I", "at", "many"],
+      },
+      {
+        target: "The rain keeps falling, but I do not feel bored at all.",
+        jumbled: ["bored", "rain", "all.", "falling,", "feel", "do", "The", "but", "keeps", "I", "not", "at"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a rainy day.",
     mySentenceExample: "I stay inside when it rains.",
@@ -140,9 +208,26 @@ export const CHAPTERS = [
       { text: "A red bird sings on the fence.", answer: true },
     ],
     buildSentence: [
-      { target: "I sprinkle some seeds.", jumbled: ["sprinkle", "some", "I", "seeds."] },
-      { target: "I stand very still.", jumbled: ["stand", "very", "I", "still."] },
-      { target: "The birds visit every morning.", jumbled: ["visit", "every", "The", "birds", "morning."] },
+      {
+        target: "“Come, Noah, it's time to feed the birds,” she whispers.",
+        jumbled: ["“Come,", "to", "feed", "she", "whispers.", "it's", "birds,”", "Noah,", "time", "the"],
+      },
+      {
+        target: "Grandma shows me how to fill the little bird feeder.",
+        jumbled: ["bird", "me", "little", "how", "shows", "the", "fill", "to", "Grandma", "feeder."],
+      },
+      {
+        target: "Soon, small birds land near us and start to eat.",
+        jumbled: ["eat.", "us", "birds", "small", "near", "land", "Soon,", "start", "and", "to"],
+      },
+      {
+        target: "I stand very still so I do not scare them away.",
+        jumbled: ["so", "do", "I", "scare", "very", "them", "not", "still", "stand", "I", "away."],
+      },
+      {
+        target: "Feeding the birds with Grandma makes me feel calm and happy.",
+        jumbled: ["and", "me", "calm", "birds", "feel", "happy.", "makes", "Feeding", "with", "Grandma", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about animals or birds.",
     mySentenceExample: "I like to watch birds in the morning.",
@@ -165,9 +250,26 @@ export const CHAPTERS = [
       { text: "Noah feels better at the end.", answer: true },
     ],
     buildSentence: [
-      { target: "My foot slips.", jumbled: ["foot", "slips.", "My"] },
-      { target: "Grandma hugs me.", jumbled: ["hugs", "me.", "Grandma"] },
-      { target: "We clean up the mess together.", jumbled: ["clean", "up", "We", "the", "mess", "together."] },
+      {
+        target: "Today, I help Grandma carry a cup of juice to the table.",
+        jumbled: ["cup", "to", "a", "I", "carry", "juice", "of", "help", "Grandma", "Today,", "table.", "the"],
+      },
+      {
+        target: "I feel worried and my face turns red.",
+        jumbled: ["and", "turns", "feel", "my", "red.", "worried", "face", "I"],
+      },
+      {
+        target: "We get a towel together and clean up the mess.",
+        jumbled: ["clean", "the", "a", "mess.", "and", "get", "up", "towel", "together", "We"],
+      },
+      {
+        target: "Grandma pours me a new cup of juice with a smile.",
+        jumbled: ["a", "of", "a", "pours", "new", "me", "smile.", "Grandma", "with", "cup", "juice"],
+      },
+      {
+        target: "She hugs me and says, “You are a good helper.”",
+        jumbled: ["helper.”", "me", "good", "says,", "and", "She", "hugs", "“You", "a", "are"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small accident.",
     mySentenceExample: "I spill my milk, but it is okay.",
@@ -190,9 +292,26 @@ export const CHAPTERS = [
       { text: "Grandpa says to enjoy every day.", answer: true },
     ],
     buildSentence: [
-      { target: "Grandpa opens a box.", jumbled: ["opens", "a", "Grandpa", "box."] },
-      { target: "I see old photos.", jumbled: ["see", "old", "I", "photos."] },
-      { target: "I feel close to my family.", jumbled: ["feel", "close", "I", "to", "my", "family."] },
+      {
+        target: "In the evening, Grandpa sits with me on the soft sofa.",
+        jumbled: ["Grandpa", "In", "on", "soft", "with", "the", "sits", "sofa.", "me", "the", "evening,"],
+      },
+      {
+        target: "“This is me when I was young,” Grandpa says with a laugh.",
+        jumbled: ["laugh.", "me", "says", "“This", "when", "a", "Grandpa", "was", "young,”", "is", "with", "I"],
+      },
+      {
+        target: "One photo shows them standing next to an old car.",
+        jumbled: ["to", "old", "standing", "One", "an", "them", "next", "car.", "shows", "photo"],
+      },
+      {
+        target: "I laugh when I see a photo of Grandpa with messy hair.",
+        jumbled: ["laugh", "with", "Grandpa", "see", "of", "when", "a", "hair.", "messy", "I", "photo", "I"],
+      },
+      {
+        target: "I look at the old photos and feel close to my family.",
+        jumbled: ["I", "my", "family.", "at", "old", "feel", "close", "look", "and", "photos", "to", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your family.",
     mySentenceExample: "I love spending time with my family.",
@@ -215,9 +334,26 @@ export const CHAPTERS = [
       { text: "Ruby says Noah is boring.", answer: false },
     ],
     buildSentence: [
-      { target: "Ruby comes to play.", jumbled: ["comes", "to", "Ruby", "play."] },
-      { target: "We laugh a lot.", jumbled: ["laugh", "a", "We", "lot."] },
-      { target: "I have a new friend.", jumbled: ["have", "a", "I", "new", "friend."] },
+      {
+        target: "In the afternoon, Grandma's neighbor Ruby comes over to play.",
+        jumbled: ["over", "afternoon,", "Ruby", "Grandma's", "comes", "to", "the", "In", "neighbor", "play."],
+      },
+      {
+        target: "Ruby is my age, and she has a big, friendly smile.",
+        jumbled: ["is", "big,", "and", "she", "smile.", "Ruby", "friendly", "my", "age,", "has", "a"],
+      },
+      {
+        target: "I count while Ruby jumps, and then she counts for me.",
+        jumbled: ["me.", "while", "for", "she", "Ruby", "then", "I", "count", "jumps,", "and", "counts"],
+      },
+      {
+        target: "We laugh a lot and share a cold glass of lemonade.",
+        jumbled: ["We", "cold", "laugh", "of", "lemonade.", "a", "glass", "share", "and", "lot", "a"],
+      },
+      {
+        target: "I feel happy to have a new friend during my week with Grandma.",
+        jumbled: ["a", "to", "friend", "have", "Grandma.", "new", "happy", "with", "during", "I", "my", "week", "feel"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a friend you play with.",
     mySentenceExample: "I play with my friend after school.",
@@ -240,9 +376,26 @@ export const CHAPTERS = [
       { text: "Grandma buys flowers for the table.", answer: true },
     ],
     buildSentence: [
-      { target: "I pick a red apple.", jumbled: ["pick", "a", "I", "red", "apple."] },
-      { target: "We carry our bags.", jumbled: ["carry", "our", "We", "bags."] },
-      { target: "I feel proud of myself.", jumbled: ["feel", "proud", "I", "of", "myself."] },
+      {
+        target: "On Saturday, Grandma takes me to the farmers market in town.",
+        jumbled: ["to", "Grandma", "On", "market", "the", "Saturday,", "town.", "takes", "me", "in", "farmers"],
+      },
+      {
+        target: "We see red apples, orange carrots, and green lettuce.",
+        jumbled: ["orange", "see", "green", "We", "apples,", "lettuce.", "carrots,", "and", "red"],
+      },
+      {
+        target: "I pick a juicy, red apple from a big basket.",
+        jumbled: ["pick", "I", "red", "juicy,", "apple", "big", "basket.", "a", "a", "from"],
+      },
+      {
+        target: "We carry our bags and walk home together slowly.",
+        jumbled: ["our", "and", "We", "slowly.", "home", "carry", "walk", "bags", "together"],
+      },
+      {
+        target: "I feel proud because I helped Grandma choose good food.",
+        jumbled: ["proud", "feel", "I", "food.", "Grandma", "helped", "because", "good", "choose", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about shopping for food.",
     mySentenceExample: "I like to buy fresh fruit.",
@@ -265,9 +418,26 @@ export const CHAPTERS = [
       { text: "Noah says the week was boring.", answer: false },
     ],
     buildSentence: [
-      { target: "Grandma hugs me tightly.", jumbled: ["hugs", "me", "Grandma", "tightly."] },
-      { target: "I will visit again soon.", jumbled: ["will", "visit", "I", "again", "soon."] },
-      { target: "My week with Grandma was the best.", jumbled: ["week", "with", "My", "Grandma", "was", "the", "best."] },
+      {
+        target: "Today is my last day at Grandma's house.",
+        jumbled: ["Today", "day", "is", "last", "house.", "at", "Grandma's", "my"],
+      },
+      {
+        target: "I think about the garden, the cookies, and the birds we fed.",
+        jumbled: ["cookies,", "and", "think", "I", "birds", "the", "garden,", "about", "fed.", "the", "the", "we"],
+      },
+      {
+        target: "Grandma hugs me tightly and says, “I loved having you here, Noah.”",
+        jumbled: ["and", "me", "tightly", "loved", "says,", "here,", "Grandma", "hugs", "having", "Noah.”", "“I", "you"],
+      },
+      {
+        target: "She smiles and gives me a small bag of cookies for the trip.",
+        jumbled: ["me", "smiles", "a", "trip.", "small", "of", "She", "cookies", "and", "for", "gives", "the", "bag"],
+      },
+      {
+        target: "I wave goodbye to Grandma's house.",
+        jumbled: ["house.", "goodbye", "wave", "to", "I", "Grandma's"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about saying goodbye to someone.",
     mySentenceExample: "I say goodbye and wave to my friend.",

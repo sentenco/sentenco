@@ -37,11 +37,26 @@ export const CHAPTERS = [
       { text: "Friday feels comfortably far away to Aisha.", answer: false },
     ],
     buildSentence: [
-      { target: "My stomach immediately tightens.", jumbled: ["stomach", "immediately", "My", "tightens."] },
-      { target: "My mind goes completely blank.", jumbled: ["My", "mind", "goes", "completely", "blank."] },
-      { target: "I feel something closer to panic.", jumbled: ["I", "feel", "something", "closer", "to", "panic."] },
-      { target: "Friday feels impossibly close already.", jumbled: ["Friday", "feels", "impossibly", "close", "already."] },
-      { target: "If I could choose any other assignment, I would.", jumbled: ["If", "I", "could", "choose", "any", "other", "assignment,", "I", "would."] },
+      {
+        target: "Ms. Whitfield announces that our next assignment requires each of us to present a research topic alone in front of the class.",
+        jumbled: ["next", "requires", "to", "of", "present", "front", "in", "topic", "announces", "our", "Whitfield", "Ms.", "of", "us", "each", "class.", "alone", "the", "research", "a", "assignment", "that"],
+      },
+      {
+        target: "My stomach immediately tightens, a familiar, uncomfortable sensation whenever public speaking gets mentioned in any context.",
+        jumbled: ["any", "context.", "tightens,", "familiar,", "stomach", "a", "mentioned", "whenever", "immediately", "sensation", "public", "My", "speaking", "uncomfortable", "gets", "in"],
+      },
+      {
+        target: "I feel something closer to genuine panic building inside me.",
+        jumbled: ["panic", "inside", "I", "closer", "to", "something", "feel", "building", "me.", "genuine"],
+      },
+      {
+        target: "I honestly would, without hesitation or regret.",
+        jumbled: ["without", "or", "honestly", "would,", "I", "hesitation", "regret."],
+      },
+      {
+        target: "Friday feels impossibly close already, even though it's technically still five days away.",
+        jumbled: ["technically", "impossibly", "days", "even", "Friday", "already,", "away.", "five", "feels", "it's", "though", "still", "close"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about an assignment or task that made you feel nervous.",
     mySentenceExample: "A speaking assignment made me feel nervous when I first heard about it.",
@@ -66,11 +81,26 @@ export const CHAPTERS = [
       { text: "Aisha feels energized rather than exhausted writing the topic.", answer: false },
     ],
     buildSentence: [
-      { target: "I find myself scrolling instead.", jumbled: ["find", "myself", "I", "scrolling", "instead."] },
-      { target: "Even that small step feels exhausting.", jumbled: ["Even", "that", "small", "step", "feels", "exhausting."] },
-      { target: "I promise myself to start tomorrow.", jumbled: ["I", "promise", "myself", "to", "start", "tomorrow."] },
-      { target: "I've accomplished almost nothing tonight.", jumbled: ["I've", "accomplished", "almost", "nothing", "tonight."] },
-      { target: "Knowing this logically doesn't always change how I behave.", jumbled: ["Knowing", "this", "logically", "doesn't", "always", "change", "how", "I", "behave."] },
+      {
+        target: "That evening, I open my laptop to start researching, but I find myself scrolling through unrelated websites instead.",
+        jumbled: ["That", "open", "but", "laptop", "through", "to", "instead.", "scrolling", "I", "myself", "unrelated", "websites", "researching,", "find", "evening,", "start", "I", "my"],
+      },
+      {
+        target: "Somehow, cleaning my entire room suddenly feels more urgent than actually preparing for something that terrifies me.",
+        jumbled: ["for", "feels", "suddenly", "cleaning", "Somehow,", "urgent", "more", "something", "room", "than", "actually", "my", "me.", "that", "terrifies", "preparing", "entire"],
+      },
+      {
+        target: "I know avoiding this won't make Friday disappear, but knowing something logically doesn't always change how I behave.",
+        jumbled: ["behave.", "change", "know", "make", "but", "won't", "Friday", "logically", "knowing", "I", "avoiding", "how", "something", "always", "disappear,", "doesn't", "this", "I"],
+      },
+      {
+        target: "By midnight, I've accomplished almost nothing related to my actual assignment, just a spotless room and wasted hours.",
+        jumbled: ["hours.", "By", "a", "almost", "related", "and", "assignment,", "my", "I've", "accomplished", "midnight,", "wasted", "spotless", "just", "actual", "to", "nothing", "room"],
+      },
+      {
+        target: "Frustrated with myself, I finally write down a topic, though even that small step feels exhausting somehow.",
+        jumbled: ["I", "even", "somehow.", "finally", "step", "feels", "a", "with", "write", "small", "Frustrated", "topic,", "that", "exhausting", "though", "myself,", "down"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about avoiding something you knew you needed to do.",
     mySentenceExample: "I avoided studying even though I knew I needed to prepare.",
@@ -95,11 +125,26 @@ export const CHAPTERS = [
       { text: "Aisha feels this offer makes things worse.", answer: false },
     ],
     buildSentence: [
-      { target: "I gather enough courage today.", jumbled: ["I", "gather", "enough", "courage", "today."] },
-      { target: "Relief washes over me instantly.", jumbled: ["Relief", "washes", "over", "me", "instantly."] },
-      { target: "She listens patiently to me.", jumbled: ["She", "listens", "patiently", "to", "me."] },
-      { target: "This feels less terrifying now.", jumbled: ["This", "feels", "less", "terrifying", "now."] },
-      { target: "Many students experience exactly this same fear.", jumbled: ["Many", "students", "experience", "exactly", "this", "same", "fear."] },
+      {
+        target: "I gather enough courage to admit my anxiety about the presentation to Ms. Whitfield directly.",
+        jumbled: ["anxiety", "the", "I", "to", "to", "my", "gather", "courage", "about", "presentation", "directly.", "Ms.", "admit", "enough", "Whitfield"],
+      },
+      {
+        target: "She listens patiently, nodding as I explain how my voice shakes and my thoughts scatter whenever I'm in front of people.",
+        jumbled: ["my", "listens", "people.", "my", "voice", "explain", "how", "shakes", "scatter", "thoughts", "patiently,", "as", "nodding", "She", "of", "I'm", "and", "in", "I", "whenever", "front"],
+      },
+      {
+        target: "Rather than dismissing my concerns, she shares that many students experience exactly this same fear before presenting.",
+        jumbled: ["exactly", "students", "that", "she", "concerns,", "fear", "same", "presenting.", "experience", "this", "my", "before", "many", "than", "dismissing", "shares", "Rather"],
+      },
+      {
+        target: "“Would it help if you practiced in front of just me first, Aisha, before the actual presentation?” she offers kindly.",
+        jumbled: ["kindly.", "if", "of", "you", "practiced", "offers", "just", "it", "front", "presentation?”", "in", "actual", "Aisha,", "the", "“Would", "me", "first,", "she", "help", "before"],
+      },
+      {
+        target: "Relief washes over me instantly, since practicing with one person feels dramatically less terrifying than facing the entire class immediately.",
+        jumbled: ["Relief", "the", "practicing", "feels", "washes", "less", "immediately.", "over", "with", "class", "than", "since", "facing", "person", "instantly,", "entire", "terrifying", "dramatically", "me", "one"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about telling someone about a fear you had.",
     mySentenceExample: "I told my teacher about my fear of speaking in front of others.",
@@ -124,11 +169,26 @@ export const CHAPTERS = [
       { text: "Aisha feels completely calm about speaking it aloud.", answer: false },
     ],
     buildSentence: [
-      { target: "I finally dive into researching.", jumbled: ["I", "finally", "dive", "into", "researching."] },
-      { target: "This genuinely interests me now.", jumbled: ["This", "genuinely", "interests", "me", "now."] },
-      { target: "I have a solid outline now.", jumbled: ["I", "have", "a", "solid", "outline", "now."] },
-      { target: "My chest tightens uncomfortably still.", jumbled: ["My", "chest", "tightens", "uncomfortably", "still."] },
-      { target: "Although the content feels ready, speaking it still worries me.", jumbled: ["Although", "the", "content", "feels", "ready,", "speaking", "it", "still", "worries", "me."] },
+      {
+        target: "With a concrete plan in place, I finally dive into researching my topic properly, focused entirely on ocean conservation.",
+        jumbled: ["researching", "dive", "conservation.", "ocean", "in", "plan", "properly,", "I", "focused", "finally", "on", "a", "With", "my", "concrete", "entirely", "place,", "into", "topic"],
+      },
+      {
+        target: "I realize the material genuinely interests me, which somehow makes the process less painful overall.",
+        jumbled: ["realize", "the", "interests", "I", "process", "overall.", "makes", "the", "material", "somehow", "which", "me,", "genuinely", "less", "painful"],
+      },
+      {
+        target: "I organize my research into clear sections, writing key points on index cards to help me stay on track later.",
+        jumbled: ["organize", "on", "I", "to", "key", "clear", "index", "sections,", "stay", "on", "into", "research", "points", "help", "me", "cards", "writing", "my", "track", "later."],
+      },
+      {
+        target: "I occasionally forget about the presentation itself, absorbed instead in learning fascinating facts about coral reefs.",
+        jumbled: ["instead", "about", "absorbed", "facts", "occasionally", "itself,", "about", "fascinating", "forget", "coral", "learning", "the", "I", "reefs.", "presentation", "in"],
+      },
+      {
+        target: "\"The content is ready, Aisha,\" I tell myself, although the thought of actually speaking it aloud still makes my chest tighten uncomfortably.",
+        jumbled: ["of", "tighten", "myself,", "tell", "actually", "ready,", "Aisha,\"", "aloud", "chest", "is", "speaking", "the", "still", "I", "it", "although", "content", "my", "thought", "makes", "uncomfortably.", "\"The"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about becoming genuinely interested in a topic you had to research.",
     mySentenceExample: "I became genuinely interested in space after researching it for a project.",
@@ -153,11 +213,26 @@ export const CHAPTERS = [
       { text: "Ms. Whitfield offers no feedback at all afterward.", answer: false },
     ],
     buildSentence: [
-      { target: "My hands shake as I begin.", jumbled: ["My", "hands", "shake", "as", "I", "begin."] },
-      { target: "She waits patiently for me.", jumbled: ["She", "waits", "patiently", "for", "me."] },
-      { target: "My voice has steadied considerably.", jumbled: ["My", "voice", "has", "steadied", "considerably."] },
-      { target: "I focus on the content itself.", jumbled: ["I", "focus", "on", "the", "content", "itself."] },
-      { target: "My knowledge clearly shows despite my nervousness.", jumbled: ["My", "knowledge", "clearly", "shows", "despite", "my", "nervousness."] },
+      {
+        target: "Thursday arrives, and I stand nervously in front of Ms. Whitfield in the empty classroom after school.",
+        jumbled: ["the", "school.", "arrives,", "in", "I", "of", "and", "classroom", "front", "stand", "empty", "in", "nervously", "Ms.", "Thursday", "Whitfield", "after"],
+      },
+      {
+        target: "My hands shake as I begin, my voice barely above a whisper for the first sentence or two.",
+        jumbled: ["or", "the", "shake", "my", "My", "voice", "first", "whisper", "I", "hands", "a", "above", "barely", "as", "begin,", "two.", "sentence", "for"],
+      },
+      {
+        target: "Something unexpected happens: I start focusing on the content itself rather than my own fear.",
+        jumbled: ["I", "happens:", "Something", "than", "my", "on", "focusing", "unexpected", "fear.", "the", "start", "content", "itself", "own", "rather"],
+      },
+      {
+        target: "By the middle of my practice run, my voice has steadied considerably, though my hands still tremble slightly.",
+        jumbled: ["of", "voice", "run,", "considerably,", "my", "my", "practice", "hands", "By", "still", "steadied", "has", "the", "my", "slightly.", "though", "tremble", "middle"],
+      },
+      {
+        target: "“Your knowledge really shows, Aisha,” she says, despite my visible nervousness.",
+        jumbled: ["really", "she", "my", "says,", "nervousness.", "despite", "Aisha,”", "shows,", "knowledge", "visible", "“Your"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about practicing something difficult with support from someone.",
     mySentenceExample: "I practiced my speech with support from my teacher before the real thing.",
@@ -182,11 +257,26 @@ export const CHAPTERS = [
       { text: "Devon says he never hides his nervousness at all.", answer: false },
     ],
     buildSentence: [
-      { target: "This genuinely surprises me now.", jumbled: ["This", "genuinely", "surprises", "me", "now."] },
-      { target: "He shares a small trick.", jumbled: ["He", "shares", "a", "small", "trick."] },
-      { target: "I feel considerably less alone.", jumbled: ["I", "feel", "considerably", "less", "alone."] },
-      { target: "I hadn't considered that possibility before.", jumbled: ["I", "hadn't", "considered", "that", "possibility", "before."] },
-      { target: "Even confident people might be hiding similar anxiety.", jumbled: ["Even", "confident", "people", "might", "be", "hiding", "similar", "anxiety."] },
+      {
+        target: "In the hallway before lunch, Devon mentions casually that he also gets nervous before presentations, which genuinely surprises me.",
+        jumbled: ["me.", "before", "presentations,", "In", "lunch,", "mentions", "casually", "the", "gets", "which", "surprises", "he", "that", "before", "nervous", "Devon", "hallway", "also", "genuinely"],
+      },
+      {
+        target: "He always seems so relaxed and confident during class discussions, so I assumed public speaking came naturally to him.",
+        jumbled: ["naturally", "I", "discussions,", "He", "and", "always", "him.", "so", "assumed", "speaking", "to", "class", "public", "during", "confident", "relaxed", "came", "seems", "so"],
+      },
+      {
+        target: "“I just don't let people see it as much, Aisha,” he admits, shrugging like it's not a big deal at all.",
+        jumbled: ["shrugging", "Aisha,”", "much,", "just", "like", "big", "it", "as", "see", "people", "all.", "not", "he", "at", "“I", "deal", "let", "a", "don't", "it's", "admits,"],
+      },
+      {
+        target: "He shares a small trick that helps him: picking one friendly face in the crowd to focus on while speaking.",
+        jumbled: ["while", "to", "crowd", "that", "the", "him:", "a", "focus", "friendly", "face", "in", "He", "one", "on", "small", "speaking.", "picking", "shares", "trick", "helps"],
+      },
+      {
+        target: "I hadn't considered that even outwardly confident people might be hiding similar anxiety underneath.",
+        jumbled: ["hadn't", "outwardly", "even", "considered", "that", "underneath.", "similar", "people", "confident", "might", "hiding", "I", "anxiety", "be"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about discovering someone shared a fear you thought was only yours.",
     mySentenceExample: "I discovered my friend shared the same fear of flying that I had.",
@@ -211,11 +301,26 @@ export const CHAPTERS = [
       { text: "Aisha feels pure dread by the time she reaches school.", answer: false },
     ],
     buildSentence: [
-      { target: "I wake up earlier today.", jumbled: ["wake", "up", "I", "earlier", "today."] },
-      { target: "I review my notecards again.", jumbled: ["review", "my", "I", "notecards", "again."] },
-      { target: "This feels like real progress.", jumbled: ["This", "feels", "like", "real", "progress."] },
-      { target: "Being nervous doesn't mean I'll fail.", jumbled: ["Being", "nervous", "doesn't", "mean", "I'll", "fail."] },
-      { target: "If I focus on getting through it, that feels manageable.", jumbled: ["If", "I", "focus", "on", "getting", "through", "it,", "that", "feels", "manageable."] },
+      {
+        target: "I wake up earlier than necessary, my stomach already twisted into familiar, uncomfortable knots before I even leave bed.",
+        jumbled: ["twisted", "familiar,", "up", "wake", "knots", "necessary,", "already", "my", "into", "I", "earlier", "leave", "than", "I", "stomach", "bed.", "uncomfortable", "even", "before"],
+      },
+      {
+        target: "Standing in front of the mirror, I practice Devon's trick, imagining a friendly face I'll focus on later.",
+        jumbled: ["of", "practice", "trick,", "I", "I'll", "on", "friendly", "a", "mirror,", "in", "Standing", "Devon's", "face", "imagining", "front", "later.", "the", "focus"],
+      },
+      {
+        target: "“Being nervous doesn't mean you'll fail today, Aisha,” she reminds me gently.",
+        jumbled: ["Aisha,”", "you'll", "mean", "nervous", "me", "today,", "fail", "gently.", "reminds", "“Being", "doesn't", "she"],
+      },
+      {
+        target: "Rather than being perfect, maybe that expectation feels more manageable.",
+        jumbled: ["manageable.", "Rather", "than", "that", "maybe", "more", "perfect,", "feels", "expectation", "being"],
+      },
+      {
+        target: "I review my notecards one final time on the bus, my hands slightly less shaky than they were yesterday.",
+        jumbled: ["final", "than", "my", "notecards", "review", "they", "shaky", "my", "time", "one", "were", "bus,", "on", "hands", "less", "the", "I", "slightly", "yesterday."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a small change in how you felt on an important day.",
     mySentenceExample: "On the day of my exam, my nervousness slowly turned into focus.",
@@ -240,11 +345,26 @@ export const CHAPTERS = [
       { text: "The room stays silent after Aisha finishes.", answer: false },
     ],
     buildSentence: [
-      { target: "My legs feel heavy walking.", jumbled: ["legs", "feel", "My", "heavy", "walking."] },
-      { target: "He gives me an encouraging nod.", jumbled: ["He", "gives", "me", "an", "encouraging", "nod."] },
-      { target: "I push through instead of stopping.", jumbled: ["I", "push", "through", "instead", "of", "stopping."] },
-      { target: "My voice gains strength gradually.", jumbled: ["My", "voice", "gains", "strength", "gradually."] },
-      { target: "The room breaks into applause when I finish.", jumbled: ["The", "room", "breaks", "into", "applause", "when", "I", "finish."] },
+      {
+        target: "My legs feel heavy walking to the front.",
+        jumbled: ["heavy", "to", "My", "front.", "walking", "feel", "legs", "the"],
+      },
+      {
+        target: "\"You've got this, Aisha,\" I remind myself, recalling everything I practiced.",
+        jumbled: ["recalling", "I", "remind", "myself,", "this,", "practiced.", "Aisha,\"", "\"You've", "I", "everything", "got"],
+      },
+      {
+        target: "I find Devon's face in the crowd, and he gives me a small, encouraging nod that steadies me slightly.",
+        jumbled: ["that", "face", "nod", "encouraging", "the", "me", "and", "steadies", "Devon's", "small,", "I", "slightly.", "crowd,", "find", "he", "in", "a", "gives", "me"],
+      },
+      {
+        target: "Slowly, as I move through my notecards, my voice gains strength, and the words start flowing more naturally.",
+        jumbled: ["Slowly,", "as", "voice", "my", "my", "the", "more", "flowing", "naturally.", "through", "strength,", "I", "notecards,", "start", "words", "gains", "move", "and"],
+      },
+      {
+        target: "I even glance up occasionally, noticing classmates actually listening rather than judging me the way I had imagined.",
+        jumbled: ["judging", "rather", "the", "actually", "occasionally,", "way", "than", "even", "me", "listening", "noticing", "I", "had", "up", "imagined.", "glance", "I", "classmates"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about pushing through fear to finish something important.",
     mySentenceExample: "I pushed through my fear and finished my speech successfully.",
@@ -269,11 +389,26 @@ export const CHAPTERS = [
       { text: "Aisha believes her fear has completely disappeared.", answer: false },
     ],
     buildSentence: [
-      { target: "I exhale a breath finally.", jumbled: ["exhale", "a", "I", "breath", "finally."] },
-      { target: "My shoulders finally relax completely.", jumbled: ["My", "shoulders", "finally", "relax", "completely."] },
-      { target: "I can hardly believe I did it.", jumbled: ["I", "can", "hardly", "believe", "I", "did", "it."] },
-      { target: "The fear hasn't disappeared entirely yet.", jumbled: ["The", "fear", "hasn't", "disappeared", "entirely", "yet."] },
-      { target: "I now have real proof that I can push through fear.", jumbled: ["I", "now", "have", "real", "proof", "that", "I", "can", "push", "through", "fear."] },
+      {
+        target: "Sitting back down, I exhale a breath I feel like I'd been holding since Ms. Whitfield first announced the assignment.",
+        jumbled: ["announced", "assignment.", "since", "a", "back", "feel", "holding", "Ms.", "breath", "I'd", "the", "been", "down,", "like", "exhale", "Sitting", "I", "first", "I", "Whitfield"],
+      },
+      {
+        target: "Ms. Whitfield gives me a warm thumbs up from across the room, and I feel my shoulders finally relax completely.",
+        jumbled: ["finally", "me", "gives", "across", "the", "up", "warm", "relax", "completely.", "feel", "shoulders", "thumbs", "a", "my", "from", "room,", "I", "Whitfield", "and", "Ms."],
+      },
+      {
+        target: "“Yours was genuinely one of the most interesting topics today, Aisha,” he whispers.",
+        jumbled: ["topics", "Aisha,”", "whispers.", "genuinely", "the", "of", "one", "today,", "interesting", "he", "was", "most", "“Yours"],
+      },
+      {
+        target: "I can hardly believe I actually did it, especially considering how impossible this felt just five days ago.",
+        jumbled: ["considering", "I", "ago.", "felt", "how", "I", "days", "five", "especially", "actually", "did", "it,", "can", "this", "hardly", "believe", "just", "impossible"],
+      },
+      {
+        target: "The fear hasn't disappeared entirely, and I know future presentations will still bring some nervousness.",
+        jumbled: ["future", "bring", "nervousness.", "know", "presentations", "fear", "I", "and", "will", "some", "disappeared", "The", "hasn't", "entirely,", "still"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about proving something to yourself after facing a fear.",
     mySentenceExample: "I proved to myself that I could handle public speaking after my presentation.",
@@ -298,11 +433,26 @@ export const CHAPTERS = [
       { text: "Aisha believes nervousness and capability cannot coexist.", answer: false },
     ],
     buildSentence: [
-      { target: "I write in my journal.", jumbled: ["write", "in", "I", "my", "journal."] },
-      { target: "The nervousness will likely return.", jumbled: ["nervousness", "will", "The", "likely", "return."] },
-      { target: "These things mattered more than I realized.", jumbled: ["These", "things", "mattered", "more", "than", "I", "realized."] },
-      { target: "Nervousness and capability can genuinely coexist.", jumbled: ["Nervousness", "and", "capability", "can", "genuinely", "coexist."] },
-      { target: "If I hadn't reached out, fear might have stopped me.", jumbled: ["If", "I", "hadn't", "reached", "out,", "fear", "might", "have", "stopped", "me."] },
+      {
+        target: "That evening, I write in my journal about the entire experience, wanting to remember exactly how today actually felt.",
+        jumbled: ["today", "evening,", "how", "my", "to", "experience,", "journal", "remember", "write", "the", "wanting", "entire", "in", "about", "actually", "That", "I", "exactly", "felt."],
+      },
+      {
+        target: "I realize my anxiety wasn't something to eliminate completely, but rather something I could learn to work alongside instead.",
+        jumbled: ["could", "alongside", "I", "rather", "my", "learn", "eliminate", "but", "anxiety", "to", "something", "work", "wasn't", "completely,", "something", "I", "instead.", "realize", "to"],
+      },
+      {
+        target: "Ms. Whitfield's practice offer, Devon's honest confession, and my mom's gentle words all mattered more than I initially recognized.",
+        jumbled: ["honest", "Devon's", "recognized.", "Whitfield's", "mom's", "initially", "practice", "confession,", "words", "Ms.", "more", "mattered", "and", "my", "than", "all", "I", "offer,", "gentle"],
+      },
+      {
+        target: "I might have let fear stop me from trying at all.",
+        jumbled: ["all.", "at", "fear", "let", "trying", "me", "stop", "might", "have", "from", "I"],
+      },
+      {
+        target: "But now I also know something equally important: nervousness and capability can genuinely coexist within the same person.",
+        jumbled: ["capability", "nervousness", "important:", "something", "same", "genuinely", "person.", "and", "can", "within", "coexist", "But", "the", "equally", "now", "also", "know", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about something you learned about yourself after facing a fear.",
     mySentenceExample: "I learned that I am braver than I thought after facing my fear.",

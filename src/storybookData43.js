@@ -36,11 +36,26 @@ export const CHAPTERS = [
       { text: "Derek leaves without checking his folder.", answer: false },
     ],
     buildSentence: [
-      { target: "I feel a little nervous.", jumbled: ["feel", "a", "I", "little", "nervous."] },
-      { target: "I gather my important papers.", jumbled: ["gather", "my", "I", "important", "papers."] },
-      { target: "I find the bank's address.", jumbled: ["find", "the", "I", "bank's", "address."] },
-      { target: "I want to be ready.", jumbled: ["want", "to", "I", "be", "ready."] },
-      { target: "I check the folder one more time.", jumbled: ["I", "check", "the", "folder", "one", "more", "time."] },
+      {
+        target: "This week, I need to open a new bank account for my paycheck.",
+        jumbled: ["This", "for", "I", "new", "bank", "to", "open", "week,", "need", "paycheck.", "a", "my", "account"],
+      },
+      {
+        target: "I have never done this before, so I feel a little nervous about it.",
+        jumbled: ["never", "I", "so", "nervous", "I", "a", "this", "before,", "little", "feel", "about", "it.", "done", "have"],
+      },
+      {
+        target: "I gather my ID card and some important papers I might need.",
+        jumbled: ["might", "and", "I", "important", "my", "gather", "need.", "I", "papers", "some", "ID", "card"],
+      },
+      {
+        target: "My friend texts, “Good luck at the bank, Derek!” and tells me the visit is usually quick and simple.",
+        jumbled: ["usually", "and", "me", "visit", "the", "texts,", "the", "friend", "and", "Derek!”", "is", "simple.", "luck", "at", "My", "bank,", "quick", "tells", "“Good"],
+      },
+      {
+        target: "I check the folder one more time before I leave my apartment.",
+        jumbled: ["leave", "I", "I", "my", "time", "apartment.", "the", "folder", "before", "more", "check", "one"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about preparing for a new task.",
     mySentenceExample: "I gather everything I need before starting a new task.",
@@ -65,11 +80,26 @@ export const CHAPTERS = [
       { text: "The screen shows number fifty being helped.", answer: false },
     ],
     buildSentence: [
-      { target: "I arrive at the bank.", jumbled: ["arrive", "at", "I", "the", "bank."] },
-      { target: "I take a ticket.", jumbled: ["take", "a", "I", "ticket."] },
-      { target: "I check the number carefully.", jumbled: ["check", "the", "I", "number", "carefully."] },
-      { target: "Some people are already waiting.", jumbled: ["Some", "people", "are", "already", "waiting."] },
-      { target: "I know I still have a short wait.", jumbled: ["I", "know", "I", "still", "have", "a", "short", "wait."] },
+      {
+        target: "I arrive at the bank around ten in the morning, hoping it is not too busy yet.",
+        jumbled: ["the", "it", "busy", "not", "ten", "yet.", "I", "the", "bank", "morning,", "at", "hoping", "is", "too", "arrive", "in", "around"],
+      },
+      {
+        target: "The building is large, with big glass doors and a security guard near the entrance.",
+        jumbled: ["near", "is", "guard", "big", "The", "doors", "large,", "glass", "and", "security", "with", "entrance.", "the", "building", "a"],
+      },
+      {
+        target: "I walk inside and see rows of chairs where some people are already waiting.",
+        jumbled: ["see", "waiting.", "walk", "are", "I", "inside", "people", "rows", "of", "already", "chairs", "and", "some", "where"],
+      },
+      {
+        target: "A machine near the door prints small paper tickets with numbers on them.",
+        jumbled: ["A", "numbers", "near", "prints", "on", "machine", "the", "small", "door", "paper", "them.", "tickets", "with"],
+      },
+      {
+        target: "It says twenty-eight, so I know I still have a short wait ahead.",
+        jumbled: ["says", "wait", "a", "I", "so", "have", "know", "twenty-eight,", "It", "short", "ahead.", "still", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting for your turn somewhere.",
     mySentenceExample: "I waited for my turn at the doctor's office yesterday.",
@@ -94,11 +124,26 @@ export const CHAPTERS = [
       { text: "Derek takes a deep breath and gathers his folder.", answer: true },
     ],
     buildSentence: [
-      { target: "I sit down here.", jumbled: ["sit", "down", "I", "here."] },
-      { target: "Time passes slowly today.", jumbled: ["passes", "slowly", "Time", "today."] },
-      { target: "We talk about the weather.", jumbled: ["talk", "about", "We", "the", "weather."] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "I", "deep", "breath."] },
-      { target: "My turn is almost here now.", jumbled: ["My", "turn", "is", "almost", "here", "now."] },
+      {
+        target: "I sit down on one of the chairs and check my phone while I wait.",
+        jumbled: ["of", "down", "I", "I", "my", "and", "while", "check", "the", "wait.", "phone", "chairs", "on", "one", "sit"],
+      },
+      {
+        target: "Time passes slowly, and I watch the number on the screen change every few minutes.",
+        jumbled: ["screen", "on", "minutes.", "slowly,", "every", "number", "Time", "the", "I", "passes", "change", "the", "and", "watch", "few"],
+      },
+      {
+        target: "“Derek,” I say, and we talk a little about the weather outside.",
+        jumbled: ["little", "“Derek,”", "I", "say,", "and", "a", "outside.", "weather", "talk", "about", "the", "we"],
+      },
+      {
+        target: "This small conversation helps the time pass more quickly than I expect.",
+        jumbled: ["time", "conversation", "the", "quickly", "helps", "pass", "I", "expect.", "than", "This", "more", "small"],
+      },
+      {
+        target: "My turn is almost here now, and I feel my nervousness returning a little.",
+        jumbled: ["and", "now,", "little.", "feel", "turn", "I", "My", "a", "nervousness", "returning", "here", "my", "is", "almost"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a short conversation that made time pass quickly.",
     mySentenceExample: "A short conversation with a stranger made my wait pass quickly.",
@@ -123,11 +168,26 @@ export const CHAPTERS = [
       { text: "Derek feels more relaxed after hearing her.", answer: true },
     ],
     buildSentence: [
-      { target: "She greets me warmly.", jumbled: ["greets", "me", "She", "warmly."] },
-      { target: "I hand her my card.", jumbled: ["hand", "her", "I", "my", "card."] },
-      { target: "I want to open an account.", jumbled: ["want", "to", "I", "open", "an", "account."] },
-      { target: "She checks my information slowly.", jumbled: ["checks", "my", "She", "information", "slowly."] },
-      { target: "Everything looks good so far, she says.", jumbled: ["looks", "good", "Everything", "so", "far,", "she", "says."] },
+      {
+        target: "The number thirty-two finally appears, and I walk toward the counter with my folder.",
+        jumbled: ["folder.", "toward", "The", "thirty-two", "finally", "counter", "walk", "the", "I", "with", "number", "my", "appears,", "and"],
+      },
+      {
+        target: "A friendly bank worker named Ms. Reyes greets me with a warm smile.",
+        jumbled: ["a", "Reyes", "worker", "bank", "warm", "named", "Ms.", "A", "me", "friendly", "with", "smile.", "greets"],
+      },
+      {
+        target: "“How can I help you today?” she asks kindly, and I explain that I want to open a new account.",
+        jumbled: ["kindly,", "to", "open", "help", "I", "“How", "I", "and", "new", "can", "account.", "want", "I", "asks", "she", "that", "explain", "a", "today?”", "you"],
+      },
+      {
+        target: "“Nice to meet you, Derek,” she says, reading the card.",
+        jumbled: ["the", "reading", "she", "meet", "card.", "says,", "“Nice", "you,", "Derek,”", "to"],
+      },
+      {
+        target: "“Everything looks good so far,” she says, making me feel a little more relaxed about the whole process.",
+        jumbled: ["says,", "feel", "relaxed", "more", "so", "process.", "far,”", "looks", "me", "“Everything", "about", "the", "a", "good", "whole", "little", "she", "making"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about being helped by a friendly worker.",
     mySentenceExample: "A friendly worker helped me find the right form to fill out.",
@@ -152,11 +212,26 @@ export const CHAPTERS = [
       { text: "Filling out forms feels harder with her help.", answer: false },
     ],
     buildSentence: [
-      { target: "I fill out a form.", jumbled: ["fill", "out", "I", "a", "form."] },
-      { target: "I ask her for help.", jumbled: ["ask", "her", "I", "for", "help."] },
-      { target: "I sign my name carefully.", jumbled: ["sign", "my", "I", "name", "carefully."] },
-      { target: "She explains each question patiently.", jumbled: ["She", "explains", "each", "question", "patiently."] },
-      { target: "This feels easier when someone explains clearly.", jumbled: ["This", "feels", "easier", "when", "someone", "explains", "clearly."] },
+      {
+        target: "Ms. Reyes gives me a short form to fill out with my personal information.",
+        jumbled: ["my", "Ms.", "personal", "information.", "short", "me", "out", "to", "Reyes", "fill", "gives", "a", "with", "form"],
+      },
+      {
+        target: "I write my name, address, and phone number carefully in the correct boxes.",
+        jumbled: ["and", "boxes.", "phone", "write", "I", "name,", "address,", "in", "my", "the", "number", "correct", "carefully"],
+      },
+      {
+        target: "Some questions on the form confuse me a little, so I ask her for help.",
+        jumbled: ["help.", "form", "for", "Some", "me", "ask", "a", "questions", "confuse", "little,", "so", "I", "her", "on", "the"],
+      },
+      {
+        target: "“Just sign here at the bottom, Derek,” she says, pointing to a small line on the page.",
+        jumbled: ["Derek,”", "says,", "bottom,", "“Just", "she", "the", "here", "sign", "to", "the", "small", "on", "page.", "line", "pointing", "at", "a"],
+      },
+      {
+        target: "Filling out forms feels easier when someone explains things clearly like Ms. Reyes does.",
+        jumbled: ["someone", "forms", "clearly", "when", "Reyes", "explains", "easier", "does.", "Ms.", "things", "feels", "like", "out", "Filling"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about filling out an important form.",
     mySentenceExample: "I filled out an important form for my new job.",
@@ -181,11 +256,26 @@ export const CHAPTERS = [
       { text: "Derek begins to feel confident about his choice.", answer: true },
     ],
     buildSentence: [
-      { target: "I count the cash carefully.", jumbled: ["count", "the", "I", "cash", "carefully."] },
-      { target: "I feel glad she explained.", jumbled: ["feel", "glad", "I", "she", "explained."] },
-      { target: "She gives me a pamphlet.", jumbled: ["gives", "me", "She", "a", "pamphlet."] },
-      { target: "I ask a few more questions.", jumbled: ["ask", "a", "I", "few", "more", "questions."] },
-      { target: "I begin to feel confident about my choice.", jumbled: ["I", "begin", "to", "feel", "confident", "about", "my", "choice."] },
+      {
+        target: "Ms. Reyes asks how much money I want to put into my new account today.",
+        jumbled: ["much", "account", "Reyes", "want", "money", "today.", "Ms.", "to", "asks", "put", "I", "how", "new", "into", "my"],
+      },
+      {
+        target: "I take out the cash I brought and count it carefully on the counter.",
+        jumbled: ["out", "the", "the", "on", "count", "it", "take", "brought", "counter.", "and", "cash", "carefully", "I", "I"],
+      },
+      {
+        target: "“Derek, this account has no monthly fee if you keep a small amount inside it,” she explains.",
+        jumbled: ["“Derek,", "has", "keep", "this", "you", "she", "small", "monthly", "amount", "no", "account", "a", "inside", "explains.", "if", "fee", "it,”"],
+      },
+      {
+        target: "She also gives me a small pamphlet with more information to read later.",
+        jumbled: ["gives", "to", "information", "a", "later.", "pamphlet", "small", "also", "more", "with", "me", "She", "read"],
+      },
+      {
+        target: "She answers everything patiently, and I begin to feel confident about my choice.",
+        jumbled: ["about", "feel", "my", "answers", "begin", "everything", "I", "choice.", "patiently,", "and", "to", "She", "confident"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about learning new information that helped you.",
     mySentenceExample: "Learning about the fee helped me choose the right account.",
@@ -210,11 +300,26 @@ export const CHAPTERS = [
       { text: "This process feels harder than Derek expected.", answer: false },
     ],
     buildSentence: [
-      { target: "My account is open now.", jumbled: ["account", "is", "My", "open", "now."] },
-      { target: "I hold the card carefully.", jumbled: ["hold", "the", "I", "card", "carefully."] },
-      { target: "I feel excited about this.", jumbled: ["feel", "excited", "I", "about", "this."] },
-      { target: "I put the card in my wallet.", jumbled: ["put", "the", "I", "card", "in", "my", "wallet."] },
-      { target: "This feels much easier than I expected.", jumbled: ["This", "feels", "much", "easier", "than", "I", "expected."] },
+      {
+        target: "Ms. Reyes tells me my account is officially open now.",
+        jumbled: ["open", "me", "account", "tells", "Reyes", "my", "now.", "is", "officially", "Ms."],
+      },
+      {
+        target: "She explains that a debit card will arrive by mail within one week.",
+        jumbled: ["mail", "within", "arrive", "a", "one", "week.", "will", "explains", "that", "debit", "She", "card", "by"],
+      },
+      {
+        target: "To my surprise, she also gives me a temporary card I can use right away today.",
+        jumbled: ["today.", "a", "she", "gives", "me", "my", "temporary", "I", "card", "use", "can", "To", "away", "right", "also", "surprise,"],
+      },
+      {
+        target: "“Remember to set a secret number for it later, Derek,” she reminds me kindly.",
+        jumbled: ["to", "later,", "reminds", "kindly.", "she", "it", "number", "Derek,”", "“Remember", "me", "set", "secret", "for", "a"],
+      },
+      {
+        target: "This whole process feels much easier than I expected it to be earlier this morning.",
+        jumbled: ["this", "feels", "whole", "earlier", "be", "it", "This", "than", "process", "much", "morning.", "to", "expected", "easier", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about completing a task that felt easier than expected.",
     mySentenceExample: "Fixing my bike felt easier than I expected once I started.",
@@ -239,11 +344,26 @@ export const CHAPTERS = [
       { text: "Derek feels disappointed about completing this task.", answer: false },
     ],
     buildSentence: [
-      { target: "I ask about the app.", jumbled: ["ask", "about", "I", "the", "app."] },
-      { target: "I thank her sincerely today.", jumbled: ["thank", "her", "I", "sincerely", "today."] },
-      { target: "I can check my balance.", jumbled: ["can", "check", "I", "my", "balance."] },
-      { target: "This makes managing my account convenient.", jumbled: ["This", "makes", "managing", "my", "account", "convenient."] },
-      { target: "I feel proud of completing this task successfully.", jumbled: ["I", "feel", "proud", "of", "completing", "this", "task", "successfully."] },
+      {
+        target: "I ask Ms. Reyes about the bank's mobile app on my phone.",
+        jumbled: ["the", "on", "Reyes", "bank's", "phone.", "my", "I", "about", "mobile", "ask", "Ms.", "app"],
+      },
+      {
+        target: "I can check my balance, send money, and see recent activity right from my phone.",
+        jumbled: ["activity", "from", "and", "I", "send", "my", "right", "recent", "check", "my", "balance,", "see", "can", "money,", "phone."],
+      },
+      {
+        target: "This makes managing my account much more convenient for my busy schedule.",
+        jumbled: ["managing", "convenient", "my", "busy", "account", "much", "makes", "for", "my", "more", "This", "schedule."],
+      },
+      {
+        target: "She also tells me about the bank's hours and where to find help if needed.",
+        jumbled: ["where", "and", "about", "She", "help", "hours", "also", "the", "needed.", "find", "if", "bank's", "to", "me", "tells"],
+      },
+      {
+        target: "Standing up from the chair, I feel proud of completing this important task successfully.",
+        jumbled: ["this", "of", "up", "chair,", "I", "successfully.", "task", "Standing", "from", "completing", "proud", "feel", "important", "the"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about using an app to make your life easier.",
     mySentenceExample: "I use an app to check my bus schedule every morning.",
@@ -268,11 +388,26 @@ export const CHAPTERS = [
       { text: "Derek thinks the errand was impossible to finish.", answer: false },
     ],
     buildSentence: [
-      { target: "I say goodbye now.", jumbled: ["say", "goodbye", "I", "now."] },
-      { target: "The sun feels warm today.", jumbled: ["sun", "feels", "The", "warm", "today."] },
-      { target: "I check my wallet again.", jumbled: ["check", "my", "I", "wallet", "again."] },
-      { target: "I feel a sense of accomplishment.", jumbled: ["I", "feel", "a", "sense", "of", "accomplishment."] },
-      { target: "It turned out to be manageable after all.", jumbled: ["It", "turned", "out", "to", "be", "manageable", "after", "all."] },
+      {
+        target: "I say goodbye to Ms. Reyes and walk toward the bank's large glass doors.",
+        jumbled: ["Reyes", "Ms.", "large", "the", "glass", "walk", "say", "doors.", "and", "to", "toward", "I", "goodbye", "bank's"],
+      },
+      {
+        target: "I check my wallet one more time to make sure my new card is safely inside.",
+        jumbled: ["my", "my", "safely", "I", "time", "wallet", "card", "new", "make", "sure", "inside.", "check", "one", "is", "more", "to"],
+      },
+      {
+        target: "My folder is now empty since I gave all my papers to Ms. Reyes earlier.",
+        jumbled: ["I", "all", "to", "papers", "Reyes", "gave", "folder", "My", "empty", "Ms.", "is", "my", "since", "earlier.", "now"],
+      },
+      {
+        target: "I feel a small sense of accomplishment about this simple errand.",
+        jumbled: ["of", "I", "a", "accomplishment", "this", "about", "small", "sense", "feel", "errand.", "simple"],
+      },
+      {
+        target: "It seemed complicated this morning, but it turned out to be manageable after all.",
+        jumbled: ["complicated", "to", "this", "manageable", "be", "but", "turned", "It", "seemed", "all.", "after", "morning,", "it", "out"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about an errand that felt easier than you thought.",
     mySentenceExample: "Renewing my ID felt easier than I thought it would be.",
@@ -297,11 +432,26 @@ export const CHAPTERS = [
       { text: "Derek's paycheck will go into this new account.", answer: true },
     ],
     buildSentence: [
-      { target: "I open the app now.", jumbled: ["open", "the", "I", "app", "now."] },
-      { target: "This feels strange but exciting.", jumbled: ["feels", "strange", "This", "but", "exciting."] },
-      { target: "I remember feeling nervous this morning.", jumbled: ["I", "remember", "feeling", "nervous", "this", "morning."] },
-      { target: "This was simpler than I imagined.", jumbled: ["This", "was", "simpler", "than", "I", "imagined."] },
-      { target: "Next week, my paycheck will go into this account.", jumbled: ["Next", "week,", "my", "paycheck", "will", "go", "into", "this", "account."] },
+      {
+        target: "That evening, I sit on my couch and open the new banking app on my phone.",
+        jumbled: ["the", "I", "couch", "on", "sit", "open", "banking", "evening,", "my", "new", "on", "my", "That", "and", "app", "phone."],
+      },
+      {
+        target: "I log in for the first time, and the screen shows, “Welcome, Derek!”",
+        jumbled: ["“Welcome,", "first", "and", "the", "shows,", "the", "Derek!”", "screen", "for", "log", "in", "I", "time,"],
+      },
+      {
+        target: "It feels strange but exciting to see my own account after only one visit today.",
+        jumbled: ["but", "to", "own", "exciting", "today.", "strange", "It", "feels", "visit", "account", "only", "see", "after", "my", "one"],
+      },
+      {
+        target: "Looking back, the whole process was much simpler than I imagined it would be.",
+        jumbled: ["was", "be.", "than", "much", "simpler", "I", "back,", "it", "would", "process", "whole", "the", "Looking", "imagined"],
+      },
+      {
+        target: "Ms. Reyes explained everything clearly and made the visit feel comfortable and easy.",
+        jumbled: ["everything", "the", "explained", "clearly", "Reyes", "made", "and", "visit", "Ms.", "easy.", "and", "feel", "comfortable"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a task that turned out simpler than you expected.",
     mySentenceExample: "Getting my ID renewed was simpler than I expected it to be.",

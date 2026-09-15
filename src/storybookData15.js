@@ -39,9 +39,26 @@ export const CHAPTERS = [
       { text: "They play on the swings at recess.", answer: true },
     ],
     buildSentence: [
-      { target: "Oscar is my friend.", jumbled: ["is", "my", "Oscar", "friend."] },
-      { target: "Oscar tells funny jokes.", jumbled: ["tells", "funny", "Oscar", "jokes."] },
-      { target: "We play on the swings.", jumbled: ["play", "on", "We", "the", "swings."] },
+      {
+        target: "We sit next to each other in class every day.",
+        jumbled: ["day.", "to", "each", "class", "every", "next", "We", "other", "in", "sit"],
+      },
+      {
+        target: "Oscar has short brown hair and always wears a blue cap.",
+        jumbled: ["hair", "brown", "wears", "short", "Oscar", "and", "a", "always", "blue", "has", "cap."],
+      },
+      {
+        target: "Oscar tells funny jokes that always make me laugh.",
+        jumbled: ["laugh.", "jokes", "tells", "make", "funny", "that", "always", "me", "Oscar"],
+      },
+      {
+        target: "“Did you hear this one, Ivy?” he asks before every joke.",
+        jumbled: ["asks", "before", "joke.", "Ivy?”", "one,", "this", "every", "hear", "he", "you", "“Did"],
+      },
+      {
+        target: "I feel happy when Oscar is with me at school.",
+        jumbled: ["with", "at", "I", "is", "me", "school.", "when", "happy", "Oscar", "feel"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about your best friend.",
     mySentenceExample: "My best friend makes me laugh.",
@@ -64,9 +81,26 @@ export const CHAPTERS = [
       { text: "They share their food together.", answer: true },
     ],
     buildSentence: [
-      { target: "We share our snacks.", jumbled: ["share", "our", "We", "snacks."] },
-      { target: "Oscar gives me crackers.", jumbled: ["gives", "me", "Oscar", "crackers."] },
-      { target: "I give him half my apple.", jumbled: ["give", "him", "I", "half", "my", "apple."] },
+      {
+        target: "At lunchtime, I open my lunch box and see a red apple.",
+        jumbled: ["red", "lunchtime,", "lunch", "and", "see", "I", "box", "a", "open", "At", "my", "apple."],
+      },
+      {
+        target: "“Do you want to share, Ivy?” Oscar asks with a smile.",
+        jumbled: ["share,", "you", "want", "“Do", "Oscar", "asks", "smile.", "with", "to", "Ivy?”", "a"],
+      },
+      {
+        target: "I give him half of my apple, and he gives me some crackers.",
+        jumbled: ["gives", "crackers.", "him", "and", "of", "give", "apple,", "some", "half", "I", "he", "my", "me"],
+      },
+      {
+        target: "“Your apple is sweet and juicy, Ivy,” Oscar says.",
+        jumbled: ["“Your", "apple", "Ivy,”", "sweet", "is", "Oscar", "juicy,", "says.", "and"],
+      },
+      {
+        target: "Sharing snacks with Oscar makes lunchtime my favorite part of the day.",
+        jumbled: ["makes", "day.", "Sharing", "lunchtime", "Oscar", "of", "the", "my", "snacks", "favorite", "with", "part"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about sharing something.",
     mySentenceExample: "I share my lunch with my friend.",
@@ -89,9 +123,26 @@ export const CHAPTERS = [
       { text: "No one else wants to join them.", answer: false },
     ],
     buildSentence: [
-      { target: "We build a fort.", jumbled: ["build", "a", "We", "fort."] },
-      { target: "We use a flashlight.", jumbled: ["use", "a", "We", "flashlight."] },
-      { target: "We tell stories inside.", jumbled: ["tell", "stories", "We", "inside."] },
+      {
+        target: "We decide to build a big fort in my room.",
+        jumbled: ["a", "decide", "We", "room.", "in", "build", "fort", "big", "my", "to"],
+      },
+      {
+        target: "We use soft blankets and put them over two chairs.",
+        jumbled: ["use", "them", "soft", "blankets", "chairs.", "and", "put", "We", "over", "two"],
+      },
+      {
+        target: "We add pillows inside to make it soft and cozy.",
+        jumbled: ["add", "inside", "soft", "We", "and", "it", "cozy.", "make", "pillows", "to"],
+      },
+      {
+        target: "Inside the fort, we use a flashlight because it is dark.",
+        jumbled: ["it", "dark.", "use", "is", "Inside", "we", "because", "flashlight", "a", "fort,", "the"],
+      },
+      {
+        target: "My little brother peeks in and asks, “Ivy, can I play too?” so we let him join.",
+        jumbled: ["brother", "we", "in", "join.", "asks,", "too?”", "“Ivy,", "can", "I", "little", "so", "let", "My", "peeks", "and", "play", "him"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a game you like to play indoors.",
     mySentenceExample: "I like to build a fort with blankets.",
@@ -114,9 +165,26 @@ export const CHAPTERS = [
       { text: "Ivy realizes their friendship is important.", answer: true },
     ],
     buildSentence: [
-      { target: "We both want the ball.", jumbled: ["both", "want", "We", "the", "ball."] },
-      { target: "I walk away from Oscar.", jumbled: ["walk", "away", "I", "from", "Oscar."] },
-      { target: "Oscar sits alone on the bench.", jumbled: ["sits", "alone", "Oscar", "on", "the", "bench."] },
+      {
+        target: "At recess, Oscar and I both want to play with the same red ball.",
+        jumbled: ["both", "recess,", "I", "with", "Oscar", "and", "the", "ball.", "to", "same", "red", "want", "At", "play"],
+      },
+      {
+        target: "“No, I saw it first, Ivy!” Oscar says back.",
+        jumbled: ["says", "back.", "“No,", "it", "Ivy!”", "first,", "Oscar", "saw", "I"],
+      },
+      {
+        target: "We both feel upset, and we do not want to share.",
+        jumbled: ["to", "both", "and", "share.", "upset,", "feel", "want", "we", "do", "not", "We"],
+      },
+      {
+        target: "I think about how much fun we usually have together.",
+        jumbled: ["have", "about", "think", "how", "I", "much", "usually", "fun", "together.", "we"],
+      },
+      {
+        target: "Playing alone does not feel as fun as playing with Oscar.",
+        jumbled: ["alone", "with", "feel", "as", "fun", "Playing", "as", "not", "playing", "does", "Oscar."],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a disagreement with a friend.",
     mySentenceExample: "I feel upset when my friend and I disagree.",
@@ -139,9 +207,26 @@ export const CHAPTERS = [
       { text: "They take turns with the ball.", answer: true },
     ],
     buildSentence: [
-      { target: "I say sorry to Oscar.", jumbled: ["say", "sorry", "I", "to", "Oscar."] },
-      { target: "We share the ball.", jumbled: ["share", "the", "We", "ball."] },
-      { target: "Good friends fix their problems.", jumbled: ["fix", "their", "Good", "friends", "problems."] },
+      {
+        target: "The next day, I see Oscar sitting alone at recess again.",
+        jumbled: ["The", "sitting", "next", "see", "recess", "I", "at", "day,", "again.", "Oscar", "alone"],
+      },
+      {
+        target: "I walk over slowly and sit down next to him.",
+        jumbled: ["him.", "sit", "to", "slowly", "next", "and", "I", "down", "walk", "over"],
+      },
+      {
+        target: "Oscar looks up and says, “I'm sorry too, Ivy.”",
+        jumbled: ["up", "sorry", "“I'm", "Oscar", "says,", "looks", "Ivy.”", "too,", "and"],
+      },
+      {
+        target: "“Let's share the ball today, Ivy,” Oscar says kindly.",
+        jumbled: ["says", "today,", "the", "ball", "kindly.", "“Let's", "Oscar", "share", "Ivy,”"],
+      },
+      {
+        target: "Saying sorry was hard, but it made our friendship strong again.",
+        jumbled: ["again.", "sorry", "our", "but", "friendship", "made", "hard,", "Saying", "it", "was", "strong"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about saying sorry.",
     mySentenceExample: "I say sorry when I make a mistake.",
@@ -164,9 +249,26 @@ export const CHAPTERS = [
       { text: "They decide to trade their drawings.", answer: true },
     ],
     buildSentence: [
-      { target: "I draw a tree.", jumbled: ["draw", "a", "I", "tree."] },
-      { target: "Oscar draws a car.", jumbled: ["draws", "a", "Oscar", "car."] },
-      { target: "We trade our drawings.", jumbled: ["trade", "our", "We", "drawings."] },
+      {
+        target: "During art class, Oscar and I sit at the same table.",
+        jumbled: ["class,", "table.", "the", "sit", "Oscar", "During", "art", "same", "and", "at", "I"],
+      },
+      {
+        target: "We each get a big piece of paper and colorful crayons.",
+        jumbled: ["big", "of", "paper", "piece", "each", "crayons.", "We", "and", "a", "colorful", "get"],
+      },
+      {
+        target: "Oscar draws a picture of a fast, red race car.",
+        jumbled: ["of", "fast,", "car.", "red", "a", "Oscar", "race", "picture", "draws", "a"],
+      },
+      {
+        target: "“I love your tree, Ivy!” Oscar says with a big smile.",
+        jumbled: ["“I", "love", "with", "smile.", "your", "big", "Oscar", "Ivy!”", "says", "tree,", "a"],
+      },
+      {
+        target: "Art class is more fun when I create with my best friend.",
+        jumbled: ["when", "class", "my", "create", "Art", "with", "fun", "more", "best", "is", "friend.", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about drawing or art.",
     mySentenceExample: "I like to draw pictures of animals.",
@@ -189,9 +291,26 @@ export const CHAPTERS = [
       { text: "The puzzle has one hundred pieces.", answer: true },
     ],
     buildSentence: [
-      { target: "It rains hard today.", jumbled: ["rains", "hard", "It", "today."] },
-      { target: "We choose a puzzle.", jumbled: ["choose", "a", "We", "puzzle."] },
-      { target: "We finish the puzzle together.", jumbled: ["finish", "the", "We", "puzzle", "together."] },
+      {
+        target: "Today, it rains hard, so we cannot play outside at recess.",
+        jumbled: ["at", "play", "hard,", "so", "we", "recess.", "outside", "it", "rains", "Today,", "cannot"],
+      },
+      {
+        target: "We choose a puzzle from the shelf and sit on the rug.",
+        jumbled: ["puzzle", "a", "the", "the", "rug.", "on", "sit", "from", "choose", "shelf", "and", "We"],
+      },
+      {
+        target: "We work together, finding pieces that fit just right.",
+        jumbled: ["finding", "fit", "work", "together,", "right.", "pieces", "that", "We", "just"],
+      },
+      {
+        target: "I am good at finding the pieces with bright colors.",
+        jumbled: ["with", "good", "bright", "I", "colors.", "finding", "the", "am", "at", "pieces"],
+      },
+      {
+        target: "Even on a rainy day, playing with Oscar is always fun.",
+        jumbled: ["rainy", "with", "always", "on", "a", "fun.", "Even", "is", "Oscar", "playing", "day,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a rainy day activity.",
     mySentenceExample: "I like to do puzzles on rainy days.",
@@ -214,9 +333,26 @@ export const CHAPTERS = [
       { text: "Oscar feels happy after getting it right.", answer: true },
     ],
     buildSentence: [
-      { target: "Oscar looks worried.", jumbled: ["looks", "worried.", "Oscar"] },
-      { target: "We do it together.", jumbled: ["do", "it", "We", "together."] },
-      { target: "I help my best friend.", jumbled: ["help", "my", "I", "best", "friend."] },
+      {
+        target: "Oscar looks worried about his math homework.",
+        jumbled: ["worried", "math", "looks", "homework.", "about", "Oscar", "his"],
+      },
+      {
+        target: "I sit next to him and look at his paper.",
+        jumbled: ["next", "his", "and", "to", "sit", "I", "at", "paper.", "look", "him"],
+      },
+      {
+        target: "I show him how to add the numbers step by step.",
+        jumbled: ["how", "add", "by", "numbers", "step.", "to", "him", "show", "step", "I", "the"],
+      },
+      {
+        target: "“You did it, Oscar!” I say, and we both cheer happily.",
+        jumbled: ["I", "say,", "and", "both", "did", "it,", "cheer", "we", "Oscar!”", "happily.", "“You"],
+      },
+      {
+        target: "Helping my best friend makes me feel proud and happy.",
+        jumbled: ["my", "me", "friend", "best", "and", "feel", "proud", "happy.", "Helping", "makes"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about helping a friend.",
     mySentenceExample: "I help my friend with homework.",
@@ -239,9 +375,26 @@ export const CHAPTERS = [
       { text: "Ivy gives Oscar a matching bracelet.", answer: true },
     ],
     buildSentence: [
-      { target: "Oscar gives me a gift.", jumbled: ["gives", "me", "Oscar", "a", "gift."] },
-      { target: "I put on the bracelet.", jumbled: ["put", "on", "I", "the", "bracelet."] },
-      { target: "We wear our bracelets every day.", jumbled: ["wear", "our", "We", "bracelets", "every", "day."] },
+      {
+        target: "“This is for you, Ivy,” he says with a shy smile.",
+        jumbled: ["a", "with", "says", "“This", "Ivy,”", "is", "shy", "you,", "smile.", "he", "for"],
+      },
+      {
+        target: "Inside the box, I find a colorful friendship bracelet.",
+        jumbled: ["Inside", "the", "bracelet.", "box,", "I", "a", "find", "friendship", "colorful"],
+      },
+      {
+        target: "I put the bracelet on my wrist right away.",
+        jumbled: ["on", "away.", "my", "bracelet", "I", "put", "right", "wrist", "the"],
+      },
+      {
+        target: "The next day, I give Oscar a matching bracelet I made too.",
+        jumbled: ["matching", "next", "made", "The", "Oscar", "give", "too.", "bracelet", "day,", "I", "a", "I"],
+      },
+      {
+        target: "“Best friends forever, Ivy,” Oscar says with a big smile.",
+        jumbled: ["friends", "forever,", "says", "big", "smile.", "“Best", "a", "Oscar", "Ivy,”", "with"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a gift you gave or received.",
     mySentenceExample: "I gave my friend a small gift.",
@@ -264,9 +417,26 @@ export const CHAPTERS = [
       { text: "Ivy smiles at her friendship bracelet.", answer: true },
     ],
     buildSentence: [
-      { target: "I will miss Oscar.", jumbled: ["will", "miss", "I", "Oscar."] },
-      { target: "We promise to call each other.", jumbled: ["promise", "to", "We", "call", "each", "other."] },
-      { target: "Oscar is my best friend forever.", jumbled: ["is", "my", "Oscar", "best", "friend", "forever."] },
+      {
+        target: "It has been a whole school year since Oscar and I became friends.",
+        jumbled: ["whole", "It", "school", "Oscar", "been", "has", "a", "became", "year", "since", "and", "friends.", "I"],
+      },
+      {
+        target: "Now summer break is here, and we will not see each other every day.",
+        jumbled: ["day.", "and", "break", "we", "Now", "not", "will", "see", "is", "each", "every", "here,", "summer", "other"],
+      },
+      {
+        target: "“I will miss you, Oscar,” I say with a small tear in my eye.",
+        jumbled: ["eye.", "miss", "small", "my", "tear", "with", "say", "Oscar,”", "a", "you,", "“I", "I", "will", "in"],
+      },
+      {
+        target: "We promise to call each other and meet at the park.",
+        jumbled: ["other", "park.", "the", "each", "to", "and", "at", "promise", "call", "We", "meet"],
+      },
+      {
+        target: "Oscar is not just my classmate.",
+        jumbled: ["Oscar", "is", "classmate.", "my", "not", "just"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a friend you will always remember.",
     mySentenceExample: "My best friend will always be special to me.",

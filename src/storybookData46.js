@@ -36,11 +36,26 @@ export const CHAPTERS = [
       { text: "Hana has no time to get there today.", answer: false },
     ],
     buildSentence: [
-      { target: "I gather my dirty clothes.", jumbled: ["gather", "my", "I", "dirty", "clothes."] },
-      { target: "I grab some coins too.", jumbled: ["grab", "some", "I", "coins", "too."] },
-      { target: "I check my phone first.", jumbled: ["check", "my", "I", "phone", "first."] },
-      { target: "The laundromat opens at eight.", jumbled: ["laundromat", "opens", "The", "at", "eight."] },
-      { target: "I have plenty of time to get there.", jumbled: ["I", "have", "plenty", "of", "time", "to", "get", "there."] },
+      {
+        target: "My apartment does not have a washing machine, so I go to the laundromat every weekend.",
+        jumbled: ["so", "have", "does", "not", "I", "a", "washing", "laundromat", "the", "My", "to", "weekend.", "every", "apartment", "machine,", "go"],
+      },
+      {
+        target: "Today, my laundry bag is especially full after two busy weeks at work.",
+        jumbled: ["busy", "at", "bag", "my", "two", "after", "especially", "laundry", "Today,", "is", "full", "weeks", "work."],
+      },
+      {
+        target: "I gather all my dirty clothes and stuff them carefully into the large bag.",
+        jumbled: ["all", "and", "into", "gather", "stuff", "them", "dirty", "I", "the", "carefully", "clothes", "my", "large", "bag."],
+      },
+      {
+        target: "I also grab some coins and a small bottle of detergent from my shelf.",
+        jumbled: ["grab", "coins", "detergent", "also", "I", "shelf.", "small", "a", "some", "and", "of", "bottle", "my", "from"],
+      },
+      {
+        target: "I check my phone to see the laundromat's hours before I leave my building.",
+        jumbled: ["before", "check", "my", "I", "to", "leave", "building.", "the", "I", "hours", "see", "my", "laundromat's", "phone"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a weekly chore you do.",
     mySentenceExample: "I do my laundry every weekend at the laundromat.",
@@ -65,11 +80,26 @@ export const CHAPTERS = [
       { text: "The laundromat is completely empty of people.", answer: false },
     ],
     buildSentence: [
-      { target: "I arrive at the laundromat.", jumbled: ["arrive", "at", "I", "the", "laundromat."] },
-      { target: "I find two empty machines.", jumbled: ["find", "two", "I", "empty", "machines."] },
-      { target: "I feel relieved now.", jumbled: ["feel", "relieved", "I", "now."] },
-      { target: "The place smells clean today.", jumbled: ["place", "smells", "The", "clean", "today."] },
-      { target: "This gives me space to sort my clothes.", jumbled: ["This", "gives", "me", "space", "to", "sort", "my", "clothes."] },
+      {
+        target: "I arrive at the laundromat and push open the glass door with my free hand.",
+        jumbled: ["laundromat", "the", "glass", "free", "the", "and", "push", "open", "my", "hand.", "at", "I", "door", "with", "arrive"],
+      },
+      {
+        target: "Rows of large washing machines line both walls, humming quietly with other people's laundry inside.",
+        jumbled: ["quietly", "washing", "line", "machines", "humming", "with", "walls,", "other", "inside.", "people's", "Rows", "large", "of", "laundry", "both"],
+      },
+      {
+        target: "I find two empty machines near the back and place my heavy bag down beside them.",
+        jumbled: ["beside", "machines", "heavy", "empty", "my", "place", "bag", "two", "back", "them.", "the", "find", "near", "and", "down", "I"],
+      },
+      {
+        target: "A few other people are already there, reading magazines or looking at their phones quietly.",
+        jumbled: ["their", "other", "phones", "are", "at", "quietly.", "already", "magazines", "or", "few", "reading", "looking", "A", "there,", "people"],
+      },
+      {
+        target: "“Good, Hana, not too crowded today,” I think, feeling relieved this early on a Saturday morning.",
+        jumbled: ["feeling", "a", "Saturday", "“Good,", "early", "relieved", "think,", "crowded", "too", "this", "today,”", "not", "morning.", "I", "on", "Hana,"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about arriving somewhere and feeling relieved.",
     mySentenceExample: "I felt relieved when I arrived and found a seat.",
@@ -94,11 +124,26 @@ export const CHAPTERS = [
       { text: "Hana feels unprepared to start washing.", answer: false },
     ],
     buildSentence: [
-      { target: "I sort my clothes carefully.", jumbled: ["sort", "my", "I", "clothes", "carefully."] },
-      { target: "I check pockets quickly.", jumbled: ["check", "pockets", "I", "quickly."] },
-      { target: "This makes me smile a little.", jumbled: ["makes", "me", "This", "smile", "a", "little."] },
-      { target: "I feel ready to start washing.", jumbled: ["I", "feel", "ready", "to", "start", "washing."] },
-      { target: "I always sort my laundry to avoid that mistake.", jumbled: ["I", "always", "sort", "my", "laundry", "to", "avoid", "that", "mistake."] },
+      {
+        target: "I sort my clothes into two separate piles carefully.",
+        jumbled: ["carefully.", "sort", "piles", "separate", "into", "I", "my", "two", "clothes"],
+      },
+      {
+        target: "One pile has light colors, and the other pile has dark colors only.",
+        jumbled: ["pile", "One", "the", "light", "pile", "dark", "has", "other", "has", "only.", "colors,", "and", "colors"],
+      },
+      {
+        target: "I remember washing them together once, and a dark shirt turned my white shirts slightly gray.",
+        jumbled: ["washing", "dark", "shirt", "slightly", "remember", "and", "white", "shirts", "once,", "turned", "I", "together", "my", "gray.", "a", "them"],
+      },
+      {
+        target: "I check pockets quickly for any forgotten coins, tissues, or small papers left inside.",
+        jumbled: ["I", "forgotten", "coins,", "check", "inside.", "papers", "quickly", "left", "pockets", "any", "tissues,", "for", "small", "or"],
+      },
+      {
+        target: "Finding an old receipt in my jeans makes me smile a little at the memory.",
+        jumbled: ["at", "memory.", "an", "old", "little", "Finding", "in", "the", "my", "jeans", "receipt", "me", "a", "smile", "makes"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a mistake you learned from.",
     mySentenceExample: "I learned to sort clothes after a mistake with my white shirt.",
@@ -123,11 +168,26 @@ export const CHAPTERS = [
       { text: "Hana decides to leave the laundromat completely.", answer: false },
     ],
     buildSentence: [
-      { target: "I load the first machine.", jumbled: ["load", "the", "I", "first", "machine."] },
-      { target: "I put coins into the slot.", jumbled: ["put", "coins", "I", "into", "the", "slot."] },
-      { target: "I sit down on a bench.", jumbled: ["sit", "down", "I", "on", "a", "bench."] },
-      { target: "The machine hums to life.", jumbled: ["machine", "hums", "The", "to", "life."] },
-      { target: "This part of laundry day always feels slow.", jumbled: ["This", "part", "of", "laundry", "day", "always", "feels", "slow."] },
+      {
+        target: "I load the first machine with my light-colored clothes and add a small amount of detergent.",
+        jumbled: ["I", "and", "clothes", "load", "of", "the", "a", "light-colored", "first", "add", "amount", "my", "machine", "with", "small", "detergent."],
+      },
+      {
+        target: "I put coins into the slot and press the correct buttons to start the wash cycle.",
+        jumbled: ["put", "and", "wash", "coins", "into", "start", "the", "the", "the", "buttons", "cycle.", "slot", "to", "correct", "press", "I"],
+      },
+      {
+        target: "I repeat the same steps for my second machine, this time with the dark clothes.",
+        jumbled: ["time", "this", "with", "second", "the", "my", "machine,", "repeat", "same", "I", "dark", "steps", "for", "clothes.", "the"],
+      },
+      {
+        target: "I check my phone and see the wash will take about thirty minutes.",
+        jumbled: ["take", "check", "the", "phone", "thirty", "my", "I", "minutes.", "and", "see", "will", "about", "wash"],
+      },
+      {
+        target: "“Now it's just waiting, Hana,” I think, deciding to sit down on a bench nearby and wait patiently for my clothes.",
+        jumbled: ["think,", "down", "a", "it's", "waiting,", "just", "bench", "for", "deciding", "my", "to", "nearby", "on", "“Now", "Hana,”", "sit", "wait", "clothes.", "patiently", "and", "I"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about waiting for a machine or task to finish.",
     mySentenceExample: "I waited for the washing machine to finish before leaving.",
@@ -152,11 +212,26 @@ export const CHAPTERS = [
       { text: "Hana feels annoyed by George's company.", answer: false },
     ],
     buildSentence: [
-      { target: "He sits down near me.", jumbled: ["sits", "down", "He", "near", "me."] },
-      { target: "I laugh, feeling glad now.", jumbled: ["laugh,", "feeling", "I", "glad", "now."] },
-      { target: "We talk casually about our weeks.", jumbled: ["We", "talk", "casually", "about", "our", "weeks."] },
-      { target: "He introduces himself as George.", jumbled: ["He", "introduces", "himself", "as", "George."] },
-      { target: "I feel glad for some pleasant company.", jumbled: ["I", "feel", "glad", "for", "some", "pleasant", "company."] },
+      {
+        target: "A man wearing a baseball cap sits down on the bench near me.",
+        jumbled: ["me.", "bench", "cap", "baseball", "wearing", "man", "down", "A", "a", "sits", "on", "the", "near"],
+      },
+      {
+        target: "“First time here, or do you come often?” he asks in a friendly voice, holding a coffee cup.",
+        jumbled: ["time", "a", "or", "in", "here,", "often?”", "come", "“First", "you", "do", "cup.", "asks", "coffee", "a", "friendly", "voice,", "holding", "he"],
+      },
+      {
+        target: "“I'm Hana,” I say, and tell him I come here almost every weekend since my apartment has no machine.",
+        jumbled: ["come", "I", "has", "and", "apartment", "Hana,”", "machine.", "I", "my", "him", "tell", "no", "weekend", "since", "here", "say,", "“I'm", "almost", "every"],
+      },
+      {
+        target: "We talk casually about our weeks while our clothes wash in the machines nearby.",
+        jumbled: ["wash", "weeks", "our", "our", "We", "while", "machines", "about", "talk", "the", "nearby.", "in", "clothes", "casually"],
+      },
+      {
+        target: "George tells me a funny story about a sock that once got completely lost in the dryer.",
+        jumbled: ["a", "a", "me", "about", "in", "story", "got", "George", "once", "dryer.", "funny", "the", "sock", "completely", "lost", "tells", "that"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about meeting someone new while waiting somewhere.",
     mySentenceExample: "I met someone new while waiting at the doctor's office.",
@@ -181,11 +256,26 @@ export const CHAPTERS = [
       { text: "The dryers stay completely still and silent.", answer: false },
     ],
     buildSentence: [
-      { target: "I open the door now.", jumbled: ["open", "the", "I", "door", "now."] },
-      { target: "I thank him kindly.", jumbled: ["thank", "him", "I", "kindly."] },
-      { target: "I press the start button.", jumbled: ["press", "the", "I", "start", "button."] },
-      { target: "He offers to help carry it.", jumbled: ["He", "offers", "to", "help", "carry", "it."] },
-      { target: "We sit back down together to wait.", jumbled: ["We", "sit", "back", "down", "together", "to", "wait."] },
+      {
+        target: "A loud beep tells me my first washing machine has finished its cycle.",
+        jumbled: ["washing", "me", "has", "tells", "loud", "A", "machine", "its", "finished", "my", "beep", "first", "cycle."],
+      },
+      {
+        target: "I open the door and pull out my wet, clean clothes carefully into a basket.",
+        jumbled: ["my", "door", "the", "clean", "wet,", "a", "carefully", "into", "I", "and", "clothes", "open", "basket.", "out", "pull"],
+      },
+      {
+        target: "“Let me help with that, Hana,” George offers, carrying my second basket to the dryers nearby.",
+        jumbled: ["the", "second", "me", "to", "nearby.", "basket", "George", "help", "dryers", "Hana,”", "offers,", "my", "that,", "“Let", "carrying", "with"],
+      },
+      {
+        target: "I add a few coins for drying time and press the start button firmly.",
+        jumbled: ["firmly.", "press", "add", "for", "coins", "drying", "and", "few", "I", "button", "a", "start", "the", "time"],
+      },
+      {
+        target: "George checks his own machine too, and we sit back down together to wait some more.",
+        jumbled: ["we", "machine", "too,", "together", "more.", "wait", "some", "and", "to", "back", "checks", "sit", "down", "own", "George", "his"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about someone offering to help you with a task.",
     mySentenceExample: "My neighbor offered to help me carry groceries upstairs.",
@@ -210,11 +300,26 @@ export const CHAPTERS = [
       { text: "Hana feels bored the entire time.", answer: false },
     ],
     buildSentence: [
-      { target: "I take out a book.", jumbled: ["take", "out", "I", "a", "book."] },
-      { target: "The place feels peaceful now.", jumbled: ["place", "feels", "The", "peaceful", "now."] },
-      { target: "I read a few chapters.", jumbled: ["read", "a", "I", "few", "chapters."] },
-      { target: "Sunlight comes through the window.", jumbled: ["Sunlight", "comes", "through", "the", "window."] },
-      { target: "This feels surprisingly relaxing instead today.", jumbled: ["This", "feels", "surprisingly", "relaxing", "instead", "today."] },
+      {
+        target: "I take a book out of my bag to pass the time comfortably.",
+        jumbled: ["out", "time", "a", "the", "of", "take", "I", "bag", "pass", "comfortably.", "to", "book", "my"],
+      },
+      {
+        target: "“Good book, Hana?” George asks, then takes out his phone, scrolling through something quietly beside me.",
+        jumbled: ["phone,", "book,", "Hana?”", "through", "beside", "scrolling", "takes", "me.", "“Good", "his", "out", "George", "something", "then", "quietly", "asks,"],
+      },
+      {
+        target: "The laundromat feels peaceful now, filled only with the soft hum of the machines.",
+        jumbled: ["machines.", "the", "hum", "with", "feels", "now,", "filled", "the", "soft", "only", "laundromat", "of", "The", "peaceful"],
+      },
+      {
+        target: "I read a few chapters, enjoying this quiet, unhurried moment away from my usual busy schedule.",
+        jumbled: ["moment", "unhurried", "chapters,", "quiet,", "this", "few", "busy", "schedule.", "away", "a", "I", "read", "from", "my", "usual", "enjoying"],
+      },
+      {
+        target: "Laundry day used to feel boring to me, but today it feels surprisingly relaxing instead.",
+        jumbled: ["boring", "relaxing", "day", "but", "Laundry", "me,", "to", "used", "instead.", "feels", "feel", "surprisingly", "to", "today", "it"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a quiet moment you enjoyed recently.",
     mySentenceExample: "I enjoyed a quiet moment reading a book yesterday.",
@@ -239,11 +344,26 @@ export const CHAPTERS = [
       { text: "Hana feels annoyed about seeing George again.", answer: false },
     ],
     buildSentence: [
-      { target: "I pull out my clothes.", jumbled: ["pull", "out", "I", "my", "clothes."] },
-      { target: "I begin folding them now.", jumbled: ["begin", "folding", "I", "them", "now."] },
-      { target: "See you next Saturday, probably.", jumbled: ["you", "next", "See", "Saturday,", "probably."] },
-      { target: "I nod and wave goodbye.", jumbled: ["I", "nod", "and", "wave", "goodbye."] },
-      { target: "Folding warm clothes always feels satisfying.", jumbled: ["Folding", "warm", "clothes", "always", "feels", "satisfying."] },
+      {
+        target: "The dryers finally beep, and I pull out my warm, soft clothes carefully.",
+        jumbled: ["beep,", "out", "and", "dryers", "I", "clothes", "soft", "warm,", "The", "pull", "carefully.", "my", "finally"],
+      },
+      {
+        target: "I carry the clothes to a large folding table near the window and begin folding them.",
+        jumbled: ["large", "and", "the", "to", "a", "folding", "window", "I", "folding", "begin", "table", "near", "clothes", "carry", "them.", "the"],
+      },
+      {
+        target: "Each shirt and pair of pants gets folded neatly and placed into my clean bag.",
+        jumbled: ["pair", "placed", "Each", "gets", "folded", "pants", "and", "clean", "neatly", "and", "into", "of", "my", "bag.", "shirt"],
+      },
+      {
+        target: "“See you next Saturday, probably, Hana,” he says with a friendly smile before leaving.",
+        jumbled: ["next", "a", "says", "leaving.", "“See", "Hana,”", "friendly", "you", "Saturday,", "smile", "with", "before", "probably,", "he"],
+      },
+      {
+        target: "I nod and wave, already looking forward to more friendly conversation next weekend.",
+        jumbled: ["forward", "and", "I", "wave,", "to", "friendly", "more", "looking", "nod", "conversation", "already", "weekend.", "next"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about finishing a small task that felt satisfying.",
     mySentenceExample: "Folding my clean laundry always feels satisfying to me.",
@@ -268,11 +388,26 @@ export const CHAPTERS = [
       { text: "Hana looks forward to next weekend's trip.", answer: true },
     ],
     buildSentence: [
-      { target: "I carry my bag home.", jumbled: ["carry", "my", "I", "bag", "home."] },
-      { target: "The sun feels warm today.", jumbled: ["sun", "feels", "The", "warm", "today."] },
-      { target: "I smile a little now.", jumbled: ["smile", "a", "I", "little", "now."] },
-      { target: "The walk home feels lighter somehow.", jumbled: ["The", "walk", "home", "feels", "lighter", "somehow."] },
-      { target: "I already look forward to next weekend's trip.", jumbled: ["I", "already", "look", "forward", "to", "next", "weekend's", "trip."] },
+      {
+        target: "I carry my full bag of clean, folded clothes over my shoulder and leave the laundromat.",
+        jumbled: ["clean,", "leave", "and", "bag", "of", "over", "my", "my", "folded", "full", "I", "the", "laundromat.", "shoulder", "clothes", "carry"],
+      },
+      {
+        target: "The walk home feels lighter somehow, even though the bag itself is not lighter at all.",
+        jumbled: ["all.", "lighter", "walk", "the", "feels", "though", "home", "somehow,", "not", "even", "is", "at", "bag", "The", "itself", "lighter"],
+      },
+      {
+        target: "I think about my conversation with George and smile a little at his silly sock story.",
+        jumbled: ["his", "at", "silly", "a", "think", "smile", "George", "little", "I", "conversation", "about", "with", "sock", "story.", "my", "and"],
+      },
+      {
+        target: "Small conversations like that make everyday errands feel less like boring chores to me.",
+        jumbled: ["less", "like", "chores", "boring", "conversations", "feel", "Small", "like", "make", "that", "to", "me.", "everyday", "errands"],
+      },
+      {
+        target: "My apartment feels closer today because my mind is busy with pleasant thoughts.",
+        jumbled: ["is", "feels", "with", "today", "busy", "thoughts.", "apartment", "my", "closer", "pleasant", "mind", "because", "My"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about a chore that felt better because of a small pleasant moment.",
     mySentenceExample: "My chore felt better because of a nice conversation with a neighbor.",
@@ -297,11 +432,26 @@ export const CHAPTERS = [
       { text: "Hana decides never to return to the laundromat.", answer: false },
     ],
     buildSentence: [
-      { target: "I put my clothes away.", jumbled: ["put", "my", "I", "clothes", "away."] },
-      { target: "I sit down for a moment.", jumbled: ["sit", "down", "I", "for", "a", "moment."] },
-      { target: "This felt calm and enjoyable today.", jumbled: ["This", "felt", "calm", "and", "enjoyable", "today."] },
-      { target: "My closet finally looks full again.", jumbled: ["My", "closet", "finally", "looks", "full", "again."] },
-      { target: "Simple weekend tasks bring unexpected moments of connection.", jumbled: ["Simple", "weekend", "tasks", "bring", "unexpected", "moments", "of", "connection."] },
+      {
+        target: "Back at my apartment, I put my clean clothes carefully into my closet and drawers.",
+        jumbled: ["carefully", "closet", "and", "at", "my", "Back", "into", "my", "clothes", "apartment,", "my", "put", "clean", "drawers.", "I"],
+      },
+      {
+        target: "Everything smells fresh, and my closet finally looks full and organized again after two busy weeks.",
+        jumbled: ["Everything", "again", "weeks.", "smells", "busy", "and", "my", "full", "after", "finally", "looks", "fresh,", "closet", "two", "and", "organized"],
+      },
+      {
+        target: "“Well done, Hana,” I think, sitting down for a moment, feeling satisfied with how my weekend morning went.",
+        jumbled: ["how", "morning", "satisfied", "done,", "Hana,”", "a", "moment,", "weekend", "feeling", "with", "I", "“Well", "my", "sitting", "down", "went.", "for", "think,"],
+      },
+      {
+        target: "Meeting George made an ordinary chore feel like a small, pleasant part of my week.",
+        jumbled: ["ordinary", "feel", "my", "an", "week.", "pleasant", "of", "small,", "Meeting", "part", "like", "chore", "made", "George", "a"],
+      },
+      {
+        target: "I already know I will look for him again next time I go.",
+        jumbled: ["know", "I", "I", "for", "again", "time", "him", "go.", "look", "I", "will", "next", "already"],
+      },
     ],
     mySentencePrompt: "Write or say one sentence about an ordinary task that led to a nice surprise.",
     mySentenceExample: "An ordinary trip to the store led to a nice surprise meeting a friend.",

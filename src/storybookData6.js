@@ -38,19 +38,25 @@ export const CHAPTERS = [
       { text: "Sam refuses to put his feet in the water.", answer: false },
     ],
     buildSentence: [
-      { target: "My stomach feels tight.", jumbled: ["stomach", "feels", "tight.", "My"] },
-      { target: "Ms. Lee gives me a cap.", jumbled: ["gives", "me", "a", "cap.", "Ms.", "Lee"] },
-      {
-        target: "The swim coach, Ms. Lee, walks over and smiles at me.",
-        jumbled: ["smiles", "and", "Ms.", "me.", "walks", "at", "The", "Lee,", "over", "swim", "coach,"],
-      },
       {
         target: "Every Saturday morning, I go to the big swimming pool in the city.",
-        jumbled: ["big", "pool", "the", "I", "swimming", "morning,", "city.", "in", "Saturday", "go", "to", "the", "Every"],
+        jumbled: ["in", "city.", "swimming", "Every", "Saturday", "pool", "I", "the", "go", "to", "morning,", "the", "big"],
       },
       {
-        target: "I feel a little afraid, but I am proud of my first step.",
-        jumbled: ["but", "step.", "afraid,", "feel", "of", "my", "I", "little", "I", "am", "proud", "first", "a"],
+        target: "I stand near the water and watch other people swim from one side to the other.",
+        jumbled: ["other.", "and", "the", "stand", "other", "people", "swim", "watch", "I", "near", "from", "water", "the", "side", "to", "one"],
+      },
+      {
+        target: "She says, “Hello, Sam, welcome to the class.” I say hello back and hold my towel close to my body.",
+        jumbled: ["“Hello,", "to", "to", "say", "welcome", "back", "hold", "the", "and", "hello", "body.", "class.”", "close", "says,", "She", "I", "towel", "my", "my", "Sam,"],
+      },
+      {
+        target: "Ms. Lee gives me a blue swim cap and tells me to put it on my head.",
+        jumbled: ["it", "head.", "swim", "my", "to", "and", "me", "Lee", "Ms.", "blue", "put", "on", "tells", "cap", "a", "me", "gives"],
+      },
+      {
+        target: "I still feel a little afraid, but I am proud that I took my first step into the pool.",
+        jumbled: ["into", "pool.", "a", "step", "am", "afraid,", "still", "I", "my", "little", "that", "first", "I", "took", "feel", "the", "proud", "I", "but"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about swimming and you.",
@@ -76,16 +82,25 @@ export const CHAPTERS = [
       { text: "Ms. Lee says everyone must swim at the same speed.", answer: false },
     ],
     buildSentence: [
-      { target: "I am Ravi.", jumbled: ["am", "Ravi.", "I"] },
-      { target: "We say our names.", jumbled: ["say", "our", "names.", "We"] },
-      { target: "I meet my classmates, Ravi and Tina.", jumbled: ["I", "meet", "my", "and", "Ravi", "classmates,", "Tina."] },
       {
-        target: "I feel calm because I know my coach and my class.",
-        jumbled: ["know", "I", "and", "because", "class.", "feel", "my", "I", "my", "coach", "calm"],
+        target: "On my second Saturday, I arrive early and sit on a bench near the pool.",
+        jumbled: ["arrive", "bench", "second", "I", "early", "On", "sit", "and", "a", "my", "pool.", "on", "the", "near", "Saturday,"],
       },
       {
-        target: "She calls all the students together and asks us to sit in a row.",
-        jumbled: ["all", "calls", "students", "the", "She", "together", "us", "and", "asks", "sit", "to", "row.", "in", "a"],
+        target: "Ms. Lee comes to me and says, “Good morning, Sam, are you ready to learn today?” She calls all the students together and asks us to sit in a row.",
+        jumbled: ["Sam,", "all", "in", "and", "students", "comes", "calls", "ready", "says,", "to", "and", "learn", "row.", "together", "you", "to", "asks", "me", "to", "us", "Ms.", "morning,", "“Good", "sit", "She", "today?”", "Lee", "are", "the", "a"],
+      },
+      {
+        target: "A boy next to me says, “Hi, I am Ravi,” and a girl says, “I am Tina.” Ms. Lee tells us that today we will only learn in the shallow water.",
+        jumbled: ["learn", "me", "to", "and", "tells", "in", "today", "only", "boy", "water.", "says,", "we", "shallow", "Lee", "Ravi,”", "“I", "Tina.”", "says,", "will", "us", "“Hi,", "Ms.", "girl", "that", "the", "am", "am", "next", "I", "A", "a"],
+      },
+      {
+        target: "We all put on our swim caps and goggles and walk to the edge together.",
+        jumbled: ["all", "put", "We", "and", "swim", "to", "edge", "our", "together.", "caps", "goggles", "the", "and", "on", "walk"],
+      },
+      {
+        target: "In that moment, I feel calm because now I know my coach and my class.",
+        jumbled: ["my", "now", "and", "calm", "class.", "coach", "moment,", "my", "feel", "that", "I", "know", "In", "because", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your class or your classmates.",
@@ -111,16 +126,25 @@ export const CHAPTERS = [
       { text: "Ms. Lee says big splashes are bad.", answer: false },
     ],
     buildSentence: [
-      { target: "Ravi kicks fast.", jumbled: ["kicks", "fast.", "Ravi"] },
-      { target: "My kicks make big splashes.", jumbled: ["kicks", "make", "big", "splashes.", "My"] },
-      { target: "I feel happy because my arms and legs work together.", jumbled: ["work", "and", "I", "my", "feel", "arms", "legs", "because", "together.", "happy"] },
       {
-        target: "I hold the edge of the pool and kick my legs.",
-        jumbled: ["pool", "I", "edge", "my", "the", "the", "kick", "legs.", "hold", "and", "of"],
+        target: "Today, Ms. Lee says we will learn how to kick our legs and move our arms.",
+        jumbled: ["our", "to", "will", "Today,", "how", "move", "Lee", "Ms.", "we", "says", "arms.", "learn", "kick", "our", "and", "legs"],
       },
       {
-        target: "Kick from your hips, and keep your legs long and straight.",
-        jumbled: ["your", "from", "hips,", "Kick", "keep", "and", "long", "legs", "your", "straight.", "and"],
+        target: "I hold the edge of the pool and kick my legs behind me in the water.",
+        jumbled: ["me", "the", "the", "the", "pool", "legs", "edge", "behind", "kick", "hold", "I", "in", "water.", "my", "of", "and"],
+      },
+      {
+        target: "At first, my kicks make big splashes, but the coach says, “That's okay, Sam, just keep trying.”",
+        jumbled: ["splashes,", "okay,", "just", "coach", "“That's", "keep", "Sam,", "the", "big", "but", "At", "kicks", "trying.”", "make", "first,", "my", "says,"],
+      },
+      {
+        target: "I try to kick and move my arms at the same time, but it is a little hard.",
+        jumbled: ["kick", "my", "try", "time,", "and", "a", "move", "arms", "hard.", "at", "the", "little", "I", "is", "but", "it", "to", "same"],
+      },
+      {
+        target: "In that moment, I feel happy because my arms and legs work together in the water.",
+        jumbled: ["legs", "that", "moment,", "feel", "happy", "water.", "in", "In", "work", "together", "because", "I", "and", "arms", "the", "my"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about learning to kick or swim.",
@@ -146,16 +170,25 @@ export const CHAPTERS = [
       { text: "Ms. Lee never watches the students.", answer: false },
     ],
     buildSentence: [
-      { target: "I take a deep breath.", jumbled: ["take", "a", "deep", "breath.", "I"] },
-      { target: "I stand up with a smile.", jumbled: ["stand", "up", "with", "a", "smile.", "I"] },
-      { target: "I feel proud because I swim without any help.", jumbled: ["I", "help.", "feel", "because", "swim", "proud", "I", "any", "without"] },
       {
-        target: "I push off the wall and float on the water.",
-        jumbled: ["off", "the", "wall", "water.", "push", "I", "the", "on", "and", "float"],
+        target: "Ms. Lee stands in the middle of the pool and watches every student.",
+        jumbled: ["middle", "watches", "and", "Lee", "stands", "in", "student.", "every", "of", "pool", "the", "Ms.", "the"],
       },
       {
-        target: "Push off the wall, kick your legs, and glide like a fish.",
-        jumbled: ["off", "the", "Push", "kick", "wall,", "legs,", "your", "and", "a", "like", "glide", "fish."],
+        target: "I take a deep breath, push off the wall, and float on top of the water.",
+        jumbled: ["and", "water.", "deep", "the", "on", "float", "a", "wall,", "take", "I", "top", "push", "breath,", "the", "of", "off"],
+      },
+      {
+        target: "My face is in the water, so I lift my head to breathe and then look down again.",
+        jumbled: ["lift", "face", "water,", "look", "in", "I", "and", "my", "the", "My", "then", "to", "again.", "is", "down", "so", "head", "breathe"],
+      },
+      {
+        target: "I reach the other side of the shallow area and stand up with a big smile.",
+        jumbled: ["shallow", "the", "I", "stand", "side", "with", "smile.", "of", "a", "and", "big", "the", "other", "reach", "up", "area"],
+      },
+      {
+        target: "Ms. Lee claps and says, “Very good, Sam, you can move on your own now.”",
+        jumbled: ["Ms.", "you", "says,", "on", "move", "now.”", "your", "good,", "Lee", "claps", "own", "can", "and", "Sam,", "“Very"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about doing something on your own.",
@@ -181,16 +214,25 @@ export const CHAPTERS = [
       { text: "Ms. Lee says being nervous is strange.", answer: false },
     ],
     buildSentence: [
-      { target: "I hold the edge.", jumbled: ["hold", "the", "edge.", "I"] },
-      { target: "Being nervous is normal.", jumbled: ["nervous", "is", "normal.", "Being"] },
-      { target: "Ravi says he is a little scared too.", jumbled: ["little", "scared", "Ravi", "a", "is", "he", "says", "too."] },
       {
-        target: "In that moment, I feel calmer because my coach understands my fear.",
-        jumbled: ["calmer", "because", "feel", "moment,", "I", "coach", "my", "that", "understands", "my", "In", "fear."],
+        target: "Today, Ms. Lee points to the other end of the pool, where the water is deep.",
+        jumbled: ["the", "end", "to", "where", "Ms.", "deep.", "points", "of", "is", "Lee", "pool,", "water", "other", "the", "Today,", "the"],
       },
       {
-        target: "My heart beats fast because I know I cannot touch the floor there.",
-        jumbled: ["heart", "fast", "beats", "because", "My", "I", "cannot", "know", "I", "the", "touch", "there.", "floor"],
+        target: "She says, “Soon you will learn to swim in the deep water too, Sam.”",
+        jumbled: ["deep", "water", "will", "you", "too,", "learn", "Sam.”", "She", "to", "swim", "in", "the", "“Soon", "says,"],
+      },
+      {
+        target: "Ravi says he is a little scared too, so I feel better because I am not alone.",
+        jumbled: ["because", "too,", "little", "not", "better", "am", "I", "he", "says", "feel", "I", "alone.", "a", "scared", "is", "so", "Ravi"],
+      },
+      {
+        target: "I take a deep breath and tell myself that I can be brave step by step.",
+        jumbled: ["myself", "can", "by", "take", "I", "step.", "tell", "be", "a", "that", "brave", "step", "and", "deep", "I", "breath"],
+      },
+      {
+        target: "Ms. Lee smiles and says, “Being nervous is normal, and I will help you.”",
+        jumbled: ["“Being", "normal,", "says,", "help", "is", "and", "Ms.", "Lee", "will", "I", "and", "you.”", "nervous", "smiles"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you felt nervous.",
@@ -216,16 +258,25 @@ export const CHAPTERS = [
       { text: "Ms. Lee never lets go of Sam's hands.", answer: false },
     ],
     buildSentence: [
-      { target: "I float on my own.", jumbled: ["float", "on", "my", "own.", "I"] },
-      { target: "You can do it, Sam!", jumbled: ["can", "do", "it,", "You", "Sam!"] },
-      { target: "I will hold you, Sam, so you are safe.", jumbled: ["hold", "will", "you,", "I", "so", "Sam,", "are", "you", "safe."] },
       {
-        target: "I feel thankful because my coach and friends help me.",
-        jumbled: ["friends", "me.", "my", "I", "feel", "because", "help", "thankful", "and", "coach"],
+        target: "The next lesson, Ms. Lee stands in the deeper water and holds out her hands.",
+        jumbled: ["The", "Ms.", "lesson,", "hands.", "stands", "next", "Lee", "her", "and", "water", "holds", "out", "deeper", "the", "in"],
+      },
+      {
+        target: "At first, I feel scared, but Ms. Lee keeps me safe on top of the water.",
+        jumbled: ["safe", "I", "scared,", "top", "feel", "of", "keeps", "on", "At", "but", "Lee", "water.", "me", "first,", "Ms.", "the"],
       },
       {
         target: "I kick my legs and move my arms while the coach holds me lightly.",
-        jumbled: ["my", "kick", "legs", "I", "move", "and", "arms", "my", "the", "while", "holds", "coach", "lightly.", "me"],
+        jumbled: ["kick", "holds", "arms", "lightly.", "move", "coach", "I", "me", "and", "legs", "the", "while", "my", "my"],
+      },
+      {
+        target: "My friends cheer, and I put my feet back on the shallow floor with a smile.",
+        jumbled: ["put", "with", "on", "floor", "the", "My", "a", "I", "shallow", "friends", "and", "feet", "my", "back", "cheer,", "smile."],
+      },
+      {
+        target: "In that moment, I feel thankful because my coach and friends help me be brave.",
+        jumbled: ["because", "I", "help", "be", "and", "brave.", "coach", "friends", "that", "feel", "thankful", "moment,", "In", "my", "me"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about someone who helps you.",
@@ -251,16 +302,25 @@ export const CHAPTERS = [
       { text: "Sam gives up halfway across.", answer: false },
     ],
     buildSentence: [
-      { target: "My heart jumps.", jumbled: ["heart", "jumps.", "My"] },
-      { target: "I touch the other wall.", jumbled: ["touch", "the", "other", "wall.", "I"] },
-      { target: "I push off the wall and kick my legs.", jumbled: ["and", "off", "wall", "I", "my", "the", "legs.", "kick", "push"] },
       {
-        target: "I feel amazing because I swim the whole pool.",
-        jumbled: ["I", "I", "feel", "the", "pool.", "amazing", "whole", "because", "swim"],
+        target: "Today, Ms. Lee says, “Sam, I think you are ready to swim one full length.”",
+        jumbled: ["one", "“Sam,", "Ms.", "ready", "length.”", "think", "full", "are", "Lee", "I", "swim", "Today,", "to", "says,", "you"],
+      },
+      {
+        target: "I stand at the shallow end and look all the way to the other side.",
+        jumbled: ["at", "stand", "I", "the", "other", "the", "to", "and", "all", "shallow", "way", "side.", "end", "look", "the"],
+      },
+      {
+        target: "I push off the wall, kick my legs, and move my arms in a steady rhythm.",
+        jumbled: ["rhythm.", "kick", "my", "legs,", "in", "move", "the", "off", "arms", "and", "my", "I", "steady", "wall,", "a", "push"],
       },
       {
         target: "Halfway across, my arms feel tired, but I tell myself, “Keep going, Sam.”",
-        jumbled: ["across,", "my", "Halfway", "feel", "arms", "but", "tired,", "tell", "I", "myself,", "going,", "“Keep", "Sam.”"],
+        jumbled: ["tired,", "arms", "across,", "tell", "feel", "but", "my", "Sam.”", "Halfway", "going,", "“Keep", "I", "myself,"],
+      },
+      {
+        target: "In that moment, I feel amazing because I swim the whole length of the pool for the first time.",
+        jumbled: ["for", "the", "In", "time.", "feel", "first", "the", "because", "I", "the", "length", "amazing", "I", "of", "whole", "that", "swim", "moment,", "pool"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about reaching a goal.",
@@ -286,16 +346,25 @@ export const CHAPTERS = [
       { text: "Tina finds no rings at all.", answer: false },
     ],
     buildSentence: [
-      { target: "I see a red ring.", jumbled: ["see", "a", "red", "ring.", "I"] },
-      { target: "My friends laugh and clap.", jumbled: ["friends", "laugh", "and", "clap.", "My"] },
-      { target: "I hold my nose and go under the water.", jumbled: ["my", "under", "the", "go", "water.", "I", "nose", "hold", "and"] },
       {
-        target: "I feel joyful because learning to swim is fun.",
-        jumbled: ["because", "joyful", "to", "learning", "fun.", "is", "swim", "I", "feel"],
+        target: "Today, Ms. Lee says we will play a fun game in the shallow water.",
+        jumbled: ["we", "Lee", "fun", "shallow", "water.", "in", "game", "play", "will", "says", "a", "Today,", "the", "Ms."],
       },
       {
-        target: "Take a breath, go under the water, and pick up one ring.",
-        jumbled: ["a", "breath,", "Take", "under", "go", "the", "water,", "pick", "and", "one", "up", "ring."],
+        target: "“Take a breath, go under the water, and pick up one ring,” she tells us.",
+        jumbled: ["ring,”", "pick", "water,", "“Take", "and", "tells", "she", "go", "us.", "up", "the", "under", "breath,", "one", "a"],
+      },
+      {
+        target: "I see a red ring near my feet, so I reach down and grab it quickly.",
+        jumbled: ["I", "quickly.", "and", "it", "down", "feet,", "a", "reach", "see", "I", "my", "red", "so", "ring", "grab", "near"],
+      },
+      {
+        target: "Ravi finds a blue ring, and Tina finds two rings at the same time.",
+        jumbled: ["same", "finds", "blue", "at", "a", "the", "Ravi", "and", "finds", "ring,", "Tina", "rings", "two", "time."],
+      },
+      {
+        target: "In that moment, I feel joyful because learning to swim can also be so much fun.",
+        jumbled: ["much", "so", "be", "I", "fun.", "In", "that", "feel", "also", "moment,", "joyful", "because", "can", "to", "learning", "swim"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a game you like in the water.",
@@ -321,16 +390,25 @@ export const CHAPTERS = [
       { text: "Sam refuses to swim on swim day.", answer: false },
     ],
     buildSentence: [
-      { target: "My hands feel cold.", jumbled: ["hands", "feel", "cold.", "My"] },
-      { target: "I take a deep breath.", jumbled: ["take", "a", "deep", "breath.", "I"] },
-      { target: "Ms. Lee tells us we will each swim one length.", jumbled: ["each", "one", "length.", "Lee", "we", "Ms.", "will", "swim", "tells", "us"] },
       {
-        target: "I feel proud because everyone can see how much I learned.",
-        jumbled: ["because", "see", "much", "learned.", "everyone", "I", "how", "I", "feel", "proud", "can"],
+        target: "Ms. Lee tells us we will each swim one length to show what we can do.",
+        jumbled: ["what", "Ms.", "tells", "do.", "swim", "us", "to", "one", "show", "can", "Lee", "length", "each", "we", "we", "will"],
       },
       {
-        target: "I kick, pull, and breathe, and I keep my eyes on the other wall.",
-        jumbled: ["pull,", "kick,", "I", "breathe,", "and", "and", "keep", "I", "eyes", "my", "the", "on", "wall.", "other"],
+        target: "I stand at the wall and take a slow, deep breath.",
+        jumbled: ["at", "slow,", "take", "a", "deep", "stand", "breath.", "I", "and", "wall", "the"],
+      },
+      {
+        target: "Ms. Lee says, “You can do it, Sam,” and I push off into the water.",
+        jumbled: ["Lee", "it,", "water.", "I", "can", "do", "into", "push", "off", "Sam,”", "the", "Ms.", "and", "“You", "says,"],
+      },
+      {
+        target: "I lift my head and smile with tired arms.",
+        jumbled: ["arms.", "tired", "with", "head", "I", "smile", "my", "and", "lift"],
+      },
+      {
+        target: "In that moment, I feel so proud because everyone can see how much I have learned.",
+        jumbled: ["can", "have", "I", "learned.", "that", "how", "proud", "see", "feel", "much", "because", "moment,", "everyone", "so", "I", "In"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about showing what you can do.",
@@ -356,16 +434,25 @@ export const CHAPTERS = [
       { text: "Sam cannot kick or glide at all.", answer: false },
     ],
     buildSentence: [
-      { target: "We laugh and race.", jumbled: ["laugh", "and", "race.", "We"] },
-      { target: "I feel calm and happy.", jumbled: ["feel", "calm", "and", "happy.", "I"] },
-      { target: "I feel wonderful because the pool is now a happy place.", jumbled: ["a", "now", "the", "place.", "wonderful", "pool", "I", "happy", "feel", "because", "is"] },
       {
-        target: "I swim to the deep end, float, and come back without any fear.",
-        jumbled: ["to", "swim", "the", "I", "deep", "end,", "and", "float,", "back", "come", "any", "without", "fear."],
+        target: "On my last Saturday of the class, I walk to the pool and feel calm and happy.",
+        jumbled: ["walk", "of", "last", "the", "Saturday", "calm", "feel", "pool", "class,", "the", "and", "I", "and", "to", "happy.", "On", "my"],
       },
       {
-        target: "Now I can kick, glide, dive, and swim a full length on my own.",
-        jumbled: ["I", "can", "Now", "glide,", "kick,", "and", "dive,", "swim", "full", "a", "on", "length", "my", "own."],
+        target: "Ms. Lee smiles and says, “Sam, look how far you have come since your first day.”",
+        jumbled: ["day.”", "Lee", "Ms.", "smiles", "“Sam,", "you", "far", "since", "how", "look", "says,", "and", "have", "come", "first", "your"],
+      },
+      {
+        target: "Ravi and Tina swim beside me, and we laugh and race in a friendly way.",
+        jumbled: ["and", "a", "friendly", "race", "Tina", "way.", "swim", "and", "and", "laugh", "we", "Ravi", "me,", "in", "beside"],
+      },
+      {
+        target: "I remember my first day, when my stomach felt tight and my feet did not want to move.",
+        jumbled: ["felt", "when", "stomach", "my", "want", "my", "my", "move.", "and", "I", "remember", "first", "not", "did", "feet", "tight", "to", "day,"],
+      },
+      {
+        target: "In that moment, I feel wonderful because the pool has become a happy place for me.",
+        jumbled: ["because", "me.", "pool", "for", "that", "I", "the", "feel", "place", "happy", "In", "has", "a", "become", "moment,", "wonderful"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about how you feel about swimming now.",
