@@ -59,8 +59,8 @@ export const CHAPTERS = [
         jumbled: ["street.", "slowly", "I", "walk", "on", "and", "shirt,", "the", "clean", "a", "my", "bag,", "put", "take", "down"],
       },
       {
-        target: "She smiles and says, “Good morning, how can I help you?” I tell her, “I have a sore throat, and I do not feel well today.”",
-        jumbled: ["morning,", "throat,", "She", "I", "can", "I", "you?”", "do", "have", "her,", "well", "I", "“Good", "not", "how", "and", "and", "tell", "help", "“I", "smiles", "feel", "says,", "a", "sore", "today.”"],
+        target: "She smiles and says, “Good morning, how can I help you?”",
+        jumbled: ["“Good","and","you?”","She","says,","help","I","can","how","morning,","smiles"],
       },
       {
         target: "I still feel sick, but I also feel calm because I know help is coming.",
@@ -99,8 +99,8 @@ export const CHAPTERS = [
         jumbled: ["my", "and", "form", "phone", "age,", "asks", "my", "The", "name,", "for", "number.", "my"],
       },
       {
-        target: "Then she asks, “Is this your first visit to our clinic?” I say, “Yes, this is my first time here today.”",
-        jumbled: ["this", "say,", "I", "this", "first", "today.”", "first", "she", "our", "my", "“Yes,", "clinic?”", "time", "your", "to", "“Is", "visit", "Then", "here", "is", "asks,"],
+        target: "Then she asks, “Is this your first visit to our clinic?”",
+        jumbled: ["to","“Is","visit","this","first","our","Then","clinic?”","she","asks,","your"],
       },
       {
         target: "I tell her, “I have a sore throat and a headache since this morning.”",
@@ -227,8 +227,8 @@ export const CHAPTERS = [
         jumbled: ["asks", "step.", "me", "problem", "Santos", "her", "my", "Dr.", "tell", "to", "by", "step", "about"],
       },
       {
-        target: "I say, “Since this morning, I have a sore throat and a headache.” She asks, “Do you have a fever or a cough too, Riley?” I tell her, “Yes, I feel a little hot, and I cough sometimes.” She asks when the problem started and how I feel now.",
-        jumbled: ["say,", "I", "She", "and", "asks", "have", "I", "and", "“Yes,", "too,", "asks,", "a", "feel", "this", "cough", "I", "a", "you", "tell", "morning,", "hot,", "I", "“Do", "have", "problem", "now.", "the", "or", "and", "throat", "when", "I", "a", "how", "She", "Riley?”", "feel", "a", "her,", "sore", "sometimes.”", "little", "I", "a", "fever", "cough", "headache.”", "started", "“Since"],
+        target: "I say, “Since this morning, I have a sore throat and a headache.”",
+        jumbled: ["this","I","headache.”","say,","have","morning,","I","sore","a","“Since","and","throat","a"],
       },
       {
         target: "I explain that I woke up feeling weak and tired today.",
@@ -327,8 +327,8 @@ export const CHAPTERS = [
         jumbled: ["drink", "well", "adds.", "cold", "she", "“Do", "drinks,", "try", "and", "tonight,”", "sleep", "to", "not"],
       },
       {
-        target: "She asks, “Do you have any questions for me before you go?” I say, “No, thank you, Dr. Santos, you explain everything clearly.”",
-        jumbled: ["everything", "I", "go?”", "She", "Dr.", "any", "“Do", "you", "clearly.”", "have", "before", "you", "thank", "you", "Santos,", "for", "me", "asks,", "questions", "explain", "“No,", "you,", "say,"],
+        target: "She asks, “Do you have any questions for me before you go?”",
+        jumbled: ["before","go?”","for","have","you","you","me","any","She","questions","asks,","“Do"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about medicine from a doctor.",

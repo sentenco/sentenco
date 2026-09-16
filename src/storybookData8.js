@@ -277,8 +277,8 @@ export const CHAPTERS = [
         jumbled: ["the", "and", "I", "him", "walk", "with", "him", "to", "flavours.", "show", "different", "fridge", "the"],
       },
       {
-        target: "I change it at the cashier and say, “I am sorry for the mistake.” He says, “Thank you, you are very patient, Casey,” and leaves the shop happy.",
-        jumbled: ["the", "are", "I", "am", "mistake.”", "He", "sorry", "for", "happy.", "at", "Casey,”", "“Thank", "leaves", "you,", "the", "says,", "patient,", "the", "and", "very", "you", "shop", "cashier", "say,", "change", "and", "“I", "it"],
+        target: "I change it at the cashier and say, “I am sorry for the mistake.”",
+        jumbled: ["change","sorry","mistake.”","the","it","for","“I","the","I","say,","cashier","and","am","at"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm with a difficult person.",

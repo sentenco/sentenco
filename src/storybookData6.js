@@ -87,12 +87,12 @@ export const CHAPTERS = [
         jumbled: ["arrive", "bench", "second", "I", "early", "On", "sit", "and", "a", "my", "pool.", "on", "the", "near", "Saturday,"],
       },
       {
-        target: "Ms. Lee comes to me and says, “Good morning, Sam, are you ready to learn today?” She calls all the students together and asks us to sit in a row.",
-        jumbled: ["Sam,", "all", "in", "and", "students", "comes", "calls", "ready", "says,", "to", "and", "learn", "row.", "together", "you", "to", "asks", "me", "to", "us", "Ms.", "morning,", "“Good", "sit", "She", "today?”", "Lee", "are", "the", "a"],
+        target: "Ms. Lee comes to me and says, “Good morning, Sam, are you ready to learn today?”",
+        jumbled: ["learn","“Good","to","Lee","Sam,","and","says,","are","ready","Ms.","to","me","morning,","today?”","comes","you"],
       },
       {
-        target: "A boy next to me says, “Hi, I am Ravi,” and a girl says, “I am Tina.” Ms. Lee tells us that today we will only learn in the shallow water.",
-        jumbled: ["learn", "me", "to", "and", "tells", "in", "today", "only", "boy", "water.", "says,", "we", "shallow", "Lee", "Ravi,”", "“I", "Tina.”", "says,", "will", "us", "“Hi,", "Ms.", "girl", "that", "the", "am", "am", "next", "I", "A", "a"],
+        target: "A boy next to me says, “Hi, I am Ravi,” and a girl says, “I am Tina.”",
+        jumbled: ["“Hi,","am","am","“I","says,","and","a","A","me","says,","Tina.”","boy","Ravi,”","girl","to","I","next"],
       },
       {
         target: "We all put on our swim caps and goggles and walk to the edge together.",

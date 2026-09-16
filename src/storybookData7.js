@@ -185,8 +185,8 @@ export const CHAPTERS = [
         jumbled: ["our", "Ms.", "My", "short", "for", "Reyes,", "work", "manager,", "message", "sends", "today.", "about", "a"],
       },
       {
-        target: "My coworker Dan sits next to me and asks, “How are you today, Jordan?” I say, “I am good, thank you,” and we both start our work.",
-        jumbled: ["work.", "you", "coworker", "Jordan?”", "and", "both", "good,", "you,”", "My", "say,", "I", "next", "thank", "start", "are", "we", "“How", "sits", "our", "me", "today,", "am", "to", "and", "“I", "Dan", "asks,"],
+        target: "My coworker Dan sits next to me and asks, “How are you today, Jordan?”",
+        jumbled: ["sits","Jordan?”","Dan","and","to","you","today,","next","“How","me","My","coworker","are","asks,"],
       },
       {
         target: "I feel focused and ready for a busy day.",

@@ -185,8 +185,8 @@ export const CHAPTERS = [
         jumbled: ["warm,", "café", "coffee", "small", "The", "a", "and", "is", "soft", "and", "smell.", "good", "with", "music"],
       },
       {
-        target: "A friendly waiter comes and asks, “What would you like this morning?” I say, “I would like eggs, toast, and a cup of coffee, please.”",
-        jumbled: ["morning?”", "friendly", "“I", "waiter", "please.”", "and", "a", "say,", "of", "cup", "coffee,", "toast,", "“What", "eggs,", "would", "comes", "this", "asks,", "like", "would", "I", "A", "you", "like", "and"],
+        target: "A friendly waiter comes and asks, “What would you like this morning?”",
+        jumbled: ["“What","friendly","morning?”","you","this","and","A","comes","would","asks,","waiter","like"],
       },
       {
         target: "In a few minutes, he brings my warm eggs, golden toast, and hot coffee.",
@@ -273,12 +273,12 @@ export const CHAPTERS = [
         jumbled: ["and", "I", "look", "time", "choose", "at", "dish.", "one", "my", "menu", "the", "more"],
       },
       {
-        target: "I say, “I would like the noodle soup and a glass of water, please.” Ana says, “I would like the same soup and some spring rolls, Morgan.”",
-        jumbled: ["the", "spring", "soup", "please.”", "soup", "would", "a", "the", "of", "and", "same", "glass", "would", "and", "Morgan.”", "noodle", "like", "say,", "water,", "some", "rolls,", "says,", "“I", "Ana", "I", "like", "“I"],
+        target: "I say, “I would like the noodle soup and a glass of water, please.”",
+        jumbled: ["like","a","the","I","noodle","please.”","and","soup","glass","would","say,","water,","of","“I"],
       },
       {
-        target: "He asks, “Would you like anything else with your meal?” I say, “No, thank you, that is all for now.”",
-        jumbled: ["say,", "that", "asks,", "you", "like", "all", "thank", "meal?”", "for", "with", "anything", "He", "I", "your", "else", "is", "“No,", "you,", "now.”", "“Would"],
+        target: "He asks, “Would you like anything else with your meal?”",
+        jumbled: ["with","you","asks,","He","your","“Would","else","meal?”","anything","like"],
       },
       {
         target: "I feel proud because I ordered my food clearly in English.",
