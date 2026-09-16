@@ -20,20 +20,19 @@ export default {
     { text: "The group ___ a model of the solar system.", answer: "created" },
     { text: "We're ___ flashcards to study vocabulary.", answer: "creating" },
   ],
-  // For each sentence, above, at the same index: which cue (see
-  // DERIVE_CUES in DeriveGuide.jsx) tells the student to pick that form,
-  // plus a short sentence-specific note for a first-time teacher to read
-  // or paraphrase when they ask the student to justify their answer.
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
   teacherGuide: [
-    { cue: "A", note: "After the modal “will”, use the plain base form of the verb — no -ing, no -ed." },
-    { cue: "F", note: "“Has always been very ___” is describing a trait she has, not an action — the “has been” here belongs to “be,” not to the blank, so it still calls for the adjective." },
-    { cue: "E", note: "The blank comes right after “a”, an article — that's always followed by a noun, the thing being named." },
-    { cue: "D", note: "No helper verb before the blank, and “he” goes straight into the action — that's the simple past." },
-    { cue: "B", note: "“They're” means “they are.” Is/am/are followed by a verb needs the -ing form — this is happening right now." },
-    { cue: "A", note: "“Let's” means “let us” — it works just like “to” or a modal, followed by the plain base form of the verb." },
-    { cue: "F", note: "The blank sits right before the noun “approach”, describing what kind of approach it is — that's the adjective form, even with no “be” verb nearby." },
-    { cue: "E", note: "“A student's ___” — a possessive right before the blank — signals a noun is coming, the thing the student made." },
-    { cue: "D", note: "No helper verb before the blank, and “the group” goes straight into the action — simple past again." },
-    { cue: "B", note: "“We're” means “we are.” Am/is/are followed by a verb needs the -ing form — something in progress right now." },
+    { note: "The word right before the blank is the modal 'will'. After a modal, the verb stays in its plain form." },
+    { note: "'Has always been very' describes a trait she has, not something she's doing. It still needs the adjective form." },
+    { note: "The blank comes right after 'a', an article. After an article, the next word is a noun." },
+    { note: "There's no helper verb here. 'He' goes straight into the action, so this is the simple past." },
+    { note: "'They're' means 'they are'. After is/am/are, the verb takes the -ing form because it's happening right now." },
+    { note: "'Let's' means 'let us'. It works just like 'to', so the verb after it stays in its plain form." },
+    { note: "The blank sits right before the noun 'approach', describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "'A student's' is a possessive right before the blank, so a noun comes next: the thing the student made." },
+    { note: "There's no helper verb here either. 'The group' goes straight into the action, so it's the simple past again." },
+    { note: "'We're' means 'we are'. After am/is/are, the verb takes the -ing form for something happening right now." },
   ],
 };
