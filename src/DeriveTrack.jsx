@@ -18,6 +18,23 @@ function openLesson(trackId, num) {
   );
 }
 
+// Teacher Guide opens as its own separate popup, triggered by its own
+// explicit click -- matches Shift's pattern.
+function openGuide(trackId, num) {
+  const screenW = window.screen.availWidth || 1600;
+  const screenH = window.screen.availHeight || 900;
+  const w = Math.min(640, screenW - 40);
+  const h = Math.min(840, screenH - 40);
+  const left = Math.max(0, Math.floor((screenW - w) / 2));
+  const top = Math.max(0, Math.floor((screenH - h) / 2));
+
+  window.open(
+    `/library/derive/${trackId}/${num}/guide`,
+    "sentivoDeriveGuide",
+    `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
+  );
+}
+
 export default function DeriveTrack() {
   const { trackId } = useParams();
   const track = getTrack(trackId);
@@ -73,6 +90,13 @@ export default function DeriveTrack() {
                 </span>
                 <span className="dvt-box-word">{word}</span>
                 <span className="dvt-box-forms">{lesson.family.length} forms</span>
+                <button
+                  type="button"
+                  className="dvt-box-guide"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); openGuide(track.id, num); }}
+                >
+                  Guide
+                </button>
               </a>
             );
           })}
@@ -202,4 +226,19 @@ const CSS = `
 .dvt-box-word { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 19px; color: #10646B; margin-top: 8px; }
 .dvt-box--locked .dvt-box-word { font-size: 14px; font-weight: 600; color: #4B8B92; margin-top: 0; }
 .dvt-box-forms { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #4B8B92; opacity: 0.75; }
+.dvt-box-guide {
+  margin-top: 6px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #10646B;
+  background: rgba(42,168,174,0.14);
+  border: none;
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.dvt-box-guide:hover { background: rgba(42,168,174,0.24); }
 `;

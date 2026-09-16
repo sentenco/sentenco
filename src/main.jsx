@@ -216,6 +216,7 @@ import BridgeGuide from './BridgeGuide.jsx'
 import DeriveHub from './DeriveHub.jsx'
 import DeriveTrack from './DeriveTrack.jsx'
 import Derive from './Derive.jsx'
+import DeriveGuide from './DeriveGuide.jsx'
 import SequenceHub from './SequenceHub.jsx'
 import SequenceTrack from './SequenceTrack.jsx'
 import Sequence from './Sequence.jsx'
@@ -540,6 +541,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/derive" element={<LibraryPageShell><DeriveHub /></LibraryPageShell>} />
             <Route path="/library/derive/:trackId" element={<LibraryPageShell><DeriveTrack /></LibraryPageShell>} />
             <Route path="/library/derive/:trackId/:lessonNum" element={<Derive />} />
+            <Route path="/library/derive/:trackId/:lessonNum/guide" element={<DeriveGuide />} />
             <Route path="/library/sequence" element={<LibraryPageShell><SequenceHub /></LibraryPageShell>} />
             <Route path="/library/sequence/:trackId" element={<LibraryPageShell><SequenceTrack /></LibraryPageShell>} />
             <Route path="/library/sequence/:trackId/:lessonNum" element={<Sequence />} />
