@@ -18,4 +18,17 @@ export default {
     { text: "They were completely ___ by halftime.", answer: "exhausted" },
     { text: "Training twice a day is ___ but effective.", answer: "exhausting" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "A preposition like 'from' is always followed by a noun, not a verb." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'was' and 'really'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "A preposition like 'through' is always followed by a noun, not a verb." },
+    { note: "The word right before the blank is 'were' and 'completely'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

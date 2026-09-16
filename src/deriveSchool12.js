@@ -20,4 +20,19 @@ export default {
     { text: "They ___ the instructions without asking questions.", answer: "comprehended" },
     { text: "I'm slowly ___ the whole unit now.", answer: "comprehending" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'Her reading' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "'She's' means 'She is'. After is/am/is/are, even with 'still' in between, the verb takes the -ing form because it's happening right now." },
+    { note: "'Some students' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "'A more' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'I'm' means 'I am'. After am/am/is/are, even with 'slowly' in between, the verb takes the -ing form because it's happening right now." },
+  ],
 };

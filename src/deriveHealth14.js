@@ -18,4 +18,17 @@ export default {
     { text: "His mobility ___ after the accident.", answer: "deteriorated" },
     { text: "The patient's condition is ___ despite medication.", answer: "deteriorating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'could'. After a modal, the verb stays in its plain form." },
+    { note: "'A sudden' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'Has been' is present perfect continuous. It's describing something that started earlier and is still going, so it needs the -ing form." },
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

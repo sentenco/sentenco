@@ -20,4 +20,19 @@ export default {
     { text: "They ___ for the garden all summer.", answer: "cared" },
     { text: "Her ___ nature makes her the family peacemaker.", answer: "caring" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The word right before the blank is 'Be'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'was' and 'pretty'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'He's' means 'He is'. After is/am/is/are, even with 'very' in between, the verb takes the -ing form because it's happening right now." },
+    { note: "The word before the blank is the modal 'should'. After a modal, the verb stays in its plain form." },
+    { note: "The word right before the blank is 'be'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'Being'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+  ],
 };

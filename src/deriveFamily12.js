@@ -18,4 +18,17 @@ export default {
     { text: "He felt ___ to speak up during the family meeting.", answer: "empowered" },
     { text: "Letting kids solve problems is ___ for them.", answer: "empowering" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "A preposition like 'on' is always followed by a noun, not a verb." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'It's' means 'It is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "'Try to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'Her'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

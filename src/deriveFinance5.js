@@ -20,4 +20,19 @@ export default {
     { text: "She ___ the surgery only with insurance help.", answer: "afforded" },
     { text: "They're barely ___ their monthly bills.", answer: "affording" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Can't' is a negative form, and negatives are followed by the plain base form of the verb, just like a modal." },
+    { note: "The blank is describing a quality here, so it needs the adjective form, even without 'is', 'are', or an article nearby." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "'He's' means 'He is'. After is/am/is/are, even with 'still' in between, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'really'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'is' and 'fairly'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'They're' means 'They are'. After are/am/is/are, even with 'barely' in between, the verb takes the -ing form because it's happening right now." },
+  ],
 };

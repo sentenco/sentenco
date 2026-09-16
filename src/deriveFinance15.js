@@ -18,4 +18,17 @@ export default {
     { text: "The failing company was fully ___ by the bank.", answer: "liquidated" },
     { text: "He's ___ his stock portfolio before retirement.", answer: "liquidating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'Store's' is a possessive right before the blank, so a noun comes next." },
+    { note: "The word right before the blank is 'were'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was' and 'fully'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

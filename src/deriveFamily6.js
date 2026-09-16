@@ -20,4 +20,19 @@ export default {
     { text: "Grandparents can be just as ___ as parents.", answer: "protective" },
     { text: "He's ___ his little cousin at the park.", answer: "protecting" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Want to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'very'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'is'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The blank is describing a quality here, so it needs the adjective form, even without 'is', 'are', or an article nearby." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

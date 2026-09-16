@@ -18,4 +18,17 @@ export default {
     { text: "Everyone ___ to split the bill evenly.", answer: "agreed" },
     { text: "They're finally ___ on a movie to watch.", answer: "agreeing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'Do'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'an'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "'Don't' is a negative form, and negatives are followed by the plain base form of the verb, just like a modal." },
+    { note: "The blank comes right after 'no'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'They're' means 'They are'. After are/am/is/are, even with 'finally' in between, the verb takes the -ing form because it's happening right now." },
+  ],
 };

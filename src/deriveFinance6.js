@@ -18,4 +18,17 @@ export default {
     { text: "All the money had already been ___.", answer: "withdrawn" },
     { text: "They're ___ their investment slowly, not all at once.", answer: "withdrawing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'each'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'were'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "'Need to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "'A large' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'been'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

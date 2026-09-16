@@ -20,4 +20,19 @@ export default {
     { text: "The shelf holds a few small ___ items.", answer: "decorative" },
     { text: "We're ___ the porch for the party.", answer: "decorating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Want to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'A few' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'Each'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was' and 'tastefully'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The blank is describing a quality here, so it needs the adjective form, even without 'is', 'are', or an article nearby." },
+    { note: "'We're' means 'We are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

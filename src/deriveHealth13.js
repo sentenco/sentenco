@@ -18,4 +18,17 @@ export default {
     { text: "The batch of medicine was recalled after being ___.", answer: "contaminated" },
     { text: "The leak was ___ nearby wells.", answer: "contaminating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'be'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'were' and 'slowly'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "A preposition like 'of' is always followed by a noun, not a verb." },
+    { note: "The word right before the blank is 'being'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'was'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

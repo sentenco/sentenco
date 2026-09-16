@@ -18,4 +18,17 @@ export default {
     { text: "The family ___ twice in three years.", answer: "relocated" },
     { text: "She's ___ her whole office to another state.", answer: "relocating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'Their'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'We're' means 'We are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

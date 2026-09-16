@@ -18,4 +18,17 @@ export default {
     { text: "She ___ a day earlier than planned.", answer: "arrived" },
     { text: "Passengers are ___ at gate twelve now.", answer: "arriving" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'should'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'Our'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "'Please' asking someone to do something works like 'let's': the verb right after it stays in its plain form." },
+    { note: "'A delayed' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'are'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

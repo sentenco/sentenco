@@ -20,4 +20,19 @@ export default {
     { text: "The labor dispute was ___ within a month.", answer: "arbitrated" },
     { text: "They're ___ the disagreement this afternoon.", answer: "arbitrating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'An independent' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

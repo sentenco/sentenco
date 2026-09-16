@@ -18,4 +18,17 @@ export default {
     { text: "They ___ each other after playing together once.", answer: "followed" },
     { text: "She's ___ the tournament results closely.", answer: "following" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'should'. After a modal, the verb stays in its plain form." },
+    { note: "'Every new' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'A new' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

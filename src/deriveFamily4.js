@@ -20,4 +20,19 @@ export default {
     { text: "He ___ on his sister to wake him up.", answer: "depended" },
     { text: "Plans change ___ on my parents' work schedule.", answer: "depending" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "The word right before the blank is 'really'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'are' and 'more'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'It's' means 'It is'. After is/am/is/are, even with 'all' in between, the verb takes the -ing form because it's happening right now." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "'The most' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'Being' and 'financially'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'Depending on' is a fixed expression that always uses the -ing form to show what something is based on." },
+  ],
 };

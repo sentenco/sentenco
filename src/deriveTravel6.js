@@ -20,4 +20,19 @@ export default {
     { text: "The neighborhood has a long ___ history.", answer: "immigrant" },
     { text: "They're ___ next spring after the paperwork clears.", answer: "immigrating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Many families' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'A long' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

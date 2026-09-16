@@ -18,4 +18,17 @@ export default {
     { text: "He ___ heavily to start his business.", answer: "borrowed" },
     { text: "The company reduced its ___ this year.", answer: "borrowing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'Every'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "'Had to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "A preposition like 'of' is always followed by a noun, not a verb." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The blank comes right after 'its'. After a word like that, the next word is a noun." },
+  ],
 };

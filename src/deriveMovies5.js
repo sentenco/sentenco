@@ -20,4 +20,19 @@ export default {
     { text: "Everyone was ___ by the ending.", answer: "impressed" },
     { text: "This actor keeps ___ people with every new role.", answer: "impressing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'really'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'A strong' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'genuinely'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'Keeps' is one of a small group of verbs (keep, stop, avoid, enjoy, consider, and a few others) that are always followed by the -ing form, with no 'to' and no 'be' in between." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'My first' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'Keeps' is one of a small group of verbs (keep, stop, avoid, enjoy, consider, and a few others) that are always followed by the -ing form, with no 'to' and no 'be' in between." },
+  ],
 };

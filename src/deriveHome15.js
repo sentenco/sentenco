@@ -18,4 +18,17 @@ export default {
     { text: "The new build had ___ on the shared boundary.", answer: "encroached" },
     { text: "The construction is slowly ___ toward their fence.", answer: "encroaching" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'A small' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'are'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'the'. After a word like that, the next word is a noun." },
+    { note: "'Had' asks or talks about something already finished, so the verb takes the -ed form." },
+    { note: "The word right before the blank is 'is' and 'slowly'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

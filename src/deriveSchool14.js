@@ -18,4 +18,17 @@ export default {
     { text: "The quiz was ___ based on skill level.", answer: "differentiated" },
     { text: "She's ___ the two arguments in her essay.", answer: "differentiating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'Can'. After a modal, the verb stays in its plain form." },
+    { note: "A preposition like 'on' is always followed by a noun, not a verb." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'We're' means 'We are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

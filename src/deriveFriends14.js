@@ -18,4 +18,17 @@ export default {
     { text: "She felt ___ after moving to a new school.", answer: "alienated" },
     { text: "His constant criticism is ___ his closest friends.", answer: "alienating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "A preposition like 'of' is always followed by a noun, not a verb." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The word right before the blank is 'was' and 'slowly'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

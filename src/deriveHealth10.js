@@ -18,4 +18,17 @@ export default {
     { text: "He wasn't getting enough ___ during his illness.", answer: "nourishment" },
     { text: "The plants looked healthy and well ___.", answer: "nourished" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Helps' is followed by the plain base form of the next verb, with no 'to' in between." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "The word right before the blank is 'looked' and 'well'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'really'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'Very' right before the blank is describing a quality, so it needs the adjective form." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+  ],
 };

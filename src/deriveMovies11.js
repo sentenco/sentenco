@@ -18,4 +18,17 @@ export default {
     { text: "The whole theater was ___ from the first minute.", answer: "captivated" },
     { text: "It's one of the most ___ documentaries this year.", answer: "captivating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The word right before the blank is 'were'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'A truly' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word before the blank is the modal 'can'. After a modal, the verb stays in its plain form." },
+    { note: "'Audience's' is a possessive right before the blank, so a noun comes next." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'The most' is an article plus a describing word, so the blank needs to be a noun next." },
+  ],
 };

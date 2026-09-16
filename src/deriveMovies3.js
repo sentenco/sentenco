@@ -20,4 +20,19 @@ export default {
     { text: "They ___ out the scene twice before it worked.", answer: "acted" },
     { text: "She's studying ___ at a drama school.", answer: "acting" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Wants to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "A preposition like 'of' is always followed by a noun, not a verb." },
+    { note: "The blank comes right after 'His'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'Every'. After a word like that, the next word is a noun." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'She's' means 'She is'. After is/am/is/are, even with 'studying' in between, the verb takes the -ing form because it's happening right now." },
+  ],
 };

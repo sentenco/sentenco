@@ -20,4 +20,19 @@ export default {
     { text: "She felt ___ after watching the finals.", answer: "motivated" },
     { text: "The captain is always ___ everyone before games.", answer: "motivating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'Her extra' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'really'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'A short' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'is' and 'really'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'is' and 'always'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+  ],
 };

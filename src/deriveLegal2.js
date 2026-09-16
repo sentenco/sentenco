@@ -20,4 +20,19 @@ export default {
     { text: "The state's ___ votes decided the race.", answer: "electoral" },
     { text: "They're ___ a new union leader this week.", answer: "electing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "'The next' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The blank sits right before a noun, describing what kind it is. That's the adjective form, even without 'is' or 'are' nearby." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

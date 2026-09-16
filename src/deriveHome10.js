@@ -18,4 +18,17 @@ export default {
     { text: "She ___ in the countryside after retiring.", answer: "settled" },
     { text: "He's still ___ his belongings into the new place.", answer: "settling" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'The'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "The blank comes right after 'a'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'He's' means 'He is'. After is/am/is/are, even with 'still' in between, the verb takes the -ing form because it's happening right now." },
+  ],
 };

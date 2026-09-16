@@ -18,4 +18,17 @@ export default {
     { text: "She's always ___ her siblings toward good decisions.", answer: "guided" },
     { text: "He's ___ his younger brother through his first job.", answer: "guiding" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "'Mom's' is a possessive right before the blank, so a noun comes next." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word before the blank is the modal 'will'. After a modal, the verb stays in its plain form." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "'She's' means 'She is'. With 'always' in between, it's describing a quality, not an action, so it needs the adjective form." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

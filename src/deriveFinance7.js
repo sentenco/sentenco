@@ -18,4 +18,17 @@ export default {
     { text: "The rent was ___ directly into our account.", answer: "deposited" },
     { text: "They're ___ the funds tomorrow morning.", answer: "depositing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "'Please' asking someone to do something works like 'let's': the verb right after it stays in its plain form." },
+    { note: "The blank comes right after 'Every'. After a word like that, the next word is a noun." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "'Need to' ends in 'to', so the verb after it stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'each'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

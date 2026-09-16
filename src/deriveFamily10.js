@@ -18,4 +18,17 @@ export default {
     { text: "They ___ him to keep practicing the piano.", answer: "encouraged" },
     { text: "His grandmother always gives ___ advice.", answer: "encouraging" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'should'. After a modal, the verb stays in its plain form." },
+    { note: "'Family's' is a possessive right before the blank, so a noun comes next." },
+    { note: "The word right before the blank is 'felt'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'is' and 'always so'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'A little' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "The blank sits right before the noun 'advice', describing what kind of advice it is. That's the adjective form, even with no article in front of it." },
+  ],
 };

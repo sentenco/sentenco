@@ -20,4 +20,19 @@ export default {
     { text: "She ___ instead of judging him right away.", answer: "empathized" },
     { text: "He's ___ with his friend's stress about exams.", answer: "empathizing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'The most' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'Her'. After a word like that, the next word is a noun." },
+    { note: "The blank is describing a quality here, so it needs the adjective form, even without 'is', 'are', or an article nearby." },
+    { note: "There's no helper verb here. The sentence goes straight into the action, so this is the simple past." },
+    { note: "'He's' means 'He is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

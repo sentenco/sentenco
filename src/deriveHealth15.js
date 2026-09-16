@@ -18,4 +18,17 @@ export default {
     { text: "He was fully ___ before the outbreak began.", answer: "immunized" },
     { text: "They're ___ the whole town this week.", answer: "immunizing" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'will'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'Her'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'been'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The word right before the blank is 'are'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "This is the plain form of the verb, used here for an action that happens regularly, not just once." },
+    { note: "A preposition like 'of' is always followed by a noun, not a verb." },
+    { note: "The word right before the blank is 'was' and 'fully'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

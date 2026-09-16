@@ -18,4 +18,17 @@ export default {
     { text: "The library has ___ its study spaces.", answer: "improved" },
     { text: "She's ___ her focus during exams.", answer: "improving" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'will'. After a modal, the verb stays in its plain form." },
+    { note: "'There's' means 'There is'. With 'real' in between, it's describing a quality, not an action, so it needs the adjective form." },
+    { note: "'Has' asks or talks about something already finished, so the verb takes the -ed form." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'A big' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "'Has' asks or talks about something already finished, so the verb takes the -ed form." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

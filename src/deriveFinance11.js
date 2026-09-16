@@ -18,4 +18,17 @@ export default {
     { text: "Extra funds were ___ to the emergency account.", answer: "allocated" },
     { text: "She's ___ her bonus between savings and investing.", answer: "allocating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word before the blank is the modal 'will'. After a modal, the verb stays in its plain form." },
+    { note: "The blank comes right after 'Her'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'They're' means 'They are'. After are/am/is/are, the verb takes the -ing form because it's happening right now." },
+    { note: "The word before the blank is the modal 'should'. After a modal, the verb stays in its plain form." },
+    { note: "'Fund's' is a possessive right before the blank, so a noun comes next." },
+    { note: "The word right before the blank is 'were'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'She's' means 'She is'. After is/am/is/are, the verb takes the -ing form because it's happening right now." },
+  ],
 };

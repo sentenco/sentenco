@@ -18,4 +18,17 @@ export default {
     { text: "His role was more ___ than the real story warranted.", answer: "glorified" },
     { text: "The show avoids ___ its flawed main character.", answer: "glorifying" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "The blank comes right after 'the'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was' and 'somewhat'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "A preposition like 'of' is followed by the -ing form, never 'to plus the base verb'." },
+    { note: "'Doesn't' is a negative form, and negatives are followed by the plain base form of the verb, just like a modal." },
+    { note: "The blank comes right after 'any'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was' and 'more'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'Avoids' is one of a small group of verbs (keep, stop, avoid, enjoy, consider, and a few others) that are always followed by the -ing form, with no 'to' and no 'be' in between." },
+  ],
 };

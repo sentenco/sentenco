@@ -20,4 +20,19 @@ export default {
     { text: "My grandmother was self ___ and loved reading.", answer: "educated" },
     { text: "The teacher spent the class ___ us about recycling.", answer: "educating" },
   ],
+  // For each sentence, above, at the same index: a short, self-contained
+  // note for a first-time teacher to read or paraphrase when they ask the
+  // student to justify their answer, right before marking it correct.
+  teacherGuide: [
+    { note: "The word right before the blank is 'to'. After 'to', the verb stays in its plain form, no -ing and no -ed." },
+    { note: "'A good' is an article plus a describing word, so the blank needs to be a noun next." },
+    { note: "The word right before the blank is 'is' and 'well'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "The blank comes right after 'an'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'is'. That's a linking verb like 'is', so the verb after it takes the -ing form because it's happening right now." },
+    { note: "'Help' is followed by the plain base form of the next verb, with no 'to' in between." },
+    { note: "The word itself names the idea being talked about here, so it needs the noun form, even with no 'a' or 'the' in front of it." },
+    { note: "The blank comes right after 'Every'. After a word like that, the next word is a noun." },
+    { note: "The word right before the blank is 'was' and 'self'. This is describing a quality, not an action, so it needs the adjective form." },
+    { note: "'The class' is an article plus a describing word, so the blank needs to be a noun next." },
+  ],
 };
