@@ -37,6 +37,16 @@ import storybook27CoverImg from "./assets/storybook27/cover.jpg";
 import storybook28CoverImg from "./assets/storybook28/cover.jpg";
 import storybook29CoverImg from "./assets/storybook29/cover.jpg";
 import storybook30CoverImg from "./assets/storybook30/cover.jpg";
+import listeningBgImg from "./assets/listening/page-bg.jpg";
+import listeningGistImg from "./assets/listening/gist.jpg";
+import listeningNoteCompletionImg from "./assets/listening/note-completion.jpg";
+import listeningSequencingImg from "./assets/listening/sequencing.jpg";
+import listeningInferenceImg from "./assets/listening/inference.jpg";
+import listeningFollowDirectionsImg from "./assets/listening/follow-directions.jpg";
+import listeningWhichPictureImg from "./assets/listening/which-picture.jpg";
+import listeningWhosWhoImg from "./assets/listening/whos-who.jpg";
+import listeningFillScheduleImg from "./assets/listening/fill-schedule.jpg";
+import listeningSpellItOutImg from "./assets/listening/spell-it-out.jpg";
 import storybook13CoverImg from "./assets/storybook13/cover.jpg";
 import storybook21CoverImg from "./assets/storybook21/cover.jpg";
 import storybook22CoverImg from "./assets/storybook22/cover.jpg";
@@ -455,160 +465,74 @@ const LISTENING_ACTIVITIES = [
   {
     key: "gist-mc",
     tag: "GIST",
-    tagClass: "gist",
+    tagClass: "a",
     title: "Gist multiple choice",
     desc: "Play one short clip, ask one question, pick the right answer from three choices.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <rect x="8" y="14" width="36" height="10" rx="5" stroke="#157A5A" strokeWidth="3" />
-        <rect x="8" y="27" width="36" height="10" rx="5" stroke="#157A5A" strokeWidth="3" />
-        <rect x="8" y="40" width="36" height="10" rx="5" fill="#157A5A" />
-        <circle cx="52" cy="45" r="9" fill="#FF6B4A" />
-        <path d="M48 45l2.4 2.6L56 42" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      </svg>
-    ),
+    image: listeningGistImg,
   },
   {
     key: "note-completion",
     tag: "DETAIL",
-    tagClass: "detail",
+    tagClass: "a",
     title: "Note completion",
     desc: "Play a longer clip, then fill in the exact word, number, or day you heard.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <rect x="12" y="8" width="40" height="48" rx="7" fill="#fff" stroke="#157A5A" strokeWidth="3" />
-        <line x1="19" y1="21" x2="45" y2="21" stroke="#157A5A" strokeWidth="3" strokeLinecap="round" />
-        <line x1="19" y1="31" x2="38" y2="31" stroke="#157A5A" strokeWidth="3" strokeLinecap="round" />
-        <line x1="19" y1="41" x2="30" y2="41" stroke="#B7DED0" strokeWidth="3" strokeLinecap="round" strokeDasharray="1 6" />
-        <rect x="32" y="37" width="13" height="9" rx="2.5" fill="#FFE3DA" stroke="#FF6B4A" strokeWidth="2" />
-      </svg>
-    ),
+    image: listeningNoteCompletionImg,
   },
   {
     key: "sequencing",
     tag: "ORDER",
-    tagClass: "order",
+    tagClass: "b",
     title: "Sequencing",
     desc: "Listen to a story or steps, then drag the events into the order they happened.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <circle cx="14" cy="40" r="9" fill="#FF6B4A" />
-        <text x="14" y="44" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="11" fill="#fff">2</text>
-        <circle cx="32" cy="18" r="9" fill="#E3F3EC" stroke="#157A5A" strokeWidth="2.5" />
-        <text x="32" y="22" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="11" fill="#0E5C43">1</text>
-        <circle cx="50" cy="40" r="9" fill="#E3F3EC" stroke="#157A5A" strokeWidth="2.5" />
-        <text x="50" y="44" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="11" fill="#0E5C43">3</text>
-        <path d="M23 24 L18 32" stroke="#8FA69C" strokeWidth="2" strokeDasharray="2 4" strokeLinecap="round" />
-        <path d="M23 32 L41 24" stroke="#8FA69C" strokeWidth="2" strokeDasharray="2 4" strokeLinecap="round" />
-      </svg>
-    ),
+    image: listeningSequencingImg,
   },
   {
     key: "inference",
     tag: "TONE",
-    tagClass: "tone",
+    tagClass: "b",
     title: "Inference / feeling check",
     desc: "The words alone don't give it away. Guess how the speaker feels or what they really mean.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <path d="M10 14h36a6 6 0 016 6v14a6 6 0 01-6 6H28l-9 8v-8h-9a6 6 0 01-6-6V20a6 6 0 016-6z" fill="#E3F3EC" stroke="#157A5A" strokeWidth="3" />
-        <circle cx="22" cy="27" r="2.6" fill="#0E5C43" />
-        <circle cx="34" cy="27" r="2.6" fill="#0E5C43" />
-        <path d="M20 34c4 3 12 3 16 -1" stroke="#0E5C43" strokeWidth="2.6" strokeLinecap="round" fill="none" />
-        <circle cx="50" cy="12" r="9" fill="#FF6B4A" />
-        <text x="50" y="16" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="12" fill="#fff">?</text>
-      </svg>
-    ),
+    image: listeningInferenceImg,
   },
   {
     key: "follow-directions",
     tag: "SPATIAL",
-    tagClass: "spatial",
+    tagClass: "b",
     title: "Follow the directions",
     desc: "Hear directions from a starting point, then tap the correct place on a map.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <rect x="7" y="7" width="50" height="50" rx="10" fill="#E3F3EC" />
-        <path d="M10 45 C22 38, 28 50, 40 40 C46 35, 48 42, 54 36" stroke="#8FBEDB" strokeWidth="6" strokeLinecap="round" fill="none" />
-        <rect x="34" y="14" width="16" height="13" rx="3" fill="#fff" stroke="#157A5A" strokeWidth="2.5" />
-        <text x="42" y="24" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="9.5" fill="#0E5C43">B</text>
-        <path d="M14 40 C13 32 20 30 20 30 C20 30 27 32 26 40 C25.5 44 20 50 20 50 C20 50 14.5 44 14 40Z" fill="#FF6B4A" />
-        <circle cx="20" cy="38" r="3" fill="#fff" />
-      </svg>
-    ),
+    image: listeningFollowDirectionsImg,
   },
   {
     key: "which-picture",
     tag: "VISUAL",
-    tagClass: "visual",
+    tagClass: "b",
     title: "Which picture?",
     desc: "Three similar pictures, one clip describing details. Pick the one that matches.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <rect x="6" y="20" width="16" height="16" rx="4" fill="#fff" stroke="#8FA69C" strokeWidth="2.5" />
-        <circle cx="14" cy="28" r="3.4" fill="#8FA69C" />
-        <rect x="24" y="20" width="16" height="16" rx="4" fill="#E3F3EC" stroke="#157A5A" strokeWidth="3" />
-        <circle cx="32" cy="28" r="3.4" fill="#0E5C43" />
-        <circle cx="32" cy="12" r="8" fill="#157A5A" />
-        <path d="M28.4 12l2.4 2.6L36 9" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <rect x="42" y="20" width="16" height="16" rx="4" fill="#fff" stroke="#8FA69C" strokeWidth="2.5" />
-        <circle cx="50" cy="28" r="3.4" fill="#8FA69C" />
-      </svg>
-    ),
+    image: listeningWhichPictureImg,
   },
   {
     key: "whos-who",
     tag: "VISUAL",
-    tagClass: "visual",
+    tagClass: "b",
     title: "Who's who?",
     desc: "Hear someone describe a person in a group picture, then tap who they mean.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <circle cx="14" cy="24" r="7" fill="#8FA69C" />
-        <path d="M4 46c0-8 6.5-12 10-12s10 4 10 12" fill="#8FA69C" />
-        <circle cx="50" cy="24" r="7" fill="#8FA69C" />
-        <path d="M40 46c0-8 6.5-12 10-12s10 4 10 12" fill="#8FA69C" />
-        <circle cx="32" cy="26" r="21" fill="none" stroke="#157A5A" strokeWidth="3" />
-        <circle cx="32" cy="21" r="7.5" fill="#E3F3EC" stroke="#157A5A" strokeWidth="3" />
-        <path d="M20 46c0-9 7-13.5 12-13.5s12 4.5 12 13.5" fill="#E3F3EC" stroke="#157A5A" strokeWidth="3" />
-      </svg>
-    ),
+    image: listeningWhosWhoImg,
   },
   {
     key: "fill-schedule",
     tag: "DETAIL",
-    tagClass: "detail",
+    tagClass: "a",
     title: "Fill the schedule",
     desc: "Hear a timetable or price list read aloud, then fill each cell of the grid.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <rect x="8" y="12" width="48" height="40" rx="7" fill="#fff" stroke="#157A5A" strokeWidth="3" />
-        <line x1="8" y1="26" x2="56" y2="26" stroke="#157A5A" strokeWidth="2.5" />
-        <line x1="8" y1="39" x2="56" y2="39" stroke="#157A5A" strokeWidth="2.5" />
-        <line x1="28" y1="12" x2="28" y2="52" stroke="#157A5A" strokeWidth="2.5" />
-        <rect x="10.5" y="14.5" width="15" height="9.5" rx="2" fill="#157A5A" />
-        <rect x="30.5" y="27.5" width="23.5" height="9.5" rx="2" fill="#FFE3DA" stroke="#FF6B4A" strokeWidth="2" strokeDasharray="2 3" />
-      </svg>
-    ),
+    image: listeningFillScheduleImg,
   },
   {
     key: "spell-it-out",
     tag: "SPELLING",
-    tagClass: "spelling",
+    tagClass: "a",
     title: "Spell it out",
     desc: "Someone spells a name or reads a code aloud. Type exactly what you hear.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none">
-        <rect x="4" y="26" width="14" height="16" rx="4" fill="#E3F3EC" stroke="#157A5A" strokeWidth="2.5" />
-        <text x="11" y="38" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="12" fill="#0E5C43">J</text>
-        <rect x="20" y="26" width="14" height="16" rx="4" fill="#E3F3EC" stroke="#157A5A" strokeWidth="2.5" />
-        <text x="27" y="38" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="12" fill="#0E5C43">A</text>
-        <rect x="35" y="19" width="15" height="18" rx="4" fill="#FF6B4A" transform="rotate(-8 42 28)" />
-        <text x="42.5" y="32" textAnchor="middle" fontFamily="Fredoka, sans-serif" fontWeight="700" fontSize="13" fill="#fff" transform="rotate(-8 42 28)">C</text>
-        <rect x="52" y="26" width="9" height="16" rx="4" fill="none" stroke="#8FA69C" strokeWidth="2" strokeDasharray="2 3" />
-        <line x1="10" y1="48" x2="46" y2="48" stroke="#8FA69C" strokeWidth="2" strokeDasharray="1 5" strokeLinecap="round" />
-      </svg>
-    ),
+    image: listeningSpellItOutImg,
   },
 ];
 
@@ -2370,27 +2294,25 @@ export default function Library() {
         ) : category === "Writing" ? (
           <WritingActivities query={query} />
         ) : category === "Listening" ? (
-          <div className="dyn-landing dyn-landing--listen">
-            <div className="dyn-landing-hero">
-              <span className="dyn-landing-eyebrow">Sentivo · Listening</span>
-              <h1><span className="dyn-landing-pill">LISTEN</span></h1>
-              <p className="cl-sub">Pre-listening, while-listening, post-listening lessons built for real listening skill, not just answer-hunting.</p>
-            </div>
-            <div className="dyn-landing-row"></div>
-
-            <div className="lst-intro">
-              <p className="lst-intro-title">Nine ways to actually listen</p>
-              <p className="lst-intro-desc">Every Listening lesson will use one of these activity types, built for real listening skill: gist, detail, order, tone, and spatial reasoning, not just answer-hunting. Lessons are still being built, here's what's coming.</p>
+          <div className="lst-page" style={{ backgroundImage: `url(${listeningBgImg})` }}>
+            <div className="lst-hero">
+              <span className="lst-hero-eyebrow">Sentivo · Listening</span>
+              <h1 className="lst-hero-title">Listen Up!</h1>
+              <p className="lst-hero-sub">Below are the activities you will see in Listening lessons. Each one builds a different skill, like catching small details, following directions, or understanding tone. It feels like real listening, not just guessing.</p>
             </div>
 
             <div className="lst-grid">
               {LISTENING_ACTIVITIES.map((a) => (
                 <div className="lst-card" key={a.key}>
-                  <span className="lst-soon">Coming soon</span>
-                  <div className="lst-icon">{a.icon}</div>
-                  <span className={`lst-tag lst-tag--${a.tagClass}`}>{a.tag}</span>
-                  <p className="lst-title">{a.title}</p>
-                  <p className="lst-desc">{a.desc}</p>
+                  <div className="lst-card-art"><img src={a.image} alt={a.title} /></div>
+                  <div className="lst-card-body">
+                    <div className="lst-tag-row">
+                      <span className={`lst-tag lst-tag--${a.tagClass}`}>{a.tag}</span>
+                      <span className="lst-soon">Coming soon</span>
+                    </div>
+                    <p className="lst-title">{a.title}</p>
+                    <p className="lst-desc">{a.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -3172,9 +3094,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .dyn-landing--writing {
   background: linear-gradient(180deg, #F3FAF8 0%, #E4F1EC 100%);
 }
-.dyn-landing--listen {
-  background: linear-gradient(180deg, #F0F6F4 0%, #DEF0EA 100%);
-}
 .dyn-landing-hero { text-align: center; }
 .dyn-landing-eyebrow {
   display: block;
@@ -3186,7 +3105,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 }
 .dyn-landing--vocab .dyn-landing-eyebrow { color: #96721B; }
 .dyn-landing--writing .dyn-landing-eyebrow { color: #3F7A4E; }
-.dyn-landing--listen .dyn-landing-eyebrow { color: #157A5A; }
 .dyn-landing-pill {
   display: inline-flex;
   align-items: center;
@@ -3201,15 +3119,12 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 }
 .dyn-landing--vocab .dyn-landing-pill { background: rgba(184,140,26,0.16); }
 .dyn-landing--writing .dyn-landing-pill { background: rgba(63,122,78,0.14); }
-.dyn-landing--listen .dyn-landing-pill { background: rgba(21,122,90,0.14); color: #157A5A; }
 .dyn-landing-row { position: relative; height: 2px; width: 100%; max-width: 1040px; margin: clamp(22px, 2.8vw, 32px) 0; }
 .dyn-landing--vocab .dyn-landing-row { background: #E8D6A0; }
 .dyn-landing--writing .dyn-landing-row { background: #C3DCC0; }
-.dyn-landing--listen .dyn-landing-row { background: #B7DED0; }
 .dyn-landing-row::before, .dyn-landing-row::after { content: ""; position: absolute; top: -3px; width: 8px; height: 8px; border-radius: 50%; }
 .dyn-landing--vocab .dyn-landing-row::before, .dyn-landing--vocab .dyn-landing-row::after { background: #B88C1A; }
 .dyn-landing--writing .dyn-landing-row::before, .dyn-landing--writing .dyn-landing-row::after { background: #3F7A4E; }
-.dyn-landing--listen .dyn-landing-row::before, .dyn-landing--listen .dyn-landing-row::after { background: #157A5A; }
 .dyn-landing-row::before { left: 0; }
 .dyn-landing-row::after { right: 0; }
 .dyn-landing .cover-grid { justify-content: center; }
@@ -3221,44 +3136,44 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .dyn-landing-soon-desc { font-family: 'Quicksand', sans-serif; font-size: 14px; color: #6B6580; margin: 0; }
 
 /* ---------- Listening category hub: 9 activity types ---------- */
-.lst-intro { max-width: 640px; text-align: center; margin: 0 auto clamp(20px, 3vw, 30px); }
-.lst-intro-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); color: #2B2A4A; margin: 0 0 8px; }
-.lst-intro-desc { font-family: 'Quicksand', sans-serif; font-size: 14.5px; line-height: 1.55; color: #6B6580; margin: 0; }
-.lst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; width: 100%; max-width: 1040px; margin: 0 auto; }
+.lst-page {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(10px, 1.6vw, 18px) 0 40px;
+  background-color: #FEF6E6;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 26px;
+}
+.lst-hero { position: relative; padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 40px) 6px; text-align: center; }
+.lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
+.lst-hero-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(26px, 4vw, 38px); color: #3A2E1F; margin: 0 0 10px; }
+.lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #7A6B54; max-width: 580px; margin: 0 auto; line-height: 1.6; }
+
+.lst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; padding: 22px clamp(16px, 3vw, 30px) 0; }
 @media (max-width: 760px) { .lst-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .lst-grid { grid-template-columns: 1fr; } }
+
 .lst-card {
-  position: relative;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 12px 28px rgba(18,59,46,0.10);
-  padding: 20px 20px 18px;
+  border-radius: 22px;
+  box-shadow: 0 16px 32px rgba(58,46,31,0.12);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  text-align: left;
 }
-.lst-soon {
-  position: absolute;
-  top: 14px; right: 14px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 10.5px;
-  letter-spacing: 0.03em;
-  color: #B88C1A;
-  background: rgba(184,140,26,0.14);
-  padding: 3px 9px;
-  border-radius: 999px;
-}
-.lst-icon { width: 60px; height: 60px; border-radius: 16px; background: rgba(21,122,90,0.10); display: flex; align-items: center; justify-content: center; }
-.lst-icon svg { width: 36px; height: 36px; display: block; }
-.lst-tag { align-self: flex-start; font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; padding: 3px 9px; border-radius: 999px; }
-.lst-tag--gist, .lst-tag--detail { color: #157A5A; background: rgba(21,122,90,0.12); }
-.lst-tag--order, .lst-tag--spatial, .lst-tag--visual { color: #2E6FA7; background: rgba(46,111,167,0.12); }
-.lst-tag--tone { color: #A24B87; background: rgba(162,75,135,0.12); }
-.lst-tag--spelling { color: #B26A00; background: rgba(178,106,0,0.12); }
-.lst-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: #2B2A4A; margin: 0; }
-.lst-desc { font-family: 'Quicksand', sans-serif; font-size: 13px; line-height: 1.5; color: #6B6580; margin: 0; }
+.lst-card-art { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #FBEBD3; }
+.lst-card-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lst-card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.lst-tag-row { display: flex; align-items: center; justify-content: space-between; }
+.lst-soon { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 10px; color: #A6987F; }
+.lst-tag { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 999px; }
+.lst-tag--a { color: #B8791F; background: #FBEBD3; }
+.lst-tag--b { color: #7D3868; background: #F5E3EF; }
+.lst-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16.5px; color: #3A2E1F; margin: 0; }
+.lst-desc { font-family: 'Quicksand', sans-serif; font-size: 12.5px; line-height: 1.5; color: #7A6B54; margin: 0; }
 
 /* ---------- Customized Lessons landing ---------- */
 .cl-page { width: 100%; max-width: 1040px; margin: 0 auto; padding: clamp(10px, 1.6vw, 18px) 0 40px; }
