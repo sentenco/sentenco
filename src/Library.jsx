@@ -3143,7 +3143,11 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   padding: clamp(10px, 1.6vw, 18px) 0 40px;
   background-color: #FEF6E6;
   background-position: center top;
-  background-size: cover;
+  /* sized to width only, not "cover" -- cover scales against this
+     container's full height (hero + all 9 cards), which shrinks or
+     grows a lot as the grid reflows between 1/2/3 columns, blowing the
+     corner illustrations up far too large on wide screens */
+  background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 26px;
 }
