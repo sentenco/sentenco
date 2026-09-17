@@ -3127,8 +3127,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #5C5142; max-width: 520px; margin: 0 auto; line-height: 1.6; }
 
 .lst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; padding: 22px clamp(16px, 3vw, 30px) 0; }
-@media (max-width: 760px) { .lst-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .lst-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .lst-grid { grid-template-columns: 1fr; } }
 
 .lst-card {
   background: #fff;
