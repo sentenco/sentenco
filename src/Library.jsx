@@ -670,7 +670,7 @@ function GrammarFeature({ navigate, query }) {
         <span className="gdn-eyebrow">Sentivo · Grammar</span>
         <span className="gdn-badge">Let's Grow!</span>
         <h1 className="gdn-nameplate">🌱 The Grammar Garden</h1>
-        <p className="gdn-sub">Language grows from the roots up — plant a rule, watch a sentence bloom.</p>
+        <p className="gdn-sub">Each module below focuses on one grammar rule at a time, from simple patterns to full sentences.</p>
       </div>
 
       <div className="gdn-tabs">
@@ -986,7 +986,7 @@ function BookshelfFeature({ items, navigate, query }) {
       <div className="bkshf-masthead">
         <span className="bkshf-eyebrow">Sentivo · Reading</span>
         <h1 className="bkshf-nameplate">Library</h1>
-        <p className="bkshf-tagline">Pick a level, grab a book, start the quest.</p>
+        <p className="bkshf-tagline">Each book below is organized by CEFR level and age group, so you can read at the right difficulty.</p>
       </div>
 
       {!isSearching && (
@@ -2184,7 +2184,7 @@ export default function Library() {
             <div className="spklab-hero">
               <span className="spklab-eyebrow">Sentivo · Speaking</span>
               <h1 className="spklab-title">The Fluency Clinic</h1>
-              <p className="spklab-sub">Diagnose the gap. Prescribe the modality.</p>
+              <p className="spklab-sub">Each modality below targets a specific speaking skill, from building single sentences to full conversations.</p>
             </div>
             <svg className="spklab-lane" viewBox="0 0 520 20" preserveAspectRatio="none">
               <polyline points="0,10 150,10 165,10 174,3 183,17 192,10 200,10 320,10 335,10 344,3 353,17 362,10 370,10 520,10"
@@ -3934,7 +3934,8 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   font-weight: 700;
   font-size: 14px;
   color: #4E7099;
-  margin: 5px 0 0;
+  max-width: 480px;
+  margin: 5px auto 0;
 }
 
 .bkshf-row {
