@@ -3642,9 +3642,9 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 @media (max-width: 700px) {
   .gdn-page { background-image: var(--gdn-bg-portrait); }
 }
-.gdn-masthead { text-align: center; padding-top: 180px; }
+.gdn-masthead { text-align: center; padding-top: 30px; }
 @media (max-width: 700px) {
-  .gdn-masthead { padding-top: 190px; }
+  .gdn-masthead { padding-top: 88px; }
 }
 .gdn-eyebrow {
   font-family: 'Comic Neue', cursive, sans-serif;
