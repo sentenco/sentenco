@@ -2265,7 +2265,7 @@ export default function Library() {
             <div className="lst-hero">
               <span className="lst-hero-eyebrow">Sentivo · Listening</span>
               <h1 className="lst-hero-title">Listen Up!</h1>
-              <p className="lst-hero-sub">Below are the activities you will see in Listening lessons. Each one builds a different skill, like catching small details, following directions, or understanding tone.</p>
+              <p className="lst-hero-sub">Each activity below focuses on a specific listening skill, from catching key details to following spoken directions.</p>
             </div>
 
             <div className="lst-grid">
