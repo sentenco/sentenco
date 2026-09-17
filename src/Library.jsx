@@ -3889,7 +3889,9 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   width: 100%;
   max-width: 1320px;
   margin: -10px auto 0;
-  background-color: #FFF0C0;
+  /* matches the flat cream interior of bg.jpg exactly, so there's no
+     visible seam once the page scrolls past where the image ends */
+  background-color: #FDF9EA;
   background-position: top center;
   background-size: 100% auto;
   background-repeat: no-repeat;
