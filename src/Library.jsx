@@ -51,6 +51,7 @@ import clinicLandscapeImg from "./assets/clinic/landscape.jpg";
 import clinicPortraitImg from "./assets/clinic/portrait.jpg";
 import gdnLandscapeImg from "./assets/grammar-garden/landscape.jpg";
 import gdnPortraitImg from "./assets/grammar-garden/portrait.jpg";
+import bkshfBgImg from "./assets/library-hub/bg.jpg";
 import storybook13CoverImg from "./assets/storybook13/cover.jpg";
 import storybook21CoverImg from "./assets/storybook21/cover.jpg";
 import storybook22CoverImg from "./assets/storybook22/cover.jpg";
@@ -981,9 +982,7 @@ function BookshelfFeature({ items, navigate, query }) {
   }).filter((g) => g.books.length > 0);
 
   return (
-    <div className="bkshf-page">
-      <div className="bkshf-blob bkshf-blob--1" />
-      <div className="bkshf-blob bkshf-blob--2" />
+    <div className="bkshf-page" style={{ backgroundImage: `url(${bkshfBgImg})` }}>
       <div className="bkshf-masthead">
         <span className="bkshf-eyebrow">Sentivo · Reading</span>
         <h1 className="bkshf-nameplate">Library</h1>
@@ -3891,22 +3890,20 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   width: 100%;
   max-width: 1320px;
   margin: -10px auto 0;
-  background: #FFF0C0;
+  background-color: #FFF0C0;
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   border-radius: 26px;
   position: relative;
   overflow: hidden;
   padding: clamp(26px, 3.6vw, 48px) clamp(20px, 3.2vw, 40px) clamp(30px, 4vw, 52px);
 }
-.bkshf-blob {
-  position: absolute;
-  background: rgba(255,255,255,0.65);
-  z-index: 0;
-  pointer-events: none;
-}
-.bkshf-blob--1 { width: 260px; height: 200px; top: -70px; left: -50px; border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%; }
-.bkshf-blob--2 { width: 300px; height: 220px; top: -30px; right: -90px; border-radius: 58% 42% 35% 65% / 55% 45% 55% 45%; }
 
-.bkshf-masthead { text-align: center; position: relative; z-index: 1; }
+.bkshf-masthead { text-align: center; position: relative; z-index: 1; padding-top: 60px; }
+@media (max-width: 700px) {
+  .bkshf-masthead { padding-top: 46px; }
+}
 .bkshf-eyebrow {
   display: inline-block;
   font-family: 'Nunito', sans-serif;
