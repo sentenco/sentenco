@@ -2184,7 +2184,7 @@ export default function Library() {
             <div className="spklab-hero">
               <span className="spklab-eyebrow">Sentivo · Speaking</span>
               <h1 className="spklab-title">The Fluency Clinic</h1>
-              <p className="spklab-sub">Each modality below targets a specific speaking skill, from building single sentences to full conversations.</p>
+              <p className="spklab-sub">Each modality below is designed to close a specific speaking gap.</p>
             </div>
             <svg className="spklab-lane" viewBox="0 0 520 20" preserveAspectRatio="none">
               <polyline points="0,10 150,10 165,10 174,3 183,17 192,10 200,10 320,10 335,10 344,3 353,17 362,10 370,10 520,10"
