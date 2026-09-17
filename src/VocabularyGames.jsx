@@ -477,7 +477,7 @@ export default function VocabularyGames({ query }) {
           <div className="vg-hero">
             <span className="vg-eyebrow">Sentivo · Vocabulary</span>
             <h1><span className="vg-pill">Word Bank</span></h1>
-            <p className="vg-blurb">Dive in and grow your word bank, one word at a time.</p>
+            <p className="vg-blurb">Pick a game, meet a few new words, and actually remember them this time.</p>
           </div>
           {tabBar}
           <div className="vg-row"></div>
@@ -587,7 +587,7 @@ export default function VocabularyGames({ query }) {
         <div className="vg-hero">
           <span className="vg-eyebrow">Sentivo · Vocabulary</span>
           <h1><span className="vg-pill">🐬 Word Bank</span></h1>
-          <p className="vg-blurb">Dive in and grow your word bank, one word at a time.</p>
+          <p className="vg-blurb">Pick a game, meet a few new words, and actually remember them this time.</p>
         </div>
         {tabBar}
         <div className="vg-row"></div>
