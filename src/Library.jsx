@@ -3916,7 +3916,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   background: #14B8A6;
   border-radius: 999px;
   padding: 5px 14px;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 .bkshf-nameplate {
   font-family: 'Lilita One', cursive;
@@ -3934,7 +3934,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   font-weight: 700;
   font-size: 14px;
   color: #4E7099;
-  margin: 14px 0 0;
+  margin: 5px 0 0;
 }
 
 .bkshf-row {
@@ -3946,7 +3946,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   margin: clamp(26px, 3vw, 36px) 0;
 }
 
-.bkshf-level-tabs { position: relative; z-index: 1; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: clamp(18px, 2.4vw, 26px); }
+.bkshf-level-tabs { position: relative; z-index: 1; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 .bkshf-level-tab {
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
