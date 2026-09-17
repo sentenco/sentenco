@@ -4,6 +4,8 @@ import synonymsBanner from "./assets/vocabulary-games/synonyms-banner.jpg";
 import antonymsBanner from "./assets/vocabulary-games/antonyms-banner.jpg";
 import wordSortBanner from "./assets/vocabulary-games/word-sort-banner.jpg";
 import oddOneOutBanner from "./assets/vocabulary-games/odd-one-out-banner.jpg";
+import vgLandscapeImg from "./assets/vocab-hub/landscape.jpg";
+import vgPortraitImg from "./assets/vocab-hub/portrait.jpg";
 import SYNONYMS_TOPICS from "./synonymsTopics";
 import SYNONYMS_TOPICS_B1B2 from "./synonymsTopicsB1B2";
 import SYNONYMS_TOPICS_C1C2 from "./synonymsTopicsC1C2";
@@ -429,7 +431,7 @@ export default function VocabularyGames({ query }) {
     return (
       <div className="vg-shell">
         <style>{CSS}</style>
-        <div className="vg-page">
+        <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
           {atlasDecor}
           <div className="vg-hero">
             <span className="vg-eyebrow">Sentivo · Vocabulary</span>
@@ -470,7 +472,7 @@ export default function VocabularyGames({ query }) {
     return (
       <div className="vg-shell">
         <style>{CSS}</style>
-        <div className="vg-page">
+        <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
           {atlasDecor}
           <div className="vg-hero">
             <span className="vg-eyebrow">Sentivo · Vocabulary</span>
@@ -507,7 +509,7 @@ export default function VocabularyGames({ query }) {
     return (
       <div className="vg-shell">
         <style>{CSS}</style>
-        <div className="vg-page">
+        <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
           {atlasDecor}
           <div className="vg-hero">
             <span className="vg-eyebrow">Sentivo · Vocabulary</span>
@@ -580,7 +582,7 @@ export default function VocabularyGames({ query }) {
   return (
     <div className="vg-shell">
       <style>{CSS}</style>
-      <div className="vg-page">
+      <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
         {atlasDecor}
         <div className="vg-hero">
           <span className="vg-eyebrow">Sentivo · Vocabulary</span>
@@ -621,16 +623,26 @@ const CSS = `
   display: flex;
   flex-direction: column;
   align-items: center;
-  background:
-    repeating-linear-gradient(0deg, rgba(14,110,124,0.06) 0px, rgba(14,110,124,0.06) 1px, transparent 1px, transparent 64px),
-    repeating-linear-gradient(90deg, rgba(14,110,124,0.06) 0px, rgba(14,110,124,0.06) 1px, transparent 1px, transparent 64px),
-    linear-gradient(180deg, #EAF8F6 0%, #D6F1EC 100%);
+  background-color: #FCF9F0;
+  /* landscape art at full width; swapped for the taller portrait crop
+     at the same 700px "half screen vs full screen" breakpoint used on
+     the Listening, Fluency Clinic, and Grammar Garden pages */
+  background-image: var(--vg-bg-landscape);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
+@media (max-width: 700px) {
+  .vg-page { background-image: var(--vg-bg-portrait); }
+}
 .vg-decor { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-.vg-decor-item { position: absolute; color: #0E6E7C; opacity: 0.16; }
+.vg-decor-item { position: absolute; color: #483666; opacity: 0.16; }
 
-.vg-hero { text-align: center; position: relative; z-index: 1; }
+.vg-hero { text-align: center; position: relative; z-index: 1; padding-top: 20px; }
+@media (max-width: 700px) {
+  .vg-hero { padding-top: 28px; }
+}
 .vg-eyebrow {
   display: block;
   font-family: 'Mulish', sans-serif;
@@ -638,7 +650,7 @@ const CSS = `
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #0E6E7C;
+  color: #483666;
   margin-bottom: 12px;
 }
 .vg-pill {
@@ -646,31 +658,31 @@ const CSS = `
   font-family: 'Grandstander', cursive;
   font-weight: 700;
   font-size: clamp(24px, 3.4vw, 34px);
-  color: #0E6E7C;
+  color: #483666;
   background: rgba(255,255,255,0.55);
   border-radius: 999px;
   padding: 8px 26px;
 }
-.vg-blurb { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 14px; color: #3E8E92; margin: 14px 0 0; }
+.vg-blurb { font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 14px; color: #7C5CBF; margin: 14px 0 0; }
 
 .vg-maintabs { display: flex; gap: 10px; margin-top: 22px; position: relative; z-index: 1; }
 .vg-maintab {
   font-family: 'Grandstander', cursive;
   font-weight: 700;
   font-size: 14px;
-  color: #0E6E7C;
+  color: #483666;
   background: #FFFFFF;
   border: none;
   border-radius: 999px;
   padding: 10px 26px;
   cursor: pointer;
-  box-shadow: 0 4px 0 #BFE6E1;
+  box-shadow: 0 4px 0 #DCD2F0;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .vg-maintab:hover { transform: translateY(-1px); }
 .vg-maintab.is-active { color: #FFFFFF; background: #FF6F59; box-shadow: 0 4px 0 #D14E3B; }
 
-.vg-row { position: relative; height: 2px; width: 100%; max-width: 700px; margin: clamp(22px, 2.8vw, 32px) 0; background: #BFE6E1; z-index: 1; }
+.vg-row { position: relative; height: 2px; width: 100%; max-width: 700px; margin: clamp(22px, 2.8vw, 32px) 0; background: #DCD2F0; z-index: 1; }
 .vg-row::before, .vg-row::after { content: ""; position: absolute; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: #4FD1A5; }
 .vg-row::before { left: 0; }
 .vg-row::after { right: 0; }
