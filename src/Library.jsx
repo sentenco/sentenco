@@ -47,6 +47,8 @@ import listeningWhichPictureImg from "./assets/listening/which-picture.jpg";
 import listeningWhosWhoImg from "./assets/listening/whos-who.jpg";
 import listeningFillScheduleImg from "./assets/listening/fill-schedule.jpg";
 import listeningSpellItOutImg from "./assets/listening/spell-it-out.jpg";
+import clinicLandscapeImg from "./assets/clinic/landscape.jpg";
+import clinicPortraitImg from "./assets/clinic/portrait.jpg";
 import storybook13CoverImg from "./assets/storybook13/cover.jpg";
 import storybook21CoverImg from "./assets/storybook21/cover.jpg";
 import storybook22CoverImg from "./assets/storybook22/cover.jpg";
@@ -2171,49 +2173,10 @@ export default function Library() {
         ) : category === "Reading" ? (
           <BookshelfFeature items={filtered} navigate={navigate} query={query} />
         ) : category === "Speaking" ? (
-          <div className="spklab-page">
-            <div className="spklab-grid-overlay"></div>
-            <div className="spklab-vignette"></div>
-
-            <svg className="spklab-deco" style={{ top: "4%", left: 24, opacity: 0.14 }} width="70" height="70" viewBox="0 0 24 24" fill="none">
-              <path d="M6 3v6a4 4 0 0 0 8 0V3" strokeWidth="1.5" strokeLinecap="round" />
-              <circle cx="6" cy="3" r="1.1" fill="#10646B" />
-              <circle cx="14" cy="3" r="1.1" fill="#10646B" />
-              <path d="M10 12v3a5 5 0 0 0 5 5h1.5" strokeWidth="1.5" strokeLinecap="round" />
-              <circle cx="18.5" cy="20" r="2.4" fill="none" strokeWidth="1.5" />
-            </svg>
-            <svg className="spklab-deco" style={{ top: "8%", right: 28, opacity: 0.12, transform: "rotate(35deg)" }} width="56" height="56" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="10.5" width="3" height="3" fill="none" strokeWidth="1.4" />
-              <rect x="5" y="9" width="10" height="6" rx="1.5" fill="none" strokeWidth="1.4" />
-              <rect x="15" y="10.5" width="3" height="3" fill="none" strokeWidth="1.4" />
-              <line x1="18" y1="12" x2="22" y2="12" strokeWidth="1.4" strokeLinecap="round" />
-            </svg>
-            <svg className="spklab-deco" style={{ top: "22%", left: 40, opacity: 0.1, transform: "rotate(-18deg)" }} width="48" height="48" viewBox="0 0 24 24" fill="none">
-              <rect x="7" y="2" width="10" height="20" rx="5" strokeWidth="1.5" />
-              <line x1="7" y1="12" x2="17" y2="12" strokeWidth="1.5" />
-            </svg>
-            <svg className="spklab-deco" style={{ top: "30%", right: 46, opacity: 0.13 }} width="60" height="60" viewBox="0 0 24 24" fill="none">
-              <path d="M2 13 H6 L8 7 L11 19 L13 8 L14.5 13 H22" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <svg className="spklab-deco" style={{ bottom: "32%", left: 30, opacity: 0.11 }} width="50" height="50" viewBox="0 0 24 24" fill="none">
-              <path d="M12 3v18M3 12h18" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <svg className="spklab-deco" style={{ bottom: "26%", right: 30, opacity: 0.1, transform: "rotate(12deg)" }} width="46" height="64" viewBox="0 0 24 32" fill="none">
-              <rect x="8" y="2" width="8" height="22" rx="4" strokeWidth="1.5" />
-              <circle cx="12" cy="27" r="3.5" strokeWidth="1.5" />
-              <line x1="9.5" y1="10" x2="14.5" y2="10" strokeWidth="1.2" />
-              <line x1="9.5" y1="14" x2="14.5" y2="14" strokeWidth="1.2" />
-            </svg>
-            <svg className="spklab-deco" style={{ bottom: "12%", left: 50, opacity: 0.12 }} width="50" height="50" viewBox="0 0 24 24" fill="none">
-              <rect x="5" y="9" width="14" height="6" rx="3" strokeWidth="1.6" />
-              <line x1="12" y1="9" x2="12" y2="15" strokeWidth="1.6" />
-            </svg>
-            <svg className="spklab-deco" style={{ bottom: "6%", right: 40, opacity: 0.1, transform: "rotate(-10deg)" }} width="56" height="56" viewBox="0 0 24 24" fill="none">
-              <path d="M9 3 h6" strokeWidth="1.4" strokeLinecap="round" />
-              <path d="M10 3 v11 a2 2 0 0 0 4 0 V3" fill="none" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              <line x1="10" y1="10" x2="14" y2="10" strokeWidth="1.2" strokeLinecap="round" />
-            </svg>
-
+          <div
+            className="spklab-page"
+            style={{ "--spklab-bg-landscape": `url(${clinicLandscapeImg})`, "--spklab-bg-portrait": `url(${clinicPortraitImg})` }}
+          >
             <div className="spklab-hero">
               <span className="spklab-eyebrow">Sentivo · Speaking</span>
               <h1 className="spklab-title">The Fluency Clinic</h1>
@@ -3336,26 +3299,26 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .spklab-page {
   width: 100%;
   max-width: 1080px;
-  background: linear-gradient(180deg, #EAF6F4 0%, #DCF0ED 42%, #D2EBE7 100%);
+  background-color: #E4F3F1;
+  /* landscape art at full width; swapped for the taller portrait crop
+     at the same 700px breakpoint the card grid collapses to 1 column,
+     so the art always matches how tall the page actually is */
+  background-image: var(--spklab-bg-landscape);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   border-radius: 22px;
   padding: clamp(26px, 3.6vw, 48px) clamp(20px, 3.2vw, 40px);
   position: relative;
   overflow: hidden;
 }
-.spklab-grid-overlay {
-  position: absolute; inset: 0;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(16,100,107,0.07) 0px, rgba(16,100,107,0.07) 1px, transparent 1px, transparent 28px),
-    repeating-linear-gradient(90deg, rgba(16,100,107,0.07) 0px, rgba(16,100,107,0.07) 1px, transparent 1px, transparent 28px);
-  pointer-events: none;
+@media (max-width: 700px) {
+  .spklab-page { background-image: var(--spklab-bg-portrait); }
 }
-.spklab-vignette {
-  position: absolute; inset: 0;
-  box-shadow: inset 0 0 140px rgba(16,100,107,0.06);
-  pointer-events: none;
+.spklab-hero { text-align: center; max-width: 560px; margin: 0 auto; position: relative; z-index: 1; padding-top: 90px; }
+@media (max-width: 700px) {
+  .spklab-hero { padding-top: 140px; }
 }
-.spklab-deco { position: absolute; pointer-events: none; stroke: #10646B; z-index: 0; }
-.spklab-hero { text-align: center; max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
 .spklab-eyebrow {
   display: block;
   font-family: 'IBM Plex Sans', sans-serif;
