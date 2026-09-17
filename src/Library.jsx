@@ -49,6 +49,8 @@ import listeningFillScheduleImg from "./assets/listening/fill-schedule.jpg";
 import listeningSpellItOutImg from "./assets/listening/spell-it-out.jpg";
 import clinicLandscapeImg from "./assets/clinic/landscape.jpg";
 import clinicPortraitImg from "./assets/clinic/portrait.jpg";
+import gdnLandscapeImg from "./assets/grammar-garden/landscape.jpg";
+import gdnPortraitImg from "./assets/grammar-garden/portrait.jpg";
 import storybook13CoverImg from "./assets/storybook13/cover.jpg";
 import storybook21CoverImg from "./assets/storybook21/cover.jpg";
 import storybook22CoverImg from "./assets/storybook22/cover.jpg";
@@ -659,7 +661,10 @@ function GrammarFeature({ navigate, query }) {
   }
 
   return (
-    <div className="gdn-page">
+    <div
+      className="gdn-page"
+      style={{ "--gdn-bg-landscape": `url(${gdnLandscapeImg})`, "--gdn-bg-portrait": `url(${gdnPortraitImg})` }}
+    >
       <div className="gdn-masthead">
         <span className="gdn-eyebrow">Sentivo · Grammar</span>
         <span className="gdn-badge">Let's Grow!</span>
@@ -3621,15 +3626,26 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  background:
-    radial-gradient(#00000012 1.4px, transparent 1.5px) 0 0/16px 16px,
-    #FFF6E9;
+  background-color: #FFF6E9;
+  /* landscape art at full width; swapped for the taller portrait crop
+     at 700px, same "half screen vs full screen" breakpoint used on the
+     Listening and Fluency Clinic pages */
+  background-image: var(--gdn-bg-landscape);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   border: 4px solid #1A1A1A;
   border-radius: 26px;
   padding: clamp(26px, 3.6vw, 48px) clamp(20px, 3.2vw, 40px);
   box-shadow: 9px 9px 0 #1A1A1A;
 }
-.gdn-masthead { text-align: center; }
+@media (max-width: 700px) {
+  .gdn-page { background-image: var(--gdn-bg-portrait); }
+}
+.gdn-masthead { text-align: center; padding-top: 180px; }
+@media (max-width: 700px) {
+  .gdn-masthead { padding-top: 190px; }
+}
 .gdn-eyebrow {
   font-family: 'Comic Neue', cursive, sans-serif;
   font-weight: 700;
