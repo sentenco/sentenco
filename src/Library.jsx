@@ -3947,7 +3947,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   margin: clamp(26px, 3vw, 36px) 0;
 }
 
-.bkshf-level-tabs { position: relative; z-index: 1; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.bkshf-level-tabs { position: relative; z-index: 1; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
 .bkshf-level-tab {
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
