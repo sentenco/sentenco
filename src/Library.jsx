@@ -3320,9 +3320,9 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 @media (max-width: 700px) {
   .spklab-page { background-image: var(--spklab-bg-portrait); }
 }
-.spklab-hero { text-align: center; max-width: 560px; margin: 0 auto; position: relative; z-index: 1; padding-top: 90px; }
+.spklab-hero { text-align: center; max-width: 560px; margin: 0 auto; position: relative; z-index: 1; padding-top: 18px; }
 @media (max-width: 700px) {
-  .spklab-hero { padding-top: 140px; }
+  .spklab-hero { padding-top: 70px; }
 }
 .spklab-eyebrow {
   display: block;
