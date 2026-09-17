@@ -2296,11 +2296,9 @@ export default function Library() {
         ) : category === "Listening" ? (
           <div className="lst-page" style={{ backgroundImage: `url(${listeningBgImg})` }}>
             <div className="lst-hero">
-              <div className="lst-hero-banner">
-                <span className="lst-hero-eyebrow">Sentivo · Listening</span>
-                <h1 className="lst-hero-title">Listen Up!</h1>
-                <p className="lst-hero-sub">Below are the activities you will see in Listening lessons. Each one builds a different skill, like catching small details, following directions, or understanding tone.</p>
-              </div>
+              <span className="lst-hero-eyebrow">Sentivo · Listening</span>
+              <h1 className="lst-hero-title">Listen Up!</h1>
+              <p className="lst-hero-sub">Below are the activities you will see in Listening lessons. Each one builds a different skill, like catching small details, following directions, or understanding tone.</p>
             </div>
 
             <div className="lst-grid">
@@ -3153,17 +3151,10 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   background-repeat: no-repeat;
   border-radius: 26px;
 }
-.lst-hero { position: relative; padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 40px) 6px; text-align: center; }
-.lst-hero-banner {
-  display: inline-block;
-  max-width: 620px;
-  margin: 0 auto;
-  padding: clamp(16px, 2.6vw, 24px) clamp(20px, 3vw, 32px);
-  background: rgba(255, 253, 247, 0.62);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 22px;
-}
+/* top padding clears the headphone/soundwave art in the background
+   image, which scales with container width -- no banner needed, the
+   text just sits in the plain cream area below the illustration */
+.lst-hero { position: relative; padding: clamp(170px, 26vw, 320px) clamp(20px, 4vw, 40px) 6px; text-align: center; }
 .lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
 .lst-hero-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(26px, 4vw, 38px); color: #3A2E1F; margin: 0 0 10px; }
 .lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #5C5142; max-width: 520px; margin: 0 auto; line-height: 1.6; }
