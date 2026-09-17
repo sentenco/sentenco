@@ -3154,7 +3154,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 /* top padding clears the headphone/soundwave art in the background
    image, which scales with container width -- no banner needed, the
    text just sits in the plain cream area below the illustration */
-.lst-hero { position: relative; padding: clamp(170px, 26vw, 320px) clamp(20px, 4vw, 40px) 6px; text-align: center; }
+.lst-hero { position: relative; padding: 116px clamp(20px, 4vw, 40px) 6px; text-align: center; }
 .lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
 .lst-hero-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(26px, 4vw, 38px); color: #3A2E1F; margin: 0 0 10px; }
 .lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #5C5142; max-width: 520px; margin: 0 auto; line-height: 1.6; }
