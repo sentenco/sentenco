@@ -2269,19 +2269,29 @@ export default function Library() {
             </div>
 
             <div className="lst-grid">
-              {LISTENING_ACTIVITIES.map((a) => (
-                <div className="lst-card" key={a.key}>
-                  <div className="lst-card-art"><img src={a.image} alt={a.title} /></div>
-                  <div className="lst-card-body">
-                    <div className="lst-tag-row">
-                      <span className={`lst-tag lst-tag--${a.tagClass}`}>{a.tag}</span>
-                      <span className="lst-soon">Coming soon</span>
+              {LISTENING_ACTIVITIES.map((a) => {
+                const isReady = a.key === "gist-mc";
+                return (
+                  <div
+                    className={`lst-card ${isReady ? "lst-card--ready" : ""}`}
+                    key={a.key}
+                    role={isReady ? "button" : undefined}
+                    tabIndex={isReady ? 0 : undefined}
+                    onClick={isReady ? () => navigate("/library/listening/gist-multiple-choice") : undefined}
+                    onKeyDown={isReady ? (e) => { if (e.key === "Enter" || e.key === " ") navigate("/library/listening/gist-multiple-choice"); } : undefined}
+                  >
+                    <div className="lst-card-art"><img src={a.image} alt={a.title} /></div>
+                    <div className="lst-card-body">
+                      <div className="lst-tag-row">
+                        <span className={`lst-tag lst-tag--${a.tagClass}`}>{a.tag}</span>
+                        {isReady ? <span className="lst-ready">Try it</span> : <span className="lst-soon">Coming soon</span>}
+                      </div>
+                      <p className="lst-title">{a.title}</p>
+                      <p className="lst-desc">{a.desc}</p>
                     </div>
-                    <p className="lst-title">{a.title}</p>
-                    <p className="lst-desc">{a.desc}</p>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         ) : category === "Customized Lessons" ? (
@@ -3137,11 +3147,14 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   display: flex;
   flex-direction: column;
 }
+.lst-card--ready { cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.lst-card--ready:hover { transform: translateY(-3px); box-shadow: 0 20px 38px rgba(58,46,31,0.18); }
 .lst-card-art { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #FBEBD3; }
 .lst-card-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .lst-card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; text-align: left; }
 .lst-tag-row { display: flex; align-items: center; justify-content: space-between; }
 .lst-soon { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 10px; color: #A6987F; }
+.lst-ready { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10px; color: #3F9B5D; background: #E1F3E6; padding: 2px 8px; border-radius: 999px; }
 .lst-tag { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 999px; }
 .lst-tag--a { color: #B8791F; background: #FBEBD3; }
 .lst-tag--b { color: #7D3868; background: #F5E3EF; }

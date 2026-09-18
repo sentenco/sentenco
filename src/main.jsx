@@ -214,6 +214,7 @@ import BridgeTrack from './BridgeTrack.jsx'
 import Bridge from './Bridge.jsx'
 import BridgeGuide from './BridgeGuide.jsx'
 import DeriveHub from './DeriveHub.jsx'
+import GistMultipleChoiceHub from './GistMultipleChoiceHub.jsx'
 import DeriveTrack from './DeriveTrack.jsx'
 import Derive from './Derive.jsx'
 import DeriveGuide from './DeriveGuide.jsx'
@@ -539,6 +540,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/bridge/:trackId/:lessonNum" element={<Bridge />} />
             <Route path="/library/bridge/:trackId/:lessonNum/guide" element={<BridgeGuide />} />
             <Route path="/library/derive" element={<LibraryPageShell><DeriveHub /></LibraryPageShell>} />
+            <Route path="/library/listening/gist-multiple-choice" element={<LibraryPageShell><GistMultipleChoiceHub /></LibraryPageShell>} />
             <Route path="/library/derive/:trackId" element={<LibraryPageShell><DeriveTrack /></LibraryPageShell>} />
             <Route path="/library/derive/:trackId/:lessonNum" element={<Derive />} />
             <Route path="/library/derive/:trackId/:lessonNum/guide" element={<DeriveGuide />} />
