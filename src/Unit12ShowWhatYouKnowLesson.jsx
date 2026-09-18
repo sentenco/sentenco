@@ -194,7 +194,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src={null} label="a new daily-life scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/daily-life-scene.jpg" label="a new daily-life scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -218,8 +218,8 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">What Can You Read?</h2></span>
           <div className="word-row">
             <WordCard src={CAT_IMG} word="cat" label="cat" onZoom={onZoom} />
-            <WordCard src={null} word="hop" label="hop" onZoom={onZoom} />
-            <WordCard src={null} word="wig" label="wig" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/hop.jpg" word="hop" label="hop" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/wig.jpg" word="wig" label="wig" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -231,9 +231,9 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🗣️ A Day in My Life!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="picture 1" size={64} onZoom={onZoom} />
-            <Pic src={null} label="picture 2" size={64} onZoom={onZoom} />
-            <Pic src={null} label="picture 3" size={64} onZoom={onZoom} />
+            <Pic src="/curriculum/u12-routines/story-1-morning.jpg" label="picture 1" size={96} onZoom={onZoom} />
+            <Pic src="/curriculum/u12-routines/story-2-afternoon.jpg" label="picture 2" size={96} onZoom={onZoom} />
+            <Pic src="/curriculum/u12-routines/story-3-night.jpg" label="picture 3" size={96} onZoom={onZoom} />
           </div>
         </div>
       ),

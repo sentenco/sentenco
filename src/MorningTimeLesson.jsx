@@ -194,13 +194,13 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Morning!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Wake Up" label="wake up" onZoom={onZoom} />
-            <WordCard src={null} word="Get Up" label="get up" onZoom={onZoom} />
-            <WordCard src={null} word="Eat" label="eat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" onZoom={onZoom} />
           </div>
           <div className="word-row">
-            <WordCard src={null} word="Brush My Teeth" label="brush my teeth" onZoom={onZoom} />
-            <WordCard src={null} word="Go to School" label="go to school" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/brush-teeth.jpg" word="Brush My Teeth" label="brush my teeth" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/go-to-school.jpg" word="Go to School" label="go to school" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -267,7 +267,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">⏩ Morning Time Machine!</h2></span>
-          <WordCard src={null} word="Wake Up" label="wake up" onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -286,7 +286,7 @@ function buildSlides({ onZoom }) {
       stage: "HIGHLIGHT: Morning Time Machine",
       body: (
         <div className="center-col">
-          <WordCard src={null} word="Brush My Teeth" label="brush my teeth" onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/brush-teeth.jpg" word="Brush My Teeth" label="brush my teeth" onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -307,8 +307,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Quick Challenge!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Eat" label="eat" onZoom={onZoom} />
-            <WordCard src={null} word="Get Up" label="get up" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" onZoom={onZoom} />
           </div>
         </>
       ),

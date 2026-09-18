@@ -216,9 +216,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Name the Routines!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Eat" label="eat" onZoom={onZoom} />
-            <WordCard src={null} word="Play" label="play" onZoom={onZoom} />
-            <WordCard src={null} word="Take a Bath" label="take a bath" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/play.jpg" word="Play" label="play" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/take-a-bath.jpg" word="Take a Bath" label="take a bath" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -228,7 +228,7 @@ function buildSlides({ onZoom }) {
       stage: "Time of Day",
       body: (
         <div className="center-col">
-          <WordCard src={null} word="Wake Up" label="wake up" onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
           <TimeTag label="Morning" onZoom={onZoom} />
         </div>
       ),
@@ -238,7 +238,7 @@ function buildSlides({ onZoom }) {
       stage: "Time of Day",
       body: (
         <div className="center-col">
-          <WordCard src={null} word="Go to Bed" label="go to bed" onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/go-to-bed.jpg" word="Go to Bed" label="go to bed" onZoom={onZoom} />
           <TimeTag label="Night" onZoom={onZoom} />
         </div>
       ),
@@ -262,9 +262,9 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🔀 Mixed-Up Day!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Sleep" label="sleep" onZoom={onZoom} />
-            <WordCard src={null} word="Wake Up" label="wake up" onZoom={onZoom} />
-            <WordCard src={null} word="Eat" label="eat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/sleep.jpg" word="Sleep" label="sleep" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
