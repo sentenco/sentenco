@@ -1,0 +1,940 @@
+{
+  "a busy room": {
+    "path": "/curriculum/u10-scenes/busy-room.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "a busy zoo scene": {
+    "path": "/curriculum/u9-scenes/busy-zoo.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "a child": {
+    "path": "/curriculum/u11-l5/child.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "a new animal scene": {
+    "path": "/curriculum/u9-scenes/pets-garden.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "a new daily-life scene": {
+    "path": "/curriculum/u12-routines/daily-life-scene.jpg",
+    "uses": 2,
+    "alternates": [
+      "/curriculum/u12-routines/school-yard.jpg"
+    ]
+  },
+  "a new playtime scene": {
+    "path": "/curriculum/u11-l5/playtime-scene.jpg",
+    "uses": 2,
+    "alternates": [
+      "/curriculum/u11-l5/playground.jpg"
+    ]
+  },
+  "a new zoo scene": {
+    "path": "/curriculum/u9-scenes/feeding-time.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "a school bag": {
+    "path": "/curriculum/u7-l1/bag.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "a zoo scene": {
+    "path": "/curriculum/u9-scenes/zoo-path.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "alligator": {
+    "path": "/curriculum/u1-l1/alligator.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "an action": {
+    "path": "/curriculum/u11-l5/action.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "an unfamiliar room": {
+    "path": "/curriculum/u10-scenes/study-room.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "another zoo area": {
+    "path": "/curriculum/u9-scenes/zoo-area.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "ant": {
+    "path": "/curriculum/u1-l1/ant.jpg",
+    "uses": 3,
+    "alternates": []
+  },
+  "apple": {
+    "path": "/curriculum/u8-l1/apple.jpg",
+    "uses": 18,
+    "alternates": [
+      "/curriculum/u1-l1/apple.jpg"
+    ]
+  },
+  "arms": {
+    "path": "/curriculum/u6-body/arms.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "bag": {
+    "path": "/curriculum/u7-l1/bag.avif",
+    "uses": 9,
+    "alternates": [
+      "/curriculum/u1-l4/bag.avif"
+    ]
+  },
+  "ball": {
+    "path": "/curriculum/u11-l1/ball.jpg",
+    "uses": 37,
+    "alternates": [
+      "/curriculum/u10-l1/ball.jpg",
+      "/curriculum/u1-l1/ball.jpg"
+    ]
+  },
+  "banana": {
+    "path": "/curriculum/u8-l1/banana.jpg",
+    "uses": 21,
+    "alternates": [
+      "/curriculum/u1-l1/banana.jpg"
+    ]
+  },
+  "bat": {
+    "path": "/curriculum/u6-words/bat.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "bathroom": {
+    "path": "/curriculum/u10-rooms/bathroom.jpg",
+    "uses": 6,
+    "alternates": []
+  },
+  "bear": {
+    "path": "/curriculum/u1-l1/bear.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "bed": {
+    "path": "/curriculum/u10-rooms/bed.jpg",
+    "uses": 5,
+    "alternates": []
+  },
+  "bedroom": {
+    "path": "/curriculum/u10-rooms/bedroom.jpg",
+    "uses": 11,
+    "alternates": []
+  },
+  "bird": {
+    "path": "/curriculum/u9-l1/bird.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "blank funny character": {
+    "path": "/curriculum/u6-characters/mystery-2.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "board": {
+    "path": "/curriculum/u7-objects/board.png",
+    "uses": 6,
+    "alternates": []
+  },
+  "book": {
+    "path": "/curriculum/u7-objects/book.png",
+    "uses": 16,
+    "alternates": []
+  },
+  "bouncy ball": {
+    "path": "/curriculum/u1-l1/ball.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "brother": {
+    "path": "/curriculum/u5-family/brother.jpg",
+    "uses": 24,
+    "alternates": []
+  },
+  "brush my teeth": {
+    "path": "/curriculum/u12-routines/brush-teeth.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "car": {
+    "path": "/curriculum/u11-l1/car.avif",
+    "uses": 14,
+    "alternates": [
+      "/curriculum/u1-l1/car.avif"
+    ]
+  },
+  "cat": {
+    "path": "/curriculum/u4-l1/cat.jpg",
+    "uses": 37,
+    "alternates": [
+      "/curriculum/u9-l1/cat.jpg",
+      "/curriculum/u1-l1/cat.jpg"
+    ]
+  },
+  "cat sitting": {
+    "path": "/curriculum/u3-l3/cat-sitting.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "chair": {
+    "path": "/curriculum/u7-objects/chair.png",
+    "uses": 7,
+    "alternates": []
+  },
+  "character a": {
+    "path": "/curriculum/u6-characters/char-a.png",
+    "uses": 4,
+    "alternates": []
+  },
+  "character b": {
+    "path": "/curriculum/u6-characters/char-b.png",
+    "uses": 4,
+    "alternates": []
+  },
+  "character c": {
+    "path": "/curriculum/u6-characters/char-c.png",
+    "uses": 3,
+    "alternates": []
+  },
+  "character with big eyes": {
+    "path": "/curriculum/u6-characters/big-eyes.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "character with long legs": {
+    "path": "/curriculum/u6-characters/long-legs.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "child": {
+    "path": "/curriculum/u4-l1/child.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "child at a party": {
+    "path": "/curriculum/u4-l5/party.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "child holding a broken toy": {
+    "path": "/curriculum/u4-l3/angry-broken-toy.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "child opening a present": {
+    "path": "/curriculum/u4-l3/happy-present.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "child who dropped ice cream": {
+    "path": "/curriculum/u4-l3/sad-dropped-icecream.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "child yawning": {
+    "path": "/curriculum/u4-l5/yawning.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "classroom scene": {
+    "path": "/curriculum/u7-scenes/kids-sharing.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "cookie": {
+    "path": "/curriculum/u1-l1/cookie.webp",
+    "uses": 3,
+    "alternates": []
+  },
+  "crayon": {
+    "path": "/curriculum/u7-objects/crayon.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "dad": {
+    "path": "/curriculum/u5-family/dad.jpg",
+    "uses": 27,
+    "alternates": []
+  },
+  "desk": {
+    "path": "/curriculum/u7-objects/desk.png",
+    "uses": 6,
+    "alternates": []
+  },
+  "dog": {
+    "path": "/curriculum/u9-l1/dog.jpg",
+    "uses": 39,
+    "alternates": [
+      "/curriculum/u4-l2/dog.jpg",
+      "/curriculum/u1-l2/dog.jpg"
+    ]
+  },
+  "doll": {
+    "path": "/curriculum/u1-l2/doll.png",
+    "uses": 11,
+    "alternates": []
+  },
+  "duck": {
+    "path": "/curriculum/u1-l2/duck.png",
+    "uses": 3,
+    "alternates": []
+  },
+  "ear": {
+    "path": "/curriculum/u1-l2/ear.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "ears": {
+    "path": "/curriculum/u6-body/ears.png",
+    "uses": 3,
+    "alternates": []
+  },
+  "eat": {
+    "path": "/curriculum/u12-routines/eat.jpg",
+    "uses": 5,
+    "alternates": []
+  },
+  "eat dinner": {
+    "path": "/curriculum/u12-routines/eat-dinner.jpg",
+    "uses": 3,
+    "alternates": []
+  },
+  "egg": {
+    "path": "/curriculum/u8-l1/egg.jpg",
+    "uses": 22,
+    "alternates": [
+      "/curriculum/u1-l2/egg.jpg"
+    ]
+  },
+  "elephant": {
+    "path": "/curriculum/u9-l1/elephant.jpg",
+    "uses": 17,
+    "alternates": [
+      "/curriculum/u1-l2/elephant.jpg"
+    ]
+  },
+  "eyes": {
+    "path": "/curriculum/u6-body/eyes.png",
+    "uses": 8,
+    "alternates": []
+  },
+  "feet": {
+    "path": "/curriculum/u6-body/feet.png",
+    "uses": 3,
+    "alternates": []
+  },
+  "final mystery character": {
+    "path": "/curriculum/u6-characters/mystery-5.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "fingers": {
+    "path": "/curriculum/u6-body/fingers.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "fish": {
+    "path": "/curriculum/u9-l1/fish.avif",
+    "uses": 15,
+    "alternates": [
+      "/curriculum/u1-l2/fish.avif"
+    ]
+  },
+  "flower": {
+    "path": "/curriculum/u1-l2/flower.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "friendly kid waving hello": {
+    "path": "/curriculum/u1-l1/wavingkid.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "frog": {
+    "path": "/curriculum/u1-l2/frog.jpg",
+    "uses": 4,
+    "alternates": []
+  },
+  "get up": {
+    "path": "/curriculum/u12-routines/get-up.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "gift": {
+    "path": "/curriculum/u1-l3/gift.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "giraffe": {
+    "path": "/curriculum/u9-l1/giraffe.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "go home": {
+    "path": "/curriculum/u12-routines/go-home.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "go to bed": {
+    "path": "/curriculum/u12-routines/go-to-bed.jpg",
+    "uses": 3,
+    "alternates": []
+  },
+  "go to school": {
+    "path": "/curriculum/u12-routines/go-to-school.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "goat": {
+    "path": "/curriculum/u1-l3/goat.avif",
+    "uses": 6,
+    "alternates": []
+  },
+  "grapes": {
+    "path": "/curriculum/u1-l3/grapes.jpg",
+    "uses": 3,
+    "alternates": []
+  },
+  "hands": {
+    "path": "/curriculum/u6-body/hands.png",
+    "uses": 4,
+    "alternates": []
+  },
+  "hat": {
+    "path": "/curriculum/u1-l3/hat.avif",
+    "uses": 12,
+    "alternates": []
+  },
+  "head": {
+    "path": "/curriculum/u6-body/head.png",
+    "uses": 3,
+    "alternates": []
+  },
+  "hen": {
+    "path": "/curriculum/u1-l3/hen.jpg",
+    "uses": 4,
+    "alternates": []
+  },
+  "hog": {
+    "path": "/curriculum/u6-words/hog.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "hop": {
+    "path": "/curriculum/u12-routines/hop.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "house": {
+    "path": "/curriculum/u1-l3/house.jpeg",
+    "uses": 8,
+    "alternates": [
+      "/curriculum/u10-l1/house.jpeg"
+    ]
+  },
+  "ice cream": {
+    "path": "/curriculum/u1-l3/icecream.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "icecream": {
+    "path": "/curriculum/u1-l3/icecream.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "igloo": {
+    "path": "/curriculum/u1-l3/igloo.jpg",
+    "uses": 4,
+    "alternates": []
+  },
+  "insect": {
+    "path": "/curriculum/u1-l3/insect2.jpg",
+    "uses": 3,
+    "alternates": []
+  },
+  "jam": {
+    "path": "/curriculum/u2-l1/jam.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "jellyfish": {
+    "path": "/curriculum/u2-l1/jellyfish.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "jog": {
+    "path": "/curriculum/u6-words/jog.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "juice": {
+    "path": "/curriculum/u2-l1/juice.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "king": {
+    "path": "/curriculum/u2-l1/king.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "kitchen": {
+    "path": "/curriculum/u10-rooms/kitchen.jpg",
+    "uses": 8,
+    "alternates": []
+  },
+  "kite": {
+    "path": "/curriculum/u2-l1/kite.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "knees": {
+    "path": "/curriculum/u6-body/knees.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "koala": {
+    "path": "/curriculum/u2-l1/koala.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "lamp": {
+    "path": "/curriculum/u2-l1/lamp.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "leaf": {
+    "path": "/curriculum/u2-l1/leaf.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "legs": {
+    "path": "/curriculum/u6-body/legs.png",
+    "uses": 3,
+    "alternates": []
+  },
+  "lion": {
+    "path": "/curriculum/u9-l1/lion.avif",
+    "uses": 13,
+    "alternates": [
+      "/curriculum/u2-l1/lion.avif"
+    ]
+  },
+  "living room": {
+    "path": "/curriculum/u10-rooms/living-room.jpg",
+    "uses": 7,
+    "alternates": []
+  },
+  "log": {
+    "path": "/curriculum/u6-words/log.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "mat": {
+    "path": "/curriculum/u6-words/mat.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "messy desk scene": {
+    "path": "/curriculum/u7-scenes/messy-desk.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "milk": {
+    "path": "/curriculum/u2-l2/milk.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "mom": {
+    "path": "/curriculum/u5-family/mom.jpg",
+    "uses": 28,
+    "alternates": []
+  },
+  "monkey": {
+    "path": "/curriculum/u9-l1/monkey.avif",
+    "uses": 17,
+    "alternates": [
+      "/curriculum/u2-l2/monkey.avif"
+    ]
+  },
+  "moon": {
+    "path": "/curriculum/u2-l2/moon.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "morning": {
+    "path": "/curriculum/u12-routines/morning.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "mouth": {
+    "path": "/curriculum/u6-body/mouth.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "nest": {
+    "path": "/curriculum/u2-l2/nest.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "new animal scene": {
+    "path": "/curriculum/u9-scenes/big-small.jpg",
+    "uses": 2,
+    "alternates": [
+      "/curriculum/u9-scenes/all-animals.jpg"
+    ]
+  },
+  "new character": {
+    "path": "/curriculum/u6-characters/mystery-4.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "new classroom scene": {
+    "path": "/curriculum/u7-scenes/empty-classroom.jpg",
+    "uses": 2,
+    "alternates": [
+      "/curriculum/u7-scenes/classroom-challenge.jpg"
+    ]
+  },
+  "new food picture": {
+    "path": "/curriculum/u8-scenes/lunch-plate.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "new food scene": {
+    "path": "/curriculum/u8-scenes/family-table.jpg",
+    "uses": 2,
+    "alternates": [
+      "/curriculum/u8-scenes/breakfast.jpg"
+    ]
+  },
+  "new house scene": {
+    "path": "/curriculum/u10-scenes/cutaway-house.jpg",
+    "uses": 2,
+    "alternates": [
+      "/curriculum/u10-scenes/house-garden.jpg"
+    ]
+  },
+  "new mystery character": {
+    "path": "/curriculum/u6-characters/mystery-1.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "new unfamiliar character": {
+    "path": "/curriculum/u6-characters/mystery-3.png",
+    "uses": 1,
+    "alternates": []
+  },
+  "night": {
+    "path": "/curriculum/u12-routines/night.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "nose": {
+    "path": "/curriculum/u2-l2/nose.jpg",
+    "uses": 5,
+    "alternates": []
+  },
+  "nut": {
+    "path": "/curriculum/u2-l2/nut.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "octopus": {
+    "path": "/curriculum/u2-l2/octopus.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "open classroom scene": {
+    "path": "/curriculum/u7-scenes/open-classroom.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "orange": {
+    "path": "/curriculum/u2-l2/orange.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "owl": {
+    "path": "/curriculum/u2-l2/owl.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "panda": {
+    "path": "/curriculum/u2-l3/panda.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "pen": {
+    "path": "/curriculum/u4-l3/pen.png",
+    "uses": 15,
+    "alternates": []
+  },
+  "pencil": {
+    "path": "/curriculum/u2-l3/pencil.jpeg",
+    "uses": 2,
+    "alternates": []
+  },
+  "picture 1": {
+    "path": "/curriculum/u12-routines/story-1-morning.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "picture 2": {
+    "path": "/curriculum/u12-routines/story-2-afternoon.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "picture 3": {
+    "path": "/curriculum/u12-routines/story-3-night.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "pizza": {
+    "path": "/curriculum/u8-l1/pizza.avif",
+    "uses": 18,
+    "alternates": [
+      "/curriculum/u2-l3/pizza.avif"
+    ]
+  },
+  "pizza with a banana on top": {
+    "path": "/curriculum/u8-l3/pizza-banana.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "play": {
+    "path": "/curriculum/u12-routines/play.jpg",
+    "uses": 5,
+    "alternates": []
+  },
+  "quail": {
+    "path": "/curriculum/u2-l3/quail.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "queen": {
+    "path": "/curriculum/u2-l3/queen.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "quilt": {
+    "path": "/curriculum/u2-l3/quilt.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "rabbit": {
+    "path": "/curriculum/u2-l3/rabbit.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "rainbow": {
+    "path": "/curriculum/u2-l3/rainbow.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "red apple": {
+    "path": "/curriculum/u1-l1/apple.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "rice": {
+    "path": "/curriculum/u8-l1/rice.jpg",
+    "uses": 8,
+    "alternates": []
+  },
+  "rice with apple slices": {
+    "path": "/curriculum/u8-l3/rice-apple.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "ring": {
+    "path": "/curriculum/u2-l3/ring.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "school bag": {
+    "path": "/curriculum/u7-l1/bag.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "shoulders": {
+    "path": "/curriculum/u6-body/shoulders.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "sister": {
+    "path": "/curriculum/u5-family/sister.jpg",
+    "uses": 25,
+    "alternates": []
+  },
+  "sleep": {
+    "path": "/curriculum/u12-routines/sleep.jpg",
+    "uses": 6,
+    "alternates": []
+  },
+  "sock": {
+    "path": "/curriculum/u3-l1/sock.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "star": {
+    "path": "/curriculum/u3-l1/star.avif",
+    "uses": 2,
+    "alternates": []
+  },
+  "sun": {
+    "path": "/curriculum/u3-l1/sun.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "take a bath": {
+    "path": "/curriculum/u12-routines/take-a-bath.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "tent": {
+    "path": "/curriculum/u3-l1/tent.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "the finished dream room": {
+    "path": "/curriculum/u10-scenes/dream-room.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "tiger": {
+    "path": "/curriculum/u3-l1/tiger.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "toes": {
+    "path": "/curriculum/u6-body/toes.png",
+    "uses": 2,
+    "alternates": []
+  },
+  "tomato": {
+    "path": "/curriculum/u3-l1/tomato.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "toy": {
+    "path": "/curriculum/u11-l1/toy.jpg",
+    "uses": 2,
+    "alternates": []
+  },
+  "tree": {
+    "path": "/curriculum/u3-l5/tree.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "ukulele": {
+    "path": "/curriculum/u3-l1/ukulele.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "umbrella": {
+    "path": "/curriculum/u3-l1/umbrella.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "unicorn": {
+    "path": "/curriculum/u3-l1/unicorn.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "unknown family scene": {
+    "path": "/curriculum/u5-family/family-scene.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "van": {
+    "path": "/curriculum/u3-l2/van.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "vase": {
+    "path": "/curriculum/u3-l2/vase.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "volcano": {
+    "path": "/curriculum/u3-l2/volcano.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "wake up": {
+    "path": "/curriculum/u12-routines/wake-up.jpg",
+    "uses": 9,
+    "alternates": []
+  },
+  "watch": {
+    "path": "/curriculum/u3-l2/watch.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "watermelon": {
+    "path": "/curriculum/u3-l2/watermelon.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "web": {
+    "path": "/curriculum/u3-l2/web.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "wig": {
+    "path": "/curriculum/u12-routines/wig.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "x-ray": {
+    "path": "/curriculum/u3-l2/xray.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "xylophone": {
+    "path": "/curriculum/u3-l2/xylophone.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "yak": {
+    "path": "/curriculum/u3-l3/yak.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "yarn": {
+    "path": "/curriculum/u3-l3/yarn.jpg",
+    "uses": 1,
+    "alternates": []
+  },
+  "yo-yo": {
+    "path": "/curriculum/u3-l3/yoyo.jpeg",
+    "uses": 1,
+    "alternates": []
+  },
+  "zebra": {
+    "path": "/curriculum/u3-l3/zebra.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "zipper": {
+    "path": "/curriculum/u3-l3/zipper.avif",
+    "uses": 1,
+    "alternates": []
+  },
+  "zoo": {
+    "path": "/curriculum/u3-l3/zoo.avif",
+    "uses": 1,
+    "alternates": []
+  }
+}

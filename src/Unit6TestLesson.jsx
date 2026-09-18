@@ -5,7 +5,7 @@ const SIZE_COLOR = { Big: "#FF6B4A", Small: "#4FA8D8", Long: "#8E6FCE", Short: "
 const CAT_IMG = "/curriculum/u1-l1/cat.jpg";
 const HAT_IMG = "/curriculum/u1-l3/hat.avif";
 const DOG_IMG = "/curriculum/u1-l2/dog.jpg";
-const NOSE_IMG = "/curriculum/u2-l2/nose.avif";
+const NOSE_IMG = "/curriculum/u2-l2/nose.jpg";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
