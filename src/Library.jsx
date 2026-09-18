@@ -2484,7 +2484,7 @@ export default function Library() {
 }
 
 export const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Quicksand:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&family=Bangers&family=Comic+Neue:wght@400;700&family=Baloo+2:wght@600;700;800&family=IBM+Plex+Sans:wght@500;600;700;800&family=Lilita+One&family=Nunito:wght@600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Quicksand:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&family=Bangers&family=Comic+Neue:wght@400;700&family=Baloo+2:wght@600;700;800&family=IBM+Plex+Sans:wght@500;600;700;800&family=Lilita+One&family=Nunito:wght@600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Luckiest+Guy&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
@@ -3123,7 +3123,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
    text just sits in the plain cream area below the illustration */
 .lst-hero { position: relative; padding: 116px clamp(20px, 4vw, 40px) 6px; text-align: center; }
 .lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
-.lst-hero-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(26px, 4vw, 38px); color: #3A2E1F; margin: 0 0 10px; }
+.lst-hero-title { font-family: 'Luckiest Guy', cursive; font-weight: 400; letter-spacing: 0.02em; font-size: clamp(28px, 4.4vw, 42px); color: #3A2E1F; margin: 0 0 10px; }
 .lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #5C5142; max-width: 520px; margin: 0 auto; line-height: 1.6; }
 
 .lst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; padding: 22px clamp(16px, 3vw, 30px) 0; }
