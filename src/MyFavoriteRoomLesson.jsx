@@ -200,7 +200,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Look Inside!</h2></span>
           <div className="word-row">
             <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
-            <Pic src={null} label="bed" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={80} onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -283,7 +283,7 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🎨 Design My Dream Room!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="bed" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={70} onZoom={onZoom} />
             <Pic src={`${IMG}/ball.jpg`} label="ball" size={70} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>

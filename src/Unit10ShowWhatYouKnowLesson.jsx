@@ -255,7 +255,7 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Build Your Own House!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="bed" size={64} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={64} onZoom={onZoom} />
             <Pic src={`${IMG}/ball.jpg`} label="ball" size={64} onZoom={onZoom} />
             <Pic src="/curriculum/u7-objects/book.png" label="book" size={64} onZoom={onZoom} />
           </div>
