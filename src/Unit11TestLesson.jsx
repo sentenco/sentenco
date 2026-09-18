@@ -244,7 +244,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🎉 My Playtime Challenge!</h2></span>
-          <Pic src={null} label="a new playtime scene" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l5/playground.jpg" label="a new playtime scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },

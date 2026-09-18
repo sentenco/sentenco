@@ -265,7 +265,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">⭐ Final Challenge!</h2></span>
-          <Pic src={null} label="a new daily-life scene" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/school-yard.jpg" label="a new daily-life scene" size={180} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
