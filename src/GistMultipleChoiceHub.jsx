@@ -164,7 +164,7 @@ const CSS = `
 
 .gmc-page {
   width: 100%;
-  max-width: 1080px;
+  max-width: 820px;
   min-height: 70vh;
   margin: 0 auto;
   border-radius: 26px;
