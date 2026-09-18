@@ -331,7 +331,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Big or Small?</h2></span>
-          <Pic src={null} label="character with big eyes" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/big-eyes.png" label="character with big eyes" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -341,7 +341,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Long or Short?</h2></span>
-          <Pic src={null} label="character with long legs" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/long-legs.png" label="character with long legs" size={180} onZoom={onZoom} />
         </div>
       ),
     },

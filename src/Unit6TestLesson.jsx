@@ -280,7 +280,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This Person!</h2></span>
-          <Pic src={null} label="new character" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/mystery-4.png" label="new character" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -290,10 +290,10 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🕵️ Who Am I?</h2></span>
-          <div className="word-row">
-            <Pic src={null} label="character A" size={80} onZoom={onZoom} />
-            <Pic src={null} label="character B" size={80} onZoom={onZoom} />
-            <Pic src={null} label="character C" size={80} onZoom={onZoom} />
+          <div className="word-row" style={{ gap: 24 }}>
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={112} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={112} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={112} onZoom={onZoom} />
           </div>
           <p className="slide-p">Choose one. Describe it without saying which!</p>
         </>
@@ -321,7 +321,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
-          <Pic src={null} label="final mystery character" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/mystery-5.png" label="final mystery character" size={180} onZoom={onZoom} />
           <p className="slide-p">Tell me about it!</p>
         </div>
       ),

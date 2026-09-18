@@ -285,9 +285,9 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Guess My Character!</h2></span>
-          <div className="word-row">
-            <Pic src={null} label="character A" size={80} onZoom={onZoom} />
-            <Pic src={null} label="character B" size={80} onZoom={onZoom} />
+          <div className="word-row" style={{ gap: 24 }}>
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={112} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={112} onZoom={onZoom} />
           </div>
           <p className="slide-p">It has small ears. It has long legs.</p>
         </div>

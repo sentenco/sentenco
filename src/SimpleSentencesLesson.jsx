@@ -278,10 +278,10 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Who Is It?</h2></span>
-          <div className="word-row">
-            <Pic src={null} label="character A" size={90} onZoom={onZoom} />
-            <Pic src={null} label="character B" size={90} onZoom={onZoom} />
-            <Pic src={null} label="character C" size={90} onZoom={onZoom} />
+          <div className="word-row" style={{ gap: 24 }}>
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={112} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={112} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={112} onZoom={onZoom} />
           </div>
           <p className="slide-p">It has big eyes. Which one is it?</p>
         </div>
@@ -360,7 +360,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This!</h2></span>
-          <Pic src={null} label="new mystery character" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/mystery-1.png" label="new mystery character" size={180} onZoom={onZoom} />
         </div>
       ),
     },
