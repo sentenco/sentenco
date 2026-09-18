@@ -325,7 +325,7 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Blend & Match!</h2></span>
           <BlendRow parts={["s", "a", "t"]} result="sat" onZoom={onZoom} />
-          <Pic src={null} label="cat sitting" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/cat-sitting.avif`} label="cat sitting" size={100} onZoom={onZoom} />
         </div>
       ),
     },

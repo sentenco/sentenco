@@ -362,7 +362,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">🎨 Build Another Picture!</h2></span>
           <div className="word-row">
             <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={70} onZoom={onZoom} />
-            <Pic src={null} label="tree" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u3-l5/tree.avif" label="tree" size={70} onZoom={onZoom} />
           </div>
           <p className="slide-p">Choose a new color and shape. "Green tree."</p>
         </>
