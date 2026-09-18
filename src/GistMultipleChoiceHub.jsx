@@ -120,7 +120,7 @@ export default function GistMultipleChoiceHub() {
           {tracks.map((track) => {
             const isOpen = openTrack === track.key;
             return (
-              <div key={track.key} className={`gmc-track gmc-track--${track.theme} ${isOpen ? "is-open is-spanning" : ""}`}>
+              <div key={track.key} className={`gmc-track gmc-track--${track.theme} ${isOpen ? "is-open" : ""}`}>
                 <div
                   className="gmc-track-head"
                   role="button"
@@ -165,6 +165,7 @@ const CSS = `
 .gmc-page {
   width: 100%;
   max-width: 1080px;
+  min-height: 70vh;
   margin: 0 auto;
   border-radius: 26px;
   background-color: #FDF6EA;
@@ -204,7 +205,6 @@ const CSS = `
 @media (max-width: 620px) { .gmc-track-list { grid-template-columns: 1fr; } }
 
 .gmc-track { background: var(--tint); border-radius: 20px; overflow: hidden; box-shadow: inset 0 0 0 2px var(--border); align-self: start; }
-.gmc-track.is-spanning { grid-column: 1 / -1; }
 
 .gmc-track-head { display: flex; align-items: center; gap: 14px; padding: 16px 18px; cursor: pointer; }
 .gmc-track-emoji-badge {
