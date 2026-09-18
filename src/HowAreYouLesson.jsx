@@ -79,6 +79,13 @@ function EmotionCard({ name, onZoom }) {
   );
 }
 
+const PARTS = {
+  A: { color: "#F2A900" },
+  B: { color: "#2E97C7" },
+  C: { color: "#22A67E" },
+  D: { color: "#E0567A" },
+};
+
 export default function HowAreYouLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -126,6 +133,7 @@ export default function HowAreYouLesson() {
 
   const slides = buildSlides({ onZoom: setZoom });
   const total = slides.length;
+  const lastPart = [...slides].reverse().find((x) => x.part)?.part;
   const s = slides[i];
 
   function go(delta) {
@@ -146,17 +154,43 @@ export default function HowAreYouLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>{s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
-          <div className="slide-body">{s.body}</div>
+          <div className="slide-body">
+            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
+            {s.body}
+            {s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => (
+                  <span key={text} className="instr-step"><span className="instr-icon">{icon}</span>{text}</span>
+                ))}
+              </div>
+            )}
+            {s.guide && (
+              <div className="slide-guide">
+                <span className="guide-label">Say</span>
+                <span className="guide-text">
+                  {s.guide.split("___").map((part, k, arr) => (
+                    <React.Fragment key={k}>{part}{k < arr.length - 1 && <span className="guide-blank" />}</React.Fragment>
+                  ))}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
             <div className="progress-track">
               {Array.from({ length: total }).map((_, idx) => (
-                <span key={idx} className={`dot ${idx === i ? "on" : ""}`} />
+                <span
+                  key={idx}
+                  className={`dot ${idx === i ? "on" : ""} ${slides[idx].part && slides[idx].part !== slides[idx - 1]?.part ? "part-start" : ""}`}
+                  style={slides[idx].part && idx === i ? { background: PARTS[slides[idx].part].color } : undefined}
+                />
               ))}
             </div>
             <button className="nav-btn next" onClick={() => (i === total - 1 ? exit() : go(1))}>
@@ -193,12 +227,12 @@ export const LESSON_GUIDE = [
   { stage: "D, E, F Is for...", time: "~1.5 min", note: "Say each word slowly: \"D is for dog. D is for duck. D is for doll.\"" },
   { stage: "D, E, F Is for...", time: "~1.5 min", note: "Say each word slowly: \"E is for egg. E is for elephant. E is for ear.\"" },
   { stage: "D, E, F Is for...", time: "~2 min", note: "Say each word slowly: \"F is for fish. F is for frog. F is for flower.\"" },
-  { stage: "Look & Say", time: "~4 min", note: "Point to each picture in any order. Let the student name the letter and say the word before you move on." },
+  { stage: "Look & Say", time: "~4 min", note: "Point to each picture in any order. Let the student name the letter and say the word before you move on. Fast learner? Continue with the three Mixed Up! slides (+3 min)." },
   { stage: "How Are You? Faces!", time: "~1.3 min", note: "Show the happy face. Model \"How are you?\" then \"I am happy.\" Let the student answer the same way." },
   { stage: "How Are You? Faces!", time: "~1.3 min", note: "Same pattern, now with the sad face." },
-  { stage: "How Are You? Faces!", time: "~1.3 min", note: "Same pattern, now with the tired face." },
+  { stage: "How Are You? Faces!", time: "~1.3 min", note: "Same pattern, now with the tired face. Extra rounds for fast learners (+3 min): Feelings Again! (new order), Guess My Face! (you make a face, the student says how you feel), Your Turn! (the student makes a face and tells you)." },
   { stage: "Let's Practice!", time: "~2 min", note: "A quick check of the full pattern: model the line first, then let the student answer using their own feeling." },
-  { stage: "Show What You Know", time: "~1.5 min", note: "Free recall, don't reveal answers. Point to each letter, D, E, F, one more time as the final challenge." },
+  { stage: "Show What You Know", time: "~1.5 min", note: "Free recall, don't reveal answers. Point to each letter, D, E, F, one more time as the final challenge. Fast learner? Do the two extra What Letter? rounds (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -223,6 +257,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say the letters."]],
+      guide: "It's the letter ___.",
       time: "~2 min",
       body: (
         <>
@@ -234,9 +271,9 @@ function buildSlides({ onZoom }) {
             </div>
           </div>
           <div className="letter-row">
-            <LetterTile letters="Aa" color={REVIEW_COLOR.A} size={64} fontSize={24} onZoom={onZoom} />
-            <LetterTile letters="Bb" color={REVIEW_COLOR.B} size={64} fontSize={24} onZoom={onZoom} />
-            <LetterTile letters="Cc" color={REVIEW_COLOR.C} size={64} fontSize={24} onZoom={onZoom} />
+            <LetterTile letters="Aa" color={REVIEW_COLOR.A} size={56} fontSize={24} onZoom={onZoom} />
+            <LetterTile letters="Bb" color={REVIEW_COLOR.B} size={56} fontSize={24} onZoom={onZoom} />
+            <LetterTile letters="Cc" color={REVIEW_COLOR.C} size={56} fontSize={24} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -244,6 +281,9 @@ function buildSlides({ onZoom }) {
     // 3: How Are You? (emotion words intro)
     {
       stage: "How Are You?",
+      part: "B",
+      instruction: [["👀", "Look at each face."], ["🗣️", "Say the feeling."]],
+      guide: "I am ___.",
       time: "~2 min",
       body: (
         <>
@@ -259,6 +299,8 @@ function buildSlides({ onZoom }) {
     // 4: Ask & Answer
     {
       stage: "How Are You?",
+      part: "B",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer it."]],
       time: "~1 min",
       body: (
         <>
@@ -279,6 +321,9 @@ function buildSlides({ onZoom }) {
     // 5: Meet D, E, F
     {
       stage: "Meet D, E, F",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -294,6 +339,9 @@ function buildSlides({ onZoom }) {
     // 6: D is for...
     {
       stage: "D, E, F Is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -309,6 +357,9 @@ function buildSlides({ onZoom }) {
     // 7: E is for...
     {
       stage: "D, E, F Is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's an ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -324,6 +375,9 @@ function buildSlides({ onZoom }) {
     // 8: F is for...
     {
       stage: "D, E, F Is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       time: "~2 min",
       body: (
         <>
@@ -339,6 +393,9 @@ function buildSlides({ onZoom }) {
     // 9: Look & Say
     {
       stage: "Look & Say",
+      part: "C",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
       time: "~4 min",
       body: (
         <>
@@ -346,29 +403,73 @@ function buildSlides({ onZoom }) {
           <div className="look-groups">
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.D }}>D</span>
-              <Pic src={`${IMG}/dog.jpg`} label="dog" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/duck.png`} label="duck" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/doll.png`} label="doll" size={78} onZoom={onZoom} />
+              <Pic src={`${IMG}/dog.jpg`} label="dog" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/duck.png`} label="duck" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/doll.png`} label="doll" size={62} onZoom={onZoom} />
             </div>
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.E }}>E</span>
-              <Pic src={`${IMG}/egg.jpg`} label="egg" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/ear.jpg`} label="ear" size={78} onZoom={onZoom} />
+              <Pic src={`${IMG}/egg.jpg`} label="egg" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/ear.jpg`} label="ear" size={62} onZoom={onZoom} />
             </div>
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.F }}>F</span>
-              <Pic src={`${IMG}/fish.avif`} label="fish" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/frog.jpg`} label="frog" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/flower.jpg`} label="flower" size={78} onZoom={onZoom} />
+              <Pic src={`${IMG}/fish.avif`} label="fish" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/frog.jpg`} label="frog" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/flower.jpg`} label="flower" size={62} onZoom={onZoom} />
             </div>
           </div>
         </>
       ),
     },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Mixed Up! 1",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/duck.png`} label="duck" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/ear.jpg`} label="ear" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/fish.avif`} label="fish" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Mixed Up! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/doll.png`} label="doll" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/frog.jpg`} label="frog" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/egg.jpg`} label="egg" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Mixed Up! 3",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/flower.jpg`} label="flower" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/dog.jpg`} label="dog" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 10: How Are You? Faces! (Happy)
     {
       stage: "How Are You? Faces!",
+      part: "C",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer: how do you feel?"]],
       time: "~1.3 min",
       body: (
         <>
@@ -389,6 +490,8 @@ function buildSlides({ onZoom }) {
     // 11: How Are You? Faces! (Sad)
     {
       stage: "How Are You? Faces!",
+      part: "C",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer: how do you feel?"]],
       time: "~1.3 min",
       body: (
         <>
@@ -409,6 +512,8 @@ function buildSlides({ onZoom }) {
     // 12: How Are You? Faces! (Tired)
     {
       stage: "How Are You? Faces!",
+      part: "C",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer: how do you feel?"]],
       time: "~1.3 min",
       body: (
         <>
@@ -426,9 +531,53 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "How Are You? Faces!",
+      part: "C",
+      title: "Feelings Again!",
+      instruction: [["👀", "Look at each face."], ["🗣️", "Say the feeling."]],
+      guide: "I am ___.",
+      body: (
+        <div className="row">
+          <EmotionCard name="Tired" onZoom={onZoom} />
+          <EmotionCard name="Happy" onZoom={onZoom} />
+          <EmotionCard name="Sad" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "How Are You? Faces!",
+      part: "C",
+      title: "Guess My Face!",
+      instruction: [["🎭", "Watch the teacher's face."], ["🗣️", "Say how the teacher feels."]],
+      guide: "You are ___.",
+      body: (
+        <div className="row">
+          <EmotionCard name="Sad" onZoom={onZoom} />
+          <EmotionCard name="Tired" onZoom={onZoom} />
+          <EmotionCard name="Happy" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "How Are You? Faces!",
+      part: "C",
+      title: "Your Turn!",
+      instruction: [["🎭", "Make a face."], ["🗣️", "Tell me how you feel."]],
+      guide: "I am ___.",
+      body: (
+        <div className="row">
+          <EmotionCard name="Happy" onZoom={onZoom} />
+          <EmotionCard name="Sad" onZoom={onZoom} />
+          <EmotionCard name="Tired" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 13: Let's Practice!
     {
       stage: "Let's Practice!",
+      part: "C",
+      instruction: [["👂", "Listen."], ["🗣️", "Answer with your own feeling."]],
       time: "~2 min",
       body: (
         <>
@@ -449,6 +598,9 @@ function buildSlides({ onZoom }) {
     // 14: Show What You Know
     {
       stage: "Show What You Know",
+      part: "D",
+      instruction: [["🤔", "Remember!"], ["🗣️", "Say each letter."]],
+      guide: "It's the letter ___.",
       time: "~1 min",
       body: (
         <>
@@ -464,17 +616,47 @@ function buildSlides({ onZoom }) {
     // 14b: Picture Check! (recall without the letter shown)
     {
       stage: "Show What You Know",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word and the letter."]],
+      guide: "___ is for ___.",
       time: "~0.5 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Letter?</h2></span>
           <div className="row">
-            <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG}/frog.jpg`} label="frog" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG}/doll.png`} label="doll" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={125} onZoom={onZoom} />
+            <Pic src={`${IMG}/frog.jpg`} label="frog" size={125} onZoom={onZoom} />
+            <Pic src={`${IMG}/doll.png`} label="doll" size={125} onZoom={onZoom} />
           </div>
-          <p className="slide-p">No letters this time. Can you say the word and the letter?</p>
         </>
+      ),
+    },
+    {
+      stage: "Show What You Know",
+      part: "D",
+      title: "What Letter? Again!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/dog.jpg`} label="dog" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/egg.jpg`} label="egg" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/fish.avif`} label="fish" size={125} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Show What You Know",
+      part: "D",
+      title: "One More Time!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/duck.png`} label="duck" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/ear.jpg`} label="ear" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/flower.jpg`} label="flower" size={125} onZoom={onZoom} />
+        </div>
       ),
     },
     // 15: Great Job
@@ -540,6 +722,17 @@ export const styles = `
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
 .progress-track { display: flex; align-items: center; gap: 7px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
+.part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
+.slide-instruction { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); background: #fff; border-radius: 999px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); position: relative; z-index: 1; text-align: center; margin-top: 4px; }
+.instr-step { display: inline-flex; align-items: center; gap: 7px; }
+.instr-icon { font-size: 20px; line-height: 1; }
+.slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
+.guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
+.guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
+.big-question { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: var(--coral); background: #fff; width: 110px; height: 110px; border-radius: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(27,42,74,0.14); }
+.bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
+.dot.part-start { margin-left: 8px; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 .title-highlight { position: relative; display: inline-block; }

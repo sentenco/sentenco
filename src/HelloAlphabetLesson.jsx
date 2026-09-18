@@ -73,6 +73,13 @@ function NameCard({ name, letter, src, onZoom }) {
   );
 }
 
+const PARTS = {
+  A: { color: "#F2A900" },
+  B: { color: "#2E97C7" },
+  C: { color: "#22A67E" },
+  D: { color: "#E0567A" },
+};
+
 export default function HelloAlphabetLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -120,6 +127,7 @@ export default function HelloAlphabetLesson() {
 
   const slides = buildSlides({ onZoom: setZoom });
   const total = slides.length;
+  const lastPart = [...slides].reverse().find((x) => x.part)?.part;
   const s = slides[i];
 
   function go(delta) {
@@ -140,17 +148,43 @@ export default function HelloAlphabetLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>{s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
-          <div className="slide-body">{s.body}</div>
+          <div className="slide-body">
+            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
+            {s.body}
+            {s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => (
+                  <span key={text} className="instr-step"><span className="instr-icon">{icon}</span>{text}</span>
+                ))}
+              </div>
+            )}
+            {s.guide && (
+              <div className="slide-guide">
+                <span className="guide-label">Say</span>
+                <span className="guide-text">
+                  {s.guide.split("___").map((part, k, arr) => (
+                    <React.Fragment key={k}>{part}{k < arr.length - 1 && <span className="guide-blank" />}</React.Fragment>
+                  ))}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
             <div className="progress-track">
               {Array.from({ length: total }).map((_, idx) => (
-                <span key={idx} className={`dot ${idx === i ? "on" : ""}`} />
+                <span
+                  key={idx}
+                  className={`dot ${idx === i ? "on" : ""} ${slides[idx].part && slides[idx].part !== slides[idx - 1]?.part ? "part-start" : ""}`}
+                  style={slides[idx].part && idx === i ? { background: PARTS[slides[idx].part].color } : undefined}
+                />
               ))}
             </div>
             <button className="nav-btn next" onClick={() => (i === total - 1 ? exit() : go(1))}>
@@ -195,9 +229,9 @@ export const LESSON_GUIDE = [
   { stage: "A, B, C Is for...", time: "~1.5 min", note: "Say each word slowly: \"A is for ant. A is for apple. A is for alligator.\"" },
   { stage: "A, B, C Is for...", time: "~1.5 min", note: "Say each word slowly: \"B is for ball. B is for banana. B is for bear.\"" },
   { stage: "A, B, C Is for...", time: "~2 min", note: "Say each word slowly: \"C is for cat. C is for car. C is for cookie.\"" },
-  { stage: "Look & Say", time: "~5 min", note: "Point to each picture in any order. Let the student name the letter and say the word before you move on." },
+  { stage: "Look & Say", time: "~5 min", note: "Point to each picture in any order. Let the student name the letter and say the word before you move on. Fast learner? Continue with the three Mixed Up! slides (+3 min), which repeat the same words in a new order." },
   { stage: "Let's Practice!", time: "~3 min", note: "A quick check of the full greeting pattern: model the line first, then let the student answer using their own name and the first letter of it." },
-  { stage: "Show What You Know", time: "~2 min", note: "Free recall, don't reveal answers. Point to each letter, then ask \"What's your name?\" one more time as the final challenge." },
+  { stage: "Show What You Know", time: "~2 min", note: "Free recall, don't reveal answers. Point to each letter, then ask \"What's your name?\" one more time as the final challenge. Fast learner? Do the two extra What Letter? rounds (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -222,6 +256,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello! (words)
     {
       stage: "Hello!",
+      part: "A",
+      instruction: [["👋", "Wave and say hello."], ["🗣️", "Say each word."]],
       time: "~1.5 min",
       body: (
         <>
@@ -240,6 +276,9 @@ function buildSlides({ onZoom }) {
     // 3: What's your name?
     {
       stage: "Hello!",
+      part: "A",
+      instruction: [["👂", "Listen."], ["🗣️", "Answer with your name."]],
+      guide: "My name is ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -260,6 +299,9 @@ function buildSlides({ onZoom }) {
     // 4: Meet A, B, C
     {
       stage: "Meet A, B, C",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -275,6 +317,9 @@ function buildSlides({ onZoom }) {
     // 5: My Name Is... Anna, Bob, Carol
     {
       stage: "My Name Is...",
+      part: "B",
+      instruction: [["👀", "Look at the friends."], ["🗣️", "Say each name."]],
+      guide: "This is ___.",
       time: "~4 min",
       body: (
         <>
@@ -290,6 +335,8 @@ function buildSlides({ onZoom }) {
     // 6: Meet Anna!
     {
       stage: "Meet Anna, Bob & Carol",
+      part: "B",
+      instruction: [["👂", "Listen to Anna."], ["🗣️", "Say hello and your name."]],
       time: "~1 min",
       body: (
         <>
@@ -310,6 +357,8 @@ function buildSlides({ onZoom }) {
     // 7: Meet Bob!
     {
       stage: "Meet Anna, Bob & Carol",
+      part: "B",
+      instruction: [["👂", "Listen to Bob."], ["🗣️", "Say hello and your name."]],
       time: "~1 min",
       body: (
         <>
@@ -330,6 +379,8 @@ function buildSlides({ onZoom }) {
     // 8: Meet Carol!
     {
       stage: "Meet Anna, Bob & Carol",
+      part: "B",
+      instruction: [["👂", "Listen to Carol."], ["🗣️", "Say hello and your name."]],
       time: "~1 min",
       body: (
         <>
@@ -350,6 +401,9 @@ function buildSlides({ onZoom }) {
     // 9: A is for...
     {
       stage: "A, B, C Is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's an ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -365,6 +419,9 @@ function buildSlides({ onZoom }) {
     // 10: B is for...
     {
       stage: "A, B, C Is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -380,6 +437,9 @@ function buildSlides({ onZoom }) {
     // 11: C is for...
     {
       stage: "A, B, C Is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       time: "~2 min",
       body: (
         <>
@@ -395,6 +455,9 @@ function buildSlides({ onZoom }) {
     // 12: Look & Say
     {
       stage: "Look & Say",
+      part: "C",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
       time: "~5 min",
       body: (
         <>
@@ -402,29 +465,73 @@ function buildSlides({ onZoom }) {
           <div className="look-groups">
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.A }}>A</span>
-              <Pic src={`${IMG}/ant.jpg`} label="ant" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/apple.jpg`} label="apple" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/alligator.jpg`} label="alligator" size={78} onZoom={onZoom} />
+              <Pic src={`${IMG}/ant.jpg`} label="ant" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/apple.jpg`} label="apple" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/alligator.jpg`} label="alligator" size={62} onZoom={onZoom} />
             </div>
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.B }}>B</span>
-              <Pic src={`${IMG}/ball.jpg`} label="ball" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/banana.jpg`} label="banana" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/bear.jpg`} label="bear" size={78} onZoom={onZoom} />
+              <Pic src={`${IMG}/ball.jpg`} label="ball" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/banana.jpg`} label="banana" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/bear.jpg`} label="bear" size={62} onZoom={onZoom} />
             </div>
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.C }}>C</span>
-              <Pic src={`${IMG}/cat.jpg`} label="cat" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/car.avif`} label="car" size={78} onZoom={onZoom} />
-              <Pic src={`${IMG}/cookie.webp`} label="cookie" size={78} onZoom={onZoom} />
+              <Pic src={`${IMG}/cat.jpg`} label="cat" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/car.avif`} label="car" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/cookie.webp`} label="cookie" size={62} onZoom={onZoom} />
             </div>
           </div>
         </>
       ),
     },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Mixed Up! 1",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/apple.jpg`} label="apple" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/cookie.webp`} label="cookie" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/bear.jpg`} label="bear" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Mixed Up! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/alligator.jpg`} label="alligator" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/cat.jpg`} label="cat" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Mixed Up! 3",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/banana.jpg`} label="banana" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/ant.jpg`} label="ant" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 13: Let's Practice!
     {
       stage: "Let's Practice!",
+      part: "C",
+      instruction: [["👂", "Listen."], ["🗣️", "Say your name and its first letter."]],
       time: "~3 min",
       body: (
         <>
@@ -445,6 +552,9 @@ function buildSlides({ onZoom }) {
     // 14: Show What You Know
     {
       stage: "Show What You Know",
+      part: "D",
+      instruction: [["🤔", "Remember!"], ["🗣️", "Say each letter."]],
+      guide: "It's the letter ___.",
       time: "~1 min",
       body: (
         <>
@@ -460,17 +570,47 @@ function buildSlides({ onZoom }) {
     // 14b: Picture Check! (recall without the letter shown)
     {
       stage: "Show What You Know",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word and the letter."]],
+      guide: "___ is for ___.",
       time: "~1 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Letter?</h2></span>
           <div className="row">
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG}/cookie.webp`} label="cookie" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG}/ant.jpg`} label="ant" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={125} onZoom={onZoom} />
+            <Pic src={`${IMG}/cookie.webp`} label="cookie" size={125} onZoom={onZoom} />
+            <Pic src={`${IMG}/ant.jpg`} label="ant" size={125} onZoom={onZoom} />
           </div>
-          <p className="slide-p">No letters this time. Can you say the word and the letter?</p>
         </>
+      ),
+    },
+    {
+      stage: "Show What You Know",
+      part: "D",
+      title: "What Letter? Again!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word and the letter."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/cat.jpg`} label="cat" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/bear.jpg`} label="bear" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/apple.jpg`} label="apple" size={125} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Show What You Know",
+      part: "D",
+      title: "One More Time!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word and the letter."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={`${IMG}/alligator.jpg`} label="alligator" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={125} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={125} onZoom={onZoom} />
+        </div>
       ),
     },
     // 15: Great Job
@@ -536,6 +676,17 @@ export const styles = `
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
 .progress-track { display: flex; align-items: center; gap: 7px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
+.part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
+.slide-instruction { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); background: #fff; border-radius: 999px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); position: relative; z-index: 1; text-align: center; margin-top: 4px; }
+.instr-step { display: inline-flex; align-items: center; gap: 7px; }
+.instr-icon { font-size: 20px; line-height: 1; }
+.slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
+.guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
+.guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
+.big-question { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: var(--coral); background: #fff; width: 110px; height: 110px; border-radius: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(27,42,74,0.14); }
+.bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
+.dot.part-start { margin-left: 8px; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 .title-highlight { position: relative; display: inline-block; }

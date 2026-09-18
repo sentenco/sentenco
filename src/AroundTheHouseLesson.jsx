@@ -77,6 +77,13 @@ function BlendRow({ parts, result, color = BLEND_COLOR, onZoom }) {
   );
 }
 
+const PARTS = {
+  A: { color: "#F2A900" },
+  B: { color: "#2E97C7" },
+  C: { color: "#22A67E" },
+  D: { color: "#E0567A" },
+};
+
 export default function AroundTheHouseLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -124,6 +131,7 @@ export default function AroundTheHouseLesson() {
 
   const slides = buildSlides({ onZoom: setZoom });
   const total = slides.length;
+  const lastPart = [...slides].reverse().find((x) => x.part)?.part;
   const s = slides[i];
 
   function go(delta) {
@@ -144,17 +152,43 @@ export default function AroundTheHouseLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>{s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
-          <div className="slide-body">{s.body}</div>
+          <div className="slide-body">
+            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
+            {s.body}
+            {s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => (
+                  <span key={text} className="instr-step"><span className="instr-icon">{icon}</span>{text}</span>
+                ))}
+              </div>
+            )}
+            {s.guide && (
+              <div className="slide-guide">
+                <span className="guide-label">Say</span>
+                <span className="guide-text">
+                  {s.guide.split("___").map((part, k, arr) => (
+                    <React.Fragment key={k}>{part}{k < arr.length - 1 && <span className="guide-blank" />}</React.Fragment>
+                  ))}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
             <div className="progress-track">
               {Array.from({ length: total }).map((_, idx) => (
-                <span key={idx} className={`dot ${idx === i ? "on" : ""}`} />
+                <span
+                  key={idx}
+                  className={`dot ${idx === i ? "on" : ""} ${slides[idx].part && slides[idx].part !== slides[idx - 1]?.part ? "part-start" : ""}`}
+                  style={slides[idx].part && idx === i ? { background: PARTS[slides[idx].part].color } : undefined}
+                />
               ))}
             </div>
             <button className="nav-btn next" onClick={() => (i === total - 1 ? exit() : go(1))}>
@@ -436,6 +470,17 @@ export const styles = `
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
 .progress-track { display: flex; align-items: center; gap: 7px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
+.part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
+.slide-instruction { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); background: #fff; border-radius: 999px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); position: relative; z-index: 1; text-align: center; margin-top: 4px; }
+.instr-step { display: inline-flex; align-items: center; gap: 7px; }
+.instr-icon { font-size: 20px; line-height: 1; }
+.slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
+.guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
+.guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
+.big-question { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: var(--coral); background: #fff; width: 110px; height: 110px; border-radius: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(27,42,74,0.14); }
+.bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
+.dot.part-start { margin-left: 8px; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 .title-highlight { position: relative; display: inline-block; }

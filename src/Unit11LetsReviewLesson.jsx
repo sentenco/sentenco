@@ -71,6 +71,13 @@ function SortBin({ label, color, children }) {
   );
 }
 
+const PARTS = {
+  A: { name: "Warm-Up", color: "#F2A900" },
+  B: { name: "Review", color: "#2E97C7" },
+  C: { name: "Game", color: "#22A67E" },
+  D: { name: "Challenge", color: "#E0567A" },
+};
+
 export default function Unit11LetsReviewLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -118,6 +125,7 @@ export default function Unit11LetsReviewLesson() {
 
   const slides = buildSlides({ onZoom: setZoom });
   const total = slides.length;
+  const lastPart = [...slides].reverse().find((x) => x.part)?.part;
   const s = slides[i];
 
   function go(delta) {
@@ -138,17 +146,43 @@ export default function Unit11LetsReviewLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>{s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
-          <div className="slide-body">{s.body}</div>
+          <div className="slide-body">
+            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
+            {s.body}
+            {s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => (
+                  <span key={text} className="instr-step"><span className="instr-icon">{icon}</span>{text}</span>
+                ))}
+              </div>
+            )}
+            {s.guide && (
+              <div className="slide-guide">
+                <span className="guide-label">Say</span>
+                <span className="guide-text">
+                  {s.guide.split("___").map((part, k, arr) => (
+                    <React.Fragment key={k}>{part}{k < arr.length - 1 && <span className="guide-blank" />}</React.Fragment>
+                  ))}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
             <div className="progress-track">
               {Array.from({ length: total }).map((_, idx) => (
-                <span key={idx} className={`dot ${idx === i ? "on" : ""}`} />
+                <span
+                  key={idx}
+                  className={`dot ${idx === i ? "on" : ""} ${slides[idx].part && slides[idx].part !== slides[idx - 1]?.part ? "part-start" : ""}`}
+                  style={slides[idx].part && idx === i ? { background: PARTS[slides[idx].part].color } : undefined}
+                />
               ))}
             </div>
             <button className="nav-btn next" onClick={() => (i === total - 1 ? exit() : go(1))}>
@@ -174,18 +208,19 @@ export default function Unit11LetsReviewLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 11 · Lesson 4", time: null, note: null },
-  { stage: "Warm-Up Review", time: "~3 min", note: "Rapid review of toys and play words." },
-  { stage: "Toy Review", time: "~4 min", note: "Student identifies toys and uses \"It's a...\"." },
-  { stage: "Sentence Review", time: "~4 min", note: "Practice \"I play with...\" using different toys." },
-  { stage: "Action Review", time: "~3 min", note: "Review run, jump, throw, kick through actions." },
-  { stage: "HIGHLIGHT: Playtime Sorting Game", time: "~6 min", note: "Sort mixed cards into TOYS and ACTIONS, then make sentences combining one from each group." },
-  { stage: "Mixed Challenge", time: "~4 min", note: "Randomly show a toy or action. Student responds with the appropriate word or sentence." },
+  { stage: "Warm-Up Review", time: "~3 min", note: "Two quick pictures per slide. The student says each word without help. Fast learner? Go straight through; slower learner? Say each word together first." },
+  { stage: "Toy Review", time: "~4 min", note: "Slide 1 shows the words; slide 2 shows the same toys with no words, so the student has to remember. Skip slide 2 only if time is short." },
+  { stage: "Sentence Review", time: "~4 min", note: "One toy per slide: student says \"I play with a ___.\" Four toys, four slides. Fast learners can say it before you do." },
+  { stage: "Action Review", time: "~4 min", note: "Do each action together, then play Guess the Action: you act, the student says the word." },
+  { stage: "HIGHLIGHT: Playtime Sorting Game", time: "~6 min", note: "Sort the mixed cards into TOYS and ACTIONS, check the answer, then make sentences. Rounds 2 to 4 have no model sentence: accept any correct sentence, e.g. \"I jump with the doll.\"" },
+  { stage: "Mixed Challenge", time: "~4 min", note: "One card at a time, then a speed round with four cards. Student says the word or a full sentence." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
 function buildSlides({ onZoom }) {
+  const ball = <Pic src={`${IMG}/ball.jpg`} label="ball" size={130} onZoom={onZoom} />;
   return [
-    // 1: Cover
+    // Cover
     {
       stage: "Unit 11 · Lesson 4",
       body: (
@@ -195,102 +230,175 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
-    // 2: Warm-Up Review
+
+    // ---------- PART A: WARM-UP ----------
     {
       stage: "Warm-Up Review",
+      part: "A",
+      title: "Quick Look!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what they are."]],
+      guide: "It's a/an ___.",
       body: (
-        <div className="word-row">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={80} onZoom={onZoom} />
-          <Pic src={`${IMG}/car.avif`} label="car" size={80} onZoom={onZoom} />
+        <div className="word-row" style={{ gap: 24 }}>
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={150} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={150} onZoom={onZoom} />
         </div>
       ),
     },
-    // 3: Toy Review
+    {
+      stage: "Warm-Up Review",
+      part: "A",
+      title: "Quick Look Again!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what they are."]],
+      guide: "It's a/an ___.",
+      body: (
+        <div className="word-row" style={{ gap: 24 }}>
+          <Pic src={DOLL_IMG} label="doll" size={150} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={150} onZoom={onZoom} />
+        </div>
+      ),
+    },
+
+    // ---------- PART B: REVIEW ----------
     {
       stage: "Toy Review",
+      part: "B",
+      title: "Name the Toys!",
+      instruction: [["👀", "Look at each toy."], ["🗣️", "Say its name."]],
+      guide: "It's a/an ___.",
       body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Name the Toys!</h2></span>
-          <div className="word-row">
-            <WordCard src="/curriculum/u11-l1/toy.jpg" word="Toy" label="toy" onZoom={onZoom} />
-            <WordCard src={`${IMG}/ball.jpg`} word="Ball" label="ball" onZoom={onZoom} />
-            <WordCard src={DOLL_IMG} word="Doll" label="doll" onZoom={onZoom} />
-            <WordCard src={`${IMG}/car.avif`} word="Car" label="car" onZoom={onZoom} />
-          </div>
-        </>
+        <div className="word-row">
+          <WordCard src="/curriculum/u11-l1/toy.jpg" word="Toy" label="toy" onZoom={onZoom} />
+          <WordCard src={`${IMG}/ball.jpg`} word="Ball" label="ball" onZoom={onZoom} />
+          <WordCard src={DOLL_IMG} word="Doll" label="doll" onZoom={onZoom} />
+          <WordCard src={`${IMG}/car.avif`} word="Car" label="car" onZoom={onZoom} />
+        </div>
       ),
     },
-    // 4: Sentence Review (round 1)
     {
+      stage: "Toy Review",
+      part: "B",
+      title: "What Toy Is It?",
+      instruction: [["🤔", "Remember!"], ["🗣️", "Say each name. No words this time."]],
+      guide: "It's a/an ___.",
+      body: (
+        <div className="word-row" style={{ gap: 18 }}>
+          <Pic src={DOLL_IMG} label="doll" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={120} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    ...[
+      ["ball", `${IMG}/ball.jpg`, "a ball"],
+      ["car", `${IMG}/car.avif`, "a car"],
+      ["doll", DOLL_IMG, "a doll"],
+      ["toy", "/curriculum/u11-l1/toy.jpg", "a toy"],
+    ].map(([label, src, phrase]) => ({
       stage: "Sentence Review",
+      part: "B",
+      title: "I Play With...",
+      instruction: [["👂", "Listen."], ["🗣️", `Say: I play with ${phrase}.`]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+          <Pic src={src} label={label} size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">I play with a ball.</div>
+              <div className="bubble right">I play with {phrase}.</div>
             </div>
           </div>
         </div>
       ),
-    },
-    // 4b: Sentence Review (round 2)
-    {
-      stage: "Sentence Review",
-      body: (
-        <div className="center-col">
-          <Pic src={`${IMG}/car.avif`} label="car" size={90} onZoom={onZoom} />
-          <div className="bubble-col" style={{ maxWidth: 380 }}>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">I play with a car.</div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    // 5: Action Review
+    })),
     {
       stage: "Action Review",
+      part: "B",
+      title: "Action Review!",
+      instruction: [["🏃", "Do each action."], ["🗣️", "Say its name."]],
+      guide: "I can ___.",
       body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Action Review!</h2></span>
-          <div className="word-row">
+        <div className="word-row">
+          <ActionChip label="Run" onZoom={onZoom} />
+          <ActionChip label="Jump" onZoom={onZoom} />
+          <ActionChip label="Throw" onZoom={onZoom} />
+          <ActionChip label="Kick" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Action Review",
+      part: "B",
+      title: "Guess the Action!",
+      instruction: [["👀", "Watch the teacher act."], ["🗣️", "Say the action!"]],
+      guide: "You ___!",
+      body: (
+        <div className="center-col">
+          <div className="big-question">?</div>
+          <div className="word-row" style={{ gap: 10 }}>
             <ActionChip label="Run" onZoom={onZoom} />
             <ActionChip label="Jump" onZoom={onZoom} />
             <ActionChip label="Throw" onZoom={onZoom} />
             <ActionChip label="Kick" onZoom={onZoom} />
           </div>
-        </>
+        </div>
       ),
     },
-    // 6: HIGHLIGHT Playtime Sorting Game (round 1, sort)
+
+    // ---------- PART C: GAME ----------
     {
       stage: "HIGHLIGHT: Playtime Sorting Game",
+      part: "C",
+      title: "🧩 Sorting Game!",
+      instruction: [["🤔", "Is it a TOY or an ACTION?"], ["🗣️", "Tell me and say the word."]],
+      guide: "It's a toy. / It's an action.",
       body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">🧩 Sorting Game!</h2></span>
-          <div className="sort-row">
-            <SortBin label="TOYS" color="#8E6FCE">
-              <Pic src={`${IMG}/ball.jpg`} label="ball" size={54} onZoom={onZoom} />
-              <Pic src={`${IMG}/car.avif`} label="car" size={54} onZoom={onZoom} />
-            </SortBin>
-            <SortBin label="ACTIONS" color="#2E97C7">
-              <ActionChip label="Run" onZoom={onZoom} />
-              <ActionChip label="Kick" onZoom={onZoom} />
-            </SortBin>
+        <div className="center-col">
+          <div className="word-row" style={{ gap: 14 }}>
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={86} onZoom={onZoom} />
+            <ActionChip label="Run" onZoom={onZoom} />
+            <Pic src={`${IMG}/car.avif`} label="car" size={86} onZoom={onZoom} />
+            <ActionChip label="Kick" onZoom={onZoom} />
           </div>
-        </>
+          <div className="sort-row">
+            <SortBin label="TOYS" color="#8E6FCE"><span className="bin-hint">?</span></SortBin>
+            <SortBin label="ACTIONS" color="#2E97C7"><span className="bin-hint">?</span></SortBin>
+          </div>
+        </div>
       ),
     },
-    // 7: HIGHLIGHT Playtime Sorting Game (round 2, combine)
     {
       stage: "HIGHLIGHT: Playtime Sorting Game",
+      part: "C",
+      title: "🧩 Check It!",
+      instruction: [["👀", "Were you right?"], ["🗣️", "Say each word in the groups."]],
+      body: (
+        <div className="sort-row">
+          <SortBin label="TOYS" color="#8E6FCE">
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={64} onZoom={onZoom} />
+            <Pic src={`${IMG}/car.avif`} label="car" size={64} onZoom={onZoom} />
+            <Pic src={DOLL_IMG} label="doll" size={64} onZoom={onZoom} />
+            <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={64} onZoom={onZoom} />
+          </SortBin>
+          <SortBin label="ACTIONS" color="#2E97C7">
+            <ActionChip label="Run" onZoom={onZoom} />
+            <ActionChip label="Jump" onZoom={onZoom} />
+            <ActionChip label="Throw" onZoom={onZoom} />
+            <ActionChip label="Kick" onZoom={onZoom} />
+          </SortBin>
+        </div>
+      ),
+    },
+    {
+      stage: "HIGHLIGHT: Playtime Sorting Game",
+      part: "C",
+      title: "Make a Sentence!",
+      instruction: [["👂", "Listen."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={70} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={120} onZoom={onZoom} />
             <ActionChip label="Kick" onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
@@ -302,20 +410,66 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
-    // 8: Mixed Challenge
+    ...[
+      ["doll", DOLL_IMG, "Jump"],
+      ["car", `${IMG}/car.avif`, "Run"],
+      ["toy", "/curriculum/u11-l1/toy.jpg", "Throw"],
+    ].map(([label, src, action]) => ({
+      stage: "HIGHLIGHT: Playtime Sorting Game",
+      part: "C",
+      title: "Make a Sentence!",
+      instruction: [["🧩", "Put them together."], ["🗣️", "Say your own sentence."]],
+      guide: action === "Throw" ? "I ___ the ___." : "I ___ with the ___.",
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={src} label={label} size={130} onZoom={onZoom} />
+          <ActionChip label={action} onZoom={onZoom} />
+        </div>
+      ),
+    })),
+
+    // ---------- PART D: CHALLENGE ----------
     {
       stage: "Mixed Challenge",
+      part: "D",
+      title: "Mixed Challenge!",
+      instruction: [["🤔", "What do you see?"], ["🗣️", "Say the words, or a sentence."]],
+      guide: "I see a/an ___.",
       body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Mixed Challenge!</h2></span>
-          <div className="word-row">
-            <Pic src={DOLL_IMG} label="doll" size={70} onZoom={onZoom} />
-            <ActionChip label="Jump" onZoom={onZoom} />
-          </div>
-        </>
+        <div className="word-row" style={{ gap: 20 }}>
+          <Pic src={DOLL_IMG} label="doll" size={130} onZoom={onZoom} />
+          <ActionChip label="Jump" onZoom={onZoom} />
+        </div>
       ),
     },
-    // 9: Wrap-up
+    {
+      stage: "Mixed Challenge",
+      part: "D",
+      title: "Mixed Challenge!",
+      instruction: [["🤔", "What is it?"], ["🗣️", "Say the word, or a sentence."]],
+      body: (
+        <div className="word-row" style={{ gap: 20 }}>
+          <ActionChip label="Throw" onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={130} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Mixed Challenge",
+      part: "D",
+      title: "⚡ Speed Round!",
+      instruction: [["⚡", "Say all four, as fast as you can!"]],
+      body: (
+        <div className="word-row" style={{ gap: 14 }}>
+          <Pic src={`${IMG}/car.avif`} label="car" size={100} onZoom={onZoom} />
+          <ActionChip label="Run" onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <ActionChip label="Kick" onZoom={onZoom} />
+        </div>
+      ),
+    },
+
+    // Wrap-up
     {
       stage: "Wrap-Up",
       body: (
@@ -377,6 +531,17 @@ export const styles = `
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
 .progress-track { display: flex; align-items: center; gap: 7px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
+.part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
+.slide-instruction { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); background: #fff; border-radius: 999px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); position: relative; z-index: 1; text-align: center; margin-top: 4px; }
+.big-question { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: var(--coral); background: #fff; width: 110px; height: 110px; border-radius: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(27,42,74,0.14); }
+.bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
+.slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
+.guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
+.guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
+.instr-step { display: inline-flex; align-items: center; gap: 7px; }
+.instr-icon { font-size: 20px; line-height: 1; }
+.dot.part-start { margin-left: 8px; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 .title-highlight { position: relative; display: inline-block; }

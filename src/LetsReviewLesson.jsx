@@ -114,6 +114,13 @@ function EmotionCard({ name, onZoom }) {
   );
 }
 
+const PARTS = {
+  A: { color: "#F2A900" },
+  B: { color: "#2E97C7" },
+  C: { color: "#22A67E" },
+  D: { color: "#E0567A" },
+};
+
 export default function LetsReviewLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -161,6 +168,7 @@ export default function LetsReviewLesson() {
 
   const slides = buildSlides({ onZoom: setZoom });
   const total = slides.length;
+  const lastPart = [...slides].reverse().find((x) => x.part)?.part;
   const s = slides[i];
 
   function go(delta) {
@@ -181,17 +189,43 @@ export default function LetsReviewLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>{s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
-          <div className="slide-body">{s.body}</div>
+          <div className="slide-body">
+            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
+            {s.body}
+            {s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => (
+                  <span key={text} className="instr-step"><span className="instr-icon">{icon}</span>{text}</span>
+                ))}
+              </div>
+            )}
+            {s.guide && (
+              <div className="slide-guide">
+                <span className="guide-label">Say</span>
+                <span className="guide-text">
+                  {s.guide.split("___").map((part, k, arr) => (
+                    <React.Fragment key={k}>{part}{k < arr.length - 1 && <span className="guide-blank" />}</React.Fragment>
+                  ))}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
             <div className="progress-track">
               {Array.from({ length: total }).map((_, idx) => (
-                <span key={idx} className={`dot ${idx === i ? "on" : ""}`} />
+                <span
+                  key={idx}
+                  className={`dot ${idx === i ? "on" : ""} ${slides[idx].part && slides[idx].part !== slides[idx - 1]?.part ? "part-start" : ""}`}
+                  style={slides[idx].part && idx === i ? { background: PARTS[slides[idx].part].color } : undefined}
+                />
               ))}
             </div>
             <button className="nav-btn next" onClick={() => (i === total - 1 ? exit() : go(1))}>
@@ -221,10 +255,10 @@ export const LESSON_GUIDE = [
   { stage: "How Are You?", time: "~3 min", note: "Show the 3 feeling cards. Ask 'How are you?' and let the student choose one and answer. Add a small gesture for each feeling." },
   { stage: "Nice to Meet You!", time: "~3 min", note: "Practice the mini-dialogue together, then switch roles: let the student pretend to be the teacher and greet you first." },
   { stage: "Letter Review: A-I", time: "~4 min", note: "Show A-I in mixed order and let the student name each one. Then point to an uppercase and lowercase pair and ask if they match." },
-  { stage: "What Letter?", time: "~4 min", note: "Show each picture and ask what letter it starts with, not just the word itself." },
+  { stage: "What Letter?", time: "~4 min", note: "Show each picture and ask what letter it starts with, not just the word itself. Fast learner? Add What Letter? Again! (six new pictures, +2 min)." },
   { stage: "Mystery Picture!", time: "~2 min", note: "Show the dog picture. Let the student tap each tile to reveal D, O, and G, saying the letter and sounding out the word as each one appears." },
-  { stage: "Mystery Picture!", time: "~1.5 min", note: "One more round with the bag picture -- same tap-to-reveal for B, A, and G." },
-  { stage: "My A-I Challenge", time: "~1.5 min", note: "One more quick pass through all 9 letters, in mixed order." },
+  { stage: "Mystery Picture!", time: "~1.5 min", note: "One more round with the bag picture -- same tap-to-reveal for B, A, and G. Extra rounds for fast learners (+4 min): Mystery Picture 3 (cat) and 4 (hen), same tap-to-reveal." },
+  { stage: "My A-I Challenge", time: "~1.5 min", note: "One more quick pass through all 9 letters, in mixed order. Fast learner? Add Backwards! (I to A, +1 min)." },
   { stage: "My A-I Challenge", time: "~1.5 min", note: "Finish with the full exchange together: greeting, feeling, and 'Nice to meet you!'" },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -250,6 +284,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Answer with your name."]],
+      guide: "My name is ___.",
       time: "~3 min",
       body: (
         <>
@@ -275,6 +312,9 @@ function buildSlides({ onZoom }) {
     // 3: How Are You?
     {
       stage: "How Are You?",
+      part: "A",
+      instruction: [["👀", "Look at each face."], ["🗣️", "Say how you feel."]],
+      guide: "I am ___.",
       time: "~3 min",
       body: (
         <>
@@ -290,6 +330,8 @@ function buildSlides({ onZoom }) {
     // 4: Nice to Meet You!
     {
       stage: "Nice to Meet You!",
+      part: "A",
+      instruction: [["🗣️", "Introduce yourself."], ["🤝", "Say: Nice to meet you!"]],
       time: "~3 min",
       body: (
         <>
@@ -310,6 +352,9 @@ function buildSlides({ onZoom }) {
     // 5: Letter Review A-I (mixed order)
     {
       stage: "Letter Review: A-I",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~2 min",
       body: (
         <>
@@ -331,6 +376,8 @@ function buildSlides({ onZoom }) {
     // 6: Letter Review A-I (uppercase/lowercase match)
     {
       stage: "Letter Review: A-I",
+      part: "B",
+      instruction: [["🤔", "Do the letters match?"], ["🗣️", "Say yes or no."]],
       time: "~2 min",
       body: (
         <>
@@ -354,6 +401,9 @@ function buildSlides({ onZoom }) {
     // 7: What Letter?
     {
       stage: "What Letter?",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
       time: "~4 min",
       body: (
         <>
@@ -373,18 +423,38 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "What Letter?",
+      part: "B",
+      title: "What Letter? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the letter and the word."]],
+      guide: "___ is for ___.",
+      body: (
+        <div className="word-row" style={{ gap: 14 }}>
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG3}/house.jpeg`} label="house" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG2}/duck.png`} label="duck" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG1}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG3}/gift.jpg`} label="gift" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG2}/frog.jpg`} label="frog" size={90} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 8: Mystery Picture Round 1 (tap to reveal)
     {
       stage: "Mystery Picture!",
+      part: "C",
+      instruction: [["🤫", "Tap a tile to see each letter."], ["🗣️", "Say the letters, then the word."]],
+      guide: "It's a ___.",
       time: "~2 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Mystery Picture!</h2></span>
-          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
           <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="D" color={MYSTERY_COLOR.D} size={90} fontSize={36} />
-            <TapLetterTile letter="O" color={MYSTERY_COLOR.O} size={90} fontSize={36} />
-            <TapLetterTile letter="G" color={MYSTERY_COLOR.G} size={90} fontSize={36} />
+            <TapLetterTile letter="D" color={MYSTERY_COLOR.D} size={66} fontSize={26} />
+            <TapLetterTile letter="O" color={MYSTERY_COLOR.O} size={66} fontSize={26} />
+            <TapLetterTile letter="G" color={MYSTERY_COLOR.G} size={66} fontSize={26} />
           </div>
         </>
       ),
@@ -392,6 +462,9 @@ function buildSlides({ onZoom }) {
     // 10: Mystery Picture reveal
     {
       stage: "Mystery Picture!",
+      part: "C",
+      instruction: [["🎉", "You found it!"], ["🗣️", "Say the sentence."]],
+      guide: "It's a ___.",
       time: "~2 min",
       body: (
         <>
@@ -408,15 +481,18 @@ function buildSlides({ onZoom }) {
     // 10b: Mystery Picture Round 2 (tap to reveal)
     {
       stage: "Mystery Picture!",
+      part: "C",
+      instruction: [["🤫", "Tap a tile to see each letter."], ["🗣️", "Say the letters, then the word."]],
+      guide: "It's a ___.",
       time: "~1.5 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">One More Mystery!</h2></span>
-          <Pic src={`${IMG4}/bag.avif`} label="bag" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG4}/bag.avif`} label="bag" size={90} onZoom={onZoom} />
           <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="B" color={LETTER_COLOR.B} size={90} fontSize={36} />
-            <TapLetterTile letter="A" color={LETTER_COLOR.A} size={90} fontSize={36} />
-            <TapLetterTile letter="G" color={LETTER_COLOR.G} size={90} fontSize={36} />
+            <TapLetterTile letter="B" color={LETTER_COLOR.B} size={66} fontSize={26} />
+            <TapLetterTile letter="A" color={LETTER_COLOR.A} size={66} fontSize={26} />
+            <TapLetterTile letter="G" color={LETTER_COLOR.G} size={66} fontSize={26} />
           </div>
         </>
       ),
@@ -424,6 +500,9 @@ function buildSlides({ onZoom }) {
     // 10c: Mystery Picture Round 2 reveal
     {
       stage: "Mystery Picture!",
+      part: "C",
+      instruction: [["🎉", "You found it!"], ["🗣️", "Say the sentence."]],
+      guide: "It's a ___.",
       time: "~1.3 min",
       body: (
         <>
@@ -437,9 +516,79 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Mystery Picture!",
+      part: "C",
+      title: "Mystery Picture 3!",
+      instruction: [["🤫", "Tap a tile to see each letter."], ["🗣️", "Say the letters, then the word."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
+          <div className="row" style={{ marginTop: 6 }}>
+            <TapLetterTile letter="C" color="#22A67E" size={66} fontSize={26} />
+            <TapLetterTile letter="A" color="#F2A900" size={66} fontSize={26} />
+            <TapLetterTile letter="T" color="#4A6FA5" size={66} fontSize={26} />
+          </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Mystery Picture!",
+      part: "C",
+      title: "It's a Cat!",
+      instruction: [["🎉", "You found it!"], ["🗣️", "Say the sentence."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="center-col">
+          <div className="row">
+            <LetterTile letters="C" color="#22A67E" size={54} fontSize={22} onZoom={onZoom} />
+            <LetterTile letters="A" color="#F2A900" size={54} fontSize={22} onZoom={onZoom} />
+            <LetterTile letters="T" color="#4A6FA5" size={54} fontSize={22} onZoom={onZoom} />
+          </div>
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={130} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Mystery Picture!",
+      part: "C",
+      title: "Mystery Picture 4!",
+      instruction: [["🤫", "Tap a tile to see each letter."], ["🗣️", "Say the letters, then the word."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src={`${IMG3}/hen.jpg`} label="hen" size={90} onZoom={onZoom} />
+          <div className="row" style={{ marginTop: 6 }}>
+            <TapLetterTile letter="H" color="#D6478C" size={66} fontSize={26} />
+            <TapLetterTile letter="E" color="#8E6FCE" size={66} fontSize={26} />
+            <TapLetterTile letter="N" color="#DB2777" size={66} fontSize={26} />
+          </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Mystery Picture!",
+      part: "C",
+      title: "It's a Hen!",
+      instruction: [["🎉", "You found it!"], ["🗣️", "Say the sentence."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="center-col">
+          <div className="row">
+            <LetterTile letters="H" color="#D6478C" size={54} fontSize={22} onZoom={onZoom} />
+            <LetterTile letters="E" color="#8E6FCE" size={54} fontSize={22} onZoom={onZoom} />
+            <LetterTile letters="N" color="#DB2777" size={54} fontSize={22} onZoom={onZoom} />
+          </div>
+          <Pic src={`${IMG3}/hen.jpg`} label="hen" size={130} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 11: My A-I Challenge (letters)
     {
       stage: "My A-I Challenge",
+      part: "D",
+      instruction: [["🏁", "Say all the letters."], ["⚡", "Mixed order. Go fast!"]],
       time: "~1.5 min",
       body: (
         <>
@@ -458,9 +607,30 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "My A-I Challenge",
+      part: "D",
+      title: "Backwards!",
+      instruction: [["🔄", "Now say the letters backwards!"], ["🗣️", "Start with I."]],
+      body: (
+        <div className="letter-row">
+          <LetterTile letters="Ii" color={LETTER_COLOR.I} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Hh" color={LETTER_COLOR.H} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Gg" color={LETTER_COLOR.G} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Ff" color={LETTER_COLOR.F} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Ee" color={LETTER_COLOR.E} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Dd" color={LETTER_COLOR.D} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Cc" color={LETTER_COLOR.C} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Bb" color={LETTER_COLOR.B} size={48} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="Aa" color={LETTER_COLOR.A} size={48} fontSize={18} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 12: My A-I Challenge (full exchange)
     {
       stage: "My A-I Challenge",
+      part: "D",
+      instruction: [["👂", "Listen."], ["🗣️", "Say the whole conversation."]],
       time: "~1.5 min",
       body: (
         <>
@@ -541,6 +711,17 @@ export const styles = `
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
 .progress-track { display: flex; align-items: center; gap: 7px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
+.part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
+.slide-instruction { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); background: #fff; border-radius: 999px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); position: relative; z-index: 1; text-align: center; margin-top: 4px; }
+.instr-step { display: inline-flex; align-items: center; gap: 7px; }
+.instr-icon { font-size: 20px; line-height: 1; }
+.slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
+.guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
+.guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
+.big-question { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: var(--coral); background: #fff; width: 110px; height: 110px; border-radius: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(27,42,74,0.14); }
+.bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
+.dot.part-start { margin-left: 8px; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 .title-highlight { position: relative; display: inline-block; }
