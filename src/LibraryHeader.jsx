@@ -27,10 +27,12 @@ const SEARCH_MODES = [
 // hub/track pages are added under a modality or module family.
 const SPEAKING_PREFIXES = ["/library/forge", "/library/relay", "/library/ascend", "/library/bridge", "/library/derive", "/library/sequence", "/library/shift"];
 const GRAMMAR_PREFIX = "/library/grammar/";
+const LISTENING_PREFIX = "/library/listening/";
 
 function activeCategoryFor(pathname) {
   if (SPEAKING_PREFIXES.some((p) => pathname === p || pathname.startsWith(p + "/"))) return "Speaking";
   if (pathname.startsWith(GRAMMAR_PREFIX)) return "Grammar";
+  if (pathname.startsWith(LISTENING_PREFIX)) return "Listening";
   return null;
 }
 
