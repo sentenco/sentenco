@@ -195,8 +195,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="pen" size={78} onZoom={onZoom} />
-            <Pic src={null} label="book" size={78} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={78} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={78} onZoom={onZoom} />
             <Pic src={`${IMG}/bag.avif`} label="bag" size={78} onZoom={onZoom} />
           </div>
         </>
@@ -209,9 +209,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="desk" size={78} onZoom={onZoom} />
-            <Pic src={null} label="chair" size={78} onZoom={onZoom} />
-            <Pic src={null} label="board" size={78} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={78} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={78} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/board.png" label="board" size={78} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -244,7 +244,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About School!</h2></span>
-          <Pic src={null} label="classroom scene" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/kids-sharing.jpg" label="classroom scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },

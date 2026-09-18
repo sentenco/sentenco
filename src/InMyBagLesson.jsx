@@ -178,8 +178,8 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h1 className="slide-h title-h">In My Bag!</h1></span>
           <p className="slide-p title-p">Today we learn pen, book, and bag!</p>
           <div className="word-row">
-            <WordCard src={null} word="Pen" label="pen" onZoom={onZoom} />
-            <WordCard src={null} word="Book" label="book" onZoom={onZoom} />
+            <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u7-objects/book.png" word="Book" label="book" onZoom={onZoom} />
             <WordCard src={`${IMG}/bag.avif`} word="Bag" label="bag" onZoom={onZoom} />
           </div>
         </div>
@@ -203,8 +203,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet My School Things!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Pen" label="pen" onZoom={onZoom} />
-            <WordCard src={null} word="Book" label="book" onZoom={onZoom} />
+            <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u7-objects/book.png" word="Book" label="book" onZoom={onZoom} />
             <WordCard src={`${IMG}/bag.avif`} word="Bag" label="bag" onZoom={onZoom} />
           </div>
         </>
@@ -216,7 +216,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
-          <Pic src={null} label="book" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
         </div>
       ),
     },
@@ -226,7 +226,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Faster Now!</h2></span>
-          <Pic src={null} label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
         </div>
       ),
     },
@@ -283,9 +283,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🎒 What's in My Bag?</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Pen" label="pen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
             <WordCard src={PENCIL_IMG} word="Pencil" label="pencil" onZoom={onZoom} />
-            <WordCard src={null} word="Crayon" label="crayon" onZoom={onZoom} />
+            <WordCard src="/curriculum/u7-objects/crayon.png" word="Crayon" label="crayon" onZoom={onZoom} />
           </div>
           <p className="slide-p">Choose 2-3 to put in your bag!</p>
         </>
@@ -314,8 +314,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Bag Challenge!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="pen" size={70} onZoom={onZoom} />
-            <Pic src={null} label="book" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={70} onZoom={onZoom} />
             <Pic src={`${IMG}/bag.avif`} label="bag" size={70} onZoom={onZoom} />
           </div>
         </>
@@ -328,8 +328,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Quick Review!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Pen" label="pen" onZoom={onZoom} />
-            <WordCard src={null} word="Book" label="book" onZoom={onZoom} />
+            <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u7-objects/book.png" word="Book" label="book" onZoom={onZoom} />
             <WordCard src={`${IMG}/bag.avif`} word="Bag" label="bag" onZoom={onZoom} />
           </div>
         </>

@@ -212,7 +212,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Oh No, It's Messy!</h2></span>
-          <Pic src={null} label="messy desk scene" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/messy-desk.jpg" label="messy desk scene" size={180} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -228,7 +228,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This!</h2></span>
-          <Pic src={null} label="open classroom scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/open-classroom.jpg" label="open classroom scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
