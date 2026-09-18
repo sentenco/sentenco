@@ -3147,7 +3147,10 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   .lst-hero { padding-top: 118px; }
 }
 .lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
-.lst-hero-title { font-family: 'Luckiest Guy', cursive; font-weight: 400; letter-spacing: 0.02em; font-size: clamp(28px, 4.4vw, 42px); color: #3A2E1F; margin: 0 0 10px; }
+.lst-hero-title { font-family: 'Luckiest Guy', cursive; font-weight: 400; letter-spacing: 0.02em; font-size: clamp(28px, 4.4vw, 42px); color: #3A2E1F; margin: 0 0 19px; }
+@media (max-width: 700px) {
+  .lst-hero-title { margin-bottom: 10px; }
+}
 .lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #5C5142; max-width: 520px; margin: 0 auto; line-height: 1.6; }
 
 .lst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; padding: 22px clamp(16px, 3vw, 30px) 0; }
