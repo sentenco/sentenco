@@ -200,7 +200,7 @@ function buildSlides({ onZoom }) {
             <WordCard src={`${IMG}/lion.avif`} word="Lion" label="lion" onZoom={onZoom} />
             <WordCard src={`${IMG}/elephant.jpg`} word="Elephant" label="elephant" onZoom={onZoom} />
             <WordCard src={`${IMG}/monkey.avif`} word="Monkey" label="monkey" onZoom={onZoom} />
-            <WordCard src={null} word="Giraffe" label="giraffe" onZoom={onZoom} />
+            <WordCard src="/curriculum/u9-l1/giraffe.png" word="Giraffe" label="giraffe" onZoom={onZoom} />
           </div>
         </>
       ),

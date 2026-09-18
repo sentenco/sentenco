@@ -177,12 +177,12 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <Pic src={`${IMG}/cat.jpg`} label="cat" size={62} onZoom={onZoom} />
             <Pic src={`${IMG}/dog.jpg`} label="dog" size={62} onZoom={onZoom} />
-            <Pic src={null} label="bird" size={62} onZoom={onZoom} />
+            <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={62} onZoom={onZoom} />
             <Pic src={`${IMG}/fish.avif`} label="fish" size={62} onZoom={onZoom} />
             <Pic src={`${IMG}/lion.avif`} label="lion" size={62} onZoom={onZoom} />
             <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={62} onZoom={onZoom} />
             <Pic src={`${IMG}/monkey.avif`} label="monkey" size={62} onZoom={onZoom} />
-            <Pic src={null} label="giraffe" size={62} onZoom={onZoom} />
+            <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={62} onZoom={onZoom} />
           </div>
         </>
       ),
