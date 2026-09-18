@@ -3,13 +3,12 @@ import React, { useEffect, useState } from "react";
 const IMG1 = "/curriculum/u1-l1";
 const IMG2 = "/curriculum/u1-l2";
 const IMG3 = "/curriculum/u1-l3";
+const PDF_URL = "/curriculum/u1-l6/unit1-test-say-hello.pdf";
 
 const LETTER_COLOR = {
   A: "#F2A900", B: "#2E97C7", C: "#22A67E",
   D: "#E0567A", E: "#8E6FCE", F: "#2BAFAF",
   G: "#C77D2E", H: "#D6478C", I: "#4FA8D8",
-  L: "#059669", N: "#DB2777", O: "#7E22CE",
-  S: "#EA580C", T: "#4A6FA5",
 };
 const EMOTION_COLOR = { Happy: "#F2A900", Sad: "#4A90C2", Tired: "#9B7FD4" };
 const EMOTION_IMG = { Happy: `${IMG2}/happy.png`, Sad: `${IMG2}/sad.png`, Tired: `${IMG2}/tired.png` };
@@ -18,6 +17,16 @@ export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} style={style}>
       <path d="M12 2l2.2 5.8L20 9l-4.6 4 1.4 6-4.8-3.4L7.2 19l1.4-6L4 9l5.8-1.2z" />
+    </svg>
+  );
+}
+
+function DownloadIcon({ size = 15 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3">
+      <path d="M12 3v13" strokeLinecap="round" />
+      <path d="M6.5 11.5L12 17l5.5-5.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 20h16" strokeLinecap="round" />
     </svg>
   );
 }
@@ -55,35 +64,15 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function LetterTile({ letters, color, size = 74, fontSize = 28, onZoom }) {
+function LetterTile({ letters, color, size = 74, fontSize = 28, onZoom, dim = false }) {
   const big = <div className="letter-tile zoom-letter-tile" style={{ background: color }}><span>{letters}</span></div>;
   return (
-    <div className="letter-tile" style={{ background: color, width: size, height: size, fontSize }} onClick={() => onZoom(big)}>
-      {letters}
-    </div>
-  );
-}
-
-function TapLetterTile({ letter, color, size = 90, fontSize = 36 }) {
-  const [shown, setShown] = useState(false);
-  if (shown) {
-    return (
-      <div
-        className="letter-tile tap-tile"
-        style={{ background: color, width: size, height: size, fontSize }}
-        onClick={() => setShown(false)}
-      >
-        {letter}
-      </div>
-    );
-  }
-  return (
     <div
-      className="blank-tile tap-tile"
-      style={{ width: size, height: size, fontSize: Math.round(fontSize * 0.55) }}
-      onClick={() => setShown(true)}
+      className={`letter-tile ${dim ? "letter-tile--dim" : ""}`}
+      style={{ background: color, width: size, height: size, fontSize }}
+      onClick={() => onZoom(big)}
     >
-      ?
+      {letters}
     </div>
   );
 }
@@ -94,6 +83,28 @@ function EmotionCard({ name, onZoom }) {
   return (
     <div className="emo-tile" style={{ borderColor: color }} onClick={() => onZoom(big)}>
       <img src={EMOTION_IMG[name]} alt={name} />
+    </div>
+  );
+}
+
+function DownloadButton({ compact = false }) {
+  return (
+    <a className={`download-btn ${compact ? "is-compact" : ""}`} href={PDF_URL} download target="_blank" rel="noopener noreferrer">
+      <DownloadIcon />
+      Download printable test (PDF)
+    </a>
+  );
+}
+
+function ChoiceRow({ label, choices, answer }) {
+  return (
+    <div className="choice-block">
+      <p className="choice-label">{label}</p>
+      <div className="choice-row">
+        {choices.map((c) => (
+          <span key={c} className={`choice-pill ${c === answer ? "is-answer" : ""}`}>{c}</span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -201,15 +212,15 @@ export default function Unit1TestLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 1 · Test", time: null, note: null },
-  { stage: "Test Welcome", time: "~2 min", note: "Keep it light: 'Today is our Unit 1 Challenge! Do your best!' Do not teach or review anything before starting." },
-  { stage: "Part 1: Letter Check", time: "~2 min", note: "Show A-I in random order. No hints unless the student is truly stuck." },
-  { stage: "Part 1: Letter Check", time: "~2 min", note: "Show 2-3 uppercase/lowercase pairs and ask if they match." },
-  { stage: "Part 2: Letter & Word", time: "~4 min", note: "For each picture, wait for both the word and the beginning letter, e.g. 'Dog, D.'" },
-  { stage: "Part 3: Greetings", time: "~4 min", note: "Start the interaction yourself and see how independently the student responds: hello, name, and beyond." },
-  { stage: "Part 4: How Are You?", time: "~4 min", note: "Do not say the feeling word yourself. Let the student choose and describe it." },
-  { stage: "Part 5: Speaking Challenge", time: "~4 min", note: "A short role-play: the student greets you, asks your name, asks how you are, and says 'Nice to meet you!' with as little prompting as possible." },
-  { stage: "Part 6: Spelling Challenge", time: "~12 min", note: "Six rounds, same tap-to-reveal mechanic each time: ant, fish, egg, ball, goat, hen. Show the picture, let the student tap each tile to reveal the letters, saying each one and sounding out the word as it's built." },
-  { stage: "My Unit 1 Score!", time: "~3 min", note: "Keep feedback positive and specific. Show the star chart, celebrate what went well, and note anything worth a bit more practice next time." },
+  { stage: "Test Welcome", time: "~1 min", note: "Keep it light: 'Today is our Unit 1 Test! Do your best!' A PDF version of this same test is also available to download and print for home practice." },
+  { stage: "Section A: Circle the Letter", time: "~4 min", note: "Show each picture. Ask the student which letter it starts with; the other two letters shown are just distractors, no need to read them aloud unless helpful." },
+  { stage: "Section A: Circle the Letter", time: "~4 min", note: "Continue with the second group of three (D, E, F)." },
+  { stage: "Section A: Circle the Letter", time: "~4 min", note: "Continue with the last group of three (G, H, I)." },
+  { stage: "Section B: How Do They Feel?", time: "~3 min", note: "Show each face. Ask 'How do they feel?' and let the student choose from the three words shown." },
+  { stage: "Section C: Finish the Sentence", time: "~3 min", note: "Read each sentence aloud with the blank. Let the student pick the word that finishes it." },
+  { stage: "Section C: Finish the Sentence", time: "~3 min", note: "Read each question aloud and let the student choose the matching answer." },
+  { stage: "Section D: Say It Out Loud!", time: "~4 min", note: "A short live check: greet the student, ask their name, ask how they are, and see if they can say 'Nice to meet you!' with as little prompting as possible." },
+  { stage: "Great Job!", time: "~1 min", note: "Keep feedback positive. Remind the student's parent that the printable version of this same test is available to download for extra practice at home." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -221,335 +232,192 @@ function buildSlides({ onZoom }) {
       time: null,
       body: (
         <div className="title-content">
-          <span className="title-highlight"><h1 className="slide-h title-h">Unit 1 Challenge!</h1></span>
+          <span className="title-highlight"><h1 className="slide-h title-h">Say Hello! Test</h1></span>
           <p className="slide-p title-p">Let's see everything you know: A to I, greetings, and feelings.</p>
-          <div className="letter-row" style={{ marginTop: 6 }}>
-            <LetterTile letters="Aa" color={LETTER_COLOR.A} size={56} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="Ee" color={LETTER_COLOR.E} size={56} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="Ii" color={LETTER_COLOR.I} size={56} fontSize={22} onZoom={onZoom} />
+          <div className="letter-row" style={{ marginTop: 2, marginBottom: 6 }}>
+            <LetterTile letters="Aa" color={LETTER_COLOR.A} size={52} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="Ee" color={LETTER_COLOR.E} size={52} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="Ii" color={LETTER_COLOR.I} size={52} fontSize={20} onZoom={onZoom} />
           </div>
+          <DownloadButton />
         </div>
       ),
     },
     // 2: Test Welcome
     {
       stage: "Test Welcome",
-      time: "~2 min",
+      time: "~1 min",
       body: (
         <div className="center-col">
           <StarIcon size={44} fill="var(--sun)" />
           <span className="title-highlight"><h2 className="slide-h sub">You've Got This!</h2></span>
-          <p className="slide-p">Today is our Unit 1 Challenge. Just do your best. There's no wrong way to try!</p>
+          <p className="slide-p">Today is our Unit 1 Test. Just do your best. There's no wrong way to try!</p>
         </div>
       ),
     },
-    // 3: Part 1: Letter Check (random order)
+    // 3: Section A — Circle the Letter (A, B, C)
     {
-      stage: "Part 1: Letter Check",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Name the Letters!</h2></span>
-          <div className="letter-row">
-            <LetterTile letters="Gg" color={LETTER_COLOR.G} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Bb" color={LETTER_COLOR.B} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Ii" color={LETTER_COLOR.I} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Dd" color={LETTER_COLOR.D} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Aa" color={LETTER_COLOR.A} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Ff" color={LETTER_COLOR.F} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Cc" color={LETTER_COLOR.C} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Hh" color={LETTER_COLOR.H} size={54} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="Ee" color={LETTER_COLOR.E} size={54} fontSize={20} onZoom={onZoom} />
-          </div>
-        </>
-      ),
-    },
-    // 4: Part 1: Letter Check (match)
-    {
-      stage: "Part 1: Letter Check",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Do They Match?</h2></span>
-          <div className="row" style={{ gap: 40 }}>
-            <div className="match-pair">
-              <LetterTile letters="G" color={LETTER_COLOR.G} size={70} fontSize={30} onZoom={onZoom} />
-              <span className="match-plus">+</span>
-              <LetterTile letters="g" color={LETTER_COLOR.G} size={70} fontSize={30} onZoom={onZoom} />
-            </div>
-            <div className="match-pair">
-              <LetterTile letters="B" color={LETTER_COLOR.B} size={70} fontSize={30} onZoom={onZoom} />
-              <span className="match-plus">+</span>
-              <LetterTile letters="e" color={LETTER_COLOR.E} size={70} fontSize={30} onZoom={onZoom} />
-            </div>
-          </div>
-        </>
-      ),
-    },
-    // 5: Part 2: Letter & Word
-    {
-      stage: "Part 2: Letter & Word",
+      stage: "Section A: Circle the Letter",
       time: "~4 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">Word and Letter!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Circle the Letter!</h2></span>
           <div className="row">
-            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG1}/apple.jpg`} label="apple" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG3}/goat.avif`} label="goat" size={90} onZoom={onZoom} />
+            <div className="quiz-col">
+              <Pic src={`${IMG1}/apple.jpg`} label="apple" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["A", "E", "O"]} answer="A" />
+            </div>
+            <div className="quiz-col">
+              <Pic src={`${IMG1}/ball.jpg`} label="ball" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["D", "B", "P"]} answer="B" />
+            </div>
+            <div className="quiz-col">
+              <Pic src={`${IMG1}/cat.jpg`} label="cat" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["G", "K", "C"]} answer="C" />
+            </div>
           </div>
-          <p className="slide-p">Say the word, then the letter. "Dog, D."</p>
         </>
       ),
     },
-    // 6: Part 3: Greetings
+    // 4: Section A — Circle the Letter (D, E, F)
     {
-      stage: "Part 3: Greetings",
+      stage: "Section A: Circle the Letter",
       time: "~4 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">Greetings!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Circle the Letter!</h2></span>
+          <div className="row">
+            <div className="quiz-col">
+              <Pic src={`${IMG2}/dog.jpg`} label="dog" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["B", "D", "F"]} answer="D" />
+            </div>
+            <div className="quiz-col">
+              <Pic src={`${IMG2}/egg.jpg`} label="egg" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["E", "I", "F"]} answer="E" />
+            </div>
+            <div className="quiz-col">
+              <Pic src={`${IMG2}/fish.avif`} label="fish" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["F", "H", "T"]} answer="F" />
+            </div>
+          </div>
+        </>
+      ),
+    },
+    // 5: Section A — Circle the Letter (G, H, I)
+    {
+      stage: "Section A: Circle the Letter",
+      time: "~4 min",
+      body: (
+        <>
+          <span className="title-highlight"><h2 className="slide-h sub">Circle the Letter!</h2></span>
+          <div className="row">
+            <div className="quiz-col">
+              <Pic src={`${IMG3}/goat.avif`} label="goat" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["C", "G", "Q"]} answer="G" />
+            </div>
+            <div className="quiz-col">
+              <Pic src={`${IMG3}/hat.avif`} label="hat" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["H", "N", "M"]} answer="H" />
+            </div>
+            <div className="quiz-col">
+              <Pic src={`${IMG3}/igloo.jpg`} label="igloo" size={94} onZoom={onZoom} />
+              <ChoiceRow choices={["L", "J", "I"]} answer="I" />
+            </div>
+          </div>
+        </>
+      ),
+    },
+    // 6: Section B — How Do They Feel?
+    {
+      stage: "Section B: How Do They Feel?",
+      time: "~3 min",
+      body: (
+        <>
+          <span className="title-highlight"><h2 className="slide-h sub">How Do They Feel?</h2></span>
+          <div className="row">
+            <div className="quiz-col">
+              <EmotionCard name="Happy" onZoom={onZoom} />
+              <ChoiceRow choices={["Happy", "Sad", "Tired"]} answer="Happy" />
+            </div>
+            <div className="quiz-col">
+              <EmotionCard name="Sad" onZoom={onZoom} />
+              <ChoiceRow choices={["Tired", "Sad", "Happy"]} answer="Sad" />
+            </div>
+            <div className="quiz-col">
+              <EmotionCard name="Tired" onZoom={onZoom} />
+              <ChoiceRow choices={["Happy", "Tired", "Sad"]} answer="Tired" />
+            </div>
+          </div>
+        </>
+      ),
+    },
+    // 7: Section C — Finish the Sentence (greetings)
+    {
+      stage: "Section C: Finish the Sentence",
+      time: "~3 min",
+      body: (
+        <div className="center-col">
+          <span className="title-highlight"><h2 className="slide-h sub">Finish the Sentence!</h2></span>
+          <ChoiceRow label="When you meet a friend for the first time, you say ___." choices={["Nice to meet you!", "Goodbye!"]} answer="Nice to meet you!" />
+          <ChoiceRow label="When you leave, you say ___." choices={["Hello!", "Bye!"]} answer="Bye!" />
+          <ChoiceRow label={'"My name ___ Anna."'} choices={["is", "are"]} answer="is" />
+        </div>
+      ),
+    },
+    // 8: Section C — Match the question
+    {
+      stage: "Section C: Finish the Sentence",
+      time: "~3 min",
+      body: (
+        <>
+          <span className="title-highlight"><h2 className="slide-h sub">Match the Question!</h2></span>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">Hello! What's your name?</div>
+              <div className="bubble left">What's your name?</div>
             </div>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">I'm <span className="fill"></span>.</div>
+              <div className="bubble right">My name is Anna.</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How are you?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I am happy.</div>
             </div>
           </div>
         </>
       ),
     },
-    // 7: Part 4: How Are You?
+    // 9: Section D — Say It Out Loud!
     {
-      stage: "Part 4: How Are You?",
-      time: "~4 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">How Are You?</h2></span>
-          <div className="row">
-            <EmotionCard name="Happy" onZoom={onZoom} />
-            <EmotionCard name="Sad" onZoom={onZoom} />
-            <EmotionCard name="Tired" onZoom={onZoom} />
-          </div>
-        </>
-      ),
-    },
-    // 8: Part 5: Speaking Challenge
-    {
-      stage: "Part 5: Speaking Challenge",
+      stage: "Section D: Say It Out Loud!",
       time: "~4 min",
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">Speaking Challenge!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Say It Out Loud!</h2></span>
           <p className="slide-p">Greet the teacher. Ask their name. Ask how they are. Say "Nice to meet you!"</p>
+          <div className="letter-row" style={{ marginTop: 4 }}>
+            <LetterTile letters="Aa" color={LETTER_COLOR.A} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Bb" color={LETTER_COLOR.B} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Cc" color={LETTER_COLOR.C} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Dd" color={LETTER_COLOR.D} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Ee" color={LETTER_COLOR.E} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Ff" color={LETTER_COLOR.F} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Gg" color={LETTER_COLOR.G} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Hh" color={LETTER_COLOR.H} size={40} fontSize={16} onZoom={onZoom} dim />
+            <LetterTile letters="Ii" color={LETTER_COLOR.I} size={40} fontSize={16} onZoom={onZoom} dim />
+          </div>
         </div>
       ),
     },
-    // 8b: Part 6: Spelling Challenge (tap to reveal, Ant)
+    // 10: Great Job / Wrap-up + download reminder
     {
-      stage: "Part 6: Spelling Challenge",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Spelling Challenge!</h2></span>
-          <Pic src={`${IMG1}/ant.jpg`} label="ant" size={110} onZoom={onZoom} />
-          <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="A" color={LETTER_COLOR.A} size={90} fontSize={36} />
-            <TapLetterTile letter="N" color={LETTER_COLOR.N} size={90} fontSize={36} />
-            <TapLetterTile letter="T" color={LETTER_COLOR.T} size={90} fontSize={36} />
-          </div>
-        </>
-      ),
-    },
-    // 8c: Part 6: Spelling Challenge (Ant reveal)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~1 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">It's an Ant!</h2></span>
-          <div className="row" style={{ marginBottom: 10 }}>
-            <LetterTile letters="A" color={LETTER_COLOR.A} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="N" color={LETTER_COLOR.N} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="T" color={LETTER_COLOR.T} size={54} fontSize={22} onZoom={onZoom} />
-          </div>
-          <Pic src={`${IMG1}/ant.jpg`} label="ant" size={130} onZoom={onZoom} />
-        </>
-      ),
-    },
-    // 8d: Part 6: Spelling Challenge (tap to reveal, Fish)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">One More Word!</h2></span>
-          <Pic src={`${IMG2}/fish.avif`} label="fish" size={110} onZoom={onZoom} />
-          <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="F" color={LETTER_COLOR.F} size={80} fontSize={32} />
-            <TapLetterTile letter="I" color={LETTER_COLOR.I} size={80} fontSize={32} />
-            <TapLetterTile letter="S" color={LETTER_COLOR.S} size={80} fontSize={32} />
-            <TapLetterTile letter="H" color={LETTER_COLOR.H} size={80} fontSize={32} />
-          </div>
-        </>
-      ),
-    },
-    // 8e: Part 6: Spelling Challenge (Fish reveal)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~1 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">It's a Fish!</h2></span>
-          <div className="row" style={{ marginBottom: 10 }}>
-            <LetterTile letters="F" color={LETTER_COLOR.F} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="I" color={LETTER_COLOR.I} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="S" color={LETTER_COLOR.S} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="H" color={LETTER_COLOR.H} size={54} fontSize={22} onZoom={onZoom} />
-          </div>
-          <Pic src={`${IMG2}/fish.avif`} label="fish" size={130} onZoom={onZoom} />
-        </>
-      ),
-    },
-    // 8f: Part 6: Spelling Challenge (tap to reveal, Egg)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">One More Word!</h2></span>
-          <Pic src={`${IMG2}/egg.jpg`} label="egg" size={110} onZoom={onZoom} />
-          <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="E" color={LETTER_COLOR.E} size={90} fontSize={36} />
-            <TapLetterTile letter="G" color={LETTER_COLOR.G} size={90} fontSize={36} />
-            <TapLetterTile letter="G" color={LETTER_COLOR.G} size={90} fontSize={36} />
-          </div>
-        </>
-      ),
-    },
-    // 8g: Part 6: Spelling Challenge (Egg reveal)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~1 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">It's an Egg!</h2></span>
-          <div className="row" style={{ marginBottom: 10 }}>
-            <LetterTile letters="E" color={LETTER_COLOR.E} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="G" color={LETTER_COLOR.G} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="G" color={LETTER_COLOR.G} size={54} fontSize={22} onZoom={onZoom} />
-          </div>
-          <Pic src={`${IMG2}/egg.jpg`} label="egg" size={130} onZoom={onZoom} />
-        </>
-      ),
-    },
-    // 8h: Part 6: Spelling Challenge (tap to reveal, Ball)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">One More Word!</h2></span>
-          <Pic src={`${IMG1}/ball.jpg`} label="ball" size={110} onZoom={onZoom} />
-          <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="B" color={LETTER_COLOR.B} size={80} fontSize={32} />
-            <TapLetterTile letter="A" color={LETTER_COLOR.A} size={80} fontSize={32} />
-            <TapLetterTile letter="L" color={LETTER_COLOR.L} size={80} fontSize={32} />
-            <TapLetterTile letter="L" color={LETTER_COLOR.L} size={80} fontSize={32} />
-          </div>
-        </>
-      ),
-    },
-    // 8i: Part 6: Spelling Challenge (Ball reveal)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~1 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">It's a Ball!</h2></span>
-          <div className="row" style={{ marginBottom: 10 }}>
-            <LetterTile letters="B" color={LETTER_COLOR.B} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="A" color={LETTER_COLOR.A} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="L" color={LETTER_COLOR.L} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="L" color={LETTER_COLOR.L} size={54} fontSize={22} onZoom={onZoom} />
-          </div>
-          <Pic src={`${IMG1}/ball.jpg`} label="ball" size={130} onZoom={onZoom} />
-        </>
-      ),
-    },
-    // 8j: Part 6: Spelling Challenge (tap to reveal, Goat)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">One More Word!</h2></span>
-          <Pic src={`${IMG3}/goat.avif`} label="goat" size={110} onZoom={onZoom} />
-          <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="G" color={LETTER_COLOR.G} size={80} fontSize={32} />
-            <TapLetterTile letter="O" color={LETTER_COLOR.O} size={80} fontSize={32} />
-            <TapLetterTile letter="A" color={LETTER_COLOR.A} size={80} fontSize={32} />
-            <TapLetterTile letter="T" color={LETTER_COLOR.T} size={80} fontSize={32} />
-          </div>
-        </>
-      ),
-    },
-    // 8k: Part 6: Spelling Challenge (Goat reveal)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~1 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">It's a Goat!</h2></span>
-          <div className="row" style={{ marginBottom: 10 }}>
-            <LetterTile letters="G" color={LETTER_COLOR.G} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="O" color={LETTER_COLOR.O} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="A" color={LETTER_COLOR.A} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="T" color={LETTER_COLOR.T} size={54} fontSize={22} onZoom={onZoom} />
-          </div>
-          <Pic src={`${IMG3}/goat.avif`} label="goat" size={130} onZoom={onZoom} />
-        </>
-      ),
-    },
-    // 8l: Part 6: Spelling Challenge (tap to reveal, Hen)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~2 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">Last Word!</h2></span>
-          <Pic src={`${IMG3}/hen.jpg`} label="hen" size={110} onZoom={onZoom} />
-          <div className="row" style={{ marginTop: 14 }}>
-            <TapLetterTile letter="H" color={LETTER_COLOR.H} size={90} fontSize={36} />
-            <TapLetterTile letter="E" color={LETTER_COLOR.E} size={90} fontSize={36} />
-            <TapLetterTile letter="N" color={LETTER_COLOR.N} size={90} fontSize={36} />
-          </div>
-        </>
-      ),
-    },
-    // 8m: Part 6: Spelling Challenge (Hen reveal)
-    {
-      stage: "Part 6: Spelling Challenge",
-      time: "~1 min",
-      body: (
-        <>
-          <span className="title-highlight"><h2 className="slide-h sub">It's a Hen!</h2></span>
-          <div className="row" style={{ marginBottom: 10 }}>
-            <LetterTile letters="H" color={LETTER_COLOR.H} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="E" color={LETTER_COLOR.E} size={54} fontSize={22} onZoom={onZoom} />
-            <LetterTile letters="N" color={LETTER_COLOR.N} size={54} fontSize={22} onZoom={onZoom} />
-          </div>
-          <Pic src={`${IMG3}/hen.jpg`} label="hen" size={130} onZoom={onZoom} />
-        </>
-      ),
-    },
-    // 9: My Unit 1 Score!
-    {
-      stage: "My Unit 1 Score!",
-      time: "~3 min",
+      stage: "Wrap-Up",
+      time: null,
       body: (
         <div className="center-col">
           <div className="score-stars">
@@ -557,30 +425,9 @@ function buildSlides({ onZoom }) {
             <StarIcon size={40} fill="var(--sun)" />
             <StarIcon size={40} fill="var(--sun)" />
           </div>
-          <span className="title-highlight"><h2 className="slide-h sub">My Unit 1 Score!</h2></span>
-          <div className="letter-row">
-            <LetterTile letters="Aa" color={LETTER_COLOR.A} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Bb" color={LETTER_COLOR.B} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Cc" color={LETTER_COLOR.C} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Dd" color={LETTER_COLOR.D} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Ee" color={LETTER_COLOR.E} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Ff" color={LETTER_COLOR.F} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Gg" color={LETTER_COLOR.G} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Hh" color={LETTER_COLOR.H} size={40} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="Ii" color={LETTER_COLOR.I} size={40} fontSize={16} onZoom={onZoom} />
-          </div>
-        </div>
-      ),
-    },
-    // 10: Great Job
-    {
-      stage: "Wrap-Up",
-      time: null,
-      body: (
-        <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
-          <h2 className="slide-h sub">You Did It!</h2>
+          <span className="title-highlight"><h2 className="slide-h sub">You Did It!</h2></span>
           <p className="slide-p">Unit 1 complete! You know Aa to Ii, and you can say hello, share feelings, and meet someone new. On to Unit 2!</p>
+          <DownloadButton compact />
         </div>
       ),
     },
@@ -640,37 +487,38 @@ export const styles = `
 .title-highlight { position: relative; display: inline-block; }
 .title-highlight::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: 0; }
 .slide-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 48px; color: var(--navy); margin: 0; text-align: center; position: relative; z-index: 1; line-height: 1.05; }
-.slide-h.sub { font-size: 36px; }
+.slide-h.sub { font-size: 34px; }
 .slide-p { font-family: 'Quicksand', sans-serif; font-size: 16px; color: var(--ink-soft); font-weight: 600; text-align: center; max-width: 540px; margin: 0; position: relative; z-index: 1; }
 
-.title-content { width: 100%; padding-left: 230px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-.title-h { text-align: left; font-size: 38px; }
+.title-content { width: 100%; padding-left: 230px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.title-h { text-align: left; font-size: 36px; }
 .title-p { text-align: left; max-width: 300px; }
 
-.center-col { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.row { display: flex; gap: 28px; align-items: center; justify-content: center; position: relative; z-index: 1; }
+.center-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.row { display: flex; gap: 24px; align-items: flex-start; justify-content: center; position: relative; z-index: 1; }
+
+.quiz-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.choice-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.choice-label { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: var(--ink-soft); text-align: center; max-width: 320px; margin: 0; }
+.choice-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.choice-pill { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); background: #fff; border-radius: 999px; padding: 6px 14px; box-shadow: 0 3px 8px rgba(27,42,74,0.12); }
+.choice-pill.is-answer { background: var(--coral); color: #fff; }
 
 .letter-row { display: flex; gap: 14px; position: relative; z-index: 1; flex-wrap: wrap; justify-content: center; }
 .letter-tile { cursor: zoom-in; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; color: #fff; border: 3px solid #fff; box-shadow: 0 6px 14px rgba(27,42,74,0.15); transition: transform 0.15s ease; }
-.blank-tile { border-radius: 16px; background: repeating-linear-gradient(45deg, #D9D2F3, #D9D2F3 6px, #E8E3F8 6px, #E8E3F8 12px); border: 3px dashed #B8AEDD; }
-.tap-tile { cursor: pointer; transition: transform 0.15s ease; }
-.tap-tile:hover { transform: scale(1.05); }
-.blank-tile.tap-tile { display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; color: #B8AEDD; }
+.letter-tile--dim { opacity: 0.55; }
 .letter-tile:hover { transform: scale(1.05); }
 .zoom-letter-tile { width: 300px; height: 300px; border-radius: 40px; }
 .zoom-letter-tile span { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 120px; color: #fff; }
 
-.match-pair { display: flex; align-items: center; gap: 10px; }
-.match-plus { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink-soft); }
-
-.pic { position: relative; cursor: zoom-in; overflow: hidden; flex-shrink: 0; border-radius: 28px; background: #fff; box-shadow: 0 0 0 6px #fff, 0 10px 22px rgba(27,42,74,0.16); transition: transform 0.15s ease; }
+.pic { position: relative; cursor: zoom-in; overflow: hidden; flex-shrink: 0; border-radius: 24px; background: #fff; box-shadow: 0 0 0 6px #fff, 0 10px 22px rgba(27,42,74,0.16); transition: transform 0.15s ease; }
 .pic:hover { transform: scale(1.04); }
 .pic img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .pic-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; color: var(--coral-deep); background: var(--coral-light); }
 .pic-ph span { font-size: 10px; font-weight: 700; text-align: center; padding: 0 8px; }
 
 .emo-tile {
-  width: 100px; height: 100px; border-radius: 26px; flex-shrink: 0; cursor: zoom-in;
+  width: 92px; height: 92px; border-radius: 24px; flex-shrink: 0; cursor: zoom-in;
   display: flex; align-items: center; justify-content: center; overflow: hidden;
   background: #fff; border: 3px solid; box-shadow: 0 0 0 6px #fff, 0 10px 22px rgba(27,42,74,0.16);
   transition: transform 0.15s ease;
@@ -679,18 +527,28 @@ export const styles = `
 .emo-tile:hover { transform: scale(1.04); }
 .zoom-emo-tile { width: 260px; height: 260px; border-radius: 46px; border-width: 5px; }
 
-.bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
+.bubble-col { display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }
 .avatar { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #fff; overflow: hidden; }
 .avatar.navy { background: var(--navy); }
 .avatar.coral { background: var(--coral); }
-.bubble { background: #fff; border-radius: 18px; padding: 12px 16px; font-weight: 700; font-size: 15px; color: var(--ink); box-shadow: 0 6px 14px rgba(27,42,74,0.08); }
+.bubble { background: #fff; border-radius: 18px; padding: 10px 15px; font-weight: 700; font-size: 14px; color: var(--ink); box-shadow: 0 6px 14px rgba(27,42,74,0.08); }
 .bubble.left { border-radius: 18px 18px 18px 4px; }
 .bubble.right { border-radius: 18px 18px 4px 18px; }
-.bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2.5px solid var(--coral-deep); vertical-align: -2px; }
 
 .score-stars { display: flex; gap: 8px; }
+
+.download-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px;
+  color: var(--navy); background: #fff; border: 2px solid var(--navy-light);
+  border-radius: 999px; padding: 10px 18px; text-decoration: none;
+  box-shadow: 0 4px 10px rgba(27,42,74,0.1);
+  position: relative; z-index: 1;
+}
+.download-btn:hover { background: var(--navy-light); }
+.download-btn.is-compact { font-size: 12px; padding: 8px 15px; }
 
 .zoom-overlay { position: fixed; inset: 0; background: rgba(27,42,74,0.72); display: flex; align-items: center; justify-content: center; z-index: 999; }
 .zoom-overlay-inner { position: relative; background: #fff; border-radius: 28px; padding: 34px; box-shadow: 0 30px 60px rgba(0,0,0,0.32); display: flex; align-items: center; justify-content: center; }
