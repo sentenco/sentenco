@@ -239,7 +239,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
           <div className="word-row">
             <Pic src={`${IMG2}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
-            <Pic src={null} label="pen" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={90} onZoom={onZoom} />
             <Pic src={`${IMG1}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
           </div>
           <p className="slide-p">Cat or dog?</p>
@@ -283,7 +283,7 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <Pic src={`${IMG1}/cat.jpg`} label="cat" size={54} onZoom={onZoom} />
             <Pic src={`${IMG2}/dog.jpg`} label="dog" size={54} onZoom={onZoom} />
-            <Pic src={null} label="pen" size={54} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={54} onZoom={onZoom} />
           </div>
         </div>
       ),

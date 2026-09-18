@@ -251,7 +251,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Pen!</h2></span>
-          <WordCard src={null} word="Pen" label="pen" onZoom={onZoom} />
+          <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
         </>
       ),
     },
@@ -328,7 +328,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🔍 Feelings Detective!</h2></span>
-          <Pic src={null} label="child holding a broken toy" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/angry-broken-toy.png`} label="child holding a broken toy" size={170} onZoom={onZoom} />
           <p className="slide-p">He is... ?</p>
         </div>
       ),
@@ -364,7 +364,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What's This?</h2></span>
-          <Pic src={null} label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
         </div>
       ),
     },
