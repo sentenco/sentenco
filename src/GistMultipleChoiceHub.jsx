@@ -91,6 +91,7 @@ export default function GistMultipleChoiceHub() {
   return (
     <div className="gmc-page">
       <style>{CSS}</style>
+      <div className="gmc-inner">
       <div className="gmc-hero">
         <span className="gmc-eyebrow">Sentivo · Listening</span>
         <h1 className="gmc-title">Gist Multiple Choice</h1>
@@ -155,6 +156,7 @@ export default function GistMultipleChoiceHub() {
           })}
         </div>
       )}
+      </div>
     </div>
   );
 }
@@ -162,8 +164,15 @@ export default function GistMultipleChoiceHub() {
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap');
 
-.gmc-page { width: 100%; max-width: 640px; margin: 0 auto; padding: 28px 16px 60px; box-sizing: border-box; }
+.gmc-page {
+  width: 100%;
+  min-height: 100%;
+  background-color: #FDF6EA;
+  background-image: repeating-linear-gradient(90deg, rgba(184,121,31,0.14) 0px, rgba(184,121,31,0.14) 2px, transparent 2px, transparent 34px);
+  box-sizing: border-box;
+}
 .gmc-page * { box-sizing: border-box; }
+.gmc-inner { width: 100%; max-width: 640px; margin: 0 auto; padding: 28px 16px 60px; }
 
 .gmc-hero { text-align: center; margin-bottom: 6px; }
 .gmc-eyebrow { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
