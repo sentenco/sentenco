@@ -196,7 +196,7 @@ export const LESSON_GUIDE = [
   { stage: "Body Parts Check", time: "~3 min", note: "Show a body picture. Ask \"What is this?\" and have the student identify 5-6 body parts, including head, eyes, nose, hands, knees, toes." },
   { stage: "Point & Find", time: "~3 min", note: "Give commands such as \"Point to the shoulders.\" \"Show me your fingers.\" Check understanding of the full body vocabulary set." },
   { stage: "-at Word Check", time: "~4 min", note: "Show pictures/words for cat, hat, bat, mat. Student identifies and reads/blends the words. Include one mixed-order challenge." },
-  { stage: "-og Word Check", time: "~4 min", note: "Show dog, log, fog, hog. Student identifies and reads/blends the words independently." },
+  { stage: "-og Word Check", time: "~4 min", note: "Show dog, log, jog, hog. Student identifies and reads/blends the words independently." },
   { stage: "Describe the Person", time: "~4 min", note: "Show a new character. Ask \"Tell me about this person.\" Student describes using big, small, long, short and \"It has...\"" },
   { stage: "HIGHLIGHT: Who Am I?", time: "~4 min", note: "Show 2-3 unfamiliar characters. Student chooses one and describes it without revealing which one. Teacher guesses, then reverse roles." },
   { stage: "Final Challenge", time: "~3 min", note: "Give one final unfamiliar character and say only \"Tell me about it.\" Student independently produces as many correct descriptions as possible." },
@@ -253,8 +253,8 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <WordCard src={CAT_IMG} word="Cat" label="cat" onZoom={onZoom} />
             <WordCard src={HAT_IMG} word="Hat" label="hat" onZoom={onZoom} />
-            <WordCard src={null} word="Bat" label="bat" onZoom={onZoom} />
-            <WordCard src={null} word="Mat" label="mat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/bat.png" word="Bat" label="bat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/mat.png" word="Mat" label="mat" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -267,9 +267,9 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">-og Words!</h2></span>
           <div className="word-row">
             <WordCard src={DOG_IMG} word="Dog" label="dog" onZoom={onZoom} />
-            <WordCard src={null} word="Log" label="log" onZoom={onZoom} />
-            <WordCard src={null} word="Fog" label="fog" onZoom={onZoom} />
-            <WordCard src={null} word="Hog" label="hog" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/log.png" word="Log" label="log" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/jog.png" word="Jog" label="jog" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/hog.png" word="Hog" label="hog" onZoom={onZoom} />
           </div>
         </>
       ),

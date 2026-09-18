@@ -256,7 +256,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Which Family?</h2></span>
-          <BlendRow parts={["f", "o", "g"]} result="fog" onZoom={onZoom} />
+          <BlendRow parts={["j", "o", "g"]} result="jog" onZoom={onZoom} />
         </div>
       ),
     },

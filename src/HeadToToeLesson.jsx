@@ -316,8 +316,8 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <WordCard src={CAT_IMG} word="Cat" label="cat" onZoom={onZoom} />
             <WordCard src={HAT_IMG} word="Hat" label="hat" onZoom={onZoom} />
-            <WordCard src={null} word="Bat" label="bat" onZoom={onZoom} />
-            <WordCard src={null} word="Mat" label="mat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/bat.png" word="Bat" label="bat" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/mat.png" word="Mat" label="mat" onZoom={onZoom} />
           </div>
           <p className="slide-p">Cat, hat, bat, mat. They all end in -at!</p>
         </>

@@ -193,7 +193,7 @@ export const LESSON_GUIDE = [
   { stage: "Hello & Body Review", time: "~3 min", note: "Greet the student and quickly review body parts from Lesson 1 using movement." },
   { stage: "More Body Parts", time: "~3 min", note: "Introduce shoulders, knees, toes, fingers using a child-friendly character." },
   { stage: "Look & Describe", time: "~3 min", note: "Introduce big, small, long, short. Model combinations like \"big eyes,\" \"small nose,\" \"long legs.\"" },
-  { stage: "Meet the -og Family", time: "~4 min", note: "Introduce dog, log, fog, hog. Blend the sounds and notice the repeated -og ending: d + og -> dog." },
+  { stage: "Meet the -og Family", time: "~4 min", note: "Introduce dog, log, jog, hog. Blend the sounds and notice the repeated -og ending: d + og -> dog." },
   { stage: "My Body, My Words", time: "~4 min", note: "Show characters with exaggerated features. Ask \"Is it big or small?\" Student responds with simple descriptions." },
   { stage: "HIGHLIGHT: Funny Body Designer!", time: "~2 min", note: "Student creates a silly character with different body parts and sizes, describing it." },
   { stage: "HIGHLIGHT: Funny Body Designer!", time: "~2 min", note: "Add a dog as a fun element and practice the word." },
@@ -305,7 +305,7 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">More -og Words!</h2></span>
           <BlendRow parts={["l", "o", "g"]} result="log" onZoom={onZoom} />
-          <BlendRow parts={["f", "o", "g"]} result="fog" onZoom={onZoom} />
+          <BlendRow parts={["j", "o", "g"]} result="jog" onZoom={onZoom} />
         </div>
       ),
     },
@@ -317,11 +317,11 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Same or Different?</h2></span>
           <div className="word-row">
             <WordCard src={DOG_IMG} word="Dog" label="dog" onZoom={onZoom} />
-            <WordCard src={null} word="Log" label="log" onZoom={onZoom} />
-            <WordCard src={null} word="Fog" label="fog" onZoom={onZoom} />
-            <WordCard src={null} word="Hog" label="hog" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/log.png" word="Log" label="log" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/jog.png" word="Jog" label="jog" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-words/hog.png" word="Hog" label="hog" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Dog, log, fog, hog. They all end in -og!</p>
+          <p className="slide-p">Dog, log, jog, hog. They all end in -og!</p>
         </>
       ),
     },
