@@ -190,7 +190,7 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <Pic src={`${IMG}/apple.jpg`} label="apple" size={80} onZoom={onZoom} />
             <Pic src={`${IMG}/pizza.avif`} label="pizza" size={80} onZoom={onZoom} />
-            <Pic src={null} label="rice" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={80} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -254,7 +254,7 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <Pic src={`${IMG}/banana.jpg`} label="banana" size={70} onZoom={onZoom} />
             <Pic src={`${IMG}/apple.jpg`} label="apple" size={70} onZoom={onZoom} />
-            <Pic src={null} label="rice" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={70} onZoom={onZoom} />
           </div>
         </>
       ),

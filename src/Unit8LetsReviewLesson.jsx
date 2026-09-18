@@ -199,7 +199,7 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <Pic src={`${IMG}/banana.jpg`} label="banana" size={70} onZoom={onZoom} />
             <Pic src={`${IMG}/egg.jpg`} label="egg" size={70} onZoom={onZoom} />
-            <Pic src={null} label="rice" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={70} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -275,7 +275,7 @@ function buildSlides({ onZoom }) {
       stage: "Food + Sentence Challenge",
       body: (
         <div className="center-col">
-          <Pic src={null} label="rice" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={100} onZoom={onZoom} />
           <p className="slide-p">I like ___. or I don't like ___.</p>
         </div>
       ),

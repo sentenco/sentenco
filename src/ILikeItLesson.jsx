@@ -324,7 +324,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">🗳️ My Food Vote!</h2></span>
           <div className="word-row">
             <Pic src={`${IMG}/pizza.avif`} label="pizza" size={80} onZoom={onZoom} />
-            <Pic src={null} label="rice" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={80} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">

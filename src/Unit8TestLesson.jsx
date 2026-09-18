@@ -190,7 +190,7 @@ function buildSlides({ onZoom }) {
             <Pic src={`${IMG}/apple.jpg`} label="apple" size={68} onZoom={onZoom} />
             <Pic src={`${IMG}/banana.jpg`} label="banana" size={68} onZoom={onZoom} />
             <Pic src={`${IMG}/pizza.avif`} label="pizza" size={68} onZoom={onZoom} />
-            <Pic src={null} label="rice" size={68} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={68} onZoom={onZoom} />
             <Pic src={`${IMG}/egg.jpg`} label="egg" size={68} onZoom={onZoom} />
           </div>
         </>

@@ -225,7 +225,7 @@ function buildSlides({ onZoom }) {
       stage: "I Don't Like It!",
       body: (
         <div className="center-col">
-          <Pic src={null} label="rice" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={100} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>

@@ -236,7 +236,7 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">More Food!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Rice" label="rice" onZoom={onZoom} />
+            <WordCard src="/curriculum/u8-l1/rice.jpg" word="Rice" label="rice" onZoom={onZoom} />
             <WordCard src={`${IMG}/egg.jpg`} word="Egg" label="egg" onZoom={onZoom} />
           </div>
         </>
