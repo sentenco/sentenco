@@ -214,7 +214,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h1 className="slide-h title-h">Head to Toe!</h1></span>
           <p className="slide-p title-p">Today we learn body parts and meet the -at word family.</p>
           <div className="word-row">
-            <WordCard src={null} word="Head" label="head" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/head.png" word="Head" label="head" onZoom={onZoom} />
             <WordCard src={HAT_IMG} word="Hat" label="hat" onZoom={onZoom} />
           </div>
         </div>
@@ -241,7 +241,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet My Body!</h2></span>
-          <WordCard src={null} word="Head" label="head" onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-body/head.png" word="Head" label="head" onZoom={onZoom} />
         </>
       ),
     },
@@ -252,10 +252,10 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Face!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} />
-            <WordCard src={null} word="Ears" label="ears" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} />
             <WordCard src={NOSE_IMG} word="Nose" label="nose" onZoom={onZoom} />
-            <WordCard src={null} word="Mouth" label="mouth" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/mouth.png" word="Mouth" label="mouth" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -267,8 +267,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">More Body Parts!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Arms" label="arms" onZoom={onZoom} />
-            <WordCard src={null} word="Hands" label="hands" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/hands.png" word="Hands" label="hands" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -280,8 +280,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Show Me!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Legs" label="legs" onZoom={onZoom} />
-            <WordCard src={null} word="Feet" label="feet" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/feet.png" word="Feet" label="feet" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -329,7 +329,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Is This?</h2></span>
-          <Pic src={null} label="hands" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/hands.png" label="hands" size={110} onZoom={onZoom} />
         </div>
       ),
     },
@@ -350,9 +350,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🤪 Build a Funny Me!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} />
-            <WordCard src={null} word="Hands" label="hands" onZoom={onZoom} />
-            <WordCard src={null} word="Feet" label="feet" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/hands.png" word="Hands" label="hands" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/feet.png" word="Feet" label="feet" onZoom={onZoom} />
           </div>
           <p className="slide-p">Choose body parts for your funny character!</p>
         </>

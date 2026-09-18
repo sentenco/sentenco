@@ -222,10 +222,10 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is This?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="head" size={70} onZoom={onZoom} />
-            <Pic src={null} label="eyes" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/head.png" label="head" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/eyes.png" label="eyes" size={70} onZoom={onZoom} />
             <Pic src={NOSE_IMG} label="nose" size={70} onZoom={onZoom} />
-            <Pic src={null} label="hands" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/hands.png" label="hands" size={70} onZoom={onZoom} />
             <Pic src={null} label="knees" size={70} onZoom={onZoom} />
             <Pic src={null} label="toes" size={70} onZoom={onZoom} />
           </div>

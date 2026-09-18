@@ -233,8 +233,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is This?</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Shoulders" label="shoulders" onZoom={onZoom} />
-            <WordCard src={null} word="Feet" label="feet" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/shoulders.png" word="Shoulders" label="shoulders" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/feet.png" word="Feet" label="feet" onZoom={onZoom} />
             <WordCard src={null} word="Fingers" label="fingers" onZoom={onZoom} />
           </div>
         </>
@@ -312,8 +312,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🎭 Funny Character Challenge!</h2></span>
           <div className="word-row">
-            <div className="combo"><DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} /><WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} /></div>
-            <div className="combo"><DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} /><WordCard src={null} word="Ears" label="ears" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} /></div>
           </div>
         </>
       ),

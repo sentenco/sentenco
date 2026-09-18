@@ -237,7 +237,7 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">More Body Parts!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Shoulders" label="shoulders" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/shoulders.png" word="Shoulders" label="shoulders" onZoom={onZoom} />
             <WordCard src={null} word="Knees" label="knees" onZoom={onZoom} />
           </div>
         </>
@@ -279,11 +279,11 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Big Eyes!</h2></span>
           <div className="row">
             <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
-            <WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} />
           </div>
           <div className="row">
             <DescriptorTag label="Long" color={SIZE_COLOR.Long} onZoom={onZoom} />
-            <WordCard src={null} word="Legs" label="legs" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -353,7 +353,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">🤪 Funny Body Designer!</h2></span>
           <div className="row">
             <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
-            <WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} />
           </div>
           <p className="slide-p">Tell me about your person!</p>
         </div>

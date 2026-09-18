@@ -239,7 +239,7 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Body + Adjective!</h2></span>
           <div className="word-row">
-            <div className="combo"><DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} /><WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} /></div>
             <div className="combo"><DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} /><WordCard src={NOSE_IMG} word="Nose" label="nose" onZoom={onZoom} /></div>
           </div>
         </>
@@ -312,7 +312,7 @@ function buildSlides({ onZoom }) {
             <div className="word-chip">It</div>
             <div className="word-chip">has</div>
             <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
-            <WordCard src={null} word="Ears" label="ears" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -325,7 +325,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Now You Try!</h2></span>
           <div className="word-row">
             <DescriptorTag label="Short" color={SIZE_COLOR.Short} onZoom={onZoom} />
-            <WordCard src={null} word="Arms" label="arms" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} />
           </div>
           <p className="slide-p">Say the whole sentence!</p>
         </div>
@@ -338,8 +338,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🤪 Design My Funny Friend!</h2></span>
           <div className="word-row">
-            <div className="combo"><DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} /><WordCard src={null} word="Eyes" label="eyes" onZoom={onZoom} /></div>
-            <div className="combo"><DescriptorTag label="Long" color={SIZE_COLOR.Long} onZoom={onZoom} /><WordCard src={null} word="Legs" label="legs" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Long" color={SIZE_COLOR.Long} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} /></div>
           </div>
         </>
       ),
