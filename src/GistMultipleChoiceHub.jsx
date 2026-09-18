@@ -169,7 +169,12 @@ const CSS = `
   margin: 0 auto;
   border-radius: 26px;
   background-color: #FDF6EA;
-  background-image: repeating-linear-gradient(90deg, rgba(184,121,31,0.14) 0px, rgba(184,121,31,0.14) 2px, transparent 2px, transparent 34px);
+  /* percentage-based stops (not px) so the stripe spacing scales with
+     container width, the same way background-size: 100% auto scales
+     the illustrated pages -- fixed px stops stayed the same absolute
+     size at any width, making the pattern look denser on narrow
+     screens instead of scaling consistently like the others */
+  background-image: repeating-linear-gradient(90deg, rgba(184,121,31,0.14) 0%, rgba(184,121,31,0.14) 0.25%, transparent 0.25%, transparent 4%);
   box-shadow: 0 16px 32px rgba(58,46,31,0.12);
   padding: 28px 24px 48px;
   box-sizing: border-box;
