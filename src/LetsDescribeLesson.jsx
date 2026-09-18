@@ -238,7 +238,7 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">More Body Parts!</h2></span>
           <div className="word-row">
             <WordCard src="/curriculum/u6-body/shoulders.png" word="Shoulders" label="shoulders" onZoom={onZoom} />
-            <WordCard src={null} word="Knees" label="knees" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/knees.png" word="Knees" label="knees" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -250,8 +250,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Point To It!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Toes" label="toes" onZoom={onZoom} />
-            <WordCard src={null} word="Fingers" label="fingers" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/toes.png" word="Toes" label="toes" onZoom={onZoom} />
+            <WordCard src="/curriculum/u6-body/fingers.png" word="Fingers" label="fingers" onZoom={onZoom} />
           </div>
         </>
       ),

@@ -226,8 +226,8 @@ function buildSlides({ onZoom }) {
             <Pic src="/curriculum/u6-body/eyes.png" label="eyes" size={70} onZoom={onZoom} />
             <Pic src={NOSE_IMG} label="nose" size={70} onZoom={onZoom} />
             <Pic src="/curriculum/u6-body/hands.png" label="hands" size={70} onZoom={onZoom} />
-            <Pic src={null} label="knees" size={70} onZoom={onZoom} />
-            <Pic src={null} label="toes" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/knees.png" label="knees" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/toes.png" label="toes" size={70} onZoom={onZoom} />
           </div>
         </>
       ),
