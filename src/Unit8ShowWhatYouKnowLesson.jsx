@@ -294,7 +294,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About the Food!</h2></span>
-          <Pic src={null} label="new food scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-scenes/family-table.jpg" label="new food scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },

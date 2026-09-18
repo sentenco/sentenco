@@ -259,7 +259,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About the Food!</h2></span>
-          <Pic src={null} label="new food scene" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-scenes/breakfast.jpg" label="new food scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -306,7 +306,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
-          <Pic src={null} label="new food picture" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-scenes/lunch-plate.jpg" label="new food picture" size={180} onZoom={onZoom} />
         </div>
       ),
     },

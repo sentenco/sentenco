@@ -306,7 +306,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🍽️ Food Judge!</h2></span>
-          <Pic src={null} label="pizza with a banana on top" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l3/pizza-banana.jpg" label="pizza with a banana on top" size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -321,7 +321,7 @@ function buildSlides({ onZoom }) {
       stage: "HIGHLIGHT: Food Judge",
       body: (
         <div className="center-col">
-          <Pic src={null} label="rice with apple slices" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l3/rice-apple.jpg" label="rice with apple slices" size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
