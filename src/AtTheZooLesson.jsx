@@ -270,7 +270,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Let's Walk at the Zoo!</h2></span>
-          <Pic src={null} label="a zoo scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/zoo-path.jpg" label="a zoo scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -280,7 +280,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Keep Walking!</h2></span>
-          <Pic src={null} label="another zoo area" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/zoo-area.jpg" label="another zoo area" size={180} onZoom={onZoom} />
         </div>
       ),
     },

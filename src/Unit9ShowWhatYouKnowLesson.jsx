@@ -189,7 +189,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Animals Can You See?</h2></span>
-          <Pic src={null} label="a new animal scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/pets-garden.jpg" label="a new animal scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -277,7 +277,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This!</h2></span>
-          <Pic src={null} label="new animal scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/big-small.jpg" label="new animal scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
