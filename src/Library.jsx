@@ -37,7 +37,8 @@ import storybook27CoverImg from "./assets/storybook27/cover.jpg";
 import storybook28CoverImg from "./assets/storybook28/cover.jpg";
 import storybook29CoverImg from "./assets/storybook29/cover.jpg";
 import storybook30CoverImg from "./assets/storybook30/cover.jpg";
-import listeningBgImg from "./assets/listening/page-bg.jpg";
+import listeningLandscapeImg from "./assets/listening/landscape.jpg";
+import listeningPortraitImg from "./assets/listening/portrait.jpg";
 import listeningGistImg from "./assets/listening/gist.jpg";
 import listeningNoteCompletionImg from "./assets/listening/note-completion.jpg";
 import listeningSequencingImg from "./assets/listening/sequencing.jpg";
@@ -2261,7 +2262,10 @@ export default function Library() {
         ) : category === "Writing" ? (
           <WritingActivities query={query} />
         ) : category === "Listening" ? (
-          <div className="lst-page" style={{ backgroundImage: `url(${listeningBgImg})` }}>
+          <div
+            className="lst-page"
+            style={{ "--lst-bg-landscape": `url(${listeningLandscapeImg})`, "--lst-bg-portrait": `url(${listeningPortraitImg})` }}
+          >
             <div className="lst-hero">
               <span className="lst-hero-eyebrow">Sentivo · Listening</span>
               <h1 className="lst-hero-title">Listen Up!</h1>
@@ -3119,6 +3123,10 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   margin: 0 auto;
   padding: clamp(10px, 1.6vw, 18px) 0 40px;
   background-color: #FEF6E6;
+  /* landscape art at full width; swapped for the taller portrait crop
+     at 700px, same "half screen vs full screen" breakpoint used on
+     the Fluency Clinic, Grammar Garden, and Word Bank pages */
+  background-image: var(--lst-bg-landscape);
   background-position: center top;
   /* sized to width only, not "cover" -- cover scales against this
      container's full height (hero + all 9 cards), which shrinks or
@@ -3128,10 +3136,16 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   background-repeat: no-repeat;
   border-radius: 26px;
 }
+@media (max-width: 700px) {
+  .lst-page { background-image: var(--lst-bg-portrait); }
+}
 /* top padding clears the headphone/soundwave art in the background
    image, which scales with container width -- no banner needed, the
    text just sits in the plain cream area below the illustration */
-.lst-hero { position: relative; padding: 116px clamp(20px, 4vw, 40px) 6px; text-align: center; }
+.lst-hero { position: relative; padding: 200px clamp(20px, 4vw, 40px) 6px; text-align: center; }
+@media (max-width: 700px) {
+  .lst-hero { padding-top: 190px; }
+}
 .lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
 .lst-hero-title { font-family: 'Luckiest Guy', cursive; font-weight: 400; letter-spacing: 0.02em; font-size: clamp(28px, 4.4vw, 42px); color: #3A2E1F; margin: 0 0 10px; }
 .lst-hero-sub { font-family: 'Quicksand', sans-serif; font-size: 14.5px; color: #5C5142; max-width: 520px; margin: 0 auto; line-height: 1.6; }
