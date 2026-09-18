@@ -91,7 +91,6 @@ export default function GistMultipleChoiceHub() {
   return (
     <div className="gmc-page">
       <style>{CSS}</style>
-      <div className="gmc-inner">
       <div className="gmc-hero">
         <span className="gmc-eyebrow">Sentivo · Listening</span>
         <h1 className="gmc-title">Gist Multiple Choice</h1>
@@ -121,7 +120,7 @@ export default function GistMultipleChoiceHub() {
           {tracks.map((track) => {
             const isOpen = openTrack === track.key;
             return (
-              <div key={track.key} className={`gmc-track gmc-track--${track.theme} ${isOpen ? "is-open" : ""}`}>
+              <div key={track.key} className={`gmc-track gmc-track--${track.theme} ${isOpen ? "is-open is-spanning" : ""}`}>
                 <div
                   className="gmc-track-head"
                   role="button"
@@ -156,7 +155,6 @@ export default function GistMultipleChoiceHub() {
           })}
         </div>
       )}
-      </div>
     </div>
   );
 }
@@ -166,13 +164,16 @@ const CSS = `
 
 .gmc-page {
   width: 100%;
-  min-height: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  border-radius: 26px;
   background-color: #FDF6EA;
   background-image: repeating-linear-gradient(90deg, rgba(184,121,31,0.14) 0px, rgba(184,121,31,0.14) 2px, transparent 2px, transparent 34px);
+  box-shadow: 0 16px 32px rgba(58,46,31,0.12);
+  padding: 28px 24px 48px;
   box-sizing: border-box;
 }
 .gmc-page * { box-sizing: border-box; }
-.gmc-inner { width: 100%; max-width: 640px; margin: 0 auto; padding: 28px 16px 60px; }
 
 .gmc-hero { text-align: center; margin-bottom: 6px; }
 .gmc-eyebrow { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
@@ -199,9 +200,11 @@ const CSS = `
 .gmc-empty-title { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 15px; color: #3A2E1F; margin: 0 0 6px; }
 .gmc-empty-desc { font-family: 'Quicksand', sans-serif; font-size: 13px; color: #A6987F; margin: 0; }
 
-.gmc-track-list { display: flex; flex-direction: column; gap: 14px; }
+.gmc-track-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 620px) { .gmc-track-list { grid-template-columns: 1fr; } }
 
-.gmc-track { background: var(--tint); border-radius: 20px; overflow: hidden; box-shadow: inset 0 0 0 2px var(--border); }
+.gmc-track { background: var(--tint); border-radius: 20px; overflow: hidden; box-shadow: inset 0 0 0 2px var(--border); align-self: start; }
+.gmc-track.is-spanning { grid-column: 1 / -1; }
 
 .gmc-track-head { display: flex; align-items: center; gap: 14px; padding: 16px 18px; cursor: pointer; }
 .gmc-track-emoji-badge {
