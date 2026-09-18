@@ -216,9 +216,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Name the Routine!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Wake Up" label="wake up" onZoom={onZoom} />
-            <WordCard src={null} word="Play" label="play" onZoom={onZoom} />
-            <WordCard src={null} word="Sleep" label="sleep" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/play.jpg" word="Play" label="play" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/sleep.jpg" word="Sleep" label="sleep" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -228,7 +228,7 @@ function buildSlides({ onZoom }) {
       stage: "Part 2: Time of Day",
       body: (
         <div className="center-col">
-          <WordCard src={null} word="Eat Dinner" label="eat dinner" onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/eat-dinner.jpg" word="Eat Dinner" label="eat dinner" onZoom={onZoom} />
           <TimeTag label="Afternoon" onZoom={onZoom} />
         </div>
       ),
