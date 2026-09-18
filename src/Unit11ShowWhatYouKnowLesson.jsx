@@ -185,7 +185,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src={null} label="a new playtime scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l5/playtime-scene.jpg" label="a new playtime scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },
@@ -242,9 +242,9 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🗣️ Make a Playtime Story!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="a child" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={64} onZoom={onZoom} />
-            <Pic src={null} label="an action" size={64} onZoom={onZoom} />
+            <Pic src="/curriculum/u11-l5/child.jpg" label="a child" size={96} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={96} onZoom={onZoom} />
+            <Pic src="/curriculum/u11-l5/action.jpg" label="an action" size={96} onZoom={onZoom} />
           </div>
         </div>
       ),
