@@ -3142,9 +3142,9 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 /* top padding clears the headphone/soundwave art in the background
    image, which scales with container width -- no banner needed, the
    text just sits in the plain cream area below the illustration */
-.lst-hero { position: relative; padding: 200px clamp(20px, 4vw, 40px) 6px; text-align: center; }
+.lst-hero { position: relative; padding: 66px clamp(20px, 4vw, 40px) 6px; text-align: center; }
 @media (max-width: 700px) {
-  .lst-hero { padding-top: 190px; }
+  .lst-hero { padding-top: 118px; }
 }
 .lst-hero-eyebrow { font-family: 'SF Mono', 'Menlo', Consolas, monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8791F; display: block; margin-bottom: 8px; }
 .lst-hero-title { font-family: 'Luckiest Guy', cursive; font-weight: 400; letter-spacing: 0.02em; font-size: clamp(28px, 4.4vw, 42px); color: #3A2E1F; margin: 0 0 10px; }
