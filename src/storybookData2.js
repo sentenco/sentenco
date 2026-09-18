@@ -4,17 +4,17 @@
 // (2:3) shot originally generated as a cover candidate -- StoryBook.jsx's
 // image slot uses object-fit: contain, so neither shape gets cropped.
 
-import coverImg from "./assets/storybook2/cover.png";
-import chapter1Img from "./assets/storybook2/chapter1.png";
-import chapter2Img from "./assets/storybook2/chapter2.png";
-import chapter3Img from "./assets/storybook2/chapter3.png";
-import chapter4Img from "./assets/storybook2/chapter4.png";
-import chapter5Img from "./assets/storybook2/chapter5.png";
-import chapter6Img from "./assets/storybook2/chapter6.png";
-import chapter7Img from "./assets/storybook2/chapter7.png";
-import chapter8Img from "./assets/storybook2/chapter8.png";
-import chapter9Img from "./assets/storybook2/chapter9.png";
-import chapter10Img from "./assets/storybook2/chapter10.png";
+import coverImg from "./assets/storybook2/cover.webp";
+import chapter1Img from "./assets/storybook2/chapter1.webp";
+import chapter2Img from "./assets/storybook2/chapter2.webp";
+import chapter3Img from "./assets/storybook2/chapter3.webp";
+import chapter4Img from "./assets/storybook2/chapter4.webp";
+import chapter5Img from "./assets/storybook2/chapter5.webp";
+import chapter6Img from "./assets/storybook2/chapter6.webp";
+import chapter7Img from "./assets/storybook2/chapter7.webp";
+import chapter8Img from "./assets/storybook2/chapter8.webp";
+import chapter9Img from "./assets/storybook2/chapter9.webp";
+import chapter10Img from "./assets/storybook2/chapter10.webp";
 
 export const STORYBOOK_TITLE = "A New Student in Our Class";
 export const COVER_IMAGE = coverImg;

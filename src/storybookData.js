@@ -2,16 +2,16 @@
 // Static content -- no Supabase, mirrors the pattern in CurriculumOverview.jsx.
 
 import coverImg from "./assets/storybook/cover.jpeg";
-import chapter1Img from "./assets/storybook/chapter1.png";
-import chapter2Img from "./assets/storybook/chapter2.png";
-import chapter3Img from "./assets/storybook/chapter3.png";
-import chapter4Img from "./assets/storybook/chapter4.png";
-import chapter5Img from "./assets/storybook/chapter5.png";
-import chapter6Img from "./assets/storybook/chapter6.png";
-import chapter7Img from "./assets/storybook/chapter7.png";
-import chapter8Img from "./assets/storybook/chapter8.png";
-import chapter9Img from "./assets/storybook/chapter9.png";
-import chapter10Img from "./assets/storybook/chapter10.png";
+import chapter1Img from "./assets/storybook/chapter1.webp";
+import chapter2Img from "./assets/storybook/chapter2.webp";
+import chapter3Img from "./assets/storybook/chapter3.webp";
+import chapter4Img from "./assets/storybook/chapter4.webp";
+import chapter5Img from "./assets/storybook/chapter5.webp";
+import chapter6Img from "./assets/storybook/chapter6.webp";
+import chapter7Img from "./assets/storybook/chapter7.webp";
+import chapter8Img from "./assets/storybook/chapter8.webp";
+import chapter9Img from "./assets/storybook/chapter9.webp";
+import chapter10Img from "./assets/storybook/chapter10.webp";
 
 export const STORYBOOK_TITLE = "Paul's Diary";
 export const STORYBOOK_SUBTITLE = "An A1 storybook for teens";

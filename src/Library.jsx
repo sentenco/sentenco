@@ -11,7 +11,7 @@ import SparkHub from "./SparkHub";
 import ArticleReader from "./ArticleReader.jsx";
 import ImagePlaceholder from "./slides/ImagePlaceholder";
 import storybookCoverImg from "./assets/storybook/cover.jpeg";
-import storybook2CoverImg from "./assets/storybook2/cover.png";
+import storybook2CoverImg from "./assets/storybook2/cover.webp";
 import storybook3CoverImg from "./assets/storybook3/cover.jpg";
 import storybook4CoverImg from "./assets/storybook4/cover.jpg";
 import storybook5CoverImg from "./assets/storybook5/cover.jpg";
