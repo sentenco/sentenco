@@ -176,8 +176,8 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h1 className="slide-h title-h">My Family Begins!</h1></span>
           <p className="slide-p title-p">Today we meet mom and dad, and learn "This is my..."</p>
           <div className="word-row">
-            <WordCard src={null} word="Mom" label="mom" onZoom={onZoom} />
-            <WordCard src={null} word="Dad" label="dad" onZoom={onZoom} />
+            <WordCard src="/curriculum/u5-family/mom.jpg" word="Mom" label="mom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u5-family/dad.jpg" word="Dad" label="dad" onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -207,7 +207,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Mom!</h2></span>
-          <WordCard src={null} word="Mom" label="mom" onZoom={onZoom} />
+          <WordCard src="/curriculum/u5-family/mom.jpg" word="Mom" label="mom" onZoom={onZoom} />
         </>
       ),
     },
@@ -232,7 +232,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Dad!</h2></span>
-          <WordCard src={null} word="Dad" label="dad" onZoom={onZoom} />
+          <WordCard src="/curriculum/u5-family/dad.jpg" word="Dad" label="dad" onZoom={onZoom} />
         </>
       ),
     },
@@ -243,8 +243,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Mom or Dad?</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Mom" label="mom" onZoom={onZoom} />
-            <WordCard src={null} word="Dad" label="dad" onZoom={onZoom} />
+            <WordCard src="/curriculum/u5-family/mom.jpg" word="Mom" label="mom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u5-family/dad.jpg" word="Dad" label="dad" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -255,7 +255,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Who Is This?</h2></span>
-          <Pic src={null} label="mom" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={110} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -286,7 +286,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Look & Say!</h2></span>
-          <Pic src={null} label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
         </div>
       ),
     },
@@ -296,7 +296,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Look Again!</h2></span>
-          <Pic src={null} label="mom" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
         </div>
       ),
     },
@@ -307,8 +307,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">📸 Family Photo!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Mom" label="mom" onZoom={onZoom} />
-            <WordCard src={null} word="Dad" label="dad" onZoom={onZoom} />
+            <WordCard src="/curriculum/u5-family/mom.jpg" word="Mom" label="mom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u5-family/dad.jpg" word="Dad" label="dad" onZoom={onZoom} />
           </div>
           <p className="slide-p">Choose where they go, then introduce them!</p>
         </>
@@ -340,8 +340,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Show What You Know!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="mom" size={90} onZoom={onZoom} />
-            <Pic src={null} label="dad" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={90} onZoom={onZoom} />
           </div>
         </>
       ),

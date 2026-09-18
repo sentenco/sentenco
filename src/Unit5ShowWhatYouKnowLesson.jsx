@@ -188,8 +188,8 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="mom" size={80} onZoom={onZoom} />
-            <Pic src={null} label="brother" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={80} onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -201,8 +201,8 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Else?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="dad" size={80} onZoom={onZoom} />
-            <Pic src={null} label="sister" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={80} onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -214,10 +214,10 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About Them!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="mom" size={70} onZoom={onZoom} />
-            <Pic src={null} label="dad" size={70} onZoom={onZoom} />
-            <Pic src={null} label="sister" size={70} onZoom={onZoom} />
-            <Pic src={null} label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
           </div>
           <p className="slide-p">You choose who to talk about first!</p>
         </>
@@ -229,7 +229,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Family Detective!</h2></span>
-          <Pic src={null} label="unknown family scene" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/family-scene.jpg" label="unknown family scene" size={180} onZoom={onZoom} />
           <p className="slide-p">Who can you find?</p>
         </div>
       ),
@@ -240,7 +240,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🏠 Build My Family!</h2></span>
-          <Pic src={null} label="mom" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={90} onZoom={onZoom} />
           <p className="slide-p">Choose a family member and add them to your scene!</p>
         </div>
       ),
@@ -251,7 +251,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Add One More!</h2></span>
-          <Pic src={null} label="brother" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={90} onZoom={onZoom} />
           <p className="slide-p">Choose one more family member!</p>
         </div>
       ),

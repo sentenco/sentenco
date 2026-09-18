@@ -184,10 +184,10 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Who Is This?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="brother" size={80} onZoom={onZoom} />
-            <Pic src={null} label="mom" size={80} onZoom={onZoom} />
-            <Pic src={null} label="sister" size={80} onZoom={onZoom} />
-            <Pic src={null} label="dad" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={80} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -198,7 +198,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This Person!</h2></span>
-          <Pic src={null} label="sister" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={110} onZoom={onZoom} />
         </div>
       ),
     },
@@ -209,10 +209,10 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Who Can You See?</h2></span>
           <div className="word-row">
-            <Pic src={null} label="mom" size={70} onZoom={onZoom} />
-            <Pic src={null} label="dad" size={70} onZoom={onZoom} />
-            <Pic src={null} label="sister" size={70} onZoom={onZoom} />
-            <Pic src={null} label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -224,9 +224,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Find My Family!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="dad" size={70} onZoom={onZoom} />
-            <Pic src={null} label="brother" size={70} onZoom={onZoom} />
-            <Pic src={null} label="mom" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
           </div>
           <p className="slide-p">Can you find mom?</p>
         </>
@@ -239,10 +239,10 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This Family!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="mom" size={60} onZoom={onZoom} />
-            <Pic src={null} label="dad" size={60} onZoom={onZoom} />
-            <Pic src={null} label="sister" size={60} onZoom={onZoom} />
-            <Pic src={null} label="brother" size={60} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={60} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={60} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={60} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={60} onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -259,10 +259,10 @@ function buildSlides({ onZoom }) {
           </div>
           <span className="title-highlight"><h2 className="slide-h sub">My Unit 5 Score!</h2></span>
           <div className="word-row">
-            <Pic src={null} label="mom" size={54} onZoom={onZoom} />
-            <Pic src={null} label="dad" size={54} onZoom={onZoom} />
-            <Pic src={null} label="sister" size={54} onZoom={onZoom} />
-            <Pic src={null} label="brother" size={54} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={54} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={54} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={54} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={54} onZoom={onZoom} />
           </div>
         </div>
       ),

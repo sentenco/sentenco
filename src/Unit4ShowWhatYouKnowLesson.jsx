@@ -227,7 +227,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">How Does She Feel?</h2></span>
-          <Pic src={null} label="child at a party" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l5/party.jpg" label="child at a party" size={170} onZoom={onZoom} />
         </div>
       ),
     },
@@ -237,7 +237,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">How Does He Feel?</h2></span>
-          <Pic src={null} label="child yawning" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l5/yawning.jpg" label="child yawning" size={170} onZoom={onZoom} />
         </div>
       ),
     },
