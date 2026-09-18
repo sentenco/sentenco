@@ -199,8 +199,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This Room!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Bedroom" label="bedroom" onZoom={onZoom} />
-            <WordCard src={null} word="Kitchen" label="kitchen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -225,7 +225,7 @@ function buildSlides({ onZoom }) {
       stage: "Where Is It?",
       body: (
         <div className="center-col">
-          <Pic src={null} label="book" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -242,8 +242,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Belongs Here?</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Bedroom" label="bedroom" onZoom={onZoom} />
-            <WordCard src={null} word="Living Room" label="living room" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/living-room.jpg" word="Living Room" label="living room" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -257,7 +257,7 @@ function buildSlides({ onZoom }) {
           <div className="word-row">
             <Pic src={null} label="bed" size={64} onZoom={onZoom} />
             <Pic src={`${IMG}/ball.jpg`} label="ball" size={64} onZoom={onZoom} />
-            <Pic src={null} label="book" size={64} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={64} onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -287,7 +287,7 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This House!</h2></span>
-          <Pic src={null} label="new house scene" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-scenes/cutaway-house.jpg" label="new house scene" size={180} onZoom={onZoom} />
         </div>
       ),
     },

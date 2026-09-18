@@ -225,10 +225,10 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet the Rooms!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Bedroom" label="bedroom" onZoom={onZoom} />
-            <WordCard src={null} word="Bathroom" label="bathroom" onZoom={onZoom} />
-            <WordCard src={null} word="Kitchen" label="kitchen" onZoom={onZoom} />
-            <WordCard src={null} word="Living Room" label="living room" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/living-room.jpg" word="Living Room" label="living room" onZoom={onZoom} />
           </div>
         </>
       ),
@@ -297,9 +297,9 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Room or Word?</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Kitchen" label="kitchen" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
             <LetterTile letters="BED" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
-            <WordCard src={null} word="Bathroom" label="bathroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
             <LetterTile letters="RED" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
           </div>
         </>
@@ -366,8 +366,8 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
           <div className="word-row">
-            <WordCard src={null} word="Living Room" label="living room" onZoom={onZoom} />
-            <WordCard src={null} word="Bedroom" label="bedroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/living-room.jpg" word="Living Room" label="living room" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
             <LetterTile letters="FED" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
             <LetterTile letters="LED" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
           </div>

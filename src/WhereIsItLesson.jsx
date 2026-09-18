@@ -208,9 +208,9 @@ function buildSlides({ onZoom }) {
       stage: "House Review",
       body: (
         <div className="word-row">
-          <WordCard src={null} word="Bedroom" label="bedroom" onZoom={onZoom} />
-          <WordCard src={null} word="Kitchen" label="kitchen" onZoom={onZoom} />
-          <WordCard src={null} word="Bathroom" label="bathroom" onZoom={onZoom} />
+          <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
+          <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
+          <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
         </div>
       ),
     },
@@ -234,7 +234,7 @@ function buildSlides({ onZoom }) {
       stage: "Where Is It?",
       body: (
         <div className="center-col">
-          <Pic src={null} label="book" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -268,7 +268,7 @@ function buildSlides({ onZoom }) {
       stage: "Find the Room",
       body: (
         <div className="center-col">
-          <Pic src={null} label="book" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -357,7 +357,7 @@ function buildSlides({ onZoom }) {
       stage: "HIGHLIGHT: Where Did It Go?",
       body: (
         <div className="center-col">
-          <Pic src={null} label="book" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={90} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
