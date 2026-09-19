@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u9-l1";
 
@@ -241,14 +242,15 @@ export default function Unit9TestLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 9 Test", time: null, note: null },
-  { stage: "1. Animal Vocabulary Check", time: "~3 min", note: "Show mixed animal pictures. Student names cat, dog, bird, fish, lion, elephant, monkey, giraffe." },
-  { stage: "2. It's a...", time: "~3 min", note: "Show animals one at a time. Ask \"What is it?\" Student should respond \"It's a ___.\"" },
-  { stage: "3. Big or Small?", time: "~4 min", note: "Show animals in contrasting sizes. Ask \"Big or small?\" Then ask for a fuller response: \"It's a big dog.\"" },
-  { stage: "4. Listen & Find", time: "~4 min", note: "Give instructions such as \"Find the dog.\" \"Find the big animal.\" Check listening and vocabulary together." },
-  { stage: "5. Animal Picture Talk", time: "~4 min", note: "Show a new zoo scene. Ask open questions: \"What do you see?\" \"What animal is this?\" \"Big or small?\"" },
+  { stage: "Animal Vocabulary Check", time: "~3 min", note: "Show mixed animal pictures. Student names cat, dog, bird, fish, lion, elephant, monkey, giraffe. Second try? Use the What Is It? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "It's a...", time: "~3 min", note: "Show animals one at a time. Ask \"What is it?\" Student should respond \"It's a ___.\" Second try? Use the What Is It? 3 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Big or Small?", time: "~4 min", note: "Show animals in contrasting sizes. Ask \"Big or small?\" Then ask for a fuller response: \"It's a big dog.\" Second try? Use the Big or Small? 3 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Listen & Find", time: "~4 min", note: "Give instructions such as \"Find the dog.\" \"Find the big animal.\" Check listening and vocabulary together." },
+  { stage: "Animal Picture Talk", time: "~4 min", note: "Show a new zoo scene. Ask open questions: \"What do you see?\" \"What animal is this?\" \"Big or small?\" Second try? Use the What Do You See? 2 (a new picture) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Animal Detective", time: "~3 min", note: "Give clues about a hidden animal. Student guesses. Then switch: student gives clues and the teacher guesses." },
-  { stage: "6. Final Challenge", time: "~2 min", note: "Show a completely unfamiliar animal scene. Student independently identifies animals and describes their size." },
+  { stage: "Final Challenge", time: "~2 min", note: "Show a completely unfamiliar animal scene. Student independently identifies animals and describes their size. Second try? Use the Final Challenge Again! (a new picture) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "My Unit 9 Score!", time: null, note: "Scoring guide: Animal Vocabulary /8, Language /4, Sight Words /4, Communication /4. Total /20." },
+  { stage: "Wrap-Up", time: null, note: null },
 ];
 
 function buildSlides({ onZoom }) {
@@ -265,7 +267,9 @@ function buildSlides({ onZoom }) {
     },
     // 2: Animal Vocabulary Check
     {
-      stage: "1. Animal Vocabulary Check",
+      stage: "Animal Vocabulary Check",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the animal."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
@@ -282,29 +286,65 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Animal Vocabulary Check",
+      part: "A",
+      title: "What Is It? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the animal."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/monkey.avif" label="monkey" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/dog.jpg" label="dog" size={62} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={62} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 3: It's a... (round 1)
     {
-      stage: "2. It's a...",
+      stage: "It's a...",
+      part: "B",
+      title: "What Is It?",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/lion.avif`} label="lion" size={100} onZoom={onZoom} />
-          <p className="slide-p">What is it?</p>
+          <Pic src={`${IMG}/lion.avif`} label="lion" size={170} onZoom={onZoom} />
         </div>
       ),
     },
     // 3b: It's a... (round 2)
     {
-      stage: "2. It's a...",
+      stage: "It's a...",
+      part: "B",
+      title: "What Is It? 2",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/dog.jpg`} label="dog" size={100} onZoom={onZoom} />
-          <p className="slide-p">What is it?</p>
+          <Pic src={`${IMG}/dog.jpg`} label="dog" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "It's a...",
+      part: "B",
+      title: "What Is It? 3",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={170} onZoom={onZoom} />
         </div>
       ),
     },
     // 4: Big or Small?
     {
-      stage: "3. Big or Small?",
+      stage: "Big or Small?",
+      part: "C",
+      title: "Big or Small?",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
       body: (
         <div className="word-row">
           <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={90} onZoom={onZoom} />
@@ -314,7 +354,10 @@ function buildSlides({ onZoom }) {
     },
     // 4b: Big or Small? (round 2)
     {
-      stage: "3. Big or Small?",
+      stage: "Big or Small?",
+      part: "C",
+      title: "Big or Small? 2",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
       body: (
         <div className="word-row">
           <Pic src={`${IMG}/lion.avif`} label="lion" size={80} onZoom={onZoom} />
@@ -322,10 +365,32 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Big or Small?",
+      part: "C",
+      title: "Big or Small? 3",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={60} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 5: Listen & Find
     {
-      stage: "4. Listen & Find",
+      stage: "Listen & Find",
+      part: "C",
+      title: "Listen & Find!",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Find the animal."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={63} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/dog.jpg" label="dog" size={63} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={63} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/monkey.avif" label="monkey" size={63} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -340,21 +405,37 @@ function buildSlides({ onZoom }) {
             <div className="bubble left">Find the small animal!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 6: Animal Picture Talk
     {
-      stage: "5. Animal Picture Talk",
+      stage: "Animal Picture Talk",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src="/curriculum/u9-scenes/feeding-time.jpg" label="a new zoo scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/feeding-time.jpg" label="a new zoo scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Animal Picture Talk",
+      part: "D",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-scenes/busy-zoo.jpg" label="busy zoo" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT Animal Detective (round 1)
     {
       stage: "Animal Detective",
+      part: "D",
+      instruction: [["👂", "Listen to the clues."], ["🗣️", "Guess the animal."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🕵️ Animal Detective!</h2></span>
@@ -382,6 +463,8 @@ function buildSlides({ onZoom }) {
     // 8: HIGHLIGHT Animal Detective (round 2, switch)
     {
       stage: "Animal Detective",
+      part: "D",
+      instruction: [["🗣️", "Give the teacher clues."], ["👂", "Listen to the guess."]],
       body: (
         <div className="center-col">
           <div className="bubble-col" style={{ maxWidth: 420 }}>
@@ -407,20 +490,34 @@ function buildSlides({ onZoom }) {
     },
     // 9: Final Challenge
     {
-      stage: "6. Final Challenge",
+      stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me the animals and their size."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
-          <Pic src="/curriculum/u9-scenes/all-animals.jpg" label="new animal scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/all-animals.jpg" label="new animal scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Final Challenge Again!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me the animals and their size."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-scenes/zoo-path.jpg" label="zoo path" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: My Unit 9 Score!
     {
       stage: "My Unit 9 Score!",
+      part: "D",
+      instruction: [["📝", "Record the scores."], ["👏", "Praise the student."]],
       body: (
         <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
           <h2 className="slide-h sub">My Unit 9 Score!</h2>
           <div className="score-table">
             <div className="score-row"><span>Animal Vocabulary</span><span>/ 8</span></div>
@@ -429,8 +526,15 @@ function buildSlides({ onZoom }) {
             <div className="score-row"><span>Communication</span><span>/ 4</span></div>
             <div className="score-row total"><span>Total</span><span>/ 20</span></div>
           </div>
-          <p className="slide-p">Great work finishing Unit 9! See you in the next unit!</p>
         </div>
+      ),
+    },
+    // Wrap-up
+    {
+      stage: "Wrap-Up",
+      time: null,
+      body: (
+        <WrapUp see="On to Unit 10!">Unit 9 complete! You know your animals and can say if they are big or small.</WrapUp>
       ),
     },
   ];
@@ -537,8 +641,8 @@ export const styles = `
 .bubble.left { border-radius: 18px 18px 18px 4px; }
 .bubble.right { border-radius: 18px 18px 4px 18px; }
 
-.score-table { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 16px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
-.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); padding: 5px 0; }
+.score-table { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 10px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
+.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); padding: 2px 0; }
 .score-row.total { border-top: 2px dashed var(--coral-light); margin-top: 4px; padding-top: 10px; color: var(--coral-deep); font-size: 17px; }
 
 .zoom-overlay { position: fixed; inset: 0; background: rgba(27,42,74,0.72); display: flex; align-items: center; justify-content: center; z-index: 999; }
@@ -548,4 +652,5 @@ export const styles = `
 .zoom-pic img { width: 100%; height: 100%; object-fit: contain; }
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
+${wrapUpStyles}
 `;

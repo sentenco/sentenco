@@ -242,13 +242,13 @@ export default function Unit9ShowWhatYouKnowLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 9 · Lesson 5", time: null, note: null },
-  { stage: "Free Animal Talk", time: "~3 min", note: "Show a new animal picture. Ask only \"What do you see?\" Let the student respond naturally." },
+  { stage: "Free Animal Talk", time: "~3 min", note: "Show a new animal picture. Ask only \"What do you see?\" Let the student respond naturally. Fast learner? Add What Do You See? 2 (giraffe) (+1 min)." },
   { stage: "Animal Picture", time: "~4 min", note: "Give the student a new animal scene. Ask \"What animals can you see?\" Don't supply the vocabulary immediately." },
-  { stage: "Tell Me About It", time: "~4 min", note: "Show individual animals in different sizes. Ask \"What can you tell me?\" Observe if the student identifies animal and size independently." },
-  { stage: "Animal Choices", time: "~4 min", note: "Give several animal cards and let the student choose which ones they want. Ask \"Which one?\" and \"Tell me about it.\"" },
-  { stage: "Make an Animal Scene", time: "~4 min", note: "Student creates their own mini animal scene by choosing and placing animals." },
-  { stage: "Animal Storyteller", time: "~4 min", note: "Student creates a short story using their animal scene. Teacher asks natural follow-up questions." },
-  { stage: "Show What You Know!", time: "~2 min", note: "Present a completely new animal scene. Say only: \"Tell me about this.\" Observe what the student can produce independently." },
+  { stage: "Tell Me About It", time: "~4 min", note: "Show individual animals in different sizes. Ask \"What can you tell me?\" Observe if the student identifies animal and size independently. Fast learner? Add Tell Me About It! 3 and 4 (+2 min)." },
+  { stage: "Animal Choices", time: "~4 min", note: "Give several animal cards and let the student choose which ones they want. Ask \"Which one?\" and \"Tell me about it.\" Fast learner? Add Which One? 2 (+1 min)." },
+  { stage: "Make an Animal Scene", time: "~4 min", note: "Student creates their own mini animal scene by choosing and placing animals. Fast learner? Add Make Your Own Scene! 2 (+1 min)." },
+  { stage: "Animal Storyteller", time: "~4 min", note: "Student creates a short story using their animal scene. Teacher asks natural follow-up questions. Fast learner? Add Animal Storyteller! 2 (+1 min)." },
+  { stage: "Show What You Know!", time: "~2 min", note: "Present a completely new animal scene. Say only: \"Tell me about this.\" Observe what the student can produce independently. Fast learner? Add Tell Me About This! 2 and 3 (two more pictures) (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -267,9 +267,13 @@ function buildSlides({ onZoom }) {
     // 2: Free Animal Talk
     {
       stage: "Free Animal Talk",
+      part: "A",
+      title: "What Do You See?",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Tell me what you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={120} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -282,19 +286,44 @@ function buildSlides({ onZoom }) {
     // 3: Animal Picture
     {
       stage: "Animal Picture",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the animals you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Animals Can You See?</h2></span>
-          <Pic src="/curriculum/u9-scenes/pets-garden.jpg" label="a new animal scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/pets-garden.jpg" label="a new animal scene" size={190} onZoom={onZoom} />
         </div>
+      ),
+    },
+    {
+      stage: "Free Animal Talk",
+      part: "B",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Tell me what you see."]],
+      guide: "I see a ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What do you see?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 4: Tell Me About It
     {
       stage: "Tell Me About It",
+      part: "B",
+      title: "Tell Me About It!",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Tell me about it."]],
+      guide: "It's a ___ ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={120} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -307,9 +336,13 @@ function buildSlides({ onZoom }) {
     // 4b: Tell Me About It (round 2)
     {
       stage: "Tell Me About It",
+      part: "B",
+      title: "Tell Me About It! 2",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Tell me about it."]],
+      guide: "It's a ___ ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={120} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -319,42 +352,120 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Tell Me About It",
+      part: "B",
+      title: "Tell Me About It! 3",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Tell me about it."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What can you tell me?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Tell Me About It",
+      part: "B",
+      title: "Tell Me About It! 4",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Tell me about it."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">And this one?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Animal Choices
     {
       stage: "Animal Choices",
+      part: "C",
+      instruction: [["👆", "Pick an animal."], ["🗣️", "Tell me about it."]],
+      guide: "It's a ___ ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Which One?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/lion.avif`} label="lion" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/monkey.avif`} label="monkey" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/fish.avif`} label="fish" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/lion.avif`} label="lion" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/monkey.avif`} label="monkey" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/fish.avif`} label="fish" size={110} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Animal Choices",
+      part: "C",
+      title: "Which One? 2",
+      instruction: [["👆", "Pick an animal."], ["🗣️", "Tell me about it."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={110} onZoom={onZoom} />
+        </div>
       ),
     },
     // 6: Make an Animal Scene
     {
       stage: "Make an Animal Scene",
+      part: "C",
+      instruction: [["👆", "Pick animals for your scene."], ["🗣️", "Say what you have."]],
+      guide: "I have a ___ and a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Make Your Own Scene!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/cat.jpg`} label="cat" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/dog.jpg`} label="dog" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/lion.avif`} label="lion" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/monkey.avif`} label="monkey" size={64} onZoom={onZoom} />
+            <Pic src={`${IMG}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/lion.avif`} label="lion" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/monkey.avif`} label="monkey" size={90} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Make an Animal Scene",
+      part: "C",
+      title: "Make Your Own Scene! 2",
+      instruction: [["👆", "Pick animals for your scene."], ["🗣️", "Say what you have."]],
+      guide: "I have a ___ and a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={90} onZoom={onZoom} />
+        </div>
       ),
     },
     // 7: HIGHLIGHT Animal Storyteller
     {
       stage: "Animal Storyteller",
+      part: "D",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Tell your story."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">📖 Animal Storyteller!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={90} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">What is here? Big or small?</div>
@@ -367,13 +478,61 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Animal Storyteller",
+      part: "D",
+      title: "Animal Storyteller! 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Tell your story."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What sound does your animal make?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Show What You Know!
     {
       stage: "Show What You Know!",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about this."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This!</h2></span>
-          <Pic src="/curriculum/u9-scenes/big-small.jpg" label="new animal scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/big-small.jpg" label="new animal scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Show What You Know!",
+      part: "D",
+      title: "Tell Me About This! 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about this."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-scenes/all-animals.jpg" label="all animals" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Show What You Know!",
+      part: "D",
+      title: "Tell Me About This! 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about this."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-scenes/zoo-area.jpg" label="zoo area" size={190} onZoom={onZoom} />
         </div>
       ),
     },

@@ -528,7 +528,6 @@ function buildSlides({ onZoom }) {
     {
       stage: "Animal Size Race",
       part: "D",
-      title: "Animal Size Race!",
       instruction: [["👂", "Listen to the teacher."], ["👆", "Point and say the sentence."]],
       guide: "It's a ___ ___.",
       body: (

@@ -252,13 +252,13 @@ export default function AtTheZooLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 9 · Lesson 3", time: null, note: null },
   { stage: "Zoo Warm-Up", time: "~3 min", note: "Review familiar animals with sounds and quick \"It's a...\" responses." },
-  { stage: "Meet the Zoo Animals", time: "~4 min", note: "Introduce lion, elephant, monkey, giraffe with pictures." },
-  { stage: "What Is It?", time: "~3 min", note: "Mix new and familiar animals. Student identifies them using \"It's a...\"" },
-  { stage: "Big or Small?", time: "~4 min", note: "Compare zoo animals: big elephant, big lion, small monkey. Don't overemphasize real-world accuracy; focus on the language." },
-  { stage: "Zoo Walk", time: "~4 min", note: "Show a simple zoo scene. Student explores different areas and identifies animals they find." },
+  { stage: "Meet the Zoo Animals", time: "~4 min", note: "Introduce lion, elephant, monkey, giraffe with pictures. Fast learner? Add Meet the Zoo Animals! 2 in a new order (+1 min)." },
+  { stage: "What Is It?", time: "~3 min", note: "Mix new and familiar animals. Student identifies them using \"It's a...\" Fast learner? Add What Is It? 4 and 5 (giraffe, elephant) (+2 min)." },
+  { stage: "Big or Small?", time: "~4 min", note: "Compare zoo animals: big elephant, big lion, small monkey. Don't overemphasize real-world accuracy; focus on the language. Fast learner? Add Big or Small? 2 (+1 min)." },
+  { stage: "Zoo Walk", time: "~4 min", note: "Show a simple zoo scene. Student explores different areas and identifies animals they find. Fast learner? Add Keep Walking! 2 and 3 (two more zoo pictures) (+2 min)." },
   { stage: "Who Am I? Animal Acting", time: "~2 min", note: "Student chooses an animal secretly and acts it out without speaking. Teacher guesses." },
-  { stage: "Who Am I? Animal Acting", time: "~2 min", note: "Switch roles. After guessing, student says \"It's a lion!\"" },
-  { stage: "Zoo Exit Challenge", time: "~3 min", note: "Show 5-6 animals. Student identifies them and describes 2 with big/small." },
+  { stage: "Who Am I? Animal Acting", time: "~2 min", note: "Switch roles. After guessing, student says \"It's a lion!\" Fast learner? Add Who Am I? 5 and 6 (+2 min)." },
+  { stage: "Zoo Exit Challenge", time: "~3 min", note: "Show 5-6 animals. Student identifies them and describes 2 with big/small. Fast learner? Add Zoo Exit Challenge! 2 and 3 (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -277,18 +277,28 @@ function buildSlides({ onZoom }) {
     // 2: Zoo Warm-Up
     {
       stage: "Zoo Warm-Up",
+      part: "A",
+      title: "Who Is It?",
+      instruction: [["👂", "Listen to the sound."], ["🗣️", "Say the animal."]],
+      guide: "It's a ___.",
       body: (
+        <>
+        <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={130} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Roar! What animal?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Meet the Zoo Animals
     {
       stage: "Meet the Zoo Animals",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the animal."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet the Zoo Animals!</h2></span>
@@ -301,12 +311,30 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Meet the Zoo Animals",
+      part: "B",
+      title: "Meet the Zoo Animals! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the animal."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u9-l1/giraffe.png" word="Giraffe" label="giraffe" onZoom={onZoom} />
+          <WordCard src="/curriculum/u9-l1/monkey.avif" word="Monkey" label="monkey" onZoom={onZoom} />
+          <WordCard src="/curriculum/u9-l1/lion.avif" word="Lion" label="lion" onZoom={onZoom} />
+          <WordCard src="/curriculum/u9-l1/elephant.jpg" word="Elephant" label="elephant" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: What Is It? (round 1)
     {
       stage: "What Is It?",
+      part: "B",
+      title: "What Is It?",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -319,9 +347,12 @@ function buildSlides({ onZoom }) {
     // 4b: What Is It? (round 2)
     {
       stage: "What Is It?",
+      part: "B",
+      title: "What Is It? 2",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/dog.jpg`} label="dog" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/dog.jpg`} label="dog" size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -334,9 +365,12 @@ function buildSlides({ onZoom }) {
     // 4c: What Is It? (round 3, new animal)
     {
       stage: "What Is It?",
+      part: "B",
+      title: "What Is It? 3",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/lion.avif`} label="lion" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/lion.avif`} label="lion" size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -346,9 +380,46 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "What Is It? 4",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={130} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's a giraffe!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "What Is It? 5",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say what it is."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={130} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's an elephant!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Big or Small?
     {
       stage: "Big or Small?",
+      part: "C",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Big or Small?</h2></span>
@@ -360,33 +431,82 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Big or Small?",
+      part: "C",
+      title: "Big or Small? 2",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={60} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: Zoo Walk (area 1)
     {
       stage: "Zoo Walk",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the animals you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Let's Walk at the Zoo!</h2></span>
-          <Pic src="/curriculum/u9-scenes/zoo-path.jpg" label="a zoo scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/zoo-path.jpg" label="a zoo scene" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 6b: Zoo Walk (area 2)
     {
       stage: "Zoo Walk",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the animals you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Keep Walking!</h2></span>
-          <Pic src="/curriculum/u9-scenes/zoo-area.jpg" label="another zoo area" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-scenes/zoo-area.jpg" label="another zoo area" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Zoo Walk",
+      part: "C",
+      title: "Keep Walking! 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the animals you see."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-scenes/busy-zoo.jpg" label="busy zoo" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Zoo Walk",
+      part: "C",
+      title: "Keep Walking! 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the animals you see."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u9-scenes/feeding-time.jpg" label="feeding time" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT Who Am I? Animal Acting (round 1)
     {
       stage: "Who Am I? Animal Acting",
+      part: "D",
+      instruction: [["🎭", "Do an animal action."], ["🗣️", "Say yes or no."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🎭 Who Am I?</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={73} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
               <div className="bubble right">(acts like an elephant) 🐘</div>
@@ -402,9 +522,15 @@ function buildSlides({ onZoom }) {
     // 7b: HIGHLIGHT Who Am I? Animal Acting (round 1, second animal)
     {
       stage: "Who Am I? Animal Acting",
+      part: "D",
+      title: "Who Am I? 2",
+      instruction: [["🎭", "Do an animal action."], ["🗣️", "Say yes or no."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u9-l1/monkey.avif" label="monkey" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
               <div className="bubble right">(acts like a monkey) 🐵</div>
@@ -417,12 +543,41 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Who Am I? Animal Acting",
+      part: "D",
+      title: "Who Am I? 5",
+      instruction: [["🎭", "Do an animal action."], ["🗣️", "Say yes or no."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">(acts like a giraffe) 🦒</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Are you a giraffe?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: HIGHLIGHT Who Am I? Animal Acting (round 2, switch)
     {
       stage: "Who Am I? Animal Acting",
+      part: "D",
+      title: "Who Am I? 3",
+      instruction: [["👀", "Watch the teacher act."], ["🗣️", "Say the animal."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">(acts like a lion) 🦁</div>
@@ -438,9 +593,15 @@ function buildSlides({ onZoom }) {
     // 8b: HIGHLIGHT Who Am I? Animal Acting (round 2, second animal)
     {
       stage: "Who Am I? Animal Acting",
+      part: "D",
+      title: "Who Am I? 4",
+      instruction: [["👀", "Watch the teacher act."], ["🗣️", "Say the animal."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">(acts like a fish) 🐟</div>
@@ -453,19 +614,75 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Who Am I? Animal Acting",
+      part: "D",
+      title: "Who Am I? 6",
+      instruction: [["👀", "Watch the teacher act."], ["🗣️", "Say the animal."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">(acts like an elephant) 🐘</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's an elephant!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 9: Zoo Exit Challenge
     {
       stage: "Zoo Exit Challenge",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the animal and its size."]],
+      guide: "It's a ___ ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Zoo Exit Challenge!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/lion.avif`} label="lion" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/monkey.avif`} label="monkey" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/cat.jpg`} label="cat" size={64} onZoom={onZoom} />
+            <Pic src={`${IMG}/lion.avif`} label="lion" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/monkey.avif`} label="monkey" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/cat.jpg`} label="cat" size={100} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Zoo Exit Challenge",
+      part: "D",
+      title: "Zoo Exit Challenge! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the animal and its size."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/monkey.avif" label="monkey" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/dog.jpg" label="dog" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={100} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Zoo Exit Challenge",
+      part: "D",
+      title: "Zoo Exit Challenge! 3",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the animal and its size."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 10: Wrap-up
