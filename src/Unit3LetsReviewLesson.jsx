@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const LETTER_COLOR = {
   S: "#E0567A", T: "#2E97C7", U: "#22A67E", V: "#8E6FCE",
@@ -152,16 +153,20 @@ export default function Unit3LetsReviewLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
-              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>}
               <span className="stage-name">{s.stage}</span>
-              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
           <div className={`slide-body ${s.instruction ? "has-instruction" : ""}`}>
-            {s.instruction && (
+            {(s.instruction || s.part) && (
               <div className="slide-instruction">
-                {s.instruction.map(([icon, text]) => (
+                {s.part && (
+                  <span className="part-lead">
+                    <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>
+                    {s.part === lastPart && <span className="last-tag">Last part!</span>}
+                  </span>
+                )}
+                {s.instruction && s.instruction.map(([icon, text]) => (
                   <InstructionStep key={text} icon={icon} text={text} />
                 ))}
               </div>
@@ -375,11 +380,7 @@ function buildSlides({ onZoom }) {
       stage: "Wrap-Up",
       time: null,
       body: (
-        <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
-          <h2 className="slide-h sub">Great Job!</h2>
-          <p className="slide-p">You know Ss to Zz, eight colors, and you can blend simple sounds into words! See you next lesson!</p>
-        </div>
+        <WrapUp>You know Ss to Zz, eight colors, and you can blend simple sounds into words!</WrapUp>
       ),
     },
   ];
@@ -446,6 +447,7 @@ export const styles = `
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }
 .instr-tag { font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 3px 11px; border-radius: 999px; }
+.part-lead { position: absolute; right: 100%; top: 4px; margin-right: 8px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .part-badge { height: 22px; padding: 0 10px; border-radius: 999px; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: 0.03em; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
@@ -487,4 +489,5 @@ export const styles = `
 .zoom-overlay-inner { position: relative; background: #fff; border-radius: 28px; padding: 34px; box-shadow: 0 30px 60px rgba(0,0,0,0.32); display: flex; align-items: center; justify-content: center; }
 .zoom-close { position: absolute; top: -16px; right: -16px; width: 38px; height: 38px; border-radius: 50%; background: #fff; border: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink); }
 .zoom-pic { width: 380px; height: 380px; display: flex; align-items: center; justify-content: center; border-radius: 18px; overflow: hidden; background: #fff; }
+${wrapUpStyles}
 `;
