@@ -142,6 +142,25 @@ export default function InMyBagLesson() {
     }
   }, [zoom]);
 
+  useEffect(() => {
+    if (i !== 0) return;
+    const fit = () => {
+      const h = document.querySelector(".slide .title-h");
+      const box = document.querySelector(".slide .title-content");
+      if (!h || !box) return;
+      const avail = box.getBoundingClientRect().width - (parseFloat(getComputedStyle(box).paddingLeft) || 0);
+      h.style.whiteSpace = "nowrap";
+      let size = 50;
+      h.style.fontSize = size + "px";
+      while (h.getBoundingClientRect().width > avail && size > 26) {
+        size -= 1;
+        h.style.fontSize = size + "px";
+      }
+    };
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  }, [i]);
+
   function exit() {
     window.close();
   }
