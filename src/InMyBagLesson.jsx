@@ -45,10 +45,10 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function WordCard({ src, word, label, onZoom }) {
+function WordCard({ src, word, label, size, onZoom }) {
   return (
     <div className="wc">
-      <Pic src={src} label={label} onZoom={onZoom} />
+      <Pic src={src} label={label} size={size} onZoom={onZoom} />
       <div className="word">{word}</div>
     </div>
   );
@@ -220,13 +220,13 @@ export const LESSON_GUIDE = [
   { stage: "Unit 7 · Lesson 1", time: null, note: null },
   { stage: "Hello & School Warm-Up", time: "~3 min", note: "Greet the student and connect to school. Show a school bag and let the student guess what might be inside." },
   { stage: "Meet My School Things", time: "~3 min", note: "Introduce pen, book, bag. Show each object clearly, say the word, and have the student point, repeat, and identify it." },
-  { stage: "What Is It?", time: "~3 min", note: "Mix the three objects. Ask \"What is this?\" Gradually make it faster and change the order." },
+  { stage: "What Is It?", time: "~3 min", note: "Mix the three objects. Ask \"What is this?\" Gradually make it faster and change the order. Fast learner? Add Faster Now! 2 and 3 (bag, book) (+2 min)." },
   { stage: "In My Bag", time: "~4 min", note: "Introduce \"It is a pen.\" \"It is a book.\" Then ask \"What is in the bag?\"" },
-  { stage: "Pack My Bag!", time: "~4 min", note: "Say \"Put the pen in the bag.\" / \"Put the book in the bag.\" Then ask \"What is in your bag?\"" },
+  { stage: "Pack My Bag!", time: "~4 min", note: "Say \"Put the pen in the bag.\" / \"Put the book in the bag.\" Then ask \"What is in your bag?\" Fast learner? Add Pack It Once More! (pen and book together) (+1 min)." },
   { stage: "What's in My Bag?", time: "~2 min", note: "Student secretly chooses 2-3 objects to put in the bag and names them for the teacher to guess." },
-  { stage: "What's in My Bag?", time: "~2 min", note: "Switch roles. Teacher puts objects in a mystery bag for the student to guess." },
-  { stage: "Bag Challenge & Review", time: "~2 min", note: "Show a new bag with 3-4 objects. Student identifies them and says what is inside." },
-  { stage: "Bag Challenge & Review", time: "~2 min", note: "Finish with a quick pen -> book -> bag sight-word review." },
+  { stage: "What's in My Bag?", time: "~2 min", note: "Switch roles. Teacher puts objects in a mystery bag for the student to guess. Fast learner? Add Your Bag! 2 and What's in My Bag? 3 (+3 min)." },
+  { stage: "Bag Challenge & Review", time: "~2 min", note: "Show a new bag with 3-4 objects. Student identifies them and says what is inside. Fast learner? Add Bag Challenge! 2 (pencil, crayon, bag) (+1 min)." },
+  { stage: "Bag Challenge & Review", time: "~2 min", note: "Finish with a quick pen -> book -> bag sight-word review. Fast learner? Add Quick Review! 2 in a new order (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -250,17 +250,22 @@ function buildSlides({ onZoom }) {
     // 2: Hello & School Warm-Up
     {
       stage: "Hello & School Warm-Up",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🤔", "Guess what is inside."]],
+      guide: "I think it's a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Are You Ready?</h2></span>
-          <Pic src={`${IMG}/bag.avif`} label="school bag" size={110} onZoom={onZoom} />
-          <p className="slide-p">What is inside?</p>
+          <Pic src={`${IMG}/bag.avif`} label="school bag" size={177} onZoom={onZoom} />
         </div>
       ),
     },
     // 3: Meet My School Things
     {
       stage: "Meet My School Things",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet My School Things!</h2></span>
@@ -275,72 +280,157 @@ function buildSlides({ onZoom }) {
     // 4: What Is It? (round 1)
     {
       stage: "What Is It?",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
-          <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={177} onZoom={onZoom} />
         </div>
       ),
     },
     // 5: What Is It? (round 2)
     {
       stage: "What Is It?",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Faster Now!</h2></span>
-          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={177} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "Faster Now! 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={177} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "Faster Now! 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={177} onZoom={onZoom} />
         </div>
       ),
     },
     // 6: In My Bag (intro)
     {
       stage: "In My Bag",
+      part: "B",
+      title: "It Is a Pen!",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: It is a pen."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">It is a pen. It is a book.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 7: In My Bag (practice)
     {
       stage: "In My Bag",
+      part: "B",
+      instruction: [["👀", "Look at the bag."], ["🗣️", "Say what is inside."]],
+      guide: "It is a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Is in the Bag?</h2></span>
-          <Pic src={`${IMG}/bag.avif`} label="bag" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/bag.avif`} label="bag" size={177} onZoom={onZoom} />
         </div>
       ),
     },
     // 8: Pack My Bag! (round 1)
     {
       stage: "Pack My Bag!",
+      part: "C",
+      title: "Pack My Bag!",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Put the pen in the bag!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 9: Pack My Bag! (round 2)
     {
       stage: "Pack My Bag!",
+      part: "C",
+      title: "Pack It Again!",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
+      guide: "A ___ and a ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Put the book in the bag! What is in your bag now?</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Pack My Bag!",
+      part: "C",
+      title: "Pack It Once More!",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Put the pen and the book in the bag!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 10: HIGHLIGHT What's in My Bag? (round 1)
     {
       stage: "What's in My Bag?",
+      part: "D",
+      instruction: [["👆", "Pick two or three."], ["🗣️", "Say what is in your bag."]],
+      guide: "I have a ___ and a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🎒 What's in My Bag?</h2></span>
@@ -349,43 +439,103 @@ function buildSlides({ onZoom }) {
             <WordCard src={PENCIL_IMG} word="Pencil" label="pencil" onZoom={onZoom} />
             <WordCard src="/curriculum/u7-objects/crayon.png" word="Crayon" label="crayon" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose 2-3 to put in your bag!</p>
         </>
       ),
     },
     // 11: HIGHLIGHT What's in My Bag? (round 2, switch)
     {
       stage: "What's in My Bag?",
+      part: "D",
+      title: "Your Bag!",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
       body: (
-        <div className="bubble-col" style={{ maxWidth: 400 }}>
-          <div className="brow">
-            <div className="avatar navy">T</div>
-            <div className="bubble left">What's in your bag?</div>
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={150} onZoom={onZoom} /></div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What's in your bag?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Pen!</div>
+            </div>
           </div>
-          <div className="brow me">
-            <div className="avatar coral">S</div>
-            <div className="bubble right">Pen!</div>
+        </div>
+      ),
+    },
+    {
+      stage: "What's in My Bag?",
+      part: "D",
+      title: "Your Bag! 2",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
+      body: (
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={150} onZoom={onZoom} /></div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What's in your bag?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Book!</div>
+            </div>
           </div>
+        </div>
+      ),
+    },
+    {
+      stage: "What's in My Bag?",
+      part: "D",
+      title: "What's in My Bag? 3",
+      instruction: [["👆", "Pick two or three."], ["🗣️", "Say what is in your bag."]],
+      guide: "I have a ___ and a ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u7-objects/book.png" word="Book" label="book" onZoom={onZoom} />
+          <WordCard src="/curriculum/u7-objects/crayon.png" word="Crayon" label="crayon" onZoom={onZoom} />
+          <WordCard src="/curriculum/u2-l3/pencil.jpeg" word="Pencil" label="pencil" onZoom={onZoom} />
         </div>
       ),
     },
     // 12: Bag Challenge
     {
       stage: "Bag Challenge & Review",
+      part: "D",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say what is in the bag."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Bag Challenge!</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u7-objects/book.png" label="book" size={70} onZoom={onZoom} />
-            <Pic src={`${IMG}/bag.avif`} label="bag" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/bag.avif`} label="bag" size={110} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Bag Challenge & Review",
+      part: "D",
+      title: "Bag Challenge! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say what is in the bag."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u2-l3/pencil.jpeg" label="pencil" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/crayon.png" label="crayon" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={110} onZoom={onZoom} />
+        </div>
       ),
     },
     // 13: Sight word review
     {
       stage: "Bag Challenge & Review",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each word."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Quick Review!</h2></span>
@@ -395,6 +545,20 @@ function buildSlides({ onZoom }) {
             <WordCard src={`${IMG}/bag.avif`} word="Bag" label="bag" onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Bag Challenge & Review",
+      part: "D",
+      title: "Quick Review! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each word."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+        </div>
       ),
     },
     // 14: Great Job
@@ -453,7 +617,7 @@ export const styles = `
 .nav-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 12px 22px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(180deg, #fff 0%, #F5EEE7 100%); color: var(--navy); box-shadow: 0 4px 0 rgba(27,42,74,0.15), 0 8px 16px rgba(27,42,74,0.1); }
 .nav-btn.next { background: linear-gradient(180deg, var(--coral) 0%, var(--coral-deep) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.4), 0 8px 18px rgba(224,80,47,0.32); }
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
-.progress-track { display: flex; align-items: center; gap: 7px; }
+.progress-track { display: flex; align-items: center; flex-wrap: nowrap; gap: 5px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
@@ -494,6 +658,8 @@ export const styles = `
 .pic-ph span { font-size: 10px; font-weight: 700; text-align: center; padding: 0 8px; }
 .word { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

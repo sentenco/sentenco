@@ -42,10 +42,10 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function WordCard({ src, word, label, onZoom }) {
+function WordCard({ src, word, label, size, onZoom }) {
   return (
     <div className="wc">
-      <Pic src={src} label={label} onZoom={onZoom} />
+      <Pic src={src} label={label} size={size} onZoom={onZoom} />
       <div className="word">{word}</div>
     </div>
   );
@@ -215,14 +215,14 @@ export default function Unit7LetsReviewLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 7 · Lesson 4", time: null, note: null },
-  { stage: "School Warm-Up", time: "~3 min", note: "Start with quick actions: \"Pick up your pen.\" \"Open your book.\" Recycle pen, book, bag naturally." },
+  { stage: "School Warm-Up", time: "~3 min", note: "Start with quick actions: \"Pick up your pen.\" \"Open your book.\" Recycle pen, book, bag naturally. Fast learner? Add Warm-Up! 2 (+1 min)." },
   { stage: "What's in My Bag?", time: "~4 min", note: "Review pen, book, bag. Show a bag with mixed objects." },
-  { stage: "My Classroom", time: "~4 min", note: "Review desk, chair, board along with the Lesson 1 vocabulary." },
-  { stage: "Do What I Say!", time: "~4 min", note: "Review classroom instructions: open, close, pick up, put down, put it in, sit down, stand up." },
-  { stage: "Your Turn!", time: "~3 min", note: "Student gives the teacher classroom instructions. Teacher follows most but makes a few funny mistakes." },
+  { stage: "My Classroom", time: "~4 min", note: "Review desk, chair, board along with the Lesson 1 vocabulary. Fast learner? Add What Do You See? 2 (+1 min)." },
+  { stage: "Do What I Say!", time: "~4 min", note: "Review classroom instructions: open, close, pick up, put down, put it in, sit down, stand up. Fast learner? Add Do What I Say! 3 (+1 min)." },
+  { stage: "Your Turn!", time: "~3 min", note: "Student gives the teacher classroom instructions. Teacher follows most but makes a few funny mistakes. Fast learner? Add Your Turn! 2 (+1 min)." },
   { stage: "Classroom Mission!", time: "~2 min", note: "Give the student a series of classroom missions." },
-  { stage: "Classroom Mission!", time: "~2 min", note: "They give their own missions to the teacher." },
-  { stage: "My Classroom Challenge", time: "~3 min", note: "Show a new classroom scene. Student identifies objects and gives 2-3 instructions." },
+  { stage: "Classroom Mission!", time: "~2 min", note: "They give their own missions to the teacher. Fast learner? Add Classroom Mission! 3 (+1 min)." },
+  { stage: "My Classroom Challenge", time: "~3 min", note: "Show a new classroom scene. Student identifies objects and gives 2-3 instructions. Fast learner? Add Classroom Challenge! 2 and Give an Instruction! (two more pictures) (+3 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -241,70 +241,164 @@ function buildSlides({ onZoom }) {
     // 2: School Warm-Up
     {
       stage: "School Warm-Up",
+      part: "A",
+      title: "Warm-Up!",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Pick up your pen! Open your book!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "School Warm-Up",
+      part: "A",
+      title: "Warm-Up! 2",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Close your book! Put down your pen!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 3: What's in My Bag?
     {
       stage: "What's in My Bag?",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What's in My Bag?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
-            <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />
-          </div>
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={110} onZoom={onZoom} />
+        </div>
         </>
       ),
     },
     // 4: My Classroom
     {
       stage: "My Classroom",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u7-objects/board.png" label="board" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Classroom",
+      part: "B",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Do What I Say! (round 1)
     {
       stage: "Do What I Say!",
+      part: "B",
+      title: "Do What I Say!",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Pick up the book. Put it in the bag.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 6: Do What I Say! (round 2)
     {
       stage: "Do What I Say!",
+      part: "B",
+      title: "Sit Down! Stand Up!",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
+        <>
+        <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={150} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Sit down! Stand up!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Do What I Say!",
+      part: "B",
+      title: "Do What I Say! 3",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Put the pen on the desk. Sit down.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 7: Your Turn!
     {
       stage: "Your Turn!",
+      part: "C",
+      title: "Your Turn!",
+      instruction: [["🗣️", "Give the teacher an instruction."], ["👀", "Watch and correct."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
@@ -315,24 +409,87 @@ function buildSlides({ onZoom }) {
             <div className="bubble left">(picks up the pen instead) 🤪</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Your Turn!",
+      part: "C",
+      title: "Your Turn! 2",
+      instruction: [["🗣️", "Give the teacher an instruction."], ["👀", "Watch and correct."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={121} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Close the book!</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">(opens the book) 🤪</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 8: HIGHLIGHT Classroom Mission! (round 1)
     {
       stage: "Classroom Mission!",
+      part: "C",
+      title: "Classroom Mission!",
+      instruction: [["👂", "Listen to the mission."], ["🤸", "Do all the things."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">🎓 Mission: pick up the pen, put it in the bag, open the book.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Classroom Mission!",
+      part: "C",
+      title: "Classroom Mission! 3",
+      instruction: [["👂", "Listen to the mission."], ["🤸", "Do all the things."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">🎓 Mission: put the book on the desk, sit down, stand up.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 9: HIGHLIGHT Classroom Mission! (round 2, student gives)
     {
       stage: "Classroom Mission!",
+      part: "C",
+      title: "Your Mission!",
+      instruction: [["🗣️", "Give the teacher an instruction."], ["👀", "Watch and correct."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
@@ -343,15 +500,42 @@ function buildSlides({ onZoom }) {
             <div className="bubble left">(picks up the pen) 🤪</div>
           </div>
         </div>
+        </>
       ),
     },
     // 10: My Classroom Challenge
     {
       stage: "My Classroom Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Classroom Challenge!</h2></span>
-          <Pic src="/curriculum/u7-scenes/classroom-challenge.jpg" label="new classroom scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/classroom-challenge.jpg" label="new classroom scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Classroom Challenge",
+      part: "D",
+      title: "Classroom Challenge! 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-scenes/open-classroom.jpg" label="open classroom" size={177} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Classroom Challenge",
+      part: "D",
+      title: "Give an Instruction!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell the teacher what to do."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-scenes/kids-sharing.jpg" label="kids sharing" size={190} onZoom={onZoom} />
         </div>
       ),
     },
@@ -411,7 +595,7 @@ export const styles = `
 .nav-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 12px 22px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(180deg, #fff 0%, #F5EEE7 100%); color: var(--navy); box-shadow: 0 4px 0 rgba(27,42,74,0.15), 0 8px 16px rgba(27,42,74,0.1); }
 .nav-btn.next { background: linear-gradient(180deg, var(--coral) 0%, var(--coral-deep) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.4), 0 8px 18px rgba(224,80,47,0.32); }
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
-.progress-track { display: flex; align-items: center; gap: 7px; }
+.progress-track { display: flex; align-items: center; flex-wrap: nowrap; gap: 5px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }

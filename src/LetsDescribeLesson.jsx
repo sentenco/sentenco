@@ -46,10 +46,10 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function WordCard({ src, word, label, onZoom }) {
+function WordCard({ src, word, label, size, onZoom }) {
   return (
     <div className="wc">
-      <Pic src={src} label={label} onZoom={onZoom} />
+      <Pic src={src} label={label} size={size} onZoom={onZoom} />
       <div className="word">{word}</div>
     </div>
   );
@@ -380,11 +380,11 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Big Eyes!</h2></span>
           <div className="row">
             <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
-            <WordCard src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} />
+            <WordCard size={56} src="/curriculum/u6-body/eyes.png" word="Eyes" label="eyes" onZoom={onZoom} />
           </div>
           <div className="row">
             <DescriptorTag label="Long" color={SIZE_COLOR.Long} onZoom={onZoom} />
-            <WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
+            <WordCard size={56} src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -399,11 +399,11 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <div className="row">
             <DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} />
-            <WordCard src="/curriculum/u2-l2/nose.jpg" word="Nose" label="nose" onZoom={onZoom} />
+            <WordCard size={56} src="/curriculum/u2-l2/nose.jpg" word="Nose" label="nose" onZoom={onZoom} />
           </div>
           <div className="row">
             <DescriptorTag label="Short" color={SIZE_COLOR.Short} onZoom={onZoom} />
-            <WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} />
+            <WordCard size={56} src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -538,11 +538,11 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <div className="row">
             <DescriptorTag label="Long" color={SIZE_COLOR.Long} onZoom={onZoom} />
-            <WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
+            <WordCard size={56} src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
           </div>
           <div className="row">
             <DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} />
-            <WordCard src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} />
+            <WordCard size={56} src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -557,7 +557,7 @@ function buildSlides({ onZoom }) {
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What's This?</h2></span>
           <div className="wc">
-          <Pic src={DOG_IMG} label="dog" size={190} onZoom={onZoom} />
+          <Pic src={DOG_IMG} label="dog" size={152} onZoom={onZoom} />
           <div className="word">Dog</div>
         </div>
         </>
@@ -571,7 +571,7 @@ function buildSlides({ onZoom }) {
       guide: "It's a ___.",
       body: (
         <div className="wc">
-          <Pic src="/curriculum/u6-words/log.png" label="log" size={190} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-words/log.png" label="log" size={152} onZoom={onZoom} />
           <div className="word">Log</div>
         </div>
       ),
@@ -584,7 +584,7 @@ function buildSlides({ onZoom }) {
       guide: "I can ___.",
       body: (
         <div className="wc">
-          <Pic src="/curriculum/u6-words/jog.png" label="jog" size={190} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-words/jog.png" label="jog" size={152} onZoom={onZoom} />
           <div className="word">Jog</div>
         </div>
       ),
@@ -710,7 +710,7 @@ export const styles = `
 .nav-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 12px 22px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(180deg, #fff 0%, #F5EEE7 100%); color: var(--navy); box-shadow: 0 4px 0 rgba(27,42,74,0.15), 0 8px 16px rgba(27,42,74,0.1); }
 .nav-btn.next { background: linear-gradient(180deg, var(--coral) 0%, var(--coral-deep) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.4), 0 8px 18px rgba(224,80,47,0.32); }
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
-.progress-track { display: flex; align-items: center; gap: 7px; }
+.progress-track { display: flex; align-items: center; flex-wrap: nowrap; gap: 5px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }

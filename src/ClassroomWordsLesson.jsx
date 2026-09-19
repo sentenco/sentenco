@@ -44,10 +44,10 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function WordCard({ src, word, label, onZoom }) {
+function WordCard({ src, word, label, size, onZoom }) {
   return (
     <div className="wc">
-      <Pic src={src} label={label} onZoom={onZoom} />
+      <Pic src={src} label={label} size={size} onZoom={onZoom} />
       <div className="word">{word}</div>
     </div>
   );
@@ -219,13 +219,13 @@ export const LESSON_GUIDE = [
   { stage: "Unit 7 · Lesson 2", time: null, note: null },
   { stage: "Hello & School Review", time: "~3 min", note: "Greet the student and review pen, book, bag from Lesson 1." },
   { stage: "Meet the Classroom", time: "~3 min", note: "Introduce desk, chair, board using a classroom picture. Student points to each object, repeats, and finds it in the picture." },
-  { stage: "What Is It?", time: "~3 min", note: "Mix all six classroom words: pen, book, bag, desk, chair, board." },
+  { stage: "What Is It?", time: "~3 min", note: "Mix all six classroom words: pen, book, bag, desk, chair, board. Fast learner? Add And This? 2 and 3 (desk, book) (+2 min)." },
   { stage: "In My Classroom", time: "~4 min", note: "Introduce \"This is a desk.\" \"This is a chair.\" \"This is a board.\" Student describes objects in the picture." },
-  { stage: "Find It!", time: "~4 min", note: "Give commands: \"Find the desk!\" \"Point to the chair!\" Then let the student give commands to the teacher." },
+  { stage: "Find It!", time: "~4 min", note: "Give commands: \"Find the desk!\" \"Point to the chair!\" Then let the student give commands to the teacher. Fast learner? Add Find It! 3 and Your Turn! 2 (+2 min)." },
   { stage: "Build My Classroom!", time: "~2 min", note: "Student creates a simple classroom by choosing a desk, chair, board, and objects from Lesson 1." },
-  { stage: "Build My Classroom!", time: "~2 min", note: "Student identifies each item and tells the teacher what they have." },
-  { stage: "Classroom Challenge", time: "~2 min", note: "Show a new classroom picture. Ask \"What do you see?\"" },
-  { stage: "Classroom Challenge", time: "~2 min", note: "Finish with a quick review of all six classroom words." },
+  { stage: "Build My Classroom!", time: "~2 min", note: "Student identifies each item and tells the teacher what they have. Fast learner? Add Build My Classroom! 2 (+1 min)." },
+  { stage: "Classroom Challenge", time: "~2 min", note: "Show a new classroom picture. Ask \"What do you see?\" Fast learner? Add What Do You See? 2 and 3 (two more classroom pictures) (+2 min)." },
+  { stage: "Classroom Challenge", time: "~2 min", note: "Finish with a quick review of all six classroom words. Fast learner? Add Quick Review! 2 in a new order (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -249,18 +249,32 @@ function buildSlides({ onZoom }) {
     // 2: Hello & School Review
     {
       stage: "Hello & School Review",
+      part: "A",
+      title: "Are You Ready?",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say what is in the bag."]],
+      guide: "A ___ and a ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What is in the bag?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Meet the Classroom
     {
       stage: "Meet the Classroom",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet the Classroom!</h2></span>
@@ -275,108 +289,303 @@ function buildSlides({ onZoom }) {
     // 4: What Is It? (round 1)
     {
       stage: "What Is It?",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
-          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 5: What Is It? (round 2)
     {
       stage: "What Is It?",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">And This?</h2></span>
-          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "And This? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "And This? 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It is a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 6: In My Classroom
     {
       stage: "In My Classroom",
+      part: "B",
+      title: "This Is a Desk!",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: This is a desk."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">This is a desk. This is a chair.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 7: Find It! (round 1)
     {
       stage: "Find It!",
+      part: "C",
+      title: "Find It!",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to it."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Find the desk! Point to the chair!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Find It!",
+      part: "C",
+      title: "Find It! 3",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to it."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Point to the board! Find the desk!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 8: Find It! (round 2, student gives commands)
     {
       stage: "Find It!",
+      part: "C",
+      title: "Your Turn!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the teacher what to find."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">Show me the board!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Find It!",
+      part: "C",
+      title: "Your Turn! 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the teacher what to find."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Show me the chair!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 9: HIGHLIGHT Build My Classroom! (round 1)
     {
       stage: "Build My Classroom!",
+      part: "D",
+      instruction: [["👆", "Pick some things."], ["🗣️", "Say what you have."]],
+      guide: "I have a ___ and a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🏫 Build My Classroom!</h2></span>
-          <div className="word-row">
-            <WordCard src="/curriculum/u7-objects/desk.png" word="Desk" label="desk" onZoom={onZoom} />
-            <WordCard src="/curriculum/u7-objects/chair.png" word="Chair" label="chair" onZoom={onZoom} />
-          </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={80} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={80} onZoom={onZoom} />
+        </div>
         </>
       ),
     },
     // 10: HIGHLIGHT Build My Classroom! (round 2, tell teacher)
     {
       stage: "Build My Classroom!",
+      part: "D",
+      title: "My Classroom!",
+      instruction: [["🗣️", "Tell me about your classroom."], ["👀", "Use the pictures."]],
+      guide: "This is a ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Tell me about your classroom!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Build My Classroom!",
+      part: "D",
+      title: "Build My Classroom! 2",
+      instruction: [["👆", "Pick some things."], ["🗣️", "Say what you have."]],
+      guide: "I have a ___ and a ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={80} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={80} onZoom={onZoom} />
+        </div>
+        </>
       ),
     },
     // 11: Classroom Challenge
     {
       stage: "Classroom Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src="/curriculum/u7-scenes/empty-classroom.jpg" label="new classroom scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/empty-classroom.jpg" label="new classroom scene" size={177} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Classroom Challenge",
+      part: "D",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-scenes/open-classroom.jpg" label="open classroom" size={177} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Classroom Challenge",
+      part: "D",
+      title: "What Do You See? 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-scenes/classroom-challenge.jpg" label="classroom challenge scene" size={177} onZoom={onZoom} />
         </div>
       ),
     },
     // 12: Quick review
     {
       stage: "Classroom Challenge",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each word."]],
+      guide: "It is a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Quick Review!</h2></span>
-          <div className="word-row">
-            <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
-            <WordCard src="/curriculum/u7-objects/book.png" word="Book" label="book" onZoom={onZoom} />
-            <WordCard src={`${IMG}/bag.avif`} word="Bag" label="bag" onZoom={onZoom} />
-            <WordCard src="/curriculum/u7-objects/desk.png" word="Desk" label="desk" onZoom={onZoom} />
-            <WordCard src="/curriculum/u7-objects/chair.png" word="Chair" label="chair" onZoom={onZoom} />
-            <WordCard src="/curriculum/u7-objects/board.png" word="Board" label="board" onZoom={onZoom} />
-          </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={80} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={80} onZoom={onZoom} />
+        </div>
+        </>
+      ),
+    },
+    {
+      stage: "Classroom Challenge",
+      part: "D",
+      title: "Quick Review! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each word."]],
+      guide: "It is a ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/board.png" label="board" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/desk.png" label="desk" size={80} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/chair.png" label="chair" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={80} onZoom={onZoom} />
+        </div>
         </>
       ),
     },
@@ -436,7 +645,7 @@ export const styles = `
 .nav-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 12px 22px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(180deg, #fff 0%, #F5EEE7 100%); color: var(--navy); box-shadow: 0 4px 0 rgba(27,42,74,0.15), 0 8px 16px rgba(27,42,74,0.1); }
 .nav-btn.next { background: linear-gradient(180deg, var(--coral) 0%, var(--coral-deep) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.4), 0 8px 18px rgba(224,80,47,0.32); }
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
-.progress-track { display: flex; align-items: center; gap: 7px; }
+.progress-track { display: flex; align-items: center; flex-wrap: nowrap; gap: 5px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }

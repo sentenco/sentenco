@@ -208,11 +208,11 @@ export default function Unit7ShowWhatYouKnowLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 7 · Lesson 5", time: null, note: null },
-  { stage: "Free Talk: My School Bag", time: "~4 min", note: "No pre-teaching. Show the student a bag and ask what's inside, letting them retrieve whatever language they have." },
-  { stage: "Free Talk: My Classroom", time: "~4 min", note: "Ask the student to describe their real classroom, unprompted." },
-  { stage: "Situation: New Student", time: "~4 min", note: "Roleplay: a new student needs help. Student gives instructions naturally." },
-  { stage: "Situation: Tidy Up", time: "~4 min", note: "Roleplay: things are messy. Student directs the teacher to tidy up." },
-  { stage: "Mini Challenge", time: "~3 min", note: "Open-ended classroom scene, student narrates freely." },
+  { stage: "Free Talk: My School Bag", time: "~4 min", note: "No pre-teaching. Show the student a bag and ask what's inside, letting them retrieve whatever language they have. Fast learner? Add What's in Your Bag? 2 (+1 min)." },
+  { stage: "Free Talk: My Classroom", time: "~4 min", note: "Ask the student to describe their real classroom, unprompted. Fast learner? Add My Classroom! 2 (+1 min)." },
+  { stage: "Situation: New Student", time: "~4 min", note: "Roleplay: a new student needs help. Student gives instructions naturally. Fast learner? Add A New Student! 2 (+1 min)." },
+  { stage: "Situation: Tidy Up", time: "~4 min", note: "Roleplay: things are messy. Student directs the teacher to tidy up. Fast learner? Add Oh No, It's Messy! 2 (+1 min)." },
+  { stage: "Mini Challenge", time: "~3 min", note: "Open-ended classroom scene, student narrates freely. Fast learner? Add Tell Me About This! 2 and 3 (two more pictures) (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -231,10 +231,13 @@ function buildSlides({ onZoom }) {
     // 2: Free Talk: My School Bag
     {
       stage: "Free Talk: My School Bag",
+      part: "A",
+      instruction: [["👀", "Look at the bag."], ["🗣️", "Tell me what is in it."]],
+      guide: "I have a ___ and a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What's in Your Bag?</h2></span>
-          <Pic src={`${IMG}/bag.avif`} label="a school bag" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/bag.avif`} label="a school bag" size={122} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -244,37 +247,90 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Free Talk: My School Bag",
+      part: "A",
+      title: "What's in Your Bag? 2",
+      instruction: [["👀", "Look at the bag."], ["🗣️", "Tell me what is in it."]],
+      guide: "I have a ___ and a ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u7-l1/bag.avif" label="bag" size={122} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What else is in your bag?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 3: Free Talk: My Classroom
     {
       stage: "Free Talk: My Classroom",
+      part: "B",
+      title: "My Classroom!",
+      instruction: [["👀", "Think about your classroom."], ["🗣️", "Tell me what you see."]],
+      guide: "I see a ___.",
       body: (
+        <>
+        <Pic src="/curriculum/u7-scenes/empty-classroom.jpg" label="empty classroom" size={99} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Think about your classroom at school. What do you see there?</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Free Talk: My Classroom",
+      part: "B",
+      title: "My Classroom! 2",
+      instruction: [["👀", "Think about your classroom."], ["🗣️", "Tell me what you see."]],
+      guide: "I see a ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u7-scenes/open-classroom.jpg" label="open classroom" size={122} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What else do you see?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 4: Situation: New Student
     {
       stage: "Situation: New Student",
+      part: "C",
+      title: "A New Student!",
+      instruction: [["👂", "Listen to the new student."], ["🗣️", "Tell the student what to do."]],
+      guide: "___ the ___.",
       body: (
+        <>
+        <Pic src="/curriculum/u7-scenes/kids-sharing.jpg" label="kids sharing" size={99} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">I am a new student. I don't know what to do. Can you help me?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 5: Situation: Tidy Up
     {
       stage: "Situation: Tidy Up",
+      part: "C",
+      instruction: [["👀", "Look at the mess."], ["🗣️", "Tell the teacher what to do."]],
+      guide: "___ the ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Oh No, It's Messy!</h2></span>
-          <Pic src="/curriculum/u7-scenes/messy-desk.jpg" label="messy desk scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/messy-desk.jpg" label="messy desk scene" size={122} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -284,13 +340,76 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Situation: New Student",
+      part: "C",
+      title: "A New Student! 2",
+      instruction: [["👂", "Listen to the new student."], ["🗣️", "Tell the student what to do."]],
+      guide: "___ the ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u7-scenes/kids-sharing.jpg" label="kids sharing" size={122} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Where do I sit? What do I do now?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Situation: Tidy Up",
+      part: "C",
+      title: "Oh No, It's Messy! 2",
+      instruction: [["👀", "Look at the mess."], ["🗣️", "Tell the teacher what to do."]],
+      guide: "___ the ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u7-scenes/messy-desk.jpg" label="messy desk" size={122} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Can you tell me what to pick up?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: Mini Challenge
     {
       stage: "Mini Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about it."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This!</h2></span>
-          <Pic src="/curriculum/u7-scenes/open-classroom.jpg" label="open classroom scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u7-scenes/open-classroom.jpg" label="open classroom scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Mini Challenge",
+      part: "D",
+      title: "Tell Me About This! 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about it."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-scenes/classroom-challenge.jpg" label="classroom challenge scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Mini Challenge",
+      part: "D",
+      title: "Tell Me About This! 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about it."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u7-scenes/empty-classroom.jpg" label="empty classroom" size={190} onZoom={onZoom} />
         </div>
       ),
     },
@@ -350,7 +469,7 @@ export const styles = `
 .nav-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 12px 22px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(180deg, #fff 0%, #F5EEE7 100%); color: var(--navy); box-shadow: 0 4px 0 rgba(27,42,74,0.15), 0 8px 16px rgba(27,42,74,0.1); }
 .nav-btn.next { background: linear-gradient(180deg, var(--coral) 0%, var(--coral-deep) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.4), 0 8px 18px rgba(224,80,47,0.32); }
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
-.progress-track { display: flex; align-items: center; gap: 7px; }
+.progress-track { display: flex; align-items: center; flex-wrap: nowrap; gap: 5px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
