@@ -206,14 +206,14 @@ export default function Unit5LetsReviewLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 5 · Lesson 4", time: null, note: null },
-  { stage: "Hello & Family Warm-Up", time: "~3 min", note: "Greet the student and show family members in random order. Ask \"Who is this?\"" },
-  { stage: "Family Flash Review", time: "~4 min", note: "Show the four family members one at a time. Student says the word, then uses the sentence frame." },
-  { stage: "Family Photo Review", time: "~4 min", note: "Show a complete family photo. Ask \"Who is this?\", \"Where is mom?\", and \"Where is brother?\"" },
+  { stage: "Hello & Family Warm-Up", time: "~3 min", note: "Greet the student and show family members in random order. Ask \"Who is this?\" Fast learner? Add Who Is This? 2 (+1 min)." },
+  { stage: "Family Flash Review", time: "~4 min", note: "Show the four family members one at a time. Student says the word, then uses the sentence frame. Fast learner? Add Family Flash Review 2! with the pictures in a new order (+1 min)." },
+  { stage: "Family Photo Review", time: "~4 min", note: "Show a complete family photo. Ask \"Who is this?\", \"Where is mom?\", and \"Where is brother?\" Fast learner? Add Where Is Mom? and Where Is Dad? (+2 min)." },
   { stage: "Tell Me About the Family", time: "~4 min", note: "Let the student describe the photo from left to right or choose who to talk about first." },
-  { stage: "Family Mix-Up", time: "~3 min", note: "Quickly show or rearrange family members. Student identifies who changed or who is missing." },
+  { stage: "Family Mix-Up", time: "~3 min", note: "Quickly show or rearrange family members. Student identifies who changed or who is missing. Fast learner? Add Who Changed? 2 (+1 min)." },
   { stage: "Family Photo Challenge", time: "~2 min", note: "Give the student a new family photo. They become the family guide and introduce the people to the teacher." },
-  { stage: "Family Photo Challenge", time: "~2 min", note: "Teacher makes a few intentional mistakes for the student to correct." },
-  { stage: "My Family Finale", time: "~3 min", note: "Remove most prompts. Show the family photo and say \"Tell me about your family.\" Celebrate and finish with goodbye." },
+  { stage: "Family Photo Challenge", time: "~2 min", note: "Teacher makes a few intentional mistakes for the student to correct. Fast learner? Add Family Photo Challenge 2 and 3 and Is That Right? 2 (+3 min)." },
+  { stage: "My Family Finale", time: "~3 min", note: "Remove most prompts. Show the family photo and say \"Tell me about your family.\" Celebrate and finish with goodbye. Fast learner? Add My Family Finale 2!, with no photo to help (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -232,111 +232,250 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Family Warm-Up
     {
       stage: "Hello & Family Warm-Up",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Who Is This?</h2></span>
-          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Hello & Family Warm-Up",
+      part: "A",
+      title: "Who Is This? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 3: Family Flash Review
     {
       stage: "Family Flash Review",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Family Flash Review!</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Family Flash Review",
+      part: "A",
+      title: "Family Flash Review 2!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 4: Family Photo Review
     {
       stage: "Family Photo Review",
+      part: "B",
+      instruction: [["🔍", "Find brother in the photo."], ["🗣️", "Say: This is my brother."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Where Is Brother?</h2></span>
-          <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
-          </div>
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={200} onZoom={onZoom} />
         </>
+      ),
+    },
+    {
+      stage: "Family Photo Review",
+      part: "B",
+      title: "Where Is Mom?",
+      instruction: [["🔍", "Find mom in the photo."], ["🗣️", "Say: This is my mom."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={200} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Family Photo Review",
+      part: "B",
+      title: "Where Is Dad?",
+      instruction: [["🔍", "Find dad in the photo."], ["🗣️", "Say: This is my dad."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={200} onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Tell Me About the Family
     {
       stage: "Tell Me About the Family",
+      part: "B",
+      title: "Tell Me About the Family!",
+      instruction: [["👀", "Look at the family photo."], ["🗣️", "Tell me about the family."]],
       body: (
+        <>
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={160} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 460 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">This is my <span className="fill"></span>. This is my <span className="fill"></span>.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 6: Family Mix-Up
     {
       stage: "Family Mix-Up",
+      part: "C",
+      instruction: [["🤔", "Who is missing?"], ["🗣️", "Say who is not here."]],
+      guide: "___ is missing.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Who Changed?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={130} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={130} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Who is missing this time?</p>
+        </div>
+      ),
+    },
+    {
+      stage: "Family Mix-Up",
+      part: "C",
+      title: "Who Changed? 2",
+      instruction: [["🤔", "Who is missing?"], ["🗣️", "Say who is not here."]],
+      guide: "___ is missing.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={130} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT Family Photo Challenge (round 1)
     {
       stage: "Family Photo Challenge",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Introduce her to the teacher."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">📸 Family Photo Challenge!</h2></span>
-          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
-          <p className="slide-p">You're the family guide. Tell me who this is!</p>
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={190} onZoom={onZoom} />
         </>
       ),
     },
     // 8: HIGHLIGHT Family Photo Challenge (round 2, mistake)
     {
       stage: "Family Photo Challenge",
+      part: "C",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Correct the teacher."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Is That Right?</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 400 }}>
-            <div className="brow">
-              <div className="avatar navy">T</div>
-              <div className="bubble left">This is your... sister? (points to brother)</div>
-            </div>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">No! This is my brother!</div>
+          <div className="meet-row">
+            <div className="meet-pic"><Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={150} onZoom={onZoom} /></div>
+            <div className="bubble-col" style={{ maxWidth: 400 }}>
+              <div className="brow">
+                <div className="avatar navy">T</div>
+                <div className="bubble left">This is your... sister? (points to brother)</div>
+              </div>
+              <div className="brow me">
+                <div className="avatar coral">S</div>
+                <div className="bubble right">No! This is my brother!</div>
+              </div>
             </div>
           </div>
         </>
       ),
     },
+    {
+      stage: "Family Photo Challenge",
+      part: "C",
+      title: "Family Photo Challenge 2!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Introduce her to the teacher."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Family Photo Challenge",
+      part: "C",
+      title: "Family Photo Challenge 3!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Introduce him to the teacher."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Family Photo Challenge",
+      part: "C",
+      title: "Is That Right? 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Correct the teacher."]],
+      body: (
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={150} onZoom={onZoom} /></div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">This is your... mom? (points to dad)</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">No! This is my dad!</div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
     // 9: My Family Finale
     {
       stage: "My Family Finale",
+      part: "D",
+      instruction: [["👀", "Look at the family photo."], ["🗣️", "Tell me about your family."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About Your Family!</h2></span>
-          <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={60} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={60} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={60} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={60} onZoom={onZoom} />
-          </div>
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={200} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Family Finale",
+      part: "D",
+      title: "My Family Finale 2!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Tell me about your family."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
         </div>
       ),
     },
@@ -437,6 +576,8 @@ export const styles = `
 .pic-ph span { font-size: 10px; font-weight: 700; text-align: center; padding: 0 8px; }
 .word { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

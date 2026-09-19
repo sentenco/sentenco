@@ -219,11 +219,11 @@ export const LESSON_GUIDE = [
   { stage: "Meet Sister", time: "~3 min", note: "Introduce sister using a clear picture. Model the word, then practice \"This is my sister.\"" },
   { stage: "Meet Brother", time: "~3 min", note: "Introduce brother the same way. Practice \"This is my brother.\" Then mix sister and brother pictures." },
   { stage: "My Family", time: "~2.5 min", note: "Show a simple family picture with mom, dad, sister, brother. Ask \"Who is this?\"" },
-  { stage: "My Family", time: "~2.5 min", note: "Continue practicing the full pattern." },
-  { stage: "Look & Say", time: "~4 min", note: "Show different family members one at a time in random order. Gradually remove the written/model sentence." },
+  { stage: "My Family", time: "~2.5 min", note: "Continue practicing the full pattern. Fast learner? Add My Family! 2 with the pictures in a new order (+1 min)." },
+  { stage: "Look & Say", time: "~4 min", note: "Show different family members one at a time in random order. Gradually remove the written/model sentence. Fast learner? Add Look Once More!, And Again! and Last Look! (+3 min)." },
   { stage: "Family Mix-Up!", time: "~2 min", note: "Show a family picture. Teacher deliberately identifies family members incorrectly." },
-  { stage: "Family Mix-Up!", time: "~2 min", note: "Student must listen, identify the mistake, and correct the teacher." },
-  { stage: "My Family Review", time: "~1.5 min", note: "Show four family members randomly." },
+  { stage: "Family Mix-Up!", time: "~2 min", note: "Student must listen, identify the mistake, and correct the teacher. Fast learner? Add Fix It 3! and Fix It 4! (+2 min)." },
+  { stage: "My Family Review", time: "~1.5 min", note: "Show four family members randomly. Fast learner? Add Show What You Know! 2 (+1 min)." },
   { stage: "My Family Review", time: "~1.5 min", note: "Student gives as many full \"This is my...\" sentences as possible. Finish with praise and goodbye." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -247,12 +247,15 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Family Review
     {
       stage: "Hello & Family Review",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Who Is This?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={90} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={130} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={130} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -260,21 +263,33 @@ function buildSlides({ onZoom }) {
     // 3: Meet Sister
     {
       stage: "Meet Sister",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Sister!</h2></span>
-          <WordCard src="/curriculum/u5-family/sister.jpg" word="Sister" label="sister" onZoom={onZoom} />
+          <div className="wc">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={190} onZoom={onZoom} />
+          <div className="word">Sister</div>
+        </div>
         </>
       ),
     },
     // 4: Meet Sister (sentence)
     {
       stage: "Meet Sister",
+      part: "B",
+      title: "This Is My Sister!",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: This is my sister."]],
       body: (
-        <div className="bubble-col" style={{ maxWidth: 420 }}>
-          <div className="brow">
-            <div className="avatar navy">T</div>
-            <div className="bubble left">This is my sister.</div>
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={150} onZoom={onZoom} /></div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">This is my sister.</div>
+            </div>
           </div>
         </div>
       ),
@@ -282,45 +297,88 @@ function buildSlides({ onZoom }) {
     // 5: Meet Brother
     {
       stage: "Meet Brother",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Brother!</h2></span>
-          <WordCard src="/curriculum/u5-family/brother.jpg" word="Brother" label="brother" onZoom={onZoom} />
+          <div className="wc">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={190} onZoom={onZoom} />
+          <div className="word">Brother</div>
+        </div>
         </>
       ),
     },
     // 6: Sister vs Brother
     {
       stage: "Meet Brother",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Sister or Brother?</h2></span>
-          <div className="word-row">
-            <WordCard src="/curriculum/u5-family/sister.jpg" word="Sister" label="sister" onZoom={onZoom} />
-            <WordCard src="/curriculum/u5-family/brother.jpg" word="Brother" label="brother" onZoom={onZoom} />
+        <div className="word-row" style={{ gap: 30 }}>
+          <div className="wc">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={150} onZoom={onZoom} />
+          <div className="word">Sister</div>
           </div>
+          <div className="wc">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={150} onZoom={onZoom} />
+          <div className="word">Brother</div>
+          </div>
+        </div>
         </>
       ),
     },
     // 7: My Family (4 members)
     {
       stage: "My Family",
+      part: "C",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Family!</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Family",
+      part: "C",
+      title: "My Family! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 8: My Family (practice)
     {
       stage: "My Family",
+      part: "C",
+      title: "Your Turn!",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -331,35 +389,81 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">This is my <span className="fill"></span>.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 9: Look & Say (round 1)
     {
       stage: "Look & Say",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Look & Say!</h2></span>
-          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: Look & Say (round 2)
     {
       stage: "Look & Say",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Look Again!</h2></span>
-          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Look Once More!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "And Again!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Last Look!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say who it is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 11: HIGHLIGHT Family Mix-Up! (round 1)
     {
       stage: "Family Mix-Up!",
+      part: "D",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Correct the teacher."]],
+      guide: "No! This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🔀 Family Mix-Up!</h2></span>
-          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={150} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -372,10 +476,13 @@ function buildSlides({ onZoom }) {
     // 12: HIGHLIGHT Family Mix-Up! (round 2)
     {
       stage: "Family Mix-Up!",
+      part: "D",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Correct the teacher."]],
+      guide: "No! This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Fix It Again!</h2></span>
-          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={150} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -385,19 +492,73 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Family Mix-Up!",
+      part: "D",
+      title: "Fix It 3!",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Correct the teacher."]],
+      guide: "No! This is my ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={150} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">This is my sister!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Family Mix-Up!",
+      part: "D",
+      title: "Fix It 4!",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Correct the teacher."]],
+      guide: "No! This is my ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={150} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">This is my dad!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 13: My Family Review
     {
       stage: "My Family Review",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say who each one is."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Show What You Know!</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={64} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={64} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={64} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={64} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Family Review",
+      part: "D",
+      title: "Show What You Know! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say who each one is."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 14: Great Job
@@ -497,6 +658,8 @@ export const styles = `
 .pic-ph span { font-size: 10px; font-weight: 700; text-align: center; padding: 0 8px; }
 .word { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

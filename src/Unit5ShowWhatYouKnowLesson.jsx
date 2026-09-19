@@ -207,12 +207,12 @@ export default function Unit5ShowWhatYouKnowLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 5 · Lesson 5", time: null, note: null },
   { stage: "Hello & Free Start", time: "~3 min", note: "Greet the student naturally. Have a short, relaxed exchange without showing or reviewing the target answers first." },
-  { stage: "What Do You See?", time: "~4 min", note: "Show an unfamiliar family picture. Let the student identify any family members they recognize. Do not guide them in order." },
-  { stage: "My Family, My Way", time: "~4 min", note: "Show four family-member pictures in a mixed arrangement. Say \"Tell me about them.\" Let the student choose who to introduce first." },
-  { stage: "Family Detective", time: "~4 min", note: "Give the student a new family scene. Ask open prompts. Provide support only when necessary." },
+  { stage: "What Do You See?", time: "~4 min", note: "Show an unfamiliar family picture. Let the student identify any family members they recognize. Do not guide them in order. Fast learner? Add What Do You See? 3 and 4 (+2 min)." },
+  { stage: "My Family, My Way", time: "~4 min", note: "Show four family-member pictures in a mixed arrangement. Say \"Tell me about them.\" Let the student choose who to introduce first. Fast learner? Add Tell Me About Them! 2 (+1 min)." },
+  { stage: "Family Detective", time: "~4 min", note: "Give the student a new family scene. Ask open prompts. Provide support only when necessary. Fast learner? Add Detective Again! (+1 min)." },
   { stage: "Build My Family!", time: "~3 min", note: "Student creates their own pretend family picture by choosing characters and placing them in a scene." },
-  { stage: "Build My Family!", time: "~3 min", note: "They introduce each chosen character using whatever language they remember." },
-  { stage: "My Family Story", time: "~4 min", note: "Remove the visual sentence prompts. Say \"Tell me about your family.\" Celebrate their effort and finish with goodbye." },
+  { stage: "Build My Family!", time: "~3 min", note: "They introduce each chosen character using whatever language they remember. Fast learner? Add Add One More! 2 (+1 min)." },
+  { stage: "My Family Story", time: "~4 min", note: "Remove the visual sentence prompts. Say \"Tell me about your family.\" Celebrate their effort and finish with goodbye. Fast learner? Do My Family Story Again!, with no photo to help (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -231,6 +231,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Free Start
     {
       stage: "Hello & Free Start",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Tell me about your family."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Hello!</h2></span>
@@ -246,12 +248,15 @@ function buildSlides({ onZoom }) {
     // 3: What Do You See?
     {
       stage: "What Do You See?",
+      part: "B",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say who you see."]],
+      guide: "I see my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={80} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={150} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={150} onZoom={onZoom} />
           </div>
         </div>
       ),
@@ -259,72 +264,177 @@ function buildSlides({ onZoom }) {
     // 3b: What Do You See? continued
     {
       stage: "What Do You See?",
+      part: "B",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say who you see."]],
+      guide: "I see my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Else?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={80} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={150} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={150} onZoom={onZoom} />
           </div>
+        </div>
+      ),
+    },
+    {
+      stage: "What Do You See?",
+      part: "B",
+      title: "What Do You See? 3",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say who you see."]],
+      guide: "I see my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={150} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={150} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "What Do You See?",
+      part: "B",
+      title: "What Do You See? 4",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say who you see."]],
+      guide: "I see my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={150} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={150} onZoom={onZoom} />
         </div>
       ),
     },
     // 4: My Family, My Way
     {
       stage: "My Family, My Way",
+      part: "B",
+      instruction: [["👆", "Pick a picture."], ["🗣️", "Tell me about them."]],
+      guide: "This is my ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About Them!</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
           </div>
-          <p className="slide-p">You choose who to talk about first!</p>
         </>
+      ),
+    },
+    {
+      stage: "My Family, My Way",
+      part: "B",
+      title: "Tell Me About Them! 2",
+      instruction: [["👆", "Pick a picture."], ["🗣️", "Tell me about them."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Family Detective
     {
       stage: "Family Detective",
+      part: "C",
+      instruction: [["🔍", "Find someone in the photo."], ["🗣️", "Introduce them."]],
+      guide: "This is my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Family Detective!</h2></span>
-          <Pic src="/curriculum/u5-family/family-scene.jpg" label="unknown family scene" size={180} onZoom={onZoom} />
-          <p className="slide-p">Who can you find?</p>
+          <Pic src="/curriculum/u5-family/family-scene.jpg" label="unknown family scene" size={200} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Family Detective",
+      part: "C",
+      title: "Detective Again!",
+      instruction: [["🔍", "Find someone else."], ["🗣️", "Introduce them."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={200} onZoom={onZoom} />
         </div>
       ),
     },
     // 6: HIGHLIGHT Build My Family! (round 1)
     {
       stage: "Build My Family!",
+      part: "C",
+      instruction: [["👆", "Pick a family member."], ["🗣️", "Introduce them."]],
+      guide: "This is my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🏠 Build My Family!</h2></span>
-          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={90} onZoom={onZoom} />
-          <p className="slide-p">Choose a family member and add them to your scene!</p>
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+        </div>
         </div>
       ),
     },
     // 7: HIGHLIGHT Build My Family! (round 2)
     {
       stage: "Build My Family!",
+      part: "C",
+      instruction: [["👆", "Pick one more family member."], ["🗣️", "Introduce them."]],
+      guide: "This is my ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Add One More!</h2></span>
-          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={90} onZoom={onZoom} />
-          <p className="slide-p">Choose one more family member!</p>
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Build My Family!",
+      part: "C",
+      title: "Add One More! 2",
+      instruction: [["👆", "Pick one more family member."], ["🗣️", "Introduce them."]],
+      guide: "This is my ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
         </div>
       ),
     },
     // 8: My Family Story
     {
       stage: "My Family Story",
+      part: "D",
+      instruction: [["🗣️", "Tell me about your family."], ["🤔", "Say as much as you can!"]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">My Family Story!</h2></span>
-          <p className="slide-p">Tell me about your family. Say as much as you can!</p>
+        <Pic src="/curriculum/u5-family/family-scene.jpg" label="family photo" size={200} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Family Story",
+      part: "D",
+      title: "My Family Story Again!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Tell me about your family."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u5-family/dad.jpg" label="dad" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/brother.jpg" label="brother" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/mom.jpg" label="mom" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u5-family/sister.jpg" label="sister" size={100} onZoom={onZoom} />
         </div>
       ),
     },
