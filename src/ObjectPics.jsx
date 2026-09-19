@@ -64,6 +64,7 @@ function ObjImgInner({ name, size = 40 }) {
 
 export const objectPicStyles = `
 .obj-img { display: block; object-fit: contain; }
+.count-emoji .obj-img[alt="candle"] { background: none; box-shadow: none; padding: 0; border-radius: 0; }
 .count-emoji .obj-img, .match-emojis .obj-img { background: #fff; border-radius: 12px; padding: 3px; box-sizing: border-box; box-shadow: 0 3px 8px rgba(27,42,74,0.14); }
 .obj-missing { display: block; border: 3px dashed #C9C0DA; border-radius: 50%; box-sizing: border-box; }
 `;

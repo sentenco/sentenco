@@ -86,17 +86,17 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
 function Cake({ age, onZoom }) {
   const big = (
     <div className="cake-zoom">
-      <ObjImg name="cake" size={90} />
+      <ObjImg name="cake" size={150} />
       <div className="count-zoom">
-        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name="candle" size={50} /></span>)}
+        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name="candle" size={80} /></span>)}
       </div>
     </div>
   );
   return (
     <div className="wc" onClick={() => onZoom(big)} style={{ cursor: "zoom-in" }}>
-      <ObjImg name="cake" size={54} />
-      <div className="count-group" style={{ maxWidth: 220 }}>
-        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name="candle" size={26} /></span>)}
+      <ObjImg name="cake" size={58} />
+      <div className="count-group" style={{ maxWidth: 330, gap: 4 }}>
+        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name="candle" size={30} /></span>)}
       </div>
     </div>
   );

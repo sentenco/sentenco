@@ -55,7 +55,7 @@ function EmotionTile({ name, size = 100, hideName, onZoom }) {
   return (
     <div className="wc">
       <div className="emo-tile" style={{ background: "#fff", border: `${Math.max(4, Math.round(size / 16))}px solid ${color}`, width: size, height: size }} onClick={() => onZoom(big)}>
-        <ObjImg name={face} size={Math.round(size * 0.72)} />
+        <ObjImg name={face} size={Math.round(size * 0.88)} />
       </div>
       {!hideName && <div className="word">{name}</div>}
     </div>
