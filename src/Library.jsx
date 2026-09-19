@@ -372,6 +372,13 @@ const CUSTOM_LESSONS = [
     level: "Intermediate to Advanced",
     desc: "24 real sentences across all 12 English tenses, two per tense, one at a time, choose the tense each sentence is written in.",
   },
+  {
+    slug: "e8-reading-and-reactions",
+    title: "E8 Reading & Reactions",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · Egzamin ósmoklasisty",
+    desc: "25 minutes of real E8 tasks (reactions, short texts, matching, gapped text, word transformation), with the trap behind every wrong answer.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {

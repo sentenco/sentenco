@@ -107,6 +107,7 @@ import PresentSimpleProgressiveLesson from './PresentSimpleProgressiveLesson.jsx
 import PresentSimpleProgressiveGuide from './PresentSimpleProgressiveGuide.jsx'
 import TenseIdentificationLesson from './TenseIdentificationLesson.jsx'
 import TenseIdentificationGuide from './TenseIdentificationGuide.jsx'
+import E8ReadingReactionsLesson from './E8ReadingReactionsLesson.jsx'
 import WritingPlayerPage from './WritingPlayerPage.jsx'
 import WritingGuidePage from './WritingGuidePage.jsx'
 import NotebookHub from './NotebookHub.jsx'
@@ -406,6 +407,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/present-simple-vs-progressive/guide" element={<PresentSimpleProgressiveGuide />} />
             <Route path="/library/customized-lessons/verb-tense-identification" element={<TenseIdentificationLesson />} />
             <Route path="/library/customized-lessons/verb-tense-identification/guide" element={<TenseIdentificationGuide />} />
+            <Route path="/library/customized-lessons/e8-reading-and-reactions" element={<E8ReadingReactionsLesson />} />
             <Route path="/library/stress" element={<Flashcards />} />
             <Route path="/library/articles/:slug" element={<Library />} />
             <Route path="/library/articles/:slug/player" element={<ArticlePlayerPage />} />
