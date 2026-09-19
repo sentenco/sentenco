@@ -162,9 +162,7 @@ export default function CountOnLesson() {
             </div>
           </div>
 
-          <div className="slide-body">
-            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
-            {s.body}
+          <div className={`slide-body ${s.instruction ? "has-instruction" : ""}`}>
             {s.instruction && (
               <div className="slide-instruction">
                 {s.instruction.map(([icon, text]) => (
@@ -172,6 +170,8 @@ export default function CountOnLesson() {
                 ))}
               </div>
             )}
+            {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
+            {s.body}
             {s.guide && (
               <div className="slide-guide">
                 <span className="guide-label">Say</span>
@@ -550,7 +550,8 @@ export const styles = `
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
-.slide-instruction { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); background: #fff; border-radius: 999px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); position: relative; z-index: 1; text-align: center; margin-top: 4px; }
+.slide-body.has-instruction { padding-top: 74px; }
+.slide-instruction { position: absolute; top: 30px; left: 26px; max-width: 640px; display: flex; align-items: center; justify-content: flex-start; gap: 16px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); background: #fff; border-radius: 999px; padding: 8px 20px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); z-index: 2; text-align: left; }
 .instr-step { display: inline-flex; align-items: center; gap: 7px; }
 .instr-icon { font-size: 20px; line-height: 1; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
