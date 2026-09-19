@@ -78,6 +78,19 @@ function InstructionStep({ icon, text }) {
   );
 }
 
+function CoverBadges({ stage }) {
+  const m = stage.match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Test)/);
+  if (!m) return null;
+  const unit = m[1];
+  const lesson = m[2] || "6";
+  return (
+    <>
+      <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
+      <div className={`unit-medal ${unit.length > 1 ? "is-long" : ""}`}><span className="um-label">UNIT</span><span className="um-num">{unit}</span></div>
+    </>
+  );
+}
+
 export default function Unit8ShowWhatYouKnowLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -160,6 +173,7 @@ export default function Unit8ShowWhatYouKnowLesson() {
                 ))}
               </div>
             )}
+            {i === 0 && <CoverBadges stage={s.stage} />}
             {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
             {s.body}
             {s.guide && (
@@ -442,7 +456,14 @@ export const styles = `
 .slide-p { font-family: 'Quicksand', sans-serif; font-size: 16px; color: var(--ink-soft); font-weight: 600; text-align: center; max-width: 540px; margin: 0; position: relative; z-index: 1; }
 
 .title-content { width: 100%; padding-left: 230px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-.title-h { text-align: left; font-size: 38px; }
+.title-h { text-align: left; font-size: 50px; }
+.cover-ribbon { align-self: flex-start; margin-left: 230px; display: flex; align-items: center; gap: 12px; height: 54px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 22px; box-shadow: 0 6px 0 rgba(10,18,40,0.3), 0 10px 18px rgba(27,42,74,0.2); position: relative; z-index: 2; }
+.cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.18em; }
+.cover-ribbon .cr-num { width: 44px; height: 44px; border-radius: 50%; background: #FF6B4A; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; }
+.unit-medal { position: absolute; left: 40px; bottom: 26px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, #E0502F); border: 8px solid #FFD066; box-shadow: 0 12px 24px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 3; }
+.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.22em; margin-bottom: -8px; padding-left: 0.22em; }
+.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 76px; line-height: 1; text-shadow: 0 4px 0 rgba(160,45,18,0.35); }
+.unit-medal.is-long .um-num { font-size: 58px; }
 .title-p { text-align: left; max-width: 300px; }
 
 .center-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
