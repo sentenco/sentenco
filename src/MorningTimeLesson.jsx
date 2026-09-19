@@ -250,12 +250,12 @@ export default function MorningTimeLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 12 · Lesson 1", time: null, note: null },
   { stage: "Hello & Review", time: "~3 min", note: "Quickly review a few familiar words from Unit 11: toy, ball, fun." },
-  { stage: "My Morning", time: "~4 min", note: "Introduce the morning routine: wake up, get up, eat, brush my teeth, go to school." },
-  { stage: "Put It in Order", time: "~3 min", note: "Show 3-4 morning pictures mixed up. Student puts them in the correct order." },
-  { stage: "Say It!", time: "~3 min", note: "Practice simple routine sentences: \"I wake up.\" \"I eat.\" \"I brush my teeth.\"" },
+  { stage: "My Morning", time: "~4 min", note: "Introduce the morning routine: wake up, get up, eat, brush my teeth, go to school. Fast learner? Add My Morning! 2 (all five pictures in a new order) (+1 min)." },
+  { stage: "Put It in Order", time: "~3 min", note: "Show 3-4 morning pictures mixed up. Student puts them in the correct order. Fast learner? Add Put It in Order 3 and 4 (+2 min)." },
+  { stage: "Say It!", time: "~3 min", note: "Practice simple routine sentences: \"I wake up.\" \"I eat.\" \"I brush my teeth.\" Fast learner? Add Say It! 3 (+1 min)." },
   { stage: "Morning Time Machine", time: "~4 min", note: "Show a morning picture and ask \"What happens next?\" Student chooses the next routine and says what happens." },
-  { stage: "Morning Time Machine", time: "~3 min", note: "Change the starting point so the student thinks about the sequence again." },
-  { stage: "Quick Challenge", time: "~4 min", note: "Show routine pictures randomly. Student names the action and gives a simple sentence." },
+  { stage: "Morning Time Machine", time: "~3 min", note: "Change the starting point so the student thinks about the sequence again. Fast learner? Add Morning Time Machine 3 and 4 (+2 min)." },
+  { stage: "Quick Challenge", time: "~4 min", note: "Show routine pictures randomly. Student names the action and gives a simple sentence. Fast learner? Add Quick Challenge 2 and 3 (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -274,37 +274,74 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      title: "Let's Review!",
+      instruction: [["👀", "Look at the toys."], ["🗣️", "Tell me what you like."]],
+      guide: "I like ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What toy do you like? Is it fun?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: My Morning (word-row)
     {
       stage: "My Morning",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the morning action."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Morning!</h2></span>
           <div className="word-row">
-            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" onZoom={onZoom} />
-          </div>
-          <div className="word-row">
-            <WordCard src="/curriculum/u12-routines/brush-teeth.jpg" word="Brush My Teeth" label="brush my teeth" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/go-to-school.jpg" word="Go to School" label="go to school" onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" size={92} onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" size={92} onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" size={92} onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/brush-teeth.jpg" word="Brush My Teeth" label="brush my teeth" size={92} onZoom={onZoom} />
+            <WordCard src="/curriculum/u12-routines/go-to-school.jpg" word="Go to School" label="go to school" size={92} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Morning",
+      part: "B",
+      title: "My Morning! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the morning action."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row" style={{ gap: 8 }}>
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={90} onZoom={onZoom} />
+        </div>
       ),
     },
     // 4: Put It in Order (round 1)
     {
       stage: "Put It in Order",
+      part: "B",
+      title: "Put It in Order",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what comes next."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -315,12 +352,21 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">Then, eat!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 4b: Put It in Order (round 2)
     {
       stage: "Put It in Order",
+      part: "B",
+      title: "Put It in Order 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what comes next."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={100} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -331,35 +377,124 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">Then, brush my teeth!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Put It in Order",
+      part: "B",
+      title: "Put It in Order 3",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what comes next."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">First, get up. Then?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Then, eat!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Put It in Order",
+      part: "B",
+      title: "Put It in Order 4",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what comes next."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">First, brush my teeth. Then?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Then, go to school!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 5: Say It! (round 1)
     {
       stage: "Say It!",
+      part: "C",
+      title: "Say It!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the sentences."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">I wake up. I eat.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 5b: Say It! (round 2)
     {
       stage: "Say It!",
+      part: "C",
+      title: "Say It! 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the sentences."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">I brush my teeth. I go to school.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Say It!",
+      part: "C",
+      title: "Say It! 3",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the sentences."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I get up. I eat.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 6: HIGHLIGHT Morning Time Machine (round 1)
     {
       stage: "Morning Time Machine",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what happens next."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">⏩ Morning Time Machine!</h2></span>
@@ -380,6 +515,9 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT Morning Time Machine (round 2, new starting point)
     {
       stage: "Morning Time Machine",
+      part: "D",
+      title: "Morning Time Machine 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what happens next."]],
       body: (
         <div className="center-col">
           <WordCard src="/curriculum/u12-routines/brush-teeth.jpg" word="Brush My Teeth" label="brush my teeth" onZoom={onZoom} />
@@ -396,9 +534,54 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Morning Time Machine",
+      part: "D",
+      title: "Morning Time Machine 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what happens next."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What happens next?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Eat!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Morning Time Machine",
+      part: "D",
+      title: "Morning Time Machine 4",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what happens next."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What happens next?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Brush my teeth!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Quick Challenge
     {
       stage: "Quick Challenge",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you do."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Quick Challenge!</h2></span>
@@ -407,6 +590,35 @@ function buildSlides({ onZoom }) {
             <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Quick Challenge",
+      part: "D",
+      title: "Quick Challenge 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you do."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Quick Challenge",
+      part: "D",
+      title: "Quick Challenge 3",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you do."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 9: Wrap-up

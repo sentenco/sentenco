@@ -272,12 +272,12 @@ export default function Unit12LetsReviewLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 12 · Lesson 4", time: null, note: null },
   { stage: "Routine Warm-Up", time: "~3 min", note: "Quick action review: student performs or identifies routines." },
-  { stage: "Routine Review", time: "~4 min", note: "Review all daily routine vocabulary using mixed pictures." },
-  { stage: "Time of Day", time: "~3 min", note: "Student sorts routines into morning / afternoon / night." },
-  { stage: "Sentence Review", time: "~3 min", note: "Practice simple first-person sentences: \"I wake up.\" \"I play.\" \"I go to bed.\"" },
-  { stage: "Mixed-Up Day", time: "~4 min", note: "Give a mixed-up daily routine. Student finds the mistakes and fixes the order." },
+  { stage: "Routine Review", time: "~4 min", note: "Review all daily routine vocabulary using mixed pictures. Fast learner? Add Name the Routines! 2 (+1 min)." },
+  { stage: "Time of Day", time: "~3 min", note: "Student sorts routines into morning / afternoon / night. Fast learner? Add Time of Day 3 and 4 (+2 min)." },
+  { stage: "Sentence Review", time: "~3 min", note: "Practice simple first-person sentences: \"I wake up.\" \"I play.\" \"I go to bed.\" Fast learner? Add Sentence Review 2 (+1 min)." },
+  { stage: "Mixed-Up Day", time: "~4 min", note: "Give a mixed-up daily routine. Student finds the mistakes and fixes the order. Fast learner? Add Mixed-Up Day! 2 with a new mixed-up order (+1 min)." },
   { stage: "Mixed-Up Day", time: "~3 min", note: "After fixing it, student tells the story from beginning to end." },
-  { stage: "Phonics Challenge", time: "~4 min", note: "Mix familiar phonics words from previous units. Student reads, matches, or identifies the words." },
+  { stage: "Phonics Challenge", time: "~4 min", note: "Mix familiar phonics words from previous units. Student reads, matches, or identifies the words. Fast learner? Add Phonics Challenge! 2 with six new words (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -296,18 +296,33 @@ function buildSlides({ onZoom }) {
     // 2: Routine Warm-Up
     {
       stage: "Routine Warm-Up",
+      part: "A",
+      title: "Routine Warm-Up",
+      instruction: [["👀", "Watch the teacher."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/take-a-bath.jpg" label="take a bath" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">(acts out sleeping) 😴</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Routine Review
     {
       stage: "Routine Review",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Name the Routines!</h2></span>
@@ -319,9 +334,28 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Routine Review",
+      part: "B",
+      title: "Name the Routines! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={90} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: Time of Day (round 1)
     {
       stage: "Time of Day",
+      part: "B",
+      title: "Time of Day",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
       body: (
         <div className="center-col">
           <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
@@ -332,6 +366,10 @@ function buildSlides({ onZoom }) {
     // 4b: Time of Day (round 2)
     {
       stage: "Time of Day",
+      part: "B",
+      title: "Time of Day 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
       body: (
         <div className="center-col">
           <WordCard src="/curriculum/u12-routines/go-to-bed.jpg" word="Go to Bed" label="go to bed" onZoom={onZoom} />
@@ -339,21 +377,80 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Time of Day",
+      part: "B",
+      title: "Time of Day 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={110} onZoom={onZoom} />
+        <TimeTag label="Afternoon" onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Time of Day",
+      part: "B",
+      title: "Time of Day 4",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/eat-dinner.jpg" label="eat dinner" size={110} onZoom={onZoom} />
+        <TimeTag label="Afternoon" onZoom={onZoom} />
+        </>
+      ),
+    },
     // 5: Sentence Review
     {
       stage: "Sentence Review",
+      part: "C",
+      title: "Sentence Review",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the sentences."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-bed.jpg" label="go to bed" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">I wake up. I play. I go to bed.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Sentence Review",
+      part: "C",
+      title: "Sentence Review 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the sentences."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I eat. I go to school. I sleep.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 6: HIGHLIGHT Mixed-Up Day (round 1, find mistake)
     {
       stage: "Mixed-Up Day",
+      part: "D",
+      instruction: [["👀", "Look at the order."], ["🗣️", "Fix the mistake."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🔀 Mixed-Up Day!</h2></span>
@@ -374,18 +471,51 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT Mixed-Up Day (round 2, tell the fixed story)
     {
       stage: "Mixed-Up Day",
+      part: "D",
+      title: "Tell the Story!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the story in order."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">First, wake up. Then, eat. Then, sleep!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Mixed-Up Day",
+      part: "D",
+      title: "Mixed-Up Day! 2",
+      instruction: [["👀", "Look at the order."], ["🗣️", "Fix the mistake."]],
+      body: (
+        <>
+        <div className="word-row">
+          <WordCard src="/curriculum/u12-routines/go-to-bed.jpg" word="Go To Bed" label="go to bed" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Is this right? What comes first?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 8: Phonics Challenge
     {
       stage: "Phonics Challenge",
+      part: "D",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Phonics Challenge!</h2></span>
@@ -398,6 +528,22 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="DIG" color={FAM_COLOR.ig} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Phonics Challenge",
+      part: "D",
+      title: "Phonics Challenge! 2",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
+      body: (
+        <div className="word-row">
+          <LetterTile letters="MAT" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="DOG" color={FAM_COLOR.og} onZoom={onZoom} />
+          <LetterTile letters="TIN" color={FAM_COLOR.in} onZoom={onZoom} />
+          <LetterTile letters="POP" color={FAM_COLOR.op} onZoom={onZoom} />
+          <LetterTile letters="BED" color={FAM_COLOR.ed} onZoom={onZoom} />
+          <LetterTile letters="FIG" color={FAM_COLOR.ig} onZoom={onZoom} />
+        </div>
       ),
     },
     // 9: Wrap-up

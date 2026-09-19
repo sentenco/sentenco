@@ -260,13 +260,13 @@ export default function MyWholeDayLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 12 · Lesson 3", time: null, note: null },
-  { stage: "Warm-Up", time: "~3 min", note: "Act out 3 routines from Lessons 1-2. Student guesses and says the action." },
-  { stage: "My Whole Day", time: "~4 min", note: "Put morning -> afternoon -> night pictures together. Student practices telling the routine in order." },
-  { stage: "First, Then...", time: "~3 min", note: "Practice sequencing: \"First...\" \"Then...\" \"After that...\"" },
-  { stage: "Phonics Time", time: "~3 min", note: "Cumulative phonics review using familiar word families from Units 3-11." },
+  { stage: "Warm-Up", time: "~3 min", note: "Act out 3 routines from Lessons 1-2. Student guesses and says the action. Fast learner? Add Warm-Up 2 (eating) (+1 min)." },
+  { stage: "My Whole Day", time: "~4 min", note: "Put morning -> afternoon -> night pictures together. Student practices telling the routine in order. Fast learner? Add My Whole Day! 2 (eat, go home, go to bed) (+1 min)." },
+  { stage: "First, Then...", time: "~3 min", note: "Practice sequencing: \"First...\" \"Then...\" \"After that...\" Fast learner? Add First, Then... 2 (+1 min)." },
+  { stage: "Phonics Time", time: "~3 min", note: "Cumulative phonics review using familiar word families from Units 3-11. Fast learner? Add Phonics Time! 2 with six new words (+1 min)." },
   { stage: "Build My Day", time: "~4 min", note: "Give a blank day with spaces for morning/afternoon/night. Student chooses routine cards, places them in order, tells you about their day." },
-  { stage: "Build My Day", time: "~3 min", note: "Student continues building and narrating their day." },
-  { stage: "Whole-Day Challenge", time: "~4 min", note: "Remove some pictures. Student tries to tell the routine from memory using the remaining visual clues." },
+  { stage: "Build My Day", time: "~3 min", note: "Student continues building and narrating their day. Fast learner? Add Build My Day! 3 and 4 (+2 min)." },
+  { stage: "Whole-Day Challenge", time: "~4 min", note: "Remove some pictures. Student tries to tell the routine from memory using the remaining visual clues. Fast learner? Add Whole-Day Challenge 2 and 3 (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -285,7 +285,12 @@ function buildSlides({ onZoom }) {
     // 2: Warm-Up
     {
       stage: "Warm-Up",
+      part: "A",
+      title: "Warm-Up",
+      instruction: [["👀", "Watch the teacher."], ["🗣️", "Say the action."]],
       body: (
+        <>
+        <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={110} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -296,11 +301,36 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">Brush my teeth!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Warm-Up",
+      part: "A",
+      title: "Warm-Up 2",
+      instruction: [["👀", "Watch the teacher."], ["🗣️", "Say the action."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={110} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">(acts out eating) 🍽️</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Eat!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 3: My Whole Day
     {
       stage: "My Whole Day",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Tell me about your day."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Whole Day!</h2></span>
@@ -312,21 +342,68 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "My Whole Day",
+      part: "B",
+      title: "My Whole Day! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Tell me about your day."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/go-home.jpg" word="Go Home" label="go home" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/go-to-bed.jpg" word="Go To Bed" label="go to bed" size={90} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: First, Then...
     {
       stage: "First, Then...",
+      part: "B",
+      title: "First, Then...",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the day in order."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={80} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">First, I wake up. Then, I eat. After that, I go to school.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "First, Then...",
+      part: "B",
+      title: "First, Then... 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the day in order."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat-dinner.jpg" label="eat dinner" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">First, I go home. Then, I play. After that, I eat dinner.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 5: Phonics Time
     {
       stage: "Phonics Time",
+      part: "C",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Phonics Time!</h2></span>
@@ -341,9 +418,27 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Phonics Time",
+      part: "C",
+      title: "Phonics Time! 2",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
+      body: (
+        <div className="word-row">
+          <LetterTile letters="HAT" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="LOG" color={FAM_COLOR.og} onZoom={onZoom} />
+          <LetterTile letters="FIN" color={FAM_COLOR.in} onZoom={onZoom} />
+          <LetterTile letters="MOP" color={FAM_COLOR.op} onZoom={onZoom} />
+          <LetterTile letters="RED" color={FAM_COLOR.ed} onZoom={onZoom} />
+          <LetterTile letters="DIG" color={FAM_COLOR.ig} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: HIGHLIGHT Build My Day (round 1)
     {
       stage: "Build My Day",
+      part: "D",
+      instruction: [["🧩", "Build your day."], ["🗣️", "Tell me about it."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🧩 Build My Day!</h2></span>
@@ -363,6 +458,9 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT Build My Day (round 2)
     {
       stage: "Build My Day",
+      part: "D",
+      title: "Build My Day! 2",
+      instruction: [["🧩", "Build your day."], ["🗣️", "Tell me about it."]],
       body: (
         <div className="center-col">
           <div className="word-row">
@@ -378,15 +476,94 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Build My Day",
+      part: "D",
+      title: "Build My Day! 3",
+      instruction: [["🧩", "Build your day."], ["🗣️", "Tell me about it."]],
+      body: (
+        <>
+        <div className="word-row">
+          <WordCard src="/curriculum/u12-routines/night.jpg" word="Night" label="night" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/take-a-bath.jpg" word="Take A Bath" label="take a bath" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">At night, I take a bath.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Build My Day",
+      part: "D",
+      title: "Build My Day! 4",
+      instruction: [["🧩", "Build your day."], ["🗣️", "Tell me about it."]],
+      body: (
+        <>
+        <div className="word-row">
+          <WordCard src="/curriculum/u12-routines/morning.jpg" word="Morning" label="morning" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/get-up.jpg" word="Get Up" label="get up" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">In the morning, I get up.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Whole-Day Challenge
     {
       stage: "Whole-Day Challenge",
+      part: "D",
+      title: "Whole-Day Challenge",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Tell me the day in order."]],
+      guide: "First, ___. Then, ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={100} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">First, wake up. Then? What comes next?</div>
           </div>
+        </div>
+        </>
+      ),
+    },
+    {
+      stage: "Whole-Day Challenge",
+      part: "D",
+      title: "Whole-Day Challenge 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Tell me the day in order."]],
+      guide: "First, ___. Then, ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-bed.jpg" label="go to bed" size={100} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Whole-Day Challenge",
+      part: "D",
+      title: "Whole-Day Challenge 3",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Tell me the day in order."]],
+      guide: "First, ___. Then, ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={100} onZoom={onZoom} />
         </div>
       ),
     },

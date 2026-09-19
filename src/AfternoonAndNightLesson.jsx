@@ -262,12 +262,12 @@ export default function AfternoonAndNightLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 12 · Lesson 2", time: null, note: null },
   { stage: "Morning Review", time: "~3 min", note: "Quickly review 3-4 morning routines using pictures and actions." },
-  { stage: "Afternoon Time", time: "~4 min", note: "Introduce go home, play, eat dinner. Practice through pictures and actions." },
-  { stage: "Night Time", time: "~3 min", note: "Introduce take a bath, go to bed, sleep." },
-  { stage: "Day or Night?", time: "~3 min", note: "Show routine pictures. Student decides: \"Morning!\" \"Afternoon!\" \"Night!\" Then says the action." },
+  { stage: "Afternoon Time", time: "~4 min", note: "Introduce go home, play, eat dinner. Practice through pictures and actions. Fast learner? Add Afternoon Time! 2 in a new order (+1 min)." },
+  { stage: "Night Time", time: "~3 min", note: "Introduce take a bath, go to bed, sleep. Fast learner? Add Night Time! 2 in a new order (+1 min)." },
+  { stage: "Day or Night?", time: "~3 min", note: "Show routine pictures. Student decides: \"Morning!\" \"Afternoon!\" \"Night!\" Then says the action. Fast learner? Add Day or Night? 3, 4 and 5 (+3 min)." },
   { stage: "Day or Night Detective", time: "~4 min", note: "Give clues about a routine: \"It is dark.\" \"I am in my bed.\" Student identifies the routine." },
-  { stage: "Day or Night Detective", time: "~3 min", note: "Switch to visual clues and let the student explain their choice." },
-  { stage: "Mix & Match", time: "~4 min", note: "Mix morning, afternoon, and night pictures. Student sorts them into the correct part of the day." },
+  { stage: "Day or Night Detective", time: "~3 min", note: "Switch to visual clues and let the student explain their choice. Fast learner? Add Day or Night Detective 3 and 4 (+2 min)." },
+  { stage: "Mix & Match", time: "~4 min", note: "Mix morning, afternoon, and night pictures. Student sorts them into the correct part of the day. Fast learner? Add Mix & Match! 2 (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -286,6 +286,10 @@ function buildSlides({ onZoom }) {
     // 2: Morning Review
     {
       stage: "Morning Review",
+      part: "A",
+      title: "Morning Review",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the morning action."]],
+      guide: "I ___.",
       body: (
         <div className="word-row">
           <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
@@ -296,6 +300,9 @@ function buildSlides({ onZoom }) {
     // 3: Afternoon Time
     {
       stage: "Afternoon Time",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Afternoon Time!</h2></span>
@@ -307,9 +314,26 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Afternoon Time",
+      part: "B",
+      title: "Afternoon Time! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/eat-dinner.jpg" label="eat dinner" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={110} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: Night Time
     {
       stage: "Night Time",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Night Time!</h2></span>
@@ -321,9 +345,27 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Night Time",
+      part: "B",
+      title: "Night Time! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/take-a-bath.jpg" label="take a bath" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-bed.jpg" label="go to bed" size={110} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 5: Day or Night? (round 1)
     {
       stage: "Day or Night?",
+      part: "C",
+      title: "Day or Night?",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
       body: (
         <div className="center-col">
           <WordCard src="/curriculum/u12-routines/sleep.jpg" word="Sleep" label="sleep" onZoom={onZoom} />
@@ -334,6 +376,10 @@ function buildSlides({ onZoom }) {
     // 5b: Day or Night? (round 2)
     {
       stage: "Day or Night?",
+      part: "C",
+      title: "Day or Night? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
       body: (
         <div className="center-col">
           <WordCard src="/curriculum/u12-routines/play.jpg" word="Play" label="play" onZoom={onZoom} />
@@ -341,13 +387,59 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Day or Night?",
+      part: "C",
+      title: "Day or Night? 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={110} onZoom={onZoom} />
+        <TimeTag label="Afternoon" onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Day or Night?",
+      part: "C",
+      title: "Day or Night? 4",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/take-a-bath.jpg" label="take a bath" size={110} onZoom={onZoom} />
+        <TimeTag label="Night" onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Day or Night?",
+      part: "C",
+      title: "Day or Night? 5",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time and the action."]],
+      guide: "I ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={110} onZoom={onZoom} />
+        <TimeTag label="Morning" onZoom={onZoom} />
+        </>
+      ),
+    },
     // 6: HIGHLIGHT Day or Night Detective (round 1)
     {
       stage: "Day or Night Detective",
+      part: "D",
+      instruction: [["👂", "Listen to the clue."], ["🗣️", "Guess the action."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🔍 Day or Night Detective!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u12-routines/take-a-bath.jpg" label="take a bath" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-bed.jpg" label="go to bed" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={80} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">It is dark. I am in my bed.</div>
@@ -363,6 +455,9 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT Day or Night Detective (round 2, visual clue)
     {
       stage: "Day or Night Detective",
+      part: "D",
+      title: "Day or Night Detective 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time of day."]],
       body: (
         <div className="center-col">
           <WordCard src="/curriculum/u12-routines/eat-dinner.jpg" word="Eat Dinner" label="eat dinner" onZoom={onZoom} />
@@ -379,17 +474,85 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Day or Night Detective",
+      part: "D",
+      title: "Day or Night Detective 3",
+      instruction: [["👂", "Listen to the clue."], ["🗣️", "Guess the action."]],
+      body: (
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I am in the water. I am clean.</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Take a bath!</div>
+            </div>
+          </div>
+      ),
+    },
+    {
+      stage: "Day or Night Detective",
+      part: "D",
+      title: "Day or Night Detective 4",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time of day."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={110} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Morning, afternoon, or night?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Afternoon!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Mix & Match
     {
       stage: "Mix & Match",
+      part: "D",
+      instruction: [["👆", "Match each picture to its time."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Mix & Match!</h2></span>
           <div className="word-row">
-            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/go-home.jpg" word="Go Home" label="go home" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/go-to-bed.jpg" word="Go to Bed" label="go to bed" onZoom={onZoom} />
-          </div>
+          <WordCard src="/curriculum/u12-routines/go-to-bed.jpg" word="Go To Bed" label="go to bed" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/go-home.jpg" word="Go Home" label="go home" size={90} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <TimeTag label="Morning" onZoom={onZoom} />
+          <TimeTag label="Afternoon" onZoom={onZoom} />
+          <TimeTag label="Night" onZoom={onZoom} />
+        </div>
+        </>
+      ),
+    },
+    {
+      stage: "Mix & Match",
+      part: "D",
+      title: "Mix & Match! 2",
+      instruction: [["👆", "Match each picture to its time."], ["🗣️", "Say the action."]],
+      guide: "I ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <WordCard src="/curriculum/u12-routines/sleep.jpg" word="Sleep" label="sleep" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/eat.jpg" word="Eat" label="eat" size={90} onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/play.jpg" word="Play" label="play" size={90} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <TimeTag label="Afternoon" onZoom={onZoom} />
+          <TimeTag label="Night" onZoom={onZoom} />
+          <TimeTag label="Morning" onZoom={onZoom} />
+        </div>
         </>
       ),
     },

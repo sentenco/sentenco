@@ -251,11 +251,11 @@ export default function Unit12ShowWhatYouKnowLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 12 · Lesson 5", time: null, note: null },
-  { stage: "Warm-Up Talk", time: "~3 min", note: "Casual conversation. Let the student choose familiar topics from previous units." },
-  { stage: "Explore the Day", time: "~4 min", note: "Show a new, unfamiliar daily-life picture. Ask: \"What do you see?\" \"What is happening?\"" },
-  { stage: "Tell Me About It", time: "~4 min", note: "Ask open questions: \"What happens first?\" \"What happens next?\" \"What do you think happens later?\"" },
-  { stage: "Phonics Discovery", time: "~4 min", note: "Show a mixture of familiar and simple unfamiliar words. Ask the student to read what they can." },
-  { stage: "A Day in My Life", time: "~6 min", note: "Give a blank sequence of 4-5 pictures. Student creates their own daily routine story, no reveal." },
+  { stage: "Warm-Up Talk", time: "~3 min", note: "Casual conversation. Let the student choose familiar topics from previous units. Fast learner? Add Let's Talk! 2 (toys) (+1 min)." },
+  { stage: "Explore the Day", time: "~4 min", note: "Show a new, unfamiliar daily-life picture. Ask: \"What do you see?\" \"What is happening?\" Fast learner? Add What Do You See? 2 (a school scene) (+1 min)." },
+  { stage: "Tell Me About It", time: "~4 min", note: "Ask open questions: \"What happens first?\" \"What happens next?\" \"What do you think happens later?\" Fast learner? Add Tell Me About It 2 (+1 min)." },
+  { stage: "Phonics Discovery", time: "~4 min", note: "Show a mixture of familiar and simple unfamiliar words. Ask the student to read what they can. Fast learner? Add What Can You Read? 2 (bed, dog, wig) (+1 min)." },
+  { stage: "A Day in My Life", time: "~6 min", note: "Give a blank sequence of 4-5 pictures. Student creates their own daily routine story, no reveal. Fast learner? Add A Day in My Life! 3 with five new pictures (+2 min)." },
   { stage: "Free Talk Finish", time: "~3 min", note: "\"Tell me about your day.\" Accept any language the student can produce." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -275,40 +275,119 @@ function buildSlides({ onZoom }) {
     // 2: Warm-Up Talk
     {
       stage: "Warm-Up Talk",
+      part: "A",
+      title: "Let's Talk!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me what you like."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What do you want to talk about?</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Warm-Up Talk",
+      part: "A",
+      title: "Let's Talk! 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me what you like."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Which toy do you like?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 3: Explore the Day
     {
       stage: "Explore the Day",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see."]],
+      guide: "I see ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src="/curriculum/u12-routines/daily-life-scene.jpg" label="a new daily-life scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/daily-life-scene.jpg" label="a new daily-life scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Explore the Day",
+      part: "B",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see."]],
+      guide: "I see ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u12-routines/school-yard.jpg" label="a new school scene" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 4: Tell Me About It
     {
       stage: "Tell Me About It",
+      part: "B",
+      title: "Tell Me About It",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what happens."]],
+      guide: "First, ___. Then, ___.",
       body: (
+        <>
+        <Pic src="/curriculum/u12-routines/daily-life-scene.jpg" label="a daily-life scene" size={110} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What happens first? What happens next?</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Tell Me About It",
+      part: "B",
+      title: "Tell Me About It 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what happens."]],
+      guide: "First, ___. Then, ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What happens first? What happens next?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 5: Phonics Discovery
     {
       stage: "Phonics Discovery",
+      part: "C",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Can You Read?</h2></span>
@@ -320,9 +399,24 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Phonics Discovery",
+      part: "C",
+      title: "What Can You Read? 2",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u10-rooms/bed.jpg" word="bed" label="bed" onZoom={onZoom} />
+          <WordCard src="/curriculum/u9-l1/dog.jpg" word="dog" label="dog" onZoom={onZoom} />
+          <WordCard src="/curriculum/u12-routines/wig.jpg" word="wig" label="wig" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: HIGHLIGHT A Day in My Life (round 1)
     {
       stage: "A Day in My Life",
+      part: "D",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me a story."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🗣️ A Day in My Life!</h2></span>
@@ -337,25 +431,70 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT A Day in My Life (round 2)
     {
       stage: "A Day in My Life",
+      part: "D",
+      title: "A Day in My Life! 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me a story."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/story-1-morning.jpg" label="picture 1" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/story-2-afternoon.jpg" label="picture 2" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/story-3-night.jpg" label="picture 3" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What happens in your story?</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "A Day in My Life",
+      part: "D",
+      title: "A Day in My Life! 3",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me a story."]],
+      body: (
+        <>
+        <div className="word-row" style={{ gap: 8 }}>
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat-dinner.jpg" label="eat dinner" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-bed.jpg" label="go to bed" size={80} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What happens in your day?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 8: Free Talk Finish
     {
       stage: "Free Talk Finish",
+      part: "D",
+      title: "Free Talk Finish",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about your day."]],
+      guide: "In the morning, I ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Tell me about your day.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 9: Wrap-up

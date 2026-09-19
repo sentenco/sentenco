@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const FAM_COLOR = { at: "#FF6B4A", og: "#F2A900", in: "#8E6FCE", op: "#22A67E", ed: "#E0567A", ig: "#2E97C7" };
 const TIME_COLOR = { Morning: "#F2A900", Afternoon: "#FF6B4A", Night: "#5A6B92" };
@@ -271,13 +272,14 @@ export default function Unit12TestLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 12 Test", time: null, note: null },
   { stage: "Friendly Start", time: "~2 min", note: "Keep the atmosphere relaxed. Brief greeting and confidence-building conversation." },
-  { stage: "Part 1: Vocabulary", time: "~4 min", note: "Show routine pictures in random order. Student identifies the actions independently." },
-  { stage: "Part 2: Time of Day", time: "~4 min", note: "Show different routines. Student identifies morning, afternoon, or night and explains when appropriate." },
-  { stage: "Part 3: Sequence", time: "~4 min", note: "Give 4-5 routine pictures in mixed order. Student puts them in order and explains the sequence." },
-  { stage: "Part 4: Phonics", time: "~3 min", note: "Cumulative phonics check using words and word families from the entire course." },
-  { stage: "My Day - Final Challenge", time: "~5 min", note: "Give a new daily-life scene with no prepared sequence. Student independently describes what happens." },
+  { stage: "Vocabulary", time: "~4 min", note: "Show routine pictures in random order. Student identifies the actions independently. Second try? Use the Name the Routine! 2 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Time of Day", time: "~4 min", note: "Show different routines. Student identifies morning, afternoon, or night and explains when appropriate. Second try? Use the What Time Is It? 2 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Sequence", time: "~4 min", note: "Give 4-5 routine pictures in mixed order. Student puts them in order and explains the sequence. Second try? Use the Put It in Order 2 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Phonics", time: "~3 min", note: "Cumulative phonics check using words and word families from the entire course. Second try? Use the Read the Words! 2 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "My Day - Final Challenge", time: "~5 min", note: "Give a new daily-life scene with no prepared sequence. Student independently describes what happens. Second try? Use the Final Challenge Again! (a new picture) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "A1 Celebration", time: "~2 min", note: "Celebrate completion of the course. Ask one final easy question. Finish positively." },
   { stage: "My Unit 12 Score!", time: null, note: "Scoring guide: Routine Vocabulary /4, Time of Day /3, Sequencing /4, Phonics /4, Speaking /5. Total /20." },
+  { stage: "Wrap-Up", time: null, note: null },
 ];
 
 function buildSlides({ onZoom }) {
@@ -295,99 +297,209 @@ function buildSlides({ onZoom }) {
     // 2: Friendly Start
     {
       stage: "Friendly Start",
+      part: "A",
+      title: "Let's Start!",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Answer the teacher."]],
       body: (
+        <>
+        <Pic src="/curriculum/u11-l5/child.jpg" label="a smiling child" size={120} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Are you ready for your last test?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Part 1: Vocabulary
     {
-      stage: "Part 1: Vocabulary",
+      stage: "Vocabulary",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Name the Routine!</h2></span>
           <div className="word-row">
-            <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/play.jpg" word="Play" label="play" onZoom={onZoom} />
-            <WordCard src="/curriculum/u12-routines/sleep.jpg" word="Sleep" label="sleep" onZoom={onZoom} />
-          </div>
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/sleep.jpg" label="sleep" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+        </div>
         </>
+      ),
+    },
+    {
+      stage: "Vocabulary",
+      part: "A",
+      title: "Name the Routine! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the action."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-home.jpg" label="go home" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/brush-teeth.jpg" label="brush my teeth" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 4: Part 2: Time of Day
     {
-      stage: "Part 2: Time of Day",
+      stage: "Time of Day",
+      part: "B",
+      title: "What Time Is It?",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time of day."]],
       body: (
         <div className="center-col">
-          <WordCard src="/curriculum/u12-routines/eat-dinner.jpg" word="Eat Dinner" label="eat dinner" onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/eat-dinner.jpg" label="eat dinner" size={110} onZoom={onZoom} />
+        <div className="word-row">
+          <TimeTag label="Morning" onZoom={onZoom} />
           <TimeTag label="Afternoon" onZoom={onZoom} />
+          <TimeTag label="Night" onZoom={onZoom} />
         </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Time of Day",
+      part: "B",
+      title: "What Time Is It? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the time of day."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={110} onZoom={onZoom} />
+        <div className="word-row">
+          <TimeTag label="Morning" onZoom={onZoom} />
+          <TimeTag label="Afternoon" onZoom={onZoom} />
+          <TimeTag label="Night" onZoom={onZoom} />
+        </div>
+        </>
       ),
     },
     // 5: Part 3: Sequence
     {
-      stage: "Part 3: Sequence",
+      stage: "Sequence",
+      part: "C",
+      title: "Put It in Order",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Put them in order."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/eat.jpg" label="eat" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/wake-up.jpg" label="wake up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Put these in order: eat, wake up, go to school.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Sequence",
+      part: "C",
+      title: "Put It in Order 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Put them in order."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u12-routines/get-up.jpg" label="get up" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-school.jpg" label="go to school" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u12-routines/go-to-bed.jpg" label="go to bed" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Put these in order: go to bed, get up, go to school.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 6: Part 4: Phonics
     {
-      stage: "Part 4: Phonics",
+      stage: "Phonics",
+      part: "C",
+      title: "Read the Words!",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read each word."]],
       body: (
         <div className="word-row">
           <LetterTile letters="HAT" color={FAM_COLOR.at} onZoom={onZoom} />
-          <LetterTile letters="HOG" color={FAM_COLOR.og} onZoom={onZoom} />
-          <LetterTile letters="FIN" color={FAM_COLOR.in} onZoom={onZoom} />
-          <LetterTile letters="POP" color={FAM_COLOR.op} onZoom={onZoom} />
-          <LetterTile letters="FED" color={FAM_COLOR.ed} onZoom={onZoom} />
-          <LetterTile letters="BIG" color={FAM_COLOR.ig} onZoom={onZoom} />
+          <LetterTile letters="HOG" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="FIN" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="POP" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="FED" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="BIG" color={FAM_COLOR.at} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Phonics",
+      part: "C",
+      title: "Read the Words! 2",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read each word."]],
+      body: (
+        <div className="word-row">
+          <LetterTile letters="MAT" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="DOG" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="TIN" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="HOP" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="RED" color={FAM_COLOR.at} onZoom={onZoom} />
+          <LetterTile letters="FIG" color={FAM_COLOR.at} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT My Day: Final Challenge
     {
       stage: "My Day - Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about this day."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">⭐ Final Challenge!</h2></span>
-          <Pic src="/curriculum/u12-routines/school-yard.jpg" label="a new daily-life scene" size={180} onZoom={onZoom} />
-          <div className="bubble-col" style={{ maxWidth: 380 }}>
-            <div className="brow">
-              <div className="avatar navy">T</div>
-              <div className="bubble left">Tell me about this day.</div>
-            </div>
-          </div>
+          <Pic src="/curriculum/u12-routines/school-yard.jpg" label="a new daily-life scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Day - Final Challenge",
+      part: "D",
+      title: "Final Challenge Again!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about this day."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u12-routines/daily-life-scene.jpg" label="a new daily-life scene" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 8: A1 Celebration
     {
       stage: "A1 Celebration",
+      part: "D",
+      title: "One Last Question",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Answer the teacher."]],
       body: (
+        <>
+        <Pic src="/curriculum/u12-routines/play.jpg" label="play" size={110} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What do you like to do?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 9: My Unit 12 Score!
     {
       stage: "My Unit 12 Score!",
+      part: "D",
+      instruction: [["📝", "Record the scores."], ["👏", "Praise the student."]],
       body: (
         <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
           <h2 className="slide-h sub">My Unit 12 Score!</h2>
           <div className="score-table">
             <div className="score-row"><span>Routine Vocabulary</span><span>/ 4</span></div>
@@ -397,8 +509,15 @@ function buildSlides({ onZoom }) {
             <div className="score-row"><span>Speaking</span><span>/ 5</span></div>
             <div className="score-row total"><span>Total</span><span>/ 20</span></div>
           </div>
-          <p className="slide-p">Congratulations! You finished the whole A1 Discover course!</p>
         </div>
+      ),
+    },
+    // Wrap-up
+    {
+      stage: "Wrap-Up",
+      time: null,
+      body: (
+        <WrapUp see="Great job finishing A1!">Unit 12 complete! You know your daily routines, the time of day, and your phonics. You finished the whole A1 Discover course!</WrapUp>
       ),
     },
   ];
@@ -524,4 +643,5 @@ export const styles = `
 .zoom-pic img { width: 100%; height: 100%; object-fit: contain; }
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
+${wrapUpStyles}
 `;
