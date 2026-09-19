@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { SOAR_A2_LESSONS } from "./soarA2Data";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -19,14 +20,111 @@ function EmojiTile({ emoji, label, active }) {
   );
 }
 
+
+// ---------- v2 shell (same rules as A1 Kids, adapted for 1-on-1 online lessons) ----------
+// A lesson opts in with `v2: true` in soarA2Data.js. The teacher clicks every slide, the child speaks
+// (or types in the chat), so instructions only use Look / Listen / Say / Read / Type / Ask / Retell.
+const PARTS = {
+  A: { color: "#F2A900" },
+  B: { color: "#2E97C7" },
+  C: { color: "#22A67E" },
+  D: { color: "#E0567A" },
+};
+
+const VERB_COLOR = {
+  look: "#2E97C7", watch: "#2E97C7",
+  say: "#E0502F", answer: "#E0502F", tell: "#E0502F", retell: "#E0502F", ask: "#E0502F", repeat: "#E0502F",
+  listen: "#8E6FCE",
+  type: "#0F9E90", write: "#0F9E90",
+  read: "#D6478C",
+};
+
+function InstructionStep({ icon, text }) {
+  const m = text.match(/^([A-Za-z]+)([\s\S]*)$/);
+  const verb = m ? m[1] : "";
+  let rest = m ? m[2] : text;
+  const color = VERB_COLOR[verb.toLowerCase()];
+  if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
+  return (
+    <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
+      <span className="instr-text">
+        {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
+        {color ? rest : text}
+      </span>
+    </span>
+  );
+}
+
+// A picture slot. `src` empty (or a file that is not there yet) shows a dashed placeholder with the label.
+function SoarPic({ src, label, size = 96 }) {
+  const [state, setState] = useState(src ? "loading" : "failed");
+  useEffect(() => { setState(src ? "loading" : "failed"); }, [src]);
+  return (
+    <div className="sp-tile" style={{ width: size, height: size }}>
+      {state !== "ok" && <span className="sp-missing"><span>{label}</span></span>}
+      {src && state !== "failed" && (
+        <img
+          src={src}
+          alt={label}
+          draggable={false}
+          onLoad={() => setState("ok")}
+          onError={() => setState("failed")}
+          style={state === "ok" ? undefined : { position: "absolute", width: 1, height: 1, opacity: 0 }}
+        />
+      )}
+    </div>
+  );
+}
+
+function StripBlock({ heading, subheading, items = [], active = null, numbered = true, question, sentence, frame, size }) {
+  const n = items.length;
+  const px = size || (n >= 5 ? 96 : n === 4 ? 112 : 128);
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      {subheading && <p className="slide-p">{subheading}</p>}
+      <div className="strip">
+        {items.map((it, i) => (
+          <div key={i} className={`strip-item ${active !== null && i === active ? "is-active" : ""} ${active !== null && i !== active ? "is-dim" : ""}`}>
+            {numbered && <span className="strip-num">{i + 1}</span>}
+            <SoarPic src={it.src} label={it.label} size={px} />
+            <span className="strip-label">{it.time ? `${it.label}, ${it.time}` : it.label}</span>
+          </div>
+        ))}
+      </div>
+      {question && (
+        <div className="dlg-col dlg-col--strip">
+          <div className="dlg-row"><div className="dlg-avatar">T</div><div className="dlg-bubble">{renderHighlighted(question)}</div></div>
+        </div>
+      )}
+      {sentence && <div className="msg-card msg-card--wide"><div className="msg-sentence">{renderHighlighted(sentence)}</div></div>}
+      {frame && <div className="msg-card msg-card--wide"><div className="msg-sentence msg-sentence--frame">{frame.map((l, i) => <div key={i}>{renderBlanks(l)}</div>)}</div></div>}
+    </div>
+  );
+}
+
+function WrapUpBlock({ title = "You've Landed!", see = "See you next lesson!", recap, chips }) {
+  return <WrapUp title={title} see={see} chips={chips}>{recap}</WrapUp>;
+}
+
+function CoverBadges({ lesson, unit }) {
+  return (
+    <>
+      <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
+      <div className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""}`}><span className="um-label">UNIT</span><span className="um-num">{unit}</span></div>
+    </>
+  );
+}
+
 // ---------- generic slide-block renderers ----------
 // Each lesson's content is authored as data (see soarA2Data.js), not JSX.
 // A block's `type` picks which of these renders it.
 
-function TitleBlock({ eyebrow, title, subtitle }) {
+function TitleBlock({ eyebrow, title, subtitle, lesson, unit }) {
   return (
     <div className="title-content">
-      <div className="title-eyebrow">{eyebrow}</div>
+      {lesson ? <CoverBadges lesson={lesson} unit={unit} /> : <div className="title-eyebrow">{eyebrow}</div>}
       <h1 className="title-h">{title}</h1>
       <p className="title-p">{subtitle}</p>
     </div>
@@ -205,6 +303,7 @@ const BLOCKS = {
   title: TitleBlock, pairs: PairsBlock, chips: ChipsBlock, message: MessageBlock,
   dialogue: DialogueBlock, spot: SpotBlock, log: LogBlock, postcard: PostcardBlock,
   landing: LandingBlock, table: TableBlock, steps: StepsBlock,
+  strip: StripBlock, wrapup: WrapUpBlock,
 };
 
 function renderSlideBody(slide) {
@@ -269,6 +368,8 @@ export default function SoarLesson() {
   const slides = data.slides;
   const total = slides.length;
   const s = slides[i];
+  const v2 = !!data.v2;
+  const lastPart = v2 ? [...slides].reverse().find((x) => x.part)?.part : null;
 
   function go(delta) {
     setI((cur) => Math.max(0, Math.min(total - 1, cur + delta)));
@@ -277,7 +378,7 @@ export default function SoarLesson() {
   return (
     <div className="sv-wrap">
       <div className="deck-single">
-        <div className={`slide ${i === 0 ? "slide--title" : "slide--regular"}`}>
+        <div className={`slide ${i === 0 ? "slide--title" : "slide--regular"} ${v2 ? "is-v2" : ""}`}>
           <button className="close-btn" onClick={exit}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 6l12 12M18 6L6 18" /></svg>
           </button>
@@ -288,17 +389,36 @@ export default function SoarLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="pennant">
+              {v2 && s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>}
               <span className="pennant-text">{s.stage}</span>
+              {v2 && s.part && s.part === lastPart && slides[i + 1]?.part !== s.part && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
-          <div className="slide-body">{renderSlideBody(s)}</div>
+          <div className={`slide-body ${v2 && s.instruction ? "has-instruction" : ""}`}>
+            {v2 && s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
+              </div>
+            )}
+            {renderSlideBody(s)}
+            {v2 && s.guide && (
+              <div className="slide-guide">
+                <span className="guide-label" style={s.guideLabel === "Type" ? { background: "#0F9E90" } : undefined}>{s.guideLabel || "Say"}</span>
+                <span className="guide-text">
+                  {s.guide.split("___").map((part, k, arr) => (
+                    <React.Fragment key={k}>{part}{k < arr.length - 1 && <span className="guide-blank" />}</React.Fragment>
+                  ))}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
             <div className="progress-track">
               {Array.from({ length: total }).map((_, idx) => (
-                <span key={idx} className={`dot ${idx === i ? "on" : ""}`} />
+                <span key={idx} className={`dot ${idx === i ? "on" : ""} ${v2 && slides[idx].part && slides[idx].part !== slides[idx - 1]?.part ? "part-start" : ""}`} style={v2 && slides[idx].part && idx === i ? { background: PARTS[slides[idx].part].color } : undefined} />
               ))}
             </div>
             <button className="nav-btn next" onClick={() => (i === total - 1 ? exit() : go(1))}>
@@ -418,4 +538,64 @@ const styles = `
 .progress-track { display: flex; align-items: center; gap: 6px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); transition: all 0.2s ease; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
+
+/* ---------- v2 shell (opt-in per lesson) ---------- */
+.is-v2 .slide-body { flex-direction: column; gap: 14px; padding: 12px 40px; }
+.is-v2 .slide-body.has-instruction { padding-top: 98px; }
+.is-v2 .stage-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.is-v2 .slide-h { position: relative; display: inline-block; isolation: isolate; font-size: 32px; line-height: 1.05; margin: 0; }
+.is-v2 .slide-h::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: -1; }
+.is-v2 .slide-p { font-size: 15px; margin: 0; }
+.is-v2 .chip { font-size: 17px; padding: 8px 18px; }
+.is-v2 .chip-row { max-width: 560px; gap: 10px; }
+.is-v2 .msg-sentence { font-size: 17px; }
+.is-v2 .msg-card { max-width: 520px; margin: 0 auto; }
+.is-v2 .msg-card--wide { max-width: 600px; width: 100%; padding: 10px 20px; }
+.is-v2 .msg-sentence--frame { font-size: 17px; line-height: 1.7; }
+.is-v2 .dlg-col { max-width: 520px; }
+.is-v2 .dlg-bubble { font-size: 17px; max-width: 420px; padding: 10px 16px; }
+.is-v2 .dlg-avatar { width: 30px; height: 30px; font-size: 12px; }
+.is-v2 .frame-card { max-width: 560px; padding: 18px 26px; }
+.is-v2 .frame-line { font-size: 18px; line-height: 1.8; }
+.is-v2 .blank { min-width: 60px; }
+.is-v2 .pennant { display: flex; align-items: center; gap: 8px; max-width: none; padding: 6px 14px; }
+
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
+.instr-step { display: inline-flex; align-items: center; gap: 8px; }
+.instr-icon { font-size: 24px; line-height: 1; }
+.instr-text { display: inline-flex; align-items: center; gap: 8px; }
+.instr-tag { font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 3px 11px; border-radius: 999px; }
+.part-badge { height: 22px; padding: 0 10px; border-radius: 999px; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: 0.03em; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; white-space: nowrap; }
+.slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
+.guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
+.guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
+.progress-track { flex-wrap: nowrap; }
+.dot.part-start { margin-left: 8px; }
+
+.title-content { position: relative; }
+.is-v2 .title-content { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding-left: 250px; }
+.is-v2 .title-h { font-size: 46px; white-space: nowrap; }
+.cover-ribbon { display: flex; align-items: center; gap: 12px; height: 54px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 22px; box-shadow: 0 6px 0 rgba(10,18,40,0.3), 0 10px 18px rgba(27,42,74,0.2); position: relative; z-index: 2; }
+.cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.18em; }
+.cover-ribbon .cr-num { width: 44px; height: 44px; border-radius: 50%; background: #FF6B4A; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; }
+.unit-medal { position: absolute; left: 40px; bottom: 26px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, #E0502F); border: 8px solid #FFD066; box-shadow: 0 12px 24px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 3; }
+.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.22em; margin-bottom: -8px; padding-left: 0.22em; }
+.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 76px; line-height: 1; text-shadow: 0 4px 0 rgba(160,45,18,0.35); }
+.unit-medal.is-long .um-num { font-size: 58px; }
+
+/* picture strip (a school day in order) */
+.strip { display: flex; justify-content: center; gap: 10px; }
+.strip-item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 4px 2px 2px; border-radius: 16px; transition: opacity 0.2s; }
+.strip-item.is-dim { opacity: 0.4; }
+.strip-item.is-active { background: rgba(255,255,255,0.7); box-shadow: 0 0 0 3px var(--coral); }
+.strip-num { position: absolute; top: -4px; left: -4px; z-index: 2; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px #fff; }
+.strip-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; color: var(--navy); text-align: center; max-width: 118px; line-height: 1.15; }
+.sp-tile { position: relative; background: #fff; border-radius: 16px; box-shadow: 0 4px 0 rgba(27,42,74,0.08); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.sp-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sp-missing { position: absolute; inset: 6px; border: 2.5px dashed #C9C2DD; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px; }
+.sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #A79FC0; line-height: 1.1; }
+.dlg-col--strip { margin: 0 auto; }
+${wrapUpStyles}
 `;
