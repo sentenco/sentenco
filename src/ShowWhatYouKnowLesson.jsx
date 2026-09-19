@@ -112,6 +112,7 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -474,7 +475,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Show What You Know!",
       part: "C",
-      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters. Read the word."]],
+      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters."], ["📖", "Read the word."]],
       guide: "It's a ___.",
       time: "~2 min",
       body: (
@@ -512,7 +513,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Show What You Know!",
       part: "C",
-      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters. Read the word."]],
+      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters."], ["📖", "Read the word."]],
       guide: "It's a ___.",
       time: "~2 min",
       body: (
@@ -550,7 +551,7 @@ function buildSlides({ onZoom }) {
       stage: "Show What You Know!",
       part: "C",
       title: "Spell It! Round 3",
-      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters. Read the word."]],
+      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters."], ["📖", "Read the word."]],
       guide: "It's a ___.",
       body: (
         <div className="center-col">
@@ -584,7 +585,7 @@ function buildSlides({ onZoom }) {
       stage: "Show What You Know!",
       part: "C",
       title: "Spell It! Round 4",
-      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters. Read the word."]],
+      instruction: [["🤫", "Tap each tile."], ["🗣️", "Say the letters."], ["📖", "Read the word."]],
       guide: "It's an ___.",
       body: (
         <div className="center-col">

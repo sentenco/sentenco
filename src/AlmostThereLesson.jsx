@@ -91,6 +91,7 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}

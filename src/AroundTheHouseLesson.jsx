@@ -104,6 +104,7 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -664,7 +665,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "House & Word Challenge",
       part: "D",
-      instruction: [["🤔", "No help this time!"], ["📖", "Say the room. Read the word."]],
+      instruction: [["🗣️", "Say the room."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <>
@@ -682,7 +683,7 @@ function buildSlides({ onZoom }) {
       stage: "House & Word Challenge",
       part: "D",
       title: "Final Challenge! 2",
-      instruction: [["🤔", "No help this time!"], ["📖", "Say the room. Read the word."]],
+      instruction: [["🗣️", "Say the room."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="word-row">

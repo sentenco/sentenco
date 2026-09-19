@@ -80,6 +80,7 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -446,7 +447,7 @@ function buildSlides({ onZoom }) {
       stage: "Celebrate & Finish",
       part: "D",
       title: "Well Done!",
-      instruction: [["👏", "Praise the student."], ["🗣️", "Say one thing they did well."]],
+      instruction: [["👏", "Praise the student."], ["⭐", "Name one thing they did well."]],
       body: (
         <>
         <Pic src="/curriculum/u11-l5/action.jpg" label="a happy child" size={110} onZoom={onZoom} />
