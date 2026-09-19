@@ -254,13 +254,13 @@ export const LESSON_GUIDE = [
   { stage: "Unit 6 · Lesson 3", time: null, note: null },
   { stage: "Hello & Body Review", time: "~3 min", note: "Review body parts with quick actions, mixing old and new body words." },
   { stage: "Body + Adjective", time: "~3 min", note: "Review big, small, long, short combined with body words: big eyes, small nose, long legs, short arms." },
-  { stage: "Simple Sentences", time: "~4 min", note: "Introduce \"It has...\" Use a character: \"It has big eyes.\" Practice together, then let the student complete the descriptions." },
-  { stage: "Who Is It?", time: "~4 min", note: "Show 2-3 funny characters. Describe one: \"It has big eyes.\" Student finds the correct character, then switches roles." },
-  { stage: "Build a Sentence", time: "~4 min", note: "Give body-part and adjective choices. Student builds sentences: It + has + big + ears. Gradually remove visual support." },
-  { stage: "Design My Funny Friend!", time: "~2 min", note: "Student creates a silly character and describes it using \"It has...\"" },
+  { stage: "Simple Sentences", time: "~4 min", note: "Introduce \"It has...\" Use a character: \"It has big eyes.\" Practice together, then let the student complete the descriptions. Fast learner? Add It Has... 2 (small ears, short arms) (+1 min)." },
+  { stage: "Who Is It?", time: "~4 min", note: "Show 2-3 funny characters. Describe one: \"It has big eyes.\" Student finds the correct character, then switches roles. Fast learner? Add Who Is It? 2 and 3 (+2 min)." },
+  { stage: "Build a Sentence", time: "~4 min", note: "Give body-part and adjective choices. Student builds sentences: It + has + big + ears. Gradually remove visual support. Fast learner? Add Build More! and Try Again! (+2 min)." },
+  { stage: "Design My Funny Friend!", time: "~2 min", note: "Student creates a silly character and describes it using \"It has...\" Fast learner? Add Design My Funny Friend! 2 (+1 min)." },
   { stage: "Design My Funny Friend!", time: "~2 min", note: "Student produces 3-4 sentences about their character." },
-  { stage: "Final Challenge", time: "~2 min", note: "Show a new character. Student independently describes it using body words." },
-  { stage: "Final Challenge", time: "~1 min", note: "Finish with a quick -at / -og word review from Lessons 1-2." },
+  { stage: "Final Challenge", time: "~2 min", note: "Show a new character. Student independently describes it using body words. Fast learner? Add Tell Me About This! 2 and 3 (+3 min)." },
+  { stage: "Final Challenge", time: "~1 min", note: "Finish with a quick -at / -og word review from Lessons 1-2. Fast learner? Add No Help!, where the answers are hidden (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -285,18 +285,30 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Body Review
     {
       stage: "Hello & Body Review",
+      part: "A",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u6-body/head.png" label="head" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/fingers.png" label="fingers" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/knees.png" label="knees" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Touch your head! Show me your fingers! Touch your knees!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Body + Adjective
     {
       stage: "Body + Adjective",
+      part: "B",
+      instruction: [["👀", "Look at each pair."], ["🗣️", "Say the two words."]],
+      guide: "___ ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Body + Adjective!</h2></span>
@@ -310,9 +322,15 @@ function buildSlides({ onZoom }) {
     // 4: Simple Sentences intro
     {
       stage: "Simple Sentences",
+      part: "B",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: It has big eyes."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">It Has...</h2></span>
+        <div className="word-row">
+          <Pic src="/curriculum/u6-characters/big-eyes.png" label="character with big eyes" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/long-legs.png" label="character with long legs" size={130} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -322,14 +340,39 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Simple Sentences",
+      part: "B",
+      title: "It Has... 2",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: It has small ears."]],
+      body: (
+        <>
+        <div className="word-row">
+            <div className="combo"><DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Short" color={SIZE_COLOR.Short} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} /></div>
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">It has small ears. It has short arms.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Simple Sentences practice
     {
       stage: "Simple Sentences",
+      part: "B",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Say what it has."]],
       body: (
-        <div className="bubble-col" style={{ maxWidth: 420 }}>
-          <div className="brow me">
-            <div className="avatar coral">S</div>
-            <div className="bubble right">It has <span className="fill"></span> <span className="fill"></span>.</div>
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u6-characters/big-eyes.png" label="character with big eyes" size={150} onZoom={onZoom} /></div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It has <span className="fill"></span> <span className="fill"></span>.</div>
+            </div>
           </div>
         </div>
       ),
@@ -337,24 +380,75 @@ function buildSlides({ onZoom }) {
     // 6: Who Is It? (round 1)
     {
       stage: "Who Is It?",
+      part: "C",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the character."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Who Is It?</h2></span>
           <div className="word-row" style={{ gap: 24 }}>
-            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={112} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={112} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={112} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={130} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={130} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={130} onZoom={onZoom} />
           </div>
           <p className="slide-p">It has big eyes. Which one is it?</p>
         </div>
       ),
     },
+    {
+      stage: "Who Is It?",
+      part: "C",
+      title: "Who Is It? 2",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the character."]],
+      body: (
+        <>
+        <div className="word-row" style={{ gap: 24 }}>
+          <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">It has long legs. Which one is it?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Who Is It?",
+      part: "C",
+      title: "Who Is It? 3",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the character."]],
+      body: (
+        <>
+        <div className="word-row" style={{ gap: 24 }}>
+          <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">It has big ears. Which one is it?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 7: Who Is It? (round 2, student describes)
     {
       stage: "Who Is It?",
+      part: "C",
+      instruction: [["👀", "Look at the characters."], ["🗣️", "Describe one."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Your Turn to Describe!</h2></span>
+        <div className="word-row" style={{ gap: 24 }}>
+          <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={110} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -367,6 +461,8 @@ function buildSlides({ onZoom }) {
     // 8: Build a Sentence
     {
       stage: "Build a Sentence",
+      part: "C",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Say the sentence."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Build a Sentence!</h2></span>
@@ -382,6 +478,9 @@ function buildSlides({ onZoom }) {
     // 9: Build a Sentence continued
     {
       stage: "Build a Sentence",
+      part: "C",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Say the whole sentence."]],
+      guide: "It has ___ ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Now You Try!</h2></span>
@@ -389,13 +488,44 @@ function buildSlides({ onZoom }) {
             <DescriptorTag label="Short" color={SIZE_COLOR.Short} onZoom={onZoom} />
             <WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Say the whole sentence!</p>
+        </div>
+      ),
+    },
+    {
+      stage: "Build a Sentence",
+      part: "C",
+      title: "Build More!",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Say the sentence."]],
+      body: (
+        <div className="word-row">
+          <div className="word-chip">It</div>
+          <div className="word-chip">has</div>
+          <DescriptorTag label="Long" color={SIZE_COLOR.Long} onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Build a Sentence",
+      part: "C",
+      title: "Try Again!",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Say the whole sentence."]],
+      guide: "It has ___ ___.",
+      body: (
+        <div className="word-row">
+          <div className="word-chip">It</div>
+          <div className="word-chip">has</div>
+          <DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} />
+          <WordCard src="/curriculum/u2-l2/nose.jpg" word="Nose" label="nose" onZoom={onZoom} />
         </div>
       ),
     },
     // 10: HIGHLIGHT Design My Funny Friend! (round 1)
     {
       stage: "Design My Funny Friend!",
+      part: "D",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Tell me about your friend."]],
+      guide: "It has ___ ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🤪 Design My Funny Friend!</h2></span>
@@ -406,34 +536,96 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Design My Funny Friend!",
+      part: "D",
+      title: "Design My Funny Friend! 2",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Tell me about your friend."]],
+      guide: "It has ___ ___.",
+      body: (
+        <div className="word-row">
+            <div className="combo"><DescriptorTag label="Short" color={SIZE_COLOR.Short} onZoom={onZoom} /><WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} /></div>
+            <div className="combo"><DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} /><WordCard src="/curriculum/u2-l2/nose.jpg" word="Nose" label="nose" onZoom={onZoom} /></div>
+        </div>
+      ),
+    },
     // 11: HIGHLIGHT Design My Funny Friend! (round 2)
     {
       stage: "Design My Funny Friend!",
+      part: "D",
+      instruction: [["👆", "Pick a body part."], ["🗣️", "Say what else it has."]],
+      guide: "It has ___ ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me More!</h2></span>
-          <p className="slide-p">What else does your friend have?</p>
+        <div className="word-row">
+          <Pic src="/curriculum/u6-body/ears.png" label="ears" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l2/nose.jpg" label="nose" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/arms.png" label="arms" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/hands.png" label="hands" size={100} onZoom={onZoom} />
+        </div>
         </div>
       ),
     },
     // 12: Final Challenge (describe independently)
     {
       stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
+      guide: "It has ___ ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This!</h2></span>
-          <Pic src="/curriculum/u6-characters/mystery-1.png" label="new mystery character" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/mystery-1.png" label="new mystery character" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Tell Me About This! 2",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
+      guide: "It has ___ ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-characters/mystery-2.png" label="new mystery character" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Tell Me About This! 3",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
+      guide: "It has ___ ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-characters/mystery-5.png" label="new mystery character" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 13: Final Challenge (word family review)
     {
       stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick Word Review!</h2></span>
           <BlendRow parts={["c", "a", "t"]} result="cat" onZoom={onZoom} />
           <BlendRow parts={["d", "o", "g"]} result="dog" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "No Help!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["b","a","t"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["l","o","g"]} result="?" onZoom={onZoom} />
         </div>
       ),
     },
@@ -557,6 +749,8 @@ export const styles = `
 .desc-tag:hover { transform: scale(1.05); }
 .desc-zoom { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; color: #fff; padding: 30px 56px; border-radius: 30px; }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

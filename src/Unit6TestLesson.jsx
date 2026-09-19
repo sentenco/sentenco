@@ -255,13 +255,13 @@ export default function Unit6TestLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 6 · Test", time: null, note: null },
-  { stage: "Body Parts Check", time: "~3 min", note: "Show a body picture. Ask \"What is this?\" and have the student identify 5-6 body parts, including head, eyes, nose, hands, knees, toes." },
+  { stage: "Body Parts Check", time: "~3 min", note: "Show a body picture. Ask \"What is this?\" and have the student identify 5-6 body parts, including head, eyes, nose, hands, knees, toes. Second try? Use the What Is This? Again! slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Point & Find", time: "~3 min", note: "Give commands such as \"Point to the shoulders.\" \"Show me your fingers.\" Check understanding of the full body vocabulary set." },
-  { stage: "-at Word Check", time: "~4 min", note: "Show pictures/words for cat, hat, bat, mat. Student identifies and reads/blends the words. Include one mixed-order challenge." },
-  { stage: "-og Word Check", time: "~4 min", note: "Show dog, log, jog, hog. Student identifies and reads/blends the words independently." },
-  { stage: "Describe the Person", time: "~4 min", note: "Show a new character. Ask \"Tell me about this person.\" Student describes using big, small, long, short and \"It has...\"" },
-  { stage: "Who Am I?", time: "~4 min", note: "Show 2-3 unfamiliar characters. Student chooses one and describes it without revealing which one. Teacher guesses, then reverse roles." },
-  { stage: "Final Challenge", time: "~3 min", note: "Give one final unfamiliar character and say only \"Tell me about it.\" Student independently produces as many correct descriptions as possible." },
+  { stage: "-at Word Check", time: "~4 min", note: "Show pictures/words for cat, hat, bat, mat. Student identifies and reads/blends the words. Include one mixed-order challenge. Second try? Use the -at Words Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "-og Word Check", time: "~4 min", note: "Show dog, log, jog, hog. Student identifies and reads/blends the words independently. Second try? Use the -og Words Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Describe the Person", time: "~4 min", note: "Show a new character. Ask \"Tell me about this person.\" Student describes using big, small, long, short and \"It has...\" Second try? Use the Tell Me About This Person Again! slide (a new character) only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Who Am I?", time: "~4 min", note: "Show 2-3 unfamiliar characters. Student chooses one and describes it without revealing which one. Teacher guesses, then reverse roles. The characters are labelled A, B and C so the student can say which one. Second try? Use the Who Am I? 2 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Final Challenge", time: "~3 min", note: "Give one final unfamiliar character and say only \"Tell me about it.\" Student independently produces as many correct descriptions as possible. Second try? Use the Final Challenge Again! slide (a new character) only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -280,28 +280,51 @@ function buildSlides({ onZoom }) {
     // 2: Body Parts Check
     {
       stage: "Body Parts Check",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is This?</h2></span>
           <div className="word-row">
-            <Pic src="/curriculum/u6-body/head.png" label="head" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-body/eyes.png" label="eyes" size={70} onZoom={onZoom} />
-            <Pic src={NOSE_IMG} label="nose" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-body/hands.png" label="hands" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-body/knees.png" label="knees" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-body/toes.png" label="toes" size={70} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/head.png" label="head" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/eyes.png" label="eyes" size={80} onZoom={onZoom} />
+            <Pic src={NOSE_IMG} label="nose" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/hands.png" label="hands" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/knees.png" label="knees" size={80} onZoom={onZoom} />
+            <Pic src="/curriculum/u6-body/toes.png" label="toes" size={80} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Body Parts Check",
+      part: "A",
+      title: "What Is This? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u6-body/shoulders.png" label="shoulders" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/fingers.png" label="fingers" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/ears.png" label="ears" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/feet.png" label="feet" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/arms.png" label="arms" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/legs.png" label="legs" size={80} onZoom={onZoom} />
+        </div>
       ),
     },
     // 3: Point & Find
     {
       stage: "Point & Find",
+      part: "A",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
-        <div className="bubble-col" style={{ maxWidth: 420 }}>
-          <div className="brow">
-            <div className="avatar navy">T</div>
-            <div className="bubble left">Point to the shoulders! Show me your fingers!</div>
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u6-characters/char-a.png" label="character" size={170} onZoom={onZoom} /></div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Point to the shoulders! Show me your fingers!</div>
+            </div>
           </div>
         </div>
       ),
@@ -309,6 +332,8 @@ function buildSlides({ onZoom }) {
     // 4: -at Word Check
     {
       stage: "-at Word Check",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-at Words!</h2></span>
@@ -321,9 +346,25 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "-at Word Check",
+      part: "B",
+      title: "-at Words Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u6-words/mat.png" word="Mat" label="mat" onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-words/bat.png" word="Bat" label="bat" onZoom={onZoom} />
+          <WordCard src="/curriculum/u1-l3/hat.avif" word="Hat" label="hat" onZoom={onZoom} />
+          <WordCard src="/curriculum/u1-l1/cat.jpg" word="Cat" label="cat" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 5: -og Word Check
     {
       stage: "-og Word Check",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-og Words!</h2></span>
@@ -336,35 +377,89 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "-og Word Check",
+      part: "B",
+      title: "-og Words Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u6-words/hog.png" word="Hog" label="hog" onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-words/jog.png" word="Jog" label="jog" onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-words/log.png" word="Log" label="log" onZoom={onZoom} />
+          <WordCard src="/curriculum/u1-l2/dog.jpg" word="Dog" label="dog" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: Describe the Person
     {
       stage: "Describe the Person",
+      part: "C",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About This Person!</h2></span>
-          <Pic src="/curriculum/u6-characters/mystery-4.png" label="new character" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-characters/mystery-4.png" label="new character" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Describe the Person",
+      part: "C",
+      title: "Tell Me About This Person Again!",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-characters/mystery-1.png" label="new character" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT Who Am I? (round 1, student describes)
     {
       stage: "Who Am I?",
+      part: "C",
+      instruction: [["🤔", "Pick one secretly."], ["🗣️", "Describe it."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🕵️ Who Am I?</h2></span>
-          <div className="word-row" style={{ gap: 24 }}>
-            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={112} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={112} onZoom={onZoom} />
-            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={112} onZoom={onZoom} />
+        <div className="word-row" style={{ gap: 24 }}>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={110} onZoom={onZoom} />
+            <div className="word">A</div>
           </div>
-          <p className="slide-p">Choose one. Describe it without saying which!</p>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={110} onZoom={onZoom} />
+            <div className="word">B</div>
+          </div>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={110} onZoom={onZoom} />
+            <div className="word">C</div>
+          </div>
+        </div>
         </>
       ),
     },
     // 8: HIGHLIGHT Who Am I? (round 2, teacher describes)
     {
       stage: "Who Am I?",
+      part: "C",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say which character."]],
       body: (
+        <>
+        <div className="word-row" style={{ gap: 24 }}>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={110} onZoom={onZoom} />
+            <div className="word">A</div>
+          </div>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={110} onZoom={onZoom} />
+            <div className="word">B</div>
+          </div>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={110} onZoom={onZoom} />
+            <div className="word">C</div>
+          </div>
+        </div>
         <div className="bubble-col" style={{ maxWidth: 400 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -375,22 +470,71 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">Character <span className="fill"></span>!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Who Am I?",
+      part: "C",
+      title: "Who Am I? 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say which character."]],
+      body: (
+        <>
+        <div className="word-row" style={{ gap: 24 }}>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-a.png" label="character A" size={110} onZoom={onZoom} />
+            <div className="word">A</div>
+          </div>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-b.png" label="character B" size={110} onZoom={onZoom} />
+            <div className="word">B</div>
+          </div>
+          <div className="wc">
+            <Pic src="/curriculum/u6-characters/char-c.png" label="character C" size={110} onZoom={onZoom} />
+            <div className="word">C</div>
+          </div>
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">It has long legs and small ears.</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Character <span className="fill"></span>!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 9: Final Challenge
     {
       stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
-          <Pic src="/curriculum/u6-characters/mystery-5.png" label="final mystery character" size={180} onZoom={onZoom} />
-          <p className="slide-p">Tell me about it!</p>
+          <Pic src="/curriculum/u6-characters/mystery-5.png" label="final mystery character" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Final Challenge Again!",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Tell me about it."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-characters/mystery-2.png" label="new mystery character" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: My Unit 6 Score!
     {
       stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the words."], ["🗣️", "Say each word."]],
       body: (
         <div className="center-col">
           <div className="score-stars">
@@ -522,6 +666,8 @@ export const styles = `
 .desc-tag:hover { transform: scale(1.05); }
 .desc-zoom { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; color: #fff; padding: 30px 56px; border-radius: 30px; }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

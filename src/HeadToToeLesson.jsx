@@ -254,15 +254,15 @@ export default function HeadToToeLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 6 · Lesson 1", time: null, note: null },
-  { stage: "Hello & Body Warm-Up", time: "~3 min", note: "Greet the student and use simple movement: \"Touch your head!\" \"Touch your hands!\" Get the student moving." },
+  { stage: "Hello & Body Warm-Up", time: "~3 min", note: "Greet the student and use simple movement: \"Touch your head!\" \"Touch your hands!\" Get the student moving. Fast learner? Add Touch Your Feet! (+1 min)." },
   { stage: "Meet My Body", time: "~3 min", note: "Introduce head, eyes, ears, nose, mouth using a child-friendly character. Point, say, and have the student point to the same part." },
   { stage: "More Body Parts", time: "~3 min", note: "Introduce arms, hands, legs, feet. Use gestures: \"Show me your hands!\" \"Touch your feet!\"" },
   { stage: "Meet the -at Family", time: "~4 min", note: "Introduce the -at ending: cat, hat, bat, mat. Blend the sounds slowly and let the student repeat." },
-  { stage: "Point & Say", time: "~4 min", note: "Show a body picture and ask \"What is this?\" Mix easy and more challenging locations, not head-to-toe order." },
+  { stage: "Point & Say", time: "~4 min", note: "Show a body picture and ask \"What is this?\" Mix easy and more challenging locations, not head-to-toe order. Fast learner? Add the three extra What Is This? slides (eyes, mouth, feet) (+3 min)." },
   { stage: "Build a Funny Me!", time: "~2 min", note: "Student creates a funny character by choosing body parts, naming each one." },
-  { stage: "Build a Funny Me!", time: "~2 min", note: "Add an -at word as a fun accessory, such as a hat, and connect it to phonics: h + at -> hat." },
-  { stage: "Head-to-Toe Challenge", time: "~1.5 min", note: "Give quick commands: \"Touch your nose!\" \"Show me your feet!\"" },
-  { stage: "Head-to-Toe Challenge", time: "~1.5 min", note: "Do 2-3 -at blending challenges. Finish with praise and goodbye." },
+  { stage: "Build a Funny Me!", time: "~2 min", note: "Add an -at word as a fun accessory, such as a hat, and connect it to phonics: h + at -> hat. Fast learner? Add Build a Funny Me! 2 and Add a Bat! (+2 min)." },
+  { stage: "Head-to-Toe Challenge", time: "~1.5 min", note: "Give quick commands: \"Touch your nose!\" \"Show me your feet!\" Fast learner? Add Head-to-Toe Challenge 2 (+1 min)." },
+  { stage: "Head-to-Toe Challenge", time: "~1.5 min", note: "Do 2-3 -at blending challenges. Finish with praise and goodbye. Fast learner? Add No Help! and Last Word!, where the answers are hidden (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -285,9 +285,15 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Body Warm-Up
     {
       stage: "Hello & Body Warm-Up",
+      part: "A",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Touch Your Head!</h2></span>
+        <div className="word-row">
+          <Pic src="/curriculum/u6-body/head.png" label="head" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/hands.png" label="hands" size={130} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -297,19 +303,48 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Hello & Body Warm-Up",
+      part: "A",
+      title: "Touch Your Feet!",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u6-body/feet.png" label="feet" size={130} onZoom={onZoom} />
+          <Pic src={NOSE_IMG} label="nose" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Touch your feet! Touch your nose!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 3: Meet My Body (head)
     {
       stage: "Meet My Body",
+      part: "B",
+      instruction: [["👆", "Point to it on you."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet My Body!</h2></span>
-          <WordCard src="/curriculum/u6-body/head.png" word="Head" label="head" onZoom={onZoom} />
+          <div className="wc">
+          <Pic src="/curriculum/u6-body/head.png" label="head" size={190} onZoom={onZoom} />
+          <div className="word">Head</div>
+        </div>
         </>
       ),
     },
     // 4: Face parts
     {
       stage: "Meet My Body",
+      part: "B",
+      instruction: [["👆", "Point to it on you."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Face!</h2></span>
@@ -325,6 +360,9 @@ function buildSlides({ onZoom }) {
     // 5: More Body Parts (arms, hands)
     {
       stage: "More Body Parts",
+      part: "B",
+      instruction: [["👆", "Point to it on you."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">More Body Parts!</h2></span>
@@ -338,6 +376,9 @@ function buildSlides({ onZoom }) {
     // 6: More Body Parts (legs, feet)
     {
       stage: "More Body Parts",
+      part: "B",
+      instruction: [["👆", "Point to it on you."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Show Me!</h2></span>
@@ -351,6 +392,8 @@ function buildSlides({ onZoom }) {
     // 7: Meet the -at Family (c+at)
     {
       stage: "Meet the -at Family",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Meet the -at Family!</h2></span>
@@ -361,6 +404,8 @@ function buildSlides({ onZoom }) {
     // 8: -at Family continued (h+at, b+at)
     {
       stage: "Meet the -at Family",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">More -at Words!</h2></span>
@@ -372,6 +417,9 @@ function buildSlides({ onZoom }) {
     // 9: -at Family same ending
     {
       stage: "Meet the -at Family",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      guide: "___ ends in -at.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Same Ending!</h2></span>
@@ -381,33 +429,77 @@ function buildSlides({ onZoom }) {
             <WordCard src="/curriculum/u6-words/bat.png" word="Bat" label="bat" onZoom={onZoom} />
             <WordCard src="/curriculum/u6-words/mat.png" word="Mat" label="mat" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Cat, hat, bat, mat. They all end in -at!</p>
         </>
       ),
     },
     // 10: Point & Say (round 1)
     {
       stage: "Point & Say",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Is This?</h2></span>
-          <Pic src="/curriculum/u6-body/hands.png" label="hands" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/hands.png" label="hands" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 11: Point & Say (round 2)
     {
       stage: "Point & Say",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">And This?</h2></span>
-          <Pic src={NOSE_IMG} label="nose" size={110} onZoom={onZoom} />
+          <Pic src={NOSE_IMG} label="nose" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Point & Say",
+      part: "C",
+      title: "What Is This? 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-body/eyes.png" label="eyes" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Point & Say",
+      part: "C",
+      title: "What Is This? 4",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-body/mouth.png" label="mouth" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Point & Say",
+      part: "C",
+      title: "What Is This? 5",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u6-body/feet.png" label="feet" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 12: HIGHLIGHT Build a Funny Me! (round 1)
     {
       stage: "Build a Funny Me!",
+      part: "D",
+      instruction: [["👆", "Pick a body part."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🤪 Build a Funny Me!</h2></span>
@@ -416,13 +508,14 @@ function buildSlides({ onZoom }) {
             <WordCard src="/curriculum/u6-body/hands.png" word="Hands" label="hands" onZoom={onZoom} />
             <WordCard src="/curriculum/u6-body/feet.png" word="Feet" label="feet" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose body parts for your funny character!</p>
         </>
       ),
     },
     // 13: HIGHLIGHT Build a Funny Me! (round 2, hat)
     {
       stage: "Build a Funny Me!",
+      part: "D",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Add a Hat!</h2></span>
@@ -431,25 +524,107 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Build a Funny Me!",
+      part: "D",
+      title: "Build a Funny Me! 2",
+      instruction: [["👆", "Pick a body part."], ["🗣️", "Say the word."]],
+      guide: "My ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u6-body/arms.png" word="Arms" label="arms" onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-body/legs.png" word="Legs" label="legs" onZoom={onZoom} />
+          <WordCard src="/curriculum/u6-body/ears.png" word="Ears" label="ears" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Build a Funny Me!",
+      part: "D",
+      title: "Add a Bat!",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <>
+        <div className="wc">
+          <Pic src="/curriculum/u6-words/bat.png" label="bat" size={150} onZoom={onZoom} />
+          <div className="word">Bat</div>
+        </div>
+          <BlendRow parts={["b","a","t"]} result="bat" onZoom={onZoom} />
+        </>
+      ),
+    },
     // 14: Head-to-Toe Challenge (commands)
     {
       stage: "Head-to-Toe Challenge",
+      part: "D",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src={NOSE_IMG} label="nose" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/feet.png" label="feet" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Touch your nose! Show me your feet!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Head-to-Toe Challenge",
+      part: "D",
+      title: "Head-to-Toe Challenge 2",
+      instruction: [["👂", "Listen to the teacher."], ["🤸", "Do what the teacher says."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u6-body/ears.png" label="ears" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u6-body/hands.png" label="hands" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Touch your ears! Show me your hands!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 15: Head-to-Toe Challenge (blend review)
     {
       stage: "Head-to-Toe Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">One More Word!</h2></span>
           <BlendRow parts={["m", "a", "t"]} result="mat" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Head-to-Toe Challenge",
+      part: "D",
+      title: "No Help!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["c","a","t"]} result="?" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Head-to-Toe Challenge",
+      part: "D",
+      title: "Last Word!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["h","a","t"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["b","a","t"]} result="?" onZoom={onZoom} />
         </div>
       ),
     },
