@@ -174,20 +174,16 @@ export default function HelloAlphabetLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
           <div className={`slide-body ${s.instruction ? "has-instruction" : ""}`}>
-            {(s.instruction || s.part) && (
+            {s.instruction && (
               <div className="slide-instruction">
-                {s.part && (
-                  <span className="part-lead">
-                    <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>
-                    {s.part === lastPart && <span className="last-tag">Last part!</span>}
-                  </span>
-                )}
-                {s.instruction && s.instruction.map(([icon, text]) => (
+                {s.instruction.map(([icon, text]) => (
                   <InstructionStep key={text} icon={icon} text={text} />
                 ))}
               </div>
@@ -370,14 +366,17 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Anna!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
-            <div className="brow">
-              <div className="avatar" style={{ background: LETTER_COLOR.A }}>A</div>
-              <div className="bubble left">Hello! My name is Anna. What's your name?</div>
-            </div>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">Hello, Anna! My name is <span className="fill"></span>.</div>
+          <div className="meet-row">
+            <div className="meet-pic"><Pic src={`${IMG}/anna.png`} label="a friendly character named Anna" size={150} onZoom={onZoom} /></div>
+            <div className="bubble-col" style={{ maxWidth: 460 }}>
+              <div className="brow">
+                <div className="avatar" style={{ background: LETTER_COLOR.A }}>A</div>
+                <div className="bubble left">Hello! My name is Anna. What's your name?</div>
+              </div>
+              <div className="brow me">
+                <div className="avatar coral">S</div>
+                <div className="bubble right">Hello, Anna! My name is <span className="fill"></span>.</div>
+              </div>
             </div>
           </div>
         </>
@@ -392,14 +391,17 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Bob!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
-            <div className="brow">
-              <div className="avatar" style={{ background: LETTER_COLOR.B }}>B</div>
-              <div className="bubble left">Hello! My name is Bob. What's your name?</div>
-            </div>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">Hello, Bob! My name is <span className="fill"></span>.</div>
+          <div className="meet-row">
+            <div className="meet-pic"><Pic src={`${IMG}/bob.png`} label="a friendly character named Bob" size={150} onZoom={onZoom} /></div>
+            <div className="bubble-col" style={{ maxWidth: 460 }}>
+              <div className="brow">
+                <div className="avatar" style={{ background: LETTER_COLOR.B }}>B</div>
+                <div className="bubble left">Hello! My name is Bob. What's your name?</div>
+              </div>
+              <div className="brow me">
+                <div className="avatar coral">S</div>
+                <div className="bubble right">Hello, Bob! My name is <span className="fill"></span>.</div>
+              </div>
             </div>
           </div>
         </>
@@ -414,14 +416,17 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Carol!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
-            <div className="brow">
-              <div className="avatar" style={{ background: LETTER_COLOR.C }}>C</div>
-              <div className="bubble left">Hello! My name is Carol. What's your name?</div>
-            </div>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">Hello, Carol! My name is <span className="fill"></span>.</div>
+          <div className="meet-row">
+            <div className="meet-pic"><Pic src={`${IMG}/carol.png`} label="a friendly character named Carol" size={150} onZoom={onZoom} /></div>
+            <div className="bubble-col" style={{ maxWidth: 460 }}>
+              <div className="brow">
+                <div className="avatar" style={{ background: LETTER_COLOR.C }}>C</div>
+                <div className="bubble left">Hello! My name is Carol. What's your name?</div>
+              </div>
+              <div className="brow me">
+                <div className="avatar coral">S</div>
+                <div className="bubble right">Hello, Carol! My name is <span className="fill"></span>.</div>
+              </div>
             </div>
           </div>
         </>
@@ -714,7 +719,6 @@ export const styles = `
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }
 .instr-tag { font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 3px 11px; border-radius: 999px; }
-.part-lead { position: absolute; right: 100%; top: 4px; margin-right: 8px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .part-badge { height: 22px; padding: 0 10px; border-radius: 999px; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: 0.03em; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
@@ -748,6 +752,8 @@ export const styles = `
 .word { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; color: var(--navy); }
 .name-tag { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

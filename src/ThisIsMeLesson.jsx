@@ -180,20 +180,16 @@ export default function ThisIsMeLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>}
               <span className="stage-name">{s.stage}</span>
+              {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
           </div>
 
           <div className={`slide-body ${s.instruction ? "has-instruction" : ""}`}>
-            {(s.instruction || s.part) && (
+            {s.instruction && (
               <div className="slide-instruction">
-                {s.part && (
-                  <span className="part-lead">
-                    <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>
-                    {s.part === lastPart && <span className="last-tag">Last part!</span>}
-                  </span>
-                )}
-                {s.instruction && s.instruction.map(([icon, text]) => (
+                {s.instruction.map(([icon, text]) => (
                   <InstructionStep key={text} icon={icon} text={text} />
                 ))}
               </div>
@@ -520,7 +516,6 @@ export const styles = `
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }
 .instr-tag { font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 3px 11px; border-radius: 999px; }
-.part-lead { position: absolute; right: 100%; top: 4px; margin-right: 8px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .part-badge { height: 22px; padding: 0 10px; border-radius: 999px; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: 0.03em; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
