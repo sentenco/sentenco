@@ -12,9 +12,14 @@ const ARRIVE = { label: "arrive at school", src: "/curriculum/u12-routines/go-to
 const HOME = { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" };
 const MATH = SP("Math", "math.jpg"), ENGLISH = SP("English", "english.jpg"), SCIENCE = SP("Science", "science.jpg"), ART = SP("Art", "art.jpg");
 const MUSIC = SP("Music", "music.jpg"), PE = SP("P.E.", "pe.jpg"), HISTORY = SP("History", "history.jpg"), GEOGRAPHY = SP("Geography", "geography.jpg");
+const CL = (label, file) => ({ label, src: `/curriculum/a2-clubs/${file}` });
+const PR = (label, file) => ({ label, src: `/curriculum/a2-project/${file}` });
+const BASKETBALL = CL("basketball", "basketball.jpg"), SOCCER = CL("soccer", "soccer.jpg"), SWIMMING = CL("swimming", "swimming.jpg"), DANCING = CL("dancing", "dancing.jpg");
+const READING = CL("reading", "reading.jpg"), CODING = CL("coding", "coding.jpg"), COOKING = CL("cooking", "cooking.jpg"), DRAWING = { label: "art club", src: "/curriculum/a2-school/art.jpg" }, MUSIC_CLUB = { label: "music club", src: "/curriculum/a2-school/music.jpg" };
 const LUNCH = SP("lunch", "lunch.jpg"), HOMEWORK = SP("homework", "homework.jpg");
 const LISTEN_ANSWER = [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]];
 const NO_HELP = (t) => [["🤔", "No help this time!"], ["🗣️", t]];
+const pair = (a, b) => ({ type: "strip", numbered: false, size: 108, items: [a, b] });
 const one = (item) => ({ type: "strip", numbered: false, labels: false, size: 120, items: [item] });
 
 export const SOAR_A2_LESSONS = {
@@ -143,25 +148,78 @@ export const SOAR_A2_LESSONS = {
     ],
   },
   "1-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 1 · Lesson 3", title: "After-School Clubs", subtitle: "Talk about after-school activities and compare preferences." },
-      { type: "chips", stage: "Getting Ready", heading: "What Do You Do After School?", subheading: "Games, TV, homework, or sports?", items: ["basketball", "soccer", "swimming", "drawing", "dancing", "music", "reading", "coding", "cooking", "art club"] },
-      { type: "message", stage: "Taking Off", heading: "Club Match", subheading: "What can you do in each club?", lines: ["You can *draw* in the art club.", "You can *play basketball* in the sports club."] },
-      { type: "message", stage: "What Would You Choose?", heading: "🏀 Basketball Club vs 🎨 Art Club", subheading: "Which club do you want to join? Why?", lines: ["I want to join the *basketball club* because I like sports."] },
-      { type: "message", stage: "Flight Log", heading: "Choose Your Club", subheading: "Compare two clubs and defend your choice", lines: ["I *prefer* Art Club.", "I like Art Club *more than* Basketball Club.", "Art is *more fun than* basketball."] },
-      { type: "postcard", stage: "Postcard Message", heading: "My Perfect Club", subheading: "Describe your ideal after-school club", line: "My favorite club is a ___ club. I like ___. I prefer ___ to ___ because it is ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "My Perfect Club", caption: "My favorite club is a music club. I prefer music to sports because it is fun." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 1, title: "After-School Clubs", subtitle: "Talk about clubs and say which one you prefer." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Warm-Up", heading: "After School", turns: [{ who: "teacher", text: "What do you do after school?" }], instruction: LISTEN_ANSWER, guide: "After school, I ___." },
+      { type: "dialogue", part: "A", stage: "Warm-Up", heading: "Choices", turns: [{ who: "teacher", text: "Do you play games, watch TV, do homework, or play sports?" }], instruction: LISTEN_ANSWER, guide: "I ___." },
+      { type: "dialogue", part: "A", stage: "Warm-Up", heading: "My Favorite", turns: [{ who: "teacher", text: "What is your favorite after-school activity?" }], instruction: LISTEN_ANSWER, guide: "My favorite activity is ___." },
+
+      // ---- Part B: club match (5 min) ----
+      { type: "strip", part: "B", stage: "Club Match", heading: "After-School Clubs", numbered: false, items: [BASKETBALL, SOCCER, SWIMMING, DANCING], instruction: [["👀", "Look at the clubs."], ["🗣️", "Say each activity."]] },
+      { type: "strip", part: "B", stage: "Club Match", heading: "After-School Clubs 2", numbered: false, size: 96, items: [DRAWING, MUSIC_CLUB, READING, CODING, COOKING], instruction: [["👀", "Look at the clubs."], ["🗣️", "Say each activity."]] },
+      { ...one(DRAWING), part: "B", stage: "Club Match", heading: "What Can You Do?", question: "What can you do in the art club?", instruction: LISTEN_ANSWER, guide: "You can ___." },
+      { ...one(BASKETBALL), part: "B", stage: "Club Match", heading: "What Can You Do? 2", question: "What can you do in the sports club?", instruction: LISTEN_ANSWER, guide: "You can ___." },
+      { ...one(MUSIC_CLUB), part: "B", stage: "Club Match", heading: "What Can You Do? 3", question: "What can you do in the music club?", instruction: LISTEN_ANSWER, guide: "You can ___." },
+      { ...one(CODING), part: "B", stage: "Club Match", heading: "What Can You Do? 4", question: "What can you do in the coding club?", instruction: NO_HELP("Answer the question.") },
+      { type: "message", part: "B", stage: "Club Match", heading: "I Like, I Prefer", lines: ["I *like* drawing.", "I *prefer* drawing to swimming."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]] },
+
+      // ---- Part C: choose your club (13 min) ----
+      { ...pair(BASKETBALL, DRAWING), part: "C", stage: "What Would You Choose?", heading: "Basketball or Art?", question: "Which club do you want to join?", instruction: LISTEN_ANSWER, guide: "I want to join the ___ club." },
+      { ...pair(BASKETBALL, DRAWING), part: "C", stage: "What Would You Choose?", heading: "Why?", question: "Why?", instruction: LISTEN_ANSWER, guide: "Because I like ___." },
+      { type: "message", part: "C", stage: "Choose Your Club", heading: "Compare Clubs", lines: ["I *prefer* Art Club.", "I like Art Club *more than* Basketball Club.", "Art is *more fun than* basketball."], instruction: [["👂", "Listen to the model."], ["🗣️", "Repeat the sentences."]] },
+      { ...pair(BASKETBALL, SWIMMING), part: "C", stage: "Choose Your Club", heading: "Choose Your Club", question: "Which club do you prefer?", instruction: LISTEN_ANSWER, guide: "I prefer ___." },
+      { ...pair(DRAWING, MUSIC_CLUB), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 2", question: "Which club do you prefer? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ more than ___." },
+      { ...pair(READING, CODING), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 3", question: "Which club is more fun?", instruction: LISTEN_ANSWER, guide: "___ is more fun than ___." },
+      { ...pair(DANCING, SOCCER), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 4", question: "Which club do you prefer? Why?", instruction: NO_HELP("Choose a club and say why.") },
+      { ...pair(SWIMMING, COOKING), part: "C", stage: "Choose Your Club", heading: "A Difficult Choice", question: "This is hard! Choose one and tell me why.", instruction: NO_HELP("Defend your choice.") },
+      { type: "chips", part: "C", stage: "Now You Ask!", heading: "Now You Ask!", items: ["Which do you prefer, ___ or ___?", "Why?"], instruction: [["👀", "Look at the questions."], ["🗣️", "Ask the teacher two questions."]] },
+
+      // ---- Part D: my perfect club (4 min) ----
+      { type: "message", part: "D", stage: "My Perfect Club", heading: "Listen to the Model", lines: ["My favorite club is a music club.", "I like singing and playing the guitar.", "I *prefer* music to sports *because* it is fun."], instruction: [["👂", "Listen to the model."], ["🗣️", "Repeat the sentences."]] },
+      { type: "dialogue", part: "D", stage: "My Perfect Club", heading: "My Perfect Club", turns: [{ who: "teacher", text: "Tell me about your perfect after-school club." }], instruction: NO_HELP("Say four sentences.") },
+      { type: "postcard", part: "D", stage: "Type It!", heading: "Type Your Club", line: "My favorite club is a ___ club. I like ___. I prefer ___ to ___ because it is ___.", instruction: [["⌨️", "Type your perfect club in the chat."]] },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Club", lines: ["Read your sentences to the teacher.", "Use *prefer* and *because*."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about clubs and say which one you prefer and why." },
     ],
   },
   "1-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 1 · Lesson 4", title: "A Class Project", subtitle: "Describe a simple class project using sequencing and because." },
-      { type: "chips", stage: "Getting Ready", heading: "Project Words", subheading: "New words for today", items: ["project", "group", "idea", "topic", "poster", "picture", "write", "draw", "practice", "present"] },
-      { type: "steps", stage: "Taking Off", heading: "Build the Project", subheading: "\"Animals Around the World\" — what can we do?", items: ["Choose a topic", "Find information", "Make a poster", "Present the project"] },
-      { type: "log", stage: "Build the Project", heading: "Put It in Order", subheading: "Use all four sequencing words", rows: ["First, we ___ a topic.", "Then, we ___ information.", "After that, we make a ___.", "Finally, we ___ it."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Project Pitch", subheading: "Your class needs a new project! Explain yours.", turns: [{ who: "teacher", text: "What is your project? What do you do first?" }, { who: "student", text: "First, we choose a topic. Then, we find information." }, { who: "teacher", text: "Why is it interesting?" }, { who: "student", text: "Because I love animals!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Mini Presentation", subheading: "Give a 30-60 second project pitch", line: "My project is about ___. First, we ___. Then, we ___. It is interesting because ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "My Class Project", caption: "First, we choose a topic. Then, we find information. Finally, we present it." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 1, title: "A Class Project", subtitle: "Explain a project with First, Then, After that, Finally and because." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "dialogue", part: "A", stage: "Review", heading: "Review", turns: [{ who: "teacher", text: "What subject do you like? Why?" }], instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "After School", turns: [{ who: "teacher", text: "What do you do after school?" }], instruction: LISTEN_ANSWER, guide: "After school, I ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Activities", turns: [{ who: "teacher", text: "What activities do you like?" }], instruction: LISTEN_ANSWER, guide: "I like ___." },
+
+      // ---- Part B: what is a project? (9 min) ----
+      { ...one({ label: "animals", src: "/curriculum/u9-scenes/all-animals.jpg" }), part: "B", stage: "What Is a Project?", heading: "A Class Project", size: 110, question: "Our project is Animals Around the World. What can we do?", instruction: LISTEN_ANSWER, guide: "We can ___." },
+      { type: "chips", part: "B", stage: "What Is a Project?", heading: "Project Words", items: ["project", "group", "idea", "topic", "poster", "picture", "write", "draw", "practice", "present"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the words."]] },
+      { type: "strip", part: "B", stage: "Build the Project", heading: "Four Project Steps", size: 100, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], instruction: [["👀", "Look at the steps."], ["🗣️", "Say each step."]] },
+      { type: "strip", part: "B", stage: "Build the Project", heading: "Listen to the Model", size: 84, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], sentence: "*First*, we choose a topic. *Then*, we find information. *After that*, we make a poster. *Finally*, we present it.", instruction: [["👂", "Listen to the model."], ["🗣️", "Repeat the sentences."]] },
+      { type: "strip", part: "B", stage: "Build the Project", heading: "What Do We Do First?", size: 100, active: 0, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], instruction: [["👀", "Look at picture 1."], ["🗣️", "Answer the question."]], guide: "First, we ___." },
+      { type: "strip", part: "B", stage: "Build the Project", heading: "What Do We Do Next?", size: 100, active: 1, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], instruction: [["👀", "Look at picture 2."], ["🗣️", "Answer the question."]], guide: "Then, we ___." },
+      { type: "strip", part: "B", stage: "Build the Project", heading: "And After That?", size: 100, active: 2, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], instruction: [["👀", "Look at picture 3."], ["🗣️", "Answer the question."]], guide: "After that, we ___." },
+      { type: "strip", part: "B", stage: "Build the Project", heading: "How Does It End?", size: 100, active: 3, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], instruction: [["👀", "Look at picture 4."], ["🗣️", "Answer the question."]], guide: "Finally, we ___." },
+
+      // ---- Part C: project pitch (8 min) ----
+      { type: "strip", part: "C", stage: "Project Pitch", heading: "Your Class Needs a Project!", numbered: false, size: 84, items: [{ label: "animals", src: "/curriculum/u9-scenes/all-animals.jpg" }, PR("space", "space.jpg"), SOCCER, { label: "countries", src: "/curriculum/a2-school/geography.jpg" }, { label: "my hobby", src: "/curriculum/a2-school/art.jpg" }], question: "What is your project about?", instruction: [["👀", "Look at the topics."], ["🗣️", "Choose a topic."]], guide: "Our project is about ___." },
+      { type: "dialogue", part: "C", stage: "Project Pitch", heading: "Why This Topic?", turns: [{ who: "teacher", text: "Why did you choose this topic?" }], instruction: LISTEN_ANSWER, guide: "I chose it because ___." },
+      { type: "dialogue", part: "C", stage: "Project Pitch", heading: "First and Then", turns: [{ who: "teacher", text: "What do you do first? What do you do next?" }], instruction: LISTEN_ANSWER, guide: "First, we ___. Then, we ___." },
+      { type: "dialogue", part: "C", stage: "Project Pitch", heading: "After That", turns: [{ who: "teacher", text: "What do you do after that? How does it end?" }], instruction: LISTEN_ANSWER, guide: "After that, we ___. Finally, we ___." },
+      { type: "dialogue", part: "C", stage: "Project Pitch", heading: "Interesting?", turns: [{ who: "teacher", text: "Why is your project interesting?" }], instruction: LISTEN_ANSWER, guide: "It is interesting because ___." },
+      { type: "message", part: "C", stage: "Project Pitch", heading: "Listen to a Pitch", lines: ["Our project is about space *because* I like planets.", "*First*, we choose the topic. *Then*, we find pictures.", "*After that*, we make a poster. *Finally*, we present it."], instruction: [["👂", "Listen to the model."], ["🗣️", "Repeat the pitch."]] },
+      { type: "dialogue", part: "C", stage: "Project Pitch", heading: "A New Project", turns: [{ who: "teacher", text: "Choose a different topic. What is your new project?" }], instruction: NO_HELP("Tell me your new project.") },
+      { type: "chips", part: "C", stage: "Tell It Again", heading: "Say It Again", items: ["First", "Then", "After that", "Finally", "because"], instruction: NO_HELP("Retell the project pitch.") },
+
+      // ---- Part D: mini presentation (4 min) ----
+      { type: "dialogue", part: "D", stage: "Mini Presentation", heading: "Mini Presentation", turns: [{ who: "teacher", text: "Present your project to me. Take 30 to 60 seconds." }], instruction: NO_HELP("Present your project.") },
+      { type: "postcard", part: "D", stage: "Type It!", heading: "Type Your Project", line: "My project is about ___. First, we ___. Then, we ___. It is interesting because ___.", instruction: [["⌨️", "Type your project in the chat."]] },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Pitch", lines: ["Read your sentences to the teacher.", "Use *First*, *Then*, *After that*, *Finally* and *because*."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can explain a class project with First, Then, After that, Finally and because." },
     ],
   },
   "1-5": {
@@ -193,6 +251,37 @@ export const SOAR_A2_LESSONS = {
       { type: "message", part: "D", stage: "Type It!", heading: "My School Life", lines: ["Include one or two subjects, an opinion, your school day in order, and an after-school activity."], instruction: [["⌨️", "Type four to six sentences in the chat."]] },
       { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Writing", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
       { type: "wrapup", stage: "Unit 1 Complete!", title: "Unit 1 Complete!", see: "Great job!", recap: "You can talk about your subjects, your school day, and a class project." },
+    ],
+  },
+
+  "1-6": {
+    v2: true,
+    slides: [
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 1, title: "Unit 1 Test", subtitle: "Show what you can say about school life!" },
+
+      // ---- Part A: words ----
+      { type: "strip", part: "A", stage: "Words", heading: "What Subject Is It?", numbered: false, labels: false, size: 100, items: [MATH, SCIENCE, ART, MUSIC], instruction: [["👀", "Look at each picture."], ["🗣️", "Say the subject."]] },
+      { type: "strip", part: "A", stage: "Words", heading: "What Subject Is It? 2", numbered: false, labels: false, size: 100, items: [ENGLISH, PE, HISTORY, GEOGRAPHY], instruction: [["👀", "Look at each picture."], ["🗣️", "Say the subject."]] },
+      { type: "strip", part: "A", stage: "Words", heading: "What Club Is It?", numbered: false, labels: false, size: 100, items: [BASKETBALL, SWIMMING, DANCING, CODING], instruction: [["👀", "Look at each picture."], ["🗣️", "Say the club activity."]] },
+      { type: "strip", part: "A", stage: "Words", heading: "What Club Is It? 2", numbered: false, labels: false, size: 100, items: [SOCCER, READING, COOKING, DRAWING], instruction: [["👀", "Look at each picture."], ["🗣️", "Say the club activity."]] },
+
+      // ---- Part B: opinions and comparing ----
+      { ...one(MATH), part: "B", stage: "Opinions", heading: "Do You Like It?", question: "Do you like Math? Why?", instruction: [["👂", "Listen to the question."], ["🗣️", "Answer with because."]] },
+      { ...one(PE), part: "B", stage: "Opinions", heading: "Do You Like It? 2", question: "Do you like P.E.? Why?", instruction: [["👂", "Listen to the question."], ["🗣️", "Answer with because."]] },
+      { ...pair(BASKETBALL, DRAWING), part: "B", stage: "Opinions", heading: "Which Club?", question: "Which club do you prefer? Why?", instruction: [["👂", "Listen to the question."], ["🗣️", "Answer with prefer."]] },
+      { ...pair(READING, CODING), part: "B", stage: "Opinions", heading: "Which Club? 2", question: "Which club do you prefer? Why?", instruction: [["👂", "Listen to the question."], ["🗣️", "Answer with prefer."]] },
+
+      // ---- Part C: sequencing ----
+      { type: "strip", part: "C", stage: "Sequencing", heading: "A School Day", items: [ARRIVE, ENGLISH, LUNCH, HOME], instruction: [["👀", "Look at the day."], ["🗣️", "Say it in order."]] },
+      { type: "strip", part: "C", stage: "Sequencing", heading: "A School Day 2", items: [ARRIVE, MATH, ART, HOME], instruction: [["👀", "Look at the day."], ["🗣️", "Say it in order."]] },
+      { type: "strip", part: "C", stage: "Sequencing", heading: "A Class Project", size: 100, items: [PR("choose a topic", "topic.jpg"), PR("find information", "information.jpg"), PR("make a poster", "poster.jpg"), PR("present it", "present.jpg")], instruction: [["👀", "Look at the steps."], ["🗣️", "Tell the project in order."]] },
+
+      // ---- Part D: speaking and writing ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About School", turns: [{ who: "teacher", text: "Tell me about your school day and your favorite subject." }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say five or six sentences."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Clubs", turns: [{ who: "teacher", text: "Tell me about your favorite club and a class project." }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say five or six sentences."]] },
+      { type: "message", part: "D", stage: "Writing", heading: "My School Life", lines: ["Write about school: subjects, an opinion, your school day in order, and a club."], instruction: [["⌨️", "Type five or six sentences in the chat."]] },
+      { type: "score", stage: "My Unit 1 Score!", heading: "My Unit 1 Score!", rows: [["Words", "/ 4"], ["Opinions", "/ 4"], ["Sequencing", "/ 4"], ["Speaking", "/ 5"], ["Writing", "/ 3"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 1 Complete!", title: "Unit 1 Complete!", see: "On to Unit 2!", recap: "You can talk about your subjects, your clubs, your school day and a class project." },
     ],
   },
 

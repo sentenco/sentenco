@@ -104,6 +104,18 @@ function StripBlock({ heading, subheading, items = [], active = null, numbered =
   );
 }
 
+function ScoreBlock({ heading, rows = [], total }) {
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="score-table">
+        {rows.map(([label, max]) => <div key={label} className="score-row"><span>{label}</span><span>{max}</span></div>)}
+        <div className="score-row total"><span>Total</span><span>{total}</span></div>
+      </div>
+    </div>
+  );
+}
+
 function WrapUpBlock({ title = "You've Landed!", see = "See you next lesson!", recap, chips }) {
   return <WrapUp title={title} see={see} chips={chips}>{recap}</WrapUp>;
 }
@@ -338,7 +350,7 @@ const BLOCKS = {
   title: TitleBlock, pairs: PairsBlock, chips: ChipsBlock, message: MessageBlock,
   dialogue: DialogueBlock, spot: SpotBlock, log: LogBlock, postcard: PostcardBlock,
   landing: LandingBlock, table: TableBlock, steps: StepsBlock,
-  strip: StripBlock, wrapup: WrapUpBlock,
+  strip: StripBlock, wrapup: WrapUpBlock, score: ScoreBlock,
 };
 
 function renderSlideBody(slide) {
@@ -720,5 +732,9 @@ const styles = `
 .sp-missing { position: absolute; inset: 6px; border: 2.5px dashed #C9C2DD; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px; }
 .sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #A79FC0; line-height: 1.1; }
 .dlg-col--strip { margin: 0 auto; }
+
+.score-table { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 10px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
+.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); padding: 3px 0; }
+.score-row.total { border-top: 2px dashed var(--coral-light); margin-top: 4px; padding-top: 10px; color: var(--coral-deep); font-size: 18px; }
 ${wrapUpStyles}
 `;

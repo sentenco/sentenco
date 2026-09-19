@@ -141,6 +141,7 @@ export const UNITS = {
         { num: 3, title: "After-School Clubs", focus: "Talk about after-school activities and compare preferences" },
         { num: 4, title: "A Class Project", focus: "Describe a simple class project using sequencing and because" },
         { num: 5, title: "Show What You Know!", focus: "Free practice, no reveal: school life, school days, and a class project" },
+        { num: 6, title: "Unit 1 Test", focus: "Summative check of the whole unit", isTest: true },
       ],
     },
     {
