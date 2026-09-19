@@ -80,6 +80,31 @@ const PARTS = {
   D: { color: "#E0567A" },
 };
 
+const VERB_COLOR = {
+  look: "#2E97C7", watch: "#2E97C7",
+  say: "#E0502F", answer: "#E0502F", tell: "#E0502F", introduce: "#E0502F", give: "#E0502F",
+  listen: "#8E6FCE",
+  remember: "#22A67E", guess: "#22A67E",
+  tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+};
+
+function InstructionStep({ icon, text }) {
+  const m = text.match(/^([A-Za-z]+)([\s\S]*)$/);
+  const verb = m ? m[1] : "";
+  let rest = m ? m[2] : text;
+  const color = VERB_COLOR[verb.toLowerCase()];
+  if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
+  return (
+    <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
+      <span className="instr-text">
+        {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
+        {color ? rest : text}
+      </span>
+    </span>
+  );
+}
+
 export default function HelloAlphabetLesson() {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -148,7 +173,7 @@ export default function HelloAlphabetLesson() {
               <span className="brand-word">entivo</span>
             </div>
             <div className="stage-chip">
-              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>{s.part}</span>}
+              {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>}
               <span className="stage-name">{s.stage}</span>
               {s.part && s.part === lastPart && <span className="last-tag">Last part!</span>}
             </div>
@@ -157,15 +182,9 @@ export default function HelloAlphabetLesson() {
           <div className={`slide-body ${s.instruction ? "has-instruction" : ""}`}>
             {s.instruction && (
               <div className="slide-instruction">
-                {s.instruction.map(([icon, text]) => {
-                  const [verb, ...rest] = text.split(" ");
-                  return (
-                    <span key={text} className="instr-step">
-                      <span className="instr-icon">{icon}</span>
-                      <span><b>{verb}</b> {rest.join(" ")}</span>
-                    </span>
-                  );
-                })}
+                {s.instruction.map(([icon, text]) => (
+                  <InstructionStep key={text} icon={icon} text={text} />
+                ))}
               </div>
             )}
             {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
@@ -470,21 +489,21 @@ function buildSlides({ onZoom }) {
           <div className="look-groups">
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.A }}>A</span>
-              <Pic src={`${IMG}/ant.jpg`} label="ant" size={62} onZoom={onZoom} />
-              <Pic src={`${IMG}/apple.jpg`} label="apple" size={62} onZoom={onZoom} />
-              <Pic src={`${IMG}/alligator.jpg`} label="alligator" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/ant.jpg`} label="ant" size={52} onZoom={onZoom} />
+              <Pic src={`${IMG}/apple.jpg`} label="apple" size={52} onZoom={onZoom} />
+              <Pic src={`${IMG}/alligator.jpg`} label="alligator" size={52} onZoom={onZoom} />
             </div>
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.B }}>B</span>
-              <Pic src={`${IMG}/ball.jpg`} label="ball" size={62} onZoom={onZoom} />
-              <Pic src={`${IMG}/banana.jpg`} label="banana" size={62} onZoom={onZoom} />
-              <Pic src={`${IMG}/bear.jpg`} label="bear" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/ball.jpg`} label="ball" size={52} onZoom={onZoom} />
+              <Pic src={`${IMG}/banana.jpg`} label="banana" size={52} onZoom={onZoom} />
+              <Pic src={`${IMG}/bear.jpg`} label="bear" size={52} onZoom={onZoom} />
             </div>
             <div className="look-row">
               <span className="look-letter" style={{ background: LETTER_COLOR.C }}>C</span>
-              <Pic src={`${IMG}/cat.jpg`} label="cat" size={62} onZoom={onZoom} />
-              <Pic src={`${IMG}/car.avif`} label="car" size={62} onZoom={onZoom} />
-              <Pic src={`${IMG}/cookie.webp`} label="cookie" size={62} onZoom={onZoom} />
+              <Pic src={`${IMG}/cat.jpg`} label="cat" size={52} onZoom={onZoom} />
+              <Pic src={`${IMG}/car.avif`} label="car" size={52} onZoom={onZoom} />
+              <Pic src={`${IMG}/cookie.webp`} label="cookie" size={52} onZoom={onZoom} />
             </div>
           </div>
         </>
@@ -674,26 +693,27 @@ export const styles = `
 
 .slide-footer {
   flex-shrink: 0; position: relative; z-index: 2;
-  padding: 0 26px 20px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 36px 34px; display: flex; align-items: center; justify-content: space-between;
 }
 .nav-btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 12px 22px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(180deg, #fff 0%, #F5EEE7 100%); color: var(--navy); box-shadow: 0 4px 0 rgba(27,42,74,0.15), 0 8px 16px rgba(27,42,74,0.1); }
 .nav-btn.next { background: linear-gradient(180deg, var(--coral) 0%, var(--coral-deep) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.4), 0 8px 18px rgba(224,80,47,0.32); }
 .nav-btn.is-off, .nav-btn:disabled { opacity: 0.32; box-shadow: 0 1px 2px rgba(27,42,74,0.1) inset; cursor: default; }
 .progress-track { display: flex; align-items: center; gap: 7px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
-.part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
-.slide-body.has-instruction { padding-top: 74px; }
-.slide-instruction { position: absolute; top: 34px; left: 30px; max-width: 640px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; text-shadow: 0 1px 0 rgba(255,255,255,0.7); }
-.slide-instruction b { font-weight: 800; color: var(--coral-deep); }
-.instr-step { display: inline-flex; align-items: center; gap: 7px; }
-.instr-icon { font-size: 24px; line-height: 1; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
 .guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
 .guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
 .big-question { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: var(--coral); background: #fff; width: 110px; height: 110px; border-radius: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(27,42,74,0.14); }
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
+.slide-body.has-instruction { padding-top: 98px; }
+.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.instr-step { display: inline-flex; align-items: center; gap: 8px; }
+.instr-icon { font-size: 24px; line-height: 1; }
+.instr-text { display: inline-flex; align-items: center; gap: 8px; }
+.instr-tag { font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 3px 11px; border-radius: 999px; }
+.part-badge { height: 22px; padding: 0 10px; border-radius: 999px; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: 0.03em; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 .title-highlight { position: relative; display: inline-block; }
