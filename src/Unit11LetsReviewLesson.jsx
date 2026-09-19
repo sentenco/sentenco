@@ -479,7 +479,7 @@ function buildSlides({ onZoom }) {
     ].map(([label, src, action]) => ({
       stage: "Playtime Sorting Game",
       part: "C",
-      title: "Make a Sentence!",
+      title: "Make a Sentence! 2",
       instruction: [["🧩", "Put them together."], ["🗣️", "Say your own sentence."]],
       guide: action === "Throw" ? "I ___ the ___." : "I ___ with the ___.",
       body: (
@@ -507,7 +507,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Mixed Challenge",
       part: "D",
-      title: "Mixed Challenge!",
+      title: "Mixed Challenge! 2",
       instruction: [["🤔", "What is it?"], ["🗣️", "Say the word, or a sentence."]],
       body: (
         <div className="word-row" style={{ gap: 20 }}>
