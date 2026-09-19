@@ -276,13 +276,13 @@ export default function ILikeItLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 8 · Lesson 2", time: null, note: null },
   { stage: "Hello & Food Review", time: "~3 min", note: "Quickly revisit food from Lesson 1 using pictures. Ask \"What is it?\"" },
-  { stage: "I Like It!", time: "~4 min", note: "Introduce \"I like...\" with familiar food. Model: \"I like pizza.\" Student chooses foods and says \"I like ___.\"" },
-  { stage: "Like It!", time: "~3 min", note: "Show different foods. Student responds \"I like ___.\" Mix familiar and slightly less familiar pictures." },
-  { stage: "Meet the -op Family", time: "~4 min", note: "Introduce op, hop, mop, pop. Blend: h-o-p -> hop." },
-  { stage: "Food or Word?", time: "~4 min", note: "Mix food pictures and -op words. Student identifies each and blends the word-family words." },
+  { stage: "I Like It!", time: "~4 min", note: "Introduce \"I like...\" with familiar food. Model: \"I like pizza.\" Student chooses foods and says \"I like ___.\" Fast learner? Add I Like It! 3 (rice) (+1 min)." },
+  { stage: "Like It!", time: "~3 min", note: "Show different foods. Student responds \"I like ___.\" Mix familiar and slightly less familiar pictures. Fast learner? Add Do You Like It? 3 and 4 (+2 min)." },
+  { stage: "Meet the -op Family", time: "~4 min", note: "Introduce op, hop, mop, pop. Blend: h-o-p -> hop. Fast learner? Add Blend It! 2 (top, cop, hop). The last two hide the answer (+2 min)." },
+  { stage: "Food or Word?", time: "~4 min", note: "Mix food pictures and -op words. Student identifies each and blends the word-family words. Fast learner? Add Food or Word? 2 (+1 min)." },
   { stage: "My Food Vote", time: "~2 min", note: "Show 4 foods. Student chooses \"I like pizza!\"" },
-  { stage: "My Food Vote", time: "~2 min", note: "Conduct a simple vote: \"Pizza or rice?\" Student makes choices, using \"I like...\" repeatedly but meaningfully." },
-  { stage: "Like & Blend Challenge", time: "~3 min", note: "Alternate between \"I like ___.\" and an -op word to blend/read." },
+  { stage: "My Food Vote", time: "~2 min", note: "Conduct a simple vote: \"Pizza or rice?\" Student makes choices, using \"I like...\" repeatedly but meaningfully. Fast learner? Add My Food Vote! 4 and 5 (+2 min)." },
+  { stage: "Like & Blend Challenge", time: "~3 min", note: "Alternate between \"I like ___.\" and an -op word to blend/read. Fast learner? Add Final Challenge! 2 (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -301,13 +301,16 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Food Review
     {
       stage: "Hello & Food Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say what it is."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/egg.jpg`} label="egg" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={120} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={120} onZoom={onZoom} />
+            <Pic src={`${IMG}/egg.jpg`} label="egg" size={120} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -315,9 +318,12 @@ function buildSlides({ onZoom }) {
     // 3: I Like It! (model 1)
     {
       stage: "I Like It!",
+      part: "B",
+      title: "I Like It!",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: I like pizza."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -330,9 +336,12 @@ function buildSlides({ onZoom }) {
     // 3b: I Like It! (model 2)
     {
       stage: "I Like It!",
+      part: "B",
+      title: "I Like It! 2",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: I like apples."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/apple.jpg`} label="apple" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/apple.jpg`} label="apple" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -342,13 +351,32 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "I Like It!",
+      part: "B",
+      title: "I Like It! 3",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: I like rice."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={170} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I like rice!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 4: Like It! practice (round 1)
     {
       stage: "Like It!",
+      part: "B",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say what you like."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Do You Like It?</h2></span>
-          <Pic src={`${IMG}/banana.jpg`} label="banana" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/banana.jpg`} label="banana" size={150} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -361,9 +389,12 @@ function buildSlides({ onZoom }) {
     // 4b: Like It! practice (round 2)
     {
       stage: "Like It!",
+      part: "B",
+      title: "Do You Like It? 2",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say what you like."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/egg.jpg`} label="egg" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/egg.jpg`} label="egg" size={150} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -373,9 +404,45 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Like It!",
+      part: "B",
+      title: "Do You Like It? 3",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say what you like."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={170} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I like pizza!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Like It!",
+      part: "B",
+      title: "Do You Like It? 4",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say what you like."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={170} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I like apples!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Meet the -op Family
     {
       stage: "Meet the -op Family",
+      part: "C",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Meet "-op"!</h2></span>
@@ -389,6 +456,9 @@ function buildSlides({ onZoom }) {
     // 6: -op blending
     {
       stage: "Meet the -op Family",
+      part: "C",
+      title: "Blend It!",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       body: (
         <div className="center-col" style={{ gap: 14 }}>
           <BlendRow parts={["H", "OP"]} result="hop" onZoom={onZoom} />
@@ -397,29 +467,63 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Meet the -op Family",
+      part: "C",
+      title: "Blend It! 2",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col" style={{ gap: 14 }}>
+          <BlendRow parts={["T","OP"]} result="top" onZoom={onZoom} />
+          <BlendRow parts={["C","OP"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["H","OP"]} result="?" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 7: Food or Word?
     {
       stage: "Food or Word?",
+      part: "C",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say what you see."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Food or Word?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={70} onZoom={onZoom} />
-            <LetterTile letters="HOP" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="POP" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
+            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={100} onZoom={onZoom} />
+            <LetterTile letters="HOP" color={BLEND_COLOR} size={100} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="POP" color={BLEND_COLOR} size={100} fontSize={20} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Food or Word?",
+      part: "C",
+      title: "Food or Word? 2",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say what you see."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={100} onZoom={onZoom} />
+          <LetterTile letters="MOP" color={BLEND_COLOR} size={100} fontSize={24} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={100} onZoom={onZoom} />
+          <LetterTile letters="TOP" color={BLEND_COLOR} size={100} fontSize={24} onZoom={onZoom} />
+        </div>
       ),
     },
     // 8: HIGHLIGHT My Food Vote (round 1)
     {
       stage: "My Food Vote",
+      part: "D",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say what you like."]],
+      guide: "I like ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🗳️ My Food Vote!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={80} onZoom={onZoom} />
-            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={110} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
@@ -433,11 +537,15 @@ function buildSlides({ onZoom }) {
     // 8b: HIGHLIGHT My Food Vote (round 2)
     {
       stage: "My Food Vote",
+      part: "D",
+      title: "My Food Vote! 2",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say what you like."]],
+      guide: "I like ___.",
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/egg.jpg`} label="egg" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/egg.jpg`} label="egg" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={110} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
@@ -448,14 +556,38 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "My Food Vote",
+      part: "D",
+      title: "My Food Vote! 4",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say what you like."]],
+      guide: "I like ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Pizza or apple?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 9: HIGHLIGHT My Food Vote (round 3)
     {
       stage: "My Food Vote",
+      part: "D",
+      title: "My Food Vote! 3",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say what you like."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={110} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
@@ -466,19 +598,58 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "My Food Vote",
+      part: "D",
+      title: "My Food Vote! 5",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say what you like."]],
+      guide: "I like ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Rice or egg?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 10: Like & Blend Challenge
     {
       stage: "Like & Blend Challenge",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each one."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/egg.jpg`} label="egg" size={70} onZoom={onZoom} />
-            <LetterTile letters="MOP" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={70} onZoom={onZoom} />
-            <LetterTile letters="POP" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
+            <Pic src={`${IMG}/egg.jpg`} label="egg" size={90} onZoom={onZoom} />
+            <LetterTile letters="MOP" color={BLEND_COLOR} size={90} fontSize={20} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={90} onZoom={onZoom} />
+            <LetterTile letters="POP" color={BLEND_COLOR} size={90} fontSize={20} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Like & Blend Challenge",
+      part: "D",
+      title: "Final Challenge! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each one."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={90} onZoom={onZoom} />
+          <LetterTile letters="TOP" color={BLEND_COLOR} size={90} fontSize={22} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={90} onZoom={onZoom} />
+          <LetterTile letters="HOP" color={BLEND_COLOR} size={90} fontSize={22} onZoom={onZoom} />
+        </div>
       ),
     },
     // 11: Wrap-up

@@ -266,13 +266,13 @@ export default function IDontLikeItLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 8 · Lesson 3", time: null, note: null },
   { stage: "Food Warm-Up", time: "~3 min", note: "Show familiar foods and let the student identify them. Quickly recycle \"I like...\"" },
-  { stage: "I Don't Like It!", time: "~4 min", note: "Introduce \"I don't like...\" with exaggerated facial expressions. Example: \"I don't like eggs!\"" },
-  { stage: "Like or Don't Like?", time: "~4 min", note: "Show one food at a time. Student chooses and says either \"I like ___.\" or \"I don't like ___.\"" },
-  { stage: "Food Sorting", time: "~4 min", note: "Create two areas: LIKE and DON'T LIKE. Student places food pictures and says a sentence for each." },
-  { stage: "What Does Teacher Like?", time: "~3 min", note: "Teacher says sentences about food. Student listens and identifies whether the teacher likes or doesn't like each food." },
+  { stage: "I Don't Like It!", time: "~4 min", note: "Introduce \"I don't like...\" with exaggerated facial expressions. Example: \"I don't like eggs!\" Fast learner? Add I Don't Like It! 3 (bananas) (+1 min)." },
+  { stage: "Like or Don't Like?", time: "~4 min", note: "Show one food at a time. Student chooses and says either \"I like ___.\" or \"I don't like ___.\" Fast learner? Add Like or Don't Like? 4 and 5 (rice, egg) (+2 min)." },
+  { stage: "Food Sorting", time: "~4 min", note: "Create two areas: LIKE and DON'T LIKE. Student places food pictures and says a sentence for each. Fast learner? Add Food Sorting! 2 (new foods in the bins) (+1 min)." },
+  { stage: "What Does Teacher Like?", time: "~3 min", note: "Teacher says sentences about food. Student listens and identifies whether the teacher likes or doesn't like each food. Fast learner? Add What Does Teacher Like? 3 (+1 min)." },
   { stage: "Food Judge", time: "~2 min", note: "Show unusual/funny food combinations. Student is the judge: \"I like it!\" / \"I don't like it!\"" },
-  { stage: "Food Judge", time: "~2 min", note: "Teacher gives a ridiculous opinion, student reacts. Then student asks the teacher about foods." },
-  { stage: "My Food Choices", time: "~3 min", note: "Student chooses 2 foods they like and 2 they don't like and says the sentences independently." },
+  { stage: "Food Judge", time: "~2 min", note: "Teacher gives a ridiculous opinion, student reacts. Then student asks the teacher about foods. Fast learner? Add Yuck! 3 (+1 min)." },
+  { stage: "My Food Choices", time: "~3 min", note: "Student chooses 2 foods they like and 2 they don't like and says the sentences independently. Fast learner? Add My Food Choices! 2 with four new pictures (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -291,21 +291,30 @@ function buildSlides({ onZoom }) {
     // 2: Food Warm-Up
     {
       stage: "Food Warm-Up",
+      part: "A",
+      title: "I Like Pizza!",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say what you like."]],
       body: (
+        <>
+        <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={170} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow me">
             <div className="avatar coral">S</div>
             <div className="bubble right">I like pizza!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: I Don't Like It!
     {
       stage: "I Don't Like It!",
+      part: "B",
+      title: "I Don't Like It!",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: I don't like eggs."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/egg.jpg`} label="egg" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/egg.jpg`} label="egg" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -318,9 +327,12 @@ function buildSlides({ onZoom }) {
     // 3b: I Don't Like It! (second model)
     {
       stage: "I Don't Like It!",
+      part: "B",
+      title: "I Don't Like It! 2",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: I don't like rice."]],
       body: (
         <div className="center-col">
-          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -330,37 +342,92 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "I Don't Like It!",
+      part: "B",
+      title: "I Don't Like It! 3",
+      instruction: [["👂", "Listen."], ["🗣️", "Repeat: I don't like bananas."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={170} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I don't like bananas! 😖</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 4: Like or Don't Like? (round 1)
     {
       stage: "Like or Don't Like?",
+      part: "B",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say like or don't like."]],
+      guide: "I like ___. Or I don't like ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Like or Don't Like?</h2></span>
-          <Pic src={`${IMG}/banana.jpg`} label="banana" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/banana.jpg`} label="banana" size={160} onZoom={onZoom} />
         </div>
       ),
     },
     // 4b: Like or Don't Like? (round 2)
     {
       stage: "Like or Don't Like?",
+      part: "B",
+      title: "Like or Don't Like? 2",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say like or don't like."]],
+      guide: "I like ___. Or I don't like ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={160} onZoom={onZoom} />
         </div>
       ),
     },
     // 4c: Like or Don't Like? (round 3)
     {
       stage: "Like or Don't Like?",
+      part: "B",
+      title: "Like or Don't Like? 3",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say like or don't like."]],
+      guide: "I like ___. Or I don't like ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/apple.jpg`} label="apple" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/apple.jpg`} label="apple" size={160} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Like or Don't Like?",
+      part: "B",
+      title: "Like or Don't Like? 4",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say like or don't like."]],
+      guide: "I like ___. Or I don't like ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={160} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Like or Don't Like?",
+      part: "B",
+      title: "Like or Don't Like? 5",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say like or don't like."]],
+      guide: "I like ___. Or I don't like ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={160} onZoom={onZoom} />
         </div>
       ),
     },
     // 5: Food Sorting
     {
       stage: "Food Sorting",
+      part: "C",
+      instruction: [["👀", "Look at the bins."], ["🗣️", "Say a sentence for each food."]],
+      guide: "I like ___. I don't like ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Food Sorting!</h2></span>
@@ -371,37 +438,93 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Food Sorting",
+      part: "C",
+      title: "Food Sorting! 2",
+      instruction: [["👀", "Look at the bins."], ["🗣️", "Say a sentence for each food."]],
+      guide: "I like ___. I don't like ___.",
+      body: (
+        <div className="sort-row">
+          <SortBin label="LIKE" color={PREF_COLOR.Like} items={[{ src: "/curriculum/u8-l1/banana.jpg", label: "banana" }, { src: "/curriculum/u8-l1/rice.jpg", label: "rice" }]} onZoom={onZoom} />
+          <SortBin label="DON'T LIKE" color={PREF_COLOR["Don't Like"]} items={[{ src: "/curriculum/u8-l1/pizza.avif", label: "pizza" }, { src: "/curriculum/u8-l1/egg.jpg", label: "egg" }]} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: What Does Teacher Like? (round 1)
     {
       stage: "What Does Teacher Like?",
+      part: "C",
+      title: "What Does Teacher Like?",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what the teacher likes."]],
+      guide: "The teacher likes ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">I like rice. I don't like bananas.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 6b: What Does Teacher Like? (round 2)
     {
       stage: "What Does Teacher Like?",
+      part: "C",
+      title: "What Does Teacher Like? 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what the teacher likes."]],
+      guide: "The teacher likes ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={130} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">I like apples. I don't like eggs.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "What Does Teacher Like?",
+      part: "C",
+      title: "What Does Teacher Like? 3",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what the teacher likes."]],
+      guide: "The teacher likes ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={130} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I like pizza. I don't like rice.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 7: HIGHLIGHT Food Judge (round 1)
     {
       stage: "Food Judge",
+      part: "D",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Be the judge!"]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🍽️ Food Judge!</h2></span>
-          <Pic src="/curriculum/u8-l3/pizza-banana.jpg" label="pizza with a banana on top" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l3/pizza-banana.jpg" label="pizza with a banana on top" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -414,9 +537,12 @@ function buildSlides({ onZoom }) {
     // 7b: HIGHLIGHT Food Judge (round 1, second combo)
     {
       stage: "Food Judge",
+      part: "D",
+      title: "Food Judge! 2",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Be the judge!"]],
       body: (
         <div className="center-col">
-          <Pic src="/curriculum/u8-l3/rice-apple.jpg" label="rice with apple slices" size={130} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l3/rice-apple.jpg" label="rice with apple slices" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -429,9 +555,16 @@ function buildSlides({ onZoom }) {
     // 8: HIGHLIGHT Food Judge (round 2, switch)
     {
       stage: "Food Judge",
+      part: "D",
+      title: "Yuck!",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say Yuck. Ask a question."]],
       body: (
-        <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">I like eggs with ice cream!</div>
@@ -441,15 +574,22 @@ function buildSlides({ onZoom }) {
               <div className="bubble right">Yuck! Do you like pizza?</div>
             </div>
           </div>
-        </div>
+        </>
       ),
     },
     // 8b: HIGHLIGHT Food Judge (round 2, second combo)
     {
       stage: "Food Judge",
+      part: "D",
+      title: "Yuck! 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say Yuck. Ask a question."]],
       body: (
-        <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">I like banana pizza!</div>
@@ -459,26 +599,62 @@ function buildSlides({ onZoom }) {
               <div className="bubble right">Yuck! Do you like rice?</div>
             </div>
           </div>
-        </div>
+        </>
+      ),
+    },
+    {
+      stage: "Food Judge",
+      part: "D",
+      title: "Yuck! 3",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say Yuck. Ask a question."]],
+      body: (
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I like rice with apples!</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Yuck! Do you like eggs?</div>
+            </div>
+          </div>
       ),
     },
     // 9: My Food Choices
     {
       stage: "My Food Choices",
+      part: "D",
+      instruction: [["👆", "Pick 2 you like and 2 you don't."], ["🗣️", "Say your sentences."]],
+      guide: "I like ___. I don't like ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Food Choices!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/egg.jpg`} label="egg" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={64} onZoom={onZoom} />
+            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/egg.jpg`} label="egg" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={90} onZoom={onZoom} />
           </div>
           <div className="word-row">
             <PrefTag label="Like" onZoom={onZoom} />
             <PrefTag label="Don't Like" onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Food Choices",
+      part: "D",
+      title: "My Food Choices! 2",
+      instruction: [["👆", "Pick 2 you like and 2 you don't."], ["🗣️", "Say your sentences."]],
+      guide: "I like ___. I don't like ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={90} onZoom={onZoom} />
+        </div>
       ),
     },
     // 10: Wrap-up

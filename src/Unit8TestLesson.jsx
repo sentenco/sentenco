@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u8-l1";
 const BLEND_COLOR = "#8E6FCE";
@@ -251,15 +252,16 @@ export default function Unit8TestLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 8 Test", time: null, note: null },
-  { stage: "1. Food Vocabulary Check", time: "~3 min", note: "Show mixed food pictures. Student names each food independently." },
-  { stage: "2. My Food Choices", time: "~3 min", note: "Show several foods one at a time. Student responds using \"I like...\" or \"I don't like...\"" },
-  { stage: "3. Like or Don't Like?", time: "~4 min", note: "Student sorts a mixed set of food pictures into LIKE / DON'T LIKE and explains each choice." },
-  { stage: "4. Word Family Check", time: "~4 min", note: "Show mixed words: pin, fin, win, hop, mop, pop. Student reads/blends and identifies -in or -op." },
-  { stage: "5. Food Talk", time: "~4 min", note: "Show an unfamiliar food scene. Ask open questions, avoid giving sentence models unless necessary." },
+  { stage: "Food Vocabulary Check", time: "~3 min", note: "Show mixed food pictures. Student names each food independently. Second try? Use the What Is It? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "My Food Choices", time: "~3 min", note: "Show several foods one at a time. Student responds using \"I like...\" or \"I don't like...\" Second try? Use the Do You Like It? 3 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Like or Don't Like?", time: "~4 min", note: "Student sorts a mixed set of food pictures into LIKE / DON'T LIKE and explains each choice." },
+  { stage: "Word Family Check", time: "~4 min", note: "Show mixed words: pin, fin, win, hop, mop, pop. Student reads/blends and identifies -in or -op. Second try? Use the -in or -op? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Food Talk", time: "~4 min", note: "Show an unfamiliar food scene. Ask open questions, avoid giving sentence models unless necessary. Second try? Use the Tell Me About the Food! Again (a new picture) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "My Little Restaurant", time: "~3 min", note: "Student runs a tiny restaurant. Teacher orders food, asks about choices, student responds." },
   { stage: "My Little Restaurant", time: "~2 min", note: "Reverse roles: student asks the teacher about food." },
-  { stage: "6. Final Challenge", time: "~2 min", note: "Show a completely new food picture/menu. Student independently identifies foods and expresses likes/dislikes." },
+  { stage: "Final Challenge", time: "~2 min", note: "Show a completely new food picture/menu. Student independently identifies foods and expresses likes/dislikes. Second try? Use the Final Challenge Again! (a new picture) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "My Unit 8 Score!", time: null, note: "Scoring guide: Food Vocabulary /5, Likes & Dislikes /4, Word Families /6, Communication /5. Total /20." },
+  { stage: "Wrap-Up", time: null, note: null },
 ];
 
 function buildSlides({ onZoom }) {
@@ -276,50 +278,85 @@ function buildSlides({ onZoom }) {
     },
     // 2: Food Vocabulary Check
     {
-      stage: "1. Food Vocabulary Check",
+      stage: "Food Vocabulary Check",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the food."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={68} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={68} onZoom={onZoom} />
-            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={68} onZoom={onZoom} />
-            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={68} onZoom={onZoom} />
-            <Pic src={`${IMG}/egg.jpg`} label="egg" size={68} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/egg.jpg`} label="egg" size={100} onZoom={onZoom} />
           </div>
         </>
       ),
     },
+    {
+      stage: "Food Vocabulary Check",
+      part: "A",
+      title: "What Is It? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the food."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={100} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 3: My Food Choices (round 1)
     {
-      stage: "2. My Food Choices",
+      stage: "My Food Choices",
+      part: "B",
+      title: "Do You Like It?",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say if you like it."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={100} onZoom={onZoom} />
-          <p className="slide-p">Do you like it?</p>
+          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={170} onZoom={onZoom} />
         </div>
       ),
     },
     // 3b: My Food Choices (round 2)
     {
-      stage: "2. My Food Choices",
+      stage: "My Food Choices",
+      part: "B",
+      title: "Do You Like It? 2",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say if you like it."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/egg.jpg`} label="egg" size={100} onZoom={onZoom} />
-          <p className="slide-p">Do you like it?</p>
+          <Pic src={`${IMG}/egg.jpg`} label="egg" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Food Choices",
+      part: "B",
+      title: "Do You Like It? 3",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Say if you like it."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={170} onZoom={onZoom} />
         </div>
       ),
     },
     // 4: Like or Don't Like?
     {
-      stage: "3. Like or Don't Like?",
+      stage: "Like or Don't Like?",
+      part: "B",
+      title: "Sort the Foods!",
+      instruction: [["👆", "Sort the foods."], ["🗣️", "Say what you like."]],
       body: (
         <>
           <div className="word-row">
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/egg.jpg`} label="egg" size={64} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/egg.jpg`} label="egg" size={90} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
@@ -332,38 +369,75 @@ function buildSlides({ onZoom }) {
     },
     // 5: Word Family Check
     {
-      stage: "4. Word Family Check",
+      stage: "Word Family Check",
+      part: "C",
+      instruction: [["🗣️", "Say each word."], ["🤔", "Is it -in or -op?"]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-in or -op?</h2></span>
           <div className="word-row">
-            <LetterTile letters="PIN" color={BLEND_COLOR} size={62} fontSize={17} onZoom={onZoom} />
-            <LetterTile letters="HOP" color={OP_COLOR} size={62} fontSize={17} onZoom={onZoom} />
-            <LetterTile letters="FIN" color={BLEND_COLOR} size={62} fontSize={17} onZoom={onZoom} />
-            <LetterTile letters="MOP" color={OP_COLOR} size={62} fontSize={17} onZoom={onZoom} />
-            <LetterTile letters="WIN" color={BLEND_COLOR} size={62} fontSize={17} onZoom={onZoom} />
-            <LetterTile letters="POP" color={OP_COLOR} size={62} fontSize={17} onZoom={onZoom} />
+            <LetterTile letters="PIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+            <LetterTile letters="HOP" color={OP_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+            <LetterTile letters="FIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+            <LetterTile letters="MOP" color={OP_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+            <LetterTile letters="WIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+            <LetterTile letters="POP" color={OP_COLOR} size={80} fontSize={17} onZoom={onZoom} />
           </div>
         </>
       ),
     },
+    {
+      stage: "Word Family Check",
+      part: "C",
+      title: "-in or -op? Again!",
+      instruction: [["🗣️", "Say each word."], ["🤔", "Is it -in or -op?"]],
+      body: (
+        <div className="word-row">
+          <LetterTile letters="WIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="POP" color={OP_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="PIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="MOP" color={OP_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="FIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="HOP" color={OP_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: Food Talk
     {
-      stage: "5. Food Talk",
+      stage: "Food Talk",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About the Food!</h2></span>
-          <Pic src="/curriculum/u8-scenes/breakfast.jpg" label="new food scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-scenes/breakfast.jpg" label="new food scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Food Talk",
+      part: "C",
+      title: "Tell Me About the Food! Again",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-scenes/family-table.jpg" label="family table" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT My Little Restaurant (round 1)
     {
       stage: "My Little Restaurant",
+      part: "D",
+      instruction: [["👂", "Listen to the customer."], ["🗣️", "Answer the customer."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🍴 My Little Restaurant!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">I would like pizza, please.</div>
@@ -379,9 +453,16 @@ function buildSlides({ onZoom }) {
     // 8: HIGHLIGHT My Little Restaurant (round 2, switch)
     {
       stage: "My Little Restaurant",
+      part: "D",
+      title: "Your Turn!",
+      instruction: [["👀", "Look at the foods."], ["🗣️", "Ask the teacher."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
               <div className="bubble right">Do you like rice?</div>
@@ -396,20 +477,34 @@ function buildSlides({ onZoom }) {
     },
     // 9: Final Challenge
     {
-      stage: "6. Final Challenge",
+      stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
-          <Pic src="/curriculum/u8-scenes/lunch-plate.jpg" label="new food picture" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-scenes/lunch-plate.jpg" label="new food picture" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Final Challenge Again!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-scenes/breakfast.jpg" label="breakfast" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: My Unit 8 Score!
     {
       stage: "My Unit 8 Score!",
+      part: "D",
+      instruction: [["📝", "Record the scores."], ["👏", "Praise the student."]],
       body: (
         <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
           <h2 className="slide-h sub">My Unit 8 Score!</h2>
           <div className="score-table">
             <div className="score-row"><span>Food Vocabulary</span><span>/ 5</span></div>
@@ -418,8 +513,15 @@ function buildSlides({ onZoom }) {
             <div className="score-row"><span>Communication</span><span>/ 5</span></div>
             <div className="score-row total"><span>Total</span><span>/ 20</span></div>
           </div>
-          <p className="slide-p">Great work finishing Unit 8! See you in the next unit!</p>
         </div>
+      ),
+    },
+    // Wrap-up
+    {
+      stage: "Wrap-Up",
+      time: null,
+      body: (
+        <WrapUp see="On to Unit 9!">Unit 8 complete! You know your food words, what you like and don't like, and -in and -op words.</WrapUp>
       ),
     },
   ];
@@ -531,8 +633,8 @@ export const styles = `
 .bubble.left { border-radius: 18px 18px 18px 4px; }
 .bubble.right { border-radius: 18px 18px 4px 18px; }
 
-.score-table { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 16px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
-.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); padding: 5px 0; }
+.score-table { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 10px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
+.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); padding: 2px 0; }
 .score-row.total { border-top: 2px dashed var(--coral-light); margin-top: 4px; padding-top: 10px; color: var(--coral-deep); font-size: 17px; }
 
 .zoom-overlay { position: fixed; inset: 0; background: rgba(27,42,74,0.72); display: flex; align-items: center; justify-content: center; z-index: 999; }
@@ -542,4 +644,5 @@ export const styles = `
 .zoom-pic img { width: 100%; height: 100%; object-fit: contain; }
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
+${wrapUpStyles}
 `;

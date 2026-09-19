@@ -243,12 +243,12 @@ export const LESSON_GUIDE = [
   { stage: "Unit 8 · Lesson 5", time: null, note: null },
   { stage: "Hello & Free Food Talk", time: "~3 min", note: "Show a few unfamiliar/mixed food pictures. Ask open questions: \"What do you see?\" \"What food do you know?\"" },
   { stage: "My Food Basket", time: "~4 min", note: "Give the student a virtual basket with several food pictures. Ask \"What do you have?\" Let the student identify and talk freely." },
-  { stage: "Food Choices", time: "~4 min", note: "Show different foods without the sentence frame. Ask \"What do you think?\" or \"How about this?\" Observe if the student naturally expresses likes/dislikes." },
-  { stage: "Word Family Explorer", time: "~4 min", note: "Give a mixed set of simple words. Ask \"Can you find some words that sound the same?\" Let the student discover the -in/-op groups." },
-  { stage: "My Food Menu", time: "~4 min", note: "Student creates a simple menu using foods they choose, and talks about their choices." },
+  { stage: "Food Choices", time: "~4 min", note: "Show different foods without the sentence frame. Ask \"What do you think?\" or \"How about this?\" Observe if the student naturally expresses likes/dislikes. Fast learner? Add Food Choices 3 and 4 (+2 min)." },
+  { stage: "Word Family Explorer", time: "~4 min", note: "Give a mixed set of simple words. Ask \"Can you find some words that sound the same?\" Let the student discover the -in/-op groups. Fast learner? Add Word Family Explorer 2 (+1 min)." },
+  { stage: "My Food Menu", time: "~4 min", note: "Student creates a simple menu using foods they choose, and talks about their choices. Fast learner? Add My Food Menu! 2 (+1 min)." },
   { stage: "You're the Chef!", time: "~2 min", note: "Student becomes the chef. Teacher gives food requests, student decides what to serve and explains." },
-  { stage: "You're the Chef!", time: "~2 min", note: "Teacher occasionally makes a silly choice so the student can react/correct." },
-  { stage: "Show What You Know!", time: "~2 min", note: "Give a completely new food scene. Say only: \"Tell me about the food.\" Let the student lead with minimal support." },
+  { stage: "You're the Chef!", time: "~2 min", note: "Teacher occasionally makes a silly choice so the student can react/correct. Fast learner? Add You're the Chef! 3 and Silly Order! 2 (+2 min)." },
+  { stage: "Show What You Know!", time: "~2 min", note: "Give a completely new food scene. Say only: \"Tell me about the food.\" Let the student lead with minimal support. Fast learner? Add Tell Me About the Food! 2 and 3 (two more pictures) (+3 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -267,25 +267,39 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Free Food Talk
     {
       stage: "Hello & Free Food Talk",
+      part: "A",
+      title: "Hello!",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say the foods you know."]],
+      guide: "I know ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What food do you know?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: My Food Basket
     {
       stage: "My Food Basket",
+      part: "B",
+      instruction: [["👀", "Look at the basket."], ["🗣️", "Tell me what you have."]],
+      guide: "I have ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What's in Your Basket?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={80} onZoom={onZoom} />
-            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={120} onZoom={onZoom} />
+            <Pic src={`${IMG}/pizza.avif`} label="pizza" size={120} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={120} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -293,9 +307,13 @@ function buildSlides({ onZoom }) {
     // 4: Food Choices (round 1)
     {
       stage: "Food Choices",
+      part: "B",
+      title: "How About This?",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Tell me what you think."]],
+      guide: "I like ___. Or I don't like ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/egg.jpg`} label="egg" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/egg.jpg`} label="egg" size={124} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -308,9 +326,13 @@ function buildSlides({ onZoom }) {
     // 4b: Food Choices (round 2)
     {
       stage: "Food Choices",
+      part: "B",
+      title: "What About This One?",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Tell me what you think."]],
+      guide: "I like ___. Or I don't like ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/pizza.avif`} label="pizza" size={124} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -320,9 +342,49 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Food Choices",
+      part: "B",
+      title: "Food Choices 3",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Tell me what you think."]],
+      guide: "I like ___. Or I don't like ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={122} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What do you think?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Food Choices",
+      part: "B",
+      title: "Food Choices 4",
+      instruction: [["👀", "Look at the food."], ["🗣️", "Tell me what you think."]],
+      guide: "I like ___. Or I don't like ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={122} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">And this one?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Word Family Explorer
     {
       stage: "Word Family Explorer",
+      part: "C",
+      title: "Word Family Explorer!",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say the words that end the same."]],
+      guide: "___ and ___ end the same.",
       body: (
         <div className="center-col">
           <div className="word-row">
@@ -340,27 +402,76 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Word Family Explorer",
+      part: "C",
+      title: "Word Family Explorer 2!",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say the words that end the same."]],
+      guide: "___ and ___ end the same.",
+      body: (
+        <>
+        <div className="word-row">
+          <span className="fam-pill">fin</span>
+          <span className="fam-pill">win</span>
+          <span className="fam-pill">pop</span>
+          <span className="fam-pill">cop</span>
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Can you find words that sound the same?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: My Food Menu
     {
       stage: "My Food Menu",
+      part: "C",
+      instruction: [["👆", "Pick foods for your menu."], ["🗣️", "Tell me about them."]],
+      guide: "I like ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Food Menu!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/banana.jpg`} label="banana" size={70} onZoom={onZoom} />
-            <Pic src={`${IMG}/apple.jpg`} label="apple" size={70} onZoom={onZoom} />
-            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={70} onZoom={onZoom} />
+            <Pic src={`${IMG}/banana.jpg`} label="banana" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/apple.jpg`} label="apple" size={110} onZoom={onZoom} />
+            <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={110} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Food Menu",
+      part: "C",
+      title: "My Food Menu! 2",
+      instruction: [["👆", "Pick foods for your menu."], ["🗣️", "Tell me about them."]],
+      guide: "I like ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/banana.jpg" label="banana" size={110} onZoom={onZoom} />
+        </div>
       ),
     },
     // 7: HIGHLIGHT You're the Chef! (round 1)
     {
       stage: "You're the Chef!",
+      part: "D",
+      instruction: [["👂", "Listen to the customer."], ["🗣️", "Say what you make."]],
+      guide: "I make ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">👨‍🍳 You're the Chef!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/apple.jpg" label="apple" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/pizza.avif" label="pizza" size={90} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">I'm hungry! What can you make me?</div>
@@ -369,12 +480,37 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "You're the Chef!",
+      part: "D",
+      title: "You're the Chef! 3",
+      instruction: [["👂", "Listen to the customer."], ["🗣️", "Say what you make."]],
+      guide: "I make ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={120} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I want an egg and rice, please!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: HIGHLIGHT You're the Chef! (round 2, silly choice)
     {
       stage: "You're the Chef!",
+      part: "D",
+      title: "Silly Order!",
+      instruction: [["👂", "Listen to the customer."], ["🗣️", "Say what you think."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={150} onZoom={onZoom} />
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">I want ice cream with rice! 🤪</div>
@@ -383,13 +519,59 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "You're the Chef!",
+      part: "D",
+      title: "Silly Order! 2",
+      instruction: [["👂", "Listen to the customer."], ["🗣️", "Say what you think."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u8-l3/pizza-banana.jpg" label="pizza-banana" size={150} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I want pizza with bananas! 🤪</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 9: Show What You Know!
     {
       stage: "Show What You Know!",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
+      guide: "I see ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About the Food!</h2></span>
-          <Pic src="/curriculum/u8-scenes/family-table.jpg" label="new food scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u8-scenes/family-table.jpg" label="new food scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Show What You Know!",
+      part: "D",
+      title: "Tell Me About the Food! 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
+      guide: "I see ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-scenes/breakfast.jpg" label="breakfast" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Show What You Know!",
+      part: "D",
+      title: "Tell Me About the Food! 3",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about the food."]],
+      guide: "I see ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u8-scenes/lunch-plate.jpg" label="lunch plate" size={190} onZoom={onZoom} />
         </div>
       ),
     },
