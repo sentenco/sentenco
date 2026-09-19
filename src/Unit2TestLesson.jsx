@@ -239,11 +239,11 @@ export default function Unit2TestLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 2 · Test", time: null, note: null },
   { stage: "Test Welcome", time: "~2 min", note: "Tell the student: \"Today is our Unit 2 Challenge!\" Explain there will be several small challenges. No review or teaching before the test." },
-  { stage: "Part 1: Number Check", time: "~4 min", note: "Show numbers 1-10 in random order. Student names them. Then show several groups of objects and ask \"How many?\"" },
-  { stage: "Part 2: Letter Check", time: "~4 min", note: "Show J-R in random order. Student names each letter. Include uppercase/lowercase matching and a few familiar picture-to-letter items." },
-  { stage: "Part 3: Count & Answer", time: "~4 min", note: "Show groups of 1-10 objects. Student counts independently and answers \"How many?\" Use different objects and quantities." },
-  { stage: "Part 4: Ask Me!", time: "~4 min", note: "Show a picture with several groups of objects. Student must ask the teacher \"How many?\" Check whether they can produce the question independently." },
-  { stage: "Part 5: Mixed Challenge", time: "~4 min", note: "Give a series of mixed tasks: identify a letter, identify a number, count objects, and ask/answer \"How many?\" Keep instructions short, don't reveal answers." },
+  { stage: "Number Check", time: "~4 min", note: "Show numbers 1-10 in random order. Student names them. Then show several groups of objects and ask \"How many?\" Second try? Use the Numbers Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Letter Check", time: "~4 min", note: "Show J-R in random order. Student names each letter. Include uppercase/lowercase matching and a few familiar picture-to-letter items. Second try? Use the First Letters! slide (pictures, say the first letter) only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Count & Answer", time: "~4 min", note: "Show groups of 1-10 objects. Student counts independently and answers \"How many?\" Use different objects and quantities. Second try? Use the Count Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Ask Me!", time: "~4 min", note: "Show a picture with several groups of objects. Student must ask the teacher \"How many?\" Check whether they can produce the question independently. Second try? Use the Ask Me Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Mixed Challenge", time: "~4 min", note: "Give a series of mixed tasks: identify a letter, identify a number, count objects, and ask/answer \"How many?\" Keep instructions short, don't reveal answers. Slides 1 to 3 give three mixed tasks (a number and a letter, a count-then-ask group, then a letter and a number). Do not reveal answers." },
   { stage: "My Unit 2 Score!", time: "~3 min", note: "Complete a final 3-item challenge, praise the student, and record the results. End positively: \"You did it! Unit 2 is finished!\"" },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -269,6 +269,7 @@ function buildSlides({ onZoom }) {
     // 2: Test Welcome
     {
       stage: "Test Welcome",
+      instruction: [["👂", "Listen."], ["🗣️", "Say: I'm ready!"]],
       time: "~2 min",
       body: (
         <div className="center-col">
@@ -280,7 +281,9 @@ function buildSlides({ onZoom }) {
     },
     // 3: Part 1: Number Check
     {
-      stage: "Part 1: Number Check",
+      stage: "Number Check",
+      part: "A",
+      instruction: [["👀", "Look at the numbers."], ["🗣️", "Say them. Count the apples."]],
       time: "~4 min",
       body: (
         <>
@@ -296,9 +299,34 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Number Check",
+      part: "A",
+      title: "Numbers Again!",
+      instruction: [["👀", "Look at the numbers."], ["🗣️", "Say them. Count the donuts."]],
+      body: (
+        <>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="3" color={NUMBER_COLOR[3]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="1" color={NUMBER_COLOR[1]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="2" color={NUMBER_COLOR[2]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="4" color={NUMBER_COLOR[4]} size={40} fontSize={16} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={40} fontSize={16} onZoom={onZoom} />
+        </div>
+        <CountGroup n={8} icon="🍩" size={40} onZoom={onZoom} />
+        </>
+      ),
+    },
     // 4: Part 2: Letter Check
     {
-      stage: "Part 2: Letter Check",
+      stage: "Letter Check",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
       time: "~4 min",
       body: (
         <>
@@ -320,44 +348,105 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Letter Check",
+      part: "B",
+      title: "First Letters!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the first letter."]],
+      body: (
+        <div className="row">
+          <Pic src="/curriculum/u2-l2/moon.jpeg" label="moon" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l1/kite.jpg" label="kite" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l3/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 5: Part 3: Count & Answer
     {
-      stage: "Part 3: Count & Answer",
+      stage: "Count & Answer",
+      part: "C",
+      instruction: [["👀", "Look at the stars."], ["🗣️", "Count and answer."]],
       time: "~4 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count & Answer!</h2></span>
           <CountGroup n={9} icon="🌟" size={38} onZoom={onZoom} />
-          <p className="slide-p">How many?</p>
         </>
+      ),
+    },
+    {
+      stage: "Count & Answer",
+      part: "C",
+      title: "Count Again!",
+      instruction: [["👀", "Look at the fish."], ["🗣️", "Count and answer."]],
+      body: (
+        <CountGroup n={6} icon="🐟" size={44} onZoom={onZoom} />
       ),
     },
     // 6: Part 4: Ask Me!
     {
-      stage: "Part 4: Ask Me!",
+      stage: "Ask Me!",
+      part: "C",
+      instruction: [["👀", "Look at the balloons."], ["🗣️", "Ask the teacher."]],
       time: "~4 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Ask Me!</h2></span>
           <CountGroup n={7} icon="🎈" size={40} onZoom={onZoom} />
-          <p className="slide-p">Ask the teacher: "How many?"</p>
         </>
+      ),
+    },
+    {
+      stage: "Ask Me!",
+      part: "C",
+      title: "Ask Me Again!",
+      instruction: [["👀", "Look at the cookies."], ["🗣️", "Ask the teacher."]],
+      body: (
+        <CountGroup n={9} icon="🍪" size={38} onZoom={onZoom} />
       ),
     },
     // 7: Part 5: Mixed Challenge
     {
-      stage: "Part 5: Mixed Challenge",
+      stage: "Mixed Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Say the number and the letter."]],
       time: "~4 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Mixed Challenge!</h2></span>
-          <p className="slide-p">Identify a letter. Identify a number. Count a group. Ask and answer "How many?"</p>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="Oo" color={LETTER_COLOR.O} size={62} fontSize={24} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Mixed Challenge",
+      part: "D",
+      title: "Mixed Challenge 2!",
+      instruction: [["👀", "Look at the stars."], ["🗣️", "Count. Then ask the teacher."]],
+      body: (
+        <CountGroup n={10} icon="⭐" size={36} onZoom={onZoom} />
+      ),
+    },
+    {
+      stage: "Mixed Challenge",
+      part: "D",
+      title: "Mixed Challenge 3!",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Say the letter and the number."]],
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Kk" color={LETTER_COLOR.K} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={62} fontSize={24} onZoom={onZoom} />
         </div>
       ),
     },
     // 8: My Unit 2 Score!
     {
       stage: "My Unit 2 Score!",
+      part: "D",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say each one."]],
       time: "~3 min",
       body: (
         <div className="center-col">

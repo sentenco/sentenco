@@ -240,11 +240,11 @@ export const LESSON_GUIDE = [
   { stage: "Unit 2 · Lesson 5", time: null, note: null },
   { stage: "Hello & Free Talk", time: "~3 min", note: "Greet the student naturally. Ask simple questions and let the student respond without showing the target language first." },
   { stage: "What Do You See?", time: "~4 min", note: "Show a picture with groups of objects. Ask \"What do you see?\" and \"How many?\" Let the student decide what to count." },
-  { stage: "Letter Detective", time: "~4 min", note: "Ask \"What starts with J?\", \"Can you find M?\", or \"What letter?\" Give minimal support and let the student identify J-R." },
-  { stage: "Your Turn to Ask!", time: "~4 min", note: "Tell the student \"Ask me!\" The student creates questions using \"How many?\" and the teacher answers." },
+  { stage: "Letter Detective", time: "~4 min", note: "Ask \"What starts with J?\", \"Can you find M?\", or \"What letter?\" Give minimal support and let the student identify J-R. The three pictures are moon, kite and pizza. Fast learner? Do Letter Detective 2 (N) and 3 (P) (+3 min)." },
+  { stage: "Your Turn to Ask!", time: "~4 min", note: "Tell the student \"Ask me!\" The student creates questions using \"How many?\" and the teacher answers. Fast learner? Add Ask Once More! and Ask a Last Time! (+3 min)." },
   { stage: "You're the Teacher!", time: "~3 min", note: "Give the student number, letter, and picture cards. They choose what to show and ask: \"What letter?\" / \"How many?\"" },
-  { stage: "You're the Teacher!", time: "~3 min", note: "Make a few funny intentional mistakes for the student to correct." },
-  { stage: "Free Challenge", time: "~4 min", note: "Student chooses between a number, letter, or picture challenge. Let them demonstrate with as little prompting as possible. Finish with encouragement and goodbye." },
+  { stage: "You're the Teacher!", time: "~3 min", note: "Make a few funny intentional mistakes for the student to correct. Fast learner? Add You're the Teacher! 3 and Was That Right? 2 (+3 min)." },
+  { stage: "Free Challenge", time: "~4 min", note: "Student chooses between a number, letter, or picture challenge. Let them demonstrate with as little prompting as possible. Finish with encouragement and goodbye. Fast learner? Use Challenge Again! to pick a second challenge (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -264,6 +264,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Free Talk
     {
       stage: "Hello & Free Talk",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Answer the teacher."]],
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -280,6 +282,9 @@ function buildSlides({ onZoom }) {
     // 3: What Do You See?
     {
       stage: "What Do You See?",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see ___ donuts.",
       time: "~4 min",
       body: (
         <>
@@ -297,6 +302,9 @@ function buildSlides({ onZoom }) {
     // 3b: What Do You See? continued (fresh set)
     {
       stage: "What Do You See?",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say what you see."]],
+      guide: "I see ___ stars.",
       time: "~2 min",
       body: (
         <>
@@ -314,27 +322,54 @@ function buildSlides({ onZoom }) {
     // 4: Letter Detective
     {
       stage: "Letter Detective",
+      part: "B",
+      instruction: [["🔍", "Find the picture that starts with M."], ["🗣️", "Say the word."]],
+      guide: "___ starts with M.",
       time: "~4 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Letter Detective!</h2></span>
-          <div className="row">
-            <Pic src={null} label="?" size={90} onZoom={onZoom} />
-            <Pic src={null} label="?" size={90} onZoom={onZoom} />
-            <Pic src={null} label="?" size={90} onZoom={onZoom} />
-          </div>
-          <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
-            <div className="brow">
-              <div className="avatar navy">T</div>
-              <div className="bubble left">Can you find the one that starts with M?</div>
-            </div>
-          </div>
+        <div className="row">
+          <Pic src="/curriculum/u2-l2/moon.jpeg" label="moon" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l1/kite.jpg" label="kite" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l3/pizza.avif" label="pizza" size={110} onZoom={onZoom} />
+        </div>
         </>
+      ),
+    },
+    {
+      stage: "Letter Detective",
+      part: "B",
+      title: "Letter Detective 2!",
+      instruction: [["🔍", "Find the picture that starts with N."], ["🗣️", "Say the word."]],
+      guide: "___ starts with N.",
+      body: (
+        <div className="row">
+          <Pic src="/curriculum/u2-l1/lamp.avif" label="lamp" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l2/nest.avif" label="nest" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l3/rabbit.avif" label="rabbit" size={110} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Letter Detective",
+      part: "B",
+      title: "Letter Detective 3!",
+      instruction: [["🔍", "Find the picture that starts with P."], ["🗣️", "Say the word."]],
+      guide: "___ starts with P.",
+      body: (
+        <div className="row">
+          <Pic src="/curriculum/u2-l3/panda.jpg" label="panda" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l2/owl.jpeg" label="owl" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u2-l1/king.jpg" label="king" size={110} onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Your Turn to Ask!
     {
       stage: "Your Turn to Ask!",
+      part: "C",
+      instruction: [["👀", "Look at the balloons."], ["🗣️", "Ask the teacher."]],
       time: "~4 min",
       body: (
         <>
@@ -352,6 +387,8 @@ function buildSlides({ onZoom }) {
     // 5b: Your Turn to Ask! continued
     {
       stage: "Your Turn to Ask!",
+      part: "C",
+      instruction: [["👀", "Look at the apples."], ["🗣️", "Ask the teacher."]],
       time: "~2 min",
       body: (
         <>
@@ -366,9 +403,46 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Your Turn to Ask!",
+      part: "C",
+      title: "Ask Once More!",
+      instruction: [["👀", "Look at the cookies."], ["🗣️", "Ask the teacher."]],
+      body: (
+        <>
+        <CountGroup n={10} icon="🍪" size={38} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">How many?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Your Turn to Ask!",
+      part: "C",
+      title: "Ask a Last Time!",
+      instruction: [["👀", "Look at the presents."], ["🗣️", "Ask the teacher."]],
+      body: (
+        <>
+        <CountGroup n={7} icon="🎁" size={44} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">How many?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: HIGHLIGHT You're the Teacher! (ask)
     {
       stage: "You're the Teacher!",
+      part: "C",
+      instruction: [["👆", "Pick a card."], ["🗣️", "Ask the teacher."]],
+      guide: "What letter is this?",
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -378,13 +452,15 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="7" color={NUMBER_COLOR[7]} size={54} fontSize={22} onZoom={onZoom} />
             <LetterTile letters="Qq" color={LETTER_COLOR.Q} size={54} fontSize={20} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Pick a card and ask your teacher a question!</p>
         </div>
       ),
     },
     // 7: HIGHLIGHT You're the Teacher! (funny mistake)
     {
       stage: "You're the Teacher!",
+      part: "C",
+      instruction: [["🤔", "Think!"], ["🗣️", "Correct the teacher."]],
+      guide: "No! It's ___.",
       time: "~3 min",
       body: (
         <>
@@ -405,6 +481,9 @@ function buildSlides({ onZoom }) {
     // 7b: HIGHLIGHT You're the Teacher! Round 2
     {
       stage: "You're the Teacher!",
+      part: "C",
+      instruction: [["👆", "Pick a card."], ["🗣️", "Ask the teacher."]],
+      guide: "What letter is this?",
       time: "~2 min",
       body: (
         <div className="center-col">
@@ -413,18 +492,71 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Oo" color={LETTER_COLOR.O} size={54} fontSize={20} onZoom={onZoom} />
             <LetterTile letters="3" color={NUMBER_COLOR[3]} size={54} fontSize={22} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Pick another card and ask again!</p>
         </div>
+      ),
+    },
+    {
+      stage: "You're the Teacher!",
+      part: "C",
+      title: "You're the Teacher! 3",
+      instruction: [["👆", "Pick a card."], ["🗣️", "Ask the teacher."]],
+      guide: "What is this?",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={54} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="Rr" color={LETTER_COLOR.R} size={54} fontSize={20} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "You're the Teacher!",
+      part: "C",
+      title: "Was That Right? 2",
+      instruction: [["👀", "Look at the stars."], ["🗣️", "Correct the teacher."]],
+      guide: "No! It's ___.",
+      body: (
+        <>
+        <CountGroup n={6} icon="⭐" size={44} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">How many?</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Um... nine?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 8: Free Challenge
     {
       stage: "Free Challenge",
+      part: "D",
+      instruction: [["👆", "Pick a challenge."], ["🗣️", "Show what you know!"]],
       time: "~4 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Free Challenge!</h2></span>
-          <p className="slide-p">Pick a number, a letter, or a picture. Show me what you know!</p>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="123" color={NUMBER_COLOR[3]} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="Aa" color={LETTER_COLOR.K} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="🍎" color={'#F2A900'} size={80} fontSize={30} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Free Challenge",
+      part: "D",
+      title: "Challenge Again!",
+      instruction: [["👆", "Pick a different challenge."], ["🗣️", "Show what you know!"]],
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="Rr" color={LETTER_COLOR.R} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="🎈" color={'#F2A900'} size={80} fontSize={30} onZoom={onZoom} />
         </div>
       ),
     },
