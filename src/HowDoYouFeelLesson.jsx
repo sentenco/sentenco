@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u4-l3";
 
 const EMOTION_COLOR = { Happy: "#F2A900", Sad: "#4A90C2", Angry: "#E5484D", Tired: "#9B7FD4" };
-const EMOTION_EMOJI = { Happy: "😊", Sad: "😢", Angry: "😠", Tired: "😴" };
 const SPELL_COLOR = { P: "#C77D2E", E: "#8E6FCE", N: "#2BAFAF" };
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
@@ -68,12 +68,12 @@ function LetterTile({ letters, color, size = 74, fontSize = 28, onZoom }) {
 
 function EmotionTile({ name, size = 100, onZoom }) {
   const color = EMOTION_COLOR[name];
-  const emoji = EMOTION_EMOJI[name];
-  const big = <div className="emo-tile zoom-emo-tile" style={{ background: color }}><span style={{ fontSize: 120 }}>{emoji}</span></div>;
+  const face = "face-" + name.toLowerCase();
+  const big = <div className="emo-tile zoom-emo-tile" style={{ background: "#fff", border: `10px solid ${color}` }}><ObjImg name={face} size={170} /></div>;
   return (
     <div className="wc">
-      <div className="emo-tile" style={{ background: color, width: size, height: size, fontSize: Math.round(size * 0.5) }} onClick={() => onZoom(big)}>
-        {emoji}
+      <div className="emo-tile" style={{ background: "#fff", border: `${Math.max(4, Math.round(size / 16))}px solid ${color}`, width: size, height: size }} onClick={() => onZoom(big)}>
+        <ObjImg name={face} size={Math.round(size * 0.72)} />
       </div>
       <div className="word">{name}</div>
     </div>
@@ -106,7 +106,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -530,7 +529,7 @@ function buildSlides({ onZoom }) {
       guide: "He is ___.",
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🔍 Feelings Detective!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Feelings Detective!</h2></span>
           <Pic src={`${IMG}/angry-broken-toy.png`} label="child holding a broken toy" size={170} onZoom={onZoom} />
         </div>
       ),
@@ -765,4 +764,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

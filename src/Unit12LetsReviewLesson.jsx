@@ -99,7 +99,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -311,7 +310,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
-            <div className="bubble left">(acts out sleeping) 😴</div>
+            <div className="bubble left">(acts out sleeping)</div>
           </div>
         </div>
         </>
@@ -453,7 +452,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the order."], ["🗣️", "Fix the mistake."]],
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🔀 Mixed-Up Day!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Mixed-Up Day!</h2></span>
           <div className="word-row">
             <WordCard src="/curriculum/u12-routines/sleep.jpg" word="Sleep" label="sleep" onZoom={onZoom} />
             <WordCard src="/curriculum/u12-routines/wake-up.jpg" word="Wake Up" label="wake up" onZoom={onZoom} />

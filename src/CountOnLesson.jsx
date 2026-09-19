@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u2-l2";
@@ -72,12 +73,12 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
   const items = Array.from({ length: n });
   const big = (
     <div className="count-zoom">
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size * 1.8 }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.9)} /></span>)}
     </div>
   );
   return (
     <div className="count-group" onClick={() => onZoom(big)}>
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.05)} /></span>)}
     </div>
   );
 }
@@ -108,7 +109,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -437,7 +437,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count & Say!</h2></span>
-          <CountGroup n={7} icon="🍪" size={44} onZoom={onZoom} />
+          <CountGroup n={7} icon="cookie" size={44} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -457,7 +457,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count Again!</h2></span>
-          <CountGroup n={9} icon="⚽" size={40} onZoom={onZoom} />
+          <CountGroup n={9} icon="ball" size={40} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -474,7 +474,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the stars."], ["🗣️", "Count and say the number."]],
       guide: "There are ___ stars.",
       body: (
-        <CountGroup n={8} icon="⭐" size={44} onZoom={onZoom} />
+        <CountGroup n={8} icon="star" size={44} onZoom={onZoom} />
       ),
     },
     {
@@ -484,7 +484,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the balloons."], ["🗣️", "Count and say the number."]],
       guide: "There are ___ balloons.",
       body: (
-        <CountGroup n={10} icon="🎈" size={38} onZoom={onZoom} />
+        <CountGroup n={10} icon="balloon" size={38} onZoom={onZoom} />
       ),
     },
     // 10: Number & Letter Check
@@ -533,9 +533,9 @@ function buildSlides({ onZoom }) {
       time: "~2 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">👹 Feed the Monster!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Feed the Monster!</h2></span>
           <LetterTile letters="8" color={NUMBER_COLOR[8]} size={54} fontSize={26} onZoom={onZoom} />
-          <CountGroup n={8} icon="🍩" size={34} onZoom={onZoom} />
+          <CountGroup n={8} icon="donut" size={34} onZoom={onZoom} />
         </>
       ),
     },
@@ -561,9 +561,9 @@ function buildSlides({ onZoom }) {
       time: "~1 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">👹 Still Hungry!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Still Hungry!</h2></span>
           <LetterTile letters="6" color={NUMBER_COLOR[6]} size={54} fontSize={26} onZoom={onZoom} />
-          <CountGroup n={6} icon="🍪" size={34} onZoom={onZoom} />
+          <CountGroup n={6} icon="cookie" size={34} onZoom={onZoom} />
         </>
       ),
     },
@@ -589,7 +589,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
         <LetterTile letters="10" color={NUMBER_COLOR[10]} size={54} fontSize={22} onZoom={onZoom} />
-        <CountGroup n={10} icon="🍎" size={34} onZoom={onZoom} />
+        <CountGroup n={10} icon="apple" size={34} onZoom={onZoom} />
         </>
       ),
     },
@@ -611,7 +611,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
         <LetterTile letters="7" color={NUMBER_COLOR[7]} size={54} fontSize={22} onZoom={onZoom} />
-        <CountGroup n={7} icon="🍌" size={40} onZoom={onZoom} />
+        <CountGroup n={7} icon="banana" size={40} onZoom={onZoom} />
         </>
       ),
     },
@@ -837,4 +837,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

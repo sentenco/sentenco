@@ -102,7 +102,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -498,7 +497,7 @@ function buildSlides({ onZoom }) {
       time: "~2 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🔍 Color Detective!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Color Detective!</h2></span>
           <div className="word-row">
             <ColorSwatch name="Green" hex={COLOR_HEX.Green} onZoom={onZoom} />
             <ColorSwatch name="Red" hex={COLOR_HEX.Red} onZoom={onZoom} />

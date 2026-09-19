@@ -70,7 +70,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -465,7 +464,7 @@ function buildSlides({ onZoom }) {
       guide: "I make ___.",
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">👨‍🍳 You're the Chef!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">You're the Chef!</h2></span>
           <div className="word-row">
           <Pic src="/curriculum/u8-l1/rice.jpg" label="rice" size={90} onZoom={onZoom} />
           <Pic src="/curriculum/u8-l1/egg.jpg" label="egg" size={90} onZoom={onZoom} />
@@ -514,7 +513,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">I want ice cream with rice! 🤪</div>
+              <div className="bubble left">I want ice cream with rice!</div>
             </div>
           </div>
         </div>
@@ -533,7 +532,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">I want pizza with bananas! 🤪</div>
+              <div className="bubble left">I want pizza with bananas!</div>
             </div>
           </div>
         </>

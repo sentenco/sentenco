@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u2-l3";
@@ -72,12 +73,12 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
   const items = Array.from({ length: n });
   const big = (
     <div className="count-zoom">
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size * 1.8 }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.9)} /></span>)}
     </div>
   );
   return (
     <div className="count-group" onClick={() => onZoom(big)}>
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.05)} /></span>)}
     </div>
   );
 }
@@ -147,7 +148,7 @@ function MatchGame({ pairs }) {
           })}
         </div>
       </div>
-      {matched.length === pairs.length && <p className="match-done">Great matching! 🎉</p>}
+      {matched.length === pairs.length && <p className="match-done">Great matching!</p>}
     </div>
   );
 }
@@ -178,7 +179,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -411,7 +411,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Many?</h2></span>
-          <CountGroup n={5} icon="🍭" size={48} onZoom={onZoom} />
+          <CountGroup n={5} icon="lollipop" size={48} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -503,7 +503,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Ask & Count!</h2></span>
-          <CountGroup n={6} icon="🎈" size={44} onZoom={onZoom} />
+          <CountGroup n={6} icon="balloon" size={44} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -522,7 +522,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Your Turn to Ask!</h2></span>
-          <CountGroup n={8} icon="🌟" size={40} onZoom={onZoom} />
+          <CountGroup n={8} icon="star" size={40} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -544,7 +544,7 @@ function buildSlides({ onZoom }) {
       guide: "There are ___ cars.",
       body: (
         <>
-        <CountGroup n={4} icon="🚗" size={54} onZoom={onZoom} />
+        <CountGroup n={4} icon="car" size={54} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -560,7 +560,7 @@ function buildSlides({ onZoom }) {
       title: "Ask Again!",
       instruction: [["👀", "Look at the presents."], ["🗣️", "Ask the teacher."]],
       body: (
-        <CountGroup n={10} icon="🎁" size={38} onZoom={onZoom} />
+        <CountGroup n={10} icon="gift" size={38} onZoom={onZoom} />
       ),
     },
     // 10: Letter & Picture Match
@@ -619,7 +619,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look Carefully!</h2></span>
-          <CountGroup n={6} icon="👹" size={46} onZoom={onZoom} />
+          <CountGroup n={6} icon="monster" size={46} onZoom={onZoom} />
         </>
       ),
     },
@@ -639,7 +639,7 @@ function buildSlides({ onZoom }) {
               <div className="bubble left">How many monsters were there?</div>
             </div>
           </div>
-          <p className="slide-p" style={{ marginTop: 10 }}>It was six! 👹</p>
+          <p className="slide-p" style={{ marginTop: 10 }}>It was six!</p>
         </>
       ),
     },
@@ -652,7 +652,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look Again!</h2></span>
-          <CountGroup n={9} icon="👹" size={40} onZoom={onZoom} />
+          <CountGroup n={9} icon="monster" size={40} onZoom={onZoom} />
         </>
       ),
     },
@@ -672,7 +672,7 @@ function buildSlides({ onZoom }) {
               <div className="bubble left">How many monsters were there?</div>
             </div>
           </div>
-          <p className="slide-p" style={{ marginTop: 10 }}>It was nine! 👹</p>
+          <p className="slide-p" style={{ marginTop: 10 }}>It was nine!</p>
         </>
       ),
     },
@@ -682,7 +682,7 @@ function buildSlides({ onZoom }) {
       title: "One More Time!",
       instruction: [["👀", "Look at the monsters."], ["🤔", "Remember how many!"]],
       body: (
-        <CountGroup n={7} icon="👹" size={46} onZoom={onZoom} />
+        <CountGroup n={7} icon="monster" size={46} onZoom={onZoom} />
       ),
     },
     {
@@ -699,7 +699,7 @@ function buildSlides({ onZoom }) {
               <div className="bubble left">How many monsters were there?</div>
             </div>
           </div>
-          <p className="slide-p" style={{ marginTop: 10 }}>It was seven! 👹</p>
+          <p className="slide-p" style={{ marginTop: 10 }}>It was seven!</p>
         </>
       ),
     },
@@ -927,4 +927,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

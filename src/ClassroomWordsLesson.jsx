@@ -79,7 +79,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -485,7 +484,7 @@ function buildSlides({ onZoom }) {
       guide: "I have a ___ and a ___.",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🏫 Build My Classroom!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Build My Classroom!</h2></span>
         <div className="word-row">
           <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
           <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />

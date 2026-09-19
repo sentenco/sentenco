@@ -98,7 +98,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -412,7 +411,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Playtime Sorting Game",
       part: "C",
-      title: "🧩 Sorting Game!",
+      title: "Sorting Game!",
       instruction: [["🤔", "Is it a TOY or an ACTION?"], ["🗣️", "Tell me and say the word."]],
       guide: "It's a toy. / It's an action.",
       body: (
@@ -433,7 +432,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Playtime Sorting Game",
       part: "C",
-      title: "🧩 Check It!",
+      title: "Check It!",
       instruction: [["👀", "Were you right?"], ["🗣️", "Say each word in the groups."]],
       body: (
         <div className="sort-row">
@@ -519,7 +518,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Mixed Challenge",
       part: "D",
-      title: "⚡ Speed Round!",
+      title: "Speed Round!",
       instruction: [["⚡", "Say all four, as fast as you can!"]],
       body: (
         <div className="word-row" style={{ gap: 14 }}>

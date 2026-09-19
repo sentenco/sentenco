@@ -133,7 +133,7 @@ function MatchGame({ pairs }) {
           })}
         </div>
       </div>
-      {matched.length === pairs.length && <p className="match-done">Great matching! 🎉</p>}
+      {matched.length === pairs.length && <p className="match-done">Great matching!</p>}
     </div>
   );
 }
@@ -174,7 +174,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -592,7 +591,7 @@ function buildSlides({ onZoom }) {
       time: "~2.5 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🛍️ Color Shop!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Color Shop!</h2></span>
           <div className="word-row">
             <ColorSwatch name="Orange" hex={COLOR_HEX.Orange} size={70} onZoom={onZoom} />
             <ColorSwatch name="Pink" hex={COLOR_HEX.Pink} size={70} onZoom={onZoom} />
@@ -630,7 +629,7 @@ function buildSlides({ onZoom }) {
       time: "~1.5 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🛍️ Shopping Again!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Shopping Again!</h2></span>
           <div className="word-row">
             <ColorSwatch name="Brown" hex={COLOR_HEX.Brown} size={70} onZoom={onZoom} />
             <ColorSwatch name="Red" hex={COLOR_HEX.Red} size={70} onZoom={onZoom} />

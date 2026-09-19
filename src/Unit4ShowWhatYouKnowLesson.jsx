@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG1 = "/curriculum/u4-l1";
 const IMG2 = "/curriculum/u4-l2";
 
 const EMOTION_COLOR = { Happy: "#F2A900", Sad: "#4A90C2", Angry: "#E5484D", Tired: "#9B7FD4" };
-const EMOTION_EMOJI = { Happy: "😊", Sad: "😢", Angry: "😠", Tired: "😴" };
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -50,12 +50,12 @@ function Pic({ src, label, size = 116, onZoom }) {
 
 function EmotionTile({ name, size = 100, onZoom }) {
   const color = EMOTION_COLOR[name];
-  const emoji = EMOTION_EMOJI[name];
-  const big = <div className="emo-tile zoom-emo-tile" style={{ background: color }}><span style={{ fontSize: 120 }}>{emoji}</span></div>;
+  const face = "face-" + name.toLowerCase();
+  const big = <div className="emo-tile zoom-emo-tile" style={{ background: "#fff", border: `10px solid ${color}` }}><ObjImg name={face} size={170} /></div>;
   return (
     <div className="wc">
-      <div className="emo-tile" style={{ background: color, width: size, height: size, fontSize: Math.round(size * 0.5) }} onClick={() => onZoom(big)}>
-        {emoji}
+      <div className="emo-tile" style={{ background: "#fff", border: `${Math.max(4, Math.round(size / 16))}px solid ${color}`, width: size, height: size }} onClick={() => onZoom(big)}>
+        <ObjImg name={face} size={Math.round(size * 0.72)} />
       </div>
       <div className="word">{name}</div>
     </div>
@@ -88,7 +88,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -309,15 +308,15 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About You!</h2></span>
         <div className="word-row">
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#2E97C7", width: 80, height: 80, fontSize: 36 }}>🏷️</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #2E97C7", width: 80, height: 80 }}><ObjImg name="nametag" size={52} /></div>
             <div className="word">Name</div>
           </div>
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#F2A900", width: 80, height: 80, fontSize: 36 }}>🎂</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #F2A900", width: 80, height: 80 }}><ObjImg name="cake" size={52} /></div>
             <div className="word">Age</div>
           </div>
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#E0567A", width: 80, height: 80, fontSize: 36 }}>😊</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #E0567A", width: 80, height: 80 }}><ObjImg name="face-happy" size={52} /></div>
             <div className="word">Feeling</div>
           </div>
         </div>
@@ -429,7 +428,7 @@ function buildSlides({ onZoom }) {
       guide: "I am ___. It's a ___.",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🌍 My Little World!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">My Little World!</h2></span>
           <div className="word-row">
             <EmotionTile name="Happy" onZoom={onZoom} />
             <Pic src={`${IMG1}/cat.jpg`} label="cat" size={80} onZoom={onZoom} />
@@ -489,15 +488,15 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">My Story!</h2></span>
         <div className="word-row">
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#2E97C7", width: 70, height: 70, fontSize: 31 }}>🏷️</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #2E97C7", width: 70, height: 70 }}><ObjImg name="nametag" size={46} /></div>
             <div className="word">Name</div>
           </div>
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#F2A900", width: 70, height: 70, fontSize: 31 }}>🎂</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #F2A900", width: 70, height: 70 }}><ObjImg name="cake" size={46} /></div>
             <div className="word">Age</div>
           </div>
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#E0567A", width: 70, height: 70, fontSize: 31 }}>😊</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #E0567A", width: 70, height: 70 }}><ObjImg name="face-happy" size={46} /></div>
             <div className="word">Feeling</div>
           </div>
         </div>
@@ -518,15 +517,15 @@ function buildSlides({ onZoom }) {
         <>
         <div className="word-row">
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#2E97C7", width: 70, height: 70, fontSize: 31 }}>🏷️</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #2E97C7", width: 70, height: 70 }}><ObjImg name="nametag" size={46} /></div>
             <div className="word">Name</div>
           </div>
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#F2A900", width: 70, height: 70, fontSize: 31 }}>🎂</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #F2A900", width: 70, height: 70 }}><ObjImg name="cake" size={46} /></div>
             <div className="word">Age</div>
           </div>
           <div className="wc">
-            <div className="emo-tile" style={{ background: "#E0567A", width: 70, height: 70, fontSize: 31 }}>😊</div>
+            <div className="emo-tile" style={{ background: "#fff", border: "5px solid #E0567A", width: 70, height: 70 }}><ObjImg name="face-happy" size={46} /></div>
             <div className="word">Feeling</div>
           </div>
         </div>
@@ -669,4 +668,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

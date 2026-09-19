@@ -79,7 +79,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -403,7 +402,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👂", "Listen to the sound."], ["🗣️", "Say the animal."]],
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🔊 What Animal?</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">What Animal?</h2></span>
           <div className="word-row">
           <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={120} onZoom={onZoom} />
         </div>
@@ -524,7 +523,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👂", "Listen to the clues."], ["🗣️", "Guess the animal."]],
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🔍 Mystery Animal!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Mystery Animal!</h2></span>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>

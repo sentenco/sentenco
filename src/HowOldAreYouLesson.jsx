@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG1 = "/curriculum/u4-l1";
@@ -72,12 +73,12 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
   const items = Array.from({ length: n });
   const big = (
     <div className="count-zoom">
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size * 1.8 }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.9)} /></span>)}
     </div>
   );
   return (
     <div className="count-group" onClick={() => onZoom(big)}>
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.05)} /></span>)}
     </div>
   );
 }
@@ -85,17 +86,17 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
 function Cake({ age, onZoom }) {
   const big = (
     <div className="cake-zoom">
-      <span style={{ fontSize: 90 }}>🎂</span>
+      <ObjImg name="cake" size={90} />
       <div className="count-zoom">
-        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: 50 }}>🕯️</span>)}
+        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name="candle" size={50} /></span>)}
       </div>
     </div>
   );
   return (
     <div className="wc" onClick={() => onZoom(big)} style={{ cursor: "zoom-in" }}>
-      <span style={{ fontSize: 54 }}>🎂</span>
+      <ObjImg name="cake" size={54} />
       <div className="count-group" style={{ maxWidth: 220 }}>
-        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: 26 }}>🕯️</span>)}
+        {Array.from({ length: age }).map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name="candle" size={26} /></span>)}
       </div>
     </div>
   );
@@ -127,7 +128,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -571,7 +571,7 @@ function buildSlides({ onZoom }) {
       guide: "I am ___.",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🎉 Birthday Party!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Birthday Party!</h2></span>
           <Cake age={6} onZoom={onZoom} />
         </>
       ),
@@ -786,4 +786,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u2-l1";
@@ -73,12 +74,12 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
   const items = Array.from({ length: n });
   const big = (
     <div className="count-zoom">
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size * 1.8 }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.9)} /></span>)}
     </div>
   );
   return (
     <div className="count-group" onClick={() => onZoom(big)}>
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.05)} /></span>)}
     </div>
   );
 }
@@ -148,7 +149,7 @@ function MatchGame({ pairs }) {
           })}
         </div>
       </div>
-      {matched.length === pairs.length && <p className="match-done">Great matching! 🎉</p>}
+      {matched.length === pairs.length && <p className="match-done">Great matching!</p>}
     </div>
   );
 }
@@ -179,7 +180,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -514,7 +514,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count & Say!</h2></span>
-          <CountGroup n={3} icon="🍎" size={54} onZoom={onZoom} />
+          <CountGroup n={3} icon="apple" size={54} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -534,7 +534,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count Again!</h2></span>
-          <CountGroup n={5} icon="⭐" size={50} onZoom={onZoom} />
+          <CountGroup n={5} icon="star" size={50} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -551,7 +551,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the balloons."], ["🗣️", "Count and say the number."]],
       guide: "There are ___ balloons.",
       body: (
-        <CountGroup n={4} icon="🎈" size={54} onZoom={onZoom} />
+        <CountGroup n={4} icon="balloon" size={54} onZoom={onZoom} />
       ),
     },
     {
@@ -561,7 +561,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the bananas."], ["🗣️", "Count and say the number."]],
       guide: "There are ___ bananas.",
       body: (
-        <CountGroup n={2} icon="🍌" size={64} onZoom={onZoom} />
+        <CountGroup n={2} icon="banana" size={64} onZoom={onZoom} />
       ),
     },
     // 10: Look & Match
@@ -575,8 +575,8 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h2 className="slide-h sub">Look & Match!</h2></span>
           <MatchGame
             pairs={[
-              { id: "n4", tileLabel: "4", tileColor: NUMBER_COLOR[4], rightNode: <span className="match-emojis">🎈🎈🎈🎈</span> },
-              { id: "n3", tileLabel: "3", tileColor: NUMBER_COLOR[3], rightNode: <span className="match-emojis">🧃🧃🧃</span> },
+              { id: "n4", tileLabel: "4", tileColor: NUMBER_COLOR[4], rightNode: <span className="match-emojis"><ObjImg name="balloon" size={26} /><ObjImg name="balloon" size={26} /><ObjImg name="balloon" size={26} /><ObjImg name="balloon" size={26} /></span> },
+              { id: "n3", tileLabel: "3", tileColor: NUMBER_COLOR[3], rightNode: <span className="match-emojis"><ObjImg name="juice" size={26} /><ObjImg name="juice" size={26} /><ObjImg name="juice" size={26} /></span> },
             ]}
           />
         </>
@@ -590,8 +590,8 @@ function buildSlides({ onZoom }) {
       body: (
         <MatchGame key="m2"
             pairs={[
-              { id: "n1", tileLabel: "1", tileColor: NUMBER_COLOR[1], rightNode: <span className="match-emojis">🍌</span> },
-              { id: "n4", tileLabel: "4", tileColor: NUMBER_COLOR[4], rightNode: <span className="match-emojis">🐟🐟🐟🐟</span> },
+              { id: "n1", tileLabel: "1", tileColor: NUMBER_COLOR[1], rightNode: <span className="match-emojis"><ObjImg name="banana" size={26} /></span> },
+              { id: "n4", tileLabel: "4", tileColor: NUMBER_COLOR[4], rightNode: <span className="match-emojis"><ObjImg name="fish" size={26} /><ObjImg name="fish" size={26} /><ObjImg name="fish" size={26} /><ObjImg name="fish" size={26} /></span> },
             ]}
           />
       ),
@@ -604,8 +604,8 @@ function buildSlides({ onZoom }) {
       body: (
         <MatchGame key="m3"
             pairs={[
-              { id: "n2", tileLabel: "2", tileColor: NUMBER_COLOR[2], rightNode: <span className="match-emojis">🐶🐶</span> },
-              { id: "n5", tileLabel: "5", tileColor: NUMBER_COLOR[5], rightNode: <span className="match-emojis">⭐⭐⭐⭐⭐</span> },
+              { id: "n2", tileLabel: "2", tileColor: NUMBER_COLOR[2], rightNode: <span className="match-emojis"><ObjImg name="dog" size={26} /><ObjImg name="dog" size={26} /></span> },
+              { id: "n5", tileLabel: "5", tileColor: NUMBER_COLOR[5], rightNode: <span className="match-emojis"><ObjImg name="star" size={26} /><ObjImg name="star" size={26} /><ObjImg name="star" size={26} /><ObjImg name="star" size={26} /><ObjImg name="star" size={26} /></span> },
             ]}
           />
       ),
@@ -619,7 +619,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look Carefully!</h2></span>
-          <CountGroup n={4} icon="🪁" size={54} onZoom={onZoom} />
+          <CountGroup n={4} icon="kite" size={54} onZoom={onZoom} />
         </>
       ),
     },
@@ -654,7 +654,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look Again!</h2></span>
-          <CountGroup n={5} icon="🍃" size={50} onZoom={onZoom} />
+          <CountGroup n={5} icon="leaf" size={50} onZoom={onZoom} />
         </>
       ),
     },
@@ -686,7 +686,7 @@ function buildSlides({ onZoom }) {
       title: "One More Time!",
       instruction: [["👀", "Look at the juice."], ["🤔", "Remember how many!"]],
       body: (
-        <CountGroup n={3} icon="🧃" size={54} onZoom={onZoom} />
+        <CountGroup n={3} icon="juice" size={54} onZoom={onZoom} />
       ),
     },
     {
@@ -927,7 +927,7 @@ export const styles = `
 .match-right { width: 130px; min-height: 74px; border-radius: 16px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 8px; box-shadow: 0 4px 12px rgba(27,42,74,0.1); cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; border: 3px solid transparent; }
 .match-right.is-matched { border-color: #22A67E; opacity: 0.65; cursor: default; }
 .match-right.is-wrong { animation: matchShake 0.4s ease; border-color: #E0567A; }
-.match-emojis { font-size: 22px; letter-spacing: 2px; }
+.match-emojis { display: inline-flex; align-items: center; gap: 2px; }
 .match-done { margin-top: 14px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 16px; color: #22A67E; }
 @keyframes matchShake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
 
@@ -939,4 +939,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

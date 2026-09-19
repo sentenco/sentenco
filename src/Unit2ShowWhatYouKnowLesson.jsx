@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const NUMBER_COLOR = {
@@ -51,11 +52,11 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function LetterTile({ letters, color, size = 74, fontSize = 28, onZoom }) {
-  const big = <div className="letter-tile zoom-letter-tile" style={{ background: color }}><span>{letters}</span></div>;
+function LetterTile({ letters, img, color, size = 74, fontSize = 28, onZoom }) {
+  const big = <div className="letter-tile zoom-letter-tile" style={{ background: color }}>{img ? <ObjImg name={img} size={150} /> : <span>{letters}</span>}</div>;
   return (
     <div className="letter-tile" style={{ background: color, width: size, height: size, fontSize }} onClick={() => onZoom(big)}>
-      {letters}
+      {img ? <ObjImg name={img} size={Math.round(size * 0.7)} /> : letters}
     </div>
   );
 }
@@ -64,12 +65,12 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
   const items = Array.from({ length: n });
   const big = (
     <div className="count-zoom">
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size * 1.8 }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.9)} /></span>)}
     </div>
   );
   return (
     <div className="count-group" onClick={() => onZoom(big)}>
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.05)} /></span>)}
     </div>
   );
 }
@@ -100,7 +101,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -323,7 +323,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <CountGroup n={6} icon="🍩" size={44} onZoom={onZoom} />
+          <CountGroup n={6} icon="donut" size={44} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -343,7 +343,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Else Do You See?</h2></span>
-          <CountGroup n={9} icon="⭐" size={38} onZoom={onZoom} />
+          <CountGroup n={9} icon="star" size={38} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -408,7 +408,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Your Turn to Ask!</h2></span>
-          <CountGroup n={8} icon="🎈" size={40} onZoom={onZoom} />
+          <CountGroup n={8} icon="balloon" size={40} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -427,7 +427,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Ask Again!</h2></span>
-          <CountGroup n={5} icon="🍎" size={48} onZoom={onZoom} />
+          <CountGroup n={5} icon="apple" size={48} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -444,7 +444,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the cookies."], ["🗣️", "Ask the teacher."]],
       body: (
         <>
-        <CountGroup n={10} icon="🍪" size={38} onZoom={onZoom} />
+        <CountGroup n={10} icon="cookie" size={38} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -461,7 +461,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the presents."], ["🗣️", "Ask the teacher."]],
       body: (
         <>
-        <CountGroup n={7} icon="🎁" size={44} onZoom={onZoom} />
+        <CountGroup n={7} icon="gift" size={44} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -550,7 +550,7 @@ function buildSlides({ onZoom }) {
       guide: "No! It's ___.",
       body: (
         <>
-        <CountGroup n={6} icon="⭐" size={44} onZoom={onZoom} />
+        <CountGroup n={6} icon="star" size={44} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -576,7 +576,7 @@ function buildSlides({ onZoom }) {
         <div className="letter-row" style={{ marginTop: 6 }}>
           <LetterTile letters="123" color={NUMBER_COLOR[3]} size={80} fontSize={30} onZoom={onZoom} />
           <LetterTile letters="Aa" color={LETTER_COLOR.K} size={80} fontSize={30} onZoom={onZoom} />
-          <LetterTile letters="🍎" color={'#F2A900'} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="" img="apple" color={'#F2A900'} size={80} fontSize={30} onZoom={onZoom} />
         </div>
         </div>
       ),
@@ -590,7 +590,7 @@ function buildSlides({ onZoom }) {
         <div className="letter-row" style={{ marginTop: 6 }}>
           <LetterTile letters="9" color={NUMBER_COLOR[9]} size={80} fontSize={30} onZoom={onZoom} />
           <LetterTile letters="Rr" color={LETTER_COLOR.R} size={80} fontSize={30} onZoom={onZoom} />
-          <LetterTile letters="🎈" color={'#F2A900'} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="" img="balloon" color={'#F2A900'} size={80} fontSize={30} onZoom={onZoom} />
         </div>
       ),
     },
@@ -724,4 +724,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

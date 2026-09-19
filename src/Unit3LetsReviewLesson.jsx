@@ -79,7 +79,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -493,7 +492,7 @@ function buildSlides({ onZoom }) {
       time: "~4 min",
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🌈 Rainbow Word Builder!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Rainbow Word Builder!</h2></span>
           <BlendRow parts={["S", "A", "T"]} result="SAT" color={COLOR_HEX.Purple} onZoom={onZoom} />
           <ColorSwatch name="Purple" hex={COLOR_HEX.Purple} size={60} onZoom={onZoom} />
         </div>
@@ -508,7 +507,7 @@ function buildSlides({ onZoom }) {
       time: "~2 min",
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🌈 One More Rainbow Word!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">One More Rainbow Word!</h2></span>
           <BlendRow parts={["M", "A", "T"]} result="MAT" color={COLOR_HEX.Orange} onZoom={onZoom} />
           <ColorSwatch name="Orange" hex={COLOR_HEX.Orange} size={60} onZoom={onZoom} />
         </div>
@@ -517,7 +516,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Rainbow Word Builder",
       part: "C",
-      title: "🌈 Rainbow Word 3!",
+      title: "Rainbow Word 3!",
       instruction: [["📖", "Read the word."], ["🗣️", "Say the color."]],
       guide: "The word is ___. The color is ___.",
       body: (
@@ -530,7 +529,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Rainbow Word Builder",
       part: "C",
-      title: "🌈 Rainbow Word 4!",
+      title: "Rainbow Word 4!",
       instruction: [["📖", "Read the word."], ["🗣️", "Say the color."]],
       guide: "The word is ___. The color is ___.",
       body: (

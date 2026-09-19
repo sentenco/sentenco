@@ -114,7 +114,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -492,7 +491,7 @@ function buildSlides({ onZoom }) {
       time: "~3 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🎨 Build My Picture!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Build My Picture!</h2></span>
           <div className="word-row">
             <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={70} onZoom={onZoom} />
             <Pic src={STAR_IMG} label="star" size={70} onZoom={onZoom} />
@@ -522,7 +521,7 @@ function buildSlides({ onZoom }) {
       time: "~1.5 min",
       body: (
         <>
-          <span className="title-highlight"><h2 className="slide-h sub">🎨 Build Another Picture!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Build Another Picture!</h2></span>
           <div className="word-row">
             <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={70} onZoom={onZoom} />
             <Pic src="/curriculum/u3-l5/tree.avif" label="tree" size={70} onZoom={onZoom} />
@@ -546,7 +545,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Build My Picture!",
       part: "C",
-      title: "🎨 Build a Third Picture!",
+      title: "Build a Third Picture!",
       instruction: [["🎨", "Choose a color and a shape."], ["🗣️", "Describe it."]],
       guide: "It's a ___ ___.",
       body: (
@@ -566,9 +565,9 @@ function buildSlides({ onZoom }) {
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">My Choice Challenge!</h2></span>
         <div className="letter-row" style={{ marginTop: 6 }}>
-          <LetterTile letters="🎨" color={COLOR_HEX.Blue} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="Blue" color={COLOR_HEX.Blue} size={80} fontSize={20} onZoom={onZoom} />
           <LetterTile letters="Ss" color={LETTER_COLOR.S} size={80} fontSize={30} onZoom={onZoom} />
-          <LetterTile letters="🧩" color={BLEND_COLOR} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="cat" color={BLEND_COLOR} size={80} fontSize={24} onZoom={onZoom} />
         </div>
         </div>
       ),
@@ -580,9 +579,9 @@ function buildSlides({ onZoom }) {
       instruction: [["👆", "Pick a different challenge."], ["🗣️", "Show what you know!"]],
       body: (
         <div className="letter-row" style={{ marginTop: 6 }}>
-          <LetterTile letters="🌈" color={COLOR_HEX.Purple} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="Purple" color={COLOR_HEX.Purple} size={80} fontSize={17} onZoom={onZoom} />
           <LetterTile letters="Zz" color={LETTER_COLOR.Z} size={80} fontSize={30} onZoom={onZoom} />
-          <LetterTile letters="🧩" color={BLEND_COLOR} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="cat" color={BLEND_COLOR} size={80} fontSize={24} onZoom={onZoom} />
         </div>
       ),
     },

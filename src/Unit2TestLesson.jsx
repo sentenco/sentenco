@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const NUMBER_COLOR = {
@@ -64,12 +65,12 @@ function CountGroup({ n, icon, size = 40, onZoom }) {
   const items = Array.from({ length: n });
   const big = (
     <div className="count-zoom">
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size * 1.8 }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.9)} /></span>)}
     </div>
   );
   return (
     <div className="count-group" onClick={() => onZoom(big)}>
-      {items.map((_, idx) => <span key={idx} className="count-emoji" style={{ fontSize: size }}>{icon}</span>)}
+      {items.map((_, idx) => <span key={idx} className="count-emoji"><ObjImg name={icon} size={Math.round(size * 1.05)} /></span>)}
     </div>
   );
 }
@@ -100,7 +101,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -329,7 +329,7 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="6" color={NUMBER_COLOR[6]} size={50} fontSize={20} onZoom={onZoom} />
             <LetterTile letters="1" color={NUMBER_COLOR[1]} size={50} fontSize={20} onZoom={onZoom} />
           </div>
-          <CountGroup n={5} icon="🍎" size={40} onZoom={onZoom} />
+          <CountGroup n={5} icon="apple" size={40} onZoom={onZoom} />
         </>
       ),
     },
@@ -352,7 +352,7 @@ function buildSlides({ onZoom }) {
           <LetterTile letters="4" color={NUMBER_COLOR[4]} size={40} fontSize={16} onZoom={onZoom} />
           <LetterTile letters="6" color={NUMBER_COLOR[6]} size={40} fontSize={16} onZoom={onZoom} />
         </div>
-        <CountGroup n={8} icon="🍩" size={40} onZoom={onZoom} />
+        <CountGroup n={8} icon="donut" size={40} onZoom={onZoom} />
         </>
       ),
     },
@@ -404,7 +404,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count & Answer!</h2></span>
-          <CountGroup n={9} icon="🌟" size={38} onZoom={onZoom} />
+          <CountGroup n={9} icon="star" size={38} onZoom={onZoom} />
         </>
       ),
     },
@@ -414,7 +414,7 @@ function buildSlides({ onZoom }) {
       title: "Count Again!",
       instruction: [["👀", "Look at the fish."], ["🗣️", "Count and answer."]],
       body: (
-        <CountGroup n={6} icon="🐟" size={44} onZoom={onZoom} />
+        <CountGroup n={6} icon="fish" size={44} onZoom={onZoom} />
       ),
     },
     // 6: Part 4: Ask Me!
@@ -426,7 +426,7 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Ask Me!</h2></span>
-          <CountGroup n={7} icon="🎈" size={40} onZoom={onZoom} />
+          <CountGroup n={7} icon="balloon" size={40} onZoom={onZoom} />
         </>
       ),
     },
@@ -436,7 +436,7 @@ function buildSlides({ onZoom }) {
       title: "Ask Me Again!",
       instruction: [["👀", "Look at the cookies."], ["🗣️", "Ask the teacher."]],
       body: (
-        <CountGroup n={9} icon="🍪" size={38} onZoom={onZoom} />
+        <CountGroup n={9} icon="cookie" size={38} onZoom={onZoom} />
       ),
     },
     // 7: Part 5: Mixed Challenge
@@ -461,7 +461,7 @@ function buildSlides({ onZoom }) {
       title: "Mixed Challenge 2!",
       instruction: [["👀", "Look at the stars."], ["🗣️", "Count. Then ask the teacher."]],
       body: (
-        <CountGroup n={10} icon="⭐" size={36} onZoom={onZoom} />
+        <CountGroup n={10} icon="star" size={36} onZoom={onZoom} />
       ),
     },
     {
@@ -639,4 +639,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

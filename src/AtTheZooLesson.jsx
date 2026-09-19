@@ -79,7 +79,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -502,14 +501,14 @@ function buildSlides({ onZoom }) {
       instruction: [["🎭", "Do an animal action."], ["🗣️", "Say yes or no."]],
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🎭 Who Am I?</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Who Am I?</h2></span>
           <div className="word-row">
           <Pic src="/curriculum/u9-l1/elephant.jpg" label="elephant" size={73} onZoom={onZoom} />
         </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">(acts like an elephant) 🐘</div>
+              <div className="bubble right">(acts like an elephant)</div>
             </div>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -533,7 +532,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">(acts like a monkey) 🐵</div>
+              <div className="bubble right">(acts like a monkey)</div>
             </div>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -556,7 +555,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">(acts like a giraffe) 🦒</div>
+              <div className="bubble right">(acts like a giraffe)</div>
             </div>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -580,7 +579,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">(acts like a lion) 🦁</div>
+              <div className="bubble left">(acts like a lion)</div>
             </div>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -604,7 +603,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">(acts like a fish) 🐟</div>
+              <div className="bubble left">(acts like a fish)</div>
             </div>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -627,7 +626,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">(acts like an elephant) 🐘</div>
+              <div className="bubble left">(acts like an elephant)</div>
             </div>
             <div className="brow me">
               <div className="avatar coral">S</div>

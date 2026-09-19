@@ -77,7 +77,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -440,7 +439,7 @@ function buildSlides({ onZoom }) {
           </div>
           <div className="brow">
             <div className="avatar navy">T</div>
-            <div className="bubble left">(picks up the pen instead) 🤪</div>
+            <div className="bubble left">(picks up the pen instead)</div>
           </div>
         </div>
         </>
@@ -463,7 +462,7 @@ function buildSlides({ onZoom }) {
             </div>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">(opens the book) 🤪</div>
+              <div className="bubble left">(opens the book)</div>
             </div>
           </div>
         </>
@@ -485,7 +484,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
-            <div className="bubble left">🎓 Mission: pick up the pen, put it in the bag, open the book.</div>
+            <div className="bubble left">Mission: pick up the pen, put it in the bag, open the book.</div>
           </div>
         </div>
         </>
@@ -506,7 +505,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">🎓 Mission: put the book on the desk, sit down, stand up.</div>
+              <div className="bubble left">Mission: put the book on the desk, sit down, stand up.</div>
             </div>
           </div>
         </>
@@ -531,7 +530,7 @@ function buildSlides({ onZoom }) {
           </div>
           <div className="brow">
             <div className="avatar navy">T</div>
-            <div className="bubble left">(picks up the pen) 🤪</div>
+            <div className="bubble left">(picks up the pen)</div>
           </div>
         </div>
         </>

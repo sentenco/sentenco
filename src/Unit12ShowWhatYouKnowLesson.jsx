@@ -79,7 +79,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -419,7 +418,7 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me a story."]],
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🗣️ A Day in My Life!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">A Day in My Life!</h2></span>
           <div className="word-row">
             <Pic src="/curriculum/u12-routines/story-1-morning.jpg" label="picture 1" size={96} onZoom={onZoom} />
             <Pic src="/curriculum/u12-routines/story-2-afternoon.jpg" label="picture 2" size={96} onZoom={onZoom} />

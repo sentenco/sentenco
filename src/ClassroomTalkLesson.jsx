@@ -68,7 +68,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -505,7 +504,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
-            <div className="bubble left">🎓 Teacher says, open your book!</div>
+            <div className="bubble left">Teacher says, open your book!</div>
           </div>
         </div>
         </>
@@ -523,7 +522,7 @@ function buildSlides({ onZoom }) {
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
-            <div className="bubble left">Put the book on your head! 🤪</div>
+            <div className="bubble left">Put the book on your head!</div>
           </div>
         </div>
         </>
@@ -542,7 +541,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">🎓 Teacher says, pick up your pen!</div>
+              <div className="bubble left">Teacher says, pick up your pen!</div>
             </div>
           </div>
         </>
@@ -561,7 +560,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">Put the pen on your head! 🤪</div>
+              <div className="bubble left">Put the pen on your head!</div>
             </div>
           </div>
         </>

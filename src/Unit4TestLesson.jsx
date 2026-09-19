@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { ObjImg, objectPicStyles } from "./ObjectPics.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG1 = "/curriculum/u4-l1";
 const IMG2 = "/curriculum/u4-l2";
 
 const EMOTION_COLOR = { Happy: "#F2A900", Sad: "#4A90C2", Angry: "#E5484D", Tired: "#9B7FD4" };
-const EMOTION_EMOJI = { Happy: "😊", Sad: "😢", Angry: "😠", Tired: "😴" };
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -50,12 +50,12 @@ function Pic({ src, label, size = 116, onZoom }) {
 
 function EmotionTile({ name, size = 100, hideName, onZoom }) {
   const color = EMOTION_COLOR[name];
-  const emoji = EMOTION_EMOJI[name];
-  const big = <div className="emo-tile zoom-emo-tile" style={{ background: color }}><span style={{ fontSize: 120 }}>{emoji}</span></div>;
+  const face = "face-" + name.toLowerCase();
+  const big = <div className="emo-tile zoom-emo-tile" style={{ background: "#fff", border: `10px solid ${color}` }}><ObjImg name={face} size={170} /></div>;
   return (
     <div className="wc">
-      <div className="emo-tile" style={{ background: color, width: size, height: size, fontSize: Math.round(size * 0.5) }} onClick={() => onZoom(big)}>
-        {emoji}
+      <div className="emo-tile" style={{ background: "#fff", border: `${Math.max(4, Math.round(size / 16))}px solid ${color}`, width: size, height: size }} onClick={() => onZoom(big)}>
+        <ObjImg name={face} size={Math.round(size * 0.72)} />
       </div>
       {!hideName && <div className="word">{name}</div>}
     </div>
@@ -88,7 +88,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -619,4 +618,5 @@ export const styles = `
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
 ${wrapUpStyles}
+${objectPicStyles}
 `;

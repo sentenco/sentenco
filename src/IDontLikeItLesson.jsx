@@ -94,7 +94,6 @@ function InstructionStep({ icon, text }) {
   if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
   return (
     <span className="instr-step">
-      <span className="instr-icon">{icon}</span>
       <span className="instr-text">
         {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
         {color ? rest : text}
@@ -319,7 +318,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">I don't like eggs! 😖</div>
+              <div className="bubble left">I don't like eggs!</div>
             </div>
           </div>
         </div>
@@ -337,7 +336,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">I don't like rice! 😖</div>
+              <div className="bubble left">I don't like rice!</div>
             </div>
           </div>
         </div>
@@ -354,7 +353,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 400 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">I don't like bananas! 😖</div>
+              <div className="bubble left">I don't like bananas!</div>
             </div>
           </div>
         </>
@@ -524,12 +523,12 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the food."], ["🗣️", "Be the judge!"]],
       body: (
         <div className="center-col">
-          <span className="title-highlight"><h2 className="slide-h sub">🍽️ Food Judge!</h2></span>
+          <span className="title-highlight"><h2 className="slide-h sub">Food Judge!</h2></span>
           <Pic src="/curriculum/u8-l3/pizza-banana.jpg" label="pizza with a banana on top" size={170} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">I don't like it! 😝</div>
+              <div className="bubble right">I don't like it!</div>
             </div>
           </div>
         </div>
@@ -547,7 +546,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
-              <div className="bubble right">I like it! 😋</div>
+              <div className="bubble right">I like it!</div>
             </div>
           </div>
         </div>
