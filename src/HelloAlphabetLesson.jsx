@@ -157,9 +157,15 @@ export default function HelloAlphabetLesson() {
           <div className={`slide-body ${s.instruction ? "has-instruction" : ""}`}>
             {s.instruction && (
               <div className="slide-instruction">
-                {s.instruction.map(([icon, text]) => (
-                  <span key={text} className="instr-step"><span className="instr-icon">{icon}</span>{text}</span>
-                ))}
+                {s.instruction.map(([icon, text]) => {
+                  const [verb, ...rest] = text.split(" ");
+                  return (
+                    <span key={text} className="instr-step">
+                      <span className="instr-icon">{icon}</span>
+                      <span><b>{verb}</b> {rest.join(" ")}</span>
+                    </span>
+                  );
+                })}
               </div>
             )}
             {s.title && <span className="title-highlight"><h2 className="slide-h sub">{s.title}</h2></span>}
@@ -678,9 +684,10 @@ export const styles = `
 .part-badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .last-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.02em; }
 .slide-body.has-instruction { padding-top: 74px; }
-.slide-instruction { position: absolute; top: 30px; left: 26px; max-width: 640px; display: flex; align-items: center; justify-content: flex-start; gap: 16px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); background: #fff; border-radius: 999px; padding: 8px 20px; box-shadow: 0 4px 12px rgba(27,42,74,0.12); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 34px; left: 30px; max-width: 640px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; text-shadow: 0 1px 0 rgba(255,255,255,0.7); }
+.slide-instruction b { font-weight: 800; color: var(--coral-deep); }
 .instr-step { display: inline-flex; align-items: center; gap: 7px; }
-.instr-icon { font-size: 20px; line-height: 1; }
+.instr-icon { font-size: 24px; line-height: 1; }
 .slide-guide { display: inline-flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--coral-deep); background: var(--coral-light); border: 2.5px dashed var(--coral); border-radius: 16px; padding: 6px 18px; position: relative; z-index: 1; }
 .guide-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--coral); border-radius: 999px; padding: 2px 9px; }
 .guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
