@@ -108,11 +108,46 @@ function WrapUpBlock({ title = "You've Landed!", see = "See you next lesson!", r
   return <WrapUp title={title} see={see} chips={chips}>{recap}</WrapUp>;
 }
 
-function CoverBadges({ lesson, unit }) {
+// The UNIT medal on the cover can be moved by hand (press M on a cover, or open the lesson with ?adjust=1):
+// drag it, arrow keys nudge, + / - resize, [ ] tilt. The values are kept in this browser only.
+const MEDAL_DEFAULT = { left: 36, top: 62, size: 128, rot: -6 };
+const MEDAL_KEY = "soarMedal";
+function loadMedal() {
+  try {
+    const v = JSON.parse(localStorage.getItem(MEDAL_KEY));
+    return v ? { ...MEDAL_DEFAULT, ...v } : MEDAL_DEFAULT;
+  } catch (e) {
+    return MEDAL_DEFAULT;
+  }
+}
+
+function CoverBadges({ lesson, unit, medal = MEDAL_DEFAULT, adjust = false, onDrag }) {
+  const k = medal.size / 128;
+  function down(e) {
+    if (!adjust) return;
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    e.currentTarget.dataset.sx = e.clientX;
+    e.currentTarget.dataset.sy = e.clientY;
+    e.currentTarget.dataset.ox = medal.left;
+    e.currentTarget.dataset.oy = medal.top;
+  }
+  function move(e) {
+    if (!adjust || e.currentTarget.dataset.sx === undefined || !e.currentTarget.hasPointerCapture(e.pointerId)) return;
+    const d = e.currentTarget.dataset;
+    onDrag({ left: Math.round(+d.ox + e.clientX - +d.sx), top: Math.round(+d.oy + e.clientY - +d.sy) });
+  }
   return (
     <>
       <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
-      <div className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""}`}><span className="um-label">UNIT</span><span className="um-num">{unit}</span></div>
+      <div
+        className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""} ${adjust ? "is-adjusting" : ""}`}
+        style={{ left: medal.left, top: medal.top, width: medal.size, height: medal.size, transform: `rotate(${medal.rot}deg)`, "--k": k }}
+        onPointerDown={down}
+        onPointerMove={move}
+      >
+        <span className="um-label">UNIT</span><span className="um-num">{unit}</span>
+      </div>
     </>
   );
 }
@@ -315,6 +350,48 @@ function renderSlideBody(slide) {
 export default function SoarLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
+  const [medal, setMedal] = useState(loadMedal);
+  const [adjust, setAdjust] = useState(() => new URLSearchParams(window.location.search).get("adjust") === "1");
+  const [copied, setCopied] = useState(false);
+
+  function changeMedal(patch) {
+    setMedal((m) => {
+      const next = { ...m, ...patch };
+      try { localStorage.setItem(MEDAL_KEY, JSON.stringify(next)); } catch (e) { /* not saved */ }
+      return next;
+    });
+  }
+  function resetMedal() {
+    setMedal(MEDAL_DEFAULT);
+    try { localStorage.removeItem(MEDAL_KEY); } catch (e) { /* nothing saved */ }
+  }
+  function copyMedal() {
+    const text = `Unit medal: left ${medal.left}, top ${medal.top}, size ${medal.size}, tilt ${medal.rot}`;
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+
+  useEffect(() => {
+    function onKey(e) {
+      const onCover = i === 0 && document.querySelector(".slide .unit-medal");
+      if (!onCover) return;
+      if (e.key === "m" || e.key === "M") { setAdjust((a) => !a); return; }
+      if (!adjust) return;
+      const step = e.shiftKey ? 10 : 1;
+      const map = {
+        ArrowLeft: { left: medal.left - step }, ArrowRight: { left: medal.left + step },
+        ArrowUp: { top: medal.top - step }, ArrowDown: { top: medal.top + step },
+        "+": { size: medal.size + 4 }, "=": { size: medal.size + 4 }, "-": { size: Math.max(60, medal.size - 4) },
+        "[": { rot: medal.rot - 1 }, "]": { rot: medal.rot + 1 },
+      };
+      if (map[e.key]) { e.preventDefault(); changeMedal(map[e.key]); }
+      if (e.key === "0") resetMedal();
+      if (e.key === "Escape") setAdjust(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [i, adjust, medal]);
 
   useEffect(() => {
     const styleId = "sv-styles";
@@ -417,7 +494,19 @@ export default function SoarLesson() {
           </div>
 
           <div className={`slide-body ${v2 && s.instruction ? "has-instruction" : ""} ${isCover ? "is-cover" : ""}`}>
-            {isCover && <CoverBadges lesson={s.lesson} unit={s.unit} />}
+            {isCover && <CoverBadges lesson={s.lesson} unit={s.unit} medal={medal} adjust={adjust} onDrag={changeMedal} />}
+            {isCover && adjust && (
+              <div className="medal-panel">
+                <div className="mp-title">Adjust the UNIT medal</div>
+                <div className="mp-values">left {medal.left} · top {medal.top} · size {medal.size} · tilt {medal.rot}°</div>
+                <div className="mp-hint">Drag · arrows move (Shift ×10) · + / − size · [ ] tilt · 0 reset</div>
+                <div className="mp-btns">
+                  <button type="button" onClick={copyMedal}>{copied ? "Copied" : "Copy values"}</button>
+                  <button type="button" onClick={resetMedal}>Reset</button>
+                  <button type="button" onClick={() => setAdjust(false)}>Done</button>
+                </div>
+              </div>
+            )}
             {v2 && s.instruction && (
               <div className="slide-instruction">
                 {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
@@ -606,10 +695,18 @@ const styles = `
 .cover-ribbon { align-self: flex-start; margin-left: 230px; display: flex; align-items: center; gap: 12px; height: 54px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 22px; box-shadow: 0 6px 0 rgba(10,18,40,0.3), 0 10px 18px rgba(27,42,74,0.2); position: relative; z-index: 2; }
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.18em; }
 .cover-ribbon .cr-num { width: 44px; height: 44px; border-radius: 50%; background: #FF6B4A; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; }
-.unit-medal { position: absolute; left: 36px; top: 62px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, #E0502F); border: 8px solid #FFD066; box-shadow: 0 12px 24px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 3; }
-.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.22em; margin-bottom: -8px; padding-left: 0.22em; }
-.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 76px; line-height: 1; text-shadow: 0 4px 0 rgba(160,45,18,0.35); }
-.unit-medal.is-long .um-num { font-size: 58px; }
+.unit-medal { position: absolute; left: 36px; top: 62px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, #E0502F); border: calc(8px * var(--k, 1)) solid #FFD066; box-shadow: 0 12px 24px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 3; }
+.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(14px * var(--k, 1)); letter-spacing: 0.22em; margin-bottom: calc(-8px * var(--k, 1)); padding-left: 0.22em; }
+.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(76px * var(--k, 1)); line-height: 1; text-shadow: 0 4px 0 rgba(160,45,18,0.35); }
+.unit-medal.is-long .um-num { font-size: calc(58px * var(--k, 1)); }
+.unit-medal.is-adjusting { cursor: grab; outline: 3px dashed #fff; outline-offset: 4px; touch-action: none; user-select: none; }
+.unit-medal.is-adjusting:active { cursor: grabbing; }
+.medal-panel { position: absolute; top: 6px; right: 26px; z-index: 6; width: 318px; background: rgba(27,42,74,0.94); color: #fff; border-radius: 14px; padding: 7px 12px; text-align: center; box-shadow: 0 10px 24px rgba(0,0,0,0.3); font-family: 'Quicksand', sans-serif; }
+.mp-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; }
+.mp-values { font-weight: 700; font-size: 12.5px; margin-top: 2px; color: #FFD066; }
+.mp-hint { font-weight: 600; font-size: 10.5px; opacity: 0.8; margin-top: 2px; white-space: nowrap; }
+.mp-btns { display: flex; gap: 8px; justify-content: center; margin-top: 6px; }
+.mp-btns button { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; border: none; border-radius: 999px; padding: 5px 14px; cursor: pointer; background: #fff; color: #1B2A4A; }
 
 /* picture strip (a school day in order) */
 .strip { display: flex; justify-content: center; gap: 10px; }
