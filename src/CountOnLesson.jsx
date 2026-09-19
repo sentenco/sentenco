@@ -534,7 +534,10 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Feed the Monster!</h2></span>
-          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={54} fontSize={26} onZoom={onZoom} />
+          <div className="word-row">
+            <ObjImg name="monster" size={84} />
+            <LetterTile letters="8" color={NUMBER_COLOR[8]} size={54} fontSize={26} onZoom={onZoom} />
+          </div>
           <CountGroup n={8} icon="donut" size={34} onZoom={onZoom} />
         </>
       ),
@@ -549,7 +552,10 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick! Before It's Eaten!</h2></span>
-          <LetterTile letters="N" color={LETTER_COLOR.N} size={74} fontSize={38} onZoom={onZoom} />
+          <div className="word-row">
+            <ObjImg name="monster" size={84} />
+            <LetterTile letters="N" color={LETTER_COLOR.N} size={74} fontSize={38} onZoom={onZoom} />
+          </div>
         </div>
       ),
     },
@@ -562,7 +568,10 @@ function buildSlides({ onZoom }) {
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Still Hungry!</h2></span>
-          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={54} fontSize={26} onZoom={onZoom} />
+          <div className="word-row">
+            <ObjImg name="monster" size={84} />
+            <LetterTile letters="6" color={NUMBER_COLOR[6]} size={54} fontSize={26} onZoom={onZoom} />
+          </div>
           <CountGroup n={6} icon="cookie" size={34} onZoom={onZoom} />
         </>
       ),
@@ -577,7 +586,10 @@ function buildSlides({ onZoom }) {
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick! Before It's Eaten!</h2></span>
-          <LetterTile letters="M" color={LETTER_COLOR.M} size={74} fontSize={38} onZoom={onZoom} />
+          <div className="word-row">
+            <ObjImg name="monster" size={84} />
+            <LetterTile letters="M" color={LETTER_COLOR.M} size={74} fontSize={38} onZoom={onZoom} />
+          </div>
         </div>
       ),
     },
@@ -588,7 +600,10 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the number."], ["🗣️", "Count the food out loud."]],
       body: (
         <>
-        <LetterTile letters="10" color={NUMBER_COLOR[10]} size={54} fontSize={22} onZoom={onZoom} />
+        <div className="word-row">
+          <ObjImg name="monster" size={84} />
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={54} fontSize={22} onZoom={onZoom} />
+        </div>
         <CountGroup n={10} icon="apple" size={34} onZoom={onZoom} />
         </>
       ),
@@ -600,7 +615,10 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
       guide: "It's the letter ___.",
       body: (
-        <LetterTile letters="O" color={LETTER_COLOR.O} size={74} fontSize={32} onZoom={onZoom} />
+        <div className="word-row">
+          <ObjImg name="monster" size={84} />
+          <LetterTile letters="O" color={LETTER_COLOR.O} size={74} fontSize={32} onZoom={onZoom} />
+        </div>
       ),
     },
     {
@@ -610,7 +628,10 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the number."], ["🗣️", "Count the food out loud."]],
       body: (
         <>
-        <LetterTile letters="7" color={NUMBER_COLOR[7]} size={54} fontSize={22} onZoom={onZoom} />
+        <div className="word-row">
+          <ObjImg name="monster" size={84} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={54} fontSize={22} onZoom={onZoom} />
+        </div>
         <CountGroup n={7} icon="banana" size={40} onZoom={onZoom} />
         </>
       ),
@@ -622,7 +643,10 @@ function buildSlides({ onZoom }) {
       instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
       guide: "It's the letter ___.",
       body: (
-        <LetterTile letters="N" color={LETTER_COLOR.N} size={74} fontSize={32} onZoom={onZoom} />
+        <div className="word-row">
+          <ObjImg name="monster" size={84} />
+          <LetterTile letters="N" color={LETTER_COLOR.N} size={74} fontSize={32} onZoom={onZoom} />
+        </div>
       ),
     },
     // 13: Count 1-10
