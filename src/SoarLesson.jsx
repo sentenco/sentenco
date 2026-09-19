@@ -110,7 +110,7 @@ function WrapUpBlock({ title = "You've Landed!", see = "See you next lesson!", r
 
 // The UNIT medal on the cover can be moved by hand (press M on a cover, or open the lesson with ?adjust=1):
 // drag it, arrow keys nudge, + / - resize, [ ] tilt. The values are kept in this browser only.
-const MEDAL_DEFAULT = { left: 36, top: 62, size: 128, rot: -6 };
+const MEDAL_DEFAULT = { left: 56, top: 51, size: 128, rot: -6 };
 const MEDAL_KEY = "soarMedal";
 function loadMedal() {
   try {
