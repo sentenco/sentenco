@@ -374,6 +374,7 @@ const CUSTOM_LESSONS = [
   },
   {
     slug: "e8-reading-and-reactions",
+    popup: [1200, 780],
     title: "E8 Reading & Reactions",
     tag: "Exam Prep",
     level: "A2 to low B1 · E8 exam prep",
@@ -2467,7 +2468,7 @@ export default function Library() {
                       <p className="cl-lesson-desc">{l.desc}</p>
                     </div>
                     <div className="cl-lesson-foot">
-                      <button type="button" className="cl-lesson-open" onClick={() => openCustomLessonPopup(path, "sentivoCustomLesson", 840, 860)}>
+                      <button type="button" className="cl-lesson-open" onClick={() => openCustomLessonPopup(path, "sentivoCustomLesson", l.popup ? l.popup[0] : 840, l.popup ? l.popup[1] : 860)}>
                         Open
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                       </button>

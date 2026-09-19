@@ -46,15 +46,8 @@ function Choice({ id, prompt, situation, passage, passageTitle, evidence, option
     report(id, i === correct);
   }
   const ok = picked === correct;
-  return (
-    <div className="e8-choice">
-      {passage && (
-        <div className="e8-passage">
-          {passageTitle && <div className="e8-passage-title">{passageTitle}</div>}
-          <p><Marked text={passage} evidence={evidence} on={answered} /></p>
-        </div>
-      )}
-      {situation && <p className="e8-situation">{situation}</p>}
+  const optionsBlock = (
+    <>
       {prompt && <p className="e8-prompt">{prompt}</p>}
       <div className="e8-options">
         {options.map((o, i) => {
@@ -81,6 +74,23 @@ function Choice({ id, prompt, situation, passage, passageTitle, evidence, option
           {trap && <p className="e8-trap"><b>The trap:</b> {trap}</p>}
         </div>
       )}
+    </>
+  );
+  if (passage) {
+    return (
+      <div className="e8-split">
+        <div className="e8-passage">
+          {passageTitle && <div className="e8-passage-title">{passageTitle}</div>}
+          <p><Marked text={passage} evidence={evidence} on={answered} /></p>
+        </div>
+        <div className="e8-side">{optionsBlock}</div>
+      </div>
+    );
+  }
+  return (
+    <div className="e8-choice">
+      {situation && <p className="e8-situation">{situation}</p>}
+      {optionsBlock}
     </div>
   );
 }
@@ -115,35 +125,36 @@ const T9_QS = [
 
 function MatchOne({ q }) {
   const { report } = useContext(ScoreCtx);
-  const [st, setSt] = useStore("m-" + q.id, { tab: "A", picked: null });
-  const answered = st.picked !== null;
-  const shown = answered ? q.correct : st.tab;
-  const text = T9_TEXTS.find((t) => t.id === shown).text;
-  const ok = st.picked === q.correct;
-  function choose() {
+  const [picked, setPicked] = useStore("m-" + q.id, null);
+  const answered = picked !== null;
+  const ok = picked === q.correct;
+  function choose(id) {
     if (answered) return;
-    setSt({ tab: st.tab, picked: st.tab });
-    report("t9-" + q.id, st.tab === q.correct);
+    setPicked(id);
+    report("t9-" + q.id, id === q.correct);
   }
   return (
     <div className="e8-match1">
       <p className="e8-bigq"><span className="e8-qid">{q.id}</span>{q.q}</p>
-      <div className="e8-tabs">
-        {T9_TEXTS.map((t) => (
-          <button key={t.id} type="button" disabled={answered} className={`e8-tab ${shown === t.id ? "is-on" : ""} ${answered && t.id === q.correct ? "is-correct" : ""} ${answered && t.id === st.picked && !ok ? "is-wrong" : ""}`} onClick={() => setSt({ ...st, tab: t.id })}>
-            Text {t.id}
-          </button>
-        ))}
+      <div className="e8-texts">
+        {T9_TEXTS.map((t) => {
+          const cls = answered && t.id === q.correct ? "is-correct" : answered && t.id === picked ? "is-wrong" : "";
+          return (
+            <div key={t.id} className={`e8-textcard ${cls}`}>
+              <div className="e8-textcard-head">
+                <span className="e8-textcard-id">Text {t.id}</span>
+                {!answered && <button type="button" className="e8-pick" onClick={() => choose(t.id)}>Choose</button>}
+                {answered && t.id === q.correct && <span className="e8-tag is-ok">Answer</span>}
+                {answered && t.id === picked && !ok && <span className="e8-tag is-bad">Your pick</span>}
+              </div>
+              <p><Marked text={t.text} evidence={q.evidence} on={answered && t.id === q.correct} /></p>
+            </div>
+          );
+        })}
       </div>
-      <div className="e8-readcard">
-        <p><Marked text={text} evidence={q.evidence} on={answered} /></p>
-      </div>
-      {!answered ? (
-        <button type="button" className="e8-check" onClick={choose}>This text answers the question: choose Text {st.tab}</button>
-      ) : (
+      {answered && (
         <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
-          <p><b>{ok ? "Correct." : `Not Text ${st.picked}.`} The answer is Text {q.correct}.</b> Evidence: <mark className="e8-mark">{q.evidence}</mark></p>
-          <p className="e8-trap"><b>The trap:</b> {q.trap}</p>
+          <p><b>{ok ? "Correct." : `Not Text ${picked}.`} The answer is Text {q.correct}.</b> Evidence: <mark className="e8-mark">{q.evidence}</mark>. <span className="e8-trap"><b>The trap:</b> {q.trap}</span></p>
         </div>
       )}
     </div>
@@ -198,7 +209,7 @@ function GapOne({ item }) {
     return <span className="e8-gap is-later"><span className="e8-gap-n">8.{g}</span></span>;
   };
   return (
-    <div className="e8-gap1">
+    <div className="e8-split">
       <div className="e8-passage e8-passage--article">
         <div className="e8-passage-title">UNUSUAL ARTWORK</div>
         <p>
@@ -210,24 +221,26 @@ function GapOne({ item }) {
           ))}
         </p>
       </div>
-      <p className="e8-prompt">Which sentence fits gap 8.{item.g}?</p>
-      <div className="e8-options">
-        {options.map((i) => {
-          if (answered && i !== item.key && i !== picked) return null;
-          const cls = answered && i === item.key ? "is-correct" : answered && i === picked ? "is-wrong" : "";
-          return (
-            <button key={i} type="button" className={`e8-opt ${cls}`} onClick={() => pick(i)} disabled={answered}>
-              <span className="e8-opt-letter">{LETTERS[i]}</span>
-              <span>{T8_BANK[i]}</span>
-            </button>
-          );
-        })}
-      </div>
-      {answered && (
-        <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
-          <p><b>{ok ? "Correct." : `Not ${LETTERS[picked]}.`} The answer is {LETTERS[item.key]}.</b> {item.why}</p>
+      <div className="e8-side">
+        <p className="e8-prompt">Which sentence fits gap 8.{item.g}?</p>
+        <div className="e8-options">
+          {options.map((i) => {
+            if (answered && i !== item.key && i !== picked) return null;
+            const cls = answered && i === item.key ? "is-correct" : answered && i === picked ? "is-wrong" : "";
+            return (
+              <button key={i} type="button" className={`e8-opt ${cls}`} onClick={() => pick(i)} disabled={answered}>
+                <span className="e8-opt-letter">{LETTERS[i]}</span>
+                <span>{T8_BANK[i]}</span>
+              </button>
+            );
+          })}
         </div>
-      )}
+        {answered && (
+          <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
+            <p><b>{ok ? "Correct." : `Not ${LETTERS[picked]}.`} The answer is {LETTERS[item.key]}.</b> {item.why}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -550,11 +563,27 @@ const SLIDES = [
 
 export const LESSON_GUIDE = SLIDES.map((s) => ({ stage: s.stage, time: s.time, note: s.note }));
 
+// The slide is drawn at 1120 x 630 (16:9, the same shape as the background picture) and scaled to fit the window.
+const SLIDE_W = 1120;
+const SLIDE_H = 630;
+
+function useFitScale() {
+  const calc = () => Math.min(1, (window.innerWidth - 24) / SLIDE_W, (window.innerHeight - 24) / SLIDE_H);
+  const [scale, setScale] = useState(calc);
+  useEffect(() => {
+    const on = () => setScale(calc());
+    window.addEventListener("resize", on);
+    return () => window.removeEventListener("resize", on);
+  }, []);
+  return scale;
+}
+
 export default function E8ReadingReactionsLesson() {
   const [i, setI] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
   const [results, setResults] = useState({});
   const [store, setStore] = useState({});
+  const scale = useFitScale();
   const total = SLIDES.length;
   const s = SLIDES[i];
 
@@ -579,22 +608,22 @@ export default function E8ReadingReactionsLesson() {
   return (
     <ScoreCtx.Provider value={{ report, results, store, setStore }}>
       <div className="e8-wrap">
-        <div className="e8-single">
-          <div className="e8-slide">
-            <button className="e8-close" onClick={exit} aria-label="Close">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 6l12 12M18 6L6 18" /></svg>
-            </button>
-            <div className="e8-header">
+        <div className="e8-frame" style={{ width: SLIDE_W * scale, height: SLIDE_H * scale }}>
+          <div className="e8-slide" style={{ transform: `scale(${scale})` }}>
+            <div className="e8-top">
               <div className="e8-brand">
                 <span className="e8-brand-badge"><img className="e8-brand-logo" src="/logo-sentivo.png" alt="" /></span>
                 <span>entivo</span>
               </div>
-              <div className="e8-header-right">
+              <div className="e8-stage-chip">
+                <span className="e8-stage-name">{s.stage}</span>
+                {s.time && <span className="e8-stage-time">{s.time}</span>}
+              </div>
+              <div className="e8-top-right">
                 <button type="button" className={`e8-tnotes ${showNotes ? "on" : ""}`} onClick={() => setShowNotes((v) => !v)}>Teacher notes</button>
-                <div className="e8-stage-chip">
-                  <span className="e8-stage-name">{s.stage}</span>
-                  {s.time && <span className="e8-stage-time">{s.time}</span>}
-                </div>
+                <button className="e8-close" onClick={exit} aria-label="Close">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                </button>
               </div>
             </div>
             <div className="e8-body" key={i}>{s.body}</div>
@@ -603,7 +632,7 @@ export default function E8ReadingReactionsLesson() {
                 <b>Teacher notes.</b> {s.note}
               </div>
             )}
-            <div className="e8-footer">
+            <div className="e8-nav-row">
               <button className={`e8-nav ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
               <div className="e8-progress">
                 {Array.from({ length: total }).map((_, idx) => (
@@ -624,97 +653,106 @@ export default function E8ReadingReactionsLesson() {
 export const styles = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Quicksand:wght@500;600;700&display=swap');
 
-.e8-wrap { min-height: 100vh; width: 100%; background: #EEF1F6; color: ${NAVY}; font-family: 'Quicksand', sans-serif; padding: 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+.e8-wrap { min-height: 100vh; width: 100%; background: #EEF1F6; color: ${NAVY}; font-family: 'Quicksand', sans-serif; padding: 12px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
 .e8-wrap * { box-sizing: border-box; }
-.e8-single { flex-shrink: 0; }
+.e8-frame { flex-shrink: 0; position: relative; }
 
 .e8-slide {
-  position: relative; width: min(740px, calc(100vw - 32px)); height: min(740px, calc(100vh - 32px)); flex-shrink: 0;
-  display: flex; flex-direction: column; overflow: hidden;
-  background: #fff; border-radius: 22px; box-shadow: 0 24px 50px rgba(27,42,74,0.18);
+  position: absolute; top: 0; left: 0; width: ${SLIDE_W}px; height: ${SLIDE_H}px; transform-origin: top left; overflow: hidden;
+  background: #FDF4E7 url('/curriculum/e8/slide-bg.jpg') center / 100% 100% no-repeat;
+  border-radius: 18px; box-shadow: 0 24px 50px rgba(27,42,74,0.22);
 }
-.e8-close { position: absolute; top: 14px; right: 14px; z-index: 4; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); color: #fff; }
 
-.e8-header { flex-shrink: 0; background: ${NAVY}; padding: 16px 56px 16px 30px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.e8-brand { display: flex; align-items: center; gap: 8px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; color: #fff; }
-.e8-brand-badge { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #fff; flex-shrink: 0; }
-.e8-brand-logo { height: 16px; width: auto; display: block; }
-.e8-header-right { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.e8-tnotes { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10.5px; color: rgba(255,255,255,0.85); background: transparent; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 5px 11px; cursor: pointer; white-space: nowrap; }
+/* header row sits on the navy wave at the top of the picture */
+.e8-top { position: absolute; top: 10px; left: 26px; right: 16px; height: 30px; display: flex; align-items: center; gap: 14px; z-index: 3; }
+.e8-brand { display: flex; align-items: center; gap: 8px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: #fff; }
+.e8-brand-badge { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+.e8-brand-logo { height: 17px; width: auto; display: block; }
+.e8-stage-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.16); padding: 5px 14px; border-radius: 999px; }
+.e8-stage-name { font-weight: 700; font-size: 12px; color: #fff; letter-spacing: 0.02em; white-space: nowrap; }
+.e8-stage-time { font-size: 10.5px; font-weight: 800; color: #FFD9CC; white-space: nowrap; }
+.e8-top-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.e8-tnotes { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 11px; color: rgba(255,255,255,0.9); background: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 999px; padding: 5px 12px; cursor: pointer; white-space: nowrap; margin-right: 46px; }
 .e8-tnotes.on { background: #fff; color: ${NAVY}; }
-.e8-stage-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.14); padding: 6px 14px; border-radius: 999px; min-width: 0; }
-.e8-stage-name { font-weight: 700; font-size: 11.5px; color: #fff; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.e8-stage-time { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.14); padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.e8-close { width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); color: #fff; }
 
-.e8-body { flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 26px 44px 22px; gap: 14px; }
+/* content area = the cream part of the picture */
+.e8-body { position: absolute; top: 104px; bottom: 100px; left: 78px; right: 78px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .e8-body > * { margin-top: auto; margin-bottom: auto; }
 
-.e8-notes { flex-shrink: 0; background: #FFF6E5; border-top: 2px solid #F2A900; padding: 10px 26px; font-size: 12.5px; font-weight: 600; color: #6B5310; line-height: 1.5; max-height: 110px; overflow-y: auto; }
+.e8-notes { position: absolute; left: 78px; right: 78px; bottom: 104px; z-index: 4; background: #FFF6E5; border: 2px solid #F2A900; border-radius: 12px; padding: 9px 16px; font-size: 12.5px; font-weight: 600; color: #6B5310; line-height: 1.5; max-height: 92px; overflow-y: auto; box-shadow: 0 8px 20px rgba(27,42,74,0.18); }
 
-.e8-footer { flex-shrink: 0; background: #F5F6FA; border-top: 1px solid #E4E9F5; padding: 14px 26px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.e8-nav { display: inline-flex; align-items: center; gap: 7px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; padding: 10px 20px; border-radius: 12px; border: 1px solid #DCE2F0; cursor: pointer; background: #fff; color: ${NAVY}; white-space: nowrap; }
-.e8-nav.next { background: ${CORAL}; border-color: ${CORAL}; color: #fff; }
-.e8-nav.is-off, .e8-nav:disabled { opacity: 0.35; cursor: default; }
+/* nav buttons sit on the navy band at the bottom of the picture */
+.e8-nav-row { position: absolute; left: 190px; right: 120px; bottom: 22px; height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 12px; z-index: 3; }
+.e8-nav { display: inline-flex; align-items: center; gap: 7px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; padding: 10px 22px; border-radius: 12px; border: none; cursor: pointer; background: #fff; color: ${NAVY}; white-space: nowrap; }
+.e8-nav.next { background: ${CORAL}; color: #fff; }
+.e8-nav.is-off, .e8-nav:disabled { opacity: 0.4; cursor: default; }
 .e8-progress { display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; justify-content: center; }
-.e8-dot { width: 6px; height: 6px; border-radius: 50%; background: #D6DCEA; flex-shrink: 0; }
+.e8-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); flex-shrink: 0; }
 .e8-dot.on { width: 16px; border-radius: 4px; background: ${CORAL}; }
 
-.e8-eyebrow { font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: ${CORAL_DEEP}; }
-.e8-h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 36px; color: ${NAVY}; margin: 6px 0 0; text-align: center; }
-.e8-h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 27px; color: ${NAVY}; margin: 2px 0 8px; text-align: center; }
-.e8-p { font-size: 15.5px; font-weight: 600; color: #4A5878; line-height: 1.65; margin: 0; text-align: center; max-width: 540px; }
+.e8-eyebrow { font-weight: 800; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: ${CORAL_DEEP}; }
+.e8-h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 44px; color: ${NAVY}; margin: 6px 0 0; text-align: center; }
+.e8-h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; color: ${NAVY}; margin: 0 0 6px; text-align: center; }
+.e8-p { font-size: 16px; font-weight: 600; color: #4A5878; line-height: 1.6; margin: 0; text-align: center; max-width: 640px; }
 .e8-cover { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-.e8-cover-p { font-size: 16px; font-weight: 600; color: #5A6B92; max-width: 500px; line-height: 1.65; margin: 0; }
-.e8-source { font-size: 11px; font-weight: 700; color: #8892AC; margin-top: 10px; max-width: 460px; }
+.e8-cover-p { font-size: 17px; font-weight: 600; color: #5A6B92; max-width: 560px; line-height: 1.6; margin: 0; }
+.e8-source { font-size: 11.5px; font-weight: 700; color: #8892AC; margin-top: 8px; max-width: 520px; }
 
-.e8-plan { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 560px; }
-.e8-plan-list { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 10px; }
-.e8-plan-item { display: grid; grid-template-columns: 78px 1fr 56px; align-items: center; gap: 12px; background: #F5F6FA; border: 1px solid #E4E9F5; border-radius: 12px; padding: 12px 16px; font-size: 14.5px; font-weight: 600; color: #4A5878; }
+.e8-plan { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 640px; }
+.e8-plan-list { display: flex; flex-direction: column; gap: 7px; width: 100%; margin-top: 6px; }
+.e8-plan-item { display: grid; grid-template-columns: 84px 1fr 60px; align-items: center; gap: 12px; background: rgba(255,255,255,0.78); border: 1px solid #EBDFD0; border-radius: 12px; padding: 9px 16px; font-size: 14.5px; font-weight: 600; color: #4A5878; }
 .e8-plan-item b { color: ${NAVY}; font-weight: 800; }
 .e8-plan-item small { font-weight: 800; font-size: 12px; color: ${CORAL_DEEP}; text-align: right; }
 
-.e8-strategy { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; max-width: 560px; }
-.e8-steps { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; width: 100%; }
-.e8-steps li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; font-weight: 600; line-height: 1.55; color: ${NAVY}; background: #F5F6FA; border-radius: 14px; padding: 16px 18px; }
+.e8-strategy { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 660px; }
+.e8-steps { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.e8-steps li { display: flex; gap: 14px; align-items: center; font-size: 17px; font-weight: 600; line-height: 1.5; color: ${NAVY}; background: rgba(255,255,255,0.82); border: 1px solid #EBDFD0; border-radius: 14px; padding: 13px 18px; }
 .e8-step-n { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: ${CORAL}; color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
-.e8-example { font-size: 13.5px; font-weight: 700; color: #8A5A00; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 12px; padding: 12px 16px; width: 100%; line-height: 1.5; }
+.e8-example { font-size: 13.5px; font-weight: 700; color: #8A5A00; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 12px; padding: 10px 16px; width: 100%; line-height: 1.5; }
 
-.e8-choice, .e8-gap1, .e8-match1, .e8-wt { width: 100%; max-width: 620px; display: flex; flex-direction: column; gap: 14px; }
-.e8-passage { background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 16px 20px; }
-.e8-passage p { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.7; color: #33415E; white-space: pre-line; }
-.e8-passage-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; color: ${NAVY}; margin-bottom: 6px; }
-.e8-situation { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; line-height: 1.5; color: ${NAVY}; text-align: center; padding: 0 8px 6px; }
+.e8-choice { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 12px; }
+.e8-split { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: center; }
+.e8-side { display: flex; flex-direction: column; gap: 10px; }
+.e8-passage { background: rgba(255,255,255,0.86); border: 1px solid #EBDFD0; border-radius: 14px; padding: 14px 18px; }
+.e8-passage p { margin: 0; font-size: 13.5px; font-weight: 600; line-height: 1.62; color: #33415E; white-space: pre-line; }
+.e8-passage-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 13.5px; letter-spacing: 0.02em; color: ${NAVY}; margin-bottom: 5px; }
+.e8-situation { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; line-height: 1.45; color: ${NAVY}; text-align: center; padding: 0 8px 4px; }
 .e8-prompt { margin: 0; font-weight: 800; font-size: 15px; color: ${NAVY}; }
-.e8-options { display: flex; flex-direction: column; gap: 10px; }
-.e8-opt { display: flex; align-items: flex-start; gap: 12px; text-align: left; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14.5px; line-height: 1.45; color: ${NAVY}; background: #FAFBFD; border: 1.5px solid #DCE2F0; border-radius: 14px; padding: 12px 16px; cursor: pointer; }
+.e8-options { display: flex; flex-direction: column; gap: 9px; }
+.e8-opt { display: flex; align-items: flex-start; gap: 12px; text-align: left; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14.5px; line-height: 1.4; color: ${NAVY}; background: rgba(255,255,255,0.92); border: 1.5px solid #DCE2F0; border-radius: 14px; padding: 10px 15px; cursor: pointer; }
 .e8-opt:disabled { cursor: default; }
 .e8-opt-letter { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #E4E9F5; color: ${NAVY}; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 .e8-opt.is-correct { background: ${GREEN}; border-color: ${GREEN}; color: #fff; }
 .e8-opt.is-wrong { background: ${RED}; border-color: ${RED}; color: #fff; }
 .e8-opt.is-correct .e8-opt-letter, .e8-opt.is-wrong .e8-opt-letter { background: rgba(255,255,255,0.28); color: #fff; }
-.e8-why { border-radius: 14px; padding: 12px 16px; font-size: 13.5px; font-weight: 600; line-height: 1.55; color: ${NAVY}; }
-.e8-why p { margin: 0 0 5px; }
+.e8-why { border-radius: 14px; padding: 10px 15px; font-size: 13px; font-weight: 600; line-height: 1.5; color: ${NAVY}; }
+.e8-why p { margin: 0 0 4px; }
 .e8-why p:last-child { margin-bottom: 0; }
 .e8-why.is-ok { background: #E6F8F5; border: 1px solid #A8E6DF; }
 .e8-why.is-bad { background: #FDECEC; border: 1px solid #F5B8BA; }
 .e8-trap { color: #8A5A00; }
 .e8-mark { background: #FFE58A; color: inherit; border-radius: 3px; padding: 0 2px; }
 
-.e8-bigq { margin: 0; display: flex; align-items: baseline; gap: 10px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; line-height: 1.4; color: ${NAVY}; }
+.e8-match1 { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.e8-bigq { margin: 0; display: flex; align-items: baseline; gap: 10px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; line-height: 1.3; color: ${NAVY}; }
 .e8-qid { flex-shrink: 0; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 13px; color: ${CORAL_DEEP}; }
-.e8-tabs { display: flex; gap: 8px; }
-.e8-tab { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 13px; color: ${NAVY}; background: #F5F6FA; border: 1.5px solid #DCE2F0; border-radius: 999px; padding: 8px 18px; cursor: pointer; }
-.e8-tab.is-on { background: ${NAVY}; border-color: ${NAVY}; color: #fff; }
-.e8-tab:disabled { cursor: default; }
-.e8-tab.is-correct { background: ${GREEN}; border-color: ${GREEN}; color: #fff; }
-.e8-tab.is-wrong { background: ${RED}; border-color: ${RED}; color: #fff; }
-.e8-readcard { background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 16px 20px; }
-.e8-readcard p { margin: 0; font-size: 14.5px; font-weight: 600; line-height: 1.7; color: #33415E; }
+.e8-texts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.e8-textcard { background: rgba(255,255,255,0.88); border: 1.5px solid #EBDFD0; border-radius: 14px; padding: 10px 14px 12px; }
+.e8-textcard.is-correct { border-color: ${GREEN}; box-shadow: 0 0 0 2px rgba(46,196,182,0.25); }
+.e8-textcard.is-wrong { border-color: ${RED}; box-shadow: 0 0 0 2px rgba(229,72,77,0.2); }
+.e8-textcard-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; min-height: 26px; }
+.e8-textcard-id { font-family: 'Fraunces', serif; font-weight: 700; font-size: 14px; color: ${NAVY}; }
+.e8-textcard p { margin: 0; font-size: 12px; font-weight: 600; line-height: 1.5; color: #33415E; }
+.e8-pick { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 11.5px; background: ${NAVY}; color: #fff; border: none; border-radius: 999px; padding: 5px 14px; cursor: pointer; }
+.e8-tag { font-size: 10.5px; font-weight: 800; border-radius: 999px; padding: 3px 10px; color: #fff; }
+.e8-tag.is-ok { background: ${GREEN}; }
+.e8-tag.is-bad { background: ${RED}; }
 
-.e8-check { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 14px; background: ${NAVY}; color: #fff; border: none; border-radius: 12px; padding: 12px 24px; cursor: pointer; align-self: center; }
+.e8-check { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 14px; background: ${NAVY}; color: #fff; border: none; border-radius: 12px; padding: 11px 26px; cursor: pointer; align-self: center; }
 .e8-check:disabled { opacity: 0.35; cursor: default; }
 
-.e8-gap { display: inline-flex; align-items: center; gap: 5px; vertical-align: baseline; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 12.5px; color: ${NAVY}; background: #fff; border: 1.5px dashed #9AA6C4; border-radius: 8px; padding: 1px 8px; margin: 0 2px; }
+.e8-gap { display: inline-flex; align-items: center; gap: 5px; vertical-align: baseline; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 12px; color: ${NAVY}; background: #fff; border: 1.5px dashed #9AA6C4; border-radius: 8px; padding: 0 8px; margin: 0 2px; }
 .e8-gap.is-active { border-color: ${CORAL}; background: #FFF1EC; }
 .e8-gap.is-later { border-color: #C9D0E0; color: #9AA6C4; }
 .e8-gap.is-correct { background: ${GREEN}; border: 1.5px solid ${GREEN}; color: #fff; }
@@ -723,39 +761,31 @@ export const styles = `
 .e8-gap-empty { letter-spacing: 1px; color: #9AA6C4; }
 .e8-filled { background: #E6F8F5; border-radius: 4px; padding: 0 3px; }
 
+.e8-wt { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 12px; }
 .e8-wt-help { margin: 0; font-size: 13px; font-weight: 700; color: #5A6B92; text-align: center; }
-.e8-wt-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 16px; padding: 22px 26px; }
-.e8-wt-sentence { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; line-height: 1.55; color: ${NAVY}; }
+.e8-wt-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: rgba(255,255,255,0.88); border: 1px solid #EBDFD0; border-radius: 16px; padding: 18px 26px; }
+.e8-wt-sentence { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; line-height: 1.5; color: ${NAVY}; }
 .e8-wt-words { color: ${CORAL_DEEP}; font-family: 'Quicksand', sans-serif; font-size: 18px; }
-.e8-input { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; color: ${NAVY}; border: 0; border-bottom: 3px solid #9AA6C4; background: #fff; border-radius: 8px 8px 0 0; padding: 8px 12px; width: 100%; max-width: 360px; outline: none; }
+.e8-input { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; color: ${NAVY}; border: 0; border-bottom: 3px solid #9AA6C4; background: #fff; border-radius: 8px 8px 0 0; padding: 8px 12px; width: 100%; max-width: 380px; outline: none; }
 .e8-input:focus { border-bottom-color: ${CORAL}; }
 .e8-input.is-correct { background: #E6F8F5; border-bottom-color: ${GREEN}; }
 .e8-input.is-wrong { background: #FDECEC; border-bottom-color: ${RED}; }
 
-.e8-score { width: 100%; max-width: 560px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
-.e8-score-total { display: flex; align-items: baseline; gap: 10px; background: ${NAVY}; color: #fff; border-radius: 22px; padding: 14px 36px; }
-.e8-score-total span { font-family: 'Fraunces', serif; font-weight: 700; font-size: 64px; line-height: 1; }
+.e8-score { width: 100%; max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.e8-score-total { display: flex; align-items: baseline; gap: 10px; background: ${NAVY}; color: #fff; border-radius: 22px; padding: 12px 36px; }
+.e8-score-total span { font-family: 'Fraunces', serif; font-weight: 700; font-size: 60px; line-height: 1; }
 .e8-score-total small { font-size: 16px; font-weight: 700; opacity: 0.75; }
 .e8-score-tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; width: 100%; }
-.e8-score-tile { display: flex; flex-direction: column; align-items: center; gap: 4px; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 14px 6px; text-align: center; }
+.e8-score-tile { display: flex; flex-direction: column; align-items: center; gap: 4px; background: rgba(255,255,255,0.86); border: 1px solid #EBDFD0; border-radius: 14px; padding: 12px 6px; text-align: center; }
 .e8-score-tile.is-full { background: #E6F8F5; border-color: #A8E6DF; }
 .e8-score-tile small { font-size: 11.5px; font-weight: 800; color: ${CORAL_DEEP}; }
 .e8-score-tile b { font-family: 'Fraunces', serif; font-size: 24px; color: ${NAVY}; }
 .e8-score-tile span { font-size: 11px; font-weight: 700; color: #5A6B92; line-height: 1.3; }
 
-.e8-traps { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 10px; }
-.e8-trap-row { display: grid; grid-template-columns: 74px 1fr; gap: 12px; align-items: start; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 12px; padding: 12px 16px; font-size: 13.5px; font-weight: 600; line-height: 1.5; color: #4A5878; }
+.e8-traps { width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 8px; }
+.e8-trap-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; align-items: start; background: rgba(255,255,255,0.86); border: 1px solid #EBDFD0; border-radius: 12px; padding: 9px 16px; font-size: 13.5px; font-weight: 600; line-height: 1.45; color: #4A5878; }
 .e8-trap-row b { color: ${CORAL_DEEP}; font-weight: 800; }
 
-.e8-takehome { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 560px; }
-.e8-th-list { margin: 0; padding: 14px 20px 14px 38px; width: 100%; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 14px; font-size: 15.5px; font-weight: 700; line-height: 1.8; color: #6B5310; }
-
-@media (max-width: 640px) {
-  .e8-header { padding: 12px 50px 12px 16px; }
-  .e8-body { padding: 16px 18px; }
-  .e8-footer { padding: 10px 14px; }
-  .e8-h1 { font-size: 26px; }
-  .e8-score-tiles { grid-template-columns: repeat(2, 1fr); }
-  .e8-plan-item { grid-template-columns: 64px 1fr 48px; }
-}
+.e8-takehome { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; max-width: 640px; }
+.e8-th-list { margin: 0; padding: 12px 20px 12px 40px; width: 100%; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 14px; font-size: 15.5px; font-weight: 700; line-height: 1.7; color: #6B5310; }
 `;
