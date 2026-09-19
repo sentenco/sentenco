@@ -48,7 +48,7 @@ function Pic({ src, label, size = 116, onZoom }) {
   );
 }
 
-function EmotionTile({ name, size = 100, onZoom }) {
+function EmotionTile({ name, size = 100, hideName, onZoom }) {
   const color = EMOTION_COLOR[name];
   const emoji = EMOTION_EMOJI[name];
   const big = <div className="emo-tile zoom-emo-tile" style={{ background: color }}><span style={{ fontSize: 120 }}>{emoji}</span></div>;
@@ -57,7 +57,7 @@ function EmotionTile({ name, size = 100, onZoom }) {
       <div className="emo-tile" style={{ background: color, width: size, height: size, fontSize: Math.round(size * 0.5) }} onClick={() => onZoom(big)}>
         {emoji}
       </div>
-      <div className="word">{name}</div>
+      {!hideName && <div className="word">{name}</div>}
     </div>
   );
 }
@@ -227,11 +227,11 @@ export default function Unit4TestLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 4 · Test", time: null, note: null },
   { stage: "Test Welcome", time: "~2 min", note: "Tell the student: \"Today is our Unit 4 Challenge!\" Explain there will be several small challenges. Do not review or teach before starting." },
-  { stage: "Part 1: About Me", time: "~4 min", note: "Ask \"What's your name?\" and \"How old are you?\" Student answers independently using \"I am...\"" },
-  { stage: "Part 2: Feelings Check", time: "~4 min", note: "Show different emotion faces. Student identifies the feeling and produces \"I am happy/sad/angry/tired.\"" },
-  { stage: "Part 3: Word Check", time: "~4 min", note: "Show pictures of a cat, dog, and pen in random order. Student identifies each word without a model. Include \"Cat or dog?\"-style questions." },
-  { stage: "Part 4: Tell Me About You", time: "~4 min", note: "Show a simple character/profile card containing an age and feeling. Ask the student to describe it, then ask \"What about you?\"" },
-  { stage: "Part 5: All About Me Challenge", time: "~4 min", note: "Conduct a short, natural role-play. Student answers questions about name, age, and feelings, then identifies one or more pictures." },
+  { stage: "About Me", time: "~4 min", note: "Ask \"What's your name?\" and \"How old are you?\" Student answers independently using \"I am...\"" },
+  { stage: "Feelings Check", time: "~4 min", note: "Show different emotion faces. Student identifies the feeling and produces \"I am happy/sad/angry/tired.\" The names are hidden on the faces on purpose. Second try? Use the Feelings Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Word Check", time: "~4 min", note: "Show pictures of a cat, dog, and pen in random order. Student identifies each word without a model. Include \"Cat or dog?\"-style questions. Second try? Use the What Is It? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Tell Me About You", time: "~4 min", note: "Show a simple character/profile card containing an age and feeling. Ask the student to describe it, then ask \"What about you?\" Second try? Use the Tell Me About You Again! slide (a sad character) only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "All About Me Challenge", time: "~4 min", note: "Conduct a short, natural role-play. Student answers questions about name, age, and feelings, then identifies one or more pictures. The extra challenge slides repeat the questions with the pictures in a new order. Use them only for a second attempt. Do not reveal answers." },
   { stage: "Finish & Celebrate", time: "~3 min", note: "Give a final 3-item challenge covering \"I am...\", a feeling, and a vocabulary word. Record the results and finish positively." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -251,6 +251,7 @@ function buildSlides({ onZoom }) {
     // 2: Test Welcome
     {
       stage: "Test Welcome",
+      instruction: [["👂", "Listen."], ["🗣️", "Say: I'm ready!"]],
       body: (
         <div className="center-col">
           <StarIcon size={44} fill="var(--sun)" />
@@ -261,7 +262,9 @@ function buildSlides({ onZoom }) {
     },
     // 3: Part 1: About Me
     {
-      stage: "Part 1: About Me",
+      stage: "About Me",
+      part: "A",
+      instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer both."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">About Me!</h2></span>
@@ -280,60 +283,158 @@ function buildSlides({ onZoom }) {
     },
     // 4: Part 2: Feelings Check
     {
-      stage: "Part 2: Feelings Check",
+      stage: "Feelings Check",
+      part: "B",
+      instruction: [["👀", "Look at each face."], ["🗣️", "Say the feeling."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Do You Feel?</h2></span>
           <div className="word-row">
-            <EmotionTile name="Happy" size={70} onZoom={onZoom} />
-            <EmotionTile name="Sad" size={70} onZoom={onZoom} />
-            <EmotionTile name="Angry" size={70} onZoom={onZoom} />
-            <EmotionTile name="Tired" size={70} onZoom={onZoom} />
+            <EmotionTile name="Happy" size={70} hideName onZoom={onZoom} />
+            <EmotionTile name="Sad" size={70} hideName onZoom={onZoom} />
+            <EmotionTile name="Angry" size={70} hideName onZoom={onZoom} />
+            <EmotionTile name="Tired" size={70} hideName onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Feelings Check",
+      part: "B",
+      title: "Feelings Again!",
+      instruction: [["👀", "Look at each face."], ["🗣️", "Say the feeling."]],
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Tired" size={70} hideName onZoom={onZoom} />
+          <EmotionTile name="Angry" size={70} hideName onZoom={onZoom} />
+          <EmotionTile name="Happy" size={70} hideName onZoom={onZoom} />
+          <EmotionTile name="Sad" size={70} hideName onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Part 3: Word Check
     {
-      stage: "Part 3: Word Check",
+      stage: "Word Check",
+      part: "C",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
-            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG1}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={130} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+            <Pic src={`${IMG1}/cat.jpg`} label="cat" size={130} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Cat or dog?</p>
         </>
+      ),
+    },
+    {
+      stage: "Word Check",
+      part: "C",
+      title: "What Is It? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={130} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={130} onZoom={onZoom} />
+        </div>
       ),
     },
     // 6: Part 4: Tell Me About You
     {
-      stage: "Part 4: Tell Me About You",
+      stage: "Tell Me About You",
+      part: "D",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Say how you feel."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About You!</h2></span>
           <div className="word-row">
             <EmotionTile name="Happy" onZoom={onZoom} />
           </div>
-          <p className="slide-p">This character is happy. What about you?</p>
         </>
+      ),
+    },
+    {
+      stage: "Tell Me About You",
+      part: "D",
+      title: "Tell Me About You Again!",
+      instruction: [["👀", "Look at the character."], ["🗣️", "Say how you feel."]],
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Sad" onZoom={onZoom} />
+        </div>
       ),
     },
     // 7: Part 5: All About Me Challenge
     {
-      stage: "Part 5: All About Me Challenge",
+      stage: "All About Me Challenge",
+      part: "D",
+      instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer. Then say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">All About Me Challenge!</h2></span>
-          <p className="slide-p">Answer questions about your name, age, and feelings. Then identify a picture!</p>
+          <div className="bubble-col" style={{ maxWidth: 460 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What's your name? How old are you? How do you feel?</div>
+            </div>
+          </div>
+        <div className="word-row">
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={100} onZoom={onZoom} />
         </div>
+        </div>
+      ),
+    },
+    {
+      stage: "All About Me Challenge",
+      part: "D",
+      title: "All About Me Challenge 2!",
+      instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer. Then say the word."]],
+      body: (
+        <>
+          <div className="bubble-col" style={{ maxWidth: 460 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What's your name? How old are you? How do you feel?</div>
+            </div>
+          </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={100} onZoom={onZoom} />
+        </div>
+        </>
+      ),
+    },
+    {
+      stage: "All About Me Challenge",
+      part: "D",
+      title: "All About Me Challenge 3!",
+      instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer. Then say the word."]],
+      body: (
+        <>
+          <div className="bubble-col" style={{ maxWidth: 460 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What's your name? How old are you? How do you feel?</div>
+            </div>
+          </div>
+        <div className="word-row">
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={100} onZoom={onZoom} />
+        </div>
+        </>
       ),
     },
     // 8: My Unit 4 Score!
     {
       stage: "Finish & Celebrate",
+      part: "D",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say each word."]],
       body: (
         <div className="center-col">
           <div className="score-stars">

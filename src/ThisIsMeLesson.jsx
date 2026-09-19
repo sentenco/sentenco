@@ -245,14 +245,14 @@ export default function ThisIsMeLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 4 · Lesson 1", time: null, note: null },
   { stage: "Hello & Connect", time: "~3 min", note: "Greet the student and have a short, natural exchange. Ask their name and encourage them to answer independently." },
-  { stage: "I Am...", time: "~3 min", note: "Introduce \"I am...\" using yourself first, then simple visual choices like happy/sad. Model \"I am happy.\" Student practices with support." },
+  { stage: "I Am...", time: "~3 min", note: "Introduce \"I am...\" using yourself first, then simple visual choices like happy/sad. Model \"I am happy.\" Student practices with support. Fast learner? Add Your Turn Again! with the angry and tired faces (+1 min)." },
   { stage: "Meet Cat", time: "~3 min", note: "Introduce the word cat with a clear picture. Say \"cat\", have the student repeat it, and connect it to the written word CAT." },
   { stage: "This Is Me!", time: "~2.5 min", note: "Use a simple character picture. Practice short \"I am...\" statements with visual prompts." },
-  { stage: "This Is Me!", time: "~2.5 min", note: "Continue with a second statement." },
+  { stage: "This Is Me!", time: "~2.5 min", note: "Continue with a second statement. Fast learner? Add And More! (+1 min)." },
   { stage: "Look & Say", time: "~4 min", note: "Show pictures of a child and a cat. Ask \"Who is it?\" and \"What is it?\" Student responds with \"I am...\" or \"Cat.\"" },
   { stage: "Me & My Cat", time: "~2 min", note: "Create a simple onscreen character scene. Student chooses a character and a cat, then makes simple statements." },
-  { stage: "Me & My Cat", time: "~2 min", note: "Teacher reacts to and expands the student's answers with a second round." },
-  { stage: "This Is Me! Review", time: "~1.5 min", note: "Show the student their character and ask for 2-3 final statements using \"I am...\"" },
+  { stage: "Me & My Cat", time: "~2 min", note: "Teacher reacts to and expands the student's answers with a second round. Fast learner? Add One More Time! (angry) and Last One! (tired) (+2 min)." },
+  { stage: "This Is Me! Review", time: "~1.5 min", note: "Show the student their character and ask for 2-3 final statements using \"I am...\" Fast learner? Add Show What You Know! 2 (+1 min)." },
   { stage: "This Is Me! Review", time: "~1.5 min", note: "Review cat, then finish with the usual goodbye routine." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -276,6 +276,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Connect
     {
       stage: "Hello & Connect",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Tell your name."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Hello!</h2></span>
@@ -295,6 +297,8 @@ function buildSlides({ onZoom }) {
     // 3: I Am... (intro)
     {
       stage: "I Am...",
+      part: "B",
+      instruction: [["👀", "Look at the faces."], ["🗣️", "Say: I am happy!"]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">I Am...</h2></span>
@@ -314,9 +318,37 @@ function buildSlides({ onZoom }) {
     // 4: I Am... practice
     {
       stage: "I Am...",
+      part: "B",
+      instruction: [["🤔", "How do you feel?"], ["🗣️", "Say how you feel."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Your Turn!</h2></span>
+        <div className="word-row">
+          <EmotionTile name="Happy" size={70} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={70} onZoom={onZoom} />
+          <EmotionTile name="Angry" size={70} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={70} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I am <span className="fill"></span>.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "I Am...",
+      part: "B",
+      title: "Your Turn Again!",
+      instruction: [["🤔", "How do you feel?"], ["🗣️", "Say how you feel."]],
+      body: (
+        <>
+        <div className="word-row">
+          <EmotionTile name="Angry" onZoom={onZoom} />
+          <EmotionTile name="Tired" onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -329,16 +361,25 @@ function buildSlides({ onZoom }) {
     // 5: Meet Cat
     {
       stage: "Meet Cat",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Cat!</h2></span>
-          <WordCard src={`${IMG}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
+          <div className="wc">
+          <Pic src={`${IMG}/cat.jpg`} label="cat" size={190} onZoom={onZoom} />
+          <div className="word">Cat</div>
+        </div>
         </>
       ),
     },
     // 6: Cat spelling
     {
       stage: "Meet Cat",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the letters. Say the word."]],
+      guide: "C-A-T spells ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">C-A-T</h2></span>
@@ -347,20 +388,24 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="A" color={SPELL_COLOR.A} onZoom={onZoom} />
             <LetterTile letters="T" color={SPELL_COLOR.T} onZoom={onZoom} />
           </div>
-          <p className="slide-p">C-A-T spells cat!</p>
         </div>
       ),
     },
     // 7: This Is Me! (statement 1)
     {
       stage: "This Is Me!",
+      part: "C",
+      instruction: [["👀", "Look at the child."], ["🗣️", "Say: I am happy!"]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">This Is Me!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">I am happy!</div>
+          <div className="meet-row">
+            <div className="meet-pic"><Pic src="/curriculum/u4-l1/child.jpg" label="child" size={150} onZoom={onZoom} /></div>
+            <div className="bubble-col" style={{ maxWidth: 420 }}>
+              <div className="brow me">
+                <div className="avatar coral">S</div>
+                <div className="bubble right">I am happy!</div>
+              </div>
             </div>
           </div>
         </>
@@ -369,27 +414,52 @@ function buildSlides({ onZoom }) {
     // 8: This Is Me! (statement 2)
     {
       stage: "This Is Me!",
+      part: "C",
+      instruction: [["👀", "Look at the child."], ["🗣️", "Say a new feeling."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me More!</h2></span>
+          <div className="meet-row">
+            <div className="meet-pic"><Pic src="/curriculum/u4-l1/child.jpg" label="child" size={150} onZoom={onZoom} /></div>
+            <div className="bubble-col" style={{ maxWidth: 420 }}>
+              <div className="brow me">
+                <div className="avatar coral">S</div>
+                <div className="bubble right">I am <span className="fill"></span>.</div>
+              </div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "This Is Me!",
+      part: "C",
+      title: "And More!",
+      instruction: [["👀", "Look at the child."], ["🗣️", "Say one more feeling."]],
+      body: (
+        <div className="meet-row">
+          <div className="meet-pic"><Pic src="/curriculum/u4-l1/child.jpg" label="child" size={150} onZoom={onZoom} /></div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
               <div className="bubble right">I am <span className="fill"></span>.</div>
             </div>
           </div>
-        </>
+        </div>
       ),
     },
     // 9: Look & Say
     {
       stage: "Look & Say",
+      part: "C",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say who or what it is."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Who Is It? What Is It?</h2></span>
           <div className="row">
-            <Pic src="/curriculum/u4-l1/child.jpg" label="child" size={100} onZoom={onZoom} />
-            <Pic src={`${IMG}/cat.jpg`} label="cat" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l1/child.jpg" label="child" size={150} onZoom={onZoom} />
+            <Pic src={`${IMG}/cat.jpg`} label="cat" size={150} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -397,6 +467,9 @@ function buildSlides({ onZoom }) {
     // 10: HIGHLIGHT Me & My Cat (round 1)
     {
       stage: "Me & My Cat",
+      part: "D",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the feeling and the word."]],
+      guide: "I am ___. It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🐾 Me & My Cat!</h2></span>
@@ -404,13 +477,15 @@ function buildSlides({ onZoom }) {
             <EmotionTile name="Happy" onZoom={onZoom} />
             <WordCard src={`${IMG}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose a feeling. "I am happy. Cat!"</p>
         </>
       ),
     },
     // 11: HIGHLIGHT Me & My Cat (round 2)
     {
       stage: "Me & My Cat",
+      part: "D",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the feeling and the word."]],
+      guide: "I am ___. It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">One More!</h2></span>
@@ -418,13 +493,40 @@ function buildSlides({ onZoom }) {
             <EmotionTile name="Sad" onZoom={onZoom} />
             <WordCard src={`${IMG}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Try a new feeling this time!</p>
         </>
+      ),
+    },
+    {
+      stage: "Me & My Cat",
+      part: "D",
+      title: "One More Time!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the feeling and the word."]],
+      guide: "I am ___. It's a ___.",
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Angry" onZoom={onZoom} />
+          <WordCard src={`${IMG}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Me & My Cat",
+      part: "D",
+      title: "Last One!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the feeling and the word."]],
+      guide: "I am ___. It's a ___.",
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Tired" onZoom={onZoom} />
+          <WordCard src={`${IMG}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
+        </div>
       ),
     },
     // 12: This Is Me! Review (statements)
     {
       stage: "This Is Me! Review",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say two feelings."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Show What You Know!</h2></span>
@@ -437,13 +539,37 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "This Is Me! Review",
+      part: "D",
+      title: "Show What You Know! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say two feelings."]],
+      body: (
+        <>
+        <div className="word-row">
+          <EmotionTile name="Angry" size={70} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={70} onZoom={onZoom} />
+          <EmotionTile name="Happy" size={70} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={70} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I am <span className="fill"></span>. I am <span className="fill"></span>.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 13: Cat review
     {
       stage: "This Is Me! Review",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What's This?</h2></span>
-          <Pic src={`${IMG}/cat.jpg`} label="cat" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/cat.jpg`} label="cat" size={190} onZoom={onZoom} />
         </div>
       ),
     },
@@ -559,6 +685,8 @@ export const styles = `
 .emo-tile:hover { transform: scale(1.04); }
 .zoom-emo-tile { width: 240px; height: 240px; border-radius: 46px; display: flex; align-items: center; justify-content: center; }
 
+.meet-row { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
+.meet-pic { flex-shrink: 0; }
 .bubble-col { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }

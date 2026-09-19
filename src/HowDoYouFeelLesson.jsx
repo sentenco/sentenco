@@ -248,10 +248,10 @@ export const LESSON_GUIDE = [
   { stage: "How Do You Feel?", time: "~3 min", note: "Introduce basic feelings: happy, sad, angry, tired using expressive faces and gestures. Model \"I am happy.\"" },
   { stage: "Meet Pen", time: "~3 min", note: "Show a clear picture of a pen. Introduce the word pen, have the student repeat it, and connect it to the written word PEN." },
   { stage: "Feelings & Say", time: "~2.5 min", note: "Show different emotion faces. Ask \"How do you feel?\" Student chooses the feeling and answers." },
-  { stage: "Feelings & Say", time: "~2.5 min", note: "Gradually remove visual sentence support for a second round." },
-  { stage: "Look & Choose", time: "~4 min", note: "Show simple characters in different situations. Student identifies how each character feels, then connects it back to themselves." },
-  { stage: "Feelings Detective", time: "~2 min", note: "Show a character with a simple situation and emotion clues. Student guesses the feeling." },
-  { stage: "Feelings Detective", time: "~2 min", note: "The student gives the teacher a feeling to act out and guesses the teacher's feeling." },
+  { stage: "Feelings & Say", time: "~2.5 min", note: "Gradually remove visual sentence support for a second round. Fast learner? Add Feelings & Say 2 and 3 (tired, sad) (+2 min)." },
+  { stage: "Look & Choose", time: "~4 min", note: "Show simple characters in different situations. Student identifies how each character feels, then connects it back to themselves. Fast learner? Add two more pictures (a party and a yawn) and How Do YOU Feel? (+3 min)." },
+  { stage: "Feelings Detective", time: "~2 min", note: "Show a character with a simple situation and emotion clues. Student guesses the feeling. Fast learner? Add Detective Again! and One More Case! (+2 min)." },
+  { stage: "Feelings Detective", time: "~2 min", note: "The student gives the teacher a feeling to act out and guesses the teacher's feeling. Fast learner? Add Your Turn to Act Again! (+1 min)." },
   { stage: "How Do You Feel Today?", time: "~1.5 min", note: "Ask the student \"How do you feel today?\" Student gives a final \"I am...\" answer." },
   { stage: "How Do You Feel Today?", time: "~1.5 min", note: "Quickly review pen, then finish with the goodbye routine." },
   { stage: "Wrap-Up", time: null, note: null },
@@ -276,6 +276,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Answer the questions."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Hello Again!</h2></span>
@@ -295,6 +297,9 @@ function buildSlides({ onZoom }) {
     // 3: Meet the Feelings
     {
       stage: "How Do You Feel?",
+      part: "B",
+      instruction: [["👀", "Look at each face."], ["🗣️", "Say the feeling."]],
+      guide: "I am ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Do You Feel?</h2></span>
@@ -310,16 +315,25 @@ function buildSlides({ onZoom }) {
     // 4: Meet Pen
     {
       stage: "Meet Pen",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Pen!</h2></span>
-          <WordCard src="/curriculum/u4-l3/pen.png" word="Pen" label="pen" onZoom={onZoom} />
+          <div className="wc">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={190} onZoom={onZoom} />
+          <div className="word">Pen</div>
+        </div>
         </>
       ),
     },
     // 5: Pen spelling
     {
       stage: "Meet Pen",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the letters. Say the word."]],
+      guide: "P-E-N spells ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">P-E-N</h2></span>
@@ -328,13 +342,15 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="E" color={SPELL_COLOR.E} onZoom={onZoom} />
             <LetterTile letters="N" color={SPELL_COLOR.N} onZoom={onZoom} />
           </div>
-          <p className="slide-p">P-E-N spells pen!</p>
         </div>
       ),
     },
     // 6: Feelings & Say (round 1)
     {
       stage: "Feelings & Say",
+      part: "C",
+      instruction: [["👀", "Look at the face."], ["🗣️", "Answer the question."]],
+      guide: "I am ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Feelings & Say!</h2></span>
@@ -351,9 +367,17 @@ function buildSlides({ onZoom }) {
     // 7: Feelings & Say (round 2, less support)
     {
       stage: "Feelings & Say",
+      part: "C",
+      instruction: [["🤔", "Think about it."], ["🗣️", "Say how you feel."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Do You Feel?</h2></span>
+        <div className="word-row">
+          <EmotionTile name="Happy" size={70} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={70} onZoom={onZoom} />
+          <EmotionTile name="Angry" size={70} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={70} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -363,9 +387,48 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Feelings & Say",
+      part: "C",
+      title: "Feelings & Say 2!",
+      instruction: [["👀", "Look at the face."], ["🗣️", "Answer the question."]],
+      guide: "I am ___.",
+      body: (
+        <>
+        <EmotionTile name="Tired" size={140} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How do you feel?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Feelings & Say",
+      part: "C",
+      title: "Feelings & Say 3!",
+      instruction: [["👀", "Look at the face."], ["🗣️", "Answer the question."]],
+      guide: "I am ___.",
+      body: (
+        <>
+        <EmotionTile name="Sad" size={140} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How do you feel?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Look & Choose (round 1)
     {
       stage: "Look & Choose",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how he feels."]],
+      guide: "He is ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">How Does He Feel?</h2></span>
@@ -376,41 +439,139 @@ function buildSlides({ onZoom }) {
     // 9: Look & Choose (round 2)
     {
       stage: "Look & Choose",
+      part: "C",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how she feels."]],
+      guide: "She is ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">How Does She Feel?</h2></span>
           <Pic src={`${IMG}/happy-present.png`} label="child opening a present" size={170} onZoom={onZoom} />
-          <p className="slide-p">Now, how do YOU feel?</p>
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Choose",
+      part: "C",
+      title: "How Does She Feel? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how she feels."]],
+      guide: "She is ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u4-l5/party.jpg" label="child at a party" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Choose",
+      part: "C",
+      title: "How Does He Feel? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how he feels."]],
+      guide: "He is ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u4-l5/yawning.jpg" label="child yawning" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Choose",
+      part: "C",
+      title: "How Do YOU Feel?",
+      instruction: [["🤔", "Think about you."], ["🗣️", "Say how you feel."]],
+      guide: "I am ___.",
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Happy" size={70} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={70} onZoom={onZoom} />
+          <EmotionTile name="Angry" size={70} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={70} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: HIGHLIGHT Feelings Detective (round 1)
     {
       stage: "Feelings Detective",
+      part: "D",
+      instruction: [["🔍", "Guess the feeling."], ["🗣️", "Say how he feels."]],
+      guide: "He is ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🔍 Feelings Detective!</h2></span>
           <Pic src={`${IMG}/angry-broken-toy.png`} label="child holding a broken toy" size={170} onZoom={onZoom} />
-          <p className="slide-p">He is... ?</p>
+        </div>
+      ),
+    },
+    {
+      stage: "Feelings Detective",
+      part: "D",
+      title: "Detective Again!",
+      instruction: [["🔍", "Guess the feeling."], ["🗣️", "Say how she feels."]],
+      guide: "She is ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u4-l3/happy-present.png" label="child opening a present" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Feelings Detective",
+      part: "D",
+      title: "One More Case!",
+      instruction: [["🔍", "Guess the feeling."], ["🗣️", "Say how he feels."]],
+      guide: "He is ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u4-l3/sad-dropped-icecream.png" label="child who dropped ice cream" size={170} onZoom={onZoom} />
         </div>
       ),
     },
     // 11: HIGHLIGHT Feelings Detective (round 2, act it out)
     {
       stage: "Feelings Detective",
+      part: "D",
+      instruction: [["👆", "Pick a face."], ["🎭", "Guess the teacher's feeling."]],
+      guide: "You are ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Your Turn to Act!</h2></span>
-          <p className="slide-p">Give the teacher a feeling to act out. Can you guess how the teacher feels?</p>
+        <div className="word-row">
+          <EmotionTile name="Happy" size={80} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={80} onZoom={onZoom} />
+          <EmotionTile name="Angry" size={80} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={80} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Feelings Detective",
+      part: "D",
+      title: "Your Turn to Act Again!",
+      instruction: [["👆", "Pick a different face."], ["🎭", "Guess the teacher's feeling."]],
+      guide: "You are ___.",
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Happy" size={80} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={80} onZoom={onZoom} />
+          <EmotionTile name="Angry" size={80} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={80} onZoom={onZoom} />
         </div>
       ),
     },
     // 12: How Do You Feel Today? (final)
     {
       stage: "How Do You Feel Today?",
+      part: "D",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say how you feel today."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Do You Feel Today?</h2></span>
+        <div className="word-row">
+          <EmotionTile name="Happy" size={70} onZoom={onZoom} />
+          <EmotionTile name="Sad" size={70} onZoom={onZoom} />
+          <EmotionTile name="Angry" size={70} onZoom={onZoom} />
+          <EmotionTile name="Tired" size={70} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -423,10 +584,12 @@ function buildSlides({ onZoom }) {
     // 13: Pen review
     {
       stage: "How Do You Feel Today?",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What's This?</h2></span>
-          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={190} onZoom={onZoom} />
         </div>
       ),
     },

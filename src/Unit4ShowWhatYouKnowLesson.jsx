@@ -228,11 +228,11 @@ export const LESSON_GUIDE = [
   { stage: "Unit 4 · Lesson 5", time: null, note: null },
   { stage: "Hello & Free Start", time: "~3 min", note: "Greet the student naturally and allow them to respond without a model. Have a short conversation using familiar language." },
   { stage: "Tell Me About You", time: "~4 min", note: "Show a simple \"All About Me\" picture/profile with no answers written. Encourage the student to share their name, age, and feeling." },
-  { stage: "Feeling Situations", time: "~4 min", note: "Show different simple situations or facial expressions. Let the student choose and produce the appropriate feeling word." },
-  { stage: "What Is It?", time: "~4 min", note: "Show familiar objects/animals from the unit. Student identifies cat, dog, and pen without being given the answer." },
+  { stage: "Feeling Situations", time: "~4 min", note: "Show different simple situations or facial expressions. Let the student choose and produce the appropriate feeling word. Fast learner? Add two more pictures (a present and a broken toy) (+2 min)." },
+  { stage: "What Is It?", time: "~4 min", note: "Show familiar objects/animals from the unit. Student identifies cat, dog, and pen without being given the answer. Fast learner? Add What Is It? 2! with the pictures in a new order (+1 min)." },
   { stage: "My Little World", time: "~3 min", note: "Student creates a simple onscreen scene by choosing a character, age, feeling, and familiar object/animal." },
-  { stage: "My Little World", time: "~3 min", note: "They tell the teacher about their scene using language they remember." },
-  { stage: "My Story", time: "~4 min", note: "Give the student a final opportunity to talk freely. Let the student produce as much as they can independently, then celebrate their progress." },
+  { stage: "My Little World", time: "~3 min", note: "They tell the teacher about their scene using language they remember. Fast learner? Add the two Add More! slides (angry + pen, sad + cat) (+3 min)." },
+  { stage: "My Story", time: "~4 min", note: "Give the student a final opportunity to talk freely. Let the student produce as much as they can independently, then celebrate their progress. Fast learner? Do My Story Again! (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -251,6 +251,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Free Start
     {
       stage: "Hello & Free Start",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Tell me something about you."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Hello!</h2></span>
@@ -266,26 +268,50 @@ function buildSlides({ onZoom }) {
     // 3: Tell Me About You
     {
       stage: "Tell Me About You",
+      part: "B",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Tell me about you."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Tell Me About You!</h2></span>
-          <p className="slide-p">Name, age, feeling. What can you tell me?</p>
+        <div className="word-row">
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#2E97C7", width: 80, height: 80, fontSize: 36 }}>🏷️</div>
+            <div className="word">Name</div>
+          </div>
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#F2A900", width: 80, height: 80, fontSize: 36 }}>🎂</div>
+            <div className="word">Age</div>
+          </div>
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#E0567A", width: 80, height: 80, fontSize: 36 }}>😊</div>
+            <div className="word">Feeling</div>
+          </div>
+        </div>
         </div>
       ),
     },
     // 3b: Tell Me About You continued
     {
       stage: "Tell Me About You",
+      part: "B",
+      instruction: [["🗣️", "Tell me one more thing."], ["👆", "Pick a picture."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Else?</h2></span>
-          <p className="slide-p">Can you tell me one more thing about yourself?</p>
+        <div className="word-row">
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={100} onZoom={onZoom} />
+        </div>
         </div>
       ),
     },
     // 4: Feeling Situations
     {
       stage: "Feeling Situations",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how she feels."]],
+      guide: "She is ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">How Does She Feel?</h2></span>
@@ -296,6 +322,9 @@ function buildSlides({ onZoom }) {
     // 4b: Feeling Situations continued
     {
       stage: "Feeling Situations",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how he feels."]],
+      guide: "He is ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">How Does He Feel?</h2></span>
@@ -303,23 +332,67 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Feeling Situations",
+      part: "B",
+      title: "How Does She Feel? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how she feels."]],
+      guide: "She is ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u4-l3/happy-present.png" label="child opening a present" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Feeling Situations",
+      part: "B",
+      title: "How Does He Feel? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say how he feels."]],
+      guide: "He is ___.",
+      body: (
+        <div className="center-col">
+        <Pic src="/curriculum/u4-l3/angry-broken-toy.png" label="child holding a broken toy" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 5: What Is It?
     {
       stage: "What Is It?",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Is It?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG1}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
-            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG1}/cat.jpg`} label="cat" size={130} onZoom={onZoom} />
+            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={130} onZoom={onZoom} />
+            <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "What Is It?",
+      part: "B",
+      title: "What Is It? 2!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={130} onZoom={onZoom} />
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={130} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={130} onZoom={onZoom} />
+        </div>
       ),
     },
     // 6: HIGHLIGHT My Little World (round 1)
     {
       stage: "My Little World",
+      part: "C",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me about your world."]],
+      guide: "I am ___. It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🌍 My Little World!</h2></span>
@@ -327,13 +400,15 @@ function buildSlides({ onZoom }) {
             <EmotionTile name="Happy" onZoom={onZoom} />
             <Pic src={`${IMG1}/cat.jpg`} label="cat" size={80} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose a feeling and an object. Tell me about your world!</p>
         </>
       ),
     },
     // 7: HIGHLIGHT My Little World (round 2)
     {
       stage: "My Little World",
+      part: "C",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me one more thing."]],
+      guide: "I am ___. It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Add Something Else!</h2></span>
@@ -341,18 +416,92 @@ function buildSlides({ onZoom }) {
             <EmotionTile name="Tired" onZoom={onZoom} />
             <Pic src={`${IMG2}/dog.jpg`} label="dog" size={80} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose one more feeling and object!</p>
         </>
+      ),
+    },
+    {
+      stage: "My Little World",
+      part: "C",
+      title: "Add More! 2",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me about your world."]],
+      guide: "I am ___. It's a ___.",
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Angry" onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Little World",
+      part: "C",
+      title: "Add More! 3",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell me about your world."]],
+      guide: "I am ___. It's a ___.",
+      body: (
+        <div className="word-row">
+          <EmotionTile name="Sad" onZoom={onZoom} />
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={80} onZoom={onZoom} />
+        </div>
       ),
     },
     // 8: My Story
     {
       stage: "My Story",
+      part: "D",
+      instruction: [["🗣️", "Tell me about you."], ["🤔", "Say as much as you can!"]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">My Story!</h2></span>
-          <p className="slide-p">Tell me about yourself. Say as much as you can!</p>
+        <div className="word-row">
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#2E97C7", width: 70, height: 70, fontSize: 31 }}>🏷️</div>
+            <div className="word">Name</div>
+          </div>
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#F2A900", width: 70, height: 70, fontSize: 31 }}>🎂</div>
+            <div className="word">Age</div>
+          </div>
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#E0567A", width: 70, height: 70, fontSize: 31 }}>😊</div>
+            <div className="word">Feeling</div>
+          </div>
         </div>
+        <div className="word-row">
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={80} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "My Story",
+      part: "D",
+      title: "My Story Again!",
+      instruction: [["🗣️", "Tell me about you."], ["🤔", "Say as much as you can!"]],
+      body: (
+        <>
+        <div className="word-row">
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#2E97C7", width: 70, height: 70, fontSize: 31 }}>🏷️</div>
+            <div className="word">Name</div>
+          </div>
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#F2A900", width: 70, height: 70, fontSize: 31 }}>🎂</div>
+            <div className="word">Age</div>
+          </div>
+          <div className="wc">
+            <div className="emo-tile" style={{ background: "#E0567A", width: 70, height: 70, fontSize: 31 }}>😊</div>
+            <div className="word">Feeling</div>
+          </div>
+        </div>
+        <div className="word-row">
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={80} onZoom={onZoom} />
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={80} onZoom={onZoom} />
+        </div>
+        </>
       ),
     },
     // 9: Great Job

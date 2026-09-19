@@ -267,13 +267,13 @@ export const LESSON_GUIDE = [
   { stage: "Unit 4 · Lesson 2", time: null, note: null },
   { stage: "Hello & Review", time: "~3 min", note: "Greet the student and briefly review \"I am...\" from Lesson 1. Ask \"What's your name?\" and encourage a full answer." },
   { stage: "How Old Are You?", time: "~3 min", note: "Introduce \"How old are you?\" using a birthday cake and number visuals. Model: \"How old are you?\" -> \"I am seven.\"" },
-  { stage: "My Age Number", time: "~3 min", note: "Review numbers 1-10 and connect them to age. Show random numbers and have the student say them using \"I am...\"" },
+  { stage: "My Age Number", time: "~3 min", note: "Review numbers 1-10 and connect them to age. Show random numbers and have the student say them using \"I am...\" Fast learner? Add My Age Number 2! (+1 min)." },
   { stage: "Meet Dog", time: "~5 min", note: "Introduce dog with a clear picture. Student identifies and says the word. Contrast briefly with cat from Lesson 1." },
   { stage: "Birthday Talk", time: "~2 min", note: "Show birthday cakes with different numbers of candles. Ask \"How old are you?\" Student answers." },
-  { stage: "Birthday Talk", time: "~2 min", note: "Show a character and ask \"How old is he/she?\" using a number prompt." },
-  { stage: "Birthday Party!", time: "~2 min", note: "Create a pretend birthday party on screen. Student chooses a cake/character and tells the teacher their age." },
+  { stage: "Birthday Talk", time: "~2 min", note: "Show a character and ask \"How old is he/she?\" using a number prompt. Fast learner? Add Birthday Talk 3! and How Old Is She? (+2 min)." },
+  { stage: "Birthday Party!", time: "~2 min", note: "Create a pretend birthday party on screen. Student chooses a cake/character and tells the teacher their age. Fast learner? Add Party Cake! with ten candles (+1 min)." },
   { stage: "Birthday Party!", time: "~2 min", note: "Add the cat and dog as fun party guests for a second round." },
-  { stage: "My Age & Goodbye", time: "~1.5 min", note: "Do a final mini exchange: \"What's your name?\" / \"How old are you?\"" },
+  { stage: "My Age & Goodbye", time: "~1.5 min", note: "Do a final mini exchange: \"What's your name?\" / \"How old are you?\" Fast learner? Add Put It Together Again! with no answers shown (+1 min)." },
   { stage: "My Age & Goodbye", time: "~1.5 min", note: "Quickly review cat/dog, then say goodbye." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -294,6 +294,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Tell your name."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Hello Again!</h2></span>
@@ -313,6 +315,8 @@ function buildSlides({ onZoom }) {
     // 3: How Old Are You? (intro)
     {
       stage: "How Old Are You?",
+      part: "B",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Say: I am seven!"]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Old Are You?</h2></span>
@@ -329,9 +333,19 @@ function buildSlides({ onZoom }) {
     // 4: How Old Are You? (practice)
     {
       stage: "How Old Are You?",
+      part: "B",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say how old you are."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Your Turn!</h2></span>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="4" color={NUMBER_COLOR[4]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={50} fontSize={20} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -348,24 +362,52 @@ function buildSlides({ onZoom }) {
     // 5: My Age Number
     {
       stage: "My Age Number",
+      part: "B",
+      instruction: [["👀", "Look at each number."], ["🗣️", "Say the number."]],
+      guide: "I am ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">My Age Number!</h2></span>
           <div className="letter-row">
-            <LetterTile letters="1" color={NUMBER_COLOR[1]} size={50} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="4" color={NUMBER_COLOR[4]} size={50} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="6" color={NUMBER_COLOR[6]} size={50} fontSize={20} onZoom={onZoom} />
-            <LetterTile letters="9" color={NUMBER_COLOR[9]} size={50} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="1" color={NUMBER_COLOR[1]} size={74} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="4" color={NUMBER_COLOR[4]} size={74} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="6" color={NUMBER_COLOR[6]} size={74} fontSize={20} onZoom={onZoom} />
+            <LetterTile letters="9" color={NUMBER_COLOR[9]} size={74} fontSize={20} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "My Age Number",
+      part: "B",
+      title: "My Age Number 2!",
+      instruction: [["👀", "Look at each number."], ["🗣️", "Say the number."]],
+      guide: "I am ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="2" color={NUMBER_COLOR[2]} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="3" color={NUMBER_COLOR[3]} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={74} fontSize={28} onZoom={onZoom} />
+        </div>
       ),
     },
     // 6: My Age Number (practice)
     {
       stage: "My Age Number",
+      part: "B",
+      instruction: [["👀", "Look at the numbers."], ["🗣️", "Say how old you are."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Say It With Me!</h2></span>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={50} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={50} fontSize={20} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -378,29 +420,47 @@ function buildSlides({ onZoom }) {
     // 7: Meet Dog
     {
       stage: "Meet Dog",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Dog!</h2></span>
-          <WordCard src={`${IMG2}/dog.jpg`} word="Dog" label="dog" onZoom={onZoom} />
+          <div className="wc">
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={190} onZoom={onZoom} />
+          <div className="word">Dog</div>
+        </div>
         </>
       ),
     },
     // 8: Cat vs Dog
     {
       stage: "Meet Dog",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Cat or Dog?</h2></span>
-          <div className="word-row">
-            <WordCard src={`${IMG1}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
-            <WordCard src={`${IMG2}/dog.jpg`} word="Dog" label="dog" onZoom={onZoom} />
+        <div className="word-row" style={{ gap: 30 }}>
+          <div className="wc">
+          <Pic src={`${IMG1}/cat.jpg`} label="cat" size={150} onZoom={onZoom} />
+          <div className="word">Cat</div>
           </div>
+          <div className="wc">
+          <Pic src={`${IMG2}/dog.jpg`} label="dog" size={150} onZoom={onZoom} />
+          <div className="word">Dog</div>
+          </div>
+        </div>
         </>
       ),
     },
     // 9: Birthday Talk (round 1)
     {
       stage: "Birthday Talk",
+      part: "C",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Answer the question."]],
+      guide: "I am ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Birthday Talk!</h2></span>
@@ -417,6 +477,9 @@ function buildSlides({ onZoom }) {
     // 10: Birthday Talk (round 2, character age)
     {
       stage: "Birthday Talk",
+      part: "C",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Answer the question."]],
+      guide: "He is ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">How Old Is He?</h2></span>
@@ -430,20 +493,71 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Birthday Talk",
+      part: "C",
+      title: "Birthday Talk 3!",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Answer the question."]],
+      guide: "I am ___.",
+      body: (
+        <>
+        <Cake age={9} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How old are you?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Birthday Talk",
+      part: "C",
+      title: "How Old Is She?",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Answer the question."]],
+      guide: "She is ___.",
+      body: (
+        <>
+        <Cake age={4} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How old is she?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 11: HIGHLIGHT Birthday Party! (round 1)
     {
       stage: "Birthday Party!",
+      part: "D",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Tell the teacher your age."]],
+      guide: "I am ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🎉 Birthday Party!</h2></span>
           <Cake age={6} onZoom={onZoom} />
-          <p className="slide-p">Choose your cake and tell me your age!</p>
         </>
+      ),
+    },
+    {
+      stage: "Birthday Party!",
+      part: "D",
+      title: "Party Cake!",
+      instruction: [["👀", "Look at the cake."], ["🗣️", "Tell the teacher your age."]],
+      guide: "I am ___.",
+      body: (
+        <Cake age={10} onZoom={onZoom} />
       ),
     },
     // 12: HIGHLIGHT Birthday Party! (round 2, party guests)
     {
       stage: "Birthday Party!",
+      part: "D",
+      instruction: [["👀", "Look at the party guests."], ["🗣️", "Say who came to the party."]],
+      guide: "___ and ___ came to the party.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Party Guests!</h2></span>
@@ -451,13 +565,14 @@ function buildSlides({ onZoom }) {
             <WordCard src={`${IMG1}/cat.jpg`} word="Cat" label="cat" onZoom={onZoom} />
             <WordCard src={`${IMG2}/dog.jpg`} word="Dog" label="dog" onZoom={onZoom} />
           </div>
-          <p className="slide-p">Cat and Dog came to the party too!</p>
         </>
       ),
     },
     // 13: My Age & Goodbye (exchange)
     {
       stage: "My Age & Goodbye",
+      part: "D",
+      instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer both."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Put It Together!</h2></span>
@@ -474,15 +589,31 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "My Age & Goodbye",
+      part: "D",
+      title: "Put It Together Again!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Answer both questions."]],
+      body: (
+          <div className="bubble-col" style={{ maxWidth: 460 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What's your name? How old are you?</div>
+            </div>
+          </div>
+      ),
+    },
     // 14: Cat/dog quick review
     {
       stage: "My Age & Goodbye",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick Review!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG1}/cat.jpg`} label="cat" size={90} onZoom={onZoom} />
-            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG1}/cat.jpg`} label="cat" size={150} onZoom={onZoom} />
+            <Pic src={`${IMG2}/dog.jpg`} label="dog" size={150} onZoom={onZoom} />
           </div>
         </div>
       ),
