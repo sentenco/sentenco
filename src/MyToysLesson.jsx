@@ -253,12 +253,12 @@ export default function MyToysLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 11 · Lesson 1", time: null, note: null },
   { stage: "Hello & Review", time: "~2 min", note: "Greet the student. Quickly review 2-3 familiar words from Unit 10. Ask \"What is it?\" and \"Where is it?\"" },
-  { stage: "My Toys!", time: "~4 min", note: "Introduce toy, ball, doll, car. Show pictures one at a time. Practice the sight words toy and ball." },
-  { stage: "Toy Hunt", time: "~3 min", note: "Show a playroom picture. Ask the student to find different toys." },
-  { stage: "Word Practice", time: "~4 min", note: "Practice saying and recognizing toy, ball, doll, car. Mix the pictures." },
+  { stage: "My Toys!", time: "~4 min", note: "Introduce toy, ball, doll, car. Show pictures one at a time. Practice the sight words toy and ball. Fast learner? Add Meet the Toys! 2 in a new order (+1 min)." },
+  { stage: "Toy Hunt", time: "~3 min", note: "Show a playroom picture. Ask the student to find different toys. Fast learner? Add Toy Hunt 3 and 4 (doll, toy) (+2 min)." },
+  { stage: "Word Practice", time: "~4 min", note: "Practice saying and recognizing toy, ball, doll, car. Mix the pictures. Fast learner? Add What Is It? 3 and 4 (car, toy) (+2 min)." },
   { stage: "Mystery Toy Box", time: "~4 min", note: "Give clues about a hidden toy without showing the picture. Student guesses." },
-  { stage: "Mystery Toy Box", time: "~3 min", note: "Switch roles. Student gives clues for the teacher." },
-  { stage: "Quick Challenge", time: "~4 min", note: "Flash toy pictures quickly. Student names them. Finish with \"What toy do you like?\"" },
+  { stage: "Mystery Toy Box", time: "~3 min", note: "Switch roles. Student gives clues for the teacher. Fast learner? Add Now You Give Clues! 2 (+1 min)." },
+  { stage: "Quick Challenge", time: "~4 min", note: "Flash toy pictures quickly. Student names them. Finish with \"What toy do you like?\" Fast learner? Add Quick Challenge! 2 and 3 (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -277,18 +277,31 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      title: "Let's Review!",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what it is and where."]],
+      guide: "It's a ___. It's in the ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What is it? Where is it?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: My Toys! (word-row)
     {
       stage: "My Toys!",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the toy."]],
+      guide: "It's a ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet the Toys!</h2></span>
@@ -301,10 +314,35 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "My Toys!",
+      part: "B",
+      title: "Meet the Toys! 2",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the toy."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u11-l1/car.avif" word="Car" label="car" onZoom={onZoom} />
+          <WordCard src="/curriculum/u1-l2/doll.png" word="Doll" label="doll" onZoom={onZoom} />
+          <WordCard src="/curriculum/u11-l1/ball.jpg" word="Ball" label="ball" onZoom={onZoom} />
+          <WordCard src="/curriculum/u11-l1/toy.jpg" word="Toy" label="toy" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: Toy Hunt (round 1)
     {
       stage: "Toy Hunt",
+      part: "B",
+      title: "Toy Hunt",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the toy."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -315,12 +353,23 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">Here it is!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 4b: Toy Hunt (round 2)
     {
       stage: "Toy Hunt",
+      part: "B",
+      title: "Toy Hunt 2",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the toy."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -331,14 +380,70 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">Here it is!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Toy Hunt",
+      part: "B",
+      title: "Toy Hunt 3",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the toy."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Find the doll!</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Here it is!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Toy Hunt",
+      part: "B",
+      title: "Toy Hunt 4",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point to the toy."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Find the toy!</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Here it is!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 5: Word Practice (round 1)
     {
       stage: "Word Practice",
+      part: "B",
+      title: "What Is It?",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={120} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -351,9 +456,12 @@ function buildSlides({ onZoom }) {
     // 5b: Word Practice (round 2)
     {
       stage: "Word Practice",
+      part: "B",
+      title: "What Is It? 2",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what it is."]],
       body: (
         <div className="center-col">
-          <Pic src={DOLL_IMG} label="doll" size={100} onZoom={onZoom} />
+          <Pic src={DOLL_IMG} label="doll" size={120} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -363,9 +471,45 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Word Practice",
+      part: "B",
+      title: "What Is It? 3",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what it is."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/car.avif" label="car" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's a car!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Word Practice",
+      part: "B",
+      title: "What Is It? 4",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what it is."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={120} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's a toy!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: HIGHLIGHT Mystery Toy Box (round 1)
     {
       stage: "Mystery Toy Box",
+      part: "C",
+      instruction: [["👂", "Listen to the clues."], ["🗣️", "Guess the toy."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🎁 Mystery Toy Box!</h2></span>
@@ -393,6 +537,8 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT Mystery Toy Box (round 2, switch)
     {
       stage: "Mystery Toy Box",
+      part: "C",
+      instruction: [["🗣️", "Give the teacher clues."], ["👂", "Listen to the guess."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Now You Give Clues!</h2></span>
@@ -409,16 +555,37 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Mystery Toy Box",
+      part: "C",
+      title: "Now You Give Clues! 2",
+      instruction: [["🗣️", "Give the teacher clues."], ["👂", "Listen to the guess."]],
+      body: (
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It has wheels. It goes fast.</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Is it a car?</div>
+            </div>
+          </div>
+      ),
+    },
     // 8: Quick Challenge
     {
       stage: "Quick Challenge",
+      part: "D",
+      instruction: [["🗣️", "Say each toy."], ["🗣️", "Tell me the toy you like."]],
+      guide: "I like ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Quick Challenge!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={64} onZoom={onZoom} />
-            <Pic src={`${IMG}/car.avif`} label="car" size={64} onZoom={onZoom} />
-            <Pic src={DOLL_IMG} label="doll" size={64} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/car.avif`} label="car" size={90} onZoom={onZoom} />
+            <Pic src={DOLL_IMG} label="doll" size={90} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
@@ -427,6 +594,35 @@ function buildSlides({ onZoom }) {
             </div>
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Quick Challenge",
+      part: "D",
+      title: "Quick Challenge! 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each toy."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Quick Challenge",
+      part: "D",
+      title: "Quick Challenge! 3",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each toy."]],
+      guide: "It's a ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 9: Wrap-up

@@ -244,11 +244,11 @@ export default function LetsPlayLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 11 · Lesson 2", time: null, note: null },
   { stage: "Hello & Review", time: "~3 min", note: "Review toy vocabulary with quick picture identification." },
-  { stage: "I Play...", time: "~4 min", note: "Introduce \"I play...\" using familiar toys: \"I play with a ball.\" \"I play with a car.\"" },
-  { stage: "Say & Do", time: "~3 min", note: "Show a toy and have the student say the sentence while making a simple play action." },
-  { stage: "Fun!", time: "~3 min", note: "Introduce fun. Ask: \"Is playing fun?\" -> \"Yes, fun!\" Then practice \"It's fun!\"" },
+  { stage: "I Play...", time: "~4 min", note: "Introduce \"I play...\" using familiar toys: \"I play with a ball.\" \"I play with a car.\" Fast learner? Add I Play... 3 and 4 (doll, toy) (+2 min)." },
+  { stage: "Say & Do", time: "~3 min", note: "Show a toy and have the student say the sentence while making a simple play action. Fast learner? Add Say & Do! 3 and 4 (car, toy) (+2 min)." },
+  { stage: "Fun!", time: "~3 min", note: "Introduce fun. Ask: \"Is playing fun?\" -> \"Yes, fun!\" Then practice \"It's fun!\" Fast learner? Add Fun! 2 (+1 min)." },
   { stage: "My Play Vote", time: "~4 min", note: "Show pairs of toys. Student chooses which one they want to play with." },
-  { stage: "My Play Vote", time: "~3 min", note: "Keep changing the choices. Occasionally ask \"Why?\" and accept \"fun!\" or a simple response." },
+  { stage: "My Play Vote", time: "~3 min", note: "Keep changing the choices. Occasionally ask \"Why?\" and accept \"fun!\" or a simple response. Fast learner? Add My Play Vote 3 and 4 (+2 min)." },
   { stage: "Exit Talk", time: "~4 min", note: "Ask: \"What do you play with?\" Student answers using \"I play with...\"" },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -268,19 +268,28 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Review
     {
       stage: "Hello & Review",
+      part: "A",
+      title: "Toy Review",
+      instruction: [["👀", "Look at each toy."], ["🗣️", "Say the toy."]],
+      guide: "It's a ___.",
       body: (
         <div className="word-row">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={80} onZoom={onZoom} />
-          <Pic src={`${IMG}/car.avif`} label="car" size={80} onZoom={onZoom} />
+          <Pic src={`${IMG}/toy.jpg`} label="toy" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <Pic src={DOLL_IMG} label="doll" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={100} onZoom={onZoom} />
         </div>
       ),
     },
     // 3: I Play... (round 1)
     {
       stage: "I Play...",
+      part: "B",
+      title: "I Play...",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentence."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={110} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -293,9 +302,12 @@ function buildSlides({ onZoom }) {
     // 3b: I Play... (round 2)
     {
       stage: "I Play...",
+      part: "B",
+      title: "I Play... 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentence."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/car.avif`} label="car" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={110} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -305,12 +317,49 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "I Play...",
+      part: "B",
+      title: "I Play... 3",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentence."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={100} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I play with a doll.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "I Play...",
+      part: "B",
+      title: "I Play... 4",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentence."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I play with a toy.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 4: Say & Do (round 1)
     {
       stage: "Say & Do",
+      part: "B",
+      title: "Say & Do!",
+      instruction: [["🗣️", "Say the sentence."], ["🙌", "Do a play action."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -323,9 +372,12 @@ function buildSlides({ onZoom }) {
     // 4b: Say & Do (round 2)
     {
       stage: "Say & Do",
+      part: "B",
+      title: "Say & Do! 2",
+      instruction: [["🗣️", "Say the sentence."], ["🙌", "Do a play action."]],
       body: (
         <div className="center-col">
-          <Pic src={DOLL_IMG} label="doll" size={90} onZoom={onZoom} />
+          <Pic src={DOLL_IMG} label="doll" size={100} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -335,13 +387,50 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Say & Do",
+      part: "B",
+      title: "Say & Do! 3",
+      instruction: [["🗣️", "Say the sentence."], ["🙌", "Do a play action."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/car.avif" label="car" size={100} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I play with a car!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Say & Do",
+      part: "B",
+      title: "Say & Do! 4",
+      instruction: [["🗣️", "Say the sentence."], ["🙌", "Do a play action."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I play with a toy!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Fun!
     {
       stage: "Fun!",
+      part: "C",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say the answer."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Fun!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 380 }}>
+          <Pic src="/curriculum/u11-l5/playtime-scene.jpg" label="children playing" size={120} onZoom={onZoom} />
+        <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">Is playing fun?</div>
@@ -354,15 +443,38 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Fun!",
+      part: "C",
+      title: "Fun! 2",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say the answer."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={110} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Is the ball fun?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Yes, fun!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: HIGHLIGHT My Play Vote (round 1)
     {
       stage: "My Play Vote",
+      part: "D",
+      instruction: [["👀", "Look at the two toys."], ["🗣️", "Pick one to play with."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🗳️ My Play Vote!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/car.avif`} label="car" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/car.avif`} label="car" size={100} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
@@ -376,11 +488,13 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT My Play Vote (round 2)
     {
       stage: "My Play Vote",
+      part: "D",
+      instruction: [["👀", "Look at the two toys."], ["🗣️", "Say why."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={DOLL_IMG} label="doll" size={80} onZoom={onZoom} />
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={80} onZoom={onZoom} />
+            <Pic src={DOLL_IMG} label="doll" size={100} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
@@ -395,16 +509,68 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "My Play Vote",
+      part: "D",
+      title: "My Play Vote 3",
+      instruction: [["👀", "Look at the two toys."], ["🗣️", "Pick one to play with."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I play with the car.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "My Play Vote",
+      part: "D",
+      title: "My Play Vote 4",
+      instruction: [["👀", "Look at the two toys."], ["🗣️", "Pick one to play with."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I play with the toy.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Exit Talk
     {
       stage: "Exit Talk",
+      part: "D",
+      title: "Exit Talk",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Tell me what you play with."]],
+      guide: "I play with a ___.",
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What do you play with?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 9: Wrap-up

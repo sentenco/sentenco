@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u11-l1";
 const DOLL_IMG = "/curriculum/u1-l2/doll.png";
@@ -252,13 +253,14 @@ export default function Unit11TestLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 11 Test", time: null, note: null },
   { stage: "Friendly Start", time: "~2 min", note: "Brief greeting and confidence-building warm-up. No teaching of test answers." },
-  { stage: "Part 1: Vocabulary", time: "~4 min", note: "Show unfamiliar/random toy pictures. Student names them. Check toy, ball, and previously taught toy words." },
-  { stage: "Part 2: Speaking", time: "~4 min", note: "Show a toy and ask \"What do you play with?\" Student answers independently." },
-  { stage: "Part 3: Actions", time: "~4 min", note: "Show or perform an action. Student identifies it and/or produces a simple sentence." },
-  { stage: "Part 4: Sight Words", time: "~3 min", note: "Check recognition of toy, ball, fun through matching, reading, or choosing the correct word." },
-  { stage: "My Playtime Challenge", time: "~5 min", note: "Give a new playtime scene. Student explains what they see and what they can do." },
+  { stage: "Vocabulary", time: "~4 min", note: "Show unfamiliar/random toy pictures. Student names them. Check toy, ball, and previously taught toy words. Second try? Use the What Toy Is It? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Speaking", time: "~4 min", note: "Show a toy and ask \"What do you play with?\" Student answers independently. Second try? Use the What Do You Play With? 2 (the car) slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Actions", time: "~4 min", note: "Show or perform an action. Student identifies it and/or produces a simple sentence. Second try? Use the Actions Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Sight Words", time: "~3 min", note: "Check recognition of toy, ball, fun through matching, reading, or choosing the correct word. Second try? Use the Find the Word! 2 slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "My Playtime Challenge", time: "~5 min", note: "Give a new playtime scene. Student explains what they see and what they can do. Second try? Use the My Playtime Challenge Again! (a new picture) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Celebrate & Finish", time: "~2 min", note: "Give positive feedback. Quickly revisit one thing the student did well." },
   { stage: "My Unit 11 Score!", time: null, note: "Scoring guide: Toy Vocabulary /4, Speaking /4, Actions /4, Sight Words /3. Total /15." },
+  { stage: "Wrap-Up", time: null, note: null },
 ];
 
 function buildSlides({ onZoom }) {
@@ -276,42 +278,81 @@ function buildSlides({ onZoom }) {
     // 2: Friendly Start
     {
       stage: "Friendly Start",
+      part: "A",
+      title: "Let's Start!",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Answer the teacher."]],
       body: (
+        <>
+        <Pic src="/curriculum/u11-l5/playtime-scene.jpg" label="children playing" size={120} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Are you ready to play?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Part 1: Vocabulary
     {
-      stage: "Part 1: Vocabulary",
+      stage: "Vocabulary",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the toy."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Toy Is It?</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={70} onZoom={onZoom} />
-            <Pic src={`${IMG}/car.avif`} label="car" size={70} onZoom={onZoom} />
-            <Pic src={DOLL_IMG} label="doll" size={70} onZoom={onZoom} />
-          </div>
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+        </div>
         </>
+      ),
+    },
+    {
+      stage: "Vocabulary",
+      part: "A",
+      title: "What Toy Is It? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the toy."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={100} onZoom={onZoom} />
+        </div>
       ),
     },
     // 4: Part 2: Speaking
     {
-      stage: "Part 2: Speaking",
+      stage: "Speaking",
+      part: "B",
+      title: "What Do You Play With?",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what you play with."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
-          <p className="slide-p">What do you play with?</p>
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={170} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Speaking",
+      part: "B",
+      title: "What Do You Play With? 2",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what you play with."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={170} onZoom={onZoom} />
         </div>
       ),
     },
     // 5: Part 3: Actions
     {
-      stage: "Part 3: Actions",
+      stage: "Actions",
+      part: "C",
+      title: "Actions",
+      instruction: [["📖", "Read the action word."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="word-row">
           <ActionChip label="Run" onZoom={onZoom} />
@@ -321,46 +362,111 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Actions",
+      part: "C",
+      title: "Actions Again!",
+      instruction: [["📖", "Read the action word."], ["🗣️", "Say the sentence."]],
+      body: (
+        <div className="word-row">
+          <ActionChip label="Kick" onZoom={onZoom} />
+          <ActionChip label="Throw" onZoom={onZoom} />
+          <ActionChip label="Jump" onZoom={onZoom} />
+          <ActionChip label="Run" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 6: Part 4: Sight Words
     {
-      stage: "Part 4: Sight Words",
+      stage: "Sight Words",
+      part: "C",
+      title: "Find the Word!",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Find the word."]],
       body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Toy" onZoom={onZoom} />
+          <ActionChip label="Ball" onZoom={onZoom} />
+          <ActionChip label="Fun" onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Find the word "toy". Find the word "ball". Find the word "fun".</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Sight Words",
+      part: "C",
+      title: "Find the Word! 2",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Find the word."]],
+      body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Fun" onZoom={onZoom} />
+          <ActionChip label="Toy" onZoom={onZoom} />
+          <ActionChip label="Ball" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Find the word "fun". Find the word "toy". Find the word "ball".</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 7: HIGHLIGHT My Playtime Challenge
     {
       stage: "My Playtime Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see and do."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🎉 My Playtime Challenge!</h2></span>
-          <Pic src="/curriculum/u11-l5/playground.jpg" label="a new playtime scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l5/playground.jpg" label="a new playtime scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Playtime Challenge",
+      part: "D",
+      title: "My Playtime Challenge Again!",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see and do."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u11-l5/playtime-scene.jpg" label="a new playtime scene" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 8: Celebrate & Finish
     {
       stage: "Celebrate & Finish",
+      part: "D",
+      title: "Well Done!",
+      instruction: [["👏", "Praise the student."], ["🗣️", "Say one thing they did well."]],
       body: (
+        <>
+        <Pic src="/curriculum/u11-l5/action.jpg" label="a happy child" size={110} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Great job today!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 9: My Unit 11 Score!
     {
       stage: "My Unit 11 Score!",
+      part: "D",
+      instruction: [["📝", "Record the scores."], ["👏", "Praise the student."]],
       body: (
         <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
           <h2 className="slide-h sub">My Unit 11 Score!</h2>
           <div className="score-table">
             <div className="score-row"><span>Toy Vocabulary</span><span>/ 4</span></div>
@@ -369,8 +475,15 @@ function buildSlides({ onZoom }) {
             <div className="score-row"><span>Sight Words</span><span>/ 3</span></div>
             <div className="score-row total"><span>Total</span><span>/ 15</span></div>
           </div>
-          <p className="slide-p">Great work finishing Unit 11! See you in the next unit!</p>
         </div>
+      ),
+    },
+    // Wrap-up
+    {
+      stage: "Wrap-Up",
+      time: null,
+      body: (
+        <WrapUp see="On to Unit 12!">Unit 11 complete! You know your toys, how to say what you play with, and action words.</WrapUp>
       ),
     },
   ];
@@ -483,8 +596,8 @@ export const styles = `
 .bubble { background: #fff; border-radius: 16px; padding: 10px 14px; font-weight: 700; font-size: 14px; color: var(--ink); box-shadow: 0 6px 14px rgba(27,42,74,0.08); }
 .bubble.left { border-radius: 16px 16px 16px 4px; }
 
-.score-table { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 16px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
-.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); padding: 5px 0; }
+.score-table { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 10px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
+.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); padding: 2px 0; }
 .score-row.total { border-top: 2px dashed var(--coral-light); margin-top: 4px; padding-top: 10px; color: var(--coral-deep); font-size: 17px; }
 
 .zoom-overlay { position: fixed; inset: 0; background: rgba(27,42,74,0.72); display: flex; align-items: center; justify-content: center; z-index: 999; }
@@ -494,4 +607,5 @@ export const styles = `
 .zoom-pic img { width: 100%; height: 100%; object-fit: contain; }
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
+${wrapUpStyles}
 `;

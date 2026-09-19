@@ -251,13 +251,13 @@ export default function PlaytimeFunLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 11 · Lesson 3", time: null, note: null },
-  { stage: "Playtime Warm-Up", time: "~3 min", note: "Review \"I play with...\" using toys from Lessons 1-2." },
-  { stage: "New Play Verbs", time: "~4 min", note: "Introduce run, jump, throw, kick with actions. Student copies the action and says the word." },
-  { stage: "Action Sentences", time: "~3 min", note: "Practice simple present: \"I run.\" \"I jump.\" \"I throw.\" \"I kick.\"" },
-  { stage: "Toy + Action", time: "~3 min", note: "Connect actions to toys: \"I throw the ball.\" \"I kick the ball.\"" },
+  { stage: "Playtime Warm-Up", time: "~3 min", note: "Review \"I play with...\" using toys from Lessons 1-2. Fast learner? Add I Play With... 2 (the car) (+1 min)." },
+  { stage: "New Play Verbs", time: "~4 min", note: "Introduce run, jump, throw, kick with actions. Student copies the action and says the word. Fast learner? Add New Play Verbs! 2 in a new order (+1 min)." },
+  { stage: "Action Sentences", time: "~3 min", note: "Practice simple present: \"I run.\" \"I jump.\" \"I throw.\" \"I kick.\" Fast learner? Add Action Sentences 3 and 4 (+2 min)." },
+  { stage: "Toy + Action", time: "~3 min", note: "Connect actions to toys: \"I throw the ball.\" \"I kick the ball.\" Fast learner? Add Toy + Action 3 and 4 (the toy) (+2 min)." },
   { stage: "Freeze!", time: "~4 min", note: "Say an action and the student performs it. Suddenly say \"Freeze!\" Ask \"What are you doing?\"" },
-  { stage: "Freeze!", time: "~3 min", note: "Repeat with a different action." },
-  { stage: "Playtime Challenge", time: "~4 min", note: "Show a toy/action picture and ask \"What do you do?\" Student produces a sentence independently." },
+  { stage: "Freeze!", time: "~3 min", note: "Repeat with a different action. Fast learner? Add Freeze! 3 and 4 (throw, kick) (+2 min)." },
+  { stage: "Playtime Challenge", time: "~4 min", note: "Show a toy/action picture and ask \"What do you do?\" Student produces a sentence independently. Fast learner? Add Playtime Challenge 2 and 3 (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -276,9 +276,12 @@ function buildSlides({ onZoom }) {
     // 2: Playtime Warm-Up
     {
       stage: "Playtime Warm-Up",
+      part: "A",
+      title: "I Play With...",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what you play with."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={110} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -288,9 +291,29 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Playtime Warm-Up",
+      part: "A",
+      title: "I Play With... 2",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Say what you play with."]],
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/car.avif" label="car" size={110} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I play with a car!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 3: New Play Verbs
     {
       stage: "New Play Verbs",
+      part: "B",
+      instruction: [["📖", "Read each word."], ["🙌", "Do the action."]],
+      guide: "I ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">New Play Verbs!</h2></span>
@@ -303,37 +326,113 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "New Play Verbs",
+      part: "B",
+      title: "New Play Verbs! 2",
+      instruction: [["📖", "Read each word."], ["🙌", "Do the action."]],
+      guide: "I ___.",
+      body: (
+        <div className="word-row">
+          <ActionChip label="Kick" onZoom={onZoom} />
+          <ActionChip label="Throw" onZoom={onZoom} />
+          <ActionChip label="Jump" onZoom={onZoom} />
+          <ActionChip label="Run" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: Action Sentences (round 1)
     {
       stage: "Action Sentences",
+      part: "B",
+      title: "Action Sentences",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]],
       body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Run" onZoom={onZoom} />
+          <ActionChip label="Jump" onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">I run! I jump!</div>
           </div>
         </div>
+        </>
       ),
     },
     // 4b: Action Sentences (round 2)
     {
       stage: "Action Sentences",
+      part: "B",
+      title: "Action Sentences 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]],
       body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Throw" onZoom={onZoom} />
+          <ActionChip label="Kick" onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">I throw! I kick!</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Action Sentences",
+      part: "B",
+      title: "Action Sentences 3",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]],
+      body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Run" onZoom={onZoom} />
+          <ActionChip label="Kick" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I run! I kick!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Action Sentences",
+      part: "B",
+      title: "Action Sentences 4",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]],
+      body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Jump" onZoom={onZoom} />
+          <ActionChip label="Throw" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">I jump! I throw!</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 5: Toy + Action (round 1)
     {
       stage: "Toy + Action",
+      part: "C",
+      title: "Toy + Action",
+      instruction: [["📖", "Read the action word."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
             <ActionChip label="Throw" onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
@@ -348,10 +447,13 @@ function buildSlides({ onZoom }) {
     // 5b: Toy + Action (round 2)
     {
       stage: "Toy + Action",
+      part: "C",
+      title: "Toy + Action 2",
+      instruction: [["📖", "Read the action word."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
             <ActionChip label="Kick" onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
@@ -363,13 +465,58 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Toy + Action",
+      part: "C",
+      title: "Toy + Action 3",
+      instruction: [["📖", "Read the action word."], ["🗣️", "Say the sentence."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <ActionChip label="Throw" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I throw the toy!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Toy + Action",
+      part: "C",
+      title: "Toy + Action 4",
+      instruction: [["📖", "Read the action word."], ["🗣️", "Say the sentence."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <ActionChip label="Kick" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I kick the toy!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: HIGHLIGHT Freeze! (round 1)
     {
       stage: "Freeze!",
+      part: "D",
+      instruction: [["👂", "Listen and do the action."], ["🗣️", "Answer the question."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🧊 Freeze!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <ActionChip label="Jump" onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">Jump! Jump! Jump! ... Freeze!</div>
@@ -389,9 +536,15 @@ function buildSlides({ onZoom }) {
     // 7: HIGHLIGHT Freeze! (round 2)
     {
       stage: "Freeze!",
+      part: "D",
+      title: "Freeze! 2",
+      instruction: [["👂", "Listen and do the action."], ["🗣️", "Answer the question."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <ActionChip label="Run" onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">Run! Run! Run! ... Freeze!</div>
@@ -408,13 +561,71 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Freeze!",
+      part: "D",
+      title: "Freeze! 3",
+      instruction: [["👂", "Listen and do the action."], ["🗣️", "Answer the question."]],
+      body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Throw" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Throw! Throw! Throw! ... Freeze!</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What are you doing?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I throw!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Freeze!",
+      part: "D",
+      title: "Freeze! 4",
+      instruction: [["👂", "Listen and do the action."], ["🗣️", "Answer the question."]],
+      body: (
+        <>
+        <div className="word-row">
+          <ActionChip label="Kick" onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Kick! Kick! Kick! ... Freeze!</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What are you doing?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">I kick!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: Playtime Challenge
     {
       stage: "Playtime Challenge",
+      part: "D",
+      title: "Playtime Challenge",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you do."]],
+      guide: "I ___ the ___.",
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/car.avif`} label="car" size={90} onZoom={onZoom} />
+            <Pic src={`${IMG}/car.avif`} label="car" size={110} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
@@ -422,6 +633,32 @@ function buildSlides({ onZoom }) {
               <div className="bubble left">What do you do?</div>
             </div>
           </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Playtime Challenge",
+      part: "D",
+      title: "Playtime Challenge 2",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you do."]],
+      guide: "I ___ the ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Playtime Challenge",
+      part: "D",
+      title: "Playtime Challenge 3",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you do."]],
+      guide: "I ___ the ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
         </div>
       ),
     },

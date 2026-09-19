@@ -243,10 +243,10 @@ export default function Unit11ShowWhatYouKnowLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 11 · Lesson 5", time: null, note: null },
   { stage: "Warm-Up", time: "~3 min", note: "Casual conversation using familiar language. Let the student choose what to talk about." },
-  { stage: "Explore the Scene", time: "~4 min", note: "Show a new playtime picture. Ask: \"What do you see?\" \"What is happening?\" Let the student lead." },
-  { stage: "Talk About Toys", time: "~4 min", note: "Ask open questions: \"What toys do you see?\" \"Which toy do you like?\" Avoid supplying \"I play with...\"" },
-  { stage: "Playtime Actions", time: "~4 min", note: "Ask: \"What is the child doing?\" \"What can you do?\" Let the student use whatever language they can produce." },
-  { stage: "Make a Playtime Story", time: "~6 min", note: "Give 3-4 unfamiliar cards showing a child, toy, and action. Student creates a simple story." },
+  { stage: "Explore the Scene", time: "~4 min", note: "Show a new playtime picture. Ask: \"What do you see?\" \"What is happening?\" Let the student lead. Fast learner? Add What Do You See? 2 (the playground) (+1 min)." },
+  { stage: "Talk About Toys", time: "~4 min", note: "Ask open questions: \"What toys do you see?\" \"Which toy do you like?\" Avoid supplying \"I play with...\" Fast learner? Add Which Toy? 3 and 4 (toy, doll) (+2 min)." },
+  { stage: "Playtime Actions", time: "~4 min", note: "Ask: \"What is the child doing?\" \"What can you do?\" Let the student use whatever language they can produce. Fast learner? Add Playtime Actions 2 (+1 min)." },
+  { stage: "Make a Playtime Story", time: "~6 min", note: "Give 3-4 unfamiliar cards showing a child, toy, and action. Student creates a simple story. Fast learner? Add Make a Playtime Story! 2 with a new set of cards (+1 min)." },
   { stage: "Final Free Talk", time: "~3 min", note: "\"Tell me about playtime.\" Encourage independent speech, celebrate communication over accuracy." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -266,31 +266,61 @@ function buildSlides({ onZoom }) {
     // 2: Warm-Up
     {
       stage: "Warm-Up",
+      part: "A",
+      title: "Let's Talk!",
+      instruction: [["👀", "Look at the toys."], ["🗣️", "Tell me what you like."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/ball.jpg" label="ball" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={90} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">What do you want to talk about?</div>
           </div>
         </div>
+        </>
       ),
     },
     // 3: Explore the Scene
     {
       stage: "Explore the Scene",
+      part: "B",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src="/curriculum/u11-l5/playtime-scene.jpg" label="a new playtime scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l5/playtime-scene.jpg" label="a new playtime scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Explore the Scene",
+      part: "B",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me what you see."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u11-l5/playground.jpg" label="a playground" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 4: Talk About Toys (round 1)
     {
       stage: "Talk About Toys",
+      part: "B",
+      title: "Which Toy?",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Tell me if you like it."]],
+      guide: "I like ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/car.avif`} label="car" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/car.avif`} label="car" size={110} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -303,9 +333,13 @@ function buildSlides({ onZoom }) {
     // 4b: Talk About Toys (round 2)
     {
       stage: "Talk About Toys",
+      part: "B",
+      title: "Which Toy? 2",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Tell me if you like it."]],
+      guide: "I like ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={110} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -315,10 +349,52 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Talk About Toys",
+      part: "B",
+      title: "Which Toy? 3",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Tell me if you like it."]],
+      guide: "I like ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">And this one?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Talk About Toys",
+      part: "B",
+      title: "Which Toy? 4",
+      instruction: [["👀", "Look at the toy."], ["🗣️", "Tell me if you like it."]],
+      guide: "I like ___.",
+      body: (
+        <>
+        <Pic src="/curriculum/u1-l2/doll.png" label="doll" size={100} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Do you like it?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Playtime Actions
     {
       stage: "Playtime Actions",
+      part: "C",
+      title: "Playtime Actions",
+      instruction: [["👀", "Look at the child."], ["🗣️", "Tell me what you can do."]],
+      guide: "I ___.",
       body: (
+        <>
+          <Pic src="/curriculum/u11-l5/action.jpg" label="a child jumping" size={80} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -329,11 +405,32 @@ function buildSlides({ onZoom }) {
             <div className="bubble left">What can you do?</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Playtime Actions",
+      part: "C",
+      title: "Playtime Actions 2",
+      instruction: [["👀", "Look at the child."], ["🗣️", "Tell me what you can do."]],
+      guide: "I ___.",
+      body: (
+        <>
+          <Pic src="/curriculum/u11-l5/action.jpg" label="a child jumping" size={110} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What can the child do?</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 6: HIGHLIGHT Make a Playtime Story
     {
       stage: "Make a Playtime Story",
+      part: "D",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Make a story."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🗣️ Make a Playtime Story!</h2></span>
@@ -345,16 +442,35 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Make a Playtime Story",
+      part: "D",
+      title: "Make a Playtime Story! 2",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Make a story."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l5/child.jpg" label="a child" size={96} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/car.avif" label="car" size={96} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l5/action.jpg" label="an action" size={96} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 7: Final Free Talk
     {
       stage: "Final Free Talk",
+      part: "D",
+      title: "Final Free Talk",
+      instruction: [["👀", "Look at the picture."], ["🗣️", "Tell me about playtime."]],
       body: (
+        <>
+          <Pic src="/curriculum/u11-l5/playground.jpg" label="a playground" size={120} onZoom={onZoom} />
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
             <div className="bubble left">Tell me about playtime.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 8: Wrap-up
