@@ -96,6 +96,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -383,7 +384,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "What Is Blending?",
       part: "B",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -396,7 +397,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "What Is Blending?",
       part: "B",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -409,7 +410,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Sound & Blend",
       part: "C",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       time: "~2.5 min",
       body: (
         <div className="center-col">
@@ -423,7 +424,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Sound & Blend",
       part: "C",
-      instruction: [["🤔", "Your turn!"], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🤔", "Your turn!"], ["📖", "Read the word."]],
       time: "~2.5 min",
       body: (
         <div className="center-col">
@@ -436,7 +437,7 @@ function buildSlides({ onZoom }) {
       stage: "Sound & Blend",
       part: "C",
       title: "Blend Again!",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["p","a"]} result="pa" onZoom={onZoom} />
@@ -448,7 +449,7 @@ function buildSlides({ onZoom }) {
       stage: "Sound & Blend",
       part: "C",
       title: "No Help!",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🤔", "No help this time!"], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["m","i"]} result="?" onZoom={onZoom} />
@@ -474,7 +475,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Word Builder!",
       part: "D",
-      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🧩", "Build the word."], ["📖", "Read the word."]],
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -487,7 +488,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Word Builder!",
       part: "D",
-      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🧩", "Build the word."], ["📖", "Read the word."]],
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -500,7 +501,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Word Builder!",
       part: "D",
-      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🧩", "Build the word."], ["📖", "Read the word."]],
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -513,7 +514,7 @@ function buildSlides({ onZoom }) {
       stage: "Word Builder!",
       part: "D",
       title: "Build Another!",
-      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🧩", "Build the word."], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["P","A","T"]} result="PAT" onZoom={onZoom} />
@@ -524,7 +525,7 @@ function buildSlides({ onZoom }) {
       stage: "Word Builder!",
       part: "D",
       title: "Build a New One!",
-      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🧩", "Build the word."], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["T","I","P"]} result="TIP" onZoom={onZoom} />
@@ -535,7 +536,7 @@ function buildSlides({ onZoom }) {
       stage: "Word Builder!",
       part: "D",
       title: "No Help Word!",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🤔", "No help this time!"], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["M","A","P"]} result="?" onZoom={onZoom} />
@@ -578,7 +579,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Y-Z & Blend Check",
       part: "D",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🤔", "No help this time!"], ["📖", "Read the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -591,7 +592,7 @@ function buildSlides({ onZoom }) {
       stage: "Y-Z & Blend Check",
       part: "D",
       title: "Last Blend!",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🤔", "No help this time!"], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["p","a","t"]} result="?" onZoom={onZoom} />

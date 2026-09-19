@@ -106,6 +106,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -366,7 +367,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "-at Word Check",
       part: "B",
-      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      instruction: [["👀", "Look at each picture."], ["📖", "Read each word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-at Words!</h2></span>
@@ -383,7 +384,7 @@ function buildSlides({ onZoom }) {
       stage: "-at Word Check",
       part: "B",
       title: "-at Words Again!",
-      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      instruction: [["👀", "Look at each picture."], ["📖", "Read each word."]],
       body: (
         <div className="word-row">
           <WordCard src="/curriculum/u6-words/mat.png" word="Mat" label="mat" onZoom={onZoom} />
@@ -397,7 +398,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "-og Word Check",
       part: "B",
-      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      instruction: [["👀", "Look at each picture."], ["📖", "Read each word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-og Words!</h2></span>
@@ -414,7 +415,7 @@ function buildSlides({ onZoom }) {
       stage: "-og Word Check",
       part: "B",
       title: "-og Words Again!",
-      instruction: [["👀", "Look at each picture."], ["🗣️", "Say each word."]],
+      instruction: [["👀", "Look at each picture."], ["📖", "Read each word."]],
       body: (
         <div className="word-row">
           <WordCard src="/curriculum/u6-words/hog.png" word="Hog" label="hog" onZoom={onZoom} />
@@ -567,7 +568,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Final Challenge",
       part: "D",
-      instruction: [["👀", "Look at the words."], ["🗣️", "Say each word."]],
+      instruction: [["👀", "Look at the words."], ["📖", "Read each word."]],
       body: (
         <div className="center-col">
           <div className="score-stars">

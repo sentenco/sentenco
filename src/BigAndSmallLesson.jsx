@@ -69,6 +69,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -252,13 +253,13 @@ export default function BigAndSmallLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 9 · Lesson 2", time: null, note: null },
   { stage: "Animal Review", time: "~3 min", note: "Quickly review cat, dog, bird, fish using \"It's a...\"" },
-  { stage: "Big or Small?", time: "~4 min", note: "Introduce big and small with contrasting animal pictures." },
-  { stage: "Look & Say", time: "~3 min", note: "Show animals and ask \"Big or small?\" Student answers \"Big!\" / \"Small!\"" },
-  { stage: "It's a Big...", time: "~4 min", note: "Combine the ideas: \"It's a big dog.\" / \"It's a small fish.\"" },
-  { stage: "Size Switch", time: "~4 min", note: "Show the same animal in different sizes. Student describes what changed." },
-  { stage: "Animal Size Race", time: "~2 min", note: "Call \"Big!\" or \"Small!\" Student quickly finds a matching animal and says \"It's a big dog!\"" },
+  { stage: "Big or Small?", time: "~4 min", note: "Introduce big and small with contrasting animal pictures. Fast learner? Add Big or Small? 2 (giraffe, bird) (+1 min)." },
+  { stage: "Look & Say", time: "~3 min", note: "Show animals and ask \"Big or small?\" Student answers \"Big!\" / \"Small!\" Fast learner? Add Look & Say 3 and 4 (+2 min)." },
+  { stage: "It's a Big...", time: "~4 min", note: "Combine the ideas: \"It's a big dog.\" / \"It's a small fish.\" Fast learner? Add It's a Big Lion! and It's a Small Cat! (+2 min)." },
+  { stage: "Size Switch", time: "~4 min", note: "Show the same animal in different sizes. Student describes what changed. Fast learner? Add Size Switch! 3 (+1 min)." },
+  { stage: "Animal Size Race", time: "~2 min", note: "Call \"Big!\" or \"Small!\" Student quickly finds a matching animal and says \"It's a big dog!\" Fast learner? Add Animal Size Race! 3 (+1 min)." },
   { stage: "Animal Size Race", time: "~2 min", note: "Switch roles. Student calls the size for the teacher." },
-  { stage: "Describe & Point", time: "~3 min", note: "Show 4 mixed animals. Student identifies both the animal and size." },
+  { stage: "Describe & Point", time: "~3 min", note: "Show 4 mixed animals. Student identifies both the animal and size. Fast learner? Add Describe & Point! 2 and 3 (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -277,17 +278,24 @@ function buildSlides({ onZoom }) {
     // 2: Animal Review
     {
       stage: "Animal Review",
+      part: "A",
+      title: "Animal Review",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say the animal."]],
+      guide: "It's a ___.",
       body: (
         <div className="word-row">
-          <Pic src={`${IMG}/cat.jpg`} label="cat" size={80} onZoom={onZoom} />
-          <Pic src={`${IMG}/dog.jpg`} label="dog" size={80} onZoom={onZoom} />
-          <Pic src={`${IMG}/fish.avif`} label="fish" size={80} onZoom={onZoom} />
+          <Pic src={`${IMG}/cat.jpg`} label="cat" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/dog.jpg`} label="dog" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/fish.avif`} label="fish" size={120} onZoom={onZoom} />
         </div>
       ),
     },
     // 3: Big or Small?
     {
       stage: "Big or Small?",
+      part: "B",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
+      guide: "It's ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Big or Small?</h2></span>
@@ -302,12 +310,34 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Big or Small?",
+      part: "B",
+      title: "Big or Small? 2",
+      instruction: [["👀", "Look at each animal."], ["🗣️", "Say big or small."]],
+      guide: "It's ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={90} onZoom={onZoom} />
+          <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={70} onZoom={onZoom} />
+          <DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} />
+        </div>
+        </>
+      ),
+    },
     // 4: Look & Say (round 1)
     {
       stage: "Look & Say",
+      part: "B",
+      title: "Look & Say",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say big or small."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={110} onZoom={onZoom} />
+          <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={140} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -320,9 +350,12 @@ function buildSlides({ onZoom }) {
     // 4b: Look & Say (round 2)
     {
       stage: "Look & Say",
+      part: "B",
+      title: "Look & Say 2",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say big or small."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={90} onZoom={onZoom} />
+          <Pic src={`${IMG}/monkey.avif`} label="monkey" size={140} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -332,13 +365,50 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Look & Say",
+      part: "B",
+      title: "Look & Say 3",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say big or small."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={140} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Big!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "B",
+      title: "Look & Say 4",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say big or small."]],
+      body: (
+        <>
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={140} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Small!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: It's a Big... (round 1)
     {
       stage: "It's a Big...",
+      part: "C",
+      title: "It's a Big Dog!",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/dog.jpg`} label="dog" size={80} onZoom={onZoom} />
+            <Pic src={`${IMG}/dog.jpg`} label="dog" size={100} onZoom={onZoom} />
             <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
@@ -353,10 +423,13 @@ function buildSlides({ onZoom }) {
     // 5b: It's a Small... (round 2)
     {
       stage: "It's a Big...",
+      part: "C",
+      title: "It's a Small Fish!",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/fish.avif`} label="fish" size={70} onZoom={onZoom} />
+            <Pic src={`${IMG}/fish.avif`} label="fish" size={100} onZoom={onZoom} />
             <DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
@@ -368,9 +441,52 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "It's a Big...",
+      part: "C",
+      title: "It's a Big Lion!",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say the sentence."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={100} onZoom={onZoom} />
+          <DescriptorTag label="Big" color={SIZE_COLOR.Big} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's a big lion!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "It's a Big...",
+      part: "C",
+      title: "It's a Small Cat!",
+      instruction: [["👀", "Look at the animal."], ["🗣️", "Say the sentence."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={100} onZoom={onZoom} />
+          <DescriptorTag label="Small" color={SIZE_COLOR.Small} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's a small cat!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: Size Switch (round 1)
     {
       stage: "Size Switch",
+      part: "C",
+      instruction: [["👀", "Look at the two pictures."], ["🗣️", "Say big or small."]],
+      guide: "This ___ is ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Size Switch!</h2></span>
@@ -384,6 +500,10 @@ function buildSlides({ onZoom }) {
     // 6b: Size Switch (round 2)
     {
       stage: "Size Switch",
+      part: "C",
+      title: "Size Switch! 2",
+      instruction: [["👀", "Look at the two pictures."], ["🗣️", "Say big or small."]],
+      guide: "This ___ is ___.",
       body: (
         <div className="word-row">
           <Pic src={`${IMG}/dog.jpg`} label="dog" size={54} onZoom={onZoom} />
@@ -391,9 +511,26 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Size Switch",
+      part: "C",
+      title: "Size Switch! 3",
+      instruction: [["👀", "Look at the two pictures."], ["🗣️", "Say big or small."]],
+      guide: "This ___ is ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={54} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 7: HIGHLIGHT Animal Size Race (round 1)
     {
       stage: "Animal Size Race",
+      part: "D",
+      title: "Animal Size Race!",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point and say the sentence."]],
+      guide: "It's a ___ ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🏃 Animal Size Race!</h2></span>
@@ -413,6 +550,10 @@ function buildSlides({ onZoom }) {
     // 7b: HIGHLIGHT Animal Size Race (round 1, second pair)
     {
       stage: "Animal Size Race",
+      part: "D",
+      title: "Animal Size Race! 2",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point and say the sentence."]],
+      guide: "It's a ___ ___.",
       body: (
         <div className="center-col">
           <div className="word-row">
@@ -428,9 +569,33 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Animal Size Race",
+      part: "D",
+      title: "Animal Size Race! 3",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Point and say the sentence."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={60} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Find the big animal!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 8: HIGHLIGHT Animal Size Race (round 2, switch)
     {
       stage: "Animal Size Race",
+      part: "D",
+      title: "Your Turn!",
+      instruction: [["🗣️", "Tell the teacher what to find."], ["👀", "Watch the teacher point."]],
       body: (
         <div className="center-col">
           <div className="word-row">
@@ -449,9 +614,16 @@ function buildSlides({ onZoom }) {
     // 8b: HIGHLIGHT Animal Size Race (round 2, second pair)
     {
       stage: "Animal Size Race",
+      part: "D",
+      title: "Your Turn! 2",
+      instruction: [["🗣️", "Tell the teacher what to find."], ["👀", "Watch the teacher point."]],
       body: (
         <div className="center-col">
-          <div className="bubble-col" style={{ maxWidth: 420 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={110} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
               <div className="bubble right">Find the big animal!</div>
@@ -463,15 +635,46 @@ function buildSlides({ onZoom }) {
     // 9: Describe & Point
     {
       stage: "Describe & Point",
+      part: "D",
+      instruction: [["👆", "Point to an animal."], ["🗣️", "Say the animal and its size."]],
+      guide: "It's a ___ ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Describe & Point!</h2></span>
           <div className="word-row">
-            <Pic src={`${IMG}/dog.jpg`} label="dog" size={70} onZoom={onZoom} />
-            <Pic src={`${IMG}/fish.avif`} label="fish" size={70} onZoom={onZoom} />
-            <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={70} onZoom={onZoom} />
+            <Pic src={`${IMG}/dog.jpg`} label="dog" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/fish.avif`} label="fish" size={110} onZoom={onZoom} />
+            <Pic src={`${IMG}/elephant.jpg`} label="elephant" size={110} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Describe & Point",
+      part: "D",
+      title: "Describe & Point! 2",
+      instruction: [["👆", "Point to an animal."], ["🗣️", "Say the animal and its size."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/giraffe.png" label="giraffe" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/cat.jpg" label="cat" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/monkey.avif" label="monkey" size={110} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Describe & Point",
+      part: "D",
+      title: "Describe & Point! 3",
+      instruction: [["👆", "Point to an animal."], ["🗣️", "Say the animal and its size."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u9-l1/bird.png" label="bird" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/lion.avif" label="lion" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u9-l1/fish.avif" label="fish" size={110} onZoom={onZoom} />
+        </div>
       ),
     },
     // 10: Wrap-up

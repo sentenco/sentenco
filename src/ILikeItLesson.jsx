@@ -93,6 +93,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -458,7 +459,7 @@ function buildSlides({ onZoom }) {
       stage: "Meet the -op Family",
       part: "C",
       title: "Blend It!",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <div className="center-col" style={{ gap: 14 }}>
           <BlendRow parts={["H", "OP"]} result="hop" onZoom={onZoom} />
@@ -471,7 +472,7 @@ function buildSlides({ onZoom }) {
       stage: "Meet the -op Family",
       part: "C",
       title: "Blend It! 2",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <div className="center-col" style={{ gap: 14 }}>
           <BlendRow parts={["T","OP"]} result="top" onZoom={onZoom} />
@@ -484,7 +485,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Food or Word?",
       part: "C",
-      instruction: [["👀", "Look at each card."], ["🗣️", "Say what you see."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <>
@@ -501,7 +502,7 @@ function buildSlides({ onZoom }) {
       stage: "Food or Word?",
       part: "C",
       title: "Food or Word? 2",
-      instruction: [["👀", "Look at each card."], ["🗣️", "Say what you see."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="word-row">
@@ -623,7 +624,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Like & Blend Challenge",
       part: "D",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each one."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <>
@@ -641,7 +642,7 @@ function buildSlides({ onZoom }) {
       stage: "Like & Blend Challenge",
       part: "D",
       title: "Final Challenge! 2",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say each one."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="word-row">

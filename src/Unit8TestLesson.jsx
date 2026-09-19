@@ -70,6 +70,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -371,7 +372,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Word Family Check",
       part: "C",
-      instruction: [["🗣️", "Say each word."], ["🤔", "Is it -in or -op?"]],
+      instruction: [["📖", "Read each word."], ["🤔", "Is it -in or -op?"]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-in or -op?</h2></span>
@@ -390,7 +391,7 @@ function buildSlides({ onZoom }) {
       stage: "Word Family Check",
       part: "C",
       title: "-in or -op? Again!",
-      instruction: [["🗣️", "Say each word."], ["🤔", "Is it -in or -op?"]],
+      instruction: [["📖", "Read each word."], ["🤔", "Is it -in or -op?"]],
       body: (
         <div className="word-row">
           <LetterTile letters="WIN" color={BLEND_COLOR} size={80} fontSize={17} onZoom={onZoom} />

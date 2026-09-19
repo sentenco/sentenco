@@ -103,6 +103,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -495,7 +496,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Build a Sentence",
       part: "C",
-      instruction: [["👀", "Look at the words."], ["🗣️", "Say the sentence."]],
+      instruction: [["👀", "Look at the words."], ["📖", "Read the sentence."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Build a Sentence!</h2></span>
@@ -528,7 +529,7 @@ function buildSlides({ onZoom }) {
       stage: "Build a Sentence",
       part: "C",
       title: "Build More!",
-      instruction: [["👀", "Look at the words."], ["🗣️", "Say the sentence."]],
+      instruction: [["👀", "Look at the words."], ["📖", "Read the sentence."]],
       body: (
         <div className="word-row">
           <div className="word-chip">It</div>
@@ -542,7 +543,7 @@ function buildSlides({ onZoom }) {
       stage: "Build a Sentence",
       part: "C",
       title: "Try Again!",
-      instruction: [["👀", "Look at the words."], ["🗣️", "Say the whole sentence."]],
+      instruction: [["👀", "Look at the words."], ["📖", "Read the sentence."]],
       guide: "It has ___ ___.",
       body: (
         <div className="word-row">
@@ -641,7 +642,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Final Challenge",
       part: "D",
-      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick Word Review!</h2></span>
@@ -654,7 +655,7 @@ function buildSlides({ onZoom }) {
       stage: "Final Challenge",
       part: "D",
       title: "No Help!",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      instruction: [["🤔", "No help this time!"], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <BlendRow parts={["b","a","t"]} result="?" onZoom={onZoom} />

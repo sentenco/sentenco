@@ -104,6 +104,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -385,7 +386,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "-at or -og?",
       part: "B",
-      instruction: [["🗣️", "Say the word."], ["🤔", "Is it -at or -og?"]],
+      instruction: [["📖", "Read the word."], ["🤔", "Is it -at or -og?"]],
       guide: "It ends in -___.",
       body: (
         <div className="center-col">
@@ -398,7 +399,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "-at or -og?",
       part: "B",
-      instruction: [["🗣️", "Say the word."], ["🤔", "Is it -at or -og?"]],
+      instruction: [["📖", "Read the word."], ["🤔", "Is it -at or -og?"]],
       guide: "It ends in -___.",
       body: (
         <div className="center-col">
@@ -411,7 +412,7 @@ function buildSlides({ onZoom }) {
       stage: "-at or -og?",
       part: "B",
       title: "-at or -og? 3",
-      instruction: [["🗣️", "Say the word."], ["🤔", "Is it -at or -og?"]],
+      instruction: [["📖", "Read the word."], ["🤔", "Is it -at or -og?"]],
       guide: "It ends in -___.",
       body: (
         <div className="center-col">
@@ -423,7 +424,7 @@ function buildSlides({ onZoom }) {
       stage: "-at or -og?",
       part: "B",
       title: "-at or -og? 4",
-      instruction: [["🗣️", "Say the word."], ["🤔", "Is it -at or -og?"]],
+      instruction: [["📖", "Read the word."], ["🤔", "Is it -at or -og?"]],
       guide: "It ends in -___.",
       body: (
         <div className="center-col">
@@ -435,7 +436,7 @@ function buildSlides({ onZoom }) {
       stage: "-at or -og?",
       part: "B",
       title: "-at or -og? 5",
-      instruction: [["🗣️", "Say the word."], ["🤔", "Is it -at or -og?"]],
+      instruction: [["📖", "Read the word."], ["🤔", "Is it -at or -og?"]],
       guide: "It ends in -___.",
       body: (
         <div className="center-col">
@@ -616,7 +617,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Mixed Review Challenge",
       part: "D",
-      instruction: [["👀", "Look at everything."], ["🗣️", "Say, describe and read."]],
+      instruction: [["🗣️", "Say the body part."], ["📖", "Read the word."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Mixed Challenge!</h2></span>
@@ -627,7 +628,7 @@ function buildSlides({ onZoom }) {
       stage: "Mixed Review Challenge",
       part: "D",
       title: "Mixed Challenge 2!",
-      instruction: [["👀", "Look at everything."], ["🗣️", "Say, describe and read."]],
+      instruction: [["🗣️", "Say the body part."], ["📖", "Read the word."]],
       body: (
         <>
         <div className="word-row">
@@ -643,7 +644,7 @@ function buildSlides({ onZoom }) {
       stage: "Mixed Review Challenge",
       part: "D",
       title: "Mixed Challenge 3!",
-      instruction: [["👀", "Look at everything."], ["🗣️", "Say, describe and read."]],
+      instruction: [["🗣️", "Say the body part."], ["📖", "Read the word."]],
       body: (
         <>
         <div className="word-row">

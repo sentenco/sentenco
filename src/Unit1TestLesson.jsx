@@ -125,6 +125,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -341,6 +342,7 @@ function buildSlides({ onZoom }) {
     // 2: Test Welcome
     {
       stage: "Test Welcome",
+      instruction: [["👂", "Listen."], ["🗣️", "Say: I'm ready!"]],
       time: "~1 min",
       body: (
         <div className="center-col">

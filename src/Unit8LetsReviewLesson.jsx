@@ -70,6 +70,7 @@ const VERB_COLOR = {
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
   point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
+  read: "#D6478C",
 };
 
 function InstructionStep({ icon, text }) {
@@ -407,7 +408,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "-in or -op?",
       part: "B",
-      instruction: [["🗣️", "Say each word."], ["🤔", "Is it -in or -op?"]],
+      instruction: [["📖", "Read each word."], ["🤔", "Is it -in or -op?"]],
       guide: "It ends in -___.",
       body: (
         <>
@@ -427,7 +428,7 @@ function buildSlides({ onZoom }) {
       stage: "-in or -op?",
       part: "B",
       title: "-in or -op? 2",
-      instruction: [["🗣️", "Say each word."], ["🤔", "Is it -in or -op?"]],
+      instruction: [["📖", "Read each word."], ["🤔", "Is it -in or -op?"]],
       guide: "It ends in -___.",
       body: (
         <div className="word-row">
@@ -537,7 +538,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Build a Grocery Basket",
       part: "C",
-      instruction: [["🔍", "Find the words."], ["🗣️", "Say each one."]],
+      instruction: [["🔍", "Find the words."], ["📖", "Read each word."]],
       guide: "It's ___.",
       body: (
         <div className="center-col">
@@ -555,7 +556,7 @@ function buildSlides({ onZoom }) {
       stage: "Build a Grocery Basket",
       part: "C",
       title: "Hidden Words! 2",
-      instruction: [["🔍", "Find the words."], ["🗣️", "Say each one."]],
+      instruction: [["🔍", "Find the words."], ["📖", "Read each word."]],
       guide: "It's ___.",
       body: (
         <div className="word-row">
@@ -570,7 +571,7 @@ function buildSlides({ onZoom }) {
     {
       stage: "Mixed Review Challenge",
       part: "D",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the food and read the word."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="center-col">
@@ -585,7 +586,7 @@ function buildSlides({ onZoom }) {
       stage: "Mixed Review Challenge",
       part: "D",
       title: "Mixed Challenge! 2",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the food and read the word."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="center-col">
@@ -598,7 +599,7 @@ function buildSlides({ onZoom }) {
       stage: "Mixed Review Challenge",
       part: "D",
       title: "Mixed Challenge! 3",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the food and read the word."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="word-row">
@@ -611,7 +612,7 @@ function buildSlides({ onZoom }) {
       stage: "Mixed Review Challenge",
       part: "D",
       title: "Mixed Challenge! 4",
-      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the food and read the word."]],
+      instruction: [["🗣️", "Say the food."], ["📖", "Read the word."]],
       guide: "It's ___.",
       body: (
         <div className="word-row">
