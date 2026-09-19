@@ -8,8 +8,17 @@ const RED = "#E5484D";
 
 // Source: E8 (Polish eighth-grade exam), English, 13 May 2026 (CKE practice sheet from arkusze.pl).
 // Answers below are our own key, worked out from the texts (the sheet has no official key).
+// One item per slide, so the student only ever looks at one thing at a time.
 
-const ScoreCtx = createContext({ report: () => {}, results: {} });
+const ScoreCtx = createContext({ report: () => {}, results: {}, store: {}, setStore: () => {} });
+
+// Answers and typed text live in the lesson, so going back to a slide shows it as the student left it.
+function useStore(id, init) {
+  const { store, setStore } = useContext(ScoreCtx);
+  const val = id in store ? store[id] : init;
+  const set = (v) => setStore((s) => ({ ...s, [id]: typeof v === "function" ? v(id in s ? s[id] : init) : v }));
+  return [val, set];
+}
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -27,9 +36,9 @@ function Marked({ text, evidence, on }) {
 const LETTERS = ["A", "B", "C", "D", "E"];
 
 // One multiple-choice question: optional situation or reading passage, locks on tap, explains the trap.
-function Choice({ id, prompt, promptPl, passage, passageTitle, evidence, options, correct, trap }) {
+function Choice({ id, prompt, situation, passage, passageTitle, evidence, options, correct, trap }) {
   const { report } = useContext(ScoreCtx);
-  const [picked, setPicked] = useState(null);
+  const [picked, setPicked] = useStore("pick-" + id, null);
   const answered = picked !== null;
   function pick(i) {
     if (answered) return;
@@ -45,10 +54,11 @@ function Choice({ id, prompt, promptPl, passage, passageTitle, evidence, options
           <p><Marked text={passage} evidence={evidence} on={answered} /></p>
         </div>
       )}
-      {promptPl && <p className="e8-prompt-pl">{promptPl}</p>}
+      {situation && <p className="e8-situation">{situation}</p>}
       {prompt && <p className="e8-prompt">{prompt}</p>}
       <div className="e8-options">
         {options.map((o, i) => {
+          if (answered && i !== correct && i !== picked) return null;
           const cls = answered && i === correct ? "is-correct" : answered && i === picked ? "is-wrong" : "";
           return (
             <button key={i} type="button" className={`e8-opt ${cls}`} onClick={() => pick(i)} disabled={answered}>
@@ -90,7 +100,7 @@ function Strategy({ n, title, steps, example }) {
   );
 }
 
-// ---- Task 9: three texts, four questions, one text answers two -------------------------------
+// ---- Task 9: one question per slide; read the three texts one at a time, then choose ----------
 const T9_TEXTS = [
   { id: "A", text: "It’s that time of the year already. No, not the spring holidays, but something nearly as good: the 10th edition of our week-long school camp! Students of all grades can take part. The school provides transportation and meals. We also offer tents for hire (£10 per person) if you don’t have your own. For more information, please contact your teachers." },
   { id: "B", text: "Do you love making films? If the answer is yes, come and join us on 5th June at the outdoor cinema in Victoria Park for our first ever local community film competition. To take part, you have to prepare a film about your favourite part of town. It cannot be longer than 20 minutes and it should include at least 5 minutes of an interview with a local person. The directors of the best two films will receive £500 each. Sign up now at locals.xyz.com!" },
@@ -100,173 +110,129 @@ const T9_QS = [
   { id: "9.1", q: "Which event offers money prizes?", correct: "B", evidence: "£500 each", trap: "Text A has money too (£10 for a tent), but that is a price, not a prize. Text C has prizes, but they are board games." },
   { id: "9.2", q: "Which event will take place indoors?", correct: "C", evidence: "in the school hall", trap: "Text B is the film competition, but it is at an outdoor cinema." },
   { id: "9.3", q: "Which event will last longer than a day?", correct: "A", evidence: "week-long", trap: "Text C gives hours (1 p.m. to 5 p.m.), so it is one afternoon." },
-  { id: "9.4", q: "Which event has never taken place before?", correct: "B", evidence: "first ever", trap: "Texts A and C sound familiar (“10th edition”, “as usual”, “traditional”), so they have happened before." },
+  { id: "9.4", q: "Which event has never taken place before?", correct: "B", evidence: "first ever", trap: "Texts A and C sound familiar (“10th edition”, “as usual”, “traditional”), so they have happened before. Text B is also the answer to 9.1: in this task one text is always used twice." },
 ];
 
-function MatchTexts() {
+function MatchOne({ q }) {
   const { report } = useContext(ScoreCtx);
-  const [ans, setAns] = useState({});
-  function pick(qid, letter, correct) {
-    if (ans[qid]) return;
-    setAns((a) => ({ ...a, [qid]: letter }));
-    report("t9-" + qid, letter === correct);
+  const [st, setSt] = useStore("m-" + q.id, { tab: "A", picked: null });
+  const answered = st.picked !== null;
+  const shown = answered ? q.correct : st.tab;
+  const text = T9_TEXTS.find((t) => t.id === shown).text;
+  const ok = st.picked === q.correct;
+  function choose() {
+    if (answered) return;
+    setSt({ tab: st.tab, picked: st.tab });
+    report("t9-" + q.id, st.tab === q.correct);
   }
-  const evFor = (tid) => T9_QS.filter((q) => ans[q.id] && q.correct === tid).map((q) => q.evidence);
-  const done = Object.keys(ans).length === T9_QS.length;
   return (
-    <div className="e8-match">
-      <div className="e8-texts">
+    <div className="e8-match1">
+      <p className="e8-bigq"><span className="e8-qid">{q.id}</span>{q.q}</p>
+      <div className="e8-tabs">
         {T9_TEXTS.map((t) => (
-          <div key={t.id} className="e8-textcard">
-            <span className="e8-textcard-id">{t.id}</span>
-            <p><Marked text={t.text} evidence={evFor(t.id)} on /></p>
-          </div>
+          <button key={t.id} type="button" disabled={answered} className={`e8-tab ${shown === t.id ? "is-on" : ""} ${answered && t.id === q.correct ? "is-correct" : ""} ${answered && t.id === st.picked && !ok ? "is-wrong" : ""}`} onClick={() => setSt({ ...st, tab: t.id })}>
+            Text {t.id}
+          </button>
         ))}
       </div>
-      <div className="e8-qs">
-        {T9_QS.map((q) => {
-          const a = ans[q.id];
-          return (
-            <div key={q.id} className="e8-qrow">
-              <span className="e8-qid">{q.id}</span>
-              <span className="e8-qtext">{q.q}</span>
-              <span className="e8-qbtns">
-                {["A", "B", "C"].map((L) => {
-                  const cls = a && L === q.correct ? "is-correct" : a && L === a ? "is-wrong" : "";
-                  return <button key={L} type="button" className={`e8-mini ${cls}`} onClick={() => pick(q.id, L, q.correct)} disabled={!!a}>{L}</button>;
-                })}
-              </span>
-            </div>
-          );
-        })}
+      <div className="e8-readcard">
+        <p><Marked text={text} evidence={q.evidence} on={answered} /></p>
       </div>
-      {done && <p className="e8-note-line">Text B answers two questions (9.1 and 9.4). That is the rule of this task: one text is used twice.</p>}
-    </div>
-  );
-}
-
-function EvidenceTable() {
-  return (
-    <div className="e8-evtable">
-      {T9_QS.map((q) => (
-        <div key={q.id} className="e8-evrow">
-          <span className="e8-qid">{q.id}</span>
-          <div>
-            <div className="e8-evq">{q.q} <b>Text {q.correct}</b></div>
-            <div className="e8-evq2">Evidence: <mark className="e8-mark">{q.evidence}</mark></div>
-            <div className="e8-evtrap">{q.trap}</div>
-          </div>
+      {!answered ? (
+        <button type="button" className="e8-check" onClick={choose}>This text answers the question: choose Text {st.tab}</button>
+      ) : (
+        <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
+          <p><b>{ok ? "Correct." : `Not Text ${st.picked}.`} The answer is Text {q.correct}.</b> Evidence: <mark className="e8-mark">{q.evidence}</mark></p>
+          <p className="e8-trap"><b>The trap:</b> {q.trap}</p>
         </div>
-      ))}
+      )}
     </div>
   );
 }
 
-// ---- Task 8: put three missing sentences back ------------------------------------------------
+// ---- Task 8: one gap per slide; sentences already used are taken out of the bank ----------------
 const T8_BANK = [
   "He glued them together to create a single large picture.",
   "It was also possible to buy some of his works there.",
   "He asked his friends for their used travel cards.",
   "One day, when sitting on the subway, he started looking at his travel card.",
 ];
-const T8_KEY = { 1: 3, 2: 0, 3: 1 }; // gap -> index in bank
+const T8 = [
+  { g: 1, key: 3, why: "It comes after “He came up with the idea 20 years ago” and before “Suddenly, he knew what he had to do.” We need the moment the idea came: one day, on the subway, looking at his travel card." },
+  { g: 2, key: 0, why: "Before: he cut the cards into pieces. After: “This was his first work of art made from plastic cards.” The missing step is making the picture: he glued the pieces together." },
+  { g: 3, key: 1, why: "Before: his pictures were shown in a gallery. After: “Although they weren’t cheap, they sold out.” “They” means works you could buy there. The sentence left over, C, is the extra one: it has the right topic (travel cards) but no gap fits it, because in the story he uses his own old cards." },
+];
+const T8_PARAS = [
+  { gaps: [1, 2], parts: [
+    "Thomas McKean from New York is famous for creating art from everyday objects, such as used plastic travel cards. He came up with the idea 20 years ago.",
+    "Suddenly, he knew what he had to do. He hurried home, took his scissors and cut some of his old travel cards into pieces.",
+    "This was his first work of art made from plastic cards. Since then, he has made more than a thousand of them. The most popular ones are portraits, city views and 3D scenes.",
+  ] },
+  { gaps: [3], parts: [
+    "His pictures were shown in an art gallery in 2022 and many people came to see them.",
+    "Although they weren’t cheap, they sold out quickly.",
+  ] },
+];
 
-function GappedText() {
+function GapOne({ item }) {
   const { report } = useContext(ScoreCtx);
-  const [placed, setPlaced] = useState({ 1: null, 2: null, 3: null });
-  const [active, setActive] = useState(1);
-  const [checked, setChecked] = useState(false);
-  const used = Object.values(placed);
-  const allFilled = used.every((v) => v !== null);
-  function pickSentence(i) {
-    if (checked || used.includes(i)) return;
-    const target = active && placed[active] === null ? active : [1, 2, 3].find((g) => placed[g] === null);
-    if (!target) return;
-    setPlaced((p) => ({ ...p, [target]: i }));
-    const next = [1, 2, 3].find((g) => g !== target && placed[g] === null);
-    setActive(next || null);
+  const [picked, setPicked] = useStore("g-" + item.g, null);
+  const answered = picked !== null;
+  const usedBefore = T8.filter((x) => x.g < item.g).map((x) => x.key);
+  const options = [0, 1, 2, 3].filter((i) => !usedBefore.includes(i));
+  const para = T8_PARAS.find((p) => p.gaps.includes(item.g));
+  const ok = picked === item.key;
+  function pick(i) {
+    if (answered) return;
+    setPicked(i);
+    report("t8-" + item.g, i === item.key);
   }
-  function clickGap(g) {
-    if (checked) return;
-    if (placed[g] !== null) setPlaced((p) => ({ ...p, [g]: null }));
-    setActive(g);
-  }
-  function check() {
-    setChecked(true);
-    [1, 2, 3].forEach((g) => report("t8-" + g, placed[g] === T8_KEY[g]));
-  }
-  const Gap = ({ g }) => {
-    const v = placed[g];
-    const cls = checked ? (v === T8_KEY[g] ? "is-correct" : "is-wrong") : active === g ? "is-active" : "";
-    return (
-      <button type="button" className={`e8-gap ${cls}`} onClick={() => clickGap(g)}>
-        <span className="e8-gap-n">8.{g}</span>
-        {v !== null ? <span className="e8-gap-fill">{LETTERS[v]}</span> : <span className="e8-gap-empty">_____</span>}
-      </button>
-    );
+  const Slot = ({ g }) => {
+    const solvedBefore = g < item.g;
+    const data = T8.find((x) => x.g === g);
+    if (solvedBefore) return <span className="e8-filled">{T8_BANK[data.key]} </span>;
+    if (g === item.g) {
+      if (!answered) return <span className="e8-gap is-active"><span className="e8-gap-n">8.{g}</span><span className="e8-gap-empty">_____</span></span>;
+      return <span className={`e8-gap ${ok ? "is-correct" : "is-wrong"}`}><span className="e8-gap-n">8.{g}</span><span className="e8-gap-fill">{LETTERS[picked]}</span></span>;
+    }
+    return <span className="e8-gap is-later"><span className="e8-gap-n">8.{g}</span></span>;
   };
   return (
-    <div className="e8-gapped">
+    <div className="e8-gap1">
       <div className="e8-passage e8-passage--article">
         <div className="e8-passage-title">UNUSUAL ARTWORK</div>
         <p>
-          Thomas McKean from New York is famous for creating art from everyday objects, such as used plastic travel cards. He came up with the idea 20 years ago. <Gap g={1} /> Suddenly, he knew what he had to do. He hurried home, took his scissors and cut some of his old travel cards into pieces. <Gap g={2} /> This was his first work of art made from plastic cards. Since then, he has made more than a thousand of them. The most popular ones are portraits, city views and 3D scenes.
-        </p>
-        <p>
-          His pictures were shown in an art gallery in 2022 and many people came to see them. <Gap g={3} /> Although they weren’t cheap, they sold out quickly.
+          {para.parts.map((part, idx) => (
+            <React.Fragment key={idx}>
+              {part}{" "}
+              {idx < para.gaps.length && <><Slot g={para.gaps[idx]} />{" "}</>}
+            </React.Fragment>
+          ))}
         </p>
       </div>
-      <div className="e8-bank">
-        {T8_BANK.map((s, i) => {
-          const isUsed = used.includes(i);
+      <p className="e8-prompt">Which sentence fits gap 8.{item.g}?</p>
+      <div className="e8-options">
+        {options.map((i) => {
+          if (answered && i !== item.key && i !== picked) return null;
+          const cls = answered && i === item.key ? "is-correct" : answered && i === picked ? "is-wrong" : "";
           return (
-            <button key={i} type="button" className={`e8-bank-item ${isUsed ? "is-used" : ""}`} onClick={() => pickSentence(i)} disabled={isUsed || checked}>
+            <button key={i} type="button" className={`e8-opt ${cls}`} onClick={() => pick(i)} disabled={answered}>
               <span className="e8-opt-letter">{LETTERS[i]}</span>
-              <span>{s}</span>
+              <span>{T8_BANK[i]}</span>
             </button>
           );
         })}
       </div>
-      <div className="e8-actions">
-        {!checked ? (
-          <button type="button" className="e8-check" disabled={!allFilled} onClick={check}>Check my answers</button>
-        ) : (
-          <p className="e8-note-line">Answers: 8.1 D · 8.2 A · 8.3 B. Sentence C is the extra one. Next slide: why.</p>
-        )}
-      </div>
+      {answered && (
+        <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
+          <p><b>{ok ? "Correct." : `Not ${LETTERS[picked]}.`} The answer is {LETTERS[item.key]}.</b> {item.why}</p>
+        </div>
+      )}
     </div>
   );
 }
 
-function GapReview() {
-  const rows = [
-    { g: "8.1", a: "D", clue: "The gap comes after “He came up with the idea 20 years ago” and before “Suddenly, he knew what he had to do.” We need the moment the idea came: one day, on the subway, looking at his travel card." },
-    { g: "8.2", a: "A", clue: "Before: he cut the cards into pieces. After: “This was his first work of art made from plastic cards.” The missing step is making the picture: he glued the pieces together." },
-    { g: "8.3", a: "B", clue: "Before: his pictures were shown in a gallery. After: “Although they weren’t cheap, they sold out.” “They” = works you could buy there." },
-  ];
-  return (
-    <div className="e8-gapreview">
-      {rows.map((r) => (
-        <div key={r.g} className="e8-evrow">
-          <span className="e8-qid">{r.g}</span>
-          <div>
-            <div className="e8-evq"><b>{r.a}</b></div>
-            <div className="e8-evtrap">{r.clue}</div>
-          </div>
-        </div>
-      ))}
-      <div className="e8-evrow is-extra">
-        <span className="e8-qid">C</span>
-        <div>
-          <div className="e8-evq"><b>The extra sentence</b> “He asked his friends for their used travel cards.”</div>
-          <div className="e8-evtrap">It sounds like it belongs (same topic, same words), but nothing before or after any gap talks about friends. In the text he uses <i>his own</i> old cards. The extra sentence is always about the right topic and wrong in the story.</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ---- Task 13: word transformation ------------------------------------------------------------
+// ---- Task 13: one word transformation per slide -------------------------------------------------
 const T13 = [
   { id: "13.1", before: "When Tom was younger, he dreamt of a career in sport, but now he", words: "(want / be)", after: "a scientist.", answers: ["wants to be"], why: "“now” = present, and “he” needs wants. After want we use to + verb: wants to be." },
   { id: "13.2", before: "Amanda is really", words: "(good / make)", after: "cakes.", answers: ["good at making"], why: "The set phrase is good at + -ing: good at making. The words keep their order; you add “at” and change make to making." },
@@ -274,57 +240,53 @@ const T13 = [
 ];
 const norm = (s) => s.toLowerCase().replace(/[.,!?]/g, "").replace(/\s+/g, " ").trim();
 
-function WordTransform() {
+function WordOne({ item }) {
   const { report } = useContext(ScoreCtx);
-  const [vals, setVals] = useState({});
-  const [checked, setChecked] = useState(false);
-  const filled = T13.every((t) => (vals[t.id] || "").trim());
+  const [st, setSt] = useStore("w-" + item.id, { val: "", checked: false });
+  const ok = st.checked && item.answers.includes(norm(st.val));
   function check() {
-    setChecked(true);
-    T13.forEach((t) => report("t13-" + t.id, t.answers.includes(norm(vals[t.id] || ""))));
+    if (!st.val.trim() || st.checked) return;
+    setSt({ ...st, checked: true });
+    report("t13-" + item.id, item.answers.includes(norm(st.val)));
   }
   return (
     <div className="e8-wt">
-      <p className="e8-wt-help">Use the words in brackets, in the same order. Add other words if you need to. Maximum three words in each gap.</p>
-      {T13.map((t) => {
-        const ok = checked && t.answers.includes(norm(vals[t.id] || ""));
-        const bad = checked && !ok;
-        return (
-          <div key={t.id} className="e8-wt-item">
-            <div className="e8-wt-line">
-              <span className="e8-qid">{t.id}</span>
-              <span>{t.before} <b className="e8-wt-words">{t.words}</b> </span>
-              <input
-                className={`e8-input ${ok ? "is-correct" : bad ? "is-wrong" : ""}`}
-                value={vals[t.id] || ""}
-                disabled={checked}
-                onChange={(e) => setVals((v) => ({ ...v, [t.id]: e.target.value }))}
-                placeholder="type here"
-                autoComplete="off"
-                spellCheck="false"
-              />
-              <span> {t.after}</span>
-            </div>
-            {checked && (
-              <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
-                <p><b>{ok ? "Correct." : `Answer: ${t.answers[0]}.`}</b> {t.why}</p>
-              </div>
-            )}
-          </div>
-        );
-      })}
-      {!checked && <button type="button" className="e8-check" disabled={!filled} onClick={check}>Check my answers</button>}
+      <p className="e8-wt-help">Use the words in brackets, in the same order. Add other words if you need to. Maximum three words in the gap.</p>
+      <div className="e8-wt-card">
+        <span className="e8-qid">{item.id}</span>
+        <p className="e8-wt-sentence">
+          {item.before} <b className="e8-wt-words">{item.words}</b>
+        </p>
+        <input
+          className={`e8-input ${ok ? "is-correct" : st.checked ? "is-wrong" : ""}`}
+          value={st.val}
+          disabled={st.checked}
+          onChange={(e) => setSt({ ...st, val: e.target.value })}
+          onKeyDown={(e) => { if (e.key === "Enter") check(); }}
+          placeholder="type your answer"
+          autoComplete="off"
+          spellCheck="false"
+        />
+        <p className="e8-wt-sentence">{item.after}</p>
+      </div>
+      {!st.checked ? (
+        <button type="button" className="e8-check" disabled={!st.val.trim()} onClick={check}>Check</button>
+      ) : (
+        <div className={`e8-why ${ok ? "is-ok" : "is-bad"}`}>
+          <p><b>{ok ? "Correct." : `Answer: ${item.answers[0]}.`}</b> {item.why}</p>
+        </div>
+      )}
     </div>
   );
 }
 
-// ---- Score slide -----------------------------------------------------------------------------
+// ---- Score slides -------------------------------------------------------------------------------
 const TASKS = [
-  { name: "Task 5 · Reactions", ids: ["t5-1", "t5-4"], trap: "Listen for direction: are you asking for help or offering it? Refusing means saying no politely, not agreeing." },
-  { name: "Task 7 · Short texts", ids: ["t7-2", "t7-3"], trap: "Ask who the text speaks to and why it was written before you read the options." },
-  { name: "Task 9 · Matching", ids: ["t9-9.1", "t9-9.2", "t9-9.3", "t9-9.4"], trap: "Find the key word first. A text can look right and still be a price, not a prize, or outdoors, not indoors." },
-  { name: "Task 8 · Gapped text", ids: ["t8-1", "t8-2", "t8-3"], trap: "Read the sentence before and after the gap. The extra sentence has the right topic and the wrong place." },
-  { name: "Task 13 · Word transformation", ids: ["t13-13.1", "t13-13.2", "t13-13.3"], trap: "Check the tense clue (now, first…when) and the fixed pattern (want to, good at + -ing)." },
+  { name: "Task 5", label: "Reactions", ids: ["t5-1", "t5-4"], trap: "Listen for direction. Are you asking for help or offering it? Refusing means saying no politely, not agreeing." },
+  { name: "Task 7", label: "Short texts", ids: ["t7-2", "t7-3"], trap: "Ask who the text speaks to and why it was written before you read the options." },
+  { name: "Task 9", label: "Matching", ids: ["t9-9.1", "t9-9.2", "t9-9.3", "t9-9.4"], trap: "Find the key word first. A text can look right and still be a price, not a prize, or an outdoor cinema, not indoors." },
+  { name: "Task 8", label: "Gapped text", ids: ["t8-1", "t8-2", "t8-3"], trap: "Read the sentence before and after the gap. The extra sentence has the right topic and the wrong place." },
+  { name: "Task 13", label: "Word transformation", ids: ["t13-13.1", "t13-13.2", "t13-13.3"], trap: "Check the tense clue (now, first…when) and the fixed pattern (want to, good at + -ing)." },
 ];
 
 function Score() {
@@ -338,31 +300,52 @@ function Score() {
   const max = rows.reduce((a, r) => a + r.max, 0);
   return (
     <div className="e8-score">
-      <div className="e8-score-top">
-        <div className="e8-score-total"><span>{total}</span><small>/ {max}</small></div>
-        <div className="e8-score-msg">Your score today. Below: the one trap to remember for each task.</div>
-      </div>
-      <div className="e8-score-rows">
+      <div className="e8-score-total"><span>{total}</span><small>out of {max}</small></div>
+      <div className="e8-score-tiles">
         {rows.map((r) => (
-          <div key={r.name} className={`e8-score-row ${r.tried < r.max ? "is-partial" : r.got === r.max ? "is-full" : ""}`}>
-            <span className="e8-score-name">{r.name}</span>
-            <span className="e8-score-pts">{r.tried === 0 ? "not tried" : `${r.got}/${r.max}`}</span>
-            <span className="e8-score-trap">{r.trap}</span>
+          <div key={r.name} className={`e8-score-tile ${r.tried === r.max && r.got === r.max ? "is-full" : ""}`}>
+            <small>{r.name}</small>
+            <b>{r.tried === 0 ? "–" : `${r.got}/${r.max}`}</b>
+            <span>{r.label}</span>
           </div>
         ))}
-      </div>
-      <div className="e8-home">
-        <b>Take-home (Task 14, 10 points, 50–120 words).</b> You made a photo album as a present for your aunt. Write an email to a friend from England: (1) explain why a photo album is a good present, (2) explain who helped you prepare it and how, (3) describe one of the photos in the album. Sign it XYZ.
       </div>
     </div>
   );
 }
 
-// ---- Slides ----------------------------------------------------------------------------------
+function Traps() {
+  return (
+    <div className="e8-traps">
+      <h2 className="e8-h2">One trap to remember for each task</h2>
+      {TASKS.map((t) => (
+        <div key={t.name} className="e8-trap-row"><b>{t.name}</b><span>{t.trap}</span></div>
+      ))}
+    </div>
+  );
+}
+
+function TakeHome() {
+  return (
+    <div className="e8-takehome">
+      <span className="e8-eyebrow">Take-home · Task 14 · 10 points</span>
+      <h2 className="e8-h2">Write an email (50–120 words)</h2>
+      <p className="e8-p">You made a photo album as a present for your aunt. Write an email to a friend from England. In your email:</p>
+      <ul className="e8-th-list">
+        <li>explain why a photo album is a good present for your aunt</li>
+        <li>explain who helped you prepare it, and how</li>
+        <li>describe one of the photos in the album</li>
+      </ul>
+      <p className="e8-p">Sign your email XYZ. Cover all three points so a reader who has not seen this task understands everything.</p>
+    </div>
+  );
+}
+
+// ---- Slides -------------------------------------------------------------------------------------
 const SLIDES = [
   {
     stage: "E8 Practice", time: null,
-    note: "Alice is preparing for the E8 (the Polish eighth-grade English exam), the national exam that decides high-school places. Today is 25 minutes on the reading and reaction tasks, using the real 13 May 2026 sheet. Keep the pace: the exam gives about 8 minutes per task.",
+    note: "Alice is preparing for the E8 (the Polish eighth-grade English exam), the national exam that decides high-school places. Today is about 25 minutes on the reading and reaction tasks, using the real 13 May 2026 sheet. One item at a time: she should only ever look at one question.",
     body: (
       <div className="e8-cover">
         <span className="e8-eyebrow">Sentivo · Custom Lesson</span>
@@ -373,20 +356,20 @@ const SLIDES = [
     ),
   },
   {
-    stage: "Today’s Plan", time: "~2 min",
+    stage: "Today’s Plan", time: "~1 min",
     note: "Read the plan aloud in one minute. The goal statement matters most: the exam writes every wrong option to look almost right. Alice’s job today is to catch that.",
     body: (
       <div className="e8-plan">
         <h2 className="e8-h2">Goal: spot the trap</h2>
-        <p className="e8-p">In E8 every wrong answer is written to look almost right. We practise five task types, and each one has its own trap.</p>
-        <div className="e8-plan-grid">
+        <p className="e8-p">In E8 every wrong answer is written to look almost right. Five task types today, and each one has its own trap.</p>
+        <div className="e8-plan-list">
           {[
-            ["3 min", "Task 5", "Reactions to a situation"],
-            ["5 min", "Task 7", "Short texts, main purpose"],
-            ["7 min", "Task 9", "Match questions to texts"],
-            ["6 min", "Task 8", "Put sentences back in the text"],
-            ["3 min", "Task 13", "Word transformation"],
-          ].map(([t, k, d]) => (
+            ["Task 5", "Reactions to a situation", "3 min"],
+            ["Task 7", "Short texts: what is it for?", "4 min"],
+            ["Task 9", "Match questions to texts", "6 min"],
+            ["Task 8", "Put sentences back in the text", "4 min"],
+            ["Task 13", "Word transformation", "3 min"],
+          ].map(([k, d, t]) => (
             <div key={k} className="e8-plan-item"><b>{k}</b><span>{d}</span><small>{t}</small></div>
           ))}
         </div>
@@ -394,12 +377,12 @@ const SLIDES = [
     ),
   },
   {
-    stage: "Task 5 · Reactions (1/2)", time: "~1.5 min",
+    stage: "Task 5 · Reaction 1", time: "~1.5 min",
     note: "Read the situation aloud. Ask: are you asking for help, or offering it? A sounds nice but it is what the OTHER person would say. C is the request.",
     body: (
       <Choice
         id="t5-1"
-        promptPl="You need help making a tomato salad. How do you ask for help?"
+        situation="You need help making a tomato salad. How do you ask for help?"
         options={[
           { text: "Do you need any help with the tomatoes?", why: "This offers help. You need help, so you are the one who asks." },
           { text: "Shall we have a tomato salad for lunch?", why: "This suggests a meal. It uses the same words (tomato, salad) but never asks for help." },
@@ -411,12 +394,12 @@ const SLIDES = [
     ),
   },
   {
-    stage: "Task 5 · Reactions (2/2)", time: "~1.5 min",
+    stage: "Task 5 · Reaction 2", time: "~1.5 min",
     note: "Refusing politely: “I’m afraid…” is the exam’s favourite refusal. C says yes, A reverses who borrows.",
     body: (
       <Choice
         id="t5-4"
-        promptPl="A friend wants to borrow a textbook that you need. How do you refuse?"
+        situation="A friend wants to borrow a textbook that you need. How do you refuse?"
         options={[
           { text: "I’ll borrow it from you tomorrow.", why: "This reverses the roles: you would be the one borrowing." },
           { text: "I’m afraid I’m using it right now.", why: "“I’m afraid…” is a polite way to say no, and gives the reason." },
@@ -436,15 +419,14 @@ const SLIDES = [
         title="Read the question first"
         steps={[
           "Look at the question before the text: who is it for, or why was it written?",
-          "Read the text once, looking for the speaker’s aim (to ask, to explain, to invite).",
+          "Read the text once, looking for the writer’s aim (to ask, to explain, to invite).",
           "Choose the option that matches the aim, not one that repeats a word from the text.",
         ]}
-        example="Trap: options that use words from the text (help, talented, bike) but describe a different purpose."
       />
     ),
   },
   {
-    stage: "Task 7 · Notice (1/2)", time: "~2 min",
+    stage: "Task 7 · Notice", time: "~2 min",
     note: "Highlight “Do you need money…” and “you”. The notice talks TO athletes; A and B talk ABOUT them. If Alice picks A or B, ask: who does “you” mean?",
     body: (
       <Choice
@@ -464,12 +446,12 @@ const SLIDES = [
     ),
   },
   {
-    stage: "Task 7 · Email (2/2)", time: "~2 min",
+    stage: "Task 7 · Email", time: "~2 min",
     note: "The purpose is in the last lines: “So I’m not going to buy anything from them.” Jack is explaining why, not complaining about a bike he has not bought.",
     body: (
       <Choice
         id="t7-3"
-        passageTitle="From: jack.wilson@mail.com  To: miaflames@mail.com  Subject: Bikes"
+        passageTitle="From: jack.wilson@mail.com · To: miaflames@mail.com · Subject: Bikes"
         passage={"Hi Mia!\nThanks for taking the time to find an online shop with second-hand bikes for sale. I’ve looked at their website. I can see a few people have recommended the shop, but there’s no information about what happens if you buy one of their bikes and there’s a problem with it. Do they give you your money back or fix it for you? I guess they probably don’t. So I’m not going to buy anything from them. I think I need to visit a bike shop in town where I can talk face to face with an expert.\nJack"}
         evidence="So I’m not going to buy anything from them."
         prompt="Jack is writing to Mia…"
@@ -491,24 +473,22 @@ const SLIDES = [
         n={2}
         title="Underline the key word"
         steps={[
-          "Read each question and underline the key word: money prizes, indoors, longer than a day, never before.",
-          "Scan the texts for that idea. Words that look similar (a price, an outdoor cinema) are the trap.",
-          "One text answers two questions. If a text has none, re-check.",
+          "Read the question and find its key word: money prizes, indoors, longer than a day, never before.",
+          "Read the texts one by one. Words that look similar (a price, an outdoor cinema) are the trap.",
+          "One text answers two questions in this task.",
         ]}
-        example="Prize ≠ price. Indoors ≠ outdoor cinema. Week-long ≠ 1 p.m. to 5 p.m."
       />
     ),
   },
-  {
-    stage: "Task 9 · Match the Texts", time: "~4 min",
-    note: "Let Alice tap all four. Evidence lights up in the texts as she answers. Do not help until she has tried all four; then ask which question surprised her.",
-    body: <MatchTexts />,
-  },
-  {
-    stage: "Task 9 · Check the Evidence", time: "~3 min",
-    note: "Walk the four rows. For each one, ask Alice to read the evidence aloud and then say in her own words why the trap text is wrong.",
-    body: <EvidenceTable />,
-  },
+  ...T9_QS.map((q, idx) => ({
+    stage: `Task 9 · Question ${idx + 1} of 4`, time: "~1.5 min",
+    note: idx === 0
+      ? "Alice reads the three texts one at a time using the Text A / B / C buttons, then chooses. Do not help until she has chosen. The right text opens with the evidence highlighted."
+      : idx === 3
+      ? "The last question: ask which text she has already used twice. The rule of Task 9 is that one text answers two questions."
+      : "Same routine: key word first, then read the texts one by one. Ask her to say the key word aloud before choosing.",
+    body: <MatchOne q={q} />,
+  })),
   {
     stage: "Strategy 3 · Gapped Text", time: "~1 min",
     note: "This is the hardest task type for A2 students. The trick is looking at both sides of the gap. Time-words (One day, Suddenly, Then) and pronouns (they, them, this) are the glue.",
@@ -519,31 +499,52 @@ const SLIDES = [
         steps={[
           "Read the sentence before the gap and the sentence after it.",
           "Look for glue words: time words (one day, suddenly, then) and pronouns (they, them, this).",
-          "The extra sentence has the right topic, but no gap fits it.",
+          "One sentence is extra. It has the right topic, but no gap fits it.",
         ]}
-        example="Test each sentence in the gap by reading the whole passage aloud. If it sounds wrong, it is."
       />
     ),
   },
+  ...T8.map((item) => ({
+    stage: `Task 8 · Gap ${item.g} of 3`, time: "~1.5 min",
+    note: item.g === 3
+      ? "Only two sentences are left, and one of them is the extra. Ask Alice why C cannot go anywhere before she looks at the explanation."
+      : "Ask Alice to say the sentence before and after the gap aloud, then choose. Sentences that are already used are taken out of the list.",
+    body: <GapOne item={item} />,
+  })),
   {
-    stage: "Task 8 · Put Them Back", time: "~4 min",
-    note: "Tap a gap, then tap a sentence. Tap a filled gap to remove it. Do not check until all three are filled.",
-    body: <GappedText />,
+    stage: "Strategy 4 · Word Transformation", time: "~1 min",
+    note: "Accept only exact forms in the next three slides (wants to be, good at making, met him). Spelling counts in the exam.",
+    body: (
+      <Strategy
+        n={4}
+        title="Clue first, then pattern"
+        steps={[
+          "Find the clue in the sentence: a time word (now, first… when) tells you the tense.",
+          "Look for a fixed pattern: want to + verb, good at + -ing.",
+          "Keep the given words in order, change them, and add at most one or two more.",
+        ]}
+      />
+    ),
   },
+  ...T13.map((item, idx) => ({
+    stage: `Task 13 · Item ${idx + 1} of 3`, time: "~1 min",
+    note: "If the answer is wrong, ask which word she has to change and which she has to add. Spelling matters in the exam.",
+    body: <WordOne item={item} />,
+  })),
   {
-    stage: "Task 8 · Why It Fits", time: "~2 min",
-    note: "Ask Alice to say the sentence before and after each gap. The extra sentence C is the classic distractor: right topic, wrong story.",
-    body: <GapReview />,
-  },
-  {
-    stage: "Task 13 · Word Transformation", time: "~3 min",
-    note: "Accept only exact forms (wants to be, good at making, met him). Spelling matters in the exam. If a gap is wrong, ask which word she has to change and which she has to add.",
-    body: <WordTransform />,
-  },
-  {
-    stage: "Score & Take-Home", time: "~2 min",
-    note: "Read the score, then only talk about the trap for the task where she lost points. Give Task 14 as homework: it needs a teacher to mark (content 4, coherence 2, range 2, accuracy 2).",
+    stage: "Your Score", time: "~1 min",
+    note: "Read the score, then only talk about the task where she lost points.",
     body: <Score />,
+  },
+  {
+    stage: "Five Traps", time: "~1 min",
+    note: "Read them one by one. Ask her which one caught her today.",
+    body: <Traps />,
+  },
+  {
+    stage: "Take-Home", time: null,
+    note: "Task 14 needs a teacher to mark it (content 4, coherence 2, range 2, accuracy 2). Give it as homework.",
+    body: <TakeHome />,
   },
 ];
 
@@ -553,6 +554,7 @@ export default function E8ReadingReactionsLesson() {
   const [i, setI] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
   const [results, setResults] = useState({});
+  const [store, setStore] = useState({});
   const total = SLIDES.length;
   const s = SLIDES[i];
 
@@ -575,7 +577,7 @@ export default function E8ReadingReactionsLesson() {
   const report = (id, ok) => setResults((r) => (id in r ? r : { ...r, [id]: ok }));
 
   return (
-    <ScoreCtx.Provider value={{ report, results }}>
+    <ScoreCtx.Provider value={{ report, results, store, setStore }}>
       <div className="e8-wrap">
         <div className="e8-single">
           <div className="e8-slide">
@@ -627,7 +629,7 @@ export const styles = `
 .e8-single { flex-shrink: 0; }
 
 .e8-slide {
-  position: relative; width: min(740px, calc(100vw - 32px)); height: min(700px, calc(100vh - 32px)); flex-shrink: 0;
+  position: relative; width: min(740px, calc(100vw - 32px)); height: min(740px, calc(100vh - 32px)); flex-shrink: 0;
   display: flex; flex-direction: column; overflow: hidden;
   background: #fff; border-radius: 22px; box-shadow: 0 24px 50px rgba(27,42,74,0.18);
 }
@@ -644,131 +646,116 @@ export const styles = `
 .e8-stage-name { font-weight: 700; font-size: 11.5px; color: #fff; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .e8-stage-time { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.14); padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
 
-.e8-body { flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 16px 32px 14px; gap: 10px; }
+.e8-body { flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 26px 44px 22px; gap: 14px; }
 .e8-body > * { margin-top: auto; margin-bottom: auto; }
 
 .e8-notes { flex-shrink: 0; background: #FFF6E5; border-top: 2px solid #F2A900; padding: 10px 26px; font-size: 12.5px; font-weight: 600; color: #6B5310; line-height: 1.5; max-height: 110px; overflow-y: auto; }
 
-.e8-footer { flex-shrink: 0; background: #F5F6FA; border-top: 1px solid #E4E9F5; padding: 14px 26px; display: flex; align-items: center; justify-content: space-between; }
-.e8-nav { display: inline-flex; align-items: center; gap: 7px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; padding: 10px 20px; border-radius: 12px; border: 1px solid #DCE2F0; cursor: pointer; background: #fff; color: ${NAVY}; }
+.e8-footer { flex-shrink: 0; background: #F5F6FA; border-top: 1px solid #E4E9F5; padding: 14px 26px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.e8-nav { display: inline-flex; align-items: center; gap: 7px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; padding: 10px 20px; border-radius: 12px; border: 1px solid #DCE2F0; cursor: pointer; background: #fff; color: ${NAVY}; white-space: nowrap; }
 .e8-nav.next { background: ${CORAL}; border-color: ${CORAL}; color: #fff; }
 .e8-nav.is-off, .e8-nav:disabled { opacity: 0.35; cursor: default; }
-.e8-progress { display: flex; align-items: center; gap: 5px; flex-wrap: nowrap; justify-content: center; }
-.e8-dot { width: 6px; height: 6px; border-radius: 50%; background: #D6DCEA; }
+.e8-progress { display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; justify-content: center; }
+.e8-dot { width: 6px; height: 6px; border-radius: 50%; background: #D6DCEA; flex-shrink: 0; }
 .e8-dot.on { width: 16px; border-radius: 4px; background: ${CORAL}; }
 
 .e8-eyebrow { font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: ${CORAL_DEEP}; }
-.e8-h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 34px; color: ${NAVY}; margin: 6px 0 0; text-align: center; }
-.e8-h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; color: ${NAVY}; margin: 2px 0 6px; text-align: center; }
-.e8-p { font-size: 14.5px; font-weight: 600; color: #4A5878; line-height: 1.6; margin: 0; text-align: center; max-width: 520px; }
-.e8-cover { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
-.e8-cover-p { font-size: 15px; font-weight: 600; color: #5A6B92; max-width: 500px; line-height: 1.6; margin: 0; }
-.e8-source { font-size: 11px; font-weight: 700; color: #8892AC; margin-top: 8px; max-width: 460px; }
+.e8-h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 36px; color: ${NAVY}; margin: 6px 0 0; text-align: center; }
+.e8-h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 27px; color: ${NAVY}; margin: 2px 0 8px; text-align: center; }
+.e8-p { font-size: 15.5px; font-weight: 600; color: #4A5878; line-height: 1.65; margin: 0; text-align: center; max-width: 540px; }
+.e8-cover { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.e8-cover-p { font-size: 16px; font-weight: 600; color: #5A6B92; max-width: 500px; line-height: 1.65; margin: 0; }
+.e8-source { font-size: 11px; font-weight: 700; color: #8892AC; margin-top: 10px; max-width: 460px; }
 
-.e8-plan { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
-.e8-plan-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 100%; margin-top: 8px; }
-.e8-plan-item { display: flex; flex-direction: column; gap: 4px; background: #F5F6FA; border: 1px solid #E4E9F5; border-radius: 12px; padding: 12px 10px; font-size: 12px; font-weight: 600; color: #4A5878; }
-.e8-plan-item b { font-size: 13px; color: ${NAVY}; }
-.e8-plan-item small { font-weight: 800; color: ${CORAL_DEEP}; margin-top: auto; }
+.e8-plan { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 560px; }
+.e8-plan-list { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 10px; }
+.e8-plan-item { display: grid; grid-template-columns: 78px 1fr 56px; align-items: center; gap: 12px; background: #F5F6FA; border: 1px solid #E4E9F5; border-radius: 12px; padding: 12px 16px; font-size: 14.5px; font-weight: 600; color: #4A5878; }
+.e8-plan-item b { color: ${NAVY}; font-weight: 800; }
+.e8-plan-item small { font-weight: 800; font-size: 12px; color: ${CORAL_DEEP}; text-align: right; }
 
-.e8-strategy { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 560px; }
-.e8-steps { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; }
-.e8-steps li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; font-weight: 600; line-height: 1.5; color: ${NAVY}; background: #F5F6FA; border-radius: 12px; padding: 12px 14px; }
-.e8-step-n { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: ${CORAL}; color: #fff; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
-.e8-example { font-size: 13px; font-weight: 700; color: #8A5A00; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 12px; padding: 10px 14px; width: 100%; line-height: 1.5; }
+.e8-strategy { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; max-width: 560px; }
+.e8-steps { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.e8-steps li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; font-weight: 600; line-height: 1.55; color: ${NAVY}; background: #F5F6FA; border-radius: 14px; padding: 16px 18px; }
+.e8-step-n { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: ${CORAL}; color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+.e8-example { font-size: 13.5px; font-weight: 700; color: #8A5A00; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 12px; padding: 12px 16px; width: 100%; line-height: 1.5; }
 
-.e8-choice { width: 100%; max-width: 620px; display: flex; flex-direction: column; gap: 10px; }
-.e8-passage { background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 12px 16px; }
-.e8-passage p { margin: 0; font-size: 12.5px; font-weight: 600; line-height: 1.55; color: #33415E; white-space: pre-line; }
-.e8-passage-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 13px; letter-spacing: 0.02em; color: ${NAVY}; margin-bottom: 4px; }
-.e8-prompt-pl { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px; line-height: 1.5; color: ${NAVY}; text-align: center; }
-.e8-prompt { margin: 0; font-weight: 800; font-size: 13.5px; color: ${NAVY}; }
-.e8-options { display: flex; flex-direction: column; gap: 8px; }
-.e8-opt, .e8-bank-item { display: flex; align-items: flex-start; gap: 10px; text-align: left; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; line-height: 1.4; color: ${NAVY}; background: #FAFBFD; border: 1.5px solid #DCE2F0; border-radius: 12px; padding: 9px 13px; cursor: pointer; }
-.e8-opt:disabled, .e8-bank-item:disabled { cursor: default; }
-.e8-opt-letter { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #E4E9F5; color: ${NAVY}; font-weight: 800; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+.e8-choice, .e8-gap1, .e8-match1, .e8-wt { width: 100%; max-width: 620px; display: flex; flex-direction: column; gap: 14px; }
+.e8-passage { background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 16px 20px; }
+.e8-passage p { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.7; color: #33415E; white-space: pre-line; }
+.e8-passage-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; color: ${NAVY}; margin-bottom: 6px; }
+.e8-situation { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; line-height: 1.5; color: ${NAVY}; text-align: center; padding: 0 8px 6px; }
+.e8-prompt { margin: 0; font-weight: 800; font-size: 15px; color: ${NAVY}; }
+.e8-options { display: flex; flex-direction: column; gap: 10px; }
+.e8-opt { display: flex; align-items: flex-start; gap: 12px; text-align: left; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14.5px; line-height: 1.45; color: ${NAVY}; background: #FAFBFD; border: 1.5px solid #DCE2F0; border-radius: 14px; padding: 12px 16px; cursor: pointer; }
+.e8-opt:disabled { cursor: default; }
+.e8-opt-letter { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #E4E9F5; color: ${NAVY}; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 .e8-opt.is-correct { background: ${GREEN}; border-color: ${GREEN}; color: #fff; }
 .e8-opt.is-wrong { background: ${RED}; border-color: ${RED}; color: #fff; }
 .e8-opt.is-correct .e8-opt-letter, .e8-opt.is-wrong .e8-opt-letter { background: rgba(255,255,255,0.28); color: #fff; }
-.e8-why { border-radius: 12px; padding: 10px 14px; font-size: 12.5px; font-weight: 600; line-height: 1.5; color: ${NAVY}; }
-.e8-why p { margin: 0 0 4px; }
+.e8-why { border-radius: 14px; padding: 12px 16px; font-size: 13.5px; font-weight: 600; line-height: 1.55; color: ${NAVY}; }
+.e8-why p { margin: 0 0 5px; }
 .e8-why p:last-child { margin-bottom: 0; }
 .e8-why.is-ok { background: #E6F8F5; border: 1px solid #A8E6DF; }
 .e8-why.is-bad { background: #FDECEC; border: 1px solid #F5B8BA; }
 .e8-trap { color: #8A5A00; }
 .e8-mark { background: #FFE58A; color: inherit; border-radius: 3px; padding: 0 2px; }
 
-.e8-match { width: 100%; display: flex; flex-direction: column; gap: 10px; }
-.e8-texts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.e8-textcard { position: relative; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 12px; padding: 10px 11px 10px 11px; }
-.e8-textcard p { margin: 0; font-size: 11.5px; font-weight: 600; line-height: 1.45; color: #33415E; }
-.e8-textcard-id { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: ${NAVY}; color: #fff; font-weight: 800; font-size: 11px; margin-bottom: 4px; }
-.e8-qs { display: flex; flex-direction: column; gap: 6px; }
-.e8-qrow { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #E4E9F5; border-radius: 10px; padding: 6px 10px; }
-.e8-qid { flex-shrink: 0; font-weight: 800; font-size: 12px; color: ${CORAL_DEEP}; min-width: 32px; }
-.e8-qtext { flex: 1; font-size: 13px; font-weight: 700; }
-.e8-qbtns { display: flex; gap: 6px; }
-.e8-mini { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 12px; width: 32px; height: 28px; border-radius: 8px; border: 1.5px solid #DCE2F0; background: #FAFBFD; color: ${NAVY}; cursor: pointer; }
-.e8-mini:disabled { cursor: default; }
-.e8-mini.is-correct { background: ${GREEN}; border-color: ${GREEN}; color: #fff; }
-.e8-mini.is-wrong { background: ${RED}; border-color: ${RED}; color: #fff; }
-.e8-note-line { margin: 0; font-size: 12.5px; font-weight: 700; color: #8A5A00; background: #FFF6E5; border-radius: 10px; padding: 8px 12px; text-align: center; }
+.e8-bigq { margin: 0; display: flex; align-items: baseline; gap: 10px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; line-height: 1.4; color: ${NAVY}; }
+.e8-qid { flex-shrink: 0; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 13px; color: ${CORAL_DEEP}; }
+.e8-tabs { display: flex; gap: 8px; }
+.e8-tab { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 13px; color: ${NAVY}; background: #F5F6FA; border: 1.5px solid #DCE2F0; border-radius: 999px; padding: 8px 18px; cursor: pointer; }
+.e8-tab.is-on { background: ${NAVY}; border-color: ${NAVY}; color: #fff; }
+.e8-tab:disabled { cursor: default; }
+.e8-tab.is-correct { background: ${GREEN}; border-color: ${GREEN}; color: #fff; }
+.e8-tab.is-wrong { background: ${RED}; border-color: ${RED}; color: #fff; }
+.e8-readcard { background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 16px 20px; }
+.e8-readcard p { margin: 0; font-size: 14.5px; font-weight: 600; line-height: 1.7; color: #33415E; }
 
-.e8-evtable, .e8-gapreview { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 8px; }
-.e8-evrow { display: flex; gap: 10px; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 12px; padding: 10px 12px; }
-.e8-evrow.is-extra { background: #FFF6E5; border-color: #F2C56A; }
-.e8-evq { font-size: 13px; font-weight: 700; }
-.e8-evq2 { font-size: 12.5px; font-weight: 600; margin-top: 2px; }
-.e8-evtrap { font-size: 12px; font-weight: 600; color: #5A6B92; margin-top: 3px; line-height: 1.5; }
-
-.e8-gapped { width: 100%; max-width: 660px; display: flex; flex-direction: column; gap: 8px; }
-.e8-passage--article p { margin: 0 0 6px; }
-.e8-passage--article p:last-child { margin-bottom: 0; }
-.e8-gap { display: inline-flex; align-items: center; gap: 5px; vertical-align: baseline; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 11.5px; color: ${NAVY}; background: #fff; border: 1.5px dashed #9AA6C4; border-radius: 8px; padding: 1px 7px; cursor: pointer; margin: 0 2px; }
-.e8-gap.is-active { border-color: ${CORAL}; background: #FFF1EC; }
-.e8-gap.is-correct { background: ${GREEN}; border: 1.5px solid ${GREEN}; color: #fff; }
-.e8-gap.is-wrong { background: ${RED}; border: 1.5px solid ${RED}; color: #fff; }
-.e8-gap-n { font-size: 10px; opacity: 0.75; }
-.e8-gap-empty { letter-spacing: 1px; color: #9AA6C4; }
-.e8-bank { display: flex; flex-direction: column; gap: 5px; }
-.e8-bank-item { padding: 6px 12px; font-size: 12px; }
-.e8-bank-item.is-used { opacity: 0.35; }
-.e8-actions { display: flex; justify-content: center; }
-.e8-check { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 13px; background: ${NAVY}; color: #fff; border: none; border-radius: 12px; padding: 10px 22px; cursor: pointer; align-self: center; }
+.e8-check { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 14px; background: ${NAVY}; color: #fff; border: none; border-radius: 12px; padding: 12px 24px; cursor: pointer; align-self: center; }
 .e8-check:disabled { opacity: 0.35; cursor: default; }
 
-.e8-wt { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 10px; }
-.e8-wt-help { margin: 0; font-size: 12.5px; font-weight: 700; color: #5A6B92; text-align: center; }
-.e8-wt-item { display: flex; flex-direction: column; gap: 6px; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 12px; padding: 10px 14px; }
-.e8-wt-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; font-size: 14px; font-weight: 600; line-height: 1.9; }
-.e8-wt-words { color: ${CORAL_DEEP}; }
-.e8-input { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: ${NAVY}; border: 0; border-bottom: 2px solid #9AA6C4; background: #fff; border-radius: 6px 6px 0 0; padding: 3px 8px; width: 170px; outline: none; }
+.e8-gap { display: inline-flex; align-items: center; gap: 5px; vertical-align: baseline; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 12.5px; color: ${NAVY}; background: #fff; border: 1.5px dashed #9AA6C4; border-radius: 8px; padding: 1px 8px; margin: 0 2px; }
+.e8-gap.is-active { border-color: ${CORAL}; background: #FFF1EC; }
+.e8-gap.is-later { border-color: #C9D0E0; color: #9AA6C4; }
+.e8-gap.is-correct { background: ${GREEN}; border: 1.5px solid ${GREEN}; color: #fff; }
+.e8-gap.is-wrong { background: ${RED}; border: 1.5px solid ${RED}; color: #fff; }
+.e8-gap-n { font-size: 10.5px; opacity: 0.75; }
+.e8-gap-empty { letter-spacing: 1px; color: #9AA6C4; }
+.e8-filled { background: #E6F8F5; border-radius: 4px; padding: 0 3px; }
+
+.e8-wt-help { margin: 0; font-size: 13px; font-weight: 700; color: #5A6B92; text-align: center; }
+.e8-wt-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 16px; padding: 22px 26px; }
+.e8-wt-sentence { margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; line-height: 1.55; color: ${NAVY}; }
+.e8-wt-words { color: ${CORAL_DEEP}; font-family: 'Quicksand', sans-serif; font-size: 18px; }
+.e8-input { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; color: ${NAVY}; border: 0; border-bottom: 3px solid #9AA6C4; background: #fff; border-radius: 8px 8px 0 0; padding: 8px 12px; width: 100%; max-width: 360px; outline: none; }
 .e8-input:focus { border-bottom-color: ${CORAL}; }
 .e8-input.is-correct { background: #E6F8F5; border-bottom-color: ${GREEN}; }
 .e8-input.is-wrong { background: #FDECEC; border-bottom-color: ${RED}; }
 
-.e8-score { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 10px; }
-.e8-score-top { display: flex; align-items: center; gap: 16px; }
-.e8-score-total { display: flex; align-items: baseline; gap: 4px; background: ${NAVY}; color: #fff; border-radius: 16px; padding: 8px 20px; }
-.e8-score-total span { font-family: 'Fraunces', serif; font-weight: 700; font-size: 34px; }
-.e8-score-total small { font-size: 14px; font-weight: 700; opacity: 0.75; }
-.e8-score-msg { font-size: 13px; font-weight: 700; color: #5A6B92; }
-.e8-score-rows { display: flex; flex-direction: column; gap: 6px; }
-.e8-score-row { display: grid; grid-template-columns: 170px 62px 1fr; gap: 10px; align-items: center; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 10px; padding: 7px 12px; font-size: 12px; font-weight: 600; }
-.e8-score-row.is-full { background: #E6F8F5; border-color: #A8E6DF; }
-.e8-score-name { font-weight: 800; color: ${NAVY}; }
-.e8-score-pts { font-weight: 800; color: ${CORAL_DEEP}; }
-.e8-score-trap { color: #5A6B92; line-height: 1.4; }
-.e8-home { font-size: 12px; font-weight: 600; line-height: 1.55; color: #6B5310; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 12px; padding: 10px 14px; }
+.e8-score { width: 100%; max-width: 560px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.e8-score-total { display: flex; align-items: baseline; gap: 10px; background: ${NAVY}; color: #fff; border-radius: 22px; padding: 14px 36px; }
+.e8-score-total span { font-family: 'Fraunces', serif; font-weight: 700; font-size: 64px; line-height: 1; }
+.e8-score-total small { font-size: 16px; font-weight: 700; opacity: 0.75; }
+.e8-score-tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; width: 100%; }
+.e8-score-tile { display: flex; flex-direction: column; align-items: center; gap: 4px; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 14px; padding: 14px 6px; text-align: center; }
+.e8-score-tile.is-full { background: #E6F8F5; border-color: #A8E6DF; }
+.e8-score-tile small { font-size: 11.5px; font-weight: 800; color: ${CORAL_DEEP}; }
+.e8-score-tile b { font-family: 'Fraunces', serif; font-size: 24px; color: ${NAVY}; }
+.e8-score-tile span { font-size: 11px; font-weight: 700; color: #5A6B92; line-height: 1.3; }
+
+.e8-traps { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 10px; }
+.e8-trap-row { display: grid; grid-template-columns: 74px 1fr; gap: 12px; align-items: start; background: #F8F9FC; border: 1px solid #E4E9F5; border-radius: 12px; padding: 12px 16px; font-size: 13.5px; font-weight: 600; line-height: 1.5; color: #4A5878; }
+.e8-trap-row b { color: ${CORAL_DEEP}; font-weight: 800; }
+
+.e8-takehome { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 560px; }
+.e8-th-list { margin: 0; padding: 14px 20px 14px 38px; width: 100%; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 14px; font-size: 15.5px; font-weight: 700; line-height: 1.8; color: #6B5310; }
 
 @media (max-width: 640px) {
   .e8-header { padding: 12px 50px 12px 16px; }
-  .e8-body { padding: 14px 16px; }
+  .e8-body { padding: 16px 18px; }
   .e8-footer { padding: 10px 14px; }
   .e8-h1 { font-size: 26px; }
-  .e8-plan-grid { grid-template-columns: repeat(2, 1fr); }
-  .e8-texts { grid-template-columns: 1fr; }
-  .e8-score-row { grid-template-columns: 1fr 54px; }
-  .e8-score-trap { grid-column: 1 / -1; }
+  .e8-score-tiles { grid-template-columns: repeat(2, 1fr); }
+  .e8-plan-item { grid-template-columns: 64px 1fr 48px; }
 }
 `;
