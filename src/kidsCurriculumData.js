@@ -140,7 +140,7 @@ export const UNITS = {
         { num: 2, title: "My School Day", focus: "Sequence a school day using first, then, after that, finally" },
         { num: 3, title: "After-School Clubs", focus: "Talk about after-school activities and compare preferences" },
         { num: 4, title: "A Class Project", focus: "Describe a simple class project using sequencing and because" },
-        { num: 5, title: "Unit Review", focus: "Talk and write briefly about school life, school days, and simple projects" },
+        { num: 5, title: "Show What You Know!", focus: "Free practice, no reveal: school life, school days, and a class project" },
       ],
     },
     {

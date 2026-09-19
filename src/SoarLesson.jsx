@@ -77,7 +77,7 @@ function SoarPic({ src, label, size = 96 }) {
   );
 }
 
-function StripBlock({ heading, subheading, items = [], active = null, numbered = true, question, sentence, frame, size }) {
+function StripBlock({ heading, subheading, items = [], active = null, numbered = true, labels = true, question, sentence, frame, size }) {
   const n = items.length;
   const px = size || (n >= 5 ? 96 : n === 4 ? 112 : 128);
   return (
@@ -89,7 +89,7 @@ function StripBlock({ heading, subheading, items = [], active = null, numbered =
           <div key={i} className={`strip-item ${active !== null && i === active ? "is-active" : ""} ${active !== null && i !== active ? "is-dim" : ""}`}>
             {numbered && <span className="strip-num">{i + 1}</span>}
             <SoarPic src={it.src} label={it.label} size={px} />
-            <span className="strip-label">{it.time ? `${it.label}, ${it.time}` : it.label}</span>
+            {(labels || it.time) && <span className="strip-label">{it.time ? (labels ? `${it.label}, ${it.time}` : it.time) : it.label}</span>}
           </div>
         ))}
       </div>
@@ -121,11 +121,11 @@ function CoverBadges({ lesson, unit }) {
 // Each lesson's content is authored as data (see soarA2Data.js), not JSX.
 // A block's `type` picks which of these renders it.
 
-function TitleBlock({ eyebrow, title, subtitle, lesson, unit }) {
+function TitleBlock({ eyebrow, title, subtitle, lesson }) {
   return (
     <div className="title-content">
-      {lesson ? <CoverBadges lesson={lesson} unit={unit} /> : <div className="title-eyebrow">{eyebrow}</div>}
-      <h1 className="title-h">{title}</h1>
+      {!lesson && <div className="title-eyebrow">{eyebrow}</div>}
+      {lesson ? <span className="title-highlight"><h1 className="title-h">{title}</h1></span> : <h1 className="title-h">{title}</h1>}
       <p className="title-p">{subtitle}</p>
     </div>
   );
@@ -346,6 +346,26 @@ export default function SoarLesson() {
     window.moveTo(left, top);
   }, []);
 
+
+  // v2 cover: shrink the title until it sits on one line, like A1 Kids
+  useEffect(() => {
+    const fit = () => {
+      const h = document.querySelector(".slide .title-h");
+      const box = document.querySelector(".slide .title-content");
+      if (!h || !box || !document.querySelector(".slide.is-v2")) return;
+      const avail = box.getBoundingClientRect().width - (parseFloat(getComputedStyle(box).paddingLeft) || 0);
+      h.style.whiteSpace = "nowrap";
+      let size = 50;
+      h.style.fontSize = size + "px";
+      while (h.getBoundingClientRect().width > avail && size > 26) {
+        size -= 1;
+        h.style.fontSize = size + "px";
+      }
+    };
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  }, [i, unit, lesson]);
+
   function exit() {
     window.close();
   }
@@ -369,6 +389,7 @@ export default function SoarLesson() {
   const total = slides.length;
   const s = slides[i];
   const v2 = !!data.v2;
+  const isCover = v2 && i === 0 && !!s.lesson;
   const lastPart = v2 ? [...slides].reverse().find((x) => x.part)?.part : null;
 
   function go(delta) {
@@ -395,7 +416,8 @@ export default function SoarLesson() {
             </div>
           </div>
 
-          <div className={`slide-body ${v2 && s.instruction ? "has-instruction" : ""}`}>
+          <div className={`slide-body ${v2 && s.instruction ? "has-instruction" : ""} ${isCover ? "is-cover" : ""}`}>
+            {isCover && <CoverBadges lesson={s.lesson} unit={s.unit} />}
             {v2 && s.instruction && (
               <div className="slide-instruction">
                 {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
@@ -540,8 +562,9 @@ const styles = `
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
 /* ---------- v2 shell (opt-in per lesson) ---------- */
-.is-v2 .slide-body { flex-direction: column; gap: 14px; padding: 12px 40px; }
+.is-v2 .slide-body { flex-direction: column; gap: 14px; padding: 22px 44px; }
 .is-v2 .slide-body.has-instruction { padding-top: 98px; }
+.is-v2 .slide-instruction { top: 46px; }
 .is-v2 .stage-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .is-v2 .slide-h { position: relative; display: inline-block; isolation: isolate; font-size: 32px; line-height: 1.05; margin: 0; }
 .is-v2 .slide-h::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: -1; }
@@ -574,13 +597,16 @@ const styles = `
 .progress-track { flex-wrap: nowrap; }
 .dot.part-start { margin-left: 8px; }
 
-.title-content { position: relative; }
-.is-v2 .title-content { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding-left: 250px; }
-.is-v2 .title-h { font-size: 46px; white-space: nowrap; }
-.cover-ribbon { display: flex; align-items: center; gap: 12px; height: 54px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 22px; box-shadow: 0 6px 0 rgba(10,18,40,0.3), 0 10px 18px rgba(27,42,74,0.2); position: relative; z-index: 2; }
+.is-v2 .slide-body.is-cover { padding: 22px 44px; gap: 16px; }
+.is-v2 .title-content { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; padding: 0 0 0 230px; text-align: left; }
+.is-v2 .title-highlight { position: relative; display: inline-block; }
+.is-v2 .title-highlight::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: 0; }
+.is-v2 .title-h { position: relative; z-index: 1; font-size: 50px; line-height: 1.05; margin: 0; white-space: nowrap; }
+.is-v2 .title-p { font-size: 16px; max-width: 402px; margin: 0; }
+.cover-ribbon { align-self: flex-start; margin-left: 230px; display: flex; align-items: center; gap: 12px; height: 54px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 22px; box-shadow: 0 6px 0 rgba(10,18,40,0.3), 0 10px 18px rgba(27,42,74,0.2); position: relative; z-index: 2; }
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.18em; }
 .cover-ribbon .cr-num { width: 44px; height: 44px; border-radius: 50%; background: #FF6B4A; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; }
-.unit-medal { position: absolute; left: 40px; bottom: 26px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, #E0502F); border: 8px solid #FFD066; box-shadow: 0 12px 24px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 3; }
+.unit-medal { position: absolute; left: 40px; bottom: 40px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, #E0502F); border: 8px solid #FFD066; box-shadow: 0 12px 24px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 3; }
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.22em; margin-bottom: -8px; padding-left: 0.22em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 76px; line-height: 1; text-shadow: 0 4px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: 58px; }

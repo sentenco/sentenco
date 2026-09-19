@@ -5,8 +5,63 @@
 // Lesson 1 (SchoolSubjectsLesson.jsx): Getting Ready, Taking Off, [a
 // content-appropriate middle stage], Flight Log, Postcard Message, Landing.
 
+
+// ---- shared pieces for the rebuilt (v2) lessons ----
+const SP = (label, file) => ({ label, src: `/curriculum/a2-school/${file}` });
+const ARRIVE = { label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" };
+const HOME = { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" };
+const MATH = SP("Math", "math.jpg"), ENGLISH = SP("English", "english.jpg"), SCIENCE = SP("Science", "science.jpg"), ART = SP("Art", "art.jpg");
+const MUSIC = SP("Music", "music.jpg"), PE = SP("P.E.", "pe.jpg"), HISTORY = SP("History", "history.jpg"), GEOGRAPHY = SP("Geography", "geography.jpg");
+const LUNCH = SP("lunch", "lunch.jpg"), HOMEWORK = SP("homework", "homework.jpg");
+const LISTEN_ANSWER = [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]];
+const NO_HELP = (t) => [["🤔", "No help this time!"], ["🗣️", t]];
+const one = (item) => ({ type: "strip", numbered: false, labels: false, size: 120, items: [item] });
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
+  "1-1": {
+    v2: true,
+    slides: [
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 1, title: "School Subjects", subtitle: "Say which subjects you have and what you think about them." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "How Was School?", turns: [{ who: "teacher", text: "How was school today?" }], instruction: LISTEN_ANSWER, guide: "School was ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "At School", turns: [{ who: "teacher", text: "What did you do at school today?" }], instruction: LISTEN_ANSWER, guide: "I ___ at school." },
+
+      // ---- Part B: school subjects (5 min) ----
+      { type: "strip", part: "B", stage: "School Subjects", heading: "School Subjects", numbered: false, items: [MATH, ENGLISH, SCIENCE, ART], instruction: [["👀", "Look at the subjects."], ["🗣️", "Say each subject."]] },
+      { type: "strip", part: "B", stage: "School Subjects", heading: "School Subjects 2", numbered: false, items: [MUSIC, PE, HISTORY, GEOGRAPHY], instruction: [["👀", "Look at the subjects."], ["🗣️", "Say each subject."]] },
+      { ...one(SCIENCE), part: "B", stage: "What Subject?", heading: "What Subject Is This?", question: "What subject is this?", instruction: [["👀", "Look at the picture."], ["🗣️", "Answer the question."]], guide: "It's ___." },
+      { ...one(ART), part: "B", stage: "What Subject?", heading: "What Subject Is This? 2", question: "What subject is this?", instruction: [["👀", "Look at the picture."], ["🗣️", "Answer the question."]], guide: "It's ___." },
+      { ...one(HISTORY), part: "B", stage: "What Subject?", heading: "What Subject Is This? 3", question: "What subject is this?", instruction: [["🤔", "No help this time!"], ["🗣️", "Say the subject."]] },
+      { ...one(SCIENCE), part: "B", stage: "Do You Have It?", heading: "Do You Have It?", question: "Do you have Science at school?", instruction: LISTEN_ANSWER, guide: "Yes, I do. / No, I don't." },
+      { ...one(MUSIC), part: "B", stage: "Do You Have It?", heading: "Do You Have It? 2", question: "Do you have Music at school?", instruction: LISTEN_ANSWER, guide: "Yes, I do. / No, I don't." },
+      { type: "strip", part: "B", stage: "Other Subjects", heading: "Other Subjects", numbered: false, size: 100, items: [MATH, ENGLISH, ART, PE], question: "What other subjects do you have?", instruction: LISTEN_ANSWER, guide: "I have ___, ___, and ___." },
+
+      // ---- Part C: likes, reasons, interview (13 min) ----
+      { type: "message", part: "C", stage: "Like or Don't Like?", heading: "I Like, I Don't Like", lines: ["I *like* Math.", "I *don't like* History."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]] },
+      { ...one(MATH), part: "C", stage: "Like or Don't Like?", heading: "Do You Like It?", question: "Do you like Math?", instruction: LISTEN_ANSWER, guide: "I like ___. / I don't like ___." },
+      { ...one(ENGLISH), part: "C", stage: "Like or Don't Like?", heading: "Do You Like It? 2", question: "Do you like English?", instruction: LISTEN_ANSWER, guide: "I like ___. / I don't like ___." },
+      { ...one(PE), part: "C", stage: "Like or Don't Like?", heading: "Do You Like It? 3", question: "Do you like P.E.?", instruction: LISTEN_ANSWER, guide: "I like ___. / I don't like ___." },
+      { type: "chips", part: "C", stage: "Because...", heading: "Opinion Words", items: ["easy", "difficult", "fun", "interesting", "boring"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the words."]] },
+      { type: "message", part: "C", stage: "Because...", heading: "Add a Reason", lines: ["I like Math *because* it is *easy*.", "I don't like History *because* it is *difficult*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]] },
+      { ...one(SCIENCE), part: "C", stage: "Because...", heading: "Why?", question: "Do you like Science? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { ...one(ART), part: "C", stage: "Because...", heading: "Why? 2", question: "Do you like Art? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { ...one(HISTORY), part: "C", stage: "Because...", heading: "Why? 3", question: "Do you like History? Why?", instruction: NO_HELP("Answer and say why.") },
+      { type: "dialogue", part: "C", stage: "School Subject Interview", heading: "School Subject Interview", turns: [{ who: "teacher", text: "What subject do you like? Why?" }], instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { type: "dialogue", part: "C", stage: "School Subject Interview", heading: "Interview 2", turns: [{ who: "teacher", text: "Is Science easy or difficult?" }], instruction: LISTEN_ANSWER, guide: "Science is ___." },
+      { type: "dialogue", part: "C", stage: "School Subject Interview", heading: "Interview 3", turns: [{ who: "teacher", text: "Which subject is boring? Which subject is fun?" }], instruction: NO_HELP("Answer the question.") },
+      { type: "chips", part: "C", stage: "Now You Ask!", heading: "Now You Ask!", items: ["What subjects do you have?", "Do you like ___?", "Why?"], instruction: [["👀", "Look at the questions."], ["🗣️", "Ask the teacher three questions."]] },
+
+      // ---- Part D: my talk (4 min) ----
+      { type: "message", part: "D", stage: "My Talk", heading: "Listen to the Model", lines: ["I have English, Math, Science, Art, and P.E.", "My favorite subject is English *because* it is fun.", "I don't like Math *because* it is difficult."], instruction: [["👂", "Listen to the model."], ["🗣️", "Repeat the sentences."]] },
+      { type: "dialogue", part: "D", stage: "My Talk", heading: "My School Subjects", turns: [{ who: "teacher", text: "Tell me about your school subjects." }], instruction: NO_HELP("Say four or five sentences.") },
+      { type: "postcard", part: "D", stage: "Type It!", heading: "Type Your Subjects", line: "I have ___. My favorite subject is ___ because it is ___. I don't like ___ because it is ___.", instruction: [["⌨️", "Type your subjects in the chat."]] },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Subjects", lines: ["Read your sentences to the teacher.", "Use *because* two times."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say which subjects you have, which ones you like, and why." },
+    ],
+  },
   "1-2": {
     v2: true,
     slides: [
@@ -110,14 +165,34 @@ export const SOAR_A2_LESSONS = {
     ],
   },
   "1-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 1 · Lesson 5", title: "Unit Review", subtitle: "Talk and write briefly about school life, school days, and simple projects." },
-      { type: "chips", stage: "Getting Ready", heading: "Quick School Challenge", subheading: "Name five school subjects!", items: ["Math", "English", "Science", "Art", "History", "Music", "P.E.", "Geography"] },
-      { type: "log", stage: "Taking Off", heading: "Build My School Day", subheading: "Use all four sequencing words", rows: ["First, I ___", "Then, I ___", "After that, I ___", "Finally, I ___"] },
-      { type: "dialogue", stage: "Flight Log", heading: "School Life Interview Show", subheading: "Answer mixed questions about school", turns: [{ who: "teacher", text: "What subject do you like? Why?" }, { who: "student", text: "I like Science because it is interesting." }, { who: "teacher", text: "Tell me about a class project." }, { who: "student", text: "First, we chose a topic. Then, we made a poster." }] },
-      { type: "message", stage: "My Class Project", heading: "My Class Project", subheading: "Use First, Then, After that, Finally, and because", lines: ["What is your project about? Why did you choose it?"] },
-      { type: "postcard", stage: "Postcard Message", heading: "My School Life", subheading: "Write 4-6 sentences: subjects, opinion, school-day sequence, activity", line: "I have ___ at school. I like ___ because it is ___. First, I have ___. After school, I like ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 1 Complete!", cardTitle: "My School Life", caption: "I have English, Math, and Science. I like Science because it is interesting." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 1, title: "Show What You Know!", subtitle: "Talk and type about your school life, all on your own." },
+
+      // ---- Part A: quick school challenge (4 min) ----
+      { type: "dialogue", part: "A", stage: "Quick Challenge", heading: "Quick Challenge", turns: [{ who: "teacher", text: "Name five school subjects." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say five subjects."]] },
+      { type: "dialogue", part: "A", stage: "Quick Challenge", heading: "Favorite Subject", turns: [{ who: "teacher", text: "What is your favorite subject? Why?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Quick Challenge", heading: "After School", turns: [{ who: "teacher", text: "What do you do after school? What is your favorite activity?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: my school day (5 min) ----
+      { type: "chips", part: "B", stage: "My School Day", heading: "Your School Day", items: ["First", "Then", "After that", "Finally"], instruction: NO_HELP("Say your school day in order.") },
+      { type: "strip", part: "B", stage: "My School Day", heading: "A Busy Day", items: [ARRIVE, MATH, PE, LUNCH, HOME], instruction: [["👀", "Look at the day."], ["🗣️", "Say it in order."]] },
+      { type: "strip", part: "B", stage: "My School Day", heading: "A Busy Day 2", items: [ARRIVE, ENGLISH, SCIENCE, LUNCH, HOMEWORK], instruction: [["👀", "Look at the day."], ["🗣️", "Say it in order."]] },
+      { type: "strip", part: "B", stage: "My School Day", heading: "Add the Time", items: [{ ...ARRIVE, time: "8:00" }, { ...ART, time: "10:00" }, { ...LUNCH, time: "12:00" }, { ...HOME, time: "3:00" }], instruction: [["👀", "Look at the times."], ["🗣️", "Say the day with times."]] },
+
+      // ---- Part C: school life interview show (8 min) ----
+      { type: "dialogue", part: "C", stage: "Interview Show", heading: "Welcome to the Show!", turns: [{ who: "teacher", text: "Welcome to the School Life Interview Show! What subject do you like? Why?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Interview Show", heading: "First and Next", turns: [{ who: "teacher", text: "What do you do first at school? What do you do next?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Interview Show", heading: "Which Club?", turns: [{ who: "teacher", text: "Which club do you prefer? Why?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Interview Show", heading: "A Class Project", turns: [{ who: "teacher", text: "Tell me about a class project." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Interview Show", heading: "The New Student", turns: [{ who: "teacher", text: "You are talking to a new student. Tell them about your school life." }], instruction: [["👂", "Listen to the situation."], ["🗣️", "Tell the new student."]] },
+
+      // ---- Part D: my project and my writing (9 min) ----
+      { type: "dialogue", part: "D", stage: "My Class Project", heading: "My Class Project", turns: [{ who: "teacher", text: "What is your project about? Why did you choose it?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "D", stage: "My Class Project", heading: "My Class Project 2", turns: [{ who: "teacher", text: "What do you do first? What do you do next?" }], instruction: LISTEN_ANSWER },
+      { type: "message", part: "D", stage: "Type It!", heading: "My School Life", lines: ["Include one or two subjects, an opinion, your school day in order, and an after-school activity."], instruction: [["⌨️", "Type four to six sentences in the chat."]] },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Writing", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "Unit 1 Complete!", title: "Unit 1 Complete!", see: "Great job!", recap: "You can talk about your subjects, your school day, and a class project." },
     ],
   },
 
