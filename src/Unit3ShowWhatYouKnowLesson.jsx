@@ -101,7 +101,7 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
-  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
@@ -254,11 +254,11 @@ export const LESSON_GUIDE = [
   { stage: "Unit 3 · Lesson 5", time: null, note: null },
   { stage: "Hello & Free Start", time: "~3 min", note: "Greet the student naturally. Let them respond without displaying a model. Briefly interact using familiar language from the unit." },
   { stage: "Color Talk", time: "~4 min", note: "Show a colorful picture with several objects. Ask open questions: \"What do you see?\", \"What color is it?\", \"Can you find something blue?\"" },
-  { stage: "Letter Hunt", time: "~4 min", note: "Show a busy picture or letter board containing S-Z. Ask the student to find or identify letters without presenting them in sequence." },
-  { stage: "Can You Make a Word?", time: "~4 min", note: "Give the student a few familiar letter cards and let them decide how to combine them. Help only when necessary, then let the student blend and say the word." },
+  { stage: "Letter Hunt", time: "~4 min", note: "Show a busy picture or letter board containing S-Z. Ask the student to find or identify letters without presenting them in sequence. Fast learner? Add Hunt Once More! (V) and Last Hunt! (X) (+2 min)." },
+  { stage: "Can You Make a Word?", time: "~4 min", note: "Give the student a few familiar letter cards and let them decide how to combine them. Help only when necessary, then let the student blend and say the word. Fast learner? Add Make Another Word! (tap) and Make One More! (pin) (+2 min)." },
   { stage: "Build My Picture!", time: "~3 min", note: "Student creates a simple picture on screen by choosing colored objects and letters. They describe their choices: \"Blue star.\" \"Red sun.\"" },
-  { stage: "Build My Picture!", time: "~3 min", note: "Then use selected letters to build/blend a simple word." },
-  { stage: "My Choice Challenge", time: "~4 min", note: "Let the student choose a color, letter, or blending challenge. They demonstrate what they know with minimal prompting. Finish with praise and goodbye." },
+  { stage: "Build My Picture!", time: "~3 min", note: "Then use selected letters to build/blend a simple word. Fast learner? Add Build a Third Picture! (+2 min)." },
+  { stage: "My Choice Challenge", time: "~4 min", note: "Let the student choose a color, letter, or blending challenge. They demonstrate what they know with minimal prompting. Finish with praise and goodbye. Fast learner? Use Challenge Again! to pick a second challenge (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -278,6 +278,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Free Start
     {
       stage: "Hello & Free Start",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Answer the teacher."]],
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -294,6 +296,9 @@ function buildSlides({ onZoom }) {
     // 3: Color Talk
     {
       stage: "Color Talk",
+      part: "B",
+      instruction: [["🗣️", "Say what you see."], ["👆", "Point to blue."]],
+      guide: "I see ___ and ___.",
       time: "~4 min",
       body: (
         <>
@@ -314,6 +319,9 @@ function buildSlides({ onZoom }) {
     // 3b: Color Talk continued
     {
       stage: "Color Talk",
+      part: "B",
+      instruction: [["🗣️", "Say the colors."], ["👆", "Pick the one you like."]],
+      guide: "I like ___.",
       time: "~2 min",
       body: (
         <>
@@ -334,6 +342,9 @@ function buildSlides({ onZoom }) {
     // 4: Letter Hunt
     {
       stage: "Letter Hunt",
+      part: "B",
+      instruction: [["🔍", "Find the letter W."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~2 min",
       body: (
         <>
@@ -343,18 +354,15 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="W" color={LETTER_COLOR.W} size={60} fontSize={24} onZoom={onZoom} />
             <LetterTile letters="Y" color={LETTER_COLOR.Y} size={60} fontSize={24} onZoom={onZoom} />
           </div>
-          <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
-            <div className="brow">
-              <div className="avatar navy">T</div>
-              <div className="bubble left">Can you find W?</div>
-            </div>
-          </div>
         </>
       ),
     },
     // 4b: Letter Hunt continued
     {
       stage: "Letter Hunt",
+      part: "B",
+      instruction: [["🔍", "Find the letter Z."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~2 min",
       body: (
         <>
@@ -364,18 +372,43 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="X" color={LETTER_COLOR.X} size={60} fontSize={24} onZoom={onZoom} />
             <LetterTile letters="Z" color={LETTER_COLOR.Z} size={60} fontSize={24} onZoom={onZoom} />
           </div>
-          <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
-            <div className="brow">
-              <div className="avatar navy">T</div>
-              <div className="bubble left">Now can you find Z?</div>
-            </div>
-          </div>
         </>
+      ),
+    },
+    {
+      stage: "Letter Hunt",
+      part: "B",
+      title: "Hunt Once More!",
+      instruction: [["🔍", "Find the letter V."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="U" color={LETTER_COLOR.U} size={60} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="V" color={LETTER_COLOR.V} size={60} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="S" color={LETTER_COLOR.S} size={60} fontSize={24} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Letter Hunt",
+      part: "B",
+      title: "Last Hunt!",
+      instruction: [["🔍", "Find the letter X."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Z" color={LETTER_COLOR.Z} size={60} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="W" color={LETTER_COLOR.W} size={60} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="X" color={LETTER_COLOR.X} size={60} fontSize={24} onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Can You Make a Word?
     {
       stage: "Can You Make a Word?",
+      part: "C",
+      instruction: [["🧩", "Put the sounds together."], ["🗣️", "Say the word."]],
+      guide: "The word is ___.",
       time: "~4 min",
       body: (
         <div className="center-col">
@@ -385,13 +418,43 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="i" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
             <LetterTile letters="t" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Put the sounds together. What word can you make?</p>
+        </div>
+      ),
+    },
+    {
+      stage: "Can You Make a Word?",
+      part: "C",
+      title: "Make Another Word!",
+      instruction: [["🧩", "Put the sounds together."], ["🗣️", "Say the word."]],
+      guide: "The word is ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="t" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="a" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="p" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Can You Make a Word?",
+      part: "C",
+      title: "Make One More!",
+      instruction: [["🧩", "Put the sounds together."], ["🗣️", "Say the word."]],
+      guide: "The word is ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="p" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="i" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="n" color={BLEND_COLOR} size={56} fontSize={22} onZoom={onZoom} />
         </div>
       ),
     },
     // 6: HIGHLIGHT Build My Picture! (describe)
     {
       stage: "Build My Picture!",
+      part: "C",
+      instruction: [["🎨", "Choose a color and a shape."], ["🗣️", "Describe it."]],
+      guide: "It's a ___ ___.",
       time: "~3 min",
       body: (
         <>
@@ -400,13 +463,14 @@ function buildSlides({ onZoom }) {
             <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={70} onZoom={onZoom} />
             <Pic src={STAR_IMG} label="star" size={70} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose a color and a shape. "Blue star."</p>
         </>
       ),
     },
     // 7: HIGHLIGHT Build My Picture! (blend)
     {
       stage: "Build My Picture!",
+      part: "C",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -418,6 +482,9 @@ function buildSlides({ onZoom }) {
     // 7b: HIGHLIGHT Build My Picture! Round 2 (describe)
     {
       stage: "Build My Picture!",
+      part: "C",
+      instruction: [["🎨", "Choose a color and a shape."], ["🗣️", "Describe it."]],
+      guide: "It's a ___ ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -426,13 +493,14 @@ function buildSlides({ onZoom }) {
             <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={70} onZoom={onZoom} />
             <Pic src="/curriculum/u3-l5/tree.avif" label="tree" size={70} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Choose a new color and shape. "Green tree."</p>
         </>
       ),
     },
     // 7c: HIGHLIGHT Build My Picture! Round 2 (blend)
     {
       stage: "Build My Picture!",
+      part: "C",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -441,14 +509,46 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Build My Picture!",
+      part: "C",
+      title: "🎨 Build a Third Picture!",
+      instruction: [["🎨", "Choose a color and a shape."], ["🗣️", "Describe it."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Yellow" hex={COLOR_HEX.Yellow} size={70} onZoom={onZoom} />
+          <Pic src="/curriculum/u3-l1/sun.jpg" label="sun" size={70} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 8: My Choice Challenge
     {
       stage: "My Choice Challenge",
+      part: "D",
+      instruction: [["👆", "Pick a challenge."], ["🗣️", "Show what you know!"]],
       time: "~4 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">My Choice Challenge!</h2></span>
-          <p className="slide-p">Pick a color, a letter, or a blending challenge. Show me what you know!</p>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="🎨" color={COLOR_HEX.Blue} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="Ss" color={LETTER_COLOR.S} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="🧩" color={BLEND_COLOR} size={80} fontSize={30} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "My Choice Challenge",
+      part: "D",
+      title: "Challenge Again!",
+      instruction: [["👆", "Pick a different challenge."], ["🗣️", "Show what you know!"]],
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="🌈" color={COLOR_HEX.Purple} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="Zz" color={LETTER_COLOR.Z} size={80} fontSize={30} onZoom={onZoom} />
+          <LetterTile letters="🧩" color={BLEND_COLOR} size={80} fontSize={30} onZoom={onZoom} />
         </div>
       ),
     },

@@ -89,7 +89,7 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
-  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
@@ -247,11 +247,11 @@ export const LESSON_GUIDE = [
   { stage: "T is for...", time: "~1.5 min", note: "Say each word slowly: \"T is for tiger. T is for tomato. T is for tent.\"" },
   { stage: "U is for...", time: "~1.5 min", note: "Say each word slowly: \"U is for umbrella. U is for unicorn. U is for ukulele.\"" },
   { stage: "Colors & Letters", time: "~2.5 min", note: "Show colored S, T, and U cards. Ask \"What letter?\" and \"What color?\" Student answers both." },
-  { stage: "Look & Say", time: "~4 min", note: "Show familiar objects in different colors. Student identifies the letter and the color, e.g. \"Red S.\" \"Blue T.\"" },
-  { stage: "Color Detective", time: "~2 min", note: "Show a colorful group of cards for a moment. Give a clue: \"Find something red!\"" },
-  { stage: "Color Detective", time: "~2 min", note: "Give another clue: \"Find the blue letter!\" Student points to the correct item and says the color or letter." },
-  { stage: "Color & Letter Check", time: "~1.5 min", note: "Flash the four colors randomly. Student identifies them." },
-  { stage: "Color & Letter Check", time: "~1.5 min", note: "Flash S, T, U randomly, then finish with the regular goodbye routine." },
+  { stage: "Look & Say", time: "~4 min", note: "Show familiar objects in different colors. Student identifies the letter and the color, e.g. \"Red S.\" \"Blue T.\" Fast learner? Add Look & Say 2 and 3, which use new colour and letter combinations (+3 min)." },
+  { stage: "Color Detective", time: "~2 min", note: "Show a colorful group of cards for a moment. Give a clue: \"Find something red!\" Fast learner? Add Detective Again! (yellow) (+1 min)." },
+  { stage: "Color Detective", time: "~2 min", note: "Give another clue: \"Find the blue letter!\" Student points to the correct item and says the color or letter. Fast learner? Add Find the Red Letter! and Find the Yellow Letter! (+2 min)." },
+  { stage: "Color & Letter Check", time: "~1.5 min", note: "Flash the four colors randomly. Student identifies them. Fast learner? Add Flash Review Again! with the colors in a new order (+1 min)." },
+  { stage: "Color & Letter Check", time: "~1.5 min", note: "Flash S, T, U randomly, then finish with the regular goodbye routine. Fast learner? Add Letters Again! (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -276,6 +276,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Letter Review
     {
       stage: "Hello & Letter Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say each letter."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
@@ -298,6 +301,9 @@ function buildSlides({ onZoom }) {
     // 3: Meet the Colors
     {
       stage: "Meet the Colors",
+      part: "B",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
       time: "~3 min",
       body: (
         <>
@@ -314,14 +320,17 @@ function buildSlides({ onZoom }) {
     // 4: Meet S, T, U
     {
       stage: "Meet S, T, U",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet S, T, U!</h2></span>
           <div className="row" style={{ marginTop: 10 }}>
-            <LetterTile letters="Ss" color={LETTER_COLOR.S} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Tt" color={LETTER_COLOR.T} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Uu" color={LETTER_COLOR.U} size={100} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Ss" color={LETTER_COLOR.S} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Tt" color={LETTER_COLOR.T} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Uu" color={LETTER_COLOR.U} size={92} fontSize={40} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -329,6 +338,9 @@ function buildSlides({ onZoom }) {
     // 5: S is for...
     {
       stage: "S is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "S is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -344,6 +356,9 @@ function buildSlides({ onZoom }) {
     // 6: T is for...
     {
       stage: "T is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "T is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -359,6 +374,9 @@ function buildSlides({ onZoom }) {
     // 7: U is for...
     {
       stage: "U is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "U is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -374,6 +392,9 @@ function buildSlides({ onZoom }) {
     // 8: Colors & Letters
     {
       stage: "Colors & Letters",
+      part: "C",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the color and the letter."]],
+      guide: "It's a ___ ___.",
       time: "~2.5 min",
       body: (
         <>
@@ -389,6 +410,9 @@ function buildSlides({ onZoom }) {
     // 9: Look & Say
     {
       stage: "Look & Say",
+      part: "C",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the color and the letter."]],
+      guide: "It's a ___ ___.",
       time: "~4 min",
       body: (
         <>
@@ -399,13 +423,44 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="T" color={COLOR_HEX.Red} size={64} fontSize={26} onZoom={onZoom} />
             <LetterTile letters="S" color={COLOR_HEX.Yellow} size={64} fontSize={26} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Say the color, then the letter. "Red S."</p>
         </>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Look & Say 2!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the color and the letter."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="T" color={COLOR_HEX.Yellow} size={64} fontSize={26} onZoom={onZoom} />
+          <LetterTile letters="S" color={COLOR_HEX.Blue} size={64} fontSize={26} onZoom={onZoom} />
+          <LetterTile letters="U" color={COLOR_HEX.Red} size={64} fontSize={26} onZoom={onZoom} />
+          <LetterTile letters="T" color={COLOR_HEX.Green} size={64} fontSize={26} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look & Say",
+      part: "C",
+      title: "Look & Say 3!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the color and the letter."]],
+      guide: "It's a ___ ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="U" color={COLOR_HEX.Green} size={64} fontSize={26} onZoom={onZoom} />
+          <LetterTile letters="T" color={COLOR_HEX.Red} size={64} fontSize={26} onZoom={onZoom} />
+          <LetterTile letters="S" color={COLOR_HEX.Blue} size={64} fontSize={26} onZoom={onZoom} />
+          <LetterTile letters="U" color={COLOR_HEX.Yellow} size={64} fontSize={26} onZoom={onZoom} />
+        </div>
       ),
     },
     // 10: HIGHLIGHT Color Detective (peek)
     {
       stage: "Color Detective",
+      part: "D",
+      instruction: [["🔍", "Find the red one."], ["👆", "Point and say the color."]],
       time: "~2 min",
       body: (
         <>
@@ -415,13 +470,28 @@ function buildSlides({ onZoom }) {
             <ColorSwatch name="Red" hex={COLOR_HEX.Red} onZoom={onZoom} />
             <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Find something red!</p>
         </>
+      ),
+    },
+    {
+      stage: "Color Detective",
+      part: "D",
+      title: "Detective Again!",
+      instruction: [["🔍", "Find the yellow one."], ["👆", "Point and say the color."]],
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Yellow" hex={COLOR_HEX.Yellow} onZoom={onZoom} />
+          <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} onZoom={onZoom} />
+          <ColorSwatch name="Green" hex={COLOR_HEX.Green} onZoom={onZoom} />
+        </div>
       ),
     },
     // 11: HIGHLIGHT Color Detective (letter clue)
     {
       stage: "Color Detective",
+      part: "D",
+      instruction: [["🔍", "Find the blue letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~2 min",
       body: (
         <>
@@ -437,6 +507,9 @@ function buildSlides({ onZoom }) {
     // 11b: HIGHLIGHT Color Detective Round 2 (letter clue)
     {
       stage: "Color Detective",
+      part: "D",
+      instruction: [["🔍", "Find the green letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1 min",
       body: (
         <>
@@ -449,9 +522,40 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Color Detective",
+      part: "D",
+      title: "Find the Red Letter!",
+      instruction: [["🔍", "Find the red letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="U" color={COLOR_HEX.Red} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="S" color={COLOR_HEX.Blue} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="T" color={COLOR_HEX.Yellow} size={70} fontSize={28} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Color Detective",
+      part: "D",
+      title: "Find the Yellow Letter!",
+      instruction: [["🔍", "Find the yellow letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="S" color={COLOR_HEX.Green} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="T" color={COLOR_HEX.Yellow} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="U" color={COLOR_HEX.Red} size={70} fontSize={28} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 12: Color & Letter Check (colors)
     {
       stage: "Color & Letter Check",
+      part: "D",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -465,9 +569,27 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Color & Letter Check",
+      part: "D",
+      title: "Flash Review Again!",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={70} onZoom={onZoom} />
+          <ColorSwatch name="Yellow" hex={COLOR_HEX.Yellow} size={70} onZoom={onZoom} />
+          <ColorSwatch name="Red" hex={COLOR_HEX.Red} size={70} onZoom={onZoom} />
+          <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={70} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 13: Color & Letter Check (letters)
     {
       stage: "Color & Letter Check",
+      part: "D",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -478,6 +600,20 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Uu" color={LETTER_COLOR.U} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Color & Letter Check",
+      part: "D",
+      title: "Letters Again!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Uu" color={LETTER_COLOR.U} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="Ss" color={LETTER_COLOR.S} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="Tt" color={LETTER_COLOR.T} size={74} fontSize={28} onZoom={onZoom} />
+        </div>
       ),
     },
     // 14: Great Job

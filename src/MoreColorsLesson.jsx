@@ -161,7 +161,7 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
-  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
@@ -318,12 +318,12 @@ export const LESSON_GUIDE = [
   { stage: "V is for...", time: "~1.5 min", note: "Say each word slowly: \"V is for van. V is for vase. V is for volcano.\"" },
   { stage: "W is for...", time: "~1.5 min", note: "Say each word slowly: \"W is for watermelon. W is for watch. W is for web.\"" },
   { stage: "X is for...", time: "~1.5 min", note: "Say each word slowly: \"X is for x-ray. X is for xylophone.\"" },
-  { stage: "Color & Say", time: "~2.5 min", note: "Mix the old and new colors. Show different colored objects and ask \"What color?\" Include quick recognition of V-X." },
-  { stage: "Look & Match", time: "~4 min", note: "The student taps a letter, then taps the picture that starts with it to make the match. Let them try it themselves before helping." },
+  { stage: "Color & Say", time: "~2.5 min", note: "Mix the old and new colors. Show different colored objects and ask \"What color?\" Include quick recognition of V-X. Fast learner? Add Color & Say 2 and 3, which mix old and new colors in a new order (+3 min)." },
+  { stage: "Look & Match", time: "~4 min", note: "The student taps a letter, then taps the picture that starts with it to make the match. Let them try it themselves before helping. Fast learner? Play the two extra Match It! rounds (+3 min). Slower learner: do the first round together, tapping for the student." },
   { stage: "Color Shop!", time: "~2.5 min", note: "Create a pretend online shop with colorful objects. Ask \"What color do you want?\" Student chooses an object/color and says it." },
-  { stage: "Color Shop!", time: "~1.5 min", note: "Add V-X letter cards as bonus challenges." },
-  { stage: "Color & Letter Check", time: "~1.5 min", note: "Flash mixed colors and V-X. Student identifies them quickly." },
-  { stage: "Color & Letter Check", time: "~1.5 min", note: "Finish with a fun \"What's your favorite color?\" choice and goodbye." },
+  { stage: "Color Shop!", time: "~1.5 min", note: "Add V-X letter cards as bonus challenges. Fast learner? Add Shopping Once More! and a bonus W (+2 min)." },
+  { stage: "Color & Letter Check", time: "~1.5 min", note: "Flash mixed colors and V-X. Student identifies them quickly. Fast learner? Add Flash Review Again! (+1 min)." },
+  { stage: "Color & Letter Check", time: "~1.5 min", note: "Finish with a fun \"What's your favorite color?\" choice and goodbye. Fast learner? Swap roles with Ask the Teacher!: the student asks the question (+1.5 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -348,6 +348,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Color Review
     {
       stage: "Hello & Color Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say each color."]],
+      guide: "It's ___.",
       time: "~3 min",
       body: (
         <>
@@ -364,6 +367,9 @@ function buildSlides({ onZoom }) {
     // 3: Meet More Colors
     {
       stage: "Meet More Colors",
+      part: "B",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
       time: "~3 min",
       body: (
         <>
@@ -380,14 +386,17 @@ function buildSlides({ onZoom }) {
     // 4: Meet V, W, X
     {
       stage: "Meet V, W, X",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet V, W, X!</h2></span>
           <div className="row" style={{ marginTop: 10 }}>
-            <LetterTile letters="Vv" color={LETTER_COLOR.V} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Ww" color={LETTER_COLOR.W} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Xx" color={LETTER_COLOR.X} size={100} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Vv" color={LETTER_COLOR.V} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Ww" color={LETTER_COLOR.W} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Xx" color={LETTER_COLOR.X} size={92} fontSize={40} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -395,6 +404,9 @@ function buildSlides({ onZoom }) {
     // 5: V is for...
     {
       stage: "V is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "V is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -410,6 +422,9 @@ function buildSlides({ onZoom }) {
     // 6: W is for...
     {
       stage: "W is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "W is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -425,6 +440,9 @@ function buildSlides({ onZoom }) {
     // 7: X is for...
     {
       stage: "X is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "X is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -439,6 +457,9 @@ function buildSlides({ onZoom }) {
     // 8: Color & Say
     {
       stage: "Color & Say",
+      part: "C",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
       time: "~2.5 min",
       body: (
         <>
@@ -452,14 +473,45 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Color & Say",
+      part: "C",
+      title: "Color & Say 2!",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Orange" hex={COLOR_HEX.Orange} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Red" hex={COLOR_HEX.Red} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Brown" hex={COLOR_HEX.Brown} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={64} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Color & Say",
+      part: "C",
+      title: "Color & Say 3!",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Yellow" hex={COLOR_HEX.Yellow} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Purple" hex={COLOR_HEX.Purple} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Pink" hex={COLOR_HEX.Pink} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={64} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 9: Look & Match
     {
       stage: "Look & Match",
+      part: "C",
+      instruction: [["👆", "Tap a letter."], ["👆", "Tap the matching picture."]],
       time: "~4 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look & Match!</h2></span>
-          <p className="slide-p" style={{ marginBottom: 4 }}>Tap a letter, then tap the picture that starts with it!</p>
           <MatchGame
             pairs={[
               { id: "v", tileLabel: "V", tileColor: LETTER_COLOR.V, rightNode: <img src={`${IMG}/van.avif`} alt="van" className="match-img" /> },
@@ -469,9 +521,40 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Look & Match",
+      part: "C",
+      title: "Match It! 2",
+      instruction: [["👆", "Tap a letter."], ["👆", "Tap the matching picture."]],
+      body: (
+        <MatchGame key="m2"
+            pairs={[
+              { id: "v", tileLabel: "V", tileColor: LETTER_COLOR.V, rightNode: <img src={`${IMG}/vase.avif`} alt="vase" className="match-img" /> },
+              { id: "x", tileLabel: "X", tileColor: LETTER_COLOR.X, rightNode: <img src={`${IMG}/xylophone.avif`} alt="xylophone" className="match-img" /> },
+            ]}
+          />
+      ),
+    },
+    {
+      stage: "Look & Match",
+      part: "C",
+      title: "Match It! 3",
+      instruction: [["👆", "Tap a letter."], ["👆", "Tap the matching picture."]],
+      body: (
+        <MatchGame key="m3"
+            pairs={[
+              { id: "w", tileLabel: "W", tileColor: LETTER_COLOR.W, rightNode: <img src={`${IMG}/watch.avif`} alt="watch" className="match-img" /> },
+              { id: "v", tileLabel: "V", tileColor: LETTER_COLOR.V, rightNode: <img src={`${IMG}/volcano.jpeg`} alt="volcano" className="match-img" /> },
+            ]}
+          />
+      ),
+    },
     // 10: HIGHLIGHT Color Shop! (choose)
     {
       stage: "Color Shop!",
+      part: "D",
+      instruction: [["👂", "Listen to the shopkeeper."], ["🗣️", "Say the color you want."]],
+      guide: "I want ___.",
       time: "~2.5 min",
       body: (
         <>
@@ -493,18 +576,23 @@ function buildSlides({ onZoom }) {
     // 11: HIGHLIGHT Color Shop! (bonus letters)
     {
       stage: "Color Shop!",
+      part: "D",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Bonus Letter!</h2></span>
-          <LetterTile letters="X" color={LETTER_COLOR.X} size={90} fontSize={38} onZoom={onZoom} />
-          <p className="slide-p">What letter is this?</p>
+          <LetterTile letters="X" color={LETTER_COLOR.X} size={74} fontSize={38} onZoom={onZoom} />
         </div>
       ),
     },
     // 11b: HIGHLIGHT Color Shop! Round 2 (choose)
     {
       stage: "Color Shop!",
+      part: "D",
+      instruction: [["👂", "Listen to the shopkeeper."], ["🗣️", "Say the color you want."]],
+      guide: "I want ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -526,18 +614,57 @@ function buildSlides({ onZoom }) {
     // 11c: HIGHLIGHT Color Shop! Round 2 (bonus letter)
     {
       stage: "Color Shop!",
+      part: "D",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Bonus Letter!</h2></span>
-          <LetterTile letters="V" color={LETTER_COLOR.V} size={90} fontSize={38} onZoom={onZoom} />
-          <p className="slide-p">What letter is this?</p>
+          <LetterTile letters="V" color={LETTER_COLOR.V} size={74} fontSize={38} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Color Shop!",
+      part: "D",
+      title: "Shopping Once More!",
+      instruction: [["👂", "Listen to the shopkeeper."], ["🗣️", "Say the color you want."]],
+      guide: "I want ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <ColorSwatch name="Pink" hex={COLOR_HEX.Pink} size={70} onZoom={onZoom} />
+          <ColorSwatch name="Yellow" hex={COLOR_HEX.Yellow} size={70} onZoom={onZoom} />
+          <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={70} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What color do you want now?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Color Shop!",
+      part: "D",
+      title: "Bonus Letter!",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="W" color={LETTER_COLOR.W} size={74} fontSize={32} onZoom={onZoom} />
         </div>
       ),
     },
     // 12: Color & Letter Check
     {
       stage: "Color & Letter Check",
+      part: "D",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say the color or the letter."]],
+      guide: "It's ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -556,9 +683,26 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Color & Letter Check",
+      part: "D",
+      title: "Flash Review Again!",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Brown" hex={COLOR_HEX.Brown} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Purple" hex={COLOR_HEX.Purple} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Orange" hex={COLOR_HEX.Orange} size={64} onZoom={onZoom} />
+          <ColorSwatch name="Pink" hex={COLOR_HEX.Pink} size={64} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 13: Favorite color
     {
       stage: "Color & Letter Check",
+      part: "D",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -574,6 +718,24 @@ function buildSlides({ onZoom }) {
             </div>
           </div>
         </div>
+      ),
+    },
+    {
+      stage: "Color & Letter Check",
+      part: "D",
+      title: "Ask the Teacher!",
+      instruction: [["🗣️", "Ask the teacher."], ["👂", "Listen to the answer."]],
+      body: (
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">What's your favorite color?</div>
+            </div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">My favorite color is blue.</div>
+            </div>
+          </div>
       ),
     },
     // 14: Great Job

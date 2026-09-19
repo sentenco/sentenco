@@ -94,7 +94,7 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
-  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
@@ -248,12 +248,12 @@ export const LESSON_GUIDE = [
   { stage: "Hello & Letter Review", time: "~3 min", note: "Greet the student and quickly review several letters from S-X. Show them in random order." },
   { stage: "Meet Y, Z", time: "~3 min", note: "Introduce Y, y and Z, z. Connect them to simple familiar words: Y -> yo-yo, Z -> zebra." },
   { stage: "What Is Blending?", time: "~3 min", note: "Introduce putting sounds together. Use very simple examples such as m + a -> ma and s + a -> sa. Stretch the sounds, then blend them together. Keep this playful, not formal phonics instruction." },
-  { stage: "Sound & Blend", time: "~5 min", note: "Practice short combinations using previously learned letters: m-a, s-a, t-a, p-i, s-i. Model slowly, then let the student blend them." },
+  { stage: "Sound & Blend", time: "~5 min", note: "Practice short combinations using previously learned letters: m-a, s-a, t-a, p-i, s-i. Model slowly, then let the student blend them. Fast learner? Add Blend Again! (pa, ti) and No Help! (the answers are hidden, you confirm) (+3 min)." },
   { stage: "Blend & Match", time: "~4 min", note: "Show a simple picture and two or three letter/sound choices. Student blends the sounds and matches them to the correct picture when possible." },
   { stage: "Word Builder!", time: "~3 min", note: "Student builds simple words by moving letter cards together on screen, e.g. S + A + T -> SAT. Separate the sounds, then let the student push/blend them together and say the word." },
-  { stage: "Word Builder!", time: "~1 min", note: "Try one more word the same way." },
-  { stage: "Y-Z & Blend Check", time: "~1.5 min", note: "Quickly review Y, Z." },
-  { stage: "Y-Z & Blend Check", time: "~1.5 min", note: "Give a few simple blending challenges. Celebrate each successful blend and finish with the goodbye routine." },
+  { stage: "Word Builder!", time: "~1 min", note: "Try one more word the same way. Fast learner? Add Build Another! (PAT), Build a New One! (TIP) and No Help Word! (MAP, answer hidden) (+3 min)." },
+  { stage: "Y-Z & Blend Check", time: "~1.5 min", note: "Quickly review Y, Z. Fast learner? Add Letters Again! with S, W, Y, Z (+1 min)." },
+  { stage: "Y-Z & Blend Check", time: "~1.5 min", note: "Give a few simple blending challenges. Celebrate each successful blend and finish with the goodbye routine. Fast learner? Add Last Blend! (PAT, answer hidden) (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -277,6 +277,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Letter Review
     {
       stage: "Hello & Letter Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say each letter."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
@@ -293,13 +296,16 @@ function buildSlides({ onZoom }) {
     // 3: Meet Y, Z
     {
       stage: "Meet Y, Z",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet Y, Z!</h2></span>
           <div className="row" style={{ marginTop: 10 }}>
-            <LetterTile letters="Yy" color={LETTER_COLOR.Y} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Zz" color={LETTER_COLOR.Z} size={100} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Yy" color={LETTER_COLOR.Y} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Zz" color={LETTER_COLOR.Z} size={92} fontSize={40} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -307,6 +313,9 @@ function buildSlides({ onZoom }) {
     // 4: Y is for...
     {
       stage: "Meet Y, Z",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "Y is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -322,6 +331,9 @@ function buildSlides({ onZoom }) {
     // 5: Z is for...
     {
       stage: "Meet Y, Z",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "Z is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -337,6 +349,8 @@ function buildSlides({ onZoom }) {
     // 6: What Is Blending? (m+a)
     {
       stage: "What Is Blending?",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -348,6 +362,8 @@ function buildSlides({ onZoom }) {
     // 7: What Is Blending? (s+a)
     {
       stage: "What Is Blending?",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
@@ -359,6 +375,8 @@ function buildSlides({ onZoom }) {
     // 8: Sound & Blend (multiple rows)
     {
       stage: "Sound & Blend",
+      part: "C",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~2.5 min",
       body: (
         <div className="center-col">
@@ -371,6 +389,8 @@ function buildSlides({ onZoom }) {
     // 9: Sound & Blend continued
     {
       stage: "Sound & Blend",
+      part: "C",
+      instruction: [["🤔", "Your turn!"], ["🗣️", "Say the sounds. Say the word."]],
       time: "~2.5 min",
       body: (
         <div className="center-col">
@@ -379,9 +399,35 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Sound & Blend",
+      part: "C",
+      title: "Blend Again!",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["p","a"]} result="pa" onZoom={onZoom} />
+          <BlendRow parts={["t","i"]} result="ti" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Sound & Blend",
+      part: "C",
+      title: "No Help!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["m","i"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["s","a"]} result="?" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 10: Blend & Match
     {
       stage: "Blend & Match",
+      part: "C",
+      instruction: [["🗣️", "Blend the sounds."], ["👀", "Match the picture."]],
       time: "~4 min",
       body: (
         <div className="center-col">
@@ -394,6 +440,8 @@ function buildSlides({ onZoom }) {
     // 11: HIGHLIGHT Word Builder! (SAT)
     {
       stage: "Word Builder!",
+      part: "D",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -405,6 +453,8 @@ function buildSlides({ onZoom }) {
     // 12: HIGHLIGHT Word Builder! (SIT)
     {
       stage: "Word Builder!",
+      part: "D",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -416,6 +466,8 @@ function buildSlides({ onZoom }) {
     // 12b: HIGHLIGHT Word Builder! (MAT)
     {
       stage: "Word Builder!",
+      part: "D",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -424,9 +476,45 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Word Builder!",
+      part: "D",
+      title: "Build Another!",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["P","A","T"]} result="PAT" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Word Builder!",
+      part: "D",
+      title: "Build a New One!",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["T","I","P"]} result="TIP" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Word Builder!",
+      part: "D",
+      title: "No Help Word!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["M","A","P"]} result="?" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 13: Y-Z & Blend Check (letters)
     {
       stage: "Y-Z & Blend Check",
+      part: "D",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -438,14 +526,42 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Y-Z & Blend Check",
+      part: "D",
+      title: "Letters Again!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Zz" color={LETTER_COLOR.Z} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="Ww" color={REVIEW_COLOR.W} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="Yy" color={LETTER_COLOR.Y} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="Ss" color={REVIEW_COLOR.S} size={62} fontSize={24} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 14: Y-Z & Blend Check (blend)
     {
       stage: "Y-Z & Blend Check",
+      part: "D",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
       time: "~1.5 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">One Last Blend!</h2></span>
           <BlendRow parts={["m", "a", "t"]} result="mat" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Y-Z & Blend Check",
+      part: "D",
+      title: "Last Blend!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["p","a","t"]} result="?" onZoom={onZoom} />
         </div>
       ),
     },

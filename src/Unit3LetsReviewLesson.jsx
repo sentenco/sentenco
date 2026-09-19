@@ -66,7 +66,7 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
-  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7", build: "#D98A00", blend: "#D98A00",
   count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
@@ -217,13 +217,13 @@ export default function Unit3LetsReviewLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 3 · Lesson 4", time: null, note: null },
-  { stage: "Hello & Letter Warm-Up", time: "~3 min", note: "Greet the student and show mixed letters from S-Z. Student identifies them rather than reciting the alphabet in order." },
-  { stage: "Color Review", time: "~3 min", note: "Review the 8 colors from Lessons 1-2. Show colored objects and ask \"What color?\"" },
-  { stage: "S-Z Letter Challenge", time: "~4 min", note: "Show S-Z in random order, including uppercase/lowercase pairs. Student names the letters and matches pairs." },
-  { stage: "Letter + Color", time: "~4 min", note: "Show letters in different colors. Ask \"What letter?\" and \"What color?\" Student answers both: \"T. Blue!\"" },
-  { stage: "Blend & Say", time: "~4 min", note: "Revisit the simple blends from Lesson 3. Model the sounds separately, then let the student blend them: m-a-t -> mat, s-a-t -> sat, s-i-t -> sit." },
-  { stage: "Rainbow Word Builder", time: "~4 min", note: "Student completes a colorful onscreen word-building game: choose letters, build a simple word, blend the sounds, then identify the color of the finished word/object." },
-  { stage: "Final Review Challenge", time: "~3 min", note: "Give a quick mixed challenge: identify S-Z, name colors, and blend 2-3 simple words. Celebrate the student's progress." },
+  { stage: "Hello & Letter Warm-Up", time: "~3 min", note: "Greet the student and show mixed letters from S-Z. Student identifies them rather than reciting the alphabet in order. Fast learner? Add Name Them Again! (+1 min)." },
+  { stage: "Color Review", time: "~3 min", note: "Review the 8 colors from Lessons 1-2. Show colored objects and ask \"What color?\" Fast learner? Add Colors Again! (+1 min)." },
+  { stage: "S-Z Letter Challenge", time: "~4 min", note: "Show S-Z in random order, including uppercase/lowercase pairs. Student names the letters and matches pairs. Fast learner? Add Do They Match? 2 (+1 min)." },
+  { stage: "Letter + Color", time: "~4 min", note: "Show letters in different colors. Ask \"What letter?\" and \"What color?\" Student answers both: \"T. Blue!\" Fast learner? Add Letter + Color 2 and 3 (+2 min)." },
+  { stage: "Blend & Say", time: "~4 min", note: "Revisit the simple blends from Lesson 3. Model the sounds separately, then let the student blend them: m-a-t -> mat, s-a-t -> sat, s-i-t -> sit. Fast learner? Add Blend & Say 2 (new words) and No Help! (answers hidden, you confirm) (+3 min)." },
+  { stage: "Rainbow Word Builder", time: "~4 min", note: "Student completes a colorful onscreen word-building game: choose letters, build a simple word, blend the sounds, then identify the color of the finished word/object. Fast learner? Add the two extra Rainbow Words (PAT in pink, TIP in green) (+3 min)." },
+  { stage: "Final Review Challenge", time: "~3 min", note: "Give a quick mixed challenge: identify S-Z, name colors, and blend 2-3 simple words. Celebrate the student's progress. Fast learner? Do Final Challenge 2 as well (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -248,6 +248,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Letter Warm-Up
     {
       stage: "Hello & Letter Warm-Up",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say each letter."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
@@ -262,9 +265,28 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Hello & Letter Warm-Up",
+      part: "A",
+      title: "Name Them Again!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Ww" color={LETTER_COLOR.W} size={52} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Tt" color={LETTER_COLOR.T} size={52} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Yy" color={LETTER_COLOR.Y} size={52} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Ss" color={LETTER_COLOR.S} size={52} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Xx" color={LETTER_COLOR.X} size={52} fontSize={19} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 3: Color Review
     {
       stage: "Color Review",
+      part: "B",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
       time: "~3 min",
       body: (
         <>
@@ -279,9 +301,28 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Color Review",
+      part: "B",
+      title: "Colors Again!",
+      instruction: [["👀", "Look at each color."], ["🗣️", "Say the color."]],
+      guide: "It's ___.",
+      body: (
+        <div className="word-row">
+          <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={54} onZoom={onZoom} />
+          <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={54} onZoom={onZoom} />
+          <ColorSwatch name="Pink" hex={COLOR_HEX.Pink} size={54} onZoom={onZoom} />
+          <ColorSwatch name="Red" hex={COLOR_HEX.Red} size={54} onZoom={onZoom} />
+          <ColorSwatch name="Yellow" hex={COLOR_HEX.Yellow} size={54} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: S-Z Letter Challenge
     {
       stage: "S-Z Letter Challenge",
+      part: "B",
+      instruction: [["👀", "Look at each pair."], ["🗣️", "Say the big and small letter."]],
+      guide: "Big ___. Small ___.",
       time: "~4 min",
       body: (
         <>
@@ -301,9 +342,33 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "S-Z Letter Challenge",
+      part: "B",
+      title: "Do They Match? 2",
+      instruction: [["👀", "Look at each pair."], ["🗣️", "Say the big and small letter."]],
+      guide: "Big ___. Small ___.",
+      body: (
+        <div className="row" style={{ gap: 40 }}>
+            <div className="match-pair">
+              <LetterTile letters="S" color={LETTER_COLOR.S} size={68} fontSize={28} onZoom={onZoom} />
+              <span className="match-plus">+</span>
+              <LetterTile letters="s" color={LETTER_COLOR.S} size={68} fontSize={28} onZoom={onZoom} />
+            </div>
+            <div className="match-pair">
+              <LetterTile letters="T" color={LETTER_COLOR.T} size={68} fontSize={28} onZoom={onZoom} />
+              <span className="match-plus">+</span>
+              <LetterTile letters="t" color={LETTER_COLOR.T} size={68} fontSize={28} onZoom={onZoom} />
+            </div>
+        </div>
+      ),
+    },
     // 5: Letter + Color
     {
       stage: "Letter + Color",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the letter and the color."]],
+      guide: "The letter ___ is ___.",
       time: "~4 min",
       body: (
         <>
@@ -313,13 +378,42 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="S" color={COLOR_HEX.Green} size={70} fontSize={28} onZoom={onZoom} />
             <LetterTile letters="X" color={COLOR_HEX.Orange} size={70} fontSize={28} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Say the letter, then the color. "T. Blue!"</p>
         </>
+      ),
+    },
+    {
+      stage: "Letter + Color",
+      part: "B",
+      title: "Letter + Color 2!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the letter and the color."]],
+      guide: "The letter ___ is ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="U" color={COLOR_HEX.Red} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="Y" color={COLOR_HEX.Yellow} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="W" color={COLOR_HEX.Purple} size={70} fontSize={28} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Letter + Color",
+      part: "B",
+      title: "Letter + Color 3!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say the letter and the color."]],
+      guide: "The letter ___ is ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Z" color={COLOR_HEX.Pink} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="V" color={COLOR_HEX.Brown} size={70} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="S" color={COLOR_HEX.Blue} size={70} fontSize={28} onZoom={onZoom} />
+        </div>
       ),
     },
     // 6: Blend & Say
     {
       stage: "Blend & Say",
+      part: "B",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
       time: "~4 min",
       body: (
         <div className="center-col">
@@ -330,9 +424,38 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Blend & Say",
+      part: "B",
+      title: "Blend & Say 2!",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["p","a","t"]} result="pat" onZoom={onZoom} />
+          <BlendRow parts={["t","i","p"]} result="tip" onZoom={onZoom} />
+          <BlendRow parts={["s","i","p"]} result="sip" onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Blend & Say",
+      part: "B",
+      title: "No Help!",
+      instruction: [["🤔", "No help this time!"], ["🗣️", "Say the sounds. Say the word."]],
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["m","a","p"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["t","a","p"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["s","i","t"]} result="?" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 7: HIGHLIGHT Rainbow Word Builder
     {
       stage: "Rainbow Word Builder",
+      part: "C",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the word and the color."]],
+      guide: "The word is ___. The color is ___.",
       time: "~4 min",
       body: (
         <div className="center-col">
@@ -345,6 +468,9 @@ function buildSlides({ onZoom }) {
     // 7b: HIGHLIGHT Rainbow Word Builder Round 2
     {
       stage: "Rainbow Word Builder",
+      part: "C",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the word and the color."]],
+      guide: "The word is ___. The color is ___.",
       time: "~2 min",
       body: (
         <div className="center-col">
@@ -354,9 +480,37 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Rainbow Word Builder",
+      part: "C",
+      title: "🌈 Rainbow Word 3!",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the word and the color."]],
+      guide: "The word is ___. The color is ___.",
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["P","A","T"]} result="PAT" color={COLOR_HEX.Pink} onZoom={onZoom} />
+          <ColorSwatch name="Pink" hex={COLOR_HEX.Pink} size={60} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Rainbow Word Builder",
+      part: "C",
+      title: "🌈 Rainbow Word 4!",
+      instruction: [["🧩", "Build the word."], ["🗣️", "Say the word and the color."]],
+      guide: "The word is ___. The color is ___.",
+      body: (
+        <div className="center-col">
+          <BlendRow parts={["T","I","P"]} result="TIP" color={COLOR_HEX.Green} onZoom={onZoom} />
+          <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={60} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 8: Final Review Challenge
     {
       stage: "Final Review Challenge",
+      part: "D",
+      instruction: [["👀", "Look at everything."], ["🗣️", "Say the letters, colors and word."]],
       time: "~3 min",
       body: (
         <>
@@ -370,6 +524,27 @@ function buildSlides({ onZoom }) {
             <ColorSwatch name="Green" hex={COLOR_HEX.Green} size={50} onZoom={onZoom} />
           </div>
           <BlendRow parts={["p", "i", "t"]} result="pit" onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Final Review Challenge",
+      part: "D",
+      title: "Final Challenge 2!",
+      instruction: [["👀", "Look at everything."], ["🗣️", "Say the letters, colors and word."]],
+      body: (
+        <>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Zz" color={LETTER_COLOR.Z} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Ww" color={LETTER_COLOR.W} size={50} fontSize={19} onZoom={onZoom} />
+        </div>
+        <div className="word-row">
+          <ColorSwatch name="Brown" hex={COLOR_HEX.Brown} size={50} onZoom={onZoom} />
+          <ColorSwatch name="Blue" hex={COLOR_HEX.Blue} size={50} onZoom={onZoom} />
+        </div>
+        <div className="center-col">
+          <BlendRow parts={["t","i","p"]} result="tip" onZoom={onZoom} />
+        </div>
         </>
       ),
     },
