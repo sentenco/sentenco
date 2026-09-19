@@ -252,12 +252,12 @@ export default function MyFavoriteRoomLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 10 · Lesson 3", time: null, note: null },
   { stage: "House Warm-Up", time: "~3 min", note: "Show a house and ask the student to identify rooms." },
-  { stage: "Look Inside!", time: "~4 min", note: "Show different rooms with simple objects. Ask \"What do you see?\"" },
-  { stage: "Where Is It?", time: "~4 min", note: "Ask about objects: \"Where is the bed?\" -> \"It's in the bedroom.\"" },
-  { stage: "My Favorite Room", time: "~4 min", note: "Introduce the idea of choosing a favorite room. Model briefly: \"My favorite room is the bedroom.\"" },
-  { stage: "Room Choices", time: "~3 min", note: "Show 3-4 rooms. Student chooses a favorite and talks about what is inside." },
-  { stage: "Design My Dream Room!", time: "~4 min", note: "Student creates a simple dream room by choosing furniture/objects and placing them inside." },
-  { stage: "My Favorite Room Challenge", time: "~3 min", note: "Student presents the finished room using as much language as possible." },
+  { stage: "Look Inside!", time: "~4 min", note: "Show different rooms with simple objects. Ask \"What do you see?\" Fast learner? Add Look Inside! 3 and 4 (+2 min)." },
+  { stage: "Where Is It?", time: "~4 min", note: "Ask about objects: \"Where is the bed?\" -> \"It's in the bedroom.\" Fast learner? Add Where Is It? 3 and 4 (+2 min)." },
+  { stage: "My Favorite Room", time: "~4 min", note: "Introduce the idea of choosing a favorite room. Model briefly: \"My favorite room is the bedroom.\" Fast learner? Add My Favorite Room! 2 (+1 min)." },
+  { stage: "Room Choices", time: "~3 min", note: "Show 3-4 rooms. Student chooses a favorite and talks about what is inside. Fast learner? Add Which One Is Yours? 2 (+1 min)." },
+  { stage: "Design My Dream Room!", time: "~4 min", note: "Student creates a simple dream room by choosing furniture/objects and placing them inside. Fast learner? Add Design My Dream Room! 3 (+1 min)." },
+  { stage: "My Favorite Room Challenge", time: "~3 min", note: "Student presents the finished room using as much language as possible. Fast learner? Add Show Your Room! 2 and 3 (two more rooms) (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -276,9 +276,13 @@ function buildSlides({ onZoom }) {
     // 2: House Warm-Up
     {
       stage: "House Warm-Up",
+      part: "A",
+      title: "My House!",
+      instruction: [["👀", "Look at the house."], ["🗣️", "Say the rooms you see."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/house.jpeg`} label="house" size={120} onZoom={onZoom} />
+          <Pic src={`${IMG}/house.jpeg`} label="house" size={130} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -291,6 +295,9 @@ function buildSlides({ onZoom }) {
     // 3: Look Inside! (round 1)
     {
       stage: "Look Inside!",
+      part: "B",
+      instruction: [["👀", "Look inside the room."], ["🗣️", "Say the room and the object."]],
+      guide: "This is the ___. I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Look Inside!</h2></span>
@@ -304,6 +311,10 @@ function buildSlides({ onZoom }) {
     // 3b: Look Inside! (round 2)
     {
       stage: "Look Inside!",
+      part: "B",
+      title: "Look Inside! 2",
+      instruction: [["👀", "Look inside the room."], ["🗣️", "Say the room and the object."]],
+      guide: "This is the ___. I see a ___.",
       body: (
         <div className="word-row">
           <WordCard src="/curriculum/u10-rooms/living-room.jpg" word="Living Room" label="living room" onZoom={onZoom} />
@@ -311,10 +322,44 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Look Inside!",
+      part: "B",
+      title: "Look Inside! 3",
+      instruction: [["👀", "Look inside the room."], ["🗣️", "Say the room and the object."]],
+      guide: "This is the ___. I see a ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={80} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Look Inside!",
+      part: "B",
+      title: "Look Inside! 4",
+      instruction: [["👀", "Look inside the room."], ["🗣️", "Say the room and the object."]],
+      guide: "This is the ___. I see a ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
+          <Pic src="/curriculum/u10-l1/ball.jpg" label="ball" size={80} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 4: Where Is It? (round 1)
     {
       stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It?",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -325,12 +370,21 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">It's in the bedroom.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 4b: Where Is It? (round 2)
     {
       stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 2",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u10-l1/ball.jpg" label="ball" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={110} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -341,15 +395,70 @@ function buildSlides({ onZoom }) {
             <div className="bubble right">It's in the living room.</div>
           </div>
         </div>
+        </>
+      ),
+    },
+    {
+      stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 3",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Where is the book?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's in the kitchen.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 4",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Where is the toy?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's in the bedroom.</div>
+            </div>
+          </div>
+        </>
       ),
     },
     // 5: My Favorite Room
     {
       stage: "My Favorite Room",
+      part: "C",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say your favorite room."]],
+      guide: "My favorite room is the ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">My Favorite Room!</h2></span>
-          <div className="bubble-col" style={{ maxWidth: 380 }}>
+          <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={120} onZoom={onZoom} />
+        </div>
+        <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">My favorite room is the bedroom.</div>
@@ -358,9 +467,32 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "My Favorite Room",
+      part: "C",
+      title: "My Favorite Room! 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say your favorite room."]],
+      guide: "My favorite room is the ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={120} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">My favorite room is the kitchen.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 6: Room Choices
     {
       stage: "Room Choices",
+      part: "C",
+      instruction: [["👆", "Pick your favorite room."], ["🗣️", "Tell me about it."]],
+      guide: "My favorite room is the ___.",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Which One Is Yours?</h2></span>
@@ -372,9 +504,26 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Room Choices",
+      part: "C",
+      title: "Which One Is Yours? 2",
+      instruction: [["👆", "Pick your favorite room."], ["🗣️", "Tell me about it."]],
+      guide: "My favorite room is the ___.",
+      body: (
+        <div className="word-row">
+          <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
+          <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
+          <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 7: HIGHLIGHT Design My Dream Room! (round 1)
     {
       stage: "Design My Dream Room!",
+      part: "D",
+      instruction: [["👀", "Look at the things."], ["🗣️", "Say what it is and where."]],
+      guide: "It's a ___ in the ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🎨 Design My Dream Room!</h2></span>
@@ -394,6 +543,10 @@ function buildSlides({ onZoom }) {
     // 8: HIGHLIGHT Design My Dream Room! (round 2)
     {
       stage: "Design My Dream Room!",
+      part: "D",
+      title: "Design My Dream Room! 2",
+      instruction: [["👆", "Pick a thing for your room."], ["🗣️", "Tell me about it."]],
+      guide: "I like the ___.",
       body: (
         <div className="center-col">
           <div className="word-row">
@@ -408,13 +561,61 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Design My Dream Room!",
+      part: "D",
+      title: "Design My Dream Room! 3",
+      instruction: [["👀", "Look at the things."], ["🗣️", "Say what it is and where."]],
+      guide: "It's a ___ in the ___.",
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u10-l1/ball.jpg" label="ball" size={70} onZoom={onZoom} />
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={70} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">What is this? Where is it?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 9: My Favorite Room Challenge
     {
       stage: "My Favorite Room Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the room."], ["🗣️", "Show me your room."]],
+      guide: "I see a ___.",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Show Your Room!</h2></span>
-          <Pic src="/curriculum/u10-scenes/dream-room.jpg" label="the finished dream room" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-scenes/dream-room.jpg" label="the finished dream room" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Favorite Room Challenge",
+      part: "D",
+      title: "Show Your Room! 2",
+      instruction: [["👀", "Look at the room."], ["🗣️", "Show me your room."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u10-scenes/study-room.jpg" label="study room" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "My Favorite Room Challenge",
+      part: "D",
+      title: "Show Your Room! 3",
+      instruction: [["👀", "Look at the room."], ["🗣️", "Show me your room."]],
+      guide: "I see a ___.",
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u10-scenes/busy-room.jpg" label="busy room" size={190} onZoom={onZoom} />
         </div>
       ),
     },

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 const IMG = "/curriculum/u10-l1";
 const ED_COLOR = "#E0567A";
@@ -261,15 +262,16 @@ export default function Unit10TestLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 10 Test", time: null, note: null },
-  { stage: "1. Room Vocabulary Check", time: "~3 min", note: "Show four room pictures. Ask \"What room is this?\" Student identifies bedroom, bathroom, kitchen, living room." },
-  { stage: "2. Where Is It?", time: "~3 min", note: "Show objects inside different rooms. Ask \"Where is it?\" Student responds \"It's in the...\"" },
-  { stage: "3. Word Family Check", time: "~4 min", note: "Show mixed words: red, bed, fed, big, pig, dig, etc. Student reads/blends them and identifies -ed or -ig." },
-  { stage: "4. Find It!", time: "~4 min", note: "Give location challenges: \"Find the bed.\" \"Where is the book?\" \"Find something in the kitchen.\"" },
-  { stage: "5. Room Talk", time: "~4 min", note: "Show an unfamiliar room. Ask \"What do you see?\" and \"Where is it?\" without the sentence frame." },
+  { stage: "Room Vocabulary Check", time: "~3 min", note: "Show four room pictures. Ask \"What room is this?\" Student identifies bedroom, bathroom, kitchen, living room. Second try? Use the What Room Is This? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Where Is It?", time: "~3 min", note: "Show objects inside different rooms. Ask \"Where is it?\" Student responds \"It's in the...\" Second try? Use the Where Is It? 3 (the toy) slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Word Family Check", time: "~4 min", note: "Show mixed words: red, bed, fed, big, pig, dig, etc. Student reads/blends them and identifies -ed or -ig. Second try? Use the -ed or -ig? Again! slide only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Find It!", time: "~4 min", note: "Give location challenges: \"Find the bed.\" \"Where is the book?\" \"Find something in the kitchen.\"" },
+  { stage: "Room Talk", time: "~4 min", note: "Show an unfamiliar room. Ask \"What do you see?\" and \"Where is it?\" without the sentence frame. Second try? Use the What Do You See? 2 (a new room) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Build the House", time: "~3 min", note: "Give rooms and objects. Student decides where things belong and explains their choices." },
   { stage: "Build the House", time: "~2 min", note: "Teacher deliberately puts one object in the wrong room and the student must notice/correct it." },
-  { stage: "6. Final Challenge", time: "~2 min", note: "Show a completely new house scene. Student independently identifies rooms and describes objects/locations." },
+  { stage: "Final Challenge", time: "~2 min", note: "Show a completely new house scene. Student independently identifies rooms and describes objects/locations. Second try? Use the Final Challenge Again! (a new house) slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "My Unit 10 Score!", time: null, note: "Scoring guide: Rooms /4, Location Language /4, Word Families /8, Communication /4. Total /20." },
+  { stage: "Wrap-Up", time: null, note: null },
 ];
 
 function buildSlides({ onZoom }) {
@@ -286,60 +288,137 @@ function buildSlides({ onZoom }) {
     },
     // 2: Room Vocabulary Check
     {
-      stage: "1. Room Vocabulary Check",
+      stage: "Room Vocabulary Check",
+      part: "A",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the room."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What Room Is This?</h2></span>
           <div className="word-row">
-            <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
-            <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
-            <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
-            <WordCard src="/curriculum/u10-rooms/living-room.jpg" word="Living Room" label="living room" onZoom={onZoom} />
-          </div>
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={120} onZoom={onZoom} />
+        </div>
         </>
+      ),
+    },
+    {
+      stage: "Room Vocabulary Check",
+      part: "A",
+      title: "What Room Is This? Again!",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the room."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={120} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={120} onZoom={onZoom} />
+        </div>
       ),
     },
     // 3: Where Is It? (round 1)
     {
-      stage: "2. Where Is It?",
+      stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It?",
+      instruction: [["👀", "Look at the object."], ["🗣️", "Say where it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
-          <p className="slide-p">Where is it?</p>
+          <Pic src={`${IMG}/ball.jpg`} label="ball" size={72} onZoom={onZoom} />
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={54} onZoom={onZoom} />
+        </div>
         </div>
       ),
     },
     // 3b: Where Is It? (round 2)
     {
-      stage: "2. Where Is It?",
+      stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 2",
+      instruction: [["👀", "Look at the object."], ["🗣️", "Say where it is."]],
       body: (
         <div className="center-col">
-          <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
-          <p className="slide-p">Where is it?</p>
+          <Pic src="/curriculum/u7-objects/book.png" label="book" size={72} onZoom={onZoom} />
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={54} onZoom={onZoom} />
+        </div>
+        </div>
+      ),
+    },
+    {
+      stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 3",
+      instruction: [["👀", "Look at the object."], ["🗣️", "Say where it is."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={72} onZoom={onZoom} />
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={54} onZoom={onZoom} />
+        </div>
         </div>
       ),
     },
     // 4: Word Family Check
     {
-      stage: "3. Word Family Check",
+      stage: "Word Family Check",
+      part: "C",
+      instruction: [["📖", "Read each word."], ["🤔", "Is it -ed or -ig?"]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">-ed or -ig?</h2></span>
           <div className="word-row">
-            <LetterTile letters="RED" color={ED_COLOR} size={60} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="BIG" color={IG_COLOR} size={60} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="FED" color={ED_COLOR} size={60} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="PIG" color={IG_COLOR} size={60} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="LED" color={ED_COLOR} size={60} fontSize={16} onZoom={onZoom} />
-            <LetterTile letters="WIG" color={IG_COLOR} size={60} fontSize={16} onZoom={onZoom} />
+            <LetterTile letters="RED" color={ED_COLOR} size={80} fontSize={16} onZoom={onZoom} />
+            <LetterTile letters="BIG" color={ED_COLOR} size={80} fontSize={16} onZoom={onZoom} />
+            <LetterTile letters="FED" color={ED_COLOR} size={80} fontSize={16} onZoom={onZoom} />
+            <LetterTile letters="PIG" color={ED_COLOR} size={80} fontSize={16} onZoom={onZoom} />
+            <LetterTile letters="LED" color={ED_COLOR} size={80} fontSize={16} onZoom={onZoom} />
+            <LetterTile letters="WIG" color={ED_COLOR} size={80} fontSize={16} onZoom={onZoom} />
           </div>
         </>
       ),
     },
+    {
+      stage: "Word Family Check",
+      part: "C",
+      title: "-ed or -ig? Again!",
+      instruction: [["📖", "Read each word."], ["🤔", "Is it -ed or -ig?"]],
+      body: (
+        <div className="word-row">
+          <LetterTile letters="WED" color={ED_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="DIG" color={ED_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="BED" color={ED_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="FIG" color={ED_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="TED" color={ED_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+          <LetterTile letters="JIG" color={ED_COLOR} size={80} fontSize={17} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 5: Find It!
     {
-      stage: "4. Find It!",
+      stage: "Find It!",
+      part: "C",
+      title: "Listen & Find!",
+      instruction: [["👂", "Listen to the teacher."], ["👆", "Find it."]],
       body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={80} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={80} onZoom={onZoom} />
+        </div>
         <div className="bubble-col" style={{ maxWidth: 420 }}>
           <div className="brow">
             <div className="avatar navy">T</div>
@@ -350,32 +429,51 @@ function buildSlides({ onZoom }) {
             <div className="bubble left">Find something in the kitchen.</div>
           </div>
         </div>
+        </>
       ),
     },
     // 6: Room Talk
     {
-      stage: "5. Room Talk",
+      stage: "Room Talk",
+      part: "D",
+      instruction: [["👀", "Look at the room."], ["🗣️", "Tell me what you see."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">What Do You See?</h2></span>
-          <Pic src="/curriculum/u10-scenes/study-room.jpg" label="an unfamiliar room" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-scenes/study-room.jpg" label="an unfamiliar room" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Room Talk",
+      part: "D",
+      title: "What Do You See? 2",
+      instruction: [["👀", "Look at the room."], ["🗣️", "Tell me what you see."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u10-scenes/busy-room.jpg" label="busy room" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 7: HIGHLIGHT Build the House (round 1)
     {
       stage: "Build the House",
+      part: "D",
+      instruction: [["👀", "Look at the object."], ["🗣️", "Say where it goes."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🏗️ Build the House!</h2></span>
-          <div className="word-row">
-            <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={64} onZoom={onZoom} />
-            <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
-          </div>
+          <Pic src="/curriculum/u10-rooms/bed.jpg" label="bed" size={72} onZoom={onZoom} />
+        <div className="word-row">
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={54} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={54} onZoom={onZoom} />
+        </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">It's in the bedroom!</div>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Where does the bed go?</div>
             </div>
           </div>
         </div>
@@ -384,20 +482,19 @@ function buildSlides({ onZoom }) {
     // 8: HIGHLIGHT Build the House (round 2, wrong-room correction)
     {
       stage: "Build the House",
+      part: "D",
+      title: "Fix the Mistake!",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Fix the mistake."]],
       body: (
         <div className="center-col">
           <div className="word-row">
-            <Pic src={`${IMG}/ball.jpg`} label="ball" size={64} onZoom={onZoom} />
-            <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={90} onZoom={onZoom} />
           </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">The ball goes in the bathroom.</div>
-            </div>
-            <div className="brow me">
-              <div className="avatar coral">S</div>
-              <div className="bubble right">No! It's in the living room!</div>
             </div>
           </div>
         </div>
@@ -405,20 +502,34 @@ function buildSlides({ onZoom }) {
     },
     // 9: Final Challenge
     {
-      stage: "6. Final Challenge",
+      stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at the house."], ["🗣️", "Tell me the rooms and things."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
-          <Pic src="/curriculum/u10-scenes/house-garden.jpg" label="new house scene" size={180} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-scenes/house-garden.jpg" label="new house scene" size={190} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Final Challenge Again!",
+      instruction: [["👀", "Look at the house."], ["🗣️", "Tell me the rooms and things."]],
+      body: (
+        <div className="center-col">
+          <Pic src="/curriculum/u10-scenes/dream-room.jpg" label="dream room" size={190} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: My Unit 10 Score!
     {
       stage: "My Unit 10 Score!",
+      part: "D",
+      instruction: [["📝", "Record the scores."], ["👏", "Praise the student."]],
       body: (
         <div className="center-col">
-          <StarIcon size={48} fill="var(--sun)" />
           <h2 className="slide-h sub">My Unit 10 Score!</h2>
           <div className="score-table">
             <div className="score-row"><span>Rooms</span><span>/ 4</span></div>
@@ -427,8 +538,15 @@ function buildSlides({ onZoom }) {
             <div className="score-row"><span>Communication</span><span>/ 4</span></div>
             <div className="score-row total"><span>Total</span><span>/ 20</span></div>
           </div>
-          <p className="slide-p">Great work finishing Unit 10! See you in the next unit!</p>
         </div>
+      ),
+    },
+    // Wrap-up
+    {
+      stage: "Wrap-Up",
+      time: null,
+      body: (
+        <WrapUp see="On to Unit 11!">Unit 10 complete! You know your rooms, where things are, and -ed and -ig words.</WrapUp>
       ),
     },
   ];
@@ -542,8 +660,8 @@ export const styles = `
 .bubble.left { border-radius: 16px 16px 16px 4px; }
 .bubble.right { border-radius: 16px 16px 4px 16px; }
 
-.score-table { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 16px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
-.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); padding: 5px 0; }
+.score-table { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 10px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
+.score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); padding: 2px 0; }
 .score-row.total { border-top: 2px dashed var(--coral-light); margin-top: 4px; padding-top: 10px; color: var(--coral-deep); font-size: 17px; }
 
 .zoom-overlay { position: fixed; inset: 0; background: rgba(27,42,74,0.72); display: flex; align-items: center; justify-content: center; z-index: 999; }
@@ -553,4 +671,5 @@ export const styles = `
 .zoom-pic img { width: 100%; height: 100%; object-fit: contain; }
 .zoom-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 2.5px dashed var(--coral); border-radius: 18px; color: var(--coral-deep); }
 .zoom-ph span { font-size: 15px; font-weight: 700; text-align: center; padding: 0 24px; }
+${wrapUpStyles}
 `;

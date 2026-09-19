@@ -277,13 +277,13 @@ export default function WhereIsItLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 10 · Lesson 2", time: null, note: null },
   { stage: "House Review", time: "~3 min", note: "Quickly review the four rooms from Lesson 1." },
-  { stage: "Where Is It?", time: "~4 min", note: "Show familiar objects inside different rooms. Model: \"It's in the kitchen.\" / \"It's in the bedroom.\"" },
-  { stage: "Find the Room", time: "~4 min", note: "Show an object and ask \"Where is it?\" Student answers \"It's in the bathroom.\"" },
-  { stage: "Meet the -ig Family", time: "~4 min", note: "Introduce big, pig, dig, wig. Blend the sounds and identify the common ending." },
-  { stage: "Room & Object Hunt", time: "~3 min", note: "Student finds objects around a house and says where they are. Add quick -ig word challenges between turns." },
+  { stage: "Where Is It?", time: "~4 min", note: "Show familiar objects inside different rooms. Model: \"It's in the kitchen.\" / \"It's in the bedroom.\" Fast learner? Add Where Is It? 3 (the toy) (+1 min)." },
+  { stage: "Find the Room", time: "~4 min", note: "Show an object and ask \"Where is it?\" Student answers \"It's in the bathroom.\" Fast learner? Add Find the Room 3 and 4 (+2 min)." },
+  { stage: "Meet the -ig Family", time: "~4 min", note: "Introduce big, pig, dig, wig. Blend the sounds and identify the common ending. Fast learner? Add Blend It! 2. The answers are hidden, so you confirm (+1 min)." },
+  { stage: "Room & Object Hunt", time: "~3 min", note: "Student finds objects around a house and says where they are. Add quick -ig word challenges between turns. Fast learner? Add Room & Object Hunt 3 and Word Hunt 2 (+2 min)." },
   { stage: "Where Did It Go?", time: "~2 min", note: "Show an object in one room, hide it, then move it to another room. Student discovers the new location." },
-  { stage: "Where Did It Go?", time: "~2 min", note: "Repeat with a different object and room." },
-  { stage: "Where & Word Challenge", time: "~3 min", note: "Mix location sentences with -ig words." },
+  { stage: "Where Did It Go?", time: "~2 min", note: "Repeat with a different object and room. Fast learner? Add Where Did It Go? 3 (+1 min)." },
+  { stage: "Where & Word Challenge", time: "~3 min", note: "Mix location sentences with -ig words. Fast learner? Add Final Challenge! 2 (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -302,20 +302,31 @@ function buildSlides({ onZoom }) {
     // 2: House Review
     {
       stage: "House Review",
+      part: "A",
+      title: "Rooms!",
+      instruction: [["👀", "Look at each room."], ["🗣️", "Say the room."]],
+      guide: "It's a ___.",
       body: (
         <div className="word-row">
           <WordCard src="/curriculum/u10-rooms/bedroom.jpg" word="Bedroom" label="bedroom" onZoom={onZoom} />
           <WordCard src="/curriculum/u10-rooms/kitchen.jpg" word="Kitchen" label="kitchen" onZoom={onZoom} />
           <WordCard src="/curriculum/u10-rooms/bathroom.jpg" word="Bathroom" label="bathroom" onZoom={onZoom} />
+            <WordCard src="/curriculum/u10-rooms/living-room.jpg" word="Living Room" label="living room" onZoom={onZoom} />
         </div>
       ),
     },
     // 3: Where Is It? (model 1)
     {
       stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It?",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={100} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -328,9 +339,15 @@ function buildSlides({ onZoom }) {
     // 3b: Where Is It? (model 2)
     {
       stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 2",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence."]],
       body: (
         <div className="center-col">
-          <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={100} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -340,12 +357,38 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Where Is It?",
+      part: "B",
+      title: "Where Is It? 3",
+      instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">It's in the bedroom.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 4: Find the Room (round 1)
     {
       stage: "Find the Room",
+      part: "B",
+      title: "Find the Room",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={100} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -362,9 +405,15 @@ function buildSlides({ onZoom }) {
     // 4b: Find the Room (round 2)
     {
       stage: "Find the Room",
+      part: "B",
+      title: "Find the Room 2",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
       body: (
         <div className="center-col">
-          <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={100} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={100} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -378,9 +427,51 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Find the Room",
+      part: "B",
+      title: "Find the Room 3",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u4-l3/pen.png" label="pen" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's in the kitchen.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      stage: "Find the Room",
+      part: "B",
+      title: "Find the Room 4",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={110} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={110} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's in the living room.</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 5: Meet the -ig Family
     {
       stage: "Meet the -ig Family",
+      part: "C",
+      instruction: [["👀", "Look at the letters."], ["🗣️", "Say the sounds."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Meet "-ig"!</h2></span>
@@ -394,6 +485,9 @@ function buildSlides({ onZoom }) {
     // 6: -ig blending
     {
       stage: "Meet the -ig Family",
+      part: "C",
+      title: "Blend It!",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
       body: (
         <div className="center-col" style={{ gap: 10 }}>
           <BlendRow parts={["B", "IG"]} result="big" onZoom={onZoom} />
@@ -403,12 +497,31 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Meet the -ig Family",
+      part: "C",
+      title: "Blend It! 2",
+      instruction: [["🗣️", "Say the sounds."], ["📖", "Read the word."]],
+      body: (
+        <div className="center-col" style={{ gap: 14 }}>
+          <BlendRow parts={["P","IG"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["W","IG"]} result="?" onZoom={onZoom} />
+          <BlendRow parts={["B","IG"]} result="?" onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 7: Room & Object Hunt (round 1)
     {
       stage: "Room & Object Hunt",
+      part: "C",
+      title: "Room & Object Hunt",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say where it is."]],
       body: (
         <div className="center-col">
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={90} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
@@ -418,9 +531,32 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Room & Object Hunt",
+      part: "C",
+      title: "Room & Object Hunt 3",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Say where it is."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={100} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/bathroom.jpg" label="bathroom" size={100} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's in the bathroom!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 7b: Room & Object Hunt (round 2, word challenge)
     {
       stage: "Room & Object Hunt",
+      part: "C",
+      title: "Word Hunt",
+      instruction: [["📖", "Read each word."], ["🤔", "What is the same?"]],
       body: (
         <div className="word-row">
           <LetterTile letters="PIG" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
@@ -428,13 +564,31 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Room & Object Hunt",
+      part: "C",
+      title: "Word Hunt 2",
+      instruction: [["📖", "Read each word."], ["🤔", "What is the same?"]],
+      body: (
+        <div className="word-row">
+          <LetterTile letters="WIG" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="BIG" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="PIG" color={BLEND_COLOR} size={70} fontSize={20} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 8: HIGHLIGHT Where Did It Go? (round 1)
     {
       stage: "Where Did It Go?",
+      part: "D",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🕵️ Where Did It Go?</h2></span>
-          <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src={`${IMG}/ball.jpg`} label="ball" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/bedroom.jpg" label="bedroom" size={90} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -451,9 +605,14 @@ function buildSlides({ onZoom }) {
     // 9: HIGHLIGHT Where Did It Go? (round 2)
     {
       stage: "Where Did It Go?",
+      part: "D",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
       body: (
         <div className="center-col">
-          <Pic src="/curriculum/u7-objects/book.png" label="book" size={90} onZoom={onZoom} />
+          <div className="word-row">
+            <Pic src="/curriculum/u7-objects/book.png" label="book" size={90} onZoom={onZoom} />
+            <Pic src="/curriculum/u10-rooms/kitchen.jpg" label="kitchen" size={90} onZoom={onZoom} />
+          </div>
           <div className="bubble-col" style={{ maxWidth: 420 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -467,9 +626,35 @@ function buildSlides({ onZoom }) {
         </div>
       ),
     },
+    {
+      stage: "Where Did It Go?",
+      part: "D",
+      title: "Where Did It Go? 3",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Say where it is."]],
+      body: (
+        <>
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <Pic src="/curriculum/u10-rooms/living-room.jpg" label="living room" size={90} onZoom={onZoom} />
+        </div>
+          <div className="bubble-col" style={{ maxWidth: 400 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Where is the toy now?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">It's in the living room!</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 10: Where & Word Challenge
     {
       stage: "Where & Word Challenge",
+      part: "D",
+      instruction: [["🗣️", "Say where it is."], ["📖", "Read the word."]],
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Final Challenge!</h2></span>
@@ -478,6 +663,18 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="WIG" color={BLEND_COLOR} size={64} fontSize={18} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Where & Word Challenge",
+      part: "D",
+      title: "Final Challenge! 2",
+      instruction: [["🗣️", "Say where it is."], ["📖", "Read the word."]],
+      body: (
+        <div className="word-row">
+          <Pic src="/curriculum/u11-l1/toy.jpg" label="toy" size={90} onZoom={onZoom} />
+          <LetterTile letters="PIG" color={BLEND_COLOR} size={90} fontSize={22} onZoom={onZoom} />
+        </div>
       ),
     },
     // 11: Wrap-up
