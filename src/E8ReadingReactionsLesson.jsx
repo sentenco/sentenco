@@ -6,7 +6,7 @@ const CORAL_DEEP = "#E0502F";
 const GREEN = "#2EC4B6";
 const RED = "#E5484D";
 
-// Source: Egzamin osmoklasisty, Jezyk angielski, 13 May 2026 (CKE practice sheet from arkusze.pl).
+// Source: E8 (Polish eighth-grade exam), English, 13 May 2026 (CKE practice sheet from arkusze.pl).
 // Answers below are our own key, worked out from the texts (the sheet has no official key).
 
 const ScoreCtx = createContext({ report: () => {}, results: {} });
@@ -26,7 +26,7 @@ function Marked({ text, evidence, on }) {
 
 const LETTERS = ["A", "B", "C", "D", "E"];
 
-// One multiple-choice question: optional Polish situation or reading passage, locks on tap, explains the trap.
+// One multiple-choice question: optional situation or reading passage, locks on tap, explains the trap.
 function Choice({ id, prompt, promptPl, passage, passageTitle, evidence, options, correct, trap }) {
   const { report } = useContext(ScoreCtx);
   const [picked, setPicked] = useState(null);
@@ -352,7 +352,7 @@ function Score() {
         ))}
       </div>
       <div className="e8-home">
-        <b>Take-home (Task 14, 10 points, 50–120 words).</b> Napisz e-mail do kolegi z Anglii o albumie ze zdjęciami, który przygotowałeś/przygotowałaś dla cioci: (1) dlaczego to dobry prezent, (2) kto i jak Ci pomógł, (3) opisz jedno zdjęcie. Podpisz się jako XYZ.
+        <b>Take-home (Task 14, 10 points, 50–120 words).</b> You made a photo album as a present for your aunt. Write an email to a friend from England: (1) explain why a photo album is a good present, (2) explain who helped you prepare it and how, (3) describe one of the photos in the album. Sign it XYZ.
       </div>
     </div>
   );
@@ -362,13 +362,13 @@ function Score() {
 const SLIDES = [
   {
     stage: "E8 Practice", time: null,
-    note: "Alice is preparing for Egzamin osmoklasisty (English), the national exam that decides high-school places. Today is 25 minutes on the reading and reaction tasks, using the real 13 May 2026 sheet. Keep the pace: the exam gives about 8 minutes per task.",
+    note: "Alice is preparing for the E8 (the Polish eighth-grade English exam), the national exam that decides high-school places. Today is 25 minutes on the reading and reaction tasks, using the real 13 May 2026 sheet. Keep the pace: the exam gives about 8 minutes per task.",
     body: (
       <div className="e8-cover">
         <span className="e8-eyebrow">Sentivo · Custom Lesson</span>
         <h1 className="e8-h1">E8 Reading &amp; Reactions</h1>
         <p className="e8-cover-p">Real exam tasks, one trap at a time. Today you will not only find the right answer, you will see why the wrong ones look right.</p>
-        <span className="e8-source">Source: Egzamin ósmoklasisty, język angielski, 13 May 2026 (CKE). Answer key by Sentivo.</span>
+        <span className="e8-source">Source: E8 English exam, 13 May 2026 (CKE, Poland). Answer key by Sentivo.</span>
       </div>
     ),
   },
@@ -381,7 +381,7 @@ const SLIDES = [
         <p className="e8-p">In E8 every wrong answer is written to look almost right. We practise five task types, and each one has its own trap.</p>
         <div className="e8-plan-grid">
           {[
-            ["3 min", "Task 5", "Reactions (Polish situation)"],
+            ["3 min", "Task 5", "Reactions to a situation"],
             ["5 min", "Task 7", "Short texts, main purpose"],
             ["7 min", "Task 9", "Match questions to texts"],
             ["6 min", "Task 8", "Put sentences back in the text"],
@@ -395,11 +395,11 @@ const SLIDES = [
   },
   {
     stage: "Task 5 · Reactions (1/2)", time: "~1.5 min",
-    note: "Read the Polish aloud. Ask: are you asking for help, or offering it? A sounds nice but it is what the OTHER person would say. C is the request.",
+    note: "Read the situation aloud. Ask: are you asking for help, or offering it? A sounds nice but it is what the OTHER person would say. C is the request.",
     body: (
       <Choice
         id="t5-1"
-        promptPl="Potrzebujesz pomocy w przygotowaniu sałatki z pomidorów. Jak poprosisz o pomoc?"
+        promptPl="You need help making a tomato salad. How do you ask for help?"
         options={[
           { text: "Do you need any help with the tomatoes?", why: "This offers help. You need help, so you are the one who asks." },
           { text: "Shall we have a tomato salad for lunch?", why: "This suggests a meal. It uses the same words (tomato, salad) but never asks for help." },
@@ -416,14 +416,14 @@ const SLIDES = [
     body: (
       <Choice
         id="t5-4"
-        promptPl="Koleżanka chce pożyczyć od Ciebie podręcznik, który jest Ci potrzebny. Jak jej odmówisz?"
+        promptPl="A friend wants to borrow a textbook that you need. How do you refuse?"
         options={[
           { text: "I’ll borrow it from you tomorrow.", why: "This reverses the roles: you would be the one borrowing." },
           { text: "I’m afraid I’m using it right now.", why: "“I’m afraid…” is a polite way to say no, and gives the reason." },
           { text: "I don’t mind giving it to you.", why: "This says yes. The situation says you need the book, so you refuse." },
         ]}
         correct={1}
-        trap="The task says refuse (odmówisz). One option sounds friendly but agrees. Always check yes or no first."
+        trap="The task says refuse. One option sounds friendly but agrees. Always check yes or no first."
       />
     ),
   },

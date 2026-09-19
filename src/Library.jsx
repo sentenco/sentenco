@@ -376,7 +376,7 @@ const CUSTOM_LESSONS = [
     slug: "e8-reading-and-reactions",
     title: "E8 Reading & Reactions",
     tag: "Exam Prep",
-    level: "A2 to low B1 · Egzamin ósmoklasisty",
+    level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes of real E8 tasks (reactions, short texts, matching, gapped text, word transformation), with the trap behind every wrong answer.",
   },
 ];
