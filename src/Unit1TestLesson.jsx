@@ -277,11 +277,11 @@ export const LESSON_GUIDE = [
   { stage: "Test Welcome", time: "~1 min", note: "Keep it light: 'Today is our Unit 1 Test! Do your best!' A PDF version of this same test is also available to download and print for home practice." },
   { stage: "Section A: Circle the Letter", time: "~4 min", note: "Show each picture. Ask the student which letter it starts with; the other two letters shown are just distractors, no need to read them aloud unless helpful." },
   { stage: "Section A: Circle the Letter", time: "~4 min", note: "Continue with the second group of three (D, E, F)." },
-  { stage: "Section A: Circle the Letter", time: "~4 min", note: "Continue with the last group of three (G, H, I)." },
-  { stage: "Section B: How Do They Feel?", time: "~3 min", note: "Show each face. Ask 'How do they feel?' and let the student choose from the three words shown." },
+  { stage: "Section A: Circle the Letter", time: "~4 min", note: "Continue with the last group of three (G, H, I). Answers: apple A, ball B, cat C; dog D, egg E, fish F; goat G, hat H, igloo I. The correct choice is not highlighted on screen. Second try? Use the Circle the Letter! 4 slide (duck, frog, ice cream) only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Section B: How Do They Feel?", time: "~3 min", note: "Show each face. Ask 'How do they feel?' and let the student choose from the three words shown. Answers: happy, sad, tired. Second try? Use the How Do They Feel? 2 slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Section C: Finish the Sentence", time: "~3 min", note: "Read each sentence aloud with the blank. Let the student pick the word that finishes it." },
-  { stage: "Section C: Finish the Sentence", time: "~3 min", note: "Read each question aloud and let the student choose the matching answer." },
-  { stage: "Section D: Say It Out Loud!", time: "~4 min", note: "A short live check: greet the student, ask their name, ask how they are, and see if they can say 'Nice to meet you!' with as little prompting as possible." },
+  { stage: "Section C: Finish the Sentence", time: "~3 min", note: "Read each question aloud and let the student choose the matching answer. Answers on the sentence slide: Nice to meet you!, Bye!, is. Second try? Use the Finish the Sentence! 2 slide (Bye!, am, Hello!) only if the student needs another attempt. It is not there to pad the test." },
+  { stage: "Section D: Say It Out Loud!", time: "~4 min", note: "A short live check: greet the student, ask their name, ask how they are, and see if they can say 'Nice to meet you!' with as little prompting as possible. Second try? Use the Say It Out Loud! 2 slide only if the student needs another attempt. It is not there to pad the test." },
   { stage: "Great Job!", time: "~1 min", note: "Keep feedback positive. Remind the student's parent that the printable version of this same test is available to download for extra practice at home." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -322,7 +322,6 @@ function buildSlides({ onZoom }) {
       stage: "Section A: Circle the Letter",
       part: "A",
       instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word and its first letter."]],
-      guide: "___ is for ___.",
       time: "~4 min",
       body: (
         <>
@@ -349,7 +348,6 @@ function buildSlides({ onZoom }) {
       stage: "Section A: Circle the Letter",
       part: "A",
       instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word and its first letter."]],
-      guide: "___ is for ___.",
       time: "~4 min",
       body: (
         <>
@@ -376,7 +374,6 @@ function buildSlides({ onZoom }) {
       stage: "Section A: Circle the Letter",
       part: "A",
       instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word and its first letter."]],
-      guide: "___ is for ___.",
       time: "~4 min",
       body: (
         <>
@@ -398,12 +395,33 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Section A: Circle the Letter",
+      part: "A",
+      title: "Circle the Letter! 4",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word and its first letter."]],
+      body: (
+        <div className="row">
+            <div className="quiz-col">
+              <Pic src="/curriculum/u1-l2/duck.png" label="duck" size={78} onZoom={onZoom} />
+              <ChoiceRow choices={["D", "T", "B"]} answer="D" />
+            </div>
+            <div className="quiz-col">
+              <Pic src="/curriculum/u1-l2/frog.jpg" label="frog" size={78} onZoom={onZoom} />
+              <ChoiceRow choices={["G", "F", "H"]} answer="F" />
+            </div>
+            <div className="quiz-col">
+              <Pic src="/curriculum/u1-l3/icecream.jpg" label="ice cream" size={78} onZoom={onZoom} />
+              <ChoiceRow choices={["I", "L", "J"]} answer="I" />
+            </div>
+        </div>
+      ),
+    },
     // 6: Section B — How Do They Feel?
     {
       stage: "Section B: How Do They Feel?",
       part: "B",
       instruction: [["👀", "Look at each face."], ["🗣️", "How do they feel?"]],
-      guide: "He/She is ___.",
       time: "~3 min",
       body: (
         <>
@@ -423,6 +441,28 @@ function buildSlides({ onZoom }) {
             </div>
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Section B: How Do They Feel?",
+      part: "B",
+      title: "How Do They Feel? 2",
+      instruction: [["👀", "Look at each face."], ["🗣️", "How do they feel?"]],
+      body: (
+        <div className="row">
+            <div className="quiz-col">
+              <EmotionCard name="Tired" onZoom={onZoom} />
+              <ChoiceRow choices={["Happy", "Tired", "Sad"]} answer="Tired" />
+            </div>
+            <div className="quiz-col">
+              <EmotionCard name="Happy" onZoom={onZoom} />
+              <ChoiceRow choices={["Sad", "Tired", "Happy"]} answer="Happy" />
+            </div>
+            <div className="quiz-col">
+              <EmotionCard name="Sad" onZoom={onZoom} />
+              <ChoiceRow choices={["Sad", "Happy", "Tired"]} answer="Sad" />
+            </div>
+        </div>
       ),
     },
     // 7: Section C — Finish the Sentence (greetings)
@@ -470,6 +510,19 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Section C: Finish the Sentence",
+      part: "C",
+      title: "Finish the Sentence! 2",
+      instruction: [["👂", "Listen to each sentence."], ["🗣️", "Say the right word."]],
+      body: (
+        <div className="center-col">
+          <ChoiceRow label={"When you say goodbye, you say ___."} choices={["Bye!", "Nice to meet you!"]} answer="Bye!" />
+          <ChoiceRow label={'"How are you?" "I ___ happy."'} choices={["am", "is"]} answer="am" />
+          <ChoiceRow label={"When you meet a friend, you say ___."} choices={["Hello!", "Bye!"]} answer="Hello!" />
+        </div>
+      ),
+    },
     // 9: Section D — Say It Out Loud!
     {
       stage: "Section D: Say It Out Loud!",
@@ -492,6 +545,24 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Ii" color={LETTER_COLOR.I} size={40} fontSize={16} onZoom={onZoom} dim />
           </div>
         </div>
+      ),
+    },
+    {
+      stage: "Section D: Say It Out Loud!",
+      part: "D",
+      title: "Say It Out Loud! 2",
+      instruction: [["🗣️", "Answer the questions."], ["🤝", "Say: Nice to meet you!"]],
+      body: (
+          <div className="bubble-col" style={{ maxWidth: 420 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Hello! What's your name? How are you?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">My name is <span className="fill"></span>. I am <span className="fill"></span>.</div>
+            </div>
+          </div>
       ),
     },
     // 10: Great Job / Wrap-up + download reminder
@@ -588,7 +659,7 @@ export const styles = `
 .choice-label { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: var(--ink-soft); text-align: center; max-width: 320px; margin: 0; }
 .choice-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .choice-pill { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); background: #fff; border-radius: 999px; padding: 6px 14px; box-shadow: 0 3px 8px rgba(27,42,74,0.12); }
-.choice-pill.is-answer { background: var(--coral); color: #fff; }
+.choice-pill.is-answer { }
 
 .letter-row { display: flex; gap: 14px; position: relative; z-index: 1; flex-wrap: wrap; justify-content: center; }
 .letter-tile { cursor: zoom-in; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; color: #fff; border: 3px solid #fff; box-shadow: 0 6px 14px rgba(27,42,74,0.15); transition: transform 0.15s ease; }
