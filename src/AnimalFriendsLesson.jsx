@@ -66,6 +66,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -220,8 +222,8 @@ export const LESSON_GUIDE = [
   { stage: "It's a...", time: "~3 min", note: "Show animal pictures in different sizes/positions. Student says \"It's a dog.\" / \"It's a bird.\"" },
   { stage: "Animal Sounds", time: "~4 min", note: "Make or play simple animal sounds. Student identifies the animal and says \"It's a ___.\"" },
   { stage: "Animal Hide-and-Seek", time: "~4 min", note: "Hide part of an animal picture. Slowly reveal it and let the student guess." },
-  { stage: "HIGHLIGHT: Mystery Animal", time: "~2 min", note: "Give clues about a hidden animal: \"It says meow.\" \"It has four legs.\" Student guesses." },
-  { stage: "HIGHLIGHT: Mystery Animal", time: "~2 min", note: "Switch roles. Student gives clues for the teacher to guess." },
+  { stage: "Mystery Animal", time: "~2 min", note: "Give clues about a hidden animal: \"It says meow.\" \"It has four legs.\" Student guesses." },
+  { stage: "Mystery Animal", time: "~2 min", note: "Switch roles. Student gives clues for the teacher to guess." },
   { stage: "Animal Quick Challenge", time: "~3 min", note: "Flash 4-5 animals. Student names them using \"It's a...\"" },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -353,7 +355,7 @@ function buildSlides({ onZoom }) {
     },
     // 7: HIGHLIGHT Mystery Animal (round 1)
     {
-      stage: "HIGHLIGHT: Mystery Animal",
+      stage: "Mystery Animal",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🔍 Mystery Animal!</h2></span>
@@ -380,7 +382,7 @@ function buildSlides({ onZoom }) {
     },
     // 8: HIGHLIGHT Mystery Animal (round 2, switch)
     {
-      stage: "HIGHLIGHT: Mystery Animal",
+      stage: "Mystery Animal",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Now You Give Clues!</h2></span>
@@ -485,7 +487,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

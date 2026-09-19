@@ -66,6 +66,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -220,7 +222,7 @@ export const LESSON_GUIDE = [
   { stage: "Where Is It?", time: "~4 min", note: "Introduce objects naturally in the new house. Ask \"Where is this?\" without giving the target sentence first." },
   { stage: "House Choices", time: "~4 min", note: "Let the student choose a room and decide what belongs there. Encourage spontaneous language rather than drilling." },
   { stage: "My House", time: "~4 min", note: "Student creates or organizes their own simple house. Ask them to talk about their choices." },
-  { stage: "HIGHLIGHT: House Tour Guide", time: "~4 min", note: "Student becomes a tour guide and takes the teacher through their house." },
+  { stage: "House Tour Guide", time: "~4 min", note: "Student becomes a tour guide and takes the teacher through their house." },
   { stage: "Show What You Know!", time: "~2 min", note: "Give a completely unfamiliar house scene. Say only: \"Tell me about this house.\" Let the student speak with minimal support." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -324,7 +326,7 @@ function buildSlides({ onZoom }) {
     },
     // 7: HIGHLIGHT House Tour Guide
     {
-      stage: "HIGHLIGHT: House Tour Guide",
+      stage: "House Tour Guide",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🏠 House Tour Guide!</h2></span>
@@ -417,7 +419,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

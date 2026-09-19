@@ -94,6 +94,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -248,8 +250,8 @@ export const LESSON_GUIDE = [
   { stage: "What Is Blending?", time: "~3 min", note: "Introduce putting sounds together. Use very simple examples such as m + a -> ma and s + a -> sa. Stretch the sounds, then blend them together. Keep this playful, not formal phonics instruction." },
   { stage: "Sound & Blend", time: "~5 min", note: "Practice short combinations using previously learned letters: m-a, s-a, t-a, p-i, s-i. Model slowly, then let the student blend them." },
   { stage: "Blend & Match", time: "~4 min", note: "Show a simple picture and two or three letter/sound choices. Student blends the sounds and matches them to the correct picture when possible." },
-  { stage: "HIGHLIGHT: Word Builder!", time: "~3 min", note: "Student builds simple words by moving letter cards together on screen, e.g. S + A + T -> SAT. Separate the sounds, then let the student push/blend them together and say the word." },
-  { stage: "HIGHLIGHT: Word Builder!", time: "~1 min", note: "Try one more word the same way." },
+  { stage: "Word Builder!", time: "~3 min", note: "Student builds simple words by moving letter cards together on screen, e.g. S + A + T -> SAT. Separate the sounds, then let the student push/blend them together and say the word." },
+  { stage: "Word Builder!", time: "~1 min", note: "Try one more word the same way." },
   { stage: "Y-Z & Blend Check", time: "~1.5 min", note: "Quickly review Y, Z." },
   { stage: "Y-Z & Blend Check", time: "~1.5 min", note: "Give a few simple blending challenges. Celebrate each successful blend and finish with the goodbye routine." },
   { stage: "Wrap-Up", time: null, note: null },
@@ -391,7 +393,7 @@ function buildSlides({ onZoom }) {
     },
     // 11: HIGHLIGHT Word Builder! (SAT)
     {
-      stage: "HIGHLIGHT: Word Builder!",
+      stage: "Word Builder!",
       time: "~3 min",
       body: (
         <div className="center-col">
@@ -402,7 +404,7 @@ function buildSlides({ onZoom }) {
     },
     // 12: HIGHLIGHT Word Builder! (SIT)
     {
-      stage: "HIGHLIGHT: Word Builder!",
+      stage: "Word Builder!",
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -413,7 +415,7 @@ function buildSlides({ onZoom }) {
     },
     // 12b: HIGHLIGHT Word Builder! (MAT)
     {
-      stage: "HIGHLIGHT: Word Builder!",
+      stage: "Word Builder!",
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -514,7 +516,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

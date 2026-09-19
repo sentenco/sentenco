@@ -64,6 +64,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -219,8 +221,8 @@ export const LESSON_GUIDE = [
   { stage: "My Family", time: "~2.5 min", note: "Show a simple family scene with mom and dad. Ask \"Who is this?\" Student answers, then completes \"This is my...\"" },
   { stage: "My Family", time: "~2.5 min", note: "Continue practicing the pattern." },
   { stage: "Look & Say", time: "~4 min", note: "Show different family pictures in random order. Student identifies mom/dad and produces the full sentence. Gradually remove support." },
-  { stage: "HIGHLIGHT: Family Photo!", time: "~2 min", note: "Create a pretend family photo on screen. Student chooses where mom and dad go, then introduces them." },
-  { stage: "HIGHLIGHT: Family Photo!", time: "~2 min", note: "Teacher can make funny mistakes for the student to correct in a second round." },
+  { stage: "Family Photo!", time: "~2 min", note: "Create a pretend family photo on screen. Student chooses where mom and dad go, then introduces them." },
+  { stage: "Family Photo!", time: "~2 min", note: "Teacher can make funny mistakes for the student to correct in a second round." },
   { stage: "My Family Review", time: "~1.5 min", note: "Show mom and dad one last time. Ask \"Who is this?\" and encourage full answers." },
   { stage: "My Family Review", time: "~1.5 min", note: "Finish with the regular goodbye routine." },
   { stage: "Wrap-Up", time: null, note: null },
@@ -362,7 +364,7 @@ function buildSlides({ onZoom }) {
     },
     // 11: HIGHLIGHT Family Photo! (round 1)
     {
-      stage: "HIGHLIGHT: Family Photo!",
+      stage: "Family Photo!",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">📸 Family Photo!</h2></span>
@@ -376,7 +378,7 @@ function buildSlides({ onZoom }) {
     },
     // 12: HIGHLIGHT Family Photo! (round 2, correct the teacher)
     {
-      stage: "HIGHLIGHT: Family Photo!",
+      stage: "Family Photo!",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Is That Right?</h2></span>
@@ -472,7 +474,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

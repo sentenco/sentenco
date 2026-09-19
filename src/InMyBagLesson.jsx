@@ -67,6 +67,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -221,8 +223,8 @@ export const LESSON_GUIDE = [
   { stage: "What Is It?", time: "~3 min", note: "Mix the three objects. Ask \"What is this?\" Gradually make it faster and change the order." },
   { stage: "In My Bag", time: "~4 min", note: "Introduce \"It is a pen.\" \"It is a book.\" Then ask \"What is in the bag?\"" },
   { stage: "Pack My Bag!", time: "~4 min", note: "Say \"Put the pen in the bag.\" / \"Put the book in the bag.\" Then ask \"What is in your bag?\"" },
-  { stage: "HIGHLIGHT: What's in My Bag?", time: "~2 min", note: "Student secretly chooses 2-3 objects to put in the bag and names them for the teacher to guess." },
-  { stage: "HIGHLIGHT: What's in My Bag?", time: "~2 min", note: "Switch roles. Teacher puts objects in a mystery bag for the student to guess." },
+  { stage: "What's in My Bag?", time: "~2 min", note: "Student secretly chooses 2-3 objects to put in the bag and names them for the teacher to guess." },
+  { stage: "What's in My Bag?", time: "~2 min", note: "Switch roles. Teacher puts objects in a mystery bag for the student to guess." },
   { stage: "Bag Challenge & Review", time: "~2 min", note: "Show a new bag with 3-4 objects. Student identifies them and says what is inside." },
   { stage: "Bag Challenge & Review", time: "~2 min", note: "Finish with a quick pen -> book -> bag sight-word review." },
   { stage: "Wrap-Up", time: null, note: null },
@@ -338,7 +340,7 @@ function buildSlides({ onZoom }) {
     },
     // 10: HIGHLIGHT What's in My Bag? (round 1)
     {
-      stage: "HIGHLIGHT: What's in My Bag?",
+      stage: "What's in My Bag?",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">🎒 What's in My Bag?</h2></span>
@@ -353,7 +355,7 @@ function buildSlides({ onZoom }) {
     },
     // 11: HIGHLIGHT What's in My Bag? (round 2, switch)
     {
-      stage: "HIGHLIGHT: What's in My Bag?",
+      stage: "What's in My Bag?",
       body: (
         <div className="bubble-col" style={{ maxWidth: 400 }}>
           <div className="brow">
@@ -461,7 +463,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

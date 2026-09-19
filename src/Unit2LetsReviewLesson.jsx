@@ -124,6 +124,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -273,15 +275,15 @@ export default function Unit2LetsReviewLesson() {
 
 export const LESSON_GUIDE = [
   { stage: "Unit 2 · Lesson 4", time: null, note: null },
-  { stage: "Hello & Number Warm-Up", time: "~3 min", note: "Greet the student and count 1 to 10 together. Show random numbers and have the student say them." },
-  { stage: "Number Review", time: "~3 min", note: "Show groups of objects from 1-10. Student counts and answers \"How many?\" Include a few quick out-of-order challenges." },
-  { stage: "Letter Review: J-R", time: "~3 min", note: "Show J-R in mixed order. Student names the letters and matches uppercase to lowercase." },
-  { stage: "Letter & Picture Match", time: "~5 min", note: "The student taps a letter, then taps the picture that starts with it: J -> juice, M -> moon, P -> pizza, R -> rabbit. Let them try it themselves before helping." },
+  { stage: "Hello & Number Warm-Up", time: "~3 min", note: "Greet the student and count 1 to 10 together. Show random numbers and have the student say them. Fast learner? Add Count Back! (+1 min)." },
+  { stage: "Number Review", time: "~3 min", note: "Show groups of objects from 1-10. Student counts and answers \"How many?\" Include a few quick out-of-order challenges. Fast learner? Add Count Again! with the strawberries (+1.5 min)." },
+  { stage: "Letter Review: J-R", time: "~3 min", note: "Show J-R in mixed order. Student names the letters and matches uppercase to lowercase. Fast learner? Add Name Them Again! with the letters in a new order (+2 min)." },
+  { stage: "Letter & Picture Match", time: "~5 min", note: "The student taps a letter, then taps the picture that starts with it: J -> juice, M -> moon, P -> pizza, R -> rabbit. Let them try it themselves before helping. Three rounds cover every letter: J M P, then K N R, then L O Q. Slower learner: do the first round together, tapping for the student. Fast learner? Play all three (+4 min)." },
   { stage: "Look, Count & Say", time: "~4 min", note: "Show busy pictures with groups of objects. Ask \"How many apples?\", \"How many stars?\" Student counts and answers." },
-  { stage: "HIGHLIGHT: Number & Letter Adventure", time: "~1.3 min", note: "Stop 1: identify a letter." },
-  { stage: "HIGHLIGHT: Number & Letter Adventure", time: "~1.3 min", note: "Stop 2: count a group of objects." },
-  { stage: "HIGHLIGHT: Number & Letter Adventure", time: "~1.3 min", note: "Stop 3: answer or ask \"How many?\" Correct answers move the student to the next stage." },
-  { stage: "Final Challenge", time: "~4 min", note: "Give the student a rapid mixed challenge: identify numbers, identify J-R, count a group, and ask/answer \"How many?\" Celebrate their progress." },
+  { stage: "Number & Letter Adventure", time: "~1.3 min", note: "Stop 1: identify a letter." },
+  { stage: "Number & Letter Adventure", time: "~1.3 min", note: "Stop 2: count a group of objects." },
+  { stage: "Number & Letter Adventure", time: "~1.3 min", note: "Stop 3: answer or ask \"How many?\" Correct answers move the student to the next stage. Fast learner? Continue with Adventure Stops 5, 6 and 7 (letter K, 10 strawberries, then a letter and a number) (+4 min)." },
+  { stage: "Final Challenge", time: "~4 min", note: "Give the student a rapid mixed challenge: identify numbers, identify J-R, count a group, and ask/answer \"How many?\" Celebrate their progress. Fast learner? Do Final Challenge 2 as well (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -306,6 +308,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Number Warm-Up
     {
       stage: "Hello & Number Warm-Up",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Count to ten."]],
       time: "~3 min",
       body: (
         <>
@@ -325,9 +329,32 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Hello & Number Warm-Up",
+      part: "A",
+      title: "Count Back!",
+      instruction: [["👀", "Look at the numbers."], ["🗣️", "Count back from ten."]],
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="4" color={NUMBER_COLOR[4]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="3" color={NUMBER_COLOR[3]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="2" color={NUMBER_COLOR[2]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="1" color={NUMBER_COLOR[1]} size={46} fontSize={18} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 3: Number Review
     {
       stage: "Number Review",
+      part: "A",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Count and answer."]],
+      guide: "There are ___ grapes.",
       time: "~3 min",
       body: (
         <>
@@ -342,49 +369,123 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Number Review",
+      part: "A",
+      title: "Count Again!",
+      instruction: [["👂", "Listen to the question."], ["🗣️", "Count and answer."]],
+      guide: "There are ___ strawberries.",
+      body: (
+        <>
+        <CountGroup n={9} icon="🍓" size={40} onZoom={onZoom} />
+          <div className="bubble-col" style={{ maxWidth: 380, marginTop: 6 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How many strawberries?</div>
+            </div>
+          </div>
+        </>
+      ),
+    },
     // 4: Letter Review J-R (mixed)
     {
       stage: "Letter Review: J-R",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Name the Letters!</h2></span>
           <div className="letter-row">
-            <LetterTile letters="Nn" color={LETTER_COLOR.N} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Jj" color={LETTER_COLOR.J} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Qq" color={LETTER_COLOR.Q} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Ll" color={LETTER_COLOR.L} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Pp" color={LETTER_COLOR.P} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Mm" color={LETTER_COLOR.M} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Rr" color={LETTER_COLOR.R} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Kk" color={LETTER_COLOR.K} size={52} fontSize={19} onZoom={onZoom} />
-            <LetterTile letters="Oo" color={LETTER_COLOR.O} size={52} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Nn" color={LETTER_COLOR.N} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Jj" color={LETTER_COLOR.J} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Qq" color={LETTER_COLOR.Q} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Ll" color={LETTER_COLOR.L} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Pp" color={LETTER_COLOR.P} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Mm" color={LETTER_COLOR.M} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Rr" color={LETTER_COLOR.R} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Kk" color={LETTER_COLOR.K} size={50} fontSize={19} onZoom={onZoom} />
+            <LetterTile letters="Oo" color={LETTER_COLOR.O} size={50} fontSize={19} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Letter Review: J-R",
+      part: "B",
+      title: "Name Them Again!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Rr" color={LETTER_COLOR.R} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Kk" color={LETTER_COLOR.K} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Oo" color={LETTER_COLOR.O} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Pp" color={LETTER_COLOR.P} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Jj" color={LETTER_COLOR.J} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Qq" color={LETTER_COLOR.Q} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Mm" color={LETTER_COLOR.M} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Nn" color={LETTER_COLOR.N} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Ll" color={LETTER_COLOR.L} size={50} fontSize={19} onZoom={onZoom} />
+        </div>
       ),
     },
     // 5: Letter & Picture Match
     {
       stage: "Letter & Picture Match",
+      part: "C",
+      instruction: [["👆", "Tap a letter."], ["👆", "Tap the matching picture."]],
       time: "~5 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Match It!</h2></span>
-          <p className="slide-p" style={{ marginBottom: 4 }}>Tap a letter, then tap the picture that starts with it!</p>
           <MatchGame
             pairs={[
               { id: "j", tileLabel: "J", tileColor: LETTER_COLOR.J, rightNode: <img src="/curriculum/u2-l1/juice.avif" alt="juice" className="match-img" /> },
               { id: "m", tileLabel: "M", tileColor: LETTER_COLOR.M, rightNode: <img src="/curriculum/u2-l2/moon.jpeg" alt="moon" className="match-img" /> },
               { id: "p", tileLabel: "P", tileColor: LETTER_COLOR.P, rightNode: <img src="/curriculum/u2-l3/pizza.avif" alt="pizza" className="match-img" /> },
-              { id: "r", tileLabel: "R", tileColor: LETTER_COLOR.R, rightNode: <img src="/curriculum/u2-l3/rabbit.avif" alt="rabbit" className="match-img" /> },
             ]}
           />
         </>
       ),
     },
+    {
+      stage: "Letter & Picture Match",
+      part: "C",
+      title: "Match It! 2",
+      instruction: [["👆", "Tap a letter."], ["👆", "Tap the matching picture."]],
+      body: (
+        <MatchGame key="m2"
+            pairs={[
+              { id: "k", tileLabel: "K", tileColor: LETTER_COLOR.K, rightNode: <img src="/curriculum/u2-l1/kite.jpg" alt="kite" className="match-img" /> },
+              { id: "n", tileLabel: "N", tileColor: LETTER_COLOR.N, rightNode: <img src="/curriculum/u2-l2/nose.jpg" alt="nose" className="match-img" /> },
+              { id: "r", tileLabel: "R", tileColor: LETTER_COLOR.R, rightNode: <img src="/curriculum/u2-l3/rabbit.avif" alt="rabbit" className="match-img" /> },
+            ]}
+          />
+      ),
+    },
+    {
+      stage: "Letter & Picture Match",
+      part: "C",
+      title: "Match It! 3",
+      instruction: [["👆", "Tap a letter."], ["👆", "Tap the matching picture."]],
+      body: (
+        <MatchGame key="m3"
+            pairs={[
+              { id: "l", tileLabel: "L", tileColor: LETTER_COLOR.L, rightNode: <img src="/curriculum/u2-l1/lion.avif" alt="lion" className="match-img" /> },
+              { id: "o", tileLabel: "O", tileColor: LETTER_COLOR.O, rightNode: <img src="/curriculum/u2-l2/owl.jpeg" alt="owl" className="match-img" /> },
+              { id: "q", tileLabel: "Q", tileColor: LETTER_COLOR.Q, rightNode: <img src="/curriculum/u2-l3/queen.jpg" alt="queen" className="match-img" /> },
+            ]}
+          />
+      ),
+    },
     // 6: Look, Count & Say
     {
       stage: "Look, Count & Say",
+      part: "C",
+      instruction: [["👀", "Look at the pictures."], ["🗣️", "Count each group."]],
+      guide: "There are ___ apples and ___ stars.",
       time: "~4 min",
       body: (
         <>
@@ -396,48 +497,77 @@ function buildSlides({ onZoom }) {
     },
     // 7: HIGHLIGHT Adventure Stop 1 (letter)
     {
-      stage: "HIGHLIGHT: Number & Letter Adventure",
+      stage: "Number & Letter Adventure",
+      part: "D",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.3 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Adventure Stop 1!</h2></span>
-          <LetterTile letters="Q" color={LETTER_COLOR.Q} size={90} fontSize={38} onZoom={onZoom} />
-          <p className="slide-p">What letter is this?</p>
+          <LetterTile letters="Q" color={LETTER_COLOR.Q} size={74} fontSize={38} onZoom={onZoom} />
         </div>
       ),
     },
     // 8: HIGHLIGHT Adventure Stop 2 (count)
     {
-      stage: "HIGHLIGHT: Number & Letter Adventure",
+      stage: "Number & Letter Adventure",
+      part: "D",
+      instruction: [["👀", "Look at the cookies."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ cookies.",
       time: "~1.3 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Adventure Stop 2!</h2></span>
           <CountGroup n={6} icon="🍪" size={42} onZoom={onZoom} />
-          <p className="slide-p">Count the cookies!</p>
         </div>
       ),
     },
     // 9: HIGHLIGHT Adventure Stop 3 (ask/answer)
     {
-      stage: "HIGHLIGHT: Number & Letter Adventure",
+      stage: "Number & Letter Adventure",
+      part: "D",
+      instruction: [["👀", "Look at the fish."], ["🗣️", "Ask the teacher."]],
       time: "~1.3 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Adventure Stop 3!</h2></span>
+          <CountGroup n={8} icon="🐟" size={40} onZoom={onZoom} />
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow me">
               <div className="avatar coral">S</div>
               <div className="bubble right">How many?</div>
             </div>
           </div>
-          <p className="slide-p">Ask the question, then answer it together!</p>
         </div>
+      ),
+    },
+    {
+      stage: "Number & Letter Adventure",
+      part: "D",
+      title: "Adventure Stop 5!",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <LetterTile letters="K" color={LETTER_COLOR.K} size={74} fontSize={32} onZoom={onZoom} />
+      ),
+    },
+    {
+      stage: "Number & Letter Adventure",
+      part: "D",
+      title: "Adventure Stop 6!",
+      instruction: [["👀", "Look at the strawberries."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ strawberries.",
+      body: (
+        <CountGroup n={10} icon="🍓" size={36} onZoom={onZoom} />
       ),
     },
     // 9b: HIGHLIGHT Adventure Stop 4 (mixed)
     {
-      stage: "HIGHLIGHT: Number & Letter Adventure",
+      stage: "Number & Letter Adventure",
+      part: "D",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Say the letter and the number."]],
+      guide: "It's the letter ___ and the number ___.",
       time: "~1 min",
       body: (
         <div className="center-col">
@@ -446,13 +576,27 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Mm" color={LETTER_COLOR.M} size={54} fontSize={20} onZoom={onZoom} />
             <LetterTile letters="6" color={NUMBER_COLOR[6]} size={54} fontSize={22} onZoom={onZoom} />
           </div>
-          <p className="slide-p">One last stop! Name the letter and the number.</p>
+        </div>
+      ),
+    },
+    {
+      stage: "Number & Letter Adventure",
+      part: "D",
+      title: "Adventure Stop 7!",
+      instruction: [["👀", "Look at the cards."], ["🗣️", "Say the letter and the number."]],
+      guide: "It's the letter ___ and the number ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Rr" color={LETTER_COLOR.R} size={54} fontSize={20} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={54} fontSize={20} onZoom={onZoom} />
         </div>
       ),
     },
     // 10: Final Challenge
     {
       stage: "Final Challenge",
+      part: "D",
+      instruction: [["👀", "Look at everything."], ["🗣️", "Say each card. Count the balloons."]],
       time: "~4 min",
       body: (
         <>
@@ -464,6 +608,23 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Oo" color={LETTER_COLOR.O} size={50} fontSize={19} onZoom={onZoom} />
           </div>
           <CountGroup n={5} icon="🎈" size={36} onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Final Challenge",
+      part: "D",
+      title: "Final Challenge 2!",
+      instruction: [["👀", "Look at everything."], ["🗣️", "Say each card. Count the stars."]],
+      body: (
+        <>
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Kk" color={LETTER_COLOR.K} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={50} fontSize={19} onZoom={onZoom} />
+          <LetterTile letters="Pp" color={LETTER_COLOR.P} size={50} fontSize={19} onZoom={onZoom} />
+        </div>
+        <CountGroup n={7} icon="⭐" size={38} onZoom={onZoom} />
         </>
       ),
     },
@@ -534,7 +695,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }
@@ -583,12 +745,12 @@ export const styles = `
 
 .match-wrap { position: relative; z-index: 1; }
 .match-game { display: flex; gap: 60px; justify-content: center; align-items: flex-start; margin-top: 6px; }
-.match-col { display: flex; flex-direction: column; gap: 16px; }
-.match-tile { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; color: #fff; border: 3px solid #fff; box-shadow: 0 6px 14px rgba(27,42,74,0.15); cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.match-col { display: flex; flex-direction: column; gap: 8px; }
+.match-tile { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; color: #fff; border: 3px solid #fff; box-shadow: 0 6px 14px rgba(27,42,74,0.15); cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .match-tile.is-selected { box-shadow: 0 0 0 4px #FFD166, 0 6px 14px rgba(27,42,74,0.15); transform: scale(1.06); }
 .match-tile.is-matched { opacity: 0.5; cursor: default; }
 .match-tile.is-wrong { animation: matchShake 0.4s ease; }
-.match-right { width: 80px; height: 80px; border-radius: 16px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: 0 4px 12px rgba(27,42,74,0.1); cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; border: 3px solid transparent; }
+.match-right { width: 72px; height: 72px; border-radius: 16px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: 0 4px 12px rgba(27,42,74,0.1); cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; border: 3px solid transparent; }
 .match-right.is-matched { border-color: #22A67E; opacity: 0.65; cursor: default; }
 .match-right.is-wrong { animation: matchShake 0.4s ease; border-color: #E0567A; }
 .match-img { width: 100%; height: 100%; object-fit: contain; }

@@ -81,6 +81,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -235,8 +237,8 @@ export const LESSON_GUIDE = [
   { stage: "Like or Don't Like?", time: "~4 min", note: "Show one food at a time. Student chooses and says either \"I like ___.\" or \"I don't like ___.\"" },
   { stage: "Food Sorting", time: "~4 min", note: "Create two areas: LIKE and DON'T LIKE. Student places food pictures and says a sentence for each." },
   { stage: "What Does Teacher Like?", time: "~3 min", note: "Teacher says sentences about food. Student listens and identifies whether the teacher likes or doesn't like each food." },
-  { stage: "HIGHLIGHT: Food Judge", time: "~2 min", note: "Show unusual/funny food combinations. Student is the judge: \"I like it!\" / \"I don't like it!\"" },
-  { stage: "HIGHLIGHT: Food Judge", time: "~2 min", note: "Teacher gives a ridiculous opinion, student reacts. Then student asks the teacher about foods." },
+  { stage: "Food Judge", time: "~2 min", note: "Show unusual/funny food combinations. Student is the judge: \"I like it!\" / \"I don't like it!\"" },
+  { stage: "Food Judge", time: "~2 min", note: "Teacher gives a ridiculous opinion, student reacts. Then student asks the teacher about foods." },
   { stage: "My Food Choices", time: "~3 min", note: "Student chooses 2 foods they like and 2 they don't like and says the sentences independently." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -362,7 +364,7 @@ function buildSlides({ onZoom }) {
     },
     // 7: HIGHLIGHT Food Judge (round 1)
     {
-      stage: "HIGHLIGHT: Food Judge",
+      stage: "Food Judge",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🍽️ Food Judge!</h2></span>
@@ -378,7 +380,7 @@ function buildSlides({ onZoom }) {
     },
     // 7b: HIGHLIGHT Food Judge (round 1, second combo)
     {
-      stage: "HIGHLIGHT: Food Judge",
+      stage: "Food Judge",
       body: (
         <div className="center-col">
           <Pic src="/curriculum/u8-l3/rice-apple.jpg" label="rice with apple slices" size={130} onZoom={onZoom} />
@@ -393,7 +395,7 @@ function buildSlides({ onZoom }) {
     },
     // 8: HIGHLIGHT Food Judge (round 2, switch)
     {
-      stage: "HIGHLIGHT: Food Judge",
+      stage: "Food Judge",
       body: (
         <div className="center-col">
           <div className="bubble-col" style={{ maxWidth: 420 }}>
@@ -411,7 +413,7 @@ function buildSlides({ onZoom }) {
     },
     // 8b: HIGHLIGHT Food Judge (round 2, second combo)
     {
-      stage: "HIGHLIGHT: Food Judge",
+      stage: "Food Judge",
       body: (
         <div className="center-col">
           <div className="bubble-col" style={{ maxWidth: 420 }}>
@@ -512,7 +514,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

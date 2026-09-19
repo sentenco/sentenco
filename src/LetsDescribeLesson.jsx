@@ -101,6 +101,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -255,8 +257,8 @@ export const LESSON_GUIDE = [
   { stage: "Look & Describe", time: "~3 min", note: "Introduce big, small, long, short. Model combinations like \"big eyes,\" \"small nose,\" \"long legs.\"" },
   { stage: "Meet the -og Family", time: "~4 min", note: "Introduce dog, log, jog, hog. Blend the sounds and notice the repeated -og ending: d + og -> dog." },
   { stage: "My Body, My Words", time: "~4 min", note: "Show characters with exaggerated features. Ask \"Is it big or small?\" Student responds with simple descriptions." },
-  { stage: "HIGHLIGHT: Funny Body Designer!", time: "~2 min", note: "Student creates a silly character with different body parts and sizes, describing it." },
-  { stage: "HIGHLIGHT: Funny Body Designer!", time: "~2 min", note: "Add a dog as a fun element and practice the word." },
+  { stage: "Funny Body Designer!", time: "~2 min", note: "Student creates a silly character with different body parts and sizes, describing it." },
+  { stage: "Funny Body Designer!", time: "~2 min", note: "Add a dog as a fun element and practice the word." },
   { stage: "Move & Blend Challenge", time: "~1.5 min", note: "Mix body commands: \"Touch your toes!\", \"Show me your fingers!\"" },
   { stage: "Move & Blend Challenge", time: "~1.5 min", note: "Blend 2-3 -og words. Finish with a quick review." },
   { stage: "Wrap-Up", time: null, note: null },
@@ -407,7 +409,7 @@ function buildSlides({ onZoom }) {
     },
     // 12: HIGHLIGHT Funny Body Designer! (round 1)
     {
-      stage: "HIGHLIGHT: Funny Body Designer!",
+      stage: "Funny Body Designer!",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🤪 Funny Body Designer!</h2></span>
@@ -421,7 +423,7 @@ function buildSlides({ onZoom }) {
     },
     // 13: HIGHLIGHT Funny Body Designer! (round 2, dog)
     {
-      stage: "HIGHLIGHT: Funny Body Designer!",
+      stage: "Funny Body Designer!",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">What's This?</h2></span>
@@ -517,7 +519,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

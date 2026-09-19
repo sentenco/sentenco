@@ -85,6 +85,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -238,7 +240,7 @@ export const LESSON_GUIDE = [
   { stage: "Toy Review", time: "~4 min", note: "Slide 1 shows the words; slide 2 shows the same toys with no words, so the student has to remember. Skip slide 2 only if time is short." },
   { stage: "Sentence Review", time: "~4 min", note: "One toy per slide: student says \"I play with a ___.\" Four toys, four slides. Fast learners can say it before you do." },
   { stage: "Action Review", time: "~4 min", note: "Do each action together, then play Guess the Action: you act, the student says the word." },
-  { stage: "HIGHLIGHT: Playtime Sorting Game", time: "~6 min", note: "Sort the mixed cards into TOYS and ACTIONS, check the answer, then make sentences. Rounds 2 to 4 have no model sentence: accept any correct sentence, e.g. \"I jump with the doll.\"" },
+  { stage: "Playtime Sorting Game", time: "~6 min", note: "Sort the mixed cards into TOYS and ACTIONS, check the answer, then make sentences. Rounds 2 to 4 have no model sentence: accept any correct sentence, e.g. \"I jump with the doll.\"" },
   { stage: "Mixed Challenge", time: "~4 min", note: "One card at a time, then a speed round with four cards. Student says the word or a full sentence." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -374,7 +376,7 @@ function buildSlides({ onZoom }) {
 
     // ---------- PART C: GAME ----------
     {
-      stage: "HIGHLIGHT: Playtime Sorting Game",
+      stage: "Playtime Sorting Game",
       part: "C",
       title: "🧩 Sorting Game!",
       instruction: [["🤔", "Is it a TOY or an ACTION?"], ["🗣️", "Tell me and say the word."]],
@@ -395,7 +397,7 @@ function buildSlides({ onZoom }) {
       ),
     },
     {
-      stage: "HIGHLIGHT: Playtime Sorting Game",
+      stage: "Playtime Sorting Game",
       part: "C",
       title: "🧩 Check It!",
       instruction: [["👀", "Were you right?"], ["🗣️", "Say each word in the groups."]],
@@ -417,7 +419,7 @@ function buildSlides({ onZoom }) {
       ),
     },
     {
-      stage: "HIGHLIGHT: Playtime Sorting Game",
+      stage: "Playtime Sorting Game",
       part: "C",
       title: "Make a Sentence!",
       instruction: [["👂", "Listen."], ["🗣️", "Say the sentence."]],
@@ -441,7 +443,7 @@ function buildSlides({ onZoom }) {
       ["car", `${IMG}/car.avif`, "Run"],
       ["toy", "/curriculum/u11-l1/toy.jpg", "Throw"],
     ].map(([label, src, action]) => ({
-      stage: "HIGHLIGHT: Playtime Sorting Game",
+      stage: "Playtime Sorting Game",
       part: "C",
       title: "Make a Sentence!",
       instruction: [["🧩", "Put them together."], ["🗣️", "Say your own sentence."]],
@@ -561,7 +563,8 @@ export const styles = `
 .guide-blank { display: inline-block; width: 64px; border-bottom: 3px solid var(--coral-deep); margin: 0 4px; vertical-align: -3px; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

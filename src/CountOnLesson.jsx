@@ -95,6 +95,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -251,12 +253,12 @@ export const LESSON_GUIDE = [
   { stage: "N is for...", time: "~1.5 min", note: "Say each word slowly: \"N is for nose. N is for nest. N is for nut.\"" },
   { stage: "O is for...", time: "~2 min", note: "Say each word slowly: \"O is for orange. O is for owl. O is for octopus.\"" },
   { stage: "Count & Say 6-10", time: "~2.5 min", note: "Show a group of 6-10 items. Student counts aloud and says the final number. Mix the quantities." },
-  { stage: "Count & Say 6-10", time: "~2.5 min", note: "Repeat with a different quantity so the student doesn't just memorize the sequence." },
-  { stage: "Number & Letter Check", time: "~4 min", note: "Show mixed numbers 1-10 and letters M-O together. Student identifies what they see." },
-  { stage: "HIGHLIGHT: Feed the Monster!", time: "~2 min", note: "Show a number and that many pieces of food. Student counts the food and \"feeds\" the hungry monster." },
-  { stage: "HIGHLIGHT: Feed the Monster!", time: "~2 min", note: "Show a letter, M, N, or O, and ask the student to identify it before the monster eats it." },
-  { stage: "Count 1-10 & Goodbye", time: "~1.5 min", note: "Count 1 to 10 together." },
-  { stage: "Count 1-10 & Goodbye", time: "~1.5 min", note: "Flash M, N, O for a final quick check, then finish with the goodbye routine." },
+  { stage: "Count & Say 6-10", time: "~2.5 min", note: "Repeat with a different quantity so the student doesn't just memorize the sequence. Fast learner? Add the Count It! slides (stars, balloons) (+3 min)." },
+  { stage: "Number & Letter Check", time: "~4 min", note: "Show mixed numbers 1-10 and letters M-O together. Student identifies what they see. Fast learner? Add Say It Fast! with the cards in a new order (+2 min)." },
+  { stage: "Feed the Monster!", time: "~2 min", note: "Show a number and that many pieces of food. Student counts the food and \"feeds\" the hungry monster." },
+  { stage: "Feed the Monster!", time: "~2 min", note: "Show a letter, M, N, or O, and ask the student to identify it before the monster eats it. Fast learner? Keep feeding the monster: the four extra slides add 10 apples, the letter O, 7 bananas and the letter N (+4 min)." },
+  { stage: "Count 1-10 & Goodbye", time: "~1.5 min", note: "Count 1 to 10 together. Fast learner? Count backwards from 10 too (+1 min)." },
+  { stage: "Count 1-10 & Goodbye", time: "~1.5 min", note: "Flash M, N, O for a final quick check, then finish with the goodbye routine. Fast learner? Play Number or Letter? (+1 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -281,6 +283,8 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Count Back
     {
       stage: "Hello & Count Back",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Count to five."]],
       time: "~3 min",
       body: (
         <>
@@ -298,16 +302,19 @@ function buildSlides({ onZoom }) {
     // 3: Count On! 6-10
     {
       stage: "Count On! 6-10",
+      part: "B",
+      instruction: [["👀", "Look at each number."], ["🗣️", "Say the number."]],
+      guide: "It's the number ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Count On!</h2></span>
           <div className="letter-row" style={{ marginTop: 6 }}>
-            <LetterTile letters="6" color={NUMBER_COLOR[6]} size={80} fontSize={34} onZoom={onZoom} />
-            <LetterTile letters="7" color={NUMBER_COLOR[7]} size={80} fontSize={34} onZoom={onZoom} />
-            <LetterTile letters="8" color={NUMBER_COLOR[8]} size={80} fontSize={34} onZoom={onZoom} />
-            <LetterTile letters="9" color={NUMBER_COLOR[9]} size={80} fontSize={34} onZoom={onZoom} />
-            <LetterTile letters="10" color={NUMBER_COLOR[10]} size={80} fontSize={30} onZoom={onZoom} />
+            <LetterTile letters="6" color={NUMBER_COLOR[6]} size={74} fontSize={34} onZoom={onZoom} />
+            <LetterTile letters="7" color={NUMBER_COLOR[7]} size={74} fontSize={34} onZoom={onZoom} />
+            <LetterTile letters="8" color={NUMBER_COLOR[8]} size={74} fontSize={34} onZoom={onZoom} />
+            <LetterTile letters="9" color={NUMBER_COLOR[9]} size={74} fontSize={34} onZoom={onZoom} />
+            <LetterTile letters="10" color={NUMBER_COLOR[10]} size={74} fontSize={30} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -315,14 +322,17 @@ function buildSlides({ onZoom }) {
     // 4: Meet M, N, O
     {
       stage: "Meet M, N, O",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet M, N, O!</h2></span>
           <div className="row" style={{ marginTop: 10 }}>
-            <LetterTile letters="Mm" color={LETTER_COLOR.M} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Nn" color={LETTER_COLOR.N} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Oo" color={LETTER_COLOR.O} size={100} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Mm" color={LETTER_COLOR.M} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Nn" color={LETTER_COLOR.N} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Oo" color={LETTER_COLOR.O} size={92} fontSize={40} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -330,6 +340,9 @@ function buildSlides({ onZoom }) {
     // 5: M is for...
     {
       stage: "M is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "M is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -345,6 +358,9 @@ function buildSlides({ onZoom }) {
     // 6: N is for...
     {
       stage: "N is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "N is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -360,6 +376,9 @@ function buildSlides({ onZoom }) {
     // 7: O is for...
     {
       stage: "O is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "O is for ___.",
       time: "~2 min",
       body: (
         <>
@@ -375,6 +394,9 @@ function buildSlides({ onZoom }) {
     // 8: Count & Say 6-10 (cookies)
     {
       stage: "Count & Say 6-10",
+      part: "C",
+      instruction: [["👀", "Look at the cookies."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ cookies.",
       time: "~2.5 min",
       body: (
         <>
@@ -392,6 +414,9 @@ function buildSlides({ onZoom }) {
     // 9: Count & Say 6-10 (balls)
     {
       stage: "Count & Say 6-10",
+      part: "C",
+      instruction: [["👀", "Look at the balls."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ balls.",
       time: "~2.5 min",
       body: (
         <>
@@ -406,9 +431,32 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Count & Say 6-10",
+      part: "C",
+      title: "Count It! 1",
+      instruction: [["👀", "Look at the stars."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ stars.",
+      body: (
+        <CountGroup n={8} icon="⭐" size={44} onZoom={onZoom} />
+      ),
+    },
+    {
+      stage: "Count & Say 6-10",
+      part: "C",
+      title: "Count It! 2",
+      instruction: [["👀", "Look at the balloons."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ balloons.",
+      body: (
+        <CountGroup n={10} icon="🎈" size={38} onZoom={onZoom} />
+      ),
+    },
     // 10: Number & Letter Check
     {
       stage: "Number & Letter Check",
+      part: "C",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say the number or the letter."]],
+      guide: "It's ___.",
       time: "~4 min",
       body: (
         <>
@@ -424,59 +472,128 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Number & Letter Check",
+      part: "C",
+      title: "Say It Fast!",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say the number or the letter."]],
+      guide: "It's ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Oo" color={LETTER_COLOR.O} size={58} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={58} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="Mm" color={LETTER_COLOR.M} size={58} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={58} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="Nn" color={LETTER_COLOR.N} size={58} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={58} fontSize={22} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 11: HIGHLIGHT Feed the Monster (number)
     {
-      stage: "HIGHLIGHT: Feed the Monster!",
+      stage: "Feed the Monster!",
+      part: "D",
+      instruction: [["👀", "Look at the number."], ["🗣️", "Count the food out loud."]],
       time: "~2 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">👹 Feed the Monster!</h2></span>
-          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={64} fontSize={26} onZoom={onZoom} />
-          <CountGroup n={8} icon="🍩" size={38} onZoom={onZoom} />
-          <p className="slide-p">Count the food, then feed the monster!</p>
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={54} fontSize={26} onZoom={onZoom} />
+          <CountGroup n={8} icon="🍩" size={34} onZoom={onZoom} />
         </>
       ),
     },
     // 12: HIGHLIGHT Feed the Monster (letter)
     {
-      stage: "HIGHLIGHT: Feed the Monster!",
+      stage: "Feed the Monster!",
+      part: "D",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~2 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick! Before It's Eaten!</h2></span>
-          <LetterTile letters="N" color={LETTER_COLOR.N} size={90} fontSize={38} onZoom={onZoom} />
-          <p className="slide-p">What letter is this?</p>
+          <LetterTile letters="N" color={LETTER_COLOR.N} size={74} fontSize={38} onZoom={onZoom} />
         </div>
       ),
     },
     // 12b: HIGHLIGHT Feed the Monster Round 2 (number)
     {
-      stage: "HIGHLIGHT: Feed the Monster!",
+      stage: "Feed the Monster!",
+      part: "D",
+      instruction: [["👀", "Look at the number."], ["🗣️", "Count the food out loud."]],
       time: "~1 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">👹 Still Hungry!</h2></span>
-          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={64} fontSize={26} onZoom={onZoom} />
-          <CountGroup n={6} icon="🍪" size={40} onZoom={onZoom} />
-          <p className="slide-p">Count the food, then feed the monster!</p>
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={54} fontSize={26} onZoom={onZoom} />
+          <CountGroup n={6} icon="🍪" size={34} onZoom={onZoom} />
         </>
       ),
     },
     // 12c: HIGHLIGHT Feed the Monster Round 2 (letter)
     {
-      stage: "HIGHLIGHT: Feed the Monster!",
+      stage: "Feed the Monster!",
+      part: "D",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1 min",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">Quick! Before It's Eaten!</h2></span>
-          <LetterTile letters="M" color={LETTER_COLOR.M} size={90} fontSize={38} onZoom={onZoom} />
-          <p className="slide-p">What letter is this?</p>
+          <LetterTile letters="M" color={LETTER_COLOR.M} size={74} fontSize={38} onZoom={onZoom} />
         </div>
+      ),
+    },
+    {
+      stage: "Feed the Monster!",
+      part: "D",
+      title: "Hungrier!",
+      instruction: [["👀", "Look at the number."], ["🗣️", "Count the food out loud."]],
+      body: (
+        <>
+        <LetterTile letters="10" color={NUMBER_COLOR[10]} size={54} fontSize={22} onZoom={onZoom} />
+        <CountGroup n={10} icon="🍎" size={34} onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Feed the Monster!",
+      part: "D",
+      title: "Quick! Before It's Eaten!",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <LetterTile letters="O" color={LETTER_COLOR.O} size={74} fontSize={32} onZoom={onZoom} />
+      ),
+    },
+    {
+      stage: "Feed the Monster!",
+      part: "D",
+      title: "Last Snack!",
+      instruction: [["👀", "Look at the number."], ["🗣️", "Count the food out loud."]],
+      body: (
+        <>
+        <LetterTile letters="7" color={NUMBER_COLOR[7]} size={54} fontSize={22} onZoom={onZoom} />
+        <CountGroup n={7} icon="🍌" size={40} onZoom={onZoom} />
+        </>
+      ),
+    },
+    {
+      stage: "Feed the Monster!",
+      part: "D",
+      title: "Quick! One More!",
+      instruction: [["👀", "Look at the letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <LetterTile letters="N" color={LETTER_COLOR.N} size={74} fontSize={32} onZoom={onZoom} />
       ),
     },
     // 13: Count 1-10
     {
       stage: "Count 1-10 & Goodbye",
+      part: "D",
+      instruction: [["👀", "Look at each number."], ["🗣️", "Count to ten."]],
       time: "~1.5 min",
       body: (
         <>
@@ -496,9 +613,32 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Count 1-10 & Goodbye",
+      part: "D",
+      title: "Count Back!",
+      instruction: [["👀", "Look at the numbers."], ["🗣️", "Count back from ten."]],
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="10" color={NUMBER_COLOR[10]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="8" color={NUMBER_COLOR[8]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="4" color={NUMBER_COLOR[4]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="3" color={NUMBER_COLOR[3]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="2" color={NUMBER_COLOR[2]} size={46} fontSize={18} onZoom={onZoom} />
+          <LetterTile letters="1" color={NUMBER_COLOR[1]} size={46} fontSize={18} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 14: M-N-O flash review
     {
       stage: "Count 1-10 & Goodbye",
+      part: "D",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -509,6 +649,22 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Oo" color={LETTER_COLOR.O} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Count 1-10 & Goodbye",
+      part: "D",
+      title: "Number or Letter?",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say the number or the letter."]],
+      guide: "It's ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="7" color={NUMBER_COLOR[7]} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="M" color={LETTER_COLOR.M} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="9" color={NUMBER_COLOR[9]} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="O" color={LETTER_COLOR.O} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="6" color={NUMBER_COLOR[6]} size={62} fontSize={24} onZoom={onZoom} />
+        </div>
       ),
     },
     // 15: Great Job
@@ -578,7 +734,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

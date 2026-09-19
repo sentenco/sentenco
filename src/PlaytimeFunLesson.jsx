@@ -66,6 +66,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -219,8 +221,8 @@ export const LESSON_GUIDE = [
   { stage: "New Play Verbs", time: "~4 min", note: "Introduce run, jump, throw, kick with actions. Student copies the action and says the word." },
   { stage: "Action Sentences", time: "~3 min", note: "Practice simple present: \"I run.\" \"I jump.\" \"I throw.\" \"I kick.\"" },
   { stage: "Toy + Action", time: "~3 min", note: "Connect actions to toys: \"I throw the ball.\" \"I kick the ball.\"" },
-  { stage: "HIGHLIGHT: Freeze!", time: "~4 min", note: "Say an action and the student performs it. Suddenly say \"Freeze!\" Ask \"What are you doing?\"" },
-  { stage: "HIGHLIGHT: Freeze!", time: "~3 min", note: "Repeat with a different action." },
+  { stage: "Freeze!", time: "~4 min", note: "Say an action and the student performs it. Suddenly say \"Freeze!\" Ask \"What are you doing?\"" },
+  { stage: "Freeze!", time: "~3 min", note: "Repeat with a different action." },
   { stage: "Playtime Challenge", time: "~4 min", note: "Show a toy/action picture and ask \"What do you do?\" Student produces a sentence independently." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -329,7 +331,7 @@ function buildSlides({ onZoom }) {
     },
     // 6: HIGHLIGHT Freeze! (round 1)
     {
-      stage: "HIGHLIGHT: Freeze!",
+      stage: "Freeze!",
       body: (
         <div className="center-col">
           <span className="title-highlight"><h2 className="slide-h sub">🧊 Freeze!</h2></span>
@@ -352,7 +354,7 @@ function buildSlides({ onZoom }) {
     },
     // 7: HIGHLIGHT Freeze! (round 2)
     {
-      stage: "HIGHLIGHT: Freeze!",
+      stage: "Freeze!",
       body: (
         <div className="center-col">
           <div className="bubble-col" style={{ maxWidth: 420 }}>
@@ -455,7 +457,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }

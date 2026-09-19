@@ -166,6 +166,8 @@ const VERB_COLOR = {
   listen: "#8E6FCE",
   remember: "#22A67E", guess: "#22A67E",
   tap: "#D98A00", pick: "#D98A00", make: "#D98A00", put: "#D98A00", wave: "#D98A00", do: "#D98A00",
+  point: "#D98A00", show: "#D98A00", match: "#D98A00", find: "#2E97C7",
+  count: "#22A67E", ask: "#E0502F", repeat: "#E0502F",
 };
 
 function InstructionStep({ icon, text }) {
@@ -322,12 +324,12 @@ export const LESSON_GUIDE = [
   { stage: "K is for...", time: "~1.5 min", note: "Say each word slowly: \"K is for kite. K is for king. K is for koala.\"" },
   { stage: "L is for...", time: "~1.5 min", note: "Say each word slowly: \"L is for lion. L is for leaf. L is for lamp.\"" },
   { stage: "Count & Say", time: "~2.5 min", note: "Show a group of apples. Student counts aloud: \"One! Two! Three!\" Mix the quantity so it isn't memorized." },
-  { stage: "Count & Say", time: "~2.5 min", note: "Repeat with a different quantity of stars so the student connects the number, word, and quantity." },
-  { stage: "Look & Match", time: "~4 min", note: "The student taps a number, then taps the group with that many to make the match. Let them try it themselves before helping." },
-  { stage: "HIGHLIGHT: How Many?", time: "~2 min", note: "Show a group of kites for a few seconds, then hide it. Ask \"How many?\", let the student remember and answer, then ask what letter kite starts with (K)." },
-  { stage: "HIGHLIGHT: How Many?", time: "~2 min", note: "Repeat with a group of leaves. Ask \"How many?\", then what letter leaf starts with (L)." },
-  { stage: "Count & Say Goodbye", time: "~1.5 min", note: "Count 1 to 5 together one final time." },
-  { stage: "Count & Say Goodbye", time: "~1.5 min", note: "Flash J, K, L for a quick identification check, then finish with the familiar goodbye routine." },
+  { stage: "Count & Say", time: "~2.5 min", note: "Repeat with a different quantity of stars so the student connects the number, word, and quantity. Fast learner? Add the Count It! slides (balloons, bananas) (+3 min)." },
+  { stage: "Look & Match", time: "~4 min", note: "The student taps a number, then taps the group with that many to make the match. Let them try it themselves before helping. Fast learner? Play the two extra Match It! rounds (+3 min). Slower learner: do the first round together, tapping for the student." },
+  { stage: "How Many?", time: "~2 min", note: "Show a group of kites for a few seconds, then hide it. Ask \"How many?\", let the student remember and answer, then ask what letter kite starts with (K)." },
+  { stage: "How Many?", time: "~2 min", note: "Repeat with a group of leaves. Ask \"How many?\", then what letter leaf starts with (L). Fast learner? Add the juice-box round with the letter J (+2 min)." },
+  { stage: "Count & Say Goodbye", time: "~1.5 min", note: "Count 1 to 5 together one final time. Fast learner? Count backwards from 5 too (+1 min)." },
+  { stage: "Count & Say Goodbye", time: "~1.5 min", note: "Flash J, K, L for a quick identification check, then finish with the familiar goodbye routine. Fast learner? Use Flash Review Again! and Number or Letter? (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -352,6 +354,9 @@ function buildSlides({ onZoom }) {
     // 2: Hello & Unit 1 Review
     {
       stage: "Hello & Unit 1 Review",
+      part: "A",
+      instruction: [["👋", "Say hello."], ["🗣️", "Say each letter."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
@@ -374,6 +379,9 @@ function buildSlides({ onZoom }) {
     // 3: Meet 1-5
     {
       stage: "Meet 1-5",
+      part: "B",
+      instruction: [["👀", "Look at each number."], ["🗣️", "Say the number."]],
+      guide: "It's the number ___.",
       time: "~3 min",
       body: (
         <>
@@ -391,14 +399,17 @@ function buildSlides({ onZoom }) {
     // 4: Meet J, K, L
     {
       stage: "Meet J, K, L",
+      part: "B",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~3 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Meet J, K, L!</h2></span>
           <div className="row" style={{ marginTop: 10 }}>
-            <LetterTile letters="Jj" color={LETTER_COLOR.J} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Kk" color={LETTER_COLOR.K} size={100} fontSize={40} onZoom={onZoom} />
-            <LetterTile letters="Ll" color={LETTER_COLOR.L} size={100} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Jj" color={LETTER_COLOR.J} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Kk" color={LETTER_COLOR.K} size={92} fontSize={40} onZoom={onZoom} />
+            <LetterTile letters="Ll" color={LETTER_COLOR.L} size={92} fontSize={40} onZoom={onZoom} />
           </div>
         </>
       ),
@@ -406,6 +417,9 @@ function buildSlides({ onZoom }) {
     // 5: J is for...
     {
       stage: "J is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "J is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -421,6 +435,9 @@ function buildSlides({ onZoom }) {
     // 6: K is for...
     {
       stage: "K is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "K is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -436,6 +453,9 @@ function buildSlides({ onZoom }) {
     // 7: L is for...
     {
       stage: "L is for...",
+      part: "B",
+      instruction: [["👀", "Look at each picture."], ["🗣️", "Say the word."]],
+      guide: "L is for ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -451,6 +471,9 @@ function buildSlides({ onZoom }) {
     // 8: Count & Say (apples)
     {
       stage: "Count & Say",
+      part: "C",
+      instruction: [["👀", "Look at the apples."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ apples.",
       time: "~2.5 min",
       body: (
         <>
@@ -468,6 +491,9 @@ function buildSlides({ onZoom }) {
     // 9: Count & Say (stars)
     {
       stage: "Count & Say",
+      part: "C",
+      instruction: [["👀", "Look at the stars."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ stars.",
       time: "~2.5 min",
       body: (
         <>
@@ -482,14 +508,35 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Count & Say",
+      part: "C",
+      title: "Count It! 1",
+      instruction: [["👀", "Look at the balloons."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ balloons.",
+      body: (
+        <CountGroup n={4} icon="🎈" size={54} onZoom={onZoom} />
+      ),
+    },
+    {
+      stage: "Count & Say",
+      part: "C",
+      title: "Count It! 2",
+      instruction: [["👀", "Look at the bananas."], ["🗣️", "Count and say the number."]],
+      guide: "There are ___ bananas.",
+      body: (
+        <CountGroup n={2} icon="🍌" size={64} onZoom={onZoom} />
+      ),
+    },
     // 10: Look & Match
     {
       stage: "Look & Match",
+      part: "C",
+      instruction: [["👆", "Tap a number."], ["👆", "Tap the same amount."]],
       time: "~4 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look & Match!</h2></span>
-          <p className="slide-p" style={{ marginBottom: 4 }}>Tap a number, then tap the group with that many!</p>
           <MatchGame
             pairs={[
               { id: "n4", tileLabel: "4", tileColor: NUMBER_COLOR[4], rightNode: <span className="match-emojis">🎈🎈🎈🎈</span> },
@@ -499,21 +546,53 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Look & Match",
+      part: "C",
+      title: "Match It! 2",
+      instruction: [["👆", "Tap a number."], ["👆", "Tap the same amount."]],
+      body: (
+        <MatchGame key="m2"
+            pairs={[
+              { id: "n1", tileLabel: "1", tileColor: NUMBER_COLOR[1], rightNode: <span className="match-emojis">🍌</span> },
+              { id: "n4", tileLabel: "4", tileColor: NUMBER_COLOR[4], rightNode: <span className="match-emojis">🐟🐟🐟🐟</span> },
+            ]}
+          />
+      ),
+    },
+    {
+      stage: "Look & Match",
+      part: "C",
+      title: "Match It! 3",
+      instruction: [["👆", "Tap a number."], ["👆", "Tap the same amount."]],
+      body: (
+        <MatchGame key="m3"
+            pairs={[
+              { id: "n2", tileLabel: "2", tileColor: NUMBER_COLOR[2], rightNode: <span className="match-emojis">🐶🐶</span> },
+              { id: "n5", tileLabel: "5", tileColor: NUMBER_COLOR[5], rightNode: <span className="match-emojis">⭐⭐⭐⭐⭐</span> },
+            ]}
+          />
+      ),
+    },
     // 11: HIGHLIGHT How Many? (peek)
     {
-      stage: "HIGHLIGHT: How Many?",
+      stage: "How Many?",
+      part: "D",
+      instruction: [["👀", "Look at the kites."], ["🤔", "Remember how many!"]],
       time: "~2 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look Carefully!</h2></span>
           <CountGroup n={4} icon="🪁" size={54} onZoom={onZoom} />
-          <p className="slide-p" style={{ marginTop: 4 }}>Remember how many you see... then we hide it!</p>
         </>
       ),
     },
     // 12: HIGHLIGHT How Many? (recall) + letter challenge
     {
-      stage: "HIGHLIGHT: How Many?",
+      stage: "How Many?",
+      part: "D",
+      instruction: [["🤔", "Remember!"], ["🗣️", "Say the number and the letter."]],
+      guide: "There were ___. It's the letter ___.",
       time: "~2 min",
       body: (
         <>
@@ -525,27 +604,30 @@ function buildSlides({ onZoom }) {
             </div>
           </div>
           <div className="row" style={{ marginTop: 8 }}>
-            <LetterTile letters="K" color={LETTER_COLOR.K} size={70} fontSize={28} onZoom={onZoom} />
+            <LetterTile letters="K" color={LETTER_COLOR.K} size={62} fontSize={28} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Now, what letter is this?</p>
         </>
       ),
     },
     // 12b: HIGHLIGHT How Many? Round 2 (peek)
     {
-      stage: "HIGHLIGHT: How Many?",
+      stage: "How Many?",
+      part: "D",
+      instruction: [["👀", "Look at the leaves."], ["🤔", "Remember how many!"]],
       time: "~1 min",
       body: (
         <>
           <span className="title-highlight"><h2 className="slide-h sub">Look Again!</h2></span>
           <CountGroup n={5} icon="🍃" size={50} onZoom={onZoom} />
-          <p className="slide-p" style={{ marginTop: 4 }}>Remember how many you see... then we hide it!</p>
         </>
       ),
     },
     // 12c: HIGHLIGHT How Many? Round 2 (recall) + letter challenge
     {
-      stage: "HIGHLIGHT: How Many?",
+      stage: "How Many?",
+      part: "D",
+      instruction: [["🤔", "Remember!"], ["🗣️", "Say the number and the letter."]],
+      guide: "There were ___. It's the letter ___.",
       time: "~1 min",
       body: (
         <>
@@ -557,15 +639,45 @@ function buildSlides({ onZoom }) {
             </div>
           </div>
           <div className="row" style={{ marginTop: 8 }}>
-            <LetterTile letters="L" color={LETTER_COLOR.L} size={70} fontSize={28} onZoom={onZoom} />
+            <LetterTile letters="L" color={LETTER_COLOR.L} size={62} fontSize={28} onZoom={onZoom} />
           </div>
-          <p className="slide-p">Now, what letter is this?</p>
+        </>
+      ),
+    },
+    {
+      stage: "How Many?",
+      part: "D",
+      title: "One More Time!",
+      instruction: [["👀", "Look at the juice."], ["🤔", "Remember how many!"]],
+      body: (
+        <CountGroup n={3} icon="🧃" size={54} onZoom={onZoom} />
+      ),
+    },
+    {
+      stage: "How Many?",
+      part: "D",
+      title: "How Many Was It?",
+      instruction: [["🤔", "Remember!"], ["🗣️", "Say the number and the letter."]],
+      guide: "There were ___. It's the letter ___.",
+      body: (
+        <>
+          <div className="bubble-col" style={{ maxWidth: 380 }}>
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">How many juice boxes were there?</div>
+            </div>
+          </div>
+          <div className="row" style={{ marginTop: 8 }}>
+            <LetterTile letters="J" color={LETTER_COLOR.J} size={62} fontSize={26} onZoom={onZoom} />
+          </div>
         </>
       ),
     },
     // 13: Count & Say Goodbye (1-5)
     {
       stage: "Count & Say Goodbye",
+      part: "D",
+      instruction: [["👀", "Look at each number."], ["🗣️", "Count to five."]],
       time: "~1.5 min",
       body: (
         <>
@@ -580,9 +692,27 @@ function buildSlides({ onZoom }) {
         </>
       ),
     },
+    {
+      stage: "Count & Say Goodbye",
+      part: "D",
+      title: "Count Back!",
+      instruction: [["👀", "Look at the numbers."], ["🗣️", "Count back from five."]],
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="4" color={NUMBER_COLOR[4]} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="3" color={NUMBER_COLOR[3]} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="2" color={NUMBER_COLOR[2]} size={56} fontSize={22} onZoom={onZoom} />
+          <LetterTile letters="1" color={NUMBER_COLOR[1]} size={56} fontSize={22} onZoom={onZoom} />
+        </div>
+      ),
+    },
     // 14: J-K-L flash review
     {
       stage: "Count & Say Goodbye",
+      part: "D",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
       time: "~1.5 min",
       body: (
         <>
@@ -593,6 +723,36 @@ function buildSlides({ onZoom }) {
             <LetterTile letters="Ll" color={LETTER_COLOR.L} onZoom={onZoom} />
           </div>
         </>
+      ),
+    },
+    {
+      stage: "Count & Say Goodbye",
+      part: "D",
+      title: "Flash Review Again!",
+      instruction: [["👀", "Look at each letter."], ["🗣️", "Say its name."]],
+      guide: "It's the letter ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="Ll" color={LETTER_COLOR.L} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="Jj" color={LETTER_COLOR.J} size={74} fontSize={28} onZoom={onZoom} />
+          <LetterTile letters="Kk" color={LETTER_COLOR.K} size={74} fontSize={28} onZoom={onZoom} />
+        </div>
+      ),
+    },
+    {
+      stage: "Count & Say Goodbye",
+      part: "D",
+      title: "Number or Letter?",
+      instruction: [["👀", "Look at each card."], ["🗣️", "Say the number or the letter."]],
+      guide: "It's ___.",
+      body: (
+        <div className="letter-row" style={{ marginTop: 6 }}>
+          <LetterTile letters="3" color={NUMBER_COLOR[3]} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="K" color={LETTER_COLOR.K} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="5" color={NUMBER_COLOR[5]} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="L" color={LETTER_COLOR.L} size={62} fontSize={24} onZoom={onZoom} />
+          <LetterTile letters="1" color={NUMBER_COLOR[1]} size={62} fontSize={24} onZoom={onZoom} />
+        </div>
       ),
     },
     // 15: Great Job
@@ -662,7 +822,8 @@ export const styles = `
 .bin-hint { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #C9C2DD; min-height: 46px; display: flex; align-items: center; }
 .dot.part-start { margin-left: 8px; }
 .slide-body.has-instruction { padding-top: 98px; }
-.slide-instruction { position: absolute; top: 61px; left: 81px; right: 30px; display: flex; align-items: center; justify-content: flex-start; gap: 26px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 19px; color: var(--navy); z-index: 2; text-align: left; }
+.slide-instruction { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 672px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 18px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 7px 24px; box-shadow: 0 6px 0 rgba(10,18,40,0.35), 0 12px 20px rgba(27,42,74,0.2); z-index: 2; text-align: center; }
+.slide-instruction .instr-tag { box-shadow: 0 0 0 2px rgba(255,255,255,0.85); }
 .instr-step { display: inline-flex; align-items: center; gap: 8px; }
 .instr-icon { font-size: 24px; line-height: 1; }
 .instr-text { display: inline-flex; align-items: center; gap: 8px; }
