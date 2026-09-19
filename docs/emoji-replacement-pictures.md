@@ -59,15 +59,17 @@ Cute kawaii cartoon illustration of a round two-layer birthday cake with pink fr
 Cute kawaii cartoon illustration of one blank rectangular name tag sticker with a rounded blue border, a white writing area with two faint empty lines, and a tiny star in the corner, thin dark-brown outlines, soft flat shading. No letters or words at all. Plain white background, no other objects. Square 1:1, centered, no text, no watermark.
 
 **Feelings faces.** Four different children (2 girls, 2 boys). The shirt color matches the tile ring color of each feeling
-(happy yellow, sad blue, angry red, tired purple). Skin: the same light, warm peach tone as the other Unit 4 and Unit 5
-children, with soft pink cheeks (the first batch came out too dark and tan, which did not match). Vary the kids by hair and shirt only.
+(happy yellow, sad blue, angry red, tired purple). Skin: the same natural light skin tone as the other Unit 4 and Unit 5
+children (the first batch came out too dark and orange-tan). Do not use the word "peach", the generator can render it as orange skin. Vary the kids by hair and shirt only.
 
-Shared ending for all four: "Plain white background. Square 1:1, centered, face fills most of the frame, no text, no watermark."
+Tip: attach one existing child (for example `u5-family/sister.jpg`) to the chat and add "Match the skin tone of the attached image."
 
-- **happy.png** (girl, yellow shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of a happy young girl with light warm peach skin, soft pink cheeks, and long black hair in two pigtails with small red hair ties, wearing a bright yellow t-shirt. Big open smile, sparkling eyes."
-- **sad.png** (boy, blue shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of a sad young boy with light warm peach skin, soft pink cheeks, and short black hair, wearing a blue t-shirt. Downturned mouth, eyebrows tilted up in the middle, teary eyes, one small tear on a cheek."
-- **angry.png** (girl, red shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of an angry young girl with light warm peach skin, soft pink cheeks, and a dark-brown ponytail, wearing a red t-shirt. Eyebrows pulled down and together, frowning mouth, puffed cheeks, a small anger mark near her head."
-- **tired.png** (boy, purple shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of a sleepy young boy with light warm peach skin, soft pink cheeks, and messy dark-brown hair, wearing a purple t-shirt. Half-closed sleepy eyes, a big yawn with the mouth open, small blue 'z' marks floating beside his head."
+Shared ending for all four: "Plain white background. Square 1:1, centered, face fills most of the frame, no text, no watermark. Skin is a natural light tone with no orange or yellow tint."
+
+- **happy.png** (girl, yellow shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of a happy young girl with natural light skin tone, soft pink cheeks, and long black hair in two pigtails with small red hair ties, wearing a bright yellow t-shirt. Big open smile, sparkling eyes."
+- **sad.png** (boy, blue shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of a sad young boy with natural light skin tone, soft pink cheeks, and short black hair, wearing a blue t-shirt. Downturned mouth, eyebrows tilted up in the middle, teary eyes, one small tear on a cheek."
+- **angry.png** (girl, red shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of an angry young girl with natural light skin tone, soft pink cheeks, and a dark-brown ponytail, wearing a red t-shirt. Eyebrows pulled down and together, frowning mouth, puffed cheeks, a small anger mark near her head."
+- **tired.png** (boy, purple shirt): "Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading. Head and shoulders of a sleepy young boy with natural light skin tone, soft pink cheeks, and messy dark-brown hair, wearing a purple t-shirt. Half-closed sleepy eyes, a big yawn with the mouth open, small blue 'z' marks floating beside his head."
 
 ## Reused (no new picture needed)
 
