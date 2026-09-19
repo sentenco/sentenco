@@ -287,9 +287,11 @@ function buildSlides({ onZoom }) {
           <span className="title-highlight"><h1 className="slide-h title-h">Count On!</h1></span>
           <p className="slide-p title-p">Today we count 6 to 10 and learn the letters M, N, and O.</p>
           <div className="letter-row" style={{ marginTop: 6 }}>
-            <LetterTile letters="Mm" color={LETTER_COLOR.M} onZoom={onZoom} />
-            <LetterTile letters="Nn" color={LETTER_COLOR.N} onZoom={onZoom} />
-            <LetterTile letters="Oo" color={LETTER_COLOR.O} onZoom={onZoom} />
+            <LetterTile letters="6" color={NUMBER_COLOR[6]} size={62} fontSize={26} onZoom={onZoom} />
+            <LetterTile letters="7" color={NUMBER_COLOR[7]} size={62} fontSize={26} onZoom={onZoom} />
+            <LetterTile letters="8" color={NUMBER_COLOR[8]} size={62} fontSize={26} onZoom={onZoom} />
+            <LetterTile letters="9" color={NUMBER_COLOR[9]} size={62} fontSize={26} onZoom={onZoom} />
+            <LetterTile letters="10" color={NUMBER_COLOR[10]} size={62} fontSize={22} onZoom={onZoom} />
           </div>
         </div>
       ),
