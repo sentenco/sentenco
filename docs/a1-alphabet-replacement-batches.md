@@ -672,3 +672,5 @@ Decision (user, 2026-09-21): generate the "Hello!" picture too. It is `u1-l1/wav
 ```text
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly child standing and facing front, full body, waving hello: one arm raised high above the shoulder with the open hand large and clearly visible, palm facing forward and fingers spread, with two small curved motion lines beside the hand to show the waving, the other arm relaxed, head slightly tilted, mouth open in a big happy smile as if saying hello, bright eyes, short black hair, a light-blue t-shirt, green shorts and small brown shoes, natural light skin tone with no orange or yellow tint.
 ```
+
+Installed 2026-09-21 22:20: the new waving kid over `u1-l1/wavingkid.jpg` (A1 Unit 1 L1 Hello slide, and the A2 "friend" picture).
