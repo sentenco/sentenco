@@ -662,3 +662,5 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 ```text
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute fluffy cream-colored cat with a dark-brown face and dark-brown paws, sitting upright on the ground, side view, tail curled around its feet, big blue eyes, a small pink nose.
 ```
+
+Installed 2026-09-21 22:14: bag (u7-l1/bag.avif and u1-l4/bag.avif), tree (u3-l5/tree.avif), sitting cat (u3-l3/cat-sitting.avif; the file was named `sitting cat.jpeg`). No sourced picture is left in the A1 alphabet lessons or the A2 shop.
