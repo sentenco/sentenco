@@ -39,7 +39,7 @@ function openNotebook(design) {
 
   window.open(
     `/library/notebook/${design.key}`,
-    "sentivoNotebook",
+    "sentencoNotebook",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -64,7 +64,7 @@ export default function NotebookHub() {
       <div className="nbh-stage">
         <div className="nbh-topbar">
           <button type="button" className="nbh-brand" onClick={() => navigate("/library")} title="Back to Library">
-            <img src="/logo-sentivo.png" alt="" className="nbh-brand-logo" />entenco
+            <img src="/logo-sentenco.png" alt="" className="nbh-brand-logo" />entenco
           </button>
           <span className="nbh-topbar-title">Digital Notebook</span>
         </div>

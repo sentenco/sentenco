@@ -1,5 +1,5 @@
 -- A1 Kids Unit 1: Hello, My Name, Age, Family, and Likes (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation.
 -- Fresh INSERT version (for use after delete_all_a1.sql) -- same content that
 -- fix_kids_unit1_2_structure.sql (now removed) applied as an UPDATE against the live rows.
 -- Run this whole script in the Supabase SQL editor.

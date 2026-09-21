@@ -1,4 +1,4 @@
--- Sentivo C2 Adults -- Unit 1: High-Stakes Argument and Rebuttal
+-- Sentenco C2 Adults -- Unit 1: High-Stakes Argument and Rebuttal
 -- Mode order: Performance -> Model -> Output
 -- Content sourced from docs/curriculum/c2-adults.md and
 -- c2-adults-teacher-guidance.md.

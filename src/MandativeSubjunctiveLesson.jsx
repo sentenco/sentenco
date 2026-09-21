@@ -232,7 +232,7 @@ export default function MandativeSubjunctiveLesson() {
       <div className="mdsl-stage">
         <div className="mdsl-deck">
           <div className="mdsl-deck-header">
-            <span className="mdsl-brand"><img src="/logo-sentivo.png" alt="" className="mdsl-brand-logo" />entenco</span>
+            <span className="mdsl-brand"><img src="/logo-sentenco.png" alt="" className="mdsl-brand-logo" />entenco</span>
             <span className="mdsl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="mdsl-deck-body" key={slideIdx}>

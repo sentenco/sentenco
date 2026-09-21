@@ -21,7 +21,7 @@ function openPlayer(slug, edition) {
 
   window.open(
     `/library/articles/${slug}/player?edition=${edition}`,
-    "sentivoArticlePlayer",
+    "sentencoArticlePlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

@@ -1,4 +1,4 @@
--- Sentivo C1 Teens -- Unit 1: Argument, Debate, and Respectful Disagreement
+-- Sentenco C1 Teens -- Unit 1: Argument, Debate, and Respectful Disagreement
 -- Mode order: Performance -> Model -> Output
 -- Content sourced from docs/curriculum/c1-teens.md and
 -- c1-teens-teacher-guidance.md.

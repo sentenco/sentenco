@@ -1,5 +1,5 @@
 -- A1 Kids Unit 3: My Family (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Family Vocabulary

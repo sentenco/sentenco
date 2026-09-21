@@ -11,7 +11,7 @@ import { getLesson, getTrack } from "./shiftTracks";
 function TopBar() {
   return (
     <div className="sh-topbar">
-      <img src="/logo-sentivo.png" alt="" className="sh-brand-logo" />
+      <img src="/logo-sentenco.png" alt="" className="sh-brand-logo" />
       <span className="sh-brand-name">entenco</span>
     </div>
   );

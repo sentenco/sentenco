@@ -1,4 +1,4 @@
--- Sentivo C2 Adults -- Unit 4: High-Impact Presentation, Briefing, and Q&A
+-- Sentenco C2 Adults -- Unit 4: High-Impact Presentation, Briefing, and Q&A
 -- Mode order: Performance -> Model -> Output
 -- Content sourced from docs/curriculum/c2-adults.md and
 -- c2-adults-teacher-guidance.md.

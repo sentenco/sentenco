@@ -91,7 +91,7 @@ function openLesson(path) {
 
   window.open(
     path,
-    "sentivoSparkPlayer",
+    "sentencoSparkPlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -106,7 +106,7 @@ function openGuide(path) {
 
   window.open(
     path,
-    "sentivoSparkGuide",
+    "sentencoSparkGuide",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

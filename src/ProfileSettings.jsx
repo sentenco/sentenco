@@ -73,7 +73,7 @@ export default function ProfileSettings({ onClose, onSaved }) {
         .select("display_name, avatar_url, country, years_teaching")
         .eq("id", user.id)
         .maybeSingle();
-      setName(data?.display_name || localStorage.getItem("sentivo_teacher_name") || "");
+      setName(data?.display_name || localStorage.getItem("sentenco_teacher_name") || "");
       setCountry(data?.country || "");
       setYearsTeaching(data?.years_teaching ?? "");
       setAvatarUrl(data?.avatar_url || null);
@@ -121,7 +121,7 @@ export default function ProfileSettings({ onClose, onSaved }) {
     }
     setSaving(false);
     if (saveError) { setError(saveError.message || "Couldn't save your profile."); return; }
-    localStorage.setItem("sentivo_teacher_name", trimmedName);
+    localStorage.setItem("sentenco_teacher_name", trimmedName);
     onSaved?.(avatarUrl);
     onClose();
   }

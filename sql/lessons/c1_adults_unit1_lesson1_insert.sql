@@ -1,4 +1,4 @@
--- Sentivo C1 Adults -- Unit 1, Lesson 1 (rebuilt design)
+-- Sentenco C1 Adults -- Unit 1, Lesson 1 (rebuilt design)
 -- Universal topic bank + advanced C1 wording + 6-slide student flow
 -- + single-sheet teacher guide. Run c1_adults_delete_old_content.sql
 -- FIRST if the old pilot lesson is still live.

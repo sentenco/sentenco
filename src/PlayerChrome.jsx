@@ -8,7 +8,7 @@ export default function PlayerChrome({ eyebrow, children }) {
       <style>{CSS}</style>
       <div className="pch-header">
         <span className="pch-brand">
-          <img src="/logo-sentivo.png" alt="" className="pch-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="pch-logo" />entenco
         </span>
         {eyebrow && <span className="pch-eyebrow">{eyebrow}</span>}
       </div>

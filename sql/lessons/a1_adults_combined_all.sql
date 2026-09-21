@@ -2,7 +2,7 @@
 -- Run delete_all_a1.sql FIRST, then this file.
 
 -- A1 Adults Unit 1: Hello and Introductions (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Hello and Introductions

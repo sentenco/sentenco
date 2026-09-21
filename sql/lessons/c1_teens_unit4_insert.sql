@@ -1,4 +1,4 @@
--- Sentivo C1 Teens -- Unit 4: Register, Tone, and Audience Awareness
+-- Sentenco C1 Teens -- Unit 4: Register, Tone, and Audience Awareness
 -- Mode order: Performance -> Model -> Output
 -- Content sourced from docs/curriculum/c1-teens.md and
 -- c1-teens-teacher-guidance.md.

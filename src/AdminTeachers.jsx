@@ -35,7 +35,7 @@ export default function AdminTeachers() {
       <style>{CSS}</style>
       <div className="adt-topbar">
         <button type="button" className="adt-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="adt-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="adt-brand-logo" />entenco
         </button>
         <h1 className="adt-topbar-title">Teachers</h1>
       </div>

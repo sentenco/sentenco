@@ -36,7 +36,7 @@ function openLessonPopup(path) {
   const top = Math.max(0, Math.floor((screenH - h) / 2));
   window.open(
     path,
-    "sentivoTrackLesson",
+    "sentencoTrackLesson",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

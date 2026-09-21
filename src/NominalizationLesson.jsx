@@ -232,7 +232,7 @@ export default function NominalizationLesson() {
       <div className="noml-stage">
         <div className="noml-deck">
           <div className="noml-deck-header">
-            <span className="noml-brand"><img src="/logo-sentivo.png" alt="" className="noml-brand-logo" />entenco</span>
+            <span className="noml-brand"><img src="/logo-sentenco.png" alt="" className="noml-brand-logo" />entenco</span>
             <span className="noml-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="noml-deck-body" key={slideIdx}>

@@ -39,7 +39,7 @@ export default function ProofreadingActivity({ item }) {
         <div className="pf-card">
           <div className="pf-bar">
             <span className="pf-brand">
-              <img src="/logo-sentivo.png" alt="" className="pf-logo" />
+              <img src="/logo-sentenco.png" alt="" className="pf-logo" />
               <span className="pf-brand-word">entenco</span>
             </span>
             <div className="pf-bar-right">

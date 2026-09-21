@@ -15,7 +15,7 @@ export default function StoryMakingGuide({ item }) {
 
       <div className="smg-topbar">
         <span className="smg-brand">
-          <img src="/logo-sentivo.png" alt="" className="smg-logo" />
+          <img src="/logo-sentenco.png" alt="" className="smg-logo" />
           <span className="smg-brand-word">entenco</span>
         </span>
         <span className="smg-eyebrow">Teacher's Guide · Story Making</span>

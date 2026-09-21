@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './migrateStorage.js'
 import './index.css'
 import Library from './Library.jsx'
 import Flashcards from './Flashcards.jsx'

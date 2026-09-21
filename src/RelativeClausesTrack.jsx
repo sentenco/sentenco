@@ -12,7 +12,7 @@ function openLesson(code) {
 
   window.open(
     `/library/grammar/relative-clauses/${code}`,
-    "sentivoRelativeClauses",
+    "sentencoRelativeClauses",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

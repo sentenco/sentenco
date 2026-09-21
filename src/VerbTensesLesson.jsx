@@ -316,7 +316,7 @@ export default function VerbTensesLesson() {
       <div className="vtl-stage">
         <div className="vtl-deck" style={{ "--unit-accent": accent }}>
           <div className="vtl-deck-header">
-            <span className="vtl-brand"><img src="/logo-sentivo.png" alt="" className="vtl-brand-logo" />entenco</span>
+            <span className="vtl-brand"><img src="/logo-sentenco.png" alt="" className="vtl-brand-logo" />entenco</span>
             <span className="vtl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="vtl-deck-body" key={slideIdx}>

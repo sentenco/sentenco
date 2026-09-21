@@ -1,4 +1,4 @@
--- Lets the "Prompt of the day" be a real post authored by "Sentivo"
+-- Lets the "Prompt of the day" be a real post authored by "Sentenco"
 -- (system account, no auth user) instead of a separate banner, so
 -- teachers can like/comment on it like any other post. Run once in the
 -- Supabase SQL editor, after sql/community_rename_other_to_resource.sql.

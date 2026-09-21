@@ -16,7 +16,7 @@ function openLesson(trackId, num) {
 
   window.open(
     `/library/shift/${trackId}/${num}`,
-    "sentivoShiftPlayer",
+    "sentencoShiftPlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -33,7 +33,7 @@ function openGuide(trackId, num) {
 
   window.open(
     `/library/shift/${trackId}/${num}/guide`,
-    "sentivoShiftGuide",
+    "sentencoShiftGuide",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

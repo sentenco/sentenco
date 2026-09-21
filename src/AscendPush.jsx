@@ -155,7 +155,7 @@ export default function AscendPush({ lesson, track }) {
       <div className="asp-page">
         <div className="asp-deck">
           <div className="asp-deck-header">
-            <div className="asp-brand"><img src="/logo-sentivo.png" alt="" className="asp-brand-logo" />entenco</div>
+            <div className="asp-brand"><img src="/logo-sentenco.png" alt="" className="asp-brand-logo" />entenco</div>
             <div className="asp-header-right">
               <span className={`asp-stage-pill ${slide.type === "recall" ? "is-recall" : ""}`}>{STAGE_LABELS[slide.type]}</span>
               <span className="asp-count-pill">Ascend</span>

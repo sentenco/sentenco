@@ -12,7 +12,7 @@ function openLesson(code) {
 
   window.open(
     `/library/grammar/punctuation-essentials/${code}`,
-    "sentivoPunctuationEssentials",
+    "sentencoPunctuationEssentials",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

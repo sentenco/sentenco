@@ -12,7 +12,7 @@ import { getLesson } from "./deriveTracks";
 function TopBar() {
   return (
     <div className="dv-brand">
-      <img src="/logo-sentivo.png" alt="" className="dv-brand-logo" />
+      <img src="/logo-sentenco.png" alt="" className="dv-brand-logo" />
       <span className="dv-brand-name">entenco</span>
     </div>
   );

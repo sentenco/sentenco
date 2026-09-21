@@ -19,7 +19,7 @@ function openPopup(path, name, w, h) {
 }
 
 function openLessonPopup(path) {
-  openPopup(path, "sentivoLessonPlayer", 820, 860);
+  openPopup(path, "sentencoLessonPlayer", 820, 860);
 }
 
 export default function LevelPage({ level = "A1" }) {

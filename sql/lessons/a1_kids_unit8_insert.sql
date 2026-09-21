@@ -1,5 +1,5 @@
 -- A1 Kids Unit 8: Food I Like (5 lessons) — TIERED (Combination)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Food

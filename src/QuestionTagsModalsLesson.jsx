@@ -241,7 +241,7 @@ export default function QuestionTagsModalsLesson() {
       <div className="qtml-stage">
         <div className="qtml-deck">
           <div className="qtml-deck-header">
-            <span className="qtml-brand"><img src="/logo-sentivo.png" alt="" className="qtml-brand-logo" />entenco</span>
+            <span className="qtml-brand"><img src="/logo-sentenco.png" alt="" className="qtml-brand-logo" />entenco</span>
             <span className="qtml-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="qtml-deck-body" key={slideIdx}>

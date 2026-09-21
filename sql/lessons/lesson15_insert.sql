@@ -1,4 +1,4 @@
--- Sentivo C1 Adults — Unit 1, Lesson 1: Taking a Quick Position
+-- Sentenco C1 Adults — Unit 1, Lesson 1: Taking a Quick Position
 -- Pilot lesson for the new C1/C2 slide types (scenario, diagnosis, upgrade,
 -- transfer) — see docs/curriculum/c1-adults.md and
 -- docs/curriculum/c1-adults-teacher-guidance.md for the full unit/lesson

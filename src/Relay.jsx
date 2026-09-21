@@ -187,7 +187,7 @@ export default function Relay() {
       <div className="rl-stage">
         <div className="rl-deck">
           <div className="rl-deck-header">
-            <span className="rl-brand"><img src="/logo-sentivo.png" alt="" className="rl-brand-logo" />entenco</span>
+            <span className="rl-brand"><img src="/logo-sentenco.png" alt="" className="rl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="rl-deck-body" key={slideIdx}>

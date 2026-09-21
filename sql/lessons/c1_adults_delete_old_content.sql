@@ -1,4 +1,4 @@
--- Sentivo C1 Adults -- Delete old pilot content before rebuild
+-- Sentenco C1 Adults -- Delete old pilot content before rebuild
 -- The Adults C1 lesson design changed completely (universal topics,
 -- advanced wording, 5-6 slide student flow, single-sheet teacher guide).
 -- This removes the only Adults C1 content actually live in Supabase --

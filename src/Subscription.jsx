@@ -75,7 +75,7 @@ export default function Subscription() {
       <style>{CSS}</style>
       <header className="sub-topbar">
         <button type="button" className="sub-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="sub-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="sub-brand-logo" />entenco
         </button>
         <h1 className="sub-topbar-title">Subscription</h1>
       </header>

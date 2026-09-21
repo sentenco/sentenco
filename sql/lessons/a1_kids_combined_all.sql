@@ -7,7 +7,7 @@
 -- Units 4-12 still use the original blank-only mechanic pending the same treatment.
 
 -- A1 Kids Unit 1: Hello, My Name, Age, Family, and Likes (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation.
 -- Fresh INSERT version (for use after delete_all_a1.sql) -- same content that
 -- fix_kids_unit1_2_structure.sql (now removed) applied as an UPDATE against the live rows.
 -- Run this whole script in the Supabase SQL editor.
@@ -1135,7 +1135,7 @@ values
 );
 
 -- A1 Kids Unit 2: My Day (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation.
 -- Fresh INSERT version (for use after delete_all_a1.sql) -- same content that
 -- fix_kids_unit1_2_structure.sql (now removed) applied as an UPDATE against the live rows.
 -- Run this whole script in the Supabase SQL editor.
@@ -2240,7 +2240,7 @@ values
 );
 
 -- A1 Kids Unit 3: My Family (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Family Vocabulary
@@ -3369,7 +3369,7 @@ values
 );
 
 -- A1 Kids Unit 4: Colors and Numbers (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Colors
@@ -4398,7 +4398,7 @@ values
 );
 
 -- A1 Kids Unit 5: Classroom Things (5 lessons) — TIERED (Combination)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Classroom Objects
@@ -5427,7 +5427,7 @@ values
 );
 
 -- A1 Kids Unit 6: Animals (5 lessons) — TIERED (Combination)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Animals
@@ -6456,7 +6456,7 @@ values
 );
 
 -- A1 Kids Unit 7: My Toys (5 lessons) — TIERED (Combination)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Toys
@@ -7485,7 +7485,7 @@ values
 );
 
 -- A1 Kids Unit 8: Food I Like (5 lessons) — TIERED (Combination)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Food
@@ -8514,7 +8514,7 @@ values
 );
 
 -- A1 Kids Unit 9: My Body (5 lessons) — TIERED (Bridge)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Body Parts
@@ -9543,7 +9543,7 @@ values
 );
 
 -- A1 Kids Unit 10: Weather Today (5 lessons) — TIERED (Bridge)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Weather Words
@@ -10572,7 +10572,7 @@ values
 );
 
 -- A1 Kids Unit 11: My House (5 lessons) — TIERED (Bridge)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Rooms of the House
@@ -11601,7 +11601,7 @@ values
 );
 
 -- A1 Kids Unit 12: My Feelings (5 lessons) — TIERED (Bridge)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Feelings Vocabulary

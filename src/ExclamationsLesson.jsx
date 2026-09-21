@@ -232,7 +232,7 @@ export default function ExclamationsLesson() {
       <div className="excl-stage">
         <div className="excl-deck">
           <div className="excl-deck-header">
-            <span className="excl-brand"><img src="/logo-sentivo.png" alt="" className="excl-brand-logo" />entenco</span>
+            <span className="excl-brand"><img src="/logo-sentenco.png" alt="" className="excl-brand-logo" />entenco</span>
             <span className="excl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="excl-deck-body" key={slideIdx}>

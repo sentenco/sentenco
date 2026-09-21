@@ -26,7 +26,7 @@ const SLIDE_COMPONENTS = {
   vocabulary: SlideVocabulary,
   phrases: SlidePhrases,
   activity: SlideActivity,
-  // A1 Kids new 9-slide architecture (docs/curriculum/sentivo_curriculum_master
+  // A1 Kids new 9-slide architecture (docs/curriculum/sentenco_curriculum_master
   // -for-claude.md): "phrases" doubles as Highlight, "activity" stays reserved
   // for Teens/Adults' existing blank-drill content. Kids gets two new roles:
   // practice (the Match/Sort/Order/Choice/Blank mechanics, guided/controlled)

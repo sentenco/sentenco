@@ -237,7 +237,7 @@ export default function PhrasalVerbsLesson() {
       <div className="phvl-stage">
         <div className="phvl-deck">
           <div className="phvl-deck-header">
-            <span className="phvl-brand"><img src="/logo-sentivo.png" alt="" className="phvl-brand-logo" />entenco</span>
+            <span className="phvl-brand"><img src="/logo-sentenco.png" alt="" className="phvl-brand-logo" />entenco</span>
             <span className="phvl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="phvl-deck-body" key={slideIdx}>

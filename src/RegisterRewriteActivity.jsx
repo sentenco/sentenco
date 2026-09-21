@@ -37,7 +37,7 @@ export default function RegisterRewriteActivity({ item, roundIndex = 0 }) {
         <div className="rr2-card">
           <div className="rr2-bar">
             <span className="rr2-brand">
-              <img src="/logo-sentivo.png" alt="" className="rr2-logo" />
+              <img src="/logo-sentenco.png" alt="" className="rr2-logo" />
               <span className="rr2-brand-word">entenco</span>
               <span className="rr2-brand-sep">·</span>
               <span className="rr2-brand-type">Register Rewrite</span>

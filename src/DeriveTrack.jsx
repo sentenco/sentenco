@@ -13,7 +13,7 @@ function openLesson(trackId, num) {
 
   window.open(
     `/library/derive/${trackId}/${num}`,
-    "sentivoDerivePlayer",
+    "sentencoDerivePlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -30,7 +30,7 @@ function openGuide(trackId, num) {
 
   window.open(
     `/library/derive/${trackId}/${num}/guide`,
-    "sentivoDeriveGuide",
+    "sentencoDeriveGuide",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

@@ -1,5 +1,5 @@
 -- A2 Teens Unit 7: Town Life and Getting Around (5 lessons) — TIERED (Combination)
--- Regenerated per the Sentivo Intra-Level Progression Framework.
+-- Regenerated per the Sentenco Intra-Level Progression Framework.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Places Teens Go

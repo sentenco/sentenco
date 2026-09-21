@@ -21,7 +21,7 @@ function openLesson(trackId, num) {
 
   window.open(
     `/library/bridge/${trackId}/${num}`,
-    "sentivoBridgePlayer",
+    "sentencoBridgePlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -36,7 +36,7 @@ function openGuide(trackId, num) {
 
   window.open(
     `/library/bridge/${trackId}/${num}/guide`,
-    "sentivoBridgeGuide",
+    "sentencoBridgeGuide",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

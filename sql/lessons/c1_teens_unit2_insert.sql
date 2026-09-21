@@ -1,4 +1,4 @@
--- Sentivo C1 Teens -- Unit 2: Mediation, Source Comparison, and Summaries
+-- Sentenco C1 Teens -- Unit 2: Mediation, Source Comparison, and Summaries
 -- Mode order: Model -> Output -> Performance
 -- Content sourced from docs/curriculum/c1-teens.md and
 -- c1-teens-teacher-guidance.md.

@@ -84,7 +84,7 @@ export default function SyllabusHub() {
       <div className="syh-stage">
         <div className="syh-topbar">
           <button type="button" className="syh-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-            <img src="/logo-sentivo.png" alt="" className="syh-brand-logo" />entenco
+            <img src="/logo-sentenco.png" alt="" className="syh-brand-logo" />entenco
           </button>
         </div>
 

@@ -612,7 +612,7 @@ export default function E8ReadingReactionsLesson() {
           <div className="e8-slide" style={{ transform: `scale(${scale})` }}>
             <div className="e8-top">
               <div className="e8-brand">
-                <span className="e8-brand-badge"><img className="e8-brand-logo" src="/logo-sentivo.png" alt="" /></span>
+                <span className="e8-brand-badge"><img className="e8-brand-logo" src="/logo-sentenco.png" alt="" /></span>
                 <span>entenco</span>
               </div>
               <div className="e8-stage-chip">

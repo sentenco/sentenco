@@ -187,7 +187,7 @@ export default function ModalsLesson() {
       <div className="mdl-stage">
         <div className="mdl-deck">
           <div className="mdl-deck-header">
-            <span className="mdl-brand"><img src="/logo-sentivo.png" alt="" className="mdl-brand-logo" />entenco</span>
+            <span className="mdl-brand"><img src="/logo-sentenco.png" alt="" className="mdl-brand-logo" />entenco</span>
             <span className="mdl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="mdl-deck-body" key={slideIdx}>

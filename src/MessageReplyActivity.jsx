@@ -78,7 +78,7 @@ export default function MessageReplyActivity({ item }) {
         <div className="mr2-card">
           <div className="mr2-bar">
             <span className="mr2-brand">
-              <img src="/logo-sentivo.png" alt="" className="mr2-logo" />
+              <img src="/logo-sentenco.png" alt="" className="mr2-logo" />
               <span className="mr2-brand-word">entenco</span>
               <span className="mr2-brand-sep">·</span>
               <span className="mr2-brand-type">Message Reply</span>

@@ -212,7 +212,7 @@ export default function BlendingBeginsLesson() {
 
           <div className="slide-header">
             <div className="brand-bubble">
-              <img className="brand-logo" src="/logo-sentivo.png" alt="" />
+              <img className="brand-logo" src="/logo-sentenco.png" alt="" />
               <span className="brand-word">entenco</span>
             </div>
             <div className="stage-chip">

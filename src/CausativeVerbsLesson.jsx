@@ -232,7 +232,7 @@ export default function CausativeVerbsLesson() {
       <div className="cvl-stage">
         <div className="cvl-deck">
           <div className="cvl-deck-header">
-            <span className="cvl-brand"><img src="/logo-sentivo.png" alt="" className="cvl-brand-logo" />entenco</span>
+            <span className="cvl-brand"><img src="/logo-sentenco.png" alt="" className="cvl-brand-logo" />entenco</span>
             <span className="cvl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="cvl-deck-body" key={slideIdx}>

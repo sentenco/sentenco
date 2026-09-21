@@ -1,4 +1,4 @@
--- Sentivo A1 Kids — Unit 1, Lesson 5: All About Me
+-- Sentenco A1 Kids — Unit 1, Lesson 5: All About Me
 -- Run this whole script in the Supabase SQL editor.
 
 insert into lessons (id, title, level, age_track, unit_number, lesson_number, topic, duration_minutes, slide_count, is_active)

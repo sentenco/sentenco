@@ -10,9 +10,9 @@ const MODES = [
 ];
 
 const TRANSLATE_LANGUAGES = ["Filipino", "English", "Spanish", "Chinese", "Japanese", "Korean", "Vietnamese", "Polish", "Hebrew"];
-const SOURCE_LANG_STORAGE_KEY = "sentivo_translate_source_lang";
-const LANG_STORAGE_KEY = "sentivo_translate_target_lang";
-const HISTORY_STORAGE_KEY = "sentivo_lookup_history";
+const SOURCE_LANG_STORAGE_KEY = "sentenco_translate_source_lang";
+const LANG_STORAGE_KEY = "sentenco_translate_target_lang";
+const HISTORY_STORAGE_KEY = "sentenco_lookup_history";
 const MAX_HISTORY = 30;
 
 function loadHistory() {
@@ -319,7 +319,7 @@ export default function SearchLookup() {
       <style>{CSS}</style>
       <div className="sl-topbar">
         <button type="button" className="sl-nav-brand" onClick={() => navigate("/library")} title="Back to Library">
-          <img src="/logo-sentivo.png" alt="" className="sl-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="sl-brand-logo" />entenco
         </button>
       </div>
 

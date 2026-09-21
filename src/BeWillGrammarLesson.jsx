@@ -157,7 +157,7 @@ export default function BeWillGrammarLesson() {
           <div className="gbw-header">
             <div className="gbw-brand">
               <span className="gbw-brand-badge">
-                <img className="gbw-brand-logo" src="/logo-sentivo.png" alt="" />
+                <img className="gbw-brand-logo" src="/logo-sentenco.png" alt="" />
               </span>
               <span>entenco</span>
             </div>

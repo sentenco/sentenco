@@ -1,7 +1,7 @@
 -- ============================================================
 -- A1 Kids: Units 1-12 combined fresh-start SQL
 -- Update-in-place against live Supabase rows (60 lessons total).
--- Generated from sentivo_a1_kids_lesson_titles_units_1_to_12.md
+-- Generated from sentenco_a1_kids_lesson_titles_units_1_to_12.md
 -- Each unit below is its own begin/commit transaction block,
 -- so this whole file is safe to paste and run in one go.
 -- ============================================================
@@ -10,7 +10,7 @@
 -- UNIT 1
 -- ─────────────────────────────────────────────
 -- A1 Kids Unit 1: fresh start on new topics (About Me and My World)
--- Source: sentivo_a1_kids_lesson_titles_units_1_to_12.md + sentivo_curriculum_master_for_claude.md
+-- Source: sentenco_a1_kids_lesson_titles_units_1_to_12.md + sentenco_curriculum_master_for_claude.md
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase, and these topics fully replace
 -- Unit 1's old lessons (Hello & My Name/My Age/My Family/My Likes/All About Me).
@@ -1027,7 +1027,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 2
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 2: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 2: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -2042,7 +2042,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 3
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 3: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 3: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -3057,7 +3057,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 4
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 4: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 4: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -4070,7 +4070,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 5
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 5: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 5: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -5085,7 +5085,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 6
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 6: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 6: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -6100,7 +6100,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 7
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 7: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 7: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -7115,7 +7115,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 8
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 8: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 8: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -8130,7 +8130,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 9
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 9: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 9: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -9143,7 +9143,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 10
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 10: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 10: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -10158,7 +10158,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 11
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 11: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 11: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;
@@ -11173,7 +11173,7 @@ commit;
 -- ─────────────────────────────────────────────
 -- UNIT 12
 -- ─────────────────────────────────────────────
--- A1 Kids Unit 12: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 12: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;

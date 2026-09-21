@@ -1,4 +1,4 @@
--- A1 Kids Unit 4: fresh start on new topics (matches sentivo_a1_kids_lesson_titles_units_1_to_12.md)
+-- A1 Kids Unit 4: fresh start on new topics (matches sentenco_a1_kids_lesson_titles_units_1_to_12.md)
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase; reuses the existing lesson UUIDs.
 begin;

@@ -17,7 +17,7 @@ export default function LegalPage() {
       <style>{CSS}</style>
       <header className="legal-topbar">
         <button type="button" className="legal-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="legal-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="legal-brand-logo" />entenco
         </button>
         <h1 className="legal-topbar-title">Legal</h1>
       </header>

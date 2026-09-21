@@ -1,4 +1,4 @@
--- Sentivo C2 Adults -- Unit 2: Advanced Mediation and Synthesis
+-- Sentenco C2 Adults -- Unit 2: Advanced Mediation and Synthesis
 -- Mode order: Model -> Output -> Performance
 -- Content sourced from docs/curriculum/c2-adults.md and
 -- c2-adults-teacher-guidance.md.

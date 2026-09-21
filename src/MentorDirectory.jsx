@@ -49,7 +49,7 @@ export default function MentorDirectory() {
       <style>{CSS}</style>
       <div className="md-topbar">
         <button type="button" className="md-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="md-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="md-brand-logo" />entenco
         </button>
         <h1 className="md-topbar-title">Find a Mentor</h1>
       </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TEACHER_NAME_KEY = "sentivo_teacher_name";
+const TEACHER_NAME_KEY = "sentenco_teacher_name";
 
 const ICON_PROPS = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 

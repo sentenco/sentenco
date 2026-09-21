@@ -37,7 +37,7 @@ function openCurriculumPopup(path) {
   const top = Math.max(0, Math.floor((screenH - h) / 2));
   window.open(
     path,
-    "sentivoLessonPlayer",
+    "sentencoLessonPlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -304,7 +304,7 @@ export default function SyllabusEditor() {
       <div className="syl-frame no-print">
         <div className="syl-topbar">
           <button type="button" className="syl-brand" onClick={() => navigate("/library/syllabus")} title="Back to your syllabi">
-            <img src="/logo-sentivo.png" alt="" className="syl-brand-logo" />entenco
+            <img src="/logo-sentenco.png" alt="" className="syl-brand-logo" />entenco
           </button>
           <div className="syl-topbar-actions">
             <span className="syl-saved-note">{saving ? "Saving…" : savedAt ? "Saved" : ""}</span>

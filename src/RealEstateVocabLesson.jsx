@@ -112,7 +112,7 @@ export default function RealEstateVocabLesson() {
           <div className="rev-header">
             <div className="rev-brand">
               <span className="rev-brand-badge">
-                <img className="rev-brand-logo" src="/logo-sentivo.png" alt="" />
+                <img className="rev-brand-logo" src="/logo-sentenco.png" alt="" />
               </span>
               <span>entenco</span>
             </div>

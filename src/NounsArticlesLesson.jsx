@@ -183,7 +183,7 @@ export default function NounsArticlesLesson() {
       <div className="naql-stage">
         <div className="naql-deck">
           <div className="naql-deck-header">
-            <span className="naql-brand"><img src="/logo-sentivo.png" alt="" className="naql-brand-logo" />entenco</span>
+            <span className="naql-brand"><img src="/logo-sentenco.png" alt="" className="naql-brand-logo" />entenco</span>
             <span className="naql-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="naql-deck-body" key={slideIdx}>

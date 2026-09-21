@@ -18,7 +18,7 @@ function openLesson(trackId, num) {
 
   window.open(
     `/library/ascend/${trackId}/${num}`,
-    "sentivoAscendPlayer",
+    "sentencoAscendPlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -35,7 +35,7 @@ function openGuide(trackId, num) {
 
   window.open(
     `/library/ascend/${trackId}/${num}/guide`,
-    "sentivoAscendGuide",
+    "sentencoAscendGuide",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

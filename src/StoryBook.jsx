@@ -44,7 +44,7 @@ function BookHeader({ stage }) {
     <div className="sb-book-header">
       <span className="sb-book-brand">
         <span className="sb-book-brand-chip">
-          <img src="/logo-sentivo.png" alt="" className="sb-book-brand-logo" />
+          <img src="/logo-sentenco.png" alt="" className="sb-book-brand-logo" />
         </span>
         Sentenco
       </span>

@@ -82,7 +82,7 @@ export default function Bridge() {
 
         <div className="br-deck">
           <div className="br-deck-header">
-            <div className="br-brand"><img src="/logo-sentivo.png" alt="" className="br-brand-logo" />entenco</div>
+            <div className="br-brand"><img src="/logo-sentenco.png" alt="" className="br-brand-logo" />entenco</div>
             <div className="br-header-right">
               <span className="br-stage-pill">{stageLabel(slide)}</span>
               <span className="br-count-pill">Bridge</span>

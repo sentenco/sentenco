@@ -14,8 +14,8 @@ import { supabase } from "./supabaseClient";
 // Translate included) block cross-origin framing outright.
 
 const TRANSLATE_LANGUAGES = ["Filipino", "English", "Spanish", "Chinese", "Japanese", "Korean", "Vietnamese", "Polish", "Hebrew"];
-const SOURCE_LANG_KEY = "sentivo_translate_source_lang";
-const TARGET_LANG_KEY = "sentivo_translate_target_lang";
+const SOURCE_LANG_KEY = "sentenco_translate_source_lang";
+const TARGET_LANG_KEY = "sentenco_translate_target_lang";
 
 const PANEL_TYPES = {
   writing: { label: "Writing Board", icon: "✏️", hue: "coral", src: "/library/notebook/minimal", w: 460, h: 360 },
@@ -229,7 +229,7 @@ export default function TeacherBoard() {
 
       <div className="tb-topbar">
         <button type="button" className="tb-brand" onClick={() => navigate("/library")} title="Back to Library">
-          <img src="/logo-sentivo.png" alt="" className="tb-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="tb-brand-logo" />entenco
         </button>
         <div className="tb-topbar-title">
           <h1>Teacher Board</h1>

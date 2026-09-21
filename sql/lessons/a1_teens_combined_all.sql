@@ -7,7 +7,7 @@ begin;
 
 -- ===== a1_teens_unit1_insert.sql (5 lessons) =====
 -- A1 Teens Unit 1: Hello and Me (5 lessons) — TIERED (Foundation)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Hello and Me

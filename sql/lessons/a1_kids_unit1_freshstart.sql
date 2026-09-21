@@ -1,5 +1,5 @@
 -- A1 Kids Unit 1: fresh start on new topics (About Me and My World)
--- Source: sentivo_a1_kids_lesson_titles_units_1_to_12.md + sentivo_curriculum_master_for_claude.md
+-- Source: sentenco_a1_kids_lesson_titles_units_1_to_12.md + sentenco_curriculum_master_for_claude.md
 -- Title/Warm-up/Vocabulary/Highlight/Practice/Activity/Reading-or-Speaking/Review/Wrap-up.
 -- Update-in-place: Kids A1 is already live in Supabase, and these topics fully replace
 -- Unit 1's old lessons (Hello & My Name/My Age/My Family/My Likes/All About Me).

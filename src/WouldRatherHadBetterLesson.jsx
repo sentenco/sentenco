@@ -232,7 +232,7 @@ export default function WouldRatherHadBetterLesson() {
       <div className="wrhl-stage">
         <div className="wrhl-deck">
           <div className="wrhl-deck-header">
-            <span className="wrhl-brand"><img src="/logo-sentivo.png" alt="" className="wrhl-brand-logo" />entenco</span>
+            <span className="wrhl-brand"><img src="/logo-sentenco.png" alt="" className="wrhl-brand-logo" />entenco</span>
             <span className="wrhl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="wrhl-deck-body" key={slideIdx}>

@@ -148,7 +148,7 @@ function openTopicPlayer(typeKey, topicKey) {
 
   window.open(
     `/library/writing/${typeKey}/${topicKey}/player`,
-    `sentivoWritingPlayer_${typeKey}`,
+    `sentencoWritingPlayer_${typeKey}`,
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -167,7 +167,7 @@ function openTopicRound(typeKey, topicKey, roundIndex) {
 
   window.open(
     `/library/writing/${typeKey}/${topicKey}/player/${roundIndex}`,
-    `sentivoWritingPlayer_${typeKey}`,
+    `sentencoWritingPlayer_${typeKey}`,
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -184,7 +184,7 @@ function openTopicGuide(typeKey, topicKey) {
 
   window.open(
     `/library/writing/${typeKey}/${topicKey}/guide`,
-    `sentivoWritingGuide_${typeKey}`,
+    `sentencoWritingGuide_${typeKey}`,
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

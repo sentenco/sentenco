@@ -200,7 +200,7 @@ export default function StoryMakingActivity({ item }) {
           <div className="sm2-content-pane">
             <div className="sm2-brand-row">
               <span className="sm2-brand-pill">
-                <img className="sm2-brand-logo" src="/logo-sentivo.png" alt="" />
+                <img className="sm2-brand-logo" src="/logo-sentenco.png" alt="" />
                 <span className="sm2-brand-word">entenco</span>
                 <span className="sm2-brand-sep">·</span>
                 <span className="sm2-brand-type">Story Making</span>

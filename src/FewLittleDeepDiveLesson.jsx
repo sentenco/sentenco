@@ -232,7 +232,7 @@ export default function FewLittleDeepDiveLesson() {
       <div className="fll-stage">
         <div className="fll-deck">
           <div className="fll-deck-header">
-            <span className="fll-brand"><img src="/logo-sentivo.png" alt="" className="fll-brand-logo" />entenco</span>
+            <span className="fll-brand"><img src="/logo-sentenco.png" alt="" className="fll-brand-logo" />entenco</span>
             <span className="fll-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="fll-deck-body" key={slideIdx}>

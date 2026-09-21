@@ -350,7 +350,7 @@ export default function WheelPage() {
             disabled={spinning || n < 2}
             title={n < 2 ? "Add at least 2 words to spin" : "Spin"}
           >
-            <img src="/logo-sentivo.png" alt="" className="wp-hub-logo" />
+            <img src="/logo-sentenco.png" alt="" className="wp-hub-logo" />
             <span className="wp-hub-label">{spinning ? "…" : "SPIN"}</span>
           </button>
         </div>

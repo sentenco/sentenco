@@ -181,7 +181,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
-  const [myName] = useState(() => localStorage.getItem("sentivo_teacher_name") || "");
+  const [myName] = useState(() => localStorage.getItem("sentenco_teacher_name") || "");
 
   const [profile, setProfile] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);

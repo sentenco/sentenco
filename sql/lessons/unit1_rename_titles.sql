@@ -1,4 +1,4 @@
--- Sentivo A1 Kids — Unit 1 title updates
+-- Sentenco A1 Kids — Unit 1 title updates
 -- Run this in the Supabase SQL editor.
 
 update lessons

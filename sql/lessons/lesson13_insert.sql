@@ -1,4 +1,4 @@
--- Sentivo A1 Kids — Unit 2, Lesson 7: My Day Check (Unit 2 assessment)
+-- Sentenco A1 Kids — Unit 2, Lesson 7: My Day Check (Unit 2 assessment)
 -- Run this whole script in the Supabase SQL editor.
 
 insert into lessons (id, title, level, age_track, unit_number, lesson_number, topic, duration_minutes, slide_count, is_active)

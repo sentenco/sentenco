@@ -1,3 +1,4 @@
+import { SUPPORT_EMAIL } from "./siteConfig.js";
 // Content for the legal pages (src/LegalPage.jsx). Kept as structured data,
 // separate from layout, so the three documents can share one page shell.
 // Drafted as a solid starting point grounded in what Sentenco actually does —
@@ -86,7 +87,7 @@ export const TERMS_CONTENT = {
     },
     {
       heading: "11. Contact",
-      body: ["Questions about these Terms? Reach us at hello@sentivo.com."],
+      body: ["Questions about these Terms? Reach us at " + SUPPORT_EMAIL + "."],
     },
   ],
 };
@@ -167,7 +168,7 @@ export const PRIVACY_CONTENT = {
     {
       heading: "10. Contact",
       body: [
-        "Questions about this Privacy Policy, or requests about your data, can be sent to hello@sentivo.com.",
+        "Questions about this Privacy Policy, or requests about your data, can be sent to " + SUPPORT_EMAIL + ".",
       ],
     },
   ],
@@ -207,7 +208,7 @@ export const REFUND_CONTENT = {
     },
     {
       heading: "5. How to request a refund",
-      body: ["Email hello@sentivo.com with your account email and the reason for your request. We aim to respond within a few business days."],
+      body: ["Email " + SUPPORT_EMAIL + " with your account email and the reason for your request. We aim to respond within a few business days."],
     },
   ],
 };

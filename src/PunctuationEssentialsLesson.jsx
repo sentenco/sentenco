@@ -183,7 +183,7 @@ export default function PunctuationEssentialsLesson() {
       <div className="puel-stage">
         <div className="puel-deck">
           <div className="puel-deck-header">
-            <span className="puel-brand"><img src="/logo-sentivo.png" alt="" className="puel-brand-logo" />entenco</span>
+            <span className="puel-brand"><img src="/logo-sentenco.png" alt="" className="puel-brand-logo" />entenco</span>
             <span className="puel-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="puel-deck-body" key={slideIdx}>

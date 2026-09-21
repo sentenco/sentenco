@@ -1,5 +1,5 @@
 -- A1 Kids Unit 12: My Feelings (5 lessons) — TIERED (Bridge)
--- Regenerated per the Sentivo Intra-Level Progression Framework + lesson-level escalation + task rotation.
+-- Regenerated per the Sentenco Intra-Level Progression Framework + lesson-level escalation + task rotation.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Feelings Vocabulary

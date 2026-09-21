@@ -183,7 +183,7 @@ export default function PassiveVoiceLesson() {
       <div className="pvl-stage">
         <div className="pvl-deck">
           <div className="pvl-deck-header">
-            <span className="pvl-brand"><img src="/logo-sentivo.png" alt="" className="pvl-brand-logo" />entenco</span>
+            <span className="pvl-brand"><img src="/logo-sentenco.png" alt="" className="pvl-brand-logo" />entenco</span>
             <span className="pvl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="pvl-deck-body" key={slideIdx}>

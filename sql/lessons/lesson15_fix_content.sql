@@ -1,4 +1,4 @@
--- Sentivo C1 Adults — Unit 1, Lesson 1: content fix (student/teacher split)
+-- Sentenco C1 Adults — Unit 1, Lesson 1: content fix (student/teacher split)
 -- Run this instead of re-running lesson15_insert.sql — that one already
 -- ran once (the "lessons" row exists), so re-running it hits a duplicate
 -- key error on lessons_pkey. This script only replaces the 4 slide rows

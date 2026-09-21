@@ -216,7 +216,7 @@ export default function SentencePatternsLesson() {
       <div className="spl-stage">
         <div className="spl-deck">
           <div className="spl-deck-header">
-            <span className="spl-brand"><img src="/logo-sentivo.png" alt="" className="spl-brand-logo" />entenco</span>
+            <span className="spl-brand"><img src="/logo-sentenco.png" alt="" className="spl-brand-logo" />entenco</span>
             <span className="spl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="spl-deck-body" key={slideIdx}>

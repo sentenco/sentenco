@@ -1,4 +1,4 @@
-# Sentivo Curriculum Build Guide
+# Sentenco Curriculum Build Guide
 
 Read this file first in any new session before building or editing curriculum
 content. It's the shared source of truth across sessions — if you're a fresh
@@ -8,7 +8,7 @@ or edit**, so the next session (and the user) can see what's done at a glance.
 
 ## What this project is
 
-Sentivo is an ESL lesson-building app (Vite + React + Supabase, deployed on
+Sentenco is an ESL lesson-building app (Vite + React + Supabase, deployed on
 Vercel). Teachers browse Library → a CEFR level (A1–C2) → an age track
 (kids/teens/adults) → a lessons grid → an individual lesson, which opens in
 `src/LessonPlayer.jsx` as a 780×440 popup with a fixed sequence of slides.

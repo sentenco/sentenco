@@ -232,7 +232,7 @@ export default function EvenThoughIfSoLesson() {
       <div className="etil-stage">
         <div className="etil-deck">
           <div className="etil-deck-header">
-            <span className="etil-brand"><img src="/logo-sentivo.png" alt="" className="etil-brand-logo" />entenco</span>
+            <span className="etil-brand"><img src="/logo-sentenco.png" alt="" className="etil-brand-logo" />entenco</span>
             <span className="etil-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="etil-deck-body" key={slideIdx}>

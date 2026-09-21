@@ -324,7 +324,7 @@ export default function SparkAdults() {
       <div className="spa-stage">
         <div className="spa-deck">
           <div className="spa-deck-header">
-            <span className="spa-brand"><img src="/logo-sentivo.png" alt="" className="spa-brand-logo" />entenco</span>
+            <span className="spa-brand"><img src="/logo-sentenco.png" alt="" className="spa-brand-logo" />entenco</span>
             <span className="spa-stage-label">{stageLabel(slide)}</span>
           </div>
           <div className="spa-deck-body" key={slideIdx}>

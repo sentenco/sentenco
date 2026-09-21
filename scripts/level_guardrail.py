@@ -1,5 +1,5 @@
 """
-Level-appropriateness guardrail for Sentivo lesson content.
+Level-appropriateness guardrail for Sentenco lesson content.
 
 Checks generated lesson SQL files for two things:
 1. Blocklisted B2/C1-level abstract/academic words or phrases that have

@@ -33,7 +33,7 @@ export default function PresentSimpleProgressiveGuide() {
           <div className="psp-header">
             <div className="psp-brand">
               <span className="psp-brand-badge">
-                <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
+                <img className="psp-brand-logo" src="/logo-sentenco.png" alt="" />
               </span>
               <span>entenco</span>
             </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { SUPPORT_EMAIL } from "./siteConfig.js";
 import { useNavigate, useParams, useLocation, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
@@ -623,7 +624,7 @@ function openSupplementaryLesson(href) {
 
   window.open(
     href,
-    "sentivoSupplementary",
+    "sentencoSupplementary",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -1047,7 +1048,7 @@ function openWheel() {
 
   window.open(
     "/library/wheel",
-    "sentivoWheel",
+    "sentencoWheel",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -1915,7 +1916,7 @@ export default function Library() {
             className="gc-header-brand"
             onClick={(e) => { e.preventDefault(); changeCategory("All"); }}
           >
-            <img src="/logo-sentivo.png" alt="" className="gc-header-logo" />entenco
+            <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
             <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>
@@ -2066,7 +2067,7 @@ export default function Library() {
                         <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
                       )}
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library/legal/terms"); setMenuOpen(false); }}>Terms & Privacy</button>
-                      <a href="mailto:hello@sentivo.com">Help &amp; Support</a>
+                      <a href={`mailto:${SUPPORT_EMAIL}`}>Help &amp; Support</a>
                       <button className="logout-btn" onClick={() => { signOut(); setMenuOpen(false); }}>Log out</button>
                     </div>
                   )}
@@ -2468,7 +2469,7 @@ export default function Library() {
                       <p className="cl-lesson-desc">{l.desc}</p>
                     </div>
                     <div className="cl-lesson-foot">
-                      <button type="button" className="cl-lesson-open" onClick={() => openCustomLessonPopup(path, "sentivoCustomLesson", l.popup ? l.popup[0] : 840, l.popup ? l.popup[1] : 860)}>
+                      <button type="button" className="cl-lesson-open" onClick={() => openCustomLessonPopup(path, "sentencoCustomLesson", l.popup ? l.popup[0] : 840, l.popup ? l.popup[1] : 860)}>
                         Open
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                       </button>

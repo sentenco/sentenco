@@ -62,7 +62,7 @@ export default function MentorApply() {
       <style>{CSS}</style>
       <div className="ma-topbar">
         <button type="button" className="ma-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="ma-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="ma-brand-logo" />entenco
         </button>
         <h1 className="ma-topbar-title">Become a Mentor</h1>
       </div>

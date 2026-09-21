@@ -232,7 +232,7 @@ export default function WishIfOnlyLesson() {
       <div className="wil-stage">
         <div className="wil-deck">
           <div className="wil-deck-header">
-            <span className="wil-brand"><img src="/logo-sentivo.png" alt="" className="wil-brand-logo" />entenco</span>
+            <span className="wil-brand"><img src="/logo-sentenco.png" alt="" className="wil-brand-logo" />entenco</span>
             <span className="wil-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="wil-deck-body" key={slideIdx}>

@@ -232,7 +232,7 @@ export default function IrregularForeignPluralsLesson() {
       <div className="ifpl-stage">
         <div className="ifpl-deck">
           <div className="ifpl-deck-header">
-            <span className="ifpl-brand"><img src="/logo-sentivo.png" alt="" className="ifpl-brand-logo" />entenco</span>
+            <span className="ifpl-brand"><img src="/logo-sentenco.png" alt="" className="ifpl-brand-logo" />entenco</span>
             <span className="ifpl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="ifpl-deck-body" key={slideIdx}>

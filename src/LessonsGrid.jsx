@@ -174,7 +174,7 @@ export default function LessonsGrid({ level = "A1", ageTrack = "kids", onBackToL
     if (!isAdvancedTrack) {
       window.open(
         `/lesson-player/${lesson.id}`,
-        "sentivoLessonPlayer",
+        "sentencoLessonPlayer",
         "width=900,height=640,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes"
       );
       return;
@@ -189,7 +189,7 @@ export default function LessonsGrid({ level = "A1", ageTrack = "kids", onBackToL
 
     window.open(
       `/lesson-player/${lesson.id}?view=student`,
-      "sentivoLessonPlayerStudent",
+      "sentencoLessonPlayerStudent",
       `width=${studentW},height=${studentH},left=${studentLeft},top=${studentTop},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
     );
   }

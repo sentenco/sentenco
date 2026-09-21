@@ -183,7 +183,7 @@ export default function PrepositionsLesson() {
       <div className="prl-stage">
         <div className="prl-deck">
           <div className="prl-deck-header">
-            <span className="prl-brand"><img src="/logo-sentivo.png" alt="" className="prl-brand-logo" />entenco</span>
+            <span className="prl-brand"><img src="/logo-sentenco.png" alt="" className="prl-brand-logo" />entenco</span>
             <span className="prl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="prl-deck-body" key={slideIdx}>

@@ -1,5 +1,5 @@
 -- A2 Teens Unit 12: Projects, Events, and Final Showcase (5 lessons) — TIERED (Bridge)
--- Regenerated per the Sentivo Intra-Level Progression Framework.
+-- Regenerated per the Sentenco Intra-Level Progression Framework.
 -- Run this whole script in the Supabase SQL editor.
 
 -- Lesson 1: Planning a Class Project

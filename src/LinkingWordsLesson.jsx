@@ -232,7 +232,7 @@ export default function LinkingWordsLesson() {
       <div className="lwl-stage">
         <div className="lwl-deck">
           <div className="lwl-deck-header">
-            <span className="lwl-brand"><img src="/logo-sentivo.png" alt="" className="lwl-brand-logo" />entenco</span>
+            <span className="lwl-brand"><img src="/logo-sentenco.png" alt="" className="lwl-brand-logo" />entenco</span>
             <span className="lwl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="lwl-deck-body" key={slideIdx}>

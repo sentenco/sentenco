@@ -284,7 +284,7 @@ export default function PolysemyLesson() {
       <div className="pol-stage">
         <div className="pol-deck">
           <div className="pol-deck-header">
-            <span className="pol-brand"><img src="/logo-sentivo.png" alt="" className="pol-brand-logo" />entenco</span>
+            <span className="pol-brand"><img src="/logo-sentenco.png" alt="" className="pol-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="pol-deck-body" key={slideIdx}>

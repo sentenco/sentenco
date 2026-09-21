@@ -84,7 +84,7 @@ export default function MentorAdmin() {
       <style>{CSS}</style>
       <div className="mad-topbar">
         <button type="button" className="mad-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="mad-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="mad-brand-logo" />entenco
         </button>
         <h1 className="mad-topbar-title">Mentor Applications</h1>
       </div>

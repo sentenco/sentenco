@@ -1,4 +1,4 @@
--- Sentivo C2 Adults -- Unit 3: Executive Writing and Concise Professional Communication
+-- Sentenco C2 Adults -- Unit 3: Executive Writing and Concise Professional Communication
 -- Mode order: Output -> Performance -> Model
 -- Content sourced from docs/curriculum/c2-adults.md and
 -- c2-adults-teacher-guidance.md.

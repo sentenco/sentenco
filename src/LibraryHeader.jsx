@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { SUPPORT_EMAIL } from "./siteConfig.js";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
@@ -229,7 +230,7 @@ export default function LibraryHeader() {
       <header className="gc-band">
         <div className="gc-topbar">
           <a href="/library" className="gc-header-brand" onClick={(e) => { e.preventDefault(); navigate("/library"); }}>
-            <img src="/logo-sentivo.png" alt="" className="gc-header-logo" />entenco
+            <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
             <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>
@@ -370,7 +371,7 @@ export default function LibraryHeader() {
                         <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
                       )}
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library/legal/terms"); setMenuOpen(false); }}>Terms & Privacy</button>
-                      <a href="mailto:hello@sentivo.com">Help &amp; Support</a>
+                      <a href={`mailto:${SUPPORT_EMAIL}`}>Help &amp; Support</a>
                       <button className="logout-btn" onClick={() => { signOut(); setMenuOpen(false); }}>Log out</button>
                     </div>
                   )}

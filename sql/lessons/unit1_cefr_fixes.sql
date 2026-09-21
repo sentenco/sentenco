@@ -1,4 +1,4 @@
--- Sentivo A1 Kids — Unit 1 CEFR alignment fixes
+-- Sentenco A1 Kids — Unit 1 CEFR alignment fixes
 -- Run this in the Supabase SQL editor.
 
 -- ============================================================

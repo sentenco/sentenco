@@ -18,7 +18,7 @@ function openLesson(trackId, num) {
 
   window.open(
     `/library/relay/${trackId}/${num}`,
-    "sentivoRelayPlayer",
+    "sentencoRelayPlayer",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }
@@ -33,7 +33,7 @@ function openGuide(trackId, num) {
 
   window.open(
     `/library/relay/${trackId}/${num}/guide`,
-    "sentivoRelayGuide",
+    "sentencoRelayGuide",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

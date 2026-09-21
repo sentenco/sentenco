@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   }
 
   if (!(await isProPlusRequest(req))) {
-    res.status(403).json({ error: "The Translator is a Sentivo Pro+ feature." });
+    res.status(403).json({ error: "The Translator is a Sentenco Pro+ feature." });
     return;
   }
 

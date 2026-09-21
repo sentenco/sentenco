@@ -183,7 +183,7 @@ export default function QuestionFormationLesson() {
       <div className="qfl-stage">
         <div className="qfl-deck">
           <div className="qfl-deck-header">
-            <span className="qfl-brand"><img src="/logo-sentivo.png" alt="" className="qfl-brand-logo" />entenco</span>
+            <span className="qfl-brand"><img src="/logo-sentenco.png" alt="" className="qfl-brand-logo" />entenco</span>
             <span className="qfl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="qfl-deck-body" key={slideIdx}>

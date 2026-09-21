@@ -95,7 +95,7 @@ export default function TenseIdentificationLesson() {
           <div className="tid-header">
             <div className="tid-brand">
               <span className="tid-brand-badge">
-                <img className="tid-brand-logo" src="/logo-sentivo.png" alt="" />
+                <img className="tid-brand-logo" src="/logo-sentenco.png" alt="" />
               </span>
               <span>entenco</span>
             </div>

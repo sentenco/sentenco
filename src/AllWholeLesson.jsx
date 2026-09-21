@@ -232,7 +232,7 @@ export default function AllWholeLesson() {
       <div className="awl-stage">
         <div className="awl-deck">
           <div className="awl-deck-header">
-            <span className="awl-brand"><img src="/logo-sentivo.png" alt="" className="awl-brand-logo" />entenco</span>
+            <span className="awl-brand"><img src="/logo-sentenco.png" alt="" className="awl-brand-logo" />entenco</span>
             <span className="awl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="awl-deck-body" key={slideIdx}>

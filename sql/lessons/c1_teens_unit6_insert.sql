@@ -1,4 +1,4 @@
--- Sentivo C1 Teens -- Unit 6: Identity, Social Issues, and Self-Expression
+-- Sentenco C1 Teens -- Unit 6: Identity, Social Issues, and Self-Expression
 -- Mode order: Output -> Performance -> Model
 -- Content sourced from docs/curriculum/c1-teens.md and
 -- c1-teens-teacher-guidance.md.

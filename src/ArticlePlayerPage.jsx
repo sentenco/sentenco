@@ -230,7 +230,7 @@ export default function ArticlePlayerPage() {
           <div className="app-masthead">
             <div className="app-masthead-blob" />
             <div className="app-masthead-logo-chip">
-              <img className="app-masthead-logo" src="/logo-sentivo.png" alt="" />
+              <img className="app-masthead-logo" src="/logo-sentenco.png" alt="" />
             </div>
             <div className="app-masthead-kicker-row">
               <span className="app-masthead-rule" />

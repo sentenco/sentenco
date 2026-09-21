@@ -232,7 +232,7 @@ export default function SoSuchLesson() {
       <div className="ssl-stage">
         <div className="ssl-deck">
           <div className="ssl-deck-header">
-            <span className="ssl-brand"><img src="/logo-sentivo.png" alt="" className="ssl-brand-logo" />entenco</span>
+            <span className="ssl-brand"><img src="/logo-sentenco.png" alt="" className="ssl-brand-logo" />entenco</span>
             <span className="ssl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="ssl-deck-body" key={slideIdx}>

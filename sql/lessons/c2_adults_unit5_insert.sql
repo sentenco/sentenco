@@ -1,4 +1,4 @@
--- Sentivo C2 Adults -- Unit 5: Strategic Diplomacy, Tone, and Stance Management
+-- Sentenco C2 Adults -- Unit 5: Strategic Diplomacy, Tone, and Stance Management
 -- Mode order: Model -> Output -> Performance
 -- Content sourced from docs/curriculum/c2-adults.md and
 -- c2-adults-teacher-guidance.md.

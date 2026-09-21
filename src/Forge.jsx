@@ -11,7 +11,7 @@ import { getLesson } from "./forgeTracks";
 function TopBar() {
   return (
     <div className="fg-brand">
-      <img src="/logo-sentivo.png" alt="" className="fg-brand-logo" />
+      <img src="/logo-sentenco.png" alt="" className="fg-brand-logo" />
       <span className="fg-brand-name">entenco</span>
     </div>
   );

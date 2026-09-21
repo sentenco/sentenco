@@ -19,7 +19,7 @@ function openLessonPopup(level, unitNum, lessonNum) {
 
   window.open(
     path,
-    "sentivoKidsLesson",
+    "sentencoKidsLesson",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

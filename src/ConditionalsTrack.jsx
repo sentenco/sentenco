@@ -13,7 +13,7 @@ function openLesson(code) {
 
   window.open(
     `/library/grammar/conditionals/${code}`,
-    "sentivoConditionals",
+    "sentencoConditionals",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );
 }

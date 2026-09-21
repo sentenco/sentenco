@@ -245,7 +245,7 @@ export default function FileCabinet() {
       <style>{CSS}</style>
       <div className="fc-topbar">
         <button type="button" className="fc-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="fc-brand-logo" />entenco
+          <img src="/logo-sentenco.png" alt="" className="fc-brand-logo" />entenco
         </button>
         <h1 className="fc-topbar-title">File Cabinet</h1>
       </div>

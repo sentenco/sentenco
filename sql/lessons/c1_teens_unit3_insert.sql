@@ -1,4 +1,4 @@
--- Sentivo C1 Teens -- Unit 3: Presentations, School Talks, and Discussions
+-- Sentenco C1 Teens -- Unit 3: Presentations, School Talks, and Discussions
 -- Mode order: Output -> Performance -> Model
 -- Content sourced from docs/curriculum/c1-teens.md and
 -- c1-teens-teacher-guidance.md.
