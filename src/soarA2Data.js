@@ -121,6 +121,23 @@ const DICEQ = [["👀", "Look at the dice."], ["🗣️", "Start a story."]];
 const CLUE7 = [["👀", "Read the clue."], ["🗣️", "Guess the character."]];
 const READ_STORY = { ...READ_ALOUD, heading: "Read Your Story" };
 
+// ---- Unit 8 (Sports & Hobbies) pieces; swim/soccer/basketball/dance/cook/read/sing/draw reuse the Unit 1 club pictures, run/jump/bike are new (Batch 2) ----
+const AB = (label, file) => ({ label, src: `/curriculum/a2-sport/${file}` });
+const A_RUN = AB("run", "run.jpg"), A_JUMP = AB("jump", "jump.jpg"), A_BIKE = AB("ride a bike", "bike.jpg");
+const A_SWIM = { label: "swim", src: SWIMMING.src }, A_SOCCER = { label: "play soccer", src: SOCCER.src }, A_BASKET = { label: "play basketball", src: BASKETBALL.src };
+const A_DANCE = { label: "dance", src: DANCING.src }, A_COOK = { label: "cook", src: COOKING.src }, A_READ = { label: "read", src: READING.src };
+const A_SING = { label: "sing", src: MUSIC_CLUB.src }, A_DRAW = { label: "draw", src: DRAWING.src };
+const SPORT6 = [A_SWIM, A_RUN, A_JUMP, A_BIKE, A_SOCCER, A_BASKET], HOBBY5 = [A_DANCE, A_SING, A_DRAW, A_COOK, A_READ], DO11 = [...SPORT6, ...HOBBY5];
+const CANCANT = [{ label: "I can" }, { label: "I can't" }];
+const REASONS = [{ label: "fun" }, { label: "easy" }, { label: "hard" }, { label: "boring" }];
+const CLUBS6 = [SWIMMING, SOCCER, DANCING, READING, COOKING, BASKETBALL];
+const CANQ = "What can you do?";
+const YESNO = "Yes, I can. / No, I can't.";
+const ASKQ = [["👀", "Look at the picture."], ["🗣️", "Ask the teacher."]];
+const ABILITYDICE = { type: "dice", dice: [{ name: "Do what?", items: DO11 }, { name: "Can?", items: CANCANT }], size: 108 };
+const REASONDICE = { type: "dice", dice: [{ name: "Activity", items: CLUBS6 }, { name: "Because it is...", items: REASONS }], size: 108 };
+const READ_CAN = { ...READ_ALOUD, heading: "Read Your Sentences" };
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -1710,72 +1727,214 @@ export const SOAR_A2_LESSONS = {
     ],
   },
 
+  // ---------- Unit 8: Sports & Hobbies ----------
   "8-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Lesson 1", title: "What Can You Do?", subtitle: "Name sports and say what you can do." },
-      { type: "chips", stage: "Getting Ready", heading: "Sports", subheading: "New words for this unit", items: ["basketball", "soccer", "tennis", "swimming", "running", "cycling", "baseball", "volleyball", "skating", "dancing"] },
-      { type: "message", stage: "Taking Off", heading: "I Can!", subheading: "I can + activity", lines: ["I can play *basketball*.", "I can *swim*.", "I can *run*."] },
-      { type: "dialogue", stage: "Can You Do It?", heading: "Can You Do It?", subheading: "Interview each other", turns: [{ who: "teacher", text: "Can you swim?" }, { who: "student", text: "Yes, I can." }, { who: "teacher", text: "Can you play tennis?" }, { who: "student", text: "No, I can't." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Can You Do It? Interview", subheading: "Ask and answer, then switch roles", turns: [{ who: "teacher", text: "Can you play basketball?" }, { who: "student", text: "Yes, I can. I can play basketball!" }, { who: "student", text: "Can you swim?" }, { who: "teacher", text: "Yes, I can." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Say three things you can do", line: "I can ___. I can ___. I can ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "What Can You Do?", caption: "I can play basketball. I can swim. I can run." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 8, title: "What Can You Do?", subtitle: "Say what you can do with I can... and ask Can you...?" },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Sports You Like", turns: [{ who: "teacher", text: "What sports do you like?" }], instruction: LISTEN_ANSWER, guide: "I like ___." },
+
+      // ---- Part B: six things to do (5 min) ----
+      { type: "strip", part: "B", stage: "Six Things to Do", heading: "Six Things to Do", numbered: false, size: 84, items: SPORT6, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Six Things to Do", heading: "I Can...", lines: ["I can *swim*.", "I can *play soccer*."], instruction: REPEAT_SENT },
+      { ...one(A_SWIM), part: "B", stage: "Six Things to Do", heading: "What Can You Do?", question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___." },
+      { ...one(A_RUN), part: "B", stage: "Six Things to Do", heading: "What Can You Do? 2", question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___." },
+      { ...one(A_JUMP), part: "B", stage: "Six Things to Do", heading: "What Can You Do? 3", question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___." },
+      { ...one(A_BIKE), part: "B", stage: "Six Things to Do", heading: "What Can You Do? 4", question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___." },
+      { type: "message", part: "B", stage: "Six Things to Do", heading: "Can You...?", lines: ["Can you *swim*?", "*Yes, I can.*"], instruction: REPEAT_SENT },
+
+      // ---- Part C: the games (13 min) ----
+      { type: "spin", part: "C", stage: "Ability Wheel", heading: "Ability Wheel", items: SPORT6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you can do."]], guide: "I can ___." },
+      { type: "spin", part: "C", stage: "Ability Wheel", heading: "Ability Wheel 2", items: SPORT6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you can do."]], guide: "I can ___." },
+      { type: "dice", part: "C", stage: "Ask Me!", heading: "Ask Me!", dice: [{ name: "Do what?", items: SPORT6 }], size: 92, instruction: ASKQ, guide: "Can you ___?" },
+      { type: "dice", part: "C", stage: "Ask Me!", heading: "Ask Me! 2", dice: [{ name: "Do what?", items: SPORT6 }], size: 92, instruction: ASKQ, guide: "Can you ___?" },
+      { type: "peek", part: "C", stage: "Mystery Activity", heading: "Mystery Activity", item: A_SWIM, reveal: "You can swim!", question: CANQ, instruction: LOOK_SAY("Guess the activity."), guide: "I can ___." },
+      { type: "peek", part: "C", stage: "Mystery Activity", heading: "Mystery Activity 2", item: A_BIKE, reveal: "You can ride a bike!", question: CANQ, instruction: LOOK_SAY("Guess the activity."), guide: "I can ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: SPORT6, size: 84, instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the one that went away."]], guide: "___ is missing." },
+      { type: "sprint", part: "C", stage: "Ability Sprint", heading: "Ability Sprint", items: SPORT6, seconds: 45, instruction: LOOK_SAY("Say what you can do. Be fast!"), guide: "I can ___." },
+      { type: "sprint", part: "C", stage: "Ability Sprint", heading: "Ability Sprint 2", items: SPORT6, seconds: 45, instruction: LOOK_SAY("Say what you can do. Be fast!"), guide: "I can ___." },
+
+      // ---- Part D: what I can do (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Abilities", heading: "Three Things", turns: [{ who: "teacher", text: "What can you do? Tell me three things." }], instruction: LISTEN_ANSWER, guide: "I can ___." },
+      { ...TYPE2("I can ___. I can ___."), part: "D", stage: "Type It!", heading: "Type What You Can Do" },
+      READ_CAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say what you can do and ask a friend Can you?" },
     ],
   },
   "8-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Lesson 2", title: "I Can't Do That!", subtitle: "Talk about hobbies using can and can't." },
-      { type: "chips", stage: "Getting Ready", heading: "Hobbies", subheading: "New words for this unit", items: ["drawing", "painting", "reading", "singing", "dancing", "cooking", "playing games", "taking photos", "gardening"] },
-      { type: "message", stage: "Taking Off", heading: "I Can / I Can't", subheading: "Sort activities into can and can't", lines: ["I can *draw*.", "I *can't* sing.", "I can *play games*.", "I *can't* play the guitar."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Hobby Charades", subheading: "Act it out, then guess", turns: [{ who: "teacher", text: "(acts out cooking)" }, { who: "student", text: "Can you cook?" }, { who: "teacher", text: "Yes, I can!" }, { who: "student", text: "Can you draw?" }] },
-      { type: "message", stage: "Guessing Game", heading: "Yes or No?", subheading: "The other person answers", lines: ["\"Can you cook?\"", "\"No, I can't!\""] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "2 things you can do + 2 things you can't", line: "I can ___ and ___. I can't ___ or ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "I Can't Do That!", caption: "I can draw and cook. I can't sing or play the guitar." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 8, title: "I Can't Do That!", subtitle: "Say what you can't do, and use but." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Ability Wheel", items: SPORT6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you can do."]], guide: "I can ___." },
+      { ...one(A_SWIM), part: "A", stage: "Review", heading: "Can You...?", question: "Can you swim?", instruction: LISTEN_ANSWER, guide: YESNO },
+
+      // ---- Part B: hobbies and can't (5 min) ----
+      { type: "strip", part: "B", stage: "Five Hobbies", heading: "Five Hobbies", numbered: false, size: 92, items: HOBBY5, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Five Hobbies", heading: "I Can't...", lines: ["I can *dance*.", "I *can't* sing."], instruction: REPEAT_SENT },
+      { ...one(A_DANCE), part: "B", stage: "Five Hobbies", heading: "Can You...?", question: "Can you dance?", instruction: LISTEN_ANSWER, guide: YESNO },
+      { ...one(A_DRAW), part: "B", stage: "Five Hobbies", heading: "Can You...? 2", question: "Can you draw?", instruction: LISTEN_ANSWER, guide: YESNO },
+      { ...one(A_COOK), part: "B", stage: "Five Hobbies", heading: "Can You...? 3", question: "Can you cook?", instruction: LISTEN_ANSWER, guide: YESNO },
+      { type: "message", part: "B", stage: "But", heading: "But", lines: ["I can swim, *but* I can't dance."], instruction: REPEAT_SENT },
+
+      // ---- Part C: can and can't games (13 min) ----
+      { ...ABILITYDICE, part: "C", stage: "Ability Dice", heading: "Ability Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { ...ABILITYDICE, part: "C", stage: "Ability Dice", heading: "Ability Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { ...ABILITYDICE, part: "C", stage: "Ability Dice", heading: "Ability Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { ...ABILITYDICE, part: "C", stage: "Ability Dice", heading: "Ability Dice 4", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { type: "spin", part: "C", stage: "Hobby Wheel", heading: "Hobby Wheel", items: HOBBY5, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say if you can or can't."]], guide: "I can / can't ___." },
+      { type: "strip", part: "C", stage: "Can and Can't", heading: "Can and Can't", numbered: false, labels: false, size: 100, items: [A_SWIM, A_DANCE], question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___, but I can't ___." },
+      { type: "strip", part: "C", stage: "Can and Can't", heading: "Can and Can't 2", numbered: false, labels: false, size: 100, items: [A_RUN, A_DRAW], question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___, but I can't ___." },
+      { type: "strip", part: "C", stage: "Can and Can't", heading: "Can and Can't 3", numbered: false, labels: false, size: 100, items: [A_BIKE, A_COOK], question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___, but I can't ___." },
+      { type: "peek", part: "C", stage: "Mystery Activity", heading: "Mystery Activity", item: A_DRAW, reveal: "Can you draw?", question: "Can you do this?", instruction: LOOK_SAY("Guess the activity."), guide: "Yes, I can. / No, I can't." },
+      { type: "sprint", part: "C", stage: "Can or Can't Sprint", heading: "Can or Can't Sprint", items: DO11, seconds: 45, instruction: LOOK_SAY("Say if you can or can't. Be fast!"), guide: "I can / can't ___." },
+
+      // ---- Part D: what I can't do (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Abilities", heading: "What Can't You Do?", turns: [{ who: "teacher", text: "What can't you do? What can you do?" }], instruction: LISTEN_ANSWER, guide: "I can't ___." },
+      { ...TYPE2("I can ___, but I can't ___."), part: "D", stage: "Type It!", heading: "Type Can and Can't" },
+      READ_CAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say what you can and can't do, and join it with but." },
     ],
   },
   "8-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Lesson 3", title: "Because I Like It!", subtitle: "Express likes and dislikes with a reason." },
-      { type: "chips", stage: "Getting Ready", heading: "Reason Words", subheading: "Why do you like it?", items: ["fun", "interesting", "easy", "difficult", "exciting", "relaxing", "healthy", "enjoyable"] },
-      { type: "message", stage: "Taking Off", heading: "Why? Because…", subheading: "Give a simple reason", lines: ["I like soccer *because* it is fun.", "I like basketball *because* it is exciting."] },
-      { type: "message", stage: "Match the Reason", heading: "Match the Reason", subheading: "swimming → healthy/fun", lines: ["I don't like running *because* it is difficult.", "I like drawing *because* it is relaxing."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Would You Rather?", subheading: "Choose and explain", turns: [{ who: "teacher", text: "Would you rather play soccer or tennis?" }, { who: "student", text: "I'd rather play tennis because it is exciting." }, { who: "teacher", text: "Would you rather draw or sing?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Two preferences with reasons", line: "I like ___ because it is ___. I don't like ___ because it is ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Because I Like It!", caption: "I'd rather play tennis because it is exciting. I like drawing because it is relaxing." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 8, title: "Because I Like It!", subtitle: "Say why you like or can't do something." },
+
+      // ---- Part A: review (3 min) ----
+      { ...ABILITYDICE, part: "A", stage: "Review", heading: "Ability Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Favorite Sport", turns: [{ who: "teacher", text: "What is your favorite sport or hobby?" }], instruction: LISTEN_ANSWER, guide: "My favorite is ___." },
+
+      // ---- Part B: four reasons (5 min) ----
+      { type: "chips", part: "B", stage: "Four Reasons", heading: "Four Reasons", items: ["fun", "easy", "hard", "boring"], instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Four Reasons", heading: "Because", lines: ["I like soccer *because* it is *fun*.", "I can't cook *because* it is *hard*."], instruction: REPEAT_SENT },
+      { ...one(SOCCER), part: "B", stage: "Four Reasons", heading: "Why Do You Like It?", question: "Do you like soccer? Why?", instruction: LISTEN_ANSWER, guide: "I like soccer because it is ___." },
+      { ...one(DANCING), part: "B", stage: "Four Reasons", heading: "Why Do You Like It? 2", question: "Do you like dancing? Why?", instruction: LISTEN_ANSWER, guide: "I like dancing because it is ___." },
+      { ...one(READING), part: "B", stage: "Four Reasons", heading: "Why Do You Like It? 3", question: "Do you like reading? Why?", instruction: LISTEN_ANSWER, guide: "I like reading because it is ___." },
+      { ...one(COOKING), part: "B", stage: "Four Reasons", heading: "Why Do You Like It? 4", question: "Do you like cooking? Why?", instruction: LISTEN_ANSWER, guide: "I like cooking because it is ___." },
+
+      // ---- Part C: reason dice and games (13 min) ----
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I like ___ because it is ___." },
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I like ___ because it is ___." },
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I like ___ because it is ___." },
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice 4", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I like ___ because it is ___." },
+      { type: "spin", part: "C", stage: "Reason Wheel", heading: "Reason Wheel", items: REASONS, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say something that is like this."]], guide: "___ is ___." },
+      { type: "strip", part: "C", stage: "Which Do You Like?", heading: "Which Do You Like?", numbered: false, labels: false, size: 100, items: [SOCCER, DANCING], question: "Which do you like? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { type: "strip", part: "C", stage: "Which Do You Like?", heading: "Which Do You Like? 2", numbered: false, labels: false, size: 100, items: [SWIMMING, READING], question: "Which do you like? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { type: "strip", part: "C", stage: "Which Do You Like?", heading: "Which Do You Like? 3", numbered: false, labels: false, size: 100, items: [BASKETBALL, COOKING], question: "Which do you like? Why?", instruction: NO_HELP("Choose one and say why.") },
+      { type: "peek", part: "C", stage: "Guess My Favorite", heading: "Guess My Favorite", item: SOCCER, reveal: "It is soccer.", question: "I like it because it is fun. I use a ball.", instruction: [["👀", "Read the clue."], ["🗣️", "Guess the sport."]], guide: "It is ___." },
+      { type: "sprint", part: "C", stage: "Because Sprint", heading: "Because Sprint", items: CLUBS6, seconds: 45, instruction: LOOK_SAY("Say why you like it. Be fast!"), guide: "I like it because it is ___." },
+
+      // ---- Part D: why I like it (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Reasons", heading: "Why?", turns: [{ who: "teacher", text: "What do you like? Why do you like it?" }], instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
+      { ...TYPE2("I like ___ because it is ___."), part: "D", stage: "Type It!", heading: "Type Your Reason" },
+      READ_CAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say why you like something with because." },
     ],
   },
   "8-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Lesson 4", title: "Let's Review!", subtitle: "Combine abilities, preferences, and reasons." },
-      { type: "chips", stage: "Getting Ready", heading: "Ability Speed Round", subheading: "Sports + hobbies review", items: ["basketball", "swimming", "cycling", "drawing", "singing", "cooking", "photography"] },
-      { type: "message", stage: "Taking Off", heading: "Like or Don't Like?", subheading: "React to sports and hobbies", lines: ["\"Can you…?\" \"Yes, I can.\" / \"No, I can't.\""] },
-      { type: "message", stage: "Add a Reason", heading: "Add a Reason", subheading: "Turn simple opinions into longer sentences", lines: ["\"I like swimming.\" → \"I like swimming *because* it is fun.\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Activity Mistake Detective", subheading: "Does the statement make sense? Fix it if not", turns: [{ who: "teacher", text: "I can't swim, but I like swimming because it is relaxing." }, { who: "student", text: "That doesn't make sense! You can't like an activity you can't do." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "3-4 connected sentences", line: "I can ___. I like ___ because it is ___. I don't like ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "I can swim. I like swimming because it is relaxing. I don't like running because it is difficult." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 8, title: "Let's Review!", subtitle: "Play the sports and hobbies games." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: HOBBY5, size: 92, instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the one that went away."]], guide: "___ is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Ability Wheel", items: SPORT6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you can do."]], guide: "I can ___." },
+
+      // ---- Part B: can and can't (5 min) ----
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I ___ ___." },
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice 3", instruction: NO_HELP("Say the sentence.") },
+
+      // ---- Part C: reasons and games (13 min) ----
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I like ___ because it is ___." },
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I like ___ because it is ___." },
+      { ...REASONDICE, part: "C", stage: "Reason Dice", heading: "Reason Dice 3", instruction: NO_HELP("Say the sentence.") },
+      { type: "strip", part: "C", stage: "Can and Can't", heading: "Can and Can't", numbered: false, labels: false, size: 100, items: [A_SOCCER, A_SING], question: CANQ, instruction: LISTEN_ANSWER, guide: "I can ___, but I can't ___." },
+      { type: "strip", part: "C", stage: "Can and Can't", heading: "Can and Can't 2", numbered: false, labels: false, size: 100, items: [A_JUMP, A_COOK], question: CANQ, instruction: NO_HELP("Say what you can and can't do.") },
+      { type: "peek", part: "C", stage: "Guess My Favorite", heading: "Guess My Favorite", item: DANCING, reveal: "It is dancing.", question: "I like it because it is fun. I use music.", instruction: [["👀", "Read the clue."], ["🗣️", "Guess the hobby."]], guide: "It is ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: DO11, seconds: 45, instruction: LOOK_SAY("Say what you can or can't do. Be fast!") },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock 2", items: CLUBS6, seconds: 45, instruction: LOOK_SAY("Say why you like it. Be fast!") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about sports and hobbies." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("I can ___, but I can't ___."), part: "D", stage: "Type It!", heading: "Type Can and Can't" },
+      READ_CAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about what you can do, what you can't do and why." },
     ],
   },
   "8-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Communicate about abilities, hobbies, and preferences independently." },
-      { type: "message", stage: "Mystery Activity", heading: "Mystery Activity", subheading: "What can/can't this person do?", lines: ["Look at the picture. What can this person do?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Perfect Weekend Interview", subheading: "Plan a weekend without being told which structure to use", turns: [{ who: "teacher", text: "What can you do? What do you like? Why?" }, { who: "student", text: "I can play basketball. I like it because it is fun. This weekend, I want to play basketball." }] },
-      { type: "message", stage: "Activity Problem", heading: "Activity Problem", subheading: "Your friend wants to play tennis, but you can't", lines: ["\"I can't play tennis, but I can play *basketball* instead.\""] },
-      { type: "message", stage: "My Perfect Hobby", heading: "My Perfect Hobby", subheading: "Choose one hobby and explain why", lines: ["My perfect hobby is *painting* because it is relaxing."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "What do you enjoy? What is difficult for you?", line: "I enjoy ___. ___ is difficult for me." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "I enjoy painting because it is relaxing. Running is difficult for me." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 8, title: "Show What You Know!", subtitle: "Talk about sports and hobbies, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About You", turns: [{ who: "teacher", text: "Tell me about the sports and hobbies you like." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Can and Can't", turns: [{ who: "teacher", text: "What can you do? What can't you do?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Why?", turns: [{ who: "teacher", text: "Why do you like your favorite sport or hobby?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: dice and interviews (8 min) ----
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice", instruction: NO_HELP("Say the sentence.") },
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice 2", instruction: NO_HELP("Say the sentence.") },
+      { ...REASONDICE, part: "B", stage: "Reason Dice", heading: "Reason Dice", instruction: NO_HELP("Say the sentence.") },
+      { ...REASONDICE, part: "B", stage: "Reason Dice", heading: "Reason Dice 2", instruction: NO_HELP("Say the sentence.") },
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice 3", instruction: NO_HELP("Say the sentence.") },
+      { ...ABILITYDICE, part: "B", stage: "Ability Dice", heading: "Ability Dice 4", instruction: NO_HELP("Say the sentence.") },
+      { ...REASONDICE, part: "B", stage: "Reason Dice", heading: "Reason Dice 3", instruction: NO_HELP("Say the sentence.") },
+      { ...REASONDICE, part: "B", stage: "Reason Dice", heading: "Reason Dice 4", instruction: NO_HELP("Say the sentence.") },
+      { type: "dialogue", part: "B", stage: "Interview", heading: "Interview Me!", turns: [{ who: "teacher", text: "Now you ask me! Ask me what I can do and why I like it." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Ask the teacher questions."]] },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: DO11, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you can or can't do. Be fast!"]] },
+
+      // ---- Part C: my favorite (5 min) ----
+      { type: "dialogue", part: "C", stage: "My Favorite", heading: "My Favorite Sport", turns: [{ who: "teacher", text: "Tell me about your favorite sport. Can you do it? Why do you like it?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "My Favorite", heading: "Something New", turns: [{ who: "teacher", text: "What do you want to learn? Why?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Yesterday, I went to the *park*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["I saw a boy. He can *ride a bike*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["He can *jump*, too."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "About Me...", lines: ["Write about what you can do and what you like."], instruction: [["⌨️", "Type four or five sentences in the chat."]] },
+      { ...READ_CAN, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 8 Complete!", title: "Unit 8 Complete!", see: "Great job!", recap: "You can talk about what you can do, what you can't and why, in your own words." },
     ],
   },
   "8-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Test", title: "Unit 8 Test", subtitle: "Sports & Hobbies — abilities, preferences, and reasons independently." },
-      { type: "chips", stage: "Part 1: Vocabulary", heading: "Name the Activities", subheading: "8-10 pictures", items: ["swimming", "basketball", "cooking", "drawing", "tennis", "singing"] },
-      { type: "dialogue", stage: "Part 2: Abilities", heading: "Can You…?", subheading: "Answer appropriately", turns: [{ who: "teacher", text: "Can you swim? Can you cook?" }, { who: "student", text: "Yes, I can swim. No, I can't cook." }] },
-      { type: "message", stage: "Part 3: Can / Can't", heading: "Can / Can't", subheading: "Produce full sentences", lines: ["I can *swim*.", "I can't play *tennis*."] },
-      { type: "dialogue", stage: "Part 4-5: Reasons ⭐", heading: "Give a Reason", subheading: "Talk about 2-3 activities and explain preferences", turns: [{ who: "teacher", text: "Do you like basketball? Why or why not?" }, { who: "student", text: "I like basketball because it is fun. I don't like running because it is difficult." }] },
-      { type: "postcard", stage: "Part 6: Short Writing", heading: "Sports & Hobbies", subheading: "4-5 sentences", line: "I can ___. I can play ___. I like ___ because it is ___. I don't like ___ because it is ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 8 Complete!", cardTitle: "Unit 8 Test", caption: "I can swim. I can play basketball. I like swimming because it is fun. I don't like running because it is difficult." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 8, title: "Unit 8 Test", subtitle: "Show what you can say about sports and hobbies!" },
+
+      // ---- Part A: words ----
+      { ...one(A_RUN), part: "A", stage: "Words", heading: "What Is It?", question: "What can you do in this picture?", instruction: LISTEN_ANSWER },
+      { ...one(A_JUMP), part: "A", stage: "Words", heading: "What Is It? 2", question: "What can you do in this picture?", instruction: LISTEN_ANSWER },
+      { ...one(A_BIKE), part: "A", stage: "Words", heading: "What Is It? 3", question: "What can you do in this picture?", instruction: LISTEN_ANSWER },
+      { ...one(A_SWIM), part: "A", stage: "Words", heading: "What Is It? 4", question: "What can you do in this picture?", instruction: LISTEN_ANSWER },
+      { ...one(A_DANCE), part: "A", stage: "Words", heading: "What Is It? 5", question: "What can you do in this picture?", instruction: LISTEN_ANSWER },
+      { ...one(A_SING), part: "A", stage: "Words", heading: "What Is It? 6", question: "What can you do in this picture?", instruction: LISTEN_ANSWER },
+
+      // ---- Part B: can and can't ----
+      { ...one(A_SWIM), part: "B", stage: "Can and Can't", heading: "Can You...?", question: "Can you swim?", instruction: LISTEN_ANSWER },
+      { ...one(A_BIKE), part: "B", stage: "Can and Can't", heading: "Can You...? 2", question: "Can you ride a bike?", instruction: LISTEN_ANSWER },
+      { ...one(A_DANCE), part: "B", stage: "Can and Can't", heading: "Can You...? 3", question: "Can you dance?", instruction: LISTEN_ANSWER },
+      { ...one(A_COOK), part: "B", stage: "Can and Can't", heading: "Can You...? 4", question: "Can you cook?", instruction: LISTEN_ANSWER },
+      { ...one(A_SING), part: "B", stage: "Can and Can't", heading: "Can You...? 5", question: "Can you sing?", instruction: LISTEN_ANSWER },
+      { ...one(A_JUMP), part: "B", stage: "Can and Can't", heading: "Can You...? 6", question: "Can you jump?", instruction: LISTEN_ANSWER },
+
+      // ---- Part C: because ----
+      { ...one(SOCCER), part: "C", stage: "Because", heading: "Why Do You Like It?", question: "Do you like soccer? Why?", instruction: LISTEN_ANSWER },
+      { ...one(DANCING), part: "C", stage: "Because", heading: "Why Do You Like It? 2", question: "Do you like dancing? Why?", instruction: LISTEN_ANSWER },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About You", turns: [{ who: "teacher", text: "What can you do? What can't you do?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Favorite", turns: [{ who: "teacher", text: "What is your favorite sport or hobby? Why do you like it?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Say two or three sentences."]] },
+      { type: "score", stage: "My Unit 8 Score!", heading: "My Unit 8 Score!", rows: [["Words", "/ 6"], ["Can and can't", "/ 6"], ["Because", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 8 Complete!", title: "Unit 8 Complete!", see: "On to Unit 9!", recap: "You can say what you can and can't do and why you like it." },
     ],
   },
+
   "9-1": {
     slides: [
       { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Lesson 1", title: "Feelings Words! 😊", subtitle: "Identify common emotions and say how you feel." },
