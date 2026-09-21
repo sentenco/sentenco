@@ -536,6 +536,76 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One brown volcano with a wide crater at the top, bright orange lava flowing down one side, a small puff of gray smoke, a little green grass at the base.
 ```
 
+## Batch 7 prompts
+
+Attach `duck` (or any Batch 1 picture you liked) as a style reference. Each prompt is complete: style prefix first, then the picture.
+
+1. **watch**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One wrist watch with a round white face, simple hour and minute hands, twelve small tick marks (no numbers), a blue strap and a gold buckle.
+```
+
+2. **watermelon**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One triangle slice of watermelon with red flesh, black seeds, a light-green rind band and a dark-green outer edge.
+```
+
+3. **web**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One round spider web with thin white-gray silk lines and a small friendly black spider with a smile hanging in the middle.
+```
+
+4. **xray**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One chest X-ray picture on a dark-blue rectangle showing white ribs, a white spine and two soft gray lungs. No person, no text.
+```
+
+5. **xylophone**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One xylophone with eight colorful bars in red, orange, yellow, green, blue and purple, two small wooden mallets lying in front of it.
+```
+
+6. **yak**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly brown yak standing, side view, long shaggy dark-brown fur, two curved cream horns, kind eyes, a small smile.
+```
+
+7. **yarn**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. Two round balls of yarn, one blue and one pink, with loose strands and two wooden knitting needles crossed on top.
+```
+
+8. **yoyo**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One red yo-yo with a yellow center and a white string looped around a finger-sized loop at the end. No hand.
+```
+
+9. **zebra**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly zebra standing, side view, black and white stripes, a fluffy black mane, kind eyes, small hooves.
+```
+
+10. **zipper**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One red zipper half open, shown as a V shape with silver teeth and a silver pull tab.
+```
+
+11. **zoo**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One zoo entrance gate made of wooden logs with a green arch, a blank wooden sign (no writing) on top, a friendly giraffe head and a lion cub peeking over the fence, a few green bushes. No people.
+```
+
 ## Status
 
 - Batch 1: prompts sent, waiting for the pictures
@@ -544,4 +614,4 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 - Batch 4: prompts sent
 - Batch 5: prompts sent
 - Batch 6: prompts sent
-- Batch 7: not started
+- Batch 7: prompts sent
