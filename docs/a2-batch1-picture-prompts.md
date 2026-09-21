@@ -13,8 +13,8 @@ Weather (one clear icon-style picture each, so a child can name the weather):
 - **sunny.jpg**: a big golden sun with soft rays in a small patch of clear blue sky.
 - **rainy.jpg**: one gray rain cloud with blue raindrops falling and a small puddle underneath.
 - **cloudy.jpg**: three fluffy gray-white clouds filling a pale gray-blue sky, no sun.
-- **windy.jpg**: swirly white wind lines blowing a red kite and two green leaves sideways.
-- **snowy.jpg**: white snowflakes falling over a small pine tree with snow on its branches.
+- **windy.jpg**: swirly light-blue wind lines blowing a red kite and two green leaves sideways.
+- **snowy.jpg**: light-blue and white snowflakes falling over a small pine tree with snow on its branches.
 - **hot.jpg**: a big red thermometer with the red line at the top, a bright sun and a melting ice cream cone beside it.
 - **cold.jpg**: a blue thermometer with the line low, icicles and a big snowflake, a small knitted scarf.
 
