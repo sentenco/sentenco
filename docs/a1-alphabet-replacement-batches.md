@@ -608,10 +608,14 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 
 ## Status
 
-- Batch 1: prompts sent, waiting for the pictures
-- Batch 2: prompts sent
-- Batch 3: prompts sent
-- Batch 4: prompts sent
-- Batch 5: prompts sent
-- Batch 6: prompts sent
-- Batch 7: prompts sent
+Installed 2026-09-21 (76 pictures, 92 files, all 800x800, cropped square on white, same file names and extensions):
+
+- Batch 1: installed (duck, alligator, ant, apple, ball, banana, bear, car, cat, cookie, dog)
+- Batch 2: installed (doll, ear, egg, elephant, fish, flower, frog, gift, goat, grapes, hat)
+- Batch 3: installed (hen, house, icecream, igloo, insect, jam, jellyfish, juice, king, kite, koala)
+- Batch 4: installed (lamp, leaf, lion, milk, monkey, moon, nest, nose, nut, octopus, orange)
+- Batch 5: installed EXCEPT `queen` (not in Downloads yet): owl, panda, pencil, pizza, quail, quilt, rabbit, rainbow, ring, sock
+- Batch 6: installed (star, sun, tent, tiger, tomato, ukulele, umbrella, unicorn, van, vase, volcano)
+- Batch 7: installed (watch, watermelon, web, xray, xylophone, yak, yarn, yoyo, zebra, zipper, zoo)
+
+Still to do: `queen` (u2-l3/queen.jpg). Possible re-generations: `web` (no spider, very pale), `goat` (looks like a sheep), `ball` (came out as a basketball), `cat` (fluffy cat instead of a tabby, fine to keep).
