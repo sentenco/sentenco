@@ -409,33 +409,34 @@ export const SOAR_A2_LESSONS = {
   "2-4": {
     v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 2, title: "Let's Review!", subtitle: "Fix the story and tell it right." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 2, title: "Let's Review!", subtitle: "Pick the right word and tell it right." },
 
       // ---- Part A: memory challenge (4 min) ----
       { type: "table", part: "A", stage: "Memory Challenge", heading: "Memory Challenge", rows: [["go", "?"], ["eat", "?"], ["see", "?"], ["have", "?"]], instruction: SAY_PAST },
       { type: "table", part: "A", stage: "Memory Challenge", heading: "Memory Challenge 2", rows: [["do", "?"], ["make", "?"], ["eat", "?"], ["go", "?"]], instruction: SAY_PAST },
       { type: "table", part: "A", stage: "Memory Challenge", heading: "Now Backwards", heads: ["Yesterday", "Today"], rows: [["went", "?"], ["saw", "?"], ["made", "?"], ["ate", "?"]], instruction: [["👀", "Look at the word."], ["🗣️", "Say the word for today."]] },
 
-      // ---- Part B: fix the story (5 min) ----
-      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story", turns: [{ who: "teacher", text: "Yesterday, I go to school." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence the right way."]], guide: "Yesterday, I ___ to school." },
-      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story 2", turns: [{ who: "teacher", text: "Yesterday, I eat pizza." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence the right way."]], guide: "Yesterday, I ___ pizza." },
-      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story 3", turns: [{ who: "teacher", text: "Yesterday, I see my friend." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence the right way."]], guide: "Yesterday, I ___ my friend." },
-      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story 4", turns: [{ who: "teacher", text: "Yesterday, I make a cake and I do my homework." }], instruction: NO_HELP("Say the sentence the right way.") },
+      // ---- Part B: pick the word (5 min) ----
+      { ...one(SCHOOL), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word", frame: ["Yesterday, I ___ to school.", "go or went?"], instruction: [["👀", "Look at the picture and the two words."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(PIZZA), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word 2", frame: ["Yesterday, I ___ pizza.", "eat or ate?"], instruction: [["👀", "Look at the picture and the two words."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(FRIEND), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word 3", frame: ["Yesterday, I ___ my friend.", "see or saw?"], instruction: [["👀", "Look at the picture and the two words."], ["🗣️", "Say the sentence the right way."]] },
+      { type: "strip", part: "B", stage: "Pick the Word", heading: "Pick the Word 4", numbered: false, labels: false, size: 100, items: [CAKE, HOMEWORK], question: "Yesterday, what did you make? What did you do?", instruction: NO_HELP("Answer with the past words.") },
 
-      // ---- Part C: connect and detective (13 min) ----
+      // ---- Part C: connect and time detective (13 min) ----
       { type: "message", part: "C", stage: "Connect the Events", heading: "Connect the Events", lines: ["I went to the park. I saw my friend. I ate ice cream."], instruction: [["📖", "Read the sentences."], ["🗣️", "Join them into a story."]], guide: "First, I ___. Then, I ___." },
       { type: "message", part: "C", stage: "Connect the Events", heading: "Connect the Events 2", lines: ["I made a cake. I went to the store. I ate the cake."], instruction: [["📖", "Read the sentences."], ["🗣️", "Join them into a story."]], guide: "First, I ___. Then, I ___." },
       { type: "message", part: "C", stage: "Connect the Events", heading: "Connect the Events 3", lines: ["I did my homework. I had lunch. I saw a dog."], instruction: NO_HELP("Join them into a story.") },
-      { type: "message", part: "C", stage: "Past Tense Detective", heading: "Past Tense Detective", lines: ["Yesterday, I go to school. I eat lunch. Then I see my friend."], instruction: [["🔍", "Find the mistakes."], ["🗣️", "Say the story the right way."]] },
-      { type: "message", part: "C", stage: "Past Tense Detective", heading: "Past Tense Detective 2", lines: ["Yesterday, I have breakfast. I do my homework. Then I make a picture."], instruction: [["🔍", "Find the mistakes."], ["🗣️", "Say the story the right way."]] },
-      { type: "message", part: "C", stage: "Past Tense Detective", heading: "Past Tense Detective 3", lines: ["Yesterday, I go to the park. I see a dog and I eat ice cream."], instruction: [["🔍", "Find the mistakes."], ["🗣️", "Say the story the right way."]] },
-      { type: "chips", part: "C", stage: "Past Tense Detective", heading: "Tell It Right", items: ["First", "Then", "After that", "Finally"], instruction: NO_HELP("Tell the fixed story again.") },
+      { ...one(PARK), size: 88, part: "C", stage: "Time Detective", heading: "Time Detective", sentence: "Clue: *Yesterday*", frame: ["I ___ to the park.", "go or went?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(LUNCH), size: 88, part: "C", stage: "Time Detective", heading: "Time Detective 2", sentence: "Clue: *Today*", frame: ["I ___ lunch.", "eat or ate?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(FRIEND), size: 88, part: "C", stage: "Time Detective", heading: "Time Detective 3", sentence: "Clue: *Yesterday*", frame: ["I ___ my friend.", "see or saw?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(HOMEWORK), size: 88, part: "C", stage: "Time Detective", heading: "Time Detective 4", sentence: "Clue: *Today*", frame: ["I ___ my homework.", "do or did?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+      { type: "chips", part: "C", stage: "Time Detective", heading: "Tell a Story", items: ["First", "Then", "After that", "Finally"], instruction: NO_HELP("Tell a story about yesterday.") },
 
       // ---- Part D: three things (3 min) ----
       { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things you did yesterday." }], instruction: NO_HELP("Say three sentences.") },
       { ...TYPE3, part: "D", stage: "Type It!", heading: "Type Your Yesterday" },
       { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Yesterday", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
-      { type: "wrapup", stage: "You've Landed!", recap: "You can fix past-tense mistakes and tell a story about yesterday." },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can pick the past word and tell a story about yesterday." },
     ],
   },
   "2-5": {
