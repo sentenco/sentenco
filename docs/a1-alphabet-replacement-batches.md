@@ -256,11 +256,81 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One wide-brimmed straw sun hat with a red ribbon around it.
 ```
 
+## Batch 3 prompts
+
+Attach `duck` (or any Batch 1 picture you liked) as a style reference. Each prompt is complete: style prefix first, then the picture.
+
+1. **hen**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly orange-brown hen standing, side view, red comb on top, small yellow beak, round body, small tail feathers, kind eyes.
+```
+
+2. **house**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute little house seen from the front, yellow walls, a blue roof, a red front door, two small windows, a small chimney.
+```
+
+3. **icecream**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One ice cream cone with two round scoops, pink strawberry on the bottom and white vanilla on top, a golden waffle cone, a tiny red cherry on top.
+```
+
+4. **igloo**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One white snow igloo made of ice blocks, a small arched entrance, seen from the front, with a little pile of snow at its base.
+```
+
+5. **insect**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute ladybug, red shell with black dots, small black head, six tiny legs and two short antennae, friendly smile, seen from above and slightly to the side.
+```
+
+6. **jam**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One glass jar of strawberry jam with a red lid tied with a checkered cloth cover, a small drawing of a strawberry on the jar, no writing.
+```
+
+7. **jellyfish**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One light-blue jellyfish with a round dome, a happy smile, pink cheeks and soft wavy tentacles.
+```
+
+8. **juice**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One tall glass of orange juice with a striped straw and a slice of orange on the rim.
+```
+
+9. **king**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly king standing and facing front, a gold crown, a red robe with white fur trim, a gray-white beard and a kind smile, natural light skin tone with no orange or yellow tint.
+```
+
+10. **kite**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One diamond-shaped kite in red and yellow with a long string and a tail made of three small colorful bows.
+```
+
+11. **koala**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One gray koala sitting and facing front, big round fuzzy ears, a big dark nose, holding a green eucalyptus leaf, kind eyes.
+```
+
 ## Status
 
 - Batch 1: prompts sent, waiting for the pictures
 - Batch 2: prompts sent
-- Batch 3: not started
+- Batch 3: prompts sent
 - Batch 4: not started
 - Batch 5: not started
 - Batch 6: not started
