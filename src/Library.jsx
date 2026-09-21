@@ -381,6 +381,14 @@ const CUSTOM_LESSONS = [
     level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes of real E8 tasks (reactions, short texts, matching, gapped text, word transformation), with the trap behind every wrong answer.",
   },
+  {
+    slug: "e8-task-5-reactions",
+    popup: [1200, 780],
+    title: "E8 Task 5: Reactions to Situations",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: 20 situations, one at a time. Name the job, then choose the reply, with the trap behind every wrong answer.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {
