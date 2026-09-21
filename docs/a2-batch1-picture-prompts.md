@@ -1,6 +1,6 @@
 # A2 Soar Kids: Batch 1 picture prompts (Units 3, 4 and 6)
 
-38 pictures at first; everything is done except 3 job problem scenes: fire, lost, hungry. Save each file with the exact name into the folder shown, nothing else needs to change.
+38 pictures at first; ALL DONE (2026-09-22): every Batch 1 picture is installed. Save each file with the exact name into the folder shown, nothing else needs to change.
 Unit 1 pictures are installed, Unit 2 and Unit 5 need none.
 
 ## Shared style (add to every prompt)
