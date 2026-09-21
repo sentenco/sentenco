@@ -450,6 +450,45 @@ export function HelpBlock({ heading, problem, options = [], answer = 0, said, si
   );
 }
 
+// Story order: the pictures are shuffled. The child tells the story, the teacher clicks the pictures in the order the child says.
+// The right picture gets its number; a wrong one shakes.
+export function OrderBlock({ heading, items = [], size = 96, labels = false, question }) {
+  const [display] = useState(() => {
+    let s = shuffle(items.map((_, i) => i));
+    while (items.length > 1 && s.every((v, i) => v === i)) s = shuffle(items.map((_, i) => i));
+    return s;
+  });
+  const [placed, setPlaced] = useState([]);
+  const [wrong, setWrong] = useState(null);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const done = placed.length === items.length;
+  function pick(i) {
+    if (done || placed.includes(i)) return;
+    if (i === placed.length) setPlaced([...placed, i]);
+    else { setWrong(i); clearTimeout(timer.current); timer.current = setTimeout(() => setWrong(null), 450); }
+  }
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="strip">
+        {display.map((i) => (
+          <button key={i} type="button" className={`order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""}`} onClick={() => pick(i)}>
+            {placed.includes(i) && <span className="strip-num">{placed.indexOf(i) + 1}</span>}
+            <SoarPic src={items[i].src} label={items[i].label} size={size} />
+            {labels && <span className="strip-label">{items[i].label}</span>}
+          </button>
+        ))}
+      </div>
+      <div className="game-inline">
+        {question && !done && <div className="game-bubble">{question}</div>}
+        {done ? <div className="game-answer game-answer--sm">The story is in order!</div> : <div className="game-note">{placed.length === 0 ? "Click the pictures in story order." : `${placed.length} of ${items.length}`}</div>}
+        {placed.length > 0 && <button type="button" className="game-link" onClick={() => setPlaced([])}>Start again</button>}
+      </div>
+    </div>
+  );
+}
+
 export const gameStyles = `
 .game-row { display: flex; align-items: center; justify-content: center; gap: 26px; }
 .game-side { display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 190px; max-width: 250px; }
@@ -533,4 +572,9 @@ export const gameStyles = `
 .help-opt:hover { background: #fff; }
 .help-opt.is-right { background: #fff; box-shadow: 0 0 0 4px #22A67E, 0 4px 0 rgba(27,42,74,0.1); }
 .help-opt.is-wrong { opacity: 0.5; box-shadow: 0 0 0 3px #D9534F; }
+
+.order-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 5px; background: rgba(255,255,255,0.75); border: none; border-radius: 16px; cursor: pointer; box-shadow: 0 4px 0 rgba(27,42,74,0.1); }
+.order-card:hover { background: #fff; }
+.order-card.is-placed { background: #fff; box-shadow: 0 0 0 4px #22A67E, 0 4px 0 rgba(27,42,74,0.1); }
+.order-card.is-shake { animation: carbump 0.4s ease; box-shadow: 0 0 0 3px #D9534F; }
 `;

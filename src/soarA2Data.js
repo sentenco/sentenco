@@ -105,6 +105,22 @@ const CLUEQ = [["👀", "Read the clue."], ["🗣️", "Guess the job."]];
 const DUTYQ = [["👀", "Look at the picture."], ["🗣️", "Say what the person does."]];
 const READ_JOB = { ...READ_ALOUD, heading: "Read Your Jobs" };
 
+// ---- Unit 7 (My Favorite Story) pieces; pictures still to be generated (Batch 2) ----
+const SY = (label, file) => ({ label, src: `/curriculum/a2-story/${file}` });
+const S_KING = SY("king", "king.jpg"), S_PRINCESS = SY("princess", "princess.jpg"), S_DRAGON = SY("dragon", "dragon.jpg"), S_RABBIT = SY("rabbit", "rabbit.jpg");
+const S_FOREST = SY("forest", "forest.jpg"), S_CASTLE = SY("castle", "castle.jpg");
+const CHARS4 = [S_KING, S_PRINCESS, S_DRAGON, S_RABBIT], PLACES2 = [S_FOREST, S_CASTLE], CAST6 = [...CHARS4, ...PLACES2];
+// three four-picture stories, each in story order (the labels are only for the placeholders and the teacher)
+const STORY_RABBIT = [SY("the rabbit went to the forest", "rabbit-1.jpg"), SY("the princess went to the forest", "rabbit-2.jpg"), SY("the princess found the rabbit", "rabbit-3.jpg"), SY("they went home to the castle", "rabbit-4.jpg")];
+const STORY_DRAGON = [SY("a dragon went to the castle", "dragon-1.jpg"), SY("the king saw the dragon", "dragon-2.jpg"), SY("the princess opened the door", "dragon-3.jpg"), SY("they had cake", "dragon-4.jpg")];
+const STORY_CROWN = [SY("the king had a crown", "crown-1.jpg"), SY("the rabbit found the crown", "crown-2.jpg"), SY("the rabbit went to the castle", "crown-3.jpg"), SY("the king was happy", "crown-4.jpg")];
+const ENDINGS3 = [{ label: "a happy ending" }, { label: "a sad ending" }, { label: "a funny ending" }];
+const ORDERQ = [["👀", "Look at the pictures."], ["🗣️", "Tell the story in order."]];
+const ORDER2 = "First, ___. Then, ___.", ORDER4 = "First, ___. Then, ___. After that, ___. Finally, ___.";
+const DICEQ = [["👀", "Look at the dice."], ["🗣️", "Start a story."]];
+const CLUE7 = [["👀", "Read the clue."], ["🗣️", "Guess the character."]];
+const READ_STORY = { ...READ_ALOUD, heading: "Read Your Story" };
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -1493,72 +1509,207 @@ export const SOAR_A2_LESSONS = {
     ],
   },
 
+  // ---------- Unit 7: My Favorite Story ----------
   "7-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Lesson 1", title: "Once Upon a Time!", subtitle: "Identify story elements and begin a story using First…" },
-      { type: "chips", stage: "Getting Ready", heading: "Story Words", subheading: "New words for telling a story", items: ["story", "character", "beginning", "problem", "forest", "house", "friend", "lost", "find", "walk"] },
-      { type: "message", stage: "Taking Off", heading: "First…", subheading: "Show 2-3 story pictures", lines: ["*First*, the boy walks to the forest.", "*First*, the girl sees a dog.", "*First*, they walk to the house."] },
-      { type: "message", stage: "Once Upon a Time…", heading: "Once Upon a Time…", subheading: "Every story has a beginning", lines: ["Once upon a time, there was a boy.", "*First*, he went for a walk."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Story Picture Reveal", subheading: "Describe each picture as it's revealed", turns: [{ who: "teacher", text: "Here is the first picture. What is happening?" }, { who: "student", text: "First, the boy is at home." }, { who: "teacher", text: "What happens next?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Start a Story", subheading: "Write the first sentence of a story", line: "Once upon a time, ___. First, ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Once Upon a Time!", caption: "Once upon a time, there was a girl. First, she walked to the forest." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 7, title: "Once Upon a Time!", subtitle: "Meet story characters and start a story." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Favorite Story", turns: [{ who: "teacher", text: "What is your favorite story?" }], instruction: LISTEN_ANSWER, guide: "My favorite story is ___." },
+
+      // ---- Part B: story words (5 min) ----
+      { type: "strip", part: "B", stage: "Story Words", heading: "Four Characters", numbered: false, size: 100, items: CHARS4, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Story Words", heading: "Once Upon a Time", lines: ["Once upon a time, there was a *king*.", "Once upon a time, there was a *dragon*."], instruction: REPEAT_SENT },
+      { ...one(S_KING), part: "B", stage: "Story Words", heading: "Who Is This?", question: WHO, instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { ...one(S_PRINCESS), part: "B", stage: "Story Words", heading: "Who Is This? 2", question: WHO, instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { ...one(S_DRAGON), part: "B", stage: "Story Words", heading: "Who Is This? 3", question: WHO, instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { ...one(S_RABBIT), part: "B", stage: "Story Words", heading: "Who Is This? 4", question: WHO, instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { type: "strip", part: "B", stage: "Story Places", heading: "Two Story Places", numbered: false, size: 100, items: PLACES2, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Story Places", heading: "One Day", lines: ["One day, the rabbit went to the *forest*.", "One day, the princess went to the *castle*."], instruction: REPEAT_SENT },
+
+      // ---- Part C: story dice and the games (13 min) ----
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }], size: 104, instruction: DICEQ, guide: "Once upon a time, there was a ___." },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice 2", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }], size: 104, instruction: DICEQ, guide: "One day, the ___ went to the ___." },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice 3", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }], size: 104, instruction: [["👀", "Look at the dice."], ["🗣️", "Tell two sentences."]], guide: "Once upon a time... One day..." },
+      { type: "spin", part: "C", stage: "Character Wheel", heading: "Character Wheel", items: CHARS4, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the character."]], guide: "There was a ___." },
+      { type: "peek", part: "C", stage: "Guess the Character", heading: "Who Am I?", item: S_DRAGON, reveal: "It is a dragon.", question: "I live in a cave. I like fire.", instruction: CLUE7, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Guess the Character", heading: "Who Am I? 2", item: S_RABBIT, reveal: "It is a rabbit.", question: "I hop in the forest.", instruction: CLUE7, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Guess the Character", heading: "Who Am I? 3", item: S_KING, reveal: "It is a king.", question: "I am a man. I wear a crown.", instruction: CLUE7, guide: "You are a ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: CHARS4, instruction: [["👀", "Look at the characters."], ["🗣️", "Say the character that went away."]], guide: "The ___ is missing." },
+      { type: "sprint", part: "C", stage: "Story Sprint", heading: "Story Sprint", items: CAST6, seconds: 45, instruction: LOOK_SAY("Say a sentence. Be fast!"), guide: "There was a ___." },
+
+      // ---- Part D: my story beginning (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Story", heading: "Start a Story", turns: [{ who: "teacher", text: "Start a story about a king, a princess, a dragon or a rabbit." }], instruction: LISTEN_ANSWER, guide: "Once upon a time, there was a ___." },
+      { ...TYPE2("Once upon a time, there was a ___. One day, it went to the ___."), part: "D", stage: "Type It!", heading: "Type Your Story" },
+      READ_STORY,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can meet story characters and start a story with Once upon a time." },
     ],
   },
   "7-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Lesson 2", title: "What Happened Next?", subtitle: "Connect events using then and after that." },
-      { type: "chips", stage: "Getting Ready", heading: "New Story Words", subheading: "Recycle Lesson 1 + these", items: ["run", "see", "meet", "open", "go", "help", "look", "find"] },
-      { type: "message", stage: "Taking Off", heading: "Then… / After That…", subheading: "Two connected pictures", lines: ["*Then*, he sees a dog.", "*After that*, they go home.", "*Then*, she opens the door."] },
-      { type: "message", stage: "Put It in Order", heading: "Put It in Order", subheading: "What happens first, then next?", lines: ["First, they walk into the forest.", "*Then*, they find a strange house."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Continue My Story", subheading: "Take turns adding the next event", turns: [{ who: "teacher", text: "A girl walks into the forest. Then she sees a strange house." }, { who: "student", text: "After that, she opens the door!" }, { who: "teacher", text: "What happens next?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Retell three events in order", line: "First, ___. Then, ___. After that, ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "What Happened Next?", caption: "First, she walked into the forest. Then, she saw a house. After that, she opened the door." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 7, title: "What Happened Next?", subtitle: "Tell what happened in a story with then, suddenly and after that." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "table", part: "A", stage: "Review", heading: "Say the Word", rows: [["go", "?"], ["see", "?"], ["have", "?"]], instruction: SAY_PAST },
+      { type: "spin", part: "A", stage: "Review", heading: "Character Wheel", items: CHARS4, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the character."]], guide: "There was a ___." },
+
+      // ---- Part B: four new words and story words (5 min) ----
+      { type: "table", part: "B", stage: "Four New Words", heading: "Four New Words", rows: [["find", "found"], ["help", "helped"], ["look", "looked"], ["open", "opened"]], instruction: [["👀", "Look at the words."], ["🗣️", "Say each pair."]] },
+      { type: "table", part: "B", stage: "Four New Words", heading: "Say the Word", rows: [["find", "?"], ["help", "?"], ["look", "?"], ["open", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "B", stage: "Four New Words", heading: "Say the Word 2", rows: [["open", "?"], ["find", "?"], ["help", "?"], ["look", "?"]], instruction: SAY_PAST },
+      { type: "message", part: "B", stage: "Story Words", heading: "Then and Suddenly", lines: ["*Then*, the princess went to the forest.", "*Suddenly*, she saw a dragon!"], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "Story Words", heading: "After That", lines: ["*After that*, she opened the door.", "She *found* a cake!"], instruction: REPEAT_SENT },
+
+      // ---- Part C: put the story in order (13 min) ----
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order", items: STORY_RABBIT, instruction: ORDERQ, guide: ORDER2 },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 2", items: STORY_DRAGON, instruction: ORDERQ, guide: ORDER2 },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 3", items: STORY_CROWN, instruction: ORDERQ, guide: ORDER2 },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 4", items: STORY_CROWN, instruction: ORDERQ, guide: ORDER2 },
+      { type: "strip", part: "C", stage: "What Happened Next?", heading: "What Happened Next?", size: 92, active: 0, items: STORY_RABBIT, question: "The rabbit went to the forest. What happened next?", instruction: LISTEN_ANSWER, guide: "Then, ___." },
+      { type: "strip", part: "C", stage: "What Happened Next?", heading: "What Happened Next? 2", size: 92, active: 1, items: STORY_RABBIT, question: "The princess went to the forest. What happened next?", instruction: LISTEN_ANSWER, guide: "Suddenly, ___." },
+      { type: "strip", part: "C", stage: "What Happened Next?", heading: "What Happened Next? 3", size: 92, active: 2, items: STORY_RABBIT, question: "The princess found the rabbit. What happened next?", instruction: LISTEN_ANSWER, guide: "After that, ___." },
+      { type: "message", part: "C", stage: "Story Telephone", heading: "Story Telephone", lines: ["Once upon a time, a princess went to the forest."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "Then, she ___." },
+      { type: "message", part: "C", stage: "Story Telephone", heading: "Story Telephone 2", lines: ["Once upon a time, a princess went to the forest. Then she found a dragon."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "Suddenly, the dragon ___." },
+      { type: "chips", part: "C", stage: "Story Telephone", heading: "The Whole Story", items: ["Once upon a time", "Then", "Suddenly", "After that"], instruction: NO_HELP("Tell the whole story alone.") },
+
+      // ---- Part D: my story (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Story", heading: "Tell It Again", turns: [{ who: "teacher", text: "Tell me a story about a princess and a dragon." }], instruction: NO_HELP("Tell a short story.") },
+      { ...TYPE2("First, ___. Then, ___."), part: "D", stage: "Type It!", heading: "Type Your Story" },
+      READ_STORY,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can tell what happened next in a story with then, suddenly and after that." },
     ],
   },
   "7-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Lesson 3", title: "The End!", subtitle: "Finish a story using finally and give a clear ending." },
-      { type: "chips", stage: "Getting Ready", heading: "Ending Words", subheading: "How stories finish", items: ["finally", "end", "happy", "sad", "home", "safe", "together", "found"] },
-      { type: "message", stage: "Taking Off", heading: "The Ending", subheading: "First = beginning · Then/After that = middle · Finally = ending", lines: ["*Finally*, they go home.", "*Finally*, the boy finds his dog.", "*Finally*, they are together."] },
-      { type: "message", stage: "Which Is the Ending?", heading: "Which Is the Ending?", subheading: "Pick the picture that comes last", lines: ["*Finally*, the story ends."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Three Possible Endings", subheading: "Choose an ending, then invent a different one", turns: [{ who: "teacher", text: "The boy is lost in the forest. How does the story end?" }, { who: "student", text: "Finally, he finds his way home!" }, { who: "teacher", text: "Can you think of a different ending?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Retell a 4-picture story: First → Then → Finally", line: "First, ___. Then, ___. Finally, ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "The End!", caption: "First, the dog was lost. Then, a boy found him. Finally, they went home together." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 7, title: "The End!", subtitle: "Finish a story with finally and a good ending." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "order", part: "A", stage: "Review", heading: "Story Order", items: STORY_RABBIT, instruction: ORDERQ, guide: ORDER2 },
+
+      // ---- Part B: endings (5 min) ----
+      { type: "chips", part: "B", stage: "Endings", heading: "Ending Words", items: ["Finally", "The end", "happy", "sad"], instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Endings", heading: "The Ending", lines: ["*Finally*, they went home.", "It was a *happy* ending."], instruction: REPEAT_SENT },
+      { ...one(STORY_RABBIT[3]), part: "B", stage: "Endings", heading: "How Does It End?", question: "How does the story end?", instruction: LISTEN_ANSWER, guide: "Finally, ___." },
+      { ...one(STORY_DRAGON[3]), part: "B", stage: "Endings", heading: "How Does It End? 2", question: "How does the story end?", instruction: LISTEN_ANSWER, guide: "Finally, ___." },
+      { ...one(STORY_CROWN[3]), part: "B", stage: "Endings", heading: "How Does It End? 3", question: "How does the story end?", instruction: LISTEN_ANSWER, guide: "Finally, ___." },
+      { type: "message", part: "B", stage: "Endings", heading: "The Whole Story", lines: ["*First*, the king had a crown.", "*Then*, the rabbit found it.", "*After that*, it went to the castle.", "*Finally*, the king was happy."], instruction: REPEAT_SENT },
+
+      // ---- Part C: tell the whole story (13 min) ----
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 2", items: STORY_DRAGON, instruction: ORDERQ, guide: ORDER4 },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 3", items: STORY_CROWN, instruction: ORDERQ, guide: ORDER4 },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 4", items: STORY_RABBIT, instruction: ORDERQ, guide: ORDER4 },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: [["👀", "Look at the dice."], ["🗣️", "Tell a short story."]], guide: "Once upon a time... Finally..." },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice 2", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: [["👀", "Look at the dice."], ["🗣️", "Tell a short story."]], guide: "Once upon a time... Finally..." },
+      { type: "peek", part: "C", stage: "Mystery Ending", heading: "Mystery Ending", item: STORY_DRAGON[3], reveal: "Finally, they had cake.", question: "How does the story end?", instruction: LOOK_SAY("Guess the ending."), guide: "I think, finally, ___." },
+      { type: "peek", part: "C", stage: "Mystery Ending", heading: "Mystery Ending 2", item: STORY_CROWN[3], reveal: "Finally, the king was happy.", question: "How does the story end?", instruction: LOOK_SAY("Guess the ending."), guide: "I think, finally, ___." },
+      { type: "spin", part: "C", stage: "Character Wheel", heading: "Character Wheel", items: CHARS4, instruction: [["👀", "Look at the wheel."], ["🗣️", "Tell a story about this character."]] },
+
+      // ---- Part D: my ending (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Ending", heading: "My Ending", turns: [{ who: "teacher", text: "How does your favorite story end?" }], instruction: LISTEN_ANSWER, guide: "Finally, ___." },
+      { ...TYPE2("First, ___. Finally, ___."), part: "D", stage: "Type It!", heading: "Type Your Story" },
+      READ_STORY,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can finish a story with finally and a happy ending." },
     ],
   },
   "7-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Lesson 4", title: "Let's Review!", subtitle: "Retell a complete short story in the correct order." },
-      { type: "chips", stage: "Getting Ready", heading: "Story Speed Round", subheading: "Story words + sequencing words", items: ["character", "beginning", "problem", "ending", "forest", "First…", "Then…", "After that…", "Finally…"] },
-      { type: "message", stage: "Put the Story Together", heading: "Put the Story Together", subheading: "Mix up 4-5 story pictures and order them", lines: ["*First*, ___. *Then*, ___. *After that*, ___. *Finally*, ___."] },
-      { type: "dialogue", stage: "Fix the Story", heading: "Fix the Story", subheading: "The order is wrong — correct it", turns: [{ who: "teacher", text: "Finally, the boy walked to the forest. First, he found his dog." }, { who: "student", text: "No! First, he walked to the forest. Finally, he found his dog." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Mixed-Up Story", subheading: "Listen, then explain the correct sequence", turns: [{ who: "teacher", text: "Finally the girl went home. First she saw a cat. Then she followed it." }, { who: "student", text: "No — first she saw a cat, then she followed it, finally she went home!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Retell a short story without pictures, if you can", line: "First, ___. Then, ___. Finally, ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "First, she saw a cat. Then, she followed it. Finally, she went home." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 7, title: "Let's Review!", subtitle: "Play the story games and tell the whole story." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: CHARS4, instruction: [["👀", "Look at the characters."], ["🗣️", "Say the character that went away."]], guide: "The ___ is missing." },
+      { type: "table", part: "A", stage: "Memory Challenge", heading: "Say the Word", rows: [["find", "?"], ["help", "?"], ["look", "?"], ["open", "?"]], instruction: SAY_PAST },
+
+      // ---- Part B: story order (5 min) ----
+      { type: "order", part: "B", stage: "Story Order", heading: "Story Order", items: STORY_CROWN, instruction: ORDERQ, guide: ORDER4 },
+      { type: "order", part: "B", stage: "Story Order", heading: "Story Order 2", items: STORY_RABBIT, instruction: ORDERQ, guide: ORDER4 },
+
+      // ---- Part C: games (13 min) ----
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 3", items: STORY_DRAGON, instruction: NO_HELP("Tell the story in order.") },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 4", items: STORY_CROWN, instruction: NO_HELP("Tell the story in order.") },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: [["👀", "Look at the dice."], ["🗣️", "Tell a short story."]], guide: "Once upon a time... Finally..." },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice 2", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: NO_HELP("Tell a short story.") },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice 3", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: [["👀", "Look at the dice."], ["🗣️", "Tell a short story."]], guide: "Once upon a time... Finally..." },
+      { type: "dice", part: "C", stage: "Story Dice", heading: "Story Dice 4", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: NO_HELP("Tell a short story.") },
+      { type: "peek", part: "C", stage: "Guess the Character", heading: "Who Am I?", item: S_PRINCESS, reveal: "It is a princess.", question: "I am a girl. I wear a crown.", instruction: CLUE7, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Guess the Character", heading: "Who Am I? 2", item: S_RABBIT, reveal: "It is a rabbit.", question: "I hop in the forest.", instruction: CLUE7, guide: "You are a ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: CAST6, seconds: 45, instruction: LOOK_SAY("Say a sentence. Be fast!") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about a story." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("First, ___. Finally, ___."), part: "D", stage: "Type It!", heading: "Type Your Story" },
+      READ_STORY,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can tell a whole story with a beginning, a middle and an ending." },
     ],
   },
   "7-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Retell and create stories independently." },
-      { type: "message", stage: "Mystery Story", heading: "Mystery Story", subheading: "4-5 unfamiliar pictures — what happened?", lines: ["Look at the pictures. What happened in this story?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Story Podcast", subheading: "Tell us a story! Then answer follow-up questions", turns: [{ who: "teacher", text: "Tell us a story!" }, { who: "student", text: "Once upon a time, a girl found a lost puppy. First, she..." }, { who: "teacher", text: "What happened after that?" }] },
-      { type: "message", stage: "Change the Story", heading: "Change the Story", subheading: "Change one part", lines: ["The boy doesn't find the dog. *He finds a cat!*"] },
-      { type: "message", stage: "My Favorite Story", heading: "My Favorite Story", subheading: "Talk about a favorite story, movie, or fairy tale", lines: ["My favorite story is about *a girl who finds a lost puppy*."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "What happened in your story? Was it happy or sad?", line: "In my story, ___. It was ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "My favorite story is about a lost puppy who finally finds her way home. It has a happy ending." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 7, title: "Show What You Know!", subtitle: "Tell and change stories, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me a Story", turns: [{ who: "teacher", text: "Tell me a story you know." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Favorite Story", turns: [{ who: "teacher", text: "What is your favorite story? Who is in it?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Why?", turns: [{ who: "teacher", text: "Why do you like it?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: story podcast (8 min) ----
+      { type: "order", part: "B", stage: "Story Order", heading: "Mystery Story", items: STORY_DRAGON, instruction: NO_HELP("Tell the story in order.") },
+      { type: "order", part: "B", stage: "Story Order", heading: "Mystery Story 2", items: STORY_CROWN, instruction: NO_HELP("Tell the story in order.") },
+      { type: "order", part: "B", stage: "Story Order", heading: "Mystery Story 3", items: STORY_RABBIT, instruction: NO_HELP("Tell the story in order.") },
+      { type: "dice", part: "B", stage: "Story Dice", heading: "Story Podcast", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: NO_HELP("Tell a story for the podcast.") },
+      { type: "dice", part: "B", stage: "Story Dice", heading: "Story Podcast 2", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: NO_HELP("Tell a story for the podcast.") },
+      { type: "dice", part: "B", stage: "Story Dice", heading: "Story Podcast 3", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: NO_HELP("Tell a story for the podcast.") },
+      { type: "dice", part: "B", stage: "Story Dice", heading: "Story Podcast 4", dice: [{ name: "Who?", items: CHARS4 }, { name: "Where?", items: PLACES2 }, { name: "The end", items: ENDINGS3 }], size: 96, instruction: NO_HELP("Tell a story for the podcast.") },
+      { type: "message", part: "B", stage: "Change the Story", heading: "Change the Story", lines: ["This time, the rabbit found a *dragon* in the forest!"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Tell the new story."]] },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: CAST6, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say a sentence. Be fast!"]] },
+
+      // ---- Part C: my favorite story (5 min) ----
+      { type: "dialogue", part: "C", stage: "My Favorite Story", heading: "My Favorite Story", turns: [{ who: "teacher", text: "Tell me about your favorite story. What happened first, then, and at the end?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "My Favorite Story", heading: "Happy or Sad?", turns: [{ who: "teacher", text: "Was the ending happy or sad?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Once upon a time, there was a *princess*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["One day, she went to the *forest*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["*Suddenly*, she saw a *dragon*!"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Story...", lines: ["Write your story."], instruction: [["⌨️", "Type four or five sentences in the chat."]] },
+      { ...READ_STORY, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 7 Complete!", title: "Unit 7 Complete!", see: "Great job!", recap: "You can tell and change a story, in your own words." },
     ],
   },
   "7-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Test", title: "Unit 7 Test", subtitle: "My Favorite Story — sequence and retell a story independently." },
-      { type: "chips", stage: "Part 1: Story Vocabulary", heading: "Name the Story Words", subheading: "6-8 pictures", items: ["character", "forest", "house", "friend", "problem", "help", "find", "ending"] },
-      { type: "message", stage: "Part 2-3: Story Order", heading: "Order the Story", subheading: "Put mixed-up pictures in order, then describe them", lines: ["*First*, ___. *Then*, ___. *After that*, ___. *Finally*, ___."] },
-      { type: "dialogue", stage: "Part 4: What Happened?", heading: "What Happened?", subheading: "Answer questions about the story", turns: [{ who: "teacher", text: "What happened first? What happened next?" }, { who: "student", text: "First, the dog got lost. Then, a girl found him." }] },
-      { type: "dialogue", stage: "Part 5: Story Retelling ⭐", heading: "Retell the Story", subheading: "5-7 connected sentences, in order", turns: [{ who: "teacher", text: "Now retell the whole story for me." }, { who: "student", text: "First, a boy went to the park. Then, he saw a dog. After that, he helped the dog. Finally, the dog went home." }] },
-      { type: "postcard", stage: "Part 6: Short Writing", heading: "Write the Story", subheading: "4-5 sentences using sequencing words", line: "First, ___. Then, ___. After that, ___. Finally, ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 7 Complete!", cardTitle: "Unit 7 Test", caption: "First, a boy went to the park. Then, he saw a dog. Finally, they went home together." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 7, title: "Unit 7 Test", subtitle: "Show what you can say about a story!" },
+
+      // ---- Part A: story words ----
+      { ...one(S_KING), part: "A", stage: "Story Words", heading: "Who Is This?", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(S_PRINCESS), part: "A", stage: "Story Words", heading: "Who Is This? 2", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(S_DRAGON), part: "A", stage: "Story Words", heading: "Who Is This? 3", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(S_RABBIT), part: "A", stage: "Story Words", heading: "Who Is This? 4", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(S_FOREST), part: "A", stage: "Story Words", heading: "Where Is It?", question: "What is this place?", instruction: LISTEN_ANSWER },
+      { ...one(S_CASTLE), part: "A", stage: "Story Words", heading: "Where Is It? 2", question: "What is this place?", instruction: LISTEN_ANSWER },
+
+      // ---- Part B: story in order ----
+      { type: "order", part: "B", stage: "Story in Order", heading: "Story in Order", items: STORY_RABBIT, instruction: ORDERQ },
+      { type: "order", part: "B", stage: "Story in Order", heading: "Story in Order 2", items: STORY_DRAGON, instruction: ORDERQ },
+
+      // ---- Part C: retelling ----
+      { type: "strip", part: "C", stage: "Retelling", heading: "Tell the Story", size: 92, items: STORY_CROWN, instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the whole story."]] },
+      { type: "strip", part: "C", stage: "Retelling", heading: "Tell the Story 2", size: 92, items: STORY_RABBIT, instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the whole story."]] },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Favorite Story", turns: [{ who: "teacher", text: "What is your favorite story? Who is in it?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "How Does It End?", turns: [{ who: "teacher", text: "Tell me how the story begins and how it ends." }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say three or four sentences."]] },
+      { type: "score", stage: "My Unit 7 Score!", heading: "My Unit 7 Score!", rows: [["Story words", "/ 6"], ["Story in order", "/ 6"], ["Retelling", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 7 Complete!", title: "Unit 7 Complete!", see: "On to Unit 8!", recap: "You can tell a story in order, from beginning to end." },
     ],
   },
+
   "8-1": {
     slides: [
       { type: "title", stage: "A2 · Soar", eyebrow: "Unit 8 · Lesson 1", title: "What Can You Do?", subtitle: "Name sports and say what you can do." },
