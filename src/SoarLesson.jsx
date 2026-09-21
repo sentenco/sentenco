@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { SOAR_A2_LESSONS } from "./soarA2Data";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 import { SoarPic } from "./SoarPic.jsx";
-import { PeekBlock, SpinBlock, MissingBlock, SprintBlock, DiceBlock, TownBlock, DirsBlock, RouteBlock, ShopBlock, gameStyles } from "./SoarGames.jsx";
+import { PeekBlock, SpinBlock, MissingBlock, SprintBlock, DiceBlock, TownBlock, DirsBlock, RouteBlock, ShopBlock, HelpBlock, gameStyles } from "./SoarGames.jsx";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -332,7 +332,7 @@ const BLOCKS = {
   dialogue: DialogueBlock, spot: SpotBlock, log: LogBlock, postcard: PostcardBlock,
   landing: LandingBlock, table: TableBlock, steps: StepsBlock,
   strip: StripBlock, wrapup: WrapUpBlock, score: ScoreBlock,
-  peek: PeekBlock, spin: SpinBlock, missing: MissingBlock, sprint: SprintBlock, dice: DiceBlock, town: TownBlock, dirs: DirsBlock, route: RouteBlock, shop: ShopBlock,
+  peek: PeekBlock, spin: SpinBlock, missing: MissingBlock, sprint: SprintBlock, dice: DiceBlock, town: TownBlock, dirs: DirsBlock, route: RouteBlock, shop: ShopBlock, help: HelpBlock,
 };
 
 function renderSlideBody(slide) {

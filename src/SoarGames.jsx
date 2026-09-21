@@ -95,7 +95,7 @@ export function SpinBlock({ heading, items = [], size = 196, question }) {
               return (
                 <g key={i}>
                   <path d={`M100 100 L${x0} ${y0} A${R} ${R} 0 0 1 ${x1} ${y1} Z`} fill={WHEEL[i % WHEEL.length]} stroke="#fff" strokeWidth="3" />
-                  <text x={tx} y={ty} transform={`rotate(${i * seg + seg / 2} ${tx} ${ty})`} textAnchor="middle" dominantBaseline="middle" className="wheel-text">{it.label}</text>
+                  <text x={tx} y={ty} transform={`rotate(${i * seg + seg / 2} ${tx} ${ty})`} textAnchor="middle" dominantBaseline="middle" className="wheel-text" style={{ fontSize: (it.wheel || it.label).length > 9 ? 11 : 13.5 }}>{it.wheel || it.label}</text>
                 </g>
               );
             })}
@@ -422,6 +422,34 @@ export function ShopBlock({ heading, items = [], budget, size = 80, question }) 
   );
 }
 
+// Who can help? A problem picture and three helpers. The child says who can help, the teacher clicks that helper.
+export function HelpBlock({ heading, problem, options = [], answer = 0, said, size = 84, labels = true }) {
+  const [chosen, setChosen] = useState(null);
+  const ok = chosen === answer;
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="game-row">
+        <div className="help-problem">
+          <SoarPic src={problem.src} label={problem.label} size={104} />
+          <div className="game-bubble">{problem.text}</div>
+        </div>
+        <div className="help-side">
+          <div className="strip">
+            {options.map((o, i) => (
+              <button key={i} type="button" className={`help-opt ${chosen === i ? (i === answer ? "is-right" : "is-wrong") : ""}`} onClick={() => setChosen(i)}>
+                <SoarPic src={o.src} label={o.label} size={size} />
+                <span className="strip-label">{labels ? o.label : "\u00A0"}</span>
+              </button>
+            ))}
+          </div>
+          {chosen !== null && (ok ? <div className="game-answer game-answer--sm">{said}</div> : <div className="game-note game-note--big">Not quite. Try again!</div>)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export const gameStyles = `
 .game-row { display: flex; align-items: center; justify-content: center; gap: 26px; }
 .game-side { display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 190px; max-width: 250px; }
@@ -498,4 +526,11 @@ export const gameStyles = `
 .shop-total { color: var(--coral-deep); }
 .shop-wallet { color: #1B7F5F; }
 .game-answer.is-no { background: #FDE8E8; border-color: #D9534F; color: #B5322E; }
+
+.help-problem { display: flex; flex-direction: column; align-items: center; gap: 8px; max-width: 170px; }
+.help-side { display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 150px; justify-content: center; }
+.help-opt { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 5px 5px 4px; background: rgba(255,255,255,0.75); border: none; border-radius: 16px; cursor: pointer; box-shadow: 0 4px 0 rgba(27,42,74,0.1); }
+.help-opt:hover { background: #fff; }
+.help-opt.is-right { background: #fff; box-shadow: 0 0 0 4px #22A67E, 0 4px 0 rgba(27,42,74,0.1); }
+.help-opt.is-wrong { opacity: 0.5; box-shadow: 0 0 0 3px #D9534F; }
 `;

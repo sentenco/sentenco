@@ -85,6 +85,26 @@ const TF_PRICE = LOOK_SAY("Say true or false. Fix it if it is false.");
 const SHELFQ = [["👀", "Look at the shelf."], ["🗣️", "Say what you want."]];
 const READ_SHOP = { ...READ_ALOUD, heading: "Read Your Shopping" };
 
+// ---- Unit 6 (Jobs People Do) pieces; pictures still to be generated (placeholders show until then) ----
+// He / she follows the person in the picture: teacher she, doctor he, chef she, farmer she, driver he, firefighter she, police officer he, baker he, pilot she.
+const JB = (label, file) => ({ label, src: `/curriculum/a2-jobs/${file}` });
+const J_TEACHER = JB("teacher", "teacher.jpg"), J_DOCTOR = JB("doctor", "doctor.jpg"), J_CHEF = JB("chef", "chef.jpg"), J_FARMER = JB("farmer", "farmer.jpg"), J_DRIVER = JB("driver", "driver.jpg");
+const J_FIREFIGHTER = JB("firefighter", "firefighter.jpg"), J_POLICE = { ...JB("police officer", "police-officer.jpg"), wheel: "police" }, J_BAKER = JB("baker", "baker.jpg"), J_PILOT = JB("pilot", "pilot.jpg");
+const JOBS5 = [J_TEACHER, J_DOCTOR, J_CHEF, J_FARMER, J_DRIVER], JOBS4 = [J_FIREFIGHTER, J_POLICE, J_BAKER, J_PILOT];
+const JOBS6 = [J_DOCTOR, J_CHEF, J_FIREFIGHTER, J_POLICE, J_BAKER, J_PILOT], JOBS9 = [...JOBS5, ...JOBS4];
+const PB = (label, file, text) => ({ label, src: `/curriculum/a2-jobs/${file}`, text });
+const P_SICK = PB("sick", "sick.jpg", "Someone is sick!"), P_FIRE = PB("fire", "fire.jpg", "There is a fire!"), P_LOST = PB("lost", "lost.jpg", "A child is lost!"), P_HUNGRY = PB("hungry", "hungry.jpg", "I am hungry!");
+const HELP_SICK = { type: "help", problem: P_SICK, options: [J_DOCTOR, J_BAKER, J_PILOT], answer: 0, said: "A doctor can help." };
+const HELP_FIRE = { type: "help", problem: P_FIRE, options: [J_TEACHER, J_FIREFIGHTER, J_FARMER], answer: 1, said: "A firefighter can help." };
+const HELP_LOST = { type: "help", problem: P_LOST, options: [J_CHEF, J_DRIVER, J_POLICE], answer: 2, said: "A police officer can help." };
+const HELP_HUNGRY = { type: "help", problem: P_HUNGRY, options: [J_DOCTOR, J_CHEF, J_PILOT], answer: 1, said: "A chef can help." };
+const WHO = "Who is this?";
+const TF_PICTURE = LOOK_SAY("Say true or false. Fix it if it is false.");
+const HELPQ = [["👀", "Look at the problem."], ["🗣️", "Say who can help."]];
+const CLUEQ = [["👀", "Read the clue."], ["🗣️", "Guess the job."]];
+const DUTYQ = [["👀", "Look at the picture."], ["🗣️", "Say what the person does."]];
+const READ_JOB = { ...READ_ALOUD, heading: "Read Your Jobs" };
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -1142,69 +1162,209 @@ export const SOAR_A2_LESSONS = {
 
   // ---------- Unit 6: Jobs People Do ----------
   "6-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 6 · Lesson 1", title: "What's Your Job? 👨‍💼", subtitle: "Identify jobs and describe people with He is a... / She is a..." },
-      { type: "chips", stage: "Getting Ready", heading: "Jobs", subheading: "Today, let's talk about people and their jobs!", items: ["teacher", "doctor", "nurse", "police officer", "firefighter", "chef", "farmer", "driver", "dentist"] },
-      { type: "message", stage: "Taking Off", heading: "He or She?", subheading: "👨‍🍳 → chef · 👩‍⚕️ → doctor", lines: ["He is a *chef*.", "She is a *doctor*."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Job Interview", subheading: "Guess the mystery worker!", turns: [{ who: "student", text: "What is your job?" }, { who: "teacher", text: "I help sick people." }, { who: "student", text: "Are you a doctor?" }, { who: "teacher", text: "Yes!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Describe 4 people's jobs", line: "He is a ___. She is a ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "What's Your Job?", caption: "He is a firefighter. She is a nurse." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 6, title: "What's Your Job?", subtitle: "Say what job a person has with He is a... and She is a..." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Who Helps You?", turns: [{ who: "teacher", text: "Who helps you at school?" }], instruction: LISTEN_ANSWER, guide: "My ___ helps me." },
+
+      // ---- Part B: five jobs (5 min) ----
+      { type: "strip", part: "B", stage: "Five Jobs", heading: "Five Jobs", numbered: false, size: 92, items: JOBS5, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Five Jobs", heading: "He or She?", lines: ["He is a *doctor*.", "She is a *chef*."], instruction: REPEAT_SENT },
+      { ...one(J_DOCTOR), part: "B", stage: "Five Jobs", heading: "Who Is This?", question: WHO, instruction: LISTEN_ANSWER, guide: "He is a ___." },
+      { ...one(J_CHEF), part: "B", stage: "Five Jobs", heading: "Who Is This? 2", question: WHO, instruction: LISTEN_ANSWER, guide: "She is a ___." },
+      { ...one(J_DRIVER), part: "B", stage: "Five Jobs", heading: "Who Is This? 3", question: WHO, instruction: LISTEN_ANSWER, guide: "He is a ___." },
+      { ...one(J_FARMER), part: "B", stage: "Five Jobs", heading: "Who Is This? 4", question: WHO, instruction: LISTEN_ANSWER, guide: "She is a ___." },
+      { ...one(J_TEACHER), part: "B", stage: "Five Jobs", heading: "Who Is This? 5", question: WHO, instruction: LISTEN_ANSWER, guide: "She is a ___." },
+
+      // ---- Part C: the games (13 min) ----
+      { type: "spin", part: "C", stage: "Job Wheel", heading: "Job Wheel", items: JOBS5, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the job."]], guide: "He / She is a ___." },
+      { type: "strip", part: "C", stage: "He or She?", heading: "He or She?", numbered: false, labels: false, size: 100, items: [J_DOCTOR, J_CHEF], instruction: LOOK_SAY("Tell about the two people."), guide: "He is a ___. She is a ___." },
+      { type: "strip", part: "C", stage: "He or She?", heading: "He or She? 2", numbered: false, labels: false, size: 100, items: [J_FARMER, J_DRIVER], instruction: LOOK_SAY("Tell about the two people."), guide: "She is a ___. He is a ___." },
+      { type: "peek", part: "C", stage: "Mystery Worker", heading: "Mystery Worker", item: J_DOCTOR, reveal: "He is a doctor.", question: WHO, instruction: LOOK_SAY("Guess the job."), guide: "I think he is a ___." },
+      { type: "peek", part: "C", stage: "Mystery Worker", heading: "Mystery Worker 2", item: J_FARMER, reveal: "She is a farmer.", question: WHO, instruction: LOOK_SAY("Guess the job."), guide: "I think she is a ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: JOBS5, size: 84, instruction: [["👀", "Look at the jobs."], ["🗣️", "Say the job that went away."]], guide: "The ___ is missing." },
+      { type: "sprint", part: "C", stage: "Job Sprint", heading: "Job Sprint", items: JOBS5, seconds: 40, instruction: LOOK_SAY("Say the job. Be fast!"), guide: "He / She is a ___." },
+      { ...one(J_CHEF), size: 100, part: "C", stage: "True or False?", heading: "True or False?", sentence: "She is a *chef*.", instruction: TF_PICTURE },
+      { ...one(J_DRIVER), size: 100, part: "C", stage: "True or False?", heading: "True or False? 2", sentence: "He is a *farmer*.", instruction: TF_PICTURE },
+      { ...one(J_TEACHER), size: 100, part: "C", stage: "True or False?", heading: "True or False? 3", sentence: "She is a *doctor*.", instruction: TF_PICTURE },
+
+      // ---- Part D: my family's jobs (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Family", heading: "My Family's Jobs", turns: [{ who: "teacher", text: "What is your mom's job? What is your dad's job?" }], instruction: LISTEN_ANSWER, guide: "My mom is a ___." },
+      { ...TYPE2("He is a ___. She is a ___."), part: "D", stage: "Type It!", heading: "Type Two Jobs" },
+      READ_JOB,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say what job a person has with He is a and She is a." },
     ],
   },
   "6-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 6 · Lesson 2", title: "More Jobs! 👩‍🔧", subtitle: "Talk about more jobs and describe simple job duties." },
-      { type: "chips", stage: "Getting Ready", heading: "More Jobs", subheading: "New workers to meet", items: ["engineer", "pilot", "mechanic", "artist", "baker", "veterinarian", "photographer", "scientist"] },
-      { type: "message", stage: "Taking Off", heading: "Jobs + Duties", subheading: "👨‍🔧 Mechanic → fixes cars · 👩‍🍳 Baker → makes bread", lines: ["She is a *baker*. She *makes bread*.", "He is a *mechanic*. He *fixes cars*."] },
-      { type: "dialogue", stage: "Who Does What?", heading: "Who Does What?", subheading: "Connect the job to the action", turns: [{ who: "teacher", text: "She makes bread." }, { who: "student", text: "She is a baker!" }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Who Am I?", subheading: "Guess the job from the clues", turns: [{ who: "teacher", text: "I work with animals. I help sick animals." }, { who: "student", text: "You are a veterinarian!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Choose 3 jobs and describe what each person does", line: "She is a ___. She ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "More Jobs!", caption: "He is a pilot. He flies a plane. She is a veterinarian. She cares for animals." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 6, title: "More Jobs!", subtitle: "Learn four more jobs and say what each person does." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Job Wheel", items: JOBS5, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the job."]], guide: "He / She is a ___." },
+      { ...one(J_DOCTOR), part: "A", stage: "Review", heading: "Who Is This?", question: WHO, instruction: LISTEN_ANSWER, guide: "He is a ___." },
+
+      // ---- Part B: four new jobs (5 min) ----
+      { type: "strip", part: "B", stage: "Four New Jobs", heading: "Four New Jobs", numbered: false, size: 100, items: JOBS4, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Four New Jobs", heading: "He or She?", lines: ["She is a *firefighter*.", "He is a *police officer*."], instruction: REPEAT_SENT },
+      { ...one(J_FIREFIGHTER), part: "B", stage: "Four New Jobs", heading: "Who Is This?", question: WHO, instruction: LISTEN_ANSWER, guide: "She is a ___." },
+      { ...one(J_POLICE), part: "B", stage: "Four New Jobs", heading: "Who Is This? 2", question: WHO, instruction: LISTEN_ANSWER, guide: "He is a ___." },
+      { ...one(J_BAKER), part: "B", stage: "Four New Jobs", heading: "Who Is This? 3", question: WHO, instruction: LISTEN_ANSWER, guide: "He is a ___." },
+      { ...one(J_PILOT), part: "B", stage: "Four New Jobs", heading: "Who Is This? 4", question: WHO, instruction: LISTEN_ANSWER, guide: "She is a ___." },
+
+      // ---- Part C: what do they do? and the games (13 min) ----
+      { type: "message", part: "C", stage: "What Do They Do?", heading: "What Do They Do?", lines: ["He is a baker. He *makes* bread.", "She is a pilot. She *flies* a plane."], instruction: REPEAT_SENT },
+      { ...one(J_BAKER), part: "C", stage: "What Do They Do?", heading: "What Does He Do?", question: "What does he do?", instruction: LISTEN_ANSWER, guide: "He ___." },
+      { ...one(J_PILOT), part: "C", stage: "What Do They Do?", heading: "What Does She Do?", question: "What does she do?", instruction: LISTEN_ANSWER, guide: "She ___." },
+      { type: "message", part: "C", stage: "What Do They Do?", heading: "What Do They Do? 2", lines: ["She is a firefighter. She *puts out* fires.", "He is a police officer. He *keeps* people safe."], instruction: REPEAT_SENT },
+      { ...one(J_FIREFIGHTER), part: "C", stage: "What Do They Do?", heading: "What Does She Do? 2", question: "What does she do?", instruction: LISTEN_ANSWER, guide: "She ___." },
+      { ...one(J_POLICE), part: "C", stage: "What Do They Do?", heading: "What Does He Do? 2", question: "What does he do?", instruction: LISTEN_ANSWER, guide: "He ___." },
+      { type: "peek", part: "C", stage: "Guess My Job", heading: "Guess My Job", item: J_FIREFIGHTER, reveal: "She is a firefighter.", question: "I put out fires.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Guess My Job", heading: "Guess My Job 2", item: J_BAKER, reveal: "He is a baker.", question: "I make bread.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "spin", part: "C", stage: "Job Wheel", heading: "Job Wheel", items: JOBS6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the job and what the person does."]], guide: "He / She is a ___." },
+      { type: "sprint", part: "C", stage: "Job Sprint", heading: "Job Sprint", items: JOBS6, seconds: 45, instruction: LOOK_SAY("Say the job. Be fast!"), guide: "He / She is a ___." },
+      { ...one(J_BAKER), size: 100, part: "C", stage: "True or False?", heading: "True or False?", sentence: "A baker *makes* bread.", instruction: TF_PICTURE },
+      { ...one(J_PILOT), size: 100, part: "C", stage: "True or False?", heading: "True or False? 2", sentence: "A pilot *puts out* fires.", instruction: TF_PICTURE },
+
+      // ---- Part D: my family (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Family", heading: "What Do They Do?", turns: [{ who: "teacher", text: "What does your mom do? What does your dad do?" }], instruction: LISTEN_ANSWER },
+      { ...TYPE2("She is a ___. She ___."), part: "D", stage: "Type It!", heading: "Type Two Jobs" },
+      READ_JOB,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can name more jobs and say what each person does." },
     ],
   },
   "6-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 6 · Lesson 3", title: "Community Helpers! 🚒", subtitle: "Talk about how different workers help people in the community." },
-      { type: "message", stage: "Getting Ready", heading: "How Do They Help?", subheading: "Who helps sick people? Who keeps people safe?", lines: ["A firefighter *helps people*.", "A doctor *treats sick people*."] },
-      { type: "message", stage: "Taking Off", heading: "Community Problems", subheading: "Who can help?", lines: ["I am sick. Who can help me?", "There is a fire. Who can help?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Emergency Call", subheading: "Identify the right helper and explain why", turns: [{ who: "teacher", text: "Someone is sick!" }, { who: "student", text: "A doctor can help because she treats sick people." }] },
-      { type: "message", stage: "Postcard Message", heading: "Exit Talk", subheading: "Which community helper is important to you? Why?", lines: ["I think firefighters are important because *they help people*."] },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Community Helpers!", caption: "A doctor treats sick people. A police officer keeps people safe." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 6, title: "Community Helpers!", subtitle: "Say who can help when someone has a problem." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "peek", part: "A", stage: "Review", heading: "Guess My Job", item: J_PILOT, reveal: "She is a pilot.", question: "I fly a plane.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "spin", part: "A", stage: "Review", heading: "Job Wheel", items: JOBS6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the job."]], guide: "He / She is a ___." },
+
+      // ---- Part B: more things people do (5 min) ----
+      { type: "message", part: "B", stage: "What Do They Do?", heading: "What Do They Do?", lines: ["She is a teacher. She *teaches* children.", "She is a chef. She *cooks* food."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "What Do They Do?", heading: "What Do They Do? 2", lines: ["She is a farmer. She *grows* food.", "He is a driver. He *drives* a bus."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "What Do They Do?", heading: "What Do They Do? 3", lines: ["He is a doctor. He *helps* sick people."], instruction: REPEAT_SENT },
+      { ...one(J_TEACHER), part: "B", stage: "What Do They Do?", heading: "What Does She Do?", question: "What does she do?", instruction: LISTEN_ANSWER, guide: "She ___." },
+      { ...one(J_FARMER), part: "B", stage: "What Do They Do?", heading: "What Does She Do? 2", question: "What does she do?", instruction: LISTEN_ANSWER, guide: "She ___." },
+      { ...one(J_DRIVER), part: "B", stage: "What Do They Do?", heading: "What Does He Do?", question: "What does he do?", instruction: LISTEN_ANSWER, guide: "He ___." },
+      { ...one(J_DOCTOR), part: "B", stage: "What Do They Do?", heading: "What Does He Do? 2", question: "What does he do?", instruction: LISTEN_ANSWER, guide: "He ___." },
+
+      // ---- Part C: who can help? (13 min) ----
+      { type: "message", part: "C", stage: "Who Can Help?", heading: "Who Can Help?", lines: ["Someone is sick. A doctor *can help*.", "There is a fire. A firefighter *can help*."], instruction: REPEAT_SENT },
+      { ...HELP_SICK, part: "C", stage: "Who Can Help?", heading: "Who Can Help?", instruction: HELPQ, guide: "A ___ can help." },
+      { ...HELP_FIRE, part: "C", stage: "Who Can Help?", heading: "Who Can Help? 2", instruction: HELPQ, guide: "A ___ can help." },
+      { ...HELP_LOST, part: "C", stage: "Who Can Help?", heading: "Who Can Help? 3", instruction: HELPQ, guide: "A ___ can help." },
+      { ...HELP_HUNGRY, part: "C", stage: "Who Can Help?", heading: "Who Can Help? 4", instruction: HELPQ, guide: "A ___ can help." },
+      { type: "peek", part: "C", stage: "Guess My Job", heading: "Guess My Job", item: J_DRIVER, reveal: "He is a driver.", question: "I drive a bus.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Guess My Job", heading: "Guess My Job 2", item: J_TEACHER, reveal: "She is a teacher.", question: "I teach children.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "sprint", part: "C", stage: "Job Sprint", heading: "Job Sprint", items: JOBS9, seconds: 45, instruction: LOOK_SAY("Say the job. Be fast!"), guide: "He / She is a ___." },
+
+      // ---- Part D: an important helper (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Helper", heading: "An Important Helper", turns: [{ who: "teacher", text: "Which helper is important to you? Why?" }], instruction: LISTEN_ANSWER, guide: "A ___ helps people." },
+      { ...TYPE2("A ___ can help. He / She ___."), part: "D", stage: "Type It!", heading: "Type About a Helper" },
+      { ...READ_ALOUD, heading: "Read About a Helper" },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say who can help when someone has a problem." },
     ],
   },
   "6-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 6 · Lesson 4", title: "Let's Review! 🔄", subtitle: "Combine jobs, job duties, and community-helper language." },
-      { type: "chips", stage: "Job Speed Round", heading: "Job Speed Round", subheading: "Say it fast!", items: ["driver", "nurse", "farmer", "chef", "pilot", "baker"] },
-      { type: "dialogue", stage: "What Do They Do?", heading: "What Do They Do?", subheading: "Job → duty", turns: [{ who: "teacher", text: "She is a chef." }, { who: "student", text: "She cooks food." }] },
-      { type: "dialogue", stage: "Fix the Mistake", heading: "Fix the Mistake", subheading: "Catch the error", turns: [{ who: "teacher", text: "A doctor fixes cars." }, { who: "student", text: "No! A mechanic fixes cars." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Job Mistake Challenge", subheading: "Correct the mistake, then say who CAN help", turns: [{ who: "teacher", text: "A firefighter delivers letters." }, { who: "student", text: "No. A mail carrier delivers letters." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Talk about three community helpers", line: "A ___ helps people by ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "A firefighter helps people. A teacher helps students learn." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 6, title: "Let's Review!", subtitle: "Play the job games and tell it right." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: JOBS4, instruction: [["👀", "Look at the jobs."], ["🗣️", "Say the job that went away."]], guide: "The ___ is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Job Wheel", items: JOBS6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the job."]], guide: "He / She is a ___." },
+
+      // ---- Part B: true or false (5 min) ----
+      { ...one(J_POLICE), size: 100, part: "B", stage: "True or False?", heading: "True or False?", sentence: "He is a *police officer*.", instruction: TF_PICTURE },
+      { ...one(J_CHEF), size: 100, part: "B", stage: "True or False?", heading: "True or False? 2", sentence: "A chef *drives* a bus.", instruction: TF_PICTURE },
+      { ...one(J_FIREFIGHTER), size: 100, part: "B", stage: "True or False?", heading: "True or False? 3", sentence: "A firefighter *puts out* fires.", instruction: TF_PICTURE },
+      { ...one(J_FARMER), size: 100, part: "B", stage: "True or False?", heading: "True or False? 4", sentence: "A farmer *teaches* children.", instruction: TF_PICTURE },
+      { ...one(J_DOCTOR), size: 100, part: "B", stage: "True or False?", heading: "True or False? 5", sentence: "A doctor *helps* sick people.", instruction: TF_PICTURE },
+
+      // ---- Part C: games and helpers (13 min) ----
+      { ...HELP_FIRE, part: "C", stage: "Who Can Help?", heading: "Who Can Help?", options: [J_FIREFIGHTER, J_BAKER, J_DRIVER], answer: 0, instruction: HELPQ, guide: "A ___ can help." },
+      { ...HELP_HUNGRY, part: "C", stage: "Who Can Help?", heading: "Who Can Help? 2", options: [J_PILOT, J_TEACHER, J_CHEF], answer: 2, instruction: HELPQ, guide: "A ___ can help." },
+      { ...HELP_SICK, part: "C", stage: "Who Can Help?", heading: "Who Can Help? 3", options: [J_FARMER, J_CHEF, J_DOCTOR], answer: 2, labels: false, instruction: NO_HELP("Say who can help.") },
+      { type: "peek", part: "C", stage: "Guess My Job", heading: "Guess My Job", item: J_POLICE, reveal: "He is a police officer.", question: "I keep people safe.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Guess My Job", heading: "Guess My Job 2", item: J_FARMER, reveal: "She is a farmer.", question: "I grow food.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: JOBS9, seconds: 45, instruction: LOOK_SAY("Say the job. Be fast!") },
+      { type: "dialogue", part: "C", stage: "Who Am I?", heading: "Who Am I?", turns: [{ who: "teacher", text: "I help sick people. Who am I?" }], instruction: NO_HELP("Say who I am.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about jobs." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("She is a ___. She ___."), part: "D", stage: "Type It!", heading: "Type Your Jobs" },
+      READ_JOB,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about jobs, what people do and who can help." },
     ],
   },
   "6-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 6 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Communicate about jobs and community helpers independently." },
-      { type: "message", stage: "Mystery Workers", heading: "Mystery Workers", subheading: "Describe them yourself", lines: ["Who is this? What does this person do?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Community Help Desk", subheading: "You work at the help desk — who can solve each problem?", turns: [{ who: "teacher", text: "My dog is sick." }, { who: "student", text: "A veterinarian can help. They care for animals." }, { who: "teacher", text: "There's a fire!" }] },
-      { type: "dialogue", stage: "Guess My Job", heading: "Guess My Job", subheading: "Give clues without saying the job", turns: [{ who: "teacher", text: "I work in a hospital. I help sick people." }, { who: "student", text: "You're a doctor!" }] },
-      { type: "message", stage: "My Dream Job", heading: "My Dream Job", subheading: "What job would you like to have? Why?", lines: ["I want to be a *veterinarian* because I like animals."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "Which job helps people the most?", line: "I think a ___ helps people the most because ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "I want to be a veterinarian because I like animals and want to help them." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 6, title: "Show What You Know!", subtitle: "Talk about jobs and helpers, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Jobs", turns: [{ who: "teacher", text: "Tell me about jobs." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Jobs You Know", turns: [{ who: "teacher", text: "What jobs do you know? What does each person do?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Who Helps You?", turns: [{ who: "teacher", text: "Who helps you every day?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: help desk and clues (8 min) ----
+      { ...HELP_LOST, part: "B", stage: "Help Desk", heading: "Help Desk", options: [J_POLICE, J_BAKER, J_PILOT], answer: 0, labels: false, instruction: NO_HELP("Say who can help."), },
+      { ...HELP_HUNGRY, part: "B", stage: "Help Desk", heading: "Help Desk 2", options: [J_TEACHER, J_DRIVER, J_CHEF], answer: 2, labels: false, instruction: NO_HELP("Say who can help.") },
+      { ...HELP_SICK, part: "B", stage: "Help Desk", heading: "Help Desk 3", options: [J_DOCTOR, J_FARMER, J_FIREFIGHTER], answer: 0, labels: false, instruction: NO_HELP("Say who can help.") },
+      { type: "peek", part: "B", stage: "Guess My Job", heading: "Guess My Job", item: J_BAKER, reveal: "He is a baker.", question: "I make bread. I work in a shop.", instruction: [["🤔", "No help this time!"], ["🗣️", "Guess the job."]] },
+      { type: "strip", part: "B", stage: "Your Clues", heading: "Give Me Clues!", numbered: false, labels: false, size: 110, items: [J_PILOT], instruction: [["👀", "Look at the picture."], ["🗣️", "Give clues. Do not say the job!"]] },
+      { type: "strip", part: "B", stage: "Your Clues", heading: "Give Me Clues! 2", numbered: false, labels: false, size: 110, items: [J_FIREFIGHTER], instruction: [["👀", "Look at the picture."], ["🗣️", "Give clues. Do not say the job!"]] },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: JOBS9, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say the job. Be fast!"]] },
+
+      // ---- Part C: my dream job (5 min) ----
+      { type: "dialogue", part: "C", stage: "My Dream Job", heading: "My Dream Job", turns: [{ who: "teacher", text: "What job do you want to have? Why?" }], instruction: LISTEN_ANSWER, guide: "I want to be a ___ because ___." },
+      { type: "dialogue", part: "C", stage: "My Dream Job", heading: "Why?", turns: [{ who: "teacher", text: "What does this person do?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Yesterday, I went to the *park*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["I saw a *police officer*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["After that, I went *home*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Dream Job...", lines: ["Write about the job you want."], instruction: [["⌨️", "Type three or four sentences in the chat."]] },
+      { ...READ_JOB, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 6 Complete!", title: "Unit 6 Complete!", see: "Great job!", recap: "You can talk about jobs and helpers, in your own words." },
     ],
   },
   "6-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 6 · Test", title: "Unit 6 Test", subtitle: "Jobs People Do — identify, describe, and explain independently." },
-      { type: "chips", stage: "Part 1: Jobs", heading: "Name the Jobs", subheading: "8-10 pictures", items: ["teacher", "doctor", "firefighter", "chef", "mechanic", "pilot"] },
-      { type: "message", stage: "Part 2: He or She?", heading: "He or She?", subheading: "Complete sentences", lines: ["He is a *firefighter*.", "She is a *doctor*."] },
-      { type: "message", stage: "Part 3: Duties", heading: "What Does a Mechanic Do?", subheading: "Job → duty", lines: ["A mechanic *fixes cars*."] },
-      { type: "dialogue", stage: "Part 4: Who Can Help? ⭐", heading: "Who Can Help?", subheading: "Identify the helper and explain why", turns: [{ who: "teacher", text: "My dog is sick. Who can help?" }, { who: "student", text: "A veterinarian can help. She cares for sick animals." }] },
-      { type: "postcard", stage: "Part 5-6: Speaking & Writing", heading: "Community Helpers", subheading: "3-4 helpers, with a reason", line: "She is a ___. She ___. I think ___s are important because ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 6 Complete!", cardTitle: "Unit 6 Test", caption: "She is a veterinarian. She takes care of animals. I think veterinarians are important." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 6, title: "Unit 6 Test", subtitle: "Show what you can say about jobs!" },
+
+      // ---- Part A: jobs ----
+      { ...one(J_DOCTOR), part: "A", stage: "Jobs", heading: "Who Is This?", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(J_CHEF), part: "A", stage: "Jobs", heading: "Who Is This? 2", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(J_FARMER), part: "A", stage: "Jobs", heading: "Who Is This? 3", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(J_FIREFIGHTER), part: "A", stage: "Jobs", heading: "Who Is This? 4", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(J_BAKER), part: "A", stage: "Jobs", heading: "Who Is This? 5", question: WHO, instruction: LISTEN_ANSWER },
+      { ...one(J_PILOT), part: "A", stage: "Jobs", heading: "Who Is This? 6", question: WHO, instruction: LISTEN_ANSWER },
+
+      // ---- Part B: what do they do? ----
+      { type: "strip", part: "B", stage: "What Do They Do?", heading: "What Do They Do?", numbered: false, labels: false, size: 100, items: [J_TEACHER, J_DRIVER], instruction: DUTYQ },
+      { type: "strip", part: "B", stage: "What Do They Do?", heading: "What Do They Do? 2", numbered: false, labels: false, size: 100, items: [J_FIREFIGHTER, J_BAKER], instruction: DUTYQ },
+      { type: "strip", part: "B", stage: "What Do They Do?", heading: "What Do They Do? 3", numbered: false, labels: false, size: 100, items: [J_DOCTOR, J_POLICE], instruction: DUTYQ },
+
+      // ---- Part C: who can help? ----
+      { ...HELP_SICK, part: "C", stage: "Who Can Help?", heading: "Who Can Help?", options: [J_TEACHER, J_DOCTOR, J_PILOT], answer: 1, labels: false, instruction: HELPQ },
+      { ...HELP_FIRE, part: "C", stage: "Who Can Help?", heading: "Who Can Help? 2", options: [J_CHEF, J_BAKER, J_FIREFIGHTER], answer: 2, labels: false, instruction: HELPQ },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Jobs", turns: [{ who: "teacher", text: "What jobs do you know? What does each person do?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Dream Job", turns: [{ who: "teacher", text: "What job do you want to have? Why?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say two or three sentences."]] },
+      { type: "score", stage: "My Unit 6 Score!", heading: "My Unit 6 Score!", rows: [["Jobs", "/ 6"], ["What they do", "/ 6"], ["Who can help", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 6 Complete!", title: "Unit 6 Complete!", see: "On to Unit 7!", recap: "You can talk about jobs, what people do and who can help." },
     ],
   },
+
   "7-1": {
     slides: [
       { type: "title", stage: "A2 · Soar", eyebrow: "Unit 7 · Lesson 1", title: "Once Upon a Time!", subtitle: "Identify story elements and begin a story using First…" },
