@@ -180,6 +180,26 @@ const HH_ROOM = HH(C_ROOM, "Can you clean your room, please?", ["I don't want to
 const HHQ = [["👀", "Look at the request."], ["🗣️", "Say a polite answer."]];
 const ASKCHORE = [["👀", "Look at the picture."], ["🗣️", "Ask the teacher to help."]];
 const READ_HOME = { ...READ_ALOUD, heading: "Read Your Sentences" };
+
+// ---- Unit 11 (My Future Plans) pieces; most pictures are reused (soccer, homework, friend, pizza, park, swim, read, cook, store, jobs), four are new (Batch 2) ----
+const PL = (label, file) => ({ label, src: `/curriculum/a2-plans/${file}` });
+const PL_MOVIE = PL("watch a movie", "movie.jpg"), PL_GRANDMA = PL("visit my grandma", "grandma.jpg"), PL_BEACH = PL("go to the beach", "beach.jpg"), PL_TRAVEL = PL("travel", "travel.jpg");
+const PL_SOCCER = { label: "play soccer", src: SOCCER.src }, PL_HOMEWORK = { label: "do my homework", src: HOMEWORK.src }, PL_FRIEND = { label: "see my friend", src: FRIEND.src };
+const PL_PIZZA = { label: "eat pizza", src: PIZZA.src }, PL_PARK = { label: "go to the park", src: PARK.src }, PL_SWIM = { label: "swim", src: SWIMMING.src };
+const PL_READ = { label: "read a book", src: READING.src }, PL_COOK = { label: "cook dinner", src: COOKING.src }, PL_STORE = { label: "go shopping", src: T_STORE.src };
+const PLANS6 = [PL_SOCCER, PL_HOMEWORK, PL_MOVIE, PL_FRIEND, PL_PIZZA, PL_PARK];
+const PLANS12 = [...PLANS6, PL_SWIM, PL_READ, PL_COOK, PL_GRANDMA, PL_STORE, PL_BEACH];
+const DAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const DAYS7 = DAY_NAMES.map((label) => ({ label })), WHEN2 = [{ label: "Tonight" }, { label: "Tomorrow" }];
+const WEEK_A = [PL_HOMEWORK, PL_READ, PL_COOK, PL_SOCCER, PL_STORE, PL_BEACH, PL_GRANDMA].map((p, i) => ({ ...p, label: DAY_NAMES[i] }));
+const WEEK_B = [PL_SWIM, PL_MOVIE, PL_HOMEWORK, PL_FRIEND, PL_PIZZA, PL_PARK, PL_SOCCER].map((p, i) => ({ ...p, label: DAY_NAMES[i] }));
+const GOING = "What are you going to do?";
+const PLANDICE = { type: "dice", dice: [{ name: "When?", items: WHEN2 }, { name: "Plan", items: PLANS6 }], size: 104 };
+const WEEKDICE = { type: "dice", dice: [{ name: "Day", items: DAYS7 }, { name: "Plan", items: PLANS12 }], size: 104 };
+const DREAMS7 = [...JOBS6, PL_TRAVEL];
+const DREAMDICE = { type: "dice", dice: [{ name: "Someday", items: DREAMS7 }], size: 96 };
+const YESAM = "Yes, I am. / No, I'm not.";
+const READ_PLAN = { ...READ_ALOUD, heading: "Read Your Plans" };
 const CLUEQ_FEEL = [["👀", "Read the clue."], ["🗣️", "Guess the feeling."]];
 
 export const SOAR_A2_LESSONS = {
@@ -2409,72 +2429,217 @@ export const SOAR_A2_LESSONS = {
     ],
   },
 
+  // ---------- Unit 11: My Future Plans ----------
   "11-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Lesson 1", title: "What Are You Going To Do? 🔮", subtitle: "Talk about simple future plans using I'm going to…" },
-      { type: "chips", stage: "Getting Ready", heading: "Future Verbs", subheading: "New words for this unit", items: ["study", "play", "visit", "watch", "eat", "buy", "go", "meet", "clean", "practice"] },
-      { type: "message", stage: "Taking Off", heading: "Meet Going To", subheading: "I'm going to + verb", lines: ["I'm going to *study*.", "I'm going to play *basketball*.", "I'm going to *watch a movie*."] },
-      { type: "dialogue", stage: "What Are You Going To Do?", heading: "What Are You Going To Do?", subheading: "Ask and answer", turns: [{ who: "teacher", text: "What are you going to do?" }, { who: "student", text: "I'm going to visit my friend." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Future Interview", subheading: "Interview each other, then switch roles", turns: [{ who: "teacher", text: "What are you going to do after class?" }, { who: "student", text: "I'm going to eat lunch." }, { who: "teacher", text: "What are you going to do tonight?" }, { who: "student", text: "I'm going to watch a movie." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Say what you're going to do today", line: "I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "What Are You Going To Do?", caption: "I'm going to visit my friend. I'm going to watch a movie." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 11, title: "What Are You Going To Do?", subtitle: "Say your plans with I'm going to..." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Yesterday", heading: "Yesterday", turns: [{ who: "teacher", text: "What did you do yesterday?" }], instruction: LISTEN_ANSWER, guide: "Yesterday, I ___." },
+
+      // ---- Part B: six plans (5 min) ----
+      { type: "strip", part: "B", stage: "Six Plans", heading: "Six Plans", numbered: false, size: 84, items: PLANS6, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Six Plans", heading: "Going To", lines: ["I'm going to *play soccer*.", "I'm going to *watch a movie*."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "Six Plans", heading: "Tonight and Tomorrow", lines: ["*Tonight*, I'm going to do my homework.", "*Tomorrow*, I'm going to see my friend."], instruction: REPEAT_SENT },
+      { ...one(PL_SOCCER), part: "B", stage: "Six Plans", heading: "What Are You Going To Do?", question: GOING, instruction: LISTEN_ANSWER, guide: "I'm going to ___." },
+      { ...one(PL_MOVIE), part: "B", stage: "Six Plans", heading: "What Are You Going To Do? 2", question: GOING, instruction: LISTEN_ANSWER, guide: "I'm going to ___." },
+      { ...one(PL_PIZZA), part: "B", stage: "Six Plans", heading: "What Are You Going To Do? 3", question: GOING, instruction: LISTEN_ANSWER, guide: "I'm going to ___." },
+      { ...one(PL_PARK), part: "B", stage: "Six Plans", heading: "What Are You Going To Do? 4", question: GOING, instruction: LISTEN_ANSWER, guide: "I'm going to ___." },
+
+      // ---- Part C: the games (13 min) ----
+      { ...PLANDICE, part: "C", stage: "Plan Dice", heading: "Plan Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "___, I'm going to ___." },
+      { ...PLANDICE, part: "C", stage: "Plan Dice", heading: "Plan Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "___, I'm going to ___." },
+      { ...PLANDICE, part: "C", stage: "Plan Dice", heading: "Plan Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "___, I'm going to ___." },
+      { type: "spin", part: "C", stage: "Plan Wheel", heading: "Plan Wheel", items: PLANS6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say your plan."]], guide: "I'm going to ___." },
+      { type: "peek", part: "C", stage: "Mystery Plan", heading: "Mystery Plan", item: PL_MOVIE, reveal: "You're going to watch a movie!", question: GOING, instruction: LOOK_SAY("Guess the plan."), guide: "I'm going to ___." },
+      { type: "peek", part: "C", stage: "Mystery Plan", heading: "Mystery Plan 2", item: PL_SOCCER, reveal: "You're going to play soccer!", question: GOING, instruction: LOOK_SAY("Guess the plan."), guide: "I'm going to ___." },
+      { type: "peek", part: "C", stage: "Mystery Plan", heading: "Mystery Plan 3", item: PL_PIZZA, reveal: "You're going to eat pizza!", question: GOING, instruction: LOOK_SAY("Guess the plan."), guide: "I'm going to ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: PLANS6, size: 84, instruction: [["👀", "Look at the plans."], ["🗣️", "Say the plan that went away."]], guide: "___ is missing." },
+      { type: "strip", part: "C", stage: "Yesterday and Tomorrow", heading: "Yesterday and Tomorrow", numbered: false, labels: false, size: 100, items: [PL_PARK, PL_MOVIE], question: "What did you do yesterday? What are you going to do tomorrow?", instruction: LISTEN_ANSWER, guide: "Yesterday, I ___. Tomorrow, I'm going to ___." },
+      { type: "sprint", part: "C", stage: "Plan Sprint", heading: "Plan Sprint", items: PLANS6, seconds: 45, instruction: LOOK_SAY("Say your plan. Be fast!"), guide: "I'm going to ___." },
+      { type: "sprint", part: "C", stage: "Plan Sprint", heading: "Plan Sprint 2", items: PLANS6, seconds: 45, instruction: LOOK_SAY("Say your plan. Be fast!"), guide: "I'm going to ___." },
+
+      // ---- Part D: my plans (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Plans", heading: "Tonight", turns: [{ who: "teacher", text: "What are you going to do tonight?" }], instruction: LISTEN_ANSWER, guide: "Tonight, I'm going to ___." },
+      { ...TYPE2("Tonight, I'm going to ___. Tomorrow, I'm going to ___."), part: "D", stage: "Type It!", heading: "Type Your Plans" },
+      READ_PLAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say your plans with I'm going to." },
     ],
   },
   "11-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Lesson 2", title: "My Plans for the Week!", subtitle: "Describe several plans for the coming week." },
-      { type: "chips", stage: "Getting Ready", heading: "Days & Activities", subheading: "New words for this unit", items: ["Monday", "Tuesday", "Wednesday", "Saturday", "Sunday", "go shopping", "visit family", "meet friends", "do homework"] },
-      { type: "message", stage: "Taking Off", heading: "My Week", subheading: "Day + going to + activity", lines: ["*On Monday*, I'm going to study.", "*On Saturday*, I'm going to play basketball."] },
-      { type: "message", stage: "Plan the Days", heading: "Plan the Days", subheading: "Different plans for different days", lines: ["I'm going to visit my grandmother.", "\"What are you going to do this weekend?\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Calendar Conversation", subheading: "Answer, and correct the teacher when they guess wrong", turns: [{ who: "teacher", text: "What are you going to do on Monday?" }, { who: "student", text: "I'm going to study." }, { who: "teacher", text: "Are you going to play soccer on Wednesday?" }, { who: "student", text: "No, I'm going to visit my family on Wednesday." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Plans for two different days", line: "On ___, I'm going to ___. On ___, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "My Plans for the Week!", caption: "On Monday, I'm going to study. On Saturday, I'm going to play basketball." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 11, title: "My Plans for the Week!", subtitle: "Say your plans for each day of the week." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Plan Wheel", items: PLANS6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say your plan."]], guide: "I'm going to ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Tomorrow", turns: [{ who: "teacher", text: "What are you going to do tomorrow?" }], instruction: LISTEN_ANSWER, guide: "Tomorrow, I'm going to ___." },
+
+      // ---- Part B: the days (5 min) ----
+      { type: "chips", part: "B", stage: "The Days", heading: "Seven Days", items: DAY_NAMES, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "The Days", heading: "On Monday", lines: ["*On Monday*, I'm going to do my homework.", "*On Saturday*, I'm going to go to the beach."], instruction: REPEAT_SENT },
+      { type: "strip", part: "B", stage: "My Week", heading: "My Week", numbered: false, size: 68, items: WEEK_A, instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the plans."]] },
+      { type: "strip", part: "B", stage: "My Week", heading: "What Is the Plan?", numbered: false, size: 68, active: 0, items: WEEK_A, question: "What are you going to do on Monday?", instruction: LISTEN_ANSWER, guide: "On Monday, I'm going to ___." },
+      { type: "strip", part: "B", stage: "My Week", heading: "What Is the Plan? 2", numbered: false, size: 68, active: 3, items: WEEK_A, question: "What are you going to do on Thursday?", instruction: LISTEN_ANSWER, guide: "On Thursday, I'm going to ___." },
+      { type: "strip", part: "B", stage: "My Week", heading: "What Is the Plan? 3", numbered: false, size: 68, active: 5, items: WEEK_A, question: "What are you going to do on Saturday?", instruction: LISTEN_ANSWER, guide: "On Saturday, I'm going to ___." },
+      { type: "message", part: "B", stage: "My Week", heading: "Are You Going To...?", lines: ["Are you going to *swim* on Saturday?", "*Yes, I am.* / *No, I'm not.*"], instruction: REPEAT_SENT },
+
+      // ---- Part C: week games (13 min) ----
+      { ...WEEKDICE, part: "C", stage: "Week Dice", heading: "Week Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { ...WEEKDICE, part: "C", stage: "Week Dice", heading: "Week Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { ...WEEKDICE, part: "C", stage: "Week Dice", heading: "Week Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { type: "spin", part: "C", stage: "Day Wheel", heading: "Day Wheel", items: DAYS7, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say a plan for that day."]], guide: "On ___, I'm going to ___." },
+      { ...one(PL_SWIM), part: "C", stage: "Are You Going To?", heading: "Are You Going To...?", question: "Are you going to swim on Saturday?", instruction: LISTEN_ANSWER, guide: YESAM },
+      { ...one(PL_MOVIE), part: "C", stage: "Are You Going To?", heading: "Are You Going To...? 2", question: "Are you going to watch a movie on Sunday?", instruction: LISTEN_ANSWER, guide: YESAM },
+      { ...one(PL_SOCCER), part: "C", stage: "Are You Going To?", heading: "Are You Going To...? 3", question: "Are you going to play soccer on Wednesday?", instruction: LISTEN_ANSWER, guide: YESAM },
+      { type: "peek", part: "C", stage: "Mystery Plan", heading: "Mystery Plan", item: PL_BEACH, reveal: "You're going to go to the beach!", question: "What are you going to do on Saturday?", instruction: LOOK_SAY("Guess the plan."), guide: "I'm going to ___." },
+      { type: "strip", part: "C", stage: "My Week", heading: "My Week 2", numbered: false, size: 68, items: WEEK_B, instruction: NO_HELP("Tell the plans for the week.") },
+      { type: "sprint", part: "C", stage: "Week Sprint", heading: "Week Sprint", items: [...WEEK_A, ...WEEK_B], seconds: 45, instruction: LOOK_SAY("Say the plan for the day. Be fast!"), guide: "On ___, I'm going to ___." },
+
+      // ---- Part D: my week (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Week", heading: "This Weekend", turns: [{ who: "teacher", text: "What are you going to do this weekend?" }], instruction: LISTEN_ANSWER, guide: "On Saturday, I'm going to ___." },
+      { ...TYPE2("On ___, I'm going to ___. On ___, I'm going to ___."), part: "D", stage: "Type It!", heading: "Type Your Week" },
+      READ_PLAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say your plans for the days of the week." },
     ],
   },
   "11-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Lesson 3", title: "Someday I Will! 🌟", subtitle: "Talk about long-term dreams and future plans." },
-      { type: "chips", stage: "Getting Ready", heading: "Dream Words", subheading: "New words for this unit", items: ["dream", "someday", "travel", "become", "learn", "live", "visit", "see", "meet", "try"] },
-      { type: "message", stage: "Taking Off", heading: "Someday…", subheading: "Going to for long-term dreams", lines: ["I'm going to *travel someday*.", "I'm going to *learn Japanese*.", "I'm going to *become a doctor*."] },
-      { type: "message", stage: "Dream Match", heading: "Dream Match", subheading: "I want to… also works", lines: ["I *want to* become a teacher.", "I *want to* travel the world."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Future Talk Show", subheading: "You're a talk-show guest — answer about your dreams", turns: [{ who: "teacher", text: "What are you going to do someday? Where are you going to go?" }, { who: "student", text: "Someday, I'm going to travel to Japan. I want to learn Japanese too." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "One dream for someday", line: "Someday, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Someday I Will!", caption: "Someday, I'm going to travel to Japan. I want to become a doctor." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 11, title: "Someday I Will!", subtitle: "Talk about what you are going to be someday." },
+
+      // ---- Part A: review (3 min) ----
+      { ...WEEKDICE, part: "A", stage: "Review", heading: "Week Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "This Weekend", turns: [{ who: "teacher", text: "What are you going to do this weekend?" }], instruction: LISTEN_ANSWER, guide: "This weekend, I'm going to ___." },
+
+      // ---- Part B: dreams (5 min) ----
+      { type: "strip", part: "B", stage: "Dream Jobs", heading: "Dream Jobs", numbered: false, size: 84, items: JOBS6, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Someday", heading: "Someday", lines: ["*Someday*, I'm going to be a *pilot*.", "I *want to* be a doctor."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "Someday", heading: "Travel", lines: ["*Someday*, I'm going to *travel*.", "I want to *see* many places."], instruction: REPEAT_SENT },
+      { ...one(J_PILOT), part: "B", stage: "Someday", heading: "Someday I Will", question: "What are you going to be someday?", instruction: LISTEN_ANSWER, guide: "Someday, I'm going to be a ___." },
+      { ...one(J_CHEF), part: "B", stage: "Someday", heading: "Someday I Will 2", question: "What are you going to be someday?", instruction: LISTEN_ANSWER, guide: "Someday, I'm going to be a ___." },
+      { ...one(PL_TRAVEL), part: "B", stage: "Someday", heading: "Someday I Will 3", question: "What are you going to do someday?", instruction: LISTEN_ANSWER, guide: "Someday, I'm going to ___." },
+
+      // ---- Part C: dream games (13 min) ----
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice", instruction: [["👀", "Look at the die."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice 2", instruction: [["👀", "Look at the die."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice 3", instruction: [["👀", "Look at the die."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { type: "spin", part: "C", stage: "Dream Wheel", heading: "Dream Wheel", items: DREAMS7, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Talk Show", heading: "Talk Show", turns: [{ who: "teacher", text: "Welcome to the show! What are you going to do someday?" }], instruction: LISTEN_ANSWER, guide: "Someday, I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Talk Show", heading: "Talk Show 2", turns: [{ who: "teacher", text: "Wow! Why do you want to do that?" }], instruction: LISTEN_ANSWER, guide: "I want to ___ because ___." },
+      { type: "peek", part: "C", stage: "Mystery Dream", heading: "Mystery Dream", item: J_PILOT, reveal: "You're going to be a pilot!", question: "I want to fly a plane.", instruction: [["👀", "Read the clue."], ["🗣️", "Guess the dream."]], guide: "You're going to be a ___." },
+      { type: "peek", part: "C", stage: "Mystery Dream", heading: "Mystery Dream 2", item: J_FIREFIGHTER, reveal: "You're going to be a firefighter!", question: "I want to put out fires.", instruction: [["👀", "Read the clue."], ["🗣️", "Guess the dream."]], guide: "You're going to be a ___." },
+      { type: "strip", part: "C", stage: "Tomorrow and Someday", heading: "Tomorrow and Someday", numbered: false, labels: false, size: 100, items: [PL_HOMEWORK, J_DOCTOR], question: "What are you going to do tomorrow? And someday?", instruction: LISTEN_ANSWER, guide: "Tomorrow, I'm going to ___. Someday, I'm going to ___." },
+      { type: "sprint", part: "C", stage: "Dream Sprint", heading: "Dream Sprint", items: DREAMS7, seconds: 45, instruction: LOOK_SAY("Say your dream. Be fast!"), guide: "Someday, I'm going to ___." },
+
+      // ---- Part D: my dream (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Dream", heading: "My Dream", turns: [{ who: "teacher", text: "What are you going to be someday? Why?" }], instruction: LISTEN_ANSWER, guide: "Someday, I'm going to be a ___ because ___." },
+      { ...TYPE2("Someday, I'm going to ___. I want to ___."), part: "D", stage: "Type It!", heading: "Type Your Dream" },
+      { ...READ_ALOUD, heading: "Read Your Dream" },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about what you are going to be someday." },
     ],
   },
   "11-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Lesson 4", title: "Let's Review!", subtitle: "Combine near-future plans and future dreams." },
-      { type: "chips", stage: "Getting Ready", heading: "Future Speed Round", subheading: "Going to review", items: ["I'm going to…", "On Monday…", "This weekend…", "Someday…", "I want to…"] },
-      { type: "message", stage: "Plan My Week", heading: "Plan My Week", subheading: "A plan for each day", lines: ["On Tuesday, I'm going to *do homework*."] },
-      { type: "message", stage: "Dream Big", heading: "Dream Big", subheading: "A long-term dream", lines: ["Someday, I'm going to *become a doctor*."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Future Plan Mistakes", subheading: "Fix the grammar, then react to a mismatched plan", turns: [{ who: "teacher", text: "Tomorrow, I going to study." }, { who: "student", text: "Tomorrow, I'm going to study." }, { who: "teacher", text: "On Saturday, I'm going to go to school for five hours!" }, { who: "student", text: "That's not a great plan for Saturday!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "A near-future plan and a dream", line: "This weekend, I'm going to ___. Someday, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "This weekend, I'm going to visit my friend. Someday, I'm going to travel the world." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 11, title: "Let's Review!", subtitle: "Play the plans and dreams games." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: PLANS6, size: 84, instruction: [["👀", "Look at the plans."], ["🗣️", "Say the plan that went away."]], guide: "___ is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Day Wheel", items: DAYS7, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say a plan for that day."]], guide: "On ___, I'm going to ___." },
+
+      // ---- Part B: plan dice (5 min) ----
+      { ...PLANDICE, part: "B", stage: "Plan Dice", heading: "Plan Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "___, I'm going to ___." },
+      { ...WEEKDICE, part: "B", stage: "Week Dice", heading: "Week Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { ...WEEKDICE, part: "B", stage: "Week Dice", heading: "Week Dice 2", instruction: NO_HELP("Say the plan.") },
+
+      // ---- Part C: dreams and games (13 min) ----
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice", instruction: [["👀", "Look at the die."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice 2", instruction: NO_HELP("Say your dream.") },
+      { ...WEEKDICE, part: "C", stage: "Week Dice", heading: "Week Dice 3", instruction: NO_HELP("Say the plan.") },
+      { type: "strip", part: "C", stage: "My Week", heading: "My Week", numbered: false, size: 68, items: WEEK_B, instruction: NO_HELP("Tell the plans for the week.") },
+      { type: "peek", part: "C", stage: "Mystery Plan", heading: "Mystery Plan", item: PL_GRANDMA, reveal: "You're going to visit your grandma!", question: "What are you going to do on Sunday?", instruction: LOOK_SAY("Guess the plan."), guide: "I'm going to ___." },
+      { type: "peek", part: "C", stage: "Mystery Dream", heading: "Mystery Dream", item: J_CHEF, reveal: "You're going to be a chef!", question: "I want to cook for many people.", instruction: [["👀", "Read the clue."], ["🗣️", "Guess the dream."]], guide: "You're going to be a ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: PLANS12, seconds: 45, instruction: LOOK_SAY("Say your plan. Be fast!") },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock 2", items: DREAMS7, seconds: 45, instruction: LOOK_SAY("Say your dream. Be fast!") },
+      { type: "dialogue", part: "C", stage: "My Future", heading: "My Future", turns: [{ who: "teacher", text: "Tell me about your future: tonight, this weekend and someday." }], instruction: NO_HELP("Tell about your future.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three plans." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("This weekend, I'm going to ___. Someday, I'm going to ___."), part: "D", stage: "Type It!", heading: "Type Your Future" },
+      READ_PLAN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about your plans for tonight, the week and someday." },
     ],
   },
   "11-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Communicate about future plans and dreams independently." },
-      { type: "message", stage: "Mystery Future", heading: "Mystery Future", subheading: "What do you think this person plans to do?", lines: ["Look at the picture. What is this person going to do?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Pick a Day!", subheading: "Pick a day, then say a real plan for it right away", turns: [{ who: "teacher", text: "Pick one: Monday, Saturday, Next month, Someday." }, { who: "student", text: "Someday! I'm going to travel to Japan." }, { who: "teacher", text: "Saturday!" }, { who: "student", text: "I'm going to play basketball." }] },
-      { type: "message", stage: "Future Surprise!", heading: "Future Surprise!", subheading: "Respond to an unexpected change", lines: ["\"Your friend invites you to the beach on Saturday.\" → \"I'm going to *go to the beach* instead!\""] },
-      { type: "message", stage: "My Future Dream", heading: "My Future Dream", subheading: "Something you hope to do someday", lines: ["Someday, I'm going to *become a pilot*."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "One plan for tomorrow and one dream for someday", line: "Tomorrow, I'm going to ___. Someday, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "Tomorrow, I'm going to study. Someday, I'm going to travel the world." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 11, title: "Show What You Know!", subtitle: "Talk about your plans and dreams, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Your Plans", turns: [{ who: "teacher", text: "Tell me about your plans for this week." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Your Weekend", turns: [{ who: "teacher", text: "What are you going to do this weekend? Who are you going to see?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Your Dream", turns: [{ who: "teacher", text: "What are you going to be someday? Why?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: pick a day and surprises (8 min) ----
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day!", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 2", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 3", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 4", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 5", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 6", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 7", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 8", instruction: NO_HELP("Say a real plan.") },
+      { ...WEEKDICE, part: "B", stage: "Pick a Day", heading: "Pick a Day! 9", instruction: NO_HELP("Say a real plan.") },
+      { ...DREAMDICE, part: "B", stage: "Dream Dice", heading: "Dream Dice", instruction: NO_HELP("Say your dream.") },
+      { type: "dialogue", part: "B", stage: "Future Surprise", heading: "Future Surprise!", turns: [{ who: "teacher", text: "Your friend invites you to the beach on Saturday!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say your new plan."]] },
+      { type: "dialogue", part: "B", stage: "Future Surprise", heading: "Future Surprise! 2", turns: [{ who: "teacher", text: "It is going to rain tomorrow!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say your new plan."]] },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: PLANS12, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say your plan. Be fast!"]] },
+
+      // ---- Part C: a real talk (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Next Weekend", turns: [{ who: "teacher", text: "Tell me about next weekend. What are you going to do? Who are you going to see?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Someday", turns: [{ who: "teacher", text: "Tell me about a big dream. What are you going to do someday?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["This weekend, I'm going to go to the *park*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["I'm going to see my *friend*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["We're going to play *soccer*!"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Future...", lines: ["Write about your plans and your dream."], instruction: [["⌨️", "Type four or five sentences in the chat."]] },
+      { ...READ_PLAN, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 11 Complete!", title: "Unit 11 Complete!", see: "Great job!", recap: "You can talk about your plans and your dreams, in your own words." },
     ],
   },
   "11-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Test", title: "Unit 11 Test", subtitle: "My Future Plans — going to for near-future plans and dreams." },
-      { type: "chips", stage: "Part 1: Vocabulary", heading: "Name the Future Activities", subheading: "8-10 pictures", items: ["study", "travel", "visit family", "play basketball", "become a doctor"] },
-      { type: "message", stage: "Part 2: Going To", heading: "Going To", subheading: "Produce full sentences", lines: ["I'm going to *study*.", "She's going to *play tennis*.", "They're going to *visit their family*."] },
-      { type: "dialogue", stage: "Part 3-4: Questions & Weekly Plans", heading: "Weekly Plans", subheading: "3-4 plans for different days", turns: [{ who: "teacher", text: "What are you going to do this weekend?" }, { who: "student", text: "On Saturday, I'm going to visit my friend. On Sunday, I'm going to study." }] },
-      { type: "dialogue", stage: "Part 5: My Future Plans ⭐", heading: "My Future Plans", subheading: "Near-future plan + weekend plan + dream (5-7 sentences)", turns: [{ who: "teacher", text: "Tell me about your future plans." }, { who: "student", text: "Tomorrow, I'm going to study. This weekend, I'm going to visit my friend. Someday, I'm going to travel to Japan." }] },
-      { type: "postcard", stage: "Part 6: Short Writing", heading: "Future Plans & Dreams", subheading: "4-5 sentences", line: "This weekend, I'm going to ___. We're going to ___. Next week, I'm going to ___. Someday, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 11 Complete!", cardTitle: "Unit 11 Test", caption: "This weekend, I'm going to visit my friend. We're going to watch a movie. Someday, I'm going to travel to Japan." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 11, title: "Unit 11 Test", subtitle: "Show what you can say about your plans!" },
+
+      // ---- Part A: plans ----
+      { ...one(PL_SOCCER), part: "A", stage: "Plans", heading: "What Are You Going To Do?", question: GOING, instruction: LISTEN_ANSWER },
+      { ...one(PL_MOVIE), part: "A", stage: "Plans", heading: "What Are You Going To Do? 2", question: GOING, instruction: LISTEN_ANSWER },
+      { ...one(PL_PIZZA), part: "A", stage: "Plans", heading: "What Are You Going To Do? 3", question: GOING, instruction: LISTEN_ANSWER },
+      { ...one(PL_PARK), part: "A", stage: "Plans", heading: "What Are You Going To Do? 4", question: GOING, instruction: LISTEN_ANSWER },
+      { ...one(PL_BEACH), part: "A", stage: "Plans", heading: "What Are You Going To Do? 5", question: GOING, instruction: LISTEN_ANSWER },
+      { ...one(PL_GRANDMA), part: "A", stage: "Plans", heading: "What Are You Going To Do? 6", question: GOING, instruction: LISTEN_ANSWER },
+
+      // ---- Part B: plans for the week ----
+      { type: "strip", part: "B", stage: "My Week", heading: "My Week", numbered: false, size: 84, items: WEEK_A.slice(0, 3), instruction: [["👀", "Look at the days."], ["🗣️", "Tell the plan for each day."]] },
+      { type: "strip", part: "B", stage: "My Week", heading: "My Week 2", numbered: false, size: 84, items: WEEK_A.slice(4, 7), instruction: [["👀", "Look at the days."], ["🗣️", "Tell the plan for each day."]] },
+
+      // ---- Part C: dreams ----
+      { ...one(J_PILOT), part: "C", stage: "Dreams", heading: "Someday", question: "What are you going to be someday?", instruction: LISTEN_ANSWER },
+      { ...one(J_DOCTOR), part: "C", stage: "Dreams", heading: "Someday 2", question: "What are you going to be someday?", instruction: LISTEN_ANSWER },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Plans", turns: [{ who: "teacher", text: "What are you going to do tonight? And this weekend?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Dream", turns: [{ who: "teacher", text: "What are you going to be someday? Why?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say two or three sentences."]] },
+      { type: "score", stage: "My Unit 11 Score!", heading: "My Unit 11 Score!", rows: [["Plans", "/ 6"], ["Plans for the week", "/ 6"], ["Dreams", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 11 Complete!", title: "Unit 11 Complete!", see: "On to Unit 12!", recap: "You can talk about your plans and your dreams with going to." },
     ],
   },
+
   "12-1": {
     slides: [
       { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Lesson 1", title: "Looking Back! 🕰️", subtitle: "Talk about things you did in the past." },
