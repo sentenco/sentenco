@@ -396,12 +396,82 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One whole orange fruit with a small green leaf and stem on top, plus one round slice beside it showing the juicy segments.
 ```
 
+## Batch 5 prompts
+
+Attach `duck` (or any Batch 1 picture you liked) as a style reference. Each prompt is complete: style prefix first, then the picture.
+
+1. **owl**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute brown owl standing and facing front, big round golden eyes, a small orange beak, cream belly with little feather marks, small wings at its sides.
+```
+
+2. **panda**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute giant panda sitting and facing front, round white face with black ears and black eye patches, black arms and legs, a small smile, holding nothing.
+```
+
+3. **pencil**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One yellow pencil lying diagonally, a pink eraser on top with a silver band, a sharp tip with a small gray point. No face.
+```
+
+4. **pizza**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One slice of pizza with a golden crust, melted yellow cheese, red pepperoni circles and a few green basil leaves, tip pointing down.
+```
+
+5. **quail**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One small quail bird standing, side view, brown and cream speckled feathers, a little curved feather on top of its head, a tiny beak, kind eyes.
+```
+
+6. **queen**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly queen standing and facing front, a gold crown with small jewels, long dark-brown hair, a red-and-pink gown, a kind smile, natural light skin tone with no orange or yellow tint.
+```
+
+7. **quilt**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One folded patchwork quilt made of colorful squares in pink, yellow, blue and green with small stitched lines, seen from the front.
+```
+
+8. **rabbit**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One fluffy white rabbit sitting and facing front, long ears with pink insides, a small pink nose, holding one orange carrot with a green top.
+```
+
+9. **rainbow**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One rainbow arch with red, orange, yellow, green, blue and purple bands and a small white cloud at each end.
+```
+
+10. **ring**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One gold ring standing upright with one round blue gem on top and two tiny sparkles.
+```
+
+11. **sock**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One striped sock, red and white stripes, a blue heel and a blue toe, standing upright and slightly curved as if it has a foot inside.
+```
+
 ## Status
 
 - Batch 1: prompts sent, waiting for the pictures
 - Batch 2: prompts sent
 - Batch 3: prompts sent
 - Batch 4: prompts sent
-- Batch 5: not started
+- Batch 5: prompts sent
 - Batch 6: not started
 - Batch 7: not started
