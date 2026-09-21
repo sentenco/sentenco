@@ -6,7 +6,7 @@ Every lesson is 25 minutes, built for online 1:1 teaching, with the same
 (6–7 min) → Freer practice (4–6 min) → Review (2 min) → Wrap-up (2 min)**.
 
 Units 1–2 are already built and live in the app (Supabase). Units 3–12
-are fully scripted here, ready to be turned into real Sentivo lessons
+are fully scripted here, ready to be turned into real Sentenco lessons
 when development resumes.
 
 ---
@@ -919,5 +919,5 @@ judged redundant and left out of the curriculum.*
 ---
 
 A1 Kids (Units 1–12) is fully scripted end to end. Not yet done: mapping
-any of this onto Sentivo's actual `lesson_slides` schema (the 9 slide
+any of this onto Sentenco's actual `lesson_slides` schema (the 9 slide
 types used by `src/LessonPlayer.jsx`), and image/audio assets.

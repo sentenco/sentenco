@@ -10,7 +10,7 @@ export default function ProofreadingGuide({ item }) {
       <div className="pfg-topbar">
         <span className="pfg-brand">
           <img src="/logo-sentivo.png" alt="" className="pfg-logo" />
-          <span className="pfg-brand-word">entivo</span>
+          <span className="pfg-brand-word">entenco</span>
         </span>
         <span className="pfg-eyebrow">Teacher's Guide · Proofreading</span>
       </div>

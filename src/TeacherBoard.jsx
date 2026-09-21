@@ -8,7 +8,7 @@ import { supabase } from "./supabaseClient";
 // so a teacher only has to share ONE window during a live class instead
 // of alt-tabbing between separate apps. Writing Board and Wheel embed the
 // real, already-built pages via same-origin iframes (no X-Frame-Options
-// issue since it's Sentivo embedding Sentivo); Translator is a native
+// issue since it's Sentenco embedding Sentenco); Translator is a native
 // panel wired to the existing /api/translate endpoint rather than trying
 // to embed a third-party site, since most real translator sites (Google
 // Translate included) block cross-origin framing outright.
@@ -229,7 +229,7 @@ export default function TeacherBoard() {
 
       <div className="tb-topbar">
         <button type="button" className="tb-brand" onClick={() => navigate("/library")} title="Back to Library">
-          <img src="/logo-sentivo.png" alt="" className="tb-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="tb-brand-logo" />entenco
         </button>
         <div className="tb-topbar-title">
           <h1>Teacher Board</h1>

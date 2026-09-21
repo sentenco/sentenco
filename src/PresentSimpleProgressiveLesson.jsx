@@ -118,7 +118,7 @@ export default function PresentSimpleProgressiveLesson() {
               <span className="psp-brand-badge">
                 <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="psp-stage-chip">
               <span className="psp-stage-name">{s.stage}</span>
@@ -161,7 +161,7 @@ const SLIDES = [
     stage: "Customized Lesson", time: null,
     body: (
       <div className="psp-cover">
-        <span className="psp-eyebrow">Sentivo &middot; Customized Lesson</span>
+        <span className="psp-eyebrow">Sentenco &middot; Customized Lesson</span>
         <h1 className="psp-h1">Present Simple vs Progressive</h1>
         <p className="psp-cover-p">Learn when to use each tense, then practice choosing between them in the same conversation.</p>
       </div>

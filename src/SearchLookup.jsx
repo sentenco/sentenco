@@ -319,7 +319,7 @@ export default function SearchLookup() {
       <style>{CSS}</style>
       <div className="sl-topbar">
         <button type="button" className="sl-nav-brand" onClick={() => navigate("/library")} title="Back to Library">
-          <img src="/logo-sentivo.png" alt="" className="sl-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="sl-brand-logo" />entenco
         </button>
       </div>
 
@@ -333,7 +333,7 @@ export default function SearchLookup() {
         <div className="sl-locked">
           <span className="sl-locked-icon"><LockIcon /></span>
           <p className="sl-locked-eyebrow">Pro+ feature</p>
-          <h2 className="sl-locked-title">The Teacher Toolkit is part of Sentivo Pro+</h2>
+          <h2 className="sl-locked-title">The Teacher Toolkit is part of Sentenco Pro+</h2>
           <p className="sl-locked-desc">Upgrade to Pro+ to unlock the AI-powered Dictionary, Grammar Checker, and Translator, plus every CEFR level.</p>
           <button type="button" className="sl-locked-cta" onClick={() => navigate("/library/subscription")}>Upgrade to Pro+</button>
         </div>

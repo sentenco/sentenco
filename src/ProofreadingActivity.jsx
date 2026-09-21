@@ -40,7 +40,7 @@ export default function ProofreadingActivity({ item }) {
           <div className="pf-bar">
             <span className="pf-brand">
               <img src="/logo-sentivo.png" alt="" className="pf-logo" />
-              <span className="pf-brand-word">entivo</span>
+              <span className="pf-brand-word">entenco</span>
             </span>
             <div className="pf-bar-right">
               <span className={`pf-level pf-level--${tier}`}>{item.cefrGroup}</span>

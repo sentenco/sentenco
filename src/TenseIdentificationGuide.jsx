@@ -35,7 +35,7 @@ export default function TenseIdentificationGuide() {
               <span className="tid-brand-badge">
                 <img className="tid-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="tid-stage-chip">
               <span className="tid-stage-name">{g.stage}</span>

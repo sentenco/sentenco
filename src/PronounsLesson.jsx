@@ -183,7 +183,7 @@ export default function PronounsLesson() {
       <div className="ppl-stage">
         <div className="ppl-deck">
           <div className="ppl-deck-header">
-            <span className="ppl-brand"><img src="/logo-sentivo.png" alt="" className="ppl-brand-logo" />entivo</span>
+            <span className="ppl-brand"><img src="/logo-sentivo.png" alt="" className="ppl-brand-logo" />entenco</span>
             <span className="ppl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="ppl-deck-body" key={slideIdx}>

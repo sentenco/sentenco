@@ -1,5 +1,5 @@
 // Shared branded shell for standalone activity popups (Vocabulary games,
-// Writing activities): a real header with the Sentivo logo instead of a
+// Writing activities): a real header with the Sentenco logo instead of a
 // bare white page, matching the site's actual wordmark (same markup as
 // Library.jsx's .gc-header-brand).
 export default function PlayerChrome({ eyebrow, children }) {
@@ -8,7 +8,7 @@ export default function PlayerChrome({ eyebrow, children }) {
       <style>{CSS}</style>
       <div className="pch-header">
         <span className="pch-brand">
-          <img src="/logo-sentivo.png" alt="" className="pch-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="pch-logo" />entenco
         </span>
         {eyebrow && <span className="pch-eyebrow">{eyebrow}</span>}
       </div>

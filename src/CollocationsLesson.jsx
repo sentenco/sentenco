@@ -203,7 +203,7 @@ export default function CollocationsLesson() {
       <div className="cll-stage">
         <div className="cll-deck">
           <div className="cll-deck-header">
-            <span className="cll-brand"><img src="/logo-sentivo.png" alt="" className="cll-brand-logo" />entivo</span>
+            <span className="cll-brand"><img src="/logo-sentivo.png" alt="" className="cll-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="cll-deck-body" key={slideIdx}>

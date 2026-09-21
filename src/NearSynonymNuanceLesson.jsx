@@ -237,7 +237,7 @@ export default function NearSynonymNuanceLesson() {
       <div className="nsn-stage">
         <div className="nsn-deck">
           <div className="nsn-deck-header">
-            <span className="nsn-brand"><img src="/logo-sentivo.png" alt="" className="nsn-brand-logo" />entivo</span>
+            <span className="nsn-brand"><img src="/logo-sentivo.png" alt="" className="nsn-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="nsn-deck-body" key={slideIdx}>

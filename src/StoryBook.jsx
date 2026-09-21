@@ -46,7 +46,7 @@ function BookHeader({ stage }) {
         <span className="sb-book-brand-chip">
           <img src="/logo-sentivo.png" alt="" className="sb-book-brand-logo" />
         </span>
-        Sentivo
+        Sentenco
       </span>
       {stage && <span className="sb-book-stage">{stage}</span>}
     </div>
@@ -673,7 +673,7 @@ const CSS = `
 }
 
 /* ── Book card header: brand on the left, current page/stage on the
-   right. First thing inside the card so the Sentivo identity travels
+   right. First thing inside the card so the Sentenco identity travels
    with the book rather than living in the outer topbar. ── */
 .sb-book-header {
   display: flex;

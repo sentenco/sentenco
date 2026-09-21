@@ -92,7 +92,7 @@ export default function GistMultipleChoiceHub() {
     <div className="gmc-page">
       <style>{CSS}</style>
       <div className="gmc-hero">
-        <span className="gmc-eyebrow">Sentivo · Listening</span>
+        <span className="gmc-eyebrow">Sentenco · Listening</span>
         <h1 className="gmc-title">Gist Multiple Choice</h1>
         <p className="gmc-sub">Play one short clip, ask one question, pick the right answer.</p>
       </div>

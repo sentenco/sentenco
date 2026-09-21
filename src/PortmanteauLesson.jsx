@@ -222,7 +222,7 @@ export default function PortmanteauLesson() {
       <div className="ptl-stage">
         <div className="ptl-deck">
           <div className="ptl-deck-header">
-            <span className="ptl-brand"><img src="/logo-sentivo.png" alt="" className="ptl-brand-logo" />entivo</span>
+            <span className="ptl-brand"><img src="/logo-sentivo.png" alt="" className="ptl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="ptl-deck-body" key={slideIdx}>

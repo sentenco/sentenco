@@ -232,7 +232,7 @@ export default function UsedToLesson() {
       <div className="ustl-stage">
         <div className="ustl-deck">
           <div className="ustl-deck-header">
-            <span className="ustl-brand"><img src="/logo-sentivo.png" alt="" className="ustl-brand-logo" />entivo</span>
+            <span className="ustl-brand"><img src="/logo-sentivo.png" alt="" className="ustl-brand-logo" />entenco</span>
             <span className="ustl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="ustl-deck-body" key={slideIdx}>

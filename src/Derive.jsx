@@ -13,7 +13,7 @@ function TopBar() {
   return (
     <div className="dv-brand">
       <img src="/logo-sentivo.png" alt="" className="dv-brand-logo" />
-      <span className="dv-brand-name">entivo</span>
+      <span className="dv-brand-name">entenco</span>
     </div>
   );
 }

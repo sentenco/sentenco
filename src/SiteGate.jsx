@@ -25,7 +25,7 @@ export default function SiteGate({ children }) {
       <style>{CSS}</style>
       <div className="sgate-card">
         <span className="sgate-lock">🔒</span>
-        <h1 className="sgate-title">sentivo</h1>
+        <h1 className="sgate-title">sentenco</h1>
         <p className="sgate-blurb">
           {user
             ? "This site is in private preview and isn't open to this account yet."

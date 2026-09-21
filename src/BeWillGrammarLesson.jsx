@@ -159,7 +159,7 @@ export default function BeWillGrammarLesson() {
               <span className="gbw-brand-badge">
                 <img className="gbw-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="gbw-stage-chip">
               <span className="gbw-stage-name">{s.stage}</span>
@@ -203,7 +203,7 @@ const SLIDES = [
     stage: "Customized Lesson", time: null,
     body: (
       <div className="gbw-cover">
-        <span className="gbw-eyebrow">Sentivo &middot; Customized Lesson</span>
+        <span className="gbw-eyebrow">Sentenco &middot; Customized Lesson</span>
         <h1 className="gbw-h1">Be-verbs &amp; Will</h1>
         <p className="gbw-cover-p">Three simple patterns: describing with be + adjective, acting now with be + v-ing, and the future with will + v1.</p>
       </div>

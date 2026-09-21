@@ -68,7 +68,7 @@ export default function TeensSayHelloLesson() {
           <div className="slide-header">
             <div className="brand-bubble">
               <img className="brand-logo" src="/logo-sentivo.png" alt="" />
-              <span className="brand-word">entivo</span>
+              <span className="brand-word">entenco</span>
             </div>
             <div className="pennant">
               <span className="pennant-text">{s.stage}</span>

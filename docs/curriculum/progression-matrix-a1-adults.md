@@ -1,6 +1,6 @@
 # A1 Adults — Intra-Level Progression Matrix (Pilot #4)
 
-Per the Sentivo Intra-Level Progression Framework, adapted for Adults'
+Per the Sentenco Intra-Level Progression Framework, adapted for Adults'
 **steepest slope** (per the framework's age-track guidance: less
 scaffolding sooner, earlier integration of realistic functional texts,
 faster move to independent production than Kids or Teens).

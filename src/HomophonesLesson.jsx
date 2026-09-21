@@ -243,7 +243,7 @@ export default function HomophonesLesson() {
       <div className="hpl-stage">
         <div className="hpl-deck">
           <div className="hpl-deck-header">
-            <span className="hpl-brand"><img src="/logo-sentivo.png" alt="" className="hpl-brand-logo" />entivo</span>
+            <span className="hpl-brand"><img src="/logo-sentivo.png" alt="" className="hpl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="hpl-deck-body" key={slideIdx}>

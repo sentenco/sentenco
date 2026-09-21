@@ -196,7 +196,7 @@ export default function Unit10LetsReviewLesson() {
           <div className="slide-header">
             <div className="brand-bubble">
               <img className="brand-logo" src="/logo-sentivo.png" alt="" />
-              <span className="brand-word">entivo</span>
+              <span className="brand-word">entenco</span>
             </div>
             <div className="stage-chip">
               {s.part && <span className="part-badge" style={{ background: PARTS[s.part].color }}>Part {s.part}</span>}

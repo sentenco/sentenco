@@ -232,7 +232,7 @@ export default function InversionLesson() {
       <div className="ivl-stage">
         <div className="ivl-deck">
           <div className="ivl-deck-header">
-            <span className="ivl-brand"><img src="/logo-sentivo.png" alt="" className="ivl-brand-logo" />entivo</span>
+            <span className="ivl-brand"><img src="/logo-sentivo.png" alt="" className="ivl-brand-logo" />entenco</span>
             <span className="ivl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="ivl-deck-body" key={slideIdx}>

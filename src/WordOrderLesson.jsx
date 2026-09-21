@@ -234,7 +234,7 @@ export default function WordOrderLesson() {
       <div className="wol-stage">
         <div className="wol-deck">
           <div className="wol-deck-header">
-            <span className="wol-brand"><img src="/logo-sentivo.png" alt="" className="wol-brand-logo" />entivo</span>
+            <span className="wol-brand"><img src="/logo-sentivo.png" alt="" className="wol-brand-logo" />entenco</span>
             <span className="wol-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="wol-deck-body" key={slideIdx}>

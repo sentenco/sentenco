@@ -198,7 +198,7 @@ export default function SparkTeens() {
       <div className="spkt-stage">
         <div className="spkt-deck">
           <div className="spkt-deck-header">
-            <span className="spkt-brand"><img src="/logo-sentivo.png" alt="" className="spkt-brand-logo" />entivo</span>
+            <span className="spkt-brand"><img src="/logo-sentivo.png" alt="" className="spkt-brand-logo" />entenco</span>
             <span className="spkt-stage-label">{stageLabel(slide)}</span>
           </div>
           <div className="spkt-deck-body" key={slideIdx}>

@@ -232,7 +232,7 @@ export default function CountableUncountableTrapsLesson() {
       <div className="cntl-stage">
         <div className="cntl-deck">
           <div className="cntl-deck-header">
-            <span className="cntl-brand"><img src="/logo-sentivo.png" alt="" className="cntl-brand-logo" />entivo</span>
+            <span className="cntl-brand"><img src="/logo-sentivo.png" alt="" className="cntl-brand-logo" />entenco</span>
             <span className="cntl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="cntl-deck-body" key={slideIdx}>

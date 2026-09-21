@@ -232,7 +232,7 @@ export default function TooEnoughLesson() {
       <div className="tel-stage">
         <div className="tel-deck">
           <div className="tel-deck-header">
-            <span className="tel-brand"><img src="/logo-sentivo.png" alt="" className="tel-brand-logo" />entivo</span>
+            <span className="tel-brand"><img src="/logo-sentivo.png" alt="" className="tel-brand-logo" />entenco</span>
             <span className="tel-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="tel-deck-body" key={slideIdx}>

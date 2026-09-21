@@ -392,7 +392,7 @@ function buildWritingSessions(count, level, startIndex) {
   return { sessions, endIndex: startIndex + count };
 }
 
-// ---------- Articles (Sentivo Gazette, chronological order) ----------
+// ---------- Articles (Sentenco Gazette, chronological order) ----------
 // Not level-specific -- each article has its own Plain/Polished/Precise
 // editions, so the syllabus just names the article and the teacher picks
 // the right edition when they actually run the session.

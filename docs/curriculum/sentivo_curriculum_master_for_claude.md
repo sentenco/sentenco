@@ -1,12 +1,12 @@
-# Sentivo Curriculum Design Notes for Claude
+# Sentenco Curriculum Design Notes for Claude
 
-This document combines the current working guidance for Sentivo’s curriculum structure across CEFR levels, lesson progression, and slide-based lesson design for online one-to-one classes.
+This document combines the current working guidance for Sentenco’s curriculum structure across CEFR levels, lesson progression, and slide-based lesson design for online one-to-one classes.
 
 ---
 
 # Intra-Level Progression Framework
 
-Sentivo’s current issue is not level-to-level progression, but **within-level flatness**: units change topic, but difficulty remains almost static inside a CEFR level.[web:1619][web:1799] A stronger design is to keep units self-contained while introducing a **deliberate intra-level progression grid** that gradually increases complexity across all 12 units.[web:1800][web:1804]
+Sentenco’s current issue is not level-to-level progression, but **within-level flatness**: units change topic, but difficulty remains almost static inside a CEFR level.[web:1619][web:1799] A stronger design is to keep units self-contained while introducing a **deliberate intra-level progression grid** that gradually increases complexity across all 12 units.[web:1800][web:1804]
 
 ## Core recommendation
 
@@ -104,7 +104,7 @@ A useful mapping is:
 - **Tier 2: full descriptor-level C1 or C2 performance**
 - **Tier 3: near-exam / near-real-world bridge tasks with minimal scaffolding**
 
-This preserves consistency across the entire Sentivo curriculum even though the lesson shape changes at the advanced bands.[file:1527][web:1619]
+This preserves consistency across the entire Sentenco curriculum even though the lesson shape changes at the advanced bands.[file:1527][web:1619]
 
 ## Risks and mitigation
 
@@ -173,7 +173,7 @@ For every CEFR level and every age track, create a planning sheet with these col
 - Tasks: track time contrast, explain changes, write a short connected paragraph using a checklist rather than sentence frames.
 - Production support: minimal; mostly prompts and output criteria.
 
-## Recommended final model for Sentivo
+## Recommended final model for Sentenco
 
 The strongest curriculum structure is:
 
@@ -190,7 +190,7 @@ The strongest curriculum structure is:
 
 The lesson-level pattern should be **structurally consistent but experientially varied**. Every class should have the same simple internal spine, but the activities inside that spine should rotate enough that students do not feel they are doing the same class again and again.[web:1836][web:1762]
 
-For Sentivo, especially in **25-minute online one-to-one ESL classes**, the best approach is:
+For Sentenco, especially in **25-minute online one-to-one ESL classes**, the best approach is:
 
 - keep a stable micro-structure,
 - vary the activity types inside each stage,
@@ -297,7 +297,7 @@ Good 1:1 online activity types:
 
 ## The key rule: same spine, rotating activity families
 
-To prevent boredom, Sentivo should not repeat the same task formats lesson after lesson. Instead, writers should rotate **activity families** inside the fixed lesson spine.[web:1834][web:1838]
+To prevent boredom, Sentenco should not repeat the same task formats lesson after lesson. Instead, writers should rotate **activity families** inside the fixed lesson spine.[web:1834][web:1838]
 
 ### Suggested activity-family rotation for one-to-one online classes
 
@@ -338,7 +338,7 @@ For each lesson, require:
 
 # 9-Slide Lesson Pattern Framework for 25-Minute One-to-One Online Classes
 
-This framework turns Sentivo's lesson structure into a **repeatable slide system** that stays consistent for teachers while still feeling varied for students. It is designed specifically for **online one-to-one classes**, **25 minutes per lesson**, and **9 slides per lesson**.[web:1826][web:1835][web:1820]
+This framework turns Sentenco's lesson structure into a **repeatable slide system** that stays consistent for teachers while still feeling varied for students. It is designed specifically for **online one-to-one classes**, **25 minutes per lesson**, and **9 slides per lesson**.[web:1826][web:1835][web:1820]
 
 The main idea is:
 
@@ -648,7 +648,7 @@ Topics can become slightly more reflective or opinion-based while staying in lev
 
 ## Final recommendation
 
-For Sentivo’s 25-minute one-to-one online curriculum:
+For Sentenco’s 25-minute one-to-one online curriculum:
 
 - use **one stable 9-slide lesson framework**,
 - let early units share the same broad pattern,

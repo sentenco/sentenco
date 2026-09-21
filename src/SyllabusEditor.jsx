@@ -304,7 +304,7 @@ export default function SyllabusEditor() {
       <div className="syl-frame no-print">
         <div className="syl-topbar">
           <button type="button" className="syl-brand" onClick={() => navigate("/library/syllabus")} title="Back to your syllabi">
-            <img src="/logo-sentivo.png" alt="" className="syl-brand-logo" />entivo
+            <img src="/logo-sentivo.png" alt="" className="syl-brand-logo" />entenco
           </button>
           <div className="syl-topbar-actions">
             <span className="syl-saved-note">{saving ? "Saving…" : savedAt ? "Saved" : ""}</span>

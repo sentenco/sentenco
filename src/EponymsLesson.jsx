@@ -221,7 +221,7 @@ export default function EponymsLesson() {
       <div className="epl-stage">
         <div className="epl-deck">
           <div className="epl-deck-header">
-            <span className="epl-brand"><img src="/logo-sentivo.png" alt="" className="epl-brand-logo" />entivo</span>
+            <span className="epl-brand"><img src="/logo-sentivo.png" alt="" className="epl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="epl-deck-body" key={slideIdx}>

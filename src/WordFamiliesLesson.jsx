@@ -278,7 +278,7 @@ export default function WordFamiliesLesson() {
       <div className="wfl-stage">
         <div className="wfl-deck">
           <div className="wfl-deck-header">
-            <span className="wfl-brand"><img src="/logo-sentivo.png" alt="" className="wfl-brand-logo" />entivo</span>
+            <span className="wfl-brand"><img src="/logo-sentivo.png" alt="" className="wfl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="wfl-deck-body" key={slideIdx}>

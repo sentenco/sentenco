@@ -232,7 +232,7 @@ export default function GetPassiveBePassiveLesson() {
       <div className="gpl-stage">
         <div className="gpl-deck">
           <div className="gpl-deck-header">
-            <span className="gpl-brand"><img src="/logo-sentivo.png" alt="" className="gpl-brand-logo" />entivo</span>
+            <span className="gpl-brand"><img src="/logo-sentivo.png" alt="" className="gpl-brand-logo" />entenco</span>
             <span className="gpl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="gpl-deck-body" key={slideIdx}>

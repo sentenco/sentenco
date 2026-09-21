@@ -232,7 +232,7 @@ export default function ReflexiveVerbsNoSelfLesson() {
       <div className="rvsl-stage">
         <div className="rvsl-deck">
           <div className="rvsl-deck-header">
-            <span className="rvsl-brand"><img src="/logo-sentivo.png" alt="" className="rvsl-brand-logo" />entivo</span>
+            <span className="rvsl-brand"><img src="/logo-sentivo.png" alt="" className="rvsl-brand-logo" />entenco</span>
             <span className="rvsl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="rvsl-deck-body" key={slideIdx}>

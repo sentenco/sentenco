@@ -233,7 +233,7 @@ export default function DirectIndirectObjectsLesson() {
       <div className="diol-stage">
         <div className="diol-deck">
           <div className="diol-deck-header">
-            <span className="diol-brand"><img src="/logo-sentivo.png" alt="" className="diol-brand-logo" />entivo</span>
+            <span className="diol-brand"><img src="/logo-sentivo.png" alt="" className="diol-brand-logo" />entenco</span>
             <span className="diol-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="diol-deck-body" key={slideIdx}>

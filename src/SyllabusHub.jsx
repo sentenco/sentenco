@@ -84,14 +84,14 @@ export default function SyllabusHub() {
       <div className="syh-stage">
         <div className="syh-topbar">
           <button type="button" className="syh-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-            <img src="/logo-sentivo.png" alt="" className="syh-brand-logo" />entivo
+            <img src="/logo-sentivo.png" alt="" className="syh-brand-logo" />entenco
           </button>
         </div>
 
         <div className="syh-header">
           <div className="syh-header-blob" />
           <div className="syh-hero">
-            <span className="syh-eyebrow">Sentivo · Homeroom</span>
+            <span className="syh-eyebrow">Sentenco · Homeroom</span>
             <h1 className="syh-hero-title">Syllabus Generator</h1>
             <p className="syh-hero-blurb">
               Build a 12-session plan around one student's goal and weak spot, then use it as your guide, class after class. Start a new cycle when they're ready.

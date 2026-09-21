@@ -231,7 +231,7 @@ export default function SubjectVerbAgreementLesson() {
       <div className="sval-stage">
         <div className="sval-deck">
           <div className="sval-deck-header">
-            <span className="sval-brand"><img src="/logo-sentivo.png" alt="" className="sval-brand-logo" />entivo</span>
+            <span className="sval-brand"><img src="/logo-sentivo.png" alt="" className="sval-brand-logo" />entenco</span>
             <span className="sval-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="sval-deck-body" key={slideIdx}>

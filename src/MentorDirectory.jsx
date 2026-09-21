@@ -49,7 +49,7 @@ export default function MentorDirectory() {
       <style>{CSS}</style>
       <div className="md-topbar">
         <button type="button" className="md-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="md-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="md-brand-logo" />entenco
         </button>
         <h1 className="md-topbar-title">Find a Mentor</h1>
       </div>
@@ -58,7 +58,7 @@ export default function MentorDirectory() {
         <div className="md-hero">
           <p className="md-eyebrow">Teacher's Desk</p>
           <h2 className="md-heading">Learn from a teacher who's been there</h2>
-          <p className="md-lede">Every mentor here has 5+ years of experience and was reviewed by Sentivo staff. Message one to get started.</p>
+          <p className="md-lede">Every mentor here has 5+ years of experience and was reviewed by Sentenco staff. Message one to get started.</p>
           <a className="md-apply-link" href="/library/mentors/apply">Want to mentor others? Apply here →</a>
         </div>
 

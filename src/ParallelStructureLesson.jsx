@@ -232,7 +232,7 @@ export default function ParallelStructureLesson() {
       <div className="psl-stage">
         <div className="psl-deck">
           <div className="psl-deck-header">
-            <span className="psl-brand"><img src="/logo-sentivo.png" alt="" className="psl-brand-logo" />entivo</span>
+            <span className="psl-brand"><img src="/logo-sentivo.png" alt="" className="psl-brand-logo" />entenco</span>
             <span className="psl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="psl-deck-body" key={slideIdx}>

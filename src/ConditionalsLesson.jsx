@@ -183,7 +183,7 @@ export default function ConditionalsLesson() {
       <div className="cnl-stage">
         <div className="cnl-deck">
           <div className="cnl-deck-header">
-            <span className="cnl-brand"><img src="/logo-sentivo.png" alt="" className="cnl-brand-logo" />entivo</span>
+            <span className="cnl-brand"><img src="/logo-sentivo.png" alt="" className="cnl-brand-logo" />entenco</span>
             <span className="cnl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="cnl-deck-body" key={slideIdx}>

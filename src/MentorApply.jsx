@@ -62,7 +62,7 @@ export default function MentorApply() {
       <style>{CSS}</style>
       <div className="ma-topbar">
         <button type="button" className="ma-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="ma-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="ma-brand-logo" />entenco
         </button>
         <h1 className="ma-topbar-title">Become a Mentor</h1>
       </div>
@@ -78,7 +78,7 @@ export default function MentorApply() {
         ) : submitted || (existingApp && existingApp.status === "pending") ? (
           <div className="ma-status-card">
             <p className="ma-status-title">Application submitted</p>
-            <p className="ma-status-body">Sentivo staff will review it and get back to you. This usually takes a few days.</p>
+            <p className="ma-status-body">Sentenco staff will review it and get back to you. This usually takes a few days.</p>
           </div>
         ) : !eligible ? (
           <div className="ma-status-card">
@@ -90,7 +90,7 @@ export default function MentorApply() {
             <div className="ma-hero">
               <p className="ma-eyebrow">Teacher's Desk</p>
               <h2 className="ma-heading">Mentor other teachers</h2>
-              <p className="ma-lede">Share what you know with newer teachers, 1:1 or in groups, free or paid, your call. Applications are reviewed by Sentivo staff.</p>
+              <p className="ma-lede">Share what you know with newer teachers, 1:1 or in groups, free or paid, your call. Applications are reviewed by Sentenco staff.</p>
             </div>
 
             {existingApp && existingApp.status === "rejected" && (

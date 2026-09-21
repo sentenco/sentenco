@@ -114,7 +114,7 @@ export default function RealEstateVocabLesson() {
               <span className="rev-brand-badge">
                 <img className="rev-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="rev-stage-chip">
               <span className="rev-stage-name">{s.stage}</span>
@@ -159,7 +159,7 @@ const SLIDES = [
     stage: "Customized Lesson", time: null,
     body: (
       <div className="rev-cover">
-        <span className="rev-eyebrow">Sentivo &middot; Customized Lesson</span>
+        <span className="rev-eyebrow">Sentenco &middot; Customized Lesson</span>
         <h1 className="rev-h1">Real Estate Vocabulary</h1>
         <p className="rev-cover-p">A 25-minute one-to-one lesson: 12 core real estate words, grouped by People, Property, and Money.</p>
         <div className="rev-cover-tags">

@@ -195,7 +195,7 @@ export default function WheelPage() {
 
         <div className="wp-panel">
           <div className="wp-panel-head">
-            <span className="wp-eyebrow">Sentivo · Homeroom</span>
+            <span className="wp-eyebrow">Sentenco · Homeroom</span>
             <h1 className="wp-title">Spin the Wheel</h1>
             <p className="wp-blurb">Paste your list, one item per line. Each line becomes a slice.</p>
           </div>

@@ -13,7 +13,7 @@ export default function Community() {
       <style>{CSS}</style>
       <header className="cm-topbar">
         <button type="button" className="cm-brand" onClick={() => navigate("/library")} title="Back to Library">
-          <img src="/logo-sentivo.png" alt="" className="cm-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="cm-brand-logo" />entenco
         </button>
         <h1 className="cm-topbar-title">Teacher Community</h1>
       </header>

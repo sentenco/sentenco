@@ -338,7 +338,7 @@ export default function PartsOfSpeechLesson() {
       <div className="posl-stage">
         <div className="posl-deck">
           <div className="posl-deck-header">
-            <span className="posl-brand"><img src="/logo-sentivo.png" alt="" className="posl-brand-logo" />entivo</span>
+            <span className="posl-brand"><img src="/logo-sentivo.png" alt="" className="posl-brand-logo" />entenco</span>
             <span className="posl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="posl-deck-body" key={slideIdx}>

@@ -35,7 +35,7 @@ export default function BeWillGrammarGuide() {
               <span className="gbw-brand-badge">
                 <img className="gbw-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="gbw-stage-chip">
               <span className="gbw-stage-name">{g.stage}</span>

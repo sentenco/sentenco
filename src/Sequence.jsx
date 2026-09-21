@@ -103,7 +103,7 @@ export default function Sequence() {
 
         <div className="sq-deck">
           <div className="sq-deck-header">
-            <div className="sq-brand"><span className="sq-brand-mark">S</span>entivo</div>
+            <div className="sq-brand"><span className="sq-brand-mark">S</span>entenco</div>
             <div className="sq-header-right">
               <span className="sq-stage-pill">{stageLabel(slide, lesson)}</span>
               <span className="sq-count-pill">Sequence</span>

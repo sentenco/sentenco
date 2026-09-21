@@ -79,7 +79,7 @@ export default function SlideDeckHub() {
       <div className="sdh-page">
         <div className="sdh-stage">
           <div className="sdh-hero">
-            <span className="sdh-eyebrow">Sentivo · Today</span>
+            <span className="sdh-eyebrow">Sentenco · Today</span>
             <h1 className="sdh-hero-title">Your decks</h1>
             <p className="sdh-hero-blurb">
               Build a slide deck for any topic, then present it straight from your browser.

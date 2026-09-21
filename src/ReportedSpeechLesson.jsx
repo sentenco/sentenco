@@ -183,7 +183,7 @@ export default function ReportedSpeechLesson() {
       <div className="rsl-stage">
         <div className="rsl-deck">
           <div className="rsl-deck-header">
-            <span className="rsl-brand"><img src="/logo-sentivo.png" alt="" className="rsl-brand-logo" />entivo</span>
+            <span className="rsl-brand"><img src="/logo-sentivo.png" alt="" className="rsl-brand-logo" />entenco</span>
             <span className="rsl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="rsl-deck-body" key={slideIdx}>

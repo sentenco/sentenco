@@ -232,7 +232,7 @@ export default function CleftSentencesLesson() {
       <div className="cflt-stage">
         <div className="cflt-deck">
           <div className="cflt-deck-header">
-            <span className="cflt-brand"><img src="/logo-sentivo.png" alt="" className="cflt-brand-logo" />entivo</span>
+            <span className="cflt-brand"><img src="/logo-sentivo.png" alt="" className="cflt-brand-logo" />entenco</span>
             <span className="cflt-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="cflt-deck-body" key={slideIdx}>

@@ -61,7 +61,7 @@ export default function WordChoiceGame({ title, instruction, data, hue = "coral"
 
       {phase === "start" && (
         <div className="syn-card syn-start">
-          <span className="syn-eyebrow">Sentivo · Vocabulary</span>
+          <span className="syn-eyebrow">Sentenco · Vocabulary</span>
           <h1 className="syn-title">{title}</h1>
           <p className="syn-blurb">{instruction} 10 questions, one at a time.</p>
           <button type="button" className="syn-btn syn-btn--primary" onClick={start}>Start ▶</button>
@@ -116,7 +116,7 @@ export default function WordChoiceGame({ title, instruction, data, hue = "coral"
 
       {phase === "done" && (
         <div className="syn-card syn-done">
-          <span className="syn-eyebrow">Sentivo · Vocabulary</span>
+          <span className="syn-eyebrow">Sentenco · Vocabulary</span>
           <div className="syn-done-emoji">{score === n ? "🏆" : score >= n * 0.7 ? "🎉" : score >= n * 0.4 ? "👍" : "💪"}</div>
           <h1 className="syn-title">{score} / {n}</h1>
           <p className="syn-blurb">

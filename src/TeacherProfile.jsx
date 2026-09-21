@@ -41,7 +41,7 @@ export default function TeacherProfile() {
       <style>{CSS}</style>
       <div className="tp-topbar">
         <button type="button" className="tp-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="tp-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="tp-brand-logo" />entenco
         </button>
         <h1 className="tp-topbar-title">Profile</h1>
       </div>

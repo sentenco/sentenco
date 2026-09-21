@@ -232,7 +232,7 @@ export default function GerundsPrepositionsTimeLesson() {
       <div className="gipl-stage">
         <div className="gipl-deck">
           <div className="gipl-deck-header">
-            <span className="gipl-brand"><img src="/logo-sentivo.png" alt="" className="gipl-brand-logo" />entivo</span>
+            <span className="gipl-brand"><img src="/logo-sentivo.png" alt="" className="gipl-brand-logo" />entenco</span>
             <span className="gipl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="gipl-deck-body" key={slideIdx}>

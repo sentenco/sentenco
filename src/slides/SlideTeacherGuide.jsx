@@ -12,7 +12,7 @@ export default function SlideTeacherGuide({ content }) {
     <div className="sltg-slide">
       <style>{CSS}</style>
       <div className="sltg-header">
-        <span className="sltg-wordmark">sentivo</span>
+        <span className="sltg-wordmark">sentenco</span>
         <span className="sltg-badge" style={{ background: "#5C6F8A" }}>
           Teacher Guide
         </span>

@@ -354,7 +354,7 @@ export default function Spark() {
       <div className="spk-stage">
         <div className="spk-deck">
           <div className="spk-deck-header">
-            <span className="spk-brand"><img src="/logo-sentivo.png" alt="" className="spk-brand-logo" />entivo</span>
+            <span className="spk-brand"><img src="/logo-sentivo.png" alt="" className="spk-brand-logo" />entenco</span>
             <span className="spk-stage-label">{stageLabel(slide)}</span>
           </div>
           <div className="spk-deck-body" key={slideIdx}>

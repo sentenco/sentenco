@@ -202,7 +202,7 @@ export default function TrickyUncountablesLesson() {
       <div className="tul-stage">
         <div className="tul-deck">
           <div className="tul-deck-header">
-            <span className="tul-brand"><img src="/logo-sentivo.png" alt="" className="tul-brand-logo" />entivo</span>
+            <span className="tul-brand"><img src="/logo-sentivo.png" alt="" className="tul-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="tul-deck-body" key={slideIdx}>

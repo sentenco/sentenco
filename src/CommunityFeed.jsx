@@ -474,7 +474,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
         <img
           className="cm-banner-img"
           src={communityBannerImg}
-          alt="Illustration of teachers around the world connecting over Sentivo"
+          alt="Illustration of teachers around the world connecting over Sentenco"
         />
         <div className="cm-stats">
           <div className="cm-stat">

@@ -13,7 +13,7 @@ export default function RegisterRewriteGuide({ item }) {
       <div className="rrg-topbar">
         <span className="rrg-brand">
           <img src="/logo-sentivo.png" alt="" className="rrg-logo" />
-          <span className="rrg-brand-word">entivo</span>
+          <span className="rrg-brand-word">entenco</span>
         </span>
         <span className="rrg-eyebrow">Teacher's Guide · Register Rewrite</span>
       </div>

@@ -229,7 +229,7 @@ export default function LibraryHeader() {
       <header className="gc-band">
         <div className="gc-topbar">
           <a href="/library" className="gc-header-brand" onClick={(e) => { e.preventDefault(); navigate("/library"); }}>
-            <img src="/logo-sentivo.png" alt="" className="gc-header-logo" />entivo
+            <img src="/logo-sentivo.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
             <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>

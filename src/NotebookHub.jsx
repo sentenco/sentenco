@@ -64,7 +64,7 @@ export default function NotebookHub() {
       <div className="nbh-stage">
         <div className="nbh-topbar">
           <button type="button" className="nbh-brand" onClick={() => navigate("/library")} title="Back to Library">
-            <img src="/logo-sentivo.png" alt="" className="nbh-brand-logo" />entivo
+            <img src="/logo-sentivo.png" alt="" className="nbh-brand-logo" />entenco
           </button>
           <span className="nbh-topbar-title">Digital Notebook</span>
         </div>
@@ -72,7 +72,7 @@ export default function NotebookHub() {
         <div className="nbh-header">
           <div className="nbh-header-blob" />
           <div className="nbh-hero">
-            <span className="nbh-eyebrow">Sentivo · Homeroom</span>
+            <span className="nbh-eyebrow">Sentenco · Homeroom</span>
             <h1 className="nbh-hero-title">Pick a page</h1>
             <p className="nbh-hero-blurb">
               Choose a design, then write live on it in its own window while you teach. Nothing is saved — it clears when the window closes.

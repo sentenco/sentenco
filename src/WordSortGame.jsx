@@ -65,7 +65,7 @@ export default function WordSortGame({ title, categoryA, categoryB, items }) {
 
       {phase === "start" && (
         <div className="ws-card ws-start">
-          <span className="ws-eyebrow">Sentivo · Vocabulary</span>
+          <span className="ws-eyebrow">Sentenco · Vocabulary</span>
           <h1 className="ws-title">{title}</h1>
           <p className="ws-blurb">Sort each word into the right category. 10 words, one at a time.</p>
           <button type="button" className="ws-btn ws-btn--primary" onClick={start}>Start ▶</button>
@@ -120,7 +120,7 @@ export default function WordSortGame({ title, categoryA, categoryB, items }) {
 
       {phase === "done" && (
         <div className="ws-card ws-done">
-          <span className="ws-eyebrow">Sentivo · Vocabulary</span>
+          <span className="ws-eyebrow">Sentenco · Vocabulary</span>
           <div className="ws-done-emoji">{score === n ? "🏆" : score >= n * 0.7 ? "🎉" : score >= n * 0.4 ? "👍" : "💪"}</div>
           <h1 className="ws-title">{score} / {n}</h1>
           <p className="ws-blurb">

@@ -183,7 +183,7 @@ export default function GerundsInfinitivesLesson() {
       <div className="gil-stage">
         <div className="gil-deck">
           <div className="gil-deck-header">
-            <span className="gil-brand"><img src="/logo-sentivo.png" alt="" className="gil-brand-logo" />entivo</span>
+            <span className="gil-brand"><img src="/logo-sentivo.png" alt="" className="gil-brand-logo" />entenco</span>
             <span className="gil-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="gil-deck-body" key={slideIdx}>

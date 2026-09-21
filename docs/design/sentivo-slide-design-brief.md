@@ -1,6 +1,6 @@
-# Sentivo Lesson Slide — Design Brief
+# Sentenco Lesson Slide — Design Brief
 
-**Goal:** Recreate the visual "chrome" of Sentivo's lesson player as a reusable PowerPoint template — the card frame, header, footer nav, and color/type system — so any lesson content can be dropped in and look on-brand.
+**Goal:** Recreate the visual "chrome" of Sentenco's lesson player as a reusable PowerPoint template — the card frame, header, footer nav, and color/type system — so any lesson content can be dropped in and look on-brand.
 
 ## 1. Canvas size
 
@@ -34,7 +34,7 @@
 ## 4. Layout anatomy (top to bottom)
 
 **A. Top bar** (white background, ~40-50px tall)
-- Left: "sentivo" wordmark in Fredoka Bold navy, with a small colored dot after it + a tiny emoji "motif" icon (e.g. ☀)
+- Left: "sentenco" wordmark in Fredoka Bold navy, with a small colored dot after it + a tiny emoji "motif" icon (e.g. ☀)
 - Center: current slide-type label, uppercase, small, gray, letter-spaced (e.g. "VOCABULARY")
 - Right: slide counter, e.g. "3 / 9", gray Quicksand
 - Directly below: a **3px progress bar**, track color `#EFEFF2`, filled portion in the accent color, width = progress through the deck

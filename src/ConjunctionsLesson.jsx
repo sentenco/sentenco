@@ -260,7 +260,7 @@ export default function ConjunctionsLesson() {
       <div className="cjl-stage">
         <div className="cjl-deck">
           <div className="cjl-deck-header">
-            <span className="cjl-brand"><img src="/logo-sentivo.png" alt="" className="cjl-brand-logo" />entivo</span>
+            <span className="cjl-brand"><img src="/logo-sentivo.png" alt="" className="cjl-brand-logo" />entenco</span>
             <span className="cjl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="cjl-deck-body" key={slideIdx}>

@@ -1,4 +1,4 @@
-# Sentivo Gazette — Perplexity Article Prompt
+# Sentenco Gazette — Perplexity Article Prompt
 
 Reusable prompt to feed Perplexity whenever we need fresh articles for
 the Gazette (Articles page). Run it, then hand the raw output back to
@@ -12,14 +12,14 @@ our internal JS schema.
 
 Category 9 (Law) is the one exception to the "neutral news" voice —
 it runs as a genuine opinion piece (an "EDITORIAL"), matching the
-"Sentivo Editorial" branding on the article page. Its Plain/Precise
+"Sentenco Editorial" branding on the article page. Its Plain/Precise
 editions should keep that same opinionated framing, just simplified
 or elevated in vocabulary — not flattened into neutral reporting.
 
 ## The prompt
 
 ```
-You are a news researcher for an ESL publication called "The Sentivo Gazette." Find ONE timely, real news story, trend, or notable court case/legal concept for EACH of the following 9 categories — stories can be from anywhere in the world, but must be current (from roughly the last 1–4 weeks, except Law, where a well-known or recent case/concept is fine) and classroom-safe (no partisan politics, no graphic content, no hot-button controversy — human interest, science, tech, culture, work, study, society, travel, or legal-education angles only):
+You are a news researcher for an ESL publication called "The Sentenco Gazette." Find ONE timely, real news story, trend, or notable court case/legal concept for EACH of the following 9 categories — stories can be from anywhere in the world, but must be current (from roughly the last 1–4 weeks, except Law, where a well-known or recent case/concept is fine) and classroom-safe (no partisan politics, no graphic content, no hot-button controversy — human interest, science, tech, culture, work, study, society, travel, or legal-education angles only):
 
 1. Daily Life (wellbeing, habits, everyday life)
 2. Nature & Science (environment, discoveries, space, health science)

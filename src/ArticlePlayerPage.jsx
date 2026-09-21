@@ -234,7 +234,7 @@ export default function ArticlePlayerPage() {
             </div>
             <div className="app-masthead-kicker-row">
               <span className="app-masthead-rule" />
-              <span className="app-masthead-kicker">The Sentivo</span>
+              <span className="app-masthead-kicker">The Sentenco</span>
               <span className="app-masthead-rule" />
             </div>
             <div className="app-masthead-word">Gazette</div>
@@ -314,7 +314,7 @@ export default function ArticlePlayerPage() {
           </div>
         </div>
 
-        <div className="app-footer">The Sentivo Gazette</div>
+        <div className="app-footer">The Sentenco Gazette</div>
       </div>
     </div>
   );

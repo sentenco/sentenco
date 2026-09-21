@@ -183,7 +183,7 @@ export default function RelativeClausesLesson() {
       <div className="rcl-stage">
         <div className="rcl-deck">
           <div className="rcl-deck-header">
-            <span className="rcl-brand"><img src="/logo-sentivo.png" alt="" className="rcl-brand-logo" />entivo</span>
+            <span className="rcl-brand"><img src="/logo-sentivo.png" alt="" className="rcl-brand-logo" />entenco</span>
             <span className="rcl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="rcl-deck-body" key={slideIdx}>

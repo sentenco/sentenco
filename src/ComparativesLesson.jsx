@@ -183,7 +183,7 @@ export default function ComparativesLesson() {
       <div className="csl-stage">
         <div className="csl-deck">
           <div className="csl-deck-header">
-            <span className="csl-brand"><img src="/logo-sentivo.png" alt="" className="csl-brand-logo" />entivo</span>
+            <span className="csl-brand"><img src="/logo-sentivo.png" alt="" className="csl-brand-logo" />entenco</span>
             <span className="csl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="csl-deck-body" key={slideIdx}>

@@ -232,7 +232,7 @@ export default function LessonPlayer({ lessonId: lessonIdProp }) {
 
       <div className="lp-header">
         <div className="lp-wordmark">
-          sentivo{!isAdult && <span className="lp-dot">•</span>}
+          sentenco{!isAdult && <span className="lp-dot">•</span>}
         </div>
         <div className="lp-slide-type">
           {SLIDE_TYPE_LABELS[slide.slide_type] || slide.slide_type}

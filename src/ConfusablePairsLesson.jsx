@@ -204,7 +204,7 @@ export default function ConfusablePairsLesson() {
       <div className="cpl-stage">
         <div className="cpl-deck">
           <div className="cpl-deck-header">
-            <span className="cpl-brand"><img src="/logo-sentivo.png" alt="" className="cpl-brand-logo" />entivo</span>
+            <span className="cpl-brand"><img src="/logo-sentivo.png" alt="" className="cpl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
           <div className="cpl-deck-body" key={slideIdx}>

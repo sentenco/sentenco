@@ -1,6 +1,6 @@
 # A2 Teens — Intra-Level Progression Matrix (Pilot)
 
-Per the Sentivo Intra-Level Progression Framework (Perplexity, 2026-07-08):
+Per the Sentenco Intra-Level Progression Framework (Perplexity, 2026-07-08):
 three tiers of four units, six progression levers, same 9-part lesson
 architecture throughout — only the language/task load changes.
 

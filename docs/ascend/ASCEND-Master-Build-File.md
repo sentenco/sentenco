@@ -41,7 +41,7 @@ Keep the TOPIC as the through-line, but **rotate a fresh sub-topic each lesson**
 
 **The C1 answer to FORGE.** Where FORGE forges *vocabulary* into fluent speech for High-A2 learners, **ASCEND** lifts an already-fluent C1 speaker from "correct & fluent" to "precise, persuasive & diplomatic" — the real C1→C2 ceiling.
 
-**Level:** C1 · **Format:** 25-min 1-to-1 online · **Backbone:** Sentivo slide backbone (fixed phase order, flexible slide count — see Claude Instruction rule 1) · **Package:** 10 lessons · 4 recurring types
+**Level:** C1 · **Format:** 25-min 1-to-1 online · **Backbone:** Sentenco slide backbone (fixed phase order, flexible slide count — see Claude Instruction rule 1) · **Package:** 10 lessons · 4 recurring types
 **North Star:** *Precision over fluency — say it the way an expert would.*
 
 ### The 4 types

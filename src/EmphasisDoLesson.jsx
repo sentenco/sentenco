@@ -232,7 +232,7 @@ export default function EmphasisDoLesson() {
       <div className="edl-stage">
         <div className="edl-deck">
           <div className="edl-deck-header">
-            <span className="edl-brand"><img src="/logo-sentivo.png" alt="" className="edl-brand-logo" />entivo</span>
+            <span className="edl-brand"><img src="/logo-sentivo.png" alt="" className="edl-brand-logo" />entenco</span>
             <span className="edl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="edl-deck-body" key={slideIdx}>

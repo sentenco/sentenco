@@ -1,6 +1,6 @@
 # A1 Kids — Intra-Level Progression Matrix (Pilot #3)
 
-Per the Sentivo Intra-Level Progression Framework, adapted for Kids'
+Per the Sentenco Intra-Level Progression Framework, adapted for Kids'
 **gentlest slope** (per the framework's own age-track guidance: smaller
 jumps between tiers, more repetition, more visual/oral support, and
 controlled production even at the hardest tier).

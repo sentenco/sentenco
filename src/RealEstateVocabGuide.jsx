@@ -35,7 +35,7 @@ export default function RealEstateVocabGuide() {
               <span className="rev-brand-badge">
                 <img className="rev-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="rev-stage-chip">
               <span className="rev-stage-name">{g.stage}</span>

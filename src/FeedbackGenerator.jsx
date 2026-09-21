@@ -910,7 +910,7 @@ export default function FeedbackGenerator() {
         <div className="fbg-header">
           <div className="fbg-header-blob" />
           <div className="fbg-hero">
-            <span className="fbg-eyebrow">Sentivo · Homeroom</span>
+            <span className="fbg-eyebrow">Sentenco · Homeroom</span>
             <h1 className="fbg-title">Lesson Feedback</h1>
             <p className="fbg-sub">One category at a time — pick what applies.</p>
           </div>

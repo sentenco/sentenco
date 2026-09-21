@@ -130,7 +130,7 @@ export default function ArticleReader() {
           <div className="ar-masthead">
             <div className="ar-masthead-kicker-row">
               <span className="ar-masthead-rule" />
-              <span className="ar-masthead-kicker">The Sentivo</span>
+              <span className="ar-masthead-kicker">The Sentenco</span>
               <span className="ar-masthead-rule" />
             </div>
             <div className="ar-masthead-word">Gazette</div>

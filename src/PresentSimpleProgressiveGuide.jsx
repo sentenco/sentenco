@@ -35,7 +35,7 @@ export default function PresentSimpleProgressiveGuide() {
               <span className="psp-brand-badge">
                 <img className="psp-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="psp-stage-chip">
               <span className="psp-stage-name">{g.stage}</span>

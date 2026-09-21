@@ -361,10 +361,10 @@ const SLIDES = [
     note: "Alice is preparing for the E8 (the Polish eighth-grade English exam), the national exam that decides high-school places. Today is about 25 minutes on the reading and reaction tasks, using the real 13 May 2026 sheet. One item at a time: she should only ever look at one question.",
     body: (
       <div className="e8-cover">
-        <span className="e8-eyebrow">Sentivo · Custom Lesson</span>
+        <span className="e8-eyebrow">Sentenco · Custom Lesson</span>
         <h1 className="e8-h1">E8 Reading &amp; Reactions</h1>
         <p className="e8-cover-p">Real exam tasks, one trap at a time. Today you will not only find the right answer, you will see why the wrong ones look right.</p>
-        <span className="e8-source">Source: E8 English exam, 13 May 2026 (CKE, Poland). Answer key by Sentivo.</span>
+        <span className="e8-source">Source: E8 English exam, 13 May 2026 (CKE, Poland). Answer key by Sentenco.</span>
       </div>
     ),
   },
@@ -613,7 +613,7 @@ export default function E8ReadingReactionsLesson() {
             <div className="e8-top">
               <div className="e8-brand">
                 <span className="e8-brand-badge"><img className="e8-brand-logo" src="/logo-sentivo.png" alt="" /></span>
-                <span>entivo</span>
+                <span>entenco</span>
               </div>
               <div className="e8-stage-chip">
                 <span className="e8-stage-name">{s.stage}</span>

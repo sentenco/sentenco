@@ -1,6 +1,6 @@
 # A1 Teens — Intra-Level Progression Matrix (Pilot #2)
 
-Per the Sentivo Intra-Level Progression Framework, plus the two follow-up
+Per the Sentenco Intra-Level Progression Framework, plus the two follow-up
 considerations: lesson-level escalation within a unit, and task-format
 rotation per the 25-minute 1:1 lesson micro-pattern doc.
 

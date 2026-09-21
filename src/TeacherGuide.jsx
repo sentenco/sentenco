@@ -5,7 +5,7 @@ import { supabase } from "./supabaseClient";
 const GUIDES = {
   "A1-kids": {
     subtitle:
-      "A quick-scan guide for new teachers teaching Sentivo A1 one-on-one online classes.",
+      "A quick-scan guide for new teachers teaching Sentenco A1 one-on-one online classes.",
     intro:
       "This guide gives teachers a fast overview of each lesson in Unit 1 and Unit 2. Use it as a live reference to see what to teach first, what to practice, and what to avoid.",
     units: [

@@ -726,7 +726,7 @@ export default function Messenger() {
       <style>{CSS}</style>
       <div className="mg-topbar">
         <button type="button" className="mg-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="mg-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="mg-brand-logo" />entenco
         </button>
         <h1 className="mg-topbar-title">Convo</h1>
       </div>

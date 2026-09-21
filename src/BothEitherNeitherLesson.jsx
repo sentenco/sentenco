@@ -232,7 +232,7 @@ export default function BothEitherNeitherLesson() {
       <div className="benl-stage">
         <div className="benl-deck">
           <div className="benl-deck-header">
-            <span className="benl-brand"><img src="/logo-sentivo.png" alt="" className="benl-brand-logo" />entivo</span>
+            <span className="benl-brand"><img src="/logo-sentivo.png" alt="" className="benl-brand-logo" />entenco</span>
             <span className="benl-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="benl-deck-body" key={slideIdx}>

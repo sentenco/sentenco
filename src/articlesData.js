@@ -2521,7 +2521,7 @@ export const ARTICLES = [
             { t: ". A cost-of-living story, then, is also a story about emotional energy, family priorities, and how people define comfort in uncertain times." },
           ] },
           { type: "p", parts: [
-            { t: "This is the kind of topic Sentivo can make more useful than ordinary reporting. Instead of simply noting that governments promise relief, an editorial-style article can show how economic pressure moves from policy into kitchens, classrooms, and weekend plans." },
+            { t: "This is the kind of topic Sentenco can make more useful than ordinary reporting. Instead of simply noting that governments promise relief, an editorial-style article can show how economic pressure moves from policy into kitchens, classrooms, and weekend plans." },
             { c: 3 },
             { t: " That approach gives readers not only information but recognition — they see their own routines reflected in a larger global pattern." },
           ] },
@@ -2556,7 +2556,7 @@ export const ARTICLES = [
             { t: " about money, daily habits often become correspondingly more deliberate — a cost-of-living narrative is, at its core, a narrative about emotional bandwidth, familial priorities, and the ways people define security amid uncertainty." },
           ] },
           { type: "p", parts: [
-            { t: "This is precisely the terrain Sentivo can render more illuminating than conventional reporting. Rather than simply registering that governments promise relief, an editorial treatment can trace how economic pressure migrates from policy into kitchens, classrooms, and weekend plans." },
+            { t: "This is precisely the terrain Sentenco can render more illuminating than conventional reporting. Rather than simply registering that governments promise relief, an editorial treatment can trace how economic pressure migrates from policy into kitchens, classrooms, and weekend plans." },
             { c: 3 },
             { t: " Such an approach affords readers not only information but recognition, allowing them to see their own routines reflected within a broader global pattern." },
           ] },
@@ -2648,7 +2648,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "For readers, the observatory's mission offers an easy but profound question: what does it mean to watch the universe continuously over many years?" },
             { c: 3 },
-            { t: " Sentivo can make that question accessible to non-specialists by keeping the language clear and the focus human." },
+            { t: " Sentenco can make that question accessible to non-specialists by keeping the language clear and the focus human." },
           ] },
           { type: "p", parts: [
             { t: "Science becomes more memorable when it is not only about data, but about the wonder of seeing the sky as a living " },
@@ -2685,7 +2685,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "For readers, the observatory's mission poses a deceptively simple yet profound question: what does it mean to observe the universe continuously across many years?" },
             { c: 3 },
-            { t: " Sentivo can render that question accessible to non-specialists by keeping the language lucid and the focus resolutely human." },
+            { t: " Sentenco can render that question accessible to non-specialists by keeping the language lucid and the focus resolutely human." },
           ] },
           { type: "p", parts: [
             { t: "Science becomes more indelible when it concerns not merely data, but the wonder of beholding the sky as a living timeline rather than a static image." },
@@ -2773,7 +2773,7 @@ export const ARTICLES = [
             { t: " That is why international cooperation discussions matter, even when they seem distant from everyday users. Decisions made in policy rooms can shape what tools classrooms, offices, and families eventually use." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this makes AI coverage richer and more global. Instead of merely reporting the newest model, an editorial article can ask what kind of shared digital future is being built." },
+            { t: "For Sentenco, this makes AI coverage richer and more global. Instead of merely reporting the newest model, an editorial article can ask what kind of shared digital future is being built." },
           ] },
           { type: "p", parts: [
             { t: "Readers stay interested when technology is framed not only as " },
@@ -2810,7 +2810,7 @@ export const ARTICLES = [
             { t: " This is precisely why international cooperative discussions matter, however remote they may seem from ordinary users — decisions reached in policy chambers can determine which tools classrooms, offices, and households ultimately employ." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this lends AI coverage greater richness and global reach. Rather than merely reporting on the newest model, an editorial piece can interrogate what manner of shared digital future is being constructed." },
+            { t: "For Sentenco, this lends AI coverage greater richness and global reach. Rather than merely reporting on the newest model, an editorial piece can interrogate what manner of shared digital future is being constructed." },
           ] },
           { type: "p", parts: [
             { t: "Readers remain engaged when technology is cast not solely as novelty, but as a social system poised to affect nearly everyone." },
@@ -2896,7 +2896,7 @@ export const ARTICLES = [
             { t: " The result is a world where curriculum is no longer just an academic matter — it is also a labor-market tool." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo readers, this kind of article can make a familiar topic feel sharper. Instead of saying only that training is important, it can show why countries now treat it as part of national " },
+            { t: "For Sentenco readers, this kind of article can make a familiar topic feel sharper. Instead of saying only that training is important, it can show why countries now treat it as part of national " },
             { g: "competitiveness", pos: "noun", def: "the ability of a country or company to succeed against others" },
             { t: "." },
           ] },
@@ -2931,7 +2931,7 @@ export const ARTICLES = [
             { t: " The result is a landscape in which curriculum is no longer a purely academic matter but also a labor-market instrument." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo readers, such an article can render a familiar topic considerably sharper. Rather than merely asserting that training matters, it can illuminate why nations now treat it as integral to national " },
+            { t: "For Sentenco readers, such an article can render a familiar topic considerably sharper. Rather than merely asserting that training matters, it can illuminate why nations now treat it as integral to national " },
             { g: "competitiveness", pos: "noun", def: "a country's or company's ability to succeed in comparison with others" },
             { t: "." },
           ] },
@@ -3021,7 +3021,7 @@ export const ARTICLES = [
             { t: "." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this offers a strong international angle with immediate classroom value. Readers can discuss where students go, why certain places rise or fall in " },
+            { t: "For Sentenco, this offers a strong international angle with immediate classroom value. Readers can discuss where students go, why certain places rise or fall in " },
             { g: "attractiveness", pos: "noun", def: "the quality of being appealing or desirable to people" },
             { t: ", and how global movement changes with policy." },
           ] },
@@ -3056,7 +3056,7 @@ export const ARTICLES = [
             { t: " risk." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this furnishes a robust international angle with immediate classroom relevance. Readers can debate where students migrate, why certain destinations rise or wane in appeal, and how global mobility " },
+            { t: "For Sentenco, this furnishes a robust international angle with immediate classroom relevance. Readers can debate where students migrate, why certain destinations rise or wane in appeal, and how global mobility " },
             { g: "fluctuates", pos: "verb", def: "changes often, going up and down or back and forth" },
             { t: " with policy." },
           ] },
@@ -3143,7 +3143,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "For editorial writing, that makes the story especially useful." },
             { c: 3 },
-            { t: " Instead of asking only which shows are big, Sentivo can ask why some cultural products travel while still feeling distinct. That turns entertainment news into a more thoughtful conversation about identity, translation, and the global appetite for difference." },
+            { t: " Instead of asking only which shows are big, Sentenco can ask why some cultural products travel while still feeling distinct. That turns entertainment news into a more thoughtful conversation about identity, translation, and the global appetite for difference." },
           ] },
           { type: "p", parts: [
             { t: "Readers are likely to find this stimulating because it connects culture they consume every day to a larger pattern. It also helps explain why some international events or productions feel " },
@@ -3178,7 +3178,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "For editorial writing, this renders the story especially generative." },
             { c: 3 },
-            { t: " Rather than inquiring merely which productions are commercially dominant, Sentivo can interrogate why certain cultural exports travel while retaining their distinctiveness. This transforms entertainment coverage into a more contemplative conversation about identity, translation, and the global appetite for difference." },
+            { t: " Rather than inquiring merely which productions are commercially dominant, Sentenco can interrogate why certain cultural exports travel while retaining their distinctiveness. This transforms entertainment coverage into a more contemplative conversation about identity, translation, and the global appetite for difference." },
           ] },
           { type: "p", parts: [
             { t: "Readers are likely to find this compelling, as it connects culture consumed daily to a broader pattern, while also illuminating why certain international productions prove " },
@@ -3271,7 +3271,7 @@ export const ARTICLES = [
             { t: " News often highlights crisis after crisis, but another important question is how communities and institutions quietly prepare for future strain. A good society article can make those slower, less visible efforts feel just as important as breaking events." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this is a strong example of how to keep public-affairs coverage human and " },
+            { t: "For Sentenco, this is a strong example of how to keep public-affairs coverage human and " },
             { g: "nonpartisan", pos: "adjective", def: "not supporting or favoring any particular political side" },
             { t: "." },
           ] },
@@ -3304,7 +3304,7 @@ export const ARTICLES = [
             { t: " News frequently foregrounds crisis after crisis, yet another consequential question concerns how communities and institutions quietly prepare for future strain. A well-crafted society article can render those slower, less visible efforts as consequential as breaking events." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this constitutes a strong " },
+            { t: "For Sentenco, this constitutes a strong " },
             { g: "exemplar", pos: "noun", def: "a typical or excellent example of something" },
             { t: " of how to sustain public-affairs coverage that remains human and nonpartisan." },
           ] },
@@ -3391,7 +3391,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "This is a valuable editorial angle because it broadens what travel writing can be." },
             { c: 3 },
-            { t: " Instead of focusing only on beaches, restaurants, or luxury, a Sentivo article can explore how scientific importance changes how places are imagined. The destination becomes meaningful not merely for what tourists do there, but for what humanity learns there." },
+            { t: " Instead of focusing only on beaches, restaurants, or luxury, a Sentenco article can explore how scientific importance changes how places are imagined. The destination becomes meaningful not merely for what tourists do there, but for what humanity learns there." },
           ] },
           { type: "p", parts: [
             { t: "That approach can make travel content feel fresher and more " },
@@ -3424,7 +3424,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "This constitutes a valuable editorial angle because it expands the very possibilities of travel writing." },
             { c: 3 },
-            { t: " Rather than confining itself to beaches, restaurants, or luxury, a Sentivo article can explore how scientific significance reshapes how places are imagined. The destination becomes meaningful not solely for what tourists undertake there, but for what humanity " },
+            { t: " Rather than confining itself to beaches, restaurants, or luxury, a Sentenco article can explore how scientific significance reshapes how places are imagined. The destination becomes meaningful not solely for what tourists undertake there, but for what humanity " },
             { g: "discerns", pos: "verb", def: "notices or understands something, often something not obvious" },
             { t: " there." },
           ] },
@@ -3517,7 +3517,7 @@ export const ARTICLES = [
             { t: " Readers do not need more lectures about perfect habits. They need realistic guidance that respects how hard consistency can be. This is why the best articles on wellness in 2026 are often modest in tone: they suggest small actions, not total reinvention. That makes them more believable and more useful." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this kind of story can work especially well as editorial service journalism. It is global, relatable, and discussion-ready without becoming " },
+            { t: "For Sentenco, this kind of story can work especially well as editorial service journalism. It is global, relatable, and discussion-ready without becoming " },
             { g: "preachy", pos: "adjective", def: "trying too hard to teach or lecture people about how to behave" },
             { t: "." },
           ] },
@@ -3554,7 +3554,7 @@ export const ARTICLES = [
             { t: " Readers require no further sermonizing about flawless habits; they need realistic guidance that acknowledges how arduous consistency can be. This is why the most compelling wellness writing of 2026 tends toward modesty of tone: it proposes incremental adjustments rather than wholesale reinvention, rendering it considerably more credible and useful." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this genre of story can function especially well as editorial service journalism — global, relatable, and conducive to discussion without descending into moralizing." },
+            { t: "For Sentenco, this genre of story can function especially well as editorial service journalism — global, relatable, and conducive to discussion without descending into moralizing." },
           ] },
           { type: "p", parts: [
             { t: "It further reminds readers that 'world news' need not concern only distant institutions; sometimes it concerns the quiet, daily choices that help people remain " },
@@ -3644,7 +3644,7 @@ export const ARTICLES = [
             { t: ". Space science, then, is quietly borrowing the mindset of risk management." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this is exactly the kind of 'new but understandable' article that can spark curiosity. The story sounds almost like science fiction, yet it comes from real scientific discussion." },
+            { t: "For Sentenco, this is exactly the kind of 'new but understandable' article that can spark curiosity. The story sounds almost like science fiction, yet it comes from real scientific discussion." },
           ] },
           { type: "p", parts: [
             { t: "That mix of wonder and caution helps global readers feel that science is not a distant field. It is a way of thinking about the future before the future " },
@@ -3679,7 +3679,7 @@ export const ARTICLES = [
             { t: " It equally entails planning for low-probability, high-impact scenarios well before they become urgent — the very logic underpinning public health, transport safety, and cybersecurity. Space science, then, is quietly assimilating the mindset of risk management." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo, this constitutes precisely the sort of 'novel yet accessible' article capable of igniting curiosity. The narrative reads almost like science fiction, yet it emerges from genuine scientific deliberation." },
+            { t: "For Sentenco, this constitutes precisely the sort of 'novel yet accessible' article capable of igniting curiosity. The narrative reads almost like science fiction, yet it emerges from genuine scientific deliberation." },
           ] },
           { type: "p", parts: [
             { t: "That fusion of wonder and prudence helps a global readership perceive science not as a remote discipline, but as a mode of contemplating the future before it arrives." },
@@ -3767,7 +3767,7 @@ export const ARTICLES = [
             { t: ". An assistant is not the same as an index." },
           ] },
           { type: "p", parts: [
-            { t: "That distinction is exactly why this topic deserves space in a global publication like Sentivo. The question is not only what the tool can do, but how it may change reading, researching, and trusting information across countries and classrooms." },
+            { t: "That distinction is exactly why this topic deserves space in a global publication like Sentenco. The question is not only what the tool can do, but how it may change reading, researching, and trusting information across countries and classrooms." },
           ] },
           { type: "p", parts: [
             { t: "When a basic internet habit changes, the world changes " },
@@ -3804,7 +3804,7 @@ export const ARTICLES = [
             { t: " with an index." },
           ] },
           { type: "p", parts: [
-            { t: "That distinction is precisely why this subject merits space in a global publication such as Sentivo. The question is not merely what the tool can accomplish, but how it may transform reading, research, and the trust placed in information across countries and classrooms." },
+            { t: "That distinction is precisely why this subject merits space in a global publication such as Sentenco. The question is not merely what the tool can accomplish, but how it may transform reading, research, and the trust placed in information across countries and classrooms." },
           ] },
           { type: "p", parts: [
             { t: "When a foundational internet habit shifts, the world shifts quietly alongside it." },
@@ -3892,7 +3892,7 @@ export const ARTICLES = [
             { t: " in uncertain times. Travel often survives not because it is cheap, but because it represents reward, escape, or identity." },
           ] },
           { type: "p", parts: [
-            { t: "This is the sort of work-and-business coverage that can feel fresh to Sentivo readers. It keeps the economic signal but translates it into everyday meaning." },
+            { t: "This is the sort of work-and-business coverage that can feel fresh to Sentenco readers. It keeps the economic signal but translates it into everyday meaning." },
           ] },
           { type: "p", parts: [
             { t: "Global business news becomes more compelling when it shows not just where money is moving, but what people still believe is worth " },
@@ -3927,7 +3927,7 @@ export const ARTICLES = [
             { t: " Revenue forecasts convey only part of the story; the deeper inquiry concerns what forms of consumption remain emotionally valuable amid uncertainty. Travel frequently endures not because it is inexpensive, but because it embodies reward, escape, or identity." },
           ] },
           { type: "p", parts: [
-            { t: "This constitutes precisely the sort of work-and-business coverage capable of feeling fresh to Sentivo readers, retaining the economic signal while translating it into everyday significance." },
+            { t: "This constitutes precisely the sort of work-and-business coverage capable of feeling fresh to Sentenco readers, retaining the economic signal while translating it into everyday significance." },
           ] },
           { type: "p", parts: [
             { t: "Global business news grows more compelling when it reveals not merely where capital is flowing, but what people still deem worth " },
@@ -4014,7 +4014,7 @@ export const ARTICLES = [
             { c: 3 },
             { t: " Rather than treating education funding as dry " },
             { g: "bureaucracy", pos: "noun", def: "the official, often complicated, system of running a government or organization" },
-            { t: ", Sentivo can present it as a story about what societies believe their future depends on. This makes readers more likely to care because the subject becomes concrete: today's classrooms are tomorrow's capacity." },
+            { t: ", Sentenco can present it as a story about what societies believe their future depends on. This makes readers more likely to care because the subject becomes concrete: today's classrooms are tomorrow's capacity." },
           ] },
           { type: "p", parts: [
             { t: "For a globally minded publication, stories like this help widen the map beyond the usual education centers. They allow readers to see how different countries are trying to build " },
@@ -4022,7 +4022,7 @@ export const ARTICLES = [
             { t: " through learning." },
           ] },
           { type: "p", parts: [
-            { t: "That is exactly the kind of international awareness Sentivo can cultivate: education not as a local routine only, but as part of how nations imagine their next decade." },
+            { t: "That is exactly the kind of international awareness Sentenco can cultivate: education not as a local routine only, but as part of how nations imagine their next decade." },
           ] },
         ],
       },
@@ -4047,7 +4047,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "That extended horizon lends the topic considerable editorial value." },
             { c: 3 },
-            { t: " Rather than treating education funding as arid bureaucracy, Sentivo can present it as a narrative about what societies believe their future " },
+            { t: " Rather than treating education funding as arid bureaucracy, Sentenco can present it as a narrative about what societies believe their future " },
             { g: "hinges", pos: "verb", def: "depends completely on something" },
             { t: " upon. This renders readers more inclined to care, since the subject becomes concrete: today's classrooms constitute tomorrow's capacity." },
           ] },
@@ -4055,7 +4055,7 @@ export const ARTICLES = [
             { t: "For a globally attuned publication, such stories help broaden the map beyond the customary education centers, permitting readers to observe how disparate countries strive to construct opportunity through learning." },
           ] },
           { type: "p", parts: [
-            { t: "That is precisely the sort of international awareness Sentivo can cultivate: education construed not merely as local routine, but as integral to how nations envision their next decade." },
+            { t: "That is precisely the sort of international awareness Sentenco can cultivate: education construed not merely as local routine, but as integral to how nations envision their next decade." },
           ] },
         ],
       },
@@ -4107,7 +4107,7 @@ export const ARTICLES = [
             { t: "This does not mean people want less fun. It means the idea of 'fun' is changing. Many people now want entertainment that also makes them think or feel something real." },
           ] },
           { type: "p", parts: [
-            { t: "For a publication like Sentivo, this is good news. It means readers may want articles that both inform and entertain, not only one or the other." },
+            { t: "For a publication like Sentenco, this is good news. It means readers may want articles that both inform and entertain, not only one or the other." },
           ] },
           { type: "p", parts: [
             { t: "This topic is useful because it lets writers ask a bigger question: what do popular trends tell us about how people feel right now?" },
@@ -4137,7 +4137,7 @@ export const ARTICLES = [
             { c: 3 },
             { t: " Audiences still want fun, but many also want intelligence, context, and emotional " },
             { g: "weight", pos: "noun", def: "here, importance or seriousness, not physical heaviness" },
-            { t: ". For a publication like Sentivo, that is encouraging news: readers may be more ready than ever for articles that inform while entertaining." },
+            { t: ". For a publication like Sentenco, that is encouraging news: readers may be more ready than ever for articles that inform while entertaining." },
           ] },
           { type: "p", parts: [
             { t: "This topic is useful because it gives culture writing a bigger purpose. Rather than merely listing trends, an editorial article can ask what those trends " },
@@ -4174,7 +4174,7 @@ export const ARTICLES = [
             { g: "broadening", pos: "verb", def: "becoming wider or including more things" },
             { t: "." },
             { c: 3 },
-            { t: " Audiences still crave enjoyment, yet many equally seek intelligence, context, and emotional weight. For a publication such as Sentivo, this is encouraging: readers may be more receptive than ever to articles that inform while entertaining." },
+            { t: " Audiences still crave enjoyment, yet many equally seek intelligence, context, and emotional weight. For a publication such as Sentenco, this is encouraging: readers may be more receptive than ever to articles that inform while entertaining." },
           ] },
           { type: "p", parts: [
             { t: "This topic proves useful because it endows culture writing with a larger purpose. Rather than merely cataloguing trends, an editorial piece can interrogate what those trends disclose about the prevailing collective mood." },
@@ -4260,7 +4260,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "That is why this is really a society issue, not only a media issue." },
             { c: 3 },
-            { t: " Trust shapes how communities discuss health, education, technology, and public problems. If trust weakens, collective decision-making becomes harder. That gives publications like Sentivo a meaningful role: not merely to report, but to help readers rebuild habits of clear, careful understanding." },
+            { t: " Trust shapes how communities discuss health, education, technology, and public problems. If trust weakens, collective decision-making becomes harder. That gives publications like Sentenco a meaningful role: not merely to report, but to help readers rebuild habits of clear, careful understanding." },
           ] },
           { type: "p", parts: [
             { t: "This story can be especially stimulating because everyone already lives inside it. Readers know what it feels like to scroll, compare, doubt, and " },
@@ -4293,7 +4293,7 @@ export const ARTICLES = [
           { type: "p", parts: [
             { t: "This is precisely why the matter constitutes a societal issue rather than merely a media one." },
             { c: 3 },
-            { t: " Trust shapes how communities deliberate on health, education, technology, and public dilemmas; should it erode, collective decision-making grows correspondingly more arduous. This confers upon publications like Sentivo a meaningful role: not solely to report, but to help readers " },
+            { t: " Trust shapes how communities deliberate on health, education, technology, and public dilemmas; should it erode, collective decision-making grows correspondingly more arduous. This confers upon publications like Sentenco a meaningful role: not solely to report, but to help readers " },
             { g: "cultivate", pos: "verb", def: "to develop or improve something carefully over time" },
             { t: " habits of clear, careful comprehension." },
           ] },
@@ -4386,7 +4386,7 @@ export const ARTICLES = [
             { t: ". That makes the piece feel more thoughtful and more globally resonant." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo readers, this approach also keeps travel coverage fresh. It shows places through values rather than only attractions." },
+            { t: "For Sentenco readers, this approach also keeps travel coverage fresh. It shows places through values rather than only attractions." },
           ] },
           { type: "p", parts: [
             { t: "The result is a story about movement, desire, fatigue, and imagination all at once — which is often what the most " },
@@ -4421,7 +4421,7 @@ export const ARTICLES = [
             { t: ", rendering the piece more contemplative and globally resonant." },
           ] },
           { type: "p", parts: [
-            { t: "For Sentivo readers, this approach likewise keeps travel coverage vital, depicting places through values rather than attractions alone." },
+            { t: "For Sentenco readers, this approach likewise keeps travel coverage vital, depicting places through values rather than attractions alone." },
           ] },
           { type: "p", parts: [
             { t: "The result is a narrative concerning movement, desire, fatigue, and imagination all at once — precisely what the most indelible travel writing has always entailed." },

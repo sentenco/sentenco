@@ -189,7 +189,7 @@ function CategoryLockedFeature({ category, navigate }) {
     <div className="cat-locked">
       <span className="cat-locked-icon"><LockIcon /></span>
       <p className="cat-locked-eyebrow">Pro feature</p>
-      <h2 className="cat-locked-title">{category === "Customized Lessons" ? "Custom Lessons" : category} is part of Sentivo Pro</h2>
+      <h2 className="cat-locked-title">{category === "Customized Lessons" ? "Custom Lessons" : category} is part of Sentenco Pro</h2>
       <p className="cat-locked-desc">
         Upgrade to unlock every category, Speaking, Reading, Grammar, Vocabulary, Writing, and Listening, plus Teacher's Desk without the daily unlock.
       </p>
@@ -204,7 +204,7 @@ function CurriculumLockedFeature({ navigate }) {
     <div className="cat-locked">
       <span className="cat-locked-icon cat-locked-icon--navy"><LockIcon /></span>
       <p className="cat-locked-eyebrow cat-locked-eyebrow--navy">Pro+ feature</p>
-      <h2 className="cat-locked-title">The full curriculum is part of Sentivo Pro+</h2>
+      <h2 className="cat-locked-title">The full curriculum is part of Sentenco Pro+</h2>
       <p className="cat-locked-desc">
         Upgrade to Pro+ to unlock the full A1 and A2 curriculum, plus the AI-powered Dictionary, Grammar Checker, and Translator.
       </p>
@@ -261,7 +261,7 @@ function ArticlesFeature({ navigate, query }) {
         <div className="gaz-masthead">
           <div className="gaz-masthead-kicker-row">
             <span className="gaz-masthead-rule" />
-            <span className="gaz-masthead-kicker">The Sentivo</span>
+            <span className="gaz-masthead-kicker">The Sentenco</span>
             <span className="gaz-masthead-rule" />
           </div>
           <h1 className="gaz-masthead-word">Gazette</h1>
@@ -297,7 +297,7 @@ function ArticlesFeature({ navigate, query }) {
             <h2 className="gaz-lead-title">{lead.title}</h2>
             <p className="gaz-lead-dek">{lead.dek}</p>
             <div className="gaz-lead-meta">
-              <span className="gaz-byline">Sentivo Editorial</span>
+              <span className="gaz-byline">Sentenco Editorial</span>
               <span className="gaz-dot">·</span>
               <span className="gaz-editions">📚 3 Editions</span>
               <span className="gaz-dot">·</span>
@@ -676,7 +676,7 @@ function GrammarFeature({ navigate, query }) {
       style={{ "--gdn-bg-landscape": `url(${gdnLandscapeImg})`, "--gdn-bg-portrait": `url(${gdnPortraitImg})` }}
     >
       <div className="gdn-masthead">
-        <span className="gdn-eyebrow">Sentivo · Grammar</span>
+        <span className="gdn-eyebrow">Sentenco · Grammar</span>
         <span className="gdn-badge">Let's Grow!</span>
         <h1 className="gdn-nameplate">🌱 The Grammar Garden</h1>
         <p className="gdn-sub">Each module below focuses on one grammar rule at a time, from simple patterns to full sentences.</p>
@@ -993,7 +993,7 @@ function BookshelfFeature({ items, navigate, query }) {
   return (
     <div className="bkshf-page" style={{ backgroundImage: `url(${bkshfBgImg})` }}>
       <div className="bkshf-masthead">
-        <span className="bkshf-eyebrow">Sentivo · Reading</span>
+        <span className="bkshf-eyebrow">Sentenco · Reading</span>
         <h1 className="bkshf-nameplate">Library</h1>
         <p className="bkshf-tagline">Each book below is organized by CEFR level and age group, so you can read at the right difficulty.</p>
       </div>
@@ -1915,7 +1915,7 @@ export default function Library() {
             className="gc-header-brand"
             onClick={(e) => { e.preventDefault(); changeCategory("All"); }}
           >
-            <img src="/logo-sentivo.png" alt="" className="gc-header-logo" />entivo
+            <img src="/logo-sentivo.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
             <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>
@@ -2191,7 +2191,7 @@ export default function Library() {
             style={{ "--spklab-bg-landscape": `url(${clinicLandscapeImg})`, "--spklab-bg-portrait": `url(${clinicPortraitImg})` }}
           >
             <div className="spklab-hero">
-              <span className="spklab-eyebrow">Sentivo · Speaking</span>
+              <span className="spklab-eyebrow">Sentenco · Speaking</span>
               <h1 className="spklab-title">The Fluency Clinic</h1>
               <p className="spklab-sub">Each modality below is designed to close a specific speaking gap.</p>
             </div>
@@ -2275,7 +2275,7 @@ export default function Library() {
             style={{ "--lst-bg-landscape": `url(${listeningLandscapeImg})`, "--lst-bg-portrait": `url(${listeningPortraitImg})` }}
           >
             <div className="lst-hero">
-              <span className="lst-hero-eyebrow">Sentivo · Listening</span>
+              <span className="lst-hero-eyebrow">Sentenco · Listening</span>
               <h1 className="lst-hero-title">Listen Up!</h1>
               <p className="lst-hero-sub">Each activity below focuses on a specific listening skill, from catching key details to following spoken directions.</p>
             </div>
@@ -2311,7 +2311,7 @@ export default function Library() {
             <div className="cl-hero">
               <div className="cl-hero-kicker-row">
                 <span className="cl-hero-rule" />
-                <span className="cl-hero-kicker">Sentivo &middot; Custom Lessons</span>
+                <span className="cl-hero-kicker">Sentenco &middot; Custom Lessons</span>
                 <span className="cl-hero-rule" />
               </div>
               <h1 className="cl-title">Custom Lessons</h1>
@@ -3458,7 +3458,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   .spklab-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- Articles: The Sentivo Gazette ---------- */
+/* ---------- Articles: The Sentenco Gazette ---------- */
 .gaz-page {
   width: 100%;
   max-width: 1500px;

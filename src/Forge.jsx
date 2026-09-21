@@ -12,7 +12,7 @@ function TopBar() {
   return (
     <div className="fg-brand">
       <img src="/logo-sentivo.png" alt="" className="fg-brand-logo" />
-      <span className="fg-brand-name">entivo</span>
+      <span className="fg-brand-name">entenco</span>
     </div>
   );
 }

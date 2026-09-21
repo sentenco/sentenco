@@ -97,7 +97,7 @@ export default function TenseIdentificationLesson() {
               <span className="tid-brand-badge">
                 <img className="tid-brand-logo" src="/logo-sentivo.png" alt="" />
               </span>
-              <span>entivo</span>
+              <span>entenco</span>
             </div>
             <div className="tid-stage-chip">
               <span className="tid-stage-name">{s.stage}</span>
@@ -133,7 +133,7 @@ const SLIDES = [
     stage: "Customized Lesson", time: null,
     body: (
       <div className="tid-cover">
-        <span className="tid-eyebrow">Sentivo &middot; Customized Lesson</span>
+        <span className="tid-eyebrow">Sentenco &middot; Customized Lesson</span>
         <h1 className="tid-h1">Verb Tense Identification</h1>
         <p className="tid-cover-p">24 real sentences, all 12 English tenses. Read each one and choose the tense it's written in.</p>
       </div>

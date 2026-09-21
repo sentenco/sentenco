@@ -434,7 +434,7 @@ export default function VocabularyGames({ query }) {
         <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
           {atlasDecor}
           <div className="vg-hero">
-            <span className="vg-eyebrow">Sentivo · Vocabulary</span>
+            <span className="vg-eyebrow">Sentenco · Vocabulary</span>
             <h1><span className="vg-pill">Word Bank</span></h1>
             <p className="vg-blurb">Results for "{query.trim()}"</p>
           </div>
@@ -475,7 +475,7 @@ export default function VocabularyGames({ query }) {
         <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
           {atlasDecor}
           <div className="vg-hero">
-            <span className="vg-eyebrow">Sentivo · Vocabulary</span>
+            <span className="vg-eyebrow">Sentenco · Vocabulary</span>
             <h1><span className="vg-pill">Word Bank</span></h1>
             <p className="vg-blurb">Each activity below focuses on a specific vocabulary skill, whether through a quick game or a full lesson.</p>
           </div>
@@ -512,7 +512,7 @@ export default function VocabularyGames({ query }) {
         <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
           {atlasDecor}
           <div className="vg-hero">
-            <span className="vg-eyebrow">Sentivo · Vocabulary</span>
+            <span className="vg-eyebrow">Sentenco · Vocabulary</span>
             <h1><span className="vg-pill">{game.icon} {game.title}</span></h1>
             <p className="vg-blurb">{game.blurb}</p>
           </div>
@@ -585,7 +585,7 @@ export default function VocabularyGames({ query }) {
       <div className="vg-page" style={{ "--vg-bg-landscape": `url(${vgLandscapeImg})`, "--vg-bg-portrait": `url(${vgPortraitImg})` }}>
         {atlasDecor}
         <div className="vg-hero">
-          <span className="vg-eyebrow">Sentivo · Vocabulary</span>
+          <span className="vg-eyebrow">Sentenco · Vocabulary</span>
           <h1><span className="vg-pill">🐬 Word Bank</span></h1>
           <p className="vg-blurb">Each activity below focuses on a specific vocabulary skill, whether through a quick game or a full lesson.</p>
         </div>

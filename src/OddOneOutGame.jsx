@@ -69,7 +69,7 @@ export default function OddOneOutGame({ title, items }) {
 
       {phase === "start" && (
         <div className="oo-card oo-start">
-          <span className="oo-eyebrow">Sentivo · Vocabulary</span>
+          <span className="oo-eyebrow">Sentenco · Vocabulary</span>
           <h1 className="oo-title">{title}</h1>
           <p className="oo-blurb">Tap the word that doesn't belong. {items.length} rounds, one at a time.</p>
           <button type="button" className="oo-btn oo-btn--primary" onClick={start}>Start ▶</button>
@@ -125,7 +125,7 @@ export default function OddOneOutGame({ title, items }) {
 
       {phase === "done" && (
         <div className="oo-card oo-done">
-          <span className="oo-eyebrow">Sentivo · Vocabulary</span>
+          <span className="oo-eyebrow">Sentenco · Vocabulary</span>
           <div className="oo-done-emoji">{score === n ? "🏆" : score >= n * 0.7 ? "🎉" : score >= n * 0.4 ? "👍" : "💪"}</div>
           <h1 className="oo-title">{score} / {n}</h1>
           <p className="oo-blurb">

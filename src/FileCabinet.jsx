@@ -14,7 +14,7 @@ const CATEGORIES = [
     label: "Credentials",
     accent: "navy",
     tag: "Private",
-    hint: "Certificates, diplomas, TESOL/CELTA, teaching IDs. Only you and Sentivo staff can ever see these.",
+    hint: "Certificates, diplomas, TESOL/CELTA, teaching IDs. Only you and Sentenco staff can ever see these.",
   },
   {
     key: "material",
@@ -245,7 +245,7 @@ export default function FileCabinet() {
       <style>{CSS}</style>
       <div className="fc-topbar">
         <button type="button" className="fc-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentivo.png" alt="" className="fc-brand-logo" />entivo
+          <img src="/logo-sentivo.png" alt="" className="fc-brand-logo" />entenco
         </button>
         <h1 className="fc-topbar-title">File Cabinet</h1>
       </div>
@@ -258,7 +258,7 @@ export default function FileCabinet() {
             <div className="fc-hero">
               <p className="fc-eyebrow">Your storage</p>
               <h2 className="fc-heading">Everything's kept just for you</h2>
-              <p className="fc-lede">Credentials stay private to you and Sentivo staff. Lesson materials are yours to keep, or share with the rest of Homeroom whenever you want.</p>
+              <p className="fc-lede">Credentials stay private to you and Sentenco staff. Lesson materials are yours to keep, or share with the rest of Homeroom whenever you want.</p>
             </div>
 
             {isAdmin && <p className="fc-admin-note">You're viewing every teacher's files as admin.</p>}

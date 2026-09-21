@@ -232,7 +232,7 @@ export default function WhomLesson() {
       <div className="whml-stage">
         <div className="whml-deck">
           <div className="whml-deck-header">
-            <span className="whml-brand"><img src="/logo-sentivo.png" alt="" className="whml-brand-logo" />entivo</span>
+            <span className="whml-brand"><img src="/logo-sentivo.png" alt="" className="whml-brand-logo" />entenco</span>
             <span className="whml-stage-label">{stageLabel(slideType)}</span>
           </div>
           <div className="whml-deck-body" key={slideIdx}>

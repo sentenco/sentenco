@@ -2,7 +2,7 @@
 
 All 12 units of the A1 Teens track, each broken down lesson by lesson.
 Every lesson is 25 minutes, built for online 1:1 teaching, with the same
-6-stage shape used across all Sentivo tracks: **Warm-up (3 min) →
+6-stage shape used across all Sentenco tracks: **Warm-up (3 min) →
 Presentation (5 min) → Guided practice (7 min) → Freer practice (6 min) →
 Review (2 min) → Wrap-up (2 min)**.
 

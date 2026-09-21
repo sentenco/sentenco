@@ -1,7 +1,7 @@
 // Content for the legal pages (src/LegalPage.jsx). Kept as structured data,
 // separate from layout, so the three documents can share one page shell.
-// Drafted as a solid starting point grounded in what Sentivo actually does —
-// not a substitute for review by a Philippine lawyer before Sentivo accepts
+// Drafted as a solid starting point grounded in what Sentenco actually does —
+// not a substitute for review by a Philippine lawyer before Sentenco accepts
 // real payments.
 
 export const LEGAL_UPDATED = "August 22, 2026";
@@ -15,19 +15,19 @@ export const LEGAL_DOCS = [
 export const TERMS_CONTENT = {
   title: "Terms of Service",
   intro:
-    "These Terms govern your use of Sentivo, a platform for English teachers offering lesson content, a teacher community, and AI-powered tools. By creating an account or using Sentivo, you agree to these Terms.",
+    "These Terms govern your use of Sentenco, a platform for English teachers offering lesson content, a teacher community, and AI-powered tools. By creating an account or using Sentenco, you agree to these Terms.",
   sections: [
     {
-      heading: "1. Who can use Sentivo",
+      heading: "1. Who can use Sentenco",
       body: [
-        "Sentivo is built for English teachers and prospective teachers. You must be at least 18 years old, or the age of legal majority where you live, to create an account.",
+        "Sentenco is built for English teachers and prospective teachers. You must be at least 18 years old, or the age of legal majority where you live, to create an account.",
         "You're responsible for keeping your account credentials secure and for all activity under your account. Tell us right away if you think someone else has access to it.",
       ],
     },
     {
       heading: "2. Plans and what they include",
       body: [
-        "Sentivo offers a Free plan and paid Pro and Pro+ plans, described on the Subscription page. Features available to you depend on your current plan and, for the Free plan, on your recent activity in the Homeroom community (Teacher's Desk unlocks for the day once you've posted, commented, or liked a few times).",
+        "Sentenco offers a Free plan and paid Pro and Pro+ plans, described on the Subscription page. Features available to you depend on your current plan and, for the Free plan, on your recent activity in the Homeroom community (Teacher's Desk unlocks for the day once you've posted, commented, or liked a few times).",
         "We may add, change, or retire features over time. If a change meaningfully reduces what's included in a paid plan you're already on, we'll let you know.",
       ],
     },
@@ -42,7 +42,7 @@ export const TERMS_CONTENT = {
     {
       heading: "4. The Homeroom community",
       body: [
-        "Homeroom and the Community feed let you post, comment, and interact with other teachers. You keep ownership of what you post, but you give Sentivo permission to store, display, and distribute it within the app so the community feature works.",
+        "Homeroom and the Community feed let you post, comment, and interact with other teachers. You keep ownership of what you post, but you give Sentenco permission to store, display, and distribute it within the app so the community feature works.",
         "Don't post anything illegal, harassing, hateful, sexually explicit, or that infringes someone else's rights. Don't spam, impersonate others, or share a student's personal information.",
         "We can remove content or suspend accounts that break these rules, at our discretion, with or without notice depending on severity.",
       ],
@@ -57,27 +57,27 @@ export const TERMS_CONTENT = {
     {
       heading: "6. Lesson content and intellectual property",
       body: [
-        "Curriculum, articles, lesson plans, and other content Sentivo provides belong to Sentivo or our licensors. You may use them for your own teaching, including with your students. You may not resell, redistribute, or republish them as your own product.",
-        "Sentivo's name, logo, and branding are ours. Don't use them without permission.",
+        "Curriculum, articles, lesson plans, and other content Sentenco provides belong to Sentenco or our licensors. You may use them for your own teaching, including with your students. You may not resell, redistribute, or republish them as your own product.",
+        "Sentenco's name, logo, and branding are ours. Don't use them without permission.",
       ],
     },
     {
       heading: "7. Termination",
       body: [
-        "You can stop using Sentivo and delete your account at any time. We can suspend or terminate accounts that violate these Terms, don't pay for a paid plan, or for other legitimate business reasons, with notice where practical.",
+        "You can stop using Sentenco and delete your account at any time. We can suspend or terminate accounts that violate these Terms, don't pay for a paid plan, or for other legitimate business reasons, with notice where practical.",
       ],
     },
     {
       heading: "8. Disclaimers and limitation of liability",
       body: [
-        "Sentivo is provided \"as is.\" We don't guarantee it will be uninterrupted, error-free, or that AI-generated content will always be accurate. To the extent allowed by law, Sentivo isn't liable for indirect, incidental, or consequential damages arising from your use of the app.",
+        "Sentenco is provided \"as is.\" We don't guarantee it will be uninterrupted, error-free, or that AI-generated content will always be accurate. To the extent allowed by law, Sentenco isn't liable for indirect, incidental, or consequential damages arising from your use of the app.",
         "Nothing here limits liability that can't be limited under Philippine law.",
       ],
     },
     {
       heading: "9. Changes to these Terms",
       body: [
-        "We may update these Terms as Sentivo grows. We'll post the updated version here with a new \"last updated\" date. Continuing to use Sentivo after changes take effect means you accept them.",
+        "We may update these Terms as Sentenco grows. We'll post the updated version here with a new \"last updated\" date. Continuing to use Sentenco after changes take effect means you accept them.",
       ],
     },
     {
@@ -94,14 +94,14 @@ export const TERMS_CONTENT = {
 export const PRIVACY_CONTENT = {
   title: "Privacy Policy",
   intro:
-    "This Privacy Policy explains what information Sentivo collects, how we use it, and the choices you have. Sentivo is intended for use by adult teachers, not directly by children.",
+    "This Privacy Policy explains what information Sentenco collects, how we use it, and the choices you have. Sentenco is intended for use by adult teachers, not directly by children.",
   sections: [
     {
       heading: "1. Information we collect",
       body: [
         "Account information: your email address, and any name, country, years-teaching, and profile photo you choose to add.",
         "Content you create: community posts, comments, likes, and any images or files you upload to the Community feed.",
-        "Private messages: the content of any 1:1 messages you send through Convo. These aren't end-to-end encrypted — the other participant can read them, and so can Sentivo, for support, moderation, or legal purposes.",
+        "Private messages: the content of any 1:1 messages you send through Convo. These aren't end-to-end encrypted — the other participant can read them, and so can Sentenco, for support, moderation, or legal purposes.",
         "File Cabinet uploads: lesson materials and credentials you choose to store, including anything you mark private.",
         "Mentor program information: if you apply to become a mentor, the details in your application, like your experience, specialty, and any documents you attach.",
         "Usage information: your subscription plan, and activity we use to unlock features, like your post/comment/like counts for the day.",
@@ -114,23 +114,23 @@ export const PRIVACY_CONTENT = {
         "To provide the service: run your dashboard, the Homeroom community, curriculum access, and the AI tools.",
         "To personalize your experience, like showing your name and badge on your posts, and unlocking Teacher's Desk once you're active for the day.",
         "To process payments once billing is live, through our payment processor.",
-        "To improve Sentivo, for example caching common dictionary lookups so they're faster and cheaper for everyone.",
+        "To improve Sentenco, for example caching common dictionary lookups so they're faster and cheaper for everyone.",
       ],
     },
     {
       heading: "3. Who we share information with",
       body: [
-        "We don't sell your personal information. We share it only with the service providers Sentivo runs on:",
+        "We don't sell your personal information. We share it only with the service providers Sentenco runs on:",
         "Supabase, for authentication, our database, and file storage.",
         "Anthropic, whose Claude models power the Dictionary, Grammar Checker, and Translator, meaning the text you submit to those tools is sent to Anthropic for processing.",
-        "PayMongo, our payment processor, for billing once subscriptions go live. PayMongo handles your payment details directly, Sentivo does not store your card or e-wallet information.",
+        "PayMongo, our payment processor, for billing once subscriptions go live. PayMongo handles your payment details directly, Sentenco does not store your card or e-wallet information.",
         "We may also disclose information if required by law.",
       ],
     },
     {
       heading: "4. Where your data is processed",
       body: [
-        "Our service providers may process and store data outside the Philippines. By using Sentivo, you consent to this transfer, which is necessary to provide the service.",
+        "Our service providers may process and store data outside the Philippines. By using Sentenco, you consent to this transfer, which is necessary to provide the service.",
       ],
     },
     {
@@ -149,7 +149,7 @@ export const PRIVACY_CONTENT = {
     {
       heading: "7. Cookies and local storage",
       body: [
-        "Sentivo uses your browser's local storage to keep you signed in and to remember small preferences, like your display name, translation language pair, and recent AI-tool lookups. We don't use third-party advertising trackers.",
+        "Sentenco uses your browser's local storage to keep you signed in and to remember small preferences, like your display name, translation language pair, and recent AI-tool lookups. We don't use third-party advertising trackers.",
       ],
     },
     {
@@ -176,7 +176,7 @@ export const PRIVACY_CONTENT = {
 export const REFUND_CONTENT = {
   title: "Refund & Cancellation Policy",
   intro:
-    "This policy covers how billing, cancellation, and refunds work for Sentivo Pro and Pro+ subscriptions.",
+    "This policy covers how billing, cancellation, and refunds work for Sentenco Pro and Pro+ subscriptions.",
   sections: [
     {
       heading: "1. Billing cycle",
