@@ -160,6 +160,26 @@ const ADV_SICK = ADV("sick friend", SIT_SICK.src, "My friend is sick.", ["You sh
 const ADV_GAME = ADV("worried", F_WORRIED.src, "I'm nervous about my game.", ["You should stay in bed.", "You should stop playing.", "You should practice."], 2);
 const ADVQ = [["👀", "Look at the problem."], ["🗣️", "Say good advice."]];
 const READ_FEEL = { ...READ_ALOUD, heading: "Read Your Feelings" };
+
+// ---- Unit 10 (Helping at Home) pieces; the eight chore pictures are new (Batch 2) ----
+const CH = (label, file) => ({ label, src: `/curriculum/a2-chores/${file}` });
+const C_BED = CH("make my bed", "bed.jpg"), C_ROOM = CH("clean my room", "room.jpg"), C_DISHES = CH("wash the dishes", "dishes.jpg"), C_PET = CH("feed the pet", "pet.jpg");
+const C_TABLE = CH("set the table", "table.jpg"), C_SWEEP = CH("sweep the floor", "sweep.jpg"), C_TRASH = CH("take out the trash", "trash.jpg"), C_LAUNDRY = CH("do the laundry", "laundry.jpg");
+const CHORES4A = [C_BED, C_ROOM, C_DISHES, C_PET], CHORES4B = [C_TABLE, C_SWEEP, C_TRASH, C_LAUNDRY], CHORES8 = [...CHORES4A, ...CHORES4B];
+const HAVEQ = "What do you have to do?";
+const DOHAVE = "Yes, I do. / No, I don't.";
+const CHOREDICE = { type: "dice", dice: [{ name: "Chore", items: CHORES8 }, { name: "Say", items: [{ label: "I have to..." }, { label: "Can you...?" }] }], size: 100 };
+const CHOREDICE1 = { type: "dice", dice: [{ name: "Chore", items: CHORES4A }], size: 92 };
+// Home Helper: a request and three replies; the polite reply is at `answer`
+const HH = (pic, text, options, answer) => ({ type: "help", problem: { label: pic.label, src: pic.src, text }, options: options.map((l) => ({ label: l })), answer, said: options[answer] });
+const HH_DISHES = HH(C_DISHES, "Can you wash the dishes, please?", ["Sure! I can wash them.", "No!", "I don't want to."], 0);
+const HH_TRASH = HH(C_TRASH, "Can you take out the trash?", ["Never!", "Sure! I can take it out.", "Go away."], 1);
+const HH_TABLE = HH(C_TABLE, "I have to cook. Can you help me?", ["No, thanks.", "Maybe never.", "Sure! Let's do it together."], 2);
+const HH_LAUNDRY = HH(C_LAUNDRY, "Can you do the laundry now?", ["Sorry, I can't. I'm busy.", "No!", "Never."], 0);
+const HH_ROOM = HH(C_ROOM, "Can you clean your room, please?", ["I don't want to.", "No!", "Of course. I can clean it."], 2);
+const HHQ = [["👀", "Look at the request."], ["🗣️", "Say a polite answer."]];
+const ASKCHORE = [["👀", "Look at the picture."], ["🗣️", "Ask the teacher to help."]];
+const READ_HOME = { ...READ_ALOUD, heading: "Read Your Sentences" };
 const CLUEQ_FEEL = [["👀", "Read the clue."], ["🗣️", "Guess the feeling."]];
 
 export const SOAR_A2_LESSONS = {
@@ -2172,73 +2192,223 @@ export const SOAR_A2_LESSONS = {
     ],
   },
 
+  // ---------- Unit 10: Helping at Home ----------
   "10-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Lesson 1", title: "My Chores! 🧹", subtitle: "Name chores and say what you have to do at home." },
-      { type: "chips", stage: "Getting Ready", heading: "Chores", subheading: "New words for this unit", items: ["clean my room", "wash the dishes", "take out the trash", "do the laundry", "make my bed", "sweep the floor", "set the table", "feed the pet"] },
-      { type: "message", stage: "Taking Off", heading: "I Have To…", subheading: "Talk about responsibilities", lines: ["I have to *clean my room*.", "I have to *wash the dishes*.", "I have to *feed my cat*."] },
-      { type: "dialogue", stage: "Do You Have To?", heading: "Do You Have To…?", subheading: "Ask and answer", turns: [{ who: "teacher", text: "Do you have to do the laundry?" }, { who: "student", text: "Yes, I do." }, { who: "teacher", text: "Do you have to make your bed?" }, { who: "student", text: "No, I don't." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "My Busy Morning", subheading: "You're late! What do you have to do?", turns: [{ who: "teacher", text: "You're late! What do you have to do?" }, { who: "student", text: "I have to make my bed. I have to wash the dishes." }, { who: "teacher", text: "What else do you have to do?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Say three chores you have to do", line: "I have to ___. I have to ___. I have to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "My Chores!", caption: "I have to make my bed. I have to wash the dishes. I have to feed my cat." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 10, title: "My Chores!", subtitle: "Name chores and say what you have to do at home." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "At Home", turns: [{ who: "teacher", text: "What do you do after school?" }], instruction: LISTEN_ANSWER, guide: "I ___." },
+
+      // ---- Part B: four chores (5 min) ----
+      { type: "strip", part: "B", stage: "Four Chores", heading: "Four Chores", numbered: false, size: 100, items: CHORES4A, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Four Chores", heading: "I Have To...", lines: ["I have to *make my bed*.", "I have to *feed the pet*."], instruction: REPEAT_SENT },
+      { ...one(C_BED), part: "B", stage: "Four Chores", heading: "What Do You Have To Do?", question: HAVEQ, instruction: LISTEN_ANSWER, guide: "I have to ___." },
+      { ...one(C_ROOM), part: "B", stage: "Four Chores", heading: "What Do You Have To Do? 2", question: HAVEQ, instruction: LISTEN_ANSWER, guide: "I have to ___." },
+      { ...one(C_DISHES), part: "B", stage: "Four Chores", heading: "What Do You Have To Do? 3", question: HAVEQ, instruction: LISTEN_ANSWER, guide: "I have to ___." },
+      { ...one(C_PET), part: "B", stage: "Four Chores", heading: "What Do You Have To Do? 4", question: HAVEQ, instruction: LISTEN_ANSWER, guide: "I have to ___." },
+      { type: "message", part: "B", stage: "Four Chores", heading: "Do You Have To...?", lines: ["Do you have to *make your bed*?", "*Yes, I do.* / *No, I don't.*"], instruction: REPEAT_SENT },
+
+      // ---- Part C: the games (13 min) ----
+      { ...CHOREDICE1, part: "C", stage: "Chore Dice", heading: "Chore Dice", instruction: [["👀", "Look at the die."], ["🗣️", "Say the chore."]], guide: "I have to ___." },
+      { ...CHOREDICE1, part: "C", stage: "Chore Dice", heading: "Chore Dice 2", instruction: [["👀", "Look at the die."], ["🗣️", "Say the chore."]], guide: "I have to ___." },
+      { ...CHOREDICE1, part: "C", stage: "Chore Dice", heading: "Chore Dice 3", instruction: [["👀", "Look at the die."], ["🗣️", "Say the chore."]], guide: "I have to ___." },
+      { type: "spin", part: "C", stage: "Chore Wheel", heading: "Chore Wheel", items: CHORES4A, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you have to do."]], guide: "I have to ___." },
+      { ...one(C_DISHES), part: "C", stage: "Do You Have To?", heading: "Do You Have To...?", question: "Do you have to wash the dishes?", instruction: LISTEN_ANSWER, guide: DOHAVE },
+      { ...one(C_PET), part: "C", stage: "Do You Have To?", heading: "Do You Have To...? 2", question: "Do you have to feed the pet?", instruction: LISTEN_ANSWER, guide: DOHAVE },
+      { ...one(C_ROOM), part: "C", stage: "Do You Have To?", heading: "Do You Have To...? 3", question: "Do you have to clean your room?", instruction: LISTEN_ANSWER, guide: DOHAVE },
+      { type: "peek", part: "C", stage: "Mystery Chore", heading: "Mystery Chore", item: C_BED, reveal: "You have to make your bed!", question: HAVEQ, instruction: LOOK_SAY("Guess the chore."), guide: "I have to ___." },
+      { type: "peek", part: "C", stage: "Mystery Chore", heading: "Mystery Chore 2", item: C_PET, reveal: "You have to feed the pet!", question: HAVEQ, instruction: LOOK_SAY("Guess the chore."), guide: "I have to ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: CHORES4A, instruction: [["👀", "Look at the chores."], ["🗣️", "Say the chore that went away."]], guide: "The ___ chore is missing." },
+      { type: "sprint", part: "C", stage: "Chore Sprint", heading: "Chore Sprint", items: CHORES4A, seconds: 45, instruction: LOOK_SAY("Say what you have to do. Be fast!"), guide: "I have to ___." },
+      { type: "dialogue", part: "C", stage: "You're Late!", heading: "You're Late!", turns: [{ who: "teacher", text: "You're late! What do you have to do?" }], instruction: NO_HELP("Say what you have to do.") },
+
+      // ---- Part D: my chores (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Chores", heading: "My Chores", turns: [{ who: "teacher", text: "What do you have to do at home?" }], instruction: LISTEN_ANSWER, guide: "I have to ___." },
+      { ...TYPE2("I have to ___. I have to ___."), part: "D", stage: "Type It!", heading: "Type Your Chores" },
+      READ_HOME,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can name chores and say what you have to do at home." },
     ],
   },
   "10-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Lesson 2", title: "Can You Help?", subtitle: "Politely ask someone to help with a chore." },
-      { type: "chips", stage: "Getting Ready", heading: "New Words", subheading: "Review chores + these", items: ["help", "please", "now", "later", "together"] },
-      { type: "message", stage: "Taking Off", heading: "Can You…?", subheading: "Make a polite request", lines: ["*Can you* wash the dishes?", "*Can you* clean your room, please?", "*Can you* help me?"] },
-      { type: "message", stage: "Request Practice", heading: "Request Practice", subheading: "Answer a request", lines: ["\"Can you help me?\"", "\"Yes, I can.\" / \"Sure!\" / \"Sorry, I can't.\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Help Hotline", subheading: "Answer the call, then switch roles", turns: [{ who: "teacher", text: "Can you help me? Can you wash the dishes?" }, { who: "student", text: "Sure! Yes, I can." }, { who: "student", text: "Can you take out the trash?" }, { who: "teacher", text: "Sorry, I can't." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Make a request and answer one", line: "Can you ___? / Sure! I can ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Can You Help?", caption: "Can you wash the dishes, please? Sure, I can!" },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 10, title: "Can You Help?", subtitle: "Ask someone to help with a chore, politely." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Chore Wheel", items: CHORES4A, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you have to do."]], guide: "I have to ___." },
+      { ...one(C_BED), part: "A", stage: "Review", heading: "Do You Have To...?", question: "Do you have to make your bed?", instruction: LISTEN_ANSWER, guide: DOHAVE },
+
+      // ---- Part B: four more chores and requests (5 min) ----
+      { type: "strip", part: "B", stage: "Four More Chores", heading: "Four More Chores", numbered: false, size: 100, items: CHORES4B, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Requests", heading: "Can You...?", lines: ["*Can you* set the table, *please*?", "*Sure!* / *Sorry, I can't.*"], instruction: REPEAT_SENT },
+      { ...one(C_TABLE), part: "B", stage: "Requests", heading: "Ask for Help", instruction: ASKCHORE, guide: "Can you ___, please?" },
+      { ...one(C_SWEEP), part: "B", stage: "Requests", heading: "Ask for Help 2", instruction: ASKCHORE, guide: "Can you ___, please?" },
+      { ...one(C_TRASH), part: "B", stage: "Requests", heading: "Ask for Help 3", instruction: ASKCHORE, guide: "Can you ___, please?" },
+      { ...one(C_LAUNDRY), part: "B", stage: "Requests", heading: "Ask for Help 4", instruction: ASKCHORE, guide: "Can you ___, please?" },
+
+      // ---- Part C: chore dice and helper games (13 min) ----
+      { ...CHOREDICE, part: "C", stage: "Chore Dice", heading: "Chore Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I have to ___. / Can you ___?" },
+      { ...CHOREDICE, part: "C", stage: "Chore Dice", heading: "Chore Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I have to ___. / Can you ___?" },
+      { ...CHOREDICE, part: "C", stage: "Chore Dice", heading: "Chore Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I have to ___. / Can you ___?" },
+      { ...HH_DISHES, part: "C", stage: "Home Helper", heading: "Home Helper", instruction: HHQ },
+      { ...HH_TRASH, part: "C", stage: "Home Helper", heading: "Home Helper 2", instruction: HHQ },
+      { ...HH_ROOM, part: "C", stage: "Home Helper", heading: "Home Helper 3", instruction: HHQ },
+      { type: "dialogue", part: "C", stage: "Help Hotline", heading: "Help Hotline", turns: [{ who: "teacher", text: "Can you sweep the floor, please?" }], instruction: LISTEN_ANSWER, guide: "Sure! / Sorry, I can't." },
+      { type: "dialogue", part: "C", stage: "Help Hotline", heading: "Help Hotline 2", turns: [{ who: "teacher", text: "Can you do the laundry, please?" }], instruction: LISTEN_ANSWER, guide: "Sure! / Sorry, I can't." },
+      { type: "spin", part: "C", stage: "Chore Wheel", heading: "Chore Wheel 2", items: CHORES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Ask the teacher for help."]], guide: "Can you ___, please?" },
+      { type: "peek", part: "C", stage: "Mystery Chore", heading: "Mystery Chore", item: C_SWEEP, reveal: "Can you sweep the floor?", question: "Ask the teacher for help.", instruction: LOOK_SAY("Guess the chore."), guide: "Can you ___, please?" },
+      { type: "sprint", part: "C", stage: "Chore Sprint", heading: "Chore Sprint", items: CHORES8, seconds: 45, instruction: LOOK_SAY("Ask for help. Be fast!"), guide: "Can you ___, please?" },
+
+      // ---- Part D: my request (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Request", heading: "Ask Me!", turns: [{ who: "teacher", text: "I have to do a lot at home. Ask me to help you!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Ask for help."]], guide: "Can you ___, please?" },
+      { ...TYPE2("Can you ___, please? Sure! I can ___."), part: "D", stage: "Type It!", heading: "Type a Request" },
+      READ_HOME,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can ask for help politely with Can you, please?" },
     ],
   },
   "10-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Lesson 3", title: "Helping Each Other!", subtitle: "Accept, refuse politely, or respond to a request." },
-      { type: "chips", stage: "Getting Ready", heading: "Responses", subheading: "Accepting and refusing", items: ["Sure!", "Yes, I can.", "Of course.", "Okay!", "Sorry, I can't.", "Sorry, I'm busy.", "Maybe later.", "Let's do it together."] },
-      { type: "message", stage: "Taking Off", heading: "How Can I Respond?", subheading: "Choose a good response", lines: ["\"Can you help me?\" → \"*I can help you.*\"", "\"Can you cook?\" → \"*Let's do it together.*\""] },
-      { type: "message", stage: "Good or Bad Response?", heading: "Good or Bad Response?", subheading: "Decide if the response fits", lines: ["\"Can you help?\" → \"Sorry, I'm busy.\" (polite)"] },
-      { type: "dialogue", stage: "Flight Log", heading: "The Busy House", subheading: "Decide how to respond as things get busier", turns: [{ who: "teacher", text: "I have to cook, but I also have to clean. Can you help?" }, { who: "student", text: "Sure! I can help you clean." }, { who: "teacher", text: "Now I have to wash the dishes too!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Respond to a busy request", line: "\"Can you help me?\" — ___" },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Helping Each Other!", caption: "Sure! I can help you. Let's do it together." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 10, title: "Helping Each Other!", subtitle: "Say yes politely, say sorry politely, and help together." },
+
+      // ---- Part A: review (3 min) ----
+      { ...CHOREDICE, part: "A", stage: "Review", heading: "Chore Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I have to ___. / Can you ___?" },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Can You Help?", turns: [{ who: "teacher", text: "Can you help me, please?" }], instruction: LISTEN_ANSWER, guide: "Sure! / Sorry, I can't." },
+
+      // ---- Part B: good answers (5 min) ----
+      { type: "chips", part: "B", stage: "Good Answers", heading: "Four Good Answers", items: ["Sure!", "Of course.", "Sorry, I can't.", "Let's do it together."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "Good Answers", heading: "Yes or Sorry", lines: ["Can you help me? *Sure!*", "Can you cook? *Sorry, I can't. I'm busy.*"], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "Good Answers", heading: "Together", lines: ["I have to wash the dishes. Can you help?", "*Let's do it together!*"], instruction: REPEAT_SENT },
+      { ...HH_DISHES, part: "B", stage: "Good Answers", heading: "Home Helper", instruction: HHQ },
+      { ...HH_LAUNDRY, part: "B", stage: "Good Answers", heading: "Home Helper 2", instruction: HHQ },
+      { ...HH_TABLE, part: "B", stage: "Good Answers", heading: "Home Helper 3", instruction: HHQ },
+
+      // ---- Part C: the busy house (13 min) ----
+      { ...HH_TRASH, part: "C", stage: "Home Helper", heading: "Home Helper 4", instruction: HHQ },
+      { ...HH_ROOM, part: "C", stage: "Home Helper", heading: "Home Helper 5", instruction: HHQ },
+      { ...HH_TRASH, part: "C", stage: "Home Helper", heading: "Home Helper 8", instruction: HHQ },
+      { ...HH_ROOM, part: "C", stage: "Home Helper", heading: "Home Helper 9", instruction: HHQ },
+      { ...HH_TRASH, part: "C", stage: "Home Helper", heading: "Home Helper 10", instruction: HHQ },
+      { ...HH_ROOM, part: "C", stage: "Home Helper", heading: "Home Helper 11", instruction: HHQ },
+      { ...HH_LAUNDRY, part: "C", stage: "Home Helper", heading: "Home Helper 6", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_TABLE, part: "C", stage: "Home Helper", heading: "Home Helper 7", instruction: NO_HELP("Say a polite answer.") },
+      { type: "dialogue", part: "C", stage: "The Busy House", heading: "The Busy House", turns: [{ who: "teacher", text: "I have to cook, but I also have to clean. Can you help?" }], instruction: LISTEN_ANSWER, guide: "Sure! I can ___." },
+      { type: "dialogue", part: "C", stage: "The Busy House", heading: "The Busy House 2", turns: [{ who: "teacher", text: "Now I have to wash the dishes too! Can you help?" }], instruction: LISTEN_ANSWER, guide: "Sure! Let's ___ together." },
+      { type: "dialogue", part: "C", stage: "Switch Roles", heading: "Switch Roles", turns: [{ who: "teacher", text: "Now you have a lot to do. Ask me for help!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Ask for help."]], guide: "Can you ___, please?" },
+      { type: "dialogue", part: "C", stage: "Switch Roles", heading: "Switch Roles 2", turns: [{ who: "teacher", text: "(The teacher says sorry.) Sorry, I can't. I'm busy." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Ask again in a nice way."]], guide: "Okay. Maybe ___." },
+      { type: "sprint", part: "C", stage: "Chore Sprint", heading: "Chore Sprint", items: CHORES8, seconds: 45, instruction: LOOK_SAY("Ask for help. Be fast!"), guide: "Can you ___, please?" },
+
+      // ---- Part D: helping each other (4 min) ----
+      { type: "dialogue", part: "D", stage: "Helping", heading: "Helping at Home", turns: [{ who: "teacher", text: "Who do you help at home? How do you help?" }], instruction: LISTEN_ANSWER, guide: "I help my ___." },
+      { ...TYPE2("Can you ___? Sure! Let's ___ together."), part: "D", stage: "Type It!", heading: "Type Your Talk" },
+      READ_HOME,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can answer a request politely and help each other." },
     ],
   },
   "10-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Lesson 4", title: "Let's Review!", subtitle: "Combine chores, requests, and responses." },
-      { type: "chips", stage: "Getting Ready", heading: "Chore Speed Round", subheading: "Chores + requests review", items: ["clean my room", "wash the dishes", "have to", "Can you…?", "Sure!", "Sorry, I can't"] },
-      { type: "message", stage: "Taking Off", heading: "Have To Challenge", subheading: "Say what you have to do", lines: ["I have to *set the table*."] },
-      { type: "message", stage: "Request & Response", heading: "Request & Response", subheading: "Ask and answer", lines: ["\"Can you sweep the floor?\" → \"Sure!\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Request Repair", subheading: "Fix the too-short response", turns: [{ who: "teacher", text: "Can you help me? ... No." }, { who: "student", text: "Sorry, I can't. I'm busy right now." }, { who: "teacher", text: "Can you clean your room? ... Later." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "A chore, a request, and a polite response", line: "I have to ___. Can you ___? ___" },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "I have to clean my room. Can you help me? Sure, I can!" },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 10, title: "Let's Review!", subtitle: "Play the home helper games and talk about chores." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: CHORES4B, instruction: [["👀", "Look at the chores."], ["🗣️", "Say the chore that went away."]], guide: "The ___ chore is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Chore Wheel", items: CHORES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you have to do."]], guide: "I have to ___." },
+
+      // ---- Part B: chore dice (5 min) ----
+      { ...CHOREDICE, part: "B", stage: "Chore Dice", heading: "Chore Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I have to ___. / Can you ___?" },
+      { ...CHOREDICE, part: "B", stage: "Chore Dice", heading: "Chore Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I have to ___. / Can you ___?" },
+      { ...CHOREDICE, part: "B", stage: "Chore Dice", heading: "Chore Dice 3", instruction: NO_HELP("Say the sentence.") },
+
+      // ---- Part C: home helper and games (13 min) ----
+      { ...HH_TABLE, part: "C", stage: "Home Helper", heading: "Home Helper", instruction: HHQ },
+      { ...HH_ROOM, part: "C", stage: "Home Helper", heading: "Home Helper 2", instruction: HHQ },
+      { ...HH_TRASH, part: "C", stage: "Home Helper", heading: "Home Helper 3", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_LAUNDRY, part: "C", stage: "Home Helper", heading: "Home Helper 4", instruction: NO_HELP("Say a polite answer.") },
+      { type: "peek", part: "C", stage: "Mystery Chore", heading: "Mystery Chore", item: C_LAUNDRY, reveal: "You have to do the laundry!", question: HAVEQ, instruction: LOOK_SAY("Guess the chore."), guide: "I have to ___." },
+      { type: "peek", part: "C", stage: "Mystery Chore", heading: "Mystery Chore 2", item: C_TRASH, reveal: "You have to take out the trash!", question: HAVEQ, instruction: LOOK_SAY("Guess the chore."), guide: "I have to ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: CHORES8, seconds: 45, instruction: LOOK_SAY("Say what you have to do. Be fast!") },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock 2", items: CHORES8, seconds: 45, instruction: LOOK_SAY("Ask for help. Be fast!") },
+      { type: "dialogue", part: "C", stage: "Chore Talk", heading: "Chore Talk", turns: [{ who: "teacher", text: "I have to clean the house. Talk to me: what do you have to do, and can you help me?" }], instruction: NO_HELP("Talk about chores and help.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about chores and helping." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("I have to ___. Can you ___? Sure!"), part: "D", stage: "Type It!", heading: "Type Your Sentences" },
+      READ_HOME,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about chores, ask for help and answer politely." },
     ],
   },
   "10-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Communicate about chores and helping at home independently." },
-      { type: "message", stage: "Mystery House", heading: "Mystery House", subheading: "Look at a messy house — what needs to be done?", lines: ["Look at the house. What has to be done?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Home Emergency", subheading: "Make requests, respond, and talk about what you have to do", turns: [{ who: "teacher", text: "I have to cook. Can you help me?" }, { who: "student", text: "Sure! I can set the table." }, { who: "teacher", text: "I have to clean my room too!" }] },
-      { type: "message", stage: "Help Me!", heading: "Help Me!", subheading: "Respond to an unexpected situation", lines: ["\"The trash is full!\" → \"*I can take it out.*\""] },
-      { type: "message", stage: "My Home Routine", heading: "My Home Routine", subheading: "Talk about your own chores", lines: ["At home, I have to *feed the pet* and *make my bed*."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "What chore do you like the least?", line: "I don't like ___ because ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "I have to feed my cat and make my bed. Can you help me set the table? Sure!" },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 10, title: "Show What You Know!", subtitle: "Talk about chores and helping at home, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Chores", turns: [{ who: "teacher", text: "Tell me about the chores you do at home." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Which Chore?", turns: [{ who: "teacher", text: "Which chore do you like? Which chore don't you like? Why?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Who Helps?", turns: [{ who: "teacher", text: "Who helps you at home? How do you help them?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: home emergency (8 min) ----
+      { ...HH_DISHES, part: "B", stage: "Home Emergency", heading: "Home Emergency", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_LAUNDRY, part: "B", stage: "Home Emergency", heading: "Home Emergency 2", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_ROOM, part: "B", stage: "Home Emergency", heading: "Home Emergency 3", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_DISHES, part: "B", stage: "Home Emergency", heading: "Home Emergency 4", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_LAUNDRY, part: "B", stage: "Home Emergency", heading: "Home Emergency 5", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_ROOM, part: "B", stage: "Home Emergency", heading: "Home Emergency 6", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_DISHES, part: "B", stage: "Home Emergency", heading: "Home Emergency 7", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_LAUNDRY, part: "B", stage: "Home Emergency", heading: "Home Emergency 8", instruction: NO_HELP("Say a polite answer.") },
+      { ...HH_ROOM, part: "B", stage: "Home Emergency", heading: "Home Emergency 9", instruction: NO_HELP("Say a polite answer.") },
+      { type: "dialogue", part: "B", stage: "Help Me!", heading: "Help Me!", turns: [{ who: "teacher", text: "Oh no! The trash is full!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Offer to help."]] },
+      { type: "dialogue", part: "B", stage: "Help Me!", heading: "Help Me! 2", turns: [{ who: "teacher", text: "Oh no! Friends are coming and the table is not ready!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Offer to help."]] },
+      { ...CHOREDICE, part: "B", stage: "Chore Dice", heading: "Chore Dice", instruction: NO_HELP("Say the sentence.") },
+      { ...CHOREDICE, part: "B", stage: "Chore Dice", heading: "Chore Dice 2", instruction: NO_HELP("Say the sentence.") },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: CHORES8, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say what you have to do. Be fast!"]] },
+
+      // ---- Part C: a real talk (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "My Home Routine", turns: [{ who: "teacher", text: "Tell me about your home routine. What do you have to do every day?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "A Helper", turns: [{ who: "teacher", text: "Tell me how you help your family. Who helps you?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Yesterday, I went *home*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["I made my *bed*. I did the *laundry*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["After that, I had *dinner* with my family."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Home...", lines: ["Write about your chores and how you help at home."], instruction: [["⌨️", "Type four or five sentences in the chat."]] },
+      { ...READ_HOME, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 10 Complete!", title: "Unit 10 Complete!", see: "Great job!", recap: "You can talk about chores and helping at home, in your own words." },
     ],
   },
   "10-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Test", title: "Unit 10 Test", subtitle: "Helping at Home — chores, requests, and responses independently." },
-      { type: "chips", stage: "Part 1: Chores", heading: "Name the Chores", subheading: "8-10 pictures", items: ["wash the dishes", "clean my room", "make my bed", "take out the trash", "sweep the floor"] },
-      { type: "message", stage: "Part 2: Responsibilities", heading: "I Have To…", subheading: "Produce sentences", lines: ["I have to *clean my room*."] },
-      { type: "message", stage: "Part 3: Requests", heading: "Can You…?", subheading: "Respond to a situation with a request", lines: ["\"The dishes are dirty.\" → \"*Can you wash the dishes, please?*\""] },
-      { type: "message", stage: "Part 4: Responding", heading: "Responding", subheading: "Respond appropriately", lines: ["\"Can you help me?\" → \"*Sure!*\"", "\"Can you do the laundry?\" → \"*Sorry, I can't.*\""] },
-      { type: "dialogue", stage: "Part 5: Roleplay ⭐", heading: "Helping at Home Roleplay", subheading: "A chore, a request, a response, then another", turns: [{ who: "teacher", text: "I have to cook dinner. Can you help me?" }, { who: "student", text: "Sure! I can set the table. Can you help me clean up after?" }] },
-      { type: "postcard", stage: "Part 6: Short Writing", heading: "Chores at Home", subheading: "4-5 sentences", line: "I have to ___. I have to ___. I can help my family. Sometimes I ask ___ for help." },
-      { type: "landing", stage: "Landing", heading: "Unit 10 Complete!", cardTitle: "Unit 10 Test", caption: "I have to clean my room. I have to feed my cat. I can help my family. Sometimes I ask my brother for help." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 10, title: "Unit 10 Test", subtitle: "Show what you can say about helping at home!" },
+
+      // ---- Part A: chores ----
+      { ...one(C_BED), part: "A", stage: "Chores", heading: "What Do You Have To Do?", question: HAVEQ, instruction: LISTEN_ANSWER },
+      { ...one(C_DISHES), part: "A", stage: "Chores", heading: "What Do You Have To Do? 2", question: HAVEQ, instruction: LISTEN_ANSWER },
+      { ...one(C_TRASH), part: "A", stage: "Chores", heading: "What Do You Have To Do? 3", question: HAVEQ, instruction: LISTEN_ANSWER },
+      { ...one(C_SWEEP), part: "A", stage: "Chores", heading: "What Do You Have To Do? 4", question: HAVEQ, instruction: LISTEN_ANSWER },
+      { ...one(C_LAUNDRY), part: "A", stage: "Chores", heading: "What Do You Have To Do? 5", question: HAVEQ, instruction: LISTEN_ANSWER },
+      { ...one(C_TABLE), part: "A", stage: "Chores", heading: "What Do You Have To Do? 6", question: HAVEQ, instruction: LISTEN_ANSWER },
+
+      // ---- Part B: requests ----
+      { type: "strip", part: "B", stage: "Requests", heading: "Ask for Help", numbered: false, labels: false, size: 100, items: [C_BED, C_DISHES], instruction: [["👀", "Look at the chores."], ["🗣️", "Ask for help with each one."]] },
+      { type: "strip", part: "B", stage: "Requests", heading: "Ask for Help 2", numbered: false, labels: false, size: 100, items: [C_TRASH, C_SWEEP], instruction: [["👀", "Look at the chores."], ["🗣️", "Ask for help with each one."]] },
+      { type: "strip", part: "B", stage: "Requests", heading: "Ask for Help 3", numbered: false, labels: false, size: 100, items: [C_LAUNDRY, C_TABLE], instruction: [["👀", "Look at the chores."], ["🗣️", "Ask for help with each one."]] },
+
+      // ---- Part C: polite answers ----
+      { ...HH_DISHES, part: "C", stage: "Polite Answers", heading: "Say a Polite Answer", instruction: HHQ },
+      { ...HH_LAUNDRY, part: "C", stage: "Polite Answers", heading: "Say a Polite Answer 2", instruction: HHQ },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Chores", turns: [{ who: "teacher", text: "What do you have to do at home?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say three or four sentences."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Help Me!", turns: [{ who: "teacher", text: "I have to cook dinner. Can you help me?" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Answer and ask a question."]] },
+      { type: "score", stage: "My Unit 10 Score!", heading: "My Unit 10 Score!", rows: [["Chores", "/ 6"], ["Requests", "/ 6"], ["Polite answers", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 10 Complete!", title: "Unit 10 Complete!", see: "On to Unit 11!", recap: "You can talk about chores, ask for help and answer politely." },
     ],
   },
+
   "11-1": {
     slides: [
       { type: "title", stage: "A2 · Soar", eyebrow: "Unit 11 · Lesson 1", title: "What Are You Going To Do? 🔮", subtitle: "Talk about simple future plans using I'm going to…" },
