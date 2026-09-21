@@ -674,3 +674,14 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 ```
 
 Installed 2026-09-21 22:20: the new waving kid over `u1-l1/wavingkid.jpg` (A1 Unit 1 L1 Hello slide, and the A2 "friend" picture).
+
+## Audit of the other A1 pictures (2026-09-21, after the alphabet was done)
+
+I looked at all 123 remaining A1-area pictures. Most (rooms, routines, family, feelings, characters, scenes, food, animals scenes, objects stickers) match your generated style. These 12 still look like stock pictures (different style, plain vector, or text inside the picture) and are candidates for a "Batch 8":
+
+- `u6-words/bat.png`, `u6-words/hog.png`, `u6-words/log.png`, `u6-words/mat.png` (the mat has the word WELCOME printed on it)
+- `u7-objects/board.png`, `u7-objects/crayon.png`, `u7-objects/book.png`, `u7-objects/chair.png`, `u7-objects/desk.png` (`book.png` is also the A2 shop book)
+- `u9-l1/bird.png`, `u9-l1/giraffe.png`
+- `u4-l3/pen.png` (used 15 times in A1)
+
+Not sure about (probably yours): the `u6-body/*` cutouts (hands, fingers, feet, knees, toes), `u6-words/jog.png`, `u11-l1/toy.jpg` (teddy bear).
