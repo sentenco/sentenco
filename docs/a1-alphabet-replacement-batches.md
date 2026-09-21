@@ -635,3 +635,11 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 ```text
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly queen standing and facing front, a gold crown with small jewels, long dark-brown hair, a red-and-pink gown, a kind smile, natural light skin tone with no orange or yellow tint.
 ```
+
+## Extra: the school bag (used in A2 Unit 5 shop and A1)
+
+Decision (user, 2026-09-21): replace the bag, it is a picture downloaded from the internet. Files to overwrite with the new picture: `u7-l1/bag.avif` (used by the A2 shop) and `u1-l4/bag.avif` (A1).
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One school backpack, rounded shape, blue with a yellow front pocket, two shoulder straps, a small zipper pull, a top handle. No logo and no writing.
+```
