@@ -108,8 +108,8 @@ const READ_JOB = { ...READ_ALOUD, heading: "Read Your Jobs" };
 
 // ---- Unit 7 (My Favorite Story) pieces; pictures still to be generated (Batch 2) ----
 const SY = (label, file) => ({ label, src: `/curriculum/a2-story/${file}` });
-// king and rabbit reuse the A1 alphabet pictures by path
-const S_KING = { label: "king", src: "/curriculum/u2-l1/king.jpg" }, S_PRINCESS = SY("princess", "princess.jpg"), S_DRAGON = SY("dragon", "dragon.jpg"), S_RABBIT = { label: "rabbit", src: "/curriculum/u2-l3/rabbit.avif" };
+// king, rabbit and princess (the A1 queen) reuse the A1 alphabet pictures by path
+const S_KING = { label: "king", src: "/curriculum/u2-l1/king.jpg" }, S_PRINCESS = { label: "princess", src: "/curriculum/u2-l3/queen.jpg" }, S_DRAGON = SY("dragon", "dragon.jpg"), S_RABBIT = { label: "rabbit", src: "/curriculum/u2-l3/rabbit.avif" };
 const S_FOREST = SY("forest", "forest.jpg"), S_CASTLE = SY("castle", "castle.jpg");
 const CHARS4 = [S_KING, S_PRINCESS, S_DRAGON, S_RABBIT], PLACES2 = [S_FOREST, S_CASTLE], CAST6 = [...CHARS4, ...PLACES2];
 // three four-picture stories, each in story order (the labels are only for the placeholders and the teacher)
