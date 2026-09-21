@@ -200,6 +200,22 @@ const DREAMS7 = [...JOBS6, PL_TRAVEL];
 const DREAMDICE = { type: "dice", dice: [{ name: "Someday", items: DREAMS7 }], size: 96 };
 const YESAM = "Yes, I am. / No, I'm not.";
 const READ_PLAN = { ...READ_ALOUD, heading: "Read Your Plans" };
+
+// ---- Unit 12 (All About My Year) pieces; NO new pictures: everything is reused from Units 1-11 ----
+const PAST6 = [{ label: "park", src: PARK.src }, { label: "pizza", src: PIZZA.src }, { label: "dog", src: DOG.src }, { label: "breakfast", src: BREAKFAST.src }, { label: "picture", src: PICTURE.src }, { label: "homework", src: HOMEWORK.src }];
+const TIMES3 = [{ label: "Yesterday" }, { label: "Every day" }, { label: "Tomorrow" }];
+const TIMEDICE = { type: "dice", dice: [{ name: "When?", items: TIMES3 }, { name: "Do what?", items: PAST6 }], size: 104 };
+const YESTDICE = { type: "dice", dice: [{ name: "Yesterday, I...", items: PAST6 }], size: 96 };
+const EVERYDICE = { type: "dice", dice: [{ name: "Every day, I...", items: [{ label: "go to school", src: SCHOOL.src }, { label: "have breakfast", src: BREAKFAST.src }, { label: "do my homework", src: HOMEWORK.src }, C_BED, A_BIKE, A_READ] }], size: 96 };
+const TOPICS11 = [
+  { label: "school", src: MATH.src }, { label: "yesterday", src: PIZZA.src }, { label: "weather", src: SUNNY.src }, { label: "town", src: T_BANK.src }, { label: "shopping", src: S_APPLE.src }, { label: "jobs", src: J_DOCTOR.src },
+  { label: "stories", src: S_DRAGON.src }, { label: "sports", src: A_SWIM.src }, { label: "feelings", src: F_HAPPY.src }, { label: "home", src: C_BED.src }, { label: "plans", src: PL_BEACH.src },
+];
+const TOPICS_NOW = TOPICS11.filter((t) => ["weather", "town", "shopping", "jobs", "sports", "feelings", "home"].includes(t.label));
+const TOPICQ = [["👀", "Look at the wheel."], ["🗣️", "Say two sentences about it."]];
+const TIMEDICEQ = [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]];
+const FORTUNEQ = [["👂", "Listen to the teacher."], ["🗣️", "Say yes or correct it."]];
+const READ_YEAR = { ...READ_ALOUD, heading: "Read Your Year" };
 const CLUEQ_FEEL = [["👀", "Read the clue."], ["🗣️", "Guess the feeling."]];
 
 export const SOAR_A2_LESSONS = {
@@ -2640,70 +2656,214 @@ export const SOAR_A2_LESSONS = {
     ],
   },
 
+  // ---------- Unit 12: All About My Year ----------
   "12-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Lesson 1", title: "Looking Back! 🕰️", subtitle: "Talk about things you did in the past." },
-      { type: "chips", stage: "Getting Ready", heading: "Past Simple Review", subheading: "From across the whole course", items: ["went", "ate", "saw", "had", "did", "made", "played", "studied", "visited", "watched", "helped"] },
-      { type: "message", stage: "Taking Off", heading: "Past Simple Review", subheading: "Yesterday / last weekend + past verb", lines: ["Yesterday, I *went* to school.", "Last weekend, I *played* basketball.", "I *visited* my friend."] },
-      { type: "dialogue", stage: "What Did You Do?", heading: "What Did You Do?", subheading: "Ask and answer", turns: [{ who: "teacher", text: "What did you do yesterday?" }, { who: "student", text: "I watched a movie." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Year-in-Review Interview", subheading: "Answer with real past-simple detail", turns: [{ who: "teacher", text: "What did you do? Where did you go? What did you see?" }, { who: "student", text: "I went to the park. I saw my friends. I ate ice cream." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Three things you did recently", line: "Yesterday, I ___. I also ___. Then I ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Looking Back!", caption: "Yesterday, I went to the park. I saw my friends and ate ice cream." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 12, title: "Looking Back!", subtitle: "Talk about what you did in the past." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Yesterday", heading: "Yesterday", turns: [{ who: "teacher", text: "What did you do yesterday?" }], instruction: LISTEN_ANSWER, guide: "Yesterday, I ___." },
+
+      // ---- Part B: past words (5 min) ----
+      { type: "table", part: "B", stage: "Past Words", heading: "Three Past Words", rows: [["go", "went"], ["eat", "ate"], ["see", "saw"]], instruction: [["👀", "Look at the words."], ["🗣️", "Say each pair."]] },
+      { type: "table", part: "B", stage: "Past Words", heading: "Three More Past Words", rows: [["have", "had"], ["do", "did"], ["make", "made"]], instruction: [["👀", "Look at the words."], ["🗣️", "Say each pair."]] },
+      { type: "table", part: "B", stage: "Past Words", heading: "Four More", rows: [["find", "found"], ["help", "helped"], ["look", "looked"], ["open", "opened"]], instruction: [["👀", "Look at the words."], ["🗣️", "Say each pair."]] },
+      { type: "table", part: "B", stage: "Past Words", heading: "Say the Word", rows: [["go", "?"], ["see", "?"], ["make", "?"], ["find", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "B", stage: "Past Words", heading: "Say the Word 2", rows: [["have", "?"], ["help", "?"], ["do", "?"], ["open", "?"]], instruction: SAY_PAST },
+      { type: "message", part: "B", stage: "Past Words", heading: "Yesterday", lines: ["Yesterday, I *went* to the park.", "I *saw* a dog and *ate* pizza."], instruction: REPEAT_SENT },
+
+      // ---- Part C: looking back games (13 min) ----
+      { ...YESTDICE, part: "C", stage: "Yesterday Dice", heading: "Yesterday Dice", instruction: [["👀", "Look at the die."], ["🗣️", "Say what you did."]], guide: "Yesterday, I ___." },
+      { ...YESTDICE, part: "C", stage: "Yesterday Dice", heading: "Yesterday Dice 2", instruction: [["👀", "Look at the die."], ["🗣️", "Say what you did."]], guide: "Yesterday, I ___." },
+      { ...YESTDICE, part: "C", stage: "Yesterday Dice", heading: "Yesterday Dice 3", instruction: [["👀", "Look at the die."], ["🗣️", "Say what you did."]], guide: "Yesterday, I ___." },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order", items: STORY_RABBIT, instruction: ORDERQ, guide: ORDER4 },
+      { type: "order", part: "C", stage: "Story Order", heading: "Story Order 2", items: STORY_CROWN, instruction: ORDERQ, guide: ORDER4 },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "Yesterday Reporter", numbered: false, size: 100, active: 0, items: [{ ...BREAKFAST, label: "in the morning" }, { ...CAKE, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell what he did."]], guide: "In the morning, he ___." },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "Yesterday Reporter 2", numbered: false, size: 100, active: 1, items: [{ ...BREAKFAST, label: "in the morning" }, { ...CAKE, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell what he did."]], guide: "In the afternoon, he ___." },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "Yesterday Reporter 3", numbered: false, size: 100, active: 2, items: [{ ...BREAKFAST, label: "in the morning" }, { ...CAKE, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell what he did."]], guide: "In the evening, he ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: PAST6.slice(0, 4), instruction: [["👀", "Look at the pictures."], ["🗣️", "Say the one that went away."]], guide: "___ is missing." },
+      { type: "sprint", part: "C", stage: "Yesterday Sprint", heading: "Yesterday Sprint", items: PAST6, seconds: 45, instruction: LOOK_SAY("Say what you did. Be fast!"), guide: "Yesterday, I ___." },
+
+      // ---- Part D: my past (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Past", heading: "Last Weekend", turns: [{ who: "teacher", text: "What did you do last weekend? Tell me three things." }], instruction: LISTEN_ANSWER, guide: "Last weekend, I ___." },
+      { ...TYPE2("Yesterday, I ___. Then, I ___."), part: "D", stage: "Type It!", heading: "Type Your Past" },
+      READ_YEAR,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about what you did in the past." },
     ],
   },
   "12-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Lesson 2", title: "Everyday Life! 🏠", subtitle: "Describe your everyday life and familiar places." },
-      { type: "chips", stage: "Getting Ready", heading: "Everyday Places", subheading: "Review from across the course", items: ["school", "home", "town", "store", "park", "library", "restaurant", "family"] },
-      { type: "message", stage: "Taking Off", heading: "My Everyday Life", subheading: "Present simple for routines", lines: ["I go to *school*.", "I study *English*.", "I *clean my room*."] },
-      { type: "message", stage: "Around My Town", heading: "Around My Town", subheading: "Describe where things are", lines: ["There is a *park* near my school.", "The *bank* is next to the *store*."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Draw My Day", subheading: "Describe your day and mark each place on a simple map", turns: [{ who: "teacher", text: "Where do you go every day?" }, { who: "student", text: "I go to school. There is a park near my school. I usually help at home too." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "One connected description of your day", line: "I go to ___. There is a ___ near my ___. I usually ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Everyday Life!", caption: "I go to school every day. There is a park near my school. I usually help at home." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 12, title: "Everyday Life!", subtitle: "Talk about your everyday life, your town and your home." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Every Day", heading: "Every Day", turns: [{ who: "teacher", text: "What do you do every day?" }], instruction: LISTEN_ANSWER, guide: "Every day, I ___." },
+      { type: "spin", part: "A", stage: "Topic Wheel", heading: "Topic Wheel", items: TOPICS_NOW, instruction: TOPICQ },
+
+      // ---- Part B: everyday language (5 min) ----
+      { type: "message", part: "B", stage: "My Day", heading: "Every Day", lines: ["I *go* to school. I *have* breakfast at home.", "I *do* my homework."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "My Town", heading: "Around My Town", lines: ["There is a *park* near my school.", "The *bank* is next to the *store*."], instruction: REPEAT_SENT },
+      { type: "town", part: "B", stage: "My Town", heading: "Next To", rows: [[T_SCHOOL, T_STORE, T_PARK]], size: 88, question: "What is next to the store?", instruction: MAPQ, guide: "The ___ is next to the store." },
+      { type: "message", part: "B", stage: "My Home", heading: "At Home", lines: ["I *have to* make my bed.", "I *can* ride a bike, but I *can't* cook."], instruction: REPEAT_SENT },
+      { ...EVERYDICE, part: "B", stage: "Every Day Dice", heading: "Every Day Dice", instruction: [["👀", "Look at the die."], ["🗣️", "Say what you do."]], guide: "Every day, I ___." },
+
+      // ---- Part C: the everyday arcade (13 min) ----
+      { ...EVERYDICE, part: "C", stage: "Every Day Dice", heading: "Every Day Dice 2", instruction: [["👀", "Look at the die."], ["🗣️", "Say what you do."]], guide: "Every day, I ___." },
+      { ...EVERYDICE, part: "C", stage: "Every Day Dice", heading: "Every Day Dice 3", instruction: [["👀", "Look at the die."], ["🗣️", "Say what you do."]], guide: "Every day, I ___." },
+      { type: "spin", part: "C", stage: "Topic Wheel", heading: "Topic Wheel 2", items: TOPICS_NOW, instruction: TOPICQ },
+      { type: "spin", part: "C", stage: "Topic Wheel", heading: "Topic Wheel 3", items: TOPICS_NOW, instruction: TOPICQ },
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS", grid: MAP_HOSPITAL, places: BUILD, goal: "H", question: "Take the car to the hospital.", instruction: GPSQ, guide: "Go straight. Turn ___. Stop!" },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf", items: [STOCK(S_APPLE), STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_BAG)], budget: 40, size: 80, instruction: SHELFQ, guide: "I'd like a ___, please." },
+      { ...ADV_TEST, part: "C", stage: "Advice Desk", heading: "Advice Desk", instruction: ADVQ, guide: "You should ___." },
+      { ...HH_TRASH, part: "C", stage: "Home Helper", heading: "Home Helper", instruction: HHQ },
+      { type: "peek", part: "C", stage: "Mystery Weather", heading: "Mystery Weather", item: SNOWY, reveal: "It is snowy.", question: WQ, instruction: LOOK_SAY("Guess the weather."), guide: "I think it is ___." },
+      { type: "sprint", part: "C", stage: "Topic Sprint", heading: "Topic Sprint", items: TOPICS_NOW, seconds: 45, instruction: LOOK_SAY("Say one sentence about it. Be fast!") },
+
+      // ---- Part D: my everyday life (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Life", heading: "My Everyday Life", turns: [{ who: "teacher", text: "Tell me about your everyday life. Where do you go? What is near your school?" }], instruction: LISTEN_ANSWER, guide: "I go to ___. There is a ___ near my ___." },
+      { ...TYPE2("I go to ___. There is a ___ near my ___."), part: "D", stage: "Type It!", heading: "Type Your Day" },
+      READ_YEAR,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about your everyday life, your town and your home." },
     ],
   },
   "12-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Lesson 3", title: "Looking Ahead! 🚀", subtitle: "Talk about upcoming plans and future dreams." },
-      { type: "chips", stage: "Getting Ready", heading: "Future Review", subheading: "Review from across the course", items: ["study", "play", "visit", "travel", "meet", "watch", "practice", "become"] },
-      { type: "message", stage: "Taking Off", heading: "Going To Review", subheading: "Near-future and long-term plans", lines: ["I'm going to *study* tomorrow.", "I'm going to *play basketball* this weekend.", "I'm going to *travel* someday."] },
-      { type: "message", stage: "Tomorrow or Someday?", heading: "Tomorrow or Someday?", subheading: "Sort plans by how soon they happen", lines: ["\"What are you going to do next week?\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Fortune Teller", subheading: "Confirm or correct the prediction, then switch roles", turns: [{ who: "teacher", text: "I predict... you are going to visit a friend next week." }, { who: "student", text: "Yes, that's right! I'm going to visit my friend." }, { who: "teacher", text: "I predict... you are going to become famous someday!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "A near plan and a someday dream", line: "Next week, I'm going to ___. Someday, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Looking Ahead!", caption: "Next week, I'm going to visit my friend. Someday, I'm going to travel the world." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 12, title: "Looking Ahead!", subtitle: "Talk about your plans and dreams." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Plan Wheel", items: PLANS6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say your plan."]], guide: "I'm going to ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Tomorrow", turns: [{ who: "teacher", text: "What are you going to do tomorrow?" }], instruction: LISTEN_ANSWER, guide: "Tomorrow, I'm going to ___." },
+
+      // ---- Part B: going to review (5 min) ----
+      { type: "message", part: "B", stage: "Going To", heading: "Going To", lines: ["I'm going to *play soccer* tomorrow.", "I'm going to *travel* someday."], instruction: REPEAT_SENT },
+      { type: "strip", part: "B", stage: "My Week", heading: "My Week", numbered: false, size: 68, items: WEEK_B, instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the plans."]] },
+      { type: "strip", part: "B", stage: "My Week", heading: "What Is the Plan?", numbered: false, size: 68, active: 1, items: WEEK_B, question: "What are you going to do on Tuesday?", instruction: LISTEN_ANSWER, guide: "On Tuesday, I'm going to ___." },
+      { type: "strip", part: "B", stage: "My Week", heading: "What Is the Plan? 2", numbered: false, size: 68, active: 5, items: WEEK_B, question: "What are you going to do on Saturday?", instruction: LISTEN_ANSWER, guide: "On Saturday, I'm going to ___." },
+
+      // ---- Part C: fortune teller and games (13 min) ----
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller", turns: [{ who: "teacher", text: "I predict... you are going to visit a friend next week." }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 2", turns: [{ who: "teacher", text: "I predict... you are going to go to the beach on Saturday." }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 3", turns: [{ who: "teacher", text: "I predict... you are going to be a pilot someday!" }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 4", turns: [{ who: "teacher", text: "I predict... you are going to visit a friend next week." }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 5", turns: [{ who: "teacher", text: "I predict... you are going to go to the beach on Saturday." }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 6", turns: [{ who: "teacher", text: "I predict... you are going to be a pilot someday!" }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 7", turns: [{ who: "teacher", text: "I predict... you are going to visit a friend next week." }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 8", turns: [{ who: "teacher", text: "I predict... you are going to go to the beach on Saturday." }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { type: "dialogue", part: "C", stage: "Fortune Teller", heading: "Fortune Teller 9", turns: [{ who: "teacher", text: "I predict... you are going to be a pilot someday!" }], instruction: FORTUNEQ, guide: "Yes! / No! I'm going to ___." },
+      { ...WEEKDICE, part: "C", stage: "Week Dice", heading: "Week Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { ...WEEKDICE, part: "C", stage: "Week Dice", heading: "Week Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the plan."]], guide: "On ___, I'm going to ___." },
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice", instruction: [["👀", "Look at the die."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { ...DREAMDICE, part: "C", stage: "Dream Dice", heading: "Dream Dice 2", instruction: [["👀", "Look at the die."], ["🗣️", "Say your dream."]], guide: "Someday, I'm going to ___." },
+      { type: "peek", part: "C", stage: "Mystery Plan", heading: "Mystery Plan", item: PL_TRAVEL, reveal: "You're going to travel!", question: "What are you going to do someday?", instruction: LOOK_SAY("Guess the plan."), guide: "I'm going to ___." },
+      { type: "sprint", part: "C", stage: "Plan Sprint", heading: "Plan Sprint", items: PLANS12, seconds: 45, instruction: LOOK_SAY("Say your plan. Be fast!"), guide: "I'm going to ___." },
+
+      // ---- Part D: my plans (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Plans", heading: "Next Week and Someday", turns: [{ who: "teacher", text: "What are you going to do next week? And someday?" }], instruction: LISTEN_ANSWER, guide: "Next week, I'm going to ___. Someday, I'm going to ___." },
+      { ...TYPE2("Next week, I'm going to ___. Someday, I'm going to ___."), part: "D", stage: "Type It!", heading: "Type Your Plans" },
+      READ_YEAR,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about your plans and your dreams." },
     ],
   },
   "12-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Lesson 4", title: "Let's Review!", subtitle: "Distinguish and connect past, present, and future." },
-      { type: "message", stage: "Getting Ready", heading: "Past, Present, or Future?", subheading: "Three ways to talk about time", lines: ["Past: I *went*… I *played*…", "Present: I *go*… I *play*…", "Future: I'm *going to visit*…"] },
-      { type: "message", stage: "Fix the Time", heading: "Fix the Time", subheading: "Match the sentence to the right time word", lines: ["\"Yesterday, I *go* to school.\" → \"Yesterday, I *went* to school.\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Time Traveler", subheading: "Jump between past, present, and future unpredictably", turns: [{ who: "teacher", text: "Travel to the past!" }, { who: "student", text: "Yesterday, I played basketball." }, { who: "teacher", text: "Come back to now!" }, { who: "student", text: "I go to school every day." }, { who: "teacher", text: "Travel to the future!" }] },
-      { type: "message", stage: "Time Travel Speed Round", heading: "Time Travel Speed Round", subheading: "Say a sentence for each time period fast", lines: ["Past → Present → Future"] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "One sentence for each time period", line: "Yesterday, I ___. Now, I ___. Tomorrow, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "Yesterday, I played basketball. Now, I study English. Tomorrow, I'm going to visit my friend." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 12, title: "Let's Review!", subtitle: "Travel in time: past, present and future." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "table", part: "A", stage: "Memory Challenge", heading: "Now Backwards", heads: ["Yesterday", "Today"], rows: [["went", "?"], ["saw", "?"], ["made", "?"], ["ate", "?"]], instruction: [["👀", "Look at the word."], ["🗣️", "Say the word for today."]] },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Topic Wheel", items: TOPICS11, instruction: TOPICQ },
+
+      // ---- Part B: time detective (5 min) ----
+      { ...one(PARK), size: 88, part: "B", stage: "Time Detective", heading: "Time Detective", sentence: "Clue: *Yesterday*", frame: ["I ___ to the park.", "go or went?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(PIZZA), size: 88, part: "B", stage: "Time Detective", heading: "Time Detective 2", sentence: "Clue: *Every day*", frame: ["I ___ pizza.", "eat or ate?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(DOG), size: 88, part: "B", stage: "Time Detective", heading: "Time Detective 3", sentence: "Clue: *Tomorrow*", frame: ["I ___ a dog.", "see, saw or am going to see?"], instruction: [["🔍", "Find the clue word."], ["🗣️", "Say the sentence the right way."]] },
+
+      // ---- Part C: time machine (13 min) ----
+      { ...TIMEDICE, part: "C", stage: "Time Machine", heading: "Time Machine", instruction: TIMEDICEQ, guide: "___, I ___." },
+      { ...TIMEDICE, part: "C", stage: "Time Machine", heading: "Time Machine 2", instruction: TIMEDICEQ, guide: "___, I ___." },
+      { ...TIMEDICE, part: "C", stage: "Time Machine", heading: "Time Machine 3", instruction: TIMEDICEQ, guide: "___, I ___." },
+      { ...TIMEDICE, part: "C", stage: "Time Machine", heading: "Time Machine 4", instruction: NO_HELP("Say the sentence.") },
+      { ...TIMEDICE, part: "C", stage: "Time Machine", heading: "Time Machine 5", instruction: NO_HELP("Say the sentence.") },
+      { type: "spin", part: "C", stage: "Topic Wheel", heading: "Topic Wheel 2", items: TOPICS11, instruction: TOPICQ },
+      { type: "peek", part: "C", stage: "Mystery Topic", heading: "Mystery Topic", item: J_PILOT, reveal: "She is a pilot.", question: "I fly a plane.", instruction: CLUEQ, guide: "You are a ___." },
+      { type: "peek", part: "C", stage: "Mystery Topic", heading: "Mystery Topic 2", item: F_WORRIED, reveal: "I feel worried.", question: "I have a big test.", instruction: CLUEQ_FEEL, guide: "You feel ___." },
+      { type: "sprint", part: "C", stage: "Time Travel Sprint", heading: "Time Travel Sprint", items: PAST6, seconds: 60, instruction: [["👀", "Look at the picture."], ["🗣️", "Say it: yesterday, every day, tomorrow."]] },
+      { type: "dialogue", part: "C", stage: "Time Traveler", heading: "Time Traveler", turns: [{ who: "teacher", text: "Travel to the past! Now travel to the present! Now travel to the future!" }], instruction: NO_HELP("Say a sentence for each time.") },
+
+      // ---- Part D: past, present, future (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Times", turns: [{ who: "teacher", text: "Tell me one sentence about yesterday, one about now and one about tomorrow." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("Yesterday, I ___. Every day, I ___. Tomorrow, I'm going to ___."), part: "D", stage: "Type It!", heading: "Type Three Times" },
+      READ_YEAR,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about the past, the present and the future." },
     ],
   },
   "12-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Lesson 5", title: "Show What You Know! 🌟", subtitle: "Communicate about your past, present, and future independently." },
-      { type: "message", stage: "Mystery Timeline", heading: "Mystery Timeline", subheading: "What happened, what's happening, what's next?", lines: ["Look at the timeline. What happened? What is happening now? What will happen next?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "My Year Talk Show", subheading: "Cover before → now → next, without being told which grammar to use", turns: [{ who: "teacher", text: "What did you do this year? What is your life like now? What are you going to do next?" }, { who: "student", text: "This year, I learned English. Now, I study every day. Next month, I'm going to take a test." }] },
-      { type: "message", stage: "Time Travel Interview", heading: "Time Travel Interview", subheading: "Unexpected questions across all three times", lines: ["\"What did you do last weekend?\" \"What do you usually do after school?\" \"What are you going to do next weekend?\""] },
-      { type: "message", stage: "My Best Year Moment", heading: "My Best Year Moment", subheading: "Choose one moment and talk about it", lines: ["My favorite moment this year was *when I visited my grandmother*."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "What are you looking forward to?", line: "I am looking forward to ___ because ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "This year, I learned English. Now, I study every day. Next month, I'm going to take a test." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 12, title: "Show What You Know!", subtitle: "Tell about your year, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Your Year", turns: [{ who: "teacher", text: "Tell me about your year." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Before", turns: [{ who: "teacher", text: "What did you do last year? What did you learn?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Now", turns: [{ who: "teacher", text: "What is your life like now? What do you do every day?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: time travel interview (8 min) ----
+      { ...TIMEDICE, part: "B", stage: "Time Machine", heading: "Time Machine", instruction: NO_HELP("Say the sentence.") },
+      { ...TIMEDICE, part: "B", stage: "Time Machine", heading: "Time Machine 2", instruction: NO_HELP("Say the sentence.") },
+      { ...TIMEDICE, part: "B", stage: "Time Machine", heading: "Time Machine 3", instruction: NO_HELP("Say the sentence.") },
+      { ...TIMEDICE, part: "B", stage: "Time Machine", heading: "Time Machine 4", instruction: NO_HELP("Say the sentence.") },
+      { ...TIMEDICE, part: "B", stage: "Time Machine", heading: "Time Machine 5", instruction: NO_HELP("Say the sentence.") },
+      { ...TIMEDICE, part: "B", stage: "Time Machine", heading: "Time Machine 6", instruction: NO_HELP("Say the sentence.") },
+      { type: "spin", part: "B", stage: "Topic Wheel", heading: "Topic Wheel", items: TOPICS11, instruction: [["🤔", "No help this time!"], ["🗣️", "Say three sentences about it."]] },
+      { type: "spin", part: "B", stage: "Topic Wheel", heading: "Topic Wheel 2", items: TOPICS11, instruction: [["🤔", "No help this time!"], ["🗣️", "Say three sentences about it."]] },
+      { type: "spin", part: "B", stage: "Topic Wheel", heading: "Topic Wheel 3", items: TOPICS11, instruction: [["🤔", "No help this time!"], ["🗣️", "Say three sentences about it."]] },
+      { type: "dialogue", part: "B", stage: "Interview", heading: "Time Travel Interview", turns: [{ who: "teacher", text: "What did you do last weekend? What do you usually do after school? What are you going to do next weekend?" }], instruction: LISTEN_ANSWER },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: TOPICS11, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say a sentence about it. Be fast!"]] },
+
+      // ---- Part C: my best moment (5 min) ----
+      { type: "dialogue", part: "C", stage: "My Best Moment", heading: "My Best Year Moment", turns: [{ who: "teacher", text: "Tell me about your best moment this year. What happened? Why was it good?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "My Best Moment", heading: "Looking Forward", turns: [{ who: "teacher", text: "What are you looking forward to? Why?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: my year story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Last year, I *went* to a new school."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["Now, I *study* English every day."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["Next, I'm going to *travel* someday!"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "All About My Year", lines: ["Write about your year: before, now and next."], instruction: [["⌨️", "Type five or six sentences in the chat."]] },
+      { ...READ_YEAR, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 12 Complete!", title: "Unit 12 Complete!", see: "Great job!", recap: "You can tell about your past, your present and your future, in your own words." },
     ],
   },
   "12-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 12 · Final Test", title: "Unit 12 Test", subtitle: "All About My Year — the SOAR A2 capstone: past, present, and future together." },
-      { type: "chips", stage: "Part 1: Vocabulary Review", heading: "Review Across the Program", subheading: "10-12 pictures from many units", items: ["school", "town", "shopping", "jobs", "weather", "sports", "chores", "feelings"] },
-      { type: "message", stage: "Part 2-3: Past & Present", heading: "Past & Present", subheading: "2-3 sentences each", lines: ["Yesterday, I *went to the park*. I *played basketball*.", "I *go to school*. I *study English*."] },
-      { type: "message", stage: "Part 4: Future", heading: "Future Plans", subheading: "Upcoming plans", lines: ["This weekend, I'm going to *visit my friend*. We're going to *watch a movie*."] },
-      { type: "dialogue", stage: "Part 5: My Year ⭐", heading: "My Year: Speaking Capstone", subheading: "Before → Now → Next, connected (7-10 sentences)", turns: [{ who: "teacher", text: "Tell me about before, now, and next." }, { who: "student", text: "Last year, I started playing basketball. Now, I play every weekend and study English. Next month, I'm going to join a basketball club. Someday, I'm going to play in a big game." }] },
-      { type: "postcard", stage: "Part 6: Short Writing", heading: "All About My Year", subheading: "5-7 sentences: past, present, future", line: "Last year, ___. Now, ___. Next, I'm going to ___." },
-      { type: "landing", stage: "Landing", heading: "SOAR A2 Complete! 🌟", cardTitle: "Unit 12 Test", caption: "Last year, I started playing basketball. Now, I play every weekend. Someday, I'm going to play in a big game. I did it — I can connect my past, present, and future in English!" },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 12, title: "Unit 12 Test", subtitle: "Show what you can say about your year!" },
+
+      // ---- Part A: words from the whole year ----
+      { ...one(SUNNY), part: "A", stage: "Words", heading: "What Is It?", question: "What is this? Say a sentence.", instruction: LISTEN_ANSWER },
+      { ...one(T_BANK), part: "A", stage: "Words", heading: "What Is It? 2", question: "What is this? Say a sentence.", instruction: LISTEN_ANSWER },
+      { ...one(J_DOCTOR), part: "A", stage: "Words", heading: "What Is It? 3", question: "Who is this? Say a sentence.", instruction: LISTEN_ANSWER },
+      { ...one(F_WORRIED), part: "A", stage: "Words", heading: "What Is It? 4", question: "How do you feel? Say a sentence.", instruction: LISTEN_ANSWER },
+
+      // ---- Part B: the past ----
+      { type: "strip", part: "B", stage: "The Past", heading: "Yesterday", numbered: false, labels: false, size: 100, items: [PARK, PIZZA], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what you did yesterday."]] },
+      { type: "strip", part: "B", stage: "The Past", heading: "Yesterday 2", numbered: false, labels: false, size: 100, items: [DOG, PICTURE], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what you did yesterday."]] },
+
+      // ---- Part C: the present ----
+      { type: "strip", part: "C", stage: "The Present", heading: "Every Day", numbered: false, labels: false, size: 100, items: [SCHOOL, BREAKFAST], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what you do every day."]] },
+      { type: "strip", part: "C", stage: "The Present", heading: "Every Day 2", numbered: false, labels: false, size: 100, items: [C_BED, A_BIKE], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what you have to do or can do."]] },
+
+      // ---- Part D: the future ----
+      { type: "strip", part: "D", stage: "The Future", heading: "Tomorrow", numbered: false, labels: false, size: 100, items: [PL_MOVIE, PL_BEACH], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what you are going to do."]] },
+      { type: "strip", part: "D", stage: "The Future", heading: "Tomorrow 2", numbered: false, labels: false, size: 100, items: [PL_GRANDMA, J_PILOT], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what you are going to do."]] },
+
+      // ---- Part E: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Before, Now, Next", turns: [{ who: "teacher", text: "Tell me about before, now and next. What did you do last year? What do you do now? What are you going to do next?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Say five or six sentences."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Favorite", turns: [{ who: "teacher", text: "What was your favorite part of the year? Why?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say two or three sentences."]] },
+      { type: "score", stage: "My Final Score!", heading: "My Final Score!", rows: [["Words", "/ 4"], ["The past", "/ 4"], ["The present", "/ 4"], ["The future", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "A2 Complete!", title: "A2 Complete!", see: "Congratulations!", recap: "You did it! You can talk about your past, your present and your future in English." },
     ],
   },
 };
