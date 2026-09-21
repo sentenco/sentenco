@@ -38,8 +38,8 @@ const one = (item) => ({ type: "strip", numbered: false, labels: false, size: 12
 const WX = (label, file) => ({ label, src: `/curriculum/a2-weather/${file}` });
 const SUNNY = WX("sunny", "sunny.jpg"), RAINY = WX("rainy", "rainy.jpg"), CLOUDY = WX("cloudy", "cloudy.jpg"), WINDY = WX("windy", "windy.jpg");
 const SNOWY = WX("snowy", "snowy.jpg"), HOT = WX("hot", "hot.jpg"), COLD = WX("cold", "cold.jpg");
-// rainbow and flowers reuse the A1 pictures by path (three flowers side by side for the plural)
-const SUN = WX("sun", "sun.jpg"), CLOUD = WX("cloud", "cloud.jpg"), RAINBOW = { label: "rainbow", src: "/curriculum/u2-l3/rainbow.jpg" };
+// sun, rainbow and flowers reuse the A1 pictures by path (three flowers side by side for the plural)
+const SUN = { label: "sun", src: "/curriculum/u3-l1/sun.jpg" }, CLOUD = WX("cloud", "cloud.jpg"), RAINBOW = { label: "rainbow", src: "/curriculum/u2-l3/rainbow.jpg" };
 const FLOWERS = { label: "flowers", src: "/curriculum/u1-l2/flower.jpg", count: 3 }, LEAVES = WX("leaves", "leaves.jpg"), SNOW = WX("snow", "snow.jpg");
 const SN = (label, file) => ({ label, src: `/curriculum/a2-seasons/${file}` });
 const SPRING = SN("spring", "spring.jpg"), SUMMER = SN("summer", "summer.jpg"), AUTUMN = SN("autumn", "autumn.jpg"), WINTER = SN("winter", "winter.jpg");

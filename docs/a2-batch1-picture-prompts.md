@@ -1,6 +1,6 @@
 # A2 Soar Kids: Batch 1 picture prompts (Units 3, 4 and 6)
 
-38 pictures at first; weather and seasons are now done, 25 left (sun, cloud, leaves, snow, 8 town, 13 jobs). Save each file with the exact name into the folder shown, nothing else needs to change.
+38 pictures at first; weather, seasons, objects and 7 of 8 town buildings are done; 14 left (restaurant + 13 jobs). Save each file with the exact name into the folder shown, nothing else needs to change.
 Unit 1 pictures are installed, Unit 2 and Unit 5 need none.
 
 ## Shared style (add to every prompt)
@@ -12,7 +12,9 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Installed with a child showing a feeling in each: `a2-weather/` sunny (happy), rainy (a little sad), cloudy (bored), windy (surprised), snowy (excited), hot (tired), cold (shivering); `a2-seasons/` spring, summer, autumn, winter (same tree and hill in each, child beside it).
 Reused instead of generated: rainbow = `u2-l3/rainbow.jpg`, flowers = `u1-l2/flower.jpg` shown three times (`count: 3`).
 
-## Folder `public/curriculum/a2-weather/` (4 left, .jpg): objects only, no people, no faces
+## Object pictures: DONE 2026-09-22 (sun reuses `u3-l1/sun.jpg`; cloud, leaves, snow installed)
+
+## (old list, installed) `public/curriculum/a2-weather/` objects only, no people, no faces
 
 Use this shorter style line for these four: Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. Plain white background, no text, no letters, no watermark, no people, no characters, no faces. Square 1:1, subject centered and filling most of the frame.
 - **sun.jpg**: one round yellow sun with short orange triangle rays evenly spaced around it. Simple flat icon style. No eyes, no mouth.
