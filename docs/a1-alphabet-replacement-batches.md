@@ -186,10 +186,80 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly small brown-and-white puppy sitting and facing front, floppy ears, big black eyes, tongue slightly out, happy.
 ```
 
+## Batch 2 prompts
+
+Attach `duck` (or any Batch 1 picture you liked) as a style reference. Each prompt is complete: style prefix first, then the picture.
+
+1. **doll**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute rag doll sitting, round face with rosy cheeks, brown pigtails with pink bows, a light-blue dress, small black shoes.
+```
+
+2. **ear**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cartoon human ear, side view, natural light skin tone, soft pink inside the ear, no face, no head.
+```
+
+3. **egg**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One smooth light-brown egg standing upright, with a small white highlight.
+```
+
+4. **elephant**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly gray baby elephant standing and facing front, big round ears, small trunk curled up, big kind eyes, small smile.
+```
+
+5. **fish**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One orange goldfish, side view, big shiny eyes, a happy smile, flowing fins and tail. No water and no bubbles.
+```
+
+6. **flower**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One red flower with five round petals, a yellow center, a thin green stem and two green leaves.
+```
+
+7. **frog**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One green frog sitting and facing front, big round eyes on top of its head, wide smile, light-green belly. No lily pad.
+```
+
+8. **gift**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One gift box in teal with a big pink ribbon and bow on top.
+```
+
+9. **goat**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly white goat standing, side view, two small curved horns, a little beard, floppy ears, kind eyes.
+```
+
+10. **grapes**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One bunch of purple grapes with a short brown stem and one green leaf, small white highlights.
+```
+
+11. **hat**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One wide-brimmed straw sun hat with a red ribbon around it.
+```
+
 ## Status
 
-- Batch 1: prompts sent
-- Batch 2: not started
+- Batch 1: prompts sent, waiting for the pictures
+- Batch 2: prompts sent
 - Batch 3: not started
 - Batch 4: not started
 - Batch 5: not started
