@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { SOAR_A2_LESSONS } from "./soarA2Data";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
+import { SoarPic } from "./SoarPic.jsx";
+import { PeekBlock, SpinBlock, MissingBlock, SprintBlock, DiceBlock, gameStyles } from "./SoarGames.jsx";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -53,27 +55,6 @@ function InstructionStep({ icon, text }) {
         {color ? rest : text}
       </span>
     </span>
-  );
-}
-
-// A picture slot. `src` empty (or a file that is not there yet) shows a dashed placeholder with the label.
-function SoarPic({ src, label, size = 96 }) {
-  const [state, setState] = useState(src ? "loading" : "failed");
-  useEffect(() => { setState(src ? "loading" : "failed"); }, [src]);
-  return (
-    <div className="sp-tile" style={{ width: size, height: size }}>
-      {state !== "ok" && <span className="sp-missing"><span>{label}</span></span>}
-      {src && state !== "failed" && (
-        <img
-          src={src}
-          alt={label}
-          draggable={false}
-          onLoad={() => setState("ok")}
-          onError={() => setState("failed")}
-          style={state === "ok" ? undefined : { position: "absolute", width: 1, height: 1, opacity: 0 }}
-        />
-      )}
-    </div>
   );
 }
 
@@ -351,6 +332,7 @@ const BLOCKS = {
   dialogue: DialogueBlock, spot: SpotBlock, log: LogBlock, postcard: PostcardBlock,
   landing: LandingBlock, table: TableBlock, steps: StepsBlock,
   strip: StripBlock, wrapup: WrapUpBlock, score: ScoreBlock,
+  peek: PeekBlock, spin: SpinBlock, missing: MissingBlock, sprint: SprintBlock, dice: DiceBlock,
 };
 
 function renderSlideBody(slide) {
@@ -411,7 +393,7 @@ export default function SoarLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles;
+    tag.textContent = styles + gameStyles;
     document.head.appendChild(tag);
   }, []);
 
@@ -524,7 +506,7 @@ export default function SoarLesson() {
                 {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
               </div>
             )}
-            {renderSlideBody(s)}
+            <React.Fragment key={i}>{renderSlideBody(s)}</React.Fragment>
             {v2 && s.guide && (
               <div className="slide-guide">
                 <span className="guide-label" style={s.guideLabel === "Type" ? { background: "#0F9E90" } : undefined}>{s.guideLabel || "Say"}</span>

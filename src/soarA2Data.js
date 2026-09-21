@@ -34,6 +34,22 @@ const TYPE3 = { type: "postcard", line: "Yesterday, I ___. I ___. I ___.", instr
 const HOME_PIC = HOME;
 const one = (item) => ({ type: "strip", numbered: false, labels: false, size: 120, items: [item] });
 
+// ---- Unit 3 (Weather & Seasons) pieces; pictures still to be generated (placeholders show until then) ----
+const WX = (label, file) => ({ label, src: `/curriculum/a2-weather/${file}` });
+const SUNNY = WX("sunny", "sunny.jpg"), RAINY = WX("rainy", "rainy.jpg"), CLOUDY = WX("cloudy", "cloudy.jpg"), WINDY = WX("windy", "windy.jpg");
+const SNOWY = WX("snowy", "snowy.jpg"), HOT = WX("hot", "hot.jpg"), COLD = WX("cold", "cold.jpg");
+const SUN = WX("sun", "sun.jpg"), CLOUD = WX("cloud", "cloud.jpg"), RAINBOW = WX("rainbow", "rainbow.jpg");
+const FLOWERS = WX("flowers", "flowers.jpg"), LEAVES = WX("leaves", "leaves.jpg"), SNOW = WX("snow", "snow.jpg");
+const SN = (label, file) => ({ label, src: `/curriculum/a2-seasons/${file}` });
+const SPRING = SN("spring", "spring.jpg"), SUMMER = SN("summer", "summer.jpg"), AUTUMN = SN("autumn", "autumn.jpg"), WINTER = SN("winter", "winter.jpg");
+const WEATHER4 = [SUNNY, RAINY, CLOUDY, WINDY], SEASONS = [SPRING, SUMMER, AUTUMN, WINTER];
+const WEATHER7 = [SUNNY, RAINY, CLOUDY, WINDY, SNOWY, HOT, COLD], THINGS6 = [SUN, CLOUD, RAINBOW, FLOWERS, LEAVES, SNOW];
+const WQ = "What's the weather like?";
+const LOOK_SAY = (t) => [["👀", "Look at the picture."], ["🗣️", t]];
+const REPEAT_WORDS = [["👂", "Listen to the teacher."], ["🗣️", "Repeat each word."]];
+const TYPE2 = (line) => ({ type: "postcard", line, instruction: [["⌨️", "Type two sentences in the chat."]] });
+const READ_ALOUD = { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Weather", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] };
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -417,9 +433,9 @@ export const SOAR_A2_LESSONS = {
       { type: "table", part: "A", stage: "Memory Challenge", heading: "Now Backwards", heads: ["Yesterday", "Today"], rows: [["went", "?"], ["saw", "?"], ["made", "?"], ["ate", "?"]], instruction: [["👀", "Look at the word."], ["🗣️", "Say the word for today."]] },
 
       // ---- Part B: pick the word (5 min) ----
-      { ...one(SCHOOL), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word", frame: ["Yesterday, I ___ to school.", "go or went?"], instruction: [["👀", "Look at the picture and the two words."], ["🗣️", "Say the sentence the right way."]] },
-      { ...one(PIZZA), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word 2", frame: ["Yesterday, I ___ pizza.", "eat or ate?"], instruction: [["👀", "Look at the picture and the two words."], ["🗣️", "Say the sentence the right way."]] },
-      { ...one(FRIEND), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word 3", frame: ["Yesterday, I ___ my friend.", "see or saw?"], instruction: [["👀", "Look at the picture and the two words."], ["🗣️", "Say the sentence the right way."]] },
+      { ...one(SCHOOL), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word", frame: ["Yesterday, I ___ to school.", "go or went?"], instruction: [["👀", "Look at the two words."], ["🗣️", "Say the sentence."]] },
+      { ...one(PIZZA), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word 2", frame: ["Yesterday, I ___ pizza.", "eat or ate?"], instruction: [["👀", "Look at the two words."], ["🗣️", "Say the sentence."]] },
+      { ...one(FRIEND), size: 100, part: "B", stage: "Pick the Word", heading: "Pick the Word 3", frame: ["Yesterday, I ___ my friend.", "see or saw?"], instruction: [["👀", "Look at the two words."], ["🗣️", "Say the sentence."]] },
       { type: "strip", part: "B", stage: "Pick the Word", heading: "Pick the Word 4", numbered: false, labels: false, size: 100, items: [CAKE, HOMEWORK], question: "Yesterday, what did you make? What did you do?", instruction: NO_HELP("Answer with the past words.") },
 
       // ---- Part C: connect and time detective (13 min) ----
@@ -501,69 +517,201 @@ export const SOAR_A2_LESSONS = {
 
   // ---------- Unit 3: Weather & Seasons ----------
   "3-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 3 · Lesson 1", title: "What's the Weather?", subtitle: "Use weather words and \"There is...\" to describe weather scenes." },
-      { type: "chips", stage: "Getting Ready", heading: "Weather Words", subheading: "What's the weather like today?", items: ["☀️ sunny", "🌧️ rainy", "☁️ cloudy", "💨 windy", "⛈️ stormy", "❄️ snowy", "🌫️ foggy", "🌈 rainbow"] },
-      { type: "message", stage: "Taking Off", heading: "Weather Detective", subheading: "What can you see?", lines: ["It is *sunny*.", "There is a *rainbow*.", "There is a *cloud*."] },
-      { type: "message", stage: "What's in the Picture?", heading: "What's in the Picture?", subheading: "A busy weather scene", lines: ["There is a *sun*.", "There is a big *cloud*.", "Is it sunny or rainy?"] },
-      { type: "message", stage: "Flight Log", heading: "Mystery Weather Picture", subheading: "Predict before the picture is fully revealed", lines: ["There is a *cloud*. There is a *rainbow*. It is *rainy*."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Describe today's weather (3-4 sentences)", line: "Today it is ___. There is ___. There are ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "What's the Weather?", caption: "It is rainy. There is a rainbow. There are clouds." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 3, title: "What's the Weather?", subtitle: "Say what the weather is like and what is in the sky." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Look Outside", turns: [{ who: "teacher", text: "Look out of your window. What can you see?" }], instruction: LISTEN_ANSWER, guide: "I can see ___." },
+
+      // ---- Part B: four weather words (5 min) ----
+      { type: "strip", part: "B", stage: "Weather Words", heading: "Four Weather Words", numbered: false, size: 100, items: WEATHER4, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Weather Words", heading: "What's the Weather Like?", lines: [WQ, "It is *sunny*."], instruction: LISTEN_REPEAT },
+      { ...one(SUNNY), part: "B", stage: "Weather Words", heading: "What's the Weather?", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(RAINY), part: "B", stage: "Weather Words", heading: "What's the Weather? 2", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(CLOUDY), part: "B", stage: "Weather Words", heading: "What's the Weather? 3", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(WINDY), part: "B", stage: "Weather Words", heading: "What's the Weather? 4", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+
+      // ---- Part C: the sky and the games (13 min) ----
+      { type: "spin", part: "C", stage: "Weather Wheel", heading: "Weather Wheel", items: WEATHER4, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what the weather is."]], guide: "It is ___." },
+      { type: "strip", part: "C", stage: "In the Sky", heading: "Three Things in the Sky", numbered: false, size: 100, items: [SUN, CLOUD, RAINBOW], instruction: REPEAT_WORDS },
+      { type: "message", part: "C", stage: "In the Sky", heading: "There Is a...", lines: ["There is a *sun*.", "There is a *cloud*.", "There is a *rainbow*."], instruction: LISTEN_REPEAT },
+      { ...one(SUN), part: "C", stage: "In the Sky", heading: "What Is in the Sky?", question: "What is in the sky?", instruction: LISTEN_ANSWER, guide: "There is a ___." },
+      { ...one(CLOUD), part: "C", stage: "In the Sky", heading: "What Is in the Sky? 2", question: "What is in the sky?", instruction: LISTEN_ANSWER, guide: "There is a ___." },
+      { ...one(RAINBOW), part: "C", stage: "In the Sky", heading: "What Is in the Sky? 3", question: "What is in the sky?", instruction: LISTEN_ANSWER, guide: "There is a ___." },
+      { type: "strip", part: "C", stage: "In the Sky", heading: "Look at the Sky", numbered: false, labels: false, size: 100, items: [SUN, CLOUD, RAINBOW], instruction: NO_HELP("Say what is in the sky.") },
+      { type: "peek", part: "C", stage: "Mystery Weather", heading: "Mystery Weather", item: WINDY, reveal: "It is windy.", question: WQ, instruction: LOOK_SAY("Guess the weather."), guide: "I think it is ___." },
+      { type: "peek", part: "C", stage: "Mystery Weather", heading: "Mystery Weather 2", item: RAINY, reveal: "It is rainy.", question: WQ, instruction: LOOK_SAY("Guess the weather."), guide: "I think it is ___." },
+      { type: "sprint", part: "C", stage: "Weather Sprint", heading: "Weather Sprint", items: WEATHER4, seconds: 40, instruction: LOOK_SAY("Say a sentence. Be fast!"), guide: "It is ___." },
+
+      // ---- Part D: my weather (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Weather", heading: "Where You Live", turns: [{ who: "teacher", text: "What's the weather like where you live today?" }], instruction: LISTEN_ANSWER, guide: "It is ___ today." },
+      { ...TYPE2("Today, it is ___. There is a ___."), part: "D", stage: "Type It!", heading: "Type Your Weather" },
+      READ_ALOUD,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say what the weather is like and what is in the sky." },
     ],
   },
   "3-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 3 · Lesson 2", title: "Four Seasons!", subtitle: "Name the four seasons and use \"There are...\" to describe them." },
-      { type: "chips", stage: "Getting Ready", heading: "Meet the Four Seasons", subheading: "🌸 Spring · ☀️ Summer · 🍂 Autumn · ❄️ Winter", items: ["🌸 Spring", "☀️ Summer", "🍂 Autumn", "❄️ Winter"] },
-      { type: "message", stage: "Taking Off", heading: "Season Detective", subheading: "Spot the clues", lines: ["There are *flowers*. → Spring", "There are *leaves*. → Autumn", "There is *snow*. → Winter"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Season Interview", subheading: "Ask and answer about the four seasons", turns: [{ who: "teacher", text: "What season has flowers?" }, { who: "student", text: "There are flowers in spring!" }, { who: "teacher", text: "What season has snow?" }, { who: "student", text: "There are snowflakes in winter." }] },
-      { type: "message", stage: "My Favorite Season", heading: "My Favorite Season", subheading: "What's your favorite season? Why?", lines: ["My favorite season is *summer* because it is sunny."] },
-      { type: "postcard", stage: "Postcard Message", heading: "My Favorite Season", subheading: "Complete the sentence", line: "My favorite season is ___ because it is ___. There are ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Four Seasons", caption: "My favorite season is summer because it is sunny. There are many sunny days." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 3, title: "Four Seasons!", subtitle: "Say the four seasons and what there is in each one." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "dialogue", part: "A", stage: "Review", heading: "Today's Weather", turns: [{ who: "teacher", text: WQ }], instruction: LISTEN_ANSWER, guide: "It is ___ today." },
+      { type: "spin", part: "A", stage: "Review", heading: "Weather Wheel", items: WEATHER4, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what the weather is."]], guide: "It is ___." },
+
+      // ---- Part B: four seasons (5 min) ----
+      { type: "strip", part: "B", stage: "Four Seasons", heading: "Four Seasons", numbered: false, size: 100, items: SEASONS, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Four Seasons", heading: "What Is There?", lines: ["In *spring*, there are *flowers*.", "In *autumn*, there are *leaves*.", "In *winter*, there is *snow*."], instruction: LISTEN_REPEAT },
+      { ...one(SPRING), part: "B", stage: "Four Seasons", heading: "What Season?", question: "What season is it?", instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(SUMMER), part: "B", stage: "Four Seasons", heading: "What Season? 2", question: "What season is it?", instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(AUTUMN), part: "B", stage: "Four Seasons", heading: "What Season? 3", question: "What season is it?", instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(WINTER), part: "B", stage: "Four Seasons", heading: "What Season? 4", question: "What season is it?", instruction: LISTEN_ANSWER, guide: "It is ___." },
+
+      // ---- Part C: what is there? and the games (13 min) ----
+      { ...one(FLOWERS), part: "C", stage: "What Is There?", heading: "What Is There?", question: "What is there in spring?", instruction: LISTEN_ANSWER, guide: "There are ___." },
+      { ...one(LEAVES), part: "C", stage: "What Is There?", heading: "What Is There? 2", question: "What is there in autumn?", instruction: LISTEN_ANSWER, guide: "There are ___." },
+      { ...one(SNOW), part: "C", stage: "What Is There?", heading: "What Is There? 3", question: "What is there in winter?", instruction: LISTEN_ANSWER, guide: "There is ___." },
+      { type: "strip", part: "C", stage: "What Is There?", heading: "Season by Season", numbered: false, size: 100, items: SEASONS, instruction: NO_HELP("Say what there is in each season.") },
+      { type: "spin", part: "C", stage: "Season Wheel", heading: "Season Wheel", items: SEASONS, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what the weather is in that season."]], guide: "In ___, it is ___." },
+      { type: "peek", part: "C", stage: "Mystery Season", heading: "Mystery Season", item: WINTER, reveal: "It is winter.", question: "What season is it?", instruction: LOOK_SAY("Guess the season."), guide: "I think it is ___." },
+      { type: "peek", part: "C", stage: "Mystery Season", heading: "Mystery Season 2", item: AUTUMN, reveal: "It is autumn.", question: "What season is it?", instruction: LOOK_SAY("Guess the season."), guide: "I think it is ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: SEASONS, instruction: [["👀", "Look at the seasons."], ["🗣️", "Say the season that went away."]], guide: "___ is missing." },
+      { type: "sprint", part: "C", stage: "Season Sprint", heading: "Season Sprint", items: [FLOWERS, LEAVES, SNOW, SUN, CLOUD], seconds: 45, instruction: LOOK_SAY("Say what there is. Be fast!"), guide: "There is / are ___." },
+
+      // ---- Part D: my favorite season (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Favorite Season", heading: "My Favorite Season", turns: [{ who: "teacher", text: "Which season do you like best? Why?" }], instruction: LISTEN_ANSWER, guide: "My favorite season is ___ because ___." },
+      { ...TYPE2("My favorite season is ___. There are ___ in ___."), part: "D", stage: "Type It!", heading: "Type Your Season" },
+      { ...READ_ALOUD, heading: "Read Your Season" },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say the four seasons and what there is in each one." },
     ],
   },
   "3-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 3 · Lesson 3", title: "Weather Talk!", subtitle: "Describe today's weather using vocabulary and there is / there are." },
-      { type: "message", stage: "Getting Ready", heading: "Quick Review", subheading: "Flash-round", lines: ["It's *cloudy*.", "It's *windy*.", "There is a *rainbow*.", "There are *clouds*."] },
-      { type: "message", stage: "Taking Off", heading: "Weather Around the World", subheading: "What's the weather like in City A?", lines: ["It's *rainy*.", "There are *clouds* in City B."] },
-      { type: "log", stage: "Build a Weather Report", heading: "Build a Weather Report", subheading: "Fill in your own report", rows: ["Today in ___:", "Weather: ___", "There is: ___", "There are: ___"] },
-      { type: "message", stage: "Flight Log", heading: "Weather Forecast", subheading: "City A: sunny · City B: rainy · City C: windy", lines: ["In City A, it is *sunny*.", "There are *clouds* in City B.", "What's the weather like tomorrow?"] },
-      { type: "dialogue", stage: "Postcard Message", heading: "Weather Conversation", subheading: "Do you like this weather?", turns: [{ who: "teacher", text: "What's the weather like today?" }, { who: "student", text: "It's sunny!" }, { who: "teacher", text: "Do you like this weather?" }, { who: "student", text: "Yes, I do because I like sunny days." }] },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Weather Talk!", caption: "In City A, it is sunny. There are clouds in City B." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 3, title: "Weather Talk!", subtitle: "Give a weather report with hot, cold and snowy." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "dialogue", part: "A", stage: "Review", heading: "Today's Weather", turns: [{ who: "teacher", text: WQ }], instruction: LISTEN_ANSWER, guide: "It is ___ today." },
+      { type: "missing", part: "A", stage: "What's Missing?", heading: "What's Missing?", items: WEATHER4, instruction: [["👀", "Look at the weather."], ["🗣️", "Say the weather that went away."]], guide: "___ is missing." },
+
+      // ---- Part B: three new words (5 min) ----
+      { type: "strip", part: "B", stage: "Three New Words", heading: "Three New Words", numbered: false, size: 100, items: [HOT, COLD, SNOWY], instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Three New Words", heading: "Hot, Cold, Snowy", lines: ["It is *hot*.", "It is *cold*.", "It is *snowy*."], instruction: LISTEN_REPEAT },
+      { ...one(HOT), part: "B", stage: "Three New Words", heading: "What's the Weather?", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(COLD), part: "B", stage: "Three New Words", heading: "What's the Weather? 2", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { ...one(SNOWY), part: "B", stage: "Three New Words", heading: "What's the Weather? 3", question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___." },
+      { type: "message", part: "B", stage: "Three New Words", heading: "Two Words Together", lines: ["It is *hot* and *sunny*.", "It is *cold* and *windy*."], instruction: LISTEN_REPEAT },
+
+      // ---- Part C: the weather report (13 min) ----
+      { type: "strip", part: "C", stage: "Two Words", heading: "Two Words", numbered: false, labels: false, size: 100, items: [HOT, SUNNY], question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___ and ___." },
+      { type: "strip", part: "C", stage: "Two Words", heading: "Two Words 2", numbered: false, labels: false, size: 100, items: [COLD, WINDY], question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___ and ___." },
+      { type: "strip", part: "C", stage: "Two Words", heading: "Two Words 3", numbered: false, labels: false, size: 100, items: [RAINY, COLD], question: WQ, instruction: LISTEN_ANSWER, guide: "It is ___ and ___." },
+      { type: "strip", part: "C", stage: "Weather Report", heading: "Weather Report", numbered: false, size: 100, active: 0, items: [{ ...SUNNY, label: "in the morning" }, { ...CLOUDY, label: "in the afternoon" }, { ...RAINY, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell the weather."]], guide: "In the morning, it is ___." },
+      { type: "strip", part: "C", stage: "Weather Report", heading: "Weather Report 2", numbered: false, size: 100, active: 1, items: [{ ...SUNNY, label: "in the morning" }, { ...CLOUDY, label: "in the afternoon" }, { ...RAINY, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell the weather."]], guide: "In the afternoon, it is ___." },
+      { type: "strip", part: "C", stage: "Weather Report", heading: "Weather Report 3", numbered: false, size: 100, active: 2, items: [{ ...SUNNY, label: "in the morning" }, { ...CLOUDY, label: "in the afternoon" }, { ...RAINY, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell the weather."]], guide: "In the evening, it is ___." },
+      { type: "dice", part: "C", stage: "Weather Dice", heading: "Weather Dice", dice: [{ name: "Weather", items: WEATHER7 }, { name: "In the picture", items: THINGS6 }], instruction: [["👀", "Look at the dice."], ["🗣️", "Say two sentences."]], guide: "It is ___. There is / are ___." },
+      { type: "peek", part: "C", stage: "Mystery Weather", heading: "Mystery Weather", item: SNOWY, reveal: "It is cold and snowy.", question: WQ, instruction: LOOK_SAY("Guess the weather."), guide: "I think it is ___." },
+      { type: "sprint", part: "C", stage: "Reporter Sprint", heading: "Reporter Sprint", items: WEATHER7, seconds: 45, instruction: LOOK_SAY("Say a sentence. Be fast!"), guide: "It is ___." },
+      { type: "dialogue", part: "C", stage: "Weather Report", heading: "You Are the Reporter!", turns: [{ who: "teacher", text: "Good morning! What is the weather report today?" }], instruction: NO_HELP("Give the weather report.") },
+
+      // ---- Part D: my weather (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Weather", heading: "Where You Live", turns: [{ who: "teacher", text: "What's the weather like where you live?" }], instruction: LISTEN_ANSWER, guide: "It is ___ and ___." },
+      { ...TYPE2("Today it is ___ and ___. There is / are ___."), part: "D", stage: "Type It!", heading: "Type Your Weather" },
+      READ_ALOUD,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can give a weather report with hot, cold and snowy." },
     ],
   },
   "3-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 3 · Lesson 4", title: "Let's Review!", subtitle: "Review weather, seasons, and there is / there are." },
-      { type: "chips", stage: "Weather Speed Round", heading: "Weather Speed Round", subheading: "Say it fast!", items: ["It's sunny!", "It's windy!", "It's snowy!"] },
-      { type: "message", stage: "Season Challenge", heading: "Season Challenge", subheading: "Give the season from the clue", lines: ["There are *flowers*. → Spring!", "There are colorful *leaves*. → Autumn!", "There is *snow*. → Winter!"] },
-      { type: "dialogue", stage: "Fix My Weather", heading: "Fix My Weather", subheading: "Catch the mistake", turns: [{ who: "teacher", text: "There are a rainbow." }, { who: "student", text: "No! There is a rainbow." }, { who: "teacher", text: "There is clouds." }, { who: "student", text: "There are clouds!" }] },
-      { type: "message", stage: "Flight Log", heading: "What's Wrong With This Weather?", subheading: "Spot the strange weather and correct it", lines: ["\"It is winter. There are flowers everywhere and no snow.\" Is this correct?", "No — there are usually *snowflakes* in winter."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Mini Weather Report", subheading: "Use weather, a season, there is, and there are", line: "Today it is ___. It is ___ season. There is ___. There are ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "It is winter. There is snow. There are snowflakes everywhere." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 3, title: "Let's Review!", subtitle: "Play the weather games and tell it right." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Weather Wheel", items: WEATHER7, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what the weather is."]], guide: "It is ___." },
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: SEASONS, instruction: [["👀", "Look at the seasons."], ["🗣️", "Say the season that went away."]], guide: "___ is missing." },
+
+      // ---- Part B: true or false (5 min) ----
+      { ...one(SUNNY), size: 100, part: "B", stage: "True or False?", heading: "True or False?", sentence: "It is *rainy*.", instruction: LOOK_SAY("Say true or false. Fix it if it is false.") },
+      { ...one(COLD), size: 100, part: "B", stage: "True or False?", heading: "True or False? 2", sentence: "It is *cold*.", instruction: LOOK_SAY("Say true or false. Fix it if it is false.") },
+      { ...one(FLOWERS), size: 100, part: "B", stage: "True or False?", heading: "True or False? 3", sentence: "There are *leaves*.", instruction: LOOK_SAY("Say true or false. Fix it if it is false.") },
+      { ...one(WINTER), size: 100, part: "B", stage: "True or False?", heading: "True or False? 4", sentence: "It is *winter*.", instruction: LOOK_SAY("Say true or false. Fix it if it is false.") },
+      { ...one(SPRING), size: 100, part: "B", stage: "True or False?", heading: "True or False? 5", sentence: "It is *autumn*.", instruction: LOOK_SAY("Say true or false. Fix it if it is false.") },
+
+      // ---- Part C: games and season talk (13 min) ----
+      { type: "dice", part: "C", stage: "Weather Dice", heading: "Weather Dice", dice: [{ name: "Weather", items: WEATHER7 }, { name: "In the picture", items: THINGS6 }], instruction: [["👀", "Look at the dice."], ["🗣️", "Say two sentences."]], guide: "It is ___. There is / are ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: [SUNNY, RAINY, SNOWY, HOT, COLD, FLOWERS, LEAVES, SUN], seconds: 45, instruction: LOOK_SAY("Say a sentence. Be fast!") },
+      { type: "peek", part: "C", stage: "Mystery Season", heading: "Mystery Season", item: SUMMER, reveal: "It is summer.", question: "What season is it?", instruction: LOOK_SAY("Guess the season."), guide: "I think it is ___." },
+      { type: "strip", part: "C", stage: "Season Talk", heading: "Season Talk", numbered: false, size: 100, items: SEASONS, frame: ["In ___, there are ___.", "In ___, it is ___."], instruction: [["👀", "Look at the seasons."], ["🗣️", "Talk about each season."]] },
+      { type: "dialogue", part: "C", stage: "Season Talk", heading: "Winter and Summer", turns: [{ who: "teacher", text: "What's the weather like in winter? What's the weather like in summer?" }], instruction: LISTEN_ANSWER, guide: "In ___, it is ___." },
+      { type: "spin", part: "C", stage: "Season Wheel", heading: "Season Wheel", items: SEASONS, instruction: NO_HELP("Say two sentences about the season.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about the weather today." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("Today it is ___. There is / are ___."), part: "D", stage: "Type It!", heading: "Type Your Weather" },
+      READ_ALOUD,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about weather and seasons with there is and there are." },
     ],
   },
   "3-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 3 · Lesson 5", title: "Show What You Know!", subtitle: "Free practice — talk about weather and seasons on your own." },
-      { type: "message", stage: "Conversation", heading: "Conversation", subheading: "What's the weather like today?", lines: ["Do you like it? What's your favorite weather? What's your favorite season?"] },
-      { type: "message", stage: "Flight Log", heading: "Plan a Weather Trip", subheading: "You can travel to one place — where do you want to go?", lines: ["I want to go to the beach because it is *sunny*.", "There are clouds, but it is *warm*."] },
-      { type: "message", stage: "Plan a Holiday", heading: "Plan a Holiday", subheading: "Where, what season, what's the weather, what can you see/do?", lines: ["I want to go to Japan in winter. It is cold and snowy. There are mountains and there is snow."] },
-      { type: "message", stage: "Weather Reporter Challenge", heading: "Weather Reporter Challenge", subheading: "Give a 30-45 second weather report — no sentence frame!", lines: ["What's the weather like today, and what will it be like tomorrow?"] },
-      { type: "postcard", stage: "Postcard Message", heading: "Short Writing", subheading: "\"My Favorite Season\" (4-6 sentences)", line: "My favorite season is ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "My favorite season is summer. It is hot and sunny. There are many sunny days." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 3, title: "Show What You Know!", subtitle: "Talk about weather and seasons, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About the Weather", turns: [{ who: "teacher", text: "Tell me about the weather today." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Where You Live", turns: [{ who: "teacher", text: "What's the weather like where you live? Is it hot or cold?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Seasons", turns: [{ who: "teacher", text: "Which season do you like? Why?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: the weather reporter (8 min) ----
+      { type: "dialogue", part: "B", stage: "Weather Reporter", heading: "One-Minute Report", turns: [{ who: "teacher", text: "You are the weather reporter! You have one minute. Tell me about the weather!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Talk for one minute."]] },
+      { type: "dialogue", part: "B", stage: "Weather Reporter", heading: "More, Please!", turns: [{ who: "teacher", text: "What's the weather like in the morning? And in the evening? What is in the sky?" }], instruction: LISTEN_ANSWER },
+      { type: "peek", part: "B", stage: "Mystery Picture", heading: "Mystery Picture", item: SPRING, reveal: "Spring! There are flowers.", question: "Tell me about this picture.", instruction: [["👀", "Look at the picture."], ["🗣️", "Tell what you can see."]] },
+      { type: "peek", part: "B", stage: "Mystery Picture", heading: "Mystery Picture 2", item: WINTER, reveal: "Winter! There is snow.", question: "Tell me about this picture.", instruction: [["👀", "Look at the picture."], ["🗣️", "Tell what you can see."]] },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: [SUNNY, RAINY, CLOUDY, WINDY, SNOWY, HOT, COLD, SUN, CLOUD, RAINBOW, FLOWERS, LEAVES, SNOW], seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say a sentence. Be fast!"]] },
+      { type: "dice", part: "B", stage: "Weather Dice", heading: "Weather Report Dice", dice: [{ name: "Season", items: SEASONS }, { name: "Weather", items: WEATHER7 }, { name: "In the picture", items: THINGS6 }], instruction: NO_HELP("Say a weather report.") },
+
+      // ---- Part C: a real talk (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Favorite Weather", turns: [{ who: "teacher", text: "What is your favorite weather? Why?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Your Country", turns: [{ who: "teacher", text: "What seasons are there in your country? What is the weather like?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student report, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Report Together", heading: "Report Together", lines: ["Good morning! It is *cold* today."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Report Together", heading: "Report Together 2", lines: ["In the afternoon, it is *windy*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Report Together", heading: "Report Together 3", lines: ["In the evening, there are *clouds*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "The Weather...", lines: ["Write about the weather today."], instruction: [["⌨️", "Type three or four sentences in the chat."]] },
+      { ...READ_ALOUD, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 3 Complete!", title: "Unit 3 Complete!", see: "Great job!", recap: "You can talk about the weather and the seasons, in your own words." },
     ],
   },
   "3-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 3 · Test", title: "Unit 3 Test", subtitle: "Can you describe weather and seasons without heavy support?" },
-      { type: "chips", stage: "Part 1: Weather Vocabulary", heading: "Identify the Weather", subheading: "Name each picture", items: ["sunny", "rainy", "cloudy", "windy", "stormy", "snowy", "foggy"] },
-      { type: "chips", stage: "Part 2: Seasons", heading: "Name the Seasons", subheading: "Give one thing associated with each", items: ["🌸 Spring", "☀️ Summer", "🍂 Autumn", "❄️ Winter"] },
-      { type: "log", stage: "Part 3: There Is / Are", heading: "Complete the Sentences", subheading: "Fill in is or are", rows: ["There ___ a rainbow.", "There ___ clouds.", "There ___ snow.", "There ___ flowers."] },
-      { type: "message", stage: "Part 4: Picture Description ⭐", heading: "Describe the Picture", subheading: "Weather, season, and things in the picture", lines: ["What can you see?"] },
-      { type: "postcard", stage: "Part 5-6: Speaking & Writing", heading: "Your Favorite Season", subheading: "5-6 sentences with a reason", line: "My favorite season is ___. It is ___. I like it because ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 3 Complete!", cardTitle: "Unit 3 Test", caption: "My favorite season is summer. There are many sunny days. I like going to the beach." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 3, title: "Unit 3 Test", subtitle: "Show what you can say about weather and seasons!" },
+
+      // ---- Part A: weather words ----
+      { ...one(SUNNY), part: "A", stage: "Weather Words", heading: "What's the Weather?", question: WQ, instruction: LISTEN_ANSWER },
+      { ...one(RAINY), part: "A", stage: "Weather Words", heading: "What's the Weather? 2", question: WQ, instruction: LISTEN_ANSWER },
+      { ...one(CLOUDY), part: "A", stage: "Weather Words", heading: "What's the Weather? 3", question: WQ, instruction: LISTEN_ANSWER },
+      { ...one(WINDY), part: "A", stage: "Weather Words", heading: "What's the Weather? 4", question: WQ, instruction: LISTEN_ANSWER },
+      { ...one(SNOWY), part: "A", stage: "Weather Words", heading: "What's the Weather? 5", question: WQ, instruction: LISTEN_ANSWER },
+      { ...one(HOT), part: "A", stage: "Weather Words", heading: "What's the Weather? 6", question: WQ, instruction: LISTEN_ANSWER },
+
+      // ---- Part B: seasons ----
+      { type: "strip", part: "B", stage: "Seasons", heading: "Seasons", numbered: false, labels: false, size: 100, items: [SPRING, SUMMER], instruction: LOOK_SAY("Say the seasons.") },
+      { type: "strip", part: "B", stage: "Seasons", heading: "Seasons 2", numbered: false, labels: false, size: 100, items: [AUTUMN, WINTER], instruction: LOOK_SAY("Say the seasons.") },
+
+      // ---- Part C: there is / there are ----
+      { type: "strip", part: "C", stage: "There Is / There Are", heading: "What Is There?", numbered: false, labels: false, size: 100, items: [SUN, CLOUD], instruction: LOOK_SAY("Say what there is.") },
+      { type: "strip", part: "C", stage: "There Is / There Are", heading: "What Is There? 2", numbered: false, labels: false, size: 100, items: [RAINBOW, FLOWERS], instruction: LOOK_SAY("Say what there is.") },
+      { type: "strip", part: "C", stage: "There Is / There Are", heading: "What Is There? 3", numbered: false, labels: false, size: 100, items: [LEAVES, SNOW], instruction: LOOK_SAY("Say what there is.") },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About the Weather", turns: [{ who: "teacher", text: "Tell me about the weather today. What is it like? What is in the sky?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "My Favorite Season", turns: [{ who: "teacher", text: "Which season do you like best? Why?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say two or three sentences."]] },
+      { type: "score", stage: "My Unit 3 Score!", heading: "My Unit 3 Score!", rows: [["Weather words", "/ 6"], ["Seasons", "/ 4"], ["There is / are", "/ 6"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 3 Complete!", title: "Unit 3 Complete!", see: "On to Unit 4!", recap: "You can talk about the weather and the seasons with there is and there are." },
     ],
   },
 
