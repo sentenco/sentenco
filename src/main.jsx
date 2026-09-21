@@ -299,6 +299,8 @@ import ShiftHub from './ShiftHub.jsx'
 import LibraryPageShell from './LibraryPageShell.jsx'
 import ShiftTrack from './ShiftTrack.jsx'
 import ShiftGuide from './ShiftGuide.jsx'
+import LetterBoardHub from './LetterBoardHub.jsx'
+import LetterBoardPlay from './LetterBoardPlay.jsx'
 import Spark from './Spark.jsx'
 import SparkGuide from './SparkGuide.jsx'
 import SparkTeens from './SparkTeens.jsx'
@@ -615,6 +617,8 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/shift/:trackId" element={<LibraryPageShell><ShiftTrack /></LibraryPageShell>} />
             <Route path="/library/shift/:trackId/:lessonNum" element={<Shift />} />
             <Route path="/library/shift/:trackId/:lessonNum/guide" element={<ShiftGuide />} />
+            <Route path="/library/letter-board" element={<LibraryPageShell><LetterBoardHub /></LibraryPageShell>} />
+            <Route path="/library/letter-board/play/:id" element={<LetterBoardPlay />} />
             <Route path="/library/spark" element={<Library />} />
             <Route path="/library/spark/teens/:lessonId" element={<SparkTeens />} />
             <Route path="/library/spark/teens/:lessonId/guide" element={<SparkTeensGuide />} />
