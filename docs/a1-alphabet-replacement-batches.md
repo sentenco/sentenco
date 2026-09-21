@@ -466,6 +466,76 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One striped sock, red and white stripes, a blue heel and a blue toe, standing upright and slightly curved as if it has a foot inside.
 ```
 
+## Batch 6 prompts
+
+Attach `duck` (or any Batch 1 picture you liked) as a style reference. Each prompt is complete: style prefix first, then the picture.
+
+1. **star**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One golden-yellow five-pointed star with softly rounded points, a lighter yellow center and a small white highlight. No face.
+```
+
+2. **sun**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One round bright-yellow sun with short orange triangle rays all around it, a small white highlight. No face.
+```
+
+3. **tent**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One camping tent in red and yellow, triangle shape, the door flap tied open showing a dark inside, small pegs and ropes at the corners.
+```
+
+4. **tiger**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly tiger cub sitting and facing front, orange fur with black stripes, white muzzle and belly, big kind eyes, a small smile.
+```
+
+5. **tomato**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One ripe red tomato with a green leafy top, a small white highlight. No face.
+```
+
+6. **ukulele**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One small wooden ukulele with a light-brown body, a round sound hole, four strings and a neck with small tuning pegs.
+```
+
+7. **umbrella**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One open red umbrella with a curved brown handle, seen from the front, a few small white highlights on the canopy.
+```
+
+8. **unicorn**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly white unicorn standing, side view, a golden horn, a rainbow-colored mane and tail, kind eyes, small pink hooves.
+```
+
+9. **van**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute blue van seen from the side, rounded body, a sliding door, light-blue windows, two round wheels, small yellow headlight. No people inside.
+```
+
+10. **vase**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One blue-and-white vase with a round body holding three flowers, one red, one yellow and one pink, with green stems and leaves.
+```
+
+11. **volcano**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One brown volcano with a wide crater at the top, bright orange lava flowing down one side, a small puff of gray smoke, a little green grass at the base.
+```
+
 ## Status
 
 - Batch 1: prompts sent, waiting for the pictures
@@ -473,5 +543,5 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 - Batch 3: prompts sent
 - Batch 4: prompts sent
 - Batch 5: prompts sent
-- Batch 6: not started
+- Batch 6: prompts sent
 - Batch 7: not started
