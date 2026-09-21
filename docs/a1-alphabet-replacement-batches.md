@@ -326,12 +326,82 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One gray koala sitting and facing front, big round fuzzy ears, a big dark nose, holding a green eucalyptus leaf, kind eyes.
 ```
 
+## Batch 4 prompts
+
+Attach `duck` (or any Batch 1 picture you liked) as a style reference. Each prompt is complete: style prefix first, then the picture.
+
+1. **lamp**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One table lamp with a round yellow-orange lampshade, a slim orange base, and a soft glow, seen from the front. No wire.
+```
+
+2. **leaf**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One green leaf with a curved shape, a lighter green center vein and a short brown stem.
+```
+
+3. **lion**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly lion cub sitting and facing front, a round fluffy orange-brown mane, cream muzzle, big kind eyes, a small smile.
+```
+
+4. **milk**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One carton of milk, white and light blue with a folded triangle top, a small drawing of a cow on it, no writing.
+```
+
+5. **monkey**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute brown monkey sitting and facing front, cream face and belly, big round ears, a long curly tail, a happy smile.
+```
+
+6. **moon**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One round pale-yellow full moon with a few soft gray craters and a small white highlight, no stars, no sky.
+```
+
+7. **nest**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One bird nest made of brown twigs with two small light-blue eggs inside, seen from a slight angle.
+```
+
+8. **nose**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cartoon human nose, front view, natural light skin tone, two small nostrils, soft pink cheeks around it, no face, no head.
+```
+
+9. **nut**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One peanut in its light-brown shell with a small drawing of its bumpy texture, and one shelled peanut beside it.
+```
+
+10. **octopus**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly orange-red octopus with a big round head, big shiny eyes, a happy smile, and eight curly tentacles. No water and no bubbles.
+```
+
+11. **orange**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One whole orange fruit with a small green leaf and stem on top, plus one round slice beside it showing the juicy segments.
+```
+
 ## Status
 
 - Batch 1: prompts sent, waiting for the pictures
 - Batch 2: prompts sent
 - Batch 3: prompts sent
-- Batch 4: not started
+- Batch 4: prompts sent
 - Batch 5: not started
 - Batch 6: not started
 - Batch 7: not started
