@@ -664,3 +664,11 @@ Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shad
 ```
 
 Installed 2026-09-21 22:14: bag (u7-l1/bag.avif and u1-l4/bag.avif), tree (u3-l5/tree.avif), sitting cat (u3-l3/cat-sitting.avif; the file was named `sitting cat.jpeg`). No sourced picture is left in the A1 alphabet lessons or the A2 shop.
+
+## Extra: the hello picture (Unit 1 Lesson 1)
+
+Decision (user, 2026-09-21): generate the "Hello!" picture too. It is `u1-l1/wavingkid.jpg` (A1 "Hello!" slide). A2 also uses it as the "friend" picture (Unit 2 stories, Unit 11 "see my friend"), so the child must look like a friendly, gender-neutral kid. Ask for `wavingkid.jpeg` in Downloads.
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly child standing and facing front, full body, waving hello with one raised hand, a big happy smile, short black hair, a light-blue t-shirt, green shorts and small brown shoes, natural light skin tone with no orange or yellow tint.
+```
