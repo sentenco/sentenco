@@ -138,6 +138,30 @@ const ABILITYDICE = { type: "dice", dice: [{ name: "Do what?", items: DO11 }, { 
 const REASONDICE = { type: "dice", dice: [{ name: "Activity", items: CLUBS6 }, { name: "Because it is...", items: REASONS }], size: 108 };
 const READ_CAN = { ...READ_ALOUD, heading: "Read Your Sentences" };
 
+// ---- Unit 9 (How Do You Feel?) pieces; happy/sad/angry/tired reuse the A1 faces, the other four faces and two situations are new (Batch 2) ----
+const FE = (label, file) => ({ label, src: `/curriculum/u4-feelings/${file}` });
+const F_HAPPY = FE("happy", "happy.png"), F_SAD = FE("sad", "sad.png"), F_ANGRY = FE("angry", "angry.png"), F_TIRED = FE("tired", "tired.png");
+const FN = (label, file) => ({ label, src: `/curriculum/a2-feelings/${file}` });
+const F_WORRIED = FN("worried", "worried.jpg"), F_EXCITED = FN("excited", "excited.jpg"), F_SCARED = FN("scared", "scared.jpg"), F_BORED = FN("bored", "bored.jpg");
+const OLD4 = [F_HAPPY, F_SAD, F_ANGRY, F_TIRED], NEW4 = [F_WORRIED, F_EXCITED, F_SCARED, F_BORED], FACES8 = [...OLD4, ...NEW4];
+const SIT_BIRTHDAY = { label: "it is my birthday", src: "/curriculum/objects/birthday-cake.png" }, SIT_TEST = FN("I have a test", "test.jpg"), SIT_LOST = FN("my toy is lost", "lost-toy.jpg");
+const SIT_GAME = { label: "I have a big game", src: SOCCER.src }, SIT_SICK = { label: "my friend is sick", src: "/curriculum/a2-jobs/sick.jpg" };
+const SITS5 = [SIT_BIRTHDAY, SIT_TEST, SIT_LOST, SIT_GAME, SIT_SICK];
+const HOWQ = "How do you feel?", WHYQ = "How do you feel? Why?";
+const FEELDICE = { type: "dice", dice: [{ name: "Feeling", items: FACES8 }, { name: "Because", items: SITS5 }], size: 104 };
+const ADVICEWORDS = [{ label: "rest" }, { label: "study" }, { label: "talk to a friend" }, { label: "ask the teacher" }, { label: "relax" }];
+const ADVDICE = { type: "dice", dice: [{ name: "Problem", items: [F_TIRED, SIT_TEST, SIT_LOST, SIT_SICK, F_WORRIED] }, { name: "Advice", items: ADVICEWORDS }], size: 104 };
+// Advice Desk: a problem and three advice cards; the right card is at `answer`
+const ADV = (label, src, text, options, answer) => ({ type: "help", problem: { label, src, text }, options: options.map((l) => ({ label: l })), answer, said: options[answer] });
+const ADV_TIRED = ADV("tired", F_TIRED.src, "I'm tired.", ["You should play all night.", "You should rest.", "You should run a lot."], 1);
+const ADV_TEST = ADV("test", SIT_TEST.src, "I have a test tomorrow.", ["You should study.", "You should watch TV all day.", "You should throw the book."], 0);
+const ADV_LOST = ADV("lost toy", SIT_LOST.src, "My toy is lost.", ["You should shout.", "You should sleep.", "You should look for it."], 2);
+const ADV_SICK = ADV("sick friend", SIT_SICK.src, "My friend is sick.", ["You should run away.", "You should help your friend.", "You should take his toy."], 1);
+const ADV_GAME = ADV("worried", F_WORRIED.src, "I'm nervous about my game.", ["You should stay in bed.", "You should stop playing.", "You should practice."], 2);
+const ADVQ = [["👀", "Look at the problem."], ["🗣️", "Say good advice."]];
+const READ_FEEL = { ...READ_ALOUD, heading: "Read Your Feelings" };
+const CLUEQ_FEEL = [["👀", "Read the clue."], ["🗣️", "Guess the feeling."]];
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -1935,72 +1959,219 @@ export const SOAR_A2_LESSONS = {
     ],
   },
 
+  // ---------- Unit 9: How Do You Feel? ----------
   "9-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Lesson 1", title: "Feelings Words! 😊", subtitle: "Identify common emotions and say how you feel." },
-      { type: "chips", stage: "Getting Ready", heading: "Feelings", subheading: "New words for this unit", items: ["happy", "sad", "angry", "worried", "scared", "excited", "tired", "bored", "nervous", "surprised"] },
-      { type: "message", stage: "Taking Off", heading: "How Do You Feel?", subheading: "I am / I feel + emotion", lines: ["I am *happy*.", "I feel *sad*.", "I'm *worried*."] },
-      { type: "message", stage: "Ask and Answer", heading: "How Do You Feel?", subheading: "Ask a friend", lines: ["\"How do you feel?\"", "\"I feel *excited*.\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Emotion Theater", subheading: "Act it out, guess, then say a full sentence", turns: [{ who: "teacher", text: "(acts worried, without speaking)" }, { who: "student", text: "Are you worried?" }, { who: "teacher", text: "Yes! I feel worried." }, { who: "student", text: "You are worried." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Say how you feel today, and why", line: "Today, I feel ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Feelings Words!", caption: "Today, I feel excited. I feel happy and a little tired too." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 9, title: "Feelings Words!", subtitle: "Name more feelings and say how you feel." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "spin", part: "A", stage: "Feeling Wheel", heading: "Feeling Wheel", items: OLD4, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say how you feel."]], guide: "I feel ___." },
+
+      // ---- Part B: four new feelings (5 min) ----
+      { type: "strip", part: "B", stage: "Four New Feelings", heading: "Four New Feelings", numbered: false, size: 100, items: NEW4, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Four New Feelings", heading: "How Do You Feel?", lines: [HOWQ, "I feel *worried*."], instruction: REPEAT_SENT },
+      { ...one(F_WORRIED), part: "B", stage: "Four New Feelings", heading: "How Do You Feel?", question: HOWQ, instruction: LISTEN_ANSWER, guide: "I feel ___." },
+      { ...one(F_EXCITED), part: "B", stage: "Four New Feelings", heading: "How Do You Feel? 2", question: HOWQ, instruction: LISTEN_ANSWER, guide: "I feel ___." },
+      { ...one(F_SCARED), part: "B", stage: "Four New Feelings", heading: "How Do You Feel? 3", question: HOWQ, instruction: LISTEN_ANSWER, guide: "I feel ___." },
+      { ...one(F_BORED), part: "B", stage: "Four New Feelings", heading: "How Do You Feel? 4", question: HOWQ, instruction: LISTEN_ANSWER, guide: "I feel ___." },
+      { type: "strip", part: "B", stage: "Eight Feelings", heading: "Eight Feelings", numbered: false, size: 64, items: FACES8, instruction: REPEAT_WORDS },
+
+      // ---- Part C: the games (13 min) ----
+      { type: "spin", part: "C", stage: "Feeling Wheel", heading: "Feeling Wheel 2", items: FACES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say how you feel."]], guide: "I feel ___." },
+      { type: "spin", part: "C", stage: "Feeling Wheel", heading: "Feeling Wheel 3", items: FACES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say how you feel."]], guide: "I feel ___." },
+      { type: "peek", part: "C", stage: "Mystery Face", heading: "Mystery Face", item: F_EXCITED, reveal: "I feel excited!", question: HOWQ, instruction: LOOK_SAY("Guess the feeling."), guide: "I think I feel ___." },
+      { type: "peek", part: "C", stage: "Mystery Face", heading: "Mystery Face 2", item: F_SCARED, reveal: "I feel scared!", question: HOWQ, instruction: LOOK_SAY("Guess the feeling."), guide: "I think I feel ___." },
+      { type: "peek", part: "C", stage: "Mystery Face", heading: "Mystery Face 3", item: F_BORED, reveal: "I feel bored!", question: HOWQ, instruction: LOOK_SAY("Guess the feeling."), guide: "I think I feel ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: NEW4, instruction: [["👀", "Look at the faces."], ["🗣️", "Say the feeling that went away."]], guide: "The ___ face is missing." },
+      { type: "dialogue", part: "C", stage: "Emotion Theater", heading: "Emotion Theater", turns: [{ who: "teacher", text: "(The teacher shows a feeling with a face, without speaking.)" }], instruction: [["👀", "Look at the teacher."], ["🗣️", "Ask what the teacher feels."]], guide: "Are you ___?" },
+      { type: "dialogue", part: "C", stage: "Emotion Theater", heading: "Emotion Theater 2", turns: [{ who: "teacher", text: "(The teacher shows a different feeling, without speaking.)" }], instruction: [["👀", "Look at the teacher."], ["🗣️", "Ask what the teacher feels."]], guide: "Are you ___?" },
+      { type: "sprint", part: "C", stage: "Feeling Sprint", heading: "Feeling Sprint", items: FACES8, seconds: 45, instruction: LOOK_SAY("Say how you feel. Be fast!"), guide: "I feel ___." },
+
+      // ---- Part D: my feelings (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Feelings", heading: "How Do You Feel Today?", turns: [{ who: "teacher", text: "How do you feel today?" }], instruction: LISTEN_ANSWER, guide: "Today, I feel ___." },
+      { ...TYPE2("Today, I feel ___. I feel ___, too."), part: "D", stage: "Type It!", heading: "Type Your Feelings" },
+      READ_FEEL,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can name eight feelings and say how you feel." },
     ],
   },
   "9-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Lesson 2", title: "Why Do You Feel That Way?", subtitle: "Explain feelings using because." },
-      { type: "chips", stage: "Getting Ready", heading: "New Words", subheading: "Review feelings + these", items: ["test", "birthday", "homework", "game", "friend", "mistake", "gift", "surprise", "problem"] },
-      { type: "message", stage: "Taking Off", heading: "Why? Because…", subheading: "Feeling + because + reason", lines: ["I'm happy *because* it's my birthday.", "I'm sad *because* my friend is away.", "I'm worried *because* I have a test."] },
-      { type: "message", stage: "Match the Feeling & Reason", heading: "Match the Feeling & Reason", subheading: "Pair each feeling with a reason", lines: ["I'm excited *because* I have a game."] },
-      { type: "dialogue", stage: "Flight Log", heading: "What Happened?", subheading: "React to a situation with a feeling and a reason", turns: [{ who: "teacher", text: "You have a big test tomorrow. How do you feel? Why?" }, { who: "student", text: "I'm worried because I have a test." }, { who: "teacher", text: "You got a gift! How do you feel?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Say a feeling and a reason", line: "I feel ___ because ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Why Do You Feel That Way?", caption: "I'm worried because I have a test. I'm excited because I have a game." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 9, title: "Why Do You Feel That Way?", subtitle: "Say how you feel and why, with because." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Feeling Wheel", items: FACES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say how you feel."]], guide: "I feel ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Today", turns: [{ who: "teacher", text: HOWQ }], instruction: LISTEN_ANSWER, guide: "I feel ___." },
+
+      // ---- Part B: reasons (5 min) ----
+      { type: "strip", part: "B", stage: "Reasons", heading: "Five Reasons", numbered: false, size: 84, items: SITS5, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Reasons", heading: "Because", lines: ["I feel *happy* because it is my birthday.", "I feel *worried* because I have a test."], instruction: REPEAT_SENT },
+      { ...one(SIT_BIRTHDAY), part: "B", stage: "Reasons", heading: "Why?", question: WHYQ, instruction: LISTEN_ANSWER, guide: "I feel ___ because ___." },
+      { ...one(SIT_TEST), part: "B", stage: "Reasons", heading: "Why? 2", question: WHYQ, instruction: LISTEN_ANSWER, guide: "I feel ___ because ___." },
+      { ...one(SIT_LOST), part: "B", stage: "Reasons", heading: "Why? 3", question: WHYQ, instruction: LISTEN_ANSWER, guide: "I feel ___ because ___." },
+      { ...one(SIT_SICK), part: "B", stage: "Reasons", heading: "Why? 4", question: WHYQ, instruction: LISTEN_ANSWER, guide: "I feel ___ because ___." },
+
+      // ---- Part C: feeling dice and games (13 min) ----
+      { ...FEELDICE, part: "C", stage: "Feeling Dice", heading: "Feeling Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { ...FEELDICE, part: "C", stage: "Feeling Dice", heading: "Feeling Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { ...FEELDICE, part: "C", stage: "Feeling Dice", heading: "Feeling Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { ...FEELDICE, part: "C", stage: "Feeling Dice", heading: "Feeling Dice 4", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { ...FEELDICE, part: "C", stage: "Feeling Dice", heading: "Feeling Dice 5", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { type: "peek", part: "C", stage: "Guess the Feeling", heading: "Guess the Feeling", item: F_EXCITED, reveal: "I feel excited!", question: "It is my birthday tomorrow!", instruction: CLUEQ_FEEL, guide: "You feel ___." },
+      { type: "peek", part: "C", stage: "Guess the Feeling", heading: "Guess the Feeling 2", item: F_WORRIED, reveal: "I feel worried.", question: "I have a big test.", instruction: CLUEQ_FEEL, guide: "You feel ___." },
+      { type: "peek", part: "C", stage: "Guess the Feeling", heading: "Guess the Feeling 3", item: F_SAD, reveal: "I feel sad.", question: "My toy is lost.", instruction: CLUEQ_FEEL, guide: "You feel ___." },
+      { type: "dialogue", part: "C", stage: "What Happened?", heading: "What Happened?", turns: [{ who: "teacher", text: "You have a big game tomorrow. How do you feel? Why?" }], instruction: LISTEN_ANSWER, guide: "I feel ___ because ___." },
+      { type: "dialogue", part: "C", stage: "What Happened?", heading: "What Happened? 2", turns: [{ who: "teacher", text: "Your best friend is sick. How do you feel? Why?" }], instruction: LISTEN_ANSWER, guide: "I feel ___ because ___." },
+      { type: "sprint", part: "C", stage: "Why Sprint", heading: "Why Sprint", items: SITS5, seconds: 45, instruction: LOOK_SAY("Say how you feel and why. Be fast!"), guide: "I feel ___ because ___." },
+
+      // ---- Part D: my reasons (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Reasons", heading: "A Happy Time", turns: [{ who: "teacher", text: "Tell me about a time you feel happy. Why?" }], instruction: LISTEN_ANSWER, guide: "I feel happy because ___." },
+      { ...TYPE2("I feel ___ because ___."), part: "D", stage: "Type It!", heading: "Type Your Reason" },
+      READ_FEEL,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say how you feel and why, with because." },
     ],
   },
   "9-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Lesson 3", title: "What Should You Do?", subtitle: "Give simple advice with should and shouldn't." },
-      { type: "chips", stage: "Getting Ready", heading: "Advice Words", subheading: "New words for this unit", items: ["problem", "help", "talk", "rest", "study", "practice", "ask", "tell", "try", "relax"] },
-      { type: "message", stage: "Taking Off", heading: "Should / Shouldn't", subheading: "Give advice", lines: ["You *should* study.", "You *should* ask your teacher.", "You *shouldn't* worry."] },
-      { type: "message", stage: "Advice Match", heading: "Advice Match", subheading: "Match a problem to good advice", lines: ["\"What should I do?\" → \"You should get some rest.\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Advice Hotline", subheading: "Answer the call and give advice", turns: [{ who: "teacher", text: "Hello! I have too much homework. What should I do?" }, { who: "student", text: "You should study a little every day. You shouldn't worry." }, { who: "teacher", text: "I'm nervous about my test!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Give advice for a problem", line: "You should ___. You shouldn't ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "What Should You Do?", caption: "You should study and ask your teacher. You shouldn't worry so much." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 9, title: "What Should You Do?", subtitle: "Give simple advice with should and shouldn't." },
+
+      // ---- Part A: review (3 min) ----
+      { ...FEELDICE, part: "A", stage: "Review", heading: "Feeling Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { type: "dialogue", part: "A", stage: "Review", heading: "A Problem", turns: [{ who: "teacher", text: "I have a problem. I'm tired and worried. How do I feel?" }], instruction: LISTEN_ANSWER, guide: "You feel ___." },
+
+      // ---- Part B: advice (5 min) ----
+      { type: "chips", part: "B", stage: "Advice Words", heading: "Advice Words", items: ["rest", "study", "talk to a friend", "ask the teacher"], instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Advice", heading: "Should", lines: ["I'm tired. You *should* rest.", "I have a test. You *should* study."], instruction: REPEAT_SENT },
+      { type: "message", part: "B", stage: "Advice", heading: "Shouldn't", lines: ["I'm worried. You *should* talk to a friend.", "You *shouldn't* worry."], instruction: REPEAT_SENT },
+      { ...one(F_TIRED), part: "B", stage: "Advice", heading: "What Should I Do?", question: "I'm tired. What should I do?", instruction: LISTEN_ANSWER, guide: "You should ___." },
+      { ...one(SIT_TEST), part: "B", stage: "Advice", heading: "What Should I Do? 2", question: "I have a test. What should I do?", instruction: LISTEN_ANSWER, guide: "You should ___." },
+      { ...one(SIT_LOST), part: "B", stage: "Advice", heading: "What Should I Do? 3", question: "My toy is lost. What should I do?", instruction: LISTEN_ANSWER, guide: "You should ___." },
+
+      // ---- Part C: advice desk and games (13 min) ----
+      { ...ADV_TIRED, part: "C", stage: "Advice Desk", heading: "Advice Desk", instruction: ADVQ, guide: "You should ___." },
+      { ...ADV_TEST, part: "C", stage: "Advice Desk", heading: "Advice Desk 2", instruction: ADVQ, guide: "You should ___." },
+      { ...ADV_LOST, part: "C", stage: "Advice Desk", heading: "Advice Desk 3", instruction: ADVQ, guide: "You should ___." },
+      { ...ADV_SICK, part: "C", stage: "Advice Desk", heading: "Advice Desk 4", instruction: ADVQ, guide: "You should ___." },
+      { ...ADV_GAME, part: "C", stage: "Advice Desk", heading: "Advice Desk 5", instruction: ADVQ, guide: "You should ___." },
+      { ...ADVDICE, part: "C", stage: "Advice Dice", heading: "Advice Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Give the advice."]], guide: "You should ___." },
+      { ...ADVDICE, part: "C", stage: "Advice Dice", heading: "Advice Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Give the advice."]], guide: "You should ___." },
+      { ...ADVDICE, part: "C", stage: "Advice Dice", heading: "Advice Dice 3", instruction: [["👀", "Look at the dice."], ["🗣️", "Give the advice."]], guide: "You should ___." },
+      { ...ADVDICE, part: "C", stage: "Advice Dice", heading: "Advice Dice 4", instruction: [["👀", "Look at the dice."], ["🗣️", "Give the advice."]], guide: "You should ___." },
+      { type: "dialogue", part: "C", stage: "Advice Hotline", heading: "Advice Hotline", turns: [{ who: "teacher", text: "Hello! I have too much homework. What should I do?" }], instruction: LISTEN_ANSWER, guide: "You should ___." },
+      { type: "dialogue", part: "C", stage: "Advice Hotline", heading: "Advice Hotline 2", turns: [{ who: "teacher", text: "Hello! I'm nervous about my game. What should I do?" }], instruction: LISTEN_ANSWER, guide: "You should ___." },
+      { type: "sprint", part: "C", stage: "Advice Sprint", heading: "Advice Sprint", items: [F_TIRED, SIT_TEST, SIT_LOST, SIT_SICK, F_WORRIED], seconds: 45, instruction: LOOK_SAY("Give advice. Be fast!"), guide: "You should ___." },
+
+      // ---- Part D: my advice (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Advice", heading: "Give Me Advice", turns: [{ who: "teacher", text: "I am nervous about tomorrow. What should I do?" }], instruction: LISTEN_ANSWER, guide: "You should ___." },
+      { ...TYPE2("You should ___. You shouldn't ___."), part: "D", stage: "Type It!", heading: "Type Your Advice" },
+      { ...READ_ALOUD, heading: "Read Your Advice" },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can give simple advice with should and shouldn't." },
     ],
   },
   "9-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Lesson 4", title: "Let's Review!", subtitle: "Combine feelings, reasons, and advice." },
-      { type: "chips", stage: "Getting Ready", heading: "Feeling Speed Round", subheading: "Feelings + advice review", items: ["happy", "worried", "tired", "nervous", "should", "shouldn't", "because"] },
-      { type: "message", stage: "Taking Off", heading: "Why Do You Feel That Way?", subheading: "Feeling + reason", lines: ["I'm worried *because* I have a test."] },
-      { type: "message", stage: "Give Me Advice!", heading: "Give Me Advice!", subheading: "React with advice", lines: ["\"I'm tired.\" → \"You should get some rest.\""] },
-      { type: "dialogue", stage: "Flight Log", heading: "Advice Mistake Show", subheading: "The advice is bad — correct it and explain why", turns: [{ who: "teacher", text: "I'm tired. You should play video games all night!" }, { who: "student", text: "No! You should get some rest, because you're tired." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Feeling + reason + advice", line: "I feel ___ because ___. I should ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "I feel tired because I studied all night. I should get some rest." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 9, title: "Let's Review!", subtitle: "Play the feelings, reasons and advice games." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: OLD4, instruction: [["👀", "Look at the faces."], ["🗣️", "Say the feeling that went away."]], guide: "The ___ face is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Feeling Wheel", items: FACES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say how you feel."]], guide: "I feel ___." },
+
+      // ---- Part B: feeling dice (5 min) ----
+      { ...FEELDICE, part: "B", stage: "Feeling Dice", heading: "Feeling Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { ...FEELDICE, part: "B", stage: "Feeling Dice", heading: "Feeling Dice 2", instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "I feel ___ because ___." },
+      { ...FEELDICE, part: "B", stage: "Feeling Dice", heading: "Feeling Dice 3", instruction: NO_HELP("Say the sentence.") },
+
+      // ---- Part C: advice and games (13 min) ----
+      { ...ADV_GAME, part: "C", stage: "Advice Desk", heading: "Advice Desk", instruction: ADVQ, guide: "You should ___." },
+      { ...ADV_SICK, part: "C", stage: "Advice Desk", heading: "Advice Desk 2", instruction: ADVQ, guide: "You should ___." },
+      { ...ADV_TEST, part: "C", stage: "Advice Desk", heading: "Advice Desk 3", instruction: NO_HELP("Say good advice.") },
+      { ...ADVDICE, part: "C", stage: "Advice Dice", heading: "Advice Dice", instruction: [["👀", "Look at the dice."], ["🗣️", "Give the advice."]], guide: "You should ___." },
+      { ...ADVDICE, part: "C", stage: "Advice Dice", heading: "Advice Dice 2", instruction: NO_HELP("Give the advice.") },
+      { type: "peek", part: "C", stage: "Guess the Feeling", heading: "Guess the Feeling", item: F_ANGRY, reveal: "I feel angry.", question: "My brother broke my toy.", instruction: CLUEQ_FEEL, guide: "You feel ___." },
+      { type: "peek", part: "C", stage: "Guess the Feeling", heading: "Guess the Feeling 2", item: F_BORED, reveal: "I feel bored.", question: "There is nothing to do.", instruction: CLUEQ_FEEL, guide: "You feel ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: [...FACES8, ...SITS5], seconds: 45, instruction: LOOK_SAY("Say how you feel and why. Be fast!") },
+      { type: "dialogue", part: "C", stage: "Feeling, Reason, Advice", heading: "Feeling, Reason, Advice", turns: [{ who: "teacher", text: "I'm tired because I stayed up late. Tell me how I feel, and give me advice." }], instruction: NO_HELP("Say the feeling, the reason and the advice.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about feelings." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("I feel ___ because ___. I should ___."), part: "D", stage: "Type It!", heading: "Type Your Feelings" },
+      READ_FEEL,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about feelings, reasons and advice." },
     ],
   },
   "9-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Use feelings, reasons, and advice independently." },
-      { type: "message", stage: "Mystery Feeling", heading: "Mystery Feeling", subheading: "Look at a situation — how does the person feel?", lines: ["Look at the picture. How does this person feel?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Friend in Trouble", subheading: "Identify the feeling, explain the reason, give advice", turns: [{ who: "teacher", text: "Your friend is nervous because she has a test tomorrow." }, { who: "student", text: "She is nervous because she has a test. She should study and relax." }] },
-      { type: "message", stage: "What Happened?", heading: "What Happened?", subheading: "Create a short explanation", lines: ["He looks *excited* because *he got a new bike*."] },
-      { type: "message", stage: "My Problem, My Solution", heading: "My Problem, My Solution", subheading: "Talk about an everyday problem", lines: ["I'm tired *because* I stayed up late. I should *go to bed early*."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "A time you felt worried and what helped", line: "I felt worried because ___. I ___ and I felt better." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "She is nervous because she has a test. She should study and get some rest." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 9, title: "Show What You Know!", subtitle: "Talk about feelings and give advice, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Feelings", turns: [{ who: "teacher", text: "Tell me about feelings. How do you feel today?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "What Makes You Happy?", turns: [{ who: "teacher", text: "What makes you happy? What makes you worried?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "What Helps?", turns: [{ who: "teacher", text: "What helps you when you feel sad or angry?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: friend in trouble (8 min) ----
+      { ...ADV_TIRED, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_LOST, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 2", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_GAME, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 3", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_TIRED, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 4", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_LOST, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 5", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_GAME, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 6", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_TIRED, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 7", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_LOST, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 8", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...ADV_GAME, part: "B", stage: "Friend in Trouble", heading: "Friend in Trouble 9", instruction: NO_HELP("Say the feeling and good advice.") },
+      { ...FEELDICE, part: "B", stage: "Feeling Dice", heading: "Feeling Dice", instruction: NO_HELP("Say the sentence.") },
+      { ...FEELDICE, part: "B", stage: "Feeling Dice", heading: "Feeling Dice 2", instruction: NO_HELP("Say the sentence.") },
+      { ...ADVDICE, part: "B", stage: "Advice Dice", heading: "Advice Dice", instruction: NO_HELP("Give the advice.") },
+      { type: "dialogue", part: "B", stage: "My Problem", heading: "My Problem, My Solution", turns: [{ who: "teacher", text: "Tell me about a problem you had. How did you feel? What should you do?" }], instruction: LISTEN_ANSWER },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: FACES8, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say how you feel. Be fast!"]] },
+
+      // ---- Part C: a real talk (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "A Good Day", turns: [{ who: "teacher", text: "Tell me about a day you felt very happy. Why?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Advice for a Friend", turns: [{ who: "teacher", text: "Your friend is worried about a test. Give your friend advice." }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Yesterday, I had a *test*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["I was *worried*, but I studied."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["After that, I went home. I was *happy*!"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Feelings...", lines: ["Write about a time you had a feeling, and why."], instruction: [["⌨️", "Type four or five sentences in the chat."]] },
+      { ...READ_FEEL, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 9 Complete!", title: "Unit 9 Complete!", see: "Great job!", recap: "You can talk about feelings, reasons and advice, in your own words." },
     ],
   },
   "9-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 9 · Test", title: "Unit 9 Test", subtitle: "How Do You Feel? — feelings, reasons, and advice independently." },
-      { type: "chips", stage: "Part 1: Feelings", heading: "Name the Feelings", subheading: "8-10 emotions", items: ["happy", "sad", "worried", "excited", "nervous", "tired"] },
-      { type: "dialogue", stage: "Part 2-3: How & Why", heading: "How Do You Feel? Why?", subheading: "Answer with a feeling and a reason", turns: [{ who: "teacher", text: "How do you feel? Why?" }, { who: "student", text: "I'm worried because I have a test tomorrow." }] },
-      { type: "message", stage: "Part 4: Advice", heading: "What Should You Do?", subheading: "Give advice for simple problems", lines: ["\"I'm tired.\" → \"You should get some rest.\""] },
-      { type: "dialogue", stage: "Part 5: Problem-Solving ⭐", heading: "Problem-Solving Speaking", subheading: "Identify the feeling, explain the reason, give advice", turns: [{ who: "teacher", text: "My friend is sad because she lost her toy." }, { who: "student", text: "She is sad because she lost her toy. She should look for it." }] },
-      { type: "postcard", stage: "Part 6: Short Writing", heading: "Feeling, Reason, Advice", subheading: "4-5 sentences", line: "I am ___ because ___. I should ___. I should also ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 9 Complete!", cardTitle: "Unit 9 Test", caption: "I am worried because I have a test. I should study. I should ask my teacher for help." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 9, title: "Unit 9 Test", subtitle: "Show what you can say about feelings!" },
+
+      // ---- Part A: feelings ----
+      { ...one(F_WORRIED), part: "A", stage: "Feelings", heading: "How Do You Feel?", question: HOWQ, instruction: LISTEN_ANSWER },
+      { ...one(F_EXCITED), part: "A", stage: "Feelings", heading: "How Do You Feel? 2", question: HOWQ, instruction: LISTEN_ANSWER },
+      { ...one(F_SCARED), part: "A", stage: "Feelings", heading: "How Do You Feel? 3", question: HOWQ, instruction: LISTEN_ANSWER },
+      { ...one(F_BORED), part: "A", stage: "Feelings", heading: "How Do You Feel? 4", question: HOWQ, instruction: LISTEN_ANSWER },
+      { ...one(F_HAPPY), part: "A", stage: "Feelings", heading: "How Do You Feel? 5", question: HOWQ, instruction: LISTEN_ANSWER },
+      { ...one(F_TIRED), part: "A", stage: "Feelings", heading: "How Do You Feel? 6", question: HOWQ, instruction: LISTEN_ANSWER },
+
+      // ---- Part B: feeling and reason ----
+      { ...one(SIT_BIRTHDAY), part: "B", stage: "Feeling and Reason", heading: "Why?", question: "How do you feel? Why? Say two sentences.", instruction: LISTEN_ANSWER },
+      { ...one(SIT_TEST), part: "B", stage: "Feeling and Reason", heading: "Why? 2", question: "How do you feel? Why? Say two sentences.", instruction: LISTEN_ANSWER },
+      { ...one(SIT_LOST), part: "B", stage: "Feeling and Reason", heading: "Why? 3", question: "How do you feel? Why? Say two sentences.", instruction: LISTEN_ANSWER },
+
+      // ---- Part C: advice ----
+      { ...ADV_SICK, part: "C", stage: "Advice", heading: "Give Advice", instruction: ADVQ },
+      { ...ADV_TEST, part: "C", stage: "Advice", heading: "Give Advice 2", instruction: ADVQ },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Feelings", turns: [{ who: "teacher", text: "How do you feel today? Why?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "A Friend in Trouble", turns: [{ who: "teacher", text: "My friend is sad because she lost her toy. What should she do?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say why and give advice."]] },
+      { type: "score", stage: "My Unit 9 Score!", heading: "My Unit 9 Score!", rows: [["Feelings", "/ 6"], ["Feeling and reason", "/ 6"], ["Advice", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 9 Complete!", title: "Unit 9 Complete!", see: "On to Unit 10!", recap: "You can talk about feelings, reasons and advice." },
     ],
   },
+
   "10-1": {
     slides: [
       { type: "title", stage: "A2 · Soar", eyebrow: "Unit 10 · Lesson 1", title: "My Chores! 🧹", subtitle: "Name chores and say what you have to do at home." },

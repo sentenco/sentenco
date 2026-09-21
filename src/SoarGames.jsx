@@ -436,12 +436,14 @@ export function HelpBlock({ heading, problem, options = [], answer = 0, said, si
         </div>
         <div className="help-side">
           <div className="strip">
-            {options.map((o, i) => (
-              <button key={i} type="button" className={`help-opt ${chosen === i ? (i === answer ? "is-right" : "is-wrong") : ""}`} onClick={() => setChosen(i)}>
-                <SoarPic src={o.src} label={o.label} size={size} zoom="icon" />
-                <span className="strip-label">{labels ? o.label : "\u00A0"}</span>
-              </button>
-            ))}
+            {options.map((o, i) => (o.src
+              ? (
+                <button key={i} type="button" className={`help-opt ${chosen === i ? (i === answer ? "is-right" : "is-wrong") : ""}`} onClick={() => setChosen(i)}>
+                  <SoarPic src={o.src} label={o.label} size={size} zoom="icon" />
+                  <span className="strip-label">{labels ? o.label : "\u00A0"}</span>
+                </button>
+              )
+              : <button key={i} type="button" className={`help-opt help-word ${chosen === i ? (i === answer ? "is-right" : "is-wrong") : ""}`} onClick={() => setChosen(i)}>{o.label}</button>))}
           </div>
           {chosen !== null && (ok ? <div className="game-answer game-answer--sm">{said}</div> : <div className="game-note game-note--big">Not quite. Try again!</div>)}
         </div>
@@ -577,4 +579,6 @@ export const gameStyles = `
 .order-card:hover { background: #fff; }
 .order-card.is-placed { background: #fff; box-shadow: 0 0 0 4px #22A67E, 0 4px 0 rgba(27,42,74,0.1); }
 .order-card.is-shake { animation: carbump 0.4s ease; box-shadow: 0 0 0 3px #D9534F; }
+
+.help-word { min-width: 138px; max-width: 168px; padding: 12px 12px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; line-height: 1.15; color: var(--navy); text-align: center; align-self: stretch; justify-content: center; }
 `;
