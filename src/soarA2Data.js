@@ -20,6 +20,18 @@ const LUNCH = SP("lunch", "lunch.jpg"), HOMEWORK = SP("homework", "homework.jpg"
 const LISTEN_ANSWER = [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]];
 const NO_HELP = (t) => [["🤔", "No help this time!"], ["🗣️", t]];
 const pair = (a, b) => ({ type: "strip", numbered: false, size: 108, items: [a, b] });
+
+// ---- Unit 2 (Yesterday & Today) pieces; pictures reuse A1 / A2 files by path ----
+const PARK = { label: "park", src: "/curriculum/u11-l5/playground.jpg" }, SCHOOL = { label: "school", src: "/curriculum/u12-routines/go-to-school.jpg" };
+const PIZZA = { label: "pizza", src: "/curriculum/u8-l1/pizza.avif" }, ICECREAM = { label: "ice cream", src: "/curriculum/u1-l3/icecream.jpg" };
+const DOG = { label: "dog", src: "/curriculum/u9-l1/dog.jpg" }, CAT = { label: "cat", src: "/curriculum/u9-l1/cat.jpg" }, ELEPHANT = { label: "elephant", src: "/curriculum/u9-l1/elephant.jpg" };
+const FRIEND = { label: "friend", src: "/curriculum/u1-l1/wavingkid.jpg" }, BREAKFAST = { label: "breakfast", src: "/curriculum/u12-routines/eat.jpg" };
+const CAKE = { label: "cake", src: "/curriculum/objects/birthday-cake.png" }, PICTURE = { label: "picture", src: "/curriculum/a2-school/art.jpg" };
+const SAY_PAST = [["👀", "Look at the word."], ["🗣️", "Say the word for yesterday."]];
+const SAY_NOW = [["👀", "Look at the word."], ["🗣️", "Say the word for today."]];
+const LISTEN_REPEAT = [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]];
+const TYPE3 = { type: "postcard", line: "Yesterday, I ___. I ___. I ___.", instruction: [["⌨️", "Type three sentences in the chat."]] };
+const HOME_PIC = HOME;
 const one = (item) => ({ type: "strip", numbered: false, labels: false, size: 120, items: [item] });
 
 export const SOAR_A2_LESSONS = {
@@ -287,69 +299,202 @@ export const SOAR_A2_LESSONS = {
 
   // ---------- Unit 2: Yesterday & Today ----------
   "2-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 2 · Lesson 1", title: "Irregular Surprises!", subtitle: "Use went, ate, and saw to talk about recent events." },
-      { type: "message", stage: "Getting Ready", heading: "What Did You Do Yesterday?", subheading: "Let's find out!", lines: ["What did you do *yesterday*?"] },
-      { type: "table", stage: "Taking Off", heading: "Past or Present?", subheading: "Three verbs that change completely in the past", rows: [["go", "went"], ["eat", "ate"], ["see", "saw"]] },
-      { type: "message", stage: "What Happened?", heading: "What Happened?", subheading: "🏫 School · 🍕 Pizza · 🐶 Dog", lines: ["I *went* to school.", "I *ate* pizza.", "I *saw* a dog."] },
-      { type: "dialogue", stage: "Flight Log", heading: "What Happened Yesterday?", subheading: "Build a funny yesterday story together", turns: [{ who: "teacher", text: "Yesterday, Tom went to the park." }, { who: "teacher", text: "What happened next?" }, { who: "student", text: "Then he saw a dog!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Recount", subheading: "What did you do yesterday? (3 sentences)", line: "Yesterday, I ___. I ___. I ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Yesterday", caption: "Yesterday, I went to school. I ate pizza. I saw my friend." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 2, title: "Irregular Surprises!", subtitle: "Use went, ate and saw to tell what happened." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Yesterday", turns: [{ who: "teacher", text: "What did you do yesterday?" }], instruction: LISTEN_ANSWER, guide: "Yesterday, I ___." },
+
+      // ---- Part B: today or yesterday? (5 min) ----
+      { type: "table", part: "B", stage: "Today or Yesterday?", heading: "Three Special Words", rows: [["go", "went"], ["eat", "ate"], ["see", "saw"]], instruction: [["👀", "Look at the words."], ["🗣️", "Say each pair."]] },
+      { type: "table", part: "B", stage: "Today or Yesterday?", heading: "Say the Word", rows: [["go", "?"], ["eat", "?"], ["see", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "B", stage: "Today or Yesterday?", heading: "Say the Word 2", rows: [["see", "?"], ["go", "?"], ["eat", "?"]], instruction: SAY_PAST },
+      { type: "message", part: "B", stage: "Today or Yesterday?", heading: "Today, Yesterday", lines: ["I *go* to school every day.", "Yesterday, I *went* to school."], instruction: LISTEN_REPEAT },
+      { type: "message", part: "B", stage: "Today or Yesterday?", heading: "Today, Yesterday 2", lines: ["I *eat* lunch every day.", "Yesterday, I *ate* pizza."], instruction: LISTEN_REPEAT },
+      { type: "message", part: "B", stage: "Today or Yesterday?", heading: "Today, Yesterday 3", lines: ["I *see* my friend every day.", "Yesterday, I *saw* my friend."], instruction: LISTEN_REPEAT },
+
+      // ---- Part C: what happened? and the story (13 min) ----
+      { ...one(SCHOOL), part: "C", stage: "What Happened?", heading: "What Happened?", question: "Yesterday, where did you go?", instruction: LISTEN_ANSWER, guide: "I went to ___." },
+      { ...one(PARK), part: "C", stage: "What Happened?", heading: "What Happened? 2", question: "Yesterday, where did you go?", instruction: LISTEN_ANSWER, guide: "I went to ___." },
+      { ...one(PIZZA), part: "C", stage: "What Happened?", heading: "What Happened? 3", question: "Yesterday, what did you eat?", instruction: LISTEN_ANSWER, guide: "I ate ___." },
+      { ...one(ICECREAM), part: "C", stage: "What Happened?", heading: "What Happened? 4", question: "Yesterday, what did you eat?", instruction: LISTEN_ANSWER, guide: "I ate ___." },
+      { ...one(DOG), part: "C", stage: "What Happened?", heading: "What Happened? 5", question: "Yesterday, what did you see?", instruction: LISTEN_ANSWER, guide: "I saw a ___." },
+      { ...one(ELEPHANT), part: "C", stage: "What Happened?", heading: "What Happened? 6", question: "Yesterday, what did you see?", instruction: LISTEN_ANSWER, guide: "I saw an ___." },
+      { type: "strip", part: "C", stage: "What Happened?", heading: "Mix It Up", numbered: false, labels: false, size: 100, items: [PARK, ICECREAM, ELEPHANT], instruction: [["👀", "Look at the pictures."], ["🗣️", "Say what happened yesterday."]], guide: "I went / I ate / I saw ___." },
+      { type: "strip", part: "C", stage: "What Happened Yesterday?", heading: "What Happened Yesterday?", numbered: false, size: 84, items: [PIZZA, DOG, ICECREAM, ELEPHANT], question: "Yesterday, Tom went to the park. What happened next?", instruction: LISTEN_ANSWER, guide: "Then, he ___." },
+      { type: "strip", part: "C", stage: "What Happened Yesterday?", heading: "What Happened Yesterday? 2", numbered: false, size: 84, items: [PIZZA, DOG, ICECREAM, ELEPHANT], question: "Then, Tom ate ice cream. What happened next?", instruction: LISTEN_ANSWER, guide: "After that, he ___." },
+      { type: "strip", part: "C", stage: "What Happened Yesterday?", heading: "What Happened Yesterday? 3", numbered: false, size: 84, items: [PIZZA, DOG, ICECREAM, ELEPHANT], question: "After that, Tom saw a dog. How did the day end?", instruction: LISTEN_ANSWER, guide: "Finally, he ___." },
+      { type: "dialogue", part: "C", stage: "What Happened Yesterday?", heading: "Tell the Story Again", turns: [{ who: "teacher", text: "Tell me the whole story about Tom." }], instruction: NO_HELP("Tell the whole story again.") },
+
+      // ---- Part D: my yesterday (4 min) ----
+      { type: "message", part: "D", stage: "My Yesterday", heading: "Listen to the Example", lines: ["Yesterday, I *went* to the park.", "I *ate* ice cream.", "I *saw* an elephant!"], instruction: LISTEN_REPEAT },
+      { type: "dialogue", part: "D", stage: "My Yesterday", heading: "Quick Story", turns: [{ who: "teacher", text: "What did you do yesterday?" }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE3, part: "D", stage: "Type It!", heading: "Type Your Yesterday" },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Yesterday", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can tell what happened yesterday with went, ate and saw." },
     ],
   },
   "2-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 2 · Lesson 2", title: "More Irregulars!", subtitle: "Use had, did, and made to talk about past activities." },
-      { type: "table", stage: "Getting Ready", heading: "Review", subheading: "go/eat/see in the past", rows: [["go", "went"], ["eat", "ate"], ["see", "saw"]] },
-      { type: "table", stage: "Taking Off", heading: "Meet the New Irregulars", subheading: "Three more verbs that change in the past", rows: [["have", "had"], ["do", "did"], ["make", "made"]] },
-      { type: "message", stage: "What Did You Do?", heading: "What Did You Do?", subheading: "📚 Homework · 🍳 Breakfast · 🎨 Picture", lines: ["I *did* my homework.", "I *had* breakfast.", "I *made* a picture."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Yesterday Reporter", subheading: "Report what someone did: morning, afternoon, evening", turns: [{ who: "teacher", text: "In the morning, he had breakfast." }, { who: "student", text: "In the afternoon, he made a cake." }, { who: "student", text: "In the evening, he did his homework." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Speed Round", subheading: "have → had, do → did, make → made — now reverse it!", line: "had → ___, did → ___, made → ___" },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "More Irregulars", caption: "I had breakfast. I did my homework. I made a picture." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 2, title: "More Irregulars!", subtitle: "Use had, did and made to tell what you did." },
+
+      // ---- Part A: review (4 min) ----
+      { type: "table", part: "A", stage: "Review", heading: "Say the Word", rows: [["go", "?"], ["eat", "?"], ["see", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Review", heading: "Say the Word 2", rows: [["eat", "?"], ["see", "?"], ["go", "?"]], instruction: SAY_PAST },
+      { type: "dialogue", part: "A", stage: "Review", heading: "Yesterday", turns: [{ who: "teacher", text: "What did you do yesterday?" }], instruction: LISTEN_ANSWER, guide: "Yesterday, I ___." },
+
+      // ---- Part B: three new words (5 min) ----
+      { type: "table", part: "B", stage: "Three New Words", heading: "Three New Words", rows: [["have", "had"], ["do", "did"], ["make", "made"]], instruction: [["👀", "Look at the words."], ["🗣️", "Say each pair."]] },
+      { type: "table", part: "B", stage: "Three New Words", heading: "Say the Word", rows: [["have", "?"], ["do", "?"], ["make", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "B", stage: "Three New Words", heading: "Say the Word 2", rows: [["make", "?"], ["have", "?"], ["do", "?"]], instruction: SAY_PAST },
+      { type: "message", part: "B", stage: "Three New Words", heading: "I Had, I Did, I Made", lines: ["I *had* breakfast.", "I *did* my homework.", "I *made* a picture."], instruction: LISTEN_REPEAT },
+
+      // ---- Part C: what did you do? and the reporter (13 min) ----
+      { ...one(BREAKFAST), part: "C", stage: "What Did You Do?", heading: "What Did You Do?", question: "What did you have this morning?", instruction: LISTEN_ANSWER, guide: "I had ___." },
+      { ...one(LUNCH), part: "C", stage: "What Did You Do?", heading: "What Did You Do? 2", question: "What did you have for lunch?", instruction: LISTEN_ANSWER, guide: "I had ___." },
+      { ...one(HOMEWORK), part: "C", stage: "What Did You Do?", heading: "What Did You Do? 3", question: "What did you do after school?", instruction: LISTEN_ANSWER, guide: "I did my ___." },
+      { ...one(PICTURE), part: "C", stage: "What Did You Do?", heading: "What Did You Do? 4", question: "What did you make in art class?", instruction: LISTEN_ANSWER, guide: "I made a ___." },
+      { ...one(CAKE), part: "C", stage: "What Did You Do?", heading: "What Did You Do? 5", question: "What did you make for the party?", instruction: LISTEN_ANSWER, guide: "I made a ___." },
+      { type: "strip", part: "C", stage: "What Did You Do?", heading: "Mix It Up", numbered: false, labels: false, size: 100, items: [BREAKFAST, HOMEWORK, PICTURE], instruction: NO_HELP("Say what you did."), },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "Yesterday Reporter", numbered: false, size: 100, active: 0, items: [{ ...BREAKFAST, label: "in the morning" }, { ...CAKE, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell what he did."]], guide: "In the morning, he ___." },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "Yesterday Reporter 2", numbered: false, size: 100, active: 1, items: [{ ...BREAKFAST, label: "in the morning" }, { ...CAKE, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell what he did."]], guide: "In the afternoon, he ___." },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "Yesterday Reporter 3", numbered: false, size: 100, active: 2, items: [{ ...BREAKFAST, label: "in the morning" }, { ...CAKE, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: [["👀", "Look at the day."], ["🗣️", "Tell what he did."]], guide: "In the evening, he ___." },
+      { type: "strip", part: "C", stage: "Yesterday Reporter", heading: "A New Day", numbered: false, size: 100, items: [{ ...PICTURE, label: "in the morning" }, { ...LUNCH, label: "in the afternoon" }, { ...HOMEWORK, label: "in the evening" }], instruction: NO_HELP("Tell the whole day.") },
+      { type: "dialogue", part: "C", stage: "Yesterday Reporter", heading: "Follow-Up Questions", turns: [{ who: "teacher", text: "What did he make? What did he have?" }], instruction: LISTEN_ANSWER, guide: "He made ___. He had ___." },
+      { type: "table", part: "C", stage: "Speed Round", heading: "Speed Round", heads: ["Yesterday", "Today"], rows: [["had", "?"], ["did", "?"], ["made", "?"]], instruction: [["👀", "Look at the word."], ["🗣️", "Say the word for today."]] },
+
+      // ---- Part D: three things (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Yesterday", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things you did yesterday." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE3, part: "D", stage: "Type It!", heading: "Type Your Yesterday" },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Yesterday", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can tell what you had, did and made yesterday." },
     ],
   },
   "2-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 2 · Lesson 3", title: "Yesterday's Story!", subtitle: "Connect irregular verbs to tell a short story about yesterday." },
-      { type: "table", stage: "Getting Ready", heading: "Irregular Verb Review", subheading: "Rapid-fire recall", rows: [["go", "went"], ["eat", "ate"], ["see", "saw"], ["have", "had"], ["do", "did"], ["make", "made"]] },
-      { type: "log", stage: "Taking Off", heading: "Put the Story Together", subheading: "Wake up → Eat breakfast → Go to school → See a friend", rows: ["First, I ___ breakfast.", "Then, I ___ to school.", "After that, I ___ my friend."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Story Telephone", subheading: "Add one event at a time, building a story together", turns: [{ who: "teacher", text: "Yesterday, Mia went to the park." }, { who: "student", text: "Yesterday, Mia went to the park. Then she saw a dog." }, { who: "teacher", text: "...and then she made a new friend!" }] },
-      { type: "message", stage: "My Yesterday", heading: "My Yesterday", subheading: "Tell a short story (4-5 sentences, 3+ irregular verbs)", lines: ["What was the most interesting thing you did *yesterday*?"] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Question", subheading: "One last thought", line: "The most interesting thing I did yesterday was ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Yesterday's Story", caption: "First, I had breakfast. Then, I went to school. After that, I saw my friend." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 2, title: "Yesterday's Story!", subtitle: "Join your sentences into a short story." },
+
+      // ---- Part A: verb review (4 min) ----
+      { type: "table", part: "A", stage: "Review", heading: "Say the Word", rows: [["go", "?"], ["eat", "?"], ["see", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Review", heading: "Say the Word 2", rows: [["have", "?"], ["do", "?"], ["make", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Review", heading: "Say the Word 3", rows: [["make", "?"], ["see", "?"], ["do", "?"]], instruction: SAY_PAST },
+
+      // ---- Part B: put the story together (5 min) ----
+      { type: "chips", part: "B", stage: "Put the Story Together", heading: "Four Little Words", items: ["First", "Then", "After that", "Finally"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the four words."]] },
+      { type: "strip", part: "B", stage: "Put the Story Together", heading: "Listen to the Example", size: 100, items: [BREAKFAST, SCHOOL, FRIEND], sentence: "*First*, I had breakfast. *Then*, I went to school. *After that*, I saw my friend.", instruction: LISTEN_REPEAT },
+      { type: "strip", part: "B", stage: "Put the Story Together", heading: "Put the Story Together", size: 100, items: [BREAKFAST, SCHOOL, LUNCH, FRIEND], frame: ["First, I ___. Then, I ___.", "After that, I ___. Finally, I ___."], instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the story in order."]] },
+      { type: "strip", part: "B", stage: "Put the Story Together", heading: "Put the Story Together 2", size: 100, items: [PARK, PIZZA, CAT, PICTURE], frame: ["First, I ___. Then, I ___.", "After that, I ___. Finally, I ___."], instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the story in order."]] },
+      { type: "strip", part: "B", stage: "Put the Story Together", heading: "Put the Story Together 3", size: 100, items: [HOMEWORK, CAKE, PARK, FRIEND], instruction: NO_HELP("Tell the story in order.") },
+
+      // ---- Part C: story telephone (9 min) ----
+      { type: "message", part: "C", stage: "Story Telephone", heading: "Story Telephone", lines: ["Yesterday, Mia went to the park."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "Then, she ___." },
+      { type: "message", part: "C", stage: "Story Telephone", heading: "Story Telephone 2", lines: ["Yesterday, Mia went to the park. Then she saw a dog."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "After that, she ___." },
+      { type: "message", part: "C", stage: "Story Telephone", heading: "Story Telephone 3", lines: ["Yesterday, Mia went to the park. Then she saw a dog. After that, she ate pizza."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "Finally, she ___." },
+      { type: "chips", part: "C", stage: "Story Telephone", heading: "The Whole Story", items: ["First", "Then", "After that", "Finally"], instruction: NO_HELP("Tell the whole story alone.") },
+      { type: "message", part: "C", stage: "Story Telephone", heading: "A New Story", lines: ["Yesterday, Tom went to school."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "Then, he ___." },
+      { type: "message", part: "C", stage: "Story Telephone", heading: "A New Story 2", lines: ["Yesterday, Tom went to school. Then he had lunch."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say it again and add a new event."]], guide: "After that, he ___." },
+      { type: "chips", part: "C", stage: "Story Telephone", heading: "The Whole Story 2", items: ["First", "Then", "After that", "Finally"], instruction: NO_HELP("Tell the whole story alone.") },
+
+      // ---- Part D: my yesterday (5 min) ----
+      { type: "dialogue", part: "D", stage: "My Yesterday", heading: "My Yesterday", turns: [{ who: "teacher", text: "Tell me about your yesterday. Use three special words." }], instruction: NO_HELP("Say four or five sentences.") },
+      { ...TYPE3, part: "D", stage: "Type It!", heading: "Type Your Yesterday" },
+      { type: "dialogue", part: "D", stage: "Exit Question", heading: "The Best Part", turns: [{ who: "teacher", text: "What was the most interesting thing you did yesterday?" }], instruction: LISTEN_ANSWER, guide: "The most interesting thing was ___." },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can tell a short story about yesterday with First, Then, After that and Finally." },
     ],
   },
   "2-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 2 · Lesson 4", title: "Let's Review!", subtitle: "Review all irregular verbs and connect events into a clear recount." },
-      { type: "table", stage: "Memory Challenge", heading: "Give the Past Form", subheading: "go, eat, see, have, do, make", rows: [["go", "went"], ["eat", "ate"], ["see", "saw"], ["have", "had"], ["do", "did"], ["make", "made"]] },
-      { type: "dialogue", stage: "Fix the Story", heading: "Fix the Story", subheading: "Catch the mistake and correct it", turns: [{ who: "teacher", text: "Yesterday, I go to school." }, { who: "student", text: "No! You went to school." }, { who: "teacher", text: "I eat pizza." }, { who: "student", text: "You ate pizza!" }] },
-      { type: "log", stage: "Connect the Events", heading: "Connect the Events", subheading: "I went to the park. I saw my friend. I ate ice cream.", rows: ["First, I ___", "Then, I ___", "After that, ___"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Past Tense Detective", subheading: "Find and correct the mistakes, then retell the story", turns: [{ who: "teacher", text: "Yesterday, I go to school. I eat lunch." }, { who: "student", text: "I went to school. I ate lunch. I saw my friend." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Review", subheading: "Tell me three things you did yesterday", line: "I ___. I ___. I ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "Yesterday, I went to school. I ate lunch. I saw my friend." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 2, title: "Let's Review!", subtitle: "Fix the story and tell it right." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "table", part: "A", stage: "Memory Challenge", heading: "Memory Challenge", rows: [["go", "?"], ["eat", "?"], ["see", "?"], ["have", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Memory Challenge", heading: "Memory Challenge 2", rows: [["do", "?"], ["make", "?"], ["eat", "?"], ["go", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Memory Challenge", heading: "Now Backwards", heads: ["Yesterday", "Today"], rows: [["went", "?"], ["saw", "?"], ["made", "?"], ["ate", "?"]], instruction: [["👀", "Look at the word."], ["🗣️", "Say the word for today."]] },
+
+      // ---- Part B: fix the story (5 min) ----
+      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story", turns: [{ who: "teacher", text: "Yesterday, I go to school." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence the right way."]], guide: "Yesterday, I ___ to school." },
+      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story 2", turns: [{ who: "teacher", text: "Yesterday, I eat pizza." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence the right way."]], guide: "Yesterday, I ___ pizza." },
+      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story 3", turns: [{ who: "teacher", text: "Yesterday, I see my friend." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the sentence the right way."]], guide: "Yesterday, I ___ my friend." },
+      { type: "dialogue", part: "B", stage: "Fix the Story", heading: "Fix the Story 4", turns: [{ who: "teacher", text: "Yesterday, I make a cake and I do my homework." }], instruction: NO_HELP("Say the sentence the right way.") },
+
+      // ---- Part C: connect and detective (13 min) ----
+      { type: "message", part: "C", stage: "Connect the Events", heading: "Connect the Events", lines: ["I went to the park. I saw my friend. I ate ice cream."], instruction: [["📖", "Read the sentences."], ["🗣️", "Join them into a story."]], guide: "First, I ___. Then, I ___." },
+      { type: "message", part: "C", stage: "Connect the Events", heading: "Connect the Events 2", lines: ["I made a cake. I went to the store. I ate the cake."], instruction: [["📖", "Read the sentences."], ["🗣️", "Join them into a story."]], guide: "First, I ___. Then, I ___." },
+      { type: "message", part: "C", stage: "Connect the Events", heading: "Connect the Events 3", lines: ["I did my homework. I had lunch. I saw a dog."], instruction: NO_HELP("Join them into a story.") },
+      { type: "message", part: "C", stage: "Past Tense Detective", heading: "Past Tense Detective", lines: ["Yesterday, I go to school. I eat lunch. Then I see my friend."], instruction: [["🔍", "Find the mistakes."], ["🗣️", "Say the story the right way."]] },
+      { type: "message", part: "C", stage: "Past Tense Detective", heading: "Past Tense Detective 2", lines: ["Yesterday, I have breakfast. I do my homework. Then I make a picture."], instruction: [["🔍", "Find the mistakes."], ["🗣️", "Say the story the right way."]] },
+      { type: "message", part: "C", stage: "Past Tense Detective", heading: "Past Tense Detective 3", lines: ["Yesterday, I go to the park. I see a dog and I eat ice cream."], instruction: [["🔍", "Find the mistakes."], ["🗣️", "Say the story the right way."]] },
+      { type: "chips", part: "C", stage: "Past Tense Detective", heading: "Tell It Right", items: ["First", "Then", "After that", "Finally"], instruction: NO_HELP("Tell the fixed story again.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things you did yesterday." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE3, part: "D", stage: "Type It!", heading: "Type Your Yesterday" },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Yesterday", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can fix past-tense mistakes and tell a story about yesterday." },
     ],
   },
   "2-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 2 · Lesson 5", title: "Show What You Know!", subtitle: "Free practice — show what you can really do with the past tense." },
-      { type: "message", stage: "Getting Ready", heading: "Conversation Starter", subheading: "Tell me about yesterday", lines: ["Where did you go? What did you eat? Who did you see?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "One-Minute Yesterday", subheading: "Talk for one minute about yesterday", turns: [{ who: "teacher", text: "Where did you go?" }, { who: "student", text: "I went to my grandma's house." }, { who: "teacher", text: "What did you eat?" }, { who: "student", text: "I ate her special soup!" }] },
-      { type: "message", stage: "Real-Life Recount", heading: "Real-Life Recount", subheading: "Tell me about something fun you did recently", lines: ["What happened next?"] },
-      { type: "dialogue", stage: "Teacher & Student Story", heading: "Teacher & Student Story", subheading: "Take turns adding one event", turns: [{ who: "teacher", text: "Yesterday, I went to the park." }, { who: "student", text: "Then, I saw a dog." }, { who: "teacher", text: "After that, I ate ice cream." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Mini Writing", subheading: "Write 4-6 sentences about a recent event", line: "Yesterday, I ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "Yesterday, I went to the park. I saw a dog. I ate ice cream." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 2, title: "Show What You Know!", subtitle: "Tell about yesterday, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Yesterday", turns: [{ who: "teacher", text: "Tell me about yesterday." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Where and What?", turns: [{ who: "teacher", text: "Where did you go? What did you eat?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Who?", turns: [{ who: "teacher", text: "Who did you see? What did you do after that?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: one-minute yesterday (8 min) ----
+      { type: "dialogue", part: "B", stage: "One-Minute Yesterday", heading: "One-Minute Yesterday", turns: [{ who: "teacher", text: "You have one minute. Tell me all about yesterday!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Talk for one minute."]] },
+      { type: "dialogue", part: "B", stage: "One-Minute Yesterday", heading: "More, Please!", turns: [{ who: "teacher", text: "What did you do after that? What happened next?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "B", stage: "One-Minute Yesterday", heading: "A Funny Yesterday", turns: [{ who: "teacher", text: "Now tell me about a funny yesterday. Anything can happen!" }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Talk for one minute."]] },
+      { type: "strip", part: "B", stage: "Surprise Story", heading: "Surprise Story", numbered: false, labels: false, size: 84, items: [SCHOOL, PIZZA, DOG, PICTURE, { label: "home", src: "/curriculum/u12-routines/go-home.jpg" }], question: "Tell me a story about these pictures.", instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell your story."]] },
+      { type: "strip", part: "B", stage: "Surprise Story", heading: "Surprise Story 2", numbered: false, labels: false, size: 84, items: [PARK, ICECREAM, ELEPHANT, CAKE, FRIEND], question: "Tell me a story about these pictures.", instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell your story."]] },
+
+      // ---- Part C: a real recount (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Story", heading: "Something Fun", turns: [{ who: "teacher", text: "Tell me about something fun you did this week." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Story", heading: "Something Fun 2", turns: [{ who: "teacher", text: "Where did you go? Who did you see? What happened next?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Yesterday, I went to the park."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next event."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["After that, I ate ice cream."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next event."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["Finally, I made a picture."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next event."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "Yesterday...", lines: ["Write about something you did this week."], instruction: [["⌨️", "Type three or four sentences in the chat."]] },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Writing", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "Unit 2 Complete!", title: "Unit 2 Complete!", see: "Great job!", recap: "You can tell what happened yesterday, in your own words." },
     ],
   },
   "2-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 2 · Test", title: "Unit 2 Test", subtitle: "Summative check: can you actually recount a recent event?" },
-      { type: "table", stage: "Part 1: Verb Check", heading: "Complete the Past Form", subheading: "go, eat, see, have, do, make", rows: [["go", "____"], ["eat", "____"], ["see", "____"], ["have", "____"], ["do", "____"], ["make", "____"]] },
-      { type: "message", stage: "Part 2: Sentences", heading: "Make Sentences", subheading: "Use went, ate, saw, had, did, made", lines: ["Make a sentence with each irregular verb."] },
-      { type: "log", stage: "Part 3: Sequencing", heading: "Put It in Order", subheading: "Tell the story using all four connectors", rows: ["First, ___", "Then, ___", "After that, ___", "Finally, ___"] },
-      { type: "dialogue", stage: "Part 4: Speaking ⭐", heading: "Tell Me About Yesterday", subheading: "Target: 5-6 connected sentences", turns: [{ who: "teacher", text: "Tell me about something you did yesterday." }] },
-      { type: "postcard", stage: "Part 5: Writing", heading: "Short Writing", subheading: "5-6 sentences", line: "What did you do yesterday? ___" },
-      { type: "landing", stage: "Landing", heading: "Unit 2 Complete!", cardTitle: "Unit 2 Test", caption: "Great work recounting the past!" },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 2, title: "Unit 2 Test", subtitle: "Show what you can say about yesterday!" },
+
+      // ---- Part A: the six special words ----
+      { type: "table", part: "A", stage: "Words", heading: "Say the Word", rows: [["go", "?"], ["eat", "?"], ["see", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Words", heading: "Say the Word 2", rows: [["have", "?"], ["do", "?"], ["make", "?"]], instruction: SAY_PAST },
+      { type: "table", part: "A", stage: "Words", heading: "Say the Word 3", rows: [["make", "?"], ["go", "?"], ["do", "?"]], instruction: SAY_PAST },
+
+      // ---- Part B: make sentences ----
+      { ...one(SCHOOL), part: "B", stage: "Sentences", heading: "What Happened?", question: "What happened yesterday?", instruction: [["👀", "Look at the picture."], ["🗣️", "Say a sentence about yesterday."]] },
+      { ...one(PIZZA), part: "B", stage: "Sentences", heading: "What Happened? 2", question: "What happened yesterday?", instruction: [["👀", "Look at the picture."], ["🗣️", "Say a sentence about yesterday."]] },
+      { ...one(DOG), part: "B", stage: "Sentences", heading: "What Happened? 3", question: "What happened yesterday?", instruction: [["👀", "Look at the picture."], ["🗣️", "Say a sentence about yesterday."]] },
+      { ...one(BREAKFAST), part: "B", stage: "Sentences", heading: "What Happened? 4", question: "What happened yesterday?", instruction: [["👀", "Look at the picture."], ["🗣️", "Say a sentence about yesterday."]] },
+      { ...one(HOMEWORK), part: "B", stage: "Sentences", heading: "What Happened? 5", question: "What happened yesterday?", instruction: [["👀", "Look at the picture."], ["🗣️", "Say a sentence about yesterday."]] },
+      { ...one(PICTURE), part: "B", stage: "Sentences", heading: "What Happened? 6", question: "What happened yesterday?", instruction: [["👀", "Look at the picture."], ["🗣️", "Say a sentence about yesterday."]] },
+
+      // ---- Part C: story in order ----
+      { type: "strip", part: "C", stage: "Story in Order", heading: "Tell the Story", size: 100, items: [BREAKFAST, SCHOOL, LUNCH, FRIEND], instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the story in order."]] },
+      { type: "strip", part: "C", stage: "Story in Order", heading: "Tell the Story 2", size: 100, items: [PARK, ICECREAM, DOG, HOME_PIC], instruction: [["👀", "Look at the pictures."], ["🗣️", "Tell the story in order."]] },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Yesterday", turns: [{ who: "teacher", text: "Tell me about something you did yesterday." }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say five or six sentences."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me More", turns: [{ who: "teacher", text: "Where did you go? What did you eat? Who did you see?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "score", stage: "My Unit 2 Score!", heading: "My Unit 2 Score!", rows: [["Words", "/ 6"], ["Sentences", "/ 6"], ["Story in order", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 2 Complete!", title: "Unit 2 Complete!", see: "On to Unit 3!", recap: "You can tell what happened yesterday with went, ate, saw, had, did and made." },
     ],
   },
 

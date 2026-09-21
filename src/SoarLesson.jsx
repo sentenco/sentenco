@@ -32,7 +32,7 @@ const PARTS = {
 };
 
 const VERB_COLOR = {
-  look: "#2E97C7", watch: "#2E97C7",
+  look: "#2E97C7", watch: "#2E97C7", find: "#2E97C7",
   say: "#E0502F", answer: "#E0502F", tell: "#E0502F", retell: "#E0502F", ask: "#E0502F", repeat: "#E0502F",
   listen: "#8E6FCE",
   type: "#0F9E90", write: "#0F9E90",
@@ -315,16 +315,16 @@ function LandingBlock({ heading, subheading, cardTitle, caption }) {
   );
 }
 
-function TableBlock({ heading, subheading, rows = [] }) {
+function TableBlock({ heading, subheading, rows = [], heads = ["Present", "Past"] }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="verb-table-wrap">
         <table className="verb-table">
-          <thead><tr><th>Present</th><th>Past</th></tr></thead>
+          <thead><tr><th>{heads[0]}</th><th>{heads[1]}</th></tr></thead>
           <tbody>
-            {rows.map(([a, b], i) => <tr key={i}><td>{a}</td><td>{b}</td></tr>)}
+            {rows.map(([a, b], i) => <tr key={i}><td>{a}</td><td className={b === "?" ? "is-unknown" : ""}>{b}</td></tr>)}
           </tbody>
         </table>
       </div>
@@ -736,5 +736,9 @@ const styles = `
 .score-table { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; background: #fff; border-radius: 18px; padding: 10px 22px; box-shadow: 0 8px 18px rgba(27,42,74,0.1); position: relative; z-index: 1; }
 .score-row { display: flex; justify-content: space-between; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); padding: 3px 0; }
 .score-row.total { border-top: 2px dashed var(--coral-light); margin-top: 4px; padding-top: 10px; color: var(--coral-deep); font-size: 18px; }
+
+.is-v2 .verb-table th, .is-v2 .verb-table td { padding: 10px 34px; font-size: 19px; }
+.is-v2 .verb-table th { font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.verb-table td.is-unknown { color: #C9C2DD; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; }
 ${wrapUpStyles}
 `;
