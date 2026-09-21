@@ -1,38 +1,24 @@
 # A2 Soar Kids: Batch 1 picture prompts (Units 3, 4 and 6)
 
-38 pictures. Save each file with the exact name into the folder shown, nothing else needs to change.
+38 pictures at first; weather and seasons are now done, 25 left (sun, cloud, leaves, snow, 8 town, 13 jobs). Save each file with the exact name into the folder shown, nothing else needs to change.
 Unit 1 pictures are installed, Unit 2 and Unit 5 need none.
 
 ## Shared style (add to every prompt)
 
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. Plain white background, no text, no letters, no watermark. Square 1:1, subject centered and filling most of the frame. Any person has a natural light skin tone (no orange, yellow or peach tint); vary people by hair, clothes and features.
 
-## Folder `public/curriculum/a2-weather/` (13, .jpg)
+## Weather and seasons: DONE 2026-09-22 (installed)
 
-Weather (one clear icon-style picture each, so a child can name the weather):
-- **sunny.jpg**: a big golden sun with soft rays in a small patch of clear blue sky.
-- **rainy.jpg**: one gray rain cloud with blue raindrops falling and a small puddle underneath.
-- **cloudy.jpg**: three fluffy gray-white clouds filling a pale gray-blue sky, no sun.
-- **windy.jpg**: swirly light-blue wind lines blowing a red kite and two green leaves sideways.
-- **snowy.jpg**: light-blue and white snowflakes falling over a small pine tree with snow on its branches.
-- **hot.jpg**: a big red thermometer with the red line at the top, a bright sun and a melting ice cream cone beside it.
-- **cold.jpg**: a blue thermometer with the line low, icicles and a big snowflake, a small knitted scarf.
+Installed with a child showing a feeling in each: `a2-weather/` sunny (happy), rainy (a little sad), cloudy (bored), windy (surprised), snowy (excited), hot (tired), cold (shivering); `a2-seasons/` spring, summer, autumn, winter (same tree and hill in each, child beside it).
+Reused instead of generated: rainbow = `u2-l3/rainbow.jpg`, flowers = `u1-l2/flower.jpg` shown three times (`count: 3`).
 
-Things in the picture (one subject each):
-- **sun.jpg**: one round yellow sun with orange rays (no face).
-- **cloud.jpg**: one fluffy white cloud with a soft blue shadow.
-- **rainbow.jpg**: one rainbow arch with a small white cloud at each end.
-- **flowers.jpg**: three spring flowers (pink, yellow, purple) with green stems and leaves.
+## Folder `public/curriculum/a2-weather/` (4 left, .jpg): objects only, no people, no faces
+
+Use this shorter style line for these four: Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. Plain white background, no text, no letters, no watermark, no people, no characters, no faces. Square 1:1, subject centered and filling most of the frame.
+- **sun.jpg**: one round yellow sun with short orange triangle rays evenly spaced around it. Simple flat icon style. No eyes, no mouth.
+- **cloud.jpg**: one big fluffy white cloud with soft light-blue shading along its underside. Simple flat icon style. No eyes, no mouth.
 - **leaves.jpg**: three autumn leaves (red, orange, yellow) lying together.
-- **snow.jpg**: a small pile of white snow with sparkles and two snowflakes.
-
-## Folder `public/curriculum/a2-seasons/` (4, .jpg)
-
-One series: the same big tree on a small green hill in every picture, so the four look like a set. No people.
-- **spring.jpg**: the tree covered in pink blossoms, flowers in the grass, two butterflies, fresh light-green hill.
-- **summer.jpg**: the tree full of deep green leaves, a bright hot sun, blue sky, a few sunflowers.
-- **autumn.jpg**: the tree with red, orange and yellow leaves, leaves falling and lying on the grass, cool golden light.
-- **winter.jpg**: the tree with bare branches holding a little snow, snow on the hill, falling snowflakes, pale blue sky.
+- **snow.jpg**: a small pile of white snow with sparkles and two light-blue snowflakes.
 
 ## Folder `public/curriculum/a2-town/` (8, .jpg)
 
