@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { SOAR_A2_LESSONS } from "./soarA2Data";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
-import { SoarPic } from "./SoarPic.jsx";
+import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
 import { PeekBlock, SpinBlock, MissingBlock, SprintBlock, DiceBlock, TownBlock, DirsBlock, RouteBlock, ShopBlock, HelpBlock, OrderBlock, gameStyles } from "./SoarGames.jsx";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
@@ -347,6 +347,8 @@ export default function SoarLesson() {
   const [medal, setMedal] = useState(loadMedal);
   const [adjust, setAdjust] = useState(() => new URLSearchParams(window.location.search).get("adjust") === "1");
   const [copied, setCopied] = useState(false);
+  const [zoom, setZoom] = useState(null);
+  useEffect(() => { setZoom(null); }, [i]);
 
   function changeMedal(patch) {
     setMedal((m) => {
@@ -393,7 +395,7 @@ export default function SoarLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles + gameStyles;
+    tag.textContent = styles + gameStyles + zoomStyles;
     document.head.appendChild(tag);
   }, []);
 
@@ -468,6 +470,7 @@ export default function SoarLesson() {
   }
 
   return (
+    <ZoomContext.Provider value={setZoom}>
     <div className="sv-wrap">
       <div className="deck-single">
         <div className={`slide ${i === 0 ? "slide--title" : "slide--regular"} ${v2 ? "is-v2" : ""}`}>
@@ -532,7 +535,9 @@ export default function SoarLesson() {
           </div>
         </div>
       </div>
+      <ZoomOverlay zoom={zoom} onClose={() => setZoom(null)} />
     </div>
+    </ZoomContext.Provider>
   );
 }
 

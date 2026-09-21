@@ -403,7 +403,7 @@ export function ShopBlock({ heading, items = [], budget, size = 80, question }) 
       <div className="shop">
         {items.map((it, i) => (
           <button key={i} type="button" className={`shop-item ${picked.includes(i) ? "is-picked" : ""}`} onClick={() => toggle(i)} aria-label={`${it.label}, ${it.price} pesos`}>
-            <SoarPic src={it.src} label={it.label} size={size} count={it.count} />
+            <SoarPic src={it.src} label={it.label} size={size} count={it.count} zoom="icon" />
             <span className="price-tag">{it.price} pesos</span>
           </button>
         ))}
@@ -438,7 +438,7 @@ export function HelpBlock({ heading, problem, options = [], answer = 0, said, si
           <div className="strip">
             {options.map((o, i) => (
               <button key={i} type="button" className={`help-opt ${chosen === i ? (i === answer ? "is-right" : "is-wrong") : ""}`} onClick={() => setChosen(i)}>
-                <SoarPic src={o.src} label={o.label} size={size} />
+                <SoarPic src={o.src} label={o.label} size={size} zoom="icon" />
                 <span className="strip-label">{labels ? o.label : "\u00A0"}</span>
               </button>
             ))}
@@ -475,7 +475,7 @@ export function OrderBlock({ heading, items = [], size = 96, labels = false, que
         {display.map((i) => (
           <button key={i} type="button" className={`order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""}`} onClick={() => pick(i)}>
             {placed.includes(i) && <span className="strip-num">{placed.indexOf(i) + 1}</span>}
-            <SoarPic src={items[i].src} label={items[i].label} size={size} />
+            <SoarPic src={items[i].src} label={items[i].label} size={size} zoom="icon" />
             {labels && <span className="strip-label">{items[i].label}</span>}
           </button>
         ))}
