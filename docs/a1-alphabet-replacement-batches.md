@@ -118,21 +118,73 @@ Status is tracked at the bottom of this file.
 
 ## Batch 1 prompts
 
-Generate `duck` first. Then attach it to the chat as a style reference for the other ten so they match. Every prompt ends with the same style line.
+Generate `duck` first. Then attach it to the chat as a style reference for the other ten so they match. Each prompt below is complete: the style prefix comes first, then the picture.
 
-**Style line:** Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
+1. **duck**
 
-1. **duck**: One yellow duckling standing, side view, small orange beak and orange feet, big shiny black eyes with a white highlight, a tiny wing. No water. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-2. **alligator**: One friendly green baby alligator walking on four legs, side view, big smile showing two tiny teeth, cream belly, small darker green bumps along its back and tail. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-3. **ant**: One cute red-brown ant, side view, big round eyes, a small smile, six thin legs and two curly antennae. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-4. **apple**: One shiny red apple with a short brown stem and one green leaf, with a small white highlight. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-5. **ball**: One bouncy round ball with red, yellow and blue curved stripes and a small white highlight. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-6. **banana**: One single ripe yellow banana, gently curved, with a small brown tip and a little green stem end. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-7. **bear**: One friendly brown bear cub sitting and facing front, round ears, cream muzzle and belly, small black nose, happy smile. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-8. **car**: One cute little red car seen from the side, rounded body, light-blue windows, two round wheels visible, small yellow headlight. No people inside. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-9. **cat**: One cute orange tabby cat sitting and facing front, big green eyes, tiny pink nose, white chest and paws, curled tail. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-10. **cookie**: One round golden-brown cookie with brown chocolate chips and a few colorful sprinkles, seen from the front. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
-11. **dog**: One friendly small brown-and-white puppy sitting and facing front, floppy ears, big black eyes, tongue slightly out, happy. Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1.
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One yellow duckling standing, side view, small orange beak and orange feet, big shiny black eyes with a white highlight, a tiny wing. No water.
+```
+
+2. **alligator**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly green baby alligator walking on four legs, side view, big smile showing two tiny teeth, cream belly, small darker green bumps along its back and tail.
+```
+
+3. **ant**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute red-brown ant, side view, big round eyes, a small smile, six thin legs and two curly antennae.
+```
+
+4. **apple**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One shiny red apple with a short brown stem and one green leaf, with a small white highlight.
+```
+
+5. **ball**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One bouncy round ball with red, yellow and blue curved stripes and a small white highlight.
+```
+
+6. **banana**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One single ripe yellow banana, gently curved, with a small brown tip and a little green stem end.
+```
+
+7. **bear**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly brown bear cub sitting and facing front, round ears, cream muzzle and belly, small black nose, happy smile.
+```
+
+8. **car**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute little red car seen from the side, rounded body, light-blue windows, two round wheels visible, small yellow headlight. No people inside.
+```
+
+9. **cat**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute orange tabby cat sitting and facing front, big green eyes, tiny pink nose, white chest and paws, curled tail.
+```
+
+10. **cookie**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One round golden-brown cookie with brown chocolate chips and a few colorful sprinkles, seen from the front.
+```
+
+11. **dog**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly small brown-and-white puppy sitting and facing front, floppy ears, big black eyes, tongue slightly out, happy.
+```
 
 ## Status
 
