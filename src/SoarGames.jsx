@@ -228,7 +228,7 @@ export function DiceBlock({ heading, dice = [], size = 104 }) {
           return (
             <div key={i} className={`strip-item dice-item ${rolling ? "is-rolling" : ""}`}>
               <span className="dice-name">{d.name}</span>
-              {it ? <SoarPic src={it.src} label={it.label} size={size} /> : <div className="sp-tile missing-q" style={{ width: size, height: size }}>?</div>}
+              {it ? (it.src ? <SoarPic src={it.src} label={it.label} size={size} /> : <div className="sp-tile word-tile" style={{ width: size, height: size }}>{it.label}</div>) : <div className="sp-tile missing-q" style={{ width: size, height: size }}>?</div>}
               <span className="strip-label">{it && !rolling ? it.label : " "}</span>
             </div>
           );
@@ -236,6 +236,155 @@ export function DiceBlock({ heading, dice = [], size = 104 }) {
       </div>
       <div className="game-inline">
         <button type="button" className="game-btn" onClick={roll} disabled={rolling}>{vals ? "Roll again" : "Roll!"}</button>
+      </div>
+    </div>
+  );
+}
+
+
+const hl = (text) => String(text).split(/(\*[^*]+\*)/g).map((part, i) => (/^\*[^*]+\*$/.test(part) ? <span key={i} className="hl">{part.slice(1, -1)}</span> : part));
+
+// A small town seen from above. `rows` is a list of rows of places (null = empty), the road runs along the bottom.
+// A place in the top row is BEHIND the place under it; a place beside another is NEXT TO it.
+export function TownBlock({ heading, rows = [], size = 84, question, sentence }) {
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="game-row">
+        <div className="town">
+          {rows.map((row, r) => (
+            <div className="town-row" key={r}>
+              {row.map((it, c) => it
+                ? (
+                  <div key={c} className="strip-item">
+                    <SoarPic src={it.src} label={it.label} size={size} />
+                    <span className="strip-label">{it.label}</span>
+                  </div>
+                )
+                : <div key={c} className="town-empty" style={{ width: size }} />)}
+            </div>
+          ))}
+          <div className="town-road"><span>Main Street</span></div>
+        </div>
+        {(question || sentence) && (
+          <div className="game-side">
+            {question && <div className="game-bubble">{question}</div>}
+            {sentence && <div className="game-bubble game-bubble--sentence">{hl(sentence)}</div>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const ARROW = { fill: "none", stroke: "#E0502F", strokeWidth: 12, strokeLinecap: "round", strokeLinejoin: "round" };
+function DirSvg({ kind }) {
+  return (
+    <svg viewBox="0 0 100 100" className="dir-svg" aria-hidden="true">
+      {kind === "straight" && <g {...ARROW}><path d="M50 86 V24" /><path d="M28 46 L50 22 L72 46" /></g>}
+      {kind === "left" && <g {...ARROW}><path d="M68 88 V56 Q68 36 48 36 H24" /><path d="M42 16 L22 36 L42 56" /></g>}
+      {kind === "right" && <g {...ARROW}><path d="M32 88 V56 Q32 36 52 36 H76" /><path d="M58 16 L78 36 L58 56" /></g>}
+      {kind === "stop" && (
+        <g>
+          <polygon points="30,8 70,8 92,30 92,70 70,92 30,92 8,70 8,30" fill="#E0502F" stroke="#fff" strokeWidth="5" />
+          <text x="50" y="59" textAnchor="middle" fontFamily="Baloo 2, sans-serif" fontWeight="800" fontSize="25" fill="#fff">STOP</text>
+        </g>
+      )}
+    </svg>
+  );
+}
+
+// Direction words as big arrow cards. `labels: false` hides the words so the child says them.
+export function DirsBlock({ heading, items = [], size = 104, labels = true, question }) {
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="strip">
+        {items.map((it, i) => (
+          <div key={i} className="strip-item">
+            <div className="sp-tile dir-tile" style={{ width: size, height: size }}><DirSvg kind={it.kind} /></div>
+            <span className="strip-label">{labels ? it.word : " "}</span>
+          </div>
+        ))}
+      </div>
+      {question && <div className="game-bubble">{question}</div>}
+    </div>
+  );
+}
+
+const STEP = { n: [0, -1], e: [1, 0], s: [0, 1], w: [-1, 0] };
+const TURN_L = { n: "w", w: "s", s: "e", e: "n" };
+const TURN_R = { n: "e", e: "s", s: "w", w: "n" };
+const HEADING = { n: 0, e: 90, s: 180, w: 270 };
+
+// Be the GPS: the child says the directions, the teacher clicks them, and the little car drives.
+// grid characters: '#' road, '@' start (also road), '.' grass, a letter = a building from `places`.
+export function RouteBlock({ heading, grid = [], places = {}, goal, question, dir = "e", cell = 54 }) {
+  const rows = grid.length;
+  const cols = grid[0].length;
+  const start = (() => { let p = [0, 0]; grid.forEach((row, r) => [...row].forEach((ch, c) => { if (ch === "@") p = [c, r]; })); return p; })();
+  const [pos, setPos] = useState(start);
+  const [head, setHead] = useState(dir);
+  const [msg, setMsg] = useState(null);
+  const [bump, setBump] = useState(false);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const at = (c, r) => (r >= 0 && r < rows && c >= 0 && c < cols ? grid[r][c] : null);
+  const isRoad = (c, r) => at(c, r) === "#" || at(c, r) === "@";
+  const done = !!(msg && msg.ok);
+
+  function straight() {
+    if (done) return;
+    const [dx, dy] = STEP[head];
+    if (isRoad(pos[0] + dx, pos[1] + dy)) { setPos([pos[0] + dx, pos[1] + dy]); setMsg(null); }
+    else { setBump(true); clearTimeout(timer.current); timer.current = setTimeout(() => setBump(false), 380); }
+  }
+  const turn = (map) => { if (!done) { setHead(map[head]); setMsg(null); } };
+  function stop() {
+    if (done) return;
+    const hit = Object.entries(STEP).find(([, [dx, dy]]) => at(pos[0] + dx, pos[1] + dy) === goal);
+    if (!hit) { setMsg({ ok: false, text: "Not here yet. Keep going!" }); return; }
+    const side = hit[0] === head ? "in front" : hit[0] === TURN_L[head] ? "on the left" : hit[0] === TURN_R[head] ? "on the right" : "behind you";
+    setMsg({ ok: true, text: `Yes! The ${places[goal].label} is ${side}.` });
+  }
+  function restart() { setPos(start); setHead(dir); setMsg(null); }
+
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="game-row">
+        <div className="route" style={{ width: cols * cell, height: rows * cell }}>
+          {grid.map((row, r) => [...row].map((ch, c) => {
+            const road = ch === "#" || ch === "@";
+            const b = places[ch];
+            return (
+              <div key={`${r}-${c}`} className={`route-cell ${road ? "is-road" : ""}`} style={{ left: c * cell, top: r * cell, width: cell, height: cell }}>
+                {b && (
+                  <div className="route-bld">
+                    <SoarPic src={b.src} label={b.label} size={cell - 14} />
+                    <span className="route-tag">{b.label}</span>
+                  </div>
+                )}
+              </div>
+            );
+          }))}
+          <div className={`route-car ${bump ? "is-bump" : ""}`} style={{ left: pos[0] * cell + (cell - 30) / 2, top: pos[1] * cell + (cell - 30) / 2 }}>
+            <svg viewBox="0 0 30 30" style={{ transform: `rotate(${HEADING[head]}deg)` }} aria-hidden="true"><polygon points="15,5 24,23 15,18 6,23" fill="#fff" /></svg>
+          </div>
+        </div>
+        <div className="game-side route-side">
+          {question && <div className="game-bubble">{question}</div>}
+          <div className="route-btns">
+            <button type="button" className="game-btn game-btn--sm" onClick={straight}>Go straight</button>
+            <button type="button" className="game-btn game-btn--sm" onClick={stop}>Stop!</button>
+            <button type="button" className="game-btn game-btn--sm game-btn--ghost" onClick={() => turn(TURN_L)}>Turn left</button>
+            <button type="button" className="game-btn game-btn--sm game-btn--ghost" onClick={() => turn(TURN_R)}>Turn right</button>
+          </div>
+          {msg
+            ? <div className={msg.ok ? "game-answer game-answer--sm" : "game-note game-note--big"}>{msg.text}</div>
+            : <div className="game-note">The car is waiting.</div>}
+          {(msg || pos[0] !== start[0] || pos[1] !== start[1] || head !== dir) && <button type="button" className="game-link" onClick={restart}>Start again</button>}
+        </div>
       </div>
     </div>
   );
@@ -278,4 +427,33 @@ export const gameStyles = `
 .dice-item.is-rolling .sp-tile { animation: dicewobble 0.22s ease-in-out infinite; }
 @keyframes dicewobble { 0% { transform: rotate(-5deg) translateY(0); } 50% { transform: rotate(5deg) translateY(-4px); } 100% { transform: rotate(-5deg) translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .dice-item.is-rolling .sp-tile { animation: none; } .peek-cloud, .sprint-fill { transition: none; } }
+
+.word-tile { background: var(--navy-light); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05; color: var(--navy); text-align: center; padding: 6px; }
+.game-bubble--sentence { background: var(--coral-light); color: var(--coral-deep); }
+.game-btn--sm { font-size: 14px; padding: 7px 10px; border-radius: 13px; white-space: nowrap; }
+.game-answer--sm { font-size: 15px; padding: 6px 12px; }
+.game-link { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: var(--navy-soft); background: none; border: none; text-decoration: underline; cursor: pointer; padding: 0; }
+
+.town { background: #DDEFD0; border-radius: 18px 18px 0 0; padding: 10px 16px 0; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 6px 0 rgba(27,42,74,0.08); }
+.town-row { display: flex; justify-content: center; gap: 14px; }
+.town-empty { flex-shrink: 0; }
+.town-road { margin: 4px -16px 0; height: 24px; background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 28px) center / 100% 3px no-repeat, #AEB8D0; display: flex; align-items: center; justify-content: center; }
+.town-road span { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: #AEB8D0; padding: 0 10px; }
+
+.dir-tile { background: #fff; }
+.dir-svg { width: 86%; height: 86%; }
+
+.route { position: relative; flex-shrink: 0; background: #DDEFD0; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 0 rgba(27,42,74,0.08); }
+.route-cell { position: absolute; display: flex; align-items: center; justify-content: center; }
+.route-cell.is-road { background: #AEB8D0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); }
+.route-bld { position: relative; display: flex; align-items: center; justify-content: center; }
+.route-bld .sp-tile { border-radius: 10px; }
+.route-tag { position: absolute; bottom: -3px; left: 50%; transform: translateX(-50%); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10px; line-height: 1; color: var(--navy); background: rgba(255,255,255,0.96); border-radius: 999px; padding: 2px 6px; white-space: nowrap; }
+.route-car { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 3px #fff, 0 3px 8px rgba(27,42,74,0.35); transition: left 0.35s ease, top 0.35s ease; z-index: 2; }
+.route-car svg { width: 100%; height: 100%; transition: transform 0.28s ease; display: block; }
+.route-car.is-bump { animation: carbump 0.36s ease; }
+@keyframes carbump { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+.route-side { min-width: 224px; }
+.route-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+@media (prefers-reduced-motion: reduce) { .route-car, .route-car svg { transition: none; } .route-car.is-bump { animation: none; } }
 `;

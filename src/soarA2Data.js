@@ -50,6 +50,24 @@ const REPEAT_WORDS = [["👂", "Listen to the teacher."], ["🗣️", "Repeat ea
 const TYPE2 = (line) => ({ type: "postcard", line, instruction: [["⌨️", "Type two sentences in the chat."]] });
 const READ_ALOUD = { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Weather", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] };
 
+// ---- Unit 4 (Around Town) pieces; pictures still to be generated (placeholders show until then) ----
+const TW = (label, file) => ({ label, src: `/curriculum/a2-town/${file}` });
+const T_SCHOOL = TW("school", "school.jpg"), T_PARK = TW("park", "park.jpg"), T_STORE = TW("store", "store.jpg"), T_LIBRARY = TW("library", "library.jpg");
+const T_HOSPITAL = TW("hospital", "hospital.jpg"), T_BANK = TW("bank", "bank.jpg"), T_SUPERMARKET = TW("supermarket", "supermarket.jpg"), T_RESTAURANT = TW("restaurant", "restaurant.jpg");
+const PLACES4 = [T_STORE, T_LIBRARY, T_HOSPITAL, T_BANK], PLACES6 = [T_SCHOOL, T_PARK, T_STORE, T_LIBRARY, T_HOSPITAL, T_BANK];
+const PLACES8 = [T_SCHOOL, T_PARK, T_STORE, T_LIBRARY, T_HOSPITAL, T_BANK, T_SUPERMARKET, T_RESTAURANT];
+const BUILD = { S: T_SCHOOL, P: T_PARK, T: T_STORE, L: T_LIBRARY, H: T_HOSPITAL, B: T_BANK, M: T_SUPERMARKET, R: T_RESTAURANT };
+const DIR_ITEMS = [{ kind: "straight", word: "go straight" }, { kind: "left", word: "turn left" }, { kind: "right", word: "turn right" }, { kind: "stop", word: "stop" }];
+const PREPS2 = [{ label: "next to" }, { label: "behind" }];
+// route maps: # road, @ start (facing east), . grass, letters = buildings
+const MAP_BANK = ["S.B..P", "@####.", "......"], MAP_LIBRARY = ["S.....", "@####.", "....#L"], MAP_HOSPITAL = ["....#H", "....#.", "@####."];
+const MAP_MARKET = ["....M.", "..###.", "@##..."], MAP_STORE = ["......", "@####.", "...T.."], MAP_RESTAURANT = ["..#R..", "..#...", "@##..."];
+const MAPQ = [["👀", "Look at the map."], ["🗣️", "Say where it is."]];
+const GPSQ = [["👀", "Look at the map."], ["🗣️", "Tell the teacher where to go."]];
+const TFQ = [["👀", "Look at the map."], ["🗣️", "Say true or false. Fix it if it is false."]];
+const TOWN_BEHIND = [[T_PARK, null, T_RESTAURANT], [T_SCHOOL, T_STORE, T_BANK]];
+const READ_TOWN = { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Town", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] };
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -717,68 +735,196 @@ export const SOAR_A2_LESSONS = {
 
   // ---------- Unit 4: Around Town ----------
   "4-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 4 · Lesson 1", title: "Places in Town! 🏙️", subtitle: "Name common places in town and say where one place is using next to." },
-      { type: "chips", stage: "Getting Ready", heading: "Places in Town", subheading: "What places do you know?", items: ["store", "park", "school", "library", "hospital", "restaurant", "supermarket", "bank", "bus stop", "playground"] },
-      { type: "message", stage: "Taking Off", heading: "Where Is It?", subheading: "🏫 School | 🏪 Store", lines: ["The store is *next to* the school.", "What is next to the park?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Town Tour Guide", subheading: "Be the tour guide!", turns: [{ who: "teacher", text: "Where can I go to read?" }, { who: "student", text: "There is a library. The library is next to the park." }, { who: "teacher", text: "Where can I go to buy food?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Describe your town (3-4 sentences)", line: "There is a ___. The ___ is next to the ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Places in Town", caption: "There is a school. The park is next to the school. The store is next to the park." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 4, title: "Places in Town!", subtitle: "Name places in town and say what is next to what." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Today's Weather", turns: [{ who: "teacher", text: WQ }], instruction: LISTEN_ANSWER, guide: "It is ___ today." },
+
+      // ---- Part B: four places (5 min) ----
+      { type: "strip", part: "B", stage: "Four Places", heading: "Four Places", numbered: false, size: 100, items: PLACES4, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Four Places", heading: "There Is a...", lines: ["There is a *bank*.", "There is a *hospital*."], instruction: LISTEN_REPEAT },
+      { ...one(T_STORE), part: "B", stage: "Four Places", heading: "What Is It?", question: "What is it?", instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { ...one(T_LIBRARY), part: "B", stage: "Four Places", heading: "What Is It? 2", question: "What is it?", instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { ...one(T_HOSPITAL), part: "B", stage: "Four Places", heading: "What Is It? 3", question: "What is it?", instruction: LISTEN_ANSWER, guide: "It is a ___." },
+      { ...one(T_BANK), part: "B", stage: "Four Places", heading: "What Is It? 4", question: "What is it?", instruction: LISTEN_ANSWER, guide: "It is a ___." },
+
+      // ---- Part C: next to, and the games (13 min) ----
+      { type: "spin", part: "C", stage: "Place Wheel", heading: "Place Wheel", items: PLACES6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what there is."]], guide: "There is a ___." },
+      { type: "message", part: "C", stage: "Next To", heading: "Next To", lines: ["The store is *next to* the school.", "The bank is *next to* the park."], instruction: LISTEN_REPEAT },
+      { type: "town", part: "C", stage: "Next To", heading: "Next To", rows: [[T_SCHOOL, T_STORE, T_PARK]], size: 88, question: "What is next to the store?", instruction: MAPQ, guide: "The ___ is next to the store." },
+      { type: "town", part: "C", stage: "Next To", heading: "Next To 2", rows: [[T_LIBRARY, T_BANK, T_HOSPITAL]], size: 88, question: "Where is the bank?", instruction: MAPQ, guide: "The bank is next to the ___." },
+      { type: "town", part: "C", stage: "Next To", heading: "Next To 3", rows: [[T_PARK, T_LIBRARY, T_SCHOOL]], size: 88, question: "Where is the library?", instruction: MAPQ, guide: "The library is next to the ___." },
+      { type: "peek", part: "C", stage: "Mystery Place", heading: "Mystery Place", item: T_HOSPITAL, reveal: "It is a hospital.", question: "What place is it?", instruction: LOOK_SAY("Guess the place."), guide: "I think it is a ___." },
+      { type: "peek", part: "C", stage: "Mystery Place", heading: "Mystery Place 2", item: T_LIBRARY, reveal: "It is a library.", question: "What place is it?", instruction: LOOK_SAY("Guess the place."), guide: "I think it is a ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: PLACES4, instruction: [["👀", "Look at the places."], ["🗣️", "Say the place that went away."]], guide: "The ___ is missing." },
+      { type: "sprint", part: "C", stage: "Town Sprint", heading: "Town Sprint", items: PLACES6, seconds: 40, instruction: LOOK_SAY("Say what there is. Be fast!"), guide: "There is a ___." },
+
+      // ---- Part D: my town (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Town", heading: "My Town", turns: [{ who: "teacher", text: "What places are in your town?" }], instruction: LISTEN_ANSWER, guide: "There is a ___ in my town." },
+      { ...TYPE2("There is a ___. The ___ is next to the ___."), part: "D", stage: "Type It!", heading: "Type Your Town" },
+      READ_TOWN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can name places in town and say what is next to what." },
     ],
   },
   "4-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 4 · Lesson 2", title: "Where Is It? 📍", subtitle: "Describe where places are using behind and between." },
-      { type: "message", stage: "Getting Ready", heading: "Warm-Up Review", subheading: "Use yesterday's town map", lines: ["Where is the school? What is next to the park?"] },
-      { type: "message", stage: "Taking Off", heading: "New Prepositions", subheading: "behind · between", lines: ["The park is *behind* the school.", "The bank is *between* the store and the library."] },
-      { type: "message", stage: "Map Detective", heading: "Map Detective", subheading: "Answer in complete sentences", lines: ["What is behind the school?", "What is between the bank and the park?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Hidden Place", subheading: "Ask yes/no questions to find the secret place", turns: [{ who: "student", text: "Is it next to the school?" }, { who: "teacher", text: "No." }, { who: "student", text: "Is it between the store and the library?" }, { who: "teacher", text: "Yes!" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Describe 3 locations without being prompted", line: "The ___ is next to the ___. The ___ is behind the ___. The ___ is between the ___ and the ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Where Is It?", caption: "The library is next to the school. The bank is between the store and the hospital." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 4, title: "Where Is It?", subtitle: "Say where places are with behind and between." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "town", part: "A", stage: "Review", heading: "Next To", rows: [[T_SCHOOL, T_STORE, T_PARK]], size: 88, question: "What is next to the school?", instruction: MAPQ, guide: "The ___ is next to the school." },
+      { type: "spin", part: "A", stage: "Review", heading: "Place Wheel", items: PLACES6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what there is."]], guide: "There is a ___." },
+
+      // ---- Part B: behind and between (5 min) ----
+      { type: "strip", part: "B", stage: "Two New Places", heading: "Two New Places", numbered: false, size: 100, items: [T_SUPERMARKET, T_RESTAURANT], instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Behind", heading: "Behind", lines: ["The park is *behind* the school."], instruction: LISTEN_REPEAT },
+      { type: "town", part: "B", stage: "Behind", heading: "Behind", rows: TOWN_BEHIND, size: 56, question: "What is behind the school?", instruction: MAPQ, guide: "The ___ is behind the school." },
+      { type: "town", part: "B", stage: "Behind", heading: "Behind 2", rows: [[T_LIBRARY, T_SUPERMARKET, null], [T_HOSPITAL, T_BANK, T_STORE]], size: 56, question: "What is behind the bank?", instruction: MAPQ, guide: "The ___ is behind the bank." },
+      { type: "message", part: "B", stage: "Between", heading: "Between", lines: ["The bank is *between* the store and the library."], instruction: LISTEN_REPEAT },
+      { type: "town", part: "B", stage: "Between", heading: "Between", rows: [[T_STORE, T_BANK, T_LIBRARY]], size: 88, question: "Where is the bank?", instruction: MAPQ, guide: "The bank is between the ___ and the ___." },
+      { type: "town", part: "B", stage: "Between", heading: "Between 2", rows: [[T_SCHOOL, T_PARK, T_HOSPITAL]], size: 88, question: "Where is the park?", instruction: MAPQ, guide: "The park is between the ___ and the ___." },
+
+      // ---- Part C: games and true or false (13 min) ----
+      { type: "dice", part: "C", stage: "Where Is It?", heading: "Where Is It?", dice: [{ name: "Place", items: PLACES6 }, { name: "Where?", items: PREPS2 }, { name: "Place", items: PLACES6 }], instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "The ___ is ___ the ___." },
+      { type: "town", part: "C", stage: "True or False?", heading: "True or False?", rows: TOWN_BEHIND, size: 56, sentence: "The park is *behind* the school.", instruction: TFQ },
+      { type: "town", part: "C", stage: "True or False?", heading: "True or False? 2", rows: TOWN_BEHIND, size: 56, sentence: "The restaurant is *next to* the bank.", instruction: TFQ },
+      { type: "town", part: "C", stage: "True or False?", heading: "True or False? 3", rows: [[T_STORE, T_BANK, T_LIBRARY]], size: 88, sentence: "The bank is *between* the store and the library.", instruction: TFQ },
+      { type: "town", part: "C", stage: "True or False?", heading: "True or False? 4", rows: [[T_STORE, T_BANK, T_LIBRARY]], size: 88, sentence: "The library is *between* the store and the bank.", instruction: TFQ },
+      { type: "peek", part: "C", stage: "Mystery Place", heading: "Mystery Place", item: T_SUPERMARKET, reveal: "It is a supermarket.", question: "What place is it?", instruction: LOOK_SAY("Guess the place."), guide: "I think it is a ___." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: [T_SCHOOL, T_PARK, T_SUPERMARKET, T_RESTAURANT], instruction: [["👀", "Look at the places."], ["🗣️", "Say the place that went away."]], guide: "The ___ is missing." },
+      { type: "town", part: "C", stage: "Tell Me About the Town", heading: "The Whole Town", rows: [[T_LIBRARY, T_SUPERMARKET, T_RESTAURANT], [T_SCHOOL, T_STORE, T_PARK]], size: 56, instruction: NO_HELP("Tell where the places are.") },
+
+      // ---- Part D: my town (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Town", heading: "Near My School", turns: [{ who: "teacher", text: "Where is your school? What is next to it?" }], instruction: LISTEN_ANSWER },
+      { ...TYPE2("The ___ is next to the ___. The ___ is behind the ___."), part: "D", stage: "Type It!", heading: "Type Your Town" },
+      READ_TOWN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can say where places are with next to, behind and between." },
     ],
   },
   "4-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 4 · Lesson 3", title: "Giving Directions! 🗺️", subtitle: "Give and follow simple directions to a place." },
-      { type: "chips", stage: "Getting Ready", heading: "Direction Words", subheading: "New words for today", items: ["go", "turn", "left", "right", "straight", "stop", "go past"] },
-      { type: "message", stage: "Taking Off", heading: "Learn Directions", subheading: "⬆️ Go straight · ⬅️ Turn left · ➡️ Turn right · 🛑 Stop", lines: ["Go straight!", "Turn left!"] },
-      { type: "message", stage: "Build a Route", heading: "Build a Route", subheading: "Break the direction into small steps", lines: ["Go straight. Turn right. The park is on your *left*."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Lost Tourist", subheading: "Help the lost tourist find the bank!", turns: [{ who: "teacher", text: "I'm at the school. I want to go to the bank. Help me!" }, { who: "student", text: "Go straight. Turn left. Go past the park. The bank is on your right." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Give directions from one place to another (2-3 steps)", line: "Go ___. Turn ___. The ___ is on your ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Giving Directions!", caption: "Go straight. Turn left. Go past the park. The bank is on your right." },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 4, title: "Giving Directions!", subtitle: "Tell a car where to go with straight, left and right." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "missing", part: "A", stage: "Review", heading: "What's Missing?", items: PLACES4, instruction: [["👀", "Look at the places."], ["🗣️", "Say the place that went away."]], guide: "The ___ is missing." },
+
+      // ---- Part B: four direction words (5 min) ----
+      { type: "dirs", part: "B", stage: "Direction Words", heading: "Four Direction Words", items: DIR_ITEMS, size: 96, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "Direction Words", heading: "Go, Turn, Stop", lines: ["Go *straight*. Turn *left*.", "Turn *right*. *Stop*!"], instruction: LISTEN_REPEAT },
+      { type: "dirs", part: "B", stage: "Direction Words", heading: "What Do I Do?", items: [DIR_ITEMS[0]], labels: false, size: 120, instruction: LOOK_SAY("Say the direction.") },
+      { type: "dirs", part: "B", stage: "Direction Words", heading: "What Do I Do? 2", items: [DIR_ITEMS[1]], labels: false, size: 120, instruction: LOOK_SAY("Say the direction.") },
+      { type: "dirs", part: "B", stage: "Direction Words", heading: "What Do I Do? 3", items: [DIR_ITEMS[2]], labels: false, size: 120, instruction: LOOK_SAY("Say the direction.") },
+      { type: "dirs", part: "B", stage: "Direction Words", heading: "What Do I Do? 4", items: [DIR_ITEMS[3]], labels: false, size: 120, instruction: LOOK_SAY("Say the direction.") },
+
+      // ---- Part C: be the GPS (13 min) ----
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS", grid: MAP_BANK, places: BUILD, goal: "B", question: "Take the car to the bank.", instruction: GPSQ, guide: "Go straight. Stop!" },
+      { type: "message", part: "C", stage: "Left and Right", heading: "Left and Right", lines: ["The bank is on the *left*.", "The store is on the *right*."], instruction: LISTEN_REPEAT },
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS 2", grid: MAP_LIBRARY, places: BUILD, goal: "L", question: "Take the car to the library.", instruction: GPSQ, guide: "Go straight. Turn ___. Stop!" },
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS 3", grid: MAP_HOSPITAL, places: BUILD, goal: "H", question: "Take the car to the hospital.", instruction: GPSQ, guide: "Go straight. Turn ___. Go straight. Stop!" },
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS 4", grid: MAP_MARKET, places: BUILD, goal: "M", question: "Take the car to the supermarket.", instruction: NO_HELP("Tell the teacher where to go.") },
+      { type: "spin", part: "C", stage: "Direction Wheel", heading: "Direction Wheel", items: DIR_ITEMS.map((d) => ({ label: d.word })), instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the direction."]] },
+
+      // ---- Part D: my directions (4 min) ----
+      { type: "route", part: "D", stage: "You Are the Driver", heading: "You Are the Driver!", grid: MAP_STORE, places: BUILD, goal: "T", question: "Take the car to the store.", instruction: NO_HELP("Tell the teacher where to go.") },
+      { type: "postcard", part: "D", stage: "Type It!", heading: "Type the Directions", line: "Go straight. Turn ___. Stop! The ___ is on the ___.", instruction: [["⌨️", "Type the directions in the chat."]] },
+      { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Directions", lines: ["Read your directions to the teacher."], instruction: [["📖", "Read what you typed out loud."]] },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can tell a car where to go with straight, left, right and stop." },
     ],
   },
   "4-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 4 · Lesson 4", title: "Let's Review! 🔄", subtitle: "Combine places, prepositions, and directions to communicate around a town." },
-      { type: "chips", stage: "Fast Retrieval", heading: "Fast Retrieval", subheading: "Name the places, then answer: Where is the bank?", items: ["store", "park", "school", "library", "hospital", "restaurant", "bank"] },
-      { type: "dialogue", stage: "Fix the Map", heading: "Fix the Map", subheading: "The picture shows the store is BEHIND the school", turns: [{ who: "teacher", text: "The store is next to the school." }, { who: "student", text: "No! The store is behind the school." }] },
-      { type: "message", stage: "Direction Challenge", heading: "Direction Challenge", subheading: "Follow the route, then switch roles", lines: ["Go straight. Turn left. Stop."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Wrong Directions", subheading: "Catch the mistake — the map shows the library is on the LEFT", turns: [{ who: "teacher", text: "Go straight. Turn left. The library is on your right." }, { who: "student", text: "No, it's on your left! Go straight, turn left, and the library is on your left." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "Tell me about your town", line: "There is a ___. The ___ is next to the ___. To get to the ___, go ___ and turn ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "There is a school. The park is next to the school. Go straight and turn right to reach the store." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 4, title: "Let's Review!", subtitle: "Play the town games and tell it right." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: PLACES4, instruction: [["👀", "Look at the places."], ["🗣️", "Say the place that went away."]], guide: "The ___ is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Place Wheel", items: PLACES8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what there is."]], guide: "There is a ___." },
+
+      // ---- Part B: true or false (5 min) ----
+      { type: "town", part: "B", stage: "True or False?", heading: "True or False?", rows: [[T_SCHOOL, T_STORE, T_PARK]], size: 88, sentence: "The store is *next to* the park.", instruction: TFQ },
+      { type: "town", part: "B", stage: "True or False?", heading: "True or False? 2", rows: [[T_LIBRARY, T_BANK, T_HOSPITAL]], size: 88, sentence: "The hospital is *between* the bank and the library.", instruction: TFQ },
+      { type: "town", part: "B", stage: "True or False?", heading: "True or False? 3", rows: TOWN_BEHIND, size: 56, sentence: "The restaurant is *behind* the bank.", instruction: TFQ },
+      { type: "town", part: "B", stage: "True or False?", heading: "True or False? 4", rows: TOWN_BEHIND, size: 56, sentence: "The park is *behind* the store.", instruction: TFQ },
+      { type: "town", part: "B", stage: "True or False?", heading: "True or False? 5", rows: [[T_PARK, T_LIBRARY, T_SCHOOL]], size: 88, sentence: "The library is *between* the park and the school.", instruction: TFQ },
+
+      // ---- Part C: games and directions (13 min) ----
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS", grid: MAP_STORE, places: BUILD, goal: "T", question: "Take the car to the store.", instruction: GPSQ, guide: "Go straight. Stop!" },
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS 2", grid: MAP_RESTAURANT, places: BUILD, goal: "R", question: "Take the car to the restaurant.", instruction: GPSQ, guide: "Go straight. Turn ___. Go straight. Stop!" },
+      { type: "dice", part: "C", stage: "Where Is It?", heading: "Where Is It?", dice: [{ name: "Place", items: PLACES8 }, { name: "Where?", items: PREPS2 }, { name: "Place", items: PLACES8 }], instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "The ___ is ___ the ___." },
+      { type: "peek", part: "C", stage: "Mystery Place", heading: "Mystery Place", item: T_BANK, reveal: "It is a bank.", question: "What place is it?", instruction: LOOK_SAY("Guess the place."), guide: "I think it is a ___." },
+      { type: "town", part: "C", stage: "Tell Me About the Town", heading: "The Whole Town", rows: [[T_HOSPITAL, T_SUPERMARKET, T_LIBRARY], [T_BANK, T_SCHOOL, T_RESTAURANT]], size: 56, instruction: NO_HELP("Tell where the places are.") },
+      { type: "route", part: "C", stage: "Be the GPS", heading: "Be the GPS 3", grid: MAP_LIBRARY, places: BUILD, goal: "L", question: "Take the car to the library.", instruction: NO_HELP("Tell the teacher where to go.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about a town." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("There is a ___. The ___ is next to the ___."), part: "D", stage: "Type It!", heading: "Type Your Town" },
+      READ_TOWN,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can talk about places, where they are and how to get there." },
     ],
   },
   "4-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 4 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Use the unit language independently — no reveal!" },
-      { type: "message", stage: "Mystery Town", heading: "Mystery Town", subheading: "A brand-new town map", lines: ["Tell me about this town."] },
-      { type: "dialogue", stage: "Flight Log", heading: "My Town Tour", subheading: "Give a complete virtual tour", turns: [{ who: "teacher", text: "Where is the hospital?" }, { who: "student", text: "The hospital is next to the bank." }, { who: "teacher", text: "How do I get to the supermarket?" }, { who: "student", text: "Go straight, then turn right." }] },
-      { type: "message", stage: "Change the Map", heading: "Change the Map", subheading: "Adapt to a changing situation", lines: ["Move the park. Where is it now? What is next to it?"] },
-      { type: "message", stage: "My Town", heading: "My Town", subheading: "Create or imagine your own town", lines: ["What places are in your town? What is your favorite place?"] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "Can you help me find it?", line: "My favorite place is the ___. It is next to the ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "There is a park in my town. My favorite place is the library, next to the park." },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 4, title: "Show What You Know!", subtitle: "Talk about a town and give directions, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Your Town", turns: [{ who: "teacher", text: "Tell me about your town." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "What Is There?", turns: [{ who: "teacher", text: "What places are there? What is next to your school?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Favorite Place", turns: [{ who: "teacher", text: "What is your favorite place in town? Why?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: town tour and GPS (8 min) ----
+      { type: "town", part: "B", stage: "Town Tour", heading: "Town Tour", rows: [[T_LIBRARY, T_SUPERMARKET, T_RESTAURANT], [T_SCHOOL, T_STORE, T_PARK]], size: 56, instruction: NO_HELP("Tell about this town.") },
+      { type: "town", part: "B", stage: "Town Tour", heading: "Town Tour 2", rows: [[T_HOSPITAL, null, T_BANK], [T_PARK, T_LIBRARY, T_SCHOOL]], size: 56, instruction: NO_HELP("Tell about this town.") },
+      { type: "route", part: "B", stage: "Be the GPS", heading: "Be the GPS", grid: MAP_RESTAURANT, places: BUILD, goal: "R", question: "Take the car to the restaurant.", instruction: NO_HELP("Tell the teacher where to go.") },
+      { type: "route", part: "B", stage: "Be the GPS", heading: "Be the GPS 2", grid: MAP_MARKET, places: BUILD, goal: "M", question: "Take the car to the supermarket.", instruction: NO_HELP("Tell the teacher where to go.") },
+      { type: "dice", part: "B", stage: "Where Is It?", heading: "Where Is It?", dice: [{ name: "Place", items: PLACES8 }, { name: "Where?", items: PREPS2 }, { name: "Place", items: PLACES8 }], instruction: NO_HELP("Say the sentence.") },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: PLACES8, seconds: 60, labels: false, instruction: [["🤔", "No help this time!"], ["🗣️", "Say a sentence. Be fast!"]] },
+
+      // ---- Part C: a real talk (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Where Is It?", turns: [{ who: "teacher", text: "Where is your favorite place? What is next to it?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "How Do I Get There?", turns: [{ who: "teacher", text: "How do I get to your favorite place?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student town, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Town Together", heading: "Town Together", lines: ["There is a big *park* in my town."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Town Together", heading: "Town Together 2", lines: ["The *library* is next to the park."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Town Together", heading: "Town Together 3", lines: ["The *school* is behind the library."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Town...", lines: ["Write about your town."], instruction: [["⌨️", "Type three or four sentences in the chat."]] },
+      { ...READ_TOWN, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 4 Complete!", title: "Unit 4 Complete!", see: "Great job!", recap: "You can talk about a town and tell someone how to get there." },
     ],
   },
   "4-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 4 · Test", title: "Unit 4 Test", subtitle: "Around Town — describe places and navigate independently." },
-      { type: "chips", stage: "Part 1: Places", heading: "Name the Places", subheading: "6-8 pictures", items: ["store", "park", "school", "library", "hospital", "bank"] },
-      { type: "message", stage: "Part 2: Where Is It?", heading: "Where Is It?", subheading: "Use next to, behind, between", lines: ["What is next to the school? What is behind the library?"] },
-      { type: "message", stage: "Part 3-4: Directions ⭐", heading: "Give Directions", subheading: "I'm at the school. How can I get to the supermarket?", lines: ["Go straight. Turn right. Go straight again. The supermarket is on your *left*."] },
-      { type: "message", stage: "Part 5: Speaking", heading: "Tell Me About Your Town", subheading: "4-6 connected sentences", lines: ["There is a school in my town. The park is next to the school."] },
-      { type: "postcard", stage: "Part 6: Writing", heading: "Short Writing", subheading: "3-5 sentences about the town/map", line: "There is a ___ next to the ___. The ___ is between the ___ and the ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 4 Complete!", cardTitle: "Unit 4 Test", caption: "There is a park next to the school. The bank is between the store and the library." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 4, title: "Unit 4 Test", subtitle: "Show what you can say about a town!" },
+
+      // ---- Part A: places ----
+      { ...one(T_STORE), part: "A", stage: "Places", heading: "What Is It?", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(T_LIBRARY), part: "A", stage: "Places", heading: "What Is It? 2", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(T_HOSPITAL), part: "A", stage: "Places", heading: "What Is It? 3", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(T_BANK), part: "A", stage: "Places", heading: "What Is It? 4", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(T_SUPERMARKET), part: "A", stage: "Places", heading: "What Is It? 5", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(T_RESTAURANT), part: "A", stage: "Places", heading: "What Is It? 6", question: "What is it?", instruction: LISTEN_ANSWER },
+
+      // ---- Part B: where is it? ----
+      { type: "town", part: "B", stage: "Where Is It?", heading: "Where Is It?", rows: [[T_STORE, T_BANK, T_LIBRARY]], size: 88, question: "Where is the bank? Where is the store?", instruction: MAPQ },
+      { type: "town", part: "B", stage: "Where Is It?", heading: "Where Is It? 2", rows: TOWN_BEHIND, size: 56, question: "What is behind the school? What is behind the bank?", instruction: MAPQ },
+      { type: "town", part: "B", stage: "Where Is It?", heading: "Where Is It? 3", rows: [[T_HOSPITAL, T_PARK, T_SCHOOL]], size: 88, question: "Where is the park? What is next to the hospital?", instruction: MAPQ },
+
+      // ---- Part C: directions ----
+      { type: "route", part: "C", stage: "Directions", heading: "Give Directions", grid: MAP_LIBRARY, places: BUILD, goal: "L", question: "Take the car to the library.", instruction: GPSQ },
+      { type: "route", part: "C", stage: "Directions", heading: "Give Directions 2", grid: MAP_HOSPITAL, places: BUILD, goal: "H", question: "Take the car to the hospital.", instruction: GPSQ },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Your Town", turns: [{ who: "teacher", text: "Tell me about your town. What places are there?" }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say three or four sentences."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Favorite Place", turns: [{ who: "teacher", text: "What is your favorite place? Where is it?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "score", stage: "My Unit 4 Score!", heading: "My Unit 4 Score!", rows: [["Places", "/ 6"], ["Where is it?", "/ 6"], ["Directions", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 4 Complete!", title: "Unit 4 Complete!", see: "On to Unit 5!", recap: "You can talk about places in town, where they are and how to get there." },
     ],
   },
 
