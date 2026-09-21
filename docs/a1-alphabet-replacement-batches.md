@@ -643,3 +643,22 @@ Decision (user, 2026-09-21): replace the bag, it is a picture downloaded from th
 ```text
 Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One school backpack, rounded shape, blue with a yellow front pocket, two shoulder straps, a small zipper pull, a top handle. No logo and no writing.
 ```
+
+## Extra: the tree and the sitting cat
+
+Decision (user, 2026-09-21): replace both, they look sourced. Also deleted the unused `u1-l1/airplane.jpg` and `u1-l1/cup.jpg`.
+
+- **tree** overwrites `u3-l5/tree.avif` (Unit 3 "Show What You Know": "a green tree").
+- **cat-sitting** overwrites `u3-l3/cat-sitting.avif` (Blending Begins: "sat"). The cat matches the new `cat` picture, and it must clearly be sitting.
+
+**tree**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One simple tree with a thick brown trunk and a big round green leafy crown with a few lighter-green highlights, a small patch of ground at its base. No fruit, no face.
+```
+
+**cat-sitting**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One cute fluffy cream-colored cat with a dark-brown face and dark-brown paws, sitting upright on the ground, side view, tail curled around its feet, big blue eyes, a small pink nose.
+```

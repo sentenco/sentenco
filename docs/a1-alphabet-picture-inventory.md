@@ -8,7 +8,7 @@ First step of replacing the A1 Kids pictures that were not generated. This lists
 - Formats: avif 35, jpg 32, jpeg 9, png 2, webp 1. The generated pictures in the other units are all `.jpg`/`.png`; the `.avif`, `.webp` and `.jpeg` files here are what stock downloads look like.
 - **The styles do not match each other**: flat vector art, 3D-shaded objects, line art, realistic stickers, and many with a coloured square background. The generated pictures (Anna, Bob, Carol, the feelings faces) look consistent, so the difference is visible.
 - **One confirmed watermark:** `u1-l2/duck.png` has "Easy Drawing Guides" in the bottom-right corner. It is used in 4 lesson files.
-- **Not used in any lesson:** `u1-l1/airplane.jpg` and `u1-l1/cup.jpg`. No need to replace them.
+- **Not used in any lesson:** `u1-l1/airplane.jpg` and `u1-l1/cup.jpg`. Deleted on 2026-09-21 with the user's OK.
 - I cannot tell where each file came from, only how it looks. Tell me if some of these are yours and I will drop them from the list.
 
 ## Not letter pictures
