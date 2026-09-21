@@ -68,6 +68,23 @@ const TFQ = [["👀", "Look at the map."], ["🗣️", "Say true or false. Fix i
 const TOWN_BEHIND = [[T_PARK, null, T_RESTAURANT], [T_SCHOOL, T_STORE, T_BANK]];
 const READ_TOWN = { type: "message", part: "D", stage: "Read It Aloud", heading: "Read Your Town", lines: ["Read your sentences to the teacher."], instruction: [["📖", "Read what you typed out loud."]] };
 
+// ---- Unit 5 (Let's Go Shopping) pieces; every picture is reused from A1 (nothing new to generate) ----
+const SH = (label, src) => ({ label, src });
+const S_APPLE = SH("apple", "/curriculum/u8-l1/apple.jpg"), S_BANANA = SH("banana", "/curriculum/u8-l1/banana.jpg"), S_COOKIE = SH("cookie", "/curriculum/u1-l1/cookie.webp");
+const S_JUICE = SH("juice", "/curriculum/u2-l1/juice.avif"), S_BOOK = SH("book", "/curriculum/u7-objects/book.png"), S_BALL = SH("ball", "/curriculum/u11-l1/ball.jpg");
+const S_BAG = SH("bag", "/curriculum/u7-l1/bag.avif"), S_HAT = SH("hat", "/curriculum/u1-l3/hat.avif"), S_TOY = SH("toy", "/curriculum/u11-l1/toy.jpg"), S_KITE = SH("kite", "/curriculum/u2-l1/kite.jpg");
+const PRICES = { apple: 5, banana: 5, cookie: 10, juice: 10, book: 20, ball: 20, bag: 30, hat: 30, toy: 40, kite: 50 };
+const STOCK = (item) => ({ ...item, price: PRICES[item.label] });
+const STOCKN = (item, n) => ({ ...item, count: n, label: item.label + "s", price: PRICES[item.label] * n });
+const TAG = (item, n = 1) => ({ ...item, count: n, label: `${PRICES[item.label] * n} pesos` });
+const SHOP6 = [S_APPLE, S_BANANA, S_COOKIE, S_JUICE, S_BOOK, S_BALL];
+const PRICE_WORDS = (list) => list.map((n) => ({ label: `${n} pesos` }));
+const HM = "How much is it?", HMP = "How much are they?";
+const REPEAT_SENT = [["👂", "Listen to the teacher."], ["🗣️", "Repeat each sentence."]];
+const TF_PRICE = LOOK_SAY("Say true or false. Fix it if it is false.");
+const SHELFQ = [["👀", "Look at the shelf."], ["🗣️", "Say what you want."]];
+const READ_SHOP = { ...READ_ALOUD, heading: "Read Your Shopping" };
+
 export const SOAR_A2_LESSONS = {
   // ---------- Unit 1: School Life ----------
   "1-1": {
@@ -930,67 +947,196 @@ export const SOAR_A2_LESSONS = {
 
   // ---------- Unit 5: Let's Go Shopping ----------
   "5-1": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 5 · Lesson 1", title: "At the Store! 🛒", subtitle: "Identify shopping items and ask \"How much is it?\" / \"How much are they?\"" },
-      { type: "chips", stage: "Getting Ready", heading: "Shopping Words", subheading: "Today we're going shopping!", items: ["shirt", "shoes", "book", "pencil", "apple", "water", "toy", "bag"] },
-      { type: "message", stage: "Taking Off", heading: "How Much?", subheading: "👕 $5 · 👟 $10 (pair)", lines: ["How much is it? It's *five dollars*.", "How much are they? They're *ten dollars*."] },
-      { type: "dialogue", stage: "Flight Log", heading: "Customer Interview", subheading: "Teacher: store employee. You: customer.", turns: [{ who: "teacher", text: "Can I help you? What do you want?" }, { who: "student", text: "How much is it?" }, { who: "student", text: "How much are they?" }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Choose 3 things you want to buy", line: "I want a ___. It's ___ dollars." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "At the Store!", caption: "How much is it? It's five dollars. How much are they? They're ten dollars." },
+      { type: "title", stage: "A2 · Soar", lesson: 1, unit: 5, title: "At the Store!", subtitle: "Ask how much things are and say the prices." },
+
+      // ---- Part A: warm-up (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "missing", part: "A", stage: "What's Missing?", heading: "What's Missing?", items: [S_APPLE, S_BANANA, S_BOOK, S_BALL], instruction: [["👀", "Look at the things."], ["🗣️", "Say the thing that went away."]], guide: "The ___ is missing." },
+
+      // ---- Part B: how much is it? (5 min) ----
+      { type: "strip", part: "B", stage: "How Much?", heading: "Six Things to Buy", numbered: false, size: 84, items: SHOP6, instruction: REPEAT_WORDS },
+      { type: "message", part: "B", stage: "How Much?", heading: "How Much Is It?", lines: [HM, "It's *ten* pesos."], instruction: REPEAT_SENT },
+      { type: "strip", part: "B", stage: "How Much?", heading: "How Much Is It?", numbered: false, size: 110, items: [TAG(S_APPLE)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+      { type: "strip", part: "B", stage: "How Much?", heading: "How Much Is It? 2", numbered: false, size: 110, items: [TAG(S_COOKIE)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+      { type: "strip", part: "B", stage: "How Much?", heading: "How Much Is It? 3", numbered: false, size: 110, items: [TAG(S_BOOK)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+      { type: "message", part: "B", stage: "How Much?", heading: "How Much Are They?", lines: [HMP, "They're *twenty* pesos."], instruction: REPEAT_SENT },
+      { type: "strip", part: "B", stage: "How Much?", heading: "How Much Are They?", numbered: false, size: 110, items: [TAG(S_BANANA, 2)], question: HMP, instruction: LISTEN_ANSWER, guide: "They're ___ pesos." },
+      { type: "strip", part: "B", stage: "How Much?", heading: "How Much Are They? 2", numbered: false, size: 110, items: [TAG(S_COOKIE, 2)], question: HMP, instruction: LISTEN_ANSWER, guide: "They're ___ pesos." },
+
+      // ---- Part C: the shop and the games (13 min) ----
+      { type: "spin", part: "C", stage: "Price Wheel", heading: "Price Wheel", items: PRICE_WORDS([5, 10, 20]), instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the price."]], guide: "It's ___ pesos." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf", items: [STOCK(S_APPLE), STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_JUICE)], size: 84, instruction: [["👀", "Look at the shelf."], ["🗣️", "Ask how much it is."]], guide: "How much is the ___?" },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf 2", items: [STOCKN(S_APPLE, 2), STOCKN(S_COOKIE, 2), STOCKN(S_BANANA, 2), STOCKN(S_JUICE, 2)], size: 84, instruction: [["👀", "Look at the shelf."], ["🗣️", "Ask how much they are."]], guide: "How much are the ___?" },
+      { type: "peek", part: "C", stage: "Mystery Thing", heading: "Mystery Thing", item: S_COOKIE, reveal: "It is a cookie.", question: "What is it?", instruction: LOOK_SAY("Guess the thing."), guide: "I think it is a ___." },
+      { type: "sprint", part: "C", stage: "Price Sprint", heading: "Price Sprint", items: [TAG(S_APPLE), TAG(S_COOKIE), TAG(S_BOOK), TAG(S_JUICE), TAG(S_BANANA), TAG(S_BALL)], seconds: 40, instruction: LOOK_SAY("Say the price. Be fast!"), guide: "It's ___ pesos." },
+      { type: "strip", part: "C", stage: "True or False?", heading: "True or False?", numbered: false, size: 100, items: [TAG(S_APPLE)], sentence: "The apple is *ten* pesos.", instruction: TF_PRICE },
+      { type: "strip", part: "C", stage: "True or False?", heading: "True or False? 2", numbered: false, size: 100, items: [TAG(S_BOOK)], sentence: "The book is *twenty* pesos.", instruction: TF_PRICE },
+      { type: "strip", part: "C", stage: "True or False?", heading: "True or False? 3", numbered: false, size: 100, items: [TAG(S_JUICE)], sentence: "The juice is *five* pesos.", instruction: TF_PRICE },
+
+      // ---- Part D: my shopping (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Shopping", heading: "What Do You Want?", turns: [{ who: "teacher", text: "What do you want to buy?" }], instruction: LISTEN_ANSWER, guide: "I want a ___." },
+      { ...TYPE2("I want a ___. It's ___ pesos."), part: "D", stage: "Type It!", heading: "Type Your Shopping" },
+      READ_SHOP,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can ask how much things are and say the prices." },
     ],
   },
   "5-2": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 5 · Lesson 2", title: "Counting Money! 💰", subtitle: "Understand and say common prices and quantities." },
-      { type: "message", stage: "Getting Ready", heading: "Warm-Up", subheading: "Quick price review", lines: ["How much is the book? How much are the shoes?"] },
-      { type: "message", stage: "Taking Off", heading: "Prices & Quantities", subheading: "🍎 → one apple · 🍎🍎 → two apples", lines: ["One apple is *10 pesos*.", "Two apples are *20 pesos*."] },
-      { type: "dialogue", stage: "How Many?", heading: "How Many?", subheading: "Practice with different products", turns: [{ who: "teacher", text: "How many do you want?" }, { who: "student", text: "I want two." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Shopping Budget", subheading: "You have 20 pesos! What will you buy?", turns: [{ who: "teacher", text: "You have 20 pesos." }, { who: "student", text: "I want two apples. They are five pesos. I have twenty pesos." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Buy three things — say what and how many", line: "I want ___ ___(s). They are ___ pesos." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Counting Money!", caption: "I want two apples. They are twenty pesos. I have thirty pesos." },
+      { type: "title", stage: "A2 · Soar", lesson: 2, unit: 5, title: "Counting Money!", subtitle: "Count to fifty and say how much things cost." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "spin", part: "A", stage: "Review", heading: "Price Wheel", items: PRICE_WORDS([5, 10, 20]), instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the price."]], guide: "It's ___ pesos." },
+      { type: "strip", part: "A", stage: "Review", heading: "How Much Is It?", numbered: false, size: 110, items: [TAG(S_JUICE)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+
+      // ---- Part B: three new numbers and how many (5 min) ----
+      { type: "chips", part: "B", stage: "Count by Tens", heading: "Count by Tens", items: ["10", "20", "30", "40", "50"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say the numbers."]] },
+      { type: "message", part: "B", stage: "Count by Tens", heading: "Thirty, Forty, Fifty", lines: ["It's *thirty* pesos.", "It's *forty* pesos.", "It's *fifty* pesos."], instruction: REPEAT_SENT },
+      { type: "strip", part: "B", stage: "Count by Tens", heading: "How Much Is It?", numbered: false, size: 110, items: [TAG(S_BAG)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+      { type: "strip", part: "B", stage: "Count by Tens", heading: "How Much Is It? 2", numbered: false, size: 110, items: [TAG(S_TOY)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+      { type: "strip", part: "B", stage: "Count by Tens", heading: "How Much Is It? 3", numbered: false, size: 110, items: [TAG(S_KITE)], question: HM, instruction: LISTEN_ANSWER, guide: "It's ___ pesos." },
+      { type: "strip", part: "B", stage: "How Many?", heading: "How Many?", numbered: false, labels: false, size: 110, items: [{ ...S_APPLE, count: 3 }], question: "How many apples?", instruction: LISTEN_ANSWER, guide: "There are ___ apples." },
+      { type: "strip", part: "B", stage: "How Many?", heading: "How Many? 2", numbered: false, labels: false, size: 110, items: [{ ...S_BOOK, count: 2 }], question: "How many books?", instruction: LISTEN_ANSWER, guide: "There are ___ books." },
+
+      // ---- Part C: how much are they? and the shop (13 min) ----
+      { type: "message", part: "C", stage: "How Much Are They?", heading: "Two Apples", lines: ["One apple is *five* pesos.", "Two apples are *ten* pesos."], instruction: REPEAT_SENT },
+      { type: "strip", part: "C", stage: "How Much Are They?", heading: "How Much Are They?", numbered: false, size: 110, items: [TAG(S_COOKIE, 2)], question: HMP, instruction: LISTEN_ANSWER, guide: "They're ___ pesos." },
+      { type: "strip", part: "C", stage: "How Much Are They?", heading: "How Much Are They? 2", numbered: false, size: 110, items: [TAG(S_BOOK, 2)], question: HMP, instruction: LISTEN_ANSWER, guide: "They're ___ pesos." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf", items: [STOCK(S_APPLE), STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_BAG)], budget: 30, size: 80, instruction: SHELFQ, guide: "I want a ___." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf 2", items: [STOCK(S_BANANA), STOCK(S_JUICE), STOCK(S_BALL), STOCK(S_TOY)], budget: 40, size: 80, instruction: SHELFQ, guide: "I want a ___." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf 3", items: [STOCK(S_COOKIE), STOCK(S_HAT), STOCK(S_KITE), STOCK(S_BOOK)], budget: 50, size: 80, instruction: NO_HELP("Say what you want.") },
+      { type: "dice", part: "C", stage: "Shopping Dice", heading: "Shopping Dice", dice: [{ name: "How many?", items: [{ label: "two" }, { label: "three" }] }, { name: "Thing", items: [S_APPLE, S_COOKIE, S_BANANA, S_BOOK, S_BALL, S_JUICE] }, { name: "Price", items: PRICE_WORDS([10, 20, 30, 40, 50]) }], size: 92, instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "___ ___ are ___." },
+      { type: "sprint", part: "C", stage: "Price Sprint", heading: "Price Sprint", items: [TAG(S_APPLE), TAG(S_TOY), TAG(S_COOKIE), TAG(S_KITE), TAG(S_BOOK), TAG(S_BAG), TAG(S_HAT), TAG(S_JUICE)], seconds: 45, instruction: LOOK_SAY("Say the price. Be fast!"), guide: "It's ___ pesos." },
+      { type: "missing", part: "C", stage: "What's Missing?", heading: "What's Missing?", items: [S_BAG, S_HAT, S_TOY, S_KITE], instruction: [["👀", "Look at the things."], ["🗣️", "Say the thing that went away."]], guide: "The ___ is missing." },
+
+      // ---- Part D: my shopping (4 min) ----
+      { type: "dialogue", part: "D", stage: "My Shopping", heading: "Fifty Pesos", turns: [{ who: "teacher", text: "You have fifty pesos. What do you want to buy?" }], instruction: LISTEN_ANSWER, guide: "I want a ___ and a ___." },
+      { ...TYPE2("I want a ___. It's ___ pesos."), part: "D", stage: "Type It!", heading: "Type Your Shopping" },
+      READ_SHOP,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can count to fifty and say how much things cost." },
     ],
   },
   "5-3": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 5 · Lesson 3", title: "Let's Buy Something! 🛍️", subtitle: "Take part in a simple shopping conversation from beginning to end." },
-      { type: "chips", stage: "Getting Ready", heading: "Customer Phrases", subheading: "What you say when shopping", items: ["Hello.", "I'd like a ___, please.", "How much is it?", "I'll take it, please.", "Thank you."] },
-      { type: "dialogue", stage: "Taking Off", heading: "Build the Conversation", subheading: "Customer and Cashier", turns: [{ who: "student", text: "Hello. I'd like a book, please." }, { who: "teacher", text: "Sure. It's 50 pesos." }, { who: "student", text: "I'll take it, please." }] },
-      { type: "dialogue", stage: "Flight Log", heading: "The Busy Cashier", subheading: "Complete several purchases — even when there's a problem!", turns: [{ who: "teacher", text: "Sorry, we're out of apples." }, { who: "student", text: "Okay. I'd like a banana, please." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Challenge", subheading: "Complete a shopping conversation on your own", line: "Hello. I'd like a ___, please. How much is it? I'll take it, please." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Buy Something!", caption: "Hello. I'd like a book, please. It's 50 pesos. I'll take it, please. Thank you!" },
+      { type: "title", stage: "A2 · Soar", lesson: 3, unit: 5, title: "Let's Buy Something!", subtitle: "Buy something politely, from hello to thank you." },
+
+      // ---- Part A: review (3 min) ----
+      { type: "dialogue", part: "A", stage: "Hello!", heading: "Hello!", turns: [{ who: "teacher", text: "How are you today?" }], instruction: LISTEN_ANSWER, guide: "I'm ___." },
+      { type: "shop", part: "A", stage: "Review", heading: "Shop Shelf", items: [STOCK(S_BOOK), STOCK(S_BAG), STOCK(S_TOY), STOCK(S_KITE)], size: 80, instruction: [["👀", "Look at the shelf."], ["🗣️", "Ask how much it is."]], guide: "How much is the ___?" },
+
+      // ---- Part B: polite words (5 min) ----
+      { type: "chips", part: "B", stage: "Polite Words", heading: "Shopping Words", items: ["Hello.", "I'd like a ___, please.", "Here you are.", "Thank you."], instruction: REPEAT_SENT },
+      { type: "dialogue", part: "B", stage: "Polite Words", heading: "At the Shop", turns: [{ who: "student", text: "Hello. I'd like a book, please." }, { who: "teacher", text: "Here you are. It's twenty pesos." }, { who: "student", text: "Thank you." }], instruction: REPEAT_SENT },
+      { type: "strip", part: "B", stage: "Polite Words", heading: "Can I Help You?", numbered: false, size: 100, items: [TAG(S_BOOK)], question: "Hello! Can I help you?", instruction: LISTEN_ANSWER, guide: "I'd like a ___, please." },
+      { type: "strip", part: "B", stage: "Polite Words", heading: "Can I Help You? 2", numbered: false, size: 100, items: [TAG(S_BALL)], question: "Hello! Can I help you?", instruction: LISTEN_ANSWER, guide: "I'd like a ___, please." },
+      { type: "strip", part: "B", stage: "Polite Words", heading: "Can I Help You? 3", numbered: false, size: 100, items: [TAG(S_JUICE)], question: "Hello! Can I help you?", instruction: LISTEN_ANSWER, guide: "I'd like a ___, please." },
+
+      // ---- Part C: the whole shop talk and the games (13 min) ----
+      { type: "spin", part: "C", stage: "Customer Wheel", heading: "Customer Wheel", items: SHOP6, instruction: [["👀", "Look at the wheel."], ["🗣️", "Buy it politely."]], guide: "I'd like a ___, please." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Buy Two Things", items: [STOCK(S_APPLE), STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_BAG)], budget: 50, size: 80, instruction: [["👀", "Look at the shelf."], ["🗣️", "Buy two things. Be polite."]], guide: "Hello. I'd like a ___ and a ___, please." },
+      { type: "dialogue", part: "C", stage: "The Busy Cashier", heading: "Sorry!", turns: [{ who: "teacher", text: "Sorry, we don't have bananas." }], instruction: LISTEN_ANSWER, guide: "Okay. I'd like a ___, please." },
+      { type: "dialogue", part: "C", stage: "The Busy Cashier", heading: "Sorry! 2", turns: [{ who: "teacher", text: "Sorry, we don't have juice." }], instruction: LISTEN_ANSWER, guide: "Okay. I'd like a ___, please." },
+      { type: "sprint", part: "C", stage: "Please Sprint", heading: "Please Sprint", items: SHOP6, seconds: 40, instruction: LOOK_SAY("Buy it politely. Be fast!"), guide: "I'd like a ___, please." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Buy Two Things 2", items: [STOCK(S_BANANA), STOCK(S_JUICE), STOCK(S_BALL), STOCK(S_TOY)], budget: 40, size: 80, instruction: NO_HELP("Buy two things. Be polite.") },
+      { type: "dialogue", part: "C", stage: "The Whole Talk", heading: "The Whole Shop Talk", turns: [{ who: "teacher", text: "Hello! Can I help you?" }], instruction: NO_HELP("Have the whole shop talk.") },
+
+      // ---- Part D: my shopping talk (4 min) ----
+      { type: "postcard", part: "D", stage: "Type It!", heading: "Type Your Shop Talk", line: "Hello. I'd like a ___, please. How much is it? Thank you.", instruction: [["⌨️", "Type the shop talk in the chat."]] },
+      { ...READ_SHOP, heading: "Read Your Shop Talk" },
+      { type: "wrapup", stage: "You've Landed!", recap: "You can buy something politely, from hello to thank you." },
     ],
   },
   "5-4": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 5 · Lesson 4", title: "Let's Review! 🔄", subtitle: "Use shopping vocabulary, prices, quantities, and expressions together." },
-      { type: "message", stage: "Shopping Speed Round", heading: "Shopping Speed Round", subheading: "Say the price fast!", lines: ["It's *20 pesos*.", "They're *50 pesos*."] },
-      { type: "message", stage: "Quantity Challenge", heading: "Quantity Challenge", subheading: "🍎🍎🍎", lines: ["How many apples? How much are three apples?"] },
-      { type: "dialogue", stage: "Fix the Shopping Mistake", heading: "Fix the Shopping Mistake", subheading: "Catch and correct the error", turns: [{ who: "teacher", text: "Two apples? They're ten dollars." }, { who: "student", text: "No, they're five dollars!" }] },
-      { type: "dialogue", stage: "Flight Log", heading: "Shopping Mistakes", subheading: "Find and correct more mistakes", turns: [{ who: "teacher", text: "You want three books?" }, { who: "student", text: "No, I want two books." }] },
-      { type: "postcard", stage: "Postcard Message", heading: "Exit Talk", subheading: "What do you usually buy at a store?", line: "I usually buy ___ because ___." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Let's Review!", caption: "I usually buy books because I like reading. They're around 50 pesos." },
+      { type: "title", stage: "A2 · Soar", lesson: 4, unit: 5, title: "Let's Review!", subtitle: "Play the shop games and tell it right." },
+
+      // ---- Part A: memory challenge (4 min) ----
+      { type: "missing", part: "A", stage: "Memory Challenge", heading: "What's Missing?", items: [S_APPLE, S_COOKIE, S_BOOK, S_BAG], instruction: [["👀", "Look at the things."], ["🗣️", "Say the thing that went away."]], guide: "The ___ is missing." },
+      { type: "spin", part: "A", stage: "Memory Challenge", heading: "Price Wheel", items: PRICE_WORDS([5, 10, 20, 30, 40, 50]), instruction: [["👀", "Look at the wheel."], ["🗣️", "Say the price."]], guide: "It's ___ pesos." },
+
+      // ---- Part B: true or false (5 min) ----
+      { type: "strip", part: "B", stage: "True or False?", heading: "True or False?", numbered: false, size: 100, items: [TAG(S_BAG)], sentence: "The bag is *thirty* pesos.", instruction: TF_PRICE },
+      { type: "strip", part: "B", stage: "True or False?", heading: "True or False? 2", numbered: false, size: 100, items: [TAG(S_TOY)], sentence: "The toy is *fifty* pesos.", instruction: TF_PRICE },
+      { type: "strip", part: "B", stage: "True or False?", heading: "True or False? 3", numbered: false, size: 100, items: [TAG(S_BOOK, 2)], sentence: "The books are *forty* pesos.", instruction: TF_PRICE },
+      { type: "strip", part: "B", stage: "True or False?", heading: "True or False? 4", numbered: false, size: 100, items: [TAG(S_COOKIE, 2)], sentence: "The cookies are *ten* pesos.", instruction: TF_PRICE },
+      { type: "strip", part: "B", stage: "True or False?", heading: "True or False? 5", numbered: false, size: 100, items: [TAG(S_APPLE)], sentence: "The apple is *five* pesos.", instruction: TF_PRICE },
+
+      // ---- Part C: games and shopping (13 min) ----
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf", items: [STOCK(S_APPLE), STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_BALL)], budget: 20, size: 80, instruction: SHELFQ, guide: "I'd like a ___, please." },
+      { type: "shop", part: "C", stage: "Shop Shelf", heading: "Shop Shelf 2", items: [STOCK(S_JUICE), STOCK(S_HAT), STOCK(S_TOY), STOCK(S_KITE)], budget: 50, size: 80, instruction: NO_HELP("Buy things. Be polite.") },
+      { type: "dice", part: "C", stage: "Shopping Dice", heading: "Shopping Dice", dice: [{ name: "How many?", items: [{ label: "two" }, { label: "three" }] }, { name: "Thing", items: [S_APPLE, S_COOKIE, S_BANANA, S_BOOK, S_BALL, S_JUICE] }, { name: "Price", items: PRICE_WORDS([10, 20, 30, 40, 50]) }], size: 92, instruction: [["👀", "Look at the dice."], ["🗣️", "Say the sentence."]], guide: "___ ___ are ___." },
+      { type: "sprint", part: "C", stage: "Beat the Clock", heading: "Beat the Clock", items: [TAG(S_APPLE), TAG(S_TOY), TAG(S_COOKIE), TAG(S_KITE), TAG(S_BOOK), TAG(S_BAG), TAG(S_BALL, 2), TAG(S_JUICE)], seconds: 45, instruction: LOOK_SAY("Say the price. Be fast!") },
+      { type: "dialogue", part: "C", stage: "The Busy Cashier", heading: "Sorry!", turns: [{ who: "teacher", text: "Sorry, we don't have books." }], instruction: LISTEN_ANSWER, guide: "Okay. I'd like a ___, please." },
+      { type: "dialogue", part: "C", stage: "The Whole Talk", heading: "The Whole Shop Talk", turns: [{ who: "teacher", text: "Hello! Can I help you?" }], instruction: NO_HELP("Have the whole shop talk.") },
+
+      // ---- Part D: three things (3 min) ----
+      { type: "dialogue", part: "D", stage: "Review", heading: "Three Things", turns: [{ who: "teacher", text: "Tell me three things about shopping." }], instruction: NO_HELP("Say three sentences.") },
+      { ...TYPE2("I want a ___. It's ___ pesos."), part: "D", stage: "Type It!", heading: "Type Your Shopping" },
+      READ_SHOP,
+      { type: "wrapup", stage: "You've Landed!", recap: "You can ask for things, say the price and buy them politely." },
     ],
   },
   "5-5": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 5 · Lesson 5", title: "Show What You Know! ⭐", subtitle: "Use shopping language independently — no reveal!" },
-      { type: "message", stage: "Mystery Store", heading: "Mystery Store", subheading: "New products, new prices", lines: ["You are shopping. What do you want?"] },
-      { type: "dialogue", stage: "Flight Log", heading: "Shopping Trip", subheading: "You need food for a picnic. You have 30 pesos.", turns: [{ who: "teacher", text: "Welcome! What can I get you?" }, { who: "student", text: "I'd like two apples and a water, please." }] },
-      { type: "dialogue", stage: "The Price Changed!", heading: "The Price Changed!", subheading: "Respond spontaneously", turns: [{ who: "teacher", text: "Oh! The apples are now 80 pesos." }, { who: "student", text: "Hmm, do you have anything cheaper?" }] },
-      { type: "message", stage: "Switch Roles", heading: "Switch Roles", subheading: "Now you're the cashier!", lines: ["Check the picture and respond appropriately when the teacher shops."] },
-      { type: "postcard", stage: "Postcard Message", heading: "Quick Reflection", subheading: "What did you buy? How much did you spend?", line: "I bought ___ and ___. I spent ___ pesos." },
-      { type: "landing", stage: "Landing", heading: "You've Landed!", cardTitle: "Show What You Know!", caption: "I bought two apples and a water. I spent thirty pesos. My favorite thing was the apples!" },
+      { type: "title", stage: "A2 · Soar", lesson: 5, unit: 5, title: "Show What You Know!", subtitle: "Shop and talk about shopping, all on your own." },
+
+      // ---- Part A: conversation starter (4 min) ----
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Tell Me About Shopping", turns: [{ who: "teacher", text: "Tell me about shopping." }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "What Do You Buy?", turns: [{ who: "teacher", text: "What do you like to buy? Where do you go shopping?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "A", stage: "Conversation", heading: "Who Goes With You?", turns: [{ who: "teacher", text: "Who goes shopping with you?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part B: the customer and the cashier (8 min) ----
+      { type: "shop", part: "B", stage: "Mystery Store", heading: "Mystery Store", items: [STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_HAT), STOCK(S_KITE)], budget: 50, size: 80, instruction: NO_HELP("Buy things. Be polite.") },
+      { type: "dialogue", part: "B", stage: "The Price Changed!", heading: "The Price Changed!", turns: [{ who: "teacher", text: "Oh! The book is now forty pesos." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Say what you think."]] },
+      { type: "shop", part: "B", stage: "Switch Roles", heading: "You Are the Cashier!", items: [STOCK(S_BOOK), STOCK(S_BALL), STOCK(S_COOKIE), STOCK(S_BAG)], question: "The teacher wants the book and the ball. How much is it?", size: 80, instruction: [["👀", "Look at the shelf."], ["🗣️", "Tell the teacher the price."]] },
+      { type: "shop", part: "B", stage: "Switch Roles", heading: "You Are the Cashier! 2", items: [STOCK(S_TOY), STOCK(S_JUICE), STOCK(S_APPLE), STOCK(S_HAT)], question: "The teacher wants the toy and the apple. How much is it?", size: 80, instruction: [["👀", "Look at the shelf."], ["🗣️", "Tell the teacher the price."]] },
+      { type: "sprint", part: "B", stage: "Beat Your Best", heading: "Beat Your Best!", items: [TAG(S_APPLE), TAG(S_TOY), TAG(S_COOKIE), TAG(S_KITE), TAG(S_BOOK), TAG(S_BAG), TAG(S_BALL, 2), TAG(S_JUICE, 2), TAG(S_HAT)], seconds: 60, instruction: [["🤔", "No help this time!"], ["🗣️", "Say the price. Be fast!"]] },
+
+      // ---- Part C: a real talk (5 min) ----
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Your Store", turns: [{ who: "teacher", text: "Tell me about a store near your home. What can you buy there?" }], instruction: LISTEN_ANSWER },
+      { type: "dialogue", part: "C", stage: "Real Talk", heading: "Your Money", turns: [{ who: "teacher", text: "You have fifty pesos. What do you want to buy? Why?" }], instruction: LISTEN_ANSWER },
+
+      // ---- Part D: teacher and student story, then writing (8 min) ----
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together", lines: ["Yesterday, I went to the *store*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 2", lines: ["I saw a *book*. It's twenty pesos."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Story Together", heading: "Story Together 3", lines: ["After that, I went *home*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Add the next sentence."]] },
+      { type: "message", part: "D", stage: "Type It!", heading: "My Shopping...", lines: ["Write about a shopping trip."], instruction: [["⌨️", "Type three or four sentences in the chat."]] },
+      { ...READ_SHOP, heading: "Read Your Writing" },
+      { type: "wrapup", stage: "Unit 5 Complete!", title: "Unit 5 Complete!", see: "Great job!", recap: "You can shop, ask the price and talk about shopping, in your own words." },
     ],
   },
   "5-6": {
+    v2: true,
     slides: [
-      { type: "title", stage: "A2 · Soar", eyebrow: "Unit 5 · Test", title: "Unit 5 Test", subtitle: "Let's Go Shopping — handle a shopping situation independently." },
-      { type: "chips", stage: "Part 1: Vocabulary", heading: "Name the Products", subheading: "8-10 products", items: ["shirt", "shoes", "book", "apple", "water", "toy"] },
-      { type: "message", stage: "Part 2-3: Prices & Quantities", heading: "Prices & Quantities", subheading: "How much is/are it/they? How many?", lines: ["How much is the shirt? How many apples are there?"] },
-      { type: "message", stage: "Part 4: Questions", heading: "Ask the Questions", subheading: "You ask this time!", lines: ["How much is the book? How much are the pencils?"] },
-      { type: "dialogue", stage: "Part 5: Roleplay ⭐", heading: "Shopping Roleplay", subheading: "Choose, ask, decide, and buy politely", turns: [{ who: "student", text: "Hello. I'd like two apples, please. How much are they?" }, { who: "teacher", text: "They're 40 pesos." }, { who: "student", text: "Okay. I'll take them, please." }] },
-      { type: "postcard", stage: "Part 6: Writing", heading: "Short Writing", subheading: "3-5 sentences", line: "I want to buy ___. They are ___ pesos. I like shopping for ___." },
-      { type: "landing", stage: "Landing", heading: "Unit 5 Complete!", cardTitle: "Unit 5 Test", caption: "I want to buy two apples. They are 40 pesos. I also want a book for 50 pesos." },
+      { type: "title", stage: "A2 · Soar", lesson: 6, unit: 5, title: "Unit 5 Test", subtitle: "Show what you can say about shopping!" },
+
+      // ---- Part A: things ----
+      { ...one(S_APPLE), part: "A", stage: "Things", heading: "What Is It?", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(S_COOKIE), part: "A", stage: "Things", heading: "What Is It? 2", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(S_JUICE), part: "A", stage: "Things", heading: "What Is It? 3", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(S_BOOK), part: "A", stage: "Things", heading: "What Is It? 4", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(S_BALL), part: "A", stage: "Things", heading: "What Is It? 5", question: "What is it?", instruction: LISTEN_ANSWER },
+      { ...one(S_BAG), part: "A", stage: "Things", heading: "What Is It? 6", question: "What is it?", instruction: LISTEN_ANSWER },
+
+      // ---- Part B: prices ----
+      { type: "strip", part: "B", stage: "Prices", heading: "How Much?", numbered: false, size: 100, items: [TAG(S_APPLE), TAG(S_BOOK)], instruction: [["👀", "Look at the prices."], ["🗣️", "Say how much they are."]] },
+      { type: "strip", part: "B", stage: "Prices", heading: "How Much? 2", numbered: false, size: 100, items: [TAG(S_COOKIE), TAG(S_TOY)], instruction: [["👀", "Look at the prices."], ["🗣️", "Say how much they are."]] },
+      { type: "strip", part: "B", stage: "Prices", heading: "How Much? 3", numbered: false, size: 100, items: [TAG(S_BANANA, 2), TAG(S_BALL, 2)], instruction: [["👀", "Look at the prices."], ["🗣️", "Say how much they are."]] },
+
+      // ---- Part C: shopping talk ----
+      { type: "shop", part: "C", stage: "Shopping Talk", heading: "Buy Two Things", items: [STOCK(S_APPLE), STOCK(S_COOKIE), STOCK(S_BOOK), STOCK(S_BAG)], budget: 50, size: 80, instruction: [["👀", "Look at the shelf."], ["🗣️", "Buy two things. Be polite."]] },
+      { type: "shop", part: "C", stage: "Shopping Talk", heading: "Buy Two Things 2", items: [STOCK(S_BANANA), STOCK(S_JUICE), STOCK(S_BALL), STOCK(S_HAT)], budget: 40, size: 80, instruction: [["👀", "Look at the shelf."], ["🗣️", "Buy two things. Be polite."]] },
+
+      // ---- Part D: speaking ----
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "Tell Me About Shopping", turns: [{ who: "teacher", text: "What do you like to buy? Where do you go shopping?" }], instruction: [["👂", "Listen to the questions."], ["🗣️", "Answer the questions."]] },
+      { type: "dialogue", part: "D", stage: "Speaking", heading: "A Store Near You", turns: [{ who: "teacher", text: "Tell me about a store near your home." }], instruction: [["👂", "Listen to the question."], ["🗣️", "Say three or four sentences."]] },
+      { type: "score", stage: "My Unit 5 Score!", heading: "My Unit 5 Score!", rows: [["Things", "/ 6"], ["Prices", "/ 6"], ["Shopping talk", "/ 4"], ["Speaking", "/ 4"]], total: "/ 20" },
+      { type: "wrapup", stage: "Unit 5 Complete!", title: "Unit 5 Complete!", see: "On to Unit 6!", recap: "You can ask how much things are, say prices and shop politely." },
     ],
   },
 

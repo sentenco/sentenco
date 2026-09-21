@@ -390,6 +390,38 @@ export function RouteBlock({ heading, grid = [], places = {}, goal, question, di
   );
 }
 
+// Shop shelf: every thing has a price tag. The teacher clicks things into the basket, the total adds up,
+// and with a `budget` it says whether there is enough money.
+export function ShopBlock({ heading, items = [], budget, size = 80, question }) {
+  const [picked, setPicked] = useState([]);
+  const total = picked.reduce((sum, i) => sum + items[i].price, 0);
+  const toggle = (i) => setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]));
+  const enough = budget !== undefined && picked.length > 0 ? total <= budget : null;
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="shop">
+        {items.map((it, i) => (
+          <button key={i} type="button" className={`shop-item ${picked.includes(i) ? "is-picked" : ""}`} onClick={() => toggle(i)} aria-label={`${it.label}, ${it.price} pesos`}>
+            <SoarPic src={it.src} label={it.label} size={size} count={it.count} />
+            <span className="price-tag">{it.price} pesos</span>
+          </button>
+        ))}
+      </div>
+      <div className="game-inline">
+        {question && <div className="game-bubble">{question}</div>}
+        <div className="shop-basket">
+          <span className="shop-count">Basket: {picked.length}</span>
+          <span className="shop-total">Total: {total} pesos</span>
+          {budget !== undefined && <span className="shop-wallet">You have {budget} pesos</span>}
+        </div>
+        {enough !== null && <div className={enough ? "game-answer game-answer--sm" : "game-answer game-answer--sm is-no"}>{enough ? "Enough money!" : "Not enough money!"}</div>}
+        {picked.length > 0 && <button type="button" className="game-link" onClick={() => setPicked([])}>Empty the basket</button>}
+      </div>
+    </div>
+  );
+}
+
 export const gameStyles = `
 .game-row { display: flex; align-items: center; justify-content: center; gap: 26px; }
 .game-side { display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 190px; max-width: 250px; }
@@ -456,4 +488,14 @@ export const gameStyles = `
 .route-side { min-width: 224px; }
 .route-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
 @media (prefers-reduced-motion: reduce) { .route-car, .route-car svg { transition: none; } .route-car.is-bump { animation: none; } }
+
+.shop { display: flex; justify-content: center; gap: 14px; }
+.shop-item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 6px 6px 8px; background: rgba(255,255,255,0.75); border: none; border-radius: 16px; cursor: pointer; box-shadow: 0 4px 0 rgba(27,42,74,0.1); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.shop-item:hover { transform: translateY(-2px); }
+.shop-item.is-picked { background: #fff; box-shadow: 0 0 0 4px var(--coral), 0 4px 0 rgba(27,42,74,0.1); }
+.price-tag { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; line-height: 1; color: #fff; background: var(--coral-deep); border-radius: 8px 8px 8px 2px; padding: 4px 9px; white-space: nowrap; }
+.shop-basket { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.94); border-radius: 14px; padding: 6px 14px; box-shadow: 0 3px 0 rgba(27,42,74,0.06); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; color: var(--navy); }
+.shop-total { color: var(--coral-deep); }
+.shop-wallet { color: #1B7F5F; }
+.game-answer.is-no { background: #FDE8E8; border-color: #D9534F; color: #B5322E; }
 `;

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { SOAR_A2_LESSONS } from "./soarA2Data";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 import { SoarPic } from "./SoarPic.jsx";
-import { PeekBlock, SpinBlock, MissingBlock, SprintBlock, DiceBlock, TownBlock, DirsBlock, RouteBlock, gameStyles } from "./SoarGames.jsx";
+import { PeekBlock, SpinBlock, MissingBlock, SprintBlock, DiceBlock, TownBlock, DirsBlock, RouteBlock, ShopBlock, gameStyles } from "./SoarGames.jsx";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -69,7 +69,7 @@ function StripBlock({ heading, subheading, items = [], active = null, numbered =
         {items.map((it, i) => (
           <div key={i} className={`strip-item ${active !== null && i === active ? "is-active" : ""} ${active !== null && i !== active ? "is-dim" : ""}`}>
             {numbered && <span className="strip-num">{i + 1}</span>}
-            <SoarPic src={it.src} label={it.label} size={px} />
+            <SoarPic src={it.src} label={it.label} size={px} count={it.count} />
             {(labels || it.time) && <span className="strip-label">{it.time ? (labels ? `${it.label}, ${it.time}` : it.time) : it.label}</span>}
           </div>
         ))}
@@ -332,7 +332,7 @@ const BLOCKS = {
   dialogue: DialogueBlock, spot: SpotBlock, log: LogBlock, postcard: PostcardBlock,
   landing: LandingBlock, table: TableBlock, steps: StepsBlock,
   strip: StripBlock, wrapup: WrapUpBlock, score: ScoreBlock,
-  peek: PeekBlock, spin: SpinBlock, missing: MissingBlock, sprint: SprintBlock, dice: DiceBlock, town: TownBlock, dirs: DirsBlock, route: RouteBlock,
+  peek: PeekBlock, spin: SpinBlock, missing: MissingBlock, sprint: SprintBlock, dice: DiceBlock, town: TownBlock, dirs: DirsBlock, route: RouteBlock, shop: ShopBlock,
 };
 
 function renderSlideBody(slide) {
@@ -711,6 +711,8 @@ const styles = `
 .strip-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; color: var(--navy); text-align: center; max-width: 118px; line-height: 1.15; }
 .sp-tile { position: relative; background: #fff; border-radius: 16px; box-shadow: 0 4px 0 rgba(27,42,74,0.08); overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .sp-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sp-multi { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; padding: 6px 4px; gap: 0; }
+.sp-multi img { flex: 1 1 0; min-width: 0; width: auto; height: auto; max-height: 100%; }
 .sp-missing { position: absolute; inset: 6px; border: 2.5px dashed #C9C2DD; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px; }
 .sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #A79FC0; line-height: 1.1; }
 .dlg-col--strip { margin: 0 auto; }
