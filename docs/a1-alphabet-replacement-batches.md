@@ -618,4 +618,20 @@ Installed 2026-09-21 (76 pictures, 92 files, all 800x800, cropped square on whit
 - Batch 6: installed (star, sun, tent, tiger, tomato, ukulele, umbrella, unicorn, van, vase, volcano)
 - Batch 7: installed (watch, watermelon, web, xray, xylophone, yak, yarn, yoyo, zebra, zipper, zoo)
 
-Still to do: `queen` (u2-l3/queen.jpg). Possible re-generations: `web` (no spider, very pale), `goat` (looks like a sheep), `ball` (came out as a basketball), `cat` (fluffy cat instead of a tabby, fine to keep).
+Decisions (user, 2026-09-21): cat, ball and web are fine as they are. Redo `goat` (looked like a sheep). `queen` is still not in Downloads (the files there jump from quail to quilt).
+
+Still to do: `queen` (u2-l3/queen.jpg) and a new `goat` (u1-l3/goat.avif).
+
+## Redo prompts
+
+**goat**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly goat standing, side view, a short smooth cream-and-light-brown coat (not fluffy, not woolly, not a sheep), a long face with a small pointed beard under the chin, two horns curving backward, small upright ears, thin legs with dark hooves, a short tail pointing up, kind eyes and a small smile.
+```
+
+**queen**
+
+```text
+Cute kawaii chibi cartoon illustration, thin dark-brown outlines, soft flat shading, bright friendly colors. One single subject, centered, filling most of the frame, on a plain pure white background. No shadow box, no frame, no text, no letters, no watermark. Square 1:1. One friendly queen standing and facing front, a gold crown with small jewels, long dark-brown hair, a red-and-pink gown, a kind smile, natural light skin tone with no orange or yellow tint.
+```
