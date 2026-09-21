@@ -620,7 +620,7 @@ Installed 2026-09-21 (76 pictures, 92 files, all 800x800, cropped square on whit
 
 Decisions (user, 2026-09-21): cat, ball and web are fine as they are. Redo `goat` (looked like a sheep). `queen` is still not in Downloads (the files there jump from quail to quilt).
 
-Still to do: `queen` (u2-l3/queen.jpg) and a new `goat` (u1-l3/goat.avif).
+Update 2026-09-21 22:12: new `goat` and `queen` installed (u1-l3/goat.avif, u2-l3/queen.jpg). All 77 alphabet pictures are now generated. Still waiting for: bag, tree, cat-sitting.
 
 ## Redo prompts
 
