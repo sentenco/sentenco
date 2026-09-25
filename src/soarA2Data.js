@@ -17,6 +17,7 @@ const CL = (label, file) => ({ label, src: `/curriculum/a2-clubs/${file}` });
 const PR = (label, file) => ({ label, src: `/curriculum/a2-project/${file}` });
 const BASKETBALL = CL("basketball", "basketball.jpg"), SOCCER = CL("soccer", "soccer.jpg"), SWIMMING = CL("swimming", "swimming.jpg"), DANCING = CL("dancing", "dancing.jpg");
 const READING = CL("reading", "reading.jpg"), COOKING = CL("cooking", "cooking.jpg"), DRAWING = { label: "art club", src: "/curriculum/a2-school/art.jpg" }, MUSIC_CLUB = { label: "music club", src: "/curriculum/a2-school/music.jpg" };
+const CLUB8 = [BASKETBALL, SOCCER, SWIMMING, DANCING, READING, COOKING, DRAWING, MUSIC_CLUB];
 const LUNCH = SP("lunch", "lunch.jpg"), HOMEWORK = SP("homework", "homework.jpg");
 const LISTEN_ANSWER = [["👂", "Listen to the question."], ["🗣️", "Answer the teacher."]];
 const NO_HELP = (t) => [["🤔", "No help this time!"], ["🗣️", t]];
@@ -354,9 +355,7 @@ export const SOAR_A2_LESSONS = {
       { type: "strip", part: "B", stage: "Club Match", heading: "After-School Clubs", numbered: false, items: [BASKETBALL, SOCCER, SWIMMING, DANCING], instruction: [["👀", "Look at the clubs."], ["🗣️", "Say each activity."]] },
       { type: "strip", part: "B", stage: "Club Match", heading: "After-School Clubs 2", numbered: false, items: [DRAWING, MUSIC_CLUB, READING, COOKING], instruction: [["👀", "Look at the clubs."], ["🗣️", "Say each activity."]] },
       { ...one(DRAWING), part: "B", stage: "Club Match", heading: "What Can You Do?", question: "What can you do in the art club?", instruction: LISTEN_ANSWER, guide: "You can ___." },
-      { ...one(BASKETBALL), part: "B", stage: "Club Match", heading: "What Can You Do? 2", question: "What can you do in the sports club?", instruction: LISTEN_ANSWER, guide: "You can ___." },
-      { ...one(MUSIC_CLUB), part: "B", stage: "Club Match", heading: "What Can You Do? 3", question: "What can you do in the music club?", instruction: LISTEN_ANSWER, guide: "You can ___." },
-      { ...one(READING), part: "B", stage: "Club Match", heading: "What Can You Do? 4", question: "What can you do in the reading club?", instruction: NO_HELP("Answer the question.") },
+      { type: "spin", part: "B", stage: "Club Wheel", heading: "Club Wheel", items: CLUB8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say what you can do there."]], guide: "You can ___." },
       { type: "message", part: "B", stage: "Club Match", heading: "I Like, I Prefer", lines: ["I *like* drawing.", "I *prefer* drawing to swimming."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]] },
 
       // ---- Part C: choose your club (13 min) ----
@@ -368,11 +367,8 @@ export const SOAR_A2_LESSONS = {
       { ...pair(READING, COOKING), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 3", question: "Which club is more fun?", instruction: LISTEN_ANSWER, guide: "___ is more fun than ___." },
       { ...pair(DANCING, SOCCER), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 4", question: "Which club do you prefer? Why?", instruction: NO_HELP("Choose a club and say why.") },
       { ...pair(SWIMMING, MUSIC_CLUB), part: "C", stage: "Choose Your Club", heading: "A Difficult Choice", question: "This is hard! Choose one and tell me why.", instruction: NO_HELP("Say why you choose it.") },
-      { ...pair(BASKETBALL, SWIMMING), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 5", question: "Which club do you prefer?", instruction: LISTEN_ANSWER, guide: "I prefer ___." },
-      { ...pair(DRAWING, MUSIC_CLUB), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 6", question: "Which club do you prefer? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ more than ___." },
-      { ...pair(READING, COOKING), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 7", question: "Which club is more fun?", instruction: LISTEN_ANSWER, guide: "___ is more fun than ___." },
-      { ...pair(DANCING, SOCCER), part: "C", stage: "Choose Your Club", heading: "Choose Your Club 8", question: "Which club do you prefer? Why?", instruction: NO_HELP("Choose a club and say why.") },
-      { ...pair(SWIMMING, MUSIC_CLUB), part: "C", stage: "Choose Your Club", heading: "A Difficult Choice 2", question: "This is hard! Choose one and tell me why.", instruction: NO_HELP("Say why you choose it.") },
+      { type: "dice", part: "C", stage: "Club vs Club", heading: "Club vs Club", dice: [{ name: "Club A", items: CLUB8 }, { name: "Club B", items: CLUB8 }], instruction: [["👀", "Roll two clubs."], ["🗣️", "Say which you prefer and why."]], guide: "I prefer ___ to ___ because it is more fun." },
+      { type: "dice", part: "C", stage: "Club vs Club", heading: "Club vs Club 2", dice: [{ name: "Club A", items: CLUB8 }, { name: "Club B", items: CLUB8 }], instruction: NO_HELP("Roll, choose, and say why.") },
       { type: "chips", part: "C", stage: "Now You Ask!", heading: "Now You Ask!", items: ["Which do you prefer, ___ or ___?", "Why?"], instruction: [["👀", "Look at the questions."], ["🗣️", "Ask the teacher two questions."]] },
 
       // ---- Part D: my perfect club (4 min) ----
