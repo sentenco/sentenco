@@ -74,7 +74,7 @@ function wedgeFont(label, availChord) {
 // gives it more chord width to work with and keeps it clear of the hub.
 const textRadiusFor = (n) => (n <= 4 ? 54 : n <= 6 ? 64 : n <= 8 ? 72 : 80);
 
-export function SpinBlock({ heading, items = [], size = 198, question }) {
+export function SpinBlock({ heading, items = [], size = 176, question }) {
   const n = items.length;
   const seg = 360 / n;
   const R = 98;
@@ -107,9 +107,9 @@ export function SpinBlock({ heading, items = [], size = 198, question }) {
       <h2 className="slide-h">{heading}</h2>
       <div className="spin-row">
         <div className="wheel-wrap" style={{ width: size, height: size }}>
-          <svg className="wheel-marker" viewBox="0 0 40 46" aria-hidden="true">
-            <path d="M20 46 3 15A18 18 0 1 1 37 15Z" fill="#FF6B4A" stroke="#fff" strokeWidth="3" />
-            <circle cx="20" cy="17" r="6.5" fill="#fff" />
+          <svg className="wheel-marker" viewBox="0 0 34 39" aria-hidden="true">
+            <path d="M17 39 2.5 12.7A15.3 15.3 0 1 1 31.5 12.7Z" fill="#FF6B4A" stroke="#fff" strokeWidth="2.6" />
+            <circle cx="17" cy="14.3" r="5.5" fill="#fff" />
           </svg>
           <svg viewBox="0 0 200 200" className="wheel" style={{ transform: `rotate(${rot}deg)`, transition: spinning ? "transform 2.6s cubic-bezier(.12,.6,.12,1)" : "none" }}>
             <circle cx="100" cy="100" r="99.5" fill="none" stroke="#fff" strokeWidth="1" />
@@ -133,7 +133,7 @@ export function SpinBlock({ heading, items = [], size = 198, question }) {
         <div className="spin-panel">
           {got ? (
             <div className="spin-result">
-              {got.src && <SoarPic src={got.src} label={got.label} size={116} />}
+              {got.src && <SoarPic src={got.src} label={got.label} size={96} />}
               <div className="spin-word">{got.label}</div>
             </div>
           ) : <div className="spin-prompt">{spinning ? "Round and round..." : (question || "Spin the wheel!")}</div>}
@@ -551,11 +551,11 @@ export const gameStyles = `
    height to .stage-col's flow -- .stage-col sits in a vertically-centered flex group with the
    instruction banner above it, so any net height added here pushes that banner up into the
    heading instead. Keep this pair in sync with .wheel-marker's top offset. */
-.wheel-wrap { position: relative; flex-shrink: 0; margin-top: 17px; }
+.wheel-wrap { position: relative; flex-shrink: 0; margin-top: 14px; }
 .wheel { width: 100%; height: 100%; display: block; border-radius: 50%; filter: drop-shadow(0 10px 0 rgba(27,42,74,0.16)) drop-shadow(0 3px 10px rgba(27,42,74,0.18)); }
 .wheel-text { font-family: 'Baloo 2', sans-serif; font-weight: 800; fill: #fff; }
-.wheel-marker { position: absolute; top: -17px; left: 50%; width: 34px; height: 40px; margin-left: -17px; z-index: 2; filter: drop-shadow(0 3px 3px rgba(27,42,74,0.3)); }
-.spin-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-width: 210px; min-height: 176px; background: rgba(255,255,255,0.92); border-radius: 22px; padding: 20px 22px; box-shadow: 0 6px 0 rgba(27,42,74,0.07), 0 14px 26px rgba(27,42,74,0.12); }
+.wheel-marker { position: absolute; top: -14px; left: 50%; width: 29px; height: 33px; margin-left: -14.5px; z-index: 2; filter: drop-shadow(0 3px 3px rgba(27,42,74,0.3)); }
+.spin-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-width: 200px; min-height: 150px; background: rgba(255,255,255,0.92); border-radius: 20px; padding: 14px 20px; box-shadow: 0 6px 0 rgba(27,42,74,0.07), 0 14px 26px rgba(27,42,74,0.12); }
 .spin-prompt { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); text-align: center; line-height: 1.4; }
 .spin-result { display: flex; flex-direction: column; align-items: center; gap: 10px; animation: spinpop 0.4s cubic-bezier(.2,1.1,.4,1); }
 .spin-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: var(--navy); background: #FFD066; padding: 4px 16px; border-radius: 10px; text-align: center; }
