@@ -55,10 +55,31 @@ export function PeekBlock({ heading, item, size = 176, reveal, question }) {
 
 const WHEEL = ["#FF6B4A", "#2E97C7", "#22A67E", "#F2A900", "#8E6FCE", "#E0567A", "#0F9E90", "#5A6B92"];
 
-export function SpinBlock({ heading, items = [], size = 196, question }) {
+// Wedge label size: measured, not guessed. A word only has a fixed chord width to sit in (the
+// wedge gets narrower as the wheel has more segments, up to 11 for the Unit 12 Topic Wheel), so
+// each label is sized down until its actual rendered width fits that chord, with a floor so a
+// very long word on a crowded wheel still reads rather than vanishing.
+let measureCtx = null;
+function textWidthAt16(label) {
+  if (!measureCtx) measureCtx = document.createElement("canvas").getContext("2d");
+  measureCtx.font = "800 16px 'Baloo 2', sans-serif";
+  return measureCtx.measureText(label).width;
+}
+function wedgeFont(label, availChord) {
+  const w16 = textWidthAt16(label) || label.length * 8.6;
+  const fit = (availChord * 0.92 * 16) / w16;
+  return Math.max(9, Math.min(17, fit));
+}
+// Where the label sits along the radius: pushed further out on a crowded wheel, which both
+// gives it more chord width to work with and keeps it clear of the hub.
+const textRadiusFor = (n) => (n <= 4 ? 54 : n <= 6 ? 64 : n <= 8 ? 72 : 80);
+
+export function SpinBlock({ heading, items = [], size = 198, question }) {
   const n = items.length;
   const seg = 360 / n;
-  const R = 100;
+  const R = 98;
+  const textR = textRadiusFor(n);
+  const availChord = 2 * textR * Math.sin((seg / 2) * (Math.PI / 180));
   const [rot, setRot] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [result, setResult] = useState(null);
@@ -84,32 +105,39 @@ export function SpinBlock({ heading, items = [], size = 196, question }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      <div className="game-row">
+      <div className="spin-row">
         <div className="wheel-wrap" style={{ width: size, height: size }}>
-          <div className="wheel-pointer" />
+          <svg className="wheel-marker" viewBox="0 0 40 46" aria-hidden="true">
+            <path d="M20 46 3 15A18 18 0 1 1 37 15Z" fill="#FF6B4A" stroke="#fff" strokeWidth="3" />
+            <circle cx="20" cy="17" r="6.5" fill="#fff" />
+          </svg>
           <svg viewBox="0 0 200 200" className="wheel" style={{ transform: `rotate(${rot}deg)`, transition: spinning ? "transform 2.6s cubic-bezier(.12,.6,.12,1)" : "none" }}>
+            <circle cx="100" cy="100" r="99.5" fill="none" stroke="#fff" strokeWidth="1" />
             {items.map((it, i) => {
               const [x0, y0] = pt(i * seg, R);
               const [x1, y1] = pt((i + 1) * seg, R);
-              const [tx, ty] = pt(i * seg + seg / 2, 62);
+              const [tx, ty] = pt(i * seg + seg / 2, textR);
+              const word = it.wheel || it.label;
               return (
                 <g key={i}>
-                  <path d={`M100 100 L${x0} ${y0} A${R} ${R} 0 0 1 ${x1} ${y1} Z`} fill={WHEEL[i % WHEEL.length]} stroke="#fff" strokeWidth="3" />
-                  <text x={tx} y={ty} transform={`rotate(${i * seg + seg / 2} ${tx} ${ty})`} textAnchor="middle" dominantBaseline="middle" className="wheel-text" style={{ fontSize: (it.wheel || it.label).length > 9 ? 11 : 13.5 }}>{it.wheel || it.label}</text>
+                  <path d={`M100 100 L${x0} ${y0} A${R} ${R} 0 0 1 ${x1} ${y1} Z`} fill={WHEEL[i % WHEEL.length]} stroke="#fff" strokeWidth="3.5" />
+                  <text x={tx} y={ty} transform={`rotate(${i * seg + seg / 2} ${tx} ${ty})`} textAnchor="middle" dominantBaseline="middle" className="wheel-text" style={{ fontSize: wedgeFont(word, availChord) }}>{word}</text>
                 </g>
               );
             })}
-            <circle cx="100" cy="100" r="13" fill="#fff" stroke="#1B2A4A" strokeWidth="3" />
+            <circle cx="100" cy="100" r="19" fill="#fff" />
+            <circle cx="100" cy="100" r="19" fill="none" stroke="#1B2A4A" strokeWidth="3.5" />
+            <circle cx="100" cy="100" r="8" fill="#FF6B4A" />
           </svg>
         </div>
-        <div className="game-side">
+        <div className="spin-panel">
           {got ? (
             <div className="spin-result">
-              {got.src && <SoarPic src={got.src} label={got.label} size={104} />}
+              {got.src && <SoarPic src={got.src} label={got.label} size={116} />}
               <div className="spin-word">{got.label}</div>
             </div>
-          ) : <div className="game-bubble">{spinning ? "Round and round..." : (question || "Spin the wheel!")}</div>}
-          <button type="button" className="game-btn" onClick={spin} disabled={spinning}>{result === null && !spinning ? "Spin!" : "Spin again"}</button>
+          ) : <div className="spin-prompt">{spinning ? "Round and round..." : (question || "Spin the wheel!")}</div>}
+          <button type="button" className="game-btn game-btn--lg" onClick={spin} disabled={spinning}>{result === null && !spinning ? "Spin!" : "Spin again"}</button>
         </div>
       </div>
     </div>
@@ -518,12 +546,22 @@ export const gameStyles = `
 .peek-cloud.is-open { opacity: 0; transform: scale(1.18) translateY(-14px); pointer-events: none; }
 .peek-cloud:hover { background: #A9CBEC; }
 
-.wheel-wrap { position: relative; flex-shrink: 0; margin-top: 12px; }
-.wheel { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 0 rgba(27,42,74,0.14)); }
-.wheel-text { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13.5px; fill: #fff; }
-.wheel-pointer { position: absolute; top: -12px; left: 50%; margin-left: -12px; width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 24px solid var(--navy); z-index: 2; filter: drop-shadow(0 2px 0 rgba(255,255,255,0.9)); }
-.spin-result { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.spin-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; color: var(--navy); background: #FFD066; padding: 3px 14px; border-radius: 10px; }
+.spin-row { display: flex; align-items: center; justify-content: center; gap: 40px; }
+/* margin-top matches the marker's negative top offset (17px) so the marker adds no extra
+   height to .stage-col's flow -- .stage-col sits in a vertically-centered flex group with the
+   instruction banner above it, so any net height added here pushes that banner up into the
+   heading instead. Keep this pair in sync with .wheel-marker's top offset. */
+.wheel-wrap { position: relative; flex-shrink: 0; margin-top: 17px; }
+.wheel { width: 100%; height: 100%; display: block; border-radius: 50%; filter: drop-shadow(0 10px 0 rgba(27,42,74,0.16)) drop-shadow(0 3px 10px rgba(27,42,74,0.18)); }
+.wheel-text { font-family: 'Baloo 2', sans-serif; font-weight: 800; fill: #fff; }
+.wheel-marker { position: absolute; top: -17px; left: 50%; width: 34px; height: 40px; margin-left: -17px; z-index: 2; filter: drop-shadow(0 3px 3px rgba(27,42,74,0.3)); }
+.spin-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-width: 210px; min-height: 176px; background: rgba(255,255,255,0.92); border-radius: 22px; padding: 20px 22px; box-shadow: 0 6px 0 rgba(27,42,74,0.07), 0 14px 26px rgba(27,42,74,0.12); }
+.spin-prompt { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); text-align: center; line-height: 1.4; }
+.spin-result { display: flex; flex-direction: column; align-items: center; gap: 10px; animation: spinpop 0.4s cubic-bezier(.2,1.1,.4,1); }
+.spin-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: var(--navy); background: #FFD066; padding: 4px 16px; border-radius: 10px; text-align: center; }
+.game-btn--lg { font-size: 18px; padding: 11px 28px; }
+@keyframes spinpop { 0% { transform: scale(0.72); opacity: 0; } 65% { transform: scale(1.06); opacity: 1; } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .spin-result { animation: none; } }
 
 .missing-q { background: var(--coral-light); border: 3px dashed var(--coral); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 46px; color: var(--coral-deep); }
 .sprint-bar { position: relative; width: 320px; height: 22px; background: rgba(255,255,255,0.9); border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 2px rgba(27,42,74,0.12); }
