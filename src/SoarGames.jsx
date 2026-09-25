@@ -207,16 +207,24 @@ export function DiceBlock({ heading, dice = [], size = 104 }) {
   const [vals, setVals] = useState(null);
   const [rolling, setRolling] = useState(false);
   const timer = useRef(null);
+  // One shuffled draw-pile per die, so the die the roll SETTLES on shows every item once before
+  // repeating (same rule as the wheel). Reset automatically when the slide is left, since this
+  // component then unmounts. The flicker during rolling is plain random, only the final face uses the pile.
+  const pools = useRef(dice.map(() => []));
   useEffect(() => () => clearInterval(timer.current), []);
-  const pick = () => dice.map((d) => Math.floor(Math.random() * d.items.length));
+  const pickRandom = () => dice.map((d) => Math.floor(Math.random() * d.items.length));
+  const pickFinal = () => dice.map((d, i) => {
+    if (pools.current[i].length === 0) pools.current[i] = shuffle([...Array(d.items.length).keys()]);
+    return pools.current[i].pop();
+  });
   function roll() {
     if (rolling) return;
     setRolling(true);
     let n = 0;
     timer.current = setInterval(() => {
       n += 1;
-      setVals(pick());
-      if (n >= 9) { clearInterval(timer.current); setRolling(false); }
+      if (n >= 9) { clearInterval(timer.current); setVals(pickFinal()); setRolling(false); }
+      else setVals(pickRandom());
     }, 110);
   }
   return (
@@ -228,7 +236,7 @@ export function DiceBlock({ heading, dice = [], size = 104 }) {
           return (
             <div key={i} className={`strip-item dice-item ${rolling ? "is-rolling" : ""}`}>
               <span className="dice-name">{d.name}</span>
-              {it ? (it.src ? <SoarPic src={it.src} label={it.label} size={size} /> : <div className="sp-tile word-tile" style={{ width: size, height: size }}>{it.label}</div>) : <div className="sp-tile missing-q" style={{ width: size, height: size }}>?</div>}
+              {it ? (it.src ? <SoarPic key={it.src} src={it.src} label={it.label} size={size} /> : <div className="sp-tile word-tile" style={{ width: size, height: size }}>{it.label}</div>) : <div className="sp-tile missing-q" style={{ width: size, height: size }}>?</div>}
               <span className="strip-label">{it && !rolling ? it.label : " "}</span>
             </div>
           );
