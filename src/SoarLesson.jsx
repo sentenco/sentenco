@@ -576,7 +576,7 @@ const styles = `
 .pennant { background: #fff; border-radius: 999px; padding: 6px 16px; box-shadow: 0 2px 8px rgba(27,42,74,0.15); max-width: 260px; }
 .pennant-text { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
 
-.slide-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 30px; position: relative; z-index: 2; overflow-y: auto; }
+.slide-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 30px; position: relative; z-index: 2; overflow: hidden; }
 
 .title-content { padding: 40px 40px 40px 250px; width: 100%; }
 .title-eyebrow { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep); margin-bottom: 8px; }
