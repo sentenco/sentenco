@@ -12,6 +12,7 @@ const ARRIVE = { label: "arrive at school", src: "/curriculum/u12-routines/go-to
 const HOME = { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" };
 const MATH = SP("Math", "math.jpg"), ENGLISH = SP("English", "english.jpg"), SCIENCE = SP("Science", "science.jpg"), ART = SP("Art", "art.jpg");
 const MUSIC = SP("Music", "music.jpg"), PE = SP("P.E.", "pe.jpg"), HISTORY = SP("History", "history.jpg"), GEOGRAPHY = SP("Geography", "geography.jpg");
+const SUBJECT8 = [MATH, ENGLISH, SCIENCE, ART, MUSIC, PE, HISTORY, GEOGRAPHY];
 const CL = (label, file) => ({ label, src: `/curriculum/a2-clubs/${file}` });
 const PR = (label, file) => ({ label, src: `/curriculum/a2-project/${file}` });
 const BASKETBALL = CL("basketball", "basketball.jpg"), SOCCER = CL("soccer", "soccer.jpg"), SWIMMING = CL("swimming", "swimming.jpg"), DANCING = CL("dancing", "dancing.jpg");
@@ -235,9 +236,9 @@ export const SOAR_A2_LESSONS = {
       // ---- Part B: school subjects (5 min) ----
       { type: "strip", part: "B", stage: "School Subjects", heading: "School Subjects", numbered: false, items: [MATH, ENGLISH, SCIENCE, ART], instruction: [["👀", "Look at the subjects."], ["🗣️", "Say each subject."]] },
       { type: "strip", part: "B", stage: "School Subjects", heading: "School Subjects 2", numbered: false, items: [MUSIC, PE, HISTORY, GEOGRAPHY], instruction: [["👀", "Look at the subjects."], ["🗣️", "Say each subject."]] },
-      { ...one(SCIENCE), part: "B", stage: "What Subject?", heading: "What Subject Is This?", question: "What subject is this?", instruction: [["👀", "Look at the picture."], ["🗣️", "Answer the question."]], guide: "It's ___." },
-      { ...one(ART), part: "B", stage: "What Subject?", heading: "What Subject Is This? 2", question: "What subject is this?", instruction: [["👀", "Look at the picture."], ["🗣️", "Answer the question."]], guide: "It's ___." },
-      { ...one(HISTORY), part: "B", stage: "What Subject?", heading: "What Subject Is This? 3", question: "What subject is this?", instruction: [["🤔", "No help this time!"], ["🗣️", "Say the subject."]] },
+      { type: "peek", part: "B", stage: "What Subject?", heading: "Mystery Subject", item: SCIENCE, reveal: "It's Science!", question: "What subject is this?", instruction: LOOK_SAY("Guess the subject."), guide: "It's ___." },
+      { ...one(ART), part: "B", stage: "What Subject?", heading: "What Subject Is This?", question: "What subject is this?", instruction: [["👀", "Look at the picture."], ["🗣️", "Answer the question."]], guide: "It's ___." },
+      { ...one(HISTORY), part: "B", stage: "What Subject?", heading: "What Subject Is This? 2", question: "What subject is this?", instruction: [["🤔", "No help this time!"], ["🗣️", "Say the subject."]] },
       { ...one(SCIENCE), part: "B", stage: "Do You Have It?", heading: "Do You Have It?", question: "Do you have Science at school?", instruction: LISTEN_ANSWER, guide: "Yes, I do. / No, I don't." },
       { ...one(MUSIC), part: "B", stage: "Do You Have It?", heading: "Do You Have It? 2", question: "Do you have Music at school?", instruction: LISTEN_ANSWER, guide: "Yes, I do. / No, I don't." },
       { type: "strip", part: "B", stage: "Other Subjects", heading: "Other Subjects", numbered: false, size: 100, items: [MATH, ENGLISH, ART, PE], question: "What other subjects do you have?", instruction: LISTEN_ANSWER, guide: "I have ___, ___, and ___." },
@@ -245,17 +246,17 @@ export const SOAR_A2_LESSONS = {
       // ---- Part C: likes, reasons, interview (13 min) ----
       { type: "message", part: "C", stage: "Like or Don't Like?", heading: "I Like, I Don't Like", lines: ["I *like* Math.", "I *don't like* History."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]] },
       { ...one(MATH), part: "C", stage: "Like or Don't Like?", heading: "Do You Like It?", question: "Do you like Math?", instruction: LISTEN_ANSWER, guide: "I like ___. / I don't like ___." },
-      { ...one(ENGLISH), part: "C", stage: "Like or Don't Like?", heading: "Do You Like It? 2", question: "Do you like English?", instruction: LISTEN_ANSWER, guide: "I like ___. / I don't like ___." },
-      { ...one(PE), part: "C", stage: "Like or Don't Like?", heading: "Do You Like It? 3", question: "Do you like P.E.?", instruction: LISTEN_ANSWER, guide: "I like ___. / I don't like ___." },
+      { type: "spin", part: "C", stage: "Subject Wheel", heading: "Subject Wheel", items: SUBJECT8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say if you like it."]], guide: "I like ___. / I don't like ___." },
       { type: "chips", part: "C", stage: "Because...", heading: "Words for Subjects", items: ["easy", "difficult", "fun", "interesting", "boring"], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the words."]] },
       { type: "message", part: "C", stage: "Because...", heading: "Add a Reason", lines: ["I like Math *because* it is *easy*.", "I don't like History *because* it is *difficult*."], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Repeat the sentences."]] },
       { ...one(SCIENCE), part: "C", stage: "Because...", heading: "Why?", question: "Do you like Science? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
-      { ...one(ART), part: "C", stage: "Because...", heading: "Why? 2", question: "Do you like Art? Why?", instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
-      { ...one(HISTORY), part: "C", stage: "Because...", heading: "Why? 3", question: "Do you like History? Why?", instruction: NO_HELP("Answer and say why.") },
+      { type: "spin", part: "C", stage: "Subject Wheel", heading: "Subject Wheel 2", items: SUBJECT8, instruction: [["👀", "Look at the wheel."], ["🗣️", "Say if you like it and why."]], guide: "I like ___ because it is ___." },
+      { ...one(HISTORY), part: "C", stage: "Because...", heading: "Why? 2", question: "Do you like History? Why?", instruction: NO_HELP("Answer and say why.") },
       { type: "dialogue", part: "C", stage: "School Subject Interview", heading: "School Subject Interview", turns: [{ who: "teacher", text: "What subject do you like? Why?" }], instruction: LISTEN_ANSWER, guide: "I like ___ because it is ___." },
       { type: "dialogue", part: "C", stage: "School Subject Interview", heading: "Interview 2", turns: [{ who: "teacher", text: "Is Science easy or difficult?" }], instruction: LISTEN_ANSWER, guide: "Science is ___." },
       { type: "dialogue", part: "C", stage: "School Subject Interview", heading: "Interview 3", turns: [{ who: "teacher", text: "Which subject is boring? Which subject is fun?" }], instruction: NO_HELP("Answer the question.") },
       { type: "chips", part: "C", stage: "Now You Ask!", heading: "Now You Ask!", items: ["What subjects do you have?", "Do you like ___?", "Why?"], instruction: [["👀", "Look at the questions."], ["🗣️", "Ask the teacher three questions."]] },
+      { type: "sprint", part: "C", stage: "Speed Round", heading: "Subject Speed Round", items: SUBJECT8, seconds: 45, instruction: [["👀", "Look at the picture."], ["🗣️", "Say if you like it. Be fast!"]] },
 
       // ---- Part D: my talk (4 min) ----
       { type: "message", part: "D", stage: "My Talk", heading: "Listen to the Example", lines: ["I have English, Math, Science, Art, and P.E.", "My favorite subject is English *because* it is fun.", "I don't like Math *because* it is difficult."], instruction: [["👂", "Listen to the example."], ["🗣️", "Repeat the sentences."]] },
@@ -290,15 +291,7 @@ export const SOAR_A2_LESSONS = {
       { type: "strip", part: "B", stage: "What Happens?", heading: "What Happens Next?", active: 1,
         items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", src: "/curriculum/a2-school/english.jpg" }, { label: "Math", src: "/curriculum/a2-school/math.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
         instruction: [["👀", "Look at picture 2."], ["🗣️", "Answer the question."]], guide: "Then, I ___." },
-      { type: "strip", part: "B", stage: "What Happens?", heading: "And After That?", active: 2,
-        items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", src: "/curriculum/a2-school/english.jpg" }, { label: "Math", src: "/curriculum/a2-school/math.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
-        instruction: [["👀", "Look at picture 3."], ["🗣️", "Answer the question."]], guide: "After that, I ___." },
-      { type: "strip", part: "B", stage: "What Happens?", heading: "And After That? 2", active: 3,
-        items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", src: "/curriculum/a2-school/english.jpg" }, { label: "Math", src: "/curriculum/a2-school/math.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
-        instruction: [["👀", "Look at picture 4."], ["🗣️", "Answer the question."]], guide: "After that, I ___." },
-      { type: "strip", part: "B", stage: "What Happens?", heading: "What Happens Last?", active: 4,
-        items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", src: "/curriculum/a2-school/english.jpg" }, { label: "Math", src: "/curriculum/a2-school/math.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
-        instruction: [["👀", "Look at picture 5."], ["🗣️", "Answer the question."]], guide: "Finally, I ___." },
+      { type: "order", part: "B", stage: "Order My Day!", heading: "Order My Day!", items: [ARRIVE, ENGLISH, MATH, LUNCH, HOME], instruction: ORDERQ },
 
       // ---- Part C: build it, then tell the story (13 min) ----
       { type: "strip", part: "C", stage: "Build My School Day", heading: "Listen to the Example",
@@ -316,17 +309,7 @@ export const SOAR_A2_LESSONS = {
       { type: "strip", part: "C", stage: "Build My School Day", heading: "Build My School Day 3",
         items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", src: "/curriculum/a2-school/english.jpg" }, { label: "Music", src: "/curriculum/a2-school/music.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
         instruction: [["🤔", "No help this time!"], ["🗣️", "Say the day in order."]] },
-      { type: "strip", part: "C", stage: "Build My School Day", heading: "Build My School Day 4",
-        items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "Art", src: "/curriculum/a2-school/art.jpg" }, { label: "P.E.", src: "/curriculum/a2-school/pe.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
-        frame: ["First, I ___. Then, I ___.", "After that, I ___. Finally, I ___."],
-        instruction: [["👀", "Look at the day."], ["🗣️", "Say it in order."]] },
-      { type: "strip", part: "C", stage: "Build My School Day", heading: "Build My School Day 5",
-        items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "Math", src: "/curriculum/a2-school/math.jpg" }, { label: "Science", src: "/curriculum/a2-school/science.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
-        frame: ["First, I ___. Then, I ___.", "After that, I ___. Finally, I ___."],
-        instruction: [["👀", "Look at the day."], ["🗣️", "Say it in order."]] },
-      { type: "strip", part: "C", stage: "Build My School Day", heading: "Build My School Day 6",
-        items: [{ label: "arrive at school", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", src: "/curriculum/a2-school/english.jpg" }, { label: "Music", src: "/curriculum/a2-school/music.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }],
-        instruction: [["🤔", "No help this time!"], ["🗣️", "Say the day in order."]] },
+      { type: "order", part: "C", stage: "Order My Day!", heading: "Order My Day! 2", items: [ARRIVE, ART, PE, LUNCH, HOME], instruction: ORDERQ },
       { type: "strip", part: "C", stage: "Add the Time", heading: "Add the Time",
         items: [{ label: "arrive at school", time: "8 o'clock", src: "/curriculum/u12-routines/go-to-school.jpg" }, { label: "English", time: "9 o'clock", src: "/curriculum/a2-school/english.jpg" }, { label: "lunch", time: "1 o'clock", src: "/curriculum/a2-school/lunch.jpg" }, { label: "go home", time: "3 o'clock", src: "/curriculum/u12-routines/go-home.jpg" }],
         frame: ["First, I arrive at school at ___."],
@@ -343,6 +326,7 @@ export const SOAR_A2_LESSONS = {
         items: [{ label: "homework", src: "/curriculum/a2-school/homework.jpg" }, { label: "go home", src: "/curriculum/u12-routines/go-home.jpg" }, { label: "Math", src: "/curriculum/a2-school/math.jpg" }, { label: "lunch", src: "/curriculum/a2-school/lunch.jpg" }],
         question: "*Then*, I do my homework. How does the day end?",
         instruction: [["👂", "Listen to the teacher."], ["🗣️", "End the story."]], guide: "Finally, I ___." },
+      { type: "missing", part: "C", stage: "Missing Step", heading: "What's Missing?", items: [ARRIVE, MATH, LUNCH, HOME], instruction: [["👀", "Look at the day."], ["🗣️", "Say the step that went away."]], guide: "___ is missing." },
       { type: "chips", part: "C", stage: "Tell It Again", heading: "Tell the Whole Story", items: ["First", "Then", "After that", "Finally"],
         instruction: [["🤔", "No help this time!"], ["🗣️", "Tell the whole story again."]] },
 
