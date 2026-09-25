@@ -11,6 +11,12 @@ export function SoarPic({ src, label, size = 96, count = 1, zoom = "tile" }) {
   const openZoom = useContext(ZoomContext);
   const [state, setState] = useState(src ? "loading" : "failed");
   useEffect(() => { setState(src ? "loading" : "failed"); }, [src]);
+  // A browser-cached image (common here: the same picture often already appeared earlier in the
+  // same lesson) can finish loading before React's onLoad listener is attached, so onLoad never
+  // fires and the tile is stuck showing the placeholder forever even though the picture is right
+  // there. This ref callback runs right after the <img> is attached to the page and catches that
+  // case by checking the image's own `complete` flag directly, instead of only waiting on onLoad.
+  const checkCached = (el) => { if (el && el.complete && el.naturalWidth > 0) setState("ok"); };
   const canZoom = !!openZoom && zoom !== "off";
   const open = (e) => { e.stopPropagation(); openZoom({ src, label, count, failed: state === "failed" }); };
   return (
@@ -24,12 +30,13 @@ export function SoarPic({ src, label, size = 96, count = 1, zoom = "tile" }) {
         ? (
           <div className="sp-multi" style={state === "ok" ? undefined : { position: "absolute", width: 1, height: 1, opacity: 0 }}>
             {Array.from({ length: count }).map((_, k) => (
-              <img key={k} src={src} alt={label} draggable={false} onLoad={k === 0 ? () => setState("ok") : undefined} onError={k === 0 ? () => setState("failed") : undefined} />
+              <img key={k} ref={k === 0 ? checkCached : undefined} src={src} alt={label} draggable={false} onLoad={k === 0 ? () => setState("ok") : undefined} onError={k === 0 ? () => setState("failed") : undefined} />
             ))}
           </div>
         )
         : (
           <img
+            ref={checkCached}
             src={src}
             alt={label}
             draggable={false}
