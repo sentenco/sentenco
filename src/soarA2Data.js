@@ -439,16 +439,8 @@ export const SOAR_A2_LESSONS = {
       { type: "dialogue", part: "C", stage: "Interview Show", heading: "Which Club?", turns: [{ who: "teacher", text: "Which club do you prefer? Why?" }], instruction: LISTEN_ANSWER },
       { type: "dialogue", part: "C", stage: "Interview Show", heading: "A Class Project", turns: [{ who: "teacher", text: "Tell me about a class project." }], instruction: LISTEN_ANSWER },
       { type: "dialogue", part: "C", stage: "Interview Show", heading: "The New Student", turns: [{ who: "teacher", text: "You are talking to a new student. Tell them about your school life." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Tell the new student."]] },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "Welcome to the Show! 2", turns: [{ who: "teacher", text: "Welcome to the School Life Interview Show! What subject do you like? Why?" }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "First and Next 2", turns: [{ who: "teacher", text: "What do you do first at school? What do you do next?" }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "Which Club? 2", turns: [{ who: "teacher", text: "Which club do you prefer? Why?" }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "A Class Project 2", turns: [{ who: "teacher", text: "Tell me about a class project." }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "The New Student 2", turns: [{ who: "teacher", text: "You are talking to a new student. Tell them about your school life." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Tell the new student."]] },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "Welcome to the Show! 3", turns: [{ who: "teacher", text: "Welcome to the School Life Interview Show! What subject do you like? Why?" }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "First and Next 3", turns: [{ who: "teacher", text: "What do you do first at school? What do you do next?" }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "Which Club? 3", turns: [{ who: "teacher", text: "Which club do you prefer? Why?" }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "A Class Project 3", turns: [{ who: "teacher", text: "Tell me about a class project." }], instruction: LISTEN_ANSWER },
-      { type: "dialogue", part: "C", stage: "Interview Show", heading: "The New Student 3", turns: [{ who: "teacher", text: "You are talking to a new student. Tell them about your school life." }], instruction: [["👂", "Listen to the teacher."], ["🗣️", "Tell the new student."]] },
+      { type: "spin", part: "C", stage: "Interview Wheel", heading: "Interview Wheel", items: [{ label: "Subjects" }, { label: "School Day" }, { label: "Clubs" }, { label: "Project" }, { label: "New Student" }], instruction: [["👀", "Spin for a topic."], ["🗣️", "Answer that topic's question."]] },
+      { type: "spin", part: "C", stage: "Interview Wheel", heading: "Interview Wheel 2", items: [{ label: "Subjects" }, { label: "School Day" }, { label: "Clubs" }, { label: "Project" }, { label: "New Student" }], instruction: NO_HELP("Spin and answer.") },
 
       // ---- Part D: my project and my writing (9 min) ----
       { type: "dialogue", part: "D", stage: "My Class Project", heading: "My Class Project", turns: [{ who: "teacher", text: "What is your project about? Why do you like it?" }], instruction: LISTEN_ANSWER },
