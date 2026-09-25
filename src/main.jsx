@@ -92,6 +92,7 @@ import SoarLesson from './SoarLesson.jsx'
 import TeensSayHelloLesson from './TeensSayHelloLesson.jsx'
 import TeensMyStyleLesson from './TeensMyStyleLesson.jsx'
 import IgniteLesson from './IgniteLesson.jsx'
+import AblazeLesson from './AblazeLesson.jsx'
 import AdultsHelloImLesson from './AdultsHelloImLesson.jsx'
 import AdultsWhatsNewLesson from './AdultsWhatsNewLesson.jsx'
 import AfternoonAndNightLesson from './AfternoonAndNightLesson.jsx'
@@ -323,6 +324,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/curriculum/teens/A1/unit/1/lesson/1" element={<TeensSayHelloLesson />} />
             <Route path="/library/curriculum/teens/A1/unit/:unit/lesson/:lesson" element={<IgniteLesson />} />
             <Route path="/library/curriculum/teens/A2/unit/1/lesson/1" element={<TeensMyStyleLesson />} />
+            <Route path="/library/curriculum/teens/A2/unit/:unit/lesson/:lesson" element={<AblazeLesson />} />
             <Route path="/library/curriculum/adults/A1/unit/1/lesson/1" element={<AdultsHelloImLesson />} />
             <Route path="/library/curriculum/adults/A2/unit/1/lesson/1" element={<AdultsWhatsNewLesson />} />
             <Route path="/library/curriculum/:level" element={<Library />} />
