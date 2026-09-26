@@ -10,8 +10,42 @@ export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   );
 }
 
-function Chip({ label, active }) {
-  return <span className={`greet-chip ${active ? "is-active" : ""}`}>{label}</span>;
+function ZoomIcon() {
+  return <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5 L21 21" /></svg>;
+}
+
+function VocabCards({ items }) {
+  const [zoomed, setZoomed] = useState(null);
+  useEffect(() => {
+    if (!zoomed) return undefined;
+    const onKey = (e) => { if (e.key === "Escape") setZoomed(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [zoomed]);
+  return (
+    <>
+      <div className="vocab-row">
+        {items.map((it, i) => (
+          <div className="vocab-card" key={i} onClick={() => setZoomed(it)}>
+            <span className="vocab-label">{it.label}</span>
+            {it.note && <p className="vocab-note">{it.note}</p>}
+            <span className="vocab-zoom-badge"><ZoomIcon /></span>
+          </div>
+        ))}
+      </div>
+      {zoomed && (
+        <div className="vocab-zoom-overlay" onClick={() => setZoomed(null)}>
+          <div className="vocab-zoom-card" onClick={(e) => e.stopPropagation()}>
+            <button type="button" className="vocab-zoom-close" onClick={() => setZoomed(null)} aria-label="Close">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+            </button>
+            <span className="vocab-zoom-label">{zoomed.label}</span>
+            {zoomed.note && <p className="vocab-zoom-note">{zoomed.note}</p>}
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
 // Teacher-facing instruction pills -- same pattern as A1/A2 Kids and the
@@ -167,20 +201,13 @@ function buildSlides() {
         <div className="stage-col">
           <h2 className="slide-h">How Do You Say Hi?</h2>
           <p className="slide-p">Different greetings for different moments</p>
-          <div className="greet-row">
-            <div className="greet-card">
-              <Chip label="Hey" active />
-              <p className="greet-note">Casual, for friends and people your age</p>
-            </div>
-            <div className="greet-card">
-              <Chip label="Hi" active />
-              <p className="greet-note">Friendly and easy, works almost anywhere</p>
-            </div>
-            <div className="greet-card">
-              <Chip label="Hello" active />
-              <p className="greet-note">A bit more neutral, for meeting someone new</p>
-            </div>
-          </div>
+          <VocabCards
+            items={[
+              { label: "Hey", note: "Casual, for friends and people your age" },
+              { label: "Hi", note: "Friendly and easy, works almost anywhere" },
+              { label: "Hello", note: "A bit more neutral, for meeting someone new" },
+            ]}
+          />
         </div>
       ),
     },
@@ -364,10 +391,19 @@ const styles = `
 .slide-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; color: var(--navy); margin: 0 0 6px; }
 .slide-p { font-family: 'Quicksand', sans-serif; font-size: 13px; color: var(--ink-soft); font-weight: 600; margin: 0 0 18px; }
 
-.greet-row { display: flex; gap: 14px; justify-content: center; }
-.greet-card { background: rgba(255,255,255,0.94); border-radius: 14px; padding: 14px; width: 150px; box-shadow: 0 6px 0 rgba(27,42,74,0.06); }
-.greet-chip { display: inline-block; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; color: var(--coral-deep); background: var(--coral-light); padding: 6px 16px; border-radius: 999px; margin-bottom: 8px; }
-.greet-note { font-size: 11px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 0; }
+.vocab-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding-top: 6px; }
+.vocab-card { position: relative; background: var(--coral-light); border: 2px solid var(--coral-deep); border-radius: 12px; padding: 12px 16px; width: 128px; box-shadow: 0 4px 0 rgba(224,80,47,0.25); cursor: pointer; }
+.vocab-card:nth-child(3n+1) { transform: rotate(-4deg); }
+.vocab-card:nth-child(3n+2) { transform: rotate(3deg); margin-top: 10px; }
+.vocab-card:nth-child(3n+3) { transform: rotate(-2deg); }
+.vocab-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; color: var(--coral-deep); }
+.vocab-note { font-size: 11px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 6px 0 0; }
+.vocab-zoom-badge { position: absolute; bottom: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(27,42,74,0.3); }
+.vocab-zoom-overlay { position: fixed; inset: 0; background: rgba(20,28,54,0.72); display: flex; align-items: center; justify-content: center; z-index: 50; }
+.vocab-zoom-card { position: relative; background: var(--coral-light); border: 3px solid var(--coral-deep); border-radius: 20px; padding: 36px 44px; max-width: 80%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.vocab-zoom-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 32px; color: var(--coral-deep); }
+.vocab-zoom-note { font-size: 15px; color: var(--ink-soft); font-weight: 600; margin: 10px 0 0; }
+.vocab-zoom-close { position: absolute; top: -14px; right: -14px; width: 32px; height: 32px; border-radius: 50%; border: none; cursor: pointer; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
 
 .bubble-col { display: flex; flex-direction: column; gap: 12px; max-width: 440px; margin: 0 auto; }
 .brow { display: flex; align-items: center; gap: 10px; }
