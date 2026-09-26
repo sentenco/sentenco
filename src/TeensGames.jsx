@@ -253,6 +253,52 @@ export function FactOrCapBlock({ heading, statements = [] }) {
   );
 }
 
+// Text-only dice roll -- ported from A2 Kids' DiceBlock, dropped the
+// picture-tile mode since Teens content is text, not illustrated.
+// One die rolls one word/phrase; two or more dice combine into a prompt
+// (e.g. a person die + an adjective die -> "describe your [person] who is
+// [adjective]"). Draw-pile per die so nothing repeats until every face
+// has shown once, same rule as the wheel.
+export function DiceBlock({ heading, dice = [] }) {
+  const [vals, setVals] = useState(null);
+  const [rolling, setRolling] = useState(false);
+  const timer = useRef(null);
+  const pools = useRef(dice.map(() => []));
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const pickRandom = () => dice.map((d) => Math.floor(Math.random() * d.items.length));
+  const pickFinal = () => dice.map((d, i) => {
+    if (pools.current[i].length === 0) pools.current[i] = shuffle([...Array(d.items.length).keys()]);
+    return pools.current[i].pop();
+  });
+  function roll() {
+    if (rolling) return;
+    setRolling(true);
+    let n = 0;
+    timer.current = setInterval(() => {
+      n += 1;
+      if (n >= 9) { clearInterval(timer.current); setVals(pickFinal()); setRolling(false); }
+      else setVals(pickRandom());
+    }, 110);
+  }
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="tg-dice-row">
+        {dice.map((d, i) => {
+          const label = vals ? d.items[vals[i]] : null;
+          return (
+            <div key={i} className="tg-dice-col">
+              <span className="tg-dice-name">{d.name}</span>
+              <div className={`tg-dice-face ${rolling ? "is-rolling" : ""}`}>{label || "?"}</div>
+            </div>
+          );
+        })}
+      </div>
+      <button type="button" className="tg-btn" onClick={roll} disabled={rolling}>{vals ? "Roll again" : "Roll!"}</button>
+    </div>
+  );
+}
+
 export const TEENS_GAME_BLOCKS = {
   wheel: WheelBlock,
   mystery: MysteryBlock,
@@ -260,6 +306,7 @@ export const TEENS_GAME_BLOCKS = {
   thisorthat: ThisOrThatBlock,
   orderup: OrderUpBlock,
   factorcap: FactOrCapBlock,
+  dice: DiceBlock,
 };
 
 export const teensGameStyles = `
@@ -308,4 +355,10 @@ export const teensGameStyles = `
 .tg-foc-verdict { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 17px; margin-bottom: 6px; }
 .tg-foc-verdict.is-right { color: #2F9E7A; }
 .tg-foc-verdict.is-wrong { color: var(--coral-deep, #E0502F); }
+
+.tg-dice-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.tg-dice-col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.tg-dice-name { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft, #736A87); }
+.tg-dice-face { min-width: 96px; min-height: 96px; max-width: 150px; border-radius: 16px; background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); display: flex; align-items: center; justify-content: center; padding: 12px 16px; text-align: center; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy, #1B2A4A); }
+.tg-dice-face.is-rolling { opacity: 0.55; }
 `;
