@@ -127,7 +127,8 @@ export default function TrackLevelPage({ audience, level, onBack }) {
             {units.map((u) => {
               const isOpen = openUnit === u.num;
               const readyForUnit = ((READY_LESSONS[audience] || {})[level] || {})[u.num] || [];
-              const unitReady = u.lessons.length > 0 && u.lessons.every((l) => readyForUnit.includes(l.num));
+              const teachingLessons = u.lessons.filter((l) => !l.isTest);
+              const unitReady = teachingLessons.length > 0 && teachingLessons.every((l) => readyForUnit.includes(l.num));
               return (
                 <li key={u.num} className={`tlp-toc-item ${isOpen ? "is-open" : ""}`}>
                   <div className="tlp-toc-row" onClick={() => setOpenUnit(isOpen ? null : u.num)}>
