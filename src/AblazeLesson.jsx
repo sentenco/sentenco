@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { ABLAZE_A2_LESSONS } from "./ablazeA2Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
+import { CoverBadges, badgeAdjustStyles, useBadgePositions, medalDefault, ribbonDefault } from "./TeensCoverBadges.jsx";
+
+const ABLAZE_BADGE_DEFAULTS = { medal: medalDefault(), ribbon: ribbonDefault({ left: 340 }) };
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -12,19 +15,6 @@ function renderHighlighted(text) {
     }
     return <React.Fragment key={i}>{part}</React.Fragment>;
   });
-}
-
-function CoverBadges({ stage }) {
-  const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
-  if (!m) return null;
-  const unit = m[1];
-  const lesson = m[2] || "R";
-  return (
-    <>
-      <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
-      <div className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""}`}><span className="um-label">UNIT</span><span className="um-num">{unit}</span></div>
-    </>
-  );
 }
 
 function TitleBlock({ eyebrow, title, subtitle }) {
@@ -87,6 +77,7 @@ function renderSlideBody(slide) {
 export default function AblazeLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
+  const { badges, adjust, dragMedal, dragRibbon } = useBadgePositions("ablazeBadges", ABLAZE_BADGE_DEFAULTS);
 
   useEffect(() => {
     const styleId = "abz-styles";
@@ -94,7 +85,7 @@ export default function AblazeLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles;
+    tag.textContent = styles + badgeAdjustStyles;
     document.head.appendChild(tag);
   }, []);
 
@@ -172,7 +163,7 @@ export default function AblazeLesson() {
             </div>
           </div>
 
-          <div className="slide-body">{i === 0 && unit === "1" && lesson === "2" && <CoverBadges stage={s.stage} />}{renderSlideBody(s)}</div>
+          <div className="slide-body">{i === 0 && unit === "1" && lesson === "2" && <CoverBadges stage={s.stage} badges={badges} adjust={adjust} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}{renderSlideBody(s)}</div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>

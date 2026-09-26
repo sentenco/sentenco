@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
+import { CoverBadges, badgeAdjustStyles, useBadgePositions, medalDefault, ribbonDefault } from "./TeensCoverBadges.jsx";
+
+const IGNITE_BADGE_DEFAULTS = { medal: medalDefault(), ribbon: ribbonDefault({ left: 250 }) };
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -12,19 +15,6 @@ function renderHighlighted(text) {
     }
     return <React.Fragment key={i}>{part}</React.Fragment>;
   });
-}
-
-function CoverBadges({ stage }) {
-  const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
-  if (!m) return null;
-  const unit = m[1];
-  const lesson = m[2] || "R";
-  return (
-    <>
-      <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
-      <div className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""}`}><span className="um-label">UNIT</span><span className="um-num">{unit}</span></div>
-    </>
-  );
 }
 
 function TitleBlock({ eyebrow, title, subtitle }) {
@@ -161,6 +151,7 @@ function renderSlideBody(slide) {
 export default function IgniteLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
+  const { badges, adjust, dragMedal, dragRibbon } = useBadgePositions("igniteBadges", IGNITE_BADGE_DEFAULTS);
 
   useEffect(() => {
     const styleId = "il-styles";
@@ -168,7 +159,7 @@ export default function IgniteLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles;
+    tag.textContent = styles + badgeAdjustStyles;
     document.head.appendChild(tag);
   }, []);
 
@@ -247,7 +238,7 @@ export default function IgniteLesson() {
           </div>
 
           <div className="slide-body">
-            {i === 0 && <CoverBadges stage={s.stage} />}
+            {i === 0 && <CoverBadges stage={s.stage} badges={badges} adjust={adjust} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}
             {renderSlideBody(s)}
           </div>
 
