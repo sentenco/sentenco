@@ -176,6 +176,8 @@ export const LESSON_GUIDE = [
   { stage: "Try It", time: "~4 min", note: "Teacher starts the exchange, student fills in their own name to finish it." },
   { stage: "Try It Again", time: "~4 min", note: "Same pattern with a different opening line, so the student isn't just repeating the first round." },
   { stage: "Casual or Polite?", time: "~5 min", note: "This-or-that round: student picks the greeting that fits the moment and says why in one sentence." },
+  { stage: "Casual or Polite? 2", time: "~5 min", note: "Second round, new pairs -- keep pacing brisk, this is for retention and timing, not new language." },
+  { stage: "Casual or Polite? 3", time: "~5 min", note: "Third round, new pairs -- last repetition before independent practice." },
   { stage: "Your Turn", time: "~4 min", note: "Student introduces themselves in their own words using the pattern, no prompts." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -311,6 +313,38 @@ function buildSlides() {
             ["Hi there!", "Good afternoon."],
             ["What's up?", "How do you do?"],
             ["Yo!", "Nice to meet you."],
+          ]}
+        />
+      ),
+    },
+    // 7b: Highlight activity, round 2
+    {
+      stage: "Casual or Polite? 2",
+      instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]],
+      body: (
+        <ThisOrThatBlock
+          heading="Casual or Polite? Round 2"
+          pairs={[
+            ["Sup?", "Good morning."],
+            ["Nice meeting you!", "It's a pleasure to meet you."],
+            ["Hiya!", "Hello, how are you?"],
+            ["Long time no see!", "It's been a while, hasn't it?"],
+          ]}
+        />
+      ),
+    },
+    // 7c: Highlight activity, round 3
+    {
+      stage: "Casual or Polite? 3",
+      instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]],
+      body: (
+        <ThisOrThatBlock
+          heading="Casual or Polite? Round 3"
+          pairs={[
+            ["Hey, what's up?", "Hello, nice to meet you."],
+            ["Yo, I'm here!", "Good afternoon, everyone."],
+            ["Catch you later!", "It was nice meeting you."],
+            ["Cool, see ya!", "Thank you, goodbye."],
           ]}
         />
       ),
