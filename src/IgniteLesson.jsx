@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
+import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -136,6 +137,7 @@ const BLOCKS = {
   examples: ExamplesBlock,
   practice: PracticeBlock,
   landing: LandingBlock,
+  ...TEENS_GAME_BLOCKS,
 };
 
 function renderSlideBody(slide) {
@@ -338,4 +340,4 @@ const styles = `
 .progress-track { display: flex; align-items: center; gap: 6px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
-`;
+` + teensGameStyles;
