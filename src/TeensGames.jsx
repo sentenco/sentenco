@@ -268,7 +268,7 @@ export const teensGameStyles = `
 .tg-wheel-marker { position: absolute; top: -12px; left: 50%; width: 27px; height: 31px; margin-left: -13.5px; z-index: 3; filter: drop-shadow(0 2px 3px rgba(27,42,74,0.25)); }
 .tg-wheel { width: 100%; height: 100%; display: block; filter: drop-shadow(0 8px 16px rgba(27,42,74,0.18)); }
 .tg-wheel-text { font-family: 'Baloo 2', sans-serif; font-weight: 800; fill: #fff; }
-.tg-panel { display: flex; flex-direction: column; align-items: center; gap: 12px; background: #fff; border-radius: 18px; padding: 16px 22px; min-width: 170px; box-shadow: 0 8px 20px rgba(27,42,74,0.12); }
+.tg-panel { display: flex; flex-direction: column; align-items: center; gap: 12px; background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 16px 22px; min-width: 170px; }
 .tg-prompt { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13.5px; color: var(--ink-soft, #736A87); text-align: center; }
 .tg-result-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 19px; color: var(--navy, #1B2A4A); text-align: center; }
 .tg-btn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 10px 20px; border-radius: 14px; border: none; cursor: pointer; background: linear-gradient(180deg, var(--coral, #FF6B4A) 0%, var(--coral-deep, #E0502F) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.35), 0 8px 16px rgba(224,80,47,0.28); }
@@ -276,11 +276,11 @@ export const teensGameStyles = `
 .tg-btn--lg { padding: 12px 26px; font-size: 14px; }
 
 .tg-clue-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 460px; margin: 0 auto 16px; }
-.tg-clue-tile { position: relative; min-width: 96px; max-width: 150px; min-height: 62px; border-radius: 14px; background: #fff; box-shadow: 0 4px 12px rgba(27,42,74,0.1); display: flex; align-items: center; justify-content: center; padding: 10px 12px; text-align: center; }
+.tg-clue-tile { position: relative; min-width: 96px; max-width: 150px; min-height: 62px; border-radius: 14px; background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); display: flex; align-items: center; justify-content: center; padding: 10px 12px; text-align: center; }
 .tg-clue-num { position: absolute; top: 4px; left: 8px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 10px; color: var(--coral-deep, #E0502F); }
-.tg-clue-q { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy-light, #E4E9F5); }
+.tg-clue-q { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); }
 .tg-clue-text { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 12.5px; color: var(--ink, #2B2438); line-height: 1.3; }
-.tg-clue-tile.is-open { background: var(--coral-light, #FFE6DD); }
+.tg-clue-tile.is-open { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); }
 .tg-answer-chip { display: inline-block; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; color: #fff; background: var(--navy, #1B2A4A); padding: 8px 20px; border-radius: 999px; margin-bottom: 12px; }
 
 .tg-timer { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; color: var(--coral-deep, #E0502F); margin-bottom: 6px; }
@@ -288,20 +288,20 @@ export const teensGameStyles = `
 .tg-score { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); margin-bottom: 14px; }
 
 .tg-tot-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px; }
-.tg-tot-card { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; color: var(--navy, #1B2A4A); background: #fff; border: 2px solid var(--navy-light, #E4E9F5); border-radius: 16px; padding: 18px 20px; min-width: 120px; cursor: pointer; box-shadow: 0 4px 10px rgba(27,42,74,0.08); }
+.tg-tot-card { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink, #2B2438); background: var(--sun-light, #FFF1D2); border: 2px solid var(--sun, #F2A900); border-radius: 16px; padding: 18px 20px; min-width: 120px; cursor: pointer; }
 .tg-tot-card.is-picked { background: var(--coral-light, #FFE6DD); border-color: var(--coral, #FF6B4A); color: var(--coral-deep, #E0502F); }
 .tg-tot-card:disabled { cursor: default; }
 .tg-tot-or { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: var(--ink-soft, #736A87); text-transform: uppercase; }
 .tg-tot-followup { margin-bottom: 10px !important; }
 
 .tg-order-col { display: flex; flex-direction: column; gap: 8px; max-width: 380px; margin: 0 auto 12px; }
-.tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink, #2B2438); background: #fff; border: none; border-radius: 12px; padding: 10px 16px; text-align: left; cursor: pointer; box-shadow: 0 3px 8px rgba(27,42,74,0.08); }
-.tg-order-card.is-placed { background: var(--coral-light, #FFE6DD); }
+.tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink, #2B2438); background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy-soft, #5A6B92); border-radius: 12px; padding: 10px 16px; text-align: left; cursor: pointer; }
+.tg-order-card.is-placed { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); }
 .tg-order-card.is-shake { animation: tgShake 0.4s; }
 .tg-order-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--coral, #FF6B4A); color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 @keyframes tgShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 
-.tg-foc-card { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 14.5px; color: var(--navy, #1B2A4A); background: #fff; border-radius: 16px; padding: 18px 24px; max-width: 400px; margin: 0 auto 16px; box-shadow: 0 6px 16px rgba(27,42,74,0.1); }
+.tg-foc-card { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 14.5px; color: var(--navy, #1B2A4A); background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); border-radius: 16px; padding: 18px 24px; max-width: 400px; margin: 0 auto 16px; }
 .tg-foc-row { display: flex; gap: 14px; justify-content: center; margin-bottom: 10px; }
 .tg-foc-fact { background: linear-gradient(180deg, #2F9E7A 0%, #237A5D 100%); box-shadow: 0 4px 0 rgba(20,90,65,0.35), 0 8px 16px rgba(47,158,122,0.28); }
 .tg-foc-cap { background: linear-gradient(180deg, #8B6BD1 0%, #6B4FB0 100%); box-shadow: 0 4px 0 rgba(70,45,120,0.35), 0 8px 16px rgba(139,107,209,0.28); }

@@ -147,9 +147,9 @@ function ExamplesBlock({ heading, subheading, rows = [] }) {
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="mini-log">
         {rows.map(([q, a], i) => (
-          <div className="mini-row" key={i}>
-            <span className="mini-q">{q}</span>
-            <span className="mini-a">{a}</span>
+          <div className="mini-pair" key={i}>
+            <div className="mini-row mini-q"><span>{q}</span></div>
+            <div className="mini-row mini-a"><span>{a}</span></div>
           </div>
         ))}
       </div>
@@ -324,7 +324,7 @@ const styles = `
 
 :root {
   --coral: #FF6B4A; --coral-deep: #E0502F; --coral-light: #FFE6DD;
-  --navy: #1B2A4A; --navy-soft: #5A6B92; --navy-light: #E4E9F5; --sun: #F2A900;
+  --navy: #1B2A4A; --navy-soft: #5A6B92; --navy-light: #E4E9F5; --sun: #F2A900; --sun-light: #FFF1D2;
   --ink: #2B2438; --ink-soft: #736A87;
 }
 
@@ -396,7 +396,7 @@ const styles = `
 .ig-chip { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13.5px; color: var(--coral-deep); background: var(--coral-light); padding: 8px 18px; border-radius: 999px; }
 
 .msg-lines { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto; }
-.msg-line { background: rgba(255,255,255,0.94); border-radius: 14px; padding: 12px 18px; font-weight: 700; font-size: 14px; color: var(--ink); box-shadow: 0 6px 0 rgba(27,42,74,0.06); margin: 0; text-align: left; }
+.msg-line { background: var(--navy-light); border: 2px solid var(--navy); border-radius: 14px; padding: 12px 18px; font-weight: 700; font-size: 14px; color: var(--navy); margin: 0; text-align: left; }
 .hl { color: var(--coral-deep); }
 
 .bubble-col { display: flex; flex-direction: column; gap: 12px; max-width: 440px; margin: 0 auto; }
@@ -405,18 +405,19 @@ const styles = `
 .avatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #fff; }
 .avatar.navy { background: var(--navy); }
 .avatar.coral { background: var(--coral); }
-.bubble { background: rgba(255,255,255,0.94); border-radius: 16px; padding: 12px 16px; font-weight: 700; font-size: 13.5px; color: var(--ink); box-shadow: 0 6px 0 rgba(27,42,74,0.06); text-align: left; }
-.bubble.left { border-radius: 16px 16px 16px 4px; }
-.bubble.right { border-radius: 16px 16px 4px 16px; }
-.bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid var(--coral-deep); }
+.bubble { border: 2px solid; border-radius: 16px; padding: 12px 16px; font-weight: 700; font-size: 13.5px; text-align: left; }
+.bubble.left { background: var(--navy-light); border-color: var(--navy); color: var(--navy); border-radius: 16px 16px 16px 4px; }
+.bubble.right { background: var(--coral-light); border-color: var(--coral-deep); color: var(--coral-deep); border-radius: 16px 16px 4px 16px; }
+.bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
 
-.mini-log { display: flex; flex-direction: column; gap: 8px; max-width: 420px; margin: 0 auto; background: rgba(255,255,255,0.94); border-radius: 14px; padding: 14px 18px; box-shadow: 0 6px 0 rgba(27,42,74,0.06); text-align: left; }
-.mini-row { display: flex; flex-direction: column; gap: 3px; padding: 6px 0; border-bottom: 1px dashed var(--navy-light); }
-.mini-row:last-child { border-bottom: none; }
-.mini-q { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
-.mini-a { font-size: 13px; font-weight: 700; color: var(--navy); }
+.mini-log { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto; text-align: left; }
+.mini-pair { display: flex; flex-direction: column; gap: 6px; }
+.mini-row { border-radius: 12px; padding: 9px 14px; border: 2px solid; }
+.mini-row.mini-q { background: var(--navy-light); border-color: var(--navy-soft); align-self: flex-start; }
+.mini-row.mini-a { background: var(--coral-light); border-color: var(--coral-deep); align-self: flex-end; }
+.mini-row span { font-weight: 700; font-size: 12.5px; color: var(--ink); }
 
-.frame-card { background: rgba(255,255,255,0.94); border-radius: 16px; padding: 20px 24px; max-width: 380px; margin: 0 auto; box-shadow: 0 6px 0 rgba(27,42,74,0.06); }
+.frame-card { background: var(--coral-light); border: 2px solid var(--coral-deep); border-radius: 16px; padding: 20px 24px; max-width: 380px; margin: 0 auto; }
 .frame-line { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); line-height: 1.6; text-align: left; }
 .blank { display: inline-block; min-width: 46px; border-bottom: 2px solid var(--coral-deep); }
 .blank--wide { min-width: 90px; }
