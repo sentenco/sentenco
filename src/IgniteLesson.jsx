@@ -15,6 +15,36 @@ function renderHighlighted(text) {
   });
 }
 
+// Teacher-facing instruction pills at the top of a slide -- same pattern as
+// A1/A2 Kids. The teacher clicks through the deck; the teen speaks or types
+// in the chat, so verbs stay in that register (Look/Listen/Say/Ask/Read/
+// Write/Guess/Choose/Pick).
+const VERB_COLOR = {
+  look: "#2E97C7", watch: "#2E97C7", find: "#2E97C7",
+  say: "#E0502F", answer: "#E0502F", tell: "#E0502F", ask: "#E0502F", repeat: "#E0502F", introduce: "#E0502F",
+  listen: "#8E6FCE",
+  write: "#0F9E90", type: "#0F9E90", spell: "#0F9E90",
+  read: "#D6478C",
+  guess: "#22A67E", choose: "#22A67E", pick: "#22A67E", order: "#22A67E",
+};
+
+function InstructionStep({ icon, text }) {
+  const m = text.match(/^([A-Za-z]+)([\s\S]*)$/);
+  const verb = m ? m[1] : "";
+  let rest = m ? m[2] : text;
+  const color = VERB_COLOR[verb.toLowerCase()];
+  if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
+  return (
+    <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
+      <span className="instr-text">
+        {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
+        {color ? rest : text}
+      </span>
+    </span>
+  );
+}
+
 function TitleBlock({ stage, title, subtitle }) {
   const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
   const lesson = m ? m[2] || "R" : null;
@@ -239,8 +269,13 @@ export default function IgniteLesson() {
             )}
           </div>
 
-          <div className="slide-body">
+          <div className={`slide-body ${i !== 0 && s.instruction ? "has-instruction" : ""}`}>
             {i === 0 && <CoverBadges stage={s.stage} showRibbon={false} />}
+            {i !== 0 && s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
+              </div>
+            )}
             {renderSlideBody(s)}
           </div>
 
@@ -297,6 +332,11 @@ const styles = `
 .pennant-text { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; color: var(--navy); }
 
 .slide-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 30px; position: relative; z-index: 2; min-height: 0; overflow-y: auto; }
+.slide-body.has-instruction { padding-top: 54px; }
+.slide-instruction { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 610px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 15px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 6px 20px; box-shadow: 0 5px 0 rgba(10,18,40,0.35), 0 10px 18px rgba(27,42,74,0.2); z-index: 3; text-align: center; }
+.instr-step { display: inline-flex; align-items: center; gap: 6px; }
+.instr-icon { font-size: 15px; }
+.instr-tag { border-radius: 6px; padding: 1px 6px; margin-right: 4px; }
 
 .title-content { padding: 40px 40px 40px 280px; width: 100%; }
 

@@ -193,7 +193,7 @@ export function ThisOrThatBlock({ heading, pairs = [] }) {
   );
 }
 
-export function OrderUpBlock({ heading, items = [], instruction }) {
+export function OrderUpBlock({ heading, items = [], prompt }) {
   const [display] = useState(() => {
     let s = shuffle(items.map((_, i) => i));
     while (items.length > 1 && s.every((v, i) => v === i)) s = shuffle(items.map((_, i) => i));
@@ -212,7 +212,7 @@ export function OrderUpBlock({ heading, items = [], instruction }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      {instruction && <p className="slide-p">{instruction}</p>}
+      {prompt && <p className="slide-p">{prompt}</p>}
       <div className="tg-order-col">
         {display.map((i) => (
           <button key={i} type="button" className={`tg-order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""}`} onClick={() => pick(i)}>

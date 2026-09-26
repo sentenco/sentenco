@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CoverBadges } from "./TeensCoverBadges.jsx";
+import { ThisOrThatBlock, teensGameStyles } from "./TeensGames.jsx";
 
 export function StarIcon({ size = 20, fill = "var(--sun)", style }) {
   return (
@@ -13,6 +14,34 @@ function Chip({ label, active }) {
   return <span className={`greet-chip ${active ? "is-active" : ""}`}>{label}</span>;
 }
 
+// Teacher-facing instruction pills -- same pattern as A1/A2 Kids and the
+// rest of Ignite (IgniteLesson.jsx).
+const VERB_COLOR = {
+  look: "#2E97C7", watch: "#2E97C7", find: "#2E97C7",
+  say: "#E0502F", answer: "#E0502F", tell: "#E0502F", ask: "#E0502F", repeat: "#E0502F", introduce: "#E0502F", greet: "#E0502F",
+  listen: "#8E6FCE",
+  write: "#0F9E90", type: "#0F9E90", spell: "#0F9E90",
+  read: "#D6478C",
+  guess: "#22A67E", choose: "#22A67E", pick: "#22A67E",
+};
+
+function InstructionStep({ icon, text }) {
+  const m = text.match(/^([A-Za-z]+)([\s\S]*)$/);
+  const verb = m ? m[1] : "";
+  let rest = m ? m[2] : text;
+  const color = VERB_COLOR[verb.toLowerCase()];
+  if (color) rest = /^[.!]\s*$/.test(rest) ? "" : rest.replace(/^:/, "");
+  return (
+    <span className="instr-step">
+      <span className="instr-icon">{icon}</span>
+      <span className="instr-text">
+        {color ? <b className="instr-tag" style={{ background: color }}>{verb}</b> : null}
+        {color ? rest : text}
+      </span>
+    </span>
+  );
+}
+
 export default function TeensSayHelloLesson() {
   const [i, setI] = useState(0);
 
@@ -22,7 +51,7 @@ export default function TeensSayHelloLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles;
+    tag.textContent = styles + teensGameStyles;
     document.head.appendChild(tag);
   }, []);
 
@@ -78,8 +107,13 @@ export default function TeensSayHelloLesson() {
             )}
           </div>
 
-          <div className="slide-body">
+          <div className={`slide-body ${i !== 0 && s.instruction ? "has-instruction" : ""}`}>
             {i === 0 && <CoverBadges stage={s.stage} showRibbon={false} />}
+            {i !== 0 && s.instruction && (
+              <div className="slide-instruction">
+                {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
+              </div>
+            )}
             {s.body}
           </div>
 
@@ -103,9 +137,12 @@ export default function TeensSayHelloLesson() {
 export const LESSON_GUIDE = [
   { stage: "Unit 1 · Lesson 1", time: null, note: null },
   { stage: "Greetings", time: "~4 min", note: "Introduce the range from casual (Hey, Hi) to more neutral (Hello) greetings." },
-  { stage: "Introduce Yourself", time: "~6 min", note: "Model the self-introduction pattern with a short dialogue exchange." },
-  { stage: "Meet a Few People", time: "~6 min", note: "Show 3 varied intro exchanges with different names so the pattern feels natural, not memorized." },
-  { stage: "Your Turn", time: "~6 min", note: "Student introduces themselves in their own words using the pattern." },
+  { stage: "Meet a Few People", time: "~3 min", note: "Show 3 varied intro exchanges with different names so the pattern feels natural, not memorized." },
+  { stage: "Introduce Yourself", time: "~4 min", note: "Model one complete self-introduction exchange, fully filled in, before asking the student to fill anything in themselves." },
+  { stage: "Try It", time: "~4 min", note: "Teacher starts the exchange, student fills in their own name to finish it." },
+  { stage: "Try It Again", time: "~4 min", note: "Same pattern with a different opening line, so the student isn't just repeating the first round." },
+  { stage: "Casual or Polite?", time: "~5 min", note: "This-or-that round: student picks the greeting that fits the moment and says why in one sentence." },
+  { stage: "Your Turn", time: "~4 min", note: "Student introduces themselves in their own words using the pattern, no prompts." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
 
@@ -122,9 +159,10 @@ function buildSlides() {
         </div>
       ),
     },
-    // 2: Greetings range
+    // 2: Greetings range (present)
     {
       stage: "Greetings",
+      instruction: [["👀", "Look at the three greetings."], ["🗣️", "Say each one."]],
       body: (
         <div className="stage-col">
           <h2 className="slide-h">How Do You Say Hi?</h2>
@@ -146,13 +184,51 @@ function buildSlides() {
         </div>
       ),
     },
-    // 3: Introduce yourself pattern
+    // 3: A few more examples (present, continued)
+    {
+      stage: "Meet a Few People",
+      instruction: [["👀", "Look at the three exchanges."], ["🗣️", "Say each answer."]],
+      body: (
+        <div className="stage-col">
+          <h2 className="slide-h">Same Pattern, Different People</h2>
+          <p className="slide-p">The greeting changes, the pattern doesn't</p>
+          <div className="mini-log">
+            <div className="mini-row"><span className="mini-q">Hey, what's your name?</span><span className="mini-a">Hi, I'm Jordan.</span></div>
+            <div className="mini-row"><span className="mini-q">Hi there, I'm new here.</span><span className="mini-a">Hey, I'm Priya. Welcome!</span></div>
+            <div className="mini-row"><span className="mini-q">Hello, nice to meet you.</span><span className="mini-a">Hello, I'm Marcus. You too.</span></div>
+          </div>
+        </div>
+      ),
+    },
+    // 4: Introduce yourself pattern (model, fully filled)
     {
       stage: "Introduce Yourself",
+      instruction: [["👂", "Listen to the exchange."], ["🗣️", "Repeat both lines."]],
       body: (
         <div className="stage-col">
           <h2 className="slide-h">Nice to Meet You</h2>
           <p className="slide-p">Notice the pattern</p>
+          <div className="bubble-col">
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Hey, I don't think we've met. What's your name?</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Hi, I'm Alex. Nice to meet you!</div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    // 5: Guided practice, round 1
+    {
+      stage: "Try It",
+      instruction: [["👂", "Listen."], ["🗣️", "Answer with your own name."]],
+      body: (
+        <div className="stage-col">
+          <h2 className="slide-h">Your Turn to Answer</h2>
+          <p className="slide-p">Finish the exchange</p>
           <div className="bubble-col">
             <div className="brow">
               <div className="avatar navy">T</div>
@@ -166,24 +242,47 @@ function buildSlides() {
         </div>
       ),
     },
-    // 4: A few more examples
+    // 6: Guided practice, round 2
     {
-      stage: "Meet a Few People",
+      stage: "Try It Again",
+      instruction: [["👂", "Listen."], ["🗣️", "Answer with your own name."]],
       body: (
         <div className="stage-col">
-          <h2 className="slide-h">Same Pattern, Different People</h2>
-          <p className="slide-p">The greeting changes, the pattern doesn't</p>
-          <div className="mini-log">
-            <div className="mini-row"><span className="mini-q">Hey, what's your name?</span><span className="mini-a">Hi, I'm Jordan.</span></div>
-            <div className="mini-row"><span className="mini-q">Hi there, I'm new here.</span><span className="mini-a">Hey, I'm Priya. Welcome!</span></div>
-            <div className="mini-row"><span className="mini-q">Hello, nice to meet you.</span><span className="mini-a">Hello, I'm Marcus. You too.</span></div>
+          <h2 className="slide-h">One More Round</h2>
+          <p className="slide-p">A different greeting, same pattern</p>
+          <div className="bubble-col">
+            <div className="brow">
+              <div className="avatar navy">T</div>
+              <div className="bubble left">Hello, nice to meet you.</div>
+            </div>
+            <div className="brow me">
+              <div className="avatar coral">S</div>
+              <div className="bubble right">Hello, I'm <span className="fill"></span>. Nice to meet you too!</div>
+            </div>
           </div>
         </div>
       ),
     },
-    // 5: Your turn
+    // 7: Highlight activity
+    {
+      stage: "Casual or Polite?",
+      instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]],
+      body: (
+        <ThisOrThatBlock
+          heading="Casual or Polite?"
+          pairs={[
+            ["Hey!", "Hello."],
+            ["Hi there!", "Good afternoon."],
+            ["What's up?", "How do you do?"],
+            ["Yo!", "Nice to meet you."],
+          ]}
+        />
+      ),
+    },
+    // 8: Independent practice
     {
       stage: "Your Turn",
+      instruction: [["🗣️", "Introduce yourself."], ["🙅", "No help this time."]],
       body: (
         <div className="stage-col">
           <h2 className="slide-h">Introduce Yourself</h2>
@@ -194,7 +293,7 @@ function buildSlides() {
         </div>
       ),
     },
-    // 6: Wrap-up
+    // 9: Wrap-up
     {
       stage: "Wrap-Up",
       body: (
@@ -244,6 +343,11 @@ const styles = `
 .pennant-text { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; color: var(--navy); }
 
 .slide-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 30px; position: relative; z-index: 2; }
+.slide-body.has-instruction { padding-top: 54px; }
+.slide-instruction { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 610px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 15px; color: #fff; background: linear-gradient(180deg, #26386A, #1B2A4A); border-radius: 999px; padding: 6px 20px; box-shadow: 0 5px 0 rgba(10,18,40,0.35), 0 10px 18px rgba(27,42,74,0.2); z-index: 3; text-align: center; }
+.instr-step { display: inline-flex; align-items: center; gap: 6px; }
+.instr-icon { font-size: 15px; }
+.instr-tag { border-radius: 6px; padding: 1px 6px; margin-right: 4px; }
 
 .title-content { padding: 40px 40px 40px 280px; width: 100%; }
 .cover-ribbon { display: inline-flex; align-items: center; gap: 10px; height: 44px; margin-bottom: 14px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
