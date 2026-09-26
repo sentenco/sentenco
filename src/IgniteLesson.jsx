@@ -128,7 +128,7 @@ function DialogueBlock({ heading, subheading, turns = [] }) {
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className="bubble-col">
+      <div className={`bubble-col ${turns.length <= 2 ? "is-roomy" : ""}`}>
         {turns.map((t, i) => (
           <div className={`brow ${t.who === "student" ? "me" : ""}`} key={i}>
             <div className={`avatar ${t.who === "student" ? "coral" : "navy"}`}>{t.who === "student" ? "S" : "T"}</div>
@@ -145,7 +145,7 @@ function ExamplesBlock({ heading, subheading, rows = [] }) {
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className="mini-log">
+      <div className={`mini-log ${rows.length <= 2 ? "is-roomy" : ""}`}>
         {rows.map(([q, a], i) => (
           <div className="mini-pair" key={i}>
             <div className="mini-row mini-q"><span>{q}</span></div>
@@ -399,7 +399,7 @@ const styles = `
 .msg-line { background: var(--navy-light); border: 2px solid var(--navy); border-radius: 14px; padding: 12px 18px; font-weight: 700; font-size: 14px; color: var(--navy); margin: 0; text-align: left; }
 .hl { color: var(--coral-deep); }
 
-.bubble-col { display: flex; flex-direction: column; gap: 12px; max-width: 440px; margin: 0 auto; }
+.bubble-col { display: flex; flex-direction: column; gap: 8px; max-width: 380px; margin: 0 auto; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }
 .avatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #fff; }
@@ -409,13 +409,21 @@ const styles = `
 .bubble.left { background: var(--navy-light); border-color: var(--navy); color: var(--navy); border-radius: 16px 16px 16px 4px; }
 .bubble.right { background: var(--coral-light); border-color: var(--coral-deep); color: var(--coral-deep); border-radius: 16px 16px 4px 16px; }
 .bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
+.bubble-col.is-roomy { gap: 14px; max-width: 460px; }
+.bubble-col.is-roomy .avatar { width: 40px; height: 40px; font-size: 15px; }
+.bubble-col.is-roomy .bubble { font-size: 17px; padding: 16px 22px; }
 
-.mini-log { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto; text-align: left; }
-.mini-pair { display: flex; flex-direction: column; gap: 6px; }
-.mini-row { border-radius: 12px; padding: 9px 14px; border: 2px solid; }
+.mini-log { display: flex; flex-direction: column; gap: 6px; max-width: 320px; margin: 0 auto; text-align: left; }
+.mini-pair { display: flex; flex-direction: column; gap: 4px; }
+.mini-pair + .mini-pair { margin-top: 4px; }
+.mini-row { border-radius: 12px; padding: 8px 13px; border: 2px solid; max-width: 84%; }
 .mini-row.mini-q { background: var(--navy-light); border-color: var(--navy-soft); align-self: flex-start; }
 .mini-row.mini-a { background: var(--coral-light); border-color: var(--coral-deep); align-self: flex-end; }
 .mini-row span { font-weight: 700; font-size: 12.5px; color: var(--ink); }
+.mini-log.is-roomy { max-width: 420px; gap: 10px; }
+.mini-log.is-roomy .mini-pair { gap: 6px; }
+.mini-log.is-roomy .mini-row { padding: 14px 20px; }
+.mini-log.is-roomy .mini-row span { font-size: 16px; }
 
 .frame-card { background: var(--coral-light); border: 2px solid var(--coral-deep); border-radius: 16px; padding: 20px 24px; max-width: 380px; margin: 0 auto; }
 .frame-line { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); line-height: 1.6; text-align: left; }

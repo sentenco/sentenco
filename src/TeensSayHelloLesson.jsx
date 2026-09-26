@@ -244,7 +244,7 @@ function buildSlides() {
         <div className="stage-col">
           <h2 className="slide-h">Nice to Meet You</h2>
           <p className="slide-p">Notice the pattern</p>
-          <div className="bubble-col">
+          <div className="bubble-col is-roomy">
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">Hey, I don't think we've met. What's your name?</div>
@@ -265,7 +265,7 @@ function buildSlides() {
         <div className="stage-col">
           <h2 className="slide-h">Your Turn to Answer</h2>
           <p className="slide-p">Finish the exchange</p>
-          <div className="bubble-col">
+          <div className="bubble-col is-roomy">
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">Hey, I don't think we've met. What's your name?</div>
@@ -286,7 +286,7 @@ function buildSlides() {
         <div className="stage-col">
           <h2 className="slide-h">One More Round</h2>
           <p className="slide-p">A different greeting, same pattern</p>
-          <div className="bubble-col">
+          <div className="bubble-col is-roomy">
             <div className="brow">
               <div className="avatar navy">T</div>
               <div className="bubble left">Hello, nice to meet you.</div>
@@ -414,7 +414,7 @@ const styles = `
 .vocab-zoom-note { font-size: 15px; color: var(--ink-soft); font-weight: 600; margin: 10px 0 0; }
 .vocab-zoom-close { position: absolute; top: -14px; right: -14px; width: 32px; height: 32px; border-radius: 50%; border: none; cursor: pointer; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
 
-.bubble-col { display: flex; flex-direction: column; gap: 12px; max-width: 440px; margin: 0 auto; }
+.bubble-col { display: flex; flex-direction: column; gap: 8px; max-width: 380px; margin: 0 auto; }
 .brow { display: flex; align-items: center; gap: 10px; }
 .brow.me { flex-direction: row-reverse; align-self: flex-end; }
 .avatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #fff; }
@@ -424,10 +424,14 @@ const styles = `
 .bubble.left { background: var(--navy-light); border-color: var(--navy); color: var(--navy); border-radius: 16px 16px 16px 4px; }
 .bubble.right { background: var(--coral-light); border-color: var(--coral-deep); color: var(--coral-deep); border-radius: 16px 16px 4px 16px; }
 .bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
+.bubble-col.is-roomy { gap: 14px; max-width: 460px; }
+.bubble-col.is-roomy .avatar { width: 40px; height: 40px; font-size: 15px; }
+.bubble-col.is-roomy .bubble { font-size: 17px; padding: 16px 22px; }
 
-.mini-log { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto; text-align: left; }
-.mini-pair { display: flex; flex-direction: column; gap: 6px; }
-.mini-row { border-radius: 12px; padding: 9px 14px; border: 2px solid; }
+.mini-log { display: flex; flex-direction: column; gap: 6px; max-width: 320px; margin: 0 auto; text-align: left; }
+.mini-pair { display: flex; flex-direction: column; gap: 4px; }
+.mini-pair + .mini-pair { margin-top: 4px; }
+.mini-row { border-radius: 12px; padding: 8px 13px; border: 2px solid; max-width: 84%; }
 .mini-row.mini-q { background: var(--navy-light); border-color: var(--navy-soft); align-self: flex-start; }
 .mini-row.mini-a { background: var(--coral-light); border-color: var(--coral-deep); align-self: flex-end; }
 .mini-row span { font-weight: 700; font-size: 12.5px; color: var(--ink); }
