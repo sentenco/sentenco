@@ -77,7 +77,7 @@ function renderSlideBody(slide) {
 export default function AblazeLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
-  const { badges, adjust, dragMedal, dragRibbon } = useBadgePositions("ablazeBadges", ABLAZE_BADGE_DEFAULTS);
+  const { badges, dragMedal, dragRibbon } = useBadgePositions("ablazeBadges", ABLAZE_BADGE_DEFAULTS);
 
   useEffect(() => {
     const styleId = "abz-styles";
@@ -163,7 +163,7 @@ export default function AblazeLesson() {
             </div>
           </div>
 
-          <div className="slide-body">{i === 0 && unit === "1" && lesson === "2" && <CoverBadges stage={s.stage} badges={badges} adjust={adjust} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}{renderSlideBody(s)}</div>
+          <div className="slide-body">{i === 0 && unit === "1" && lesson === "2" && <CoverBadges stage={s.stage} badges={badges} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}{renderSlideBody(s)}</div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>

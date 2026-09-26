@@ -151,7 +151,7 @@ function renderSlideBody(slide) {
 export default function IgniteLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
-  const { badges, adjust, dragMedal, dragRibbon } = useBadgePositions("igniteBadges", IGNITE_BADGE_DEFAULTS);
+  const { badges, dragMedal, dragRibbon } = useBadgePositions("igniteBadges", IGNITE_BADGE_DEFAULTS);
 
   useEffect(() => {
     const styleId = "il-styles";
@@ -238,7 +238,7 @@ export default function IgniteLesson() {
           </div>
 
           <div className="slide-body">
-            {i === 0 && <CoverBadges stage={s.stage} badges={badges} adjust={adjust} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}
+            {i === 0 && <CoverBadges stage={s.stage} badges={badges} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}
             {renderSlideBody(s)}
           </div>
 
