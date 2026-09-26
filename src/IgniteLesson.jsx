@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges } from "./TeensCoverBadges.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
+import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -206,13 +206,10 @@ function PracticeBlock({ heading, subheading, line }) {
 }
 
 function LandingBlock({ heading, caption }) {
-  return (
-    <div className="stage-col">
-      <StarIcon size={40} fill="var(--coral)" />
-      <h2 className="slide-h">{heading}</h2>
-      <p className="slide-p slide-p--wrap">{caption}</p>
-    </div>
-  );
+  const idx = caption ? caption.indexOf("Next up:") : -1;
+  const recap = idx >= 0 ? caption.slice(0, idx).trim() : caption;
+  const see = idx >= 0 ? caption.slice(idx).trim() : undefined;
+  return <WrapUp title={heading} see={see}>{recap}</WrapUp>;
 }
 
 const BLOCKS = {
@@ -484,4 +481,4 @@ const styles = `
 .sp-multi img { flex: 1 1 0; min-width: 0; width: auto; height: auto; max-height: 100%; }
 .sp-missing { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6px; border: 2px dashed rgba(224,80,47,0.35); border-radius: 12px; background: rgba(255,255,255,0.5); }
 .sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--coral-deep); line-height: 1.3; }
-` + teensGameStyles + zoomStyles;
+` + teensGameStyles + zoomStyles + wrapUpStyles;
