@@ -60,7 +60,7 @@ function useDrag(pos, onDrag) {
   return { onPointerDown: down, onPointerMove: move };
 }
 
-export function CoverBadges({ stage, eyebrowText, badges, onDragMedal, onDragRibbon, onDragEyebrow }) {
+export function CoverBadges({ stage, eyebrowText, badges, showRibbon = true, onDragMedal, onDragRibbon, onDragEyebrow }) {
   const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
   if (!m) return null;
   const unit = m[1];
@@ -86,13 +86,15 @@ export function CoverBadges({ stage, eyebrowText, badges, onDragMedal, onDragRib
           {eyebrowText}
         </div>
       )}
-      <div
-        className={`cover-ribbon ${draggable ? "is-draggable" : ""}`}
-        style={ribbon ? { left: ribbon.left, top: ribbon.top } : undefined}
-        {...ribbonHandlers}
-      >
-        <span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span>
-      </div>
+      {showRibbon && (
+        <div
+          className={`cover-ribbon ${draggable ? "is-draggable" : ""}`}
+          style={ribbon ? { left: ribbon.left, top: ribbon.top } : undefined}
+          {...ribbonHandlers}
+        >
+          <span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span>
+        </div>
+      )}
       <div
         className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""} ${draggable ? "is-draggable" : ""}`}
         style={medal ? { left: medal.left, top: medal.top, width: medal.size, height: medal.size, transform: `rotate(${medal.rot}deg)`, "--k": medal.size / 104 } : undefined}
@@ -105,7 +107,8 @@ export function CoverBadges({ stage, eyebrowText, badges, onDragMedal, onDragRib
           <div className="bp-title">Drag the badges into place</div>
           <div className="bp-values">
             {eyebrow && <>eyebrow {eyebrow.left}, {eyebrow.top} · </>}
-            ribbon {ribbon.left}, {ribbon.top} · medal {medal.left}, {medal.top}
+            {ribbon && <>ribbon {ribbon.left}, {ribbon.top} · </>}
+            medal {medal.left}, {medal.top}
           </div>
         </div>
       )}

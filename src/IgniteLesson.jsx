@@ -15,9 +15,14 @@ function renderHighlighted(text) {
   });
 }
 
-function TitleBlock({ title, subtitle }) {
+function TitleBlock({ stage, title, subtitle }) {
+  const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
+  const lesson = m ? m[2] || "R" : null;
   return (
     <div className="title-content">
+      {lesson && (
+        <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
+      )}
       <h1 className="title-h">{title}</h1>
       <p className="title-p">{subtitle}</p>
     </div>
@@ -235,7 +240,7 @@ export default function IgniteLesson() {
           </div>
 
           <div className="slide-body">
-            {i === 0 && <CoverBadges stage={s.stage} />}
+            {i === 0 && <CoverBadges stage={s.stage} showRibbon={false} />}
             {renderSlideBody(s)}
           </div>
 
@@ -295,7 +300,7 @@ const styles = `
 
 .title-content { padding: 40px 40px 40px 280px; width: 100%; }
 
-.cover-ribbon { position: absolute; top: 122px; left: 309px; display: flex; align-items: center; gap: 10px; height: 44px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
+.cover-ribbon { display: inline-flex; align-items: center; gap: 10px; height: 44px; margin-bottom: 14px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; }
 .cover-ribbon .cr-num { width: 34px; height: 34px; border-radius: 50%; background: var(--coral); display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
 .unit-medal { position: absolute; left: 106px; top: 276px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: 7px solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
