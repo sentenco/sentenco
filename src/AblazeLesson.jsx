@@ -5,7 +5,7 @@ import { ABLAZE_A2_LESSONS } from "./ablazeA2Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges, badgeAdjustStyles, useBadgePositions, medalDefault, ribbonDefault } from "./TeensCoverBadges.jsx";
 
-const ABLAZE_BADGE_DEFAULTS = { medal: medalDefault(), ribbon: ribbonDefault({ left: 340 }) };
+const ABLAZE_BADGE_DEFAULTS = { medal: medalDefault(), ribbon: ribbonDefault({ left: 340, top: 76 }) };
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -219,9 +219,9 @@ const styles = `
 
 .slide-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 30px; position: relative; z-index: 2; min-height: 0; overflow-y: auto; }
 
-.title-content { padding: 40px 40px 40px 340px; width: 100%; }
-.title-eyebrow { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep); margin-bottom: 8px; }
-.cover-ribbon { position: absolute; top: 20px; left: 340px; display: flex; align-items: center; gap: 10px; height: 44px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
+.title-content { padding: 74px 40px 40px 340px; width: 100%; }
+.title-eyebrow { position: absolute; top: 20px; left: 340px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep); z-index: 4; }
+.cover-ribbon { position: absolute; top: 76px; left: 340px; display: flex; align-items: center; gap: 10px; height: 44px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; }
 .cover-ribbon .cr-num { width: 34px; height: 34px; border-radius: 50%; background: var(--coral); display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
 .unit-medal { position: absolute; left: 34px; top: 56px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: 7px solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
