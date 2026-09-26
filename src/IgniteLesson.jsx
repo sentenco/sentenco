@@ -4,6 +4,7 @@ import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges } from "./TeensCoverBadges.jsx";
+import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -77,11 +78,19 @@ function VocabBlock({ heading, subheading, items = [] }) {
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="vocab-row">
         {items.map((it, i) => (
-          <div className="vocab-card" key={i} onClick={() => setZoomed(it)}>
-            <span className="vocab-label">{it.label}</span>
-            {it.note && <p className="vocab-note">{it.note}</p>}
-            <span className="vocab-zoom-badge"><ZoomIcon /></span>
-          </div>
+          "pic" in it ? (
+            <div className="vocab-card has-pic" key={i}>
+              <SoarPic src={it.pic} label={it.label} size={84} />
+              <span className="vocab-label">{it.label}</span>
+              {it.note && <p className="vocab-note">{it.note}</p>}
+            </div>
+          ) : (
+            <div className="vocab-card" key={i} onClick={() => setZoomed(it)}>
+              <span className="vocab-label">{it.label}</span>
+              {it.note && <p className="vocab-note">{it.note}</p>}
+              <span className="vocab-zoom-badge"><ZoomIcon /></span>
+            </div>
+          )
         ))}
       </div>
       {zoomed && (
@@ -206,6 +215,7 @@ function renderSlideBody(slide) {
 export default function IgniteLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
+  const [zoom, setZoom] = useState(null);
   useEffect(() => {
     const styleId = "il-styles";
     const existing = document.getElementById(styleId);
@@ -273,6 +283,7 @@ export default function IgniteLesson() {
   }
 
   return (
+    <ZoomContext.Provider value={setZoom}>
     <div className="tsh-wrap">
       <div className="deck-single">
         <div className={`slide ${i === 0 ? "slide--title" : "slide--regular"}`}>
@@ -315,7 +326,9 @@ export default function IgniteLesson() {
           </div>
         </div>
       </div>
+      <ZoomOverlay zoom={zoom} onClose={() => setZoom(null)} />
     </div>
+    </ZoomContext.Provider>
   );
 }
 
@@ -437,4 +450,13 @@ const styles = `
 .progress-track { display: flex; align-items: center; gap: 6px; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
-` + teensGameStyles;
+
+.vocab-card.has-pic { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; padding: 10px 12px 12px; }
+.vocab-card.has-pic .vocab-label { text-align: center; }
+.sp-tile { position: relative; background: #fff; border-radius: 12px; box-shadow: 0 4px 0 rgba(27,42,74,0.08); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.sp-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sp-multi { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; padding: 6px 4px; gap: 0; }
+.sp-multi img { flex: 1 1 0; min-width: 0; width: auto; height: auto; max-height: 100%; }
+.sp-missing { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6px; border: 2px dashed rgba(224,80,47,0.35); border-radius: 12px; background: rgba(255,255,255,0.5); }
+.sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--coral-deep); line-height: 1.3; }
+` + teensGameStyles + zoomStyles;
