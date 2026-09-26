@@ -168,6 +168,24 @@ function ExamplesBlock({ heading, subheading, rows = [] }) {
   );
 }
 
+function SpotlightBlock({ heading, subheading, pic, label, question, answer }) {
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      {subheading && <p className="slide-p">{subheading}</p>}
+      <div className="spotlight-pic">
+        <SoarPic src={pic} label={label} size={168} />
+      </div>
+      <div className="mini-log is-roomy">
+        <div className="mini-pair">
+          <div className="mini-row mini-q"><span>{question}</span></div>
+          <div className="mini-row mini-a"><span>{answer}</span></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PracticeBlock({ heading, subheading, line }) {
   return (
     <div className="stage-col">
@@ -204,6 +222,7 @@ const BLOCKS = {
   message: MessageBlock,
   dialogue: DialogueBlock,
   examples: ExamplesBlock,
+  spotlight: SpotlightBlock,
   practice: PracticeBlock,
   landing: LandingBlock,
   ...TEENS_GAME_BLOCKS,
@@ -441,6 +460,8 @@ const styles = `
 .mini-log.is-roomy .mini-pair { gap: 6px; }
 .mini-log.is-roomy .mini-row { padding: 14px 20px; }
 .mini-log.is-roomy .mini-row span { font-size: 16px; }
+.spotlight-pic { display: flex; justify-content: center; margin: 4px 0 14px; }
+.spotlight-pic .sp-tile { border-radius: 20px; box-shadow: 0 8px 0 rgba(27,42,74,0.1), 0 16px 28px rgba(27,42,74,0.14); }
 
 .frame-card { background: var(--coral-light); border: 2px solid var(--coral-deep); border-radius: 16px; padding: 20px 24px; max-width: 380px; margin: 0 auto; }
 .frame-line { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); line-height: 1.6; text-align: left; }
