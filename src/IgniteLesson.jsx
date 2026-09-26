@@ -3,9 +3,7 @@ import { useParams } from "react-router-dom";
 import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
-import { CoverBadges, badgeAdjustStyles, useBadgePositions, medalDefault, ribbonDefault } from "./TeensCoverBadges.jsx";
-
-const IGNITE_BADGE_DEFAULTS = { medal: medalDefault(), ribbon: ribbonDefault({ left: 250, top: 76 }) };
+import { CoverBadges } from "./TeensCoverBadges.jsx";
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -151,7 +149,6 @@ function renderSlideBody(slide) {
 export default function IgniteLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
-  const { badges, dragMedal, dragRibbon } = useBadgePositions("igniteBadges", IGNITE_BADGE_DEFAULTS);
 
   useEffect(() => {
     const styleId = "il-styles";
@@ -159,7 +156,7 @@ export default function IgniteLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles + badgeAdjustStyles;
+    tag.textContent = styles;
     document.head.appendChild(tag);
   }, []);
 
@@ -238,7 +235,7 @@ export default function IgniteLesson() {
           </div>
 
           <div className="slide-body">
-            {i === 0 && <CoverBadges stage={s.stage} badges={badges} onDragMedal={dragMedal} onDragRibbon={dragRibbon} />}
+            {i === 0 && <CoverBadges stage={s.stage} />}
             {renderSlideBody(s)}
           </div>
 
