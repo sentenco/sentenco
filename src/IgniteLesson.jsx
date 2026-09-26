@@ -3,7 +3,13 @@ import { useParams } from "react-router-dom";
 import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
-import { CoverBadges } from "./TeensCoverBadges.jsx";
+import { CoverBadges, badgeAdjustStyles, useBadgePositions, medalDefault, ribbonDefault, eyebrowDefault } from "./TeensCoverBadges.jsx";
+
+const IGNITE_BADGE_DEFAULTS = {
+  medal: medalDefault(),
+  ribbon: ribbonDefault({ left: 250, top: 76 }),
+  eyebrow: eyebrowDefault({ left: 250, top: 20 }),
+};
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -15,10 +21,9 @@ function renderHighlighted(text) {
   });
 }
 
-function TitleBlock({ eyebrow, title, subtitle }) {
+function TitleBlock({ title, subtitle }) {
   return (
     <div className="title-content">
-      <div className="title-eyebrow">{eyebrow}</div>
       <h1 className="title-h">{title}</h1>
       <p className="title-p">{subtitle}</p>
     </div>
@@ -149,6 +154,7 @@ function renderSlideBody(slide) {
 export default function IgniteLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
+  const { badges, dragMedal, dragRibbon, dragEyebrow } = useBadgePositions("igniteBadges", IGNITE_BADGE_DEFAULTS);
 
   useEffect(() => {
     const styleId = "il-styles";
@@ -156,7 +162,7 @@ export default function IgniteLesson() {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles;
+    tag.textContent = styles + badgeAdjustStyles;
     document.head.appendChild(tag);
   }, []);
 
@@ -235,7 +241,7 @@ export default function IgniteLesson() {
           </div>
 
           <div className="slide-body">
-            {i === 0 && <CoverBadges stage={s.stage} />}
+            {i === 0 && <CoverBadges stage={s.stage} eyebrowText={s.eyebrow} badges={badges} onDragMedal={dragMedal} onDragRibbon={dragRibbon} onDragEyebrow={dragEyebrow} />}
             {renderSlideBody(s)}
           </div>
 
