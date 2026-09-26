@@ -177,7 +177,9 @@ export const LESSON_GUIDE = [
   { stage: "Try It Again", time: "~4 min", note: "Same pattern with a different opening line, so the student isn't just repeating the first round." },
   { stage: "Casual or Polite?", time: "~5 min", note: "This-or-that round: student picks the greeting that fits the moment and says why in one sentence." },
   { stage: "Casual or Polite? 2", time: "~5 min", note: "Second round, new pairs -- keep pacing brisk, this is for retention and timing, not new language." },
-  { stage: "Casual or Polite? 3", time: "~5 min", note: "Third round, new pairs -- last repetition before independent practice." },
+  { stage: "Casual or Polite? 3", time: "~5 min", note: "Third round, new pairs." },
+  { stage: "Casual or Polite? 4", time: "~5 min", note: "Fourth round, new pairs." },
+  { stage: "Casual or Polite? 5", time: "~5 min", note: "Fifth round, new pairs -- last repetition before independent practice." },
   { stage: "Your Turn", time: "~4 min", note: "Student introduces themselves in their own words using the pattern, no prompts." },
   { stage: "Wrap-Up", time: null, note: null },
 ];
@@ -345,6 +347,38 @@ function buildSlides() {
             ["Yo, I'm here!", "Good afternoon, everyone."],
             ["Catch you later!", "It was nice meeting you."],
             ["Cool, see ya!", "Thank you, goodbye."],
+          ]}
+        />
+      ),
+    },
+    // 7d: Highlight activity, round 4
+    {
+      stage: "Casual or Polite? 4",
+      instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]],
+      body: (
+        <ThisOrThatBlock
+          heading="Casual or Polite? Round 4"
+          pairs={[
+            ["Cheers!", "Thank you very much."],
+            ["No worries!", "It's not a problem."],
+            ["My bad!", "I apologize."],
+            ["Gotta go!", "I must be going now."],
+          ]}
+        />
+      ),
+    },
+    // 7e: Highlight activity, round 5
+    {
+      stage: "Casual or Polite? 5",
+      instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]],
+      body: (
+        <ThisOrThatBlock
+          heading="Casual or Polite? Round 5"
+          pairs={[
+            ["Take care!", "Have a wonderful day."],
+            ["Later!", "Goodbye, see you soon."],
+            ["Thanks a ton!", "I really appreciate it."],
+            ["You good?", "Are you doing well?"],
           ]}
         />
       ),
