@@ -3,13 +3,7 @@ import { useParams } from "react-router-dom";
 import { StarIcon } from "./TeensSayHelloLesson.jsx";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
-import { CoverBadges, badgeAdjustStyles, useBadgePositions, medalDefault, ribbonDefault, eyebrowDefault } from "./TeensCoverBadges.jsx";
-
-const IGNITE_BADGE_DEFAULTS = {
-  medal: medalDefault(),
-  ribbon: ribbonDefault({ left: 250, top: 76 }),
-  eyebrow: eyebrowDefault({ left: 250, top: 20 }),
-};
+import { CoverBadges } from "./TeensCoverBadges.jsx";
 
 function renderHighlighted(text) {
   const parts = String(text).split(/(\*[^*]+\*)/g);
@@ -154,15 +148,13 @@ function renderSlideBody(slide) {
 export default function IgniteLesson() {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
-  const { badges, dragMedal, dragRibbon, dragEyebrow } = useBadgePositions("igniteBadges", IGNITE_BADGE_DEFAULTS);
-
   useEffect(() => {
     const styleId = "il-styles";
     const existing = document.getElementById(styleId);
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles + badgeAdjustStyles;
+    tag.textContent = styles;
     document.head.appendChild(tag);
   }, []);
 
@@ -235,13 +227,15 @@ export default function IgniteLesson() {
               <img className="brand-logo" src="/logo-sentenco.png" alt="" />
               <span className="brand-word">entenco</span>
             </div>
-            <div className="pennant">
-              <span className="pennant-text">{s.stage}</span>
-            </div>
+            {i !== 0 && (
+              <div className="pennant">
+                <span className="pennant-text">{s.stage}</span>
+              </div>
+            )}
           </div>
 
           <div className="slide-body">
-            {i === 0 && <CoverBadges stage={s.stage} eyebrowText={s.eyebrow} badges={badges} onDragMedal={dragMedal} onDragRibbon={dragRibbon} onDragEyebrow={dragEyebrow} />}
+            {i === 0 && <CoverBadges stage={s.stage} />}
             {renderSlideBody(s)}
           </div>
 
@@ -299,16 +293,15 @@ const styles = `
 
 .slide-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 30px; position: relative; z-index: 2; min-height: 0; overflow-y: auto; }
 
-.title-content { padding: 74px 40px 40px 250px; width: 100%; }
+.title-content { padding: 40px 40px 40px 250px; width: 100%; }
 
-.cover-ribbon { position: absolute; top: 76px; left: 250px; display: flex; align-items: center; gap: 10px; height: 44px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
+.cover-ribbon { position: absolute; top: 148px; left: 279px; display: flex; align-items: center; gap: 10px; height: 44px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; }
 .cover-ribbon .cr-num { width: 34px; height: 34px; border-radius: 50%; background: var(--coral); display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
-.unit-medal { position: absolute; left: 34px; top: 56px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: 7px solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
+.unit-medal { position: absolute; left: 106px; top: 276px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: 7px solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; margin-bottom: -6px; padding-left: 0.2em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 60px; line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: 46px; }
-.title-eyebrow { position: absolute; top: 20px; left: 250px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep); z-index: 4; }
 .title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 36px; color: var(--navy); margin: 0 0 12px; line-height: 1.05; }
 .title-p { font-family: 'Quicksand', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
 
