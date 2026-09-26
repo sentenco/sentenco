@@ -72,15 +72,17 @@ function VocabBlock({ heading, subheading, items = [] }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [zoomed]);
+  const picCount = items.filter((it) => "pic" in it).length;
+  const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : 84;
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className="vocab-row">
+      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""}`}>
         {items.map((it, i) => (
           "pic" in it ? (
             <div className="vocab-card has-pic" key={i}>
-              <SoarPic src={it.pic} label={it.label} size={84} />
+              <SoarPic src={it.pic} label={it.label} size={picSize} />
               <span className="vocab-label">{it.label}</span>
               {it.note && <p className="vocab-note">{it.note}</p>}
             </div>
@@ -392,6 +394,8 @@ const styles = `
 .slide-p--wrap { max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
 .vocab-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding-top: 6px; }
+.vocab-row.is-dense { gap: 10px; max-width: 620px; margin: 0 auto; }
+.vocab-row.is-dense .vocab-card { width: 96px; padding: 8px 8px 10px; }
 .vocab-card { position: relative; background: var(--coral-light); border: 2px solid var(--coral-deep); border-radius: 12px; padding: 12px 16px; width: 128px; box-shadow: 0 4px 0 rgba(224,80,47,0.25); cursor: pointer; }
 .vocab-card:nth-child(3n+1) { transform: rotate(-4deg); }
 .vocab-card:nth-child(3n+2) { transform: rotate(3deg); margin-top: 10px; }
