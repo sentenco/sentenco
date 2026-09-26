@@ -60,17 +60,16 @@ function useDrag(pos, onDrag) {
   return { onPointerDown: down, onPointerMove: move };
 }
 
-const DEFAULT_BADGES = { medal: medalDefault(), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() };
-
-export function CoverBadges({ stage, eyebrowText, badges = DEFAULT_BADGES, onDragMedal, onDragRibbon, onDragEyebrow }) {
+export function CoverBadges({ stage, eyebrowText, badges, onDragMedal, onDragRibbon, onDragEyebrow }) {
   const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
   if (!m) return null;
   const unit = m[1];
   const lesson = m[2] || "R";
-  const medal = badges.medal;
-  const ribbon = badges.ribbon;
-  const eyebrow = badges.eyebrow;
-  const k = medal.size / 104;
+  // No `badges` prop: position comes purely from each track's own CSS
+  // (.cover-ribbon / .unit-medal / .title-eyebrow), nothing inline here.
+  const medal = badges?.medal;
+  const ribbon = badges?.ribbon;
+  const eyebrow = badges?.eyebrow;
   const draggable = !!(onDragMedal || onDragRibbon || onDragEyebrow);
   const ribbonHandlers = useDrag(ribbon, onDragRibbon);
   const medalHandlers = useDrag(medal, onDragMedal);
@@ -81,7 +80,7 @@ export function CoverBadges({ stage, eyebrowText, badges = DEFAULT_BADGES, onDra
       {eyebrowText != null && (
         <div
           className={`title-eyebrow ${draggable ? "is-draggable" : ""}`}
-          style={{ position: "absolute", left: eyebrow.left, top: eyebrow.top, margin: 0, zIndex: 4 }}
+          style={eyebrow ? { position: "absolute", left: eyebrow.left, top: eyebrow.top, margin: 0, zIndex: 4 } : undefined}
           {...eyebrowHandlers}
         >
           {eyebrowText}
@@ -89,14 +88,14 @@ export function CoverBadges({ stage, eyebrowText, badges = DEFAULT_BADGES, onDra
       )}
       <div
         className={`cover-ribbon ${draggable ? "is-draggable" : ""}`}
-        style={{ left: ribbon.left, top: ribbon.top }}
+        style={ribbon ? { left: ribbon.left, top: ribbon.top } : undefined}
         {...ribbonHandlers}
       >
         <span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span>
       </div>
       <div
         className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""} ${draggable ? "is-draggable" : ""}`}
-        style={{ left: medal.left, top: medal.top, width: medal.size, height: medal.size, transform: `rotate(${medal.rot}deg)`, "--k": k }}
+        style={medal ? { left: medal.left, top: medal.top, width: medal.size, height: medal.size, transform: `rotate(${medal.rot}deg)`, "--k": medal.size / 104 } : undefined}
         {...medalHandlers}
       >
         <span className="um-label">UNIT</span><span className="um-num">{unit}</span>
@@ -104,7 +103,10 @@ export function CoverBadges({ stage, eyebrowText, badges = DEFAULT_BADGES, onDra
       {draggable && (
         <div className="badge-panel">
           <div className="bp-title">Drag the badges into place</div>
-          <div className="bp-values">eyebrow {eyebrow.left}, {eyebrow.top} · ribbon {ribbon.left}, {ribbon.top} · medal {medal.left}, {medal.top}</div>
+          <div className="bp-values">
+            {eyebrow && <>eyebrow {eyebrow.left}, {eyebrow.top} · </>}
+            ribbon {ribbon.left}, {ribbon.top} · medal {medal.left}, {medal.top}
+          </div>
         </div>
       )}
     </>
