@@ -14,6 +14,19 @@ function renderHighlighted(text) {
   });
 }
 
+function CoverBadges({ stage }) {
+  const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
+  if (!m) return null;
+  const unit = m[1];
+  const lesson = m[2] || "R";
+  return (
+    <>
+      <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
+      <div className={`unit-medal ${String(unit).length > 1 ? "is-long" : ""}`}><span className="um-label">UNIT</span><span className="um-num">{unit}</span></div>
+    </>
+  );
+}
+
 function TitleBlock({ eyebrow, title, subtitle }) {
   return (
     <div className="title-content">
@@ -159,7 +172,7 @@ export default function AblazeLesson() {
             </div>
           </div>
 
-          <div className="slide-body">{renderSlideBody(s)}</div>
+          <div className="slide-body">{i === 0 && unit === "1" && lesson === "2" && <CoverBadges stage={s.stage} />}{renderSlideBody(s)}</div>
 
           <div className="slide-footer">
             <button className={`nav-btn ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
@@ -217,6 +230,13 @@ const styles = `
 
 .title-content { padding: 40px 40px 40px 340px; width: 100%; }
 .title-eyebrow { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-deep); margin-bottom: 8px; }
+.cover-ribbon { position: absolute; top: 20px; left: 340px; display: flex; align-items: center; gap: 10px; height: 44px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
+.cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; }
+.cover-ribbon .cr-num { width: 34px; height: 34px; border-radius: 50%; background: var(--coral); display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
+.unit-medal { position: absolute; left: 34px; top: 56px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: 7px solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
+.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; margin-bottom: -6px; padding-left: 0.2em; }
+.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 60px; line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
+.unit-medal.is-long .um-num { font-size: 46px; }
 .title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 36px; color: var(--navy); margin: 0 0 12px; line-height: 1.05; }
 .title-p { font-family: 'Quicksand', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
 
