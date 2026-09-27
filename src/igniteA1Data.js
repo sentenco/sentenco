@@ -1,12 +1,29 @@
 // Ignite (A1 Teens) lesson content, data-driven -- keyed "unit-lesson".
-// Converted from IGNITEA1TEENS.docx. Unit 1 Lesson 1 is the separate,
-// bespoke TeensSayHelloLesson.jsx (built earlier); everything here is
-// rendered by the generic IgniteLesson.jsx player. Each unit's 5th lesson
-// is "Unit Review" -- the docx's own capstone/summative lesson, no new
-// language, matches the locked "5 teaching + test" shape under a
-// different real name.
+// Converted from IGNITEA1TEENS.docx. Every lesson, including Unit 1 Lesson 1,
+// is rendered by the generic IgniteLesson.jsx player (Unit 1 Lesson 1 used to
+// be a separate bespoke file; migrated in so it never drifts from the rest
+// of the track again). Each unit's 5th lesson is "Unit Review" -- the docx's
+// own capstone/summative lesson, no new language, matches the locked
+// "5 teaching + test" shape under a different real name.
 
 export const IGNITE_A1_LESSONS = {
+  "1-1": {
+    slides: [
+      { type: "title", stage: "Unit 1 · Lesson 1", eyebrow: "A1 · Ignite", title: "Say Hello", subtitle: "Learn how to greet people and introduce yourself by name." },
+      { type: "vocab", stage: "Greetings", heading: "How Do You Say Hi?", subheading: "Different greetings for different moments", items: [{ label: "Hey", note: "Casual, for friends and people your age" }, { label: "Hi", note: "Friendly and easy, works almost anywhere" }, { label: "Hello", note: "A bit more neutral, for meeting someone new" }], instruction: [["👀", "Look at the three greetings."], ["🗣️", "Say each one."]] },
+      { type: "examples", stage: "Meet a Few People", heading: "Same Pattern, Different People", subheading: "The greeting changes, the pattern doesn't", rows: [["Hey, what's your name?", "Hi, I'm Jordan."], ["Hi there, I'm new here.", "Hey, I'm Priya. Welcome!"], ["Hello, nice to meet you.", "Hello, I'm Marcus. You too."]], instruction: [["👀", "Look at the three exchanges."], ["🗣️", "Say each answer."]] },
+      { type: "dialogue", stage: "Introduce Yourself", heading: "Nice to Meet You", subheading: "Notice the pattern", turns: [{ who: "teacher", text: "Hey, I don't think we've met. What's your name?" }, { who: "student", text: "Hi, I'm Alex. Nice to meet you!" }], instruction: [["👂", "Listen to the exchange."], ["🗣️", "Repeat both lines."]] },
+      { type: "dialogue", stage: "Try It", heading: "Your Turn to Answer", subheading: "Finish the exchange", turns: [{ who: "teacher", text: "Hey, I don't think we've met. What's your name?" }, { who: "student", text: "Hi, I'm ___. Nice to meet you!" }], instruction: [["👂", "Listen."], ["🗣️", "Answer with your own name."]] },
+      { type: "dialogue", stage: "Try It Again", heading: "One More Round", subheading: "A different greeting, same pattern", turns: [{ who: "teacher", text: "Hello, nice to meet you." }, { who: "student", text: "Hello, I'm ___. Nice to meet you too!" }], instruction: [["👂", "Listen."], ["🗣️", "Answer with your own name."]] },
+      { type: "thisorthat", stage: "Casual or Polite?", heading: "Casual or Polite?", pairs: [["Hey!", "Hello."], ["Hi there!", "Good afternoon."], ["What's up?", "How do you do?"], ["Yo!", "Nice to meet you."]], instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]] },
+      { type: "thisorthat", stage: "Casual or Polite? 2", heading: "Casual or Polite? Round 2", pairs: [["Sup?", "Good morning."], ["Nice meeting you!", "It's a pleasure to meet you."], ["Hiya!", "Hello, how are you?"], ["Long time no see!", "It's been a while, hasn't it?"]], instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]] },
+      { type: "thisorthat", stage: "Casual or Polite? 3", heading: "Casual or Polite? Round 3", pairs: [["Hey, what's up?", "Hello, nice to meet you."], ["Yo, I'm here!", "Good afternoon, everyone."], ["Catch you later!", "It was nice meeting you."], ["Cool, see ya!", "Thank you, goodbye."]], instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]] },
+      { type: "thisorthat", stage: "Casual or Polite? 4", heading: "Casual or Polite? Round 4", pairs: [["Cheers!", "Thank you very much."], ["No worries!", "It's not a problem."], ["My bad!", "I apologize."], ["Gotta go!", "I must be going now."]], instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]] },
+      { type: "thisorthat", stage: "Casual or Polite? 5", heading: "Casual or Polite? Round 5", pairs: [["Take care!", "Have a wonderful day."], ["Later!", "Goodbye, see you soon."], ["Thanks a ton!", "I really appreciate it."], ["You good?", "Are you doing well?"]], instruction: [["🤔", "Pick the one that fits."], ["🗣️", "Say why in one sentence."]] },
+      { type: "practice", stage: "Your Turn", heading: "Introduce Yourself", subheading: "Say it out loud, in your own words", line: "Hi, I'm ___.", instruction: [["🗣️", "Introduce yourself."], ["🙅", "No help this time."]] },
+      { type: "landing", stage: "Wrap-Up", heading: "Nice Work!", caption: "You can now greet someone and introduce yourself by name. Next up: talking about where you're from." },
+    ],
+  },
   "1-2": {
     slides: [
       { type: "title", stage: "Unit 1 · Lesson 2", eyebrow: "A1 · Ignite", title: "Questions and Answers", subtitle: "Ask and answer basic introduction questions." },
