@@ -413,6 +413,30 @@ const CUSTOM_LESSONS = [
     level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes on one task type: four texts with three gaps each and one extra sentence. Use the clues around each gap, one gap at a time.",
   },
+  {
+    slug: "e8-task-9-match-the-text",
+    popup: [1200, 780],
+    title: "E8 Task 9: Match the Text",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: four sets of three short texts and four questions each. Match the idea, not the words, and see how the wrong texts trick you.",
+  },
+  {
+    slug: "e8-task-10-find-the-facts",
+    popup: [1200, 780],
+    title: "E8 Task 10: Find the Facts",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: read two short texts and complete a message to a friend with the right facts, one to three words per gap. In English.",
+  },
+  {
+    slug: "e8-task-11-the-right-word",
+    popup: [1200, 780],
+    title: "E8 Task 11: The Right Word",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: four short texts with three gaps each and a box of six words. Pick the word that fits and learn why the look-alikes are wrong.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {

@@ -114,6 +114,9 @@ import E8Task5Lesson from './E8Task5Lesson.jsx'
 import E8Task6Lesson from './E8Task6Lesson.jsx'
 import E8Task7Lesson from './E8Task7Lesson.jsx'
 import E8Task8Lesson from './E8Task8Lesson.jsx'
+import E8Task9Lesson from './E8Task9Lesson.jsx'
+import E8Task10Lesson from './E8Task10Lesson.jsx'
+import E8Task11Lesson from './E8Task11Lesson.jsx'
 import WritingPlayerPage from './WritingPlayerPage.jsx'
 import WritingGuidePage from './WritingGuidePage.jsx'
 import NotebookHub from './NotebookHub.jsx'
@@ -421,6 +424,9 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/e8-task-6-dialogues" element={<E8Task6Lesson />} />
             <Route path="/library/customized-lessons/e8-task-7-short-texts" element={<E8Task7Lesson />} />
             <Route path="/library/customized-lessons/e8-task-8-missing-sentences" element={<E8Task8Lesson />} />
+            <Route path="/library/customized-lessons/e8-task-9-match-the-text" element={<E8Task9Lesson />} />
+            <Route path="/library/customized-lessons/e8-task-10-find-the-facts" element={<E8Task10Lesson />} />
+            <Route path="/library/customized-lessons/e8-task-11-the-right-word" element={<E8Task11Lesson />} />
             <Route path="/library/stress" element={<Flashcards />} />
             <Route path="/library/articles/:slug" element={<Library />} />
             <Route path="/library/articles/:slug/player" element={<ArticlePlayerPage />} />
