@@ -405,6 +405,14 @@ const CUSTOM_LESSONS = [
     level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes on one task type: 14 short texts (notices, adverts, emails, messages, diaries). Know the question type, find the evidence, avoid the trap.",
   },
+  {
+    slug: "e8-task-8-missing-sentences",
+    popup: [1200, 780],
+    title: "E8 Task 8: Missing Sentences",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: four texts with three gaps each and one extra sentence. Use the clues around each gap, one gap at a time.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {
