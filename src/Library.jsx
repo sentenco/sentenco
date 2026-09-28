@@ -389,6 +389,14 @@ const CUSTOM_LESSONS = [
     level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes on one task type: 20 situations, one at a time. Name the job, then choose the reply, with the trap behind every wrong answer.",
   },
+  {
+    slug: "e8-task-6-dialogues",
+    popup: [1200, 780],
+    title: "E8 Task 6: Finish the Dialogue",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: 16 dialogues with a gap. Use the given word, stay inside three words, and learn the trap behind every mistake.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {
