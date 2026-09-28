@@ -397,6 +397,14 @@ const CUSTOM_LESSONS = [
     level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes on one task type: 16 dialogues with a gap. Use the given word, stay inside three words, and learn the trap behind every mistake.",
   },
+  {
+    slug: "e8-task-7-short-texts",
+    popup: [1200, 780],
+    title: "E8 Task 7: Short Texts",
+    tag: "Exam Prep",
+    level: "A2 to low B1 · E8 exam prep",
+    desc: "25 minutes on one task type: 14 short texts (notices, adverts, emails, messages, diaries). Know the question type, find the evidence, avoid the trap.",
+  },
 ];
 
 function openCustomLessonPopup(path, name, w, h) {
