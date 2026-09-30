@@ -57,9 +57,13 @@ function BookHeader({ stage }) {
 // tray is built from words.map((text, i) => ({ text, id: i }))), so a run
 // of built[i].id === i is a genuinely correct prefix -- reliable even when
 // the sentence repeats a word, unlike comparing built[i].text directly.
-function correctPrefixLength(built) {
+// Compares by TEXT, not by each tile's original position (its `id`). A word
+// that repeats in the sentence (e.g. "his" twice) exists as multiple tiles;
+// any one of them is a valid fit for a slot that needs that word, so the
+// student is never wrong just because they picked the "other" instance.
+function correctPrefixLength(built, words) {
   let i = 0;
-  while (i < built.length && built[i].id === i) i++;
+  while (i < built.length && built[i].text === words[i]) i++;
   return i;
 }
 
@@ -195,7 +199,7 @@ function BuildSentencePage({ chapter, index }) {
   //       | { kind: "check", correct: false, correctText, keptBuilt, wrongTail }
   const [popup, setPopup] = useState(null);
 
-  const correctLen = correctPrefixLength(built);
+  const correctLen = correctPrefixLength(built, words);
   const isComplete = built.length === words.length && correctLen === words.length;
   const isWrong = popup?.kind === "check" && !popup.correct && popup.wrongTail.length > 0;
 
@@ -235,16 +239,18 @@ function BuildSentencePage({ chapter, index }) {
     if (correctLen >= words.length) return;
     const wrongTail = built.slice(correctLen);
     const keptBuilt = built.slice(0, correctLen);
-    const nextId = correctLen;
-    const hintTile = wrongTail.find((w) => w.id === nextId) || tray.find((w) => w.id === nextId);
+    const nextWord = words[correctLen];
+    // Any tile with the right text works -- prefer one the student already
+    // placed wrong (so it visibly moves back), otherwise grab one from the tray.
+    const hintTile = wrongTail.find((w) => w.text === nextWord) || tray.find((w) => w.text === nextWord);
     if (!hintTile) return;
     setBuilt(keptBuilt);
     setTray((prev) => {
-      const withoutHintTile = prev.filter((w) => w.id !== nextId);
-      const returningWrong = wrongTail.filter((w) => w.id !== nextId);
+      const withoutHintTile = prev.filter((w) => w.id !== hintTile.id);
+      const returningWrong = wrongTail.filter((w) => w.id !== hintTile.id);
       return [...withoutHintTile, ...returningWrong, hintTile];
     });
-    setHintedId(nextId);
+    setHintedId(hintTile.id);
     setPopup({ kind: "hint", word: hintTile.text });
   }
 
