@@ -225,7 +225,7 @@ export function SpotErrorBlock({ heading, rounds = [] }) {
       </div>
       {picked !== null && (
         <>
-          <div className={`tg-foc-verdict ${correct ? "is-right" : "is-wrong"}`}>{correct ? "Found it!" : "Close — here's the fix"}</div>
+          <div className={`tg-foc-verdict ${correct ? "is-right" : "is-wrong"}`}>{correct ? "Found it!" : "Close, here's the fix"}</div>
           <p className="slide-p"><strong>Fix:</strong> {r.fix}</p>
           {r.explain && <p className="slide-p">{r.explain}</p>}
         </>
@@ -295,7 +295,7 @@ export function FactOrCapBlock({ heading, statements = [] }) {
   );
 }
 
-// Text-only dice roll -- ported from A2 Kids' DiceBlock, dropped the
+// Text-only dice roll, ported from A2 Kids' DiceBlock, dropped the
 // picture-tile mode since Teens content is text, not illustrated.
 // One die rolls one word/phrase; two or more dice combine into a prompt
 // (e.g. a person die + an adjective die -> "describe your [person] who is

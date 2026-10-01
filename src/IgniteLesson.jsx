@@ -16,7 +16,7 @@ function renderHighlighted(text) {
   });
 }
 
-// Teacher-facing instruction pills at the top of a slide -- same pattern as
+// Teacher-facing instruction pills at the top of a slide, same pattern as
 // A1/A2 Kids. The teacher clicks through the deck; the teen speaks or types
 // in the chat, so verbs stay in that register (Look/Listen/Say/Ask/Read/
 // Write/Guess/Choose/Pick).
