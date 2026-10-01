@@ -1,8 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { getLesson } from "./sparkTracks";
 import SparkIcon from "./slides/SparkIcons";
 import ImagePlaceholder from "./slides/ImagePlaceholder";
+import sparkTitleBg from "./assets/spark/title-bg.jpg";
+import sparkRegularBg from "./assets/spark/regular-bg.jpg";
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 const EXTENSIONS = ["png", "svg"];
 
@@ -93,6 +104,7 @@ function RegularSlide({ slide }) {
 function FlipCardsSlide({ slide }) {
   const [flipped, setFlipped] = useState(() => slide.cards.map(() => false));
   const [zoomed, setZoomed] = useState(null);
+  const isText = slide.cardMode === "text";
 
   function flip(i) {
     if (flipped[i]) return;
@@ -103,11 +115,11 @@ function FlipCardsSlide({ slide }) {
     <div className="spk-slide spk-slide--flip">
       <h2 className="spk-slide-title">{slide.title}</h2>
       <div className="spk-flip-layout">
-        <div className="spk-flip-cards">
+        <div className={`spk-flip-cards ${isText ? "spk-flip-cards--text" : ""}`}>
           {slide.cards.map((c, i) => (
             <div
               key={i}
-              className={`spk-flip-card ${flipped[i] ? "is-flipped" : ""}`}
+              className={`spk-flip-card ${isText ? "spk-flip-card--text" : ""} ${flipped[i] ? "is-flipped" : ""}`}
               onClick={() => flip(i)}
               role="button"
               tabIndex={0}
@@ -121,17 +133,23 @@ function FlipCardsSlide({ slide }) {
                   <span className="spk-flip-sparkle spk-flip-sparkle--b"><SparkIcon name="star" size={12} /></span>
                 </div>
                 <div className="spk-flip-face spk-flip-face--back">
-                  <SparkPicture name={c.icon} size={78} />
-                  <button
-                    type="button"
-                    className="spk-flip-zoom-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setZoomed(i);
-                    }}
-                  >
-                    <SparkIcon name="magnifier" size={16} />
-                  </button>
+                  {isText ? (
+                    <p className="spk-flip-sentence">{c.text}</p>
+                  ) : (
+                    <>
+                      <SparkPicture name={c.icon} size={78} />
+                      <button
+                        type="button"
+                        className="spk-flip-zoom-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setZoomed(i);
+                        }}
+                      >
+                        <SparkIcon name="magnifier" size={16} />
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -219,23 +237,28 @@ function SortSlide({ slide }) {
 function MysterySlide({ slide }) {
   const [revealed, setRevealed] = useState(false);
   const [zoomed, setZoomed] = useState(false);
+  const hasZoom = revealed && slide.icon;
   return (
     <div className="spk-slide">
       <h2 className="spk-slide-title">{slide.title}</h2>
       <div
         className="spk-mystery-box"
-        onClick={() => revealed && setZoomed(true)}
-        role={revealed ? "button" : undefined}
-        tabIndex={revealed ? 0 : undefined}
+        onClick={() => hasZoom && setZoomed(true)}
+        role={hasZoom ? "button" : undefined}
+        tabIndex={hasZoom ? 0 : undefined}
       >
-        {revealed ? <SparkPicture name={slide.icon} size={72} /> : <span className="spk-mystery-question">?</span>}
+        {revealed ? (
+          slide.icon ? <SparkPicture name={slide.icon} size={72} /> : <span className="spk-mystery-text">{slide.revealText}</span>
+        ) : (
+          <span className="spk-mystery-question">?</span>
+        )}
       </div>
       {!revealed && (
         <button type="button" className="spk-reveal-btn" onClick={() => setRevealed(true)}>
           Reveal
         </button>
       )}
-      {revealed && (
+      {hasZoom && (
         <button type="button" className="spk-reveal-btn" onClick={() => setZoomed(true)}>
           Zoom in
         </button>
@@ -285,13 +308,142 @@ function FeedbackSlide({ slide }) {
   );
 }
 
+const WHEEL_COLORS = ["#FF6B4A", "#1B2A4A", "#FFB800", "#2E4269", "#FF8F6B", "#FFD36E"];
+
+function WheelSlide({ slide }) {
+  const n = slide.items.length;
+  const seg = 360 / n;
+  const R = 94;
+  const [rot, setRot] = useState(0);
+  const [spinning, setSpinning] = useState(false);
+  const [result, setResult] = useState(null);
+  const pool = useRef([]);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  function spin() {
+    if (spinning) return;
+    if (pool.current.length === 0) pool.current = shuffle([...Array(n).keys()]);
+    const idx = pool.current.pop();
+    const target = 360 - (idx * seg + seg / 2);
+    const cur = ((rot % 360) + 360) % 360;
+    const delta = ((target - cur) + 360) % 360 + 360 * 4;
+    setResult(null);
+    setSpinning(true);
+    setRot(rot + delta);
+    timer.current = setTimeout(() => { setSpinning(false); setResult(idx); }, 2600);
+  }
+
+  const pt = (deg, r) => [100 + r * Math.sin((deg * Math.PI) / 180), 100 - r * Math.cos((deg * Math.PI) / 180)];
+  const got = result !== null ? slide.items[result] : null;
+
+  return (
+    <div className="spk-slide spk-slide--wheel">
+      <h2 className="spk-slide-title">{slide.title}</h2>
+      <div className="spk-wheel-row">
+        <div className="spk-wheel-wrap">
+          <svg className="spk-wheel-marker" viewBox="0 0 34 39" aria-hidden="true">
+            <path d="M17 39 2.5 12.7A15.3 15.3 0 1 1 31.5 12.7Z" fill="#FF6B4A" stroke="#fff" strokeWidth="2.6" />
+            <circle cx="17" cy="14.3" r="5.5" fill="#fff" />
+          </svg>
+          <svg
+            viewBox="0 0 200 200"
+            className="spk-wheel"
+            style={{ transform: `rotate(${rot}deg)`, transition: spinning ? "transform 2.5s cubic-bezier(.12,.6,.12,1)" : "none" }}
+          >
+            {slide.items.map((it, i) => {
+              const [x0, y0] = pt(i * seg, R);
+              const [x1, y1] = pt((i + 1) * seg, R);
+              const [tx, ty] = pt(i * seg + seg / 2, 62);
+              return (
+                <g key={i}>
+                  <path d={`M100 100 L${x0} ${y0} A${R} ${R} 0 0 1 ${x1} ${y1} Z`} fill={WHEEL_COLORS[i % WHEEL_COLORS.length]} stroke="#fff" strokeWidth="3.5" />
+                  <text
+                    x={tx}
+                    y={ty}
+                    transform={`rotate(${i * seg + seg / 2} ${tx} ${ty})`}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="spk-wheel-text"
+                  >
+                    {it.wheel || it.label}
+                  </text>
+                </g>
+              );
+            })}
+            <circle cx="100" cy="100" r="19" fill="#fff" />
+            <circle cx="100" cy="100" r="19" fill="none" stroke="#1B2A4A" strokeWidth="3.5" />
+            <circle cx="100" cy="100" r="8" fill="#FF6B4A" />
+          </svg>
+        </div>
+        <div className="spk-wheel-panel">
+          {got ? (
+            <div className="spk-wheel-result">
+              <SparkPicture name={got.icon} size={92} />
+              <div className="spk-wheel-word">{got.label}</div>
+              {slide.starter && <span className="spk-guide-pill">{slide.starter}</span>}
+            </div>
+          ) : (
+            <div className="spk-wheel-prompt">{spinning ? "Round and round…" : (slide.question || "Spin the wheel!")}</div>
+          )}
+          <button type="button" className="spk-reveal-btn spk-reveal-btn--wheel" onClick={spin} disabled={spinning}>
+            {result === null && !spinning ? "Spin!" : "Spin again"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WriteSlide({ slide }) {
+  const [done, setDone] = useState(false);
+  return (
+    <div className="spk-slide spk-slide--write">
+      <h2 className="spk-slide-title">{slide.title}</h2>
+      {slide.icon && <SparkPicture name={slide.icon} size={88} />}
+      <span className="spk-write-word">{slide.word}</span>
+      <div className="spk-write-lines" aria-hidden="true">
+        <span className="spk-write-line" />
+        <span className="spk-write-line" />
+      </div>
+      <p className="spk-write-instruction">{slide.instruction}</p>
+      <button type="button" className={`spk-star-btn ${done ? "is-starred" : ""}`} onClick={() => setDone((d) => !d)}>
+        <SparkIcon name={done ? "star" : "starOutline"} size={20} />
+        {done ? "Great writing!" : "I wrote it!"}
+      </button>
+    </div>
+  );
+}
+
+function IntroSlide({ slide }) {
+  return (
+    <div className="spk-slide spk-slide--intro">
+      <h2 className="spk-slide-title">{slide.title}</h2>
+      {slide.lead && <p className="spk-intro-lead">{slide.lead}</p>}
+      {slide.steps && slide.steps.length > 0 && (
+        <div className="spk-intro-steps">
+          {slide.steps.map((s, i) => (
+            <div key={i} className="spk-intro-step">
+              <span className="spk-intro-step-num">{i + 1}</span>
+              <span className="spk-intro-step-text">{s}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const STAGE_LABELS = {
   cover: "Cover",
+  intro: "Let's Begin",
   question: "Warm-up",
   flipcards: "Flip Cards",
   sort: "Sort",
   mystery: "Mystery Box",
+  wheel: "Spin the Wheel",
   findshow: "Find & Show",
+  write: "Writing Time",
   feedback: "Feedback",
 };
 
@@ -302,11 +454,14 @@ function stageLabel(slide) {
 function renderSlide(slide, lesson) {
   switch (slide.kind) {
     case "cover": return <CoverSlide lesson={lesson} />;
+    case "intro": return <IntroSlide slide={slide} />;
     case "question": return <QuestionSlide slide={slide} />;
     case "flipcards": return <FlipCardsSlide slide={slide} />;
     case "sort": return <SortSlide slide={slide} />;
     case "mystery": return <MysterySlide slide={slide} />;
+    case "wheel": return <WheelSlide slide={slide} />;
     case "findshow": return <FindShowSlide slide={slide} />;
+    case "write": return <WriteSlide slide={slide} />;
     case "feedback": return <FeedbackSlide slide={slide} />;
     default: return <RegularSlide slide={slide} />;
   }
@@ -330,7 +485,7 @@ export default function Spark() {
 
   if (!lesson) {
     return (
-      <div className="spk-shell">
+      <div className="spk-shell" style={{ "--spk-bg": `url(${sparkRegularBg})` }}>
         <style>{CSS}</style>
         <div className="spk-stage">
           <p className="spk-missing">This lesson isn't ready yet.</p>
@@ -339,15 +494,20 @@ export default function Spark() {
     );
   }
 
-  const slides = [{ kind: "cover" }, ...QUESTION_SLIDES, ...lesson.slides];
+  const slides = [{ kind: "cover" }, ...(lesson.introSlides || []), ...QUESTION_SLIDES, ...lesson.slides];
   const slide = slides[slideIdx];
   const isFirst = slideIdx === 0;
   const isLast = slideIdx === slides.length - 1;
+  const bgImage = slide.kind === "cover" ? sparkTitleBg : sparkRegularBg;
 
   return (
-    <div className="spk-shell">
+    <div className="spk-shell" style={{ "--spk-bg": `url(${bgImage})` }}>
       <style>{CSS}</style>
       <header className="spk-topbar">
+        <span className="spk-topbar-brand">
+          <img src="/logo-sentenco.png" alt="" className="spk-topbar-logo" />
+          <span className="spk-topbar-brand-text">Sentenco</span>
+        </span>
         <span className="spk-topbar-title">{lesson.code} · {lesson.title}</span>
       </header>
 
@@ -390,7 +550,11 @@ const CSS = `
 .spk-shell {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle at 15% 0%, #FFFBEA 0%, #FFF0BE 55%, #FFE28A 100%);
+  background-color: #FEF6E6;
+  background-image: var(--spk-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -404,16 +568,33 @@ const CSS = `
   max-width: 1140px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 18px 24px 0;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 28px 0;
   flex-shrink: 0;
 }
+.spk-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #FFFFFF;
+  border-radius: 999px;
+  padding: 6px 16px 6px 8px;
+  box-shadow: 0 4px 12px rgba(27,42,74,0.2);
+  flex-shrink: 0;
+}
+.spk-topbar-logo { height: 22px; width: auto; display: block; }
+.spk-topbar-brand-text { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px; color: #1B2A4A; }
 .spk-topbar-title {
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  color: #4A3B12;
-  text-align: center;
+  font-size: 14px;
+  color: #1B2A4A;
+  background: #FFFFFF;
+  border-radius: 999px;
+  padding: 9px 18px;
+  box-shadow: 0 4px 12px rgba(27,42,74,0.2);
+  text-align: right;
 }
 
 .spk-missing { font-family: 'Quicksand', sans-serif; color: #8A7233; text-align: center; margin-top: 60px; }
@@ -658,6 +839,9 @@ const CSS = `
   padding: 0;
 }
 .spk-flip-starters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.spk-flip-cards--text { max-width: 620px; }
+.spk-flip-card--text { width: 190px; height: 126px; }
+.spk-flip-sentence { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 19px; color: #4A3B12; margin: 0; padding: 0 14px; text-align: center; line-height: 1.3; }
 
 .spk-zoom-overlay {
   position: absolute;
@@ -737,6 +921,7 @@ const CSS = `
   gap: 2px;
 }
 .spk-mystery-question { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 56px; color: #FFB800; }
+.spk-mystery-text { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 19px; color: #1B2A4A; text-align: center; padding: 0 12px; line-height: 1.25; }
 
 /* Find and show */
 .spk-star-btn {
@@ -754,6 +939,61 @@ const CSS = `
   gap: 8px;
 }
 .spk-star-btn.is-starred { background: #FFB800; color: #FFFFFF; border-color: #E09E00; }
+
+/* Wheel */
+.spk-wheel-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.spk-wheel-wrap { position: relative; width: 236px; height: 236px; flex-shrink: 0; }
+.spk-wheel-marker { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 30px; height: 34px; z-index: 2; }
+.spk-wheel { width: 100%; height: 100%; display: block; filter: drop-shadow(0 10px 20px rgba(27,42,74,0.25)); }
+.spk-wheel-text { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px; fill: #FFFFFF; }
+.spk-wheel-panel { display: flex; flex-direction: column; align-items: center; gap: 16px; min-width: 220px; }
+.spk-wheel-prompt { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; color: #4A3B12; text-align: center; max-width: 280px; }
+.spk-wheel-result { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.spk-wheel-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 26px; color: #1B2A4A; max-width: 300px; text-align: center; line-height: 1.25; }
+.spk-reveal-btn--wheel {
+  color: #FFFFFF;
+  background: #FF6B4A;
+  border: 2px solid #E85A3A;
+  font-size: 16px;
+  padding: 12px 30px;
+}
+
+/* Intro */
+.spk-slide--intro { gap: 20px; max-width: 640px; }
+.spk-intro-lead { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 19px; color: #6B5520; margin: 0; max-width: 560px; }
+.spk-intro-steps { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 460px; }
+.spk-intro-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFF9E5;
+  border: 2px solid #FFE28A;
+  border-radius: 14px;
+  padding: 12px 18px;
+  text-align: left;
+}
+.spk-intro-step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FF6B4A;
+  color: #FFFFFF;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spk-intro-step-text { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; color: #4A3B12; }
+
+/* Write */
+.spk-slide--write { gap: 10px; }
+.spk-write-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 44px; color: #1B2A4A; letter-spacing: 0.02em; }
+.spk-write-lines { display: flex; flex-direction: column; gap: 10px; width: 220px; margin: 4px 0; }
+.spk-write-line { height: 2px; background: #FFDD7A; border-radius: 2px; }
+.spk-write-instruction { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 16px; color: #8A7233; margin: 0; }
 
 /* Feedback slide */
 .spk-slide--feedback { gap: 14px; }
