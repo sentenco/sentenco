@@ -197,6 +197,37 @@ export function ThisOrThatBlock({ heading, pairs = [] }) {
   );
 }
 
+// Two near-identical sentences, one has a mistake. The student spots it
+// and says the fix out loud; the teacher clicks whichever sentence the
+// student names, which reveals which one was actually wrong (regardless
+// of the click) plus the corrected sentence and why.
+export function SpotErrorBlock({ heading, rounds = [] }) {
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null);
+  const r = rounds[idx % rounds.length];
+  function pick(side) { if (picked === null) setPicked(side); }
+  function next() { setPicked(null); setIdx((i) => i + 1); }
+  const correct = picked !== null && picked === r.wrongSide;
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <p className="slide-p">Which one has the mistake?</p>
+      <div className="tg-spot-row">
+        <button type="button" className={`tg-spot-card ${picked !== null ? (r.wrongSide === "a" ? "is-wrong" : "is-right") : ""}`} onClick={() => pick("a")} disabled={picked !== null}>{r.a}</button>
+        <button type="button" className={`tg-spot-card ${picked !== null ? (r.wrongSide === "b" ? "is-wrong" : "is-right") : ""}`} onClick={() => pick("b")} disabled={picked !== null}>{r.b}</button>
+      </div>
+      {picked !== null && (
+        <>
+          <div className={`tg-foc-verdict ${correct ? "is-right" : "is-wrong"}`}>{correct ? "Found it!" : "Close — here's the fix"}</div>
+          <p className="slide-p"><strong>Fix:</strong> {r.fix}</p>
+          {r.explain && <p className="slide-p">{r.explain}</p>}
+        </>
+      )}
+      <button type="button" className="tg-btn" onClick={next}>Next</button>
+    </div>
+  );
+}
+
 export function OrderUpBlock({ heading, items = [], prompt }) {
   const [display] = useState(() => {
     let s = shuffle(items.map((_, i) => i));
@@ -311,6 +342,7 @@ export const TEENS_GAME_BLOCKS = {
   orderup: OrderUpBlock,
   factorcap: FactOrCapBlock,
   dice: DiceBlock,
+  spoterror: SpotErrorBlock,
 };
 
 export const teensGameStyles = `
@@ -344,6 +376,12 @@ export const teensGameStyles = `
 .tg-tot-card:disabled { cursor: default; }
 .tg-tot-or { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: var(--ink-soft, #736A87); text-transform: uppercase; }
 .tg-tot-followup { margin-bottom: 10px !important; }
+
+.tg-spot-row { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto 10px; }
+.tg-spot-card { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink, #2B2438); background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); border-radius: 14px; padding: 14px 18px; text-align: left; cursor: pointer; }
+.tg-spot-card:disabled { cursor: default; }
+.tg-spot-card.is-wrong { background: #FFE6DD; border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); text-decoration: line-through; }
+.tg-spot-card.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; }
 
 .tg-order-col { display: flex; flex-direction: column; gap: 8px; max-width: 380px; margin: 0 auto 12px; }
 .tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink, #2B2438); background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy-soft, #5A6B92); border-radius: 12px; padding: 10px 16px; text-align: left; cursor: pointer; }
