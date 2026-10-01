@@ -361,9 +361,13 @@ export default function LibraryHeader() {
                   {menuOpen && (
                     <div className="account-menu">
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library"); setMenuOpen(false); }}>Profile</button>
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/files"); setMenuOpen(false); }}>File Cabinet</button>
+                      {isAdmin && (
+                        <button type="button" className="account-menu-link" onClick={() => { navigate("/library/files"); setMenuOpen(false); }}>File Cabinet</button>
+                      )}
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library/subscription"); setMenuOpen(false); }}>Subscription</button>
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/mentors"); setMenuOpen(false); }}>Find a Mentor</button>
+                      {isAdmin && (
+                        <button type="button" className="account-menu-link" onClick={() => { navigate("/library/mentors"); setMenuOpen(false); }}>Find a Mentor</button>
+                      )}
                       {isAdmin && (
                         <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/mentors"); setMenuOpen(false); }}>Mentor Applications</button>
                       )}
