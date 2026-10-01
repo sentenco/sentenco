@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import gistMcBg from "./assets/listening/gist-mc-bg.jpg";
 
 const LEVELS = ["A1", "A2", "B1", "B2"];
 
@@ -89,7 +90,7 @@ export default function GistMultipleChoiceHub() {
   const tracks = TRACKS.filter((t) => t.level === level);
 
   return (
-    <div className="gmc-page">
+    <div className="gmc-page" style={{ "--gmc-bg": `url(${gistMcBg})` }}>
       <style>{CSS}</style>
       <div className="gmc-hero">
         <span className="gmc-eyebrow">Sentenco · Listening</span>
@@ -169,14 +170,17 @@ const CSS = `
   margin: 0 auto;
   border-radius: 26px;
   background-color: #FDF6EA;
-  /* percentage-based stops (not px) so the stripe spacing scales with
-     container width, the same way background-size: 100% auto scales
-     the illustrated pages -- fixed px stops stayed the same absolute
-     size at any width, making the pattern look denser on narrow
-     screens instead of scaling consistently like the others */
-  background-image: repeating-linear-gradient(90deg, rgba(184,121,31,0.14) 0%, rgba(184,121,31,0.14) 0.25%, transparent 0.25%, transparent 4%);
+  background-image: var(--gmc-bg);
+  background-position: center top;
+  /* sized to width only, not "cover" -- the art stays in the top
+     third at any container width and the plain cream area below
+     keeps scaling with it, same approach as the Listening hub */
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   box-shadow: 0 16px 32px rgba(58,46,31,0.12);
-  padding: 28px 24px 48px;
+  /* clears the radio/vinyl art, which is roughly the top quarter of
+     the 2:3 image once it's scaled to the container's own width */
+  padding: clamp(140px, 38vw, 320px) 24px 48px;
   box-sizing: border-box;
 }
 .gmc-page * { box-sizing: border-box; }
