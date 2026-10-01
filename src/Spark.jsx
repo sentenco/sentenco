@@ -485,7 +485,7 @@ export default function Spark() {
 
   if (!lesson) {
     return (
-      <div className="spk-shell" style={{ "--spk-bg": `url(${sparkRegularBg})` }}>
+      <div className="spk-shell">
         <style>{CSS}</style>
         <div className="spk-stage">
           <p className="spk-missing">This lesson isn't ready yet.</p>
@@ -501,21 +501,16 @@ export default function Spark() {
   const bgImage = slide.kind === "cover" ? sparkTitleBg : sparkRegularBg;
 
   return (
-    <div className="spk-shell" style={{ "--spk-bg": `url(${bgImage})` }}>
+    <div className="spk-shell">
       <style>{CSS}</style>
-      <header className="spk-topbar">
-        <span className="spk-topbar-brand">
-          <img src="/logo-sentenco.png" alt="" className="spk-topbar-logo" />
-          <span className="spk-topbar-brand-text">Sentenco</span>
-        </span>
-        <span className="spk-topbar-title">{lesson.code} · {lesson.title}</span>
-      </header>
-
       <div className="spk-stage">
-        <div className="spk-deck">
+        <div className="spk-deck" style={{ "--spk-bg": `url(${bgImage})` }}>
           <div className="spk-deck-header">
-            <span className="spk-brand"><img src="/logo-sentenco.png" alt="" className="spk-brand-logo" />entenco</span>
-            <span className="spk-stage-label">{stageLabel(slide)}</span>
+            <span className="spk-brand">
+              <img src="/logo-sentenco.png" alt="" className="spk-brand-logo" />
+              <span className="spk-brand-text">Sentenco</span>
+            </span>
+            <span className="spk-stage-label">{lesson.code} · {stageLabel(slide)}</span>
           </div>
           <div className="spk-deck-body" key={slideIdx}>
             {renderSlide(slide, lesson)}
@@ -550,11 +545,7 @@ const CSS = `
 .spk-shell {
   width: 100%;
   height: 100vh;
-  background-color: #FEF6E6;
-  background-image: var(--spk-bg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #FEF6E6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -562,40 +553,6 @@ const CSS = `
   overflow: hidden;
 }
 .spk-shell * { box-sizing: border-box; }
-
-.spk-topbar {
-  width: 100%;
-  max-width: 1140px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 20px 28px 0;
-  flex-shrink: 0;
-}
-.spk-topbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  background: #FFFFFF;
-  border-radius: 999px;
-  padding: 6px 16px 6px 8px;
-  box-shadow: 0 4px 12px rgba(27,42,74,0.2);
-  flex-shrink: 0;
-}
-.spk-topbar-logo { height: 22px; width: auto; display: block; }
-.spk-topbar-brand-text { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px; color: #1B2A4A; }
-.spk-topbar-title {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #1B2A4A;
-  background: #FFFFFF;
-  border-radius: 999px;
-  padding: 9px 18px;
-  box-shadow: 0 4px 12px rgba(27,42,74,0.2);
-  text-align: right;
-}
 
 .spk-missing { font-family: 'Quicksand', sans-serif; color: #8A7233; text-align: center; margin-top: 60px; }
 
@@ -605,7 +562,7 @@ const CSS = `
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px 24px;
+  padding: 24px;
   min-height: 0;
 }
 
@@ -615,10 +572,13 @@ const CSS = `
   max-width: 100%;
   height: 100%;
   max-height: 620px;
-  background: #FFFFFF;
-  border: 1px solid #FFE28A;
+  background-color: #FEF6E6;
+  background-image: var(--spk-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(180,140,0,0.16);
+  box-shadow: 0 24px 60px rgba(27,42,74,0.22);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -629,34 +589,36 @@ const CSS = `
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 32px;
-  background: #FFFFFF;
-  border-bottom: 1px solid #FFE28A;
+  padding: 18px 24px 0;
   flex-shrink: 0;
 }
 .spk-brand {
   display: flex;
   align-items: center;
+  gap: 6px;
   flex-shrink: 0;
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 17px;
-  color: #4A3B12;
+  background: #FFFFFF;
+  border-radius: 999px;
+  padding: 5px 14px 5px 7px;
+  box-shadow: 0 4px 10px rgba(27,42,74,0.2);
 }
-.spk-brand-logo { height: 22px; width: auto; display: block; margin-right: -4px; }
+.spk-brand-logo { height: 20px; width: auto; display: block; }
+.spk-brand-text { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px; color: #1B2A4A; }
 
 .spk-stage-label {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #C98A00;
+  font-size: 12.5px;
+  color: #1B2A4A;
+  background: #FFFFFF;
+  border-radius: 999px;
+  padding: 7px 16px;
+  box-shadow: 0 4px 10px rgba(27,42,74,0.2);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-.spk-deck-body { flex: 1; min-height: 0; overflow-y: auto; display: flex; padding: 26px 48px; }
+.spk-deck-body { flex: 1; min-height: 0; overflow-y: auto; display: flex; padding: 18% 48px 15%; }
 
 .spk-slide {
   display: flex;
@@ -1006,7 +968,7 @@ const CSS = `
   margin: 0;
 }
 /* Nav */
-.spk-nav-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 48px 20px; border-top: 1px solid #FFF3D0; flex-shrink: 0; }
+.spk-nav-row { display: flex; align-items: center; justify-content: space-between; padding: 0 48px 22px; flex-shrink: 0; }
 .spk-nav-btn {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
