@@ -137,7 +137,7 @@ function FlipCardsSlide({ slide }) {
                     <p className="spk-flip-sentence">{c.text}</p>
                   ) : (
                     <>
-                      <SparkPicture name={c.icon} size={78} />
+                      <SparkPicture name={c.icon} size={56} />
                       <button
                         type="button"
                         className="spk-flip-zoom-btn"
@@ -379,7 +379,7 @@ function WheelSlide({ slide }) {
         <div className="spk-wheel-panel">
           {got ? (
             <div className="spk-wheel-result">
-              <SparkPicture name={got.icon} size={92} />
+              <SparkPicture name={got.icon} size={64} />
               <div className="spk-wheel-word">{got.label}</div>
               {slide.starter && <span className="spk-guide-pill">{slide.starter}</span>}
             </div>
@@ -626,7 +626,7 @@ const CSS = `
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 18px;
+  gap: clamp(8px, 2vh, 18px);
   width: 100%;
   margin: auto;
 }
@@ -634,7 +634,8 @@ const CSS = `
 .spk-slide-title {
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(22px, 5vh, 36px);
+  line-height: 1.15;
   color: #4A3B12;
   margin: 0;
 }
@@ -652,12 +653,12 @@ const CSS = `
 .spk-guide-pill {
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
-  font-size: 22px;
+  font-size: clamp(13px, 3.2vh, 22px);
   color: #4A3B12;
   background: #FFF3D0;
   border: 2px solid #FFDD7A;
   border-radius: 999px;
-  padding: 10px 22px;
+  padding: clamp(6px, 1.6vh, 10px) clamp(12px, 3vw, 22px);
 }
 
 .spk-scene-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
@@ -713,9 +714,10 @@ const CSS = `
 }
 
 /* Flip cards */
-.spk-flip-layout { display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; }
-.spk-flip-cards { display: flex; flex-wrap: wrap; gap: 18px; max-width: 800px; justify-content: center; }
-.spk-flip-card { width: 132px; height: 168px; cursor: pointer; perspective: 1100px; }
+.spk-slide--flip .spk-slide-title { font-size: clamp(20px, 4.2vh, 34px); }
+.spk-flip-layout { display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.6vh, 22px); width: 100%; }
+.spk-flip-cards { display: flex; flex-wrap: wrap; gap: clamp(6px, 1.8vmin, 18px); max-width: 800px; justify-content: center; }
+.spk-flip-card { width: min(132px, 14vmin); height: min(168px, 18vmin); cursor: pointer; perspective: 1100px; }
 .spk-flip-card-inner {
   position: relative;
   width: 100%;
@@ -770,7 +772,7 @@ const CSS = `
   z-index: 1;
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 46px;
+  font-size: clamp(22px, 7vh, 46px);
   color: #FFFFFF;
   text-shadow: 0 3px 0 rgba(180,90,0,0.4);
 }
@@ -786,10 +788,10 @@ const CSS = `
 }
 .spk-flip-zoom-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 32px;
-  height: 32px;
+  top: 6px;
+  right: 6px;
+  width: clamp(22px, 5vh, 32px);
+  height: clamp(22px, 5vh, 32px);
   border-radius: 50%;
   border: 1.5px solid #FFDD7A;
   background: #FFFFFF;
@@ -800,10 +802,10 @@ const CSS = `
   justify-content: center;
   padding: 0;
 }
-.spk-flip-starters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.spk-flip-starters { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(6px, 1.6vh, 12px); }
 .spk-flip-cards--text { max-width: 620px; }
-.spk-flip-card--text { width: 190px; height: 126px; }
-.spk-flip-sentence { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 19px; color: #4A3B12; margin: 0; padding: 0 14px; text-align: center; line-height: 1.3; }
+.spk-flip-card--text { width: min(190px, 30vmin); height: min(126px, 20vmin); }
+.spk-flip-sentence { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(13px, 3vh, 19px); color: #4A3B12; margin: 0; padding: 0 14px; text-align: center; line-height: 1.3; }
 
 .spk-zoom-overlay {
   position: absolute;
@@ -903,52 +905,55 @@ const CSS = `
 .spk-star-btn.is-starred { background: #FFB800; color: #FFFFFF; border-color: #E09E00; }
 
 /* Wheel */
-.spk-wheel-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
-.spk-wheel-wrap { position: relative; width: 236px; height: 236px; flex-shrink: 0; }
-.spk-wheel-marker { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 30px; height: 34px; z-index: 2; }
+.spk-slide--wheel { gap: clamp(6px, 1.6vh, 14px); }
+.spk-slide--wheel .spk-slide-title { font-size: clamp(20px, 4vw, 34px); line-height: 1.15; }
+.spk-wheel-row { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 36px); flex-wrap: nowrap; width: 100%; }
+.spk-wheel-wrap { position: relative; width: min(200px, 32vw, 28vh); height: min(200px, 32vw, 28vh); flex-shrink: 0; }
+.spk-wheel-marker { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 24px; height: 27px; z-index: 2; }
 .spk-wheel { width: 100%; height: 100%; display: block; filter: drop-shadow(0 10px 20px rgba(27,42,74,0.25)); }
 .spk-wheel-text { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px; fill: #FFFFFF; }
-.spk-wheel-panel { display: flex; flex-direction: column; align-items: center; gap: 16px; min-width: 220px; }
-.spk-wheel-prompt { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; color: #4A3B12; text-align: center; max-width: 280px; }
-.spk-wheel-result { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.spk-wheel-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 26px; color: #1B2A4A; max-width: 300px; text-align: center; line-height: 1.25; }
+.spk-wheel-panel { display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.4vh, 14px); min-width: 0; flex: 1; }
+.spk-wheel-prompt { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: clamp(14px, 3vw, 20px); color: #4A3B12; text-align: center; }
+.spk-wheel-result { display: flex; flex-direction: column; align-items: center; gap: clamp(4px, 1vh, 10px); }
+.spk-wheel-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(16px, 3.4vw, 24px); color: #1B2A4A; text-align: center; line-height: 1.25; }
 .spk-reveal-btn--wheel {
   color: #FFFFFF;
   background: #FF6B4A;
   border: 2px solid #E85A3A;
-  font-size: 16px;
-  padding: 12px 30px;
+  font-size: clamp(12px, 2.6vw, 15px);
+  padding: clamp(8px, 1.6vh, 12px) clamp(16px, 4vw, 28px);
 }
 
 /* Intro */
-.spk-slide--intro { gap: 20px; max-width: 640px; }
-.spk-intro-lead { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 19px; color: #6B5520; margin: 0; max-width: 560px; }
-.spk-intro-steps { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 460px; }
+.spk-slide--intro { gap: clamp(6px, 1.6vh, 20px); max-width: 640px; }
+.spk-slide--intro .spk-slide-title { font-size: clamp(22px, 4.5vh, 36px); }
+.spk-intro-lead { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: clamp(13px, 2.2vh, 19px); color: #6B5520; margin: 0; max-width: 560px; }
+.spk-intro-steps { display: flex; flex-direction: column; gap: clamp(5px, 1vh, 10px); width: 100%; max-width: 460px; }
 .spk-intro-step {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   background: #FFF9E5;
   border: 2px solid #FFE28A;
-  border-radius: 14px;
-  padding: 12px 18px;
+  border-radius: 12px;
+  padding: clamp(5px, 1.1vh, 12px) 16px;
   text-align: left;
 }
 .spk-intro-step-num {
   flex-shrink: 0;
-  width: 28px;
-  height: 28px;
+  width: clamp(20px, 3.2vh, 28px);
+  height: clamp(20px, 3.2vh, 28px);
   border-radius: 50%;
   background: #FF6B4A;
   color: #FFFFFF;
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: clamp(11px, 1.8vh, 14px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.spk-intro-step-text { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; color: #4A3B12; }
+.spk-intro-step-text { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: clamp(13px, 2.1vh, 18px); color: #4A3B12; }
 
 /* Write */
 .spk-slide--write { gap: 10px; }
