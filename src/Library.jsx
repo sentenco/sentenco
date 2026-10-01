@@ -499,6 +499,11 @@ const GRAMMAR_MODULES = [
   { num: "BED 42", banner: "whom", title: "Whom", spec: "Why English kept this fossil from Old English, and the practical rule for when you can just skip it.", href: "/library/grammar/whom", ready: true, hue: "berry", icon: "👻", tier: "extras" },
   { num: "BED 43", banner: "parallelStructure", title: "Parallel Structure", spec: "'I like swimming, running, and to bike' should be '...and biking' — keeping list and comparison items matching.", href: "/library/grammar/parallel-structure", ready: true, hue: "violet", icon: "📏", tier: "extras" },
   { num: "BED 44", banner: "nominalization", title: "Nominalization for Formal Writing", spec: "Decide becomes decision, different becomes difference — turning verbs and adjectives into nouns for a formal register.", href: "/library/grammar/nominalization", ready: true, hue: "teal", icon: "📜", tier: "extras" },
+  { num: "BED 46", banner: "commonProperNouns", title: "Common and Proper Nouns", spec: "\"A city\" vs \"Manila\" — general names vs one specific, always-capitalized name.", href: "/library/grammar/common-proper-nouns", ready: true, hue: "sky", icon: "🏷️", tier: "extras" },
+  { num: "BED 47", banner: "concreteAbstractNouns", title: "Concrete and Abstract Nouns", spec: "\"Table\" vs \"happiness\" — things you can sense vs ideas and feelings you can only know.", href: "/library/grammar/concrete-abstract-nouns", ready: true, hue: "violet", icon: "💭", tier: "extras" },
+  { num: "BED 48", banner: "countableUncountableNouns", title: "Countable and Uncountable Nouns", spec: "\"One apple, two apples\" vs \"water\" — the basic rule behind a/an, many, and much.", href: "/library/grammar/countable-uncountable-nouns", ready: true, hue: "gold", icon: "🔢", tier: "extras" },
+  { num: "BED 49", banner: "collectiveNouns", title: "Collective Nouns", spec: "\"The team is winning\" — one word for a whole group, usually with a singular verb.", href: "/library/grammar/collective-nouns", ready: true, hue: "teal", icon: "🐑", tier: "extras" },
+  { num: "BED 50", banner: "compoundNouns", title: "Compound Nouns", spec: "\"Butter\" + \"fly\" = butterfly — two words joining into one noun with its own new meaning.", href: "/library/grammar/compound-nouns", ready: true, hue: "magenta", icon: "🧩", tier: "extras" },
 ];
 
 const SPEAKING_TRACKS = [

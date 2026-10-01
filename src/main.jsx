@@ -288,6 +288,11 @@ import MandativeSubjunctiveLesson from './MandativeSubjunctiveLesson.jsx'
 import WhomLesson from './WhomLesson.jsx'
 import ParallelStructureLesson from './ParallelStructureLesson.jsx'
 import NominalizationLesson from './NominalizationLesson.jsx'
+import CommonProperNounsLesson from './CommonProperNounsLesson.jsx'
+import ConcreteAbstractNounsLesson from './ConcreteAbstractNounsLesson.jsx'
+import CountableUncountableNounsLesson from './CountableUncountableNounsLesson.jsx'
+import CollectiveNounsLesson from './CollectiveNounsLesson.jsx'
+import CompoundNounsLesson from './CompoundNounsLesson.jsx'
 import PunctuationEssentialsTrack from './PunctuationEssentialsTrack.jsx'
 import PunctuationEssentialsLesson from './PunctuationEssentialsLesson.jsx'
 import StressShiftLesson from './StressShiftLesson.jsx'
@@ -627,6 +632,11 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/grammar/whom" element={<WhomLesson />} />
             <Route path="/library/grammar/parallel-structure" element={<ParallelStructureLesson />} />
             <Route path="/library/grammar/nominalization" element={<NominalizationLesson />} />
+            <Route path="/library/grammar/common-proper-nouns" element={<CommonProperNounsLesson />} />
+            <Route path="/library/grammar/concrete-abstract-nouns" element={<ConcreteAbstractNounsLesson />} />
+            <Route path="/library/grammar/countable-uncountable-nouns" element={<CountableUncountableNounsLesson />} />
+            <Route path="/library/grammar/collective-nouns" element={<CollectiveNounsLesson />} />
+            <Route path="/library/grammar/compound-nouns" element={<CompoundNounsLesson />} />
             <Route path="/library/grammar/punctuation-essentials" element={<LibraryPageShell><PunctuationEssentialsTrack /></LibraryPageShell>} />
             <Route path="/library/grammar/punctuation-essentials/:code" element={<PunctuationEssentialsLesson />} />
             <Route path="/library/shift" element={<LibraryPageShell><ShiftHub /></LibraryPageShell>} />

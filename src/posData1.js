@@ -40,8 +40,8 @@ export default {
         },
       },
     ],
-    compareLeftLabel: "With the noun repeated",
-    compareRightLabel: "With a pronoun",
+    compareLeftLabel: "Repeated Noun",
+    compareRightLabel: "Pronoun",
     compareNote: "Say the noun once, then switch to a pronoun so the sentence doesn't sound repetitive.",
     comparePairs: [
       { left: "Maria is a teacher. Maria is kind.", right: "Maria is a teacher. She is kind." },
