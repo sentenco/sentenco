@@ -5,11 +5,21 @@
 // of the track again). Each unit's 5th lesson is "Unit Review" -- the docx's
 // own capstone/summative lesson, no new language, matches the locked
 // "5 teaching + test" shape under a different real name.
+//
+// Recurring cast (Unit 1, established in the 1-1 pilot rebuild): Alex,
+// Jordan, Priya, Marcus -- the same four names reused across examples,
+// dialogue, and the Mystery game within a unit instead of inventing a
+// fresh throwaway name per slide, so a student starts to actually
+// recognize "classmates" across a unit instead of meeting a stranger on
+// every slide. Not yet carried into Units 2-12 or into the rest of
+// Unit 1 (1-2 through 1-5 still use their own one-off names) -- extend
+// this same cast there when those lessons get the same rebuild pass.
 
 export const IGNITE_A1_LESSONS = {
   "1-1": {
     slides: [
       { type: "title", stage: "Unit 1 · Lesson 1", eyebrow: "A1 · Ignite", title: "Say Hello", subtitle: "Learn how to greet people and introduce yourself by name." },
+      { type: "message", stage: "Warm-Up", heading: "Before We Start...", subheading: "You don't need any English for this one", lines: ["Your teacher just waved hello on screen.", "Wave back and give a smile — that's the whole warm-up."], instruction: [["👋", "Wave at your teacher,"], ["🙂", "and smile to say hello."]] },
       { type: "vocab", stage: "Greetings", heading: "How Do You Say Hi?", subheading: "Different greetings for different moments", items: [{ label: "Hey", note: "Casual, for friends and people your age" }, { label: "Hi", note: "Friendly and easy, works almost anywhere" }, { label: "Hello", note: "A bit more neutral, for meeting someone new" }], instruction: [["👀", "Look at the three greetings,"], ["🗣️", "and say each one aloud."]] },
       { type: "wheel", stage: "Spin for It", heading: "Spin for a Greeting!", items: [{ label: "Hey" }, { label: "Hi" }, { label: "Hello" }], question: "Spin the wheel, then use that greeting to say hi to your teacher!", instruction: [["🎡", "Spin the wheel,"], ["🗣️", "then use that greeting to say hi to your teacher."]] },
       { type: "examples", stage: "Meet a Few People", heading: "Same Pattern, Different People", subheading: "The greeting changes, the pattern doesn't", rows: [["Hey, what's your name?", "Hi, I'm Jordan."], ["Hi there, I'm new here.", "Hey, I'm Priya. Welcome!"], ["Hello, nice to meet you.", "Hello, I'm Marcus. You too."]], instruction: [["👀", "Look at the three exchanges,"], ["🗣️", "and say each answer aloud."]] },
