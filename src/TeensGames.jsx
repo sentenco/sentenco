@@ -69,11 +69,15 @@ export function WheelBlock({ heading, items = [], question, size = 176 }) {
             {items.map((it, i) => {
               const [x0, y0] = pt(i * seg, R);
               const [x1, y1] = pt((i + 1) * seg, R);
-              const [tx, ty] = pt(i * seg + seg / 2, textR);
+              const mid = i * seg + seg / 2;
+              const [tx, ty] = pt(mid, textR);
+              // Labels in the bottom half of the wheel need an extra 180deg
+              // flip, or they render upside down relative to the marker.
+              const labelRotate = mid > 90 && mid < 270 ? mid + 180 : mid;
               return (
                 <g key={i}>
                   <path d={`M100 100 L${x0} ${y0} A${R} ${R} 0 0 1 ${x1} ${y1} Z`} fill={WHEEL_COLORS[i % WHEEL_COLORS.length]} stroke="#fff" strokeWidth="3.5" />
-                  <text x={tx} y={ty} transform={`rotate(${i * seg + seg / 2} ${tx} ${ty})`} textAnchor="middle" dominantBaseline="middle" className="tg-wheel-text" style={{ fontSize: wedgeFont(it.label, availChord) }}>{it.label}</text>
+                  <text x={tx} y={ty} transform={`rotate(${labelRotate} ${tx} ${ty})`} textAnchor="middle" dominantBaseline="middle" className="tg-wheel-text" style={{ fontSize: wedgeFont(it.label, availChord) }}>{it.label}</text>
                 </g>
               );
             })}
