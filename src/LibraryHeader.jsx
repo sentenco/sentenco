@@ -361,10 +361,13 @@ export default function LibraryHeader() {
                   {menuOpen && (
                     <div className="account-menu">
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library"); setMenuOpen(false); }}>Profile</button>
-                      {/* File Cabinet, Find a Mentor, Mentor Applications, Teachers: hidden from the menu for
-                          everyone (including admin) per the user's call, 2026-10-01 -- not deleted, routes and
-                          pages are untouched, see memory project_hidden_settings_menu_items for when to restore. */}
+                      {/* File Cabinet, Find a Mentor, Mentor Applications: hidden from the menu for everyone
+                          (including admin) per the user's call, 2026-10-01 -- not deleted, routes and pages
+                          are untouched, see memory project_hidden_settings_menu_items for when to restore. */}
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library/subscription"); setMenuOpen(false); }}>Subscription</button>
+                      {isAdmin && (
+                        <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
+                      )}
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library/legal/terms"); setMenuOpen(false); }}>Terms & Privacy</button>
                       <a href={`mailto:${SUPPORT_EMAIL}`}>Help &amp; Support</a>
                       <button className="logout-btn" onClick={() => { signOut(); setMenuOpen(false); }}>Log out</button>
