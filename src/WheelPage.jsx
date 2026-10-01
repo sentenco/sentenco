@@ -282,11 +282,19 @@ export default function WheelPage() {
       </div>
 
       <div className="wp-stage">
-        {timerRemaining !== null && (
+        <div className="wp-stage-timer">
           <div className={`wp-timer-badge ${timerRemaining === 0 ? "is-done" : ""} ${timerRunning ? "is-running" : ""}`}>
-            {timerRemaining === 0 ? "⏰ Time's Up!" : formatTime(timerRemaining)}
+            {timerRemaining === 0 ? "⏰ Time's Up!" : formatTime(timerRemaining === null ? timerDuration : timerRemaining)}
           </div>
-        )}
+          <div className="wp-stage-timer-controls">
+            {!timerRunning ? (
+              <button type="button" className="wp-timer-btn wp-timer-btn--start" onClick={startTimer}>▶ Start</button>
+            ) : (
+              <button type="button" className="wp-timer-btn" onClick={pauseTimer}>⏸ Pause</button>
+            )}
+            <button type="button" className="wp-timer-btn" onClick={resetTimer}>Reset</button>
+          </div>
+        </div>
         {result && (
           <div className="wp-winner-banner">
             <span className="wp-winner-tag">Winner</span>
@@ -582,11 +590,17 @@ const CSS = `
   100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 }
 
-.wp-timer-badge {
+.wp-stage-timer {
   position: absolute;
   top: 28px;
   left: 28px;
   z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.wp-timer-badge {
   font-family: 'Fraunces', serif;
   font-weight: 600;
   font-size: 22px;
@@ -598,6 +612,8 @@ const CSS = `
   box-shadow: 0 10px 24px rgba(27,42,74,0.16);
 }
 .wp-timer-badge.is-running { border-color: #FF6B4A; color: #FF6B4A; }
+.wp-stage-timer-controls { display: flex; gap: 6px; }
+.wp-stage-timer-controls .wp-timer-btn { flex: none; padding: 7px 14px; font-size: 12px; box-shadow: 0 6px 16px rgba(27,42,74,0.12); }
 .wp-timer-badge.is-done {
   background: #E4322B; border-color: #E4322B; color: #fff; font-size: 18px;
   animation: wp-timer-pulse 0.8s ease-in-out infinite;
