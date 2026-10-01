@@ -6,14 +6,27 @@
 // own capstone/summative lesson, no new language, matches the locked
 // "5 teaching + test" shape under a different real name.
 //
-// Recurring cast (Unit 1, established in the 1-1 pilot rebuild): Alex,
-// Jordan, Priya, Marcus -- the same four names reused across examples,
-// dialogue, and the Mystery game within a unit instead of inventing a
-// fresh throwaway name per slide, so a student starts to actually
-// recognize "classmates" across a unit instead of meeting a stranger on
-// every slide. Not yet carried into Units 2-12 or into the rest of
-// Unit 1 (1-2 through 1-5 still use their own one-off names) -- extend
-// this same cast there when those lessons get the same rebuild pass.
+// Recurring cast, one set of 4 names per unit (not one cast for the whole
+// course -- decided explicitly, don't change this to a single global cast
+// without asking first). Reuse the unit's 4 names across that unit's
+// examples, dialogue, and Mystery-game slides instead of inventing a
+// fresh throwaway name per slide, so a student recognizes "classmates"
+// across a unit's 5 lessons. Established in 1-1 (the pilot rebuild);
+// every other unit's cast below is a planned roster for when that unit
+// gets its own rebuild pass -- not yet reflected in the actual lesson
+// content for 1-2 through 12-5.
+//   Unit 1  Greetings and Introductions   -- Alex, Jordan, Priya, Marcus
+//   Unit 2  Family and People I Know      -- Mia, Diego, Noah, Zara
+//   Unit 3  School Life                   -- Ethan, Yuki, Amara, Liam
+//   Unit 4  Friends and Free Time         -- Chloe, Omar, Grace, Tyler
+//   Unit 5  Hobbies and Interests         -- Nina, Kofi, Ava, Ravi
+//   Unit 6  My Daily Routine              -- Lucas, Hana, Elijah, Zoe
+//   Unit 7  My Room                       -- Isabella, Kenji, Dylan, Fatima
+//   Unit 8  Food and Drinks               -- Mateo, Aisha, Caleb, Lily
+//   Unit 9  Clothes and Style             -- Sofia, Malik, Ruby, Owen
+//   Unit 10 Weather and Seasons           -- Ana, Theo, Nadia, Jaden
+//   Unit 11 Social Media and Tech         -- Ivy, Samuel, Rin, Carlos
+//   Unit 12 Weekend Plans                 -- Emma, Hassan, Freya, Leo
 
 export const IGNITE_A1_LESSONS = {
   "1-1": {
