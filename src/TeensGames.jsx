@@ -134,7 +134,7 @@ export function MysteryBlock({ heading, clues = [], answer, question }) {
 
 const fmt = (s) => `0:${String(s).padStart(2, "0")}`;
 
-export function SpeedBlock({ heading, items = [], seconds = 45 }) {
+export function SpeedBlock({ heading, items = [], seconds = 45, question, sample, starter }) {
   const [status, setStatus] = useState("ready");
   const [left, setLeft] = useState(seconds);
   const [idx, setIdx] = useState(0);
@@ -156,15 +156,22 @@ export function SpeedBlock({ heading, items = [], seconds = 45 }) {
       <h2 className="slide-h">{heading}</h2>
       {status === "ready" && (
         <>
-          <p className="slide-p">Beat the clock -- how many can you get through?</p>
+          {question && <p className="slide-p">{question}</p>}
+          {sample && (
+            <div className="tg-speed-sample">
+              <span className="tg-speed-sample-label">Example</span>
+              <span className="tg-speed-sample-text">{sample}</span>
+            </div>
+          )}
           <button type="button" className="tg-btn tg-btn--lg" onClick={start}>Start ({fmt(seconds)})</button>
         </>
       )}
       {status === "running" && (
         <>
           <div className="tg-timer">{fmt(Math.max(left, 0))}</div>
+          {starter && <p className="tg-speed-starter">{starter}</p>}
           <div className="tg-speed-word">{it}</div>
-          <button type="button" className="tg-btn tg-btn--lg" onClick={got}>Got it -- Next</button>
+          <button type="button" className="tg-btn tg-btn--lg" onClick={got}>Got it! Next</button>
         </>
       )}
       {status === "done" && (
@@ -368,7 +375,11 @@ export const teensGameStyles = `
 
 .tg-timer { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; color: var(--coral-deep, #E0502F); margin-bottom: 6px; }
 .tg-speed-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: var(--navy, #1B2A4A); margin-bottom: 16px; }
+.tg-speed-starter { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 700; font-size: 13.5px; color: var(--ink-soft, #736A87); margin: 0 0 4px; }
 .tg-score { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); margin-bottom: 14px; }
+.tg-speed-sample { display: flex; flex-direction: column; align-items: center; gap: 2px; background: var(--sun-light, #FFF1D2); border: 2px solid var(--sun, #F2A900); border-radius: 14px; padding: 10px 20px; margin-bottom: 14px; }
+.tg-speed-sample-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft, #736A87); }
+.tg-speed-sample-text { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 700; font-size: 14.5px; color: var(--navy, #1B2A4A); }
 
 .tg-tot-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px; }
 .tg-tot-card { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink, #2B2438); background: var(--sun-light, #FFF1D2); border: 2px solid var(--sun, #F2A900); border-radius: 16px; padding: 18px 20px; min-width: 120px; cursor: pointer; }
