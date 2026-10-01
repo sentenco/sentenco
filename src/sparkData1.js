@@ -1,11 +1,11 @@
 // SPARK Kids 1 — Picture Quest
 // 20-minute one-to-one online ESL trial lesson for true beginners who are
 // still building their alphabet. Introduces the first 10 letters, A-J,
-// each paired with one picture. The Letter Wheel is the main activity —
-// it carries all 10 letters at once since a wheel doesn't grow with
-// more segments the way a grid of cards would. Every other game only
-// ever shows a small handful of letters at a time, by design, so no
-// slide ever needs to scroll.
+// each paired with one picture from the existing A1 Kids alphabet
+// curriculum. The Letter Wheel is the main activity (all 10 letters at
+// once); a dedicated slide for each letter follows, one at a time, with
+// a very big letter and a zoomable picture. Every slide is kept simple
+// on purpose -- one clear instruction, one idea, nothing to scroll.
 
 export default {
   id: "spark-1",
@@ -13,22 +13,20 @@ export default {
   title: "Picture Quest",
   subtitle: "The first 10 letters of the alphabet, one picture at a time",
   length: "20 min",
-  coreAim: "Get the child recognizing letters A through J and naming the picture that goes with each one, with the spinning Letter Wheel as the main activity.",
+  coreAim: "Get the child recognizing letters A through J and naming the picture that goes with each one, with the spinning Letter Wheel as the main activity and one dedicated slide per letter.",
   hiddenAssessment: "Letter recognition across 10 letters, letter-sound awareness, listening, pencil control, and willingness to point, say, and guess.",
   materials: [
     "1 spin wheel with all 10 letters of the day (A-J)",
-    "4 flippable cards pairing a number with a letter + picture",
+    "10 individual letter slides, one per letter",
     "1 letter-tracing round with paper and a pencil",
-    "2 hidden mystery letters for the guessing round",
-    "3 letter prompt cards for Find and Show",
+    "3 real-object prompts for Find the Letter",
   ],
   pacing: [
     { part: "Cover + hello", time: "3 min" },
-    { part: "Main Activity: Spin the Letter Wheel", time: "6 min" },
-    { part: "Game 2: Flip and Find the Picture", time: "3 min" },
-    { part: "Game 3: Trace the Letter", time: "2 min" },
-    { part: "Game 4: Mystery Letter Box", time: "2 min" },
-    { part: "Game 5: Find the Letter", time: "2 min" },
+    { part: "Main Activity: Spin the Letter Wheel", time: "5 min" },
+    { part: "Meet Each Letter (A-J, one slide each)", time: "5 min" },
+    { part: "Trace the Letter", time: "2 min" },
+    { part: "Find the Letter", time: "2 min" },
     { part: "Final recap + feedback", time: "2 min" },
   ],
 
@@ -39,9 +37,8 @@ export default {
       lead: "Today we meet 10 letters and 10 pictures. The big wheel will help us find them all!",
       steps: [
         "Spin the Letter Wheel",
-        "Flip and find a picture",
+        "Meet each letter, one at a time",
         "Trace a letter",
-        "Guess the mystery letter",
         "Find something at home!",
       ],
     },
@@ -51,8 +48,9 @@ export default {
     {
       kind: "wheel",
       title: "Spin the Letter Wheel!",
-      purpose: "Main activity. Carries all 10 letters of the day in one game, so the child hears and says every letter-picture pair at least once.",
-      timing: "6 min",
+      topInstruction: "Spin, then say the letter!",
+      purpose: "Main activity. Carries all 10 letters of the day in one game, so the child hears and says every letter-picture pair at least once before the letter-by-letter pass.",
+      timing: "5 min",
       teacherScript: ["Spin it!", "What letter?", "Can you say the letter?", "Now say the word!", "Let's spin again!"],
       supportMoves: ["If the child only says the letter, model the full word.", "Teacher: \"A! It's an apple!\" Student repeats.", "Spin until every letter has come up at least once, more if there's time."],
       question: "Spin and find a letter!",
@@ -70,24 +68,20 @@ export default {
         { label: "Juice", wheel: "J", icon: "juice" },
       ],
     },
-    {
-      kind: "flipcards",
-      title: "Flip and Find the Picture!",
-      purpose: "Repeat 4 of today's letters with a second mechanic, for real retention. Deliberately kept to 4 cards, not 10, so the slide never scrolls.",
-      timing: "3 min",
-      teacherScript: ["Pick a number!", "Flip it!", "What letter do you see?", "What is it?"],
-      supportMoves: ["Point at the first letter of the word as you say it together.", "Student: \"Cat.\" Teacher: \"C! C is for cat.\""],
-      cards: [
-        { number: 1, label: "apple", icon: "apple", category: "food" },
-        { number: 2, label: "dog", icon: "dog", category: "animal" },
-        { number: 3, label: "grapes", icon: "grapes", category: "food" },
-        { number: 4, label: "hat", icon: "hat", category: "object" },
-      ],
-      starters: ["I pick number ___.", "It's the letter ___.", "It's a ___."],
-    },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "A", word: "Apple", icon: "apple", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "B", word: "Banana", icon: "banana", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "C", word: "Cat", icon: "cat", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "D", word: "Dog", icon: "dog", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "E", word: "Elephant", icon: "elephant", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "F", word: "Fish", icon: "fish", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "G", word: "Grapes", icon: "grapes", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "H", word: "Hat", icon: "hat", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "I", word: "Ice Cream", icon: "icecream", timing: "30 sec" },
+    { kind: "letter", topInstruction: "Say the letter, then say the picture!", letter: "J", word: "Juice", icon: "juice", timing: "30 sec" },
     {
       kind: "write",
       title: "Trace the Letter!",
+      topInstruction: "Grab a pencil and paper!",
       purpose: "Add a hands-on, pencil-and-paper moment to make one letter stick.",
       timing: "2 min",
       teacherScript: ["A is for apple!", "Can you write the letter A?", "Say the letter as you write it.", "Show me!"],
@@ -97,28 +91,9 @@ export default {
       instruction: "Write the letter A on your paper.",
     },
     {
-      kind: "mystery",
-      title: "Mystery Letter Box 1",
-      purpose: "Shift from naming to guessing, with the letter as the clue.",
-      timing: "1 min",
-      teacherScript: ["It starts with... I!", "What do you think it is?", "Reveal it!", "Were you right?"],
-      label: "icecream",
-      icon: "icecream",
-      starter: "I think it's a ___.",
-    },
-    {
-      kind: "mystery",
-      title: "Mystery Letter Box 2",
-      purpose: "Repeat the guessing mechanic with a new letter clue.",
-      timing: "1 min",
-      teacherScript: ["It starts with... J!", "What do you think it is this time?", "Reveal it!", "Were you right?"],
-      label: "juice",
-      icon: "juice",
-      starter: "I think it's a ___.",
-    },
-    {
       kind: "findshow",
       title: "Find the Letter!",
+      topInstruction: "Look around your room!",
       purpose: "Move from screen pictures to the child's real environment, and end on an easy win.",
       timing: "2 min",
       teacherScript: ["Find something!", "Show me something that starts with B! Or C! Or H!", "You found it — great job!"],
@@ -127,6 +102,7 @@ export default {
     },
     {
       title: "Letter Rainbow Recap!",
+      topInstruction: "Let's say them all, fast!",
       purpose: "End with one fast, confident spoken pass through all 10 letters. Text-only on purpose, no picture grid, so the slide never needs to scroll.",
       timing: "1 min",
       kidGuide: ["A…", "B…", "C…", "D…", "E…", "F…", "G…", "H…", "I…", "J…"],
