@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SPARK_KIDS_LIST as KIDS_LESSONS } from "./sparkKidsData";
 import { SPARK_TEENS_LIST as TEENS_LESSONS } from "./sparkTeensData";
-import ADULTS_LESSONS from "./sparkAdultsTracks";
+import { SPARK_ADULTS_LIST as ADULTS_LESSONS } from "./sparkAdultsData";
 
 const ICON_PROPS = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
 
@@ -71,7 +71,7 @@ function QuestIcon({ title }) {
       </svg>
     );
   }
-  if (["Animal Friends", "Rainbow Colors", "My Day", "Yummy Food", "Yesterday's Adventure", "My Dream Room", "Who Am I?", "My Family", "School Life", "Free Time", "Last Weekend", "Dream Trip"].includes(title)) {
+  if (["Animal Friends", "Rainbow Colors", "My Day", "Yummy Food", "Yesterday's Adventure", "My Dream Room", "Who Am I?", "My Family", "School Life", "Free Time", "Last Weekend", "Dream Trip", "Meet and Greet", "Eating Out", "Getting Around", "Work Life", "My Last Trip"].includes(title)) {
     return (
       <svg {...ICON_PROPS}>
         <path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" />
@@ -136,9 +136,9 @@ const AUDIENCES = {
   adults: {
     label: "Adults",
     lessons: ADULTS_LESSONS,
-    blurb: "Three independent 20-minute trial classes for adults, each with its own topic and its own signature gimmick, so a learner never sees the same lesson twice.",
+    blurb: "Six standalone 20-minute classes for adults (two beginner, two intermediate, two advanced). Each starts with 5 minutes of getting to know the student and why they want English, then 15 minutes of lesson.",
     lessonPath: (id) => `/library/spark/adults/${id}`,
-    guidePath: (id) => `/library/spark/adults/${id}/guide`,
+    guidePath: null,
   },
 };
 

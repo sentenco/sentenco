@@ -6,6 +6,7 @@ import { SPROUT_A1_LESSONS } from "./sproutA1Data.js";
 import { BLOOM_A2_LESSONS } from "./bloomA2Data.js";
 import { SPARK_KIDS_LESSONS } from "./sparkKidsData.js";
 import { SPARK_TEENS_LESSONS } from "./sparkTeensData.js";
+import { SPARK_ADULTS_LESSONS } from "./sparkAdultsData.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges, useBadgePositions, medalDefault, ribbonDefault, eyebrowDefault, badgeAdjustStyles } from "./TeensCoverBadges.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
@@ -248,6 +249,7 @@ const TRACK_BACKGROUNDS = {
   ablaze: { title: "/curriculum/teens-a2-shared/ablaze-title-bg.jpg", slide: "/curriculum/teens-a2-shared/ablaze-slide-bg.jpg" },
   "spark-kids": { title: "/curriculum/spark-kids-shared/title-bg.jpg", slide: "/curriculum/spark-kids-shared/slide-bg.jpg" },
   "spark-teens": { title: "/curriculum/spark-teens-shared/title-bg.jpg", slide: "/curriculum/spark-teens-shared/slide-bg.jpg" },
+  "spark-adults": { title: "/curriculum/spark-adults-shared/title-bg.jpg", slide: "/curriculum/spark-adults-shared/slide-bg.jpg" },
   sprout: { title: "/curriculum/adults-a1-shared/title-bg.jpg", slide: "/curriculum/adults-a1-shared/slide-bg.jpg" },
   bloom: { title: "/curriculum/adults-a2-shared/title-bg.jpg", slide: "/curriculum/adults-a2-shared/slide-bg.jpg" },
 };
@@ -260,7 +262,7 @@ export default function IgniteLesson({ track = "ignite" }) {
   const [copied, setCopied] = useState(false);
   // Cover badge editor: open any lesson with ?adjust=1 to drag, resize and rotate the UNIT circle.
   const adjust = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("adjust");
-  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" ? { left: 34, top: 103 } : track === "bloom" ? { left: 145, top: 275 } : track === "spark-kids" ? { left: 40, top: 330 } : track === "spark-teens" ? { left: 40, top: 330 } : { left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
+  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" ? { left: 34, top: 103 } : track === "bloom" ? { left: 145, top: 275 } : track === "spark-kids" ? { left: 40, top: 330 } : track === "spark-teens" ? { left: 40, top: 330 } : track === "spark-adults" ? { left: 40, top: 330 } : { left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
   useEffect(() => {
     const styleId = "il-styles";
     const existing = document.getElementById(styleId);
@@ -272,7 +274,7 @@ export default function IgniteLesson({ track = "ignite" }) {
   }, []);
 
   const key = lessonId || `${unit}-${lesson}`;
-  const data = (track === "spark-kids" ? SPARK_KIDS_LESSONS : track === "spark-teens" ? SPARK_TEENS_LESSONS : track === "ablaze" ? ABLAZE_A2_LESSONS : track === "sprout" ? SPROUT_A1_LESSONS : track === "bloom" ? BLOOM_A2_LESSONS : IGNITE_A1_LESSONS)[key];
+  const data = (track === "spark-kids" ? SPARK_KIDS_LESSONS : track === "spark-teens" ? SPARK_TEENS_LESSONS : track === "spark-adults" ? SPARK_ADULTS_LESSONS : track === "ablaze" ? ABLAZE_A2_LESSONS : track === "sprout" ? SPROUT_A1_LESSONS : track === "bloom" ? BLOOM_A2_LESSONS : IGNITE_A1_LESSONS)[key];
 
   useEffect(() => {
     setI(0);
@@ -356,7 +358,7 @@ export default function IgniteLesson({ track = "ignite" }) {
                 <button type="button" onClick={() => dragMedal({ size: Math.min(260, badges.medal.size + 6) })}>Bigger</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot - 3 })}>Rotate left</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot + 3 })}>Rotate right</button>
-                <button type="button" onClick={() => dragMedal({ ...(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" ? { left: 34, top: 103 } : track === "bloom" ? { left: 145, top: 275 } : track === "spark-kids" ? { left: 40, top: 330 } : track === "spark-teens" ? { left: 40, top: 330 } : { left: 106, top: 276 }), size: 104, rot: -6 })}>Reset</button>
+                <button type="button" onClick={() => dragMedal({ ...(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" ? { left: 34, top: 103 } : track === "bloom" ? { left: 145, top: 275 } : track === "spark-kids" ? { left: 40, top: 330 } : track === "spark-teens" ? { left: 40, top: 330 } : track === "spark-adults" ? { left: 40, top: 330 } : { left: 106, top: 276 }), size: 104, rot: -6 })}>Reset</button>
                 <button type="button" className="bt-copy" onClick={() => {
                   const m = badges.medal;
                   const txt = `medal left ${m.left}, top ${m.top}, size ${m.size}, rotate ${m.rot}`;
@@ -554,10 +556,10 @@ const styles = `
 /* Sprout (Adults A1): same Baloo 2 + Quicksand type as Discover and Soar, tilted brush behind the cover title */
 .track-sprout .unit-medal { left: 34px; top: 103px; }
 .track-bloom .unit-medal { left: 145px; top: 275px; }
-.track-spark-kids .unit-medal, .track-spark-teens .unit-medal { left: 40px; top: 330px; }
-.track-spark-kids .unit-medal, .track-spark-teens .unit-medal { border: none; border-radius: 0; background: linear-gradient(145deg, #FFD84D, #F2A900); color: var(--navy); clip-path: polygon(50.0% 0.0%, 58.4% 7.8%, 69.1% 3.8%, 73.9% 14.2%, 85.4% 14.6%, 85.8% 26.1%, 96.2% 30.9%, 92.2% 41.6%, 100.0% 50.0%, 92.2% 58.4%, 96.2% 69.1%, 85.8% 73.9%, 85.4% 85.4%, 73.9% 85.8%, 69.1% 96.2%, 58.4% 92.2%, 50.0% 100.0%, 41.6% 92.2%, 30.9% 96.2%, 26.1% 85.8%, 14.6% 85.4%, 14.2% 73.9%, 3.8% 69.1%, 7.8% 58.4%, 0.0% 50.0%, 7.8% 41.6%, 3.8% 30.9%, 14.2% 26.1%, 14.6% 14.6%, 26.1% 14.2%, 30.9% 3.8%, 41.6% 7.8%); box-shadow: none; }
-.track-spark-kids .unit-medal .um-label, .track-spark-teens .unit-medal .um-label { font-size: calc(12px * var(--k, 1)); margin-bottom: calc(-2px * var(--k, 1)); }
-.track-spark-kids .unit-medal .um-num, .track-spark-teens .unit-medal .um-num { font-size: calc(27px * var(--k, 1)); text-shadow: none; letter-spacing: 0.02em; }
+.track-spark-kids .unit-medal, .track-spark-teens .unit-medal, .track-spark-adults .unit-medal { left: 40px; top: 330px; }
+.track-spark-kids .unit-medal, .track-spark-teens .unit-medal, .track-spark-adults .unit-medal { border: none; border-radius: 0; background: linear-gradient(145deg, #FFD84D, #F2A900); color: var(--navy); clip-path: polygon(50.0% 0.0%, 58.4% 7.8%, 69.1% 3.8%, 73.9% 14.2%, 85.4% 14.6%, 85.8% 26.1%, 96.2% 30.9%, 92.2% 41.6%, 100.0% 50.0%, 92.2% 58.4%, 96.2% 69.1%, 85.8% 73.9%, 85.4% 85.4%, 73.9% 85.8%, 69.1% 96.2%, 58.4% 92.2%, 50.0% 100.0%, 41.6% 92.2%, 30.9% 96.2%, 26.1% 85.8%, 14.6% 85.4%, 14.2% 73.9%, 3.8% 69.1%, 7.8% 58.4%, 0.0% 50.0%, 7.8% 41.6%, 3.8% 30.9%, 14.2% 26.1%, 14.6% 14.6%, 26.1% 14.2%, 30.9% 3.8%, 41.6% 7.8%); box-shadow: none; }
+.track-spark-kids .unit-medal .um-label, .track-spark-teens .unit-medal .um-label, .track-spark-adults .unit-medal .um-label { font-size: calc(12px * var(--k, 1)); margin-bottom: calc(-2px * var(--k, 1)); }
+.track-spark-kids .unit-medal .um-num, .track-spark-teens .unit-medal .um-num, .track-spark-adults .unit-medal .um-num { font-size: calc(27px * var(--k, 1)); text-shadow: none; letter-spacing: 0.02em; }
 .spark-level { display: inline-flex; align-items: center; gap: 8px; height: 38px; margin-bottom: 14px; padding: 0 18px 0 12px; border-radius: 999px; background: #FFD84D; color: var(--navy); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 4px 0 rgba(150,100,0,0.28); }
 .spark-level .sl-star { font-size: 18px; color: var(--coral-deep); }
 .track-spark-kids .pennant { background: #FFE9A6; }
@@ -567,6 +569,11 @@ const styles = `
 .track-spark-teens .spark-level .sl-star { color: #FFC145; }
 .track-spark-teens .pennant { background: #E7E3FF; }
 .track-spark-teens .dot.on { background: #6C5CE7; }
+.track-spark-adults .unit-medal { background: linear-gradient(145deg, #E2B357, #C4902F); color: var(--navy); }
+.track-spark-adults .spark-level { background: var(--navy); color: #fff; box-shadow: 0 4px 0 rgba(10,18,40,0.35); }
+.track-spark-adults .spark-level .sl-star { color: #E2B357; }
+.track-spark-adults .pennant { background: #EEF0E4; }
+.track-spark-adults .dot.on { background: #C4902F; }
 
 .track-sprout .title-h .title-hl, .track-bloom .title-h .title-hl { background: none; padding: 0; margin: 0; position: relative; display: inline-block; isolation: isolate; }
 .track-sprout .title-h .title-hl::before, .track-bloom .title-h .title-hl::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: -1; }
