@@ -73,12 +73,12 @@ function VocabBlock({ heading, subheading, items = [] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [zoomed]);
   const picCount = items.filter((it) => "pic" in it).length;
-  const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : 84;
+  const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : picCount > 3 ? 84 : 150;
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""}`}>
+      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""} ${picCount > 0 && picCount <= 3 ? "is-few" : ""}`}>
         {items.map((it, i) => (
           "pic" in it ? (
             <div className="vocab-card has-pic" key={i}>
@@ -418,6 +418,9 @@ const styles = `
 .vocab-card:nth-child(3n+2) { transform: rotate(3deg); margin-top: 10px; }
 .vocab-card:nth-child(3n+3) { transform: rotate(-2deg); }
 .vocab-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--coral-deep); }
+.vocab-row.is-few .vocab-card.has-pic { width: 190px; padding: 14px 14px 16px; }
+.vocab-row.is-few .vocab-card.has-pic .vocab-label { font-size: 32px; }
+.vocab-row.is-few .vocab-card.has-pic .vocab-note { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
 .vocab-card:not(.has-pic) { width: 168px; padding: 18px 20px; }
 .vocab-card:not(.has-pic) .vocab-label { font-size: 30px; }
 .vocab-note { font-size: 13px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 6px 0 0; }
