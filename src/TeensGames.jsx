@@ -100,6 +100,56 @@ export function WheelBlock({ heading, items = [], question, size = 176 }) {
   );
 }
 
+// Picture hidden behind 4 tiles the teacher taps open one at a time; student guesses the name
+// from the multiple-choice row before (or after) it's fully revealed. { pic, label, options,
+// answer, question? }
+export function GuessWhoBlock({ heading, pic, label, options = [], answer, question }) {
+  const [open, setOpen] = useState([false, false, false, false]);
+  const [picked, setPicked] = useState(null);
+  const left = open.filter((o) => !o).length;
+  const pop = (i) => setOpen((a) => a.map((v, k) => (k === i ? true : v)));
+  function pick(name) {
+    if (picked) return;
+    setPicked(name);
+    setOpen([true, true, true, true]);
+  }
+  function again() { setOpen([false, false, false, false]); setPicked(null); }
+  const correct = picked === answer;
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      {question && <p className="slide-p">{question}</p>}
+      <div className="tg-gw-row">
+        <div className="tg-gw-pic" style={{ width: 176, height: 176 }}>
+          <SoarPic src={pic} label={label} size={176} zoom="off" />
+          <div className="tg-gw-grid">
+            {open.map((o, i) => (
+              <button key={i} type="button" className={`tg-gw-tile ${o ? "is-open" : ""}`} onClick={() => pop(i)} disabled={!!picked} aria-label="Reveal this piece"><span>?</span></button>
+            ))}
+          </div>
+        </div>
+        <div className="tg-gw-side">
+          {!picked ? (
+            <>
+              <div className="tg-gw-options">
+                {options.map((name) => (
+                  <button key={name} type="button" className="tg-btn tg-gw-opt" onClick={() => pick(name)}>{name}</button>
+                ))}
+              </div>
+              <div className="tg-gw-note">{left > 0 ? `${left} piece${left === 1 ? "" : "s"} hidden` : "Fully revealed, who is it?"}</div>
+            </>
+          ) : (
+            <>
+              <div className={`tg-answer-chip ${correct ? "" : "is-wrong"}`}>{correct ? `Yes, it's ${answer}!` : `Actually, it's ${answer}!`}</div>
+              <button type="button" className="tg-btn" onClick={again}>Play again</button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function MysteryBlock({ heading, clues = [], answer, question, pic }) {
   const [shown, setShown] = useState(0);
   const [revealed, setRevealed] = useState(false);
@@ -347,6 +397,7 @@ export function DiceBlock({ heading, dice = [] }) {
 
 export const TEENS_GAME_BLOCKS = {
   wheel: WheelBlock,
+  guesswho: GuessWhoBlock,
   mystery: MysteryBlock,
   speed: SpeedBlock,
   thisorthat: ThisOrThatBlock,
@@ -378,6 +429,23 @@ export const teensGameStyles = `
 .tg-answer-chip { display: inline-block; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; color: #fff; background: var(--navy, #1B2A4A); padding: 8px 20px; border-radius: 999px; margin-bottom: 12px; }
 .tg-mystery-reveal-pic { display: flex; justify-content: center; margin: 4px 0 14px; }
 .tg-mystery-reveal-pic .sp-tile { border-radius: 20px; box-shadow: 0 8px 0 rgba(27,42,74,0.1), 0 16px 28px rgba(27,42,74,0.14); }
+
+.tg-gw-row { display: flex; align-items: center; justify-content: center; gap: 26px; }
+.tg-gw-pic { position: relative; flex-shrink: 0; }
+.tg-gw-pic .sp-tile { border-radius: 20px; }
+.tg-gw-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; border-radius: 20px; overflow: hidden; }
+.tg-gw-tile { position: relative; background: var(--navy, #1B2A4A); border: 2px solid #fff; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.35s ease, transform 0.35s ease; }
+.tg-gw-tile:nth-child(2) { background: var(--coral-deep, #E0502F); }
+.tg-gw-tile:nth-child(3) { background: var(--coral-deep, #E0502F); }
+.tg-gw-tile:nth-child(4) { background: var(--navy, #1B2A4A); }
+.tg-gw-tile span { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; color: rgba(255,255,255,0.85); }
+.tg-gw-tile.is-open { opacity: 0; transform: scale(1.15); pointer-events: none; }
+.tg-gw-tile:not(:disabled):hover { filter: brightness(1.12); }
+.tg-gw-side { display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 190px; max-width: 250px; }
+.tg-gw-options { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.tg-gw-opt { width: 100%; }
+.tg-gw-note { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; color: var(--ink-soft, #736A87); text-align: center; }
+.tg-answer-chip.is-wrong { background: #B5322E; }
 
 .tg-timer { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; color: var(--coral-deep, #E0502F); margin-bottom: 6px; }
 .tg-speed-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: var(--navy, #1B2A4A); margin-bottom: 16px; }
