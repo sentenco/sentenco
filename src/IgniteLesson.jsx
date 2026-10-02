@@ -73,7 +73,7 @@ function VocabBlock({ heading, subheading, items = [], compact }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [zoomed]);
-  const picCount = items.filter((it) => "pic" in it).length;
+  const picCount = items.filter((it) => "pic" in it || it.swatch).length;
   const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : 84;
   return (
     <div className="stage-col">
@@ -81,9 +81,11 @@ function VocabBlock({ heading, subheading, items = [], compact }) {
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""} ${compact ? "is-compact" : ""}`}>
         {items.map((it, i) => (
-          "pic" in it ? (
+          "pic" in it || it.swatch ? (
             <div className="vocab-card has-pic" key={i}>
-              <SoarPic src={it.pic} label={it.label} size={picSize} />
+              {it.swatch
+                ? <div className="color-swatch" style={{ width: picSize, height: picSize, background: it.swatch }} />
+                : <SoarPic src={it.pic} label={it.label} size={picSize} />}
               <span className="vocab-label">{it.label}</span>
               {it.note && <p className="vocab-note">{it.note}</p>}
             </div>
@@ -296,7 +298,7 @@ export default function IgniteLesson() {
 
   const slides = data.slides;
   const total = slides.length;
-  const s = slides[i];
+  const s = slides[Math.min(i, total - 1)];
 
   function go(delta) {
     setI((cur) => Math.max(0, Math.min(total - 1, cur + delta)));
@@ -489,6 +491,7 @@ const styles = `
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
+.color-swatch { border-radius: 14px; border: 3px solid var(--navy); box-shadow: 0 3px 0 rgba(27,42,74,0.15); }
 .vocab-card.has-pic { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; padding: 10px 12px 12px; }
 .vocab-card.has-pic .vocab-label { text-align: center; }
 .sp-tile { position: relative; background: #fff; border-radius: 12px; box-shadow: 0 4px 0 rgba(27,42,74,0.08); overflow: hidden; display: flex; align-items: center; justify-content: center; }

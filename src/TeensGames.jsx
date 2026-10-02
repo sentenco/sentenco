@@ -305,9 +305,9 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
     <div className="stage-col">
       <FitH className="slide-h">{heading}</FitH>
       <div className="tg-gp-pic">
-        {r.pic ? <SoarPic src={r.pic} label={r.answer} size={170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
+        {r.pic ? <SoarPic src={r.pic} label={r.answer} size={options.some((o) => o.length > 22) ? 96 : options.some((o) => o.length > 14) ? 92 : 170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
       </div>
-      <div className="tg-gp-opts">
+      <div className={`tg-gp-opts ${options.some((o) => o.length > 14) ? "is-long" : ""}`}>
         {options.map((o) => (
           <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
             className={`tg-gp-opt ${done ? (o === r.answer ? "is-right" : o === picked ? "is-wrong" : "") : ""}`}>{o}</button>
@@ -461,7 +461,9 @@ export function PicMatchBlock({ heading, pool = [], rounds = [] }) {
           return (
             <button key={l} type="button" disabled={done} onClick={() => setPicked(l)}
               className={`tg-pm-opt ${done ? (l === r.answer ? "is-right" : l === picked ? "is-wrong" : "") : ""}`}>
-              <SoarPic src={it.pic} label={it.label} size={shown.length > 3 ? 84 : 100} zoom="off" />
+              {it.swatch
+                ? <div className="tg-swatch" style={{ background: it.swatch, width: shown.length > 3 ? 84 : 100, height: shown.length > 3 ? 84 : 100 }} />
+                : <SoarPic src={it.pic} label={it.label} size={shown.length > 3 ? 84 : 100} zoom="off" />}
             </button>
           );
         })}
@@ -591,6 +593,7 @@ export const teensGameStyles = `
 .tg-pm-word { display: table; margin: 0 auto 16px; padding: 12px 30px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 22px; box-shadow: 0 5px 0 var(--coral-deep, #E0502F); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.1; color: var(--navy, #1B2A4A); }
 .tg-pm-opts { display: flex; justify-content: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
 .tg-pm-opt { padding: 6px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 20px; box-shadow: 0 4px 0 var(--navy, #1B2A4A); cursor: pointer; }
+.tg-swatch { border-radius: 14px; border: 2px solid rgba(27,42,74,0.25); }
 .tg-pm-opt:disabled { cursor: default; }
 .tg-pm-opt .sp-tile { border-radius: 14px; }
 .tg-pm-opt.is-right { background: #E3F5EC; border-color: #2F9E7A; box-shadow: 0 4px 0 #2F9E7A; }
@@ -612,6 +615,7 @@ export const teensGameStyles = `
 .tg-gp-pic .sp-tile { border-radius: 24px; }
 .tg-gp-text { min-width: 200px; padding: 22px 30px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 24px; box-shadow: 0 4px 0 var(--navy, #1B2A4A); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; line-height: 1.2; color: var(--navy, #1B2A4A); }
 .tg-gp-opts { flex-wrap: wrap; }
+.tg-gp-opts.is-long .tg-gp-opt { font-size: 18px; padding: 10px 16px; }
 .tg-order-col.is-inline { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 520px; }
 .tg-order-card.is-tile { width: 68px; height: 68px; padding: 0; justify-content: center; font-size: 34px; border-radius: 16px; }
 .tg-order-card.is-tile .tg-order-num { position: absolute; top: -9px; right: -9px; }
