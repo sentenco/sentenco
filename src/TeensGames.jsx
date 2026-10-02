@@ -264,19 +264,22 @@ export function ThisOrThatBlock({ heading, pairs = [] }) {
 // and says the fix out loud; the teacher clicks whichever sentence the
 // student names, which reveals which one was actually wrong (regardless
 // of the click) plus the corrected sentence and why.
-export function SpotErrorBlock({ heading, rounds = [] }) {
+export function SpotErrorBlock({ heading, rounds = [], pic, label }) {
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
   const r = rounds[idx % rounds.length];
   function pick(side) { if (picked === null) setPicked(side); }
   function next() { setPicked(null); setIdx((i) => i + 1); }
   const correct = picked !== null && picked === r.wrongSide;
+  const cls = (side) => `tg-spot-card ${picked !== null ? (r.wrongSide === side ? "is-wrong" : "is-right") : ""}`;
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      <div className="tg-spot-row">
-        <button type="button" className={`tg-spot-card ${picked !== null ? (r.wrongSide === "a" ? "is-wrong" : "is-right") : ""}`} onClick={() => pick("a")} disabled={picked !== null}>{r.a}</button>
-        <button type="button" className={`tg-spot-card ${picked !== null ? (r.wrongSide === "b" ? "is-wrong" : "is-right") : ""}`} onClick={() => pick("b")} disabled={picked !== null}>{r.b}</button>
+      {pic && <div className="tg-spot-who"><SoarPic src={pic} label={label} size={84} zoom="off" /></div>}
+      <div className="tg-spot-vs">
+        <button type="button" className={cls("a")} onClick={() => pick("a")} disabled={picked !== null}>{r.a}</button>
+        <span className="tg-vs-badge">VS</span>
+        <button type="button" className={cls("b")} onClick={() => pick("b")} disabled={picked !== null}>{r.b}</button>
       </div>
       {picked !== null && (
         <>
@@ -290,7 +293,32 @@ export function SpotErrorBlock({ heading, rounds = [] }) {
   );
 }
 
-export function OrderUpBlock({ heading, items = [], prompt }) {
+// Look at a picture of a person, pick the greeting you'd say to them.
+// { rounds: [{ pic, answer }], options: [str] }
+export function GreetPickBlock({ heading, rounds = [], options = [] }) {
+  const [order] = useState(() => shuffle(rounds.map((_, i) => i)));
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null);
+  const r = rounds[order[idx % order.length]];
+  const done = picked !== null;
+  function next() { setPicked(null); setIdx((i) => i + 1); }
+  return (
+    <div className="stage-col">
+      <h2 className="slide-h">{heading}</h2>
+      <div className="tg-gp-pic"><SoarPic src={r.pic} label={r.answer} size={170} zoom="off" /></div>
+      <div className="tg-gp-opts">
+        {options.map((o) => (
+          <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
+            className={`tg-gp-opt ${done ? (o === r.answer ? "is-right" : o === picked ? "is-wrong" : "") : ""}`}>{o}</button>
+        ))}
+      </div>
+      {done && <div className={`tg-foc-verdict ${picked === r.answer ? "is-right" : "is-wrong"}`}>{picked === r.answer ? "Yes!" : `Say: ${r.answer}`}</div>}
+      <button type="button" className="tg-btn" onClick={next}>Next</button>
+    </div>
+  );
+}
+
+export function OrderUpBlock({ heading, items = [], sides, avatars }) {
   const [display] = useState(() => {
     let s = shuffle(items.map((_, i) => i));
     while (items.length > 1 && s.every((v, i) => v === i)) s = shuffle(items.map((_, i) => i));
@@ -309,13 +337,23 @@ export function OrderUpBlock({ heading, items = [], prompt }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      <div className="tg-order-col">
-        {display.map((i) => (
-          <button key={i} type="button" className={`tg-order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""}`} onClick={() => pick(i)}>
-            {placed.includes(i) && <span className="tg-order-num">{placed.indexOf(i) + 1}</span>}
-            <span className="tg-order-text">{items[i]}</span>
-          </button>
-        ))}
+      <div className={`tg-order-col ${sides ? "is-chat" : ""}`}>
+        {display.map((i) => {
+          const right = sides ? sides[i] === 1 : false;
+          const card = (
+            <button type="button" className={`tg-order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""} ${sides ? (right ? "is-right" : "is-left") : ""}`} onClick={() => pick(i)}>
+              {placed.includes(i) && <span className="tg-order-num">{placed.indexOf(i) + 1}</span>}
+              <span className="tg-order-text">{items[i]}</span>
+            </button>
+          );
+          if (!sides) return <React.Fragment key={i}>{card}</React.Fragment>;
+          return (
+            <div key={i} className={`tg-order-row ${right ? "is-right" : ""}`}>
+              {avatars && <div className="tg-order-ava"><SoarPic src={avatars[right ? 1 : 0].pic} label={avatars[right ? 1 : 0].label} size={52} zoom="off" /></div>}
+              {card}
+            </div>
+          );
+        })}
       </div>
       {done && <div className="tg-answer-chip">In order!</div>}
     </div>
@@ -405,6 +443,7 @@ export const TEENS_GAME_BLOCKS = {
   factorcap: FactOrCapBlock,
   dice: DiceBlock,
   spoterror: SpotErrorBlock,
+  greetpick: GreetPickBlock,
 };
 
 export const teensGameStyles = `
@@ -456,20 +495,37 @@ export const teensGameStyles = `
 .tg-speed-sample-text { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 700; font-size: 14.5px; color: var(--navy, #1B2A4A); }
 
 .tg-tot-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px; }
-.tg-tot-card { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink, #2B2438); background: var(--sun-light, #FFF1D2); border: 2px solid var(--sun, #F2A900); border-radius: 16px; padding: 18px 20px; min-width: 120px; cursor: pointer; }
-.tg-tot-card.is-picked { background: var(--coral-light, #FFE6DD); border-color: var(--coral, #FF6B4A); color: var(--coral-deep, #E0502F); }
+.tg-tot-card { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 22px 28px; min-width: 170px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
+.tg-tot-card.is-picked { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); box-shadow: 0 4px 0 var(--coral, #FF6B4A); }
 .tg-tot-card:disabled { cursor: default; }
 .tg-tot-or { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: var(--ink-soft, #736A87); text-transform: uppercase; }
 .tg-tot-followup { margin-bottom: 10px !important; }
 
-.tg-spot-row { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto 10px; }
-.tg-spot-card { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink, #2B2438); background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); border-radius: 14px; padding: 14px 18px; text-align: left; cursor: pointer; }
+.tg-spot-who { display: flex; justify-content: center; margin: 0 0 12px; }
+.tg-spot-who .sp-tile { border-radius: 50%; }
+.tg-spot-vs { display: flex; align-items: center; justify-content: center; gap: 14px; max-width: 640px; margin: 0 auto 14px; }
+.tg-vs-badge { flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; background: var(--coral, #FF6B4A); color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; border: 3px solid var(--navy, #1B2A4A); box-shadow: 0 4px 0 var(--navy, #1B2A4A); transform: rotate(-6deg); }
+.tg-spot-card { flex: 1; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 20px 18px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); text-align: center; min-height: 92px; }
 .tg-spot-card:disabled { cursor: default; }
-.tg-spot-card.is-wrong { background: #FFE6DD; border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); text-decoration: line-through; }
-.tg-spot-card.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; }
+.tg-spot-card.is-wrong { background: #FFE6DD; border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); box-shadow: 0 4px 0 var(--coral-deep, #E0502F); text-decoration: line-through; }
+.tg-spot-card.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
 
-.tg-order-col { display: flex; flex-direction: column; gap: 8px; max-width: 380px; margin: 0 auto 12px; }
-.tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink, #2B2438); background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy-soft, #5A6B92); border-radius: 12px; padding: 10px 16px; text-align: left; cursor: pointer; }
+.tg-order-col { display: flex; flex-direction: column; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
+.tg-order-col.is-chat { gap: 14px; }
+.tg-order-row { display: flex; align-items: center; gap: 10px; }
+.tg-order-row.is-right { flex-direction: row-reverse; }
+.tg-order-ava { flex-shrink: 0; }
+.tg-order-ava .sp-tile { border-radius: 50%; border: 3px solid var(--navy, #1B2A4A); }
+.tg-gp-pic { display: flex; justify-content: center; margin: 0 0 14px; }
+.tg-gp-pic .sp-tile { border-radius: 24px; }
+.tg-gp-opts { display: flex; justify-content: center; gap: 12px; margin-bottom: 14px; }
+.tg-gp-opt { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 12px 24px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
+.tg-gp-opt:disabled { cursor: default; }
+.tg-gp-opt.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
+.tg-gp-opt.is-wrong { background: #FFE6DD; border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); box-shadow: 0 4px 0 var(--coral-deep, #E0502F); }
+.tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 14px 20px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); text-align: left; }
+.tg-order-card.is-left { border-radius: 18px 18px 18px 4px; }
+.tg-order-card.is-right { border-radius: 18px 18px 4px 18px; box-shadow: 0 4px 0 var(--coral, #FF6B4A); }
 .tg-order-card.is-placed { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); }
 .tg-order-card.is-shake { animation: tgShake 0.4s; }
 .tg-order-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--coral, #FF6B4A); color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }

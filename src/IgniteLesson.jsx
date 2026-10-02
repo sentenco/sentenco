@@ -54,7 +54,7 @@ function TitleBlock({ stage, title, subtitle }) {
       {lesson && (
         <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
       )}
-      <h1 className="title-h">{title}</h1>
+      <h1 className={`title-h ${String(title).length <= 14 ? "is-short" : ""}`}>{title}</h1>
       <p className="title-p">{subtitle}</p>
     </div>
   );
@@ -73,12 +73,12 @@ function VocabBlock({ heading, subheading, items = [] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [zoomed]);
   const picCount = items.filter((it) => "pic" in it).length;
-  const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : picCount > 3 ? 84 : 150;
+  const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : 84;
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""} ${picCount > 0 && picCount <= 3 ? "is-few" : ""}`}>
+      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""}`}>
         {items.map((it, i) => (
           "pic" in it ? (
             <div className="vocab-card has-pic" key={i}>
@@ -401,8 +401,10 @@ const styles = `
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; margin-bottom: -6px; padding-left: 0.2em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 60px; line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: 46px; }
-.title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 36px; color: var(--navy); margin: 0 0 12px; line-height: 1.05; }
-.title-p { font-family: 'Quicksand', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
+.title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 44px; color: var(--navy); margin: 0 0 18px; line-height: 1.05; position: relative; display: table; isolation: isolate; }
+.title-h::before { content: ""; position: absolute; left: -14px; right: -14px; top: 34%; bottom: 14%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 5px; z-index: -1; }
+.title-h.is-short { font-size: 78px; }
+.title-p { font-family: 'Quicksand', sans-serif; font-size: 15px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
 
 .stage-col { width: 100%; text-align: center; }
 .slide-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; color: var(--navy); margin: 0 auto 14px; position: relative; display: table; isolation: isolate; }
@@ -418,9 +420,6 @@ const styles = `
 .vocab-card:nth-child(3n+2) { transform: rotate(3deg); margin-top: 10px; }
 .vocab-card:nth-child(3n+3) { transform: rotate(-2deg); }
 .vocab-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--coral-deep); }
-.vocab-row.is-few .vocab-card.has-pic { width: 190px; padding: 14px 14px 16px; }
-.vocab-row.is-few .vocab-card.has-pic .vocab-label { font-size: 32px; }
-.vocab-row.is-few .vocab-card.has-pic .vocab-note { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
 .vocab-card:not(.has-pic) { width: 168px; padding: 18px 20px; }
 .vocab-card:not(.has-pic) .vocab-label { font-size: 30px; }
 .vocab-note { font-size: 13px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 6px 0 0; }
