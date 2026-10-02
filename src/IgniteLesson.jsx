@@ -254,7 +254,7 @@ export default function IgniteLesson({ track = "ignite" }) {
   const [copied, setCopied] = useState(false);
   // Cover badge editor: open any lesson with ?adjust=1 to drag, resize and rotate the UNIT circle.
   const adjust = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("adjust");
-  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault({ left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
+  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault(track === "ablaze" ? { left: 121, top: 322 } : { left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
   useEffect(() => {
     const styleId = "il-styles";
     const existing = document.getElementById(styleId);
@@ -350,7 +350,7 @@ export default function IgniteLesson({ track = "ignite" }) {
                 <button type="button" onClick={() => dragMedal({ size: Math.min(260, badges.medal.size + 6) })}>Bigger</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot - 3 })}>Rotate left</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot + 3 })}>Rotate right</button>
-                <button type="button" onClick={() => dragMedal({ left: 121, top: 322, size: 104, rot: -6 })}>Reset</button>
+                <button type="button" onClick={() => dragMedal({ ...(track === "ablaze" ? { left: 121, top: 322 } : { left: 106, top: 276 }), size: 104, rot: -6 })}>Reset</button>
                 <button type="button" className="bt-copy" onClick={() => {
                   const m = badges.medal;
                   const txt = `medal left ${m.left}, top ${m.top}, size ${m.size}, rotate ${m.rot}`;
