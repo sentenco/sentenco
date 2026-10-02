@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { SoarPic } from "./SoarPic.jsx";
 
 // Reusable teacher-clicked games for Ignite (A1) and Ablaze (A2) Teens. Text-based (no
 // picture dependency, unlike the Kids games) since Teens content is dialogue/vocab driven.
@@ -99,7 +100,7 @@ export function WheelBlock({ heading, items = [], question, size = 176 }) {
   );
 }
 
-export function MysteryBlock({ heading, clues = [], answer, question }) {
+export function MysteryBlock({ heading, clues = [], answer, question, pic }) {
   const [shown, setShown] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const total = clues.length;
@@ -122,6 +123,11 @@ export function MysteryBlock({ heading, clues = [], answer, question }) {
       </div>
       {revealed ? (
         <>
+          {pic && (
+            <div className="tg-mystery-reveal-pic">
+              <SoarPic src={pic} label={answer} size={120} />
+            </div>
+          )}
           <div className="tg-answer-chip">{answer}</div>
           <button type="button" className="tg-btn" onClick={again}>Play again</button>
         </>
@@ -372,6 +378,8 @@ export const teensGameStyles = `
 .tg-clue-text { font-family: 'Quicksand', 'Inter', sans-serif; font-weight: 600; font-size: 12.5px; color: var(--ink, #2B2438); line-height: 1.3; }
 .tg-clue-tile.is-open { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); }
 .tg-answer-chip { display: inline-block; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; color: #fff; background: var(--navy, #1B2A4A); padding: 8px 20px; border-radius: 999px; margin-bottom: 12px; }
+.tg-mystery-reveal-pic { display: flex; justify-content: center; margin: 4px 0 14px; }
+.tg-mystery-reveal-pic .sp-tile { border-radius: 20px; box-shadow: 0 8px 0 rgba(27,42,74,0.1), 0 16px 28px rgba(27,42,74,0.14); }
 
 .tg-timer { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; color: var(--coral-deep, #E0502F); margin-bottom: 6px; }
 .tg-speed-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: var(--navy, #1B2A4A); margin-bottom: 16px; }
