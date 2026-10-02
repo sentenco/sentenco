@@ -412,8 +412,8 @@ const styles = `
 .close-btn { position: absolute; top: 14px; right: 14px; z-index: 4; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(27,42,74,0.15); color: var(--navy); }
 
 .slide-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px 0; position: relative; z-index: 2; }
-.brand-bubble { display: flex; align-items: center; gap: 6px; background: #fff; border-radius: 999px; padding: 5px 14px 5px 6px; box-shadow: 0 2px 8px rgba(27,42,74,0.15); }
-.brand-logo { width: 22px; height: 22px; border-radius: 50%; }
+.brand-bubble { display: flex; align-items: center; gap: 0; background: #fff; border-radius: 999px; padding: 4px 14px 4px 4px; box-shadow: 0 2px 8px rgba(27,42,74,0.15); }
+.brand-logo { width: 32px; height: 32px; margin: -5px -8px -5px -4px; object-fit: contain; }
 .brand-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); }
 .pennant { background: #fff; border-radius: 999px; padding: 6px 16px; box-shadow: 0 2px 8px rgba(27,42,74,0.15); }
 .pennant-text { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11.5px; color: var(--navy); }
