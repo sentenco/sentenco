@@ -318,7 +318,7 @@ export default function IgniteLesson({ track = "ignite" }) {
 
   return (
     <ZoomContext.Provider value={setZoom}>
-    <div className="tsh-wrap" style={{ "--title-bg": `url(${TRACK_BACKGROUNDS[track].title})`, "--slide-bg": `url(${TRACK_BACKGROUNDS[track].slide})` }}>
+    <div className={`tsh-wrap track-${track}`} style={{ "--title-bg": `url(${TRACK_BACKGROUNDS[track].title})`, "--slide-bg": `url(${TRACK_BACKGROUNDS[track].slide})` }}>
       <div className="deck-single">
         <div className={`slide ${i === 0 ? "slide--title" : "slide--regular"}`}>
           <button className="close-btn" onClick={exit}>
@@ -424,6 +424,7 @@ const styles = `
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; }
 .cover-ribbon .cr-num { width: 34px; height: 34px; border-radius: 50%; background: var(--coral); display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
 .unit-medal { position: absolute; left: 106px; top: 276px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: calc(7px * var(--k, 1)) solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
+.track-ablaze .unit-medal { left: 119px; top: 322px; }
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(11px * var(--k, 1)); letter-spacing: 0.2em; margin-bottom: calc(-6px * var(--k, 1)); padding-left: 0.2em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(60px * var(--k, 1)); line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: calc(46px * var(--k, 1)); }
