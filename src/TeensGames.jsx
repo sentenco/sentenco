@@ -676,6 +676,27 @@ function ArtifactCard({ kind, data = {} }) {
       </div>
     );
   }
+  if (kind === "email") {
+    return (
+      <div className="ar-card ar-email">
+        <div className="ar-email-head">
+          {data.from && <div><i>From</i><b>{data.from}</b></div>}
+          {data.to && <div><i>To</i><b>{data.to}</b></div>}
+          {data.subject && <div><i>Subject</i><b>{data.subject}</b></div>}
+        </div>
+        <div className="ar-email-body">{(data.body || []).map((l, i) => <p key={i}>{l}</p>)}</div>
+      </div>
+    );
+  }
+  if (kind === "ad") {
+    return (
+      <div className="ar-card ar-ad">
+        <div className="ar-ad-title">{data.title}</div>
+        {(data.lines || []).map((l, i) => <div className="ar-ad-line" key={i}>{l}</div>)}
+        {data.price && <div className="ar-ad-price">{data.price}</div>}
+      </div>
+    );
+  }
   if (kind === "card") {
     return (
       <div className="ar-card ar-bizcard">
@@ -801,7 +822,13 @@ export const teensGameStyles = `
 .tg-quiz-foot .tg-foc-verdict { margin: 0; }
 .has-art .slide-h { font-size: 27px !important; margin-bottom: 4px; }
 .has-art .ar-card { zoom: 0.84; margin-bottom: 6px; }
-.has-art .ar-phone { zoom: 0.8; }
+.has-art .ar-phone { zoom: 0.72; max-width: 400px; }
+.has-art .ar-msg { margin: 2px 8px; padding: 3px 9px; max-width: 88%; }
+.has-art .ar-phone-top { padding: 3px 0; margin-bottom: 3px; }
+.has-art .ar-email { zoom: 0.72; }
+.has-art .ar-email-head { padding: 4px 12px; }
+.has-art .ar-email-body { padding: 6px 14px 6px; line-height: 1.3; }
+.has-art .ar-email-body p { margin: 0 0 2px; }
 .has-art .tg-quiz-opts { margin-bottom: 8px; }
 .tg-quiz-opts { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
 .tg-quiz-opt { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 16px; padding: 10px 18px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
@@ -862,6 +889,17 @@ export const teensGameStyles = `
 .ar-phone-top { background: #1B2A4A; color: #fff; text-align: center; font-weight: 700; padding: 5px 0; margin-bottom: 6px; }
 .ar-msg { max-width: 80%; margin: 3px 10px; padding: 5px 10px; border-radius: 12px 12px 12px 3px; background: #fff; font-weight: 600; font-size: 12.5px; box-shadow: 0 1px 3px rgba(27,42,74,0.15); }
 .ar-msg.is-me { margin-left: auto; background: #FFE6DD; border-radius: 12px 12px 3px 12px; }
+.ar-email { max-width: 420px; }
+.ar-email-head { background: #E4E9F5; padding: 6px 12px; font-size: 12px; }
+.ar-email-head div { display: flex; gap: 8px; }
+.ar-email-head i { font-style: normal; color: #736A87; min-width: 50px; }
+.ar-email-head b { font-weight: 700; }
+.ar-email-body { padding: 8px 14px 10px; font-weight: 600; font-size: 12.5px; line-height: 1.4; }
+.ar-email-body p { margin: 0 0 4px; }
+.ar-ad { max-width: 400px; border: 3px solid #1B2A4A; padding-bottom: 8px; }
+.ar-ad-title { background: #1B2A4A; color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; padding: 6px 12px; }
+.ar-ad-line { padding: 2px 14px; font-weight: 600; font-size: 12.5px; }
+.ar-ad-price { margin: 6px 14px 0; color: #E0502F; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; }
 .ar-bizcard { padding: 8px 18px; border-left: 8px solid #E0502F; }
 .ar-bc-name { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; }
 .ar-bc-job { color: #E0502F; font-weight: 700; margin-bottom: 3px; }
