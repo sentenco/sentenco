@@ -826,8 +826,8 @@ export const teensGameStyles = `
 .tg-rp-role span { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink, #2B2438); }
 .tg-rp-phrases { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; max-width: 580px; margin: 0 auto; }
 .tg-rp-phrase { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy, #1B2A4A); background: #fff; border: 2px solid var(--navy, #1B2A4A); border-radius: 999px; padding: 5px 14px; }
-.ar-card { max-width: 330px; margin: 0 auto 8px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(27,42,74,0.16); text-align: left; font-family: 'Inter', sans-serif; font-size: 13px; color: #1B2A4A; overflow: hidden; }
-.ar-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 15px; text-align: center; padding: 8px 12px 4px; }
+.ar-card { max-width: 330px; margin: 0 auto 8px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(27,42,74,0.16); text-align: left; font-family: 'Quicksand', sans-serif; font-size: 13px; color: #1B2A4A; overflow: hidden; }
+.ar-title { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; text-align: center; padding: 8px 12px 4px; }
 .ar-line { display: flex; align-items: baseline; gap: 6px; padding: 1px 14px; font-weight: 600; font-size: 12.5px; }
 .ar-line i { flex: 1; border-bottom: 2px dotted rgba(27,42,74,0.3); transform: translateY(-3px); }
 .ar-line b { font-weight: 700; }
@@ -839,13 +839,13 @@ export const teensGameStyles = `
 .ar-badge-top b { display: block; font-size: 15px; letter-spacing: 0.15em; }
 .ar-badge-top span { font-size: 11px; }
 .ar-badge-body { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
-.ar-badge-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; line-height: 1.1; margin-bottom: 4px; }
+.ar-badge-name { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1; margin-bottom: 4px; }
 .ar-row { display: flex; gap: 8px; font-size: 13px; }
 .ar-row i { font-style: normal; color: #736A87; min-width: 54px; }
 .ar-ticket { border: 2px dashed #1B2A4A; background: #FFF6EC; }
 .ar-ticket-main { padding: 10px 16px; }
-.ar-ticket-route { display: flex; align-items: center; justify-content: space-between; font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; }
-.ar-ticket-route em { font-style: normal; font-size: 12px; color: #E0502F; font-family: 'Inter', sans-serif; }
+.ar-ticket-route { display: flex; align-items: center; justify-content: space-between; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; }
+.ar-ticket-route em { font-style: normal; font-size: 12px; color: #E0502F; font-family: 'Quicksand', sans-serif; }
 .ar-ticket-meta { display: flex; justify-content: space-between; margin-top: 6px; }
 .ar-ticket-meta div { display: flex; flex-direction: column; }
 .ar-ticket-meta i, .ar-form-row i { font-style: normal; font-size: 11px; color: #736A87; }
@@ -863,7 +863,7 @@ export const teensGameStyles = `
 .ar-msg { max-width: 80%; margin: 3px 10px; padding: 5px 10px; border-radius: 12px 12px 12px 3px; background: #fff; font-weight: 600; font-size: 12.5px; box-shadow: 0 1px 3px rgba(27,42,74,0.15); }
 .ar-msg.is-me { margin-left: auto; background: #FFE6DD; border-radius: 12px 12px 3px 12px; }
 .ar-bizcard { padding: 8px 18px; border-left: 8px solid #E0502F; }
-.ar-bc-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; }
+.ar-bc-name { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; }
 .ar-bc-job { color: #E0502F; font-weight: 700; margin-bottom: 3px; }
 .ar-bc-co, .ar-bc-line { font-size: 12.5px; font-weight: 600; }
 .tg-order-col { display: flex; flex-direction: column; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
