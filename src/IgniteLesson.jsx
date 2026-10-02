@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { ABLAZE_A2_LESSONS } from "./ablazeA2Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
-import { CoverBadges } from "./TeensCoverBadges.jsx";
+import { CoverBadges, useBadgePositions, medalDefault, ribbonDefault, eyebrowDefault, badgeAdjustStyles } from "./TeensCoverBadges.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
 import { FitH } from "./FitH.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
@@ -247,6 +247,9 @@ export default function IgniteLesson({ track = "ignite" }) {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
+  // Cover badge editor: open any lesson with ?adjust=1 to drag, resize and rotate the UNIT circle.
+  const adjust = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("adjust");
+  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault({ left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
   useEffect(() => {
     const styleId = "il-styles";
     const existing = document.getElementById(styleId);
@@ -335,7 +338,17 @@ export default function IgniteLesson({ track = "ignite" }) {
           </div>
 
           <div className={`slide-body ${i !== 0 && s.instruction ? "has-instruction" : ""}`}>
-            {i === 0 && <CoverBadges stage={s.stage} showRibbon={false} />}
+            {i === 0 && <CoverBadges stage={s.stage} showRibbon={false} badges={adjust ? badges : undefined} onDragMedal={adjust ? dragMedal : undefined} />}
+            {i === 0 && adjust && (
+              <div className="badge-tools">
+                <button type="button" onClick={() => dragMedal({ size: Math.max(60, badges.medal.size - 6) })}>Smaller</button>
+                <button type="button" onClick={() => dragMedal({ size: Math.min(260, badges.medal.size + 6) })}>Bigger</button>
+                <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot - 3 })}>Rotate left</button>
+                <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot + 3 })}>Rotate right</button>
+                <button type="button" onClick={() => dragMedal({ left: 106, top: 276, size: 104, rot: -6 })}>Reset</button>
+                <span className="bt-values">size {badges.medal.size}, rotate {badges.medal.rot}</span>
+              </div>
+            )}
             {i !== 0 && s.instruction && (
               <div className="slide-instruction">
                 {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
@@ -410,10 +423,14 @@ const styles = `
 .cover-ribbon { display: inline-flex; align-items: center; gap: 10px; height: 44px; margin-bottom: 14px; background: linear-gradient(180deg, #26386A, #1B2A4A); color: #fff; border-radius: 999px; padding: 0 6px 0 18px; box-shadow: 0 5px 0 rgba(10,18,40,0.3), 0 8px 14px rgba(27,42,74,0.2); z-index: 4; }
 .cover-ribbon .cr-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; }
 .cover-ribbon .cr-num { width: 34px; height: 34px; border-radius: 50%; background: var(--coral); display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
-.unit-medal { position: absolute; left: 106px; top: 276px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: 7px solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
-.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; margin-bottom: -6px; padding-left: 0.2em; }
-.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 60px; line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
-.unit-medal.is-long .um-num { font-size: 46px; }
+.unit-medal { position: absolute; left: 106px; top: 276px; width: 104px; height: 104px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A6B, var(--coral-deep)); border: calc(7px * var(--k, 1)) solid #FFD066; box-shadow: 0 10px 20px rgba(27,42,74,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; transform: rotate(-6deg); z-index: 4; }
+.unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(11px * var(--k, 1)); letter-spacing: 0.2em; margin-bottom: calc(-6px * var(--k, 1)); padding-left: 0.2em; }
+.unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(60px * var(--k, 1)); line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
+.unit-medal.is-long .um-num { font-size: calc(46px * var(--k, 1)); }
+.badge-panel { bottom: auto !important; top: 12px; }
+.badge-tools { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 11; display: flex; align-items: center; gap: 6px; background: rgba(20,28,54,0.92); padding: 6px 10px; border-radius: 12px; }
+.badge-tools button { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; color: var(--navy); background: #fff; border: none; border-radius: 8px; padding: 4px 9px; cursor: pointer; }
+.bt-values { font-family: 'Baloo 2', sans-serif; font-size: 11px; color: #fff; margin-left: 4px; }
 .title-h { white-space: nowrap; width: max-content; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; color: var(--navy); margin: 0 0 18px; line-height: 1.15; }
 .title-hl { background: linear-gradient(transparent 50%, rgba(255,208,102,0.9) 50%, rgba(255,208,102,0.9) 90%, transparent 90%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px; margin-left: -10px; }
 .title-h.is-short { font-size: 78px; }
@@ -514,4 +531,4 @@ const styles = `
 .sp-multi img { flex: 1 1 0; min-width: 0; width: auto; height: auto; max-height: 100%; }
 .sp-missing { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6px; border: 2px dashed rgba(224,80,47,0.35); border-radius: 12px; background: rgba(255,255,255,0.5); }
 .sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--coral-deep); line-height: 1.3; }
-` + teensGameStyles + zoomStyles + wrapUpStyles;
+` + teensGameStyles + zoomStyles + wrapUpStyles + badgeAdjustStyles;
