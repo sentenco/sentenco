@@ -9,6 +9,7 @@ const KIDS_LEVELS = {
     name: "Discover",
     tag: "Start here",
     accent: "coral",
+    banner: "/curriculum/a1-banner.png",
     description: "Letters, phonics, and the first words and phrases to say hello, count, and talk about everyday life.",
   },
   A2: {
@@ -16,14 +17,15 @@ const KIDS_LEVELS = {
     name: "Soar",
     tag: "Next step",
     accent: "navy",
+    banner: "/curriculum/a2-banner.png",
     description: "Longer sentences, more tenses, and the independence to handle everyday situations with confidence.",
   },
 };
 
 const AUDIENCES = [
-  { id: "kids", label: "Kids", age: "6–12", kicker: "Kids track · Ages 6 to 12", levels: KIDS_LEVELS },
-  { id: "teens", label: "Teens", age: "13–17", kicker: "Teens track · Ages 13 to 17", levels: TEENS_LEVELS },
-  { id: "adults", label: "Adults", age: "18+", kicker: "Adults track · Ages 18+", levels: ADULTS_LEVELS },
+  { id: "kids", label: "Kids", age: "6–12", dot: "#F2A21E", kicker: "Kids track · Ages 6 to 12", levels: KIDS_LEVELS },
+  { id: "teens", label: "Teens", age: "13–17", dot: "#6C5CE7", kicker: "Teens track · Ages 13 to 17", levels: TEENS_LEVELS },
+  { id: "adults", label: "Adults", age: "18+", dot: "#C4902F", kicker: "Adults track · Ages 18+", levels: ADULTS_LEVELS },
 ];
 
 export default function CurriculumOverview({ onSelectLevel }) {
@@ -79,6 +81,7 @@ export default function CurriculumOverview({ onSelectLevel }) {
                   key={a.id}
                   type="button"
                   className={`co-audience-btn ${audience === a.id ? "is-active" : ""}`}
+                  style={{ "--dot": a.dot }}
                   onClick={() => selectAudience(a.id)}
                 >
                   {a.label} <span className="co-audience-age">{a.age}</span>
@@ -92,23 +95,23 @@ export default function CurriculumOverview({ onSelectLevel }) {
           {levels.map((lv) => (
             <div
               key={lv.code}
-              className={`co-level-card co-level-card--${lv.accent}`}
+              className={`co-row co-row--${lv.accent}`}
+              style={{ "--img": lv.banner ? `url(${lv.banner})` : "none" }}
               onClick={() => openLevel(lv.code)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === "Enter" && openLevel(lv.code)}
             >
-              <span className="co-level-watermark">{lv.code}</span>
-              <div className="co-level-top">
-                <div className="co-level-code">{lv.code}</div>
-                <span className="co-level-tag">{lv.tag}</span>
+              <div className="co-row-ring"><span>{lv.code}</span><small>{lv.tag.split(" ")[0]}</small></div>
+              <div className="co-row-text">
+                <div className="co-row-head">
+                  <span className="co-row-name">{lv.name}</span>
+                  <span className="co-level-tag">{lv.tag}</span>
+                </div>
+                <p className="co-row-desc">{lv.description}</p>
+                <div className="co-row-meta"><b>12</b> units · <b>72</b> lessons</div>
               </div>
-              <div className="co-level-name">{lv.name}</div>
-              <p className="co-level-desc">{lv.description}</p>
-              <div className="co-level-foot">
-                <span className="co-level-units"><b>12</b> units</span>
-                <span className="co-level-cta">View curriculum &rarr;</span>
-              </div>
+              <div className="co-row-go" aria-hidden="true">&rarr;</div>
             </div>
           ))}
         </div>
@@ -138,15 +141,17 @@ const styles = `
 
 .co-stage { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 26px 40px 70px; }
 
-.co-audience-toggle { box-shadow: 0 6px 16px rgba(27,42,74,0.12); display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; margin: 16px 0 0; }
+.co-audience-toggle { display: inline-flex; gap: 2px; padding: 4px; border-radius: 999px; margin: 16px 0 0; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 8px 24px rgba(27,42,74,0.14); }
 .co-audience-btn {
   display: inline-flex; align-items: center; gap: 7px;
   font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 13.5px; color: #6B6E96;
-  background: transparent; border: none; border-radius: 999px; padding: 8px 18px; cursor: pointer;
-  transition: all 0.15s ease;
+  background: transparent; border: none; border-radius: 999px; padding: 8px 20px; cursor: pointer;
+  transition: all 0.2s ease;
 }
 .co-audience-btn .co-audience-age { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.65; }
-.co-audience-btn.is-active { background: #1B2A4A; color: #fff; }
+.co-audience-btn.is-active { background: #fff; color: #1B2A4A; box-shadow: 0 2px 8px rgba(27,42,74,0.18); }
+.co-audience-btn.is-active::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--dot, #1B2A4A); }
+.co-audience-btn:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
 
 .co-banner {
   position: relative; margin-bottom: 32px; aspect-ratio: 2172 / 724; container-type: inline-size; border-radius: 20px; overflow: hidden;
@@ -171,55 +176,43 @@ const styles = `
   .co-banner-in { position: static; padding: 26px 16px 22px; gap: 10px; }
 }
 
-.co-levels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-@media (max-width: 700px) { .co-levels-grid { grid-template-columns: 1fr; } }
+.co-levels-grid { display: flex; flex-direction: column; gap: 16px; }
 
-.co-level-card {
-  background: #fff;
-  border: 1px solid #EDE6F4;
-  border-radius: 18px;
-  padding: 32px 30px 26px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 16px rgba(27,42,74,0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-  outline: none;
+.co-row {
+  position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center;
+  padding: 22px 24px; border-radius: 20px; border: 1px solid #EDE6F4; background: #fff; overflow: hidden; cursor: pointer; outline: none;
+  box-shadow: 0 4px 16px rgba(27,42,74,0.06); transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  --acc: #FF6B4A;
 }
-.co-level-card:hover, .co-level-card:focus-visible { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(27,42,74,0.13); }
-.co-level-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; z-index: 2; }
-.co-level-card::after { content: ""; position: absolute; top: -70px; right: -70px; width: 200px; height: 200px; border-radius: 50%; pointer-events: none; z-index: 0; }
-.co-level-card--coral::before { background: linear-gradient(90deg, #FF6B4A, #FF9273); }
-.co-level-card--coral::after { background: radial-gradient(circle, rgba(255,107,74,0.09), rgba(255,107,74,0) 70%); }
-.co-level-card--coral:hover { border-color: #FF6B4A; }
-.co-level-card--navy::before { background: linear-gradient(90deg, #1B2A4A, #3C5285); }
-.co-level-card--navy::after { background: radial-gradient(circle, rgba(27,42,74,0.08), rgba(27,42,74,0) 70%); }
-.co-level-card--navy:hover { border-color: #1B2A4A; }
-
-.co-level-watermark {
-  position: absolute; top: -20px; right: -4px;
-  font-family: 'Playfair Display', serif; font-weight: 900; font-size: 120px; line-height: 1;
-  letter-spacing: -0.03em; pointer-events: none; z-index: 0;
+.co-row--navy { --acc: #1B2A4A; }
+.co-row::after {
+  content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 52%; background-image: var(--img); background-size: cover; background-position: right center;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 75%); mask-image: linear-gradient(90deg, transparent, #000 75%); opacity: 0.9; transition: opacity 0.3s ease, width 0.3s ease;
 }
-.co-level-card--coral .co-level-watermark { color: rgba(255,107,74,0.07); }
-.co-level-card--navy .co-level-watermark { color: rgba(27,42,74,0.06); }
-
-.co-level-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; position: relative; z-index: 1; }
-.co-level-code { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 34px; }
-.co-level-card--coral .co-level-code { color: #FF6B4A; }
-.co-level-card--navy .co-level-code { color: #1B2A4A; }
-.co-level-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; color: #E0502F; background: #FFE6DD; }
-.co-level-card--navy .co-level-tag { color: #1B2A4A; background: #E7EAF3; }
-
-.co-level-name { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; margin-bottom: 12px; position: relative; z-index: 1; }
-.co-level-desc { font-size: 13.5px; font-weight: 500; color: #6B6E96; line-height: 1.65; margin: 0 0 22px; position: relative; z-index: 1; }
-
-.co-level-foot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #EDE6F4; padding-top: 16px; margin-top: auto; position: relative; z-index: 1; }
-.co-level-units { font-size: 12px; font-weight: 700; color: #6B6E96; }
-.co-level-units b { color: #1B2A4A; font-family: 'Source Serif 4', serif; font-size: 14px; }
-.co-level-cta { font-size: 12.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
-.co-level-card--coral .co-level-cta { color: #FF6B4A; }
-.co-level-card--navy .co-level-cta { color: #1B2A4A; }
+.co-row:hover, .co-row:focus-visible { box-shadow: 0 16px 34px rgba(27,42,74,0.14); border-color: var(--acc); }
+.co-row:hover::after, .co-row:focus-visible::after { opacity: 1; width: 56%; }
+.co-row > * { position: relative; z-index: 1; }
+.co-row-ring {
+  width: 86px; height: 86px; border-radius: 50%; border: 3px solid var(--acc); color: var(--acc); background: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1;
+}
+.co-row-ring span { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 30px; }
+.co-row-ring small { font-size: 8px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 3px; opacity: 0.8; }
+.co-row-text { max-width: 360px; }
+.co-row-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.co-row-name { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #1B2A4A; }
+.co-level-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; color: #E0502F; background: #FFE6DD; }
+.co-row--navy .co-level-tag { color: #1B2A4A; background: #E7EAF3; }
+.co-row-desc { font-size: 13px; font-weight: 500; color: #6B6E96; line-height: 1.55; margin: 0; }
+.co-row-meta { margin-top: 10px; font-size: 12px; font-weight: 700; color: #6B6E96; }
+.co-row-meta b { color: #1B2A4A; font-family: 'Source Serif 4', serif; font-size: 14px; }
+.co-row-go { width: 46px; height: 46px; border-radius: 50%; background: #1B2A4A; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 19px; transition: background 0.2s ease, transform 0.2s ease; }
+.co-row:hover .co-row-go, .co-row:focus-visible .co-row-go { background: var(--acc); transform: translateX(3px); }
+@media (max-width: 700px) {
+  .co-row { grid-template-columns: auto 1fr; gap: 14px; padding: 18px 16px; }
+  .co-row::after { width: 100%; opacity: 0.25; -webkit-mask-image: none; mask-image: none; }
+  .co-row:hover::after { width: 100%; opacity: 0.35; }
+  .co-row-ring { width: 64px; height: 64px; } .co-row-ring span { font-size: 22px; }
+  .co-row-go { display: none; }
+}
 `;

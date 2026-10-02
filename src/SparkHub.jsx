@@ -108,11 +108,12 @@ const CSS = `
 .spkh-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(28px, 5.2cqw, 46px); line-height: 1; margin: 0; color: #1B2A4A; }
 .spkh-sub { color: #3F4A6E; font-weight: 600; font-size: clamp(12px, 1.7cqw, 15px); line-height: 1.5; margin: 0; max-width: 54cqw; }
 
-.spkh-aud { display: inline-flex; background: #fff; border: 1px solid #EDE6F4; border-radius: 999px; padding: 4px; gap: 4px; box-shadow: 0 6px 16px rgba(27,42,74,0.12); }
-.spkh-aud-btn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; border: 0; background: transparent; border-radius: 999px; padding: 7px 22px; cursor: pointer; color: #6B6E96; }
-.spkh-aud-btn.is-on.is-kids { background: #F2B300; color: #1B2A4A; }
-.spkh-aud-btn.is-on.is-teens { background: #6C5CE7; color: #fff; }
-.spkh-aud-btn.is-on.is-adults { background: #C4902F; color: #fff; }
+.spkh-aud { display: inline-flex; gap: 2px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 8px 24px rgba(27,42,74,0.14); }
+.spkh-aud-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; border: 0; background: transparent; border-radius: 999px; padding: 7px 22px; cursor: pointer; color: #6B6E96; transition: all 0.2s ease; }
+.spkh-aud-btn.is-on { background: #fff; color: #1B2A4A; box-shadow: 0 2px 8px rgba(27,42,74,0.18); }
+.spkh-aud-btn.is-on::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #F2B300; }
+.spkh-aud-btn.is-on.is-teens::before { background: #6C5CE7; }
+.spkh-aud-btn.is-on.is-adults::before { background: #C4902F; }
 .spkh-aud-btn:focus-visible, .spkh-go:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
 
 .spkh-row { display: grid; grid-template-columns: 140px 1fr 1fr; gap: 18px; align-items: stretch; margin-bottom: 20px; }
