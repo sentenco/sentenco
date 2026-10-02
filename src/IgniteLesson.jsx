@@ -444,26 +444,26 @@ const styles = `
 .avatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; color: #fff; }
 .avatar.navy { background: var(--navy); }
 .avatar.coral { background: var(--coral); }
-.bubble { background: #fff; border-radius: 18px; padding: 13px 18px; font-weight: 700; font-size: 16px; color: var(--ink); text-align: left; box-shadow: 0 6px 14px rgba(27,42,74,0.08); }
+.bubble { background: #fff; border: 3px solid var(--navy); border-radius: 18px; padding: 13px 18px; font-weight: 700; font-size: 16px; line-height: 1.3; color: var(--navy); text-align: left; box-shadow: 0 4px 0 var(--navy); }
 .bubble.left { border-radius: 18px 18px 18px 4px; }
-.bubble.right { border-radius: 18px 18px 4px 18px; }
+.bubble.right { border-radius: 18px 18px 4px 18px; box-shadow: 0 4px 0 var(--coral); }
 .bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
 .bubble-col.is-roomy { gap: 18px; max-width: 640px; }
 .bubble-col.is-roomy .avatar { width: 52px; height: 52px; font-size: 20px; }
-.bubble-col.is-roomy .bubble { font-size: 26px; padding: 18px 28px; border-radius: 24px 24px 24px 6px; }
+.bubble-col.is-roomy .bubble { font-size: 21px; padding: 15px 24px; border-radius: 24px 24px 24px 6px; }
 .bubble-col.is-roomy .brow.me .bubble { border-radius: 24px 24px 6px 24px; }
 
 .mini-log { display: flex; flex-direction: column; gap: 6px; max-width: 320px; margin: 0 auto; text-align: left; }
 .mini-pair { display: flex; flex-direction: column; gap: 4px; }
 .mini-pair + .mini-pair { margin-top: 4px; }
-.mini-row { border-radius: 16px; padding: 10px 16px; max-width: 84%; background: #fff; box-shadow: 0 6px 14px rgba(27,42,74,0.08); }
+.mini-row { border-radius: 16px; padding: 10px 16px; max-width: 84%; background: #fff; border: 3px solid var(--navy); box-shadow: 0 4px 0 var(--navy); }
 .mini-row.mini-q { align-self: flex-start; border-radius: 16px 16px 16px 4px; }
-.mini-row.mini-a { align-self: flex-end; border-radius: 16px 16px 4px 16px; }
+.mini-row.mini-a { align-self: flex-end; border-radius: 16px 16px 4px 16px; box-shadow: 0 4px 0 var(--coral); }
 .mini-row span { font-weight: 700; font-size: 12.5px; color: var(--ink); }
 .mini-log.is-roomy { max-width: 600px; gap: 12px; }
 .mini-log.is-roomy .mini-pair { gap: 6px; }
 .mini-log.is-roomy .mini-row { padding: 16px 26px; }
-.mini-log.is-roomy .mini-row span { font-size: 24px; }
+.mini-log.is-roomy .mini-row span { font-size: 20px; line-height: 1.3; }
 .spotlight-pic { display: flex; justify-content: center; margin: 4px 0 14px; }
 .spotlight-pic .sp-tile { border-radius: 20px; box-shadow: 0 8px 0 rgba(27,42,74,0.1), 0 16px 28px rgba(27,42,74,0.14); }
 
