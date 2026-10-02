@@ -435,11 +435,11 @@ const styles = `
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(11px * var(--k, 1)); letter-spacing: 0.2em; margin-bottom: calc(-6px * var(--k, 1)); padding-left: 0.2em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: calc(60px * var(--k, 1)); line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: calc(46px * var(--k, 1)); }
-.badge-panel { bottom: auto !important; top: 12px; }
-.badge-tools { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 11; display: flex; align-items: center; gap: 6px; background: rgba(20,28,54,0.92); padding: 6px 10px; border-radius: 12px; }
-.badge-tools button { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; color: var(--navy); background: #fff; border: none; border-radius: 8px; padding: 4px 9px; cursor: pointer; }
+.badge-panel { display: none; }
+.badge-tools { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); z-index: 11; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px; width: 420px; background: rgba(20,28,54,0.94); padding: 6px 8px; border-radius: 12px; }
+.badge-tools button { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; color: var(--navy); background: #fff; border: none; border-radius: 8px; padding: 4px 8px; cursor: pointer; white-space: nowrap; }
 .badge-tools .bt-copy { background: #FFD066; }
-.bt-values { font-family: 'Baloo 2', sans-serif; font-size: 11px; color: #fff; margin-left: 4px; }
+.bt-values { flex-basis: 100%; text-align: center; font-family: 'Baloo 2', sans-serif; font-size: 12px; color: #fff; white-space: nowrap; }
 .title-h { white-space: nowrap; width: max-content; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; color: var(--navy); margin: 0 0 18px; line-height: 1.15; }
 .title-hl { background: linear-gradient(transparent 50%, rgba(255,208,102,0.9) 50%, rgba(255,208,102,0.9) 90%, transparent 90%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px; margin-left: -10px; }
 .title-h.is-short { font-size: 78px; }
