@@ -412,7 +412,7 @@ const styles = `
 .close-btn { position: absolute; top: 14px; right: 14px; z-index: 4; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(27,42,74,0.15); color: var(--navy); }
 
 .slide-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px 0; position: relative; z-index: 2; }
-.brand-bubble { display: flex; align-items: center; gap: 0; background: #fff; border-radius: 999px; padding: 4px 14px 4px 4px; box-shadow: 0 2px 8px rgba(27,42,74,0.15); }
+.brand-bubble { display: flex; align-items: center; gap: 0; margin-top: -20px; background: #FFF6EC; border-radius: 0 0 16px 16px; padding: 9px 15px 7px 8px; border-bottom: 4px solid var(--coral); box-shadow: 0 6px 12px rgba(10,18,40,0.25); }
 .brand-logo { width: 32px; height: 32px; margin: -5px -8px -5px -4px; object-fit: contain; }
 .brand-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); }
 .pennant { background: #fff; border-radius: 999px; padding: 6px 16px; box-shadow: 0 2px 8px rgba(27,42,74,0.15); }
