@@ -90,9 +90,9 @@ export function WheelBlock({ heading, items = [], question, size = 176 }) {
         <div className="tg-panel">
           {got ? (
             <div className="tg-result-word">{got.label}</div>
-          ) : (
-            <div className="tg-prompt">{spinning ? "Spinning..." : (question || "Spin for a topic")}</div>
-          )}
+          ) : spinning ? (
+            <div className="tg-prompt">Spinning...</div>
+          ) : null}
           <button type="button" className="tg-btn tg-btn--lg" onClick={spin} disabled={spinning}>{result === null && !spinning ? "Spin!" : "Spin again"}</button>
         </div>
       </div>
@@ -224,7 +224,6 @@ export function SpotErrorBlock({ heading, rounds = [] }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      <p className="slide-p">Which one has the mistake?</p>
       <div className="tg-spot-row">
         <button type="button" className={`tg-spot-card ${picked !== null ? (r.wrongSide === "a" ? "is-wrong" : "is-right") : ""}`} onClick={() => pick("a")} disabled={picked !== null}>{r.a}</button>
         <button type="button" className={`tg-spot-card ${picked !== null ? (r.wrongSide === "b" ? "is-wrong" : "is-right") : ""}`} onClick={() => pick("b")} disabled={picked !== null}>{r.b}</button>
@@ -260,7 +259,6 @@ export function OrderUpBlock({ heading, items = [], prompt }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      {prompt && <p className="slide-p">{prompt}</p>}
       <div className="tg-order-col">
         {display.map((i) => (
           <button key={i} type="button" className={`tg-order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""}`} onClick={() => pick(i)}>
