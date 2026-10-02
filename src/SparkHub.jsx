@@ -4,90 +4,6 @@ import { SPARK_KIDS_LIST as KIDS_LESSONS } from "./sparkKidsData";
 import { SPARK_TEENS_LIST as TEENS_LESSONS } from "./sparkTeensData";
 import { SPARK_ADULTS_LIST as ADULTS_LESSONS } from "./sparkAdultsData";
 
-const ICON_PROPS = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
-
-function QuestIcon({ title }) {
-  if (title === "Picture Quest") {
-    return (
-      <svg {...ICON_PROPS}>
-        <rect x="3" y="4" width="18" height="14" rx="2" />
-        <circle cx="8.5" cy="9.5" r="1.5" />
-        <path d="M21 15l-5-4-4 3-3-2-6 5" />
-      </svg>
-    );
-  }
-  if (title === "Story Quest") {
-    return (
-      <svg {...ICON_PROPS}>
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z" />
-        <path d="M8 8h8M8 12h5" />
-      </svg>
-    );
-  }
-  if (title === "Action Quest") {
-    return (
-      <svg {...ICON_PROPS}>
-        <circle cx="12" cy="5" r="2" />
-        <path d="M12 7v6l-3 7M12 13l3 7M8 10l-3 3M16 10l3 3" />
-      </svg>
-    );
-  }
-  if (title === "Football") {
-    return (
-      <svg {...ICON_PROPS}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7l3.5 2.5-1.3 4H9.8l-1.3-4z" />
-      </svg>
-    );
-  }
-  if (title === "School") {
-    return (
-      <svg {...ICON_PROPS}>
-        <path d="M2 9l10-5 10 5-10 5z" />
-        <path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
-      </svg>
-    );
-  }
-  if (title === "Personality Types") {
-    return (
-      <svg {...ICON_PROPS}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 3v18M3 12h9" />
-      </svg>
-    );
-  }
-  if (title === "Travel & Adventure") {
-    return (
-      <svg {...ICON_PROPS}>
-        <path d="M3 12l18-8-8 18-2-8-8-2z" />
-      </svg>
-    );
-  }
-  if (title === "Food & Restaurants") {
-    return (
-      <svg {...ICON_PROPS}>
-        <path d="M6 3v7a2 2 0 0 0 2 2v9M6 3v9M9 3v7" />
-        <path d="M16 3c-1.5 0-2 2-2 4.5S15 12 16 12v9" />
-      </svg>
-    );
-  }
-  if (["Animal Friends", "Rainbow Colors", "My Day", "Yummy Food", "Yesterday's Adventure", "My Dream Room", "Who Am I?", "My Family", "School Life", "Free Time", "Last Weekend", "Dream Trip", "Meet and Greet", "Eating Out", "Getting Around", "Work Life", "My Last Trip"].includes(title)) {
-    return (
-      <svg {...ICON_PROPS}>
-        <path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" />
-      </svg>
-    );
-  }
-  return (
-    <svg {...ICON_PROPS}>
-      <circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" />
-      <path d="M3 20c0-3 2.7-5 6-5s6 2 6 5" /><path d="M14.5 15.5c2.5 0 4.5 1.8 4.5 4.5" />
-    </svg>
-  );
-}
-
-// SPARK trial lessons open as a standalone popup player, matching the
-// FORGE/ASCEND/SHIFT chrome-less window.open pattern.
 function openLesson(path) {
   const screenW = window.screen.availWidth || 1600;
   const screenH = window.screen.availHeight || 900;
@@ -103,44 +19,21 @@ function openLesson(path) {
   );
 }
 
-function openGuide(path) {
-  const screenW = window.screen.availWidth || 1600;
-  const screenH = window.screen.availHeight || 900;
-  const w = Math.min(640, screenW - 40);
-  const h = Math.min(840, screenH - 40);
-  const left = Math.max(0, Math.floor((screenW - w) / 2));
-  const top = Math.max(0, Math.floor((screenH - h) / 2));
-
-  window.open(
-    path,
-    "sentencoSparkGuide",
-    `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
-  );
-}
-
 const AUDIENCES = {
-  kids: {
-    label: "Kids",
-    lessons: KIDS_LESSONS,
-    blurb: "Six standalone 20-minute classes for kids (two beginner, two intermediate, two advanced). Each starts with 5 minutes of getting to know the child and why they want English, then 15 minutes of lesson.",
-    lessonPath: (id) => `/library/spark/${id}`,
-    guidePath: null,
-  },
-  teens: {
-    label: "Teens",
-    lessons: TEENS_LESSONS,
-    blurb: "Six standalone 20-minute classes for teens (two beginner, two intermediate, two advanced). Each starts with 5 minutes of getting to know the student and why they want English, then 15 minutes of lesson.",
-    lessonPath: (id) => `/library/spark/teens/${id}`,
-    guidePath: null,
-  },
-  adults: {
-    label: "Adults",
-    lessons: ADULTS_LESSONS,
-    blurb: "Six standalone 20-minute classes for adults (two beginner, two intermediate, two advanced). Each starts with 5 minutes of getting to know the student and why they want English, then 15 minutes of lesson.",
-    lessonPath: (id) => `/library/spark/adults/${id}`,
-    guidePath: null,
-  },
+  kids: { label: "Kids", lessons: KIDS_LESSONS, art: "/curriculum/spark-kids-shared/title-bg.jpg", lessonPath: (id) => `/library/spark/${id}` },
+  teens: { label: "Teens", lessons: TEENS_LESSONS, art: "/curriculum/spark-teens-shared/title-bg.jpg", lessonPath: (id) => `/library/spark/teens/${id}` },
+  adults: { label: "Adults", lessons: ADULTS_LESSONS, art: "/curriculum/spark-adults-shared/title-bg.jpg", lessonPath: (id) => `/library/spark/adults/${id}` },
 };
+
+const LEVELS = [
+  { key: "Beginner", stars: "★", note: "First words and simple sentences" },
+  { key: "Intermediate", stars: "★★", note: "Longer answers and everyday talk" },
+  { key: "Advanced", stars: "★★★", note: "Stories, opinions and reasons" },
+];
+
+function Seal() {
+  return <div className="spkh-seal"><i>SPARKS</i><b>CLASS</b></div>;
+}
 
 export default function SparkHub() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -160,236 +53,96 @@ export default function SparkHub() {
   return (
     <div className="spkh-shell">
       <style>{CSS}</style>
-      <div className="spkh-blob spkh-blob--a" />
-      <div className="spkh-blob spkh-blob--b" />
-
       <div className="spkh-stage">
-        <div className="spkh-hero-band">
-          <div className="spkh-hero-kicker-row">
-            <span className="spkh-hero-rule" />
-            <span className="spkh-hero-kicker">Trial classes, kids, teens &amp; adults</span>
-            <span className="spkh-hero-rule" />
+        <div className="spkh-top">
+          <div>
+            <div className="spkh-kicker">Library · Sparks Class</div>
+            <h1 className="spkh-title">Sparks Class</h1>
+            <p className="spkh-sub">One class, 20 minutes: 5 minutes getting to know you, 15 minutes of lesson.<br />Pick who it is for, then pick a level.</p>
           </div>
-          <h1 className="spkh-title">Spark</h1>
-          <p className="spkh-hero-blurb">{config.blurb}</p>
-
-          <div className="spkh-audience-toggle">
+          <div className="spkh-aud" role="tablist" aria-label="Audience">
             {Object.entries(AUDIENCES).map(([key, a]) => (
-              <button
-                key={key}
-                type="button"
-                className={`spkh-audience-btn ${audience === key ? "is-active" : ""}`}
-                onClick={() => selectAudience(key)}
-              >
+              <button key={key} type="button" role="tab" aria-selected={audience === key} className={`spkh-aud-btn is-${key} ${audience === key ? "is-on" : ""}`} onClick={() => selectAudience(key)}>
                 {a.label}
               </button>
             ))}
           </div>
         </div>
 
-        <div className="spkh-lessons-grid">
-          {config.lessons.map((lesson) => (
-            <div key={lesson.id} className="spkh-lesson-card">
-              <div className="spkh-lesson-top">
-                <span className="spkh-lesson-badge">{lesson.code}</span>
-                <span className="spkh-lesson-length">{lesson.length}</span>
-              </div>
-              <div className="spkh-lesson-icon"><QuestIcon title={lesson.title} /></div>
-              <h3 className="spkh-lesson-title">{lesson.title}</h3>
-              <p className="spkh-lesson-desc">{lesson.coreAim}</p>
-              <div className="spkh-lesson-foot">
-                {config.guidePath ? (
-                  <button type="button" className="spkh-lesson-guidebtn" onClick={() => openGuide(config.guidePath(lesson.id))}>
-                    Guide
-                  </button>
-                ) : <span />}
-                <button type="button" className="spkh-lesson-startbtn" onClick={() => openLesson(config.lessonPath(lesson.id))}>
-                  Start &rarr;
-                </button>
-              </div>
+        {LEVELS.map((lv) => (
+          <div className="spkh-row" key={lv.key}>
+            <div className="spkh-lvl">
+              <div className="spkh-lvl-stars">{lv.stars}</div>
+              <h3>{lv.key}</h3>
+              <p>{lv.note}</p>
             </div>
-          ))}
-
-          <div className="spkh-lesson-card spkh-lesson-card--ghost">
-            <div className="spkh-lesson-icon spkh-lesson-icon--ghost">+</div>
-            <h3 className="spkh-lesson-title spkh-lesson-title--ghost">More quests coming</h3>
-            <p className="spkh-lesson-desc">New trial lesson themes get added here as they're built.</p>
+            {config.lessons.filter((l) => l.level === lv.key).map((lesson) => (
+              <div className="spkh-poster" key={lesson.id}>
+                <div className="spkh-art" style={{ backgroundImage: `url(${config.art})` }}>
+                  <Seal />
+                  <h3><span className="spkh-hl">{lesson.title}</span></h3>
+                </div>
+                <div className="spkh-body">
+                  <p>{lesson.coreAim}</p>
+                  <div className="spkh-foot">
+                    <span className="spkh-chip">5 + 15 min</span>
+                    <button type="button" className="spkh-go" onClick={() => openLesson(config.lessonPath(lesson.id))}>Start &rarr;</button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 }
 
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&family=Source+Serif+4:wght@500;600;700&family=Inter:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap');
 
-.spkh-shell {
-  min-height: 100%;
-  width: 100%;
-  flex-shrink: 0;
-  background: #FFFCF6;
-  color: #1B2A4A;
-  font-family: 'Inter', sans-serif;
-  position: relative;
-  overflow: hidden;
-}
+.spkh-shell { min-height: 100%; width: 100%; flex-shrink: 0; background: #FFFCF6; color: #1B2A4A; font-family: 'Quicksand', sans-serif; }
 .spkh-shell * { box-sizing: border-box; }
+.spkh-stage { max-width: 1040px; margin: 0 auto; padding: 34px 34px 70px; }
 
-.spkh-blob { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
-.spkh-blob--a { width: 420px; height: 420px; top: -180px; right: -140px; background: rgba(255,107,74,0.08); }
-.spkh-blob--b { width: 460px; height: 460px; bottom: -220px; left: -160px; background: rgba(27,42,74,0.06); }
+.spkh-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
+.spkh-kicker { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #E0502F; }
+.spkh-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; margin: 2px 0 0; color: #1B2A4A; }
+.spkh-sub { color: #6B6E96; font-weight: 600; font-size: 14px; line-height: 1.5; margin: 8px 0 0; }
 
-.spkh-stage { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 30px 40px 70px; }
+.spkh-aud { display: inline-flex; background: #fff; border: 1px solid #EDE6F4; border-radius: 999px; padding: 4px; gap: 4px; }
+.spkh-aud-btn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; border: 0; background: transparent; border-radius: 999px; padding: 7px 22px; cursor: pointer; color: #6B6E96; }
+.spkh-aud-btn.is-on.is-kids { background: #F2B300; color: #1B2A4A; }
+.spkh-aud-btn.is-on.is-teens { background: #6C5CE7; color: #fff; }
+.spkh-aud-btn.is-on.is-adults { background: #C4902F; color: #fff; }
+.spkh-aud-btn:focus-visible, .spkh-go:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
 
-.spkh-hero-band {
-  background: #FFE6DD;
-  border-radius: 16px;
-  padding: 22px 32px 24px;
-  text-align: center;
-  margin-bottom: 32px;
-}
-.spkh-hero-kicker-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 4px; }
-.spkh-hero-rule { flex: 0 1 48px; height: 1px; background: rgba(27,42,74,0.22); }
-.spkh-hero-kicker {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 700;
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #E0502F;
-}
-.spkh-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: clamp(28px, 4vw, 38px);
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #1B2A4A;
-  margin: 4px 0 12px;
-  line-height: 1;
-}
-.spkh-hero-blurb {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: #6B6E96;
-  margin: 0 auto 18px;
-  max-width: 560px;
-  line-height: 1.6;
-}
+.spkh-row { display: grid; grid-template-columns: 140px 1fr 1fr; gap: 18px; align-items: stretch; margin-bottom: 20px; }
+.spkh-lvl { border-radius: 18px; background: #1B2A4A; color: #fff; padding: 16px 14px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.spkh-lvl-stars { color: #FFD84D; font-size: 20px; letter-spacing: 3px; }
+.spkh-lvl h3 { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; margin: 4px 0 0; }
+.spkh-lvl p { margin: 6px 0 0; font-size: 12px; opacity: 0.8; font-weight: 600; line-height: 1.35; }
 
-.spkh-audience-toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; }
-.spkh-audience-btn {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 600;
-  font-size: 13px;
-  color: #6B6E96;
-  background: transparent;
-  border: none;
-  border-radius: 999px;
-  padding: 7px 20px;
-  cursor: pointer;
-}
-.spkh-audience-btn.is-active { background: #FF6B4A; color: #fff; }
+.spkh-poster { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 22px rgba(27,42,74,0.12); border: 1px solid #EDE6F4; display: flex; flex-direction: column; }
+.spkh-art { position: relative; height: 150px; display: flex; align-items: center; justify-content: flex-end; padding: 0 16px; background-size: cover; background-position: left center; }
+.spkh-art h3 { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.12; width: 56%; text-align: left; margin: 0; color: #1B2A4A; }
+.spkh-hl { background: linear-gradient(transparent 55%, #FFD66B 55%, #FFD66B 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.spkh-seal { position: absolute; left: 12px; bottom: 12px; width: 62px; height: 62px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; color: #1B2A4A; line-height: 1; background: linear-gradient(145deg, #FFD84D, #F2A900); clip-path: polygon(50% 0, 58% 8%, 69% 4%, 74% 14%, 85% 15%, 86% 26%, 96% 31%, 92% 42%, 100% 50%, 92% 58%, 96% 69%, 86% 74%, 85% 85%, 74% 86%, 69% 96%, 58% 92%, 50% 100%, 42% 92%, 31% 96%, 26% 86%, 15% 85%, 14% 74%, 4% 69%, 8% 58%, 0 50%, 8% 42%, 4% 31%, 14% 26%, 15% 15%, 26% 14%, 31% 4%, 42% 8%); }
+.spkh-seal i { font-style: normal; font-size: 7px; letter-spacing: 0.14em; }
+.spkh-seal b { font-size: 14px; }
+.spkh-body { padding: 12px 16px 14px; display: flex; flex-direction: column; flex: 1; }
+.spkh-body p { margin: 0 0 10px; font-size: 13px; color: #6B6E96; font-weight: 600; line-height: 1.4; }
+.spkh-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+.spkh-chip { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; padding: 3px 10px; border-radius: 999px; background: #FFE6DD; color: #E0502F; }
+.spkh-go { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; border: 0; border-radius: 999px; background: #FF6B4A; color: #fff; padding: 8px 18px; cursor: pointer; box-shadow: 0 3px 0 rgba(150,40,15,0.3); }
 
-.spkh-lessons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-
-.spkh-lesson-card {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  background: #FFFFFF;
-  border: 1px solid #EDE6F4;
-  border-radius: 16px;
-  padding: 16px 16px 14px;
-  min-height: 230px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(27,42,74,0.06);
-}
-.spkh-lesson-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: #FF6B4A; }
-.spkh-lesson-card--ghost::before { background: transparent; }
-
-.spkh-lesson-top { display: flex; align-items: center; justify-content: space-between; }
-.spkh-lesson-badge {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 600;
-  font-size: 11.5px;
-  color: #E0502F;
-  background: #FFE6DD;
-  border-radius: 999px;
-  padding: 3px 9px;
-}
-.spkh-lesson-length {
-  font-weight: 700;
-  font-size: 10.5px;
-  color: #6B6E96;
-}
-
-.spkh-lesson-icon {
-  width: 100%;
-  height: 50px;
-  background: #FFE6DD;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FF6B4A;
-}
-.spkh-lesson-icon--ghost { color: #D9CFE0; font-family: 'Source Serif 4', serif; font-size: 26px; background: transparent; border: 2px dashed #EDE6F4; }
-
-.spkh-lesson-title {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 600;
-  font-size: 15.5px;
-  color: #1B2A4A;
-  margin: 0;
-}
-.spkh-lesson-title--ghost { color: #A6A2C0; }
-.spkh-lesson-desc {
-  font-weight: 500;
-  font-size: 12px;
-  color: #6B6E96;
-  line-height: 1.4;
-  margin: 0;
-}
-
-.spkh-lesson-foot {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 8px;
-  border-top: 1px solid #EDE6F4;
-  gap: 6px;
-}
-.spkh-lesson-guidebtn {
-  font-weight: 700;
-  font-size: 10.5px;
-  color: #1B2A4A;
-  background: #F3F0FB;
-  border: 1px solid #EDE6F4;
-  border-radius: 999px;
-  padding: 5px 10px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.spkh-lesson-startbtn {
-  font-weight: 700;
-  font-size: 11px;
-  color: #fff;
-  background: #FF6B4A;
-  border: none;
-  border-radius: 999px;
-  padding: 5px 11px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-@media (max-width: 900px) {
-  .spkh-lessons-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) {
+  .spkh-row { grid-template-columns: 1fr 1fr; }
+  .spkh-lvl { grid-column: 1 / -1; flex-direction: row; gap: 12px; justify-content: flex-start; align-items: center; text-align: left; padding: 10px 16px; }
+  .spkh-lvl p { margin: 0; }
 }
 @media (max-width: 560px) {
-  .spkh-lessons-grid { grid-template-columns: 1fr; }
+  .spkh-stage { padding: 24px 16px 60px; }
+  .spkh-row { grid-template-columns: 1fr; }
 }
 `;
