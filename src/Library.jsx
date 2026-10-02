@@ -2374,13 +2374,10 @@ export default function Library() {
         ) : category === "Customized Lessons" ? (
           <div className="cl-page">
             <div className="cl-hero">
-              <div className="cl-hero-kicker-row">
-                <span className="cl-hero-rule" />
-                <span className="cl-hero-kicker">Sentenco &middot; Custom Lessons</span>
-                <span className="cl-hero-rule" />
+              <div className="cl-hero-in">
+                <h1 className="cl-title">Custom Lessons</h1>
+                <p className="cl-sub">Need something the library doesn't have yet, like your job, a trip, or the exact words you asked about? Tell us who it's for and we'll build a lesson around them.</p>
               </div>
-              <h1 className="cl-title">Custom Lessons</h1>
-              <p className="cl-sub">Sometimes a student needs something the library doesn't have yet, their job, their upcoming trip, the exact words they asked about. Tell us who it's for, and we'll build it around them.</p>
             </div>
 
             <div className="cl-req">
@@ -3255,22 +3252,21 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .cl-page { width: 100%; max-width: 1040px; margin: 0 auto; padding: clamp(10px, 1.6vw, 18px) 0 40px; }
 
 .cl-hero {
-  background: #FFE6DD; border-radius: 18px; padding: 30px 36px 26px; text-align: center;
-  margin-bottom: 26px; position: relative; overflow: hidden;
+  position: relative; margin-bottom: 26px; aspect-ratio: 2172 / 724; container-type: inline-size; border-radius: 18px; overflow: hidden;
+  background-color: #FFE6DD; background-image: url(/curriculum/custom-banner.png), linear-gradient(135deg, #FFE6DD 0%, #FFF1D2 100%);
+  background-size: cover, cover; background-position: center, center; background-repeat: no-repeat;
 }
-.cl-hero::after {
-  content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%); pointer-events: none;
-}
-.cl-hero-kicker-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 6px; position: relative; z-index: 1; }
-.cl-hero-rule { flex: 0 1 48px; height: 1px; background: rgba(27,42,74,0.22); }
-.cl-hero-kicker { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #E0502F; }
+.cl-hero-in { position: absolute; inset: 0; padding: 1.5cqw 4cqw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4cqw; text-align: center; }
 .cl-title {
-  font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(28px, 4vw, 36px);
-  letter-spacing: 0.01em; text-transform: uppercase; color: #1B2A4A; margin: 6px 0 12px; line-height: 1;
-  position: relative; z-index: 1;
+  font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(24px, 4.8cqw, 42px);
+  letter-spacing: 0.01em; text-transform: uppercase; color: #1B2A4A; margin: 0; line-height: 1;
 }
-.cl-sub { font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 500; color: #6B6E96; max-width: 520px; margin: 0 auto; line-height: 1.6; position: relative; z-index: 1; }
+.cl-sub { font-family: 'Inter', sans-serif; font-size: clamp(11px, 1.6cqw, 14px); font-weight: 600; color: #3F4A6E; max-width: 50cqw; margin: 0; line-height: 1.55; }
+@media (max-width: 560px) {
+  .cl-hero { aspect-ratio: auto; background-image: linear-gradient(rgba(255,244,236,0.9), rgba(255,244,236,0.9)), url(/curriculum/custom-banner.png); }
+  .cl-hero-in { position: static; padding: 26px 18px 24px; gap: 10px; }
+  .cl-sub { max-width: 100%; }
+}
 
 .cl-req {
   background: #fff; border: 1px solid #EDE6F4; border-radius: 16px; overflow: hidden;
