@@ -54,12 +54,9 @@ export default function SparkHub() {
     <div className="spkh-shell">
       <style>{CSS}</style>
       <div className="spkh-stage">
-        <div className="spkh-top">
-          <div>
-            <div className="spkh-kicker">Library · Sparks Class</div>
-            <h1 className="spkh-title">Sparks Class</h1>
-            <p className="spkh-sub">One class, 20 minutes: 5 minutes getting to know you, 15 minutes of lesson.<br />Pick who it is for, then pick a level.</p>
-          </div>
+        <div className="spkh-banner">
+          <h1 className="spkh-title">Sparks Class</h1>
+          <p className="spkh-sub">New here? A Sparks Class is a short 20-minute lesson you can take on its own. We start with a quick chat to get to know you and hear why you want to learn English, then jump into something fun. Pick your age group and a level that feels right, and let's go!</p>
           <div className="spkh-aud" role="tablist" aria-label="Audience">
             {Object.entries(AUDIENCES).map(([key, a]) => (
               <button key={key} type="button" role="tab" aria-selected={audience === key} className={`spkh-aud-btn is-${key} ${audience === key ? "is-on" : ""}`} onClick={() => selectAudience(key)}>
@@ -105,12 +102,12 @@ const CSS = `
 .spkh-shell * { box-sizing: border-box; }
 .spkh-stage { max-width: 1040px; margin: 0 auto; padding: 34px 34px 70px; }
 
-.spkh-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
-.spkh-kicker { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #E0502F; }
-.spkh-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; margin: 2px 0 0; color: #1B2A4A; }
-.spkh-sub { color: #6B6E96; font-weight: 600; font-size: 14px; line-height: 1.5; margin: 8px 0 0; }
+.spkh-banner { position: relative; margin-bottom: 28px; padding: 34px 40px 30px; min-height: 248px; border-radius: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; overflow: hidden;
+  background-color: #FFE6DD; background-image: url(/curriculum/spark-banner.png), linear-gradient(135deg, #FFE6DD 0%, #FFF1D2 100%); background-size: cover, cover; background-position: center, center; background-repeat: no-repeat; }
+.spkh-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; margin: 0; color: #1B2A4A; }
+.spkh-sub { color: #3F4A6E; font-weight: 600; font-size: 14.5px; line-height: 1.6; margin: 0; max-width: 560px; }
 
-.spkh-aud { display: inline-flex; background: #fff; border: 1px solid #EDE6F4; border-radius: 999px; padding: 4px; gap: 4px; }
+.spkh-aud { display: inline-flex; background: #fff; border: 1px solid #EDE6F4; border-radius: 999px; padding: 4px; gap: 4px; box-shadow: 0 6px 16px rgba(27,42,74,0.12); }
 .spkh-aud-btn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; border: 0; background: transparent; border-radius: 999px; padding: 7px 22px; cursor: pointer; color: #6B6E96; }
 .spkh-aud-btn.is-on.is-kids { background: #F2B300; color: #1B2A4A; }
 .spkh-aud-btn.is-on.is-teens { background: #6C5CE7; color: #fff; }
@@ -143,6 +140,8 @@ const CSS = `
 }
 @media (max-width: 560px) {
   .spkh-stage { padding: 24px 16px 60px; }
+  .spkh-banner { padding: 26px 18px 24px; }
+  .spkh-title { font-size: 34px; }
   .spkh-row { grid-template-columns: 1fr; }
 }
 `;
