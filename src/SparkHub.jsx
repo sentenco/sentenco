@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SPARK_KIDS_LIST as KIDS_LESSONS } from "./sparkKidsData";
-import TEENS_LESSONS from "./sparkTeensTracks";
+import { SPARK_TEENS_LIST as TEENS_LESSONS } from "./sparkTeensData";
 import ADULTS_LESSONS from "./sparkAdultsTracks";
 
 const ICON_PROPS = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
@@ -71,7 +71,7 @@ function QuestIcon({ title }) {
       </svg>
     );
   }
-  if (["Animal Friends", "Rainbow Colors", "My Day", "Yummy Food", "Yesterday's Adventure", "My Dream Room"].includes(title)) {
+  if (["Animal Friends", "Rainbow Colors", "My Day", "Yummy Food", "Yesterday's Adventure", "My Dream Room", "Who Am I?", "My Family", "School Life", "Free Time", "Last Weekend", "Dream Trip"].includes(title)) {
     return (
       <svg {...ICON_PROPS}>
         <path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" />
@@ -129,9 +129,9 @@ const AUDIENCES = {
   teens: {
     label: "Teens",
     lessons: TEENS_LESSONS,
-    blurb: "Three 20-minute trial classes for teens, conversation-game mini-lessons about football, school, and friends that turn a short answer into real speaking practice.",
+    blurb: "Six standalone 20-minute classes for teens (two beginner, two intermediate, two advanced). Each starts with 5 minutes of getting to know the student and why they want English, then 15 minutes of lesson.",
     lessonPath: (id) => `/library/spark/teens/${id}`,
-    guidePath: (id) => `/library/spark/teens/${id}/guide`,
+    guidePath: null,
   },
   adults: {
     label: "Adults",
