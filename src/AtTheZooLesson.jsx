@@ -725,7 +725,7 @@ export const styles = `
   padding: 20px 26px 0; display: flex; align-items: center; justify-content: space-between;
 }
 
-.brand-bubble { position: relative; z-index: 1; display: flex; align-items: center; gap: 0; margin-top: -20px; background: #FFF6EC; border-radius: 0 0 16px 16px; padding: 9px 15px 7px 8px; border-bottom: 4px solid var(--coral, #FF6B4A); box-shadow: 0 6px 12px rgba(10,18,40,0.25); }
+.brand-bubble { position: relative; z-index: 1; display: flex; align-items: center; gap: 0; align-self: flex-start; margin-top: -20px; background: #FFF6EC; border-radius: 0 0 16px 16px; padding: 9px 15px 7px 8px; border-bottom: 4px solid var(--coral, #FF6B4A); box-shadow: 0 6px 12px rgba(10,18,40,0.25); }
 .brand-logo { width: 32px; height: 32px; margin: -5px -8px -5px -4px; object-fit: contain; display: block; border-radius: 0; }
 .brand-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); }
 
