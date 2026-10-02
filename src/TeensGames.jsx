@@ -313,7 +313,7 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
         ))}
       </div>
       {done && <div className={`tg-foc-verdict ${picked === r.answer ? "is-right" : "is-wrong"}`}>{picked === r.answer ? "Yes!" : `Say: ${r.answer}`}</div>}
-      <button type="button" className="tg-btn" onClick={next}>Next</button>
+      {rounds.length > 1 && <button type="button" className="tg-btn" onClick={next}>Next</button>}
     </div>
   );
 }
