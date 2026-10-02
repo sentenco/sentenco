@@ -527,9 +527,9 @@ export function QuizBlock({ heading, rounds = [] }) {
   return (
     <div className="stage-col">
       <FitH className="slide-h">{heading}</FitH>
-      {r.pic && <div className="tg-spot-who"><SoarPic src={r.pic} label={r.answer} size={84} zoom="off" /></div>}
-      <div className="tg-quiz-q">{shownQ}</div>
-      <div className="tg-quiz-opts">
+      {r.pic && <div className="tg-spot-who"><SoarPic src={r.pic} label={r.answer} size={64} zoom="off" /></div>}
+      <div className={`tg-quiz-q ${shownQ.length > 58 ? "is-long" : ""}`}>{shownQ}</div>
+      <div className={`tg-quiz-opts ${opts.some((o) => o.length > 16) ? "is-long" : ""}`}>
         {opts.map((o) => (
           <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
             className={`tg-quiz-opt ${done ? (o === r.answer ? "is-right" : o === picked ? "is-wrong" : "") : ""}`}>{o}</button>
@@ -701,8 +701,11 @@ export const teensGameStyles = `
 .tg-po-tile .tg-order-num { position: absolute; top: -10px; right: -10px; }
 .tg-po-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; color: var(--navy, #1B2A4A); }
 .tg-quiz-q { max-width: 540px; margin: 0 auto 14px; padding: 14px 24px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 22px; box-shadow: 0 5px 0 var(--coral-deep, #E0502F); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2; color: var(--navy, #1B2A4A); }
+.tg-quiz-q.is-long { font-size: 22px; padding: 12px 20px; }
 .tg-quiz-opts { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
 .tg-quiz-opt { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 16px; padding: 10px 18px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
+.tg-quiz-opts.is-long { gap: 8px; }
+.tg-quiz-opts.is-long .tg-quiz-opt { font-size: 16px; padding: 7px 12px; border-radius: 14px; }
 .tg-quiz-opt:disabled { cursor: default; }
 .tg-quiz-opt.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
 .tg-quiz-opt.is-wrong { background: #FDE7E2; border-color: #E0502F; color: #B23A1F; box-shadow: 0 4px 0 #E0502F; }
