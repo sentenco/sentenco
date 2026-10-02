@@ -435,8 +435,81 @@ export function DiceBlock({ heading, dice = [] }) {
   );
 }
 
+// Word on top, pick the matching picture. { pool: [{label, pic}], rounds: [{word, answer, choices: [label,...]}] }
+// (choices default to the whole pool). Rounds run in a random order.
+export function PicMatchBlock({ heading, pool = [], rounds = [] }) {
+  const [order] = useState(() => shuffle(rounds.map((_, i) => i)));
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null);
+  const r = rounds[order[idx % order.length]];
+  const labels = r.choices || pool.map((p) => p.label);
+  const [shown, setShown] = useState(() => shuffle(labels));
+  const done = picked !== null;
+  function next() {
+    const nr = rounds[order[(idx + 1) % order.length]];
+    setShown(shuffle(nr.choices || pool.map((p) => p.label)));
+    setPicked(null);
+    setIdx((i) => i + 1);
+  }
+  return (
+    <div className="stage-col">
+      <FitH className="slide-h">{heading}</FitH>
+      <div className="tg-pm-word">{r.word}</div>
+      <div className="tg-pm-opts">
+        {shown.map((l) => {
+          const it = pool.find((p) => p.label === l);
+          return (
+            <button key={l} type="button" disabled={done} onClick={() => setPicked(l)}
+              className={`tg-pm-opt ${done ? (l === r.answer ? "is-right" : l === picked ? "is-wrong" : "") : ""}`}>
+              <SoarPic src={it.pic} label={it.label} size={shown.length > 3 ? 84 : 100} zoom="off" />
+            </button>
+          );
+        })}
+      </div>
+      {done && <div className={`tg-foc-verdict ${picked === r.answer ? "is-right" : "is-wrong"}`}>{picked === r.answer ? "Yes!" : "Not quite"}</div>}
+      {rounds.length > 1 && <button type="button" className="tg-btn" onClick={next}>Next</button>}
+    </div>
+  );
+}
+
+// Pictures in a shuffled row; tap them in the right order (1, 2, 3...). { items: [{pic, label}] } already in order.
+export function PicOrderBlock({ heading, items = [] }) {
+  const [display] = useState(() => {
+    let s = shuffle(items.map((_, i) => i));
+    while (items.length > 1 && s.every((v, i) => v === i)) s = shuffle(items.map((_, i) => i));
+    return s;
+  });
+  const [placed, setPlaced] = useState([]);
+  const [wrong, setWrong] = useState(null);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const done = placed.length === items.length;
+  function pick(i) {
+    if (done || placed.includes(i)) return;
+    if (i === placed.length) setPlaced([...placed, i]);
+    else { setWrong(i); clearTimeout(timer.current); timer.current = setTimeout(() => setWrong(null), 450); }
+  }
+  return (
+    <div className="stage-col">
+      <FitH className="slide-h">{heading}</FitH>
+      <div className="tg-po-row">
+        {(done ? items.map((_, k) => k) : display).map((i) => (
+          <button key={i} type="button" className={`tg-po-tile ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""}`} onClick={() => pick(i)}>
+            {placed.includes(i) && <span className="tg-order-num">{placed.indexOf(i) + 1}</span>}
+            <SoarPic src={items[i].pic} label={items[i].label} size={items.length > 5 ? 72 : 84} zoom="off" />
+            <span className="tg-po-label">{items[i].label}</span>
+          </button>
+        ))}
+      </div>
+      {done && <div className="tg-answer-chip">In order!</div>}
+    </div>
+  );
+}
+
 export const TEENS_GAME_BLOCKS = {
   wheel: WheelBlock,
+  picmatch: PicMatchBlock,
+  picorder: PicOrderBlock,
   guesswho: GuessWhoBlock,
   mystery: MysteryBlock,
   speed: SpeedBlock,
@@ -515,6 +588,20 @@ export const teensGameStyles = `
 .tg-spot-card.is-wrong { background: #FFE6DD; border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); box-shadow: 0 4px 0 var(--coral-deep, #E0502F); text-decoration: line-through; }
 .tg-spot-card.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
 
+.tg-pm-word { display: table; margin: 0 auto 16px; padding: 12px 30px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 22px; box-shadow: 0 5px 0 var(--coral-deep, #E0502F); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.1; color: var(--navy, #1B2A4A); }
+.tg-pm-opts { display: flex; justify-content: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+.tg-pm-opt { padding: 6px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 20px; box-shadow: 0 4px 0 var(--navy, #1B2A4A); cursor: pointer; }
+.tg-pm-opt:disabled { cursor: default; }
+.tg-pm-opt .sp-tile { border-radius: 14px; }
+.tg-pm-opt.is-right { background: #E3F5EC; border-color: #2F9E7A; box-shadow: 0 4px 0 #2F9E7A; }
+.tg-pm-opt.is-wrong { background: #FDE7E2; border-color: #E0502F; box-shadow: 0 4px 0 #E0502F; }
+.tg-po-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 560px; margin: 0 auto 14px; }
+.tg-po-tile { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 6px 8px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; box-shadow: 0 4px 0 var(--navy, #1B2A4A); cursor: pointer; }
+.tg-po-tile .sp-tile { border-radius: 12px; }
+.tg-po-tile.is-placed { background: #E3F5EC; border-color: #2F9E7A; box-shadow: 0 4px 0 #2F9E7A; cursor: default; }
+.tg-po-tile.is-shake { animation: tgShake 0.4s; }
+.tg-po-tile .tg-order-num { position: absolute; top: -10px; right: -10px; }
+.tg-po-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; color: var(--navy, #1B2A4A); }
 .tg-order-col { display: flex; flex-direction: column; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
 .tg-order-col.is-chat { gap: 8px; }
 .tg-order-row { display: flex; align-items: center; gap: 10px; }

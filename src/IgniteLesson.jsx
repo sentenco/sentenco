@@ -227,9 +227,9 @@ const BLOCKS = {
   ...TEENS_GAME_BLOCKS,
 };
 
-function renderSlideBody(slide) {
+function renderSlideBody(slide, index) {
   const Block = BLOCKS[slide.type];
-  return Block ? <Block {...slide} /> : null;
+  return Block ? <Block key={index} {...slide} /> : null;
 }
 
 export default function IgniteLesson() {
@@ -330,7 +330,7 @@ export default function IgniteLesson() {
                 {s.instruction.map(([icon, text]) => <InstructionStep key={text} icon={icon} text={text} />)}
               </div>
             )}
-            {renderSlideBody(s)}
+            {renderSlideBody(s, i)}
           </div>
 
           <div className="slide-footer">
