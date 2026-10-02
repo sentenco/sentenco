@@ -32,7 +32,6 @@ export const IGNITE_A1_LESSONS = {
   "1-1": {
     slides: [
       { type: "title", stage: "Unit 1 · Lesson 1", eyebrow: "A1 · Ignite", title: "Say Hello", subtitle: "Meet four new classmates and learn how to greet people and introduce yourself." },
-      { type: "message", stage: "Warm-Up", heading: "Before We Start...", lines: ["Your teacher just waved hello on screen.", "Wave back and give a smile. That's the whole warm-up."], instruction: [["👋", "Wave at your teacher,"], ["🙂", "and smile to say hello."]] },
       { type: "vocab", stage: "Greetings", heading: "How Do You Say Hi?", items: [{ label: "Hey", note: "Casual, for friends and people your age" }, { label: "Hi", note: "Friendly and easy, works almost anywhere" }, { label: "Hello", note: "A bit more neutral, for meeting someone new" }], instruction: [["👀", "Look at the three greetings,"], ["🗣️", "and say each one aloud."]] },
       { type: "spotlight", stage: "Meet Alex", heading: "Meet Alex!", pic: "/curriculum/ignite/chibi/u1-cast/alex.jpeg", label: "Alex", question: "Who is this?", answer: "Hey, I'm Alex. Nice to meet you!", instruction: [["👂", "Listen,"], ["🗣️", "then say it back to Alex."]] },
       { type: "spotlight", stage: "Meet Jordan", heading: "Meet Jordan!", pic: "/curriculum/ignite/chibi/u1-cast/jordan.jpeg", label: "Jordan", question: "Who is this?", answer: "Hi, I'm Jordan. Nice to meet you!", instruction: [["👂", "Listen,"], ["🗣️", "then say it back to Jordan."]] },
