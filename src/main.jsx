@@ -90,9 +90,7 @@ import Unit11TestLesson from './Unit11TestLesson.jsx'
 import MorningTimeLesson from './MorningTimeLesson.jsx'
 import SoarLesson from './SoarLesson.jsx'
 import IgniteLesson from './IgniteLesson.jsx'
-import AdultsHelloImLesson from './AdultsHelloImLesson.jsx'
 import AdultsWhatsNewLesson from './AdultsWhatsNewLesson.jsx'
-import SproutLesson from './SproutLesson.jsx'
 import BloomLesson from './BloomLesson.jsx'
 import AfternoonAndNightLesson from './AfternoonAndNightLesson.jsx'
 import MyWholeDayLesson from './MyWholeDayLesson.jsx'
@@ -333,8 +331,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/curriculum/adults/:level" element={<Library />} />
             <Route path="/library/curriculum/teens/A1/unit/:unit/lesson/:lesson" element={<IgniteLesson />} />
             <Route path="/library/curriculum/teens/A2/unit/:unit/lesson/:lesson" element={<IgniteLesson track="ablaze" />} />
-            <Route path="/library/curriculum/adults/A1/unit/1/lesson/1" element={<AdultsHelloImLesson />} />
-            <Route path="/library/curriculum/adults/A1/unit/:unit/lesson/:lesson" element={<SproutLesson />} />
+            <Route path="/library/curriculum/adults/A1/unit/:unit/lesson/:lesson" element={<IgniteLesson track="sprout" />} />
             <Route path="/library/curriculum/adults/A2/unit/1/lesson/1" element={<AdultsWhatsNewLesson />} />
             <Route path="/library/curriculum/adults/A2/unit/:unit/lesson/:lesson" element={<BloomLesson />} />
             <Route path="/library/curriculum/:level" element={<Library />} />

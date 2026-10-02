@@ -305,9 +305,9 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
     <div className="stage-col">
       <FitH className="slide-h">{heading}</FitH>
       <div className="tg-gp-pic">
-        {r.pic ? <SoarPic src={r.pic} label={r.answer} size={options.some((o) => o.length > 22) ? 96 : options.some((o) => o.length > 14) ? 92 : 170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
+        {r.pic ? <SoarPic src={r.pic} label={r.answer} size={options.some((o) => o.length > 22) ? 96 : (options.some((o) => o.length > 14) || options.join("").length > 32) ? 92 : 170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
       </div>
-      <div className={`tg-gp-opts ${options.some((o) => o.length > 14) ? "is-long" : ""}`}>
+      <div className={`tg-gp-opts ${options.some((o) => o.length > 14) || options.join("").length > 32 ? "is-long" : ""}`}>
         {options.map((o) => (
           <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
             className={`tg-gp-opt ${done ? (o === r.answer ? "is-right" : o === picked ? "is-wrong" : "") : ""}`}>{o}</button>
@@ -511,7 +511,7 @@ export function PicOrderBlock({ heading, items = [] }) {
 }
 
 // Multiple-choice question rounds. { rounds: [{ q, options: [str], answer, pic? }] }. A "___" in q is filled with the answer once picked.
-export function QuizBlock({ heading, rounds = [] }) {
+export function QuizBlock({ heading, rounds = [], top }) {
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
   const r = rounds[idx % rounds.length];
@@ -525,18 +525,21 @@ export function QuizBlock({ heading, rounds = [] }) {
   }
   const shownQ = done && r.q.includes("___") ? r.q.replace("___", r.answer) : r.q;
   return (
-    <div className="stage-col">
+    <div className={`stage-col ${top ? "has-art" : ""}`}>
       <FitH className="slide-h">{heading}</FitH>
+      {top}
       {r.pic && <div className="tg-spot-who"><SoarPic src={r.pic} label={r.answer} size={64} zoom="off" /></div>}
-      <div className={`tg-quiz-q ${shownQ.length > 58 ? "is-long" : ""}`}>{shownQ}</div>
+      <div className={`tg-quiz-q ${shownQ.length > 58 ? "is-long" : ""} ${top ? "is-compact" : ""}`}>{shownQ}</div>
       <div className={`tg-quiz-opts ${opts.some((o) => o.length > 16) ? "is-long" : ""}`}>
         {opts.map((o) => (
           <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
             className={`tg-quiz-opt ${done ? (o === r.answer ? "is-right" : o === picked ? "is-wrong" : "") : ""}`}>{o}</button>
         ))}
       </div>
-      {done && <div className={`tg-foc-verdict ${picked === r.answer ? "is-right" : "is-wrong"}`}>{picked === r.answer ? "Yes!" : `Answer: ${r.answer}`}</div>}
-      {rounds.length > 1 && <button type="button" className="tg-btn" onClick={next}>{idx % rounds.length === rounds.length - 1 ? "Again" : "Next"}</button>}
+      <div className="tg-quiz-foot">
+        {done && <div className={`tg-foc-verdict ${picked === r.answer ? "is-right" : "is-wrong"}`}>{picked === r.answer ? "Yes!" : `Answer: ${r.answer}`}</div>}
+        {rounds.length > 1 && <button type="button" className="tg-btn" onClick={next}>{idx % rounds.length === rounds.length - 1 ? "Again" : "Next"}</button>}
+      </div>
     </div>
   );
 }
@@ -600,9 +603,100 @@ export function RoleplayBlock({ heading, situation, pic, roles = [], phrases = [
   );
 }
 
+// Real-life things adults read (name badge, menu, receipt, ticket, timetable, form, business card), drawn in HTML,
+// followed by quiz rounds about it. { kind, data, rounds: [{ q, options, answer }] }
+function ArtifactCard({ kind, data = {} }) {
+  if (kind === "badge") {
+    return (
+      <div className="ar-card ar-badge">
+        <div className="ar-badge-top"><b>HELLO</b><span>my name is</span></div>
+        <div className="ar-badge-body">
+          {data.pic && <SoarPic src={data.pic} label={data.name} size={58} zoom="off" />}
+          <div className="ar-badge-text">
+            <div className="ar-badge-name">{data.name}</div>
+            {data.country && <div className="ar-row"><i>Country</i><b>{data.country}</b></div>}
+            {data.job && <div className="ar-row"><i>Job</i><b>{data.job}</b></div>}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (kind === "menu") {
+    return (
+      <div className="ar-card ar-menu">
+        <div className="ar-title">{data.title}</div>
+        {(data.items || []).map((it, i) => <div className="ar-line" key={i}><span>{it.name}</span><i /><b>{it.price}</b></div>)}
+      </div>
+    );
+  }
+  if (kind === "receipt") {
+    return (
+      <div className="ar-card ar-receipt">
+        <div className="ar-title">{data.shop}</div>
+        {(data.lines || []).map((it, i) => <div className="ar-line" key={i}><span>{it.name}</span><i /><b>{it.price}</b></div>)}
+        {data.total && <div className="ar-line ar-total"><span>TOTAL</span><i /><b>{data.total}</b></div>}
+      </div>
+    );
+  }
+  if (kind === "ticket") {
+    return (
+      <div className="ar-card ar-ticket">
+        <div className="ar-ticket-main">
+          <div className="ar-ticket-route"><span>{data.from}</span><em>to</em><span>{data.to}</span></div>
+          <div className="ar-ticket-meta">
+            {data.time && <div><i>Time</i><b>{data.time}</b></div>}
+            {data.platform && <div><i>Platform</i><b>{data.platform}</b></div>}
+            {data.price && <div><i>Price</i><b>{data.price}</b></div>}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (kind === "schedule") {
+    return (
+      <div className={`ar-card ar-sched ${(data.rows || []).length >= 4 ? "is-two" : ""}`}>
+        <div className="ar-title">{data.title}</div>
+        {(data.rows || []).map((r, i) => <div className="ar-sched-row" key={i}><b>{r.time}</b><span>{r.text}</span></div>)}
+      </div>
+    );
+  }
+  if (kind === "form") {
+    return (
+      <div className="ar-card ar-form">
+        <div className="ar-title">{data.title}</div>
+        {(data.fields || []).map((f, i) => <div className="ar-form-row" key={i}><i>{f.label}</i><b>{f.value}</b></div>)}
+      </div>
+    );
+  }
+  if (kind === "phone") {
+    return (
+      <div className="ar-card ar-phone">
+        <div className="ar-phone-top">{data.name}</div>
+        {(data.msgs || []).map((m, i) => <div key={i} className={`ar-msg ${m.from === "me" ? "is-me" : ""}`}>{m.text}</div>)}
+      </div>
+    );
+  }
+  if (kind === "card") {
+    return (
+      <div className="ar-card ar-bizcard">
+        <div className="ar-bc-name">{data.name}</div>
+        <div className="ar-bc-job">{data.job}</div>
+        {data.company && <div className="ar-bc-co">{data.company}</div>}
+        {data.phone && <div className="ar-bc-line">{data.phone}</div>}
+        {data.email && <div className="ar-bc-line">{data.email}</div>}
+      </div>
+    );
+  }
+  return null;
+}
+export function ArtifactBlock(props) {
+  return <QuizBlock {...props} top={<ArtifactCard kind={props.kind} data={props.data} />} />;
+}
+
 export const TEENS_GAME_BLOCKS = {
   wheel: WheelBlock,
   quiz: QuizBlock,
+  artifact: ArtifactBlock,
   build: BuildBlock,
   roleplay: RoleplayBlock,
   picmatch: PicMatchBlock,
@@ -701,7 +795,14 @@ export const teensGameStyles = `
 .tg-po-tile .tg-order-num { position: absolute; top: -10px; right: -10px; }
 .tg-po-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; color: var(--navy, #1B2A4A); }
 .tg-quiz-q { max-width: 540px; margin: 0 auto 14px; padding: 14px 24px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 22px; box-shadow: 0 5px 0 var(--coral-deep, #E0502F); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2; color: var(--navy, #1B2A4A); }
+.tg-quiz-q.is-compact { font-size: 20px; padding: 8px 18px; margin-bottom: 10px; }
 .tg-quiz-q.is-long { font-size: 22px; padding: 12px 20px; }
+.tg-quiz-foot { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 34px; }
+.tg-quiz-foot .tg-foc-verdict { margin: 0; }
+.has-art .slide-h { font-size: 27px !important; margin-bottom: 4px; }
+.has-art .ar-card { zoom: 0.84; margin-bottom: 6px; }
+.has-art .ar-phone { zoom: 0.8; }
+.has-art .tg-quiz-opts { margin-bottom: 8px; }
 .tg-quiz-opts { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
 .tg-quiz-opt { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 16px; padding: 10px 18px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
 .tg-quiz-opts.is-long { gap: 8px; }
@@ -725,6 +826,46 @@ export const teensGameStyles = `
 .tg-rp-role span { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink, #2B2438); }
 .tg-rp-phrases { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; max-width: 580px; margin: 0 auto; }
 .tg-rp-phrase { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy, #1B2A4A); background: #fff; border: 2px solid var(--navy, #1B2A4A); border-radius: 999px; padding: 5px 14px; }
+.ar-card { max-width: 330px; margin: 0 auto 8px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(27,42,74,0.16); text-align: left; font-family: 'Inter', sans-serif; font-size: 13px; color: #1B2A4A; overflow: hidden; }
+.ar-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 15px; text-align: center; padding: 8px 12px 4px; }
+.ar-line { display: flex; align-items: baseline; gap: 6px; padding: 1px 14px; font-weight: 600; font-size: 12.5px; }
+.ar-line i { flex: 1; border-bottom: 2px dotted rgba(27,42,74,0.3); transform: translateY(-3px); }
+.ar-line b { font-weight: 700; }
+.ar-menu { background: #FFF6EC; padding-bottom: 8px; border: 2px solid #1B2A4A; }
+.ar-receipt { padding-bottom: 8px; font-family: 'Courier New', monospace; border-top: 6px dashed #E4E9F5; border-bottom: 6px dashed #E4E9F5; border-radius: 0; }
+.ar-receipt .ar-title { font-family: 'Courier New', monospace; }
+.ar-total { border-top: 2px solid #1B2A4A; margin-top: 3px; padding-top: 4px; font-weight: 800; }
+.ar-badge-top { background: #E0502F; color: #fff; text-align: center; padding: 5px 0 4px; line-height: 1.1; }
+.ar-badge-top b { display: block; font-size: 15px; letter-spacing: 0.15em; }
+.ar-badge-top span { font-size: 11px; }
+.ar-badge-body { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+.ar-badge-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; line-height: 1.1; margin-bottom: 4px; }
+.ar-row { display: flex; gap: 8px; font-size: 13px; }
+.ar-row i { font-style: normal; color: #736A87; min-width: 54px; }
+.ar-ticket { border: 2px dashed #1B2A4A; background: #FFF6EC; }
+.ar-ticket-main { padding: 10px 16px; }
+.ar-ticket-route { display: flex; align-items: center; justify-content: space-between; font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; }
+.ar-ticket-route em { font-style: normal; font-size: 12px; color: #E0502F; font-family: 'Inter', sans-serif; }
+.ar-ticket-meta { display: flex; justify-content: space-between; margin-top: 6px; }
+.ar-ticket-meta div { display: flex; flex-direction: column; }
+.ar-ticket-meta i, .ar-form-row i { font-style: normal; font-size: 11px; color: #736A87; }
+.ar-ticket-meta b { font-size: 15px; }
+.ar-sched { padding-bottom: 8px; }
+.ar-sched.is-two { display: grid; grid-template-columns: 1fr 1fr; column-gap: 4px; max-width: 420px; }
+.ar-sched.is-two .ar-title { grid-column: 1 / -1; padding: 6px 12px 2px; }
+.ar-sched-row { display: flex; gap: 12px; padding: 1px 14px; font-weight: 600; font-size: 12.5px; }
+.ar-sched-row b { color: #E0502F; min-width: 52px; }
+.ar-form { padding-bottom: 8px; border-top: 5px solid #E0502F; }
+.ar-form-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 2px 14px; }
+.ar-form-row b { font-size: 14px; flex: 1; text-align: right; border-bottom: 1.5px solid #1B2A4A; padding-bottom: 0; }
+.ar-phone { max-width: 270px; padding-bottom: 8px; border: 3px solid #1B2A4A; border-radius: 18px; background: #F4F6FB; }
+.ar-phone-top { background: #1B2A4A; color: #fff; text-align: center; font-weight: 700; padding: 5px 0; margin-bottom: 6px; }
+.ar-msg { max-width: 80%; margin: 3px 10px; padding: 5px 10px; border-radius: 12px 12px 12px 3px; background: #fff; font-weight: 600; font-size: 12.5px; box-shadow: 0 1px 3px rgba(27,42,74,0.15); }
+.ar-msg.is-me { margin-left: auto; background: #FFE6DD; border-radius: 12px 12px 3px 12px; }
+.ar-bizcard { padding: 8px 18px; border-left: 8px solid #E0502F; }
+.ar-bc-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; }
+.ar-bc-job { color: #E0502F; font-weight: 700; margin-bottom: 3px; }
+.ar-bc-co, .ar-bc-line { font-size: 12.5px; font-weight: 600; }
 .tg-order-col { display: flex; flex-direction: column; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
 .tg-order-col.is-chat { gap: 8px; }
 .tg-order-row { display: flex; align-items: center; gap: 10px; }

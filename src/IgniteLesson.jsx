@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { ABLAZE_A2_LESSONS } from "./ablazeA2Data.js";
+import { SPROUT_A1_LESSONS } from "./sproutA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges, useBadgePositions, medalDefault, ribbonDefault, eyebrowDefault, badgeAdjustStyles } from "./TeensCoverBadges.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
@@ -238,9 +239,12 @@ function renderSlideBody(slide, index) {
 }
 
 // Each track has its own cover and slide backgrounds (Ignite A1 = lit match, Ablaze A2 = bonfire).
+const SPROUT_FONTS = "@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');\n";
+
 const TRACK_BACKGROUNDS = {
   ignite: { title: "/curriculum/teens-a1-shared/title-bg.jpg", slide: "/curriculum/teens-a1-shared/slide-bg.jpg" },
   ablaze: { title: "/curriculum/teens-a2-shared/ablaze-title-bg.jpg", slide: "/curriculum/teens-a2-shared/ablaze-slide-bg.jpg" },
+  sprout: { title: "/curriculum/adults-a1-shared/title-bg.jpg", slide: "/curriculum/adults-a1-shared/slide-bg.jpg" },
 };
 
 export default function IgniteLesson({ track = "ignite" }) {
@@ -257,12 +261,12 @@ export default function IgniteLesson({ track = "ignite" }) {
     if (existing) existing.remove();
     const tag = document.createElement("style");
     tag.id = styleId;
-    tag.textContent = styles;
+    tag.textContent = (track === "sprout" ? SPROUT_FONTS : "") + styles;
     document.head.appendChild(tag);
   }, []);
 
   const key = `${unit}-${lesson}`;
-  const data = (track === "ablaze" ? ABLAZE_A2_LESSONS : IGNITE_A1_LESSONS)[key];
+  const data = (track === "ablaze" ? ABLAZE_A2_LESSONS : track === "sprout" ? SPROUT_A1_LESSONS : IGNITE_A1_LESSONS)[key];
 
   useEffect(() => {
     setI(0);
@@ -540,4 +544,11 @@ const styles = `
 .sp-multi img { flex: 1 1 0; min-width: 0; width: auto; height: auto; max-height: 100%; }
 .sp-missing { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6px; border: 2px dashed rgba(224,80,47,0.35); border-radius: 12px; background: rgba(255,255,255,0.5); }
 .sp-missing span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--coral-deep); line-height: 1.3; }
+
+/* Sprout (Adults A1): grown-up type, same layout and games */
+.track-sprout, .track-sprout * { font-family: 'Inter', sans-serif; }
+.track-sprout .title-h, .track-sprout .title-hl, .track-sprout .slide-h, .track-sprout .vocab-label, .track-sprout .ar-title, .track-sprout .ar-badge-name, .track-sprout .ar-ticket-route, .track-sprout .ar-bc-name, .track-sprout .um-num, .track-sprout .tg-result-bubble, .track-sprout .tg-pm-word, .track-sprout .tg-quiz-q, .track-sprout .tg-build-line, .track-sprout .tg-gp-text { font-family: 'Fraunces', serif; }
+.track-sprout .title-h, .track-sprout .slide-h { font-weight: 700; letter-spacing: -0.01em; }
+.track-sprout .bubble, .track-sprout .mini-row, .track-sprout .msg-line, .track-sprout .frame-line { font-weight: 600; }
+.track-sprout .slide-instruction, .track-sprout .nav-btn, .track-sprout .tg-btn, .track-sprout .cr-label, .track-sprout .instr-tag { font-family: 'Inter', sans-serif; font-weight: 700; }
 ` + teensGameStyles + zoomStyles + wrapUpStyles + badgeAdjustStyles;
