@@ -127,6 +127,13 @@ import DERIVE_TRACKS from "./deriveTracks";
 import SEQUENCE_TRACKS from "./sequenceTracks";
 
 const CATEGORIES = ["Articles", "Reading", "Speaking", "Grammar", "Vocabulary", "Writing", "Listening"];
+const CL_TAB_COLORS = { All: "#1B2A4A", Vocabulary: "#E0502F", Grammar: "#1B2A4A", "Exam Prep": "#6C5CE7" };
+const CL_TAB_ICONS = {
+  All: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  Vocabulary: '<path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/>',
+  Grammar: '<path d="M5 19L12 5l7 14M8 14h8"/>',
+  "Exam Prep": '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
+};
 const PRO_CATEGORIES = ["Reading", "Speaking", "Grammar", "Vocabulary", "Writing", "Listening", "Customized Lessons"];
 
 // "Today" launch date -- the day count in the Today masthead (Vol. 1, No. X)
@@ -2510,7 +2517,8 @@ export default function Library() {
               <h2 className="cl-gallery-hd">Published lessons</h2>
               <div className="cl-tabs">
                 {["All", ...Array.from(new Set(CUSTOM_LESSONS.map((l) => l.tag)))].map((t) => (
-                  <button key={t} type="button" className={`cl-tab ${clTab === t ? "is-active" : ""}`} onClick={() => { setClTab(t); const next = new URLSearchParams(searchParams); if (t === "All") next.delete("clTab"); else next.set("clTab", t); setSearchParams(next, { replace: true }); }}>
+                  <button key={t} type="button" role="tab" aria-selected={clTab === t} style={{ "--c": CL_TAB_COLORS[t] || "#1B2A4A" }} className={`cl-tab ${clTab === t ? "is-active" : ""}`} onClick={() => { setClTab(t); const next = new URLSearchParams(searchParams); if (t === "All") next.delete("clTab"); else next.set("clTab", t); setSearchParams(next, { replace: true }); }}>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{ __html: CL_TAB_ICONS[t] || CL_TAB_ICONS.All }} />
                     {t}
                   </button>
                 ))}
@@ -3337,16 +3345,27 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 }
 .cl-mine-received:hover { background: #E7EAF3; }
 
-.cl-gallery-hd-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
-.cl-gallery-hd { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #1B2A4A; margin: 0; }
+.cl-gallery-hd-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px 20px; margin-bottom: 18px; border-bottom: 2px solid #EDE6F4; }
+.cl-gallery-hd { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #1B2A4A; margin: 0; padding-bottom: 10px; white-space: nowrap; }
 
-.cl-tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; background: rgba(27,42,74,0.045); border-radius: 999px; padding: 4px; }
+.cl-tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.cl-tabs::-webkit-scrollbar { display: none; }
 .cl-tab {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; color: #6B6E96;
-  background: none; border: none; border-radius: 999px; padding: 7px 15px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 14px; color: #6B6E96;
+  background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; border-radius: 0; padding: 8px 14px 10px; cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
+.cl-tab svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .cl-tab:hover { color: #1B2A4A; }
-.cl-tab.is-active { background: #fff; color: #1B2A4A; box-shadow: 0 1px 4px rgba(27,42,74,0.12); }
+.cl-tab.is-active { color: #1B2A4A; border-bottom-color: var(--c, #1B2A4A); }
+.cl-tab.is-active svg { stroke: var(--c, #1B2A4A); }
+.cl-tab:focus-visible { outline: 3px solid #1B2A4A; outline-offset: -3px; border-radius: 6px; }
+@media (max-width: 640px) {
+  .cl-gallery-hd-row { flex-direction: column; align-items: stretch; gap: 4px; }
+  .cl-gallery-hd { padding-bottom: 0; }
+  .cl-tab { padding: 8px 11px 9px; font-size: 13px; }
+}
 
 .cl-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
 .cl-lesson-card {
