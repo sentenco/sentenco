@@ -68,31 +68,23 @@ export default function CurriculumOverview({ onSelectLevel }) {
       <div className="co-blob co-blob--b" />
 
       <div className="co-stage">
-        <div className={`co-hero-band ${audience !== "kids" ? "co-hero-band--navy" : ""}`}>
-          <div className="co-hero-kicker-row">
-            <span className="co-hero-rule" />
-            <span className={`co-hero-kicker ${audience !== "kids" ? "co-hero-kicker--navy" : ""}`}>{current.kicker}</span>
-            <span className="co-hero-rule" />
-          </div>
-          <h1 className="co-title">Curriculum</h1>
-
-          <div className="co-stat-row">
-            <div className="co-stat"><div className="co-stat-num co-stat-num--coral">2</div><div className="co-stat-label">Levels</div></div>
-            <div className="co-stat"><div className="co-stat-num co-stat-num--navy">24</div><div className="co-stat-label">Units</div></div>
-            <div className="co-stat"><div className="co-stat-num co-stat-num--coral">144</div><div className="co-stat-label">Lessons</div></div>
-          </div>
-
-          <div className="co-audience-toggle">
-            {AUDIENCES.map((a) => (
-              <button
-                key={a.id}
-                type="button"
-                className={`co-audience-btn ${audience === a.id ? "is-active" : ""}`}
-                onClick={() => selectAudience(a.id)}
-              >
-                {a.label} <span className="co-audience-age">{a.age}</span>
-              </button>
-            ))}
+        <div className={`co-banner co-banner--${audience}`}>
+          <div className="co-banner-in">
+            <span className="co-hero-kicker">{current.kicker}</span>
+            <h1 className="co-title">Curriculum</h1>
+            <p className="co-banner-stats">2 levels · 24 units · 144 lessons</p>
+            <div className="co-audience-toggle">
+              {AUDIENCES.map((a) => (
+                <button
+                  key={a.id}
+                  type="button"
+                  className={`co-audience-btn ${audience === a.id ? "is-active" : ""}`}
+                  onClick={() => selectAudience(a.id)}
+                >
+                  {a.label} <span className="co-audience-age">{a.age}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -146,7 +138,7 @@ const styles = `
 
 .co-stage { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 26px 40px 70px; }
 
-.co-audience-toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; margin: 16px 0 0; }
+.co-audience-toggle { box-shadow: 0 6px 16px rgba(27,42,74,0.12); display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; margin: 16px 0 0; }
 .co-audience-btn {
   display: inline-flex; align-items: center; gap: 7px;
   font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 13.5px; color: #6B6E96;
@@ -156,49 +148,28 @@ const styles = `
 .co-audience-btn .co-audience-age { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.65; }
 .co-audience-btn.is-active { background: #1B2A4A; color: #fff; }
 
-.co-hero-band {
-  background: #FFE6DD;
-  border-radius: 16px;
-  padding: 22px 32px 20px;
-  text-align: center;
-  margin-bottom: 32px;
-  height: 270px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.co-banner {
+  position: relative; margin-bottom: 32px; aspect-ratio: 2172 / 724; container-type: inline-size; border-radius: 20px; overflow: hidden;
+  background-color: #FFE6DD; background-size: cover, cover; background-position: center, center; background-repeat: no-repeat;
+  background-image: url(/curriculum/curriculum-banner-kids.png), linear-gradient(135deg, #FFE6DD 0%, #FFF1D2 100%);
 }
-.co-hero-band--navy { background: #E7EAF3; }
-.co-hero-kicker-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 4px; }
-.co-hero-rule { flex: 0 1 48px; height: 1px; background: rgba(27,42,74,0.22); }
+.co-banner--teens { background-color: #E7E3FF; background-image: url(/curriculum/curriculum-banner-teens.png), linear-gradient(135deg, #E7E3FF 0%, #FFE6DD 100%); }
+.co-banner--adults { background-color: #E7EAF3; background-image: url(/curriculum/curriculum-banner-adults.png), linear-gradient(135deg, #E7EAF3 0%, #F1EDE0 100%); }
+.co-banner-in { position: absolute; inset: 0; padding: 1.5cqw 4cqw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1cqw; text-align: center; }
 .co-hero-kicker {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 700;
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #E0502F;
+  font-family: 'Source Serif 4', serif; font-weight: 700; font-size: clamp(8.5px, 1.2cqw, 10.5px);
+  letter-spacing: 0.22em; text-transform: uppercase; color: #E0502F; white-space: nowrap;
 }
-.co-hero-kicker--navy { color: #1B2A4A; }
+.co-banner--teens .co-hero-kicker, .co-banner--adults .co-hero-kicker { color: #1B2A4A; }
 .co-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: clamp(28px, 4vw, 38px);
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #1B2A4A;
-  margin: 4px 0 14px;
-  line-height: 1;
+  font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(26px, 5cqw, 44px);
+  letter-spacing: 0.01em; text-transform: uppercase; color: #1B2A4A; margin: 0; line-height: 1;
 }
-
-.co-stat-row { display: flex; justify-content: center; gap: 10px; }
-.co-stat { text-align: center; background: #fff; border-radius: 10px; padding: 8px 20px; }
-.co-stat-num { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; }
-.co-stat-num--coral { color: #FF6B4A; }
-.co-stat-num--navy { color: #1B2A4A; }
-.co-stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #6B6E96; margin-top: 2px; }
+.co-banner-stats { margin: 0; font-size: clamp(11px, 1.5cqw, 13.5px); font-weight: 700; color: #4A5578; }
+@media (max-width: 560px) {
+  .co-banner { aspect-ratio: auto; }
+  .co-banner-in { position: static; padding: 26px 16px 22px; gap: 10px; }
+}
 
 .co-levels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 @media (max-width: 700px) { .co-levels-grid { grid-template-columns: 1fr; } }
