@@ -254,7 +254,7 @@ export default function IgniteLesson({ track = "ignite" }) {
   const [copied, setCopied] = useState(false);
   // Cover badge editor: open any lesson with ?adjust=1 to drag, resize and rotate the UNIT circle.
   const adjust = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("adjust");
-  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" || track === "bloom" ? { left: 34, top: 103 } : { left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
+  const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" ? { left: 34, top: 103 } : track === "bloom" ? { left: 145, top: 275 } : { left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
   useEffect(() => {
     const styleId = "il-styles";
     const existing = document.getElementById(styleId);
@@ -350,7 +350,7 @@ export default function IgniteLesson({ track = "ignite" }) {
                 <button type="button" onClick={() => dragMedal({ size: Math.min(260, badges.medal.size + 6) })}>Bigger</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot - 3 })}>Rotate left</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot + 3 })}>Rotate right</button>
-                <button type="button" onClick={() => dragMedal({ ...(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" || track === "bloom" ? { left: 34, top: 103 } : { left: 106, top: 276 }), size: 104, rot: -6 })}>Reset</button>
+                <button type="button" onClick={() => dragMedal({ ...(track === "ablaze" ? { left: 121, top: 322 } : track === "sprout" ? { left: 34, top: 103 } : track === "bloom" ? { left: 145, top: 275 } : { left: 106, top: 276 }), size: 104, rot: -6 })}>Reset</button>
                 <button type="button" className="bt-copy" onClick={() => {
                   const m = badges.medal;
                   const txt = `medal left ${m.left}, top ${m.top}, size ${m.size}, rotate ${m.rot}`;
@@ -547,7 +547,7 @@ const styles = `
 
 /* Sprout (Adults A1): same Baloo 2 + Quicksand type as Discover and Soar, tilted brush behind the cover title */
 .track-sprout .unit-medal { left: 34px; top: 103px; }
-.track-bloom .unit-medal { left: 34px; top: 103px; }
+.track-bloom .unit-medal { left: 145px; top: 275px; }
 .track-sprout .title-h .title-hl, .track-bloom .title-h .title-hl { background: none; padding: 0; margin: 0; position: relative; display: inline-block; isolation: isolate; }
 .track-sprout .title-h .title-hl::before, .track-bloom .title-h .title-hl::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: -1; }
 ` + teensGameStyles + zoomStyles + wrapUpStyles + badgeAdjustStyles;
