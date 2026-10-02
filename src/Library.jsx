@@ -2376,7 +2376,7 @@ export default function Library() {
             <div className="cl-hero">
               <div className="cl-hero-in">
                 <h1 className="cl-title">Custom Lessons</h1>
-                <p className="cl-sub">Need something the library doesn't have yet, like your job, a trip, or the exact words you asked about? Tell us who it's for and we'll build a lesson around them.</p>
+                <p className="cl-sub">Made to measure. Tell us about your job, your trip or the words you need, and we'll stitch together a lesson that fits you perfectly.</p>
               </div>
             </div>
 
