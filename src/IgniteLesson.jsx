@@ -208,8 +208,7 @@ function PracticeBlock({ heading, subheading, line }) {
 function LandingBlock({ heading, caption }) {
   const idx = caption ? caption.indexOf("Next up:") : -1;
   const recap = idx >= 0 ? caption.slice(0, idx).trim() : caption;
-  const see = idx >= 0 ? caption.slice(idx).trim() : undefined;
-  return <WrapUp title={heading} see={see}>{recap}</WrapUp>;
+  return <div className="ig-wrap"><WrapUp title={heading} see={null}>{recap}</WrapUp></div>;
 }
 
 const BLOCKS = {
@@ -406,6 +405,9 @@ const styles = `
 .title-h.is-short { font-size: 78px; }
 .title-p { font-family: 'Quicksand', sans-serif; font-size: 15px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
 
+.ig-wrap { width: 100%; }
+.ig-wrap .wrapup-col { gap: 34px; }
+.ig-wrap .wrapup-recap { font-size: 21px; max-width: 440px; line-height: 1.4; }
 .stage-col { width: 100%; text-align: center; }
 .slide-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; color: var(--navy); margin: 0 auto 14px; position: relative; display: table; isolation: isolate; }
 .slide-h::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: -1; }

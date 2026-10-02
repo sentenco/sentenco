@@ -283,9 +283,7 @@ export function SpotErrorBlock({ heading, rounds = [], pic, label }) {
       </div>
       {picked !== null && (
         <>
-          <div className={`tg-foc-verdict ${correct ? "is-right" : "is-wrong"}`}>{correct ? "Found it!" : "Close, here's the fix"}</div>
-          <p className="slide-p"><strong>Fix:</strong> {r.fix}</p>
-          {r.explain && <p className="slide-p">{r.explain}</p>}
+          <div className={`tg-foc-verdict ${correct ? "is-right" : "is-wrong"}`}>{correct ? "Right!" : "Not quite"}</div>
         </>
       )}
       <button type="button" className="tg-btn" onClick={next}>Next</button>
@@ -338,7 +336,7 @@ export function OrderUpBlock({ heading, items = [], sides, avatars }) {
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       <div className={`tg-order-col ${sides ? "is-chat" : ""}`}>
-        {display.map((i) => {
+        {(done ? items.map((_, k) => k) : display).map((i) => {
           const right = sides ? sides[i] === 1 : false;
           const card = (
             <button type="button" className={`tg-order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""} ${sides ? (right ? "is-right" : "is-left") : ""}`} onClick={() => pick(i)}>
@@ -349,7 +347,7 @@ export function OrderUpBlock({ heading, items = [], sides, avatars }) {
           if (!sides) return <React.Fragment key={i}>{card}</React.Fragment>;
           return (
             <div key={i} className={`tg-order-row ${right ? "is-right" : ""}`}>
-              {avatars && <div className="tg-order-ava"><SoarPic src={avatars[right ? 1 : 0].pic} label={avatars[right ? 1 : 0].label} size={52} zoom="off" /></div>}
+              {avatars && <div className="tg-order-ava"><SoarPic src={avatars[right ? 1 : 0].pic} label={avatars[right ? 1 : 0].label} size={42} zoom="off" /></div>}
               {card}
             </div>
           );
@@ -511,7 +509,7 @@ export const teensGameStyles = `
 .tg-spot-card.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
 
 .tg-order-col { display: flex; flex-direction: column; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
-.tg-order-col.is-chat { gap: 14px; }
+.tg-order-col.is-chat { gap: 8px; }
 .tg-order-row { display: flex; align-items: center; gap: 10px; }
 .tg-order-row.is-right { flex-direction: row-reverse; }
 .tg-order-ava { flex-shrink: 0; }
@@ -523,7 +521,7 @@ export const teensGameStyles = `
 .tg-gp-opt:disabled { cursor: default; }
 .tg-gp-opt.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
 .tg-gp-opt.is-wrong { background: #FFE6DD; border-color: var(--coral-deep, #E0502F); color: var(--coral-deep, #E0502F); box-shadow: 0 4px 0 var(--coral-deep, #E0502F); }
-.tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 14px 20px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); text-align: left; }
+.tg-order-card { position: relative; display: flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; line-height: 1.25; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 8px 16px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); text-align: left; }
 .tg-order-card.is-left { border-radius: 18px 18px 18px 4px; }
 .tg-order-card.is-right { border-radius: 18px 18px 4px 18px; box-shadow: 0 4px 0 var(--coral, #FF6B4A); }
 .tg-order-card.is-placed { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); }

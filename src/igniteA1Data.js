@@ -49,7 +49,7 @@ export const IGNITE_A1_LESSONS = {
       { type: "guesswho", stage: "Who's This?", heading: "Who's This?", pic: "/curriculum/ignite/chibi/u1-cast/marcus.jpeg", label: "Marcus", options: ["Alex", "Jordan", "Marcus"], answer: "Marcus", instruction: [["👆", "Tap a tile to reveal a piece,"], ["🗣️", "then say who you think it is before you pick."]] },
       { type: "practice", stage: "Type It", heading: "Type It in the Chat", line: "Hi, I'm ___. Nice to meet you!", instruction: [["⌨️", "Type it in the chat,"], ["🙅", "instead of saying it out loud this time."]] },
       { type: "practice", stage: "Your Turn", heading: "Introduce Yourself", line: "Hi, I'm ___.", instruction: [["🗣️", "Introduce yourself out loud,"], ["🙅", "without any help this time."]] },
-      { type: "landing", stage: "Wrap-Up", heading: "Nice Work!", caption: "You met Alex, Jordan, Priya, and Marcus, and you can now greet someone and introduce yourself by name. Next up: asking and answering questions about yourself." },
+      { type: "landing", stage: "Wrap-Up", heading: "Nice Work!", caption: "You met Alex, Jordan, Priya, and Marcus, and you can now greet someone and introduce yourself by name." },
     ],
   },
   "1-2": {
