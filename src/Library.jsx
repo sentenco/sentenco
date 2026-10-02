@@ -2376,7 +2376,7 @@ export default function Library() {
             <div className="cl-hero">
               <div className="cl-hero-in">
                 <h1 className="cl-title">Custom Lessons</h1>
-                <p className="cl-sub">Made to measure. Tell us about your job, your trip or the words you need, and we'll stitch together a lesson that fits you perfectly.</p>
+                <p className="cl-sub">Made to measure. Tell us what you need and we'll stitch together a lesson that fits you.</p>
               </div>
             </div>
 
@@ -3258,10 +3258,10 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 }
 .cl-hero-in { position: absolute; inset: 0; padding: 1.5cqw 4cqw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4cqw; text-align: center; }
 .cl-title {
-  font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(24px, 4.8cqw, 42px);
+  font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(22px, 4cqw, 38px);
   letter-spacing: 0.01em; text-transform: uppercase; color: #1B2A4A; margin: 0; line-height: 1;
 }
-.cl-sub { font-family: 'Inter', sans-serif; font-size: clamp(11px, 1.6cqw, 14px); font-weight: 600; color: #3F4A6E; max-width: 50cqw; margin: 0; line-height: 1.55; }
+.cl-sub { font-family: 'Inter', sans-serif; font-size: clamp(11px, 1.55cqw, 14px); font-weight: 600; color: #3F4A6E; max-width: 34cqw; margin: 0; line-height: 1.55; }
 @media (max-width: 560px) {
   .cl-hero { aspect-ratio: auto; background-image: linear-gradient(rgba(255,244,236,0.9), rgba(255,244,236,0.9)), url(/curriculum/custom-banner.png); }
   .cl-hero-in { position: static; padding: 26px 18px 24px; gap: 10px; }
