@@ -237,6 +237,12 @@ function renderSlideBody(slide, index) {
   return Block ? <Block key={index} {...slide} /> : null;
 }
 
+// Each track has its own cover and slide backgrounds (Ignite A1 = lit match, Ablaze A2 = campfire).
+const TRACK_BACKGROUNDS = {
+  ignite: { title: "/curriculum/teens-a1-shared/title-bg.jpg", slide: "/curriculum/teens-a1-shared/slide-bg.jpg" },
+  ablaze: { title: "/curriculum/teens-a2-shared/title-bg.jpg", slide: "/curriculum/teens-a2-shared/slide-bg.jpg" },
+};
+
 export default function IgniteLesson({ track = "ignite" }) {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
@@ -309,7 +315,7 @@ export default function IgniteLesson({ track = "ignite" }) {
 
   return (
     <ZoomContext.Provider value={setZoom}>
-    <div className="tsh-wrap">
+    <div className="tsh-wrap" style={{ "--title-bg": `url(${TRACK_BACKGROUNDS[track].title})`, "--slide-bg": `url(${TRACK_BACKGROUNDS[track].slide})` }}>
       <div className="deck-single">
         <div className={`slide ${i === 0 ? "slide--title" : "slide--regular"}`}>
           <button className="close-btn" onClick={exit}>
@@ -380,8 +386,8 @@ const styles = `
   border-radius: 30px; box-shadow: 0 24px 50px rgba(27,42,74,0.22);
   background-size: cover; background-repeat: no-repeat;
 }
-.slide--title { background-image: url('/curriculum/teens-a1-shared/title-bg.jpg'); background-position: left center; }
-.slide--regular { background-image: url('/curriculum/teens-a1-shared/slide-bg.jpg'); background-position: center; }
+.slide--title { background-image: var(--title-bg); background-position: left center; }
+.slide--regular { background-image: var(--slide-bg); background-position: center; }
 
 .close-btn { position: absolute; top: 14px; right: 14px; z-index: 4; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(27,42,74,0.15); color: var(--navy); }
 
