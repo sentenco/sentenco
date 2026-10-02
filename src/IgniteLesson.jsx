@@ -54,7 +54,7 @@ function TitleBlock({ stage, title, subtitle }) {
       {lesson && (
         <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
       )}
-      <h1 className={`title-h ${String(title).length <= 14 ? "is-short" : ""}`}>{title}</h1>
+      <h1 className={`title-h ${String(title).length <= 9 ? "is-short" : ""}`}><span className="title-hl">{title}</span></h1>
       <p className="title-p">{subtitle}</p>
     </div>
   );
@@ -64,7 +64,7 @@ function ZoomIcon() {
   return <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5 L21 21" /></svg>;
 }
 
-function VocabBlock({ heading, subheading, items = [] }) {
+function VocabBlock({ heading, subheading, items = [], compact }) {
   const [zoomed, setZoomed] = useState(null);
   useEffect(() => {
     if (!zoomed) return undefined;
@@ -78,7 +78,7 @@ function VocabBlock({ heading, subheading, items = [] }) {
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""}`}>
+      <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""} ${compact ? "is-compact" : ""}`}>
         {items.map((it, i) => (
           "pic" in it ? (
             <div className="vocab-card has-pic" key={i}>
@@ -139,10 +139,12 @@ function DialogueBlock({ heading, subheading, turns = [] }) {
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className={`bubble-col ${turns.length <= 2 ? "is-roomy" : ""}`}>
+      <div className={`bubble-col ${turns.length <= 3 ? "is-roomy" : ""}`}>
         {turns.map((t, i) => (
           <div className={`brow ${t.who === "student" ? "me" : ""}`} key={i}>
-            <div className={`avatar ${t.who === "student" ? "coral" : "navy"}`}>{t.who === "student" ? "S" : "T"}</div>
+            {t.pic
+              ? <div className="avatar-pic"><SoarPic src={t.pic} label={t.name || ""} size={56} zoom="off" /></div>
+              : <div className={`avatar ${t.who === "student" ? "coral" : "navy"}`}>{t.who === "student" ? "S" : "T"}</div>}
             <div className={`bubble ${t.who === "student" ? "right" : "left"}`}>{renderHighlighted(t.text)}</div>
           </div>
         ))}
@@ -174,7 +176,7 @@ function SpotlightBlock({ heading, subheading, pic, label, question, answer }) {
       <h2 className="slide-h">{heading}</h2>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="spotlight-pic">
-        <SoarPic src={pic} label={label} size={168} />
+        <SoarPic src={pic} label={label} size={136} />
       </div>
       <div className="mini-log is-roomy">
         <div className="mini-pair">
@@ -400,8 +402,8 @@ const styles = `
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; margin-bottom: -6px; padding-left: 0.2em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 60px; line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: 46px; }
-.title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 44px; color: var(--navy); margin: 0 0 18px; line-height: 1.05; position: relative; display: table; isolation: isolate; }
-.title-h::before { content: ""; position: absolute; left: -14px; right: -14px; top: 34%; bottom: 14%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 5px; z-index: -1; }
+.title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; color: var(--navy); margin: 0 0 18px; line-height: 1.15; }
+.title-hl { background: linear-gradient(transparent 50%, rgba(255,208,102,0.9) 50%, rgba(255,208,102,0.9) 90%, transparent 90%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px; margin-left: -10px; }
 .title-h.is-short { font-size: 78px; }
 .title-p { font-family: 'Quicksand', sans-serif; font-size: 15px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
 
@@ -422,6 +424,9 @@ const styles = `
 .vocab-card:nth-child(3n+2) { transform: rotate(3deg); margin-top: 10px; }
 .vocab-card:nth-child(3n+3) { transform: rotate(-2deg); }
 .vocab-label { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--coral-deep); }
+.vocab-row.is-compact { gap: 10px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.vocab-row.is-compact .vocab-card:not(.has-pic) { width: 84px; padding: 10px 6px; transform: none; margin-top: 0; }
+.vocab-row.is-compact .vocab-card:not(.has-pic) .vocab-label { font-size: 34px; }
 .vocab-card:not(.has-pic) { width: 168px; padding: 18px 20px; }
 .vocab-card:not(.has-pic) .vocab-label { font-size: 30px; }
 .vocab-note { font-size: 13px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 6px 0 0; }
@@ -449,6 +454,7 @@ const styles = `
 .bubble.left { border-radius: 18px 18px 18px 4px; }
 .bubble.right { border-radius: 18px 18px 4px 18px; box-shadow: 0 4px 0 var(--coral); }
 .bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
+.avatar-pic .sp-tile { border-radius: 50%; border: 3px solid var(--navy); }
 .bubble-col.is-roomy { gap: 18px; max-width: 640px; }
 .bubble-col.is-roomy .avatar { width: 52px; height: 52px; font-size: 20px; }
 .bubble-col.is-roomy .bubble { font-size: 21px; padding: 15px 24px; border-radius: 24px 24px 24px 6px; }

@@ -303,7 +303,9 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      <div className="tg-gp-pic"><SoarPic src={r.pic} label={r.answer} size={170} zoom="off" /></div>
+      <div className="tg-gp-pic">
+        {r.pic ? <SoarPic src={r.pic} label={r.answer} size={170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
+      </div>
       <div className="tg-gp-opts">
         {options.map((o) => (
           <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
@@ -316,7 +318,7 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
   );
 }
 
-export function OrderUpBlock({ heading, items = [], sides, avatars }) {
+export function OrderUpBlock({ heading, items = [], sides, avatars, inline, pic, label }) {
   const [display] = useState(() => {
     let s = shuffle(items.map((_, i) => i));
     while (items.length > 1 && s.every((v, i) => v === i)) s = shuffle(items.map((_, i) => i));
@@ -335,11 +337,12 @@ export function OrderUpBlock({ heading, items = [], sides, avatars }) {
   return (
     <div className="stage-col">
       <h2 className="slide-h">{heading}</h2>
-      <div className={`tg-order-col ${sides ? "is-chat" : ""}`}>
+      {pic && <div className="tg-spot-who"><SoarPic src={pic} label={label} size={84} zoom="off" /></div>}
+      <div className={`tg-order-col ${sides ? "is-chat" : ""} ${inline ? "is-inline" : ""}`}>
         {(done ? items.map((_, k) => k) : display).map((i) => {
           const right = sides ? sides[i] === 1 : false;
           const card = (
-            <button type="button" className={`tg-order-card ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""} ${sides ? (right ? "is-right" : "is-left") : ""}`} onClick={() => pick(i)}>
+            <button type="button" className={`tg-order-card ${inline ? "is-tile" : ""} ${placed.includes(i) ? "is-placed" : ""} ${wrong === i ? "is-shake" : ""} ${sides ? (right ? "is-right" : "is-left") : ""}`} onClick={() => pick(i)}>
               {placed.includes(i) && <span className="tg-order-num">{placed.indexOf(i) + 1}</span>}
               <span className="tg-order-text">{items[i]}</span>
             </button>
@@ -442,6 +445,7 @@ export const TEENS_GAME_BLOCKS = {
   dice: DiceBlock,
   spoterror: SpotErrorBlock,
   greetpick: GreetPickBlock,
+  pickpic: GreetPickBlock,
 };
 
 export const teensGameStyles = `
@@ -516,6 +520,11 @@ export const teensGameStyles = `
 .tg-order-ava .sp-tile { border-radius: 50%; border: 3px solid var(--navy, #1B2A4A); }
 .tg-gp-pic { display: flex; justify-content: center; margin: 0 0 14px; }
 .tg-gp-pic .sp-tile { border-radius: 24px; }
+.tg-gp-text { min-width: 200px; padding: 22px 30px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 24px; box-shadow: 0 4px 0 var(--navy, #1B2A4A); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; line-height: 1.2; color: var(--navy, #1B2A4A); }
+.tg-gp-opts { flex-wrap: wrap; }
+.tg-order-col.is-inline { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 520px; }
+.tg-order-card.is-tile { width: 68px; height: 68px; padding: 0; justify-content: center; font-size: 34px; border-radius: 16px; }
+.tg-order-card.is-tile .tg-order-num { position: absolute; top: -9px; right: -9px; }
 .tg-gp-opts { display: flex; justify-content: center; gap: 12px; margin-bottom: 14px; }
 .tg-gp-opt { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 12px 24px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
 .tg-gp-opt:disabled { cursor: default; }
