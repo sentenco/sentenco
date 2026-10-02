@@ -4,6 +4,7 @@ import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges } from "./TeensCoverBadges.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
+import { FitH } from "./FitH.jsx";
 import { WrapUp, wrapUpStyles } from "./WrapUpSlide.jsx";
 
 function renderHighlighted(text) {
@@ -54,7 +55,7 @@ function TitleBlock({ stage, title, subtitle }) {
       {lesson && (
         <div className="cover-ribbon"><span className="cr-label">LESSON</span><span className="cr-num">{lesson}</span></div>
       )}
-      <h1 className={`title-h ${String(title).length <= 9 ? "is-short" : ""}`}><span className="title-hl">{title}</span></h1>
+      <FitH as="h1" className={`title-h ${String(title).length <= 9 ? "is-short" : ""}`}><span className="title-hl">{title}</span></FitH>
       <p className="title-p">{subtitle}</p>
     </div>
   );
@@ -76,7 +77,7 @@ function VocabBlock({ heading, subheading, items = [], compact }) {
   const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : 84;
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""} ${compact ? "is-compact" : ""}`}>
         {items.map((it, i) => (
@@ -113,7 +114,7 @@ function VocabBlock({ heading, subheading, items = [], compact }) {
 function ChipsBlock({ heading, subheading, items = [] }) {
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="chip-row">
         {items.map((it, i) => <span className="ig-chip" key={i}>{it}</span>)}
@@ -125,7 +126,7 @@ function ChipsBlock({ heading, subheading, items = [] }) {
 function MessageBlock({ heading, subheading, lines = [] }) {
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="msg-lines">
         {lines.map((l, i) => <p className="msg-line" key={i}>{renderHighlighted(l)}</p>)}
@@ -137,7 +138,7 @@ function MessageBlock({ heading, subheading, lines = [] }) {
 function DialogueBlock({ heading, subheading, turns = [] }) {
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className={`bubble-col ${turns.length <= 3 ? "is-roomy" : ""}`}>
         {turns.map((t, i) => (
@@ -156,7 +157,7 @@ function DialogueBlock({ heading, subheading, turns = [] }) {
 function ExamplesBlock({ heading, subheading, rows = [] }) {
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className={`mini-log ${rows.length <= 2 ? "is-roomy" : ""}`}>
         {rows.map(([q, a], i) => (
@@ -173,7 +174,7 @@ function ExamplesBlock({ heading, subheading, rows = [] }) {
 function SpotlightBlock({ heading, subheading, pic, label, question, answer }) {
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="spotlight-pic">
         <SoarPic src={pic} label={label} size={136} />
@@ -191,7 +192,7 @@ function SpotlightBlock({ heading, subheading, pic, label, question, answer }) {
 function PracticeBlock({ heading, subheading, line }) {
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className="frame-card">
         <div className="frame-line">
@@ -402,7 +403,7 @@ const styles = `
 .unit-medal .um-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; margin-bottom: -6px; padding-left: 0.2em; }
 .unit-medal .um-num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 60px; line-height: 1; text-shadow: 0 3px 0 rgba(160,45,18,0.35); }
 .unit-medal.is-long .um-num { font-size: 46px; }
-.title-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; color: var(--navy); margin: 0 0 18px; line-height: 1.15; }
+.title-h { white-space: nowrap; width: max-content; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; color: var(--navy); margin: 0 0 18px; line-height: 1.15; }
 .title-hl { background: linear-gradient(transparent 50%, rgba(255,208,102,0.9) 50%, rgba(255,208,102,0.9) 90%, transparent 90%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px; margin-left: -10px; }
 .title-h.is-short { font-size: 78px; }
 .title-p { font-family: 'Quicksand', sans-serif; font-size: 15px; font-weight: 600; color: var(--ink-soft); max-width: 320px; line-height: 1.55; }
@@ -411,7 +412,7 @@ const styles = `
 .ig-wrap .wrapup-col { gap: 34px; }
 .ig-wrap .wrapup-recap { font-size: 21px; max-width: 440px; line-height: 1.4; }
 .stage-col { width: 100%; text-align: center; }
-.slide-h { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; color: var(--navy); margin: 0 auto 14px; position: relative; display: table; isolation: isolate; }
+.slide-h { white-space: nowrap; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; color: var(--navy); margin: 0 auto 14px; position: relative; display: table; isolation: isolate; }
 .slide-h::before { content: ""; position: absolute; left: -12px; right: -12px; top: 34%; bottom: 18%; background: #FFD066; opacity: 0.85; transform: rotate(-1.4deg); border-radius: 4px; z-index: -1; }
 .slide-p { font-family: 'Quicksand', sans-serif; font-size: 13px; color: var(--ink-soft); font-weight: 600; margin: 0 0 18px; }
 .slide-p--wrap { max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.6; }
@@ -430,6 +431,7 @@ const styles = `
 .vocab-card:not(.has-pic) { width: 168px; padding: 18px 20px; }
 .vocab-card:not(.has-pic) .vocab-label { font-size: 30px; }
 .vocab-note { font-size: 13px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 6px 0 0; }
+.vocab-row.is-compact .vocab-zoom-badge { display: none; }
 .vocab-zoom-badge { position: absolute; bottom: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(27,42,74,0.3); }
 .vocab-zoom-overlay { position: fixed; inset: 0; background: rgba(20,28,54,0.72); display: flex; align-items: center; justify-content: center; z-index: 50; }
 .vocab-zoom-card { position: relative; background: var(--coral-light); border: 3px solid var(--coral-deep); border-radius: 20px; padding: 36px 44px; max-width: 80%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }

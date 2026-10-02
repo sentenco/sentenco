@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FitH } from "./FitH.jsx";
 import { SoarPic } from "./SoarPic.jsx";
 
 // Reusable teacher-clicked games for Ignite (A1) and Ablaze (A2) Teens. Text-based (no
@@ -58,7 +59,7 @@ export function WheelBlock({ heading, items = [], question, size = 176 }) {
   const got = result !== null ? items[result] : null;
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       <div className="tg-wheel-row">
         <div className="tg-wheel-wrap" style={{ width: size, height: size }}>
           <svg className="tg-wheel-marker" viewBox="0 0 34 39" aria-hidden="true">
@@ -89,7 +90,7 @@ export function WheelBlock({ heading, items = [], question, size = 176 }) {
         </div>
         <div className="tg-panel">
           {got ? (
-            <div className="tg-result-word">{got.label}</div>
+            <div className="tg-result-bubble" key={result}>{got.label}</div>
           ) : spinning ? (
             <div className="tg-prompt">Spinning...</div>
           ) : null}
@@ -117,7 +118,7 @@ export function GuessWhoBlock({ heading, pic, label, options = [], answer, quest
   const correct = picked === answer;
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {question && <p className="slide-p">{question}</p>}
       <div className="tg-gw-row">
         <div className="tg-gw-pic" style={{ width: 176, height: 176 }}>
@@ -161,7 +162,7 @@ export function MysteryBlock({ heading, clues = [], answer, question, pic }) {
   function again() { setShown(0); setRevealed(false); }
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {question && <p className="slide-p">{question}</p>}
       <div className="tg-clue-grid">
         {clues.map((c, i) => (
@@ -209,7 +210,7 @@ export function SpeedBlock({ heading, items = [], seconds = 45, question, sample
 
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {status === "ready" && (
         <>
           {question && <p className="slide-p">{question}</p>}
@@ -248,7 +249,7 @@ export function ThisOrThatBlock({ heading, pairs = [] }) {
   function next() { setPicked(null); setIdx((i) => i + 1); }
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       <div className="tg-tot-row">
         <button type="button" className={`tg-tot-card ${picked === "a" ? "is-picked" : ""}`} onClick={() => pick("a")} disabled={picked !== null}>{pair[0]}</button>
         <span className="tg-tot-or">or</span>
@@ -274,7 +275,7 @@ export function SpotErrorBlock({ heading, rounds = [], pic, label }) {
   const cls = (side) => `tg-spot-card ${picked !== null ? (r.wrongSide === side ? "is-wrong" : "is-right") : ""}`;
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {pic && <div className="tg-spot-who"><SoarPic src={pic} label={label} size={84} zoom="off" /></div>}
       <div className="tg-spot-vs">
         <button type="button" className={cls("a")} onClick={() => pick("a")} disabled={picked !== null}>{r.a}</button>
@@ -302,7 +303,7 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
   function next() { setPicked(null); setIdx((i) => i + 1); }
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       <div className="tg-gp-pic">
         {r.pic ? <SoarPic src={r.pic} label={r.answer} size={170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
       </div>
@@ -336,7 +337,7 @@ export function OrderUpBlock({ heading, items = [], sides, avatars, inline, pic,
   }
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       {pic && <div className="tg-spot-who"><SoarPic src={pic} label={label} size={84} zoom="off" /></div>}
       <div className={`tg-order-col ${sides ? "is-chat" : ""} ${inline ? "is-inline" : ""}`}>
         {(done ? items.map((_, k) => k) : display).map((i) => {
@@ -370,7 +371,7 @@ export function FactOrCapBlock({ heading, statements = [] }) {
   const correct = choice !== null && choice === s.isTrue;
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       <div className="tg-foc-card">{s.text}</div>
       {choice === null ? (
         <div className="tg-foc-row">
@@ -417,7 +418,7 @@ export function DiceBlock({ heading, dice = [] }) {
   }
   return (
     <div className="stage-col">
-      <h2 className="slide-h">{heading}</h2>
+      <FitH className="slide-h">{heading}</FitH>
       <div className="tg-dice-row">
         {dice.map((d, i) => {
           const label = vals ? d.items[vals[i]] : null;
@@ -456,6 +457,8 @@ export const teensGameStyles = `
 .tg-wheel-text { font-family: 'Baloo 2', sans-serif; font-weight: 800; fill: #fff; }
 .tg-panel { display: flex; flex-direction: column; align-items: center; gap: 12px; background: var(--navy-light, #E4E9F5); border: 2px solid var(--navy, #1B2A4A); border-radius: 18px; padding: 16px 22px; min-width: 170px; }
 .tg-prompt { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13.5px; color: var(--ink-soft, #736A87); text-align: center; }
+.tg-result-bubble { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 38px; line-height: 1.1; color: #fff; text-align: center; background: linear-gradient(180deg, var(--coral, #FF6B4A) 0%, var(--coral-deep, #E0502F) 100%); border: 4px solid var(--navy, #1B2A4A); border-radius: 24px; padding: 16px 26px; max-width: 260px; box-shadow: 0 6px 0 var(--navy, #1B2A4A); animation: tg-pop 0.45s cubic-bezier(.2,1.5,.4,1); }
+@keyframes tg-pop { 0% { transform: scale(0.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 .tg-result-word { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 19px; color: var(--navy, #1B2A4A); text-align: center; }
 .tg-btn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 10px 20px; border-radius: 14px; border: none; cursor: pointer; background: linear-gradient(180deg, var(--coral, #FF6B4A) 0%, var(--coral-deep, #E0502F) 100%); color: #fff; box-shadow: 0 4px 0 rgba(160,45,18,0.35), 0 8px 16px rgba(224,80,47,0.28); }
 .tg-btn:disabled { opacity: 0.5; cursor: default; }
