@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IGNITE_A1_LESSONS } from "./igniteA1Data.js";
+import { ABLAZE_A2_LESSONS } from "./ablazeA2Data.js";
 import { TEENS_GAME_BLOCKS, teensGameStyles } from "./TeensGames.jsx";
 import { CoverBadges } from "./TeensCoverBadges.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
@@ -73,7 +74,7 @@ function VocabBlock({ heading, subheading, items = [], compact }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [zoomed]);
-  const picCount = items.filter((it) => "pic" in it || it.swatch).length;
+  const picCount = items.filter((it) => "pic" in it || it.swatch || it.meter !== undefined).length;
   const picSize = picCount > 6 ? 60 : picCount > 4 ? 72 : 84;
   return (
     <div className="stage-col">
@@ -81,11 +82,13 @@ function VocabBlock({ heading, subheading, items = [], compact }) {
       {subheading && <p className="slide-p">{subheading}</p>}
       <div className={`vocab-row ${picCount > 6 ? "is-dense" : ""} ${compact ? "is-compact" : ""}`}>
         {items.map((it, i) => (
-          "pic" in it || it.swatch ? (
+          "pic" in it || it.swatch || it.meter !== undefined ? (
             <div className="vocab-card has-pic" key={i}>
-              {it.swatch
-                ? <div className="color-swatch" style={{ width: picSize, height: picSize, background: it.swatch }} />
-                : <SoarPic src={it.pic} label={it.label} size={picSize} />}
+              {it.meter !== undefined
+                ? <div className="freq-meter" style={{ width: picSize + 24 }}>{Array.from({ length: 7 }).map((_, k) => <span key={k} className={k < it.meter ? "on" : ""} />)}</div>
+                : it.swatch
+                  ? <div className="color-swatch" style={{ width: picSize, height: picSize, background: it.swatch }} />
+                  : <SoarPic src={it.pic} label={it.label} size={picSize} />}
               <span className="vocab-label">{it.label}</span>
               {it.note && <p className="vocab-note">{it.note}</p>}
             </div>
@@ -142,7 +145,7 @@ function DialogueBlock({ heading, subheading, turns = [] }) {
     <div className="stage-col">
       <FitH className="slide-h">{heading}</FitH>
       {subheading && <p className="slide-p">{subheading}</p>}
-      <div className={`bubble-col ${turns.length <= 3 ? "is-roomy" : ""}`}>
+      <div className={`bubble-col ${turns.length <= 3 ? "is-roomy" : ""} ${turns.some((t) => String(t.text).length > 34) ? "is-long" : ""}`}>
         {turns.map((t, i) => (
           <div className={`brow ${t.who === "student" ? "me" : ""}`} key={i}>
             {t.pic
@@ -234,7 +237,7 @@ function renderSlideBody(slide, index) {
   return Block ? <Block key={index} {...slide} /> : null;
 }
 
-export default function IgniteLesson() {
+export default function IgniteLesson({ track = "ignite" }) {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
@@ -249,7 +252,7 @@ export default function IgniteLesson() {
   }, []);
 
   const key = `${unit}-${lesson}`;
-  const data = IGNITE_A1_LESSONS[key];
+  const data = (track === "ablaze" ? ABLAZE_A2_LESSONS : IGNITE_A1_LESSONS)[key];
 
   useEffect(() => {
     setI(0);
@@ -459,6 +462,8 @@ const styles = `
 .bubble.right { border-radius: 18px 18px 4px 18px; box-shadow: 0 4px 0 var(--coral); }
 .bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
 .avatar-pic .sp-tile { border-radius: 50%; border: 3px solid var(--navy); }
+.bubble-col.is-long { gap: 6px; }
+.bubble-col.is-long .bubble { padding: 9px 16px; }
 .bubble-col.is-roomy { gap: 18px; max-width: 640px; }
 .bubble-col.is-roomy .avatar { width: 52px; height: 52px; font-size: 20px; }
 .bubble-col.is-roomy .bubble { font-size: 21px; padding: 15px 24px; border-radius: 24px 24px 24px 6px; }
@@ -491,6 +496,9 @@ const styles = `
 .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(27,42,74,0.18); }
 .dot.on { width: 22px; border-radius: 5px; background: var(--coral); }
 
+.freq-meter { display: flex; gap: 4px; justify-content: center; padding: 14px 0; }
+.freq-meter span { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--navy); }
+.freq-meter span.on { background: var(--coral); border-color: var(--coral-deep); }
 .color-swatch { border-radius: 14px; border: 3px solid var(--navy); box-shadow: 0 3px 0 rgba(27,42,74,0.15); }
 .vocab-card.has-pic { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; padding: 10px 12px 12px; }
 .vocab-card.has-pic .vocab-label { text-align: center; }

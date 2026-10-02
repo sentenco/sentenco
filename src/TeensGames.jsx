@@ -241,7 +241,7 @@ export function SpeedBlock({ heading, items = [], seconds = 45, question, sample
   );
 }
 
-export function ThisOrThatBlock({ heading, pairs = [] }) {
+export function ThisOrThatBlock({ heading, pairs = [], why = "Why? Say one sentence." }) {
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
   const pair = pairs[idx % pairs.length];
@@ -255,7 +255,7 @@ export function ThisOrThatBlock({ heading, pairs = [] }) {
         <span className="tg-tot-or">or</span>
         <button type="button" className={`tg-tot-card ${picked === "b" ? "is-picked" : ""}`} onClick={() => pick("b")} disabled={picked !== null}>{pair[1]}</button>
       </div>
-      {picked && <p className="slide-p tg-tot-followup">Why? Say one sentence.</p>}
+      {picked && <p className="slide-p tg-tot-followup">{why}</p>}
       <button type="button" className="tg-btn" onClick={next}>Next pair</button>
     </div>
   );
@@ -461,7 +461,9 @@ export function PicMatchBlock({ heading, pool = [], rounds = [] }) {
           return (
             <button key={l} type="button" disabled={done} onClick={() => setPicked(l)}
               className={`tg-pm-opt ${done ? (l === r.answer ? "is-right" : l === picked ? "is-wrong" : "") : ""}`}>
-              {it.swatch
+              {it.meter !== undefined
+                ? <div className="freq-meter">{Array.from({ length: 7 }).map((_, k) => <span key={k} className={k < it.meter ? "on" : ""} />)}</div>
+                : it.swatch
                 ? <div className="tg-swatch" style={{ background: it.swatch, width: shown.length > 3 ? 84 : 100, height: shown.length > 3 ? 84 : 100 }} />
                 : <SoarPic src={it.pic} label={it.label} size={shown.length > 3 ? 84 : 100} zoom="off" />}
             </button>
@@ -508,8 +510,101 @@ export function PicOrderBlock({ heading, items = [] }) {
   );
 }
 
+// Multiple-choice question rounds. { rounds: [{ q, options: [str], answer, pic? }] }. A "___" in q is filled with the answer once picked.
+export function QuizBlock({ heading, rounds = [] }) {
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null);
+  const r = rounds[idx % rounds.length];
+  const [opts, setOpts] = useState(() => shuffle(rounds[0].options));
+  const done = picked !== null;
+  function next() {
+    const nr = rounds[(idx + 1) % rounds.length];
+    setOpts(shuffle(nr.options));
+    setPicked(null);
+    setIdx((i) => i + 1);
+  }
+  const shownQ = done && r.q.includes("___") ? r.q.replace("___", r.answer) : r.q;
+  return (
+    <div className="stage-col">
+      <FitH className="slide-h">{heading}</FitH>
+      {r.pic && <div className="tg-spot-who"><SoarPic src={r.pic} label={r.answer} size={84} zoom="off" /></div>}
+      <div className="tg-quiz-q">{shownQ}</div>
+      <div className="tg-quiz-opts">
+        {opts.map((o) => (
+          <button key={o} type="button" disabled={done} onClick={() => setPicked(o)}
+            className={`tg-quiz-opt ${done ? (o === r.answer ? "is-right" : o === picked ? "is-wrong" : "") : ""}`}>{o}</button>
+        ))}
+      </div>
+      {done && <div className={`tg-foc-verdict ${picked === r.answer ? "is-right" : "is-wrong"}`}>{picked === r.answer ? "Yes!" : `Answer: ${r.answer}`}</div>}
+      {rounds.length > 1 && <button type="button" className="tg-btn" onClick={next}>{idx % rounds.length === rounds.length - 1 ? "Again" : "Next"}</button>}
+    </div>
+  );
+}
+
+// Word tiles in a shuffled pile; tap them in order to build the sentence. { rounds: [{ words: [str] }] } (words in correct order).
+export function BuildBlock({ heading, rounds = [] }) {
+  const [idx, setIdx] = useState(0);
+  const r = rounds[idx % rounds.length];
+  const mk = (rr) => { let sh = shuffle(rr.words.map((_, i) => i)); while (rr.words.length > 1 && sh.every((v, i) => v === i)) sh = shuffle(rr.words.map((_, i) => i)); return sh; };
+  const [display, setDisplay] = useState(() => mk(rounds[0]));
+  const [placed, setPlaced] = useState([]);
+  const [wrong, setWrong] = useState(null);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const done = placed.length === r.words.length;
+  function pick(i) {
+    if (done || placed.includes(i)) return;
+    if (r.words[i] === r.words[placed.length]) setPlaced([...placed, i]);
+    else { setWrong(i); clearTimeout(timer.current); timer.current = setTimeout(() => setWrong(null), 450); }
+  }
+  function next() {
+    const nr = rounds[(idx + 1) % rounds.length];
+    setDisplay(mk(nr)); setPlaced([]); setIdx((i) => i + 1);
+  }
+  return (
+    <div className="stage-col">
+      <FitH className="slide-h">{heading}</FitH>
+      <div className={`tg-build-line ${done ? "is-done" : ""}`}>
+        {placed.length === 0 ? <span className="tg-build-ph">Tap the words in order</span> : placed.map((i) => r.words[i]).join(" ")}
+      </div>
+      <div className="tg-build-pile">
+        {display.map((i) => (
+          <button key={i} type="button" disabled={placed.includes(i) || done} onClick={() => pick(i)}
+            className={`tg-build-tile ${placed.includes(i) ? "is-used" : ""} ${wrong === i ? "is-shake" : ""}`}>{r.words[i]}</button>
+        ))}
+      </div>
+      {done && <div className="tg-answer-chip">Now say it!</div>}
+      {rounds.length > 1 && <button type="button" className="tg-btn" onClick={next}>{idx % rounds.length === rounds.length - 1 ? "Again" : "Next"}</button>}
+    </div>
+  );
+}
+
+// Speaking scene: a situation (optional picture), two role cards and useful phrases. { situation, pic?, roles: [{ who, goal }], phrases: [str] }
+export function RoleplayBlock({ heading, situation, pic, roles = [], phrases = [] }) {
+  return (
+    <div className="stage-col">
+      <FitH className="slide-h">{heading}</FitH>
+      <div className="tg-rp-top">
+        {pic && <SoarPic src={pic} label={heading} size={96} />}
+        <div className="tg-rp-sit">{situation}</div>
+      </div>
+      <div className="tg-rp-roles">
+        {roles.map((ro, i) => (
+          <div key={i} className={`tg-rp-role ${i === 1 ? "is-b" : ""}`}><b>{ro.who}</b><span>{ro.goal}</span></div>
+        ))}
+      </div>
+      {phrases.length > 0 && (
+        <div className="tg-rp-phrases">{phrases.map((p, i) => <span key={i} className="tg-rp-phrase">{p}</span>)}</div>
+      )}
+    </div>
+  );
+}
+
 export const TEENS_GAME_BLOCKS = {
   wheel: WheelBlock,
+  quiz: QuizBlock,
+  build: BuildBlock,
+  roleplay: RoleplayBlock,
   picmatch: PicMatchBlock,
   picorder: PicOrderBlock,
   guesswho: GuessWhoBlock,
@@ -605,6 +700,28 @@ export const teensGameStyles = `
 .tg-po-tile.is-shake { animation: tgShake 0.4s; }
 .tg-po-tile .tg-order-num { position: absolute; top: -10px; right: -10px; }
 .tg-po-label { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14px; color: var(--navy, #1B2A4A); }
+.tg-quiz-q { max-width: 540px; margin: 0 auto 14px; padding: 14px 24px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 22px; box-shadow: 0 5px 0 var(--coral-deep, #E0502F); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2; color: var(--navy, #1B2A4A); }
+.tg-quiz-opts { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
+.tg-quiz-opt { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 16px; padding: 10px 18px; cursor: pointer; box-shadow: 0 4px 0 var(--navy, #1B2A4A); }
+.tg-quiz-opt:disabled { cursor: default; }
+.tg-quiz-opt.is-right { background: #E3F5EC; border-color: #2F9E7A; color: #237A5D; box-shadow: 0 4px 0 #2F9E7A; }
+.tg-quiz-opt.is-wrong { background: #FDE7E2; border-color: #E0502F; color: #B23A1F; box-shadow: 0 4px 0 #E0502F; }
+.tg-build-line { min-height: 56px; max-width: 560px; margin: 0 auto 14px; padding: 12px 22px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 20px; box-shadow: 0 5px 0 var(--coral-deep, #E0502F); font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2; color: var(--navy, #1B2A4A); display: flex; align-items: center; justify-content: center; }
+.tg-build-line.is-done { background: #E3F5EC; border-color: #2F9E7A; box-shadow: 0 5px 0 #2F9E7A; }
+.tg-build-ph { font-size: 17px; font-weight: 700; color: var(--ink-soft, #736A87); }
+.tg-build-pile { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; max-width: 540px; margin: 0 auto 12px; }
+.tg-build-tile { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy, #1B2A4A); background: var(--coral-light, #FFE6DD); border: 3px solid var(--coral-deep, #E0502F); border-radius: 14px; padding: 7px 15px; cursor: pointer; box-shadow: 0 4px 0 rgba(224,80,47,0.35); }
+.tg-build-tile.is-used { opacity: 0.25; box-shadow: none; cursor: default; }
+.tg-build-tile.is-shake { animation: tgShake 0.4s; }
+.tg-rp-top { display: flex; align-items: center; justify-content: center; gap: 16px; max-width: 580px; margin: 0 auto 8px; }
+.tg-rp-sit { flex: 1; padding: 14px 20px; background: #fff; border: 3px solid var(--navy, #1B2A4A); border-radius: 20px; box-shadow: 0 5px 0 var(--navy, #1B2A4A); font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.3; color: var(--navy, #1B2A4A); text-align: left; }
+.tg-rp-roles { display: flex; justify-content: center; gap: 12px; max-width: 580px; margin: 0 auto 8px; }
+.tg-rp-role { flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 9px 14px; background: var(--navy-light, #E4E9F5); border: 3px solid var(--navy, #1B2A4A); border-radius: 18px; text-align: left; }
+.tg-rp-role.is-b { background: var(--coral-light, #FFE6DD); border-color: var(--coral-deep, #E0502F); }
+.tg-rp-role b { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; color: var(--navy, #1B2A4A); }
+.tg-rp-role span { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink, #2B2438); }
+.tg-rp-phrases { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; max-width: 580px; margin: 0 auto; }
+.tg-rp-phrase { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy, #1B2A4A); background: #fff; border: 2px solid var(--navy, #1B2A4A); border-radius: 999px; padding: 5px 14px; }
 .tg-order-col { display: flex; flex-direction: column; gap: 10px; max-width: 560px; margin: 0 auto 12px; }
 .tg-order-col.is-chat { gap: 8px; }
 .tg-order-row { display: flex; align-items: center; gap: 10px; }
