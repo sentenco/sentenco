@@ -6,15 +6,12 @@
 // own capstone/summative lesson, no new language, matches the locked
 // "5 teaching + test" shape under a different real name.
 //
-// Recurring cast, one set of 4 names per unit (not one cast for the whole
-// course; decided explicitly, don't change this to a single global cast
-// without asking first). Reuse the unit's 4 names across that unit's
-// examples, dialogue, and Mystery-game slides instead of inventing a
-// fresh throwaway name per slide, so a student recognizes "classmates"
-// across a unit's 5 lessons. Established in 1-1 (the pilot rebuild);
-// every other unit's cast below is a planned roster for when that unit
-// gets its own rebuild pass, not yet reflected in the actual lesson
-// content for 1-2 through 12-5.
+// Recurring cast, one set of 4 names per unit. The unit's 4 names recur in its
+// dialogues, games and picture slides so a student recognizes the same
+// "classmates" across a unit's 5 lessons. Every lesson from Unit 1 to Unit 12
+// was rebuilt in the zero-English, picture-led style (pictures first, sticker
+// chat bubbles, one instruction pill, no subheadings). Cast portraits live in
+// public/curriculum/ignite/chibi/uN-cast/.
 //   Unit 1  Greetings and Introductions:  Alex, Jordan, Priya, Marcus
 //   Unit 2  Family and People I Know:     Mia, Diego, Noah, Zara
 //   Unit 3  School Life:                  Ethan, Yuki, Amara, Liam
