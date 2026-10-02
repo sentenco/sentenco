@@ -60,11 +60,11 @@ function useDrag(pos, onDrag) {
   return { onPointerDown: down, onPointerMove: move };
 }
 
-export function CoverBadges({ stage, eyebrowText, badges, showRibbon = true, onDragMedal, onDragRibbon, onDragEyebrow }) {
+export function CoverBadges({ stage, medalText, eyebrowText, badges, showRibbon = true, onDragMedal, onDragRibbon, onDragEyebrow }) {
   const m = String(stage || "").match(/Unit (\d+)(?: · | )(?:Lesson (\d+)|Unit Review|Test)/);
-  if (!m) return null;
-  const unit = m[1];
-  const lesson = m[2] || "R";
+  if (!m && !medalText) return null;
+  const unit = m ? m[1] : "";
+  const lesson = m ? m[2] || "R" : "";
   // No `badges` prop: position comes purely from each track's own CSS
   // (.cover-ribbon / .unit-medal / .title-eyebrow), nothing inline here.
   const medal = badges?.medal;
@@ -100,7 +100,7 @@ export function CoverBadges({ stage, eyebrowText, badges, showRibbon = true, onD
         style={medal ? { left: medal.left, top: medal.top, width: medal.size, height: medal.size, transform: `rotate(${medal.rot}deg)`, "--k": medal.size / 104 } : undefined}
         {...medalHandlers}
       >
-        <span className="um-label">UNIT</span><span className="um-num">{unit}</span>
+        <span className="um-label">{medalText ? medalText.label : "UNIT"}</span><span className="um-num">{medalText ? medalText.num : unit}</span>
       </div>
       {draggable && (
         <div className="badge-panel">

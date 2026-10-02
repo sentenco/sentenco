@@ -308,8 +308,6 @@ import ShiftTrack from './ShiftTrack.jsx'
 import ShiftGuide from './ShiftGuide.jsx'
 import LetterBoardHub from './LetterBoardHub.jsx'
 import LetterBoardPlay from './LetterBoardPlay.jsx'
-import Spark from './Spark.jsx'
-import SparkGuide from './SparkGuide.jsx'
 import SparkTeens from './SparkTeens.jsx'
 import SparkTeensGuide from './SparkTeensGuide.jsx'
 import SparkAdults from './SparkAdults.jsx'
@@ -641,8 +639,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/spark/teens/:lessonId/guide" element={<SparkTeensGuide />} />
             <Route path="/library/spark/adults/:lessonId" element={<SparkAdults />} />
             <Route path="/library/spark/adults/:lessonId/guide" element={<SparkAdultsGuide />} />
-            <Route path="/library/spark/:lessonId" element={<Spark />} />
-            <Route path="/library/spark/:lessonId/guide" element={<SparkGuide />} />
+            <Route path="/library/spark/:lessonId" element={<IgniteLesson track="spark-kids" />} />
             <Route path="/lesson-player/:id" element={<LessonPlayerPage />} />
             <Route path="/teacher-guide/:level/:track" element={<TeacherGuide />} />
           </Routes>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import KIDS_LESSONS from "./sparkTracks";
+import { SPARK_KIDS_LIST as KIDS_LESSONS } from "./sparkKidsData";
 import TEENS_LESSONS from "./sparkTeensTracks";
 import ADULTS_LESSONS from "./sparkAdultsTracks";
 
@@ -71,6 +71,13 @@ function QuestIcon({ title }) {
       </svg>
     );
   }
+  if (["Animal Friends", "Rainbow Colors", "My Day", "Yummy Food", "Yesterday's Adventure", "My Dream Room"].includes(title)) {
+    return (
+      <svg {...ICON_PROPS}>
+        <path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" />
+      </svg>
+    );
+  }
   return (
     <svg {...ICON_PROPS}>
       <circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" />
@@ -115,9 +122,9 @@ const AUDIENCES = {
   kids: {
     label: "Kids",
     lessons: KIDS_LESSONS,
-    blurb: "Three 20-minute trial classes for kids, playful and picture-first, built to get a new student talking in the first two minutes.",
+    blurb: "Six standalone 20-minute classes for kids (two beginner, two intermediate, two advanced). Each starts with 5 minutes of getting to know the child and why they want English, then 15 minutes of lesson.",
     lessonPath: (id) => `/library/spark/${id}`,
-    guidePath: (id) => `/library/spark/${id}/guide`,
+    guidePath: null,
   },
   teens: {
     label: "Teens",
@@ -191,9 +198,11 @@ export default function SparkHub() {
               <h3 className="spkh-lesson-title">{lesson.title}</h3>
               <p className="spkh-lesson-desc">{lesson.coreAim}</p>
               <div className="spkh-lesson-foot">
-                <button type="button" className="spkh-lesson-guidebtn" onClick={() => openGuide(config.guidePath(lesson.id))}>
-                  Guide
-                </button>
+                {config.guidePath ? (
+                  <button type="button" className="spkh-lesson-guidebtn" onClick={() => openGuide(config.guidePath(lesson.id))}>
+                    Guide
+                  </button>
+                ) : <span />}
                 <button type="button" className="spkh-lesson-startbtn" onClick={() => openLesson(config.lessonPath(lesson.id))}>
                   Start &rarr;
                 </button>
