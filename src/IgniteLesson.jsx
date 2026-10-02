@@ -237,10 +237,10 @@ function renderSlideBody(slide, index) {
   return Block ? <Block key={index} {...slide} /> : null;
 }
 
-// Each track has its own cover and slide backgrounds (Ignite A1 = lit match, Ablaze A2 = campfire).
+// Each track has its own cover and slide backgrounds (Ignite A1 = lit match, Ablaze A2 = bonfire).
 const TRACK_BACKGROUNDS = {
   ignite: { title: "/curriculum/teens-a1-shared/title-bg.jpg", slide: "/curriculum/teens-a1-shared/slide-bg.jpg" },
-  ablaze: { title: "/curriculum/teens-a2-shared/title-bg.jpg", slide: "/curriculum/teens-a2-shared/slide-bg.jpg" },
+  ablaze: { title: "/curriculum/teens-a2-shared/ablaze-title-bg.jpg", slide: "/curriculum/teens-a2-shared/ablaze-slide-bg.jpg" },
 };
 
 export default function IgniteLesson({ track = "ignite" }) {
