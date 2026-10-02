@@ -247,6 +247,7 @@ export default function IgniteLesson({ track = "ignite" }) {
   const { unit, lesson } = useParams();
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
+  const [copied, setCopied] = useState(false);
   // Cover badge editor: open any lesson with ?adjust=1 to drag, resize and rotate the UNIT circle.
   const adjust = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("adjust");
   const { badges, dragMedal } = useBadgePositions(`cover-badges-${track}`, { medal: medalDefault({ left: 106, top: 276 }), ribbon: ribbonDefault(), eyebrow: eyebrowDefault() });
@@ -345,8 +346,14 @@ export default function IgniteLesson({ track = "ignite" }) {
                 <button type="button" onClick={() => dragMedal({ size: Math.min(260, badges.medal.size + 6) })}>Bigger</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot - 3 })}>Rotate left</button>
                 <button type="button" onClick={() => dragMedal({ rot: badges.medal.rot + 3 })}>Rotate right</button>
-                <button type="button" onClick={() => dragMedal({ left: 106, top: 276, size: 104, rot: -6 })}>Reset</button>
-                <span className="bt-values">size {badges.medal.size}, rotate {badges.medal.rot}</span>
+                <button type="button" onClick={() => dragMedal({ left: 119, top: 322, size: 104, rot: -6 })}>Reset</button>
+                <button type="button" className="bt-copy" onClick={() => {
+                  const m = badges.medal;
+                  const txt = `medal left ${m.left}, top ${m.top}, size ${m.size}, rotate ${m.rot}`;
+                  try { navigator.clipboard.writeText(txt); } catch (e) { /* fall back to the visible text */ }
+                  setCopied(true); setTimeout(() => setCopied(false), 1800);
+                }}>{copied ? "Copied!" : "Copy position"}</button>
+                <span className="bt-values">left {badges.medal.left}, top {badges.medal.top}, size {badges.medal.size}, rotate {badges.medal.rot}</span>
               </div>
             )}
             {i !== 0 && s.instruction && (
@@ -431,6 +438,7 @@ const styles = `
 .badge-panel { bottom: auto !important; top: 12px; }
 .badge-tools { position: absolute; left: 50%; top: 66px; transform: translateX(-50%); z-index: 11; display: flex; align-items: center; gap: 6px; background: rgba(20,28,54,0.92); padding: 6px 10px; border-radius: 12px; }
 .badge-tools button { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px; color: var(--navy); background: #fff; border: none; border-radius: 8px; padding: 4px 9px; cursor: pointer; }
+.badge-tools .bt-copy { background: #FFD066; }
 .bt-values { font-family: 'Baloo 2', sans-serif; font-size: 11px; color: #fff; margin-left: 4px; }
 .title-h { white-space: nowrap; width: max-content; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 54px; color: var(--navy); margin: 0 0 18px; line-height: 1.15; }
 .title-hl { background: linear-gradient(transparent 50%, rgba(255,208,102,0.9) 50%, rgba(255,208,102,0.9) 90%, transparent 90%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px; margin-left: -10px; }
