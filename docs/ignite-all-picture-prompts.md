@@ -1,9 +1,248 @@
-# Ignite A1 picture prompts, Units 2 to 12
+# Ignite A1 (Teens) picture prompts, all units
 
-Save each picture at the path shown, as `.jpeg`, under `public/curriculum/ignite/chibi/`. A missing picture shows a dashed placeholder in the lesson, so pictures can arrive in any order, in any batch.
+Every picture the Ignite A1 lessons use, with its generation prompt (style prefix already included, one code block each).
 
-Prompt types: character portraits and people scenes use the chibi style set. Objects and icons use the flat kawaii icon style. Each prompt already includes the style prefix.
+- **Part 1** are the Unit 1 to 3 base pictures that were already generated and installed. Kept here only in case you need to regenerate one.
 
+- **Part 2** are the **185 pictures still to generate** for Units 2 to 12. Save each as `.jpeg` at the path shown, under `public/curriculum/ignite/chibi/`. A missing picture shows a dashed placeholder in the lesson, so they can arrive in any order.
+
+- Style sets: people and scenes use the chibi style; objects and icons use the flat kawaii icon style.
+
+
+---
+
+# Part 1: already generated (31 pictures)
+
+
+## Unit 1
+
+### `u1-cast/alex.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 14-year-old boy with short messy light-brown hair and fair/light-tan skin, wearing a bright blue zip-up hoodie, big open-mouth grin, one hand raised in a friendly wave.
+```
+
+### `u1-cast/jordan.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 15-year-old with short wavy auburn hair, fair skin with light freckles across the nose, wearing a green crewneck t-shirt, relaxed closed-mouth smile, arms crossed casually.
+```
+
+### `u1-cast/marcus.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 16-year-old boy with short black curly hair, deep brown skin, wearing a red crewneck t-shirt, confident grin, arms crossed over his chest.
+```
+
+### `u1-cast/priya.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 13-year-old girl with long black hair in a single side braid over one shoulder, warm brown skin, wearing a purple top with a small round collar, bright wide smile showing teeth, one hand making a peace sign near her face.
+```
+
+### `u1-countries/australia.jpeg`
+
+```text
+Chibi-style icon illustration: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject centered.
+Subject: the flag of Australia (blue with the Union Jack in the corner and white stars) as a cute waving flag on a short pole, with a small cartoon kangaroo beside it.
+```
+
+### `u1-countries/canada.jpeg`
+
+```text
+Chibi-style icon illustration: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject centered.
+Subject: the flag of Canada (red and white with a red maple leaf) as a cute waving flag on a short pole, with a small cartoon maple leaf and a tiny beaver sitting beside it.
+```
+
+### `u1-countries/india.jpeg`
+
+```text
+Chibi-style icon illustration: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject centered.
+Subject: the flag of India (saffron, white and green stripes with a blue wheel in the center) as a cute waving flag on a short pole, with a small cartoon Taj Mahal beside it.
+```
+
+### `u1-countries/uk.jpeg`
+
+```text
+Chibi-style icon illustration: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject centered.
+Subject: the flag of the United Kingdom (the Union Jack, blue, red and white) as a cute waving flag on a short pole, with a small cartoon red double-decker bus beside it.
+```
+
+### `u1-greetings/hello.jpeg`
+
+```text
+Chibi-style scene illustration: oversized heads at roughly half the body height, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, natural human skin tones, plain soft pastel background with no scenery, no text, no logos, no watermark, square 1:1 image.
+Subject: a student greeting their teacher, both facing each other. On the left, the student: Priya (13, long black hair in a single side braid, warm brown skin), in a school look with a purple top, a school backpack on both shoulders, and a notebook held to her chest, giving a polite small wave with one hand and a respectful smile, saying "hello". On the right, the teacher: a friendly adult woman (shoulder-length wavy brown hair, round glasses, a lilac cardigan over a white blouse, a long dark skirt) standing upright and taller than the student, holding a clipboard and a pen in her hands, smiling kindly and listening, with no wave. Make the age and role difference clear: the student looks young and carries school things, the teacher looks mature, professional, and in charge. Polite, neutral, first-meeting mood.
+```
+
+### `u1-greetings/hey.jpeg`
+
+```text
+Chibi-style scene illustration: oversized heads at roughly half the body height, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, natural human skin tones, plain soft pastel background with no scenery, no text, no logos, no watermark, square 1:1 image.
+Subject: two best friends running toward each other, full of excitement, saying "hey" to each other. Alex (14, short messy light-brown hair, blue zip-up hoodie) has one arm thrown high in an energetic wave and an open-mouth shout, slightly bouncing off the ground. Marcus (16, short black curly hair, deep brown skin, red t-shirt) grins wide and meets him with a fist bump. A few small motion lines and sparkles around them for high energy. Loud, playful, very casual.
+```
+
+### `u1-greetings/hi.jpeg`
+
+```text
+Chibi-style scene illustration: oversized heads at roughly half the body height, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlights, bright cheerful palette, natural human skin tones, plain soft pastel background with no scenery, no text, no logos, no watermark, square 1:1 image.
+Subject: two classmates standing a normal polite distance apart, calmly saying "hi" to each other. Priya (13, long black hair in a single side braid, warm brown skin, purple top) holds a notebook against her chest with one arm and gives a small, gentle wave with the other hand at chest height, closed-mouth soft smile. Jordan (15, short wavy auburn hair with light freckles, green t-shirt) holds a school bag strap and gives the same small, gentle wave back with a soft smile. No motion lines, no jumping. Calm, friendly, easy mood.
+```
+
+
+## Unit 2
+
+### `u2-cast/diego.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 14-year-old boy with short black hair, olive-tan skin, wearing an orange t-shirt, big toothy grin, one hand giving a thumbs-up.
+```
+
+### `u2-cast/mia.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 13-year-old girl with shoulder-length wavy dark-blonde hair and a small flower hair clip, light skin, wearing a yellow top, cheerful smile, both hands clasped together in front of her.
+```
+
+### `u2-cast/noah.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 15-year-old boy with short sandy-blond hair, fair skin, round wire glasses, wearing a teal t-shirt, warm smile, one hand scratching the back of his head.
+```
+
+### `u2-cast/zara.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 13-year-old girl with curly dark hair styled in two puffs, deep brown skin, wearing a pink top with a round collar, bright excited smile, both hands clasped near her chin.
+```
+
+### `u2-family/brother.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a generic teenage boy (a "brother" character, not tied to any named student) with messy dark-brown hair, light skin, wearing a gray graphic t-shirt, playful grin.
+```
+
+### `u2-family/dad.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a generic adult man (a "dad" character, not tied to any named student) with short black hair, light stubble, medium-tan skin tone, wearing a navy-blue collared shirt, warm smile.
+```
+
+### `u2-family/grandma.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a generic elderly woman with short curly white-gray hair, light skin with soft smile lines, round glasses, wearing a lilac cardigan, warm gentle smile.
+```
+
+### `u2-family/grandpa.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a generic elderly man, balding with gray hair at the sides, light skin with soft smile lines, round glasses, wearing a brown cardigan over a collared shirt, warm gentle smile.
+```
+
+### `u2-family/mom.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a generic adult woman (a "mom" character, not tied to any named student) with shoulder-length wavy brown hair, light-medium skin tone, wearing a soft coral blouse, warm gentle smile.
+```
+
+### `u2-family/sister.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a generic teenage girl (a "sister" character, not tied to any named student) with long straight black hair and a headband, light-tan skin, wearing a lavender t-shirt, cheerful smile.
+```
+
+
+## Unit 3
+
+### `u3-cast/amara.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 15-year-old girl with short natural curly black hair, deep brown skin, wearing a mustard-yellow turtleneck, confident smile, one hand resting on her hip.
+```
+
+### `u3-cast/ethan.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 14-year-old boy with short spiky brown hair, fair skin, wearing a dark-green hoodie, energetic open grin, one fist raised excitedly.
+```
+
+### `u3-cast/liam.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 14-year-old boy with short reddish-brown hair, fair skin with light freckles, wearing a burgundy crewneck sweater, shy closed-mouth smile, both hands in his pockets.
+```
+
+### `u3-cast/yuki.jpeg`
+
+```text
+Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no logos, no watermark, square 1:1 image, single subject only.
+Subject: a 13-year-old girl with straight black hair in twin low pigtails, light skin, wearing a sky-blue cardigan over a white collared shirt, gentle smile, hands clasped behind her back.
+```
+
+### `u3-school/art.jpeg`
+
+```text
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: a wooden paint palette with five dabs of paint (red, yellow, blue, green, purple) arranged around its edge, two crossed paintbrushes resting on top of it.
+```
+
+### `u3-school/english.jpeg`
+
+```text
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: a stack of three closed books (a worn red book on top, a blue book in the middle, a green book on the bottom) with a feather quill pen resting diagonally across the top, no text, letters, or titles visible on any spine or cover.
+```
+
+### `u3-school/history.jpeg`
+
+```text
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: an old rolled-up parchment scroll tied closed with a red ribbon bow, resting beside a small golden pocket hourglass, no text or writing visible on the scroll.
+```
+
+### `u3-school/math.jpeg`
+
+```text
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: a single large cartoon-cute calculator with big rounded buttons and a small subtle smiling face built into its screen, a yellow pencil leaning against its right side.
+```
+
+### `u3-school/pe.jpeg`
+
+```text
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: a single round orange-and-black basketball resting next to a silver sports whistle on a short black cord.
+```
+
+### `u3-school/science.jpeg`
+
+```text
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: a clear glass beaker filled with bright bubbling teal liquid, a few small rising bubbles inside, sitting on a short round wooden stand.
+```
+
+
+---
+
+# Part 2: still to generate (185 pictures)
 
 ## Unit 2
 
