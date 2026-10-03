@@ -1066,7 +1066,7 @@ Subject: A teenage boy sitting at a kitchen table eating breakfast: toast, a fri
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A teenage girl sitting at a table eating lunch: a sandwich and an apple on a plate; a bright high noon sun in the window behind her. Happy smile.
+Subject: A teenage girl sitting outdoors on a school courtyard bench at noon, holding an open bento lunchbox on her lap with rice, a chicken drumstick, broccoli and a few carrot slices, a small juice box on the bench beside her, a very bright yellow sun directly overhead with tiny short shadows, a leafy tree and a small school building far behind her, a school backpack on the ground. Happy smile as she lifts her chopsticks. Completely different from a breakfast scene: outdoors, lunchbox, midday sun.
 ```
 
 ### `u8-meals/dinner.jpeg`  (Lesson 3 (meals))
