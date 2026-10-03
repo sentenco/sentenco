@@ -724,7 +724,7 @@ Subject: A round wall clock with a white face, a thick pastel-mint outer rim, bo
 
 ```text
 Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round wall clock with a white face, a thick pastel-mint outer rim, bold clear numerals 1 to 12 printed correctly around the face, a short thick black hour hand and a long thin black minute hand, front view, centered. The hands must show exactly 7:30: the minute hand points straight down at 6 and the hour hand sits exactly halfway between 7 and 8.
+Subject: A round wall clock with a white face, a thick pastel-mint outer rim, bold clear numerals 1 to 12 printed correctly around the face, front view, centered, with TWO clearly different hands starting at the center: a short thick black HOUR hand and a long thin black MINUTE hand. The exact time is 7:30. The MINUTE hand points straight down, exactly at the numeral 6. The HOUR hand points down-left, in the exact middle of the gap between the numeral 7 and the numeral 8, so it must be clearly separated from the minute hand by a wide visible angle (the two hands must NOT overlap). The hour hand must not point at the 7 or at the 8, only halfway between them.
 ```
 
 ### `u6-clock/eight-fifteen.jpeg`  (Lessons 2 to 5 (clocks))
@@ -738,7 +738,7 @@ Subject: A round wall clock with a white face, a thick pastel-mint outer rim, bo
 
 ```text
 Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round wall clock with a white face, a thick pastel-mint outer rim, bold clear numerals 1 to 12 printed correctly around the face, a short thick black hour hand and a long thin black minute hand, front view, centered. The hands must show exactly 6:30: the minute hand points straight down at 6 and the hour hand sits exactly halfway between 6 and 7.
+Subject: A round wall clock with a white face, a thick pastel-mint outer rim, bold clear numerals 1 to 12 printed correctly around the face, front view, centered, with TWO clearly different hands starting at the center: a short thick black HOUR hand and a long thin black MINUTE hand. The exact time is 6:30. The MINUTE hand points straight down, exactly at the numeral 6. The HOUR hand points down and slightly to the LEFT, in the exact middle of the gap between the numeral 6 and the numeral 7, so it must be clearly separated from the minute hand by a visible angle (the two hands must NOT overlap and must NOT point the same way). The hour hand must not point at the 6 or at the 7, only halfway between them.
 ```
 
 ### `u6-clock/nine-fifteen.jpeg`  (Lessons 2 to 5 (clocks))
