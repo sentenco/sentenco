@@ -417,14 +417,14 @@ Subject: A 16-year-old boy with short buzzed dark-brown hair, medium-tan skin, w
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: Two teenagers standing side by side facing forward, smiling, one with an arm resting on the other's shoulder, relaxed and happy. Both clearly look like ordinary friends: different hair colors and different t-shirt colors.
+Subject: Two teenage classmates, a boy and a girl, standing a little apart at a school gate with backpacks on, casually greeting each other: the girl gives a small friendly wave and the boy smiles and nods. Relaxed, polite, ordinary expressions, no hugging, no touching, no hearts, no matching clothes, clearly different outfits and hair. The main idea is clearly 'a friend' (a nice acquaintance, not a close one).
 ```
 
 ### `u4-friends/best-friend.jpeg`  (Lesson 1 (friends))
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: Two teenagers hugging tightly with big joyful smiles, each raising the wrist that wears the same colorful friendship bracelet toward the viewer, several small red hearts floating around them. The main idea is clearly 'best friends'.
+Subject: Two teenage girls squeezed together in a big joyful hug, laughing out loud with eyes squeezed shut, both wearing the same colorful friendship bracelet on the wrist they hold up toward the viewer, matching yellow jackets, a big red heart and a few small sparkles floating above them. Very close, warm and full of energy. The main idea is clearly 'a best friend' (the closest person in your life).
 ```
 
 ### `u4-friends/teammate.jpeg`  (Lesson 1 (friends))
@@ -452,14 +452,14 @@ Subject: A teenage girl helping a friend carry a tall pile of books, holding the
 
 ```text
 Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject only.
-Subject: A teenager hugging a big red heart close to his chest with closed happy eyes and a delighted smile, tiny sparkles around. Half-body portrait. The main idea is clearly 'I like it'.
+Subject: A teenager with a huge delighted smile and bright sparkling eyes, leaning slightly forward, giving a big thumbs-up with one hand, two or three tiny pink hearts and sparkles floating near the face. Natural, warm and enthusiastic. Half-body portrait. The main idea is clearly 'I like it'.
 ```
 
 ### `u4-likes/dont-like.jpeg`  (Lesson 2 (like))
 
 ```text
 Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject only.
-Subject: A teenager turning his head away with a frown, one palm raised in a 'no thanks' stop gesture, a red circle with a diagonal slash symbol (the 'no' sign, empty inside) floating beside him. Half-body portrait. The main idea is clearly 'I don't like it'.
+Subject: A teenager with a scrunched-up nose, eyebrows pulled together, mouth turned down with the tongue slightly out in disgust, leaning the head back and away, giving a clear thumbs-down with one hand. Natural, expressive, a little dramatic, no symbols or signs in the picture. Half-body portrait. The main idea is clearly 'I don't like it'.
 ```
 
 ### `u4-freetime/basketball.jpeg`  (Lessons 2 and 3)
