@@ -622,8 +622,8 @@ Subject: Three teenagers in relaxed casual clothes enjoying a carefree sunny Sat
 ### `u5-when/every-day.jpeg`  (Lessons 3 and 4 (when))
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A simple monthly calendar grid with 7 columns and 5 rows of plain squares (no numbers, no letters). EVERY square has a bold green check mark inside and a light-green fill. The main idea is clearly 'every single day'.
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: A simple one-week calendar strip: a single horizontal row of exactly 7 equal rounded squares, side by side with small gaps. Above each square, in clear bold dark-navy capital letters spelled correctly, the short day names from left to right: SUN, MON, TUE, WED, THU, FRI, SAT. EVERY square is filled light green and has one bold green check mark inside. No numbers, no other text, nothing else in the picture. The main idea is clearly 'every single day of the week'.
 ```
 
 
