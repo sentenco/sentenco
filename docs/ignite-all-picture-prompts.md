@@ -623,7 +623,7 @@ Subject: Three teenagers in relaxed casual clothes enjoying a carefree sunny Sat
 
 ```text
 Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A simple monthly calendar grid with 7 columns and 5 rows of plain squares (no numbers, no letters). EVERY square has a bold green check mark inside and a light-green fill. The main idea is clearly 'every single day'.
+Subject: A single horizontal row of exactly seven identical round day-tokens, evenly spaced and all the same size, each token a pastel-yellow circle with a small smiling cartoon sun in the middle and a bold green check mark in its lower corner; underneath the row, one big curved green arrow forming a loop that runs along the whole row and back, meaning 'again and again'. Nothing else, no days names, no numbers, no letters. The main idea is clearly 'every single day, the same thing again and again'.
 ```
 
 
