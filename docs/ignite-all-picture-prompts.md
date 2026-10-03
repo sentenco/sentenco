@@ -417,7 +417,7 @@ Subject: A 16-year-old boy with short buzzed dark-brown hair, medium-tan skin, w
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A loose group of three teenage classmates (two boys and one girl) standing near a school gate with backpacks, a little space between each of them, casually chatting: one boy gives a small friendly wave toward the viewer, the girl smiles, the other boy holds a notebook. Relaxed, polite, ordinary expressions, no hugging, no touching, no hearts, no matching clothes, clearly different outfits and hair. Nothing romantic about the scene. The main idea is clearly 'friends' (classmates you are friendly with).
+Subject: Three teenage friends (two boys and one girl) standing in a row facing forward with their arms around each other's shoulders in a friendly group pose, all smiling happily and relaxed, wearing clearly different casual outfits and hair, backpacks on. Casual group friendship, nothing romantic, no hearts. The main idea is clearly 'friends' (a friendly group).
 ```
 
 ### `u4-friends/best-friend.jpeg`  (Lesson 1 (friends))
