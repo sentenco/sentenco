@@ -417,14 +417,14 @@ Subject: A 16-year-old boy with short buzzed dark-brown hair, medium-tan skin, w
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: Two teenage classmates, a boy and a girl, standing a little apart at a school gate with backpacks on, casually greeting each other: the girl gives a small friendly wave and the boy smiles and nods. Relaxed, polite, ordinary expressions, no hugging, no touching, no hearts, no matching clothes, clearly different outfits and hair. The main idea is clearly 'a friend' (a nice acquaintance, not a close one).
+Subject: A loose group of three teenage classmates (two boys and one girl) standing near a school gate with backpacks, a little space between each of them, casually chatting: one boy gives a small friendly wave toward the viewer, the girl smiles, the other boy holds a notebook. Relaxed, polite, ordinary expressions, no hugging, no touching, no hearts, no matching clothes, clearly different outfits and hair. Nothing romantic about the scene. The main idea is clearly 'friends' (classmates you are friendly with).
 ```
 
 ### `u4-friends/best-friend.jpeg`  (Lesson 1 (friends))
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: Two teenage girls squeezed together in a big joyful hug, laughing out loud with eyes squeezed shut, both wearing the same colorful friendship bracelet on the wrist they hold up toward the viewer, matching yellow jackets, a big red heart and a few small sparkles floating above them. Very close, warm and full of energy. The main idea is clearly 'a best friend' (the closest person in your life).
+Subject: Two teenage boys with big laughing faces, standing side by side, giving each other an energetic fist bump with one hand while the other hand of one boy rests casually on the other's shoulder like buddies, both wearing the same colorful friendship bracelet on the wrist that is fist-bumping, matching sports caps, small yellow stars and sparkles around them (no hearts anywhere). Playful, goofy, full of energy, clearly a buddy friendship and nothing romantic. The main idea is clearly 'a best friend' (your closest buddy).
 ```
 
 ### `u4-friends/teammate.jpeg`  (Lesson 1 (friends))
