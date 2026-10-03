@@ -307,7 +307,7 @@ Modern flat vector portrait illustration of an adult (realistic adult proportion
 Subject: A 36-year-old white woman with a blond ponytail, wearing a striped top, friendly smile.
 ```
 
-### `s3-cast/kofi.jpeg`
+### `s3-cast/henry.jpeg`
 
 ```text
 Modern flat vector portrait illustration of an adult (realistic adult proportions, not cartoonish or chibi), friendly natural expression, clean simple shapes with subtle soft shading and no black outlines, muted warm palette with coral, navy, sage green and cream accents, natural human skin tone, centered bust portrait facing forward, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject only.

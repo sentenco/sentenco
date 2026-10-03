@@ -521,7 +521,7 @@ Chibi-style character illustration: oversized head at roughly half the total bod
 Subject: A 13-year-old girl with long wavy black hair and a pink headband, light-brown skin, wearing a lilac top, gentle smile, both hands folded together in front of her.
 ```
 
-### `u5-cast/kofi.jpeg`  (Unit 5 cast)
+### `u5-cast/miles.jpeg`  (Unit 5 cast)
 
 ```text
 Chibi-style character illustration: oversized head at roughly half the total body height, small simplified body, large round sparkling eyes with bright catchlights, small simple nose and mouth, soft rounded shapes throughout, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tone, friendly warm smile, centered bust/half-body portrait facing forward, plain solid white background, no text, no letters, no logos, no watermark, square 1:1 image, single subject only.
@@ -615,8 +615,8 @@ Subject: A teenage boy sitting on a window ledge at home, looking out and relaxi
 ### `u5-when/weekend.jpeg`  (Lesson 3 and 4 (when))
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A simple monthly calendar grid with 7 columns and 5 rows of plain empty squares (no numbers, no letters). The last two squares of every row (the 6th and 7th columns) are filled bright coral with a small yellow sun symbol inside; all the other squares are plain white. The main idea is clearly 'only the weekend days'.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: Three teenagers in relaxed casual clothes enjoying a carefree sunny Saturday in a park, no school bags and no uniforms: one girl lying on a picnic blanket eating an apple, one boy flying a colorful kite, and another girl riding a scooter, all laughing and happy, a big bright yellow sun high in a clear blue sky, a couple of small trees and a patch of green grass. The main idea is clearly 'the weekend: free time with no school'.
 ```
 
 ### `u5-when/every-day.jpeg`  (Lessons 3 and 4 (when))
