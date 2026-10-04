@@ -316,8 +316,8 @@ Subject: A teenager putting a coin into a big pink piggy bank, a few more coins 
 ### `a2u3-rules/wear-uniform.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round BLUE sign with a white school-uniform shirt and tie icon in the middle. Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One cheerful teenage student standing full body facing forward, wearing a complete neat school uniform: a navy blazer with a plain crest (no letters), a white shirt, a striped tie, gray trousers and black school shoes, giving a small thumbs-up. Behind the student, a big solid BLUE circle (like a rule sign) fills the background, with a small white check mark in its upper corner. The main idea is clearly 'students wear a school uniform'.
 ```
 
 ### `a2u3-rules/be-on-time.jpeg`
