@@ -743,13 +743,13 @@ export default function LetterBoardPlay() {
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
-.lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: center; padding: 14px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
+.lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: center; padding: 10px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-page *, .lb-page *::before, .lb-page *::after { box-sizing: border-box; }
 .lb-page button { font-family: inherit; }
-.lb-app { width: 100%; max-width: 580px; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; position: relative; }
+.lb-app { width: 100%; max-width: 580px; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 4px 4px 0 #1B2A4A; position: relative; }
 .lb-app.lb-shake .lb-grid { animation: lb-shake .5s; }
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
-.lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 3px solid #1B2A4A; padding: 7px 14px; }
+.lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 3px solid #1B2A4A; padding: 6px 8px; }
 .lb-brand { display: inline-flex; align-items: center; font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #1B2A4A; letter-spacing: -.01em; }
 .lb-logo { height: 34px; width: auto; display: block; margin-right: -5px; }
 .lb-tl { display: flex; align-items: center; gap: 14px; }
@@ -862,10 +862,10 @@ const CSS = `
 .lb-stars { display: flex; justify-content: center; gap: 8px; margin: 10px 0; }
 .lb-great { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; margin: 0 0 4px; }
 .lb-sub2 { font-size: 14px; color: #7A5A4E; margin: 0 0 20px; }
-.lb-sb { padding: 14px 14px 18px; }
+.lb-sb { padding: 8px 6px 10px; }
 .lb-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #F2593A; margin: 0; }
 .lb-sti { font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; margin: 4px 0 18px; color: #1B2A4A; }
-.lb-sec { background: #fff; border-radius: 16px; padding: 8px 4px 10px; margin-bottom: 6px; }
+.lb-sec { background: #fff; border-radius: 16px; padding: 4px 0 8px; margin-bottom: 2px; }
 .lb-sec h3 { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #7A5A4E; margin: 0 0 10px; }
 .lb-row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; font-size: 14px; }
 .lb-row label { display: flex; align-items: center; gap: 8px; font-weight: 500; }
