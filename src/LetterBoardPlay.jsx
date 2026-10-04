@@ -11,9 +11,6 @@ import { GROUPS, LEVELS, SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, hasStor
 // Choice questions are checked automatically; open questions are marked
 // Correct / Not quite by the teacher.
 
-// Soft tinted tiles: pale peach and pale blue, with a coral or navy edge along the bottom.
-const SOFT_NAVY = ["#E7ECF7", "#1B2A4A"];
-const SOFT_CORAL = ["#FFE9E1", "#F2593A"];
 const OPTION_LETTERS = ["A", "B", "C"];
 
 const TYPES = {
@@ -171,23 +168,16 @@ function Icon({ name, size = 18, color, fill = false, className, style }) {
   );
 }
 
-function Buddy({ mood = "", size }) {
+function Brand() {
+  return <span className="lb-brand"><img src="/logo-sentenco.png" alt="" className="lb-logo" />entenco</span>;
+}
+
+// Dollar coin: cream face, coral rim, dashed inner ring and a bold $.
+function DollarCoin({ size = 34, mood = "" }) {
   return (
-    <svg className={`lb-buddy ${mood}`} style={size ? { width: size, height: size } : undefined} viewBox="0 0 44 44" aria-hidden="true">
-      <circle cx="22" cy="22" r="20" fill="#F2593A" stroke="#B5391D" strokeWidth="2.5" />
-      <circle cx="22" cy="22" r="14" fill="none" stroke="#FBF4F1" strokeOpacity=".7" strokeWidth="1.4" strokeDasharray="2 3" />
-      <circle className="so" cx="22" cy="22" r="19" fill="#0B1326" opacity=".6" />
-      <circle className="e" cx="16" cy="18" r="2.5" fill="#FBF4F1" />
-      <circle className="e" cx="28" cy="18" r="2.5" fill="#FBF4F1" />
-      <path className="m1" d="M14 26 Q22 33 30 26" fill="none" stroke="#FBF4F1" strokeWidth="2.4" strokeLinecap="round" />
-      <path className="m2" d="M13 25 Q22 39 31 25 Z" fill="#FBF4F1" />
-      <path className="m3" d="M15 32 Q22 25 29 32" fill="none" stroke="#FBF4F1" strokeWidth="2.4" strokeLinecap="round" />
-      <g className="stars">
-        <circle cx="22" cy="-6" r="2.6" fill="#FF7A5C" />
-        <circle cx="48" cy="26" r="2.6" fill="#FF7A5C" />
-        <circle cx="-4" cy="26" r="2.6" fill="#FF7A5C" />
-      </g>
-    </svg>
+    <span className={`lb-dc ${mood}`} style={{ width: size, height: size }} aria-hidden="true">
+      <i style={{ fontSize: Math.round(size * 0.52) }}>$</i>
+    </span>
   );
 }
 
@@ -218,9 +208,9 @@ function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, onStory
   return (
     <div className="lb-tbar">
       <div className="lb-tl">
-        <span className="lb-brand">sent<b>e</b>nco</span>
+        <Brand />
         <div className={`lb-cw ${pulse}`}>
-          <Buddy mood={mood} />
+          <DollarCoin mood={mood} />
           <b>{shown}</b>
         </div>
       </div>
@@ -244,14 +234,26 @@ function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, onStory
   );
 }
 
+const BURST_CLIP = (() => {
+  const pts = [];
+  for (let i = 0; i < 48; i++) {
+    const r = i % 2 ? 38 : 50;
+    const ang = (Math.PI * i) / 24 - Math.PI / 2;
+    pts.push(`${(50 + r * Math.cos(ang)).toFixed(1)}% ${(50 + r * Math.sin(ang)).toFixed(1)}%`);
+  }
+  return `polygon(${pts.join(",")})`;
+})();
+const BURST_WORD = { c: "POW!", d: "WOW!", x: "BOOM!", b: "BONUS!" };
+
 function Face({ type, cfg }) {
-  const T = TYPES[type];
   const v = amountFor(type, cfg);
   return (
-    <span className="lb-b" style={{ background: T.bg, color: T.fg, borderColor: T.bd, borderBottomColor: T.dk }}>
-      {T.icon ? <Icon name={T.icon} size={32} color={T.ic} fill={type === "b"} /> : <span className="lb-x">{"×"}2</span>}
-      {type === "x" && <Icon name="sparkles" size={18} className="lb-spk" />}
-      <span className="lb-v">{type === "x" ? `±${v}` : `+${v}`}</span>
+    <span className="lb-b">
+      <span className="lb-bst" style={{ background: "#1B2A4A", clipPath: BURST_CLIP }} />
+      <span className="lb-bst top" style={{ background: type === "x" ? "#1B2A4A" : "#F2593A", clipPath: BURST_CLIP }}>
+        <b>{BURST_WORD[type]}</b>
+        <em>{type === "x" ? `\u00B1${v}` : `+${v}`}</em>
+      </span>
     </span>
   );
 }
@@ -340,7 +342,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
         <TopBar coins={g.coins} pulse="" mood="" tilesLeft={0} muted={muted} full={false} />
         <div className="lb-res">
           <div className="lb-card2">
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: 6 }}><Buddy mood="happy" size={64} /></div>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 6 }}><DollarCoin size={64} mood="happy" /></div>
             <div className="lb-eb">Game complete</div>
             <div className="lb-n">{g.coins}</div>
             <div className="lb-unit">coins</div>
@@ -378,18 +380,18 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
                 <div key={i} className="lb-c lb-done" style={style}>
                   <div className="lb-dn">
                     <span className="lb-lt">{ch}</span>
-                    <span className={`lb-gv ${d.g > 0 ? "ok" : d.g < 0 ? "bad" : ""}`}>{d.g > 0 ? `+${d.g}` : d.g < 0 ? d.g : "0"}</span>
+                    <span className={`lb-gv ${d.g > 0 ? "ok" : d.g < 0 ? "bad" : ""}`}>{d.g !== 0 && <i className="lb-mc">$</i>}{d.g > 0 ? `+${d.g}` : d.g < 0 ? d.g : "0"}</span>
                   </div>
                 </div>
               );
             }
             const chk = (Math.floor(p / cols) + (p % cols)) % 2;
-            const col = chk ? SOFT_CORAL : SOFT_NAVY;
+            const bg = chk ? "#FFFFFF" : "#FFE9E1";
             const cls = `lb-c${busy ? " lb-locked" : ""}${cur === i && phase === "wob" ? " lb-wob" : ""}${cur === i && phase === "flip" ? " lb-flip" : ""}`;
             return (
               <button key={i} type="button" className={cls} style={style} onClick={() => pick(i)} aria-label={`Letter ${ch}`}>
                 <span className="lb-in">
-                  <span className="lb-f" style={{ background: col[0], borderBottomColor: col[1] }}>{ch}</span>
+                  <span className="lb-f" style={{ background: bg }}>{ch}</span>
                   <Face type={g.types[i]} cfg={cfg} />
                 </span>
               </button>
@@ -437,7 +439,9 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
       <div className="lb-card">
         <div className="lb-qh">
           <div className="lb-lt2">{letter}</div>
-          {T.icon
+          {T.icon === "coin"
+            ? <DollarCoin size={30} />
+            : T.icon
             ? <Icon name={T.icon} size={28} color={T.ic} fill={type === "b"} />
             : <span className="lb-x2">{"×"}2</span>}
           <div>
@@ -527,7 +531,7 @@ function StoryRead({ title, story, onStart, onBack }) {
   return (
     <div className="lb-app lb-setup">
       <div className="lb-tbar">
-        <span className="lb-brand">sent<b>e</b>nco</span>
+        <Brand />
         <span className="lb-left">Read the story first</span>
       </div>
       <div className="lb-sb">
@@ -572,7 +576,7 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
   return (
     <div className="lb-app lb-setup">
       <div className="lb-tbar">
-        <span className="lb-brand">sent<b>e</b>nco</span>
+        <Brand />
         <span className="lb-left">Teacher only</span>
       </div>
       <div className="lb-sb">
@@ -728,37 +732,31 @@ const CSS = `
 .lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: flex-start; padding: 14px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-page *, .lb-page *::before, .lb-page *::after { box-sizing: border-box; }
 .lb-page button { font-family: inherit; }
-.lb-app { width: 100%; max-width: 820px; border-radius: 20px; overflow: hidden; background: #FBF4F1; border: 1px solid #EBD8CE; position: relative; }
-.lb-app.lb-shake { animation: lb-shake .5s; }
+.lb-app { width: 100%; max-width: 820px; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; position: relative; }
+.lb-app.lb-shake .lb-grid { animation: lb-shake .5s; }
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
-.lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #FBF4F1; border-bottom: 1.5px solid #EBD8CE; padding: 9px 14px; }
-.lb-brand { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #1B2A4A; letter-spacing: .01em; }
-.lb-brand b { color: #F2593A; font-weight: 600; }
+.lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 3px solid #1B2A4A; padding: 7px 14px; }
+.lb-brand { display: inline-flex; align-items: center; font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #1B2A4A; letter-spacing: -.01em; }
+.lb-logo { height: 34px; width: auto; display: block; margin-right: -5px; }
 .lb-tl { display: flex; align-items: center; gap: 14px; }
 .lb-tr { display: flex; align-items: center; gap: 8px; }
-.lb-cw { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #EBD8CE; color: #1B2A4A; border-radius: 999px; padding: 2px 18px 2px 3px; }
-.lb-cw b { font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; min-width: 46px; font-variant-numeric: tabular-nums; }
+.lb-cw { display: flex; align-items: center; gap: 8px; background: #fff; border: 3px solid #1B2A4A; box-shadow: 3px 3px 0 #1B2A4A; color: #1B2A4A; border-radius: 999px; padding: 2px 18px 2px 3px; }
+.lb-cw b { font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 800; min-width: 46px; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.lb-dc { border-radius: 50%; background: #FFF3DC; color: #F2593A; border: 3px solid #F2593A; position: relative; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.lb-dc::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; border: 1.5px dashed currentColor; opacity: .7; }
+.lb-dc i { font-family: 'Fraunces', Georgia, serif; font-style: normal; font-weight: 800; line-height: 1; }
+.lb-dc.happy { animation: lb-hop .6s; }
+.lb-dc.sad, .lb-dc.soot { animation: lb-shake .45s; }
 .lb-cw.up { animation: lb-pop .5s; }
 .lb-cw.down { animation: lb-shake .45s; }
-.lb-buddy { width: 40px; height: 40px; flex: none; overflow: visible; }
-.lb-buddy .m2, .lb-buddy .m3, .lb-buddy .so, .lb-buddy .stars { display: none; }
-.lb-buddy.happy .m1, .lb-buddy.sad .m1, .lb-buddy.soot .m1 { display: none; }
-.lb-buddy.happy .m2 { display: block; }
-.lb-buddy.sad .m3, .lb-buddy.soot .m3 { display: block; }
-.lb-buddy.soot .so, .lb-buddy.soot .stars { display: block; }
-.lb-buddy.soot .e { fill: #fff; }
-.lb-buddy.soot .m3 { stroke: #fff; }
-.lb-buddy .stars { transform-origin: 22px 22px; animation: lb-spin 1.1s linear infinite; }
-.lb-buddy.happy { animation: lb-hop .6s; }
-.lb-buddy.sad, .lb-buddy.soot { animation: lb-shake .45s; }
-.lb-left { font-size: 13px; color: #6B6A7A; margin-right: 4px; }
-.lb-ib { width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid #EBD8CE; background: #fff; color: #1B2A4A; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
-.lb-ib:hover { background: #FFF1EC; }
+.lb-left { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: #fff; border: 2px solid #1B2A4A; color: #1B2A4A; padding: 4px 9px; margin-right: 4px; }
+.lb-ib { width: 34px; height: 34px; border-radius: 9px; border: 2px solid #1B2A4A; background: #fff; color: #1B2A4A; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+.lb-ib:hover { background: #FFE9E1; }
 .lb-ib.lb-story-btn { width: auto; padding: 0 12px; gap: 6px; font-size: 13px; font-weight: 600; }
-.lb-tag-task { margin-left: 8px; background: #E4E9F5; color: #1B2A4A; }
+.lb-tag-task { margin-left: 8px; background: #FFE9E1; }
 .lb-qimg { margin: 12px 0 0; display: flex; justify-content: center; }
 .lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
-.lb-ov.lb-ov-story { z-index: 7; }
+.lb-ov.lb-ov-story { z-index: 51; }
 .lb-scard { max-width: 640px; }
 .lb-simg { display: flex; justify-content: center; margin: 12px 0 4px; }
 .lb-simg img { max-width: 100%; max-height: 190px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
@@ -768,7 +766,7 @@ const CSS = `
 .lb-nomt { margin-top: 0; }
 .lb-end-pad { padding: 0 22px 20px; }
 .lb-end-split { justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.lb-stage { position: relative; min-height: 600px; padding: 24px 20px 28px; overflow: hidden; }
+.lb-stage { position: relative; padding: 14px; background-color: #FFF6EC; background-image: radial-gradient(#E9D9C4 2px, transparent 2.2px); background-size: 12px 12px; }
 .lb-grid { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto; }
 .lb-c { display: block; position: relative; perspective: 700px; border: none; background: none; padding: 0; margin: 0; cursor: pointer; }
 .lb-in { display: block; position: absolute; inset: 0; transition: transform .55s; transform-style: preserve-3d; }
@@ -776,31 +774,33 @@ const CSS = `
 .lb-c.lb-wob .lb-in { animation: lb-wob .95s ease-in; }
 .lb-c:hover:not(.lb-locked) .lb-in { transform: translateY(-4px); }
 .lb-c.lb-flip:hover .lb-in { transform: rotateY(180deg); }
-.lb-f, .lb-b { position: absolute; inset: 0; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 1.5px solid transparent; border-bottom: 5px solid; }
-.lb-f { font-family: 'Fraunces', Georgia, serif; color: #1B2A4A; font-size: 42px; font-weight: 600; }
-.lb-b { transform: rotateY(180deg); border-width: 1.5px 1.5px 5px; border-style: solid; gap: 2px; }
-.lb-b .lb-spk { position: absolute; top: 6px; right: 10px; color: #F2593A; animation: lb-flick .25s infinite alternate; }
-.lb-b .lb-x { font-family: 'Fraunces', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1; }
-.lb-b .lb-v { font-size: 15px; font-weight: 700; }
+.lb-f, .lb-b { position: absolute; inset: 0; border-radius: 9px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.lb-f { font-family: 'Fraunces', Georgia, serif; color: #1B2A4A; font-size: 42px; font-weight: 800; border: 3px solid #1B2A4A; box-shadow: 0 4px 0 #1B2A4A; }
+.lb-b { transform: rotateY(180deg); }
+.lb-bst { position: absolute; inset: -10px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; line-height: 1; }
+.lb-bst.top { inset: -5px; }
+.lb-bst b { font-family: 'Fraunces', Georgia, serif; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+.lb-bst em { font-family: 'Fraunces', Georgia, serif; font-style: normal; font-size: 21px; font-weight: 800; margin-top: 2px; }
 .lb-c.lb-done { cursor: default; }
-.lb-dn { position: absolute; inset: 0; border-radius: 14px; background: #fff; border: 1.5px dashed #D9C3B8; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #8A7A72; gap: 1px; }
+.lb-dn { position: absolute; inset: 0; border-radius: 9px; background: #fff; border: 2px dashed #8EA0C8; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #6B7A99; gap: 2px; }
 .lb-lt { font-size: 14px; }
-.lb-gv { font-size: 15px; font-weight: 700; }
-.lb-gv.ok { color: #C23B1B; }
-.lb-gv.bad { color: #1B2A4A; }
-.lb-ov { position: absolute; inset: 0; background: rgba(27,42,74,.5); display: flex; align-items: center; justify-content: center; padding: 14px; z-index: 5; }
-.lb-card { width: 100%; max-width: 600px; max-height: 100%; overflow: auto; background: #fff; border-radius: 20px; border: 1.5px solid #D7DEEF; }
-.lb-qh { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: #E7ECF7; color: #1B2A4A; }
-.lb-lt2 { width: 46px; height: 46px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; flex: none; color: #1B2A4A; }
+.lb-gv { font-size: 15px; font-weight: 800; display: inline-flex; align-items: center; gap: 4px; color: #6B7A99; }
+.lb-mc { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #1B2A4A; display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-size: 9px; color: #1B2A4A; }
+.lb-gv.ok { color: #1B2A4A; }
+.lb-gv.bad { color: #C23B1B; }
+.lb-ov { position: fixed; inset: 0; background: rgba(27,42,74,.55); display: flex; align-items: center; justify-content: center; padding: 14px; z-index: 50; }
+.lb-card { width: 100%; max-width: 600px; max-height: 100%; overflow: auto; background: #fff; border-radius: 16px; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; }
+.lb-qh { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: #FFF6EC; border-bottom: 3px solid #1B2A4A; color: #1B2A4A; }
+.lb-lt2 { width: 46px; height: 46px; border-radius: 50%; background: #fff; border: 3px solid #1B2A4A; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 800; flex: none; color: #1B2A4A; }
 .lb-x2 { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; color: #F2593A; }
 .lb-nm { font-size: 18px; font-weight: 700; line-height: 1.2; }
 .lb-rl { font-size: 13px; opacity: .85; margin-top: 1px; }
 .lb-qb { padding: 6px 22px 22px; }
-.lb-tag { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 12px; font-weight: 600; color: #7A2410; background: #FFE2D8; border-radius: 999px; padding: 4px 12px; }
+.lb-tag { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #1B2A4A; background: #fff; border: 2px solid #1B2A4A; padding: 3px 10px; }
 .lb-q { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 500; line-height: 1.3; margin: 10px 0 16px; color: #1B2A4A; }
 .lb-opts { display: grid; gap: 9px; }
-.lb-o { display: flex; align-items: center; gap: 12px; text-align: left; width: 100%; min-height: 56px; padding: 8px 14px; font-size: 18px; font-weight: 500; border-radius: 14px; border: 2px solid #EBD8CE; background: #FBF4F1; color: #1B2A4A; cursor: pointer; }
-.lb-o:hover:not(:disabled) { border-color: #1B2A4A; }
+.lb-o { display: flex; align-items: center; gap: 12px; text-align: left; width: 100%; min-height: 56px; padding: 8px 14px; font-size: 18px; font-weight: 500; border-radius: 12px; border: 3px solid #1B2A4A; background: #fff; color: #1B2A4A; cursor: pointer; }
+.lb-o:hover:not(:disabled) { background: #FFE9E1; }
 .lb-ol { width: 30px; height: 30px; border-radius: 50%; background: #1B2A4A; color: #FBF4F1; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex: none; }
 .lb-o.right { background: #DDEFC4; border-color: #3B6D11; color: #173404; }
 .lb-o.wrong { background: #F9D1D1; border-color: #A32D2D; color: #501313; animation: lb-shake .45s; }
@@ -823,15 +823,15 @@ const CSS = `
 .lb-fsub { font-size: 14px; margin-top: 2px; }
 .lb-cf { position: absolute; bottom: 8px; color: #F2593A; animation: lb-rise 1.1s ease-out forwards; opacity: 0; }
 .lb-end { display: flex; justify-content: flex-end; margin-top: 12px; }
-.lb-go { background: #F2593A; color: #fff; border: none; border-bottom: 4px solid #B5391D; border-radius: 14px; height: 50px; padding: 0 28px; font-size: 17px; font-weight: 700; cursor: pointer; }
+.lb-go { background: #F2593A; color: #fff; border: 3px solid #1B2A4A; box-shadow: 0 4px 0 #1B2A4A; border-radius: 12px; height: 50px; padding: 0 28px; font-size: 17px; font-weight: 800; cursor: pointer; }
 .lb-go:hover:not(:disabled) { background: #E44C2D; }
-.lb-go:active:not(:disabled) { transform: translateY(2px); border-bottom-width: 2px; }
-.lb-go:disabled { background: #D9C9C1; border-bottom-color: #BBA79D; cursor: not-allowed; }
+.lb-go:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 #1B2A4A; }
+.lb-go:disabled { background: #D9C9C1; box-shadow: 0 4px 0 #8A7A72; cursor: not-allowed; }
 .lb-ghost { background: none; border: 2px solid #EBD8CE; color: #1B2A4A; border-radius: 14px; height: 50px; padding: 0 22px; font-size: 16px; font-weight: 600; cursor: pointer; }
 .lb-ghost:hover { border-color: #1B2A4A; }
 .lb-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .lb-res { padding: 34px 20px 44px; min-height: 540px; }
-.lb-card2 { background: #fff; border-bottom: 6px solid #F2593A; border-radius: 22px; max-width: 460px; margin: 0 auto; padding: 26px 24px 28px; text-align: center; }
+.lb-card2 { background: #fff; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; border-radius: 16px; max-width: 460px; margin: 0 auto; padding: 26px 24px 28px; text-align: center; }
 .lb-eb { font-size: 13px; font-weight: 600; color: #7A5A4E; letter-spacing: .06em; text-transform: uppercase; }
 .lb-card2 .lb-n { font-family: 'Fraunces', Georgia, serif; font-size: 84px; font-weight: 600; color: #1B2A4A; line-height: 1.05; margin: 6px 0 0; font-variant-numeric: tabular-nums; }
 .lb-unit { font-size: 17px; color: #7A5A4E; }
@@ -869,7 +869,7 @@ const CSS = `
 @keyframes lb-flick { from { opacity: .4; transform: scale(.8); } to { opacity: 1; transform: scale(1.2); } }
 @keyframes lb-wob { 0% { transform: rotate(0) scale(1); } 12% { transform: rotate(-3deg) scale(1.02); } 24% { transform: rotate(3deg) scale(1.03); } 36% { transform: rotate(-5deg) scale(1.04); } 48% { transform: rotate(5deg) scale(1.05); } 60% { transform: rotate(-7deg) scale(1.06); } 72% { transform: rotate(7deg) scale(1.07); } 84% { transform: rotate(-9deg) scale(1.08); } 100% { transform: rotate(9deg) scale(1.09); } }
 @media (prefers-reduced-motion: reduce) {
-  .lb-in, .lb-cw, .lb-buddy, .lb-buddy .stars, .lb-big, .lb-o.wrong, .lb-cf, .lb-app.lb-shake, .lb-b .lb-spk { animation: none; transition: none; }
+  .lb-in, .lb-cw, .lb-dc, .lb-big, .lb-o.wrong, .lb-cf, .lb-app.lb-shake .lb-grid { animation: none; transition: none; }
 }
 @media (max-width: 640px) {
   .lb-lv { grid-template-columns: 1fr; }
