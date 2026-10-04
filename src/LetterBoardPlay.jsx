@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
-import { GROUPS, LEVELS, SAMPLE_ITEMS, levelStatus, normalizeItems } from "./letterBoardData";
+import { GROUPS, LEVELS, SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, hasStory, levelStatus, normalizeItems, normalizeStory, taskTag } from "./letterBoardData";
 
 // Letter Board: the play page. A one-to-one game for a teacher and a student.
 // The teacher picks a difficulty (which sets the number of tiles), the board
@@ -144,6 +144,9 @@ const ICON_PATHS = {
   x: (<path d="M18 6L6 18M6 6l12 12" />),
   chat: (<path d="M3 20l1.3-3.9A9 8 0 1 1 7.7 19L3 20" />),
   list: (<path d="M9 6h11M9 12h11M9 18h11M5 6h.01M5 12h.01M5 18h.01" />),
+  book: (<><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z" /><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" /></>),
+  image: (<><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="1.7" /><path d="M21 16l-5-5-4 4-2-2-7 7" /></>),
+  pencil: (<><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" /></>),
 };
 
 function Icon({ name, size = 18, color, fill = false, className, style }) {
@@ -209,7 +212,7 @@ function useCountUp(target) {
   return shown;
 }
 
-function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, full }) {
+function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, onStory, full }) {
   const shown = useCountUp(coins);
   return (
     <div className="lb-tbar">
@@ -223,6 +226,11 @@ function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, full })
       {full && (
         <div className="lb-tr">
           <span className="lb-left">{tilesLeft} tiles left</span>
+          {onStory && (
+            <button type="button" className="lb-ib lb-story-btn" onClick={onStory} aria-label="Read the story again">
+              <Icon name="book" /><span>Story</span>
+            </button>
+          )}
           <button type="button" className="lb-ib" onClick={onMute} aria-label={muted ? "Turn sound on" : "Turn sound off"}>
             <Icon name={muted ? "volumeOff" : "volume"} />
           </button>
@@ -248,7 +256,7 @@ function Face({ type, cfg }) {
 }
 
 // ---- the game --------------------------------------------------------------------
-function Play({ items, cfg, level, onSetup, onAgain }) {
+function Play({ items, story, cfg, level, onSetup, onAgain }) {
   const n = level.n;
   // Easy always keeps the alphabet in order (A to I); the other levels can mix the letters.
   const [g, setG] = useState(() => makeGame(n, cfg.mix && level.key !== 1));
@@ -263,6 +271,7 @@ function Play({ items, cfg, level, onSetup, onAgain }) {
   const [pulse, setPulse] = useState("");
   const [shake, setShake] = useState(false);
   const [muted, setMuted] = useState(soundMuted);
+  const [showStory, setShowStory] = useState(false);
   const timers = useRef([]);
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
@@ -356,7 +365,7 @@ function Play({ items, cfg, level, onSetup, onAgain }) {
 
   return (
     <div className={`lb-app ${shake ? "lb-shake" : ""}`}>
-      <TopBar coins={g.coins} pulse={pulse} mood={mood} tilesLeft={tilesLeft} muted={muted} onMute={toggleMute} onSetup={onSetup} full />
+      <TopBar coins={g.coins} pulse={pulse} mood={mood} tilesLeft={tilesLeft} muted={muted} onMute={toggleMute} onSetup={onSetup} onStory={hasStory(story) ? () => setShowStory(true) : null} full />
       <div className="lb-stage">
         <svg className="lb-wave" viewBox="0 0 680 120" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0 60 Q90 10 190 50 T390 50 T590 40 L680 30 L680 120 L0 120 Z" fill="#FFE2D8" />
@@ -390,6 +399,8 @@ function Play({ items, cfg, level, onSetup, onAgain }) {
             );
           })}
         </div>
+
+        {showStory && <StoryOverlay story={story} onClose={() => setShowStory(false)} />}
 
         {view === "q" && item && (
           <QuestionCard
@@ -439,6 +450,8 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
         </div>
         <div className="lb-qb">
           <span className="lb-tag"><Icon name={isChoice ? "list" : "chat"} size={14} />{isChoice ? "Choose one answer" : "Answer out loud or in the chat"}</span>
+          {taskTag(item.task) && <span className="lb-tag lb-tag-task"><Icon name={item.task === "picture" ? "image" : item.task === "retell" ? "chat" : item.task === "grammar" ? "pencil" : "book"} size={14} />{taskTag(item.task)}</span>}
+          {item.image && <div className="lb-qimg"><img src={item.image} alt="" /></div>}
           <p className="lb-q">{item.q}</p>
           {isChoice ? (
             <div className="lb-opts">
@@ -485,6 +498,55 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
   );
 }
 
+// ---- the story --------------------------------------------------------------------
+function StoryBody({ story }) {
+  const paras = String(story.text || "").split(/\n{2,}/).map((t) => t.trim()).filter(Boolean);
+  return (
+    <>
+      {story.image && <div className="lb-simg"><img src={story.image} alt="" /></div>}
+      {paras.map((t, i) => <p key={i} className="lb-sp">{t}</p>)}
+    </>
+  );
+}
+
+// Peek at the story while playing (does not change coins or tiles).
+function StoryOverlay({ story, onClose }) {
+  return (
+    <div className="lb-ov lb-ov-story">
+      <div className="lb-card lb-scard">
+        <div className="lb-qh" style={{ background: "#1B2A4A" }}>
+          <Icon name="book" size={26} color="#FF7A5C" />
+          <div><div className="lb-nm">{story.title || "The story"}</div><div className="lb-rl">Take your time, then go back to the board</div></div>
+        </div>
+        <div className="lb-qb"><StoryBody story={story} /></div>
+        <div className="lb-end lb-end-pad"><button type="button" className="lb-go" onClick={onClose}>Back to the board</button></div>
+      </div>
+    </div>
+  );
+}
+
+// Shown before the board opens: the student reads (or hears) the story first.
+function StoryRead({ title, story, onStart, onBack }) {
+  return (
+    <div className="lb-app lb-setup">
+      <div className="lb-tbar">
+        <span className="lb-brand">sent<b>e</b>nco</span>
+        <span className="lb-left">Read the story first</span>
+      </div>
+      <div className="lb-sb">
+        <p className="lb-eyebrow">Story time</p>
+        <h1 className="lb-sti">{story.title || title}</h1>
+        <div className="lb-sec lb-read"><StoryBody story={story} /></div>
+        <p className="lb-note">The questions on the board are about this story. You can open it again any time with the Story button.</p>
+        <div className="lb-end lb-end-split">
+          <button type="button" className="lb-ghost" onClick={onBack}>Back to setup</button>
+          <button type="button" className="lb-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>I have read it, open the board</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ---- setup (teacher) ---------------------------------------------------------------
 const CFG_KEY = "sentenco-letter-board-cfg";
 const DEFAULT_CFG = { lvl: 3, mix: true, c: 10, b: 30, x: 30 };
@@ -497,7 +559,7 @@ function loadCfg() {
   return DEFAULT_CFG;
 }
 
-function Setup({ title, items, cfg, setCfg, onStart }) {
+function Setup({ title, items, story, cfg, setCfg, onStart }) {
   const status = useMemo(() => levelStatus(items), [items]);
   const ready = (k) => status.missing[k] === 0;
   const anyReady = ready(1);
@@ -519,6 +581,13 @@ function Setup({ title, items, cfg, setCfg, onStart }) {
       <div className="lb-sb">
         <p className="lb-eyebrow">Letter board</p>
         <h1 className="lb-sti">{title}</h1>
+
+        {hasStory(story) && (
+          <div className="lb-sec lb-storysec">
+            <h3>Story</h3>
+            <p className="lb-note lb-nomt"><b>{story.title || "Untitled story"}</b>. The student reads the story first, then the board opens. During the game a Story button shows it again.</p>
+          </div>
+        )}
 
         <div className="lb-sec">
           <h3>Difficulty</h3>
@@ -593,12 +662,16 @@ export default function LetterBoardPlay() {
   const [set, setSet] = useState(null);
   const [err, setErr] = useState("");
   const [cfg, setCfg] = useState(loadCfg);
-  const [session, setSession] = useState(null); // { level, key } while a game is on
+  const [session, setSession] = useState(null); // { level, key, reading } while a game is on
 
   useEffect(() => {
     document.title = "sentenco";
     if (id === "sample") {
-      setSet({ title: "Sample set", items: SAMPLE_ITEMS });
+      setSet({ title: "Sample set", items: SAMPLE_ITEMS, story: null });
+      return;
+    }
+    if (id === "sample-story") {
+      setSet({ title: "The Lost Cat (story sample)", items: SAMPLE_STORY_ITEMS, story: SAMPLE_STORY });
       return;
     }
     if (loading) return;
@@ -608,18 +681,18 @@ export default function LetterBoardPlay() {
     }
     supabase
       .from("letter_board_sets")
-      .select("id, title, items")
+      .select("*")
       .eq("id", id)
       .maybeSingle()
       .then(({ data, error }) => {
         if (error || !data) setErr("We couldn't find this set.");
-        else setSet({ title: data.title, items: normalizeItems(data.items) });
+        else setSet({ title: data.title, items: normalizeItems(data.items), story: normalizeStory(data.story) });
       });
   }, [id, user, loading]);
 
   const start = (lvl) => {
     const level = LEVELS.find((L) => L.key === lvl);
-    if (level) setSession({ level, key: Date.now() });
+    if (level) setSession({ level, key: Date.now(), reading: hasStory(set && set.story) });
   };
 
   return (
@@ -629,17 +702,25 @@ export default function LetterBoardPlay() {
         <div className="lb-app lb-msgbox"><p>{err}</p></div>
       ) : !set ? (
         <div className="lb-app lb-msgbox"><p>Loading...</p></div>
+      ) : session && session.reading ? (
+        <StoryRead
+          title={set.title}
+          story={set.story}
+          onStart={() => setSession({ ...session, reading: false })}
+          onBack={() => setSession(null)}
+        />
       ) : session ? (
         <Play
           key={session.key}
           items={set.items}
+          story={set.story}
           cfg={cfg}
           level={session.level}
           onSetup={() => setSession(null)}
-          onAgain={() => setSession({ level: session.level, key: Date.now() })}
+          onAgain={() => setSession({ level: session.level, key: Date.now(), reading: false })}
         />
       ) : (
-        <Setup title={set.title} items={set.items} cfg={cfg} setCfg={setCfg} onStart={start} />
+        <Setup title={set.title} items={set.items} story={set.story} cfg={cfg} setCfg={setCfg} onStart={start} />
       )}
     </div>
   );
@@ -676,6 +757,20 @@ const CSS = `
 .lb-left { font-size: 13px; color: #FBF4F1; opacity: .8; margin-right: 4px; }
 .lb-ib { width: 34px; height: 34px; border-radius: 10px; border: 1px solid rgba(251,244,241,.28); background: transparent; color: #FBF4F1; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
 .lb-ib:hover { background: rgba(251,244,241,.12); }
+.lb-ib.lb-story-btn { width: auto; padding: 0 12px; gap: 6px; font-size: 13px; font-weight: 600; }
+.lb-tag-task { margin-left: 8px; background: #E4E9F5; color: #1B2A4A; }
+.lb-qimg { margin: 12px 0 0; display: flex; justify-content: center; }
+.lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
+.lb-ov.lb-ov-story { z-index: 7; }
+.lb-scard { max-width: 640px; }
+.lb-simg { display: flex; justify-content: center; margin: 12px 0 4px; }
+.lb-simg img { max-width: 100%; max-height: 190px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
+.lb-sp { font-family: 'Fraunces', Georgia, serif; font-size: 19px; line-height: 1.6; margin: 10px 0; color: #1B2A4A; }
+.lb-read { padding: 8px 20px 14px; }
+.lb-storysec { background: #E4E9F5; }
+.lb-nomt { margin-top: 0; }
+.lb-end-pad { padding: 0 22px 20px; }
+.lb-end-split { justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .lb-stage { position: relative; min-height: 600px; padding: 24px 20px 28px; overflow: hidden; }
 .lb-wave { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 120px; pointer-events: none; }
 .lb-grid { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto; }

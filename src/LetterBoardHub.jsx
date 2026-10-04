@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
 import ConfirmDialog from "./ConfirmDialog";
-import { GROUPS, SAMPLE_ITEMS, blankItems, levelStatus, normalizeItems, openLetterBoard } from "./letterBoardData";
+import { GROUPS, SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, TASKS, blankItems, blankStory, fileToSmallImage, hasStory, levelStatus, normalizeItems, normalizeStory, openLetterBoard } from "./letterBoardData";
 
 // Letter Board hub (inside the Library nav chrome): the sample set, the
 // teacher's saved sets, and the editor for writing a set of 20 items.
@@ -13,13 +13,42 @@ function cloneItems(items) {
   return items.map((it) => ({ ...it, options: it.options.slice() }));
 }
 
-function SetCard({ title, items, badge, onPlay, onEdit, onDelete, editLabel = "Edit" }) {
+// Image picker used for story and picture tasks: shrinks the picture and stores it inside the set.
+function ImageField({ value, onChange, label }) {
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+  async function pick(e) {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    setBusy(true);
+    setErr("");
+    try { onChange(await fileToSmallImage(file)); } catch (x) { setErr("We couldn't read that picture. Try a JPG or PNG."); }
+    setBusy(false);
+  }
+  return (
+    <div className="lbh-img">
+      {value ? <img src={value} alt="" /> : <div className="lbh-img-empty">No picture yet</div>}
+      <div className="lbh-img-actions">
+        <label className="lbh-btn lbh-file">
+          {busy ? "Adding..." : value ? `Change ${label}` : `Add ${label}`}
+          <input type="file" accept="image/*" onChange={pick} hidden />
+        </label>
+        {value && <button type="button" className="lbh-btn danger" onClick={() => onChange("")}>Remove</button>}
+        {err && <span className="lbh-error">{err}</span>}
+      </div>
+    </div>
+  );
+}
+
+function SetCard({ title, items, badge, hasStoryFlag, onPlay, onEdit, onDelete, editLabel = "Edit" }) {
   const { counts } = levelStatus(items);
   return (
     <div className="lbh-card">
       <div className="lbh-card-top">
         <h3 className="lbh-card-title">{title}</h3>
         {badge && <span className="lbh-badge">{badge}</span>}
+        {hasStoryFlag && <span className="lbh-badge lbh-badge-story">Story</span>}
       </div>
       <div className="lbh-chips">
         {GROUPS.map((gr) => (
@@ -49,10 +78,14 @@ function ItemEditor({ index, item, onChange }) {
       <div className="lbh-item-head">
         <span className="lbh-item-num">{index + 1}</span>
         <div className="lbh-seg" role="group" aria-label={`Item ${index + 1} type`}>
-          <button type="button" className={item.kind === "choice" ? "on" : ""} onClick={() => set({ kind: "choice" })}>Choice</button>
+          <button type="button" className={item.kind === "choice" ? "on" : ""} disabled={item.task === "retell"} onClick={() => set({ kind: "choice" })}>Choice</button>
           <button type="button" className={item.kind === "open" ? "on" : ""} onClick={() => set({ kind: "open" })}>Open answer</button>
         </div>
+        <select className="lbh-task" value={item.task || ""} aria-label={`Item ${index + 1} task`} onChange={(e) => set(e.target.value === "retell" ? { task: "retell", kind: "open" } : { task: e.target.value })}>
+          {TASKS.map((t) => <option key={t.key} value={t.key}>{t.key ? `Task: ${t.label}` : "Task: General"}</option>)}
+        </select>
       </div>
+      {item.task === "picture" && <ImageField value={item.image} onChange={(image) => set({ image })} label="picture" />}
       <textarea
         className="lbh-input"
         rows={2}
@@ -99,7 +132,7 @@ export default function LetterBoardHub() {
     setLoadError("");
     const { data, error } = await supabase
       .from("letter_board_sets")
-      .select("id, title, items, updated_at")
+      .select("*")
       .eq("owner_id", user.id)
       .order("updated_at", { ascending: false });
     setLoading(false);
@@ -107,7 +140,7 @@ export default function LetterBoardHub() {
       setLoadError("We couldn't load your sets right now. The sample set still works.");
       return;
     }
-    setSets((data || []).map((s) => ({ ...s, items: normalizeItems(s.items) })));
+    setSets((data || []).map((s) => ({ ...s, items: normalizeItems(s.items), story: normalizeStory(s.story) })));
   }
 
   useEffect(() => { load(); }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -119,6 +152,9 @@ export default function LetterBoardHub() {
     setSaving(true);
     setSaveError("");
     const payload = { title, items: editing.items, updated_at: new Date().toISOString() };
+    // Only touch the story column when this set has (or had) a story, so plain sets save even before the SQL is run.
+    if (hasStory(editing.story)) payload.story = { title: editing.story.title.trim(), text: editing.story.text.trim(), image: editing.story.image || "" };
+    else if (editing.hadStory) payload.story = null;
     const { error } = editing.id
       ? await supabase.from("letter_board_sets").update(payload).eq("id", editing.id)
       : await supabase.from("letter_board_sets").insert({ ...payload, owner_id: user.id });
@@ -139,9 +175,10 @@ export default function LetterBoardHub() {
     load();
   }
 
-  const startNew = () => { setSaveError(""); setEditing({ id: null, title: "", items: blankItems() }); window.scrollTo?.(0, 0); };
-  const startCopy = () => { setSaveError(""); setEditing({ id: null, title: "My copy of the sample", items: cloneItems(SAMPLE_ITEMS) }); };
-  const startEdit = (s) => { setSaveError(""); setEditing({ id: s.id, title: s.title, items: cloneItems(s.items) }); };
+  const startNew = () => { setSaveError(""); setEditing({ id: null, title: "", items: blankItems(), story: blankStory(), hadStory: false }); window.scrollTo?.(0, 0); };
+  const startCopy = () => { setSaveError(""); setEditing({ id: null, title: "My copy of the sample", items: cloneItems(SAMPLE_ITEMS), story: blankStory(), hadStory: false }); };
+  const startCopyStory = () => { setSaveError(""); setEditing({ id: null, title: "My copy of The Lost Cat", items: cloneItems(SAMPLE_STORY_ITEMS), story: { ...SAMPLE_STORY }, hadStory: false }); window.scrollTo?.(0, 0); };
+  const startEdit = (s) => { setSaveError(""); setEditing({ id: s.id, title: s.title, items: cloneItems(s.items), story: s.story || blankStory(), hadStory: hasStory(s.story) }); };
 
   if (editing) {
     const status = levelStatus(editing.items);
@@ -152,10 +189,21 @@ export default function LetterBoardHub() {
           <button type="button" className="lbh-back" onClick={() => setEditing(null)}>&larr; Back to your sets</button>
           <p className="lbh-eyebrow">Letter Board</p>
           <h1 className="lbh-h1">{editing.id ? "Edit set" : "New set"}</h1>
-          <p className="lbh-lead">Write 20 items: 9 easy, 6 average and 5 difficult. Each item is a choice question with three options, or an open question you mark yourself. You can save a draft and finish later. A difficulty level unlocks when all of its items are filled in.</p>
+          <p className="lbh-lead">Write 20 items: 9 easy, 6 average and 5 difficult. Each item is a choice question with three options, or an open question you mark yourself. Give an item a task (story question, grammar check, picture or retell) and the card shows it. You can save a draft and finish later. A difficulty level unlocks when all of its items are filled in.</p>
 
           <label className="lbh-label" htmlFor="lbh-title">Set name</label>
           <input id="lbh-title" className="lbh-input lbh-title-input" placeholder="For example: Past simple, Unit 4 review" value={editing.title} onChange={(e) => setEditing({ ...editing, title: e.target.value })} />
+
+          <section className="lbh-story">
+            <div className="lbh-group-head">
+              <h2 className="lbh-group-title">Story (optional)</h2>
+              <span className="lbh-group-count">{hasStory(editing.story) ? "This set is built around a story" : "Leave empty for a plain set"}</span>
+            </div>
+            <p className="lbh-hint">Write or paste one short standalone story. The student reads it before the board opens, and a Story button shows it again during the game. Then write items about it: questions, grammar checks on its verbs, pictures from it, or retell tasks. Use a blank line between paragraphs.</p>
+            <input className="lbh-input" placeholder="Story title, for example: The Lost Cat" value={editing.story.title} onChange={(e) => setEditing({ ...editing, story: { ...editing.story, title: e.target.value } })} />
+            <textarea className="lbh-input lbh-story-text" rows={9} placeholder="Write the story here..." value={editing.story.text} onChange={(e) => setEditing({ ...editing, story: { ...editing.story, text: e.target.value } })} />
+            <ImageField value={editing.story.image} onChange={(image) => setEditing({ ...editing, story: { ...editing.story, image } })} label="story picture" />
+          </section>
 
           {GROUPS.map((gr) => (
             <section key={gr.key} className="lbh-group">
@@ -201,6 +249,7 @@ export default function LetterBoardHub() {
 
         <div className="lbh-toolbar">
           <button type="button" className="lbh-btn primary big" onClick={() => openLetterBoard("sample")}>Play the sample</button>
+          <button type="button" className="lbh-btn big" onClick={() => openLetterBoard("sample-story")}>Play the story sample</button>
           {user && <button type="button" className="lbh-btn big" onClick={startNew}>New set</button>}
         </div>
 
@@ -208,11 +257,13 @@ export default function LetterBoardHub() {
         {loadError && <p className="lbh-error">{loadError}</p>}
         <div className="lbh-grid">
           <SetCard title="Sample set" badge="Sample" items={SAMPLE_ITEMS} onPlay={() => openLetterBoard("sample")} onEdit={user ? startCopy : null} editLabel="Copy to edit" />
+          <SetCard title="The Lost Cat" badge="Sample" hasStoryFlag items={SAMPLE_STORY_ITEMS} onPlay={() => openLetterBoard("sample-story")} onEdit={user ? startCopyStory : null} editLabel="Copy to edit" />
           {sets.map((s) => (
             <SetCard
               key={s.id}
               title={s.title}
               items={s.items}
+              hasStoryFlag={hasStory(s.story)}
               onPlay={() => openLetterBoard(s.id)}
               onEdit={() => startEdit(s)}
               onDelete={() => setDeleteTarget(s)}
@@ -237,6 +288,16 @@ export default function LetterBoardHub() {
 }
 
 const CSS = `
+.lbh-badge-story { background: #E4E9F5; color: #1B2A4A; margin-left: 6px; }
+.lbh-task { height: 32px; font-size: 13px; font-weight: 600; border: 1.5px solid #E3D3C9; border-radius: 8px; padding: 0 8px; background: #fff; color: #1B2A4A; margin-left: auto; }
+.lbh-story { background: #fff; border: 1px solid #EBD8CE; border-radius: 16px; padding: 16px 18px 18px; margin: 18px 0 8px; display: grid; gap: 10px; }
+.lbh-story-text { min-height: 170px; font-family: inherit; line-height: 1.55; }
+.lbh-img { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 4px 0; }
+.lbh-img img { height: 96px; max-width: 160px; object-fit: contain; border-radius: 10px; border: 1.5px solid #EBD8CE; background: #fff; }
+.lbh-img-empty { height: 60px; min-width: 120px; display: flex; align-items: center; justify-content: center; border: 1.5px dashed #D9C3B8; border-radius: 10px; color: #8A6D63; font-size: 12px; padding: 0 12px; }
+.lbh-img-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.lbh-file { cursor: pointer; display: inline-flex; align-items: center; }
+
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
 .lbh-page { min-height: 100%; background: #FBF4F1; font-family: 'Inter', sans-serif; color: #1B2A4A; padding: 34px 20px 80px; box-sizing: border-box; }
 .lbh-page *, .lbh-page *::before, .lbh-page *::after { box-sizing: border-box; }
