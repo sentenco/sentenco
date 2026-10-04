@@ -1546,15 +1546,15 @@ Subject: A teenage girl lying on the grass in a park with her eyes closed and a 
 ### `u12-days/saturday.jpeg`  (Lesson 2 (days))
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A simple week calendar strip of 7 empty squares in a row (no numbers, no letters); the 6th square is filled bright coral with a big yellow star, all other squares are plain white. The main idea is clearly 'one special day, Saturday'.
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: A simple one-week calendar strip: a single horizontal row of exactly 7 equal rounded squares, side by side with small gaps. Above each square, in clear bold dark-navy capital letters spelled correctly, the short day names from left to right: MON, TUE, WED, THU, FRI, SAT, SUN. Six squares are plain white with a thin outline and nothing inside, except the sixth square (under SAT), which is filled bright coral with a big yellow star in the middle and looks glowing and special. No numbers, no other text, nothing else in the picture. The main idea is clearly 'Saturday is the special day'.
 ```
 
 ### `u12-days/sunday.jpeg`  (Lesson 2 (days))
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A simple week calendar strip of 7 empty squares in a row (no numbers, no letters); the 7th (last) square is filled bright coral with a big yellow star, all other squares are plain white. The main idea is clearly 'one special day, Sunday'.
+Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
+Subject: A simple one-week calendar strip: a single horizontal row of exactly 7 equal rounded squares, side by side with small gaps. Above each square, in clear bold dark-navy capital letters spelled correctly, the short day names from left to right: MON, TUE, WED, THU, FRI, SAT, SUN. Six squares are plain white with a thin outline and nothing inside, except the seventh and last square (under SUN), which is filled bright coral with a big yellow star in the middle and looks glowing and special. No numbers, no other text, nothing else in the picture. The main idea is clearly 'Sunday is the special day'.
 ```
 
 ### `u12-reply/yes.jpeg`  (Lessons 3 and 5 (reply))
