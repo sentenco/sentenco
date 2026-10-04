@@ -11,15 +11,16 @@ import { GROUPS, LEVELS, SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, hasStor
 // Choice questions are checked automatically; open questions are marked
 // Correct / Not quite by the teacher.
 
-const NAVY = ["#1B2A4A", "#0B1326"];
-const CORAL = ["#F2593A", "#B5391D"];
+// Soft tinted tiles: pale peach and pale blue, with a coral or navy edge along the bottom.
+const SOFT_NAVY = ["#E7ECF7", "#1B2A4A"];
+const SOFT_CORAL = ["#FFE9E1", "#F2593A"];
 const OPTION_LETTERS = ["A", "B", "C"];
 
 const TYPES = {
-  c: { name: "Coins", hd: "#1B2A4A", bg: "#FFFFFF", fg: "#1B2A4A", bd: "#F2593A", dk: "#B5391D", ic: "#F2593A", icon: "coin", rule: (v) => `+${v.c} if correct` },
-  d: { name: "Double coins", hd: "#2E4372", bg: "#FFE2D8", fg: "#1B2A4A", bd: "#F2593A", dk: "#B5391D", ic: "#F2593A", icon: null, rule: (v) => `+${v.c * 2} if correct` },
-  x: { name: "Bomb", hd: "#0B1326", bg: "#0B1326", fg: "#FBF4F1", bd: "#F2593A", dk: "#000000", ic: "#FF7A5C", icon: "bomb", rule: (v) => `+${v.x} if correct, lose ${v.x} if wrong` },
-  b: { name: "Bonus", hd: "#B5391D", bg: "#F2593A", fg: "#FFFFFF", bd: "#B5391D", dk: "#8E2A14", ic: "#FFFFFF", icon: "star", rule: (v) => `+${v.b} if correct` },
+  c: { name: "Coins", bg: "#FFFFFF", fg: "#1B2A4A", bd: "#F2593A", dk: "#F2593A", ic: "#F2593A", icon: "coin", rule: (v) => `+${v.c} if correct` },
+  d: { name: "Double coins", bg: "#FFE2D8", fg: "#1B2A4A", bd: "#F2593A", dk: "#F2593A", ic: "#F2593A", icon: null, rule: (v) => `+${v.c * 2} if correct` },
+  x: { name: "Bomb", bg: "#E7ECF7", fg: "#1B2A4A", bd: "#1B2A4A", dk: "#1B2A4A", ic: "#1B2A4A", icon: "bomb", rule: (v) => `+${v.x} if correct, lose ${v.x} if wrong` },
+  b: { name: "Bonus", bg: "#FFF4D6", fg: "#1B2A4A", bd: "#D9A62E", dk: "#D9A62E", ic: "#D9A62E", icon: "star", rule: (v) => `+${v.b} if correct` },
 };
 
 const VALUE_OPTIONS = Array.from({ length: 20 }, (_, i) => (i + 1) * 5);
@@ -367,10 +368,6 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
     <div className={`lb-app ${shake ? "lb-shake" : ""}`}>
       <TopBar coins={g.coins} pulse={pulse} mood={mood} tilesLeft={tilesLeft} muted={muted} onMute={toggleMute} onSetup={onSetup} onStory={hasStory(story) ? () => setShowStory(true) : null} full />
       <div className="lb-stage">
-        <svg className="lb-wave" viewBox="0 0 680 120" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 60 Q90 10 190 50 T390 50 T590 40 L680 30 L680 120 L0 120 Z" fill="#FFE2D8" />
-          <path d="M0 90 Q120 55 240 82 T470 80 T680 70 L680 120 L0 120 Z" fill="#FFCDBE" />
-        </svg>
         <div className="lb-grid" style={{ maxWidth: n === 9 ? 480 : "100%" }}>
           {g.ord.map((i, p) => {
             const ch = String.fromCharCode(65 + i);
@@ -387,7 +384,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
               );
             }
             const chk = (Math.floor(p / cols) + (p % cols)) % 2;
-            const col = chk ? CORAL : NAVY;
+            const col = chk ? SOFT_CORAL : SOFT_NAVY;
             const cls = `lb-c${busy ? " lb-locked" : ""}${cur === i && phase === "wob" ? " lb-wob" : ""}${cur === i && phase === "flip" ? " lb-flip" : ""}`;
             return (
               <button key={i} type="button" className={cls} style={style} onClick={() => pick(i)} aria-label={`Letter ${ch}`}>
@@ -438,10 +435,10 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
   return (
     <div className="lb-ov">
       <div className="lb-card">
-        <div className="lb-qh" style={{ background: T.hd }}>
+        <div className="lb-qh">
           <div className="lb-lt2">{letter}</div>
           {T.icon
-            ? <Icon name={T.icon} size={28} color={type === "b" ? "#fff" : "#FF7A5C"} fill={type === "b"} />
+            ? <Icon name={T.icon} size={28} color={T.ic} fill={type === "b"} />
             : <span className="lb-x2">{"×"}2</span>}
           <div>
             <div className="lb-nm">{T.name}</div>
@@ -514,8 +511,8 @@ function StoryOverlay({ story, onClose }) {
   return (
     <div className="lb-ov lb-ov-story">
       <div className="lb-card lb-scard">
-        <div className="lb-qh" style={{ background: "#1B2A4A" }}>
-          <Icon name="book" size={26} color="#FF7A5C" />
+        <div className="lb-qh">
+          <Icon name="book" size={26} color="#F2593A" />
           <div><div className="lb-nm">{story.title || "The story"}</div><div className="lb-rl">Take your time, then go back to the board</div></div>
         </div>
         <div className="lb-qb"><StoryBody story={story} /></div>
@@ -734,12 +731,12 @@ const CSS = `
 .lb-app { width: 100%; max-width: 820px; border-radius: 20px; overflow: hidden; background: #FBF4F1; border: 1px solid #EBD8CE; position: relative; }
 .lb-app.lb-shake { animation: lb-shake .5s; }
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
-.lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #1B2A4A; padding: 9px 14px; }
-.lb-brand { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #FBF4F1; letter-spacing: .01em; }
+.lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #FBF4F1; border-bottom: 1.5px solid #EBD8CE; padding: 9px 14px; }
+.lb-brand { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #1B2A4A; letter-spacing: .01em; }
 .lb-brand b { color: #F2593A; font-weight: 600; }
 .lb-tl { display: flex; align-items: center; gap: 14px; }
 .lb-tr { display: flex; align-items: center; gap: 8px; }
-.lb-cw { display: flex; align-items: center; gap: 8px; background: #FBF4F1; color: #1B2A4A; border-radius: 999px; padding: 3px 18px 3px 4px; }
+.lb-cw { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #EBD8CE; color: #1B2A4A; border-radius: 999px; padding: 2px 18px 2px 3px; }
 .lb-cw b { font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; min-width: 46px; font-variant-numeric: tabular-nums; }
 .lb-cw.up { animation: lb-pop .5s; }
 .lb-cw.down { animation: lb-shake .45s; }
@@ -754,9 +751,9 @@ const CSS = `
 .lb-buddy .stars { transform-origin: 22px 22px; animation: lb-spin 1.1s linear infinite; }
 .lb-buddy.happy { animation: lb-hop .6s; }
 .lb-buddy.sad, .lb-buddy.soot { animation: lb-shake .45s; }
-.lb-left { font-size: 13px; color: #FBF4F1; opacity: .8; margin-right: 4px; }
-.lb-ib { width: 34px; height: 34px; border-radius: 10px; border: 1px solid rgba(251,244,241,.28); background: transparent; color: #FBF4F1; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
-.lb-ib:hover { background: rgba(251,244,241,.12); }
+.lb-left { font-size: 13px; color: #6B6A7A; margin-right: 4px; }
+.lb-ib { width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid #EBD8CE; background: #fff; color: #1B2A4A; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+.lb-ib:hover { background: #FFF1EC; }
 .lb-ib.lb-story-btn { width: auto; padding: 0 12px; gap: 6px; font-size: 13px; font-weight: 600; }
 .lb-tag-task { margin-left: 8px; background: #E4E9F5; color: #1B2A4A; }
 .lb-qimg { margin: 12px 0 0; display: flex; justify-content: center; }
@@ -772,7 +769,6 @@ const CSS = `
 .lb-end-pad { padding: 0 22px 20px; }
 .lb-end-split { justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .lb-stage { position: relative; min-height: 600px; padding: 24px 20px 28px; overflow: hidden; }
-.lb-wave { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 120px; pointer-events: none; }
 .lb-grid { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto; }
 .lb-c { display: block; position: relative; perspective: 700px; border: none; background: none; padding: 0; margin: 0; cursor: pointer; }
 .lb-in { display: block; position: absolute; inset: 0; transition: transform .55s; transform-style: preserve-3d; }
@@ -780,23 +776,23 @@ const CSS = `
 .lb-c.lb-wob .lb-in { animation: lb-wob .95s ease-in; }
 .lb-c:hover:not(.lb-locked) .lb-in { transform: translateY(-4px); }
 .lb-c.lb-flip:hover .lb-in { transform: rotateY(180deg); }
-.lb-f, .lb-b { position: absolute; inset: 0; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-bottom-width: 6px; border-bottom-style: solid; }
-.lb-f { font-family: 'Fraunces', Georgia, serif; color: #FBF4F1; font-size: 42px; font-weight: 600; }
-.lb-b { transform: rotateY(180deg); border-width: 2px; border-style: solid; border-bottom-width: 6px; gap: 2px; }
-.lb-b .lb-spk { position: absolute; top: 6px; right: 10px; color: #FF7A5C; animation: lb-flick .25s infinite alternate; }
+.lb-f, .lb-b { position: absolute; inset: 0; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 1.5px solid transparent; border-bottom: 5px solid; }
+.lb-f { font-family: 'Fraunces', Georgia, serif; color: #1B2A4A; font-size: 42px; font-weight: 600; }
+.lb-b { transform: rotateY(180deg); border-width: 1.5px 1.5px 5px; border-style: solid; gap: 2px; }
+.lb-b .lb-spk { position: absolute; top: 6px; right: 10px; color: #F2593A; animation: lb-flick .25s infinite alternate; }
 .lb-b .lb-x { font-family: 'Fraunces', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1; }
 .lb-b .lb-v { font-size: 15px; font-weight: 700; }
 .lb-c.lb-done { cursor: default; }
-.lb-dn { position: absolute; inset: 0; border-radius: 14px; background: rgba(255,255,255,.55); border: 1.5px dashed #E3BFB2; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #A86F5F; gap: 1px; }
+.lb-dn { position: absolute; inset: 0; border-radius: 14px; background: #fff; border: 1.5px dashed #D9C3B8; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #8A7A72; gap: 1px; }
 .lb-lt { font-size: 14px; }
 .lb-gv { font-size: 15px; font-weight: 700; }
-.lb-gv.ok { color: #3B6D11; }
-.lb-gv.bad { color: #A32D2D; }
-.lb-ov { position: absolute; inset: 0; background: rgba(27,42,74,.62); display: flex; align-items: center; justify-content: center; padding: 14px; z-index: 5; }
-.lb-card { width: 100%; max-width: 600px; max-height: 100%; overflow: auto; background: #fff; border-radius: 20px; border-bottom: 6px solid #F2593A; }
-.lb-qh { display: flex; align-items: center; gap: 12px; padding: 12px 18px; color: #FBF4F1; }
-.lb-lt2 { width: 46px; height: 46px; border-radius: 12px; background: #F2593A; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; flex: none; color: #FBF4F1; }
-.lb-x2 { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; color: #FF9A7E; }
+.lb-gv.ok { color: #C23B1B; }
+.lb-gv.bad { color: #1B2A4A; }
+.lb-ov { position: absolute; inset: 0; background: rgba(27,42,74,.5); display: flex; align-items: center; justify-content: center; padding: 14px; z-index: 5; }
+.lb-card { width: 100%; max-width: 600px; max-height: 100%; overflow: auto; background: #fff; border-radius: 20px; border: 1.5px solid #D7DEEF; }
+.lb-qh { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: #E7ECF7; color: #1B2A4A; }
+.lb-lt2 { width: 46px; height: 46px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; flex: none; color: #1B2A4A; }
+.lb-x2 { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; color: #F2593A; }
 .lb-nm { font-size: 18px; font-weight: 700; line-height: 1.2; }
 .lb-rl { font-size: 13px; opacity: .85; margin-top: 1px; }
 .lb-qb { padding: 6px 22px 22px; }
