@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
@@ -166,6 +167,30 @@ function Icon({ name, size = 18, color, fill = false, className, style }) {
       {ICON_PATHS[name]}
     </svg>
   );
+}
+
+// Scales the whole player so it fills the window with only a thin margin, however big the screen is.
+function useFitScale(ref) {
+  const [scale, setScale] = useState(1);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const calc = () => {
+      const w = el.offsetWidth + 8;
+      const h = el.offsetHeight + 8;
+      const m = 14;
+      const k = Math.min((window.innerWidth - 2 * m) / w, (window.innerHeight - 2 * m) / h);
+      const next = Math.max(0.5, Math.min(3, k));
+      document.documentElement.style.setProperty("--lb-scale", String(next));
+      setScale(next);
+    };
+    calc();
+    window.addEventListener("resize", calc);
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(calc) : null;
+    if (ro) ro.observe(el);
+    return () => { window.removeEventListener("resize", calc); if (ro) ro.disconnect(); document.documentElement.style.removeProperty("--lb-scale"); };
+  }, [ref]);
+  return scale;
 }
 
 function Brand() {
@@ -458,7 +483,7 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
   const inst = fix && !isChoice ? { text: "Fix it", icon: "pencil" } : instructionFor(item);
   const v = amountFor(type, cfg);
   const burst = type === "x" ? `\u00B1${v}` : `+${v}`;
-  return (
+  return createPortal(
     <div className="lb-ov">
       <div className="lb-qw">
         <span className="lb-qb1" style={{ clipPath: BURST_CLIP }} />
@@ -509,7 +534,8 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
           </>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -526,7 +552,7 @@ function StoryBody({ story }) {
 
 // Peek at the story while playing (does not change coins or tiles).
 function StoryOverlay({ story, onClose }) {
-  return (
+  return createPortal(
     <div className="lb-ov lb-ov-story">
       <div className="lb-card lb-scard">
         <div className="lb-qh">
@@ -536,7 +562,8 @@ function StoryOverlay({ story, onClose }) {
         <div className="lb-qb"><StoryBody story={story} /></div>
         <div className="lb-end lb-end-pad"><button type="button" className="lb-go" onClick={onClose}>Back to the board</button></div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -652,6 +679,8 @@ export default function LetterBoardPlay() {
   const [err, setErr] = useState("");
   const [cfg, setCfg] = useState(loadCfg);
   const [session, setSession] = useState(null); // { level, key, reading } while a game is on
+  const fitRef = useRef(null);
+  const scale = useFitScale(fitRef);
 
   useEffect(() => {
     document.title = "sentenco";
@@ -687,6 +716,7 @@ export default function LetterBoardPlay() {
   return (
     <div className="lb-page">
       <style>{CSS}</style>
+      <div className="lb-fit" ref={fitRef} style={{ transform: `scale(${scale})` }}>
       {err ? (
         <div className="lb-app lb-msgbox"><p>{err}</p></div>
       ) : !set ? (
@@ -711,6 +741,7 @@ export default function LetterBoardPlay() {
       ) : (
         <Setup title={set.title} items={set.items} story={set.story} cfg={cfg} setCfg={setCfg} onStart={start} />
       )}
+      </div>
     </div>
   );
 }
@@ -725,8 +756,11 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
 .lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: center; padding: 10px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-page *, .lb-page *::before, .lb-page *::after { box-sizing: border-box; }
-.lb-page button { font-family: inherit; }
-.lb-app { width: 100%; max-width: 580px; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 4px 4px 0 #1B2A4A; position: relative; }
+.lb-page button, .lb-ov button { font-family: inherit; }
+.lb-ov { font-family: 'Inter', sans-serif; color: #1B2A4A; }
+.lb-ov, .lb-ov *, .lb-ov *::before, .lb-ov *::after { box-sizing: border-box; }
+.lb-fit { width: 100%; max-width: 580px; transform-origin: center center; }
+.lb-app { width: 100%; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 4px 4px 0 #1B2A4A; position: relative; }
 .lb-app.lb-shake .lb-grid { animation: lb-shake .5s; }
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
 .lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 3px solid #1B2A4A; padding: 6px 8px; }
@@ -750,7 +784,7 @@ const CSS = `
 .lb-qimg { margin: 12px 0 0; display: flex; justify-content: center; }
 .lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
 .lb-ov.lb-ov-story { z-index: 51; }
-.lb-ov > .lb-card { margin: auto; }
+.lb-ov > .lb-card { margin: auto; zoom: var(--lb-scale, 1); }
 .lb-scard { max-width: 640px; }
 .lb-simg { display: flex; justify-content: center; margin: 12px 0 4px; }
 .lb-simg img { max-width: 100%; max-height: 190px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
@@ -791,7 +825,7 @@ const CSS = `
 .lb-rl { font-size: 13px; opacity: .85; margin-top: 1px; }
 .lb-qb { padding: 6px 22px 22px; }
 .lb-q { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 800; line-height: 1.2; margin: 0; color: #1B2A4A; }
-.lb-qw { position: relative; width: 100%; max-width: 560px; margin: auto; padding-top: 34px; }
+.lb-qw { position: relative; width: 100%; max-width: 560px; margin: auto; padding-top: 34px; zoom: var(--lb-scale, 1); }
 .lb-qb1, .lb-qb2 { position: absolute; right: -14px; top: 6px; width: 88px; height: 88px; z-index: 3; }
 .lb-qb1 { background: #1B2A4A; }
 .lb-qb2 { right: -10px; top: 10px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 22px; }
