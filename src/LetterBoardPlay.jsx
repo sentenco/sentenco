@@ -423,37 +423,54 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
   );
 }
 
+// One or two words that tell the student what to do. Derived from the item, never typed by the teacher.
+function instructionFor(item) {
+  if (item.kind === "choice") return { text: "Pick one", icon: "list" };
+  if (item.task === "grammar") return { text: "Fix it", icon: "pencil" };
+  if (item.task === "picture") return { text: "Look and say", icon: "image" };
+  if (item.task === "retell") return { text: "Retell", icon: "chat" };
+  return { text: "Answer", icon: "chat" };
+}
+
+// Older items may carry the instruction inside the question ("Fix the sentence: ..."). Split it off so
+// the sentence stands alone.
+function splitQuestion(item) {
+  const q = String(item.q || "").trim();
+  const m = q.match(/^([^:"\u201C_]{3,34}):\s*([\s\S]+)$/);
+  if (m && m[1].trim().split(/\s+/).length <= 5) {
+    const rest = m[2].trim().replace(/^["\u201C\u2018']+/, "").replace(/["\u201D\u2019']+$/, "");
+    if (rest) return { text: rest, fix: /fix|correct|mistake/i.test(m[1]) };
+  }
+  return { text: q, fix: false };
+}
+
 function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, onKey, onChoose, onMark, onBack, last }) {
-  const T = TYPES[type];
   const isChoice = item.kind === "choice";
   const marked = picked >= 0;
   const cls = res ? "ok" : delta < 0 ? "bad" : "zero";
-  const msg = res ? (type === "x" ? "Defused! Nice one!" : "Correct!") : type === "x" ? "BOOM! Not this time" : "Not this time";
-  let sub;
-  if (res) sub = "Great answer.";
-  else if (isChoice) sub = `The answer is ${OPTION_LETTERS[item.correct]}: ${item.options[item.correct]}`;
-  else sub = item.sample ? `A good answer: ${item.sample}` : "Nice try. Let's look at it together.";
-  const big = delta > 0 ? `+${delta} coins` : delta < 0 ? `${delta} coins` : "0 coins";
+  const msg = res ? (type === "x" ? "Defused!" : "Correct!") : type === "x" ? "BOOM!" : "Not this time";
+  let sub = "";
+  if (!res) {
+    if (isChoice) sub = `The answer is ${OPTION_LETTERS[item.correct]}: ${item.options[item.correct]}`;
+    else sub = item.sample ? `A good answer: ${item.sample}` : "";
+  }
+  const { text, fix } = splitQuestion(item);
+  const inst = fix && !isChoice ? { text: "Fix it", icon: "pencil" } : instructionFor(item);
+  const v = amountFor(type, cfg);
+  const burst = type === "x" ? `\u00B1${v}` : `+${v}`;
   return (
     <div className="lb-ov">
-      <div className="lb-card">
-        <div className="lb-qh">
-          <div className="lb-lt2">{letter}</div>
-          {T.icon === "coin"
-            ? <DollarCoin size={30} />
-            : T.icon
-            ? <Icon name={T.icon} size={28} color={T.ic} fill={type === "b"} />
-            : <span className="lb-x2">{"×"}2</span>}
-          <div>
-            <div className="lb-nm">{T.name}</div>
-            <div className="lb-rl">{T.rule(cfg)}</div>
-          </div>
-        </div>
-        <div className="lb-qb">
-          <span className="lb-tag"><Icon name={isChoice ? "list" : "chat"} size={14} />{isChoice ? "Choose one answer" : "Answer out loud or in the chat"}</span>
-          {taskTag(item.task) && <span className="lb-tag lb-tag-task"><Icon name={item.task === "picture" ? "image" : item.task === "retell" ? "chat" : item.task === "grammar" ? "pencil" : "book"} size={14} />{taskTag(item.task)}</span>}
+      <div className="lb-qw">
+        <span className="lb-qb1" style={{ clipPath: BURST_CLIP }} />
+        <span className="lb-qb2" style={{ clipPath: BURST_CLIP, background: type === "x" ? "#1B2A4A" : "#F2593A" }}>{burst}</span>
+        <span className="lb-qinst"><Icon name={inst.icon} size={14} />{inst.text}</span>
+        <div className="lb-bub">
           {item.image && <div className="lb-qimg"><img src={item.image} alt="" /></div>}
-          <p className="lb-q">{item.q}</p>
+          <p className="lb-q">{text}</p>
+          <span className="lb-tail" /><span className="lb-tail2" />
+        </div>
+        <div className="lb-sprow">
+          <div className="lb-lt2">{letter}</div>
           {isChoice ? (
             <div className="lb-opts">
               {item.options.map((o, k) => {
@@ -467,33 +484,30 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
               })}
             </div>
           ) : !marked ? (
-            <div className="lb-tp">
-              <div className="lb-th">Teacher decides</div>
-              <div className="lb-tbt">
-                <button type="button" className="lb-mk yes" onClick={() => onMark(true)}><Icon name="check" size={22} />Correct</button>
-                <button type="button" className="lb-mk no" onClick={() => onMark(false)}><Icon name="x" size={22} />Not quite</button>
-              </div>
-              {item.sample ? (
-                <>
-                  <button type="button" className="lb-lnk" onClick={onKey}>{showKey ? "Hide sample answer" : "Show sample answer"}</button>
-                  {showKey && <div className="lb-key">{item.sample}</div>}
-                </>
-              ) : null}
+            <div className="lb-btns">
+              <button type="button" className="lb-mk yes" onClick={() => onMark(true)}><Icon name="check" size={22} />Correct</button>
+              <button type="button" className="lb-mk no" onClick={() => onMark(false)}><Icon name="x" size={22} />Not quite</button>
             </div>
           ) : null}
-          {marked && (
-            <>
-              <div className={`lb-fb ${cls}`}>
-                <div><div className="lb-msg">{msg}</div><div className="lb-fsub">{sub}</div></div>
-                <div className="lb-big">{big}</div>
-                {res && Array.from({ length: 7 }, (_, z) => (
-                  <Icon key={z} name="coin" size={22} className="lb-cf" style={{ left: `${52 + z * 6}%`, animationDelay: `${z * 70}ms` }} />
-                ))}
-              </div>
-              <div className="lb-end"><button type="button" className="lb-go" onClick={onBack}>{last ? "See results" : "Back to board"}</button></div>
-            </>
-          )}
         </div>
+        {!isChoice && !marked && item.sample ? (
+          <div className="lb-keyrow">
+            <button type="button" className="lb-lnk" onClick={onKey}>{showKey ? "Hide sample answer" : "Show sample answer"}</button>
+            {showKey && <div className="lb-key">{item.sample}</div>}
+          </div>
+        ) : null}
+        {marked && (
+          <>
+            <div className={`lb-fb ${cls}`}>
+              <div><div className="lb-msg">{msg}</div>{sub && <div className="lb-fsub">{sub}</div>}</div>
+              <div className="lb-big"><DollarCoin size={28} />{delta > 0 ? `+${delta}` : delta < 0 ? delta : "0"}</div>
+              {res && Array.from({ length: 7 }, (_, z) => (
+                <span key={z} className="lb-cf" style={{ left: `${52 + z * 6}%`, animationDelay: `${z * 70}ms` }}><DollarCoin size={20} /></span>
+              ))}
+            </div>
+            <div className="lb-end"><button type="button" className="lb-go" onClick={onBack}>{last ? "See results" : "Back to board"}</button></div>
+          </>
+        )}
       </div>
     </div>
   );
@@ -753,10 +767,10 @@ const CSS = `
 .lb-ib { width: 34px; height: 34px; border-radius: 9px; border: 2px solid #1B2A4A; background: #fff; color: #1B2A4A; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
 .lb-ib:hover { background: #FFE9E1; }
 .lb-ib.lb-story-btn { width: auto; padding: 0 12px; gap: 6px; font-size: 13px; font-weight: 600; }
-.lb-tag-task { margin-left: 8px; background: #FFE9E1; }
 .lb-qimg { margin: 12px 0 0; display: flex; justify-content: center; }
 .lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
 .lb-ov.lb-ov-story { z-index: 51; }
+.lb-ov > .lb-card { margin: auto; }
 .lb-scard { max-width: 640px; }
 .lb-simg { display: flex; justify-content: center; margin: 12px 0 4px; }
 .lb-simg img { max-width: 100%; max-height: 190px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
@@ -788,7 +802,7 @@ const CSS = `
 .lb-mc { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #1B2A4A; display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-size: 9px; color: #1B2A4A; }
 .lb-gv.ok { color: #1B2A4A; }
 .lb-gv.bad { color: #C23B1B; }
-.lb-ov { position: fixed; inset: 0; background: rgba(27,42,74,.55); display: flex; align-items: center; justify-content: center; padding: 14px; z-index: 50; }
+.lb-ov { position: fixed; inset: 0; background: rgba(27,42,74,.55); display: flex; padding: 14px; z-index: 50; overflow-y: auto; }
 .lb-card { width: 100%; max-width: 600px; max-height: 100%; overflow: auto; background: #fff; border-radius: 16px; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; }
 .lb-qh { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: #FFF6EC; border-bottom: 3px solid #1B2A4A; color: #1B2A4A; }
 .lb-lt2 { width: 46px; height: 46px; border-radius: 50%; background: #fff; border: 3px solid #1B2A4A; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 800; flex: none; color: #1B2A4A; }
@@ -796,33 +810,43 @@ const CSS = `
 .lb-nm { font-size: 18px; font-weight: 700; line-height: 1.2; }
 .lb-rl { font-size: 13px; opacity: .85; margin-top: 1px; }
 .lb-qb { padding: 6px 22px 22px; }
-.lb-tag { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #1B2A4A; background: #fff; border: 2px solid #1B2A4A; padding: 3px 10px; }
-.lb-q { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 500; line-height: 1.3; margin: 10px 0 16px; color: #1B2A4A; }
-.lb-opts { display: grid; gap: 9px; }
+.lb-q { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 800; line-height: 1.2; margin: 0; color: #1B2A4A; }
+.lb-qw { position: relative; width: 100%; max-width: 560px; margin: auto; padding-top: 34px; }
+.lb-qb1, .lb-qb2 { position: absolute; right: -14px; top: 6px; width: 88px; height: 88px; z-index: 3; }
+.lb-qb1 { background: #1B2A4A; }
+.lb-qb2 { right: -10px; top: 10px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 22px; }
+.lb-qinst { position: absolute; left: 18px; top: 18px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 3px solid #1B2A4A; font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; padding: 4px 11px; color: #1B2A4A; }
+.lb-bub { position: relative; background: #fff; border: 3px solid #1B2A4A; border-radius: 22px; box-shadow: 5px 5px 0 #1B2A4A; padding: 34px 58px 24px 24px; }
+.lb-tail { position: absolute; left: 34px; bottom: -24px; border-left: 4px solid transparent; border-right: 26px solid transparent; border-top: 24px solid #1B2A4A; }
+.lb-tail2 { position: absolute; left: 37px; bottom: -17px; border-left: 2px solid transparent; border-right: 20px solid transparent; border-top: 19px solid #fff; }
+.lb-sprow { display: flex; align-items: flex-start; gap: 14px; margin-top: 34px; }
+.lb-sprow .lb-lt2 { margin-top: 2px; }
+.lb-btns { display: flex; gap: 12px; flex: 1; min-width: 0; }
+.lb-keyrow { margin-top: 12px; text-align: center; }
+.lb-opts { display: grid; gap: 9px; flex: 1; min-width: 0; }
 .lb-o { display: flex; align-items: center; gap: 12px; text-align: left; width: 100%; min-height: 56px; padding: 8px 14px; font-size: 18px; font-weight: 500; border-radius: 12px; border: 3px solid #1B2A4A; background: #fff; color: #1B2A4A; cursor: pointer; }
 .lb-o:hover:not(:disabled) { background: #FFE9E1; }
 .lb-ol { width: 30px; height: 30px; border-radius: 50%; background: #1B2A4A; color: #FBF4F1; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex: none; }
-.lb-o.right { background: #DDEFC4; border-color: #3B6D11; color: #173404; }
-.lb-o.wrong { background: #F9D1D1; border-color: #A32D2D; color: #501313; animation: lb-shake .45s; }
-.lb-o.dim { opacity: .5; }
-.lb-tp { border: 1.5px dashed #CDB9AE; border-radius: 14px; padding: 12px 14px; background: #FBF4F1; }
-.lb-th { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #7A5A4E; margin-bottom: 10px; }
-.lb-tbt { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.lb-mk { display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border: none; border-bottom: 4px solid; border-radius: 14px; font-size: 17px; font-weight: 700; color: #fff; cursor: pointer; }
-.lb-mk:active { transform: translateY(2px); border-bottom-width: 2px; }
-.lb-mk.yes { background: #3DAA4A; border-bottom-color: #2A7D34; }
-.lb-mk.no { background: #E5534B; border-bottom-color: #B23A33; }
-.lb-lnk { margin-top: 10px; background: none; border: none; padding: 0; font-size: 13px; color: #7A5A4E; text-decoration: underline; cursor: pointer; }
-.lb-key { margin-top: 8px; font-size: 15px; background: #FFF1C2; color: #5C3B00; border-radius: 8px; padding: 8px 12px; }
-.lb-fb { margin-top: 14px; border-radius: 14px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; position: relative; overflow: hidden; }
-.lb-fb.ok { background: #E6F4D2; color: #173404; }
-.lb-fb.bad { background: #FBE0E0; color: #501313; }
-.lb-fb.zero { background: #F4ECE6; color: #1B2A4A; }
-.lb-big { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; animation: lb-pop .5s; }
+.lb-o.right { background: #1B2A4A; color: #fff; }
+.lb-o.right .lb-ol { background: #fff; color: #1B2A4A; }
+.lb-o.wrong { background: #F2593A; color: #fff; animation: lb-shake .45s; }
+.lb-o.wrong .lb-ol { background: #fff; color: #F2593A; }
+.lb-o.dim { opacity: .45; }
+.lb-mk { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border: 3px solid #1B2A4A; border-radius: 12px; box-shadow: 0 4px 0 #1B2A4A; font-size: 17px; font-weight: 800; cursor: pointer; }
+.lb-mk:active { transform: translateY(3px); box-shadow: 0 1px 0 #1B2A4A; }
+.lb-mk.yes { background: #fff; color: #1B2A4A; }
+.lb-mk.no { background: #F2593A; color: #fff; }
+.lb-lnk { background: none; border: none; padding: 0; font-size: 13px; color: #6B6A7A; text-decoration: underline; cursor: pointer; }
+.lb-key { margin-top: 8px; font-size: 15px; background: #FFF6EC; border: 2px dashed #8EA0C8; color: #1B2A4A; padding: 8px 12px; text-align: left; }
+.lb-fb { margin-top: 22px; border: 3px solid #1B2A4A; border-radius: 14px; box-shadow: 4px 4px 0 #1B2A4A; background: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; position: relative; overflow: hidden; color: #1B2A4A; }
+.lb-fb.ok { background: #FFE9E1; }
+.lb-fb.bad { background: #fff; }
+.lb-fb.zero { background: #fff; }
+.lb-big { display: inline-flex; align-items: center; gap: 8px; font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 800; animation: lb-pop .5s; }
 .lb-msg { font-size: 19px; font-weight: 700; }
 .lb-fsub { font-size: 14px; margin-top: 2px; }
-.lb-cf { position: absolute; bottom: 8px; color: #F2593A; animation: lb-rise 1.1s ease-out forwards; opacity: 0; }
-.lb-end { display: flex; justify-content: flex-end; margin-top: 12px; }
+.lb-cf { position: absolute; bottom: 8px; animation: lb-rise 1.1s ease-out forwards; opacity: 0; }
+.lb-end { display: flex; justify-content: flex-end; margin-top: 14px; }
 .lb-go { background: #F2593A; color: #fff; border: 3px solid #1B2A4A; box-shadow: 0 4px 0 #1B2A4A; border-radius: 12px; height: 50px; padding: 0 28px; font-size: 17px; font-weight: 800; cursor: pointer; }
 .lb-go:hover:not(:disabled) { background: #E44C2D; }
 .lb-go:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 #1B2A4A; }
