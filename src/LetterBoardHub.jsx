@@ -247,7 +247,6 @@ export default function LetterBoardHub() {
       <style>{CSS}</style>
       <div className="lbh-wrap">
         <section className="lbh-stage">
-          <p className="lbh-eyebrow">One-to-one game</p>
           <h1 className="lbh-h1 lbh-title-tiles" aria-label="Letter Board">
             <span className="lbh-word" aria-hidden="true">{"LETTER".split("").map((c, i) => <span key={i} className="lbh-tile">{c}</span>)}</span>
             <span className="lbh-word" aria-hidden="true">{"BOARD".split("").map((c, i) => <span key={i} className="lbh-tile hot">{c}</span>)}</span>
@@ -331,7 +330,7 @@ const CSS = `
 .lbh-stage { background: #fff; border: 2px solid #EBD8CE; border-radius: 20px; padding: 30px 24px 28px; text-align: center; }
 .lbh-stage .lbh-lead { margin: 0 auto 20px; max-width: 460px; }
 .lbh-stage .lbh-toolbar { justify-content: center; }
-.lbh-title-tiles { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 22px; margin: 14px 0 14px; }
+.lbh-title-tiles { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 22px; margin: 0 0 14px; }
 .lbh-word { display: inline-flex; gap: 6px; }
 .lbh-tile { width: 46px; height: 46px; border-radius: 9px; background: #1B2A4A; color: #FBF4F1; font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
 .lbh-tile.hot { background: #F2593A; }
