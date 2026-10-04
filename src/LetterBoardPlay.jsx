@@ -362,15 +362,15 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
   }
 
   const cols = n === 9 ? 3 : 5;
-  const gap = 10;
+  const gap = 8;
   const tileW = `calc((100% - ${gap * (cols - 1)}px) / ${cols} - 0.5px)`;
-  const tileH = n === 9 ? 124 : n === 15 ? 104 : 92;
+  const tileH = n === 9 ? 128 : n === 15 ? 110 : 100;
 
   return (
-    <div className={`lb-app ${shake ? "lb-shake" : ""}`}>
+    <div className={`lb-app lb-sq ${shake ? "lb-shake" : ""}`}>
       <TopBar coins={g.coins} pulse={pulse} mood={mood} tilesLeft={tilesLeft} muted={muted} onMute={toggleMute} onSetup={onSetup} onStory={hasStory(story) ? () => setShowStory(true) : null} full />
       <div className="lb-stage">
-        <div className="lb-grid" style={{ maxWidth: n === 9 ? 480 : "100%" }}>
+        <div className="lb-grid" style={{ maxWidth: n === 9 ? 520 : "100%" }}>
           {g.ord.map((i, p) => {
             const ch = String.fromCharCode(65 + i);
             const d = g.done[i];
@@ -743,10 +743,11 @@ export default function LetterBoardPlay() {
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
-.lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: flex-start; padding: 14px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
+.lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: center; padding: 14px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-page *, .lb-page *::before, .lb-page *::after { box-sizing: border-box; }
 .lb-page button { font-family: inherit; }
 .lb-app { width: 100%; max-width: 820px; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; position: relative; }
+.lb-app.lb-sq { max-width: 580px; }
 .lb-app.lb-shake .lb-grid { animation: lb-shake .5s; }
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
 .lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 3px solid #1B2A4A; padding: 7px 14px; }
@@ -780,8 +781,8 @@ const CSS = `
 .lb-nomt { margin-top: 0; }
 .lb-end-pad { padding: 0 22px 20px; }
 .lb-end-split { justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.lb-stage { position: relative; padding: 14px; background-color: #FFF6EC; background-image: radial-gradient(#E9D9C4 2px, transparent 2.2px); background-size: 12px 12px; }
-.lb-grid { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto; }
+.lb-stage { position: relative; padding: 8px; background-color: #FFF6EC; background-image: radial-gradient(#E9D9C4 2px, transparent 2.2px); background-size: 12px 12px; }
+.lb-grid { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 auto; }
 .lb-c { display: block; position: relative; perspective: 700px; border: none; background: none; padding: 0; margin: 0; cursor: pointer; }
 .lb-in { display: block; position: absolute; inset: 0; transition: transform .55s; transform-style: preserve-3d; }
 .lb-c.lb-flip .lb-in { transform: rotateY(180deg); }
