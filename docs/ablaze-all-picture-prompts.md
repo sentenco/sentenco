@@ -265,21 +265,21 @@ Subject: A formal event: an elegant hall with a chandelier, a small stage, teena
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenage girl sitting on a sofa talking on a smartphone held to her ear and laughing happily.
+Subject: A teenage girl sitting on a sofa talking on a smartphone held to her ear and laughing happily.
 ```
 
 ### `a2u2-now/walking-dog.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenage boy walking a small brown dog on a leash along a park path, smiling.
+Subject: A teenage boy walking a small brown dog on a leash along a park path, smiling.
 ```
 
 ### `a2u2-now/waiting-bus.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager standing at a bus stop with a backpack, looking down the road for the bus, a simple bus shelter beside him.
+Subject: A teenager standing at a bus stop with a backpack, looking down the road for the bus, a simple bus shelter beside him.
 ```
 
 ### `a2u2-these/learning-guitar.jpeg`
@@ -753,35 +753,35 @@ Subject: A cute simple a hospital: a large white building with a red cross on th
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager walking to school with a backpack on a sunny pavement, smiling, a school building far behind.
+Subject: A teenager walking to school with a backpack on a sunny pavement, smiling, a school building far behind.
 ```
 
 ### `a2u7-go/bus.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager sitting on a city bus next to the window, looking out and smiling, other seats visible.
+Subject: A teenager sitting on a city bus next to the window, looking out and smiling, other seats visible.
 ```
 
 ### `a2u7-go/taxi.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager getting into a yellow taxi with a taxi sign on the roof (no letters).
+Subject: A teenager getting into a yellow taxi with a taxi sign on the roof (no letters).
 ```
 
 ### `a2u7-go/bicycle.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager riding a bicycle along a bike lane with a helmet on, happy smile.
+Subject: A teenager riding a bicycle along a bike lane with a helmet on, happy smile.
 ```
 
 ### `a2u7-go/train.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager standing on a train platform with a backpack while a train arrives.
+Subject: A teenager standing on a train platform with a backpack while a train arrives.
 ```
 
 ### `a2u7-dir/straight.jpeg`
@@ -847,49 +847,49 @@ Subject: A cute top-down illustrated town map, a flat bird's-eye view with ONE l
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager sitting by an airplane window looking at clouds, a small plane wing visible outside, happy excited smile. No text.
+Subject: A teenager sitting by an airplane window looking at clouds, a small plane wing visible outside, happy excited smile. No text.
 ```
 
 ### `a2u8-trip/hotel.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a cute seaside hotel building with balconies and a pool in front, a suitcase at the entrance, a welcoming sunny mood (no letters on the sign). No text.
+Subject: A cute seaside hotel building with balconies and a pool in front, a suitcase at the entrance, a welcoming sunny mood (no letters on the sign). No text.
 ```
 
 ### `a2u8-trip/landmark.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager taking a selfie in front of a tall famous-looking stone tower (a generic landmark tower, not a real one) with blue sky and tourists around. No text.
+Subject: A teenager taking a selfie in front of a tall famous-looking stone tower (a generic landmark tower, not a real one) with blue sky and tourists around. No text.
 ```
 
 ### `a2u8-trip/souvenirs.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a market stall table with colorful souvenirs: a snow globe, fridge magnets, a small flag, a postcard (no text), and a teenager holding a small bag. No text.
+Subject: A market stall table with colorful souvenirs: a snow globe, fridge magnets, a small flag, a postcard (no text), and a teenager holding a small bag. No text.
 ```
 
 ### `a2u8-trip/suitcase.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager packing a large open suitcase with clothes, a passport (no text on it) and a camera on the bed, happy and busy. No text.
+Subject: A teenager packing a large open suitcase with clothes, a passport (no text on it) and a camera on the bed, happy and busy. No text.
 ```
 
 ### `a2u8-trip/boat.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager on a small tour boat on blue water with a harbor and hills behind, waving at the viewer. No text.
+Subject: A teenager on a small tour boat on blue water with a harbor and hills behind, waving at the viewer. No text.
 ```
 
 ### `a2u8-trip/street-food.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager at a street food stall eating a skewer, a cart with steaming food, string lights, and a smiling vendor. No text.
+Subject: A teenager at a street food stall eating a skewer, a cart with steaming food, string lights, and a smiling vendor. No text.
 ```
 
 
@@ -944,49 +944,49 @@ Subject: A teenager at a desk surrounded by piles of books and papers, hands in 
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a cinema screen showing a funny scene: a character slipping on a banana peel with big laughing faces in the audience below, bright and playful. No text.
+Subject: A cinema screen showing a funny scene: a character slipping on a banana peel with big laughing faces in the audience below, bright and playful. No text.
 ```
 
 ### `a2u10-genre/action.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a cinema screen showing an action scene: a hero jumping over a flying car with sparks and explosions, dynamic. No text.
+Subject: A cinema screen showing an action scene: a hero jumping over a flying car with sparks and explosions, dynamic. No text.
 ```
 
 ### `a2u10-genre/scary.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a spooky haunted house at night with a full moon, bats and a cute ghost, a teenager hiding behind a pillow in the foreground. No text.
+Subject: A spooky haunted house at night with a full moon, bats and a cute ghost, a teenager hiding behind a pillow in the foreground. No text.
 ```
 
 ### `a2u10-genre/animation.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a cartoon scene: cute colorful animated characters (a round blue creature and a small robot) smiling together, a film-frame border. No text.
+Subject: A cartoon scene: cute colorful animated characters (a round blue creature and a small robot) smiling together, a film-frame border. No text.
 ```
 
 ### `a2u10-genre/scifi.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a sci-fi scene: a rocket flying past a ringed planet with stars, a friendly robot waving from a window. No text.
+Subject: A sci-fi scene: a rocket flying past a ringed planet with stars, a friendly robot waving from a window. No text.
 ```
 
 ### `a2u10-genre/tv-series.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager on a couch binge-watching a TV with a stack of episode cards beside him, a bowl of popcorn, the TV screen shows a simple colorful scene (no text). No text.
+Subject: A teenager on a couch binge-watching a TV with a stack of episode cards beside him, a bowl of popcorn, the TV screen shows a simple colorful scene (no text). No text.
 ```
 
 ### `a2u10-genre/podcast.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager wearing headphones recording a podcast at a desk with a microphone and sound waves, a cozy room with a lamp. No text.
+Subject: A teenager wearing headphones recording a podcast at a desk with a microphone and sound waves, a cozy room with a lamp. No text.
 ```
 
 
@@ -996,21 +996,21 @@ Subject: A a teenager wearing headphones recording a podcast at a desk with a mi
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager at a school desk taking an exam with a pencil in hand, a serious focused face, a blank test paper with scribbles (no readable text), a classroom clock-free background. No text, no numbers.
+Subject: A teenager at a school desk taking an exam with a pencil in hand, a serious focused face, a blank test paper with scribbles (no readable text), a classroom clock-free background. No text, no numbers.
 ```
 
 ### `a2u11-plans/birthday.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a birthday party: a cake with candles, balloons, a banner with no letters and a teenager blowing out the candles with friends cheering. No text, no numbers.
+Subject: A birthday party: a cake with candles, balloons, a banner with no letters and a teenager blowing out the candles with friends cheering. No text, no numbers.
 ```
 
 ### `a2u11-plans/volunteer.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager wearing a green volunteer vest handing a food box to a smiling elderly person at a community center. No text, no numbers.
+Subject: A teenager wearing a green volunteer vest handing a food box to a smiling elderly person at a community center. No text, no numbers.
 ```
 
 ### `a2u11-plans/camping.jpeg`
@@ -1024,14 +1024,14 @@ Subject: A two teenagers sitting by a campfire next to a tent under a starry sky
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a weekly calendar page overflowing with many colored activity blocks and small icons (book, ball, clock without numbers), a stressed teenager peeking from behind it. No text, no numbers.
+Subject: A weekly calendar page overflowing with many colored activity blocks and small icons (book, ball, clock without numbers), a stressed teenager peeking from behind it. No text, no numbers.
 ```
 
 ### `a2u11-plans/free-week.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a weekly calendar page almost empty with one small sun icon, a relaxed teenager lying in a hammock beside it. No text, no numbers.
+Subject: A weekly calendar page almost empty with one small sun icon, a relaxed teenager lying in a hammock beside it. No text, no numbers.
 ```
 
 
@@ -1048,14 +1048,14 @@ Subject: A four teenagers around a whiteboard covered with colorful sticky notes
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager painting a big colorful poster with a simple picture of a sun, a tree and shapes (no text) on a table with paint cans and brushes. No text.
+Subject: A teenager painting a big colorful poster with a simple picture of a sun, a tree and shapes (no text) on a table with paint cans and brushes. No text.
 ```
 
 ### `a2u12-project/presenting.jpeg`
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a teenager standing in front of a classroom presenting with a pointer and a screen showing a simple chart (no text) while classmates listen and one raises a hand. No text.
+Subject: A teenager standing in front of a classroom presenting with a pointer and a screen showing a simple chart (no text) while classmates listen and one raises a hand. No text.
 ```
 
 ### `a2u12-project/teamwork.jpeg`
@@ -1069,5 +1069,5 @@ Subject: A four teenagers sitting around a table working together, passing paper
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: A a shiny golden trophy with a star on a small podium with confetti falling and three cheering teenagers around it. No text.
+Subject: A shiny golden trophy with a star on a small podium with confetti falling and three cheering teenagers around it. No text.
 ```
