@@ -802,7 +802,7 @@ const CSS = `
 .lb-mc { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #1B2A4A; display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-size: 9px; color: #1B2A4A; }
 .lb-gv.ok { color: #1B2A4A; }
 .lb-gv.bad { color: #C23B1B; }
-.lb-ov { position: fixed; inset: 0; background: rgba(27,42,74,.55); display: flex; padding: 14px; z-index: 50; overflow-y: auto; }
+.lb-ov { position: fixed; inset: 0; background-color: #FADFD3; background-image: radial-gradient(#F4C0AD 2.2px, transparent 2.4px); background-size: 14px 14px; display: flex; padding: 14px; z-index: 50; overflow-y: auto; }
 .lb-card { width: 100%; max-width: 600px; max-height: 100%; overflow: auto; background: #fff; border-radius: 16px; border: 3px solid #1B2A4A; box-shadow: 6px 6px 0 #1B2A4A; }
 .lb-qh { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: #FFF6EC; border-bottom: 3px solid #1B2A4A; color: #1B2A4A; }
 .lb-lt2 { width: 46px; height: 46px; border-radius: 50%; background: #fff; border: 3px solid #1B2A4A; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 800; flex: none; color: #1B2A4A; }
