@@ -303,7 +303,7 @@ export function GreetPickBlock({ heading, rounds = [], options = [] }) {
   function next() { setPicked(null); setIdx((i) => i + 1); }
   return (
     <div className="stage-col">
-      <FitH className="slide-h">{heading}</FitH>
+      <FitH className="slide-h">{r.heading || heading}</FitH>
       <div className="tg-gp-pic">
         {r.pic ? <SoarPic src={r.pic} label={r.answer} size={options.some((o) => o.length > 22) ? 96 : (options.some((o) => o.length > 14) || options.join("").length > 32) ? 92 : 170} zoom="off" /> : <div className="tg-gp-text">{r.text}</div>}
       </div>
