@@ -41,23 +41,26 @@ function ImageField({ value, onChange, label }) {
   );
 }
 
-function SetCard({ title, items, badge, hasStoryFlag, onPlay, onEdit, onDelete, editLabel = "Edit" }) {
+function SetRow({ n, title, items, badge, hasStoryFlag, onPlay, onEdit, onDelete, editLabel = "Edit" }) {
   const { counts } = levelStatus(items);
   return (
-    <div className="lbh-card">
-      <div className="lbh-card-top">
-        <h3 className="lbh-card-title">{title}</h3>
-        {badge && <span className="lbh-badge">{badge}</span>}
-        {hasStoryFlag && <span className="lbh-badge lbh-badge-story">Story</span>}
+    <div className="lbh-row">
+      <span className="lbh-row-n" aria-hidden="true">{n}</span>
+      <div className="lbh-row-main">
+        <div className="lbh-row-top">
+          <h3 className="lbh-row-title">{title}</h3>
+          {badge && <span className="lbh-badge">{badge}</span>}
+          {hasStoryFlag && <span className="lbh-badge lbh-badge-story">Story</span>}
+        </div>
+        <div className="lbh-chips">
+          {GROUPS.map((gr) => (
+            <span key={gr.key} className={`lbh-chip ${gr.key}${counts[gr.key] === gr.to - gr.from ? " full" : ""}`}>
+              {gr.label} {counts[gr.key]}/{gr.to - gr.from}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className="lbh-chips">
-        {GROUPS.map((gr) => (
-          <span key={gr.key} className={`lbh-chip ${gr.key}${counts[gr.key] === gr.to - gr.from ? " full" : ""}`}>
-            {gr.label} {counts[gr.key]}/{gr.to - gr.from}
-          </span>
-        ))}
-      </div>
-      <div className="lbh-card-actions">
+      <div className="lbh-row-actions">
         <button type="button" className="lbh-btn primary" onClick={onPlay}>Play</button>
         {onEdit && <button type="button" className="lbh-btn" onClick={onEdit}>{editLabel}</button>}
         {onDelete && <button type="button" className="lbh-btn danger" onClick={onDelete}>Delete</button>}
@@ -243,24 +246,35 @@ export default function LetterBoardHub() {
     <div className="lbh-page">
       <style>{CSS}</style>
       <div className="lbh-wrap">
-        <p className="lbh-eyebrow">One-to-one game</p>
-        <h1 className="lbh-h1">Letter Board</h1>
-        <p className="lbh-lead">Your student picks a letter, the tile flips, and every answer wins or loses coins. You choose the difficulty and the board fills with that many items. Answers to choice questions are checked for you, and you mark the open ones.</p>
+        <section className="lbh-stage">
+          <p className="lbh-eyebrow">One-to-one game</p>
+          <h1 className="lbh-h1 lbh-title-tiles" aria-label="Letter Board">
+            <span className="lbh-word" aria-hidden="true">{"LETTER".split("").map((c, i) => <span key={i} className="lbh-tile">{c}</span>)}</span>
+            <span className="lbh-word" aria-hidden="true">{"BOARD".split("").map((c, i) => <span key={i} className="lbh-tile hot">{c}</span>)}</span>
+          </h1>
+          <p className="lbh-lead">Your student picks a letter and the tile flips. You choose the difficulty, and you mark the open answers.</p>
+          <div className="lbh-toolbar">
+            <button type="button" className="lbh-btn primary big" onClick={() => openLetterBoard("sample")}>Play the sample</button>
+            <button type="button" className="lbh-btn big" onClick={() => openLetterBoard("sample-story")}>Play the story sample</button>
+            {user && <button type="button" className="lbh-btn big" onClick={startNew}>New set</button>}
+          </div>
+        </section>
 
-        <div className="lbh-toolbar">
-          <button type="button" className="lbh-btn primary big" onClick={() => openLetterBoard("sample")}>Play the sample</button>
-          <button type="button" className="lbh-btn big" onClick={() => openLetterBoard("sample-story")}>Play the story sample</button>
-          {user && <button type="button" className="lbh-btn big" onClick={startNew}>New set</button>}
+        <div className="lbh-rules">
+          <div className="lbh-rule"><span className="lbh-coin">+</span><div><span className="lbh-rule-k">Right answer</span><span className="lbh-rule-v">Win coins</span></div></div>
+          <div className="lbh-rule"><span className="lbh-coin lose">&minus;</span><div><span className="lbh-rule-k">Wrong answer</span><span className="lbh-rule-v">Lose coins</span></div></div>
+          <div className="lbh-rule"><span className="lbh-coin board">20</span><div><span className="lbh-rule-k">Per board</span><span className="lbh-rule-v">Up to 20 tiles</span></div></div>
         </div>
 
         <h2 className="lbh-h2">Sets</h2>
         {loadError && <p className="lbh-error">{loadError}</p>}
-        <div className="lbh-grid">
-          <SetCard title="Sample set" badge="Sample" items={SAMPLE_ITEMS} onPlay={() => openLetterBoard("sample")} onEdit={user ? startCopy : null} editLabel="Copy to edit" />
-          <SetCard title="The Lost Cat" badge="Sample" hasStoryFlag items={SAMPLE_STORY_ITEMS} onPlay={() => openLetterBoard("sample-story")} onEdit={user ? startCopyStory : null} editLabel="Copy to edit" />
-          {sets.map((s) => (
-            <SetCard
+        <div className="lbh-rows">
+          <SetRow n={1} title="Sample set" badge="Sample" items={SAMPLE_ITEMS} onPlay={() => openLetterBoard("sample")} onEdit={user ? startCopy : null} editLabel="Copy to edit" />
+          <SetRow n={2} title="The Lost Cat" badge="Sample" hasStoryFlag items={SAMPLE_STORY_ITEMS} onPlay={() => openLetterBoard("sample-story")} onEdit={user ? startCopyStory : null} editLabel="Copy to edit" />
+          {sets.map((s, i) => (
+            <SetRow
               key={s.id}
+              n={i + 3}
               title={s.title}
               items={s.items}
               hasStoryFlag={hasStory(s.story)}
@@ -314,17 +328,33 @@ const CSS = `
 .lbh-btn.danger { color: #A32D2D; }
 .lbh-btn.big { font-size: 16px; padding: 12px 22px; }
 .lbh-btn:disabled { opacity: .6; cursor: not-allowed; }
-.lbh-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
-.lbh-card { background: #fff; border-radius: 18px; padding: 18px; border-bottom: 5px solid #1B2A4A; display: flex; flex-direction: column; gap: 12px; }
-.lbh-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
-.lbh-card-title { font-family: 'Fraunces', Georgia, serif; font-size: 21px; font-weight: 600; margin: 0; line-height: 1.2; }
+.lbh-stage { background: #fff; border: 2px solid #EBD8CE; border-radius: 20px; padding: 30px 24px 28px; text-align: center; }
+.lbh-stage .lbh-lead { margin: 0 auto 20px; max-width: 460px; }
+.lbh-stage .lbh-toolbar { justify-content: center; }
+.lbh-title-tiles { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 22px; margin: 14px 0 14px; }
+.lbh-word { display: inline-flex; gap: 6px; }
+.lbh-tile { width: 46px; height: 46px; border-radius: 9px; background: #1B2A4A; color: #FBF4F1; font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.lbh-tile.hot { background: #F2593A; }
+.lbh-rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 14px 0 0; }
+.lbh-rule { background: #fff; border: 2px solid #EBD8CE; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; }
+.lbh-rule-k { display: block; font-size: 12px; color: #7A5A4E; }
+.lbh-rule-v { display: block; font-size: 15px; font-weight: 700; }
+.lbh-coin { width: 32px; height: 32px; border-radius: 50%; flex: none; background: #F6C453; border: 2px solid #D9A62E; color: #6B4A00; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.lbh-coin.lose { background: #1B2A4A; border-color: #1B2A4A; color: #FBF4F1; }
+.lbh-coin.board { background: #F2593A; border-color: #F2593A; color: #fff; font-size: 13px; }
+.lbh-rows { display: flex; flex-direction: column; gap: 10px; }
+.lbh-row { background: #fff; border: 2px solid #EBD8CE; border-radius: 16px; padding: 14px 18px; display: flex; align-items: center; gap: 16px; }
+.lbh-row-n { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 600; color: #F2593A; width: 28px; flex: none; text-align: center; }
+.lbh-row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.lbh-row-title { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; margin: 0 6px 0 0; line-height: 1.2; }
+.lbh-row-top { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.lbh-row-actions { display: flex; gap: 8px; flex-wrap: wrap; flex: none; }
 .lbh-badge { font-size: 11px; font-weight: 700; background: #FFE2D8; color: #7A2410; border-radius: 999px; padding: 3px 10px; flex: none; }
 .lbh-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .lbh-chip { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 3px 10px; background: #F4ECE6; color: #7A5A4E; }
 .lbh-chip.full.easy { background: #FFE2D8; color: #7A2410; }
 .lbh-chip.full.avg { background: #F2593A; color: #fff; }
 .lbh-chip.full.hard { background: #1B2A4A; color: #FBF4F1; }
-.lbh-card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
 .lbh-hint { font-size: 13px; color: #7A5A4E; margin: 12px 0 0; }
 .lbh-error { font-size: 14px; color: #A32D2D; margin: 0 0 10px; }
 .lbh-back { background: none; border: none; font: inherit; font-size: 14px; font-weight: 600; color: #7A5A4E; cursor: pointer; padding: 0; margin-bottom: 18px; }
@@ -352,5 +382,5 @@ const CSS = `
 .lbh-opt-l { width: 24px; height: 24px; border-radius: 50%; background: #F4ECE6; color: #1B2A4A; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
 .lbh-opt.correct .lbh-opt-l { background: #3DAA4A; color: #fff; }
 .lbh-savebar { position: sticky; bottom: 0; margin-top: 24px; display: flex; justify-content: flex-end; align-items: center; gap: 10px; background: #FBF4F1; border-top: 1px solid #EBD8CE; padding: 12px 0; }
-@media (max-width: 640px) { .lbh-h1 { font-size: 34px; } }
+@media (max-width: 640px) { .lbh-h1 { font-size: 34px; } .lbh-tile { width: 38px; height: 38px; font-size: 20px; } .lbh-rules { grid-template-columns: 1fr; } .lbh-row { flex-wrap: wrap; } .lbh-row-actions { width: 100%; padding-left: 44px; } }
 `;
