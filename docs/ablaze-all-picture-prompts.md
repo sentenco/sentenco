@@ -323,50 +323,50 @@ Subject: One cheerful teenage student standing full body facing forward, wearing
 ### `a2u3-rules/be-on-time.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round BLUE sign with a white alarm clock icon and a small check mark in the middle. Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One cheerful teenage student with short black hair, wearing a navy school blazer, white shirt and tie, standing full body in front of an open school gate in the early morning, holding a big round red alarm clock up in both hands and smiling proudly, a low bright sun behind the gate. The clock is simple with two hands (any early time) and no readable numbers. Behind the student, a big solid BLUE circle (like a rule sign) fills the background, with a small white check mark in its upper right corner. The main idea is clearly 'be on time for school'.
 ```
 
 ### `a2u3-rules/raise-hand.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round BLUE sign with a white raised hand icon in the middle. Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One cheerful teenage student with curly brown hair, wearing a navy school blazer and white shirt, sitting at a wooden school desk with an open notebook, one arm stretched straight up high with an open palm, mouth slightly open and eager to answer, a plain green chalkboard with no writing behind. Behind the student, a big solid BLUE circle (like a rule sign) fills the background, with a small white check mark in its upper right corner. The main idea is clearly 'raise your hand to speak in class'.
 ```
 
 ### `a2u3-rules/do-homework.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round BLUE sign with a white notebook and pencil icon in the middle. Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One focused teenage student with a short black ponytail, wearing a navy school cardigan, sitting at a desk at home writing in an open notebook with a yellow pencil, a small stack of three books and a lit desk lamp beside, a small happy smile. Behind the student, a big solid BLUE circle (like a rule sign) fills the background, with a small white check mark in its upper right corner. The main idea is clearly 'do your homework'.
 ```
 
 ### `a2u3-rules/no-phones.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round sign with a red circle border and a red diagonal slash over a black smartphone icon (the 'no phones' sign). Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One teenage student with short brown hair, wearing a navy school blazer and white shirt, sitting at a classroom desk looking down at a smartphone held in both hands under the desk, a slightly guilty smile, an open notebook on the desk. In the upper right corner, a big red 'no' symbol (a red circle outline with a red diagonal slash, empty inside, about one quarter of the picture size) that does NOT cover the student or the object. The main idea is clearly 'no phones in class'.
 ```
 
 ### `a2u3-rules/no-running.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round sign with a red circle border and a red diagonal slash over a black running person icon (the 'no running' sign). Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One teenage student with spiky black hair, wearing a navy school blazer and white shirt, running fast down a school hallway with a backpack bouncing, arms swinging, speed lines behind, a row of plain blue lockers along one wall. In the upper right corner, a big red 'no' symbol (a red circle outline with a red diagonal slash, empty inside, about one quarter of the picture size) that does NOT cover the student or the object. The main idea is clearly 'no running in the hall'.
 ```
 
 ### `a2u3-rules/no-eating.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round sign with a red circle border and a red diagonal slash over a black burger icon (the 'no eating' sign). Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One teenage student with a blond bob haircut, wearing a navy school cardigan and white shirt, sitting at a classroom desk taking a big bite of a hamburger, an open textbook on the desk and a small crumb trail, happy cheeky face. In the upper right corner, a big red 'no' symbol (a red circle outline with a red diagonal slash, empty inside, about one quarter of the picture size) that does NOT cover the student or the object. The main idea is clearly 'no eating in class'.
 ```
 
 ### `a2u3-rules/no-shouting.jpeg`
 
 ```text
-Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A round sign with a red circle border and a red diagonal slash over a black face shouting with three sound-wave lines (the 'no shouting' sign). Clear flat icon, no letters.
+Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
+Subject: One teenage student with short red hair, wearing a navy school blazer and white shirt, standing in a quiet school library between two tall bookshelves, both hands cupped around the mouth and shouting loudly with the mouth wide open, three curved sound-wave lines coming from the mouth, a small startled student reading in the background. In the upper right corner, a big red 'no' symbol (a red circle outline with a red diagonal slash, empty inside, about one quarter of the picture size) that does NOT cover the student or the object. The main idea is clearly 'no shouting in the library'.
 ```
 
 ### `a2u3-study/library.jpeg`
