@@ -1139,14 +1139,14 @@ Subject: A blue button-up collared shirt with a long sleeve, laid flat. The item
 
 ```text
 Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A pair of blue denim jeans, laid flat, front view. The item only, no person, no text.
+Subject: A pair of long blue denim jeans laid flat, front view, with two straight full-length legs that reach all the way down to the ankles (clearly long trousers, NOT shorts and NOT cropped), a visible waistband, belt loops and a front pocket line. The item only, no person, no text.
 ```
 
 ### `u9-clothes/shorts.jpeg`  (Lessons 1 to 5 (clothes))
 
 ```text
 Kawaii flat-icon illustration matching a chibi character art style: soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, plain solid white background, no text, no logos, no watermark, square 1:1 image, single object centered and isolated, no character or person in the frame.
-Subject: A pair of black shorts, laid flat, front view. The item only, no person, no text.
+Subject: A pair of black athletic shorts laid flat, front view, with very short legs that end well above the knee (clearly SHORTS, nothing like long trousers), an elastic waistband and a small drawstring. The item only, no person, no text.
 ```
 
 ### `u9-clothes/jacket.jpeg`  (Lessons 1 to 5 (clothes))
@@ -1195,7 +1195,7 @@ Subject: A red baseball cap, three-quarter front view. The item only, no person,
 
 ```text
 Chibi-style illustration in the same art style as the character set: oversized heads, small simplified bodies, large round sparkling eyes with bright catchlights, soft rounded shapes, clean bold black outlines, flat cel-shaded coloring with soft highlight accents, bright cheerful color palette, natural human skin tones, plain solid white background with at most a tiny soft ground shadow, no text, no letters, no numbers, no logos, no watermark, square 1:1 image, one clear simple scene, big and easy to understand at a small size.
-Subject: Sofia, a 15-year-old girl with curly brown hair in a high bun and tan skin, standing full body facing forward with a smile, wearing a clearly visible WHITE T-shirt, BLUE jeans and WHITE sneakers.
+Subject: Sofia, a 15-year-old girl with curly brown hair in a high bun and tan skin, standing full body facing forward with a smile, wearing a clearly visible WHITE T-shirt, BLUE jeans and WHITE sneakers. Her head is bare: NO hat, NO cap, nothing on her head at all, only her curly hair in a bun.
 ```
 
 ### `u9-outfits/malik.jpeg`  (Lessons 2, 3, 5 (outfit))
