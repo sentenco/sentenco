@@ -781,7 +781,7 @@ const CSS = `
 .lb-nomt { margin-top: 0; }
 .lb-end-pad { padding: 0 22px 20px; }
 .lb-end-split { justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.lb-stage { position: relative; padding: 8px; background-color: #FFF6EC; background-image: radial-gradient(#E9D9C4 2px, transparent 2.2px); background-size: 12px 12px; }
+.lb-stage { position: relative; padding: 4px 4px 8px; background-color: #FFF6EC; background-image: radial-gradient(#E9D9C4 2px, transparent 2.2px); background-size: 12px 12px; }
 .lb-grid { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 auto; }
 .lb-c { display: block; position: relative; perspective: 700px; border: none; background: none; padding: 0; margin: 0; cursor: pointer; }
 .lb-in { display: block; position: absolute; inset: 0; transition: transform .55s; transform-style: preserve-3d; }
