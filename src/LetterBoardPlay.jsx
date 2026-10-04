@@ -593,78 +593,52 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
         <Brand />
         <span className="lb-left">Teacher only</span>
       </div>
-      <div className="lb-sb">
-        <p className="lb-eyebrow">Letter board</p>
+      <div className="lb-sb lb-sbq">
         <h1 className="lb-sti">{title}</h1>
+        {hasStory(story) && <p className="lb-note lb-nomt">Story: <b>{story.title || "Untitled story"}</b></p>}
 
-        {hasStory(story) && (
-          <div className="lb-sec lb-storysec">
-            <h3>Story</h3>
-            <p className="lb-note lb-nomt"><b>{story.title || "Untitled story"}</b>. The student reads the story first, then the board opens. During the game a Story button shows it again.</p>
-          </div>
-        )}
-
-        <div className="lb-sec">
-          <h3>Difficulty</h3>
-          <div className="lb-lv">
-            {LEVELS.map((L) => {
-              const ok = ready(L.key);
-              return (
-                <button
-                  key={L.key}
-                  type="button"
-                  className={`lb-lvc${effective === L.key ? " sel" : ""}`}
-                  disabled={!ok}
-                  onClick={() => update({ lvl: L.key })}
-                >
-                  <div className="lb-a">{L.name}</div>
-                  <div className="lb-n">{L.n}</div>
-                  <div className="lb-u">tiles</div>
-                  <div className="lb-s">{ok ? L.sub : `${status.missing[L.key]} more ${status.missing[L.key] === 1 ? "item" : "items"} needed`}</div>
-                </button>
-              );
-            })}
-          </div>
-          <p className="lb-note">Pick a level and the board fills with that many items. Easy keeps the alphabet in order (A to I). On the other levels the letters can be mixed, and a letter never gives away how hard the item is.</p>
+        <div className="lb-lv">
+          {LEVELS.map((L) => {
+            const ok = ready(L.key);
+            return (
+              <button
+                key={L.key}
+                type="button"
+                className={`lb-lvc${effective === L.key ? " sel" : ""}`}
+                disabled={!ok}
+                onClick={() => update({ lvl: L.key })}
+              >
+                <div className="lb-n">{L.n}</div>
+                <div className="lb-a">{L.name}</div>
+                {!ok && <div className="lb-s">Needs {status.missing[L.key]} more</div>}
+              </button>
+            );
+          })}
         </div>
 
-        <div className="lb-sec">
-          <h3>Coin values</h3>
-          <div className="lb-row">
-            {[["c", "Coins"], ["b", "Bonus"], ["x", "Bomb"]].map(([k, label]) => (
-              <label key={k}>{label}
-                <select value={cfg[k]} onChange={(e) => update({ [k]: Number(e.target.value) })}>
-                  {VALUE_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
-                </select>
-              </label>
-            ))}
-            <label>Letters
-              <select
-                value={effective === 1 || !cfg.mix ? "order" : "mixed"}
-                disabled={effective === 1}
-                onChange={(e) => update({ mix: e.target.value === "mixed" })}
-              >
-                <option value="mixed">Mixed on the board</option>
-                <option value="order">In order (A, B, C...)</option>
+        <div className="lb-vals">
+          {[["c", "Coins"], ["b", "Bonus"], ["x", "Bomb"]].map(([k, label]) => (
+            <label key={k}>{label}
+              <select value={cfg[k]} onChange={(e) => update({ [k]: Number(e.target.value) })}>
+                {VALUE_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
               </select>
             </label>
-          </div>
-          <p className="lb-note">Double coins pays twice the Coins value. A bomb wins or loses its full value.{effective === 1 ? " Easy always keeps the letters in order, A to I." : ""}</p>
+          ))}
+          <label>Letters
+            <select
+              value={effective === 1 || !cfg.mix ? "order" : "mixed"}
+              disabled={effective === 1}
+              onChange={(e) => update({ mix: e.target.value === "mixed" })}
+            >
+              <option value="mixed">Mixed</option>
+              <option value="order">In order</option>
+            </select>
+          </label>
         </div>
 
-        <div className="lb-sec">
-          <h3>The 20 items</h3>
-          <div className="lb-cnt">
-            {GROUPS.map((gr) => (
-              <span key={gr.key} className={`lb-dfc ${gr.key}`}>{status.counts[gr.key]} of {gr.to - gr.from} {gr.label.toLowerCase()} ready</span>
-            ))}
-          </div>
-          {!anyReady && <p className="lb-note">Fill in all 9 easy items in the editor to start playing this set.</p>}
-        </div>
+        {!anyReady && <p className="lb-note">Fill in all 9 easy items in the editor to play this set.</p>}
 
-        <div className="lb-end">
-          <button type="button" className="lb-go" disabled={!anyReady} onClick={() => { ac(); sfx.pick(); onStart(effective); }}>Start game</button>
-        </div>
+        <button type="button" className="lb-go lb-start" disabled={!anyReady} onClick={() => { ac(); sfx.pick(); onStart(effective); }}>Start game</button>
       </div>
     </div>
   );
@@ -742,6 +716,12 @@ export default function LetterBoardPlay() {
 }
 
 const CSS = `
+.lb-sbq { display: flex; flex-direction: column; gap: 16px; min-height: 445px; padding: 10px 10px 12px; }
+.lb-sbq .lb-sti { font-size: 34px; margin: 6px 0 0; }
+.lb-vals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.lb-vals label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 700; }
+.lb-vals select { height: 42px; width: 100%; font-size: 14px; border: 3px solid #1B2A4A; border-radius: 10px; padding: 0 6px; background: #fff; color: #1B2A4A; font-family: inherit; font-weight: 500; }
+.lb-start { width: 100%; margin-top: auto; }
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
 .lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: center; padding: 10px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-page *, .lb-page *::before, .lb-page *::after { box-sizing: border-box; }
@@ -871,15 +851,15 @@ const CSS = `
 .lb-row label { display: flex; align-items: center; gap: 8px; font-weight: 500; }
 .lb-row select { height: 36px; font-size: 14px; border: 1px solid #DCC9BF; border-radius: 8px; padding: 0 8px; background: #FBF4F1; color: #1B2A4A; }
 .lb-note { font-size: 13px; color: #7A5A4E; margin: 10px 0 0; line-height: 1.5; }
-.lb-lv { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.lb-lvc { border: 2px solid #EBD8CE; background: #FBF4F1; border-radius: 14px; padding: 12px 10px; text-align: center; cursor: pointer; color: #1B2A4A; }
-.lb-lvc:hover:not(:disabled) { border-color: #1B2A4A; }
-.lb-lvc.sel { border-color: #F2593A; background: #FFE2D8; }
+.lb-lv { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 6px 0 6px; }
+.lb-lvc { border: 3px solid #1B2A4A; background: #fff; border-radius: 12px; box-shadow: 0 4px 0 #1B2A4A; padding: 26px 6px 20px; text-align: center; cursor: pointer; color: #1B2A4A; }
+.lb-lvc:hover:not(:disabled) { background: #FFF1EC; }
+.lb-lvc.sel { background: #FFE9E1; border-color: #F2593A; box-shadow: 0 4px 0 #F2593A; }
 .lb-lvc:disabled { opacity: .5; cursor: not-allowed; }
-.lb-lvc .lb-a { font-size: 15px; font-weight: 700; }
-.lb-lvc .lb-n { font-family: 'Fraunces', Georgia, serif; font-size: 40px; font-weight: 600; line-height: 1.1; margin: 2px 0 0; }
+.lb-lvc .lb-a { font-size: 14px; font-weight: 700; margin-top: 8px; }
+.lb-lvc .lb-n { font-family: 'Fraunces', Georgia, serif; font-size: 60px; font-weight: 800; line-height: 1; }
 .lb-lvc .lb-u { font-size: 12px; color: #7A5A4E; }
-.lb-lvc .lb-s { font-size: 12px; color: #7A5A4E; margin-top: 6px; line-height: 1.35; }
+.lb-lvc .lb-s { font-size: 11px; color: #6B7A99; margin-top: 4px; }
 .lb-cnt { display: flex; flex-wrap: wrap; gap: 8px; }
 .lb-dfc { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 4px 11px; }
 .lb-dfc.easy { background: #FFE2D8; color: #7A2410; }
@@ -896,7 +876,7 @@ const CSS = `
   .lb-in, .lb-cw, .lb-dc, .lb-big, .lb-o.wrong, .lb-cf, .lb-app.lb-shake .lb-grid { animation: none; transition: none; }
 }
 @media (max-width: 640px) {
-  .lb-lv { grid-template-columns: 1fr; }
+  .lb-lv { gap: 6px; }
   .lb-q { font-size: 23px; }
 }
 `;
