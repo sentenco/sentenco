@@ -279,7 +279,7 @@ const CSS = `
 
 .fg-panel {
   display: flex; flex-direction: column;
-  height: min(600px, calc(100vh - 2cm));
+  height: min(440px, calc(100vh - 2cm));
   background: #fff; border-radius: 16px; overflow: hidden;
   border: 1px solid #E3E6EE;
   box-shadow: 0 24px 56px rgba(20,38,74,0.12);
@@ -294,7 +294,7 @@ const CSS = `
 .fg-stage-tag { font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #FF5E45; }
 .fg-count-pill { font-size: 11px; font-weight: 700; color: #14264A; background: #EEF1F8; border-radius: 999px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
 
-.fg-deck-body { flex: 1; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px 44px; }
+.fg-deck-body { flex: 1; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 14px 36px; }
 .fg-deck-inner { width: 100%; }
 
 .fg-footer-nav { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 28px; border-top: 1px solid #EEF1F8; }
@@ -318,7 +318,7 @@ const CSS = `
 .fg-cover-sub { font-size: 14px; color: #6B7792; margin: 0 auto; max-width: 400px; line-height: 1.55; }
 
 /* ---- shared label + instruction ---- */
-.fg-slide-label { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FF5E45; display: block; text-align: center; margin: 0 0 18px; }
+.fg-slide-label { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FF5E45; display: block; text-align: center; margin: 0 0 14px; }
 .fg-instruction { font-weight: 500; font-size: 16px; line-height: 1.6; color: #14264A; max-width: 480px; margin: 0 auto; text-align: center; }
 
 /* ---- callback ---- */
@@ -328,18 +328,18 @@ const CSS = `
 
 /* ---- word bank ---- */
 .fg-wordintro { width: 100%; }
-.fg-wordgrid { display: flex; flex-direction: column; gap: 12px; max-width: 520px; margin: 0 auto; width: 100%; }
-.fg-wordcard { display: flex; align-items: center; gap: 14px; border-left: 4px solid #FF5E45; border-radius: 0 12px 12px 0; padding: 12px 18px; text-align: left; background: #FAF7F5; }
+.fg-wordgrid { display: flex; flex-direction: row; gap: 12px; max-width: 700px; margin: 0 auto; width: 100%; align-items: stretch; }
+.fg-wordcard { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; border-left: 4px solid #FF5E45; border-radius: 0 12px 12px 0; padding: 14px 16px; text-align: left; background: #FAF7F5; }
 .fg-wnum { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #14264A; color: #fff; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 .fg-wbody { flex: 1; min-width: 0; }
-.fg-w { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 24px; line-height: 1.1; color: #14264A; }
+.fg-w { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 22px; line-height: 1.1; color: #14264A; overflow-wrap: anywhere; }
 .fg-m { font-size: 13.5px; color: #4A5572; margin: 3px 0 2px; }
 .fg-e { font-size: 13px; font-style: italic; color: #8892AA; }
 
 /* ---- personal connection ---- */
 .fg-pc { width: 100%; text-align: center; }
-.fg-h.fg-pc-word { display: block; font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 56px; line-height: 1; color: #14264A; margin: 10px 0 14px; }
-.fg-pc-rule { width: 38px; height: 3px; background: #FF5E45; border-radius: 2px; margin: 0 auto 20px; }
+.fg-h.fg-pc-word { display: block; font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 52px; line-height: 1; color: #14264A; margin: 0 0 12px; }
+.fg-pc-rule { width: 38px; height: 3px; background: #FF5E45; border-radius: 2px; margin: 0 auto 16px; }
 .fg-pc-question { font-weight: 500; font-size: 19px; color: #14264A; max-width: 460px; margin: 0 auto; line-height: 1.5; }
 
 /* ---- storytelling ---- */
