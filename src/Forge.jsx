@@ -17,27 +17,6 @@ function TopBar() {
   );
 }
 
-function BgDecor() {
-  return (
-    <div className="fg-sparks" aria-hidden="true">
-      <svg className="fg-spark fg-spark--1" width="90" height="90" viewBox="0 0 90 90" fill="none">
-        <path d="M45 45 L45 10" stroke="#E8544E" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M45 45 L74 26" stroke="#E8544E" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M45 45 L20 66" stroke="#E8544E" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="45" cy="10" r="3.5" fill="#E8544E" />
-        <circle cx="74" cy="26" r="3.5" fill="#E8544E" />
-        <circle cx="20" cy="66" r="3.5" fill="#E8544E" />
-      </svg>
-      <svg className="fg-spark fg-spark--2" width="76" height="76" viewBox="0 0 76 76" fill="none">
-        <path d="M38 38 L38 8" stroke="#C93F3A" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M38 38 L62 52" stroke="#C93F3A" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="38" cy="8" r="3" fill="#C93F3A" />
-        <circle cx="62" cy="52" r="3" fill="#C93F3A" />
-      </svg>
-    </div>
-  );
-}
-
 function StageChip({ children }) {
   return <span className="fg-slide-label">{children}</span>;
 }
@@ -95,8 +74,8 @@ function WordIntroSlide({ words, startIndex }) {
 function PersonalConnectionSlide({ w }) {
   return (
     <div className="fg-pc">
-      <StageChip>Personal Connection</StageChip>
       <div className="fg-h fg-pc-word">{w.word}</div>
+      <div className="fg-pc-rule" />
       <p className="fg-pc-question">{w.question}</p>
     </div>
   );
@@ -105,7 +84,6 @@ function PersonalConnectionSlide({ w }) {
 function StorytellingSlide({ lesson, usedWords, onToggle }) {
   return (
     <div className="fg-storytelling">
-      <StageChip>Word Bank Storytelling</StageChip>
       <p className="fg-instruction">{lesson.storytellingPrompt}</p>
       <div className="fg-checklist">
         {lesson.words.map((w) => {
@@ -212,9 +190,9 @@ export default function Forge() {
   return (
     <div className="fg-shell">
       <style>{CSS}</style>
-      <BgDecor />
       <div className="fg-stage">
         <div className="fg-panel">
+          <div className="fg-progress"><i style={{ width: `${((slideIdx + 1) / totalSlides) * 100}%` }} /></div>
           <div className="fg-header">
             <TopBar />
             <span className="fg-stage-tag">{STAGE_LABELS[slide.type]}</span>
@@ -236,11 +214,6 @@ export default function Forge() {
             <button type="button" className="fg-navbtn fg-navbtn--prev" onClick={goPrev} disabled={atStart}>
               ← Previous
             </button>
-            <span className="fg-dots">
-              {slides.map((_, i) => (
-                <span key={i} className={`fg-dot${i < slideIdx ? " done" : i === slideIdx ? " current" : ""}`} />
-              ))}
-            </span>
             <button type="button" className="fg-navbtn fg-navbtn--next" onClick={goNext} disabled={atEnd}>
               Next →
             </button>
@@ -260,7 +233,7 @@ const CSS = `
   position: relative;
   width: 100%;
   min-height: 100vh;
-  color: #3A2420;
+  color: #14264A;
   font-family: 'IBM Plex Sans', sans-serif;
   box-sizing: border-box;
   padding: 1cm;
@@ -268,110 +241,97 @@ const CSS = `
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #FDECEA;
-  background-image:
-    radial-gradient(circle at 8% 12%, rgba(232,84,78,0.16), transparent 32%),
-    radial-gradient(circle at 94% 18%, rgba(232,84,78,0.10), transparent 30%),
-    radial-gradient(rgba(58,36,32,0.05) 1.4px, transparent 1.4px),
-    linear-gradient(160deg, #FFF6EE 0%, #FDECEA 100%);
-  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-  background-size: auto, auto, 26px 26px, auto;
+  background: #F3F5FA;
 }
 .fg-shell * { box-sizing: border-box; }
 
-.fg-sparks { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.fg-spark { position: absolute; opacity: 0.5; }
-.fg-spark--1 { top: 9%; left: 5%; transform: rotate(-8deg); }
-.fg-spark--2 { bottom: 8%; right: 6%; transform: rotate(14deg); }
-
-.fg-missing { text-align: center; color: #8A6A62; margin-top: 60px; }
+.fg-missing { text-align: center; color: #6B7792; margin-top: 60px; }
 
 .fg-stage { position: relative; z-index: 1; width: 100%; max-width: 780px; margin: 0 auto; }
 
 .fg-panel {
-  background: #FFFCF9; border-radius: 18px; overflow: hidden;
-  border: 1px solid #F0E0DC;
-  box-shadow: 0 34px 74px rgba(201,63,58,0.18), 0 2px 0 rgba(255,255,255,0.7) inset;
+  background: #fff; border-radius: 16px; overflow: hidden;
+  border: 1px solid #E3E6EE;
+  box-shadow: 0 24px 56px rgba(20,38,74,0.12);
 }
 
-.fg-header { display: flex; align-items: center; justify-content: space-between; padding: 17px 30px; border-bottom: 1px solid #F0E0DC; flex-shrink: 0; }
-.fg-brand { display: flex; align-items: center; gap: 6px; }
-.fg-brand-logo { height: 18px; width: auto; display: block; }
-.fg-brand-name { font-weight: 800; font-size: 13px; color: #3A2420; }
-.fg-stage-tag { font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #8A6A62; }
-.fg-count-pill { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; font-weight: 700; color: #C93F3A; background: #FBE3E1; border-radius: 999px; padding: 4px 11px; }
+.fg-progress { height: 5px; background: #E8ECF4; }
+.fg-progress i { display: block; height: 5px; background: #FF5E45; border-radius: 0 3px 3px 0; transition: width 0.25s ease; }
 
-.fg-deck-body { min-height: 340px; display: flex; align-items: center; justify-content: center; padding: 40px 44px; }
+.fg-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; flex-shrink: 0; }
+.fg-brand { display: inline-flex; align-items: center; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: #14264A; }
+.fg-brand-logo { height: 30px; width: auto; display: block; margin-right: -6px; }
+.fg-stage-tag { font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #FF5E45; }
+.fg-count-pill { font-size: 11px; font-weight: 700; color: #14264A; background: #EEF1F8; border-radius: 999px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
 
-.fg-footer-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 17px 28px; border-top: 1px solid #F0E0DC; }
+.fg-deck-body { min-height: 340px; display: flex; align-items: center; justify-content: center; padding: 28px 44px 36px; }
+
+.fg-footer-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 28px; border-top: 1px solid #EEF1F8; }
 .fg-navbtn {
   font-family: 'IBM Plex Sans', sans-serif; font-weight: 700; font-size: 13px; border: none; cursor: pointer;
-  border-radius: 999px; padding: 11px 24px; transition: transform 0.12s ease, box-shadow 0.12s ease;
+  border-radius: 999px; padding: 11px 26px; transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
-.fg-navbtn--prev { color: #3A2420; background: #fff; border: 1.5px solid #F0E0DC; box-shadow: 0 3px 0 #F0E0DC; }
-.fg-navbtn--prev:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 0 #F0E0DC; }
-.fg-navbtn--next { color: #fff; background: linear-gradient(135deg, #E8544E 0%, #C93F3A 100%); box-shadow: 0 3px 0 #8f2a26, 0 10px 20px rgba(201,63,58,0.32); }
-.fg-navbtn--next:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 0 #8f2a26, 0 14px 24px rgba(201,63,58,0.38); }
+.fg-navbtn--prev { color: #6B7792; background: transparent; }
+.fg-navbtn--prev:hover:not(:disabled) { color: #14264A; background: #F3F5FA; }
+.fg-navbtn--next { color: #fff; background: #FF5E45; box-shadow: 0 3px 0 #C9432E; }
+.fg-navbtn--next:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 0 #C9432E; }
 .fg-navbtn:disabled { opacity: 0.35; cursor: default; transform: none; box-shadow: none; }
-.fg-dots { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; max-width: 280px; }
-.fg-dot { width: 6px; height: 6px; border-radius: 50%; background: #F0E0DC; flex: none; }
-.fg-dot.done { background: #2F9E58; }
-.fg-dot.current { background: #C93F3A; width: 15px; border-radius: 4px; }
-
-.fg-h {
-  display: inline-flex; align-items: center; font-family: 'Baloo 2', cursive; font-weight: 700; color: #fff;
-  background: linear-gradient(135deg, #E8544E 0%, #C93F3A 100%); border-radius: 13px;
-  box-shadow: 0 12px 24px rgba(201,63,58,0.32);
-}
+.fg-navbtn:focus-visible { outline: 3px solid #14264A; outline-offset: 2px; }
 
 /* ---- cover ---- */
 .fg-cover { text-align: center; width: 100%; }
-.fg-cover-path { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 700; font-size: 11.5px; color: #8A6A62; margin: 0 0 20px; }
-.fg-sep { color: #F3B9B3; }
-.fg-cover-rule { width: 40px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #E8544E 0%, #C93F3A 100%); margin: 0 auto 18px; }
-.fg-cover-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 28px; color: #3A2420; margin: 0 0 14px; text-wrap: balance; line-height: 1.3; }
-.fg-cover-sub { font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; color: #8A6A62; margin: 0; max-width: 400px; margin-inline: auto; line-height: 1.55; }
+.fg-cover-path { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; font-size: 11.5px; color: #6B7792; margin: 0 0 20px; }
+.fg-sep { color: #FF5E45; }
+.fg-cover-rule { width: 40px; height: 3px; border-radius: 2px; background: #FF5E45; margin: 0 auto 18px; }
+.fg-cover-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 40px; color: #14264A; margin: 0 0 14px; text-wrap: balance; line-height: 1.15; }
+.fg-cover-sub { font-size: 14px; color: #6B7792; margin: 0 auto; max-width: 400px; line-height: 1.55; }
 
 /* ---- shared label + instruction ---- */
-.fg-slide-label { font-size: 11px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: #C93F3A; display: block; text-align: center; margin: 0 0 20px; }
-.fg-instruction { font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 15.5px; line-height: 1.6; color: #3A2420; max-width: 480px; margin: 0 auto; text-align: center; }
+.fg-slide-label { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FF5E45; display: block; text-align: center; margin: 0 0 18px; }
+.fg-instruction { font-weight: 500; font-size: 16px; line-height: 1.6; color: #14264A; max-width: 480px; margin: 0 auto; text-align: center; }
 
 /* ---- callback ---- */
 .fg-callback { width: 100%; text-align: center; }
 .fg-chiprow { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 24px 0 0; }
-.fg-chip { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 15px; background: #fff; border: 1.5px solid #F0E0DC; border-radius: 999px; padding: 10px 22px; color: #3A2420; box-shadow: 0 4px 10px rgba(58,36,32,0.06); }
+.fg-chip { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 17px; background: #FAF7F5; border-left: 4px solid #FF5E45; border-radius: 0 10px 10px 0; padding: 8px 18px; color: #14264A; }
 
-/* ---- word intro ---- */
+/* ---- word bank ---- */
 .fg-wordintro { width: 100%; }
-.fg-wordgrid { display: flex; flex-direction: column; gap: 12px; max-width: 480px; margin: 0 auto; width: 100%; }
-.fg-wordcard { display: flex; align-items: center; gap: 14px; border: 1px solid #F0E0DC; border-radius: 13px; padding: 13px 18px; text-align: left; background: #fff; }
-.fg-wnum { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #FBE3E1; color: #C93F3A; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+.fg-wordgrid { display: flex; flex-direction: column; gap: 12px; max-width: 520px; margin: 0 auto; width: 100%; }
+.fg-wordcard { display: flex; align-items: center; gap: 14px; border-left: 4px solid #FF5E45; border-radius: 0 12px 12px 0; padding: 12px 18px; text-align: left; background: #FAF7F5; }
+.fg-wnum { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #14264A; color: #fff; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 .fg-wbody { flex: 1; min-width: 0; }
-.fg-w { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 17px; color: #3A2420; }
-.fg-m { font-size: 12.5px; color: #8A6A62; margin: 2px 0; }
-.fg-e { font-size: 12px; font-style: italic; color: #B79890; }
+.fg-w { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 24px; line-height: 1.1; color: #14264A; }
+.fg-m { font-size: 13.5px; color: #4A5572; margin: 3px 0 2px; }
+.fg-e { font-size: 13px; font-style: italic; color: #8892AA; }
 
 /* ---- personal connection ---- */
 .fg-pc { width: 100%; text-align: center; }
-.fg-pc-word { font-size: 24px; padding: 10px 28px; margin: 0 0 24px; }
-.fg-pc-question { font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 17px; color: #3A2420; max-width: 440px; margin: 0 auto; line-height: 1.55; }
+.fg-h.fg-pc-word { display: block; font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 56px; line-height: 1; color: #14264A; margin: 10px 0 14px; }
+.fg-pc-rule { width: 38px; height: 3px; background: #FF5E45; border-radius: 2px; margin: 0 auto 20px; }
+.fg-pc-question { font-weight: 500; font-size: 19px; color: #14264A; max-width: 460px; margin: 0 auto; line-height: 1.5; }
 
 /* ---- storytelling ---- */
 .fg-storytelling { width: 100%; text-align: center; }
-.fg-checklist { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 26px; max-width: 460px; margin-inline: auto; }
+.fg-checklist { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 26px; max-width: 480px; margin-inline: auto; }
 .fg-cbox {
-  display: flex; align-items: center; gap: 7px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 14px; color: #8A6A62;
-  background: #fff; border: 1.5px solid #F0E0DC; border-radius: 999px; padding: 9px 17px; cursor: pointer;
-  transition: all 0.12s ease; box-shadow: 0 4px 10px rgba(58,36,32,0.06);
+  display: flex; align-items: center; gap: 8px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 16px; color: #4A5572;
+  background: #FAF7F5; border: none; border-left: 4px solid #D5DAE6; border-radius: 0 10px 10px 0; padding: 8px 18px; cursor: pointer;
+  transition: all 0.12s ease;
 }
 .fg-cbox:hover { transform: translateY(-2px); }
-.fg-cdot { width: 7px; height: 7px; border-radius: 50%; background: #F0E0DC; flex: none; }
-.fg-cbox.is-used { color: #2F9E58; border-color: transparent; background: #E3F5EA; box-shadow: none; }
+.fg-cbox:focus-visible { outline: 3px solid #14264A; outline-offset: 2px; }
+.fg-cdot { width: 8px; height: 8px; border-radius: 50%; background: #D5DAE6; flex: none; }
+.fg-cbox.is-used { color: #1F7A4A; border-left-color: #2F9E58; background: #E6F5EC; }
 .fg-cbox.is-used .fg-cdot { background: #2F9E58; }
 
 /* ---- wrap ---- */
 .fg-wrap { text-align: center; width: 100%; }
-.fg-wrap-badge { width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 18px; background: linear-gradient(135deg, #2F9E58 0%, #227A43 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 22px rgba(47,158,88,0.32); }
-.fg-wrap-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 25px; color: #3A2420; margin: 0 0 10px; }
-.fg-wrap-line { font-size: 14.5px; color: #8A6A62; max-width: 400px; margin: 0 auto; line-height: 1.6; }
+.fg-wrap-badge { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 18px; background: #2F9E58; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(47,158,88,0.28); }
+.fg-wrap-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 32px; color: #14264A; margin: 0 0 10px; }
+.fg-wrap-line { font-size: 15px; color: #6B7792; max-width: 400px; margin: 0 auto; line-height: 1.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fg-progress i, .fg-navbtn, .fg-cbox { transition: none; }
+}
 `;
