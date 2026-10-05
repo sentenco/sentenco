@@ -23,6 +23,16 @@ import onePostOneCrimeImg from "./assets/articles/one-post-one-crime.jpeg";
 import defenseOrViolenceImg from "./assets/articles/defense-or-violence.jpeg";
 import oneTestimonyImg from "./assets/articles/one-testimony-then-another.jpeg";
 import guiltyWithoutWeaponImg from "./assets/articles/guilty-without-touching-weapon.jpeg";
+import costOfLivingReshapesDailyLifeImg from "./assets/articles/cost-of-living-reshapes-daily-life.jpeg";
+import rubinObservatoryDecadeSkyMovieImg from "./assets/articles/rubin-observatory-decade-sky-movie.jpeg";
+import aiBecomingPublicUtilityImg from "./assets/articles/ai-becoming-public-utility.jpeg";
+import ukYouthTrainingEconomicStrategyImg from "./assets/articles/uk-youth-training-economic-strategy.jpeg";
+import studyAbroadGetsStrategicImg from "./assets/articles/study-abroad-gets-strategic.jpeg";
+import globalEntertainmentNeedsLocalAccentImg from "./assets/articles/global-entertainment-needs-local-accent.jpeg";
+import aseanSocialProtectionRegionImg from "./assets/articles/asean-social-protection-region.jpeg";
+import chileSkyDestinationImg from "./assets/articles/chile-sky-destination.jpeg";
+import selfCareBasicsReturn2026Img from "./assets/articles/self-care-basics-return-2026.jpeg";
+import lunarQuarantineReturnToEarthImg from "./assets/articles/lunar-quarantine-return-to-earth.jpeg";
 
 export const ARTICLE_TOPICS = [
   { label: "Daily Life", title: "Wellbeing & Daily Life" },
@@ -2474,6 +2484,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "💸",
+    image: costOfLivingReshapesDailyLifeImg,
     variant: "daily",
     topicLabel: "Daily Life",
     topicTitle: "Wellbeing & Daily Life",
@@ -2596,6 +2607,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🔭",
+    image: rubinObservatoryDecadeSkyMovieImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -2718,6 +2730,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🌐",
+    image: aiBecomingPublicUtilityImg,
     variant: "tech",
     topicLabel: "Digital & Tech",
     topicTitle: "Digital Life & Future Tech",
@@ -2843,6 +2856,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🧰",
+    image: ukYouthTrainingEconomicStrategyImg,
     variant: "work",
     topicLabel: "Work & Business",
     topicTitle: "Worklife, Business & Careers",
@@ -2966,6 +2980,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🎒",
+    image: studyAbroadGetsStrategicImg,
     variant: "work",
     topicLabel: "Study & Skills",
     topicTitle: "Study, School & Skills",
@@ -3091,6 +3106,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🎬",
+    image: globalEntertainmentNeedsLocalAccentImg,
     variant: "culture",
     topicLabel: "Culture & Fun",
     topicTitle: "Culture, Stories & Fun",
@@ -3216,6 +3232,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🤲",
+    image: aseanSocialProtectionRegionImg,
     variant: "culture",
     topicLabel: "Society & Issues",
     topicTitle: "People, Society & Issues",
@@ -3341,6 +3358,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-04",
     emoji: "🌌",
+    image: chileSkyDestinationImg,
     variant: "planet",
     topicLabel: "Travel & Places",
     topicTitle: "Places, Travel & Journeys",
@@ -3464,6 +3482,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🌿",
+    image: selfCareBasicsReturn2026Img,
     variant: "daily",
     topicLabel: "Daily Life",
     topicTitle: "Wellbeing & Daily Life",
@@ -3589,6 +3608,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🌕",
+    image: lunarQuarantineReturnToEarthImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
