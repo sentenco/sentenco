@@ -43,6 +43,16 @@ import viralMaxxingHabits2026Img from "./assets/articles/viral-maxxing-habits-20
 import brainCellComputersEthics2026Img from "./assets/articles/brain-cell-computers-ethics-2026.jpeg";
 import aiOutpacingOversight2026Img from "./assets/articles/ai-outpacing-oversight-2026.jpeg";
 import microsoftAiLayoffsAnxiety2026Img from "./assets/articles/microsoft-ai-layoffs-anxiety-2026.jpeg";
+import schoolGadgetLimitsPhilippines2026Img from "./assets/articles/school-gadget-limits-philippines-2026.jpeg";
+import globalShowsLocalAuthenticity2026Img from "./assets/articles/global-shows-local-authenticity-2026.jpeg";
+import socialMediaSubstanceOverVirality2026Img from "./assets/articles/social-media-substance-over-virality-2026.jpeg";
+import overtourismQuietLuxuryTravel2026Img from "./assets/articles/overtourism-quiet-luxury-travel-2026.jpeg";
+import wellnessTrendsHealthRisk2026Img from "./assets/articles/wellness-trends-health-risk-2026.jpeg";
+import embryoDnaEditingDesignerBabyDebateImg from "./assets/articles/embryo-dna-editing-designer-baby-debate.jpeg";
+import aiSearchActForYouOrInformYouImg from "./assets/articles/ai-search-act-for-you-or-inform-you.jpeg";
+import workplacesRegulateAiBeforeReshapesJobsImg from "./assets/articles/workplaces-regulate-ai-before-reshapes-jobs.jpeg";
+import examScandalsIndiaFairnessQuestionsImg from "./assets/articles/exam-scandals-india-fairness-questions.jpeg";
+import sportsBecomeFashionWhatGetsLostImg from "./assets/articles/sports-become-fashion-what-gets-lost.jpeg";
 
 export const ARTICLE_TOPICS = [
   { label: "Daily Life", title: "Wellbeing & Daily Life" },
@@ -4972,6 +4982,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "📵",
+    image: schoolGadgetLimitsPhilippines2026Img,
     variant: "work",
     topicLabel: "Study & Skills",
     topicTitle: "Study, School & Skills",
@@ -5089,6 +5100,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "🎭",
+    image: globalShowsLocalAuthenticity2026Img,
     variant: "culture",
     topicLabel: "Culture & Fun",
     topicTitle: "Culture, Stories & Fun",
@@ -5210,6 +5222,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "💬",
+    image: socialMediaSubstanceOverVirality2026Img,
     variant: "culture",
     topicLabel: "Society & Issues",
     topicTitle: "People, Society & Issues",
@@ -5327,6 +5340,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "🏔️",
+    image: overtourismQuietLuxuryTravel2026Img,
     variant: "planet",
     topicLabel: "Travel & Places",
     topicTitle: "Places, Travel & Journeys",
@@ -5444,6 +5458,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "⚗️",
+    image: wellnessTrendsHealthRisk2026Img,
     variant: "daily",
     topicLabel: "Daily Life",
     topicTitle: "Wellbeing & Daily Life",
@@ -5563,6 +5578,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "🧬",
+    image: embryoDnaEditingDesignerBabyDebateImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -5682,6 +5698,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "🔎",
+    image: aiSearchActForYouOrInformYouImg,
     variant: "tech",
     topicLabel: "Digital & Tech",
     topicTitle: "Digital Life & Future Tech",
@@ -5799,6 +5816,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "🏢",
+    image: workplacesRegulateAiBeforeReshapesJobsImg,
     variant: "work",
     topicLabel: "Work & Business",
     topicTitle: "Worklife, Business & Careers",
@@ -5910,6 +5928,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "📝",
+    image: examScandalsIndiaFairnessQuestionsImg,
     variant: "work",
     topicLabel: "Study & Skills",
     topicTitle: "Study, School & Skills",
@@ -6021,6 +6040,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "🏟️",
+    image: sportsBecomeFashionWhatGetsLostImg,
     variant: "culture",
     topicLabel: "Culture & Fun",
     topicTitle: "Culture, Stories & Fun",
