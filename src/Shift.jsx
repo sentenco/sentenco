@@ -284,7 +284,7 @@ export default function Shift() {
                 : "Now Showing"}
             </div>
             <div className="sh-hero-title">{lesson.scene.title}</div>
-            <div className="sh-hero-sub">{lesson.scene.context}</div>
+            {stage !== "cover" && <div className="sh-hero-sub">{lesson.scene.context}</div>}
           </div>
 
           {stage !== "cover" && track && (
