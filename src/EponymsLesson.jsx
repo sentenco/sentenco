@@ -268,7 +268,7 @@ const CSS = `
 .epl-shell * { box-sizing: border-box; }
 
 .epl-brand { display: flex; align-items: center; flex-shrink: 0; font-family: 'Grandstander', cursive; font-weight: 700; font-size: 18px; color: #123B40; }
-.epl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.epl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .epl-stage-label {
   font-family: 'Mulish', sans-serif;

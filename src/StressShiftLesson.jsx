@@ -232,7 +232,7 @@ const CSS = `
   font-size: 18px;
   color: #123B40;
 }
-.ssl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.ssl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .ssl-stage-label {
   font-family: 'Mulish', sans-serif;

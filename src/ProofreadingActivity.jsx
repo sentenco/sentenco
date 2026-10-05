@@ -191,7 +191,7 @@ const CSS = `
   border-radius: 999px;
   padding: 5px 13px 5px 5px;
 }
-.pf-logo { width: 22px; height: 22px; border-radius: 50%; }
+.pf-logo { width: 22px; height: 22px; border-radius: 50%; margin-right: -7px; }
 .pf-brand-word { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 14px; color: #A9720A; }
 .pf-bar-right { display: flex; align-items: center; gap: 8px; }
 .pf-level { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.02em; border-radius: 999px; padding: 5px 11px; }

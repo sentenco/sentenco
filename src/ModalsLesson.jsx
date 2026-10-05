@@ -245,7 +245,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.mdl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.mdl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .mdl-stage {
   flex: 1;

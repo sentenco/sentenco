@@ -46,7 +46,7 @@ function BookHeader({ stage }) {
         <span className="sb-book-brand-chip">
           <img src="/logo-sentenco.png" alt="" className="sb-book-brand-logo" />
         </span>
-        Sentenco
+        entenco
       </span>
       {stage && <span className="sb-book-stage">{stage}</span>}
     </div>
@@ -694,7 +694,7 @@ const CSS = `
 .sb-book-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 3px;
   flex-shrink: 0;
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;

@@ -295,7 +295,7 @@ const CSS = `
   padding: 0;
   flex-shrink: 0;
 }
-.tb-brand-logo { height: 26px; width: auto; display: block; margin-right: -4px; }
+.tb-brand-logo { height: 26px; width: auto; display: block; margin-right: -6px; }
 .tb-topbar-title h1 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 17px; color: #2B2A4A; margin: 0; }
 .tb-topbar-title p { font-size: 12px; color: #8B84A3; margin: 2px 0 0; }
 

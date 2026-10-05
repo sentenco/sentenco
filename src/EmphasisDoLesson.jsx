@@ -300,7 +300,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.edl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.edl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .edl-stage-label {
   font-family: 'Comic Neue', cursive, sans-serif;
   font-weight: 700;

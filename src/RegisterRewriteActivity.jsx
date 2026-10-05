@@ -160,7 +160,7 @@ const CSS = `
   border-radius: 999px;
   padding: 5px 13px 5px 5px;
 }
-.rr2-logo { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; }
+.rr2-logo { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-right: -11px; }
 .rr2-brand-word { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 14px; color: #2F7A50; margin-left: 4px; }
 .rr2-brand-sep { color: #2F7A50; opacity: 0.4; margin: 0 7px; font-weight: 700; }
 .rr2-brand-type { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 0.02em; color: #2F7A50; }

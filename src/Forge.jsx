@@ -290,7 +290,7 @@ const CSS = `
 
 .fg-header { flex: none; display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; flex-shrink: 0; }
 .fg-brand { display: inline-flex; align-items: center; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: #14264A; }
-.fg-brand-logo { height: 30px; width: auto; display: block; margin-right: -6px; }
+.fg-brand-logo { height: 30px; width: auto; display: block; margin-right: -7px; }
 .fg-stage-tag { font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #FF5E45; }
 .fg-count-pill { font-size: 11px; font-weight: 700; color: #14264A; background: #EEF1F8; border-radius: 999px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
 

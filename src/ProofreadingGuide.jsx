@@ -74,7 +74,7 @@ const CSS = `
   border-bottom: 1px solid rgba(169,114,10,0.10);
 }
 .pfg-brand { display: flex; align-items: center; gap: 6px; }
-.pfg-logo { width: 22px; height: 22px; border-radius: 50%; }
+.pfg-logo { width: 22px; height: 22px; border-radius: 50%; margin-right: -11px; }
 .pfg-brand-word { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 14px; color: #4A3F3A; }
 .pfg-eyebrow {
   font-family: 'Karla', sans-serif; font-size: 10.5px; font-weight: 800;

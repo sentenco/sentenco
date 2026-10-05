@@ -241,7 +241,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.puel-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.puel-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .puel-stage {
   flex: 1;

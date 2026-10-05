@@ -163,7 +163,7 @@ const CSS = `
   font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink);
   background: none; border: none; cursor: pointer; padding: 0;
 }
-.sub-brand-logo { height: 24px; width: auto; display: block; margin-right: -3px; }
+.sub-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .sub-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: 0.015em; margin: 0; }
 
 .sub-page { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }

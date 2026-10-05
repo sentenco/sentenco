@@ -1170,7 +1170,7 @@ const CSS = `
   font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink);
   background: none; border: none; cursor: pointer; padding: 0;
 }
-.mg-brand-logo { height: 24px; width: auto; display: block; margin-right: -3px; }
+.mg-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .mg-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
 
 .mg-signin { text-align: center; color: var(--muted); padding: 60px 0; }

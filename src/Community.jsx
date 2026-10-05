@@ -81,7 +81,7 @@ const CSS = `
   cursor: pointer;
   padding: 0;
 }
-.cm-brand-logo { height: 24px; width: auto; display: block; margin-right: -3px; }
+.cm-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .cm-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: 0.015em; margin: 0; }
 
 .cm-nav-tabs {

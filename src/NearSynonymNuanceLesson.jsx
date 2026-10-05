@@ -284,7 +284,7 @@ const CSS = `
 .nsn-shell * { box-sizing: border-box; }
 
 .nsn-brand { display: flex; align-items: center; flex-shrink: 0; font-family: 'Grandstander', cursive; font-weight: 700; font-size: 18px; color: #123B40; }
-.nsn-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.nsn-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .nsn-stage-label {
   font-family: 'Mulish', sans-serif;

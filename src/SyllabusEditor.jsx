@@ -671,7 +671,7 @@ const CSS = `
   font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px;
   color: #1B2A4A; text-decoration: none; cursor: pointer; border: none; background: none; padding: 0;
 }
-.syl-brand-logo { height: 26px; width: auto; display: block; margin-right: -4px; }
+.syl-brand-logo { height: 26px; width: auto; display: block; margin-right: -8px; }
 .syl-topbar-actions { display: flex; align-items: center; gap: 8px; }
 .syl-saved-note { font-size: 12px; color: #5A6B92; font-weight: 700; }
 

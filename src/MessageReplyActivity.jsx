@@ -228,7 +228,7 @@ const CSS = `
 .mr2-brand {
   display: flex; align-items: center; gap: 2px; background: rgba(255,138,117,0.14); border-radius: 999px; padding: 5px 12px 5px 5px;
 }
-.mr2-logo { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; }
+.mr2-logo { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-right: -10px; }
 .mr2-brand-word { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 13px; color: #B8391F; margin-left: 4px; }
 .mr2-brand-sep { color: #B8391F; opacity: 0.4; margin: 0 6px; font-weight: 700; }
 .mr2-brand-type { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; color: #B8391F; }

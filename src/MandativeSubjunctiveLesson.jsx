@@ -301,7 +301,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.mdsl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.mdsl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .mdsl-stage-label {
   font-family: 'Comic Neue', cursive, sans-serif;
   font-weight: 700;

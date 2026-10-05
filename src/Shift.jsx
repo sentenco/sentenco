@@ -380,7 +380,7 @@ const CSS = `
 .sh-missing { text-align: center; color: #5A6B92; margin-top: 60px; }
 
 .sh-topbar { display: flex; align-items: center; gap: 6px; padding: 16px 18px 0; }
-.sh-brand-logo { height: 20px; width: auto; display: block; }
+.sh-brand-logo { height: 20px; width: auto; display: block; margin-right: -10px; }
 .sh-brand-name { font-weight: 800; font-size: 14px; color: #1B2A4A; }
 
 .sh-stage { width: 100%; max-width: 640px; margin: 0 auto; }

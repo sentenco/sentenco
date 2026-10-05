@@ -396,7 +396,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.posl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.posl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .posl-stage {
   flex: 1;

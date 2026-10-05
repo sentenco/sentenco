@@ -320,7 +320,7 @@ const CSS = `
   border-radius: 999px;
   padding: 5px 14px 5px 5px;
 }
-.sm2-brand-logo { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; }
+.sm2-brand-logo { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-right: -9px; }
 .sm2-brand-word { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 13.5px; color: #2A6E85; margin-left: 4px; }
 .sm2-brand-sep { color: #2A6E85; opacity: 0.4; margin: 0 7px; font-weight: 700; }
 .sm2-brand-type { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 0.02em; color: #2A6E85; }

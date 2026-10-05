@@ -270,7 +270,7 @@ const CSS = `
 
 .dv-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 30px; border-bottom: 1px solid #F2DCE9; flex-shrink: 0; }
 .dv-brand { display: flex; align-items: center; gap: 6px; }
-.dv-brand-logo { height: 18px; width: auto; display: block; }
+.dv-brand-logo { height: 18px; width: auto; display: block; margin-right: -9px; }
 .dv-brand-name { font-weight: 800; font-size: 13px; color: #1B2A4A; }
 .dv-slide-count { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #B23370; background: #FBE0EE; border-radius: 999px; padding: 3px 10px; }
 

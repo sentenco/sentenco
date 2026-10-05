@@ -318,7 +318,7 @@ export const styles = `
 .rev-close { position: absolute; top: 14px; right: 14px; z-index: 4; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); color: #fff; }
 
 .rev-header { flex-shrink: 0; background: ${NAVY}; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; }
-.rev-brand { display: flex; align-items: center; gap: 8px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; color: #fff; }
+.rev-brand { display: flex; align-items: center; gap: 3px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px; color: #fff; }
 .rev-brand-badge { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #fff; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.18); }
 .rev-brand-logo { height: 16px; width: auto; display: block; }
 .rev-stage-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.14); padding: 7px 15px; border-radius: 999px; }

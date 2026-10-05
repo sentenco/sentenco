@@ -211,7 +211,7 @@ export const styles = `
 
 /* header row sits on the navy wave at the top of the picture */
 .e8-top { position: absolute; top: 10px; left: 26px; right: 16px; height: 30px; display: flex; align-items: center; gap: 14px; z-index: 3; }
-.e8-brand { display: flex; align-items: center; gap: 8px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: #fff; }
+.e8-brand { display: flex; align-items: center; gap: 3px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: #fff; }
 .e8-brand-badge { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #fff; flex-shrink: 0; }
 .e8-brand-logo { height: 17px; width: auto; display: block; }
 .e8-stage-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.16); padding: 5px 14px; border-radius: 999px; }

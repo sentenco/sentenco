@@ -2640,7 +2640,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   align-items: center;
   gap: 0;
 }
-.gc-header-logo { height: 32px; width: auto; display: block; margin-right: -5px; }
+.gc-header-logo { height: 32px; width: auto; display: block; margin-right: -7px; }
 .gc-topbar-actions { display: flex; align-items: center; gap: 12px; }
 .gc-search {
   display: flex;

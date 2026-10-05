@@ -90,7 +90,7 @@ const CSS = `
   border-bottom: 1px solid rgba(42,110,133,0.10);
 }
 .smg-brand { display: flex; align-items: center; gap: 6px; }
-.smg-logo { width: 22px; height: 22px; border-radius: 50%; }
+.smg-logo { width: 22px; height: 22px; border-radius: 50%; margin-right: -11px; }
 .smg-brand-word { font-family: 'Karla', sans-serif; font-weight: 800; font-size: 14px; color: #4A3F3A; }
 .smg-eyebrow {
   font-family: 'Karla', sans-serif; font-size: 10.5px; font-weight: 800;

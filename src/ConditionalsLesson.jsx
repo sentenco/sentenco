@@ -241,7 +241,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.cnl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.cnl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .cnl-stage {
   flex: 1;

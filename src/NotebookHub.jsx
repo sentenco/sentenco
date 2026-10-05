@@ -122,7 +122,7 @@ const CSS = `
   font-family: 'Inter', sans-serif; font-weight: 800; font-size: 19px;
   color: #1B2A4A; text-decoration: none; cursor: pointer; border: none; background: none; padding: 0;
 }
-.nbh-brand-logo { height: 28px; width: auto; display: block; margin-right: -4px; }
+.nbh-brand-logo { height: 28px; width: auto; display: block; margin-right: -8px; }
 .nbh-topbar-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #5A6B92; }
 
 .nbh-header {

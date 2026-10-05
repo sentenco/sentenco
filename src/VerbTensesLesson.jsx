@@ -374,7 +374,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.vtl-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.vtl-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 
 .vtl-stage {
   flex: 1;

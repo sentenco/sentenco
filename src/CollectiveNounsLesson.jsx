@@ -302,7 +302,7 @@ const CSS = `
   letter-spacing: 0.01em;
   color: #2B2A4A;
 }
-.coln-brand-logo { height: 24px; width: auto; display: block; margin-right: -4px; }
+.coln-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .coln-stage-label {
   font-family: 'Comic Neue', cursive, sans-serif;
   font-weight: 700;

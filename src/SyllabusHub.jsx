@@ -204,7 +204,7 @@ const CSS = `
   font-family: 'Inter', sans-serif; font-weight: 800; font-size: 19px;
   color: #1B2A4A; text-decoration: none; cursor: pointer; border: none; background: none; padding: 0;
 }
-.syh-brand-logo { height: 28px; width: auto; display: block; margin-right: -4px; }
+.syh-brand-logo { height: 28px; width: auto; display: block; margin-right: -8px; }
 
 .syh-header {
   background: #1B2A4A; border-radius: 22px; padding: 32px 26px 36px; margin-bottom: 28px;

@@ -481,7 +481,7 @@ const CSS = `
   cursor: pointer;
   padding: 0;
 }
-.sl-brand-logo { height: 32px; width: auto; display: block; margin-right: -5px; }
+.sl-brand-logo { height: 32px; width: auto; display: block; margin-right: -7px; }
 
 .sl-hero {
   width: 100%;

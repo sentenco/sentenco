@@ -289,7 +289,7 @@ const CSS = `
   display: inline-flex; align-items: center; gap: 6px;
   font-weight: 800; font-size: 13.5px; color: #10646B;
 }
-.asp-brand-logo { height: 22px; width: auto; display: block; margin-right: -2px; }
+.asp-brand-logo { height: 22px; width: auto; display: block; margin-right: -11px; }
 .asp-stage-pill { font-weight: 800; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #C9701F; background: #FBE6D2; border-radius: 999px; padding: 4px 10px; }
 .asp-stage-pill.is-recall { color: #10646B; background: #EAFBF8; }
 .asp-count-pill { font-weight: 800; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #10646B; background: #EAFBF8; border-radius: 999px; padding: 4px 9px; margin-left: 6px; }

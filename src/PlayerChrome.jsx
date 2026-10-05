@@ -47,7 +47,7 @@ const CSS = `
   align-items: center;
   gap: 0;
 }
-.pch-logo { height: 26px; width: auto; display: block; margin-right: -4px; }
+.pch-logo { height: 26px; width: auto; display: block; margin-right: -6px; }
 .pch-eyebrow {
   font-family: 'SF Mono', 'Menlo', Consolas, monospace;
   font-size: 10.5px;

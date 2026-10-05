@@ -210,7 +210,7 @@ const CSS = `
   font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink);
   background: none; border: none; cursor: pointer; padding: 0;
 }
-.ma-brand-logo { height: 24px; width: auto; display: block; margin-right: -3px; }
+.ma-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .ma-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
 
 .ma-page { max-width: 560px; margin: 0 auto; padding: 40px 24px 80px; }

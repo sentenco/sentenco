@@ -206,7 +206,7 @@ const CSS = `
 
 .br-deck-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; flex-shrink: 0; border-bottom: 1px solid #F0FAF4; }
 .br-brand { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 13.5px; color: #10646B; }
-.br-brand-logo { height: 22px; width: auto; display: block; margin-right: -2px; }
+.br-brand-logo { height: 22px; width: auto; display: block; margin-right: -11px; }
 .br-stage-pill { font-weight: 800; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #368F5F; background: #E3F5EA; border-radius: 999px; padding: 4px 10px; }
 .br-count-pill { font-weight: 800; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #10646B; background: #F1FAF5; border-radius: 999px; padding: 4px 9px; margin-left: 6px; }
 .br-header-right { display: flex; align-items: center; }

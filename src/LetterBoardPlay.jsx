@@ -765,7 +765,7 @@ const CSS = `
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
 .lb-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 3px solid #1B2A4A; padding: 6px 8px; }
 .lb-brand { display: inline-flex; align-items: center; font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #1B2A4A; letter-spacing: -.01em; }
-.lb-logo { height: 34px; width: auto; display: block; margin-right: -5px; }
+.lb-logo { height: 34px; width: auto; display: block; margin-right: -8px; }
 .lb-tl { display: flex; align-items: center; gap: 14px; }
 .lb-tr { display: flex; align-items: center; gap: 8px; }
 .lb-cw { display: flex; align-items: center; gap: 8px; background: #fff; border: 3px solid #1B2A4A; box-shadow: 3px 3px 0 #1B2A4A; color: #1B2A4A; border-radius: 999px; padding: 2px 18px 2px 3px; }
