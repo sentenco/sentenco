@@ -237,7 +237,7 @@ const styles = `
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 248px;
+  height: 280px;
   overflow: hidden;
   justify-content: center;
   box-sizing: border-box;
