@@ -12,8 +12,9 @@ function slideCount(lesson) {
 function openLesson(trackId, num) {
   const screenW = window.screen.availWidth || 1600;
   const screenH = window.screen.availHeight || 900;
+  // 780 x 440 player plus a 1cm (~38px) margin on every side.
   const w = Math.min(856, screenW - 40);
-  const h = Math.min(704, screenH - 80);
+  const h = Math.min(516, screenH - 80);
   const left = Math.max(0, Math.floor((screenW - w) / 2));
   const top = Math.max(0, Math.floor((screenH - h) / 2));
 

@@ -260,7 +260,7 @@ const CSS = `
 .fg-shell {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   color: #14264A;
   font-family: 'IBM Plex Sans', sans-serif;
   box-sizing: border-box;
@@ -275,11 +275,11 @@ const CSS = `
 
 .fg-missing { text-align: center; color: #6B7792; margin-top: 60px; }
 
-.fg-stage { position: relative; z-index: 1; width: 100%; max-width: 780px; margin: 0 auto; }
+.fg-stage { position: relative; z-index: 1; width: 100%; height: 100%; margin: 0; }
 
 .fg-panel {
   display: flex; flex-direction: column;
-  height: min(440px, calc(100vh - 2cm));
+  height: 100%;
   background: #fff; border-radius: 16px; overflow: hidden;
   border: 1px solid #E3E6EE;
   box-shadow: 0 24px 56px rgba(20,38,74,0.12);
