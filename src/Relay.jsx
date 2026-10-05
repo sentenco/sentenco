@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { getLesson } from "./relayTracks";
 
@@ -61,87 +61,244 @@ function CoverSlide({ lesson }) {
   );
 }
 
-function WarmupSlide({ lesson }) {
+// Fixed-size deck: if a slide is taller than the room it has, the whole slide
+// shrinks (zoom) so nothing ever scrolls or gets cut off.
+function FitBody({ slideKey, children }) {
+  const boxRef = useRef(null);
+  const innerRef = useRef(null);
+  useLayoutEffect(() => {
+    function fit() {
+      const box = boxRef.current;
+      const inner = innerRef.current;
+      if (!box || !inner) return;
+      inner.style.zoom = "1";
+      const cs = getComputedStyle(box);
+      const room = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      const need = inner.scrollHeight;
+      if (need > room) inner.style.zoom = String(Math.max(0.5, Math.floor((room / need) * 100) / 100));
+    }
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, [slideKey]);
+  return (
+    <div className="rl-deck-body" ref={boxRef}>
+      <div className="rl-deck-inner" ref={innerRef}>{children}</div>
+    </div>
+  );
+}
+
+// Place for the teacher to type what the student actually said.
+function AnswerBox({ value, onChange, label = "What did they say?", rows = 4 }) {
+  return (
+    <label className="rl-ans">
+      <span className="rl-ans-label">{label}</span>
+      <textarea
+        className="rl-ans-box"
+        rows={rows}
+        value={value || ""}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Type the student's answer here"
+        spellCheck={false}
+      />
+    </label>
+  );
+}
+
+// The three beats of the Relay rule. The teacher ticks what they heard.
+const BEATS = [
+  { key: "answer", label: "Answer" },
+  { key: "add", label: "Add" },
+  { key: "ask", label: "Ask back" },
+];
+
+function BeatTicks({ beats = {}, onToggle, hint }) {
+  return (
+    <div className="rl-beats">
+      {BEATS.map((b) => (
+        <button
+          key={b.key}
+          type="button"
+          className={`rl-beat${beats[b.key] ? " is-on" : ""}${hint && b.key === "add" ? " is-hint" : ""}`}
+          onClick={() => onToggle(b.key)}
+          aria-pressed={!!beats[b.key]}
+        >
+          <span className="rl-beat-box" />{b.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+// 30-second answer timer. Tap to start or pause; it resets on every slide.
+function TimerRing({ total = 30 }) {
+  const [left, setLeft] = useState(total);
+  const [running, setRunning] = useState(false);
+  useEffect(() => {
+    if (!running) return undefined;
+    const id = setInterval(() => {
+      setLeft((v) => {
+        if (v <= 1) { setRunning(false); return 0; }
+        return v - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, [running]);
+  const pct = Math.round((left / total) * 100);
+  const mm = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`;
+  return (
+    <button
+      type="button"
+      className={`rl-timer${running ? " is-running" : ""}${left === 0 ? " is-done" : ""}`}
+      style={{ "--pct": `${pct}%` }}
+      onClick={() => { if (left === 0) { setLeft(total); setRunning(true); } else setRunning((r) => !r); }}
+      aria-label={running ? "Pause timer" : "Start timer"}
+      title={running ? "Pause" : "Start 30 second timer"}
+    >
+      <span>{mm}</span>
+    </button>
+  );
+}
+
+function WarmupSlide({ lesson, note, onNote }) {
   const [showingSample, setShowingSample] = useState(false);
   const sample = lesson.warmup.sampleAnswer;
   return (
-    <div className="rl-slide rl-slide--centered">
-      <span className="rl-eyebrow">Warm-up</span>
-      <h2 className="rl-question"><PulseIcon />{lesson.warmup.question}</h2>
-      {sample && (
-        showingSample ? (
-          <p className="rl-help-text">{sample}</p>
-        ) : (
-          <button type="button" className="rl-help-btn" onClick={() => setShowingSample(true)}>Show a sample answer</button>
-        )
-      )}
-    </div>
-  );
-}
-
-function BounceSlide({ lesson, index }) {
-  const [helping, setHelping] = useState(false);
-  const round = lesson.bounce.rounds[index];
-  return (
-    <div className="rl-slide rl-slide--centered">
-      <span className="rl-eyebrow">Answer · Add · Ask</span>
-      <h2 className="rl-question"><PulseIcon />{round.question}</h2>
-      {helping ? (
-        <p className="rl-help-text">{round.missingBeatHint}</p>
-      ) : (
-        <button type="button" className="rl-help-btn" onClick={() => setHelping(true)}>Need help?</button>
-      )}
-    </div>
-  );
-}
-
-function YourTurnSlide({ lesson }) {
-  const yt = lesson.yourTurn;
-  return (
-    <div className="rl-slide rl-slide--centered">
-      <h2 className="rl-h">Your Turn</h2>
-      <p className="rl-subtitle">{yt.scenario}</p>
-      <div className="rl-bubble">
-        <span className="rl-bubble-role">{yt.teacherRole}</span>
-        <p className="rl-bubble-text">“{yt.opener}”</p>
+    <div className="rl-two">
+      <div className="rl-two-main">
+        <span className="rl-eyebrow">Warm-up · ask the student</span>
+        <h2 className="rl-question rl-question--sm"><PulseIcon />{lesson.warmup.question}</h2>
+        {sample && (
+          showingSample ? (
+            <p className="rl-help-text">{sample}</p>
+          ) : (
+            <button type="button" className="rl-help-btn" onClick={() => setShowingSample(true)}>Show a sample answer</button>
+          )
+        )}
+      </div>
+      <div className="rl-two-side">
+        <div className="rl-two-side-top"><TimerRing /></div>
+        <AnswerBox value={note.text} onChange={(text) => onNote({ text })} />
       </div>
     </div>
   );
 }
 
-function PushItSlide({ lesson }) {
+function BounceSlide({ lesson, index, note, onNote }) {
+  const [helping, setHelping] = useState(false);
+  const round = lesson.bounce.rounds[index];
+  const total = lesson.bounce.rounds.length;
+  function onText(text) {
+    // A question mark in the answer means they asked back: tick "Ask back" the first time.
+    const patch = { text };
+    if (/\?/.test(text) && !(note.beats || {}).ask && !note.askTouched) patch.beats = { ...(note.beats || {}), ask: true };
+    onNote(patch);
+  }
+  function toggle(key) {
+    const beats = { ...(note.beats || {}), [key]: !(note.beats || {})[key] };
+    onNote({ beats, askTouched: note.askTouched || key === "ask" });
+  }
+  const done = BEATS.filter((b) => (note.beats || {})[b.key]).length;
   return (
-    <div className="rl-slide rl-slide--centered">
-      <h2 className="rl-h">Push It <span className="rl-optional">(optional)</span></h2>
-      <p className="rl-subtitle">{lesson.pushIt.prompt}</p>
+    <div className="rl-two">
+      <div className="rl-two-main">
+        <span className="rl-eyebrow">Round {index + 1} of {total} · ask the student</span>
+        <h2 className="rl-question rl-question--sm"><PulseIcon />{round.question}</h2>
+        {helping ? (
+          <p className="rl-help-text">Missing beat: {round.missingBeatHint}</p>
+        ) : (
+          <button type="button" className="rl-help-btn" onClick={() => setHelping(true)}>Need help?</button>
+        )}
+      </div>
+      <div className="rl-two-side">
+        <div className="rl-two-side-top">
+          <span className="rl-ans-label">Beats heard: {done} of 3</span>
+          <TimerRing />
+        </div>
+        <AnswerBox value={note.text} onChange={onText} />
+        <BeatTicks beats={note.beats} onToggle={toggle} hint={helping} />
+      </div>
     </div>
   );
 }
 
-function EndSlide({ lesson }) {
+function YourTurnSlide({ lesson, note, onNote }) {
+  const yt = lesson.yourTurn;
+  return (
+    <div className="rl-two">
+      <div className="rl-two-main">
+        <h2 className="rl-h">Your Turn</h2>
+        <p className="rl-subtitle rl-subtitle--left">{yt.scenario}</p>
+        <div className="rl-bubble">
+          <span className="rl-bubble-role">{yt.teacherRole}</span>
+          <p className="rl-bubble-text">“{yt.opener}”</p>
+        </div>
+      </div>
+      <div className="rl-two-side">
+        <div className="rl-two-side-top"><TimerRing total={60} /></div>
+        <AnswerBox value={note.text} onChange={(text) => onNote({ text })} label="Notes on the conversation" rows={5} />
+      </div>
+    </div>
+  );
+}
+
+function PushItSlide({ lesson, note, onNote }) {
+  return (
+    <div className="rl-two">
+      <div className="rl-two-main">
+        <h2 className="rl-h">Push It <span className="rl-optional">(optional)</span></h2>
+        <p className="rl-subtitle rl-subtitle--left">{lesson.pushIt.prompt}</p>
+      </div>
+      <div className="rl-two-side">
+        <div className="rl-two-side-top"><TimerRing /></div>
+        <AnswerBox value={note.text} onChange={(text) => onNote({ text })} />
+        <BeatTicks beats={note.beats} onToggle={(key) => onNote({ beats: { ...(note.beats || {}), [key]: !(note.beats || {})[key] } })} />
+      </div>
+    </div>
+  );
+}
+
+function EndSlide({ lesson, notes }) {
+  const rows = lesson.bounce.rounds
+    .map((r, i) => ({ q: r.question, n: notes[`bounce-${i}`] || {} }))
+    .filter((r) => (r.n.text && r.n.text.trim()) || BEATS.some((b) => (r.n.beats || {})[b.key]));
   return (
     <div className="rl-slide rl-slide--centered">
       <h2 className="rl-h">{lesson.end.heading}</h2>
       <p className="rl-subtitle">{lesson.end.line}</p>
+      {rows.length > 0 && (
+        <div className="rl-recap">
+          <span className="rl-ans-label">What they said today</span>
+          {rows.map((r) => (
+            <div key={r.q} className="rl-recap-row">
+              <span className="rl-recap-q">{r.q}</span>
+              <span className="rl-recap-a">{r.n.text ? r.n.text : "No answer typed"}</span>
+              <span className="rl-recap-b">{BEATS.filter((b) => (r.n.beats || {})[b.key]).length}/3</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
-function renderSlide(slideType, lesson) {
+function renderSlide(slideType, lesson, notes, setNote) {
+  const note = notes[slideType] || {};
+  const onNote = (patch) => setNote(slideType, patch);
   if (slideType.startsWith("bounce-")) {
-    return <BounceSlide lesson={lesson} index={Number(slideType.slice(7))} />;
+    return <BounceSlide lesson={lesson} index={Number(slideType.slice(7))} note={note} onNote={onNote} />;
   }
   switch (slideType) {
     case "cover":
       return <CoverSlide lesson={lesson} />;
     case "warmup":
-      return <WarmupSlide lesson={lesson} />;
+      return <WarmupSlide lesson={lesson} note={note} onNote={onNote} />;
     case "yourturn":
-      return <YourTurnSlide lesson={lesson} />;
+      return <YourTurnSlide lesson={lesson} note={note} onNote={onNote} />;
     case "pushit":
-      return <PushItSlide lesson={lesson} />;
+      return <PushItSlide lesson={lesson} note={note} onNote={onNote} />;
     case "end":
-      return <EndSlide lesson={lesson} />;
+      return <EndSlide lesson={lesson} notes={notes} />;
     default:
       return null;
   }
@@ -152,6 +309,17 @@ export default function Relay() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [slideIdx, setSlideIdx] = useState(() => Number(searchParams.get("slide")) || 0);
   const lesson = getLesson(trackId, Number(lessonNum));
+  // What the teacher types and ticks is kept for this lesson in this browser tab.
+  const storeKey = `relay-notes-${trackId}-${lessonNum}`;
+  const [notes, setNotes] = useState(() => {
+    try { return JSON.parse(sessionStorage.getItem(storeKey)) || {}; } catch { return {}; }
+  });
+  useEffect(() => {
+    try { sessionStorage.setItem(storeKey, JSON.stringify(notes)); } catch { /* storage unavailable */ }
+  }, [notes, storeKey]);
+  function setNote(key, patch) {
+    setNotes((prev) => ({ ...prev, [key]: { ...(prev[key] || {}), ...patch } }));
+  }
 
   // Mirror the slide position into the URL so a refresh mid-lesson lands
   // back on the same slide instead of the cover.
@@ -190,9 +358,9 @@ export default function Relay() {
             <span className="rl-brand"><img src="/logo-sentenco.png" alt="" className="rl-brand-logo" />entenco</span>
             <StageLabel slideType={slideType} />
           </div>
-          <div className="rl-deck-body" key={slideIdx}>
-            {renderSlide(slideType, lesson)}
-          </div>
+          <FitBody slideKey={slideIdx}>
+            <div key={slideIdx} className="rl-slide-wrap">{renderSlide(slideType, lesson, notes, setNote)}</div>
+          </FitBody>
           <div className="rl-nav-row">
             <button type="button" className="rl-nav-btn" onClick={() => setSlideIdx((i) => i - 1)} disabled={isFirst}>
               ← Previous
@@ -223,7 +391,7 @@ const CSS = `
 .rl-shell {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(160deg, #EAFBF8 0%, #DFF4FA 100%);
   display: flex;
   flex-direction: column;
@@ -284,17 +452,18 @@ const CSS = `
   position: relative;
   z-index: 1;
   flex: 1;
+  min-height: 0;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   padding: 1cm;
 }
 
 .rl-deck {
   position: relative;
-  width: 780px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   background: #FFFFFF;
   border: 1px solid #D3EDE9;
   border-radius: 16px;
@@ -309,8 +478,10 @@ const CSS = `
   to { opacity: 1; transform: translateY(0); }
 }
 
-.rl-deck-body { min-height: 260px; display: flex; align-items: center; justify-content: center; padding: 36px 34px 28px; }
-.rl-slide { display: flex; flex-direction: column; gap: 14px; width: 100%; margin-top: 22px; }
+.rl-deck-body { flex: 1; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 14px 34px; }
+.rl-deck-inner { width: 100%; }
+.rl-slide-wrap { width: 100%; }
+.rl-slide { display: flex; flex-direction: column; gap: 14px; width: 100%; }
 .rl-slide--centered { align-items: center; justify-content: center; text-align: center; }
 
 /* ── Highlighted heading, used on every slide ── */
@@ -425,7 +596,7 @@ const CSS = `
 }
 
 /* ── Nav row ── */
-.rl-nav-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 34px 20px; border-top: 1px solid #EAF3FA; flex-shrink: 0; }
+.rl-nav-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 34px 14px; border-top: 1px solid #EAF3FA; flex-shrink: 0; }
 .rl-nav-btn {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
@@ -443,7 +614,53 @@ const CSS = `
 .rl-nav-dot { width: 6px; height: 6px; border-radius: 999px; background: #D3EDE9; }
 .rl-nav-dot.is-active { width: 16px; background: #3E7CB1; }
 
-@media (max-width: 720px) {
-  .rl-deck { padding: 18px 20px 20px; height: auto; min-height: 460px; }
+
+/* ── Two-column speaking slides: the prompt on the left, the teacher's
+   writing space, beat ticks and timer on the right ── */
+.rl-two { display: grid; grid-template-columns: 1fr 300px; gap: 30px; width: 100%; align-items: center; text-align: left; }
+.rl-two-main { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; }
+.rl-two-side { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+.rl-two-side-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 40px; }
+.rl-question--sm { font-size: 27px; padding: 10px 22px; max-width: 100%; }
+.rl-subtitle--left { text-align: left; }
+
+.rl-ans { display: flex; flex-direction: column; gap: 5px; }
+.rl-ans-label { font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4B8B92; }
+.rl-ans-box {
+  width: 100%; resize: none; border: 1.5px solid #CFE6EC; border-radius: 12px; background: #F7FCFC;
+  padding: 10px 12px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 14px; line-height: 1.45; color: #10646B;
 }
+.rl-ans-box:focus { outline: none; border-color: #4E8FE0; background: #fff; box-shadow: 0 0 0 3px rgba(78,143,224,0.18); }
+.rl-ans-box::placeholder { color: #9BC3CB; }
+
+.rl-beats { display: flex; gap: 6px; flex-wrap: wrap; }
+.rl-beat {
+  display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 14px; color: #2F6491;
+  background: #fff; border: 1.5px solid #D3EDE9; border-radius: 999px; padding: 4px 13px 4px 8px; cursor: pointer; transition: all 0.12s ease;
+}
+.rl-beat-box { width: 16px; height: 16px; border-radius: 5px; border: 2px solid #9BC3CB; flex: none; position: relative; }
+.rl-beat.is-hint { border-color: #E8544E; background: #FFEDEA; color: #C93F3A; }
+.rl-beat.is-hint .rl-beat-box { border-color: #E8544E; }
+.rl-beat.is-on { background: #E3F5EA; border-color: #2F9E58; color: #1F7A47; }
+.rl-beat.is-on .rl-beat-box { background: #2F9E58; border-color: #2F9E58; }
+.rl-beat.is-on .rl-beat-box::after { content: ""; position: absolute; left: 3px; top: 0; width: 4px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.rl-beat:focus-visible, .rl-timer:focus-visible, .rl-help-btn:focus-visible { outline: 3px solid #2F6491; outline-offset: 2px; }
+
+.rl-timer {
+  width: 44px; height: 44px; border-radius: 50%; border: none; padding: 0; cursor: pointer; flex: none;
+  background: conic-gradient(#2F6491 var(--pct, 100%), #DCEEF6 0);
+  display: flex; align-items: center; justify-content: center;
+}
+.rl-timer span { width: 34px; height: 34px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; color: #2F6491; font-variant-numeric: tabular-nums; }
+.rl-timer.is-running { box-shadow: 0 0 0 3px rgba(78,143,224,0.25); }
+.rl-timer.is-done { background: #E8544E; }
+.rl-timer.is-done span { color: #C93F3A; }
+
+.rl-recap { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 6px; margin-top: 4px; text-align: left; }
+.rl-recap-row { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 12px; align-items: center; background: #F7FCFC; border: 1px solid #D3EDE9; border-radius: 10px; padding: 6px 12px; }
+.rl-recap-q { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 13px; color: #2F6491; }
+.rl-recap-a { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; color: #10646B; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+.rl-recap-b { font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; color: #1F7A47; background: #E3F5EA; border-radius: 999px; padding: 2px 9px; }
+
+@media (prefers-reduced-motion: reduce) { .rl-deck { animation: none; } .rl-beat { transition: none; } }
 `;

@@ -164,7 +164,7 @@ const CSS = `
   font-family: 'Baloo 2', cursive;
   font-weight: 800;
   font-size: 42px;
-  color: #10646B;
+  color: #FFFFFF;
   margin: 0 0 18px;
   padding: 12px 22px;
   background: #D6478C;
