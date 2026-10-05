@@ -23,6 +23,11 @@ export default {
       { question: "Are you comfortable taking financial risks?", missingBeatHint: "Add a reason" },
       { question: "Have you ever lost money on an investment?", missingBeatHint: "Add a detail" },
       { question: "Would you rather invest yourself or use an advisor?", missingBeatHint: "Add why" },
+      { question: "Have you ever talked to a financial advisor?", missingBeatHint: "Add a detail" },
+      { question: "Do you read financial news?", missingBeatHint: "Add a reason" },
+      { question: "What's the safest way to invest?", missingBeatHint: "Add why" },
+      { question: "Would you invest in a friend's business?", missingBeatHint: "Add why" },
+      { question: "Do you think everyone should invest?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

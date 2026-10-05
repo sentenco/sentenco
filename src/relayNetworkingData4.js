@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever had an awkward conversation with a client?", missingBeatHint: "Add a detail" },
       { question: "Do you remember personal details about your clients?", missingBeatHint: "Add a detail" },
       { question: "What topics do you avoid with clients?", missingBeatHint: "Add why" },
+      { question: "How do you start a meeting with a client?", missingBeatHint: "Add a detail" },
+      { question: "Do you talk about the weather with clients?", missingBeatHint: "Add why" },
+      { question: "What do you do when a client is in a bad mood?", missingBeatHint: "Add a detail" },
+      { question: "Do you ever have lunch with clients?", missingBeatHint: "Add a detail" },
+      { question: "How do you end a conversation politely?", missingBeatHint: "Add an example" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

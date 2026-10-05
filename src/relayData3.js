@@ -23,6 +23,11 @@ export default {
       { question: "Is your office noisy or quiet?", missingBeatHint: "Add why" },
       { question: "Do you like working from home?", missingBeatHint: "Add a reason" },
       { question: "What time do you usually finish work?", missingBeatHint: "Add a detail" },
+      { question: "Do you work with a big team or a small one?", missingBeatHint: "Add a detail" },
+      { question: "What's the best part of your workday?", missingBeatHint: "Add why" },
+      { question: "Do you have many meetings each week?", missingBeatHint: "Add a detail" },
+      { question: "Do you usually eat lunch at your desk?", missingBeatHint: "Add a reason" },
+      { question: "What's your favorite thing about your office?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "What helps you relax before bed?", missingBeatHint: "Add a detail" },
       { question: "Do you nap during the day?", missingBeatHint: "Add why" },
       { question: "How do you feel when you don't get enough sleep?", missingBeatHint: "Add a detail" },
+      { question: "How many hours do you usually sleep?", missingBeatHint: "Add a detail" },
+      { question: "Do you wake up early or late?", missingBeatHint: "Add a reason" },
+      { question: "Do you use your phone before bed?", missingBeatHint: "Add a detail" },
+      { question: "Do you have a bedtime routine?", missingBeatHint: "Add a detail" },
+      { question: "What do you do when you can't sleep?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

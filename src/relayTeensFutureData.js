@@ -23,6 +23,11 @@ export default {
       { question: "What subject are you best at in school?", missingBeatHint: "Add why" },
       { question: "Have your career plans changed over the years?", missingBeatHint: "Add a detail" },
       { question: "Do you want to go to college?", missingBeatHint: "Add a reason" },
+      { question: "Who do you want to be like when you grow up?", missingBeatHint: "Add why" },
+      { question: "Do you think your job should be fun?", missingBeatHint: "Add a reason" },
+      { question: "Would you rather work with people or alone?", missingBeatHint: "Add why" },
+      { question: "What's a job you'd never want to do?", missingBeatHint: "Add why" },
+      { question: "Do you want to work in an office or somewhere else?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

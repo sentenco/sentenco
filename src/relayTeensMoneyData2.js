@@ -23,6 +23,11 @@ export default {
       { question: "What do you usually spend your money on?", missingBeatHint: "Add a detail" },
       { question: "Do your parents give you money for chores?", missingBeatHint: "Add a detail" },
       { question: "Would you rather save for something big or spend on small things?", missingBeatHint: "Add why" },
+      { question: "Do you keep your money in a piggy bank or an account?", missingBeatHint: "Add a reason" },
+      { question: "Do you save a little money every week?", missingBeatHint: "Add a detail" },
+      { question: "Have you ever saved up for a long time?", missingBeatHint: "Add a detail" },
+      { question: "What was the last thing you bought?", missingBeatHint: "Add a detail" },
+      { question: "Do you buy things online?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

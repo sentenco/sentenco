@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever been on a school trip?", missingBeatHint: "Add a detail" },
       { question: "Do you like flying or driving on trips?", missingBeatHint: "Add why" },
       { question: "Where would you like to go someday?", missingBeatHint: "Add why" },
+      { question: "Who do you usually travel with?", missingBeatHint: "Add a detail" },
+      { question: "Do you like staying in hotels?", missingBeatHint: "Add a reason" },
+      { question: "What's the best trip you've ever taken?", missingBeatHint: "Add a detail" },
+      { question: "Do you take a lot of photos on trips?", missingBeatHint: "Add why" },
+      { question: "Do you prefer short trips or long ones?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

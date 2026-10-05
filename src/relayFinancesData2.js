@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever forgotten to pay a bill?", missingBeatHint: "Add a detail" },
       { question: "Do you split expenses with anyone?", missingBeatHint: "Add a detail" },
       { question: "What's one expense you'd like to reduce?", missingBeatHint: "Add why" },
+      { question: "Do you pay your bills on time?", missingBeatHint: "Add a detail" },
+      { question: "What's your cheapest monthly bill?", missingBeatHint: "Add a detail" },
+      { question: "Do you have any subscriptions?", missingBeatHint: "Add a detail" },
+      { question: "Do you compare prices for services?", missingBeatHint: "Add a reason" },
+      { question: "Who manages the bills in your home?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

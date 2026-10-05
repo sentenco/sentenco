@@ -23,6 +23,11 @@ export default {
       { question: "What are you working on right now?", missingBeatHint: "Add a detail" },
       { question: "Do you enjoy talking about your work?", missingBeatHint: "Add a reason" },
       { question: "What made you choose this career?", missingBeatHint: "Add a detail" },
+      { question: "How would you describe your job to a stranger?", missingBeatHint: "Add a detail" },
+      { question: "What's the most interesting project you've done?", missingBeatHint: "Add why" },
+      { question: "Who do you usually work with?", missingBeatHint: "Add a detail" },
+      { question: "What do you want people to remember about you?", missingBeatHint: "Add why" },
+      { question: "Do you find it easy to talk about yourself?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

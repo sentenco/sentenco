@@ -23,6 +23,11 @@ export default {
       { question: "Have you seen any good movies lately?", missingBeatHint: "Add what" },
       { question: "Do you play any sports?", missingBeatHint: "Add a detail" },
       { question: "What are you doing tonight?", missingBeatHint: "Add a plan detail" },
+      { question: "Do you like to travel on weekends?", missingBeatHint: "Add a reason" },
+      { question: "What's your favorite way to relax?", missingBeatHint: "Add why" },
+      { question: "Do you cook on weekends?", missingBeatHint: "Add a detail" },
+      { question: "Have you read any good books lately?", missingBeatHint: "Add a detail" },
+      { question: "Do you have any plans for next weekend?", missingBeatHint: "Add a plan detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

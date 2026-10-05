@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever gone over budget?", missingBeatHint: "Add a detail" },
       { question: "Do you prefer saving or spending?", missingBeatHint: "Add why" },
       { question: "What's one thing you'd like to save more for?", missingBeatHint: "Add a detail" },
+      { question: "Do you use an app to manage your money?", missingBeatHint: "Add a reason" },
+      { question: "Do you set a monthly budget?", missingBeatHint: "Add a detail" },
+      { question: "What's the hardest thing to budget for?", missingBeatHint: "Add why" },
+      { question: "Do you make a list before you go shopping?", missingBeatHint: "Add a reason" },
+      { question: "Do you ever treat yourself?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

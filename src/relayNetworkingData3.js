@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever reconnected with someone after a long time?", missingBeatHint: "Add a detail" },
       { question: "Do you find it awkward to reach out first?", missingBeatHint: "Add why" },
       { question: "What's a good way to keep a conversation going after meeting someone?", missingBeatHint: "Add a detail" },
+      { question: "Do you send a message the same day you meet someone?", missingBeatHint: "Add a reason" },
+      { question: "What do you usually write in a follow-up message?", missingBeatHint: "Add a detail" },
+      { question: "Do you connect with people on LinkedIn?", missingBeatHint: "Add a reason" },
+      { question: "Have you ever forgotten someone's name?", missingBeatHint: "Add a detail" },
+      { question: "How soon should you follow up after an event?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

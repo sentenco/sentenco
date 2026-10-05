@@ -23,6 +23,11 @@ export default {
       { question: "What's the first thing you do when you get home?", missingBeatHint: "Add a detail" },
       { question: "Do you unpack right away or leave it for later?", missingBeatHint: "Add why" },
       { question: "What's one thing you'd do differently on your next trip?", missingBeatHint: "Add a detail" },
+      { question: "Do you bring back souvenirs?", missingBeatHint: "Add a detail" },
+      { question: "How do you feel when a trip ends?", missingBeatHint: "Add why" },
+      { question: "Do you share your photos with friends?", missingBeatHint: "Add a detail" },
+      { question: "Do you plan your next trip before you come home?", missingBeatHint: "Add a reason" },
+      { question: "What's the best thing about being home?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Have you visited any colleges?", missingBeatHint: "Add a detail" },
       { question: "Is college necessary for every career?", missingBeatHint: "Add why" },
       { question: "What are you most excited about for after high school?", missingBeatHint: "Add a detail" },
+      { question: "Do you know what kind of school you want to attend?", missingBeatHint: "Add a detail" },
+      { question: "Would you take a year off after high school?", missingBeatHint: "Add why" },
+      { question: "Do you want to study in another country?", missingBeatHint: "Add why" },
+      { question: "Do you know anyone who is in college?", missingBeatHint: "Add a detail" },
+      { question: "What would you do if you didn't go to college?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

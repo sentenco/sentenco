@@ -23,6 +23,11 @@ export default {
       { question: "Do your grades matter to your future plans?", missingBeatHint: "Add a reason" },
       { question: "Have you ever struggled in a class?", missingBeatHint: "Add a detail" },
       { question: "Do you prefer studying alone or with others?", missingBeatHint: "Add why" },
+      { question: "What's your favorite class this year?", missingBeatHint: "Add why" },
+      { question: "Do you ask teachers for help?", missingBeatHint: "Add a reason" },
+      { question: "How do you remember things for tests?", missingBeatHint: "Add a detail" },
+      { question: "Do you do homework right after school?", missingBeatHint: "Add a reason" },
+      { question: "What was your best grade this year?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

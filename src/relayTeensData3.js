@@ -23,6 +23,11 @@ export default {
       { question: "What kind of videos do you like watching?", missingBeatHint: "Add a detail" },
       { question: "Do you follow any celebrities or creators?", missingBeatHint: "Add a detail" },
       { question: "What's the last thing you posted?", missingBeatHint: "Add a detail" },
+      { question: "Do you watch shows on your phone or on TV?", missingBeatHint: "Add a reason" },
+      { question: "What's the last movie you watched?", missingBeatHint: "Add a detail" },
+      { question: "Do you like reality shows or dramas?", missingBeatHint: "Add why" },
+      { question: "Which app do you open first in the morning?", missingBeatHint: "Add why" },
+      { question: "Do you ever take a break from social media?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

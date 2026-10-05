@@ -23,6 +23,11 @@ export default {
       { question: "Are you in any clubs?", missingBeatHint: "Add a detail" },
       { question: "Do you like team sports or solo activities?", missingBeatHint: "Add a reason" },
       { question: "What hobby would you like to try?", missingBeatHint: "Add why" },
+      { question: "What sport do you like watching?", missingBeatHint: "Add why" },
+      { question: "Do you draw, paint, or make things?", missingBeatHint: "Add a detail" },
+      { question: "How long have you had your favorite hobby?", missingBeatHint: "Add a detail" },
+      { question: "Do you practice with anyone?", missingBeatHint: "Add a detail" },
+      { question: "Have you ever won a prize or a medal?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

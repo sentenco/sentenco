@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever regretted buying something?", missingBeatHint: "Add a detail" },
       { question: "Do you compare prices before you buy something?", missingBeatHint: "Add a reason" },
       { question: "Would you rather get a gift or the money to buy it yourself?", missingBeatHint: "Add why" },
+      { question: "Would you buy a phone or a game console first?", missingBeatHint: "Add why" },
+      { question: "Do you check reviews before you buy?", missingBeatHint: "Add a reason" },
+      { question: "Have you ever returned something you bought?", missingBeatHint: "Add a detail" },
+      { question: "Do you ever wait for a sale?", missingBeatHint: "Add a reason" },
+      { question: "What's the best thing you've ever bought?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

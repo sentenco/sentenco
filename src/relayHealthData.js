@@ -23,6 +23,11 @@ export default {
       { question: "Do you prefer working out alone or with others?", missingBeatHint: "Add a reason" },
       { question: "Have you ever had a fitness goal you achieved?", missingBeatHint: "Add a detail" },
       { question: "What keeps you motivated to stay active?", missingBeatHint: "Add a detail" },
+      { question: "Do you like walking or running?", missingBeatHint: "Add why" },
+      { question: "Do you go to a gym?", missingBeatHint: "Add a reason" },
+      { question: "Have you ever played a team sport?", missingBeatHint: "Add a detail" },
+      { question: "Do you stretch before you exercise?", missingBeatHint: "Add a reason" },
+      { question: "What's your favorite way to move your body?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

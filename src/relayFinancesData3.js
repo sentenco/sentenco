@@ -23,6 +23,11 @@ export default {
       { question: "Have you started saving for retirement?", missingBeatHint: "Add a detail" },
       { question: "Do you think about the future often when it comes to money?", missingBeatHint: "Add why" },
       { question: "What's one financial habit you're proud of?", missingBeatHint: "Add a detail" },
+      { question: "Do you have an emergency fund?", missingBeatHint: "Add a reason" },
+      { question: "Do you save a fixed amount each month?", missingBeatHint: "Add a detail" },
+      { question: "What would you do with an extra bonus?", missingBeatHint: "Add why" },
+      { question: "Do you think it's important to save early?", missingBeatHint: "Add why" },
+      { question: "Did your parents teach you about saving?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

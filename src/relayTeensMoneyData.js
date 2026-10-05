@@ -23,6 +23,11 @@ export default {
       { question: "Do you save your money or spend it?", missingBeatHint: "Add a reason" },
       { question: "Have you ever babysat or done odd jobs for money?", missingBeatHint: "Add a detail" },
       { question: "What's the most expensive thing you've ever bought?", missingBeatHint: "Add a detail" },
+      { question: "Would you rather work indoors or outdoors?", missingBeatHint: "Add why" },
+      { question: "Do you want a part-time job?", missingBeatHint: "Add a reason" },
+      { question: "What would you do with your first paycheck?", missingBeatHint: "Add why" },
+      { question: "Have you ever sold something?", missingBeatHint: "Add a detail" },
+      { question: "Do you know anyone who has a job you admire?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Do you think you're good with money?", missingBeatHint: "Add a reason" },
       { question: "Would you rather have a job you love or one that pays a lot?", missingBeatHint: "Add why" },
       { question: "What's one thing you've learned about money?", missingBeatHint: "Add a detail" },
+      { question: "Do you want to be rich someday?", missingBeatHint: "Add a reason" },
+      { question: "What would you do if you won a lot of money?", missingBeatHint: "Add a detail" },
+      { question: "Do you know anyone who is good at saving?", missingBeatHint: "Add a detail" },
+      { question: "Would you ever start your own business?", missingBeatHint: "Add a reason" },
+      { question: "Do you think money can buy happiness?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

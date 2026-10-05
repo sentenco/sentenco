@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever joined a tournament?", missingBeatHint: "Add a detail" },
       { question: "Do you prefer winning or just having fun?", missingBeatHint: "Add why" },
       { question: "What happens when your team loses?", missingBeatHint: "Add a detail" },
+      { question: "Do you play any team games at school or online?", missingBeatHint: "Add a detail" },
+      { question: "Who's the best player on your team?", missingBeatHint: "Add why" },
+      { question: "How do you celebrate when you win?", missingBeatHint: "Add a detail" },
+      { question: "Do you practice before big matches?", missingBeatHint: "Add a detail" },
+      { question: "What makes a good teammate?", missingBeatHint: "Add an example" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Would you rather travel alone or with others someday?", missingBeatHint: "Add why" },
       { question: "Do you want to travel a lot when you're older?", missingBeatHint: "Add a detail" },
       { question: "If you could live anywhere for a year, where would it be?", missingBeatHint: "Add why" },
+      { question: "Which country would you visit first?", missingBeatHint: "Add why" },
+      { question: "What would you want to see there?", missingBeatHint: "Add a detail" },
+      { question: "Do you want to visit a big city or a small town?", missingBeatHint: "Add why" },
+      { question: "Would you like to see snow or sunshine on your dream trip?", missingBeatHint: "Add why" },
+      { question: "How would you get there?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

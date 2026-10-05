@@ -23,6 +23,11 @@ export default {
       { question: "Do you like flying?", missingBeatHint: "Add why" },
       { question: "How do you usually plan a trip?", missingBeatHint: "Add a detail" },
       { question: "Where would you like to travel next?", missingBeatHint: "Add why" },
+      { question: "How often do you travel?", missingBeatHint: "Add a detail" },
+      { question: "Do you prefer cities or nature?", missingBeatHint: "Add why" },
+      { question: "Do you travel alone or with others?", missingBeatHint: "Add a reason" },
+      { question: "What's the best trip you've taken?", missingBeatHint: "Add a detail" },
+      { question: "Do you book your trips online?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

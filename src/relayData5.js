@@ -23,6 +23,11 @@ export default {
       { question: "Have you tried any new food lately?", missingBeatHint: "Add a detail" },
       { question: "Do you like spicy food?", missingBeatHint: "Add a reason" },
       { question: "What did you have for breakfast?", missingBeatHint: "Add a detail" },
+      { question: "What's your favorite type of cuisine?", missingBeatHint: "Add why" },
+      { question: "Do you like trying street food?", missingBeatHint: "Add a reason" },
+      { question: "Do you drink coffee or tea?", missingBeatHint: "Add why" },
+      { question: "What's the best meal you've ever had?", missingBeatHint: "Add a detail" },
+      { question: "Do you have a dish you can cook well?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

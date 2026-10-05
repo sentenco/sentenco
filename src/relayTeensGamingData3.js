@@ -23,6 +23,11 @@ export default {
       { question: "What platform do you use the most?", missingBeatHint: "Add a detail" },
       { question: "Have you ever wanted to be a streamer?", missingBeatHint: "Add why" },
       { question: "What kind of content do you like watching?", missingBeatHint: "Add a detail" },
+      { question: "Do you watch gaming videos before you buy a game?", missingBeatHint: "Add a reason" },
+      { question: "What's the funniest gaming video you've seen?", missingBeatHint: "Add a detail" },
+      { question: "Do you watch live streams or recorded videos?", missingBeatHint: "Add why" },
+      { question: "Would you ever make a gaming video?", missingBeatHint: "Add a reason" },
+      { question: "Do you talk in the chat when you watch a stream?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

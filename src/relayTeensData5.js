@@ -23,6 +23,11 @@ export default {
       { question: "What do you usually do with your family on weekends?", missingBeatHint: "Add a detail" },
       { question: "Do your parents let you stay out late?", missingBeatHint: "Add a detail" },
       { question: "What's your favorite family tradition?", missingBeatHint: "Add a detail" },
+      { question: "Who cooks at home most of the time?", missingBeatHint: "Add a detail" },
+      { question: "Do you eat dinner together as a family?", missingBeatHint: "Add a detail" },
+      { question: "Where do you go on family trips?", missingBeatHint: "Add a detail" },
+      { question: "Do you have a favorite relative?", missingBeatHint: "Add why" },
+      { question: "What do you do on Sunday afternoons?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

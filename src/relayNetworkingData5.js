@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever gotten an opportunity through networking?", missingBeatHint: "Add a detail" },
       { question: "Do you prefer online networking or in person?", missingBeatHint: "Add why" },
       { question: "What's one tip you'd give for networking well?", missingBeatHint: "Add a detail" },
+      { question: "Who helped you most in your career?", missingBeatHint: "Add why" },
+      { question: "Do you go to industry events?", missingBeatHint: "Add a reason" },
+      { question: "Have you ever introduced two people to each other?", missingBeatHint: "Add a detail" },
+      { question: "Do you keep in touch with former coworkers?", missingBeatHint: "Add a reason" },
+      { question: "What's the best way to meet people in a new city?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever missed a flight?", missingBeatHint: "Add a detail" },
       { question: "Do you like airport food?", missingBeatHint: "Add why" },
       { question: "What do you usually do while waiting for a flight?", missingBeatHint: "Add a detail" },
+      { question: "Do you prefer a window seat or an aisle seat?", missingBeatHint: "Add why" },
+      { question: "Do you get nervous before flying?", missingBeatHint: "Add a reason" },
+      { question: "What's in your carry-on bag?", missingBeatHint: "Add a detail" },
+      { question: "Have you ever had a delayed flight?", missingBeatHint: "Add a detail" },
+      { question: "Do you use airport lounges?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

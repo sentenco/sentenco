@@ -23,6 +23,11 @@ export default {
       { question: "What kind of life do you imagine having?", missingBeatHint: "Add a detail" },
       { question: "Are you excited or nervous about growing up?", missingBeatHint: "Add why" },
       { question: "What's one goal you have for yourself?", missingBeatHint: "Add a detail" },
+      { question: "What kind of home do you want to live in?", missingBeatHint: "Add a detail" },
+      { question: "Do you want to have a family someday?", missingBeatHint: "Add why" },
+      { question: "What do you hope to be doing next year?", missingBeatHint: "Add a detail" },
+      { question: "Who will you still be friends with in the future?", missingBeatHint: "Add why" },
+      { question: "What's one thing you want to learn before you grow up?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever tried a specific diet?", missingBeatHint: "Add a detail" },
       { question: "Do you meal prep?", missingBeatHint: "Add why" },
       { question: "What's your favorite healthy meal?", missingBeatHint: "Add a detail" },
+      { question: "Do you eat breakfast every day?", missingBeatHint: "Add a detail" },
+      { question: "How much water do you drink?", missingBeatHint: "Add a detail" },
+      { question: "Do you snack between meals?", missingBeatHint: "Add a detail" },
+      { question: "Do you eat a lot of vegetables?", missingBeatHint: "Add a reason" },
+      { question: "What's your biggest food weakness?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

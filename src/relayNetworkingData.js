@@ -23,6 +23,11 @@ export default {
       { question: "Do you find networking easy or difficult?", missingBeatHint: "Add a reason" },
       { question: "How did you get into your field?", missingBeatHint: "Add a detail" },
       { question: "Do you prefer small talk or getting straight to business?", missingBeatHint: "Add why" },
+      { question: "Is this your first time at this event?", missingBeatHint: "Add a detail" },
+      { question: "How do you usually introduce yourself?", missingBeatHint: "Add a detail" },
+      { question: "Do you like meeting people from other fields?", missingBeatHint: "Add a reason" },
+      { question: "What kind of people do you hope to meet today?", missingBeatHint: "Add why" },
+      { question: "Have you been to many events like this?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

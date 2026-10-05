@@ -23,6 +23,11 @@ export default {
       { question: "Did you learn that skill on your own or from someone?", missingBeatHint: "Add a detail" },
       { question: "Could your talents turn into a career?", missingBeatHint: "Add a reason" },
       { question: "What's something you've gotten better at recently?", missingBeatHint: "Add a detail" },
+      { question: "Can you play an instrument or sing?", missingBeatHint: "Add a detail" },
+      { question: "What skill do you want to learn this year?", missingBeatHint: "Add why" },
+      { question: "Are you good at explaining things to others?", missingBeatHint: "Add an example" },
+      { question: "Do your friends say you're good at something?", missingBeatHint: "Add a detail" },
+      { question: "Do you like working with computers?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

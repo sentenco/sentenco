@@ -29,6 +29,11 @@ export default {
       { question: "What's your favorite food?", missingBeatHint: "Add why" },
       { question: "How's the weather been?", missingBeatHint: "Add a detail" },
       { question: "What are you doing after this?", missingBeatHint: "Add a plan detail" },
+      { question: "How was your morning?", missingBeatHint: "Add a detail" },
+      { question: "Do you have any plans for the holidays?", missingBeatHint: "Add a plan detail" },
+      { question: "What kind of music do you like?", missingBeatHint: "Add why" },
+      { question: "Have you been busy lately?", missingBeatHint: "Add a detail" },
+      { question: "Where did you grow up?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -80,7 +85,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

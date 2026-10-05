@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever had a bad experience at a hotel?", missingBeatHint: "Add a detail" },
       { question: "Do you use the gym or pool when you travel?", missingBeatHint: "Add a reason" },
       { question: "What's the nicest place you've stayed at?", missingBeatHint: "Add a detail" },
+      { question: "Do you read reviews before booking a hotel?", missingBeatHint: "Add a reason" },
+      { question: "Do you like hotels with breakfast included?", missingBeatHint: "Add why" },
+      { question: "What's the most important thing in a hotel room?", missingBeatHint: "Add why" },
+      { question: "Have you ever stayed in a hostel or a rental apartment?", missingBeatHint: "Add a detail" },
+      { question: "Do you ask for upgrades?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever met an online friend in person?", missingBeatHint: "Add a detail" },
       { question: "What do you usually talk about with them?", missingBeatHint: "Add a detail" },
       { question: "Do your parents know about your online friends?", missingBeatHint: "Add a detail" },
+      { question: "Do you have a gamer name?", missingBeatHint: "Add a detail" },
+      { question: "What games do you play with your online friends?", missingBeatHint: "Add a detail" },
+      { question: "Do you talk to your online friends outside the game?", missingBeatHint: "Add a reason" },
+      { question: "Have you ever made a new friend through a game?", missingBeatHint: "Add a detail" },
+      { question: "What do you like most about playing online?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

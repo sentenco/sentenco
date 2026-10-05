@@ -23,6 +23,11 @@ export default {
       { question: "What do you do when you're not on a screen?", missingBeatHint: "Add a detail" },
       { question: "Do you ever take breaks from gaming?", missingBeatHint: "Add a reason" },
       { question: "What would you do with an extra hour of free time?", missingBeatHint: "Add why" },
+      { question: "What do you do first when you get home?", missingBeatHint: "Add a detail" },
+      { question: "Do you ever play before bed?", missingBeatHint: "Add a reason" },
+      { question: "Do you think games are good or bad for you?", missingBeatHint: "Add why" },
+      { question: "What's your favorite thing to do offline?", missingBeatHint: "Add why" },
+      { question: "Do you do your homework before you play?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

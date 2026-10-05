@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever regretted a financial decision?", missingBeatHint: "Add a detail" },
       { question: "Do you ask others for advice on money matters?", missingBeatHint: "Add why" },
       { question: "What's a financial goal you have for the next few years?", missingBeatHint: "Add a detail" },
+      { question: "Would you buy a house or rent?", missingBeatHint: "Add why" },
+      { question: "Have you ever taken out a loan?", missingBeatHint: "Add a detail" },
+      { question: "Do you think it's better to buy a new car or a used one?", missingBeatHint: "Add why" },
+      { question: "How do you decide if something is worth the money?", missingBeatHint: "Add an example" },
+      { question: "What's the best money advice you've ever received?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

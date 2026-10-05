@@ -23,6 +23,11 @@ export default {
       { question: "What's the most adventurous thing you've done?", missingBeatHint: "Add a detail" },
       { question: "Are you scared of any outdoor activities?", missingBeatHint: "Add why" },
       { question: "What adventure would you like to try someday?", missingBeatHint: "Add why" },
+      { question: "Do you like swimming in the sea or in a pool?", missingBeatHint: "Add why" },
+      { question: "Have you ever slept in a tent?", missingBeatHint: "Add a detail" },
+      { question: "What's your favorite place to be outside?", missingBeatHint: "Add why" },
+      { question: "Do you like climbing or walking up hills?", missingBeatHint: "Add a detail" },
+      { question: "Are you afraid of any animals?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Do you like your neighborhood?", missingBeatHint: "Add a reason" },
       { question: "Do you visit your family often?", missingBeatHint: "Add a detail" },
       { question: "Do you prefer apartments or houses?", missingBeatHint: "Add why" },
+      { question: "Do you live with anyone?", missingBeatHint: "Add a detail" },
+      { question: "What's your favorite room in your home?", missingBeatHint: "Add why" },
+      { question: "Do you have any pets?", missingBeatHint: "Add a detail" },
+      { question: "Who do you call the most in your family?", missingBeatHint: "Add a reason" },
+      { question: "Do you cook for your family?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

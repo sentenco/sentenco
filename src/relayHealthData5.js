@@ -23,6 +23,11 @@ export default {
       { question: "Have you had a checkup recently?", missingBeatHint: "Add a detail" },
       { question: "Do you follow your doctor's advice closely?", missingBeatHint: "Add why" },
       { question: "What's one health habit you want to improve?", missingBeatHint: "Add a detail" },
+      { question: "Do you have a doctor you trust?", missingBeatHint: "Add why" },
+      { question: "Do you go to the dentist regularly?", missingBeatHint: "Add a reason" },
+      { question: "Do you take any vitamins?", missingBeatHint: "Add a reason" },
+      { question: "Do you get a flu shot every year?", missingBeatHint: "Add a reason" },
+      { question: "What do you do when you start feeling sick?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

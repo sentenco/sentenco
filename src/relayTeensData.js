@@ -23,6 +23,11 @@ export default {
       { question: "What do you do during breaks?", missingBeatHint: "Add a detail" },
       { question: "Do you like your teachers?", missingBeatHint: "Add a reason" },
       { question: "What time does school start?", missingBeatHint: "Add a detail" },
+      { question: "Which subject do you find the hardest?", missingBeatHint: "Add why" },
+      { question: "Do you play any sports at school?", missingBeatHint: "Add a detail" },
+      { question: "Who do you usually eat lunch with?", missingBeatHint: "Add a detail" },
+      { question: "Do you like wearing a uniform?", missingBeatHint: "Add a reason" },
+      { question: "What's the best thing about your school?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

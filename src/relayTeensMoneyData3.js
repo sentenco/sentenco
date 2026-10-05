@@ -23,6 +23,11 @@ export default {
       { question: "What chore do you dislike the most?", missingBeatHint: "Add why" },
       { question: "Do you think kids should get an allowance for chores?", missingBeatHint: "Add a reason" },
       { question: "How do you split chores with your siblings?", missingBeatHint: "Add a detail" },
+      { question: "Who does the dishes at your house?", missingBeatHint: "Add a detail" },
+      { question: "Do you clean your own room?", missingBeatHint: "Add a detail" },
+      { question: "What chore do you actually enjoy?", missingBeatHint: "Add why" },
+      { question: "Do your parents ask you to do chores on weekends?", missingBeatHint: "Add a detail" },
+      { question: "Would you do extra chores to earn more?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

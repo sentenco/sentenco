@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever forgotten something important on a trip?", missingBeatHint: "Add a detail" },
       { question: "Do you research a place before you go?", missingBeatHint: "Add a detail" },
       { question: "Who usually plans the trip in your family?", missingBeatHint: "Add a detail" },
+      { question: "Do you pack your own bag?", missingBeatHint: "Add a detail" },
+      { question: "Do you bring snacks on trips?", missingBeatHint: "Add a detail" },
+      { question: "Do you pack the night before or on the day?", missingBeatHint: "Add a reason" },
+      { question: "What do you always forget to pack?", missingBeatHint: "Add a detail" },
+      { question: "Do you bring a book or a game for the trip?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

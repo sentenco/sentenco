@@ -23,6 +23,11 @@ export default {
       { question: "What's a memorable conversation you've had while traveling?", missingBeatHint: "Add a detail" },
       { question: "Do you attend events or dinners when traveling for work?", missingBeatHint: "Add a detail" },
       { question: "Would you rather travel alone or with colleagues?", missingBeatHint: "Add why" },
+      { question: "Do you stay in touch with people you meet?", missingBeatHint: "Add a detail" },
+      { question: "Have you ever asked a local for advice?", missingBeatHint: "Add a detail" },
+      { question: "Do you like group tours?", missingBeatHint: "Add why" },
+      { question: "Do you speak the local language when you travel?", missingBeatHint: "Add a detail" },
+      { question: "What do you talk about with other travelers?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

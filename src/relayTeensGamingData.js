@@ -23,6 +23,11 @@ export default {
       { question: "Do you play alone or with friends?", missingBeatHint: "Add a reason" },
       { question: "How long do you usually play for?", missingBeatHint: "Add a detail" },
       { question: "Have you tried any new games lately?", missingBeatHint: "Add a detail" },
+      { question: "What's the first game you ever played?", missingBeatHint: "Add a detail" },
+      { question: "Who taught you to play games?", missingBeatHint: "Add a detail" },
+      { question: "Do you have a favorite character?", missingBeatHint: "Add why" },
+      { question: "What game do you want to play next?", missingBeatHint: "Add why" },
+      { question: "Do you play games on weekdays or weekends?", missingBeatHint: "Add a reason" },
     ],
   },
 
@@ -71,7 +76,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Do you think you have a good work-life balance?", missingBeatHint: "Add a reason" },
       { question: "Have you ever taken time off just to rest?", missingBeatHint: "Add a detail" },
       { question: "What helps you relax after a stressful day?", missingBeatHint: "Add a detail" },
+      { question: "Do you take breaks during your workday?", missingBeatHint: "Add a reason" },
+      { question: "Do you have a hobby that helps you relax?", missingBeatHint: "Add a detail" },
+      { question: "Do you ever feel overwhelmed?", missingBeatHint: "Add a detail" },
+      { question: "Who do you talk to when you're stressed?", missingBeatHint: "Add why" },
+      { question: "What does a perfect relaxing day look like for you?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Have you made any new friends recently?", missingBeatHint: "Add a detail" },
       { question: "Do you like going to the mall?", missingBeatHint: "Add a reason" },
       { question: "What are you doing after school today?", missingBeatHint: "Add a plan detail" },
+      { question: "Do you text your friends a lot?", missingBeatHint: "Add a detail" },
+      { question: "What's your best friend like?", missingBeatHint: "Add a detail" },
+      { question: "Do you like having sleepovers?", missingBeatHint: "Add a reason" },
+      { question: "Where do you usually meet your friends?", missingBeatHint: "Add a detail" },
+      { question: "Have you ever had an argument with a friend?", missingBeatHint: "Add a detail" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat: never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic: sustain a real exchange without prompting.",

@@ -23,6 +23,11 @@ export default {
       { question: "Have you ever met someone from a different country?", missingBeatHint: "Add a detail" },
       { question: "What language would you like to learn?", missingBeatHint: "Add why" },
       { question: "What's something different about another place you've visited?", missingBeatHint: "Add a detail" },
+      { question: "Do you like learning about other countries?", missingBeatHint: "Add a reason" },
+      { question: "What's a food you'd like to try from another country?", missingBeatHint: "Add why" },
+      { question: "Do you know any words in another language?", missingBeatHint: "Add a detail" },
+      { question: "Have you ever been to a festival in another place?", missingBeatHint: "Add a detail" },
+      { question: "Do you want to live in another country someday?", missingBeatHint: "Add why" },
     ],
   },
 
@@ -68,7 +73,7 @@ export default {
         "If a beat's missing, name only the missing beat. Never supply your own version.",
         "Let them redo their own answer, not repeat yours.",
       ],
-      timing: "8 min",
+      timing: "16 min",
     },
     yourturn: {
       goal: "Unaided diagnostic. Sustain a real exchange without prompting.",
