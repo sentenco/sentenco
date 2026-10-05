@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { getLesson } from "./forgeTracks";
 
@@ -118,6 +118,34 @@ function WrapSlide() {
   );
 }
 
+// Every slide lives in the same fixed-size panel. If a slide's content is
+// taller than the room it has, the whole slide shrinks (zoom) until it fits,
+// so nothing ever scrolls or gets cut off.
+function FitBody({ slideKey, children }) {
+  const boxRef = useRef(null);
+  const innerRef = useRef(null);
+  useLayoutEffect(() => {
+    function fit() {
+      const box = boxRef.current;
+      const inner = innerRef.current;
+      if (!box || !inner) return;
+      inner.style.zoom = "1";
+      const cs = getComputedStyle(box);
+      const room = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      const need = inner.scrollHeight;
+      if (need > room) inner.style.zoom = String(Math.max(0.5, Math.floor((room / need) * 100) / 100));
+    }
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, [slideKey]);
+  return (
+    <div className="fg-deck-body" ref={boxRef}>
+      <div className="fg-deck-inner" ref={innerRef}>{children}</div>
+    </div>
+  );
+}
+
 function buildSlides(lesson) {
   const slides = [{ type: "cover" }];
   if (lesson.hasCallback) slides.push({ type: "callback" });
@@ -199,7 +227,7 @@ export default function Forge() {
             <span className="fg-count-pill">{slideIdx + 1} / {totalSlides}</span>
           </div>
 
-          <div className="fg-deck-body" key={slideIdx}>
+          <FitBody slideKey={slideIdx}>
             {slide.type === "cover" && <CoverSlide lesson={lesson} />}
             {slide.type === "callback" && <CallbackSlide lesson={lesson} />}
             {slide.type === "wordintro" && <WordIntroSlide words={slide.words} startIndex={slide.startIndex} />}
@@ -208,7 +236,7 @@ export default function Forge() {
               <StorytellingSlide lesson={lesson} usedWords={usedWords} onToggle={toggleWord} />
             )}
             {slide.type === "wrap" && <WrapSlide />}
-          </div>
+          </FitBody>
 
           <div className="fg-footer-nav">
             <button type="button" className="fg-navbtn fg-navbtn--prev" onClick={goPrev} disabled={atStart}>
@@ -250,23 +278,26 @@ const CSS = `
 .fg-stage { position: relative; z-index: 1; width: 100%; max-width: 780px; margin: 0 auto; }
 
 .fg-panel {
+  display: flex; flex-direction: column;
+  height: min(600px, calc(100vh - 2cm));
   background: #fff; border-radius: 16px; overflow: hidden;
   border: 1px solid #E3E6EE;
   box-shadow: 0 24px 56px rgba(20,38,74,0.12);
 }
 
-.fg-progress { height: 5px; background: #E8ECF4; }
+.fg-progress { flex: none; height: 5px; background: #E8ECF4; }
 .fg-progress i { display: block; height: 5px; background: #FF5E45; border-radius: 0 3px 3px 0; transition: width 0.25s ease; }
 
-.fg-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; flex-shrink: 0; }
+.fg-header { flex: none; display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; flex-shrink: 0; }
 .fg-brand { display: inline-flex; align-items: center; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: #14264A; }
 .fg-brand-logo { height: 30px; width: auto; display: block; margin-right: -6px; }
 .fg-stage-tag { font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #FF5E45; }
 .fg-count-pill { font-size: 11px; font-weight: 700; color: #14264A; background: #EEF1F8; border-radius: 999px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
 
-.fg-deck-body { min-height: 340px; display: flex; align-items: center; justify-content: center; padding: 28px 44px 36px; }
+.fg-deck-body { flex: 1; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px 44px; }
+.fg-deck-inner { width: 100%; }
 
-.fg-footer-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 28px; border-top: 1px solid #EEF1F8; }
+.fg-footer-nav { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 28px; border-top: 1px solid #EEF1F8; }
 .fg-navbtn {
   font-family: 'IBM Plex Sans', sans-serif; font-weight: 700; font-size: 13px; border: none; cursor: pointer;
   border-radius: 999px; padding: 11px 26px; transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
