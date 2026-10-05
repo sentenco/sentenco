@@ -89,7 +89,7 @@ function FitBody({ slideKey, children }) {
 }
 
 // Place for the teacher to type what the student actually said.
-function AnswerBox({ value, onChange, label = "What did they say?", rows = 4 }) {
+function AnswerBox({ value, onChange, label = "What did they say?", rows = 3 }) {
   return (
     <label className="rl-ans">
       <span className="rl-ans-label">{label}</span>
@@ -113,6 +113,7 @@ const BEATS = [
 ];
 
 function BeatTicks({ beats = {}, onToggle, hint }) {
+  const done = BEATS.filter((b) => beats[b.key]).length;
   return (
     <div className="rl-beats">
       {BEATS.map((b) => (
@@ -126,6 +127,7 @@ function BeatTicks({ beats = {}, onToggle, hint }) {
           <span className="rl-beat-box" />{b.label}
         </button>
       ))}
+      <span className="rl-beats-count">{done} of 3 beats</span>
     </div>
   );
 }
@@ -168,16 +170,16 @@ function WarmupSlide({ lesson, note, onNote }) {
       <div className="rl-two-main">
         <span className="rl-eyebrow">Warm-up · ask the student</span>
         <h2 className="rl-question rl-question--sm"><PulseIcon />{lesson.warmup.question}</h2>
-        {sample && (
-          showingSample ? (
-            <p className="rl-help-text">{sample}</p>
+        <div className="rl-actions">
+          {sample && (showingSample ? (
+            <span className="rl-help-text">{sample}</span>
           ) : (
             <button type="button" className="rl-help-btn" onClick={() => setShowingSample(true)}>Show a sample answer</button>
-          )
-        )}
+          ))}
+          <TimerRing />
+        </div>
       </div>
       <div className="rl-two-side">
-        <div className="rl-two-side-top"><TimerRing /></div>
         <AnswerBox value={note.text} onChange={(text) => onNote({ text })} />
       </div>
     </div>
@@ -198,23 +200,21 @@ function BounceSlide({ lesson, index, note, onNote }) {
     const beats = { ...(note.beats || {}), [key]: !(note.beats || {})[key] };
     onNote({ beats, askTouched: note.askTouched || key === "ask" });
   }
-  const done = BEATS.filter((b) => (note.beats || {})[b.key]).length;
   return (
     <div className="rl-two">
       <div className="rl-two-main">
         <span className="rl-eyebrow">Round {index + 1} of {total} · ask the student</span>
         <h2 className="rl-question rl-question--sm"><PulseIcon />{round.question}</h2>
-        {helping ? (
-          <p className="rl-help-text">Missing beat: {round.missingBeatHint}</p>
-        ) : (
-          <button type="button" className="rl-help-btn" onClick={() => setHelping(true)}>Need help?</button>
-        )}
-      </div>
-      <div className="rl-two-side">
-        <div className="rl-two-side-top">
-          <span className="rl-ans-label">Beats heard: {done} of 3</span>
+        <div className="rl-actions">
+          {helping ? (
+            <span className="rl-help-text">Missing beat: {round.missingBeatHint}</span>
+          ) : (
+            <button type="button" className="rl-help-btn" onClick={() => setHelping(true)}>Need help?</button>
+          )}
           <TimerRing />
         </div>
+      </div>
+      <div className="rl-two-side">
         <AnswerBox value={note.text} onChange={onText} />
         <BeatTicks beats={note.beats} onToggle={toggle} hint={helping} />
       </div>
@@ -225,9 +225,12 @@ function BounceSlide({ lesson, index, note, onNote }) {
 function YourTurnSlide({ lesson, note, onNote }) {
   const yt = lesson.yourTurn;
   return (
-    <div className="rl-two">
+    <div className="rl-two rl-two--tight">
       <div className="rl-two-main">
-        <h2 className="rl-h">Your Turn</h2>
+        <div className="rl-actions">
+          <h2 className="rl-h">Your Turn</h2>
+          <TimerRing total={60} />
+        </div>
         <p className="rl-subtitle rl-subtitle--left">{yt.scenario}</p>
         <div className="rl-bubble">
           <span className="rl-bubble-role">{yt.teacherRole}</span>
@@ -235,8 +238,7 @@ function YourTurnSlide({ lesson, note, onNote }) {
         </div>
       </div>
       <div className="rl-two-side">
-        <div className="rl-two-side-top"><TimerRing total={60} /></div>
-        <AnswerBox value={note.text} onChange={(text) => onNote({ text })} label="Notes on the conversation" rows={5} />
+        <AnswerBox value={note.text} onChange={(text) => onNote({ text })} label="Notes on the conversation" rows={2} />
       </div>
     </div>
   );
@@ -248,9 +250,9 @@ function PushItSlide({ lesson, note, onNote }) {
       <div className="rl-two-main">
         <h2 className="rl-h">Push It <span className="rl-optional">(optional)</span></h2>
         <p className="rl-subtitle rl-subtitle--left">{lesson.pushIt.prompt}</p>
+        <TimerRing />
       </div>
       <div className="rl-two-side">
-        <div className="rl-two-side-top"><TimerRing /></div>
         <AnswerBox value={note.text} onChange={(text) => onNote({ text })} />
         <BeatTicks beats={note.beats} onToggle={(key) => onNote({ beats: { ...(note.beats || {}), [key]: !(note.beats || {})[key] } })} />
       </div>
@@ -617,23 +619,30 @@ const CSS = `
 
 /* ── Two-column speaking slides: the prompt on the left, the teacher's
    writing space, beat ticks and timer on the right ── */
-.rl-two { display: grid; grid-template-columns: 1fr 300px; gap: 30px; width: 100%; align-items: center; text-align: left; }
-.rl-two-main { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; }
-.rl-two-side { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+.rl-two { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; text-align: center; }
+.rl-two-main { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; }
+.rl-two-side { display: flex; flex-direction: column; gap: 8px; min-width: 0; width: 100%; max-width: 540px; }
+.rl-actions { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .rl-two-side-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 40px; }
-.rl-question--sm { font-size: 27px; padding: 10px 22px; max-width: 100%; }
-.rl-subtitle--left { text-align: left; }
+.rl-question--sm { font-size: 26px; padding: 8px 22px; max-width: 100%; text-align: left; }
+.rl-subtitle--left { text-align: center; }
+.rl-two--tight { gap: 6px; }
+.rl-two--tight .rl-subtitle { font-size: 14px; line-height: 1.4; }
+.rl-two--tight .rl-bubble { padding: 8px 18px; }
+.rl-two--tight .rl-bubble-text { font-size: 17px; }
+.rl-two--tight .rl-bubble-role { margin-bottom: 2px; }
 
-.rl-ans { display: flex; flex-direction: column; gap: 5px; }
+.rl-ans { display: flex; flex-direction: column; gap: 4px; text-align: left; }
 .rl-ans-label { font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4B8B92; }
 .rl-ans-box {
   width: 100%; resize: none; border: 1.5px solid #CFE6EC; border-radius: 12px; background: #F7FCFC;
-  padding: 10px 12px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 14px; line-height: 1.45; color: #10646B;
+  padding: 8px 12px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 14px; line-height: 1.45; color: #10646B;
 }
 .rl-ans-box:focus { outline: none; border-color: #4E8FE0; background: #fff; box-shadow: 0 0 0 3px rgba(78,143,224,0.18); }
 .rl-ans-box::placeholder { color: #9BC3CB; }
 
-.rl-beats { display: flex; gap: 6px; flex-wrap: wrap; }
+.rl-beats { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; align-items: center; }
+.rl-beats-count { font-family: 'IBM Plex Sans', sans-serif; font-weight: 700; font-size: 11.5px; color: #4B8B92; margin-left: 6px; }
 .rl-beat {
   display: inline-flex; align-items: center; gap: 7px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 14px; color: #2F6491;
   background: #fff; border: 1.5px solid #D3EDE9; border-radius: 999px; padding: 4px 13px 4px 8px; cursor: pointer; transition: all 0.12s ease;
@@ -647,11 +656,11 @@ const CSS = `
 .rl-beat:focus-visible, .rl-timer:focus-visible, .rl-help-btn:focus-visible { outline: 3px solid #2F6491; outline-offset: 2px; }
 
 .rl-timer {
-  width: 44px; height: 44px; border-radius: 50%; border: none; padding: 0; cursor: pointer; flex: none;
+  width: 38px; height: 38px; border-radius: 50%; border: none; padding: 0; cursor: pointer; flex: none;
   background: conic-gradient(#2F6491 var(--pct, 100%), #DCEEF6 0);
   display: flex; align-items: center; justify-content: center;
 }
-.rl-timer span { width: 34px; height: 34px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; color: #2F6491; font-variant-numeric: tabular-nums; }
+.rl-timer span { width: 29px; height: 29px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; color: #2F6491; font-variant-numeric: tabular-nums; }
 .rl-timer.is-running { box-shadow: 0 0 0 3px rgba(78,143,224,0.25); }
 .rl-timer.is-done { background: #E8544E; }
 .rl-timer.is-done span { color: #C93F3A; }
