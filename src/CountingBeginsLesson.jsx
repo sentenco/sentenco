@@ -362,7 +362,7 @@ export const LESSON_GUIDE = [
   { stage: "Count & Say", time: "~2.5 min", note: "Repeat with a different quantity of stars so the student connects the number, word, and quantity. Fast learner? Add the Count It! slides (balloons, bananas) (+3 min)." },
   { stage: "Look & Match", time: "~4 min", note: "The student taps a number, then taps the group with that many to make the match. Let them try it themselves before helping. Fast learner? Play the two extra Match It! rounds (+3 min). Slower learner: do the first round together, tapping for the student." },
   { stage: "How Many?", time: "~2 min", note: "Show a group of kites for a few seconds, then hide it. Ask \"How many?\", let the student remember and answer, then ask what letter kite starts with (K)." },
-  { stage: "How Many?", time: "~2 min", note: "Repeat with a group of leaves. Ask \"How many?\", then what letter leaf starts with (L). Fast learner? Add the juice-box round with the letter J (+2 min)." },
+  { stage: "How Many?", time: "~2 min", note: "Repeat with a group of leaves. Ask \"How many?\", then what letter leaf starts with (L). Fast learner? Add the glasses-of-juice round with the letter J (+2 min)." },
   { stage: "Count & Say Goodbye", time: "~1.5 min", note: "Count 1 to 5 together one final time. Fast learner? Count backwards from 5 too (+1 min)." },
   { stage: "Count & Say Goodbye", time: "~1.5 min", note: "Flash J, K, L for a quick identification check, then finish with the familiar goodbye routine. Fast learner? Use Flash Review Again! and Number or Letter? (+2 min)." },
   { stage: "Wrap-Up", time: null, note: null },
@@ -701,7 +701,7 @@ function buildSlides({ onZoom }) {
           <div className="bubble-col" style={{ maxWidth: 380 }}>
             <div className="brow">
               <div className="avatar navy">T</div>
-              <div className="bubble left">How many juice boxes were there?</div>
+              <div className="bubble left">How many glasses of juice were there?</div>
             </div>
           </div>
           <div className="row" style={{ marginTop: 8 }}>
