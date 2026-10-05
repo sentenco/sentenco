@@ -33,6 +33,16 @@ import aseanSocialProtectionRegionImg from "./assets/articles/asean-social-prote
 import chileSkyDestinationImg from "./assets/articles/chile-sky-destination.jpeg";
 import selfCareBasicsReturn2026Img from "./assets/articles/self-care-basics-return-2026.jpeg";
 import lunarQuarantineReturnToEarthImg from "./assets/articles/lunar-quarantine-return-to-earth.jpeg";
+import aiSearchBecomesAssistantImg from "./assets/articles/ai-search-becomes-assistant.jpeg";
+import hotelsShowTravelDemandResilienceImg from "./assets/articles/hotels-show-travel-demand-resilience.jpeg";
+import educationFundingFutureCapacityImg from "./assets/articles/education-funding-future-capacity.jpeg";
+import cultureWantsMoreMeaning2026Img from "./assets/articles/culture-wants-more-meaning-2026.jpeg";
+import trustOnlineBecomesSocialQuestionImg from "./assets/articles/trust-online-becomes-social-question.jpeg";
+import quietTravelChangingTourismImg from "./assets/articles/quiet-travel-changing-tourism.jpeg";
+import viralMaxxingHabits2026Img from "./assets/articles/viral-maxxing-habits-2026.jpeg";
+import brainCellComputersEthics2026Img from "./assets/articles/brain-cell-computers-ethics-2026.jpeg";
+import aiOutpacingOversight2026Img from "./assets/articles/ai-outpacing-oversight-2026.jpeg";
+import microsoftAiLayoffsAnxiety2026Img from "./assets/articles/microsoft-ai-layoffs-anxiety-2026.jpeg";
 
 export const ARTICLE_TOPICS = [
   { label: "Daily Life", title: "Wellbeing & Daily Life" },
@@ -3732,6 +3742,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🧭",
+    image: aiSearchBecomesAssistantImg,
     variant: "tech",
     topicLabel: "Digital & Tech",
     topicTitle: "Digital Life & Future Tech",
@@ -3857,6 +3868,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🏨",
+    image: hotelsShowTravelDemandResilienceImg,
     variant: "work",
     topicLabel: "Work & Business",
     topicTitle: "Worklife, Business & Careers",
@@ -3982,6 +3994,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🏛️",
+    image: educationFundingFutureCapacityImg,
     variant: "work",
     topicLabel: "Study & Skills",
     topicTitle: "Study, School & Skills",
@@ -4105,6 +4118,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🧠",
+    image: cultureWantsMoreMeaning2026Img,
     variant: "culture",
     topicLabel: "Culture & Fun",
     topicTitle: "Culture, Stories & Fun",
@@ -4230,6 +4244,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🧩",
+    image: trustOnlineBecomesSocialQuestionImg,
     variant: "culture",
     topicLabel: "Society & Issues",
     topicTitle: "People, Society & Issues",
@@ -4351,6 +4366,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-05",
     emoji: "🏕️",
+    image: quietTravelChangingTourismImg,
     variant: "planet",
     topicLabel: "Travel & Places",
     topicTitle: "Places, Travel & Journeys",
@@ -4474,6 +4490,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "🎯",
+    image: viralMaxxingHabits2026Img,
     variant: "daily",
     topicLabel: "Daily Life",
     topicTitle: "Wellbeing & Daily Life",
@@ -4595,6 +4612,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "🧠",
+    image: brainCellComputersEthics2026Img,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -4716,6 +4734,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "🌐",
+    image: aiOutpacingOversight2026Img,
     variant: "tech",
     topicLabel: "Digital & Tech",
     topicTitle: "Digital Life & Future Tech",
@@ -4833,6 +4852,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-06",
     emoji: "📉",
+    image: microsoftAiLayoffsAnxiety2026Img,
     variant: "work",
     topicLabel: "Work & Business",
     topicTitle: "Worklife, Business & Careers",
