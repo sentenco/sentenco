@@ -132,36 +132,6 @@ function BeatTicks({ beats = {}, onToggle, hint }) {
   );
 }
 
-// 30-second answer timer. Tap to start or pause; it resets on every slide.
-function TimerRing({ total = 30 }) {
-  const [left, setLeft] = useState(total);
-  const [running, setRunning] = useState(false);
-  useEffect(() => {
-    if (!running) return undefined;
-    const id = setInterval(() => {
-      setLeft((v) => {
-        if (v <= 1) { setRunning(false); return 0; }
-        return v - 1;
-      });
-    }, 1000);
-    return () => clearInterval(id);
-  }, [running]);
-  const pct = Math.round((left / total) * 100);
-  const mm = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`;
-  return (
-    <button
-      type="button"
-      className={`rl-timer${running ? " is-running" : ""}${left === 0 ? " is-done" : ""}`}
-      style={{ "--pct": `${pct}%` }}
-      onClick={() => { if (left === 0) { setLeft(total); setRunning(true); } else setRunning((r) => !r); }}
-      aria-label={running ? "Pause timer" : "Start timer"}
-      title={running ? "Pause" : "Start 30 second timer"}
-    >
-      <span>{mm}</span>
-    </button>
-  );
-}
-
 function WarmupSlide({ lesson, note, onNote }) {
   const [showingSample, setShowingSample] = useState(false);
   const sample = lesson.warmup.sampleAnswer;
@@ -176,7 +146,6 @@ function WarmupSlide({ lesson, note, onNote }) {
           ) : (
             <button type="button" className="rl-help-btn" onClick={() => setShowingSample(true)}>Show a sample answer</button>
           ))}
-          <TimerRing />
         </div>
       </div>
       <div className="rl-two-side">
@@ -211,7 +180,6 @@ function BounceSlide({ lesson, index, note, onNote }) {
           ) : (
             <button type="button" className="rl-help-btn" onClick={() => setHelping(true)}>Need help?</button>
           )}
-          <TimerRing />
         </div>
       </div>
       <div className="rl-two-side">
@@ -229,7 +197,6 @@ function YourTurnSlide({ lesson, note, onNote }) {
       <div className="rl-two-main">
         <div className="rl-actions">
           <h2 className="rl-h">Your Turn</h2>
-          <TimerRing total={60} />
         </div>
         <p className="rl-subtitle rl-subtitle--left">{yt.scenario}</p>
         <div className="rl-bubble">
@@ -250,7 +217,6 @@ function PushItSlide({ lesson, note, onNote }) {
       <div className="rl-two-main">
         <h2 className="rl-h">Push It <span className="rl-optional">(optional)</span></h2>
         <p className="rl-subtitle rl-subtitle--left">{lesson.pushIt.prompt}</p>
-        <TimerRing />
       </div>
       <div className="rl-two-side">
         <AnswerBox value={note.text} onChange={(text) => onNote({ text })} />
@@ -653,17 +619,7 @@ const CSS = `
 .rl-beat.is-on { background: #E3F5EA; border-color: #2F9E58; color: #1F7A47; }
 .rl-beat.is-on .rl-beat-box { background: #2F9E58; border-color: #2F9E58; }
 .rl-beat.is-on .rl-beat-box::after { content: ""; position: absolute; left: 3px; top: 0; width: 4px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
-.rl-beat:focus-visible, .rl-timer:focus-visible, .rl-help-btn:focus-visible { outline: 3px solid #2F6491; outline-offset: 2px; }
-
-.rl-timer {
-  width: 38px; height: 38px; border-radius: 50%; border: none; padding: 0; cursor: pointer; flex: none;
-  background: conic-gradient(#2F6491 var(--pct, 100%), #DCEEF6 0);
-  display: flex; align-items: center; justify-content: center;
-}
-.rl-timer span { width: 29px; height: 29px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans', sans-serif; font-weight: 800; font-size: 11px; color: #2F6491; font-variant-numeric: tabular-nums; }
-.rl-timer.is-running { box-shadow: 0 0 0 3px rgba(78,143,224,0.25); }
-.rl-timer.is-done { background: #E8544E; }
-.rl-timer.is-done span { color: #C93F3A; }
+.rl-beat:focus-visible, .rl-help-btn:focus-visible { outline: 3px solid #2F6491; outline-offset: 2px; }
 
 .rl-recap { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 6px; margin-top: 4px; text-align: left; }
 .rl-recap-row { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 12px; align-items: center; background: #F7FCFC; border: 1px solid #D3EDE9; border-radius: 10px; padding: 6px 12px; }
