@@ -53,6 +53,16 @@ import aiSearchActForYouOrInformYouImg from "./assets/articles/ai-search-act-for
 import workplacesRegulateAiBeforeReshapesJobsImg from "./assets/articles/workplaces-regulate-ai-before-reshapes-jobs.jpeg";
 import examScandalsIndiaFairnessQuestionsImg from "./assets/articles/exam-scandals-india-fairness-questions.jpeg";
 import sportsBecomeFashionWhatGetsLostImg from "./assets/articles/sports-become-fashion-what-gets-lost.jpeg";
+import howMuchProtectionShouldCommunitiesExpectImg from "./assets/articles/how-much-protection-should-communities-expect.jpeg";
+import bigEventsBoostTravelButForWhomImg from "./assets/articles/big-events-boost-travel-but-for-whom.jpeg";
+import dogsAndHumansShapedEachOtherImg from "./assets/articles/dogs-and-humans-shaped-each-other.jpeg";
+import zimbabweDinosaurDiscoveryImg from "./assets/articles/zimbabwe-dinosaur-discovery.jpeg";
+import stormWarningChangesDailyLifeImg from "./assets/articles/storm-warning-changes-daily-life.jpeg";
+import solarEclipseMoreThanSkyEventImg from "./assets/articles/solar-eclipse-more-than-sky-event.jpeg";
+import flightDisruptionsFragileWorkImg from "./assets/articles/flight-disruptions-fragile-work.jpeg";
+import holidayWeekendNewShapeImg from "./assets/articles/holiday-weekend-new-shape.jpeg";
+import citiesWatchingWaterSystemsImg from "./assets/articles/cities-watching-water-systems.jpeg";
+import aiToolsEnterClassroomImg from "./assets/articles/ai-tools-enter-classroom.jpeg";
 
 export const ARTICLE_TOPICS = [
   { label: "Daily Life", title: "Wellbeing & Daily Life" },
@@ -6152,6 +6162,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "🤝",
+    image: howMuchProtectionShouldCommunitiesExpectImg,
     variant: "culture",
     topicLabel: "Society & Issues",
     topicTitle: "People, Society & Issues",
@@ -6263,6 +6274,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-07",
     emoji: "✈️",
+    image: bigEventsBoostTravelButForWhomImg,
     variant: "planet",
     topicLabel: "Travel & Places",
     topicTitle: "Places, Travel & Journeys",
@@ -6374,6 +6386,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-17",
     emoji: "🐕",
+    image: dogsAndHumansShapedEachOtherImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -6481,6 +6494,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-09",
     emoji: "🦕",
+    image: zimbabweDinosaurDiscoveryImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -6605,6 +6619,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-12",
     emoji: "⛈️",
+    image: stormWarningChangesDailyLifeImg,
     variant: "daily",
     topicLabel: "Daily Life",
     topicTitle: "Wellbeing & Daily Life",
@@ -6729,6 +6744,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-12",
     emoji: "🌒",
+    image: solarEclipseMoreThanSkyEventImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -6855,6 +6871,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-12",
     emoji: "✈️",
+    image: flightDisruptionsFragileWorkImg,
     variant: "work",
     topicLabel: "Work & Business",
     topicTitle: "Worklife, Business & Careers",
@@ -6977,6 +6994,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-13",
     emoji: "🎉",
+    image: holidayWeekendNewShapeImg,
     variant: "daily",
     topicLabel: "Daily Life",
     topicTitle: "Wellbeing & Daily Life",
@@ -7101,6 +7119,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-13",
     emoji: "💧",
+    image: citiesWatchingWaterSystemsImg,
     variant: "planet",
     topicLabel: "Nature & Science",
     topicTitle: "Nature, Science & Planet",
@@ -7213,6 +7232,7 @@ export const ARTICLES = [
     ready: true,
     publishedAt: "2026-08-13",
     emoji: "🎓",
+    image: aiToolsEnterClassroomImg,
     variant: "tech",
     topicLabel: "Digital & Tech",
     topicTitle: "Digital Life & Future Tech",
