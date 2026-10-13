@@ -1042,7 +1042,7 @@ function TodayFeature({ navigate }) {
   ];
   const needsUnlock = plan === "free";
   const progressPct = Math.round((Math.min(deskProgress, 3) / 3) * 100);
-  const deskStatus = !needsUnlock ? "Open for you" : deskUnlocked ? "Unlocked today" : `${Math.min(deskProgress, 3)} of 3 to unlock`;
+  const deskStatus = !needsUnlock ? "" : deskUnlocked ? "Unlocked today" : `${Math.min(deskProgress, 3)} of 3 to unlock`;
   const myName = me?.display_name || localStorage.getItem("sentenco_teacher_name") || "";
   const myYears = me?.years_teaching;
   const myBadge = teachingBadge(myYears);
@@ -1093,7 +1093,7 @@ function TodayFeature({ navigate }) {
           <div className="tsq-card tsq-desk">
             <div className="tsq-eyebrow">Teacher's Desk</div>
             {deskMeter}
-            <div className="tsq-desk-status">{deskStatus}</div>
+            {deskStatus && <div className="tsq-desk-status">{deskStatus}</div>}
             {!deskUnlocked && <p className="tsq-desk-note">Post, comment, or like 3 times in Homeroom today to unlock.</p>}
             {deskList}
           </div>
@@ -1107,7 +1107,7 @@ function TodayFeature({ navigate }) {
             <div className="tsq-strip-top">
               <span className="tsq-strip-title">Teacher's Desk</span>
               {deskMeter}
-              <span className="tsq-strip-status">{deskStatus}</span>
+              {deskStatus && <span className="tsq-strip-status">{deskStatus}</span>}
             </div>
             <div className="tsq-strip-tools">
               {DESK_TOOLS.map((t) => (
