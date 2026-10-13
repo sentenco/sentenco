@@ -1,15 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import DESIGNS, { NOTEBOOK_STAGE_MARGIN } from "./notebookDesigns";
+import DESIGNS, { NOTEBOOK_GROUPS, NOTEBOOK_STAGE_MARGIN } from "./notebookDesigns";
 
 // A per-card accent color for each design -- separate from the design's
 // own `frame`/`ink` (which are tuned for the writable page itself, not a
 // UI chip) so the selection grid can hint at each notebook's real palette.
 const CARD_ACCENT = {
-  kids: "#FF6F91",
-  minimal: "#8B95A1",
-  elegant: "#C9A227",
-  "soccer-stadium": "#2E9E63",
-  "soccer-coach": "#D4AF37",
+  "boy-kid": "#2A3F8F",
+  "girl-kid": "#D86A9A",
+  "neutral-kid": "#3E9A6A",
+  "boy-teen": "#E0502F",
+  "girl-teen": "#8466C4",
+  "neutral-teen": "#A98B5E",
+  "male-adult": "#C9A227",
+  "female-adult": "#6E8B6E",
+  "neutral-adult": "#7C8A7A",
 };
 
 // Opens the writable notebook as a standalone popup -- matching the
@@ -80,29 +84,34 @@ export default function NotebookHub() {
           </div>
         </div>
 
-        <div className="nbh-grid">
-          {DESIGNS.map((d) => (
-            <button
-              key={d.key}
-              type="button"
-              className="nbh-card"
-              style={{ "--accent": CARD_ACCENT[d.key] || "#1B2A4A" }}
-              onClick={() => openNotebook(d)}
-            >
-              <div className="nbh-card-thumb">
-                <img src={d.image} alt={`${d.label} notebook design`} />
-              </div>
-              <div className="nbh-card-body">
-                <h3 className="nbh-card-title">{d.label}</h3>
-                <p className="nbh-card-blurb">{d.blurb}</p>
-                <span className="nbh-card-cta">
-                  Open in new window
-                  <PopOutIcon />
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
+        {NOTEBOOK_GROUPS.map((g) => (
+          <section key={g.key} className="nbh-group">
+            <h2 className="nbh-group-title">{g.label}</h2>
+            <div className="nbh-grid">
+              {DESIGNS.filter((d) => d.group === g.key).map((d) => (
+                <button
+                  key={d.key}
+                  type="button"
+                  className="nbh-card"
+                  style={{ "--accent": CARD_ACCENT[d.key] || "#1B2A4A" }}
+                  onClick={() => openNotebook(d)}
+                >
+                  <div className="nbh-card-thumb">
+                    <img src={d.image} alt={`${d.label} ${g.label} notebook design`} />
+                  </div>
+                  <div className="nbh-card-body">
+                    <h3 className="nbh-card-title">{d.label}</h3>
+                    <p className="nbh-card-blurb">{d.blurb}</p>
+                    <span className="nbh-card-cta">
+                      Open in new window
+                      <PopOutIcon />
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   );
@@ -142,6 +151,8 @@ const CSS = `
 .nbh-hero-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 40px); margin: 0 0 10px; color: #FFFFFF; letter-spacing: -0.01em; }
 .nbh-hero-blurb { font-size: 15px; color: #B9C3DC; margin: 0 auto; max-width: 520px; line-height: 1.55; }
 
+.nbh-group { margin-bottom: 28px; }
+.nbh-group-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; margin: 0 0 12px 4px; color: #1B2A4A; }
 .nbh-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -157,7 +168,7 @@ const CSS = `
 }
 .nbh-card:hover { transform: translateY(-3px); box-shadow: 0 14px 26px rgba(27,42,74,0.14); }
 
-.nbh-card-thumb { height: 176px; background: #FBF4F1; overflow: hidden; }
+.nbh-card-thumb { height: 220px; background: #FBF4F1; overflow: hidden; }
 .nbh-card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 .nbh-card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; }
