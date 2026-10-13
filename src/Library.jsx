@@ -1100,7 +1100,7 @@ function TodayFeature({ navigate }) {
             <img src={communityBannerImg} alt="Illustration of teachers around the world connecting over Sentenco" />
           </div>
           <div className="tsq-card tsq-strip">
-            <span className="tsq-strip-title" title={deskStatus || undefined}>Desk{needsUnlock && <em>{Math.min(deskProgress, 3)}/3</em>}</span>
+            <span className="tsq-strip-title" title={deskStatus || undefined}>Teacher's Desk{needsUnlock && <em>{Math.min(deskProgress, 3)}/3</em>}</span>
             {DESK_TOOLS.map(deskPill)}
           </div>
           <CommunityFeed onActivity={handleCommunityActivity} onStats={setStats} />
@@ -2879,6 +2879,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .tsq-strip { display: none; }
 .tsq-strip { padding: 10px 12px; margin-bottom: 14px; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
 .tsq-strip::-webkit-scrollbar { display: none; }
+.tsq-strip .tsq-pill { flex: 1 0 auto; justify-content: center; padding-right: 14px; }
 .tsq-strip-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #2B2A4A; white-space: nowrap; padding: 0 6px 0 4px; flex-shrink: 0; }
 .tsq-strip-title em { font-family: 'Quicksand', sans-serif; font-style: normal; font-size: 11.5px; font-weight: 700; color: #8B84A3; background: #F4F6FB; border-radius: 999px; padding: 2px 8px; margin-left: 8px; }
 @media (max-width: 1000px) {
