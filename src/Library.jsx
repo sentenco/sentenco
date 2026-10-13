@@ -1713,6 +1713,14 @@ export default function Library() {
     return () => observer.disconnect();
   }, [pageItems.length, isPro]);
 
+  // "Share" on a custom lesson: switch to Homeroom (category "All") and hand the lesson to the post box.
+  function shareCustomLesson(slug) {
+    setCategory("All");
+    setPage(1);
+    setShowAllToday(false);
+    navigate(`/library?cat=All&shareLesson=${encodeURIComponent(slug)}`);
+  }
+
   function changeCategory(cat) {
     setCategory(cat);
     setPage(1);
@@ -2481,7 +2489,7 @@ export default function Library() {
                       <button
                         type="button"
                         className="cl-row-share"
-                        onClick={(e) => { e.stopPropagation(); navigate(`/library?shareLesson=${encodeURIComponent(l.slug)}`); }}
+                        onClick={(e) => { e.stopPropagation(); shareCustomLesson(l.slug); }}
                         title="Share this lesson in Homeroom"
                         style={{ fontFamily: "'Quicksand', sans-serif", fontWeight: 700, fontSize: 12.5, color: "#1B2A4A", background: "#E9ECF3", border: "none", borderRadius: 999, padding: "7px 14px", cursor: "pointer", marginRight: 8, whiteSpace: "nowrap" }}
                       >
