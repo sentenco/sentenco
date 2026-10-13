@@ -541,7 +541,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/admin/mentors" element={<MentorAdmin />} />
             <Route path="/library/admin/teachers" element={<AdminTeachers />} />
             <Route path="/library/admin/access" element={<AdminAccess />} />
-            <Route path="/library/teacher/:id" element={<TeacherProfile />} />
+            <Route path="/library/teacher/:id" element={<LibraryPageShell><TeacherProfile /></LibraryPageShell>} />
             <Route path="/library/forge" element={<LibraryPageShell><ForgeHub /></LibraryPageShell>} />
             <Route path="/library/forge/:trackId" element={<LibraryPageShell><ForgeTrack /></LibraryPageShell>} />
             <Route path="/library/forge/:trackId/:lessonNum" element={<Forge />} />

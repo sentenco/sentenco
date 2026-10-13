@@ -185,13 +185,6 @@ export default function TeacherProfile() {
   return (
     <div className="tp-shell">
       <style>{CSS}</style>
-      <div className="tp-topbar">
-        <button type="button" className="tp-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentenco.png" alt="" className="tp-brand-logo" />entenco
-        </button>
-        <h1 className="tp-topbar-title">{isSelf ? "My profile" : "Profile"}</h1>
-      </div>
-
       <div className="tp-page">
         {loading ? (
           <p className="tp-status">Loading…</p>
@@ -345,7 +338,7 @@ const CSS = `
   --navy-pale: #E9ECF3;
   --soft: #E7EAF2;
   --hair: rgba(43,42,74,0.09);
-  min-height: 100vh;
+  min-height: 100%;
   background: #F1F3F8;
   color: var(--ink);
   font-family: 'Quicksand', sans-serif;

@@ -129,6 +129,7 @@ export default function LibraryHeader() {
 
   const activeCategory = activeCategoryFor(location.pathname);
   const onConvo = location.pathname.startsWith("/library/messages");
+  const hideNav = onConvo || location.pathname.startsWith("/library/teacher/");
 
   useEffect(() => {
     function handleOutsideClick(e) {
@@ -391,7 +392,7 @@ export default function LibraryHeader() {
           </div>
         </div>
 
-        {!onConvo && (
+        {!hideNav && (
         <div className="gc-navbar">
           <div className="gc-sections">
             <button
