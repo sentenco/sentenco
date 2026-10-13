@@ -190,7 +190,7 @@ function useNarrow(px) {
   return narrow;
 }
 
-export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats } = {}) {
+export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats, authorId, hideComposer } = {}) {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
@@ -264,9 +264,9 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const dayStreak = computeDayStreak(realPosts);
 
   useEffect(() => {
-    onStats?.({ tipsShared, dayStreak, totalTeachers });
+    onStats?.({ tipsShared, dayStreak, totalTeachers, postCount: posts.length });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tipsShared, dayStreak, totalTeachers]);
+  }, [tipsShared, dayStreak, totalTeachers, posts.length]);
 
   // Real total signup count, independent of login state -- unlike posts,
   // likes, and comments below, this must be visible to logged-out
@@ -288,6 +288,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     const baseCols = "id, author_id, author_email, author_name, content, post_type, prompt_date, company_id, author_years_teaching, author_is_mentor, image_url, file_url, file_name, created_at";
     const runQuery = (cols) => {
       let q = supabase.from("community_posts").select(cols).order("created_at", { ascending: false });
+      if (authorId) {
+        // A teacher's profile page: all of their posts the viewer can see (universal, plus the viewer's own company feed).
+        q = q.eq("author_id", authorId);
+        return profile?.company_id ? q.or(`company_id.is.null,company_id.eq.${profile.company_id}`) : q.is("company_id", null);
+      }
       q = scope === "company" && profile?.company_id ? q.eq("company_id", profile.company_id) : q.is("company_id", null);
       return q;
     };
@@ -338,7 +343,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     if (!user) return;
     loadPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, scope, profile]);
+  }, [user, scope, profile, authorId]);
 
   useEffect(() => {
     if (!focusPostId || !posts.some((p) => p.id === focusPostId)) return;
@@ -527,7 +532,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   return (
     <div className="cmf-shell">
       <style>{CSS}</style>
-      {profile?.company_id && (
+      {profile?.company_id && !authorId && (
         <div className="cm-scope-switch">
           <button
             type="button"
@@ -548,7 +553,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
 
       {afterStats}
 
-      {authLoading ? null : !user ? (
+      {authLoading || hideComposer ? null : !user ? (
         <div className="cm-signin-card">
           <p>Sign in to post and comment.</p>
           <button type="button" className="cm-btn" onClick={() => setAuthMode("login")}>Log in</button>
@@ -654,7 +659,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           <p className="cm-empty">Loading…</p>
         ) : posts.length === 0 ? (
           <p className="cm-empty">
-            No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!
+            {authorId ? "No posts yet." : <>No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!</>}
           </p>
         ) : (
           posts.map((p) => {

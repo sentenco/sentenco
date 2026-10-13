@@ -1,13 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
-import ProfileSettings, { teachingBadge } from "./ProfileSettings.jsx";
-import { timeAgo } from "./slideDeckTypes";
+import { teachingBadge } from "./ProfileSettings.jsx";
+import CommunityFeed from "./CommunityFeed.jsx";
+import AvatarCropper from "./AvatarCropper.jsx";
 
-function initials(name) {
+function initialsOf(name) {
   const parts = (name || "Teacher").split(" ").filter(Boolean);
-  return (parts[0]?.[0] || "T") + (parts[1]?.[0] || "");
+  return ((parts[0]?.[0] || "T") + (parts[1]?.[0] || "")).toUpperCase();
+}
+
+function yearsText(years) {
+  if (years === null || years === undefined || years === "") return "";
+  return Number(years) < 1 ? "New to teaching" : `${years} ${Number(years) === 1 ? "year" : "years"} teaching`;
+}
+
+function CameraIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2.5 6.8a1.5 1.5 0 0 1 1.5-1.5h1.3l.9-1.5h5.6l.9 1.5H14a1.5 1.5 0 0 1 1.5 1.5v6.7a1.5 1.5 0 0 1-1.5 1.5H4a1.5 1.5 0 0 1-1.5-1.5Z" />
+      <circle cx="9" cy="10" r="2.8" />
+    </svg>
+  );
+}
+
+function PenIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12.5 3.5 16 7l-8.5 8.5-4 1 1-4Z" />
+    </svg>
+  );
 }
 
 export default function TeacherProfile() {
@@ -17,49 +40,141 @@ export default function TeacherProfile() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
-  const [posts, setPosts] = useState(null);       // null while loading
-  const [editing, setEditing] = useState(false);
-  const [reloadKey, setReloadKey] = useState(0);
+  const [postCount, setPostCount] = useState(null);
 
+  // Editing in place, your own profile only.
   const isSelf = !!user && user.id === id;
+  const [draft, setDraft] = useState(null);       // { name, country, years, avatar_url, cover_url }
+  const [saving, setSaving] = useState(false);
+  const [notice, setNotice] = useState(null);     // { kind: "ok" | "error", text }
+  const [cropper, setCropper] = useState(null);   // { kind: "avatar" | "cover", src }
+  const [uploading, setUploading] = useState(false);
+  const avatarInput = useRef(null);
+  const coverInput = useRef(null);
 
   useEffect(() => {
     setLoading(true);
     setNotFound(false);
-    supabase
-      .from("profiles")
-      .select("id, display_name, avatar_url, country, years_teaching, is_mentor, mentor_specialty, mentor_format, mentor_price_type, mentor_price_amount, mentor_bio")
-      .eq("id", id)
-      .maybeSingle()
-      .then(({ data }) => {
-        if (!data) setNotFound(true);
-        setProfile(data);
-        setLoading(false);
-      });
-  }, [id, reloadKey]);
-
-  // Their posts in the Homeroom feed: the universal feed, plus the viewer's own company feed.
-  useEffect(() => {
-    if (!user) { setPosts([]); return undefined; }
-    let off = false;
-    setPosts(null);
+    setDraft(null);
     (async () => {
-      const { data: me } = await supabase.from("profiles").select("company_id").eq("id", user.id).maybeSingle();
-      let q = supabase.from("community_posts")
-        .select("id, content, image_url, created_at")
-        .eq("author_id", id)
-        .order("created_at", { ascending: false })
-        .limit(50);
-      q = me?.company_id ? q.or(`company_id.is.null,company_id.eq.${me.company_id}`) : q.is("company_id", null);
-      const { data } = await q;
-      if (!off) setPosts(data || []);
+      const base = "id, display_name, avatar_url, country, years_teaching, is_mentor, mentor_specialty, mentor_format, mentor_price_type, mentor_price_amount, mentor_bio";
+      // cover_url exists once sql/add_profile_cover.sql has been run; fall back without it until then.
+      let { data, error } = await supabase.from("profiles").select(`${base}, cover_url`).eq("id", id).maybeSingle();
+      if (error) ({ data } = await supabase.from("profiles").select(base).eq("id", id).maybeSingle());
+      if (!data) setNotFound(true);
+      setProfile(data);
+      setLoading(false);
     })();
-    return () => { off = true; };
-  }, [id, user, reloadKey]);
+  }, [id]);
 
-  const name = profile?.display_name || "Teacher";
-  const badge = teachingBadge(profile?.years_teaching);
-  const years = profile?.years_teaching;
+  // Start (or restart) the editable copy once the profile is loaded and it is yours.
+  useEffect(() => {
+    if (!profile || !isSelf) { setDraft(null); return; }
+    setDraft({
+      name: profile.display_name || localStorage.getItem("sentenco_teacher_name") || "",
+      country: profile.country || "",
+      years: profile.years_teaching ?? "",
+      avatar_url: profile.avatar_url || null,
+      cover_url: profile.cover_url || null,
+    });
+  }, [profile, isSelf]);
+
+  const shown = isSelf && draft ? {
+    name: draft.name, country: draft.country, years: draft.years, avatar_url: draft.avatar_url, cover_url: draft.cover_url,
+  } : {
+    name: profile?.display_name || "Teacher", country: profile?.country || "", years: profile?.years_teaching ?? "",
+    avatar_url: profile?.avatar_url || null, cover_url: profile?.cover_url || null,
+  };
+
+  const dirty = !!(isSelf && draft && profile && (
+    draft.name !== (profile.display_name || localStorage.getItem("sentenco_teacher_name") || "")
+    || draft.country !== (profile.country || "")
+    || String(draft.years) !== String(profile.years_teaching ?? "")
+    || (draft.avatar_url || null) !== (profile.avatar_url || null)
+    || (draft.cover_url || null) !== (profile.cover_url || null)
+  ));
+
+  function set(field, value) {
+    setNotice(null);
+    setDraft((d) => ({ ...d, [field]: value }));
+  }
+
+  function stepYears(delta) {
+    const cur = draft.years === "" ? 0 : Number(draft.years);
+    set("years", Math.max(0, Math.min(60, cur + delta)));
+  }
+
+  function pickFile(kind, e) {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file) return;
+    setNotice(null);
+    setCropper({ kind, src: URL.createObjectURL(file) });
+  }
+
+  function closeCropper() {
+    if (cropper) URL.revokeObjectURL(cropper.src);
+    setCropper(null);
+  }
+
+  async function cropDone(blob) {
+    const kind = cropper.kind;
+    closeCropper();
+    setUploading(true);
+    const path = `${user.id}/${kind}-${crypto.randomUUID()}.jpg`;
+    const { error } = await supabase.storage.from("community-uploads").upload(path, blob, { contentType: "image/jpeg" });
+    setUploading(false);
+    if (error) { setNotice({ kind: "error", text: error.message || "Photo upload failed." }); return; }
+    const { data: pub } = supabase.storage.from("community-uploads").getPublicUrl(path);
+    set(kind === "cover" ? "cover_url" : "avatar_url", pub.publicUrl);
+  }
+
+  function discard() {
+    setNotice(null);
+    setProfile((p) => ({ ...p }));   // re-runs the effect that resets the editable copy
+  }
+
+  async function save() {
+    if (!dirty || saving) return;
+    setSaving(true);
+    setNotice(null);
+    const name = draft.name.trim();
+    const payload = {
+      display_name: name || null,
+      avatar_url: draft.avatar_url,
+      country: draft.country.trim() || null,
+      years_teaching: draft.years === "" ? null : Number(draft.years),
+    };
+    const coverChanged = (draft.cover_url || null) !== (profile.cover_url || null);
+    const attempt = async (body) => {
+      // update-then-insert-if-missing avoids the combined insert+update RLS check upsert needs
+      const { data: updated, error: updateError } = await supabase.from("profiles").update(body).eq("id", user.id).select("id");
+      if (updateError) return updateError;
+      if (!updated || updated.length === 0) {
+        const { error: insertError } = await supabase.from("profiles").insert({ id: user.id, ...body });
+        return insertError;
+      }
+      return null;
+    };
+    let err = await attempt(coverChanged ? { ...payload, cover_url: draft.cover_url } : payload);
+    let coverSkipped = false;
+    if (err && coverChanged) { err = await attempt(payload); coverSkipped = !err; }
+    setSaving(false);
+    if (err) { setNotice({ kind: "error", text: err.message || "Couldn't save your profile." }); return; }
+    localStorage.setItem("sentenco_teacher_name", name);
+    setProfile((p) => ({
+      ...p,
+      display_name: name || null, avatar_url: draft.avatar_url, country: payload.country, years_teaching: payload.years_teaching,
+      cover_url: coverSkipped ? p.cover_url : (draft.cover_url || null),
+    }));
+    setNotice(coverSkipped
+      ? { kind: "error", text: "Saved, but the cover photo needs a database update first (sql/add_profile_cover.sql)." }
+      : { kind: "ok", text: "Profile saved" });
+    if (!coverSkipped) setTimeout(() => setNotice((n) => (n?.kind === "ok" ? null : n)), 2500);
+  }
+
+  const badge = teachingBadge(shown.years === "" ? null : shown.years);
+  const sub = [shown.country, yearsText(shown.years)].filter(Boolean).join(" · ");
 
   return (
     <div className="tp-shell">
@@ -79,32 +194,84 @@ export default function TeacherProfile() {
         ) : (
           <>
             <div className="tp-card">
-              <div className="tp-cover" aria-hidden="true" />
+              <div className={`tp-cover${shown.cover_url ? " has-img" : ""}`}>
+                {shown.cover_url && <img src={shown.cover_url} alt="" />}
+                {isSelf && (
+                  <button type="button" className="tp-cover-btn" onClick={() => coverInput.current?.click()}>
+                    <CameraIcon />{shown.cover_url ? "Change cover" : "Add a cover photo"}
+                  </button>
+                )}
+              </div>
               <div className="tp-head">
-                <span className="tp-avatar">{profile.avatar_url ? <img src={profile.avatar_url} alt="" /> : initials(name)}</span>
+                <span className="tp-avatar">
+                  {shown.avatar_url ? <img src={shown.avatar_url} alt="" /> : initialsOf(shown.name)}
+                  {isSelf && (
+                    <button type="button" className="tp-avatar-cam" onClick={() => avatarInput.current?.click()} aria-label="Change photo" title="Change photo">
+                      <CameraIcon />
+                    </button>
+                  )}
+                </span>
                 <div className="tp-head-text">
-                  <div className="tp-name-row">
-                    <h2 className="tp-name">{name}</h2>
-                    {badge && <img className="tp-badge" src={badge.img} alt={badge.label} title={badge.label} />}
-                    {profile.is_mentor && <span className="tp-mentor-tag">Mentor</span>}
-                  </div>
-                  <p className="tp-country">
-                    {profile.country || "Country not shared"}
-                    {years !== null && years !== undefined && years !== "" ? ` · ${Number(years) < 1 ? "New to teaching" : `${years} ${Number(years) === 1 ? "year" : "years"} teaching`}` : ""}
-                  </p>
+                  {isSelf && draft ? (
+                    <>
+                      <label className="tp-ghost">
+                        <input
+                          className="tp-ghost-name"
+                          value={draft.name}
+                          onChange={(e) => set("name", e.target.value)}
+                          placeholder="Your name"
+                          maxLength={60}
+                          aria-label="Name"
+                        />
+                        <PenIcon />
+                      </label>
+                      <label className="tp-ghost tp-ghost--small">
+                        <input
+                          className="tp-ghost-country"
+                          value={draft.country}
+                          onChange={(e) => set("country", e.target.value)}
+                          placeholder="Country"
+                          maxLength={60}
+                          aria-label="Country"
+                        />
+                        <PenIcon />
+                      </label>
+                    </>
+                  ) : (
+                    <>
+                      <div className="tp-name-row">
+                        <h2 className="tp-name">{shown.name}</h2>
+                        {badge && <img className="tp-badge" src={badge.img} alt={badge.label} title={badge.label} />}
+                        {profile.is_mentor && <span className="tp-mentor-tag">Mentor</span>}
+                      </div>
+                      <p className="tp-country">{shown.country || "Country not shared"}</p>
+                    </>
+                  )}
                 </div>
-                <div className="tp-actions">
-                  {isSelf ? (
-                    <button type="button" className="tp-btn" onClick={() => setEditing(true)}>Edit profile</button>
-                  ) : user ? (
+                {!isSelf && user && (
+                  <div className="tp-actions">
                     <button type="button" className="tp-btn" onClick={() => navigate(`/library/messages?to=${id}`)}>Message</button>
-                  ) : null}
-                </div>
+                  </div>
+                )}
               </div>
 
-              <div className="tp-stats">
-                <div className="tp-stat"><strong>{posts === null ? "–" : posts.length}</strong><span>{posts && posts.length === 1 ? "Post" : "Posts"}</span></div>
-                <div className="tp-stat"><strong>{years !== null && years !== undefined && years !== "" ? years : "–"}</strong><span>Years teaching</span></div>
+              <div className="tp-cbody">
+                <div>
+                  <div className="tp-lbl">Years teaching</div>
+                  {isSelf && draft ? (
+                    <div className="tp-step">
+                      <button type="button" onClick={() => stepYears(-1)} aria-label="Fewer years">&minus;</button>
+                      <output>{draft.years === "" ? "Not set" : Number(draft.years) < 1 ? "Less than 1" : `${draft.years} ${Number(draft.years) === 1 ? "year" : "years"}`}</output>
+                      <button type="button" onClick={() => stepYears(1)} aria-label="More years">+</button>
+                    </div>
+                  ) : (
+                    <div className="tp-years-read">{yearsText(shown.years) || "Not shared"}</div>
+                  )}
+                </div>
+                <div className="tp-stats">
+                  <div className="tp-stat"><strong>{postCount === null ? "–" : postCount}</strong><span>{postCount === 1 ? "Post" : "Posts"}</span></div>
+                  <div className="tp-stat"><strong>{shown.years === "" ? "–" : shown.years}</strong><span>Years teaching</span></div>
+                </div>
               </div>
 
               {profile.is_mentor && (
@@ -122,32 +289,38 @@ export default function TeacherProfile() {
             <h3 className="tp-h3">Posts</h3>
             {!user ? (
               <p className="tp-status">Sign in to see posts.</p>
-            ) : posts === null ? (
-              <p className="tp-status">Loading posts…</p>
-            ) : posts.length === 0 ? (
-              <div className="tp-empty">
-                <p>{isSelf ? "You haven't posted in Homeroom yet." : `${name} hasn't posted yet.`}</p>
-                {isSelf && <button type="button" className="tp-btn" onClick={() => navigate("/library")}>Go to Homeroom</button>}
-              </div>
             ) : (
-              <div className="tp-posts">
-                {posts.map((p) => (
-                  <button key={p.id} type="button" className="tp-post" onClick={() => navigate(`/library/community?post=${p.id}`)}>
-                    <span className="tp-post-time">{timeAgo(p.created_at)}</span>
-                    <span className="tp-post-text">{p.content}</span>
-                    {p.image_url && <img src={p.image_url} alt="" className="tp-post-img" loading="lazy" />}
-                  </button>
-                ))}
-              </div>
+              <CommunityFeed authorId={id} hideComposer onStats={(st) => setPostCount(st.postCount)} />
             )}
           </>
         )}
       </div>
-      {editing && (
-        <ProfileSettings
-          onClose={() => setEditing(false)}
-          onSaved={() => setReloadKey((k) => k + 1)}
+
+      <input ref={avatarInput} type="file" accept="image/*" hidden onChange={(e) => pickFile("avatar", e)} />
+      <input ref={coverInput} type="file" accept="image/*" hidden onChange={(e) => pickFile("cover", e)} />
+
+      {cropper && (
+        <AvatarCropper
+          modal
+          src={cropper.src}
+          aspect={cropper.kind === "cover" ? 4 : 1}
+          shape={cropper.kind === "cover" ? "rect" : "circle"}
+          outWidth={cropper.kind === "cover" ? 1600 : 512}
+          onCancel={closeCropper}
+          onDone={cropDone}
         />
+      )}
+
+      {isSelf && (dirty || notice || uploading) && (
+        <div className={`tp-savebar${notice?.kind === "error" ? " is-error" : ""}`} role="status">
+          <span>{uploading ? "Uploading photo…" : notice ? notice.text : "You have unsaved changes"}</span>
+          {dirty && (
+            <div className="tp-savebar-actions">
+              <button type="button" className="tp-savebar-ghost" onClick={discard} disabled={saving}>Discard</button>
+              <button type="button" className="tp-savebar-save" onClick={save} disabled={saving || uploading}>{saving ? "Saving…" : "Save changes"}</button>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
@@ -164,9 +337,10 @@ const CSS = `
   --coral-pale: #FDECE5;
   --navy: #1B2A4A;
   --navy-pale: #E9ECF3;
+  --soft: #E7EAF2;
   --hair: rgba(43,42,74,0.09);
   min-height: 100vh;
-  background: #FBFAF7;
+  background: #F1F3F8;
   color: var(--ink);
   font-family: 'Quicksand', sans-serif;
 }
@@ -184,55 +358,76 @@ const CSS = `
 .tp-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .tp-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
 
-.tp-page { max-width: 720px; margin: 0 auto; padding: 28px 20px 80px; }
+.tp-page { max-width: 760px; margin: 0 auto; padding: 28px 20px 120px; }
 .tp-status { text-align: center; color: var(--muted); padding: 40px 0; }
 
 .tp-card {
-  background: var(--card); border: 1px solid var(--hair); border-radius: 22px; overflow: hidden;
-  box-shadow: 0 10px 28px rgba(43,42,74,0.06); padding-bottom: 20px;
+  background: var(--card); border-radius: 24px; overflow: hidden; margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); padding-bottom: 8px;
 }
-.tp-cover { height: 110px; background: linear-gradient(120deg, #FDECE5 0%, #F3E7DA 55%, #E9ECF3 100%); }
-.tp-head { display: flex; align-items: flex-end; gap: 16px; padding: 0 26px; margin-top: -44px; flex-wrap: wrap; }
+.tp-cover { position: relative; aspect-ratio: 4 / 1; min-height: 110px; background: linear-gradient(120deg, #FDECE5 0%, #E9ECF3 100%); overflow: hidden; }
+.tp-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tp-cover-btn {
+  position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; border: none; cursor: pointer;
+  background: rgba(255,255,255,0.92); color: var(--ink); border-radius: 999px; padding: 8px 14px;
+  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 12.5px; box-shadow: 0 2px 8px rgba(27,42,74,0.18);
+}
+.tp-cover-btn:hover { background: #fff; color: #E0502F; }
+.tp-cover-btn svg { width: 16px; height: 16px; }
+
+.tp-head { display: flex; align-items: flex-end; gap: 18px; padding: 0 28px; margin-top: -48px; flex-wrap: wrap; position: relative; }
 .tp-avatar {
-  width: 96px; height: 96px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
-  background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 32px;
-  display: flex; align-items: center; justify-content: center; border: 4px solid var(--card);
+  position: relative; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 36px;
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px var(--card);
 }
 .tp-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.tp-head-text { flex: 1; min-width: 180px; padding-bottom: 4px; }
-.tp-actions { padding-bottom: 6px; }
+.tp-avatar-cam {
+  position: absolute; inset: 0; border: none; border-radius: 50%; cursor: pointer; color: #fff;
+  background: rgba(27,42,74,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.15s;
+}
+.tp-avatar:hover .tp-avatar-cam, .tp-avatar-cam:focus-visible { opacity: 1; }
+.tp-avatar-cam svg { width: 24px; height: 24px; }
+.tp-head-text { flex: 1; min-width: 220px; padding-bottom: 6px; }
+.tp-actions { padding-bottom: 8px; }
 .tp-btn {
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; background: var(--coral); color: #fff;
   border: none; border-radius: 999px; padding: 10px 22px; cursor: pointer;
 }
-.tp-btn:hover { filter: brightness(0.94); }
-.tp-stats { display: flex; gap: 28px; padding: 18px 26px 0; }
-.tp-stat { display: flex; flex-direction: column; }
-.tp-stat strong { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; }
-.tp-stat span { font-size: 12px; color: var(--muted); font-weight: 600; }
-.tp-h3 { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 26px 4px 10px; }
-.tp-empty { background: var(--card); border: 1px dashed var(--hair); border-radius: 16px; padding: 26px; text-align: center; color: var(--muted); display: flex; flex-direction: column; gap: 12px; align-items: center; }
-.tp-posts { display: flex; flex-direction: column; gap: 10px; }
-.tp-post {
-  text-align: left; font: inherit; color: inherit; cursor: pointer; background: var(--card); border: 1px solid var(--hair);
-  border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; width: 100%;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.tp-post:hover { border-color: var(--coral); box-shadow: 0 6px 18px rgba(43,42,74,0.08); }
-.tp-post:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
-.tp-post-time { font-size: 12px; color: var(--muted); font-weight: 600; }
-.tp-post-text { font-size: 14.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
-.tp-post-img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 10px; }
+.tp-btn:hover { background: #E0502F; }
+
 .tp-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.tp-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 20px; margin: 0; }
-.tp-badge { height: 22px; width: auto; }
+.tp-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; margin: 0; }
+.tp-badge { height: 24px; width: auto; }
 .tp-mentor-tag {
   font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 10px; letter-spacing: 0.05em;
   text-transform: uppercase; color: var(--navy); background: var(--navy-pale); padding: 3px 9px; border-radius: 999px;
 }
-.tp-country { font-size: 12.5px; color: var(--muted); margin: 4px 0 0; }
+.tp-country { font-size: 14px; font-weight: 600; color: var(--muted); margin: 4px 0 0; }
 
-.tp-mentor-block { margin: 18px 26px 0; padding-top: 16px; border-top: 1px solid var(--hair); text-align: left; }
+.tp-ghost { display: flex; max-width: 420px; align-items: center; gap: 8px; border: 1.5px dashed transparent; border-radius: 12px; padding: 3px 8px; margin-left: -8px; cursor: text; }
+.tp-ghost:hover, .tp-ghost:focus-within { border-color: var(--coral); background: #fff; }
+.tp-ghost input { border: none; outline: none; background: none; width: 100%; color: var(--ink); padding: 2px 0; min-width: 0; }
+.tp-ghost-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; }
+.tp-ghost--small input { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; color: var(--muted); }
+.tp-ghost svg { width: 15px; height: 15px; color: var(--muted); opacity: 0.6; flex-shrink: 0; }
+
+.tp-cbody { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 18px 28px 14px; }
+.tp-lbl { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+.tp-step { display: inline-flex; align-items: center; gap: 4px; background: var(--soft); border-radius: 999px; padding: 4px; }
+.tp-step button {
+  width: 38px; height: 38px; border-radius: 50%; border: none; background: #fff; cursor: pointer; color: var(--ink);
+  font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 1px var(--hair);
+}
+.tp-step button:hover { color: #E0502F; }
+.tp-step output { min-width: 108px; text-align: center; font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+.tp-years-read { font-weight: 700; font-size: 15px; }
+.tp-stats { display: flex; gap: 28px; }
+.tp-stat { display: flex; flex-direction: column; }
+.tp-stat strong { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; }
+.tp-stat span { font-size: 12px; color: var(--muted); font-weight: 700; }
+
+.tp-mentor-block { margin: 6px 28px 14px; padding-top: 16px; border-top: 1px solid var(--hair); text-align: left; }
 .tp-mentor-specialty { font-size: 11.5px; font-weight: 800; color: var(--coral); text-transform: uppercase; letter-spacing: 0.05em; }
 .tp-mentor-bio { font-size: 13px; color: var(--ink); line-height: 1.55; margin: 8px 0 12px; }
 .tp-mentor-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -240,5 +435,25 @@ const CSS = `
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--navy);
   background: var(--navy-pale); border-radius: 999px; padding: 3px 9px;
 }
+.tp-h3 { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 24px 4px 12px; }
 
+.tp-savebar {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 50; width: min(720px, calc(100% - 32px));
+  background: var(--navy); color: #fff; border-radius: 999px; padding: 10px 10px 10px 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 700; font-size: 14px;
+  box-shadow: 0 16px 40px -12px rgba(27,42,74,0.55);
+}
+.tp-savebar.is-error { background: #8E2B1F; }
+.tp-savebar-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.tp-savebar button { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; border: none; border-radius: 999px; padding: 10px 20px; cursor: pointer; }
+.tp-savebar-ghost { background: none; color: #C9D0E4; }
+.tp-savebar-ghost:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.tp-savebar-save { background: var(--coral); color: #fff; }
+.tp-savebar-save:hover:not(:disabled) { background: #E0502F; }
+.tp-savebar button:disabled { opacity: 0.55; cursor: default; }
+@media (max-width: 560px) {
+  .tp-head { padding: 0 18px; }
+  .tp-cbody { padding: 16px 18px 12px; }
+  .tp-savebar { border-radius: 24px; flex-wrap: wrap; }
+}
 `;
