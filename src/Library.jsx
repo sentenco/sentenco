@@ -112,6 +112,7 @@ import storybook80CoverImg from "./assets/storybook80/cover.jpg";
 import forge1CoverImg from "./assets/forge/track1-cover.jpeg";
 import todayWheelIcon from "./assets/today/icon-wheel.jpg";
 import todayNotebookIcon from "./assets/today/icon-notebook.jpg";
+import communityBannerImg from "./assets/community/banner.jpg";
 import todayFeedbackIcon from "./assets/today/icon-feedback.jpg";
 import todaySyllabusIcon from "./assets/today/icon-deck.jpg";
 import todayQuoteBanner from "./assets/today/quote-banner.jpg";
@@ -1096,6 +1097,9 @@ function TodayFeature({ navigate }) {
         </aside>
 
         <div className="tsq-feed">
+          <div className="tsq-banner">
+            <img src={communityBannerImg} alt="Illustration of teachers around the world connecting over Sentenco" />
+          </div>
           <div className="tsq-card tsq-strip">
             <div className="tsq-strip-top">
               <span className="tsq-strip-title">Teacher's Desk</span>
@@ -2871,6 +2875,8 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .tsq-cols { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 18px; align-items: start; }
 .tsq-left { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 0; }
 .tsq-feed { min-width: 0; }
+.tsq-banner { border-radius: 22px; overflow: hidden; margin-bottom: 14px; line-height: 0; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); }
+.tsq-banner img { width: 100%; aspect-ratio: 3 / 1; object-fit: cover; display: block; }
 .tsq-card { background: #fff; border-radius: 22px; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); padding: 20px 18px; }
 .tsq-me { text-align: center; }
 .tsq-me-avatar { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; margin: 0 auto 10px; background: #1B2A4A; color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 4px #fff, 0 0 0 6px #FDECE5; }

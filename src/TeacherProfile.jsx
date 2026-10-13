@@ -44,6 +44,8 @@ export default function TeacherProfile() {
 
   // Editing in place, your own profile only.
   const isSelf = !!user && user.id === id;
+  const [editing, setEditing] = useState(false);
+  const canEdit = isSelf && editing;
   const [draft, setDraft] = useState(null);       // { name, country, years, avatar_url, cover_url }
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState(null);     // { kind: "ok" | "error", text }
@@ -56,6 +58,7 @@ export default function TeacherProfile() {
     setLoading(true);
     setNotFound(false);
     setDraft(null);
+    setEditing(false);
     (async () => {
       const base = "id, display_name, avatar_url, country, years_teaching, is_mentor, mentor_specialty, mentor_format, mentor_price_type, mentor_price_amount, mentor_bio";
       // cover_url exists once sql/add_profile_cover.sql has been run; fall back without it until then.
@@ -79,7 +82,7 @@ export default function TeacherProfile() {
     });
   }, [profile, isSelf]);
 
-  const shown = isSelf && draft ? {
+  const shown = canEdit && draft ? {
     name: draft.name, country: draft.country, years: draft.years, avatar_url: draft.avatar_url, cover_url: draft.cover_url,
   } : {
     name: profile?.display_name || "Teacher", country: profile?.country || "", years: profile?.years_teaching ?? "",
@@ -129,13 +132,15 @@ export default function TeacherProfile() {
     set(kind === "cover" ? "cover_url" : "avatar_url", pub.publicUrl);
   }
 
-  function discard() {
+  function cancelEdit() {
     setNotice(null);
+    setEditing(false);
     setProfile((p) => ({ ...p }));   // re-runs the effect that resets the editable copy
   }
 
   async function save() {
-    if (!dirty || saving) return;
+    if (saving) return;
+    if (!dirty) { setEditing(false); return; }
     setSaving(true);
     setNotice(null);
     const name = draft.name.trim();
@@ -167,6 +172,7 @@ export default function TeacherProfile() {
       display_name: name || null, avatar_url: draft.avatar_url, country: payload.country, years_teaching: payload.years_teaching,
       cover_url: coverSkipped ? p.cover_url : (draft.cover_url || null),
     }));
+    setEditing(false);
     setNotice(coverSkipped
       ? { kind: "error", text: "Saved, but the cover photo needs a database update first (sql/add_profile_cover.sql)." }
       : { kind: "ok", text: "Profile saved" });
@@ -196,7 +202,7 @@ export default function TeacherProfile() {
             <div className="tp-card">
               <div className={`tp-cover${shown.cover_url ? " has-img" : ""}`}>
                 {shown.cover_url && <img src={shown.cover_url} alt="" />}
-                {isSelf && (
+                {canEdit && (
                   <button type="button" className="tp-cover-btn" onClick={() => coverInput.current?.click()}>
                     <CameraIcon />{shown.cover_url ? "Change cover" : "Add a cover photo"}
                   </button>
@@ -205,14 +211,14 @@ export default function TeacherProfile() {
               <div className="tp-head">
                 <span className="tp-avatar">
                   {shown.avatar_url ? <img src={shown.avatar_url} alt="" /> : initialsOf(shown.name)}
-                  {isSelf && (
+                  {canEdit && (
                     <button type="button" className="tp-avatar-cam" onClick={() => avatarInput.current?.click()} aria-label="Change photo" title="Change photo">
                       <CameraIcon />
                     </button>
                   )}
                 </span>
                 <div className="tp-head-text">
-                  {isSelf && draft ? (
+                  {canEdit && draft ? (
                     <>
                       <label className="tp-ghost">
                         <input
@@ -244,33 +250,39 @@ export default function TeacherProfile() {
                         {badge && <img className="tp-badge" src={badge.img} alt={badge.label} title={badge.label} />}
                         {profile.is_mentor && <span className="tp-mentor-tag">Mentor</span>}
                       </div>
-                      <p className="tp-country">{shown.country || "Country not shared"}</p>
+                      <p className="tp-country">{sub || "Country not shared"}</p>
                     </>
                   )}
                 </div>
-                {!isSelf && user && (
+                {user && (
                   <div className="tp-actions">
-                    <button type="button" className="tp-btn" onClick={() => navigate(`/library/messages?to=${id}`)}>Message</button>
+                    {!isSelf ? (
+                      <button type="button" className="tp-btn" onClick={() => navigate(`/library/messages?to=${id}`)}>Message</button>
+                    ) : editing ? (
+                      <div className="tp-edit-actions">
+                        <button type="button" className="tp-btn tp-btn--ghost" onClick={cancelEdit} disabled={saving}>Cancel</button>
+                        <button type="button" className="tp-btn" onClick={save} disabled={saving || uploading}>{saving ? "Saving…" : "Save"}</button>
+                      </div>
+                    ) : (
+                      <button type="button" className="tp-btn" onClick={() => { setNotice(null); setEditing(true); }}>Edit profile</button>
+                    )}
                   </div>
                 )}
               </div>
 
               <div className="tp-cbody">
-                <div>
-                  <div className="tp-lbl">Years teaching</div>
-                  {isSelf && draft ? (
+                {canEdit && draft ? (
+                  <div>
+                    <div className="tp-lbl">Years teaching</div>
                     <div className="tp-step">
                       <button type="button" onClick={() => stepYears(-1)} aria-label="Fewer years">&minus;</button>
                       <output>{draft.years === "" ? "Not set" : Number(draft.years) < 1 ? "Less than 1" : `${draft.years} ${Number(draft.years) === 1 ? "year" : "years"}`}</output>
                       <button type="button" onClick={() => stepYears(1)} aria-label="More years">+</button>
                     </div>
-                  ) : (
-                    <div className="tp-years-read">{yearsText(shown.years) || "Not shared"}</div>
-                  )}
-                </div>
+                  </div>
+                ) : <span />}
                 <div className="tp-stats">
                   <div className="tp-stat"><strong>{postCount === null ? "–" : postCount}</strong><span>{postCount === 1 ? "Post" : "Posts"}</span></div>
-                  <div className="tp-stat"><strong>{shown.years === "" ? "–" : shown.years}</strong><span>Years teaching</span></div>
                 </div>
               </div>
 
@@ -311,15 +323,9 @@ export default function TeacherProfile() {
         />
       )}
 
-      {isSelf && (dirty || notice || uploading) && (
-        <div className={`tp-savebar${notice?.kind === "error" ? " is-error" : ""}`} role="status">
-          <span>{uploading ? "Uploading photo…" : notice ? notice.text : "You have unsaved changes"}</span>
-          {dirty && (
-            <div className="tp-savebar-actions">
-              <button type="button" className="tp-savebar-ghost" onClick={discard} disabled={saving}>Discard</button>
-              <button type="button" className="tp-savebar-save" onClick={save} disabled={saving || uploading}>{saving ? "Saving…" : "Save changes"}</button>
-            </div>
-          )}
+      {(notice || uploading) && (
+        <div className={`tp-toast${notice?.kind === "error" ? " is-error" : ""}`} role="status">
+          {uploading ? "Uploading photo…" : notice.text}
         </div>
       )}
     </div>
@@ -375,7 +381,7 @@ const CSS = `
 .tp-cover-btn:hover { background: #fff; color: #E0502F; }
 .tp-cover-btn svg { width: 16px; height: 16px; }
 
-.tp-head { display: flex; align-items: flex-end; gap: 18px; padding: 0 28px; margin-top: -48px; flex-wrap: wrap; position: relative; }
+.tp-head { display: flex; align-items: flex-start; gap: 18px; padding: 0 28px; margin-top: -56px; flex-wrap: wrap; position: relative; }
 .tp-avatar {
   position: relative; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
   background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 36px;
@@ -388,8 +394,12 @@ const CSS = `
 }
 .tp-avatar:hover .tp-avatar-cam, .tp-avatar-cam:focus-visible { opacity: 1; }
 .tp-avatar-cam svg { width: 24px; height: 24px; }
-.tp-head-text { flex: 1; min-width: 220px; padding-bottom: 6px; }
-.tp-actions { padding-bottom: 8px; }
+.tp-head-text { flex: 1; min-width: 220px; padding-top: 66px; }
+.tp-actions { padding-top: 70px; }
+.tp-edit-actions { display: flex; gap: 8px; }
+.tp-btn--ghost { background: var(--soft); color: var(--ink); }
+.tp-btn--ghost:hover { background: #dde1ec; }
+.tp-btn:disabled { opacity: 0.55; cursor: default; }
 .tp-btn {
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; background: var(--coral); color: #fff;
   border: none; border-radius: 999px; padding: 10px 22px; cursor: pointer;
@@ -437,23 +447,14 @@ const CSS = `
 }
 .tp-h3 { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 24px 4px 12px; }
 
-.tp-savebar {
-  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 50; width: min(720px, calc(100% - 32px));
-  background: var(--navy); color: #fff; border-radius: 999px; padding: 10px 10px 10px 22px;
-  display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 700; font-size: 14px;
-  box-shadow: 0 16px 40px -12px rgba(27,42,74,0.55);
+.tp-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 50; background: var(--navy); color: #fff;
+  border-radius: 999px; padding: 11px 20px; font-weight: 700; font-size: 13.5px; box-shadow: 0 16px 40px -12px rgba(27,42,74,0.55);
+  max-width: calc(100% - 32px);
 }
-.tp-savebar.is-error { background: #8E2B1F; }
-.tp-savebar-actions { display: flex; gap: 8px; flex-shrink: 0; }
-.tp-savebar button { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; border: none; border-radius: 999px; padding: 10px 20px; cursor: pointer; }
-.tp-savebar-ghost { background: none; color: #C9D0E4; }
-.tp-savebar-ghost:hover { background: rgba(255,255,255,0.12); color: #fff; }
-.tp-savebar-save { background: var(--coral); color: #fff; }
-.tp-savebar-save:hover:not(:disabled) { background: #E0502F; }
-.tp-savebar button:disabled { opacity: 0.55; cursor: default; }
+.tp-toast.is-error { background: #8E2B1F; }
 @media (max-width: 560px) {
   .tp-head { padding: 0 18px; }
   .tp-cbody { padding: 16px 18px 12px; }
-  .tp-savebar { border-radius: 24px; flex-wrap: wrap; }
 }
 `;
