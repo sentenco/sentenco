@@ -208,7 +208,8 @@ export const SAMPLE_STORY_ITEMS = [
 ];
 
 // Opens the game in a popup, like the Wheel and the lesson players.
-export function openLetterBoard(id) {
+// `start` (1, 2 or 3) skips the setup screen and opens the board at that level.
+export function openLetterBoard(id, start) {
   const screenW = window.screen.availWidth || 1400;
   const screenH = window.screen.availHeight || 900;
   const w = Math.min(920, screenW - 40);
@@ -216,7 +217,7 @@ export function openLetterBoard(id) {
   const left = Math.max(0, Math.floor((screenW - w) / 2));
   const top = Math.max(0, Math.floor((screenH - h) / 2));
   window.open(
-    `/library/letter-board/play/${id}`,
+    `/library/letter-board/play/${id}${start ? `?start=${start}` : ""}`,
     "sentencoLetterBoard",
     `width=${w},height=${h},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
   );

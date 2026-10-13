@@ -1357,14 +1357,14 @@ export default function Library() {
   // The site owner always sees every lesson; everyone else sees what the database says is theirs or shared with them.
   const clVisible = CUSTOM_LESSONS.filter((l) => clAccess.access.has(l.slug) || clAccess.isOwnerEmail);
   const clRelation = (slug) => (clAccess.access.get(slug)?.relation) || "mine";
-  const [clFormOpen, setClFormOpen] = useState(false);
+  const [clFormOpen, setClFormOpen] = useState(() => searchParams.get("clForm") === "1");
   const [clStudentName, setClStudentName] = useState("");
   const [clLevel, setClLevel] = useState("A1");
   const [clAgeTrack, setClAgeTrack] = useState("Kids");
   const [clTopic, setClTopic] = useState("");
   const [clLanguage, setClLanguage] = useState("");
   const [clDuration, setClDuration] = useState("25");
-  const [clNotes, setClNotes] = useState("");
+  const [clNotes, setClNotes] = useState(() => searchParams.get("clNote") || "");
   const [clCopied, setClCopied] = useState(false);
   const [clRequests, setClRequests] = useState([]);
   const [clRequestsLoading, setClRequestsLoading] = useState(false);

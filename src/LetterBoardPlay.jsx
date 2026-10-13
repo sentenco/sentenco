@@ -1,9 +1,10 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
-import { GROUPS, LEVELS, SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, hasStory, levelStatus, normalizeItems, normalizeStory, taskTag } from "./letterBoardData";
+import { GROUPS, LEVELS, hasStory, levelStatus, normalizeItems, normalizeStory, taskTag } from "./letterBoardData";
+import { getLetterBoardSet } from "./letterBoardSets";
 
 // Letter Board: the play page. A one-to-one game for a teacher and a student.
 // The teacher picks a difficulty (which sets the number of tiles), the board
@@ -674,6 +675,7 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
 // ---- page ---------------------------------------------------------------------------
 export default function LetterBoardPlay() {
   const { id } = useParams();
+  const [query] = useSearchParams();
   const { user, loading } = useAuth();
   const [set, setSet] = useState(null);
   const [err, setErr] = useState("");
@@ -684,12 +686,9 @@ export default function LetterBoardPlay() {
 
   useEffect(() => {
     document.title = "sentenco";
-    if (id === "sample") {
-      setSet({ title: "Sample set", items: SAMPLE_ITEMS, story: null });
-      return;
-    }
-    if (id === "sample-story") {
-      setSet({ title: "The Lost Cat (story sample)", items: SAMPLE_STORY_ITEMS, story: SAMPLE_STORY });
+    const builtIn = getLetterBoardSet(id);
+    if (builtIn) {
+      setSet({ title: builtIn.title, items: builtIn.items, story: builtIn.story });
       return;
     }
     if (loading) return;
@@ -707,6 +706,15 @@ export default function LetterBoardPlay() {
         else setSet({ title: data.title, items: normalizeItems(data.items), story: normalizeStory(data.story) });
       });
   }, [id, user, loading]);
+
+  // Opened from the Letter Board page with ?start=1|2|3: skip the setup screen and go straight to the game.
+  useEffect(() => {
+    const lvl = Number(query.get("start"));
+    if (!set || session || !lvl) return;
+    const level = LEVELS.find((L) => L.key === lvl);
+    if (level && levelStatus(set.items).missing[lvl] === 0) setSession({ level, key: Date.now(), reading: hasStory(set.story) });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [set]);
 
   const start = (lvl) => {
     const level = LEVELS.find((L) => L.key === lvl);
