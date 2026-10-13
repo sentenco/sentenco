@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 import { SUPPORT_EMAIL } from "./siteConfig.js";
+import { ageYearsLine, fetchOwnProfile } from "./profileFields.js";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 
@@ -55,14 +56,14 @@ export default function AccountMenu({ user, planInfo, isAdmin, navigate, onClose
   useEffect(() => {
     if (!user) return undefined;
     let off = false;
-    supabase.from("profiles").select("display_name, avatar_url, country, years_teaching").eq("id", user.id).maybeSingle()
-      .then(({ data }) => { if (!off) setMe(data || null); });
+    fetchOwnProfile(supabase, user.id, "display_name, avatar_url, country, years_teaching")
+      .then((data) => { if (!off) setMe(data || null); });
     return () => { off = true; };
   }, [user]);
 
   const name = me?.display_name || localStorage.getItem("sentenco_teacher_name") || "Teacher";
   const years = me?.years_teaching;
-  const sub = [me?.country, years === null || years === undefined || years === "" ? "" : (Number(years) < 1 ? "New to teaching" : `${years} ${Number(years) === 1 ? "year" : "years"} teaching`)].filter(Boolean).join(" · ");
+  const sub = ageYearsLine(me?.age, years);
   const initials = ((name.trim().split(/\s+/)[0]?.[0] || "T") + (name.trim().split(/\s+/)[1]?.[0] || "")).toUpperCase();
   const banner = planBanner(planInfo, isOwner);
   const go = (path) => () => { navigate(path); onClose(); };

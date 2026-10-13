@@ -123,6 +123,7 @@ import WritingActivities from "./WritingActivities";
 import CommunityFeed from "./CommunityFeed.jsx";
 import HomeroomSearch from "./HomeroomSearch.jsx";
 import AccountMenu from "./AccountMenu.jsx";
+import { ageYearsLine, fetchOwnProfile } from "./profileFields.js";
 import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
 import { useCanSeeTeensAdultsStories } from "./audienceAccess";
 import FORGE_TRACKS from "./forgeTracks";
@@ -979,8 +980,8 @@ function TodayFeature({ navigate }) {
   useEffect(() => {
     if (!user) { setMe(null); return; }
     let off = false;
-    supabase.from("profiles").select("display_name, avatar_url, country, years_teaching").eq("id", user.id).maybeSingle()
-      .then(({ data }) => { if (!off) setMe(data || null); });
+    fetchOwnProfile(supabase, user.id, "display_name, avatar_url, country, years_teaching")
+      .then((data) => { if (!off) setMe(data || null); });
     return () => { off = true; };
   }, [user]);
 
@@ -1044,7 +1045,7 @@ function TodayFeature({ navigate }) {
   const myName = me?.display_name || localStorage.getItem("sentenco_teacher_name") || "";
   const myYears = me?.years_teaching;
   const myBadge = teachingBadge(myYears);
-  const mySub = [me?.country, myYears === null || myYears === undefined || myYears === "" ? "" : (Number(myYears) < 1 ? "New to teaching" : `${myYears} ${Number(myYears) === 1 ? "year" : "years"} teaching`)].filter(Boolean).join(" \u00B7 ");
+  const mySub = ageYearsLine(me?.age, myYears);
   const myInitials = ((myName.trim().split(/\s+/)[0]?.[0] || "T") + (myName.trim().split(/\s+/)[1]?.[0] || "")).toUpperCase();
 
   const deskList = (

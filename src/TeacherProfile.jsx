@@ -5,11 +5,16 @@ import { useAuth } from "./AuthContext";
 import { teachingBadge } from "./ProfileSettings.jsx";
 import CommunityFeed from "./CommunityFeed.jsx";
 import AvatarCropper from "./AvatarCropper.jsx";
+import { ageYearsLine } from "./profileFields.js";
 
 function initialsOf(name) {
   const parts = (name || "Teacher").split(" ").filter(Boolean);
   return ((parts[0]?.[0] || "T") + (parts[1]?.[0] || "")).toUpperCase();
 }
+
+const AGE_GROUPS = [["kids", "Kids"], ["teens", "Teens"], ["adults", "Adults"]];
+const EXPERTISE = ["Grammar", "Speaking", "Vocabulary", "Writing", "Reading", "Listening", "Pronunciation", "Exam prep", "Business English"];
+const sameList = (a, b) => JSON.stringify([...(a || [])].sort()) === JSON.stringify([...(b || [])].sort());
 
 function yearsText(years) {
   if (years === null || years === undefined || years === "") return "";
@@ -87,8 +92,9 @@ export default function TeacherProfile() {
     setFilter("all");
     (async () => {
       const base = "id, display_name, avatar_url, country, years_teaching, is_mentor, mentor_specialty, mentor_format, mentor_price_type, mentor_price_amount, mentor_bio";
-      // cover_url exists once sql/add_profile_cover.sql has been run; fall back without it until then.
-      let { data, error } = await supabase.from("profiles").select(`${base}, cover_url`).eq("id", id).maybeSingle();
+      // cover_url / age / teaches_ages / expertise exist once their SQL has been run; fall back step by step until then.
+      let { data, error } = await supabase.from("profiles").select(`${base}, cover_url, age, teaches_ages, expertise, companies(name)`).eq("id", id).maybeSingle();
+      if (error) ({ data, error } = await supabase.from("profiles").select(`${base}, cover_url`).eq("id", id).maybeSingle());
       if (error) ({ data } = await supabase.from("profiles").select(base).eq("id", id).maybeSingle());
       if (!data) setNotFound(true);
       setProfile(data);
@@ -101,24 +107,30 @@ export default function TeacherProfile() {
     if (!profile || !isSelf) { setDraft(null); return; }
     setDraft({
       name: profile.display_name || localStorage.getItem("sentenco_teacher_name") || "",
-      country: profile.country || "",
+      age: profile.age ?? "",
       years: profile.years_teaching ?? "",
+      teaches: profile.teaches_ages || [],
+      expertise: profile.expertise || [],
       avatar_url: profile.avatar_url || null,
       cover_url: profile.cover_url || null,
     });
   }, [profile, isSelf]);
 
   const shown = canEdit && draft ? {
-    name: draft.name, country: draft.country, years: draft.years, avatar_url: draft.avatar_url, cover_url: draft.cover_url,
+    name: draft.name, age: draft.age, years: draft.years, teaches: draft.teaches, expertise: draft.expertise,
+    avatar_url: draft.avatar_url, cover_url: draft.cover_url,
   } : {
-    name: profile?.display_name || "Teacher", country: profile?.country || "", years: profile?.years_teaching ?? "",
+    name: profile?.display_name || "Teacher", age: profile?.age ?? "", years: profile?.years_teaching ?? "",
+    teaches: profile?.teaches_ages || [], expertise: profile?.expertise || [],
     avatar_url: profile?.avatar_url || null, cover_url: profile?.cover_url || null,
   };
 
   const dirty = !!(isSelf && draft && profile && (
     draft.name !== (profile.display_name || localStorage.getItem("sentenco_teacher_name") || "")
-    || draft.country !== (profile.country || "")
+    || String(draft.age) !== String(profile.age ?? "")
     || String(draft.years) !== String(profile.years_teaching ?? "")
+    || !sameList(draft.teaches, profile.teaches_ages)
+    || !sameList(draft.expertise, profile.expertise)
     || (draft.avatar_url || null) !== (profile.avatar_url || null)
     || (draft.cover_url || null) !== (profile.cover_url || null)
   ));
@@ -126,6 +138,16 @@ export default function TeacherProfile() {
   function set(field, value) {
     setNotice(null);
     setDraft((d) => ({ ...d, [field]: value }));
+  }
+
+  function stepAge(delta) {
+    const cur = draft.age === "" ? 24 : Number(draft.age);
+    set("age", Math.max(18, Math.min(99, cur + delta)));
+  }
+
+  function toggleIn(field, value) {
+    setNotice(null);
+    setDraft((d) => ({ ...d, [field]: d[field].includes(value) ? d[field].filter((x) => x !== value) : [...d[field], value] }));
   }
 
   function stepYears(delta) {
@@ -173,10 +195,11 @@ export default function TeacherProfile() {
     const payload = {
       display_name: name || null,
       avatar_url: draft.avatar_url,
-      country: draft.country.trim() || null,
       years_teaching: draft.years === "" ? null : Number(draft.years),
     };
+    const extra = { age: draft.age === "" ? null : Number(draft.age), teaches_ages: draft.teaches, expertise: draft.expertise };
     const coverChanged = (draft.cover_url || null) !== (profile.cover_url || null);
+    const withCover = coverChanged ? { cover_url: draft.cover_url } : {};
     const attempt = async (body) => {
       // update-then-insert-if-missing avoids the combined insert+update RLS check upsert needs
       const { data: updated, error: updateError } = await supabase.from("profiles").update(body).eq("id", user.id).select("id");
@@ -187,26 +210,33 @@ export default function TeacherProfile() {
       }
       return null;
     };
-    let err = await attempt(coverChanged ? { ...payload, cover_url: draft.cover_url } : payload);
+    let err = await attempt({ ...payload, ...extra, ...withCover });
+    let extraSkipped = false;
     let coverSkipped = false;
-    if (err && coverChanged) { err = await attempt(payload); coverSkipped = !err; }
+    if (err) {
+      err = await attempt({ ...payload, ...withCover });
+      extraSkipped = !err;
+      if (err && coverChanged) { err = await attempt(payload); extraSkipped = !err; coverSkipped = !err; }
+    }
     setSaving(false);
     if (err) { setNotice({ kind: "error", text: err.message || "Couldn't save your profile." }); return; }
     localStorage.setItem("sentenco_teacher_name", name);
     setProfile((p) => ({
       ...p,
-      display_name: name || null, avatar_url: draft.avatar_url, country: payload.country, years_teaching: payload.years_teaching,
+      display_name: name || null, avatar_url: draft.avatar_url, years_teaching: payload.years_teaching,
+      ...(extraSkipped ? {} : { age: extra.age, teaches_ages: extra.teaches_ages, expertise: extra.expertise }),
       cover_url: coverSkipped ? p.cover_url : (draft.cover_url || null),
     }));
     setEditing(false);
-    setNotice(coverSkipped
-      ? { kind: "error", text: "Saved, but the cover photo needs a database update first (sql/add_profile_cover.sql)." }
+    setNotice(extraSkipped || coverSkipped
+      ? { kind: "error", text: `Saved, but ${extraSkipped ? "age, age groups and expertise" : "the cover photo"} need a database update first (sql/add_profile_chips.sql).` }
       : { kind: "ok", text: "Profile saved" });
-    if (!coverSkipped) setTimeout(() => setNotice((n) => (n?.kind === "ok" ? null : n)), 2500);
+    if (!extraSkipped && !coverSkipped) setTimeout(() => setNotice((n) => (n?.kind === "ok" ? null : n)), 2500);
   }
 
   const badge = teachingBadge(shown.years === "" ? null : shown.years);
-  const sub = [shown.country, yearsText(shown.years)].filter(Boolean).join(" · ");
+  const sub = ageYearsLine(shown.age, shown.years);
+  const schoolName = profile?.companies?.name || null;
 
   return (
     <div className="tp-shell">
@@ -250,26 +280,20 @@ export default function TeacherProfile() {
                         />
                         <PenIcon />
                       </label>
-                      <label className="tp-ghost tp-ghost--small">
-                        <input
-                          className="tp-ghost-country"
-                          value={draft.country}
-                          onChange={(e) => set("country", e.target.value)}
-                          placeholder="Country"
-                          maxLength={60}
-                          aria-label="Country"
-                        />
-                        <PenIcon />
-                      </label>
                     </>
                   ) : (
                     <>
                       <div className="tp-name-row">
                         <h2 className="tp-name">{shown.name}</h2>
                         {badge && <img className="tp-badge" src={badge.img} alt={badge.label} title={badge.label} />}
-                        {profile.is_mentor && <span className="tp-mentor-tag">Mentor</span>}
                       </div>
-                      <p className="tp-country">{sub || "Country not shared"}</p>
+                      <p className="tp-country">{sub || (isSelf ? "Add your age and years teaching" : "")}</p>
+                      <div className="tp-chips">
+                        {profile.is_mentor && <span className="tp-chip tp-chip--mentor">Mentor</span>}
+                        {AGE_GROUPS.filter(([k]) => shown.teaches.includes(k)).map(([k, label]) => <span key={k} className={`tp-chip tp-chip--${k}`}>{label}</span>)}
+                        {EXPERTISE.filter((x) => shown.expertise.includes(x)).map((x) => <span key={x} className="tp-chip tp-chip--skill">{x}</span>)}
+                        {schoolName && <span className="tp-chip tp-chip--school">{schoolName}</span>}
+                      </div>
                     </>
                   )}
                 </div>
@@ -291,12 +315,42 @@ export default function TeacherProfile() {
 
               {canEdit && draft && (
                 <div className="tp-cbody">
+                  <div className="tp-steps">
+                    <div>
+                      <div className="tp-lbl">Age</div>
+                      <div className="tp-step">
+                        <button type="button" onClick={() => stepAge(-1)} aria-label="Younger">&minus;</button>
+                        <output>{draft.age === "" ? "Not set" : `${draft.age} years old`}</output>
+                        <button type="button" onClick={() => stepAge(1)} aria-label="Older">+</button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="tp-lbl">Years teaching</div>
+                      <div className="tp-step">
+                        <button type="button" onClick={() => stepYears(-1)} aria-label="Fewer years">&minus;</button>
+                        <output>{draft.years === "" ? "Not set" : Number(draft.years) < 1 ? "Less than 1" : `${draft.years} ${Number(draft.years) === 1 ? "year" : "years"}`}</output>
+                        <button type="button" onClick={() => stepYears(1)} aria-label="More years">+</button>
+                      </div>
+                    </div>
+                  </div>
                   <div>
-                    <div className="tp-lbl">Years teaching</div>
-                    <div className="tp-step">
-                      <button type="button" onClick={() => stepYears(-1)} aria-label="Fewer years">&minus;</button>
-                      <output>{draft.years === "" ? "Not set" : Number(draft.years) < 1 ? "Less than 1" : `${draft.years} ${Number(draft.years) === 1 ? "year" : "years"}`}</output>
-                      <button type="button" onClick={() => stepYears(1)} aria-label="More years">+</button>
+                    <div className="tp-lbl">I teach</div>
+                    <div className="tp-ticks">
+                      {AGE_GROUPS.map(([k, label]) => (
+                        <button type="button" key={k} className={`tp-tick${draft.teaches.includes(k) ? " is-on" : ""}`} aria-pressed={draft.teaches.includes(k)} onClick={() => toggleIn("teaches", k)}>
+                          <span className="tp-tick-box">{draft.teaches.includes(k) ? "\u2713" : ""}</span>{label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="tp-lbl">My expertise</div>
+                    <div className="tp-ticks">
+                      {EXPERTISE.map((x) => (
+                        <button type="button" key={x} className={`tp-tick${draft.expertise.includes(x) ? " is-on" : ""}`} aria-pressed={draft.expertise.includes(x)} onClick={() => toggleIn("expertise", x)}>
+                          <span className="tp-tick-box">{draft.expertise.includes(x) ? "\u2713" : ""}</span>{x}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -460,7 +514,23 @@ const CSS = `
 .tp-ghost--small input { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; color: var(--muted); }
 .tp-ghost svg { width: 15px; height: 15px; color: var(--muted); opacity: 0.6; flex-shrink: 0; }
 
-.tp-cbody { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 18px 28px 14px; }
+.tp-cbody { display: flex; flex-direction: column; gap: 16px; padding: 18px 28px 6px; }
+.tp-steps { display: flex; gap: 24px; flex-wrap: wrap; }
+.tp-ticks { display: flex; flex-wrap: wrap; gap: 8px; }
+.tp-tick { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--hair); background: #fff; border-radius: 999px; padding: 7px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.tp-tick:hover { border-color: var(--coral); }
+.tp-tick.is-on { border-color: var(--coral); background: var(--coral-pale); }
+.tp-tick-box { width: 18px; height: 18px; border-radius: 6px; border: 2px solid var(--hair); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 800; }
+.tp-tick.is-on .tp-tick-box { background: var(--coral); border-color: var(--coral); }
+.tp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tp-chips:empty { display: none; }
+.tp-chip { display: inline-flex; align-items: center; border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 700; background: var(--soft); color: var(--ink); }
+.tp-chip--mentor { background: var(--navy-pale); color: var(--navy); }
+.tp-chip--kids { background: #FFF4D6; color: #7A5C0C; }
+.tp-chip--teens { background: #E3F0FB; color: #1B4F7A; }
+.tp-chip--adults { background: #EDE6F7; color: #5B3F82; }
+.tp-chip--skill { background: var(--soft); color: var(--ink); }
+.tp-chip--school { background: #E4F3EA; color: #1F6B45; }
 .tp-lbl { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
 .tp-step { display: inline-flex; align-items: center; gap: 4px; background: var(--soft); border-radius: 999px; padding: 4px; }
 .tp-step button {
