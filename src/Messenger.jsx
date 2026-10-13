@@ -324,7 +324,8 @@ export default function Messenger() {
     if (!el) return;
     el.style.height = "auto";
     el.style.height = Math.min(el.scrollHeight, 120) + "px";
-  }, [draft]);
+    el.style.overflowY = el.scrollHeight > 120 ? "auto" : "hidden";
+  }, [draft, activeId]);
 
   useEffect(() => {
     if (!user) { setLoadingList(false); return; }
@@ -1058,8 +1059,8 @@ export default function Messenger() {
                   <div className="mg-composer">
                     {canShareLesson && (
                       <div className="mg-share-wrap">
-                        <button type="button" className="mg-share-btn" onClick={() => setShareOpen((v) => !v)} aria-expanded={shareOpen}>
-                          <ShareIcon />Share a lesson
+                        <button type="button" className="mg-share-btn" onClick={() => setShareOpen((v) => !v)} aria-expanded={shareOpen} aria-label="Share a lesson" title="Share a lesson">
+                          <ShareIcon />
                         </button>
                         {shareOpen && (
                           <div className="mg-share-menu" role="menu">
@@ -1564,7 +1565,7 @@ const CSS = `
 .mg-composer { display: flex; align-items: flex-end; gap: 8px; padding: 12px 16px 14px; flex-shrink: 0; }
 .mg-composer-input {
   flex: 1; resize: none; border: none; border-radius: 22px; padding: 12px 18px;
-  font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); outline: none; max-height: 120px; background: #E7EAF2;
+  font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); outline: none; max-height: 120px; min-height: 44px; overflow-y: hidden; background: #E7EAF2;
   transition: box-shadow 0.12s ease;
 }
 .mg-composer-input:focus { box-shadow: 0 0 0 2px var(--coral-pale); background: #E7EAF2; }
@@ -1580,10 +1581,10 @@ const CSS = `
 .mg-share-wrap { position: relative; flex-shrink: 0; align-self: center; }
 .mg-share-btn {
   display: flex; align-items: center; gap: 6px; border: none; background: var(--coral-pale); color: #C2411F; cursor: pointer;
-  border-radius: 999px; padding: 11px 14px; font: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap;
+  border-radius: 50%; width: 44px; height: 44px; justify-content: center; padding: 0; font: inherit;
 }
 .mg-share-btn:hover { background: #fbdcd0; }
-.mg-share-btn svg { width: 16px; height: 16px; }
+.mg-share-btn svg { width: 19px; height: 19px; }
 .mg-share-menu {
   position: absolute; bottom: calc(100% + 10px); left: 0; width: 300px; max-height: 300px; overflow-y: auto; z-index: 20;
   background: #fff; border-radius: 18px; padding: 8px; box-shadow: 0 12px 34px rgba(43,42,74,0.2), 0 0 0 1px var(--hair);
