@@ -562,7 +562,7 @@ const CSS = `
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--navy);
   background: var(--navy-pale); border-radius: 999px; padding: 3px 9px;
 }
-.tp-hl { display: flex; gap: 18px; margin-top: 4px; padding: 12px 12px 6px; overflow-x: auto; scrollbar-width: none; }
+.tp-hl { display: flex; gap: 18px; margin-top: 0; padding: 10px 12px 2px; overflow-x: auto; scrollbar-width: none; }
 .tp-hl::-webkit-scrollbar { display: none; }
 .tp-hl > :first-child { margin-left: auto; }
 .tp-hl > :last-child { margin-right: auto; }
@@ -584,7 +584,7 @@ const CSS = `
 .tp-hl-btn--question { --m: #E3F0FB; --k: #1B4F7A; }
 .tp-hl-btn--resource { --m: #FDECE5; --k: #C2411F; }
 .tp-hl-btn--lesson { --m: #E4F3EA; --k: #1F6B45; }
-.tp-bar { display: flex; align-items: center; justify-content: space-between; margin: 6px 6px 10px; }
+.tp-bar { display: flex; align-items: center; justify-content: space-between; margin: 0 6px 8px; }
 .tp-h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; color: var(--ink); margin: 0; }
 .tp-bar-count { font-size: 13px; font-weight: 700; color: var(--muted); }
 .tp-shell .cm-post { border-radius: 24px; padding: 18px 22px 12px; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 12px 28px -20px rgba(27,42,74,0.3); }
@@ -603,7 +603,7 @@ const CSS = `
   .tp-head { flex-direction: column; align-items: flex-start; gap: 0; }
   .tp-head-text { padding-top: 12px; min-width: 0; width: 100%; }
   .tp-actions { position: absolute; top: 70px; right: 18px; padding-top: 0; }
-  .tp-hl { padding: 12px 18px 6px; gap: 14px; }
+  .tp-hl { padding: 10px 18px 2px; gap: 14px; }
 }
 @media (max-width: 560px) {
   .tp-head { padding: 0 18px; }
