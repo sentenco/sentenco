@@ -3766,7 +3766,9 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   .gc-sec-tab { font-size: 11.5px; letter-spacing: 0.02em; padding: 6px 9px; flex-shrink: 0; }
   .gc-editions { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
   .gc-editions > * { flex-shrink: 0; }
-  
+  .gc-editions { gap: 2px; }
+  .gc-ed-spark, .gc-ed-curr, .gc-ed-custom { padding: 5px 9px; gap: 4px; letter-spacing: 0.01em; }
+  .gc-ed-tab { padding: 4px 9px; }
 }
 @media (max-width: 900px) {
   .gdn-beds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -4431,5 +4433,8 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 /* Narrow half-screens: pull the category tabs in a little more so all eight fit without scrolling */
 @media (max-width: 800px) {
   .gc-sec-tab { font-size: 11px; letter-spacing: 0.01em; padding: 6px 6px; }
+  .gc-ed-spark, .gc-ed-curr, .gc-ed-custom { font-size: 11px; padding: 4px 6px; gap: 3px; }
+  .gc-ed-tab { font-size: 10.5px; padding: 3px 7px; }
+  .gc-navbar { gap: 0; }
 }
 `;
