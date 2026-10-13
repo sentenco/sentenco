@@ -1196,8 +1196,8 @@ const CSS = `
   color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px;
   display: flex; align-items: center; justify-content: center;
 }
-.cm-avatar--sm { width: 34px; height: 34px; font-size: 12.5px; }
-.cm-avatar--xs { width: 26px; height: 26px; font-size: 10.5px; }
+.cm-avatar--sm { width: 40px; height: 40px; font-size: 14px; }
+.cm-avatar--xs { width: 30px; height: 30px; font-size: 12px; }
 
 .cm-btn {
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px;
@@ -1221,11 +1221,11 @@ const CSS = `
 .cm-post.is-focused { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,42,74,0.14); }
 .cm-post-head { display: flex; align-items: center; gap: 10px; }
 .cm-post-headline { display: flex; align-items: center; flex-wrap: wrap; row-gap: 4px; gap: 6px; min-width: 0; }
-.cm-post-author { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cm-post-author { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .cm-post-author--link { background: none; border: none; padding: 0; cursor: pointer; }
 .cm-post-author--link:hover { color: var(--coral); text-decoration: underline; }
 .cm-post-dot { color: var(--muted); font-size: 12px; }
-.cm-post-time { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.cm-post-time { font-size: 13px; color: var(--muted); white-space: nowrap; }
 .cm-post-text { font-size: 14.5px; line-height: 1.6; color: var(--ink); margin: 10px 0 10px; white-space: pre-wrap; }
 
 .cm-post-image-link { display: block; margin: 0 0 10px; }
@@ -1281,10 +1281,10 @@ const CSS = `
 .cm-comment { display: flex; align-items: flex-start; gap: 8px; }
 .cm-comment-body { flex: 1; }
 .cm-comment-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
-.cm-comment-author { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 12px; color: var(--ink); }
+.cm-comment-author { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14.5px; color: var(--ink); }
 .cm-comment-author--link { background: none; border: none; padding: 0; cursor: pointer; }
 .cm-comment-author--link:hover { color: var(--coral); text-decoration: underline; }
-.cm-comment-time { font-size: 10.5px; color: var(--muted); }
+.cm-comment-time { font-size: 12px; color: var(--muted); }
 .cm-comment-text { font-size: 13px; line-height: 1.45; color: var(--ink); margin: 0; }
 .cm-comment-composer { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
 .cm-comment-input {
