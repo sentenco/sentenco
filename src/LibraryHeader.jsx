@@ -114,6 +114,10 @@ function HomeIcon() {
 // in place of the section tab rows.
 const DOCK_CSS = `
 .gc-topbar-left { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.gc-topbar.has-dock { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; }
+.gc-topbar.has-dock .gc-topbar-actions { justify-self: end; }
+.gc-dock-bellwrap { position: relative; display: flex; }
+.gc-dock-bellbtn { padding: 8px 12px; }
 .gc-dock { display: flex; gap: 4px; background: #F1F3F8; border-radius: 999px; padding: 4px; }
 .gc-dock-btn { border: none; background: none; border-radius: 999px; padding: 8px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: #8B84A3; display: flex; align-items: center; gap: 7px; cursor: pointer; transition: color 0.15s, background 0.15s; }
 .gc-dock-btn { position: relative; }
@@ -129,7 +133,7 @@ const DOCK_CSS = `
   .gc-dock-btn span { display: none; }
   .gc-dock-btn.is-on span { display: inline; }
 }
-@media (max-width: 520px) { .gc-dock { display: none; } }
+@media (max-width: 520px) { .gc-dock-btn:not(.gc-dock-bellbtn) { display: none; } .gc-dock { background: none; padding: 0; } }
 `;
 
 export default function LibraryHeader() {
@@ -162,6 +166,7 @@ export default function LibraryHeader() {
   const onConvo = location.pathname.startsWith("/library/messages");
   const onNetwork = location.pathname.startsWith("/library/network");
   const hideNav = onConvo || onNetwork || location.pathname.startsWith("/library/teacher/");
+  const dockMode = hideNav && !!user;
   const onMyProfile = onNetwork || (!!user && location.pathname === `/library/teacher/${user.id}`);
 
   useEffect(() => {
@@ -282,23 +287,42 @@ export default function LibraryHeader() {
     navigate(q ? `/library?q=${encodeURIComponent(q)}` : "/library");
   }
 
+  // The bell and its panel. On the social pages it lives inside the centered switcher; elsewhere it sits on the right.
+  const bellNode = (inDock) => (
+    <div className={`notif-wrap${inDock ? " gc-dock-bellwrap" : ""}`} ref={notifWrapRef}>
+      <button
+        type="button"
+        className={inDock ? `gc-dock-btn gc-dock-bellbtn${notifOpen ? " is-on" : ""}` : `notif-btn${unreadNotifCount > 0 ? " has-unread" : ""}`}
+        onClick={openNotifPanel}
+        aria-label="Notifications"
+        aria-expanded={notifOpen}
+        title="Notifications"
+      >
+        <BellIcon />
+        {unreadNotifCount > 0 && (inDock ? <i className="gc-dock-dot" aria-label="Unread notifications" /> : <span className="notif-dot" />)}
+      </button>
+      {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onRead={markNotificationRead} onMarkAll={markAllNotificationsRead} />}
+    </div>
+  );
+
   return (
     <>
       <style>{LIBRARY_CSS}{DOCK_CSS}</style>
       <header className="gc-band">
-        <div className="gc-topbar">
+        <div className={`gc-topbar${dockMode ? " has-dock" : ""}`}>
           <div className="gc-topbar-left">
             <a href="/library" className="gc-header-brand" onClick={(e) => { e.preventDefault(); navigate("/library"); }}>
               <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
             </a>
-            {hideNav && user && (
-              <nav className="gc-dock" aria-label="Social pages">
-                <button type="button" className="gc-dock-btn" onClick={() => navigate("/library")}><HomeIcon /><span>Homeroom</span></button>
-                <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span>{unreadMessageCount > 0 && <i className="gc-dock-dot" aria-label="Unread messages" />}</button>
-                <button type="button" className={`gc-dock-btn${onMyProfile ? " is-on" : ""}`} onClick={() => navigate(`/library/teacher/${user.id}`)} aria-current={onMyProfile ? "page" : undefined}><UserIcon /><span>Profile</span></button>
-              </nav>
-            )}
           </div>
+          {dockMode && (
+            <nav className="gc-dock" aria-label="Social pages">
+              <button type="button" className="gc-dock-btn" onClick={() => navigate("/library")}><HomeIcon /><span>Homeroom</span></button>
+              <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span>{unreadMessageCount > 0 && <i className="gc-dock-dot" aria-label="Unread messages" />}</button>
+              <button type="button" className={`gc-dock-btn${onMyProfile ? " is-on" : ""}`} onClick={() => navigate(`/library/teacher/${user.id}`)} aria-current={onMyProfile ? "page" : undefined}><UserIcon /><span>Profile</span></button>
+              {bellNode(true)}
+            </nav>
+          )}
           <div className="gc-topbar-actions">
             {/* The search bar lives only in the Homeroom (the main Library page). */}
             {false && (
@@ -395,19 +419,7 @@ export default function LibraryHeader() {
                     {unreadMessageCount > 0 && <span className="notif-dot" />}
                   </button>
                 )}
-                <div className="notif-wrap" ref={notifWrapRef}>
-                  <button
-                    type="button"
-                    className={`notif-btn${unreadNotifCount > 0 ? " has-unread" : ""}`}
-                    onClick={openNotifPanel}
-                    aria-label="Notifications"
-                    aria-expanded={notifOpen}
-                  >
-                    <BellIcon />
-                    {unreadNotifCount > 0 && <span className="notif-dot" />}
-                  </button>
-                  {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onRead={markNotificationRead} onMarkAll={markAllNotificationsRead} />}
-                </div>
+                {!dockMode && bellNode(false)}
                 <div className="account-wrap">
                   <button className="avatar-btn" onClick={() => setMenuOpen((m) => !m)} aria-label="Account menu">
                     {avatarUrl ? <img src={avatarUrl} alt="" className="avatar-btn-img" /> : <UserIcon />}
