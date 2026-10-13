@@ -8,6 +8,7 @@ import AuthForm from "./AuthForm";
 import ProfileSettings, { teachingBadge } from "./ProfileSettings.jsx";
 import { supabase } from "./supabaseClient";
 import NotificationPanel from "./NotificationPanel.jsx";
+import { DOCK_CSS } from "./HeaderDock.jsx";
 import CurriculumRouter from "./CurriculumRouter";
 import TrackLevelPage from "./TrackLevelPage";
 import SparkHub from "./SparkHub";
@@ -1863,10 +1864,10 @@ export default function Library() {
   return (
     <>
     <div className={`page ${isPro ? "theme-pro" : "theme-fun"}`}>
-      <style>{CSS}</style>
+      <style>{CSS}{DOCK_CSS}</style>
 
       <header className="gc-band">
-        <div className="gc-topbar">
+        <div className={`gc-topbar${user ? " has-dock" : ""}`}>
           <a
             href="/library"
             className="gc-header-brand"
@@ -1875,7 +1876,7 @@ export default function Library() {
             <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
-            {showSearch && (
+            {false && showSearch && (
             <div className={`gc-search ${searchMode ? "has-mode" : ""}${searchOpen || query ? " is-open" : ""}`} ref={searchWrapRef}>
               <div className="gc-search-icon-wrap">
                 {LOOKUP_TOOLS_ENABLED ? (
@@ -1969,29 +1970,43 @@ export default function Library() {
               </>
             ) : (
               <>
-                <button
-                  type="button"
-                  className={`notif-btn${unreadMessageCount > 0 ? " has-unread" : ""}`}
-                  onClick={() => navigate("/library/messages")}
-                  aria-label="Convo"
-                  title="Convo"
-                >
-                  <ChatIcon />
-                  {unreadMessageCount > 0 && <span className="notif-dot" />}
-                </button>
-                <div className="notif-wrap" ref={notifWrapRef}>
-                  <button
-                    type="button"
-                    className={`notif-btn${unreadNotifCount > 0 ? " has-unread" : ""}`}
-                    onClick={openNotifPanel}
-                    aria-label="Notifications"
-                    aria-expanded={notifOpen}
-                  >
-                    <BellIcon />
-                    {unreadNotifCount > 0 && <span className="notif-dot" />}
+                {showSearch && searchOpen && (
+                  <input
+                    ref={searchInputRef}
+                    className="gc-hsearch-input"
+                    type="text"
+                    placeholder="Search teachers and posts…"
+                    value={query}
+                    onChange={(e) => {
+                      setQuery(e.target.value);
+                      setPage(1);
+                      if (isCurriculum) goToSidebar("library");
+                    }}
+                    onKeyDown={(e) => { if (e.key === "Escape") { setQuery(""); setSearchOpen(false); } }}
+                    onBlur={() => { if (!query) setSearchOpen(false); }}
+                  />
+                )}
+                <nav className="gc-dock" aria-label="Social pages">
+                  {showSearch && (
+                    <button type="button" className={`gc-dock-btn${searchOpen || query ? " is-on" : ""}`} onClick={() => setSearchOpen((o) => !o)} aria-expanded={searchOpen} aria-label="Search teachers and posts" title="Search teachers and posts">
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><circle cx="9" cy="9" r="6.2" /><line x1="13.6" y1="13.6" x2="18" y2="18" /></svg>
+                      <span>Search</span>
+                    </button>
+                  )}
+                  <button type="button" className="gc-dock-btn" onClick={() => navigate("/library/messages")}>
+                    <ChatIcon /><span>Convo</span>{unreadMessageCount > 0 && <i className="gc-dock-dot" aria-label="Unread messages" />}
                   </button>
-                  {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onRead={markNotificationRead} onMarkAll={markAllNotificationsRead} />}
-                </div>
+                  <button type="button" className="gc-dock-btn" onClick={() => navigate(`/library/teacher/${user.id}`)}>
+                    <UserIcon /><span>Profile</span>
+                  </button>
+                  <div className="notif-wrap gc-dock-bellwrap" ref={notifWrapRef}>
+                    <button type="button" className={`gc-dock-btn gc-dock-bellbtn${notifOpen ? " is-on" : ""}`} onClick={openNotifPanel} aria-label="Notifications" aria-expanded={notifOpen} title="Notifications">
+                      <BellIcon />
+                      {unreadNotifCount > 0 && <i className="gc-dock-dot" aria-label="Unread notifications" />}
+                    </button>
+                    {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onRead={markNotificationRead} onMarkAll={markAllNotificationsRead} />}
+                  </div>
+                </nav>
                 <div className="account-wrap">
                   <button className="avatar-btn" onClick={() => setMenuOpen((m) => !m)} aria-label="Account menu">
                     {avatarUrl ? <img src={avatarUrl} alt="" className="avatar-btn-img" /> : <UserIcon />}
