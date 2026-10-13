@@ -5,7 +5,7 @@ import { SUPPORT_EMAIL } from "./siteConfig.js";
 import { useNavigate, useParams, useLocation, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
-import ProfileSettings from "./ProfileSettings.jsx";
+import ProfileSettings, { teachingBadge } from "./ProfileSettings.jsx";
 import { supabase } from "./supabaseClient";
 import { timeAgo } from "./slideDeckTypes";
 import CurriculumRouter from "./CurriculumRouter";
@@ -971,6 +971,17 @@ function TodayFeature({ navigate }) {
   const [postCount, setPostCount] = useState(0);
   const [commentCount, setCommentCount] = useState(0);
   const [likeCount, setLikeCount] = useState(0);
+  const [stats, setStats] = useState({ tipsShared: 0, dayStreak: 0, totalTeachers: null });
+  const [me, setMe] = useState(null);
+  const [deskSheetOpen, setDeskSheetOpen] = useState(false);
+
+  useEffect(() => {
+    if (!user) { setMe(null); return; }
+    let off = false;
+    supabase.from("profiles").select("display_name, avatar_url, country, years_teaching").eq("id", user.id).maybeSingle()
+      .then(({ data }) => { if (!off) setMe(data || null); });
+    return () => { off = true; };
+  }, [user]);
 
   useEffect(() => {
     if (!user) { setPostCount(0); setCommentCount(0); setLikeCount(0); return; }
@@ -1018,102 +1029,108 @@ function TodayFeature({ navigate }) {
   const deskUnlocked = plan !== "free" || postCount + commentCount + likeCount >= 3;
   const deskProgress = postCount + commentCount + likeCount;
 
-  const today = new Date();
-  const dayIndex = daysSince(today);
-  const total = DAILY_CORRECTIONS.length;
-  const headlineIdx = ((dayIndex % total) + total) % total;
-  const headline = DAILY_CORRECTIONS[headlineIdx];
-  const briefIdxs = pickDeterministic(total, headlineIdx, 2);
-  const briefs = briefIdxs.map((i) => DAILY_CORRECTIONS[i]);
-
   const deskLockTitle = deskUnlocked ? undefined : `Post, comment, or like 3 times in Homeroom today to unlock. You're at ${deskProgress}/3 today.`;
 
-  const toolkit = (
-    <>
-      <div className="td-section-label">Teacher's Desk</div>
+  const DESK_TOOLS = [
+    { key: "feedback", label: "Lesson Feedback", icon: todayFeedbackIcon, run: openFeedbackGenerator },
+    { key: "wheel", label: "Spin the Wheel", icon: todayWheelIcon, run: openWheel },
+    { key: "notebook", label: "Digital Notebook", icon: todayNotebookIcon, run: () => navigate("/library/notebook") },
+    { key: "syllabus", label: "Syllabus Generator", icon: todaySyllabusIcon, run: () => navigate("/library/syllabus") },
+  ];
+  const needsUnlock = plan === "free";
+  const progressPct = Math.round((Math.min(deskProgress, 3) / 3) * 100);
+  const deskStatus = !needsUnlock ? "Open for you" : deskUnlocked ? "Unlocked today" : `${Math.min(deskProgress, 3)} of 3 to unlock`;
+  const myName = me?.display_name || localStorage.getItem("sentenco_teacher_name") || "";
+  const myYears = me?.years_teaching;
+  const myBadge = teachingBadge(myYears);
+  const mySub = [me?.country, myYears === null || myYears === undefined || myYears === "" ? "" : (Number(myYears) < 1 ? "New to teaching" : `${myYears} ${Number(myYears) === 1 ? "year" : "years"} teaching`)].filter(Boolean).join(" \u00B7 ");
+  const myInitials = ((myName.trim().split(/\s+/)[0]?.[0] || "T") + (myName.trim().split(/\s+/)[1]?.[0] || "")).toUpperCase();
 
-      {!deskUnlocked && (
-        <p className="td-desk-lock-note">
-          <LockIcon /> Post, comment, or like 3 times in Homeroom today to unlock. You're at {deskProgress}/3 today.
-        </p>
-      )}
-
-      <div className={`td-actions-grid${deskUnlocked ? "" : " is-locked"}`}>
-        <button type="button" className="td-action-card" onClick={deskUnlocked ? openFeedbackGenerator : undefined} aria-disabled={!deskUnlocked} title={deskLockTitle}>
-          {!deskUnlocked && <span className="td-action-lock"><LockIcon /></span>}
-          <div className="td-action-icon"><img src={todayFeedbackIcon} alt="" /></div>
-          <div className="td-action-title">Lesson Feedback</div>
+  const deskList = (
+    <div className="tsq-desk-list">
+      {DESK_TOOLS.map((t) => (
+        <button
+          type="button"
+          key={t.key}
+          className={`tsq-tool${deskUnlocked ? "" : " is-locked"}`}
+          onClick={() => { if (deskUnlocked) { setDeskSheetOpen(false); t.run(); } }}
+          aria-disabled={!deskUnlocked}
+          title={deskLockTitle}
+        >
+          <span className="tsq-tool-icon"><img src={t.icon} alt="" /></span>
+          <span className="tsq-tool-name">{t.label}</span>
+          {!deskUnlocked && <span className="tsq-tool-lock"><LockIcon /></span>}
         </button>
-        <button type="button" className="td-action-card" onClick={deskUnlocked ? openWheel : undefined} aria-disabled={!deskUnlocked} title={deskLockTitle}>
-          {!deskUnlocked && <span className="td-action-lock"><LockIcon /></span>}
-          <div className="td-action-icon"><img src={todayWheelIcon} alt="" /></div>
-          <div className="td-action-title">Spin the Wheel</div>
-        </button>
-        <button type="button" className="td-action-card" onClick={deskUnlocked ? () => navigate("/library/notebook") : undefined} aria-disabled={!deskUnlocked} title={deskLockTitle}>
-          {!deskUnlocked && <span className="td-action-lock"><LockIcon /></span>}
-          <div className="td-action-icon"><img src={todayNotebookIcon} alt="" /></div>
-          <div className="td-action-title">Digital Notebook</div>
-        </button>
-        <button type="button" className="td-action-card" onClick={deskUnlocked ? () => navigate("/library/syllabus") : undefined} aria-disabled={!deskUnlocked} title={deskLockTitle}>
-          {!deskUnlocked && <span className="td-action-lock"><LockIcon /></span>}
-          <div className="td-action-icon"><img src={todaySyllabusIcon} alt="" /></div>
-          <div className="td-action-title">Syllabus Generator</div>
-        </button>
-      </div>
-    </>
+      ))}
+    </div>
   );
+  const deskMeter = needsUnlock && (
+    <div className="tsq-meter" aria-label={`Unlock progress, ${deskStatus}`}>
+      <i style={{ width: `${progressPct}%` }} />
+    </div>
+  );
+  const ring = (() => {
+    const c = 2 * Math.PI * 10;
+    const p = needsUnlock ? Math.min(deskProgress, 3) / 3 : 1;
+    return (
+      <svg className="tsq-ring" viewBox="0 0 26 26" aria-hidden="true">
+        <circle cx="13" cy="13" r="10" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="4" />
+        <circle cx="13" cy="13" r="10" fill="none" stroke="#FF6B4A" strokeWidth="4" strokeLinecap="round" strokeDasharray={`${(c * p).toFixed(1)} ${c.toFixed(1)}`} />
+      </svg>
+    );
+  })();
 
   return (
-    <div className="gc-dashboard">
-      <div className="td-body">
-      <div className="td-main">
-        <CommunityFeed afterStats={toolkit} onActivity={handleCommunityActivity} />
-
-        <div className="td-quote-banner">
-          <img src={todayQuoteBanner} alt="Every lesson is a chance to make a difference." />
-        </div>
-      </div>
-
-      <aside className="gc-sidebar">
-        <div className="td-brief-panel">
-          <div className="td-brief-clock">
-            <DigitalClock />
-          </div>
-
-          <div className="td-brief-section">
-            <div className="td-dc-label">
-              <span className="td-dc-badge"><PencilIcon /></span>
-              Daily Correction
-            </div>
-            <h2 className="td-dc-headline">
-              <span className="td-dc-quote">&#10078;</span>
-              <CorrectionLine segments={headline.sentence} />
-            </h2>
-            <div className="td-dc-why">
-              {headline.explain.map((line, i) => (
-                <p className="td-dc-explain" key={i}>{line}</p>
-              ))}
-            </div>
-          </div>
-
-          <div className="td-brief-list">
-            <div className="td-brief-list-label">More corrections today</div>
-            {briefs.map((b) => (
-              <div className={`td-brief-row hue-${b.hue === "grammar" ? "coral" : b.hue === "vocab" ? "gold" : "teal"}`} key={b.id}>
-                <span className="td-brief-dot" />
-                <div className="td-brief-row-body">
-                  <div className="td-brief-label">{b.category}</div>
-                  <p className="td-brief-line"><CorrectionLine segments={b.sentence} /></p>
-                </div>
-                <div className="td-brief-pop">
-                  {b.explain.map((line, i) => <p key={i}>{line}</p>)}
-                </div>
+    <div className="gc-dashboard tsq">
+      <div className="tsq-cols">
+        <aside className="tsq-left">
+          {user && (
+            <div className="tsq-card tsq-me">
+              <span className="tsq-me-avatar">{me?.avatar_url ? <img src={me.avatar_url} alt="" /> : myInitials}</span>
+              <h3>{myName || "Teacher"}</h3>
+              {mySub && <p className="tsq-me-sub">{mySub}</p>}
+              {myBadge && <img className="tsq-me-badge" src={myBadge.img} alt={myBadge.label} title={myBadge.label} />}
+              <div className="tsq-me-stats">
+                <span><strong>{stats.tipsShared}</strong> Tips shared</span>
+                <span><strong>{stats.dayStreak}</strong> Day streak</span>
+                {user.email?.toLowerCase() === "caldrin1999@gmail.com" && stats.totalTeachers !== null && <span><strong>{stats.totalTeachers}</strong> Teachers</span>}
               </div>
-            ))}
+              <button type="button" className="tsq-btn" onClick={() => navigate(`/library/teacher/${user.id}`)}>View my profile</button>
+            </div>
+          )}
+          <div className="tsq-card tsq-desk">
+            <div className="tsq-eyebrow">Teacher's Desk</div>
+            {deskMeter}
+            <div className="tsq-desk-status">{deskStatus}</div>
+            {!deskUnlocked && <p className="tsq-desk-note">Post, comment, or like 3 times in Homeroom today to unlock.</p>}
+            {deskList}
+          </div>
+        </aside>
+
+        <div className="tsq-feed">
+          <CommunityFeed onActivity={handleCommunityActivity} onStats={setStats} />
+        </div>
+      </div>
+
+      <button type="button" className="tsq-fab" onClick={() => setDeskSheetOpen(true)}>
+        {ring}
+        Teacher's Desk
+      </button>
+      {deskSheetOpen && (
+        <div className="tsq-sheet-back" onClick={() => setDeskSheetOpen(false)}>
+          <div className="tsq-sheet" role="dialog" aria-label="Teacher's Desk" onClick={(e) => e.stopPropagation()}>
+            <div className="tsq-grab" />
+            <div className="tsq-sheet-head">
+              <h3>Teacher's Desk</h3>
+              <span>{deskStatus}</span>
+            </div>
+            {deskMeter}
+            {!deskUnlocked && <p className="tsq-desk-note">Post, comment, or like 3 times in Homeroom today to unlock.</p>}
+            {deskList}
+            <button type="button" className="tsq-btn tsq-btn--soft" onClick={() => setDeskSheetOpen(false)}>Close</button>
           </div>
         </div>
-      </aside>
-      </div>
+      )}
     </div>
   );
 }
@@ -2075,7 +2092,7 @@ export default function Library() {
         </div>
       </header>
 
-      <div className="body-wrap">
+      <div className={`body-wrap${!isCurriculum && !isSpark && !isArticleReader && category === "All" && !query.trim() ? " body-wrap--home" : ""}`}>
       {isArticleReader ? (
         <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
           <ArticleReader />
@@ -2493,6 +2510,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   font-family: 'Inter', sans-serif;
 }
 
+.body-wrap--home { background: #F6EFE6; }
 .body-wrap {
   display: flex;
   flex: 1;
@@ -2851,6 +2869,50 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   margin: 0; line-height: 1.3;
 }
 .td-desk-lock-note svg { width: 13px; height: 13px; color: var(--coral); flex-shrink: 0; }
+
+/* ── Town Square Homeroom ── */
+.gc-dashboard.tsq { max-width: 1060px; position: relative; }
+.tsq-cols { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 18px; align-items: start; }
+.tsq-left { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 0; }
+.tsq-feed { min-width: 0; }
+.tsq-card { background: #fff; border-radius: 22px; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); padding: 20px 18px; }
+.tsq-me { text-align: center; }
+.tsq-me-avatar { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; margin: 0 auto 10px; background: #1B2A4A; color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 4px #fff, 0 0 0 6px #FDECE5; }
+.tsq-me-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.tsq-me h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; margin: 0; color: #2B2A4A; }
+.tsq-me-sub { margin: 3px 0 0; font-size: 12.5px; font-weight: 600; color: #8B84A3; }
+.tsq-me-badge { height: 24px; width: auto; margin-top: 8px; }
+.tsq-me-stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 16px; margin: 12px 0; font-size: 12px; font-weight: 600; color: #8B84A3; }
+.tsq-me-stats strong { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #2B2A4A; margin-right: 3px; }
+.tsq-btn { width: 100%; border: none; background: #FDECE5; color: #E0502F; border-radius: 999px; padding: 10px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; }
+.tsq-btn:hover { background: #fbdcd0; }
+.tsq-eyebrow { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8B84A3; font-weight: 700; margin: 0 6px; }
+.tsq-meter { height: 8px; border-radius: 999px; background: #F6EFE6; overflow: hidden; margin: 8px 6px 2px; }
+.tsq-meter i { display: block; height: 100%; background: #FF6B4A; border-radius: 999px; transition: width 0.3s ease; }
+.tsq-desk-status { font-size: 12px; font-weight: 700; color: #8B84A3; margin: 6px 6px 8px; }
+.tsq-desk-note { font-size: 12.5px; line-height: 1.45; color: #8B84A3; font-weight: 600; margin: 0 6px 10px; }
+.tsq-desk-list { display: flex; flex-direction: column; gap: 2px; }
+.tsq-tool { display: flex; align-items: center; gap: 12px; width: 100%; border: none; background: none; text-align: left; padding: 8px 8px; border-radius: 14px; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: #2B2A4A; }
+.tsq-tool:hover { background: #FBF7F1; }
+.tsq-tool.is-locked { opacity: 0.55; cursor: default; }
+.tsq-tool-icon { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: #F6EFE6; }
+.tsq-tool-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tsq-tool-lock { margin-left: auto; color: #8B84A3; display: flex; }
+.tsq-tool-lock svg { width: 14px; height: 14px; }
+.tsq-fab, .tsq-sheet-back { display: none; }
+.tsq-ring { width: 26px; height: 26px; transform: rotate(-90deg); }
+@media (max-width: 1000px) {
+  .tsq-cols { grid-template-columns: minmax(0, 1fr); }
+  .tsq-left { display: none; }
+  .tsq-fab { display: flex; position: fixed; right: 18px; bottom: 18px; z-index: 40; border: none; background: #1B2A4A; color: #fff; border-radius: 999px; padding: 12px 18px 12px 14px; align-items: center; gap: 10px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: 0 12px 28px -10px rgba(27,42,74,0.55); }
+  .tsq-sheet-back { display: flex; position: fixed; inset: 0; z-index: 60; background: rgba(43,42,74,0.35); align-items: flex-end; }
+  .tsq-sheet { background: #fff; width: 100%; max-height: 85vh; overflow-y: auto; border-radius: 26px 26px 0 0; padding: 14px 18px 22px; }
+  .tsq-grab { width: 44px; height: 5px; border-radius: 4px; background: rgba(43,42,74,0.1); margin: 0 auto 14px; }
+  .tsq-sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .tsq-sheet-head h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; margin: 0; }
+  .tsq-sheet-head span { font-size: 12.5px; font-weight: 700; color: #8B84A3; }
+  .tsq-btn--soft { margin-top: 12px; }
+}
 
 /* ── Quote banner ── */
 .td-quote-banner { border-radius: 24px; overflow: hidden; line-height: 0; }

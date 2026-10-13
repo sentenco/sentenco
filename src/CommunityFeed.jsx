@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
 import { teachingBadge } from "./ProfileSettings.jsx";
 import { timeAgo } from "./slideDeckTypes";
-import communityBannerImg from "./assets/community/banner.jpg";
+import { promptOfTheDay } from "./homeroomPrompts";
 import ConfirmDialog from "./ConfirmDialog";
 import { customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
@@ -179,7 +179,7 @@ function Avatar({ name, email, size }) {
 // Self-contained Community feed (banner, stats, composer, posts) -- shared by
 // the dedicated /library/community page and the Today page, which now
 // embeds this directly in place of the old greeting hero.
-export default function CommunityFeed({ afterStats, focusPostId, onActivity } = {}) {
+export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats } = {}) {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
@@ -200,6 +200,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingFile, setUploadingFile] = useState(false);
   const [uploadError, setUploadError] = useState(null);
+  const [filter, setFilter] = useState("all");
 
   // "Share" on a custom lesson sends the teacher here (?shareLesson=slug): the lesson is attached
   // to the composer, they write their post, and it is shared when they press Post.
@@ -248,6 +249,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
   const [totalTeachers, setTotalTeachers] = useState(null);
   const tipsShared = posts.filter((p) => p.post_type === "tip").length;
   const dayStreak = computeDayStreak(realPosts);
+
+  useEffect(() => {
+    onStats?.({ tipsShared, dayStreak, totalTeachers });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tipsShared, dayStreak, totalTeachers]);
 
   // Real total signup count, independent of login state -- unlike posts,
   // likes, and comments below, this must be visible to logged-out
@@ -508,30 +514,6 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
   return (
     <div className="cmf-shell">
       <style>{CSS}</style>
-      <div className="cm-banner-block">
-        <img
-          className="cm-banner-img"
-          src={communityBannerImg}
-          alt="Illustration of teachers around the world connecting over Sentenco"
-        />
-        <div className="cm-stats">
-          {isAdmin && (
-            <div className="cm-stat">
-              <PeopleIcon />
-              <span className="cm-stat-text"><strong>{totalTeachers ?? "—"}</strong> Teachers</span>
-            </div>
-          )}
-          <div className="cm-stat">
-            <BulbIcon />
-            <span className="cm-stat-text"><strong>{tipsShared}</strong> Tips Shared</span>
-          </div>
-          <div className="cm-stat">
-            <FlameIcon />
-            <span className="cm-stat-text"><strong>{dayStreak}</strong> Day Streak</span>
-          </div>
-        </div>
-      </div>
-
       {profile?.company_id && (
         <div className="cm-scope-switch">
           <button
@@ -643,6 +625,35 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
         </div>
       )}
 
+      {user && (
+        <div className="cm-prompt">
+          <span className="cm-prompt-ic"><BulbIcon /></span>
+          <div className="cm-prompt-text">
+            <strong>Prompt of the day</strong>
+            <span>{promptOfTheDay()}</span>
+          </div>
+          <button
+            type="button"
+            className="cm-btn"
+            onClick={() => {
+              setDraft((d) => d || `${promptOfTheDay()}\n\n`);
+              composerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+              setTimeout(() => composerRef.current?.querySelector("textarea")?.focus(), 150);
+            }}
+          >
+            Answer
+          </button>
+        </div>
+      )}
+
+      <div className="cm-filters" role="tablist" aria-label="Filter posts">
+        {[["all", "All"], ["tip", "Tips"], ["question", "Questions"], ["resource", "Resources"]].map(([key, label]) => (
+          <button type="button" role="tab" aria-selected={filter === key} key={key} className={`cm-filter${filter === key ? " is-active" : ""}`} onClick={() => setFilter(key)}>
+            {label}
+          </button>
+        ))}
+      </div>
+
       {shareNote && <p className="cm-upload-error" style={{ color: "#1F7A47", background: "#E3F5EA", borderRadius: 10, padding: "10px 14px" }} role="status">{shareNote}</p>}
 
       <div className="cm-feed">
@@ -653,7 +664,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
             No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!
           </p>
         ) : (
-          posts.map((p) => {
+          (filter === "all" ? posts : posts.filter((p) => p.post_type === filter)).map((p) => {
             const isOpen = expanded.has(p.id);
             const comments = commentsByPost[p.id] || [];
             const canManage = user && (p.author_id === user.id || isAdmin);
@@ -1037,4 +1048,47 @@ const CSS = `
   font: inherit; font-size: 12.5px; color: var(--ink); background: #FDFCFA;
 }
 .cm-comment-input:focus { outline: none; border-color: var(--coral); }
+
+/* Town Square: soft cards */
+.cmf-shell { gap: 14px; --sand: #F6EFE6; }
+.cm-composer { border: none; border-radius: 22px; overflow: visible; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); }
+.cm-composer::before { display: none; }
+.cm-composer-head { background: none; padding: 18px 20px 0; }
+.cm-composer-greeting { font-size: 16px; }
+.cm-composer-input { background: transparent; padding: 10px 20px 8px; font-size: 15px; font-weight: 600; line-height: 1.5; }
+.cm-composer-foot { padding: 0 20px 16px; }
+.cm-composer-row { border-top: none; padding-top: 4px; }
+.cm-type-pill { background: var(--sand); border: none; padding: 7px 13px 7px 11px; font-size: 13px; }
+.cm-type-pill:hover { background: var(--coral-pale); color: #E0502F; }
+.cm-type-pill.is-active { background: var(--coral-pale); color: #E0502F; }
+.cm-attach-btn { border: none; background: var(--sand); }
+.cm-composer-actions .cm-btn { background: var(--coral); }
+.cm-composer-actions .cm-btn:not(:disabled):hover { background: #E0502F; }
+.cm-btn:hover:not(:disabled) { background: #E0502F; }
+.cm-prompt { display: flex; align-items: center; gap: 14px; background: #E4F3EA; border-radius: 20px; padding: 14px 18px; }
+.cm-prompt-ic { width: 44px; height: 44px; border-radius: 14px; background: #fff; color: #1F6B45; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cm-prompt-ic svg { width: 22px; height: 22px; }
+.cm-prompt-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cm-prompt-text strong { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; }
+.cm-prompt-text span { font-size: 13.5px; font-weight: 600; color: #3C6A52; }
+.cm-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.cm-filter { border: none; background: #fff; border-radius: 999px; padding: 7px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; box-shadow: 0 0 0 1px var(--hair); }
+.cm-filter.is-active { background: var(--navy); color: #fff; box-shadow: none; }
+.cm-feed { gap: 14px; }
+.cm-post { border: none; border-radius: 22px; padding: 18px 20px; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); }
+.cm-post.is-focused { box-shadow: 0 0 0 3px rgba(255,107,74,0.35); }
+.cm-post-head { align-items: center; }
+.cm-post-text { font-size: 14.5px; font-weight: 600; margin: 12px 0; }
+.cm-post-tag { margin-left: auto; font-size: 11.5px; padding: 2px 10px; }
+.cm-post-headline { flex: 1; }
+.cm-post-tag--tip { background: #FFF4D6; color: #7A5C0C; }
+.cm-post-tag--question { background: #E3F0FB; color: #1B4F7A; }
+.cm-post-tag--resource { background: var(--coral-pale); color: #E0502F; }
+.cm-post-lesson { border: none; border-radius: 16px; box-shadow: 0 0 0 1px var(--hair); background: #fff; }
+.cm-post-actions { border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 8px; gap: 6px; }
+.cm-action-btn { margin-left: 0; border-radius: 999px; padding: 6px 12px; }
+.cm-action-btn.is-liked { background: var(--coral-pale); }
+.cm-icon-btn { margin-left: 0; }
+.cm-comment-input { background: var(--sand); border: none; }
+.cm-signin-card { border: none; border-radius: 22px; box-shadow: 0 10px 28px -18px rgba(27,42,74,0.22); }
 `;
