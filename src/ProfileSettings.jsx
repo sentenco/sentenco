@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
+import AvatarCropper from "./AvatarCropper";
 import tier1Img from "./assets/community/badges/tier1-less-than-1yr.png";
 import tier2Img from "./assets/community/badges/tier2-1-2yrs.png";
 import tier3Img from "./assets/community/badges/tier3-3-5yrs.png";
@@ -62,6 +63,7 @@ export default function ProfileSettings({ onClose, onSaved }) {
   const [yearsTeaching, setYearsTeaching] = useState("");
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const [cropSrc, setCropSrc] = useState(null);   // photo being adjusted (object URL or public URL)
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
 
@@ -81,14 +83,42 @@ export default function ProfileSettings({ onClose, onSaved }) {
     })();
   }, [user]);
 
-  async function handleAvatarUpload(e) {
+  // Picking a file opens the adjust step; nothing uploads until "Use this photo".
+  function handleAvatarPick(e) {
     const file = e.target.files?.[0];
     e.target.value = "";
-    if (!file || !user) return;
+    if (!file) return;
     setError(null);
+    setCropSrc(URL.createObjectURL(file));
+  }
+
+  // Re-adjust the photo already on the profile. Fetched into memory first so the
+  // canvas is allowed to read it back.
+  async function adjustCurrent() {
+    if (!avatarUrl) return;
+    setError(null);
+    try {
+      const res = await fetch(avatarUrl);
+      if (!res.ok) throw new Error("fetch");
+      setCropSrc(URL.createObjectURL(await res.blob()));
+    } catch {
+      setError("Couldn't open your current photo. Choose it again from your device.");
+    }
+  }
+
+  function closeCropper() {
+    if (cropSrc) URL.revokeObjectURL(cropSrc);
+    setCropSrc(null);
+  }
+
+  async function handleCropDone(blob) {
+    if (!user) return;
+    closeCropper();
     setUploading(true);
-    const path = `${user.id}/avatar-${crypto.randomUUID()}-${file.name}`;
-    const { error: uploadError } = await supabase.storage.from("community-uploads").upload(path, file);
+    const path = `${user.id}/avatar-${crypto.randomUUID()}.jpg`;
+    const { error: uploadError } = await supabase.storage
+      .from("community-uploads")
+      .upload(path, blob, { contentType: "image/jpeg" });
     setUploading(false);
     if (uploadError) { setError(uploadError.message || "Photo upload failed."); return; }
     const { data: pub } = supabase.storage.from("community-uploads").getPublicUrl(path);
@@ -136,6 +166,8 @@ export default function ProfileSettings({ onClose, onSaved }) {
           <CloseIcon />
         </button>
 
+        {cropSrc && <AvatarCropper src={cropSrc} onCancel={closeCropper} onDone={handleCropDone} />}
+
         {loading ? (
           <p className="ps-loading">Loading…</p>
         ) : (
@@ -150,13 +182,16 @@ export default function ProfileSettings({ onClose, onSaved }) {
                 <span className="ps-avatar-overlay">
                   <CameraIcon />
                 </span>
-                <input type="file" accept="image/*" hidden onChange={handleAvatarUpload} disabled={uploading} />
+                <input type="file" accept="image/*" hidden onChange={handleAvatarPick} disabled={uploading} />
               </label>
               <h2 className="ps-name-preview">
                 Teacher {name.trim() || "…"}
                 {badge && <img className="ps-name-badge" src={badge.img} alt={badge.label} title={badge.label} />}
               </h2>
               <p className="ps-sub">{uploading ? "Uploading photo…" : "How other teachers see you in the Community"}</p>
+              {avatarUrl && !uploading && (
+                <button type="button" className="ps-adjust" onClick={adjustCurrent}>Adjust photo</button>
+              )}
             </div>
 
             <div className="ps-form">
@@ -301,6 +336,11 @@ const CSS = `
 .ps-badge-option.is-selected { border-color: var(--coral); background: var(--coral-pale); box-shadow: 0 0 0 2px var(--coral-pale); }
 .ps-badge-option.is-selected span { color: var(--coral); }
 
+.ps-adjust {
+  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 12.5px; color: var(--coral);
+  background: none; border: none; cursor: pointer; padding: 4px 8px; margin-top: 2px; border-radius: 8px;
+}
+.ps-adjust:hover { background: var(--coral-pale); }
 .ps-error { font-family: 'Quicksand', sans-serif; color: #C0392B; font-size: 12.5px; margin: 0; }
 .ps-save {
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px;
