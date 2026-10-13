@@ -6,7 +6,7 @@ import AuthForm from "./AuthForm";
 import { teachingBadge } from "./ProfileSettings.jsx";
 import { timeAgo } from "./slideDeckTypes";
 import ConfirmDialog from "./ConfirmDialog";
-import { customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
+import { CUSTOM_LESSONS, customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
 
 const ADMIN_EMAIL = "caldrin1999@gmail.com";
@@ -157,6 +157,13 @@ function CloseIcon() {
   );
 }
 
+const POST_PLACEHOLDERS = {
+  tip: "What worked for you this week?",
+  question: "What do you want to ask the teachers?",
+  resource: "What are you sharing, and who is it for?",
+  none: "Share a tip, ask a question, or add a resource…",
+};
+
 const POST_TYPES = [
   { key: "tip", label: "Tip", Icon: BulbIcon },
   { key: "question", label: "Question", Icon: QuestionIcon },
@@ -178,18 +185,6 @@ function Avatar({ name, email, size }) {
 // Self-contained Community feed (banner, stats, composer, posts) -- shared by
 // the dedicated /library/community page and the Today page, which now
 // embeds this directly in place of the old greeting hero.
-// True while the window is narrower than `px` (half-screen); used to fold the post box into one line.
-function useNarrow(px) {
-  const [narrow, setNarrow] = useState(() => typeof window !== "undefined" && window.matchMedia(`(max-width: ${px}px)`).matches);
-  useEffect(() => {
-    const mq = window.matchMedia(`(max-width: ${px}px)`);
-    const on = () => setNarrow(mq.matches);
-    mq.addEventListener("change", on);
-    return () => mq.removeEventListener("change", on);
-  }, [px]);
-  return narrow;
-}
-
 export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats, authorId, hideComposer } = {}) {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
@@ -211,8 +206,10 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingFile, setUploadingFile] = useState(false);
   const [uploadError, setUploadError] = useState(null);
-  const narrow = useNarrow(1000);
   const [composerOpen, setComposerOpen] = useState(false);
+  const [lessonMenuOpen, setLessonMenuOpen] = useState(false);
+  const imageInputRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   // "Share" on a custom lesson sends the teacher here (?shareLesson=slug): the lesson is attached
   // to the composer, they write their post, and it is shared when they press Post.
@@ -239,8 +236,17 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shareParam, user, lessonAccess.ready]);
 
+  const ownedLessons = CUSTOM_LESSONS.filter((l) => lessonAccess.access.get(l.slug)?.relation === "mine");
+
+  function openComposer(type) {
+    setPostType(type);
+    setComposerOpen(true);
+    setTimeout(() => composerRef.current?.querySelector("textarea")?.focus(), 60);
+  }
+
   function closeComposer() {
     setComposerOpen(false);
+    setLessonMenuOpen(false);
     setAttachedLesson(null);
     setDraft("");
     setPostType(null);
@@ -248,6 +254,16 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     setUploadedFile(null);
     setUploadError(null);
   }
+
+  useEffect(() => {
+    if (!lessonMenuOpen) return undefined;
+    function onDown(e) {
+      if (e.target.closest(".cm-lesson-wrap")) return;
+      setLessonMenuOpen(false);
+    }
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [lessonMenuOpen]);
 
   const [expanded, setExpanded] = useState(new Set());
   const [commentsByPost, setCommentsByPost] = useState({});
@@ -559,25 +575,40 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           <button type="button" className="cm-btn" onClick={() => setAuthMode("login")}>Log in</button>
         </div>
       ) : (
-        narrow && !composerOpen && !draft && !attachedLesson && !uploadedImage && !uploadedFile ? (
-        <div className="cm-composer cm-composer--fold" ref={composerRef}>
-          <button type="button" className="cm-fold" onClick={() => { setComposerOpen(true); setTimeout(() => composerRef.current?.querySelector("textarea")?.focus(), 50); }}>
-            <Avatar name={myName} email={user.email} />
-            <span className="cm-fold-fake">What's on your mind{myName ? `, ${myName}` : ""}?</span>
-          </button>
-        </div>
-        ) : (
-        <div className="cm-composer" ref={composerRef}>
-          <div className="cm-composer-head">
-            <Avatar name={myName} email={user.email} />
-            <div className="cm-composer-head-text">
-              <p className="cm-composer-greeting">What's on your mind{myName ? `, ${myName}` : ""}?</p>
+        <>
+          <input ref={imageInputRef} type="file" accept="image/*" hidden onChange={handleImageUpload} disabled={uploadingImage} />
+          <input ref={fileInputRef} type="file" hidden onChange={handleFileUpload} disabled={uploadingFile} />
+          {!(composerOpen || draft || attachedLesson || uploadedImage || uploadedFile) ? (
+            <div className="cm-composer cm-composer--closed" ref={composerRef}>
+              <div className="cm-cl-top">
+                <Avatar name={myName} email={user.email} />
+                <button type="button" className="cm-cl-fake" onClick={() => openComposer(null)}>
+                  What's on your mind{myName ? `, ${myName}` : ""}?
+                </button>
+              </div>
+              <div className="cm-cl-actions">
+                <button type="button" className="cm-cl-act cm-cl-act--tip" onClick={() => openComposer("tip")}><BulbIcon /><span>Tip</span></button>
+                <button type="button" className="cm-cl-act cm-cl-act--question" onClick={() => openComposer("question")}><QuestionIcon /><span>Question</span></button>
+                <button type="button" className="cm-cl-act cm-cl-act--resource" onClick={() => openComposer("resource")}><LinkIcon /><span>Resource</span></button>
+                <button type="button" className="cm-cl-act cm-cl-act--photo" onClick={() => { openComposer(postType); setTimeout(() => imageInputRef.current?.click(), 50); }}><ImageIcon /><span>Photo</span></button>
+                {ownedLessons.length > 0 && (
+                  <button type="button" className="cm-cl-act cm-cl-act--lesson" onClick={() => { openComposer("resource"); setLessonMenuOpen(true); }}><FileIcon /><span>Lesson</span></button>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="cm-composer cm-composer--open" ref={composerRef}>
+              <div className="cm-co-head">
+                <Avatar name={myName} email={user.email} />
+                <h3 className="cm-co-title">Create a post</h3>
+                <button type="button" className="cm-co-close" onClick={closeComposer} aria-label="Close"><CloseIcon /></button>
+              </div>
               <div className="cm-type-picker">
                 {POST_TYPES.map(({ key, label, Icon }) => (
                   <button
                     key={key}
                     type="button"
-                    className={`cm-type-pill${postType === key ? " is-active" : ""}`}
+                    className={`cm-type-pill cm-type-pill--${key}${postType === key ? " is-active" : ""}`}
                     onClick={() => setPostType(postType === key ? null : key)}
                   >
                     <Icon />
@@ -585,71 +616,80 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                   </button>
                 ))}
               </div>
-            </div>
-          </div>
 
-          <textarea
-            className="cm-composer-input"
-            placeholder="Share a tip, ask a question, or add a resource…"
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            rows={3}
-            maxLength={2000}
-          />
+              <textarea
+                className="cm-composer-input"
+                placeholder={POST_PLACEHOLDERS[postType || "none"]}
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                rows={4}
+                maxLength={2000}
+              />
 
-          <div className="cm-composer-foot">
-            {attachedLesson && customLessonBySlug(attachedLesson) && (
-              <div className="cm-attach-file-chip" style={{ background: "#E9ECF3" }}>
-                <FileIcon />
-                <span>Custom lesson: {customLessonBySlug(attachedLesson).title}</span>
-                <button type="button" className="cm-attach-remove" title="Remove lesson" onClick={() => setAttachedLesson(null)}>
-                  <CloseIcon />
-                </button>
-              </div>
-            )}
-            {uploadedImage && (
-              <div className="cm-attach-preview">
-                <img src={uploadedImage.url} alt="" />
-                <button type="button" className="cm-attach-remove" title="Remove image" onClick={() => setUploadedImage(null)}>
-                  <CloseIcon />
-                </button>
-              </div>
-            )}
-            {uploadedFile && (
-              <div className="cm-attach-file-chip">
-                <FileIcon />
-                <span>{uploadedFile.name}</span>
-                <button type="button" className="cm-attach-remove" title="Remove file" onClick={() => setUploadedFile(null)}>
-                  <CloseIcon />
-                </button>
-              </div>
-            )}
-            {uploadError && <p className="cm-upload-error">{uploadError}</p>}
-
-            <div className="cm-composer-row">
-              <div className="cm-composer-attach-btns">
-                <label className="cm-attach-btn" title="Add an image">
-                  <ImageIcon />
-                  <input type="file" accept="image/*" hidden onChange={handleImageUpload} disabled={uploadingImage} />
-                </label>
-                {postType === "resource" && (
-                  <label className="cm-attach-btn" title="Add a file">
+              <div className="cm-composer-foot">
+                {attachedLesson && customLessonBySlug(attachedLesson) && (
+                  <div className="cm-attach-file-chip" style={{ background: "#E9ECF3" }}>
                     <FileIcon />
-                    <input type="file" hidden onChange={handleFileUpload} disabled={uploadingFile} />
-                  </label>
+                    <span>Custom lesson: {customLessonBySlug(attachedLesson).title}</span>
+                    <button type="button" className="cm-attach-remove" title="Remove lesson" onClick={() => setAttachedLesson(null)}>
+                      <CloseIcon />
+                    </button>
+                  </div>
                 )}
-                {(uploadingImage || uploadingFile) && <span className="cm-uploading-hint">Uploading…</span>}
-              </div>
-              <div className="cm-composer-actions">
-                <button type="button" className="cm-composer-cancel" onClick={closeComposer}>Cancel</button>
-                <button type="button" className="cm-btn" disabled={!draft.trim() || posting} onClick={submitPost}>
-                  {posting ? "Posting…" : "Post"}
-                </button>
+                {uploadedImage && (
+                  <div className="cm-attach-preview">
+                    <img src={uploadedImage.url} alt="" />
+                    <button type="button" className="cm-attach-remove" title="Remove image" onClick={() => setUploadedImage(null)}>
+                      <CloseIcon />
+                    </button>
+                  </div>
+                )}
+                {uploadedFile && (
+                  <div className="cm-attach-file-chip">
+                    <FileIcon />
+                    <span>{uploadedFile.name}</span>
+                    <button type="button" className="cm-attach-remove" title="Remove file" onClick={() => setUploadedFile(null)}>
+                      <CloseIcon />
+                    </button>
+                  </div>
+                )}
+                {uploadError && <p className="cm-upload-error">{uploadError}</p>}
+
+                <div className="cm-composer-row">
+                  <div className="cm-composer-attach-btns">
+                    <button type="button" className="cm-tool" onClick={() => imageInputRef.current?.click()} disabled={uploadingImage}><ImageIcon />Photo</button>
+                    {postType === "resource" && (
+                      <button type="button" className="cm-tool" onClick={() => fileInputRef.current?.click()} disabled={uploadingFile}><FileIcon />File</button>
+                    )}
+                    {ownedLessons.length > 0 && (
+                      <span className="cm-lesson-wrap">
+                        <button type="button" className="cm-tool" onClick={() => setLessonMenuOpen((v) => !v)} aria-expanded={lessonMenuOpen}><FileIcon />Custom lesson</button>
+                        {lessonMenuOpen && (
+                          <div className="cm-lesson-menu" role="menu">
+                            <div className="cm-lesson-menu-title">Your custom lessons</div>
+                            {ownedLessons.map((l) => (
+                              <button type="button" role="menuitem" key={l.slug} onClick={() => { setAttachedLesson(l.slug); setPostType((t) => t || "resource"); setLessonMenuOpen(false); }}>
+                                {l.title}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </span>
+                    )}
+                    {(uploadingImage || uploadingFile) && <span className="cm-uploading-hint">Uploading…</span>}
+                  </div>
+                  <div className="cm-composer-actions">
+                    <span className="cm-count">{draft.length}/2000</span>
+                    <button type="button" className="cm-composer-cancel" onClick={closeComposer}>Cancel</button>
+                    <button type="button" className="cm-btn" disabled={!draft.trim() || posting} onClick={submitPost}>
+                      {posting ? "Posting…" : "Post"}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        )
+          )}
+        </>
       )}
 
       {shareNote && <p className="cm-upload-error" style={{ color: "#1F7A47", background: "#E3F5EA", borderRadius: 10, padding: "10px 14px" }} role="status">{shareNote}</p>}
@@ -1060,10 +1100,41 @@ const CSS = `
 .cm-type-pill:hover { background: var(--coral-pale); color: #E0502F; }
 .cm-type-pill.is-active { background: var(--coral-pale); color: #E0502F; }
 .cm-attach-btn { border: none; background: var(--sand); }
-.cm-composer--fold { padding: 12px 14px; }
-.cm-fold { display: flex; align-items: center; gap: 12px; width: 100%; border: none; background: none; padding: 0; text-align: left; cursor: pointer; font-family: 'Quicksand', sans-serif; }
-.cm-fold-fake { flex: 1; background: var(--sand); border-radius: 999px; padding: 11px 16px; font-size: 14.5px; font-weight: 600; color: var(--muted); }
 .cm-composer-actions .cm-btn { background: var(--coral); }
+.cm-composer--closed { padding: 0; overflow: hidden; }
+.cm-cl-top { display: flex; align-items: center; gap: 12px; padding: 14px 16px 12px; }
+.cm-cl-fake { flex: 1; text-align: left; border: none; background: var(--sand); border-radius: 999px; padding: 12px 18px; font-family: 'Quicksand', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.cm-cl-fake:hover { background: #dde1ec; }
+.cm-cl-actions { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-top: 1px solid var(--hair); padding: 6px 8px; }
+.cm-cl-act { border: none; background: none; border-radius: 14px; padding: 10px 4px; display: flex; align-items: center; justify-content: center; gap: 7px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.cm-cl-act:hover { background: #F4F6FB; }
+.cm-cl-act svg { width: 18px; height: 18px; }
+.cm-cl-act--tip svg { color: #C99A1A; } .cm-cl-act--question svg { color: #3D87C7; } .cm-cl-act--resource svg { color: var(--coral); }
+.cm-cl-act--photo svg { color: #3F9E6B; } .cm-cl-act--lesson svg { color: #7A5C8E; }
+.cm-composer--open { padding: 18px 20px 4px; }
+.cm-co-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.cm-co-title { flex: 1; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; margin: 0; color: var(--ink); }
+.cm-co-close { width: 34px; height: 34px; border-radius: 50%; border: none; background: var(--sand); color: var(--muted); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.cm-co-close:hover { color: var(--ink); }
+.cm-co-close svg { width: 14px; height: 14px; }
+.cm-composer--open .cm-composer-input { padding: 12px 2px 8px; font-size: 16px; min-height: 104px; }
+.cm-composer--open .cm-composer-foot { padding: 0 0 16px; }
+.cm-composer--open .cm-composer-row { border-top: 1px solid var(--hair); padding-top: 12px; }
+.cm-type-pill--tip.is-active { background: #FFF4D6; color: #7A5C0C; }
+.cm-type-pill--question.is-active { background: #E3F0FB; color: #1B4F7A; }
+.cm-type-pill--resource.is-active { background: var(--coral-pale); color: #C2411F; }
+.cm-tool { display: inline-flex; align-items: center; gap: 6px; border: none; background: var(--sand); border-radius: 999px; padding: 8px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.cm-tool:hover:not(:disabled) { background: #dde1ec; }
+.cm-tool:disabled { opacity: 0.5; cursor: default; }
+.cm-tool svg { width: 16px; height: 16px; }
+.cm-composer-attach-btns { flex-wrap: wrap; }
+.cm-lesson-wrap { position: relative; }
+.cm-lesson-menu { position: absolute; z-index: 20; bottom: calc(100% + 8px); left: 0; width: 280px; max-height: 260px; overflow-y: auto; background: #fff; border-radius: 16px; padding: 8px; box-shadow: 0 12px 34px rgba(43,42,74,0.2), 0 0 0 1px var(--hair); }
+.cm-lesson-menu-title { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 6px 8px; }
+.cm-lesson-menu button { display: block; width: 100%; text-align: left; border: none; background: none; border-radius: 10px; padding: 9px 10px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.cm-lesson-menu button:hover { background: #F4F6FB; }
+.cm-count { font-size: 12.5px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) { .cm-cl-act span { display: none; } }
 .cm-composer-actions .cm-btn:not(:disabled):hover { background: #E0502F; }
 .cm-btn:hover:not(:disabled) { background: #E0502F; }
 .cm-feed { gap: 14px; }
