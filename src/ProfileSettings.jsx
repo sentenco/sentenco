@@ -190,7 +190,7 @@ export default function ProfileSettings({ onClose, onSaved }) {
               </h2>
               <p className="ps-sub">{uploading ? "Uploading photo…" : "How other teachers see you in the Community"}</p>
               {avatarUrl && !uploading && (
-                <button type="button" className="ps-adjust" onClick={adjustCurrent}>Adjust photo</button>
+                <button type="button" className="ps-adjust" onClick={adjustCurrent}>Crop photo</button>
               )}
             </div>
 

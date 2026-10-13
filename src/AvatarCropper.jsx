@@ -1,90 +1,88 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
-const FRAME = 240;      // on-screen circle diameter
-const OUT = 512;        // saved picture size
-const MAX_ZOOM = 4;
+const STAGE = 300;   // the whole photo is fitted inside this box
+const OUT = 512;     // saved picture size
+const MIN = 48;      // smallest crop edge on screen
 
-// Lets a person drag and zoom their photo inside a circle, then bakes exactly
-// what the circle shows into a square JPEG. Everything that shows avatar_url
-// (header, Homeroom, Messenger, mentors) crops it to a circle already, so no
-// other screen needs to know about positions.
+// Shows the whole photo with a resizable crop box on top: drag the box to move
+// it, drag a corner (or use the slider) to make it bigger or smaller. What is
+// inside the box is saved as a square JPEG; every screen that shows avatar_url
+// already rounds it into a circle, so the circle guide shows the final look.
 export default function AvatarCropper({ src, onCancel, onDone }) {
   const imgRef = useRef(null);
   const drag = useRef(null);
-  const [nat, setNat] = useState(null);          // natural size once loaded
-  const [zoom, setZoom] = useState(1);           // 1 = just covers the circle
-  const [pos, setPos] = useState({ x: 0, y: 0 }); // image center offset from circle center, px
+  const [nat, setNat] = useState(null);
+  const [box, setBox] = useState({ x: 0, y: 0, s: 0 });   // crop square in displayed px
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  const base = nat ? Math.max(FRAME / nat.w, FRAME / nat.h) : 1;
-  const scale = base * zoom;
-
-  function clamp(p, z = zoom) {
-    if (!nat) return p;
-    const s = base * z;
-    const mx = Math.max(0, (nat.w * s - FRAME) / 2);
-    const my = Math.max(0, (nat.h * s - FRAME) / 2);
-    return { x: Math.min(mx, Math.max(-mx, p.x)), y: Math.min(my, Math.max(-my, p.y)) };
-  }
+  const fit = nat ? Math.min(STAGE / nat.w, STAGE / nat.h) : 1;
+  const dw = nat ? nat.w * fit : STAGE;   // displayed photo size
+  const dh = nat ? nat.h * fit : STAGE;
 
   function onLoad() {
     const el = imgRef.current;
-    setNat({ w: el.naturalWidth, h: el.naturalHeight });
+    const n = { w: el.naturalWidth, h: el.naturalHeight };
+    const f = Math.min(STAGE / n.w, STAGE / n.h);
+    const w = n.w * f, h = n.h * f;
+    const s = Math.min(w, h);
+    setNat(n);
+    setBox({ x: (w - s) / 2, y: (h - s) / 2, s });
   }
 
-  function changeZoom(z) {
-    const nz = Math.min(MAX_ZOOM, Math.max(1, z));
-    setZoom(nz);
-    setPos((p) => clamp(p, nz));
-  }
+  const clampBox = (b) => {
+    const s = Math.max(MIN, Math.min(b.s, dw, dh));
+    return { s, x: Math.min(dw - s, Math.max(0, b.x)), y: Math.min(dh - s, Math.max(0, b.y)) };
+  };
 
-  function onPointerDown(e) {
-    e.currentTarget.setPointerCapture(e.pointerId);
-    drag.current = { sx: e.clientX, sy: e.clientY, ox: pos.x, oy: pos.y };
+  function start(e, mode) {
+    e.stopPropagation();
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+    drag.current = { mode, sx: e.clientX, sy: e.clientY, b: { ...box } };
   }
-  function onPointerMove(e) {
+  function move(e) {
     const d = drag.current;
     if (!d) return;
-    setPos(clamp({ x: d.ox + e.clientX - d.sx, y: d.oy + e.clientY - d.sy }));
+    const dx = e.clientX - d.sx, dy = e.clientY - d.sy;
+    const b = d.b;
+    if (d.mode === "move") { setBox(clampBox({ ...b, x: b.x + dx, y: b.y + dy })); return; }
+    // Corner resize: the opposite corner stays put.
+    const left = d.mode.includes("w"), top = d.mode.includes("n");
+    const delta = ((left ? -dx : dx) + (top ? -dy : dy)) / 2;
+    const fx = left ? b.x + b.s : b.x;        // fixed corner
+    const fy = top ? b.y + b.s : b.y;
+    const maxS = Math.min(left ? fx : dw - fx, top ? fy : dh - fy);
+    const s = Math.max(MIN, Math.min(b.s + delta, maxS));
+    setBox({ s, x: left ? fx - s : fx, y: top ? fy - s : fy });
   }
-  function onPointerUp() { drag.current = null; }
+  function end() { drag.current = null; }
 
-  // Wheel zoom needs a non-passive listener to stop the page scrolling.
-  const frameRef = useRef(null);
-  const zoomRef = useRef(zoom);
-  zoomRef.current = zoom;
-  useEffect(() => {
-    const el = frameRef.current;
-    if (!el) return undefined;
-    const h = (e) => { e.preventDefault(); changeZoom(zoomRef.current - e.deltaY * 0.002); };
-    el.addEventListener("wheel", h, { passive: false });
-    return () => el.removeEventListener("wheel", h);
-  });
+  // Slider resizes around the box's centre.
+  function sizeTo(s) {
+    const cx = box.x + box.s / 2, cy = box.y + box.s / 2;
+    setBox(clampBox({ s, x: cx - s / 2, y: cy - s / 2 }));
+  }
 
-  function nudge(dx, dy) { setPos((p) => clamp({ x: p.x + dx, y: p.y + dy })); }
   function onKey(e) {
-    const step = 8;
-    if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-step, 0); }
-    else if (e.key === "ArrowRight") { e.preventDefault(); nudge(step, 0); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); nudge(0, -step); }
-    else if (e.key === "ArrowDown") { e.preventDefault(); nudge(0, step); }
-    else if (e.key === "+" || e.key === "=") changeZoom(zoom + 0.1);
-    else if (e.key === "-") changeZoom(zoom - 0.1);
+    const step = 6;
+    const m = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] }[e.key];
+    if (m) { e.preventDefault(); setBox((b) => clampBox({ ...b, x: b.x + m[0], y: b.y + m[1] })); }
+    else if (e.key === "+" || e.key === "=") sizeTo(box.s + 10);
+    else if (e.key === "-") sizeTo(box.s - 10);
   }
 
   function apply() {
     if (!nat || busy) return;
     setBusy(true);
+    const k = 1 / fit;                       // displayed px -> source px
+    const sx = box.x * k, sy = box.y * k, ss = box.s * k;
+    const out = Math.min(OUT, Math.round(ss));
     const canvas = document.createElement("canvas");
-    canvas.width = OUT; canvas.height = OUT;
+    canvas.width = out; canvas.height = out;
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#fff";
-    ctx.fillRect(0, 0, OUT, OUT);
-    const k = OUT / FRAME;
-    const w = nat.w * scale * k;
-    const h = nat.h * scale * k;
-    ctx.drawImage(imgRef.current, OUT / 2 + pos.x * k - w / 2, OUT / 2 + pos.y * k - h / 2, w, h);
+    ctx.fillRect(0, 0, out, out);
+    ctx.drawImage(imgRef.current, sx, sy, ss, ss, 0, 0, out, out);
     canvas.toBlob((blob) => {
       setBusy(false);
       if (!blob) { setFailed(true); return; }
@@ -92,49 +90,51 @@ export default function AvatarCropper({ src, onCancel, onDone }) {
     }, "image/jpeg", 0.9);
   }
 
+  const maxS = Math.min(dw, dh);
   return (
-    <div className="ac-wrap" role="dialog" aria-label="Adjust your photo">
+    <div className="ac-wrap" role="dialog" aria-label="Crop your photo">
       <style>{CSS}</style>
-      <h3 className="ac-title">Adjust your photo</h3>
-      <p className="ac-hint">Drag to move. Use the slider to zoom.</p>
-      <div
-        ref={frameRef}
-        className="ac-frame"
-        tabIndex={0}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-        onKeyDown={onKey}
-      >
-        <img
-          ref={imgRef}
-          src={src}
-          alt=""
-          draggable={false}
-          onLoad={onLoad}
-          onError={() => setFailed(true)}
-          style={nat ? {
-            width: nat.w * scale,
-            height: nat.h * scale,
-            transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`,
-          } : { opacity: 0 }}
-        />
+      <h3 className="ac-title">Crop your photo</h3>
+      <p className="ac-hint">Drag the circle to choose what shows. Drag a corner to resize it.</p>
+      <div className="ac-stage" style={{ width: dw, height: dh }}>
+        <img ref={imgRef} src={src} alt="" draggable={false} onLoad={onLoad} onError={() => setFailed(true)}
+          style={{ width: dw, height: dh, opacity: nat ? 1 : 0 }} />
+        {nat && (
+          <div
+            className="ac-box"
+            tabIndex={0}
+            style={{ left: box.x, top: box.y, width: box.s, height: box.s }}
+            onPointerDown={(e) => start(e, "move")}
+            onPointerMove={move}
+            onPointerUp={end}
+            onPointerCancel={end}
+            onKeyDown={onKey}
+          >
+            <span className="ac-grid" aria-hidden="true" />
+            {["nw", "ne", "sw", "se"].map((c) => (
+              <span
+                key={c}
+                className={`ac-handle ac-handle--${c}`}
+                onPointerDown={(e) => start(e, c)}
+                onPointerMove={move}
+                onPointerUp={end}
+                onPointerCancel={end}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="ac-zoom">
-        <span aria-hidden="true">–</span>
-        <input
-          type="range" min="1" max={MAX_ZOOM} step="0.01" value={zoom}
-          onChange={(e) => changeZoom(Number(e.target.value))}
-          aria-label="Zoom"
-        />
-        <span aria-hidden="true">+</span>
+        <span aria-hidden="true">Small</span>
+        <input type="range" min={MIN} max={Math.max(MIN + 1, maxS)} step="1" value={box.s}
+          onChange={(e) => sizeTo(Number(e.target.value))} aria-label="Crop size" disabled={!nat} />
+        <span aria-hidden="true">Large</span>
       </div>
       {failed && <p className="ac-error">That photo couldn't be loaded. Choose it again from your device.</p>}
       <div className="ac-actions">
         <button type="button" className="ac-btn ac-btn--ghost" onClick={onCancel}>Cancel</button>
         <button type="button" className="ac-btn" onClick={apply} disabled={!nat || busy}>
-          {busy ? "Working…" : "Use this photo"}
+          {busy ? "Working…" : "Use this crop"}
         </button>
       </div>
     </div>
@@ -145,22 +145,29 @@ const CSS = `
 .ac-wrap {
   position: absolute; inset: 0; z-index: 5; background: #fff; border-radius: 20px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 28px 30px; gap: 10px;
+  padding: 24px 24px; gap: 10px;
 }
 .ac-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 21px; margin: 0; color: #2B2A4A; }
-.ac-hint { font-family: 'Quicksand', sans-serif; font-size: 12.5px; color: #8B84A3; margin: 0 0 6px; }
-.ac-frame {
-  position: relative; width: ${FRAME}px; height: ${FRAME}px; border-radius: 50%; overflow: hidden;
-  background: #EFEAF6; cursor: grab; touch-action: none; user-select: none; flex-shrink: 0;
-  box-shadow: 0 0 0 3px #FDECE5, 0 0 0 4px #FF6B4A;
+.ac-hint { font-family: 'Quicksand', sans-serif; font-size: 12.5px; color: #8B84A3; margin: 0 0 4px; text-align: center; }
+.ac-stage { position: relative; overflow: hidden; background: #EFEAF6; flex-shrink: 0; user-select: none; touch-action: none; }
+.ac-stage img { display: block; max-width: none; pointer-events: none; }
+.ac-box {
+  position: absolute; border-radius: 50%; cursor: move; outline: 2px solid #fff;
+  box-shadow: 0 0 0 9999px rgba(43,42,74,0.55), 0 0 0 2px #FF6B4A;
 }
-.ac-frame:active { cursor: grabbing; }
-.ac-frame:focus-visible { outline: 3px solid #2B2A4A; outline-offset: 5px; }
-.ac-frame img { position: absolute; left: 50%; top: 50%; max-width: none; pointer-events: none; }
-.ac-zoom { display: flex; align-items: center; gap: 10px; width: ${FRAME}px; margin-top: 8px; color: #8B84A3; font-weight: 700; }
+.ac-box:focus-visible { outline: 3px solid #FF6B4A; }
+.ac-handle {
+  position: absolute; width: 18px; height: 18px; background: #fff; border: 2px solid #FF6B4A;
+  border-radius: 4px; touch-action: none;
+}
+.ac-handle--nw { left: -4px; top: -4px; cursor: nwse-resize; }
+.ac-handle--ne { right: -4px; top: -4px; cursor: nesw-resize; }
+.ac-handle--sw { left: -4px; bottom: -4px; cursor: nesw-resize; }
+.ac-handle--se { right: -4px; bottom: -4px; cursor: nwse-resize; }
+.ac-zoom { display: flex; align-items: center; gap: 10px; width: 280px; margin-top: 6px; color: #8B84A3; font: 700 11.5px 'Quicksand', sans-serif; }
 .ac-zoom input { flex: 1; accent-color: #FF6B4A; }
 .ac-error { font-family: 'Quicksand', sans-serif; color: #C0392B; font-size: 12.5px; margin: 0; text-align: center; }
-.ac-actions { display: flex; gap: 10px; margin-top: 10px; }
+.ac-actions { display: flex; gap: 10px; margin-top: 8px; }
 .ac-btn {
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; border: none; border-radius: 999px;
   padding: 11px 22px; cursor: pointer; background: #FF6B4A; color: #fff;
