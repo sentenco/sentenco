@@ -5,7 +5,7 @@ import { SUPPORT_EMAIL } from "./siteConfig.js";
 // not a substitute for review by a Philippine lawyer before Sentenco accepts
 // real payments.
 
-export const LEGAL_UPDATED = "August 22, 2026";
+export const LEGAL_UPDATED = "October 13, 2026";
 
 export const LEGAL_DOCS = [
   { key: "terms", label: "Terms of Service" },
@@ -41,7 +41,18 @@ export const TERMS_CONTENT = {
       ],
     },
     {
-      heading: "4. The Homeroom community",
+      heading: "4. Free trial and promo codes",
+      body: [
+        "Free trial. Each account can start one free trial, lasting 7 days, that gives access to Pro+ features. No payment method is needed to start it. The trial begins when you choose to start it and ends automatically after 7 days. We won't charge you when it ends and it doesn't turn into a paid subscription unless you choose to subscribe. When it ends, your account returns to the Free plan. Your account and anything you've posted or saved stay, but features that need Pro or Pro+ lock again.",
+        "Fair use during the trial. To keep the service available for everyone, AI-powered tools may be limited to a set number of requests per day while you are on a trial. We may change that limit.",
+        "Promo codes. We may give promo codes to selected teachers or groups. A code gives access to the plan and for the length of time stated when it is created, and starts when you redeem it. Codes may have an expiry date and a limit on how many times they can be used. A code can be redeemed once per account, is for the person it was given to, can't be sold or transferred, and has no cash value.",
+        "If you have more than one trial, code, or subscription active at the same time, the one that gives you the highest plan applies. They don't add up to a longer period or replace a paid subscription you already hold.",
+        "We may end trial or promo access early, and cancel a code, if we find it was obtained or used in a way that goes against these Terms, for example by creating several accounts to get repeated trials, or by sharing or selling a code.",
+        "We may change, pause, or stop offering free trials and promo codes at any time. Changes don't affect access you have already started, except as described above.",
+      ],
+    },
+    {
+      heading: "5. The Homeroom community",
       body: [
         "Homeroom and the Community feed let you post, comment, and interact with other teachers. You keep ownership of what you post, but you give Sentenco permission to store, display, and distribute it within the app so the community feature works.",
         "Don't post anything illegal, harassing, hateful, sexually explicit, or that infringes someone else's rights. Don't spam, impersonate others, or share a student's personal information.",
@@ -49,44 +60,44 @@ export const TERMS_CONTENT = {
       ],
     },
     {
-      heading: "5. AI-powered tools",
+      heading: "6. AI-powered tools",
       body: [
         "The Dictionary, Grammar Checker, and Translator are AI-generated and can be wrong, incomplete, or miss context. Review their output before using it with students. They're a teaching aid, not a substitute for your own judgment.",
-        "Don't use these tools to generate content that violates section 4's rules, or to attempt to extract, abuse, or overload the underlying AI service.",
+        "Don't use these tools to generate content that violates section 5's rules, or to attempt to extract, abuse, or overload the underlying AI service.",
       ],
     },
     {
-      heading: "6. Lesson content and intellectual property",
+      heading: "7. Lesson content and intellectual property",
       body: [
         "Curriculum, articles, lesson plans, and other content Sentenco provides belong to Sentenco or our licensors. You may use them for your own teaching, including with your students. You may not resell, redistribute, or republish them as your own product.",
         "Sentenco's name, logo, and branding are ours. Don't use them without permission.",
       ],
     },
     {
-      heading: "7. Termination",
+      heading: "8. Termination",
       body: [
         "You can stop using Sentenco and delete your account at any time. We can suspend or terminate accounts that violate these Terms, don't pay for a paid plan, or for other legitimate business reasons, with notice where practical.",
       ],
     },
     {
-      heading: "8. Disclaimers and limitation of liability",
+      heading: "9. Disclaimers and limitation of liability",
       body: [
         "Sentenco is provided \"as is.\" We don't guarantee it will be uninterrupted, error-free, or that AI-generated content will always be accurate. To the extent allowed by law, Sentenco isn't liable for indirect, incidental, or consequential damages arising from your use of the app.",
         "Nothing here limits liability that can't be limited under Philippine law.",
       ],
     },
     {
-      heading: "9. Changes to these Terms",
+      heading: "10. Changes to these Terms",
       body: [
         "We may update these Terms as Sentenco grows. We'll post the updated version here with a new \"last updated\" date. Continuing to use Sentenco after changes take effect means you accept them.",
       ],
     },
     {
-      heading: "10. Governing law",
+      heading: "11. Governing law",
       body: ["These Terms are governed by the laws of the Republic of the Philippines."],
     },
     {
-      heading: "11. Contact",
+      heading: "12. Contact",
       body: ["Questions about these Terms? Reach us at " + SUPPORT_EMAIL + "."],
     },
   ],
@@ -207,7 +218,13 @@ export const REFUND_CONTENT = {
       ],
     },
     {
-      heading: "5. How to request a refund",
+      heading: "5. Free trials and promo codes",
+      body: [
+        "Free trials and promo codes are free, so there is nothing to refund. When one ends, you are not charged and your account returns to the Free plan unless you have a paid subscription.",
+      ],
+    },
+    {
+      heading: "6. How to request a refund",
       body: ["Email " + SUPPORT_EMAIL + " with your account email and the reason for your request. We aim to respond within a few business days."],
     },
   ],
