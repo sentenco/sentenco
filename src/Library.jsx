@@ -1529,14 +1529,17 @@ export default function Library() {
     if (!unreadIds.length) return;
     const now = new Date().toISOString();
     setNotifications((prev) => prev.map((n) => (n.read_at ? n : { ...n, read_at: now })));
-    supabase.from("notifications").update({ read_at: now }).in("id", unreadIds);
+    // The request only goes out once it is awaited or .then()-ed, so it must be chained.
+    supabase.from("notifications").update({ read_at: now }).eq("recipient_id", user.id).is("read_at", null)
+      .then(({ error }) => { if (error) console.error("mark all notifications read failed:", error); });
   }
 
   function markNotificationRead(n) {
     if (n.read_at) return;
     const now = new Date().toISOString();
     setNotifications((prev) => prev.map((x) => (x.id === n.id ? { ...x, read_at: now } : x)));
-    supabase.from("notifications").update({ read_at: now }).eq("id", n.id);
+    supabase.from("notifications").update({ read_at: now }).eq("id", n.id)
+      .then(({ error }) => { if (error) console.error("mark notification read failed:", error); });
   }
 
   function goToNotification(n) {

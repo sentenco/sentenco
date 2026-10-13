@@ -699,7 +699,8 @@ export default function Messenger() {
     setReplyTarget(null);
     setMessages((prev) => (prev.some((m) => m.id === data.id) ? prev : [...prev, data]));
     const now = new Date().toISOString();
-    supabase.from("conversations").update({ last_message_at: now, last_message: content }).eq("id", activeId);
+    supabase.from("conversations").update({ last_message_at: now, last_message: content }).eq("id", activeId)
+      .then(({ error: lastError }) => { if (lastError) console.error("update last message failed:", lastError); });
     setConversations((prev) => {
       const updated = prev.map((c) => (c.id === activeId ? { ...c, last_message_at: now, last_message: content } : c));
       return updated.sort((x, y) => new Date(y.last_message_at) - new Date(x.last_message_at));
