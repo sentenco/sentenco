@@ -1407,7 +1407,8 @@ export default function Library() {
   const [clTab, setClTab] = useState(() => searchParams.get("clTab") || "All");
   // Custom lessons are private: show only the ones this teacher owns, or that another teacher shared on a post they can see.
   const clAccess = useCustomLessonAccess(category === "Customized Lessons");
-  const clVisible = CUSTOM_LESSONS.filter((l) => clAccess.access.has(l.slug) || (clAccess.notSetUp && clAccess.isOwnerEmail));
+  // The site owner always sees every lesson; everyone else sees what the database says is theirs or shared with them.
+  const clVisible = CUSTOM_LESSONS.filter((l) => clAccess.access.has(l.slug) || clAccess.isOwnerEmail);
   const clRelation = (slug) => (clAccess.access.get(slug)?.relation) || "mine";
   const [clFormOpen, setClFormOpen] = useState(false);
   const [clStudentName, setClStudentName] = useState("");
