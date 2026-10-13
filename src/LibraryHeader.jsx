@@ -160,8 +160,9 @@ export default function LibraryHeader() {
 
   const activeCategory = activeCategoryFor(location.pathname);
   const onConvo = location.pathname.startsWith("/library/messages");
-  const hideNav = onConvo || location.pathname.startsWith("/library/teacher/");
-  const onMyProfile = !!user && location.pathname === `/library/teacher/${user.id}`;
+  const onNetwork = location.pathname.startsWith("/library/network");
+  const hideNav = onConvo || onNetwork || location.pathname.startsWith("/library/teacher/");
+  const onMyProfile = onNetwork || (!!user && location.pathname === `/library/teacher/${user.id}`);
 
   useEffect(() => {
     function handleOutsideClick(e) {
@@ -187,7 +188,7 @@ export default function LibraryHeader() {
     if (!user) { setNotifications([]); return; }
     supabase
       .from("notifications")
-      .select("id, type, actor_name, post_id, read_at, created_at")
+      .select("id, type, actor_id, actor_name, post_id, read_at, created_at")
       .eq("recipient_id", user.id)
       .order("created_at", { ascending: false })
       .limit(20)
@@ -232,12 +233,19 @@ export default function LibraryHeader() {
     supabase.from("notifications").update({ read_at: now }).in("id", unreadIds);
   }
 
+  function markNotificationRead(n) {
+    if (n.read_at) return;
+    const now = new Date().toISOString();
+    setNotifications((prev) => prev.map((x) => (x.id === n.id ? { ...x, read_at: now } : x)));
+    supabase.from("notifications").update({ read_at: now }).eq("id", n.id);
+  }
+
   function goToNotification(n) {
     setNotifOpen(false);
-    if (!n.read_at) {
-      const now = new Date().toISOString();
-      setNotifications((prev) => prev.map((x) => (x.id === n.id ? { ...x, read_at: now } : x)));
-      supabase.from("notifications").update({ read_at: now }).eq("id", n.id);
+    markNotificationRead(n);
+    if (["connect_request", "connect_accepted", "new_follower"].includes(n.type) && n.actor_id) {
+      navigate(`/library/teacher/${n.actor_id}`);
+      return;
     }
     navigate(n.post_id ? `/library/community?post=${n.post_id}` : "/library/community");
   }
@@ -398,7 +406,7 @@ export default function LibraryHeader() {
                     <BellIcon />
                     {unreadNotifCount > 0 && <span className="notif-dot" />}
                   </button>
-                  {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onMarkAll={markAllNotificationsRead} />}
+                  {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onRead={markNotificationRead} onMarkAll={markAllNotificationsRead} />}
                 </div>
                 <div className="account-wrap">
                   <button className="avatar-btn" onClick={() => setMenuOpen((m) => !m)} aria-label="Account menu">

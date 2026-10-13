@@ -8,6 +8,7 @@ import { timeAgo } from "./slideDeckTypes";
 import ConfirmDialog from "./ConfirmDialog";
 import { CUSTOM_LESSONS, customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
+import { getFollowingIds } from "./networkApi.js";
 
 const ADMIN_EMAIL = "caldrin1999@gmail.com";
 const AVATAR_HUES = ["#FF6B4A", "#7C5CFC", "#16BFAE", "#E0A72E", "#FF8A4C"];
@@ -194,6 +195,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const [profile, setProfile] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [scope, setScope] = useState("universal");
+  const [feedMode, setFeedMode] = useState("everyone"); // "everyone" | "following"
+  const [followingIds, setFollowingIds] = useState(null); // null until the follow tables exist
 
   const [authMode, setAuthMode] = useState(null);
   const [posts, setPosts] = useState([]);
@@ -307,6 +310,13 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     });
     return () => { cancelled = true; };
   }, [isAdmin]);
+
+  useEffect(() => {
+    if (!user || authorId) { setFollowingIds(null); return; }
+    let cancelled = false;
+    getFollowingIds(user.id).then((ids) => { if (!cancelled) setFollowingIds(ids); });
+    return () => { cancelled = true; };
+  }, [user?.id, authorId]);
 
   async function loadPosts() {
     setLoadingPosts(true);
@@ -554,9 +564,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     }
   }
 
-  const shownPosts = !typeFilter || typeFilter === "all"
+  const followingOnly = !authorId && feedMode === "following" && followingIds;
+  const typedPosts = !typeFilter || typeFilter === "all"
     ? posts
     : posts.filter((p) => (typeFilter === "lesson" ? !!p.lesson_slug : p.post_type === typeFilter));
+  const shownPosts = followingOnly ? typedPosts.filter((p) => followingIds.includes(p.author_id)) : typedPosts;
 
   return (
     <div className="cmf-shell">
@@ -707,12 +719,22 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
 
       {shareNote && <p className="cm-upload-error" style={{ color: "#1F7A47", background: "#E3F5EA", borderRadius: 10, padding: "10px 14px" }} role="status">{shareNote}</p>}
 
+      {!authorId && user && followingIds && (
+        <div className="cm-feedswitch">
+          <div className="cm-feedswitch-seg" role="tablist" aria-label="Whose posts to show">
+            <button type="button" role="tab" aria-selected={feedMode === "everyone"} className={feedMode === "everyone" ? "is-on" : ""} onClick={() => setFeedMode("everyone")}>Everyone</button>
+            <button type="button" role="tab" aria-selected={feedMode === "following"} className={feedMode === "following" ? "is-on" : ""} onClick={() => setFeedMode("following")}>Following<em>{followingIds.length}</em></button>
+          </div>
+          <span className="cm-feedswitch-hint">{feedMode === "everyone" ? "All teachers" : "Teachers you follow or are connected with"}</span>
+        </div>
+      )}
+
       <div className="cm-feed">
         {loadingPosts ? (
           <p className="cm-empty">Loading…</p>
         ) : shownPosts.length === 0 ? (
           <p className="cm-empty">
-            {authorId ? "No posts yet." : <>No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!</>}
+            {authorId ? "No posts yet." : followingOnly ? (followingIds.length ? "No posts from the teachers you follow yet." : "You are not following anyone yet. Open a teacher's profile and tap Follow to see their posts here.") : <>No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!</>}
           </p>
         ) : (
           shownPosts.map((p) => {
@@ -1167,4 +1189,12 @@ const CSS = `
 .cm-icon-btn { margin-left: 0; }
 .cm-comment-input { background: var(--sand); border: none; }
 .cm-signin-card { border: none; border-radius: 22px; box-shadow: 0 10px 28px -18px rgba(27,42,74,0.22); }
+.cm-feedswitch { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
+.cm-feedswitch-seg { flex-shrink: 0; display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; box-shadow: 0 0 0 1px var(--hair, rgba(43,42,74,0.1)); }
+.cm-feedswitch-seg button { border: none; background: none; border-radius: 999px; padding: 9px 20px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; color: #8B84A3; display: flex; gap: 7px; align-items: center; cursor: pointer; }
+.cm-feedswitch-seg button.is-on { background: #1B2A4A; color: #fff; }
+.cm-feedswitch-seg button:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
+.cm-feedswitch-seg em { font-style: normal; font-size: 11.5px; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 1px 8px; }
+.cm-feedswitch-seg button:not(.is-on) em { background: #F1F3F8; color: #2B2A4A; }
+.cm-feedswitch-hint { font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: #8B84A3; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 `;

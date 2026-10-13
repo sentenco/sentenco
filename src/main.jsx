@@ -21,6 +21,7 @@ import AdminTeachers from './AdminTeachers.jsx'
 import AdminAccess from './AdminAccess.jsx'
 import CustomLessonGate from './CustomLessonGate.jsx'
 import TeacherProfile from './TeacherProfile.jsx'
+import TeacherNetwork from './TeacherNetwork.jsx'
 import ArticlePlayerPage from './ArticlePlayerPage.jsx'
 import VocabularyPlayerPage from './VocabularyPlayerPage.jsx'
 import HelloAlphabetLesson from './HelloAlphabetLesson.jsx'
@@ -542,6 +543,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/admin/teachers" element={<AdminTeachers />} />
             <Route path="/library/admin/access" element={<AdminAccess />} />
             <Route path="/library/teacher/:id" element={<LibraryPageShell><TeacherProfile /></LibraryPageShell>} />
+            <Route path="/library/network" element={<LibraryPageShell><TeacherNetwork /></LibraryPageShell>} />
             <Route path="/library/forge" element={<LibraryPageShell><ForgeHub /></LibraryPageShell>} />
             <Route path="/library/forge/:trackId" element={<LibraryPageShell><ForgeTrack /></LibraryPageShell>} />
             <Route path="/library/forge/:trackId/:lessonNum" element={<Forge />} />

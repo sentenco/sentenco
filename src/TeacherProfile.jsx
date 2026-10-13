@@ -6,6 +6,7 @@ import { teachingBadge } from "./ProfileSettings.jsx";
 import CommunityFeed from "./CommunityFeed.jsx";
 import AvatarCropper from "./AvatarCropper.jsx";
 import { ageYearsLine } from "./profileFields.js";
+import { getNetworkState, getNetworkCounts, followUser, unfollowUser, requestConnection, removeConnection, respondConnection } from "./networkApi.js";
 
 function initialsOf(name) {
   const parts = (name || "Teacher").split(" ").filter(Boolean);
@@ -53,6 +54,26 @@ const HIGHLIGHTS = [
   { key: "lesson", label: "Lessons" },
 ];
 
+function ChatBubbleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  );
+}
+
+function NetIcon({ name }) {
+  const paths = {
+    plus: <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>,
+    check: <polyline points="20 6 9 17 4 12" />,
+    clock: <><circle cx="12" cy="12" r="9" /><polyline points="12 7 12 12 15 14" /></>,
+    eye: <><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" /><circle cx="12" cy="12" r="3" /></>,
+  };
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>
+  );
+}
+
 function PenIcon() {
   return (
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -71,6 +92,9 @@ export default function TeacherProfile() {
   const [postCount, setPostCount] = useState(null);
   const [counts, setCounts] = useState(null);
   const [filter, setFilter] = useState("all");
+  const [net, setNet] = useState(null);           // my follow / connect state with this teacher
+  const [netCounts, setNetCounts] = useState(null); // { followers, following, connections }
+  const [netBusy, setNetBusy] = useState(false);
 
   // Editing in place, your own profile only.
   const isSelf = !!user && user.id === id;
@@ -101,6 +125,37 @@ export default function TeacherProfile() {
       setLoading(false);
     })();
   }, [id]);
+
+  async function refreshNetwork() {
+    if (!id) return;
+    const [counts, state] = await Promise.all([getNetworkCounts(id), user && user.id !== id ? getNetworkState(user.id, id) : Promise.resolve(null)]);
+    setNetCounts(counts);
+    setNet(state);
+  }
+
+  useEffect(() => {
+    setNet(null);
+    setNetCounts(null);
+    refreshNetwork();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, user?.id]);
+
+  async function netAct(fn) {
+    if (netBusy) return;
+    setNetBusy(true);
+    const { error } = (await fn()) || {};
+    if (error) setNotice({ kind: "error", text: "That did not go through. Please try again." });
+    await refreshNetwork();
+    setNetBusy(false);
+  }
+  const onFollow = () => netAct(() => (net?.following ? unfollowUser(id) : followUser(id)));
+  const onConnect = () => netAct(() => requestConnection(id));
+  const onCancelRequest = () => netAct(() => removeConnection(id));
+  const onDisconnect = () => {
+    if (window.confirm(`Remove ${shown.name} from your connections?`)) netAct(() => removeConnection(id));
+  };
+  const onAccept = () => netAct(() => respondConnection(id, true));
+  const onDecline = () => netAct(() => respondConnection(id, false));
 
   // Start (or restart) the editable copy once the profile is loaded and it is yours.
   useEffect(() => {
@@ -300,7 +355,25 @@ export default function TeacherProfile() {
                 {user && (
                   <div className="tp-actions">
                     {!isSelf ? (
-                      <button type="button" className="tp-btn" onClick={() => navigate(`/library/messages?to=${id}`)}>Message</button>
+                      <div className="tp-net-actions">
+                        {net?.available && (
+                          <>
+                            {net.conn === "none" && <button type="button" className="tp-nbtn tp-nbtn--coral" onClick={onConnect} disabled={netBusy}><NetIcon name="plus" />Connect</button>}
+                            {net.conn === "pending_out" && <button type="button" className="tp-nbtn tp-nbtn--pend" onClick={onCancelRequest} disabled={netBusy} title="Click to cancel the request"><NetIcon name="clock" />Request sent</button>}
+                            {net.conn === "connected" && <button type="button" className="tp-nbtn tp-nbtn--done" onClick={onDisconnect} disabled={netBusy} title="Click to disconnect"><NetIcon name="check" />Connected</button>}
+                            {net.conn === "pending_in" && (
+                              <>
+                                <button type="button" className="tp-nbtn tp-nbtn--coral" onClick={onAccept} disabled={netBusy}>Accept</button>
+                                <button type="button" className="tp-nbtn tp-nbtn--soft" onClick={onDecline} disabled={netBusy}>Decline</button>
+                              </>
+                            )}
+                            {net.following
+                              ? <button type="button" className="tp-nbtn tp-nbtn--soft" onClick={onFollow} disabled={netBusy} title="Click to unfollow"><NetIcon name="check" />Following</button>
+                              : <button type="button" className="tp-nbtn tp-nbtn--line" onClick={onFollow} disabled={netBusy}><NetIcon name="eye" />Follow</button>}
+                          </>
+                        )}
+                        <button type="button" className="tp-msg-btn" onClick={() => navigate(`/library/messages?to=${id}`)} aria-label="Message" title="Message"><ChatBubbleIcon /></button>
+                      </div>
                     ) : editing ? (
                       <div className="tp-edit-actions">
                         <button type="button" className="tp-btn tp-btn--ghost" onClick={cancelEdit} disabled={saving}>Cancel</button>
@@ -364,6 +437,15 @@ export default function TeacherProfile() {
                     <span className="tp-tag">{profile.mentor_format === "1:1" ? "1:1" : profile.mentor_format === "group" ? "Group" : "1:1 & Group"}</span>
                     <span className="tp-tag">{profile.mentor_price_type === "free" ? "Free" : `₱${profile.mentor_price_amount}/session`}</span>
                   </div>
+                </div>
+              )}
+              {netCounts && (
+                <div className="tp-net">
+                  {[["followers", "Followers", netCounts.followers], ["following", "Following", netCounts.following], ["connections", "Connections", netCounts.connections]].map(([k, label, n]) => (
+                    isSelf
+                      ? <button type="button" key={k} className="tp-net-stat is-link" onClick={() => navigate(`/library/network?tab=${k}`)}><b>{n}</b><small>{label}</small></button>
+                      : <div key={k} className="tp-net-stat"><b>{n}</b><small>{label}</small></div>
+                  ))}
                 </div>
               )}
             </div>
@@ -502,6 +584,29 @@ const CSS = `
   border: none; border-radius: 999px; padding: 10px 22px; cursor: pointer;
 }
 .tp-btn:hover { background: #E0502F; }
+.tp-net-actions { display: flex; align-items: center; gap: 8px; }
+.tp-nbtn { display: inline-flex; align-items: center; gap: 7px; border: none; border-radius: 999px; padding: 10px 20px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background 0.15s, box-shadow 0.15s; }
+.tp-nbtn svg { width: 16px; height: 16px; }
+.tp-nbtn:disabled { opacity: 0.6; cursor: default; }
+.tp-nbtn--coral { background: var(--coral); color: #fff; box-shadow: 0 8px 18px -8px rgba(255,107,74,0.7); }
+.tp-nbtn--coral:hover:not(:disabled) { background: #E0502F; }
+.tp-nbtn--line { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--hair); }
+.tp-nbtn--line:hover:not(:disabled) { box-shadow: inset 0 0 0 1.5px var(--coral); color: #E0502F; }
+.tp-nbtn--pend { background: #FFF8F5; color: #E0502F; box-shadow: inset 0 0 0 1.5px #F5C7B8; }
+.tp-nbtn--done { background: #E4F3EA; color: #1F6B45; }
+.tp-nbtn--soft { background: #F1F3F8; color: var(--ink); }
+.tp-nbtn--soft:hover:not(:disabled) { background: var(--soft); }
+.tp-nbtn:focus-visible, .tp-msg-btn:focus-visible, .tp-net-stat:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.tp-msg-btn { width: 42px; height: 42px; border-radius: 50%; border: none; background: #F1F3F8; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.tp-msg-btn:hover { background: var(--soft); }
+.tp-msg-btn svg { width: 18px; height: 18px; }
+.tp-net { display: flex; border-top: 1px solid var(--hair); margin-top: 6px; }
+.tp-net-stat { flex: 1; border: none; background: none; padding: 14px 8px 8px; text-align: center; font-family: 'Quicksand', sans-serif; color: var(--ink); }
+.tp-net-stat + .tp-net-stat { border-left: 1px solid var(--hair); }
+.tp-net-stat b { display: block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; line-height: 1.1; }
+.tp-net-stat small { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+.tp-net-stat.is-link { cursor: pointer; }
+.tp-net-stat.is-link:hover b { color: #E0502F; }
 .tp-icon-btn { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--coral); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px -6px rgba(255,107,74,0.7); transition: background 0.15s, transform 0.1s; }
 .tp-icon-btn:hover { background: #E0502F; transform: scale(1.05); }
 .tp-icon-btn svg { width: 20px; height: 20px; }
@@ -603,6 +708,7 @@ const CSS = `
   .tp-head { flex-direction: column; align-items: flex-start; gap: 0; }
   .tp-head-text { padding-top: 12px; min-width: 0; width: 100%; }
   .tp-actions { position: absolute; top: 70px; right: 18px; padding-top: 0; }
+  .tp-nbtn { padding: 9px 14px; font-size: 13px; }
   .tp-hl { padding: 10px 18px 2px; gap: 14px; }
 }
 @media (max-width: 560px) {
