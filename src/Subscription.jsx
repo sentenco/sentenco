@@ -94,6 +94,7 @@ function AccessPanel({ onNotice }) {
   const [authMode, setAuthMode] = useState(null);
   const [busy, setBusy] = useState(false);
   const [code, setCode] = useState("");
+  const [codeOpen, setCodeOpen] = useState(false);
   const [message, setMessage] = useState(null); // { kind: "ok" | "error", text }
 
   async function startTrial() {
@@ -152,13 +153,17 @@ function AccessPanel({ onNotice }) {
         {planInfo.source === "trial" && <p className="sub-access-fine">The AI tools allow 30 lookups a day during the trial. Teacher's Desk still unlocks with your 3 daily posts, comments or likes.</p>}
       </div>
       {user && !planInfo.notSetUp && (
-        <form className="sub-redeem" onSubmit={redeem}>
-          <label className="sub-redeem-label" htmlFor="sub-code">Have a code?</label>
-          <div className="sub-redeem-row">
-            <input id="sub-code" className="sub-redeem-input" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Enter your code" autoComplete="off" spellCheck={false} />
-            <button type="submit" className="sub-redeem-btn" disabled={busy}>Redeem</button>
-          </div>
-        </form>
+        <div className="sub-redeem">
+          {codeOpen ? (
+            <form className="sub-redeem-row" onSubmit={redeem}>
+              <input id="sub-code" className="sub-redeem-input" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Your code" aria-label="Your code" autoComplete="off" spellCheck={false} autoFocus />
+              <button type="submit" className="sub-redeem-btn" disabled={busy}>Redeem</button>
+              <button type="button" className="sub-redeem-cancel" onClick={() => { setCodeOpen(false); setCode(""); }} aria-label="Close">&times;</button>
+            </form>
+          ) : (
+            <button type="button" className="sub-redeem-toggle" onClick={() => setCodeOpen(true)}>Have a code?</button>
+          )}
+        </div>
       )}
       {message && <p className={`sub-access-msg is-${message.kind}`} role="status">{message.text}</p>}
       {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
@@ -294,16 +299,20 @@ const CSS = `
 }
 .sub-access-btn:hover:not(:disabled) { filter: brightness(0.92); }
 .sub-access-btn:disabled { opacity: 0.6; cursor: default; }
-.sub-redeem { border-top: 1px solid var(--hair); padding-top: 16px; }
-.sub-redeem-label { display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
-.sub-redeem-row { display: flex; gap: 8px; max-width: 420px; }
+.sub-redeem { border-top: 1px solid var(--hair); padding-top: 10px; }
+.sub-redeem-toggle { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #E0502F; background: none; border: none; padding: 4px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; border-radius: 6px; }
+.sub-redeem-toggle:hover { color: #C2411F; }
+.sub-redeem-toggle:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.sub-redeem-row { display: flex; align-items: center; gap: 6px; max-width: 300px; }
 .sub-redeem-input {
-  flex: 1; min-width: 0; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
-  border: 1.5px solid var(--hair); border-radius: 12px; padding: 10px 14px; background: #fff; color: var(--ink);
+  flex: 1; min-width: 0; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
+  border: 1.5px solid var(--hair); border-radius: 10px; padding: 7px 11px; background: #fff; color: var(--ink);
 }
 .sub-redeem-input:focus { outline: 3px solid var(--navy); outline-offset: 1px; }
-.sub-redeem-btn { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; color: #fff; background: var(--navy); border: none; border-radius: 12px; padding: 10px 20px; cursor: pointer; }
+.sub-redeem-btn { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #fff; background: var(--navy); border: none; border-radius: 10px; padding: 8px 14px; cursor: pointer; }
 .sub-redeem-btn:disabled { opacity: 0.6; cursor: default; }
+.sub-redeem-cancel { width: 28px; height: 28px; border: none; border-radius: 50%; background: none; color: var(--muted); font-size: 18px; line-height: 1; cursor: pointer; flex-shrink: 0; }
+.sub-redeem-cancel:hover { background: rgba(43,42,74,0.08); color: var(--ink); }
 .sub-access-msg { font-size: 13.5px; font-weight: 600; margin: 0; border-radius: 10px; padding: 10px 14px; }
 .sub-access-msg.is-ok { background: #E3F5EA; color: #1F7A47; }
 .sub-access-msg.is-error { background: #FDE8E5; color: #A3322A; }
