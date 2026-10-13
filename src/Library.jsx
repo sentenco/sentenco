@@ -7,7 +7,7 @@ import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
 import ProfileSettings, { teachingBadge } from "./ProfileSettings.jsx";
 import { supabase } from "./supabaseClient";
-import { timeAgo } from "./slideDeckTypes";
+import NotificationPanel from "./NotificationPanel.jsx";
 import CurriculumRouter from "./CurriculumRouter";
 import TrackLevelPage from "./TrackLevelPage";
 import SparkHub from "./SparkHub";
@@ -1543,19 +1543,24 @@ export default function Library() {
   }, [user]);
 
   function openNotifPanel() {
-    setNotifOpen((wasOpen) => {
-      const nowOpen = !wasOpen;
-      if (nowOpen && unreadNotifCount > 0) {
-        const unreadIds = notifications.filter((n) => !n.read_at).map((n) => n.id);
-        setNotifications((prev) => prev.map((n) => (n.read_at ? n : { ...n, read_at: new Date().toISOString() })));
-        supabase.from("notifications").update({ read_at: new Date().toISOString() }).in("id", unreadIds);
-      }
-      return nowOpen;
-    });
+    setNotifOpen((wasOpen) => !wasOpen);
+  }
+
+  function markAllNotificationsRead() {
+    const unreadIds = notifications.filter((n) => !n.read_at).map((n) => n.id);
+    if (!unreadIds.length) return;
+    const now = new Date().toISOString();
+    setNotifications((prev) => prev.map((n) => (n.read_at ? n : { ...n, read_at: now })));
+    supabase.from("notifications").update({ read_at: now }).in("id", unreadIds);
   }
 
   function goToNotification(n) {
     setNotifOpen(false);
+    if (!n.read_at) {
+      const now = new Date().toISOString();
+      setNotifications((prev) => prev.map((x) => (x.id === n.id ? { ...x, read_at: now } : x)));
+      supabase.from("notifications").update({ read_at: now }).eq("id", n.id);
+    }
     navigate(n.post_id ? `/library/community?post=${n.post_id}` : "/library/community");
   }
 
@@ -1978,34 +1983,7 @@ export default function Library() {
                     <BellIcon />
                     {unreadNotifCount > 0 && <span className="notif-dot" />}
                   </button>
-                  {notifOpen && (
-                    <div className="notif-panel">
-                      <div className="notif-panel-head">Notifications</div>
-                      {notifications.length === 0 ? (
-                        <div className="notif-empty">
-                          <BellIcon />
-                          <p>You're all caught up.</p>
-                        </div>
-                      ) : (
-                        <div className="notif-list">
-                          {notifications.map((n) => (
-                            <button
-                              type="button"
-                              key={n.id}
-                              className={`notif-item${n.read_at ? "" : " is-unread"}`}
-                              onClick={() => goToNotification(n)}
-                            >
-                              <span className="notif-item-text">
-                                <strong>{n.actor_name || "Someone"}</strong>{" "}
-                                {n.type === "post_reply" ? "replied to your post" : "replied to your comment"}
-                              </span>
-                              <span className="notif-item-time">{timeAgo(n.created_at)}</span>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
+                  {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onMarkAll={markAllNotificationsRead} />}
                 </div>
                 <div className="account-wrap">
                   <button className="avatar-btn" onClick={() => setMenuOpen((m) => !m)} aria-label="Account menu">
@@ -2958,33 +2936,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   position: absolute; top: 6px; right: 6px; width: 9px; height: 9px; border-radius: 50%;
   background: var(--coral); border: 1.5px solid var(--card);
 }
-.notif-panel {
-  position: absolute; top: 46px; right: 0; width: 300px; max-height: 360px; overflow-y: auto;
-  background: var(--card); border: 1px solid var(--hair); border-radius: 16px;
-  box-shadow: 0 16px 32px rgba(43,42,74,0.16); padding: 6px; z-index: 20;
-}
-.notif-panel-head {
-  font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13px; color: var(--ink);
-  padding: 10px 12px 8px;
-}
-.notif-empty {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  padding: 22px 16px 26px; color: var(--muted);
-}
-.notif-empty svg { width: 26px; height: 26px; opacity: 0.4; }
-.notif-empty p { margin: 0; font-family: 'Quicksand', sans-serif; font-size: 12.5px; }
-.notif-list { display: flex; flex-direction: column; gap: 2px; }
-.notif-item {
-  display: flex; flex-direction: column; gap: 3px; text-align: left;
-  width: 100%; background: none; border: none; border-radius: 10px; cursor: pointer;
-  padding: 9px 12px; font: inherit;
-}
-.notif-item:hover { background: rgba(27,42,74,0.05); }
-.notif-item.is-unread { background: rgba(255,107,74,0.06); }
-.notif-item.is-unread:hover { background: rgba(255,107,74,0.11); }
-.notif-item-text { font-family: 'Quicksand', sans-serif; font-size: 12.5px; color: var(--ink); line-height: 1.4; }
-.notif-item-text strong { font-weight: 700; }
-.notif-item-time { font-family: 'Quicksand', sans-serif; font-size: 10.5px; color: var(--muted); }
 
 .account-wrap { position: relative; }
 .avatar-btn {

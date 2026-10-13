@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 import AuthForm from "./AuthForm";
 import AccountMenu from "./AccountMenu.jsx";
-import { timeAgo } from "./slideDeckTypes";
+import NotificationPanel from "./NotificationPanel.jsx";
 import { CSS as LIBRARY_CSS } from "./Library";
 
 // Shared top nav for pages that live outside Library.jsx's own render tree
@@ -221,19 +221,24 @@ export default function LibraryHeader() {
   }, [user]);
 
   function openNotifPanel() {
-    setNotifOpen((wasOpen) => {
-      const nowOpen = !wasOpen;
-      if (nowOpen && unreadNotifCount > 0) {
-        const unreadIds = notifications.filter((n) => !n.read_at).map((n) => n.id);
-        setNotifications((prev) => prev.map((n) => (n.read_at ? n : { ...n, read_at: new Date().toISOString() })));
-        supabase.from("notifications").update({ read_at: new Date().toISOString() }).in("id", unreadIds);
-      }
-      return nowOpen;
-    });
+    setNotifOpen((wasOpen) => !wasOpen);
+  }
+
+  function markAllNotificationsRead() {
+    const unreadIds = notifications.filter((n) => !n.read_at).map((n) => n.id);
+    if (!unreadIds.length) return;
+    const now = new Date().toISOString();
+    setNotifications((prev) => prev.map((n) => (n.read_at ? n : { ...n, read_at: now })));
+    supabase.from("notifications").update({ read_at: now }).in("id", unreadIds);
   }
 
   function goToNotification(n) {
     setNotifOpen(false);
+    if (!n.read_at) {
+      const now = new Date().toISOString();
+      setNotifications((prev) => prev.map((x) => (x.id === n.id ? { ...x, read_at: now } : x)));
+      supabase.from("notifications").update({ read_at: now }).eq("id", n.id);
+    }
     navigate(n.post_id ? `/library/community?post=${n.post_id}` : "/library/community");
   }
 
@@ -393,34 +398,7 @@ export default function LibraryHeader() {
                     <BellIcon />
                     {unreadNotifCount > 0 && <span className="notif-dot" />}
                   </button>
-                  {notifOpen && (
-                    <div className="notif-panel">
-                      <div className="notif-panel-head">Notifications</div>
-                      {notifications.length === 0 ? (
-                        <div className="notif-empty">
-                          <BellIcon />
-                          <p>You're all caught up.</p>
-                        </div>
-                      ) : (
-                        <div className="notif-list">
-                          {notifications.map((n) => (
-                            <button
-                              type="button"
-                              key={n.id}
-                              className={`notif-item${n.read_at ? "" : " is-unread"}`}
-                              onClick={() => goToNotification(n)}
-                            >
-                              <span className="notif-item-text">
-                                <strong>{n.actor_name || "Someone"}</strong>{" "}
-                                {n.type === "post_reply" ? "replied to your post" : "replied to your comment"}
-                              </span>
-                              <span className="notif-item-time">{timeAgo(n.created_at)}</span>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
+                  {notifOpen && <NotificationPanel notifications={notifications} onGo={goToNotification} onMarkAll={markAllNotificationsRead} />}
                 </div>
                 <div className="account-wrap">
                   <button className="avatar-btn" onClick={() => setMenuOpen((m) => !m)} aria-label="Account menu">
