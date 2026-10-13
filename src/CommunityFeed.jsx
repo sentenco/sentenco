@@ -254,13 +254,15 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
   // visitors too, so it doesn't gate on `user`. See get_teacher_count()
   // (sql/add_teacher_count_rpc.sql), a SECURITY DEFINER RPC that returns
   // just the count without exposing any profile row data.
+  // Only the site owner sees the total; nobody else is shown how many accounts exist.
   useEffect(() => {
+    if (!isAdmin) return undefined;
     let cancelled = false;
     supabase.rpc("get_teacher_count").then(({ data, error }) => {
       if (!cancelled && !error) setTotalTeachers(data);
     });
     return () => { cancelled = true; };
-  }, []);
+  }, [isAdmin]);
 
   async function loadPosts() {
     setLoadingPosts(true);
@@ -513,10 +515,12 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
           alt="Illustration of teachers around the world connecting over Sentenco"
         />
         <div className="cm-stats">
-          <div className="cm-stat">
-            <PeopleIcon />
-            <span className="cm-stat-text"><strong>{totalTeachers ?? "—"}</strong> Teachers</span>
-          </div>
+          {isAdmin && (
+            <div className="cm-stat">
+              <PeopleIcon />
+              <span className="cm-stat-text"><strong>{totalTeachers ?? "—"}</strong> Teachers</span>
+            </div>
+          )}
           <div className="cm-stat">
             <BulbIcon />
             <span className="cm-stat-text"><strong>{tipsShared}</strong> Tips Shared</span>

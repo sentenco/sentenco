@@ -9,6 +9,21 @@ function formatDate(iso) {
   return new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 }
 
+const PLAN_LABEL = { free: "Free", pro: "Pro", pro_plus: "Pro+" };
+
+function daysLeft(iso) {
+  return Math.max(1, Math.ceil((new Date(iso).getTime() - Date.now()) / 86400000));
+}
+
+// Plain-words status: where this account's access comes from.
+function accessText(t) {
+  if (t.source === "trial") return `Free trial, ends ${formatDate(t.access_ends_at)} (${daysLeft(t.access_ends_at)}d left)`;
+  if (t.source === "grant") return `Code or gift, ends ${formatDate(t.access_ends_at)} (${daysLeft(t.access_ends_at)}d left)`;
+  if (t.source === "paid") return `Paid, until ${formatDate(t.access_ends_at)}`;
+  if (t.plan !== "free") return "Set by hand";
+  return t.trial_used ? "Trial ended" : "Trial not started";
+}
+
 export default function AdminTeachers() {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
@@ -16,6 +31,8 @@ export default function AdminTeachers() {
   const [teachers, setTeachers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     if (!isAdmin) { setLoading(false); return; }
@@ -29,6 +46,31 @@ export default function AdminTeachers() {
   }, [isAdmin]);
 
   if (authLoading || loading) return null;
+
+  const hasPlans = teachers.length === 0 || teachers[0].plan !== undefined;
+  const owner = (t) => t.email?.toLowerCase() === ADMIN_EMAIL;
+  const people = teachers.filter((t) => !owner(t));
+  const counts = {
+    all: people.length,
+    free: people.filter((t) => t.plan === "free").length,
+    pro: people.filter((t) => t.plan === "pro").length,
+    pro_plus: people.filter((t) => t.plan === "pro_plus").length,
+    trial: people.filter((t) => t.source === "trial").length,
+    grant: people.filter((t) => t.source === "grant").length,
+    ended: people.filter((t) => t.source === "base" && t.plan === "free" && t.trial_used).length,
+  };
+  const FILTERS = [
+    ["all", "Everyone"], ["free", "Free"], ["pro", "Pro"], ["pro_plus", "Pro+"],
+    ["trial", "On trial"], ["grant", "On a code"], ["ended", "Trial ended"],
+  ];
+  const q = search.trim().toLowerCase();
+  const shown = teachers.filter((t) => {
+    if (q && !`${t.display_name || ""} ${t.email || ""}`.toLowerCase().includes(q)) return false;
+    if (filter === "all" || owner(t)) return filter === "all" || false;
+    if (filter === "trial" || filter === "grant") return t.source === filter;
+    if (filter === "ended") return t.source === "base" && t.plan === "free" && t.trial_used;
+    return t.plan === filter;
+  });
 
   return (
     <div className="adt-shell">
@@ -49,21 +91,59 @@ export default function AdminTeachers() {
           <p className="adt-status">No registered teachers yet.</p>
         ) : (
           <>
-            <p className="adt-count">{teachers.length} registered {teachers.length === 1 ? "teacher" : "teachers"}</p>
+            {!hasPlans && (
+              <div className="adt-error">
+                Plans aren't showing yet. Run <code>sql/admin_teachers_plans_and_private_count.sql</code> in Supabase, then reload.
+              </div>
+            )}
+            <p className="adt-count">{teachers.length} registered {teachers.length === 1 ? "account" : "accounts"}, only you can see this page.</p>
+            {hasPlans && (
+              <div className="adt-filters" role="tablist" aria-label="Filter by plan">
+                {FILTERS.map(([key, label]) => (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === key}
+                    className={`adt-chip${filter === key ? " is-active" : ""}`}
+                    onClick={() => setFilter(key)}
+                  >
+                    {label} <span>{counts[key]}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+            <input
+              type="search"
+              className="adt-search"
+              placeholder="Find by name or email"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
             <div className="adt-table">
               <div className="adt-row adt-row--head">
                 <span>Name</span>
                 <span>Email</span>
-                <span>Years teaching</span>
-                <span>Mentor</span>
+                <span>Plan</span>
+                <span>Access</span>
                 <span>Joined</span>
               </div>
-              {teachers.map((t) => (
+              {shown.length === 0 && <p className="adt-status adt-status--tight">Nobody matches.</p>}
+              {shown.map((t) => (
                 <div className="adt-row" key={t.id}>
-                  <span className="adt-name">{t.display_name || "Unnamed"}</span>
+                  <span className="adt-name">
+                    {t.display_name || "Unnamed"}
+                    <small>
+                      {t.years_teaching !== null && t.years_teaching !== undefined ? `${t.years_teaching} yrs teaching` : "Years not set"}
+                      {t.is_mentor ? " · Mentor" : ""}
+                    </small>
+                  </span>
                   <span className="adt-email">{t.email}</span>
-                  <span>{t.years_teaching ?? "—"}</span>
-                  <span>{t.is_mentor ? "Yes" : "—"}</span>
+                  <span>
+                    {owner(t) ? <b className="adt-pill adt-pill--owner">Owner</b>
+                      : hasPlans ? <b className={`adt-pill adt-pill--${t.plan}`}>{PLAN_LABEL[t.plan] || t.plan}</b> : "–"}
+                  </span>
+                  <span className="adt-access">{owner(t) ? "Full access" : hasPlans ? accessText(t) : "–"}</span>
                   <span>{formatDate(t.created_at)}</span>
                 </div>
               ))}
@@ -106,14 +186,14 @@ const CSS = `
 .adt-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .adt-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
 
-.adt-page { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
+.adt-page { max-width: 1040px; margin: 0 auto; padding: 32px 24px 80px; }
 .adt-status { text-align: center; color: var(--muted); padding: 60px 0; }
 .adt-error { font-size: 12.5px; color: var(--coral); background: var(--coral-pale); border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; }
 .adt-count { font-size: 12.5px; color: var(--muted); margin: 0 0 14px; }
 
 .adt-table { background: var(--card); border: 1px solid var(--hair); border-radius: 18px; overflow: hidden; }
 .adt-row {
-  display: grid; grid-template-columns: 1.2fr 1.6fr 1fr 0.7fr 1fr;
+  display: grid; grid-template-columns: 1.3fr 1.6fr 0.7fr 1.7fr 0.9fr;
   gap: 10px; padding: 12px 18px; align-items: center; font-size: 13px;
   border-bottom: 1px solid var(--hair);
 }
@@ -125,9 +205,29 @@ const CSS = `
 .adt-name { font-weight: 700; color: var(--ink); }
 .adt-email { color: var(--navy); overflow-wrap: anywhere; }
 
-@media (max-width: 640px) {
-  .adt-row, .adt-row--head { grid-template-columns: 1fr 1fr; row-gap: 4px; }
-  .adt-row--head span:nth-child(3), .adt-row--head span:nth-child(4), .adt-row--head span:nth-child(5) { display: none; }
-  .adt-row span:nth-child(3), .adt-row span:nth-child(4), .adt-row span:nth-child(5) { display: none; }
+.adt-name small { display: block; font-weight: 600; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.adt-access { color: var(--ink); font-size: 12.5px; line-height: 1.4; }
+.adt-pill { display: inline-block; font-weight: 800; font-size: 11px; padding: 3px 10px; border-radius: 999px; background: var(--navy-pale); color: var(--navy); }
+.adt-pill--pro { background: var(--coral-pale); color: #C2411F; }
+.adt-pill--pro_plus { background: var(--navy); color: #fff; }
+.adt-pill--owner { background: #2B2A4A; color: #fff; }
+.adt-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.adt-chip {
+  font: 700 12.5px 'Quicksand', sans-serif; color: var(--ink); background: var(--card); border: 1px solid var(--hair);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer;
+}
+.adt-chip span { color: var(--muted); margin-left: 4px; }
+.adt-chip.is-active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.adt-chip.is-active span { color: #C9D0E4; }
+.adt-search {
+  width: 100%; max-width: 320px; font: 600 13.5px 'Quicksand', sans-serif; color: var(--ink); background: var(--card);
+  border: 1px solid var(--hair); border-radius: 12px; padding: 10px 14px; margin: 0 0 14px; outline: none;
+}
+.adt-search:focus { border-color: var(--coral); }
+.adt-status--tight { padding: 22px 0; }
+
+@media (max-width: 760px) {
+  .adt-row, .adt-row--head { grid-template-columns: 1fr 1fr; row-gap: 6px; }
+  .adt-row--head span:nth-child(n+3) { display: none; }
 }
 `;
