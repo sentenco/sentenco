@@ -483,12 +483,14 @@ const CSS = `
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--navy);
   background: var(--navy-pale); border-radius: 999px; padding: 3px 9px;
 }
-.tp-hl { display: flex; gap: 20px; margin-top: 22px; padding: 6px 28px 18px; overflow-x: auto; scrollbar-width: none; }
+.tp-hl { display: flex; gap: 18px; margin-top: 20px; padding: 6px 28px 16px; overflow-x: auto; scrollbar-width: none; }
 .tp-hl::-webkit-scrollbar { display: none; }
-.tp-hl-btn { border: none; background: none; text-align: center; flex-shrink: 0; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--ink); padding: 0; }
-.tp-hl-circle { width: 68px; height: 68px; border-radius: 50%; margin: 0 auto 6px; display: flex; align-items: center; justify-content: center; background: var(--soft); box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--hair); transition: box-shadow 0.15s; }
-.tp-hl-circle svg { width: 26px; height: 26px; }
-.tp-hl-btn.is-on .tp-hl-circle { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--coral); }
+.tp-hl > :first-child { margin-left: auto; }
+.tp-hl > :last-child { margin-right: auto; }
+.tp-hl-btn { border: none; background: none; text-align: center; flex-shrink: 0; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 700; color: var(--ink); padding: 0; }
+.tp-hl-circle { width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 6px; display: flex; align-items: center; justify-content: center; background: var(--soft); box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--hair); transition: box-shadow 0.15s; }
+.tp-hl-circle svg { width: 22px; height: 22px; }
+.tp-hl-btn.is-on .tp-hl-circle { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--coral); }
 .tp-hl-btn--tip .tp-hl-circle { background: #FFF4D6; color: #7A5C0C; }
 .tp-hl-btn--question .tp-hl-circle { background: #E3F0FB; color: #1B4F7A; }
 .tp-hl-btn--resource .tp-hl-circle { background: var(--coral-pale); color: #C2411F; }
@@ -506,7 +508,7 @@ const CSS = `
   .tp-head { flex-direction: column; align-items: flex-start; gap: 0; }
   .tp-head-text { padding-top: 12px; min-width: 0; width: 100%; }
   .tp-actions { padding-top: 12px; }
-  .tp-hl { padding: 6px 18px 16px; gap: 16px; }
+  .tp-hl { padding: 6px 18px 14px; gap: 14px; }
 }
 @media (max-width: 560px) {
   .tp-head { padding: 0 18px; }
