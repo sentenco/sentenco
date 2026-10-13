@@ -391,6 +391,7 @@ export default function LibraryHeader() {
           </div>
         </div>
 
+        {!onConvo && (
         <div className="gc-navbar">
           <div className="gc-sections">
             <button
@@ -434,6 +435,7 @@ export default function LibraryHeader() {
             </button>
           </div>
         </div>
+        )}
       </header>
       {accessDaysLeft && accessDaysLeft <= 2 && !endingBarHidden && (
         <div style={{ background: "#1B2A4A", color: "#fff", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", gap: 12, padding: "8px 16px", flexWrap: "wrap" }}>
