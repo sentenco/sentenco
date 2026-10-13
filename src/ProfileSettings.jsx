@@ -44,7 +44,13 @@ export const BADGE_TIERS = [
   { key: "t5", years: 11, label: "10+ Years", img: tier5Img },
 ];
 
+// The experience medals are switched off for now (to be replaced later). Every screen gets its
+// badge from teachingBadge(), so setting this to true brings them all back at once. The
+// years_teaching number itself is untouched and still shows as "N years teaching".
+export const SHOW_TEACHING_BADGES = false;
+
 export function teachingBadge(years) {
+  if (!SHOW_TEACHING_BADGES) return null;
   if (years === null || years === undefined || years === "") return null;
   const n = Number(years);
   if (Number.isNaN(n) || n < 0) return null;
