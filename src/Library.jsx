@@ -5,11 +5,10 @@ import { SUPPORT_EMAIL } from "./siteConfig.js";
 import { useNavigate, useParams, useLocation, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
-import ProfileSettings, { teachingBadge } from "./ProfileSettings.jsx";
+import ProfileSettings from "./ProfileSettings.jsx";
 import { supabase } from "./supabaseClient";
 import NotificationPanel from "./NotificationPanel.jsx";
 import { DOCK_CSS } from "./HeaderDock.jsx";
-import SuggestedTeachers from "./SuggestedTeachers.jsx";
 import CurriculumRouter from "./CurriculumRouter";
 import TrackLevelPage from "./TrackLevelPage";
 import SparkHub from "./SparkHub";
@@ -125,7 +124,7 @@ import WritingActivities from "./WritingActivities";
 import CommunityFeed from "./CommunityFeed.jsx";
 import HomeroomSearch from "./HomeroomSearch.jsx";
 import AccountMenu from "./AccountMenu.jsx";
-import { ageYearsLine, fetchOwnProfile } from "./profileFields.js";
+import { fetchOwnProfile } from "./profileFields.js";
 import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
 import { useCanSeeTeensAdultsStories } from "./audienceAccess";
 import FORGE_TRACKS from "./forgeTracks";
@@ -1044,11 +1043,6 @@ function TodayFeature({ navigate }) {
   const needsUnlock = plan === "free";
   const progressPct = Math.round((Math.min(deskProgress, 3) / 3) * 100);
   const deskStatus = !needsUnlock ? "" : deskUnlocked ? "Unlocked today" : `${Math.min(deskProgress, 3)} of 3 to unlock`;
-  const myName = me?.display_name || localStorage.getItem("sentenco_teacher_name") || "";
-  const myYears = me?.years_teaching;
-  const myBadge = teachingBadge(myYears);
-  const mySub = ageYearsLine(me?.age, myYears);
-  const myInitials = ((myName.trim().split(/\s+/)[0]?.[0] || "T") + (myName.trim().split(/\s+/)[1]?.[0] || "")).toUpperCase();
 
   const deskPill = (t) => (
     <button
@@ -1063,39 +1057,9 @@ function TodayFeature({ navigate }) {
       <span className="tsq-pill-name">{t.shortLabel}</span>
     </button>
   );
-  const deskList = <div className="tsq-pill-grid">{DESK_TOOLS.map(deskPill)}</div>;
-  const deskMeter = needsUnlock && (
-    <div className="tsq-meter" aria-label={`Unlock progress, ${deskStatus}`}>
-      <i style={{ width: `${progressPct}%` }} />
-    </div>
-  );
   return (
     <div className="gc-dashboard tsq">
       <div className="tsq-cols">
-        <aside className="tsq-left">
-          {user && (
-            <div className="tsq-card tsq-me">
-              <span className="tsq-me-avatar">{me?.avatar_url ? <img src={me.avatar_url} alt="" /> : myInitials}</span>
-              <h3>{myName || "Teacher"}</h3>
-              {mySub && <p className="tsq-me-sub">{mySub}</p>}
-              {myBadge && <img className="tsq-me-badge" src={myBadge.img} alt={myBadge.label} title={myBadge.label} />}
-              <div className="tsq-me-stats">
-                <span><strong>{stats.tipsShared}</strong> Tips shared</span>
-                <span><strong>{stats.dayStreak}</strong> Day streak</span>
-                {user.email?.toLowerCase() === "caldrin1999@gmail.com" && stats.totalTeachers !== null && <span><strong>{stats.totalTeachers}</strong> Teachers</span>}
-              </div>
-              <button type="button" className="tsq-btn" onClick={() => navigate(`/library/teacher/${user.id}`)}>View my profile</button>
-            </div>
-          )}
-          <div className="tsq-card tsq-desk">
-            <div className="tsq-eyebrow">Teacher's Desk</div>
-            {deskMeter}
-            {deskStatus && <div className="tsq-desk-status">{deskStatus}</div>}
-            {!deskUnlocked && <p className="tsq-desk-note">Post, comment, or like 3 times in Homeroom today to unlock.</p>}
-            {deskList}
-          </div>
-          {user && <SuggestedTeachers compact limit={3} onSeeMore={() => navigate("/library/network")} />}
-        </aside>
 
         <div className="tsq-feed">
           <div className="tsq-banner">
@@ -1105,6 +1069,7 @@ function TodayFeature({ navigate }) {
             <span className="tsq-strip-title" title={deskStatus || undefined}>Teacher's Desk{needsUnlock && <em>{Math.min(deskProgress, 3)}/3</em>}</span>
             {DESK_TOOLS.map(deskPill)}
           </div>
+          {!deskUnlocked && <p className="tsq-strip-note">Post, comment, or like 3 times in Homeroom today to unlock the Desk.</p>}
           <CommunityFeed onActivity={handleCommunityActivity} onStats={setStats} />
         </div>
       </div>
@@ -2849,7 +2814,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 
 /* ── Town Square Homeroom ── */
 .gc-dashboard.tsq { max-width: 1060px; position: relative; }
-.tsq-cols { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 18px; align-items: start; }
+.tsq-cols { display: block; max-width: 880px; margin: 0 auto; }
 .tsq-left { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 0; }
 .tsq-feed { min-width: 0; }
 .tsq-banner { border-radius: 22px; overflow: hidden; margin-bottom: 14px; line-height: 0; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); }
@@ -2881,11 +2846,12 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .tsq-pill-lock { position: absolute; right: -4px; bottom: -4px; width: 16px; height: 16px; border-radius: 50%; background: #fff; color: #8B84A3; box-shadow: 0 1px 3px rgba(27,42,74,0.25); display: flex; align-items: center; justify-content: center; }
 .tsq-pill-lock svg { width: 9px; height: 9px; }
 .tsq-pill-name { overflow: hidden; text-overflow: ellipsis; }
-.tsq-strip { display: none; }
+.tsq-strip { display: flex; }
 .tsq-strip { padding: 10px 12px; margin-bottom: 14px; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
 .tsq-strip::-webkit-scrollbar { display: none; }
 .tsq-strip .tsq-pill { flex: 1 0 auto; justify-content: center; padding-right: 14px; }
 .tsq-strip-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #2B2A4A; white-space: nowrap; padding: 0 6px 0 4px; flex-shrink: 0; }
+.tsq-strip-note { margin: -6px 6px 14px; font-size: 12.5px; font-weight: 700; color: #8B84A3; text-align: center; }
 .tsq-strip-title em { font-family: 'Quicksand', sans-serif; font-style: normal; font-size: 11.5px; font-weight: 700; color: #8B84A3; background: #F4F6FB; border-radius: 999px; padding: 2px 8px; margin-left: 8px; }
 @media (max-width: 1000px) {
   .tsq-cols { grid-template-columns: minmax(0, 1fr); }
@@ -3797,7 +3763,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   .gc-sections > :first-child, .gc-editions > :first-child { margin-left: auto; }
   .gc-sections > :last-child, .gc-editions > :last-child { margin-right: auto; }
   .gc-sections::-webkit-scrollbar, .gc-editions::-webkit-scrollbar { display: none; }
-  .gc-sec-tab { font-size: 11.5px; letter-spacing: 0.03em; padding: 6px 12px; flex-shrink: 0; }
+  .gc-sec-tab { font-size: 11.5px; letter-spacing: 0.02em; padding: 6px 9px; flex-shrink: 0; }
   .gc-editions { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
   .gc-editions > * { flex-shrink: 0; }
   
@@ -4462,4 +4428,8 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .page-indicator { font-family: 'Quicksand', sans-serif; font-size: 12.5px; opacity: 0.6; }
 .theme-pro .page-indicator { font-family: 'Inter', sans-serif; }
 
+/* Narrow half-screens: pull the category tabs in a little more so all eight fit without scrolling */
+@media (max-width: 800px) {
+  .gc-sec-tab { font-size: 11px; letter-spacing: 0.01em; padding: 6px 6px; }
+}
 `;
