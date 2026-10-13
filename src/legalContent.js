@@ -23,6 +23,7 @@ export const TERMS_CONTENT = {
       body: [
         "Sentenco is built for English teachers and prospective teachers. You must be at least 18 years old, or the age of legal majority where you live, to create an account.",
         "You're responsible for keeping your account credentials secure and for all activity under your account. Tell us right away if you think someone else has access to it.",
+        "One account is for one person. Don't share your login with other teachers or let others use your account. Sentenco allows one active login per account at a time, so when you log in on a new device, any other device signed in to your account is signed out. We may suspend or end accounts that are shared, including paid ones, and a school or group that wants several teachers to use Sentenco should ask us about separate accounts for each teacher.",
       ],
     },
     {
@@ -117,6 +118,7 @@ export const PRIVACY_CONTENT = {
         "File Cabinet uploads: lesson materials and credentials you choose to store, including anything you mark private.",
         "Mentor program information: if you apply to become a mentor, the details in your application, like your experience, specialty, and any documents you attach.",
         "Usage information: your plan, and activity we use to unlock features, like your post/comment/like counts for the day. We also keep notifications shown to you in the app, such as replies and likes.",
+        "Login records: a random code for the device you last logged in on, and the time it was last active, so we can keep to one active login per account.",
         "Trial and promo code records: when you start a free trial, when it ends, any promo code you redeem and when, and a daily count of how many times you use the AI tools while on a trial, so we can apply the trial limit.",
         "Teaching tools you save: items you choose to save in the Syllabus maker, Slides, the Spin the Wheel lists, and Letter Board, which are stored in your account so you can open them again.",
         "Custom Lesson requests and lessons: if you request a Custom Lesson, the details you type into the form, such as the topic, level, lesson length, the student's language, any notes, and an optional student name. We also record which lessons belong to which teacher, and which lessons a teacher has chosen to share in a Homeroom post.",
