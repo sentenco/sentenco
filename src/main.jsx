@@ -534,7 +534,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/storybook-80" element={<StoryBook book={storybook80} />} />
             <Route path="/library/search" element={<SearchLookup />} />
             <Route path="/library/community" element={<Community />} />
-            <Route path="/library/subscription" element={<Subscription />} />
+            <Route path="/library/subscription" element={<LibraryPageShell><Subscription /></LibraryPageShell>} />
             <Route path="/library/legal/:doc" element={<LegalPage />} />
             <Route path="/library/files" element={<FileCabinet />} />
             <Route path="/library/messages" element={<LibraryPageShell><Messenger /></LibraryPageShell>} />

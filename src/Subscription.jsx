@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 import AuthForm from "./AuthForm";
@@ -20,47 +19,43 @@ const TIERS = [
     price: "Free forever",
     cta: "You're already here",
     ctaDisabled: true,
-    accent: "coral",
     features: [
-      "Homeroom (Community, Daily Correction, clock)",
+      "Homeroom: community, Teacher's Desk and clock",
       "Articles (the Gazette)",
-      "Full Community access, Universal and your company's",
-      "Teacher's Desk (unlock daily with 3 posts, comments, or likes)",
+      "Full community: follow, connect and message teachers",
+      "Teacher's Desk unlocks daily with 3 posts, comments or likes",
     ],
   },
   {
     key: "pro",
     name: "Pro",
     tagline: "Every category, unlocked.",
-    price: "₱299/mo",
-    originalPrice: "₱499/mo",
-    priceBadge: "Early Adopter Price",
-    priceNote: "Locks in your rate. Price rises once we're out of early access.",
+    price: "₱299",
+    originalPrice: "₱499",
+    priceNote: "Early adopter price. It stays yours while you stay subscribed.",
     cta: "Upgrade to Pro",
-    accent: "coral",
     highlighted: true,
     features: [
       "Everything in Free",
       "Speaking, Reading, Grammar, Vocabulary, Writing, Listening",
-      "Teacher's Desk unlocked automatically",
+      "Teacher's Desk always unlocked",
     ],
   },
   {
     key: "pro_plus",
     name: "Pro+",
     tagline: "Every level. AI tools built in.",
-    price: "₱350/mo",
-    originalPrice: "₱599/mo",
-    priceBadge: "Early Adopter Price",
-    priceNote: "Locks in your rate. Price rises once we're out of early access.",
+    price: "₱350",
+    originalPrice: "₱599",
+    priceNote: "Early adopter price. It stays yours while you stay subscribed.",
     cta: "Upgrade to Pro+",
-    accent: "navy",
+    navy: true,
     features: [
       "Everything in Pro",
       "Every CEFR level, A1 through C2",
-      "AI-powered Dictionary",
-      "AI-powered Grammar Checker",
-      "AI-powered Translator",
+      "AI Dictionary",
+      "AI Grammar Checker",
+      "AI Translator",
     ],
   },
 ];
@@ -137,24 +132,32 @@ function AccessPanel({ onNotice }) {
     action = <button type="button" className="sub-access-btn" disabled={busy} onClick={startTrial}>{busy ? "Starting..." : "Start my free trial"}</button>;
   } else if (plan === "free") {
     headline = "Your free trial has ended";
-    sub = "You still have Homeroom and Articles. Paid plans open after the beta. If you were invited, redeem your code below.";
+    sub = "You still have Homeroom and Articles. Paid plans open after the beta. If you were invited, use your code.";
   } else {
     headline = `You're on ${PLAN_NAMES[plan]}`;
     sub = "Everything in your plan is unlocked.";
   }
 
+  const showRing = user && active && planInfo.endsAt && planInfo.source === "trial";
+  const ringPct = showRing ? Math.min(100, Math.round((daysLeft(planInfo.endsAt) / 7) * 100)) : 0;
+
   return (
-    <div className="sub-access">
-      <div className="sub-access-main">
-        <p className="sub-access-eyebrow">Beta access</p>
-        <h3 className="sub-access-title">{headline}</h3>
-        <p className="sub-access-sub">{sub}</p>
-        {action}
-        {planInfo.source === "trial" && <p className="sub-access-fine">The AI tools allow 30 lookups a day during the trial. Teacher's Desk still unlocks with your 3 daily posts, comments or likes.</p>}
+    <div className="sub-rib">
+      <div className="sub-rib-text">
+        <p className="sub-rib-eyebrow">{active ? (planInfo.source === "trial" ? "Free trial" : "Free access") : "Beta access"}</p>
+        <h3 className="sub-rib-title">{headline}</h3>
+        <p className="sub-rib-sub">{sub}</p>
+        {planInfo.source === "trial" && <p className="sub-rib-fine">The AI tools allow 30 lookups a day during the trial.</p>}
       </div>
-      {user && !planInfo.notSetUp && (
-        <div className="sub-redeem">
-          {codeOpen ? (
+      {showRing && (
+        <div className="sub-ring" style={{ "--p": ringPct }} aria-label={`${daysLeft(planInfo.endsAt)} days left`}>
+          <span>{daysLeft(planInfo.endsAt)}<small>days</small></span>
+        </div>
+      )}
+      <div className="sub-rib-actions">
+        {action}
+        {user && !planInfo.notSetUp && (
+          codeOpen ? (
             <form className="sub-redeem-row" onSubmit={redeem}>
               <input id="sub-code" className="sub-redeem-input" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Your code" aria-label="Your code" autoComplete="off" spellCheck={false} autoFocus />
               <button type="submit" className="sub-redeem-btn" disabled={busy}>Redeem</button>
@@ -162,9 +165,9 @@ function AccessPanel({ onNotice }) {
             </form>
           ) : (
             <button type="button" className="sub-redeem-toggle" onClick={() => setCodeOpen(true)}>Have a code?</button>
-          )}
-        </div>
-      )}
+          )
+        )}
+      </div>
       {message && <p className={`sub-access-msg is-${message.kind}`} role="status">{message.text}</p>}
       {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
     </div>
@@ -172,7 +175,6 @@ function AccessPanel({ onNotice }) {
 }
 
 export default function Subscription() {
-  const navigate = useNavigate();
   const [notice, setNotice] = useState(null);
 
   function handleUpgrade(tierName) {
@@ -182,24 +184,17 @@ export default function Subscription() {
   return (
     <div className="sub-shell">
       <style>{CSS}</style>
-      <header className="sub-topbar">
-        <button type="button" className="sub-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentenco.png" alt="" className="sub-brand-logo" />entenco
-        </button>
-        <h1 className="sub-topbar-title">Subscription</h1>
-      </header>
-
       <div className="sub-page">
         <div className="sub-intro">
           <p className="sub-eyebrow">Plans</p>
           <h2 className="sub-heading">Simple pricing, built around how you actually teach</h2>
-          <p className="sub-lede">Start free. Upgrade whenever the curriculum or the AI tools become part of your daily routine.</p>
+          <p className="sub-lede">Start free. Upgrade when the curriculum or the AI tools become part of your daily routine.</p>
         </div>
 
         <AccessPanel />
 
         {notice && (
-          <div className="sub-notice">
+          <div className="sub-notice" role="status">
             {notice}
             <button type="button" className="sub-notice-close" onClick={() => setNotice(null)} aria-label="Dismiss">&times;</button>
           </div>
@@ -207,29 +202,22 @@ export default function Subscription() {
 
         <div className="sub-tiers">
           {TIERS.map((t) => (
-            <div className={`sub-tier sub-tier--${t.accent}${t.highlighted ? " is-highlighted" : ""}`} key={t.key}>
+            <div className={`sub-tier${t.highlighted ? " is-pro" : ""}${t.navy ? " is-navy" : ""}`} key={t.key}>
               {t.highlighted && <span className="sub-tier-badge">Most popular</span>}
               <h3 className="sub-tier-name">{t.name}</h3>
               <p className="sub-tier-tagline">{t.tagline}</p>
-              <div className="sub-tier-price-block">
-                {t.priceBadge && <span className="sub-tier-price-badge">{t.priceBadge}</span>}
-                <div className="sub-tier-price-row">
-                  {t.originalPrice && <span className="sub-tier-price-was">{t.originalPrice}</span>}
-                  <span className="sub-tier-price">{t.price}</span>
-                </div>
-                {t.priceNote && <p className="sub-tier-price-note">{t.priceNote}</p>}
+              <div className="sub-tier-price-row">
+                {t.originalPrice && <span className="sub-tier-price-was">{t.originalPrice}</span>}
+                <span className={`sub-tier-price${t.originalPrice ? "" : " is-small"}`}>{t.price}</span>
+                {t.originalPrice && <span className="sub-tier-per">/mo</span>}
               </div>
+              <p className="sub-tier-price-note">{t.priceNote || "\u00A0"}</p>
               <ul className="sub-tier-features">
                 {t.features.map((f, i) => (
                   <li key={i}><span className="sub-check"><CheckIcon /></span>{f}</li>
                 ))}
               </ul>
-              <button
-                type="button"
-                className="sub-tier-cta"
-                disabled={t.ctaDisabled}
-                onClick={() => handleUpgrade(t.name)}
-              >
+              <button type="button" className="sub-tier-cta" disabled={t.ctaDisabled} onClick={() => handleUpgrade(t.name)}>
                 {t.cta}
               </button>
             </div>
@@ -249,58 +237,40 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Quicksand:wght@500;600;700&display=swap');
 
 .sub-shell {
-  --ink: #2B2A4A;
-  --card: #FFFFFF;
-  --muted: #8B84A3;
-  --coral: #FF6B4A;
-  --coral-pale: #FDECE5;
-  --navy: #1B2A4A;
-  --navy-dark: #12203B;
-  --navy-pale: #E9ECF3;
-  --hair: rgba(43,42,74,0.09);
-  min-height: 100vh;
-  background: #FBFAF7;
-  color: var(--ink);
-  font-family: 'Quicksand', sans-serif;
+  --ink: #2B2A4A; --muted: #8B84A3; --coral: #FF6B4A; --coral-deep: #E0502F; --coral-pale: #FDECE5; --navy: #1B2A4A; --hair: rgba(43,42,74,0.1);
+  min-height: 100%; background: #F1F3F8; color: var(--ink); font-family: 'Quicksand', sans-serif;
 }
 .sub-shell * { box-sizing: border-box; }
+.sub-page { max-width: 1040px; margin: 0 auto; padding: 32px 24px 100px; }
 
-.sub-topbar {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 14px 28px; border-bottom: 1px solid var(--hair); background: var(--card);
+.sub-intro { text-align: center; max-width: 580px; margin: 0 auto 20px; }
+.sub-eyebrow { margin: 0; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--coral-deep); }
+.sub-heading { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 34px; line-height: 1.12; margin: 6px 0 8px; text-wrap: balance; }
+.sub-lede { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.55; color: var(--muted); }
+
+.sub-rib {
+  position: relative; overflow: hidden; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  background: #fff; border-radius: 26px; padding: 16px 20px 16px 26px; margin: 0 auto 26px; max-width: 780px;
+  box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 14px 30px -22px rgba(27,42,74,0.35);
 }
-.sub-brand {
-  display: flex; align-items: center; flex-shrink: 0;
-  font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink);
-  background: none; border: none; cursor: pointer; padding: 0;
-}
-.sub-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
-.sub-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: 0.015em; margin: 0; }
-
-.sub-page { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
-
-.sub-intro { max-width: 62ch; margin: 0 auto 40px; text-align: center; }
-.sub-eyebrow { font-family: 'Quicksand', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin: 0 0 8px; }
-.sub-heading { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 28px; line-height: 1.3; margin: 0 0 10px; text-wrap: balance; }
-.sub-lede { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
-
-
-.sub-access {
-  max-width: 720px; margin: 0 auto 34px; background: var(--navy-pale); border: 1px solid var(--hair); border-radius: 20px;
-  padding: 24px 28px; display: grid; gap: 16px;
-}
-.sub-access-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin: 0 0 6px; }
-.sub-access-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; margin: 0 0 6px; color: var(--navy); }
-.sub-access-sub { font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0 0 14px; }
-.sub-access-fine { font-size: 12px; color: var(--muted); margin: 12px 0 0; line-height: 1.5; }
+.sub-rib::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: linear-gradient(var(--coral), #FF9B6A); }
+.sub-rib-text { flex: 1; min-width: 230px; }
+.sub-rib-eyebrow { margin: 0; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--coral-deep); }
+.sub-rib-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; margin: 2px 0; }
+.sub-rib-sub { margin: 0; font-size: 13.5px; font-weight: 600; line-height: 1.5; color: var(--muted); }
+.sub-rib-fine { margin: 6px 0 0; font-size: 12px; font-weight: 600; color: var(--muted); }
+.sub-rib-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .sub-access-btn {
-  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #fff; background: var(--coral);
-  border: none; border-radius: 999px; padding: 12px 24px; cursor: pointer;
+  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #fff; background: var(--coral); border: none; border-radius: 999px;
+  padding: 12px 22px; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 22px -10px rgba(255,107,74,0.75); transition: background 0.15s;
 }
-.sub-access-btn:hover:not(:disabled) { filter: brightness(0.92); }
+.sub-access-btn:hover:not(:disabled) { background: var(--coral-deep); }
 .sub-access-btn:disabled { opacity: 0.6; cursor: default; }
-.sub-redeem { border-top: 1px solid var(--hair); padding-top: 10px; }
-.sub-redeem-toggle { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #E0502F; background: none; border: none; padding: 4px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; border-radius: 6px; }
+.sub-access-btn:focus-visible, .sub-tier-cta:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.sub-ring { --p: 70; width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: conic-gradient(var(--coral) calc(var(--p) * 1%), #E7EAF2 0); }
+.sub-ring span { width: 48px; height: 48px; border-radius: 50%; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; line-height: 1; }
+.sub-ring small { font-family: 'Quicksand', sans-serif; font-size: 9px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.sub-redeem-toggle { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: var(--coral-deep); background: none; border: none; padding: 4px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; border-radius: 6px; }
 .sub-redeem-toggle:hover { color: #C2411F; }
 .sub-redeem-toggle:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 .sub-redeem-row { display: flex; align-items: center; gap: 6px; max-width: 300px; }
@@ -313,68 +283,46 @@ const CSS = `
 .sub-redeem-btn:disabled { opacity: 0.6; cursor: default; }
 .sub-redeem-cancel { width: 28px; height: 28px; border: none; border-radius: 50%; background: none; color: var(--muted); font-size: 18px; line-height: 1; cursor: pointer; flex-shrink: 0; }
 .sub-redeem-cancel:hover { background: rgba(43,42,74,0.08); color: var(--ink); }
-.sub-access-msg { font-size: 13.5px; font-weight: 600; margin: 0; border-radius: 10px; padding: 10px 14px; }
+.sub-access-msg { flex-basis: 100%; font-size: 13.5px; font-weight: 600; margin: 0; border-radius: 12px; padding: 10px 14px; }
 .sub-access-msg.is-ok { background: #E3F5EA; color: #1F7A47; }
-.sub-access-msg.is-error { background: #FDE8E5; color: #A3322A; }
+.sub-access-msg.is-error { background: #FBE3E0; color: #B3261E; }
 
-.sub-notice {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  max-width: 640px; margin: 0 auto 28px; background: var(--coral-pale); color: var(--ink);
-  border-radius: 12px; padding: 12px 16px; font-size: 13.5px;
+.sub-notice { position: relative; max-width: 780px; margin: -12px auto 22px; background: #FFF4D6; color: #7A5C0C; border-radius: 18px; padding: 12px 40px 12px 16px; font-size: 13.5px; font-weight: 700; line-height: 1.5; }
+.sub-notice-close { position: absolute; right: 8px; top: 8px; width: 26px; height: 26px; border: none; border-radius: 50%; background: none; color: inherit; font-size: 18px; cursor: pointer; }
+
+.sub-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; padding-top: 10px; }
+.sub-tier { position: relative; background: #fff; border-radius: 30px; padding: 24px 22px 22px; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(27,42,74,0.05), 0 18px 36px -26px rgba(27,42,74,0.4); }
+.sub-tier.is-pro { background: linear-gradient(170deg, #fff 55%, var(--coral-pale)); box-shadow: 0 0 0 2px var(--coral), 0 26px 46px -26px rgba(255,107,74,0.6); transform: translateY(-6px); }
+.sub-tier-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; border-radius: 999px; padding: 4px 12px; background: var(--coral); color: #fff; white-space: nowrap; }
+.sub-tier-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; margin: 0; }
+.sub-tier-tagline { font-size: 13.5px; font-weight: 600; color: var(--muted); margin: 4px 0 14px; min-height: 36px; }
+.sub-tier-price-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.sub-tier-price { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 34px; line-height: 1.1; }
+.sub-tier-price.is-small { font-size: 28px; }
+.sub-tier-price-was { font-size: 14px; font-weight: 700; color: var(--muted); text-decoration: line-through; }
+.sub-tier-per { font-size: 13px; font-weight: 700; color: var(--muted); }
+.sub-tier-price-note { font-size: 12px; font-weight: 600; color: var(--muted); line-height: 1.45; margin: 4px 0 0; min-height: 34px; }
+.sub-tier-features { list-style: none; margin: 16px 0 20px; padding: 0; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.sub-tier-features li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; font-weight: 600; line-height: 1.45; }
+.sub-check { width: 20px; height: 20px; border-radius: 50%; background: var(--coral); color: #fff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.sub-check svg { width: 12px; height: 12px; stroke-width: 3; }
+.sub-tier.is-navy .sub-check { background: var(--navy); }
+.sub-tier-cta { width: 100%; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; border: none; border-radius: 999px; padding: 12px 22px; cursor: pointer; background: var(--navy); color: #fff; transition: background 0.15s; }
+.sub-tier-cta:hover:not(:disabled) { background: #12203B; }
+.sub-tier.is-pro .sub-tier-cta { background: var(--coral); box-shadow: 0 10px 22px -10px rgba(255,107,74,0.75); }
+.sub-tier.is-pro .sub-tier-cta:hover:not(:disabled) { background: var(--coral-deep); }
+.sub-tier-cta:disabled { background: #F1F3F8; color: var(--muted); cursor: default; box-shadow: none; }
+
+.sub-legal-note { text-align: center; font-size: 12.5px; font-weight: 600; color: var(--muted); margin: 24px 0 0; }
+.sub-legal-note a { color: var(--ink); }
+
+@media (max-width: 880px) {
+  .sub-tiers { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+  .sub-tier.is-pro { transform: none; }
+  .sub-tier-tagline, .sub-tier-price-note { min-height: 0; }
+  .sub-heading { font-size: 27px; }
+  .sub-rib-actions { align-items: flex-start; }
 }
-.sub-notice-close { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; line-height: 1; padding: 0; }
-
-.sub-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
-.sub-legal-note { text-align: center; font-size: 12px; color: var(--muted); margin: 28px 0 0; }
-.sub-legal-note a { color: var(--muted); text-decoration: underline; }
-.sub-legal-note a:hover { color: var(--ink); }
-@media (max-width: 860px) { .sub-tiers { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
-
-.sub-tier {
-  position: relative;
-  background: var(--card); border: 1px solid var(--hair); border-top: 4px solid var(--tier-accent, var(--coral));
-  border-radius: 20px; padding: 26px 24px 24px;
-  display: flex; flex-direction: column;
-  box-shadow: 0 10px 30px rgba(43,42,74,0.06);
-}
-.sub-tier--coral { --tier-accent: var(--coral); --tier-accent-pale: var(--coral-pale); }
-.sub-tier--navy { --tier-accent: var(--navy); --tier-accent-pale: var(--navy-pale); }
-.sub-tier.is-highlighted { box-shadow: 0 16px 40px rgba(255,107,74,0.16); transform: translateY(-4px); }
-
-.sub-tier-badge {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--coral); color: #fff; font-family: 'Quicksand', sans-serif; font-weight: 800;
-  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px;
-  white-space: nowrap;
-}
-
-.sub-tier-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 21px; margin: 4px 0 4px; color: var(--ink); }
-.sub-tier-tagline { font-size: 12.5px; color: var(--muted); margin: 0 0 16px; line-height: 1.4; min-height: 32px; }
-.sub-tier-price-block { margin: 0 0 20px; }
-.sub-tier-price-badge {
-  display: inline-block; font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 9.5px;
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--tier-accent, var(--coral));
-  background: var(--tier-accent-pale, var(--coral-pale)); padding: 3px 9px; border-radius: 999px; margin: 0 0 8px;
-}
-.sub-tier-price-row { display: flex; align-items: baseline; gap: 8px; margin: 0; }
-.sub-tier-price-was { font-family: 'Quicksand', sans-serif; font-size: 13px; color: var(--muted); text-decoration: line-through; }
-.sub-tier-price { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; color: var(--tier-accent, var(--coral)); margin: 0; }
-.sub-tier-price-note { font-size: 11px; color: var(--muted); margin: 6px 0 0; line-height: 1.4; }
-
-.sub-tier-features { list-style: none; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 11px; flex: 1; }
-.sub-tier-features li { display: flex; align-items: flex-start; gap: 9px; font-size: 13.5px; line-height: 1.4; color: var(--ink); }
-.sub-check {
-  flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; margin-top: 1px;
-  background: var(--tier-accent, var(--coral)); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-}
-.sub-check svg { width: 10px; height: 10px; }
-
-.sub-tier-cta {
-  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px;
-  background: var(--tier-accent, var(--coral)); color: #fff; border: none; border-radius: 999px;
-  padding: 11px; cursor: pointer; width: 100%;
-}
-.sub-tier-cta:hover:not(:disabled) { filter: brightness(0.92); }
-.sub-tier-cta:disabled { background: var(--hair); color: var(--muted); cursor: default; }
+@media (max-width: 640px) { .sub-page { padding: 20px 12px 80px; } }
+@media (prefers-reduced-motion: reduce) { .sub-access-btn, .sub-tier-cta { transition: none; } }
 `;

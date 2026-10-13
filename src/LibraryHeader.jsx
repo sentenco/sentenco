@@ -133,7 +133,7 @@ export default function LibraryHeader() {
   const activeCategory = activeCategoryFor(location.pathname);
   const onConvo = location.pathname.startsWith("/library/messages");
   const onNetwork = location.pathname.startsWith("/library/network");
-  const hideNav = onConvo || onNetwork || location.pathname.startsWith("/library/teacher/") || location.pathname.startsWith("/library/admin/reports");
+  const hideNav = onConvo || onNetwork || location.pathname.startsWith("/library/teacher/") || location.pathname.startsWith("/library/admin/reports") || location.pathname.startsWith("/library/subscription");
   const dockMode = hideNav && !!user;
   const onMyProfile = onNetwork || (!!user && location.pathname === `/library/teacher/${user.id}`);
 
