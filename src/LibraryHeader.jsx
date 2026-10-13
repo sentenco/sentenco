@@ -296,7 +296,7 @@ export default function LibraryHeader() {
               )}
               <input
                 type="text"
-                placeholder={searchMode ? `Ask ${SEARCH_MODES.find((m) => m.key === searchMode)?.label}…` : "Search library…"}
+                placeholder={searchMode ? `Ask ${SEARCH_MODES.find((m) => m.key === searchMode)?.label}…` : "Search teachers and posts…"}
                 value={searchMode ? promptQuery : query}
                 onChange={(e) => (searchMode ? setPromptQuery(e.target.value) : setQuery(e.target.value))}
                 onKeyDown={(e) => {

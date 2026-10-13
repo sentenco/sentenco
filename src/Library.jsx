@@ -120,6 +120,7 @@ import { ARTICLES, ARTICLE_TOPICS } from "./articlesData";
 import VocabularyGames from "./VocabularyGames";
 import WritingActivities from "./WritingActivities";
 import CommunityFeed from "./CommunityFeed.jsx";
+import HomeroomSearch from "./HomeroomSearch.jsx";
 import FORGE_TRACKS from "./forgeTracks";
 import SHIFT_TRACKS from "./shiftTracks";
 import ASCEND_TRACKS from "./ascendTracks";
@@ -1973,7 +1974,7 @@ export default function Library() {
               )}
               <input
                 type="text"
-                placeholder={searchMode ? `Ask ${SEARCH_MODES.find((m) => m.key === searchMode)?.label}…` : "Search library…"}
+                placeholder={searchMode ? `Ask ${SEARCH_MODES.find((m) => m.key === searchMode)?.label}…` : "Search teachers and posts…"}
                 value={searchMode ? promptQuery : query}
                 onChange={(e) => {
                   if (searchMode) {
@@ -2194,6 +2195,8 @@ export default function Library() {
           ) : (
             <TodayFeature navigate={navigate} />
           )
+        ) : category === "All" && query.trim() ? (
+          <HomeroomSearch query={query} navigate={navigate} />
         ) : category === "Articles" ? (
           <ArticlesFeature navigate={navigate} query={query} />
         ) : PRO_CATEGORIES.includes(category) && plan === "free" ? (
@@ -2530,7 +2533,7 @@ export default function Library() {
         )}
         </div>
 
-        {category !== "Speaking" && category !== "Grammar" && category !== "Articles" && category !== "Reading" && category !== "Vocabulary" && category !== "Writing" && category !== "Listening" && category !== "Customized Lessons" && !(category === "All" && !query.trim() && !showAllToday) && (
+        {category !== "Speaking" && category !== "Grammar" && category !== "Articles" && category !== "Reading" && category !== "Vocabulary" && category !== "Writing" && category !== "Listening" && category !== "Customized Lessons" && category !== "All" && !(category === "All" && !query.trim() && !showAllToday) && (
         <div className="pagination">
           <button disabled={safePage === 1} onClick={() => changePage(safePage - 1)}>&larr; Prev</button>
           <span className="page-indicator">Page {safePage} of {totalPages}</span>
