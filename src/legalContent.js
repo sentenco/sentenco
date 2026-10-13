@@ -111,13 +111,17 @@ export const PRIVACY_CONTENT = {
     {
       heading: "1. Information we collect",
       body: [
-        "Account information: your email address, and any name, country, years-teaching, and profile photo you choose to add.",
+        "Account information: your email address, and any name, country, years-teaching, and profile photo you choose to add. If you sign up through a company or school group, we also record which group you belong to.",
         "Content you create: community posts, comments, likes, and any images or files you upload to the Community feed.",
         "Private messages: the content of any 1:1 messages you send through Convo. These aren't end-to-end encrypted — the other participant can read them, and so can Sentenco, for support, moderation, or legal purposes.",
         "File Cabinet uploads: lesson materials and credentials you choose to store, including anything you mark private.",
         "Mentor program information: if you apply to become a mentor, the details in your application, like your experience, specialty, and any documents you attach.",
-        "Usage information: your subscription plan, and activity we use to unlock features, like your post/comment/like counts for the day.",
-        "AI tool inputs: words, sentences, or passages you submit to the Dictionary, Grammar Checker, or Translator, so we can send them to our AI provider and return a result.",
+        "Usage information: your plan, and activity we use to unlock features, like your post/comment/like counts for the day. We also keep notifications shown to you in the app, such as replies and likes.",
+        "Trial and promo code records: when you start a free trial, when it ends, any promo code you redeem and when, and a daily count of how many times you use the AI tools while on a trial, so we can apply the trial limit.",
+        "Teaching tools you save: items you choose to save in the Syllabus maker, Slides, the Spin the Wheel lists, and Letter Board, which are stored in your account so you can open them again.",
+        "Custom Lesson requests and lessons: if you request a Custom Lesson, the details you type into the form, such as the topic, level, lesson length, the student's language, any notes, and an optional student name. We also record which lessons belong to which teacher, and which lessons a teacher has chosen to share in a Homeroom post.",
+        "Student information: Sentenco is for teachers, not children, and we don't knowingly collect information directly from children. If you type a student's details into a tool, like a first name in a Custom Lesson request, those details are stored with your account. Please use only what you need, preferably a first name or nickname, and make sure you have the permission of the student, or the parent or guardian of a student who is a minor.",
+        "AI tool inputs: words, sentences, or passages you submit to the Dictionary, Grammar Checker, Translator, or the translation feature in the Teacher Board, so we can send them to our AI provider and return a result.",
       ],
     },
     {
@@ -125,6 +129,8 @@ export const PRIVACY_CONTENT = {
       body: [
         "To provide the service: run your dashboard, the Homeroom community, curriculum access, and the AI tools.",
         "To personalize your experience, like showing your name and badge on your posts, and unlocking Teacher's Desk once you're active for the day.",
+        "To run free trials and promo codes: to start and end your access on the right dates, to stop a trial or code being used more than allowed, and to limit AI-tool use during a trial.",
+        "To keep Custom Lessons private to the teacher they belong to, and to open a lesson for other teachers only when its owner chooses to share it.",
         "To process payments once billing is live, through our payment processor.",
         "To improve Sentenco, for example caching common dictionary lookups so they're faster and cheaper for everyone.",
       ],
@@ -133,9 +139,12 @@ export const PRIVACY_CONTENT = {
       heading: "3. Who we share information with",
       body: [
         "We don't sell your personal information. We share it only with the service providers Sentenco runs on:",
-        "Supabase, for authentication, our database, and file storage.",
+        "Supabase, for authentication, our database, and file storage. Account emails, such as sign-in confirmation and password reset, are sent through this service.",
+        "Vercel, which hosts the Sentenco website and the server code that connects to the AI service.",
+        "Cloudflare, which manages our domain and forwards emails sent to our support address, and Google, whose Gmail receives that support mail. Anything you email to us is handled by these providers.",
         "Anthropic, whose Claude models power the Dictionary, Grammar Checker, and Translator, meaning the text you submit to those tools is sent to Anthropic for processing.",
-        "PayMongo, our payment processor, for billing once subscriptions go live. PayMongo handles your payment details directly, Sentenco does not store your card or e-wallet information.",
+        "PayMongo, our planned payment processor, for billing once paid plans open. PayMongo will handle your payment details directly, and Sentenco will not store your card or e-wallet information. No payments are taken during the free trial.",
+        "Other teachers can see what you choose to make visible in the Community, such as your name, photo, badge, country, and posts. A Custom Lesson you share in a Homeroom post can be opened by teachers who can see that post.",
         "We may also disclose information if required by law.",
       ],
     },
@@ -148,7 +157,7 @@ export const PRIVACY_CONTENT = {
     {
       heading: "5. Data retention",
       body: [
-        "We keep your account information, messages, and File Cabinet uploads for as long as your account is active. If you delete your account, we'll delete or anonymize your personal information within a reasonable period, except where we need to keep it for legal or legitimate business reasons, like unresolved billing.",
+        "We keep your account information, messages, File Cabinet uploads, saved teaching tools, Custom Lesson requests, and trial and promo code records for as long as your account is active. If you delete your account, we'll delete or anonymize your personal information within a reasonable period, except where we need to keep it for legal or legitimate business reasons, like unresolved billing.",
       ],
     },
     {
@@ -161,7 +170,7 @@ export const PRIVACY_CONTENT = {
     {
       heading: "7. Cookies and local storage",
       body: [
-        "Sentenco uses your browser's local storage to keep you signed in and to remember small preferences, like your display name, translation language pair, and recent AI-tool lookups. We don't use third-party advertising trackers.",
+        "Sentenco uses your browser's local storage and session storage to keep you signed in and to remember small things on your own device, like your display name, your translation languages, recent AI-tool lookups, Letter Board settings, medals earned in some lessons, notes you type in a Relay lesson during a session, and whether you have dismissed a notice. This stays in your browser and isn't sent to us. We don't use third-party advertising trackers.",
       ],
     },
     {
