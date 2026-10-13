@@ -18,6 +18,7 @@ import MentorDirectory from './MentorDirectory.jsx'
 import MentorApply from './MentorApply.jsx'
 import MentorAdmin from './MentorAdmin.jsx'
 import AdminTeachers from './AdminTeachers.jsx'
+import AdminReports from './AdminReports.jsx'
 import AdminAccess from './AdminAccess.jsx'
 import CustomLessonGate from './CustomLessonGate.jsx'
 import TeacherProfile from './TeacherProfile.jsx'
@@ -541,6 +542,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/mentors/apply" element={<MentorApply />} />
             <Route path="/library/admin/mentors" element={<MentorAdmin />} />
             <Route path="/library/admin/teachers" element={<AdminTeachers />} />
+            <Route path="/library/admin/reports" element={<AdminReports />} />
             <Route path="/library/admin/access" element={<AdminAccess />} />
             <Route path="/library/teacher/:id" element={<LibraryPageShell><TeacherProfile /></LibraryPageShell>} />
             <Route path="/library/network" element={<LibraryPageShell><TeacherNetwork /></LibraryPageShell>} />

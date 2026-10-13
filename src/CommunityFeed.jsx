@@ -9,6 +9,8 @@ import ConfirmDialog from "./ConfirmDialog";
 import { CUSTOM_LESSONS, customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
 import { getFollowingIds } from "./networkApi.js";
+import { useBlocked } from "./safetyApi.js";
+import ReportDialog from "./ReportDialog.jsx";
 
 const ADMIN_EMAIL = "caldrin1999@gmail.com";
 const AVATAR_HUES = ["#FF6B4A", "#7C5CFC", "#16BFAE", "#E0A72E", "#FF8A4C"];
@@ -57,6 +59,15 @@ function TrashIcon() {
       <path d="M5.5 4.5V3a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.5" />
       <path d="M6 7.5v4M10 7.5v4" />
       <path d="M3.5 4.5 4.1 13a1 1 0 0 0 1 .9h5.8a1 1 0 0 0 1-.9l0.6-8.5" />
+    </svg>
+  );
+}
+
+function FlagIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3.5 14V2.5" />
+      <path d="M3.5 3h8.2l-1.6 2.6 1.6 2.6H3.5" />
     </svg>
   );
 }
@@ -195,6 +206,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const [profile, setProfile] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [scope, setScope] = useState("universal");
+  const { hidden: hiddenIds, refresh: refreshBlocked } = useBlocked();
+  const [reportTarget, setReportTarget] = useState(null); // { type, id, userId, name }
   const [feedMode, setFeedMode] = useState("everyone"); // "everyone" | "following"
   const [followingIds, setFollowingIds] = useState(null); // null until the follow tables exist
 
@@ -568,7 +581,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const typedPosts = !typeFilter || typeFilter === "all"
     ? posts
     : posts.filter((p) => (typeFilter === "lesson" ? !!p.lesson_slug : p.post_type === typeFilter));
-  const shownPosts = followingOnly ? typedPosts.filter((p) => followingIds.includes(p.author_id)) : typedPosts;
+  const followedPosts = followingOnly ? typedPosts.filter((p) => followingIds.includes(p.author_id)) : typedPosts;
+  const shownPosts = hiddenIds.length ? followedPosts.filter((p) => !hiddenIds.includes(p.author_id)) : followedPosts;
 
   return (
     <div className="cmf-shell">
@@ -739,7 +753,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
         ) : (
           shownPosts.map((p) => {
             const isOpen = expanded.has(p.id);
-            const comments = commentsByPost[p.id] || [];
+            const comments = (commentsByPost[p.id] || []).filter((c) => !hiddenIds.includes(c.author_id));
             const canManage = user && (p.author_id === user.id || isAdmin);
             const liked = likedByMe.has(p.id);
             const likeCount = likeCounts[p.id] || 0;
@@ -774,6 +788,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                   {user && p.author_id && p.author_id !== user.id && (
                     <button type="button" className="cm-icon-btn" title="Message" onClick={() => navigate(`/library/messages?to=${p.author_id}`)}>
                       <MessageIcon />
+                    </button>
+                  )}
+                  {user && p.author_id && p.author_id !== user.id && (
+                    <button type="button" className="cm-icon-btn" title="Report this post" aria-label="Report this post" onClick={() => setReportTarget({ type: "post", id: p.id, userId: p.author_id, name: displayName(p.author_name, p.author_email) })}>
+                      <FlagIcon />
                     </button>
                   )}
                   {canManage && (
@@ -838,6 +857,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                           </div>
                           <p className="cm-comment-text">{c.content}</p>
                         </div>
+                        {user && c.author_id && c.author_id !== user.id && (
+                          <button type="button" className="cm-icon-btn cm-icon-btn--xs" title="Report this comment" aria-label="Report this comment" onClick={() => setReportTarget({ type: "comment", id: c.id, userId: c.author_id, name: displayName(c.author_name, c.author_email) })}>
+                            <FlagIcon />
+                          </button>
+                        )}
                         {user && (c.author_id === user.id || isAdmin) && (
                           <button type="button" className="cm-icon-btn cm-icon-btn--xs" title="Delete comment" onClick={() => setDeleteTarget({ type: "comment", id: c.id, postId: p.id })}>
                             <TrashIcon />
@@ -878,6 +902,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
 
       {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
 
+      <ReportDialog target={reportTarget} onClose={() => setReportTarget(null)} onBlocked={() => refreshBlocked()} />
       <ConfirmDialog
         open={!!deleteTarget}
         title={deleteTarget?.type === "post" ? "Delete this post?" : "Delete this comment?"}

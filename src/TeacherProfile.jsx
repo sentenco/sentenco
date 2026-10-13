@@ -6,6 +6,9 @@ import { teachingBadge } from "./ProfileSettings.jsx";
 import CommunityFeed from "./CommunityFeed.jsx";
 import AvatarCropper from "./AvatarCropper.jsx";
 import { ageYearsLine } from "./profileFields.js";
+import { blockUser, unblockUser, useBlocked } from "./safetyApi.js";
+import ReportDialog from "./ReportDialog.jsx";
+import ConfirmDialog from "./ConfirmDialog.jsx";
 import { getNetworkState, getNetworkCounts, followUser, unfollowUser, requestConnection, removeConnection, respondConnection } from "./networkApi.js";
 
 function initialsOf(name) {
@@ -62,6 +65,14 @@ function ChatBubbleIcon() {
   );
 }
 
+function MoreIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" />
+    </svg>
+  );
+}
+
 function NetIcon({ name }) {
   const paths = {
     plus: <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>,
@@ -95,6 +106,12 @@ export default function TeacherProfile() {
   const [net, setNet] = useState(null);           // my follow / connect state with this teacher
   const [netCounts, setNetCounts] = useState(null); // { followers, following, connections }
   const [netBusy, setNetBusy] = useState(false);
+  const { hidden: hiddenIds, mine: myBlocks, refresh: refreshBlocked } = useBlocked();
+  const [moreOpen, setMoreOpen] = useState(false);
+  const [reportTarget, setReportTarget] = useState(null);
+  const [confirmBlock, setConfirmBlock] = useState(false);
+  const iBlocked = myBlocks.includes(id);
+  const blockedMe = hiddenIds.includes(id) && !iBlocked;
 
   // Editing in place, your own profile only.
   const isSelf = !!user && user.id === id;
@@ -144,7 +161,7 @@ export default function TeacherProfile() {
     if (netBusy) return;
     setNetBusy(true);
     const { error } = (await fn()) || {};
-    if (error) setNotice({ kind: "error", text: "That did not go through. Please try again." });
+    if (error) setNotice({ kind: "error", text: /blocked/i.test(error.message || "") ? "You cannot do that with this teacher." : "That did not go through. Please try again." });
     await refreshNetwork();
     setNetBusy(false);
   }
@@ -154,6 +171,16 @@ export default function TeacherProfile() {
   const onDisconnect = () => {
     if (window.confirm(`Remove ${shown.name} from your connections?`)) netAct(() => removeConnection(id));
   };
+  async function doBlock() {
+    setConfirmBlock(false);
+    setMoreOpen(false);
+    await blockUser(id);
+    await Promise.all([refreshBlocked(), refreshNetwork()]);
+  }
+  async function doUnblock() {
+    await unblockUser(id);
+    await Promise.all([refreshBlocked(), refreshNetwork()]);
+  }
   const onAccept = () => netAct(() => respondConnection(id, true));
   const onDecline = () => netAct(() => respondConnection(id, false));
 
@@ -301,6 +328,21 @@ export default function TeacherProfile() {
           <p className="tp-status">Loading…</p>
         ) : notFound ? (
           <p className="tp-status">Couldn't find that teacher.</p>
+        ) : !isSelf && (iBlocked || blockedMe) ? (
+          <div className="tp-blocked">
+            {iBlocked ? (
+              <>
+                <h2>You blocked {shown.name}</h2>
+                <p>They cannot message you, follow you or connect with you, and you will not see their posts.</p>
+                <button type="button" className="tp-nbtn tp-nbtn--coral" onClick={doUnblock}>Unblock</button>
+              </>
+            ) : (
+              <>
+                <h2>This profile is not available</h2>
+                <p>You cannot view this teacher right now.</p>
+              </>
+            )}
+          </div>
         ) : (
           <>
             <div className="tp-card">
@@ -373,6 +415,15 @@ export default function TeacherProfile() {
                           </>
                         )}
                         <button type="button" className="tp-msg-btn" onClick={() => navigate(`/library/messages?to=${id}`)} aria-label="Message" title="Message"><ChatBubbleIcon /></button>
+                        <div className="tp-more-wrap">
+                          <button type="button" className="tp-msg-btn" onClick={() => setMoreOpen((o) => !o)} aria-label="More options" aria-expanded={moreOpen} title="More"><MoreIcon /></button>
+                          {moreOpen && (
+                            <div className="tp-more-menu" role="menu">
+                              <button type="button" role="menuitem" onClick={() => { setMoreOpen(false); setReportTarget({ type: "profile", id, userId: id, name: shown.name }); }}>Report</button>
+                              <button type="button" role="menuitem" className="is-danger" onClick={() => { setMoreOpen(false); setConfirmBlock(true); }}>Block</button>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     ) : editing ? (
                       <div className="tp-edit-actions">
@@ -484,6 +535,15 @@ export default function TeacherProfile() {
         )}
       </div>
 
+      <ReportDialog target={reportTarget} onClose={() => setReportTarget(null)} onBlocked={() => { refreshBlocked(); refreshNetwork(); }} />
+      <ConfirmDialog
+        open={confirmBlock}
+        title={`Block ${shown.name}?`}
+        message="They will not be able to message you, follow you or connect with you, and you will not see each other's posts. They are not told. You can unblock them any time from Your network."
+        confirmLabel="Block"
+        onConfirm={doBlock}
+        onCancel={() => setConfirmBlock(false)}
+      />
       <input ref={avatarInput} type="file" accept="image/*" hidden onChange={(e) => pickFile("avatar", e)} />
       <input ref={coverInput} type="file" accept="image/*" hidden onChange={(e) => pickFile("cover", e)} />
 
@@ -604,6 +664,15 @@ const CSS = `
 .tp-msg-btn { width: 42px; height: 42px; border-radius: 50%; border: none; background: #F1F3F8; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .tp-msg-btn:hover { background: var(--soft); }
 .tp-msg-btn svg { width: 18px; height: 18px; }
+.tp-more-wrap { position: relative; }
+.tp-more-menu { position: absolute; top: calc(100% + 6px); right: 0; z-index: 30; min-width: 150px; background: #fff; border-radius: 16px; padding: 6px; box-shadow: 0 12px 34px rgba(43,42,74,0.2), 0 0 0 1px var(--hair); }
+.tp-more-menu button { display: block; width: 100%; text-align: left; border: none; background: none; border-radius: 10px; padding: 10px 12px; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.tp-more-menu button:hover { background: #F1F3F8; }
+.tp-more-menu button.is-danger { color: #B3261E; }
+.tp-more-menu button:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.tp-blocked { background: #fff; border-radius: 28px; padding: 44px 28px; text-align: center; box-shadow: 0 1px 2px rgba(27,42,74,0.05), 0 18px 40px -22px rgba(27,42,74,0.28); }
+.tp-blocked h2 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; margin: 0 0 8px; }
+.tp-blocked p { margin: 0 auto 18px; max-width: 46ch; font-size: 14.5px; font-weight: 600; line-height: 1.55; color: var(--muted); }
 .tp-net { display: flex; border-top: 1px solid var(--hair); margin-top: 6px; }
 .tp-net-stat { flex: 1; border: none; background: none; padding: 14px 8px 8px; text-align: center; font-family: 'Quicksand', sans-serif; color: var(--ink); }
 .tp-net-stat + .tp-net-stat { border-left: 1px solid var(--hair); }

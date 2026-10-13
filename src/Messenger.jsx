@@ -3,6 +3,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
 import ConfirmDialog from "./ConfirmDialog";
+import ReportDialog from "./ReportDialog.jsx";
+import { blockUser, unblockUser, useBlocked } from "./safetyApi.js";
 import { teachingBadge } from "./ProfileSettings.jsx";
 import { CUSTOM_LESSONS, customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
@@ -214,6 +216,9 @@ export default function Messenger() {
   const pollRef = useRef(null);
   const activeIdRef = useRef(null);
   const composerRef = useRef(null);
+  const { hidden: hiddenIds, mine: myBlocks, refresh: refreshBlocked } = useBlocked();
+  const [reportTarget, setReportTarget] = useState(null);
+  const [confirmBlock, setConfirmBlock] = useState(false);
   const messageIdsRef = useRef(new Set());
   const memberSearchTimer = useRef(null);
   const addMemberSearchTimer = useRef(null);
@@ -667,7 +672,7 @@ export default function Messenger() {
       .select()
       .single();
     setSending(false);
-    if (sendError) { setError(sendError.message); return; }
+    if (sendError) { setError(/blocked/i.test(sendError.message || "") ? "You cannot message this teacher." : sendError.message); return; }
     setReplyTarget(null);
     setMessages((prev) => (prev.some((m) => m.id === data.id) ? prev : [...prev, data]));
     const now = new Date().toISOString();
@@ -749,6 +754,8 @@ export default function Messenger() {
   const activeProfile = activeOtherId ? profiles[activeOtherId] : null;
   const activeName = activeProfile ? displayName(activeProfile) : "…";
   const activeLabel = activeConv?.is_group ? activeConv.title : activeName;
+  const activeBlocked = !!activeOtherId && hiddenIds.includes(activeOtherId);
+  const activeBlockedByMe = !!activeOtherId && myBlocks.includes(activeOtherId);
   const activeMemberIds = activeConv?.is_group ? (groupMembersById[activeConv.id] || []) : [];
 
   const myLessons = CUSTOM_LESSONS.filter((l) => lessonAccess.get(l.slug)?.relation === "mine");
@@ -1056,6 +1063,12 @@ export default function Messenger() {
                     </div>
                   )}
 
+                  {activeBlocked ? (
+                    <div className="mg-blocked-note">
+                      <span>{activeBlockedByMe ? `You blocked ${activeName}. Unblock to message them again.` : "You cannot message this teacher."}</span>
+                      {activeBlockedByMe && <button type="button" onClick={async () => { await unblockUser(activeOtherId); refreshBlocked(); }}>Unblock</button>}
+                    </div>
+                  ) : (
                   <div className="mg-composer">
                     {canShareLesson && (
                       <div className="mg-share-wrap">
@@ -1088,6 +1101,7 @@ export default function Messenger() {
                       <SendIcon />
                     </button>
                   </div>
+                  )}
                 </>
               )}
             </div>
@@ -1128,6 +1142,14 @@ export default function Messenger() {
                       </div>
                     )}
                     <button type="button" className="mg-side-btn" onClick={() => activeOtherId && navigate(`/library/teacher/${activeOtherId}`)}>View profile</button>
+                    {activeOtherId && (
+                      <div className="mg-side-safety">
+                        <button type="button" onClick={() => setReportTarget({ type: "profile", id: activeOtherId, userId: activeOtherId, name: activeName })}>Report</button>
+                        {activeBlockedByMe
+                          ? <button type="button" onClick={async () => { await unblockUser(activeOtherId); refreshBlocked(); }}>Unblock</button>
+                          : <button type="button" className="is-danger" onClick={() => setConfirmBlock(true)}>Block</button>}
+                      </div>
+                    )}
                   </>
                 )}
 
@@ -1165,6 +1187,15 @@ export default function Messenger() {
         </div>
       )}
 
+      <ReportDialog target={reportTarget} onClose={() => setReportTarget(null)} onBlocked={() => refreshBlocked()} />
+      <ConfirmDialog
+        open={confirmBlock}
+        title={`Block ${activeName}?`}
+        message="They will not be able to message you, follow you or connect with you, and you will not see each other's posts. They are not told. You can unblock them any time."
+        confirmLabel="Block"
+        onConfirm={async () => { setConfirmBlock(false); if (activeOtherId) { await blockUser(activeOtherId); refreshBlocked(); } }}
+        onCancel={() => setConfirmBlock(false)}
+      />
       <ConfirmDialog
         open={!!deleteTarget}
         title="Delete this message?"
@@ -1578,6 +1609,12 @@ const CSS = `
 .mg-send-btn:not(:disabled):hover { background: #E0502F; transform: scale(1.05); }
 .mg-send-btn:disabled { opacity: 0.35; cursor: default; }
 .mg-send-btn svg { width: 17px; height: 17px; }
+.mg-blocked-note { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 12px 16px 14px; padding: 12px 16px; border-radius: 22px; background: #F1F3F8; font-size: 13.5px; font-weight: 700; color: #8B84A3; text-align: center; }
+.mg-blocked-note button { border: none; background: var(--coral); color: #fff; border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.mg-side-safety { display: flex; gap: 8px; margin-top: 8px; width: 100%; }
+.mg-side-safety button { flex: 1; border: none; background: #F1F3F8; color: var(--ink); border-radius: 999px; padding: 9px 10px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.mg-side-safety button:hover { background: #E7EAF2; }
+.mg-side-safety button.is-danger { color: #B3261E; }
 .mg-share-wrap { position: relative; flex-shrink: 0; align-self: center; }
 .mg-share-btn {
   display: flex; align-items: center; gap: 6px; border: none; background: var(--coral-pale); color: #C2411F; cursor: pointer;

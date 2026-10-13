@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import { unblockUser, useBlocked } from "./safetyApi.js";
 import { getNetworkLists, getPeople, followUser, unfollowUser, respondConnection, removeConnection } from "./networkApi.js";
 
 // "Your network": requests waiting for you, your connections, your followers and the teachers you follow.
 
 const HUES = ["#7C5CBF", "#E8734A", "#2F8F83", "#C2487A", "#3E6FB0", "#B07A2F"];
-const TABS = [["requests", "Requests"], ["connections", "Connections"], ["followers", "Followers"], ["following", "Following"]];
+const TABS = [["requests", "Requests"], ["connections", "Connections"], ["followers", "Followers"], ["following", "Following"], ["blocked", "Blocked"]];
 const AGE_LABEL = { kids: "Kids", teens: "Teens", adults: "Adults" };
 
 function nameOf(p) { return (p && p.display_name) || "Teacher"; }
@@ -25,6 +26,8 @@ export default function TeacherNetwork() {
   const [lists, setLists] = useState(undefined); // undefined loading, null not available
   const [people, setPeople] = useState({});
   const [busy, setBusy] = useState(false);
+  const { mine: myBlocks, refresh: refreshBlocked } = useBlocked();
+  const [blockedPeople, setBlockedPeople] = useState({});
 
   const tab = TABS.some(([k]) => k === params.get("tab")) ? params.get("tab") : null;
 
@@ -35,6 +38,7 @@ export default function TeacherNetwork() {
     if (l) setPeople(await getPeople([...new Set([...l.requests, ...l.sent, ...l.connections, ...l.followers, ...l.following])]));
   }
   useEffect(() => { load(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [user?.id]);
+  useEffect(() => { getPeople(myBlocks).then(setBlockedPeople); }, [myBlocks]);
 
   async function act(fn) {
     if (busy) return;
@@ -45,10 +49,10 @@ export default function TeacherNetwork() {
   }
 
   const active = tab || (lists && lists.requests.length ? "requests" : "connections");
-  const counts = lists ? { requests: lists.requests.length, connections: lists.connections.length, followers: lists.followers.length, following: lists.following.length } : {};
+  const counts = lists ? { blocked: myBlocks.length, requests: lists.requests.length, connections: lists.connections.length, followers: lists.followers.length, following: lists.following.length } : {};
 
   function Row({ id, children }) {
-    const p = people[id];
+    const p = people[id] || blockedPeople[id];
     return (
       <div className="tn-row">
         <button type="button" className="tn-who" onClick={() => navigate(`/library/teacher/${id}`)}>
@@ -66,7 +70,15 @@ export default function TeacherNetwork() {
   let body = null;
   if (lists === undefined) body = <p className="tn-status">Loading…</p>;
   else if (lists === null) body = <p className="tn-status">Following and connecting need a quick database update first (sql/add_follow_and_connect.sql).</p>;
-  else if (active === "requests") {
+  else if (active === "blocked") {
+    body = myBlocks.length === 0 ? (
+      <div className="tn-empty"><h3>No one blocked</h3><p>Teachers you block appear here. They are never told, and you can unblock them any time.</p></div>
+    ) : myBlocks.map((id) => (
+      <Row key={id} id={id}>
+        <button type="button" className="tn-btn tn-btn--soft" disabled={busy} onClick={() => act(async () => { await unblockUser(id); await refreshBlocked(); })}>Unblock</button>
+      </Row>
+    ));
+  } else if (active === "requests") {
     body = (
       <>
         {lists.requests.length === 0 && lists.sent.length === 0 ? (

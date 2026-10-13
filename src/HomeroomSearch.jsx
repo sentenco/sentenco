@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
+import { useBlocked } from "./safetyApi.js";
 import { teachingBadge } from "./ProfileSettings.jsx";
 import { timeAgo } from "./slideDeckTypes";
 
@@ -38,6 +39,7 @@ function Hit({ text, term }) {
 export default function HomeroomSearch({ query, navigate }) {
   const { user, loading: authLoading } = useAuth();
   const term = clean(query);
+  const { hidden: hiddenIds } = useBlocked();
   const [state, setState] = useState({ loading: false, teachers: [], posts: [], error: false });
 
   useEffect(() => {
@@ -85,7 +87,9 @@ export default function HomeroomSearch({ query, navigate }) {
     );
   }
 
-  const { loading, teachers, posts, error } = state;
+  const { loading, error } = state;
+  const teachers = state.teachers.filter((t) => !hiddenIds.includes(t.id));
+  const posts = state.posts.filter((p) => !hiddenIds.includes(p.author_id));
   const empty = !loading && !teachers.length && !posts.length;
 
   return (
