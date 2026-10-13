@@ -5,7 +5,6 @@ import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
 import { teachingBadge } from "./ProfileSettings.jsx";
 import { timeAgo } from "./slideDeckTypes";
-import { promptOfTheDay } from "./homeroomPrompts";
 import ConfirmDialog from "./ConfirmDialog";
 import { customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
@@ -200,7 +199,6 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingFile, setUploadingFile] = useState(false);
   const [uploadError, setUploadError] = useState(null);
-  const [filter, setFilter] = useState("all");
 
   // "Share" on a custom lesson sends the teacher here (?shareLesson=slug): the lesson is attached
   // to the composer, they write their post, and it is shared when they press Post.
@@ -625,35 +623,6 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
         </div>
       )}
 
-      {user && (
-        <div className="cm-prompt">
-          <span className="cm-prompt-ic"><BulbIcon /></span>
-          <div className="cm-prompt-text">
-            <strong>Prompt of the day</strong>
-            <span>{promptOfTheDay()}</span>
-          </div>
-          <button
-            type="button"
-            className="cm-btn"
-            onClick={() => {
-              setDraft((d) => d || `${promptOfTheDay()}\n\n`);
-              composerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-              setTimeout(() => composerRef.current?.querySelector("textarea")?.focus(), 150);
-            }}
-          >
-            Answer
-          </button>
-        </div>
-      )}
-
-      <div className="cm-filters" role="tablist" aria-label="Filter posts">
-        {[["all", "All"], ["tip", "Tips"], ["question", "Questions"], ["resource", "Resources"]].map(([key, label]) => (
-          <button type="button" role="tab" aria-selected={filter === key} key={key} className={`cm-filter${filter === key ? " is-active" : ""}`} onClick={() => setFilter(key)}>
-            {label}
-          </button>
-        ))}
-      </div>
-
       {shareNote && <p className="cm-upload-error" style={{ color: "#1F7A47", background: "#E3F5EA", borderRadius: 10, padding: "10px 14px" }} role="status">{shareNote}</p>}
 
       <div className="cm-feed">
@@ -664,7 +633,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
             No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!
           </p>
         ) : (
-          (filter === "all" ? posts : posts.filter((p) => p.post_type === filter)).map((p) => {
+          posts.map((p) => {
             const isOpen = expanded.has(p.id);
             const comments = commentsByPost[p.id] || [];
             const canManage = user && (p.author_id === user.id || isAdmin);
@@ -1065,15 +1034,6 @@ const CSS = `
 .cm-composer-actions .cm-btn { background: var(--coral); }
 .cm-composer-actions .cm-btn:not(:disabled):hover { background: #E0502F; }
 .cm-btn:hover:not(:disabled) { background: #E0502F; }
-.cm-prompt { display: flex; align-items: center; gap: 14px; background: #E4F3EA; border-radius: 20px; padding: 14px 18px; }
-.cm-prompt-ic { width: 44px; height: 44px; border-radius: 14px; background: #fff; color: #1F6B45; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.cm-prompt-ic svg { width: 22px; height: 22px; }
-.cm-prompt-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.cm-prompt-text strong { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; }
-.cm-prompt-text span { font-size: 13.5px; font-weight: 600; color: #3C6A52; }
-.cm-filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.cm-filter { border: none; background: #fff; border-radius: 999px; padding: 7px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; box-shadow: 0 0 0 1px var(--hair); }
-.cm-filter.is-active { background: var(--navy); color: #fff; box-shadow: none; }
 .cm-feed { gap: 14px; }
 .cm-post { border: none; border-radius: 22px; padding: 18px 20px; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); }
 .cm-post.is-focused { box-shadow: 0 0 0 3px rgba(255,107,74,0.35); }
