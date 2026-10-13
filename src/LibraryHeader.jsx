@@ -17,6 +17,10 @@ import { CSS as LIBRARY_CSS } from "./Library";
 // internals. If the two ever drift, this is the file to reconcile.
 
 const CATEGORIES = ["Articles", "Reading", "Speaking", "Grammar", "Vocabulary", "Writing", "Listening"];
+// Dictionary / Grammar Checker / Translator in the search bar are paused for now.
+// The code (picker, /library/search page, api endpoints) is kept; flip to true to bring it back.
+const LOOKUP_TOOLS_ENABLED = false;
+
 const SEARCH_MODES = [
   { key: "dictionary", label: "Dictionary" },
   { key: "grammar", label: "Grammar Checker" },
@@ -239,21 +243,32 @@ export default function LibraryHeader() {
             <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
+            {/* The search bar lives only in the Homeroom (the main Library page). */}
+            {false && (
             <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>
               <div className="gc-search-icon-wrap">
-                <button
-                  type="button"
-                  className="gc-search-icon-btn"
-                  onClick={() => setSearchModeMenuOpen((o) => !o)}
-                  title="Dictionary, Grammar & Translator"
-                  aria-label="Open Dictionary, Grammar & Translator"
-                  aria-expanded={searchModeMenuOpen}
-                >
-                  <svg viewBox="0 0 20 20" aria-hidden="true">
-                    <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                    <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                  </svg>
-                </button>
+                {LOOKUP_TOOLS_ENABLED ? (
+                  <button
+                    type="button"
+                    className="gc-search-icon-btn"
+                    onClick={() => setSearchModeMenuOpen((o) => !o)}
+                    title="Dictionary, Grammar & Translator"
+                    aria-label="Open Dictionary, Grammar & Translator"
+                    aria-expanded={searchModeMenuOpen}
+                  >
+                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                      <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                ) : (
+                  <span className="gc-search-icon-btn gc-search-icon-btn--static" aria-hidden="true">
+                    <svg viewBox="0 0 20 20">
+                      <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                )}
                 {searchModeMenuOpen && (
                   <div className="gc-search-mode-menu">
                     <div className="gc-search-mode-heading">Look something up</div>
@@ -303,6 +318,7 @@ export default function LibraryHeader() {
                 </button>
               )}
             </div>
+            )}
             {!user ? (
               <>
                 <button className="gc-btn" onClick={() => setAuthMode("login")}>Log in</button>

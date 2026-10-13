@@ -867,6 +867,10 @@ export const BOOK_AGE_TRACK = {
 const READING_LEVELS = ["A1", "A2", "B1", "B2"];
 const READING_AGE_TRACKS = ["Kids", "Teens", "Adults"];
 
+// Dictionary / Grammar Checker / Translator in the search bar are paused for now.
+// The code (picker, /library/search page, api endpoints) is kept; flip to true to bring it back.
+const LOOKUP_TOOLS_ENABLED = false;
+
 const SEARCH_MODES = [
   { key: "dictionary", label: "Dictionary" },
   { key: "grammar", label: "Grammar Checker" },
@@ -1507,6 +1511,11 @@ export default function Library() {
   const curriculumUnit = params.unitNum || null;
   const isSpark = location.pathname === "/library/spark";
   const isArticleReader = location.pathname.startsWith("/library/articles/") && !!params.slug;
+  // The search bar only exists in the Homeroom.
+  const showSearch = !isCurriculum && !isSpark && !isArticleReader && category === "All";
+  useEffect(() => {
+    if (!showSearch) setQuery("");
+  }, [showSearch]);
 
   function goToSidebar(sidebar, level = null) {
     if (sidebar === "curriculum") {
@@ -1912,21 +1921,31 @@ export default function Library() {
             <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
           </a>
           <div className="gc-topbar-actions">
+            {showSearch && (
             <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>
               <div className="gc-search-icon-wrap">
-                <button
-                  type="button"
-                  className="gc-search-icon-btn"
-                  onClick={() => setSearchModeMenuOpen((o) => !o)}
-                  title="Dictionary, Grammar & Translator"
-                  aria-label="Open Dictionary, Grammar & Translator"
-                  aria-expanded={searchModeMenuOpen}
-                >
-                  <svg viewBox="0 0 20 20" aria-hidden="true">
-                    <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                    <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                  </svg>
-                </button>
+                {LOOKUP_TOOLS_ENABLED ? (
+                  <button
+                    type="button"
+                    className="gc-search-icon-btn"
+                    onClick={() => setSearchModeMenuOpen((o) => !o)}
+                    title="Dictionary, Grammar & Translator"
+                    aria-label="Open Dictionary, Grammar & Translator"
+                    aria-expanded={searchModeMenuOpen}
+                  >
+                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                      <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                ) : (
+                  <span className="gc-search-icon-btn gc-search-icon-btn--static" aria-hidden="true">
+                    <svg viewBox="0 0 20 20">
+                      <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                )}
                 {searchModeMenuOpen && (
                   <div className="gc-search-mode-menu">
                     <div className="gc-search-mode-heading">Look something up</div>
@@ -1986,6 +2005,7 @@ export default function Library() {
                 </button>
               )}
             </div>
+            )}
             {!user ? (
               <>
                 <button className="gc-btn" onClick={() => setAuthMode("login")}>Log in</button>
@@ -2618,6 +2638,8 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   border-radius: 50%;
   transition: background 0.15s, color 0.15s;
 }
+.gc-search-icon-btn--static { cursor: default; }
+.gc-search-icon-btn--static:hover { color: inherit; background: none; }
 .gc-search-icon-btn:hover { color: var(--coral); background: rgba(255,107,74,0.1); }
 .gc-search-mode-menu {
   position: absolute;
