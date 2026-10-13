@@ -65,7 +65,6 @@ export default function LetterBoardHub() {
       <div className="lbh2-page">
         <div className="lbh2-title">
           <h1 className="lbh2-tiles" aria-label="Letter Board">{letterTiles}</h1>
-          <p>Pick a topic, choose how hard, and play.</p>
         </div>
 
         <div className="lbh2-tabs" role="tablist" aria-label="Topics">
@@ -148,11 +147,10 @@ const CSS = `
   min-height: 100%; background: #F1F3F8; color: var(--ink); font-family: 'Quicksand', sans-serif; }
 .lbh2-shell * { box-sizing: border-box; }
 .lbh2-page { max-width: 980px; margin: 0 auto; padding: 24px 24px 100px; }
-.lbh2-title { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
-.lbh2-title p { margin: 0; font-size: 14.5px; font-weight: 600; color: var(--muted); }
-.lbh2-tiles { display: flex; gap: 5px; flex-wrap: wrap; margin: 0; }
-.lbh2-tl { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 21px; color: #fff; box-shadow: 0 3px 0 rgba(0,0,0,0.22); }
-.lbh2-tl.is-navy { background: var(--navy); } .lbh2-tl.is-coral { background: var(--coral); } .lbh2-tl.is-gap { background: none; box-shadow: none; width: 10px; }
+.lbh2-title { display: flex; justify-content: center; margin: 4px 0 22px; }
+.lbh2-tiles { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 0; }
+.lbh2-tl { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 32px; color: #fff; box-shadow: 0 5px 0 rgba(0,0,0,0.22); }
+.lbh2-tl.is-navy { background: var(--navy); } .lbh2-tl.is-coral { background: var(--coral); } .lbh2-tl.is-gap { background: none; box-shadow: none; width: 14px; }
 .lbh2-tabs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px 2px 14px; }
 .lbh2-tabs::-webkit-scrollbar { display: none; }
 .lbh2-tab { flex-shrink: 0; border: none; background: #fff; border-radius: 999px; padding: 10px 18px 10px 12px; font-family: inherit; font-size: 14px; font-weight: 700; color: var(--muted); box-shadow: 0 0 0 1px var(--hair); display: flex; align-items: center; gap: 9px; cursor: pointer; transition: background 0.15s; }
@@ -207,9 +205,16 @@ const CSS = `
 @media (max-width: 820px) {
   .lbh2-page { padding: 14px 12px 80px; }
   .lbh2-card { padding: 18px 16px 20px; }
-  .lbh2-levels { grid-template-columns: 1fr; }
   .lbh2-rewards { grid-template-columns: repeat(2, 1fr); }
-  .lbh2-tl { width: 30px; height: 30px; font-size: 17px; }
+  .lbh2-tl { width: 44px; height: 44px; font-size: 25px; border-radius: 12px; gap: 6px; }
+  .lbh2-tiles { gap: 6px; }
+  .lbh2-lv { padding: 14px 12px 12px; }
+  .lbh2-n { font-size: 28px; }
+}
+@media (max-width: 600px) {
+  .lbh2-levels { grid-template-columns: 1fr; }
+  .lbh2-tl { width: 32px; height: 32px; font-size: 19px; border-radius: 9px; box-shadow: 0 3px 0 rgba(0,0,0,0.22); }
+  .lbh2-tiles { gap: 4px; }
 }
 @media (prefers-reduced-motion: reduce) { .lbh2-lv, .lbh2-tab { transition: none; } }
 `;
