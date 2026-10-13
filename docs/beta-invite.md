@@ -26,7 +26,7 @@ A few things to know:
 - Your name, photo and posts are visible to other teachers in the Community. You can change them any time in Edit profile.
 - Nothing is charged. There are no payments in the beta.
 
-Send feedback to hello@sentenco.com, or message me directly. Even one sentence helps.
+Send feedback to beta@sentenco.com, or message me directly. Even one sentence helps.
 
 Thank you for helping me get this right.
 [Your name]
@@ -48,7 +48,7 @@ How to start:
 2. Open any locked category, like Grammar, and tap "Start your free 7-day trial".
 3. Explore for a week. After the trial, you keep the free parts: Homeroom, Articles, and the Kids stories in Reading.
 
-I'd love to hear what worked, what confused you, and what's missing. Reply to this message or write to hello@sentenco.com.
+I'd love to hear what worked, what confused you, and what's missing. Reply to this message or write to beta@sentenco.com.
 
 Good to know: it's a beta, so things may be rough. One account is for one person, with one login at a time. Nothing is charged.
 
@@ -83,4 +83,4 @@ Questions we'd love answered:
 - Would you use this with your students next week? What's stopping you?
 - What's the one thing you wish it had?
 
-Send everything to hello@sentenco.com. Thank you!
+Send everything to beta@sentenco.com. Thank you!
