@@ -229,9 +229,12 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
-  const [myName] = useState(() => localStorage.getItem("sentenco_teacher_name") || "");
+  const [storedName] = useState(() => localStorage.getItem("sentenco_teacher_name") || "");
 
   const [profile, setProfile] = useState(null);
+  // The name shown for a teacher is always their current profile name, not whatever name was saved when they posted.
+  const myName = (profile?.display_name || "").trim() || storedName;
+  const [nameById, setNameById] = useState({});
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [scope, setScope] = useState("universal");
   const { hidden: hiddenIds, refresh: refreshBlocked } = useBlocked();
@@ -359,6 +362,27 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     return () => { cancelled = true; };
   }, [user?.id, authorId]);
 
+  useEffect(() => {
+    const ids = new Set();
+    posts.forEach((p) => p.author_id && ids.add(p.author_id));
+    Object.values(commentsByPost).forEach((list) => (list || []).forEach((c) => c.author_id && ids.add(c.author_id)));
+    const missing = [...ids].filter((id) => !(id in nameById));
+    if (!missing.length) return undefined;
+    let off = false;
+    supabase.from("profiles").select("id, display_name").in("id", missing).then(({ data }) => {
+      if (off || !data) return;
+      setNameById((prev) => {
+        const next = { ...prev };
+        missing.forEach((id) => { next[id] = ""; });
+        data.forEach((r) => { next[r.id] = (r.display_name || "").trim(); });
+        return next;
+      });
+    });
+    return () => { off = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [posts, commentsByPost]);
+  const nameFor = (id, stored) => (id && nameById[id]) || stored;
+
   async function loadPosts() {
     setLoadingPosts(true);
     const baseCols = "id, author_id, author_email, author_name, content, post_type, prompt_date, company_id, author_years_teaching, author_is_mentor, image_url, file_url, file_name, created_at";
@@ -405,7 +429,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     (async () => {
       const { data } = await supabase
         .from("profiles")
-        .select("company_id, years_teaching, is_mentor, companies(name)")
+        .select("display_name, company_id, years_teaching, is_mentor, companies(name)")
         .eq("id", user.id)
         .maybeSingle();
       setProfile(data || null);
@@ -771,7 +795,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
             const isOpen = expanded.has(p.id);
             const comments = (commentsByPost[p.id] || []).filter((c) => !hiddenIds.includes(c.author_id));
             const isMine = !!user && p.author_id === user.id;
-            const postName = displayName(p.author_name, p.author_email);
+            const postName = displayName(nameFor(p.author_id, p.author_name), p.author_email);
             const postItems = !user ? [] : isMine
               ? [{ label: "Delete post", danger: true, onClick: () => setDeleteTarget({ type: "post", id: p.id }) }]
               : p.author_id ? [
@@ -787,14 +811,14 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
             return (
               <div className={`cm-post${p.id === focusPostId ? " is-focused" : ""}`} id={`cm-post-${p.id}`} key={p.id}>
                 <div className="cm-post-head">
-                  <Avatar name={p.author_name} email={p.author_email} size="sm" />
+                  <Avatar name={nameFor(p.author_id, p.author_name)} email={p.author_email} size="sm" />
                   <div className="cm-post-headline">
                     {p.author_id ? (
                       <button type="button" className="cm-post-author cm-post-author--link" onClick={() => navigate(`/library/teacher/${p.author_id}`)}>
-                        {displayName(p.author_name, p.author_email)}
+                        {displayName(nameFor(p.author_id, p.author_name), p.author_email)}
                       </button>
                     ) : (
-                      <span className="cm-post-author">{displayName(p.author_name, p.author_email)}</span>
+                      <span className="cm-post-author">{displayName(nameFor(p.author_id, p.author_name), p.author_email)}</span>
                     )}
                     {badge && (
                       <img className="cm-badge-icon" src={badge.img} alt={badge.label} title={badge.label} />
@@ -850,15 +874,15 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                       const commentBadge = teachingBadge(c.author_years_teaching);
                       return (
                       <div className="cm-comment" key={c.id}>
-                        <Avatar name={c.author_name} email={c.author_email} size="xs" />
+                        <Avatar name={nameFor(c.author_id, c.author_name)} email={c.author_email} size="xs" />
                         <div className="cm-comment-body">
                           <div className="cm-comment-meta">
                             {c.author_id ? (
                               <button type="button" className="cm-comment-author cm-comment-author--link" onClick={() => navigate(`/library/teacher/${c.author_id}`)}>
-                                {displayName(c.author_name, c.author_email)}
+                                {displayName(nameFor(c.author_id, c.author_name), c.author_email)}
                               </button>
                             ) : (
-                              <span className="cm-comment-author">{displayName(c.author_name, c.author_email)}</span>
+                              <span className="cm-comment-author">{displayName(nameFor(c.author_id, c.author_name), c.author_email)}</span>
                             )}
                             {commentBadge && (
                               <img className="cm-badge-icon cm-badge-icon--xs" src={commentBadge.img} alt={commentBadge.label} title={commentBadge.label} />
@@ -874,8 +898,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                           items={!user ? [] : c.author_id === user.id
                             ? [{ label: "Delete comment", danger: true, onClick: () => setDeleteTarget({ type: "comment", id: c.id, postId: p.id }) }]
                             : c.author_id ? [
-                                { label: "Report", onClick: () => setReportTarget({ type: "comment", id: c.id, userId: c.author_id, name: displayName(c.author_name, c.author_email) }) },
-                                { label: "Block", danger: true, onClick: () => setBlockTarget({ userId: c.author_id, name: displayName(c.author_name, c.author_email) }) },
+                                { label: "Report", onClick: () => setReportTarget({ type: "comment", id: c.id, userId: c.author_id, name: displayName(nameFor(c.author_id, c.author_name), c.author_email) }) },
+                                { label: "Block", danger: true, onClick: () => setBlockTarget({ userId: c.author_id, name: displayName(nameFor(c.author_id, c.author_name), c.author_email) }) },
                               ] : []}
                         />
                       </div>

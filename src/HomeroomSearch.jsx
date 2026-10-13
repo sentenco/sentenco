@@ -64,7 +64,17 @@ export default function HomeroomSearch({ query, navigate }) {
           .limit(20),
       ]);
       if (off) return;
-      setState({ loading: false, teachers: t.data || [], posts: p.data || [], error: !!(t.error && p.error) });
+      // Show each author's current profile name, not the name saved when they posted.
+      let postRows = p.data || [];
+      const authorIds = [...new Set(postRows.map((r) => r.author_id).filter(Boolean))];
+      if (authorIds.length) {
+        const { data: names } = await supabase.from("profiles").select("id, display_name").in("id", authorIds);
+        const byId = {};
+        (names || []).forEach((r) => { if ((r.display_name || "").trim()) byId[r.id] = r.display_name.trim(); });
+        postRows = postRows.map((r) => (byId[r.author_id] ? { ...r, author_name: byId[r.author_id] } : r));
+        if (off) return;
+      }
+      setState({ loading: false, teachers: t.data || [], posts: postRows, error: !!(t.error && p.error) });
     }, 300);
     return () => { off = true; clearTimeout(id); };
   }, [term, user]);
