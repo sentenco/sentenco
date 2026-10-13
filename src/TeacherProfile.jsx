@@ -458,7 +458,7 @@ const CSS = `
 .tp-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .tp-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
 
-.tp-page { max-width: 760px; margin: 0 auto; padding: 28px 20px 120px; }
+.tp-page { max-width: 1040px; margin: 0 auto; padding: 28px 24px 120px; }
 .tp-status { text-align: center; color: var(--muted); padding: 40px 0; }
 
 .tp-card {
