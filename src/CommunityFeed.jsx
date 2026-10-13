@@ -9,7 +9,7 @@ import ConfirmDialog from "./ConfirmDialog";
 import { CUSTOM_LESSONS, customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
 import useCustomLessonAccess from "./useCustomLessonAccess";
 import { getFollowingIds } from "./networkApi.js";
-import { useBlocked } from "./safetyApi.js";
+import { useBlocked, blockUser } from "./safetyApi.js";
 import ReportDialog from "./ReportDialog.jsx";
 
 const ADMIN_EMAIL = "caldrin1999@gmail.com";
@@ -63,12 +63,40 @@ function TrashIcon() {
   );
 }
 
-function FlagIcon() {
+function MoreIcon() {
   return (
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M3.5 14V2.5" />
-      <path d="M3.5 3h8.2l-1.6 2.6 1.6 2.6H3.5" />
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <circle cx="3" cy="8" r="1.4" /><circle cx="8" cy="8" r="1.4" /><circle cx="13" cy="8" r="1.4" />
     </svg>
+  );
+}
+
+// The "..." menu on a post or comment: Message, Report, Block for other teachers' content, Delete for your own.
+function MoreMenu({ items, label, small }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDown = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("mousedown", onDown); document.removeEventListener("keydown", onKey); };
+  }, [open]);
+  if (!items.length) return null;
+  return (
+    <div className="cm-more" ref={ref}>
+      <button type="button" className={`cm-icon-btn${small ? " cm-icon-btn--xs" : ""}`} aria-label={label} aria-expanded={open} aria-haspopup="menu" title="More" onClick={() => setOpen((o) => !o)}>
+        <MoreIcon />
+      </button>
+      {open && (
+        <div className="cm-more-menu" role="menu">
+          {items.map((it) => (
+            <button type="button" role="menuitem" key={it.label} className={it.danger ? "is-danger" : ""} onClick={() => { setOpen(false); it.onClick(); }}>{it.label}</button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -208,6 +236,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const [scope, setScope] = useState("universal");
   const { hidden: hiddenIds, refresh: refreshBlocked } = useBlocked();
   const [reportTarget, setReportTarget] = useState(null); // { type, id, userId, name }
+  const [blockTarget, setBlockTarget] = useState(null);   // { userId, name }
   const [feedMode, setFeedMode] = useState("everyone"); // "everyone" | "following"
   const [followingIds, setFollowingIds] = useState(null); // null until the follow tables exist
 
@@ -754,7 +783,15 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           shownPosts.map((p) => {
             const isOpen = expanded.has(p.id);
             const comments = (commentsByPost[p.id] || []).filter((c) => !hiddenIds.includes(c.author_id));
-            const canManage = user && (p.author_id === user.id || isAdmin);
+            const isMine = !!user && p.author_id === user.id;
+            const postName = displayName(p.author_name, p.author_email);
+            const postItems = !user ? [] : isMine
+              ? [{ label: "Delete post", danger: true, onClick: () => setDeleteTarget({ type: "post", id: p.id }) }]
+              : p.author_id ? [
+                  { label: "Message", onClick: () => navigate(`/library/messages?to=${p.author_id}`) },
+                  { label: "Report", onClick: () => setReportTarget({ type: "post", id: p.id, userId: p.author_id, name: postName }) },
+                  { label: "Block", danger: true, onClick: () => setBlockTarget({ userId: p.author_id, name: postName }) },
+                ] : [];
             const liked = likedByMe.has(p.id);
             const likeCount = likeCounts[p.id] || 0;
             const commentCount = commentCounts[p.id] || 0;
@@ -785,21 +822,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                       </span>
                     )}
                   </div>
-                  {user && p.author_id && p.author_id !== user.id && (
-                    <button type="button" className="cm-icon-btn" title="Message" onClick={() => navigate(`/library/messages?to=${p.author_id}`)}>
-                      <MessageIcon />
-                    </button>
-                  )}
-                  {user && p.author_id && p.author_id !== user.id && (
-                    <button type="button" className="cm-icon-btn" title="Report this post" aria-label="Report this post" onClick={() => setReportTarget({ type: "post", id: p.id, userId: p.author_id, name: displayName(p.author_name, p.author_email) })}>
-                      <FlagIcon />
-                    </button>
-                  )}
-                  {canManage && (
-                    <button type="button" className="cm-icon-btn" title="Delete post" onClick={() => setDeleteTarget({ type: "post", id: p.id })}>
-                      <TrashIcon />
-                    </button>
-                  )}
+                  <MoreMenu items={postItems} label="More options for this post" />
                 </div>
                 <p className="cm-post-text">{p.content}</p>
                 {p.image_url && (
@@ -857,16 +880,16 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                           </div>
                           <p className="cm-comment-text">{c.content}</p>
                         </div>
-                        {user && c.author_id && c.author_id !== user.id && (
-                          <button type="button" className="cm-icon-btn cm-icon-btn--xs" title="Report this comment" aria-label="Report this comment" onClick={() => setReportTarget({ type: "comment", id: c.id, userId: c.author_id, name: displayName(c.author_name, c.author_email) })}>
-                            <FlagIcon />
-                          </button>
-                        )}
-                        {user && (c.author_id === user.id || isAdmin) && (
-                          <button type="button" className="cm-icon-btn cm-icon-btn--xs" title="Delete comment" onClick={() => setDeleteTarget({ type: "comment", id: c.id, postId: p.id })}>
-                            <TrashIcon />
-                          </button>
-                        )}
+                        <MoreMenu
+                          small
+                          label="More options for this comment"
+                          items={!user ? [] : c.author_id === user.id
+                            ? [{ label: "Delete comment", danger: true, onClick: () => setDeleteTarget({ type: "comment", id: c.id, postId: p.id }) }]
+                            : c.author_id ? [
+                                { label: "Report", onClick: () => setReportTarget({ type: "comment", id: c.id, userId: c.author_id, name: displayName(c.author_name, c.author_email) }) },
+                                { label: "Block", danger: true, onClick: () => setBlockTarget({ userId: c.author_id, name: displayName(c.author_name, c.author_email) }) },
+                              ] : []}
+                        />
                       </div>
                       );
                     })}
@@ -902,6 +925,14 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
 
       {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
 
+      <ConfirmDialog
+        open={!!blockTarget}
+        title={`Block ${blockTarget?.name || "this teacher"}?`}
+        message="They will not be able to message you, follow you or connect with you, and you will not see each other's posts. They are not told. You can unblock them any time from Your network."
+        confirmLabel="Block"
+        onConfirm={async () => { const t = blockTarget; setBlockTarget(null); if (t) { await blockUser(t.userId); refreshBlocked(); } }}
+        onCancel={() => setBlockTarget(null)}
+      />
       <ReportDialog target={reportTarget} onClose={() => setReportTarget(null)} onBlocked={() => refreshBlocked()} />
       <ConfirmDialog
         open={!!deleteTarget}
@@ -1222,4 +1253,12 @@ const CSS = `
 .cm-feedswitch-seg em { font-style: normal; font-size: 11.5px; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 1px 8px; }
 .cm-feedswitch-seg button:not(.is-on) em { background: #F1F3F8; color: #2B2A4A; }
 .cm-feedswitch-hint { font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: #8B84A3; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cm-more { position: relative; display: flex; }
+.cm-more-menu { position: absolute; top: calc(100% + 6px); right: 0; z-index: 30; min-width: 150px; background: #fff; border-radius: 16px; padding: 6px; box-shadow: 0 12px 34px rgba(43,42,74,0.2), 0 0 0 1px rgba(43,42,74,0.1); }
+.cm-more-menu button { display: block; width: 100%; text-align: left; border: none; background: none; border-radius: 10px; padding: 10px 12px; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: #2B2A4A; cursor: pointer; }
+.cm-more-menu button:hover { background: #F1F3F8; }
+.cm-more-menu button.is-danger { color: #B3261E; }
+.cm-more-menu button:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
+.cm-more .cm-icon-btn svg { width: 16px; height: 16px; }
+.cm-more .cm-icon-btn--xs svg { width: 14px; height: 14px; }
 `;
