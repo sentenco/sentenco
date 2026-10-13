@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 import AuthForm from "./AuthForm";
+import AccountMenu from "./AccountMenu.jsx";
 import { timeAgo } from "./slideDeckTypes";
 import { CSS as LIBRARY_CSS } from "./Library";
 
@@ -382,29 +383,7 @@ export default function LibraryHeader() {
                     {avatarUrl ? <img src={avatarUrl} alt="" className="avatar-btn-img" /> : <UserIcon />}
                   </button>
                   {menuOpen && (
-                    <div className="account-menu">
-                      <button type="button" className="account-menu-link" onClick={() => { navigate(`/library/teacher/${user.id}`); setMenuOpen(false); }}>My profile</button>
-                      {/* File Cabinet, Find a Mentor, Mentor Applications: hidden from the menu for everyone
-                          (including admin) per the user's call, 2026-10-01 -- not deleted, routes and pages
-                          are untouched, see memory project_hidden_settings_menu_items for when to restore. */}
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/subscription"); setMenuOpen(false); }}>
-                        Subscription
-                        {accessDaysLeft && (
-                          <span style={{ marginLeft: 8, fontSize: 10.5, fontWeight: 800, color: "#1B2A4A", background: "#E9ECF3", borderRadius: 999, padding: "2px 8px" }}>
-                            {planInfo.source === "trial" ? "Trial" : "Free access"} &middot; {accessDaysLeft}d left
-                          </span>
-                        )}
-                      </button>
-                      {isAdmin && (
-                        <>
-                          <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
-                          <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/access"); setMenuOpen(false); }}>Access codes</button>
-                        </>
-                      )}
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/legal/terms"); setMenuOpen(false); }}>Terms & Privacy</button>
-                      <a href={`mailto:${SUPPORT_EMAIL}`}>Help &amp; Support</a>
-                      <button className="logout-btn" onClick={() => { signOut(); setMenuOpen(false); }}>Log out</button>
-                    </div>
+                    <AccountMenu user={user} planInfo={planInfo} isAdmin={isAdmin} navigate={navigate} onClose={() => setMenuOpen(false)} onSignOut={signOut} />
                   )}
                 </div>
               </>

@@ -122,6 +122,7 @@ import VocabularyGames from "./VocabularyGames";
 import WritingActivities from "./WritingActivities";
 import CommunityFeed from "./CommunityFeed.jsx";
 import HomeroomSearch from "./HomeroomSearch.jsx";
+import AccountMenu from "./AccountMenu.jsx";
 import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
 import { useCanSeeTeensAdultsStories } from "./audienceAccess";
 import FORGE_TRACKS from "./forgeTracks";
@@ -1422,7 +1423,7 @@ export default function Library() {
   const [clRequests, setClRequests] = useState([]);
   const [clRequestsLoading, setClRequestsLoading] = useState(false);
   const [showAllToday, setShowAllToday] = useState(false);
-  const { user, plan, signOut } = useAuth();
+  const { user, plan, planInfo, signOut } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === "caldrin1999@gmail.com";
   const [authMode, setAuthMode] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -2010,19 +2011,7 @@ export default function Library() {
                     {avatarUrl ? <img src={avatarUrl} alt="" className="avatar-btn-img" /> : <UserIcon />}
                   </button>
                   {menuOpen && (
-                    <div className="account-menu">
-                      <button type="button" className="account-menu-link" onClick={() => { navigate(`/library/teacher/${user.id}`); setMenuOpen(false); }}>My profile</button>
-                      {/* File Cabinet, Find a Mentor, Mentor Applications: hidden from the menu for everyone
-                          (including admin) per the user's call, 2026-10-01 -- not deleted, routes and pages
-                          are untouched, see memory project_hidden_settings_menu_items for when to restore. */}
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/subscription"); setMenuOpen(false); }}>Subscription</button>
-                      {isAdmin && (
-                        <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
-                      )}
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/legal/terms"); setMenuOpen(false); }}>Terms & Privacy</button>
-                      <a href={`mailto:${SUPPORT_EMAIL}`}>Help &amp; Support</a>
-                      <button className="logout-btn" onClick={() => { signOut(); setMenuOpen(false); }}>Log out</button>
-                    </div>
+                    <AccountMenu user={user} planInfo={planInfo} isAdmin={isAdmin} navigate={navigate} onClose={() => setMenuOpen(false)} onSignOut={signOut} />
                   )}
                 </div>
               </>
