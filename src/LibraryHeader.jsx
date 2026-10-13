@@ -101,6 +101,34 @@ function ChatIcon() {
   );
 }
 
+function HomeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 11l9-8 9 8" />
+      <path d="M5 10v10h5v-6h4v6h5V10" />
+    </svg>
+  );
+}
+
+// Small switcher for the social pages (Homeroom, Convo, your profile), shown on Convo and profile pages
+// in place of the section tab rows.
+const DOCK_CSS = `
+.gc-topbar-left { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.gc-dock { display: flex; gap: 4px; background: #F1F3F8; border-radius: 999px; padding: 4px; }
+.gc-dock-btn { border: none; background: none; border-radius: 999px; padding: 8px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: #8B84A3; display: flex; align-items: center; gap: 7px; cursor: pointer; transition: color 0.15s, background 0.15s; }
+.gc-dock-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+.gc-dock-btn:hover { color: #2B2A4A; }
+.gc-dock-btn.is-on { background: #fff; color: #2B2A4A; box-shadow: 0 1px 4px rgba(27,42,74,0.14); }
+.gc-dock-btn:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
+@media (max-width: 1000px) {
+  .gc-topbar-left { gap: 10px; }
+  .gc-dock-btn { padding: 8px 11px; }
+  .gc-dock-btn span { display: none; }
+  .gc-dock-btn.is-on span { display: inline; }
+}
+@media (max-width: 520px) { .gc-dock { display: none; } }
+`;
+
 export default function LibraryHeader() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -130,6 +158,7 @@ export default function LibraryHeader() {
   const activeCategory = activeCategoryFor(location.pathname);
   const onConvo = location.pathname.startsWith("/library/messages");
   const hideNav = onConvo || location.pathname.startsWith("/library/teacher/");
+  const onMyProfile = !!user && location.pathname === `/library/teacher/${user.id}`;
 
   useEffect(() => {
     function handleOutsideClick(e) {
@@ -239,12 +268,21 @@ export default function LibraryHeader() {
 
   return (
     <>
-      <style>{LIBRARY_CSS}</style>
+      <style>{LIBRARY_CSS}{DOCK_CSS}</style>
       <header className="gc-band">
         <div className="gc-topbar">
-          <a href="/library" className="gc-header-brand" onClick={(e) => { e.preventDefault(); navigate("/library"); }}>
-            <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
-          </a>
+          <div className="gc-topbar-left">
+            <a href="/library" className="gc-header-brand" onClick={(e) => { e.preventDefault(); navigate("/library"); }}>
+              <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
+            </a>
+            {hideNav && user && (
+              <nav className="gc-dock" aria-label="Social pages">
+                <button type="button" className="gc-dock-btn" onClick={() => navigate("/library")}><HomeIcon /><span>Homeroom</span></button>
+                <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span></button>
+                <button type="button" className={`gc-dock-btn${onMyProfile ? " is-on" : ""}`} onClick={() => navigate(`/library/teacher/${user.id}`)} aria-current={onMyProfile ? "page" : undefined}><UserIcon /><span>Profile</span></button>
+              </nav>
+            )}
+          </div>
           <div className="gc-topbar-actions">
             {/* The search bar lives only in the Homeroom (the main Library page). */}
             {false && (
