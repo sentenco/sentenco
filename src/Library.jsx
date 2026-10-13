@@ -2093,7 +2093,7 @@ export default function Library() {
         </div>
       </header>
 
-      <div className={`body-wrap${!isCurriculum && !isSpark && !isArticleReader && category === "All" && !query.trim() ? " body-wrap--home" : ""}`}>
+      <div className={`body-wrap${!isCurriculum && !isSpark && !isArticleReader && category === "All" ? " body-wrap--home" : ""}`}>
       {isArticleReader ? (
         <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
           <ArticleReader />
@@ -2511,7 +2511,10 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   font-family: 'Inter', sans-serif;
 }
 
-.body-wrap--home { background: #F1F3F8; }
+.body-wrap.body-wrap--home { background: #F1F3F8; overflow-y: auto; align-items: flex-start; }
+/* On the Homeroom the whole page scrolls (scrollbar at the browser edge), not just the middle column. */
+.body-wrap--home .content { flex: 1 1 auto; min-height: 0; overflow: visible; }
+.body-wrap--home .grid-wrap, .body-wrap--home .grid-wrap--today { flex: none; overflow: visible; align-items: flex-start; min-height: 0; }
 .body-wrap {
   display: flex;
   flex: 1;
