@@ -116,6 +116,9 @@ const DOCK_CSS = `
 .gc-topbar-left { display: flex; align-items: center; gap: 18px; min-width: 0; }
 .gc-dock { display: flex; gap: 4px; background: #F1F3F8; border-radius: 999px; padding: 4px; }
 .gc-dock-btn { border: none; background: none; border-radius: 999px; padding: 8px 14px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: #8B84A3; display: flex; align-items: center; gap: 7px; cursor: pointer; transition: color 0.15s, background 0.15s; }
+.gc-dock-btn { position: relative; }
+.gc-dock-dot { position: absolute; top: 6px; right: 7px; width: 9px; height: 9px; border-radius: 50%; background: #FF6B4A; border: 1.5px solid #F1F3F8; }
+.gc-dock-btn.is-on .gc-dock-dot { border-color: #fff; }
 .gc-dock-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
 .gc-dock-btn:hover { color: #2B2A4A; }
 .gc-dock-btn.is-on { background: #fff; color: #2B2A4A; box-shadow: 0 1px 4px rgba(27,42,74,0.14); }
@@ -278,7 +281,7 @@ export default function LibraryHeader() {
             {hideNav && user && (
               <nav className="gc-dock" aria-label="Social pages">
                 <button type="button" className="gc-dock-btn" onClick={() => navigate("/library")}><HomeIcon /><span>Homeroom</span></button>
-                <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span></button>
+                <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span>{unreadMessageCount > 0 && <i className="gc-dock-dot" aria-label="Unread messages" />}</button>
                 <button type="button" className={`gc-dock-btn${onMyProfile ? " is-on" : ""}`} onClick={() => navigate(`/library/teacher/${user.id}`)} aria-current={onMyProfile ? "page" : undefined}><UserIcon /><span>Profile</span></button>
               </nav>
             )}
@@ -367,16 +370,18 @@ export default function LibraryHeader() {
               </>
             ) : (
               <>
-                <button
-                  type="button"
-                  className={`notif-btn${unreadMessageCount > 0 ? " has-unread" : ""}${onConvo ? " is-current" : ""}`}
-                  onClick={() => navigate("/library/messages")}
-                  aria-label="Convo"
-                  title="Convo"
-                >
-                  <ChatIcon />
-                  {unreadMessageCount > 0 && <span className="notif-dot" />}
-                </button>
+                {!hideNav && (
+                  <button
+                    type="button"
+                    className={`notif-btn${unreadMessageCount > 0 ? " has-unread" : ""}${onConvo ? " is-current" : ""}`}
+                    onClick={() => navigate("/library/messages")}
+                    aria-label="Convo"
+                    title="Convo"
+                  >
+                    <ChatIcon />
+                    {unreadMessageCount > 0 && <span className="notif-dot" />}
+                  </button>
+                )}
                 <div className="notif-wrap" ref={notifWrapRef}>
                   <button
                     type="button"
