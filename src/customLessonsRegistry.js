@@ -57,6 +57,14 @@ export const CUSTOM_LESSONS = [
     desc: "25 minutes on one task type: 16 dialogues with a gap. Use the given word, stay inside three words, and learn the trap behind every mistake.",
   },
   {
+    slug: "unseen-reading-module-8",
+    popup: [1200, 780],
+    title: "Unseen Reading: Module 8",
+    tag: "Reading",
+    level: "A2 to low B1",
+    desc: "Two new texts the student has never seen, eight questions: read the question first, find the evidence, check every option.",
+  },
+  {
     slug: "e8-task-7-short-texts",
     popup: [1200, 780],
     title: "E8 Task 7: Short Texts",
