@@ -106,7 +106,7 @@ export default function HomeroomSearch({ query, navigate }) {
                 <button key={t.id} type="button" className="hs-teacher" onClick={() => navigate(`/library/teacher/${t.id}`)}>
                   {t.avatar_url ? <img src={t.avatar_url} alt="" className="hs-avatar" /> : <span className="hs-avatar hs-avatar--fb">{initials(t.display_name)}</span>}
                   <span className="hs-teacher-text">
-                    <span className="hs-teacher-name"><span>Teacher <Hit text={t.display_name || ""} term={term} /></span>
+                    <span className="hs-teacher-name"><span><Hit text={t.display_name || ""} term={term} />{t.id === user.id ? " (you)" : ""}</span>
                       {badge && <img className="hs-badge" src={badge.img} alt={badge.label} title={badge.label} />}
                     </span>
                     <span className="hs-teacher-sub">
@@ -128,7 +128,7 @@ export default function HomeroomSearch({ query, navigate }) {
             {posts.map((p) => (
               <button key={p.id} type="button" className="hs-post" onClick={() => navigate(`/library/community?post=${p.id}`)}>
                 <span className="hs-post-head">
-                  <span className="hs-post-author">Teacher <Hit text={p.author_name || "a teacher"} term={term} /></span>
+                  <span className="hs-post-author"><Hit text={p.author_name || "A teacher"} term={term} /></span>
                   <span className="hs-post-time">{timeAgo(p.created_at)}</span>
                 </span>
                 <span className="hs-post-body"><Hit text={snippet(p.content, term)} term={term} /></span>

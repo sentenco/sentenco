@@ -76,7 +76,7 @@ export const ARTICLE_TOPICS = [
   { label: "Law", title: "Crime, Law & Justice" },
 ];
 
-export const ARTICLES = [
+const ALL_ARTICLES = [
   {
     slug: "filipinos-rethink-healthy",
     ready: true,
@@ -10135,6 +10135,11 @@ export const ARTICLES = [
     ],
   },
 ];
+
+// Articles show up in the app only once their picture exists. Add an `image`
+// to an article above and it appears everywhere (Gazette, reader, syllabus
+// maker) with no other change.
+export const ARTICLES = ALL_ARTICLES.filter((a) => a.image);
 
 export function getArticle(slug) {
   return ARTICLES.find((a) => a.slug === slug) || null;

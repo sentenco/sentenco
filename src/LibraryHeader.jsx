@@ -382,7 +382,7 @@ export default function LibraryHeader() {
                   </button>
                   {menuOpen && (
                     <div className="account-menu">
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library"); setMenuOpen(false); }}>Profile</button>
+                      <button type="button" className="account-menu-link" onClick={() => { navigate(`/library/teacher/${user.id}`); setMenuOpen(false); }}>My profile</button>
                       {/* File Cabinet, Find a Mentor, Mentor Applications: hidden from the menu for everyone
                           (including admin) per the user's call, 2026-10-01 -- not deleted, routes and pages
                           are untouched, see memory project_hidden_settings_menu_items for when to restore. */}
