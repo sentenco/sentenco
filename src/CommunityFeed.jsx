@@ -178,6 +178,18 @@ function Avatar({ name, email, size }) {
 // Self-contained Community feed (banner, stats, composer, posts) -- shared by
 // the dedicated /library/community page and the Today page, which now
 // embeds this directly in place of the old greeting hero.
+// True while the window is narrower than `px` (half-screen); used to fold the post box into one line.
+function useNarrow(px) {
+  const [narrow, setNarrow] = useState(() => typeof window !== "undefined" && window.matchMedia(`(max-width: ${px}px)`).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${px}px)`);
+    const on = () => setNarrow(mq.matches);
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, [px]);
+  return narrow;
+}
+
 export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats } = {}) {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
@@ -199,6 +211,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingFile, setUploadingFile] = useState(false);
   const [uploadError, setUploadError] = useState(null);
+  const narrow = useNarrow(1000);
+  const [composerOpen, setComposerOpen] = useState(false);
 
   // "Share" on a custom lesson sends the teacher here (?shareLesson=slug): the lesson is attached
   // to the composer, they write their post, and it is shared when they press Post.
@@ -226,6 +240,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   }, [shareParam, user, lessonAccess.ready]);
 
   function closeComposer() {
+    setComposerOpen(false);
     setAttachedLesson(null);
     setDraft("");
     setPostType(null);
@@ -539,6 +554,14 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           <button type="button" className="cm-btn" onClick={() => setAuthMode("login")}>Log in</button>
         </div>
       ) : (
+        narrow && !composerOpen && !draft && !attachedLesson && !uploadedImage && !uploadedFile ? (
+        <div className="cm-composer cm-composer--fold" ref={composerRef}>
+          <button type="button" className="cm-fold" onClick={() => { setComposerOpen(true); setTimeout(() => composerRef.current?.querySelector("textarea")?.focus(), 50); }}>
+            <Avatar name={myName} email={user.email} />
+            <span className="cm-fold-fake">What's on your mind{myName ? `, ${myName}` : ""}?</span>
+          </button>
+        </div>
+        ) : (
         <div className="cm-composer" ref={composerRef}>
           <div className="cm-composer-head">
             <Avatar name={myName} email={user.email} />
@@ -621,6 +644,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
             </div>
           </div>
         </div>
+        )
       )}
 
       {shareNote && <p className="cm-upload-error" style={{ color: "#1F7A47", background: "#E3F5EA", borderRadius: 10, padding: "10px 14px" }} role="status">{shareNote}</p>}
@@ -1019,7 +1043,7 @@ const CSS = `
 .cm-comment-input:focus { outline: none; border-color: var(--coral); }
 
 /* Town Square: soft cards */
-.cmf-shell { gap: 14px; --sand: #F6EFE6; }
+.cmf-shell { gap: 14px; --sand: #E7EAF2; }
 .cm-composer { border: none; border-radius: 22px; overflow: visible; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); }
 .cm-composer::before { display: none; }
 .cm-composer-head { background: none; padding: 18px 20px 0; }
@@ -1031,6 +1055,9 @@ const CSS = `
 .cm-type-pill:hover { background: var(--coral-pale); color: #E0502F; }
 .cm-type-pill.is-active { background: var(--coral-pale); color: #E0502F; }
 .cm-attach-btn { border: none; background: var(--sand); }
+.cm-composer--fold { padding: 12px 14px; }
+.cm-fold { display: flex; align-items: center; gap: 12px; width: 100%; border: none; background: none; padding: 0; text-align: left; cursor: pointer; font-family: 'Quicksand', sans-serif; }
+.cm-fold-fake { flex: 1; background: var(--sand); border-radius: 999px; padding: 11px 16px; font-size: 14.5px; font-weight: 600; color: var(--muted); }
 .cm-composer-actions .cm-btn { background: var(--coral); }
 .cm-composer-actions .cm-btn:not(:disabled):hover { background: #E0502F; }
 .cm-btn:hover:not(:disabled) { background: #E0502F; }

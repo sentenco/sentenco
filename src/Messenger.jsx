@@ -1326,7 +1326,7 @@ const CSS = `
   height: 100%;
   min-height: 0;
   display: flex; flex-direction: column;
-  background: #F6EFE6;
+  background: #E7EAF2;
   color: var(--ink);
   font-family: 'Quicksand', sans-serif;
 }
@@ -1346,7 +1346,7 @@ const CSS = `
 
 .mg-signin { text-align: center; color: var(--muted); padding: 60px 0; }
 
-.mg-frame { flex: 1; min-height: 0; display: flex; padding: 16px; background: #F6EFE6; }
+.mg-frame { flex: 1; min-height: 0; display: flex; padding: 16px; background: #F1F3F8; }
 
 .mg-body {
   flex: 1; min-height: 0; display: flex; gap: 14px; max-width: 1220px; width: 100%; margin: 0 auto;
@@ -1374,7 +1374,7 @@ const CSS = `
 .mg-new-group-btn svg { width: 19px; height: 19px; }
 .mg-search {
   display: flex; align-items: center; gap: 8px; margin: 0 14px 10px; padding: 10px 14px;
-  background: #F6EFE6; border-radius: 999px; flex-shrink: 0;
+  background: #E7EAF2; border-radius: 999px; flex-shrink: 0;
 }
 .mg-search svg { width: 16px; height: 16px; color: var(--muted); flex-shrink: 0; }
 .mg-search input { border: none; outline: none; background: none; font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); width: 100%; }
@@ -1399,7 +1399,7 @@ const CSS = `
   background: none; border: none; border-radius: 18px; padding: 10px; cursor: pointer; text-align: left;
   margin-bottom: 2px; transition: background 0.12s ease;
 }
-.mg-conv:hover { background: #FBF7F1; }
+.mg-conv:hover { background: #F7F8FC; }
 .mg-conv.is-active { background: var(--coral-pale); }
 .mg-avatar {
   flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; overflow: hidden;
@@ -1441,13 +1441,13 @@ const CSS = `
   background: none; border: none; color: var(--muted); cursor: pointer; padding: 6px; border-radius: 10px;
   transition: background 0.12s ease, color 0.12s ease;
 }
-.mg-collapse-toggle:hover { background: #F6EFE6; color: var(--ink); }
+.mg-collapse-toggle:hover { background: #E7EAF2; color: var(--ink); }
 .mg-collapse-toggle svg { width: 18px; height: 18px; }
 .mg-thread-identity {
   display: flex; align-items: center; gap: 12px; min-width: 0; background: none; border: none; cursor: pointer;
   padding: 3px 6px; margin: -3px -6px; border-radius: 12px; text-align: left;
 }
-.mg-thread-identity:hover { background: #FBF7F1; }
+.mg-thread-identity:hover { background: #F7F8FC; }
 .mg-thread-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .mg-thread-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mg-thread-sub { font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -1459,7 +1459,7 @@ const CSS = `
 }
 .mg-error button { background: none; border: none; color: var(--muted); font-size: 16px; cursor: pointer; line-height: 1; }
 
-.mg-messages { flex: 1; overflow-y: auto; padding: 18px 24px; display: flex; flex-direction: column; gap: 2px; background: #FBF7F1; }
+.mg-messages { flex: 1; overflow-y: auto; padding: 18px 24px; display: flex; flex-direction: column; gap: 2px; background: #F7F8FC; }
 .mg-date-divider { display: flex; align-items: center; justify-content: center; margin: 12px 0 8px; }
 .mg-date-divider span { font-size: 12px; font-weight: 700; color: var(--muted); }
 .mg-bubble-row { display: flex; align-items: flex-end; gap: 4px; margin-top: 8px; }
@@ -1554,7 +1554,7 @@ const CSS = `
 
 .mg-reply-preview {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 8px 20px; background: #F6EFE6; flex-shrink: 0;
+  padding: 8px 20px; background: #E7EAF2; flex-shrink: 0;
 }
 .mg-reply-preview-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .mg-reply-preview-text strong { font-family: 'Fredoka', sans-serif; font-size: 11.5px; font-weight: 600; color: var(--ink); }
@@ -1564,10 +1564,10 @@ const CSS = `
 .mg-composer { display: flex; align-items: flex-end; gap: 8px; padding: 12px 16px 14px; flex-shrink: 0; }
 .mg-composer-input {
   flex: 1; resize: none; border: none; border-radius: 22px; padding: 12px 18px;
-  font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); outline: none; max-height: 120px; background: #F6EFE6;
+  font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); outline: none; max-height: 120px; background: #E7EAF2;
   transition: box-shadow 0.12s ease;
 }
-.mg-composer-input:focus { box-shadow: 0 0 0 2px var(--coral-pale); background: #F6EFE6; }
+.mg-composer-input:focus { box-shadow: 0 0 0 2px var(--coral-pale); background: #E7EAF2; }
 .mg-composer-input::placeholder { color: var(--muted); }
 .mg-send-btn {
   flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: none;
@@ -1593,7 +1593,7 @@ const CSS = `
   display: flex; align-items: center; gap: 10px; width: 100%; border: none; background: none; border-radius: 12px; padding: 8px;
   font: inherit; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; text-align: left;
 }
-.mg-share-menu button:hover { background: #FBF7F1; }
+.mg-share-menu button:hover { background: #F7F8FC; }
 
 .mg-side { width: 270px; flex-shrink: 0; padding: 26px 20px; overflow-y: auto; text-align: center; display: flex; flex-direction: column; align-items: stretch; }
 .mg-side .mg-avatar--xl { margin: 0 auto 12px; }

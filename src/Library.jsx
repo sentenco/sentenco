@@ -1437,6 +1437,9 @@ export default function Library() {
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [searchModeMenuOpen, setSearchModeMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchInputRef = useRef(null);
+  useEffect(() => { if (searchOpen) searchInputRef.current?.focus(); }, [searchOpen]);
   const [searchMode, setSearchMode] = useState(null);
   const [promptQuery, setPromptQuery] = useState("");
   const searchWrapRef = useRef(null);
@@ -1862,7 +1865,7 @@ export default function Library() {
           </a>
           <div className="gc-topbar-actions">
             {showSearch && (
-            <div className={`gc-search ${searchMode ? "has-mode" : ""}`} ref={searchWrapRef}>
+            <div className={`gc-search ${searchMode ? "has-mode" : ""}${searchOpen || query ? " is-open" : ""}`} ref={searchWrapRef}>
               <div className="gc-search-icon-wrap">
                 {LOOKUP_TOOLS_ENABLED ? (
                   <button
@@ -1879,12 +1882,12 @@ export default function Library() {
                     </svg>
                   </button>
                 ) : (
-                  <span className="gc-search-icon-btn gc-search-icon-btn--static" aria-hidden="true">
-                    <svg viewBox="0 0 20 20">
+                  <button type="button" className="gc-search-icon-btn gc-search-icon-btn--static" onClick={() => setSearchOpen((o) => !o)} aria-label="Search teachers and posts" aria-expanded={searchOpen}>
+                    <svg viewBox="0 0 20 20" aria-hidden="true">
                       <circle cx="9" cy="9" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
                       <line x1="13.6" y1="13.6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                     </svg>
-                  </span>
+                  </button>
                 )}
                 {searchModeMenuOpen && (
                   <div className="gc-search-mode-menu">
@@ -1913,6 +1916,8 @@ export default function Library() {
               )}
               <input
                 type="text"
+                ref={searchInputRef}
+                onBlur={() => { if (!query) setSearchOpen(false); }}
                 placeholder={searchMode ? `Ask ${SEARCH_MODES.find((m) => m.key === searchMode)?.label}…` : "Search teachers and posts…"}
                 value={searchMode ? promptQuery : query}
                 onChange={(e) => {
@@ -2510,7 +2515,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   font-family: 'Inter', sans-serif;
 }
 
-.body-wrap--home { background: #F6EFE6; }
+.body-wrap--home { background: #F1F3F8; }
 .body-wrap {
   display: flex;
   flex: 1;
@@ -2887,15 +2892,15 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .tsq-btn { width: 100%; border: none; background: #FDECE5; color: #E0502F; border-radius: 999px; padding: 10px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; }
 .tsq-btn:hover { background: #fbdcd0; }
 .tsq-eyebrow { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8B84A3; font-weight: 700; margin: 0 6px; }
-.tsq-meter { height: 8px; border-radius: 999px; background: #F6EFE6; overflow: hidden; margin: 8px 6px 2px; }
+.tsq-meter { height: 8px; border-radius: 999px; background: #E7EAF2; overflow: hidden; margin: 8px 6px 2px; }
 .tsq-meter i { display: block; height: 100%; background: #FF6B4A; border-radius: 999px; transition: width 0.3s ease; }
 .tsq-desk-status { font-size: 12px; font-weight: 700; color: #8B84A3; margin: 6px 6px 8px; }
 .tsq-desk-note { font-size: 12.5px; line-height: 1.45; color: #8B84A3; font-weight: 600; margin: 0 6px 10px; }
 .tsq-desk-list { display: flex; flex-direction: column; gap: 2px; }
 .tsq-tool { display: flex; align-items: center; gap: 12px; width: 100%; border: none; background: none; text-align: left; padding: 8px 8px; border-radius: 14px; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: #2B2A4A; }
-.tsq-tool:hover { background: #FBF7F1; }
+.tsq-tool:hover { background: #F4F6FB; }
 .tsq-tool.is-locked { opacity: 0.55; cursor: default; }
-.tsq-tool-icon { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: #F6EFE6; }
+.tsq-tool-icon { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: #E7EAF2; }
 .tsq-tool-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tsq-tool-lock { margin-left: auto; color: #8B84A3; display: flex; }
 .tsq-tool-lock svg { width: 14px; height: 14px; }
@@ -3831,6 +3836,24 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .gdn-bed--empty { cursor: default; opacity: 0.7; }
 .gdn-bed--empty .gdn-bed-cta { color: #6B5C3E; }
 
+/* Half-screen: a slimmer header so the page gets the room (one tight top row, tabs and shortcuts each swipe on one line) */
+@media (max-width: 1000px) {
+  .gc-topbar { padding: 6px 14px; }
+  .gc-header-brand { font-size: 19px; }
+  .gc-header-logo { height: 26px; margin-right: -6px; }
+  .gc-topbar-actions { gap: 8px; }
+  .gc-search:not(.is-open) { padding: 0; width: 38px; height: 38px; justify-content: center; border-radius: 50%; }
+  .gc-search:not(.is-open) input { display: none; }
+  .gc-search:not(.is-open) .gc-search-icon-btn { width: 38px; height: 38px; }
+  .gc-search.is-open input { width: 150px; }
+  .gc-navbar { padding: 2px 14px 4px; gap: 0; }
+  .gc-sections { justify-content: flex-start; scrollbar-width: none; }
+  .gc-sections::-webkit-scrollbar, .gc-editions::-webkit-scrollbar { display: none; }
+  .gc-sec-tab { font-size: 11.5px; letter-spacing: 0.03em; padding: 6px 12px; flex-shrink: 0; }
+  .gc-editions { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
+  .gc-editions > * { flex-shrink: 0; }
+  .tsq-feed { padding-bottom: 84px; }
+}
 @media (max-width: 900px) {
   .gdn-beds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
