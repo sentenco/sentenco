@@ -185,7 +185,7 @@ function Avatar({ name, email, size }) {
 // Self-contained Community feed (banner, stats, composer, posts) -- shared by
 // the dedicated /library/community page and the Today page, which now
 // embeds this directly in place of the old greeting hero.
-export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats, authorId, hideComposer } = {}) {
+export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats, authorId, hideComposer, typeFilter } = {}) {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
@@ -280,7 +280,16 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const dayStreak = computeDayStreak(realPosts);
 
   useEffect(() => {
-    onStats?.({ tipsShared, dayStreak, totalTeachers, postCount: posts.length });
+    onStats?.({
+      tipsShared, dayStreak, totalTeachers, postCount: posts.length,
+      counts: {
+        all: posts.length,
+        tip: posts.filter((p) => p.post_type === "tip").length,
+        question: posts.filter((p) => p.post_type === "question").length,
+        resource: posts.filter((p) => p.post_type === "resource").length,
+        lesson: posts.filter((p) => !!p.lesson_slug).length,
+      },
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tipsShared, dayStreak, totalTeachers, posts.length]);
 
@@ -545,6 +554,10 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     }
   }
 
+  const shownPosts = !typeFilter || typeFilter === "all"
+    ? posts
+    : posts.filter((p) => (typeFilter === "lesson" ? !!p.lesson_slug : p.post_type === typeFilter));
+
   return (
     <div className="cmf-shell">
       <style>{CSS}</style>
@@ -697,12 +710,12 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
       <div className="cm-feed">
         {loadingPosts ? (
           <p className="cm-empty">Loading…</p>
-        ) : posts.length === 0 ? (
+        ) : shownPosts.length === 0 ? (
           <p className="cm-empty">
             {authorId ? "No posts yet." : <>No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!</>}
           </p>
         ) : (
-          posts.map((p) => {
+          shownPosts.map((p) => {
             const isOpen = expanded.has(p.id);
             const comments = commentsByPost[p.id] || [];
             const canManage = user && (p.author_id === user.id || isAdmin);

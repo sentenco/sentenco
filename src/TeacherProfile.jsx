@@ -25,6 +25,29 @@ function CameraIcon() {
   );
 }
 
+function HlIcon({ name }) {
+  const paths = {
+    all: <><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></>,
+    tip: <><path d="M9 18h6" /><path d="M10 22h4" /><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z" /></>,
+    question: <><circle cx="12" cy="12" r="10" /><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></>,
+    resource: <><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" /><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" /></>,
+    lesson: <><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></>,
+  };
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {paths[name]}
+    </svg>
+  );
+}
+
+const HIGHLIGHTS = [
+  { key: "all", label: "All" },
+  { key: "tip", label: "Tips" },
+  { key: "question", label: "Questions" },
+  { key: "resource", label: "Resources" },
+  { key: "lesson", label: "Lessons" },
+];
+
 function PenIcon() {
   return (
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -41,6 +64,8 @@ export default function TeacherProfile() {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [postCount, setPostCount] = useState(null);
+  const [counts, setCounts] = useState(null);
+  const [filter, setFilter] = useState("all");
 
   // Editing in place, your own profile only.
   const isSelf = !!user && user.id === id;
@@ -59,6 +84,7 @@ export default function TeacherProfile() {
     setNotFound(false);
     setDraft(null);
     setEditing(false);
+    setFilter("all");
     (async () => {
       const base = "id, display_name, avatar_url, country, years_teaching, is_mentor, mentor_specialty, mentor_format, mentor_price_type, mentor_price_amount, mentor_bio";
       // cover_url exists once sql/add_profile_cover.sql has been run; fall back without it until then.
@@ -263,8 +289,8 @@ export default function TeacherProfile() {
                 )}
               </div>
 
-              <div className="tp-cbody">
-                {canEdit && draft ? (
+              {canEdit && draft && (
+                <div className="tp-cbody">
                   <div>
                     <div className="tp-lbl">Years teaching</div>
                     <div className="tp-step">
@@ -273,11 +299,27 @@ export default function TeacherProfile() {
                       <button type="button" onClick={() => stepYears(1)} aria-label="More years">+</button>
                     </div>
                   </div>
-                ) : <span />}
-                <div className="tp-stats">
-                  <div className="tp-stat"><strong>{postCount === null ? "–" : postCount}</strong><span>{postCount === 1 ? "Post" : "Posts"}</span></div>
                 </div>
-              </div>
+              )}
+
+              {user && (
+                <div className="tp-hl" role="tablist" aria-label="Filter posts">
+                  {HIGHLIGHTS.map((h) => (
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={filter === h.key}
+                      key={h.key}
+                      className={`tp-hl-btn tp-hl-btn--${h.key}${filter === h.key ? " is-on" : ""}`}
+                      onClick={() => setFilter(h.key)}
+                    >
+                      <span className="tp-hl-circle"><HlIcon name={h.key} /></span>
+                      <span className="tp-hl-label">{h.label}</span>
+                      <small>{counts ? counts[h.key] : "–"}</small>
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {profile.is_mentor && (
                 <div className="tp-mentor-block">
@@ -291,11 +333,11 @@ export default function TeacherProfile() {
               )}
             </div>
 
-            <h3 className="tp-h3">Posts</h3>
+            <h3 className="tp-h3">{HIGHLIGHTS.find((h) => h.key === filter)?.label === "All" ? "Posts" : HIGHLIGHTS.find((h) => h.key === filter)?.label}</h3>
             {!user ? (
               <p className="tp-status">Sign in to see posts.</p>
             ) : (
-              <CommunityFeed authorId={id} hideComposer onStats={(st) => setPostCount(st.postCount)} />
+              <CommunityFeed authorId={id} hideComposer typeFilter={filter} onStats={(st) => { setPostCount(st.postCount); setCounts(st.counts); }} />
             )}
           </>
         )}
@@ -438,6 +480,17 @@ const CSS = `
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--navy);
   background: var(--navy-pale); border-radius: 999px; padding: 3px 9px;
 }
+.tp-hl { display: flex; gap: 20px; margin-top: 22px; padding: 6px 28px 18px; overflow-x: auto; scrollbar-width: none; }
+.tp-hl::-webkit-scrollbar { display: none; }
+.tp-hl-btn { border: none; background: none; text-align: center; flex-shrink: 0; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--ink); padding: 0; }
+.tp-hl-circle { width: 68px; height: 68px; border-radius: 50%; margin: 0 auto 6px; display: flex; align-items: center; justify-content: center; background: var(--soft); box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--hair); transition: box-shadow 0.15s; }
+.tp-hl-circle svg { width: 26px; height: 26px; }
+.tp-hl-btn.is-on .tp-hl-circle { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--coral); }
+.tp-hl-btn--tip .tp-hl-circle { background: #FFF4D6; color: #7A5C0C; }
+.tp-hl-btn--question .tp-hl-circle { background: #E3F0FB; color: #1B4F7A; }
+.tp-hl-btn--resource .tp-hl-circle { background: var(--coral-pale); color: #C2411F; }
+.tp-hl-btn--lesson .tp-hl-circle { background: #E4F3EA; color: #1F6B45; }
+.tp-hl-btn small { display: block; color: var(--muted); font-weight: 700; font-size: 11.5px; }
 .tp-h3 { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 24px 4px 12px; }
 
 .tp-toast {
@@ -446,6 +499,12 @@ const CSS = `
   max-width: calc(100% - 32px);
 }
 .tp-toast.is-error { background: #8E2B1F; }
+@media (max-width: 640px) {
+  .tp-head { flex-direction: column; align-items: flex-start; gap: 0; }
+  .tp-head-text { padding-top: 12px; min-width: 0; width: 100%; }
+  .tp-actions { padding-top: 12px; }
+  .tp-hl { padding: 6px 18px 16px; gap: 16px; }
+}
 @media (max-width: 560px) {
   .tp-head { padding: 0 18px; }
   .tp-cbody { padding: 16px 18px 12px; }
