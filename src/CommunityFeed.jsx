@@ -222,10 +222,10 @@ function postTypeMeta(key) {
   return POST_TYPES.find((t) => t.key === key) || null;
 }
 
-function Avatar({ name, email, size }) {
+function Avatar({ name, email, size, src }) {
   return (
-    <div className={`cm-avatar${size ? ` cm-avatar--${size}` : ""}`} style={{ background: avatarHue(email) }}>
-      {initials(name, email)}
+    <div className={`cm-avatar${size ? ` cm-avatar--${size}` : ""}${src ? " cm-avatar--photo" : ""}`} style={{ background: src ? "transparent" : avatarHue(email) }}>
+      {src ? <img src={src} alt="" /> : initials(name, email)}
     </div>
   );
 }
@@ -243,6 +243,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   // The name shown for a teacher is always their current profile name, not whatever name was saved when they posted.
   const myName = (profile?.display_name || "").trim() || storedName;
   const [nameById, setNameById] = useState({});
+  const [avatarById, setAvatarById] = useState({});
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [scope, setScope] = useState("universal");
   const { hidden: hiddenIds, refresh: refreshBlocked } = useBlocked();
@@ -381,7 +382,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     const missing = [...ids].filter((id) => !(id in nameById));
     if (!missing.length) return undefined;
     let off = false;
-    supabase.from("profiles").select("id, display_name").in("id", missing).then(({ data }) => {
+    supabase.from("profiles").select("id, display_name, avatar_url").in("id", missing).then(({ data }) => {
       if (off || !data) return;
       setNameById((prev) => {
         const next = { ...prev };
@@ -389,11 +390,17 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
         data.forEach((r) => { next[r.id] = (r.display_name || "").trim(); });
         return next;
       });
+      setAvatarById((prev) => {
+        const next = { ...prev };
+        data.forEach((r) => { if (r.avatar_url) next[r.id] = r.avatar_url; });
+        return next;
+      });
     });
     return () => { off = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts, commentsByPost]);
   const nameFor = (id, stored) => (id && nameById[id]) || stored;
+  const photoFor = (id) => (id && avatarById[id]) || null;
 
   async function loadPosts() {
     setLoadingPosts(true);
@@ -497,7 +504,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     (async () => {
       const { data } = await supabase
         .from("profiles")
-        .select("display_name, company_id, years_teaching, is_mentor, companies(name)")
+        .select("display_name, avatar_url, company_id, years_teaching, is_mentor, companies(name)")
         .eq("id", user.id)
         .maybeSingle();
       setProfile(data || null);
@@ -742,7 +749,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           {!(composerOpen || draft || attachedLesson || uploadedImage || uploadedFile) ? (
             <div className="cm-composer cm-composer--closed" ref={composerRef}>
               <div className="cm-cl-top">
-                <Avatar name={myName} email={user.email} />
+                <Avatar name={myName} email={user.email} src={profile?.avatar_url || null} />
                 <button type="button" className="cm-cl-fake" onClick={() => openComposer(null)}>
                   What's on your mind{myName ? `, ${myName}` : ""}?
                 </button>
@@ -760,7 +767,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           ) : (
             <div className="cm-composer cm-composer--open" ref={composerRef}>
               <div className="cm-co-head">
-                <Avatar name={myName} email={user.email} />
+                <Avatar name={myName} email={user.email} src={profile?.avatar_url || null} />
                 <h3 className="cm-co-title">Create a post</h3>
                 <button type="button" className="cm-co-close" onClick={closeComposer} aria-label="Close"><CloseIcon /></button>
               </div>
@@ -887,7 +894,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
             return (
               <div className={`cm-post${p.id === focusPostId ? " is-focused" : ""}`} id={`cm-post-${p.id}`} key={p.id}>
                 <div className="cm-post-head">
-                  <Avatar name={nameFor(p.author_id, p.author_name)} email={p.author_email} size="sm" />
+                  <Avatar name={nameFor(p.author_id, p.author_name)} email={p.author_email} size="sm" src={photoFor(p.author_id)} />
                   <div className="cm-post-headline">
                     {p.author_id ? (
                       <button type="button" className="cm-post-author cm-post-author--link" onClick={() => navigate(`/library/teacher/${p.author_id}`)}>
@@ -977,7 +984,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                       const commentBadge = teachingBadge(c.author_years_teaching);
                       return (
                       <div className="cm-comment" key={c.id}>
-                        <Avatar name={nameFor(c.author_id, c.author_name)} email={c.author_email} size="xs" />
+                        <Avatar name={nameFor(c.author_id, c.author_name)} email={c.author_email} size="xs" src={photoFor(c.author_id)} />
                         <div className="cm-comment-body">
                           <div className="cm-comment-meta">
                             {c.author_id ? (
@@ -1380,4 +1387,6 @@ const CSS = `
 .cm-edit-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
 .cm-edit-cancel { border: none; background: #F1F3F8; color: #2B2A4A; border-radius: 999px; padding: 9px 18px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; }
 .cm-edit-cancel:hover { background: #E7EAF2; }
+.cm-avatar--photo { overflow: hidden; padding: 0; }
+.cm-avatar--photo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
 `;
