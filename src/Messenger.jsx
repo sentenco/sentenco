@@ -3,9 +3,13 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
 import ConfirmDialog from "./ConfirmDialog";
+import { teachingBadge } from "./ProfileSettings.jsx";
+import { CUSTOM_LESSONS, customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
+import useCustomLessonAccess from "./useCustomLessonAccess";
 
 const POLL_MS = 30000; // fallback safety net; realtime handles the instant path
 const QUICK_EMOJI = ["👍", "❤️", "😂", "😮", "😢", "🙏"];
+const QUICK_REPLIES = ["Thank you!", "Can you share that with me?", "Great idea, I will try it."];
 
 function displayName(profile, fallbackEmail) {
   if (profile?.display_name?.trim()) return profile.display_name.trim();
@@ -144,6 +148,25 @@ function PlusIcon() {
   );
 }
 
+function ShareIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 10.5v5a1.5 1.5 0 0 0 1.5 1.5h9a1.5 1.5 0 0 0 1.5-1.5v-5" />
+      <path d="M13 6 10 3 7 6" />
+      <path d="M10 3v9" />
+    </svg>
+  );
+}
+
+function BookIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 15.5A2 2 0 0 1 6 14h10" />
+      <path d="M6 3h10v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+    </svg>
+  );
+}
+
 function EmptyChatIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -185,6 +208,9 @@ export default function Messenger() {
   const [addMemberQuery, setAddMemberQuery] = useState("");
   const [addMemberResults, setAddMemberResults] = useState([]);
   const [memberActionTarget, setMemberActionTarget] = useState(null);
+  const [lessonSharingReady, setLessonSharingReady] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const { access: lessonAccess } = useCustomLessonAccess(true);
   const threadEndRef = useRef(null);
   const pollRef = useRef(null);
   const activeIdRef = useRef(null);
@@ -437,7 +463,7 @@ export default function Messenger() {
   async function loadProfiles(ids) {
     const missing = ids.filter((id) => !profiles[id]);
     if (!missing.length) return;
-    const { data } = await supabase.from("profiles").select("id, display_name, avatar_url").in("id", missing);
+    const { data } = await supabase.from("profiles").select("id, display_name, avatar_url, country, years_teaching, is_mentor").in("id", missing);
     if (data) {
       setProfiles((prev) => {
         const next = { ...prev };
@@ -492,11 +518,16 @@ export default function Messenger() {
   }
 
   async function loadMessages(conversationId, silent) {
-    const { data, error: msgError } = await supabase
-      .from("messages")
-      .select("id, conversation_id, sender_id, content, created_at, read_at, edited_at, deleted_at, reply_to_id")
-      .eq("conversation_id", conversationId)
-      .order("created_at", { ascending: true });
+    const baseCols = "id, conversation_id, sender_id, content, created_at, read_at, edited_at, deleted_at, reply_to_id";
+    const run = (cols) => supabase.from("messages").select(cols).eq("conversation_id", conversationId).order("created_at", { ascending: true });
+    // lesson_slug exists once sql/convo_share_lessons.sql has been run; fall back without it until then.
+    let { data, error: msgError } = await run(`${baseCols}, lesson_slug`);
+    if (msgError) {
+      setLessonSharingReady(false);
+      ({ data, error: msgError } = await run(baseCols));
+    } else {
+      setLessonSharingReady(true);
+    }
     if (msgError) { if (!silent) setError(msgError.message); return; }
     const rows = data || [];
     setMessages(rows);
@@ -622,15 +653,17 @@ export default function Messenger() {
     }
   }
 
-  async function sendMessage() {
-    const content = draft.trim();
+  async function sendMessage(override, lessonSlug) {
+    const content = (typeof override === "string" ? override : draft).trim();
     if (!content || !activeId || sending) return;
     setSending(true);
-    setDraft("");
+    if (typeof override !== "string") setDraft("");
     const replyToId = replyTarget?.id || null;
+    const row = { conversation_id: activeId, sender_id: user.id, content, reply_to_id: replyToId };
+    if (lessonSlug) row.lesson_slug = lessonSlug;
     const { data, error: sendError } = await supabase
       .from("messages")
-      .insert({ conversation_id: activeId, sender_id: user.id, content, reply_to_id: replyToId })
+      .insert(row)
       .select()
       .single();
     setSending(false);
@@ -643,6 +676,11 @@ export default function Messenger() {
       const updated = prev.map((c) => (c.id === activeId ? { ...c, last_message_at: now, last_message: content } : c));
       return updated.sort((x, y) => new Date(y.last_message_at) - new Date(x.last_message_at));
     });
+  }
+
+  function shareLesson(lesson) {
+    setShareOpen(false);
+    sendMessage(`Shared a lesson: ${lesson.title}`, lesson.slug);
   }
 
   function startEdit(m) {
@@ -713,6 +751,25 @@ export default function Messenger() {
   const activeLabel = activeConv?.is_group ? activeConv.title : activeName;
   const activeMemberIds = activeConv?.is_group ? (groupMembersById[activeConv.id] || []) : [];
 
+  const myLessons = CUSTOM_LESSONS.filter((l) => lessonAccess.get(l.slug)?.relation === "mine");
+  const canShareLesson = lessonSharingReady && myLessons.length > 0;
+  const lessonMessages = messages.filter((m) => m.lesson_slug && !m.deleted_at);
+  const lessonsFromThem = lessonMessages.filter((m) => m.sender_id !== user?.id);
+  const lessonsFromMe = lessonMessages.filter((m) => m.sender_id === user?.id);
+  const activeBadge = activeProfile ? teachingBadge(activeProfile.years_teaching) : null;
+  const profileSub = (p) => {
+    if (!p) return "";
+    const years = p.years_teaching;
+    const yrs = years === null || years === undefined || years === "" ? "" : (Number(years) < 1 ? "New to teaching" : `${years} ${Number(years) === 1 ? "year" : "years"} teaching`);
+    return [p.country, yrs].filter(Boolean).join(" · ");
+  };
+  const recentConvs = conversations.slice(0, 6);
+  const convMeta = (c) => {
+    const otherId = !c.is_group ? (c.user_a_id === user.id ? c.user_b_id : c.user_a_id) : null;
+    const p = otherId ? profiles[otherId] : null;
+    return { p, name: c.is_group ? c.title : (p ? displayName(p) : "…") };
+  };
+
   const filteredConversations = conversations.filter((c) => {
     if (!convSearch.trim()) return true;
     if (c.is_group) return (c.title || "").toLowerCase().includes(convSearch.trim().toLowerCase());
@@ -737,18 +794,36 @@ export default function Messenger() {
         <div className="mg-frame">
           <div className="mg-body">
             <div className={`mg-list ${activeId ? "mg-list--hidden-mobile" : ""} ${listCollapsed ? "mg-list--collapsed" : ""}`}>
+              <div className="mg-list-top">
+                <h2 className="mg-list-title">Convo</h2>
+                <button type="button" className="mg-new-group-btn" onClick={() => setGroupModalOpen(true)} aria-label="New group" title="New group">
+                  <GroupIcon />
+                </button>
+              </div>
               <div className="mg-search">
                 <SearchIcon />
                 <input
                   type="text"
                   value={convSearch}
                   onChange={(e) => setConvSearch(e.target.value)}
-                  placeholder="Search conversations"
+                  placeholder="Search people and groups"
                 />
-                <button type="button" className="mg-new-group-btn" onClick={() => setGroupModalOpen(true)} aria-label="New group" title="New group">
-                  <PlusIcon />
-                </button>
               </div>
+              {recentConvs.length > 1 && !convSearch.trim() && (
+                <div className="mg-strip" aria-label="Recent conversations">
+                  {recentConvs.map((c) => {
+                    const { p, name } = convMeta(c);
+                    return (
+                      <button type="button" key={c.id} className={`mg-story ${c.id === activeId ? "is-active" : ""} ${c.unread > 0 ? "is-unread" : ""}`} onClick={() => setActiveId(c.id)}>
+                        <span className={`mg-avatar mg-avatar--md ${c.is_group ? "mg-avatar--group" : ""}`}>
+                          {c.is_group ? <GroupIcon /> : (p?.avatar_url ? <img src={p.avatar_url} alt="" /> : initials(name))}
+                        </span>
+                        <span className="mg-story-name">{name.split(" ")[0]}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
               <div className="mg-conv-list">
                 {loadingList ? (
                   <p className="mg-empty-text">Loading…</p>
@@ -813,21 +888,22 @@ export default function Messenger() {
                     </button>
                     {activeConv?.is_group ? (
                       <button type="button" className="mg-thread-identity" onClick={() => setMembersModalOpen(true)}>
-                        <span className="mg-avatar mg-avatar--sm mg-avatar--group"><GroupIcon /></span>
+                        <span className="mg-avatar mg-avatar--md mg-avatar--group"><GroupIcon /></span>
                         <span className="mg-thread-text">
                           <span className="mg-thread-name">{activeLabel}</span>
                           <span className="mg-thread-sub">{activeMemberIds.length || "…"} members &middot; tap to manage</span>
                         </span>
                       </button>
                     ) : (
-                      <>
-                        <span className="mg-avatar mg-avatar--sm">
+                      <button type="button" className="mg-thread-identity" onClick={() => activeOtherId && navigate(`/library/teacher/${activeOtherId}`)} title="View profile">
+                        <span className="mg-avatar mg-avatar--md">
                           {activeProfile?.avatar_url ? <img src={activeProfile.avatar_url} alt="" /> : initials(activeName)}
                         </span>
                         <span className="mg-thread-text">
                           <span className="mg-thread-name">{activeLabel}</span>
+                          {profileSub(activeProfile) && <span className="mg-thread-sub">{profileSub(activeProfile)}</span>}
                         </span>
-                      </>
+                      </button>
                     )}
                   </div>
 
@@ -880,7 +956,7 @@ export default function Messenger() {
                             </button>
                             {mine && (
                               <>
-                                <button type="button" onClick={() => startEdit(m)} aria-label="Edit" title="Edit"><EditIcon /></button>
+                                {!m.lesson_slug && <button type="button" onClick={() => startEdit(m)} aria-label="Edit" title="Edit"><EditIcon /></button>}
                                 <button type="button" onClick={() => setDeleteTarget(m)} aria-label="Delete" title="Delete"><TrashIcon /></button>
                               </>
                             )}
@@ -910,6 +986,19 @@ export default function Messenger() {
                                     </div>
                                   </div>
                                 ) : (
+                                  m.lesson_slug && !isDeleted ? (
+                                    <button
+                                      type="button"
+                                      className="mg-lesson-card"
+                                      onClick={() => { const l = customLessonBySlug(m.lesson_slug); if (l) openCustomLesson(l); }}
+                                    >
+                                      <span className="mg-lesson-ico"><BookIcon /></span>
+                                      <span className="mg-lesson-text">
+                                        <strong>{customLessonBySlug(m.lesson_slug)?.title || "Custom lesson"}</strong>
+                                        <small>Custom lesson, tap to open</small>
+                                      </span>
+                                    </button>
+                                  ) : (
                                   <span className={`mg-bubble ${isDeleted ? "mg-bubble--deleted" : ""}`}>
                                     {quoted && !isDeleted && (
                                       <span
@@ -922,6 +1011,7 @@ export default function Messenger() {
                                     )}
                                     {isDeleted ? "Message deleted" : m.content}
                                   </span>
+                                  )
                                 )}
                                 {hasReactions && !isDeleted && (
                                   <div className={`mg-reactions ${mine ? "is-mine" : ""}`}>
@@ -973,7 +1063,33 @@ export default function Messenger() {
                     </div>
                   )}
 
+                  {!draft.trim() && !replyTarget && messages.length > 0 && (
+                    <div className="mg-quick">
+                      {QUICK_REPLIES.map((q) => (
+                        <button type="button" key={q} onClick={() => sendMessage(q)} disabled={sending}>{q}</button>
+                      ))}
+                    </div>
+                  )}
+
                   <div className="mg-composer">
+                    {canShareLesson && (
+                      <div className="mg-share-wrap">
+                        <button type="button" className="mg-share-btn" onClick={() => setShareOpen((v) => !v)} aria-expanded={shareOpen}>
+                          <ShareIcon />Share a lesson
+                        </button>
+                        {shareOpen && (
+                          <div className="mg-share-menu" role="menu">
+                            <div className="mg-share-title">Your custom lessons</div>
+                            {myLessons.map((l) => (
+                              <button type="button" key={l.slug} role="menuitem" onClick={() => shareLesson(l)}>
+                                <span className="mg-lesson-ico"><BookIcon /></span>
+                                <span>{l.title}</span>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <textarea
                       ref={composerRef}
                       className="mg-composer-input"
@@ -983,13 +1099,83 @@ export default function Messenger() {
                       placeholder={`Message ${activeLabel}…`}
                       rows={1}
                     />
-                    <button type="button" className="mg-send-btn" onClick={sendMessage} disabled={!draft.trim() || sending} aria-label="Send">
+                    <button type="button" className="mg-send-btn" onClick={() => sendMessage()} disabled={!draft.trim() || sending} aria-label="Send">
                       <SendIcon />
                     </button>
                   </div>
                 </>
               )}
             </div>
+
+            {activeId && activeConv && (
+              <aside className="mg-side">
+                {activeConv.is_group ? (
+                  <>
+                    <span className="mg-avatar mg-avatar--xl mg-avatar--group"><GroupIcon /></span>
+                    <h3 className="mg-side-name">{activeLabel}</h3>
+                    <p className="mg-side-sub">{activeMemberIds.length || "…"} members</p>
+                    <button type="button" className="mg-side-btn" onClick={() => setMembersModalOpen(true)}>Manage group</button>
+                    <h4 className="mg-side-h">Members</h4>
+                    <div className="mg-side-members">
+                      {activeMemberIds.map((id) => {
+                        const mp = profiles[id];
+                        const mn = id === user.id ? "You" : (mp ? displayName(mp) : "…");
+                        return (
+                          <div key={id} className="mg-side-member">
+                            <span className="mg-avatar mg-avatar--xs">{mp?.avatar_url ? <img src={mp.avatar_url} alt="" /> : initials(mn)}</span>
+                            {mn}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <span className="mg-avatar mg-avatar--xl">
+                      {activeProfile?.avatar_url ? <img src={activeProfile.avatar_url} alt="" /> : initials(activeName)}
+                    </span>
+                    <h3 className="mg-side-name">{activeName}</h3>
+                    {profileSub(activeProfile) && <p className="mg-side-sub">{profileSub(activeProfile)}</p>}
+                    {(activeProfile?.is_mentor || activeBadge) && (
+                      <div className="mg-side-pills">
+                        {activeProfile?.is_mentor && <span>Mentor</span>}
+                        {activeBadge && <span>{activeBadge.label}</span>}
+                      </div>
+                    )}
+                    <button type="button" className="mg-side-btn" onClick={() => activeOtherId && navigate(`/library/teacher/${activeOtherId}`)}>View profile</button>
+                  </>
+                )}
+
+                <h4 className="mg-side-h">Shared with you</h4>
+                {lessonsFromThem.length === 0 ? (
+                  <p className="mg-side-empty">Nothing shared yet.</p>
+                ) : (
+                  lessonsFromThem.map((m) => {
+                    const l = customLessonBySlug(m.lesson_slug);
+                    return (
+                      <button type="button" key={m.id} className="mg-lesson-card mg-lesson-card--side" onClick={() => l && openCustomLesson(l)}>
+                        <span className="mg-lesson-ico"><BookIcon /></span>
+                        <span className="mg-lesson-text"><strong>{l?.title || "Custom lesson"}</strong><small>Custom lesson, tap to open</small></span>
+                      </button>
+                    );
+                  })
+                )}
+                {lessonsFromMe.length > 0 && (
+                  <>
+                    <h4 className="mg-side-h">You shared</h4>
+                    {lessonsFromMe.map((m) => {
+                      const l = customLessonBySlug(m.lesson_slug);
+                      return (
+                        <button type="button" key={m.id} className="mg-lesson-card mg-lesson-card--side" onClick={() => l && openCustomLesson(l)}>
+                          <span className="mg-lesson-ico"><BookIcon /></span>
+                          <span className="mg-lesson-text"><strong>{l?.title || "Custom lesson"}</strong><small>Custom lesson, tap to open</small></span>
+                        </button>
+                      );
+                    })}
+                  </>
+                )}
+              </aside>
+            )}
           </div>
         </div>
       )}
@@ -1175,38 +1361,46 @@ const CSS = `
 
 .mg-signin { text-align: center; color: var(--muted); padding: 60px 0; }
 
-.mg-frame { flex: 1; min-height: 0; display: flex; padding: 22px; }
+.mg-frame { flex: 1; min-height: 0; display: flex; padding: 16px; background: #F6EFE6; }
 
 .mg-body {
-  flex: 1; min-height: 0; display: flex; max-width: 980px; width: 100%; margin: 0 auto;
-  background: var(--card); border-radius: 20px; overflow: hidden;
-  box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 12px 32px -16px rgba(27,42,74,0.16);
-  border: 1px solid var(--hair);
+  flex: 1; min-height: 0; display: flex; gap: 14px; max-width: 1220px; width: 100%; margin: 0 auto;
+}
+
+.mg-list, .mg-thread, .mg-side {
+  background: var(--card); border-radius: 22px; overflow: hidden; min-height: 0;
+  box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22);
 }
 
 .mg-list {
-  width: 320px; flex-shrink: 0; border-right: 1px solid var(--hair);
-  display: flex; flex-direction: column; min-height: 0; background: #FDFCFA;
-  transition: width 0.18s ease, border-color 0.18s ease;
-  overflow: hidden;
+  width: 300px; flex-shrink: 0; display: flex; flex-direction: column;
+  transition: width 0.18s ease, margin 0.18s ease;
 }
-.mg-list--collapsed { width: 0; border-right-color: transparent; }
+.mg-list--collapsed { width: 0; margin-right: -14px; }
 .mg-list--collapsed > * { opacity: 0; pointer-events: none; }
-.mg-search {
-  display: flex; align-items: center; gap: 8px; margin: 14px 14px 6px; padding: 8px 12px;
-  background: #fff; border: 1px solid var(--hair); border-radius: 12px; flex-shrink: 0;
-}
-.mg-search svg { width: 15px; height: 15px; color: var(--muted); flex-shrink: 0; }
-.mg-search input {
-  border: none; outline: none; background: none; font: inherit; font-size: 12.5px; color: var(--ink); width: 100%;
-}
-.mg-search input::placeholder { color: var(--muted); }
+.mg-list-top { display: flex; align-items: center; justify-content: space-between; padding: 18px 18px 10px; flex-shrink: 0; }
+.mg-list-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; margin: 0; color: var(--ink); }
 .mg-new-group-btn {
-  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: none;
-  background: var(--coral); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; border: none;
+  background: var(--coral-pale); color: #E0502F; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.12s ease;
 }
-.mg-new-group-btn svg { width: 12px; height: 12px; }
-.mg-conv-list { flex: 1; overflow-y: auto; padding: 6px 10px 10px; }
+.mg-new-group-btn:hover { background: #fbdcd0; }
+.mg-new-group-btn svg { width: 19px; height: 19px; }
+.mg-search {
+  display: flex; align-items: center; gap: 8px; margin: 0 14px 10px; padding: 10px 14px;
+  background: #F6EFE6; border-radius: 999px; flex-shrink: 0;
+}
+.mg-search svg { width: 16px; height: 16px; color: var(--muted); flex-shrink: 0; }
+.mg-search input { border: none; outline: none; background: none; font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); width: 100%; }
+.mg-search input::placeholder { color: var(--muted); }
+.mg-strip { display: flex; gap: 12px; padding: 4px 16px 12px; overflow-x: auto; scrollbar-width: none; flex-shrink: 0; }
+.mg-story { border: none; background: none; text-align: center; padding: 4px 0; cursor: pointer; flex-shrink: 0; max-width: 56px; }
+.mg-story .mg-avatar { margin: 0 auto 4px; box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(43,42,74,0.1); }
+.mg-story.is-unread .mg-avatar { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--coral); }
+.mg-story.is-active .mg-avatar { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--navy); }
+.mg-story-name { display: block; font-size: 11px; font-weight: 700; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mg-conv-list { flex: 1; overflow-y: auto; padding: 2px 8px 10px; }
 .mg-empty-text { font-size: 13px; color: var(--muted); padding: 20px 14px; }
 .mg-empty-state {
   display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
@@ -1216,31 +1410,33 @@ const CSS = `
 .mg-empty-state p { margin: 0; font-size: 12.5px; line-height: 1.5; }
 
 .mg-conv {
-  position: relative; display: flex; align-items: center; gap: 11px; width: 100%;
-  background: none; border: none; border-radius: 14px; padding: 10px 12px; cursor: pointer; text-align: left;
+  position: relative; display: flex; align-items: center; gap: 12px; width: 100%;
+  background: none; border: none; border-radius: 18px; padding: 10px; cursor: pointer; text-align: left;
   margin-bottom: 2px; transition: background 0.12s ease;
 }
-.mg-conv:hover { background: rgba(43,42,74,0.05); }
+.mg-conv:hover { background: #FBF7F1; }
 .mg-conv.is-active { background: var(--coral-pale); }
 .mg-avatar {
-  flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; overflow: hidden;
-  background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13px;
+  flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; overflow: hidden;
+  background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px;
   display: flex; align-items: center; justify-content: center;
 }
 .mg-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.mg-avatar--xs { width: 30px; height: 30px; font-size: 11px; }
 .mg-avatar--sm { width: 32px; height: 32px; font-size: 11px; }
-.mg-avatar--group { background: var(--coral); }
-.mg-avatar--group svg { width: 55%; height: 55%; }
+.mg-avatar--md { width: 44px; height: 44px; font-size: 14px; }
+.mg-avatar--xl { width: 86px; height: 86px; font-size: 28px; box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--coral-pale); }
+.mg-avatar--group { background: var(--coral-pale); color: #E0502F; }
+.mg-avatar--group svg { width: 52%; height: 52%; }
 .mg-conv-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .mg-conv-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-.mg-conv-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mg-conv-time { flex-shrink: 0; font-size: 10.5px; color: var(--muted); }
-.mg-conv-preview { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mg-conv.is-unread .mg-conv-name { color: var(--ink); }
-.mg-conv.is-unread .mg-conv-preview { color: var(--ink); font-weight: 600; }
+.mg-conv-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-conv-time { flex-shrink: 0; font-size: 11px; color: var(--muted); font-weight: 600; }
+.mg-conv-preview { font-size: 12.5px; color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-conv.is-unread .mg-conv-preview { color: var(--ink); font-weight: 700; }
 .mg-unread-badge {
-  flex-shrink: 0; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--coral); color: #fff;
-  font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: var(--coral); color: #fff;
+  font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;
 }
 
 .mg-thread { flex: 1; min-width: 0; display: flex; flex-direction: column; }
@@ -1252,55 +1448,50 @@ const CSS = `
 .mg-thread-empty p { margin: 0; font-size: 13px; }
 .mg-thread-empty--inline { flex: 0 0 auto; margin: auto 0; }
 
-.mg-thread-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 1px solid var(--hair); flex-shrink: 0; }
+.mg-thread-head { display: flex; align-items: center; gap: 10px; padding: 12px 18px; flex-shrink: 0; }
 .mg-back { display: none; background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; }
 .mg-back svg { width: 18px; height: 18px; }
 .mg-collapse-toggle {
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  background: none; border: none; color: var(--muted); cursor: pointer; padding: 5px; border-radius: 8px;
+  background: none; border: none; color: var(--muted); cursor: pointer; padding: 6px; border-radius: 10px;
   transition: background 0.12s ease, color 0.12s ease;
 }
-.mg-collapse-toggle:hover { background: rgba(43,42,74,0.06); color: var(--ink); }
+.mg-collapse-toggle:hover { background: #F6EFE6; color: var(--ink); }
 .mg-collapse-toggle svg { width: 18px; height: 18px; }
 .mg-thread-identity {
-  display: flex; align-items: center; gap: 10px; min-width: 0; background: none; border: none; cursor: pointer;
-  padding: 2px 4px; margin: -2px -4px; border-radius: 8px; text-align: left;
+  display: flex; align-items: center; gap: 12px; min-width: 0; background: none; border: none; cursor: pointer;
+  padding: 3px 6px; margin: -3px -6px; border-radius: 12px; text-align: left;
 }
-.mg-thread-identity:hover { background: rgba(43,42,74,0.05); }
+.mg-thread-identity:hover { background: #FBF7F1; }
 .mg-thread-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-.mg-thread-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mg-thread-sub { font-size: 10.5px; color: var(--muted); }
-.mg-sender-name {
-  font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; color: var(--muted); margin: 0 2px 2px;
-}
+.mg-thread-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-thread-sub { font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-sender-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11.5px; color: #E0502F; margin: 0 4px 2px; }
 
 .mg-error {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  background: var(--coral-pale); color: var(--ink); font-size: 12.5px; padding: 8px 16px; margin: 8px 16px 0; border-radius: 10px;
+  background: var(--coral-pale); color: var(--ink); font-size: 12.5px; padding: 8px 16px; margin: 0 16px 8px; border-radius: 12px;
 }
 .mg-error button { background: none; border: none; color: var(--muted); font-size: 16px; cursor: pointer; line-height: 1; }
 
-.mg-messages { flex: 1; overflow-y: auto; padding: 20px 22px; display: flex; flex-direction: column; gap: 2px; }
-.mg-date-divider { display: flex; align-items: center; justify-content: center; margin: 14px 0 10px; }
-.mg-date-divider span {
-  font-size: 10.5px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted);
-  background: var(--navy-pale); padding: 4px 12px; border-radius: 999px;
-}
+.mg-messages { flex: 1; overflow-y: auto; padding: 18px 24px; display: flex; flex-direction: column; gap: 2px; background: #FBF7F1; }
+.mg-date-divider { display: flex; align-items: center; justify-content: center; margin: 12px 0 8px; }
+.mg-date-divider span { font-size: 12px; font-weight: 700; color: var(--muted); }
 .mg-bubble-row { display: flex; align-items: flex-end; gap: 4px; margin-top: 8px; }
-.mg-bubble-row.is-tight { margin-top: 2px; }
+.mg-bubble-row.is-tight { margin-top: 3px; }
 .mg-bubble-row.is-mine { justify-content: flex-end; }
 .mg-bubble-col { display: flex; flex-direction: column; gap: 4px; max-width: 68%; min-width: 0; }
 .mg-bubble-row.is-mine .mg-bubble-col { align-items: flex-end; }
 .mg-bubble {
-  padding: 10px 14px; border-radius: 17px 17px 17px 5px;
-  background: var(--navy-pale); color: var(--ink); font-size: 13.5px; line-height: 1.48; white-space: pre-wrap; word-break: break-word;
+  padding: 10px 15px; border-radius: 20px 20px 20px 6px;
+  background: #fff; color: var(--ink); font-size: 14px; font-weight: 600; line-height: 1.5; white-space: pre-wrap; word-break: break-word;
   display: block;
 }
-.mg-bubble-row.is-mine .mg-bubble { background: var(--coral); color: #fff; border-radius: 17px 17px 5px 17px; }
+.mg-bubble-row.is-mine .mg-bubble { background: var(--coral); color: #fff; border-radius: 20px 20px 6px 20px; }
 .mg-bubble--deleted { font-style: italic; opacity: 0.7; }
 
 .mg-quote {
-  display: block; margin-bottom: 6px; padding: 5px 9px; border-radius: 8px; cursor: pointer;
+  display: block; margin-bottom: 6px; padding: 5px 9px; border-radius: 10px; cursor: pointer;
   background: rgba(43,42,74,0.06); border-left: 2px solid var(--muted);
   font-size: 11.5px; line-height: 1.35; white-space: normal;
 }
@@ -1308,15 +1499,15 @@ const CSS = `
 .mg-quote strong { display: block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 10.5px; margin-bottom: 1px; }
 .mg-quote span { display: block; opacity: 0.85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.mg-bubble--editing { background: var(--navy-pale); border-radius: 14px; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.mg-bubble--editing { background: #fff; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 0 0 1px var(--hair); }
 .mg-bubble--editing textarea {
-  border: 1px solid var(--hair); border-radius: 10px; padding: 8px 10px; font: inherit; font-size: 13.5px;
+  border: 1px solid var(--hair); border-radius: 12px; padding: 8px 10px; font: inherit; font-size: 13.5px;
   color: var(--ink); resize: none; outline: none; background: #fff;
 }
 .mg-bubble--editing textarea:focus { border-color: var(--coral); }
 .mg-edit-actions { display: flex; justify-content: flex-end; gap: 8px; }
 .mg-edit-actions button {
-  border: none; background: none; font: inherit; font-size: 11.5px; font-weight: 600; cursor: pointer; padding: 3px 8px; border-radius: 6px;
+  border: none; background: none; font: inherit; font-size: 11.5px; font-weight: 700; cursor: pointer; padding: 3px 8px; border-radius: 6px;
   color: var(--muted);
 }
 .mg-edit-actions button:last-child { color: var(--coral); }
@@ -1327,22 +1518,22 @@ const CSS = `
   display: flex; align-items: center; gap: 2px; flex-shrink: 0; padding-bottom: 4px;
   opacity: 0; transition: opacity 0.12s ease;
 }
-.mg-bubble-row:hover .mg-bubble-actions { opacity: 1; }
+.mg-bubble-row:hover .mg-bubble-actions, .mg-bubble-row:focus-within .mg-bubble-actions { opacity: 1; }
 .mg-bubble-actions button {
-  width: 24px; height: 24px; border-radius: 50%; border: none; background: var(--card); color: var(--muted);
+  width: 26px; height: 26px; border-radius: 50%; border: none; background: var(--card); color: var(--muted);
   display: flex; align-items: center; justify-content: center; cursor: pointer;
-  box-shadow: 0 1px 3px rgba(43,42,74,0.12);
+  box-shadow: 0 1px 3px rgba(43,42,74,0.14);
 }
 .mg-bubble-actions button:hover { color: var(--coral); }
-.mg-bubble-actions svg { width: 12px; height: 12px; }
+.mg-bubble-actions svg { width: 13px; height: 13px; }
 
 .mg-reactions { display: flex; flex-wrap: wrap; gap: 4px; }
 .mg-reactions.is-mine { justify-content: flex-end; }
 .mg-reaction-pill {
-  display: inline-flex; align-items: center; gap: 3px; border: 1px solid var(--hair); background: var(--card);
-  border-radius: 999px; padding: 2px 7px; font-size: 11px; cursor: pointer; color: var(--ink); line-height: 1.5;
+  display: inline-flex; align-items: center; gap: 3px; border: none; background: var(--card); box-shadow: 0 0 0 1px var(--hair);
+  border-radius: 999px; padding: 2px 8px; font-size: 12px; font-weight: 700; cursor: pointer; color: var(--ink); line-height: 1.5;
 }
-.mg-reaction-pill.is-mine-reaction { border-color: var(--coral); background: var(--coral-pale); }
+.mg-reaction-pill.is-mine-reaction { box-shadow: 0 0 0 1px var(--coral); background: var(--coral-pale); }
 
 .mg-reaction-picker {
   display: flex; gap: 2px; background: var(--card); border: 1px solid var(--hair); border-radius: 999px;
@@ -1350,43 +1541,97 @@ const CSS = `
 }
 .mg-reaction-picker.is-mine { align-self: flex-end; }
 .mg-reaction-picker button {
-  width: 26px; height: 26px; border: none; background: none; font-size: 15px; cursor: pointer; border-radius: 50%;
+  width: 28px; height: 28px; border: none; background: none; font-size: 15px; cursor: pointer; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
 }
 .mg-reaction-picker button:hover { background: var(--navy-pale); }
 
-.mg-bubble-meta {
-  display: flex; align-items: center; gap: 6px; font-size: 10.5px; color: var(--muted); margin: 3px 2px 4px;
-}
+.mg-bubble-meta { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--muted); margin: 3px 4px 4px; }
 .mg-bubble-meta.is-mine { justify-content: flex-end; }
 .mg-edited-tag { font-style: italic; }
-.mg-seen { display: inline-flex; align-items: center; gap: 3px; color: var(--coral); font-weight: 600; }
-.mg-seen svg { width: 10px; height: 10px; }
+.mg-seen { display: inline-flex; align-items: center; gap: 3px; color: var(--coral); font-weight: 700; }
+.mg-seen svg { width: 11px; height: 11px; }
+
+.mg-lesson-card {
+  display: flex; align-items: center; gap: 12px; text-align: left; border: none; cursor: pointer; font: inherit; color: var(--ink);
+  background: #fff; border-radius: 18px; padding: 10px 14px 10px 10px; box-shadow: 0 0 0 1px var(--hair); min-width: 230px; max-width: 100%;
+  transition: box-shadow 0.12s ease;
+}
+.mg-lesson-card:hover { box-shadow: 0 0 0 1.5px var(--coral); }
+.mg-bubble-row.is-mine .mg-lesson-card { box-shadow: 0 0 0 2px var(--coral); }
+.mg-lesson-ico { width: 38px; height: 38px; border-radius: 12px; background: var(--navy-pale); color: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mg-lesson-ico svg { width: 19px; height: 19px; }
+.mg-lesson-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.mg-lesson-text strong { font-size: 13.5px; font-weight: 700; }
+.mg-lesson-text small { font-size: 12px; font-weight: 600; color: var(--muted); }
+.mg-lesson-card--side { width: 100%; min-width: 0; padding: 8px 10px 8px 8px; margin-bottom: 8px; }
+.mg-lesson-card--side .mg-lesson-ico { width: 32px; height: 32px; border-radius: 10px; }
 
 .mg-reply-preview {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 8px 20px; background: var(--navy-pale); border-top: 1px solid var(--hair); flex-shrink: 0;
+  padding: 8px 20px; background: #F6EFE6; flex-shrink: 0;
 }
 .mg-reply-preview-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-.mg-reply-preview-text strong { font-family: 'Fredoka', sans-serif; font-size: 11px; font-weight: 600; color: var(--ink); }
-.mg-reply-preview-text span { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mg-reply-preview button { flex-shrink: 0; background: none; border: none; color: var(--muted); font-size: 17px; cursor: pointer; line-height: 1; }
+.mg-reply-preview-text strong { font-family: 'Fredoka', sans-serif; font-size: 11.5px; font-weight: 600; color: var(--ink); }
+.mg-reply-preview-text span { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-reply-preview button { flex-shrink: 0; background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; line-height: 1; }
 
-.mg-composer { display: flex; align-items: flex-end; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--hair); flex-shrink: 0; }
+.mg-quick { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 18px 0; flex-shrink: 0; }
+.mg-quick button {
+  border: none; background: #F6EFE6; border-radius: 999px; padding: 6px 13px; font: inherit; font-size: 12.5px; font-weight: 700;
+  color: var(--ink); cursor: pointer; transition: background 0.12s ease, color 0.12s ease;
+}
+.mg-quick button:hover:not(:disabled) { background: var(--coral-pale); color: #E0502F; }
+
+.mg-composer { display: flex; align-items: flex-end; gap: 8px; padding: 12px 16px 14px; flex-shrink: 0; }
 .mg-composer-input {
-  flex: 1; resize: none; border: 1px solid var(--hair); border-radius: 20px; padding: 11px 16px;
-  font: inherit; font-size: 13.5px; color: var(--ink); outline: none; max-height: 120px; background: #FDFCFA;
-  transition: border-color 0.12s ease;
+  flex: 1; resize: none; border: none; border-radius: 22px; padding: 12px 18px;
+  font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); outline: none; max-height: 120px; background: #F6EFE6;
+  transition: box-shadow 0.12s ease;
 }
-.mg-composer-input:focus { border-color: var(--coral); background: #fff; }
+.mg-composer-input:focus { box-shadow: 0 0 0 2px var(--coral-pale); background: #F6EFE6; }
+.mg-composer-input::placeholder { color: var(--muted); }
 .mg-send-btn {
-  flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; border: none;
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: none;
   background: var(--coral); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: transform 0.1s ease, opacity 0.1s ease;
+  transition: transform 0.1s ease, opacity 0.1s ease, background 0.12s ease;
 }
-.mg-send-btn:not(:disabled):hover { transform: scale(1.06); }
+.mg-send-btn:not(:disabled):hover { background: #E0502F; transform: scale(1.05); }
 .mg-send-btn:disabled { opacity: 0.35; cursor: default; }
-.mg-send-btn svg { width: 16px; height: 16px; }
+.mg-send-btn svg { width: 17px; height: 17px; }
+.mg-share-wrap { position: relative; flex-shrink: 0; align-self: center; }
+.mg-share-btn {
+  display: flex; align-items: center; gap: 6px; border: none; background: var(--coral-pale); color: #C2411F; cursor: pointer;
+  border-radius: 999px; padding: 11px 14px; font: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap;
+}
+.mg-share-btn:hover { background: #fbdcd0; }
+.mg-share-btn svg { width: 16px; height: 16px; }
+.mg-share-menu {
+  position: absolute; bottom: calc(100% + 10px); left: 0; width: 300px; max-height: 300px; overflow-y: auto; z-index: 20;
+  background: #fff; border-radius: 18px; padding: 8px; box-shadow: 0 12px 34px rgba(43,42,74,0.2), 0 0 0 1px var(--hair);
+}
+.mg-share-title { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 6px 8px; }
+.mg-share-menu button {
+  display: flex; align-items: center; gap: 10px; width: 100%; border: none; background: none; border-radius: 12px; padding: 8px;
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; text-align: left;
+}
+.mg-share-menu button:hover { background: #FBF7F1; }
+
+.mg-side { width: 270px; flex-shrink: 0; padding: 26px 20px; overflow-y: auto; text-align: center; display: flex; flex-direction: column; align-items: stretch; }
+.mg-side .mg-avatar--xl { margin: 0 auto 12px; }
+.mg-side-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; margin: 0; color: var(--ink); }
+.mg-side-sub { font-size: 13px; font-weight: 600; color: var(--muted); margin: 3px 0 12px; }
+.mg-side-pills { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+.mg-side-pills span { background: var(--navy-pale); color: var(--navy); border-radius: 999px; padding: 3px 11px; font-size: 12px; font-weight: 700; }
+.mg-side-btn {
+  width: 100%; border: none; background: var(--coral); color: #fff; border-radius: 999px; padding: 11px; cursor: pointer;
+  font: inherit; font-size: 13.5px; font-weight: 700; transition: background 0.12s ease;
+}
+.mg-side-btn:hover { background: #E0502F; }
+.mg-side-h { margin: 24px 0 8px; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; text-align: left; }
+.mg-side-empty { margin: 0; font-size: 13px; color: var(--muted); font-weight: 600; text-align: left; }
+.mg-side-members { display: flex; flex-direction: column; gap: 4px; text-align: left; }
+.mg-side-member { display: flex; align-items: center; gap: 10px; padding: 4px 0; font-size: 13.5px; font-weight: 700; }
 
 .mg-group-overlay {
   position: fixed; inset: 0; background: rgba(43,42,74,0.35); backdrop-filter: blur(2px);
@@ -1437,14 +1682,19 @@ const CSS = `
 .mg-member-remove { flex-shrink: 0; background: none; border: none; font: inherit; font-size: 11.5px; font-weight: 600; color: var(--coral); cursor: pointer; padding: 4px 6px; }
 .mg-member-remove:hover { text-decoration: underline; }
 
+@media (max-width: 1080px) {
+  .mg-side { display: none; }
+}
 @media (max-width: 720px) {
   .mg-frame { padding: 0; }
-  .mg-body { border-radius: 0; border: none; box-shadow: none; }
-  .mg-list { width: 100%; border-right: none; }
+  .mg-body { gap: 0; }
+  .mg-list, .mg-thread { border-radius: 0; box-shadow: none; }
+  .mg-list { width: 100%; }
   .mg-list--hidden-mobile { display: none; }
   .mg-thread--hidden-mobile { display: none; }
   .mg-back { display: flex; align-items: center; justify-content: center; }
   .mg-collapse-toggle { display: none; }
   .mg-bubble-actions { opacity: 0.55; }
+  .mg-share-menu { width: 260px; }
 }
 `;
