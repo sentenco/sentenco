@@ -19,6 +19,7 @@ import MentorApply from './MentorApply.jsx'
 import MentorAdmin from './MentorAdmin.jsx'
 import AdminTeachers from './AdminTeachers.jsx'
 import AdminAccess from './AdminAccess.jsx'
+import CustomLessonGate from './CustomLessonGate.jsx'
 import TeacherProfile from './TeacherProfile.jsx'
 import ArticlePlayerPage from './ArticlePlayerPage.jsx'
 import VocabularyPlayerPage from './VocabularyPlayerPage.jsx'
@@ -402,22 +403,22 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/curriculum/A1/unit/12/lesson/5" element={<Unit12ShowWhatYouKnowLesson />} />
             <Route path="/library/curriculum/A1/unit/12/lesson/6" element={<Unit12TestLesson />} />
             <Route path="/library/curriculum/A2/unit/:unit/lesson/:lesson" element={<SoarLesson />} />
-            <Route path="/library/customized-lessons/real-estate-vocabulary" element={<RealEstateVocabLesson />} />
-            <Route path="/library/customized-lessons/real-estate-vocabulary/guide" element={<RealEstateVocabGuide />} />
-            <Route path="/library/customized-lessons/be-verbs-and-will" element={<BeWillGrammarLesson />} />
-            <Route path="/library/customized-lessons/be-verbs-and-will/guide" element={<BeWillGrammarGuide />} />
-            <Route path="/library/customized-lessons/present-simple-vs-progressive" element={<PresentSimpleProgressiveLesson />} />
-            <Route path="/library/customized-lessons/present-simple-vs-progressive/guide" element={<PresentSimpleProgressiveGuide />} />
-            <Route path="/library/customized-lessons/verb-tense-identification" element={<TenseIdentificationLesson />} />
-            <Route path="/library/customized-lessons/verb-tense-identification/guide" element={<TenseIdentificationGuide />} />
-            <Route path="/library/customized-lessons/e8-reading-and-reactions" element={<E8ReadingReactionsLesson />} />
-            <Route path="/library/customized-lessons/e8-task-5-reactions" element={<E8Task5Lesson />} />
-            <Route path="/library/customized-lessons/e8-task-6-dialogues" element={<E8Task6Lesson />} />
-            <Route path="/library/customized-lessons/e8-task-7-short-texts" element={<E8Task7Lesson />} />
-            <Route path="/library/customized-lessons/e8-task-8-missing-sentences" element={<E8Task8Lesson />} />
-            <Route path="/library/customized-lessons/e8-task-9-match-the-text" element={<E8Task9Lesson />} />
-            <Route path="/library/customized-lessons/e8-task-10-find-the-facts" element={<E8Task10Lesson />} />
-            <Route path="/library/customized-lessons/e8-task-11-the-right-word" element={<E8Task11Lesson />} />
+            <Route path="/library/customized-lessons/real-estate-vocabulary" element={<CustomLessonGate slug="real-estate-vocabulary"><RealEstateVocabLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/real-estate-vocabulary/guide" element={<CustomLessonGate slug="real-estate-vocabulary"><RealEstateVocabGuide /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/be-verbs-and-will" element={<CustomLessonGate slug="be-verbs-and-will"><BeWillGrammarLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/be-verbs-and-will/guide" element={<CustomLessonGate slug="be-verbs-and-will"><BeWillGrammarGuide /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/present-simple-vs-progressive" element={<CustomLessonGate slug="present-simple-vs-progressive"><PresentSimpleProgressiveLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/present-simple-vs-progressive/guide" element={<CustomLessonGate slug="present-simple-vs-progressive"><PresentSimpleProgressiveGuide /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/verb-tense-identification" element={<CustomLessonGate slug="verb-tense-identification"><TenseIdentificationLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/verb-tense-identification/guide" element={<CustomLessonGate slug="verb-tense-identification"><TenseIdentificationGuide /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-reading-and-reactions" element={<CustomLessonGate slug="e8-reading-and-reactions"><E8ReadingReactionsLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-5-reactions" element={<CustomLessonGate slug="e8-task-5-reactions"><E8Task5Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-6-dialogues" element={<CustomLessonGate slug="e8-task-6-dialogues"><E8Task6Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-7-short-texts" element={<CustomLessonGate slug="e8-task-7-short-texts"><E8Task7Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-8-missing-sentences" element={<CustomLessonGate slug="e8-task-8-missing-sentences"><E8Task8Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-9-match-the-text" element={<CustomLessonGate slug="e8-task-9-match-the-text"><E8Task9Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-10-find-the-facts" element={<CustomLessonGate slug="e8-task-10-find-the-facts"><E8Task10Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/e8-task-11-the-right-word" element={<CustomLessonGate slug="e8-task-11-the-right-word"><E8Task11Lesson /></CustomLessonGate>} />
             <Route path="/library/stress" element={<Flashcards />} />
             <Route path="/library/articles/:slug" element={<Library />} />
             <Route path="/library/articles/:slug/player" element={<ArticlePlayerPage />} />

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
 import AuthForm from "./AuthForm";
@@ -7,6 +7,8 @@ import { teachingBadge } from "./ProfileSettings.jsx";
 import { timeAgo } from "./slideDeckTypes";
 import communityBannerImg from "./assets/community/banner.jpg";
 import ConfirmDialog from "./ConfirmDialog";
+import { customLessonBySlug, openCustomLesson } from "./customLessonsRegistry";
+import useCustomLessonAccess from "./useCustomLessonAccess";
 
 const ADMIN_EMAIL = "caldrin1999@gmail.com";
 const AVATAR_HUES = ["#FF6B4A", "#7C5CFC", "#16BFAE", "#E0A72E", "#FF8A4C"];
@@ -199,7 +201,33 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
   const [uploadingFile, setUploadingFile] = useState(false);
   const [uploadError, setUploadError] = useState(null);
 
+  // "Share" on a custom lesson sends the teacher here (?shareLesson=slug): the lesson is attached
+  // to the composer, they write their post, and it is shared when they press Post.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lessonAccess = useCustomLessonAccess(!!user);
+  const [attachedLesson, setAttachedLesson] = useState(null);
+  const [shareNote, setShareNote] = useState(null);
+  const composerRef = useRef(null);
+  const shareParam = searchParams.get("shareLesson");
+
+  useEffect(() => {
+    if (!shareParam || !user || !lessonAccess.ready) return;
+    const owned = lessonAccess.access.get(shareParam)?.relation === "mine";
+    if (owned && customLessonBySlug(shareParam)) {
+      setAttachedLesson(shareParam);
+      setTimeout(() => {
+        composerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        composerRef.current?.querySelector("textarea")?.focus();
+      }, 150);
+    }
+    const next = new URLSearchParams(searchParams);
+    next.delete("shareLesson");
+    setSearchParams(next, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shareParam, user, lessonAccess.ready]);
+
   function closeComposer() {
+    setAttachedLesson(null);
     setDraft("");
     setPostType(null);
     setUploadedImage(null);
@@ -236,14 +264,15 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
 
   async function loadPosts() {
     setLoadingPosts(true);
-    let query = supabase
-      .from("community_posts")
-      .select("id, author_id, author_email, author_name, content, post_type, prompt_date, company_id, author_years_teaching, author_is_mentor, image_url, file_url, file_name, created_at")
-      .order("created_at", { ascending: false });
-    query = scope === "company" && profile?.company_id
-      ? query.eq("company_id", profile.company_id)
-      : query.is("company_id", null);
-    const { data, error } = await query;
+    const baseCols = "id, author_id, author_email, author_name, content, post_type, prompt_date, company_id, author_years_teaching, author_is_mentor, image_url, file_url, file_name, created_at";
+    const runQuery = (cols) => {
+      let q = supabase.from("community_posts").select(cols).order("created_at", { ascending: false });
+      q = scope === "company" && profile?.company_id ? q.eq("company_id", profile.company_id) : q.is("company_id", null);
+      return q;
+    };
+    // lesson_slug exists once the custom-lesson sharing SQL has been run; fall back without it until then.
+    let { data, error } = await runQuery(`${baseCols}, lesson_slug`);
+    if (error) ({ data, error } = await runQuery(baseCols));
     const rows = error ? [] : data || [];
     setPosts(rows);
     setLoadingPosts(false);
@@ -345,12 +374,19 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
         image_url: uploadedImage?.url || null,
         file_url: uploadedFile?.url || null,
         file_name: uploadedFile?.name || null,
+        ...(attachedLesson ? { lesson_slug: attachedLesson } : {}),
         status: "approved",
       })
       .select()
       .single();
     setPosting(false);
     if (!error && data) {
+      if (attachedLesson) {
+        const { error: shareError } = await supabase.rpc("share_custom_lesson", { p_slug: attachedLesson, p_post: data.id });
+        if (shareError) setShareNote("Your post is up, but the lesson couldn't be shared. Try Share again from Custom Lessons.");
+        else setShareNote("Posted. Teachers who can see this post can now open your lesson.");
+        setTimeout(() => setShareNote(null), 7000);
+      }
       closeComposer();
       setPosts((prev) => [data, ...prev]);
       onActivity?.("post");
@@ -519,7 +555,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
           <button type="button" className="cm-btn" onClick={() => setAuthMode("login")}>Log in</button>
         </div>
       ) : (
-        <div className="cm-composer">
+        <div className="cm-composer" ref={composerRef}>
           <div className="cm-composer-head">
             <Avatar name={myName} email={user.email} />
             <div className="cm-composer-head-text">
@@ -550,6 +586,15 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
           />
 
           <div className="cm-composer-foot">
+            {attachedLesson && customLessonBySlug(attachedLesson) && (
+              <div className="cm-attach-file-chip" style={{ background: "#E9ECF3" }}>
+                <FileIcon />
+                <span>Custom lesson: {customLessonBySlug(attachedLesson).title}</span>
+                <button type="button" className="cm-attach-remove" title="Remove lesson" onClick={() => setAttachedLesson(null)}>
+                  <CloseIcon />
+                </button>
+              </div>
+            )}
             {uploadedImage && (
               <div className="cm-attach-preview">
                 <img src={uploadedImage.url} alt="" />
@@ -593,6 +638,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
           </div>
         </div>
       )}
+
+      {shareNote && <p className="cm-upload-error" style={{ color: "#1F7A47", background: "#E3F5EA", borderRadius: 10, padding: "10px 14px" }} role="status">{shareNote}</p>}
 
       <div className="cm-feed">
         {loadingPosts ? (
@@ -652,6 +699,15 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity } = 
                   <a href={p.image_url} target="_blank" rel="noreferrer" className="cm-post-image-link">
                     <img src={p.image_url} alt="" className="cm-post-image" />
                   </a>
+                )}
+                {p.lesson_slug && customLessonBySlug(p.lesson_slug) && (
+                  <div className="cm-post-lesson">
+                    <div className="cm-post-lesson-text">
+                      <span className="cm-post-lesson-kicker">Custom lesson &middot; {customLessonBySlug(p.lesson_slug).tag}</span>
+                      <span className="cm-post-lesson-title">{customLessonBySlug(p.lesson_slug).title}</span>
+                    </div>
+                    <button type="button" className="cm-btn" onClick={() => openCustomLesson(customLessonBySlug(p.lesson_slug))}>Open lesson</button>
+                  </div>
                 )}
                 {p.file_url && (
                   <a href={p.file_url} target="_blank" rel="noreferrer" className="cm-post-file">
@@ -847,6 +903,10 @@ const CSS = `
 
 .cm-attach-preview { position: relative; width: fit-content; }
 .cm-attach-preview img { max-width: 160px; max-height: 120px; border-radius: 10px; display: block; object-fit: cover; }
+.cm-post-lesson { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0 0; padding: 12px 14px; border: 1px solid var(--hair, rgba(43,42,74,0.1)); border-left: 4px solid #1B2A4A; border-radius: 12px; background: #F7F8FB; }
+.cm-post-lesson-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cm-post-lesson-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: #6B6E96; }
+.cm-post-lesson-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #1B2A4A; overflow-wrap: anywhere; }
 .cm-attach-file-chip {
   position: relative; display: flex; align-items: center; gap: 8px; width: fit-content;
   background: #FDFCFA; border: 1px solid var(--hair); border-radius: 10px; padding: 8px 30px 8px 10px;

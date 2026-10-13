@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
+import { CUSTOM_LESSONS } from "./customLessonsRegistry";
 
 // Owner-only screen for the beta: make promo codes, grant access to one
 // account by email, and see / end anyone's trial or free access. Every
@@ -29,6 +30,9 @@ export default function AdminAccess() {
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
   const [codes, setCodes] = useState([]);
   const [grants, setGrants] = useState([]);
+  const [owners, setOwners] = useState([]);
+  const [lessonSlug, setLessonSlug] = useState(CUSTOM_LESSONS[0]?.slug || "");
+  const [lessonEmail, setLessonEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
   const [notice, setNotice] = useState(null);
@@ -55,6 +59,8 @@ export default function AdminAccess() {
     setError(null);
     setCodes(c.data || []);
     setGrants(g.data || []);
+    const o = await supabase.rpc("admin_list_custom_lesson_owners");
+    setOwners(o.error ? [] : o.data || []);
   }, []);
 
   useEffect(() => { if (isAdmin) load(); }, [isAdmin, load]);
@@ -87,6 +93,15 @@ export default function AdminAccess() {
       `Gave ${email.trim()} ${PLAN_LABEL[gPlan]} for ${gDays} days.`,
     );
     if (ok) { setEmail(""); setGNote(""); }
+  }
+
+  async function assignLesson(e) {
+    e.preventDefault();
+    const ok = await run(
+      () => supabase.rpc("admin_assign_custom_lesson", { p_slug: lessonSlug, p_email: lessonEmail }),
+      `Lesson given to ${lessonEmail.trim()}. Only they can open it now.`,
+    );
+    if (ok) setLessonEmail("");
   }
 
   if (authLoading) return null;
@@ -183,6 +198,35 @@ export default function AdminAccess() {
                 ))}
               </div>
             )}
+
+            <h2 className="aac-h aac-h--wide">Custom lessons: who owns what</h2>
+            <form className="aac-card" onSubmit={assignLesson} style={{ marginBottom: 16 }}>
+              <p className="aac-sub">A custom lesson opens only for its owner and the people they share it with. Give a lesson to the teacher it was made for.</p>
+              <div className="aac-three" style={{ gridTemplateColumns: "1.6fr 1.4fr" }}>
+                <label className="aac-label">Lesson
+                  <select className="aac-input" value={lessonSlug} onChange={(e) => setLessonSlug(e.target.value)}>
+                    {CUSTOM_LESSONS.map((l) => <option key={l.slug} value={l.slug}>{l.title}</option>)}
+                  </select>
+                </label>
+                <label className="aac-label">Teacher's email
+                  <input className="aac-input" type="email" value={lessonEmail} onChange={(e) => setLessonEmail(e.target.value)} placeholder="teacher@email.com" />
+                </label>
+              </div>
+              <button type="submit" className="aac-btn" disabled={busy || !lessonEmail.trim()}>Give lesson</button>
+            </form>
+            <div className="aac-table">
+              <div className="aac-row aac-row--head" style={{ gridTemplateColumns: "2fr 2fr 1fr" }}><span>Lesson</span><span>Owner</span><span>Shared in posts</span></div>
+              {CUSTOM_LESSONS.map((l) => {
+                const o = owners.find((x) => x.slug === l.slug);
+                return (
+                  <div className="aac-row" style={{ gridTemplateColumns: "2fr 2fr 1fr" }} key={l.slug}>
+                    <span className="aac-wrap">{l.title}</span>
+                    <span className="aac-wrap">{o?.owner_email || "Nobody yet (private to you only)"}</span>
+                    <span>{o ? o.shared_in : 0}</span>
+                  </div>
+                );
+              })}
+            </div>
 
             <h2 className="aac-h aac-h--wide">Trials and free access</h2>
             {grants.length === 0 ? <p className="aac-status">Nobody has started a trial or been given access yet.</p> : (

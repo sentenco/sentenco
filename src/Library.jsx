@@ -1,3 +1,5 @@
+import { CUSTOM_LESSONS, openCustomLessonPopup } from "./customLessonsRegistry";
+import useCustomLessonAccess from "./useCustomLessonAccess";
 import React, { useState, useEffect, useRef } from "react";
 import { SUPPORT_EMAIL } from "./siteConfig.js";
 import { useNavigate, useParams, useLocation, useSearchParams, Link } from "react-router-dom";
@@ -368,114 +370,8 @@ function ArticlesFeature({ navigate, query }) {
   );
 }
 
-const CUSTOM_LESSONS = [
-  {
-    slug: "real-estate-vocabulary",
-    title: "Real Estate Vocabulary",
-    tag: "Vocabulary",
-    level: "Comprehension: Intermediate · Production: Advanced Beginner",
-    desc: "12 real estate words across People, Property, and Money, with a listening dialogue and simple-sentence practice.",
-  },
-  {
-    slug: "be-verbs-and-will",
-    title: "Be-verbs & Will",
-    tag: "Grammar",
-    level: "Beginner",
-    desc: "Three core patterns in one sitting: be + adjective, be + v-ing, and will + v1, each with a rule box and fill-in-blank practice.",
-  },
-  {
-    slug: "present-simple-vs-progressive",
-    title: "Present Simple vs Progressive",
-    tag: "Grammar",
-    level: "Beginner to Elementary",
-    desc: "Usage rules and signal words for both tenses, plus a mixed activity that combines them in the same set of sentences.",
-  },
-  {
-    slug: "verb-tense-identification",
-    title: "Verb Tense Identification",
-    tag: "Grammar",
-    level: "Intermediate to Advanced",
-    desc: "24 real sentences across all 12 English tenses, two per tense, one at a time, choose the tense each sentence is written in.",
-  },
-  {
-    slug: "e8-reading-and-reactions",
-    popup: [1200, 780],
-    title: "E8 Reading & Reactions",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes of real E8 tasks (reactions, short texts, matching, gapped text, word transformation), with the trap behind every wrong answer.",
-  },
-  {
-    slug: "e8-task-5-reactions",
-    popup: [1200, 780],
-    title: "E8 Task 5: Reactions to Situations",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: 20 situations, one at a time. Name the job, then choose the reply, with the trap behind every wrong answer.",
-  },
-  {
-    slug: "e8-task-6-dialogues",
-    popup: [1200, 780],
-    title: "E8 Task 6: Finish the Dialogue",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: 16 dialogues with a gap. Use the given word, stay inside three words, and learn the trap behind every mistake.",
-  },
-  {
-    slug: "e8-task-7-short-texts",
-    popup: [1200, 780],
-    title: "E8 Task 7: Short Texts",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: 14 short texts (notices, adverts, emails, messages, diaries). Know the question type, find the evidence, avoid the trap.",
-  },
-  {
-    slug: "e8-task-8-missing-sentences",
-    popup: [1200, 780],
-    title: "E8 Task 8: Missing Sentences",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: four texts with three gaps each and one extra sentence. Use the clues around each gap, one gap at a time.",
-  },
-  {
-    slug: "e8-task-9-match-the-text",
-    popup: [1200, 780],
-    title: "E8 Task 9: Match the Text",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: four sets of three short texts and four questions each. Match the idea, not the words, and see how the wrong texts trick you.",
-  },
-  {
-    slug: "e8-task-10-find-the-facts",
-    popup: [1200, 780],
-    title: "E8 Task 10: Find the Facts",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: read two short texts and complete a message to a friend with the right facts, one to three words per gap. In English.",
-  },
-  {
-    slug: "e8-task-11-the-right-word",
-    popup: [1200, 780],
-    title: "E8 Task 11: The Right Word",
-    tag: "Exam Prep",
-    level: "A2 to low B1 · E8 exam prep",
-    desc: "25 minutes on one task type: four short texts with three gaps each and a box of six words. Pick the word that fits and learn why the look-alikes are wrong.",
-  },
-];
 
-function openCustomLessonPopup(path, name, w, h) {
-  const screenW = window.screen.availWidth || 1600;
-  const screenH = window.screen.availHeight || 900;
-  const width = Math.min(w, screenW - 40);
-  const height = Math.min(h, screenH - 80);
-  const left = Math.max(0, Math.floor((screenW - width) / 2));
-  const top = Math.max(0, Math.floor((screenH - height) / 2));
-  window.open(
-    path,
-    name,
-    `width=${width},height=${height},left=${left},top=${top},toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`
-  );
-}
+
 
 const GRAMMAR_MODULES = [
   { num: "BED 01", banner: "partsOfSpeech", title: "Parts of Speech", spec: "8 word classes across 6 topics. One Lesson, one Assessment each. A1–C2.", href: "/library/grammar/parts-of-speech", ready: true, hue: "leaf", tier: "foundation" },
@@ -1569,6 +1465,10 @@ export default function Library() {
   const [page, setPage] = useState(() => Number(searchParams.get("page")) || 1);
   const [query, setQuery] = useState(() => searchParams.get("q") || "");
   const [clTab, setClTab] = useState(() => searchParams.get("clTab") || "All");
+  // Custom lessons are private: show only the ones this teacher owns, or that another teacher shared on a post they can see.
+  const clAccess = useCustomLessonAccess(category === "Customized Lessons");
+  const clVisible = CUSTOM_LESSONS.filter((l) => clAccess.access.has(l.slug) || (clAccess.notSetUp && clAccess.isOwnerEmail));
+  const clRelation = (slug) => (clAccess.access.get(slug)?.relation) || "mine";
   const [clFormOpen, setClFormOpen] = useState(false);
   const [clStudentName, setClStudentName] = useState("");
   const [clLevel, setClLevel] = useState("A1");
@@ -2531,9 +2431,9 @@ export default function Library() {
             )}
 
             <div className="cl-gallery-hd-row">
-              <h2 className="cl-gallery-hd">Published lessons</h2>
+              <h2 className="cl-gallery-hd">Your lessons</h2>
               <div className="cl-tabs">
-                {["All", ...Array.from(new Set(CUSTOM_LESSONS.map((l) => l.tag)))].map((t) => (
+                {["All", ...Array.from(new Set(clVisible.map((l) => l.tag)))].map((t) => (
                   <button key={t} type="button" role="tab" aria-selected={clTab === t} style={{ "--c": CL_TAB_COLORS[t] || "#1B2A4A" }} className={`cl-tab ${clTab === t ? "is-active" : ""}`} onClick={() => { setClTab(t); const next = new URLSearchParams(searchParams); if (t === "All") next.delete("clTab"); else next.set("clTab", t); setSearchParams(next, { replace: true }); }}>
                     <svg viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{ __html: CL_TAB_ICONS[t] || CL_TAB_ICONS.All }} />
                     {t}
@@ -2541,8 +2441,16 @@ export default function Library() {
                 ))}
               </div>
             </div>
+            {user && clAccess.ready && clVisible.length === 0 && (
+              <p style={{ color: "#6B6E96", fontSize: 14, margin: "8px 0 24px" }}>
+                You don't have any custom lessons yet. Request one above. Lessons built for you appear here, and only you can open them unless you share them.
+              </p>
+            )}
+            {!user && (
+              <p style={{ color: "#6B6E96", fontSize: 14, margin: "8px 0 24px" }}>Sign in to see your custom lessons.</p>
+            )}
             <div className="cl-rows">
-              {CUSTOM_LESSONS.filter((l) => clTab === "All" || l.tag === clTab).map((l) => {
+              {clVisible.filter((l) => clTab === "All" || l.tag === clTab).map((l) => {
                 const path = `/library/customized-lessons/${l.slug}`;
                 const open = () => openCustomLessonPopup(path, "sentencoCustomLesson", l.popup ? l.popup[0] : 840, l.popup ? l.popup[1] : 860);
                 return (
@@ -2562,10 +2470,24 @@ export default function Library() {
                         <span className="cl-row-tag">{l.tag}</span>
                       </div>
                       <p className="cl-row-desc">{l.desc}</p>
+                      {clRelation(l.slug) === "shared" && (
+                        <p className="cl-row-desc" style={{ fontWeight: 700, color: "#1B2A4A" }}>Shared with you by {clAccess.access.get(l.slug)?.ownerName || "a teacher"}</p>
+                      )}
                       <div className="cl-row-chips">
                         {String(l.level || "").split(" · ").filter(Boolean).map((lv) => <span key={lv}>{lv}</span>)}
                       </div>
                     </div>
+                    {clRelation(l.slug) === "mine" && !clAccess.notSetUp && (
+                      <button
+                        type="button"
+                        className="cl-row-share"
+                        onClick={(e) => { e.stopPropagation(); navigate(`/library?shareLesson=${encodeURIComponent(l.slug)}`); }}
+                        title="Share this lesson in Homeroom"
+                        style={{ fontFamily: "'Quicksand', sans-serif", fontWeight: 700, fontSize: 12.5, color: "#1B2A4A", background: "#E9ECF3", border: "none", borderRadius: 999, padding: "7px 14px", cursor: "pointer", marginRight: 8, whiteSpace: "nowrap" }}
+                      >
+                        Share
+                      </button>
+                    )}
                     <span className="cl-row-go">
                       <span className="cl-row-go-label">Open</span>
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
