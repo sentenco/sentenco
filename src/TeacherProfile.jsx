@@ -560,7 +560,7 @@ const CSS = `
 .tp-cover-btn:hover { background: #fff; color: #E0502F; }
 .tp-cover-btn svg { width: 16px; height: 16px; }
 
-.tp-head { display: flex; align-items: flex-start; gap: 18px; padding: 0 28px; margin-top: -56px; flex-wrap: wrap; position: relative; z-index: 2; }
+.tp-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 18px; align-items: start; padding: 0 28px; margin-top: -56px; position: relative; z-index: 2; }
 .tp-avatar {
   position: relative; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
   background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 36px;
@@ -573,8 +573,12 @@ const CSS = `
 }
 .tp-avatar:hover .tp-avatar-cam, .tp-avatar-cam:focus-visible { opacity: 1; }
 .tp-avatar-cam svg { width: 24px; height: 24px; }
-.tp-head-text { flex: 1; min-width: 220px; padding-top: 66px; }
-.tp-actions { padding-top: 70px; }
+.tp-avatar { grid-column: 1; grid-row: 1 / span 3; }
+.tp-head-text { display: contents; }
+.tp-head-text > :first-child { grid-column: 2; grid-row: 1; margin-top: 66px; min-width: 0; }
+.tp-head-text > .tp-country { grid-column: 2; grid-row: 2; }
+.tp-head-text > .tp-chips { grid-column: 2 / -1; grid-row: 3; }
+.tp-actions { grid-column: 3; grid-row: 1 / span 2; padding-top: 62px; }
 .tp-edit-actions { display: flex; gap: 8px; }
 .tp-btn--ghost { background: var(--soft); color: var(--ink); }
 .tp-btn--ghost:hover { background: #dde1ec; }
@@ -705,8 +709,9 @@ const CSS = `
 }
 .tp-toast.is-error { background: #8E2B1F; }
 @media (max-width: 640px) {
-  .tp-head { flex-direction: column; align-items: flex-start; gap: 0; }
-  .tp-head-text { padding-top: 12px; min-width: 0; width: 100%; }
+  .tp-head { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+  .tp-head-text { display: block; padding-top: 12px; min-width: 0; width: 100%; }
+  .tp-head-text > :first-child { margin-top: 0; }
   .tp-actions { position: absolute; top: 70px; right: 18px; padding-top: 0; }
   .tp-nbtn { padding: 9px 14px; font-size: 13px; }
   .tp-hl { padding: 10px 18px 2px; gap: 14px; }
