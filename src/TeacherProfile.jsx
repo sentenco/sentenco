@@ -283,7 +283,7 @@ export default function TeacherProfile() {
                         <button type="button" className="tp-btn" onClick={save} disabled={saving || uploading}>{saving ? "Saving…" : "Save"}</button>
                       </div>
                     ) : (
-                      <button type="button" className="tp-btn" onClick={() => { setNotice(null); setEditing(true); }}>Edit profile</button>
+                      <button type="button" className="tp-icon-btn" onClick={() => { setNotice(null); setEditing(true); }} aria-label="Edit profile" title="Edit profile"><PenIcon /></button>
                     )}
                   </div>
                 )}
@@ -440,6 +440,9 @@ const CSS = `
   border: none; border-radius: 999px; padding: 10px 22px; cursor: pointer;
 }
 .tp-btn:hover { background: #E0502F; }
+.tp-icon-btn { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--coral); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -6px rgba(255,107,74,0.6); transition: background 0.15s, transform 0.1s; }
+.tp-icon-btn:hover { background: #E0502F; transform: scale(1.05); }
+.tp-icon-btn svg { width: 20px; height: 20px; }
 
 .tp-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .tp-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; margin: 0; }
