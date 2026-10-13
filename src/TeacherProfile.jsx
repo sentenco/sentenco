@@ -356,25 +356,6 @@ export default function TeacherProfile() {
                 </div>
               )}
 
-              {user && (
-                <div className="tp-hl" role="tablist" aria-label="Filter posts">
-                  {HIGHLIGHTS.map((h) => (
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={filter === h.key}
-                      key={h.key}
-                      className={`tp-hl-btn tp-hl-btn--${h.key}${filter === h.key ? " is-on" : ""}`}
-                      onClick={() => setFilter(h.key)}
-                    >
-                      <span className="tp-hl-circle"><HlIcon name={h.key} /></span>
-                      <span className="tp-hl-label">{h.label}</span>
-                      <small>{counts ? counts[h.key] : "–"}</small>
-                    </button>
-                  ))}
-                </div>
-              )}
-
               {profile.is_mentor && (
                 <div className="tp-mentor-block">
                   <span className="tp-mentor-specialty">{profile.mentor_specialty}</span>
@@ -387,7 +368,31 @@ export default function TeacherProfile() {
               )}
             </div>
 
-            <h3 className="tp-h3">{HIGHLIGHTS.find((h) => h.key === filter)?.label === "All" ? "Posts" : HIGHLIGHTS.find((h) => h.key === filter)?.label}</h3>
+            {user && (
+              <div className="tp-hl" role="tablist" aria-label="Filter posts">
+                {HIGHLIGHTS.map((h) => (
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === h.key}
+                    key={h.key}
+                    className={`tp-hl-btn tp-hl-btn--${h.key}${filter === h.key ? " is-on" : ""}`}
+                    onClick={() => setFilter(h.key)}
+                  >
+                    <span className="tp-hl-circle">
+                      <HlIcon name={h.key} />
+                      <em>{counts ? counts[h.key] : "–"}</em>
+                    </span>
+                    <span className="tp-hl-label">{h.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div className="tp-bar">
+              <h3 className="tp-h3">{HIGHLIGHTS.find((h) => h.key === filter)?.label === "All" ? "Posts" : HIGHLIGHTS.find((h) => h.key === filter)?.label}</h3>
+              {counts && <span className="tp-bar-count">{counts[filter]} shown</span>}
+            </div>
             {!user ? (
               <p className="tp-status">Sign in to see posts.</p>
             ) : (
@@ -457,10 +462,13 @@ const CSS = `
 .tp-status { text-align: center; color: var(--muted); padding: 40px 0; }
 
 .tp-card {
-  background: var(--card); border-radius: 24px; overflow: hidden; margin-bottom: 8px;
-  box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 10px 28px -18px rgba(27,42,74,0.22); padding-bottom: 8px;
+  background: var(--card); border-radius: 28px; overflow: hidden; margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(27,42,74,0.05), 0 18px 40px -22px rgba(27,42,74,0.28); padding-bottom: 8px;
 }
-.tp-cover { position: relative; aspect-ratio: 4 / 1; min-height: 110px; background: linear-gradient(120deg, #FDECE5 0%, #E9ECF3 100%); overflow: hidden; }
+.tp-cover { position: relative; aspect-ratio: 4 / 1; min-height: 110px; background: radial-gradient(circle at 12% 30%, #FFC9B8 0, transparent 46%), radial-gradient(circle at 88% 15%, #C7D8F2 0, transparent 46%), linear-gradient(120deg, #FDECE5, #E9ECF3); overflow: hidden; }
+.tp-cover:not(.has-img)::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(27,42,74,0.1) 1.2px, transparent 1.2px); background-size: 18px 18px; opacity: 0.55; pointer-events: none; }
+.tp-cover::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(transparent, rgba(255,255,255,0.5)); pointer-events: none; z-index: 1; }
+.tp-cover-btn { z-index: 2; }
 .tp-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tp-cover-btn {
   position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 6px; border: none; cursor: pointer;
@@ -470,11 +478,11 @@ const CSS = `
 .tp-cover-btn:hover { background: #fff; color: #E0502F; }
 .tp-cover-btn svg { width: 16px; height: 16px; }
 
-.tp-head { display: flex; align-items: flex-start; gap: 18px; padding: 0 28px; margin-top: -56px; flex-wrap: wrap; position: relative; }
+.tp-head { display: flex; align-items: flex-start; gap: 18px; padding: 0 28px; margin-top: -56px; flex-wrap: wrap; position: relative; z-index: 2; }
 .tp-avatar {
   position: relative; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
   background: var(--navy); color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 36px;
-  display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px var(--card);
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px var(--card), 0 14px 26px -10px rgba(27,42,74,0.5);
 }
 .tp-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .tp-avatar-cam {
@@ -494,7 +502,7 @@ const CSS = `
   border: none; border-radius: 999px; padding: 10px 22px; cursor: pointer;
 }
 .tp-btn:hover { background: #E0502F; }
-.tp-icon-btn { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--coral); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -6px rgba(255,107,74,0.6); transition: background 0.15s, transform 0.1s; }
+.tp-icon-btn { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--coral); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px -6px rgba(255,107,74,0.7); transition: background 0.15s, transform 0.1s; }
 .tp-icon-btn:hover { background: #E0502F; transform: scale(1.05); }
 .tp-icon-btn svg { width: 20px; height: 20px; }
 
@@ -524,12 +532,13 @@ const CSS = `
 .tp-tick.is-on .tp-tick-box { background: var(--coral); border-color: var(--coral); }
 .tp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .tp-chips:empty { display: none; }
-.tp-chip { display: inline-flex; align-items: center; border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 700; background: var(--soft); color: var(--ink); }
+.tp-chip { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 700; background: #F1F3F8; color: var(--ink); }
+.tp-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.55; }
 .tp-chip--mentor { background: var(--navy-pale); color: var(--navy); }
 .tp-chip--kids { background: #FFF4D6; color: #7A5C0C; }
 .tp-chip--teens { background: #E3F0FB; color: #1B4F7A; }
 .tp-chip--adults { background: #EDE6F7; color: #5B3F82; }
-.tp-chip--skill { background: var(--soft); color: var(--ink); }
+.tp-chip--skill { background: #F1F3F8; color: var(--ink); }
 .tp-chip--school { background: #E4F3EA; color: #1F6B45; }
 .tp-lbl { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
 .tp-step { display: inline-flex; align-items: center; gap: 4px; background: var(--soft); border-radius: 999px; padding: 4px; }
@@ -553,20 +562,40 @@ const CSS = `
   font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 10.5px; color: var(--navy);
   background: var(--navy-pale); border-radius: 999px; padding: 3px 9px;
 }
-.tp-hl { display: flex; gap: 18px; margin-top: 20px; padding: 6px 28px 16px; overflow-x: auto; scrollbar-width: none; }
+.tp-hl { display: flex; gap: 20px; margin-top: 6px; padding: 14px 12px 26px; overflow-x: auto; scrollbar-width: none; }
 .tp-hl::-webkit-scrollbar { display: none; }
 .tp-hl > :first-child { margin-left: auto; }
 .tp-hl > :last-child { margin-right: auto; }
-.tp-hl-btn { border: none; background: none; text-align: center; flex-shrink: 0; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 700; color: var(--ink); padding: 0; }
-.tp-hl-circle { width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 6px; display: flex; align-items: center; justify-content: center; background: var(--soft); box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--hair); transition: box-shadow 0.15s; }
-.tp-hl-circle svg { width: 22px; height: 22px; }
-.tp-hl-btn.is-on .tp-hl-circle { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--coral); }
-.tp-hl-btn--tip .tp-hl-circle { background: #FFF4D6; color: #7A5C0C; }
-.tp-hl-btn--question .tp-hl-circle { background: #E3F0FB; color: #1B4F7A; }
-.tp-hl-btn--resource .tp-hl-circle { background: var(--coral-pale); color: #C2411F; }
-.tp-hl-btn--lesson .tp-hl-circle { background: #E4F3EA; color: #1F6B45; }
-.tp-hl-btn small { display: block; color: var(--muted); font-weight: 700; font-size: 11.5px; }
-.tp-h3 { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 24px 4px 12px; }
+.tp-hl-btn { --m: #E7EAF2; --d: #C3C9DB; --k: #1B2A4A; --sh: rgba(27,42,74,0.32); border: none; background: none; text-align: center; flex-shrink: 0; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--muted); padding: 0; }
+.tp-hl-circle {
+  position: relative; width: 58px; height: 58px; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;
+  color: var(--k); background: linear-gradient(155deg, #fff -30%, var(--m) 48%, var(--d) 150%);
+  box-shadow: inset 0 2px 2px rgba(255,255,255,0.95), inset 0 -5px 9px -3px var(--sh), 0 12px 18px -8px var(--sh), 0 2px 4px rgba(27,42,74,0.1);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.tp-hl-circle svg { width: 23px; height: 23px; filter: drop-shadow(0 1px 0 rgba(255,255,255,0.7)); }
+.tp-hl-circle em {
+  position: absolute; top: -5px; right: -7px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: #fff; color: var(--ink);
+  font-style: normal; font-weight: 700; font-size: 11.5px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(27,42,74,0.22);
+}
+.tp-hl-btn:hover .tp-hl-circle { transform: translateY(-3px); box-shadow: inset 0 2px 2px rgba(255,255,255,0.95), inset 0 -5px 9px -3px var(--sh), 0 16px 22px -8px var(--sh), 0 2px 4px rgba(27,42,74,0.1); }
+.tp-hl-btn:active .tp-hl-circle { transform: translateY(0); }
+.tp-hl-btn.is-on { color: var(--ink); }
+.tp-hl-btn.is-on .tp-hl-circle { transform: translateY(-2px); box-shadow: 0 0 0 3px #fff, 0 0 0 5.5px var(--coral), inset 0 2px 2px rgba(255,255,255,0.95), inset 0 -5px 9px -3px var(--sh), 0 16px 22px -8px var(--sh); }
+.tp-hl-btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; border-radius: 16px; }
+.tp-hl-btn--tip { --m: #FFF4D6; --d: #F2CF63; --k: #7A5C0C; --sh: rgba(176,128,8,0.5); }
+.tp-hl-btn--question { --m: #E3F0FB; --d: #8FBFE8; --k: #1B4F7A; --sh: rgba(40,110,170,0.5); }
+.tp-hl-btn--resource { --m: #FDECE5; --d: #F59F85; --k: #C2411F; --sh: rgba(224,80,47,0.5); }
+.tp-hl-btn--lesson { --m: #E4F3EA; --d: #8ACBA6; --k: #1F6B45; --sh: rgba(31,107,69,0.5); }
+.tp-hl-btn--all { --m: #E9ECF3; --d: #AEB6CE; --k: #1B2A4A; --sh: rgba(27,42,74,0.45); }
+.tp-bar { display: flex; align-items: center; justify-content: space-between; margin: 20px 6px 12px; }
+.tp-h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; color: var(--ink); margin: 0; }
+.tp-bar-count { font-size: 13px; font-weight: 700; color: var(--muted); }
+.tp-shell .cm-post { border-radius: 24px; padding: 18px 22px 12px; box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 12px 28px -20px rgba(27,42,74,0.3); }
+.tp-shell .cm-post-lesson { background: #E4F3EA; box-shadow: none; border-radius: 18px; padding: 12px 14px; }
+.tp-shell .cm-post-lesson-kicker { color: #1F6B45; opacity: 0.85; }
+.tp-shell .cm-post-actions { padding-top: 8px; }
+.tp-shell .cm-action-btn:hover { background: #F1F3F8; }
 
 .tp-toast {
   position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 50; background: var(--navy); color: #fff;
@@ -577,8 +606,8 @@ const CSS = `
 @media (max-width: 640px) {
   .tp-head { flex-direction: column; align-items: flex-start; gap: 0; }
   .tp-head-text { padding-top: 12px; min-width: 0; width: 100%; }
-  .tp-actions { padding-top: 12px; }
-  .tp-hl { padding: 6px 18px 14px; gap: 14px; }
+  .tp-actions { position: absolute; top: 70px; right: 18px; padding-top: 0; }
+  .tp-hl { padding: 14px 18px 26px; gap: 14px; }
 }
 @media (max-width: 560px) {
   .tp-head { padding: 0 18px; }
