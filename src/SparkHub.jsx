@@ -1,3 +1,4 @@
+import { useCanSeeTeensAdults } from "./audienceAccess";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SPARK_KIDS_LIST as KIDS_LESSONS } from "./sparkKidsData";
@@ -37,10 +38,14 @@ function Seal() {
 
 export default function SparkHub() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [audience, setAudience] = useState(() => {
+  const canSeeAll = useCanSeeTeensAdults();
+  const visibleKeys = canSeeAll ? Object.keys(AUDIENCES) : ["kids"];
+  const [pickedAudience, setAudience] = useState(() => {
     const fromUrl = searchParams.get("sparkAud");
     return Object.keys(AUDIENCES).includes(fromUrl) ? fromUrl : "kids";
   });
+  // A Teens/Adults link (or a plan without them) falls back to Kids.
+  const audience = visibleKeys.includes(pickedAudience) ? pickedAudience : "kids";
   const config = AUDIENCES[audience];
 
   function selectAudience(key) {
@@ -57,13 +62,13 @@ export default function SparkHub() {
         <div className="spkh-banner"><div className="spkh-banner-in">
           <h1 className="spkh-title">Sparks Class</h1>
           <p className="spkh-sub">A short 20-minute class you can take on its own. We chat for a few minutes to get to know you, then dive into something fun.</p>
-          <div className="spkh-aud" role="tablist" aria-label="Audience">
+          {visibleKeys.length > 1 && <div className="spkh-aud" role="tablist" aria-label="Audience">
             {Object.entries(AUDIENCES).map(([key, a]) => (
               <button key={key} type="button" role="tab" aria-selected={audience === key} className={`spkh-aud-btn is-${key} ${audience === key ? "is-on" : ""}`} onClick={() => selectAudience(key)}>
                 {a.label}
               </button>
             ))}
-          </div>
+          </div>}
         </div></div>
 
         {LEVELS.map((lv) => (

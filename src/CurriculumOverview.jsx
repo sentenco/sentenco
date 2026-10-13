@@ -1,3 +1,4 @@
+import { useCanSeeTeensAdults } from "./audienceAccess";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { TEENS_LEVELS } from "./teensCurriculumData";
@@ -29,11 +30,15 @@ const AUDIENCES = [
 ];
 
 export default function CurriculumOverview({ onSelectLevel }) {
+  const canSeeAll = useCanSeeTeensAdults();
+  const audiences = canSeeAll ? AUDIENCES : AUDIENCES.filter((a) => a.id === "kids");
   const [searchParams, setSearchParams] = useSearchParams();
   const [audience, setAudience] = useState(() => {
     const fromUrl = searchParams.get("curAud");
     return AUDIENCES.some((a) => a.id === fromUrl) ? fromUrl : "kids";
   });
+  // A Teens/Adults link (or a plan that no longer includes them) falls back to Kids.
+  const shownAudience = audiences.some((a) => a.id === audience) ? audience : "kids";
   const navigate = useNavigate();
 
   function selectAudience(id) {
@@ -53,14 +58,14 @@ export default function CurriculumOverview({ onSelectLevel }) {
     document.head.appendChild(tag);
   }, []);
 
-  const current = AUDIENCES.find((a) => a.id === audience) || AUDIENCES[0];
+  const current = AUDIENCES.find((a) => a.id === shownAudience) || AUDIENCES[0];
   const levels = [current.levels.A1, current.levels.A2];
 
   function openLevel(code) {
-    if (audience === "kids") {
+    if (shownAudience === "kids") {
       onSelectLevel && onSelectLevel(code);
     } else {
-      navigate(`/library/curriculum/${audience}/${code}`);
+      navigate(`/library/curriculum/${shownAudience}/${code}`);
     }
   }
 
@@ -70,24 +75,24 @@ export default function CurriculumOverview({ onSelectLevel }) {
       <div className="co-blob co-blob--b" />
 
       <div className="co-stage">
-        <div className={`co-banner co-banner--${audience}`}>
+        <div className={`co-banner co-banner--${shownAudience}`}>
           <div className="co-banner-in">
             <span className="co-hero-kicker">{current.kicker}</span>
             <h1 className="co-title">Curriculum</h1>
             <p className="co-banner-stats">2 levels · 24 units · 144 lessons</p>
-            <div className="co-audience-toggle">
-              {AUDIENCES.map((a) => (
+            {audiences.length > 1 && <div className="co-audience-toggle">
+              {audiences.map((a) => (
                 <button
                   key={a.id}
                   type="button"
-                  className={`co-audience-btn ${audience === a.id ? "is-active" : ""}`}
+                  className={`co-audience-btn ${shownAudience === a.id ? "is-active" : ""}`}
                   style={{ "--dot": a.dot }}
                   onClick={() => selectAudience(a.id)}
                 >
                   {a.label} <span className="co-audience-age">{a.age}</span>
                 </button>
               ))}
-            </div>
+            </div>}
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCanSeeTeensAdults } from "./audienceAccess";
 
 const AUDIENCES = [
   { id: "kids", label: "Kids", age: "6–12", dot: "#F2A21E", path: (lvl) => `/library/curriculum/${lvl}` },
@@ -9,6 +10,8 @@ const AUDIENCES = [
 
 export default function AudienceSwitchTabs({ active, level = "A1", variant = "row" }) {
   const navigate = useNavigate();
+  const canSeeAll = useCanSeeTeensAdults();
+  const audiences = canSeeAll ? AUDIENCES : AUDIENCES.filter((a) => a.id === "kids");
 
   useEffect(() => {
     const styleId = "ast-styles";
@@ -20,10 +23,12 @@ export default function AudienceSwitchTabs({ active, level = "A1", variant = "ro
     document.head.appendChild(tag);
   }, []);
 
+  if (audiences.length < 2) return null;
+
   return (
     <div className={`ast-row ${variant === "banner" ? "ast-row--banner" : ""}`}>
       <div className="ast-toggle">
-        {AUDIENCES.map((a) => (
+        {audiences.map((a) => (
           <button
             key={a.id}
             type="button"

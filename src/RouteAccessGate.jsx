@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import { useCanSeeTeensAdults, isTeensAdultsPath } from "./audienceAccess";
 
 // Wraps every route. Lesson and activity pages that belong to a paid category
 // open only when the account's current plan covers them, so pasting a direct
@@ -58,10 +59,23 @@ export default function RouteAccessGate({ children }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { user, loading, plan, planInfo, planReady } = useAuth();
+  const canSeeTeensAdults = useCanSeeTeensAdults();
   const need = requiredPlanFor(pathname);
+  const teensAdults = isTeensAdultsPath(pathname);
 
-  if (!need) return children;
+  if (!need && !teensAdults) return children;
   if (loading || !planReady) return <Screen title="One moment" text="Checking your access." />;
+  // Teens and Adults pages are hidden, not just locked, for accounts without Pro+.
+  if (teensAdults && !canSeeTeensAdults) {
+    return (
+      <Screen
+        title="Page not found"
+        text="We couldn't find that page."
+        actions={<button type="button" style={btn(true)} onClick={() => navigate("/library")}>Back to Sentenco</button>}
+      />
+    );
+  }
+  if (!need) return children;
   if (RANK[plan] >= RANK[need]) return children;
 
   const home = <button type="button" style={btn(false)} onClick={() => navigate("/library")}>Back to Sentenco</button>;
