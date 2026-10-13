@@ -114,8 +114,15 @@ function HomeIcon() {
 // in place of the section tab rows.
 const DOCK_CSS = `
 .gc-topbar-left { display: flex; align-items: center; gap: 18px; min-width: 0; }
-.gc-topbar.has-dock { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; }
-.gc-topbar.has-dock .gc-topbar-actions { justify-self: end; }
+.gc-topbar.has-dock .gc-topbar-actions { gap: 14px; }
+.gc-topbar .avatar-btn, .gc-topbar .avatar-btn-img { border-radius: 50%; }
+.gc-hsearch { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.gc-hsearch-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(43,42,74,0.1); background: #fff; color: #8B84A3; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: color 0.15s, border-color 0.15s, background 0.15s; }
+.gc-hsearch-btn svg { width: 18px; height: 18px; }
+.gc-hsearch-btn:hover, .gc-hsearch.is-open .gc-hsearch-btn { color: #E0502F; border-color: #FF6B4A; background: rgba(255,107,74,0.08); }
+.gc-hsearch-btn:focus-visible, .gc-hsearch-input:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
+.gc-hsearch-input { width: 240px; max-width: 34vw; border: 1px solid rgba(43,42,74,0.1); border-radius: 999px; background: #F1F3F8; padding: 9px 16px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 600; color: #2B2A4A; outline: none; }
+.gc-hsearch-input:focus { border-color: #FF6B4A; background: #fff; }
 .gc-dock-bellwrap { position: relative; display: flex; }
 .gc-dock-bellbtn { padding: 8px 12px; }
 .gc-dock { display: flex; gap: 4px; background: #F1F3F8; border-radius: 999px; padding: 4px; }
@@ -129,6 +136,8 @@ const DOCK_CSS = `
 .gc-dock-btn:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
 @media (max-width: 1000px) {
   .gc-topbar-left { gap: 10px; }
+  .gc-hsearch-input { width: 130px; }
+  .gc-topbar.has-dock .gc-topbar-actions { gap: 6px; }
   .gc-dock-btn { padding: 8px 11px; }
   .gc-dock-btn span { display: none; }
   .gc-dock-btn.is-on span { display: inline; }
@@ -161,6 +170,8 @@ export default function LibraryHeader() {
   const [searchMode, setSearchMode] = useState(null);
   const [promptQuery, setPromptQuery] = useState("");
   const searchWrapRef = useRef(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const hsearchRef = useRef(null);
 
   const activeCategory = activeCategoryFor(location.pathname);
   const onConvo = location.pathname.startsWith("/library/messages");
@@ -168,6 +179,8 @@ export default function LibraryHeader() {
   const hideNav = onConvo || onNetwork || location.pathname.startsWith("/library/teacher/");
   const dockMode = hideNav && !!user;
   const onMyProfile = onNetwork || (!!user && location.pathname === `/library/teacher/${user.id}`);
+
+  useEffect(() => { if (searchOpen) hsearchRef.current?.focus(); }, [searchOpen]);
 
   useEffect(() => {
     function handleOutsideClick(e) {
@@ -314,15 +327,29 @@ export default function LibraryHeader() {
             <a href="/library" className="gc-header-brand" onClick={(e) => { e.preventDefault(); navigate("/library"); }}>
               <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
             </a>
+            {dockMode && (
+              <div className={`gc-hsearch${searchOpen ? " is-open" : ""}`}>
+                <button type="button" className="gc-hsearch-btn" onClick={() => setSearchOpen((o) => !o)} aria-label="Search teachers and posts" aria-expanded={searchOpen} title="Search teachers and posts">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><circle cx="9" cy="9" r="6.2" /><line x1="13.6" y1="13.6" x2="18" y2="18" /></svg>
+                </button>
+                {searchOpen && (
+                  <input
+                    ref={hsearchRef}
+                    className="gc-hsearch-input"
+                    type="text"
+                    placeholder="Search teachers and posts…"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") { e.preventDefault(); submitLibrarySearch(); setSearchOpen(false); }
+                      if (e.key === "Escape") setSearchOpen(false);
+                    }}
+                    onBlur={() => { if (!query.trim()) setSearchOpen(false); }}
+                  />
+                )}
+              </div>
+            )}
           </div>
-          {dockMode && (
-            <nav className="gc-dock" aria-label="Social pages">
-              <button type="button" className="gc-dock-btn" onClick={() => navigate("/library")}><HomeIcon /><span>Homeroom</span></button>
-              <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span>{unreadMessageCount > 0 && <i className="gc-dock-dot" aria-label="Unread messages" />}</button>
-              <button type="button" className={`gc-dock-btn${onMyProfile ? " is-on" : ""}`} onClick={() => navigate(`/library/teacher/${user.id}`)} aria-current={onMyProfile ? "page" : undefined}><UserIcon /><span>Profile</span></button>
-              {bellNode(true)}
-            </nav>
-          )}
           <div className="gc-topbar-actions">
             {/* The search bar lives only in the Homeroom (the main Library page). */}
             {false && (
@@ -420,6 +447,14 @@ export default function LibraryHeader() {
                   </button>
                 )}
                 {!dockMode && bellNode(false)}
+                {dockMode && (
+            <nav className="gc-dock" aria-label="Social pages">
+              <button type="button" className="gc-dock-btn" onClick={() => navigate("/library")}><HomeIcon /><span>Homeroom</span></button>
+              <button type="button" className={`gc-dock-btn${onConvo ? " is-on" : ""}`} onClick={() => navigate("/library/messages")} aria-current={onConvo ? "page" : undefined}><ChatIcon /><span>Convo</span>{unreadMessageCount > 0 && <i className="gc-dock-dot" aria-label="Unread messages" />}</button>
+              <button type="button" className={`gc-dock-btn${onMyProfile ? " is-on" : ""}`} onClick={() => navigate(`/library/teacher/${user.id}`)} aria-current={onMyProfile ? "page" : undefined}><UserIcon /><span>Profile</span></button>
+              {bellNode(true)}
+            </nav>
+                )}
                 <div className="account-wrap">
                   <button className="avatar-btn" onClick={() => setMenuOpen((m) => !m)} aria-label="Account menu">
                     {avatarUrl ? <img src={avatarUrl} alt="" className="avatar-btn-img" /> : <UserIcon />}

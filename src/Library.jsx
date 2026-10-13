@@ -2957,9 +2957,8 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   justify-content: center;
   cursor: pointer;
 }
-.theme-pro .avatar-btn { border-radius: 4px; background: #1B2A4A; }
+.theme-pro .avatar-btn { background: #1B2A4A; }
 .avatar-btn-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
-.theme-pro .avatar-btn-img { border-radius: 4px; }
 .account-menu {
   position: absolute;
   top: 46px;
