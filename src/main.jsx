@@ -311,12 +311,14 @@ import ShiftGuide from './ShiftGuide.jsx'
 import LetterBoardHub from './LetterBoardHub.jsx'
 import LetterBoardPlay from './LetterBoardPlay.jsx'
 import { AuthProvider } from './AuthContext.jsx'
+import RouteAccessGate from './RouteAccessGate.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
       <>
         <BrowserRouter>
+          <RouteAccessGate>
           <Routes>
             <Route path="/" element={<Library />} />
             <Route path="/library" element={<Library />} />
@@ -640,6 +642,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/lesson-player/:id" element={<LessonPlayerPage />} />
             <Route path="/teacher-guide/:level/:track" element={<TeacherGuide />} />
           </Routes>
+          </RouteAccessGate>
         </BrowserRouter>
       </>
     </AuthProvider>

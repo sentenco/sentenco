@@ -14,7 +14,11 @@ export function AuthProvider({ children }) {
   // { plan, source: "base"|"trial"|"grant"|"paid"|"owner", endsAt, trialAvailable }
   const [planInfo, setPlanInfo] = useState({ plan: "free", source: "none", endsAt: null, trialAvailable: false });
   const plan = planInfo.plan;
+  // False until the plan for the current account has been looked up, so a gate
+  // does not flash "locked" at someone whose plan is simply still loading.
+  const [planReady, setPlanReady] = useState(false);
   const userRef = useRef(null);
+  const planUserId = useRef(undefined);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -55,7 +59,13 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     userRef.current = user;
-    refreshPlan();
+    // Only a different account resets "ready"; token refreshes hand us a new
+    // user object for the same account and must not re-lock the page.
+    const id = user?.id ?? null;
+    if (planUserId.current !== id) { planUserId.current = id; setPlanReady(false); }
+    let off = false;
+    refreshPlan().finally(() => { if (!off && planUserId.current === id) setPlanReady(true); });
+    return () => { off = true; };
   }, [user, refreshPlan]);
 
   // Keep the plan fresh: when the tab regains focus, every 5 minutes, and right when a trial or grant ends.
@@ -97,7 +107,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, plan, planInfo, refreshPlan, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, loading, plan, planInfo, planReady, refreshPlan, signUp, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
