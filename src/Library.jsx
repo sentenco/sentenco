@@ -1049,24 +1049,20 @@ function TodayFeature({ navigate }) {
   const mySub = ageYearsLine(me?.age, myYears);
   const myInitials = ((myName.trim().split(/\s+/)[0]?.[0] || "T") + (myName.trim().split(/\s+/)[1]?.[0] || "")).toUpperCase();
 
-  const deskList = (
-    <div className="tsq-desk-list">
-      {DESK_TOOLS.map((t) => (
-        <button
-          type="button"
-          key={t.key}
-          className={`tsq-tool${deskUnlocked ? "" : " is-locked"}`}
-          onClick={() => { if (deskUnlocked) t.run(); }}
-          aria-disabled={!deskUnlocked}
-          title={deskLockTitle}
-        >
-          <span className="tsq-tool-icon"><img src={t.icon} alt="" /></span>
-          <span className="tsq-tool-name">{t.label}</span>
-          {!deskUnlocked && <span className="tsq-tool-lock"><LockIcon /></span>}
-        </button>
-      ))}
-    </div>
+  const deskPill = (t) => (
+    <button
+      type="button"
+      key={t.key}
+      className={`tsq-pill${deskUnlocked ? "" : " is-locked"}`}
+      onClick={() => { if (deskUnlocked) t.run(); }}
+      aria-disabled={!deskUnlocked}
+      title={deskUnlocked ? t.label : deskLockTitle}
+    >
+      <span className="tsq-pill-icon"><img src={t.icon} alt="" />{!deskUnlocked && <span className="tsq-pill-lock"><LockIcon /></span>}</span>
+      <span className="tsq-pill-name">{t.shortLabel}</span>
+    </button>
   );
+  const deskList = <div className="tsq-pill-grid">{DESK_TOOLS.map(deskPill)}</div>;
   const deskMeter = needsUnlock && (
     <div className="tsq-meter" aria-label={`Unlock progress, ${deskStatus}`}>
       <i style={{ width: `${progressPct}%` }} />
@@ -1104,27 +1100,8 @@ function TodayFeature({ navigate }) {
             <img src={communityBannerImg} alt="Illustration of teachers around the world connecting over Sentenco" />
           </div>
           <div className="tsq-card tsq-strip">
-            <div className="tsq-strip-top">
-              <span className="tsq-strip-title">Teacher's Desk</span>
-              {deskMeter}
-              {deskStatus && <span className="tsq-strip-status">{deskStatus}</span>}
-            </div>
-            <div className="tsq-strip-tools">
-              {DESK_TOOLS.map((t) => (
-                <button
-                  type="button"
-                  key={t.key}
-                  className={`tsq-mini${deskUnlocked ? "" : " is-locked"}`}
-                  onClick={() => { if (deskUnlocked) t.run(); }}
-                  aria-disabled={!deskUnlocked}
-                  title={deskLockTitle}
-                >
-                  <span className="tsq-tool-icon"><img src={t.icon} alt="" /></span>
-                  <span className="tsq-mini-name">{t.shortLabel}</span>
-                  {!deskUnlocked && <span className="tsq-mini-lock"><LockIcon /></span>}
-                </button>
-              ))}
-            </div>
+            <span className="tsq-strip-title" title={deskStatus || undefined}>Desk{needsUnlock && <em>{Math.min(deskProgress, 3)}/3</em>}</span>
+            {DESK_TOOLS.map(deskPill)}
           </div>
           <CommunityFeed onActivity={handleCommunityActivity} onStats={setStats} />
         </div>
@@ -2888,31 +2865,26 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .tsq-meter i { display: block; height: 100%; background: #FF6B4A; border-radius: 999px; transition: width 0.3s ease; }
 .tsq-desk-status { font-size: 12px; font-weight: 700; color: #8B84A3; margin: 6px 6px 8px; }
 .tsq-desk-note { font-size: 12.5px; line-height: 1.45; color: #8B84A3; font-weight: 600; margin: 0 6px 10px; }
-.tsq-desk-list { display: flex; flex-direction: column; gap: 2px; }
-.tsq-tool { display: flex; align-items: center; gap: 12px; width: 100%; border: none; background: none; text-align: left; padding: 8px 8px; border-radius: 14px; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: #2B2A4A; }
-.tsq-tool:hover { background: #F4F6FB; }
-.tsq-tool.is-locked { opacity: 0.55; cursor: default; }
-.tsq-tool-icon { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: #E7EAF2; }
-.tsq-tool-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.tsq-tool-lock { margin-left: auto; color: #8B84A3; display: flex; }
-.tsq-tool-lock svg { width: 14px; height: 14px; }
+.tsq-pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
+.tsq-pill { display: flex; align-items: center; gap: 8px; border: none; background: #F4F6FB; border-radius: 999px; padding: 5px 12px 5px 5px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; color: #2B2A4A; cursor: pointer; white-space: nowrap; min-width: 0; text-align: left; flex-shrink: 0; }
+.tsq-pill:hover { background: #E7EAF2; }
+.tsq-pill:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
+.tsq-pill.is-locked { cursor: default; }
+.tsq-pill.is-locked .tsq-pill-icon img { opacity: 0.5; }
+.tsq-pill-icon { position: relative; width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; background: #E7EAF2; }
+.tsq-pill-icon img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+.tsq-pill-lock { position: absolute; right: -4px; bottom: -4px; width: 16px; height: 16px; border-radius: 50%; background: #fff; color: #8B84A3; box-shadow: 0 1px 3px rgba(27,42,74,0.25); display: flex; align-items: center; justify-content: center; }
+.tsq-pill-lock svg { width: 9px; height: 9px; }
+.tsq-pill-name { overflow: hidden; text-overflow: ellipsis; }
 .tsq-strip { display: none; }
-.tsq-strip { padding: 14px 16px; margin-bottom: 14px; }
-.tsq-strip-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.tsq-strip-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; color: #2B2A4A; white-space: nowrap; }
-.tsq-strip-top .tsq-meter { flex: 1; max-width: 190px; margin: 0; }
-.tsq-strip-status { margin-left: auto; font-size: 12.5px; font-weight: 700; color: #8B84A3; white-space: nowrap; }
-.tsq-strip-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.tsq-mini { position: relative; border: none; background: #F4F6FB; border-radius: 16px; padding: 10px 4px 8px; text-align: center; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 700; color: #2B2A4A; display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.tsq-mini:hover { background: #E7EAF2; }
-.tsq-mini.is-locked { opacity: 0.6; cursor: default; }
-.tsq-mini .tsq-tool-icon { width: 36px; height: 36px; }
-.tsq-mini-lock { position: absolute; top: 6px; right: 6px; color: #8B84A3; display: flex; }
-.tsq-mini-lock svg { width: 12px; height: 12px; }
+.tsq-strip { padding: 10px 12px; margin-bottom: 14px; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.tsq-strip::-webkit-scrollbar { display: none; }
+.tsq-strip-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #2B2A4A; white-space: nowrap; padding: 0 6px 0 4px; flex-shrink: 0; }
+.tsq-strip-title em { font-family: 'Quicksand', sans-serif; font-style: normal; font-size: 11.5px; font-weight: 700; color: #8B84A3; background: #F4F6FB; border-radius: 999px; padding: 2px 8px; margin-left: 8px; }
 @media (max-width: 1000px) {
   .tsq-cols { grid-template-columns: minmax(0, 1fr); }
   .tsq-left { display: none; }
-  .tsq-strip { display: block; }
+  .tsq-strip { display: flex; }
 }
 
 /* ── Quote banner ── */
