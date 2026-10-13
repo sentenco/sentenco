@@ -973,7 +973,6 @@ function TodayFeature({ navigate }) {
   const [likeCount, setLikeCount] = useState(0);
   const [stats, setStats] = useState({ tipsShared: 0, dayStreak: 0, totalTeachers: null });
   const [me, setMe] = useState(null);
-  const [deskSheetOpen, setDeskSheetOpen] = useState(false);
 
   useEffect(() => {
     if (!user) { setMe(null); return; }
@@ -1032,10 +1031,10 @@ function TodayFeature({ navigate }) {
   const deskLockTitle = deskUnlocked ? undefined : `Post, comment, or like 3 times in Homeroom today to unlock. You're at ${deskProgress}/3 today.`;
 
   const DESK_TOOLS = [
-    { key: "feedback", label: "Lesson Feedback", icon: todayFeedbackIcon, run: openFeedbackGenerator },
-    { key: "wheel", label: "Spin the Wheel", icon: todayWheelIcon, run: openWheel },
-    { key: "notebook", label: "Digital Notebook", icon: todayNotebookIcon, run: () => navigate("/library/notebook") },
-    { key: "syllabus", label: "Syllabus Generator", icon: todaySyllabusIcon, run: () => navigate("/library/syllabus") },
+    { key: "feedback", label: "Lesson Feedback", shortLabel: "Feedback", icon: todayFeedbackIcon, run: openFeedbackGenerator },
+    { key: "wheel", label: "Spin the Wheel", shortLabel: "Wheel", icon: todayWheelIcon, run: openWheel },
+    { key: "notebook", label: "Digital Notebook", shortLabel: "Notebook", icon: todayNotebookIcon, run: () => navigate("/library/notebook") },
+    { key: "syllabus", label: "Syllabus Generator", shortLabel: "Syllabus", icon: todaySyllabusIcon, run: () => navigate("/library/syllabus") },
   ];
   const needsUnlock = plan === "free";
   const progressPct = Math.round((Math.min(deskProgress, 3) / 3) * 100);
@@ -1053,7 +1052,7 @@ function TodayFeature({ navigate }) {
           type="button"
           key={t.key}
           className={`tsq-tool${deskUnlocked ? "" : " is-locked"}`}
-          onClick={() => { if (deskUnlocked) { setDeskSheetOpen(false); t.run(); } }}
+          onClick={() => { if (deskUnlocked) t.run(); }}
           aria-disabled={!deskUnlocked}
           title={deskLockTitle}
         >
@@ -1069,17 +1068,6 @@ function TodayFeature({ navigate }) {
       <i style={{ width: `${progressPct}%` }} />
     </div>
   );
-  const ring = (() => {
-    const c = 2 * Math.PI * 10;
-    const p = needsUnlock ? Math.min(deskProgress, 3) / 3 : 1;
-    return (
-      <svg className="tsq-ring" viewBox="0 0 26 26" aria-hidden="true">
-        <circle cx="13" cy="13" r="10" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="4" />
-        <circle cx="13" cy="13" r="10" fill="none" stroke="#FF6B4A" strokeWidth="4" strokeLinecap="round" strokeDasharray={`${(c * p).toFixed(1)} ${c.toFixed(1)}`} />
-      </svg>
-    );
-  })();
-
   return (
     <div className="gc-dashboard tsq">
       <div className="tsq-cols">
@@ -1108,29 +1096,33 @@ function TodayFeature({ navigate }) {
         </aside>
 
         <div className="tsq-feed">
+          <div className="tsq-card tsq-strip">
+            <div className="tsq-strip-top">
+              <span className="tsq-strip-title">Teacher's Desk</span>
+              {deskMeter}
+              <span className="tsq-strip-status">{deskStatus}</span>
+            </div>
+            <div className="tsq-strip-tools">
+              {DESK_TOOLS.map((t) => (
+                <button
+                  type="button"
+                  key={t.key}
+                  className={`tsq-mini${deskUnlocked ? "" : " is-locked"}`}
+                  onClick={() => { if (deskUnlocked) t.run(); }}
+                  aria-disabled={!deskUnlocked}
+                  title={deskLockTitle}
+                >
+                  <span className="tsq-tool-icon"><img src={t.icon} alt="" /></span>
+                  <span className="tsq-mini-name">{t.shortLabel}</span>
+                  {!deskUnlocked && <span className="tsq-mini-lock"><LockIcon /></span>}
+                </button>
+              ))}
+            </div>
+          </div>
           <CommunityFeed onActivity={handleCommunityActivity} onStats={setStats} />
         </div>
       </div>
 
-      <button type="button" className="tsq-fab" onClick={() => setDeskSheetOpen(true)}>
-        {ring}
-        Teacher's Desk
-      </button>
-      {deskSheetOpen && (
-        <div className="tsq-sheet-back" onClick={() => setDeskSheetOpen(false)}>
-          <div className="tsq-sheet" role="dialog" aria-label="Teacher's Desk" onClick={(e) => e.stopPropagation()}>
-            <div className="tsq-grab" />
-            <div className="tsq-sheet-head">
-              <h3>Teacher's Desk</h3>
-              <span>{deskStatus}</span>
-            </div>
-            {deskMeter}
-            {!deskUnlocked && <p className="tsq-desk-note">Post, comment, or like 3 times in Homeroom today to unlock.</p>}
-            {deskList}
-            <button type="button" className="tsq-btn tsq-btn--soft" onClick={() => setDeskSheetOpen(false)}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -2904,19 +2896,23 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .tsq-tool-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tsq-tool-lock { margin-left: auto; color: #8B84A3; display: flex; }
 .tsq-tool-lock svg { width: 14px; height: 14px; }
-.tsq-fab, .tsq-sheet-back { display: none; }
-.tsq-ring { width: 26px; height: 26px; transform: rotate(-90deg); }
+.tsq-strip { display: none; }
+.tsq-strip { padding: 14px 16px; margin-bottom: 14px; }
+.tsq-strip-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.tsq-strip-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; color: #2B2A4A; white-space: nowrap; }
+.tsq-strip-top .tsq-meter { flex: 1; max-width: 190px; margin: 0; }
+.tsq-strip-status { margin-left: auto; font-size: 12.5px; font-weight: 700; color: #8B84A3; white-space: nowrap; }
+.tsq-strip-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.tsq-mini { position: relative; border: none; background: #F4F6FB; border-radius: 16px; padding: 10px 4px 8px; text-align: center; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 700; color: #2B2A4A; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.tsq-mini:hover { background: #E7EAF2; }
+.tsq-mini.is-locked { opacity: 0.6; cursor: default; }
+.tsq-mini .tsq-tool-icon { width: 36px; height: 36px; }
+.tsq-mini-lock { position: absolute; top: 6px; right: 6px; color: #8B84A3; display: flex; }
+.tsq-mini-lock svg { width: 12px; height: 12px; }
 @media (max-width: 1000px) {
   .tsq-cols { grid-template-columns: minmax(0, 1fr); }
   .tsq-left { display: none; }
-  .tsq-fab { display: flex; position: fixed; right: 18px; bottom: 18px; z-index: 40; border: none; background: #1B2A4A; color: #fff; border-radius: 999px; padding: 12px 18px 12px 14px; align-items: center; gap: 10px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: 0 12px 28px -10px rgba(27,42,74,0.55); }
-  .tsq-sheet-back { display: flex; position: fixed; inset: 0; z-index: 60; background: rgba(43,42,74,0.35); align-items: flex-end; }
-  .tsq-sheet { background: #fff; width: 100%; max-height: 85vh; overflow-y: auto; border-radius: 26px 26px 0 0; padding: 14px 18px 22px; }
-  .tsq-grab { width: 44px; height: 5px; border-radius: 4px; background: rgba(43,42,74,0.1); margin: 0 auto 14px; }
-  .tsq-sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-  .tsq-sheet-head h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; margin: 0; }
-  .tsq-sheet-head span { font-size: 12.5px; font-weight: 700; color: #8B84A3; }
-  .tsq-btn--soft { margin-top: 12px; }
+  .tsq-strip { display: block; }
 }
 
 /* ── Quote banner ── */
@@ -3848,11 +3844,13 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   .gc-search.is-open input { width: 150px; }
   .gc-navbar { padding: 2px 14px 4px; gap: 0; }
   .gc-sections { justify-content: flex-start; scrollbar-width: none; }
+  .gc-sections > :first-child, .gc-editions > :first-child { margin-left: auto; }
+  .gc-sections > :last-child, .gc-editions > :last-child { margin-right: auto; }
   .gc-sections::-webkit-scrollbar, .gc-editions::-webkit-scrollbar { display: none; }
   .gc-sec-tab { font-size: 11.5px; letter-spacing: 0.03em; padding: 6px 12px; flex-shrink: 0; }
   .gc-editions { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
   .gc-editions > * { flex-shrink: 0; }
-  .tsq-feed { padding-bottom: 84px; }
+  
 }
 @media (max-width: 900px) {
   .gdn-beds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
