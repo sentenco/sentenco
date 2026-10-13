@@ -63,6 +63,14 @@ function TrashIcon() {
   );
 }
 
+function BookmarkIcon({ filled }) {
+  return (
+    <svg viewBox="0 0 16 16" fill={filled ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3.5 2.5h9v11.2L8 10.6l-4.5 3.1V2.5Z" />
+    </svg>
+  );
+}
+
 function MoreIcon() {
   return (
     <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -225,7 +233,7 @@ function Avatar({ name, email, size }) {
 // Self-contained Community feed (banner, stats, composer, posts) -- shared by
 // the dedicated /library/community page and the Today page, which now
 // embeds this directly in place of the old greeting hero.
-export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats, authorId, hideComposer, typeFilter } = {}) {
+export default function CommunityFeed({ afterStats, focusPostId, onActivity, onStats, authorId, hideComposer, typeFilter, savedOnly, pinnedPostId, onPin, onSavedChange } = {}) {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL;
@@ -240,6 +248,10 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const { hidden: hiddenIds, refresh: refreshBlocked } = useBlocked();
   const [reportTarget, setReportTarget] = useState(null); // { type, id, userId, name }
   const [blockTarget, setBlockTarget] = useState(null);   // { userId, name }
+  const [savedIds, setSavedIds] = useState(null);           // Set of saved post ids; null until the saved-posts table exists
+  const [editing, setEditing] = useState(null);             // { id, text }
+  const [editError, setEditError] = useState("");
+  const [savingEdit, setSavingEdit] = useState(false);
   const [followingIds, setFollowingIds] = useState(null); // null until the follow tables exist
 
   const [authMode, setAuthMode] = useState(null);
@@ -386,8 +398,16 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   async function loadPosts() {
     setLoadingPosts(true);
     const baseCols = "id, author_id, author_email, author_name, content, post_type, prompt_date, company_id, author_years_teaching, author_is_mentor, image_url, file_url, file_name, created_at";
+    // Saved list: only the posts I saved, from any teacher.
+    let savedList = null;
+    if (savedOnly) {
+      const { data: sv, error: svError } = await supabase.from("saved_posts").select("post_id").eq("user_id", user.id);
+      savedList = svError ? [] : (sv || []).map((r) => r.post_id);
+      if (!savedList.length) { setPosts([]); setLoadingPosts(false); return []; }
+    }
     const runQuery = (cols) => {
       let q = supabase.from("community_posts").select(cols).order("created_at", { ascending: false });
+      if (savedList) return q.in("id", savedList);
       if (authorId) {
         // A teacher's profile page: all of their posts the viewer can see (universal, plus the viewer's own company feed).
         q = q.eq("author_id", authorId);
@@ -396,13 +416,61 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
       q = scope === "company" && profile?.company_id ? q.eq("company_id", profile.company_id) : q.is("company_id", null);
       return q;
     };
-    // lesson_slug exists once the custom-lesson sharing SQL has been run; fall back without it until then.
-    let { data, error } = await runQuery(`${baseCols}, lesson_slug`);
+    // lesson_slug and edited_at exist once their SQL has been run; fall back step by step until then.
+    let { data, error } = await runQuery(`${baseCols}, lesson_slug, edited_at`);
+    if (error) ({ data, error } = await runQuery(`${baseCols}, lesson_slug`));
     if (error) ({ data, error } = await runQuery(baseCols));
     const rows = error ? [] : data || [];
     setPosts(rows);
     setLoadingPosts(false);
     return rows;
+  }
+
+  // Saved posts (bookmarks), private to me.
+  useEffect(() => {
+    if (!user) { setSavedIds(null); return undefined; }
+    let off = false;
+    supabase.from("saved_posts").select("post_id").eq("user_id", user.id).then(({ data, error }) => {
+      if (off) return;
+      setSavedIds(error ? null : new Set((data || []).map((r) => r.post_id)));
+    });
+    return () => { off = true; };
+  }, [user?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function toggleSave(postId) {
+    if (!user || !savedIds) return;
+    const wasSaved = savedIds.has(postId);
+    setSavedIds((prev) => { const next = new Set(prev); if (wasSaved) next.delete(postId); else next.add(postId); return next; });
+    const { error: saveError } = wasSaved
+      ? await supabase.from("saved_posts").delete().eq("user_id", user.id).eq("post_id", postId)
+      : await supabase.from("saved_posts").insert({ user_id: user.id, post_id: postId });
+    if (saveError) {
+      setSavedIds((prev) => { const next = new Set(prev); if (wasSaved) next.add(postId); else next.delete(postId); return next; });
+      return;
+    }
+    onSavedChange?.(wasSaved ? -1 : 1);
+    if (savedOnly && wasSaved) setPosts((prev) => prev.filter((p) => p.id !== postId));
+  }
+
+  // Edit my own post (text only).
+  async function saveEdit() {
+    if (!editing || savingEdit) return;
+    const text = editing.text.trim();
+    if (!text) { setEditError("A post can't be empty."); return; }
+    if (text.length > 2000) { setEditError("That's over 2000 characters."); return; }
+    setSavingEdit(true);
+    setEditError("");
+    const when = new Date().toISOString();
+    let { error: upError } = await supabase.from("community_posts").update({ content: text, edited_at: when }).eq("id", editing.id);
+    let editedAt = when;
+    if (upError) {
+      ({ error: upError } = await supabase.from("community_posts").update({ content: text }).eq("id", editing.id));
+      editedAt = null;
+    }
+    setSavingEdit(false);
+    if (upError) { setEditError("That did not save. Please try again."); return; }
+    setPosts((prev) => prev.map((p) => (p.id === editing.id ? { ...p, content: text, edited_at: editedAt || p.edited_at } : p)));
+    setEditing(null);
   }
 
   async function loadCommentCounts() {
@@ -443,7 +511,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
     if (!user) return;
     loadPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, scope, profile, authorId]);
+  }, [user, scope, profile, authorId, savedOnly]);
 
   useEffect(() => {
     if (!focusPostId || !posts.some((p) => p.id === focusPostId)) return;
@@ -632,7 +700,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
   const typedPosts = !typeFilter || typeFilter === "all"
     ? posts
     : posts.filter((p) => (typeFilter === "lesson" ? !!p.lesson_slug : p.post_type === typeFilter));
-  const shownPosts = hiddenIds.length ? typedPosts.filter((p) => !hiddenIds.includes(p.author_id)) : typedPosts;
+  const unhiddenPosts = hiddenIds.length ? typedPosts.filter((p) => !hiddenIds.includes(p.author_id)) : typedPosts;
+  // On a profile, the pinned post goes first.
+  const shownPosts = authorId && pinnedPostId && unhiddenPosts.some((p) => p.id === pinnedPostId)
+    ? [unhiddenPosts.find((p) => p.id === pinnedPostId), ...unhiddenPosts.filter((p) => p.id !== pinnedPostId)]
+    : unhiddenPosts;
 
   return (
     <div className="cmf-shell">
@@ -788,7 +860,7 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
           <p className="cm-empty">Loading…</p>
         ) : shownPosts.length === 0 ? (
           <p className="cm-empty">
-            {authorId ? "No posts yet." : <>No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!</>}
+            {savedOnly ? "Nothing saved yet. Tap the bookmark on a post to keep it here." : authorId ? "No posts yet." : <>No posts yet{profile?.company_id ? ` in ${scope === "company" ? (profile.companies?.name || "your company") : "Universal"}` : ""}. Be the first to share something!</>}
           </p>
         ) : (
           shownPosts.map((p) => {
@@ -797,7 +869,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
             const isMine = !!user && p.author_id === user.id;
             const postName = displayName(nameFor(p.author_id, p.author_name), p.author_email);
             const postItems = !user ? [] : isMine
-              ? [{ label: "Delete post", danger: true, onClick: () => setDeleteTarget({ type: "post", id: p.id }) }]
+              ? [
+                  { label: "Edit post", onClick: () => { setEditError(""); setEditing({ id: p.id, text: p.content }); } },
+                  ...(onPin ? [{ label: pinnedPostId === p.id ? "Unpin from profile" : "Pin to profile", onClick: () => onPin(pinnedPostId === p.id ? null : p.id) }] : []),
+                  { label: "Delete post", danger: true, onClick: () => setDeleteTarget({ type: "post", id: p.id }) },
+                ]
               : p.author_id ? [
                   { label: "Message", onClick: () => navigate(`/library/messages?to=${p.author_id}`) },
                   { label: "Report", onClick: () => setReportTarget({ type: "post", id: p.id, userId: p.author_id, name: postName }) },
@@ -827,6 +903,8 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                     {!authorId && followingIds && p.author_id !== user?.id && followingIds.includes(p.author_id) && <span className="cm-following-tag">Following</span>}
                     <span className="cm-post-dot">·</span>
                     <span className="cm-post-time">{timeAgo(p.created_at)}</span>
+                    {p.edited_at && <span className="cm-edited" title="This post was edited">edited</span>}
+                    {authorId && pinnedPostId === p.id && <span className="cm-pinned-tag">Pinned</span>}
                     {type && (
                       <span className={`cm-post-tag cm-post-tag--${type.key}`}>
                         <type.Icon />
@@ -836,7 +914,27 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                   </div>
                   <MoreMenu items={postItems} label="More options for this post" />
                 </div>
-                <p className="cm-post-text">{p.content}</p>
+                {editing && editing.id === p.id ? (
+                  <div className="cm-edit">
+                    <textarea
+                      className="cm-edit-input"
+                      value={editing.text}
+                      maxLength={2000}
+                      rows={4}
+                      autoFocus
+                      aria-label="Edit your post"
+                      onChange={(e) => setEditing({ id: p.id, text: e.target.value })}
+                      onKeyDown={(e) => { if (e.key === "Escape") setEditing(null); }}
+                    />
+                    {editError && <p className="cm-upload-error" role="alert">{editError}</p>}
+                    <div className="cm-edit-actions">
+                      <button type="button" className="cm-edit-cancel" onClick={() => setEditing(null)}>Cancel</button>
+                      <button type="button" className="cm-btn" disabled={savingEdit || !editing.text.trim()} onClick={saveEdit}>{savingEdit ? "Saving…" : "Save"}</button>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="cm-post-text">{p.content}</p>
+                )}
                 {p.image_url && (
                   <a href={p.image_url} target="_blank" rel="noreferrer" className="cm-post-image-link">
                     <img src={p.image_url} alt="" className="cm-post-image" />
@@ -866,6 +964,11 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                     <CommentIcon />
                     {commentCount > 0 && <span>{commentCount}</span>}
                   </button>
+                  {user && savedIds && (
+                    <button type="button" className={`cm-action-btn cm-action-btn--save${savedIds.has(p.id) ? " is-saved" : ""}`} aria-pressed={savedIds.has(p.id)} aria-label={savedIds.has(p.id) ? "Remove from saved" : "Save post"} title={savedIds.has(p.id) ? "Remove from saved" : "Save post"} onClick={() => toggleSave(p.id)}>
+                      <BookmarkIcon filled={savedIds.has(p.id)} />
+                    </button>
+                  )}
                 </div>
 
                 {isOpen && (
@@ -1266,4 +1369,15 @@ const CSS = `
 .cm-more-menu button:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
 .cm-more .cm-icon-btn svg { width: 16px; height: 16px; }
 .cm-more .cm-icon-btn--xs svg { width: 14px; height: 14px; }
+.cm-action-btn--save { margin-left: auto; }
+.cm-action-btn--save.is-saved { color: #1B2A4A; }
+.cm-action-btn--save.is-saved:hover { background: #E9ECF3; color: #1B2A4A; }
+.cm-edited { font-size: 12px; font-weight: 600; color: #8B84A3; font-style: italic; }
+.cm-pinned-tag { font-size: 11px; font-weight: 700; color: #7A5C0C; background: #FFF4D6; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.cm-edit { margin: 10px 0; }
+.cm-edit-input { width: 100%; resize: vertical; border: 1.5px solid rgba(43,42,74,0.14); border-radius: 18px; padding: 12px 14px; font-family: 'Quicksand', sans-serif; font-size: 14.5px; font-weight: 600; line-height: 1.55; color: #2B2A4A; outline: none; background: #fff; }
+.cm-edit-input:focus { border-color: #FF6B4A; }
+.cm-edit-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.cm-edit-cancel { border: none; background: #F1F3F8; color: #2B2A4A; border-radius: 999px; padding: 9px 18px; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; }
+.cm-edit-cancel:hover { background: #E7EAF2; }
 `;

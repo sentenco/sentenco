@@ -70,3 +70,11 @@ export async function getPendingRequesterIds(me) {
   if (error) return null;
   return (data || []).map((r) => r.requester_id);
 }
+
+// Teachers you may know: [{ id, display_name, avatar_url, years_teaching, teaches_ages, shared_ages, shared_expertise, mutual_count, same_school, follows_me }].
+// Empty until sql/add_suggestions_pins_saves_edit_delete.sql has been run.
+export async function getSuggestions(limit = 8) {
+  const { data, error } = await supabase.rpc("suggested_teachers", { p_limit: limit });
+  if (error || !Array.isArray(data)) return [];
+  return data;
+}

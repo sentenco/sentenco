@@ -9,6 +9,7 @@ import { ageYearsLine } from "./profileFields.js";
 import { blockUser, unblockUser, useBlocked } from "./safetyApi.js";
 import ReportDialog from "./ReportDialog.jsx";
 import ConfirmDialog from "./ConfirmDialog.jsx";
+import DeleteAccountDialog from "./DeleteAccountDialog.jsx";
 import { getNetworkState, getNetworkCounts, followUser, unfollowUser, requestConnection, removeConnection, respondConnection } from "./networkApi.js";
 
 function initialsOf(name) {
@@ -40,6 +41,7 @@ function HlIcon({ name }) {
     tip: <><path d="M9 18h6" /><path d="M10 22h4" /><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z" /></>,
     question: <><circle cx="12" cy="12" r="10" /><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></>,
     resource: <><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" /><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" /></>,
+    saved: <path d="M6 3h12v18l-6-4.2L6 21V3Z" />,
     lesson: <><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></>,
   };
   return (
@@ -49,6 +51,7 @@ function HlIcon({ name }) {
   );
 }
 
+const SAVED_HIGHLIGHT = { key: "saved", label: "Saved" };
 const HIGHLIGHTS = [
   { key: "all", label: "All" },
   { key: "tip", label: "Tips" },
@@ -96,7 +99,7 @@ function PenIcon() {
 export default function TeacherProfile() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -107,6 +110,10 @@ export default function TeacherProfile() {
   const [netCounts, setNetCounts] = useState(null); // { followers, following, connections }
   const [netBusy, setNetBusy] = useState(false);
   const { hidden: hiddenIds, mine: myBlocks, refresh: refreshBlocked } = useBlocked();
+  const [savedCount, setSavedCount] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
   const [moreOpen, setMoreOpen] = useState(false);
   const [reportTarget, setReportTarget] = useState(null);
   const [confirmBlock, setConfirmBlock] = useState(false);
@@ -134,7 +141,8 @@ export default function TeacherProfile() {
     (async () => {
       const base = "id, display_name, avatar_url, country, years_teaching, is_mentor, mentor_specialty, mentor_format, mentor_price_type, mentor_price_amount, mentor_bio";
       // cover_url / age / teaches_ages / expertise exist once their SQL has been run; fall back step by step until then.
-      let { data, error } = await supabase.from("profiles").select(`${base}, cover_url, age, teaches_ages, expertise, companies(name)`).eq("id", id).maybeSingle();
+      let { data, error } = await supabase.from("profiles").select(`${base}, cover_url, age, teaches_ages, expertise, pinned_post_id, companies(name)`).eq("id", id).maybeSingle();
+      if (error) ({ data, error } = await supabase.from("profiles").select(`${base}, cover_url, age, teaches_ages, expertise, companies(name)`).eq("id", id).maybeSingle());
       if (error) ({ data, error } = await supabase.from("profiles").select(`${base}, cover_url`).eq("id", id).maybeSingle());
       if (error) ({ data } = await supabase.from("profiles").select(base).eq("id", id).maybeSingle());
       if (!data) setNotFound(true);
@@ -149,6 +157,15 @@ export default function TeacherProfile() {
     setNetCounts(counts);
     setNet(state);
   }
+
+  useEffect(() => {
+    if (!user || user.id !== id) { setSavedCount(null); return undefined; }
+    let off = false;
+    supabase.from("saved_posts").select("post_id", { count: "exact", head: true }).eq("user_id", id).then(({ count, error }) => {
+      if (!off) setSavedCount(error ? null : count || 0);
+    });
+    return () => { off = true; };
+  }, [id, user?.id, filter]);
 
   useEffect(() => {
     setNet(null);
@@ -171,6 +188,39 @@ export default function TeacherProfile() {
   const onDisconnect = () => {
     if (window.confirm(`Remove ${shown.name} from your connections?`)) netAct(() => removeConnection(id));
   };
+  // Pin one of my posts to the top of my profile (or unpin with null).
+  async function pinPost(postId) {
+    const { error } = await supabase.from("profiles").update({ pinned_post_id: postId }).eq("id", user.id);
+    if (error) {
+      setNotice({ kind: "error", text: "Pinning needs a database update first (sql/add_suggestions_pins_saves_edit_delete.sql)." });
+      return;
+    }
+    setProfile((p) => ({ ...p, pinned_post_id: postId }));
+    setNotice({ kind: "ok", text: postId ? "Pinned to your profile" : "Unpinned" });
+    setTimeout(() => setNotice((n) => (n?.kind === "ok" ? null : n)), 2200);
+  }
+
+  async function deleteAccount() {
+    if (!user || deleting) return;
+    setDeleting(true);
+    setDeleteError("");
+    try {
+      const { data: files } = await supabase.storage.from("community-uploads").list(user.id, { limit: 1000 });
+      if (files && files.length) await supabase.storage.from("community-uploads").remove(files.map((f) => `${user.id}/${f.name}`));
+    } catch { /* files are removed on a best-effort basis */ }
+    const { error } = await supabase.rpc("delete_my_account");
+    if (error) {
+      setDeleting(false);
+      setDeleteError(/does not exist|schema cache|Could not find/i.test(error.message || "")
+        ? "Deleting needs a quick database update first (sql/add_suggestions_pins_saves_edit_delete.sql)."
+        : "We could not delete your account. Please email us and we will do it for you.");
+      return;
+    }
+    try { localStorage.removeItem("sentenco_teacher_name"); } catch { /* ignore */ }
+    try { await signOut(); } catch { /* the account is already gone */ }
+    window.location.assign("/");
+  }
+
   async function doBlock() {
     setConfirmBlock(false);
     setMoreOpen(false);
@@ -477,6 +527,11 @@ export default function TeacherProfile() {
                       ))}
                     </div>
                   </div>
+                  {user?.email?.toLowerCase() !== "caldrin1999@gmail.com" && (
+                    <div className="tp-danger-zone">
+                      <button type="button" className="tp-danger-btn" onClick={() => { setDeleteError(""); setConfirmDelete(true); }}>Delete my account</button>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -503,7 +558,7 @@ export default function TeacherProfile() {
 
             {user && (
               <div className="tp-hl" role="tablist" aria-label="Filter posts">
-                {HIGHLIGHTS.map((h) => (
+                {(isSelf && savedCount !== null ? [...HIGHLIGHTS, SAVED_HIGHLIGHT] : HIGHLIGHTS).map((h) => (
                   <button
                     type="button"
                     role="tab"
@@ -514,7 +569,7 @@ export default function TeacherProfile() {
                   >
                     <span className="tp-hl-circle">
                       <HlIcon name={h.key} />
-                      <em>{counts ? counts[h.key] : "–"}</em>
+                      <em>{h.key === "saved" ? savedCount : counts ? counts[h.key] : "–"}</em>
                     </span>
                     <span className="tp-hl-label">{h.label}</span>
                   </button>
@@ -523,19 +578,20 @@ export default function TeacherProfile() {
             )}
 
             <div className="tp-bar">
-              <h3 className="tp-h3">{HIGHLIGHTS.find((h) => h.key === filter)?.label === "All" ? "Posts" : HIGHLIGHTS.find((h) => h.key === filter)?.label}</h3>
-              {counts && <span className="tp-bar-count">{counts[filter]} shown</span>}
+              <h3 className="tp-h3">{filter === "saved" ? "Saved" : HIGHLIGHTS.find((h) => h.key === filter)?.label === "All" ? "Posts" : HIGHLIGHTS.find((h) => h.key === filter)?.label}</h3>
+              {filter === "saved" ? (savedCount !== null && <span className="tp-bar-count">{savedCount} saved</span>) : counts && <span className="tp-bar-count">{counts[filter]} shown</span>}
             </div>
             {!user ? (
               <p className="tp-status">Sign in to see posts.</p>
             ) : (
-              <CommunityFeed authorId={id} hideComposer typeFilter={filter} onStats={(st) => { setPostCount(st.postCount); setCounts(st.counts); }} />
+              <CommunityFeed authorId={id} hideComposer savedOnly={filter === "saved"} typeFilter={filter === "saved" ? "all" : filter} pinnedPostId={profile?.pinned_post_id || null} onPin={isSelf ? pinPost : undefined} onSavedChange={isSelf ? (d) => setSavedCount((c) => (c === null ? c : Math.max(0, c + d))) : undefined} onStats={(st) => { if (filter === "saved") return; setPostCount(st.postCount); setCounts(st.counts); }} />
             )}
           </>
         )}
       </div>
 
       <ReportDialog target={reportTarget} onClose={() => setReportTarget(null)} onBlocked={() => { refreshBlocked(); refreshNetwork(); }} />
+      <DeleteAccountDialog open={confirmDelete} busy={deleting} error={deleteError} onConfirm={deleteAccount} onCancel={() => setConfirmDelete(false)} />
       <ConfirmDialog
         open={confirmBlock}
         title={`Block ${shown.name}?`}
@@ -664,6 +720,10 @@ const CSS = `
 .tp-msg-btn { width: 42px; height: 42px; border-radius: 50%; border: none; background: #F1F3F8; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .tp-msg-btn:hover { background: var(--soft); }
 .tp-msg-btn svg { width: 18px; height: 18px; }
+.tp-danger-zone { border-top: 1px solid var(--hair); padding-top: 14px; margin-top: 4px; }
+.tp-danger-btn { border: none; background: none; color: #B3261E; font-family: 'Quicksand', sans-serif; font-size: 13.5px; font-weight: 700; cursor: pointer; padding: 6px 4px; border-radius: 8px; }
+.tp-danger-btn:hover { background: #FBE3E0; }
+.tp-danger-btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 .tp-more-wrap { position: relative; }
 .tp-more-menu { position: absolute; top: calc(100% + 6px); right: 0; z-index: 30; min-width: 150px; background: #fff; border-radius: 16px; padding: 6px; box-shadow: 0 12px 34px rgba(43,42,74,0.2), 0 0 0 1px var(--hair); }
 .tp-more-menu button { display: block; width: 100%; text-align: left; border: none; background: none; border-radius: 10px; padding: 10px 12px; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); cursor: pointer; }
@@ -762,6 +822,7 @@ const CSS = `
 .tp-hl-btn--question { --m: #E3F0FB; --k: #1B4F7A; }
 .tp-hl-btn--resource { --m: #FDECE5; --k: #C2411F; }
 .tp-hl-btn--lesson { --m: #E4F3EA; --k: #1F6B45; }
+.tp-hl-btn--saved { --m: #EDE6F7; --k: #5B3F82; }
 .tp-bar { display: flex; align-items: center; justify-content: space-between; margin: 0 6px 8px; }
 .tp-h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; color: var(--ink); margin: 0; }
 .tp-bar-count { font-size: 13px; font-weight: 700; color: var(--muted); }

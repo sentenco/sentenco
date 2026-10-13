@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { unblockUser, useBlocked } from "./safetyApi.js";
+import SuggestedTeachers from "./SuggestedTeachers.jsx";
 import { getNetworkLists, getPeople, followUser, unfollowUser, respondConnection, removeConnection } from "./networkApi.js";
 
 // "Your network": requests waiting for you, your connections, your followers and the teachers you follow.
@@ -121,6 +122,7 @@ export default function TeacherNetwork() {
       <style>{CSS}</style>
       <div className="tn-page">
         <h1 className="tn-title">Your network</h1>
+        {user && <SuggestedTeachers limit={5} />}
         {user ? (
           <>
             <div className="tn-tabs" role="tablist">

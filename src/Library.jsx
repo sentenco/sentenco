@@ -9,6 +9,7 @@ import ProfileSettings, { teachingBadge } from "./ProfileSettings.jsx";
 import { supabase } from "./supabaseClient";
 import NotificationPanel from "./NotificationPanel.jsx";
 import { DOCK_CSS } from "./HeaderDock.jsx";
+import SuggestedTeachers from "./SuggestedTeachers.jsx";
 import CurriculumRouter from "./CurriculumRouter";
 import TrackLevelPage from "./TrackLevelPage";
 import SparkHub from "./SparkHub";
@@ -1093,6 +1094,7 @@ function TodayFeature({ navigate }) {
             {!deskUnlocked && <p className="tsq-desk-note">Post, comment, or like 3 times in Homeroom today to unlock.</p>}
             {deskList}
           </div>
+          {user && <SuggestedTeachers compact limit={3} onSeeMore={() => navigate("/library/network")} />}
         </aside>
 
         <div className="tsq-feed">

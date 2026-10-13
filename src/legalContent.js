@@ -126,6 +126,8 @@ export const PRIVACY_CONTENT = {
         "Follows and connections: the teachers you follow, the teachers who follow you, and your connection requests and connections. We use them to show your counts, the \"Following\" label on posts, and your Your network page. When you follow a teacher or send a connection request, that teacher gets a notification with your name.",
         "Blocks: the teachers you block. A teacher you block isn't told. They simply stop seeing your posts and profile and can't message, follow, or connect with you.",
         "Reports: when you report a post, comment, or profile, we store who made the report, what was reported, the reason you chose, any note you wrote, and a copy of the reported text as it was at the time, so we can review it even if it is later deleted. We don't tell the reported teacher who reported them.",
+        "Saved posts: the posts you save are listed in your account. They are private to you, and nobody else can see what you saved.",
+        "Pinned post and edits: if you pin one of your posts, it shows first on your profile. If you edit a post, we show it as edited.",
         "Message requests: if you message a teacher you aren't connected with and don't follow each other, your first message is held as a request that they can accept or decline. They can read that first message before they decide.",
         "Login records: a random code for the device you last logged in on, and the time it was last active, so we can keep to one active login per account.",
         "Trial and promo code records: when you start a free trial, when it ends, any promo code you redeem and when, and a daily count of how many times you use the AI tools while on a trial, so we can apply the trial limit.",
@@ -144,6 +146,7 @@ export const PRIVACY_CONTENT = {
         "To keep Custom Lessons private to the teacher they belong to, and to open a lesson for other teachers only when its owner chooses to share it.",
         "To process payments once billing is live, through our payment processor.",
         "To keep Sentenco safe: to review reports, remove content, and suspend accounts that break our rules, and to apply blocks and message requests.",
+        "To suggest teachers you may know: we compare age groups, areas of expertise, school, and connections in common, and show you a few teachers you could follow or connect with. You can hide any suggestion.",
         "To show your network: your follower, following, and connection counts, and the \"Following\" label on posts from teachers you follow.",
         "To improve Sentenco, for example caching common dictionary lookups so they're faster and cheaper for everyone.",
       ],
@@ -178,7 +181,8 @@ export const PRIVACY_CONTENT = {
       heading: "6. Your rights",
       body: [
         "Under the Philippine Data Privacy Act of 2012, you have the right to access, correct, and request deletion of your personal information, to object to certain processing, and to file a complaint with the National Privacy Commission.",
-        "You can update most of your information yourself from Profile settings, or email us to make a request.",
+        "You can update most of your information yourself from your profile, or email us to make a request.",
+        "You can delete your account yourself: open your profile, tap the pencil, and choose Delete my account. We then remove your account, profile, posts, comments, messages, follows, connections, blocks, and saved posts right away. Reports are kept, without your name attached.",
       ],
     },
     {
