@@ -5,7 +5,7 @@ import { SUPPORT_EMAIL } from "./siteConfig.js";
 // not a substitute for review by a Philippine lawyer before Sentenco accepts
 // real payments.
 
-export const LEGAL_UPDATED = "October 13, 2026";
+export const LEGAL_UPDATED = "October 14, 2026";
 
 export const LEGAL_DOCS = [
   { key: "terms", label: "Terms of Service" },
@@ -58,6 +58,11 @@ export const TERMS_CONTENT = {
         "Homeroom and the Community feed let you post, comment, and interact with other teachers. You keep ownership of what you post, but you give Sentenco permission to store, display, and distribute it within the app so the community feature works.",
         "Don't post anything illegal, harassing, hateful, sexually explicit, or that infringes someone else's rights. Don't spam, impersonate others, or share a student's personal information.",
         "We can remove content or suspend accounts that break these rules, at our discretion, with or without notice depending on severity.",
+        "Following and connecting. You can follow a teacher to see their posts in your Homeroom, and send a connection request. A connection needs the other teacher to accept. Don't send repeated or unwanted requests or messages.",
+        "Message requests. A message to a teacher you aren't connected with, and don't follow each other, arrives as a request until they accept or decline. Until they accept, you can send only one message. If a teacher declines, don't try to contact them again by other means in Sentenco.",
+        "Blocking. You can block any teacher. Blocking hides each of you from the other and stops messages, follows, and connection requests between you. Don't try to get around a block, for example by making another account to contact someone who blocked you.",
+        "Reporting. You can report a post, comment, or profile if it breaks these rules. Reports are private. We review them and may remove content, warn, or suspend or end accounts. Only authors can delete their own posts and comments. We remove other people's content only after a report. Reports made in bad faith, such as to harass someone, can lead to action against the reporter.",
+        "Group chats. People in a group chat can see everything shared in it. Be respectful, and don't add people who don't want to be there.",
       ],
     },
     {
@@ -112,12 +117,16 @@ export const PRIVACY_CONTENT = {
     {
       heading: "1. Information we collect",
       body: [
-        "Account information: your email address, and any name, country, years-teaching, and profile photo you choose to add. If you sign up through a company or school group, we also record which group you belong to.",
+        "Account information: your email address, and any name, age, years of teaching, profile photo, cover photo, age groups you teach, areas of expertise, and country you choose to add. If you sign up through a company or school group, we also record which group you belong to.",
         "Content you create: community posts, comments, likes, and any images or files you upload to the Community feed.",
-        "Private messages: the content of any 1:1 messages you send through Convo. These aren't end-to-end encrypted — the other participant can read them, and so can Sentenco, for support, moderation, or legal purposes.",
+        "Private messages: the content of messages you send through Convo, in one-to-one chats and group chats, including any custom lesson you share in a chat. These aren't end-to-end encrypted. The other people in the chat can read them, and so can Sentenco, for support, moderation, or legal purposes.",
         "File Cabinet uploads: lesson materials and credentials you choose to store, including anything you mark private.",
         "Mentor program information: if you apply to become a mentor, the details in your application, like your experience, specialty, and any documents you attach.",
-        "Usage information: your plan, and activity we use to unlock features, like your post/comment/like counts for the day. We also keep notifications shown to you in the app, such as replies and likes.",
+        "Usage information: your plan, and activity we use to unlock features, like your post/comment/like counts for the day. We also keep the notifications shown to you in the app, such as replies, new followers, and connection requests.",
+        "Follows and connections: the teachers you follow, the teachers who follow you, and your connection requests and connections. We use them to show your counts, the \"Following\" label on posts, and your Your network page. When you follow a teacher or send a connection request, that teacher gets a notification with your name.",
+        "Blocks: the teachers you block. A teacher you block isn't told. They simply stop seeing your posts and profile and can't message, follow, or connect with you.",
+        "Reports: when you report a post, comment, or profile, we store who made the report, what was reported, the reason you chose, any note you wrote, and a copy of the reported text as it was at the time, so we can review it even if it is later deleted. We don't tell the reported teacher who reported them.",
+        "Message requests: if you message a teacher you aren't connected with and don't follow each other, your first message is held as a request that they can accept or decline. They can read that first message before they decide.",
         "Login records: a random code for the device you last logged in on, and the time it was last active, so we can keep to one active login per account.",
         "Trial and promo code records: when you start a free trial, when it ends, any promo code you redeem and when, and a daily count of how many times you use the AI tools while on a trial, so we can apply the trial limit.",
         "Teaching tools you save: items you choose to save in the Syllabus maker, Slides, the Spin the Wheel lists, and Letter Board, which are stored in your account so you can open them again.",
@@ -134,6 +143,8 @@ export const PRIVACY_CONTENT = {
         "To run free trials and promo codes: to start and end your access on the right dates, to stop a trial or code being used more than allowed, and to limit AI-tool use during a trial.",
         "To keep Custom Lessons private to the teacher they belong to, and to open a lesson for other teachers only when its owner chooses to share it.",
         "To process payments once billing is live, through our payment processor.",
+        "To keep Sentenco safe: to review reports, remove content, and suspend accounts that break our rules, and to apply blocks and message requests.",
+        "To show your network: your follower, following, and connection counts, and the \"Following\" label on posts from teachers you follow.",
         "To improve Sentenco, for example caching common dictionary lookups so they're faster and cheaper for everyone.",
       ],
     },
@@ -146,7 +157,7 @@ export const PRIVACY_CONTENT = {
         "Cloudflare, which manages our domain and forwards emails sent to our support address, and Google, whose Gmail receives that support mail. Anything you email to us is handled by these providers.",
         "Anthropic, whose Claude models power the Dictionary, Grammar Checker, and Translator, meaning the text you submit to those tools is sent to Anthropic for processing.",
         "PayMongo, our planned payment processor, for billing once paid plans open. PayMongo will handle your payment details directly, and Sentenco will not store your card or e-wallet information. No payments are taken during the free trial.",
-        "Other teachers can see what you choose to make visible in the Community, such as your name, photo, badge, country, and posts. A Custom Lesson you share in a Homeroom post can be opened by teachers who can see that post.",
+        "Other teachers can see what you choose to make visible in the Community, such as your name, photo, cover photo, badge, age, years of teaching, age groups, areas of expertise, school or company name, and posts. Other teachers can see how many followers, accounts followed, and connections you have, but not who they are. Only you can see your own lists. A Custom Lesson you share in a Homeroom post can be opened by teachers who can see that post, and a Custom Lesson you share in a chat can be opened by the people in that chat.",
         "We may also disclose information if required by law.",
       ],
     },
@@ -160,6 +171,7 @@ export const PRIVACY_CONTENT = {
       heading: "5. Data retention",
       body: [
         "We keep your account information, messages, File Cabinet uploads, saved teaching tools, Custom Lesson requests, and trial and promo code records for as long as your account is active. If you delete your account, we'll delete or anonymize your personal information within a reasonable period, except where we need to keep it for legal or legitimate business reasons, like unresolved billing.",
+        "Reports, and the copy of the reported text, are kept for as long as we need them to handle safety issues, even if the post is deleted or the account is closed. Your follows, connections, and blocks are deleted with your account.",
       ],
     },
     {
