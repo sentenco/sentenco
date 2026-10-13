@@ -127,6 +127,7 @@ export default function LibraryHeader() {
   const searchWrapRef = useRef(null);
 
   const activeCategory = activeCategoryFor(location.pathname);
+  const onConvo = location.pathname.startsWith("/library/messages");
 
   useEffect(() => {
     function handleOutsideClick(e) {
@@ -328,7 +329,7 @@ export default function LibraryHeader() {
               <>
                 <button
                   type="button"
-                  className={`notif-btn${unreadMessageCount > 0 ? " has-unread" : ""}`}
+                  className={`notif-btn${unreadMessageCount > 0 ? " has-unread" : ""}${onConvo ? " is-current" : ""}`}
                   onClick={() => navigate("/library/messages")}
                   aria-label="Convo"
                   title="Convo"
@@ -414,7 +415,7 @@ export default function LibraryHeader() {
         <div className="gc-navbar">
           <div className="gc-sections">
             <button
-              className={`gc-sec-tab ${activeCategory === null ? "is-active" : ""}`}
+              className={`gc-sec-tab ${activeCategory === null && !onConvo ? "is-active" : ""}`}
               onClick={() => navigate("/library")}
             >
               Homeroom

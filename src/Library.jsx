@@ -2890,6 +2890,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .notif-btn svg { width: 19px; height: 19px; }
 .notif-btn:hover { color: var(--coral); border-color: var(--coral); background: rgba(255,107,74,0.08); }
 .notif-btn.has-unread { color: #1B2A4A; border-color: #1B2A4A; }
+.notif-btn.is-current { color: #E0502F; border-color: var(--coral); background: rgba(255,107,74,0.12); }
 .notif-dot {
   position: absolute; top: 6px; right: 6px; width: 9px; height: 9px; border-radius: 50%;
   background: var(--coral); border: 1.5px solid var(--card);

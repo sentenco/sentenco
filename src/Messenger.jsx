@@ -9,7 +9,6 @@ import useCustomLessonAccess from "./useCustomLessonAccess";
 
 const POLL_MS = 30000; // fallback safety net; realtime handles the instant path
 const QUICK_EMOJI = ["👍", "❤️", "😂", "😮", "😢", "🙏"];
-const QUICK_REPLIES = ["Thank you!", "Can you share that with me?", "Great idea, I will try it."];
 
 function displayName(profile, fallbackEmail) {
   if (profile?.display_name?.trim()) return profile.display_name.trim();
@@ -781,13 +780,6 @@ export default function Messenger() {
   return (
     <div className="mg-shell">
       <style>{CSS}</style>
-      <div className="mg-topbar">
-        <button type="button" className="mg-brand" onClick={() => navigate("/library")} title="Back to Homeroom">
-          <img src="/logo-sentenco.png" alt="" className="mg-brand-logo" />entenco
-        </button>
-        <h1 className="mg-topbar-title">Convo</h1>
-      </div>
-
       {!user ? (
         <p className="mg-signin">Sign in to use Convo.</p>
       ) : (
@@ -1063,14 +1055,6 @@ export default function Messenger() {
                     </div>
                   )}
 
-                  {!draft.trim() && !replyTarget && messages.length > 0 && (
-                    <div className="mg-quick">
-                      {QUICK_REPLIES.map((q) => (
-                        <button type="button" key={q} onClick={() => sendMessage(q)} disabled={sending}>{q}</button>
-                      ))}
-                    </div>
-                  )}
-
                   <div className="mg-composer">
                     {canShareLesson && (
                       <div className="mg-share-wrap">
@@ -1339,9 +1323,10 @@ const CSS = `
   --navy: #1B2A4A;
   --navy-pale: #E9ECF3;
   --hair: rgba(43,42,74,0.09);
-  height: 100vh;
+  height: 100%;
+  min-height: 0;
   display: flex; flex-direction: column;
-  background: #FBFAF7;
+  background: #F6EFE6;
   color: var(--ink);
   font-family: 'Quicksand', sans-serif;
 }
@@ -1575,13 +1560,6 @@ const CSS = `
 .mg-reply-preview-text strong { font-family: 'Fredoka', sans-serif; font-size: 11.5px; font-weight: 600; color: var(--ink); }
 .mg-reply-preview-text span { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mg-reply-preview button { flex-shrink: 0; background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; line-height: 1; }
-
-.mg-quick { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 18px 0; flex-shrink: 0; }
-.mg-quick button {
-  border: none; background: #F6EFE6; border-radius: 999px; padding: 6px 13px; font: inherit; font-size: 12.5px; font-weight: 700;
-  color: var(--ink); cursor: pointer; transition: background 0.12s ease, color 0.12s ease;
-}
-.mg-quick button:hover:not(:disabled) { background: var(--coral-pale); color: #E0502F; }
 
 .mg-composer { display: flex; align-items: flex-end; gap: 8px; padding: 12px 16px 14px; flex-shrink: 0; }
 .mg-composer-input {

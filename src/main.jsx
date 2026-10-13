@@ -533,7 +533,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/subscription" element={<Subscription />} />
             <Route path="/library/legal/:doc" element={<LegalPage />} />
             <Route path="/library/files" element={<FileCabinet />} />
-            <Route path="/library/messages" element={<Messenger />} />
+            <Route path="/library/messages" element={<LibraryPageShell><Messenger /></LibraryPageShell>} />
             <Route path="/library/mentors" element={<MentorDirectory />} />
             <Route path="/library/mentors/apply" element={<MentorApply />} />
             <Route path="/library/admin/mentors" element={<MentorAdmin />} />
