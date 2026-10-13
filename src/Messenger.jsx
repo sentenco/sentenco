@@ -191,6 +191,7 @@ export default function Messenger() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(null);
   const [convSearch, setConvSearch] = useState("");
+  const [listTab, setListTab] = useState("chats"); // "chats" | "requests"
   const [listCollapsed, setListCollapsed] = useState(false);
   const [replyTarget, setReplyTarget] = useState(null);
   const [editingId, setEditingId] = useState(null);
@@ -430,6 +431,15 @@ export default function Messenger() {
       )
       .on(
         "postgres_changes",
+        { event: "UPDATE", schema: "public", table: "conversations" },
+        (payload) => {
+          const row = payload.new;
+          if (row.request_status === undefined) return;
+          setConversations((prev) => prev.map((c) => (c.id === row.id ? { ...c, request_status: row.request_status, requested_by: row.requested_by } : c)));
+        }
+      )
+      .on(
+        "postgres_changes",
         { event: "INSERT", schema: "public", table: "conversations" },
         (payload) => {
           const row = payload.new;
@@ -449,7 +459,7 @@ export default function Messenger() {
           const conversationId = payload.new.conversation_id;
           const { data: conv } = await supabase
             .from("conversations")
-            .select("id, user_a_id, user_b_id, last_message_at, last_message, is_group, title, created_by")
+            .select("*")
             .eq("id", conversationId)
             .maybeSingle();
           if (!conv) return;
@@ -482,7 +492,7 @@ export default function Messenger() {
     if (!user) return;
     const { data: direct, error: convError } = await supabase
       .from("conversations")
-      .select("id, user_a_id, user_b_id, last_message_at, last_message, is_group, title, created_by")
+      .select("*")
       .or(`user_a_id.eq.${user.id},user_b_id.eq.${user.id}`)
       .order("last_message_at", { ascending: false });
     if (convError) { console.error("loadConversations failed:", convError); setLoadingList(false); return; }
@@ -496,7 +506,7 @@ export default function Messenger() {
     if (groupIds.length) {
       const { data: groupRows } = await supabase
         .from("conversations")
-        .select("id, user_a_id, user_b_id, last_message_at, last_message, is_group, title, created_by")
+        .select("*")
         .in("id", groupIds);
       groups = groupRows || [];
     }
@@ -577,7 +587,7 @@ export default function Messenger() {
     const { data: created, error: createError } = await supabase
       .from("conversations")
       .insert({ user_a_id: a, user_b_id: b })
-      .select("id, user_a_id, user_b_id, last_message_at, last_message")
+      .select("*")
       .single();
     if (createError) { setError("Couldn't start that conversation."); return; }
     setConversations((prev) => [{ ...created, unread: 0 }, ...prev]);
@@ -610,7 +620,7 @@ export default function Messenger() {
     const { data: created, error: createError } = await supabase
       .from("conversations")
       .insert({ is_group: true, title, created_by: user.id })
-      .select("id, user_a_id, user_b_id, last_message_at, last_message, is_group, title, created_by")
+      .select("*")
       .single();
     if (createError) { setCreatingGroup(false); setError("Couldn't create that group."); return; }
 
@@ -658,6 +668,15 @@ export default function Messenger() {
     }
   }
 
+  async function answerRequest(accept) {
+    const id = activeId;
+    if (!id) return;
+    const { error: reqError } = await supabase.rpc("respond_message_request", { p_conv: id, p_accept: accept });
+    if (reqError) { setError("That did not go through. Please try again."); return; }
+    setConversations((prev) => prev.map((c) => (c.id === id ? { ...c, request_status: accept ? "accepted" : "declined" } : c)));
+    if (!accept) setActiveId(null);
+  }
+
   async function sendMessage(override, lessonSlug) {
     const content = (typeof override === "string" ? override : draft).trim();
     if (!content || !activeId || sending) return;
@@ -672,7 +691,11 @@ export default function Messenger() {
       .select()
       .single();
     setSending(false);
-    if (sendError) { setError(/blocked/i.test(sendError.message || "") ? "You cannot message this teacher." : sendError.message); return; }
+    if (sendError) {
+      const m = sendError.message || "";
+      setError(/blocked/i.test(m) ? "You cannot message this teacher." : /request_pending/i.test(m) ? "Your message request is waiting. You can send more once they accept." : /request_declined/i.test(m) ? "That teacher did not accept your message request." : m);
+      return;
+    }
     setReplyTarget(null);
     setMessages((prev) => (prev.some((m) => m.id === data.id) ? prev : [...prev, data]));
     const now = new Date().toISOString();
@@ -749,12 +772,18 @@ export default function Messenger() {
 
   if (authLoading) return null;
 
+  // Message requests: a first message from someone you are not connected with waits for you to accept it.
+  const isIncomingRequest = (c) => !c.is_group && c.request_status === "pending" && !!c.requested_by && c.requested_by !== user?.id;
   const activeConv = conversations.find((c) => c.id === activeId);
   const activeOtherId = activeConv && !activeConv.is_group ? (activeConv.user_a_id === user?.id ? activeConv.user_b_id : activeConv.user_a_id) : null;
   const activeProfile = activeOtherId ? profiles[activeOtherId] : null;
   const activeName = activeProfile ? displayName(activeProfile) : "…";
   const activeLabel = activeConv?.is_group ? activeConv.title : activeName;
   const activeBlocked = !!activeOtherId && hiddenIds.includes(activeOtherId);
+  const activeIncoming = !!activeConv && isIncomingRequest(activeConv);
+  const activeOutgoingPending = !!activeConv && !activeConv.is_group && activeConv.request_status === "pending" && activeConv.requested_by === user?.id;
+  const activeDeclinedOut = !!activeConv && !activeConv.is_group && activeConv.request_status === "declined" && activeConv.requested_by === user?.id;
+  const alreadyRequested = activeOutgoingPending && messages.some((m) => m.sender_id === user?.id);
   const activeBlockedByMe = !!activeOtherId && myBlocks.includes(activeOtherId);
   const activeMemberIds = activeConv?.is_group ? (groupMembersById[activeConv.id] || []) : [];
 
@@ -777,7 +806,11 @@ export default function Messenger() {
     return { p, name: c.is_group ? c.title : (p ? displayName(p) : "…") };
   };
 
+  const requestCount = conversations.filter(isIncomingRequest).length;
+  const tab = requestCount === 0 ? "chats" : listTab;
   const filteredConversations = conversations.filter((c) => {
+    if (!c.is_group && c.request_status === "declined" && c.requested_by !== user?.id) return false; // I declined it
+    if (tab === "requests" ? !isIncomingRequest(c) : isIncomingRequest(c)) return false;
     if (!convSearch.trim()) return true;
     if (c.is_group) return (c.title || "").toLowerCase().includes(convSearch.trim().toLowerCase());
     const otherId = c.user_a_id === user.id ? c.user_b_id : c.user_a_id;
@@ -809,7 +842,13 @@ export default function Messenger() {
                   placeholder="Search people and groups"
                 />
               </div>
-              {recentConvs.length > 1 && !convSearch.trim() && (
+              {requestCount > 0 && (
+                <div className="mg-list-tabs" role="tablist">
+                  <button type="button" role="tab" aria-selected={tab === "chats"} className={tab === "chats" ? "is-on" : ""} onClick={() => setListTab("chats")}>Chats</button>
+                  <button type="button" role="tab" aria-selected={tab === "requests"} className={tab === "requests" ? "is-on" : ""} onClick={() => setListTab("requests")}>Requests<em>{requestCount}</em></button>
+                </div>
+              )}
+              {recentConvs.length > 1 && !convSearch.trim() && tab === "chats" && (
                 <div className="mg-strip" aria-label="Recent conversations">
                   {recentConvs.map((c) => {
                     const { p, name } = convMeta(c);
@@ -855,7 +894,7 @@ export default function Messenger() {
                             <span className="mg-conv-name">{name}</span>
                             <span className="mg-conv-time">{c.last_message_at ? listTime(c.last_message_at) : ""}</span>
                           </span>
-                          <span className="mg-conv-preview">{c.last_message || "Start the conversation"}</span>
+                          <span className="mg-conv-preview">{!c.is_group && c.request_status === "pending" && c.requested_by === user.id && c.last_message ? "Waiting for them to accept" : c.last_message || "Start the conversation"}</span>
                         </span>
                         {unread && <span className="mg-unread-badge">{c.unread > 9 ? "9+" : c.unread}</span>}
                       </button>
@@ -1063,10 +1102,25 @@ export default function Messenger() {
                     </div>
                   )}
 
+                  {activeOutgoingPending && !alreadyRequested && !activeBlocked && (
+                    <p className="mg-request-hint">You are not connected with {activeName}, so this goes to them as a message request.</p>
+                  )}
                   {activeBlocked ? (
                     <div className="mg-blocked-note">
                       <span>{activeBlockedByMe ? `You blocked ${activeName}. Unblock to message them again.` : "You cannot message this teacher."}</span>
                       {activeBlockedByMe && <button type="button" onClick={async () => { await unblockUser(activeOtherId); refreshBlocked(); }}>Unblock</button>}
+                    </div>
+                  ) : activeIncoming ? (
+                    <div className="mg-request-bar">
+                      <p><strong>{activeName}</strong> is not connected with you. Accept to chat, or decline and they will not be able to message you again.</p>
+                      <div className="mg-request-actions">
+                        <button type="button" className="is-accept" onClick={() => answerRequest(true)}>Accept</button>
+                        <button type="button" onClick={() => answerRequest(false)}>Decline</button>
+                      </div>
+                    </div>
+                  ) : (alreadyRequested || activeDeclinedOut) ? (
+                    <div className="mg-blocked-note">
+                      <span>{activeDeclinedOut ? `${activeName} did not accept your message request.` : `Waiting for ${activeName} to accept your message request.`}</span>
                     </div>
                   ) : (
                   <div className="mg-composer">
@@ -1609,6 +1663,17 @@ const CSS = `
 .mg-send-btn:not(:disabled):hover { background: #E0502F; transform: scale(1.05); }
 .mg-send-btn:disabled { opacity: 0.35; cursor: default; }
 .mg-send-btn svg { width: 17px; height: 17px; }
+.mg-list-tabs { display: flex; gap: 6px; padding: 0 16px 10px; }
+.mg-list-tabs button { border: none; background: #F1F3F8; color: #8B84A3; border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 7px; }
+.mg-list-tabs button.is-on { background: var(--navy); color: #fff; }
+.mg-list-tabs em { font-style: normal; font-size: 11px; background: var(--coral); color: #fff; border-radius: 999px; padding: 1px 7px; }
+.mg-request-bar { margin: 12px 16px 14px; padding: 14px 16px; border-radius: 22px; background: #FFF8F5; box-shadow: inset 0 0 0 1.5px #F5C7B8; }
+.mg-request-bar p { margin: 0 0 10px; font-size: 13.5px; font-weight: 600; line-height: 1.5; color: var(--ink); }
+.mg-request-actions { display: flex; gap: 8px; }
+.mg-request-actions button { border: none; border-radius: 999px; padding: 9px 20px; font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px rgba(43,42,74,0.14); }
+.mg-request-actions button.is-accept { background: var(--coral); color: #fff; box-shadow: none; }
+.mg-request-actions button.is-accept:hover { background: #E0502F; }
+.mg-request-hint { margin: 8px 18px 0; font-size: 12.5px; font-weight: 700; color: #8B84A3; text-align: center; }
 .mg-blocked-note { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 12px 16px 14px; padding: 12px 16px; border-radius: 22px; background: #F1F3F8; font-size: 13.5px; font-weight: 700; color: #8B84A3; text-align: center; }
 .mg-blocked-note button { border: none; background: var(--coral); color: #fff; border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
 .mg-side-safety { display: flex; gap: 8px; margin-top: 8px; width: 100%; }
