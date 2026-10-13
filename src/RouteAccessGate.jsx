@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
-import { useCanSeeTeensAdults, isTeensAdultsPath } from "./audienceAccess";
+import { useCanSeeTeensAdults, useCanSeeTeensAdultsStories, isTeensAdultsPath } from "./audienceAccess";
+import { bookAgeTrack, storyIdFromPath } from "./bookAgeTrack";
 
 // Wraps every route. Lesson and activity pages that belong to a paid category
 // open only when the account's current plan covers them, so pasting a direct
@@ -17,7 +18,6 @@ const PRO_PREFIXES = [
   "/library/stress",
   "/library/writing/",
   "/library/listening/",
-  "/library/storybook",
   "/library/forge",
   "/library/relay",
   "/library/ascend",
@@ -60,13 +60,17 @@ export default function RouteAccessGate({ children }) {
   const navigate = useNavigate();
   const { user, loading, plan, planInfo, planReady } = useAuth();
   const canSeeTeensAdults = useCanSeeTeensAdults();
+  const canSeeStories = useCanSeeTeensAdultsStories();
   const need = requiredPlanFor(pathname);
   const teensAdults = isTeensAdultsPath(pathname);
+  // Kids stories are free for everyone; Teens and Adults stories need paid access and are hidden otherwise.
+  const storyId = storyIdFromPath(pathname);
+  const hiddenStory = !!storyId && bookAgeTrack(storyId) !== "Kids" && !canSeeStories;
 
-  if (!need && !teensAdults) return children;
+  if (!need && !teensAdults && !storyId) return children;
   if (loading || !planReady) return <Screen title="One moment" text="Checking your access." />;
   // Teens and Adults pages are hidden, not just locked, for accounts without Pro+.
-  if (teensAdults && !canSeeTeensAdults) {
+  if ((teensAdults && !canSeeTeensAdults) || hiddenStory) {
     return (
       <Screen
         title="Page not found"

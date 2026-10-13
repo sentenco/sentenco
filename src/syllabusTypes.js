@@ -2,7 +2,7 @@ import { supabase } from "./supabaseClient";
 import { VOCAB_LESSONS } from "./VocabularyGames";
 import { ACTIVITY_TYPES } from "./WritingActivities";
 import { ARTICLES } from "./articlesData";
-import { BOOK_AGE_TRACK } from "./Library";
+import { BOOK_AGE_TRACK } from "./bookAgeTrack";
 import RELAY_TRACKS from "./relayTracks";
 import ASCEND_TRACKS from "./ascendTracks";
 import SHIFT_TRACKS from "./shiftTracks";

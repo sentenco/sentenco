@@ -11,3 +11,10 @@ export function useCanSeeTeensAdults() {
 
 export const isTeensAdultsPath = (pathname) =>
   /^\/library\/(curriculum|spark)\/(teens|adults)(\/|$)/.test(pathname);
+
+// Reading is open to everyone for the Kids stories. Teens and Adults stories
+// need any paid access (Pro or Pro+, trial and codes included).
+export function useCanSeeTeensAdultsStories() {
+  const { plan, planReady } = useAuth();
+  return !!planReady && plan !== "free";
+}

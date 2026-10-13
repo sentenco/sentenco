@@ -121,6 +121,8 @@ import VocabularyGames from "./VocabularyGames";
 import WritingActivities from "./WritingActivities";
 import CommunityFeed from "./CommunityFeed.jsx";
 import HomeroomSearch from "./HomeroomSearch.jsx";
+import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
+import { useCanSeeTeensAdultsStories } from "./audienceAccess";
 import FORGE_TRACKS from "./forgeTracks";
 import SHIFT_TRACKS from "./shiftTracks";
 import ASCEND_TRACKS from "./ascendTracks";
@@ -216,7 +218,7 @@ function CategoryLockedFeature({ category, navigate }) {
       <p className="cat-locked-eyebrow">Pro feature</p>
       <h2 className="cat-locked-title">{category === "Customized Lessons" ? "Custom Lessons" : category} is part of Sentenco Pro</h2>
       <p className="cat-locked-desc">
-        Upgrade to unlock every category, Speaking, Reading, Grammar, Vocabulary, Writing, and Listening, plus Teacher's Desk without the daily unlock.
+        Upgrade to unlock every category, Speaking, all Reading stories, Grammar, Vocabulary, Writing, and Listening, plus Teacher's Desk without the daily unlock.
       </p>
       <p className="cat-locked-desc">{cta.note}</p>
       <button type="button" className="cat-locked-cta" onClick={() => navigate("/library/subscription")}>{cta.label}</button>
@@ -781,88 +783,7 @@ const BOOK_MOTIF_COLORS = ["#E8A33D", "#16BFAE", "#7C5CFC", "#4C7FE0", "#E0637A"
 // carries CEFR level, not age. Books 1-6 are the Teens-narrator series
 // (school friends), Books 7-12 are the Adults-narrator series (office,
 // shop, health, free time, food). No Kids-track story exists yet.
-export const BOOK_AGE_TRACK = {
-  "storybook-13": "Kids",
-  "storybook-14": "Kids",
-  "storybook-15": "Kids",
-  "storybook-16": "Kids",
-  "storybook-17": "Kids",
-  "storybook-18": "Kids",
-  "storybook-19": "Kids",
-  "storybook-20": "Kids",
-  "storybook-21": "Teens",
-  "storybook-22": "Teens",
-  "storybook-23": "Kids",
-  "storybook-24": "Kids",
-  "storybook-25": "Kids",
-  "storybook-26": "Kids",
-  "storybook-27": "Kids",
-  "storybook-28": "Kids",
-  "storybook-29": "Kids",
-  "storybook-30": "Kids",
-  "storybook-31": "Teens",
-  "storybook-32": "Teens",
-  "storybook-33": "Teens",
-  "storybook-34": "Teens",
-  "storybook-35": "Teens",
-  "storybook-36": "Teens",
-  "storybook-37": "Teens",
-  "storybook-38": "Teens",
-  "storybook-39": "Adults",
-  "storybook-40": "Adults",
-  "storybook-41": "Adults",
-  "storybook-42": "Adults",
-  "storybook-43": "Adults",
-  "storybook-44": "Adults",
-  "storybook-45": "Adults",
-  "storybook-46": "Adults",
-  "storybook-47": "Adults",
-  "storybook-48": "Adults",
-  "storybook-49": "Teens",
-  "storybook-50": "Teens",
-  "storybook-51": "Teens",
-  "storybook-52": "Teens",
-  "storybook-53": "Teens",
-  "storybook-54": "Teens",
-  "storybook-55": "Teens",
-  "storybook-56": "Teens",
-  "storybook-57": "Adults",
-  "storybook-58": "Adults",
-  "storybook-59": "Adults",
-  "storybook-60": "Adults",
-  "storybook-61": "Adults",
-  "storybook-62": "Adults",
-  "storybook-63": "Adults",
-  "storybook-64": "Adults",
-  "storybook-65": "Teens",
-  "storybook-66": "Teens",
-  "storybook-67": "Teens",
-  "storybook-68": "Teens",
-  "storybook-69": "Teens",
-  "storybook-70": "Teens",
-  "storybook-71": "Teens",
-  "storybook-72": "Teens",
-  "storybook-73": "Adults",
-  "storybook-74": "Adults",
-  "storybook-75": "Adults",
-  "storybook-76": "Adults",
-  "storybook-77": "Adults",
-  "storybook-78": "Adults",
-  "storybook-79": "Adults",
-  "storybook-80": "Adults",
-  storybook: "Teens",
-  "storybook-2": "Teens",
-  "storybook-3": "Teens",
-  "storybook-4": "Teens",
-  "storybook-5": "Teens",
-  "storybook-6": "Teens",
-  "storybook-7": "Adults",
-  "storybook-8": "Adults",
-  "storybook-9": "Adults",
-  "storybook-10": "Adults",
-  "storybook-11": "Adults",
-  "storybook-12": "Adults",
-};
+export { BOOK_AGE_TRACK };
 // Reading stops at B2 -- C1/C2 learners are expected to work on Speaking
 // instead, so no story content will ever exist for those levels.
 const READING_LEVELS = ["A1", "A2", "B1", "B2"];
@@ -952,6 +873,7 @@ function BookshelfRows({ books, navigate, colorOffset }) {
 }
 
 function BookshelfFeature({ items, navigate, query }) {
+  const canSeeAllAges = useCanSeeTeensAdultsStories();
   const [searchParams, setSearchParams] = useSearchParams();
   const [level, setLevel] = useState(() => {
     const fromUrl = searchParams.get("rLevel");
@@ -970,7 +892,7 @@ function BookshelfFeature({ items, navigate, query }) {
   // `items` (already title-matched by the parent) has an active query.
   const levelItems = isSearching ? items : items.filter((c) => (c.level || "A1") === level);
   let colorOffset = 0;
-  const groups = READING_AGE_TRACKS.map((track) => {
+  const groups = READING_AGE_TRACKS.filter((t) => canSeeAllAges || t === "Kids").map((track) => {
     const books = levelItems.filter((c) => (BOOK_AGE_TRACK[c.id] || "Teens") === track);
     const group = { track, books, colorOffset };
     colorOffset += books.length;
@@ -982,7 +904,7 @@ function BookshelfFeature({ items, navigate, query }) {
       <div className="bkshf-masthead">
         <span className="bkshf-eyebrow">Sentenco · Reading</span>
         <h1 className="bkshf-nameplate">Library</h1>
-        <p className="bkshf-tagline">Each book below is organized by CEFR level and age group, so you can read at the right difficulty.</p>
+        <p className="bkshf-tagline">{canSeeAllAges ? "Each book below is organized by CEFR level and age group, so you can read at the right difficulty." : "Each story below is organized by CEFR level, so you can read at the right difficulty."}</p>
       </div>
 
       {!isSearching && (
@@ -2200,7 +2122,7 @@ export default function Library() {
           <HomeroomSearch query={query} navigate={navigate} />
         ) : category === "Articles" ? (
           <ArticlesFeature navigate={navigate} query={query} />
-        ) : PRO_CATEGORIES.includes(category) && plan === "free" ? (
+        ) : PRO_CATEGORIES.includes(category) && category !== "Reading" && plan === "free" ? (
           <CategoryLockedFeature category={category} navigate={navigate} />
         ) : category === "Grammar" ? (
           <GrammarFeature navigate={navigate} query={query} />
