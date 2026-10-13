@@ -165,7 +165,7 @@ function ResultCard({ entry, onReverse }) {
 
 export default function SearchLookup() {
   const navigate = useNavigate();
-  const { plan } = useAuth();
+  const { user, plan, planInfo } = useAuth();
   const [searchParams] = useSearchParams();
   const requestedMode = searchParams.get("mode");
   const initialQuery = searchParams.get("q") || "";
@@ -334,8 +334,14 @@ export default function SearchLookup() {
           <span className="sl-locked-icon"><LockIcon /></span>
           <p className="sl-locked-eyebrow">Pro+ feature</p>
           <h2 className="sl-locked-title">The Teacher Toolkit is part of Sentenco Pro+</h2>
-          <p className="sl-locked-desc">Upgrade to Pro+ to unlock the AI-powered Dictionary, Grammar Checker, and Translator, plus every CEFR level.</p>
-          <button type="button" className="sl-locked-cta" onClick={() => navigate("/library/subscription")}>Upgrade to Pro+</button>
+          <p className="sl-locked-desc">
+            {!planInfo.notSetUp && (!user || planInfo.trialAvailable)
+              ? "Try the AI-powered Dictionary, Grammar Checker, and Translator free for 7 days. No card needed."
+              : "Paid plans open after the beta. If you were invited, redeem your code to unlock the AI tools."}
+          </p>
+          <button type="button" className="sl-locked-cta" onClick={() => navigate("/library/subscription")}>
+            {!planInfo.notSetUp && (!user || planInfo.trialAvailable) ? "Start your free 7-day trial" : "See plans or redeem a code"}
+          </button>
         </div>
       ) : (
       <>

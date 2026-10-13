@@ -1,7 +1,7 @@
 // Vercel serverless function. Keeps the Anthropic API key server-side only —
 // never expose it via a VITE_ env var, which would bundle it into the client.
 
-import { isProPlusRequest } from "./_authGate.js";
+import { checkAiAccess } from "./_authGate.js";
 
 const MAX_INPUT_LENGTH = 4000;
 
@@ -18,8 +18,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  if (!(await isProPlusRequest(req))) {
-    res.status(403).json({ error: "The Grammar Checker is a Sentenco Pro+ feature." });
+  const access = await checkAiAccess(req, "The Grammar Checker");
+  if (!access.ok) {
+    res.status(403).json({ error: access.message });
     return;
   }
 

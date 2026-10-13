@@ -99,7 +99,13 @@ function ChatIcon() {
 export default function LibraryHeader() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, plan, signOut } = useAuth();
+  const { user, plan, planInfo, signOut } = useAuth();
+  // Trial / free-access status for the account menu chip and the "ending soon" bar.
+  const accessEnds = planInfo.source === "trial" || planInfo.source === "grant" ? planInfo.endsAt : null;
+  const accessDaysLeft = accessEnds ? Math.max(1, Math.ceil((new Date(accessEnds).getTime() - Date.now()) / 86400000)) : null;
+  const [endingBarHidden, setEndingBarHidden] = useState(() => {
+    try { return sessionStorage.getItem("sentenco-ending-bar-hidden") === "1"; } catch { return false; }
+  });
   const isAdmin = user?.email?.toLowerCase() === "caldrin1999@gmail.com";
 
   const [query, setQuery] = useState("");
@@ -364,9 +370,19 @@ export default function LibraryHeader() {
                       {/* File Cabinet, Find a Mentor, Mentor Applications: hidden from the menu for everyone
                           (including admin) per the user's call, 2026-10-01 -- not deleted, routes and pages
                           are untouched, see memory project_hidden_settings_menu_items for when to restore. */}
-                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/subscription"); setMenuOpen(false); }}>Subscription</button>
+                      <button type="button" className="account-menu-link" onClick={() => { navigate("/library/subscription"); setMenuOpen(false); }}>
+                        Subscription
+                        {accessDaysLeft && (
+                          <span style={{ marginLeft: 8, fontSize: 10.5, fontWeight: 800, color: "#1B2A4A", background: "#E9ECF3", borderRadius: 999, padding: "2px 8px" }}>
+                            {planInfo.source === "trial" ? "Trial" : "Free access"} &middot; {accessDaysLeft}d left
+                          </span>
+                        )}
+                      </button>
                       {isAdmin && (
-                        <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
+                        <>
+                          <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/teachers"); setMenuOpen(false); }}>Teachers</button>
+                          <button type="button" className="account-menu-link" onClick={() => { navigate("/library/admin/access"); setMenuOpen(false); }}>Access codes</button>
+                        </>
                       )}
                       <button type="button" className="account-menu-link" onClick={() => { navigate("/library/legal/terms"); setMenuOpen(false); }}>Terms & Privacy</button>
                       <a href={`mailto:${SUPPORT_EMAIL}`}>Help &amp; Support</a>
@@ -423,6 +439,13 @@ export default function LibraryHeader() {
           </div>
         </div>
       </header>
+      {accessDaysLeft && accessDaysLeft <= 2 && !endingBarHidden && (
+        <div style={{ background: "#1B2A4A", color: "#fff", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", gap: 12, padding: "8px 16px", flexWrap: "wrap" }}>
+          <span>Your {planInfo.source === "trial" ? "free trial" : "free access"} ends in {accessDaysLeft} day{accessDaysLeft === 1 ? "" : "s"}.</span>
+          <button type="button" onClick={() => navigate("/library/subscription")} style={{ background: "#FF6B4A", color: "#fff", border: "none", borderRadius: 999, padding: "4px 14px", fontWeight: 700, cursor: "pointer" }}>See plans</button>
+          <button type="button" aria-label="Dismiss" onClick={() => { setEndingBarHidden(true); try { sessionStorage.setItem("sentenco-ending-bar-hidden", "1"); } catch { /* ignore */ } }} style={{ background: "none", border: "none", color: "#fff", fontSize: 18, cursor: "pointer", lineHeight: 1 }}>&times;</button>
+        </div>
+      )}
       {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
     </>
   );

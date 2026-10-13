@@ -193,7 +193,20 @@ function LockIcon() {
   );
 }
 
+// Locked-page call to action: the free trial while it's still available (or
+// to a signed-out visitor), otherwise the plans page where codes are redeemed.
+function useLockedCta() {
+  const { user, planInfo } = useAuth();
+  const trial = !planInfo.notSetUp && (!user || planInfo.trialAvailable);
+  return {
+    trial,
+    label: trial ? "Start your free 7-day trial" : "See plans or redeem a code",
+    note: trial ? "No card needed. Every category, every level and the AI tools for 7 days." : "Paid plans open after the beta. If you were invited, redeem your code.",
+  };
+}
+
 function CategoryLockedFeature({ category, navigate }) {
+  const cta = useLockedCta();
   return (
     <div className="cat-locked">
       <span className="cat-locked-icon"><LockIcon /></span>
@@ -202,13 +215,15 @@ function CategoryLockedFeature({ category, navigate }) {
       <p className="cat-locked-desc">
         Upgrade to unlock every category, Speaking, Reading, Grammar, Vocabulary, Writing, and Listening, plus Teacher's Desk without the daily unlock.
       </p>
-      <button type="button" className="cat-locked-cta" onClick={() => navigate("/library/subscription")}>Upgrade to Pro</button>
+      <p className="cat-locked-desc">{cta.note}</p>
+      <button type="button" className="cat-locked-cta" onClick={() => navigate("/library/subscription")}>{cta.label}</button>
       <button type="button" className="cat-locked-link" onClick={() => navigate("/library/subscription")}>See all plans</button>
     </div>
   );
 }
 
 function CurriculumLockedFeature({ navigate }) {
+  const cta = useLockedCta();
   return (
     <div className="cat-locked">
       <span className="cat-locked-icon cat-locked-icon--navy"><LockIcon /></span>
@@ -217,7 +232,8 @@ function CurriculumLockedFeature({ navigate }) {
       <p className="cat-locked-desc">
         Upgrade to Pro+ to unlock the full A1 and A2 curriculum, plus the AI-powered Dictionary, Grammar Checker, and Translator.
       </p>
-      <button type="button" className="cat-locked-cta cat-locked-cta--navy" onClick={() => navigate("/library/subscription")}>Upgrade to Pro+</button>
+      <p className="cat-locked-desc">{cta.note}</p>
+      <button type="button" className="cat-locked-cta cat-locked-cta--navy" onClick={() => navigate("/library/subscription")}>{cta.label}</button>
       <button type="button" className="cat-locked-link" onClick={() => navigate("/library/subscription")}>See all plans</button>
     </div>
   );

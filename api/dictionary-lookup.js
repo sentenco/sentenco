@@ -5,7 +5,7 @@
 // grammar-check.js.
 
 import { createClient } from "@supabase/supabase-js";
-import { isProPlusRequest } from "./_authGate.js";
+import { checkAiAccess } from "./_authGate.js";
 
 const MAX_WORD_LENGTH = 50;
 
@@ -29,8 +29,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  if (!(await isProPlusRequest(req))) {
-    res.status(403).json({ error: "The Dictionary is a Sentenco Pro+ feature." });
+  const access = await checkAiAccess(req, "The Dictionary");
+  if (!access.ok) {
+    res.status(403).json({ error: access.message });
     return;
   }
 

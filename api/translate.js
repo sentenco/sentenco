@@ -3,7 +3,7 @@
 // translation inputs are free-form sentences, unlike single dictionary words,
 // so there's little repeat-lookup benefit.
 
-import { isProPlusRequest } from "./_authGate.js";
+import { checkAiAccess } from "./_authGate.js";
 
 const MAX_INPUT_LENGTH = 2000;
 
@@ -20,8 +20,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  if (!(await isProPlusRequest(req))) {
-    res.status(403).json({ error: "The Translator is a Sentenco Pro+ feature." });
+  const access = await checkAiAccess(req, "The Translator");
+  if (!access.ok) {
+    res.status(403).json({ error: access.message });
     return;
   }
 

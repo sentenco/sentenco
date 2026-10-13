@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
+import { supabase } from "./supabaseClient";
+import AuthForm from "./AuthForm";
 
 function CheckIcon() {
   return (
@@ -62,12 +65,113 @@ const TIERS = [
   },
 ];
 
+
+const ERRORS = {
+  trial_already_used: "You've already used your free trial.",
+  invalid_code: "That code isn't valid. Check it and try again.",
+  code_expired: "That code has expired.",
+  code_used_up: "That code has already been used the maximum number of times.",
+  already_redeemed: "You've already redeemed that code.",
+  not_signed_in: "Sign in first, then try again.",
+};
+
+function friendlyError(error) {
+  const key = Object.keys(ERRORS).find((k) => (error?.message || "").includes(k));
+  return key ? ERRORS[key] : "Something went wrong. Please try again in a moment.";
+}
+
+const PLAN_NAMES = { free: "Free", pro: "Pro", pro_plus: "Pro+" };
+
+function daysLeft(endsAt) {
+  return Math.max(1, Math.ceil((new Date(endsAt).getTime() - Date.now()) / 86400000));
+}
+function niceDate(endsAt) {
+  return new Date(endsAt).toLocaleDateString("en-PH", { month: "long", day: "numeric", timeZone: "Asia/Manila" });
+}
+
+function AccessPanel({ onNotice }) {
+  const { user, plan, planInfo, refreshPlan } = useAuth();
+  const [authMode, setAuthMode] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [code, setCode] = useState("");
+  const [message, setMessage] = useState(null); // { kind: "ok" | "error", text }
+
+  async function startTrial() {
+    setBusy(true); setMessage(null);
+    const { error } = await supabase.rpc("start_trial");
+    setBusy(false);
+    if (error) { setMessage({ kind: "error", text: friendlyError(error) }); return; }
+    await refreshPlan();
+    setMessage({ kind: "ok", text: "Your 7-day free trial has started. Everything is unlocked." });
+  }
+
+  async function redeem(e) {
+    e.preventDefault();
+    if (!code.trim()) { setMessage({ kind: "error", text: "Enter your code first." }); return; }
+    setBusy(true); setMessage(null);
+    const { error } = await supabase.rpc("redeem_code", { p_code: code });
+    setBusy(false);
+    if (error) { setMessage({ kind: "error", text: friendlyError(error) }); return; }
+    setCode("");
+    await refreshPlan();
+    setMessage({ kind: "ok", text: "Code redeemed. Your access is active." });
+  }
+
+  const active = planInfo.source === "trial" || planInfo.source === "grant";
+  let headline; let sub; let action = null;
+  if (!user) {
+    headline = "Try everything free for 7 days";
+    sub = "Pro+ access: every category, every level and the AI tools. No card needed.";
+    action = <button type="button" className="sub-access-btn" onClick={() => setAuthMode("signup")}>Create a free account to start</button>;
+  } else if (planInfo.notSetUp) {
+    headline = "Free trials are opening soon";
+    sub = "We're setting up beta access. Check back in a little while.";
+  } else if (active) {
+    const what = planInfo.source === "trial" ? "Free trial" : "Free access";
+    headline = `${what} active: ${PLAN_NAMES[plan]}`;
+    sub = `${daysLeft(planInfo.endsAt)} day${daysLeft(planInfo.endsAt) === 1 ? "" : "s"} left. Ends ${niceDate(planInfo.endsAt)}.`;
+  } else if (planInfo.trialAvailable) {
+    headline = "Try everything free for 7 days";
+    sub = "Pro+ access: every category, every level and the AI tools. No card needed. Your 7 days start when you press the button.";
+    action = <button type="button" className="sub-access-btn" disabled={busy} onClick={startTrial}>{busy ? "Starting..." : "Start my free trial"}</button>;
+  } else if (plan === "free") {
+    headline = "Your free trial has ended";
+    sub = "You still have Homeroom and Articles. Paid plans open after the beta. If you were invited, redeem your code below.";
+  } else {
+    headline = `You're on ${PLAN_NAMES[plan]}`;
+    sub = "Everything in your plan is unlocked.";
+  }
+
+  return (
+    <div className="sub-access">
+      <div className="sub-access-main">
+        <p className="sub-access-eyebrow">Beta access</p>
+        <h3 className="sub-access-title">{headline}</h3>
+        <p className="sub-access-sub">{sub}</p>
+        {action}
+        {planInfo.source === "trial" && <p className="sub-access-fine">The AI tools allow 30 lookups a day during the trial. Teacher's Desk still unlocks with your 3 daily posts, comments or likes.</p>}
+      </div>
+      {user && !planInfo.notSetUp && (
+        <form className="sub-redeem" onSubmit={redeem}>
+          <label className="sub-redeem-label" htmlFor="sub-code">Have a code?</label>
+          <div className="sub-redeem-row">
+            <input id="sub-code" className="sub-redeem-input" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Enter your code" autoComplete="off" spellCheck={false} />
+            <button type="submit" className="sub-redeem-btn" disabled={busy}>Redeem</button>
+          </div>
+        </form>
+      )}
+      {message && <p className={`sub-access-msg is-${message.kind}`} role="status">{message.text}</p>}
+      {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
+    </div>
+  );
+}
+
 export default function Subscription() {
   const navigate = useNavigate();
   const [notice, setNotice] = useState(null);
 
   function handleUpgrade(tierName) {
-    setNotice(`${tierName} isn't open for billing yet. Check back soon.`);
+    setNotice(`${tierName} isn't open for billing yet. During the beta you can try everything free for 7 days.`);
   }
 
   return (
@@ -86,6 +190,8 @@ export default function Subscription() {
           <h2 className="sub-heading">Simple pricing, built around how you actually teach</h2>
           <p className="sub-lede">Start free. Upgrade whenever the curriculum or the AI tools become part of your daily routine.</p>
         </div>
+
+        <AccessPanel />
 
         {notice && (
           <div className="sub-notice">
@@ -172,6 +278,35 @@ const CSS = `
 .sub-eyebrow { font-family: 'Quicksand', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin: 0 0 8px; }
 .sub-heading { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 28px; line-height: 1.3; margin: 0 0 10px; text-wrap: balance; }
 .sub-lede { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+
+.sub-access {
+  max-width: 720px; margin: 0 auto 34px; background: var(--navy-pale); border: 1px solid var(--hair); border-radius: 20px;
+  padding: 24px 28px; display: grid; gap: 16px;
+}
+.sub-access-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin: 0 0 6px; }
+.sub-access-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; margin: 0 0 6px; color: var(--navy); }
+.sub-access-sub { font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0 0 14px; }
+.sub-access-fine { font-size: 12px; color: var(--muted); margin: 12px 0 0; line-height: 1.5; }
+.sub-access-btn {
+  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #fff; background: var(--coral);
+  border: none; border-radius: 999px; padding: 12px 24px; cursor: pointer;
+}
+.sub-access-btn:hover:not(:disabled) { filter: brightness(0.92); }
+.sub-access-btn:disabled { opacity: 0.6; cursor: default; }
+.sub-redeem { border-top: 1px solid var(--hair); padding-top: 16px; }
+.sub-redeem-label { display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.sub-redeem-row { display: flex; gap: 8px; max-width: 420px; }
+.sub-redeem-input {
+  flex: 1; min-width: 0; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
+  border: 1.5px solid var(--hair); border-radius: 12px; padding: 10px 14px; background: #fff; color: var(--ink);
+}
+.sub-redeem-input:focus { outline: 3px solid var(--navy); outline-offset: 1px; }
+.sub-redeem-btn { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13.5px; color: #fff; background: var(--navy); border: none; border-radius: 12px; padding: 10px 20px; cursor: pointer; }
+.sub-redeem-btn:disabled { opacity: 0.6; cursor: default; }
+.sub-access-msg { font-size: 13.5px; font-weight: 600; margin: 0; border-radius: 10px; padding: 10px 14px; }
+.sub-access-msg.is-ok { background: #E3F5EA; color: #1F7A47; }
+.sub-access-msg.is-error { background: #FDE8E5; color: #A3322A; }
 
 .sub-notice {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
