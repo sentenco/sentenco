@@ -53,6 +53,10 @@ export function UnseenPlayer({ slides: SLIDES, extraStyles = "" }) {
       <div className="un-wrap">
         <div className="un-frame" style={{ width: U_W * scale, height: U_H * scale }}>
           <div className={`un-slide ${s.title ? "is-title" : ""}`} style={{ transform: `scale(${scale})` }}>
+            <div className="un-brand-bubble">
+              <img className="un-brand-logo" src="/logo-sentenco.png" alt="" />
+              <span className="un-brand-word">entenco</span>
+            </div>
             <div className="un-top">
               <div className="un-stage">{s.stage}</div>
               <div className="un-top-right">
@@ -204,7 +208,7 @@ export function UEnd({ title, ids, parts }) {
 }
 
 export const styles = `
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Quicksand:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Fredoka:wght@600;700&family=Quicksand:wght@500;600;700&display=swap');
 
 .un-wrap { min-height: 100vh; width: 100%; background: #EEF1F6; color: ${NAVY}; font-family: 'Quicksand', sans-serif; padding: 12px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
 .un-wrap * { box-sizing: border-box; }
@@ -215,6 +219,11 @@ export const styles = `
   border-radius: 18px; box-shadow: 0 24px 50px rgba(27,42,74,0.22);
 }
 .un-slide.is-title { background-image: url('/curriculum/unseen/title-bg.jpg'); }
+
+/* the Sentenco tab hangs from the top-left corner, the same as the Ignite lessons */
+.un-brand-bubble { position: absolute; top: 0; left: 30px; z-index: 3; display: flex; align-items: center; background: #FFF6EC; border-radius: 0 0 16px 16px; padding: 9px 15px 7px 8px; border-bottom: 4px solid ${CORAL}; box-shadow: 0 6px 12px rgba(10,18,40,0.25); }
+.un-brand-logo { width: 32px; height: 32px; margin: -5px -8px -5px -4px; object-fit: contain; }
+.un-brand-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px; color: ${NAVY}; }
 
 /* header sits on the navy wave at the top of the picture */
 .un-top { position: absolute; top: 12px; left: 0; right: 0; height: 30px; display: flex; align-items: center; justify-content: center; z-index: 3; }
