@@ -952,6 +952,9 @@ export default function CommunityFeed({ afterStats, focusPostId, onActivity, onS
                     <div className="cm-post-lesson-text">
                       <span className="cm-post-lesson-kicker">Custom lesson &middot; {customLessonBySlug(p.lesson_slug).tag}</span>
                       <span className="cm-post-lesson-title">{customLessonBySlug(p.lesson_slug).title}</span>
+                      {user && savedIds && p.author_id !== user.id && (
+                        <span className="cm-post-lesson-hint">{savedIds.has(p.id) ? "Saved to your Custom Lessons" : "Save this post to keep the lesson in your Custom Lessons"}</span>
+                      )}
                     </div>
                     <button type="button" className="cm-btn" onClick={() => openCustomLesson(customLessonBySlug(p.lesson_slug))}>Open lesson</button>
                   </div>
@@ -1171,6 +1174,7 @@ const CSS = `
 .cm-attach-preview img { max-width: 160px; max-height: 120px; border-radius: 10px; display: block; object-fit: cover; }
 .cm-post-lesson { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0 0; padding: 12px 14px; border: 1px solid var(--hair, rgba(43,42,74,0.1)); border-left: 4px solid #1B2A4A; border-radius: 12px; background: #F7F8FB; }
 .cm-post-lesson-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cm-post-lesson-hint { margin-top: 2px; font-size: 12.5px; font-weight: 600; color: #6B6E96; }
 .cm-post-lesson-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: #6B6E96; }
 .cm-post-lesson-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: #1B2A4A; overflow-wrap: anywhere; }
 .cm-attach-file-chip {

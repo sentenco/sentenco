@@ -2352,7 +2352,7 @@ export default function Library() {
             </div>
             {user && clAccess.ready && clVisible.length === 0 && (
               <p style={{ color: "#6B6E96", fontSize: 14, margin: "8px 0 24px" }}>
-                You don't have any custom lessons yet. Request one above. Lessons built for you appear here, and only you can open them unless you share them.
+                You don't have any custom lessons yet. Request one above. Lessons built for you appear here, and only you can open them unless you share them. A lesson another teacher shares in Homeroom appears here once you save their post.
               </p>
             )}
             {!user && (
