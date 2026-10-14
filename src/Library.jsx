@@ -1357,6 +1357,11 @@ export default function Library() {
   // The site owner always sees every lesson; everyone else sees what the database says is theirs or shared with them.
   const clVisible = CUSTOM_LESSONS.filter((l) => clAccess.access.has(l.slug) || clAccess.isOwnerEmail);
   const clRelation = (slug) => (clAccess.access.get(slug)?.relation) || "mine";
+  // Owned = lessons that are mine; Saved = lessons other teachers shared that I bookmarked on the post.
+  const [clView, setClView] = useState(() => searchParams.get("clView") || "all");
+  const clOwned = clVisible.filter((l) => clRelation(l.slug) === "mine");
+  const clSaved = clVisible.filter((l) => clRelation(l.slug) === "shared");
+  const clViewList = clView === "owned" ? clOwned : clView === "saved" ? clSaved : clVisible;
   const [clFormOpen, setClFormOpen] = useState(() => searchParams.get("clForm") === "1");
   const [clStudentName, setClStudentName] = useState("");
   const [clLevel, setClLevel] = useState("A1");
@@ -2339,10 +2344,19 @@ export default function Library() {
               </div>
             )}
 
+            {user && (
+              <div className="cl-views" role="tablist" aria-label="Which lessons">
+                {[["all", "All", clVisible.length], ["owned", "Owned", clOwned.length], ["saved", "Saved", clSaved.length]].map(([key, label, count]) => (
+                  <button key={key} type="button" role="tab" aria-selected={clView === key} className={`cl-view${clView === key ? " is-active" : ""}`} onClick={() => { setClView(key); setClTab("All"); const next = new URLSearchParams(searchParams); next.delete("clTab"); if (key === "all") next.delete("clView"); else next.set("clView", key); setSearchParams(next, { replace: true }); }}>
+                    {label}<span className="cl-view-n">{count}</span>
+                  </button>
+                ))}
+              </div>
+            )}
             <div className="cl-gallery-hd-row">
-              <h2 className="cl-gallery-hd">Your lessons</h2>
+              <h2 className="cl-gallery-hd">{clView === "owned" ? "Owned lessons" : clView === "saved" ? "Saved lessons" : "Your lessons"}</h2>
               <div className="cl-tabs">
-                {["All", ...Array.from(new Set(clVisible.map((l) => l.tag)))].map((t) => (
+                {["All", ...Array.from(new Set(clViewList.map((l) => l.tag)))].map((t) => (
                   <button key={t} type="button" role="tab" aria-selected={clTab === t} style={{ "--c": CL_TAB_COLORS[t] || "#1B2A4A" }} className={`cl-tab ${clTab === t ? "is-active" : ""}`} onClick={() => { setClTab(t); const next = new URLSearchParams(searchParams); if (t === "All") next.delete("clTab"); else next.set("clTab", t); setSearchParams(next, { replace: true }); }}>
                     <svg viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{ __html: CL_TAB_ICONS[t] || CL_TAB_ICONS.All }} />
                     {t}
@@ -2359,7 +2373,14 @@ export default function Library() {
               <p style={{ color: "#6B6E96", fontSize: 14, margin: "8px 0 24px" }}>Sign in to see your custom lessons.</p>
             )}
             <div className="cl-rows">
-              {clVisible.filter((l) => clTab === "All" || l.tag === clTab).map((l) => {
+              {user && clAccess.ready && clViewList.length === 0 && clVisible.length > 0 && (
+                <p style={{ color: "#6B6E96", fontSize: 14, margin: "4px 0 12px" }}>
+                  {clView === "saved"
+                    ? "Nothing saved yet. When a teacher shares a lesson in Homeroom, tap the bookmark on their post to keep it here."
+                    : "You don't own any lessons yet. Request one above."}
+                </p>
+              )}
+              {clViewList.filter((l) => clTab === "All" || l.tag === clTab).map((l) => {
                 const path = `/library/customized-lessons/${l.slug}`;
                 const open = () => openCustomLessonPopup(path, "sentencoCustomLesson", l.popup ? l.popup[0] : 840, l.popup ? l.popup[1] : 860);
                 return (
@@ -3233,6 +3254,13 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .cl-gallery-hd-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px 20px; margin-bottom: 18px; border-bottom: 2px solid #EDE6F4; }
 .cl-gallery-hd { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #1B2A4A; margin: 0; padding-bottom: 10px; white-space: nowrap; }
 
+.cl-views { display: flex; gap: 8px; margin: 0 0 14px; flex-wrap: wrap; }
+.cl-view { display: inline-flex; align-items: center; gap: 8px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #1B2A4A; background: #E9ECF3; border: none; border-radius: 999px; padding: 8px 16px; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; }
+.cl-view:hover { background: #DDE2EC; }
+.cl-view.is-active { background: #1B2A4A; color: #fff; }
+.cl-view-n { font-size: 12px; font-weight: 700; min-width: 20px; padding: 1px 7px; border-radius: 999px; background: rgba(27,42,74,0.1); text-align: center; }
+.cl-view.is-active .cl-view-n { background: rgba(255,255,255,0.22); }
+.cl-view:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 2px; }
 .cl-tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .cl-tabs::-webkit-scrollbar { display: none; }
 .cl-tab {
