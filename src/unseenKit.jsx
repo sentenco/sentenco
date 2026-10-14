@@ -23,7 +23,6 @@ function useFitScale() {
 // slides: [{ stage, note, title?: true, body }]
 export function UnseenPlayer({ slides: SLIDES, extraStyles = "" }) {
   const [i, setI] = useState(0);
-  const [showNotes, setShowNotes] = useState(false);
   const [results, setResults] = useState({});
   const [store, setStore] = useState({});
   const scale = useFitScale();
@@ -60,14 +59,12 @@ export function UnseenPlayer({ slides: SLIDES, extraStyles = "" }) {
             <div className="un-top">
               <div className="un-stage">{s.stage}</div>
               <div className="un-top-right">
-                <button type="button" className={`un-tnotes ${showNotes ? "on" : ""}`} onClick={() => setShowNotes((v) => !v)}>Teacher notes</button>
                 <button type="button" className="un-close" onClick={() => window.close()} aria-label="Close">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 6l12 12M18 6L6 18" /></svg>
                 </button>
               </div>
             </div>
             <div className="un-body" key={i}>{s.body}</div>
-            {showNotes && <div className="un-notes"><b>Teacher notes.</b> {s.note}</div>}
             <div className="un-nav-row">
               <button type="button" className={`un-nav ${i === 0 ? "is-off" : ""}`} onClick={() => go(-1)} disabled={i === 0}>&larr; Previous</button>
               <div className="un-progress">
@@ -228,16 +225,13 @@ export const styles = `
 /* header sits on the navy wave at the top of the picture */
 .un-top { position: absolute; top: 12px; left: 0; right: 0; height: 30px; display: flex; align-items: center; justify-content: center; z-index: 3; }
 .un-stage { background: rgba(255,255,255,0.16); color: #fff; font-weight: 700; font-size: 12.5px; letter-spacing: 0.02em; padding: 5px 16px; border-radius: 999px; white-space: nowrap; }
-/* Teacher notes and Close sit in the cream strip under the top wave, where they stay readable */
+/* Close sits in the cream strip under the top wave, where it stays readable */
 .un-top-right { position: absolute; right: 108px; top: 84px; display: flex; align-items: center; gap: 8px; z-index: 3; }
-.un-tnotes { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 11.5px; color: ${NAVY}; background: rgba(255,255,255,0.85); border: 1px solid #C9D0E0; border-radius: 999px; padding: 5px 13px; cursor: pointer; white-space: nowrap; }
-.un-tnotes.on { background: ${NAVY}; border-color: ${NAVY}; color: #fff; }
 .un-close { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #C9D0E0; cursor: pointer; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.85); color: ${NAVY}; }
 
 /* content area = the cream part of the picture */
 .un-body { position: absolute; top: 112px; bottom: 132px; left: 96px; right: 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-.un-notes { position: absolute; left: 96px; right: 96px; bottom: 136px; z-index: 4; background: #FFF6E5; border: 2px solid #F2A900; border-radius: 12px; padding: 9px 16px; font-size: 13px; font-weight: 600; color: #6B5310; line-height: 1.5; max-height: 100px; overflow-y: auto; box-shadow: 0 8px 20px rgba(27,42,74,0.18); }
 
 /* nav buttons sit on the navy band at the bottom */
 .un-nav-row { position: absolute; left: 190px; right: 190px; bottom: 26px; height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 12px; z-index: 3; }
