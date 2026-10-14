@@ -8,17 +8,18 @@ import { ScoreCtx, useStore, LETTERS } from "./e8Kit.jsx";
 // The story text is the teacher's own adapted version, word for word. Pictures are the teacher's too: put a file path in PICS
 // (for example "/curriculum/tell-tale-heart/scene-1.jpg") and it appears; an empty string shows no picture.
 
+// pos = which part of the picture stays visible when it is cropped into a wide strip.
 const PICS = {
-  eerie: "",
-  eye: "",
-  night: "",
-  police: "",
-  sound: "",
+  eerie: { src: "/curriculum/tell-tale-heart/eerie.jpg", pos: "center 74%" },
+  eye: { src: "/curriculum/tell-tale-heart/scene-1-eye.jpg", pos: "center 50%" },
+  night: { src: "/curriculum/tell-tale-heart/scene-2-night.jpg", pos: "center 50%" },
+  police: { src: "/curriculum/tell-tale-heart/scene-3-police.jpg", pos: "center 30%" },
+  sound: { src: "/curriculum/tell-tale-heart/scene-4-sound.jpg", pos: "center 24%" },
 };
 
-function Pic({ src, tall }) {
-  if (!src) return null;
-  return <div className={`tt-art ${tall ? "tt-art--tall" : ""}`}><img src={src} alt="" /></div>;
+function Pic({ pic, tall }) {
+  if (!pic || !pic.src) return null;
+  return <div className={`tt-art ${tall ? "tt-art--tall" : ""}`}><img src={pic.src} alt="" style={{ objectPosition: pic.pos }} /></div>;
 }
 
 /* ---------------------------- 1. the eerie question ---------------------------- */
@@ -32,8 +33,8 @@ const CHOICES = [
 function Mystery() {
   const [pick, setPick] = useStore("mys", null);
   return (
-    <div className="tt-mystery">
-      <Pic src={PICS.eerie} tall />
+    <div className={`tt-mystery ${PICS.eerie.src ? "has-pic" : ""}`}>
+      <Pic pic={PICS.eerie} tall />
       <p className="tt-eerie">Imagine you hear a heartbeat coming from underneath your floor. What would you do?</p>
       <div className="tt-choices">
         {CHOICES.map((c, i) => (
@@ -193,8 +194,8 @@ function Scene({ id }) {
   const [n, setN] = useStore("sc-" + id, 1);
   const done = n >= sc.lines.length;
   return (
-    <div className={`tt-scene ${sc.beat ? "is-beat" : ""} ${sc.pic ? "has-pic" : ""}`}>
-      <Pic src={sc.pic} />
+    <div className={`tt-scene ${sc.beat ? "is-beat" : ""} ${sc.pic && sc.pic.src ? "has-pic" : ""}`}>
+      <Pic pic={sc.pic} />
       <div className="tt-textcard">
         <div className="tt-texthead">
           <span className="un-eyebrow">{sc.kicker}</span>
@@ -444,8 +445,8 @@ const SLIDES = [
 export const LESSON_GUIDE = SLIDES.map((s) => ({ stage: s.stage, time: null, note: s.note }));
 
 const EXTRA_CSS = `
-.tt-art { border-radius: 16px; overflow: hidden; background: #0E1830; box-shadow: 0 8px 20px rgba(27,42,74,0.25); width: 100%; height: 150px; }
-.tt-art--tall { height: 190px; }
+.tt-art { border-radius: 16px; overflow: hidden; background: #0E1830; box-shadow: 0 8px 20px rgba(27,42,74,0.25); width: 100%; height: 172px; flex: none; }
+.tt-art--tall { height: 176px; }
 .tt-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 @keyframes tthCard { 0%,100% { box-shadow: 0 0 0 0 rgba(255,107,74,0); } 12% { box-shadow: 0 0 0 7px rgba(255,107,74,0.30); } 36% { box-shadow: 0 0 0 3px rgba(255,107,74,0.18); } }
@@ -523,7 +524,14 @@ const EXTRA_CSS = `
 .tt-lines { min-height: 150px; }
 .tt-lines p { margin: 0 0 10px; text-align: justify; text-justify: inter-word; font-size: 22px; font-weight: 600; line-height: 1.5; color: #2F3C5A; }
 .tt-scene.has-pic .tt-lines { min-height: 0; }
-.tt-scene.has-pic .tt-lines p { font-size: 19px; margin-bottom: 8px; }
+.tt-scene.has-pic .tt-lines p { font-size: 17.5px; line-height: 1.45; margin-bottom: 6px; }
+.tt-scene.has-pic .tt-textcard { padding: 12px 26px 8px; gap: 5px; }
+.tt-scene.has-pic .tt-texthead h2 { font-size: 26px; }
+.tt-scene.has-pic .tt-lines p.is-thump { font-size: 21px; }
+.tt-scene.has-pic .tt-textfoot { min-height: 30px; }
+.tt-mystery.has-pic { gap: 12px; }
+.tt-mystery.has-pic .tt-eerie { font-size: 26px; padding: 16px 32px; }
+.tt-mystery.has-pic .tt-reveal-box { min-height: 78px; padding: 10px 24px; }
 .tt-lines p.is-new { animation: tthFade .45s ease; }
 .tt-lines p.is-thump { font-style: italic; text-align: center; font-size: 26px; letter-spacing: .02em; color: #B5381D; }
 .tt-textfoot { display: flex; align-items: center; gap: 12px; min-height: 36px; }
