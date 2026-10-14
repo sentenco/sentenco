@@ -207,6 +207,39 @@ export const SAMPLE_STORY_ITEMS = [
   ST("open", "What will Mia do next? What would you do if your pet was lost?", ["", "", ""], 0, "Any sensible idea with a reason, for example: \"I would look everywhere and ask my family.\""),
 ];
 
+// ---- story set: "The Secret Map" (an adventure for a 10-year-old boy, level A2, simple past, no pictures yet) ----
+export const SECRET_MAP_STORY = {
+  title: "The Secret Map",
+  text: "On Sunday, Dan was bored. It was raining, so he could not play football outside. He went up to the attic and opened his grandpa's old wooden box.\n\nInside the box, Dan found a small compass and a map. The map had a red X and a message: \"Ten steps north of the garden gate.\"\n\nDan took the compass and ran outside, even in the rain. He stood at the gate and walked ten steps north. Then he stopped under the old oak tree and dug in the wet ground with his hands. After a few minutes, he found a metal tin.\n\nDan opened the tin. Inside there was a photo of Grandpa and a note: \"Dear Dan, a good explorer is brave and kind. Now it is your turn. Love, Grandpa.\" Dan smiled. He put the note in his pocket and went inside to show his mom.",
+  image: "",
+};
+
+export const SECRET_MAP_ITEMS = [
+  // easy (9)
+  ST("choice", "What was the weather like on Sunday?", ["sunny", "rainy", "windy"], 1),
+  ST("choice", "How did Dan feel at the start of the story?", ["bored", "hungry", "scared"], 0),
+  GR("choice", "Dan ___ up to the attic.", ["go", "goes", "went"], 2),
+  ST("choice", "Whose wooden box was it?", ["his teacher's", "his grandpa's", "his mom's"], 1),
+  ST("choice", "What did Dan find in the box?", ["a ball and a map", "a key and a photo", "a compass and a map"], 2),
+  GR("choice", "Dan ___ a small compass.", ["found", "find", "finding"], 0),
+  ST("choice", "What color was the X on the map?", ["blue", "black", "red"], 2),
+  GR("choice", "It ___ raining on Sunday.", ["is", "was", "were"], 1),
+  ST("open", "Where did Dan go first? Say the place.", ["", "", ""], 0, "To the attic."),
+  // average (6)
+  ST("choice", "Which way did Dan walk from the gate?", ["south", "north", "east"], 1),
+  GR("choice", "Dan ___ ten steps north.", ["walk", "walking", "walked"], 2),
+  ST("choice", "Where did Dan find the tin?", ["under the oak tree", "in the attic", "in the kitchen"], 0),
+  GR("open", "Fix the sentence: \"Dan finded a metal tin.\"", ["", "", ""], 0, "\"Dan found a metal tin.\""),
+  ST("choice", "What was inside the tin?", ["a compass and a ball", "a photo and a note", "money and a key"], 1),
+  RE("What did Dan do after he found the map? Tell me in your own words.", "He took the compass, ran outside, walked ten steps north from the gate and dug under the oak tree."),
+  // difficult (5)
+  ST("choice", "Why did Dan go up to the attic?", ["He was bored and could not play outside", "He wanted to hide", "His mom told him to"], 0),
+  GR("choice", "When Dan ___ the tin, he saw a photo.", ["opens", "opening", "opened"], 2),
+  ST("open", "What did Grandpa want to say in his note? Say it in your own words.", ["", "", ""], 0, "He said a good explorer is brave and kind, and now it was Dan's turn."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Dan was bored, so he opened the box in the attic. Then he found a map and a compass. After that he walked ten steps north and dug under the oak tree. Finally he found a tin with a photo and a note from Grandpa."),
+  ST("open", "Would you like to find a secret map like Dan? Where would it take you? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would follow it to a cave. I like adventures.\""),
+];
+
 // Opens the game in a popup, like the Wheel and the lesson players.
 // `start` (1, 2 or 3) skips the setup screen and opens the board at that level.
 export function openLetterBoard(id, start) {
