@@ -89,6 +89,14 @@ export const CUSTOM_LESSONS = [
     desc: "Two informative texts the student has never seen (how weather warnings work, why we forget), one page per question, with the right answer and a short explanation after every check.",
   },
   {
+    slug: "the-tell-tale-heart",
+    popup: [1200, 780],
+    title: "The Tell-Tale Heart",
+    tag: "Reading",
+    level: "A2 to B1 · Teens",
+    desc: "A 25-minute mystery lesson on Poe's story: vocabulary, a four-scene retelling, detective case files, a debate and a new ending.",
+  },
+  {
     slug: "e8-task-7-short-texts",
     popup: [1200, 780],
     title: "E8 Task 7: Short Texts",

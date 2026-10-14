@@ -115,6 +115,7 @@ import UnseenReadingPart1Lesson from './UnseenReadingPart1Lesson.jsx'
 import UnseenReadingPart2Lesson from './UnseenReadingPart2Lesson.jsx'
 import UnseenReadingPart3Lesson from './UnseenReadingPart3Lesson.jsx'
 import UnseenReadingPart4Lesson from './UnseenReadingPart4Lesson.jsx'
+import TellTaleHeartLesson from './TellTaleHeartLesson.jsx'
 import E8Task8Lesson from './E8Task8Lesson.jsx'
 import E8Task9Lesson from './E8Task9Lesson.jsx'
 import E8Task10Lesson from './E8Task10Lesson.jsx'
@@ -426,6 +427,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/unseen-reading-part-2" element={<CustomLessonGate slug="unseen-reading-part-2"><UnseenReadingPart2Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/unseen-reading-part-3" element={<CustomLessonGate slug="unseen-reading-part-3"><UnseenReadingPart3Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/unseen-reading-part-4" element={<CustomLessonGate slug="unseen-reading-part-4"><UnseenReadingPart4Lesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/the-tell-tale-heart" element={<CustomLessonGate slug="the-tell-tale-heart"><TellTaleHeartLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-7-short-texts" element={<CustomLessonGate slug="e8-task-7-short-texts"><E8Task7Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-8-missing-sentences" element={<CustomLessonGate slug="e8-task-8-missing-sentences"><E8Task8Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-9-match-the-text" element={<CustomLessonGate slug="e8-task-9-match-the-text"><E8Task9Lesson /></CustomLessonGate>} />
