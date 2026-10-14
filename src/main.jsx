@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { SHOW_LETTER_BOARD } from './featureFlags.js'
 import './migrateStorage.js'
 import './index.css'
 import Library from './Library.jsx'
@@ -647,8 +648,8 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/shift/:trackId" element={<LibraryPageShell><ShiftTrack /></LibraryPageShell>} />
             <Route path="/library/shift/:trackId/:lessonNum" element={<Shift />} />
             <Route path="/library/shift/:trackId/:lessonNum/guide" element={<ShiftGuide />} />
-            <Route path="/library/letter-board" element={<LibraryPageShell><LetterBoardHub /></LibraryPageShell>} />
-            <Route path="/library/letter-board/play/:id" element={<LetterBoardPlay />} />
+            <Route path="/library/letter-board" element={SHOW_LETTER_BOARD ? <LibraryPageShell><LetterBoardHub /></LibraryPageShell> : <Navigate to="/library" replace />} />
+            <Route path="/library/letter-board/play/:id" element={SHOW_LETTER_BOARD ? <LetterBoardPlay /> : <Navigate to="/library" replace />} />
             <Route path="/library/spark" element={<Library />} />
             <Route path="/library/spark/teens/:lessonId" element={<IgniteLesson track="spark-teens" />} />
             <Route path="/library/spark/adults/:lessonId" element={<IgniteLesson track="spark-adults" />} />

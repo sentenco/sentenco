@@ -1,4 +1,5 @@
 import { CUSTOM_LESSONS, openCustomLessonPopup } from "./customLessonsRegistry";
+import { SHOW_LETTER_BOARD } from "./featureFlags.js";
 import useCustomLessonAccess from "./useCustomLessonAccess";
 import React, { useState, useEffect, useRef } from "react";
 import { SUPPORT_EMAIL } from "./siteConfig.js";
@@ -1994,11 +1995,15 @@ export default function Library() {
           <div className="gc-nav-divider" />
 
           <div className="gc-editions">
-            <a href="/library/letter-board" className="gc-ed-spark">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.6" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.6" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.6" /></svg>
-              Letter Board
-            </a>
-            <span className="gc-editions-sep" />
+            {SHOW_LETTER_BOARD && (
+              <>
+              <a href="/library/letter-board" className="gc-ed-spark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.6" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.6" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.6" /></svg>
+                Letter Board
+              </a>
+              <span className="gc-editions-sep" />
+              </>
+            )}
             <a href="/library/spark" className={`gc-ed-spark ${isSpark ? "is-active" : ""}`}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
               Spark Class
