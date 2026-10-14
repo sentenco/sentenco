@@ -1,15 +1,27 @@
 import React, { useContext } from "react";
 import { UnseenPlayer, UCover } from "./unseenKit.jsx";
 import { ScoreCtx, useStore, LETTERS } from "./e8Kit.jsx";
-import { RoomScene, EyeScene, DoorScene, BoardsScene, HeartScene, EyeIcon, TapeIcon, HeartIcon, WeightIcon, BubbleIcon, BadgeIcon } from "./tthArt.jsx";
 
-// The Tell-Tale Heart (Edgar Allan Poe, 1843): a 25-minute mystery lesson, one-to-one, teacher-led.
-// Teens 12 to 17, A2 to B1. Six steps: mystery, vocabulary, story (four scenes), detective cases, debate, new ending.
-// The story below is our own simplified retelling. Violence stays off the page.
+// The Tell-Tale Heart (adapted for ESL): a mystery lesson, one-to-one, teacher-led. Teens 12 to 17, A2 to B1.
+// Order: the eerie question, today's line, vocabulary, vocabulary check, the adapted story (four scenes),
+// probing questions, "is he really insane?", follow-up questions, the end.
+// The story text is the teacher's own adapted version, word for word. Pictures are the teacher's too: put a file path in PICS
+// (for example "/curriculum/tell-tale-heart/scene-1.jpg") and it appears; an empty string shows no picture.
 
-const STEP = (n, name, min) => `Step ${n} · ${name} · ${min} min`;
+const PICS = {
+  eerie: "",
+  eye: "",
+  night: "",
+  police: "",
+  sound: "",
+};
 
-/* ---------------------------- Step 1: the mystery begins ---------------------------- */
+function Pic({ src, tall }) {
+  if (!src) return null;
+  return <div className={`tt-art ${tall ? "tt-art--tall" : ""}`}><img src={src} alt="" /></div>;
+}
+
+/* ---------------------------- 1. the eerie question ---------------------------- */
 
 const CHOICES = [
   { label: "Investigate", text: "You kneel and press your ear to the boards. Thump... thump... It is louder now. The sound is coming from right under your hands." },
@@ -21,8 +33,8 @@ function Mystery() {
   const [pick, setPick] = useStore("mys", null);
   return (
     <div className="tt-mystery">
-      <div className="tt-art tt-art--room"><RoomScene /></div>
-      <p className="tt-big">Imagine you hear a heartbeat coming from underneath your floor. What would you do?</p>
+      <Pic src={PICS.eerie} tall />
+      <p className="tt-eerie">Imagine you hear a heartbeat coming from underneath your floor. What would you do?</p>
       <div className="tt-choices">
         {CHOICES.map((c, i) => (
           <button key={c.label} type="button" className={`tt-choice ${pick === i ? "is-on" : ""}`} onClick={() => setPick(i)}>{c.label}</button>
@@ -40,91 +52,52 @@ function Mystery() {
   );
 }
 
-const DQ = ["Would you investigate or run away?", "Can fear make us imagine things?", "Can someone hide a terrible secret forever?"];
+/* ---------------------------- 2. today's line ---------------------------- */
 
-function Discuss() {
-  const [done, setDone] = useStore("dq", [false, false, false]);
-  const toggle = (i) => setDone((d) => d.map((v, k) => (k === i ? !v : v)));
+function TodayLine() {
   return (
-    <div className="tt-discuss">
-      <span className="un-eyebrow">Talk about it</span>
-      <h2 className="un-h2">Three questions before we start</h2>
-      <div className="tt-dq-list">
-        {DQ.map((q, i) => (
-          <button key={q} type="button" className={`tt-dq ${done[i] ? "is-done" : ""}`} onClick={() => toggle(i)} aria-pressed={done[i]}>
-            <span className="tt-dq-n">{done[i] ? "✓" : i + 1}</span>
-            <span>{q}</span>
-          </button>
-        ))}
-      </div>
-      <button type="button" className="tt-link" onClick={() => setDone([false, false, false])}>Reset</button>
+    <div className="tt-today">
+      <p>Today, we're going to read about a man who hears something very strange.</p>
     </div>
   );
 }
 
-function Intro() {
-  return (
-    <div className="tt-intro">
-      <EyeIcon size={110} />
-      <span className="un-eyebrow">Tonight&rsquo;s story</span>
-      <h2 className="tt-intro-title">The Tell-Tale Heart</h2>
-      <p className="tt-by">by Edgar Allan Poe, 1843</p>
-      <p className="tt-tease">A narrator. An old man. A pale-blue eye. And a sound that will not stop.</p>
-      <p className="tt-tease2">Read carefully. You are the detective.</p>
-    </div>
-  );
-}
-
-/* ---------------------------- Step 2: unlock the vocabulary ---------------------------- */
+/* ---------------------------- 3. vocabulary and the check ---------------------------- */
 
 const WORDS = [
-  { w: "obsessed", Icon: EyeIcon, def: "Thinking about one thing all the time, and not able to stop.", ex: "The narrator was obsessed with the old man’s eye.", q: "If you are obsessed with a game, do you think about it a little or a lot?", a: "A lot. You think about it all the time." },
-  { w: "murder", Icon: TapeIcon, def: "Killing a person on purpose. A crime.", ex: "The detective is working on a murder case.", q: "Is a murder an accident, or is it on purpose?", a: "It is on purpose. An accident is not a murder." },
-  { w: "heartbeat", Icon: HeartIcon, def: "The movement and sound of your heart: boom, boom, boom.", ex: "After running up the stairs, I could feel my heartbeat.", q: "When does your heartbeat get faster? Give one example.", a: "For example: when I run, or when I am scared or nervous." },
-  { w: "guilt", Icon: WeightIcon, def: "The bad feeling you have when you know you did something wrong.", ex: "She felt guilt after she broke her friend’s phone.", q: "Do you feel guilt after a good thing or after a bad thing?", a: "After a bad thing, something you did wrong." },
-  { w: "confess", Icon: BubbleIcon, def: "To tell the truth about something bad that you did.", ex: "He confessed that he took the money.", q: "Who do people sometimes confess to? Name one person.", a: "For example: the police, a teacher, a parent, a friend." },
+  { w: "Obsessed", m: "Unable to stop thinking about something" },
+  { w: "Murder", m: "To kill someone intentionally" },
+  { w: "Heartbeat", m: "The sound or movement of a beating heart" },
+  { w: "Guilt", m: "Feeling bad about something wrong you did" },
+  { w: "Confess", m: "To admit doing something wrong" },
 ];
 
-function WordCards() {
-  const [sel, setSel] = useStore("wc-sel", 0);
-  const [shown, setShown] = useStore("wc-ans", {});
-  const w = WORDS[sel];
+function VocabTable() {
   return (
-    <div className="tt-words">
-      <div className="tt-wcards">
-        {WORDS.map((x, i) => (
-          <button key={x.w} type="button" className={`tt-wcard ${sel === i ? "is-sel" : ""}`} onClick={() => setSel(i)}>
-            <span className="tt-wicon"><x.Icon size={44} /></span>
-            <b>{x.w}</b>
-          </button>
+    <div className="tt-vocab">
+      <span className="un-eyebrow">Before we read</span>
+      <h2 className="un-h2">Vocabulary to fully understand the story</h2>
+      <div className="tt-vtable" role="table" aria-label="Vocabulary">
+        <div className="tt-vrow tt-vrow--head" role="row"><span role="columnheader">Word</span><span role="columnheader">Simple meaning</span></div>
+        {WORDS.map((x) => (
+          <div key={x.w} className="tt-vrow" role="row"><b role="cell">{x.w}</b><span role="cell">{x.m}</span></div>
         ))}
       </div>
-      <div className="tt-wdetail">
-        <div className="tt-wdetail-icon"><w.Icon size={84} /></div>
-        <div className="tt-wdetail-text">
-          <h2>{w.w}</h2>
-          <p className="tt-def">{w.def}</p>
-          <p className="tt-ex">&ldquo;{w.ex}&rdquo;</p>
-          <div className="tt-wq">
-            <b>{w.q}</b>
-            {shown[w.w] ? <span className="tt-wa">{w.a}</span> : <button type="button" className="tt-btn tt-btn--small" onClick={() => setShown((s) => ({ ...s, [w.w]: true }))}>Show a sample answer</button>}
-          </div>
-        </div>
-      </div>
-      <button type="button" className="tt-link" onClick={() => { setShown({}); setSel(0); }}>Reset the cards</button>
     </div>
   );
 }
 
 const VQ = [
-  { q: "Tom is ___ with chess. He plays it all day and all night.", options: ["obsessed", "heartbeat", "confess"], correct: 0, why: "Obsessed means thinking about one thing all the time." },
-  { q: "She felt ___ after she broke her friend’s phone.", options: ["guilt", "murder", "heartbeat"], correct: 0, why: "Guilt is the bad feeling after you do something wrong." },
-  { q: "He felt so bad that he decided to ___ the truth.", options: ["obsessed", "confess", "murder"], correct: 1, why: "To confess is to tell the truth about something bad you did." },
+  { q: "Tom thinks about chess all day and cannot stop. He is ___ with chess.", options: ["obsessed", "heartbeat", "confess"], correct: 0, why: "Obsessed means unable to stop thinking about something." },
+  { q: "Which word means “to kill someone intentionally”?", options: ["guilt", "murder", "confess"], correct: 1, why: "Murder means to kill someone intentionally." },
+  { q: "You put your hand on your chest and feel a steady beat. What are you feeling?", options: ["your heartbeat", "your guilt", "your murder"], correct: 0, why: "A heartbeat is the sound or movement of a beating heart." },
+  { q: "She broke her friend’s phone, and she feels bad about it. What is that feeling?", options: ["obsessed", "heartbeat", "guilt"], correct: 2, why: "Guilt is feeling bad about something wrong you did." },
+  { q: "He told his teacher, “I did it. It was me.” He decided to ___.", options: ["confess", "murder", "obsess"], correct: 0, why: "To confess is to admit doing something wrong." },
 ];
 
 function VocabChallenge() {
   const { report } = useContext(ScoreCtx);
-  const [st, setSt] = useStore("vq", { i: 0, picks: [null, null, null] });
+  const [st, setSt] = useStore("vq", { i: 0, picks: VQ.map(() => null) });
   const i = st.i;
   if (i >= VQ.length) {
     const got = st.picks.filter((p, k) => p === VQ[k].correct).length;
@@ -132,7 +105,7 @@ function VocabChallenge() {
       <div className="tt-quiz tt-quiz--done">
         <div className="tt-bigscore"><span>{got}</span><small>out of {VQ.length}</small></div>
         <p className="tt-big">{got === VQ.length ? "All five words unlocked." : "Good work. Look at the words again if you need to."}</p>
-        <button type="button" className="tt-btn" onClick={() => setSt({ i: 0, picks: [null, null, null] })}>Try the challenge again</button>
+        <button type="button" className="tt-btn" onClick={() => setSt({ i: 0, picks: VQ.map(() => null) })}>Try the check again</button>
       </div>
     );
   }
@@ -174,19 +147,19 @@ function VocabChallenge() {
   );
 }
 
-/* ---------------------------- Step 3: read and discover ---------------------------- */
+/* ---------------------------- 4. the story ---------------------------- */
 
 // The reading text is the teacher's exact adapted story. Only the grouping into scenes and lines is ours; no wording is changed.
 const SCENES = {
   eye: {
-    kicker: "Scene 1 of 4", title: "The Eye", art: <EyeScene />,
+    kicker: "Adapted story · Scene 1 of 4", title: "The Eye", pic: PICS.eye,
     lines: [
       "A man lived with an old man.",
       "He liked the old man, but he hated one thing about him: his strange, pale-blue eye.",
     ],
   },
   night: {
-    kicker: "Scene 2 of 4", title: "The Night", art: <DoorScene />,
+    kicker: "Adapted story · Scene 2 of 4", title: "The Night", pic: PICS.night,
     lines: [
       "Every night, the narrator secretly watched the old man while he slept.",
       "One night, the old man woke up.",
@@ -195,7 +168,7 @@ const SCENES = {
     ],
   },
   police: {
-    kicker: "Scene 3 of 4", title: "The Police", art: <BoardsScene />,
+    kicker: "Adapted story · Scene 3 of 4", title: "The Police", pic: PICS.police,
     lines: [
       "Later, the police arrived because a neighbor had heard a scream.",
       "The narrator smiled and invited them inside.",
@@ -204,7 +177,7 @@ const SCENES = {
     ],
   },
   sound: {
-    kicker: "Scene 4 of 4", title: "The Sound", art: <HeartScene />, beat: true,
+    kicker: "Adapted story · Scene 4 of 4", title: "The Sound", pic: PICS.sound, beat: true,
     lines: [
       "Thump... thump... thump...",
       "It sounded like a heartbeat. The sound grew louder and louder.",
@@ -220,10 +193,13 @@ function Scene({ id }) {
   const [n, setN] = useStore("sc-" + id, 1);
   const done = n >= sc.lines.length;
   return (
-    <div className={`tt-scene ${sc.beat ? "is-beat" : ""}`}>
-      <div className="tt-art tt-art--wide">{sc.art}</div>
+    <div className={`tt-scene ${sc.beat ? "is-beat" : ""} ${sc.pic ? "has-pic" : ""}`}>
+      <Pic src={sc.pic} />
       <div className="tt-textcard">
-        <div className="tt-texthead"><span className="un-eyebrow">{sc.kicker}</span><h2>{sc.title}</h2></div>
+        <div className="tt-texthead">
+          <span className="un-eyebrow">{sc.kicker}</span>
+          <h2>{sc.title}</h2>
+        </div>
         <div className="tt-lines">
           {sc.lines.slice(0, n).map((l, k) => <p key={k} className={`${k === n - 1 && n > 1 ? "is-new" : ""} ${l.startsWith("Thump") ? "is-thump" : ""}`}>{l}</p>)}
         </div>
@@ -236,72 +212,33 @@ function Scene({ id }) {
           ) : <span className="tt-end">End of the scene. Press Next.</span>}
           {n > 1 && <button type="button" className="tt-link tt-push" onClick={() => setN(1)}>Start the scene again</button>}
         </div>
+        <small className="tt-credit">Adapted for ESL instruction; not Poe&rsquo;s original text.</small>
       </div>
     </div>
   );
 }
 
-// One question between scenes. correct = null means it is a prediction (no right answer).
-function ReadQ({ id, kicker, q, options, correct, explain }) {
-  const { report } = useContext(ScoreCtx);
-  const [picked, setPicked] = useStore("rq-" + id, null);
-  const checked = picked !== null;
-  const isPrediction = correct === null;
-  const pick = (k) => {
-    if (checked) return;
-    setPicked(k);
-    if (!isPrediction) report("rq-" + id, k === correct);
-  };
-  return (
-    <div className="tt-quiz">
-      <span className="un-eyebrow">{kicker}</span>
-      <p className="tt-qtext">{q}</p>
-      <div className="tt-opts">
-        {options.map((o, k) => {
-          let cls = "";
-          if (checked) cls = isPrediction ? (k === picked ? "is-pred" : "is-dim") : k === correct ? "is-correct" : k === picked ? "is-wrong" : "is-dim";
-          return (
-            <button key={o} type="button" className={`tt-opt ${cls}`} disabled={checked} onClick={() => pick(k)}>
-              <span className="tt-opt-letter">{LETTERS[k]}</span><span>{o}</span>
-            </button>
-          );
-        })}
-      </div>
-      <div className="tt-qfoot">
-        {checked && (
-          <>
-            <div className={`tt-why ${isPrediction ? "is-pred" : picked === correct ? "is-ok" : "is-bad"}`}>
-              {isPrediction ? <><b>Good thinking.</b> {explain}</> : <><b>{picked === correct ? "Correct." : `The answer is ${LETTERS[correct]}.`}</b> {explain}</>}
-            </div>
-            <button type="button" className="tt-link" onClick={() => setPicked(null)}>Try again</button>
-          </>
-        )}
-      </div>
-    </div>
-  );
-}
-
-/* ---------------------------- Step 4: detective challenge ---------------------------- */
+/* ---------------------------- 5. probing questions ---------------------------- */
 
 const CASES = [
   {
-    id: "cf-1", title: "The Motive", Clue: EyeIcon, clue: "Clue: a pale-blue eye",
+    id: "cf-1", title: "The Motive",
     q: "Why did the narrator kill the old man?",
     options: ["He wanted the old man’s money.", "He hated the old man’s strange, pale-blue eye.", "The old man was cruel to him."],
     correct: 1,
     explain: "The text says he liked the old man, but he hated one thing about him: his strange, pale-blue eye. Nothing says the old man took anything or was cruel. The eye was the reason, and that is what makes the story so strange.",
   },
   {
-    id: "cf-2", title: "The Confession", Clue: BadgeIcon, clue: "Clue: three policemen",
+    id: "cf-2", title: "The Confession",
     q: "Why did the narrator suddenly confess?",
     options: ["The police found the body under the floor.", "He heard the sound and thought the police could hear it too.", "The old man’s family arrived at the house."],
     correct: 1,
     explain: "He believed the police would never discover his secret. Then the sound grew louder and louder, he became terrified, and he thought they could hear it too. Nobody found the body: he told them himself.",
   },
   {
-    id: "cf-3", title: "The Heartbeat", Clue: HeartIcon, clue: "Clue: a sound only he can hear",
+    id: "cf-3", title: "The Heartbeat",
     q: "What might the heartbeat symbolize?",
-    options: ["The old man is still alive.", "The narrator’s guilt, which he cannot escape.", "The sound of the clock in the room."],
+    options: ["The old man is still alive.", "The narrator’s guilt, which he cannot escape.", "The sound of a clock in the room."],
     correct: 1,
     explain: "The story ends by asking whether the heartbeat was real or only in his mind. Many readers think it shows the narrator’s guilt: a feeling he cannot escape, and it grows louder and louder.",
   },
@@ -315,16 +252,15 @@ function CaseFile({ c, n }) {
   return (
     <div className="tt-case">
       <aside className="tt-folder">
-        <span className="tt-tab">Case file {n}</span>
-        <div className="tt-clue"><c.Clue size={92} /></div>
+        <span className="tt-tab">Question {n}</span>
         <b>{c.title}</b>
-        <small>{c.clue}</small>
+        <small>Think, then choose</small>
       </aside>
       <div className="tt-casemain">
-        <div className="tt-progress" aria-label={`Case ${n} of ${CASES.length}`}>
+        <div className="tt-progress" aria-label={`Question ${n} of ${CASES.length}`}>
           {CASES.map((x, k) => {
             const r = results[x.id];
-            return <span key={x.id} className={`tt-chip ${k === n - 1 ? "is-now" : ""} ${r === true ? "is-ok" : r === false ? "is-bad" : ""}`}>Case {k + 1}{r === true ? " ✓" : r === false ? " ✗" : ""}</span>;
+            return <span key={x.id} className={`tt-chip ${k === n - 1 ? "is-now" : ""} ${r === true ? "is-ok" : r === false ? "is-bad" : ""}`}>Question {k + 1}{r === true ? " ✓" : r === false ? " ✗" : ""}</span>;
           })}
         </div>
         <p className="tt-qtext">{c.q}</p>
@@ -342,8 +278,8 @@ function CaseFile({ c, n }) {
         <div className="tt-qfoot">
           {checked && (
             <>
-              <div className={`tt-why ${picked === c.correct ? "is-ok" : "is-bad"}`}><b>{picked === c.correct ? "Case solved." : `The answer is ${LETTERS[c.correct]}.`}</b> {c.explain}</div>
-              <button type="button" className="tt-link" onClick={() => setPicked(null)}>Try this case again</button>
+              <div className={`tt-why ${picked === c.correct ? "is-ok" : "is-bad"}`}><b>{picked === c.correct ? "That is right." : `The answer is ${LETTERS[c.correct]}.`}</b> {c.explain}</div>
+              <button type="button" className="tt-link" onClick={() => setPicked(null)}>Try this question again</button>
             </>
           )}
         </div>
@@ -352,12 +288,12 @@ function CaseFile({ c, n }) {
   );
 }
 
-/* ---------------------------- Step 5: is he really insane? ---------------------------- */
+/* ---------------------------- 6. is he really insane? and follow-up ---------------------------- */
 
 const POSITIONS = [
-  { k: "unwell", label: "He was mentally unwell.", hint: "Evidence you could use: he hated one small thing, the eye, so much that he killed for it, and the sound may have been only in his mind." },
+  { k: "disturbed", label: "He was mentally disturbed.", hint: "Evidence you could use: he hated one small thing, the eye, so much that he killed for it, and the sound may have been only in his mind." },
   { k: "guilt", label: "He was overwhelmed by guilt.", hint: "Evidence you could use: he smiled and felt safe, but the sound grew louder and louder, and he shouted the truth." },
-  { k: "both", label: "It could be both.", hint: "Evidence you could use: a person can be unwell and also feel guilty. One idea does not cancel the other." },
+  { k: "both", label: "I'm not sure. It could be both.", hint: "Evidence you could use: a person can be troubled and also feel guilty. One idea does not cancel the other." },
 ];
 const STARTERS = ["I believe the narrator was... because...", "One piece of evidence is...", "In my opinion...", "I disagree because..."];
 
@@ -365,7 +301,7 @@ function Debate() {
   const [pos, setPos] = useStore("deb", null);
   return (
     <div className="tt-debate">
-      <p className="tt-big">Was the narrator mentally unwell, or was he overwhelmed by guilt?</p>
+      <p className="tt-big">Was the narrator mentally disturbed, or was he simply overwhelmed by guilt?</p>
       <div className="tt-pos">
         {POSITIONS.map((p, i) => (
           <button key={p.k} type="button" className={`tt-posbtn ${pos === i ? "is-on" : ""}`} onClick={() => setPos(pos === i ? null : i)} aria-pressed={pos === i}>{p.label}</button>
@@ -381,7 +317,11 @@ function Debate() {
   );
 }
 
-const FQ = ["Can guilt affect how we think and behave?", "Was the heartbeat real or imaginary?", "Do you think the police already suspected him?"];
+const FQ = [
+  "Can guilt make someone hear or imagine things?",
+  "Do you think the police already suspected him?",
+  "Would he have confessed if he had not heard the heartbeat?",
+];
 
 function FollowUp() {
   const [done, setDone] = useStore("fq", [false, false, false]);
@@ -389,7 +329,7 @@ function FollowUp() {
   return (
     <div className="tt-discuss">
       <span className="un-eyebrow">Keep talking</span>
-      <h2 className="un-h2">Three more questions</h2>
+      <h2 className="un-h2">Follow-up questions</h2>
       <div className="tt-dq-list">
         {FQ.map((q, i) => (
           <button key={q} type="button" className={`tt-dq ${done[i] ? "is-done" : ""}`} onClick={() => toggle(i)} aria-pressed={done[i]}>
@@ -402,52 +342,20 @@ function FollowUp() {
   );
 }
 
-/* ---------------------------- Step 6: rewrite the ending ---------------------------- */
-
-const SCENARIOS = [
-  { label: "What if the police heard the heartbeat too?", open: "The policemen stopped talking. They looked at the floor. They could hear it too..." },
-  { label: "What if the narrator never confessed?", open: "The narrator took a deep breath, smiled and stayed silent. The sound was still there..." },
-  { label: "What if the old man was still alive?", open: "The wooden floor began to creak. Someone was moving underneath..." },
-];
-const END_STARTERS = ["Suddenly...", "The police discovered...", "The narrator realized...", "In the end..."];
-
-function Rewrite() {
-  const [sc, setSc] = useStore("rw", null);
-  return (
-    <div className="tt-debate">
-      <span className="un-eyebrow">You are Edgar Allan Poe</span>
-      <p className="tt-big">Change the ending of the story. Choose one idea and tell it out loud.</p>
-      <div className="tt-pos tt-pos--stack">
-        {SCENARIOS.map((s, i) => (
-          <button key={s.label} type="button" className={`tt-posbtn ${sc === i ? "is-on" : ""}`} onClick={() => setSc(sc === i ? null : i)} aria-pressed={sc === i}>{s.label}</button>
-        ))}
-      </div>
-      <div className="tt-debatebox">
-        {sc === null ? <span className="tt-hint">Choose a scenario to get your first line.</span> : <p className="tt-hintp"><b>Start with:</b> {SCENARIOS[sc].open}</p>}
-        <div className="tt-starters">
-          {END_STARTERS.map((s) => <span key={s} className="tt-starter">{s}</span>)}
-        </div>
-      </div>
-    </div>
-  );
-}
+/* ---------------------------- 7. the end ---------------------------- */
 
 function TheEnd() {
   const { results } = useContext(ScoreCtx);
   const sum = (ids) => ids.filter((id) => results[id] === true).length;
-  const vq = sum(["vq-1", "vq-2", "vq-3"]);
-  const cf = sum(["cf-1", "cf-2", "cf-3"]);
+  const vq = sum(VQ.map((_, i) => `vq-${i + 1}`));
+  const cf = sum(CASES.map((c) => c.id));
   return (
     <div className="tt-end-card">
-      <div className="tt-endbadge" aria-hidden="true"><HeartIcon size={44} /></div>
+      <div className="tt-endbadge" aria-hidden="true">{"✓"}</div>
       <h2 className="tt-end-h">You finished The Tell-Tale Heart</h2>
-      <div className="tt-reflect">
-        <span className="un-eyebrow">One last question</span>
-        <p>What do you think is the most frightening part of the story?</p>
-      </div>
       <div className="tt-scores">
-        <div><small>Vocabulary challenge</small><b>{vq}/3</b></div>
-        <div><small>Detective cases solved</small><b>{cf}/3</b></div>
+        <div><small>Vocabulary check</small><b>{vq}/{VQ.length}</b></div>
+        <div><small>Probing questions</small><b>{cf}/{CASES.length}</b></div>
       </div>
     </div>
   );
@@ -458,102 +366,77 @@ function TheEnd() {
 const SLIDES = [
   {
     stage: "A mystery lesson", title: true,
-    note: "25 minutes, one-to-one. The student does most of the thinking and speaking. Step times are in the label at the top. Click Teacher guide on any page for a short tip. Nothing in the lesson needs the internet except the fonts.",
+    note: "One-to-one. The student does most of the thinking and speaking. Click Teacher guide on any page for a short tip. Nothing needs the internet except the fonts.",
     body: <UCover title="The Tell-Tale Heart" module="A MYSTERY LESSON" />,
   },
   {
-    stage: STEP(1, "The Mystery Begins", 3),
-    note: "Read the question aloud and pause. Let the student pick. Read the short reply together, then ask: why did you choose that? About 1 minute.",
+    stage: "The Eerie Question",
+    note: "Read the question aloud and pause. Let the student pick, read the short reply together, then ask: why did you choose that?",
     body: <Mystery />,
   },
   {
-    stage: STEP(1, "The Mystery Begins", 3),
-    note: "Ask the three questions in order. Tap a question to tick it off. Accept short answers and ask for one reason. Do not correct grammar here. About 1 minute.",
-    body: <Discuss />,
+    stage: "Today’s Story",
+    note: "Read it slowly and quietly, like a trailer. Ask: what do you think the strange thing is? Then move on.",
+    body: <TodayLine />,
   },
   {
-    stage: STEP(1, "The Mystery Begins", 3),
-    note: "Read it slowly and quietly, like a trailer. Ask: what do you think will happen? Then move on. About 30 seconds.",
-    body: <Intro />,
+    stage: "Vocabulary",
+    note: "Read each word and its simple meaning together. Ask the student to say the word back. The next page checks all five.",
+    body: <VocabTable />,
   },
   {
-    stage: STEP(2, "Unlock the Vocabulary", 4),
-    note: "Tap each word. Read the meaning, then the example, then ask the question. Show the sample answer only after the student has tried. About 2 minutes for five words.",
-    body: <WordCards />,
-  },
-  {
-    stage: STEP(2, "Unlock the Vocabulary", 4),
-    note: "Three quick questions. The student chooses, you read the feedback together. About 1.5 minutes. Use Try again if you have time.",
+    stage: "Vocabulary Check",
+    note: "Five quick questions, one for each word. The student chooses, you read the feedback together. Use Try again if there is time.",
     body: <VocabChallenge />,
   },
   {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "The reading text is the exact adapted story. Let the student read each line aloud as it appears. Help with pronunciation only. About 1 minute per scene.",
+    stage: "The Story · Scene 1 of 4",
+    note: "The reading text is the exact adapted story. Let the student read each line aloud as it appears. Help with pronunciation only.",
     body: <Scene id="eye" />,
   },
   {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "A quick check. Ask the student to find the sentence that proves the answer.",
-    body: <ReadQ id="1" kicker="Check" q="What does the man hate about the old man?" options={["His money.", "His pale-blue eye.", "His loud voice."]} correct={1} explain="The text says he liked the old man, but he hated one thing about him: his strange, pale-blue eye." />,
-  },
-  {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "Read it with a quieter voice. The scene shows a door a little open at night and a covered lantern. Ask: why is he watching in secret?",
+    stage: "The Story · Scene 2 of 4",
+    note: "Read with a quieter voice. If the student asks about the killing, say: we will talk about why in a moment.",
     body: <Scene id="night" />,
   },
   {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "There is no wrong answer. Ask why. Then read on to check the prediction.",
-    body: <ReadQ id="2" kicker="Predict" q="The body is under the floor. What do you think will happen next?" options={["Nobody will ever find out.", "The police will come to the house.", "The old man will come back."]} correct={null} explain="Say why you think so, then read on to check your idea." />,
-  },
-  {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "The story is told calmly and without detail. If the student asks about the killing, say: we will talk about why in the detective step. Stop at \"But suddenly, he heard a sound\" and ask: what sound?",
+    stage: "The Story · Scene 3 of 4",
+    note: "Stop at \"But suddenly, he heard a sound\" and ask: what sound? Then go on to the last scene.",
     body: <Scene id="police" />,
   },
   {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "Ask the student to find the sentence that gives the reason.",
-    body: <ReadQ id="3" kicker="Check" q="Why did the police come to the house?" options={["The old man had called them.", "A neighbor heard a scream.", "The narrator asked them to come."]} correct={1} explain="The text says the police arrived because a neighbor had heard a scream. The narrator did not call them." />,
-  },
-  {
-    stage: STEP(3, "Read and Discover", 5),
-    note: "Read the last scene a little faster as the sound grows. The heart in the picture beats on its own. End on the last question and leave a pause before moving on.",
+    stage: "The Story · Scene 4 of 4",
+    note: "Read a little faster as the sound grows. The card pulses like a heartbeat. End on the last question and leave a pause.",
     body: <Scene id="sound" />,
   },
   {
-    stage: STEP(4, "Detective Challenge", 5),
-    note: "Let the student choose, then read the explanation together. Ask them to point to the line in the story. About 1.5 minutes per case.",
+    stage: "Probing Questions",
+    note: "Let the student choose, then read the explanation together. Ask them to point to the line in the story.",
     body: <CaseFile c={CASES[0]} n={1} />,
   },
   {
-    stage: STEP(4, "Detective Challenge", 5),
+    stage: "Probing Questions",
     note: "Ask: did the police know? What made him break?",
     body: <CaseFile c={CASES[1]} n={2} />,
   },
   {
-    stage: STEP(4, "Detective Challenge", 5),
-    note: "This case introduces the idea of guilt. After the answer, ask the student to use the word guilt in a sentence.",
+    stage: "Probing Questions",
+    note: "This question introduces the idea of guilt. After the answer, ask the student to use the word guilt in a sentence.",
     body: <CaseFile c={CASES[2]} n={3} />,
   },
   {
-    stage: STEP(5, "Is He Really Insane?", 4),
-    note: "Be neutral. All three positions are fine if the student gives a reason. Use the sentence starters. Remember that mental illness does not make people violent. We are only discussing a character in a story. About 2.5 minutes.",
+    stage: "Is He Really Insane?",
+    note: "Be neutral. All three positions are fine if the student gives a reason. Use the sentence starters. Remember that mental illness does not make people violent: we are only discussing a character in a story.",
     body: <Debate />,
   },
   {
-    stage: STEP(5, "Is He Really Insane?", 4),
-    note: "Pick one or two questions if time is short. Tap to tick them off.",
+    stage: "Follow-Up Questions",
+    note: "Pick one or two questions if time is short. Tap a question to tick it off.",
     body: <FollowUp />,
   },
   {
-    stage: STEP(6, "Rewrite the Ending", 4),
-    note: "The student chooses an idea and tells the new ending out loud for about a minute. Give the first line if they need it. Let them speak, then ask one follow-up question. About 3.5 minutes.",
-    body: <Rewrite />,
-  },
-  {
     stage: "The End",
-    note: "Ask the final question and listen. Give feedback on one thing they did well. The scores show the vocabulary challenge and the detective cases.",
+    note: "Give feedback on one thing the student did well. The scores show the vocabulary check and the probing questions.",
     body: <TheEnd />,
   },
 ];
@@ -561,32 +444,15 @@ const SLIDES = [
 export const LESSON_GUIDE = SLIDES.map((s) => ({ stage: s.stage, time: null, note: s.note }));
 
 const EXTRA_CSS = `
-.tt-art { border-radius: 16px; overflow: hidden; background: #0E1830; box-shadow: 0 8px 20px rgba(27,42,74,0.25); width: 100%; }
-.tt-art--room { height: 168px; }
-.tt-art--wide { height: 156px; }
-.tt-svg { display: block; width: 100%; height: 100%; }
+.tt-art { border-radius: 16px; overflow: hidden; background: #0E1830; box-shadow: 0 8px 20px rgba(27,42,74,0.25); width: 100%; height: 150px; }
+.tt-art--tall { height: 190px; }
+.tt-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-.tt-beat { transform-box: fill-box; transform-origin: center; animation: tthBeat 1.3s ease-in-out infinite; }
-.tt-glow { animation: tthGlow 1.3s ease-in-out infinite; }
-.tt-ripple { transform-box: fill-box; transform-origin: center; opacity: 0; animation: tthRip 1.3s ease-out infinite; }
-.tt-ripple--2 { animation-delay: 0.45s; }
-.tt-ripple-c { transform-box: fill-box; transform-origin: center; opacity: 0; animation: tthRipC 1.3s ease-out infinite; }
-.tt-ripple-c--2 { animation-delay: 0.45s; }
-.tt-flame { transform-box: fill-box; transform-origin: 50% 100%; animation: tthFlame 1.6s ease-in-out infinite alternate; }
-.tt-vignette { animation: tthVig 1.3s ease-in-out infinite; }
-@keyframes tthBeat { 0%,100% { transform: scale(1); } 12% { transform: scale(1.18); } 24% { transform: scale(1); } 36% { transform: scale(1.12); } 48% { transform: scale(1); } }
-@keyframes tthGlow { 0%,100% { opacity: .55; } 12% { opacity: 1; } 36% { opacity: .85; } }
-@keyframes tthRip { 0% { transform: scale(.4); opacity: .8; } 100% { transform: scale(2.6); opacity: 0; } }
-@keyframes tthRipC { 0% { transform: scale(.9); opacity: .8; } 100% { transform: scale(2.6); opacity: 0; } }
-@keyframes tthFlame { from { transform: scale(1,1) rotate(-2deg); } to { transform: scale(.88,1.14) rotate(2deg); } }
-@keyframes tthVig { 0%,100% { opacity: .55; } 12% { opacity: 1; } 36% { opacity: .8; } }
-@keyframes tthCard { 0%,100% { box-shadow: 0 0 0 0 rgba(255,107,74,0); } 12% { box-shadow: 0 0 0 6px rgba(255,107,74,0.28); } 36% { box-shadow: 0 0 0 3px rgba(255,107,74,0.18); } }
+@keyframes tthCard { 0%,100% { box-shadow: 0 0 0 0 rgba(255,107,74,0); } 12% { box-shadow: 0 0 0 7px rgba(255,107,74,0.30); } 36% { box-shadow: 0 0 0 3px rgba(255,107,74,0.18); } }
 @keyframes tthFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .tt-beat, .tt-glow, .tt-ripple, .tt-ripple-c, .tt-flame, .tt-vignette, .tt-scene.is-beat .tt-textcard, .tt-lines p.is-new { animation: none; }
-}
+@media (prefers-reduced-motion: reduce) { .tt-scene.is-beat .tt-textcard, .tt-lines p.is-new { animation: none; } }
 
-.tt-big { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 25px; line-height: 1.3; color: #1B2A4A; text-align: center; text-wrap: balance; }
+.tt-big { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.3; color: #1B2A4A; text-align: center; text-wrap: balance; }
 .tt-hint { font-size: 14.5px; font-weight: 700; color: #6B7899; }
 .tt-link { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #6B7899; background: none; border: none; text-decoration: underline; cursor: pointer; padding: 4px 6px; }
 .tt-link:hover { color: #1B2A4A; }
@@ -594,43 +460,32 @@ const EXTRA_CSS = `
 .tt-btn { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 14.5px; background: #1B2A4A; color: #fff; border: none; border-radius: 12px; padding: 11px 24px; cursor: pointer; }
 .tt-btn--small { font-size: 13px; padding: 8px 18px; border-radius: 999px; background: #FF6B4A; }
 
-.tt-mystery { width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.tt-mystery { width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.tt-eerie { margin: 0; width: 100%; background: #1B2A4A; color: #FEF6E6; border-radius: 22px; padding: 30px 40px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 31px; line-height: 1.3; text-align: center; text-wrap: balance; box-shadow: 0 10px 24px rgba(27,42,74,0.28); }
 .tt-choices { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.tt-choice { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #1B2A4A; background: #fff; border: 2px solid #DCE2F0; border-radius: 14px; padding: 9px 26px; cursor: pointer; }
+.tt-choice { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; color: #1B2A4A; background: #fff; border: 2px solid #DCE2F0; border-radius: 14px; padding: 9px 28px; cursor: pointer; }
 .tt-choice:hover { border-color: #9AA6C4; }
-.tt-choice.is-on { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
-.tt-reveal-box { width: 100%; min-height: 84px; background: #1B2A4A; border-radius: 16px; padding: 14px 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; }
-.tt-reveal-box p { margin: 0; color: #FEF6E6; font-size: 16.5px; font-weight: 600; line-height: 1.5; animation: tthFade .35s ease; }
-.tt-reveal-box .tt-hint { color: #B7C2DE; }
-.tt-reveal-box .tt-link { color: #FFD36E; }
+.tt-choice.is-on { background: #FF6B4A; border-color: #FF6B4A; color: #fff; }
+.tt-reveal-box { width: 100%; min-height: 92px; background: rgba(255,255,255,0.95); border: 1px solid #EBDFD0; border-radius: 16px; padding: 14px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; }
+.tt-reveal-box p { margin: 0; color: #1B2A4A; font-size: 17px; font-weight: 600; line-height: 1.5; animation: tthFade .35s ease; }
+
+.tt-today { width: 100%; max-width: 760px; background: #1B2A4A; border-radius: 24px; padding: 48px 56px; text-align: center; box-shadow: 0 10px 24px rgba(27,42,74,0.3); }
+.tt-today p { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 38px; line-height: 1.3; color: #FEF6E6; text-wrap: balance; }
+
+.tt-vocab { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.tt-vtable { width: 100%; display: flex; flex-direction: column; gap: 9px; margin-top: 6px; }
+.tt-vrow { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: center; gap: 18px; background: rgba(255,255,255,0.95); border: 1px solid #EBDFD0; border-radius: 16px; padding: 12px 22px; }
+.tt-vrow b { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; color: #1B2A4A; line-height: 1.1; }
+.tt-vrow span { font-size: 18px; font-weight: 700; color: #33415E; line-height: 1.35; }
+.tt-vrow--head { background: #1B2A4A; border-color: #1B2A4A; padding: 8px 22px; }
+.tt-vrow--head span { font-size: 12.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #FFD36E; }
 
 .tt-discuss { width: 100%; max-width: 760px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .tt-dq-list { width: 100%; display: flex; flex-direction: column; gap: 12px; margin: 6px 0 2px; }
-.tt-dq { display: flex; align-items: center; gap: 16px; text-align: left; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 21px; color: #1B2A4A; background: rgba(255,255,255,0.94); border: 2px solid #DCE2F0; border-radius: 18px; padding: 15px 22px; cursor: pointer; }
+.tt-dq { display: flex; align-items: center; gap: 16px; text-align: left; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 22px; color: #1B2A4A; background: rgba(255,255,255,0.94); border: 2px solid #DCE2F0; border-radius: 18px; padding: 16px 22px; cursor: pointer; }
 .tt-dq.is-done { background: #E3F6F2; border-color: #A8E6DF; }
 .tt-dq-n { flex: none; width: 36px; height: 36px; border-radius: 50%; background: #1B2A4A; color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
 .tt-dq.is-done .tt-dq-n { background: #1F9D8A; }
-
-.tt-intro { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; background: #1B2A4A; border-radius: 22px; padding: 26px 56px 28px; max-width: 700px; box-shadow: 0 10px 24px rgba(27,42,74,0.3); }
-.tt-intro .un-eyebrow { color: #FFD36E; margin-top: 8px; }
-.tt-intro-title { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 46px; line-height: 1.1; color: #FEF6E6; }
-.tt-by { margin: 0; color: #B7C2DE; font-weight: 700; font-size: 15px; }
-.tt-tease { margin: 10px 0 0; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 21px; line-height: 1.4; color: #FEF6E6; }
-.tt-tease2 { margin: 0; color: #FFD36E; font-weight: 700; font-size: 16px; }
-
-.tt-words { width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.tt-wcards { width: 100%; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-.tt-wcard { display: flex; flex-direction: column; align-items: center; gap: 4px; background: #fff; border: 2px solid #DCE2F0; border-radius: 16px; padding: 10px 6px 9px; cursor: pointer; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: #1B2A4A; }
-.tt-wicon { height: 34px; display: grid; place-items: center; }
-.tt-wcard.is-sel { border-color: #FF6B4A; background: #FFF1EC; box-shadow: 0 0 0 3px rgba(255,107,74,0.15); }
-.tt-wdetail { width: 100%; display: flex; gap: 22px; align-items: center; background: rgba(255,255,255,0.94); border: 1px solid #EBDFD0; border-radius: 20px; padding: 16px 24px; }
-.tt-wdetail-icon { flex: none; width: 112px; height: 112px; border-radius: 22px; background: #F1F3F8; display: grid; place-items: center; }
-.tt-wdetail-text h2 { margin: 0 0 4px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 32px; color: #1B2A4A; line-height: 1.1; }
-.tt-def { margin: 0 0 6px; font-size: 17px; font-weight: 700; color: #33415E; }
-.tt-ex { margin: 0 0 10px; font-size: 15.5px; font-weight: 600; font-style: italic; color: #6B7899; }
-.tt-wq { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: #FFF6E5; border-radius: 12px; padding: 10px 14px; }
-.tt-wq b { font-size: 15px; color: #1B2A4A; }
-.tt-wa { font-size: 14.5px; font-weight: 700; color: #1F7A6C; }
 
 .tt-quiz { width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 14px; }
 .tt-quiz--done { align-items: center; text-align: center; gap: 16px; }
@@ -650,42 +505,41 @@ const EXTRA_CSS = `
 .tt-opt-letter { flex: none; width: 28px; height: 28px; border-radius: 50%; background: #E4E9F5; color: #1B2A4A; font-weight: 800; font-size: 13px; display: grid; place-items: center; }
 .tt-opt.is-correct { background: #1F9D8A; border-color: #1F9D8A; color: #fff; }
 .tt-opt.is-wrong { background: #E5484D; border-color: #E5484D; color: #fff; }
-.tt-opt.is-pred { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
-.tt-opt.is-correct .tt-opt-letter, .tt-opt.is-wrong .tt-opt-letter, .tt-opt.is-pred .tt-opt-letter { background: rgba(255,255,255,.28); color: #fff; }
+.tt-opt.is-correct .tt-opt-letter, .tt-opt.is-wrong .tt-opt-letter { background: rgba(255,255,255,.28); color: #fff; }
 .tt-opt.is-dim { opacity: .5; }
 .tt-qfoot { min-height: 76px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 .tt-why { width: 100%; border-radius: 14px; padding: 11px 16px; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B2A4A; }
 .tt-why.is-ok { background: #E6F8F5; border: 1px solid #A8E6DF; }
 .tt-why.is-bad { background: #FDECEC; border: 1px solid #F5B8BA; }
-.tt-why.is-pred { background: #EEF1FA; border: 1px solid #C9D2EC; }
 .tt-bigscore { display: flex; align-items: baseline; gap: 10px; background: #1B2A4A; color: #fff; border-radius: 22px; padding: 10px 34px; }
 .tt-bigscore span { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; }
 .tt-bigscore small { font-size: 16px; font-weight: 700; opacity: .75; }
 
-.tt-scene { width: 100%; max-width: 880px; display: flex; flex-direction: column; gap: 10px; }
-.tt-textcard { background: rgba(255,255,255,0.95); border: 1px solid #EBDFD0; border-radius: 18px; padding: 12px 24px 10px; display: flex; flex-direction: column; gap: 6px; }
+.tt-scene { width: 100%; max-width: 880px; display: flex; flex-direction: column; gap: 12px; }
+.tt-textcard { background: rgba(255,255,255,0.96); border: 1px solid #EBDFD0; border-radius: 20px; padding: 18px 30px 12px; display: flex; flex-direction: column; gap: 8px; }
 .tt-scene.is-beat .tt-textcard { animation: tthCard 1.3s ease-in-out infinite; }
-.tt-texthead { display: flex; align-items: baseline; gap: 12px; }
-.tt-texthead h2 { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #1B2A4A; line-height: 1.1; }
-.tt-lines p { margin: 0 0 8px; text-align: justify; text-justify: inter-word; font-size: 19px; font-weight: 600; line-height: 1.5; color: #2F3C5A; }
+.tt-texthead { display: flex; align-items: baseline; gap: 14px; }
+.tt-texthead h2 { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; color: #1B2A4A; line-height: 1.1; }
+.tt-lines { min-height: 150px; }
+.tt-lines p { margin: 0 0 10px; text-align: justify; text-justify: inter-word; font-size: 22px; font-weight: 600; line-height: 1.5; color: #2F3C5A; }
+.tt-scene.has-pic .tt-lines { min-height: 0; }
+.tt-scene.has-pic .tt-lines p { font-size: 19px; margin-bottom: 8px; }
 .tt-lines p.is-new { animation: tthFade .45s ease; }
-.tt-lines p.is-thump { font-style: italic; text-align: center; font-size: 22px; letter-spacing: .02em; color: #B5381D; }
+.tt-lines p.is-thump { font-style: italic; text-align: center; font-size: 26px; letter-spacing: .02em; color: #B5381D; }
 .tt-textfoot { display: flex; align-items: center; gap: 12px; min-height: 36px; }
 .tt-end { font-size: 13px; font-weight: 800; color: #1F7A6C; }
+.tt-credit { font-size: 11.5px; font-weight: 700; color: #8892AC; }
 
-.tt-case { width: 100%; max-width: 880px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 22px; align-items: stretch; }
+.tt-case { width: 100%; max-width: 880px; display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 22px; align-items: stretch; }
 .tt-folder { position: relative; background: #1B2A4A; border-radius: 6px 18px 18px 18px; padding: 34px 14px 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 6px; box-shadow: 0 10px 22px rgba(27,42,74,0.25); }
 .tt-tab { position: absolute; top: -14px; left: 0; background: #FFD36E; color: #1B2A4A; font-weight: 800; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 14px; border-radius: 10px 10px 0 0; }
-.tt-clue { width: 130px; height: 110px; border-radius: 14px; background: #FEF6E6; display: grid; place-items: center; }
-.tt-folder b { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: #FEF6E6; }
+.tt-folder b { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15; color: #FEF6E6; }
 .tt-folder small { font-size: 12.5px; font-weight: 700; color: #B7C2DE; }
 .tt-casemain { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 
-.tt-debate { width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.tt-debate { width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .tt-pos { width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.tt-pos--stack { grid-template-columns: 1fr; gap: 9px; }
-.tt-posbtn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.25; color: #1B2A4A; background: #fff; border: 2px solid #DCE2F0; border-radius: 16px; padding: 14px 16px; cursor: pointer; text-align: center; }
-.tt-pos--stack .tt-posbtn { text-align: left; padding: 11px 20px; }
+.tt-posbtn { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25; color: #1B2A4A; background: #fff; border: 2px solid #DCE2F0; border-radius: 16px; padding: 16px 16px; cursor: pointer; text-align: center; }
 .tt-posbtn:hover { border-color: #9AA6C4; }
 .tt-posbtn.is-on { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
 .tt-debatebox { width: 100%; background: #FFF6E5; border: 1px dashed #F2A900; border-radius: 16px; padding: 14px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
@@ -693,16 +547,13 @@ const EXTRA_CSS = `
 .tt-starters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .tt-starter { font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 16px; color: #1B2A4A; background: #fff; border-radius: 999px; padding: 6px 16px; box-shadow: 0 1px 0 #EBDFD0; }
 
-.tt-end-card { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; max-width: 720px; }
-.tt-endbadge { width: 72px; height: 72px; border-radius: 50%; background: #1B2A4A; display: grid; place-items: center; box-shadow: 0 8px 20px rgba(27,42,74,0.3); }
-.tt-end-h { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 38px; line-height: 1.15; color: #1B2A4A; text-align: center; }
-.tt-reflect { background: #1B2A4A; border-radius: 18px; padding: 14px 30px; text-align: center; }
-.tt-reflect .un-eyebrow { color: #FFD36E; }
-.tt-reflect p { margin: 4px 0 0; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 23px; line-height: 1.3; color: #FEF6E6; }
+.tt-end-card { display: flex; flex-direction: column; align-items: center; gap: 18px; width: 100%; max-width: 720px; }
+.tt-endbadge { width: 76px; height: 76px; border-radius: 50%; background: #1F9D8A; color: #fff; font-size: 40px; font-weight: 800; display: grid; place-items: center; box-shadow: 0 8px 20px rgba(31,157,138,0.35); }
+.tt-end-h { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.15; color: #1B2A4A; text-align: center; }
 .tt-scores { display: flex; gap: 14px; }
-.tt-scores div { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.92); border: 1px solid #EBDFD0; border-radius: 14px; padding: 10px 26px; }
+.tt-scores div { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.92); border: 1px solid #EBDFD0; border-radius: 14px; padding: 10px 30px; }
 .tt-scores small { font-size: 12px; font-weight: 800; color: #B5381D; }
-.tt-scores b { font-family: 'Baloo 2', sans-serif; font-size: 26px; color: #1B2A4A; }
+.tt-scores b { font-family: 'Baloo 2', sans-serif; font-size: 28px; color: #1B2A4A; }
 `;
 
 export default function TellTaleHeartLesson() {
