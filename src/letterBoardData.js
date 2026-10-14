@@ -207,11 +207,11 @@ export const SAMPLE_STORY_ITEMS = [
   ST("open", "What will Mia do next? What would you do if your pet was lost?", ["", "", ""], 0, "Any sensible idea with a reason, for example: \"I would look everywhere and ask my family.\""),
 ];
 
-// ---- story set: "The Secret Map" (an adventure for a 10-year-old boy, level A2, simple past, no pictures yet) ----
+// ---- story set: "The Secret Map" (an adventure for a 10-year-old boy, level A2, simple past, one cover picture) ----
 export const SECRET_MAP_STORY = {
   title: "The Secret Map",
   text: "On Sunday, Dan was bored. It was raining, so he could not play football outside. He went up to the attic and opened his grandpa's old wooden box.\n\nInside the box, Dan found a small compass and a map. The map had a red X and a message: \"Ten steps north of the garden gate.\"\n\nDan took the compass and ran outside, even in the rain. He stood at the gate and walked ten steps north. Then he stopped under the old oak tree and dug in the wet ground with his hands. After a few minutes, he found a metal tin.\n\nDan opened the tin. Inside there was a photo of Grandpa and a note: \"Dear Dan, a good explorer is brave and kind. Now it is your turn. Love, Grandpa.\" Dan smiled. He put the note in his pocket and went inside to show his mom.",
-  image: "",
+  image: "/curriculum/letter-board/secret-map-cover.jpg",
 };
 
 export const SECRET_MAP_ITEMS = [
