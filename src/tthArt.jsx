@@ -93,10 +93,10 @@ export function EyeScene() {
   );
 }
 
-// Scene 2: a door a little open at midnight, a thin line of lantern light, and seven marks for seven nights.
+// Scene 2: a door a little open at night and a thin line of lantern light.
 export function DoorScene() {
   return (
-    <svg className="tt-svg" viewBox="0 0 900 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A door slightly open at night with a thin line of lantern light and seven marks on the wall">
+    <svg className="tt-svg" viewBox="0 0 900 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A door slightly open at night with a thin line of lantern light">
       <defs>
         <linearGradient id="dr-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={DEEP} /><stop offset="1" stopColor="#24356A" /></linearGradient>
         <radialGradient id="dr-lamp"><stop offset="0" stopColor={GOLD} stopOpacity=".6" /><stop offset="1" stopColor={GOLD} stopOpacity="0" /></radialGradient>
@@ -115,14 +115,12 @@ export function DoorScene() {
       <circle cx="440" cy="88" r="5" fill={GOLD} />
       <polygon points="456,146 466,146 530,170 436,170" fill={GOLD} opacity=".45" />
       <Floor y={146} h={24} />
-      {/* seven nights */}
-      {Array.from({ length: 7 }).map((_, i) => <line key={i} x1={640 + i * 20} y1="52" x2={640 + i * 20} y2="108" stroke={GOLD} strokeWidth="4" strokeLinecap="round" opacity=".9" />)}
       <circle cx="790" cy="28" r="13" fill={GOLD} /><circle cx="796" cy="24" r="11" fill="#17224A" />
     </svg>
   );
 }
 
-// Scene 3: a clock at four o'clock, three chairs, and three floorboards a little lighter than the rest.
+// Scene 3: a quiet room late at night with a clock, two chairs and a few lighter floorboards.
 function Chair({ x, y }) {
   return (
     <g transform={`translate(${x} ${y})`} fill={DEEP} stroke="#2F4070" strokeWidth="1.5">
@@ -134,7 +132,7 @@ function Chair({ x, y }) {
 }
 export function BoardsScene() {
   return (
-    <svg className="tt-svg" viewBox="0 0 900 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A clock at four o'clock, three chairs and three lighter floorboards">
+    <svg className="tt-svg" viewBox="0 0 900 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A clock, two chairs and a few lighter floorboards in a quiet room">
       <defs><linearGradient id="bd-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={DEEP} /><stop offset="1" stopColor="#22335C" /></linearGradient></defs>
       <rect width="900" height="170" fill="url(#bd-bg)" />
       {/* clock at 4:00 */}
@@ -152,9 +150,8 @@ export function BoardsScene() {
       <rect x="402" y="112" width="96" height="58" fill="#6A4B34" />
       <line x1="434" y1="112" x2="434" y2="170" stroke={WOOD_DARK} strokeWidth="2" /><line x1="466" y1="112" x2="466" y2="170" stroke={WOOD_DARK} strokeWidth="2" />
       {[[412, 118], [444, 164], [476, 118]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r="2" fill={WOOD_DARK} />)}
-      <Chair x={300} y={64} />
-      <Chair x={436} y={58} />
-      <Chair x={572} y={64} />
+      <Chair x={330} y={64} />
+      <Chair x={540} y={64} />
       {/* a door with a thin line of light: someone is knocking */}
       <rect x="720" y="22" width="106" height="124" fill="#0A1228" stroke={WOOD} strokeWidth="6" />
       <rect x="742" y="30" width="62" height="116" fill="#4A3322" />

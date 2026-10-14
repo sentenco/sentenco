@@ -69,7 +69,7 @@ function Intro() {
       <span className="un-eyebrow">Tonight&rsquo;s story</span>
       <h2 className="tt-intro-title">The Tell-Tale Heart</h2>
       <p className="tt-by">by Edgar Allan Poe, 1843</p>
-      <p className="tt-tease">A narrator. An old man. A pale blue eye. And a sound that will not stop.</p>
+      <p className="tt-tease">A narrator. An old man. A pale-blue eye. And a sound that will not stop.</p>
       <p className="tt-tease2">Read carefully. You are the detective.</p>
     </div>
   );
@@ -176,41 +176,41 @@ function VocabChallenge() {
 
 /* ---------------------------- Step 3: read and discover ---------------------------- */
 
+// The reading text is the teacher's exact adapted story. Only the grouping into scenes and lines is ours; no wording is changed.
 const SCENES = {
   eye: {
     kicker: "Scene 1 of 4", title: "The Eye", art: <EyeScene />,
     lines: [
-      "Why do you say I am mad? I am not mad! My mind is clear, and my hearing is very sharp. Listen, and I will tell you the whole story calmly.",
-      "There was an old man who lived in my house. I loved him. He never hurt me, and I did not want his money.",
-      "But he had one pale blue eye, with a thin cloud over it. Every time that eye looked at me, my blood ran cold.",
-      "I became obsessed with it. I thought about it all day and all night. Slowly, I made a terrible decision: I had to get rid of the eye.",
+      "A man lived with an old man.",
+      "He liked the old man, but he hated one thing about him: his strange, pale-blue eye.",
     ],
   },
-  nights: {
-    kicker: "Scene 2 of 4", title: "Seven Nights", art: <DoorScene />,
+  night: {
+    kicker: "Scene 2 of 4", title: "The Night", art: <DoorScene />,
     lines: [
-      "Every night, at exactly midnight, I went to the old man’s room.",
-      "I opened the door very, very slowly. I carried a small lantern with a cloth over it, so only one thin line of light came out.",
-      "I stood there and watched him sleep. But every night, his eye was closed. I could not do it, because the eye was the problem, not the man.",
-      "In the morning, I spoke to him kindly. “How did you sleep, my friend?” I asked. He never imagined what I was thinking.",
+      "Every night, the narrator secretly watched the old man while he slept.",
+      "One night, the old man woke up.",
+      "The narrator became frightened and angry.",
+      "He killed the old man and hid his body under the wooden floor.",
     ],
   },
-  eighth: {
-    kicker: "Scene 3 of 4", title: "The Eighth Night", art: <BoardsScene />,
+  police: {
+    kicker: "Scene 3 of 4", title: "The Police", art: <BoardsScene />,
     lines: [
-      "On the eighth night, my finger touched the lantern and it made a small noise. The old man sat up in bed. “Who is there?” he cried.",
-      "I stood still in the dark for an hour. Then I heard a heartbeat. Boom, boom, boom! The old man’s heart was getting louder and louder.",
-      "I opened the lantern. The pale blue eye was open, looking straight at me. I could not stand it. In a few minutes, it was over, and the heartbeat stopped. Then I hid the body under three boards in the floor.",
-      "At four o’clock, three policemen knocked. A neighbor had heard a scream. I smiled. “It was my bad dream,” I said. “The old man is away.” I put my chair right on top of the hidden boards.",
+      "Later, the police arrived because a neighbor had heard a scream.",
+      "The narrator smiled and invited them inside.",
+      "He believed they would never discover his secret.",
+      "But suddenly, he heard a sound.",
     ],
   },
   sound: {
     kicker: "Scene 4 of 4", title: "The Sound", art: <HeartScene />, beat: true,
     lines: [
-      "We sat and talked. I was calm and friendly. But slowly, my head began to hurt, and I heard a low sound in my ears.",
-      "It was a soft, quick beat, like a watch wrapped in cotton. Boom, boom, boom. It grew louder and louder. I talked faster, and louder, but the sound grew louder too.",
-      "Why did the policemen not stop smiling? Could they not hear it? They knew! They were laughing at me!",
-      "I could not bear it any more. “Stop pretending!” I shouted. “Yes, I did it! Tear up the boards! Here, here! It is the beating of his terrible heart!”",
+      "Thump... thump... thump...",
+      "It sounded like a heartbeat. The sound grew louder and louder.",
+      "The narrator became terrified. He thought the police could hear it too.",
+      "Finally, he shouted, \"I killed him! His body is under the floor!\"",
+      "But was the heartbeat real, or was it only in his mind?",
     ],
   },
 };
@@ -225,7 +225,7 @@ function Scene({ id }) {
       <div className="tt-textcard">
         <div className="tt-texthead"><span className="un-eyebrow">{sc.kicker}</span><h2>{sc.title}</h2></div>
         <div className="tt-lines">
-          {sc.lines.slice(0, n).map((l, k) => <p key={k} className={k === n - 1 && n > 1 ? "is-new" : ""}>{l}</p>)}
+          {sc.lines.slice(0, n).map((l, k) => <p key={k} className={`${k === n - 1 && n > 1 ? "is-new" : ""} ${l.startsWith("Thump") ? "is-thump" : ""}`}>{l}</p>)}
         </div>
         <div className="tt-textfoot">
           {!done ? (
@@ -285,25 +285,25 @@ function ReadQ({ id, kicker, q, options, correct, explain }) {
 
 const CASES = [
   {
-    id: "cf-1", title: "The Motive", Clue: EyeIcon, clue: "Clue: a pale blue eye",
+    id: "cf-1", title: "The Motive", Clue: EyeIcon, clue: "Clue: a pale-blue eye",
     q: "Why did the narrator kill the old man?",
-    options: ["He wanted the old man’s money.", "He could not stand the old man’s pale blue eye.", "The old man was cruel to him."],
+    options: ["He wanted the old man’s money.", "He hated the old man’s strange, pale-blue eye.", "The old man was cruel to him."],
     correct: 1,
-    explain: "The narrator says he loved the old man and did not want his money. The old man never hurt him. The eye was the only reason, and that is what makes him so strange.",
+    explain: "The text says he liked the old man, but he hated one thing about him: his strange, pale-blue eye. Nothing says the old man took anything or was cruel. The eye was the reason, and that is what makes the story so strange.",
   },
   {
     id: "cf-2", title: "The Confession", Clue: BadgeIcon, clue: "Clue: three policemen",
     q: "Why did the narrator suddenly confess?",
-    options: ["The police found the body under the floor.", "He could not bear the sound, and he believed the police could hear it too.", "The old man’s family arrived at the house."],
+    options: ["The police found the body under the floor.", "He heard the sound and thought the police could hear it too.", "The old man’s family arrived at the house."],
     correct: 1,
-    explain: "The police suspected nothing. They sat and smiled. The narrator broke down because of the sound in his head, and he was sure they could hear it.",
+    explain: "He believed the police would never discover his secret. Then the sound grew louder and louder, he became terrified, and he thought they could hear it too. Nobody found the body: he told them himself.",
   },
   {
     id: "cf-3", title: "The Heartbeat", Clue: HeartIcon, clue: "Clue: a sound only he can hear",
     q: "What might the heartbeat symbolize?",
     options: ["The old man is still alive.", "The narrator’s guilt, which he cannot escape.", "The sound of the clock in the room."],
     correct: 1,
-    explain: "Many readers think the heartbeat is the narrator’s own guilt. The policemen never hear it. Only the narrator does, and it gets louder the more he tries to hide what he did.",
+    explain: "The story ends by asking whether the heartbeat was real or only in his mind. Many readers think it shows the narrator’s guilt: a feeling he cannot escape, and it grows louder and louder.",
   },
 ];
 
@@ -355,8 +355,8 @@ function CaseFile({ c, n }) {
 /* ---------------------------- Step 5: is he really insane? ---------------------------- */
 
 const POSITIONS = [
-  { k: "unwell", label: "He was mentally unwell.", hint: "Evidence you could use: he says “I am not mad” again and again, he is obsessed with an eye, and he hears a sound nobody else hears." },
-  { k: "guilt", label: "He was overwhelmed by guilt.", hint: "Evidence you could use: he stays calm until he sits on top of the hidden body, and the sound grows louder as his fear grows." },
+  { k: "unwell", label: "He was mentally unwell.", hint: "Evidence you could use: he hated one small thing, the eye, so much that he killed for it, and the sound may have been only in his mind." },
+  { k: "guilt", label: "He was overwhelmed by guilt.", hint: "Evidence you could use: he smiled and felt safe, but the sound grew louder and louder, and he shouted the truth." },
   { k: "both", label: "It could be both.", hint: "Evidence you could use: a person can be unwell and also feel guilty. One idea does not cancel the other." },
 ];
 const STARTERS = ["I believe the narrator was... because...", "One piece of evidence is...", "In my opinion...", "I disagree because..."];
@@ -407,7 +407,7 @@ function FollowUp() {
 const SCENARIOS = [
   { label: "What if the police heard the heartbeat too?", open: "The policemen stopped talking. They looked at the floor. They could hear it too..." },
   { label: "What if the narrator never confessed?", open: "The narrator took a deep breath, smiled and stayed silent. The sound was still there..." },
-  { label: "What if the old man was still alive?", open: "The boards began to move. Someone was pushing from underneath..." },
+  { label: "What if the old man was still alive?", open: "The wooden floor began to creak. Someone was moving underneath..." },
 ];
 const END_STARTERS = ["Suddenly...", "The police discovered...", "The narrator realized...", "In the end..."];
 
@@ -488,37 +488,37 @@ const SLIDES = [
   },
   {
     stage: STEP(3, "Read and Discover", 5),
-    note: "Let the student read each line aloud as it appears. Help with pronunciation only. About 1 minute per scene.",
+    note: "The reading text is the exact adapted story. Let the student read each line aloud as it appears. Help with pronunciation only. About 1 minute per scene.",
     body: <Scene id="eye" />,
   },
   {
     stage: STEP(3, "Read and Discover", 5),
     note: "A quick check. Ask the student to find the sentence that proves the answer.",
-    body: <ReadQ id="1" kicker="Check" q="What does the narrator hate about the old man?" options={["His money.", "His pale blue eye.", "His loud voice."]} correct={1} explain="He says he loved the old man and did not want his money. The pale blue eye is what he cannot stand." />,
+    body: <ReadQ id="1" kicker="Check" q="What does the man hate about the old man?" options={["His money.", "His pale-blue eye.", "His loud voice."]} correct={1} explain="The text says he liked the old man, but he hated one thing about him: his strange, pale-blue eye." />,
   },
   {
     stage: STEP(3, "Read and Discover", 5),
-    note: "Read it with a quieter voice. Count the seven marks on the wall together if you like: one for every night.",
-    body: <Scene id="nights" />,
+    note: "Read it with a quieter voice. The scene shows a door a little open at night and a covered lantern. Ask: why is he watching in secret?",
+    body: <Scene id="night" />,
   },
   {
     stage: STEP(3, "Read and Discover", 5),
     note: "There is no wrong answer. Ask why. Then read on to check the prediction.",
-    body: <ReadQ id="2" kicker="Predict" q="It is the eighth night. What do you think will happen?" options={["He will give up and forget the eye.", "Something will go wrong, and he will act.", "The old man will call the police."]} correct={null} explain="Say why you think so, then read on to check your idea." />,
+    body: <ReadQ id="2" kicker="Predict" q="The body is under the floor. What do you think will happen next?" options={["Nobody will ever find out.", "The police will come to the house.", "The old man will come back."]} correct={null} explain="Say why you think so, then read on to check your idea." />,
   },
   {
     stage: STEP(3, "Read and Discover", 5),
-    note: "The story is told calmly and without detail. If the student asks what happened, say: the narrator killed him, and we will talk about why in the detective step. The clock shows 4 o'clock, when the police arrive.",
-    body: <Scene id="eighth" />,
+    note: "The story is told calmly and without detail. If the student asks about the killing, say: we will talk about why in the detective step. Stop at \"But suddenly, he heard a sound\" and ask: what sound?",
+    body: <Scene id="police" />,
   },
   {
     stage: STEP(3, "Read and Discover", 5),
     note: "Ask the student to find the sentence that gives the reason.",
-    body: <ReadQ id="3" kicker="Check" q="Why did the policemen come to the house?" options={["The old man had called them.", "A neighbor heard a scream.", "The narrator asked them to come."]} correct={1} explain="The text says a neighbor had heard a scream in the night. The narrator did not call them." />,
+    body: <ReadQ id="3" kicker="Check" q="Why did the police come to the house?" options={["The old man had called them.", "A neighbor heard a scream.", "The narrator asked them to come."]} correct={1} explain="The text says the police arrived because a neighbor had heard a scream. The narrator did not call them." />,
   },
   {
     stage: STEP(3, "Read and Discover", 5),
-    note: "Read the last scene a little faster as the sound grows. The heart on the picture beats on its own. Let the student read the last line with feeling.",
+    note: "Read the last scene a little faster as the sound grows. The heart in the picture beats on its own. End on the last question and leave a pause before moving on.",
     body: <Scene id="sound" />,
   },
   {
@@ -563,7 +563,7 @@ export const LESSON_GUIDE = SLIDES.map((s) => ({ stage: s.stage, time: null, not
 const EXTRA_CSS = `
 .tt-art { border-radius: 16px; overflow: hidden; background: #0E1830; box-shadow: 0 8px 20px rgba(27,42,74,0.25); width: 100%; }
 .tt-art--room { height: 168px; }
-.tt-art--wide { height: 118px; }
+.tt-art--wide { height: 156px; }
 .tt-svg { display: block; width: 100%; height: 100%; }
 
 .tt-beat { transform-box: fill-box; transform-origin: center; animation: tthBeat 1.3s ease-in-out infinite; }
@@ -666,9 +666,10 @@ const EXTRA_CSS = `
 .tt-textcard { background: rgba(255,255,255,0.95); border: 1px solid #EBDFD0; border-radius: 18px; padding: 12px 24px 10px; display: flex; flex-direction: column; gap: 6px; }
 .tt-scene.is-beat .tt-textcard { animation: tthCard 1.3s ease-in-out infinite; }
 .tt-texthead { display: flex; align-items: baseline; gap: 12px; }
-.tt-texthead h2 { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 25px; color: #1B2A4A; line-height: 1.1; }
-.tt-lines p { margin: 0 0 6px; text-align: justify; text-justify: inter-word; font-size: 16.5px; font-weight: 600; line-height: 1.5; color: #2F3C5A; }
+.tt-texthead h2 { margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: #1B2A4A; line-height: 1.1; }
+.tt-lines p { margin: 0 0 8px; text-align: justify; text-justify: inter-word; font-size: 19px; font-weight: 600; line-height: 1.5; color: #2F3C5A; }
 .tt-lines p.is-new { animation: tthFade .45s ease; }
+.tt-lines p.is-thump { font-style: italic; text-align: center; font-size: 22px; letter-spacing: .02em; color: #B5381D; }
 .tt-textfoot { display: flex; align-items: center; gap: 12px; min-height: 36px; }
 .tt-end { font-size: 13px; font-weight: 800; color: #1F7A6C; }
 
