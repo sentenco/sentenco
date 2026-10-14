@@ -221,9 +221,9 @@ export const styles = `
 .un-slide.is-title { background-image: url('/curriculum/unseen/title-bg.jpg'); }
 
 /* the Sentenco tab hangs from the top-left corner, the same as the Ignite lessons */
-.un-brand-bubble { position: absolute; top: 0; left: 30px; z-index: 3; display: flex; align-items: center; background: #FFF6EC; border-radius: 0 0 16px 16px; padding: 9px 15px 7px 8px; border-bottom: 4px solid ${CORAL}; box-shadow: 0 6px 12px rgba(10,18,40,0.25); }
-.un-brand-logo { width: 32px; height: 32px; margin: -5px -8px -5px -4px; object-fit: contain; }
-.un-brand-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 14px; color: ${NAVY}; }
+.un-brand-bubble { position: absolute; top: 0; left: 30px; z-index: 3; display: flex; align-items: center; background: #FFF6EC; border-radius: 0 0 20px 20px; padding: 12px 20px 10px 10px; border-bottom: 5px solid ${CORAL}; box-shadow: 0 6px 12px rgba(10,18,40,0.25); }
+.un-brand-logo { width: 48px; height: 48px; margin: -7px -11px -7px -6px; object-fit: contain; }
+.un-brand-word { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 22px; color: ${NAVY}; }
 
 /* header sits on the navy wave at the top of the picture */
 .un-top { position: absolute; top: 12px; left: 0; right: 0; height: 30px; display: flex; align-items: center; justify-content: center; z-index: 3; }
