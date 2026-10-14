@@ -1,15 +1,36 @@
-# Teachers' group chat message (beta invite)
+# Teachers' group chat message (beta invite, with codes)
 
-For the workplace teachers' group chat, after Sir Rhej's permission. Approved wording, 2026-10-14. Notes: no mention of work hours or the community; "free" applies to the beta only; teachers reply privately with their email, then get a personal code or access by email.
+For the workplace teachers' group chat. Sir Rhej agreed (2026-10-15). Final wording agreed 2026-10-15.
+
+Notes:
+- No mention of work hours or the community; "full access is free with a code"; without a code they can still use some features.
+- Ten one-use codes, labelled WORKMATE1 to WORKMATE10 on the Access codes page (BETA-7DRKQB is WORKMATE1, BETA-2YHN9M is WORKMATE10). Codes were read from a screenshot: check them against the Codes list before posting.
+- Each code works for one person; they tell the sender which one they used. The Codes list shows who redeemed each code (email).
+- Includes the email verification step and an offer of a Zoom walkthrough.
+- The older version without codes (people reply with their email) is no longer used.
 
 ```
-Good day, everyone! 😊
+Hi everyone! With Sir Rhej's okay, I'd like to invite you to try Sentenco, a website with ESL teaching materials I made for teachers. 😊
 
-With Sir Rhej's permission, I'd like to invite you to try something I've been building: Sentenco, a website of ESL teaching materials for teachers. It has ready-to-use lessons, grammar and vocabulary activities, stories, and articles.
+Website: sentenco.com
 
-I'm opening a small beta, and you can try it free. It's completely voluntary, and no student information is involved.
+For the beta, full access is free with a code. To use it:
+1. Sign up at sentenco.com.
+2. After signing up, a verification message will be sent to your email. Open it and confirm your email address.
+3. Log in, open the menu (your picture, top right), choose Subscription, and enter one of these codes under "Have a code?":
 
-If you're interested, please message me privately with the email you'd like to use, and I'll send you your free beta access. In return, I'd only ask for your honest feedback, like what worked, what confused you, and what you wish it had. No payment at all.
+BETA-7DRKQB
+BETA-AUPMPH
+BETA-GPMR4L
+BETA-PTYMTD
+BETA-P6XBHG
+BETA-GZR2WC
+BETA-Z6CVAY
+BETA-ZM3JQ8
+BETA-2QYDM9
+BETA-2YHN9M
 
-Thank you, and I hope you'll give it a try! 🙏
+Each code works for one person only, so please pick one and tell me which one you used. If a code doesn't work, try another one.
+
+That gives you 30 days of full access. Without a code, you can still sign up and use some features. If you'd like a walkthrough, I'm happy to set up a Zoom meeting to show you around. All I ask is your honest feedback. No payment at all. Thank you!
 ```
