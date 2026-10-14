@@ -112,6 +112,7 @@ import E8Task5Lesson from './E8Task5Lesson.jsx'
 import E8Task6Lesson from './E8Task6Lesson.jsx'
 import E8Task7Lesson from './E8Task7Lesson.jsx'
 import UnseenReadingLesson from './UnseenReadingLesson.jsx'
+import UnseenReadingPart2Lesson from './UnseenReadingPart2Lesson.jsx'
 import E8Task8Lesson from './E8Task8Lesson.jsx'
 import E8Task9Lesson from './E8Task9Lesson.jsx'
 import E8Task10Lesson from './E8Task10Lesson.jsx'
@@ -420,6 +421,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/e8-task-5-reactions" element={<CustomLessonGate slug="e8-task-5-reactions"><E8Task5Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-6-dialogues" element={<CustomLessonGate slug="e8-task-6-dialogues"><E8Task6Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/unseen-reading-module-8" element={<CustomLessonGate slug="unseen-reading-module-8"><UnseenReadingLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/unseen-reading-part-2" element={<CustomLessonGate slug="unseen-reading-part-2"><UnseenReadingPart2Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-7-short-texts" element={<CustomLessonGate slug="e8-task-7-short-texts"><E8Task7Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-8-missing-sentences" element={<CustomLessonGate slug="e8-task-8-missing-sentences"><E8Task8Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-9-match-the-text" element={<CustomLessonGate slug="e8-task-9-match-the-text"><E8Task9Lesson /></CustomLessonGate>} />
