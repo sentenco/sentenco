@@ -73,6 +73,14 @@ export const CUSTOM_LESSONS = [
     desc: "Two informative texts the student has never seen (urban heat, how GPS works), one page per question, with the right answer and a short explanation after every check.",
   },
   {
+    slug: "unseen-reading-part-3",
+    popup: [1200, 780],
+    title: "Unseen Reading: Part 3",
+    tag: "Reading",
+    level: "B1+ to low B2 · Module E",
+    desc: "Two informative texts the student has never seen (how a vaccine trains the body, microplastics), one page per question, with the right answer and a short explanation after every check.",
+  },
+  {
     slug: "e8-task-7-short-texts",
     popup: [1200, 780],
     title: "E8 Task 7: Short Texts",
