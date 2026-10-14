@@ -259,7 +259,7 @@ export const styles = `
 .un-text { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 900px; }
 .un-text-title { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 34px; color: ${NAVY}; margin: 0 0 4px; text-align: center; }
 .un-text-card { background: rgba(255,255,255,0.9); border: 1px solid #EBDFD0; border-radius: 18px; padding: 22px 32px; width: 100%; }
-.un-text-card p { margin: 0 0 12px; text-align: justify; text-justify: inter-word; font-size: 18.5px; font-weight: 600; line-height: 1.65; color: #2F3C5A; }
+.un-text-card p { margin: 0 0 12px; text-align: justify; text-justify: inter-word; text-indent: 2em; font-size: 18.5px; font-weight: 600; line-height: 1.65; color: #2F3C5A; }
 .un-text-card p:last-child { margin-bottom: 0; }
 
 .un-q { position: relative; width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 14px; }
@@ -290,7 +290,7 @@ export const styles = `
 .un-overlay-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
 .un-overlay-title { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; color: ${NAVY}; }
 .un-overlay-x { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 12.5px; color: #fff; background: ${NAVY}; border: none; border-radius: 999px; padding: 6px 16px; cursor: pointer; }
-.un-overlay-text p { margin: 0 0 10px; text-align: justify; text-justify: inter-word; font-size: 15.5px; font-weight: 600; line-height: 1.6; color: #2F3C5A; }
+.un-overlay-text p { margin: 0 0 10px; text-align: justify; text-justify: inter-word; text-indent: 2em; font-size: 15.5px; font-weight: 600; line-height: 1.6; color: #2F3C5A; }
 .un-overlay-text p:last-child { margin-bottom: 0; }
 .e8-mark { background: #FFE58A; color: inherit; border-radius: 3px; padding: 0 2px; }
 
