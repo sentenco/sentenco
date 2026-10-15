@@ -441,3 +441,10 @@ Subject: Aerial view at dusk of a coastal port with tall cranes loading a bulk s
 Photorealistic editorial photograph for a news magazine article header, 3:2 landscape, warm natural lighting, shallow depth of field, clean uncluttered composition, soft realistic colors with subtle coral and navy accents, natural skin tones, no logos, no brand names, no watermark, no captions, and no readable text or numbers anywhere in the image.
 Subject: On a desk by a rainy window, a stack of gold coins sits protected under a small open umbrella, with a pen and a notebook beside it. Soft gray rain light outside and a warm desk lamp inside. A symbolic still life of caution and risk management. No text.
 ```
+
+### 64 · `planet-born-after-its-star-died` (added 2026-10-16, astronomy article for the user's student)
+
+```text
+Photorealistic editorial photograph for a news magazine article header, 3:2 landscape, warm natural lighting, shallow depth of field, clean uncluttered composition, soft realistic colors with subtle coral and navy accents, natural skin tones, no logos, no brand names, no watermark, no captions, and no readable text or numbers anywhere in the image.
+Subject: A young astronomer in their twenties works late at a tidy desk beside a large window. Through the window is a deep navy night sky full of stars with the Milky Way arching over distant hills. On the desk: a monitor showing only a plain rainbow-colored light spectrum strip with many thin dark vertical lines and a simple unlabeled line graph beneath it (no words, no numbers, no axis labels), a notebook with abstract pencil sketches of circles and curves, and a warm mug. A small desk lamp gives a soft coral glow on the researcher's thoughtful face. Quiet, curious mood.
+```
