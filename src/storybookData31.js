@@ -45,16 +45,16 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "On Monday morning, Mr. Cole walks into class and writes something on the whiteboard that makes my stomach drop: “Final Exam — Two Weeks.”",
-        jumbled: ["Weeks.”", "on", "Mr.", "walks", "—", "Cole", "Two", "stomach", "into", "class", "writes", "drop:", "my", "and", "something", "Exam", "“Final", "Monday", "makes", "whiteboard", "that", "the", "morning,", "On"],
+        target: "On Monday morning, Mr. Cole writes the final exam date on the whiteboard.",
+        jumbled: ["On", "final", "writes", "date", "on", "Monday", "the", "Cole", "exam", "the", "Mr.", "morning,", "whiteboard."],
       },
       {
         target: "A quiet groan spreads across the room, and I feel my chest tighten with sudden panic.",
         jumbled: ["room,", "spreads", "panic.", "and", "chest", "my", "tighten", "sudden", "with", "the", "feel", "across", "A", "quiet", "groan", "I"],
       },
       {
-        target: "“Okay, Maya, just breathe,” I whisper to myself.",
-        jumbled: ["whisper", "breathe,”", "to", "“Okay,", "myself.", "Maya,", "I", "just"],
+        target: "I whisper to myself to stay calm and just breathe.",
+        jumbled: ["just", "and", "whisper", "to", "calm", "stay", "breathe.", "myself", "I", "to"],
       },
       {
         target: "This exam covers three whole months of material, and honestly, I have barely reviewed any of it so far.",
@@ -93,8 +93,8 @@ export const CHAPTERS = [
         jumbled: ["I", "has", "schoolwork.", "organized", "At", "panic", "explain", "about", "than", "my", "who", "lunch,", "much", "Jordan,", "been", "to", "more", "am", "always", "I"],
       },
       {
-        target: "“Let's make a real plan instead of just worrying, Maya,” Jordan suggests calmly, pulling out a notebook.",
-        jumbled: ["out", "Maya,”", "worrying,", "make", "just", "Jordan", "“Let's", "pulling", "a", "of", "a", "calmly,", "real", "plan", "instead", "suggests", "notebook."],
+        target: "For the first time since the announcement, I feel a small spark of hope.",
+        jumbled: ["announcement,", "time", "For", "I", "the", "hope.", "first", "of", "the", "small", "feel", "since", "a", "spark"],
       },
       {
         target: "We divide the fourteen days into sections, deciding which subject we will focus on each afternoon after school.",
@@ -149,8 +149,8 @@ export const CHAPTERS = [
         jumbled: ["An", "read", "entire", "have", "barely", "I", "hour", "and", "two", "pages.", "has", "passed"],
       },
       {
-        target: "“Maybe we should try something different tomorrow, Maya,” Jordan says gently, and I nod, embarrassed by how unfocused I have been.",
-        jumbled: ["been.", "I", "by", "try", "says", "“Maybe", "I", "different", "we", "unfocused", "and", "Maya,”", "Jordan", "embarrassed", "something", "tomorrow,", "have", "how", "should", "nod,", "gently,"],
+        target: "Jordan, who studies at my house today, notices my scattered attention immediately.",
+        jumbled: ["studies", "scattered", "notices", "who", "attention", "house", "my", "immediately.", "today,", "my", "at", "Jordan,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something that distracts you when you try to focus.",
@@ -181,8 +181,8 @@ export const CHAPTERS = [
         jumbled: ["some", "evening,", "days.", "her", "from", "Mom", "notices", "and", "my", "That", "own", "frustration", "offers", "advice", "school"],
       },
       {
-        target: "“Try studying in short bursts, with real breaks in between, Maya,” she suggests, setting a timer for twenty-five minutes.",
-        jumbled: ["timer", "for", "a", "“Try", "suggests,", "between,", "bursts,", "twenty-five", "short", "real", "she", "breaks", "studying", "Maya,”", "in", "with", "in", "setting", "minutes."],
+        target: "During my first real focused session, I actually remember information much better than before.",
+        jumbled: ["focused", "first", "real", "I", "session,", "actually", "During", "much", "remember", "my", "before.", "information", "better", "than"],
       },
       {
         target: "She also recommends leaving my phone in another room completely, which sounds painful but strangely necessary.",
@@ -229,16 +229,16 @@ export const CHAPTERS = [
         jumbled: ["incomplete", "comparison.", "organized", "Jordan's", "is", "and", "mine", "messy", "perfectly", "with", "looks", "notebook", "in", "sections,", "while", "color-coded"],
       },
       {
-        target: "“You already know so much more than me,” I say quietly, my confidence sinking lower with every page I compare.",
-        jumbled: ["“You", "know", "quietly,", "so", "more", "page", "with", "than", "I", "compare.", "already", "confidence", "lower", "I", "say", "much", "my", "sinking", "every", "me,”"],
+        target: "I say quietly that Jordan already knows much more than me.",
+        jumbled: ["I", "say", "that", "than", "quietly", "Jordan", "more", "me.", "knows", "already", "much"],
       },
       {
         target: "Jordan looks up, surprised by my sudden discouragement.",
         jumbled: ["up,", "looks", "by", "sudden", "discouragement.", "my", "surprised", "Jordan"],
       },
       {
-        target: "“We're just better at different subjects, Maya,” Jordan replies simply, but I can't shake the growing feeling that I might not be ready for this exam no matter how hard I try.",
-        jumbled: ["subjects,", "how", "I", "just", "exam", "ready", "Jordan", "might", "simply,", "growing", "that", "matter", "feeling", "but", "better", "I", "I", "shake", "at", "Maya,”", "no", "different", "can't", "not", "try.", "“We're", "this", "hard", "the", "replies", "be", "for"],
+        target: "Jordan replies that we are just better at different subjects.",
+        jumbled: ["different", "subjects.", "replies", "at", "better", "Jordan", "are", "just", "we", "that"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you compared yourself to someone else.",
@@ -269,8 +269,8 @@ export const CHAPTERS = [
         jumbled: ["notebook", "flips", "back", "Jordan", "and", "through", "carefully.", "discouragement,", "session", "our", "pauses", "my", "my", "Noticing"],
       },
       {
-        target: "“Look at this answer you wrote yesterday, Maya,” Jordan says, pointing to a paragraph I had completely forgotten about.",
-        jumbled: ["this", "had", "at", "answer", "Maya,”", "to", "Jordan", "paragraph", "a", "wrote", "forgotten", "pointing", "yesterday,", "completely", "“Look", "about.", "you", "I", "says,"],
+        target: "Hearing this reframes the whole exam in a way that finally feels achievable.",
+        jumbled: ["the", "in", "feels", "a", "that", "reframes", "exam", "this", "achievable.", "Hearing", "finally", "whole", "way"],
       },
       {
         target: "I stare at my own words, surprised that they sound more confident than I remembered feeling while writing them.",
@@ -281,8 +281,8 @@ export const CHAPTERS = [
         jumbled: ["differently,", "Jordan", "explains", "comparing", "fair", "everyone", "studies", "isn't", "and", "our", "either", "progress", "to", "us.", "of", "that"],
       },
       {
-        target: "“Let's just focus on getting a little better each day instead,” Jordan suggests warmly.",
-        jumbled: ["suggests", "day", "little", "just", "getting", "on", "“Let's", "warmly.", "better", "a", "each", "instead,”", "focus", "Jordan"],
+        target: "Jordan warmly suggests that we focus on getting a little better each day.",
+        jumbled: ["that", "Jordan", "we", "each", "getting", "better", "on", "a", "little", "focus", "day.", "suggests", "warmly"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time a friend helped you feel more confident.",
@@ -317,8 +317,8 @@ export const CHAPTERS = [
         jumbled: ["under", "setting", "strict", "other.", "exam", "Jordan", "timer", "help", "sitting", "real", "to", "and", "I", "decide", "we", "a", "together", "it", "and", "each", "take", "can't", "apart", "conditions,", "so"],
       },
       {
-        target: "My hands feel slightly shaky as I turn the first page, but I remind myself, “This is just practice, Maya, not the actual grade.”",
-        jumbled: ["remind", "the", "is", "“This", "the", "I", "shaky", "myself,", "as", "just", "first", "Maya,", "not", "but", "page,", "feel", "actual", "grade.”", "I", "hands", "practice,", "My", "slightly", "turn"],
+        target: "With one week left, Mr.",
+        jumbled: ["left,", "one", "With", "week", "Mr."],
       },
       {
         target: "Some questions feel surprisingly familiar from our study sessions, while others make me pause and think much harder.",
@@ -365,8 +365,8 @@ export const CHAPTERS = [
         jumbled: ["of", "discussing", "past", "to", "just", "Jordan", "together", "happened", "and", "moving", "I", "answer", "instead", "each", "single", "review", "sit", "every", "why", "wrong", "down", "it.", "mistake,"],
       },
       {
-        target: "“This is actually the most useful part, Maya,” Jordan explains, “because now we know exactly what to review.”",
-        jumbled: ["Jordan", "“because", "review.”", "know", "exactly", "to", "Maya,”", "now", "part,", "is", "actually", "“This", "we", "explains,", "most", "the", "useful", "what"],
+        target: "Jordan explains that now we know exactly what to review.",
+        jumbled: ["that", "explains", "exactly", "now", "what", "to", "Jordan", "know", "review.", "we"],
       },
       {
         target: "Going through our errors carefully, rather than feeling embarrassed about them, helps both of us understand the material in a way that simple rereading never could.",
@@ -409,8 +409,8 @@ export const CHAPTERS = [
         jumbled: ["exam", "and", "school,", "exchange", "quick,", "Jordan", "meet", "the", "nervous", "I", "smile.", "we", "hall,", "outside", "At", "a"],
       },
       {
-        target: "“We've got this, Maya,” Jordan says confidently, though I can tell they feel just as nervous as I do underneath their calm expression.",
-        jumbled: ["though", "got", "I", "can", "do", "expression.", "tell", "they", "“We've", "just", "feel", "Jordan", "as", "nervous", "their", "I", "says", "confidently,", "as", "Maya,”", "underneath", "calm", "this,"],
+        target: "Jordan says we have got this, though they feel nervous too.",
+        jumbled: ["we", "too.", "they", "Jordan", "this,", "feel", "got", "have", "says", "nervous", "though"],
       },
       {
         target: "Taking a deep breath, I remind myself of everything we practiced together and walk through the doors.",
@@ -449,12 +449,12 @@ export const CHAPTERS = [
         jumbled: ["but", "than", "weeks", "I", "ever", "is", "it's", "possible", "imagined", "score", "better", "significantly", "not", "My", "ago.", "two", "perfect,"],
       },
       {
-        target: "“Look at us, Maya,” Jordan grins widely at their own paper beside me, and we both realize how far we've come since that panicked Monday morning.",
-        jumbled: ["panicked", "at", "me,", "beside", "own", "that", "far", "realize", "come", "at", "us,", "their", "“Look", "we", "grins", "we've", "how", "morning.", "Monday", "paper", "widely", "both", "and", "Jordan", "Maya,”", "since"],
+        target: "Jordan grins at their own paper, and we both see how far we have come.",
+        jumbled: ["at", "far", "see", "we", "grins", "Jordan", "their", "and", "come.", "own", "have", "paper,", "how", "we", "both"],
       },
       {
-        target: "“We actually did it,” I say, still a little in disbelief at how much we improved through consistent effort.",
-        jumbled: ["through", "much", "a", "how", "effort.", "at", "say,", "improved", "little", "did", "we", "still", "consistent", "actually", "“We", "in", "it,”", "disbelief", "I"],
+        target: "I say that we actually did it, still in disbelief.",
+        jumbled: ["that", "actually", "it,", "we", "in", "say", "disbelief.", "did", "still", "I"],
       },
       {
         target: "Walking home together, I understand now that studying isn't really about being perfect, it's about growing steadily and never giving up along the way.",

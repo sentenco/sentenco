@@ -54,8 +54,8 @@ export const CHAPTERS = [
         jumbled: ["wants", "of", "it", "Part", "at", "saw", "to", "scroll", "all.", "me", "past", "quickly,", "pretending", "I", "never"],
       },
       {
-        target: "\"You should say something, Ethan,\" I think quietly, but I close the app without commenting, and the guilty feeling lingers long after I put my phone down.",
-        jumbled: ["my", "put", "app", "feeling", "something,", "the", "close", "I", "lingers", "think", "long", "after", "Ethan,\"", "but", "phone", "\"You", "quietly,", "down.", "should", "I", "without", "say", "commenting,", "I", "and", "guilty", "the"],
+        target: "I think I should say something, but I close the app without commenting.",
+        jumbled: ["I", "say", "something,", "app", "think", "close", "without", "commenting.", "but", "I", "should", "the", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about noticing something unfair that bothered you.",
@@ -226,8 +226,8 @@ export const CHAPTERS = [
         jumbled: ["others", "how", "might", "this.", "react", "I", "it", "read", "worried", "to", "three", "Marcus", "about", "times,", "and"],
       },
       {
-        target: "\"Send it, Ethan,\" I tell myself, and I press send.",
-        jumbled: ["I", "press", "and", "Ethan,\"", "it,", "send.", "tell", "myself,", "I", "\"Send"],
+        target: "Immediately, my phone buzzes with several new notifications appearing rapidly one after another.",
+        jumbled: ["my", "with", "rapidly", "another.", "one", "several", "phone", "Immediately,", "after", "buzzes", "new", "notifications", "appearing"],
       },
       {
         target: "Whatever happens next, at least Nina will know that someone was willing to speak up for her.",
@@ -314,8 +314,8 @@ export const CHAPTERS = [
         jumbled: ["thoughtful", "conclusions", "punishments.", "immediately", "asking", "or", "carefully,", "than", "to", "jumping", "listens", "She", "questions", "rather"],
       },
       {
-        target: "“Thank you for trusting me with this, Ethan. You did the right thing bringing it forward,” she says sincerely.",
-        jumbled: ["did", "the", "me", "with", "thing", "sincerely.", "bringing", "says", "trusting", "this,", "“Thank", "she", "right", "for", "you", "Ethan.", "forward,”", "it", "You"],
+        target: "Delgado, and explain everything that's been happening to Nina online.",
+        jumbled: ["online.", "been", "and", "happening", "that's", "everything", "Delgado,", "explain", "Nina", "to"],
       },
       {
         target: "I also feel relieved that this isn't only my responsibility anymore.",
@@ -358,8 +358,8 @@ export const CHAPTERS = [
         jumbled: ["approaches", "uncomfortable", "few", "Marcus", "later,", "days", "to", "looking", "hallway", "a", "me", "but", "clearly", "the", "wanting", "in", "Surprisingly,", "say", "something."],
       },
       {
-        target: "“I didn't think about how that would actually affect her, Ethan,” he admits, avoiding direct eye contact throughout.",
-        jumbled: ["contact", "actually", "Ethan,”", "about", "would", "how", "he", "that", "think", "admits,", "avoiding", "eye", "her,", "direct", "“I", "didn't", "affect", "throughout."],
+        target: "Change doesn't happen instantly, but this conversation feels like a genuinely important first step.",
+        jumbled: ["Change", "this", "feels", "important", "first", "but", "step.", "a", "doesn't", "like", "genuinely", "happen", "conversation", "instantly,"],
       },
       {
         target: "I don't fully forgive him immediately, but I appreciate that he's at least acknowledging the harm he caused.",
@@ -402,8 +402,8 @@ export const CHAPTERS = [
         jumbled: ["for", "realized.", "did,", "to", "it", "specifically", "she", "I", "meant", "I", "admitting", "thanks", "afternoon,", "what", "her", "than", "One", "probably", "more", "me"],
       },
       {
-        target: "“Having someone actually say something made me feel less invisible, Ethan,” she explains honestly, her voice steady now.",
-        jumbled: ["invisible,", "steady", "me", "“Having", "her", "Ethan,”", "she", "something", "feel", "voice", "explains", "made", "actually", "less", "now.", "honestly,", "say", "someone"],
+        target: "She explains honestly that having someone say something made her feel less invisible.",
+        jumbled: ["having", "feel", "made", "her", "someone", "say", "less", "explains", "something", "She", "invisible.", "honestly", "that"],
       },
       {
         target: "I tell her I simply couldn't watch it continue without saying anything, that it genuinely wasn't a difficult choice morally.",

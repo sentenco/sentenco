@@ -137,8 +137,8 @@ export const CHAPTERS = [
         jumbled: ["client", "genuinely", "relationship", "abruptly.", "she", "mentioning", "agrees", "She", "values", "long", "open", "a", "over", "prefers", "discussion", "our", "working", "and", "readily,", "losing"],
       },
       {
-        target: "\"Of course, Tomas, let's talk it through,\" she says, taking a seat across from me.",
-        jumbled: ["talk", "says,", "\"Of", "from", "course,", "through,\"", "me.", "taking", "she", "let's", "seat", "across", "a", "Tomas,", "it"],
+        target: "She listens attentively, asking clarifying questions rather than immediately defending the proposed pricing outright.",
+        jumbled: ["listens", "defending", "asking", "than", "proposed", "attentively,", "clarifying", "immediately", "She", "outright.", "pricing", "questions", "the", "rather"],
       },
       {
         target: "I open by acknowledging the quality of her company's product, then explain that the proposed increase exceeds what my current margins can comfortably absorb.",
@@ -229,8 +229,8 @@ export const CHAPTERS = [
         jumbled: ["too,", "reliable", "from", "client.", "company", "revenue", "This", "it", "stable", "commitment,", "guarantees", "since", "her", "predictable,", "longer", "benefits", "a", "explains,", "she"],
       },
       {
-        target: "\"This is what I could arrange for you, Tomas,\" she says, sliding the revised terms across the table.",
-        jumbled: ["Tomas,\"", "across", "you,", "table.", "terms", "sliding", "I", "says,", "is", "for", "could", "revised", "the", "the", "\"This", "she", "what", "arrange"],
+        target: "She slides the revised terms across the table and explains what she could arrange.",
+        jumbled: ["revised", "the", "arrange.", "the", "table", "She", "could", "terms", "across", "what", "she", "slides", "and", "explains"],
       },
       {
         target: "I consider this carefully, recognizing that price stability itself has genuine value beyond the immediate number involved.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["tone", "the", "of", "and", "specific", "keep", "general", "numbers", "vague,", "what", "descriptions", "agreed.", "rather", "I", "dates", "we'd", "referencing", "professional,", "than"],
       },
       {
-        target: "I also thank her for approaching this collaboratively, noting that I valued the flexibility her company had ultimately shown, and I sign off simply as \"Tomas.\"",
-        jumbled: ["had", "thank", "I", "valued", "shown,", "collaboratively,", "the", "and", "I", "as", "approaching", "ultimately", "also", "her", "for", "company", "this", "that", "off", "flexibility", "\"Tomas.\"", "sign", "noting", "simply", "I", "her"],
+        target: "Idowu, summarizing the finalized terms for both our records going forward.",
+        jumbled: ["summarizing", "records", "going", "for", "forward.", "finalized", "both", "our", "the", "Idowu,", "terms"],
       },
       {
         target: "Sending this email ensures there's a clear, documented reference should any confusion arise later regarding these specific terms.",
@@ -353,8 +353,8 @@ export const CHAPTERS = [
         jumbled: ["pricing", "The", "my", "the", "to", "directly", "supplier", "overall", "planning.", "I", "budget", "staff,", "next", "new", "terms", "the", "explain", "affects", "since", "adjusted", "our", "morning,"],
       },
       {
-        target: "\"Does this mean we're raising menu prices, Tomas?\" one employee asks, wondering if we might need to adjust slightly to maintain our current margins.",
-        jumbled: ["wondering", "need", "our", "to", "employee", "adjust", "we're", "Tomas?\"", "we", "raising", "margins.", "asks,", "to", "one", "might", "maintain", "mean", "current", "slightly", "prices,", "\"Does", "if", "menu", "this"],
+        target: "One employee asks if this means we are raising menu prices.",
+        jumbled: ["menu", "if", "means", "employee", "we", "One", "raising", "are", "this", "asks", "prices."],
       },
       {
         target: "I explain that, given the smaller-than-expected increase, only minor adjustments should actually be necessary going forward.",
@@ -397,8 +397,8 @@ export const CHAPTERS = [
         jumbled: ["and", "discuss", "to", "visits", "our", "later,", "relaxed", "before.", "Idowu", "noticeably", "again", "an", "seasonal", "upcoming", "months", "Several", "order,", "feels", "more", "conversation", "than", "Ms."],
       },
       {
-        target: "\"You actually changed how I approach clients now, Tomas,\" she mentions, emphasizing flexibility over rigid, blanket policies.",
-        jumbled: ["I", "she", "\"You", "approach", "now,", "mentions,", "over", "clients", "flexibility", "emphasizing", "changed", "policies.", "blanket", "rigid,", "actually", "how", "Tomas,\""],
+        target: "She mentions that I changed how she approaches clients now.",
+        jumbled: ["mentions", "she", "now.", "approaches", "changed", "how", "clients", "I", "that", "She"],
       },
       {
         target: "I admit that I'd initially worried negotiating might damage our relationship, though it clearly achieved the opposite outcome instead.",

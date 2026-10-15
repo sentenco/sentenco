@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["about", "concern.", "between", "visible", "tell", "evening,", "my", "acceptance,", "watching", "I", "her", "the", "and", "expression", "pride", "That", "shift", "mother"],
       },
       {
-        target: "“Isabel, this is incredible news,” she says first, before the concern creeps in.",
-        jumbled: ["news,”", "says", "the", "incredible", "concern", "is", "in.", "first,", "“Isabel,", "she", "this", "creeps", "before"],
+        target: "She says first that this is incredible news, before the concern creeps in.",
+        jumbled: ["before", "incredible", "She", "news,", "that", "this", "concern", "in.", "first", "is", "the", "says", "creeps"],
       },
       {
         target: "She admits that, had she been given a similar opportunity at my age, she may have hesitated for entirely different reasons.",
@@ -142,8 +142,8 @@ export const CHAPTERS = [
         jumbled: ["of", "she", "our", "she's", "become", "scared", "of", "admits", "near-constant", "five", "might", "separation.", "Eventually,", "months", "friendship", "after", "what"],
       },
       {
-        target: "“I just don't want to lose you, Isabel,” she finally says.",
-        jumbled: ["“I", "Isabel,”", "says.", "just", "lose", "to", "she", "finally", "don't", "you,", "want"],
+        target: "She finally says that she does not want to lose me.",
+        jumbled: ["she", "does", "to", "lose", "She", "says", "that", "not", "want", "me.", "finally"],
       },
       {
         target: "I reassure her that distance wouldn't necessarily weaken what we've built, though I honestly can't promise nothing would change at all.",
@@ -226,8 +226,8 @@ export const CHAPTERS = [
         jumbled: ["Priya", "may", "apply", "known", "be,", "all.", "she", "the", "month", "that", "hesitated", "at", "to", "admits", "how", "had", "first", "would", "have", "she", "hard"],
       },
       {
-        target: "“Trust me, Isabel, the hard part doesn't last,” she adds.",
-        jumbled: ["part", "doesn't", "adds.", "me,", "last,”", "the", "hard", "Isabel,", "“Trust", "she"],
+        target: "She adds that the hard part does not last.",
+        jumbled: ["She", "hard", "not", "adds", "part", "the", "last.", "that", "does"],
       },
       {
         target: "However, she explains that the friendships and independence she gained ultimately outweighed those difficult early weeks considerably.",
@@ -270,8 +270,8 @@ export const CHAPTERS = [
         jumbled: ["replaced", "somehow.", "that", "admits", "fear", "about", "Jules", "then", "but", "her", "really", "wasn't", "listens", "itself,", "about", "carefully,", "distance", "feeling"],
       },
       {
-        target: "“I know it sounds silly, Isabel,” she adds.",
-        jumbled: ["she", "silly,", "it", "know", "“I", "Isabel,”", "adds.", "sounds"],
+        target: "She adds that she knows it sounds silly.",
+        jumbled: ["She", "it", "she", "that", "knows", "adds", "sounds", "silly."],
       },
       {
         target: "I tell her honestly that no experience abroad could ever replace what we've built over all these years together.",
@@ -358,8 +358,8 @@ export const CHAPTERS = [
         jumbled: ["everything", "helps", "even", "method.", "Jules", "I", "don't", "though", "folding", "me", "mind", "way,", "honestly", "on", "pack,", "either", "insisting", "particular", "her", "own"],
       },
       {
-        target: "My mother writes a small note I find tucked inside my suitcase: “I'm so proud of you, Isabel, whatever happens next.”",
-        jumbled: ["find", "suitcase:", "note", "proud", "My", "of", "happens", "a", "you,", "small", "next.”", "I", "my", "so", "writes", "“I'm", "Isabel,", "tucked", "inside", "mother", "whatever"],
+        target: "My mother writes a small note and tucks it inside my suitcase.",
+        jumbled: ["mother", "tucks", "writes", "it", "and", "inside", "note", "my", "a", "small", "suitcase.", "My"],
       },
       {
         target: "I notice my nervousness gradually shifting into something closer to genuine anticipation instead.",
@@ -402,8 +402,8 @@ export const CHAPTERS = [
         jumbled: ["Jules", "screen", "about", "already", "the", "appears", "everything,", "classes", "from", "on", "apparently", "friends", "to", "to", "the", "asking", "first,", "eagerly", "I've", "made.", "food"],
       },
       {
-        target: "“Isabel! Tell us everything,” she says, practically bouncing in her seat.",
-        jumbled: ["seat.", "says,", "her", "she", "everything,”", "practically", "“Isabel!", "Tell", "in", "us", "bouncing"],
+        target: "She bounces in her seat and asks us to tell her everything.",
+        jumbled: ["her", "to", "tell", "asks", "in", "bounces", "She", "her", "and", "us", "everything.", "seat"],
       },
       {
         target: "My mother joins moments later, visibly relieved seeing my face looking genuinely happy rather than merely coping.",

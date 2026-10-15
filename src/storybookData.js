@@ -235,8 +235,8 @@ export const CHAPTERS = [
         jumbled: ["the", "and", "rain", "later,", "hall.", "to", "runs", "few", "A", "minutes", "the", "everyone", "starts,", "front"],
       },
       {
-        target: "“Don’t worry, Paul, we’ll stay dry,” he says.",
-        jumbled: ["we’ll", "Paul,", "dry,”", "“Don’t", "worry,", "he", "stay", "says."],
+        target: "Ethan laughs because he has a big blue umbrella in his bag.",
+        jumbled: ["a", "in", "his", "umbrella", "blue", "has", "laughs", "he", "bag.", "big", "because", "Ethan"],
       },
       {
         target: "Mia stands next to me and watches the water on the street.",
@@ -455,8 +455,8 @@ export const CHAPTERS = [
         jumbled: ["in", "Mia,", "with", "Angel", "smile.", "and", "stand", "of", "Ethan,", "poster", "and", "our", "front", "I"],
       },
       {
-        target: "“Well done, Paul,” she adds with a smile.",
-        jumbled: ["adds", "Paul,”", "done,", "smile.", "a", "“Well", "she", "with"],
+        target: "The teacher says our work is neat, colorful, and easy to understand.",
+        jumbled: ["easy", "colorful,", "work", "and", "teacher", "to", "The", "understand.", "neat,", "our", "is", "says"],
       },
       {
         target: "Ethan looks proud, and Angel gives Mia a happy high five.",

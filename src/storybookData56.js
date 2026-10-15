@@ -54,8 +54,8 @@ export const CHAPTERS = [
         jumbled: ["Maybe", "this", "than", "hobby", "become", "more", "pastime.", "a", "could", "substantial", "something", "just"],
       },
       {
-        target: "Grandma Rosa, noticing my growing collection, says, “You should sell these at the farmers market, Theo.”",
-        jumbled: ["at", "growing", "says,", "noticing", "the", "Grandma", "sell", "collection,", "“You", "these", "my", "Theo.”", "market,", "farmers", "should", "Rosa,"],
+        target: "Grandma Rosa notices my growing collection and says I should sell these at the farmers market.",
+        jumbled: ["growing", "I", "and", "Rosa", "my", "the", "farmers", "says", "should", "collection", "notices", "at", "these", "market.", "Grandma", "sell"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a hobby that became more serious over time.",
@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["costs:", "calculating", "sit", "wicks,", "containers,", "oils", "candle.", "for", "together", "fragrance", "We", "exact", "and", "wax,", "each", "individual"],
       },
       {
-        target: "“You need to know your costs before you can decide a fair price, Theo,” she explains patiently, walking me through each calculation.",
-        jumbled: ["she", "costs", "each", "can", "need", "a", "before", "Theo,”", "through", "explains", "to", "your", "me", "patiently,", "decide", "“You", "walking", "you", "know", "fair", "calculation.", "price,"],
+        target: "She explains that I need to know my costs before I decide a fair price.",
+        jumbled: ["before", "explains", "a", "She", "that", "to", "know", "price.", "decide", "need", "fair", "I", "my", "costs", "I"],
       },
       {
         target: "I'm surprised how much thought goes into pricing something correctly, beyond simply guessing a reasonable-sounding number.",
@@ -182,8 +182,8 @@ export const CHAPTERS = [
         jumbled: ["without", "table", "but", "The", "people", "at", "look", "to", "glancing", "first", "closer.", "continuing", "slowly,", "passes", "my", "hour", "with", "stopping", "past"],
       },
       {
-        target: "\"Stay patient, Theo,\" I tell myself, though I start doubting whether this whole idea was genuinely realistic or simply an overly optimistic daydream.",
-        jumbled: ["Theo,\"", "patient,", "realistic", "myself,", "an", "whether", "this", "overly", "I", "optimistic", "daydream.", "tell", "doubting", "was", "genuinely", "though", "\"Stay", "start", "or", "simply", "idea", "I", "whole"],
+        target: "I tell myself to stay patient, though I start doubting this whole idea.",
+        jumbled: ["to", "patient,", "myself", "this", "stay", "start", "doubting", "tell", "though", "idea.", "whole", "I", "I"],
       },
       {
         target: "Just as discouragement begins settling in, an older woman stops, picks up a lavender candle, and smells it appreciatively.",
@@ -262,8 +262,8 @@ export const CHAPTERS = [
         jumbled: ["surprised", "stops,", "to", "wanders", "packing", "early,", "considering", "Sam", "classmate", "past", "me", "and", "I'm", "up", "there.", "my", "as", "Just", "see"],
       },
       {
-        target: "“Wait, you made these, Theo? They smell incredible,” he says, picking up the vanilla candle and examining it closely.",
-        jumbled: ["vanilla", "made", "these,", "picking", "Theo?", "They", "candle", "examining", "incredible,”", "smell", "closely.", "up", "and", "it", "the", "“Wait,", "says,", "you", "he"],
+        target: "His encouragement, though small, genuinely shifts my mood after an otherwise discouraging afternoon.",
+        jumbled: ["otherwise", "shifts", "genuinely", "my", "though", "small,", "His", "an", "encouragement,", "afternoon.", "mood", "discouraging", "after"],
       },
       {
         target: "We chat for a while, and he mentions he'd genuinely love to buy one for his mom's upcoming birthday.",
@@ -314,8 +314,8 @@ export const CHAPTERS = [
         jumbled: ["gradually", "though", "and", "inspiration.", "feels", "describing", "genuine", "captions", "voice", "I", "awkward", "find", "Writing", "a", "initially,", "comfortable,", "its", "each", "scent"],
       },
       {
-        target: "\"Just try it, Theo,\" I think, and I share the account with a few close friends first, nervous about a wider audience seeing something so personal.",
-        jumbled: ["think,", "share", "try", "wider", "close", "a", "and", "personal.", "I", "it,", "account", "nervous", "friends", "something", "Theo,\"", "a", "\"Just", "audience", "few", "so", "seeing", "the", "I", "first,", "with", "about"],
+        target: "I tell myself to just try it and share the account with a few close friends.",
+        jumbled: ["to", "friends.", "the", "account", "tell", "myself", "few", "it", "with", "a", "I", "try", "share", "just", "and", "close"],
       },
       {
         target: "Within an hour, several classmates comment, expressing genuine interest and asking questions about pricing and availability.",
@@ -406,8 +406,8 @@ export const CHAPTERS = [
         jumbled: ["perceived", "noticeably.", "might", "in", "customer", "invest", "a", "also", "I", "mentioned", "better", "increase", "decide", "slightly", "value", "packaging,", "to", "something"],
       },
       {
-        target: "“Sustainable businesses grow gradually, Theo, reinvesting steadily rather than expanding too quickly,” Grandma Rosa reminds me.",
-        jumbled: ["expanding", "too", "grow", "reinvesting", "Grandma", "gradually,", "steadily", "businesses", "reminds", "Rosa", "rather", "quickly,”", "me.", "Theo,", "“Sustainable", "than"],
+        target: "Watching my small hobby transform into something genuinely sustainable feels remarkably satisfying tonight.",
+        jumbled: ["into", "sustainable", "remarkably", "hobby", "transform", "feels", "my", "Watching", "tonight.", "genuinely", "small", "satisfying", "something"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about planning carefully for the future of something you're building.",

@@ -97,8 +97,8 @@ export const CHAPTERS = [
         jumbled: ["The", "system,", "expression", "routine", "to", "my", "her", "visibly", "receptionist", "puzzled.", "name", "types", "into", "from", "the", "shifting", "then", "pauses,"],
       },
       {
-        target: "“I'm sorry, Priya, but I don't see a reservation under this name,” she says, checking again more carefully.",
-        jumbled: ["she", "a", "don't", "sorry,", "again", "reservation", "see", "checking", "I", "under", "this", "name,”", "but", "carefully.", "Priya,", "more", "“I'm", "says,"],
+        target: "She says she is sorry but does not see a reservation under this name.",
+        jumbled: ["this", "does", "see", "says", "name.", "a", "but", "She", "she", "under", "is", "not", "reservation", "sorry"],
       },
       {
         target: "My stomach drops slightly, and I show her the confirmation number on my phone, hoping it's simply a search error.",
@@ -109,8 +109,8 @@ export const CHAPTERS = [
         jumbled: ["time,", "She", "up", "something", "genuinely", "gone", "suspicion:", "looks", "it", "this", "confirms", "after", "face", "and", "manually", "moment,", "wrong.", "a", "growing", "has", "my", "her"],
       },
       {
-        target: "“It looks like your reservation was accidentally cancelled during a system update earlier this week,” she explains apologetically.",
-        jumbled: ["was", "explains", "looks", "accidentally", "earlier", "this", "during", "apologetically.", "week,”", "your", "update", "cancelled", "“It", "system", "reservation", "a", "like", "she"],
+        target: "She explains apologetically that my reservation was cancelled during a system update.",
+        jumbled: ["was", "cancelled", "apologetically", "a", "reservation", "that", "my", "She", "explains", "system", "update.", "during"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about discovering an unexpected problem while traveling.",
@@ -145,12 +145,12 @@ export const CHAPTERS = [
         jumbled: ["receptionist", "have", "of", "apologizes", "resolve", "particular", "authority", "this", "doesn't", "to", "booking", "the", "explaining", "errors", "again,", "size.", "she", "that", "The"],
       },
       {
-        target: "“Would it be possible to speak with someone who does?” I ask, trying to remain calm despite my mounting frustration.",
-        jumbled: ["someone", "I", "frustration.", "my", "speak", "trying", "remain", "“Would", "it", "to", "who", "despite", "be", "does?”", "possible", "calm", "to", "with", "mounting", "ask,"],
+        target: "She nods and picks up the phone, calling the night manager.",
+        jumbled: ["phone,", "calling", "the", "manager.", "and", "picks", "up", "She", "the", "nods", "night"],
       },
       {
-        target: "“He'll be right down, Priya, just give him a few minutes,” she tells me.",
-        jumbled: ["be", "she", "him", "tells", "few", "right", "minutes,”", "just", "“He'll", "give", "Priya,", "down,", "me.", "a"],
+        target: "Although this delay is frustrating, panicking certainly won't help resolve the situation any faster.",
+        jumbled: ["Although", "faster.", "help", "delay", "won't", "frustrating,", "any", "this", "certainly", "situation", "panicking", "resolve", "the", "is"],
       },
       {
         target: "I remind myself that getting angry probably wouldn't speed up the solution anyway.",
@@ -189,8 +189,8 @@ export const CHAPTERS = [
         jumbled: ["on", "computer,", "what", "the", "receptionist", "the", "confirming", "reviews", "about", "had", "explained", "He", "already", "situation", "error.", "his", "system", "own", "the"],
       },
       {
-        target: "“I sincerely apologize for this inconvenience, Priya. Let me see what options we have available,” he says professionally.",
-        jumbled: ["Let", "we", "Priya.", "apologize", "options", "sincerely", "available,”", "says", "inconvenience,", "this", "“I", "see", "for", "me", "he", "have", "what", "professionally."],
+        target: "Bennett, the night manager, arrives and introduces himself with a genuinely apologetic expression.",
+        jumbled: ["night", "introduces", "himself", "with", "and", "expression.", "arrives", "a", "genuinely", "the", "manager,", "apologetic", "Bennett,"],
       },
       {
         target: "He checks the hotel's current occupancy, though I can tell from his expression that tonight might be fully booked.",
@@ -237,8 +237,8 @@ export const CHAPTERS = [
         jumbled: ["alternative", "I", "he'd", "speaking", "he", "a", "suggest.", "possible", "mentioning", "continues", "before", "panic", "like", "further,", "to", "However,", "can"],
       },
       {
-        target: "“We do have a suite available, Priya, normally at a much higher rate, but I could offer it at your original price,” he explains.",
-        jumbled: ["much", "do", "at", "available,", "price,”", "higher", "suite", "explains.", "at", "it", "“We", "normally", "a", "offer", "but", "could", "a", "have", "rate,", "original", "I", "Priya,", "your", "he"],
+        target: "He explains that they have a suite available and offers it at my original price.",
+        jumbled: ["have", "at", "suite", "that", "explains", "my", "price.", "they", "He", "it", "original", "available", "offers", "and", "a"],
       },
       {
         target: "Relief washes over me instantly, though I'm still slightly cautious about whether this solution will actually work smoothly.",
@@ -277,8 +277,8 @@ export const CHAPTERS = [
         jumbled: ["area", "booked,", "The", "small", "be", "turns", "bathroom.", "sitting", "a", "considerably", "nicer", "and", "with", "I", "much", "what", "room", "out", "than", "larger", "a", "had", "originally", "to"],
       },
       {
-        target: "“If anything else comes up tonight, Priya, please don't hesitate to call the front desk directly,” he says before leaving.",
-        jumbled: ["front", "anything", "directly,”", "hesitate", "“If", "he", "desk", "Priya,", "else", "please", "says", "tonight,", "don't", "comes", "before", "the", "leaving.", "call", "up", "to"],
+        target: "He says I should call the front desk if anything else comes up tonight.",
+        jumbled: ["He", "call", "the", "I", "should", "comes", "if", "else", "says", "anything", "desk", "tonight.", "up", "front"],
       },
       {
         target: "I thank him sincerely, genuinely appreciating how he handled what could have easily become a much worse situation.",
@@ -405,8 +405,8 @@ export const CHAPTERS = [
         jumbled: ["I", "the", "for", "last", "my", "email", "back", "hotel", "thanking", "handled", "short", "they", "mistake.", "write", "a", "night's", "to", "how", "decide", "in", "evening,", "room,", "That"],
       },
       {
-        target: "I sign it simply, “Best regards, Priya,” before starting the first paragraph.",
-        jumbled: ["Priya,”", "“Best", "sign", "I", "before", "regards,", "it", "first", "simply,", "the", "starting", "paragraph."],
+        target: "I send the email, feeling satisfied that I addressed the situation completely and fairly.",
+        jumbled: ["the", "I", "feeling", "situation", "that", "I", "fairly.", "satisfied", "the", "completely", "email,", "and", "send", "addressed"],
       },
       {
         target: "Writing this note takes only a few minutes, but it feels important to acknowledge good service, not only complain about bad service.",

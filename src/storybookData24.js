@@ -45,8 +45,8 @@ export const CHAPTERS = [
         jumbled: ["Monday,", "my", "turn", "announces", "is", "week.", "that", "Ms.", "it", "On", "Bailey", "this"],
       },
       {
-        target: "“Leo, you will feed Nibbles and clean her cage every day,” she explains.",
-        jumbled: ["clean", "“Leo,", "and", "she", "every", "cage", "will", "feed", "Nibbles", "day,”", "explains.", "her", "you"],
+        target: "Bailey announces that it is my turn this week.",
+        jumbled: ["announces", "is", "it", "turn", "that", "this", "Bailey", "week.", "my"],
       },
       {
         target: "Zoe, who had the job last week, gives me some helpful tips.",
@@ -91,8 +91,8 @@ export const CHAPTERS = [
         jumbled: ["hand.", "it", "my", "a", "from", "offer", "happily", "I", "of", "and", "she", "carrot,", "her", "Then", "nibbles", "small", "piece"],
       },
       {
-        target: "“She likes you already, Leo,” Zoe says with a laugh.",
-        jumbled: ["says", "already,", "Zoe", "laugh.", "Leo,”", "with", "you", "a", "likes", "“She"],
+        target: "Her whiskers twitch, and her soft fur feels warm when I gently pet her.",
+        jumbled: ["her.", "feels", "and", "pet", "I", "gently", "when", "whiskers", "soft", "her", "Her", "fur", "warm", "twitch,"],
       },
       {
         target: "I clean the corner of the cage where it is a little messy, just like Zoe showed me.",
@@ -125,16 +125,16 @@ export const CHAPTERS = [
         jumbled: ["Ms.", "the", "asks", "afternoon,", "an", "important", "On", "Bailey", "question.", "class", "Friday"],
       },
       {
-        target: "“Nibbles needs a home for the weekend. Who would like to take her?”",
-        jumbled: ["a", "the", "weekend.", "to", "home", "Who", "“Nibbles", "needs", "her?”", "for", "like", "would", "take"],
+        target: "Bailey asks the class an important question.",
+        jumbled: ["the", "an", "class", "Bailey", "asks", "question.", "important"],
       },
       {
         target: "Many hands go up immediately, including mine, waving excitedly in the air.",
         jumbled: ["including", "in", "the", "Many", "excitedly", "up", "mine,", "go", "waving", "hands", "air.", "immediately,"],
       },
       {
-        target: "“Leo, since you did such a great job this week, you can take her home,” she says.",
-        jumbled: ["she", "says.", "did", "you", "can", "this", "“Leo,", "her", "great", "since", "you", "take", "home,”", "week,", "a", "such", "job"],
+        target: "Bailey thinks for a moment and then smiles at me.",
+        jumbled: ["me.", "moment", "thinks", "for", "then", "and", "smiles", "at", "Bailey", "a"],
       },
       {
         target: "I feel thrilled but also a little nervous because I have never taken care of a pet by myself for two whole days.",
@@ -167,16 +167,16 @@ export const CHAPTERS = [
         jumbled: ["carefully", "cage", "it", "to", "very", "too", "to", "not", "car,", "carry", "much.", "Nibbles'", "making", "sure", "shake", "I", "the"],
       },
       {
-        target: "At home, my little sister runs over excitedly and asks, “Can I pet her? Can I pet her?” I explain to my whole family that Nibbles needs a quiet, safe space and gentle hands.",
-        jumbled: ["quiet,", "my", "pet", "home,", "over", "I", "family", "and", "gentle", "her?", "a", "runs", "At", "Nibbles", "whole", "to", "“Can", "sister", "I", "safe", "explain", "excitedly", "Can", "and", "needs", "pet", "that", "my", "asks,", "her?”", "I", "hands.", "little", "space"],
+        target: "At home, my little sister runs over excitedly and asks to pet Nibbles.",
+        jumbled: ["At", "sister", "little", "Nibbles.", "pet", "home,", "and", "to", "runs", "my", "asks", "excitedly", "over"],
       },
       {
         target: "We choose a calm corner of the living room for her cage, away from loud noises.",
         jumbled: ["calm", "cage,", "choose", "of", "the", "living", "We", "noises.", "her", "away", "loud", "a", "for", "from", "room", "corner"],
       },
       {
-        target: "“This is a big responsibility, Leo,” Dad says, “but I know you can handle it.”",
-        jumbled: ["“This", "is", "says,", "“but", "know", "can", "Dad", "you", "big", "a", "Leo,”", "handle", "it.”", "I", "responsibility,"],
+        target: "Dad says this is a big responsibility, but he knows I can handle it.",
+        jumbled: ["knows", "handle", "responsibility,", "says", "this", "but", "Dad", "can", "is", "it.", "he", "I", "a", "big"],
       },
       {
         target: "I nod, feeling determined to be the best rabbit-sitter possible.",
@@ -255,8 +255,8 @@ export const CHAPTERS = [
         jumbled: ["is", "nowhere", "to", "door", "open,", "is", "and", "cage", "seen!", "be", "Nibbles", "The"],
       },
       {
-        target: "“Nibbles is missing!” I shout, and my whole family rushes into the living room.",
-        jumbled: ["missing!”", "living", "shout,", "“Nibbles", "and", "I", "rushes", "whole", "into", "my", "is", "the", "room.", "family"],
+        target: "My heart starts beating fast, and I feel a wave of panic.",
+        jumbled: ["a", "starts", "wave", "My", "I", "heart", "beating", "of", "and", "fast,", "feel", "panic."],
       },
       {
         target: "We search under the couch, behind the curtains, and inside every corner of the room.",
@@ -293,8 +293,8 @@ export const CHAPTERS = [
         jumbled: ["couch.", "the", "sister", "from", "ears", "under", "peeking", "spots", "two", "small", "out", "My"],
       },
       {
-        target: "“I found her, Leo!” she yells excitedly.",
-        jumbled: ["excitedly.", "found", "she", "Leo!”", "yells", "her,", "“I"],
+        target: "I lie down on my stomach and reach carefully underneath.",
+        jumbled: ["and", "down", "carefully", "on", "underneath.", "lie", "stomach", "reach", "my", "I"],
       },
       {
         target: "Nibbles is sitting there quietly, a little dusty but completely unharmed.",
@@ -335,16 +335,16 @@ export const CHAPTERS = [
         jumbled: ["and", "I", "door", "closely", "That", "afternoon,", "at", "Nibbles'", "cage", "look", "Dad", "together."],
       },
       {
-        target: "“The latch is a little loose. That's probably why it opened,” Dad explains.",
-        jumbled: ["is", "opened,”", "why", "it", "explains.", "little", "a", "latch", "loose.", "probably", "That's", "Dad", "“The"],
+        target: "Dad explains that the latch is loose, and that is probably why it opened.",
+        jumbled: ["opened.", "explains", "why", "it", "is", "the", "and", "latch", "that", "loose,", "Dad", "that", "is", "probably"],
       },
       {
         target: "We find a small screwdriver and tighten the latch until it clicks firmly shut.",
         jumbled: ["until", "a", "find", "clicks", "shut.", "screwdriver", "the", "small", "tighten", "and", "firmly", "it", "We", "latch"],
       },
       {
-        target: "“Now let's test it, Leo,” Dad says, and we check the door three times to make sure it stays closed.",
-        jumbled: ["door", "test", "stays", "make", "Leo,”", "closed.", "it,", "we", "Dad", "the", "let's", "check", "says,", "times", "sure", "three", "and", "it", "to", "“Now"],
+        target: "Dad and I test the door three times to make sure it stays closed.",
+        jumbled: ["it", "times", "and", "make", "test", "I", "to", "three", "Dad", "closed.", "stays", "sure", "the", "door"],
       },
       {
         target: "I feel proud that we solved the problem together, and I know Nibbles will be much safer for the rest of the weekend.",
@@ -385,8 +385,8 @@ export const CHAPTERS = [
         jumbled: ["finding", "tell", "deep", "from", "I", "them", "breath", "the", "a", "couch.", "escape", "the", "the", "and", "whole", "her", "under", "to", "story,", "take"],
       },
       {
-        target: "“That sounds so scary!” one classmate says, eyes wide.",
-        jumbled: ["scary!”", "“That", "says,", "one", "classmate", "sounds", "eyes", "wide.", "so"],
+        target: "One classmate listens with wide eyes and says it sounds scary.",
+        jumbled: ["classmate", "eyes", "it", "says", "with", "sounds", "One", "scary.", "and", "listens", "wide"],
       },
       {
         target: "Ms. Bailey listens to my story too, nodding thoughtfully as I finish explaining everything that happened over the weekend.",
@@ -419,16 +419,16 @@ export const CHAPTERS = [
         jumbled: ["Bailey", "Ms.", "class.", "up", "the", "stands", "front", "in", "of"],
       },
       {
-        target: "“Leo handled a difficult situation with real responsibility,” she announces.",
-        jumbled: ["responsibility,”", "a", "handled", "situation", "announces.", "she", "with", "difficult", "“Leo", "real"],
+        target: "Bailey stands up in front of the class.",
+        jumbled: ["stands", "up", "class.", "of", "the", "Bailey", "in", "front"],
       },
       {
-        target: "“He stayed calm, found Nibbles safely, and even fixed the problem so it won't happen again.”",
-        jumbled: ["won't", "the", "again.”", "so", "happen", "“He", "found", "Nibbles", "calm,", "it", "fixed", "stayed", "even", "safely,", "and", "problem"],
+        target: "After hearing my whole story, Ms.",
+        jumbled: ["After", "story,", "my", "Ms.", "hearing", "whole"],
       },
       {
-        target: "Zoe leans over and whispers, “You're basically a class hero now!”",
-        jumbled: ["over", "hero", "basically", "leans", "whispers,", "class", "and", "Zoe", "a", "“You're", "now!”"],
+        target: "Zoe leans over and whispers that I am basically a class hero now.",
+        jumbled: ["now.", "that", "whispers", "Zoe", "am", "class", "basically", "a", "over", "and", "hero", "I", "leans"],
       },
       {
         target: "I already hope Ms. Bailey picks me for pet duty again very soon, because now I feel ready for anything.",

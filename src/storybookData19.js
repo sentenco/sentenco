@@ -53,8 +53,8 @@ export const CHAPTERS = [
         jumbled: ["where", "map", "live", "zoo.", "shows", "us", "A", "the", "the", "all", "in", "animals"],
       },
       {
-        target: "“Which animal do you want to see first, Nora?” Dad asks me.",
-        jumbled: ["Nora?”", "“Which", "me.", "asks", "see", "want", "animal", "do", "to", "Dad", "first,", "you"],
+        target: "We buy our tickets and walk through the big front gate.",
+        jumbled: ["tickets", "buy", "front", "big", "gate.", "walk", "We", "and", "through", "the", "our"],
       },
       {
         target: "We walk down the path, ready for a fun day of animals.",
@@ -91,8 +91,8 @@ export const CHAPTERS = [
         jumbled: ["the", "and", "Suddenly,", "loud", "opens", "roar!", "mouth", "out", "his", "a", "lion", "lets"],
       },
       {
-        target: "“I saw you were not scared at all, Nora,” Dad says proudly.",
-        jumbled: ["you", "saw", "proudly.", "says", "Dad", "all,", "were", "at", "not", "Nora,”", "scared", "“I"],
+        target: "The lion's mane looks soft and fluffy in the sunlight.",
+        jumbled: ["in", "and", "fluffy", "mane", "the", "The", "lion's", "soft", "sunlight.", "looks"],
       },
       {
         target: "Dad tells us that lions roar to talk to other lions far away.",
@@ -137,8 +137,8 @@ export const CHAPTERS = [
         jumbled: ["monkey", "holds", "mother's", "its", "A", "tightly", "back.", "baby", "onto"],
       },
       {
-        target: "“They are so funny!” Finn says, laughing again and again.",
-        jumbled: ["again", "funny!”", "are", "and", "“They", "says,", "so", "laughing", "again.", "Finn"],
+        target: "The monkeys chase each other and play games together.",
+        jumbled: ["games", "and", "chase", "The", "play", "each", "other", "together.", "monkeys"],
       },
       {
         target: "The monkey area is Finn's favorite part of the zoo so far.",
@@ -171,8 +171,8 @@ export const CHAPTERS = [
         jumbled: ["us", "to", "giraffe", "At", "leaves", "feed", "gives", "the", "area,", "small", "zookeeper", "them.", "a"],
       },
       {
-        target: "“Hold the leaf up high, Nora, and the giraffe will reach it,” she says.",
-        jumbled: ["will", "“Hold", "leaf", "up", "the", "giraffe", "Nora,", "reach", "she", "says.", "the", "it,”", "and", "high,"],
+        target: "A tall giraffe walks slowly toward me with gentle eyes.",
+        jumbled: ["toward", "gentle", "A", "giraffe", "slowly", "eyes.", "tall", "with", "me", "walks"],
       },
       {
         target: "I hold the leaf up, and the giraffe's long tongue takes it softly.",
@@ -217,8 +217,8 @@ export const CHAPTERS = [
         jumbled: ["under", "a", "quietly", "stands", "shady", "tree.", "gray", "elephant", "big", "huge,", "A"],
       },
       {
-        target: "“I think the elephant is sleeping, Nora,” Dad says with a smile.",
-        jumbled: ["a", "with", "sleeping,", "says", "is", "smile.", "“I", "elephant", "Dad", "Nora,”", "the", "think"],
+        target: "The elephant flaps its big ears slowly, even while it sleeps.",
+        jumbled: ["even", "big", "ears", "sleeps.", "elephant", "while", "it", "The", "slowly,", "flaps", "its"],
       },
       {
         target: "Its long trunk swings gently from side to side in the breeze.",
@@ -255,20 +255,20 @@ export const CHAPTERS = [
         jumbled: ["suddenly", "large", "strange", "area,", "makes", "peacock", "bird", "a", "the", "loud,", "Near", "sound.", "a"],
       },
       {
-        target: "“It's okay, Finn, that is just how peacocks talk,” Dad says gently.",
-        jumbled: ["gently.", "Finn,", "talk,”", "“It's", "Dad", "says", "peacocks", "just", "okay,", "is", "that", "how"],
+        target: "Finn jumps and grabs Dad's leg tightly, feeling scared.",
+        jumbled: ["tightly,", "Dad's", "feeling", "leg", "grabs", "Finn", "scared.", "jumps", "and"],
       },
       {
-        target: "“Good thinking, Nora,” Dad says, as I hold Finn's hand and say, “Look, its feathers are so pretty.”",
-        jumbled: ["as", "are", "its", "Nora,”", "thinking,", "pretty.”", "“Good", "and", "Finn's", "so", "I", "says,", "say,", "hold", "feathers", "hand", "Dad", "“Look,"],
+        target: "Finn hides his face for a moment, breathing quickly.",
+        jumbled: ["moment,", "face", "his", "quickly.", "Finn", "breathing", "for", "hides", "a"],
       },
       {
         target: "Finn slowly looks up and sees the peacock's colorful blue and green tail.",
         jumbled: ["and", "Finn", "up", "the", "colorful", "peacock's", "blue", "and", "sees", "green", "looks", "tail.", "slowly"],
       },
       {
-        target: "“It's pretty, but still loud,” Finn says, feeling braver now.",
-        jumbled: ["now.", "braver", "Finn", "“It's", "but", "still", "feeling", "pretty,", "says,", "loud,”"],
+        target: "He smiles a little and lets go of Dad's leg.",
+        jumbled: ["leg.", "Dad's", "a", "little", "lets", "go", "of", "smiles", "He", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about feeling scared and then feeling better.",
@@ -297,8 +297,8 @@ export const CHAPTERS = [
         jumbled: ["a", "building,", "find", "Inside", "cool,", "icy", "we", "area.", "the", "penguin"],
       },
       {
-        target: "“They swim like little rockets!” I say, laughing at how quick they are.",
-        jumbled: ["laughing", "little", "like", "at", "they", "quick", "rockets!”", "how", "are.", "“They", "say,", "I", "swim"],
+        target: "Some penguins jump into the water and swim very fast.",
+        jumbled: ["and", "into", "Some", "very", "swim", "water", "the", "jump", "penguins", "fast."],
       },
       {
         target: "Finn presses his hand against the cold glass to feel the chill.",
@@ -339,8 +339,8 @@ export const CHAPTERS = [
         jumbled: ["lunch.", "table", "for", "a", "we", "picnic", "find", "noon,", "shady", "At", "a"],
       },
       {
-        target: "“Here you go, Nora,” he says, handing me a sandwich.",
-        jumbled: ["Nora,”", "go,", "“Here", "says,", "sandwich.", "he", "you", "a", "handing", "me"],
+        target: "Dad opens our basket with sandwiches, fruit, and cold juice.",
+        jumbled: ["cold", "opens", "and", "with", "our", "Dad", "basket", "fruit,", "juice.", "sandwiches,"],
       },
       {
         target: "Finn shares his cookies with me, and I share my grapes with him.",
@@ -385,8 +385,8 @@ export const CHAPTERS = [
         jumbled: ["fly", "around", "butterflies", "of", "Hundreds", "the", "all", "flowers.", "gently"],
       },
       {
-        target: "“Don't move, Nora, it likes you!” Finn whispers with a big smile.",
-        jumbled: ["big", "likes", "you!”", "Nora,", "it", "a", "smile.", "whispers", "with", "“Don't", "Finn", "move,"],
+        target: "A bright orange butterfly lands softly on my shoulder.",
+        jumbled: ["A", "bright", "softly", "my", "orange", "shoulder.", "butterfly", "lands", "on"],
       },
       {
         target: "Finn holds out his hand, hoping a butterfly will land on him too.",
@@ -431,8 +431,8 @@ export const CHAPTERS = [
         jumbled: ["stuffed", "Dad", "us", "the", "shop.", "each", "a", "from", "buys", "animal", "small", "gift"],
       },
       {
-        target: "“This was the best day ever,” I tell Dad with a big smile.",
-        jumbled: ["day", "big", "ever,”", "best", "tell", "a", "I", "the", "“This", "Dad", "was", "smile.", "with"],
+        target: "I choose a soft giraffe, and Finn chooses a fluffy penguin.",
+        jumbled: ["soft", "I", "fluffy", "a", "and", "choose", "a", "penguin.", "Finn", "giraffe,", "chooses"],
       },
       {
         target: "On the way home, Finn and I talk about all our favorite animals.",

@@ -53,8 +53,8 @@ export const CHAPTERS = [
         jumbled: ["a", "new", "complicated,", "small", "screen", "phone", "with", "many", "icons.", "more", "much", "This", "looks", "large", "and"],
       },
       {
-        target: "“Beatriz, you can learn this,” I tell myself, even though I feel a little nervous about learning something so new at my age.",
-        jumbled: ["my", "new", "I", "tell", "though", "nervous", "something", "this,”", "I", "learning", "age.", "“Beatriz,", "about", "a", "feel", "little", "you", "so", "even", "can", "learn", "at", "myself,"],
+        target: "Still, I know many useful things are possible with a phone like this one.",
+        jumbled: ["are", "know", "Still,", "this", "phone", "I", "a", "many", "one.", "like", "useful", "possible", "with", "things"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about learning to use something new.",
@@ -89,8 +89,8 @@ export const CHAPTERS = [
         jumbled: ["and", "technology", "easily.", "quickly", "understand", "He", "to", "is", "young", "seems", "always", "very", "and"],
       },
       {
-        target: "“Aunt Beatriz, I can come over this weekend and help you,” he says kindly on the phone.",
-        jumbled: ["come", "phone.", "this", "you,”", "the", "over", "he", "kindly", "weekend", "“Aunt", "says", "Beatriz,", "help", "on", "and", "can", "I"],
+        target: "I feel relieved knowing I will not have to figure this out completely alone.",
+        jumbled: ["have", "completely", "I", "alone.", "this", "I", "not", "relieved", "figure", "will", "out", "to", "feel", "knowing"],
       },
       {
         target: "Noah always explains things patiently, without making me feel silly for asking simple questions.",
@@ -129,16 +129,16 @@ export const CHAPTERS = [
         jumbled: ["sits", "me", "a", "arrives", "warm", "smile", "Saturday,", "and", "with", "face.", "his", "On", "beside", "Noah", "on"],
       },
       {
-        target: "“Let's start simple, Aunt Beatriz,” he says, picking up the new phone gently from the table.",
-        jumbled: ["start", "he", "new", "phone", "Aunt", "table.", "the", "up", "“Let's", "says,", "the", "from", "picking", "simple,", "gently", "Beatriz,”"],
+        target: "I press it carefully, and the screen lights up brightly, showing colorful icons everywhere.",
+        jumbled: ["and", "it", "press", "I", "carefully,", "icons", "the", "screen", "everywhere.", "showing", "up", "brightly,", "lights", "colorful"],
       },
       {
         target: "He shows me the small button on the side used to turn the phone on.",
         jumbled: ["on.", "side", "the", "phone", "button", "the", "used", "me", "turn", "small", "shows", "on", "the", "He", "to"],
       },
       {
-        target: "“Don't worry, everything here is easy once you know where to look,” he reassures me kindly.",
-        jumbled: ["me", "to", "once", "“Don't", "worry,", "you", "is", "look,”", "reassures", "everything", "where", "easy", "he", "know", "here", "kindly."],
+        target: "I feel my nervousness slowly fading with each simple, clear step he shows me.",
+        jumbled: ["my", "shows", "clear", "simple,", "I", "me.", "step", "slowly", "with", "feel", "nervousness", "he", "fading", "each"],
       },
       {
         target: "He explains the icons slowly, one at a time, without rushing through any explanation.",
@@ -173,16 +173,16 @@ export const CHAPTERS = [
         jumbled: ["how", "app", "contact.", "the", "to", "find", "a", "Next,", "Noah", "and", "shows", "messages", "me", "open"],
       },
       {
-        target: "“Nice work, Aunt Beatriz,” Noah says as I choose my sister's name from the contact list, feeling proud I found it myself.",
-        jumbled: ["list,", "says", "work,", "my", "myself.", "the", "Aunt", "“Nice", "it", "name", "Beatriz,”", "proud", "choose", "feeling", "I", "Noah", "as", "contact", "I", "sister's", "found", "from"],
+        target: "I press the send button, and the message disappears from the screen immediately.",
+        jumbled: ["the", "I", "from", "press", "message", "send", "the", "button,", "immediately.", "the", "screen", "and", "disappears"],
       },
       {
         target: "I type a short message slowly, checking each letter twice before sending it.",
         jumbled: ["before", "it.", "twice", "slowly,", "message", "short", "each", "a", "sending", "type", "I", "checking", "letter"],
       },
       {
-        target: "“Hi Carmen, I have a new phone now,” I write with careful concentration.",
-        jumbled: ["Carmen,", "a", "write", "I", "careful", "phone", "with", "new", "concentration.", "“Hi", "now,”", "have", "I"],
+        target: "I feel a small burst of excitement seeing it work.",
+        jumbled: ["work.", "I", "it", "excitement", "a", "small", "seeing", "feel", "of", "burst"],
       },
       {
         target: "A minute later, my phone buzzes with a reply from my sister.",
@@ -217,8 +217,8 @@ export const CHAPTERS = [
         jumbled: ["camera", "taking", "photo", "Noah", "with", "a", "app.", "more", "practice", "suggests", "the", "we", "something", "fun:"],
       },
       {
-        target: "“Try this, Aunt Beatriz,” he says, showing me where the camera icon is and how to open it quickly.",
-        jumbled: ["camera", "this,", "open", "is", "showing", "where", "and", "“Try", "Beatriz,”", "me", "to", "he", "the", "it", "Aunt", "how", "quickly.", "says,", "icon"],
+        target: "I laugh too, surprised at how clear and colorful the picture looks.",
+        jumbled: ["too,", "clear", "surprised", "I", "at", "laugh", "picture", "looks.", "how", "and", "the", "colorful"],
       },
       {
         target: "I point the phone at him, and he makes a silly, funny pose for the picture.",
@@ -261,8 +261,8 @@ export const CHAPTERS = [
         jumbled: ["several", "same", "explore", "at", "accidentally", "open", "apps", "I", "it.", "to", "understanding", "the", "on", "without", "Trying", "my", "own,", "time"],
       },
       {
-        target: "“I think I broke it,” I tell Noah, feeling a little worried about my mistake.",
-        jumbled: ["I", "broke", "tell", "little", "worried", "a", "mistake.", "Noah,", "I", "feeling", "about", "my", "it,”", "think", "“I"],
+        target: "The screen becomes crowded with different windows, and I feel confused about what happened.",
+        jumbled: ["what", "windows,", "different", "happened.", "confused", "I", "and", "with", "feel", "The", "about", "becomes", "crowded", "screen"],
       },
       {
         target: "Noah laughs gently.",
@@ -301,8 +301,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "“Aunt Beatriz, want to learn video calling?” Noah asks, so I can see my family more often.",
-        jumbled: ["I", "my", "so", "family", "can", "Beatriz,", "see", "often.", "to", "“Aunt", "asks,", "calling?”", "more", "learn", "Noah", "want", "video"],
+        target: "He downloads a simple video calling app and shows me how it works.",
+        jumbled: ["calling", "a", "video", "downloads", "He", "simple", "app", "shows", "works.", "and", "me", "it", "how"],
       },
       {
         target: "My daughter lives far away, and this idea excites me immediately and completely.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["screen", "my", "We", "her", "face", "on", "suddenly.", "call", "together,", "daughter", "and", "my", "smiling", "appears"],
       },
       {
-        target: "“Mom, you're using a smartphone now?” she asks, clearly surprised and happy about it.",
-        jumbled: ["“Mom,", "surprised", "smartphone", "a", "it.", "she", "now?”", "asks,", "using", "you're", "and", "about", "clearly", "happy"],
+        target: "This feature alone already makes the whole new phone feel worth it.",
+        jumbled: ["phone", "worth", "alone", "feature", "feel", "makes", "This", "already", "whole", "it.", "the", "new"],
       },
       {
         target: "We talk for several minutes, and I feel genuinely happy seeing her face so clearly.",
@@ -353,8 +353,8 @@ export const CHAPTERS = [
         jumbled: ["and", "a", "I", "take", "app", "more", "camera", "around", "again", "the", "apartment.", "few", "open", "my", "photos"],
       },
       {
-        target: "“Look at you, Beatriz,” I think with a smile, feeling more comfortable finding buttons and menus without asking anyone for help.",
-        jumbled: ["a", "anyone", "and", "comfortable", "you,", "smile,", "feeling", "Beatriz,”", "menus", "finding", "buttons", "help.", "with", "asking", "“Look", "more", "at", "for", "think", "I", "without"],
+        target: "I also check the messages app to see if my sister replied again.",
+        jumbled: ["sister", "also", "messages", "if", "I", "to", "the", "my", "replied", "see", "check", "app", "again."],
       },
       {
         target: "I make a small mistake once, but I remember Noah's advice about the button that fixes things.",
@@ -397,8 +397,8 @@ export const CHAPTERS = [
         jumbled: ["her", "and", "I", "show", "my", "photos", "the", "phone", "yesterday.", "took", "proudly", "new", "I"],
       },
       {
-        target: "“You learned all this so quickly, Beatriz,” Rosa says, clearly impressed by my new skills.",
-        jumbled: ["all", "my", "skills.", "learned", "“You", "impressed", "Beatriz,”", "new", "says,", "Rosa", "this", "quickly,", "so", "clearly", "by"],
+        target: "Sharing what I learned with a friend makes me feel confident and helpful today.",
+        jumbled: ["a", "what", "me", "helpful", "and", "with", "feel", "I", "today.", "learned", "friend", "makes", "confident", "Sharing"],
       },
       {
         target: "Rosa admits she also wants a new phone but feels nervous about learning it too.",
@@ -449,8 +449,8 @@ export const CHAPTERS = [
         jumbled: ["already", "looking", "this", "worries", "little", "new", "about", "technology", "back", "a", "feel", "now.", "My", "old", "silly"],
       },
       {
-        target: "“You're a natural, Aunt Beatriz,” Noah says when he checks in sometimes, proud of how comfortable I have become with everything so quickly.",
-        jumbled: ["of", "when", "quickly.", "become", "a", "proud", "Aunt", "have", "in", "checks", "I", "he", "says", "natural,", "everything", "Noah", "sometimes,", "so", "Beatriz,”", "“You're", "with", "how", "comfortable"],
+        target: "Noah says I am a natural when he checks in sometimes.",
+        jumbled: ["Noah", "am", "sometimes.", "checks", "I", "says", "he", "in", "natural", "when", "a"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something that felt scary at first but became comfortable.",

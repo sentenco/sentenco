@@ -65,8 +65,8 @@ export const CHAPTERS = [
         jumbled: ["stop", "this", "but", "know", "it", "I", "to", "myself", "anyway.", "can't", "comparing", "doing", "healthy,", "I", "like", "seem", "isn't"],
       },
       {
-        target: "\"Something has to change, Zoe,\" I tell myself, although I'm not entirely sure what that should look like yet.",
-        jumbled: ["should", "has", "look", "I'm", "yet.", "that", "sure", "to", "not", "tell", "\"Something", "although", "entirely", "like", "Zoe,\"", "I", "change,", "myself,", "what"],
+        target: "I tell myself that something has to change, though I am not sure what.",
+        jumbled: ["though", "I", "has", "I", "not", "that", "something", "am", "what.", "to", "change,", "sure", "tell", "myself"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a habit you noticed you wanted to change.",
@@ -101,8 +101,8 @@ export const CHAPTERS = [
         jumbled: ["sympathizing,", "all.", "just", "any", "bold:", "week", "at", "Instead", "she", "without", "suggests", "apps", "social", "full", "media", "of", "a", "something"],
       },
       {
-        target: "“If you deleted the apps, Zoe, you wouldn't even be tempted to check them,” she reasons calmly.",
-        jumbled: ["the", "Zoe,", "tempted", "check", "deleted", "to", "you", "you", "even", "she", "apps,", "calmly.", "“If", "wouldn't", "them,”", "reasons", "be"],
+        target: "She calmly says that deleting the apps would stop me from checking them.",
+        jumbled: ["stop", "the", "deleting", "apps", "from", "calmly", "that", "checking", "says", "me", "them.", "She", "would"],
       },
       {
         target: "I feel a flash of panic just imagining it, since I've never gone more than a few hours without checking something.",
@@ -149,8 +149,8 @@ export const CHAPTERS = [
         jumbled: ["looks", "is", "already.", "almost", "missing", "life", "My", "something", "strangely", "from", "screen", "empty,", "my", "like", "home"],
       },
       {
-        target: "\"No turning back now, Zoe,\" I whisper to the empty room.",
-        jumbled: ["whisper", "to", "empty", "room.", "now,", "back", "turning", "Zoe,\"", "the", "\"No", "I"],
+        target: "Whatever happens this week, I have already committed, and there's no turning back now.",
+        jumbled: ["already", "committed,", "there's", "have", "no", "week,", "back", "I", "turning", "Whatever", "this", "happens", "and", "now."],
       },
       {
         target: "I set a reminder for exactly seven days from now, when I will allow myself to reinstall everything.",
@@ -329,8 +329,8 @@ export const CHAPTERS = [
         jumbled: ["probably", "in", "text,", "tell", "shared", "person", "I", "her", "have", "talking", "over", "somehow.", "things", "vulnerable", "I", "since", "more", "wouldn't", "feels"],
       },
       {
-        target: "“I've been thinking about deleting mine too, Zoe, not just for this one week,” she admits.",
-        jumbled: ["too,", "one", "mine", "“I've", "deleting", "just", "for", "admits.", "about", "been", "this", "thinking", "not", "she", "week,”", "Zoe,"],
+        target: "She admits that she has been thinking about deleting hers too.",
+        jumbled: ["thinking", "She", "hers", "deleting", "about", "that", "she", "admits", "been", "too.", "has"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a meaningful conversation you had without distractions.",
@@ -373,8 +373,8 @@ export const CHAPTERS = [
         jumbled: ["how", "my", "Reading", "calmer", "lately.", "entries,", "I", "present", "generally", "notice", "I", "back", "felt", "more", "through", "and", "have", "much"],
       },
       {
-        target: "\"No rush, Zoe,\" I write at the bottom of the page, and I decide to think about this decision carefully rather than rushing into anything immediately.",
-        jumbled: ["I", "immediately.", "rushing", "write", "about", "carefully", "to", "this", "into", "I", "the", "page,", "of", "and", "than", "think", "anything", "rush,", "\"No", "decide", "rather", "bottom", "decision", "Zoe,\"", "the", "at"],
+        target: "I write at the bottom of the page that there is no rush.",
+        jumbled: ["write", "I", "page", "of", "that", "the", "the", "is", "rush.", "bottom", "no", "there", "at"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about reaching a goal and reflecting on what you learned.",

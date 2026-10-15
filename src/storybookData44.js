@@ -89,8 +89,8 @@ export const CHAPTERS = [
         jumbled: ["I", "the", "phone", "to", "see", "check", "many", "until", "minutes", "how", "my", "arrives.", "bus"],
       },
       {
-        target: "I check my badge, which reads “Angela,” before putting it back in my bag.",
-        jumbled: ["before", "“Angela,”", "I", "check", "badge,", "putting", "it", "bag.", "my", "back", "my", "reads", "which", "in"],
+        target: "The app says three minutes, so I have a little time to relax.",
+        jumbled: ["so", "a", "have", "minutes,", "to", "three", "I", "app", "little", "relax.", "The", "time", "says"],
       },
       {
         target: "I see Walter, a man I recognize from riding this bus almost every day.",
@@ -133,8 +133,8 @@ export const CHAPTERS = [
         jumbled: ["my", "carefully", "step", "on", "transit", "tap", "reader", "the", "on", "small", "the", "card", "I", "by", "and", "door."],
       },
       {
-        target: "“Morning, Angela,” the driver says, recognizing a regular rider, and I walk toward an empty seat near the middle.",
-        jumbled: ["empty", "walk", "the", "a", "middle.", "Angela,”", "the", "rider,", "an", "toward", "near", "I", "recognizing", "driver", "says,", "and", "“Morning,", "seat", "regular"],
+        target: "My commute officially begins now, and I settle in for the ride.",
+        jumbled: ["commute", "the", "officially", "now,", "My", "ride.", "begins", "and", "for", "I", "in", "settle"],
       },
       {
         target: "The bus is not too crowded today, which makes the ride feel more comfortable.",
@@ -177,8 +177,8 @@ export const CHAPTERS = [
         jumbled: ["feels", "once,", "get", "suddenly", "Many", "people", "at", "crowded", "than", "before.", "more", "bus", "the", "it", "on", "and", "much"],
       },
       {
-        target: "“Thank you, dear,” she says kindly, and I move toward the back to hold onto a pole instead.",
-        jumbled: ["“Thank", "hold", "onto", "dear,”", "a", "move", "the", "to", "I", "instead.", "and", "you,", "she", "says", "kindly,", "toward", "back", "pole"],
+        target: "The bus continues moving slowly through the traffic.",
+        jumbled: ["the", "traffic.", "slowly", "moving", "bus", "The", "through", "continues"],
       },
       {
         target: "The bus feels warm now with so many people standing close together.",
@@ -261,8 +261,8 @@ export const CHAPTERS = [
         jumbled: ["the", "over", "pole.", "onto", "me,", "walks", "During", "the", "Walter", "delay,", "near", "stands", "and", "same", "holding"],
       },
       {
-        target: "“Traffic like this happens more than I would like,” he says with a small laugh.",
-        jumbled: ["I", "happens", "“Traffic", "he", "like", "small", "more", "says", "than", "would", "laugh.", "a", "like,”", "with", "this"],
+        target: "He says with a small laugh that traffic like this happens often.",
+        jumbled: ["like", "that", "with", "often.", "small", "laugh", "says", "traffic", "happens", "He", "this", "a"],
       },
       {
         target: "He asks where I work, and I tell him about my office near the city center.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["check", "now.", "my", "few", "calculate", "will", "and", "I", "be", "I", "a", "minutes", "that", "late", "phone", "only"],
       },
       {
-        target: "“Angela, your manager understands occasional delays,” I remind myself, so I do not feel too worried about it anymore.",
-        jumbled: ["do", "anymore.", "feel", "I", "your", "understands", "about", "“Angela,", "occasional", "too", "manager", "worried", "remind", "not", "so", "myself,", "I", "delays,”", "it"],
+        target: "Walter returns to his seat, giving me a friendly nod before sitting down again.",
+        jumbled: ["Walter", "again.", "down", "friendly", "before", "me", "returns", "giving", "his", "seat,", "to", "nod", "a", "sitting"],
       },
       {
         target: "The city passes by outside the window, and familiar buildings tell me my stop is getting closer.",
@@ -349,8 +349,8 @@ export const CHAPTERS = [
         jumbled: ["The", "to", "stop.", "the", "stop,", "the", "press", "button", "finally", "to", "I", "my", "and", "reaches", "bus", "signal", "driver"],
       },
       {
-        target: "I wave goodbye to Walter, who smiles and says, “See you tomorrow, Angela!”",
-        jumbled: ["wave", "you", "I", "Walter,", "who", "to", "tomorrow,", "smiles", "says,", "Angela!”", "“See", "goodbye", "and"],
+        target: "Walking through the office doors, I already feel ready to start my workday.",
+        jumbled: ["my", "doors,", "to", "feel", "I", "already", "through", "Walking", "office", "start", "ready", "workday.", "the"],
       },
       {
         target: "The fresh air feels nice after standing inside the warm, crowded bus for so long.",
@@ -445,8 +445,8 @@ export const CHAPTERS = [
         jumbled: ["daily", "friendly", "and", "It", "small,", "faces.", "a", "of", "become", "part", "with", "has", "filled", "routine", "my", "familiar", "life,"],
       },
       {
-        target: "“Angela, this is what your daily life looks like now,” I think with a smile.",
-        jumbled: ["smile.", "daily", "like", "your", "is", "with", "this", "what", "a", "I", "looks", "“Angela,", "now,”", "think", "life"],
+        target: "I smile and think that this is what my daily life looks like now.",
+        jumbled: ["this", "is", "what", "like", "I", "now.", "that", "my", "and", "think", "daily", "smile", "looks", "life"],
       },
       {
         target: "Tomorrow, I will see Walter again at the same stop, and we might talk about our days once more.",

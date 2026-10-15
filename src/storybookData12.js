@@ -53,8 +53,8 @@ export const CHAPTERS = [
         jumbled: ["I", "soup.", "bread,", "and", "hot", "coffee,", "smell"],
       },
       {
-        target: "“Take your time, Morgan,” I think, and I look at the menu board and read the food names slowly.",
-        jumbled: ["the", "the", "I", "think,", "Morgan,”", "I", "slowly.", "and", "your", "and", "food", "board", "“Take", "at", "menu", "time,", "look", "names", "read"],
+        target: "Today I want something simple, so I choose chicken soup, bread, and iced tea.",
+        jumbled: ["chicken", "and", "I", "tea.", "want", "something", "I", "iced", "Today", "bread,", "choose", "soup,", "so", "simple,"],
       },
       {
         target: "Then I pay for my meal and carry my tray to a table near the window.",
@@ -185,16 +185,16 @@ export const CHAPTERS = [
         jumbled: ["warm,", "café", "coffee", "small", "The", "a", "and", "is", "soft", "and", "smell.", "good", "with", "music"],
       },
       {
-        target: "A friendly waiter comes and asks, “What would you like this morning?”",
-        jumbled: ["“What","friendly","morning?”","you","this","and","A","comes","would","asks,","waiter","like"],
+        target: "I sit at a table by the window and look at the menu.",
+        jumbled: ["the", "at", "sit", "by", "the", "I", "at", "look", "window", "a", "table", "and", "menu."],
       },
       {
         target: "In a few minutes, he brings my warm eggs, golden toast, and hot coffee.",
         jumbled: ["and", "coffee.", "minutes,", "In", "brings", "hot", "a", "few", "he", "warm", "toast,", "golden", "eggs,", "my"],
       },
       {
-        target: "“Enjoy this, Morgan,” I think, and I eat slowly and watch the busy street outside the window.",
-        jumbled: ["think,", "I", "watch", "and", "the", "“Enjoy", "Morgan,”", "and", "outside", "slowly", "street", "this,", "I", "window.", "eat", "busy", "the"],
+        target: "The food looks fresh, and the coffee smells wonderful.",
+        jumbled: ["fresh,", "The", "and", "smells", "coffee", "looks", "food", "wonderful.", "the"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about breakfast you like.",
@@ -225,16 +225,16 @@ export const CHAPTERS = [
         jumbled: ["friend", "about", "place", "soup.", "Ana", "tells", "a", "nice", "warm", "serves", "me", "that", "noodle", "My"],
       },
       {
-        target: "A waiter smiles and says, “Welcome, please sit here.”",
-        jumbled: ["here.”", "waiter", "and", "A", "sit", "“Welcome,", "please", "says,", "smiles"],
+        target: "This weekend, I want to try a new restaurant in my city.",
+        jumbled: ["city.", "I", "a", "weekend,", "try", "want", "new", "my", "This", "in", "restaurant", "to"],
       },
       {
         target: "The restaurant is clean and bright, with pictures of food on the walls.",
         jumbled: ["clean", "bright,", "The", "walls.", "and", "the", "is", "pictures", "with", "food", "restaurant", "on", "of"],
       },
       {
-        target: "Ana says, “Let's try the special noodle soup and some spring rolls, Morgan.”",
-        jumbled: ["try", "Morgan.”", "rolls,", "Ana", "soup", "“Let's", "some", "special", "the", "noodle", "and", "spring", "says,"],
+        target: "There are many new dishes that I have never tried before.",
+        jumbled: ["before.", "tried", "many", "that", "never", "are", "have", "There", "I", "dishes", "new"],
       },
       {
         target: "I feel happy because trying new places is fun.",
@@ -273,12 +273,12 @@ export const CHAPTERS = [
         jumbled: ["and", "I", "look", "time", "choose", "at", "dish.", "one", "my", "menu", "the", "more"],
       },
       {
-        target: "I say, “I would like the noodle soup and a glass of water, please.”",
-        jumbled: ["like","a","the","I","noodle","please.”","and","soup","glass","would","say,","water,","of","“I"],
+        target: "I order the noodle soup and a glass of water.",
+        jumbled: ["of", "order", "a", "I", "glass", "soup", "and", "the", "water.", "noodle"],
       },
       {
-        target: "He asks, “Would you like anything else with your meal?”",
-        jumbled: ["with","you","asks,","He","your","“Would","else","meal?”","anything","like"],
+        target: "He asks if I would like anything else with my meal.",
+        jumbled: ["asks", "would", "I", "like", "He", "anything", "with", "my", "meal.", "else", "if"],
       },
       {
         target: "I feel proud because I ordered my food clearly in English.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["noodle", "smells", "rolls", "the", "look", "crispy.", "wonderful,", "and", "and", "golden", "spring", "The", "soup"],
       },
       {
-        target: "Ana and I say, “Thank you,” and start to eat our meal.",
-        jumbled: ["start", "you,”", "“Thank", "meal.", "I", "eat", "our", "and", "and", "say,", "to", "Ana"],
+        target: "The soup is warm, and the noodles are soft and delicious.",
+        jumbled: ["are", "noodles", "warm,", "soft", "soup", "and", "the", "and", "delicious.", "is", "The"],
       },
       {
         target: "We share the spring rolls and talk about our week and our plans.",

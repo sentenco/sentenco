@@ -48,8 +48,8 @@ export const CHAPTERS = [
         jumbled: ["talent", "school", "the", "announces", "This", "a", "show.", "morning,", "wall", "on", "the", "poster"],
       },
       {
-        target: "My best friend Cody looks at me and says, “We should do this together, Zoe!”",
-        jumbled: ["says,", "at", "best", "Zoe!”", "looks", "“We", "together,", "this", "do", "Cody", "and", "friend", "My", "me", "should"],
+        target: "Alvarez, the music teacher, smiles and says she cannot wait to see us.",
+        jumbled: ["Alvarez,", "see", "music", "smiles", "teacher,", "wait", "to", "the", "cannot", "us.", "she", "and", "says"],
       },
       {
         target: "We write our names on the sign-up sheet outside the music room.",
@@ -140,8 +140,8 @@ export const CHAPTERS = [
         jumbled: ["stays", "gently", "my", "and", "reminds", "me", "when", "patient", "place.", "I", "lose", "Cody"],
       },
       {
-        target: "“It's just the first try, Zoe, we'll get better,” Cody says encouragingly.",
-        jumbled: ["Cody", "better,”", "just", "the", "“It's", "we'll", "encouragingly.", "Zoe,", "says", "get", "first", "try,"],
+        target: "Alvarez watches from the front row and takes helpful notes.",
+        jumbled: ["notes.", "the", "row", "and", "Alvarez", "from", "takes", "front", "helpful", "watches"],
       },
       {
         target: "She tells us to relax our shoulders and breathe before singing.",
@@ -184,8 +184,8 @@ export const CHAPTERS = [
         jumbled: ["school?", "if", "What", "whole", "of", "front", "forget", "the", "the", "in", "words", "I"],
       },
       {
-        target: "“I get scared too, Zoe, but we can be scared together,” Cody says kindly.",
-        jumbled: ["“I", "Zoe,", "we", "can", "but", "scared", "get", "together,”", "says", "be", "scared", "too,", "Cody", "kindly."],
+        target: "The next day, I tell Cody about my fear before rehearsal starts.",
+        jumbled: ["about", "starts.", "The", "tell", "my", "rehearsal", "I", "fear", "day,", "before", "Cody", "next"],
       },
       {
         target: "Ms. Alvarez tells us that even famous singers feel nervous sometimes.",
@@ -224,8 +224,8 @@ export const CHAPTERS = [
         jumbled: ["song", "I", "school,", "and", "together.", "practice", "Every", "day", "after", "our", "Cody"],
       },
       {
-        target: "Cody's little sister watches us and claps, shouting, “Go, Zoe and Cody!” after every practice session.",
-        jumbled: ["shouting,", "watches", "and", "practice", "little", "sister", "Cody!”", "after", "claps,", "“Go,", "and", "every", "Zoe", "session.", "us", "Cody's"],
+        target: "We practice in Cody's garage, using an old microphone and speaker.",
+        jumbled: ["We", "and", "garage,", "practice", "old", "an", "using", "Cody's", "microphone", "speaker.", "in"],
       },
       {
         target: "We work on hitting the high notes and staying together in rhythm.",
@@ -280,8 +280,8 @@ export const CHAPTERS = [
         jumbled: ["special.", "the", "make", "on", "it", "a", "outfit", "button", "new", "to", "sews", "Mom", "small"],
       },
       {
-        target: "“Problem solved, and you look great too, Zoe,” Mom says with a proud smile.",
-        jumbled: ["look", "and", "you", "smile.", "too,", "solved,", "a", "“Problem", "says", "Mom", "Zoe,”", "proud", "great", "with"],
+        target: "A small costume problem does not have to ruin the whole show.",
+        jumbled: ["costume", "A", "problem", "to", "does", "small", "show.", "the", "whole", "have", "not", "ruin"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about solving a small problem.",
@@ -320,8 +320,8 @@ export const CHAPTERS = [
         jumbled: ["we", "me", "together.", "begin", "encouraging", "nod,", "an", "Cody", "gives", "and", "singing"],
       },
       {
-        target: "“That was wonderful, Zoe and Cody, you two are ready,” she says when we finish.",
-        jumbled: ["finish.", "Cody,", "she", "says", "wonderful,", "“That", "when", "Zoe", "was", "we", "ready,”", "two", "you", "and", "are"],
+        target: "Alvarez watches from the audience seats with a proud, warm smile.",
+        jumbled: ["the", "seats", "proud,", "Alvarez", "from", "smile.", "a", "warm", "with", "audience", "watches"],
       },
       {
         target: "We walk off stage feeling excited and ready for tomorrow's show.",
@@ -360,16 +360,16 @@ export const CHAPTERS = [
         jumbled: ["at", "all", "I", "same", "proud", "excited,", "nervous,", "feel", "the", "time.", "and"],
       },
       {
-        target: "I smile and text back, “I can't wait to sing with you.”",
-        jumbled: ["wait", "sing", "text", "you.”", "to", "can't", "“I", "with", "and", "smile", "I", "back,"],
+        target: "My phone buzzes with a text message from Cody.",
+        jumbled: ["a", "buzzes", "text", "from", "with", "My", "message", "phone", "Cody."],
       },
       {
         target: "I go over the song lyrics quietly one more time in my head.",
         jumbled: ["head.", "lyrics", "one", "I", "time", "go", "my", "song", "over", "the", "more", "quietly", "in"],
       },
       {
-        target: "“Just have fun up there, that's all that matters,” she says softly.",
-        jumbled: ["all", "up", "says", "that's", "matters,”", "“Just", "have", "she", "that", "there,", "fun", "softly."],
+        target: "My mom comes in to say goodnight and wishes me luck.",
+        jumbled: ["mom", "in", "My", "and", "comes", "to", "say", "me", "luck.", "wishes", "goodnight"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about the night before something important.",
@@ -444,8 +444,8 @@ export const CHAPTERS = [
         jumbled: ["huge", "I", "other", "smiles.", "Cody", "each", "with", "and", "hug"],
       },
       {
-        target: "“We actually did it!” I say, still feeling the excitement in my chest.",
-        jumbled: ["“We", "still", "feeling", "my", "the", "did", "it!”", "say,", "excitement", "I", "actually", "in", "chest."],
+        target: "After the show, Cody and I hug each other with huge smiles.",
+        jumbled: ["I", "hug", "with", "Cody", "huge", "each", "and", "After", "the", "other", "smiles.", "show,"],
       },
       {
         target: "My parents find me in the crowd and give me a big, proud hug.",

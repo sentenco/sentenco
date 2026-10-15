@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["saying", "month,", "forming.", "and", "I", "voice", "talent", "painting", "to", "distinctive", "a", "made", "last", "it", "artistic", "a", "She", "already", "shows", "points", "genuine"],
       },
       {
-        target: "“Have you thought seriously about applying to art school, Sana?” she asks, watching my reaction closely and thoughtfully.",
-        jumbled: ["my", "school,", "about", "she", "asks,", "seriously", "to", "reaction", "“Have", "and", "thoughtfully.", "you", "applying", "art", "thought", "closely", "watching", "Sana?”"],
+        target: "Okoro asks me to stay behind to look through my portfolio together more carefully.",
+        jumbled: ["Okoro", "through", "stay", "asks", "to", "carefully.", "my", "look", "more", "portfolio", "to", "behind", "me", "together"],
       },
       {
         target: "I admit I've thought about it constantly, though I haven't told my parents anything about these feelings yet.",
@@ -186,8 +186,8 @@ export const CHAPTERS = [
         jumbled: ["to", "something", "and", "expression", "to", "from", "concern", "quiet", "His", "shifts", "read,", "somewhere", "disappointment.", "harder", "between", "confusion"],
       },
       {
-        target: "“I always assumed you enjoyed the engineering path we discussed, Sana,” he says slowly, clearly processing this unexpected shift.",
-        jumbled: ["this", "you", "he", "always", "says", "unexpected", "shift.", "slowly,", "“I", "processing", "engineering", "assumed", "we", "the", "Sana,”", "path", "enjoyed", "clearly", "discussed,"],
+        target: "I take a deep breath, knowing this conversation has only just truly begun.",
+        jumbled: ["I", "this", "just", "breath,", "take", "knowing", "conversation", "truly", "begun.", "only", "deep", "has", "a"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about beginning a conversation that felt difficult but necessary.",
@@ -222,8 +222,8 @@ export const CHAPTERS = [
         jumbled: ["only", "a", "to", "be", "He", "unkind,", "rooted", "I", "isn't", "future", "realize,", "trying", "secure", "for", "fears", "me.", "in", "wanting", "expressing"],
       },
       {
-        target: "“Art is a wonderful hobby, Sana, but can it really support you long-term?” he asks, not dismissively, but with real concern.",
-        jumbled: ["you", "but", "dismissively,", "a", "but", "long-term?”", "can", "really", "not", "with", "it", "hobby,", "he", "real", "wonderful", "is", "support", "concern.", "asks,", "“Art", "Sana,"],
+        target: "Although he doesn't look convinced yet, he does seem willing to actually listen now.",
+        jumbled: ["does", "willing", "he", "seem", "to", "yet,", "now.", "look", "he", "convinced", "doesn't", "actually", "listen", "Although"],
       },
       {
         target: "I feel frustration building, though I try reminding myself that understanding his perspective doesn't mean automatically agreeing with it.",
@@ -266,8 +266,8 @@ export const CHAPTERS = [
         jumbled: ["shifting", "politeness", "pausing", "slowly,", "pieces,", "surprise.", "expression", "his", "flips", "from", "on", "genuine", "through", "He", "to", "certain", "longer"],
       },
       {
-        target: "“I didn't realize your skill had developed this much, Sana,” he admits, sounding almost embarrassed about not knowing sooner.",
-        jumbled: ["“I", "admits,", "almost", "skill", "had", "much,", "not", "knowing", "this", "developed", "didn't", "realize", "your", "Sana,”", "about", "he", "sounding", "embarrassed", "sooner."],
+        target: "He admits that he did not realize my skill had developed so much.",
+        jumbled: ["my", "he", "much.", "had", "not", "realize", "admits", "He", "so", "skill", "developed", "did", "that"],
       },
       {
         target: "I explain how many hours I've spent practicing after school, hours he assumed were spent on homework instead.",
@@ -310,8 +310,8 @@ export const CHAPTERS = [
         jumbled: ["showing", "build", "various", "find", "many", "careers", "we", "art", "Together,", "statistics", "across", "stable,", "successful", "do", "graduates", "creative", "industries."],
       },
       {
-        target: "“Just consider it, Sana,” he adds, suggesting I also apply to one or two universities offering both art and a practical minor.",
-        jumbled: ["two", "consider", "offering", "it,", "practical", "he", "art", "universities", "Sana,”", "apply", "a", "also", "minor.", "or", "and", "one", "suggesting", "“Just", "adds,", "I", "to", "both"],
+        target: "He adds that I should consider applying to universities with art and a practical minor.",
+        jumbled: ["applying", "He", "art", "universities", "a", "should", "adds", "and", "consider", "with", "to", "minor.", "that", "practical", "I"],
       },
       {
         target: "It feels like genuine middle ground rather than simple defeat.",
@@ -354,8 +354,8 @@ export const CHAPTERS = [
         jumbled: ["looked", "She", "mention", "listens", "when", "actually", "through", "smiling", "portfolio.", "that", "my", "Dad", "interest,", "entire", "with", "I", "warmly", "genuine"],
       },
       {
-        target: "“Compromises aren't failures, Sana. Sometimes they're just the beginning of a longer journey,” she reminds me kindly.",
-        jumbled: ["the", "beginning", "me", "journey,”", "of", "reminds", "longer", "aren't", "failures,", "a", "“Compromises", "she", "just", "Sometimes", "Sana.", "they're", "kindly."],
+        target: "Okoro everything that happened during our long conversation the night before.",
+        jumbled: ["before.", "everything", "happened", "our", "during", "conversation", "night", "long", "Okoro", "that", "the"],
       },
       {
         target: "She offers to help me research programs that combine strong art training with practical, career-focused coursework.",
@@ -442,8 +442,8 @@ export const CHAPTERS = [
         jumbled: ["send", "behind", "finally", "having", "there", "offered", "stands", "me,", "ago.", "expected", "something", "weeks", "be", "when", "to", "Dad", "never", "I", "it,", "I"],
       },
       {
-        target: "“I'm proud of you, Sana, for knowing what you want and fighting for it respectfully,” he says quietly.",
-        jumbled: ["it", "quietly.", "says", "Sana,", "want", "of", "knowing", "what", "fighting", "for", "you", "for", "respectfully,”", "“I'm", "proud", "you,", "and", "he"],
+        target: "He quietly says he is proud of me for knowing what I want.",
+        jumbled: ["He", "want.", "I", "says", "me", "what", "he", "proud", "knowing", "for", "of", "is", "quietly"],
       },
       {
         target: "I press submit, and something settles inside me, a mixture of excitement, nervousness, and genuine gratitude for how far we've come.",

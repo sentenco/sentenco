@@ -51,8 +51,8 @@ export const CHAPTERS = [
         jumbled: ["of", "a", "picture", "box", "with", "I", "have", "on", "a", "cat", "a", "it.", "new", "lunch"],
       },
       {
-        target: "“You are going to have so much fun, Lucy,” Mom says with a smile.",
-        jumbled: ["Lucy,”", "to", "Mom", "with", "have", "fun,", "“You", "going", "much", "says", "so", "smile.", "are", "a"],
+        target: "I hold Mom's hand tightly as we walk to the school gate.",
+        jumbled: ["we", "gate.", "Mom's", "to", "hand", "tightly", "school", "I", "hold", "walk", "the", "as"],
       },
       {
         target: "Many children walk into the big building with their parents.",
@@ -89,16 +89,16 @@ export const CHAPTERS = [
         jumbled: ["woman", "smiles", "classroom,", "Inside", "a", "at", "the", "me.", "kind"],
       },
       {
-        target: "“Hello, I am Ms. Bell, your new teacher,” she says warmly.",
-        jumbled: ["your", "Ms.", "I", "she", "Bell,", "“Hello,", "teacher,”", "am", "new", "says", "warmly."],
+        target: "Bell shows me where to put my backpack on a small hook.",
+        jumbled: ["on", "small", "put", "to", "hook.", "Bell", "where", "my", "a", "shows", "me", "backpack"],
       },
       {
         target: "Ms. Bell shows me where to put my backpack on a small hook.",
         jumbled: ["a", "where", "Ms.", "my", "hook.", "on", "backpack", "to", "shows", "small", "put", "Bell", "me"],
       },
       {
-        target: "“This is your very own seat, Lucy,” she says kindly.",
-        jumbled: ["says", "“This", "is", "very", "kindly.", "own", "your", "she", "seat,", "Lucy,”"],
+        target: "She has a name tag with my name on my desk.",
+        jumbled: ["with", "desk.", "name", "on", "my", "tag", "She", "name", "has", "a", "my"],
       },
       {
         target: "Ms. Bell's voice is soft, and her smile makes me feel calm.",
@@ -139,8 +139,8 @@ export const CHAPTERS = [
         jumbled: ["A", "reading", "a", "fuzzy", "soft", "corner", "pillows", "has", "cozy", "and", "rug."],
       },
       {
-        target: "“Welcome, Lucy,” Ms. Bell says, and she shows us where the crayons and paper are kept.",
-        jumbled: ["the", "where", "she", "paper", "crayons", "Lucy,”", "and", "us", "Bell", "kept.", "and", "shows", "are", "“Welcome,", "Ms.", "says,"],
+        target: "Bell says, and she shows us where the crayons and paper are kept.",
+        jumbled: ["and", "crayons", "the", "where", "and", "are", "says,", "Bell", "paper", "kept.", "she", "shows", "us"],
       },
       {
         target: "I already want to explore every single corner of this room.",
@@ -215,8 +215,8 @@ export const CHAPTERS = [
         jumbled: ["at", "and", "area,", "the", "waves", "me.", "At", "block", "a", "boy", "smiles"],
       },
       {
-        target: "“Hi, I'm Owen. Do you want to build with me?” he asks.",
-        jumbled: ["Owen.", "Do", "asks.", "“Hi,", "I'm", "build", "to", "want", "you", "me?”", "he", "with"],
+        target: "We start building a tall tower with colorful blocks together.",
+        jumbled: ["together.", "start", "colorful", "We", "building", "blocks", "with", "a", "tower", "tall"],
       },
       {
         target: "Owen is very good at making the tower stand up straight.",
@@ -261,8 +261,8 @@ export const CHAPTERS = [
         jumbled: ["sit", "a", "my", "to", "next", "friend", "named", "Owen", "Ella.", "girl", "and", "new", "I"],
       },
       {
-        target: "“Want to share, Lucy?” Ella asks, and she shares her crackers with me, and I share my apple slices too.",
-        jumbled: ["and", "my", "she", "share,", "share", "me,", "with", "shares", "slices", "Ella", "apple", "asks,", "crackers", "and", "too.", "I", "“Want", "her", "Lucy?”", "to"],
+        target: "Bell gives each of us a cup of apple slices.",
+        jumbled: ["of", "us", "apple", "each", "gives", "of", "slices.", "cup", "Bell", "a"],
       },
       {
         target: "Owen says his favorite color is green, and mine is purple.",
@@ -341,8 +341,8 @@ export const CHAPTERS = [
         jumbled: ["outside", "class", "takes", "whole", "to", "the", "Ms.", "play.", "Bell"],
       },
       {
-        target: "“Come on, Lucy!” Owen calls, and he and Ella run to the slide as I follow them quickly.",
-        jumbled: ["follow", "quickly.", "as", "on,", "the", "Owen", "calls,", "slide", "Ella", "“Come", "and", "he", "I", "Lucy!”", "and", "to", "run", "them"],
+        target: "The playground has swings, a slide, and a climbing wall.",
+        jumbled: ["swings,", "slide,", "has", "wall.", "The", "climbing", "a", "playground", "a", "and"],
       },
       {
         target: "Ella pushes me gently on the swing, and I laugh with joy.",
@@ -387,12 +387,12 @@ export const CHAPTERS = [
         jumbled: ["stand", "in", "of", "carefully.", "the", "front", "I", "class"],
       },
       {
-        target: "“This is my teddy bear. His name is Buttons,” I say.",
-        jumbled: ["His", "teddy", "Buttons,”", "bear.", "“This", "say.", "is", "is", "I", "my", "name"],
+        target: "My classmates smile and ask questions about my bear.",
+        jumbled: ["and", "about", "bear.", "My", "smile", "questions", "classmates", "ask", "my"],
       },
       {
-        target: "“Where did you get him, Lucy?” asks Ella with curious eyes.",
-        jumbled: ["you", "get", "curious", "Ella", "him,", "did", "“Where", "Lucy?”", "with", "asks", "eyes."],
+        target: "Everyone says Buttons looks very soft and cute.",
+        jumbled: ["and", "Everyone", "soft", "cute.", "looks", "Buttons", "very", "says"],
       },
       {
         target: "I feel proud to share something special with my new friends.",
@@ -425,8 +425,8 @@ export const CHAPTERS = [
         jumbled: ["Mom", "gate.", "school", "end", "the", "for", "me", "of", "day,", "at", "the", "waits", "the", "At"],
       },
       {
-        target: "“I made two new friends, and I love my teacher!” I say excitedly.",
-        jumbled: ["made", "my", "two", "new", "and", "love", "“I", "I", "teacher!”", "I", "friends,", "excitedly.", "say"],
+        target: "I show her the toy car that Owen let me borrow today.",
+        jumbled: ["show", "today.", "her", "the", "Owen", "borrow", "I", "toy", "let", "me", "that", "car"],
       },
       {
         target: "I tell Mom about circle time, snack time, and playing on the playground.",

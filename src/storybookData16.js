@@ -87,8 +87,8 @@ export const CHAPTERS = [
         jumbled: ["swings", "park.", "at", "I", "the", "First,", "run", "the", "big", "to"],
       },
       {
-        target: "“Ready, Jack?” Mom asks, and she gives me a gentle push.",
-        jumbled: ["gentle", "“Ready,", "a", "push.", "asks,", "Mom", "and", "she", "Jack?”", "gives", "me"],
+        target: "I climb up and hold the chains tightly.",
+        jumbled: ["climb", "the", "and", "hold", "chains", "up", "tightly.", "I"],
       },
       {
         target: "The wind blows through my hair as I swing up high.",
@@ -141,8 +141,8 @@ export const CHAPTERS = [
         jumbled: ["three", "towers", "more", "connect", "and", "make", "them", "I", "together."],
       },
       {
-        target: "“What a tall castle, Jack!” Mom says, and she takes a photo of it with her phone.",
-        jumbled: ["her", "Mom", "of", "a", "photo", "with", "says,", "tall", "Jack!”", "it", "a", "and", "she", "“What", "takes", "phone.", "castle,"],
+        target: "I use small sticks to make windows and doors.",
+        jumbled: ["to", "I", "small", "use", "windows", "make", "sticks", "doors.", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about playing with sand.",
@@ -171,8 +171,8 @@ export const CHAPTERS = [
         jumbled: ["I", "Mom", "walk", "and", "to", "pond.", "the"],
       },
       {
-        target: "“Here, Jack, try this,” Mom says, and she gives me a small bag of duck food.",
-        jumbled: ["says,", "a", "she", "Mom", "small", "this,”", "try", "Jack,", "me", "and", "bag", "duck", "food.", "of", "gives", "“Here,"],
+        target: "Many white ducks swim slowly in the cool water.",
+        jumbled: ["Many", "water.", "in", "cool", "white", "the", "swim", "slowly", "ducks"],
       },
       {
         target: "The ducks swim quickly and eat the food happily.",
@@ -213,8 +213,8 @@ export const CHAPTERS = [
         jumbled: ["I", "sandbox,", "a", "see", "a", "playing", "girl", "red", "ball.", "with", "the", "Near"],
       },
       {
-        target: "“Hi, my name is Lily,” she says with a friendly smile.",
-        jumbled: ["is", "Lily,”", "with", "a", "says", "friendly", "she", "name", "smile.", "“Hi,", "my"],
+        target: "Lily asks if I want to play ball with her.",
+        jumbled: ["Lily", "play", "ball", "I", "with", "asks", "to", "her.", "want", "if"],
       },
       {
         target: "We throw the ball back and forth and laugh a lot.",
@@ -301,8 +301,8 @@ export const CHAPTERS = [
         jumbled: ["fall", "knee", "scrape", "and", "on", "down", "ground.", "the", "I", "my"],
       },
       {
-        target: "“It's okay, Jack, let me see,” she says gently.",
-        jumbled: ["gently.", "see,”", "she", "let", "says", "“It's", "Jack,", "okay,", "me"],
+        target: "Mom runs over quickly and kneels beside me.",
+        jumbled: ["beside", "Mom", "me.", "runs", "quickly", "and", "over", "kneels"],
       },
       {
         target: "She cleans my knee and puts on a small bandage.",
@@ -335,8 +335,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Mom says, “Let's get ice cream, Jack!”",
-        jumbled: ["Mom", "“Let's", "ice", "says,", "Jack!”", "get", "cream,"],
+        target: "Lily chooses a scoop of pink strawberry ice cream too.",
+        jumbled: ["ice", "strawberry", "chooses", "pink", "scoop", "a", "too.", "Lily", "cream", "of"],
       },
       {
         target: "I choose a scoop of chocolate ice cream in a crunchy cone.",
@@ -385,8 +385,8 @@ export const CHAPTERS = [
         jumbled: ["under", "near", "the", "Mom", "and", "hurry", "bench.", "tree", "a", "I", "big"],
       },
       {
-        target: "“Our park day is not over yet, Jack,” Mom says with a smile.",
-        jumbled: ["a", "not", "yet,", "Jack,”", "Mom", "says", "park", "day", "with", "over", "“Our", "is", "smile."],
+        target: "She opens her bag and takes out a small blanket.",
+        jumbled: ["opens", "a", "small", "She", "takes", "blanket.", "her", "out", "bag", "and"],
       },
       {
         target: "We sit under the tree and have a cozy indoor-style picnic.",
@@ -431,8 +431,8 @@ export const CHAPTERS = [
         jumbled: ["knee", "that", "scary.", "scraped", "not", "a", "so", "I", "is", "learned", "even"],
       },
       {
-        target: "“This park is my favorite place in the whole world,” I say.",
-        jumbled: ["place", "park", "the", "world,”", "I", "my", "whole", "say.", "“This", "favorite", "in", "is"],
+        target: "Today, Lily and I sit together and look at the sunset.",
+        jumbled: ["Today,", "I", "and", "sunset.", "Lily", "sit", "at", "look", "together", "the", "and"],
       },
       {
         target: "I know I will keep coming back to this special place.",

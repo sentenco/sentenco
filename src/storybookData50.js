@@ -54,8 +54,8 @@ export const CHAPTERS = [
         jumbled: ["immediately", "lunch,", "mention", "fundraiser", "she", "ourselves.", "a", "this", "I", "organize", "Lena", "and", "at", "to", "we", "suggests"],
       },
       {
-        target: "“We could actually do this, Amir,” she says, already sounding sure of it.",
-        jumbled: ["could", "sounding", "of", "sure", "she", "“We", "this,", "already", "it.", "says,", "actually", "Amir,”", "do"],
+        target: "The idea feels ambitious, but something about it also feels genuinely worth trying.",
+        jumbled: ["idea", "feels", "something", "genuinely", "also", "worth", "about", "trying.", "feels", "ambitious,", "it", "but", "The"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a problem you noticed that you wanted to fix.",
@@ -94,8 +94,8 @@ export const CHAPTERS = [
         jumbled: ["how", "He", "plan", "collect", "questions", "it", "intend", "to", "several", "our", "reads", "and", "we", "asking", "about", "carefully,", "donations."],
       },
       {
-        target: "“If you're serious about this, Amir, I'll support you, but you'll need to handle most of the organizing yourselves,” he says.",
-        jumbled: ["handle", "need", "organizing", "but", "Amir,", "serious", "the", "most", "you're", "about", "yourselves,”", "of", "says.", "I'll", "he", "support", "you,", "you'll", "to", "this,", "“If"],
+        target: "We write a short proposal explaining our goal and bring it to Mr.",
+        jumbled: ["bring", "write", "to", "it", "proposal", "and", "short", "We", "goal", "explaining", "a", "our", "Mr."],
       },
       {
         target: "I feel a mix of excitement and nervousness, since neither of us has organized something like this before.",
@@ -310,8 +310,8 @@ export const CHAPTERS = [
         jumbled: ["up,", "the", "show", "if", "if", "what", "not", "fails", "performance?", "equipment", "What", "during", "or", "sound", "enough", "a", "people"],
       },
       {
-        target: "Lena had told me earlier, “Worrying won't change anything, Amir,” but my mind refuses to listen right now.",
-        jumbled: ["refuses", "had", "change", "right", "mind", "my", "anything,", "earlier,", "told", "now.", "listen", "Amir,”", "to", "but", "“Worrying", "me", "Lena", "won't"],
+        target: "Lena had told me earlier that worrying will not change anything.",
+        jumbled: ["change", "will", "earlier", "me", "not", "that", "anything.", "Lena", "worrying", "told", "had"],
       },
       {
         target: "I finally get up and review our checklist one more time, just to reassure myself everything is actually ready.",
@@ -402,8 +402,8 @@ export const CHAPTERS = [
         jumbled: ["look", "to", "for", "a", "stunned", "moment.", "each", "at", "too", "speak", "We", "other,", "both"],
       },
       {
-        target: "“We actually did this, Amir,” Lena finally says, her voice filled with disbelief and quiet pride.",
-        jumbled: ["says,", "her", "and", "disbelief", "this,", "voice", "did", "“We", "actually", "filled", "pride.", "quiet", "Lena", "with", "Amir,”", "finally"],
+        target: "Tomorrow, we'll present the total to Mr.",
+        jumbled: ["Mr.", "present", "the", "total", "we'll", "Tomorrow,", "to"],
       },
       {
         target: "Tomorrow, we'll present the total to Mr. Okafor and the librarian, but tonight, we simply celebrate quietly together.",

@@ -51,8 +51,8 @@ export const CHAPTERS = [
         jumbled: ["across", "as", "Amara", "somehow.", "from", "the", "to", "say", "figure", "out", "and", "my", "together", "gives", "catches", "shrug,", "small,", "room", "this", "a", "we'll", "eye", "if", "reassuring"],
       },
       {
-        target: "“Stay optimistic, Grace,” I tell myself, since first impressions about classmates aren't always completely accurate representations of how they actually work.",
-        jumbled: ["they", "since", "optimistic,", "classmates", "how", "completely", "“Stay", "first", "impressions", "always", "Grace,”", "myself,", "tell", "representations", "actually", "of", "accurate", "I", "work.", "about", "aren't"],
+        target: "I tell myself to stay optimistic about my new classmates.",
+        jumbled: ["new", "about", "tell", "I", "myself", "classmates.", "optimistic", "my", "stay", "to"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about working with people you did not choose yourself.",
@@ -95,8 +95,8 @@ export const CHAPTERS = [
         jumbled: ["Amara", "nod.", "checks,", "and", "I"],
       },
       {
-        target: "“Does two weeks sound like enough time for everyone?” I ask, glancing pointedly at Tyler, who just shrugs without offering any real response.",
-        jumbled: ["response.", "real", "pointedly", "time", "offering", "everyone?”", "I", "just", "without", "glancing", "who", "at", "enough", "weeks", "for", "any", "two", "ask,", "“Does", "shrugs", "like", "Tyler,", "sound"],
+        target: "I ask if two weeks is enough time, but Tyler just shrugs.",
+        jumbled: ["I", "but", "if", "weeks", "time,", "ask", "just", "shrugs.", "is", "Tyler", "two", "enough"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about dividing tasks with a group of people.",
@@ -135,12 +135,12 @@ export const CHAPTERS = [
         jumbled: ["pattern", "about", "week,", "following", "repeats", "with", "entirely.", "same", "The", "this", "time", "the", "a", "meeting", "vague", "excuse", "the", "forgetting", "itself,"],
       },
       {
-        target: "“Should we just tell Mr. Bennett?” I ask Amara, frustration creeping into my voice despite my efforts to stay patient.",
-        jumbled: ["into", "frustration", "Mr.", "to", "just", "my", "ask", "Bennett?”", "creeping", "I", "my", "tell", "“Should", "stay", "Amara,", "despite", "patient.", "voice", "efforts", "we"],
+        target: "I ask Amara if we should just tell Mr. Bennett.",
+        jumbled: ["if", "we", "Amara", "just", "ask", "tell", "Mr.", "should", "Bennett.", "I"],
       },
       {
-        target: "“Let's give Tyler one more chance, Grace,” Amara suggests, though I can tell she's growing frustrated too.",
-        jumbled: ["she's", "chance,", "growing", "“Let's", "can", "frustrated", "suggests,", "more", "give", "tell", "Amara", "though", "Tyler", "I", "Grace,”", "too.", "one"],
+        target: "Amara suggests that we give Tyler one more chance.",
+        jumbled: ["Tyler", "suggests", "one", "chance.", "that", "Amara", "more", "we", "give"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time someone did not show up when expected.",
@@ -175,16 +175,16 @@ export const CHAPTERS = [
         jumbled: ["the", "exhausted", "growing", "notice", "carrying", "library", "and", "increasingly", "us", "both", "routine,", "late", "people's", "of", "at", "I", "essentially", "workload.", "becomes", "from", "three", "Staying"],
       },
       {
-        target: "“This isn't fair to us,” I mutter one evening, rubbing my tired eyes after another two-hour session.",
-        jumbled: ["isn't", "after", "another", "eyes", "evening,", "I", "one", "us,”", "rubbing", "mutter", "“This", "session.", "fair", "tired", "two-hour", "to", "my"],
+        target: "Despite our resentment, quitting doesn't feel like a real option.",
+        jumbled: ["option.", "feel", "doesn't", "quitting", "a", "resentment,", "Despite", "our", "real", "like"],
       },
       {
         target: "Amara agrees quietly.",
         jumbled: ["agrees", "quietly.", "Amara"],
       },
       {
-        target: "“Failing this would hurt all three of us equally, Grace,” she reminds me, regardless of who actually did the work.",
-        jumbled: ["hurt", "three", "she", "“Failing", "work.", "us", "equally,", "me,", "regardless", "of", "reminds", "of", "actually", "all", "who", "would", "the", "this", "Grace,”", "did"],
+        target: "She reminds me that failing would hurt all three of us equally.",
+        jumbled: ["three", "hurt", "failing", "reminds", "would", "equally.", "She", "us", "of", "me", "all", "that"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about doing extra work because someone else didn't finish theirs.",
@@ -227,8 +227,8 @@ export const CHAPTERS = [
         jumbled: ["my", "grade", "projects", "complete,", "doing", "that", "a", "group", "since", "lower", "own", "But", "also", "evaluated", "get", "unified", "as", "unfairly,", "would", "whole."],
       },
       {
-        target: "“Get it together, Grace,” I mutter, staring at the clock reading nearly midnight, exhaustion mixing uncomfortably with my simmering resentment toward Tyler.",
-        jumbled: ["Tyler.", "at", "nearly", "mutter,", "reading", "exhaustion", "Grace,”", "uncomfortably", "the", "mixing", "resentment", "toward", "clock", "I", "together,", "it", "staring", "midnight,", "“Get", "with", "my", "simmering"],
+        target: "I mutter to myself and stare at the clock, which reads nearly midnight.",
+        jumbled: ["I", "nearly", "stare", "at", "mutter", "reads", "which", "to", "the", "myself", "clock,", "midnight.", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you felt frustrated with a group situation.",
@@ -259,16 +259,16 @@ export const CHAPTERS = [
         jumbled: ["locker", "Tyler", "so", "before", "direct", "than", "is", "next", "The", "silent", "more", "approach", "conversation", "at", "continued", "decide", "productive", "I", "morning,", "resentment,", "I", "his", "class."],
       },
       {
-        target: "“We need to talk about the project,” I say firmly but calmly, having practiced this exact sentence in my head all morning.",
-        jumbled: ["the", "my", "calmly,", "morning.", "project,”", "practiced", "in", "having", "to", "sentence", "but", "exact", "say", "about", "firmly", "this", "need", "“We", "head", "all", "I", "talk"],
+        target: "I say firmly but calmly that we need to talk about the project.",
+        jumbled: ["I", "but", "project.", "say", "to", "calmly", "about", "we", "firmly", "need", "talk", "that", "the"],
       },
       {
-        target: "Tyler's shoulders tense immediately, and he starts mumbling, “Look, Grace, I know I've been slacking,” before I gently but firmly cut him off.",
-        jumbled: ["know", "gently", "he", "Tyler's", "Grace,", "I", "starts", "immediately,", "“Look,", "I", "tense", "but", "I've", "before", "shoulders", "him", "been", "firmly", "and", "mumbling,", "cut", "slacking,”", "off."],
+        target: "Tyler starts mumbling that he knows he has been slacking.",
+        jumbled: ["has", "Tyler", "he", "that", "knows", "he", "mumbling", "been", "starts", "slacking."],
       },
       {
-        target: "“I'm not trying to attack you. I just need to understand what's actually going on,” I explain, surprising myself with how much calmer I sound than I actually feel.",
-        jumbled: ["you.", "on,”", "actually", "I", "feel.", "what's", "just", "not", "actually", "“I'm", "explain,", "myself", "calmer", "trying", "I", "I", "going", "attack", "to", "surprising", "to", "how", "with", "I", "need", "understand", "sound", "than", "much"],
+        target: "I explain that I am not attacking him, and I only want to understand.",
+        jumbled: ["and", "only", "not", "I", "that", "want", "I", "understand.", "I", "explain", "am", "him,", "attacking", "to"],
       },
       {
         target: "Something shifts slightly in his guarded expression.",
@@ -303,8 +303,8 @@ export const CHAPTERS = [
         jumbled: ["admits", "grocery", "divorce", "a", "the", "his", "now", "store", "household", "at", "parents'", "truth:", "help", "works", "expenses.", "recent", "with", "shifts", "evening", "means", "he", "to", "Tyler", "finally"],
       },
       {
-        target: "“I didn't want anyone feeling sorry for me, Grace,” he mumbles, staring at his shoes rather than meeting my eyes directly.",
-        jumbled: ["didn't", "meeting", "mumbles,", "for", "anyone", "“I", "staring", "at", "me,", "than", "want", "Grace,”", "directly.", "he", "feeling", "rather", "his", "my", "shoes", "sorry", "eyes"],
+        target: "He mumbles that he did not want anyone to feel sorry for him.",
+        jumbled: ["He", "he", "to", "feel", "did", "sorry", "mumbles", "him.", "that", "not", "want", "for", "anyone"],
       },
       {
         target: "Suddenly, his missed meetings and vague excuses make painful, complicated sense in a way I hadn't considered at all.",
@@ -315,8 +315,8 @@ export const CHAPTERS = [
         jumbled: ["judged", "guilt", "anger,", "actually", "asking", "feel", "of", "realizing", "his", "wave", "a", "situation", "over", "ever", "wash", "without", "my", "why.", "earlier", "I", "I"],
       },
       {
-        target: "“Why didn't you just tell us?” I ask gently, and he shrugs, admitting he felt too embarrassed to explain everything.",
-        jumbled: ["shrugs,", "didn't", "he", "and", "explain", "embarrassed", "ask", "everything.", "gently,", "you", "to", "felt", "us?”", "too", "admitting", "he", "tell", "I", "just", "“Why"],
+        target: "I gently ask why he did not just tell us.",
+        jumbled: ["I", "us.", "gently", "did", "tell", "not", "he", "why", "ask", "just"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about learning the real reason behind someone's behavior.",
@@ -347,12 +347,12 @@ export const CHAPTERS = [
         jumbled: ["more", "plan", "sit", "finishing", "The", "to", "project.", "fairer,", "three", "together", "a", "realistic", "the", "create", "for", "down", "of", "us"],
       },
       {
-        target: "“What if you handle the parts you can do quickly at home, and we handle anything requiring extra library time?”",
-        jumbled: ["home,", "handle", "can", "parts", "at", "if", "extra", "anything", "the", "and", "handle", "requiring", "you", "time?”", "library", "quickly", "“What", "do", "we", "you"],
+        target: "I suggest that Tyler handles the quick parts at home, and we handle the rest.",
+        jumbled: ["home,", "the", "suggest", "handle", "the", "and", "we", "quick", "parts", "that", "handles", "rest.", "at", "Tyler", "I"],
       },
       {
-        target: "Amara suggests thoughtfully, and Tyler nods gratefully at the flexible compromise, adding quietly, “Thanks for hearing me out, Grace.”",
-        jumbled: ["suggests", "the", "at", "and", "Grace.”", "“Thanks", "adding", "gratefully", "for", "quietly,", "flexible", "thoughtfully,", "Amara", "nods", "out,", "me", "compromise,", "Tyler", "hearing"],
+        target: "Tyler nods gratefully and quietly thanks me for hearing him out.",
+        jumbled: ["him", "out.", "quietly", "gratefully", "thanks", "me", "nods", "for", "Tyler", "and", "hearing"],
       },
       {
         target: "He commits to writing his section over the weekend when his work schedule allows more free time.",
@@ -399,8 +399,8 @@ export const CHAPTERS = [
         jumbled: ["having", "the", "to", "smoothly", "before", "Amara", "our", "flows", "too,", "practiced", "night", "one", "and", "naturally", "everything", "I", "ensure", "present", "as", "presentation.", "together", "sections", "cohesive"],
       },
       {
-        target: "“We did it, Grace,” Amara whispers as we finish, and I grin back.",
-        jumbled: ["back.", "whispers", "as", "“We", "Amara", "I", "it,", "and", "did", "grin", "Grace,”", "we", "finish,"],
+        target: "Bennett nods approvingly throughout, occasionally jotting notes on his clipboard while we speak.",
+        jumbled: ["clipboard", "throughout,", "notes", "occasionally", "his", "nods", "on", "speak.", "approvingly", "we", "while", "jotting", "Bennett"],
       },
       {
         target: "Finishing together feels genuinely satisfying, unlike the resentful ending I had once imagined weeks earlier.",
@@ -443,8 +443,8 @@ export const CHAPTERS = [
         jumbled: ["from", "like", "might", "of", "apartment", "small", "frustration.", "as", "his", "family's", "sometime,", "to", "together,", "what", "real", "that", "forming", "invite", "started", "us", "Tyler", "pure", "he", "out", "friendship", "something", "Walking", "class", "feels", "both", "mentions"],
       },
       {
-        target: "“Thanks for actually asking instead of just being angry, Grace,” he tells me quietly, and I nod, genuinely grateful I chose conversation over assumption.",
-        jumbled: ["assumption.", "tells", "instead", "for", "he", "chose", "just", "I", "grateful", "quietly,", "nod,", "Grace,”", "I", "genuinely", "of", "actually", "conversation", "being", "asking", "me", "over", "and", "“Thanks", "angry,"],
+        target: "A few days later, Mr.",
+        jumbled: ["later,", "Mr.", "days", "few", "A"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time understanding someone changed how you felt about them.",

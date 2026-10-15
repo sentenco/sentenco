@@ -50,8 +50,8 @@ export const CHAPTERS = [
         jumbled: ["at", "ticket", "kind", "to", "it's", "golden", "stare", "some", "of", "I", "it", "freedom.", "like"],
       },
       {
-        target: "“Ready for your first real lesson this weekend, Sofia?” Dad asks, grinning as we walk back to the car together.",
-        jumbled: ["the", "as", "back", "walk", "we", "real", "grinning", "car", "asks,", "first", "“Ready", "Sofia?”", "lesson", "for", "Dad", "together.", "your", "this", "to", "weekend,"],
+        target: "Dad asks if I am ready for my first real lesson this weekend.",
+        jumbled: ["real", "for", "asks", "weekend.", "first", "Dad", "lesson", "I", "my", "am", "ready", "this", "if"],
       },
       {
         target: "I nod enthusiastically, though a small, nervous flutter mixes with all my excitement.",
@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["watched", "unfamiliar,", "Dad", "thousands", "I", "Sitting", "have", "the", "drive", "first", "for", "driver's", "seat", "even", "times", "feels", "time", "though", "the", "in", "before.", "strangely", "of"],
       },
       {
-        target: "“Adjust your mirrors first, then find the brake with your right foot, Sofia,” Mr. Kim instructs patiently, noticing my white-knuckled grip on the wheel.",
-        jumbled: ["right", "instructs", "brake", "Mr.", "Sofia,”", "mirrors", "grip", "my", "your", "white-knuckled", "the", "“Adjust", "the", "wheel.", "first,", "foot,", "patiently,", "Kim", "noticing", "then", "find", "your", "on", "with"],
+        target: "Kim instructs patiently, noticing my white-knuckled grip on the wheel.",
+        jumbled: ["instructs", "noticing", "on", "white-knuckled", "grip", "wheel.", "patiently,", "my", "Kim", "the"],
       },
       {
         target: "Starting the engine sends an unexpected jolt of nervous energy through my entire body.",
@@ -138,8 +138,8 @@ export const CHAPTERS = [
         jumbled: ["the", "rolls", "a", "as", "flush", "knocks", "slightly", "one", "over", "My", "with", "with", "soft", "embarrassment", "cones", "cheeks", "car", "of", "and", "the", "thud.", "red"],
       },
       {
-        target: "“Happens to literally everyone, Sofia,” Mr. Kim reassures me calmly, not seeming bothered in the slightest by my obvious mistake.",
-        jumbled: ["in", "not", "everyone,", "Sofia,”", "bothered", "Mr.", "seeming", "my", "reassures", "“Happens", "Kim", "me", "calmly,", "mistake.", "literally", "by", "the", "to", "slightest", "obvious"],
+        target: "Kim reassures me calmly, not seeming bothered in the slightest by my obvious mistake.",
+        jumbled: ["bothered", "Kim", "the", "my", "calmly,", "me", "reassures", "slightest", "mistake.", "in", "seeming", "by", "not", "obvious"],
       },
       {
         target: "Restarting the engine, I try again, determined not to let one small stall ruin my entire confidence.",
@@ -178,8 +178,8 @@ export const CHAPTERS = [
         jumbled: ["many", "my", "during", "remarkably", "make", "sessions", "Unlike", "together.", "how", "our", "nervous", "stays", "Dad", "no", "energy,", "matter", "mistakes", "relaxed", "I"],
       },
       {
-        target: "“You're overthinking the mirrors again, Sofia,” he says gently one evening, without a hint of frustration in his tone.",
-        jumbled: ["a", "says", "the", "evening,", "hint", "in", "of", "frustration", "“You're", "overthinking", "he", "again,", "gently", "one", "Sofia,”", "mirrors", "tone.", "without", "his"],
+        target: "Between official lessons with Mr.",
+        jumbled: ["with", "Between", "official", "lessons", "Mr."],
       },
       {
         target: "His calm presence in the passenger seat somehow makes me feel braver about attempting trickier maneuvers I would otherwise avoid.",
@@ -222,8 +222,8 @@ export const CHAPTERS = [
         jumbled: ["anxiously", "gap", "cars.", "between", "I", "check", "passing", "pounds", "enough", "mirrors", "My", "waiting", "my", "repeatedly,", "large", "heart", "for", "a", "as"],
       },
       {
-        target: "“Signal, check your blind spot, then go, Sofia,” Mr. Kim reminds me calmly, though his voice sounds distant beneath my own racing thoughts.",
-        jumbled: ["racing", "reminds", "beneath", "me", "blind", "go,", "Sofia,”", "though", "distant", "then", "own", "Kim", "your", "voice", "sounds", "spot,", "thoughts.", "his", "my", "calmly,", "“Signal,", "Mr.", "check"],
+        target: "Kim reminds me calmly, though his voice sounds distant beneath my own racing thoughts.",
+        jumbled: ["voice", "my", "his", "reminds", "Kim", "me", "though", "calmly,", "sounds", "thoughts.", "own", "beneath", "racing", "distant"],
       },
       {
         target: "The car accelerates smoothly into traffic, and for a brief, thrilling moment, I actually feel like a real driver instead of just a nervous teenager pretending.",
@@ -270,8 +270,8 @@ export const CHAPTERS = [
         jumbled: ["room", "if", "Kim's", "safely", "ready", "hovers", "with", "plenty", "we", "instructor", "stop", "to", "hand", "Mr.", "intervene", "his", "own", "somehow", "near", "spare.", "brake,", "to", "of", "needed,", "but"],
       },
       {
-        target: "“You reacted exactly right, Sofia,” he says, though my hands won't stop trembling for several long minutes afterward.",
-        jumbled: ["several", "says,", "afterward.", "reacted", "my", "right,", "“You", "exactly", "he", "won't", "long", "minutes", "trembling", "hands", "stop", "though", "for", "Sofia,”"],
+        target: "He says I reacted exactly right, though my hands keep trembling.",
+        jumbled: ["my", "He", "keep", "reacted", "exactly", "though", "I", "hands", "right,", "trembling.", "says"],
       },
       {
         target: "That moment terrifies me more than any mistake I've made so far.",
@@ -310,8 +310,8 @@ export const CHAPTERS = [
         jumbled: ["from", "ago.", "to", "story", "he", "first", "listens", "my", "learned", "when", "a", "decades", "similar", "shares", "Dad", "of", "carefully", "Instead", "drive", "dismissing", "and", "fear,"],
       },
       {
-        target: "“Fear after a close call means you're taking this seriously, Sofia, not that you're failing,” he explains, sitting beside me on the porch steps.",
-        jumbled: ["porch", "“Fear", "call", "he", "Sofia,", "you're", "the", "means", "you're", "steps.", "a", "failing,”", "not", "this", "on", "close", "beside", "sitting", "that", "explains,", "me", "seriously,", "taking", "after"],
+        target: "He explains that fear after a close call means I am taking this seriously.",
+        jumbled: ["am", "explains", "after", "close", "means", "a", "that", "I", "call", "fear", "He", "taking", "seriously.", "this"],
       },
       {
         target: "He reminds me that even experienced drivers face unpredictable situations sometimes, and reacting well matters more than never feeling scared at all.",
@@ -354,8 +354,8 @@ export const CHAPTERS = [
         jumbled: ["end", "the", "first", "with", "nowhere", "curb.", "to", "parked", "sets", "car", "awkwardly,", "my", "three", "close", "cars,", "angled", "representing", "attempts", "up", "the", "two", "and", "He", "cones"],
       },
       {
-        target: "“Slow down and trust the mirrors, Sofia,” Mr. Kim repeats patiently, refusing to let frustration creep into his voice despite my repeated failures.",
-        jumbled: ["Mr.", "his", "creep", "frustration", "trust", "“Slow", "Kim", "let", "repeats", "to", "patiently,", "voice", "and", "Sofia,”", "the", "my", "down", "failures.", "into", "refusing", "despite", "repeated", "mirrors,"],
+        target: "With only two weeks left before my driving test, Mr.",
+        jumbled: ["left", "before", "my", "driving", "two", "With", "Mr.", "test,", "only", "weeks"],
       },
       {
         target: "On my seventh attempt, something finally clicks, and the car glides smoothly into the space between the cones.",
@@ -398,8 +398,8 @@ export const CHAPTERS = [
         jumbled: ["A", "the", "with", "a", "me", "into", "serious-looking", "examiner", "begin", "simple", "seat", "turn.", "to", "climbs", "with", "passenger", "three-point", "instructing", "clipboard,", "a"],
       },
       {
-        target: "My hands feel clammy against the steering wheel, but I remind myself, “You've got this, Sofia,” recalling everything Mr. Kim and Dad taught me over these past weeks.",
-        jumbled: ["Dad", "wheel,", "weeks.", "Mr.", "I", "feel", "got", "me", "“You've", "recalling", "My", "everything", "myself,", "past", "remind", "taught", "and", "over", "hands", "Kim", "this,", "steering", "the", "clammy", "Sofia,”", "against", "these", "but"],
+        target: "Kim and Dad taught me over these past weeks.",
+        jumbled: ["Kim", "past", "these", "and", "over", "Dad", "taught", "me", "weeks."],
       },
       {
         target: "Through parallel parking, lane changes, and a nerve-wracking stop at a busy intersection, I focus entirely on staying calm rather than perfect.",
@@ -438,8 +438,8 @@ export const CHAPTERS = [
         jumbled: ["my", "the", "verdict.", "Back", "center,", "while", "reviews", "testing", "my", "hammers", "waiting", "the", "against", "her", "for", "examiner", "heart", "ribs,", "inside", "notes", "the", "silently"],
       },
       {
-        target: "“Congratulations, you passed, Sofia,” she finally says, and pure relief floods through my entire body all at once.",
-        jumbled: ["relief", "my", "passed,", "entire", "all", "body", "through", "once.", "says,", "and", "you", "Sofia,”", "“Congratulations,", "she", "pure", "finally", "at", "floods"],
+        target: "She says congratulations and tells me that I passed.",
+        jumbled: ["I", "She", "says", "that", "me", "congratulations", "passed.", "tells", "and"],
       },
       {
         target: "I rush outside to find Dad waiting anxiously, and the moment he sees my face, he already knows the answer before I even speak.",

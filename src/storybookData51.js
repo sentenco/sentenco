@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["Coach", "walks", "around", "jotting", "watching", "Reeves", "occasionally", "down", "carefully.", "everyone", "with", "while", "his", "notes", "clipboard,"],
       },
       {
-        target: "\"Just focus, Jordan,\" I tell myself, trying to concentrate on my own performance rather than comparing myself to others.",
-        jumbled: ["focus,", "I", "tell", "on", "Jordan,\"", "rather", "myself", "own", "\"Just", "comparing", "trying", "myself,", "than", "to", "others.", "concentrate", "to", "performance", "my"],
+        target: "My hands feel slightly sweaty.",
+        jumbled: ["My", "slightly", "hands", "feel", "sweaty."],
       },
       {
         target: "During the scrimmage portion, I make a few solid plays, though I also miss an easy shot I normally never miss.",
@@ -134,8 +134,8 @@ export const CHAPTERS = [
         jumbled: ["half", "Every", "checking", "early", "some", "phone,", "kind", "that", "find", "notification.", "I", "my", "of", "expecting", "myself", "hour", "passes,"],
       },
       {
-        target: "Mei, noticing my constant anxiety at lunch, tells me, “Overthinking this won't change the outcome, Jordan.”",
-        jumbled: ["lunch,", "Mei,", "anxiety", "“Overthinking", "at", "the", "this", "outcome,", "my", "tells", "change", "won't", "noticing", "me,", "Jordan.”", "constant"],
+        target: "Mei notices my anxiety at lunch and says overthinking will not change anything.",
+        jumbled: ["overthinking", "Mei", "lunch", "will", "anxiety", "not", "at", "notices", "change", "says", "my", "and", "anything."],
       },
       {
         target: "She's right, logically, but knowing something intellectually doesn't always calm the nervous feeling in my stomach.",
@@ -178,8 +178,8 @@ export const CHAPTERS = [
         jumbled: ["the", "push", "my", "others.", "the", "among", "I", "list", "scan", "I", "pounding", "name", "through", "for", "heart", "as", "my", "gently,"],
       },
       {
-        target: "\"Check again, Jordan,\" I think, reading the list once, then twice, my stomach sinking lower with each careful pass through the names.",
-        jumbled: ["I", "Jordan,\"", "\"Check", "then", "careful", "each", "list", "names.", "think,", "reading", "with", "the", "stomach", "sinking", "twice,", "pass", "once,", "lower", "the", "my", "again,", "through"],
+        target: "I tell myself to check again and read the list twice.",
+        jumbled: ["and", "tell", "myself", "to", "list", "I", "check", "read", "the", "twice.", "again"],
       },
       {
         target: "My name isn't there, and for a moment, I genuinely cannot process what that actually means.",
@@ -310,8 +310,8 @@ export const CHAPTERS = [
         jumbled: ["overall.", "consistency", "needs", "my", "He", "skills", "pleased", "more", "but", "seems", "work", "that", "my", "explaining", "were", "I", "genuinely", "solid,", "actually", "asked,"],
       },
       {
-        target: "“You have real potential, Jordan, but there were three other players slightly more consistent this particular year,” he explains honestly.",
-        jumbled: ["three", "honestly.", "there", "consistent", "were", "this", "“You", "real", "but", "Jordan,", "particular", "year,”", "explains", "potential,", "other", "more", "players", "have", "slightly", "he"],
+        target: "He explains honestly that I have real potential, but three other players were more consistent.",
+        jumbled: ["were", "I", "potential,", "explains", "honestly", "have", "players", "more", "but", "He", "consistent.", "three", "other", "that", "real"],
       },
       {
         target: "Hearing this stings, but it also feels considerably more useful than simply wondering endlessly what went wrong.",
@@ -358,8 +358,8 @@ export const CHAPTERS = [
         jumbled: ["rather", "until", "the", "work", "than", "same", "automatic", "completely", "on", "repeatedly", "feel", "uncertain.", "I", "shots", "they", "practicing", "specifically", "my", "consistency,"],
       },
       {
-        target: "\"Keep going, Jordan,\" I tell myself on the days that feel discouraging, especially when progress seems painfully slow compared to what I'm hoping for.",
-        jumbled: ["seems", "Jordan,\"", "hoping", "the", "compared", "that", "I'm", "going,", "to", "myself", "tell", "\"Keep", "I", "when", "progress", "discouraging,", "slow", "on", "feel", "especially", "painfully", "days", "for.", "what"],
+        target: "On discouraging days, I tell myself to keep going.",
+        jumbled: ["going.", "days,", "myself", "keep", "I", "to", "tell", "On", "discouraging"],
       },
       {
         target: "However, other days bring small breakthroughs, moments where something finally clicks into place after weeks of repetitive effort.",
@@ -406,8 +406,8 @@ export const CHAPTERS = [
         jumbled: ["mutual", "instead", "support", "realize", "experience", "teamwork", "on", "genuine", "competition.", "have:", "might", "something", "varsity", "this", "me", "of", "not", "is", "only", "teaching", "built", "I"],
       },
       {
-        target: "\"Maybe this is exactly where you needed to be, Jordan,\" I think.",
-        jumbled: ["\"Maybe", "to", "exactly", "Jordan,\"", "be,", "I", "think.", "you", "this", "where", "is", "needed"],
+        target: "Missing that first list might have led me somewhere unexpectedly valuable.",
+        jumbled: ["me", "valuable.", "that", "list", "unexpectedly", "somewhere", "led", "might", "first", "Missing", "have"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a supportive group or team you've been part of.",

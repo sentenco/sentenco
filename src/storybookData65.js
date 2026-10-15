@@ -99,8 +99,8 @@ export const CHAPTERS = [
         jumbled: ["originally", "anticipated", "I", "when", "be", "I", "for", "it.", "to", "the", "agreed", "considerably", "turns", "forum", "had", "than", "out", "organize", "harder", "Preparing", "first", "to"],
       },
       {
-        target: "“Nadia, you have no idea what you signed up for,” I think, half-joking.",
-        jumbled: ["I", "half-joking.", "think,", "idea", "“Nadia,", "you", "you", "up", "no", "what", "signed", "have", "for,”"],
+        target: "I half-jokingly think that I have no idea what I signed up for.",
+        jumbled: ["up", "think", "what", "idea", "signed", "have", "I", "for.", "that", "half-jokingly", "no", "I", "I"],
       },
       {
         target: "I research uniform policies at other schools, discovering that the arguments on both sides are more nuanced than I'd initially assumed.",
@@ -283,8 +283,8 @@ export const CHAPTERS = [
         jumbled: ["Yuna", "a", "can", "permanent.", "we", "feedback", "the", "provided", "anything", "gather", "council", "so", "period,", "before", "include", "making", "trial", "agrees,"],
       },
       {
-        target: "“You're good at staying neutral, Nadia — you should write it,” Kwame suggests.",
-        jumbled: ["Kwame", "suggests.", "Nadia", "—", "neutral,", "it,”", "write", "you", "at", "should", "good", "staying", "“You're"],
+        target: "After the forum ends, Mr.",
+        jumbled: ["ends,", "forum", "the", "After", "Mr."],
       },
       {
         target: "I write the draft, careful to represent both original positions fairly, rather than favoring whichever argument I personally found stronger.",
@@ -371,8 +371,8 @@ export const CHAPTERS = [
         jumbled: ["he", "me", "don't", "details", "feels", "Kwame", "perfectly.", "work", "still", "happy,", "hallway,", "few", "in", "admitting", "stops", "the", "even", "genuinely", "a", "though"],
       },
       {
-        target: "“You pulled this off, Nadia,” he adds, grinning.",
-        jumbled: ["“You", "off,", "this", "pulled", "Nadia,”", "adds,", "he", "grinning."],
+        target: "He grins and adds that I pulled this off.",
+        jumbled: ["He", "that", "and", "grins", "adds", "pulled", "I", "off.", "this"],
       },
       {
         target: "Yuna mentions she's been surprised by how little actual disruption the change has caused, contrary to what she'd initially feared.",

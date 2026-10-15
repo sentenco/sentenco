@@ -51,8 +51,8 @@ export const CHAPTERS = [
         jumbled: ["against", "been", "Petra,", "position", "opposing", "argue", "instead.", "assigned", "limits,", "to", "the", "who's", "assigned", "I'm", "paired", "with"],
       },
       {
-        target: "“Rafael, you'll argue against limits,” she says, writing our pairing on the board.",
-        jumbled: ["writing", "limits,”", "you'll", "against", "argue", "board.", "the", "pairing", "our", "she", "on", "“Rafael,", "says,"],
+        target: "She writes our pairing on the board and says I will argue against limits.",
+        jumbled: ["limits.", "against", "She", "the", "pairing", "and", "writes", "says", "board", "on", "our", "will", "argue", "I"],
       },
       {
         target: "Privately, I actually lean toward supporting some limits myself, which makes this assignment feel more challenging than a topic I'd genuinely believed in.",
@@ -139,8 +139,8 @@ export const CHAPTERS = [
         jumbled: ["measurable", "particularly", "research", "she's", "effects", "She", "its", "shares", "and", "sleep", "teen", "that", "compelling", "found", "too,", "health.", "on", "disruption", "mental", "around"],
       },
       {
-        target: "“You should look into this too, Rafael,” she says, sliding her notes across the table.",
-        jumbled: ["“You", "across", "her", "sliding", "look", "this", "too,", "Rafael,”", "table.", "says,", "into", "should", "she", "notes", "the"],
+        target: "She slides her notes across the table and says I should look into this too.",
+        jumbled: ["across", "her", "She", "too.", "this", "notes", "I", "and", "should", "the", "says", "slides", "into", "look", "table"],
       },
       {
         target: "I mention my own findings about self-regulation, and she admits she hadn't considered that angle as thoroughly herself.",
@@ -175,8 +175,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "“Rafael, you're up first,” Ms. Okonkwo says.",
-        jumbled: ["Okonkwo", "“Rafael,", "first,”", "Ms.", "you're", "says.", "up"],
+        target: "Neither of us raises our voice or interrupts, following Ms.",
+        jumbled: ["voice", "raises", "our", "of", "following", "Ms.", "us", "Neither", "interrupts,", "or"],
       },
       {
         target: "The debate begins, and I present my argument first, explaining that blanket limits ignore how differently teens actually use screens.",
@@ -271,8 +271,8 @@ export const CHAPTERS = [
         jumbled: ["still", "research", "even", "matters", "admit", "thinking,", "believe", "self-regulation", "considerably", "shifted", "that", "genuinely", "though", "sleep-disruption", "my", "I", "I", "her", "too."],
       },
       {
-        target: "“That's fair, Rafael,” she says, smiling slightly.",
-        jumbled: ["she", "fair,", "smiling", "says,", "“That's", "slightly.", "Rafael,”"],
+        target: "She smiles slightly and says that is fair.",
+        jumbled: ["says", "slightly", "that", "and", "She", "smiles", "fair.", "is"],
       },
       {
         target: "She admits, in turn, that the content-quality question raised during questions had complicated her own certainty about blanket structure.",
@@ -355,8 +355,8 @@ export const CHAPTERS = [
         jumbled: ["invites", "and", "to", "synthesis", "their", "Okonkwo", "decide,", "class.", "mine", "volunteers", "aloud,", "to", "the", "Ms.", "somewhat", "nervously,", "to", "I", "share", "read"],
       },
       {
-        target: "“Go ahead, Rafael, whenever you're ready,” she says encouragingly.",
-        jumbled: ["whenever", "“Go", "Rafael,", "says", "she", "encouragingly.", "ahead,", "ready,”", "you're"],
+        target: "She encouragingly tells me to go ahead whenever I am ready.",
+        jumbled: ["ready.", "am", "me", "ahead", "tells", "She", "encouragingly", "go", "I", "to", "whenever"],
       },
       {
         target: "I notice Petra nodding along, seemingly recognizing echoes of her own thinking within it.",
@@ -399,8 +399,8 @@ export const CHAPTERS = [
         jumbled: ["hallway", "mentions", "meant", "dread", "a", "position", "they", "always", "assignments,", "defending", "debate", "stubbornly.", "Petra", "to", "simply", "afterward,", "assuming", "used", "she", "the", "In"],
       },
       {
-        target: "“Honestly, Rafael, this one actually felt different,” she adds.",
-        jumbled: ["different,”", "adds.", "felt", "“Honestly,", "this", "she", "Rafael,", "actually", "one"],
+        target: "She adds that this one actually felt different.",
+        jumbled: ["actually", "different.", "She", "this", "felt", "that", "adds", "one"],
       },
       {
         target: "I admit I'd felt similarly before this particular assignment, expecting competition rather than genuine, collaborative exploration of an issue.",

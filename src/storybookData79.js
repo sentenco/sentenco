@@ -132,8 +132,8 @@ export const CHAPTERS = [
         jumbled: ["the", "conversation", "Mr.", "terms", "about", "renewal", "Halloran,", "a", "formally", "proposed", "before", "signing", "anything.", "I", "requesting", "email", "brief"],
       },
       {
-        target: "\"Of course, Bianca, come by my office,\" he agrees, and we meet there, where I open by acknowledging that I genuinely enjoy living in the building.",
-        jumbled: ["that", "in", "he", "I", "\"Of", "come", "I", "living", "office,\"", "the", "where", "acknowledging", "enjoy", "by", "and", "my", "building.", "agrees,", "Bianca,", "by", "meet", "there,", "we", "open", "course,", "genuinely"],
+        target: "Halloran, requesting a brief conversation about the proposed renewal terms before formally signing anything.",
+        jumbled: ["requesting", "brief", "renewal", "anything.", "formally", "a", "conversation", "proposed", "terms", "before", "about", "signing", "the", "Halloran,"],
       },
       {
         target: "I mention my four years of reliable, on-time payments, then reference specific comparable listings I'd found nearby.",
@@ -176,8 +176,8 @@ export const CHAPTERS = [
         jumbled: ["footage", "sheet,", "with", "similar", "Mr.", "show", "Halloran", "specific", "comparison", "amenities.", "square", "and", "nearby", "listings", "out", "pointing", "my", "I"],
       },
       {
-        target: "\"Bianca, rising property taxes and maintenance costs partly explain this year's increase,\" he mentions, examining it carefully.",
-        jumbled: ["this", "and", "property", "explain", "he", "carefully.", "\"Bianca,", "increase,\"", "year's", "mentions,", "rising", "it", "costs", "taxes", "partly", "maintenance", "examining"],
+        target: "He says rising taxes and maintenance costs partly explain the increase.",
+        jumbled: ["and", "taxes", "says", "rising", "increase.", "maintenance", "explain", "He", "the", "costs", "partly"],
       },
       {
         target: "I acknowledge these are legitimate business pressures, though I gently note that the specific percentage still seems higher than comparable properties nearby.",
@@ -232,8 +232,8 @@ export const CHAPTERS = [
         jumbled: ["the", "even", "rather", "a", "stability.", "for", "rate", "allow", "ask", "lease,", "than", "added", "one,", "given", "favorable", "whether", "more", "might", "I", "two-year", "an"],
       },
       {
-        target: "\"That's fair, Bianca — locking in a longer commitment could justify a slightly better rate for both of us,\" he agrees, considering this.",
-        jumbled: ["justify", "—", "rate", "fair,", "commitment", "of", "locking", "longer", "this.", "better", "he", "a", "considering", "Bianca", "\"That's", "agrees,", "a", "us,\"", "could", "slightly", "both", "for", "in"],
+        target: "He agrees that a longer commitment could justify a slightly better rate.",
+        jumbled: ["rate.", "could", "longer", "a", "that", "justify", "slightly", "agrees", "commitment", "a", "better", "He"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about proposing a longer commitment in exchange for a better rate.",
@@ -268,8 +268,8 @@ export const CHAPTERS = [
         jumbled: ["matches", "every", "exactly", "what", "we'd", "ensuring", "term", "I", "carefully", "the", "upon.", "signing,", "through", "agreed", "document", "read", "verbally", "and", "discussed", "before"],
       },
       {
-        target: "\"I appreciate you approaching this professionally, Bianca, rather than simply threatening to leave,\" Mr. Halloran mentions, signing as well.",
-        jumbled: ["professionally,", "this", "as", "well.", "\"I", "mentions,", "Mr.", "approaching", "appreciate", "than", "you", "Bianca,", "signing", "Halloran", "rather", "to", "threatening", "simply", "leave,\""],
+        target: "Halloran mentions, signing as well.",
+        jumbled: ["Halloran", "mentions,", "well.", "signing", "as"],
       },
       {
         target: "I thank him for his flexibility, genuinely relieved that this negotiation had produced an outcome I could comfortably accept long-term.",
@@ -308,8 +308,8 @@ export const CHAPTERS = [
         jumbled: ["Over", "a", "similar", "negotiation", "I", "at", "the", "a", "friend", "increase", "to", "building.", "who's", "own", "rent", "her", "apartment", "mention", "currently", "coffee,", "facing"],
       },
       {
-        target: "\"Wait, you actually negotiated it, Bianca?\" she asks, admitting she'd assumed rent increases were simply non-negotiable.",
-        jumbled: ["increases", "actually", "\"Wait,", "negotiated", "you", "it,", "rent", "non-negotiable.", "admitting", "she'd", "Bianca?\"", "assumed", "simply", "she", "asks,", "were"],
+        target: "She asks if I really negotiated it and admits she thought rent was fixed.",
+        jumbled: ["She", "rent", "I", "thought", "she", "was", "if", "negotiated", "admits", "fixed.", "asks", "really", "it", "and"],
       },
       {
         target: "I explain that researching comparable listings gave me genuine leverage, rather than relying solely on vague appeals to fairness.",
@@ -360,8 +360,8 @@ export const CHAPTERS = [
         jumbled: ["wall.", "one", "my", "approves", "to", "Halloran,", "request", "Mr.", "coincidentally,", "repaint"],
       },
       {
-        target: "\"Of course, Bianca — I appreciate tenants who genuinely care for their space,\" he mentions.",
-        jumbled: ["their", "for", "he", "mentions.", "I", "tenants", "—", "\"Of", "Bianca", "who", "care", "appreciate", "course,", "genuinely", "space,\""],
+        target: "Halloran, coincidentally, approves my request to repaint one wall.",
+        jumbled: ["to", "repaint", "wall.", "my", "request", "Halloran,", "approves", "one", "coincidentally,"],
       },
       {
         target: "Settling back into my routine, I feel genuinely grateful I'd chosen to negotiate rather than simply accepting the first proposal.",
@@ -408,8 +408,8 @@ export const CHAPTERS = [
         jumbled: ["more", "says", "she's", "too.", "to", "seems", "requests", "Mr.", "tenant", "Halloran", "I", "who", "open", "neighbor,", "to", "lately", "noticed", "generally", "this", "mention", "reasonable", "a"],
       },
       {
-        target: "\"Maybe that conversation changed something, Bianca,\" I consider, realizing one respectful negotiation had quietly shifted how he approaches these relationships generally.",
-        jumbled: ["Bianca,\"", "\"Maybe", "changed", "he", "how", "respectful", "consider,", "one", "conversation", "had", "I", "shifted", "that", "relationships", "realizing", "quietly", "something,", "approaches", "these", "generally.", "negotiation"],
+        target: "Halloran seems generally more open to reasonable tenant requests lately too.",
+        jumbled: ["lately", "more", "open", "to", "tenant", "Halloran", "seems", "reasonable", "generally", "requests", "too."],
       },
     ],
     mySentencePrompt: "Write or say one sentence about noticing a relationship stayed positive long after a difficult negotiation.",

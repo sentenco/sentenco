@@ -85,8 +85,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "I decide to look into this myself first, opening the two PDFs, both still named “Marcus_Payslip,” and comparing them line by line.",
-        jumbled: ["comparing", "look", "by", "opening", "this", "named", "decide", "the", "I", "them", "myself", "line.", "first,", "both", "line", "PDFs,", "into", "two", "and", "still", "to", "“Marcus_Payslip,”"],
+        target: "I decide to look into this myself and compare the two PDFs line by line.",
+        jumbled: ["and", "by", "PDFs", "line", "into", "to", "this", "look", "line.", "myself", "two", "the", "I", "compare", "decide"],
       },
       {
         target: "I find that my usual monthly bonus, which normally appears automatically, is completely missing from this particular payslip.",
@@ -145,8 +145,8 @@ export const CHAPTERS = [
         jumbled: ["little", "my", "keep", "underneath.", "a", "even", "I'm", "honestly", "though", "try", "tone", "calm,", "I", "frustrated", "and", "to", "professional"],
       },
       {
-        target: "“Thanks for flagging this, Marcus, I'll check the payroll system and get back to you by the end of the day,” she writes.",
-        jumbled: ["of", "system", "she", "the", "“Thanks", "payroll", "by", "get", "day,”", "this,", "writes.", "the", "Marcus,", "and", "flagging", "I'll", "you", "end", "for", "to", "back", "check", "the"],
+        target: "Within an hour, I receive a reply.",
+        jumbled: ["receive", "hour,", "an", "a", "I", "Within", "reply."],
       },
     ],
     mySentencePrompt: "Write or say one sentence about writing a professional email to solve a problem.",
@@ -185,8 +185,8 @@ export const CHAPTERS = [
         jumbled: ["and", "afternoon,", "a", "message", "heart", "in", "the", "slightly", "skips", "it.", "as", "I", "Around", "four", "arrives,", "my", "finally", "open"],
       },
       {
-        target: "“Hi Marcus, I found the issue,” it begins.",
-        jumbled: ["“Hi", "issue,”", "begins.", "Marcus,", "I", "it", "found", "the"],
+        target: "The email begins by saying that they found the issue.",
+        jumbled: ["email", "that", "saying", "begins", "by", "the", "issue.", "found", "The", "they"],
       },
       {
         target: "She explains that there was, in fact, a system error affecting several employees' bonuses this month, not just mine.",
@@ -225,8 +225,8 @@ export const CHAPTERS = [
         jumbled: ["formula", "specific", "had", "for", "spreadsheet", "her", "apparently", "calculated", "she", "a", "a", "bonuses", "the", "call,", "a", "group.", "During", "where", "showing", "screen,", "incorrectly", "shares"],
       },
       {
-        target: "“This should have been caught earlier, Marcus, and I sincerely apologize for the stress this caused you,” she says honestly.",
-        jumbled: ["stress", "says", "caused", "“This", "for", "earlier,", "have", "sincerely", "should", "I", "the", "you,”", "she", "honestly.", "caught", "been", "Marcus,", "this", "and", "apologize"],
+        target: "She honestly apologizes for the stress this caused me.",
+        jumbled: ["this", "stress", "for", "honestly", "caused", "She", "the", "apologizes", "me."],
       },
       {
         target: "I appreciate her transparency, especially since she could have simply given a vague, generic answer instead.",
@@ -277,8 +277,8 @@ export const CHAPTERS = [
         jumbled: ["other", "send", "hand,", "of", "confirmation", "me", "amount", "the", "owed.", "written", "the", "offers", "to", "On", "exact", "she"],
       },
       {
-        target: "“I'll get that to you today, Marcus, just in case you need it for your own records,” she adds.",
-        jumbled: ["adds.", "just", "for", "it", "that", "records,”", "in", "she", "own", "today,", "get", "you", "your", "to", "you", "case", "“I'll", "Marcus,", "need"],
+        target: "She adds that she will send me that today for my own records.",
+        jumbled: ["that", "that", "will", "adds", "today", "me", "own", "She", "she", "my", "send", "records.", "for"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about following up politely on an unresolved problem.",
@@ -321,8 +321,8 @@ export const CHAPTERS = [
         jumbled: ["Alvarez", "sends", "confirming", "short", "a", "Ms.", "correction.", "message", "the", "even"],
       },
       {
-        target: "“All fixed on our end, Marcus,” she writes, along with a brief written explanation for my personal records.",
-        jumbled: ["written", "end,", "for", "she", "fixed", "our", "writes,", "“All", "a", "my", "explanation", "records.", "brief", "with", "Marcus,”", "on", "personal", "along"],
+        target: "Alvarez even sends a short message confirming the correction.",
+        jumbled: ["the", "correction.", "message", "confirming", "even", "Alvarez", "short", "sends", "a"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about feeling relieved when a problem finally gets fixed.",
@@ -353,8 +353,8 @@ export const CHAPTERS = [
         jumbled: ["the", "curious", "was", "as", "I", "well.", "whole", "whether", "paycheck", "a", "affected", "mention", "During", "her", "situation", "to", "coworker,", "lunch,"],
       },
       {
-        target: "“Same thing happened to me, Marcus,” she confirms, adding that she'd also contacted HR separately about it.",
-        jumbled: ["confirms,", "separately", "also", "she'd", "she", "contacted", "it.", "“Same", "adding", "Marcus,”", "happened", "HR", "that", "me,", "about", "to", "thing"],
+        target: "We compare notes, agreeing that Ms.",
+        jumbled: ["Ms.", "notes,", "agreeing", "that", "We", "compare"],
       },
       {
         target: "We compare notes, agreeing that Ms. Alvarez handled everything professionally, despite the initial inconvenience it caused everyone involved.",
@@ -397,8 +397,8 @@ export const CHAPTERS = [
         jumbled: ["added", "later,", "similar", "the", "prevent", "company", "memo", "explaining", "a", "forward.", "sends", "short", "A", "being", "going", "week", "payroll", "errors", "new", "steps", "to"],
       },
       {
-        target: "I forward it to myself with a quick note, “Marcus — worth remembering for next year.”",
-        jumbled: ["next", "—", "“Marcus", "I", "a", "quick", "note,", "with", "for", "remembering", "forward", "it", "myself", "worth", "to", "year.”"],
+        target: "I forward it to myself with a quick note to remember it for next year.",
+        jumbled: ["quick", "it", "forward", "I", "next", "remember", "a", "to", "myself", "to", "it", "year.", "for", "note", "with"],
       },
       {
         target: "According to the memo, an additional review step will now be required before any bonus calculations are finalized each month.",
@@ -437,8 +437,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Looking back on the whole experience, I jot a quick note in my planner, “Lesson for Marcus: stay calm, follow up in writing,” and realize how differently things could have gone if I had reacted with anger instead of patience.",
-        jumbled: ["had", "planner,", "follow", "in", "things", "my", "have", "of", "note", "in", "Marcus:", "writing,”", "reacted", "patience.", "whole", "up", "gone", "how", "for", "anger", "with", "instead", "back", "quick", "stay", "realize", "a", "on", "jot", "I", "Looking", "could", "experience,", "if", "and", "calm,", "differently", "“Lesson", "I", "the"],
+        target: "Instead, staying calm and communicating clearly allowed Ms.",
+        jumbled: ["calm", "staying", "Instead,", "allowed", "Ms.", "clearly", "and", "communicating"],
       },
       {
         target: "Had I sent an angry, accusatory email that first Monday, the entire process might have felt more tense for everyone involved.",

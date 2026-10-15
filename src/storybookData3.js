@@ -83,8 +83,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "I hear someone call my name outside the house: “Lena!”",
-        jumbled: ["the", "call", "outside", "name", "house:", "someone", "I", "my", "hear", "“Lena!”"],
+        target: "Marco stands beside me and looks at the bag with big eyes.",
+        jumbled: ["me", "eyes.", "looks", "with", "and", "the", "beside", "at", "Marco", "stands", "bag", "big"],
       },
       {
         target: "I walk to the gate and see my neighbor, Bea, with a small paper bag in her hand.",
@@ -139,8 +139,8 @@ export const CHAPTERS = [
         jumbled: ["in", "glasses", "Bea", "and", "sits", "us", "of", "with", "cold", "with", "water", "two", "table.", "at", "comes", "the"],
       },
       {
-        target: "“Here you go, Lena,” she says, handing me a glass.",
-        jumbled: ["you", "glass.", "me", "handing", "says,", "a", "“Here", "go,", "Lena,”", "she"],
+        target: "Marco eats quickly and smiles with food on his lips.",
+        jumbled: ["food", "eats", "Marco", "and", "on", "smiles", "quickly", "with", "his", "lips."],
       },
       {
         target: "The kitchen feels full of happy voices.",
@@ -175,8 +175,8 @@ export const CHAPTERS = [
         jumbled: ["and", "brings", "to", "notebook", "dining", "me.", "Marco", "day,", "looks", "the", "his", "at", "that", "Later", "table"],
       },
       {
-        target: "He says, “Ate Lena, can you help me with my homework?”",
-        jumbled: ["help", "my", "He", "Lena,", "can", "homework?”", "me", "you", "with", "“Ate", "says,"],
+        target: "After a few minutes, he finishes the last line and puts down the pencil.",
+        jumbled: ["pencil.", "down", "few", "he", "line", "puts", "a", "finishes", "After", "the", "minutes,", "last", "the", "and"],
       },
       {
         target: "Bea stays with us and checks the spelling on one page.",
@@ -219,12 +219,12 @@ export const CHAPTERS = [
         jumbled: ["our", "house.", "comes", "to", "cousin", "morning,", "Sunday", "our", "Nina", "On", "visit"],
       },
       {
-        target: "Marco runs to the door and says, “Hi, Nina!” with a big smile, and Nina hugs him before turning to me.",
-        jumbled: ["“Hi,", "before", "him", "smile,", "me.", "and", "turning", "the", "Nina", "says,", "a", "Nina!”", "big", "hugs", "Marco", "and", "to", "with", "door", "runs", "to"],
+        target: "She lives in another town, so we do not see her every week.",
+        jumbled: ["town,", "we", "do", "so", "in", "She", "every", "not", "another", "week.", "see", "lives", "her"],
       },
       {
-        target: "“Lena, I missed you!” she says.",
-        jumbled: ["she", "says.", "missed", "I", "“Lena,", "you!”"],
+        target: "Nina brings a small box of cookies for our family.",
+        jumbled: ["small", "a", "brings", "our", "cookies", "family.", "of", "for", "box", "Nina"],
       },
       {
         target: "Bea is still at our house, so she meets Nina for the first time.",
@@ -399,8 +399,8 @@ export const CHAPTERS = [
         jumbled: ["needs", "lamp", "and", "new", "the", "it", "Our", "bulb.", "light", "a", "says", "father", "checks"],
       },
       {
-        target: "“Lena, can you get the box?” he asks.",
-        jumbled: ["the", "box?”", "asks.", "get", "you", "can", "he", "“Lena,"],
+        target: "Bea stands near Marco and tells him it will be okay soon.",
+        jumbled: ["near", "will", "stands", "and", "Marco", "it", "tells", "him", "soon.", "Bea", "be", "okay"],
       },
       {
         target: "Nina brings a chair, and I hold the small box with the new bulb inside.",

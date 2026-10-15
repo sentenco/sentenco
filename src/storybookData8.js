@@ -141,8 +141,8 @@ export const CHAPTERS = [
         jumbled: ["him", "fresh", "fridge", "him", "with", "walk", "help", "I", "find", "and", "the", "the", "to", "milk."],
       },
       {
-        target: "He says, “Thank you, you are very kind, Casey,” and I feel happy inside.",
-        jumbled: ["says,", "kind,", "you,", "and", "very", "I", "happy", "you", "are", "“Thank", "feel", "Casey,”", "inside.", "He"],
+        target: "Ben helps another customer choose some fruit near the front table.",
+        jumbled: ["another", "choose", "some", "Ben", "helps", "table.", "near", "front", "customer", "the", "fruit"],
       },
       {
         target: "I feel useful because people are glad for my help.",
@@ -177,16 +177,16 @@ export const CHAPTERS = [
         jumbled: ["a", "man", "in", "the", "shop", "worried", "comes", "the", "looks", "a", "face.", "and", "In", "with", "afternoon,", "around"],
       },
       {
-        target: "I am not sure, so I say, “Let me check for you, please wait one minute.”",
-        jumbled: ["one", "am", "please", "“Let", "wait", "you,", "so", "I", "check", "me", "sure,", "not", "minute.”", "say,", "for", "I"],
+        target: "Then I remember a box in the storage room at the back.",
+        jumbled: ["at", "back.", "I", "the", "in", "remember", "Then", "a", "storage", "the", "room", "box"],
       },
       {
         target: "I walk to the storage room and search the boxes one by one.",
         jumbled: ["storage", "one.", "one", "I", "boxes", "the", "the", "by", "walk", "room", "search", "to", "and"],
       },
       {
-        target: "I bring them to the man and say, “Here you are, is this the right one?”",
-        jumbled: ["man", "them", "one?”", "I", "you", "and", "bring", "the", "the", "are,", "to", "this", "“Here", "say,", "is", "right"],
+        target: "Finally, I find a small pack of clock batteries on a high shelf.",
+        jumbled: ["batteries", "on", "a", "I", "Finally,", "a", "of", "clock", "find", "small", "high", "pack", "shelf."],
       },
       {
         target: "I feel proud because I did not give up on his question.",
@@ -225,12 +225,12 @@ export const CHAPTERS = [
         jumbled: ["so", "of", "breath", "and", "deep", "a", "waits,", "smile.", "A", "customers", "take", "line", "I"],
       },
       {
-        target: "I tell her, “That is three hundred pesos, please,” in a clear voice.",
-        jumbled: ["clear", "hundred", "her,", "tell", "in", "please,”", "voice.", "three", "“That", "pesos,", "a", "I", "is"],
+        target: "I scan each item slowly and read the price on the screen.",
+        jumbled: ["the", "item", "I", "scan", "read", "and", "the", "slowly", "screen.", "price", "on", "each"],
       },
       {
-        target: "I put her food in a bag and say, “Thank you, have a nice day.”",
-        jumbled: ["I", "you,", "say,", "nice", "her", "put", "“Thank", "food", "have", "in", "a", "day.”", "a", "and", "bag"],
+        target: "She gives me the money, and I count her change carefully into her hand.",
+        jumbled: ["She", "and", "carefully", "money,", "I", "me", "change", "gives", "her", "the", "count", "her", "hand.", "into"],
       },
       {
         target: "The next customer pays with a card, so I show him where to tap it.",
@@ -265,8 +265,8 @@ export const CHAPTERS = [
         jumbled: ["angry", "the", "and", "a", "small", "customer", "bag.", "comes", "in", "a", "afternoon,", "face", "an", "with", "In"],
       },
       {
-        target: "I stay calm and say, “I am sorry, sir, let me help you with that.”",
-        jumbled: ["say,", "calm", "sorry,", "help", "stay", "am", "and", "me", "you", "sir,", "that.”", "let", "I", "with", "“I"],
+        target: "He picks the right one, and slowly his angry face becomes calm.",
+        jumbled: ["He", "right", "the", "and", "one,", "slowly", "his", "becomes", "angry", "face", "picks", "calm."],
       },
       {
         target: "I look in the bag and see that he has the wrong flavour of juice.",
@@ -277,8 +277,8 @@ export const CHAPTERS = [
         jumbled: ["the", "and", "I", "him", "walk", "with", "him", "to", "flavours.", "show", "different", "fridge", "the"],
       },
       {
-        target: "I change it at the cashier and say, “I am sorry for the mistake.”",
-        jumbled: ["change","sorry","mistake.”","the","it","for","“I","the","I","say,","cashier","and","am","at"],
+        target: "I change it at the cashier and say that I am sorry for the mistake.",
+        jumbled: ["I", "mistake.", "change", "the", "cashier", "at", "I", "sorry", "am", "that", "the", "and", "for", "it", "say"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm with a difficult person.",
@@ -305,8 +305,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "At one o'clock, Ms. Cruz says, “You can take your lunch break now, Casey.”",
-        jumbled: ["can", "Ms.", "says,", "lunch", "Casey.”", "take", "break", "“You", "one", "o'clock,", "At", "Cruz", "now,", "your"],
+        target: "Ben is already there, eating rice and vegetables from his lunch box.",
+        jumbled: ["from", "rice", "box.", "there,", "vegetables", "lunch", "his", "already", "and", "Ben", "eating", "is"],
       },
       {
         target: "I open my own lunch box and take out rice, fish, and a banana.",
@@ -393,8 +393,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Ms. Cruz looks at the clock and says, “It is time to close the shop now.”",
-        jumbled: ["is", "Ms.", "at", "to", "Cruz", "and", "the", "clock", "looks", "now.”", "time", "“It", "says,", "the", "close", "shop"],
+        target: "In the evening, the last customer leaves, and the street becomes quiet.",
+        jumbled: ["the", "quiet.", "In", "last", "and", "the", "evening,", "leaves,", "customer", "street", "the", "becomes"],
       },
       {
         target: "Ben and I clean the counter and the floor with soft cloths and a mop.",
@@ -445,12 +445,12 @@ export const CHAPTERS = [
         jumbled: ["many", "I", "the", "shelves.", "worked", "the", "shop,", "filled", "This", "week,", "opened", "and", "cashier,"],
       },
       {
-        target: "Ms. Cruz walks to me and says, “You are a great help to this shop.”",
-        jumbled: ["says,", "this", "Ms.", "help", "me", "shop.”", "great", "“You", "walks", "a", "and", "to", "Cruz", "to", "are"],
+        target: "Ben and I ate lunch together and laughed about many funny things.",
+        jumbled: ["many", "and", "laughed", "and", "funny", "lunch", "I", "ate", "things.", "Ben", "about", "together"],
       },
       {
-        target: "I smile and say, “Thank you, I really like working here with you.”",
-        jumbled: ["really", "working", "like", "I", "you.”", "and", "with", "“Thank", "smile", "you,", "I", "here", "say,"],
+        target: "Outside, the evening air is cool, and the street lamps are bright.",
+        jumbled: ["is", "the", "lamps", "cool,", "street", "air", "Outside,", "the", "and", "bright.", "evening", "are"],
       },
       {
         target: "I feel proud and thankful because I had a good week at the shop.",

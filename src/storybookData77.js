@@ -53,8 +53,8 @@ export const CHAPTERS = [
         jumbled: ["a", "adjuster,", "assigned", "few", "the", "days.", "Ms.", "visits", "within", "Farrow,"],
       },
       {
-        target: "\"Desmond, walk me through what you've found,\" she says, inspecting the damage and taking her own measurements and photographs.",
-        jumbled: ["photographs.", "her", "\"Desmond,", "what", "she", "own", "you've", "and", "inspecting", "through", "measurements", "and", "walk", "says,", "taking", "me", "the", "damage", "found,\""],
+        target: "Farrow, the assigned adjuster, visits within a few days.",
+        jumbled: ["Farrow,", "the", "adjuster,", "days.", "within", "assigned", "few", "a", "visits"],
       },
       {
         target: "A week later, I receive her assessment, and the proposed settlement amount seems considerably lower than what local contractors had quoted me.",
@@ -141,8 +141,8 @@ export const CHAPTERS = [
         jumbled: ["own", "updated,", "last", "guidelines", "I", "mention", "specifically", "material", "since", "increased", "referencing", "seem", "that", "to", "were", "the", "assessment", "costs", "my", "research.", "have"],
       },
       {
-        target: "\"That's possible, Desmond — our guideline updates sometimes lag behind the current market,\" she acknowledges.",
-        jumbled: ["possible,", "updates", "the", "she", "current", "\"That's", "Desmond", "—", "market,\"", "behind", "guideline", "sometimes", "our", "acknowledges.", "lag"],
+        target: "She acknowledges that guideline updates sometimes lag behind the current market.",
+        jumbled: ["current", "sometimes", "that", "market.", "behind", "She", "the", "guideline", "updates", "acknowledges", "lag"],
       },
       {
         target: "Given her willingness to genuinely reconsider, I feel this conversation is heading toward a productive, collaborative outcome rather than a confrontation.",
@@ -221,8 +221,8 @@ export const CHAPTERS = [
         jumbled: ["Farrow", "week", "responds.", "Ms.", "later,", "A"],
       },
       {
-        target: "\"Desmond, the company has agreed to revise the settlement, though not fully to the amount you requested,\" she explains.",
-        jumbled: ["amount", "she", "to", "you", "\"Desmond,", "to", "explains.", "the", "the", "though", "requested,\"", "the", "not", "agreed", "revise", "has", "company", "fully", "settlement,"],
+        target: "She explains that the company agreed to revise the settlement, though not fully.",
+        jumbled: ["the", "not", "fully.", "the", "She", "settlement,", "that", "agreed", "company", "explains", "though", "to", "revise"],
       },
       {
         target: "She mentions that while material costs had indeed increased, some of my estimates included additional work beyond what the original damage strictly required.",
@@ -273,8 +273,8 @@ export const CHAPTERS = [
         jumbled: ["instead.", "the", "specific", "fully", "allow", "removing", "costs", "covered", "estimate", "I", "ask", "upgrades", "my", "might", "to", "remaining", "whether", "be", "from", "those"],
       },
       {
-        target: "\"If you resubmit an estimate focused strictly on repair, not upgrade, Desmond, this could work,\" she agrees, reviewing this possibility.",
-        jumbled: ["resubmit", "could", "on", "this", "work,\"", "an", "you", "reviewing", "strictly", "upgrade,", "\"If", "not", "possibility.", "this", "agrees,", "repair,", "focused", "Desmond,", "she", "estimate"],
+        target: "She agrees that it could work if I resubmit an estimate focused on repair.",
+        jumbled: ["it", "agrees", "I", "focused", "an", "estimate", "work", "if", "on", "could", "repair.", "resubmit", "that", "She"],
       },
       {
         target: "This clarification, given how specific it becomes, helps me understand exactly what adjustments would actually strengthen my case.",
@@ -317,8 +317,8 @@ export const CHAPTERS = [
         jumbled: ["a", "during", "updated", "adjustment", "discussed", "this", "to", "along", "with", "Farrow,", "I", "note", "Ms.", "our", "send", "brief", "explaining", "call.", "the", "we'd", "estimate"],
       },
       {
-        target: "\"Got it, Desmond, I'll process this final review within the next few business days,\" she confirms.",
-        jumbled: ["process", "she", "this", "I'll", "Desmond,", "few", "confirms.", "days,\"", "review", "next", "business", "\"Got", "within", "the", "final", "it,"],
+        target: "Farrow, along with a brief note explaining the adjustment we'd discussed during our call.",
+        jumbled: ["Farrow,", "note", "the", "explaining", "discussed", "brief", "we'd", "call.", "with", "a", "adjustment", "our", "along", "during"],
       },
       {
         target: "Given how collaborative this process has felt lately, I feel genuinely optimistic that we're approaching a fair, final resolution.",
@@ -361,8 +361,8 @@ export const CHAPTERS = [
         jumbled: ["her", "I", "than", "this", "original,", "assessment", "outdated", "thanking", "enforcing", "rather", "the", "simply", "collaboratively", "without", "reconsideration.", "for", "handling", "reply,"],
       },
       {
-        target: "\"I appreciate you approaching this with clear documentation, Desmond, rather than frustration or vague complaints,\" she responds briefly.",
-        jumbled: ["briefly.", "with", "documentation,", "you", "frustration", "vague", "complaints,\"", "than", "approaching", "responds", "Desmond,", "appreciate", "rather", "clear", "this", "she", "or", "\"I"],
+        target: "She responds briefly that she appreciates my clear documentation instead of vague complaints.",
+        jumbled: ["that", "responds", "appreciates", "documentation", "She", "briefly", "my", "clear", "of", "complaints.", "she", "instead", "vague"],
       },
       {
         target: "Reading this final confirmation, I feel genuine relief that patient, evidence-based negotiation had ultimately produced a fair outcome.",
@@ -409,8 +409,8 @@ export const CHAPTERS = [
         jumbled: ["adjusters", "explain", "full", "well-documented", "in", "reasonable,", "they", "to", "experience,", "if", "most", "guarantee", "requests,", "are", "can't", "my", "even", "I", "that,", "agreement.", "open"],
       },
       {
-        target: "\"Thanks for the insight, Desmond — I'll reconsider my own settlement before my repairs begin,\" she says.",
-        jumbled: ["—", "settlement", "Desmond", "I'll", "insight,", "for", "\"Thanks", "the", "own", "my", "begin,\"", "my", "before", "reconsider", "says.", "she", "repairs"],
+        target: "She says she will reconsider her own settlement before her repairs begin.",
+        jumbled: ["will", "her", "she", "repairs", "reconsider", "before", "her", "says", "own", "settlement", "begin.", "She"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about sharing something you learned to help someone else negotiate confidently.",

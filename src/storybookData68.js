@@ -47,8 +47,8 @@ export const CHAPTERS = [
         jumbled: ["At", "family", "our", "entire", "promotion,", "it", "relocating", "city.", "dinner,", "though", "require", "mother", "my", "would", "significant", "she's", "been", "a", "announces", "offered", "another", "to"],
       },
       {
-        target: "“Delphine, this could be huge for all of us,” she says, eyes bright.",
-        jumbled: ["could", "be", "this", "all", "us,”", "says,", "eyes", "“Delphine,", "bright.", "huge", "she", "for", "of"],
+        target: "With bright eyes, she says this could be huge for all of us.",
+        jumbled: ["says", "us.", "be", "all", "eyes,", "of", "could", "bright", "she", "this", "huge", "for", "With"],
       },
       {
         target: "Her excitement is immediately obvious, but I notice my father's expression shift from surprise toward something considerably more guarded.",
@@ -139,8 +139,8 @@ export const CHAPTERS = [
         jumbled: ["that", "having", "mean", "explains", "this", "like", "turning", "worked", "for", "chance.", "and", "years,", "something", "might", "another", "she's", "toward", "down", "it", "never", "She"],
       },
       {
-        target: "“You know I've wanted this for years, Delphine,” she says.",
-        jumbled: ["Delphine,”", "know", "I've", "she", "says.", "years,", "for", "“You", "this", "wanted"],
+        target: "She says she has wanted this for years.",
+        jumbled: ["years.", "wanted", "she", "She", "this", "for", "says", "has"],
       },
       {
         target: "Moreover, she admits she's scared that if she refuses this offer out of fear, she'll always wonder what she'd given up.",
@@ -183,8 +183,8 @@ export const CHAPTERS = [
         jumbled: ["genuinely", "deep", "built", "he", "home.", "roots", "He", "job", "explains", "that", "here:", "like", "close", "community", "that", "feels", "enjoys,", "a", "he's", "a", "friends,", "and"],
       },
       {
-        target: "“This is home, Delphine,” he says simply.",
-        jumbled: ["says", "is", "“This", "he", "home,", "Delphine,”", "simply."],
+        target: "He simply says that this is home.",
+        jumbled: ["that", "simply", "is", "home.", "He", "says", "this"],
       },
       {
         target: "He worries that starting over somewhere unfamiliar, at his age, may not be as easy as my mother seems to assume.",
@@ -271,8 +271,8 @@ export const CHAPTERS = [
         jumbled: ["which", "I", "surprised,", "parents", "initially.", "Both", "neither", "as", "look", "take", "good", "sign", "interrupts,", "cautiously", "a", "though"],
       },
       {
-        target: "“Go on, Delphine,” my father finally says, nodding.",
-        jumbled: ["says,", "nodding.", "Delphine,”", "father", "finally", "my", "“Go", "on,"],
+        target: "My father finally nods and tells me to go on.",
+        jumbled: ["father", "tells", "nods", "on.", "me", "finally", "to", "go", "My", "and"],
       },
       {
         target: "I explain that Mom hasn't said she's scared of regret, and Dad hasn't said he actually admires her ambition.",
@@ -363,8 +363,8 @@ export const CHAPTERS = [
         jumbled: ["work", "father", "a", "new", "his", "the", "transitioning", "My", "start", "months", "while", "role,", "mother", "will", "few", "remotely", "before", "own", "relocating.", "my", "takes", "fully"],
       },
       {
-        target: "“This wouldn't have happened without you pushing us to talk, Delphine,” he adds.",
-        jumbled: ["adds.", "you", "to", "pushing", "he", "us", "without", "wouldn't", "happened", "talk,", "Delphine,”", "have", "“This"],
+        target: "He adds that this would not have happened without us talking.",
+        jumbled: ["not", "adds", "this", "He", "have", "that", "us", "happened", "would", "talking.", "without"],
       },
       {
         target: "This staggered approach, they explain, gives everyone time to adjust rather than uprooting everything abruptly all at once.",
@@ -407,8 +407,8 @@ export const CHAPTERS = [
         jumbled: ["forced", "to", "expected,", "decision", "had", "the", "having", "it", "My", "I", "rather", "into", "calmer", "father", "seems", "than", "time", "than", "suddenly.", "process", "feeling"],
       },
       {
-        target: "My mother thanks me privately: “Delphine, what you did at dinner changed everything.”",
-        jumbled: ["dinner", "me", "you", "My", "changed", "mother", "privately:", "“Delphine,", "what", "at", "thanks", "did", "everything.”"],
+        target: "My mother thanks me privately for what I did at dinner.",
+        jumbled: ["My", "did", "I", "what", "mother", "at", "dinner.", "me", "thanks", "for", "privately"],
       },
       {
         target: "I realize that sometimes, the most helpful thing you can do isn't choosing a side, but helping people truly hear each other.",

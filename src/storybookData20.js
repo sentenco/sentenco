@@ -50,8 +50,8 @@ export const CHAPTERS = [
         jumbled: ["she", "small", "soft.", "Rosie,", "is", "name", "is", "and", "very", "Her", "and"],
       },
       {
-        target: "“Do you want to hold her, Ben?” Mom asks me gently.",
-        jumbled: ["“Do", "her,", "hold", "Ben?”", "to", "you", "Mom", "gently.", "me", "want", "asks"],
+        target: "I look at her tiny hands and tiny little toes.",
+        jumbled: ["and", "hands", "look", "her", "I", "tiny", "little", "at", "tiny", "toes."],
       },
       {
         target: "Rosie opens her eyes for a second and looks at me.",
@@ -88,16 +88,16 @@ export const CHAPTERS = [
         jumbled: ["fall", "Rosie", "night,", "I", "cries", "loudly,", "asleep.", "and", "That", "cannot"],
       },
       {
-        target: "“Babies cry because it is how they talk to us,” Mom explains.",
-        jumbled: ["to", "is", "because", "they", "it", "“Babies", "cry", "Mom", "talk", "explains.", "us,”", "how"],
+        target: "Mom walks around the house, holding Rosie and singing softly.",
+        jumbled: ["Rosie", "singing", "softly.", "walks", "the", "holding", "Mom", "around", "house,", "and"],
       },
       {
         target: "I put my pillow over my ears, but I can still hear her.",
         jumbled: ["pillow", "but", "ears,", "my", "her.", "can", "I", "hear", "my", "put", "still", "over", "I"],
       },
       {
-        target: "“Being a baby's family is hard work, Ben,” Dad says with a tired smile.",
-        jumbled: ["tired", "is", "a", "Ben,”", "“Being", "family", "with", "says", "hard", "smile.", "work,", "a", "baby's", "Dad"],
+        target: "Dad makes coffee and yawns while feeding Rosie her bottle.",
+        jumbled: ["while", "coffee", "Rosie", "bottle.", "her", "yawns", "Dad", "makes", "feeding", "and"],
       },
       {
         target: "I hope Rosie feels better and cries a little less tonight.",
@@ -130,8 +130,8 @@ export const CHAPTERS = [
         jumbled: ["I", "with", "if", "Rosie.", "day,", "next", "help", "can", "I", "Mom", "ask", "The"],
       },
       {
-        target: "“You can bring me a clean diaper, Ben,” Mom says with a smile.",
-        jumbled: ["clean", "a", "diaper,", "says", "me", "smile.", "“You", "a", "bring", "Mom", "with", "can", "Ben,”"],
+        target: "I run to get a soft, clean diaper from the shelf.",
+        jumbled: ["a", "shelf.", "diaper", "to", "get", "I", "run", "from", "the", "clean", "soft,"],
       },
       {
         target: "I also help by holding Rosie's tiny socks while Mom dresses her.",
@@ -180,8 +180,8 @@ export const CHAPTERS = [
         jumbled: ["small,", "tiny", "eyelashes", "cheeks.", "I", "her", "round", "at", "and", "look"],
       },
       {
-        target: "“You two look so sweet together, Ben,” Mom whispers with a smile.",
-        jumbled: ["two", "Ben,”", "Mom", "whispers", "with", "a", "“You", "sweet", "look", "smile.", "together,", "so"],
+        target: "Mom takes a photo of us together on the sofa.",
+        jumbled: ["the", "Mom", "us", "a", "sofa.", "together", "of", "photo", "takes", "on"],
       },
       {
         target: "I stay very still so I do not wake Rosie up.",
@@ -268,8 +268,8 @@ export const CHAPTERS = [
         jumbled: ["a", "I", "want", "do", "I", "to", "but", "jealous.", "not", "mean,", "be", "feel", "little"],
       },
       {
-        target: "I wait to hear someone call, “Ben, are you okay?” but nobody notices that I am upset for a little while.",
-        jumbled: ["hear", "upset", "wait", "notices", "but", "I", "am", "that", "to", "for", "nobody", "little", "you", "while.", "okay?”", "“Ben,", "someone", "a", "I", "call,", "are"],
+        target: "I go to my room and sit quietly by myself.",
+        jumbled: ["and", "to", "myself.", "quietly", "by", "my", "go", "I", "sit", "room"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about feeling jealous or left out.",
@@ -298,16 +298,16 @@ export const CHAPTERS = [
         jumbled: ["am", "quiet", "notices", "I", "evening,", "That", "and", "me.", "beside", "sits", "Dad"],
       },
       {
-        target: "“What's wrong, Ben? You seem a little sad today,” he asks gently.",
-        jumbled: ["You", "gently.", "seem", "a", "today,”", "“What's", "little", "Ben?", "sad", "wrong,", "asks", "he"],
+        target: "I take a deep breath and tell Dad how I feel.",
+        jumbled: ["breath", "I", "deep", "a", "and", "Dad", "I", "take", "how", "feel.", "tell"],
       },
       {
-        target: "“I feel like you and Mom only care about Rosie now,” I say quietly.",
-        jumbled: ["care", "Rosie", "like", "only", "say", "and", "feel", "Mom", "I", "about", "you", "quietly.", "“I", "now,”"],
+        target: "Dad looks at my new drawing and says it is wonderful.",
+        jumbled: ["new", "at", "looks", "says", "my", "and", "wonderful.", "is", "drawing", "Dad", "it"],
       },
       {
-        target: "Dad hugs me tightly and says, “We love you just as much, Ben.” He explains that babies need extra help, but my feelings matter too.",
-        jumbled: ["much,", "explains", "me", "but", "as", "extra", "matter", "says,", "feelings", "too.", "that", "Ben.”", "just", "love", "and", "need", "hugs", "babies", "He", "tightly", "help,", "you", "my", "Dad", "“We"],
+        target: "Talking about my feelings makes me feel so much better.",
+        jumbled: ["feel", "much", "my", "Talking", "me", "feelings", "better.", "about", "so", "makes"],
       },
       {
         target: "We spend the next hour together, just Dad and me.",
@@ -340,8 +340,8 @@ export const CHAPTERS = [
         jumbled: ["book", "a", "Today,", "Rosie.", "want", "Mom", "to", "if", "I", "asks", "read", "to"],
       },
       {
-        target: "“She loves the sound of your voice, Ben,” Mom says kindly.",
-        jumbled: ["kindly.", "loves", "Ben,”", "voice,", "sound", "of", "says", "“She", "your", "the", "Mom"],
+        target: "I pick my favorite book about a little duck.",
+        jumbled: ["book", "my", "pick", "a", "duck.", "little", "favorite", "about", "I"],
       },
       {
         target: "I sit next to Rosie's crib and open the colorful book.",
@@ -352,8 +352,8 @@ export const CHAPTERS = [
         jumbled: ["with", "whole", "wide,", "eyes", "me", "curious", "at", "looks", "time.", "Rosie", "the"],
       },
       {
-        target: "“You are a wonderful big brother, Ben,” Mom says proudly.",
-        jumbled: ["proudly.", "brother,", "big", "are", "“You", "wonderful", "says", "Ben,”", "Mom", "a"],
+        target: "She waves her little arms like she is enjoying the story.",
+        jumbled: ["like", "She", "story.", "she", "is", "the", "enjoying", "little", "her", "arms", "waves"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about reading a book.",
@@ -382,16 +382,16 @@ export const CHAPTERS = [
         jumbled: ["This", "afternoon,", "hand.", "tiny", "I", "near", "hold", "finger", "my", "Rosie's"],
       },
       {
-        target: "“Look, she's holding my finger!” I say with a big, happy smile.",
-        jumbled: ["big,", "smile.", "happy", "I", "finger!”", "holding", "with", "“Look,", "a", "say", "she's", "my"],
+        target: "Her small fingers wrap around mine and hold on tightly.",
+        jumbled: ["Her", "wrap", "around", "and", "tightly.", "fingers", "mine", "on", "hold", "small"],
       },
       {
         target: "Rosie's grip is surprisingly strong for such a tiny baby.",
         jumbled: ["strong", "baby.", "such", "for", "grip", "a", "Rosie's", "surprisingly", "tiny", "is"],
       },
       {
-        target: "Mom watches us and says, “She really loves her big brother, Ben.”",
-        jumbled: ["brother,", "watches", "says,", "Ben.”", "big", "us", "really", "loves", "and", "Mom", "her", "“She"],
+        target: "I stay very still so she does not let go.",
+        jumbled: ["I", "let", "not", "she", "very", "still", "does", "stay", "so", "go."],
       },
       {
         target: "This little moment makes me love being her big brother even more.",
@@ -432,8 +432,8 @@ export const CHAPTERS = [
         jumbled: ["time", "Mom", "for", "both", "Rosie", "make", "Dad", "and", "me.", "and", "always"],
       },
       {
-        target: "“You are the best big brother, Ben,” Dad says, ruffling my hair.",
-        jumbled: ["the", "says,", "hair.", "ruffling", "brother,", "are", "my", "Ben,”", "big", "“You", "best", "Dad"],
+        target: "Rosie smiles big every time she sees my face now.",
+        jumbled: ["every", "my", "smiles", "sees", "now.", "big", "time", "face", "she", "Rosie"],
       },
       {
         target: "Being Rosie's big brother is one of my favorite things in the whole world.",

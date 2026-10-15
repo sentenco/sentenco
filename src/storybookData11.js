@@ -56,8 +56,8 @@ export const CHAPTERS = [
         jumbled: ["I", "try", "to", "make", "happy", "that", "me", "new", "feel", "decide", "things", "and", "calm."],
       },
       {
-        target: "My friend Leo says, “Quinn, free time is for rest and fun, not more stress.”",
-        jumbled: ["not", "and", "Leo", "My", "more", "friend", "rest", "stress.”", "is", "time", "fun,", "says,", "free", "“Quinn,", "for"],
+        target: "I want to walk, cook, read, and meet my friends more often.",
+        jumbled: ["friends", "I", "read,", "want", "and", "often.", "walk,", "to", "cook,", "my", "meet", "more"],
       },
       {
         target: "I feel excited because my free time can be happy and full.",
@@ -96,8 +96,8 @@ export const CHAPTERS = [
         jumbled: ["chair", "of", "by", "in", "tea", "and", "I", "window.", "sit", "the", "a", "favourite", "cup", "make", "my"],
       },
       {
-        target: "“Not tonight, Quinn,” I tell myself, and I do not look at my phone or my work emails tonight.",
-        jumbled: ["Quinn,”", "at", "I", "emails", "tell", "or", "not", "phone", "my", "look", "“Not", "tonight.", "tonight,", "myself,", "I", "my", "work", "do", "and"],
+        target: "Instead, I open a simple book and read a few quiet pages.",
+        jumbled: ["a", "a", "Instead,", "pages.", "quiet", "read", "I", "simple", "open", "few", "and", "book"],
       },
       {
         target: "Outside, the city is dark, and the street is calm and peaceful.",
@@ -144,8 +144,8 @@ export const CHAPTERS = [
         jumbled: ["look", "I", "the", "the", "slowly", "at", "and", "trees.", "along", "path", "green", "walk", "tall"],
       },
       {
-        target: "“Slow down, Quinn,” I whisper to myself, and I do not think about work; I only enjoy the calm park.",
-        jumbled: ["do", "only", "I", "calm", "“Slow", "work;", "think", "about", "I", "not", "down,", "myself,", "Quinn,”", "park.", "whisper", "to", "enjoy", "the", "I", "and"],
+        target: "I breathe the fresh air and feel my body become light and free.",
+        jumbled: ["fresh", "my", "breathe", "and", "I", "become", "the", "light", "feel", "body", "and", "air", "free."],
       },
       {
         target: "I feel fresh and happy because a simple walk lifts my mood.",

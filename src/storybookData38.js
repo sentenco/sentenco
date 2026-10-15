@@ -50,8 +50,8 @@ export const CHAPTERS = [
         jumbled: ["mixed", "I", "trying", "myself.", "my", "feel", "smooth", "it", "of", "wooden", "rush", "deck", "sudden,", "Holding", "the", "about", "nervousness", "in", "unexpected", "hands,", "excitement", "actually", "with", "a"],
       },
       {
-        target: "“You'll fall a lot before you get good, Marcus,” my cousin warns honestly, though his warning barely dampens my enthusiasm.",
-        jumbled: ["warning", "though", "“You'll", "fall", "enthusiasm.", "my", "lot", "dampens", "good,", "get", "barely", "my", "warns", "his", "cousin", "before", "you", "Marcus,”", "a", "honestly,"],
+        target: "My cousin warns me that I will fall a lot before I get good.",
+        jumbled: ["lot", "My", "fall", "I", "that", "I", "will", "a", "get", "good.", "me", "before", "warns", "cousin"],
       },
       {
         target: "That evening, I can't wait to finally step onto it for the very first time.",
@@ -98,8 +98,8 @@ export const CHAPTERS = [
         jumbled: ["a", "of", "managing", "balance.", "on", "falling", "repeatedly,", "back", "seconds", "the", "before", "times", "wobbly,", "uncertain", "Determined", "embarrassment,", "few", "I", "actual", "even", "dozen", "a", "despite", "nearly", "climb"],
       },
       {
-        target: "“Come on, Marcus,” I mutter, climbing back on again.",
-        jumbled: ["mutter,", "again.", "back", "I", "on", "“Come", "climbing", "on,", "Marcus,”"],
+        target: "This is definitely harder than it looks online.",
+        jumbled: ["looks", "harder", "than", "This", "it", "is", "online.", "definitely"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something that was harder than it looked at first.",
@@ -142,8 +142,8 @@ export const CHAPTERS = [
         jumbled: ["how", "notice", "obviously", "me", "I", "considers", "inexperienced", "immediately,", "everyone", "around", "of", "turning", "Part", "am.", "convinced", "actually", "will"],
       },
       {
-        target: "“You can do this, Marcus,” I tell myself, taking a deep breath and stepping through the gate, reminding myself everyone here started exactly where I'm standing now.",
-        jumbled: ["tell", "Marcus,”", "the", "“You", "myself", "and", "this,", "where", "breath", "through", "here", "I", "started", "everyone", "exactly", "a", "myself,", "stepping", "deep", "standing", "gate,", "taking", "now.", "I'm", "reminding", "can", "do"],
+        target: "I tell myself that I can do this and step through the gate.",
+        jumbled: ["do", "I", "can", "that", "and", "through", "myself", "I", "this", "tell", "step", "the", "gate."],
       },
     ],
     mySentencePrompt: "Write or say one sentence about feeling nervous entering a new place or group.",
@@ -174,12 +174,12 @@ export const CHAPTERS = [
         jumbled: ["guy", "easy,", "notice", "a", "awkwardly", "watching", "participating,", "approaching", "Dev", "an", "I", "on", "welcoming", "named", "rather", "than", "smile.", "with", "a", "bench,", "friendly-looking", "Sitting"],
       },
       {
-        target: "“First time here? I remember mine,” he says casually, sitting down beside me without any judgment in his tone whatsoever.",
-        jumbled: ["says", "his", "tone", "me", "mine,”", "down", "in", "without", "“First", "any", "beside", "remember", "whatsoever.", "here?", "casually,", "I", "sitting", "time", "judgment", "he"],
+        target: "He sits down beside me and says that he remembers his first time here.",
+        jumbled: ["and", "time", "first", "remembers", "his", "He", "beside", "me", "that", "he", "here.", "down", "says", "sits"],
       },
       {
-        target: "“I'm Marcus,” I say, introducing myself, and he nods with an easy grin.",
-        jumbled: ["an", "easy", "say,", "I", "nods", "with", "he", "grin.", "introducing", "myself,", "Marcus,”", "“I'm", "and"],
+        target: "I introduce myself, and he nods with an easy grin.",
+        jumbled: ["I", "introduce", "with", "nods", "grin.", "myself,", "an", "he", "easy", "and"],
       },
       {
         target: "He offers a few beginner tips about foot placement and weight distribution, things I hadn't considered while practicing alone in my driveway.",
@@ -230,8 +230,8 @@ export const CHAPTERS = [
         jumbled: ["situation", "concern,", "does.", "skaters", "the", "already", "thankfully", "no", "though", "over", "one", "glance", "Several", "it", "or", "with", "than", "feel", "makes", "laughs", "worse"],
       },
       {
-        target: "“Get up, Marcus,” I tell myself, sitting there clutching my throbbing elbow, seriously questioning whether skating is really worth this.",
-        jumbled: ["there", "throbbing", "“Get", "really", "my", "Marcus,”", "tell", "I", "sitting", "this.", "up,", "questioning", "myself,", "clutching", "seriously", "elbow,", "skating", "whether", "worth", "is"],
+        target: "I tell myself to get up while I clutch my sore elbow.",
+        jumbled: ["get", "elbow.", "sore", "tell", "myself", "clutch", "I", "up", "while", "I", "my", "to"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a painful fall or accident you had.",
@@ -262,12 +262,12 @@ export const CHAPTERS = [
         jumbled: ["hand", "practiced,", "older", "a", "unbothered", "named", "me", "scraped", "to", "examining", "walks", "offering", "An", "while", "help", "with", "up", "casualness.", "Jasmine", "my", "elbow", "skater", "over,"],
       },
       {
-        target: "“Want to see something?” she asks, rolling up her pant leg to reveal an impressive collection of old scars and faded bruises across her knee.",
-        jumbled: ["leg", "reveal", "knee.", "and", "collection", "pant", "rolling", "asks,", "to", "bruises", "her", "old", "of", "see", "she", "up", "her", "an", "across", "something?”", "impressive", "“Want", "scars", "faded", "to"],
+        target: "She asks if I want to see something and rolls up her pant leg.",
+        jumbled: ["see", "asks", "to", "leg.", "if", "pant", "want", "and", "I", "She", "something", "rolls", "up", "her"],
       },
       {
-        target: "“Everyone here has stories like yours, Marcus,” she explains, sitting down beside me on the edge of a ramp.",
-        jumbled: ["edge", "has", "like", "sitting", "she", "the", "here", "on", "beside", "explains,", "down", "me", "Marcus,”", "of", "stories", "yours,", "“Everyone", "ramp.", "a"],
+        target: "She explains that everyone here has stories like mine and sits down beside me.",
+        jumbled: ["here", "has", "She", "me.", "beside", "mine", "down", "stories", "sits", "that", "like", "and", "everyone", "explains"],
       },
       {
         target: "She shares how she broke her wrist during her second month of skating, yet kept practicing anyway because quitting felt worse than temporary pain ever could.",
@@ -314,8 +314,8 @@ export const CHAPTERS = [
         jumbled: ["they", "whenever", "Dev", "offer", "encouragement", "and", "Jasmine", "spot", "both", "occasional", "practicing.", "me"],
       },
       {
-        target: "“Looking good, Marcus!” Jasmine calls out one afternoon, shouting friendly tips as she skates past effortlessly.",
-        jumbled: ["Marcus!”", "friendly", "past", "Jasmine", "one", "out", "skates", "tips", "as", "good,", "calls", "she", "effortlessly.", "afternoon,", "“Looking", "shouting"],
+        target: "Each small success, however minor it seems, motivates me to keep returning consistently.",
+        jumbled: ["small", "it", "returning", "keep", "me", "motivates", "minor", "consistently.", "success,", "seems,", "Each", "to", "however"],
       },
       {
         target: "I still fall occasionally, though considerably less often than during my first painful week, and the falls themselves feel less discouraging now somehow.",
@@ -362,8 +362,8 @@ export const CHAPTERS = [
         jumbled: ["building", "but", "try.", "failed", "again,", "unsuccessful,", "attempt", "equally", "my", "slightly", "frustration", "every", "different", "steadily", "each", "again", "with", "try", "and", "I"],
       },
       {
-        target: "“This one took me nearly a month too, Marcus,” Dev reminds me patiently.",
-        jumbled: ["nearly", "me", "patiently.", "Dev", "too,", "one", "a", "reminds", "Marcus,”", "me", "“This", "month", "took"],
+        target: "Dev patiently reminds me that this trick took him nearly a month too.",
+        jumbled: ["nearly", "me", "Dev", "him", "month", "this", "patiently", "took", "reminds", "that", "too.", "a", "trick"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about attempting something difficult for the first time.",
@@ -406,8 +406,8 @@ export const CHAPTERS = [
         jumbled: ["genuine,", "from", "happened", "the", "enthusiastic", "Dev", "and", "be", "erupt", "across", "watching,", "to", "into", "cheers", "Jasmine,", "park.", "who"],
       },
       {
-        target: "“You got it, Marcus! You actually got it!” Dev shouts, running over with an excited high-five waiting.",
-        jumbled: ["Marcus!", "over", "got", "with", "got", "waiting.", "it,", "excited", "“You", "actually", "it!”", "an", "running", "high-five", "shouts,", "You", "Dev"],
+        target: "Dev shouts that I actually got it and runs over with a high-five.",
+        jumbled: ["a", "it", "actually", "over", "Dev", "that", "with", "and", "got", "I", "high-five.", "shouts", "runs"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about finally succeeding after many failed attempts.",
@@ -438,8 +438,8 @@ export const CHAPTERS = [
         jumbled: ["congratulate", "the", "me", "to", "spread", "on", "apparently", "progress.", "warmly", "among", "word", "regular", "By", "of", "skaters,", "my", "has", "ollie", "landed", "evening,", "several", "over", "my", "and", "come", "others"],
       },
       {
-        target: "“Nice work out there, Marcus,” one of the regulars says with a grin.",
-        jumbled: ["one", "“Nice", "there,", "regulars", "with", "grin.", "says", "the", "of", "out", "Marcus,”", "a", "work"],
+        target: "One of the regulars grins and says that I did nice work out there.",
+        jumbled: ["says", "the", "there.", "out", "One", "that", "and", "work", "of", "did", "nice", "regulars", "grins", "I"],
       },
       {
         target: "Sitting on the edge of a ramp afterward, sharing snacks with Dev, Jasmine, and a few others whose names I'm finally starting to learn, I feel genuinely different than I did weeks earlier.",

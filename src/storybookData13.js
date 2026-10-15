@@ -88,8 +88,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Dad says, “We need a good name for him, Ellie.”",
-        jumbled: ["for", "need", "says,", "“We", "Dad", "good", "a", "Ellie.”", "name", "him,"],
+        target: "We sit together in the living room.",
+        jumbled: ["in", "sit", "We", "together", "room.", "living", "the"],
       },
       {
         target: "I think of many names.",
@@ -100,8 +100,8 @@ export const CHAPTERS = [
         jumbled: ["at", "I", "look", "the", "eyes.", "brown", "big", "puppy's"],
       },
       {
-        target: "Everyone smiles and says, “Good choice, Ellie! Milo is a good name!”",
-        jumbled: ["Milo", "a", "good", "says,", "smiles", "and", "is", "Ellie!", "name!”", "“Good", "choice,", "Everyone"],
+        target: "Now he has a name!",
+        jumbled: ["has", "he", "name!", "Now", "a"],
       },
       {
         target: "The puppy wags his tail.",
@@ -138,16 +138,16 @@ export const CHAPTERS = [
         jumbled: ["of", "sit", "get", "to", "out", "I", "him.", "bed", "and", "next"],
       },
       {
-        target: "I say, “It's okay, Milo. Ellie is here.”",
-        jumbled: ["“It's", "okay,", "Milo.", "say,", "Ellie", "here.”", "is", "I"],
+        target: "Milo is awake, and he looks scared.",
+        jumbled: ["he", "is", "scared.", "looks", "awake,", "Milo", "and"],
       },
       {
         target: "Milo stops crying and rests his head on my hand.",
         jumbled: ["rests", "Milo", "and", "head", "crying", "stops", "hand.", "his", "my", "on"],
       },
       {
-        target: "In the morning, Mom peeks in and says, “Good morning, Ellie!”",
-        jumbled: ["“Good", "Mom", "Ellie!”", "in", "morning,", "peeks", "and", "the", "says,", "morning,", "In"],
+        target: "Soon, we both fall asleep.",
+        jumbled: ["Soon,", "asleep.", "we", "both", "fall"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about nighttime.",
@@ -172,16 +172,16 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Dad holds a small treat and says, “Watch this, Ellie! Sit, Milo!”",
-        jumbled: ["Milo!”", "and", "a", "Dad", "says,", "“Watch", "Ellie!", "this,", "small", "Sit,", "holds", "treat"],
+        target: "Today, Dad teaches Milo a new trick.",
+        jumbled: ["Dad", "Milo", "trick.", "a", "Today,", "teaches", "new"],
       },
       {
         target: "Milo looks confused and jumps up.",
         jumbled: ["up.", "and", "looks", "confused", "Milo", "jumps"],
       },
       {
-        target: "“Sit, Milo,” he says softly.",
-        jumbled: ["he", "Milo,”", "says", "“Sit,", "softly."],
+        target: "This time, Milo sits down!",
+        jumbled: ["down!", "time,", "Milo", "This", "sits"],
       },
       {
         target: "Milo gets his treat and wags his tail.",
@@ -264,16 +264,16 @@ export const CHAPTERS = [
         jumbled: ["shout.", "and", "upset", "I", "want", "feel", "to"],
       },
       {
-        target: "Mom hugs me and says, “Ellie, Milo is still a baby. He does not know yet.”",
-        jumbled: ["a", "yet.”", "does", "Milo", "still", "is", "hugs", "me", "“Ellie,", "says,", "baby.", "not", "and", "He", "know", "Mom"],
+        target: "Milo has chewed my favorite shoe!",
+        jumbled: ["my", "Milo", "chewed", "favorite", "has", "shoe!"],
       },
       {
-        target: "Dad gives Milo a chew toy instead and says, “Don't worry, Ellie.”",
-        jumbled: ["gives", "instead", "Milo", "toy", "and", "a", "Dad", "worry,", "chew", "Ellie.”", "“Don't", "says,"],
+        target: "Dad gives Milo a chew toy instead and tells Ellie not to worry.",
+        jumbled: ["worry.", "chew", "toy", "a", "tells", "to", "Milo", "not", "and", "Ellie", "gives", "instead", "Dad"],
       },
       {
-        target: "I hug Milo and say, “It's okay, Milo.”",
-        jumbled: ["say,", "Milo", "okay,", "I", "hug", "“It's", "Milo.”", "and"],
+        target: "I hug Milo and tell him that it is okay.",
+        jumbled: ["Milo", "okay.", "and", "is", "him", "it", "tell", "I", "hug", "that"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a mistake.",
@@ -306,16 +306,16 @@ export const CHAPTERS = [
         jumbled: ["start", "goes", "over", "to", "clothes,", "all", "and", "laugh.", "I", "my", "Water"],
       },
       {
-        target: "“Ellie, you are as wet as Milo!” she says.",
-        jumbled: ["she", "Milo!”", "“Ellie,", "are", "as", "you", "as", "says.", "wet"],
+        target: "Mom peeks in and laughs too.",
+        jumbled: ["in", "too.", "Mom", "laughs", "and", "peeks"],
       },
       {
         target: "Milo looks clean and smells so fresh.",
         jumbled: ["clean", "fresh.", "and", "so", "looks", "Milo", "smells"],
       },
       {
-        target: "“Now Ellie needs a bath too!”",
-        jumbled: ["bath", "too!”", "“Now", "a", "Ellie", "needs"],
+        target: "He shakes his whole body and gets me wet again!",
+        jumbled: ["wet", "and", "his", "He", "whole", "again!", "shakes", "body", "gets", "me"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about bath time.",
@@ -390,16 +390,16 @@ export const CHAPTERS = [
         jumbled: ["a", "at", "the", "and", "front", "up", "I", "photo.", "stand", "hold"],
       },
       {
-        target: "“This is my puppy, Milo,” I say.",
-        jumbled: ["puppy,", "my", "“This", "is", "I", "say.", "Milo,”"],
+        target: "My classmates smile and ask questions.",
+        jumbled: ["My", "smile", "ask", "questions.", "and", "classmates"],
       },
       {
-        target: "“What tricks does he know?” asks a girl.",
-        jumbled: ["a", "he", "know?”", "asks", "girl.", "“What", "does", "tricks"],
+        target: "I answer every question with a big smile.",
+        jumbled: ["a", "smile.", "with", "question", "I", "answer", "every", "big"],
       },
       {
-        target: "Everyone claps and says, “Great job, Ellie! Milo looks very cute!”",
-        jumbled: ["looks", "Everyone", "cute!”", "Ellie!", "Milo", "“Great", "job,", "very", "and", "says,", "claps"],
+        target: "At school, it is show-and-tell day.",
+        jumbled: ["day.", "it", "show-and-tell", "At", "school,", "is"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about show-and-tell.",
@@ -440,8 +440,8 @@ export const CHAPTERS = [
         jumbled: ["full", "Now,", "Milo", "is", "of", "happy", "and", "energy."],
       },
       {
-        target: "Mom smiles and says, “You and Milo are perfect together, Ellie.”",
-        jumbled: ["smiles", "and", "and", "together,", "says,", "Milo", "perfect", "are", "“You", "Ellie.”", "Mom"],
+        target: "I look at Milo and smile.",
+        jumbled: ["at", "and", "Milo", "smile.", "look", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your best friend.",

@@ -40,12 +40,12 @@ export const CHAPTERS = [
         jumbled: ["excitedly.", "everyone", "next", "starts", "school", "our", "the", "join", "talking", "announces", "science", "that", "will", "class", "Ortiz", "month,", "and", "Ms.", "fair"],
       },
       {
-        target: "“You may work with a partner,” she says, and I immediately turn to Finn, my closest friend in science class.",
-        jumbled: ["to", "work", "and", "partner,”", "Finn,", "turn", "she", "“You", "in", "science", "immediately", "my", "closest", "friend", "class.", "a", "I", "says,", "with", "may"],
+        target: "This project already feels like the beginning of a fun adventure together.",
+        jumbled: ["the", "project", "together.", "like", "beginning", "a", "This", "already", "fun", "feels", "adventure", "of"],
       },
       {
-        target: "“Let's make an erupting volcano, Nora!”",
-        jumbled: ["an", "erupting", "volcano,", "make", "“Let's", "Nora!”"],
+        target: "Finn suggests that we make an erupting volcano.",
+        jumbled: ["Finn", "erupting", "that", "we", "make", "an", "suggests", "volcano."],
       },
       {
         target: "Finn suggests enthusiastically, and I agree right away because it sounds both exciting and a little challenging.",
@@ -86,8 +86,8 @@ export const CHAPTERS = [
         jumbled: ["volcano's", "soda,", "carefully:", "the", "red", "vinegar,", "coloring,", "for", "and", "shape.", "our", "We", "check", "clay", "baking", "food", "list"],
       },
       {
-        target: "“My mom says we can use the kitchen table,” I tell Finn as we spread out the materials.",
-        jumbled: ["I", "“My", "we", "says", "tell", "materials.", "can", "out", "kitchen", "we", "spread", "mom", "as", "the", "table,”", "use", "the", "Finn"],
+        target: "After school, Finn comes to my house so we can gather everything we need.",
+        jumbled: ["can", "so", "we", "to", "we", "gather", "After", "comes", "house", "school,", "everything", "need.", "my", "Finn"],
       },
       {
         target: "We also grab an old plastic bottle to use as the volcano's core.",
@@ -128,16 +128,16 @@ export const CHAPTERS = [
         jumbled: ["I", "while", "soft", "gray", "around", "carefully", "clay", "more", "the", "Finn", "it", "bottle,", "plastic", "look", "to", "realistic.", "the", "mold", "smooths", "make", "sides"],
       },
       {
-        target: "“It needs to look like a real mountain, Nora,” Finn says, adding small bumps and ridges along the surface.",
-        jumbled: ["the", "a", "mountain,", "and", "ridges", "like", "says,", "needs", "“It", "real", "Nora,”", "along", "to", "adding", "surface.", "look", "Finn", "bumps", "small"],
+        target: "After almost two hours of careful work, our volcano finally starts looking impressive.",
+        jumbled: ["work,", "careful", "volcano", "of", "starts", "our", "impressive.", "almost", "hours", "looking", "two", "After", "finally"],
       },
       {
         target: "Our hands get covered in sticky clay, but neither of us minds at all.",
         jumbled: ["sticky", "covered", "neither", "us", "of", "get", "hands", "clay,", "all.", "in", "at", "but", "minds", "Our"],
       },
       {
-        target: "“This actually looks amazing,” I say proudly, admiring our creation sitting on the table between us.",
-        jumbled: ["I", "creation", "on", "table", "proudly,", "“This", "admiring", "between", "looks", "our", "the", "sitting", "us.", "amazing,”", "say", "actually"],
+        target: "I say proudly that our volcano looks amazing.",
+        jumbled: ["that", "proudly", "amazing.", "say", "our", "I", "looks", "volcano"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something you built with your hands.",
@@ -170,8 +170,8 @@ export const CHAPTERS = [
         jumbled: ["eruption,", "We", "a", "expecting", "out", "wait", "only", "eagerly,", "bubbles", "weak,", "instead,", "watery", "dramatic", "but", "fizz", "slowly.", "a"],
       },
       {
-        target: "“That's it, Nora?” Finn asks, clearly disappointed by the underwhelming result.",
-        jumbled: ["it,", "clearly", "by", "disappointed", "Nora?”", "underwhelming", "result.", "“That's", "Finn", "asks,", "the"],
+        target: "Finn asks if that is all, clearly disappointed by the result.",
+        jumbled: ["by", "result.", "the", "is", "if", "asks", "clearly", "that", "Finn", "all,", "disappointed"],
       },
       {
         target: "I feel my excitement deflate a little too.",
@@ -208,16 +208,16 @@ export const CHAPTERS = [
         jumbled: ["chemical", "the", "mystery,", "to", "solve", "book", "a", "Finn", "brought", "about", "we", "science", "open", "Determined", "reactions."],
       },
       {
-        target: "“Maybe we didn't use enough baking soda, Nora,” Finn suggests, reading through the explanation carefully.",
-        jumbled: ["explanation", "the", "“Maybe", "suggests,", "through", "didn't", "use", "soda,", "Nora,”", "we", "carefully.", "Finn", "baking", "reading", "enough"],
+        target: "Finn suggests that we did not use enough baking soda.",
+        jumbled: ["suggests", "baking", "enough", "Finn", "use", "not", "we", "did", "that", "soda."],
       },
       {
         target: "We learn that the reaction between baking soda and vinegar needs a proper ratio to create a strong, bubbly eruption.",
         jumbled: ["eruption.", "soda", "ratio", "and", "bubbly", "a", "reaction", "a", "learn", "needs", "to", "strong,", "vinegar", "create", "that", "between", "proper", "the", "We", "baking"],
       },
       {
-        target: "“We only used a small spoonful,” I realize, checking our earlier measurements.",
-        jumbled: ["small", "used", "a", "spoonful,”", "I", "measurements.", "“We", "earlier", "only", "our", "realize,", "checking"],
+        target: "I realize that we only used a small spoonful.",
+        jumbled: ["spoonful.", "small", "I", "that", "we", "used", "realize", "only", "a"],
       },
       {
         target: "Understanding the science behind our failed experiment actually makes the problem feel less frustrating and more like an interesting puzzle we can definitely solve together with a little more research.",
@@ -262,8 +262,8 @@ export const CHAPTERS = [
         jumbled: ["watching", "closely.", "the", "slowly,", "in", "We", "vinegar", "mixture", "pour"],
       },
       {
-        target: "“Better, but not perfect yet, Nora,” Finn says, and we both agree to try adjusting the recipe one more time.",
-        jumbled: ["and", "“Better,", "yet,", "but", "agree", "recipe", "to", "more", "Nora,”", "time.", "one", "not", "the", "perfect", "we", "Finn", "says,", "try", "adjusting", "both"],
+        target: "Finn says it is better but not perfect, and we try once more.",
+        jumbled: ["better", "more.", "is", "but", "and", "once", "it", "perfect,", "try", "Finn", "not", "we", "says"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about improving something on a second try.",
@@ -300,8 +300,8 @@ export const CHAPTERS = [
         jumbled: ["This", "almost", "foam", "a", "bubbling", "and", "of", "down", "time,", "bright", "orange", "out", "dramatically", "erupts", "full", "volcano,", "sides", "for", "the", "minute!", "the", "flowing"],
       },
       {
-        target: "“YES! We did it!” I shout, jumping up and down excitedly.",
-        jumbled: ["did", "“YES!", "I", "excitedly.", "jumping", "and", "We", "it!”", "shout,", "down", "up"],
+        target: "I shout that we did it and jump up and down excitedly.",
+        jumbled: ["it", "excitedly.", "down", "jump", "and", "that", "shout", "and", "we", "did", "up", "I"],
       },
       {
         target: "We finally created the impressive eruption we had originally imagined.",
@@ -338,8 +338,8 @@ export const CHAPTERS = [
         jumbled: ["simple", "colorful", "a", "complete", "and", "chemical", "reaction,", "make", "poster", "the", "with", "diagrams", "explanations.", "We", "explaining"],
       },
       {
-        target: "“We should explain why our first two attempts failed too, Nora,” Finn suggests, “Judges might like knowing we learned from mistakes.”",
-        jumbled: ["failed", "Finn", "too,", "why", "first", "like", "should", "might", "attempts", "we", "knowing", "“We", "“Judges", "Nora,”", "learned", "suggests,", "mistakes.”", "two", "from", "explain", "our"],
+        target: "Finn suggests that we explain why our first two attempts failed.",
+        jumbled: ["explain", "failed.", "we", "why", "two", "attempts", "that", "our", "first", "suggests", "Finn"],
       },
       {
         target: "We practice our presentation multiple times in my living room, taking turns speaking clearly and confidently.",
@@ -388,8 +388,8 @@ export const CHAPTERS = [
         jumbled: ["eyes", "and", "foam", "eruption", "orange", "live,", "surprise", "We", "widen", "even", "sides.", "down", "impressively", "the", "the", "as", "judges'", "with", "bubbles", "demonstrate", "delighted", "the"],
       },
       {
-        target: "“Excellent explanation of the chemistry, and great persistence, Nora,” one judge says, glancing at our name card before writing notes on her clipboard.",
-        jumbled: ["says,", "explanation", "our", "before", "and", "judge", "of", "on", "notes", "card", "one", "at", "clipboard.", "glancing", "Nora,”", "great", "the", "her", "“Excellent", "persistence,", "name", "chemistry,", "writing"],
+        target: "I feel incredibly proud of everything we accomplished together.",
+        jumbled: ["feel", "incredibly", "proud", "accomplished", "I", "together.", "we", "of", "everything"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you presented something to a group.",
@@ -418,16 +418,16 @@ export const CHAPTERS = [
         jumbled: ["the", "fair,", "heart", "end", "At", "the", "and", "winners,", "my", "with", "principal", "anticipation.", "announces", "of", "the", "pounds", "the"],
       },
       {
-        target: "We don't win first place, but we receive a special ribbon for “Most Improved Project” after judges heard about our three attempts.",
-        jumbled: ["judges", "We", "but", "receive", "Improved", "for", "place,", "our", "ribbon", "after", "attempts.", "win", "first", "we", "heard", "Project”", "don't", "special", "“Most", "three", "a", "about"],
+        target: "We do not win first place, but we receive a special ribbon.",
+        jumbled: ["special", "do", "we", "place,", "We", "win", "but", "receive", "not", "first", "a", "ribbon."],
       },
       {
         target: "Holding the blue ribbon together, Finn and I feel just as proud as if we had won everything.",
         jumbled: ["won", "everything.", "the", "just", "together,", "Finn", "blue", "Holding", "as", "ribbon", "I", "feel", "and", "as", "we", "had", "if", "proud"],
       },
       {
-        target: "“We didn't give up, and that's what really matters, Nora,” Finn says, and I completely agree with him.",
-        jumbled: ["him.", "up,", "give", "Nora,”", "really", "and", "says,", "completely", "I", "matters,", "agree", "and", "Finn", "didn't", "that's", "“We", "what", "with"],
+        target: "Finn says we did not give up, and I completely agree.",
+        jumbled: ["agree.", "up,", "and", "I", "Finn", "we", "not", "completely", "says", "give", "did"],
       },
       {
         target: "This whole experience taught me that failing at first isn't the end of a project, it's simply part of the process toward something great.",

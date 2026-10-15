@@ -97,8 +97,8 @@ export const CHAPTERS = [
         jumbled: ["I", "lower", "see", "serving", "above", "they're", "counters,", "screen", "mine.", "currently", "Glancing", "at", "than", "considerably", "the", "numbers", "the"],
       },
       {
-        target: "Settling in for what will likely be a long wait, I pull out my phone and notice a calendar reminder still open, “Yusuf: license renewal today,” from last night.",
-        jumbled: ["will", "be", "open,", "a", "for", "out", "likely", "reminder", "still", "license", "pull", "and", "long", "in", "Settling", "I", "notice", "from", "phone", "renewal", "night.", "my", "wait,", "what", "a", "calendar", "last", "“Yusuf:", "today,”"],
+        target: "Settling in for a long wait, I notice a calendar reminder about my license renewal.",
+        jumbled: ["a", "Settling", "wait,", "I", "in", "for", "license", "renewal.", "calendar", "long", "my", "a", "notice", "about", "reminder"],
       },
       {
         target: "My number finally appears, and I walk confidently toward the assigned counter.",
@@ -137,8 +137,8 @@ export const CHAPTERS = [
         jumbled: ["seems", "Everything", "that", "my", "address", "more", "actually", "she", "proof", "pauses,", "fine", "months", "three", "until", "mentioning", "old.", "than", "is", "of"],
       },
       {
-        target: "“Unfortunately, Yusuf, this particular document needs to be more recent than what you've brought today,” she explains apologetically.",
-        jumbled: ["she", "needs", "apologetically.", "recent", "to", "Yusuf,", "particular", "“Unfortunately,", "than", "this", "you've", "be", "explains", "more", "today,”", "what", "document", "brought"],
+        target: "She apologetically explains that this document needs to be more recent.",
+        jumbled: ["explains", "document", "be", "needs", "this", "She", "more", "to", "apologetically", "recent.", "that"],
       },
       {
         target: "My stomach sinks slightly, since I genuinely believed I had prepared everything correctly beforehand.",
@@ -181,12 +181,12 @@ export const CHAPTERS = [
         jumbled: ["having", "have", "only", "I", "those", "what", "of", "Unfortunately,", "don't", "either", "brought", "with", "letter", "specified.", "original", "exactly", "me,", "the"],
       },
       {
-        target: "“Would it be possible for me to bring the correct document tomorrow instead?” I ask, trying to stay patient despite my frustration.",
-        jumbled: ["be", "me", "to", "stay", "instead?”", "tomorrow", "bring", "ask,", "despite", "it", "possible", "to", "“Would", "trying", "I", "my", "correct", "patient", "the", "frustration.", "document", "for"],
+        target: "I ask if I could bring the correct document tomorrow instead.",
+        jumbled: ["tomorrow", "ask", "instead.", "bring", "I", "could", "correct", "the", "I", "document", "if"],
       },
       {
-        target: "“Yes, Yusuf, you're welcome to return with the updated document without waiting in line again,” she confirms.",
-        jumbled: ["return", "updated", "“Yes,", "Yusuf,", "she", "you're", "welcome", "in", "with", "the", "line", "without", "to", "again,”", "waiting", "confirms.", "document"],
+        target: "She confirms I can return tomorrow without waiting in line again.",
+        jumbled: ["line", "She", "return", "confirms", "again.", "I", "can", "waiting", "without", "in", "tomorrow"],
       },
       {
         target: "She writes a small note on my file, explaining that most of my paperwork has already been verified today.",
@@ -229,8 +229,8 @@ export const CHAPTERS = [
         jumbled: ["email", "could", "I", "by", "utility", "everything", "ready", "search", "a", "recent", "home,", "at", "hoping", "to", "tomorrow.", "I", "print", "have", "my", "for", "bill"],
       },
       {
-        target: "Fortunately, I find one from just two weeks ago, opening with “Dear Yusuf,” which should easily satisfy the office's recency requirement.",
-        jumbled: ["from", "Yusuf,”", "just", "should", "office's", "recency", "weeks", "the", "two", "find", "Fortunately,", "opening", "one", "I", "“Dear", "requirement.", "which", "with", "easily", "satisfy", "ago,"],
+        target: "Fortunately, I find one from just two weeks ago that should satisfy the office.",
+        jumbled: ["the", "ago", "Fortunately,", "satisfy", "office.", "weeks", "I", "from", "find", "that", "two", "just", "one", "should"],
       },
       {
         target: "Feeling somewhat better about the situation, I head home to print the document before I forget completely.",
@@ -273,8 +273,8 @@ export const CHAPTERS = [
         jumbled: ["time", "confirming", "document", "quickly,", "meets", "actually", "properly.", "the", "new", "this", "everything", "She", "the", "requirement", "that", "reviews"],
       },
       {
-        target: "“Perfect, Yusuf, this should work just fine,” she says, sounding genuinely pleased that the issue has been resolved so easily.",
-        jumbled: ["“Perfect,", "should", "pleased", "work", "been", "the", "Yusuf,", "fine,”", "issue", "that", "she", "has", "says,", "just", "sounding", "easily.", "so", "resolved", "this", "genuinely"],
+        target: "She says it should work just fine and sounds pleased.",
+        jumbled: ["just", "She", "sounds", "says", "and", "work", "fine", "it", "should", "pleased."],
       },
       {
         target: "Relief washes over me, especially knowing I won't need to make yet another separate trip.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["using", "She", "briefly.", "remove", "photo", "my", "asking", "takes", "desk,", "a", "glasses", "to", "small", "beside", "her", "camera", "my", "mounted", "me"],
       },
       {
-        target: "“Just sign here, Yusuf, and you'll be all set,” she says, and I sign a few forms electronically, confirming my current address and agreeing to the office's standard terms and conditions.",
-        jumbled: ["address", "conditions.", "agreeing", "the", "few", "and", "sign", "a", "sign", "she", "“Just", "and", "and", "be", "my", "forms", "here,", "to", "and", "confirming", "Yusuf,", "standard", "all", "current", "you'll", "electronically,", "set,”", "says,", "office's", "I", "terms"],
+        target: "Okafor moves quickly through the rest of the application process without further complications.",
+        jumbled: ["application", "without", "process", "complications.", "the", "moves", "Okafor", "quickly", "through", "the", "of", "rest", "further"],
       },
       {
         target: "She explains that my new license should arrive by mail within roughly ten business days from today.",
@@ -357,8 +357,8 @@ export const CHAPTERS = [
         jumbled: ["admits", "through", "She", "needing", "similar", "three", "year,", "getting", "visits", "hers", "before", "she", "something", "separate", "properly.", "last", "finally", "went", "sorted"],
       },
       {
-        target: "“Yusuf, next time bring copies of everything,” she jokes, and we laugh that government offices seem to specialize in requiring exactly the one document you didn't think to bring.",
-        jumbled: ["bring.", "you", "bring", "laugh", "to", "to", "time", "that", "think", "offices", "of", "specialize", "she", "everything,”", "document", "didn't", "copies", "government", "requiring", "we", "“Yusuf,", "exactly", "jokes,", "the", "next", "seem", "one", "in", "and"],
+        target: "She jokes that next time I should bring copies of everything.",
+        jumbled: ["I", "jokes", "She", "bring", "everything.", "of", "next", "copies", "that", "time", "should"],
       },
       {
         target: "On the other hand, she points out that checking the requirements list twice beforehand probably saves people the most hassle overall.",
@@ -449,8 +449,8 @@ export const CHAPTERS = [
         jumbled: ["stress.", "the", "me", "questions", "mistake", "clear", "without", "the", "staying", "unnecessary", "at", "counter", "fix", "However,", "and", "allowed", "asking", "to", "calm"],
       },
       {
-        target: "I've since created a small checklist titled “Yusuf's Document Checklist,” listing exactly what's needed before I ever leave the house.",
-        jumbled: ["Document", "the", "ever", "listing", "needed", "titled", "“Yusuf's", "checklist", "small", "what's", "leave", "exactly", "Checklist,”", "before", "I", "since", "house.", "I've", "a", "created"],
+        target: "I have since made a small checklist of what I need before I leave the house.",
+        jumbled: ["before", "have", "I", "house.", "need", "small", "since", "made", "checklist", "the", "leave", "I", "of", "what", "I", "a"],
       },
       {
         target: "In the end, this minor bureaucratic hiccup taught me something genuinely useful about preparing thoroughly for official tasks.",

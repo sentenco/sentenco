@@ -141,8 +141,8 @@ export const CHAPTERS = [
         jumbled: ["computer", "examining", "prescription", "He", "bottle", "original", "the", "the", "both", "carefully,", "screen.", "his", "and", "takes", "order", "the", "on", "label"],
       },
       {
-        target: "“You were right to bring this up, Elena. Let me look into it more closely before you take anything,” he says seriously.",
-        jumbled: ["before", "into", "says", "“You", "he", "it", "Elena.", "Let", "take", "closely", "me", "you", "look", "seriously.", "to", "up,", "more", "anything,”", "were", "this", "right", "bring"],
+        target: "Diaz comes over, greeting me with a professional, attentive manner.",
+        jumbled: ["greeting", "professional,", "over,", "attentive", "with", "me", "comes", "Diaz", "manner.", "a"],
       },
       {
         target: "I appreciate that he doesn't dismiss my concern, treating it instead as something genuinely worth investigating properly.",
@@ -181,8 +181,8 @@ export const CHAPTERS = [
         jumbled: ["another", "mixed", "accidentally", "prescription", "on", "a", "Apparently,", "that", "up", "order", "name", "similar", "patient's", "my", "with", "was", "file.", "had"],
       },
       {
-        target: "“I'm genuinely sorry about this, Elena. If you had taken this dosage, it could have caused you some unpleasant side effects,” he explains honestly.",
-        jumbled: ["dosage,", "If", "you", "this,", "this", "could", "caused", "you", "about", "unpleasant", "effects,”", "genuinely", "it", "explains", "honestly.", "he", "had", "taken", "side", "“I'm", "some", "sorry", "have", "Elena."],
+        target: "After a few minutes of checking, Mr.",
+        jumbled: ["of", "After", "few", "a", "checking,", "Mr.", "minutes"],
       },
       {
         target: "Hearing this makes me feel slightly uneasy, though I'm also relieved I caught the mistake before it actually became a problem.",
@@ -229,8 +229,8 @@ export const CHAPTERS = [
         jumbled: ["slip", "usually", "that", "though", "through", "human", "rare", "explains", "double-checking", "occasionally", "this,", "can", "still", "strict", "prevent", "He", "errors", "the", "system.", "procedures"],
       },
       {
-        target: "“We take this extremely seriously, Elena, and I'll personally be reporting this internally so it gets reviewed properly,” he assures me.",
-        jumbled: ["gets", "assures", "Elena,", "so", "extremely", "personally", "reporting", "internally", "this", "he", "me.", "be", "seriously,", "it", "take", "reviewed", "properly,”", "this", "I'll", "“We", "and"],
+        target: "He assures me that they take this seriously and will report it internally.",
+        jumbled: ["seriously", "He", "will", "that", "they", "this", "me", "internally.", "it", "report", "assures", "take", "and"],
       },
       {
         target: "I appreciate his honesty, especially since he easily could have downplayed how serious this mistake actually was.",
@@ -273,8 +273,8 @@ export const CHAPTERS = [
         jumbled: ["the", "hands", "Mr.", "finally", "me", "Diaz", "bag."],
       },
       {
-        target: "“Here you go, Elena, everything's been double-checked twice now,” he says, explaining each instruction clearly and slowly this time.",
-        jumbled: ["you", "clearly", "and", "now,”", "explaining", "everything's", "been", "go,", "time.", "Elena,", "twice", "“Here", "this", "says,", "he", "instruction", "each", "double-checked", "slowly"],
+        target: "Diaz finally hands me the bag.",
+        jumbled: ["hands", "bag.", "Diaz", "me", "the", "finally"],
       },
       {
         target: "He also writes his direct extension on a small card, telling me to call immediately if anything seems even slightly unclear later.",
@@ -309,8 +309,8 @@ export const CHAPTERS = [
         jumbled: ["at", "my", "That", "as", "call", "the", "just", "doctor's", "earlier.", "mention", "well,", "evening,", "office", "happened", "I", "to", "decide", "to", "what", "pharmacy"],
       },
       {
-        target: "“Thank you for calling, Elena, the doctor will definitely want to know about this,” the receptionist says, given the potential seriousness involved.",
-        jumbled: ["for", "definitely", "the", "doctor", "the", "involved.", "seriousness", "given", "want", "says,", "receptionist", "will", "calling,", "about", "potential", "this,”", "“Thank", "to", "the", "you", "know", "Elena,"],
+        target: "The receptionist thanks me for calling and says the doctor will want to know.",
+        jumbled: ["will", "receptionist", "for", "and", "the", "calling", "thanks", "doctor", "says", "me", "The", "want", "know.", "to"],
       },
       {
         target: "I explain the situation clearly, including how it was caught and corrected before I actually took anything.",
@@ -357,8 +357,8 @@ export const CHAPTERS = [
         jumbled: ["Diaz", "It's", "Mr.", "himself."],
       },
       {
-        target: "“Hi Elena, just checking in on how the new prescription is working,” he says, asking whether the corrected medication has been working properly without any unexpected issues.",
-        jumbled: ["how", "without", "says,", "“Hi", "any", "the", "is", "issues.", "the", "new", "Elena,", "he", "medication", "on", "been", "whether", "properly", "has", "just", "working", "prescription", "working,”", "in", "unexpected", "corrected", "checking", "asking"],
+        target: "He checks in on how the new prescription is working.",
+        jumbled: ["is", "new", "He", "checks", "the", "prescription", "in", "working.", "how", "on"],
       },
       {
         target: "I confirm everything seems fine so far, and I thank him again for handling the entire situation so professionally.",
@@ -397,8 +397,8 @@ export const CHAPTERS = [
         jumbled: ["warning", "genuine", "pharmacy", "out", "a", "with", "situation,", "whole", "mention", "friend,", "the", "and", "of", "Over", "coffee", "partly", "relief.", "as", "partly", "I", "a"],
       },
       {
-        target: "“Wow, Elena, I don't think I've ever actually read my own label,” she admits, saying she usually trusts the process completely without a second thought.",
-        jumbled: ["actually", "admits,", "thought.", "label,”", "usually", "second", "without", "don't", "think", "I", "“Wow,", "the", "Elena,", "saying", "trusts", "read", "process", "my", "completely", "a", "I've", "she", "she", "ever", "own"],
+        target: "She admits that she has never actually read her own label.",
+        jumbled: ["actually", "own", "admits", "never", "she", "She", "that", "label.", "read", "her", "has"],
       },
       {
         target: "I explain that, on the other hand, this experience taught me it's always worth double-checking, however busy or trusting you normally feel.",
@@ -449,8 +449,8 @@ export const CHAPTERS = [
         jumbled: ["Diaz", "Instead,", "and", "Mr.", "and", "staying", "allowed", "correct", "the", "catch", "up", "calmly", "actually", "to", "speaking", "problem", "quickly.", "alert"],
       },
       {
-        target: "I've started keeping a small checklist for anything health-related now, the first page titled simply “Elena's Health Checklist,” covering everything from prescriptions to appointment details.",
-        jumbled: ["everything", "small", "anything", "to", "started", "appointment", "page", "for", "from", "checklist", "“Elena's", "covering", "a", "now,", "first", "titled", "health-related", "Health", "the", "prescriptions", "details.", "keeping", "Checklist,”", "I've", "simply"],
+        target: "Diaz to actually catch and correct the problem quickly.",
+        jumbled: ["problem", "Diaz", "to", "catch", "and", "quickly.", "correct", "the", "actually"],
       },
       {
         target: "In the end, this experience reminded me that questioning something politely is always better than simply assuming it's fine.",

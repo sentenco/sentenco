@@ -54,8 +54,8 @@ export const CHAPTERS = [
         jumbled: ["real", "we", "arguing", "the", "public", "protest", "a", "visibility", "Teodoro", "insists", "that", "administration", "change.", "outside", "pressure", "organize", "for", "building,", "creates"],
       },
       {
-        target: "“We can't just sit back, Simone,” he says.",
-        jumbled: ["can't", "says.", "sit", "just", "he", "back,", "“We", "Simone,”"],
+        target: "He says that we cannot just sit back.",
+        jumbled: ["says", "He", "cannot", "back.", "we", "just", "sit", "that"],
       },
       {
         target: "I realize this disagreement threatens to derail our shared goal entirely, unless I can find some way to bridge it.",
@@ -94,8 +94,8 @@ export const CHAPTERS = [
         jumbled: ["without", "had", "on", "another", "any", "He", "lobbying", "situation", "about", "me", "tells", "at", "dragged", "real", "months", "quiet", "school,", "similar", "result.", "a", "for", "where"],
       },
       {
-        target: "“Trust me, Simone, we don't have that kind of time,” he says.",
-        jumbled: ["Simone,", "time,”", "we", "kind", "he", "don't", "that", "“Trust", "me,", "have", "of", "says."],
+        target: "He says that we do not have that kind of time.",
+        jumbled: ["says", "we", "not", "He", "of", "have", "that", "kind", "do", "time.", "that"],
       },
       {
         target: "Only after students organized a visible, well-covered protest did the administration finally take the issue seriously enough to act.",
@@ -138,8 +138,8 @@ export const CHAPTERS = [
         jumbled: ["reconsidering", "often", "in", "respond", "digging", "position.", "public", "criticism,", "explains", "She", "to", "principal", "tends", "than", "defensively", "rather", "our", "to", "a", "that"],
       },
       {
-        target: "“Think about it, Simone,” she says, tapping the screen.",
-        jumbled: ["tapping", "about", "the", "says,", "Simone,”", "it,", "screen.", "she", "“Think"],
+        target: "She taps the screen and tells me to think about it.",
+        jumbled: ["She", "me", "about", "taps", "and", "the", "think", "tells", "screen", "it.", "to"],
       },
       {
         target: "Given this pattern, Winnie argues, a protest might actually make the administration less likely to reverse course, not more.",
@@ -234,8 +234,8 @@ export const CHAPTERS = [
         jumbled: ["pressure,", "together.", "explain,", "This", "but", "we're", "choosing", "I", "strategically", "between", "them", "not", "and", "way,", "sequencing", "patience"],
       },
       {
-        target: "“Fine, Simone — two weeks, but that's it,” he finally says, admitting the timeline gives him something concrete to hold onto.",
-        jumbled: ["him", "finally", "he", "to", "two", "admitting", "timeline", "hold", "the", "onto.", "that's", "it,”", "Simone", "gives", "but", "says,", "“Fine,", "concrete", "weeks,", "something", "—"],
+        target: "He finally agrees to two weeks, which gives him something concrete to hold onto.",
+        jumbled: ["He", "hold", "onto.", "concrete", "finally", "two", "him", "gives", "to", "something", "which", "weeks,", "to", "agrees"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about proposing a plan that combines two different approaches.",
@@ -270,8 +270,8 @@ export const CHAPTERS = [
         jumbled: ["though", "to", "read", "principal", "difficult", "remains", "politely,", "throughout", "expression", "most", "presentation.", "listens", "her", "our", "The", "of"],
       },
       {
-        target: "“Thank you both for putting this together, Simone,” she says, glancing at our folder.",
-        jumbled: ["Simone,”", "this", "says,", "at", "she", "you", "our", "putting", "for", "glancing", "both", "“Thank", "folder.", "together,"],
+        target: "She thanks us both for putting this together and glances at our folder.",
+        jumbled: ["and", "both", "She", "thanks", "this", "at", "glances", "together", "folder.", "for", "us", "putting", "our"],
       },
       {
         target: "She mentions budget pressures and safety requirements, explaining the parking decision wasn't made carelessly or without genuine consideration.",

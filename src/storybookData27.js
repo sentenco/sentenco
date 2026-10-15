@@ -41,16 +41,16 @@ export const CHAPTERS = [
         jumbled: ["closes", "quietly.", "Mom", "pulls", "me", "into", "the", "kitchen", "the", "and", "door"],
       },
       {
-        target: "“Max's birthday is next Saturday, and I want to plan a surprise party,” she whispers excitedly.",
-        jumbled: ["birthday", "is", "I", "Saturday,", "plan", "excitedly.", "surprise", "whispers", "“Max's", "to", "and", "a", "want", "party,”", "she", "next"],
+        target: "We start making a list of things we need: decorations, a cake, and games.",
+        jumbled: ["decorations,", "we", "and", "a", "things", "a", "need:", "games.", "We", "start", "making", "list", "of", "cake,"],
       },
       {
         target: "My eyes light up immediately because I love surprises, especially for my little brother.",
         jumbled: ["eyes", "light", "immediately", "especially", "surprises,", "I", "for", "My", "because", "my", "little", "love", "up", "brother."],
       },
       {
-        target: "“Of course, Ella! I need your help with everything,” Mom says, smiling warmly.",
-        jumbled: ["help", "says,", "your", "I", "Ella!", "everything,”", "Mom", "course,", "need", "smiling", "“Of", "warmly.", "with"],
+        target: "Mom smiles warmly and says she needs my help with everything.",
+        jumbled: ["says", "she", "smiles", "help", "and", "needs", "Mom", "everything.", "warmly", "my", "with"],
       },
       {
         target: "Keeping this secret from Max for a whole week feels like a big challenge, but I am determined to make his birthday unforgettable.",
@@ -83,20 +83,20 @@ export const CHAPTERS = [
         jumbled: ["with", "kitchen", "at", "guest", "list.", "I", "names", "the", "and", "notebook,", "table", "a", "writing", "That", "the", "for", "sit", "evening,", "down", "Mom"],
       },
       {
-        target: "“Who are Max's best friends from preschool?” Mom asks me.",
-        jumbled: ["friends", "Max's", "me.", "are", "from", "best", "“Who", "preschool?”", "asks", "Mom"],
+        target: "We also add our grandparents and Max's favorite cousin, Ben.",
+        jumbled: ["our", "also", "add", "Ben.", "favorite", "cousin,", "grandparents", "and", "We", "Max's"],
       },
       {
         target: "I think carefully and name a few kids he always talks about, like Leo and Sofia.",
         jumbled: ["he", "and", "about,", "Leo", "talks", "kids", "I", "name", "think", "a", "like", "carefully", "few", "Sofia.", "always", "and"],
       },
       {
-        target: "“Don't forget Uncle Jake, he always makes Max laugh,” I remind Mom.",
-        jumbled: ["he", "remind", "makes", "Uncle", "Mom.", "laugh,”", "“Don't", "I", "Max", "forget", "Jake,", "always"],
+        target: "By the end, our list has fifteen names on it.",
+        jumbled: ["list", "By", "our", "the", "it.", "end,", "fifteen", "has", "names", "on"],
       },
       {
-        target: "“This is going to be a wonderful party, Ella,” Mom says, and I nod eagerly, already imagining Max's excited face.",
-        jumbled: ["excited", "Ella,”", "going", "says,", "face.", "a", "be", "Mom", "already", "“This", "nod", "I", "eagerly,", "wonderful", "is", "Max's", "and", "imagining", "to", "party,"],
+        target: "Mom says it will be a wonderful party, and I nod eagerly.",
+        jumbled: ["a", "wonderful", "will", "Mom", "eagerly.", "says", "and", "party,", "be", "I", "nod", "it"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about someone you would invite to a party.",
@@ -125,8 +125,8 @@ export const CHAPTERS = [
         jumbled: ["takes", "help", "On", "Dad", "me", "toy", "pick", "to", "Wednesday,", "the", "Max's", "to", "gift.", "store"],
       },
       {
-        target: "“He loves dinosaurs more than anything,” I tell Dad, walking straight to that aisle.",
-        jumbled: ["dinosaurs", "more", "Dad,", "straight", "aisle.", "loves", "“He", "tell", "walking", "than", "anything,”", "that", "to", "I"],
+        target: "I tell Dad that Max loves dinosaurs more than anything.",
+        jumbled: ["that", "anything.", "than", "dinosaurs", "I", "Dad", "Max", "loves", "more", "tell"],
       },
       {
         target: "I see a large dinosaur toy set and also a colorful dinosaur puzzle, and I cannot decide which one Max would love more.",
@@ -171,12 +171,12 @@ export const CHAPTERS = [
         jumbled: ["room", "tying", "Dad", "green", "living", "and", "the", "balloons", "to", "I", "every", "quickly,", "and", "chair.", "hanging", "colorful", "dinosaur", "across", "work", "streamers"],
       },
       {
-        target: "Mom arranges a big “Happy Birthday” banner above the fireplace, carefully checking that it hangs perfectly straight.",
-        jumbled: ["it", "arranges", "the", "“Happy", "a", "big", "checking", "perfectly", "fireplace,", "Birthday”", "hangs", "Mom", "banner", "that", "carefully", "above", "straight."],
+        target: "I feel so excited imagining Max's face when he walks through the door.",
+        jumbled: ["so", "the", "when", "imagining", "Max's", "face", "excited", "through", "feel", "walks", "door.", "I", "he"],
       },
       {
-        target: "“We only have two hours before they come back, Ella,” Dad reminds us, so we move even faster.",
-        jumbled: ["only", "have", "back,", "come", "faster.", "Dad", "so", "even", "before", "two", "hours", "reminds", "“We", "we", "they", "move", "Ella,”", "us,"],
+        target: "Dad reminds us that we only have two hours, so we move faster.",
+        jumbled: ["only", "hours,", "us", "that", "so", "faster.", "two", "we", "we", "move", "reminds", "Dad", "have"],
       },
       {
         target: "By the time we finish, our living room looks like a magical dinosaur jungle.",
@@ -209,12 +209,12 @@ export const CHAPTERS = [
         jumbled: ["calls", "me", "worried", "Mom", "kitchen", "with", "into", "voice.", "a", "the"],
       },
       {
-        target: "“The cake sank in the middle, Ella,” she says, pointing at the slightly lopsided chocolate cake.",
-        jumbled: ["cake", "chocolate", "middle,", "she", "slightly", "the", "pointing", "in", "cake.", "the", "says,", "Ella,”", "lopsided", "“The", "at", "sank"],
+        target: "While we finish decorating, Mom calls me into the kitchen with a worried voice.",
+        jumbled: ["with", "we", "kitchen", "decorating,", "Mom", "worried", "While", "calls", "the", "a", "voice.", "me", "into", "finish"],
       },
       {
-        target: "“What if we cover the middle with candy and dinosaur figures?”",
-        jumbled: ["dinosaur", "and", "if", "the", "candy", "with", "middle", "figures?”", "cover", "“What", "we"],
+        target: "My heart drops for a moment, but then I have an idea.",
+        jumbled: ["heart", "for", "moment,", "an", "have", "idea.", "then", "but", "drops", "I", "My", "a"],
       },
       {
         target: "Mom's face brightens instantly.",
@@ -255,8 +255,8 @@ export const CHAPTERS = [
         jumbled: ["He", "me", "looks", "curiously.", "at"],
       },
       {
-        target: "“Why are you smiling so weird, Ella?” he asks suspiciously.",
-        jumbled: ["weird,", "suspiciously.", "you", "he", "Ella?”", "“Why", "so", "asks", "are", "smiling"],
+        target: "When Max walks in, he looks at me curiously.",
+        jumbled: ["looks", "he", "Max", "in,", "me", "at", "When", "walks", "curiously."],
       },
       {
         target: "He almost walks toward the living room, but I distract him by asking about his time at the park instead.",
@@ -297,12 +297,12 @@ export const CHAPTERS = [
         jumbled: ["trying", "Uncle", "even", "Sofia,", "giggle", "Jake", "and", "too", "tiptoe", "not", "hard", "Ben,", "inside,", "to", "Leo,", "loudly."],
       },
       {
-        target: "“Everyone, hide behind the couch and the kitchen counter,” Dad whispers, turning to me.",
-        jumbled: ["and", "Dad", "whispers,", "“Everyone,", "turning", "counter,”", "the", "kitchen", "to", "behind", "the", "me.", "hide", "couch"],
+        target: "Dad whispers for everyone to hide behind the couch and the kitchen counter.",
+        jumbled: ["couch", "behind", "everyone", "whispers", "hide", "kitchen", "the", "for", "Dad", "and", "to", "the", "counter."],
       },
       {
-        target: "“Get ready, Ella,” he adds, turning off the living room lights.",
-        jumbled: ["“Get", "Ella,”", "living", "lights.", "he", "ready,", "the", "room", "off", "adds,", "turning"],
+        target: "Dad tells me to get ready and turns off the living room lights.",
+        jumbled: ["tells", "Dad", "living", "off", "the", "ready", "and", "room", "turns", "to", "get", "me", "lights."],
       },
       {
         target: "My stomach feels full of nervous butterflies as everyone crouches down, holding their breath, waiting for the perfect moment to surprise my little brother.",
@@ -335,8 +335,8 @@ export const CHAPTERS = [
         jumbled: ["steps", "rubbing", "his", "The", "and", "front", "inside,", "door", "opens,", "Max", "sleepy", "eyes."],
       },
       {
-        target: "“SURPRISE!” we all shout together, throwing confetti into the air.",
-        jumbled: ["we", "shout", "air.", "throwing", "the", "“SURPRISE!”", "confetti", "together,", "all", "into"],
+        target: "Suddenly, everyone jumps out from their hiding spots.",
+        jumbled: ["jumps", "spots.", "Suddenly,", "out", "everyone", "their", "from", "hiding"],
       },
       {
         target: "Max freezes for a moment, completely shocked, and then a huge smile spreads across his face.",
@@ -347,8 +347,8 @@ export const CHAPTERS = [
         jumbled: ["even", "happy", "hugs", "His", "fill", "and", "me", "back", "he", "tears,", "with", "eyes", "tighter."],
       },
       {
-        target: "“Way to go, Ella!” Dad calls out, grinning as confetti settles around us.",
-        jumbled: ["to", "around", "Dad", "out,", "“Way", "go,", "settles", "grinning", "confetti", "as", "us.", "calls", "Ella!”"],
+        target: "Watching his reaction makes every bit of planning completely worth it.",
+        jumbled: ["his", "makes", "planning", "reaction", "completely", "worth", "of", "bit", "every", "it.", "Watching"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about the happiest surprise you ever received.",
@@ -419,16 +419,16 @@ export const CHAPTERS = [
         jumbled: ["set", "toy", "climbs", "his", "onto", "dinosaur", "tightly.", "clutching", "Max", "me,", "new", "couch", "the", "beside"],
       },
       {
-        target: "“This was the best birthday ever,” he says, resting his head on my shoulder.",
-        jumbled: ["resting", "ever,”", "the", "head", "he", "“This", "my", "on", "was", "shoulder.", "his", "best", "says,", "birthday"],
+        target: "Some memories, I realize, are worth every bit of secret planning.",
+        jumbled: ["bit", "worth", "memories,", "I", "secret", "realize,", "every", "planning.", "are", "Some", "of"],
       },
       {
-        target: "“I helped plan the whole thing,” I tell him proudly, and his eyes widen with surprise.",
-        jumbled: ["his", "I", "and", "plan", "helped", "proudly,", "“I", "eyes", "widen", "the", "surprise.", "him", "whole", "thing,”", "tell", "with"],
+        target: "I tell him proudly that I helped plan the whole thing.",
+        jumbled: ["tell", "proudly", "I", "I", "whole", "helped", "him", "the", "that", "thing.", "plan"],
       },
       {
-        target: "“You did? Thank you, Ella!” he says, hugging me tightly around the neck.",
-        jumbled: ["he", "says,", "me", "Thank", "hugging", "“You", "you,", "the", "did?", "neck.", "tightly", "around", "Ella!”"],
+        target: "He thanks me and hugs me tightly around the neck.",
+        jumbled: ["me", "the", "He", "and", "thanks", "around", "hugs", "me", "neck.", "tightly"],
       },
       {
         target: "Sitting there together, surrounded by wrapping paper and leftover balloons, I feel closer to my little brother than ever before.",

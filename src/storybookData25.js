@@ -48,8 +48,8 @@ export const CHAPTERS = [
         jumbled: ["ready", "to", "his", "go,", "already,", "face", "when", "wearing", "but", "he", "runs", "too", "falls", "outside.", "Sam", "his", "in", "shoes", "looks"],
       },
       {
-        target: "“The picnic is cancelled,” Mom says gently, seeing our disappointed faces.",
-        jumbled: ["faces.", "cancelled,”", "disappointed", "seeing", "Mom", "gently,", "“The", "says", "picnic", "is", "our"],
+        target: "Mom gently tells us that the picnic is cancelled.",
+        jumbled: ["gently", "tells", "is", "that", "the", "cancelled.", "picnic", "us", "Mom"],
       },
       {
         target: "The whole day suddenly feels ruined, and I flop onto the couch with a heavy sigh.",
@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["at", "ceiling", "against", "and", "the", "the", "window.", "the", "stare", "tapping", "listen", "rain", "to", "I"],
       },
       {
-        target: "“This is the worst rainy day ever, Ruby,” Sam groans.",
-        jumbled: ["Sam", "day", "groans.", "worst", "“This", "is", "rainy", "the", "ever,", "Ruby,”"],
+        target: "The afternoon stretches ahead of us, gray and boring.",
+        jumbled: ["gray", "boring.", "of", "and", "us,", "stretches", "afternoon", "The", "ahead"],
       },
       {
         target: "He sighs loudly next to me, and we both stay quiet, feeling stuck and a little grumpy about our ruined plans.",
@@ -124,20 +124,20 @@ export const CHAPTERS = [
         jumbled: ["Mom", "into", "notices", "bored,", "walks", "our", "immediately.", "living", "the", "and", "room", "grumpy", "faces"],
       },
       {
-        target: "“Since we can't go on an outdoor adventure, why don't we have an indoor one instead?”",
-        jumbled: ["adventure,", "instead?”", "“Since", "don't", "why", "have", "outdoor", "we", "an", "an", "go", "on", "can't", "indoor", "we", "one"],
+        target: "My boredom disappears instantly, replaced by excitement.",
+        jumbled: ["excitement.", "My", "instantly,", "boredom", "replaced", "by", "disappears"],
       },
       {
-        target: "“A pirate ship adventure, Ruby and Sam!”",
-        jumbled: ["and", "pirate", "“A", "Sam!”", "Ruby", "ship", "adventure,"],
+        target: "Suddenly, the rainy day feels full of exciting possibilities again.",
+        jumbled: ["day", "the", "possibilities", "feels", "full", "exciting", "again.", "Suddenly,", "of", "rainy"],
       },
       {
         target: "Mom announces, grabbing cushions from the couch.",
         jumbled: ["couch.", "Mom", "grabbing", "the", "from", "cushions", "announces,"],
       },
       {
-        target: "“Let's do it!” I shout, jumping off the couch to help.",
-        jumbled: ["couch", "do", "shout,", "the", "“Let's", "to", "jumping", "I", "help.", "it!”", "off"],
+        target: "I shout that I want to do it and jump off the couch to help.",
+        jumbled: ["shout", "want", "and", "that", "the", "to", "it", "jump", "to", "do", "help.", "I", "I", "off", "couch"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a creative idea someone shared with you.",
@@ -170,16 +170,16 @@ export const CHAPTERS = [
         jumbled: ["drapes", "the", "make", "the", "cushions", "stack", "ship's", "I", "Sam", "sides,", "Mom", "big", "ocean.", "blue", "while", "for", "blanket", "and", "couch", "tall", "a", "to", "underneath"],
       },
       {
-        target: "“Every ship needs a mast!” Mom says, handing us a broomstick to stand upright between two cushions.",
-        jumbled: ["a", "ship", "us", "between", "“Every", "a", "to", "broomstick", "cushions.", "two", "mast!”", "needs", "handing", "stand", "Mom", "upright", "says,"],
+        target: "We tie a small towel to the top for a sail.",
+        jumbled: ["a", "top", "tie", "the", "small", "towel", "We", "sail.", "for", "a", "to"],
       },
       {
         target: "It takes almost twenty minutes, but soon our living room transforms into a real pirate ship.",
         jumbled: ["but", "minutes,", "twenty", "It", "takes", "soon", "real", "into", "ship.", "pirate", "transforms", "room", "a", "our", "almost", "living"],
       },
       {
-        target: "“This looks amazing, Ruby!” Sam says, his eyes wide with wonder.",
-        jumbled: ["his", "looks", "wide", "says,", "eyes", "“This", "with", "amazing,", "Sam", "wonder.", "Ruby!”"],
+        target: "I feel proud of what we built together as a team.",
+        jumbled: ["what", "of", "together", "as", "we", "feel", "I", "proud", "built", "team.", "a"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something you built with your family.",
@@ -204,16 +204,16 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "“All aboard!” I shout, climbing onto the ship with an imaginary captain's hat.",
-        jumbled: ["I", "with", "“All", "hat.", "climbing", "ship", "an", "captain's", "shout,", "onto", "the", "aboard!”", "imaginary"],
+        target: "This imaginative game makes the real rain outside feel exciting instead of disappointing.",
+        jumbled: ["rain", "real", "feel", "the", "outside", "instead", "exciting", "This", "makes", "game", "disappointing.", "imaginative", "of"],
       },
       {
         target: "Sam takes his place at the pretend steering wheel, ready for adventure.",
         jumbled: ["steering", "adventure.", "wheel,", "place", "the", "ready", "his", "pretend", "at", "takes", "Sam", "for"],
       },
       {
-        target: "“Straight ahead, into the storm!”",
-        jumbled: ["“Straight", "storm!”", "the", "ahead,", "into"],
+        target: "We sail straight ahead into the storm.",
+        jumbled: ["into", "the", "storm.", "We", "straight", "ahead", "sail"],
       },
       {
         target: "Outside, thunder rumbles softly, and it fits perfectly into our pretend ocean storm.",
@@ -246,8 +246,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "“Every good pirate adventure needs a treasure map,” I tell Sam, grabbing paper and crayons.",
-        jumbled: ["crayons.", "grabbing", "tell", "pirate", "“Every", "treasure", "adventure", "map,”", "Sam,", "good", "a", "I", "and", "paper", "needs"],
+        target: "I grab paper and crayons to make a treasure map with Sam.",
+        jumbled: ["Sam.", "map", "and", "I", "grab", "treasure", "a", "to", "crayons", "make", "with", "paper"],
       },
       {
         target: "I draw our living room, marking the couch, the bookshelf, and the kitchen door with an X for hidden treasure.",
@@ -262,8 +262,8 @@ export const CHAPTERS = [
         jumbled: ["and", "show", "with", "excitement.", "I", "Sam", "light", "the", "map,", "his", "up", "eyes"],
       },
       {
-        target: "“Only one way to find out,” I say with a mysterious smile, and we grab the map together.",
-        jumbled: ["out,”", "grab", "and", "“Only", "map", "to", "one", "way", "the", "find", "we", "smile,", "say", "with", "a", "together.", "I", "mysterious"],
+        target: "I smile mysteriously, and we grab the map together.",
+        jumbled: ["map", "mysteriously,", "together.", "and", "we", "grab", "smile", "the", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something you would like to find hidden somewhere.",
@@ -300,12 +300,12 @@ export const CHAPTERS = [
         jumbled: ["was", "I", "how", "scared", "remember", "feeling", "I", "I", "he", "when", "exactly", "younger,", "of", "too", "so", "thunder", "feels.", "understand"],
       },
       {
-        target: "“It's okay,” I say softly, sitting beside him.",
-        jumbled: ["sitting", "say", "beside", "softly,", "I", "“It's", "okay,”", "him."],
+        target: "I sit beside him and softly tell him it is okay.",
+        jumbled: ["softly", "is", "and", "okay.", "him", "I", "him", "tell", "beside", "sit", "it"],
       },
       {
-        target: "“Let's pretend the thunder is cannons from an enemy pirate ship, and we are the brave crew sailing right through it.”",
-        jumbled: ["right", "thunder", "brave", "the", "ship,", "the", "from", "it.”", "crew", "sailing", "an", "pirate", "are", "enemy", "pretend", "cannons", "is", "“Let's", "and", "through", "we"],
+        target: "I tell Sam to pretend the thunder is cannons from an enemy pirate ship.",
+        jumbled: ["thunder", "enemy", "Sam", "pretend", "ship.", "is", "the", "tell", "pirate", "from", "I", "cannons", "an", "to"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something that used to scare you.",
@@ -376,16 +376,16 @@ export const CHAPTERS = [
         jumbled: ["through", "stop,", "late", "clouds.", "peeks", "the", "By", "starts", "slowly", "and", "rain", "the", "afternoon,", "to", "sunlight", "soft"],
       },
       {
-        target: "“Look, Ruby!” Sam shouts, pointing out the window.",
-        jumbled: ["the", "Ruby!”", "pointing", "“Look,", "Sam", "out", "window.", "shouts,"],
+        target: "We press our faces against the glass, watching in amazement.",
+        jumbled: ["the", "We", "glass,", "against", "our", "faces", "press", "amazement.", "watching", "in"],
       },
       {
         target: "A bright rainbow stretches across the sky, its colors clear and beautiful.",
         jumbled: ["colors", "and", "rainbow", "bright", "across", "its", "A", "beautiful.", "stretches", "sky,", "clear", "the"],
       },
       {
-        target: "“Maybe tomorrow we can finally have our picnic,” Mom says, joining us at the window.",
-        jumbled: ["the", "at", "we", "finally", "can", "our", "picnic,”", "us", "joining", "window.", "Mom", "“Maybe", "tomorrow", "says,", "have"],
+        target: "Sometimes the best adventures happen when plans change completely.",
+        jumbled: ["Sometimes", "adventures", "the", "change", "best", "when", "completely.", "happen", "plans"],
       },
       {
         target: "I smile, realizing that although our original plan was ruined, today turned out to be full of unexpected fun anyway.",
@@ -426,8 +426,8 @@ export const CHAPTERS = [
         jumbled: ["days", "a", "been.", "better", "unplanned", "best", "had", "have", "I", "even", "have", "picnic", "I", "would", "became", "day", "regular", "in", "this", "a", "that", "time,", "of", "maybe", "than", "the", "one", "long", "realize"],
       },
       {
-        target: "Sam gives me a tired, happy hug and says, “Can we build the ship again next time it rains, Ruby?”",
-        jumbled: ["time", "it", "tired,", "and", "we", "a", "build", "me", "“Can", "again", "Ruby?”", "next", "Sam", "happy", "hug", "says,", "ship", "the", "rains,", "gives"],
+        target: "Sam gives me a tired, happy hug and asks to build the ship again.",
+        jumbled: ["asks", "again.", "build", "hug", "happy", "and", "the", "ship", "tired,", "Sam", "gives", "to", "me", "a"],
       },
       {
         target: "I laugh and agree completely, already looking forward to our next rainy day adventure.",

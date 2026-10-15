@@ -89,8 +89,8 @@ export const CHAPTERS = [
         jumbled: ["him", "and", "reluctantly,", "ask", "weeks", "explains,", "to", "had", "now.", "privately,", "been", "what", "I", "for", "actually", "bothering", "somewhat", "he", "meet", "Salim"],
       },
       {
-        target: "\"Ines, can I be honest with you?\" he asks, hesitating.",
-        jumbled: ["\"Ines,", "honest", "can", "you?\"", "with", "be", "hesitating.", "asks,", "he", "I"],
+        target: "He hesitates and asks if he can be honest with me.",
+        jumbled: ["asks", "if", "honest", "with", "and", "hesitates", "me.", "he", "be", "He", "can"],
       },
       {
         target: "He'd spent considerable time developing the analysis Petra presented, yet she'd introduced it during the meeting without ever mentioning his contribution.",
@@ -133,8 +133,8 @@ export const CHAPTERS = [
         jumbled: ["had", "speak", "curious", "perceived", "by", "Salim", "aware", "her", "whether", "she's", "with", "how", "separately,", "of", "been", "presentation", "I", "specifically.", "Petra"],
       },
       {
-        target: "\"Ines, is something wrong?\" she asks, noticing my expression.",
-        jumbled: ["expression.", "is", "she", "wrong?\"", "\"Ines,", "something", "my", "noticing", "asks,"],
+        target: "She notices my expression and asks if something is wrong.",
+        jumbled: ["something", "if", "asks", "expression", "is", "She", "wrong.", "my", "notices", "and"],
       },
       {
         target: "Her reaction surprises me: she seems genuinely unaware, insisting she hadn't intended to take credit for anyone else's work.",
@@ -221,8 +221,8 @@ export const CHAPTERS = [
         jumbled: ["Salim", "goal", "both", "assigning", "understanding,", "that", "upfront", "blame.", "I", "is", "meeting", "not", "a", "and", "together,", "my", "with", "Petra", "explaining", "arrange"],
       },
       {
-        target: "\"Thank you for setting this up, Ines,\" Salim says quietly as we sit down.",
-        jumbled: ["down.", "Salim", "setting", "Ines,\"", "for", "this", "says", "we", "quietly", "up,", "as", "\"Thank", "you", "sit"],
+        target: "Salim quietly thanks me for setting this up as we sit down.",
+        jumbled: ["Salim", "me", "down.", "sit", "up", "for", "as", "quietly", "setting", "we", "thanks", "this"],
       },
       {
         target: "Petra begins by acknowledging that she hadn't properly credited Salim's contribution, apologizing sincerely once she understood how it had affected him.",
@@ -269,8 +269,8 @@ export const CHAPTERS = [
         jumbled: ["it", "responds", "overlooked,", "occasionally", "felt", "directly", "mentioning", "now.", "raised", "though", "before", "similarly", "none", "team", "The", "members", "they'd", "positively,", "had", "several"],
       },
       {
-        target: "\"This is a good call, Ines,\" one teammate says, nodding.",
-        jumbled: ["good", "teammate", "nodding.", "says,", "a", "is", "call,", "\"This", "Ines,\"", "one"],
+        target: "One teammate nods and says this is a good call.",
+        jumbled: ["nods", "One", "teammate", "this", "says", "is", "a", "call.", "good", "and"],
       },
       {
         target: "Petra volunteers to update the presentation template herself, ensuring attribution becomes a built-in, unavoidable step rather than an afterthought.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["admits", "Salim", "gone", "and", "I", "out", "he", "Curious,", "had", "to", "settled", "way", "Petra", "work", "of", "privately", "between", "her", "since", "acknowledge", "things", "how", "had", "ask", "then.", "them,", "his", "publicly"],
       },
       {
-        target: "\"Ines, it made a real difference,\" he tells me, smiling.",
-        jumbled: ["made", "it", "\"Ines,", "real", "me,", "tells", "he", "smiling.", "a", "difference,\""],
+        target: "He smiles and tells me it made a real difference.",
+        jumbled: ["He", "made", "it", "tells", "difference.", "and", "me", "a", "real", "smiles"],
       },
       {
         target: "She'd mentioned his contribution specifically during a subsequent client call, something he genuinely hadn't expected but deeply appreciated.",
@@ -401,8 +401,8 @@ export const CHAPTERS = [
         jumbled: ["rushed,", "high-pressure", "memory", "Petra", "no", "attribution", "alone", "she", "longer", "now", "during", "preparation.", "automatically,", "admits", "trusting", "double-checks"],
       },
       {
-        target: "\"Thanks for pushing us to talk about this, Ines,\" Salim adds.",
-        jumbled: ["adds.", "pushing", "to", "talk", "about", "\"Thanks", "us", "Ines,\"", "for", "Salim", "this,"],
+        target: "Salim adds that he is thankful I pushed us to talk about this.",
+        jumbled: ["us", "adds", "he", "to", "thankful", "I", "that", "talk", "pushed", "this.", "is", "about", "Salim"],
       },
       {
         target: "Salim admits he's learned to raise concerns earlier, recognizing that silence, however well-intentioned, often makes situations worse rather than better.",

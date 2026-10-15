@@ -49,8 +49,8 @@ export const CHAPTERS = [
         jumbled: ["might", "and", "I", "important", "my", "gather", "need.", "I", "papers", "some", "ID", "card"],
       },
       {
-        target: "My friend texts, “Good luck at the bank, Derek!” and tells me the visit is usually quick and simple.",
-        jumbled: ["usually", "and", "me", "visit", "the", "texts,", "the", "friend", "and", "Derek!”", "is", "simple.", "luck", "at", "My", "bank,", "quick", "tells", "“Good"],
+        target: "I put everything into a folder so I do not lose anything important.",
+        jumbled: ["I", "important.", "into", "folder", "put", "so", "lose", "a", "I", "everything", "anything", "not", "do"],
       },
       {
         target: "I check the folder one more time before I leave my apartment.",
@@ -133,8 +133,8 @@ export const CHAPTERS = [
         jumbled: ["screen", "on", "minutes.", "slowly,", "every", "number", "Time", "the", "I", "passes", "change", "the", "and", "watch", "few"],
       },
       {
-        target: "“Derek,” I say, and we talk a little about the weather outside.",
-        jumbled: ["little", "“Derek,”", "I", "say,", "and", "a", "outside.", "weather", "talk", "about", "the", "we"],
+        target: "A woman next to me is also waiting.",
+        jumbled: ["waiting.", "also", "is", "me", "next", "to", "woman", "A"],
       },
       {
         target: "This small conversation helps the time pass more quickly than I expect.",
@@ -177,16 +177,16 @@ export const CHAPTERS = [
         jumbled: ["a", "Reyes", "worker", "bank", "warm", "named", "Ms.", "A", "me", "friendly", "with", "smile.", "greets"],
       },
       {
-        target: "“How can I help you today?” she asks kindly, and I explain that I want to open a new account.",
-        jumbled: ["kindly,", "to", "open", "help", "I", "“How", "I", "and", "new", "can", "account.", "want", "I", "asks", "she", "that", "explain", "a", "today?”", "you"],
+        target: "Reyes greets me with a warm smile.",
+        jumbled: ["a", "with", "warm", "smile.", "greets", "Reyes", "me"],
       },
       {
-        target: "“Nice to meet you, Derek,” she says, reading the card.",
-        jumbled: ["the", "reading", "she", "meet", "card.", "says,", "“Nice", "you,", "Derek,”", "to"],
+        target: "She types something into her computer and checks my information slowly and clearly.",
+        jumbled: ["her", "and", "computer", "clearly.", "slowly", "types", "She", "and", "into", "something", "checks", "my", "information"],
       },
       {
-        target: "“Everything looks good so far,” she says, making me feel a little more relaxed about the whole process.",
-        jumbled: ["says,", "feel", "relaxed", "more", "so", "process.", "far,”", "looks", "me", "“Everything", "about", "the", "a", "good", "whole", "little", "she", "making"],
+        target: "A friendly bank worker named Ms.",
+        jumbled: ["friendly", "A", "worker", "bank", "Ms.", "named"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about being helped by a friendly worker.",
@@ -225,8 +225,8 @@ export const CHAPTERS = [
         jumbled: ["help.", "form", "for", "Some", "me", "ask", "a", "questions", "confuse", "little,", "so", "I", "her", "on", "the"],
       },
       {
-        target: "“Just sign here at the bottom, Derek,” she says, pointing to a small line on the page.",
-        jumbled: ["Derek,”", "says,", "bottom,", "“Just", "she", "the", "here", "sign", "to", "the", "small", "on", "page.", "line", "pointing", "at", "a"],
+        target: "She explains each question patiently, and I understand everything much better now.",
+        jumbled: ["and", "She", "now.", "understand", "I", "explains", "better", "everything", "much", "patiently,", "question", "each"],
       },
       {
         target: "Filling out forms feels easier when someone explains things clearly like Ms. Reyes does.",
@@ -265,8 +265,8 @@ export const CHAPTERS = [
         jumbled: ["out", "the", "the", "on", "count", "it", "take", "brought", "counter.", "and", "cash", "carefully", "I", "I"],
       },
       {
-        target: "“Derek, this account has no monthly fee if you keep a small amount inside it,” she explains.",
-        jumbled: ["“Derek,", "has", "keep", "this", "you", "she", "small", "monthly", "amount", "no", "account", "a", "inside", "explains.", "if", "fee", "it,”"],
+        target: "Reyes asks how much money I want to put into my new account today.",
+        jumbled: ["money", "how", "to", "new", "today.", "my", "I", "into", "Reyes", "put", "account", "much", "want", "asks"],
       },
       {
         target: "She also gives me a small pamphlet with more information to read later.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["today.", "a", "she", "gives", "me", "my", "temporary", "I", "card", "use", "can", "To", "away", "right", "also", "surprise,"],
       },
       {
-        target: "“Remember to set a secret number for it later, Derek,” she reminds me kindly.",
-        jumbled: ["to", "later,", "reminds", "kindly.", "she", "it", "number", "Derek,”", "“Remember", "me", "set", "secret", "for", "a"],
+        target: "I hold the small plastic card carefully, feeling excited about this new step.",
+        jumbled: ["step.", "new", "I", "carefully,", "excited", "this", "the", "feeling", "plastic", "hold", "card", "small", "about"],
       },
       {
         target: "This whole process feels much easier than I expected it to be earlier this morning.",
@@ -437,8 +437,8 @@ export const CHAPTERS = [
         jumbled: ["the", "I", "couch", "on", "sit", "open", "banking", "evening,", "my", "new", "on", "my", "That", "and", "app", "phone."],
       },
       {
-        target: "I log in for the first time, and the screen shows, “Welcome, Derek!”",
-        jumbled: ["“Welcome,", "first", "and", "the", "shows,", "the", "Derek!”", "screen", "for", "log", "in", "I", "time,"],
+        target: "I remember how nervous I felt this morning before going to the bank.",
+        jumbled: ["remember", "felt", "this", "I", "before", "the", "going", "how", "nervous", "morning", "bank.", "to", "I"],
       },
       {
         target: "It feels strange but exciting to see my own account after only one visit today.",

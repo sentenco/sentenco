@@ -45,8 +45,8 @@ export const CHAPTERS = [
         jumbled: ["the", "and", "I", "boxes", "Over", "previously", "mine.", "above", "directly", "apartment", "weekend,", "movers", "furniture", "into", "notice", "empty", "carrying", "the"],
       },
       {
-        target: "“I'm Amara, I live right below you,” I say, introducing myself briefly in the hallway to the new tenant, a friendly young man named Théo who seems genuinely pleasant.",
-        jumbled: ["a", "live", "pleasant.", "myself", "hallway", "to", "you,”", "the", "I", "below", "briefly", "the", "new", "right", "named", "genuinely", "young", "Théo", "Amara,", "in", "tenant,", "seems", "introducing", "friendly", "who", "say,", "“I'm", "I", "man"],
+        target: "I introduce myself briefly in the hallway to the new tenant, a friendly young man.",
+        jumbled: ["a", "the", "myself", "tenant,", "man.", "briefly", "friendly", "new", "in", "introduce", "to", "young", "the", "hallway", "I"],
       },
       {
         target: "We exchange a few polite words about the building, and he mentions he's just moved here for a new job downtown.",
@@ -97,8 +97,8 @@ export const CHAPTERS = [
         jumbled: ["steadily", "continues", "However,", "nearly", "noise", "fall", "genuinely", "asleep", "to", "an", "the", "hour,", "for", "it", "back", "comfortably.", "making", "difficult"],
       },
       {
-        target: "I check my phone repeatedly, its lock screen reading “Amara's alarm: 6:30 AM,” growing increasingly frustrated as tomorrow's early work meeting looms uncomfortably close.",
-        jumbled: ["“Amara's", "close.", "frustrated", "work", "reading", "lock", "my", "growing", "as", "increasingly", "check", "uncomfortably", "screen", "its", "I", "meeting", "looms", "repeatedly,", "early", "AM,”", "6:30", "tomorrow's", "alarm:", "phone"],
+        target: "I check my phone repeatedly and grow frustrated as my early meeting gets closer.",
+        jumbled: ["frustrated", "my", "gets", "repeatedly", "early", "my", "as", "meeting", "phone", "grow", "and", "closer.", "I", "check"],
       },
       {
         target: "Eventually, exhaustion outweighs my frustration, and I manage to drift into an uneasy, restless sleep.",
@@ -173,8 +173,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Exhausted and increasingly frustrated, I write “Amara's Plan” at the top of a notepad page and consider two possible approaches: speaking with Théo directly or contacting building management instead.",
-        jumbled: ["at", "building", "approaches:", "and", "directly", "Théo", "with", "possible", "of", "contacting", "page", "management", "consider", "write", "“Amara's", "notepad", "a", "I", "Exhausted", "the", "frustrated,", "two", "increasingly", "instead.", "or", "and", "top", "speaking", "Plan”"],
+        target: "Exhausted and frustrated, I write a plan at the top of a notepad page.",
+        jumbled: ["a", "page.", "plan", "I", "write", "at", "the", "and", "top", "notepad", "of", "a", "Exhausted", "frustrated,"],
       },
       {
         target: "On the other hand, going straight to management feels slightly excessive for what could still be an easily fixable misunderstanding.",
@@ -229,8 +229,8 @@ export const CHAPTERS = [
         jumbled: ["been", "noise,", "that", "has", "night,", "to", "making", "at", "late", "difficult", "the", "particularly", "it", "gently", "me", "for", "sleep", "explain", "I", "well."],
       },
       {
-        target: "“I had honestly no idea it was traveling that clearly, Amara. I'm really sorry about that,” he responds immediately, sounding genuinely embarrassed.",
-        jumbled: ["he", "embarrassed.", "had", "genuinely", "clearly,", "immediately,", "I'm", "that", "about", "no", "traveling", "idea", "sounding", "that,”", "honestly", "was", "Amara.", "it", "responds", "sorry", "really", "“I"],
+        target: "He responds immediately that he had no idea the sound traveled so clearly.",
+        jumbled: ["immediately", "responds", "traveled", "no", "had", "clearly.", "He", "he", "sound", "the", "so", "idea", "that"],
       },
       {
         target: "His reaction reassures me considerably, since I had quietly worried this conversation might become awkward or tense instead.",
@@ -269,8 +269,8 @@ export const CHAPTERS = [
         jumbled: ["late", "considerably", "hours", "heavy", "in", "wearing", "furniture", "headphones", "finishing", "moving", "any", "during", "earlier", "evening.", "He", "the", "suggests", "and"],
       },
       {
-        target: "“Would it help if I also put down a rug under my speakers, Amara?” he asks thoughtfully, clearly wanting to actually fix this properly.",
-        jumbled: ["he", "put", "also", "under", "my", "rug", "it", "if", "properly.", "wanting", "clearly", "actually", "I", "asks", "help", "speakers,", "to", "fix", "a", "this", "Amara?”", "thoughtfully,", "down", "“Would"],
+        target: "He thoughtfully asks if it would help to put a rug under his speakers.",
+        jumbled: ["it", "rug", "thoughtfully", "a", "under", "speakers.", "if", "would", "put", "asks", "his", "to", "He", "help"],
       },
       {
         target: "I appreciate his willingness to problem-solve rather than simply apologizing without offering any real changes.",
@@ -317,8 +317,8 @@ export const CHAPTERS = [
         jumbled: ["few", "Théo", "the", "I", "a", "into", "later.", "hallway", "briefly", "in", "days", "run"],
       },
       {
-        target: "“Hey Amara, has it gotten better since we talked?” he asks.",
-        jumbled: ["since", "it", "has", "we", "“Hey", "gotten", "Amara,", "talked?”", "he", "better", "asks."],
+        target: "He asks if it has gotten better since we talked.",
+        jumbled: ["we", "since", "if", "it", "has", "talked.", "gotten", "He", "better", "asks"],
       },
       {
         target: "I confirm honestly that yes, it's been considerably better, and I genuinely appreciate him taking my concern seriously.",
@@ -353,8 +353,8 @@ export const CHAPTERS = [
         jumbled: ["to", "improved", "conversation.", "neighbor", "other", "has", "I", "the", "that", "with", "room,", "genuinely", "the", "Théo", "since", "our", "situation", "mention", "noise", "considerably", "laundry", "In", "the"],
       },
       {
-        target: "“Really, Amara? I assumed you'd have to get management involved,” she says, pleasantly surprised.",
-        jumbled: ["assumed", "I", "says,", "“Really,", "Amara?", "management", "get", "involved,”", "have", "pleasantly", "to", "she", "surprised.", "you'd"],
+        target: "She is pleasantly surprised that I did not get management involved.",
+        jumbled: ["that", "management", "involved.", "pleasantly", "She", "did", "I", "get", "is", "not", "surprised"],
       },
       {
         target: "I explain that, in my experience, approaching someone directly and calmly often works better than escalating things immediately.",
@@ -397,8 +397,8 @@ export const CHAPTERS = [
         jumbled: ["small", "knocks", "genuinely", "door,", "he", "he", "potted", "thought", "later,", "I", "plant", "my", "a", "on", "Théo", "might", "holding", "says", "like.", "days", "A", "few"],
       },
       {
-        target: "“This is just a small thank-you, Amara, for handling everything so kindly instead of getting angry,” he explains, smiling warmly.",
-        jumbled: ["instead", "is", "“This", "explains,", "warmly.", "small", "everything", "Amara,", "he", "handling", "of", "getting", "thank-you,", "smiling", "just", "a", "so", "kindly", "angry,”", "for"],
+        target: "He smiles warmly and explains that this is a small thank-you.",
+        jumbled: ["smiles", "and", "small", "explains", "this", "a", "He", "thank-you.", "is", "warmly", "that"],
       },
       {
         target: "I'm pleasantly surprised, accepting the gift while telling him honestly that it really wasn't necessary at all.",
@@ -437,8 +437,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Looking back on the entire situation, I write one line in my journal, “Amara: talk first, escalate later,” and realize how easily this could have escalated into something far more tense and unpleasant.",
-        jumbled: ["line", "one", "tense", "situation,", "on", "far", "first,", "escalated", "this", "have", "later,”", "realize", "and", "my", "how", "journal,", "could", "entire", "back", "I", "the", "unpleasant.", "in", "write", "easily", "escalate", "into", "and", "“Amara:", "talk", "something", "Looking", "more"],
+        target: "Looking back, I write one line in my journal about talking first.",
+        jumbled: ["I", "about", "in", "line", "Looking", "one", "first.", "back,", "write", "talking", "journal", "my"],
       },
       {
         target: "Without speaking to Théo directly first, our relationship might have started off poorly.",

@@ -52,8 +52,8 @@ export const CHAPTERS = [
         jumbled: ["a", "back.", "with", "Cruz", "on", "team", "the", "gives", "blue", "Mr.", "number", "shirt", "me", "ten"],
       },
       {
-        target: "Some teammates smile at me and say, “Hi, Marco,” so I do not feel alone.",
-        jumbled: ["alone.", "“Hi,", "Some", "smile", "not", "teammates", "I", "Marco,”", "do", "feel", "me", "so", "at", "and", "say,"],
+        target: "I touch the shirt and feel the soft, clean cloth in my hands.",
+        jumbled: ["and", "my", "the", "soft,", "the", "shirt", "I", "cloth", "touch", "hands.", "clean", "in", "feel"],
       },
       {
         target: "In that moment, I feel proud and ready to play for my school team.",
@@ -96,8 +96,8 @@ export const CHAPTERS = [
         jumbled: ["arms", "shows", "stretch", "to", "me", "named", "boy", "how", "Luis", "my", "stands", "to", "next", "and", "A", "and", "me", "legs."],
       },
       {
-        target: "I miss the ball one time, but Luis smiles and says, “It's okay, try again, Marco.”",
-        jumbled: ["says,", "“It's", "one", "Marco.”", "time,", "but", "Luis", "ball", "try", "I", "miss", "okay,", "and", "again,", "the", "smiles"],
+        target: "Then we kick the ball to a partner and count each pass together.",
+        jumbled: ["ball", "count", "partner", "the", "we", "and", "pass", "a", "Then", "kick", "to", "together.", "each"],
       },
       {
         target: "At the end of practice, I feel tired but happy because I finished my first day with the team.",
@@ -136,8 +136,8 @@ export const CHAPTERS = [
         jumbled: ["too", "is", "pass", "first,", "look", "too", "my", "short.", "down", "much,", "At", "I", "and"],
       },
       {
-        target: "Ana calls my name and says, “Marco, look at me first.”",
-        jumbled: ["my", "says,", "calls", "“Marco,", "first.”", "and", "look", "at", "Ana", "me", "name"],
+        target: "Cruz tells us to look up before we kick the ball.",
+        jumbled: ["to", "kick", "look", "before", "tells", "us", "ball.", "we", "Cruz", "up", "the"],
       },
       {
         target: "The ball rolls across the grass and stops right at Ana's feet.",
@@ -180,8 +180,8 @@ export const CHAPTERS = [
         jumbled: ["legs", "feel", "my", "stop", "heavy.", "want", "to", "I", "At", "because", "first,"],
       },
       {
-        target: "Then I hear Luis say, “Come on, Marco, you can do it!”",
-        jumbled: ["“Come", "hear", "Luis", "Then", "I", "can", "it!”", "you", "say,", "Marco,", "do", "on,"],
+        target: "The sun is bright, and sweat runs down my face.",
+        jumbled: ["down", "runs", "sweat", "bright,", "face.", "and", "my", "The", "is", "sun"],
       },
       {
         target: "I bend down and laugh because I am so tired.",
@@ -268,8 +268,8 @@ export const CHAPTERS = [
         jumbled: ["talks", "us", "about", "player", "football", "on", "favourite", "a", "his", "and", "phone.", "photo", "Ben", "shows", "his"],
       },
       {
-        target: "Then Ana asks, “Marco, what was your old school like?” I tell them I played football in the park with my cousins after class.",
-        jumbled: ["your", "in", "football", "what", "“Marco,", "like?”", "school", "Then", "I", "Ana", "played", "class.", "after", "old", "them", "the", "I", "park", "asks,", "cousins", "with", "my", "tell", "was"],
+        target: "Luis has a sandwich, and Ana drinks water from a blue bottle.",
+        jumbled: ["water", "a", "drinks", "a", "bottle.", "has", "from", "blue", "and", "Ana", "sandwich,", "Luis"],
       },
       {
         target: "Luis laughs and says we should all play in the park one day.",

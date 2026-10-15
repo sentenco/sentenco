@@ -61,8 +61,8 @@ export const CHAPTERS = [
         jumbled: ["A", "desk", "at", "at", "me.", "smiles", "woman", "the", "front"],
       },
       {
-        target: "I smile back and say, “Yes, that's me.”",
-        jumbled: ["back", "smile", "I", "that's", "say,", "me.”", "“Yes,", "and"],
+        target: "Then I open the door and walk inside.",
+        jumbled: ["the", "Then", "walk", "open", "door", "I", "inside.", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about your first day at a new job or school.",
@@ -101,8 +101,8 @@ export const CHAPTERS = [
         jumbled: ["down", "She", "with", "and", "hallway", "walks", "new", "shows", "me", "me", "my", "desk.", "the"],
       },
       {
-        target: "“If you have any questions, just ask me,” Fatima says kindly.",
-        jumbled: ["just", "“If", "any", "ask", "Fatima", "kindly.", "says", "have", "you", "me,”", "questions,"],
+        target: "It is next to a big window with good light.",
+        jumbled: ["big", "to", "next", "is", "with", "a", "good", "light.", "window", "It"],
       },
       {
         target: "We talk for a few minutes about the office and the people who work here.",
@@ -137,8 +137,8 @@ export const CHAPTERS = [
         jumbled: ["my", "meet", "Fatima", "takes", "manager,", "me", "Yang.", "Mr.", "to"],
       },
       {
-        target: "“Welcome, Carlos. I am happy you are here,” he says.",
-        jumbled: ["Carlos.", "here,”", "happy", "he", "you", "are", "am", "I", "says.", "“Welcome,"],
+        target: "He stands up and shakes my hand warmly.",
+        jumbled: ["my", "warmly.", "He", "and", "up", "shakes", "stands", "hand"],
       },
       {
         target: "I write down important notes in my new notebook.",
@@ -149,8 +149,8 @@ export const CHAPTERS = [
         jumbled: ["break", "the", "the", "and", "me", "hours", "working", "lunch", "Mr.", "time.", "Yang", "tells"],
       },
       {
-        target: "“Don't worry if you forget something today,” he says with a smile.",
-        jumbled: ["smile.", "says", "forget", "“Don't", "with", "if", "today,”", "a", "you", "worry", "he", "something"],
+        target: "He also gives me a map of the building.",
+        jumbled: ["me", "He", "map", "building.", "also", "a", "of", "gives", "the"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about someone who explained something new to you.",
@@ -189,8 +189,8 @@ export const CHAPTERS = [
         jumbled: ["file.", "to", "She", "save", "me", "email", "to", "open", "how", "shows", "how", "a", "and", "my"],
       },
       {
-        target: "“Don't worry, it looks hard now, but it gets easier,” she says kindly.",
-        jumbled: ["now,", "hard", "worry,", "she", "says", "but", "easier,”", "looks", "kindly.", "it", "“Don't", "it", "gets"],
+        target: "I try the steps myself, and I make a small mistake.",
+        jumbled: ["I", "steps", "try", "a", "make", "small", "and", "myself,", "I", "mistake.", "the"],
       },
       {
         target: "Fatima laughs gently and shows me again.",
@@ -277,8 +277,8 @@ export const CHAPTERS = [
         jumbled: ["to", "look", "one", "no", "is", "around,", "me", "I", "away.", "near", "but", "help", "right"],
       },
       {
-        target: "“The printer gets paper stuck sometimes, Carlos,” she says calmly.",
-        jumbled: ["gets", "“The", "paper", "says", "calmly.", "printer", "she", "stuck", "sometimes,", "Carlos,”"],
+        target: "Then Fatima walks by and sees my worried face.",
+        jumbled: ["sees", "my", "and", "walks", "face.", "worried", "by", "Then", "Fatima"],
       },
       {
         target: "I thank her again, feeling grateful for such a helpful coworker on my first day.",
@@ -325,8 +325,8 @@ export const CHAPTERS = [
         jumbled: ["my", "short", "little,", "I", "but", "shakes", "finish", "My", "introduction.", "voice", "a"],
       },
       {
-        target: "One coworker tells me, “You did a great job, Carlos.”",
-        jumbled: ["great", "me,", "tells", "Carlos.”", "a", "did", "“You", "coworker", "One", "job,"],
+        target: "I sit next to Fatima and listen carefully.",
+        jumbled: ["to", "listen", "Fatima", "next", "sit", "I", "carefully.", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about introducing yourself to a new group of people.",
@@ -401,8 +401,8 @@ export const CHAPTERS = [
         jumbled: ["train", "phone", "On", "message.", "home,", "my", "the", "buzzes", "with", "a", "new"],
       },
       {
-        target: "“Great first day, Carlos! You did better than you think,” she writes.",
-        jumbled: ["better", "think,”", "than", "Carlos!", "you", "she", "did", "first", "“Great", "day,", "You", "writes."],
+        target: "I smile and read the message again.",
+        jumbled: ["I", "again.", "the", "and", "read", "message", "smile"],
       },
       {
         target: "It feels nice to know someone at work is thinking of me.",
@@ -453,8 +453,8 @@ export const CHAPTERS = [
         jumbled: ["lay", "did", "like", "tomorrow,", "I", "my", "out", "today.", "just", "for", "clothes", "I"],
       },
       {
-        target: "At the top of one page, I had written, “Carlos's first day,” and I read the notes underneath it.",
-        jumbled: ["notes", "had", "one", "the", "written,", "it.", "top", "first", "At", "I", "of", "underneath", "“Carlos's", "and", "day,”", "the", "page,", "I", "read"],
+        target: "Yang's patience with all my questions.",
+        jumbled: ["my", "questions.", "all", "Yang's", "patience", "with"],
       },
       {
         target: "Tomorrow will still be new, but I know I am not alone there.",

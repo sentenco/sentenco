@@ -87,16 +87,16 @@ export const CHAPTERS = [
         jumbled: ["to", "early", "a", "wooden", "afternoon,", "bench.", "come", "gym", "The", "the", "I", "and", "little", "the", "sit", "on", "next"],
       },
       {
-        target: "He says, “My name is Coach Ben, and I am happy you joined the team.” He asks me my name, my class, and if I like sports.",
-        jumbled: ["you", "if", "He", "Coach", "Ben,", "He", "my", "class,", "is", "I", "says,", "and", "name,", "and", "sports.", "happy", "like", "am", "me", "“My", "I", "my", "team.”", "joined", "name", "asks", "the"],
+        target: "When practice starts, I stand with Mia and Jay in the line.",
+        jumbled: ["practice", "I", "and", "Mia", "starts,", "line.", "in", "stand", "When", "with", "Jay", "the"],
       },
       {
         target: "I tell him I am Nina, I am in class seven, and I want to learn basketball.",
         jumbled: ["to", "him", "am", "basketball.", "and", "I", "in", "I", "Nina,", "want", "tell", "I", "class", "seven,", "am", "learn", "I"],
       },
       {
-        target: "Then two girls run over and say, “Hi, I'm Mia,” and “I'm Jay, welcome to the team.”",
-        jumbled: ["“Hi,", "and", "to", "over", "run", "Mia,”", "Then", "I'm", "and", "two", "say,", "Jay,", "girls", "team.”", "the", "welcome", "“I'm"],
+        target: "Then two girls run over, tell me their names, and welcome me to the team.",
+        jumbled: ["tell", "over,", "two", "and", "welcome", "the", "girls", "their", "me", "names,", "Then", "me", "to", "team.", "run"],
       },
       {
         target: "In that moment, I feel calm because now I know my coach and two new friends.",
@@ -135,8 +135,8 @@ export const CHAPTERS = [
         jumbled: ["but", "it", "too", "try", "I", "first", "goes", "the", "away", "ball,", "to", "high", "bounce", "at", "and", "me.", "jumps", "from"],
       },
       {
-        target: "Mia laughs kindly and says, “Keep your hand soft, like this, Nina.”",
-        jumbled: ["soft,", "like", "your", "and", "says,", "Mia", "kindly", "laughs", "hand", "“Keep", "Nina.”", "this,"],
+        target: "My first steps are slow, but I do not drop the ball this time.",
+        jumbled: ["ball", "are", "slow,", "time.", "not", "drop", "do", "the", "this", "I", "first", "but", "steps", "My"],
       },
       {
         target: "Then Coach Ben asks us to walk and bounce the ball at the same time.",
@@ -179,8 +179,8 @@ export const CHAPTERS = [
         jumbled: ["hoop", "ball", "and", "how", "to", "look", "us", "stands", "the", "He", "the", "up.", "and", "hold", "tall", "under", "shows"],
       },
       {
-        target: "Jay stands next to me and says, “Try again, Nina, and use your legs, not only your arms.”",
-        jumbled: ["only", "your", "“Try", "legs,", "and", "and", "stands", "to", "me", "next", "Jay", "use", "says,", "your", "again,", "Nina,", "not", "arms.”"],
+        target: "My first shot is too weak, and the ball does not reach the hoop.",
+        jumbled: ["My", "shot", "weak,", "and", "first", "the", "hoop.", "not", "reach", "the", "does", "too", "is", "ball"],
       },
       {
         target: "I bend my knees, look at the hoop, and push the ball up with both hands.",
@@ -223,12 +223,12 @@ export const CHAPTERS = [
         jumbled: ["but", "I", "the", "at", "down", "ball,", "catch", "my", "fast", "not", "to", "look", "feet.", "I", "do", "run"],
       },
       {
-        target: "Coach Ben runs to me quickly and asks, “Nina, are you okay?” I say yes, and Mia gives me her hand and helps me stand up.",
-        jumbled: ["asks,", "you", "gives", "runs", "quickly", "and", "Coach", "Mia", "Ben", "and", "are", "and", "I", "yes,", "helps", "okay?”", "her", "say", "me", "me", "“Nina,", "hand", "to", "stand", "me", "up."],
+        target: "For a moment, my face feels hot because everyone can see me.",
+        jumbled: ["feels", "because", "me.", "moment,", "a", "For", "my", "hot", "everyone", "see", "face", "can"],
       },
       {
-        target: "Coach Ben tells the team, “Falling is normal, so do not be afraid to try.”",
-        jumbled: ["is", "not", "so", "afraid", "normal,", "Ben", "“Falling", "Coach", "be", "to", "tells", "the", "team,", "do", "try.”"],
+        target: "Then I go back into the game and pass the ball to Jay.",
+        jumbled: ["Then", "the", "go", "Jay.", "to", "I", "back", "ball", "pass", "game", "into", "the", "and"],
       },
       {
         target: "In that moment, I feel brave because a small mistake did not stop me.",
@@ -263,16 +263,16 @@ export const CHAPTERS = [
         jumbled: ["bench", "during", "sit", "and", "on", "the", "our", "break.", "water", "drink", "We"],
       },
       {
-        target: "Jay talks about her favourite player and says, “She can jump so high and shoot from far away.” I tell them I do not know many players yet, but I want to learn more.",
-        jumbled: ["them", "want", "Jay", "do", "her", "players", "says,", "to", "about", "far", "“She", "favourite", "know", "jump", "I", "more.", "high", "many", "from", "yet,", "shoot", "so", "player", "can", "but", "away.”", "learn", "and", "I", "talks", "tell", "and", "I", "not"],
+        target: "Mia opens her bag and shares some small crackers with the team.",
+        jumbled: ["with", "team.", "small", "some", "bag", "and", "shares", "opens", "crackers", "her", "the", "Mia"],
       },
       {
-        target: "Mia says, “We can watch a short game on my phone after school, Nina.”",
-        jumbled: ["a", "“We", "short", "Mia", "watch", "phone", "my", "says,", "game", "can", "Nina.”", "after", "school,", "on"],
+        target: "When Coach Ben blows his whistle, we stand up and get ready again.",
+        jumbled: ["his", "up", "Coach", "and", "get", "blows", "whistle,", "Ben", "When", "we", "ready", "stand", "again."],
       },
       {
-        target: "Coach Ben walks past us and says, “Good rest, team, you play well today.”",
-        jumbled: ["“Good", "you", "Ben", "walks", "past", "and", "Coach", "today.”", "play", "says,", "team,", "us", "well", "rest,"],
+        target: "After hard practice, we sit on the bench and drink water during our break.",
+        jumbled: ["and", "drink", "on", "After", "break.", "the", "water", "bench", "practice,", "sit", "during", "our", "hard", "we"],
       },
       {
         target: "In that moment, I feel warm inside because these teammates feel like real friends.",
@@ -315,8 +315,8 @@ export const CHAPTERS = [
         jumbled: ["knees,", "I", "can.", "as", "ball", "shoot", "the", "many", "my", "as", "I", "and", "dribble,", "times", "bend"],
       },
       {
-        target: "Jay counts my baskets out loud and says, “Nina, you are getting better every day.”",
-        jumbled: ["and", "you", "out", "says,", "baskets", "getting", "are", "Jay", "“Nina,", "loud", "every", "better", "my", "day.”", "counts"],
+        target: "At first, I miss more than I make, but slowly my hands feel stronger.",
+        jumbled: ["hands", "first,", "make,", "At", "feel", "my", "but", "than", "more", "slowly", "I", "stronger.", "I", "miss"],
       },
       {
         target: "In that moment, I feel proud because I work hard even when no one asks me to.",
@@ -359,8 +359,8 @@ export const CHAPTERS = [
         jumbled: ["running", "the", "the", "on", "and", "in", "passing", "We", "court.", "right", "places", "practise"],
       },
       {
-        target: "Jay says, “If we play as one team, we can do our best.”",
-        jumbled: ["Jay", "we", "“If", "says,", "team,", "do", "play", "best.”", "our", "one", "can", "we", "as"],
+        target: "Mia and I practise a quick pass near the hoop many times.",
+        jumbled: ["hoop", "and", "Mia", "many", "practise", "times.", "a", "I", "pass", "the", "quick", "near"],
       },
       {
         target: "I go home and put my clean team shirt on my chair for the game.",
@@ -443,8 +443,8 @@ export const CHAPTERS = [
         jumbled: ["practice,", "hands", "easily", "start", "more", "with", "ball", "now.", "the", "our", "my", "We", "and", "move"],
       },
       {
-        target: "During a short break, Coach Ben says, “Nina, you are a real part of this team now.”",
-        jumbled: ["real", "short", "are", "part", "“Nina,", "break,", "Ben", "you", "says,", "this", "During", "a", "a", "now.”", "of", "team", "Coach"],
+        target: "I can bounce, dribble, pass, and shoot, and I am not afraid to try.",
+        jumbled: ["I", "to", "try.", "am", "and", "can", "not", "dribble,", "and", "pass,", "bounce,", "afraid", "shoot,", "I"],
       },
       {
         target: "I remember my first day, when my hands shook and the ball went to the side.",

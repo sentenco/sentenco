@@ -48,8 +48,8 @@ export const CHAPTERS = [
         jumbled: ["I", "nature", "a", "slept", "since", "chest,", "bubbling", "before.", "my", "I", "in", "outside", "excitement", "have", "feel", "in", "never"],
       },
       {
-        target: "“Are we bringing the fishing rods too?” I ask eagerly.",
-        jumbled: ["too?”", "rods", "ask", "I", "fishing", "eagerly.", "we", "bringing", "the", "“Are"],
+        target: "I ask eagerly if we are bringing the fishing rods too.",
+        jumbled: ["the", "are", "I", "fishing", "we", "ask", "too.", "bringing", "eagerly", "rods", "if"],
       },
       {
         target: "We finally climb in, ready for our big adventure to begin.",
@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["changes", "busy", "roads.", "tall", "The", "from", "trees", "streets", "green", "scenery", "winding", "to", "and", "mountain"],
       },
       {
-        target: "“We're almost there, Owen,” Dad announces, and I press my face against the window, watching the beautiful forest pass by.",
-        jumbled: ["press", "watching", "Owen,”", "Dad", "almost", "against", "beautiful", "face", "by.", "the", "there,", "forest", "announces,", "“We're", "pass", "I", "my", "and", "window,", "the"],
+        target: "Dad announces that we are almost there, and I press my face against the window.",
+        jumbled: ["the", "Dad", "announces", "almost", "window.", "my", "and", "press", "against", "we", "there,", "are", "I", "that", "face"],
       },
       {
         target: "My excitement grows even stronger, knowing our campsite is just minutes away now.",
@@ -128,8 +128,8 @@ export const CHAPTERS = [
         jumbled: ["harder", "correctly", "spread", "much", "it", "poles,", "out", "We", "proves", "tent", "than", "the", "looks.", "but", "connecting", "them"],
       },
       {
-        target: "“Try connecting the poles in a criss-cross pattern, Owen,” Dad suggests helpfully, without actually touching anything himself.",
-        jumbled: ["the", "a", "suggests", "connecting", "anything", "in", "poles", "Dad", "“Try", "actually", "Owen,”", "without", "pattern,", "touching", "criss-cross", "helpfully,", "himself."],
+        target: "After several more tries, our tent finally stands up straight and sturdy.",
+        jumbled: ["tries,", "After", "straight", "and", "up", "finally", "stands", "tent", "more", "several", "our", "sturdy."],
       },
       {
         target: "Our tent finally stands up straight and sturdy.",
@@ -170,8 +170,8 @@ export const CHAPTERS = [
         jumbled: ["leads", "woodpecker", "a", "a", "things", "out", "tapping", "interesting", "on", "Dad", "path,", "way,", "trunk.", "like", "pointing", "along", "the", "tree", "loudly", "the"],
       },
       {
-        target: "“Look at these mushrooms, Owen,” Lily says, crouching down to examine some bright orange ones growing near the trail.",
-        jumbled: ["to", "Lily", "orange", "ones", "the", "examine", "down", "these", "growing", "says,", "mushrooms,", "trail.", "some", "near", "crouching", "at", "Owen,”", "bright", "“Look"],
+        target: "Lily crouches down to look at some bright orange mushrooms near the trail.",
+        jumbled: ["bright", "orange", "mushrooms", "Lily", "down", "look", "at", "trail.", "to", "some", "near", "the", "crouches"],
       },
       {
         target: "We discover animal tracks pressed into soft mud and even spot a small chipmunk darting between rocks.",
@@ -208,8 +208,8 @@ export const CHAPTERS = [
         jumbled: ["how", "campfire", "dinner.", "teaches", "Dad", "to", "safe", "us", "before", "build", "a"],
       },
       {
-        target: "“Always stack the smallest sticks first, like a little teepee, Owen,” he explains, demonstrating carefully.",
-        jumbled: ["demonstrating", "carefully.", "little", "sticks", "Owen,”", "stack", "“Always", "like", "first,", "the", "smallest", "teepee,", "a", "he", "explains,"],
+        target: "As evening approaches, Dad teaches us how to build a safe campfire before dinner.",
+        jumbled: ["approaches,", "build", "campfire", "Dad", "a", "safe", "teaches", "evening", "As", "dinner.", "to", "before", "how", "us"],
       },
       {
         target: "He reminds us that fire safety matters more than anything else, and we must never touch matches without an adult present.",
@@ -258,8 +258,8 @@ export const CHAPTERS = [
         jumbled: ["that", "spooky", "Then", "a", "a", "chills.", "wobbly", "ghost,", "happy", "mysterious,", "voice", "a", "using", "about", "me", "tells", "forest", "gives", "Lily", "friendly", "story"],
       },
       {
-        target: "“Your turn, Owen,” Dad says, grinning.",
-        jumbled: ["grinning.", "Dad", "Owen,”", "turn,", "“Your", "says,"],
+        target: "Dad grins and says it is my turn.",
+        jumbled: ["and", "turn.", "my", "it", "grins", "says", "is", "Dad"],
       },
       {
         target: "We laugh together late into the evening, and I realize campfire stories might be my favorite part of camping so far.",
@@ -296,16 +296,16 @@ export const CHAPTERS = [
         jumbled: ["freezes,", "starts", "pounding", "chest.", "my", "my", "body", "whole", "My", "heart", "loudly", "and", "in"],
       },
       {
-        target: "“Did you hear that?” I whisper nervously to Lily, but she is already fast asleep, breathing peacefully.",
-        jumbled: ["to", "fast", "hear", "is", "nervously", "already", "breathing", "Lily,", "asleep,", "you", "I", "that?”", "“Did", "but", "whisper", "she", "peacefully."],
+        target: "I whisper nervously to Lily, but she is already fast asleep.",
+        jumbled: ["Lily,", "to", "asleep.", "nervously", "fast", "already", "I", "but", "she", "is", "whisper"],
       },
       {
         target: "The rustling continues, followed by an odd hooting sound somewhere in the darkness.",
         jumbled: ["followed", "odd", "by", "darkness.", "an", "continues,", "rustling", "sound", "somewhere", "in", "The", "hooting", "the"],
       },
       {
-        target: "“Stay calm, Owen,” I tell myself, and I pull my sleeping bag tightly around myself, feeling much braver during the daytime than I do right now, alone with my racing imagination in the pitch-black tent.",
-        jumbled: ["tent.", "braver", "and", "the", "sleeping", "I", "in", "I", "racing", "myself,", "with", "much", "my", "“Stay", "tightly", "tell", "the", "pull", "pitch-black", "during", "around", "feeling", "right", "now,", "my", "alone", "imagination", "myself,", "I", "Owen,”", "do", "calm,", "than", "bag", "daytime"],
+        target: "I tell myself to stay calm and pull my sleeping bag tightly around me.",
+        jumbled: ["tightly", "around", "sleeping", "me.", "and", "calm", "to", "myself", "my", "pull", "stay", "tell", "bag", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you heard a strange noise.",
@@ -334,16 +334,16 @@ export const CHAPTERS = [
         jumbled: ["quietly", "sleeping", "crawl", "bag", "side", "my", "and", "of", "tent.", "over", "to", "sleep,", "Dad's", "unzip", "I", "to", "the", "Unable"],
       },
       {
-        target: "“I heard scary noises outside,” I whisper, feeling a little embarrassed about waking him.",
-        jumbled: ["noises", "feeling", "him.", "waking", "a", "embarrassed", "“I", "I", "outside,”", "about", "whisper,", "little", "scary", "heard"],
+        target: "Feeling safe next to Dad, my racing heart slowly calms down completely.",
+        jumbled: ["calms", "next", "Dad,", "safe", "slowly", "completely.", "heart", "racing", "to", "down", "my", "Feeling"],
       },
       {
         target: "Dad doesn't laugh at all; instead, he listens carefully and smiles reassuringly.",
         jumbled: ["instead,", "all;", "reassuringly.", "at", "listens", "smiles", "laugh", "he", "doesn't", "carefully", "Dad", "and"],
       },
       {
-        target: "“That's probably just an owl and some wind moving through the leaves, Owen,” he explains gently, shining his flashlight briefly outside to show me nothing dangerous is there.",
-        jumbled: ["he", "the", "me", "flashlight", "Owen,”", "shining", "owl", "“That's", "explains", "through", "moving", "and", "gently,", "there.", "wind", "his", "dangerous", "nothing", "leaves,", "briefly", "show", "some", "outside", "is", "an", "probably", "to", "just"],
+        target: "Dad explains that it is probably just an owl and the wind in the leaves.",
+        jumbled: ["that", "the", "the", "owl", "in", "explains", "probably", "just", "an", "wind", "leaves.", "it", "Dad", "and", "is"],
       },
       {
         target: "He lets me stay close beside him for the rest of the night.",
@@ -380,16 +380,16 @@ export const CHAPTERS = [
         jumbled: ["calm", "forest", "morning", "in", "golden.", "soft", "looks", "different", "completely", "the", "The", "light,", "and"],
       },
       {
-        target: "“Look, Owen,” Dad whispers, pointing silently toward a clearing ahead.",
-        jumbled: ["ahead.", "“Look,", "clearing", "pointing", "a", "silently", "Owen,”", "whispers,", "Dad", "toward"],
+        target: "Suddenly, Lily grabs my arm.",
+        jumbled: ["Lily", "Suddenly,", "my", "arm.", "grabs"],
       },
       {
         target: "Two deer stand peacefully near a sparkling lake, grazing quietly in the morning mist.",
         jumbled: ["Two", "sparkling", "near", "deer", "the", "peacefully", "grazing", "stand", "lake,", "quietly", "in", "a", "mist.", "morning"],
       },
       {
-        target: "“That was incredible,” I whisper, and Dad nods, smiling proudly at witnessing something so beautiful together as a family.",
-        jumbled: ["witnessing", "“That", "incredible,”", "a", "family.", "I", "so", "something", "Dad", "at", "proudly", "nods,", "beautiful", "and", "smiling", "together", "whisper,", "as", "was"],
+        target: "I whisper that it was incredible, and Dad nods and smiles proudly.",
+        jumbled: ["and", "smiles", "proudly.", "nods", "I", "Dad", "and", "whisper", "incredible,", "was", "it", "that"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about an animal you saw in nature.",
@@ -426,8 +426,8 @@ export const CHAPTERS = [
         jumbled: ["back", "at", "to", "I", "leave.", "look", "a", "time", "campsite,", "already", "one", "sad", "feeling", "our", "last", "little"],
       },
       {
-        target: "“Can we come back next month?” I ask hopefully.",
-        jumbled: ["hopefully.", "“Can", "month?”", "I", "next", "ask", "come", "we", "back"],
+        target: "I ask hopefully if we can come back next month.",
+        jumbled: ["month.", "next", "hopefully", "if", "can", "come", "back", "ask", "I", "we"],
       },
       {
         target: "Thinking about the campfire stories, the deer, and even the scary noises that turned out fine, I realize this camping trip became one unforgettable adventure I will never forget.",

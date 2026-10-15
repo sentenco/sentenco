@@ -40,16 +40,16 @@ export const CHAPTERS = [
         jumbled: ["today", "Grandpa's", "house,", "to", "and", "straight", "takes", "Every", "his", "me", "backyard", "Saturday,", "garden.", "I", "he", "visit"],
       },
       {
-        target: "“Would you like to help me plant vegetables this year, Theo?” he asks, handing me a small trowel.",
-        jumbled: ["you", "handing", "trowel.", "plant", "“Would", "vegetables", "to", "Theo?”", "small", "me", "asks,", "a", "me", "year,", "like", "this", "help", "he"],
+        target: "I feel proud that he trusts me to help with his special garden.",
+        jumbled: ["to", "that", "with", "I", "garden.", "proud", "trusts", "special", "help", "feel", "his", "he", "me"],
       },
       {
         target: "I look at the empty rows of soft brown dirt and feel excited about the idea.",
         jumbled: ["at", "soft", "excited", "brown", "idea.", "empty", "I", "the", "about", "of", "look", "feel", "rows", "dirt", "the", "and"],
       },
       {
-        target: "“Tomatoes, carrots, and maybe some pumpkins,” Grandpa says, smiling under his straw hat.",
-        jumbled: ["carrots,", "under", "hat.", "and", "says,", "some", "pumpkins,”", "straw", "maybe", "“Tomatoes,", "smiling", "Grandpa", "his"],
+        target: "Grandpa smiles under his straw hat and says we can grow tomatoes, carrots, and pumpkins.",
+        jumbled: ["Grandpa", "straw", "under", "tomatoes,", "can", "and", "hat", "we", "says", "grow", "and", "smiles", "pumpkins.", "carrots,", "his"],
       },
       {
         target: "I have never grown anything before, but Grandpa promises to teach me everything step by step.",
@@ -82,16 +82,16 @@ export const CHAPTERS = [
         jumbled: ["hole", "to", "deep", "a", "Grandpa", "just", "make", "me", "enough", "seed.", "small", "how", "with", "the", "in", "for", "my", "soil", "shows", "a", "finger,"],
       },
       {
-        target: "“Not too deep, or the seed won't be able to grow,” he explains carefully.",
-        jumbled: ["seed", "“Not", "the", "be", "too", "won't", "deep,", "explains", "to", "he", "or", "carefully.", "grow,”", "able"],
+        target: "My hands get a little muddy, but I don't mind at all.",
+        jumbled: ["I", "don't", "all.", "little", "My", "muddy,", "mind", "a", "hands", "at", "but", "get"],
       },
       {
         target: "I drop a tiny tomato seed into each hole and gently cover it with soft dirt.",
         jumbled: ["gently", "hole", "with", "tomato", "dirt.", "drop", "tiny", "each", "seed", "I", "and", "a", "cover", "soft", "into", "it"],
       },
       {
-        target: "“How long until it grows?” I ask eagerly.",
-        jumbled: ["until", "I", "eagerly.", "long", "“How", "grows?”", "ask", "it"],
+        target: "I ask eagerly how long it takes to grow.",
+        jumbled: ["takes", "long", "eagerly", "to", "ask", "how", "it", "I", "grow."],
       },
       {
         target: "We plant an entire row together, and I already feel a strange excitement about watching something grow from nothing.",
@@ -132,8 +132,8 @@ export const CHAPTERS = [
         jumbled: ["water", "each", "careful", "pour", "over", "not", "underneath.", "the", "I", "gently", "to", "seeds", "tiny", "drown", "row,"],
       },
       {
-        target: "“You're becoming a real gardener, Theo,” Grandpa says, watching me from his porch chair.",
-        jumbled: ["“You're", "Grandpa", "his", "chair.", "me", "real", "a", "Theo,”", "gardener,", "watching", "becoming", "from", "porch", "says,"],
+        target: "Grandpa watches me from his porch chair and says I am becoming a real gardener.",
+        jumbled: ["real", "porch", "says", "gardener.", "Grandpa", "me", "from", "becoming", "and", "am", "a", "chair", "watches", "his", "I"],
       },
       {
         target: "It becomes part of my daily routine, and I actually start looking forward to this quiet time in the garden.",
@@ -166,16 +166,16 @@ export const CHAPTERS = [
         jumbled: ["I", "nothing", "at", "soil,", "the", "happening", "stare", "but", "be", "all.", "to", "at", "seems"],
       },
       {
-        target: "“I don't see anything growing yet,” I complain, feeling frustrated.",
-        jumbled: ["“I", "see", "yet,”", "I", "feeling", "don't", "frustrated.", "complain,", "growing", "anything"],
+        target: "Grandpa chuckles softly and sits down beside me.",
+        jumbled: ["chuckles", "Grandpa", "sits", "me.", "beside", "softly", "down", "and"],
       },
       {
-        target: "“Nothing worth having comes quickly, Theo,” he says gently.",
-        jumbled: ["gently.", "Theo,”", "he", "having", "comes", "worth", "“Nothing", "says", "quickly,"],
+        target: "Grandpa gently says that nothing worth having comes quickly.",
+        jumbled: ["Grandpa", "nothing", "comes", "gently", "worth", "that", "quickly.", "says", "having"],
       },
       {
-        target: "“Plants grow underground first, where we cannot see them.”",
-        jumbled: ["we", "“Plants", "grow", "see", "underground", "them.”", "first,", "where", "cannot"],
+        target: "He says that plants grow underground first, where we cannot see them.",
+        jumbled: ["that", "first,", "says", "grow", "He", "see", "we", "underground", "where", "plants", "cannot", "them."],
       },
       {
         target: "Grandpa reminds me that even though I cannot see progress, the seeds are working hard beneath the surface every single day.",
@@ -212,8 +212,8 @@ export const CHAPTERS = [
         jumbled: ["up", "tiny", "is", "A", "sprout", "soil.", "the", "poking", "green", "through"],
       },
       {
-        target: "“Grandpa! Grandpa! Come look!” I shout excitedly, waving my arms.",
-        jumbled: ["Come", "arms.", "I", "waving", "Grandpa!", "my", "excitedly,", "“Grandpa!", "look!”", "shout"],
+        target: "But this time, something is different!",
+        jumbled: ["this", "something", "is", "But", "time,", "different!"],
       },
       {
         target: "He hurries over and kneels beside me, a proud smile spreading across his face.",
@@ -250,16 +250,16 @@ export const CHAPTERS = [
         jumbled: ["vegetables.", "days", "I", "neat", "plants", "few", "our", "A", "of", "between", "notice", "growing", "rows", "strange", "later,"],
       },
       {
-        target: "“What are these?” I ask, pointing at the tall, spiky green plants.",
-        jumbled: ["I", "tall,", "“What", "these?”", "ask,", "pointing", "the", "green", "plants.", "at", "are", "spiky"],
+        target: "I point at the tall, spiky green plants and ask what they are.",
+        jumbled: ["the", "what", "are.", "tall,", "plants", "at", "I", "spiky", "green", "and", "they", "ask", "point"],
       },
       {
-        target: "“Those are weeds,” Grandpa explains.",
-        jumbled: ["weeds,”", "explains.", "“Those", "Grandpa", "are"],
+        target: "Grandpa explains that those plants are weeds.",
+        jumbled: ["plants", "are", "those", "weeds.", "that", "explains", "Grandpa"],
       },
       {
-        target: "“They steal water and sunlight from our real plants, so we need to remove them, Theo.”",
-        jumbled: ["water", "to", "real", "steal", "from", "plants,", "remove", "“They", "we", "and", "them,", "Theo.”", "so", "sunlight", "need", "our"],
+        target: "He explains that weeds steal water and sunlight from our real plants.",
+        jumbled: ["our", "He", "sunlight", "water", "explains", "steal", "that", "real", "and", "plants.", "weeds", "from"],
       },
       {
         target: "My hands get dirty and a little tired, but I understand that taking care of a garden means solving problems as they appear, not just planting and waiting.",
@@ -292,12 +292,12 @@ export const CHAPTERS = [
         jumbled: ["leaf.", "black", "red", "bug", "spot", "spots", "I", "with", "a", "a", "on", "resting", "small"],
       },
       {
-        target: "“Should I remove this too?” I ask, worried it might be harmful.",
-        jumbled: ["it", "worried", "harmful.", "be", "“Should", "this", "too?”", "remove", "I", "might", "ask,", "I"],
+        target: "Grandpa leans in closer and shakes his head.",
+        jumbled: ["in", "Grandpa", "leans", "his", "shakes", "and", "head.", "closer"],
       },
       {
-        target: "“That's a ladybug, Theo. She actually eats the bad bugs that damage our plants,” he explains.",
-        jumbled: ["eats", "a", "the", "Theo.", "actually", "damage", "explains.", "“That's", "bad", "he", "plants,”", "our", "that", "ladybug,", "bugs", "She"],
+        target: "I realize gardening requires paying close attention to small details.",
+        jumbled: ["attention", "I", "to", "requires", "close", "paying", "gardening", "details.", "small", "realize"],
       },
       {
         target: "I learn that not every bug in the garden is a problem; some of them are actually helpful friends.",
@@ -334,12 +334,12 @@ export const CHAPTERS = [
         jumbled: ["sees", "working", "curiously.", "over", "afternoon,", "and", "One", "the", "in", "garden", "me", "walks", "Ivy", "my", "neighbor"],
       },
       {
-        target: "“Can I help too, Theo?” she asks, peeking through the fence.",
-        jumbled: ["I", "help", "Theo?”", "too,", "“Can", "asks,", "peeking", "she", "the", "through", "fence."],
+        target: "She peeks through the fence and asks if she can help too.",
+        jumbled: ["can", "the", "She", "she", "too.", "and", "peeks", "if", "through", "fence", "asks", "help"],
       },
       {
-        target: "“Of course!” I say happily, showing her how to water the plants correctly.",
-        jumbled: ["her", "correctly.", "course!”", "showing", "say", "happily,", "“Of", "the", "to", "water", "I", "plants", "how"],
+        target: "I happily say yes and show her how to water the plants.",
+        jumbled: ["the", "plants.", "water", "I", "say", "and", "her", "show", "yes", "how", "happily", "to"],
       },
       {
         target: "Grandpa gives Ivy her own small trowel, and together we plant colorful flowers along the garden's edge.",
@@ -376,8 +376,8 @@ export const CHAPTERS = [
         jumbled: ["news.", "Weeks", "exciting", "Grandpa", "announces", "later,"],
       },
       {
-        target: "“I think it's time to harvest our vegetables, Theo,” he says with a wide smile.",
-        jumbled: ["it's", "says", "time", "Theo,”", "a", "vegetables,", "he", "our", "harvest", "smile.", "with", "to", "wide", "“I", "think"],
+        target: "Grandpa smiles widely and says it is time to harvest our vegetables.",
+        jumbled: ["harvest", "it", "says", "to", "smiles", "Grandpa", "our", "time", "vegetables.", "and", "is", "widely"],
       },
       {
         target: "We walk through the garden together, and I can hardly believe how much everything has grown.",
@@ -422,8 +422,8 @@ export const CHAPTERS = [
         jumbled: ["the", "delicious", "invite", "and", "praises", "to", "everyone", "homegrown", "meal,", "vegetables", "We", "share", "taste.", "how", "family", "over", "Ivy's"],
       },
       {
-        target: "“We should share some with the neighbors too, Theo,” Grandpa suggests, and I happily agree, filling small bags with extra vegetables.",
-        jumbled: ["agree,", "some", "the", "too,", "happily", "with", "filling", "should", "extra", "Grandpa", "I", "with", "suggests,", "Theo,”", "bags", "vegetables.", "share", "neighbors", "small", "and", "“We"],
+        target: "Grandpa suggests sharing some vegetables with the neighbors, and I happily agree.",
+        jumbled: ["agree.", "sharing", "happily", "I", "some", "Grandpa", "with", "vegetables", "and", "neighbors,", "the", "suggests"],
       },
       {
         target: "Walking around the neighborhood delivering our garden's gifts makes me feel proud and generous.",

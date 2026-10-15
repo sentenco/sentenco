@@ -83,12 +83,12 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Suddenly, an announcement crackles over the speakers, and I catch the word “delay” before fully understanding the rest.",
-        jumbled: ["catch", "over", "crackles", "the", "and", "fully", "announcement", "an", "before", "the", "“delay”", "rest.", "word", "speakers,", "I", "understanding", "the", "Suddenly,"],
+        target: "Suddenly, an announcement crackles over the speakers, and I hear that there is a delay.",
+        jumbled: ["is", "an", "over", "announcement", "I", "Suddenly,", "the", "there", "hear", "a", "crackles", "speakers,", "that", "and", "delay."],
       },
       {
-        target: "My phone buzzes with an alert from the airline's app: “Daniel, your flight status has changed.”",
-        jumbled: ["changed.”", "app:", "phone", "flight", "alert", "with", "buzzes", "an", "My", "airline's", "your", "status", "the", "has", "“Daniel,", "from"],
+        target: "My phone buzzes with an alert from the airline app about my flight status.",
+        jumbled: ["flight", "about", "my", "the", "airline", "buzzes", "My", "an", "status.", "alert", "from", "app", "phone", "with"],
       },
       {
         target: "Looking up at the departures board, I notice my flight's status has changed from on time to a new, later departure.",
@@ -135,12 +135,12 @@ export const CHAPTERS = [
         jumbled: ["more", "could", "about", "this", "I", "an", "that", "delay.", "and", "me", "event", "she", "the", "important", "explain", "ask", "whether", "for", "I", "have", "tonight", "tell", "reason"],
       },
       {
-        target: "“I'm sorry, Daniel, it's a mechanical issue our maintenance crew is checking right now,” she explains.",
-        jumbled: ["our", "is", "it's", "sorry,", "Daniel,", "right", "mechanical", "explains.", "issue", "a", "crew", "she", "maintenance", "now,”", "“I'm", "checking"],
+        target: "She says she is sorry and explains that it is a mechanical issue.",
+        jumbled: ["that", "a", "explains", "it", "mechanical", "says", "and", "sorry", "She", "issue.", "is", "she", "is"],
       },
       {
-        target: "“Would it be possible to know roughly how long this might take?” I ask, trying to sound polite despite my growing worry.",
-        jumbled: ["“Would", "my", "know", "this", "how", "take?”", "long", "despite", "trying", "possible", "to", "polite", "might", "it", "to", "I", "roughly", "worry.", "ask,", "growing", "sound", "be"],
+        target: "I politely ask if she knows how long this might take.",
+        jumbled: ["I", "she", "knows", "how", "politely", "take.", "might", "ask", "long", "if", "this"],
       },
       {
         target: "She mentions it's currently estimated at two hours, though she admits that number could still change slightly.",
@@ -187,8 +187,8 @@ export const CHAPTERS = [
         jumbled: ["situation", "my", "certain", "than", "explaining", "deliver.", "text", "I'm", "not", "honestly", "the", "sister,", "promising", "actually", "I", "rather", "something", "I", "can"],
       },
       {
-        target: "“Don't stress, Daniel, family will understand if you're a little late,” she replies quickly.",
-        jumbled: ["will", "she", "Daniel,", "replies", "“Don't", "family", "a", "understand", "quickly.", "little", "late,”", "if", "stress,", "you're"],
+        target: "She replies quickly that family will understand if I am a little late.",
+        jumbled: ["She", "that", "late.", "replies", "I", "family", "a", "understand", "quickly", "if", "am", "will", "little"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about explaining an honest situation instead of making an uncertain promise.",
@@ -231,8 +231,8 @@ export const CHAPTERS = [
         jumbled: ["and", "over", "could", "flights", "are", "I", "walk", "Kwan", "I", "there", "ask", "Ms.", "be", "possibly", "rebooked", "onto.", "alternative", "any", "whether", "calmly", "Instead,"],
       },
       {
-        target: "“Let me check for you, Daniel, one moment,” she says, checking her system thoroughly and mentioning that one earlier connecting option might actually still be available.",
-        jumbled: ["might", "option", "mentioning", "available.", "“Let", "that", "she", "one", "and", "check", "her", "moment,”", "you,", "one", "thoroughly", "be", "earlier", "for", "checking", "connecting", "me", "Daniel,", "says,", "still", "actually", "system"],
+        target: "Kwan whether there are any alternative flights I could possibly be rebooked onto.",
+        jumbled: ["are", "alternative", "be", "onto.", "Kwan", "possibly", "rebooked", "could", "I", "any", "flights", "there", "whether"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about staying calm even when frustrated by a longer wait.",
@@ -267,8 +267,8 @@ export const CHAPTERS = [
         jumbled: ["layover,", "along", "a", "check", "slightly", "security", "and", "involve", "more", "one", "would", "additional", "the", "way.", "which", "walking", "means", "However,", "it"],
       },
       {
-        target: "“If you're comfortable with that, Daniel, I could rebook you right now before the seats fill up,” she offers helpfully.",
-        jumbled: ["could", "comfortable", "that,", "before", "helpfully.", "now", "“If", "I", "you're", "rebook", "right", "you", "Daniel,", "offers", "up,”", "with", "fill", "she", "the", "seats"],
+        target: "She helpfully offers to rebook me right now before the seats fill up.",
+        jumbled: ["rebook", "seats", "fill", "the", "She", "me", "before", "now", "right", "to", "offers", "helpfully", "up."],
       },
       {
         target: "Weighing my options quickly, I decide the layover route sounds considerably better than possibly missing tonight's dinner altogether.",
@@ -315,8 +315,8 @@ export const CHAPTERS = [
         jumbled: ["check", "could", "security", "been.", "quickly,", "the", "the", "thankful", "it", "additional", "through", "as", "isn't", "pass", "have", "way,", "Along", "long", "as", "I", "line", "the"],
       },
       {
-        target: "Arriving at the gate slightly out of breath, I hear my name over the speaker, “Daniel, final boarding call,” which means I made it with time to spare.",
-        jumbled: ["“Daniel,", "which", "hear", "name", "the", "with", "final", "spare.", "it", "to", "my", "Arriving", "means", "I", "call,”", "boarding", "the", "made", "slightly", "over", "I", "at", "breath,", "speaker,", "gate", "time", "out", "of"],
+        target: "I arrive at the gate out of breath and hear my name in the final boarding call.",
+        jumbled: ["of", "the", "I", "gate", "call.", "my", "the", "and", "final", "hear", "out", "in", "arrive", "name", "boarding", "at", "breath"],
       },
       {
         target: "Settling into my seat moments later, I finally allow myself to relax just a little.",
@@ -351,8 +351,8 @@ export const CHAPTERS = [
         jumbled: ["new", "revised", "time.", "text", "my", "flight", "sister,", "arrival", "quickly", "my", "her", "I", "updating", "on", "and"],
       },
       {
-        target: "“Perfect timing, Daniel, see you soon!” she replies, saying the timing should now work out perfectly for the rehearsal dinner.",
-        jumbled: ["the", "see", "soon!”", "dinner.", "she", "should", "rehearsal", "timing", "the", "Daniel,", "now", "saying", "for", "replies,", "perfectly", "“Perfect", "timing,", "you", "work", "out"],
+        target: "She replies that the timing should now work out for the rehearsal dinner.",
+        jumbled: ["She", "out", "dinner.", "rehearsal", "should", "replies", "for", "work", "now", "timing", "the", "that", "the"],
       },
       {
         target: "I put my phone away as the flight attendants begin their final safety announcements before departure.",
@@ -399,8 +399,8 @@ export const CHAPTERS = [
         jumbled: ["spots", "over", "with", "immediately,", "clearly", "happy", "made", "rushing", "My", "sister", "a", "I", "relieved", "hug,", "it", "me", "everything.", "despite"],
       },
       {
-        target: "“I can't believe you actually made it, Daniel! I was honestly a little worried,” she admits, laughing with relief.",
-        jumbled: ["“I", "was", "laughing", "believe", "made", "admits,", "a", "relief.", "you", "it,", "worried,”", "Daniel!", "can't", "little", "I", "she", "with", "honestly", "actually"],
+        target: "She laughs with relief and admits she was a little worried.",
+        jumbled: ["a", "relief", "She", "and", "with", "admits", "laughs", "little", "was", "worried.", "she"],
       },
       {
         target: "I explain the whole delay, rebooking, and rushing through the airport, and she just shakes her head, amused.",
@@ -435,8 +435,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Later that night, I save a quick note in my phone, “Daniel: always ask, don't assume,” and reflect on how differently the entire day could have gone without a bit of flexibility.",
-        jumbled: ["my", "could", "how", "I", "night,", "differently", "note", "bit", "ask,", "reflect", "don't", "day", "quick", "gone", "entire", "a", "and", "always", "phone,", "of", "without", "the", "assume,”", "in", "flexibility.", "on", "“Daniel:", "save", "have", "a", "Later", "that"],
+        target: "Later that night, I save a quick note in my phone about what I learned.",
+        jumbled: ["I", "that", "save", "I", "in", "quick", "about", "my", "Later", "a", "night,", "what", "learned.", "phone", "note"],
       },
       {
         target: "I might have genuinely missed tonight's dinner entirely.",

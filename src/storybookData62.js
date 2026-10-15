@@ -47,8 +47,8 @@ export const CHAPTERS = [
         jumbled: ["is", "the", "double", "total", "pay,", "what", "Instead,", "rather", "I", "catches", "normally", "which", "my", "attention", "sharply.", "immediately", "nearly"],
       },
       {
-        target: "Scanning the itemized list, I notice an unfamiliar charge labeled simply as a “service adjustment fee.”",
-        jumbled: ["charge", "adjustment", "simply", "a", "notice", "labeled", "the", "as", "“service", "list,", "itemized", "fee.”", "I", "unfamiliar", "an", "Scanning"],
+        target: "Scanning the itemized list, I notice an unfamiliar charge called a service adjustment fee.",
+        jumbled: ["called", "a", "service", "itemized", "notice", "adjustment", "the", "unfamiliar", "Scanning", "fee.", "charge", "I", "an", "list,"],
       },
       {
         target: "I don't recall requesting any special service recently, so this label makes very little sense to me.",
@@ -99,8 +99,8 @@ export const CHAPTERS = [
         jumbled: ["from", "finally", "A", "support.", "Renata", "billing", "introducing", "friendly", "herself", "as", "voice", "answers,"],
       },
       {
-        target: "She asks for my name, and I tell her, “Tobias,” before explaining briefly that I'm calling about an unfamiliar charge on this month's statement.",
-        jumbled: ["“Tobias,”", "that", "unfamiliar", "this", "tell", "her,", "I'm", "I", "She", "calling", "charge", "and", "before", "month's", "briefly", "name,", "my", "for", "explaining", "statement.", "on", "asks", "an", "about"],
+        target: "She asks for my name, and I explain that I am calling about an unfamiliar charge.",
+        jumbled: ["name,", "my", "unfamiliar", "that", "about", "explain", "for", "an", "asks", "charge.", "am", "She", "I", "I", "calling", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about waiting on hold before speaking to customer service.",
@@ -131,8 +131,8 @@ export const CHAPTERS = [
         jumbled: ["the", "for", "asks", "Renata", "patiently", "its", "while", "amount", "aloud.", "charge", "I", "and", "unfamiliar", "account", "read", "then", "waits", "number,", "my", "exact"],
       },
       {
-        target: "“I see the charge you're referring to, Tobias. Let me look into what generated this on our end,” she says calmly.",
-        jumbled: ["into", "see", "on", "generated", "the", "you're", "me", "end,”", "Let", "charge", "this", "“I", "our", "what", "referring", "to,", "she", "Tobias.", "look", "calmly.", "says"],
+        target: "She says calmly that she sees the charge and will look into it.",
+        jumbled: ["calmly", "that", "look", "she", "will", "and", "the", "charge", "into", "sees", "She", "says", "it."],
       },
       {
         target: "I mention that I haven't requested any additional services or changes recently, as far as I remember.",
@@ -179,8 +179,8 @@ export const CHAPTERS = [
         jumbled: ["service.", "routine", "visited", "address", "month,", "billed", "technician", "as", "a", "a", "had", "was", "my", "Apparently,", "extra", "last", "an", "mistakenly", "and", "equipment", "check"],
       },
       {
-        target: "“This shouldn't have been charged at all, Tobias, and I sincerely apologize for the confusion,” she explains directly.",
-        jumbled: ["she", "have", "explains", "charged", "been", "the", "shouldn't", "at", "all,", "confusion,”", "I", "Tobias,", "sincerely", "apologize", "and", "“This", "directly.", "for"],
+        target: "She directly explains that this should not have been charged and apologizes.",
+        jumbled: ["explains", "charged", "that", "been", "should", "apologizes.", "this", "She", "directly", "not", "have", "and"],
       },
       {
         target: "I ask whether this means the entire charge will simply be removed from my account completely.",
@@ -223,8 +223,8 @@ export const CHAPTERS = [
         jumbled: ["summary", "me", "She", "along", "one", "with", "also", "says", "will", "written", "immediately,", "be", "provides", "shortly.", "she", "emailed", "a", "brief", "to", "that"],
       },
       {
-        target: "“Is there anything else I can help clarify about your account today, Tobias?” she asks politely before we finish.",
-        jumbled: ["“Is", "finish.", "today,", "there", "I", "clarify", "asks", "account", "we", "before", "she", "can", "anything", "help", "about", "else", "Tobias?”", "your", "politely"],
+        target: "She politely asks if there is anything else she can clarify.",
+        jumbled: ["clarify.", "politely", "She", "there", "is", "if", "can", "anything", "asks", "she", "else"],
       },
       {
         target: "I mention that everything else on the bill looks correct, so this was genuinely the only issue I had.",
@@ -259,8 +259,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Later that evening, exactly as promised, an email arrives, opening simply with “Dear Tobias,” confirming everything Renata explained during our phone call.",
-        jumbled: ["evening,", "as", "explained", "Tobias,”", "opening", "call.", "“Dear", "during", "arrives,", "everything", "simply", "our", "confirming", "email", "Later", "promised,", "Renata", "exactly", "that", "phone", "an", "with"],
+        target: "Later that evening, as promised, an email arrives confirming everything Renata explained.",
+        jumbled: ["explained.", "arrives", "Later", "evening,", "confirming", "email", "an", "as", "promised,", "Renata", "that", "everything"],
       },
       {
         target: "The message includes the confirmation number, a brief explanation of the error, and the corrected amount going forward.",
@@ -363,8 +363,8 @@ export const CHAPTERS = [
         jumbled: ["the", "quietly", "that", "never", "for", "means", "was", "other", "something", "correct.", "staying", "just", "silent", "On", "hand,", "overpaying", "actually", "usually"],
       },
       {
-        target: "“Well, Tobias, at least you got your money back,” she laughs, saying she'll probably start double-checking her own bills a little more carefully from now on.",
-        jumbled: ["more", "bills", "least", "got", "probably", "own", "money", "start", "her", "back,”", "“Well,", "at", "a", "she", "now", "little", "double-checking", "carefully", "you", "your", "laughs,", "Tobias,", "saying", "from", "she'll", "on."],
+        target: "She laughs and says that at least I got my money back.",
+        jumbled: ["I", "least", "that", "back.", "my", "at", "and", "got", "money", "says", "She", "laughs"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about encouraging someone to question a bill that looks wrong.",
@@ -399,8 +399,8 @@ export const CHAPTERS = [
         jumbled: ["takes", "extra", "though", "more", "It", "about", "each", "gives", "of", "my", "overall.", "finances", "minutes", "genuinely", "only", "confidence", "couple", "month,", "it", "me", "a"],
       },
       {
-        target: "I've created a simple folder, labeled “Tobias — Bills,” where I keep confirmation numbers and emails, just in case something similar happens again.",
-        jumbled: ["Bills,”", "labeled", "“Tobias", "where", "folder,", "case", "I've", "I", "simple", "again.", "—", "similar", "numbers", "emails,", "in", "just", "happens", "keep", "confirmation", "created", "something", "a", "and"],
+        target: "I have created a simple folder where I keep confirmation numbers and emails.",
+        jumbled: ["a", "keep", "folder", "confirmation", "simple", "where", "emails.", "numbers", "have", "created", "I", "I", "and"],
       },
       {
         target: "Having the habit itself feels reassuring rather than tedious or unnecessary.",
@@ -435,8 +435,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Looking back on the entire situation, I add one more note inside the folder, “Tobias: always ask,” and realize how easily I could have simply paid the incorrect charge without questioning it at all.",
-        jumbled: ["charge", "back", "without", "I", "the", "“Tobias:", "and", "it", "more", "folder,", "entire", "easily", "how", "have", "note", "the", "could", "always", "questioning", "all.", "ask,”", "paid", "incorrect", "situation,", "I", "on", "Looking", "add", "the", "at", "simply", "inside", "one", "realize"],
+        target: "Looking back, I add one more note inside the folder to always ask.",
+        jumbled: ["more", "to", "back,", "add", "note", "one", "Looking", "ask.", "folder", "I", "the", "inside", "always"],
       },
       {
         target: "I would have quietly overpaid for a mistake that wasn't even mine.",

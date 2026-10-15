@@ -139,8 +139,8 @@ export const CHAPTERS = [
         jumbled: ["walk", "surprises", "and", "Thursday", "me", "more", "arrives,", "Delacroix's", "prepared", "Mr.", "feeling", "somewhat.", "into", "than", "which", "office", "nervous,", "I"],
       },
       {
-        target: "\"Naomi, come in, please sit down,\" he says, gesturing to the chair across from his desk.",
-        jumbled: ["the", "says,", "from", "to", "he", "his", "chair", "desk.", "down,\"", "in,", "across", "\"Naomi,", "gesturing", "come", "please", "sit"],
+        target: "Delacroix's office feeling more prepared than nervous, which surprises me somewhat.",
+        jumbled: ["office", "prepared", "me", "more", "nervous,", "somewhat.", "which", "than", "feeling", "surprises", "Delacroix's"],
       },
       {
         target: "I open by thanking him for his time, then present my case clearly, referencing the projects and metrics I'd compiled.",
@@ -187,8 +187,8 @@ export const CHAPTERS = [
         jumbled: ["smaller", "with", "this,", "perhaps", "immediate", "review", "months", "paired", "a", "He", "suggesting", "six", "a", "increase", "instead.", "considers", "in", "scheduled"],
       },
       {
-        target: "\"Let's find something that works for both of us, Naomi,\" he adds.",
-        jumbled: ["\"Let's", "both", "that", "of", "for", "adds.", "us,", "Naomi,\"", "works", "he", "find", "something"],
+        target: "He adds that we should find something that works for both of us.",
+        jumbled: ["find", "us.", "both", "that", "something", "that", "adds", "for", "we", "should", "works", "He", "of"],
       },
       {
         target: "I acknowledge this compromise seems reasonable, though I ask whether the six-month review could be formalized in writing.",
@@ -235,8 +235,8 @@ export const CHAPTERS = [
         jumbled: ["he,", "thanks", "thank", "openness,", "than", "me", "emotionally.", "his", "conversation", "for", "in", "approaching", "for", "professionally", "him", "rather", "the", "and", "turn,", "I"],
       },
       {
-        target: "You handled this well,\" he says, shaking my hand.",
-        jumbled: ["says,", "my", "hand.", "shaking", "handled", "You", "this", "he", "well,\""],
+        target: "This experience, I realize, has taught me something valuable about advocating for myself constructively.",
+        jumbled: ["about", "constructively.", "taught", "I", "This", "has", "for", "realize,", "something", "me", "valuable", "experience,", "myself", "advocating"],
       },
       {
         target: "Leaving his office, I feel genuinely proud, not just of the outcome, but of how I'd managed the entire negotiation.",
@@ -319,8 +319,8 @@ export const CHAPTERS = [
         jumbled: ["a", "schedule", "it.", "similar", "too", "but", "considering", "conversation", "admits", "has", "She", "to", "herself", "actually", "intimidated", "she's", "been", "felt"],
       },
       {
-        target: "\"How did you even start, Naomi?\" she asks, leaning in.",
-        jumbled: ["start,", "in.", "did", "\"How", "you", "she", "even", "asks,", "Naomi?\"", "leaning"],
+        target: "She leans in and asks how I even started.",
+        jumbled: ["asks", "started.", "and", "even", "in", "I", "how", "leans", "She"],
       },
       {
         target: "I explain that preparation made the biggest difference, since walking in with data rather than emotion changed the entire dynamic.",
@@ -367,8 +367,8 @@ export const CHAPTERS = [
         jumbled: ["additional", "He", "take", "discussed", "reviews", "starting", "indeed", "will", "everything", "month.", "carefully,", "next", "we'd", "the", "that", "confirms", "effect", "raise", "then"],
       },
       {
-        target: "\"Well done, Naomi,\" he adds, closing the folder.",
-        jumbled: ["\"Well", "adds,", "folder.", "he", "the", "Naomi,\"", "done,", "closing"],
+        target: "Delacroix schedules the promised review meeting to reassess my compensation once again.",
+        jumbled: ["schedules", "compensation", "my", "to", "the", "again.", "reassess", "Delacroix", "promised", "meeting", "once", "review"],
       },
       {
         target: "I thank him, noting how much I'd appreciated that this agreement was actually honored rather than quietly forgotten over time.",
@@ -403,8 +403,8 @@ export const CHAPTERS = [
         jumbled: ["I'd", "secondhand,", "asks", "A", "if", "compensation", "experience", "colleague,", "upcoming", "for", "heard", "conversation.", "own", "help", "about", "having", "junior", "my", "her", "her", "prepare"],
       },
       {
-        target: "\"Naomi, do you have a few minutes?",
-        jumbled: ["have", "\"Naomi,", "minutes?", "you", "few", "do", "a"],
+        target: "She asks me if I have a few minutes.",
+        jumbled: ["I", "asks", "few", "She", "me", "minutes.", "a", "if", "have"],
       },
       {
         target: "I agree, walking her through how I'd compiled evidence, researched salary ranges, and anticipated potential pushback beforehand.",

@@ -100,8 +100,8 @@ export const CHAPTERS = [
         jumbled: ["out", "feel", "last", "helped", "them", "she'd", "reached", "year,", "saying", "when", "her", "that", "own", "She", "experience", "shared", "classmates", "mentions", "several", "privately,", "less", "had", "difficult", "alone.", "it"],
       },
       {
-        target: "“You should really consider it, Farah,” she says.",
-        jumbled: ["really", "consider", "“You", "says.", "Farah,”", "it,", "she", "should"],
+        target: "She says that I should really consider it.",
+        jumbled: ["says", "She", "should", "that", "I", "really", "it.", "consider"],
       },
       {
         target: "Dahlia argues that staying silent out of fear only reinforces the stigma surrounding mental health that we're supposedly trying to fight.",
@@ -144,8 +144,8 @@ export const CHAPTERS = [
         jumbled: ["only", "vulnerable", "have", "it", "during", "to", "process", "a", "ago,", "who'd", "He", "years", "cousin", "resurface", "college", "later.", "mentions", "unexpectedly", "shared", "a", "something", "application"],
       },
       {
-        target: "“Just think it through carefully, Farah,” he says.",
-        jumbled: ["“Just", "he", "think", "carefully,", "says.", "Farah,”", "it", "through"],
+        target: "He says that I should think it through carefully.",
+        jumbled: ["think", "should", "He", "carefully.", "I", "it", "says", "that", "through"],
       },
       {
         target: "Colin isn't against sharing exactly, but he questions whether a public post is genuinely necessary compared to more private, controlled alternatives.",
@@ -192,8 +192,8 @@ export const CHAPTERS = [
         jumbled: ["to", "feels", "accept.", "Neither", "willing", "is", "which", "question", "risk", "real", "I'm", "right,", "exactly,", "personally", "perspective", "but", "wrong", "means", "friend", "which", "the", "isn't", "which"],
       },
       {
-        target: "Okay, Farah, it's not about who's right, I think, underlining the word “risk” in my notes.",
-        jumbled: ["the", "Okay,", "about", "I", "underlining", "in", "think,", "word", "“risk”", "right,", "notes.", "it's", "my", "who's", "Farah,", "not"],
+        target: "I think that it is not about who is right, and I underline a word in my notes.",
+        jumbled: ["it", "underline", "and", "about", "I", "think", "is", "a", "is", "my", "that", "I", "word", "in", "right,", "who", "not", "notes."],
       },
     ],
     mySentencePrompt: "Write or say one sentence about realizing two friends' different opinions weren't actually contradicting each other.",
@@ -276,8 +276,8 @@ export const CHAPTERS = [
         jumbled: ["permanence", "threatening.", "this", "agrees", "feel", "significantly", "risk", "that", "since", "trusted", "the", "Colin", "he'd", "circles", "screenshots", "worried", "about,", "reduces", "less", "within"],
       },
       {
-        target: "“This could work, Farah,” Colin says, managing a small smile.",
-        jumbled: ["Colin", "says,", "work,", "could", "managing", "small", "a", "Farah,”", "“This", "smile."],
+        target: "Colin manages a small smile and says this could work.",
+        jumbled: ["small", "this", "work.", "says", "Colin", "manages", "smile", "and", "could", "a"],
       },
       {
         target: "Watching them both nod, even hesitantly, I feel like I've finally found something workable rather than choosing between two extremes.",
@@ -408,8 +408,8 @@ export const CHAPTERS = [
         jumbled: ["than", "the", "that", "rather", "Colin", "somewhat", "perspective", "admits", "actual", "shifts", "worst-case", "Dahlia's", "toward", "just", "scenarios,", "optimism.", "imagining", "seeing", "outcome,", "his"],
       },
       {
-        target: "“I'm glad you told us, Farah,” he adds.",
-        jumbled: ["you", "Farah,”", "told", "“I'm", "adds.", "us,", "glad", "he"],
+        target: "He adds that he is glad I told them.",
+        jumbled: ["told", "he", "is", "that", "them.", "adds", "I", "glad", "He"],
       },
       {
         target: "Neither fully abandons their original view, but both seem more willing to hold space for the other's perspective now.",

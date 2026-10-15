@@ -186,8 +186,8 @@ export const CHAPTERS = [
         jumbled: ["damage", "he'd", "he", "meant", "hadn't", "sharing", "defensive,", "what", "any", "initially", "heard.", "seems", "simply", "insisting", "by", "real", "Otis"],
       },
       {
-        target: "“Come on, Malik, I didn't mean anything by it,” he says defensively.",
-        jumbled: ["he", "says", "anything", "Malik,", "on,", "didn't", "I", "“Come", "by", "defensively.", "it,”", "mean"],
+        target: "He says defensively that he did not mean anything by it.",
+        jumbled: ["he", "did", "He", "says", "that", "anything", "by", "not", "it.", "defensively", "mean"],
       },
       {
         target: "However, as I continue explaining Beatriz's likely perspective, his expression gradually shifts from defensiveness toward genuine discomfort instead.",
@@ -226,8 +226,8 @@ export const CHAPTERS = [
         jumbled: ["she's", "considered", "the", "week.", "this", "coming", "genuinely", "all", "not", "to", "She", "admits", "messages", "seen", "had", "at", "and", "school"],
       },
       {
-        target: "“I almost didn't come in today, Malik,” she admits quietly.",
-        jumbled: ["today,", "didn't", "come", "“I", "quietly.", "she", "in", "admits", "Malik,”", "almost"],
+        target: "She quietly admits that she almost did not come in today.",
+        jumbled: ["She", "did", "she", "not", "quietly", "in", "admits", "that", "today.", "come", "almost"],
       },
       {
         target: "I apologize on behalf of the group chat generally, even though I hadn't personally spread the original claim myself.",
@@ -266,8 +266,8 @@ export const CHAPTERS = [
         jumbled: ["necessary,", "agree", "correction", "the", "that", "in", "rumor", "I", "publicly", "the", "public", "Otis", "a", "given", "how", "group", "had", "is", "spread.", "and", "chat"],
       },
       {
-        target: "“Thanks for pushing me on this, Malik,” he says before typing.",
-        jumbled: ["this,", "he", "says", "me", "typing.", "“Thanks", "for", "pushing", "Malik,”", "on", "before"],
+        target: "He thanks me for pushing him on this before typing.",
+        jumbled: ["on", "this", "before", "me", "thanks", "pushing", "typing.", "him", "for", "He"],
       },
       {
         target: "He writes a message admitting the original claim was unverified and apologizing directly to Beatriz for the harm caused.",
@@ -314,8 +314,8 @@ export const CHAPTERS = [
         jumbled: ["though", "it", "how", "genuinely", "it", "had", "completely", "erase", "somewhat.", "felt,", "helps", "She", "week", "past", "the", "doesn't", "admits"],
       },
       {
-        target: "“It means something that you asked, Malik,” she adds.",
-        jumbled: ["something", "“It", "she", "asked,", "that", "adds.", "Malik,”", "means", "you"],
+        target: "She adds that it means something that I asked.",
+        jumbled: ["it", "asked.", "adds", "that", "that", "I", "something", "She", "means"],
       },
       {
         target: "I ask whether she thinks Otis's apology felt sincere, given everything that had happened between them.",
@@ -362,8 +362,8 @@ export const CHAPTERS = [
         jumbled: ["information", "me", "admitting", "what", "Otis", "verifying", "told", "up", "not", "publicly", "he'd", "already", "unprompted,", "first.", "privately", "about", "speaks"],
       },
       {
-        target: "“Malik already knows this,” he adds, glancing my way, “but I want everyone to hear it.”",
-        jumbled: ["want", "he", "glancing", "my", "I", "hear", "it.”", "knows", "already", "everyone", "way,", "to", "“but", "this,”", "adds,", "“Malik"],
+        target: "He glances my way and adds that he wants everyone to hear it.",
+        jumbled: ["he", "to", "everyone", "and", "my", "wants", "He", "adds", "that", "way", "glances", "hear", "it."],
       },
       {
         target: "I realize this single incident has sparked a conversation that might actually change how people behave going forward.",
@@ -402,8 +402,8 @@ export const CHAPTERS = [
         jumbled: ["Their", "neither", "seems", "happened", "the", "cautious", "conversation", "on", "nor", "incident", "pretending", "it", "constantly", "hadn't", "genuine,", "dwelling", "either.", "but"],
       },
       {
-        target: "“Sit down, Malik,” Otis says, sliding over to make room.",
-        jumbled: ["room.", "down,", "sliding", "says,", "Malik,”", "make", "“Sit", "Otis", "over", "to"],
+        target: "Otis tells me to sit down and slides over to make room.",
+        jumbled: ["sit", "Otis", "me", "room.", "to", "down", "slides", "make", "over", "and", "tells", "to"],
       },
       {
         target: "I join them, and we talk about something unrelated entirely, the ordinary kind of conversation that somehow feels meaningful given everything before it.",

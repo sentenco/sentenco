@@ -43,8 +43,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "\"Yolanda, we need your help — we can't agree on this,\" Hector and Beatrix, co-founders of a small design studio, tell me, asking me to mediate a disagreement that's been building for weeks now.",
-        jumbled: ["now.", "your", "disagreement", "—", "design", "need", "we", "this,\"", "tell", "been", "a", "me", "\"Yolanda,", "mediate", "that's", "to", "agree", "on", "can't", "Beatrix,", "for", "building", "a", "small", "we", "help", "me,", "studio,", "co-founders", "Hector", "of", "weeks", "and", "asking"],
+        target: "Hector and Beatrix, co-founders of a small design studio, ask me to mediate a disagreement.",
+        jumbled: ["small", "mediate", "ask", "and", "Beatrix,", "studio,", "me", "of", "to", "Hector", "a", "disagreement.", "co-founders", "design", "a"],
       },
       {
         target: "Hector wants to expand rapidly, taking on a large new client that would require hiring several additional employees quickly.",
@@ -91,8 +91,8 @@ export const CHAPTERS = [
         jumbled: ["this", "so", "feels", "with", "to", "to", "Hector", "curious", "I", "significant", "understand", "meet", "opportunity", "separately,", "exactly", "why", "him.", "and", "urgent", "particular"],
       },
       {
-        target: "\"Yolanda, this is the chance we've been waiting for,\" he explains, describing how this new client represents a rare chance to establish the studio as a serious competitor in a larger, more prestigious market.",
-        jumbled: ["how", "a", "chance", "waiting", "this", "been", "a", "prestigious", "chance", "as", "the", "this", "competitor", "he", "we've", "the", "more", "explains,", "rare", "establish", "client", "in", "represents", "describing", "studio", "market.", "new", "for,\"", "serious", "a", "is", "to", "larger,", "\"Yolanda,"],
+        target: "He explains that this new client is a rare chance to grow the studio.",
+        jumbled: ["client", "that", "to", "grow", "rare", "the", "He", "explains", "is", "this", "a", "studio.", "new", "chance"],
       },
       {
         target: "Moreover, he argues that hesitating too long risks losing the opportunity entirely, given how eager competitors are for similar contracts.",
@@ -135,8 +135,8 @@ export const CHAPTERS = [
         jumbled: ["projections", "similar", "require", "detailed", "conversation", "shares", "would", "expansion", "Beatrix,", "illustrating", "upfront.", "exactly", "financial", "with", "a", "who", "I", "what", "have"],
       },
       {
-        target: "\"Yolanda, look at these numbers,\" she says.",
-        jumbled: ["she", "says.", "numbers,\"", "at", "these", "look", "\"Yolanda,"],
+        target: "She tells me to look at these numbers.",
+        jumbled: ["me", "tells", "numbers.", "She", "at", "these", "look", "to"],
       },
       {
         target: "She explains that hiring several employees immediately means committing to significant fixed costs, regardless of whether the new client relationship remains stable long-term.",
@@ -235,8 +235,8 @@ export const CHAPTERS = [
         jumbled: ["core", "Beatrix's", "timeline,", "this", "concern.", "Hector", "acknowledges", "financial", "though", "slower", "genuinely", "he", "seems", "the", "slightly", "by", "disappointed", "addresses"],
       },
       {
-        target: "\"This actually feels considerably safer, Yolanda,\" Beatrix admits, than either accepting immediately or declining the opportunity entirely.",
-        jumbled: ["\"This", "admits,", "entirely.", "actually", "immediately", "feels", "declining", "the", "opportunity", "accepting", "Yolanda,\"", "safer,", "considerably", "or", "either", "Beatrix", "than"],
+        target: "Beatrix admits that this feels considerably safer than accepting or declining right away.",
+        jumbled: ["accepting", "Beatrix", "declining", "that", "or", "safer", "feels", "this", "admits", "right", "considerably", "away.", "than"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about proposing a phased plan that balanced ambition with caution.",
@@ -271,8 +271,8 @@ export const CHAPTERS = [
         jumbled: ["adjustment", "Beatrix", "the", "one", "more", "to", "make", "reserve", "language", "carefully,", "reviews", "financial", "than", "the", "proposed.", "slightly", "suggesting", "threshold", "originally", "conservative"],
       },
       {
-        target: "\"Fair enough, Yolanda — a more cautious threshold makes sense given how much this matters,\" Hector agrees.",
-        jumbled: ["given", "agrees.", "much", "sense", "enough,", "more", "this", "makes", "—", "\"Fair", "Hector", "Yolanda", "a", "cautious", "threshold", "how", "matters,\""],
+        target: "Hector agrees that a more cautious threshold makes sense.",
+        jumbled: ["sense.", "more", "threshold", "makes", "that", "agrees", "Hector", "cautious", "a"],
       },
       {
         target: "Both partners sign the document, formalizing what had begun as an unstructured, emotional disagreement into a clear, shared plan.",
@@ -367,8 +367,8 @@ export const CHAPTERS = [
         jumbled: ["that", "risk.", "prevented", "could", "the", "what", "feels", "reckless,", "have", "approach", "unmanaged", "structured", "felt", "Beatrix", "too,", "recognizing", "otherwise", "had", "like", "validated"],
       },
       {
-        target: "\"Thank you again, Yolanda, for facilitating a process that respected both of us,\" they both say, appreciating how it honored their different, yet equally legitimate, perspectives throughout.",
-        jumbled: ["say,", "\"Thank", "Yolanda,", "appreciating", "perspectives", "both", "both", "a", "different,", "honored", "us,\"", "yet", "of", "their", "process", "that", "it", "respected", "they", "how", "for", "equally", "throughout.", "facilitating", "you", "again,", "legitimate,"],
+        target: "They both thank me for a process that respected both of them.",
+        jumbled: ["for", "They", "me", "thank", "a", "that", "both", "both", "respected", "of", "process", "them."],
       },
     ],
     mySentencePrompt: "Write or say one sentence about checking progress against a plan and finding both sides felt validated.",
@@ -395,8 +395,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Several weeks later, Hector mentions to me, \"Yolanda, this experience genuinely changed how Beatrix and I approach major decisions together now.\"",
-        jumbled: ["Beatrix", "later,", "how", "together", "me,", "mentions", "this", "changed", "to", "and", "Hector", "decisions", "weeks", "genuinely", "approach", "now.\"", "I", "\"Yolanda,", "Several", "major", "experience"],
+        target: "Several weeks later, Hector mentions that this experience changed how he and Beatrix decide.",
+        jumbled: ["mentions", "decide.", "and", "this", "Hector", "later,", "weeks", "that", "how", "changed", "Beatrix", "experience", "Several", "he"],
       },
       {
         target: "Rather than each simply advocating for their instinct, they've started deliberately considering both ambition and caution as complementary, not opposing, forces.",

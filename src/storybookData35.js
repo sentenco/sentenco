@@ -42,8 +42,8 @@ export const CHAPTERS = [
         jumbled: ["her", "frantically.", "phone", "Naomi", "room", "into", "my", "bursts", "waving"],
       },
       {
-        target: "“Harper, I just bought us tickets to see them live!” she practically screams.",
-        jumbled: ["she", "“Harper,", "live!”", "us", "I", "tickets", "just", "practically", "screams.", "to", "see", "them", "bought"],
+        target: "Naomi practically screams that she just bought us tickets to see them live.",
+        jumbled: ["them", "tickets", "screams", "just", "bought", "practically", "that", "see", "Naomi", "live.", "us", "to", "she"],
       },
       {
         target: "I stare at the confirmation screen in disbelief, unable to process that we're actually going to see them perform in person next month.",
@@ -86,8 +86,8 @@ export const CHAPTERS = [
         jumbled: ["Mom", "out", "to", "tickets", "the", "turns", "buying", "without", "actually", "themselves.", "be", "attend", "more", "adult", "Convincing", "far", "than", "chaperone", "let", "difficult", "an", "us", "to"],
       },
       {
-        target: "“You've never gone anywhere that crowded without me, Harper,” she says, her forehead creasing with obvious worry as I explain our plan.",
-        jumbled: ["Harper,”", "her", "says,", "as", "creasing", "“You've", "plan.", "she", "worry", "me,", "I", "our", "that", "forehead", "obvious", "without", "with", "gone", "explain", "never", "crowded", "anywhere"],
+        target: "She worries because I have never gone anywhere so crowded without her.",
+        jumbled: ["anywhere", "her.", "because", "crowded", "gone", "I", "She", "without", "so", "never", "worries", "have"],
       },
       {
         target: "I promise repeatedly to text updates throughout the night and establish a clear, reliable meeting point for afterward.",
@@ -186,8 +186,8 @@ export const CHAPTERS = [
         jumbled: ["evening.", "to", "the", "growing", "Adding", "the", "of", "magic"],
       },
       {
-        target: "“Can you believe this, Harper?” Naomi shouts over the noise as the doors finally open and the crowd surges forward with a collective, overwhelming cheer.",
-        jumbled: ["collective,", "doors", "a", "the", "this,", "you", "surges", "shouts", "cheer.", "open", "finally", "the", "forward", "as", "“Can", "crowd", "over", "the", "Harper?”", "believe", "noise", "and", "with", "overwhelming", "Naomi"],
+        target: "Naomi shouts over the noise as the doors open and the crowd surges forward.",
+        jumbled: ["the", "forward.", "crowd", "doors", "over", "Naomi", "shouts", "and", "surges", "open", "the", "the", "as", "noise"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about waiting excitedly for something to begin.",
@@ -230,8 +230,8 @@ export const CHAPTERS = [
         jumbled: ["friend", "agonizing", "nearby.", "genuinely", "For", "of", "by", "minutes,", "my", "best", "I", "feel", "without", "place", "several", "in", "surrounded", "unfamiliar", "hundreds", "small", "an", "strangers", "frightened,", "and"],
       },
       {
-        target: "“Think, Harper,” I tell myself, and remembering our backup plan becomes my only source of comfort.",
-        jumbled: ["source", "of", "myself,", "tell", "our", "“Think,", "Harper,”", "and", "I", "becomes", "remembering", "only", "plan", "comfort.", "my", "backup"],
+        target: "I tell myself to think, and remembering our backup plan comforts me.",
+        jumbled: ["backup", "I", "think,", "to", "plan", "myself", "me.", "comforts", "our", "remembering", "tell", "and"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you got separated from someone in a crowd.",
@@ -314,8 +314,8 @@ export const CHAPTERS = [
         jumbled: ["joy.", "every", "by", "scream", "my", "panic", "uncontainable", "lyric,", "entirely", "I", "along", "replaced", "forgotten,", "with", "earlier", "completely", "pure,"],
       },
       {
-        target: "“This is it, Harper!” Naomi shouts over the music, grabbing my hand again, this time intentionally, and we jump together in perfect rhythm with thousands of other fans around us.",
-        jumbled: ["around", "hand", "fans", "of", "in", "perfect", "shouts", "again,", "it,", "thousands", "intentionally,", "other", "jump", "we", "my", "and", "rhythm", "grabbing", "this", "music,", "over", "together", "“This", "the", "with", "Naomi", "time", "is", "us.", "Harper!”"],
+        target: "Naomi shouts over the music and grabs my hand, and we jump together.",
+        jumbled: ["together.", "my", "Naomi", "over", "hand,", "grabs", "and", "the", "music", "we", "shouts", "and", "jump"],
       },
       {
         target: "Nothing about this moment feels ordinary; everything sparkles with an energy I have never experienced before.",
@@ -354,8 +354,8 @@ export const CHAPTERS = [
         jumbled: ["stripped-down", "reverent", "an", "begins", "hushed,", "unplugged,", "entire", "crowd", "lesser-known", "an", "version", "as", "falls", "into", "song.", "a", "of", "she", "older,", "The", "silence"],
       },
       {
-        target: "“Harper, that's the song!” Naomi whispers, and we exchange amazed glances, recognizing it immediately from our earliest days as fans years ago.",
-        jumbled: ["earliest", "from", "years", "song!”", "Naomi", "amazed", "ago.", "glances,", "it", "and", "recognizing", "immediately", "fans", "our", "exchange", "“Harper,", "whispers,", "the", "as", "we", "that's", "days"],
+        target: "Naomi whispers that it is our song, and we exchange amazed glances.",
+        jumbled: ["and", "song,", "is", "glances.", "exchange", "our", "that", "we", "amazed", "it", "Naomi", "whispers"],
       },
       {
         target: "Phones rise around us, their small lights transforming the venue into something resembling a sea of tiny, twinkling stars.",
@@ -402,8 +402,8 @@ export const CHAPTERS = [
         jumbled: ["night,", "moments", "especially", "entire", "the", "at", "expected", "the", "replay", "that", "encore", "neither", "We", "us", "favorite", "all.", "of", "acoustic", "our", "from", "surprising"],
       },
       {
-        target: "“Best night ever, Harper,” Naomi declares confidently, and for once, I completely agree without any hesitation whatsoever.",
-        jumbled: ["without", "“Best", "night", "whatsoever.", "completely", "agree", "declares", "once,", "and", "confidently,", "Harper,”", "any", "ever,", "for", "hesitation", "Naomi", "I"],
+        target: "Naomi declares that it was the best night ever, and I agree.",
+        jumbled: ["ever,", "was", "night", "it", "the", "I", "and", "declares", "that", "Naomi", "best", "agree."],
       },
       {
         target: "Under the streetlights, walking slowly toward her cousin's waiting car, everything about tonight feels perfectly, unforgettably complete.",
@@ -446,8 +446,8 @@ export const CHAPTERS = [
         jumbled: ["proud", "scary", "seems", "how", "handled", "of", "more,", "genuinely", "using", "that", "calmly", "hearing", "Mom", "plan.", "worrying", "moment", "backup", "our", "Instead", "I"],
       },
       {
-        target: "“Sounds like you handled it perfectly, Harper,” she says warmly, and something about her trust makes tonight feel even more meaningful.",
-        jumbled: ["you", "more", "says", "handled", "feel", "about", "it", "“Sounds", "she", "like", "trust", "and", "makes", "her", "even", "tonight", "warmly,", "meaningful.", "perfectly,", "something", "Harper,”"],
+        target: "She warmly says I handled it perfectly, and her trust makes tonight special.",
+        jumbled: ["warmly", "handled", "trust", "it", "I", "She", "perfectly,", "her", "says", "special.", "and", "makes", "tonight"],
       },
       {
         target: "Lying in bed afterward, I already find myself dreaming about the next concert.",

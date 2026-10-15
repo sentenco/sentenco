@@ -94,8 +94,8 @@ export const CHAPTERS = [
         jumbled: ["for", "immediately", "saying", "no", "so", "regret", "away,", "wondering", "genuinely", "Walking", "it,", "why", "I", "me.", "difficult", "feels"],
       },
       {
-        target: "\"Enough, Yuki,\" I think.",
-        jumbled: ["Yuki,\"", "think.", "\"Enough,", "I"],
+        target: "I think to myself that it is enough.",
+        jumbled: ["think", "I", "it", "is", "myself", "to", "that", "enough."],
       },
       {
         target: "That evening, I add the fair committee to my already overwhelming planner, feeling a familiar knot forming in my stomach.",
@@ -130,8 +130,8 @@ export const CHAPTERS = [
         jumbled: ["my", "evening,", "brother", "room", "overloaded", "older", "and", "expression", "immediately.", "my", "that", "by", "Ben", "stops", "My", "planner", "exhausted", "cluttered,", "noticing"],
       },
       {
-        target: "“You've been like this for weeks now, Yuki. When was the last time you actually rested?” he asks directly.",
-        jumbled: ["you", "Yuki.", "rested?”", "asks", "he", "been", "last", "time", "directly.", "like", "the", "weeks", "was", "actually", "“You've", "When", "this", "now,", "for"],
+        target: "His words linger uncomfortably, since some part of me already suspected this truth myself.",
+        jumbled: ["words", "His", "uncomfortably,", "already", "part", "some", "since", "me", "myself.", "truth", "of", "this", "linger", "suspected"],
       },
       {
         target: "I try brushing off his concern, insisting I'm managing everything fine, though my voice sounds unconvincing even to myself.",
@@ -142,8 +142,8 @@ export const CHAPTERS = [
         jumbled: ["forced", "who", "dealt", "burnout", "similar", "reevaluate", "eventually", "to", "how", "year,", "overcommitment", "completely.", "with", "his", "junior", "Ben,", "him", "everything", "own", "shares", "during"],
       },
       {
-        target: "“Saying yes to everything isn't actually generous if it means saying no to your own health,” he points out gently.",
-        jumbled: ["actually", "no", "gently.", "your", "out", "points", "“Saying", "to", "isn't", "means", "yes", "own", "generous", "it", "if", "he", "health,”", "to", "everything", "saying"],
+        target: "He gently points out that saying yes to everything can hurt your health.",
+        jumbled: ["points", "your", "saying", "health.", "He", "yes", "out", "can", "hurt", "gently", "to", "everything", "that"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about someone who noticed you were overwhelmed and said something.",
@@ -222,8 +222,8 @@ export const CHAPTERS = [
         jumbled: ["everything:", "and", "missed", "five", "I", "deadline,", "the", "the", "my", "exhaustion", "explain", "my", "constant", "commitments,", "dropping", "grades,", "lately."],
       },
       {
-        target: "She listens without judgment, then asks a simple question: “What would happen, Yuki, if you actually said no to something?”",
-        jumbled: ["would", "asks", "something?”", "She", "a", "no", "you", "actually", "then", "without", "Yuki,", "happen,", "to", "question:", "simple", "if", "said", "listens", "judgment,", "“What"],
+        target: "Farah, hoping she can offer some genuine perspective.",
+        jumbled: ["she", "hoping", "perspective.", "genuine", "some", "Farah,", "offer", "can"],
       },
       {
         target: "I admit I've never seriously considered that possibility, assuming refusing anything would somehow disappoint everyone involved.",
@@ -310,8 +310,8 @@ export const CHAPTERS = [
         jumbled: ["or", "half", "as", "to", "My", "my", "in", "speak,", "decision.", "disappointment", "pounds", "heart", "response", "expecting", "frustration", "I"],
       },
       {
-        target: "“I completely understand, Yuki, and thank you for being honest instead of just disappearing,” she says warmly.",
-        jumbled: ["just", "she", "and", "thank", "warmly.", "for", "disappearing,”", "you", "of", "Yuki,", "being", "honest", "instead", "understand,", "“I", "completely", "says"],
+        target: "She warmly says she understands and thanks me for being honest.",
+        jumbled: ["thanks", "and", "being", "She", "she", "understands", "says", "warmly", "for", "honest.", "me"],
       },
       {
         target: "Relief floods through me instantly, since I had built up this moment into something far scarier than it actually turned out being.",
@@ -354,8 +354,8 @@ export const CHAPTERS = [
         jumbled: ["somehow,", "and", "than", "committee", "council", "since", "This", "expectation", "did.", "decision", "fair", "harder", "student", "feels", "carries", "the", "social", "visibility", "more"],
       },
       {
-        target: "\"You don't owe everyone a yes, Yuki,\" I remind myself, thinking of Ms. Farah's words about approval-seeking versus genuine desire to participate.",
-        jumbled: ["everyone", "of", "remind", "Ms.", "\"You", "Yuki,\"", "thinking", "desire", "versus", "don't", "Farah's", "owe", "words", "participate.", "to", "myself,", "about", "I", "genuine", "yes,", "a", "approval-seeking"],
+        target: "Farah's words about approval-seeking versus genuine desire to participate.",
+        jumbled: ["desire", "participate.", "approval-seeking", "versus", "genuine", "words", "Farah's", "about", "to"],
       },
       {
         target: "I also start declining smaller requests more consistently, like extra tutoring sessions that overlap with time I need for myself.",
@@ -398,8 +398,8 @@ export const CHAPTERS = [
         jumbled: ["for", "something", "read", "remember", "enjoyment,", "On", "evening,", "entire", "can't", "doing", "an", "recently.", "purely", "novel", "genuinely", "Tuesday", "I", "I"],
       },
       {
-        target: "“You seem so much calmer lately, Yuki, more like yourself again,” he comments.",
-        jumbled: ["yourself", "calmer", "so", "lately,", "he", "again,”", "like", "Yuki,", "seem", "much", "“You", "more", "comments."],
+        target: "Ben notices the change immediately.",
+        jumbled: ["the", "change", "notices", "immediately.", "Ben"],
       },
       {
         target: "My grades have already started improving slightly, likely because I can actually focus without constant mental exhaustion draining me.",

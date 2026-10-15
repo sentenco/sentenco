@@ -41,8 +41,8 @@ export const CHAPTERS = [
         jumbled: ["a", "my", "make", "table", "and", "I", "list.", "kitchen", "sit", "shopping", "at"],
       },
       {
-        target: "At the top, I write, “Priya's Shopping List.”",
-        jumbled: ["List.”", "I", "Shopping", "the", "“Priya's", "write,", "top,", "At"],
+        target: "I also need chicken and rice for dinner this week.",
+        jumbled: ["also", "chicken", "week.", "need", "rice", "and", "for", "this", "dinner", "I"],
       },
       {
         target: "My list gets longer as I check each cupboard in my kitchen.",
@@ -85,8 +85,8 @@ export const CHAPTERS = [
         jumbled: ["the", "at", "and", "my", "the", "park", "arrive", "grocery", "entrance.", "store", "near", "car", "I"],
       },
       {
-        target: "I scan my loyalty card, and a screen flashes, “Welcome back, Priya!”",
-        jumbled: ["flashes,", "I", "screen", "my", "a", "and", "“Welcome", "card,", "loyalty", "scan", "back,", "Priya!”"],
+        target: "The store is busy today because it is the weekend.",
+        jumbled: ["weekend.", "it", "The", "today", "busy", "store", "the", "is", "is", "because"],
       },
       {
         target: "I take out my list and check the first item: milk.",
@@ -137,8 +137,8 @@ export const CHAPTERS = [
         jumbled: ["wheat", "a", "Next,", "bread", "I", "and", "find", "pick", "aisle", "the", "whole", "loaf", "bread.", "of"],
       },
       {
-        target: "I check “Priya's Shopping List” again -- only a few items left.",
-        jumbled: ["left.", "“Priya's", "I", "only", "List”", "check", "again", "--", "items", "few", "Shopping", "a"],
+        target: "I also find rice and chicken in the next two aisles.",
+        jumbled: ["chicken", "find", "rice", "next", "aisles.", "two", "the", "I", "in", "and", "also"],
       },
       {
         target: "Shopping feels easier when I already know where things are in the store.",
@@ -177,8 +177,8 @@ export const CHAPTERS = [
         jumbled: ["says", "and", "name", "when", "my", "Tom,", "ask", "he", "tag", "His", "question.", "I", "smiles"],
       },
       {
-        target: "“The pasta is on aisle six, next to the sauces, Priya,” he says kindly, reading my name from my loyalty card.",
-        jumbled: ["loyalty", "the", "says", "my", "card.", "kindly,", "sauces,", "my", "pasta", "six,", "name", "from", "“The", "next", "is", "reading", "Priya,”", "to", "on", "he", "aisle"],
+        target: "I decide to ask a store worker for help.",
+        jumbled: ["help.", "to", "store", "worker", "ask", "decide", "for", "a", "I"],
       },
       {
         target: "He is right, and I find the pasta exactly where he said.",
@@ -217,8 +217,8 @@ export const CHAPTERS = [
         jumbled: ["calculator.", "Halfway", "shopping,", "check", "my", "stop", "I", "my", "to", "through", "phone's"],
       },
       {
-        target: "My banking app shows, “Hi Priya, here is your spending summary,” and I add up the prices of items already in my cart.",
-        jumbled: ["My", "prices", "cart.", "items", "and", "add", "summary,”", "the", "banking", "in", "I", "my", "app", "shows,", "up", "your", "already", "Priya,", "of", "spending", "is", "“Hi", "here"],
+        target: "I want to make sure I do not spend too much money today.",
+        jumbled: ["want", "I", "do", "much", "sure", "too", "money", "spend", "I", "not", "today.", "to", "make"],
       },
       {
         target: "The total is close to my budget, so I need to be careful with the rest.",
@@ -269,8 +269,8 @@ export const CHAPTERS = [
         jumbled: ["me", "of", "front", "line", "in", "too,", "has", "the", "moves", "slowly.", "so", "items", "person", "many", "The"],
       },
       {
-        target: "“Priya, how's the shopping going?” my sister texts, and I reply to her message.",
-        jumbled: ["shopping", "reply", "“Priya,", "message.", "I", "going?”", "her", "and", "my", "the", "how's", "to", "sister", "texts,"],
+        target: "I check my phone while I wait.",
+        jumbled: ["I", "my", "wait.", "check", "phone", "I", "while"],
       },
       {
         target: "I start putting my groceries on the counter for the cashier to scan.",
@@ -309,8 +309,8 @@ export const CHAPTERS = [
         jumbled: ["and", "tap", "the", "I", "small", "take", "card", "on", "machine.", "my", "out", "it"],
       },
       {
-        target: "“Thank you, Priya, have a nice day,” the cashier says with a smile, glancing at my loyalty card.",
-        jumbled: ["card.", "a", "with", "my", "glancing", "you,", "nice", "“Thank", "Priya,", "a", "at", "day,”", "have", "says", "smile,", "the", "cashier", "loyalty"],
+        target: "The payment goes through, and the machine prints a long receipt.",
+        jumbled: ["and", "prints", "long", "through,", "The", "payment", "the", "machine", "a", "receipt.", "goes"],
       },
       {
         target: "I say thank you back and start putting my groceries into my reusable bags.",
@@ -357,8 +357,8 @@ export const CHAPTERS = [
         jumbled: ["the", "cart", "car.", "near", "push", "to", "area", "I", "the", "my", "return", "cart", "empty"],
       },
       {
-        target: "“Big shopping trip, Priya?” she asks with a smile.",
-        jumbled: ["trip,", "with", "Priya?”", "shopping", "a", "she", "asks", "smile.", "“Big"],
+        target: "A neighbor walks by and waves.",
+        jumbled: ["neighbor", "by", "waves.", "A", "walks", "and"],
       },
       {
         target: "Finally, I get into my car and feel relieved that the shopping trip is finished for another week.",

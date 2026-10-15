@@ -45,8 +45,8 @@ export const CHAPTERS = [
         jumbled: ["Three", "deadline", "week,", "landed", "have", "separate", "on", "falls", "on", "that", "the", "somehow", "projects", "exact", "day.", "my", "with", "desk", "same", "this", "a", "each"],
       },
       {
-        target: "A sticky note on my monitor, in my own handwriting, still reads “Sofia's Week” above the growing list.",
-        jumbled: ["growing", "note", "sticky", "handwriting,", "in", "above", "my", "monitor,", "“Sofia's", "still", "A", "on", "own", "Week”", "my", "reads", "the", "list."],
+        target: "A sticky note in my own handwriting sits on my monitor above the growing list.",
+        jumbled: ["monitor", "A", "own", "sticky", "growing", "the", "list.", "above", "my", "sits", "on", "handwriting", "in", "note", "my"],
       },
       {
         target: "At first, I assume I can simply manage everything through careful planning and a few extra hours of work.",
@@ -137,12 +137,12 @@ export const CHAPTERS = [
         jumbled: ["the", "has", "day", "that", "explain", "I", "three", "same", "deadlines", "to", "honestly", "landing", "well.", "manage", "everything", "harder", "considerably", "on", "made"],
       },
       {
-        target: "“Would it be possible to discuss adjusting one of these timelines slightly?” I ask, trying to sound solution-focused rather than defeated.",
-        jumbled: ["to", "these", "than", "adjusting", "of", "slightly?”", "one", "it", "sound", "trying", "“Would", "discuss", "to", "possible", "solution-focused", "ask,", "be", "rather", "timelines", "defeated.", "I"],
+        target: "I ask if it would be possible to adjust one of these timelines.",
+        jumbled: ["one", "to", "possible", "would", "timelines.", "adjust", "it", "these", "be", "I", "ask", "of", "if"],
       },
       {
-        target: "“I appreciate you bringing this to me directly, Sofia,” he says, listening carefully and nodding as I walk through each project's current status and realistic completion estimate.",
-        jumbled: ["to", "walk", "realistic", "says,", "status", "project's", "and", "you", "he", "I", "this", "“I", "each", "Sofia,”", "me", "nodding", "completion", "listening", "current", "carefully", "through", "estimate.", "appreciate", "directly,", "and", "bringing", "as"],
+        target: "He thanks me for bringing this to him directly and listens carefully.",
+        jumbled: ["him", "for", "me", "thanks", "directly", "and", "this", "He", "bringing", "listens", "to", "carefully."],
       },
       {
         target: "To my relief, he doesn't seem annoyed, instead appearing genuinely interested in understanding the actual situation.",
@@ -185,8 +185,8 @@ export const CHAPTERS = [
         jumbled: ["potentially", "couple", "on", "the", "by", "hand,", "shift", "of", "problems.", "other", "the", "causing", "report,", "a", "days", "without", "major", "However,", "internal", "could"],
       },
       {
-        target: "“If we moved that deadline, Sofia, would the remaining two feel manageable for you?” he asks thoughtfully.",
-        jumbled: ["you?”", "Sofia,", "we", "two", "manageable", "that", "for", "remaining", "feel", "asks", "the", "deadline,", "would", "moved", "he", "“If", "thoughtfully."],
+        target: "He asks if the other two would feel manageable if we moved the deadline.",
+        jumbled: ["would", "we", "other", "manageable", "two", "asks", "deadline.", "feel", "He", "if", "the", "moved", "the", "if"],
       },
       {
         target: "I consider this carefully, mentally reorganizing my week, before confirming that this arrangement would genuinely help significantly.",
@@ -221,12 +221,12 @@ export const CHAPTERS = [
         jumbled: ["will", "two", "room", "internal", "We", "me", "the", "this", "much-needed", "later,", "some", "week.", "breathing", "report", "giving", "that", "days", "agree", "deadline", "move"],
       },
       {
-        target: "“Take the two days, Sofia,” he says, also suggesting I loop in a colleague who could assist with a smaller part of the third project.",
-        jumbled: ["two", "in", "assist", "“Take", "a", "days,", "Sofia,”", "says,", "also", "suggesting", "I", "the", "part", "could", "with", "third", "project.", "who", "loop", "of", "smaller", "colleague", "a", "the", "he"],
+        target: "He tells me to take the two days and suggests I ask a colleague for help.",
+        jumbled: ["to", "ask", "take", "and", "He", "I", "tells", "suggests", "colleague", "for", "the", "a", "two", "help.", "me", "days"],
       },
       {
-        target: "“I should have checked in with the team sooner about workload balance generally,” he admits honestly, which genuinely surprises me.",
-        jumbled: ["sooner", "should", "in", "checked", "balance", "surprises", "generally,”", "admits", "team", "the", "genuinely", "“I", "with", "me.", "workload", "honestly,", "he", "which", "have", "about"],
+        target: "He honestly admits that he should have checked in about workload sooner.",
+        jumbled: ["sooner.", "honestly", "about", "checked", "that", "in", "admits", "he", "workload", "have", "should", "He"],
       },
       {
         target: "I thank him for being so understanding and flexible, especially since he easily could have simply said no.",
@@ -269,8 +269,8 @@ export const CHAPTERS = [
         jumbled: ["I", "mentioned,", "useful.", "help", "Mr.", "what", "most", "of", "Whitfield", "message", "colleague", "be", "actually", "explaining", "also", "the", "briefly", "would", "kind"],
       },
       {
-        target: "“Of course, Sofia, happy to help,” she responds enthusiastically, saying she'd be glad to take on that particular task starting tomorrow morning.",
-        jumbled: ["starting", "Sofia,", "to", "morning.", "responds", "that", "on", "task", "to", "take", "she", "particular", "saying", "“Of", "help,”", "glad", "course,", "happy", "enthusiastically,", "tomorrow", "be", "she'd"],
+        target: "Whitfield mentioned, explaining briefly what kind of help would actually be most useful.",
+        jumbled: ["explaining", "useful.", "would", "briefly", "be", "help", "what", "mentioned,", "Whitfield", "kind", "most", "actually", "of"],
       },
       {
         target: "With everything reorganized, my three-project pile up suddenly feels genuinely manageable rather than completely overwhelming.",
@@ -309,8 +309,8 @@ export const CHAPTERS = [
         jumbled: ["room", "client", "focus", "the", "without", "I'm", "my", "constant", "schedule,", "to", "breathing", "able", "With", "presentation", "distraction.", "in", "preparing", "fully", "on", "more"],
       },
       {
-        target: "I rehearse it twice the evening before, the title slide still reading “Prepared by Sofia” in the corner, catching a few small mistakes I probably would have missed otherwise.",
-        jumbled: ["by", "probably", "it", "would", "catching", "I", "still", "missed", "mistakes", "twice", "have", "in", "title", "evening", "the", "few", "small", "the", "otherwise.", "reading", "rehearse", "slide", "before,", "corner,", "“Prepared", "a", "Sofia”", "I", "the"],
+        target: "I rehearse it twice the evening before and catch a few small mistakes.",
+        jumbled: ["a", "mistakes.", "small", "before", "it", "few", "the", "and", "rehearse", "evening", "catch", "I", "twice"],
       },
       {
         target: "On presentation day, everything goes smoothly, and the client seems genuinely impressed by how organized and thorough the material feels.",
@@ -353,8 +353,8 @@ export const CHAPTERS = [
         jumbled: ["break,", "third", "my", "a", "the", "project", "colleague", "During", "willingly", "for", "week.", "on", "coffee", "I", "part", "taking", "thank", "of", "so", "last", "again"],
       },
       {
-        target: "“I'm glad you asked directly, Sofia,” she mentions, rather than my quietly struggling through everything completely on my own.",
-        jumbled: ["Sofia,”", "quietly", "mentions,", "through", "rather", "my", "she", "directly,", "glad", "than", "asked", "own.", "my", "on", "struggling", "completely", "you", "“I'm", "everything"],
+        target: "She says she is glad I asked directly instead of struggling alone.",
+        jumbled: ["I", "of", "struggling", "instead", "directly", "glad", "says", "is", "alone.", "asked", "she", "She"],
       },
       {
         target: "I admit that asking for help initially felt uncomfortable, since I usually prefer handling things independently myself.",
@@ -437,8 +437,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Looking back on the entire week, I write one line in my planner, “Note to self, Sofia: ask before you drown,” and realize how differently things could have gone if I had simply stayed quiet and struggled alone.",
-        jumbled: ["“Note", "had", "realize", "back", "stayed", "gone", "to", "if", "I", "drown,”", "entire", "I", "ask", "line", "the", "could", "self,", "quiet", "on", "differently", "simply", "alone.", "how", "have", "week,", "struggled", "Looking", "write", "and", "and", "one", "before", "planner,", "things", "Sofia:", "you", "my", "in"],
+        target: "Instead, preparing carefully and asking clearly allowed Mr.",
+        jumbled: ["preparing", "carefully", "clearly", "Mr.", "allowed", "asking", "Instead,", "and"],
       },
       {
         target: "Had I tried pushing through all three deadlines without saying anything, quality would have suffered, and I likely would have burned out completely.",

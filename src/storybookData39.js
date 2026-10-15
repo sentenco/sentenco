@@ -49,8 +49,8 @@ export const CHAPTERS = [
         jumbled: ["miss", "mother", "she'll", "support", "though", "house", "My", "evening.", "around", "me", "parents", "the", "completely,", "my", "the", "admits", "decision", "every", "having"],
       },
       {
-        target: "Sitting on my childhood bedroom floor, surrounded by half-packed boxes, I scroll through apartment listings, saving my favorites into a folder I label “Renee's New Place,” with a mixture of nervous excitement and genuine uncertainty.",
-        jumbled: ["folder", "a", "Sitting", "of", "label", "“Renee's", "through", "into", "New", "scroll", "surrounded", "my", "and", "genuine", "mixture", "I", "uncertainty.", "bedroom", "apartment", "saving", "favorites", "nervous", "by", "childhood", "half-packed", "on", "a", "with", "my", "I", "listings,", "floor,", "Place,”", "excitement", "boxes,"],
+        target: "I scroll through apartment listings and save my favorites into a folder.",
+        jumbled: ["my", "listings", "through", "apartment", "I", "into", "a", "and", "scroll", "favorites", "save", "folder."],
       },
       {
         target: "Living independently means budgeting carefully, cooking my own meals, and handling problems without anyone else nearby to help immediately.",
@@ -97,8 +97,8 @@ export const CHAPTERS = [
         jumbled: ["located", "and", "has", "beautiful", "from", "sits", "another", "natural", "apartment", "noticeably", "but", "light", "inside.", "cramped", "transportation,", "feels", "far", "perfectly", "public", "but", "while", "One", "outdated"],
       },
       {
-        target: "“Trust your gut when you find the right one, Renee,” Diane advises, watching me hesitate over yet another listing with mixed feelings.",
-        jumbled: ["the", "“Trust", "another", "listing", "advises,", "me", "with", "one,", "Renee,”", "over", "you", "watching", "your", "feelings.", "hesitate", "find", "right", "mixed", "yet", "when", "gut", "Diane"],
+        target: "Diane advises me to trust my gut when I find the right one.",
+        jumbled: ["the", "I", "my", "to", "find", "advises", "me", "trust", "gut", "when", "right", "Diane", "one."],
       },
       {
         target: "Finally, in a quiet building near a small park, something about the sixth apartment simply feels right.",
@@ -137,8 +137,8 @@ export const CHAPTERS = [
         jumbled: ["feels", "of", "genuinely", "He", "rules", "rent,", "amount", "my", "building", "very", "monthly", "overwhelming", "for", "the", "calmly,", "lease.", "the", "deposit,", "first", "explains", "security", "though", "paperwork", "and"],
       },
       {
-        target: "“Take your time reading through everything, Renee,” he says patiently, noticing my nervous hesitation over the lengthy document.",
-        jumbled: ["he", "noticing", "document.", "everything,", "says", "the", "over", "through", "“Take", "hesitation", "Renee,”", "your", "nervous", "patiently,", "time", "lengthy", "my", "reading"],
+        target: "He patiently tells me to take my time reading through everything.",
+        jumbled: ["reading", "take", "everything.", "through", "He", "tells", "time", "patiently", "to", "me", "my"],
       },
       {
         target: "I finally sign my name, officially becoming responsible for an entire apartment for the first time in my life.",
@@ -181,8 +181,8 @@ export const CHAPTERS = [
         jumbled: ["collective", "drops", "heavy", "noticeably,", "someone", "By", "exhausted", "the", "a", "by", "fades", "midday,", "box", "nearly", "our", "replaced", "every", "stairs.", "time", "on", "laughter", "energy"],
       },
       {
-        target: "“Renee, whoever designed this staircase clearly hated movers,” Diane jokes, wiping sweat from her forehead between trips up and down.",
-        jumbled: ["up", "“Renee,", "staircase", "forehead", "clearly", "between", "trips", "this", "from", "wiping", "movers,”", "jokes,", "and", "her", "down.", "sweat", "designed", "hated", "whoever", "Diane"],
+        target: "Diane jokes that whoever designed this staircase clearly hated movers.",
+        jumbled: ["jokes", "staircase", "whoever", "clearly", "that", "movers.", "this", "hated", "Diane", "designed"],
       },
       {
         target: "Despite the exhausting physical labor, something feels genuinely special about filling an empty apartment with familiar furniture and belongings.",
@@ -225,8 +225,8 @@ export const CHAPTERS = [
         jumbled: ["crooked", "several", "The", "up", "extra", "and", "seem", "I", "screws", "straightforward", "end", "shelf.", "somehow", "but", "mysterious", "with", "one", "at", "diagrams", "first,", "noticeably"],
       },
       {
-        target: "I mutter, “Come on, Renee, think,” and finally realize I attached one panel completely backward from the very beginning.",
-        jumbled: ["one", "I", "backward", "beginning.", "Renee,", "the", "finally", "realize", "“Come", "on,", "I", "think,”", "from", "mutter,", "panel", "and", "very", "completely", "attached"],
+        target: "I mutter to myself to think and finally realize I attached one panel backward.",
+        jumbled: ["to", "I", "attached", "I", "backward.", "think", "myself", "realize", "finally", "panel", "one", "to", "mutter", "and"],
       },
       {
         target: "Rather than starting over entirely, I carefully disassemble just that section, correcting my mistake with newfound patience.",
@@ -277,8 +277,8 @@ export const CHAPTERS = [
         jumbled: ["flashlight,", "I", "with", "carefully", "real", "the", "connection,", "problem", "of", "proud", "independently.", "Kneeling", "a", "feeling", "under", "a", "sink", "solving", "household", "oddly", "the", "wrench", "awkwardly", "tighten", "and"],
       },
       {
-        target: "The dripping finally stops completely, and I text Diane immediately, “Renee: 1, faucet: 0,” practically bragging about my small victory.",
-        jumbled: ["0,”", "finally", "immediately,", "faucet:", "Diane", "my", "1,", "small", "text", "bragging", "I", "The", "and", "“Renee:", "completely,", "about", "practically", "victory.", "stops", "dripping"],
+        target: "The dripping finally stops, and I text Diane about my small victory.",
+        jumbled: ["small", "about", "dripping", "The", "my", "victory.", "Diane", "finally", "I", "and", "text", "stops,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about solving a small household problem on your own.",
@@ -317,12 +317,12 @@ export const CHAPTERS = [
         jumbled: ["Mr.", "warmly.", "Osei", "answers"],
       },
       {
-        target: "“You must be Renee, from 4B,” he says, introducing himself properly for the first time since I moved in two weeks earlier.",
-        jumbled: ["for", "says,", "himself", "in", "properly", "I", "introducing", "moved", "since", "must", "the", "4B,”", "earlier.", "Renee,", "from", "“You", "weeks", "first", "two", "time", "he", "be"],
+        target: "He introduces himself properly for the first time since I moved in.",
+        jumbled: ["the", "He", "time", "himself", "introduces", "for", "in.", "first", "since", "I", "properly", "moved"],
       },
       {
-        target: "“Feel free to knock anytime you need something,” he says kindly, and I walk back to my apartment feeling genuinely less alone in this new place.",
-        jumbled: ["genuinely", "this", "knock", "feeling", "you", "I", "less", "to", "something,”", "he", "to", "place.", "anytime", "in", "kindly,", "apartment", "and", "alone", "need", "walk", "my", "says", "free", "back", "new", "“Feel"],
+        target: "He kindly says I can knock anytime I need something.",
+        jumbled: ["knock", "need", "can", "kindly", "I", "He", "something.", "I", "says", "anytime"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about meeting a neighbor for the first time.",
@@ -349,8 +349,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "For the first time, I do a proper grocery shop entirely for myself, writing my own list under the heading “Renee's Groceries” instead of relying on my mother's usual list to guide every single purchase decision.",
-        jumbled: ["instead", "guide", "the", "writing", "decision.", "entirely", "grocery", "do", "every", "purchase", "mother's", "single", "on", "time,", "myself,", "heading", "first", "own", "“Renee's", "proper", "the", "relying", "Groceries”", "usual", "for", "list", "my", "list", "to", "under", "For", "I", "my", "a", "of", "shop"],
+        target: "For the first time, I do a proper grocery shop entirely for myself.",
+        jumbled: ["entirely", "for", "shop", "the", "For", "a", "do", "first", "proper", "time,", "myself.", "grocery", "I"],
       },
       {
         target: "Standing in the produce aisle, I realize I genuinely don't know how much of anything a single person actually needs for one week.",
@@ -405,8 +405,8 @@ export const CHAPTERS = [
         jumbled: ["earlier", "I", "moment,", "the", "creeps", "pride", "during", "brief,", "mixing", "unexpectedly,", "with", "loneliness", "uncomfortably", "felt", "day.", "in", "just", "For", "moving", "hours", "a", "honest"],
       },
       {
-        target: "“You've got this, Renee,” I whisper, reminding myself this adjustment period is completely normal, and that independence naturally includes both wonderful freedom and occasional quiet moments like this one.",
-        jumbled: ["wonderful", "myself", "normal,", "“You've", "adjustment", "this", "naturally", "independence", "moments", "period", "and", "includes", "reminding", "Renee,”", "this", "I", "one.", "completely", "that", "like", "both", "is", "occasional", "this,", "freedom", "quiet", "whisper,", "and", "got"],
+        target: "I whisper to myself that this adjustment period is completely normal.",
+        jumbled: ["I", "period", "myself", "this", "whisper", "to", "that", "completely", "is", "adjustment", "normal."],
       },
       {
         target: "Watching city lights through my window, I slowly feel calmer.",
@@ -449,8 +449,8 @@ export const CHAPTERS = [
         jumbled: ["visits", "Diane", "often."],
       },
       {
-        target: "“This is so you, Renee,” she says with a smile, always commenting on how much more like “me” the space feels with each passing week.",
-        jumbled: ["how", "much", "Renee,”", "you,", "is", "“me”", "space", "says", "on", "commenting", "feels", "so", "like", "always", "more", "week.", "she", "smile,", "a", "the", "passing", "each", "with", "with", "“This"],
+        target: "This apartment isn't just a place I live now; it genuinely feels like home.",
+        jumbled: ["isn't", "like", "live", "This", "just", "it", "place", "I", "home.", "feels", "now;", "a", "apartment", "genuinely"],
       },
       {
         target: "Looking back, the overwhelming lease-signing, the wobbly bookshelf, and even that lonely first night all feel like meaningful steps rather than mistakes along this journey.",

@@ -50,8 +50,8 @@ export const CHAPTERS = [
         jumbled: ["closed", "gift", "I", "carefully", "firmly.", "in", "paper", "tape", "the", "brown", "it", "and", "wrap"],
       },
       {
-        target: "“Omar, you can figure this out,” I tell myself, since I have never mailed a package before and feel a little unsure about the process.",
-        jumbled: ["since", "I", "have", "about", "you", "myself,", "package", "tell", "a", "little", "never", "before", "process.", "a", "can", "out,”", "the", "feel", "figure", "unsure", "mailed", "this", "I", "and", "“Omar,"],
+        target: "I write her name and address on the front in clear, careful handwriting.",
+        jumbled: ["handwriting.", "address", "name", "the", "her", "careful", "front", "write", "clear,", "and", "I", "in", "on"],
       },
       {
         target: "I search online for the nearest post office and check its opening hours.",
@@ -94,12 +94,12 @@ export const CHAPTERS = [
         jumbled: ["left", "the", "shop", "on", "turning", "small", "follow", "I", "the", "corner.", "on", "at", "phone,", "a", "coffee", "map", "my"],
       },
       {
-        target: "Soon, I see a blue and white sign that says “Post Office” ahead of me.",
-        jumbled: ["ahead", "I", "of", "Office”", "see", "sign", "that", "blue", "“Post", "me.", "and", "white", "says", "a", "Soon,"],
+        target: "The morning air feels fresh, and the streets are not too busy yet today.",
+        jumbled: ["yet", "morning", "air", "and", "busy", "streets", "are", "fresh,", "today.", "the", "too", "The", "not", "feels"],
       },
       {
-        target: "“Good job, Omar,” I think, feeling a small sense of accomplishment just finding the right place easily.",
-        jumbled: ["right", "accomplishment", "finding", "small", "a", "place", "sense", "just", "I", "Omar,”", "job,", "the", "easily.", "“Good", "think,", "of", "feeling"],
+        target: "I walk toward the entrance and open the door carefully.",
+        jumbled: ["carefully.", "and", "walk", "the", "door", "I", "open", "entrance", "the", "toward"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about finding a new place using a map or phone.",
@@ -178,12 +178,12 @@ export const CHAPTERS = [
         jumbled: ["tag", "she", "greets", "Park,", "and", "professional", "name", "warm,", "a", "Ms.", "smile.", "with", "Her", "says", "me"],
       },
       {
-        target: "“My name is Omar, and I need to send this package to my sister in another city,” I explain.",
-        jumbled: ["and", "Omar,", "need", "“My", "explain.", "name", "send", "this", "in", "to", "to", "I", "is", "sister", "city,”", "my", "another", "package", "I"],
+        target: "Park, and she greets me with a warm, professional smile.",
+        jumbled: ["a", "me", "professional", "and", "Park,", "she", "with", "smile.", "warm,", "greets"],
       },
       {
-        target: "“No problem at all. Let's get it weighed first,” she says, reaching for the package.",
-        jumbled: ["the", "it", "she", "all.", "“No", "says,", "reaching", "problem", "Let's", "package.", "first,”", "at", "weighed", "for", "get"],
+        target: "Park's calm, friendly manner makes me feel comfortable asking any questions I have.",
+        jumbled: ["Park's", "I", "any", "calm,", "comfortable", "friendly", "manner", "makes", "feel", "me", "asking", "have.", "questions"],
       },
       {
         target: "I feel relieved that the process seems simple so far, not as confusing as I expected.",
@@ -222,8 +222,8 @@ export const CHAPTERS = [
         jumbled: ["she", "the", "shows", "chart", "The", "it", "screen", "checks", "and", "nearby.", "price", "weight,", "a", "against"],
       },
       {
-        target: "“It's light, so shipping will not be too expensive, Omar,” she tells me with a smile.",
-        jumbled: ["smile.", "tells", "she", "Omar,”", "me", "shipping", "too", "be", "with", "expensive,", "“It's", "a", "will", "not", "so", "light,"],
+        target: "She asks how quickly I want the package to arrive at its destination.",
+        jumbled: ["to", "She", "how", "asks", "quickly", "at", "the", "destination.", "want", "I", "its", "package", "arrive"],
       },
       {
         target: "I explain that it does not need to be very fast, just before my sister's birthday.",
@@ -266,8 +266,8 @@ export const CHAPTERS = [
         jumbled: ["address", "and", "her", "the", "lines.", "name", "on", "sister's", "full", "carefully", "I", "write", "my", "complete"],
       },
       {
-        target: "“Make sure the zip code is correct, Omar,” Ms. Park reminds me kindly, pointing at the line.",
-        jumbled: ["the", "Park", "correct,", "zip", "“Make", "kindly,", "is", "the", "pointing", "line.", "at", "reminds", "me", "Ms.", "Omar,”", "sure", "code"],
+        target: "Park reminds me kindly, pointing at the line.",
+        jumbled: ["kindly,", "at", "Park", "line.", "pointing", "the", "me", "reminds"],
       },
       {
         target: "I also write my own address in the sender's section at the top.",
@@ -358,8 +358,8 @@ export const CHAPTERS = [
         jumbled: ["a", "tracking", "Ms.", "it.", "me", "a", "special", "on", "slip", "with", "hands", "number", "also", "Park", "small"],
       },
       {
-        target: "“You can check this number online to see where your package is, Omar,” she explains.",
-        jumbled: ["she", "see", "is,", "check", "this", "number", "Omar,”", "where", "your", "can", "online", "“You", "package", "explains.", "to"],
+        target: "Park also hands me a small tracking slip with a special number on it.",
+        jumbled: ["me", "small", "Park", "a", "special", "on", "slip", "with", "a", "tracking", "it.", "also", "number", "hands"],
       },
       {
         target: "I thank her for her help and carefully put the receipt into my wallet.",
@@ -402,8 +402,8 @@ export const CHAPTERS = [
         jumbled: ["to", "I", "tracking", "I", "lose", "did", "check", "it.", "make", "more", "slip", "one", "time", "not", "the", "sure"],
       },
       {
-        target: "“Well done, Omar,” I think, feeling proud that I completed this simple errand successfully on my very first try.",
-        jumbled: ["proud", "this", "first", "my", "errand", "very", "simple", "feeling", "think,", "on", "“Well", "done,", "I", "try.", "that", "Omar,”", "completed", "successfully", "I"],
+        target: "My package is finally on its way to my sister in another city now.",
+        jumbled: ["another", "on", "its", "package", "in", "finally", "to", "sister", "city", "My", "way", "is", "now.", "my"],
       },
       {
         target: "It seemed a little confusing at first, but everything worked out just fine.",
@@ -446,8 +446,8 @@ export const CHAPTERS = [
         jumbled: ["Two", "that,", "my", "sister", "on", "my", "from", "after", "days", "phone.", "happy", "receive", "I", "a", "message"],
       },
       {
-        target: "“I got your gift! Thank you so much, Omar, I love it,” she writes with excitement.",
-        jumbled: ["writes", "love", "got", "Thank", "“I", "with", "Omar,", "much,", "excitement.", "so", "it,”", "I", "you", "she", "gift!", "your"],
+        target: "I feel a small thrill knowing the birthday gift will arrive on time.",
+        jumbled: ["thrill", "will", "a", "feel", "I", "time.", "knowing", "on", "birthday", "gift", "small", "arrive", "the"],
       },
       {
         target: "I smile widely, feeling proud that my simple trip to the post office made her so happy.",

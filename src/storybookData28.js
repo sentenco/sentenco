@@ -40,8 +40,8 @@ export const CHAPTERS = [
         jumbled: ["gave", "I", "for", "Grandpa", "favorite", "carefully", "the", "me", "on", "my", "birthday.", "my", "one", "watch,", "put"],
       },
       {
-        target: "“Take good care of it, Kai,” Grandpa always tells me, since it belonged to him when he was young too.",
-        jumbled: ["it", "care", "young", "too.", "tells", "to", "“Take", "was", "he", "him", "since", "of", "it,", "always", "when", "good", "Grandpa", "belonged", "me,", "Kai,”"],
+        target: "Grandpa always tells me to take good care of it.",
+        jumbled: ["Grandpa", "it.", "take", "care", "to", "good", "me", "tells", "always", "of"],
       },
       {
         target: "The silver watch ticks quietly on my wrist, making me feel a little more grown up.",
@@ -86,8 +86,8 @@ export const CHAPTERS = [
         jumbled: ["it", "take", "I", "it", "watch", "placing", "the", "carefully", "on", "won't", "my", "bench.", "quickly", "so", "nearby", "get", "off", "scratched,"],
       },
       {
-        target: "“Last one across is a rotten egg, Kai!” Ben shouts, already swinging forward.",
-        jumbled: ["shouts,", "swinging", "is", "a", "egg,", "Ben", "already", "forward.", "rotten", "one", "Kai!”", "“Last", "across"],
+        target: "Ben shouts that the last one across is a rotten egg and swings forward.",
+        jumbled: ["swings", "Ben", "across", "a", "one", "that", "shouts", "and", "forward.", "egg", "is", "the", "last", "rotten"],
       },
       {
         target: "We laugh and compete for almost the entire recess, completely forgetting about everything else around us.",
@@ -170,8 +170,8 @@ export const CHAPTERS = [
         jumbled: ["explain", "to", "before", "think", "and", "further.", "panicking", "me", "carefully", "quickly,", "tells", "everything", "I", "he"],
       },
       {
-        target: "“Where exactly were you at recess, Kai?” he asks calmly.",
-        jumbled: ["recess,", "at", "he", "asks", "exactly", "Kai?”", "were", "you", "calmly.", "“Where"],
+        target: "Diaz notices my worried face and asks what's wrong.",
+        jumbled: ["Diaz", "wrong.", "notices", "face", "my", "asks", "and", "what's", "worried"],
       },
       {
         target: "I close my eyes and try to remember every single place I went: the monkey bars, the bench, and then the line for the water fountain.",
@@ -208,12 +208,12 @@ export const CHAPTERS = [
         jumbled: ["Mr.", "with", "come", "Diaz", "quickly", "me.", "me", "ask", "Ben", "permission", "to", "and", "I", "search,", "gives", "to"],
       },
       {
-        target: "“I remember you had your watch near the bench,” Ben says thoughtfully, trying to help me remember too.",
-        jumbled: ["trying", "bench,”", "help", "remember", "watch", "me", "“I", "says", "to", "too.", "remember", "you", "thoughtfully,", "had", "the", "your", "Ben", "near"],
+        target: "Two people searching feels much better than searching completely alone.",
+        jumbled: ["than", "feels", "completely", "better", "searching", "much", "searching", "alone.", "Two", "people"],
       },
       {
-        target: "“We'll find it together, Kai,” he adds confidently, giving me a reassuring pat on the shoulder.",
-        jumbled: ["he", "find", "reassuring", "adds", "shoulder.", "it", "giving", "“We'll", "Kai,”", "pat", "a", "the", "confidently,", "me", "on", "together,"],
+        target: "Ben adds that we will find it together and pats my shoulder.",
+        jumbled: ["pats", "my", "that", "will", "adds", "together", "it", "and", "find", "Ben", "we", "shoulder."],
       },
       {
         target: "Having Ben beside me makes the situation feel less scary, even though I am still very worried inside.",
@@ -254,8 +254,8 @@ export const CHAPTERS = [
         jumbled: ["my", "and", "desk,", "cubby,", "search", "behind", "inside", "I", "every", "and", "even", "Ben", "under", "the", "bookshelf."],
       },
       {
-        target: "“Maybe it fell out of your pocket during class, Kai,” Ben suggests, checking near my chair carefully.",
-        jumbled: ["out", "it", "Ben", "chair", "of", "“Maybe", "pocket", "during", "fell", "checking", "your", "Kai,”", "carefully.", "class,", "suggests,", "near", "my"],
+        target: "Ben suggests it fell out of my pocket and checks near my chair.",
+        jumbled: ["my", "pocket", "my", "Ben", "of", "out", "checks", "near", "chair.", "fell", "and", "it", "suggests"],
       },
       {
         target: "Unfortunately, after ten minutes of careful searching, we find absolutely nothing inside the classroom.",
@@ -292,12 +292,12 @@ export const CHAPTERS = [
         jumbled: ["classroom", "tell", "failed.", "Mr.", "that", "we", "return", "Diaz", "search", "Feeling", "the", "to", "discouraged,"],
       },
       {
-        target: "“Did you check the Lost and Found box near the office, Kai?” he asks.",
-        jumbled: ["box", "you", "and", "Kai?”", "Found", "“Did", "the", "check", "the", "asks.", "office,", "near", "he", "Lost"],
+        target: "He thinks for a moment and then snaps his fingers.",
+        jumbled: ["thinks", "his", "snaps", "and", "for", "a", "He", "then", "fingers.", "moment"],
       },
       {
-        target: "“Sometimes another teacher finds things on the playground and brings them there.”",
-        jumbled: ["“Sometimes", "on", "the", "there.”", "them", "finds", "another", "things", "and", "teacher", "playground", "brings"],
+        target: "Suddenly, hope rushes back into my chest.",
+        jumbled: ["into", "hope", "Suddenly,", "rushes", "chest.", "back", "my"],
       },
       {
         target: "I hadn't even thought of that possibility!",
@@ -380,16 +380,16 @@ export const CHAPTERS = [
         jumbled: ["I", "heart", "my", "with", "it", "pull", "joy.", "and", "carefully,", "leaps", "out"],
       },
       {
-        target: "“I found it! I found it!” I shout, holding it up triumphantly for Ben to see.",
-        jumbled: ["shout,", "found", "see.", "Ben", "I", "for", "up", "it!", "I", "it!”", "it", "found", "to", "“I", "holding", "triumphantly"],
+        target: "I shout that I found it and hold it up for Ben to see.",
+        jumbled: ["for", "to", "I", "it", "found", "it", "that", "shout", "hold", "I", "and", "up", "Ben", "see."],
       },
       {
-        target: "“Nice job, Kai!” he cheers loudly, giving me a high-five, both of us grinning from ear to ear.",
-        jumbled: ["ear", "to", "us", "from", "loudly,", "high-five,", "cheers", "“Nice", "grinning", "job,", "me", "he", "of", "giving", "Kai!”", "a", "both", "ear."],
+        target: "Ben cheers loudly and gives me a high-five, and we both grin.",
+        jumbled: ["loudly", "and", "and", "we", "Ben", "cheers", "me", "both", "grin.", "a", "high-five,", "gives"],
       },
       {
-        target: "“Grandpa's watch is safe,” I whisper happily to myself, promising once again to never take it off carelessly like that again.",
-        jumbled: ["whisper", "happily", "promising", "myself,", "to", "carelessly", "is", "never", "to", "again", "again.", "I", "safe,”", "watch", "once", "it", "take", "like", "off", "that", "“Grandpa's"],
+        target: "I whisper happily that the watch is safe and promise to be careful.",
+        jumbled: ["is", "careful.", "watch", "that", "and", "promise", "I", "be", "happily", "the", "whisper", "safe", "to"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a time you felt relieved after finding something.",
@@ -418,8 +418,8 @@ export const CHAPTERS = [
         jumbled: ["his", "call,", "the", "Grandpa", "a", "embarrassed", "whole", "story", "our", "feeling", "tell", "I", "during", "evening,", "losing", "little", "almost", "That", "gift.", "about", "video"],
       },
       {
-        target: "Instead of being upset, Grandpa laughs gently and says, “Everyone makes mistakes, Kai. What matters is that you learned something.”",
-        jumbled: ["mistakes,", "being", "upset,", "you", "learned", "Instead", "What", "laughs", "Kai.", "gently", "and", "“Everyone", "that", "makes", "is", "something.”", "Grandpa", "of", "matters", "says,"],
+        target: "Instead of being upset, Grandpa laughs gently and says everyone makes mistakes.",
+        jumbled: ["and", "everyone", "Instead", "upset,", "mistakes.", "says", "gently", "makes", "Grandpa", "being", "laughs", "of"],
       },
       {
         target: "From now on, I decide to only take off my watch when absolutely necessary, and always place it somewhere I will definitely remember, like my jacket pocket instead of a random bench.",

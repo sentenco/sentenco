@@ -51,16 +51,16 @@ export const CHAPTERS = [
         jumbled: ["my", "sit", "At", "feel", "first,", "I", "and", "hope", "soon.", "on", "will", "bed", "I", "better"],
       },
       {
-        target: "“Maybe it will pass, Riley,” I tell myself, but I do not feel any better.",
-        jumbled: ["do", "myself,", "will", "it", "I", "not", "tell", "I", "feel", "but", "any", "pass,", "“Maybe", "better.", "Riley,”"],
+        target: "I drink some water, but my throat still hurts, and my body feels weak.",
+        jumbled: ["weak.", "drink", "my", "some", "still", "water,", "and", "I", "body", "throat", "hurts,", "feels", "but", "my"],
       },
       {
         target: "I put on a clean shirt, take my bag, and walk slowly down the street.",
         jumbled: ["street.", "slowly", "I", "walk", "on", "and", "shirt,", "the", "clean", "a", "my", "bag,", "put", "take", "down"],
       },
       {
-        target: "She smiles and says, “Good morning, how can I help you?”",
-        jumbled: ["“Good","and","you?”","She","says,","help","I","can","how","morning,","smiles"],
+        target: "Then I decide to visit the small clinic near my apartment.",
+        jumbled: ["my", "near", "clinic", "decide", "the", "Then", "small", "apartment.", "I", "to", "visit"],
       },
       {
         target: "I still feel sick, but I also feel calm because I know help is coming.",
@@ -99,16 +99,16 @@ export const CHAPTERS = [
         jumbled: ["my", "and", "form", "phone", "age,", "asks", "my", "The", "name,", "for", "number.", "my"],
       },
       {
-        target: "Then she asks, “Is this your first visit to our clinic?”",
-        jumbled: ["to","“Is","visit","this","first","our","Then","clinic?”","she","asks,","your"],
+        target: "I write my details slowly and carefully with a black pen.",
+        jumbled: ["with", "I", "carefully", "pen.", "slowly", "and", "write", "a", "details", "my", "black"],
       },
       {
-        target: "I tell her, “I have a sore throat and a headache since this morning.”",
-        jumbled: ["morning.”", "“I", "sore", "this", "have", "her,", "headache", "and", "a", "tell", "since", "I", "throat", "a"],
+        target: "She asks me what problem brings me to the clinic today.",
+        jumbled: ["me", "problem", "what", "clinic", "to", "me", "the", "She", "today.", "brings", "asks"],
       },
       {
-        target: "She smiles and says, “Please sit down, Riley, and the doctor will call you soon.”",
-        jumbled: ["the", "She", "call", "Riley,", "doctor", "and", "“Please", "soon.”", "will", "sit", "smiles", "and", "says,", "you", "down,"],
+        target: "She tells me to sit down and says the doctor will call me soon.",
+        jumbled: ["to", "tells", "says", "call", "doctor", "will", "down", "and", "me", "sit", "soon.", "the", "me", "She"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about filling in a form.",
@@ -143,8 +143,8 @@ export const CHAPTERS = [
         jumbled: ["look", "few", "and", "A", "people", "them", "other", "too,", "some", "tired.", "wait", "a", "of", "little"],
       },
       {
-        target: "“Stay calm, Riley,” I whisper to myself, and my shoulders relax a little.",
-        jumbled: ["whisper", "myself,", "“Stay", "calm,", "Riley,”", "my", "little.", "shoulders", "I", "to", "a", "relax", "and"],
+        target: "I hold my bag on my lap and take slow, deep breaths.",
+        jumbled: ["my", "take", "deep", "I", "bag", "breaths.", "hold", "lap", "and", "my", "on", "slow,"],
       },
       {
         target: "My throat still hurts, but the calm room helps me feel less worried.",
@@ -179,16 +179,16 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Soon, the nurse opens a door and calls, “Riley, please come in, it is your turn.”",
-        jumbled: ["“Riley,", "opens", "turn.”", "it", "calls,", "in,", "and", "door", "come", "please", "the", "is", "nurse", "Soon,", "a", "your"],
+        target: "She looks at my form on her computer and reads my details.",
+        jumbled: ["her", "reads", "my", "details.", "She", "at", "looks", "on", "computer", "my", "and", "form"],
       },
       {
         target: "I sit on the chair next to her desk and put my bag on the floor.",
         jumbled: ["my", "next", "to", "chair", "I", "on", "the", "the", "on", "bag", "her", "sit", "and", "floor.", "desk", "put"],
       },
       {
-        target: "Then she asks, “How are you feeling today, and what is the problem?”",
-        jumbled: ["you", "today,", "are", "what", "is", "problem?”", "Then", "“How", "feeling", "and", "the", "she", "asks,"],
+        target: "I feel that she really wants to listen and help me get better.",
+        jumbled: ["feel", "help", "and", "better.", "that", "wants", "to", "really", "get", "listen", "me", "she", "I"],
       },
       {
         target: "Her voice is soft and calm, so I do not feel nervous anymore.",
@@ -227,8 +227,8 @@ export const CHAPTERS = [
         jumbled: ["asks", "step.", "me", "problem", "Santos", "her", "my", "Dr.", "tell", "to", "by", "step", "about"],
       },
       {
-        target: "I say, “Since this morning, I have a sore throat and a headache.”",
-        jumbled: ["this","I","headache.”","say,","have","morning,","I","sore","a","“Since","and","throat","a"],
+        target: "Santos asks me to tell her about my problem step by step.",
+        jumbled: ["asks", "about", "to", "me", "tell", "my", "step", "her", "problem", "by", "step.", "Santos"],
       },
       {
         target: "I explain that I woke up feeling weak and tired today.",
@@ -267,8 +267,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "Next, Dr. Santos says, “Let me check you now, Riley, please do not worry.”",
-        jumbled: ["you", "Santos", "says,", "please", "“Let", "me", "do", "not", "now,", "Riley,", "Dr.", "Next,", "check", "worry.”"],
+        target: "Her hands are gentle, and she tells me each step before she does it.",
+        jumbled: ["step", "hands", "before", "are", "she", "each", "it.", "gentle,", "tells", "she", "me", "Her", "does", "and"],
       },
       {
         target: "Then she looks inside my throat with a little light and a stick.",
@@ -279,8 +279,8 @@ export const CHAPTERS = [
         jumbled: ["stethoscope", "my", "me", "She", "and", "a", "to", "listens", "with", "breathe.", "back", "asks", "to", "chest", "and"],
       },
       {
-        target: "She checks my temperature and says, “You have a small fever, but it is not serious.”",
-        jumbled: ["have", "small", "my", "checks", "and", "says,", "not", "a", "“You", "it", "fever,", "serious.”", "temperature", "is", "but", "She"],
+        target: "She writes some notes and gives me a soft, friendly smile.",
+        jumbled: ["friendly", "notes", "She", "me", "a", "writes", "some", "gives", "soft,", "smile.", "and"],
       },
       {
         target: "I feel relieved because my problem is small and easy to treat.",
@@ -315,20 +315,20 @@ export const CHAPTERS = [
         jumbled: ["what", "get", "need", "me", "do", "to", "Santos", "to", "I", "Dr.", "tells", "better."],
       },
       {
-        target: "She says, “You have a small throat infection, Riley, so I will give you some medicine.”",
-        jumbled: ["will", "you", "throat", "medicine.”", "give", "small", "some", "have", "says,", "I", "a", "infection,", "“You", "Riley,", "She", "so"],
+        target: "Santos tells me what I need to do to get better.",
+        jumbled: ["better.", "to", "get", "me", "need", "do", "Santos", "I", "to", "tells", "what"],
       },
       {
         target: "She also tells me to drink a lot of warm water and rest at home.",
         jumbled: ["a", "also", "and", "rest", "warm", "water", "tells", "lot", "at", "drink", "She", "me", "of", "to", "home."],
       },
       {
-        target: "“Do not drink cold drinks, and try to sleep well tonight,” she adds.",
-        jumbled: ["drink", "well", "adds.", "cold", "she", "“Do", "drinks,", "try", "and", "tonight,”", "sleep", "to", "not"],
+        target: "I listen carefully and repeat the instructions so I remember them.",
+        jumbled: ["I", "them.", "carefully", "and", "instructions", "repeat", "the", "I", "so", "listen", "remember"],
       },
       {
-        target: "She asks, “Do you have any questions for me before you go?”",
-        jumbled: ["before","go?”","for","have","you","you","me","any","She","questions","asks,","“Do"],
+        target: "She asks if I have any questions before I leave.",
+        jumbled: ["leave.", "before", "have", "I", "asks", "any", "She", "if", "questions", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about medicine from a doctor.",

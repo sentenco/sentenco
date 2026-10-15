@@ -54,8 +54,8 @@ export const CHAPTERS = [
         jumbled: ["pulls", "something", "curiosity.", "my", "at", "challenge", "about", "the", "Still,"],
       },
       {
-        target: "Taking a deep breath, I tell myself, “Come on, Diego, just do it,” and finally push open the door and step into a room full of students who all seem far more prepared than I feel.",
-        jumbled: ["just", "a", "tell", "myself,", "open", "room", "I", "on,", "students", "door", "of", "prepared", "and", "feel.", "Taking", "push", "I", "it,”", "than", "Diego,", "finally", "breath,", "a", "the", "seem", "“Come", "full", "deep", "and", "do", "step", "more", "all", "far", "into", "who"],
+        target: "Taking a deep breath, I push open the door and step into the room.",
+        jumbled: ["and", "the", "a", "deep", "door", "step", "push", "Taking", "I", "the", "breath,", "open", "room.", "into"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a challenge you decided to try even though it scared you.",
@@ -90,8 +90,8 @@ export const CHAPTERS = [
         jumbled: ["limits", "opening", "arguments,", "strict", "statements,", "keep", "each", "There", "to", "are", "straight.", "time", "with", "cross-examinations,", "closing", "rebuttals,", "and", "I", "struggle"],
       },
       {
-        target: "“Don't worry, everyone feels lost during their first week, Diego,” Mr. Alvarez says, noticing my confused expression among several others.",
-        jumbled: ["noticing", "among", "lost", "first", "everyone", "Alvarez", "my", "others.", "several", "confused", "their", "expression", "Mr.", "says,", "week,", "during", "feels", "“Don't", "worry,", "Diego,”"],
+        target: "Alvarez says, noticing my confused expression among several others.",
+        jumbled: ["Alvarez", "several", "expression", "others.", "among", "noticing", "says,", "confused", "my"],
       },
       {
         target: "He explains that debate isn't really about winning arguments through volume, but through logic, evidence, and staying calm under pressure.",
@@ -130,8 +130,8 @@ export const CHAPTERS = [
         jumbled: ["up", "spoken", "and", "someone", "debates,", "with", "only", "have", "partnered", "I", "school", "never", "actually", "together,", "I", "seen", "around", "end", "students", "to.", "Mr.", "For", "team", "Priya,", "pairs", "ever", "but", "Alvarez"],
       },
       {
-        target: "“I've heard you're good at arguing, Diego,” Priya says with a grin, extending her hand for a confident handshake.",
-        jumbled: ["Priya", "says", "with", "a", "heard", "hand", "good", "at", "“I've", "handshake.", "extending", "arguing,", "grin,", "you're", "Diego,”", "for", "confident", "a", "her"],
+        target: "Priya says she has heard I am good at arguing and shakes my hand.",
+        jumbled: ["arguing", "am", "heard", "and", "hand.", "says", "shakes", "she", "I", "good", "has", "at", "my", "Priya"],
       },
       {
         target: "I laugh nervously, admitting I'm not sure that's necessarily a compliment.",
@@ -174,8 +174,8 @@ export const CHAPTERS = [
         jumbled: ["we", "asks", "the", "both", "first", "uniforms", "spend", "whether", "school", "thoroughly.", "Our", "required,", "topic", "and", "assigned", "should", "suggests", "sides", "Priya", "be", "researching", "whole", "weekend"],
       },
       {
-        target: "“Understanding the opposing argument makes your own argument stronger, Diego,” she explains, opening several tabs of articles on her laptop.",
-        jumbled: ["articles", "own", "your", "laptop.", "her", "stronger,", "on", "she", "tabs", "the", "of", "argument", "argument", "opposing", "opening", "several", "“Understanding", "makes", "explains,", "Diego,”"],
+        target: "Priya explains that understanding the other side makes your own argument stronger.",
+        jumbled: ["argument", "understanding", "makes", "that", "Priya", "explains", "other", "your", "side", "stronger.", "own", "the"],
       },
       {
         target: "We highlight key statistics and organize our strongest points into a clear, logical outline.",
@@ -226,8 +226,8 @@ export const CHAPTERS = [
         jumbled: ["repeating", "opponent", "through", "my", "patient", "myself", "my", "but", "watches", "expression.", "statement,", "while", "with", "opening", "I", "a", "amused", "slightly", "awkwardly", "stumble"],
       },
       {
-        target: "Priya tries subtly signaling encouragement from the sidelines, mouthing “You've got this, Diego,” but nervousness completely overwhelms my ability to think clearly.",
-        jumbled: ["signaling", "to", "encouragement", "clearly.", "ability", "completely", "my", "nervousness", "but", "this,", "mouthing", "Priya", "got", "sidelines,", "Diego,”", "from", "the", "think", "subtly", "overwhelms", "tries", "“You've"],
+        target: "Priya mouths that I can do it, but nervousness overwhelms me.",
+        jumbled: ["nervousness", "Priya", "me.", "that", "overwhelms", "it,", "can", "I", "mouths", "but", "do"],
       },
       {
         target: "I sit down feeling embarrassed, wondering whether I made a serious mistake joining this team.",
@@ -262,8 +262,8 @@ export const CHAPTERS = [
         jumbled: ["the", "on", "over", "over", "my", "head.", "I", "replaying", "alone", "embarrassing", "in", "performance", "and", "sit", "bleachers,", "my"],
       },
       {
-        target: "“What were you thinking, Diego?” I mutter under my breath.",
-        jumbled: ["Diego?”", "were", "mutter", "my", "I", "you", "under", "“What", "breath.", "thinking,"],
+        target: "I mutter under my breath and ask myself what I was thinking.",
+        jumbled: ["and", "was", "mutter", "my", "ask", "I", "what", "thinking.", "under", "I", "myself", "breath"],
       },
       {
         target: "Maybe Priya deserves a better partner, someone who doesn't freeze up the moment real pressure appears in front of an audience.",
@@ -306,16 +306,16 @@ export const CHAPTERS = [
         jumbled: ["saying", "beside", "word", "me", "first.", "I'm", "Priya", "as", "leave,", "a", "Just", "about", "at", "over", "walks", "and", "without", "sits", "to"],
       },
       {
-        target: "“Everyone freezes their first time, Diego. I did too,” she finally admits, surprising me completely.",
-        jumbled: ["finally", "too,”", "Diego.", "their", "completely.", "time,", "freezes", "“Everyone", "surprising", "she", "me", "admits,", "did", "I", "first"],
+        target: "She admits that everyone freezes their first time, and she did too.",
+        jumbled: ["everyone", "and", "She", "their", "time,", "first", "freezes", "did", "admits", "she", "that", "too."],
       },
       {
         target: "She explains that the problem wasn't my argument, which was actually well-researched, but rather that I tried memorizing every word instead of just knowing my main points.",
         jumbled: ["that", "of", "I", "that", "wasn't", "but", "was", "rather", "explains", "actually", "the", "word", "problem", "argument,", "points.", "well-researched,", "which", "instead", "main", "memorizing", "just", "She", "my", "knowing", "my", "every", "tried"],
       },
       {
-        target: "“Speak like you're explaining it to a friend,” she suggests, “not reciting a script.”",
-        jumbled: ["a", "friend,”", "explaining", "script.”", "“Speak", "like", "reciting", "to", "a", "you're", "it", "she", "suggests,", "“not"],
+        target: "She suggests that I speak like I am explaining it to a friend.",
+        jumbled: ["am", "explaining", "a", "friend.", "speak", "that", "like", "I", "suggests", "I", "to", "it", "She"],
       },
       {
         target: "Hearing that even Priya struggled once makes my failure feel less permanent, and slowly, a small flicker of determination replaces my earlier urge to quit.",
@@ -354,8 +354,8 @@ export const CHAPTERS = [
         jumbled: ["matching", "team", "and", "sight", "everywhere.", "with", "The", "my", "room", "dozens", "of", "unfamiliar,", "confident", "the", "colors,", "faces", "in", "students", "return", "at", "of", "buzzes", "instantly", "nerves"],
       },
       {
-        target: "Priya squeezes my shoulder reassuringly, whispering, “You've got this, Diego,” as we find our assigned table for the first round.",
-        jumbled: ["table", "assigned", "squeezes", "whispering,", "for", "round.", "“You've", "Diego,”", "reassuringly,", "we", "got", "this,", "as", "my", "the", "first", "find", "Priya", "shoulder", "our"],
+        target: "Priya squeezes my shoulder and whispers that I can do it.",
+        jumbled: ["whispers", "squeezes", "that", "shoulder", "my", "and", "do", "can", "it.", "Priya", "I"],
       },
       {
         target: "Remembering her advice, I focus on knowing my main points rather than reciting memorized sentences word for word.",
@@ -398,8 +398,8 @@ export const CHAPTERS = [
         jumbled: ["dismantling", "their", "we", "an", "effortlessly", "My", "argument", "had", "speaker", "stomach", "prepared.", "tightens", "parts", "as", "begins,", "of", "lead"],
       },
       {
-        target: "Instead of panicking like I might have weeks ago, I tell myself, “Stay calm, Diego,” and remember Priya's advice, calmly building on our remaining points instead.",
-        jumbled: ["building", "remaining", "panicking", "remember", "ago,", "calm,", "like", "Instead", "have", "might", "of", "points", "Priya's", "Diego,”", "instead.", "“Stay", "tell", "weeks", "on", "and", "our", "advice,", "I", "calmly", "myself,", "I"],
+        target: "I tell myself to stay calm and remember the advice from Priya.",
+        jumbled: ["I", "calm", "advice", "the", "from", "remember", "to", "myself", "Priya.", "tell", "and", "stay"],
       },
       {
         target: "I surprise myself by responding smoothly, addressing their argument directly instead of ignoring it.",
@@ -442,8 +442,8 @@ export const CHAPTERS = [
         jumbled: ["proud", "feel", "Standing", "I", "afterward,", "feel", "the", "gymnasium", "expect", "to", "crushed,", "mostly", "strangely,", "instead.", "I", "outside", "but"],
       },
       {
-        target: "“Remember how you froze during that first practice round, Diego?” Priya asks, grinning as she recalls how far I have actually come.",
-        jumbled: ["how", "recalls", "as", "during", "practice", "that", "come.", "how", "have", "round,", "froze", "“Remember", "asks,", "Diego?”", "far", "actually", "grinning", "you", "first", "she", "I", "Priya"],
+        target: "Priya asks if I remember how I froze during that first practice round.",
+        jumbled: ["round.", "Priya", "how", "first", "practice", "I", "froze", "if", "I", "that", "during", "asks", "remember"],
       },
       {
         target: "She's right; the nervous, blank-minded version of myself from weeks ago would never have survived facing the tournament's toughest team so calmly.",

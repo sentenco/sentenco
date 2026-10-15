@@ -51,8 +51,8 @@ export const CHAPTERS = [
         jumbled: ["mentions", "shelter,", "for", "adopting", "animal", "the", "A", "about", "afterward.", "weeks", "me", "at", "stays", "local", "something", "coworker", "volunteering", "the", "idea", "dog", "with", "a", "and", "rescue", "of"],
       },
       {
-        target: "I research the responsibilities carefully, saving my notes in a file I title “Isaac's Adoption Checklist,” considering the time, cost, and commitment involved before making any final decision.",
-        jumbled: ["research", "final", "involved", "file", "the", "and", "any", "my", "“Isaac's", "I", "carefully,", "Adoption", "saving", "a", "commitment", "title", "I", "considering", "the", "before", "decision.", "time,", "making", "responsibilities", "Checklist,”", "in", "cost,", "notes"],
+        target: "I research the responsibilities carefully and save my notes in a file.",
+        jumbled: ["notes", "responsibilities", "I", "research", "save", "a", "in", "my", "file.", "carefully", "the", "and"],
       },
       {
         target: "Finally, one Saturday morning, I decide to simply visit the shelter, without promising myself anything beyond just looking.",
@@ -95,8 +95,8 @@ export const CHAPTERS = [
         jumbled: ["quietly", "dog,", "One", "however,", "head", "approach", "lifting", "back", "as", "of", "I", "the", "in", "sits", "curiously.", "corner", "his", "kennel,", "barely", "his"],
       },
       {
-        target: "“That's Ranger, Isaac. He's been here longer than most, honestly, because his shyness makes him harder to place,” she explains softly.",
-        jumbled: ["explains", "longer", "here", "she", "makes", "Ranger,", "than", "softly.", "“That's", "Isaac.", "been", "place,”", "harder", "to", "because", "him", "most,", "He's", "shyness", "honestly,", "his"],
+        target: "Alvarado adds, watching my reaction carefully.",
+        jumbled: ["carefully.", "reaction", "watching", "my", "Alvarado", "adds,"],
       },
       {
         target: "Something about his cautious, watchful eyes stops me completely, unlike the more obviously excitable dogs surrounding him.",
@@ -143,8 +143,8 @@ export const CHAPTERS = [
         jumbled: ["the", "quietly", "floor", "on", "down", "I", "sit", "nearby."],
       },
       {
-        target: "“Slow down, Isaac, let him come to you,” I tell myself, giving him space rather than forcing any immediate interaction he clearly isn't ready for yet.",
-        jumbled: ["ready", "him", "come", "any", "tell", "giving", "forcing", "myself,", "you,”", "yet.", "“Slow", "immediate", "clearly", "I", "to", "interaction", "he", "space", "let", "him", "Isaac,", "for", "than", "down,", "rather", "isn't"],
+        target: "I tell myself to slow down and let him come to me.",
+        jumbled: ["tell", "let", "to", "slow", "I", "and", "down", "to", "myself", "me.", "come", "him"],
       },
       {
         target: "By evening, he retreats completely under my bed, refusing both food and water despite my gentle, repeated attempts.",
@@ -183,8 +183,8 @@ export const CHAPTERS = [
         jumbled: ["behavior", "discouraged,", "to", "common", "adjusting", "surroundings", "among", "read", "unfamiliar", "rescue", "is", "this", "than", "Rather", "dogs", "slowly", "people.", "and", "feeling", "that", "I"],
       },
       {
-        target: "I begin keeping a small notebook, headed “Isaac's Patience Log,” and start leaving small treats scattered gently near wherever he chooses to rest, never forcing direct contact or demanding immediate affection from him.",
-        jumbled: ["keeping", "notebook,", "scattered", "“Isaac's", "Log,”", "gently", "headed", "a", "I", "and", "to", "contact", "demanding", "rest,", "wherever", "immediate", "him.", "chooses", "treats", "from", "Patience", "he", "direct", "affection", "small", "near", "forcing", "small", "begin", "or", "never", "start", "leaving"],
+        target: "I begin keeping a small notebook and leave small treats near where he rests.",
+        jumbled: ["keeping", "I", "small", "leave", "small", "where", "a", "and", "he", "near", "treats", "notebook", "rests.", "begin"],
       },
       {
         target: "Gradually, he starts eating while I sit quietly nearby, no longer requiring complete privacy for something as simple as a meal.",
@@ -235,8 +235,8 @@ export const CHAPTERS = [
         jumbled: ["genuinely", "might", "selfish,", "adopting", "him.", "for", "was", "own", "actually", "loneliness", "prioritizing", "briefly", "best", "I", "over", "wonder", "him", "my", "what", "be", "if"],
       },
       {
-        target: "Exhausted and discouraged, I whisper, “Get it together, Isaac,” before finally sitting on the floor beside the bed, simply waiting quietly.",
-        jumbled: ["floor", "sitting", "finally", "Exhausted", "beside", "it", "simply", "I", "before", "Isaac,”", "bed,", "the", "on", "discouraged,", "and", "whisper,", "together,", "waiting", "the", "quietly.", "“Get"],
+        target: "Exhausted and discouraged, I whisper to myself and sit on the floor beside the bed.",
+        jumbled: ["Exhausted", "whisper", "and", "sit", "bed.", "the", "on", "myself", "and", "discouraged,", "floor", "the", "to", "I", "beside"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a moment of doubt during a difficult process.",
@@ -267,8 +267,8 @@ export const CHAPTERS = [
         jumbled: ["like", "handling", "and", "the", "storm.", "explaining", "my", "morning,", "I", "about", "discouragement", "setbacks", "Ms.", "next", "The", "night's", "previous", "genuine", "call", "Alvarado,", "uncertainty"],
       },
       {
-        target: "“Isaac, this is completely normal for a traumatized rescue animal,” she reassures me calmly, explaining that regression after progress is not a sign of my failure whatsoever.",
-        jumbled: ["traumatized", "a", "this", "me", "animal,”", "progress", "“Isaac,", "sign", "rescue", "normal", "is", "she", "not", "that", "a", "explaining", "failure", "calmly,", "of", "completely", "regression", "after", "reassures", "for", "whatsoever.", "is", "my"],
+        target: "The next morning, I call Ms.",
+        jumbled: ["morning,", "Ms.", "call", "The", "I", "next"],
       },
       {
         target: "She recommends simply existing calmly near Ranger daily, without demanding anything, letting him choose when and how to approach me instead.",
@@ -319,8 +319,8 @@ export const CHAPTERS = [
         jumbled: ["with", "races", "hope.", "My", "heart", "cautious"],
       },
       {
-        target: "“Stay still, Isaac,” I tell myself, remaining perfectly still and resisting every urge to reach toward him immediately.",
-        jumbled: ["“Stay", "remaining", "still", "every", "immediately.", "perfectly", "I", "reach", "resisting", "Isaac,”", "tell", "to", "toward", "urge", "and", "myself,", "still,", "him"],
+        target: "Alvarado suggested, I notice Ranger stand and stretch from his usual resting spot.",
+        jumbled: ["from", "notice", "suggested,", "Ranger", "spot.", "resting", "and", "stretch", "Alvarado", "his", "stand", "usual", "I"],
       },
       {
         target: "Ranger stops just inches away, sniffing my outstretched hand carefully before finally resting his head gently against my knee.",
@@ -359,8 +359,8 @@ export const CHAPTERS = [
         jumbled: ["front", "door", "the", "Ranger", "initially.", "hesitates", "at"],
       },
       {
-        target: "“Easy does it, Isaac,” I remind myself, and with gentle encouragement and a favorite treat, he steps outside cautiously beside me.",
-        jumbled: ["outside", "does", "I", "Isaac,”", "“Easy", "cautiously", "myself,", "a", "and", "with", "me.", "treat,", "steps", "favorite", "gentle", "it,", "he", "and", "encouragement", "remind", "beside"],
+        target: "I remind myself to go easy, and he steps outside cautiously beside me.",
+        jumbled: ["outside", "easy,", "he", "beside", "me.", "I", "steps", "and", "cautiously", "to", "go", "remind", "myself"],
       },
       {
         target: "The unfamiliar sounds and smells clearly overwhelm him at first, his body tense and alert to every passing car or stranger nearby.",
@@ -411,8 +411,8 @@ export const CHAPTERS = [
         jumbled: ["a", "check,", "visiting", "amazed", "such", "over", "period.", "recently", "by", "genuinely", "follow-up", "for", "his", "a", "short", "remarkable", "transformation", "Ms.", "Alvarado,", "seems", "relatively"],
       },
       {
-        target: "“This is exactly why patience matters so much, Isaac,” she says, smiling warmly at us both.",
-        jumbled: ["why", "so", "matters", "she", "much,", "us", "is", "warmly", "patience", "at", "“This", "both.", "smiling", "says,", "Isaac,”", "exactly"],
+        target: "She smiles warmly at us both and says this is why patience matters.",
+        jumbled: ["patience", "both", "why", "us", "warmly", "smiles", "at", "She", "and", "is", "matters.", "says", "this"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a transformation you witnessed over time.",
@@ -455,8 +455,8 @@ export const CHAPTERS = [
         jumbled: ["did,", "of", "with", "filled", "instead", "the", "companionship.", "it", "apartment", "presence", "longer", "lonely", "that", "no", "in", "once", "genuine", "way", "My", "quiet", "comfortable", "feels"],
       },
       {
-        target: "“We did it, Isaac,” I think quietly, and I smile contentedly.",
-        jumbled: ["“We", "I", "quietly,", "did", "and", "Isaac,”", "think", "it,", "I", "smile", "contentedly."],
+        target: "Ranger shifts closer, resting his head against my leg.",
+        jumbled: ["shifts", "resting", "his", "Ranger", "closer,", "head", "leg.", "my", "against"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a relationship or bond that grew stronger through patience.",

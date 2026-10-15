@@ -49,12 +49,12 @@ export const CHAPTERS = [
         jumbled: ["purple", "stripes", "is", "white", "and", "with", "seat.", "It", "a", "soft"],
       },
       {
-        target: "“Happy birthday, Zara!” Dad says with a big smile.",
-        jumbled: ["big", "smile.", "says", "a", "with", "“Happy", "birthday,", "Zara!”", "Dad"],
+        target: "I run over and touch the smooth, cool handlebars.",
+        jumbled: ["touch", "I", "smooth,", "handlebars.", "the", "over", "run", "and", "cool"],
       },
       {
-        target: "Dad laughs and says, “First, let's put on your helmet.”",
-        jumbled: ["helmet.”", "laughs", "and", "your", "Dad", "put", "let's", "says,", "“First,", "on"],
+        target: "I cannot wait to learn how to ride my new bike.",
+        jumbled: ["my", "wait", "new", "cannot", "to", "how", "ride", "learn", "I", "to", "bike."],
       },
       {
         target: "I put on my blue helmet and feel ready for an adventure.",
@@ -95,8 +95,8 @@ export const CHAPTERS = [
         jumbled: ["and", "pedals", "right,", "just", "proud.", "feel", "the", "reach", "feet", "I", "My"],
       },
       {
-        target: "“Are you ready to try?” Dad asks with a smile.",
-        jumbled: ["ready", "to", "asks", "try?”", "you", "Dad", "“Are", "a", "with", "smile."],
+        target: "I nod my head and take a deep breath.",
+        jumbled: ["take", "my", "head", "I", "a", "and", "breath.", "nod", "deep"],
       },
       {
         target: "Riding with training wheels feels safe and exciting at the same time.",
@@ -179,8 +179,8 @@ export const CHAPTERS = [
         jumbled: ["runs", "bike.", "the", "pedals,", "and", "the", "beside", "I", "along", "Dad", "push"],
       },
       {
-        target: "“You're doing great, Zara!” Dad says, a little out of breath.",
-        jumbled: ["a", "little", "great,", "Dad", "says,", "doing", "breath.", "out", "of", "Zara!”", "“You're"],
+        target: "I feel the wind on my face as we move faster.",
+        jumbled: ["the", "I", "we", "as", "on", "my", "wind", "face", "feel", "faster.", "move"],
       },
       {
         target: "Even without training wheels, I feel brave with Dad right there.",
@@ -221,8 +221,8 @@ export const CHAPTERS = [
         jumbled: ["little", "I", "sore,", "to", "want", "and", "a", "knee", "My", "cry.", "feels"],
       },
       {
-        target: "“Are you okay, Zara?” he asks with a worried face.",
-        jumbled: ["okay,", "he", "Zara?”", "face.", "“Are", "worried", "a", "asks", "with", "you"],
+        target: "Dad runs over quickly and helps me stand up.",
+        jumbled: ["me", "quickly", "Dad", "up.", "and", "helps", "over", "runs", "stand"],
       },
       {
         target: "Dad hugs me and says falling is part of learning to ride.",
@@ -255,8 +255,8 @@ export const CHAPTERS = [
         jumbled: ["try", "to", "again.", "bit", "feel", "nervous", "I", "a"],
       },
       {
-        target: "Dad kneels beside me and says, “You can do this, Zara.”",
-        jumbled: ["kneels", "Zara.”", "Dad", "beside", "do", "says,", "me", "this,", "and", "can", "“You"],
+        target: "After my little fall, I feel a bit nervous to try again.",
+        jumbled: ["little", "nervous", "fall,", "to", "After", "my", "feel", "try", "again.", "a", "bit", "I"],
       },
       {
         target: "I push the pedals slowly and focus on looking straight ahead.",
@@ -297,8 +297,8 @@ export const CHAPTERS = [
         jumbled: ["I", "tell", "ready", "by", "Dad", "I", "am", "ride", "to", "all", "Today,", "myself."],
       },
       {
-        target: "“No training wheels and no holding on, Zara?” Dad asks with a smile.",
-        jumbled: ["holding", "wheels", "Dad", "smile.", "training", "a", "no", "with", "Zara?”", "asks", "and", "on,", "“No"],
+        target: "I climb on the bike and push off the ground slowly.",
+        jumbled: ["bike", "off", "slowly.", "push", "I", "ground", "on", "the", "climb", "and", "the"],
       },
       {
         target: "Dad checks my helmet and makes sure the bike is ready.",
@@ -343,8 +343,8 @@ export const CHAPTERS = [
         jumbled: ["the", "I", "faster", "down", "a", "path.", "and", "little", "smile", "pedal"],
       },
       {
-        target: "“You're really good at this!” Felix says with a proud smile.",
-        jumbled: ["good", "“You're", "says", "really", "proud", "with", "at", "a", "this!”", "smile.", "Felix"],
+        target: "Felix runs alongside me, cheering with every turn I make.",
+        jumbled: ["turn", "with", "I", "cheering", "alongside", "runs", "me,", "Felix", "every", "make."],
       },
       {
         target: "He gives me a high five when I stop safely at the end.",
@@ -381,8 +381,8 @@ export const CHAPTERS = [
         jumbled: ["ride", "Dad", "I", "our", "whole", "down", "street.", "Today,", "can", "says"],
       },
       {
-        target: "“Stay close to the side, Zara, and I'll walk with you,” Dad says.",
-        jumbled: ["Zara,", "and", "I'll", "“Stay", "says.", "Dad", "side,", "with", "walk", "you,”", "to", "close", "the"],
+        target: "I pedal past our neighbor's house and wave to Mrs.",
+        jumbled: ["and", "neighbor's", "past", "Mrs.", "pedal", "house", "to", "I", "wave", "our"],
       },
       {
         target: "The wind feels cool against my face as I ride along.",
@@ -427,16 +427,16 @@ export const CHAPTERS = [
         jumbled: ["first", "my", "fall.", "my", "remember", "ride", "little", "and", "I", "wobbly"],
       },
       {
-        target: "“You're one of the best bike riders on our street, Zara,” Felix says.",
-        jumbled: ["street,", "Felix", "our", "best", "says.", "Zara,”", "“You're", "one", "riders", "of", "bike", "the", "on"],
+        target: "Dad no longer needs to hold my seat or walk beside me.",
+        jumbled: ["or", "needs", "longer", "to", "hold", "no", "my", "Dad", "walk", "me.", "seat", "beside"],
       },
       {
         target: "I feel the wind in my hair and a big smile on my face.",
         jumbled: ["on", "my", "a", "smile", "big", "in", "feel", "and", "wind", "hair", "my", "the", "I", "face."],
       },
       {
-        target: "“I did it, I can really ride my bike!” I shout happily.",
-        jumbled: ["I", "bike!”", "happily.", "I", "“I", "ride", "shout", "did", "can", "really", "my", "it,"],
+        target: "Learning to ride my bike taught me that practice makes anything possible.",
+        jumbled: ["practice", "to", "possible.", "me", "anything", "that", "bike", "my", "ride", "makes", "taught", "Learning"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about something practice helped you do.",

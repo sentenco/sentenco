@@ -145,8 +145,8 @@ export const CHAPTERS = [
         jumbled: ["Rather", "reasonable", "both", "compliance,", "in", "as", "I", "than", "request", "precedent.", "existing", "a", "and", "simply", "evidence", "demanding", "this", "grounded", "frame"],
       },
       {
-        target: "Reading the letter back, I feel it strikes an appropriately professional, non-confrontational tone throughout, and I sign it simply, \"Sincerely, Rosalind.\"",
-        jumbled: ["and", "feel", "the", "letter", "appropriately", "\"Sincerely,", "throughout,", "simply,", "tone", "Rosalind.\"", "it", "an", "I", "it", "I", "strikes", "sign", "Reading", "non-confrontational", "professional,", "back,"],
+        target: "Reading the letter back, I feel it sounds professional and calm, and I sign it.",
+        jumbled: ["it", "I", "and", "professional", "sign", "sounds", "and", "the", "it.", "I", "back,", "letter", "calm,", "Reading", "feel"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about writing a formal request grounded in evidence rather than emotion.",
@@ -177,8 +177,8 @@ export const CHAPTERS = [
         jumbled: ["scheduled", "the", "person", "in", "present", "appeal,", "at", "case", "board's", "meeting.", "next", "I", "with", "along", "submit", "to", "formal", "request", "the", "a", "my"],
       },
       {
-        target: "\"We've received your appeal, Rosalind, and the board will review it at our meeting in two weeks,\" Mr. Ashworth confirms promptly.",
-        jumbled: ["Mr.", "received", "board", "weeks,\"", "Rosalind,", "appeal,", "two", "\"We've", "will", "it", "our", "Ashworth", "at", "the", "meeting", "promptly.", "your", "and", "in", "review", "confirms"],
+        target: "Mr. Ashworth promptly confirms that the board will review my appeal in two weeks.",
+        jumbled: ["review", "will", "my", "two", "that", "Ashworth", "the", "weeks.", "appeal", "confirms", "in", "promptly", "Mr.", "board"],
       },
       {
         target: "I continue maintaining the garden carefully, wanting to demonstrate genuine commitment rather than treating this as a temporary display.",
@@ -229,8 +229,8 @@ export const CHAPTERS = [
         jumbled: ["borders", "vibrant", "for", "I'd", "I", "add", "to", "a", "appearance.", "honestly,", "the", "less", "garden", "more", "polished", "answer", "be", "though", "admitting", "seasonally,", "looks", "willing"],
       },
       {
-        target: "\"We appreciate that you've approached this respectfully, Rosalind, rather than ignoring the notice,\" one board member mentions.",
-        jumbled: ["mentions.", "this", "rather", "notice,\"", "Rosalind,", "\"We", "approached", "that", "member", "you've", "than", "board", "appreciate", "respectfully,", "the", "ignoring", "one"],
+        target: "One board member says they appreciate that I approached this respectfully.",
+        jumbled: ["member", "One", "I", "that", "this", "approached", "they", "board", "says", "appreciate", "respectfully."],
       },
       {
         target: "Given the board's attentive questions, I sense they're genuinely considering this request rather than merely going through procedural motions.",
@@ -265,8 +265,8 @@ export const CHAPTERS = [
         jumbled: ["week", "A", "later,", "Mr.", "Ashworth", "calls."],
       },
       {
-        target: "\"Good news, Rosalind, the board has approved your exception, with one condition,\" he tells me.",
-        jumbled: ["exception,", "he", "tells", "approved", "Rosalind,", "\"Good", "has", "me.", "news,", "the", "condition,\"", "one", "board", "your", "with"],
+        target: "He tells me the board has approved my exception, with one condition.",
+        jumbled: ["He", "tells", "condition.", "me", "my", "one", "the", "has", "with", "exception,", "approved", "board"],
       },
       {
         target: "They'd like me to add a small decorative border, similar to what I'd already offered, to maintain visual consistency with neighboring properties.",
@@ -317,8 +317,8 @@ export const CHAPTERS = [
         jumbled: ["neighbors", "few", "A", "stop", "by."],
       },
       {
-        target: "\"This looks wonderful, Rosalind,\" one says, asking genuinely curious questions about the vegetables I'm growing.",
-        jumbled: ["genuinely", "\"This", "curious", "the", "one", "asking", "growing.", "looks", "vegetables", "I'm", "wonderful,", "says,", "about", "questions", "Rosalind,\""],
+        target: "One of them says it looks wonderful and asks about the vegetables I am growing.",
+        jumbled: ["and", "of", "it", "wonderful", "One", "says", "I", "vegetables", "them", "growing.", "the", "asks", "looks", "about", "am"],
       },
       {
         target: "One neighbor mentions she might request a similar exception herself, inspired by seeing how mine had ultimately turned out.",
@@ -361,8 +361,8 @@ export const CHAPTERS = [
         jumbled: ["to", "reasonable", "that", "regardless", "been", "compliance", "Nevertheless,", "rigid,", "rather", "a", "genuine", "context.", "blanket", "exception", "express", "enforcing", "of", "than", "open", "they'd", "I", "gratitude"],
       },
       {
-        target: "\"Thank you, Rosalind — you approached this whole situation professionally from the very beginning,\" Mr. Ashworth replies warmly.",
-        jumbled: ["approached", "from", "Ashworth", "you,", "the", "—", "beginning,\"", "professionally", "situation", "warmly.", "this", "you", "\"Thank", "Mr.", "replies", "very", "Rosalind", "whole"],
+        target: "Ashworth and the board, appreciating their willingness to consider my request thoughtfully.",
+        jumbled: ["willingness", "my", "Ashworth", "to", "the", "consider", "thoughtfully.", "request", "their", "board,", "and", "appreciating"],
       },
       {
         target: "This exchange, small as it is, leaves me feeling genuinely positive about my relationship with the community's governance.",
@@ -393,8 +393,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "\"Rosalind, could you help me draft my own exception request?\" the neighbor who'd mentioned interest earlier asks, inspired by how mine had unfolded.",
-        jumbled: ["who'd", "how", "inspired", "could", "exception", "mentioned", "request?\"", "earlier", "draft", "by", "interest", "help", "you", "own", "neighbor", "the", "mine", "me", "asks,", "\"Rosalind,", "unfolded.", "my", "had"],
+        target: "A neighbor asks if I could help draft their own exception request.",
+        jumbled: ["own", "their", "if", "A", "could", "request.", "draft", "I", "exception", "asks", "neighbor", "help"],
       },
       {
         target: "I walk her through what worked well: referencing specific bylaws, including photographic evidence, and framing the request collaboratively rather than confrontationally.",

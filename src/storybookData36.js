@@ -50,8 +50,8 @@ export const CHAPTERS = [
         jumbled: ["and", "important", "whole", "to", "myself", "for", "the", "about.", "uncovering", "I", "imagining", "meaningful", "read", "eagerly,", "nod", "something", "school"],
       },
       {
-        target: "“Everyone starts somewhere, Caleb,” she says, handing me a small stack of upcoming events to write about.",
-        jumbled: ["she", "a", "of", "Caleb,”", "about.", "upcoming", "events", "to", "me", "somewhere,", "handing", "“Everyone", "starts", "says,", "write", "small", "stack"],
+        target: "She hands me a small stack of upcoming events to write about.",
+        jumbled: ["hands", "She", "about.", "a", "write", "me", "small", "to", "stack", "events", "upcoming", "of"],
       },
       {
         target: "Walking out with my very first assignment, I feel a genuine thrill about officially becoming part of something real.",
@@ -94,8 +94,8 @@ export const CHAPTERS = [
         jumbled: ["me,", "sympathetically.", "and", "Iris,", "disappointment", "obvious", "near", "sits", "my", "notices", "laughs", "reporter", "another", "who"],
       },
       {
-        target: "“We all start with menu changes and lost-and-found updates, Caleb,” she admits, sharing her own embarrassing first article about a broken water fountain.",
-        jumbled: ["embarrassing", "about", "with", "water", "lost-and-found", "menu", "admits,", "changes", "start", "first", "and", "updates,", "Caleb,”", "article", "broken", "“We", "all", "own", "her", "sharing", "she", "a", "fountain."],
+        target: "She admits that everyone starts with small stories, like a broken water fountain.",
+        jumbled: ["fountain.", "small", "water", "She", "broken", "with", "a", "like", "that", "admits", "stories,", "starts", "everyone"],
       },
       {
         target: "Somehow, knowing everyone begins this way makes the assignment feel slightly less discouraging.",
@@ -130,8 +130,8 @@ export const CHAPTERS = [
         jumbled: ["overhear", "room.", "two", "the", "art", "worried", "tones", "discussing", "school's", "budget", "the", "in", "I", "teachers", "near", "hushed,"],
       },
       {
-        target: "Something about “cutting the art program” catches my attention immediately, and I slow my pace, straining to hear more details without seeming obvious.",
-        jumbled: ["art", "immediately,", "about", "attention", "straining", "and", "pace,", "without", "I", "more", "seeming", "to", "“cutting", "slow", "obvious.", "the", "my", "details", "hear", "catches", "program”", "Something", "my"],
+        target: "I hear something about cutting the art program and slow my pace to listen.",
+        jumbled: ["I", "my", "pace", "about", "art", "to", "the", "and", "listen.", "hear", "slow", "something", "cutting", "program"],
       },
       {
         target: "This sounds like something students would genuinely want to know about, unlike menu changes or lost umbrellas.",
@@ -142,8 +142,8 @@ export const CHAPTERS = [
         jumbled: ["races", "unexpected", "stumbled", "with", "real,", "might", "excitement", "accidentally", "I", "meaningful", "My", "I", "onto", "news.", "have", "heart", "realize", "as"],
       },
       {
-        target: "“This is it, Caleb,” I tell myself, deciding right there in the hallway that I need to investigate this story properly, whatever it takes.",
-        jumbled: ["it,", "I", "myself,", "takes.", "Caleb,”", "story", "“This", "need", "properly,", "I", "is", "to", "deciding", "hallway", "that", "this", "right", "it", "whatever", "investigate", "the", "in", "tell", "there"],
+        target: "I tell myself to investigate this story properly, whatever it takes.",
+        jumbled: ["I", "this", "takes.", "to", "tell", "story", "myself", "investigate", "whatever", "properly,", "it"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about accidentally learning something important.",
@@ -174,8 +174,8 @@ export const CHAPTERS = [
         jumbled: ["about", "art", "hold", "I", "the", "by", "rumors", "directly,", "room", "visiting", "whether", "truth.", "any", "cuts", "art", "asking", "budget", "Foster,", "start", "the", "the", "Mr.", "teacher,"],
       },
       {
-        target: "“There's truth to it, Caleb, but nothing official yet,” he confirms cautiously, noting that funding discussions are indeed happening, though nothing has been decided yet by the administration.",
-        jumbled: ["yet,”", "“There's", "to", "cautiously,", "that", "has", "it,", "funding", "official", "nothing", "yet", "administration.", "happening,", "but", "by", "though", "noting", "decided", "been", "Caleb,", "confirms", "the", "nothing", "indeed", "discussions", "are", "truth", "he"],
+        target: "Foster, the art teacher, whether the rumors about budget cuts hold any truth.",
+        jumbled: ["budget", "truth.", "hold", "whether", "any", "art", "the", "cuts", "about", "teacher,", "rumors", "the", "Foster,"],
       },
       {
         target: "Next, I interview several students in the hallway, discovering that many genuinely care about keeping the art program running for future classes.",
@@ -222,8 +222,8 @@ export const CHAPTERS = [
         jumbled: ["slowly,", "worries", "encouraging,", "and", "immediately", "she", "a", "Instead,", "her", "thoughtful", "reads", "which", "rather", "honestly", "little.", "surprises", "than", "expression", "me", "it"],
       },
       {
-        target: "“This is a serious, sensitive story, Caleb. Are you prepared to handle it responsibly?” she asks carefully, not doubting my ability exactly, but emphasizing genuine journalistic responsibility.",
-        jumbled: ["serious,", "exactly,", "genuine", "story,", "is", "a", "to", "carefully,", "Caleb.", "you", "not", "my", "asks", "“This", "ability", "Are", "handle", "sensitive", "journalistic", "responsibility.", "she", "emphasizing", "but", "responsibly?”", "it", "doubting", "prepared"],
+        target: "Rivera, expecting immediate enthusiastic approval for such an important topic.",
+        jumbled: ["enthusiastic", "Rivera,", "approval", "expecting", "an", "such", "important", "topic.", "immediate", "for"],
       },
       {
         target: "I assure her I understand the importance of accuracy and fairness, especially regarding something affecting real students and teachers.",
@@ -270,8 +270,8 @@ export const CHAPTERS = [
         jumbled: ["how", "questions,", "interview", "accusatory", "Iris", "avoiding", "genuinely", "anything", "to", "teaches", "useful", "or", "me", "unfairly.", "that", "sounds", "structure", "one-sided"],
       },
       {
-        target: "“Good journalism asks hard questions respectfully, Caleb,” she explains, reviewing my draft questions with her sharp editing eye.",
-        jumbled: ["sharp", "questions", "“Good", "with", "her", "respectfully,", "asks", "questions", "my", "reviewing", "Caleb,”", "draft", "eye.", "hard", "she", "editing", "journalism", "explains,"],
+        target: "She explains that good journalism asks hard questions respectfully.",
+        jumbled: ["questions", "hard", "She", "respectfully.", "explains", "asks", "journalism", "good", "that"],
       },
       {
         target: "By the time our interview is scheduled for Thursday, I feel far more prepared and considerably less nervous than I expected to feel.",
@@ -314,8 +314,8 @@ export const CHAPTERS = [
         jumbled: ["that", "without", "dramatic", "times,", "serious", "separate", "overly", "for", "sensational.", "feels", "four", "opening", "rewrite", "I", "my", "a", "searching", "tone", "becoming", "or", "paragraph"],
       },
       {
-        target: "“Keep going, Caleb,” I mutter, and late into the evening, surrounded by crumpled paper and empty tea cups, I finally produce a draft that feels honest, balanced, and genuinely worth submitting to Ms. Rivera for review.",
-        jumbled: ["empty", "into", "draft", "a", "paper", "that", "worth", "and", "genuinely", "review.", "the", "Caleb,”", "surrounded", "tea", "I", "by", "produce", "Ms.", "evening,", "honest,", "“Keep", "feels", "to", "crumpled", "I", "Rivera", "and", "cups,", "submitting", "late", "and", "for", "mutter,", "going,", "balanced,", "finally"],
+        target: "I tell myself to keep going and finally write a draft that feels honest.",
+        jumbled: ["going", "I", "write", "tell", "finally", "draft", "feels", "myself", "that", "a", "honest.", "to", "and", "keep"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about revising something many times to get it right.",
@@ -346,8 +346,8 @@ export const CHAPTERS = [
         jumbled: ["to", "pen", "the", "while", "nervously.", "reads", "next", "fidget", "my", "Rivera", "trying", "draft", "paper", "the", "I", "Ms.", "day,", "nearby", "moving", "slowly", "her", "red", "across", "sit", "not", "steadily"],
       },
       {
-        target: "“This part needs a source, Caleb,” she notes at one point, and “this sentence sounds like your opinion, not fact,” at another.",
-        jumbled: ["“This", "Caleb,”", "like", "not", "source,", "fact,”", "at", "“this", "a", "sentence", "another.", "your", "and", "at", "sounds", "part", "needs", "opinion,", "one", "notes", "point,", "she"],
+        target: "She notes that one part needs a source and another sounds like my opinion.",
+        jumbled: ["opinion.", "that", "another", "notes", "sounds", "She", "source", "needs", "my", "part", "like", "one", "a", "and"],
       },
       {
         target: "I recognize she's genuinely helping me become more precise and credible as a reporter.",
@@ -398,8 +398,8 @@ export const CHAPTERS = [
         jumbled: ["me", "me", "cared", "several", "the", "and", "opinions", "directly", "thanking", "genuine", "about", "Throughout", "questions", "the", "art", "day,", "approach", "about.", "something", "program,", "with", "investigating", "classmates", "they", "actually", "for"],
       },
       {
-        target: "“Thanks for writing this, Caleb,” one classmate says with a grin.",
-        jumbled: ["this,", "says", "with", "one", "writing", "Caleb,”", "for", "classmate", "a", "grin.", "“Thanks"],
+        target: "This response feels better than any grade I have ever received.",
+        jumbled: ["any", "feels", "This", "than", "response", "grade", "received.", "ever", "better", "have", "I"],
       },
       {
         target: "Even a couple of skeptical teachers stop me in the hallway, acknowledging the article felt fair and well-researched despite the sensitive topic.",
@@ -438,8 +438,8 @@ export const CHAPTERS = [
         jumbled: ["schoolwork", "swell", "watching", "pride", "outside", "of", "always,", "room,", "just", "paint", "art", "experienced", "from", "before.", "students", "I've", "anything", "the", "I", "unlike", "a", "Standing", "feel", "like"],
       },
       {
-        target: "“You started this, Caleb,” Iris reminds me, though I quickly credit her research help and Ms. Rivera's careful guidance throughout the entire process.",
-        jumbled: ["the", "Caleb,”", "process.", "guidance", "Iris", "I", "started", "throughout", "Ms.", "help", "reminds", "and", "me,", "careful", "“You", "entire", "Rivera's", "quickly", "research", "credit", "though", "her", "this,"],
+        target: "Rivera's careful guidance throughout the entire process.",
+        jumbled: ["entire", "process.", "Rivera's", "throughout", "the", "guidance", "careful"],
       },
       {
         target: "Ms. Rivera smiles proudly, mentioning that journalism's real purpose is exactly this: giving people information that leads to genuine, meaningful change.",

@@ -54,8 +54,8 @@ export const CHAPTERS = [
         jumbled: ["casually", "saying", "he", "she", "Ben", "I", "ask", "exactly", "shrugs,", "and", "simply", "what's", "going", "did.", "what", "on,", "knows", "Lucia"],
       },
       {
-        target: "“Ask him, Amara,” is all she says.",
-        jumbled: ["all", "Amara,”", "“Ask", "says.", "him,", "is", "she"],
+        target: "She only says that I should ask him.",
+        jumbled: ["says", "him.", "only", "She", "that", "ask", "should", "I"],
       },
       {
         target: "Caught between two conflicting accounts, I realize I might need to understand this more carefully before choosing any side.",
@@ -226,8 +226,8 @@ export const CHAPTERS = [
         jumbled: ["him", "though", "doesn't", "fully", "excuse", "communicating", "anything", "slightly,", "at", "this", "expression", "admits", "she", "shifts", "not", "Her", "all."],
       },
       {
-        target: "“Okay, Amara, I hear you,” she says, still a little guarded.",
-        jumbled: ["little", "hear", "guarded.", "I", "still", "“Okay,", "says,", "a", "she", "you,”", "Amara,"],
+        target: "She says she hears me, though she is still a little guarded.",
+        jumbled: ["little", "says", "me,", "hears", "though", "She", "still", "she", "guarded.", "a", "is", "she"],
       },
       {
         target: "I explain that Ben tends to withdraw under stress, not because he doesn't care, but because confrontation genuinely overwhelms him.",
@@ -274,8 +274,8 @@ export const CHAPTERS = [
         jumbled: ["his", "and", "moved", "be", "how", "might", "simply", "hadn't", "rather", "past.", "interpreted,", "uncomfortable,", "forgotten", "silence", "he", "admitting", "considered", "looks", "Ben", "than", "visibly"],
       },
       {
-        target: "“I really didn't mean it that way, Amara,” he says.",
-        jumbled: ["that", "he", "didn't", "Amara,”", "mean", "really", "“I", "says.", "way,", "it"],
+        target: "He agrees, though he admits reaching out directly still feels genuinely intimidating to him.",
+        jumbled: ["him.", "admits", "still", "He", "reaching", "directly", "agrees,", "intimidating", "to", "he", "out", "feels", "genuinely", "though"],
       },
       {
         target: "I encourage him gently, suggesting that even a brief, honest explanation would likely mean more to Lucia than he assumes.",

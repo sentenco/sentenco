@@ -97,8 +97,8 @@ export const CHAPTERS = [
         jumbled: ["for", "bag", "keys,", "card.", "phone,", "my", "my", "I", "my", "my", "office", "and", "check"],
       },
       {
-        target: "“One more deep breath, Jordan,” I think, looking in the mirror one time before the day begins.",
-        jumbled: ["one", "mirror", "before", "breath,", "more", "deep", "I", "the", "“One", "the", "think,", "in", "looking", "time", "Jordan,”", "begins.", "day"],
+        target: "Then I put on my shoes and lock the apartment door behind me.",
+        jumbled: ["door", "me.", "and", "behind", "I", "lock", "the", "on", "shoes", "Then", "put", "my", "apartment"],
       },
       {
         target: "I feel fresh and ready to go to work.",
@@ -141,8 +141,8 @@ export const CHAPTERS = [
         jumbled: ["and", "bag", "my", "on", "shops", "I", "put", "lap", "watch", "by.", "and", "cars", "my", "go", "the"],
       },
       {
-        target: "He says, “Thank you,” and I think, “No problem at all, Jordan is happy to help,” and I smile and hold the bar with my hand.",
-        jumbled: ["all,", "at", "He", "Jordan", "to", "help,”", "I", "smile", "my", "happy", "problem", "and", "“Thank", "the", "you,”", "bar", "hold", "think,", "and", "says,", "is", "with", "and", "I", "hand.", "“No"],
+        target: "After about twenty minutes, the bus stops near my office building.",
+        jumbled: ["twenty", "building.", "about", "bus", "stops", "office", "minutes,", "After", "my", "near", "the"],
       },
       {
         target: "I feel awake and ready to start my work.",
@@ -185,8 +185,8 @@ export const CHAPTERS = [
         jumbled: ["our", "Ms.", "My", "short", "for", "Reyes,", "work", "manager,", "message", "sends", "today.", "about", "a"],
       },
       {
-        target: "My coworker Dan sits next to me and asks, “How are you today, Jordan?”",
-        jumbled: ["sits","Jordan?”","Dan","and","to","you","today,","next","“How","me","My","coworker","are","asks,"],
+        target: "The office is quiet, and I can hear soft sounds of keyboards.",
+        jumbled: ["I", "office", "hear", "sounds", "and", "keyboards.", "soft", "quiet,", "can", "is", "The", "of"],
       },
       {
         target: "I feel focused and ready for a busy day.",
@@ -225,12 +225,12 @@ export const CHAPTERS = [
         jumbled: ["the", "I", "from", "a", "about", "First,", "report", "work", "short", "write", "week.", "last"],
       },
       {
-        target: "I speak slowly and clearly, and the customer says, “Thank you for your help.” After the call, I send two emails to my team about our next meeting.",
-        jumbled: ["help.”", "emails", "my", "and", "“Thank", "call,", "and", "clearly,", "for", "After", "slowly", "team", "two", "the", "our", "next", "customer", "speak", "about", "says,", "I", "your", "I", "you", "send", "to", "the", "meeting."],
+        target: "Then I call a customer to answer a simple question about their order.",
+        jumbled: ["their", "I", "about", "Then", "question", "call", "to", "a", "order.", "customer", "answer", "a", "simple"],
       },
       {
-        target: "“Jordan, can you show me something?” Dan asks, and I show him how to open the right file.",
-        jumbled: ["the", "Dan", "can", "him", "to", "me", "show", "right", "file.", "open", "you", "asks,", "show", "I", "something?”", "“Jordan,", "and", "how"],
+        target: "Time passes quickly, and soon it is almost twelve o'clock.",
+        jumbled: ["and", "quickly,", "o'clock.", "it", "twelve", "Time", "passes", "almost", "is", "soon"],
       },
       {
         target: "I feel proud because I did everything on my list.",
@@ -261,12 +261,12 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "At twelve o'clock, my manager says, “It is time for lunch, everyone.”",
-        jumbled: ["twelve", "manager", "says,", "o'clock,", "“It", "for", "lunch,", "At", "my", "everyone.”", "is", "time"],
+        target: "The room smells of warm rice, soup, and fresh bread.",
+        jumbled: ["The", "soup,", "fresh", "smells", "rice,", "room", "of", "warm", "bread.", "and"],
       },
       {
-        target: "Dan asks me, “Jordan, do you want to eat lunch with us today?” I say yes, and we walk together to the small canteen on the ground floor.",
-        jumbled: ["we", "and", "yes,", "small", "canteen", "the", "“Jordan,", "to", "me,", "want", "with", "us", "walk", "today?”", "to", "on", "asks", "eat", "the", "Dan", "I", "lunch", "say", "do", "you", "together", "floor.", "ground"],
+        target: "Reyes tells a funny story, and everyone at the table laughs.",
+        jumbled: ["the", "story,", "laughs.", "at", "tells", "everyone", "a", "and", "Reyes", "table", "funny"],
       },
       {
         target: "I buy a plate of rice and chicken and a bottle of water.",
@@ -313,8 +313,8 @@ export const CHAPTERS = [
         jumbled: ["most", "task", "I", "first.", "deep", "a", "start", "and", "with", "the", "take", "important", "breath"],
       },
       {
-        target: "“Jordan, can you share your ideas?” Ms. Reyes asks, so I speak clearly to the group.",
-        jumbled: ["group.", "ideas?”", "clearly", "“Jordan,", "Reyes", "the", "speak", "you", "share", "to", "Ms.", "I", "can", "asks,", "so", "your"],
+        target: "Reyes asks, so I speak clearly to the group.",
+        jumbled: ["group.", "speak", "asks,", "clearly", "so", "to", "I", "Reyes", "the"],
       },
       {
         target: "I return to my desk and answer many emails.",
@@ -357,8 +357,8 @@ export const CHAPTERS = [
         jumbled: ["try", "it", "turn", "to", "on", "on", "the", "again,", "but", "screen.", "black", "nothing", "happens", "I"],
       },
       {
-        target: "Dan sees my face and asks, “Jordan, are you okay? What is the problem?” I tell him my computer is not working, and he comes to help me.",
-        jumbled: ["him", "“Jordan,", "are", "and", "me.", "What", "he", "Dan", "okay?", "is", "tell", "my", "my", "computer", "asks,", "to", "I", "problem?”", "sees", "the", "is", "not", "and", "comes", "face", "you", "help", "working,"],
+        target: "I feel worried because I have important work on the screen.",
+        jumbled: ["worried", "work", "have", "on", "the", "important", "screen.", "because", "feel", "I", "I"],
       },
       {
         target: "He plugs it in again, and the screen turns on with all my work still there.",
@@ -401,8 +401,8 @@ export const CHAPTERS = [
         jumbled: ["pile.", "and", "put", "Then", "a", "my", "tidy", "my", "I", "neat", "in", "desk", "papers"],
       },
       {
-        target: "I say, “Goodbye, see you tomorrow,” to Dan and Ms. Reyes.",
-        jumbled: ["I", "Ms.", "say,", "tomorrow,”", "“Goodbye,", "you", "and", "see", "to", "Dan", "Reyes."],
+        target: "I save all my files and close the programs on my computer.",
+        jumbled: ["my", "and", "close", "on", "programs", "computer.", "my", "save", "the", "all", "I", "files"],
       },
       {
         target: "I put on my jacket, take my bag, and walk to the lift with a smile.",
@@ -445,12 +445,12 @@ export const CHAPTERS = [
         jumbled: ["heavy", "and", "his", "he", "carry", "helped", "boxes.", "with", "I", "me", "Dan", "helped", "files,"],
       },
       {
-        target: "Ms. Reyes walks to my desk and says, “You did great work this week, Jordan.”",
-        jumbled: ["“You", "and", "did", "work", "great", "says,", "Ms.", "my", "Reyes", "to", "Jordan.”", "week,", "walks", "desk", "this"],
+        target: "When my computer had a problem, kind coworkers helped me fix it fast.",
+        jumbled: ["problem,", "kind", "had", "fix", "a", "When", "it", "me", "computer", "coworkers", "fast.", "helped", "my"],
       },
       {
-        target: "I smile and say, “Thank you, I really enjoy working with this team.”",
-        jumbled: ["I", "team.”", "“Thank", "really", "working", "enjoy", "I", "with", "you,", "this", "and", "say,", "smile"],
+        target: "Outside, the evening is bright, and I feel light and free.",
+        jumbled: ["and", "I", "free.", "the", "Outside,", "light", "is", "feel", "and", "evening", "bright,"],
       },
       {
         target: "I feel proud and thankful because I had a full and good week at work.",

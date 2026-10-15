@@ -43,8 +43,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "This week, I see a sign in the bookshop window that says, “Part-time helper wanted.”",
-        jumbled: ["“Part-time", "see", "sign", "week,", "that", "helper", "bookshop", "in", "I", "the", "says,", "wanted.”", "This", "a", "window"],
+        target: "Inside, a kind man introduces himself as Mr.",
+        jumbled: ["Mr.", "a", "Inside,", "as", "introduces", "himself", "kind", "man"],
       },
       {
         target: "Inside, a kind man introduces himself as Mr. Dizon, the shop owner.",
@@ -55,8 +55,8 @@ export const CHAPTERS = [
         jumbled: ["want", "me", "to", "school", "and", "about", "I", "why", "simple", "work.", "He", "asks", "questions"],
       },
       {
-        target: "Mr. Dizon smiles and says, “I like your energy, Kayla.” He asks me to come back on Saturday to start training.",
-        jumbled: ["and", "smiles", "“I", "says,", "come", "to", "asks", "Mr.", "Dizon", "He", "back", "your", "to", "like", "Kayla.”", "energy,", "on", "me", "training.", "start", "Saturday"],
+        target: "I tell him I love books and I want to earn my own money.",
+        jumbled: ["books", "my", "tell", "I", "him", "to", "and", "earn", "love", "want", "I", "I", "own", "money."],
       },
       {
         target: "I walk home feeling proud that I did not give up my nerves.",
@@ -143,8 +143,8 @@ export const CHAPTERS = [
         jumbled: ["the", "book,", "a", "shows", "screen.", "the", "and", "on", "correctly", "I", "scan", "price"],
       },
       {
-        target: "“You did that perfectly, Kayla,” Josh says with an encouraging smile.",
-        jumbled: ["Kayla,”", "smile.", "perfectly,", "Josh", "“You", "says", "did", "that", "with", "an", "encouraging"],
+        target: "A customer buys two books, and I count her change carefully.",
+        jumbled: ["A", "I", "her", "count", "customer", "buys", "carefully.", "change", "two", "books,", "and"],
       },
       {
         target: "Learning something new at work feels exciting, even when it is a little scary.",
@@ -175,24 +175,24 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "“This book has a torn page, I want my money back,” he says loudly.",
-        jumbled: ["he", "“This", "money", "want", "book", "I", "page,", "back,”", "my", "has", "says", "loudly.", "a", "torn"],
+        target: "This afternoon, a customer comes in with an angry look on his face.",
+        jumbled: ["an", "afternoon,", "his", "angry", "face.", "a", "customer", "look", "in", "This", "comes", "with", "on"],
       },
       {
         target: "My heart beats fast, and I am not sure what to say.",
         jumbled: ["beats", "and", "sure", "am", "I", "say.", "not", "My", "heart", "fast,", "what", "to"],
       },
       {
-        target: "“I'm sorry about that, sir, let me get you a new copy,” Josh says kindly.",
-        jumbled: ["a", "me", "you", "kindly.", "sir,", "Josh", "new", "about", "“I'm", "copy,”", "let", "sorry", "says", "get", "that,"],
+        target: "The customer's face softens, and he thanks Josh for the quick help.",
+        jumbled: ["customer's", "and", "face", "he", "help.", "quick", "The", "thanks", "the", "Josh", "for", "softens,"],
       },
       {
         target: "Josh tells me it is okay to ask for help sometimes.",
         jumbled: ["tells", "Josh", "okay", "ask", "for", "help", "to", "me", "it", "is", "sometimes."],
       },
       {
-        target: "“Every worker needs help with hard customers,” he explains gently.",
-        jumbled: ["“Every", "help", "customers,”", "explains", "worker", "gently.", "needs", "he", "with", "hard"],
+        target: "I feel thankful to have a kind coworker like Josh.",
+        jumbled: ["like", "coworker", "feel", "Josh.", "a", "thankful", "to", "have", "kind", "I"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about asking for help.",
@@ -323,8 +323,8 @@ export const CHAPTERS = [
         jumbled: ["Despite", "to", "be", "I", "the", "something", "special.", "chaos,", "busy", "feel", "part", "excited", "of"],
       },
       {
-        target: "“We could not have done this without you two, Kayla and Josh,” he says gratefully.",
-        jumbled: ["says", "not", "this", "gratefully.", "he", "you", "without", "two,", "and", "“We", "could", "have", "Kayla", "Josh,”", "done"],
+        target: "Dizon thanks Josh and me for our hard work at the end.",
+        jumbled: ["hard", "me", "and", "end.", "Dizon", "for", "at", "thanks", "our", "Josh", "work", "the"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a busy day.",
@@ -407,8 +407,8 @@ export const CHAPTERS = [
         jumbled: ["we", "breaks,", "During", "and", "favorite", "our", "friends,", "movies.", "our", "about", "talk", "school,"],
       },
       {
-        target: "“You would really like it, Kayla,” he says with a warm smile.",
-        jumbled: ["a", "warm", "it,", "“You", "smile.", "Kayla,”", "he", "really", "would", "with", "like", "says"],
+        target: "Josh invites me to a small book club he attends after school.",
+        jumbled: ["school.", "Josh", "he", "club", "after", "a", "me", "small", "attends", "to", "invites", "book"],
       },
       {
         target: "Working at the bookshop gave me a job, but also a good friend.",
@@ -451,8 +451,8 @@ export const CHAPTERS = [
         jumbled: ["my", "remember", "first", "and", "nervous", "have", "interview", "come.", "I", "I", "far", "how"],
       },
       {
-        target: "“We are so proud of you, Kayla,” my parents say, proud of how responsible I have become.",
-        jumbled: ["so", "of", "proud", "proud", "are", "say,", "of", "parents", "I", "how", "my", "you,", "have", "responsible", "become.", "“We", "Kayla,”"],
+        target: "I saved enough money to buy my sister a special birthday gift.",
+        jumbled: ["I", "buy", "enough", "a", "saved", "to", "my", "money", "special", "gift.", "sister", "birthday"],
       },
       {
         target: "Working my first job taught me more than I ever expected to learn.",

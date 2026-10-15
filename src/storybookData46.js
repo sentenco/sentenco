@@ -97,8 +97,8 @@ export const CHAPTERS = [
         jumbled: ["their", "other", "phones", "are", "at", "quietly.", "already", "magazines", "or", "few", "reading", "looking", "A", "there,", "people"],
       },
       {
-        target: "“Good, Hana, not too crowded today,” I think, feeling relieved this early on a Saturday morning.",
-        jumbled: ["feeling", "a", "Saturday", "“Good,", "early", "relieved", "think,", "crowded", "too", "this", "today,”", "not", "morning.", "I", "on", "Hana,"],
+        target: "This gives me space to sort my clothes comfortably.",
+        jumbled: ["comfortably.", "to", "space", "This", "me", "my", "clothes", "gives", "sort"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about arriving somewhere and feeling relieved.",
@@ -185,8 +185,8 @@ export const CHAPTERS = [
         jumbled: ["take", "check", "the", "phone", "thirty", "my", "I", "minutes.", "and", "see", "will", "about", "wash"],
       },
       {
-        target: "“Now it's just waiting, Hana,” I think, deciding to sit down on a bench nearby and wait patiently for my clothes.",
-        jumbled: ["think,", "down", "a", "it's", "waiting,", "just", "bench", "for", "deciding", "my", "to", "nearby", "on", "“Now", "Hana,”", "sit", "wait", "clothes.", "patiently", "and", "I"],
+        target: "This part of laundry day always feels a little slow.",
+        jumbled: ["little", "always", "feels", "laundry", "a", "of", "This", "slow.", "part", "day"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about waiting for a machine or task to finish.",
@@ -217,12 +217,12 @@ export const CHAPTERS = [
         jumbled: ["me.", "bench", "cap", "baseball", "wearing", "man", "down", "A", "a", "sits", "on", "the", "near"],
       },
       {
-        target: "“First time here, or do you come often?” he asks in a friendly voice, holding a coffee cup.",
-        jumbled: ["time", "a", "or", "in", "here,", "often?”", "come", "“First", "you", "do", "cup.", "asks", "coffee", "a", "friendly", "voice,", "holding", "he"],
+        target: "He introduces himself as George and says he comes here every Saturday too.",
+        jumbled: ["George", "says", "himself", "every", "comes", "he", "as", "and", "here", "He", "too.", "Saturday", "introduces"],
       },
       {
-        target: "“I'm Hana,” I say, and tell him I come here almost every weekend since my apartment has no machine.",
-        jumbled: ["come", "I", "has", "and", "apartment", "Hana,”", "machine.", "I", "my", "him", "tell", "no", "weekend", "since", "here", "say,", "“I'm", "almost", "every"],
+        target: "I laugh, feeling glad for some pleasant company during the wait.",
+        jumbled: ["feeling", "I", "wait.", "the", "pleasant", "company", "laugh,", "during", "for", "glad", "some"],
       },
       {
         target: "We talk casually about our weeks while our clothes wash in the machines nearby.",
@@ -265,8 +265,8 @@ export const CHAPTERS = [
         jumbled: ["my", "door", "the", "clean", "wet,", "a", "carefully", "into", "I", "and", "clothes", "open", "basket.", "out", "pull"],
       },
       {
-        target: "“Let me help with that, Hana,” George offers, carrying my second basket to the dryers nearby.",
-        jumbled: ["the", "second", "me", "to", "nearby.", "basket", "George", "help", "dryers", "Hana,”", "offers,", "my", "that,", "“Let", "carrying", "with"],
+        target: "I thank him and load both baskets of clothes into two separate dryers.",
+        jumbled: ["separate", "I", "him", "two", "thank", "of", "both", "and", "load", "baskets", "clothes", "dryers.", "into"],
       },
       {
         target: "I add a few coins for drying time and press the start button firmly.",
@@ -305,8 +305,8 @@ export const CHAPTERS = [
         jumbled: ["out", "time", "a", "the", "of", "take", "I", "bag", "pass", "comfortably.", "to", "book", "my"],
       },
       {
-        target: "“Good book, Hana?” George asks, then takes out his phone, scrolling through something quietly beside me.",
-        jumbled: ["phone,", "book,", "Hana?”", "through", "beside", "scrolling", "takes", "me.", "“Good", "his", "out", "George", "something", "then", "quietly", "asks,"],
+        target: "Sunlight comes through a large window, warming the bench where we both sit together.",
+        jumbled: ["sit", "through", "we", "the", "together.", "a", "both", "bench", "warming", "window,", "comes", "where", "large", "Sunlight"],
       },
       {
         target: "The laundromat feels peaceful now, filled only with the soft hum of the machines.",
@@ -357,8 +357,8 @@ export const CHAPTERS = [
         jumbled: ["pair", "placed", "Each", "gets", "folded", "pants", "and", "clean", "neatly", "and", "into", "of", "my", "bag.", "shirt"],
       },
       {
-        target: "“See you next Saturday, probably, Hana,” he says with a friendly smile before leaving.",
-        jumbled: ["next", "a", "says", "leaving.", "“See", "Hana,”", "friendly", "you", "Saturday,", "smile", "with", "before", "probably,", "he"],
+        target: "George finishes his laundry around the same time and comes over to say goodbye.",
+        jumbled: ["finishes", "and", "comes", "the", "same", "George", "time", "around", "laundry", "over", "to", "his", "goodbye.", "say"],
       },
       {
         target: "I nod and wave, already looking forward to more friendly conversation next weekend.",
@@ -441,8 +441,8 @@ export const CHAPTERS = [
         jumbled: ["Everything", "again", "weeks.", "smells", "busy", "and", "my", "full", "after", "finally", "looks", "fresh,", "closet", "two", "and", "organized"],
       },
       {
-        target: "“Well done, Hana,” I think, sitting down for a moment, feeling satisfied with how my weekend morning went.",
-        jumbled: ["how", "morning", "satisfied", "done,", "Hana,”", "a", "moment,", "weekend", "feeling", "with", "I", "“Well", "my", "sitting", "down", "went.", "for", "think,"],
+        target: "Simple weekend tasks sometimes bring unexpected moments of connection with other people.",
+        jumbled: ["people.", "other", "weekend", "tasks", "moments", "with", "unexpected", "Simple", "connection", "sometimes", "of", "bring"],
       },
       {
         target: "Meeting George made an ordinary chore feel like a small, pleasant part of my week.",

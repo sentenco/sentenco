@@ -177,8 +177,8 @@ export const CHAPTERS = [
         jumbled: ["it", "the", "honest", "I", "colleagues,", "reaches", "trusted", "two", "draft", "wanting", "feedback", "with", "leadership.", "before", "share"],
       },
       {
-        target: "\"Adaeze, this data section would be even stronger with a specific pilot example,\" one colleague suggests.",
-        jumbled: ["pilot", "even", "stronger", "section", "suggests.", "specific", "one", "data", "would", "this", "\"Adaeze,", "a", "colleague", "be", "example,\"", "with"],
+        target: "One colleague suggests that this data section would be stronger with a pilot example.",
+        jumbled: ["example.", "data", "suggests", "section", "with", "One", "stronger", "a", "pilot", "that", "this", "would", "be", "colleague"],
       },
       {
         target: "Another mentions the proposal could address potential concerns preemptively, such as how client-facing roles might handle the increased flexibility.",
@@ -221,8 +221,8 @@ export const CHAPTERS = [
         jumbled: ["the", "submit", "note", "recommendation", "brief", "to", "upfront.", "the", "with", "Mr.", "I", "cover", "along", "Castellano,", "a", "concisely", "key", "summarizing", "proposal", "revised"],
       },
       {
-        target: "\"Adaeze, I've read it thoroughly — let's discuss it further at a scheduled meeting,\" he responds within a day.",
-        jumbled: ["within", "thoroughly", "let's", "further", "—", "he", "\"Adaeze,", "responds", "scheduled", "read", "discuss", "it", "day.", "it", "at", "a", "I've", "meeting,\"", "a"],
+        target: "Castellano, along with a brief cover note summarizing the key recommendation concisely upfront.",
+        jumbled: ["with", "note", "brief", "cover", "concisely", "recommendation", "summarizing", "the", "upfront.", "Castellano,", "along", "a", "key"],
       },
       {
         target: "I feel a mixture of nervousness and cautious optimism, given how thoroughly I'd prepared this proposal over several weeks.",
@@ -261,8 +261,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "\"Adaeze, this is thorough — I particularly appreciate the productivity data,\" Mr. Castellano says, opening the meeting.",
-        jumbled: ["—", "\"Adaeze,", "particularly", "productivity", "is", "I", "Castellano", "opening", "this", "says,", "thorough", "meeting.", "data,\"", "Mr.", "the", "appreciate", "the"],
+        target: "Castellano says, opening the meeting.",
+        jumbled: ["opening", "Castellano", "says,", "meeting.", "the"],
       },
       {
         target: "He raises one concern: whether completely flexible scheduling might make cross-team collaboration meetings harder to coordinate effectively.",
@@ -317,8 +317,8 @@ export const CHAPTERS = [
         jumbled: ["this", "additional", "readily,", "genuine", "agree", "me", "recognizing", "responsibility,", "the", "I", "gives", "work,", "ownership", "outcome.", "also", "that", "over", "while"],
       },
       {
-        target: "\"Thank you, Adaeze, for bringing forward a well-researched, professionally presented proposal,\" he says, rather than informal, unstructured complaints.",
-        jumbled: ["forward", "complaints.", "well-researched,", "informal,", "proposal,\"", "bringing", "for", "\"Thank", "than", "Adaeze,", "presented", "rather", "a", "unstructured", "he", "professionally", "says,", "you,"],
+        target: "He thanks me for bringing forward a well-researched and professional proposal.",
+        jumbled: ["forward", "He", "thanks", "well-researched", "me", "professional", "a", "proposal.", "bringing", "and", "for"],
       },
       {
         target: "Leaving his office, I feel genuinely proud, not just of the approval, but of the entire process that led here.",
@@ -405,8 +405,8 @@ export const CHAPTERS = [
         jumbled: ["to", "company-wide,", "leadership", "the", "decides", "month.", "Given", "positive", "flexible", "scheduling", "results,", "overwhelmingly", "the", "following", "the", "effective", "adopt", "policy", "formally"],
       },
       {
-        target: "\"This decision was considerably easier because of Adaeze's thorough, evidence-based approach,\" Mr. Castellano publicly credits.",
-        jumbled: ["\"This", "was", "Mr.", "decision", "of", "easier", "approach,\"", "evidence-based", "credits.", "thorough,", "considerably", "Castellano", "publicly", "because", "Adaeze's"],
+        target: "Mr. Castellano publicly credits my thorough, evidence-based approach for the easier decision.",
+        jumbled: ["Mr.", "approach", "publicly", "my", "for", "Castellano", "the", "decision.", "easier", "credits", "thorough,", "evidence-based"],
       },
       {
         target: "Hearing this acknowledgment, I feel that months of careful preparation had genuinely culminated in something meaningful.",

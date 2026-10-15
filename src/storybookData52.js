@@ -138,8 +138,8 @@ export const CHAPTERS = [
         jumbled: ["exactly", "students", "that", "she", "concerns,", "fear", "same", "presenting.", "experience", "this", "my", "before", "many", "than", "dismissing", "shares", "Rather"],
       },
       {
-        target: "“Would it help if you practiced in front of just me first, Aisha, before the actual presentation?” she offers kindly.",
-        jumbled: ["kindly.", "if", "of", "you", "practiced", "offers", "just", "it", "front", "presentation?”", "in", "actual", "Aisha,", "the", "“Would", "me", "first,", "she", "help", "before"],
+        target: "We schedule a practice session for Thursday, giving me something concrete to work toward.",
+        jumbled: ["something", "me", "a", "toward.", "Thursday,", "schedule", "work", "for", "to", "We", "session", "practice", "giving", "concrete"],
       },
       {
         target: "Relief washes over me instantly, since practicing with one person feels dramatically less terrifying than facing the entire class immediately.",
@@ -186,8 +186,8 @@ export const CHAPTERS = [
         jumbled: ["instead", "about", "absorbed", "facts", "occasionally", "itself,", "about", "fascinating", "forget", "coral", "learning", "the", "I", "reefs.", "presentation", "in"],
       },
       {
-        target: "\"The content is ready, Aisha,\" I tell myself, although the thought of actually speaking it aloud still makes my chest tighten uncomfortably.",
-        jumbled: ["of", "tighten", "myself,", "tell", "actually", "ready,", "Aisha,\"", "aloud", "chest", "is", "speaking", "the", "still", "I", "it", "although", "content", "my", "thought", "makes", "uncomfortably.", "\"The"],
+        target: "I tell myself the content is ready, but speaking it aloud still scares me.",
+        jumbled: ["it", "content", "scares", "myself", "tell", "ready,", "is", "the", "still", "me.", "I", "aloud", "but", "speaking"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about becoming genuinely interested in a topic you had to research.",
@@ -230,8 +230,8 @@ export const CHAPTERS = [
         jumbled: ["of", "voice", "run,", "considerably,", "my", "my", "practice", "hands", "By", "still", "steadied", "has", "the", "my", "slightly.", "though", "tremble", "middle"],
       },
       {
-        target: "“Your knowledge really shows, Aisha,” she says, despite my visible nervousness.",
-        jumbled: ["really", "she", "my", "says,", "nervousness.", "despite", "Aisha,”", "shows,", "knowledge", "visible", "“Your"],
+        target: "Whitfield offers specific, gentle feedback.",
+        jumbled: ["gentle", "Whitfield", "feedback.", "offers", "specific,"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about practicing something difficult with support from someone.",
@@ -266,8 +266,8 @@ export const CHAPTERS = [
         jumbled: ["naturally", "I", "discussions,", "He", "and", "always", "him.", "so", "assumed", "speaking", "to", "class", "public", "during", "confident", "relaxed", "came", "seems", "so"],
       },
       {
-        target: "“I just don't let people see it as much, Aisha,” he admits, shrugging like it's not a big deal at all.",
-        jumbled: ["shrugging", "Aisha,”", "much,", "just", "like", "big", "it", "as", "see", "people", "all.", "not", "he", "at", "“I", "deal", "let", "a", "don't", "it's", "admits,"],
+        target: "This conversation, unexpectedly, makes me feel considerably less alone heading into tomorrow's actual presentation.",
+        jumbled: ["heading", "tomorrow's", "less", "into", "unexpectedly,", "actual", "alone", "This", "considerably", "makes", "feel", "conversation,", "me", "presentation."],
       },
       {
         target: "He shares a small trick that helps him: picking one friendly face in the crowd to focus on while speaking.",
@@ -310,8 +310,8 @@ export const CHAPTERS = [
         jumbled: ["of", "practice", "trick,", "I", "I'll", "on", "friendly", "a", "mirror,", "in", "Standing", "Devon's", "face", "imagining", "front", "later.", "the", "focus"],
       },
       {
-        target: "“Being nervous doesn't mean you'll fail today, Aisha,” she reminds me gently.",
-        jumbled: ["Aisha,”", "you'll", "mean", "nervous", "me", "today,", "fail", "gently.", "reminds", "“Being", "doesn't", "she"],
+        target: "My mom notices my quietness at breakfast.",
+        jumbled: ["mom", "my", "notices", "quietness", "breakfast.", "My", "at"],
       },
       {
         target: "Rather than being perfect, maybe that expectation feels more manageable.",
@@ -350,8 +350,8 @@ export const CHAPTERS = [
         jumbled: ["heavy", "to", "My", "front.", "walking", "feel", "legs", "the"],
       },
       {
-        target: "\"You've got this, Aisha,\" I remind myself, recalling everything I practiced.",
-        jumbled: ["recalling", "I", "remind", "myself,", "this,", "practiced.", "Aisha,\"", "\"You've", "I", "everything", "got"],
+        target: "When my name is called, my legs feel heavy walking to the front.",
+        jumbled: ["to", "name", "called,", "my", "When", "is", "the", "my", "walking", "legs", "feel", "front.", "heavy"],
       },
       {
         target: "I find Devon's face in the crowd, and he gives me a small, encouraging nod that steadies me slightly.",
@@ -398,8 +398,8 @@ export const CHAPTERS = [
         jumbled: ["finally", "me", "gives", "across", "the", "up", "warm", "relax", "completely.", "feel", "shoulders", "thumbs", "a", "my", "from", "room,", "I", "Whitfield", "and", "Ms."],
       },
       {
-        target: "“Yours was genuinely one of the most interesting topics today, Aisha,” he whispers.",
-        jumbled: ["topics", "Aisha,”", "whispers.", "genuinely", "the", "of", "one", "today,", "interesting", "he", "was", "most", "“Yours"],
+        target: "Devon leans over during the next presentation.",
+        jumbled: ["over", "the", "presentation.", "next", "during", "Devon", "leans"],
       },
       {
         target: "I can hardly believe I actually did it, especially considering how impossible this felt just five days ago.",

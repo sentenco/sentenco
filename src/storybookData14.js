@@ -49,8 +49,8 @@ export const CHAPTERS = [
         jumbled: ["bag", "bring", "toy.", "my", "favorite", "my", "small", "clothes", "my", "with", "I", "and"],
       },
       {
-        target: "“Welcome, Noah!” she says, and she gives me a warm hug.",
-        jumbled: ["gives", "me", "Noah!”", "a", "“Welcome,", "she", "and", "warm", "hug.", "says,", "she"],
+        target: "Grandma waits at the door and waves with a big smile.",
+        jumbled: ["big", "Grandma", "with", "smile.", "door", "and", "waves", "a", "at", "waits", "the"],
       },
       {
         target: "I put my bag on the bed and look outside the window.",
@@ -87,8 +87,8 @@ export const CHAPTERS = [
         jumbled: ["takes", "me", "Grandma", "her", "to", "garden.", "see", "In", "morning,", "the"],
       },
       {
-        target: "“Come, Noah, let's water the flowers,” she says.",
-        jumbled: ["Noah,", "the", "flowers,”", "says.", "she", "let's", "“Come,", "water"],
+        target: "She wears a big sun hat and green gloves.",
+        jumbled: ["wears", "big", "hat", "a", "sun", "She", "and", "green", "gloves."],
       },
       {
         target: "Grandma shows me a small green tomato on a plant.",
@@ -129,8 +129,8 @@ export const CHAPTERS = [
         jumbled: ["Grandma", "This", "afternoon,", "cookies", "her", "in", "warm", "kitchen.", "and", "bake", "I"],
       },
       {
-        target: "“First, we mix the flour and sugar, Noah,” Grandma says.",
-        jumbled: ["Noah,”", "says.", "and", "flour", "mix", "“First,", "the", "Grandma", "we", "sugar,"],
+        target: "She ties a small apron around my waist.",
+        jumbled: ["a", "waist.", "apron", "She", "ties", "small", "around", "my"],
       },
       {
         target: "We put the cookies on a tray and place them in the oven.",
@@ -209,8 +209,8 @@ export const CHAPTERS = [
     ],
     buildSentence: [
       {
-        target: "“Come, Noah, it's time to feed the birds,” she whispers.",
-        jumbled: ["“Come,", "to", "feed", "she", "whispers.", "it's", "birds,”", "Noah,", "time", "the"],
+        target: "Early in the morning, Grandma wakes me up quietly.",
+        jumbled: ["quietly.", "Grandma", "up", "Early", "the", "morning,", "wakes", "me", "in"],
       },
       {
         target: "Grandma shows me how to fill the little bird feeder.",
@@ -267,8 +267,8 @@ export const CHAPTERS = [
         jumbled: ["a", "of", "a", "pours", "new", "me", "smile.", "Grandma", "with", "cup", "juice"],
       },
       {
-        target: "She hugs me and says, “You are a good helper.”",
-        jumbled: ["helper.”", "me", "good", "says,", "and", "She", "hugs", "“You", "a", "are"],
+        target: "She does not get angry at all.",
+        jumbled: ["She", "not", "at", "get", "does", "all.", "angry"],
       },
     ],
     mySentencePrompt: "Write or say one sentence about a small accident.",
@@ -297,8 +297,8 @@ export const CHAPTERS = [
         jumbled: ["Grandpa", "In", "on", "soft", "with", "the", "sits", "sofa.", "me", "the", "evening,"],
       },
       {
-        target: "“This is me when I was young,” Grandpa says with a laugh.",
-        jumbled: ["laugh.", "me", "says", "“This", "when", "a", "Grandpa", "was", "young,”", "is", "with", "I"],
+        target: "He opens a big box full of old photos.",
+        jumbled: ["He", "photos.", "a", "opens", "box", "old", "full", "of", "big"],
       },
       {
         target: "One photo shows them standing next to an old car.",
@@ -427,8 +427,8 @@ export const CHAPTERS = [
         jumbled: ["cookies,", "and", "think", "I", "birds", "the", "garden,", "about", "fed.", "the", "the", "we"],
       },
       {
-        target: "Grandma hugs me tightly and says, “I loved having you here, Noah.”",
-        jumbled: ["and", "me", "tightly", "loved", "says,", "here,", "Grandma", "hugs", "having", "Noah.”", "“I", "you"],
+        target: "I help Grandma pack my bag and fold my blue blanket.",
+        jumbled: ["my", "help", "bag", "pack", "fold", "blue", "Grandma", "blanket.", "I", "and", "my"],
       },
       {
         target: "She smiles and gives me a small bag of cookies for the trip.",
