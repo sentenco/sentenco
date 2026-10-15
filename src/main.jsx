@@ -298,6 +298,10 @@ import ConcreteAbstractNounsLesson from './ConcreteAbstractNounsLesson.jsx'
 import CountableUncountableNounsLesson from './CountableUncountableNounsLesson.jsx'
 import CollectiveNounsLesson from './CollectiveNounsLesson.jsx'
 import CompoundNounsLesson from './CompoundNounsLesson.jsx'
+import LieLayLesson from './LieLayLesson.jsx'
+import RiseRaiseSitSetLesson from './RiseRaiseSitSetLesson.jsx'
+import DirectionPairsLesson from './DirectionPairsLesson.jsx'
+import HearListenSeeLookLesson from './HearListenSeeLookLesson.jsx'
 import PunctuationEssentialsTrack from './PunctuationEssentialsTrack.jsx'
 import PunctuationEssentialsLesson from './PunctuationEssentialsLesson.jsx'
 import StressShiftLesson from './StressShiftLesson.jsx'
@@ -643,6 +647,10 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/grammar/countable-uncountable-nouns" element={<CountableUncountableNounsLesson />} />
             <Route path="/library/grammar/collective-nouns" element={<CollectiveNounsLesson />} />
             <Route path="/library/grammar/compound-nouns" element={<CompoundNounsLesson />} />
+            <Route path="/library/grammar/lie-lay" element={<LieLayLesson />} />
+            <Route path="/library/grammar/rise-raise-sit-set" element={<RiseRaiseSitSetLesson />} />
+            <Route path="/library/grammar/bring-take-come-go-borrow-lend" element={<DirectionPairsLesson />} />
+            <Route path="/library/grammar/hear-listen-see-look-watch" element={<HearListenSeeLookLesson />} />
             <Route path="/library/grammar/punctuation-essentials" element={<LibraryPageShell><PunctuationEssentialsTrack /></LibraryPageShell>} />
             <Route path="/library/grammar/punctuation-essentials/:code" element={<PunctuationEssentialsLesson />} />
             <Route path="/library/shift" element={<LibraryPageShell><ShiftHub /></LibraryPageShell>} />

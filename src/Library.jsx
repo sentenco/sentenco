@@ -446,6 +446,10 @@ const GRAMMAR_MODULES = [
   { num: "BED 48", banner: "countableUncountableNouns", title: "Countable and Uncountable Nouns", spec: "\"One apple, two apples\" vs \"water\" — the basic rule behind a/an, many, and much.", href: "/library/grammar/countable-uncountable-nouns", ready: true, hue: "gold", icon: "🔢", tier: "extras" },
   { num: "BED 49", banner: "collectiveNouns", title: "Collective Nouns", spec: "\"The team is winning\" — one word for a whole group, usually with a singular verb.", href: "/library/grammar/collective-nouns", ready: true, hue: "teal", icon: "🐑", tier: "extras" },
   { num: "BED 50", banner: "compoundNouns", title: "Compound Nouns", spec: "\"Butter\" + \"fly\" = butterfly — two words joining into one noun with its own new meaning.", href: "/library/grammar/compound-nouns", ready: true, hue: "magenta", icon: "🧩", tier: "extras" },
+  { num: "BED 51", banner: "lieLay", title: "Lie / Lay", spec: "Lie down vs lay something down: one never takes an object, the other always does, and lay is also the past of lie.", href: "/library/grammar/lie-lay", ready: true, hue: "navy", icon: "🛌", tier: "extras" },
+  { num: "BED 52", banner: "riseRaiseSitSet", title: "Rise / Raise, Sit / Set, Fall / Fell", spec: "Rise/raise, sit/set, fall/fell: the same object test sorts all three pairs.", href: "/library/grammar/rise-raise-sit-set", ready: true, hue: "gold", icon: "🪑", tier: "extras" },
+  { num: "BED 53", banner: "directionPairs", title: "Bring / Take, Come / Go, Borrow / Lend", spec: "Bring/take, come/go, borrow/lend: one question, toward the speaker or away, picks the right verb.", href: "/library/grammar/bring-take-come-go-borrow-lend", ready: true, hue: "magenta", icon: "🧭", tier: "extras" },
+  { num: "BED 54", banner: "hearListenSeeLook", title: "Hear / Listen, See / Look / Watch", spec: "Hear/listen and see/look/watch: noticing something vs choosing to pay attention to it.", href: "/library/grammar/hear-listen-see-look-watch", ready: true, hue: "leaf", icon: "👂", tier: "extras" },
 ];
 
 const SPEAKING_TRACKS = [
