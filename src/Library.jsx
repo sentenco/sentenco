@@ -124,6 +124,7 @@ import VocabularyGames from "./VocabularyGames";
 import WritingActivities from "./WritingActivities";
 import CommunityFeed from "./CommunityFeed.jsx";
 import HomeroomSearch from "./HomeroomSearch.jsx";
+import LandingPage from "./LandingPage.jsx";
 import AccountMenu from "./AccountMenu.jsx";
 import { fetchOwnProfile } from "./profileFields.js";
 import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
@@ -1393,7 +1394,7 @@ export default function Library() {
   const [clRequests, setClRequests] = useState([]);
   const [clRequestsLoading, setClRequestsLoading] = useState(false);
   const [showAllToday, setShowAllToday] = useState(false);
-  const { user, plan, planInfo, signOut } = useAuth();
+  const { user, plan, planInfo, signOut, loading: authLoading } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === "caldrin1999@gmail.com";
   const [previewNudge, setPreviewNudge] = useState(0);
   const previewLocked = plan === "free" && PREVIEW_CATEGORIES.includes(category);
@@ -1437,6 +1438,7 @@ export default function Library() {
   const isArticleReader = location.pathname.startsWith("/library/articles/") && !!params.slug;
   // The search bar only exists in the Homeroom.
   const showSearch = !isCurriculum && !isSpark && !isArticleReader && category === "All";
+  const showLanding = !authLoading && !user && !isCurriculum && !isSpark && !isArticleReader && category === "All" && !query.trim() && !showAllToday;
   useEffect(() => {
     if (!showSearch) setQuery("");
   }, [showSearch]);
@@ -2075,10 +2077,14 @@ export default function Library() {
         </div>
       </header>
 
-      <div className={`body-wrap${!isCurriculum && !isSpark && !isArticleReader ? " body-wrap--scroll" : ""}${!isCurriculum && !isSpark && !isArticleReader && category === "All" ? " body-wrap--home" : ""}`}>
+      <div className={`body-wrap${!isCurriculum && !isSpark && !isArticleReader && !showLanding ? " body-wrap--scroll" : ""}${!isCurriculum && !isSpark && !isArticleReader && !showLanding && category === "All" ? " body-wrap--home" : ""}`}>
       {isArticleReader ? (
         <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
           <ArticleReader />
+        </div>
+      ) : showLanding ? (
+        <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
+          <LandingPage onSignUp={() => setAuthMode("signup")} />
         </div>
       ) : isSpark ? (
         <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
