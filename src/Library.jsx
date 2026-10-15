@@ -1856,6 +1856,7 @@ export default function Library() {
     <div className={`page ${isPro ? "theme-pro" : "theme-fun"}`}>
       <style>{CSS}{DOCK_CSS}</style>
 
+      {!showLanding && (
       <header className="gc-band">
         <div className={`gc-topbar${user ? " has-dock" : ""}`}>
           <a
@@ -2076,6 +2077,7 @@ export default function Library() {
           </div>
         </div>
       </header>
+      )}
 
       <div className={`body-wrap${!isCurriculum && !isSpark && !isArticleReader && !showLanding ? " body-wrap--scroll" : ""}${!isCurriculum && !isSpark && !isArticleReader && !showLanding && category === "All" ? " body-wrap--home" : ""}`}>
       {isArticleReader ? (
@@ -2084,7 +2086,7 @@ export default function Library() {
         </div>
       ) : showLanding ? (
         <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
-          <LandingPage onSignUp={() => setAuthMode("signup")} />
+          <LandingPage onSignUp={() => setAuthMode("signup")} onLogin={() => setAuthMode("login")} />
         </div>
       ) : isSpark ? (
         <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>

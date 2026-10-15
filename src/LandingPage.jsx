@@ -39,24 +39,42 @@ const SLIDES = [
 
 const slideSrc = (i) => `/landing/p${String(i + 1).padStart(2, "0")}.jpg`;
 
-export default function LandingPage({ onSignUp }) {
+export default function LandingPage({ onSignUp, onLogin }) {
   const [slide, setSlide] = useState(0);
   const [discView, setDiscView] = useState("top");
   const railRef = useRef(null);
   const tryRef = useRef(null);
+  const hubsRef = useRef(null);
+  const currRef = useRef(null);
+  const whyRef = useRef(null);
   const last = SLIDES.length - 1;
 
   const scrollRail = (dir) => {
     const r = railRef.current;
     if (r) r.scrollBy({ left: dir * Math.min(r.clientWidth * 0.8, 900), behavior: "smooth" });
   };
-  const goTry = () => tryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const goTo = (ref) => ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const goTry = () => goTo(tryRef);
   const prev = () => setSlide((s) => Math.max(0, s - 1));
   const next = () => setSlide((s) => Math.min(last, s + 1));
 
   return (
     <div className="lnd">
       <style>{CSS}</style>
+
+      <nav className="lnd-nav" aria-label="Sentenco">
+        <div className="lnd-nav-in">
+          <div className="lnd-brand"><img src="/logo-sentenco.png" alt="" />entenco</div>
+          <div className="lnd-links">
+            <button type="button" onClick={() => goTo(hubsRef)}>Hubs</button>
+            <button type="button" onClick={() => goTo(currRef)}>Curriculum</button>
+            <button type="button" onClick={goTry}>Try a lesson</button>
+            <button type="button" onClick={() => goTo(whyRef)}>Why join</button>
+          </div>
+          <button type="button" className="lnd-btn" onClick={onLogin}>Log in</button>
+          <button type="button" className="lnd-btn lnd-dark" onClick={onSignUp}>Sign up</button>
+        </div>
+      </nav>
 
       <header className="lnd-hero">
         <div className="lnd-blob lnd-b1" /><div className="lnd-blob lnd-b2" /><div className="lnd-blob lnd-b3" />
@@ -79,7 +97,7 @@ export default function LandingPage({ onSignUp }) {
         </div>
       </header>
 
-      <section className="lnd-section">
+      <section className="lnd-section" ref={hubsRef}>
         <div className="lnd-sec-head">
           <div>
             <span className="lnd-chip lnd-coral">The main hubs</span>
@@ -102,7 +120,7 @@ export default function LandingPage({ onSignUp }) {
         </div>
       </section>
 
-      <section className="lnd-section">
+      <section className="lnd-section" ref={currRef}>
         <div className="lnd-disc">
           <div className="lnd-disc-text">
             <span className="lnd-chip">The curriculum</span>
@@ -162,7 +180,7 @@ export default function LandingPage({ onSignUp }) {
         </div>
       </section>
 
-      <section>
+      <section ref={whyRef}>
         <div className="lnd-why">
           <div className="lnd-t-peach"><b>Teach it today</b><p>Lessons open in the classroom with no prep. Pick a level and start.</p></div>
           <div className="lnd-t-mint"><b>Free teacher tools</b><p>A name wheel, a feedback generator, a notebook and a syllabus maker.</p></div>
@@ -195,6 +213,15 @@ const CSS = `
 .lnd button:focus-visible { outline: 3px solid #FFB4A2; outline-offset: 3px; }
 .lnd img { display: block; }
 
+.lnd-nav { position: sticky; top: 0; z-index: 20; background: rgba(255,248,241,.93); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.lnd-nav-in { max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 10px; }
+.lnd-brand { display: flex; align-items: center; font-family: var(--head); font-weight: 700; font-size: 24px; color: var(--navy); margin-right: auto; }
+.lnd-brand img { height: 32px; width: auto; margin-right: -7px; }
+.lnd-links { display: flex; gap: 4px; margin-right: 14px; }
+.lnd-links button { border: 0; background: transparent; font: 700 14px var(--body); color: var(--ink); padding: 8px 14px; border-radius: 999px; }
+.lnd-links button:hover { background: var(--peach); }
+.lnd-btn.lnd-dark { background: var(--navy); color: #fff; }
+.lnd-section, .lnd-sample, .lnd-why { scroll-margin-top: 64px; }
 .lnd-btn { font: 700 14px var(--body); border-radius: 999px; padding: 9px 20px; border: 2px solid var(--navy); background: #fff; color: var(--navy); }
 .lnd-btn.lnd-big { font: 600 17px var(--head); padding: 14px 30px; border-color: var(--coral); background: var(--coral); color: #fff; box-shadow: 0 6px 0 var(--coral-dark); transition: transform .12s, box-shadow .12s; }
 .lnd-btn.lnd-big:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--coral-dark); }
@@ -234,7 +261,7 @@ const CSS = `
 .lnd-hub { flex: 0 0 330px; scroll-snap-align: start; border-radius: 28px; padding: 12px 12px 16px; transition: transform .2s; }
 .lnd-hub:hover { transform: translateY(-4px) rotate(-.6deg); }
 .lnd-shot { border-radius: 18px; overflow: hidden; background: #fff; border: 2px solid #fff; }
-.lnd-shot img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; }
+.lnd-shot img { width: 100%; height: auto; }
 .lnd-hub b { display: block; font-family: var(--head); font-weight: 600; font-size: 22px; color: var(--navy); margin: 14px 8px 0; }
 .lnd-hub span { display: block; margin: 2px 8px 0; font-size: 14.5px; color: #55587F; }
 .lnd-t-peach { background: var(--peach); } .lnd-t-lilac { background: var(--lilac); } .lnd-t-mint { background: var(--mint); }
@@ -293,6 +320,9 @@ const CSS = `
 
 @media (max-width: 860px) {
   .lnd-hero-in, .lnd-sample-in, .lnd-disc { grid-template-columns: 1fr; }
+  .lnd-nav-in { flex-wrap: wrap; padding: 10px 18px; gap: 8px; }
+  .lnd-links { order: 3; flex-basis: 100%; justify-content: center; margin-right: 0; gap: 2px; }
+  .lnd-links button { padding: 6px 12px; font-size: 13.5px; }
   .lnd-hero-in { padding: 40px 20px 30px; }
   .lnd-sample-in { padding: 44px 20px; }
   .lnd-disc { padding: 20px 20px 10px; }
