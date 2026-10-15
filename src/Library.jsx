@@ -232,6 +232,20 @@ function CategoryLockedFeature({ category, navigate }) {
   );
 }
 
+// Free accounts can look at these category pages but not open anything in them.
+const PREVIEW_CATEGORIES = ["Speaking", "Grammar", "Vocabulary", "Writing", "Listening"];
+
+function PreviewBar({ navigate, nudge }) {
+  const cta = useLockedCta();
+  return (
+    <div className="cat-preview-bar" key={nudge}>
+      <span className="cat-preview-lock"><LockIcon /></span>
+      <span className="cat-preview-text"><strong>Preview only.</strong> Take a look around. Opening lessons is part of Sentenco Pro.</span>
+      <button type="button" className="cat-preview-cta" onClick={() => navigate("/library/subscription")}>{cta.label}</button>
+    </div>
+  );
+}
+
 function CurriculumLockedFeature({ navigate }) {
   const cta = useLockedCta();
   return (
@@ -1377,6 +1391,18 @@ export default function Library() {
   const [showAllToday, setShowAllToday] = useState(false);
   const { user, plan, planInfo, signOut } = useAuth();
   const isAdmin = user?.email?.toLowerCase() === "caldrin1999@gmail.com";
+  const [previewNudge, setPreviewNudge] = useState(0);
+  const previewLocked = plan === "free" && PREVIEW_CATEGORIES.includes(category);
+  function blockPreviewClick(e) {
+    if (!previewLocked) return;
+    const t = e.target;
+    if (!t.closest) return;
+    if (t.closest('.cat-preview-bar, [class*="tab"], input, select, textarea, label')) return;
+    if (!t.closest('a[href], button, [role="button"], [class*="card"]')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setPreviewNudge((n) => n + 1);
+  }
   const [authMode, setAuthMode] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
@@ -2079,7 +2105,8 @@ export default function Library() {
           )}
         </div>
       ) : (
-      <main className={`content ${category === "Articles" ? "content--wide" : ""}`}>
+      <main className={`content ${category === "Articles" ? "content--wide" : ""}${previewLocked ? " is-preview" : ""}`} onClickCapture={blockPreviewClick}>
+                {previewLocked && <PreviewBar navigate={navigate} nudge={previewNudge} />}
                 <div className={`grid-wrap ${category === "All" && !query.trim() && !showAllToday ? "grid-wrap--today" : (category === "Articles" || category === "Grammar" || category === "Reading" || category === "Speaking" || category === "Vocabulary" || category === "Writing" || category === "Listening" || category === "Customized Lessons") ? "grid-wrap--top" : ""}`} ref={gridWrapRef}>
         {category === "All" && !query.trim() && !showAllToday ? (
           toolsLoading ? (
@@ -2091,7 +2118,7 @@ export default function Library() {
           <HomeroomSearch query={query} navigate={navigate} />
         ) : category === "Articles" ? (
           <ArticlesFeature navigate={navigate} query={query} />
-        ) : PRO_CATEGORIES.includes(category) && category !== "Reading" && plan === "free" ? (
+        ) : category === "Customized Lessons" && plan === "free" ? (
           <CategoryLockedFeature category={category} navigate={navigate} />
         ) : category === "Grammar" ? (
           <GrammarFeature navigate={navigate} query={query} />
@@ -2996,6 +3023,25 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 
 .empty-msg { font-size: 14px; opacity: 0.6; padding: 30px 0; text-align: center; }
 
+.cat-preview-bar {
+  position: sticky; top: 0; z-index: 20; margin: 0 auto 14px; max-width: 1040px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
+  background: #1B2A4A; color: #fff; border-radius: 999px; padding: 9px 12px 9px 16px;
+  box-shadow: 0 8px 22px rgba(27,42,74,0.22); animation: cat-preview-pop 0.45s ease;
+}
+.cat-preview-lock { display: inline-flex; width: 18px; height: 18px; color: #FFB4A2; }
+.cat-preview-lock svg { width: 100%; height: 100%; }
+.cat-preview-text { font-family: 'Quicksand', sans-serif; font-size: 13.5px; line-height: 1.4; }
+.cat-preview-text strong { font-weight: 700; }
+.cat-preview-cta {
+  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #fff; background: #FF6B4A;
+  border: none; border-radius: 999px; padding: 8px 16px; cursor: pointer;
+}
+.cat-preview-cta:hover { filter: brightness(0.94); }
+@keyframes cat-preview-pop { 0% { transform: scale(0.97); } 55% { transform: scale(1.025); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .cat-preview-bar { animation: none; } }
+.content.is-preview a[href]:not(.cat-preview-bar *),
+.content.is-preview [class*="card"]:not(.cat-preview-bar *) { cursor: not-allowed; }
 .cat-locked {
   max-width: 400px; margin: 64px auto; text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: 6px;
