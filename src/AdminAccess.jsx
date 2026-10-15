@@ -114,6 +114,7 @@ export default function AdminAccess() {
           <img src="/logo-sentenco.png" alt="" className="aac-brand-logo" />entenco
         </button>
         <h1 className="aac-title">Access codes</h1>
+        <button type="button" className="aac-toplink" onClick={() => navigate("/library/admin/teachers")}>Teacher activity</button>
       </div>
 
       <div className="aac-page">
@@ -262,6 +263,7 @@ const CSS = `
 .aac-brand { display: flex; align-items: center; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; color: #2B2A4A; background: none; border: none; cursor: pointer; padding: 0; }
 .aac-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .aac-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; margin: 0; }
+.aac-toplink { font: 700 13px 'Quicksand', sans-serif; color: #E8573A; background: none; border: none; cursor: pointer; text-decoration: underline; }
 .aac-page { max-width: 1040px; margin: 0 auto; padding: 32px 24px 80px; }
 .aac-status { color: #8B84A3; font-size: 14px; }
 .aac-error { background: #FDE8E5; color: #A3322A; border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 0 0 18px; }

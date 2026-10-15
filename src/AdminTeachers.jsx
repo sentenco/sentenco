@@ -11,6 +11,25 @@ function formatDate(iso) {
 
 const PLAN_LABEL = { free: "Free", pro: "Pro", pro_plus: "Pro+" };
 
+// The most recent sign of life: a login, or the active-login heartbeat.
+function lastActive(t) {
+  const times = [t.last_sign_in_at, t.last_seen].filter(Boolean).map((x) => new Date(x).getTime());
+  return times.length ? Math.max(...times) : null;
+}
+
+function ago(ms) {
+  if (!ms) return "Never";
+  const mins = Math.floor((Date.now() - ms) / 60000);
+  if (mins < 10) return "Just now";
+  if (mins < 60) return `${mins} min ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs} h ago`;
+  const days = Math.floor(hrs / 24);
+  return days === 1 ? "Yesterday" : `${days} days ago`;
+}
+
+const DAY = 86400000;
+
 function daysLeft(iso) {
   return Math.max(1, Math.ceil((new Date(iso).getTime() - Date.now()) / 86400000));
 }
@@ -48,6 +67,7 @@ export default function AdminTeachers() {
   if (authLoading || loading) return null;
 
   const hasPlans = teachers.length === 0 || teachers[0].plan !== undefined;
+  const hasActivity = teachers.length === 0 || teachers[0].last_sign_in_at !== undefined;
   const owner = (t) => t.email?.toLowerCase() === ADMIN_EMAIL;
   const people = teachers.filter((t) => !owner(t));
   const counts = {
@@ -58,15 +78,25 @@ export default function AdminTeachers() {
     trial: people.filter((t) => t.source === "trial").length,
     grant: people.filter((t) => t.source === "grant").length,
     ended: people.filter((t) => t.source === "base" && t.plan === "free" && t.trial_used).length,
+    week: people.filter((t) => (lastActive(t) || 0) > Date.now() - 7 * DAY).length,
+    never: people.filter((t) => !lastActive(t)).length,
+    unconfirmed: people.filter((t) => !t.email_confirmed_at).length,
   };
+  const today = people.filter((t) => (lastActive(t) || 0) > Date.now() - DAY).length;
+  const posted = people.filter((t) => (t.post_count || 0) + (t.comment_count || 0) > 0).length;
+  const redeemed = people.filter((t) => t.code_used).length;
   const FILTERS = [
     ["all", "Everyone"], ["free", "Free"], ["pro", "Pro"], ["pro_plus", "Pro+"],
     ["trial", "On trial"], ["grant", "On a code"], ["ended", "Trial ended"],
+    ...(hasActivity ? [["week", "Active this week"], ["never", "Never logged in"], ["unconfirmed", "Email not confirmed"]] : []),
   ];
   const q = search.trim().toLowerCase();
   const shown = teachers.filter((t) => {
     if (q && !`${t.display_name || ""} ${t.email || ""}`.toLowerCase().includes(q)) return false;
     if (filter === "all" || owner(t)) return filter === "all" || false;
+    if (filter === "week") return (lastActive(t) || 0) > Date.now() - 7 * DAY;
+    if (filter === "never") return !lastActive(t);
+    if (filter === "unconfirmed") return !t.email_confirmed_at;
     if (filter === "trial" || filter === "grant") return t.source === filter;
     if (filter === "ended") return t.source === "base" && t.plan === "free" && t.trial_used;
     return t.plan === filter;
@@ -80,6 +110,7 @@ export default function AdminTeachers() {
           <img src="/logo-sentenco.png" alt="" className="adt-brand-logo" />entenco
         </button>
         <h1 className="adt-topbar-title">Teachers</h1>
+        <button type="button" className="adt-toplink" onClick={() => navigate("/library/admin/access")}>Access codes</button>
       </div>
 
       <div className="adt-page">
@@ -96,7 +127,22 @@ export default function AdminTeachers() {
                 Plans aren't showing yet. Run <code>sql/admin_teachers_plans_and_private_count.sql</code> in Supabase, then reload.
               </div>
             )}
+            {!hasActivity && (
+              <div className="adt-error">
+                Activity isn't showing yet. Run <code>sql/admin_teachers_activity.sql</code> in Supabase, then reload.
+              </div>
+            )}
             <p className="adt-count">{teachers.length} registered {teachers.length === 1 ? "account" : "accounts"}, only you can see this page.</p>
+            {hasActivity && (
+              <div className="adt-tiles">
+                <div className="adt-tile"><b>{people.length}</b><span>Teachers</span></div>
+                <div className="adt-tile"><b>{today}</b><span>Active in the last 24 h</span></div>
+                <div className="adt-tile"><b>{counts.week}</b><span>Active this week</span></div>
+                <div className="adt-tile"><b>{counts.never}</b><span>Never logged in</span></div>
+                <div className="adt-tile"><b>{posted}</b><span>Posted or commented</span></div>
+                <div className="adt-tile"><b>{redeemed}</b><span>Redeemed a code</span></div>
+              </div>
+            )}
             {hasPlans && (
               <div className="adt-filters" role="tablist" aria-label="Filter by plan">
                 {FILTERS.map(([key, label]) => (
@@ -120,12 +166,14 @@ export default function AdminTeachers() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <div className="adt-table">
+            <div className="adt-table" style={{ "--adt-cols": hasActivity ? "1.2fr 1.5fr 0.6fr 1.5fr 1fr 1.1fr 0.8fr" : "1.3fr 1.6fr 0.7fr 1.7fr 0.9fr" }}>
               <div className="adt-row adt-row--head">
                 <span>Name</span>
                 <span>Email</span>
                 <span>Plan</span>
                 <span>Access</span>
+                {hasActivity && <span>Last active</span>}
+                {hasActivity && <span>Activity</span>}
                 <span>Joined</span>
               </div>
               {shown.length === 0 && <p className="adt-status adt-status--tight">Nobody matches.</p>}
@@ -143,7 +191,23 @@ export default function AdminTeachers() {
                     {owner(t) ? <b className="adt-pill adt-pill--owner">Owner</b>
                       : hasPlans ? <b className={`adt-pill adt-pill--${t.plan}`}>{PLAN_LABEL[t.plan] || t.plan}</b> : "–"}
                   </span>
-                  <span className="adt-access">{owner(t) ? "Full access" : hasPlans ? accessText(t) : "–"}</span>
+                  <span className="adt-access">
+                    {owner(t) ? "Full access" : hasPlans ? accessText(t) : "–"}
+                    {t.code_used && <small className="adt-sub">Code {t.code_used}</small>}
+                  </span>
+                  {hasActivity && (
+                    <span className="adt-access">
+                      {ago(lastActive(t))}
+                      {!t.email_confirmed_at && <small className="adt-sub adt-sub--warn">Email not confirmed</small>}
+                    </span>
+                  )}
+                  {hasActivity && (
+                    <span className="adt-access">
+                      {(t.post_count || 0) + (t.comment_count || 0) === 0
+                        ? "No posts yet"
+                        : `${t.post_count || 0} ${t.post_count === 1 ? "post" : "posts"}, ${t.comment_count || 0} ${t.comment_count === 1 ? "comment" : "comments"}`}
+                    </span>
+                  )}
                   <span>{formatDate(t.created_at)}</span>
                 </div>
               ))}
@@ -185,15 +249,16 @@ const CSS = `
 }
 .adt-brand-logo { height: 24px; width: auto; display: block; margin-right: -5px; }
 .adt-topbar-title { font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
+.adt-toplink { font: 700 13px 'Quicksand', sans-serif; color: #E8573A; background: none; border: none; cursor: pointer; text-decoration: underline; }
 
-.adt-page { max-width: 1040px; margin: 0 auto; padding: 32px 24px 80px; }
+.adt-page { max-width: 1240px; margin: 0 auto; padding: 32px 24px 80px; }
 .adt-status { text-align: center; color: var(--muted); padding: 60px 0; }
 .adt-error { font-size: 12.5px; color: var(--coral); background: var(--coral-pale); border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; }
 .adt-count { font-size: 12.5px; color: var(--muted); margin: 0 0 14px; }
 
 .adt-table { background: var(--card); border: 1px solid var(--hair); border-radius: 18px; overflow: hidden; }
 .adt-row {
-  display: grid; grid-template-columns: 1.3fr 1.6fr 0.7fr 1.7fr 0.9fr;
+  display: grid; grid-template-columns: var(--adt-cols);
   gap: 10px; padding: 12px 18px; align-items: center; font-size: 13px;
   border-bottom: 1px solid var(--hair);
 }
@@ -225,6 +290,12 @@ const CSS = `
 }
 .adt-search:focus { border-color: var(--coral); }
 .adt-status--tight { padding: 22px 0; }
+.adt-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 0 0 18px; }
+.adt-tile { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 12px 16px; }
+.adt-tile b { display: block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 26px; color: var(--navy); line-height: 1.1; }
+.adt-tile span { font-size: 12px; font-weight: 600; color: var(--muted); }
+.adt-sub { display: block; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+.adt-sub--warn { color: #C2411F; }
 
 @media (max-width: 760px) {
   .adt-row, .adt-row--head { grid-template-columns: 1fr 1fr; row-gap: 6px; }

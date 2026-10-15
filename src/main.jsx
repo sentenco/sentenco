@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { SHOW_LETTER_BOARD } from './featureFlags.js'
+import { Analytics } from '@vercel/analytics/react'
 import './migrateStorage.js'
 import './index.css'
 import Library from './Library.jsx'
@@ -659,6 +660,7 @@ createRoot(document.getElementById('root')).render(
           </Routes>
           </RouteAccessGate>
         </BrowserRouter>
+        <Analytics />
       </>
     </AuthProvider>
   </StrictMode>,
