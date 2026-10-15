@@ -64,7 +64,7 @@ export default function AuthForm({ mode, onClose }) {
     <div className="auth-overlay" onClick={onClose}>
       <div className="auth-modal" role="dialog" aria-modal="true" aria-label={isSignUp ? "Create your account" : "Log in"} onClick={(e) => e.stopPropagation()}>
         <aside className="auth-side">
-          <div className="auth-brand">Sentenco</div>
+          <div className="auth-brand"><img src="/logo-sentenco.png" alt="" className="auth-brand-logo" /><span>entenco</span></div>
           <h3 className="auth-side-title">
             {isSignUp ? "Lessons your students will actually enjoy." : "Your lessons are right where you left them."}
           </h3>
@@ -157,7 +157,11 @@ export default function AuthForm({ mode, onClose }) {
           box-shadow: 0 30px 70px rgba(27,42,74,0.35);
         }
         .auth-side { background: #1B2A4A; color: #fff; padding: 34px 30px; display: flex; flex-direction: column; gap: 22px; }
-        .auth-brand { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em; }
+        .auth-brand {
+          display: inline-flex; align-items: center; align-self: flex-start; background: #fff; border-radius: 999px;
+          padding: 7px 18px 7px 12px; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 21px; color: #1B2A4A;
+        }
+        .auth-brand-logo { height: 28px; width: auto; display: block; margin-right: -5px; }
         .auth-side-title { font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 25px; line-height: 1.2; margin: 0; }
         .auth-perks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 14.5px; font-weight: 600; }
         .auth-perks li { display: flex; gap: 10px; align-items: center; }
