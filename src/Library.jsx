@@ -235,12 +235,12 @@ function CategoryLockedFeature({ category, navigate }) {
 // Free accounts can look at these category pages but not open anything in them.
 const PREVIEW_CATEGORIES = ["Speaking", "Grammar", "Vocabulary", "Writing", "Listening"];
 
-function PreviewBar({ navigate, nudge }) {
+function PreviewBar({ navigate, nudge, tier = "Pro" }) {
   const cta = useLockedCta();
   return (
     <div className="cat-preview-bar" key={nudge}>
       <span className="cat-preview-lock"><LockIcon /></span>
-      <span className="cat-preview-text"><strong>Preview only.</strong> Take a look around. Opening lessons is part of Sentenco Pro.</span>
+      <span className="cat-preview-text"><strong>Preview only.</strong> Take a look around. Opening lessons is part of Sentenco {tier}.</span>
       <button type="button" className="cat-preview-cta" onClick={() => navigate("/library/subscription")}>{cta.label}</button>
     </div>
   );
@@ -1394,11 +1394,11 @@ export default function Library() {
   const [previewNudge, setPreviewNudge] = useState(0);
   const previewLocked = plan === "free" && PREVIEW_CATEGORIES.includes(category);
   function blockPreviewClick(e) {
-    if (!previewLocked) return;
+    if (!previewLocked && !curriculumPreview) return;
     const t = e.target;
     if (!t.closest) return;
-    if (t.closest('.cat-preview-bar, [class*="tab"], input, select, textarea, label')) return;
-    if (!t.closest('a[href], button, [role="button"], [class*="card"]')) return;
+    if (t.closest('.cat-preview-bar, [class*="tab"], [class*="back"], .co-audience-btn, input, select, textarea, label')) return;
+    if (!t.closest('a[href], button, [role="button"], [class*="card"], .co-row')) return;
     e.preventDefault();
     e.stopPropagation();
     setPreviewNudge((n) => n + 1);
@@ -1425,6 +1425,7 @@ export default function Library() {
   const isCurriculum = location.pathname.startsWith("/library/curriculum");
   const isTeensCurriculum = location.pathname.startsWith("/library/curriculum/teens/");
   const isAdultsCurriculum = location.pathname.startsWith("/library/curriculum/adults/");
+  const curriculumPreview = isCurriculum && !isTeensCurriculum && !isAdultsCurriculum && plan !== "pro_plus";
   const curriculumLevel = params.level || null;
   const curriculumTrack = params.track || null;
   const curriculumUnit = params.unitNum || null;
@@ -2092,17 +2093,18 @@ export default function Library() {
           )}
         </div>
       ) : isCurriculum ? (
-        <div className="content" style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}>
-          {plan === "pro_plus" ? (
-            <CurriculumRouter
-              isPro={isPro}
-              level={curriculumLevel}
-              track={curriculumTrack}
-              unit={curriculumUnit}
-            />
-          ) : (
-            <CurriculumLockedFeature navigate={navigate} />
-          )}
+        <div
+          className={`content${curriculumPreview ? " is-preview" : ""}`}
+          style={{ padding: 0, maxWidth: "100%", overflow: "auto" }}
+          onClickCapture={blockPreviewClick}
+        >
+          {curriculumPreview && <div style={{ padding: "14px 16px 0" }}><PreviewBar navigate={navigate} nudge={previewNudge} tier="Pro+" /></div>}
+          <CurriculumRouter
+            isPro={isPro}
+            level={curriculumLevel}
+            track={curriculumTrack}
+            unit={curriculumUnit}
+          />
         </div>
       ) : (
       <main className={`content ${category === "Articles" ? "content--wide" : ""}${previewLocked ? " is-preview" : ""}`} onClickCapture={blockPreviewClick}>
