@@ -1518,6 +1518,10 @@ export default function Library() {
   function goToNotification(n) {
     setNotifOpen(false);
     markNotificationRead(n);
+    if (n.type === "code_redeemed") {
+      navigate("/library/admin/access");
+      return;
+    }
     if (["connect_request", "connect_accepted", "new_follower"].includes(n.type) && n.actor_id) {
       navigate(`/library/teacher/${n.actor_id}`);
       return;

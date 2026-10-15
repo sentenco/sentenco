@@ -59,6 +59,7 @@ function lineFor(n) {
   if (n.type === "connect_request") return <>{who} wants to connect with you</>;
   if (n.type === "connect_accepted") return <>{who} accepted your connection request</>;
   if (n.type === "new_follower") return <>{who} started following you</>;
+  if (n.type === "code_redeemed") return <>{who} redeemed an access code</>;
   return <>{who} {n.type === "post_reply" ? "replied to your post" : "replied to your comment"}</>;
 }
 
