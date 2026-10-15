@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuth } from "./AuthContext";
-import { supabase } from "./supabaseClient";
 
 export default function AuthForm({ mode, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [companyId, setCompanyId] = useState("");
-  const [companies, setCompanies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(mode === "signup");
   const { signUp, signIn } = useAuth();
-
-  useEffect(() => {
-    supabase.from("companies").select("id, name").order("name").then(({ data }) => {
-      setCompanies(data || []);
-    });
-  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,7 +15,7 @@ export default function AuthForm({ mode, onClose }) {
     setLoading(true);
 
     const authError = isSignUp
-      ? await signUp(email, password, companyId)
+      ? await signUp(email, password)
       : await signIn(email, password);
 
     setLoading(false);
@@ -66,18 +57,6 @@ export default function AuthForm({ mode, onClose }) {
               minLength={6}
             />
           </label>
-
-          {isSignUp && (
-            <label>
-              Company
-              <select value={companyId} onChange={(e) => setCompanyId(e.target.value)}>
-                <option value="">Private teacher</option>
-                {companies.map((c) => (
-                  <option key={c.id} value={c.id}>{c.name}</option>
-                ))}
-              </select>
-            </label>
-          )}
 
           {error && <p className="auth-error">{error}</p>}
 
