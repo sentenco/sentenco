@@ -102,6 +102,15 @@ export const CUSTOM_LESSONS = [
     desc: "25 minutes for a teen at high B1: a Definitions Kickoff with hidden choices, then listen, sort, learn the rule, practise and talk. Which verbs never take -ing, and the ones that do both.",
   },
   {
+    slug: "present-simple",
+    added: "2026-10-17",
+    popup: [1200, 780],
+    title: "Present Simple",
+    tag: "Grammar",
+    level: "B1 to B2 · Exam prep",
+    desc: "25 minutes for a teen at high B1: a Synonyms Kickoff, then read, sort, the -s / -es endings, negatives and questions, practice, word order and an interview.",
+  },
+  {
     slug: "the-tell-tale-heart",
     added: "2026-10-15",
     popup: [1200, 780],
