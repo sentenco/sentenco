@@ -56,6 +56,8 @@ export default function LandingPage({ onSignUp, onLogin }) {
   const currRef = useRef(null);
   const whyRef = useRef(null);
   const heroRef = useRef(null);
+  const railHover = useRef(false);
+  const railPauseUntil = useRef(0);
   const [active, setActive] = useState("");
   const last = SLIDES.length - 1;
 
@@ -79,8 +81,39 @@ export default function LandingPage({ onSignUp, onLogin }) {
     return () => io.disconnect();
   }, []);
 
+  // The hub cards slide along on their own, one at a time, and loop back to the start.
+  // Hovering, touching, using the arrows or scrolling by hand pauses it for a few seconds.
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return undefined;
+    const reduce = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const pause = (ms = 7000) => { railPauseUntil.current = Date.now() + ms; };
+    const onWheel = () => pause();
+    const onTouch = () => pause(9000);
+    rail.addEventListener("wheel", onWheel, { passive: true });
+    rail.addEventListener("touchstart", onTouch, { passive: true });
+    rail.addEventListener("keydown", onWheel);
+    const id = reduce ? null : setInterval(() => {
+      if (railHover.current || document.hidden || Date.now() < railPauseUntil.current) return;
+      const box = rail.getBoundingClientRect();
+      if (box.bottom < 80 || box.top > window.innerHeight - 80) return; // only slide while it is on screen
+      const first = rail.firstElementChild;
+      if (!first) return;
+      const step = first.offsetWidth + 20;
+      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
+      rail.scrollTo({ left: atEnd ? 0 : rail.scrollLeft + step, behavior: "smooth" });
+    }, 4200);
+    return () => {
+      if (id) clearInterval(id);
+      rail.removeEventListener("wheel", onWheel);
+      rail.removeEventListener("touchstart", onTouch);
+      rail.removeEventListener("keydown", onWheel);
+    };
+  }, []);
+
   const scrollRail = (dir) => {
     const r = railRef.current;
+    railPauseUntil.current = Date.now() + 8000;
     if (r) r.scrollBy({ left: dir * Math.min(r.clientWidth * 0.8, 900), behavior: "smooth" });
   };
   const goTo = (ref) => ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -154,7 +187,7 @@ export default function LandingPage({ onSignUp, onLogin }) {
             <button type="button" onClick={() => scrollRail(1)} aria-label="Scroll right">&rarr;</button>
           </div>
         </div>
-        <div className="lnd-rail" ref={railRef}>
+        <div className="lnd-rail" ref={railRef} onMouseEnter={() => { railHover.current = true; }} onMouseLeave={() => { railHover.current = false; railPauseUntil.current = Date.now() + 2500; }}>
           {HUBS.map((h) => (
             <div key={h.key} className={`lnd-hub lnd-t-${h.tone}`}>
               <div className="lnd-shot"><div className="lnd-win"><i /><i /><i /></div><img src={`/landing/hub-${h.key}.jpg`} alt={`${h.name} hub`} loading="lazy" /></div>
