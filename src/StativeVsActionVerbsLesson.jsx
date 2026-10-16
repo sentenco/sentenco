@@ -272,6 +272,13 @@ function Wrap({ rows }) {
 }
 
 const SLIDES = [
+  // ---------- Title ----------
+  {
+    stage: "Exam preparation", title: true,
+    note: "About half a minute. Read the title. Lesson 1 of 4. Today: which verbs never take -ing.",
+    body: <UCover title={TITLE} module="LESSON 1" />,
+  },
+
   // ---------- Kickoff: Definitions (about 4 minutes) ----------
   {
     stage: "What word is it?",
@@ -300,11 +307,6 @@ const SLIDES = [
   },
 
   // ---------- Lesson Proper (about 20 minutes) ----------
-  {
-    stage: "Exam preparation", title: true,
-    note: "About half a minute. Read the title. Lesson 1 of 4. Today: which verbs never take -ing.",
-    body: <UCover title={TITLE} module="LESSON 1" />,
-  },
   {
     stage: "Read. Then answer.",
     note: "About 2 minutes. She reads the message on the slide, then answers the two questions. Answers: outside the cinema. Verbs that are not actions: doubt, suppose, know, deserve.",
