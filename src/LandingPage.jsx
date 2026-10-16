@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // What visitors who are not signed in see on the Homeroom page: what Sentenco is,
 // the main hubs, the A1 Discover curriculum, and a click-through of a real lesson.
@@ -37,17 +37,33 @@ const SLIDES = [
   "Mission Complete!: a celebration, and a summary of what they learned.",
 ];
 
+const COLLAGE = [
+  { key: "speaking", name: "Speaking" },
+  { key: "grammar", name: "Grammar" },
+  { key: "writing", name: "Writing" },
+];
+
 const slideSrc = (i) => `/landing/p${String(i + 1).padStart(2, "0")}.jpg`;
 
 export default function LandingPage({ onSignUp, onLogin }) {
   const [slide, setSlide] = useState(0);
   const [discView, setDiscView] = useState("top");
+  const [front, setFront] = useState(0);
+  const [paused, setPaused] = useState(false);
   const railRef = useRef(null);
   const tryRef = useRef(null);
   const hubsRef = useRef(null);
   const currRef = useRef(null);
   const whyRef = useRef(null);
   const last = SLIDES.length - 1;
+
+  // The three hero pictures take turns coming to the front (not when the visitor prefers less motion).
+  useEffect(() => {
+    if (paused) return undefined;
+    if (typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const id = setInterval(() => setFront((f) => (f + 1) % COLLAGE.length), 3600);
+    return () => clearInterval(id);
+  }, [paused]);
 
   const scrollRail = (dir) => {
     const r = railRef.current;
@@ -89,10 +105,23 @@ export default function LandingPage({ onSignUp, onLogin }) {
             </div>
             <p className="lnd-fine">No card needed. 7-day Pro trial when you sign up.</p>
           </div>
-          <div className="lnd-collage" aria-hidden="true">
-            <img className="lnd-c1" src="/landing/hub-grammar.jpg" alt="" />
-            <img className="lnd-c2" src="/landing/hub-writing.jpg" alt="" />
-            <img className="lnd-c3" src="/landing/hub-speaking.jpg" alt="" />
+          <div className="lnd-collage-wrap" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+            <div className="lnd-collage">
+              {COLLAGE.map((c, i) => (
+                <img
+                  key={c.key}
+                  className={`lnd-pos${(i - front + COLLAGE.length) % COLLAGE.length}`}
+                  src={`/landing/hub-${c.key}.jpg`}
+                  alt={`${c.name} hub`}
+                  onClick={() => setFront(i)}
+                />
+              ))}
+            </div>
+            <div className="lnd-collage-dots">
+              {COLLAGE.map((c, i) => (
+                <button key={c.key} type="button" className={i === front ? "on" : ""} aria-label={`Show the ${c.name} hub`} onClick={() => setFront(i)} />
+              ))}
+            </div>
           </div>
         </div>
       </header>
@@ -240,11 +269,15 @@ const CSS = `
 .lnd-sub { font-size: 19px; color: var(--muted); max-width: 44ch; margin: 0 0 26px; }
 .lnd-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .lnd-fine { font-size: 13.5px; color: var(--muted); margin: 16px 0 0; }
-.lnd-collage { position: relative; height: 380px; }
-.lnd-collage img { position: absolute; width: 64%; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 18px 40px rgba(27,42,74,.2); }
-.lnd-c1 { left: 0; top: 30px; transform: rotate(-5deg); }
-.lnd-c2 { right: 0; top: 0; transform: rotate(4deg); }
-.lnd-c3 { left: 20%; bottom: 0; transform: rotate(-1.5deg); width: 60%; }
+.lnd-collage { position: relative; aspect-ratio: 1.45 / 1; }
+.lnd-collage img { position: absolute; width: 62%; height: auto; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 18px 40px rgba(27,42,74,.2); cursor: pointer;
+  transition: left .8s cubic-bezier(.4,.1,.2,1), top .8s cubic-bezier(.4,.1,.2,1), transform .8s cubic-bezier(.4,.1,.2,1), box-shadow .8s; }
+.lnd-pos0 { left: 19%; top: 42%; transform: rotate(-1.5deg); z-index: 3; box-shadow: 0 24px 50px rgba(27,42,74,.28); }
+.lnd-pos1 { left: 38%; top: 0; transform: rotate(4deg); z-index: 1; }
+.lnd-pos2 { left: 0; top: 8%; transform: rotate(-5deg); z-index: 2; }
+.lnd-collage-dots { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
+.lnd-collage-dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; background: #E2D6CA; transition: background .2s, width .2s; }
+.lnd-collage-dots button.on { background: var(--coral); width: 26px; border-radius: 999px; }
 
 .lnd-section { max-width: 1180px; margin: 0 auto; padding: 54px 0 14px; }
 .lnd-sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 0 24px; margin-bottom: 18px; flex-wrap: wrap; }
@@ -328,7 +361,6 @@ const CSS = `
   .lnd-disc { padding: 20px 20px 10px; }
   .lnd-sec-head, .lnd-rail { padding-left: 20px; padding-right: 20px; }
   .lnd-hero-h { font-size: 40px; }
-  .lnd-collage { height: 310px; }
   .lnd-hub { flex-basis: 78vw; }
   .lnd-sec-head h2, .lnd-sample h2, .lnd-finish h2, .lnd-disc-text h2 { font-size: 30px; }
 }
