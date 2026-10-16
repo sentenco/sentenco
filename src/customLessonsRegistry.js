@@ -111,6 +111,15 @@ export const CUSTOM_LESSONS = [
     desc: "25 minutes for a teen at high B1: a Synonyms Kickoff, then read, sort, the -s / -es endings, negatives and questions, practice, word order and an interview.",
   },
   {
+    slug: "present-progressive",
+    added: "2026-10-17",
+    popup: [1200, 780],
+    title: "Present Progressive",
+    tag: "Grammar",
+    level: "B1 to B2 · Exam prep",
+    desc: "25 minutes for a teen at high B1: a Spelling Kickoff with a voice for the words, then read, the -ing spelling rules, simple vs progressive practice and a talk.",
+  },
+  {
     slug: "the-tell-tale-heart",
     added: "2026-10-15",
     popup: [1200, 780],

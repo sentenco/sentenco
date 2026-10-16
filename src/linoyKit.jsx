@@ -110,6 +110,21 @@ export const KIT_STYLES = `
 .sv-order-built.is-ok { border-bottom-color: ${GREEN}; color: #1E9C8F; }
 .sv-order-built.is-bad { border-bottom-color: ${RED}; color: ${RED}; }
 .sv-order .sv-tog { align-self: center; padding: 5px 16px; font-size: 13px; }
+
+.sv-sort.compact { gap: 14px; }
+.sv-sort.compact .sv-drop { min-height: 118px; padding: 12px; }
+.sv-sort.compact .sv-drop-chips { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+.sv-sort.compact .sv-sort-chip { font-size: 22px; padding: 6px 16px; }
+
+.sv-play { width: 56px; height: 56px; flex: none; border-radius: 50%; background: ${CORAL_DEEP}; color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; padding-left: 4px; }
+.sv-play:disabled { opacity: 0.4; cursor: default; }
+.sv-input { flex: 1; min-width: 0; height: 56px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 28px; color: ${NAVY}; background: #fff; border: 2px solid #DCE2F0; border-radius: 14px; padding: 0 18px; }
+.sv-input:focus { outline: none; border-color: ${NAVY}; }
+.sv-input.is-correct { border-color: ${GREEN}; background: #E6F8F5; }
+.sv-input.is-wrong { border-color: ${RED}; background: #FDECEC; }
+.sv-answer { min-width: 170px; font-weight: 800; font-size: 26px; color: #1E9C8F; }
+.sv-spell-btns { display: flex; gap: 12px; justify-content: center; }
+.sv-nov { font-size: 16px; font-weight: 700; color: #6B5310; background: #FFF6E5; border: 1px solid #F2A900; border-radius: 12px; padding: 8px 16px; text-align: center; }
 `;
 
 // A dictionary-style definition. The choices stay hidden until the teacher presses Show choices.
@@ -170,7 +185,7 @@ export function Message({ text, questions }) {
 }
 
 // Tap a verb, then tap the box it belongs in. A wrong box flashes red and the verb goes back.
-export function Sort({ id, cats, items }) {
+export function Sort({ id, cats, items, compact }) {
   const [placed, setPlaced] = useStore("sort-" + id, {});
   const [sel, setSel] = useState(null);
   const [bad, setBad] = useState(null);
@@ -189,7 +204,7 @@ export function Sort({ id, cats, items }) {
     }
   };
   return (
-    <div className="sv-sort">
+    <div className={`sv-sort ${compact ? "compact" : ""}`}>
       <div className="sv-pool">
         {pool.map((it) => (
           <button key={it.w} type="button" className={`sv-sort-chip ${sel === it.w ? "is-sel" : ""} ${bad === it.w ? "is-bad" : ""}`} onClick={() => setSel(sel === it.w ? null : it.w)}>{it.w}</button>
@@ -277,8 +292,8 @@ export function Synonyms({ id, pos, rows }) {
 export function Cards({ rows, cols = 1 }) {
   return (
     <div className={`sv-cards ${cols === 2 ? "c2" : ""}`}>
-      {rows.map((r) => (
-        <div key={r.label} className="sv-card"><b>{r.label}</b><span>{r.text}</span></div>
+      {rows.map((r, k) => (
+        <div key={`${r.label}-${k}`} className="sv-card"><b>{r.label}</b><span>{r.text}</span></div>
       ))}
     </div>
   );
@@ -330,4 +345,68 @@ function OrderOne({ id, words, answer }) {
 // Put the words in order: tap them one by one. A full wrong order turns red; Start again clears it.
 export function Order({ id, sentences }) {
   return <div className="sv-orders">{sentences.map((s, k) => <OrderOne key={k} id={`${id}-${k}`} {...s} />)}</div>;
+}
+
+// ---- The only voice in the exam-prep lessons: the spelling words. ----
+// Uses the voice built into the browser. It says the word, the word in a sentence, then the word again.
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices().filter((v) => /^en/i.test(v.lang));
+  return vs.find((v) => /samantha|aria|jenny|google us english|zira|daniel|karen|serena/i.test(v.name)) || vs.find((v) => /^en-US/i.test(v.lang)) || vs[0] || null;
+}
+
+export function speakSpelling(word, sentence) {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) return false;
+  const syn = window.speechSynthesis;
+  syn.cancel();
+  const v = pickVoice();
+  const say = (text, rate) => {
+    const u = new SpeechSynthesisUtterance(text);
+    if (v) { u.voice = v; u.lang = v.lang; } else u.lang = "en-US";
+    u.rate = rate;
+    syn.speak(u);
+  };
+  say(word, 0.8);
+  say(sentence, 0.9);
+  say(word, 0.8);
+  return true;
+}
+
+const norm = (t) => (t || "").trim().toLowerCase();
+
+// Spelling from dictation. Play says the word; she spells it aloud or types it.
+// Check marks what she typed (a wrong one shows the right spelling). Show answers reveals every word for the teacher.
+export function Spell({ id, items }) {
+  const [typed, setTyped] = useStore("sp-" + id, {});
+  const [checked, setChecked] = useStore("chk-" + id, false);
+  const [shown, setShown] = useStore("show-" + id, false);
+  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+  const any = items.some((it) => norm(typed[it.n]) !== "");
+  return (
+    <div className="sv-checks">
+      {items.map((it) => {
+        const t = norm(typed[it.n]);
+        const ok = checked && t !== "" && t === it.word;
+        const bad = checked && t !== "" && t !== it.word;
+        return (
+          <div key={it.n} className="sv-row">
+            <span className="sv-n">{it.n}</span>
+            <button type="button" className="sv-play" disabled={!supported} onClick={() => speakSpelling(it.word, it.sentence)} aria-label={`Play word ${it.n}`}>&#9654;</button>
+            <input
+              className={`sv-input ${ok ? "is-correct" : bad ? "is-wrong" : ""}`}
+              value={typed[it.n] || ""}
+              onChange={(e) => { setTyped((p) => ({ ...p, [it.n]: e.target.value })); setChecked(false); }}
+              autoCapitalize="off" autoComplete="off" autoCorrect="off" spellCheck={false}
+              aria-label={`Spell word ${it.n}`}
+            />
+            <span className="sv-answer">{shown || bad ? it.word : ""}</span>
+          </div>
+        );
+      })}
+      {!supported && <div className="sv-nov">No voice on this device. Your teacher says each word (see the Teacher guide).</div>}
+      <div className="sv-spell-btns">
+        <button type="button" className="sv-tog" disabled={!any} onClick={() => setChecked(true)}>Check</button>
+        <button type="button" className="sv-tog" onClick={() => setShown(!shown)}>{shown ? "Hide answers" : "Show answers"}</button>
+      </div>
+    </div>
+  );
 }
