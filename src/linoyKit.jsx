@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useStore, NAVY, CORAL_DEEP, GREEN, RED } from "./e8Kit.jsx";
+import React, { useContext, useState } from "react";
+import { useStore, ScoreCtx, NAVY, CORAL_DEEP, GREEN, RED } from "./e8Kit.jsx";
 
 // Shared building blocks for Linoy's exam-prep lessons (Stative Verbs, Present Simple, ...).
 // They run inside <UnseenPlayer>, so they use its ScoreCtx store: going back to a slide shows it as she left it.
@@ -124,6 +124,25 @@ export const KIT_STYLES = `
 .sv-input.is-wrong { border-color: ${RED}; background: #FDECEC; }
 .sv-answer { min-width: 170px; font-weight: 800; font-size: 26px; color: #1E9C8F; }
 .sv-spell-btns { display: flex; gap: 12px; justify-content: center; }
+.sv-choice.is-picked { border-color: ${NAVY}; background: #fff; box-shadow: 0 0 0 3px rgba(27,42,74,0.14); font-weight: 800; }
+.sv-yn.is-picked { border-color: ${NAVY}; background: #E4E9F5; }
+
+.sv-score { display: flex; flex-direction: column; align-items: center; gap: 18px; width: 100%; max-width: 900px; }
+.sv-score-h { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 38px; line-height: 1.2; color: ${NAVY}; margin: 0; text-align: center; }
+.sv-score-total { display: flex; align-items: baseline; gap: 10px; background: ${NAVY}; color: #fff; border-radius: 22px; padding: 8px 34px; }
+.sv-score-total span { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; }
+.sv-score-total small { font-size: 17px; font-weight: 700; opacity: 0.75; }
+.sv-score-tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; width: 100%; }
+.sv-tile { text-align: center; background: rgba(255,255,255,0.9); border: 1px solid #EBDFD0; border-radius: 16px; padding: 16px 6px; }
+.sv-tile.is-full { background: #E6F8F5; border-color: #A8E6DF; }
+.sv-tile small { display: block; font-size: 12.5px; font-weight: 800; color: ${CORAL_DEEP}; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.sv-tile b { display: block; font-family: 'Baloo 2', sans-serif; font-size: 36px; line-height: 1.1; color: ${NAVY}; }
+.sv-mist { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 900px; max-height: 430px; margin-top: 34px; overflow-y: auto; padding-right: 4px; }
+.sv-mist-row { background: rgba(255,255,255,0.92); border: 1px solid #EBDFD0; border-radius: 14px; padding: 10px 18px; font-size: 20px; font-weight: 700; color: ${NAVY}; line-height: 1.35; }
+.sv-mist-row small { display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: ${CORAL_DEEP}; font-weight: 800; }
+.sv-mist-row .mine { color: ${RED}; }
+.sv-mist-row .right { color: #1E9C8F; }
+.sv-mist-none { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 34px; color: ${NAVY}; text-align: center; }
 .sv-nov { font-size: 16px; font-weight: 700; color: #6B5310; background: #FFF6E5; border: 1px solid #F2A900; border-radius: 12px; padding: 8px 16px; text-align: center; }
 `;
 
@@ -407,6 +426,107 @@ export function Spell({ id, items }) {
         <button type="button" className="sv-tog" disabled={!any} onClick={() => setChecked(true)}>Check</button>
         <button type="button" className="sv-tog" onClick={() => setShown(!shown)}>{shown ? "Hide answers" : "Show answers"}</button>
       </div>
+    </div>
+  );
+}
+
+// ---------- Review test pieces: no feedback while she answers; the score and the mistakes come at the end ----------
+
+// One question per slide: an optional label (part of speech), the text, and the choices. She can change her mind.
+export function TestMcq({ id, pos, text, options, word }) {
+  const [picked, setPicked] = useStore("pick-" + id, null);
+  return (
+    <div className="sv-def">
+      {pos && <div className="sv-pos">{pos}</div>}
+      <div className={word ? "sv-word" : "sv-def-text"}>{text}</div>
+      <div className="sv-choices">
+        {options.map((o, k) => (
+          <button key={o} type="button" className={`sv-choice ${picked === k ? "is-picked" : ""}`} onClick={() => setPicked(k)}>{o}</button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TestPickRow({ id, n, before, after, options }) {
+  const [pick, setPick] = useStore("pick-" + id, null);
+  return (
+    <div className="sv-row">
+      <span className="sv-n">{n}</span>
+      <span className="sv-s">{before} <span className="sv-blank">{pick !== null ? options[pick] : ""}</span> {after}</span>
+      {options.map((o, k) => (
+        <button key={o} type="button" className={`sv-yn ${pick === k ? "is-picked" : ""}`} onClick={() => setPick(k)}>{o}</button>
+      ))}
+    </div>
+  );
+}
+
+// Up to three gap sentences on one slide, two choices each.
+export function TestPick({ items }) {
+  return <div className="sv-checks">{items.map((it) => <TestPickRow key={it.id} {...it} />)}</div>;
+}
+
+// Spelling from dictation, no marking until the end.
+export function TestSpell({ group, items }) {
+  const [typed, setTyped] = useStore("tsp-" + group, {});
+  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+  return (
+    <div className="sv-checks">
+      {items.map((it) => (
+        <div key={it.n} className="sv-row">
+          <span className="sv-n">{it.n}</span>
+          <button type="button" className="sv-play" disabled={!supported} onClick={() => speakSpelling(it.word, it.sentence)} aria-label={`Play word ${it.n}`}>&#9654;</button>
+          <input
+            className="sv-input"
+            value={typed[it.n] || ""}
+            onChange={(e) => setTyped((p) => ({ ...p, [it.n]: e.target.value }))}
+            autoCapitalize="off" autoComplete="off" autoCorrect="off" spellCheck={false}
+            aria-label={`Spell word ${it.n}`}
+          />
+        </div>
+      ))}
+      {!supported && <div className="sv-nov">No voice on this device. Your teacher says each word (see the Teacher guide).</div>}
+    </div>
+  );
+}
+
+// Score by section. grade(item, store) says whether an answer is right.
+export function TestResults({ title, sections, grade }) {
+  const { store } = useContext(ScoreCtx);
+  const rows = sections.map((s) => ({ label: s.label, got: s.items.filter((it) => grade(it, store)).length, total: s.items.length }));
+  const got = rows.reduce((a, r) => a + r.got, 0);
+  const total = rows.reduce((a, r) => a + r.total, 0);
+  return (
+    <div className="sv-score">
+      <h2 className="sv-score-h">You finished {title}</h2>
+      <div className="sv-score-total"><span>{got}</span><small>out of {total}</small></div>
+      <div className="sv-score-tiles">
+        {rows.map((r) => (
+          <div key={r.label} className={`sv-tile ${r.got === r.total ? "is-full" : ""}`}><small>{r.label}</small><b>{r.got}/{r.total}</b></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// The wrong answers with the right ones, for the teacher to go through. describe(item, store) -> { q, mine, answer }.
+export function TestMistakes({ sections, grade, describe }) {
+  const { store } = useContext(ScoreCtx);
+  const wrong = [];
+  sections.forEach((s) => s.items.forEach((it) => { if (!grade(it, store)) wrong.push({ s, it }); }));
+  if (wrong.length === 0) return <div className="sv-mist-none">No mistakes. Well done!</div>;
+  return (
+    <div className="sv-mist">
+      {wrong.map(({ s, it }) => {
+        const d = describe(it, store);
+        return (
+          <div key={it.id} className="sv-mist-row">
+            <small>{s.label}</small>
+            {d.q}
+            <div><span className="mine">{d.mine || "no answer"}</span> &rarr; <span className="right">{d.answer}</span></div>
+          </div>
+        );
+      })}
     </div>
   );
 }

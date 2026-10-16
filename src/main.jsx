@@ -120,6 +120,7 @@ import UnseenReadingPart4Lesson from './UnseenReadingPart4Lesson.jsx'
 import StativeVsActionVerbsLesson from './StativeVsActionVerbsLesson.jsx'
 import PresentSimpleLesson from './PresentSimpleLesson.jsx'
 import PresentProgressiveLesson from './PresentProgressiveLesson.jsx'
+import ReviewTestLesson from './ReviewTestLesson.jsx'
 import TellTaleHeartLesson from './TellTaleHeartLesson.jsx'
 import E8Task8Lesson from './E8Task8Lesson.jsx'
 import E8Task9Lesson from './E8Task9Lesson.jsx'
@@ -439,6 +440,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/stative-vs-action-verbs" element={<CustomLessonGate slug="stative-vs-action-verbs"><StativeVsActionVerbsLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/present-simple" element={<CustomLessonGate slug="present-simple"><PresentSimpleLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/present-progressive" element={<CustomLessonGate slug="present-progressive"><PresentProgressiveLesson /></CustomLessonGate>} />
+            <Route path="/library/customized-lessons/stative-and-present-review-test" element={<CustomLessonGate slug="stative-and-present-review-test"><ReviewTestLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/the-tell-tale-heart" element={<CustomLessonGate slug="the-tell-tale-heart"><TellTaleHeartLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-7-short-texts" element={<CustomLessonGate slug="e8-task-7-short-texts"><E8Task7Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-8-missing-sentences" element={<CustomLessonGate slug="e8-task-8-missing-sentences"><E8Task8Lesson /></CustomLessonGate>} />

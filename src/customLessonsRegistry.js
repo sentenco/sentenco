@@ -120,6 +120,15 @@ export const CUSTOM_LESSONS = [
     desc: "25 minutes for a teen at high B1: a Spelling Kickoff with a voice for the words, then read, the -ing spelling rules, simple vs progressive practice and a talk.",
   },
   {
+    slug: "stative-and-present-review-test",
+    added: "2026-10-17",
+    popup: [1200, 780],
+    title: "Review Test: Stative and Present Tenses",
+    tag: "Exam Prep",
+    level: "B1 to B2 · Exam prep",
+    desc: "25 questions in 5 sections (definitions, synonyms, spelling, stative verbs, present simple vs progressive). No hints while she answers, then a score by section and the mistakes.",
+  },
+  {
     slug: "the-tell-tale-heart",
     added: "2026-10-15",
     popup: [1200, 780],
