@@ -4,8 +4,8 @@ import { useStore, NAVY, CORAL_DEEP, GREEN, RED } from "./e8Kit.jsx";
 
 // Lesson 1 of Linoy's exam prep (teen, high B1): Stative vs action verbs.
 // Kickoff: Definitions (dictionary style, choices hidden until the teacher reveals them).
-// Lesson Proper: Listen first, Notice, Learn, Practice, Use it, Wrap-up. About 25 minutes.
-// The teacher reads the Listen clip aloud; the script sits behind a button. No audio in this lesson.
+// Lesson Proper: Read first, Notice, Learn, Practice, Use it, Wrap-up. About 25 minutes.
+// The opening message is shown on the slide for her to read. No audio in this lesson.
 
 const TITLE = "Stative vs Action Verbs";
 
@@ -29,13 +29,12 @@ const EXTRA = `
 .sv-chip { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 26px; color: ${NAVY}; background: #FFE9E1; border: 2px solid #F4C0AD; border-radius: 14px; padding: 10px 24px; }
 
 .sv-listen { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 820px; align-items: stretch; }
-.sv-reader { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.92); border: 1px solid #EBDFD0; border-radius: 999px; padding: 12px 24px 12px 14px; font-size: 24px; font-weight: 700; color: ${NAVY}; }
-.sv-t { width: 42px; height: 42px; border-radius: 50%; background: ${NAVY}; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; flex: none; }
-.sv-script { margin: 0; background: #FFF6E5; border: 2px solid #F2A900; border-radius: 14px; padding: 12px 22px; font-size: 20px; font-weight: 600; line-height: 1.5; color: #6B5310; }
+.sv-msg { background: rgba(255,255,255,0.94); border: 1px solid #EBDFD0; border-radius: 22px; padding: 20px 28px 22px; box-shadow: 0 6px 16px rgba(27,42,74,0.08); }
+.sv-msg-from { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 15px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: ${CORAL_DEEP}; }
+.sv-msg p { margin: 0; font-size: 28px; font-weight: 700; line-height: 1.5; color: ${NAVY}; }
 .sv-qs { display: flex; flex-direction: column; gap: 10px; }
 .sv-q { display: flex; align-items: baseline; gap: 14px; background: rgba(255,255,255,0.92); border: 1px solid #EBDFD0; border-radius: 14px; padding: 12px 22px; font-size: 26px; font-weight: 700; color: ${NAVY}; }
 .sv-q i { font-style: normal; font-family: 'Baloo 2', sans-serif; font-weight: 800; color: ${CORAL_DEEP}; }
-.sv-listen .sv-tog { align-self: center; }
 
 .sv-sort { display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; max-width: 840px; }
 .sv-pool { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; min-height: 64px; }
@@ -137,15 +136,15 @@ function Recap({ words }) {
   return <div className="sv-chips">{words.map((w) => <span key={w} className="sv-chip">{w}</span>)}</div>;
 }
 
-// The teacher reads the clip aloud. The script is hidden so she listens instead of reading.
-function Listen({ id, script, questions }) {
-  const [shown, setShown] = useStore("show-" + id, false);
+// The message she reads first, with two easy questions under it.
+function Message({ text, questions }) {
   return (
     <div className="sv-listen">
-      <div className="sv-reader"><span className="sv-t">T</span><span>Your teacher reads a voice message</span></div>
-      {shown && <p className="sv-script">{script}</p>}
+      <div className="sv-msg">
+        <div className="sv-msg-from">Message</div>
+        <p>{text}</p>
+      </div>
       <div className="sv-qs">{questions.map((q, k) => <div key={k} className="sv-q"><i>?</i>{q}</div>)}</div>
-      <button type="button" className="sv-tog" onClick={() => setShown(!shown)}>{shown ? "Hide script" : "Show script"}</button>
     </div>
   );
 }
@@ -307,18 +306,17 @@ const SLIDES = [
     body: <UCover title={TITLE} module="LESSON 1" />,
   },
   {
-    stage: "Listen. Then answer.",
-    note: "About 2 minutes. Read this message aloud, twice, at a natural pace: “I’m waiting outside the cinema. I doubt Mia is coming. I suppose she’s still getting ready. I know she deserves a fun night, so let’s wait.” Answers: outside the cinema. Verbs that are not actions: doubt, suppose, know, deserve. Show the script only if she needs it.",
+    stage: "Read. Then answer.",
+    note: "About 2 minutes. She reads the message on the slide, then answers the two questions. Answers: outside the cinema. Verbs that are not actions: doubt, suppose, know, deserve.",
     body: (
-      <Listen
-        id="l1"
-        script="“I’m waiting outside the cinema. I doubt Mia is coming. I suppose she’s still getting ready. I know she deserves a fun night, so let’s wait.”"
+      <Message
+        text="“I’m waiting outside the cinema. I doubt Mia is coming. I suppose she’s still getting ready. I know she deserves a fun night, so let’s wait.”"
         questions={["Where is she waiting?", "Which verb is not an action?"]}
       />
     ),
   },
   {
-    stage: "Sort the verbs from the clip.",
+    stage: "Sort the verbs from the message.",
     note: "About 2 minutes. She notices the pattern before she sees the rule. Doing now: waiting, getting ready. Not an action: doubt, suppose, know.",
     body: (
       <Sort
