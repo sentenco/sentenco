@@ -1,4 +1,4 @@
-import { CUSTOM_LESSONS, openCustomLessonPopup } from "./customLessonsRegistry";
+import { CUSTOM_LESSONS_NEWEST_FIRST, openCustomLessonPopup } from "./customLessonsRegistry";
 import { SHOW_LETTER_BOARD } from "./featureFlags.js";
 import useCustomLessonAccess from "./useCustomLessonAccess";
 import React, { useState, useEffect, useRef } from "react";
@@ -1375,7 +1375,7 @@ export default function Library() {
   // Custom lessons are private: show only the ones this teacher owns, or that another teacher shared on a post they can see.
   const clAccess = useCustomLessonAccess(category === "Customized Lessons");
   // The site owner always sees every lesson; everyone else sees what the database says is theirs or shared with them.
-  const clVisible = CUSTOM_LESSONS.filter((l) => clAccess.access.has(l.slug) || clAccess.isOwnerEmail);
+  const clVisible = CUSTOM_LESSONS_NEWEST_FIRST.filter((l) => clAccess.access.has(l.slug) || clAccess.isOwnerEmail);
   const clRelation = (slug) => (clAccess.access.get(slug)?.relation) || "mine";
   // Owned = lessons that are mine; Saved = lessons other teachers shared that I bookmarked on the post.
   const [clView, setClView] = useState(() => searchParams.get("clView") || "all");

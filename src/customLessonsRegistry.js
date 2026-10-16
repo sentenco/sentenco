@@ -58,6 +58,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-1",
+    added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 1",
     tag: "Reading",
@@ -66,6 +67,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-2",
+    added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 2",
     tag: "Reading",
@@ -74,6 +76,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-3",
+    added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 3",
     tag: "Reading",
@@ -82,6 +85,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-4",
+    added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 4",
     tag: "Reading",
@@ -90,6 +94,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "stative-vs-action-verbs",
+    added: "2026-10-17",
     popup: [1200, 780],
     title: "Stative vs Action Verbs",
     tag: "Grammar",
@@ -98,6 +103,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "the-tell-tale-heart",
+    added: "2026-10-15",
     popup: [1200, 780],
     title: "The Tell-Tale Heart",
     tag: "Reading",
@@ -145,6 +151,13 @@ export const CUSTOM_LESSONS = [
     desc: "25 minutes on one task type: four short texts with three gaps each and a box of six words. Pick the word that fits and learn why the look-alikes are wrong.",
   },
 ];
+
+// Newest first for the gallery. Give every NEW lesson an `added` date (YYYY-MM-DD) so it lands on top;
+// lessons without one keep their order below the dated ones. On the same day the later entry comes first.
+export const CUSTOM_LESSONS_NEWEST_FIRST = CUSTOM_LESSONS
+  .map((l, i) => ({ l, i }))
+  .sort((a, b) => (b.l.added || "").localeCompare(a.l.added || "") || (a.l.added ? b.i - a.i : a.i - b.i))
+  .map((x) => x.l);
 
 export const customLessonBySlug = (slug) => CUSTOM_LESSONS.find((l) => l.slug === slug);
 
