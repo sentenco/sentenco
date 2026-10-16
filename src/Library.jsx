@@ -1857,7 +1857,7 @@ export default function Library() {
       <style>{CSS}{DOCK_CSS}</style>
 
       {!showLanding && (
-      <header className="gc-band">
+      <header className={`gc-band${category === "All" && !isCurriculum && !isSpark && !isArticleReader ? " gc-band--home" : ""}`}>
         <div className={`gc-topbar${user ? " has-dock" : ""}`}>
           <a
             href="/library"
@@ -4572,6 +4572,9 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .gc-band .gc-editions-levels { background: rgba(22,32,62,0.05); }
 .gc-band .gc-ed-tab { font-size: 12px; font-weight: 700; padding: 5px 11px; }
 .gc-band .gc-ed-tab.is-active { background: #fff; color: #E5502F; }
+
+/* Homeroom: the same soft grey as the page below, so the bars float on one continuous background */
+.gc-band.gc-band--home { background: #F1F3F8; }
 
 @media (max-width: 1180px) {
   .gc-band { padding: 8px 12px 4px; gap: 6px; }
