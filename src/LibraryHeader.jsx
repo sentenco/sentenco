@@ -315,6 +315,24 @@ export default function LibraryHeader() {
               </div>
             )}
           </div>
+          <div className="gc-sections">
+            <button
+              className={`gc-sec-tab ${activeCategory === null && !onConvo ? "is-active" : ""}`}
+              onClick={() => navigate("/library")}
+            >
+              Homeroom
+            </button>
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                className={`gc-sec-tab ${activeCategory === cat ? "is-active" : ""}`}
+                onClick={() => changeCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="gc-topbar-actions">
             {/* The search bar lives only in the Homeroom (the main Library page). */}
             {false && (
@@ -435,25 +453,6 @@ export default function LibraryHeader() {
 
         {!hideNav && (
         <div className="gc-navbar">
-          <div className="gc-sections">
-            <button
-              className={`gc-sec-tab ${activeCategory === null && !onConvo ? "is-active" : ""}`}
-              onClick={() => navigate("/library")}
-            >
-              Homeroom
-            </button>
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                className={`gc-sec-tab ${activeCategory === cat ? "is-active" : ""}`}
-                onClick={() => changeCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="gc-nav-divider" />
 
           <div className="gc-editions">
             {SHOW_LETTER_BOARD && (

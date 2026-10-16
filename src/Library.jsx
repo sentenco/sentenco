@@ -1866,6 +1866,24 @@ export default function Library() {
           >
             <img src="/logo-sentenco.png" alt="" className="gc-header-logo" />entenco
           </a>
+          <div className="gc-sections">
+            <button
+              className={`gc-sec-tab ${!isCurriculum && !isArticleReader && !isSpark && category === "All" ? "is-active" : ""}`}
+              onClick={() => changeCategory("All")}
+            >
+              Homeroom
+            </button>
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                className={`gc-sec-tab ${!isCurriculum && (isArticleReader ? cat === "Articles" : category === cat) ? "is-active" : ""}`}
+                onClick={() => changeCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="gc-topbar-actions">
             {false && showSearch && (
             <div className={`gc-search ${searchMode ? "has-mode" : ""}${searchOpen || query ? " is-open" : ""}`} ref={searchWrapRef}>
@@ -2012,25 +2030,6 @@ export default function Library() {
         </div>
 
         <div className="gc-navbar">
-          <div className="gc-sections">
-            <button
-              className={`gc-sec-tab ${!isCurriculum && !isArticleReader && !isSpark && category === "All" ? "is-active" : ""}`}
-              onClick={() => changeCategory("All")}
-            >
-              Homeroom
-            </button>
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                className={`gc-sec-tab ${!isCurriculum && (isArticleReader ? cat === "Articles" : category === cat) ? "is-active" : ""}`}
-                onClick={() => changeCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="gc-nav-divider" />
 
           <div className="gc-editions">
             {SHOW_LETTER_BOARD && (
@@ -4533,5 +4532,56 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   .gc-ed-spark, .gc-ed-curr, .gc-ed-custom { font-size: 11px; padding: 4px 6px; gap: 3px; }
   .gc-ed-tab { font-size: 10.5px; padding: 3px 7px; }
   .gc-navbar { gap: 0; }
+}
+
+/* ── Glass-pill header: one main pill (logo, categories, icons) and a slim pill (Spark, Curriculum, Custom), same look as the landing page ── */
+.gc-band { position: relative; z-index: 50; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 10px 20px 6px; background: linear-gradient(180deg, #FFF1E7 0%, rgba(255,248,241,0) 100%); border-bottom: 0; }
+.gc-band .gc-topbar { width: 100%; max-width: 1240px; margin: 0 auto; padding: 7px 10px 7px 18px; gap: 12px; justify-content: flex-start;
+  background: rgba(255,255,255,0.94); border: 1px solid #fff; border-radius: 999px; box-shadow: 0 0 0 1px rgba(22,32,62,0.05), 0 12px 30px rgba(22,32,62,0.09); }
+.gc-band .gc-header-brand { font-size: 23px; letter-spacing: -0.01em; color: #16203E; flex-shrink: 0; }
+.gc-band .gc-topbar-left { flex-shrink: 0; }
+.gc-band .gc-topbar.has-dock .gc-topbar-actions, .gc-band .gc-topbar-actions { margin-left: auto; gap: 4px; flex-shrink: 0; }
+.gc-band .gc-sections { flex: 0 1 auto; min-width: 0; margin: 0 auto; justify-content: flex-start; gap: 2px; padding: 4px; background: rgba(22,32,62,0.045); border-radius: 999px; scrollbar-width: none; }
+.gc-band .gc-sections::-webkit-scrollbar { display: none; }
+.gc-band .gc-sections > :first-child, .gc-band .gc-sections > :last-child { margin-left: 0; margin-right: 0; }
+.gc-band .gc-sec-tab { font-size: 13.5px; font-weight: 700; letter-spacing: 0; text-transform: none; padding: 8px 14px; color: #62668C; flex-shrink: 0; transition: background .2s, color .2s; }
+.gc-band .gc-sec-tab:hover { color: #16203E; background: rgba(255,255,255,0.85); }
+.gc-band .gc-sec-tab.is-active { background: #fff; color: #E5502F; box-shadow: 0 2px 8px rgba(22,32,62,0.1); }
+.gc-band .gc-dock { background: transparent; padding: 0; gap: 2px; }
+.gc-band .gc-dock-btn { width: 40px; height: 40px; padding: 0; justify-content: center; border-radius: 50%; color: #16203E; }
+.gc-band .gc-dock-btn:hover { background: rgba(22,32,62,0.07); color: #16203E; }
+.gc-band .gc-dock-btn.is-on { background: rgba(22,32,62,0.09); box-shadow: none; }
+.gc-band .gc-dock-btn span, .gc-band .gc-dock-btn.is-on span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.gc-band .gc-dock-dot, .gc-band .gc-dock-btn.is-on .gc-dock-dot { top: 8px; right: 8px; border-color: #fff; }
+.gc-band .gc-hsearch-btn { background: transparent; border-color: transparent; color: #16203E; }
+.gc-band .gc-hsearch-input { background: rgba(22,32,62,0.05); border-color: transparent; }
+.gc-band .gc-btn { border: 0; background: transparent; color: #16203E; font-size: 14px; padding: 10px 16px; }
+.gc-band .gc-btn:hover { background: rgba(22,32,62,0.06); }
+.gc-band .gc-btn.primary { color: #fff; padding: 11px 22px; background: linear-gradient(180deg, #FF7C5C 0%, #F2583A 100%); box-shadow: 0 6px 16px rgba(255,107,74,0.4), inset 0 1px 0 rgba(255,255,255,0.35); }
+.gc-band .gc-btn.primary:hover { background: linear-gradient(180deg, #FF7C5C 0%, #F2583A 100%); transform: translateY(-1px); }
+.gc-band .gc-navbar { width: max-content; max-width: 100%; margin: 0 auto; padding: 5px; flex-direction: row; gap: 0; border-bottom: 0;
+  background: rgba(255,255,255,0.94); border: 1px solid #fff; border-radius: 999px; box-shadow: 0 0 0 1px rgba(22,32,62,0.05), 0 10px 26px rgba(22,32,62,0.08); }
+.gc-band .gc-editions { flex-wrap: nowrap; justify-content: flex-start; gap: 2px; padding: 4px; background: rgba(22,32,62,0.045); border-radius: 999px; overflow-x: auto; scrollbar-width: none; }
+.gc-band .gc-editions::-webkit-scrollbar { display: none; }
+.gc-band .gc-editions > * { flex-shrink: 0; }
+.gc-band .gc-editions > :first-child, .gc-band .gc-editions > :last-child { margin-left: 0; margin-right: 0; }
+.gc-band .gc-editions-sep { height: 16px; margin: 0 4px; }
+.gc-band .gc-ed-spark, .gc-band .gc-ed-curr, .gc-band .gc-ed-custom { font-size: 12.5px; font-weight: 700; letter-spacing: 0; padding: 7px 14px; color: #62668C; transition: background .2s, color .2s; }
+.gc-band .gc-ed-spark:hover, .gc-band .gc-ed-curr:hover, .gc-band .gc-ed-custom:hover { background: rgba(255,255,255,0.85); color: #16203E; }
+.gc-band .gc-ed-spark.is-active, .gc-band .gc-ed-curr.is-active, .gc-band .gc-ed-custom.is-active { background: #fff; color: #E5502F; box-shadow: 0 2px 8px rgba(22,32,62,0.1); }
+.gc-band .gc-editions-levels { background: rgba(22,32,62,0.05); }
+.gc-band .gc-ed-tab { font-size: 12px; font-weight: 700; padding: 5px 11px; }
+.gc-band .gc-ed-tab.is-active { background: #fff; color: #E5502F; }
+
+@media (max-width: 1180px) {
+  .gc-band { padding: 8px 12px 4px; gap: 6px; }
+  .gc-band .gc-topbar { flex-wrap: wrap; border-radius: 24px; padding: 5px 8px 6px 14px; gap: 4px 10px; }
+  .gc-band .gc-header-brand { font-size: 21px; }
+  .gc-band .gc-header-logo { height: 28px; }
+  .gc-band .gc-sections { order: 3; flex-basis: 100%; margin: 0; overflow-x: auto; padding: 3px; }
+  .gc-band .gc-sec-tab { font-size: 13px; padding: 6px 12px; }
+  .gc-band .gc-navbar { max-width: 100%; padding: 4px; }
+  .gc-band .gc-editions { padding: 3px; }
+  .gc-band .gc-ed-spark, .gc-band .gc-ed-curr, .gc-band .gc-ed-custom { padding: 5px 11px; }
 }
 `;
