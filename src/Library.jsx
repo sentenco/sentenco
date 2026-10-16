@@ -4535,7 +4535,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 }
 
 /* ── Glass-pill header: one main pill (logo, categories, icons) and a slim pill (Spark, Curriculum, Custom), same look as the landing page ── */
-.gc-band { position: relative; z-index: 50; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 10px 20px 6px; background: linear-gradient(180deg, #FFF1E7 0%, rgba(255,248,241,0) 100%); border-bottom: 0; }
+.gc-band { position: relative; z-index: 50; display: grid; grid-template-columns: minmax(0, 1fr); gap: 3px; padding: 10px 20px 6px; background: linear-gradient(180deg, #FFF1E7 0%, rgba(255,248,241,0) 100%); border-bottom: 0; }
 .gc-band .gc-topbar { width: 100%; max-width: 1240px; margin: 0 auto; padding: 7px 10px 7px 18px; gap: 12px; justify-content: flex-start;
   background: rgba(255,255,255,0.94); border: 1px solid #fff; border-radius: 999px; box-shadow: 0 0 0 1px rgba(22,32,62,0.05), 0 12px 30px rgba(22,32,62,0.09); }
 .gc-band .gc-header-brand { font-size: 23px; letter-spacing: -0.01em; color: #16203E; flex-shrink: 0; }
@@ -4577,7 +4577,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 .gc-band.gc-band--home { background: #F1F3F8; }
 
 @media (max-width: 1180px) {
-  .gc-band { padding: 8px 12px 4px; gap: 6px; }
+  .gc-band { padding: 8px 12px 4px; gap: 3px; }
   .gc-band .gc-topbar { flex-wrap: wrap; border-radius: 24px; padding: 5px 8px 6px 14px; gap: 4px 10px; }
   .gc-band .gc-header-brand { font-size: 21px; }
   .gc-band .gc-header-logo { height: 28px; }
