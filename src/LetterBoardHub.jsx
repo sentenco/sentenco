@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { HUB_SETS } from "./letterBoardSets";
 import { hasStory, openLetterBoard } from "./letterBoardData";
 
@@ -35,6 +35,82 @@ function presetOf(cfg) {
 }
 
 const pad2 = (n) => (n < 10 ? "0" : "") + n;
+
+// Layout adjuster. Open the hub with ?tune=1 to move the title with sliders; the numbers can be copied and sent
+// back to become the new defaults. Each layout (full screen and phone) keeps its own set.
+const TUNE_KEY = "sentenco-letter-board-tune";
+const TUNE_DEFAULTS = {
+  wide: { top: 10.5, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 23.5 },
+  narrow: { top: 33, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 0 },
+};
+const TUNE_FIELDS = [
+  { key: "top", label: "Title distance from the top", hint: "Percent of the page width", min: 0, max: 40, step: 0.5 },
+  { key: "size", label: "Tile size", hint: "1 is the current size", min: 0.5, max: 1.8, step: 0.05 },
+  { key: "rowgap", label: "Space between LETTER and BOARD", hint: "Fraction of a tile", min: 0, max: 0.8, step: 0.02 },
+  { key: "under", label: "Space under the title", hint: "Pixels", min: 0, max: 80, step: 1 },
+  { key: "after", label: "Space under the description", hint: "Pixels", min: 0, max: 160, step: 2 },
+  { key: "minh", label: "Where the tickets start at the earliest", hint: "Percent of the page width", min: 0, max: 45, step: 0.5 },
+];
+
+function loadTune() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(TUNE_KEY) || "null");
+    if (raw && typeof raw === "object") return { wide: { ...TUNE_DEFAULTS.wide, ...raw.wide }, narrow: { ...TUNE_DEFAULTS.narrow, ...raw.narrow } };
+  } catch { /* fall through */ }
+  return { wide: { ...TUNE_DEFAULTS.wide }, narrow: { ...TUNE_DEFAULTS.narrow } };
+}
+
+function useIsWide() {
+  const q = "(min-width: 761px)";
+  const [wide, setWide] = useState(() => (typeof window !== "undefined" ? window.matchMedia(q).matches : true));
+  useEffect(() => {
+    const m = window.matchMedia(q);
+    const on = () => setWide(m.matches);
+    m.addEventListener("change", on);
+    return () => m.removeEventListener("change", on);
+  }, []);
+  return wide;
+}
+
+function tuneText(t) {
+  const line = (name, v) => `${name}: top ${v.top}, tile size ${v.size}, row gap ${v.rowgap}, under title ${v.under}, under description ${v.after}, tickets start ${v.minh}`;
+  return `${line("Full screen", t.wide)}\n${line("Phone and narrow", t.narrow)}`;
+}
+
+function Tuner({ tune, mode, onChange, onReset }) {
+  const [open, setOpen] = useState(true);
+  const [copied, setCopied] = useState(false);
+  const v = tune[mode];
+  const text = tuneText(tune);
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch { /* the text box below can be copied by hand */ }
+  };
+  return (
+    <div className="lbh3-tuner" role="region" aria-label="Layout adjuster">
+      <div className="lbh3-tuner-head">
+        <b>Adjust the top</b>
+        <button type="button" onClick={() => setOpen(!open)}>{open ? "Hide" : "Show"}</button>
+      </div>
+      {open && (
+        <>
+          <p className="lbh3-tuner-mode">Now adjusting: <b>{mode === "wide" ? "Full screen" : "Phone and narrow windows"}</b>. Resize the window to adjust the other one.</p>
+          {TUNE_FIELDS.map((f) => (
+            <label key={f.key} className="lbh3-tuner-row">
+              <span>{f.label}<small>{f.hint}</small></span>
+              <input type="range" min={f.min} max={f.max} step={f.step} value={v[f.key]} onChange={(e) => onChange(mode, f.key, Number(e.target.value))} />
+              <output>{v[f.key]}</output>
+            </label>
+          ))}
+          <div className="lbh3-tuner-btns">
+            <button type="button" onClick={copy}>{copied ? "Copied" : "Copy numbers"}</button>
+            <button type="button" onClick={() => onReset(mode)}>Reset this layout</button>
+          </div>
+          <textarea readOnly value={text} rows={4} onFocus={(e) => e.target.select()} aria-label="Numbers to send" />
+        </>
+      )}
+    </div>
+  );
+}
 
 function Tiles() {
   let k = 0;
@@ -75,6 +151,10 @@ function Cover({ set, className = "" }) {
 
 export default function LetterBoardHub() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const tuning = searchParams.get("tune") === "1";
+  const isWide = useIsWide();
+  const [tune, setTune] = useState(loadTune);
   const [cfg, setCfg] = useState(loadCfg);
   const [openId, setOpenId] = useState(null);
   const closeRef = useRef(null);
@@ -89,6 +169,19 @@ export default function LetterBoardHub() {
     setCfg(next);
     try { localStorage.setItem(CFG_KEY, JSON.stringify(next)); } catch { /* optional */ }
   };
+
+  const changeTune = (mode, key, value) => {
+    const next = { ...tune, [mode]: { ...tune[mode], [key]: value } };
+    setTune(next);
+    try { localStorage.setItem(TUNE_KEY, JSON.stringify(next)); } catch { /* optional */ }
+  };
+  const resetTune = (mode) => {
+    const next = { ...tune, [mode]: { ...TUNE_DEFAULTS[mode] } };
+    setTune(next);
+    try { localStorage.setItem(TUNE_KEY, JSON.stringify(next)); } catch { /* optional */ }
+  };
+  const tv = tune[isWide ? "wide" : "narrow"];
+  const tuneVars = tuning ? { "--ttop": tv.top, "--tsize": tv.size, "--rowgap": tv.rowgap, "--under": tv.under, "--after": tv.after, "--minh": tv.minh } : undefined;
 
   const openTopic = (id) => {
     lastFocus.current = document.activeElement;
@@ -111,8 +204,9 @@ export default function LetterBoardHub() {
   const inOrder = !cfg.mix || cfg.lvl === 1;
 
   return (
-    <div className="lbh3-shell">
+    <div className="lbh3-shell" style={tuneVars}>
       <style>{CSS}</style>
+      {tuning && <Tuner tune={tune} mode={isWide ? "wide" : "narrow"} onChange={changeTune} onReset={resetTune} />}
       <div className="lbh3-page">
         <div className="lbh3-hero">
           <div className="lbh3-title"><Tiles /></div>
@@ -237,16 +331,16 @@ const CSS = `
 .lbh3-shell * { box-sizing: border-box; }
 .lbh3-page { max-width: 1040px; margin: 0 auto; padding: 0 24px 100px; }
 
-.lbh3-hero { padding-top: calc(var(--w) * 0.33); display: flex; flex-direction: column; justify-content: center; }
-.lbh3-title { display: flex; justify-content: center; margin: 0 0 16px; }
-.lbh3-tiles { --t: clamp(40px, 5.6vw, 72px); display: flex; flex-direction: column; align-items: center; gap: calc(var(--t) * 0.2); margin: 0; perspective: 700px; }
+.lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 33) / 100); min-height: calc(var(--w) * var(--minh, 0) / 100); display: flex; flex-direction: column; justify-content: center; }
+.lbh3-title { display: flex; justify-content: center; margin: 0 0 calc(var(--under, 16) * 1px); }
+.lbh3-tiles { --t: calc(clamp(40px, 5.6vw, 72px) * var(--tsize, 1)); display: flex; flex-direction: column; align-items: center; gap: calc(var(--t) * var(--rowgap, 0.2)); margin: 0; perspective: 700px; }
 .lbh3-tw { display: flex; gap: calc(var(--t) * 0.14); }
 .lbh3-tl { width: var(--t); height: var(--t); border-radius: calc(var(--t) * 0.26); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: calc(var(--t) * 0.58); color: #fff; box-shadow: 0 5px 0 rgba(27,42,74,0.25); animation: lbh3-flip 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 55ms); transition: transform 0.2s; }
 .lbh3-tl:hover { transform: translateY(-4px) rotate(-3deg); }
 @keyframes lbh3-flip { from { transform: rotateX(-95deg); opacity: 0; } to { transform: none; opacity: 1; } }
 .lbh3-tl.k0 { background: var(--coral); } .lbh3-tl.k1 { background: var(--y); color: var(--navy); } .lbh3-tl.k2 { background: var(--g); }
 .lbh3-tl.k3 { background: var(--b); } .lbh3-tl.k4 { background: var(--p); } .lbh3-tl.k5 { background: var(--navy); }
-.lbh3-lead { margin: 0 auto 22px; text-align: center; max-width: 54ch; font-size: 16px; font-weight: 600; color: #6B5A4A; line-height: 1.5; }
+.lbh3-lead { margin: 0 auto calc(var(--after, 22) * 1px); text-align: center; max-width: 54ch; font-size: 16px; font-weight: 600; color: #6B5A4A; line-height: 1.5; }
 .lbh3-sec { display: flex; align-items: baseline; justify-content: space-between; margin: 0 2px 14px; }
 .lbh3-sec h2 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; margin: 0; }
 .lbh3-sec span { font-size: 13px; font-weight: 700; color: #8A6F5A; }
@@ -326,7 +420,7 @@ const CSS = `
 /* Full-screen widths use the landscape picture: parols in the far corners, wide clear middle. */
 @media (min-width: 761px) {
   .lbh3-shell { --w: min(100vw, 1800px); background-image: url('/curriculum/letter-board/hub-bg-wide.jpg'); background-size: min(100%, 1800px) auto; background-color: #FDF3DD; }
-  .lbh3-hero { min-height: calc(var(--w) * 0.235); padding-top: calc(var(--w) * 0.105); }
+  .lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 10.5) / 100); min-height: calc(var(--w) * var(--minh, 23.5) / 100); }
   .lbh3-lead { max-width: min(54ch, calc(var(--w) * 0.56)); }
 }
 @media (max-width: 820px) {
@@ -342,6 +436,20 @@ const CSS = `
 @media (max-width: 600px) {
   .lbh3-tl { box-shadow: 0 3px 0 rgba(27,42,74,0.25); }
 }
+
+.lbh3-tuner { position: fixed; right: 14px; bottom: 14px; z-index: 80; width: min(330px, calc(100vw - 28px)); max-height: 78vh; overflow: auto; background: #fff; border-radius: 18px; box-shadow: 0 18px 40px -12px rgba(27,42,74,0.55), 0 0 0 2px var(--navy); padding: 12px 14px 14px; font-size: 13px; }
+.lbh3-tuner-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lbh3-tuner-head b { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; }
+.lbh3-tuner button { border: 0; border-radius: 999px; background: var(--navy); color: #fff; font-family: inherit; font-weight: 700; font-size: 12px; padding: 6px 12px; cursor: pointer; }
+.lbh3-tuner-mode { margin: 8px 0 6px; color: var(--muted); font-weight: 600; line-height: 1.4; }
+.lbh3-tuner-row { display: grid; grid-template-columns: 1fr 52px; gap: 2px 8px; align-items: center; margin: 9px 0 0; font-weight: 700; }
+.lbh3-tuner-row span { grid-column: 1 / -1; display: flex; flex-direction: column; }
+.lbh3-tuner-row small { font-weight: 600; color: #8A7B70; font-size: 11px; }
+.lbh3-tuner-row input { width: 100%; accent-color: var(--coral); }
+.lbh3-tuner-row output { text-align: right; font-variant-numeric: tabular-nums; }
+.lbh3-tuner-btns { display: flex; gap: 8px; margin: 12px 0 8px; }
+.lbh3-tuner-btns button:last-child { background: #EEF1F8; color: var(--navy); }
+.lbh3-tuner textarea { width: 100%; font-family: ui-monospace, Menlo, monospace; font-size: 11px; border: 1.5px solid #DCE2F0; border-radius: 10px; padding: 8px; color: var(--ink); resize: none; background: #F7F8FC; }
 @media (prefers-reduced-motion: reduce) {
   .lbh3-tl { animation: none; }
   .lbh3-tk, .lbh3-tl, .lbh3-card::after { transition: none; }
