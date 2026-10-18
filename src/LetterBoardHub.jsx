@@ -41,7 +41,13 @@ const pad2 = (n) => (n < 10 ? "0" : "") + n;
 const TUNE_KEY = "sentenco-letter-board-tune";
 const TUNE_DEFAULTS = {
   wide: { top: 10.5, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 23.5 },
-  narrow: { top: 33, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 0 },
+  half: { top: 14.5, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 0 },
+  phone: { top: 33, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 0 },
+};
+const TUNE_MODES = {
+  wide: "Full screen (761 px and wider)",
+  half: "Half screen (601 to 760 px wide)",
+  phone: "Phone (600 px and narrower)",
 };
 const TUNE_FIELDS = [
   { key: "top", label: "Title distance from the top", hint: "Percent of the page width", min: 0, max: 40, step: 0.5 },
@@ -55,26 +61,30 @@ const TUNE_FIELDS = [
 function loadTune() {
   try {
     const raw = JSON.parse(localStorage.getItem(TUNE_KEY) || "null");
-    if (raw && typeof raw === "object") return { wide: { ...TUNE_DEFAULTS.wide, ...raw.wide }, narrow: { ...TUNE_DEFAULTS.narrow, ...raw.narrow } };
+    if (raw && typeof raw === "object") return { wide: { ...TUNE_DEFAULTS.wide, ...raw.wide }, half: { ...TUNE_DEFAULTS.half, ...raw.half }, phone: { ...TUNE_DEFAULTS.phone, ...raw.phone } };
   } catch { /* fall through */ }
-  return { wide: { ...TUNE_DEFAULTS.wide }, narrow: { ...TUNE_DEFAULTS.narrow } };
+  return { wide: { ...TUNE_DEFAULTS.wide }, half: { ...TUNE_DEFAULTS.half }, phone: { ...TUNE_DEFAULTS.phone } };
 }
 
-function useIsWide() {
-  const q = "(min-width: 761px)";
-  const [wide, setWide] = useState(() => (typeof window !== "undefined" ? window.matchMedia(q).matches : true));
+function useMode() {
+  const get = () => {
+    if (typeof window === "undefined") return "wide";
+    if (window.matchMedia("(min-width: 761px)").matches) return "wide";
+    return window.matchMedia("(min-width: 601px)").matches ? "half" : "phone";
+  };
+  const [mode, setMode] = useState(get);
   useEffect(() => {
-    const m = window.matchMedia(q);
-    const on = () => setWide(m.matches);
-    m.addEventListener("change", on);
-    return () => m.removeEventListener("change", on);
+    const qs = [window.matchMedia("(min-width: 761px)"), window.matchMedia("(min-width: 601px)")];
+    const on = () => setMode(get());
+    qs.forEach((m) => m.addEventListener("change", on));
+    return () => qs.forEach((m) => m.removeEventListener("change", on));
   }, []);
-  return wide;
+  return mode;
 }
 
 function tuneText(t) {
   const line = (name, v) => `${name}: top ${v.top}, tile size ${v.size}, row gap ${v.rowgap}, under title ${v.under}, under description ${v.after}, tickets start ${v.minh}`;
-  return `${line("Full screen", t.wide)}\n${line("Phone and narrow", t.narrow)}`;
+  return ["wide", "half", "phone"].map((m) => line(TUNE_MODES[m], t[m])).join("\n");
 }
 
 function Tuner({ tune, mode, onChange, onReset }) {
@@ -93,7 +103,7 @@ function Tuner({ tune, mode, onChange, onReset }) {
       </div>
       {open && (
         <>
-          <p className="lbh3-tuner-mode">Now adjusting: <b>{mode === "wide" ? "Full screen" : "Phone and narrow windows"}</b>. Resize the window to adjust the other one.</p>
+          <p className="lbh3-tuner-mode">Now adjusting: <b>{TUNE_MODES[mode]}</b>. Resize the window to adjust the others.</p>
           {TUNE_FIELDS.map((f) => (
             <label key={f.key} className="lbh3-tuner-row">
               <span>{f.label}<small>{f.hint}</small></span>
@@ -105,7 +115,7 @@ function Tuner({ tune, mode, onChange, onReset }) {
             <button type="button" onClick={copy}>{copied ? "Copied" : "Copy numbers"}</button>
             <button type="button" onClick={() => onReset(mode)}>Reset this layout</button>
           </div>
-          <textarea readOnly value={text} rows={4} onFocus={(e) => e.target.select()} aria-label="Numbers to send" />
+          <textarea readOnly value={text} rows={5} onFocus={(e) => e.target.select()} aria-label="Numbers to send" />
         </>
       )}
     </div>
@@ -153,7 +163,7 @@ export default function LetterBoardHub() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const tuning = searchParams.get("tune") === "1";
-  const isWide = useIsWide();
+  const mode = useMode();
   const [tune, setTune] = useState(loadTune);
   const [cfg, setCfg] = useState(loadCfg);
   const [openId, setOpenId] = useState(null);
@@ -180,7 +190,7 @@ export default function LetterBoardHub() {
     setTune(next);
     try { localStorage.setItem(TUNE_KEY, JSON.stringify(next)); } catch { /* optional */ }
   };
-  const tv = tune[isWide ? "wide" : "narrow"];
+  const tv = tune[mode];
   const tuneVars = tuning ? { "--ttop": tv.top, "--tsize": tv.size, "--rowgap": tv.rowgap, "--under": tv.under, "--after": tv.after, "--minh": tv.minh } : undefined;
 
   const openTopic = (id) => {
@@ -206,7 +216,7 @@ export default function LetterBoardHub() {
   return (
     <div className="lbh3-shell" style={tuneVars}>
       <style>{CSS}</style>
-      {tuning && <Tuner tune={tune} mode={isWide ? "wide" : "narrow"} onChange={changeTune} onReset={resetTune} />}
+      {tuning && <Tuner tune={tune} mode={mode} onChange={changeTune} onReset={resetTune} />}
       <div className="lbh3-page">
         <div className="lbh3-hero">
           <div className="lbh3-title"><Tiles /></div>
@@ -417,6 +427,11 @@ const CSS = `
 .lbh3-go:active { transform: translateY(2px); box-shadow: 0 3px 0 #C9432A; }
 .lbh3-x { position: absolute; top: 12px; right: 252px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 8px rgba(27,42,74,0.2); font-size: 18px; font-weight: 800; color: var(--navy); cursor: pointer; z-index: 2; }
 
+/* Half screen: the title fits between the parols of the portrait picture, so it sits higher. */
+@media (min-width: 601px) {
+  .lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 14.5) / 100); }
+  .lbh3-lead { max-width: min(54ch, calc(var(--w) * 0.56)); }
+}
 /* Full-screen widths use the landscape picture: parols in the far corners, wide clear middle. */
 @media (min-width: 761px) {
   .lbh3-shell { --w: min(100vw, 1800px); background-image: url('/curriculum/letter-board/hub-bg-wide.jpg'); background-size: min(100%, 1800px) auto; background-color: #FDF3DD; }
