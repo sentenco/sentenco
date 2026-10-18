@@ -4,7 +4,8 @@ import { SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, SECRET_MAP_STORY, SECRE
 // and can be about anything: no categories. Teachers can't add or edit these; new topics are added here,
 // often because a teacher asked for one through Custom Lessons.
 //
-// { id, title, blurb, items, story? }
+// { id, title, blurb, items, story?, hidden?, coverFit? }
+// hidden: not shown on the hub but still playable by its link. coverFit: "contain" for a picture on a plain background.
 
 export const LETTER_BOARD_SETS = [
   {
@@ -13,6 +14,7 @@ export const LETTER_BOARD_SETS = [
     blurb: "A friendly mix: animals, colors, spelling and speaking.",
     items: SAMPLE_ITEMS,
     story: null,
+    hidden: true,
   },
   {
     id: "sample-story",
@@ -20,6 +22,7 @@ export const LETTER_BOARD_SETS = [
     blurb: "Read a short story first, then answer questions about it.",
     items: SAMPLE_STORY_ITEMS,
     story: SAMPLE_STORY,
+    coverFit: "contain",
   },
   {
     id: "secret-map",
@@ -29,6 +32,9 @@ export const LETTER_BOARD_SETS = [
     story: SECRET_MAP_STORY,
   },
 ];
+
+// What the hub shows: every topic that is not hidden.
+export const HUB_SETS = LETTER_BOARD_SETS.filter((s) => !s.hidden);
 
 export function getLetterBoardSet(id) {
   return LETTER_BOARD_SETS.find((s) => s.id === id) || null;
