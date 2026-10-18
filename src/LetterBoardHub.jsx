@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { HUB_SETS } from "./letterBoardSets";
 import { hasStory, openLetterBoard } from "./letterBoardData";
 
-// Letter Board page (inside the Library nav chrome): a fiesta hub. Wavy banderitas and the title tiles on top,
-// then one ticket per topic. Picking a ticket opens a ticket-shaped setup (how hard, what the tiles are worth,
+// Letter Board page (inside the Library nav chrome): a fiesta hub. A picture of parols and banderitas sits at the top of
+// the page (public/curriculum/letter-board/hub-bg.jpg), then the title tiles, then one ticket per topic. Picking a ticket opens a ticket-shaped setup (how hard, what the tiles are worth,
 // the letter order) with a tear-off stub that sums up the game and holds the start button.
 // Topics are built in; teachers ask for new ones through Custom Lessons.
 
@@ -21,7 +21,6 @@ const LEVELS = [
   { key: 3, name: "All levels", n: 20, bar: [9, 6, 5], sub: "9 easy, 6 average, 5 hard" },
 ];
 const TITLE_WORDS = "LETTER BOARD".split(" ");
-const FLAG_COLORS = ["#FF6B4A", "#FFC93C", "#2EC4B6", "#3E7CB1", "#FF8FAB", "#7BC79A"];
 
 function loadCfg() {
   try {
@@ -36,38 +35,6 @@ function presetOf(cfg) {
 }
 
 const pad2 = (n) => (n < 10 ? "0" : "") + n;
-
-// One wavy string of paper flags. Each flag hangs from the curve and tilts with it. Built once.
-const BUNTING = (() => {
-  const W = 1200, base = 22, amp = 17, len = 260, step = 36, fw = 16, fh = 34;
-  const y = (x) => base + amp * Math.sin((2 * Math.PI * x) / len);
-  let d = "";
-  for (let x = 0; x <= W; x += 8) d += `${x ? "L" : "M"}${x} ${y(x).toFixed(1)} `;
-  const flags = [];
-  let k = 0;
-  for (let x = step / 2; x < W; x += step) {
-    const slope = amp * ((2 * Math.PI) / len) * Math.cos((2 * Math.PI * x) / len);
-    flags.push({ k, x: x.toFixed(1), y: y(x).toFixed(1), a: ((Math.atan(slope) * 180) / Math.PI * 0.8).toFixed(1), c: FLAG_COLORS[k % 6], dl: (k * 0.37).toFixed(2), fw, fh });
-    k++;
-  }
-  return { d, flags };
-})();
-
-function Bunting() {
-  return (
-    <svg className="lbh3-bunt" viewBox="0 0 1200 70" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
-      <path className="lbh3-string" d={BUNTING.d} />
-      {BUNTING.flags.map((f) => (
-        <g key={f.k} transform={`translate(${f.x} ${f.y}) rotate(${f.a})`}>
-          <g className="lbh3-fl" style={{ animationDelay: `-${f.dl}s` }}>
-            <polygon points={`${-f.fw},0 ${f.fw},0 0,${f.fh}`} fill={f.c} stroke="#fff" strokeOpacity=".55" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d={`M0 2 L0 ${f.fh - 4}`} stroke="#000" strokeOpacity=".1" strokeWidth="1.5" />
-          </g>
-        </g>
-      ))}
-    </svg>
-  );
-}
 
 function Tiles() {
   let k = 0;
@@ -146,10 +113,11 @@ export default function LetterBoardHub() {
   return (
     <div className="lbh3-shell">
       <style>{CSS}</style>
-      <Bunting />
       <div className="lbh3-page">
-        <div className="lbh3-title"><Tiles /></div>
-        <p className="lbh3-lead">Flip the hidden tiles, answer the question behind each one and collect coins. Pick a topic to start.</p>
+        <div className="lbh3-hero">
+          <div className="lbh3-title"><Tiles /></div>
+          <p className="lbh3-lead">Flip the hidden tiles, answer the question behind each one and collect coins. Pick a topic to start.</p>
+        </div>
 
         <div className="lbh3-sec">
           <h2>Pick a ticket</h2>
@@ -265,24 +233,20 @@ export default function LetterBoardHub() {
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Fraunces:opsz,wght@9..144,800&family=Quicksand:wght@500;600;700&display=swap');
 .lbh3-shell { --ink: #2B2A4A; --muted: #7C6F66; --coral: #FF6B4A; --coral-deep: #E0502F; --coral-pale: #FDECE5; --navy: #1B2A4A; --gold: #D9A62E; --hair: rgba(43,42,74,0.1); --tear: #E8C9B4; --y: #FFC93C; --g: #2EC4B6; --b: #3E7CB1; --p: #FF8FAB;
-  min-height: 100%; background-color: #FFF3DC; background-image: radial-gradient(#F7DDB0 2px, transparent 2.4px); background-size: 20px 20px; color: var(--ink); font-family: 'Quicksand', sans-serif; position: relative; }
+  --w: min(100vw, 1400px); min-height: 100%; background: url('/curriculum/letter-board/hub-bg.jpg') center top / min(100%, 1400px) auto no-repeat, #FCF3DC; color: var(--ink); font-family: 'Quicksand', sans-serif; position: relative; }
 .lbh3-shell * { box-sizing: border-box; }
 .lbh3-page { max-width: 1040px; margin: 0 auto; padding: 0 24px 100px; }
 
-.lbh3-bunt { display: block; width: 100%; height: 70px; }
-.lbh3-string { fill: none; stroke: #1B2A4A; stroke-opacity: 0.45; stroke-width: 2.5; stroke-linecap: round; }
-.lbh3-fl { transform-box: fill-box; transform-origin: 50% 0; animation: lbh3-sway 3.6s ease-in-out infinite alternate; }
-@keyframes lbh3-sway { from { transform: rotate(-3.5deg); } to { transform: rotate(3.5deg); } }
-
-.lbh3-title { display: flex; justify-content: center; margin: 18px 0 12px; }
+.lbh3-hero { padding-top: calc(var(--w) * 0.33); display: flex; flex-direction: column; justify-content: center; }
+.lbh3-title { display: flex; justify-content: center; margin: 0 0 10px; }
 .lbh3-tiles { display: flex; justify-content: center; gap: 12px 26px; flex-wrap: wrap; margin: 0; perspective: 700px; }
 .lbh3-tw { display: flex; gap: 8px; }
-.lbh3-tl { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 31px; color: #fff; box-shadow: 0 5px 0 rgba(27,42,74,0.25); animation: lbh3-flip 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 55ms); transition: transform 0.2s; }
+.lbh3-tl { --t: clamp(30px, 4vw, 50px); width: var(--t); height: var(--t); border-radius: calc(var(--t) * 0.26); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: calc(var(--t) * 0.58); color: #fff; box-shadow: 0 5px 0 rgba(27,42,74,0.25); animation: lbh3-flip 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 55ms); transition: transform 0.2s; }
 .lbh3-tl:hover { transform: translateY(-4px) rotate(-3deg); }
 @keyframes lbh3-flip { from { transform: rotateX(-95deg); opacity: 0; } to { transform: none; opacity: 1; } }
 .lbh3-tl.k0 { background: var(--coral); } .lbh3-tl.k1 { background: var(--y); color: var(--navy); } .lbh3-tl.k2 { background: var(--g); }
 .lbh3-tl.k3 { background: var(--b); } .lbh3-tl.k4 { background: var(--p); } .lbh3-tl.k5 { background: var(--navy); }
-.lbh3-lead { margin: 6px auto 28px; text-align: center; max-width: 54ch; font-size: 16px; font-weight: 600; color: #6B5A4A; line-height: 1.5; }
+.lbh3-lead { margin: 0 auto 22px; text-align: center; max-width: 54ch; font-size: 16px; font-weight: 600; color: #6B5A4A; line-height: 1.5; }
 .lbh3-sec { display: flex; align-items: baseline; justify-content: space-between; margin: 0 2px 14px; }
 .lbh3-sec h2 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; margin: 0; }
 .lbh3-sec span { font-size: 13px; font-weight: 700; color: #8A6F5A; }
@@ -359,9 +323,14 @@ const CSS = `
 .lbh3-go:active { transform: translateY(2px); box-shadow: 0 3px 0 #C9432A; }
 .lbh3-x { position: absolute; top: 12px; right: 252px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 8px rgba(27,42,74,0.2); font-size: 18px; font-weight: 800; color: var(--navy); cursor: pointer; z-index: 2; }
 
+/* Full-screen widths use the landscape picture: parols in the far corners, wide clear middle. */
+@media (min-width: 761px) {
+  .lbh3-shell { --w: min(100vw, 1800px); background-image: url('/curriculum/letter-board/hub-bg-wide.jpg'); background-size: min(100%, 1800px) auto; background-color: #FDF3DD; }
+  .lbh3-hero { min-height: calc(var(--w) * 0.235); padding-top: calc(var(--w) * 0.105); }
+  .lbh3-lead { max-width: min(54ch, calc(var(--w) * 0.56)); }
+}
 @media (max-width: 820px) {
   .lbh3-page { padding: 0 14px 80px; }
-  .lbh3-tl { width: 44px; height: 44px; font-size: 25px; border-radius: 12px; }
   .lbh3-tw { gap: 6px; }
 }
 @media (max-width: 720px) {
@@ -372,11 +341,11 @@ const CSS = `
   .lbh3-x { right: 12px; }
 }
 @media (max-width: 600px) {
-  .lbh3-tl { width: 32px; height: 32px; font-size: 19px; border-radius: 9px; box-shadow: 0 3px 0 rgba(27,42,74,0.25); }
+  .lbh3-tl { box-shadow: 0 3px 0 rgba(27,42,74,0.25); }
   .lbh3-tw { gap: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lbh3-fl, .lbh3-tl { animation: none; }
+  .lbh3-tl { animation: none; }
   .lbh3-tk, .lbh3-tl, .lbh3-card::after { transition: none; }
 }
 `;
