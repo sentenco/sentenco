@@ -238,10 +238,10 @@ const CSS = `
 .lbh3-page { max-width: 1040px; margin: 0 auto; padding: 0 24px 100px; }
 
 .lbh3-hero { padding-top: calc(var(--w) * 0.33); display: flex; flex-direction: column; justify-content: center; }
-.lbh3-title { display: flex; justify-content: center; margin: 0 0 10px; }
-.lbh3-tiles { display: flex; justify-content: center; gap: 12px 26px; flex-wrap: wrap; margin: 0; perspective: 700px; }
-.lbh3-tw { display: flex; gap: 8px; }
-.lbh3-tl { --t: clamp(30px, 4vw, 50px); width: var(--t); height: var(--t); border-radius: calc(var(--t) * 0.26); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: calc(var(--t) * 0.58); color: #fff; box-shadow: 0 5px 0 rgba(27,42,74,0.25); animation: lbh3-flip 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 55ms); transition: transform 0.2s; }
+.lbh3-title { display: flex; justify-content: center; margin: 0 0 16px; }
+.lbh3-tiles { --t: clamp(40px, 5.6vw, 72px); display: flex; flex-direction: column; align-items: center; gap: calc(var(--t) * 0.2); margin: 0; perspective: 700px; }
+.lbh3-tw { display: flex; gap: calc(var(--t) * 0.14); }
+.lbh3-tl { width: var(--t); height: var(--t); border-radius: calc(var(--t) * 0.26); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: calc(var(--t) * 0.58); color: #fff; box-shadow: 0 5px 0 rgba(27,42,74,0.25); animation: lbh3-flip 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 55ms); transition: transform 0.2s; }
 .lbh3-tl:hover { transform: translateY(-4px) rotate(-3deg); }
 @keyframes lbh3-flip { from { transform: rotateX(-95deg); opacity: 0; } to { transform: none; opacity: 1; } }
 .lbh3-tl.k0 { background: var(--coral); } .lbh3-tl.k1 { background: var(--y); color: var(--navy); } .lbh3-tl.k2 { background: var(--g); }
@@ -331,7 +331,6 @@ const CSS = `
 }
 @media (max-width: 820px) {
   .lbh3-page { padding: 0 14px 80px; }
-  .lbh3-tw { gap: 6px; }
 }
 @media (max-width: 720px) {
   .lbh3-levels { grid-template-columns: 1fr; }
@@ -342,7 +341,6 @@ const CSS = `
 }
 @media (max-width: 600px) {
   .lbh3-tl { box-shadow: 0 3px 0 rgba(27,42,74,0.25); }
-  .lbh3-tw { gap: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .lbh3-tl { animation: none; }
