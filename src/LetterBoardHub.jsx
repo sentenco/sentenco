@@ -45,9 +45,9 @@ const TUNE_DEFAULTS = {
   phone: { top: 33, size: 1, rowgap: 0.2, under: 16, after: 22, minh: 0 },
 };
 const TUNE_MODES = {
-  wide: "Full screen (761 px and wider)",
-  half: "Half screen (601 to 760 px wide)",
-  phone: "Phone (600 px and narrower)",
+  wide: "Full screen (page 720 px wide or more)",
+  half: "Half screen (page 570 to 719 px wide)",
+  phone: "Phone (page narrower than 570 px)",
 };
 const TUNE_FIELDS = [
   { key: "top", label: "Title distance from the top", hint: "Percent of the page width", min: 0, max: 40, step: 0.5 },
@@ -66,19 +66,23 @@ function loadTune() {
   return { wide: { ...TUNE_DEFAULTS.wide }, half: { ...TUNE_DEFAULTS.half }, phone: { ...TUNE_DEFAULTS.phone } };
 }
 
-function useMode() {
-  const get = () => {
-    if (typeof window === "undefined") return "wide";
-    if (window.matchMedia("(min-width: 761px)").matches) return "wide";
-    return window.matchMedia("(min-width: 601px)").matches ? "half" : "phone";
-  };
-  const [mode, setMode] = useState(get);
+// Which layout the page card is in, from the card's own width (the picture and the title follow the card, not the window).
+const WIDE_AT = 720;
+const HALF_AT = 570;
+function useMode(ref) {
+  const [mode, setMode] = useState("wide");
   useEffect(() => {
-    const qs = [window.matchMedia("(min-width: 761px)"), window.matchMedia("(min-width: 601px)")];
-    const on = () => setMode(get());
-    qs.forEach((m) => m.addEventListener("change", on));
-    return () => qs.forEach((m) => m.removeEventListener("change", on));
-  }, []);
+    const el = ref.current;
+    if (!el) return undefined;
+    const calc = () => {
+      const w = el.clientWidth;
+      setMode(w >= WIDE_AT ? "wide" : w >= HALF_AT ? "half" : "phone");
+    };
+    calc();
+    const ro = new ResizeObserver(calc);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [ref]);
   return mode;
 }
 
@@ -163,7 +167,8 @@ export default function LetterBoardHub() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const tuning = searchParams.get("tune") === "1";
-  const mode = useMode();
+  const sheetRef = useRef(null);
+  const mode = useMode(sheetRef);
   const [tune, setTune] = useState(loadTune);
   const [cfg, setCfg] = useState(loadCfg);
   const [openId, setOpenId] = useState(null);
@@ -217,6 +222,8 @@ export default function LetterBoardHub() {
     <div className="lbh3-shell" style={tuneVars}>
       <style>{CSS}</style>
       {tuning && <Tuner tune={tune} mode={mode} onChange={changeTune} onReset={resetTune} />}
+      <div className="lbh3-sheetwrap" ref={sheetRef}>
+       <div className="lbh3-sheet">
       <div className="lbh3-page">
         <div className="lbh3-hero">
           <div className="lbh3-title"><Tiles /></div>
@@ -269,6 +276,8 @@ export default function LetterBoardHub() {
             </button>
           </div>
         </div>
+      </div>
+       </div>
       </div>
 
       {set && (
@@ -337,13 +346,15 @@ export default function LetterBoardHub() {
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Fraunces:opsz,wght@9..144,800&family=Quicksand:wght@500;600;700&display=swap');
 .lbh3-shell { --ink: #2B2A4A; --muted: #7C6F66; --coral: #FF6B4A; --coral-deep: #E0502F; --coral-pale: #FDECE5; --navy: #1B2A4A; --gold: #D9A62E; --hair: rgba(43,42,74,0.1); --tear: #E8C9B4; --y: #FFC93C; --g: #2EC4B6; --b: #3E7CB1; --p: #FF8FAB;
-  --w: min(100vw, 1400px); min-height: 100%; background: url('/curriculum/letter-board/hub-bg.jpg') center top / min(100%, 1400px) auto no-repeat, #FCF3DC; color: var(--ink); font-family: 'Quicksand', sans-serif; position: relative; }
+  min-height: 100%; background: #F1F3F8; padding: 4px clamp(10px, 2vw, 24px) 40px; color: var(--ink); font-family: 'Quicksand', sans-serif; position: relative; }
 .lbh3-shell * { box-sizing: border-box; }
-.lbh3-page { max-width: 1040px; margin: 0 auto; padding: 0 24px 100px; }
+.lbh3-sheetwrap { max-width: 1320px; margin: 0 auto; border-radius: 26px; overflow: hidden; container-type: inline-size; }
+.lbh3-sheet { --w: 100cqw; background: url('/curriculum/letter-board/hub-bg.jpg') center top / 100% auto no-repeat, #FCF3DC; }
+.lbh3-page { max-width: 1040px; margin: 0 auto; padding: 0 clamp(14px, 2.6cqw, 32px) 70px; }
 
 .lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 33) / 100); min-height: calc(var(--w) * var(--minh, 0) / 100); display: flex; flex-direction: column; justify-content: center; }
 .lbh3-title { display: flex; justify-content: center; margin: 0 0 calc(var(--under, 16) * 1px); }
-.lbh3-tiles { --t: calc(clamp(40px, 5.6vw, 72px) * var(--tsize, 1)); display: flex; flex-direction: column; align-items: center; gap: calc(var(--t) * var(--rowgap, 0.2)); margin: 0; perspective: 700px; }
+.lbh3-tiles { --t: calc(clamp(40px, 5.6cqw, 72px) * var(--tsize, 1)); display: flex; flex-direction: column; align-items: center; gap: calc(var(--t) * var(--rowgap, 0.2)); margin: 0; perspective: 700px; }
 .lbh3-tw { display: flex; gap: calc(var(--t) * 0.14); }
 .lbh3-tl { width: var(--t); height: var(--t); border-radius: calc(var(--t) * 0.26); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: calc(var(--t) * 0.58); color: #fff; box-shadow: 0 5px 0 rgba(27,42,74,0.25); animation: lbh3-flip 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 55ms); transition: transform 0.2s; }
 .lbh3-tl:hover { transform: translateY(-4px) rotate(-3deg); }
@@ -427,19 +438,15 @@ const CSS = `
 .lbh3-go:active { transform: translateY(2px); box-shadow: 0 3px 0 #C9432A; }
 .lbh3-x { position: absolute; top: 12px; right: 252px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 8px rgba(27,42,74,0.2); font-size: 18px; font-weight: 800; color: var(--navy); cursor: pointer; z-index: 2; }
 
-/* Half screen: the title fits between the parols of the portrait picture, so it sits higher. */
-@media (min-width: 601px) {
+/* The layout follows the width of the page card. Half screen: the title fits between the parols of the portrait picture, so it sits higher. */
+@container (min-width: 570px) {
   .lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 14.5) / 100); }
   .lbh3-lead { max-width: min(54ch, calc(var(--w) * 0.56)); }
 }
-/* Full-screen widths use the landscape picture: parols in the far corners, wide clear middle. */
-@media (min-width: 761px) {
-  .lbh3-shell { --w: min(100vw, 1800px); background-image: url('/curriculum/letter-board/hub-bg-wide.jpg'); background-size: min(100%, 1800px) auto; background-color: #FDF3DD; }
+/* Full screen: the landscape picture, parols in the far corners and a wide clear middle. */
+@container (min-width: 720px) {
+  .lbh3-sheet { background-image: url('/curriculum/letter-board/hub-bg-wide.jpg'); background-color: #FDF3DD; }
   .lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 10.5) / 100); min-height: calc(var(--w) * var(--minh, 23.5) / 100); }
-  .lbh3-lead { max-width: min(54ch, calc(var(--w) * 0.56)); }
-}
-@media (max-width: 820px) {
-  .lbh3-page { padding: 0 14px 80px; }
 }
 @media (max-width: 720px) {
   .lbh3-levels { grid-template-columns: 1fr; }
