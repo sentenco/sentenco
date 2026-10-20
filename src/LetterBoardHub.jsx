@@ -346,9 +346,9 @@ export default function LetterBoardHub() {
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Fraunces:opsz,wght@9..144,800&family=Quicksand:wght@500;600;700&display=swap');
 .lbh3-shell { --ink: #2B2A4A; --muted: #7C6F66; --coral: #FF6B4A; --coral-deep: #E0502F; --coral-pale: #FDECE5; --navy: #1B2A4A; --gold: #D9A62E; --hair: rgba(43,42,74,0.1); --tear: #E8C9B4; --y: #FFC93C; --g: #2EC4B6; --b: #3E7CB1; --p: #FF8FAB;
-  min-height: 100%; background: #F1F3F8; padding: 4px clamp(10px, 2vw, 24px) 40px; color: var(--ink); font-family: 'Quicksand', sans-serif; position: relative; }
+  min-height: 100%; background: #F1F3F8; padding: 10px clamp(10px, 2vw, 24px) 40px; color: var(--ink); font-family: 'Quicksand', sans-serif; position: relative; }
 .lbh3-shell * { box-sizing: border-box; }
-.lbh3-sheetwrap { max-width: 1320px; margin: 0 auto; border-radius: 26px; overflow: hidden; container-type: inline-size; }
+.lbh3-sheetwrap { max-width: 1320px; margin: 0 auto; border-radius: 40px; overflow: hidden; container-type: inline-size; box-shadow: 0 1px 2px rgba(27,42,74,0.06), 0 18px 36px -26px rgba(27,42,74,0.35); }
 .lbh3-sheet { --w: 100cqw; background: url('/curriculum/letter-board/hub-bg.jpg') center top / 100% auto no-repeat, #FCF3DC; }
 .lbh3-page { max-width: 1040px; margin: 0 auto; padding: 0 clamp(14px, 2.6cqw, 32px) 70px; }
 
@@ -447,6 +447,9 @@ const CSS = `
 @container (min-width: 720px) {
   .lbh3-sheet { background-image: url('/curriculum/letter-board/hub-bg-wide.jpg'); background-color: #FDF3DD; }
   .lbh3-hero { padding-top: calc(var(--w) * var(--ttop, 10.5) / 100); min-height: calc(var(--w) * var(--minh, 23.5) / 100); }
+}
+@media (max-width: 600px) {
+  .lbh3-sheetwrap { border-radius: 28px; }
 }
 @media (max-width: 720px) {
   .lbh3-levels { grid-template-columns: 1fr; }
