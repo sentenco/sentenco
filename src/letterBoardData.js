@@ -240,11 +240,11 @@ export const SECRET_MAP_ITEMS = [
   ST("open", "Would you like to find a secret map like Dan? Where would it take you? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would follow it to a cave. I like adventures.\""),
 ];
 
-// ---- story set: "The Parol Maker" (a fiesta story for a 10-year-old, level A2, simple past; the cover picture is added later) ----
+// ---- story set: "The Parol Maker" (a fiesta story for a 10-year-old, level A2, simple past, one cover picture) ----
 export const PAROL_MAKER_STORY = {
   title: "The Parol Maker",
   text: "In December, Ana's town had a big fiesta. Every house made a parol, a bright star lantern, for the night parade. Ana wanted to make the best parol on her street.\n\nOn Saturday morning, she went to her grandpa's house. Lolo had thin bamboo sticks, colored paper and a pot of glue on the table. \"Today we will build a star together,\" he said.\n\nFirst, they tied five bamboo sticks into a star. Then Ana cut red, yellow and blue paper and glued it on the frame. At noon, the glue was still wet, so they ate rice and fried fish for lunch.\n\nIn the evening, Lolo put a small light inside the parol. The star glowed like a tiny sun! Ana hung it on the gate, and her neighbors stopped to look. \"It's beautiful,\" said Mrs. Cruz. Ana smiled. She was very proud.",
-  image: "",
+  image: "/curriculum/letter-board/parol-maker-cover.jpg",
 };
 
 export const PAROL_MAKER_ITEMS = [
