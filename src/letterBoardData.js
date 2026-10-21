@@ -240,6 +240,39 @@ export const SECRET_MAP_ITEMS = [
   ST("open", "Would you like to find a secret map like Dan? Where would it take you? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would follow it to a cave. I like adventures.\""),
 ];
 
+// ---- story set: "The Parol Maker" (a fiesta story for a 10-year-old, level A2, simple past; the cover picture is added later) ----
+export const PAROL_MAKER_STORY = {
+  title: "The Parol Maker",
+  text: "In December, Ana's town had a big fiesta. Every house made a parol, a bright star lantern, for the night parade. Ana wanted to make the best parol on her street.\n\nOn Saturday morning, she went to her grandpa's house. Lolo had thin bamboo sticks, colored paper and a pot of glue on the table. \"Today we will build a star together,\" he said.\n\nFirst, they tied five bamboo sticks into a star. Then Ana cut red, yellow and blue paper and glued it on the frame. At noon, the glue was still wet, so they ate rice and fried fish for lunch.\n\nIn the evening, Lolo put a small light inside the parol. The star glowed like a tiny sun! Ana hung it on the gate, and her neighbors stopped to look. \"It's beautiful,\" said Mrs. Cruz. Ana smiled. She was very proud.",
+  image: "",
+};
+
+export const PAROL_MAKER_ITEMS = [
+  // easy (9)
+  ST("choice", "What did Ana's town have in December?", ["a fiesta", "a football game", "a school test"], 0),
+  ST("choice", "What is a parol?", ["a bright star lantern", "a kind of rice", "a paper boat"], 0),
+  ST("choice", "Whose house did Ana go to on Saturday?", ["her teacher's", "her grandpa's", "her friend's"], 1),
+  GR("choice", "Ana ___ to her grandpa's house.", ["go", "went", "goes"], 1),
+  ST("choice", "What did Lolo have on the table?", ["bamboo sticks, paper and glue", "a radio and a clock", "a cake and juice"], 0),
+  ST("choice", "How many bamboo sticks did they tie into a star?", ["three", "four", "five"], 2),
+  ST("choice", "Which colors of paper did Ana use?", ["red, yellow and blue", "green and white", "black and pink"], 0),
+  GR("choice", "Ana ___ the paper on the frame.", ["glue", "glued", "gluing"], 1),
+  ST("open", "What did Ana and Lolo eat for lunch?", ["", "", ""], 0, "Rice and fried fish."),
+  // average (6)
+  ST("choice", "Why did they eat lunch at noon?", ["The glue was still wet", "The parol was finished", "It was raining"], 0),
+  GR("choice", "They ___ five sticks into a star.", ["tie", "tied", "tying"], 1),
+  ST("choice", "What did Lolo put inside the parol?", ["a small light", "a little bird", "a piece of fruit"], 0),
+  GR("open", "Fix the sentence: \"Ana cutted the paper.\"", ["", "", ""], 0, "\"Ana cut the paper.\""),
+  ST("choice", "Where did Ana hang the parol?", ["on the gate", "in the kitchen", "on a tree"], 0),
+  RE("What did Ana and Lolo do first, then, and in the evening? Tell me in your own words.", "First they tied the sticks into a star. Then Ana glued the paper on. In the evening Lolo put a light inside."),
+  // difficult (5)
+  ST("choice", "Why did the neighbors stop to look?", ["The parol was beautiful", "Ana was singing", "The gate was broken"], 0),
+  GR("choice", "When Lolo ___ the light inside, the parol glowed.", ["puts", "put", "putting"], 1),
+  ST("open", "Why was Ana proud at the end? Say it in your own words.", ["", "", ""], 0, "She made a beautiful parol with her grandpa, and everyone liked it."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Ana went to Lolo's house. Then they tied five sticks into a star. After that Ana glued colored paper on the frame. Finally Lolo put a light inside and Ana hung the parol on the gate."),
+  ST("open", "Would you like to make a parol? What colors would you use? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would use pink and green. I like bright colors.\""),
+];
+
 // Opens the game in a popup, like the Wheel and the lesson players.
 // `start` (1, 2 or 3) skips the setup screen and opens the board at that level.
 export function openLetterBoard(id, start) {

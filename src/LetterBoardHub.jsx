@@ -158,7 +158,7 @@ function Cover({ set, className = "" }) {
   const img = set.story && set.story.image;
   return (
     <div className={`lbh3-thumb${set.coverFit === "contain" ? " soft" : ""} ${className}`}>
-      {img ? <img src={img} alt="" loading="lazy" /> : <span className="lbh3-initial">{set.title[0]}</span>}
+      {img ? <img src={img} alt="" loading="lazy" /> : <span className="lbh3-initial">{set.title.replace(/^the\s+/i, "")[0]}</span>}
     </div>
   );
 }

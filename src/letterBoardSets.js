@@ -1,4 +1,4 @@
-import { SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, SECRET_MAP_STORY, SECRET_MAP_ITEMS } from "./letterBoardData";
+import { SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, SECRET_MAP_STORY, SECRET_MAP_ITEMS, PAROL_MAKER_STORY, PAROL_MAKER_ITEMS } from "./letterBoardData";
 
 // The Letter Board topics teachers can play. Each topic is a set of 20 items (see letterBoardData.js)
 // and can be about anything: no categories. Teachers can't add or edit these; new topics are added here,
@@ -30,6 +30,13 @@ export const LETTER_BOARD_SETS = [
     blurb: "A rainy day, an old box and a treasure hunt. Read the story, then play.",
     items: SECRET_MAP_ITEMS,
     story: SECRET_MAP_STORY,
+  },
+  {
+    id: "parol-maker",
+    title: "The Parol Maker",
+    blurb: "A fiesta, a bamboo star and a glowing surprise. Read the story, then play.",
+    items: PAROL_MAKER_ITEMS,
+    story: PAROL_MAKER_STORY,
   },
 ];
 
