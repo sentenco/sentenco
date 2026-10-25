@@ -1,0 +1,11 @@
+{
+  "appId": "com.sentenco.community",
+  "appName": "Sentenco",
+  "webDir": "dist-app",
+  "backgroundColor": "#FBFAF7",
+  "ios": { "contentInset": "never" },
+  "plugins": {
+    "SplashScreen": { "launchAutoHide": false, "backgroundColor": "#FBFAF7" },
+    "Keyboard": { "resize": "body" }
+  }
+}
