@@ -177,6 +177,15 @@ export const CUSTOM_LESSONS = [
     level: "A2 to low B1 · E8 exam prep",
     desc: "25 minutes on one task type: four short texts with three gaps each and a box of six words. Pick the word that fits and learn why the look-alikes are wrong.",
   },
+  {
+    slug: "amitay-present-continuous-challenge",
+    added: "2026-10-28",
+    popup: [1200, 780],
+    title: "Amitay: Present Continuous Challenge",
+    tag: "Grammar",
+    level: "High B1 · Challenge quiz",
+    desc: "For Amitay. 25 harder questions in 5 sections (choose the form, identify the use, change the sentence, fix the sentence, simple or continuous), then a speaking challenge. No hints while she answers, then a score by section and the mistakes.",
+  },
 ];
 
 // Newest first for the gallery. Give every NEW lesson an `added` date (YYYY-MM-DD) so it lands on top;
