@@ -186,6 +186,15 @@ export const CUSTOM_LESSONS = [
     level: "High B1 · Challenge quiz",
     desc: "For Amitay. 25 harder questions in 5 sections (choose the form, identify the use, change the sentence, fix the sentence, simple or continuous), then a speaking challenge. No hints while she answers, then a score by section and the mistakes.",
   },
+  {
+    slug: "unseen-reading-part-5",
+    added: "2026-10-30",
+    popup: [1200, 780],
+    title: "Doriel: Unseen Reading Part 5",
+    tag: "Reading",
+    level: "B1+ to low B2 · Module E",
+    desc: "For Doriel. Two informative texts the student has never seen (noise-cancelling headphones, vertical farming), one page per question, then five words from each text to match with their definitions.",
+  },
 ];
 
 // Newest first for the gallery. Give every NEW lesson an `added` date (YYYY-MM-DD) so it lands on top;
