@@ -63,6 +63,10 @@ import flightDisruptionsFragileWorkImg from "./assets/articles/flight-disruption
 import holidayWeekendNewShapeImg from "./assets/articles/holiday-weekend-new-shape.jpeg";
 import citiesWatchingWaterSystemsImg from "./assets/articles/cities-watching-water-systems.jpeg";
 import aiToolsEnterClassroomImg from "./assets/articles/ai-tools-enter-classroom.jpeg";
+import { EXPLAINERS_1 } from "./articlesExplainers1.js";
+import { EXPLAINERS_2 } from "./articlesExplainers2.js";
+import { EXPLAINERS_3 } from "./articlesExplainers3.js";
+import { EXPLAINERS_4 } from "./articlesExplainers4.js";
 
 export const ARTICLE_TOPICS = [
   { label: "Daily Life", title: "Wellbeing & Daily Life" },
@@ -77,6 +81,11 @@ export const ARTICLE_TOPICS = [
 ];
 
 const ALL_ARTICLES = [
+  // Short explainers (new topics are added in articlesExplainers*.js). They come first, so the longer feature pieces below stay the lead story.
+  ...EXPLAINERS_1,
+  ...EXPLAINERS_2,
+  ...EXPLAINERS_3,
+  ...EXPLAINERS_4,
   {
     slug: "filipinos-rethink-healthy",
     ready: true,
