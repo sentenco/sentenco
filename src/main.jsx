@@ -118,6 +118,10 @@ import UnseenReadingPart2Lesson from './UnseenReadingPart2Lesson.jsx'
 import UnseenReadingPart3Lesson from './UnseenReadingPart3Lesson.jsx'
 import UnseenReadingPart4Lesson from './UnseenReadingPart4Lesson.jsx'
 import UnseenReadingPart5Lesson from './UnseenReadingPart5Lesson.jsx'
+import UnseenLesson from './UnseenLesson.jsx'
+import { UNSEEN_PARTS_1 } from './unseenPartsData1.js'
+import { UNSEEN_PARTS_2 } from './unseenPartsData2.js'
+import { UNSEEN_PARTS_3 } from './unseenPartsData3.js'
 import StativeVsActionVerbsLesson from './StativeVsActionVerbsLesson.jsx'
 import PresentSimpleLesson from './PresentSimpleLesson.jsx'
 import PresentProgressiveLesson from './PresentProgressiveLesson.jsx'
@@ -440,6 +444,9 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/unseen-reading-part-3" element={<CustomLessonGate slug="unseen-reading-part-3"><UnseenReadingPart3Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/unseen-reading-part-4" element={<CustomLessonGate slug="unseen-reading-part-4"><UnseenReadingPart4Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/unseen-reading-part-5" element={<CustomLessonGate slug="unseen-reading-part-5"><UnseenReadingPart5Lesson /></CustomLessonGate>} />
+            {[...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3].map((l) => (
+              <Route key={l.slug} path={`/library/customized-lessons/${l.slug}`} element={<CustomLessonGate slug={l.slug}><UnseenLesson config={l} /></CustomLessonGate>} />
+            ))}
             <Route path="/library/customized-lessons/stative-vs-action-verbs" element={<CustomLessonGate slug="stative-vs-action-verbs"><StativeVsActionVerbsLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/present-simple" element={<CustomLessonGate slug="present-simple"><PresentSimpleLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/present-progressive" element={<CustomLessonGate slug="present-progressive"><PresentProgressiveLesson /></CustomLessonGate>} />
