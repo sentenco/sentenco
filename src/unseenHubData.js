@@ -112,6 +112,18 @@ const META = [
   [81, "Behind the fight: how fighters train, and how they recover"],
   [82, "Two Japanese arts: the throws of judo, and the strikes of karate"],
   [83, "Gear and ground: why MMA fights in a cage, and why its gloves are so small"],
+  [84, "Fire at home: how it spreads and how alarms warn us, and what to do when it starts"],
+  [85, "Two hazards of the Philippines: when the ground shakes, and when a typhoon comes"],
+  [86, "Danger in the water: why drowning is silent, and how to escape a rip current"],
+  [87, "When the body overreacts: how an allergy works, and what to do in a severe reaction"],
+  [88, "Two emergencies where minutes matter: the signs of a stroke, and the signs of a heart attack"],
+  [89, "Safe to eat? Why food poisoning happens, and how to store food so germs cannot grow"],
+  [90, "Your money plan: how to divide your income, and how to protect yourself from surprises"],
+  [91, "Borrowing and trust: how a credit score works, and why the price of a loan depends on the borrower"],
+  [92, "Where our taxes go and how they are taken: the reason for taxes, and two kinds you meet every day"],
+  [93, "Putting money to work: what a share is, and why spreading your money lowers the risk"],
+  [94, "Money across borders: why exchange rates move, and what they mean for families who receive remittances"],
+  [95, "Not falling for it: how common scams work, and habits that protect you"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }

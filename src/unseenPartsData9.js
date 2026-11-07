@@ -5498,5 +5498,2360 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 84,
+    "slug": "unseen-reading-part-84",
+    "theme": "Fire",
+    "blurb": "how fire spreads and smoke alarms, what to do in a fire",
+    "texts": {
+      "A": {
+        "title": "How Fire Spreads and How Smoke Alarms Work",
+        "text": "A fire needs three things: heat, fuel and oxygen. Remove any one of them and the fire goes out. Once a fire starts, it spreads in several ways. Hot gases rise and carry heat to the ceiling, where they spread sideways along it. Heat also travels as radiation, which can make nearby objects so hot that they catch fire without being touched by flames. In a closed room, the temperature can rise so fast that everything in the room suddenly starts to burn, and this is called a flashover. Smoke is often more dangerous than the flames. It contains poisonous gases and it can make a person unconscious in minutes. This is why smoke alarms are so important. Many alarms use a light sensor: a beam of light inside the alarm is normally not seen by the detector, but smoke scatters the light into it, and the alarm sounds. Alarms should be tested every month and replaced after about ten years."
+      },
+      "B": {
+        "title": "What to Do in a Fire",
+        "text": "If a fire starts, the first rule is to get out and stay out. Do not stop to collect things. Before you open a closed door, touch it with the back of your hand. If it is hot, do not open it, because the fire may be on the other side, and use another exit. If the door is cool, open it slowly. Smoke and hot gases rise, so the air is cleaner near the floor, and you should stay low and crawl if there is a lot of smoke. Close doors behind you, because this slows the fire and the smoke. Never use a lift, because it may stop between floors; use the stairs. If your clothes catch fire, do not run: stop, drop to the ground, cover your face with your hands and roll until the flames are out. Once you are outside, go to the meeting point that your family has chosen, and call your local emergency number. Never go back inside for any reason."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A fire spreads in several ways, and smoke alarms warn us before smoke harms us.",
+        "A fire spreads only when the flames touch other objects directly.",
+        "A fire is only dangerous to people when it reaches the ceiling.",
+        "The text explains how a fire spreads, why smoke is dangerous, and how smoke alarms warn people.",
+        [
+          "Once a fire starts, it spreads in several ways",
+          "This is why smoke alarms are so important"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What are the three things that a fire needs?",
+        "Heat, fuel and oxygen.",
+        "Heat, wood and water.",
+        "Smoke, fuel and wind.",
+        "The text says that a fire needs three things: heat, fuel and oxygen.",
+        "A fire needs three things: heat, fuel and oxygen."
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “carry” means…",
+        "move from one place to another.",
+        "keep in one place.",
+        "take away forever.",
+        "The text says that hot gases carry heat to the ceiling, which means that they move the heat from one place to another.",
+        "Hot gases rise and carry heat to the ceiling"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It contains poisonous gases” refers to…",
+        "smoke.",
+        "the fire.",
+        "the flashover.",
+        "The text says that smoke is often more dangerous than the flames, and smoke contains poisonous gases.",
+        "Smoke is often more dangerous than the flames. It contains poisonous gases"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people die in fires every year.",
+        "How often alarms should be tested.",
+        "What a flashover is.",
+        "The text does not say how many people die in fires. It says that alarms should be tested every month and explains what a flashover is.",
+        [
+          "tested every month",
+          "everything in the room suddenly starts to burn, and this is called a flashover"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about putting out a fire?",
+        "Taking away heat, fuel or oxygen can stop it.",
+        "Only water can stop a fire.",
+        "A fire cannot be stopped once it starts.",
+        "The text says that if you remove any one of heat, fuel and oxygen, the fire goes out.",
+        "Remove any one of them and the fire goes out."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In a fire, get out quickly, stay low, check doors and never go back.",
+        "In a fire, collect your valuable things before you leave the building.",
+        "In a fire, run to the highest floor and wait for help.",
+        "The text explains the main steps to take in a fire, such as getting out, checking doors, staying low and not going back inside.",
+        [
+          "the first rule is to get out and stay out",
+          "Never go back inside for any reason"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What should you do before opening a closed door?",
+        "Touch it with the back of your hand.",
+        "Open it quickly to check.",
+        "Knock on it three times.",
+        "The text says that before you open a closed door, you should touch it with the back of your hand.",
+        "touch it with the back of your hand"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “cool” means…",
+        "not hot.",
+        "very new.",
+        "very heavy.",
+        "The text says that if the door is cool, you can open it slowly, which means that the door is not hot.",
+        "If the door is cool, open it slowly."
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “If it is hot, do not open it” refers to…",
+        "the door.",
+        "your hand.",
+        "the fire.",
+        "The sentence says to touch the door with the back of your hand, and if the door is hot, you should not open it.",
+        "touch it with the back of your hand. If it is hot, do not open it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many minutes a person has to escape.",
+        "Why you should not use a lift.",
+        "Where to go after leaving the building.",
+        "The text does not say how many minutes a person has to escape. It says why not to use a lift and where to go afterward.",
+        [
+          "it may stop between floors",
+          "go to the meeting point that your family has chosen"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should you stay low when there is a lot of smoke?",
+        "The air near the floor is cleaner.",
+        "The fire cannot reach the floor.",
+        "The smoke is heavier than the air.",
+        "The text says that smoke and hot gases rise, so the air is cleaner near the floor.",
+        "Smoke and hot gases rise, so the air is cleaner near the floor"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "fuel",
+          "something that burns to make heat or energy"
+        ],
+        [
+          "radiation",
+          "heat or light that travels in waves"
+        ],
+        [
+          "flashover",
+          "the moment when everything in a room bursts into flames"
+        ],
+        [
+          "poisonous",
+          "able to harm or kill if taken into the body"
+        ],
+        [
+          "scatters",
+          "throws in different directions"
+        ]
+      ],
+      "B": [
+        [
+          "exit",
+          "a way out of a place"
+        ],
+        [
+          "crawl",
+          "to move on hands and knees"
+        ],
+        [
+          "slows",
+          "makes something go more slowly"
+        ],
+        [
+          "flames",
+          "the hot, bright parts of a fire"
+        ],
+        [
+          "chosen",
+          "picked from other options"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 85,
+    "slug": "unseen-reading-part-85",
+    "theme": "Earthquakes and Typhoons",
+    "blurb": "what to do in an earthquake, typhoon signals and storm surge",
+    "texts": {
+      "A": {
+        "title": "Earthquake: Drop, Cover, Hold On",
+        "text": "The Philippines lies on the Ring of Fire, so earthquakes are a real part of life. During an earthquake, the shaking usually lasts from a few seconds to about a minute. In that time, the main danger is often not a falling building but falling objects: lamps, shelves, glass and parts of the ceiling. The advice of many safety agencies is simple: drop, cover and hold on. Drop to your hands and knees, so that you do not fall. Cover your head and neck with your arms, and crawl under a strong table or desk if there is one. Hold on to it until the shaking stops. Do not run outside while the ground is moving, because you may be hit by falling pieces. If you are in bed, stay there and protect your head with a pillow. After the shaking stops, if you are near the coast and the earthquake was strong or long, move to higher ground in case of a tsunami."
+      },
+      "B": {
+        "title": "Typhoon Signals and Storm Surge",
+        "text": "The Philippines is hit by about twenty tropical cyclones each year, which Filipinos call bagyo, so people learn to read warnings. The weather agency, PAGASA, uses five Tropical Cyclone Wind Signals. Signal No. 1 warns of strong winds of 39 to 61 kilometers an hour, and Signal No. 5, the highest, warns of winds of 185 kilometers an hour or more. The signal is based on the wind, but wind is not always the most dangerous part. A storm surge is a rise of the sea above its normal level, pushed onto the land by the strong winds of a storm. In 2013, Typhoon Haiyan, known in the Philippines as Yolanda, brought a surge of several meters to the city of Tacloban, and many of the more than six thousand deaths were caused by the water. If officials order people to move away from the coast, they should go early, because roads can be blocked. A ready bag with water, medicine, a flashlight, important papers and a charged phone is also a good idea."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In an earthquake, the safest action is to drop, cover and hold on.",
+        "In an earthquake, the safest action is to run outside at once.",
+        "In an earthquake, the safest action is to stand in a doorway.",
+        "The text explains that falling objects are the main danger and that the advice is to drop, cover and hold on.",
+        [
+          "The advice of many safety agencies is simple: drop, cover and hold on",
+          "the main danger is often not a falling building but falling objects"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long does the shaking usually last?",
+        "From a few seconds to about a minute.",
+        "From a few minutes to about an hour.",
+        "Only a small part of a second.",
+        "The text says that the shaking usually lasts from a few seconds to about a minute.",
+        "usually lasts from a few seconds to about a minute"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “simple” means…",
+        "easy to understand.",
+        "hard to remember.",
+        "very expensive.",
+        "The text says that the advice is simple: drop, cover and hold on, which means that it is easy to understand.",
+        "is simple: drop, cover and hold on"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “Hold on to it” refers to…",
+        "the strong table or desk.",
+        "the ceiling.",
+        "the ground.",
+        "The sentence says to crawl under a strong table or desk and to hold on to the table or desk until the shaking stops.",
+        "crawl under a strong table or desk if there is one. Hold on to it until the shaking stops"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How often earthquakes happen each year.",
+        "What to do if you are in bed.",
+        "Why you should not run outside.",
+        "The text does not say how often earthquakes happen each year. It says what to do in bed and why not to run outside.",
+        [
+          "If you are in bed, stay there and protect your head with a pillow",
+          "you may be hit by falling pieces"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the main danger in an earthquake?",
+        "Objects that fall on people cause much of the harm.",
+        "The ground opens and swallows the people.",
+        "The shaking by itself always hurts every person.",
+        "The text says that the main danger is often not a falling building but falling objects.",
+        "the main danger is often not a falling building but falling objects"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Typhoon warnings use wind signals, but a storm surge can be even more dangerous.",
+        "Typhoon warnings are useful only when a typhoon has already left.",
+        "Typhoon winds are harmless unless they reach Signal No. 5.",
+        "The text explains the wind signals and then says that wind is not always the most dangerous part, because a storm surge can be deadly.",
+        [
+          "The signal is based on the wind, but wind is not always the most dangerous part",
+          "A storm surge is a rise of the sea above its normal level"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does Signal No. 5 warn of?",
+        "Winds of 185 kilometers an hour or more.",
+        "Winds of 39 to 61 kilometers an hour.",
+        "Winds of about 20 kilometers an hour.",
+        "The text says that Signal No. 5, the highest, warns of winds of 185 kilometers an hour or more.",
+        "Signal No. 5, the highest, warns of winds of 185 kilometers an hour or more"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “ready” in “A ready bag” means…",
+        "prepared in advance.",
+        "empty and old.",
+        "heavy and large.",
+        "The text says that a ready bag has water, medicine and other things, which means that it is prepared in advance.",
+        "A ready bag with water, medicine"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “they should go early” refers to…",
+        "the people who are told to leave.",
+        "the officials who give the order.",
+        "the roads near the coast.",
+        "The sentence says that if officials order people to move away from the coast, the people should go early.",
+        "If officials order people to move away from the coast, they should go early"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people live in Tacloban.",
+        "What a storm surge is.",
+        "What Haiyan is called in the Philippines.",
+        "The text does not say how many people live in Tacloban. It explains what a storm surge is and says that Haiyan is called Yolanda in the Philippines.",
+        [
+          "A storm surge is a rise of the sea above its normal level",
+          "known in the Philippines as Yolanda"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should people move away from the coast early, according to the text?",
+        "Roads can be blocked later.",
+        "The surge arrives before the wind.",
+        "The signals are always wrong.",
+        "The text says that people should go early because roads can be blocked.",
+        "they should go early, because roads can be blocked"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "shaking",
+          "moving quickly and strongly from side to side"
+        ],
+        [
+          "ceiling",
+          "the top surface inside a room"
+        ],
+        [
+          "crawl",
+          "to move on hands and knees"
+        ],
+        [
+          "protect",
+          "to keep safe from harm"
+        ],
+        [
+          "tsunami",
+          "a huge sea wave caused by an earthquake"
+        ]
+      ],
+      "B": [
+        [
+          "cyclones",
+          "storms with strong winds that turn around a center"
+        ],
+        [
+          "signal",
+          "a sign that gives a message or warning"
+        ],
+        [
+          "surge",
+          "a sudden rise of water"
+        ],
+        [
+          "officials",
+          "people who hold a position of authority"
+        ],
+        [
+          "blocked",
+          "stopped so that nothing can pass"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 86,
+    "slug": "unseen-reading-part-86",
+    "theme": "Water Safety",
+    "blurb": "why drowning is quiet, what to do in a rip current",
+    "texts": {
+      "A": {
+        "title": "Why Drowning Is Quiet",
+        "text": "In films, a person who is drowning shouts, waves and splashes. Real drowning is different, and usually much quieter. A drowning person is trying to breathe, and the body gives breathing priority over speaking, so the person cannot call for help. The mouth moves up and down at the surface of the water, and the head is tilted back. The arms press down sideways on the water, like a person trying to climb an invisible ladder, but they cannot wave. The body stays upright, with no kicking. This can last only from twenty to sixty seconds before the person goes under, and for a small child it can be even shorter. Signs include glassy, empty eyes, hair over the forehead or eyes and a body that is straight up and down in the water. Because it is so silent, children should be watched within an arm’s reach, and a person who suddenly stops making noise in the water should be checked at once."
+      },
+      "B": {
+        "title": "What to Do in a Rip Current",
+        "text": "A rip current is a narrow channel of fast water that flows away from the shore, back out to sea. It forms when waves push water onto the beach and the water finds one easy way to return. Rip currents can look calm, with fewer waves, and sometimes with a different color of water. They do not pull people under the water. They pull people away from the beach, but many swimmers panic and try to swim straight back against the current. This is tiring, and the swimmer may become exhausted. The best advice is to stay calm and not to fight the current. Swim parallel to the shore, sideways, until you are out of the current, which is usually narrow, and then swim back to the beach at an angle. If you cannot swim out of it, float or tread water to save your energy, and wave and shout for help. Swim only at beaches that have lifeguards, if possible, and follow their flags."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Real drowning is quiet and quick, so it is easy to miss.",
+        "Real drowning is loud and slow, so it is easy to notice.",
+        "Real drowning happens only to people who cannot swim at all.",
+        "The text explains that real drowning is different from films, because it is quiet and can happen in a short time.",
+        [
+          "Real drowning is different, and usually much quieter",
+          "This can last only from twenty to sixty seconds"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do the arms of a drowning person do?",
+        "They press down sideways on the water.",
+        "They wave above the head.",
+        "They hold on to the person’s knees.",
+        "The text says that the arms press down sideways on the water.",
+        "The arms press down sideways on the water"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “within an arm’s reach” means…",
+        "close enough to touch.",
+        "far enough to see.",
+        "tall enough to climb.",
+        "The text says that children should be watched within an arm’s reach, which means close enough to touch.",
+        "within an arm’s reach"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “Because it is so silent” refers to…",
+        "drowning.",
+        "the water.",
+        "the child.",
+        "The sentence says that because drowning is so silent, children should be watched within an arm’s reach.",
+        "Because it is so silent, children should be watched within an arm’s reach"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people drown each year.",
+        "Why a drowning person cannot call for help.",
+        "What a drowning person’s eyes look like.",
+        "The text does not say how many people drown each year. It says why the person cannot call for help and what the eyes look like.",
+        [
+          "the body gives breathing priority over speaking",
+          "glassy, empty eyes"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about a person who is suddenly quiet in the water?",
+        "The person may be in trouble and needs a check.",
+        "The person is certainly resting.",
+        "The person is practicing swimming.",
+        "The text says that a person who suddenly stops making noise in the water should be checked at once.",
+        "a person who suddenly stops making noise in the water should be checked at once"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In a rip current, stay calm and swim sideways along the shore, not against it.",
+        "In a rip current, swim as hard as you can straight back to the shore.",
+        "In a rip current, dive down to the bottom to stay out of the water.",
+        "The text explains that a rip current pulls swimmers away from the beach and that the best advice is to swim parallel to the shore.",
+        [
+          "The best advice is to stay calm and not to fight the current",
+          "Swim parallel to the shore, sideways"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does a rip current do to swimmers?",
+        "It pulls them away from the beach.",
+        "It pulls them under the water.",
+        "It pushes them onto the beach.",
+        "The text says that rip currents pull people away from the beach, but not under the water.",
+        "They pull people away from the beach"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “forms” means…",
+        "comes into being.",
+        "goes out of fashion.",
+        "makes a sound.",
+        "The text says that a rip current forms when waves push water onto the beach, which means that it comes into being then.",
+        "It forms when waves push water onto the beach"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “If you cannot swim out of it” refers to…",
+        "the rip current.",
+        "the beach.",
+        "the water.",
+        "The sentence says that if you cannot swim out of the rip current, you should float or tread water.",
+        "If you cannot swim out of it, float or tread water to save your energy"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people are rescued each year.",
+        "How a rip current may look.",
+        "What to do if you cannot swim out.",
+        "The text does not say how many people are rescued each year. It says how a rip current may look and what to do if you cannot swim out.",
+        [
+          "Rip currents can look calm, with fewer waves",
+          "float or tread water to save your energy"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why is it a mistake to swim straight back against the current?",
+        "It uses up energy and may cause exhaustion.",
+        "It takes the swimmer farther from the lifeguard.",
+        "It makes the rip current itself stronger.",
+        "The text says that swimming back against the current is tiring, and the swimmer may become exhausted.",
+        "This is tiring, and the swimmer may become exhausted."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "priority",
+          "something that is more important and must come first"
+        ],
+        [
+          "tilted",
+          "leaning to one side"
+        ],
+        [
+          "invisible",
+          "not able to be seen"
+        ],
+        [
+          "upright",
+          "standing straight up"
+        ],
+        [
+          "glassy",
+          "shiny and without expression"
+        ]
+      ],
+      "B": [
+        [
+          "channel",
+          "a narrow passage for water"
+        ],
+        [
+          "panic",
+          "to feel sudden, uncontrolled fear"
+        ],
+        [
+          "exhausted",
+          "extremely tired"
+        ],
+        [
+          "tread",
+          "to keep your body upright in deep water by moving your legs"
+        ],
+        [
+          "lifeguards",
+          "people who watch swimmers and rescue them"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 87,
+    "slug": "unseen-reading-part-87",
+    "theme": "Allergies",
+    "blurb": "what happens in an allergic reaction, anaphylaxis and adrenaline",
+    "texts": {
+      "A": {
+        "title": "What Happens in an Allergic Reaction",
+        "text": "An allergy is a mistake of the immune system. Normally, the immune system protects us from germs, but in a person with an allergy it treats a harmless substance, called an allergen, as a dangerous enemy. Common allergens are pollen, dust mites, pet hair, peanuts, eggs, milk and shellfish such as shrimp. The first time that a person meets the allergen, the body makes antibodies against it. At the next meeting, the antibodies attach to special cells, which then release chemicals, including histamine. Histamine makes blood vessels wider and leaky, and the result is itching, sneezing, a runny nose, red eyes, hives or swelling. Antihistamine medicines work by blocking the effect of histamine, so they can relieve mild symptoms. The best protection is to avoid the allergen, and a person with a food allergy should always read food labels and tell restaurants about the allergy."
+      },
+      "B": {
+        "title": "Anaphylaxis and the Adrenaline Pen",
+        "text": "Anaphylaxis is a severe allergic reaction that affects the whole body and can be life-threatening. It usually begins within minutes after contact with an allergen, such as a food, an insect sting or a medicine. The throat and tongue may swell, making it hard to breathe, the person may have hives, vomiting, dizziness or a sudden drop in blood pressure, and he or she may faint. The most important treatment is an injection of adrenaline, which is also called epinephrine. It tightens blood vessels, opens the airways and reduces swelling. People who know that they have a serious allergy carry an auto-injector, a pen that is pressed against the middle of the outer thigh, and it works even through clothing. After using it, they must call the emergency number immediately, because the effect lasts only a short time, and the symptoms may return. Other people should know where the pen is kept and how to use it."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "An allergy is a reaction of the immune system to a harmless substance.",
+        "An allergy is a disease that you can catch from another person.",
+        "An allergy is a problem that happens only to young children.",
+        "The text explains that an allergy is a mistake of the immune system, which treats a harmless substance as an enemy.",
+        [
+          "An allergy is a mistake of the immune system",
+          "treats a harmless substance, called an allergen, as a dangerous enemy"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which chemical causes the symptoms of an allergy?",
+        "Histamine.",
+        "Insulin.",
+        "Calcium.",
+        "The text says that the special cells release chemicals, including histamine, which cause the symptoms.",
+        "release chemicals, including histamine"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “mild” means…",
+        "not serious.",
+        "very painful.",
+        "unusual.",
+        "The text says that antihistamines can relieve mild symptoms, which means symptoms that are not serious.",
+        "relieve mild symptoms"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “so they can relieve mild symptoms” refers to…",
+        "antihistamine medicines.",
+        "the antibodies.",
+        "the symptoms.",
+        "The sentence says that antihistamine medicines work by blocking the effect of histamine, so the medicines can relieve mild symptoms.",
+        "Antihistamine medicines work by blocking the effect of histamine, so they can relieve mild symptoms"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people have allergies.",
+        "Which foods can be allergens.",
+        "How antihistamines work.",
+        "The text does not say how many people have allergies. It names foods that can be allergens and explains how antihistamines work.",
+        [
+          "peanuts, eggs, milk and shellfish such as shrimp",
+          "work by blocking the effect of histamine"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about a food allergy?",
+        "Preventing contact is better than treating it.",
+        "Medicine is always the best solution for it.",
+        "Restaurants cannot do anything to help with it.",
+        "The text says that the best protection is to avoid the allergen, so prevention is better than treatment.",
+        "The best protection is to avoid the allergen"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Anaphylaxis is a dangerous allergic reaction treated with adrenaline.",
+        "Anaphylaxis is a mild allergic reaction that passes by itself.",
+        "Anaphylaxis is a reaction that only affects the skin.",
+        "The text explains that anaphylaxis is a severe reaction of the whole body, and that adrenaline is the most important treatment.",
+        [
+          "Anaphylaxis is a severe allergic reaction that affects the whole body",
+          "The most important treatment is an injection of adrenaline"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Where is the auto-injector pressed?",
+        "Against the middle of the outer thigh.",
+        "Against the top of the upper arm.",
+        "Against the lower part of the stomach.",
+        "The text says that the pen is pressed against the middle of the outer thigh.",
+        "pressed against the middle of the outer thigh"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “life-threatening” means…",
+        "able to cause death.",
+        "easy to treat at home.",
+        "likely to be soon forgotten.",
+        "The text says that anaphylaxis can be life-threatening, which means that it can cause death.",
+        "can be life-threatening"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It tightens blood vessels” refers to…",
+        "adrenaline.",
+        "the allergen.",
+        "the airway.",
+        "The sentence before says that the most important treatment is an injection of adrenaline, and adrenaline tightens blood vessels.",
+        "an injection of adrenaline, which is also called epinephrine. It tightens blood vessels"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much an auto-injector costs.",
+        "What can cause anaphylaxis.",
+        "Why the emergency number must be called after the injection.",
+        "The text does not say how much an auto-injector costs. It says what can cause anaphylaxis and why the emergency number must be called.",
+        [
+          "a food, an insect sting or a medicine",
+          "the effect lasts only a short time, and the symptoms may return"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should other people know where the pen is kept?",
+        "The person may be unable to use it alone.",
+        "The pen is not allowed in public.",
+        "The pen belongs to the whole group.",
+        "The text says that the person may faint, and that other people should know where the pen is kept and how to use it.",
+        [
+          "he or she may faint",
+          "Other people should know where the pen is kept and how to use it"
+        ]
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "immune",
+          "relating to the body’s defense against disease"
+        ],
+        [
+          "harmless",
+          "not able to cause damage"
+        ],
+        [
+          "allergen",
+          "a substance that causes an allergic reaction"
+        ],
+        [
+          "release",
+          "to let something out"
+        ],
+        [
+          "relieve",
+          "to make a pain or problem less strong"
+        ]
+      ],
+      "B": [
+        [
+          "severe",
+          "very serious"
+        ],
+        [
+          "swell",
+          "to become bigger"
+        ],
+        [
+          "faint",
+          "to lose consciousness for a short time"
+        ],
+        [
+          "tightens",
+          "makes something tighter"
+        ],
+        [
+          "airways",
+          "the passages that carry air to the lungs"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 88,
+    "slug": "unseen-reading-part-88",
+    "theme": "Stroke and Heart Attack",
+    "blurb": "signs of a stroke, signs of a heart attack",
+    "texts": {
+      "A": {
+        "title": "Signs of a Stroke",
+        "text": "A stroke happens when the blood supply to a part of the brain is cut off, either by a blocked blood vessel or by a vessel that bursts. Brain cells begin to die within minutes, so fast action can save life and prevent permanent damage. Doctors teach the FAST test to recognize a stroke. F is for face: ask the person to smile, and see whether one side of the face droops. A is for arms: ask the person to raise both arms, and see whether one arm drifts down. S is for speech: ask the person to repeat a simple sentence, and listen for slurred or strange words. T is for time: if you see any of these signs, call the emergency number at once, even if the signs disappear. If the stroke is caused by a clot, medicine that breaks up the clot can work, but only if it is given within a few hours. That is why doctors say: time is brain."
+      },
+      "B": {
+        "title": "Signs of a Heart Attack",
+        "text": "A heart attack happens when an artery that carries blood to the heart muscle is blocked, usually by a clot. Part of the heart muscle does not get oxygen and begins to die. The most common sign is pain or pressure in the center of the chest, which may last more than a few minutes or come and go. The pain can spread to the arm, the shoulder, the back, the neck or the jaw. Other signs are shortness of breath, cold sweat, nausea and feeling lightheaded. Not every person has the same signs. Women, older adults and people with diabetes are more likely to have signs other than chest pain, such as unusual tiredness, nausea or pain in the back or jaw. A heart attack is not the same as cardiac arrest, in which the heart suddenly stops beating. A person with signs of a heart attack should call the emergency number at once and should not drive themselves to the hospital."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A stroke is a medical emergency, and the FAST test helps people recognize it.",
+        "A stroke is a small problem that usually goes away by itself.",
+        "A stroke is a problem of the heart that only affects the legs.",
+        "The text explains that a stroke cuts off blood to the brain, and that the FAST test helps people to recognize it and act quickly.",
+        [
+          "A stroke happens when the blood supply to a part of the brain is cut off",
+          "Doctors teach the FAST test to recognize a stroke"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the letter A stand for in FAST?",
+        "Arms.",
+        "Age.",
+        "Ankle.",
+        "The text says that A is for arms: ask the person to raise both arms.",
+        "A is for arms"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “permanent” means…",
+        "lasting for a very long time.",
+        "lasting only a moment.",
+        "easy to repair.",
+        "The text says that fast action can prevent permanent damage, which means damage that lasts for a very long time.",
+        "prevent permanent damage"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “only if it is given within a few hours” refers to…",
+        "the medicine.",
+        "the clot.",
+        "the stroke.",
+        "The sentence says that medicine that breaks up the clot can work, but only if the medicine is given within a few hours.",
+        "medicine that breaks up the clot can work, but only if it is given within a few hours"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people have a stroke each year.",
+        "What the letter T stands for.",
+        "What can cause a stroke.",
+        "The text does not say how many people have a stroke each year. It says what T stands for and what can cause a stroke.",
+        [
+          "T is for time",
+          "either by a blocked blood vessel or by a vessel that bursts"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do doctors say “time is brain”?",
+        "Brain cells die quickly without blood.",
+        "The brain works faster when time is short.",
+        "Doctors work only on the brain.",
+        "The text says that brain cells begin to die within minutes, so every minute is important.",
+        "Brain cells begin to die within minutes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A heart attack is caused by a blocked artery and has several warning signs.",
+        "A heart attack is caused by a broken bone and has only one sign.",
+        "A heart attack is the same thing as a stroke in the brain.",
+        "The text explains that a heart attack happens when an artery to the heart is blocked, and describes its signs.",
+        [
+          "A heart attack happens when an artery that carries blood to the heart muscle is blocked",
+          "The most common sign is pain or pressure in the center of the chest"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Where does the pain of a heart attack often start?",
+        "In the center of the chest.",
+        "In the lower leg.",
+        "In the top of the head.",
+        "The text says that the most common sign is pain or pressure in the center of the chest.",
+        "pain or pressure in the center of the chest"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “unusual” means…",
+        "not normal.",
+        "very pleasant.",
+        "very short.",
+        "The text says that women may have unusual tiredness, which means tiredness that is not normal.",
+        "such as unusual tiredness"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which may last more than a few minutes” refers to…",
+        "the pain or pressure.",
+        "the center of the chest.",
+        "the artery.",
+        "The sentence says that the most common sign is pain or pressure in the center of the chest, and the pain or pressure may last more than a few minutes.",
+        "pain or pressure in the center of the chest, which may last more than a few minutes"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people survive a heart attack.",
+        "Which groups may have different signs.",
+        "What cardiac arrest is.",
+        "The text does not say how many people survive. It says which groups may have different signs and what cardiac arrest is.",
+        [
+          "Women, older adults and people with diabetes",
+          "in which the heart suddenly stops beating"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a woman who feels unusual tiredness and nausea?",
+        "She might be having a heart attack.",
+        "She certainly has a stomach problem.",
+        "She does not need any help.",
+        "The text says that women are more likely to have signs other than chest pain, such as unusual tiredness and nausea.",
+        "Women, older adults and people with diabetes are more likely to have signs other than chest pain"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "blocked",
+          "closed so that nothing can pass through"
+        ],
+        [
+          "bursts",
+          "breaks open suddenly"
+        ],
+        [
+          "droops",
+          "hangs down"
+        ],
+        [
+          "slurred",
+          "spoken in an unclear way"
+        ],
+        [
+          "clot",
+          "a lump of thickened blood"
+        ]
+      ],
+      "B": [
+        [
+          "artery",
+          "a tube that carries blood from the heart"
+        ],
+        [
+          "pressure",
+          "a feeling of being pushed or squeezed"
+        ],
+        [
+          "nausea",
+          "a feeling that you are going to vomit"
+        ],
+        [
+          "lightheaded",
+          "feeling weak, as if you might faint"
+        ],
+        [
+          "diabetes",
+          "a disease in which there is too much sugar in the blood"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 89,
+    "slug": "unseen-reading-part-89",
+    "theme": "Food Safety",
+    "blurb": "why food poisoning happens, safe storage and the danger zone",
+    "texts": {
+      "A": {
+        "title": "Why Food Poisoning Happens",
+        "text": "Food poisoning is an illness caused by eating food that contains harmful germs or poisons. The most common germs include Salmonella, E. coli and norovirus. They can be present in raw meat, poultry, eggs, unwashed vegetables and some dairy products, and they cannot be seen, smelled or tasted. Food can also be contaminated in the kitchen. If a knife or chopping board is used for raw chicken and then for salad, the germs move from one food to the other. This is called cross-contamination. Symptoms include stomach pain, nausea, vomiting, diarrhea and sometimes fever, and they usually begin within hours or a few days. Most healthy people recover in a few days, but vomiting and diarrhea can make the body lose too much water, so it is important to drink fluids. Babies, older people, pregnant women and people who are already ill should see a doctor sooner."
+      },
+      "B": {
+        "title": "Safe Storage and the Danger Zone",
+        "text": "Bacteria grow best in warm, moist food, and they multiply fast. The range between about five and sixty degrees Celsius is called the danger zone, because in this range some bacteria can double in number in as little as twenty minutes. This does not mean that the food is dangerous at once, but the longer it stays in this range, the more bacteria there are. A simple rule is to keep cold food cold and hot food hot. Do not leave cooked food at room temperature for more than two hours, and in hot weather for more than one hour. In the Philippines, where the weather is warm, cooked rice and viands should be put in the refrigerator soon after a meal. Keep the refrigerator at five degrees or colder. Cook meat, chicken and eggs thoroughly, and reheat leftovers until they are steaming hot. Raw meat should be stored on the lowest shelf, so that its juices do not drip onto other food."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Food poisoning is caused by germs in food, which can spread in the kitchen.",
+        "Food poisoning is caused by eating too much food at once.",
+        "Food poisoning is caused by cooking food in a metal pot.",
+        "The text explains that food poisoning is caused by harmful germs in food and that germs can also spread from one food to another in the kitchen.",
+        [
+          "Food poisoning is an illness caused by eating food that contains harmful germs or poisons",
+          "If a knife or chopping board is used for raw chicken and then for salad, the germs move from one food to the other"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is it called when germs move from one food to another?",
+        "Cross-contamination.",
+        "Food poisoning.",
+        "Dehydration.",
+        "The text says that when germs move from one food to the other, this is called cross-contamination.",
+        "This is called cross-contamination."
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “recover” means…",
+        "become well again.",
+        "become more ill.",
+        "go to a hospital.",
+        "The text says that most healthy people recover in a few days, which means that they become well again.",
+        "Most healthy people recover in a few days"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they cannot be seen, smelled or tasted” refers to…",
+        "the germs.",
+        "the foods.",
+        "the symptoms.",
+        "The sentence says that germs can be present in raw meat, poultry and other foods, and the germs cannot be seen, smelled or tasted.",
+        "and they cannot be seen, smelled or tasted"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people get food poisoning each year.",
+        "Which groups should see a doctor sooner.",
+        "Which foods can carry germs.",
+        "The text does not say how many people get food poisoning. It says which groups should see a doctor sooner and which foods can carry germs.",
+        [
+          "Babies, older people, pregnant women and people who are already ill should see a doctor sooner",
+          "raw meat, poultry, eggs, unwashed vegetables and some dairy products"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about food that looks and smells normal?",
+        "It can still contain harmful germs.",
+        "It is always safe to eat.",
+        "It cannot be contaminated in the kitchen.",
+        "The text says that germs cannot be seen, smelled or tasted, so normal-looking food can still be unsafe.",
+        "they cannot be seen, smelled or tasted"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Bacteria multiply fast in the danger zone, so keep food hot or cold.",
+        "Bacteria multiply only in food that is frozen for a long time.",
+        "Bacteria multiply most when food is cooked until it is hot.",
+        "The text explains that bacteria multiply fast between about five and sixty degrees, so food should be kept cold or hot.",
+        [
+          "The range between about five and sixty degrees Celsius is called the danger zone",
+          "A simple rule is to keep cold food cold and hot food hot"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long should cooked food stay at room temperature at most, according to the text?",
+        "Two hours.",
+        "Six hours.",
+        "One day.",
+        "The text says not to leave cooked food at room temperature for more than two hours.",
+        "Do not leave cooked food at room temperature for more than two hours"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “steaming hot” means…",
+        "so hot that steam rises.",
+        "so cold that ice forms.",
+        "so dry that dust rises.",
+        "The text says to reheat leftovers until they are steaming hot, which means so hot that steam rises from them.",
+        "reheat leftovers until they are steaming hot"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “its” in “so that its juices do not drip” refers to…",
+        "the raw meat.",
+        "the lowest shelf.",
+        "the refrigerator.",
+        "The sentence says that raw meat should be stored on the lowest shelf, so that the juices of the raw meat do not drip onto other food.",
+        "Raw meat should be stored on the lowest shelf, so that its juices do not drip onto other food"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many types of bacteria cause food poisoning.",
+        "How cold the refrigerator should be.",
+        "Where to store raw meat.",
+        "The text does not say how many types of bacteria cause food poisoning. It says how cold the refrigerator should be and where to store raw meat.",
+        [
+          "Keep the refrigerator at five degrees or colder",
+          "stored on the lowest shelf"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should cooked rice be refrigerated soon after a meal in the Philippines?",
+        "The warm weather helps bacteria to grow.",
+        "Rice cannot be eaten when it is warm.",
+        "Rice needs to be frozen for many days.",
+        "The text says that in the Philippines the weather is warm, so cooked rice should be put in the refrigerator soon after a meal.",
+        "In the Philippines, where the weather is warm, cooked rice and viands should be put in the refrigerator soon after a meal"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "poisons",
+          "substances that can harm or kill"
+        ],
+        [
+          "poultry",
+          "birds such as chickens kept for meat or eggs"
+        ],
+        [
+          "contaminated",
+          "made dirty or harmful by germs or chemicals"
+        ],
+        [
+          "symptoms",
+          "signs of an illness"
+        ],
+        [
+          "fluids",
+          "liquids, such as water"
+        ]
+      ],
+      "B": [
+        [
+          "multiply",
+          "to increase in number"
+        ],
+        [
+          "moist",
+          "slightly wet"
+        ],
+        [
+          "thoroughly",
+          "completely and carefully"
+        ],
+        [
+          "leftovers",
+          "food that remains after a meal"
+        ],
+        [
+          "drip",
+          "to fall in small drops"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 90,
+    "slug": "unseen-reading-part-90",
+    "theme": "Your Money Plan",
+    "blurb": "a simple budget, why an emergency fund matters",
+    "texts": {
+      "A": {
+        "title": "Making a Simple Budget",
+        "text": "A budget is a plan for your money: it shows how much comes in and where it goes. One simple method is the 50/30/20 rule, popular since a 2005 book by Elizabeth Warren and her daughter, Amelia Warren Tyagi. It divides your income after tax into three parts. About fifty percent goes to needs, such as rent, food, transport, electricity and school costs. About thirty percent goes to wants, such as eating out, games, shopping and trips. The last twenty percent goes to savings and to paying debts faster. For example, a person who earns 20,000 pesos a month would plan 10,000 pesos for needs, 6,000 for wants and 4,000 for savings. The numbers are only a guide. In a city with expensive rent, needs may take more than half of the income, and then wants must be smaller. The first step is to write down what you spend for one month, because many people are surprised by how much small purchases add up to."
+      },
+      "B": {
+        "title": "Why an Emergency Fund Matters",
+        "text": "Life often brings costs that nobody planned: a sudden illness, a broken phone that you need for work, a typhoon that damages the house, or the loss of a job. An emergency fund is money that is kept only for such events. Experts often advise saving enough to cover three to six months of basic expenses, but the first goal can be smaller, for example one month. The fund should be easy to reach and safe, for instance in a savings account, and not in something that is hard to sell quickly. It should also be separate from your everyday money, so that you do not spend it on shopping or trips. Without a fund, people often borrow to pay for emergencies, sometimes at very high interest, and the debt makes the next emergency even harder. When the money is used, it should be refilled as soon as possible. Even a small amount each payday builds the fund over time."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The 50/30/20 rule divides income into needs, wants and savings.",
+        "The 50/30/20 rule says that you must spend everything on needs.",
+        "The 50/30/20 rule is a law that every family must follow.",
+        "The text explains that the 50/30/20 rule is a simple guide that divides income into three parts: needs, wants and savings.",
+        [
+          "It divides your income after tax into three parts",
+          "The numbers are only a guide"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How much of the income goes to savings and debts in the rule?",
+        "About twenty percent.",
+        "About fifty percent.",
+        "About thirty percent.",
+        "The text says that the last twenty percent goes to savings and to paying debts faster.",
+        "The last twenty percent goes to savings and to paying debts faster"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “add up to” means…",
+        "grow into a large total.",
+        "disappear completely.",
+        "become cheaper.",
+        "The text says that small purchases add up to a lot, which means that they grow into a large total.",
+        "small purchases add up to"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It divides your income” refers to…",
+        "the 50/30/20 rule.",
+        "the book.",
+        "the income.",
+        "The text introduces the 50/30/20 rule, and the rule divides income after tax into three parts.",
+        "the 50/30/20 rule, popular since a 2005 book by Elizabeth Warren and her daughter, Amelia Warren Tyagi. It divides your income"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which bank offers the best savings account.",
+        "What the wants part includes.",
+        "What the first step is.",
+        "The text does not say which bank offers the best savings account. It says what wants include and that the first step is to write down your spending.",
+        [
+          "such as eating out, games, shopping and trips",
+          "write down what you spend for one month"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the percentages?",
+        "A person can change them to fit real life.",
+        "They can never be changed.",
+        "They are the same in every country by law.",
+        "The text says that the numbers are only a guide, and that in a city with expensive rent needs may take more than half.",
+        "The numbers are only a guide."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "An emergency fund protects you from surprise costs and from expensive debt.",
+        "An emergency fund is money that you spend on holidays and gifts.",
+        "An emergency fund is money that you lend to friends with interest.",
+        "The text explains that an emergency fund is money kept for unexpected costs, and that it helps people to avoid borrowing at high interest.",
+        [
+          "An emergency fund is money that is kept only for such events",
+          "Without a fund, people often borrow to pay for emergencies"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many months of expenses do experts often advise saving?",
+        "Three to six months.",
+        "One to two weeks.",
+        "Ten to twelve years.",
+        "The text says that experts often advise saving enough to cover three to six months of basic expenses.",
+        "three to six months of basic expenses"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “reach” in “easy to reach” means…",
+        "to get to when you need it.",
+        "to forget about.",
+        "to spend on holidays.",
+        "The text says that the fund should be easy to reach, which means that you can get to it when you need it.",
+        "The fund should be easy to reach and safe"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It should also be separate” refers to…",
+        "the fund.",
+        "the savings account.",
+        "the emergency.",
+        "The text says that the fund should be easy to reach and safe, and the fund should also be separate from everyday money.",
+        "and not in something that is hard to sell quickly. It should also be separate"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much money a family should save each payday.",
+        "Which events an emergency fund is meant for.",
+        "What can happen without a fund.",
+        "The text does not say how much to save each payday. It says what the fund is for and what can happen without it.",
+        [
+          "a sudden illness, a broken phone that you need for work, a typhoon that damages the house, or the loss of a job",
+          "people often borrow to pay for emergencies"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about saving?",
+        "Small, regular amounts can become a large fund.",
+        "Only large amounts are worth saving.",
+        "A fund can be built in a single day.",
+        "The text says that even a small amount each payday builds the fund over time.",
+        "Even a small amount each payday builds the fund over time."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "income",
+          "money that a person receives"
+        ],
+        [
+          "divides",
+          "separates into parts"
+        ],
+        [
+          "debts",
+          "amounts of money that are owed"
+        ],
+        [
+          "guide",
+          "something that helps you decide what to do"
+        ],
+        [
+          "purchases",
+          "things that you buy"
+        ]
+      ],
+      "B": [
+        [
+          "sudden",
+          "happening quickly and without warning"
+        ],
+        [
+          "advise",
+          "to tell someone what you think they should do"
+        ],
+        [
+          "basic",
+          "simple and necessary"
+        ],
+        [
+          "separate",
+          "kept apart"
+        ],
+        [
+          "refilled",
+          "filled again"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 91,
+    "slug": "unseen-reading-part-91",
+    "theme": "Credit",
+    "blurb": "how a credit score works, why a riskier borrower pays more",
+    "texts": {
+      "A": {
+        "title": "How a Credit Score Works",
+        "text": "When you ask a bank or a lender for a loan, they want to know whether you will pay it back. A credit score is a number that tries to answer this question. In the Philippines, credit information is collected by the Credit Information Corporation, and accredited credit bureaus use it to calculate scores that range from 300 to 850. A higher score means a lower risk. Scores are usually based on several things. The most important is payment history: do you pay on time? Another is how much you owe compared with your limit, because a person who uses all of a credit card limit looks risky. Other factors are the length of your credit history, the number of new loans that you ask for and the kinds of credit you use. A good score can help you to get a loan, and to get lower interest. To build one, pay all bills on time, borrow only what you can repay and check your credit report for mistakes."
+      },
+      "B": {
+        "title": "Why a Riskier Borrower Pays More",
+        "text": "Interest is not the same for everyone. A lender is like a person who lends money to a friend: if the friend often forgets to pay back, the lender will be more careful and may ask for more. Banks do the same, and they call it pricing for risk. A borrower with a high score has a record of paying on time, so the bank charges a lower rate. A borrower with a low score, or without any history, is more likely to fail to repay, and the bank may charge a higher rate, ask for a guarantee, called collateral, or refuse the loan. This is also why informal lenders, who lend to people that banks do not accept, may charge extremely high rates. The well-known “5-6” loans, for example, return six pesos for every five borrowed, which is about twenty percent for a short period. A short-term loan with such a rate can become very expensive, because the interest grows quickly. Before borrowing, compare offers and read the total cost, not only the monthly payment."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A credit score is a number that shows how likely you are to repay a loan.",
+        "A credit score shows how much money you earn each month.",
+        "A credit score is a prize that banks give to good customers.",
+        "The text explains that a credit score is a number that tries to show whether a person will pay back a loan, and that a higher score means a lower risk.",
+        [
+          "A credit score is a number that tries to answer this question",
+          "A higher score means a lower risk"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the most important factor in a score, according to the text?",
+        "Payment history.",
+        "The size of your family.",
+        "The place where you live.",
+        "The text says that the most important factor is payment history.",
+        "The most important is payment history"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “limit” means…",
+        "the most you are allowed to borrow.",
+        "the least you must pay back.",
+        "the time you have to repay.",
+        "The text says that a person who uses all of a credit card limit looks risky, so the limit is the most that the person is allowed to borrow.",
+        "how much you owe compared with your limit"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “pay it back” refers to…",
+        "the loan.",
+        "the score.",
+        "the bank.",
+        "The sentence says that when you ask for a loan, the lender wants to know whether you will pay the loan back.",
+        "they want to know whether you will pay it back"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which bureau gives the highest scores.",
+        "Who collects credit information in the Philippines.",
+        "How to build a good score.",
+        "The text does not say which bureau gives the highest scores. It says who collects credit information and how to build a good score.",
+        [
+          "credit information is collected by the Credit Information Corporation",
+          "pay all bills on time, borrow only what you can repay"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about a person who uses all of a credit card limit?",
+        "A lender may see the person as risky.",
+        "A lender will see the person as very safe.",
+        "The person will get a lower interest rate.",
+        "The text says that a person who uses all of a credit card limit looks risky.",
+        "a person who uses all of a credit card limit looks risky"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Lenders charge riskier borrowers more because they may not be repaid.",
+        "Lenders charge riskier borrowers less because they need help.",
+        "Lenders charge every borrower the same, whatever the risk.",
+        "The text explains that interest is not the same for everyone, because lenders charge more when they think that a borrower is riskier.",
+        [
+          "Interest is not the same for everyone",
+          "they call it pricing for risk"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does a “5-6” loan return, according to the text?",
+        "Six pesos for every five borrowed.",
+        "Five pesos for every six borrowed.",
+        "Fifty pesos for every six borrowed.",
+        "The text says that “5-6” loans return six pesos for every five borrowed, which is about twenty percent for a short period.",
+        "return six pesos for every five borrowed"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “extremely” means…",
+        "very.",
+        "slightly.",
+        "almost.",
+        "The text says that informal lenders may charge extremely high rates, which means very high rates.",
+        "may charge extremely high rates"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “they call it pricing for risk” refers to…",
+        "asking more from a riskier borrower.",
+        "paying back a loan early.",
+        "lending money to a friend.",
+        "The sentence before says that a careful lender may ask for more, and that banks do the same and call this pricing for risk.",
+        "the lender will be more careful and may ask for more. Banks do the same, and they call it pricing for risk"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many informal lenders exist.",
+        "What collateral is.",
+        "What to read before borrowing.",
+        "The text does not say how many informal lenders exist. It says what collateral is and that you should read the total cost.",
+        [
+          "called collateral",
+          "read the total cost, not only the monthly payment"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about the monthly payment?",
+        "A low monthly payment can hide a high total cost.",
+        "It is the only cost that matters.",
+        "It is always the same as the total cost.",
+        "The text says to read the total cost, not only the monthly payment, which suggests that the monthly payment alone can be misleading.",
+        "Before borrowing, compare offers and read the total cost, not only the monthly payment."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "lender",
+          "a person or company that lends money"
+        ],
+        [
+          "accredited",
+          "officially approved to do something"
+        ],
+        [
+          "calculate",
+          "to find an amount by using numbers"
+        ],
+        [
+          "risk",
+          "the chance that something bad will happen"
+        ],
+        [
+          "repay",
+          "to pay back money"
+        ]
+      ],
+      "B": [
+        [
+          "guarantee",
+          "a promise or valuable thing that makes a lender feel safe"
+        ],
+        [
+          "collateral",
+          "something valuable that a borrower promises to give if they cannot repay"
+        ],
+        [
+          "informal",
+          "not official"
+        ],
+        [
+          "refuse",
+          "to say no to something"
+        ],
+        [
+          "compare",
+          "to look at things to see how they are different"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 92,
+    "slug": "unseen-reading-part-92",
+    "theme": "Taxes",
+    "blurb": "why we pay taxes, VAT and income tax",
+    "texts": {
+      "A": {
+        "title": "Why We Pay Taxes",
+        "text": "Taxes are money that people and companies must pay to the government. In return, the government uses the money to provide things that are hard for individuals to buy alone: roads and bridges, public schools, hospitals, police, firefighters and disaster relief after typhoons. Some of these services are public goods, which means that everyone can use them, and nobody can easily be excluded. If a street light were paid for only by the neighbor who chooses to, many people would use it without paying, and probably there would be no light. Taxes solve this problem by sharing the cost. Taxes also pay the salaries of public workers, and they can help people with lower incomes, for example through health and education programs. People often complain about taxes, and there are real debates about how much to collect and how the government should spend it. But few people would want to live without public services."
+      },
+      "B": {
+        "title": "VAT and Income Tax",
+        "text": "Two common taxes work in different ways. Income tax is taken from what a person earns. In many countries, including the Philippines, it is progressive, which means that people with a higher income pay a higher percentage, and people with very low income pay little or nothing. Employers usually deduct it from the salary each month, so the worker receives the amount after tax. Value-added tax, or VAT, is paid when people buy goods and services. In the Philippines the rate is twelve percent, so an item with a price of 100 pesos before tax costs 112 pesos at the counter. Businesses collect the tax from customers and send it to the government. Because everyone who buys something pays VAT, it is easy to collect, but it takes a larger share of the income of poorer people, who spend most of what they earn. Some basic goods are exempt, and senior citizens and persons with disabilities have discounts on certain items."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Taxes pay for public services that are hard for people to buy alone.",
+        "Taxes are money that the government keeps for its own use only.",
+        "Taxes are payments that only rich people have to make.",
+        "The text explains that taxes pay for services such as roads, schools and hospitals that individuals could not easily buy alone.",
+        [
+          "the government uses the money to provide things that are hard for individuals to buy alone",
+          "Taxes solve this problem by sharing the cost"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What are public goods, according to the text?",
+        "Services that everyone can use.",
+        "Things that only the government can see.",
+        "Products sold in public markets.",
+        "The text says that public goods are services that everyone can use, and nobody can easily be excluded.",
+        "which means that everyone can use them, and nobody can easily be excluded"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “complain” means…",
+        "say that they are unhappy.",
+        "say that they are very proud.",
+        "say nothing at all.",
+        "The text says that people often complain about taxes, which means that they say that they are unhappy about them.",
+        "People often complain about taxes"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “everyone can use them” refers to…",
+        "public goods.",
+        "taxes.",
+        "individuals.",
+        "The sentence says that some of these services are public goods, which means that everyone can use the public goods.",
+        "Some of these services are public goods, which means that everyone can use them"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country collects the most taxes.",
+        "What taxes pay for besides services.",
+        "Which services are named.",
+        "The text does not say which country collects the most taxes. It says that taxes pay salaries and names services such as roads, schools and hospitals.",
+        [
+          "Taxes also pay the salaries of public workers",
+          "roads and bridges, public schools, hospitals"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the street light example suggest?",
+        "If payment were voluntary, many services might not exist.",
+        "Street lights are not needed in most places.",
+        "Everyone is happy to pay for services alone.",
+        "The text says that if only one neighbor paid, many people would use the light without paying, and probably there would be no light.",
+        "many people would use it without paying, and probably there would be no light"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Income tax is taken from earnings, and VAT is paid when people buy things.",
+        "Income tax and VAT are two names for the same payment.",
+        "Income tax is paid only by businesses, and VAT only by workers.",
+        "The text explains that income tax is taken from what a person earns and that VAT is paid on goods and services.",
+        [
+          "Income tax is taken from what a person earns",
+          "Value-added tax, or VAT, is paid when people buy goods and services"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is the VAT rate in the Philippines, according to the text?",
+        "Twelve percent.",
+        "Two percent.",
+        "Twenty-five percent.",
+        "The text says that in the Philippines the VAT rate is twelve percent.",
+        "In the Philippines the rate is twelve percent"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “collect” means…",
+        "gather in.",
+        "give away.",
+        "spend freely.",
+        "The text says that businesses collect the tax from customers, which means that they gather it in.",
+        "Businesses collect the tax from customers"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it is easy to collect” refers to…",
+        "VAT.",
+        "income tax.",
+        "the price.",
+        "The sentence says that because everyone who buys something pays VAT, VAT is easy to collect.",
+        "Because everyone who buys something pays VAT, it is easy to collect"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much tax the government collects each year.",
+        "What an item of 100 pesos costs with VAT.",
+        "Who deducts income tax from the salary.",
+        "The text does not say how much tax the government collects. It says that an item of 100 pesos costs 112 pesos and that employers deduct income tax.",
+        [
+          "costs 112 pesos at the counter",
+          "Employers usually deduct it from the salary each month"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about VAT and poorer people?",
+        "It takes a larger share of their income.",
+        "It does not affect them at all.",
+        "They are always exempt from it.",
+        "The text says that VAT takes a larger share of the income of poorer people, who spend most of what they earn.",
+        "it takes a larger share of the income of poorer people, who spend most of what they earn"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "provide",
+          "to give or supply"
+        ],
+        [
+          "excluded",
+          "kept out"
+        ],
+        [
+          "solve",
+          "to find an answer to a problem"
+        ],
+        [
+          "salaries",
+          "regular payments for a job"
+        ],
+        [
+          "debates",
+          "discussions in which people give different opinions"
+        ]
+      ],
+      "B": [
+        [
+          "progressive",
+          "taking a larger share from people who earn more"
+        ],
+        [
+          "deduct",
+          "to take away an amount from a total"
+        ],
+        [
+          "goods",
+          "things that are made to be sold"
+        ],
+        [
+          "exempt",
+          "free from a rule or payment"
+        ],
+        [
+          "discounts",
+          "reductions in price"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 93,
+    "slug": "unseen-reading-part-93",
+    "theme": "Investing",
+    "blurb": "what a share of stock is, why not to put all your money in one place",
+    "texts": {
+      "A": {
+        "title": "What a Share of Stock Is",
+        "text": "A company needs money to grow, for example to build a factory or to develop a new product. One way to get it is to sell small pieces of ownership, called shares or stocks. A person who buys a share becomes a part-owner of the company, though a very small one. Shares are traded in a stock exchange, a market where buyers and sellers meet. In the Philippines, this is the Philippine Stock Exchange. Investors hope to earn money in two ways. First, the price of the share may rise, and they can sell it for more than they paid. Second, some companies pay a part of their profits to the owners, called a dividend. But there are risks: if the company does badly, the price can fall, and an investor can lose some or all of the money. Prices move up and down every day because of news and because of what buyers and sellers expect. That is why stocks are usually better for long-term goals than for money needed soon."
+      },
+      "B": {
+        "title": "Do Not Put All Your Eggs in One Basket",
+        "text": "There is an old saying: do not put all your eggs in one basket. If you carry all your eggs in one basket and you drop it, you lose everything. In investing, this idea is called diversification. It means spreading your money over many different investments, so that a problem with one does not ruin the whole. Suppose a person puts all their savings into the shares of one company. If the company fails, the savings can disappear. If the money is divided among twenty companies in different industries, one failure hurts much less. Investors can also diversify across kinds of assets: shares, bonds, which are loans to governments or companies, and cash in a bank. Many people use funds, which collect the money of many investors and buy a large number of shares or bonds together. Diversification does not remove risk or guarantee profit, but it can make results less extreme, and it is one of the few ideas on which most experts agree."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A share is a small piece of a company, and its price can rise or fall.",
+        "A share is a loan that a company gives to its workers.",
+        "A share is a promise that the price will never fall.",
+        "The text explains that a share is a small piece of ownership of a company and that its price can go up and down.",
+        [
+          "sell small pieces of ownership, called shares or stocks",
+          "the price can fall, and an investor can lose some or all of the money"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "In what two ways can investors earn money, according to the text?",
+        "From a higher price and from dividends.",
+        "From salaries and from taxes.",
+        "From loans and from rent.",
+        "The text says that the price of a share may rise, and that some companies pay a dividend.",
+        "Investors hope to earn money in two ways."
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “develop” means…",
+        "create and improve.",
+        "destroy and forget.",
+        "buy and sell.",
+        "The text says that a company needs money to develop a new product, which means to create and improve it.",
+        "to develop a new product"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “One way to get it” refers to…",
+        "money.",
+        "a factory.",
+        "a product.",
+        "The sentence before says that a company needs money to grow, and that one way to get money is to sell shares.",
+        "A company needs money to grow, for example to build a factory or to develop a new product. One way to get it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which share has the highest price today.",
+        "What the Philippine exchange is called.",
+        "What a dividend is.",
+        "The text does not say which share has the highest price today. It names the Philippine Stock Exchange and explains what a dividend is.",
+        [
+          "this is the Philippine Stock Exchange",
+          "pay a part of their profits to the owners, called a dividend"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about money needed soon?",
+        "It is risky to keep it in shares.",
+        "It should be put in shares at once.",
+        "It is safest to buy a single share.",
+        "The text says that stocks are usually better for long-term goals than for money needed soon.",
+        "stocks are usually better for long-term goals than for money needed soon"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Spreading money over many investments lowers the damage if one fails.",
+        "Putting all money in one company is the best way to earn more.",
+        "Investing in funds guarantees that you never lose any money.",
+        "The text explains that diversification means spreading money over many investments, so that one problem does not ruin everything.",
+        [
+          "this idea is called diversification",
+          "It means spreading your money over many different investments"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What are bonds, according to the text?",
+        "Loans to governments or companies.",
+        "Shares in small companies.",
+        "Cash kept in a bank.",
+        "The text says that bonds are loans to governments or companies.",
+        "bonds, which are loans to governments or companies"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “extreme” means…",
+        "very large, up or down.",
+        "very slow.",
+        "very quiet.",
+        "The text says that diversification can make results less extreme, which means that the results are less likely to be very large, up or down.",
+        "make results less extreme"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “one” in “a problem with one does not ruin the whole” refers to…",
+        "one investment.",
+        "one industry.",
+        "one saying.",
+        "The sentence says that spreading your money over many investments means that a problem with one investment does not ruin the whole.",
+        "spreading your money over many different investments, so that a problem with one does not ruin the whole"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which funds earned the most last year.",
+        "What a fund does.",
+        "What diversification cannot do.",
+        "The text does not say which funds earned the most. It says what a fund does and that diversification does not remove risk.",
+        [
+          "collect the money of many investors",
+          "Diversification does not remove risk or guarantee profit"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the example of the twenty companies suggest?",
+        "One failing company would hurt much less.",
+        "None of the companies could fail.",
+        "All of the companies would fail together.",
+        "The text says that if the money is divided among twenty companies in different industries, one failure hurts much less.",
+        "If the money is divided among twenty companies in different industries, one failure hurts much less."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "ownership",
+          "the fact of owning something"
+        ],
+        [
+          "traded",
+          "bought and sold"
+        ],
+        [
+          "investors",
+          "people who put money into something to make a profit"
+        ],
+        [
+          "dividend",
+          "a payment of profit to the owners of shares"
+        ],
+        [
+          "expect",
+          "to think that something will happen"
+        ]
+      ],
+      "B": [
+        [
+          "saying",
+          "a short, well-known sentence that gives advice"
+        ],
+        [
+          "ruin",
+          "to destroy completely"
+        ],
+        [
+          "industries",
+          "types of business, such as farming or banking"
+        ],
+        [
+          "assets",
+          "things of value that a person owns"
+        ],
+        [
+          "funds",
+          "groups of money collected for investing"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 94,
+    "slug": "unseen-reading-part-94",
+    "theme": "Currencies",
+    "blurb": "why exchange rates change, how remittances support Filipino families",
+    "texts": {
+      "A": {
+        "title": "Why Exchange Rates Change",
+        "text": "An exchange rate is the price of one currency in another. If one US dollar costs 56 pesos, for example, the exchange rate is 56 pesos to the dollar. Exchange rates change all the time, because currencies are bought and sold in markets, and prices move with supply and demand. If many people want dollars, perhaps because the country buys many imported goods or because investors take money out, the price of the dollar rises and the peso becomes weaker. If many people want pesos, the peso becomes stronger. Several things influence this: interest rates, because investors prefer countries that pay more; inflation, because a currency that loses value quickly is less attractive; and news about the economy or politics, which can change opinions in minutes. A weaker peso makes imported goods, such as fuel and gadgets, more expensive, but it helps exporters, because their products become cheaper abroad."
+      },
+      "B": {
+        "title": "How Remittances Support Filipino Families",
+        "text": "Millions of Filipinos work abroad, as nurses, seafarers, engineers, domestic workers and in many other jobs. A large part of what they earn is sent home, and this money is called remittances. In 2024, the money sent home by overseas Filipino workers reached a record of more than 38 billion US dollars, according to the Bangko Sentral ng Pilipinas, about eight percent of the size of the Philippine economy. For many families, remittances pay for food, rent, medicine and school fees, and some of the money is saved or used to start a small business. The exchange rate matters here. When the peso is weaker, each dollar that a worker sends is worth more pesos, so the family receives more. But the effect is not only financial. Working abroad often means years of loneliness, long separation from children and parents, and the risk of unfair treatment. Because of this, the government and many groups try to protect workers’ rights, to lower the cost of sending money and to help returning workers find good jobs at home."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Exchange rates move with supply and demand and with other economic factors.",
+        "Exchange rates are fixed by the government every year.",
+        "Exchange rates change only when the weather changes.",
+        "The text explains that exchange rates change all the time with supply and demand, and that interest rates, inflation and news also influence them.",
+        [
+          "Exchange rates change all the time",
+          "prices move with supply and demand"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What happens to the peso if many people want dollars?",
+        "The peso becomes weaker.",
+        "The peso becomes stronger.",
+        "The peso stops changing.",
+        "The text says that if many people want dollars, the price of the dollar rises and the peso becomes weaker.",
+        "the price of the dollar rises and the peso becomes weaker"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “opinions” means…",
+        "what people think.",
+        "what people pay.",
+        "what people eat.",
+        "The text says that news can change opinions in minutes, which means that it can change what people think.",
+        "can change opinions in minutes"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which can change opinions in minutes” refers to…",
+        "news about the economy or politics.",
+        "the changes in the interest rates.",
+        "the money of other countries.",
+        "The sentence says that news about the economy or politics can change opinions in minutes.",
+        "news about the economy or politics, which can change opinions in minutes"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the exchange rate will be next year.",
+        "What a weaker peso does to imports.",
+        "Why investors like higher interest rates.",
+        "The text does not say what the exchange rate will be next year. It says that a weaker peso makes imports expensive and that investors prefer higher interest rates.",
+        [
+          "A weaker peso makes imported goods, such as fuel and gadgets, more expensive",
+          "investors prefer countries that pay more"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about a weaker peso?",
+        "It has both good and bad effects.",
+        "It is good for everyone.",
+        "It is bad for everyone.",
+        "The text says that a weaker peso makes imports more expensive, but that it helps exporters.",
+        "makes imported goods, such as fuel and gadgets, more expensive, but it helps exporters"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Remittances help many Filipino families, and working abroad has costs too.",
+        "Remittances are money that the government sends to workers abroad.",
+        "Remittances matter only to the rich families of the Philippines.",
+        "The text explains that remittances support families, and that working abroad has human costs such as loneliness and separation.",
+        [
+          "this money is called remittances",
+          "Working abroad often means years of loneliness"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do many families pay for with remittances?",
+        "Food, rent, medicine and school fees.",
+        "New cars and holidays only.",
+        "Taxes and bank loans only.",
+        "The text says that remittances pay for food, rent, medicine and school fees.",
+        "remittances pay for food, rent, medicine and school fees"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “financial” means…",
+        "about money.",
+        "about health.",
+        "about travel.",
+        "The text says that the effect is not only financial, which means that it is not only about money.",
+        "the effect is not only financial"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “Because of this” refers to…",
+        "the loneliness and risks of working abroad.",
+        "the record amount of money sent home.",
+        "the fall in the value of the peso.",
+        "The sentence before describes the loneliness, separation and risks of working abroad, and because of this the government tries to protect workers.",
+        "years of loneliness, long separation from children and parents, and the risk of unfair treatment. Because of this"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many Filipino nurses work abroad.",
+        "Which jobs overseas Filipinos do.",
+        "What a weaker peso does to the money sent home.",
+        "The text does not say how many nurses work abroad. It lists some jobs and explains what a weaker peso does to the money sent home.",
+        [
+          "as nurses, seafarers, engineers, domestic workers",
+          "each dollar that a worker sends is worth more pesos"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the government’s role?",
+        "It tries to protect workers and make sending money cheaper.",
+        "It leaves the matter to the workers alone.",
+        "It tries to stop Filipinos from working abroad.",
+        "The text says that the government and many groups try to protect workers’ rights and to lower the cost of sending money.",
+        "the government and many groups try to protect workers’ rights, to lower the cost of sending money"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "currency",
+          "the money used in a country"
+        ],
+        [
+          "imported",
+          "brought in from another country"
+        ],
+        [
+          "attractive",
+          "interesting or pleasing"
+        ],
+        [
+          "exporters",
+          "people or companies that sell goods to other countries"
+        ],
+        [
+          "influence",
+          "to have an effect on something"
+        ]
+      ],
+      "B": [
+        [
+          "seafarers",
+          "people who work on ships"
+        ],
+        [
+          "record",
+          "the highest amount ever reached"
+        ],
+        [
+          "fees",
+          "payments for a service or for school"
+        ],
+        [
+          "separation",
+          "the state of being apart from someone"
+        ],
+        [
+          "rights",
+          "things that people are allowed to have or do by law"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 95,
+    "slug": "unseen-reading-part-95",
+    "theme": "Scams",
+    "blurb": "how common scams work, how to protect yourself",
+    "texts": {
+      "A": {
+        "title": "How Common Scams Work",
+        "text": "A scam is a trick to take your money or your information. Many scams use the same pattern. First, the scammer pretends to be someone you trust: a bank, a delivery company, a government office, a famous person or a friend. Second, the message creates strong feeling, such as fear (“your account will be closed”) or excitement (“you won a prize”). Third, it asks for something quickly, often a password, a bank number, a one-time password, or a payment. One of the most common types is phishing: a message or a fake website that looks like the real one and asks you to type your details. Other scams promise high profits with no risk, offer a job that asks you to pay first, or pretend to be a relative who needs money urgently. Scammers use pressure and secrecy because careful thinking is their enemy. When a message makes you panic or hurry, that is already a warning sign."
+      },
+      "B": {
+        "title": "How to Protect Yourself From Scams",
+        "text": "The best protection against scams is a few simple habits. Never share a one-time password, or OTP, with anyone, not even a person who says that he works for your bank. A real bank will never ask for it. Do not click on links in unexpected messages. Instead, open the official app or type the website address yourself. Use a different password for each important account, and turn on two-step login if possible. If an offer is too good to be true, such as a high income without work or a prize for a contest that you never entered, it is almost certainly a scam. Slow down: before you send money, call the person using a number that you already know, or ask someone you trust. If you think that you have been scammed, act quickly. Contact your bank at once to block the account, keep the messages as evidence and report the case to the police or to the authorities that handle cybercrime. Do not feel ashamed, because anyone can be tricked."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many scams follow one pattern: a false identity, strong feeling and quick action.",
+        "Most scams are easy to see because they are badly written.",
+        "Most scams happen only to people who do not use phones.",
+        "The text explains that many scams use the same pattern, and that pressure to act quickly is a warning sign.",
+        [
+          "Many scams use the same pattern",
+          "that is already a warning sign"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is phishing?",
+        "A fake message that asks for your details.",
+        "A way of sending money to friends.",
+        "A law that protects bank customers.",
+        "The text says that phishing is a message or a fake website that looks like the real one and asks you to type your details.",
+        "a message or a fake website that looks like the real one and asks you to type your details"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “pressure” means…",
+        "strong urging to act.",
+        "calm advice to wait.",
+        "a gift of money.",
+        "The text says that scammers use pressure, which means that they urge you strongly to act fast.",
+        "Scammers use pressure and secrecy"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it asks for something quickly” refers to…",
+        "the message.",
+        "the scammer.",
+        "the feeling.",
+        "The sentence says that the message creates strong feeling, and then the message asks for something quickly.",
+        "Third, it asks for something quickly"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much money people lose to scams each year.",
+        "Who a scammer may pretend to be.",
+        "What a scammer may ask for.",
+        "The text does not say how much money people lose each year. It says who a scammer may pretend to be and what a scammer may ask for.",
+        [
+          "a bank, a delivery company, a government office, a famous person or a friend",
+          "a password, a bank number, a one-time password, or a payment"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Feeling pressure to act fast is itself a reason to stop.",
+        "A message that excites you is always true.",
+        "A message that causes fear is always from a bank.",
+        "The text says that when a message makes you panic or hurry, that is already a warning sign.",
+        "When a message makes you panic or hurry, that is already a warning sign."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "To avoid scams, protect your codes, check offers and act quickly if tricked.",
+        "To avoid scams, share your codes with your bank when it asks.",
+        "To avoid scams, click on every link and answer every message.",
+        "The text gives simple habits for avoiding scams, and says what to do if you think that you were scammed.",
+        [
+          "The best protection against scams is a few simple habits",
+          "If you think that you have been scammed, act quickly"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does OTP stand for?",
+        "One-time password.",
+        "Online transfer plan.",
+        "Official transfer payment.",
+        "The text says that OTP means one-time password.",
+        "a one-time password, or OTP"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “almost certainly” means…",
+        "very probably.",
+        "never.",
+        "only sometimes.",
+        "The text says that a too-good offer is almost certainly a scam, which means that it is very probably a scam.",
+        "it is almost certainly a scam"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “will never ask for it” refers to…",
+        "an OTP.",
+        "an app.",
+        "a link.",
+        "The sentence says that you should never share an OTP, because a real bank will never ask for an OTP.",
+        "Never share a one-time password, or OTP, with anyone, not even a person who says that he works for your bank. A real bank will never ask for it."
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people were tricked last year.",
+        "What to do if you think that you were scammed.",
+        "What to type instead of clicking a link.",
+        "The text does not say how many people were tricked. It says what to do after a scam and to type the website address yourself.",
+        [
+          "Contact your bank at once to block the account",
+          "type the website address yourself"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about people who are scammed?",
+        "They should not blame themselves.",
+        "They have usually been careless.",
+        "They should hide it from everyone.",
+        "The text says not to feel ashamed, because anyone can be tricked.",
+        "Do not feel ashamed, because anyone can be tricked."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "scammer",
+          "a person who tricks others to get their money"
+        ],
+        [
+          "pretends",
+          "acts as if something is true when it is not"
+        ],
+        [
+          "urgently",
+          "in a way that needs fast action"
+        ],
+        [
+          "secrecy",
+          "keeping something hidden from others"
+        ],
+        [
+          "warning",
+          "a sign that something bad may happen"
+        ]
+      ],
+      "B": [
+        [
+          "unexpected",
+          "not expected"
+        ],
+        [
+          "official",
+          "coming from a person or organization with authority"
+        ],
+        [
+          "evidence",
+          "facts or signs that help to show what happened"
+        ],
+        [
+          "authorities",
+          "people or groups with the power to decide and enforce rules"
+        ],
+        [
+          "ashamed",
+          "feeling bad about something you did"
+        ]
+      ]
+    }
   }
 ];
