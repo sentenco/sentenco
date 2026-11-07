@@ -7853,5 +7853,2363 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 96,
+    "slug": "unseen-reading-part-96",
+    "theme": "Reading Numbers",
+    "blurb": "correlation and cause, how graphs can mislead",
+    "texts": {
+      "A": {
+        "title": "Correlation Is Not Causation",
+        "text": "In summer, ice cream sales go up, and so does the number of people who drown. Do ice creams cause drowning? Of course not. Both things rise because of a third factor: hot weather makes people buy ice cream, and it also makes more people swim. This is a famous example of the difference between correlation and causation. A correlation means that two things change together. Causation means that one thing makes the other happen. When we see a correlation, there are at least three possible explanations: A causes B, B causes A, or a hidden third factor, called a confounder, causes both. Sometimes it is only a coincidence. A website of funny charts once showed that the number of people who died by getting tangled in their bedsheets followed the amount of cheese that people ate each year. To show causation, scientists use experiments in which they change one thing and keep the other conditions the same, and then they look for the effect."
+      },
+      "B": {
+        "title": "How Graphs Can Mislead",
+        "text": "A graph can show data clearly, but it can also give a false impression, even when every number is correct. One trick is the axis. If a bar chart starts at 95 instead of zero, a small difference between 96 and 98 looks like a huge difference. Another trick is the time period: a company can show only the months when sales went up and hide the year in which they fell. A third is the shape of the picture. In a three-dimensional pie chart, the slices at the front look bigger than the slices at the back. Sometimes the scale changes without warning, or the chart uses pictures whose size grows in two directions, so that doubling a number makes the picture look four times as big. To read a graph carefully, look at the numbers on the axes, check the time period, ask where the data come from and compare the picture with the actual numbers."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Two things that change together are not always linked by cause and effect.",
+        "Two things that change together are always linked by cause and effect.",
+        "Two things that change together can never be linked in any way.",
+        "The text explains the difference between correlation and causation, and says that a link between two things can have several explanations.",
+        [
+          "This is a famous example of the difference between correlation and causation",
+          "there are at least three possible explanations"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What explains the link between ice cream sales and drowning?",
+        "Hot weather.",
+        "Cold weather.",
+        "Cheap prices.",
+        "The text says that both things rise because of hot weather, which makes people buy ice cream and swim.",
+        "Both things rise because of a third factor: hot weather"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “tangled” means…",
+        "caught in a knot.",
+        "washed clean.",
+        "hidden away.",
+        "The text says that people died by getting tangled in their bedsheets, which means that they were caught in a knot of sheets.",
+        "getting tangled in their bedsheets"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it also makes more people swim” refers to…",
+        "hot weather.",
+        "ice cream.",
+        "drowning.",
+        "The sentence says that hot weather makes people buy ice cream, and hot weather also makes more people swim.",
+        "hot weather makes people buy ice cream, and it also makes more people swim"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people drown each summer.",
+        "What a confounder is.",
+        "How scientists show causation.",
+        "The text does not say how many people drown each summer. It explains what a confounder is and how scientists show causation.",
+        [
+          "a hidden third factor, called a confounder, causes both",
+          "scientists use experiments in which they change one thing"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the cheese and bedsheets example suggest?",
+        "Some links are only coincidences.",
+        "Cheese really causes accidents in beds.",
+        "Bedsheets make people eat cheese.",
+        "The text says that sometimes a correlation is only a coincidence, and gives the example of cheese and bedsheets.",
+        [
+          "Sometimes it is only a coincidence",
+          "followed the amount of cheese that people ate each year"
+        ]
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A graph can mislead even when its numbers are correct, so read it carefully.",
+        "A graph is always accurate if all of its numbers are correct.",
+        "A graph is useful only when it is drawn in three dimensions.",
+        "The text explains several tricks that make graphs mislead, and says how to read a graph carefully.",
+        [
+          "it can also give a false impression, even when every number is correct",
+          "To read a graph carefully"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What happens if a bar chart starts at 95 instead of zero?",
+        "A small difference looks very large.",
+        "A large difference looks very small.",
+        "All the bars look equal.",
+        "The text says that a small difference between 96 and 98 looks like a huge difference.",
+        "a small difference between 96 and 98 looks like a huge difference"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “hide” means…",
+        "keep out of sight.",
+        "show clearly.",
+        "make longer.",
+        "The text says that a company can hide the year in which sales fell, which means that it keeps that year out of sight.",
+        "hide the year in which they fell"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “in which they fell” refers to…",
+        "sales.",
+        "months.",
+        "companies.",
+        "The sentence says that a company can show only the months when sales went up and hide the year in which sales fell.",
+        "a company can show only the months when sales went up and hide the year in which they fell"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which company made a misleading graph.",
+        "How the front slices of a 3D pie chart look.",
+        "What to check about the data.",
+        "The text does not say which company made a misleading graph. It says how the slices of a 3D pie chart look and to ask where the data come from.",
+        [
+          "the slices at the front look bigger than the slices at the back",
+          "ask where the data come from"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the example about pictures suggest?",
+        "A picture that grows in two directions exaggerates the change.",
+        "A picture is always the best way to show a number.",
+        "A picture shows exactly the same as a number.",
+        "The text says that doubling a number can make a picture look four times as big, so the change looks larger than it is.",
+        "doubling a number makes the picture look four times as big"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "correlation",
+          "a link between two things that change together"
+        ],
+        [
+          "factor",
+          "one of the things that causes a result"
+        ],
+        [
+          "confounder",
+          "a hidden factor that affects two things at once"
+        ],
+        [
+          "coincidence",
+          "two things happening together by chance"
+        ],
+        [
+          "conditions",
+          "the situation in which something happens"
+        ]
+      ],
+      "B": [
+        [
+          "impression",
+          "an idea or feeling about something"
+        ],
+        [
+          "axis",
+          "one of the lines of a graph with numbers on it"
+        ],
+        [
+          "slices",
+          "thin pieces cut from something"
+        ],
+        [
+          "scale",
+          "the set of numbers that a measure uses"
+        ],
+        [
+          "compare",
+          "to look at things to see how they are alike or different"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 97,
+    "slug": "unseen-reading-part-97",
+    "theme": "Arguments",
+    "blurb": "common arguing tricks, how to disagree well",
+    "texts": {
+      "A": {
+        "title": "Common Arguing Tricks",
+        "text": "In a good argument, people use reasons and evidence. In a bad one, they sometimes use tricks, called fallacies, which look like reasons but are not. One is the straw man. A person changes the other side’s idea into a weaker, silly version and then attacks that version. For example, if someone says that children should have less homework, the reply, “So you want children to learn nothing!” is a straw man. Another is ad hominem, which means attacking the person instead of the idea: “You are too young to understand this.” A third is the false dilemma, which pretends that there are only two choices when there are more: “Either you agree with me or you are against me.” A fourth is the bandwagon, “everyone is doing it,” which suggests that an idea is true only because many people believe it. Learning to recognize these tricks does not mean that the person is lying. People often use them without noticing."
+      },
+      "B": {
+        "title": "How to Disagree Well",
+        "text": "Disagreement is normal, and it can be useful, because it helps us to test ideas. But many arguments turn into fights. Philosophers and psychologists suggest some simple habits. First, listen carefully and try to repeat the other person’s view so well that they say, “Yes, that is what I think.” Second, find the points on which you agree, even small ones. Third, ask questions instead of making assumptions: “What makes you think so?” Fourth, argue against the strongest version of the other idea, not the weakest, which is sometimes called steelmanning, the opposite of the straw man. Fifth, separate the person from the idea, so that you can criticize an idea without insulting its owner. Finally, be ready to change your mind. If someone gives a good reason, saying “I did not think of that” is a sign of strength, not weakness. Many people change opinions slowly, so patience is also important."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Fallacies are arguing tricks that look like reasons but are not.",
+        "Fallacies are good reasons that always make an argument stronger.",
+        "Fallacies are rules that judges use to decide who is right.",
+        "The text explains that fallacies are tricks that look like reasons, and gives four examples.",
+        [
+          "they sometimes use tricks, called fallacies, which look like reasons but are not",
+          "Learning to recognize these tricks"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does ad hominem mean, according to the text?",
+        "Attacking the person instead of the idea.",
+        "Changing the idea into a weaker version.",
+        "Saying that everyone agrees.",
+        "The text says that ad hominem means attacking the person instead of the idea.",
+        "attacking the person instead of the idea"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “silly” means…",
+        "not serious or sensible.",
+        "very clever and exact.",
+        "very long and hard.",
+        "The text says that a straw man changes an idea into a weaker, silly version, which means a version that is not serious or sensible.",
+        "a weaker, silly version"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “use them without noticing” refers to…",
+        "the tricks.",
+        "the reasons.",
+        "the people.",
+        "The sentence says that learning to recognize these tricks does not mean that the person is lying, because people often use the tricks without noticing.",
+        "People often use them without noticing."
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who invented the name straw man.",
+        "What a false dilemma pretends.",
+        "What the bandwagon suggests.",
+        "The text does not say who invented the name straw man. It explains what a false dilemma pretends and what the bandwagon suggests.",
+        [
+          "pretends that there are only two choices when there are more",
+          "an idea is true only because many people believe it"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about people who use these tricks?",
+        "They may not know that they are doing it.",
+        "They are always lying on purpose.",
+        "They are always very clever.",
+        "The text says that using these tricks does not mean that the person is lying, and that people often use them without noticing.",
+        "does not mean that the person is lying. People often use them without noticing"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "To disagree well, listen, ask questions and treat the other idea fairly.",
+        "To disagree well, win quickly before the other person can answer.",
+        "To disagree well, avoid talking to anyone who has a different view.",
+        "The text gives simple habits for disagreeing well, such as listening, asking questions and arguing against the strongest version of an idea.",
+        [
+          "Philosophers and psychologists suggest some simple habits",
+          "argue against the strongest version of the other idea"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is steelmanning?",
+        "Arguing against the strongest version of an idea.",
+        "Arguing against the weakest version of an idea.",
+        "Agreeing with every idea at once.",
+        "The text says that arguing against the strongest version of the other idea is sometimes called steelmanning.",
+        "argue against the strongest version of the other idea, not the weakest, which is sometimes called steelmanning"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “normal” means…",
+        "usual and expected.",
+        "rare and strange.",
+        "dangerous and wrong.",
+        "The text says that disagreement is normal, which means that it is usual and expected.",
+        "Disagreement is normal"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “so well that they say” refers to…",
+        "the other person.",
+        "the philosophers.",
+        "the listeners.",
+        "The sentence says that you should repeat the other person’s view so well that the other person says that this is what they think.",
+        "repeat the other person’s view so well that they say"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How long a good conversation should last.",
+        "What to find even if it is small.",
+        "What to be ready to do.",
+        "The text does not say how long a good conversation should last. It says to find points of agreement and to be ready to change your mind.",
+        [
+          "find the points on which you agree, even small ones",
+          "be ready to change your mind"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about saying “I did not think of that”?",
+        "It shows confidence, not weakness.",
+        "It shows that you have lost the argument.",
+        "It should be avoided at all times.",
+        "The text says that saying “I did not think of that” is a sign of strength, not weakness.",
+        "saying “I did not think of that” is a sign of strength, not weakness"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "fallacies",
+          "mistakes in reasoning"
+        ],
+        [
+          "version",
+          "a form of something that is a bit different"
+        ],
+        [
+          "attacks",
+          "speaks against something very strongly"
+        ],
+        [
+          "pretends",
+          "acts as if something is true when it is not"
+        ],
+        [
+          "recognize",
+          "to know something because you have seen it before"
+        ]
+      ],
+      "B": [
+        [
+          "assumptions",
+          "things that you accept as true without checking"
+        ],
+        [
+          "opposite",
+          "completely different in direction or meaning"
+        ],
+        [
+          "criticize",
+          "to say what is wrong with something"
+        ],
+        [
+          "insulting",
+          "speaking in a rude way that hurts someone’s feelings"
+        ],
+        [
+          "patience",
+          "the ability to wait calmly"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 98,
+    "slug": "unseen-reading-part-98",
+    "theme": "Attention",
+    "blurb": "the multitasking myth, how phones take our attention",
+    "texts": {
+      "A": {
+        "title": "The Multitasking Myth",
+        "text": "Many people say that they are good at multitasking, for example doing homework while watching videos and chatting. But research suggests that the brain cannot really do two demanding tasks at the same moment. What it does is switch quickly from one task to the other. Each switch costs a little time and attention, because the brain must stop one task, remember where it was and start the other. These small costs add up, and people who switch often usually take longer and make more mistakes. Studies at Stanford University in 2009 found that people who often used many media at once were worse than others at ignoring things that did not matter and at switching between tasks. There are exceptions: it is possible to do an easy, automatic task, such as walking, together with a thinking task, such as talking. For learning and for important work, however, it is better to do one thing at a time, with short breaks."
+      },
+      "B": {
+        "title": "Why Phones Steal Our Attention",
+        "text": "Smartphones are designed to attract attention. Apps use notifications, bright colors and sounds because each time that you open an app, the company earns attention that it can sell to advertisers. Many apps also use a reward system that is similar to a slot machine. When you pull down the screen to refresh a feed, you do not know what you will see, and this uncertain reward is exactly the kind that makes habits strong. The result is that many people check their phones dozens of times a day, often without a decision. Some research suggests that even a phone lying silently on the desk can take some of a person’s attention, though scientists are still debating how strong the effect is. There are practical solutions. Turn off unnecessary notifications, keep the phone in another room when you study, use a schedule for social media and delete the apps that you open without thinking. The goal is not to hate the phone, but to use it on purpose."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The brain cannot really multitask; it switches between tasks and loses time.",
+        "The brain can do many difficult tasks well at exactly the same moment.",
+        "The brain works best when it does ten things at the same time.",
+        "The text explains that the brain does not do two demanding tasks at once, but switches between them, which costs time and attention.",
+        [
+          "the brain cannot really do two demanding tasks at the same moment",
+          "What it does is switch quickly from one task to the other"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do people who switch often usually do?",
+        "They take longer and make more mistakes.",
+        "They finish faster with fewer mistakes.",
+        "They remember everything better.",
+        "The text says that people who switch often usually take longer and make more mistakes.",
+        "people who switch often usually take longer and make more mistakes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “add up” means…",
+        "become a large total.",
+        "disappear quickly.",
+        "stay the same.",
+        "The text says that the small costs of switching add up, which means that together they become a large total.",
+        "These small costs add up"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “What it does is switch quickly” refers to…",
+        "the brain.",
+        "the task.",
+        "the research.",
+        "The sentence says that the brain cannot really do two demanding tasks at the same moment, and what the brain does is switch quickly.",
+        "the brain cannot really do two demanding tasks at the same moment. What it does is switch quickly"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours of sleep a student needs.",
+        "Where the 2009 studies were done.",
+        "Which tasks can be done together.",
+        "The text does not say how many hours of sleep a student needs. It says where the 2009 studies were done and which tasks can be done together.",
+        [
+          "Studies at Stanford University in 2009",
+          "walking, together with a thinking task, such as talking"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about studying?",
+        "Doing one thing at a time works better.",
+        "Doing three things at once works better.",
+        "Breaks should be avoided.",
+        "The text says that for learning and important work it is better to do one thing at a time, with short breaks.",
+        "it is better to do one thing at a time, with short breaks"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Apps are designed to hold our attention, but we can take control.",
+        "Apps are designed to help us finish our work faster.",
+        "Apps are designed to be used only once a week.",
+        "The text explains that phones and apps are designed to attract attention, and that we can use them on purpose.",
+        [
+          "Smartphones are designed to attract attention",
+          "The goal is not to hate the phone, but to use it on purpose"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do apps use to attract attention?",
+        "Notifications, bright colors and sounds.",
+        "Letters, books and newspapers.",
+        "Calls from friends only.",
+        "The text says that apps use notifications, bright colors and sounds.",
+        "Apps use notifications, bright colors and sounds"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “dozens” means…",
+        "very many.",
+        "a few.",
+        "none.",
+        "The text says that many people check their phones dozens of times a day, which means a very large number of times.",
+        "check their phones dozens of times a day"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “use it on purpose” refers to…",
+        "the phone.",
+        "the schedule.",
+        "the notification.",
+        "The sentence says that the goal is not to hate the phone, but to use the phone on purpose.",
+        "The goal is not to hate the phone, but to use it on purpose."
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours people spend on their phones.",
+        "What kind of reward makes habits strong.",
+        "What to do with apps that you open without thinking.",
+        "The text does not say how many hours people spend on phones. It says what reward makes habits strong and to delete apps opened without thinking.",
+        [
+          "this uncertain reward is exactly the kind that makes habits strong",
+          "delete the apps that you open without thinking"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the word “debating” suggest about the research on silent phones?",
+        "The results are not completely settled.",
+        "The effect has been proved to be huge.",
+        "The effect has been proved not to exist.",
+        "The text says that scientists are still debating how strong the effect is, so the results are not completely settled.",
+        "scientists are still debating how strong the effect is"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "demanding",
+          "needing a lot of effort or attention"
+        ],
+        [
+          "switch",
+          "to change from one thing to another"
+        ],
+        [
+          "ignoring",
+          "not paying attention to something"
+        ],
+        [
+          "exceptions",
+          "cases that are different from the rule"
+        ],
+        [
+          "automatic",
+          "done without thinking"
+        ]
+      ],
+      "B": [
+        [
+          "attract",
+          "to draw someone’s interest"
+        ],
+        [
+          "notifications",
+          "messages that tell you about something new"
+        ],
+        [
+          "refresh",
+          "to update with new information"
+        ],
+        [
+          "uncertain",
+          "not known for sure"
+        ],
+        [
+          "schedule",
+          "a plan of when things will be done"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 99,
+    "slug": "unseen-reading-part-99",
+    "theme": "Feeds",
+    "blurb": "how feed algorithms choose, echo chambers and filter bubbles",
+    "texts": {
+      "A": {
+        "title": "How Feed Algorithms Choose",
+        "text": "When you open a video app or a social network, you do not see every post in order. An algorithm, a set of rules in a computer program, chooses what to show you first. It collects many signals: what you watch, how long you watch it, what you like, share or comment on, and what similar people enjoy. Then it predicts which items you are most likely to react to, and it puts those at the top. The main goal of most companies is to keep you on the platform for as long as possible, because more time means more advertising. This system has benefits: it can help you to discover videos that you enjoy. But it also has costs. Posts that cause strong emotions often get more reactions, so they may be shown more, and a person can spend more time than planned. Many platforms now let users choose a simple chronological feed or reset their recommendations."
+      },
+      "B": {
+        "title": "Echo Chambers and Filter Bubbles",
+        "text": "The term filter bubble was made popular by the writer Eli Pariser in 2011. It describes a situation in which an online service shows you mostly the things that agree with your past choices, so that you may see fewer different views without knowing it. An echo chamber is a related idea: a group in which people mostly hear their own opinions repeated, from others who think the same way. In an echo chamber, ideas feel more certain than they are, because nobody disagrees, and people from the other side start to look strange. However, researchers are not sure how strong these effects are. Some studies find that people see more different views online than in their offline lives, because they follow people from many backgrounds. Even so, it is wise to check your own feed. Follow some sources that you disagree with, read the full article instead of the title, and talk to people with different opinions, especially in person."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Feed algorithms choose posts by predicting what will keep you watching.",
+        "Feed algorithms show every post in the order in which it was made.",
+        "Feed algorithms choose posts at random without any information.",
+        "The text explains that an algorithm collects signals about you and predicts which posts will keep you on the platform.",
+        [
+          "An algorithm, a set of rules in a computer program, chooses what to show you first",
+          "keep you on the platform for as long as possible"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do algorithms collect to choose posts?",
+        "Signals such as what you watch, like and share.",
+        "Only your name, your age and your city.",
+        "Letters that your friends send by post.",
+        "The text says that the algorithm collects many signals, such as what you watch, like, share or comment on.",
+        "It collects many signals: what you watch, how long you watch it, what you like, share or comment on"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “react to” means…",
+        "respond to.",
+        "disagree with.",
+        "pay for.",
+        "The text says that the algorithm predicts which items you are most likely to react to, which means respond to.",
+        "most likely to react to"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “those” in “puts those at the top” refers to…",
+        "the items that you are most likely to react to.",
+        "the signals that it collects.",
+        "the people who like the same videos.",
+        "The sentence says that the algorithm predicts which items you are most likely to react to, and puts those items at the top.",
+        "which items you are most likely to react to, and it puts those at the top"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours the average user spends online.",
+        "What the main goal of most companies is.",
+        "What many platforms now let users do.",
+        "The text does not say how many hours the average user spends online. It says what companies want and what many platforms now let users do.",
+        [
+          "keep you on the platform for as long as possible",
+          "let users choose a simple chronological feed"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why may posts that cause strong emotions be shown more?",
+        "They often get more reactions.",
+        "They are always more true.",
+        "They are written by the platform.",
+        "The text says that posts that cause strong emotions often get more reactions, so they may be shown more.",
+        "Posts that cause strong emotions often get more reactions, so they may be shown more"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Filter bubbles and echo chambers may narrow what we see, but this is debated.",
+        "Filter bubbles and echo chambers are proven to control every person online.",
+        "Filter bubbles and echo chambers happen only in offline groups.",
+        "The text explains the two ideas and says that researchers are not sure how strong their effects are.",
+        [
+          "It describes a situation in which an online service shows you mostly the things that agree with your past choices",
+          "researchers are not sure how strong these effects are"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Who made the term filter bubble popular?",
+        "Eli Pariser.",
+        "Richard Dawkins.",
+        "Peter Wason.",
+        "The text says that the term filter bubble was made popular by the writer Eli Pariser in 2011.",
+        "made popular by the writer Eli Pariser in 2011"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “strange” means…",
+        "unusual.",
+        "friendly.",
+        "famous.",
+        "The text says that people from the other side start to look strange, which means that they look unusual.",
+        "start to look strange"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It describes a situation” refers to…",
+        "the term filter bubble.",
+        "the year 2011.",
+        "the online service.",
+        "The sentence before says that the term filter bubble was made popular by Eli Pariser, and the term describes a situation.",
+        "The term filter bubble was made popular by the writer Eli Pariser in 2011. It describes a situation"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people live in a filter bubble.",
+        "What an echo chamber is.",
+        "What some studies find about offline life.",
+        "The text does not say how many people live in a filter bubble. It explains what an echo chamber is and what some studies find about offline life.",
+        [
+          "a group in which people mostly hear their own opinions repeated",
+          "people see more different views online than in their offline lives"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence “Even so, it is wise to check your own feed” suggest?",
+        "Checking is sensible even if the effect is uncertain.",
+        "Checking is useless because nothing can be done.",
+        "Checking is necessary only for older people.",
+        "The text says that researchers are not sure how strong the effects are, but that it is still wise to check your own feed.",
+        "Even so, it is wise to check your own feed."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "algorithm",
+          "a set of rules that a computer follows"
+        ],
+        [
+          "signals",
+          "pieces of information that show something"
+        ],
+        [
+          "predicts",
+          "says what will probably happen"
+        ],
+        [
+          "platform",
+          "a website or app where people share content"
+        ],
+        [
+          "recommendations",
+          "suggestions about what to choose"
+        ]
+      ],
+      "B": [
+        [
+          "related",
+          "connected in some way"
+        ],
+        [
+          "repeated",
+          "said again and again"
+        ],
+        [
+          "offline",
+          "not connected to the internet"
+        ],
+        [
+          "backgrounds",
+          "the kinds of families and experiences that people come from"
+        ],
+        [
+          "article",
+          "a piece of writing in a newspaper or on a website"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 100,
+    "slug": "unseen-reading-part-100",
+    "theme": "AI Images",
+    "blurb": "how AI makes fake images, how to spot them",
+    "texts": {
+      "A": {
+        "title": "How AI Makes Fake Images",
+        "text": "Artificial intelligence can now create pictures, voices and videos that look real. Most image tools learn from millions of real pictures with descriptions. During training, the program learns what things usually look like: how a face is built, how light falls on a wall, what a dog looks like from different angles. Then, when a person types a description, the program starts with random noise, like television static, and slowly removes it step by step until a picture appears that matches the words. Another technology, called deepfake, can place a person’s face on another body in a video or copy a voice from a short recording. These tools have good uses, such as art, film effects and helping people who lost their voice. But they can also be used to deceive: a fake photo of a news event, a false video of a politician, or a voice that sounds like a relative asking for money. The tools are improving quickly, so fakes are becoming harder to recognize."
+      },
+      "B": {
+        "title": "How to Spot Fake Images",
+        "text": "Because AI images are improving, no single clue works every time, but some checks are still useful. First, look closely. Fake images sometimes have strange hands with extra or missing fingers, teeth that are too regular, ears that do not match, shadows that point in different directions and writing that turns into nonsense. Second, ask where the image came from. A real news photo usually has a source, a date and a place, and other reliable news sites show it too. Third, use a reverse image search, a tool that finds where else an image appeared and whether it is much older than the story says. Fourth, check whether the story makes sense: a very dramatic picture that no reliable source shows is suspicious. Some companies now add invisible marks or content labels to AI images, but these are not complete. The most important habit is to pause before sharing, especially when an image makes you angry or afraid."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "AI learns from real pictures and can now make fake images that look real.",
+        "AI can only copy a picture exactly and cannot create anything new.",
+        "AI cannot make voices or videos, only simple drawings.",
+        "The text explains that AI learns from many real pictures and can now create pictures, voices and videos that look real, which can be used to deceive.",
+        [
+          "Artificial intelligence can now create pictures, voices and videos that look real",
+          "fakes are becoming harder to recognize"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the program start with when it makes a picture?",
+        "Random noise, like television static.",
+        "A photo taken by the user.",
+        "A drawing made by hand.",
+        "The text says that the program starts with random noise, like television static, and slowly removes it.",
+        "starts with random noise, like television static"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “matches” means…",
+        "fits well with.",
+        "hides from.",
+        "argues with.",
+        "The text says that a picture appears that matches the words, which means that it fits the description well.",
+        "until a picture appears that matches the words"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “But they can also be used to deceive” refers to…",
+        "the AI tools.",
+        "the real pictures.",
+        "the relatives.",
+        "The sentence before talks about the good uses of these tools, and the tools can also be used to deceive.",
+        "These tools have good uses, such as art, film effects and helping people who lost their voice. But they can also be used to deceive"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which company made the first deepfake.",
+        "What a deepfake can do.",
+        "What good uses these tools have.",
+        "The text does not say which company made the first deepfake. It says what a deepfake can do and what good uses the tools have.",
+        [
+          "can place a person’s face on another body in a video or copy a voice from a short recording",
+          "art, film effects and helping people who lost their voice"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Looking carefully may not be enough to spot fakes in the future.",
+        "Fakes will soon disappear from the internet for good.",
+        "Only the oldest fakes are hard to find today.",
+        "The text says that the tools are improving quickly, so fakes are becoming harder to recognize.",
+        "The tools are improving quickly, so fakes are becoming harder to recognize."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Use several checks to spot a fake image, and pause before sharing.",
+        "Fake images always have extra fingers, so one look is enough.",
+        "Fake images can be spotted only by experts with special tools.",
+        "The text explains that no single clue works every time, so several checks are needed, and that pausing before sharing is the most important habit.",
+        [
+          "no single clue works every time",
+          "The most important habit is to pause before sharing"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is a reverse image search used for?",
+        "To find where else an image appeared.",
+        "To make an image larger.",
+        "To change the colors of an image.",
+        "The text says that a reverse image search is a tool that finds where else an image appeared.",
+        "a tool that finds where else an image appeared"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “dramatic” means…",
+        "very exciting and powerful.",
+        "very small and plain.",
+        "very old and faded.",
+        "The text says that a very dramatic picture that no reliable source shows is suspicious, which means a picture that is very exciting and powerful.",
+        "a very dramatic picture that no reliable source shows"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “these” in “but these are not complete” refers to…",
+        "the invisible marks and content labels.",
+        "the AI images that people share online.",
+        "the reliable news sites that check facts.",
+        "The sentence says that some companies add invisible marks or content labels to AI images, but these marks and labels are not complete.",
+        "add invisible marks or content labels to AI images, but these are not complete"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many fake images are shared each day.",
+        "What a real news photo usually has.",
+        "What writing in a fake image may look like.",
+        "The text does not say how many fake images are shared each day. It says what a real news photo usually has and what writing in a fake may look like.",
+        [
+          "A real news photo usually has a source, a date and a place",
+          "writing that turns into nonsense"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why is it a good idea to pause before sharing an image that makes you angry?",
+        "Strong feelings can make us share without checking.",
+        "Angry people cannot use phones.",
+        "Images that cause anger are always real.",
+        "The text says that the most important habit is to pause before sharing, especially when an image makes you angry or afraid.",
+        "pause before sharing, especially when an image makes you angry or afraid"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "artificial",
+          "made by people, not natural"
+        ],
+        [
+          "angles",
+          "the different directions from which you look at something"
+        ],
+        [
+          "static",
+          "unwanted noise or small dots on a screen"
+        ],
+        [
+          "deceive",
+          "to make someone believe something that is not true"
+        ],
+        [
+          "improving",
+          "getting better"
+        ]
+      ],
+      "B": [
+        [
+          "clue",
+          "a sign that helps you find the answer"
+        ],
+        [
+          "regular",
+          "following an exact, even pattern"
+        ],
+        [
+          "nonsense",
+          "words that have no meaning"
+        ],
+        [
+          "reliable",
+          "able to be trusted"
+        ],
+        [
+          "suspicious",
+          "making you think that something is wrong"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 101,
+    "slug": "unseen-reading-part-101",
+    "theme": "Habits",
+    "blurb": "how habits form, why we procrastinate",
+    "texts": {
+      "A": {
+        "title": "How Habits Form",
+        "text": "A habit is a behavior that you repeat so often that you do it almost without thinking. Habits are useful, because the brain saves effort when it does not have to decide every time. Researchers describe a habit loop with three parts. First, there is a cue, a signal that starts the habit, such as the morning alarm, a certain time or a place. Second, there is the routine, the behavior itself, such as brushing your teeth or checking your phone. Third, there is the reward, a good result that tells the brain, “This was worth repeating.” After many repetitions, the cue alone can start the routine. In one study in London in 2009, volunteers chose a new daily habit, such as drinking a glass of water after lunch. On average, it took them about two months to make it automatic, but the time varied from less than three weeks to more than eight months."
+      },
+      "B": {
+        "title": "Why We Procrastinate",
+        "text": "Procrastination means delaying something that you need to do, even though you know that the delay will probably make things worse. Many people think that procrastinators are lazy, but psychologists often see it differently. The main problem is not time but feelings. A task may make us bored, anxious, confused or afraid of failing, and the brain wants to avoid these bad feelings now. Choosing a video instead of a report gives a quick, small reward, while the benefit of finishing the report comes later. People tend to give too much weight to the present, which researchers call present bias. There are ways to deal with it. Break the task into very small steps, and start with five minutes; the hardest part is usually the beginning. Remove distractions, set a clear deadline and tell someone about it. Finally, be kind to yourself. Studies suggest that people who forgive themselves for delaying are less likely to delay again."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Habits form when a cue, a routine and a reward are repeated.",
+        "Habits form after exactly one week for every person.",
+        "Habits form only when a person thinks hard about each step.",
+        "The text explains the habit loop of cue, routine and reward, and says that after many repetitions the cue alone can start the routine.",
+        [
+          "Researchers describe a habit loop with three parts",
+          "After many repetitions, the cue alone can start the routine"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "About how long did it take volunteers to make a habit automatic, on average?",
+        "About two months.",
+        "About two days.",
+        "About two years.",
+        "The text says that on average it took the volunteers about two months to make the habit automatic.",
+        "it took them about two months to make it automatic"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “varied” means…",
+        "was different each time.",
+        "stayed exactly the same.",
+        "was never counted.",
+        "The text says that the time varied from less than three weeks to more than eight months, which means that it was different for different people.",
+        "the time varied from less than three weeks to more than eight months"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “to make it automatic” refers to…",
+        "the new habit.",
+        "the glass of water.",
+        "the study.",
+        "The sentence says that it took the volunteers about two months to make the new habit automatic.",
+        "it took them about two months to make it automatic"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which habit is the hardest to learn.",
+        "What a cue is.",
+        "Why habits are useful.",
+        "The text does not say which habit is the hardest to learn. It explains what a cue is and why habits are useful.",
+        [
+          "a signal that starts the habit",
+          "the brain saves effort when it does not have to decide every time"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the range from three weeks to eight months suggest?",
+        "Habits form at different speeds for different people.",
+        "Every habit takes exactly sixty-six days.",
+        "Habits can never be formed.",
+        "The text says that the time varied from less than three weeks to more than eight months, so people form habits at different speeds.",
+        "the time varied from less than three weeks to more than eight months"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "People procrastinate to avoid bad feelings, and small steps can help.",
+        "People procrastinate because they have too much free time.",
+        "People procrastinate only because they are lazy.",
+        "The text explains that procrastination is mainly about feelings, and suggests small steps and other ways to deal with it.",
+        [
+          "The main problem is not time but feelings",
+          "Break the task into very small steps"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does present bias mean, according to the text?",
+        "Giving too much weight to the present.",
+        "Forgetting what happened in the past.",
+        "Planning too far into the future.",
+        "The text says that people tend to give too much weight to the present, which researchers call present bias.",
+        "give too much weight to the present, which researchers call present bias"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “benefit” means…",
+        "good result.",
+        "heavy cost.",
+        "small mistake.",
+        "The text says that the benefit of finishing the report comes later, which means that the good result comes later.",
+        "the benefit of finishing the report comes later"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “tell someone about it” refers to…",
+        "the deadline.",
+        "the distraction.",
+        "the video.",
+        "The sentence says to set a clear deadline and to tell someone about the deadline.",
+        "set a clear deadline and tell someone about it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students procrastinate.",
+        "What the hardest part usually is.",
+        "What people who forgive themselves are less likely to do.",
+        "The text does not say how many students procrastinate. It says what the hardest part usually is and what people who forgive themselves are less likely to do.",
+        [
+          "the hardest part is usually the beginning",
+          "people who forgive themselves for delaying are less likely to delay again"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about being hard on yourself after delaying?",
+        "It may not help you to stop delaying.",
+        "It is the best way to stop delaying.",
+        "It makes the task easier.",
+        "The text says that people who forgive themselves for delaying are less likely to delay again.",
+        "people who forgive themselves for delaying are less likely to delay again"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "behavior",
+          "the way that someone acts"
+        ],
+        [
+          "cue",
+          "a signal that tells you to do something"
+        ],
+        [
+          "routine",
+          "a usual way of doing something"
+        ],
+        [
+          "reward",
+          "something good that you get for an action"
+        ],
+        [
+          "repetitions",
+          "times that something is done again"
+        ]
+      ],
+      "B": [
+        [
+          "delaying",
+          "waiting before doing something"
+        ],
+        [
+          "anxious",
+          "worried and nervous"
+        ],
+        [
+          "avoid",
+          "to stay away from something"
+        ],
+        [
+          "distractions",
+          "things that take your attention away"
+        ],
+        [
+          "deadline",
+          "the time by which something must be finished"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 102,
+    "slug": "unseen-reading-part-102",
+    "theme": "Trade Routes",
+    "blurb": "the Silk Road, the Manila galleons",
+    "texts": {
+      "A": {
+        "title": "The Silk Road",
+        "text": "The Silk Road was not one road but a network of trade routes that crossed Asia and linked China with the Mediterranean. The name was made popular in the nineteenth century by a German geographer, and the trade itself began more than two thousand years ago, during the Han dynasty in China. Chinese silk was the best-known product, but caravans also carried paper, porcelain, tea and spices, and they brought back horses, glass, gold and silver. Few traders traveled the whole way. Most goods passed from hand to hand through many markets, and oasis cities such as Samarkand became rich by hosting merchants. The Silk Road also carried ideas. Buddhism traveled from India to China along it, and inventions such as paper moved west. Diseases also traveled, and historians think that the plague spread along the routes in the fourteenth century. Sea routes slowly became cheaper, and the overland routes lost importance."
+      },
+      "B": {
+        "title": "The Manila Galleons",
+        "text": "From 1565 to 1815, Spanish ships called galleons crossed the Pacific Ocean every year between Manila in the Philippines and Acapulco in Mexico. Manila was important because Chinese merchants brought silk, porcelain and other goods there by ship. The Spanish bought these goods with silver, which came from mines in Mexico and Peru, and the galleons carried the Chinese goods to Acapulco. From there, they were taken across Mexico and often on to Spain. The voyage from Manila to Acapulco was long and dangerous, taking about four to six months, and many ships suffered from storms, hunger and disease. The route connected Asia, the Americas and Europe in a trade across the world, and it is sometimes called the first global trade route. It also moved people and plants, such as chili peppers, tomatoes, corn and sweet potatoes, which traveled from the Americas to Asia, and it influenced food and culture in the Philippines."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Silk Road was a network of routes that carried goods, ideas and diseases.",
+        "The Silk Road was a single paved road built by one emperor.",
+        "The Silk Road was a sea route that carried only silk.",
+        "The text explains that the Silk Road was a network of routes that carried goods, ideas and diseases across Asia.",
+        [
+          "The Silk Road was not one road but a network of trade routes",
+          "The Silk Road also carried ideas"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "During which Chinese dynasty did the trade begin?",
+        "The Han dynasty.",
+        "The Ming dynasty.",
+        "The Tang dynasty.",
+        "The text says that the trade began more than two thousand years ago, during the Han dynasty in China.",
+        "during the Han dynasty in China"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “hosting” means…",
+        "welcoming as guests.",
+        "sending away.",
+        "robbing.",
+        "The text says that oasis cities became rich by hosting merchants, which means that they welcomed the merchants as guests.",
+        "by hosting merchants"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “traveled from India to China along it” refers to…",
+        "the Silk Road.",
+        "Buddhism.",
+        "China.",
+        "The sentence says that Buddhism traveled from India to China along the Silk Road.",
+        "Buddhism traveled from India to China along it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people traveled the Silk Road each year.",
+        "Which products the caravans carried.",
+        "What made oasis cities rich.",
+        "The text does not say how many people traveled each year. It says what caravans carried and what made oasis cities rich.",
+        [
+          "paper, porcelain, tea and spices",
+          "became rich by hosting merchants"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about most traders?",
+        "They traveled only part of the way.",
+        "They traveled from China to Rome in one trip.",
+        "They never sold anything on the way.",
+        "The text says that few traders traveled the whole way and that most goods passed from hand to hand.",
+        "Few traders traveled the whole way. Most goods passed from hand to hand"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Manila galleons connected Asia, the Americas and Europe through trade.",
+        "The Manila galleons carried goods only between Spain and Mexico.",
+        "The Manila galleons were used only to fight wars in the Pacific.",
+        "The text explains that the galleons carried Chinese goods across the Pacific, connecting three continents in one trade.",
+        [
+          "Spanish ships called galleons crossed the Pacific Ocean every year",
+          "it is sometimes called the first global trade route"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How did the Spanish pay for Chinese goods?",
+        "With silver from Mexico and Peru.",
+        "With silk from Manila.",
+        "With tea from Mexico.",
+        "The text says that the Spanish bought the goods with silver, which came from mines in Mexico and Peru.",
+        "The Spanish bought these goods with silver, which came from mines in Mexico and Peru"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “suffered from” means…",
+        "had great trouble from.",
+        "were protected from.",
+        "were proud of.",
+        "The text says that many ships suffered from storms, hunger and disease, which means that they had great trouble from them.",
+        "many ships suffered from storms, hunger and disease"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “there” in “brought silk, porcelain and other goods there” refers to…",
+        "Manila.",
+        "Acapulco.",
+        "Spain.",
+        "The sentence says that Manila was important because Chinese merchants brought goods to Manila by ship.",
+        "Chinese merchants brought silk, porcelain and other goods there by ship"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many galleons were lost at sea.",
+        "How long the voyage took.",
+        "Which plants traveled to Asia.",
+        "The text does not say how many galleons were lost. It says how long the voyage took and which plants traveled to Asia.",
+        [
+          "taking about four to six months",
+          "chili peppers, tomatoes, corn and sweet potatoes"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the galleon trade and the Philippines?",
+        "It brought outside goods and ideas to the Philippines.",
+        "It left the Philippines cut off from the world.",
+        "It had no effect on food in the Philippines.",
+        "The text says that the route influenced food and culture in the Philippines.",
+        "it influenced food and culture in the Philippines"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "network",
+          "a system of connected lines or routes"
+        ],
+        [
+          "caravans",
+          "groups of traders who travel together with animals"
+        ],
+        [
+          "oasis",
+          "a place in a desert where there is water"
+        ],
+        [
+          "merchants",
+          "people who buy and sell goods"
+        ],
+        [
+          "importance",
+          "the quality of being valuable or needed"
+        ]
+      ],
+      "B": [
+        [
+          "galleons",
+          "large Spanish sailing ships"
+        ],
+        [
+          "silver",
+          "a shiny white metal used for coins"
+        ],
+        [
+          "voyage",
+          "a long trip by sea"
+        ],
+        [
+          "global",
+          "covering the whole world"
+        ],
+        [
+          "influenced",
+          "had an effect on"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 103,
+    "slug": "unseen-reading-part-103",
+    "theme": "The Week",
+    "blurb": "why the week has seven days, where the day names come from",
+    "texts": {
+      "A": {
+        "title": "Why the Week Has Seven Days",
+        "text": "Most calendar units come from nature: a day is one turn of the Earth, a month follows the Moon, and a year is one trip around the Sun. The week is different, because nothing in nature repeats every seven days. Historians think that the seven-day week came from ancient Babylon, where people watched seven bright objects that moved across the sky: the Sun, the Moon and five planets that can be seen without a telescope. The number seven was also important in Jewish tradition, in which the seventh day is a day of rest, and this helped the seven-day week to spread. The Romans used an eight-day market week for a long time, but later changed to seven days, and the seven-day week spread to much of the world with Christianity and Islam. Several attempts to change it, for example in France after 1793, failed, because people did not want to lose the day of rest."
+      },
+      "B": {
+        "title": "Where the Names of the Days Come From",
+        "text": "The names of the days in English come from the Sun, the Moon and the gods of ancient peoples. The Romans named the seven days after the Sun, the Moon and five planets, which they connected with their gods: Mars, Mercury, Jupiter, Venus and Saturn. When the Germanic peoples of northern Europe, including the Anglo-Saxons, adopted the week, they replaced most of the Roman gods with their own similar gods. Tiw, a god linked with war, took the place of Mars, so Tuesday means “Tiw’s day”. Wednesday comes from Woden, the chief god, who matched Mercury. Thursday is “Thor’s day”, for the god of thunder who matched Jupiter, and Friday is named for Frigg or Freya, a goddess who matched Venus. Saturday kept its Roman name, from Saturn. Sunday and Monday are simply “the Sun’s day” and “the Moon’s day”. In Spanish and French, the names still follow the Roman gods, for example martes in Spanish, from Mars."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The week is not based on nature, and its seven days probably have ancient roots.",
+        "The week is based on the Moon, which repeats every seven days.",
+        "The week was invented in France in 1793 to replace the month.",
+        "The text explains that nothing in nature repeats every seven days, and that historians trace the seven-day week to ancient Babylon.",
+        [
+          "The week is different, because nothing in nature repeats every seven days",
+          "Historians think that the seven-day week came from ancient Babylon"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the Babylonians watch in the sky?",
+        "Seven bright objects that moved.",
+        "Seven bright stars that never moved.",
+        "Seven comets that returned each year.",
+        "The text says that people in Babylon watched seven bright objects that moved across the sky.",
+        "watched seven bright objects that moved across the sky"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “failed” means…",
+        "did not succeed.",
+        "were very popular.",
+        "were not tried.",
+        "The text says that attempts to change the week failed, which means that they did not succeed.",
+        "failed, because people did not want to lose the day of rest"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “Several attempts to change it” refers to…",
+        "the week.",
+        "the day of rest.",
+        "Christianity.",
+        "The sentence says that several attempts to change the week, for example in France after 1793, failed.",
+        "Several attempts to change it, for example in France after 1793"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which day of the week was named first.",
+        "What the Romans used for a long time.",
+        "Why the French attempt failed.",
+        "The text does not say which day was named first. It says what the Romans used for a long time and why the French attempt failed.",
+        [
+          "eight-day market week for a long time",
+          "people did not want to lose the day of rest"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about the day of rest?",
+        "People valued it enough to keep the seven-day week.",
+        "People wanted to give up the day of rest.",
+        "People did not notice the day of rest.",
+        "The text says that the attempts failed because people did not want to lose the day of rest.",
+        "people did not want to lose the day of rest"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "English day names come from the Sun, the Moon and old gods.",
+        "English day names come from the names of Roman emperors.",
+        "English day names come from the months of the year.",
+        "The text explains that the English day names come from the Sun, the Moon and the gods of the Romans and the Germanic peoples.",
+        [
+          "The names of the days in English come from the Sun, the Moon and the gods of ancient peoples",
+          "they replaced most of the Roman gods with their own similar gods"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which god gave his name to Thursday?",
+        "Thor.",
+        "Tiw.",
+        "Woden.",
+        "The text says that Thursday is “Thor’s day”.",
+        "Thursday is “Thor’s day”"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “chief” means…",
+        "most important.",
+        "youngest.",
+        "weakest.",
+        "The text says that Woden was the chief god, which means the most important god.",
+        "Woden, the chief god"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “who” in “who matched Mercury” refers to…",
+        "Woden.",
+        "Tiw.",
+        "Thor.",
+        "The sentence says that Wednesday comes from Woden, the chief god, and Woden matched Mercury.",
+        "Wednesday comes from Woden, the chief god, who matched Mercury"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Why Saturn was an important god.",
+        "Which day kept its Roman name.",
+        "What the Spanish name martes comes from.",
+        "The text does not say why Saturn was important. It says that Saturday kept its Roman name and that martes comes from Mars.",
+        [
+          "Saturday kept its Roman name, from Saturn",
+          "martes in Spanish, from Mars"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the Spanish word martes suggest?",
+        "Some languages kept the Roman god names.",
+        "Spanish uses the names of Norse gods.",
+        "Spanish has no names for the days.",
+        "The text says that in Spanish and French the names still follow the Roman gods, for example martes, from Mars.",
+        "In Spanish and French, the names still follow the Roman gods"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "units",
+          "standard amounts used for measuring"
+        ],
+        [
+          "repeats",
+          "happens again"
+        ],
+        [
+          "tradition",
+          "a custom passed down over many years"
+        ],
+        [
+          "spread",
+          "to move to more places"
+        ],
+        [
+          "attempts",
+          "tries"
+        ]
+      ],
+      "B": [
+        [
+          "planets",
+          "large objects that move around the Sun"
+        ],
+        [
+          "adopted",
+          "started to use"
+        ],
+        [
+          "similar",
+          "almost the same"
+        ],
+        [
+          "thunder",
+          "the loud noise that follows lightning"
+        ],
+        [
+          "simply",
+          "only, and nothing more"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 104,
+    "slug": "unseen-reading-part-104",
+    "theme": "Germs and Vaccines",
+    "blurb": "germ theory, Jenner and the first vaccine",
+    "texts": {
+      "A": {
+        "title": "Germ Theory: Semmelweis and Pasteur",
+        "text": "For most of history, people did not know that tiny living things can cause disease. Many doctors believed in “bad air”. In 1847, a Hungarian doctor named Ignaz Semmelweis worked in a hospital in Vienna, where many mothers died of a fever after giving birth. He noticed that deaths were much higher in the ward where doctors worked than in the ward where midwives worked. The doctors often came straight from examining dead bodies. Semmelweis ordered them to wash their hands with a chlorine solution, and the deaths fell sharply. But he could not explain why, and many doctors rejected his idea, because it seemed to blame them. In the 1860s, the French scientist Louis Pasteur showed that microbes in the air and in liquids are living things. Later, Robert Koch linked specific germs to specific diseases. The germ theory changed medicine, and led to clean surgery, sterilizing tools and public hygiene."
+      },
+      "B": {
+        "title": "Jenner and the First Vaccine",
+        "text": "Smallpox was one of the deadliest diseases in history. It killed about three in ten of the people who caught it, and it left many survivors blind or with deep scars. In the 1790s, an English country doctor, Edward Jenner, heard a local belief that milkmaids who had caught cowpox, a mild disease of cows, did not catch smallpox. In May 1796, Jenner took fluid from a cowpox sore on a milkmaid’s hand and put it into small cuts on the arm of an eight-year-old boy, James Phipps. The boy had a mild fever and recovered. Later, Jenner tried to infect the boy with smallpox, and the boy did not become ill. Jenner called the method vaccination, from the Latin word for cow, vacca. Today, an experiment on a child like this would not be allowed. The method spread across the world, and in 1980 the World Health Organization announced that smallpox had been eradicated, which makes it the only human disease that has been removed completely."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Semmelweis and Pasteur helped to show that germs cause disease.",
+        "Semmelweis and Pasteur proved that disease comes from bad air.",
+        "Semmelweis and Pasteur showed that doctors should never wash their hands.",
+        "The text explains that Semmelweis found that handwashing saved lives, Pasteur showed that microbes are living things, and germ theory changed medicine.",
+        [
+          "Semmelweis ordered them to wash their hands with a chlorine solution, and the deaths fell sharply",
+          "The germ theory changed medicine"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did Semmelweis order the doctors to do?",
+        "Wash their hands with a chlorine solution.",
+        "Open all the windows of the ward.",
+        "Stop examining the dead bodies.",
+        "The text says that Semmelweis ordered the doctors to wash their hands with a chlorine solution.",
+        "Semmelweis ordered them to wash their hands with a chlorine solution"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “rejected” means…",
+        "refused to accept.",
+        "were glad to accept.",
+        "did not hear about.",
+        "The text says that many doctors rejected his idea, which means that they refused to accept it.",
+        "many doctors rejected his idea"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “because it seemed to blame them” refers to…",
+        "his idea.",
+        "the ward.",
+        "the fever.",
+        "The sentence says that many doctors rejected his idea, because the idea seemed to blame them.",
+        "many doctors rejected his idea, because it seemed to blame them"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many mothers Semmelweis saved.",
+        "Where Semmelweis worked.",
+        "What Robert Koch did.",
+        "The text does not say how many mothers Semmelweis saved. It says where he worked and what Koch did.",
+        [
+          "worked in a hospital in Vienna",
+          "Robert Koch linked specific germs to specific diseases"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why did many doctors reject Semmelweis’s idea?",
+        "It suggested that doctors carried the disease.",
+        "It was too expensive to test.",
+        "It had already been proved wrong.",
+        "The text says that the doctors often came straight from examining dead bodies, and that the idea seemed to blame them.",
+        "because it seemed to blame them"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Jenner’s cowpox vaccination led to the end of smallpox.",
+        "Jenner’s cowpox experiment proved that milk is dangerous.",
+        "Jenner’s cowpox vaccination was never used outside England.",
+        "The text explains that Jenner’s vaccination method spread across the world, and that smallpox was eradicated in 1980.",
+        [
+          "Jenner called the method vaccination",
+          "smallpox had been eradicated"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How old was James Phipps?",
+        "Eight.",
+        "Eighteen.",
+        "Eighty.",
+        "The text says that James Phipps was an eight-year-old boy.",
+        "an eight-year-old boy, James Phipps"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “survivors” means…",
+        "people who lived through it.",
+        "people who gave the disease.",
+        "people who treated the disease.",
+        "The text says that smallpox left many survivors blind or with scars, which means the people who lived through the disease.",
+        "left many survivors blind or with deep scars"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “put it into small cuts” refers to…",
+        "the fluid from the cowpox sore.",
+        "the milkmaid’s hand.",
+        "the boy’s arm.",
+        "The sentence says that Jenner took fluid from a cowpox sore and put the fluid into small cuts on the boy’s arm.",
+        "took fluid from a cowpox sore on a milkmaid’s hand and put it into small cuts"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people Jenner vaccinated.",
+        "Where the word vaccination comes from.",
+        "When smallpox was announced as eradicated.",
+        "The text does not say how many people Jenner vaccinated. It says where the word vaccination comes from and when smallpox was announced as eradicated.",
+        [
+          "from the Latin word for cow, vacca",
+          "in 1980 the World Health Organization announced"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence about an experiment on a child suggest?",
+        "Rules for medical experiments have changed since Jenner.",
+        "Jenner’s experiment is still the usual method.",
+        "Children are the best people to test vaccines on.",
+        "The text says that today an experiment on a child like this would not be allowed.",
+        "Today, an experiment on a child like this would not be allowed."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "ward",
+          "a room in a hospital for patients"
+        ],
+        [
+          "midwives",
+          "people trained to help women give birth"
+        ],
+        [
+          "solution",
+          "a liquid in which a substance is mixed"
+        ],
+        [
+          "microbes",
+          "very small living things"
+        ],
+        [
+          "sterilizing",
+          "making free from germs"
+        ]
+      ],
+      "B": [
+        [
+          "deadliest",
+          "most likely to cause death"
+        ],
+        [
+          "scars",
+          "marks left on the skin after an injury or illness"
+        ],
+        [
+          "infect",
+          "to pass germs to someone"
+        ],
+        [
+          "eradicated",
+          "completely removed"
+        ],
+        [
+          "method",
+          "a way of doing something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 105,
+    "slug": "unseen-reading-part-105",
+    "theme": "Paper and Libraries",
+    "blurb": "how paper traveled from China, the Library of Alexandria",
+    "texts": {
+      "A": {
+        "title": "How Paper Traveled From China",
+        "text": "Before paper, people wrote on clay, stone, wood, bamboo, silk and papyrus. These materials were heavy, expensive or difficult to make. Paper was a better idea: thin fibers from plants or old cloth are mixed with water, spread on a screen and dried into a flat sheet. Chinese craftsmen were making paper by the second century BC, and in the year 105 an official named Cai Lun presented an improved method to the emperor. For several centuries, paper stayed mainly in East Asia. It reached Korea and Japan, and then, by the eighth century, Central Asia and the Islamic world, where paper mills were built in cities such as Samarkand and Baghdad. A famous story says that the secret came west after a battle in 751, when some Chinese papermakers were captured, but historians think that paper was already known in Central Asia before this. In Europe, the first paper mills appeared in Spain and Italy around the twelfth and thirteenth centuries. After the printing press arrived, paper became essential for books."
+      },
+      "B": {
+        "title": "The Library of Alexandria",
+        "text": "The Library of Alexandria, in Egypt, was founded in the early third century BC under the Ptolemies, the Greek kings who ruled Egypt after Alexander the Great. Its aim was to collect all the knowledge of the world. According to ancient writers, ships that came into the port were searched, and any books on board were copied, and the library kept the originals. Books were scrolls, usually made of papyrus, and the collection may have grown to hundreds of thousands of scrolls, although nobody knows the exact number. Scholars from many places worked there. One of them, Eratosthenes, calculated the size of the Earth with surprising accuracy. A popular story says that the library was destroyed in a single great fire. In fact, historians think that it declined slowly: a fire in 48 BC, during Julius Caesar’s war in Alexandria, damaged part of the collection, and later the library lost money and support, and the scholars left. Papyrus scrolls also rot easily, so texts had to be copied again and again."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Paper was invented in China and slowly spread west over many centuries.",
+        "Paper was invented in Europe and then taken to China by monks.",
+        "Paper was invented by Gutenberg to make his printing press.",
+        "The text explains that Chinese craftsmen made paper, and that it slowly spread through Asia to the Islamic world and Europe.",
+        [
+          "Chinese craftsmen were making paper by the second century BC",
+          "In Europe, the first paper mills appeared in Spain and Italy"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is paper made from, according to the text?",
+        "Thin fibers from plants or old cloth.",
+        "Thin sheets of clay and wood.",
+        "Thin layers of animal skin.",
+        "The text says that thin fibers from plants or old cloth are mixed with water, spread on a screen and dried.",
+        "thin fibers from plants or old cloth are mixed with water"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “presented” means…",
+        "showed formally.",
+        "kept secret from.",
+        "sold cheaply to.",
+        "The text says that Cai Lun presented an improved method to the emperor, which means that he showed it formally.",
+        "presented an improved method to the emperor"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It reached Korea and Japan” refers to…",
+        "paper.",
+        "the emperor.",
+        "East Asia.",
+        "The sentence says that paper stayed mainly in East Asia, and then paper reached Korea and Japan.",
+        "paper stayed mainly in East Asia. It reached Korea and Japan"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who built the first paper mill in Europe.",
+        "What people used before paper.",
+        "Which cities built mills in the Islamic world.",
+        "The text does not say who built the first paper mill in Europe. It says what people used before paper and which cities built mills in the Islamic world.",
+        [
+          "people wrote on clay, stone, wood, bamboo, silk and papyrus",
+          "paper mills were built in cities such as Samarkand and Baghdad"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the story of the captured papermakers?",
+        "It may not be the whole truth.",
+        "It is the only true story of how paper spread.",
+        "It was written by Cai Lun.",
+        "The text says that historians think that paper was already known in Central Asia before this battle.",
+        "but historians think that paper was already known in Central Asia before this"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The great library collected world knowledge and then slowly declined.",
+        "The great library was destroyed in a single fire that ended everything.",
+        "The great library held only a few scrolls, all written by one king.",
+        "The text explains that the library aimed to collect all knowledge, and that it declined slowly rather than in one fire.",
+        [
+          "Its aim was to collect all the knowledge of the world",
+          "historians think that it declined slowly"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the library do with books that came on ships?",
+        "It copied them and kept the originals.",
+        "It returned them to the sailors.",
+        "It burned them in the harbor.",
+        "The text says that, according to ancient writers, books on ships were copied and the library kept the originals.",
+        "any books on board were copied, and the library kept the originals"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “aim” means…",
+        "goal.",
+        "name.",
+        "size.",
+        "The text says that the aim of the library was to collect all the knowledge of the world, which means that this was its goal.",
+        "Its aim was to collect all the knowledge of the world"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “that it declined slowly” refers to…",
+        "the library.",
+        "the fire.",
+        "the war.",
+        "The sentence says that historians think that the library declined slowly.",
+        "historians think that it declined slowly"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many librarians worked in the library.",
+        "What Eratosthenes calculated.",
+        "Why scrolls had to be copied again and again.",
+        "The text does not say how many librarians worked there. It says what Eratosthenes calculated and why scrolls had to be copied.",
+        [
+          "calculated the size of the Earth with surprising accuracy",
+          "Papyrus scrolls also rot easily"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the story of one great fire?",
+        "It is too simple to explain what happened.",
+        "It is completely true in every detail.",
+        "It was written by Eratosthenes.",
+        "The text says that a popular story speaks of a single great fire, but that historians think that the library declined slowly.",
+        "A popular story says that the library was destroyed in a single great fire. In fact, historians think that it declined slowly"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "fibers",
+          "thin threads"
+        ],
+        [
+          "craftsmen",
+          "people who make things by hand with skill"
+        ],
+        [
+          "improved",
+          "made better"
+        ],
+        [
+          "captured",
+          "taken prisoner"
+        ],
+        [
+          "essential",
+          "completely necessary"
+        ]
+      ],
+      "B": [
+        [
+          "founded",
+          "started, usually to last a long time"
+        ],
+        [
+          "originals",
+          "the first copies, not the copies made later"
+        ],
+        [
+          "scholars",
+          "people who study a subject in depth"
+        ],
+        [
+          "accuracy",
+          "the quality of being correct"
+        ],
+        [
+          "declined",
+          "became smaller or weaker"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 106,
+    "slug": "unseen-reading-part-106",
+    "theme": "Light and Power",
+    "blurb": "how electric light changed the night, how electricity reached homes",
+    "texts": {
+      "A": {
+        "title": "How Electric Light Changed the Night",
+        "text": "For most of history, the night was dark. People used fire, candles and oil lamps, which gave weak light and often caused fires. In the early 1800s, some cities began to use gas lamps in streets and homes, which was a big improvement, but gas lamps were smelly, produced soot and could explode. Electric light was different. In 1879, Thomas Edison and his team in New Jersey built a practical light bulb with a thin carbon thread inside a glass bulb with almost no air, so that the thread glowed for many hours without burning. Joseph Swan in England was working on similar bulbs at the same time, and several inventors had made earlier versions, but Edison’s was the first to be practical and sold to many people. Electric light was cleaner, safer and brighter. It allowed people to work, study and travel after dark, and it changed how cities looked at night. Some scientists today study light pollution, because too much artificial light hides the stars and can disturb animals and sleep."
+      },
+      "B": {
+        "title": "How Electricity Reached Homes",
+        "text": "A light bulb is useless without electricity, so the second step was to deliver electricity to people. In 1882, Edison opened the Pearl Street Station in New York, one of the first power stations that sold electricity to customers. It used direct current, which can travel only short distances, so a station had to be close to its customers. Soon, another system, alternating current, was developed, and it could be sent over long distances at high voltage and then reduced before entering homes. After a fierce rivalry between supporters of the two systems, alternating current became the standard for power grids. Big cities got electricity first, because many customers lived close together. In rural areas, the lines were expensive to build, and electricity arrived decades later, often with help from governments. In the Philippines, many communities got electricity through electric cooperatives, but even today some remote islands rely on small local generators."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Electric light replaced fire and gas lamps and changed life after dark.",
+        "Electric light was invented by one person with no earlier ideas.",
+        "Electric light caused people to stop working after dark.",
+        "The text explains that electric light was cleaner, safer and brighter than fire and gas, and changed what people could do after dark.",
+        [
+          "Electric light was cleaner, safer and brighter",
+          "It allowed people to work, study and travel after dark"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was inside Edison’s bulb?",
+        "A thin carbon thread and almost no air.",
+        "A small gas flame and a lot of air.",
+        "A thin silver wire and water.",
+        "The text says that Edison’s bulb had a thin carbon thread inside a glass bulb with almost no air.",
+        "a thin carbon thread inside a glass bulb with almost no air"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “glowed” means…",
+        "gave out light.",
+        "made a loud noise.",
+        "grew larger.",
+        "The text says that the thread glowed for many hours without burning, which means that it gave out light.",
+        "so that the thread glowed for many hours"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it changed how cities looked at night” refers to…",
+        "electric light.",
+        "the night.",
+        "gas.",
+        "The sentence says that electric light allowed people to work, study and travel after dark, and electric light changed how cities looked at night.",
+        "It allowed people to work, study and travel after dark, and it changed how cities looked at night"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much an early bulb cost.",
+        "What gas lamps produced.",
+        "Who worked on similar bulbs in England.",
+        "The text does not say how much an early bulb cost. It says what gas lamps produced and that Swan worked on similar bulbs in England.",
+        [
+          "produced soot and could explode",
+          "Joseph Swan in England was working on similar bulbs"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about Edison’s bulb?",
+        "Its main advance was that it was practical to use.",
+        "It was the first light made by electricity ever.",
+        "It was never sold to the public.",
+        "The text says that several inventors had made earlier versions, but that Edison’s was the first to be practical and sold to many people.",
+        "Edison’s was the first to be practical and sold to many people"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Electricity reached homes through power stations and grids, first in cities.",
+        "Electricity reached homes first in villages, then in cities.",
+        "Electricity reached homes without any wires or stations.",
+        "The text explains that power stations and grids brought electricity to customers, first in big cities and later in rural areas.",
+        [
+          "the second step was to deliver electricity to people",
+          "Big cities got electricity first"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What was the problem of direct current?",
+        "It can travel only short distances.",
+        "It could not light any bulbs.",
+        "It was never used in New York.",
+        "The text says that direct current can travel only short distances.",
+        "It used direct current, which can travel only short distances"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fierce” means…",
+        "very strong and angry.",
+        "very short and quiet.",
+        "very friendly.",
+        "The text says that there was a fierce rivalry between the supporters of the two systems, which means a very strong and angry rivalry.",
+        "After a fierce rivalry"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “and it could be sent over long distances” refers to…",
+        "alternating current.",
+        "direct current.",
+        "the power station.",
+        "The sentence says that alternating current was developed, and alternating current could be sent over long distances.",
+        "another system, alternating current, was developed, and it could be sent over long distances"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people worked at the Pearl Street Station.",
+        "Why big cities got electricity first.",
+        "What happened in rural areas.",
+        "The text does not say how many people worked at the station. It says why big cities got electricity first and what happened in rural areas.",
+        [
+          "many customers lived close together",
+          "In rural areas, the lines were expensive to build"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about electricity in the Philippines?",
+        "Not every community is connected to the main grid.",
+        "Every island has a large power station.",
+        "Electric cooperatives were never used.",
+        "The text says that some remote islands rely on small local generators.",
+        "some remote islands rely on small local generators"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "soot",
+          "black powder made by smoke"
+        ],
+        [
+          "explode",
+          "to burst with a loud noise"
+        ],
+        [
+          "practical",
+          "useful in real life"
+        ],
+        [
+          "pollution",
+          "harmful or unwanted things in the environment"
+        ],
+        [
+          "disturb",
+          "to interrupt or upset"
+        ]
+      ],
+      "B": [
+        [
+          "customers",
+          "people who buy something"
+        ],
+        [
+          "distances",
+          "amounts of space between two places"
+        ],
+        [
+          "voltage",
+          "the force of an electric current"
+        ],
+        [
+          "rural",
+          "in the countryside"
+        ],
+        [
+          "generators",
+          "machines that make electricity"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 107,
+    "slug": "unseen-reading-part-107",
+    "theme": "Finding the Way",
+    "blurb": "the compass, the longitude problem",
+    "texts": {
+      "A": {
+        "title": "The Compass",
+        "text": "A magnet attracts iron, and a freely moving magnetized needle always turns to point roughly north and south. The Chinese noticed the properties of a natural magnet called lodestone more than two thousand years ago, and at first they used it mostly for fortune telling and for choosing the best places to build. By the eleventh or twelfth century, Chinese sailors were using magnetic needles on ships, floating in water or hanging from a thread, to find direction when the sky was cloudy. The knowledge reached Europe and the Islamic world by the twelfth century. In the following centuries, the compass was improved: the needle was fixed on a pivot above a card marked with directions, in a box that protected it from wind. The compass did not tell a sailor where he was, only which direction he was facing. But it made long voyages out of sight of land much safer, and it helped the Age of Exploration in the fifteenth and sixteenth centuries."
+      },
+      "B": {
+        "title": "The Longitude Problem",
+        "text": "To find a position on the Earth, a navigator needs two numbers: latitude, how far north or south, and longitude, how far east or west. Latitude was easy to measure, because the angle of the Sun at noon, or of the North Star at night, changes with the distance from the equator. Longitude was much harder. The Earth turns by fifteen degrees every hour, so the difference between the local time and the time at a home port shows the distance east or west. For example, if a clock from the home port shows three o’clock when the Sun is highest on the ship, the ship is 45 degrees away. But this requires a clock that keeps exact time at sea, and pendulum clocks did not work on rolling ships. Many ships were lost because their captains did not know their position. In 1714, the British government offered a large prize for a solution. The English clockmaker John Harrison spent decades making a series of sea clocks, and his fourth, finished in 1761, lost only a few seconds during a long voyage to Jamaica."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The compass was developed over centuries and made long sea voyages safer.",
+        "The compass was invented in Europe to find the position of a ship.",
+        "The compass was used only for fortune telling and never at sea.",
+        "The text explains that the Chinese noticed lodestone, then used magnetic needles on ships, and that the compass made long voyages safer.",
+        [
+          "The Chinese noticed the properties of a natural magnet called lodestone",
+          "it made long voyages out of sight of land much safer"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the Chinese first use lodestone for?",
+        "Fortune telling and choosing places to build.",
+        "Cutting stone and making wooden boxes.",
+        "Sailing across the sea to other lands.",
+        "The text says that at first they used lodestone mostly for fortune telling and for choosing the best places to build.",
+        "mostly for fortune telling and for choosing the best places to build"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “freely” means…",
+        "without being held.",
+        "very slowly.",
+        "in a straight line only.",
+        "The text says that a freely moving needle turns to point north and south, which means that it moves without being held.",
+        "a freely moving magnetized needle"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “a box that protected it from wind” refers to…",
+        "the needle.",
+        "the card.",
+        "the pivot.",
+        "The sentence says that the needle was fixed on a pivot above a card, in a box that protected the needle from wind.",
+        "in a box that protected it from wind"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who built the first compass box.",
+        "What the compass could not tell a sailor.",
+        "When the Age of Exploration was.",
+        "The text does not say who built the first compass box. It says what the compass could not tell a sailor and when the Age of Exploration was.",
+        [
+          "did not tell a sailor where he was",
+          "fifteenth and sixteenth centuries"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about a sailor with only a compass?",
+        "He still needed another way to know his position.",
+        "He always knew exactly where he was.",
+        "He could not know his direction.",
+        "The text says that the compass did not tell a sailor where he was, only which direction he was facing.",
+        "The compass did not tell a sailor where he was, only which direction he was facing."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Finding longitude needed an exact clock, which Harrison finally built.",
+        "Finding longitude was easy because the North Star shows it.",
+        "Finding longitude needed a larger ship, which the government built.",
+        "The text explains that longitude was hard to find because it needed an exact clock at sea, and that Harrison built clocks that worked.",
+        [
+          "Longitude was much harder",
+          "But this requires a clock that keeps exact time at sea"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many degrees does the Earth turn every hour?",
+        "Fifteen.",
+        "Five.",
+        "Sixty.",
+        "The text says that the Earth turns by fifteen degrees every hour.",
+        "The Earth turns by fifteen degrees every hour"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “rolling” means…",
+        "moving from side to side.",
+        "standing still in port.",
+        "sinking slowly.",
+        "The text says that pendulum clocks did not work on rolling ships, which means ships that move from side to side on the waves.",
+        "did not work on rolling ships"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “But this requires a clock” refers to…",
+        "finding longitude by comparing times.",
+        "measuring latitude with the Sun.",
+        "sailing without a compass.",
+        "The sentences before explain that the difference in time shows the distance east or west, and this method requires a clock that keeps exact time at sea.",
+        [
+          "the difference between the local time and the time at a home port shows the distance east or west",
+          "But this requires a clock that keeps exact time at sea"
+        ]
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much prize money Harrison received.",
+        "When the government offered a prize.",
+        "Where the fourth clock was tested.",
+        "The text does not say how much prize money Harrison received. It says when the prize was offered and that the fourth clock was tested on a voyage to Jamaica.",
+        [
+          "In 1714, the British government offered a large prize",
+          "a long voyage to Jamaica"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why were many ships lost?",
+        "Captains could not tell how far east or west they were.",
+        "The North Star could not be seen at all.",
+        "The ships were too small for the sea.",
+        "The text says that many ships were lost because their captains did not know their position.",
+        "Many ships were lost because their captains did not know their position."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "magnet",
+          "a piece of metal that attracts iron"
+        ],
+        [
+          "lodestone",
+          "a natural rock that works as a magnet"
+        ],
+        [
+          "pivot",
+          "a point on which something turns"
+        ],
+        [
+          "protected",
+          "kept safe from harm"
+        ],
+        [
+          "exploration",
+          "the act of traveling to discover new places"
+        ]
+      ],
+      "B": [
+        [
+          "navigator",
+          "a person who plans the route of a ship"
+        ],
+        [
+          "equator",
+          "the imaginary line around the middle of the Earth"
+        ],
+        [
+          "degrees",
+          "units for measuring angles and positions on the Earth"
+        ],
+        [
+          "pendulum",
+          "a weight that swings to and fro"
+        ],
+        [
+          "solution",
+          "an answer to a problem"
+        ]
+      ]
+    }
   }
 ];
