@@ -124,6 +124,18 @@ const META = [
   [93, "Putting money to work: what a share is, and why spreading your money lowers the risk"],
   [94, "Money across borders: why exchange rates move, and what they mean for families who receive remittances"],
   [95, "Not falling for it: how common scams work, and habits that protect you"],
+  [96, "Reading numbers carefully: when two things move together, and when a picture tells only half the story"],
+  [97, "Better arguments: the tricks that look like reasons, and the habits of people who disagree well"],
+  [98, "Where the attention goes: why multitasking does not work, and why phones are so hard to put down"],
+  [99, "Who decides what you see: how feed algorithms choose, and what echo chambers do"],
+  [100, "Seeing is not believing: how AI makes fake images, and how to check what you see"],
+  [101, "Why we do what we do: how habits form, and why we put things off"],
+  [102, "Roads of trade: the Silk Road across Asia, and the galleons across the Pacific"],
+  [103, "Seven days and their names: why the week exists, and the gods and planets behind Monday to Sunday"],
+  [104, "How medicine learned about germs: the doctor who washed his hands, and the vaccine that ended smallpox"],
+  [105, "Keeping knowledge: how paper spread from China, and the great library of Alexandria"],
+  [106, "Lighting up the world: the bulb that changed the night, and the wires that brought it home"],
+  [107, "Finding the way at sea: the needle that points north, and the clock that solved longitude"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
