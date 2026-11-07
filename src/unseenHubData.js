@@ -140,13 +140,23 @@ const META = [
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
 
+// The number shown on screen ("Unseen Case #1"). It follows the order of the hub: shelves in the order of UNSEEN_SHELVES,
+// and inside a shelf the order of META. The part number stays the lesson's real id (links, saved scores and shares use it).
+// Part 5 (Doriel's lesson) is not in the hub, so it gets the number after the last hub lesson.
+const SHELF_ORDER = new Map(UNSEEN_SHELVES.map((s, i) => [s.id, i]));
+const HUB_ORDER = META.map(([part], i) => ({ part, i }))
+  .sort((a, b) => SHELF_ORDER.get(UNSEEN_SHELF_BY_PART[a.part]) - SHELF_ORDER.get(UNSEEN_SHELF_BY_PART[b.part]) || a.i - b.i)
+  .map((x) => x.part);
+const CASE_NO = new Map(HUB_ORDER.map((part, i) => [part, i + 1]));
+export function unseenCaseNo(part) { return CASE_NO.get(part) || CASE_NO.size + 1; }
+
 export function buildUnseenHubLessons() {
   const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8, ...UNSEEN_PARTS_9];
   const byPart = new Map(configs.map((c) => [c.part, c]));
   return META.map(([part, link]) => {
     const c = byPart.get(part);
     return {
-      part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, 
+      part, caseNo: unseenCaseNo(part), shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, 
       a: c.texts.A.title, b: c.texts.B.title,
       questions: buildLesson(c).items.length, wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
     };

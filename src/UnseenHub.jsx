@@ -77,7 +77,7 @@ export default function UnseenHub({ canOpen }) {
         {list.map((l) => (
           <article key={l.part} id={`uh-p${l.part}`} className={`uh-tile uh-c-${l.shelf} ${popped === l.part ? "is-pop" : ""}`} onAnimationEnd={() => setPopped(null)}>
             <div className="uh-top">
-              <span className="uh-no">No. {l.part}</span>
+              <span className="uh-no">No. {l.caseNo}</span>
               <span className="uh-shelf">{shelfName(l.shelf)}</span>
             </div>
             <h3>{l.title}</h3>
