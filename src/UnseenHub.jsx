@@ -28,7 +28,6 @@ export default function UnseenHub({ canOpen }) {
     return [l.title, l.a, l.b, l.link, ...(l.wordsA || []), ...(l.wordsB || [])].join(" ").toLowerCase().includes(needle);
   });
   const shelfName = (id) => UNSEEN_SHELVES.find((s) => s.id === id)?.name || "";
-  const ribbon = paired.map((l) => l.title);
 
   function surprise() {
     if (!paired.length) return;
@@ -43,17 +42,6 @@ export default function UnseenHub({ canOpen }) {
 
   return (
     <div className="uh">
-      <div className="uh-intro">
-        <p>Pick a pair of texts that belong together. Not sure which? Let the page choose.</p>
-        <span className="uh-tally">{paired.length} pairs · {paired.length * 2} texts · {paired.length * 10} words</span>
-      </div>
-
-      {ribbon.length > 0 && (
-        <div className="uh-ribbon" aria-hidden="true">
-          <div>{[0, 1].map((n) => ribbon.map((t) => <span key={`${n}-${t}`}>{t}</span>))}</div>
-        </div>
-      )}
-
       <div className="uh-tools">
         <div className="uh-row">
           <label className="uh-search">
