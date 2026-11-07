@@ -113,18 +113,16 @@ import E8ReadingReactionsLesson from './E8ReadingReactionsLesson.jsx'
 import E8Task5Lesson from './E8Task5Lesson.jsx'
 import E8Task6Lesson from './E8Task6Lesson.jsx'
 import E8Task7Lesson from './E8Task7Lesson.jsx'
-import UnseenReadingPart1Lesson from './UnseenReadingPart1Lesson.jsx'
-import UnseenReadingPart2Lesson from './UnseenReadingPart2Lesson.jsx'
-import UnseenReadingPart3Lesson from './UnseenReadingPart3Lesson.jsx'
-import UnseenReadingPart4Lesson from './UnseenReadingPart4Lesson.jsx'
-import UnseenReadingPart5Lesson from './UnseenReadingPart5Lesson.jsx'
 import UnseenLesson from './UnseenLesson.jsx'
+import { UNSEEN_PARTS_0 } from './unseenPartsData0.js'
 import { UNSEEN_PARTS_1 } from './unseenPartsData1.js'
 import { UNSEEN_PARTS_2 } from './unseenPartsData2.js'
 import { UNSEEN_PARTS_3 } from './unseenPartsData3.js'
 import { UNSEEN_PARTS_4 } from './unseenPartsData4.js'
 import { UNSEEN_PARTS_5 } from './unseenPartsData5.js'
 import { UNSEEN_PARTS_6 } from './unseenPartsData6.js'
+import { UNSEEN_PARTS_7 } from './unseenPartsData7.js'
+import { UNSEEN_PARTS_8 } from './unseenPartsData8.js'
 import StativeVsActionVerbsLesson from './StativeVsActionVerbsLesson.jsx'
 import PresentSimpleLesson from './PresentSimpleLesson.jsx'
 import PresentProgressiveLesson from './PresentProgressiveLesson.jsx'
@@ -442,12 +440,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/e8-reading-and-reactions" element={<CustomLessonGate slug="e8-reading-and-reactions"><E8ReadingReactionsLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-5-reactions" element={<CustomLessonGate slug="e8-task-5-reactions"><E8Task5Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-6-dialogues" element={<CustomLessonGate slug="e8-task-6-dialogues"><E8Task6Lesson /></CustomLessonGate>} />
-            <Route path="/library/customized-lessons/unseen-reading-part-1" element={<CustomLessonGate slug="unseen-reading-part-1"><UnseenReadingPart1Lesson /></CustomLessonGate>} />
-            <Route path="/library/customized-lessons/unseen-reading-part-2" element={<CustomLessonGate slug="unseen-reading-part-2"><UnseenReadingPart2Lesson /></CustomLessonGate>} />
-            <Route path="/library/customized-lessons/unseen-reading-part-3" element={<CustomLessonGate slug="unseen-reading-part-3"><UnseenReadingPart3Lesson /></CustomLessonGate>} />
-            <Route path="/library/customized-lessons/unseen-reading-part-4" element={<CustomLessonGate slug="unseen-reading-part-4"><UnseenReadingPart4Lesson /></CustomLessonGate>} />
-            <Route path="/library/customized-lessons/unseen-reading-part-5" element={<CustomLessonGate slug="unseen-reading-part-5"><UnseenReadingPart5Lesson /></CustomLessonGate>} />
-            {[...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6].map((l) => (
+            {[...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8].map((l) => (
               <Route key={l.slug} path={`/library/customized-lessons/${l.slug}`} element={<CustomLessonGate slug={l.slug}><UnseenLesson config={l} /></CustomLessonGate>} />
             ))}
             <Route path="/library/customized-lessons/stative-vs-action-verbs" element={<CustomLessonGate slug="stative-vs-action-verbs"><StativeVsActionVerbsLesson /></CustomLessonGate>} />

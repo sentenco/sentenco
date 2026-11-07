@@ -1,0 +1,17 @@
+// Which topic shelf each Unseen Reading lesson belongs to. The hub groups lessons by it and the
+// lesson player takes its colors from it. Part 5 is Doriel's lesson (not in the hub).
+export const UNSEEN_SHELF_BY_PART = {
+  1: "lang", 2: "nature", 3: "body", 4: "tech", 5: "lang",
+  6: "tech", 7: "tech", 8: "lang", 9: "tech", 10: "tech", 11: "tech",
+  12: "nature", 13: "nature", 14: "nature",
+  15: "body", 16: "body",
+  17: "lang",
+  18: "body", 19: "body", 20: "body", 21: "body", 22: "body",
+  23: "nature", 24: "nature", 25: "nature", 26: "nature", 27: "nature",
+  28: "body",
+  29: "nature", 30: "nature", 31: "body",
+  32: "lang", 33: "lang", 34: "lang", 35: "tech", 36: "tech", 37: "tech", 38: "tech",
+  39: "nature", 40: "nature", 41: "nature", 42: "body", 43: "body",
+  44: "space", 45: "space", 46: "space", 47: "space", 48: "space", 49: "space",
+  50: "mma", 51: "mma", 52: "mma", 53: "mma", 54: "mma", 55: "mma",
+};

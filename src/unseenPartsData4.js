@@ -167,7 +167,7 @@ export const UNSEEN_PARTS_4 = [
       A: [
         ["fertilized", "joined with a male cell so that a baby can begin to grow"],
         ["womb", "the part of a woman’s body where a baby grows before birth"],
-        ["chance", "the way things happen without a plan"],
+        ["conditions", "the situation or surroundings that affect something"],
         ["switch", "to turn something on or off"],
         ["differ", "to be not the same"],
       ],
