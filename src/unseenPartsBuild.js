@@ -16,7 +16,7 @@ export const rotateOptions = (right, wrong, index) => {
 export const defsOrder = (multiplier, shift) => [0, 1, 2, 3, 4].map((k) => (multiplier * k + shift) % 5);
 
 export function buildLesson(cfg) {
-  // Lessons in unseenSixQuestions.js use the standard six questions per text (Detail, Vocabulary, Reference, Not stated, Inference, Main idea).
+  // Lessons in unseenSixQuestions.js use the standard six questions per text (Main idea, Detail, Vocabulary, Reference, Not stated, Inference).
   const six = UNSEEN_SIX[cfg.part];
   const extra = UNSEEN_FIFTH[cfg.part];
   const base = six

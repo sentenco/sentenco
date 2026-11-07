@@ -1,10 +1,19 @@
-// The standard six questions for every text, in this order: Detail, Vocabulary, Reference, Not stated, Inference, Main idea.
+// The standard six questions for every text, in this order: Main idea, Detail, Vocabulary, Reference, Not stated, Inference.
 // Each is [kind, prompt, right answer, wrong, wrong, explanation, evidence]. Lessons listed here use these six questions
 // instead of the questions in their data file (see unseenPartsBuild.js).
 
 export const UNSEEN_SIX = {
  "1": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "A small van brings books to a village that has no library.",
+    "A village council is trying to find a driver for a van.",
+    "A school is starting a story hour for young children.",
+    "The text describes a van that brings books to a village with no library.",
+    "a small blue van stops in the main square of Little Brook, a village with no library"
+   ],
    [
     "Detail",
     "How many books can a person borrow at one time?",
@@ -52,18 +61,21 @@ export const UNSEEN_SIX = {
     "Only adults are allowed to join it.",
     "At first only five children came, but now there are often thirty. So more children come than before.",
     "At first only five children came, but now there are often thirty."
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "A small van brings books to a village that has no library.",
-    "A village council is trying to find a driver for a van.",
-    "A school is starting a story hour for young children.",
-    "The text describes a van that brings books to a village with no library.",
-    "a small blue van stops in the main square of Little Brook, a village with no library"
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Street libraries let neighbours share books for free.",
+    "Street libraries are replacing big city libraries.",
+    "Street libraries are only built in the United States.",
+    "The text says that anyone can take or leave a book, and that it is free.",
+    [
+     "Anyone can take a book to read, and anyone can leave a book for others",
+     "It is free"
+    ]
+   ],
    [
     "Detail",
     "Who can take a book from a street library?",
@@ -114,23 +126,23 @@ export const UNSEEN_SIX = {
      "The first street library appeared in the United States in 2009",
      "Today there are more than 150,000 of them around the world"
     ]
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Street libraries let neighbours share books for free.",
-    "Street libraries are replacing big city libraries.",
-    "Street libraries are only built in the United States.",
-    "The text says that anyone can take or leave a book, and that it is free.",
-    [
-     "Anyone can take a book to read, and anyone can leave a book for others",
-     "It is free"
-    ]
    ]
   ]
  },
  "2": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Cities are hotter than nearby areas, for several reasons.",
+    "Cities are cooler than the countryside at night.",
+    "Cities should paint all of their roofs white to save energy.",
+    "The text gives several causes, then some solutions. Trees are only one of the solutions listed.",
+    [
+     "Cities are usually several degrees warmer than the countryside around them",
+     "some cities paint roofs white, plant trees along streets and create small parks"
+    ]
+   ],
    [
     "Detail",
     "According to the text, why can city centres stay hot after sunset?",
@@ -185,21 +197,21 @@ export const UNSEEN_SIX = {
      "plants cool the air by releasing water vapour",
      "plant trees along streets and create small parks"
     ]
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Cities are hotter than nearby areas, for several reasons.",
-    "Cities are cooler than the countryside at night.",
-    "Cities should paint all of their roofs white to save energy.",
-    "The text gives several causes, then some solutions. Trees are only one of the solutions listed.",
-    [
-     "Cities are usually several degrees warmer than the countryside around them",
-     "some cities paint roofs white, plant trees along streets and create small parks"
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Vertical farming has real benefits, but costs limit what it can grow.",
+    "Vertical farming will soon replace all traditional farms.",
+    "Vertical farming uses more water than traditional farming.",
+    "The text gives the benefits (food all year, less water) and then the limit: electricity makes it expensive, so only light crops are grown. It does not say farms have been replaced or that it is cheaper.",
+    [
+     "vertical farming is not a perfect solution",
+     "use a large amount of electricity"
+    ]
+   ],
    [
     "Detail",
     "How much less water can a vertical farm use than a traditional farm?",
@@ -247,23 +259,23 @@ export const UNSEEN_SIX = {
     "Everyone agrees that it will end.",
     "The text says that supporters believe that costs will fall, but critics are not convinced.",
     "Supporters believe that costs will fall as technology improves, but critics are not convinced."
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Vertical farming has real benefits, but costs limit what it can grow.",
-    "Vertical farming will soon replace all traditional farms.",
-    "Vertical farming uses more water than traditional farming.",
-    "The text gives the benefits (food all year, less water) and then the limit: electricity makes it expensive, so only light crops are grown. It does not say farms have been replaced or that it is cheaper.",
-    [
-     "vertical farming is not a perfect solution",
-     "use a large amount of electricity"
-    ]
    ]
   ]
  },
  "3": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Vaccines train the body to recognise a germ and respond faster.",
+    "Vaccines cure people who are already very ill.",
+    "Vaccines make the body produce more germs.",
+    "The text explains that a vaccine shows the body a harmless sample, so that it can respond much faster to the real germ.",
+    [
+     "When the body meets this sample, special white blood cells produce antibodies",
+     "the body produces antibodies much faster than the first time"
+    ]
+   ],
    [
     "Detail",
     "According to the text, why can most vaccines not make a healthy person ill?",
@@ -314,21 +326,21 @@ export const UNSEEN_SIX = {
     "They will need a new vaccine for every meeting with the germ.",
     "The memory cells make the body react “much faster than the first time”. The text does not promise the person will never be ill.",
     "the memory cells recognise it at once and the body produces antibodies much faster than the first time"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Vaccines train the body to recognise a germ and respond faster.",
-    "Vaccines cure people who are already very ill.",
-    "Vaccines make the body produce more germs.",
-    "The text explains that a vaccine shows the body a harmless sample, so that it can respond much faster to the real germ.",
-    [
-     "When the body meets this sample, special white blood cells produce antibodies",
-     "the body produces antibodies much faster than the first time"
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Forgetting is natural, and it can be slowed down.",
+    "People who forget are not trying hard enough.",
+    "Nobody can improve their memory.",
+    "The text says that forgetting is not always a failure and that it can be slowed down by reviewing and sleeping well.",
+    [
+     "Forgetting is not always a failure of memory",
+     "Fortunately, forgetting can be slowed down"
+    ]
+   ],
    [
     "Detail",
     "What did Ebbinghaus find when he tested his own memory?",
@@ -376,23 +388,23 @@ export const UNSEEN_SIX = {
     "They will forget it faster.",
     "The text says that reviewing at increasing intervals helps the brain treat the material as important.",
     "Reviewing material at increasing intervals, for example after one day, then a week, then a month, helps the brain treat it as important"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Forgetting is natural, and it can be slowed down.",
-    "People who forget are not trying hard enough.",
-    "Nobody can improve their memory.",
-    "The text says that forgetting is not always a failure and that it can be slowed down by reviewing and sleeping well.",
-    [
-     "Forgetting is not always a failure of memory",
-     "Fortunately, forgetting can be slowed down"
-    ]
    ]
   ]
  },
  "4": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Weather warnings come from data and models, and clear messages help people act.",
+    "Weather forecasts are always right if enough computers are used.",
+    "Warnings are sent only to people who live near the sea.",
+    "The text explains how data and models lead to warnings, and that specific messages make it easier to decide what to do.",
+    [
+     "feed it into computer models that predict the weather several days ahead",
+     "Warnings work best when they are specific"
+    ]
+   ],
    [
     "Detail",
     "Why do forecasters compare several computer models?",
@@ -440,21 +452,21 @@ export const UNSEEN_SIX = {
     "It would be more accurate than a detailed message.",
     "Warnings “work best when they are specific”, so a vague message is less useful. The text does not link vague messages to final warnings.",
     "Warnings work best when they are specific."
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Weather warnings come from data and models, and clear messages help people act.",
-    "Weather forecasts are always right if enough computers are used.",
-    "Warnings are sent only to people who live near the sea.",
-    "The text explains how data and models lead to warnings, and that specific messages make it easier to decide what to do.",
-    [
-     "feed it into computer models that predict the weather several days ahead",
-     "Warnings work best when they are specific"
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "A GPS receiver finds its position by timing signals from several satellites.",
+    "GPS satellites listen to the signals that phones send them.",
+    "GPS works best when the receiver is inside a large building.",
+    "The text says that the receiver only listens, and that signals from three satellites let it work out its position.",
+    [
+     "It only listens",
+     "With signals from three satellites, the receiver can work out its position"
+    ]
+   ],
    [
     "Detail",
     "What does a GPS receiver do with the satellites’ signals?",
@@ -502,23 +514,23 @@ export const UNSEEN_SIX = {
     "They are checked by phone companies.",
     "The receiver’s clock is “far less accurate than the clocks on the satellites”, so the satellites’ clocks are more precise.",
     "which is far less accurate than the clocks on the satellites"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "A GPS receiver finds its position by timing signals from several satellites.",
-    "GPS satellites listen to the signals that phones send them.",
-    "GPS works best when the receiver is inside a large building.",
-    "The text says that the receiver only listens, and that signals from three satellites let it work out its position.",
-    [
-     "It only listens",
-     "With signals from three satellites, the receiver can work out its position"
-    ]
    ]
   ]
  },
  "5": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Headphones can cancel steady noise with an opposite sound wave.",
+    "Headphones block sound only with soft ear cushions.",
+    "Headphones play music louder than the noise around you.",
+    "The text explains that the headphones create a sound wave that is the opposite of the noise, which works best with steady, low sounds.",
+    [
+     "creates a new sound wave that is the exact opposite of the noise",
+     "works best with steady, low sounds"
+    ]
+   ],
    [
     "Detail",
     "What do the microphones on the outside of the headphones do?",
@@ -566,21 +578,21 @@ export const UNSEEN_SIX = {
     "The headphones would remove all of it, as they do engine noise.",
     "Noise cancelling is “far less effective against sudden or high noises, such as a voice or a dog barking”, so a barking dog is reduced less well than a steady hum.",
     "It is far less effective against sudden or high noises, such as a voice or a dog barking"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Headphones can cancel steady noise with an opposite sound wave.",
-    "Headphones block sound only with soft ear cushions.",
-    "Headphones play music louder than the noise around you.",
-    "The text explains that the headphones create a sound wave that is the opposite of the noise, which works best with steady, low sounds.",
-    [
-     "creates a new sound wave that is the exact opposite of the noise",
-     "works best with steady, low sounds"
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Loud sound can damage hearing for good, so listening habits matter.",
+    "Hearing loss from noise happens only to older people.",
+    "Phone settings can stop all damage to your hearing.",
+    "The text explains that loud sound damages the ear, that damage depends on loudness and time, and that simple rules help.",
+    [
+     "Very loud sound can damage these cells",
+     "how loud it is and how long you listen"
+    ]
+   ],
    [
     "Detail",
     "What happens when the hair cells in the ear are badly damaged?",
@@ -631,23 +643,23 @@ export const UNSEEN_SIX = {
      "listening at a high volume for several hours a day can be harmful",
      "people often do not notice it until it is serious"
     ]
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Loud sound can damage hearing for good, so listening habits matter.",
-    "Hearing loss from noise happens only to older people.",
-    "Phone settings can stop all damage to your hearing.",
-    "The text explains that loud sound damages the ear, that damage depends on loudness and time, and that simple rules help.",
-    [
-     "Very loud sound can damage these cells",
-     "how loud it is and how long you listen"
-    ]
    ]
   ]
  },
  "6": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Face unlock builds a 3D map of the face, but it is not perfect.",
+    "Face unlock takes a normal photograph of the face.",
+    "Face unlock is used only on phones for children.",
+    "The text explains that the phone builds a 3D map of the face and then says that the system is not perfect.",
+    [
+     "to build a 3D map of the face",
+     "The system is not perfect, however."
+    ]
+   ],
    [
     "Detail",
     "Why can a flat photograph not unlock a phone that uses this system?",
@@ -695,21 +707,21 @@ export const UNSEEN_SIX = {
     "It cannot be used at all by children.",
     "Apple advises children under 13 to use a passcode, which suggests that face unlock is less reliable for them. The text does not say that it never works.",
     "for children under 13, so Apple advises these users to use a passcode"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Face unlock builds a 3D map of the face, but it is not perfect.",
-    "Face unlock takes a normal photograph of the face.",
-    "Face unlock is used only on phones for children.",
-    "The text explains that the phone builds a 3D map of the face and then says that the system is not perfect.",
-    [
-     "to build a 3D map of the face",
-     "The system is not perfect, however."
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Tap payments use radio, and phone wallets add protection, but some risks remain.",
+    "Tap payments are completely safe and have no risks at all.",
+    "Tap payments work only when the card touches the machine.",
+    "The text explains the radio link and the extra protection, and says that the risks are smaller but real.",
+    [
+     "talk over a short-range radio link called NFC",
+     "The risks are smaller, but they are real."
+    ]
+   ],
    [
     "Detail",
     "What does a phone wallet send to the shop?",
@@ -757,23 +769,23 @@ export const UNSEEN_SIX = {
     "It is automatically blocked at once.",
     "The text says that a lost card could be used for small purchases until the limit is reached.",
     "a lost card could be used for small purchases until the limit is reached"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Tap payments use radio, and phone wallets add protection, but some risks remain.",
-    "Tap payments are completely safe and have no risks at all.",
-    "Tap payments work only when the card touches the machine.",
-    "The text explains the radio link and the extra protection, and says that the risks are smaller but real.",
-    [
-     "talk over a short-range radio link called NFC",
-     "The risks are smaller, but they are real."
-    ]
    ]
   ]
  },
  "7": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "A QR code has repair data, so it can often be read when damaged.",
+    "QR codes were invented to be used only in shops.",
+    "QR codes cannot be read if they are turned around.",
+    "The text says that the pattern contains extra repair data and that how much damage a code survives depends on where the damage is.",
+    [
+     "The pattern also contains extra repair data",
+     "How much damage a code can survive depends on where the damage is"
+    ]
+   ],
    [
     "Detail",
     "Why did Denso Wave invent the QR code?",
@@ -821,21 +833,21 @@ export const UNSEEN_SIX = {
     "It makes the code easier to read.",
     "A sticker over the large corner squares can make a code unreadable long before a third of it is hidden.",
     "a sticker that covers the large corner squares can make a code unreadable"
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "A QR code has repair data, so it can often be read when damaged.",
-    "QR codes were invented to be used only in shops.",
-    "QR codes cannot be read if they are turned around.",
-    "The text says that the pattern contains extra repair data and that how much damage a code survives depends on where the damage is.",
-    [
-     "The pattern also contains extra repair data",
-     "How much damage a code can survive depends on where the damage is"
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main point of the text?",
+    "Wireless charging is convenient but wastes some energy.",
+    "Cables are not allowed in some countries.",
+    "Magnets can charge a phone without coils.",
+    "The text explains how the charger works, and then says that some energy is lost as heat.",
+    [
+     "The method is convenient, but it wastes some energy as heat",
+     "How much is lost depends on how well the phone sits on the charger"
+    ]
+   ],
    [
     "Detail",
     "How does energy travel from the charger to the phone?",
@@ -883,23 +895,23 @@ export const UNSEEN_SIX = {
     "It will charge faster than usual.",
     "The text says that if the coils are not lined up, charging is less efficient.",
     "if the coils are not lined up, charging is less efficient"
-   ],
-   [
-    "Main idea",
-    "What is the main point of the text?",
-    "Wireless charging is convenient but wastes some energy.",
-    "Cables are not allowed in some countries.",
-    "Magnets can charge a phone without coils.",
-    "The text explains how the charger works, and then says that some energy is lost as heat.",
-    [
-     "The method is convenient, but it wastes some energy as heat",
-     "How much is lost depends on how well the phone sits on the charger"
-    ]
    ]
   ]
  },
  "8": {
   "A": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "English captions can help learners, but the research is not simple.",
+    "Learners should never use captions or subtitles.",
+    "Subtitles in a learner’s first language are always best.",
+    "The text says that learners with English captions learned more words, but the research is not simple.",
+    [
+     "learners who watched with English captions gained more knowledge of words",
+     "The research is not simple, however."
+    ]
+   ],
    [
     "Detail",
     "What did learners who watched with English captions learn more about?",
@@ -947,21 +959,21 @@ export const UNSEEN_SIX = {
     "To make the series last longer on the screen.",
     "The writer warns that learners may read instead of listening, so the second viewing, without captions, practices listening.",
     "There is also a risk that learners read instead of listening."
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "English captions can help learners, but the research is not simple.",
-    "Learners should never use captions or subtitles.",
-    "Subtitles in a learner’s first language are always best.",
-    "The text says that learners with English captions learned more words, but the research is not simple.",
-    [
-     "learners who watched with English captions gained more knowledge of words",
-     "The research is not simple, however."
-    ]
    ]
   ],
   "B": [
+   [
+    "Main idea",
+    "What is the main idea of the text?",
+    "Podcasts have become very popular, but the figures must be read carefully.",
+    "Podcasts are now more popular than television in every country.",
+    "Podcasts are no longer popular with young people.",
+    "The text shows how the audience has grown and then says that the figures need careful reading.",
+    [
+     "Surveys by Edison Research in the United States show how quickly the audience has grown",
+     "These figures need careful reading."
+    ]
+   ],
    [
     "Detail",
     "What percentage of people aged 12 and over listened to podcasts every month in 2024?",
@@ -1011,18 +1023,6 @@ export const UNSEEN_SIX = {
     [
      "In 2020, 37 percent of people aged 12 and over listened to podcasts every month",
      "By 2024, the figure was 47 percent"
-    ]
-   ],
-   [
-    "Main idea",
-    "What is the main idea of the text?",
-    "Podcasts have become very popular, but the figures must be read carefully.",
-    "Podcasts are now more popular than television in every country.",
-    "Podcasts are no longer popular with young people.",
-    "The text shows how the audience has grown and then says that the figures need careful reading.",
-    [
-     "Surveys by Edison Research in the United States show how quickly the audience has grown",
-     "These figures need careful reading."
     ]
    ]
   ]
