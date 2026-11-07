@@ -16,7 +16,7 @@ export const UNSEEN_PARTS_0 = [
       },
       "B": {
         "title": "Books for Everyone",
-        "text": "In many towns, you can find a small wooden box on a street corner. It looks like a tiny house with a glass door, and it is full of books. This is a street library. Anyone can take a book to read, and anyone can leave a book for others. It is free, and nobody asks your name.\n\nThe first street library appeared in the United States in 2009. Today there are more than 100,000 of them around the world. Most are built by neighbours, who also look after them. Every week, they check the box, take out old or damaged books and add new ones. Many people say that the boxes make their street feel friendlier."
+        "text": "In many towns, you can find a small wooden box on a street corner. It looks like a tiny house with a glass door, and it is full of books. This is a street library. Anyone can take a book to read, and anyone can leave a book for others. It is free, and nobody asks your name.\n\nThe first street library appeared in the United States in 2009. Today there are more than 150,000 of them around the world. Most are built by neighbours, who also look after them. They check the box often, take out old or damaged books and add new ones. Many people say that the boxes make their street feel friendlier."
       }
     },
     "items": [
@@ -83,12 +83,12 @@ export const UNSEEN_PARTS_0 = [
       [
         "B",
         "Reason",
-        "Why do neighbours check the box every week?",
+        "Why do neighbours check the box often?",
         "To take out old or damaged books and add new ones.",
         "To ask the people who visit for their names.",
         "To collect money for buying new books.",
-        "The text says that every week they check the box, take out old or damaged books and add new ones.",
-        "Every week, they check the box, take out old or damaged books and add new ones."
+        "The text says that they check the box often, take out old or damaged books and add new ones.",
+        "They check the box often, take out old or damaged books and add new ones."
       ],
       [
         "B",
