@@ -11,15 +11,21 @@ import { UNSEEN_PARTS_5 } from "./unseenPartsData5.js";
 import { UNSEEN_PARTS_6 } from "./unseenPartsData6.js";
 import { UNSEEN_PARTS_7 } from "./unseenPartsData7.js";
 import { UNSEEN_PARTS_8 } from "./unseenPartsData8.js";
+import { UNSEEN_PARTS_9 } from "./unseenPartsData9.js";
 import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
+import { buildLesson } from "./unseenPartsBuild.js";
 
 export const UNSEEN_SHELVES = [
-  { id: "body", name: "Body and Health" },
-  { id: "nature", name: "Nature and Earth" },
-  { id: "tech", name: "Tech and Daily Life" },
-  { id: "lang", name: "Language and Sound" },
-  { id: "space", name: "Space and Astronomy" },
-  { id: "mma", name: "MMA and Combat Sports" },
+  { id: "body", name: "Body and Health", short: "Body" },
+  { id: "nature", name: "Nature and Earth", short: "Nature" },
+  { id: "tech", name: "Tech and Daily Life", short: "Tech" },
+  { id: "lang", name: "Language and Sound", short: "Language" },
+  { id: "space", name: "Space and Astronomy", short: "Space" },
+  { id: "mma", name: "MMA and Combat Sports", short: "MMA" },
+  { id: "safety", name: "Safety and First Aid", short: "Safety" },
+  { id: "money", name: "Money and Everyday Economics", short: "Money" },
+  { id: "mind", name: "Thinking and Media", short: "Thinking" },
+  { id: "history", name: "History That Explains Today", short: "History" },
 ];
 
 // [part, one line on how the two texts connect]. The shelf comes from unseenShelfByPart.js; order inside a shelf follows this list.
@@ -78,19 +84,59 @@ const META = [
   [53, "Making weight: why classes exist and what it costs to reach the limit"],
   [54, "Choke and score: how a choke works and how judges decide a fight"],
   [55, "Staying safe: how a concussion happens and how the sport tries to protect fighters"],
+  [56, "Skin and heat, skin and light: how to treat a burn, and why the Sun burns us"],
+  [57, "Two sides of one danger: how to help a person who is choking, and why it happens"],
+  [58, "Two tools for a stopped heart: hands that push, and a machine that shocks"],
+  [59, "Germs: how soap beats them, and how they travel from person to person"],
+  [60, "Rising prices: why they happen, and why central banks aim for a little"],
+  [61, "Your money in the bank: where it goes, and how it is protected"],
+  [62, "One idea, two directions: interest that grows your savings, and interest that grows your debt"],
+  [63, "The price tag: why big packs cost less per piece, and why prices end in 9"],
+  [64, "Fake news: why it travels so fast, and how to check what you read"],
+  [65, "A memory is not a video: how it changes each time, and why witnesses get things wrong"],
+  [66, "Behind the free and the famous: why ads work on us, and how free apps make money"],
+  [67, "Two shortcuts of the mind: seeing what we expect, and holding on to the first number"],
+  [68, "Faster ideas: the press that multiplied books, and the network that connected computers"],
+  [69, "Setting the world’s clocks: the railways that needed one time, and the line where the date changes"],
+  [70, "Signs that traveled: the letters we write with, and the digits we count with"],
+  [71, "Money you can hold: the first coins in Lydia, and the first paper notes in China"],
+  [72, "Slang: where new words are born, and why they go out of fashion"],
+  [73, "Phrases that mean more than their words: where idioms come from, and why they confuse learners"],
+  [74, "The sounds of speech: from clicks to tones"],
+  [75, "Languages on the edge: why they disappear, and how some came back"],
+  [76, "Planets around other stars: how we find them, and where life could be possible"],
+  [77, "Falling around the Earth: why astronauts float, and how a rocket gets there"],
+  [78, "Our star at work: the fusion inside it, and the storms that make the northern lights"],
+  [79, "Living and crowding in orbit: a day on the space station, and the junk around the Earth"],
+  [80, "The Philippine stick art: where arnis comes from, and what it is today"],
+  [81, "Behind the fight: how fighters train, and how they recover"],
+  [82, "Two Japanese arts: the throws of judo, and the strikes of karate"],
+  [83, "Gear and ground: why MMA fights in a cage, and why its gloves are so small"],
+  [84, "Fire at home: how it spreads and how alarms warn us, and what to do when it starts"],
+  [85, "Two hazards of the Philippines: when the ground shakes, and when a typhoon comes"],
+  [86, "Danger in the water: why drowning is silent, and how to escape a rip current"],
+  [87, "When the body overreacts: how an allergy works, and what to do in a severe reaction"],
+  [88, "Two emergencies where minutes matter: the signs of a stroke, and the signs of a heart attack"],
+  [89, "Safe to eat? Why food poisoning happens, and how to store food so germs cannot grow"],
+  [90, "Your money plan: how to divide your income, and how to protect yourself from surprises"],
+  [91, "Borrowing and trust: how a credit score works, and why the price of a loan depends on the borrower"],
+  [92, "Where our taxes go and how they are taken: the reason for taxes, and two kinds you meet every day"],
+  [93, "Putting money to work: what a share is, and why spreading your money lowers the risk"],
+  [94, "Money across borders: why exchange rates move, and what they mean for families who receive remittances"],
+  [95, "Not falling for it: how common scams work, and habits that protect you"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
 
 export function buildUnseenHubLessons() {
-  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8];
+  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8, ...UNSEEN_PARTS_9];
   const byPart = new Map(configs.map((c) => [c.part, c]));
   return META.map(([part, link]) => {
     const c = byPart.get(part);
     return {
       part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, 
       a: c.texts.A.title, b: c.texts.B.title,
-      wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
+      questions: buildLesson(c).items.length, wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
     };
   });
 }

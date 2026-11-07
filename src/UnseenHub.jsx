@@ -3,7 +3,7 @@ import { UNSEEN_SHELVES, buildUnseenHubLessons } from "./unseenHubData.js";
 import { openCustomLessonPopup } from "./customLessonsRegistry";
 import "./unseenHub.css";
 
-const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C" };
+const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E" };
 
 // The Unseen Reading room: topic tiles, each showing its pair of texts.
 // `canOpen(slug)` limits the list to lessons this person may open.
@@ -58,7 +58,7 @@ export default function UnseenHub({ canOpen }) {
             if (s.id !== "all" && n === 0) return null;
             return (
               <button key={s.id} type="button" className="uh-tab" data-s={s.id} aria-pressed={shelf === s.id} onClick={() => setShelf(s.id)}>
-                {s.name}<i>{n}</i>
+                {s.short || s.name}<i>{n}</i>
               </button>
             );
           })}
@@ -93,7 +93,7 @@ export default function UnseenHub({ canOpen }) {
               </div>
             )}
             <div className="uh-foot">
-              <span className="uh-count">10 questions · 10 words</span>
+              <span className="uh-count">{l.questions} questions · 10 words</span>
               <button type="button" className="uh-flip" aria-expanded={!!peek[l.part]} onClick={() => setPeek((p) => ({ ...p, [l.part]: !p[l.part] }))}>
                 {peek[l.part] ? "Hide the words" : "Peek at the words"}
               </button>
