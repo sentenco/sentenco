@@ -100,6 +100,18 @@ const META = [
   [69, "Setting the world’s clocks: the railways that needed one time, and the line where the date changes"],
   [70, "Signs that traveled: the letters we write with, and the digits we count with"],
   [71, "Money you can hold: the first coins in Lydia, and the first paper notes in China"],
+  [72, "Slang: where new words are born, and why they go out of fashion"],
+  [73, "Phrases that mean more than their words: where idioms come from, and why they confuse learners"],
+  [74, "The sounds of speech: from clicks to tones"],
+  [75, "Languages on the edge: why they disappear, and how some came back"],
+  [76, "Planets around other stars: how we find them, and where life could be possible"],
+  [77, "Falling around the Earth: why astronauts float, and how a rocket gets there"],
+  [78, "Our star at work: the fusion inside it, and the storms that make the northern lights"],
+  [79, "Living and crowding in orbit: a day on the space station, and the junk around the Earth"],
+  [80, "The Philippine stick art: where arnis comes from, and what it is today"],
+  [81, "Behind the fight: how fighters train, and how they recover"],
+  [82, "Two Japanese arts: the throws of judo, and the strikes of karate"],
+  [83, "Gear and ground: why MMA fights in a cage, and why its gloves are so small"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }

@@ -1,6 +1,5 @@
-// Unseen Reading Cases 56-71: Safety and First Aid (56-59), Money and Everyday Economics (60-63), Thinking and Media (64-67),
-// History That Explains Today (68-71). Same format as unseenPartsData8.js, but written with the standard six questions per text
-// already in items (Main idea, Detail, Vocabulary, Reference, Not stated, Inference). Written for everyone, so there is no level label.
+// Unseen Reading Cases 56 and up: the newer lessons, written with the standard six questions per text already in items
+// (Main idea, Detail, Vocabulary, Reference, Not stated, Inference). Same format as unseenPartsData8.js. Written for everyone, so there is no level label.
 
 export const UNSEEN_PARTS_9 = [
   {
@@ -3144,6 +3143,2358 @@ export const UNSEEN_PARTS_9 = [
         [
           "wonder",
           "a feeling of surprise and admiration"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 72,
+    "slug": "unseen-reading-part-72",
+    "theme": "Slang",
+    "blurb": "where slang comes from, why it changes",
+    "texts": {
+      "A": {
+        "title": "Where Slang Comes From",
+        "text": "Slang is informal language that people use with friends, not in formal writing. New slang words appear in several ways. Some are made by changing existing words. In the Philippines, young people reverse the syllables of words: lodi comes from idol, and werpa comes from power. Others are old words with a new meaning, such as cool, which jazz musicians helped to make popular to mean calm and stylish. Technology also brings new words. The word meme was invented by the scientist Richard Dawkins in 1976 for an idea that spreads from person to person, and today it usually means a funny picture or video online. A few slang words become so common that people forget they were slang. The word OK is usually traced to a joke in a Boston newspaper in 1839. It started as an abbreviation of a made-up spelling, oll korrect, and it is now understood almost everywhere in the world."
+      },
+      "B": {
+        "title": "Why Slang Changes",
+        "text": "Slang changes quickly, and one reason is that it works like a club badge. Young people often create new words to show that they belong to a group and to feel different from their parents. When a word spreads beyond the group, it loses this special feeling. If teachers, advertisers and parents start to use it, the young people move on to a new word. This is why slang from earlier times, such as groovy or far out, sounds old-fashioned today. Social media makes this cycle faster, because a new expression can reach millions of people in a few days. Not every slang word disappears, however. Words that fill a real gap, such as cool or okay, can stay for generations and even enter the dictionary. Scientists who study language say that slang is not a sign of poor English. It shows that a language is alive and that its speakers are creative."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Slang appears in many ways: reversed words, new meanings and new technology.",
+        "Slang appears only when young people make mistakes in speaking.",
+        "Slang appears mainly from old books and from formal writing.",
+        "The text explains that new slang words appear in several ways, such as reversing syllables, giving old words new meanings, and technology.",
+        [
+          "New slang words appear in several ways",
+          "young people reverse the syllables of words"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the word lodi come from?",
+        "The word idol.",
+        "The word lord.",
+        "The word lady.",
+        "The text says that lodi comes from idol, because young people reverse the syllables.",
+        "lodi comes from idol"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “spreads” means…",
+        "passes from person to person.",
+        "stays in the same place.",
+        "gets smaller and smaller.",
+        "The text says that a meme is an idea that spreads from person to person, which means that it passes from one person to another.",
+        "an idea that spreads from person to person"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it is now understood almost everywhere” refers to…",
+        "the word OK.",
+        "the Boston newspaper.",
+        "the joke.",
+        "The sentence says that OK started as an abbreviation of a made-up spelling, and the word OK is now understood almost everywhere.",
+        "and it is now understood almost everywhere in the world"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first used the word lodi.",
+        "Which city the word OK is traced to.",
+        "What cool meant in jazz.",
+        "The text does not say who first used lodi. It says that OK is traced to Boston and that cool meant calm and stylish.",
+        [
+          "a joke in a Boston newspaper in 1839",
+          "to mean calm and stylish"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about slang?",
+        "Some slang can become part of everyday language.",
+        "Slang can never be used by adults.",
+        "Slang always disappears within a year.",
+        "The text says that a few slang words become so common that people forget they were slang, like OK.",
+        "A few slang words become so common that people forget they were slang."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Slang changes quickly because young people use new words to mark their group.",
+        "Slang changes quickly because dictionaries remove the old words.",
+        "Slang changes quickly because older people invent most of it.",
+        "The text explains that young people create words to show that they belong to a group and move on when others start to use them.",
+        [
+          "Young people often create new words to show that they belong to a group",
+          "the young people move on to a new word"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What happens when teachers and advertisers start to use a slang word?",
+        "The young people move on to a new word.",
+        "The word becomes more secret.",
+        "The word is put in a dictionary at once.",
+        "The text says that if teachers, advertisers and parents start to use a word, the young people move on to a new word.",
+        "If teachers, advertisers and parents start to use it, the young people move on to a new word."
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “old-fashioned” means…",
+        "not modern.",
+        "very polite.",
+        "hard to say.",
+        "The text says that slang such as groovy or far out sounds old-fashioned today, which means that it is not modern.",
+        "sounds old-fashioned today"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “start to use it” refers to…",
+        "the slang word.",
+        "the group.",
+        "the cycle.",
+        "The sentence says that when a word spreads beyond the group, and teachers and parents start to use the word, young people move on.",
+        "If teachers, advertisers and parents start to use it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which slang word is used the most today.",
+        "Why social media makes the cycle faster.",
+        "Which slang words sound old-fashioned.",
+        "The text does not say which slang word is used most. It says that social media spreads expressions fast and that groovy and far out sound old-fashioned.",
+        [
+          "a new expression can reach millions of people in a few days",
+          "slang from earlier times, such as groovy or far out"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about slang?",
+        "It shows that people keep changing and enjoying their language.",
+        "It proves that young people cannot speak properly.",
+        "It shows that a language is slowly dying.",
+        "The text says that slang shows that a language is alive and that its speakers are creative.",
+        "It shows that a language is alive and that its speakers are creative."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "informal",
+          "relaxed and not official"
+        ],
+        [
+          "syllables",
+          "the parts that a word is divided into, like won-der-ful"
+        ],
+        [
+          "stylish",
+          "fashionable and attractive"
+        ],
+        [
+          "abbreviation",
+          "a shorter form of a word or phrase"
+        ],
+        [
+          "traced",
+          "followed back to the beginning"
+        ]
+      ],
+      "B": [
+        [
+          "belong",
+          "to feel that you are part of a group"
+        ],
+        [
+          "beyond",
+          "outside or past a limit"
+        ],
+        [
+          "cycle",
+          "a series of events that repeats"
+        ],
+        [
+          "generations",
+          "groups of people born around the same time"
+        ],
+        [
+          "creative",
+          "able to make new and original things"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 73,
+    "slug": "unseen-reading-part-73",
+    "theme": "Idioms",
+    "blurb": "where idioms come from, why they confuse learners",
+    "texts": {
+      "A": {
+        "title": "Where Idioms Come From",
+        "text": "An idiom is a phrase whose meaning is different from the meaning of its separate words. Many idioms come from the activities and jobs of earlier times. “Learn the ropes” is usually said to come from sailing ships, where new sailors had to learn how the many ropes worked. “The ball is in your court” comes from tennis and means that it is your turn to act. Other idioms come from writers. Shakespeare used “a wild-goose chase” in Romeo and Juliet, and “wear your heart on your sleeve” in Othello, where it means to show your feelings openly. For many idioms, however, the history is uncertain. Nobody knows for sure how “break a leg”, the phrase that actors say to wish each other good luck, began. There are several stories, but none is proved. Because the original situation is often forgotten, people use idioms automatically, without thinking about the picture inside them."
+      },
+      "B": {
+        "title": "Why Idioms Confuse Learners",
+        "text": "For learners of a language, idioms are difficult because the words do not help to explain the meaning. If someone says “it is a piece of cake”, a learner may look for a cake, when the speaker means that something is very easy. A word-for-word translation usually fails. In German, a person who does not understand something may say that they understand only “train station”. In Filipino, the idiom “butas ang bulsa”, which literally means “the pocket has a hole”, means that a person has no money. These pictures are clear to native speakers, but a visitor must learn them one by one. Learners can use a few simple strategies: read or listen to examples in context, guess the meaning from the situation, keep a notebook of idioms with a short note about when to use them, and avoid using an idiom unless they are sure that it fits."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Idioms come from many sources, though the origin of some is uncertain.",
+        "Idioms were all invented by Shakespeare for his plays.",
+        "Idioms were created by teachers to help students learn.",
+        "The text explains that idioms come from jobs, sports and writers, but that for many idioms the history is uncertain.",
+        [
+          "Many idioms come from the activities and jobs of earlier times",
+          "the history is uncertain"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does “the ball is in your court” mean?",
+        "It is your turn to act.",
+        "You must buy a ball.",
+        "You are winning the game.",
+        "The text says that “the ball is in your court” means that it is your turn to act.",
+        "means that it is your turn to act"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “proved” means…",
+        "shown to be true.",
+        "told in secret.",
+        "written in a book.",
+        "The text says that there are several stories about “break a leg”, but none is proved, which means that none is shown to be true.",
+        "There are several stories, but none is proved."
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “where it means to show your feelings openly” refers to…",
+        "the phrase “wear your heart on your sleeve”.",
+        "the play Othello by Shakespeare.",
+        "the feeling of love between two people.",
+        "The sentence says that “wear your heart on your sleeve” is used in Othello, where the phrase means to show your feelings openly.",
+        "“wear your heart on your sleeve” in Othello, where it means to show your feelings openly"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first said “learn the ropes”.",
+        "Which sport “the ball is in your court” comes from.",
+        "Who says “break a leg”.",
+        "The text does not say who first said “learn the ropes”. It says that “the ball is in your court” comes from tennis and that actors say “break a leg”.",
+        [
+          "comes from tennis",
+          "the phrase that actors say to wish each other good luck"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about people who use idioms?",
+        "They often do not think about the original picture.",
+        "They always know the story behind the idiom.",
+        "They use idioms only when they write.",
+        "The text says that people use idioms automatically, without thinking about the picture inside them.",
+        "people use idioms automatically, without thinking about the picture inside them"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Idioms are hard for learners because the meaning is not in the separate words.",
+        "Idioms are hard for learners because they are always very long.",
+        "Idioms are hard for learners because they have no meaning at all.",
+        "The text explains that the words of an idiom do not help to explain its meaning, so a word-for-word translation usually fails.",
+        [
+          "idioms are difficult because the words do not help to explain the meaning",
+          "A word-for-word translation usually fails"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does “butas ang bulsa” mean?",
+        "A person has no money.",
+        "A person has a new coat.",
+        "A person is very hungry.",
+        "The text says that “butas ang bulsa” means that a person has no money.",
+        "means that a person has no money"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fits” means…",
+        "is suitable.",
+        "is broken.",
+        "is expensive.",
+        "The text says that learners should avoid using an idiom unless they are sure that it fits, which means that it is suitable.",
+        "unless they are sure that it fits"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “sure that it fits” refers to…",
+        "the idiom.",
+        "the situation.",
+        "the notebook.",
+        "The sentence says that learners should avoid using an idiom unless they are sure that the idiom fits.",
+        "avoid using an idiom unless they are sure that it fits"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many idioms exist in English.",
+        "What a German speaker says about not understanding.",
+        "What a notebook of idioms can be used for.",
+        "The text does not say how many idioms exist in English. It gives the German “train station” example and says to keep a notebook of idioms.",
+        [
+          "they understand only “train station”",
+          "keep a notebook of idioms"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text say that a visitor must learn idioms one by one?",
+        "They cannot be guessed from their words.",
+        "They are the same in every language.",
+        "They appear on every page of a dictionary.",
+        "The text says that the pictures in idioms are clear to native speakers, but a visitor cannot work them out from the words.",
+        "These pictures are clear to native speakers, but a visitor must learn them one by one."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "separate",
+          "different and not joined"
+        ],
+        [
+          "activities",
+          "things that people do"
+        ],
+        [
+          "openly",
+          "in a way that is not hidden"
+        ],
+        [
+          "uncertain",
+          "not known or not sure"
+        ],
+        [
+          "automatically",
+          "without thinking"
+        ]
+      ],
+      "B": [
+        [
+          "literally",
+          "in the exact meaning of the words"
+        ],
+        [
+          "translation",
+          "the same text written in another language"
+        ],
+        [
+          "native",
+          "belonging to a person’s first language or country"
+        ],
+        [
+          "strategies",
+          "plans for reaching a goal"
+        ],
+        [
+          "context",
+          "the situation in which something is said"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 74,
+    "slug": "unseen-reading-part-74",
+    "theme": "Sounds of Speech",
+    "blurb": "how many sounds languages use, tonal languages",
+    "texts": {
+      "A": {
+        "title": "The Sounds Humans Use",
+        "text": "The human mouth, tongue, lips and throat can make hundreds of different sounds, but each language chooses only some of them. English uses about forty. Some languages use far fewer: Rotokas, spoken on the island of Bougainville in Papua New Guinea, is usually described as having only around a dozen sounds, which makes it one of the smallest sound systems in the world. Other languages use many more. In southern Africa, languages such as Zulu and Xhosa include click sounds, which are made by pulling the tongue away from the roof of the mouth and creating a small pop. English speakers make a click when they say “tsk-tsk” or call a horse, but they do not use it inside words. By some counts, a few click languages have well over a hundred distinct sounds. Babies are born able to learn any of these sounds, but by about the end of their first year, they become better at the sounds of the language around them."
+      },
+      "B": {
+        "title": "Languages That Sing: Tones",
+        "text": "In a tonal language, the pitch of a word, how high or low the voice is, changes its meaning. Mandarin Chinese has four main tones. The syllable “ma” can mean “mother” with a high, level tone, “hemp” with a rising tone, “horse” with a falling-rising tone, and “scold” with a sharp falling tone. Thai has five tones, and Vietnamese is usually described as having six. Researchers estimate that roughly four in every ten of the world’s languages are tonal, and many of them are in Africa and Asia. English does not use pitch to change the meaning of a word, but it uses pitch for other purposes: a rising voice at the end of a sentence can turn a statement into a question. For learners from non-tonal languages, hearing tones takes practice, but children who grow up with a tonal language learn them naturally in their first years."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Each language uses only some of the sounds that humans can make.",
+        "All languages in the world use exactly the same sounds.",
+        "Only languages in Africa use sounds made with the mouth.",
+        "The text explains that humans can make hundreds of sounds, but each language chooses only some of them, some using few and some using many.",
+        [
+          "but each language chooses only some of them",
+          "Some languages use far fewer"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "About how many sounds does English use?",
+        "About forty.",
+        "About ten.",
+        "About two hundred.",
+        "The text says that English uses about forty sounds.",
+        "English uses about forty"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “pop” means…",
+        "a short, sharp sound.",
+        "a long, soft song.",
+        "a loud, deep voice.",
+        "The text says that a click is made by creating a small pop, which means a short, sharp sound.",
+        "creating a small pop"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “they do not use it inside words” refers to…",
+        "a click.",
+        "a horse.",
+        "a word.",
+        "The sentence says that English speakers make a click when they say “tsk-tsk”, but they do not use a click inside words.",
+        "English speakers make a click when they say “tsk-tsk” or call a horse, but they do not use it inside words"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people speak Rotokas.",
+        "Where Rotokas is spoken.",
+        "How a click is made.",
+        "The text does not say how many people speak Rotokas. It says where it is spoken and how a click is made.",
+        [
+          "spoken on the island of Bougainville in Papua New Guinea",
+          "made by pulling the tongue away from the roof of the mouth"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about babies?",
+        "They learn to focus on the sounds they hear every day.",
+        "They cannot hear any sound until they are one year old.",
+        "They prefer the sounds of foreign languages.",
+        "The text says that babies can learn any sound, but by the end of their first year they become better at the sounds around them.",
+        "Babies are born able to learn any of these sounds, but by about the end of their first year, they become better at the sounds of the language around them."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In tonal languages, the pitch of a word changes its meaning.",
+        "In tonal languages, words are sung and never spoken.",
+        "In tonal languages, the meaning depends only on the spelling.",
+        "The text explains that in a tonal language the pitch of a word changes its meaning, and gives Mandarin as an example.",
+        [
+          "In a tonal language, the pitch of a word, how high or low the voice is, changes its meaning",
+          "Mandarin Chinese has four main tones"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many tones does Thai have, according to the text?",
+        "Five.",
+        "Four.",
+        "Six.",
+        "The text says that Thai has five tones.",
+        "Thai has five tones"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “purposes” means…",
+        "uses.",
+        "mistakes.",
+        "places.",
+        "The text says that English uses pitch for other purposes, which means for other uses, such as making a question.",
+        "it uses pitch for other purposes"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “learn them naturally” refers to…",
+        "the tones.",
+        "the children.",
+        "the first years.",
+        "The sentence says that children who grow up with a tonal language learn the tones naturally in their first years.",
+        "children who grow up with a tonal language learn them naturally in their first years"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people speak Thai.",
+        "What “ma” can mean with a rising tone.",
+        "Where many tonal languages are found.",
+        "The text does not say how many people speak Thai. It says that “ma” can mean “hemp” with a rising tone and that many tonal languages are in Africa and Asia.",
+        [
+          "“hemp” with a rising tone",
+          "many of them are in Africa and Asia"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about English and pitch?",
+        "English uses pitch, but not to change word meanings.",
+        "English is a tonal language like Mandarin.",
+        "English speakers never change the pitch of their voices.",
+        "The text says that English does not use pitch to change the meaning of a word, but it uses pitch for other purposes.",
+        "English does not use pitch to change the meaning of a word, but it uses pitch for other purposes"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "tongue",
+          "the soft part in the mouth that helps you talk and taste"
+        ],
+        [
+          "distinct",
+          "clearly different"
+        ],
+        [
+          "usually",
+          "in most cases"
+        ],
+        [
+          "roof",
+          "the top inside part of something"
+        ],
+        [
+          "pulling",
+          "moving something toward you"
+        ]
+      ],
+      "B": [
+        [
+          "pitch",
+          "how high or low a sound is"
+        ],
+        [
+          "level",
+          "flat, not going up or down"
+        ],
+        [
+          "rising",
+          "going up"
+        ],
+        [
+          "estimate",
+          "to say what you think a number is"
+        ],
+        [
+          "naturally",
+          "in an easy way without special effort"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 75,
+    "slug": "unseen-reading-part-75",
+    "theme": "Endangered Languages",
+    "blurb": "why languages disappear, how some were revived",
+    "texts": {
+      "A": {
+        "title": "Why Languages Disappear",
+        "text": "There are about seven thousand languages in the world, and UNESCO estimates that roughly forty percent of them are in danger of disappearing. A language is in danger when fewer and fewer children learn it. This often happens when a small community is pushed toward a larger, more powerful language. If school, jobs and television are all in one dominant language, parents may decide that their children will have a better future if they speak it. Migration to cities and shame about speaking the old language can make the problem worse. In the end, the last fluent speaker dies, and with them go songs, stories and knowledge about nature that were never written down. Many endangered languages have only a small number of speakers, and some have never been written down at all. Languages are not only tools for talking; they carry the history and thinking of a whole community."
+      },
+      "B": {
+        "title": "Languages That Came Back",
+        "text": "Some languages that seemed to be dying have been brought back. Hebrew is the best-known example. For many centuries it was mainly a language of prayer and books, and no child grew up speaking it at home. In the 1880s, a scholar named Eliezer Ben-Yehuda moved to Jerusalem and decided to make Hebrew a spoken language again. He and his wife raised their son in Hebrew, and he invented words for modern things. Later, Hebrew became the main language of the new state of Israel, and today millions of people speak it. The Māori language of New Zealand took a different path. By the 1980s, many young Māori could not speak it. In 1982, the first kōhanga reo, or “language nest”, opened: a preschool in which older speakers talked only in Māori to small children. Within a few years, hundreds of them had opened, and Māori later became an official language of New Zealand."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Languages become endangered when children stop learning them.",
+        "Languages become endangered when they have too many words.",
+        "Languages become endangered when scientists stop studying them.",
+        "The text explains that a language is in danger when fewer and fewer children learn it, often because a dominant language takes its place.",
+        [
+          "A language is in danger when fewer and fewer children learn it",
+          "the last fluent speaker dies"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "About what share of the world’s languages is in danger, according to UNESCO?",
+        "Roughly forty percent.",
+        "Roughly four percent.",
+        "Roughly ninety percent.",
+        "The text says that UNESCO estimates that roughly forty percent of the languages are in danger of disappearing.",
+        "roughly forty percent of them are in danger of disappearing"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “shame” means…",
+        "a feeling of embarrassment.",
+        "a feeling of pride.",
+        "a feeling of surprise.",
+        "The text says that shame about speaking the old language can make the problem worse, which means a feeling of embarrassment.",
+        "shame about speaking the old language"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “if they speak it” refers to…",
+        "the dominant language.",
+        "the old language.",
+        "the community.",
+        "The sentence says that if school, jobs and television are in one dominant language, parents may decide that their children will have a better future if they speak that language.",
+        "all in one dominant language, parents may decide that their children will have a better future if they speak it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many languages died last year.",
+        "What can be lost when the last speaker dies.",
+        "What can make the problem worse.",
+        "The text does not say how many languages died last year. It says what is lost with the last speaker and what makes the problem worse.",
+        [
+          "songs, stories and knowledge about nature that were never written down",
+          "Migration to cities and shame about speaking the old language can make the problem worse"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about languages?",
+        "Losing a language means losing part of a culture.",
+        "Languages are only useful for buying and selling.",
+        "A language can be replaced without any loss.",
+        "The text says that languages carry the history and thinking of a whole community.",
+        "Languages are not only tools for talking; they carry the history and thinking of a whole community."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Hebrew and Māori show that a language in danger can be brought back.",
+        "Hebrew and Māori show that a dying language cannot be saved.",
+        "Hebrew and Māori came back only because of television.",
+        "The text explains that Hebrew and Māori, which seemed to be dying, were brought back by people who worked to use them again.",
+        [
+          "Some languages that seemed to be dying have been brought back",
+          "Māori later became an official language of New Zealand"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What was a kōhanga reo?",
+        "A preschool where older speakers used only Māori.",
+        "A book of Māori stories.",
+        "A radio station for the Māori community.",
+        "The text says that a kōhanga reo, or “language nest”, was a preschool in which older speakers talked only in Māori to small children.",
+        "a preschool in which older speakers talked only in Māori to small children"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “main” means…",
+        "most important.",
+        "oldest.",
+        "smallest.",
+        "The text says that Hebrew became the main language of Israel, which means the most important language.",
+        "became the main language of the new state of Israel"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “could not speak it” refers to…",
+        "the Māori language.",
+        "New Zealand.",
+        "the preschool.",
+        "The sentence says that by the 1980s many young Māori could not speak the Māori language.",
+        "By the 1980s, many young Māori could not speak it."
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many children went to the first kōhanga reo.",
+        "Where Ben-Yehuda moved.",
+        "What Ben-Yehuda invented for modern things.",
+        "The text does not say how many children went to the first kōhanga reo. It says that Ben-Yehuda moved to Jerusalem and invented words.",
+        [
+          "moved to Jerusalem",
+          "he invented words for modern things"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about Hebrew before the 1880s?",
+        "It was used for prayer and books, not for daily talk at home.",
+        "It was the daily language of most families.",
+        "It was no longer written anywhere.",
+        "The text says that for many centuries Hebrew was mainly a language of prayer and books, and no child grew up speaking it at home.",
+        "it was mainly a language of prayer and books, and no child grew up speaking it at home"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "disappearing",
+          "going out of existence"
+        ],
+        [
+          "community",
+          "a group of people who live in the same place or share a culture"
+        ],
+        [
+          "dominant",
+          "more powerful or more important than others"
+        ],
+        [
+          "migration",
+          "moving from one place to another to live"
+        ],
+        [
+          "fluent",
+          "able to speak very easily and well"
+        ]
+      ],
+      "B": [
+        [
+          "prayer",
+          "words spoken to God in worship"
+        ],
+        [
+          "scholar",
+          "a person who studies a subject deeply"
+        ],
+        [
+          "invented",
+          "made something new for the first time"
+        ],
+        [
+          "preschool",
+          "a school for very young children"
+        ],
+        [
+          "official",
+          "accepted by the government"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 76,
+    "slug": "unseen-reading-part-76",
+    "theme": "Other Worlds",
+    "blurb": "how we find exoplanets, the habitable zone",
+    "texts": {
+      "A": {
+        "title": "How We Find Planets Around Other Stars",
+        "text": "Planets that circle stars other than the Sun are called exoplanets. Seeing them directly is very hard, because a star is billions of times brighter than a planet next to it, so astronomers usually look for signs instead. One method is the transit method. When a planet passes in front of its star, it blocks a tiny part of the light, and the star’s brightness drops for a short time, a little like a fly passing in front of a lamp. Another method looks for a wobble. A planet’s gravity pulls its star slightly, so the star moves a little, and this movement shifts the colors in the star’s light. In 1995, Michel Mayor and Didier Queloz used this second method to find a planet around a Sun-like star, and they shared the 2019 Nobel Prize in Physics. The Kepler telescope, launched in 2009, used the transit method. Today, more than five thousand exoplanets are known."
+      },
+      "B": {
+        "title": "The Goldilocks Zone",
+        "text": "The habitable zone is the range of distances from a star where a planet could have liquid water on its surface. It is nicknamed the Goldilocks zone, after the fairy tale in which one bowl of porridge was too hot, another too cold and a third just right. If a planet is too close to its star, the water evaporates into steam. If it is too far away, the water freezes into ice. In our Solar System, Earth is in the zone. Venus, which is closer to the Sun, is too hot, and Mars, which is farther away, is mostly too cold. The zone is not the same for every star. A dimmer star has a zone that is closer to it, and a brighter star has one that is farther out. Being in the zone is no guarantee of life, because a planet also needs a suitable atmosphere. Astronomers have found several rocky planets in the zones of their stars, including some around the small star TRAPPIST-1, about forty light-years away."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Astronomers find exoplanets by looking at changes in the light of their stars.",
+        "Astronomers find exoplanets by looking at them with ordinary cameras.",
+        "Astronomers find exoplanets by listening to radio signals from them.",
+        "The text explains that planets are hard to see directly, so astronomers look for signs, such as a dip in a star’s brightness or a wobble.",
+        [
+          "astronomers usually look for signs instead",
+          "One method is the transit method"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What happens to a star’s brightness during a transit?",
+        "It drops for a short time.",
+        "It rises for a short time.",
+        "It stays exactly the same.",
+        "The text says that when a planet passes in front of its star, the star’s brightness drops for a short time.",
+        "the star’s brightness drops for a short time"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “circle” means…",
+        "move around.",
+        "stand between.",
+        "fall into.",
+        "The text says that planets that circle stars are called exoplanets, which means planets that move around stars.",
+        "Planets that circle stars other than the Sun"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they shared the 2019 Nobel Prize” refers to…",
+        "Michel Mayor and Didier Queloz.",
+        "the Kepler astronomers.",
+        "the first exoplanets.",
+        "The sentence says that Michel Mayor and Didier Queloz found a planet around a Sun-like star, and they shared the 2019 Nobel Prize in Physics.",
+        "Michel Mayor and Didier Queloz used this second method to find a planet around a Sun-like star, and they shared the 2019 Nobel Prize in Physics"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How far away the nearest exoplanet is.",
+        "When the Kepler telescope was launched.",
+        "What a wobble does to the star’s light.",
+        "The text does not say how far away the nearest exoplanet is. It says when Kepler was launched and that a wobble shifts the colors of the star’s light.",
+        [
+          "launched in 2009",
+          "shifts the colors in the star’s light"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do astronomers usually look for signs instead of seeing planets directly?",
+        "A planet is far fainter than the star next to it.",
+        "Planets never give out or reflect any light.",
+        "Telescopes cannot be pointed at any star.",
+        "The text says that a star is billions of times brighter than a planet next to it, so planets are very hard to see directly.",
+        "a star is billions of times brighter than a planet next to it"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A planet may have liquid water only if it is at the right distance from its star.",
+        "A planet may have liquid water only if it is as big as the Earth.",
+        "A planet may have liquid water only if it has several moons.",
+        "The text explains that the habitable zone is the range of distances where a planet could have liquid water, and that too close or too far is a problem.",
+        [
+          "The habitable zone is the range of distances from a star where a planet could have liquid water on its surface",
+          "If a planet is too close to its star"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What happens to water on a planet that is too far from its star?",
+        "It freezes into ice.",
+        "It evaporates into steam.",
+        "It disappears into space at once.",
+        "The text says that if a planet is too far away, the water freezes into ice.",
+        "If it is too far away, the water freezes into ice."
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “nicknamed” means…",
+        "given an informal name.",
+        "given a strict rule.",
+        "given a hidden place.",
+        "The text says that the zone is nicknamed the Goldilocks zone, which means that it has been given an informal name.",
+        "It is nicknamed the Goldilocks zone"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “one” in “a brighter star has one that is farther out” refers to…",
+        "a habitable zone.",
+        "a dimmer star.",
+        "a rocky planet.",
+        "The sentence says that a dimmer star has a zone that is closer, and a brighter star has a zone that is farther out.",
+        "A dimmer star has a zone that is closer to it, and a brighter star has one that is farther out."
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many planets have been found with life.",
+        "How far away TRAPPIST-1 is.",
+        "Which planet in our Solar System is too hot.",
+        "The text does not say how many planets have been found with life. It says how far away TRAPPIST-1 is and that Venus is too hot.",
+        [
+          "about forty light-years away",
+          "Venus, which is closer to the Sun, is too hot"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a planet inside the zone?",
+        "It may still be unsuitable for life.",
+        "It must have life.",
+        "It must have no atmosphere.",
+        "The text says that being in the zone is no guarantee of life, because a planet also needs a suitable atmosphere.",
+        "Being in the zone is no guarantee of life, because a planet also needs a suitable atmosphere."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "transit",
+          "the passing of a planet in front of a star"
+        ],
+        [
+          "brightness",
+          "how much light something gives"
+        ],
+        [
+          "wobble",
+          "a small, unsteady movement from side to side"
+        ],
+        [
+          "shifts",
+          "moves or changes slightly"
+        ],
+        [
+          "launched",
+          "sent into space"
+        ]
+      ],
+      "B": [
+        [
+          "evaporates",
+          "changes from liquid into gas"
+        ],
+        [
+          "freezes",
+          "turns into ice"
+        ],
+        [
+          "dimmer",
+          "giving less light"
+        ],
+        [
+          "guarantee",
+          "a promise that something will certainly happen"
+        ],
+        [
+          "atmosphere",
+          "the layer of gases around a planet"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 77,
+    "slug": "unseen-reading-part-77",
+    "theme": "Orbit",
+    "blurb": "why astronauts float, how a rocket reaches orbit",
+    "texts": {
+      "A": {
+        "title": "Why Astronauts Float",
+        "text": "Astronauts on the International Space Station float, and many people think that this is because there is no gravity in space. In fact, at the height of the station, about 400 kilometers above the ground, gravity is still about ninety percent as strong as on the surface. The astronauts float because they are in free fall. The station moves sideways at about 28,000 kilometers an hour, so while it falls toward the Earth, the curved ground keeps moving away beneath it, and it never hits the ground. This endless fall around the Earth is called an orbit. Everything inside the station falls at the same rate, so nothing seems to press on anything else, and bodies feel weightless. Weightlessness is not harmless, however. Without the work of lifting their own weight, muscles weaken and bones lose material, so astronauts exercise for about two hours every day."
+      },
+      "B": {
+        "title": "How a Rocket Reaches Orbit",
+        "text": "To reach orbit, a rocket must do two things: go up, and go sideways very fast. Height alone is not enough. A rocket that only goes straight up will fall back down. To stay in orbit, a spacecraft must travel at about 28,000 kilometers an hour, or nearly eight kilometers every second, so that it keeps falling around the Earth. This is why a rocket launches upward and then slowly tilts to travel sideways. A rocket moves by pushing hot gas downward at high speed, and the gas pushes the rocket upward in return. To do this, it must carry huge amounts of fuel, and most of a rocket’s weight at the start is fuel. In order to become lighter, many rockets have stages: when a stage has used its fuel, it separates and falls away. The first artificial satellite, Sputnik 1, reached orbit in 1957. Since 2015, some rocket boosters have also landed after launch so that they can be used again."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Astronauts float because they are in a constant free fall around the Earth.",
+        "Astronauts float because there is no gravity at all in space.",
+        "Astronauts float because the space station is very light.",
+        "The text explains that gravity is still strong at the station and that astronauts float because they are in free fall around the Earth.",
+        [
+          "The astronauts float because they are in free fall",
+          "This endless fall around the Earth is called an orbit"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How fast does the station move?",
+        "About 28,000 kilometers an hour.",
+        "About 2,800 kilometers an hour.",
+        "About 400 kilometers an hour.",
+        "The text says that the station moves sideways at about 28,000 kilometers an hour.",
+        "about 28,000 kilometers an hour"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “beneath” means…",
+        "under.",
+        "beside.",
+        "above.",
+        "The text says that the curved ground keeps moving away beneath the station, which means under it.",
+        "keeps moving away beneath it"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it never hits the ground” refers to…",
+        "the station.",
+        "the ground.",
+        "the astronaut.",
+        "The sentence says that the station falls toward the Earth, but the curved ground keeps moving away, so the station never hits the ground.",
+        "and it never hits the ground"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How long astronauts stay on the station.",
+        "How strong gravity is at the height of the station.",
+        "Why astronauts exercise.",
+        "The text does not say how long astronauts stay on the station. It says how strong gravity is there and why astronauts exercise.",
+        [
+          "about ninety percent as strong as on the surface",
+          "Without the work of lifting their own weight, muscles weaken"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about gravity at the station?",
+        "It is almost as strong as on the ground.",
+        "It is zero.",
+        "It is stronger than on the ground.",
+        "The text says that gravity at the height of the station is still about ninety percent as strong as on the surface.",
+        "gravity is still about ninety percent as strong as on the surface"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "To reach orbit, a rocket needs to go up and also move sideways very fast.",
+        "To reach orbit, a rocket only needs to go straight up very high.",
+        "To reach orbit, a rocket only needs to carry a lot of people.",
+        "The text explains that height is not enough, and that a rocket must also go sideways very fast to stay in orbit.",
+        [
+          "a rocket must do two things: go up, and go sideways very fast",
+          "Height alone is not enough"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How fast must a spacecraft travel to stay in orbit?",
+        "About 28,000 kilometers an hour.",
+        "About 8,000 kilometers an hour.",
+        "About 280 kilometers an hour.",
+        "The text says that a spacecraft must travel at about 28,000 kilometers an hour, or nearly eight kilometers every second.",
+        "about 28,000 kilometers an hour, or nearly eight kilometers every second"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “separates” means…",
+        "comes apart.",
+        "joins together.",
+        "turns around.",
+        "The text says that when a stage has used its fuel, it separates and falls away, which means that it comes apart from the rocket.",
+        "it separates and falls away"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it must carry huge amounts of fuel” refers to…",
+        "the rocket.",
+        "the gas.",
+        "the Earth.",
+        "The sentence says that a rocket moves by pushing hot gas downward, and to do this the rocket must carry huge amounts of fuel.",
+        "To do this, it must carry huge amounts of fuel"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a rocket launch costs.",
+        "What the first artificial satellite was called.",
+        "Why many rockets have stages.",
+        "The text does not say how much a launch costs. It names Sputnik 1 and explains that stages make a rocket lighter.",
+        [
+          "The first artificial satellite, Sputnik 1",
+          "In order to become lighter, many rockets have stages"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the weight of a rocket?",
+        "Most of its weight at the start is fuel that will be used.",
+        "Most of its weight is the people inside it.",
+        "It becomes heavier as it climbs.",
+        "The text says that most of a rocket’s weight at the start is fuel, and that stages fall away to make the rocket lighter.",
+        "most of a rocket’s weight at the start is fuel"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "surface",
+          "the outside or top part of something"
+        ],
+        [
+          "curved",
+          "bent, not straight"
+        ],
+        [
+          "endless",
+          "without an end"
+        ],
+        [
+          "weightless",
+          "feeling no weight"
+        ],
+        [
+          "weaken",
+          "to become less strong"
+        ]
+      ],
+      "B": [
+        [
+          "orbit",
+          "the path of an object around a planet"
+        ],
+        [
+          "tilts",
+          "leans to one side"
+        ],
+        [
+          "fuel",
+          "something that is burned to make energy"
+        ],
+        [
+          "stages",
+          "separate sections of a rocket"
+        ],
+        [
+          "boosters",
+          "powerful rocket parts used to push a rocket up"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 78,
+    "slug": "unseen-reading-part-78",
+    "theme": "Our Star",
+    "blurb": "how the Sun makes energy, solar storms and auroras",
+    "texts": {
+      "A": {
+        "title": "How the Sun Makes Energy",
+        "text": "The Sun is a huge ball of hot gas, and it makes its energy by nuclear fusion. In the core, the temperature is about fifteen million degrees Celsius, and the pressure is enormous. Under these conditions, atoms of hydrogen are pushed together and join to form helium. A small part of the mass disappears in this process, and it turns into a large amount of energy, as described by Einstein’s famous equation, E equals mc squared. Every second, the Sun changes about four million tonnes of matter into energy. This sounds enormous, but the Sun is so massive that it has enough hydrogen to keep shining for about five billion more years. The energy takes a very long time, probably tens of thousands of years, to travel from the core to the surface, because it is constantly absorbed and sent out again. After it leaves the Sun, sunlight needs only about eight minutes to reach the Earth."
+      },
+      "B": {
+        "title": "Solar Storms and Auroras",
+        "text": "The Sun is not calm. Its surface sometimes erupts in solar flares, and sometimes it throws out huge clouds of charged particles, called coronal mass ejections. If such a cloud travels toward the Earth, it arrives after one to three days. Luckily, the Earth’s magnetic field protects us. It guides most of the particles toward the north and south poles, where they hit gases in the upper atmosphere, about a hundred kilometers above the ground. The gases glow: oxygen usually gives green light, and nitrogen gives blue or purple. The result is an aurora, called the northern lights in the Arctic and the southern lights in the Antarctic. Strong storms can also cause trouble. In March 1989, a solar storm caused a power failure in Quebec, Canada, that left millions of people without electricity for about nine hours. Solar activity rises and falls in a cycle of about eleven years."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Sun makes energy by fusion, turning hydrogen into helium in its core.",
+        "The Sun makes energy by burning coal and gas on its surface.",
+        "The Sun makes energy by pulling in energy from other stars.",
+        "The text explains that the Sun makes its energy by nuclear fusion, which joins hydrogen atoms to form helium in the core.",
+        [
+          "it makes its energy by nuclear fusion",
+          "atoms of hydrogen are pushed together and join to form helium"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "About how hot is the Sun’s core?",
+        "About fifteen million degrees Celsius.",
+        "About fifteen thousand degrees Celsius.",
+        "About fifteen degrees Celsius.",
+        "The text says that the temperature in the core is about fifteen million degrees Celsius.",
+        "about fifteen million degrees Celsius"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “massive” means…",
+        "extremely heavy and large.",
+        "extremely old.",
+        "extremely bright.",
+        "The text says that the Sun is so massive that it has enough hydrogen to shine for billions of years, which means that it is extremely heavy and large.",
+        "the Sun is so massive that it has enough hydrogen"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it turns into a large amount of energy” refers to…",
+        "a small part of the mass.",
+        "the hydrogen.",
+        "the helium.",
+        "The sentence says that a small part of the mass disappears, and this small part turns into a large amount of energy.",
+        "A small part of the mass disappears in this process, and it turns into a large amount of energy"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the Sun will become after five billion years.",
+        "How long sunlight needs to reach the Earth.",
+        "Which atoms join to form helium.",
+        "The text does not say what the Sun will become. It says how long sunlight needs to reach the Earth and that hydrogen atoms form helium.",
+        [
+          "sunlight needs only about eight minutes to reach the Earth",
+          "atoms of hydrogen are pushed together and join to form helium"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the Sun’s supply of fuel?",
+        "It will last for a very long time.",
+        "It will run out within a few years.",
+        "It is stored only on the Sun’s surface.",
+        "The text says that the Sun has enough hydrogen to keep shining for about five billion more years.",
+        "enough hydrogen to keep shining for about five billion more years"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Solar storms send particles to Earth, causing auroras and sometimes trouble.",
+        "Auroras are caused by the Moon moving in front of the Sun.",
+        "Solar storms are harmless and never affect any equipment.",
+        "The text explains that the Sun sometimes throws out charged particles, which cause auroras at the poles and can sometimes cause problems.",
+        [
+          "it throws out huge clouds of charged particles",
+          "The result is an aurora"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What color does oxygen usually give?",
+        "Green.",
+        "Red.",
+        "Yellow.",
+        "The text says that oxygen usually gives green light.",
+        "oxygen usually gives green light"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “Luckily” means…",
+        "fortunately.",
+        "slowly.",
+        "sadly.",
+        "The text says that, luckily, the Earth’s magnetic field protects us, which means that we are fortunate to have this protection.",
+        "Luckily, the Earth’s magnetic field protects us."
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “where” in “where they hit gases” refers to…",
+        "the north and south poles.",
+        "the Sun.",
+        "the magnetic field.",
+        "The sentence says that the magnetic field guides the particles toward the north and south poles, where they hit gases in the upper atmosphere.",
+        "toward the north and south poles, where they hit gases in the upper atmosphere"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country sees the best aurora.",
+        "What the lights are called in the Antarctic.",
+        "How long the 1989 power failure lasted.",
+        "The text does not say which country sees the best aurora. It says what the lights are called in the Antarctic and that the 1989 failure lasted about nine hours.",
+        [
+          "the southern lights in the Antarctic",
+          "for about nine hours"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the Quebec example suggest?",
+        "Space weather can affect equipment on the Earth.",
+        "Auroras can only be seen in Canada.",
+        "Solar storms always cause power failures.",
+        "The text says that a solar storm caused a power failure in Quebec, so space weather can affect equipment on the Earth.",
+        "a solar storm caused a power failure in Quebec"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "core",
+          "the center of something"
+        ],
+        [
+          "pressure",
+          "a strong force pressing on something"
+        ],
+        [
+          "enormous",
+          "extremely large"
+        ],
+        [
+          "absorbed",
+          "taken in"
+        ],
+        [
+          "constantly",
+          "all the time without stopping"
+        ]
+      ],
+      "B": [
+        [
+          "erupts",
+          "bursts out suddenly"
+        ],
+        [
+          "charged",
+          "carrying electricity"
+        ],
+        [
+          "magnetic",
+          "having the power to attract metal"
+        ],
+        [
+          "glow",
+          "to shine with a soft light"
+        ],
+        [
+          "cycle",
+          "a series of events that repeats"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 79,
+    "slug": "unseen-reading-part-79",
+    "theme": "Near the Earth",
+    "blurb": "daily life on the space station, space junk",
+    "texts": {
+      "A": {
+        "title": "Daily Life on the Space Station",
+        "text": "The International Space Station travels around the Earth about every ninety minutes, so its crew sees around sixteen sunrises and sunsets every day. To keep a normal rhythm, the astronauts follow a single clock time and sleep at night, in sleeping bags attached to the wall, because otherwise they would float around. The crew is usually six or seven people from different countries. Most of the day is work: science experiments, repairs and maintenance. Exercise is also part of the schedule, because the body weakens without gravity. Food is packaged, and some dishes need water to be added. Water is precious, since every liter must be brought from Earth, so the station recycles most of it, including sweat and urine, which is cleaned and made safe to drink. On the weekend, astronauts usually rest, call their families, look out of the window at the Earth and take photographs."
+      },
+      "B": {
+        "title": "Space Junk",
+        "text": "Around the Earth there are not only working satellites, but also a great deal of space junk: old rocket parts, dead satellites and pieces from past collisions. The European Space Agency reports that about forty thousand objects are tracked by radar and telescopes, and only about eleven thousand of them are working satellites. There are also millions of tiny fragments that are too small to track. All of them travel at very high speeds, several kilometers every second, so even a fleck of paint can hit hard enough to damage a spacecraft. In 2009, a working American satellite, Iridium 33, collided with an old Russian satellite, Cosmos 2251, and created thousands of new pieces. Experts worry about a chain reaction, called the Kessler syndrome, in which each collision makes more debris and more collisions. To reduce the danger, new satellites are designed to leave their orbit at the end of their lives, and some companies are testing ways to remove old objects."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Life on the space station follows a daily routine with work and rest.",
+        "Life on the space station is a long holiday with no work.",
+        "Life on the space station is the same as life on the Earth.",
+        "The text describes how astronauts keep a normal rhythm, with sleep, work, exercise, food, recycled water and rest.",
+        [
+          "To keep a normal rhythm",
+          "Most of the day is work"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where do astronauts sleep?",
+        "In sleeping bags attached to the wall.",
+        "In beds on the floor.",
+        "In chairs by the windows.",
+        "The text says that astronauts sleep in sleeping bags attached to the wall.",
+        "in sleeping bags attached to the wall"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “schedule” means…",
+        "a plan of times for activities.",
+        "a list of foods.",
+        "a type of window.",
+        "The text says that exercise is part of the schedule, which means the daily plan of times for activities.",
+        "Exercise is also part of the schedule"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “recycles most of it” refers to…",
+        "water.",
+        "food.",
+        "the schedule.",
+        "The sentence says that every liter of water must be brought from Earth, so the station recycles most of the water.",
+        "so the station recycles most of it, including sweat and urine"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the station weighs.",
+        "Why the astronauts exercise.",
+        "What astronauts do on the weekend.",
+        "The text does not say how much the station weighs. It says why astronauts exercise and what they do on the weekend.",
+        [
+          "the body weakens without gravity",
+          "On the weekend, astronauts usually rest, call their families"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about water on the station?",
+        "It is brought from the Earth, so saving it is important.",
+        "It is made easily from the air in space.",
+        "It is never used a second time by anyone.",
+        "The text says that every liter must be brought from Earth, so the station recycles most of its water.",
+        "every liter must be brought from Earth, so the station recycles most of it"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Space junk around the Earth is dangerous, and experts are trying to reduce it.",
+        "Space junk around the Earth is harmless because it moves slowly.",
+        "Space junk around the Earth is made only of old American satellites.",
+        "The text explains that there is a lot of space junk moving fast, which is dangerous, and that people are trying to reduce the danger.",
+        [
+          "a great deal of space junk",
+          "To reduce the danger, new satellites are designed to leave their orbit"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "About how many objects are tracked, according to ESA?",
+        "About forty thousand.",
+        "About four thousand.",
+        "About four hundred thousand.",
+        "The text says that about forty thousand objects are tracked by radar and telescopes.",
+        "about forty thousand objects are tracked"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fleck” means…",
+        "a very small piece.",
+        "a very large piece.",
+        "a very old piece.",
+        "The text says that even a fleck of paint can damage a spacecraft, which means that even a very small piece can do it.",
+        "even a fleck of paint"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “All of them travel” refers to…",
+        "the tracked objects and the tiny fragments.",
+        "only the satellites that still work.",
+        "only the satellites made in Russia.",
+        "The sentence before talks about the tracked objects and the millions of tiny fragments, and all of them travel at very high speeds.",
+        "There are also millions of tiny fragments that are too small to track. All of them travel at very high speeds"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much it costs to remove one object.",
+        "Which satellites collided in 2009.",
+        "What new satellites are designed to do.",
+        "The text does not say how much it costs to remove an object. It names the satellites that collided and says what new satellites are designed to do.",
+        [
+          "Iridium 33, collided with an old Russian satellite, Cosmos 2251",
+          "designed to leave their orbit at the end of their lives"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why do experts worry about the Kessler syndrome?",
+        "One collision could lead to many more.",
+        "It would stop rockets from burning fuel.",
+        "It would make satellites travel more slowly.",
+        "The text says that in the Kessler syndrome each collision makes more debris and more collisions.",
+        "each collision makes more debris and more collisions"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "rhythm",
+          "a regular pattern"
+        ],
+        [
+          "attached",
+          "fixed to something"
+        ],
+        [
+          "maintenance",
+          "work done to keep something in good condition"
+        ],
+        [
+          "precious",
+          "very valuable"
+        ],
+        [
+          "recycles",
+          "uses again"
+        ]
+      ],
+      "B": [
+        [
+          "fragments",
+          "small broken pieces"
+        ],
+        [
+          "collided",
+          "crashed into something"
+        ],
+        [
+          "debris",
+          "broken pieces left after something is destroyed"
+        ],
+        [
+          "reduce",
+          "to make smaller or less"
+        ],
+        [
+          "remove",
+          "to take something away"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 80,
+    "slug": "unseen-reading-part-80",
+    "theme": "Arnis",
+    "blurb": "the roots of arnis, arnis today",
+    "texts": {
+      "A": {
+        "title": "The Roots of Arnis",
+        "text": "Arnis is a Filipino martial art that uses sticks, blades and bare hands. It is also known as eskrima in many parts of the country and as kali in others, and these names often show the region or the school. Fighting arts existed on the islands long before the Spanish arrived in the sixteenth century. In 1521, the chief Lapulapu and his warriors of Mactan defeated the Spanish expedition of Ferdinand Magellan, and the battle is often remembered as an example of local fighting skill. During the centuries of Spanish rule, openly carrying and practicing with weapons was discouraged, according to tradition, so many techniques were passed on in secret, or hidden inside dances and plays. The word eskrima probably comes from the Spanish esgrima, which means fencing. Practice sticks are usually made of rattan, a light and strong material from a kind of palm, which does not splinter easily."
+      },
+      "B": {
+        "title": "Arnis Today",
+        "text": "Today, arnis is a recognized sport as well as a martial art. In December 2009, the Philippine government signed Republic Act 9850, which declared arnis the national martial art and sport of the country. Schools in the Philippines teach it, and arnis has been included in the Southeast Asian Games. In competition, there are usually two kinds of events. In anyo, fighters perform a set sequence of movements to show their technique. In labanan, two fighters wearing protective gear, such as a helmet and padded armor, spar with sticks and score points for clean hits. Training with sticks teaches timing, distance and quick hands, and many arnis techniques also include locks, throws and strikes with the empty hand. Outside the Philippines, arnis is taught in many countries, and fight choreographers have used it in films. Some MMA coaches also use its footwork and hand-speed drills to improve striking."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Arnis is a Filipino martial art with old roots and several names.",
+        "Arnis is a modern sport that was invented in Spain.",
+        "Arnis is a fighting art that uses only bare hands.",
+        "The text explains that arnis is a Filipino martial art, also called eskrima or kali, with roots that are older than Spanish rule.",
+        [
+          "Arnis is a Filipino martial art that uses sticks, blades and bare hands",
+          "Fighting arts existed on the islands long before the Spanish arrived"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What are practice sticks usually made of?",
+        "Rattan.",
+        "Iron.",
+        "Bamboo.",
+        "The text says that practice sticks are usually made of rattan.",
+        "usually made of rattan"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “passed on” means…",
+        "handed down to others.",
+        "completely forgotten.",
+        "sold in markets.",
+        "The text says that many techniques were passed on in secret, which means that they were handed down to others.",
+        "many techniques were passed on in secret"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “these names” in “these names often show the region” refers to…",
+        "arnis, eskrima and kali.",
+        "the islands and the regions.",
+        "the sticks and the blades.",
+        "The sentence says that arnis is also known as eskrima and as kali, and these names often show the region or the school.",
+        "It is also known as eskrima in many parts of the country and as kali in others, and these names often show the region or the school"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who taught Lapulapu to fight.",
+        "Who defeated Magellan’s expedition.",
+        "What eskrima probably comes from.",
+        "The text does not say who taught Lapulapu to fight. It says that Lapulapu and his warriors defeated the expedition and that eskrima probably comes from esgrima.",
+        [
+          "the chief Lapulapu and his warriors of Mactan defeated the Spanish expedition",
+          "probably comes from the Spanish esgrima"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about arnis under Spanish rule?",
+        "People kept practicing it, but often secretly.",
+        "It was taught openly in all schools.",
+        "It disappeared completely.",
+        "The text says that practicing with weapons was discouraged, so many techniques were passed on in secret or hidden inside dances and plays.",
+        "many techniques were passed on in secret, or hidden inside dances and plays"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Arnis is now a national sport with competitions in forms and fighting.",
+        "Arnis is now a forgotten art that nobody practices anymore.",
+        "Arnis is now a sport that is practiced only outside the Philippines.",
+        "The text explains that arnis is a recognized national sport with two kinds of competition events, and that it is taught in many places.",
+        [
+          "arnis is a recognized sport as well as a martial art",
+          "there are usually two kinds of events"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does Republic Act 9850 declare?",
+        "That arnis is the national martial art and sport.",
+        "That arnis must be taught in every home.",
+        "That arnis is banned from schools.",
+        "The text says that Republic Act 9850 declared arnis the national martial art and sport of the country.",
+        "declared arnis the national martial art and sport of the country"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “spar” means…",
+        "fight in practice.",
+        "talk in secret.",
+        "dance in a group.",
+        "The text says that in labanan two fighters spar with sticks and score points, which means that they fight in practice.",
+        "spar with sticks and score points for clean hits"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “have used it in films” refers to…",
+        "arnis.",
+        "a film.",
+        "a country.",
+        "The sentence says that arnis is taught in many countries, and fight choreographers have used arnis in films.",
+        "fight choreographers have used it in films"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people practice arnis worldwide.",
+        "What fighters do in anyo.",
+        "What labanan fighters wear.",
+        "The text does not say how many people practice arnis. It says what fighters do in anyo and what they wear in labanan.",
+        [
+          "fighters perform a set sequence of movements",
+          "wearing protective gear, such as a helmet and padded armor"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about arnis training?",
+        "It can help fighters in other sports too.",
+        "It is useful only for stick fights.",
+        "It has no value outside the Philippines.",
+        "The text says that some MMA coaches use arnis footwork and hand-speed drills to improve striking.",
+        "Some MMA coaches also use its footwork and hand-speed drills to improve striking."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "martial",
+          "related to fighting"
+        ],
+        [
+          "expedition",
+          "a long trip made for a special purpose"
+        ],
+        [
+          "discouraged",
+          "made less likely by showing disapproval"
+        ],
+        [
+          "tradition",
+          "a belief or custom passed down over many years"
+        ],
+        [
+          "splinter",
+          "to break into thin sharp pieces"
+        ]
+      ],
+      "B": [
+        [
+          "recognized",
+          "officially accepted"
+        ],
+        [
+          "declared",
+          "announced officially"
+        ],
+        [
+          "sequence",
+          "a set of things that follow each other in order"
+        ],
+        [
+          "protective",
+          "made to keep someone safe"
+        ],
+        [
+          "choreographers",
+          "people who plan the movements in a dance or fight scene"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 81,
+    "slug": "unseen-reading-part-81",
+    "theme": "Training",
+    "blurb": "how fighters train, recovery sleep and food",
+    "texts": {
+      "A": {
+        "title": "How Fighters Train",
+        "text": "A fighter must build several qualities at the same time. The first is skill, which is practiced in drills, where two partners repeat a technique until it becomes automatic. The second is conditioning, the ability to keep working hard for a long time. Because a fight is made of short bursts of effort with small breaks, many fighters use interval training: they work as hard as they can for a few minutes, rest briefly, and repeat. The third is strength and power, which are built in the gym with weights and body exercises. The most realistic practice is sparring, in which partners fight with gloves and protective gear but at a controlled speed, so that they can learn without serious injuries. Before a big fight, a fighter usually prepares in a training camp of about eight weeks, often training twice a day. In the UFC, a round lasts five minutes, so many sessions are built from five-minute rounds."
+      },
+      "B": {
+        "title": "Recovery, Sleep and Food",
+        "text": "Many beginners think that training makes them stronger, but this is not quite true. Training damages the muscles a little, and the body becomes stronger when it repairs them during recovery. This is why rest is part of the program. Sleep is the most important tool: adults are advised to get seven to nine hours a night, and athletes often need even more, because the body releases substances for repair during deep sleep and the brain stores what it learned in practice. Food also matters. Protein helps to repair muscles, carbohydrates give energy for the next session and water keeps the body working properly. Fighters who do too much and rest too little can suffer from overtraining, with signs such as constant tiredness, poor performance, mood changes and more frequent illness. Coaches therefore plan easy days and full rest days, and many fighters use massage, stretching or cold baths to feel better."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Fighters train skill, conditioning and strength, and they spar to practice.",
+        "Fighters train only their skill and do no exercise for fitness.",
+        "Fighters train only by running long distances every day.",
+        "The text explains that a fighter builds skill, conditioning and strength, and that sparring is the most realistic practice.",
+        [
+          "A fighter must build several qualities at the same time",
+          "The most realistic practice is sparring"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long is a typical training camp, according to the text?",
+        "About eight weeks.",
+        "About two weeks.",
+        "About eight months.",
+        "The text says that a fighter usually prepares in a training camp of about eight weeks.",
+        "a training camp of about eight weeks"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “briefly” means…",
+        "for a short time.",
+        "for a long time.",
+        "without stopping.",
+        "The text says that fighters rest briefly in interval training, which means that they rest for a short time.",
+        "rest briefly"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “until it becomes automatic” refers to…",
+        "the technique.",
+        "the drill.",
+        "the partner.",
+        "The sentence says that two partners repeat a technique until the technique becomes automatic.",
+        "repeat a technique until it becomes automatic"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many fighters train in each gym.",
+        "How long a UFC round lasts.",
+        "What builds strength and power.",
+        "The text does not say how many fighters train in each gym. It says that a UFC round lasts five minutes and that weights build strength.",
+        [
+          "a round lasts five minutes",
+          "built in the gym with weights and body exercises"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do many fighters use interval training?",
+        "A fight is made of short bursts of effort.",
+        "A fight is one long, slow effort.",
+        "Fighters cannot run for long distances.",
+        "The text says that because a fight is made of short bursts of effort with small breaks, many fighters use interval training.",
+        "a fight is made of short bursts of effort with small breaks"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Fighters get stronger during recovery, so sleep, food and rest days matter.",
+        "Fighters get stronger only while they are training, not while resting.",
+        "Fighters get stronger by eating less food and sleeping less.",
+        "The text explains that the body becomes stronger when it repairs itself during recovery, so rest, sleep and food are important.",
+        [
+          "the body becomes stronger when it repairs them during recovery",
+          "This is why rest is part of the program"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many hours of sleep are adults advised to get?",
+        "Seven to nine hours.",
+        "Four to five hours.",
+        "Eleven to twelve hours.",
+        "The text says that adults are advised to get seven to nine hours a night.",
+        "seven to nine hours a night"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “properly” means…",
+        "in the right way.",
+        "in a strange way.",
+        "in a hurry.",
+        "The text says that water keeps the body working properly, which means that it works in the right way.",
+        "keeps the body working properly"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “when it repairs them” refers to…",
+        "the muscles.",
+        "the training sessions.",
+        "the fighters.",
+        "The sentence says that training damages the muscles a little, and the body becomes stronger when it repairs the muscles.",
+        "Training damages the muscles a little, and the body becomes stronger when it repairs them during recovery"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much protein a fighter should eat each day.",
+        "What protein helps to do.",
+        "Which signs of overtraining can appear.",
+        "The text does not say how much protein a fighter should eat. It says what protein helps to do and which signs of overtraining appear.",
+        [
+          "Protein helps to repair muscles",
+          "constant tiredness, poor performance, mood changes and more frequent illness"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a fighter who trains every day without rest?",
+        "He may perform worse, not better.",
+        "He will certainly become the strongest.",
+        "He will need less sleep.",
+        "The text says that fighters who do too much and rest too little can suffer from overtraining, with poor performance.",
+        "Fighters who do too much and rest too little can suffer from overtraining"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "qualities",
+          "good or useful features of a person"
+        ],
+        [
+          "drills",
+          "repeated exercises to learn a skill"
+        ],
+        [
+          "automatic",
+          "done without thinking"
+        ],
+        [
+          "interval",
+          "a period of time between two events"
+        ],
+        [
+          "controlled",
+          "kept under careful management"
+        ]
+      ],
+      "B": [
+        [
+          "recovery",
+          "the time when the body returns to normal after effort"
+        ],
+        [
+          "advised",
+          "told what is best to do"
+        ],
+        [
+          "substances",
+          "types of matter or chemicals"
+        ],
+        [
+          "overtraining",
+          "training so much that the body cannot recover"
+        ],
+        [
+          "frequent",
+          "happening often"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 82,
+    "slug": "unseen-reading-part-82",
+    "theme": "Judo and Karate",
+    "blurb": "judo, the gentle way; karate, the empty hand",
+    "texts": {
+      "A": {
+        "title": "Judo: The Gentle Way",
+        "text": "Judo was created in Japan in 1882 by Jigoro Kano, an educator who studied older fighting arts called jujutsu. He wanted to keep the useful techniques but remove the dangerous ones, so that judo could also be safe for school students. The word judo means “the gentle way”. Its main idea is to use the opponent’s own force and balance instead of fighting against it. A judoka, for example, may pull when the opponent pushes, so that the opponent loses balance and can be thrown to the ground. Judo has throws, holds on the ground, chokes and joint locks, but it does not allow punches or kicks. Kano opened a school called the Kodokan in Tokyo in 1882, and judo was added to the Olympic Games in 1964, when Tokyo hosted them. Many MMA fighters have a judo background, including Ronda Rousey, who won an Olympic bronze medal in 2008."
+      },
+      "B": {
+        "title": "Karate: The Empty Hand",
+        "text": "Karate developed on the island of Okinawa, which was then the independent Ryukyu Kingdom and is now part of Japan. Okinawans created local fighting methods, and over the centuries they mixed them with ideas from Chinese martial arts. For a long time, karate was written with characters meaning “Chinese hand”. In the 1930s, the characters were changed to mean “empty hand”, which shows that the art uses no weapons. Gichin Funakoshi, a teacher from Okinawa, introduced karate to mainland Japan in the 1920s, and after the Second World War it spread to many other countries. Karate is mostly a striking art, with punches, kicks and blocks, and it is practiced in two ways: kata, a set sequence of movements against imaginary opponents, and kumite, which is sparring. Karate appeared for the first time in the Olympic Games in Tokyo, in 2021. Several MMA champions began their careers in karate."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Judo was created by Jigoro Kano and uses an opponent’s force and balance.",
+        "Judo was created by soldiers and is based on punches and kicks.",
+        "Judo was created in Brazil and is based on staying on the ground.",
+        "The text explains that Kano created judo in Japan and that its main idea is to use the opponent’s force and balance.",
+        [
+          "Judo was created in Japan in 1882 by Jigoro Kano",
+          "use the opponent’s own force and balance instead of fighting against it"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the word judo mean?",
+        "“The gentle way”.",
+        "“The strong hand”.",
+        "“The long road”.",
+        "The text says that the word judo means “the gentle way”.",
+        "The word judo means “the gentle way”"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “hosted” means…",
+        "organized and held.",
+        "refused to join.",
+        "won easily.",
+        "The text says that Tokyo hosted the Olympic Games, which means that it organized and held them.",
+        "when Tokyo hosted them"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “Its” in “Its main idea” refers to…",
+        "judo.",
+        "jujutsu.",
+        "the Kodokan.",
+        "The sentence before says that the word judo means “the gentle way”, and judo’s main idea is to use the opponent’s force.",
+        "The word judo means “the gentle way”. Its main idea"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students the Kodokan had in 1882.",
+        "What judo does not allow.",
+        "When judo became an Olympic sport.",
+        "The text does not say how many students the Kodokan had. It says what judo does not allow and when it joined the Olympic Games.",
+        [
+          "it does not allow punches or kicks",
+          "judo was added to the Olympic Games in 1964"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about Kano’s changes?",
+        "He wanted judo to be safe enough for students.",
+        "He wanted judo to be only for soldiers.",
+        "He wanted judo to be a secret art.",
+        "The text says that Kano removed the dangerous techniques so that judo could also be safe for school students.",
+        "so that judo could also be safe for school students"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Karate grew in Okinawa, took its present name and spread around the world.",
+        "Karate grew in Brazil and was made only for the Olympic Games.",
+        "Karate grew in China and was never practiced in Japan.",
+        "The text explains that karate developed in Okinawa, changed its name, spread to Japan and then to other countries.",
+        [
+          "Karate developed on the island of Okinawa",
+          "after the Second World War it spread to many other countries"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do the characters of the modern name of karate mean?",
+        "“Empty hand”.",
+        "“Chinese hand”.",
+        "“Iron fist”.",
+        "The text says that the characters were changed to mean “empty hand”.",
+        "the characters were changed to mean “empty hand”"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “mostly” means…",
+        "mainly.",
+        "never.",
+        "rarely.",
+        "The text says that karate is mostly a striking art, which means that it is mainly a striking art.",
+        "Karate is mostly a striking art"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “after the Second World War it spread” refers to…",
+        "karate.",
+        "Okinawa.",
+        "mainland Japan.",
+        "The sentence says that Funakoshi introduced karate to mainland Japan, and after the war karate spread to many other countries.",
+        "after the Second World War it spread to many other countries"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people practice karate today.",
+        "What kata is.",
+        "Who introduced karate to mainland Japan.",
+        "The text does not say how many people practice karate. It explains what kata is and says that Funakoshi introduced karate to mainland Japan.",
+        [
+          "kata, a set sequence of movements against imaginary opponents",
+          "Gichin Funakoshi, a teacher from Okinawa, introduced karate to mainland Japan"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the name “empty hand” suggest about karate?",
+        "Fighters use their bodies and no weapons.",
+        "Fighters use only their feet.",
+        "Fighters carry hidden weapons.",
+        "The text says that the name “empty hand” shows that the art uses no weapons.",
+        "which shows that the art uses no weapons"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "educator",
+          "a person who teaches"
+        ],
+        [
+          "opponent",
+          "a person who competes against you"
+        ],
+        [
+          "balance",
+          "the ability to stay steady and not fall"
+        ],
+        [
+          "judoka",
+          "a person who practices judo"
+        ],
+        [
+          "background",
+          "the experience or training that a person has had"
+        ]
+      ],
+      "B": [
+        [
+          "independent",
+          "not controlled by another country"
+        ],
+        [
+          "centuries",
+          "periods of one hundred years"
+        ],
+        [
+          "introduced",
+          "brought to a new place for the first time"
+        ],
+        [
+          "imaginary",
+          "not real, only in the mind"
+        ],
+        [
+          "champions",
+          "winners of a major competition"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 83,
+    "slug": "unseen-reading-part-83",
+    "theme": "Cage and Gloves",
+    "blurb": "why the UFC uses a cage, gloves and hand wraps",
+    "texts": {
+      "A": {
+        "title": "Why the UFC Fights in a Cage",
+        "text": "When the first UFC was held in 1993, the fights took place in an eight-sided cage that the organizers called the Octagon. The idea is usually credited to the film director John Milius, who was a friend and student of the Gracie family, although accounts differ about who thought of it first. The cage was built to solve problems of the ring. In a square boxing ring, fighters can be trapped in a corner, and in a wrestling fight they can roll under the ropes or fall out of the ring. In a cage with no corners, there is nowhere to hide, and a fighter cannot fall out. The fence also lets a fighter press an opponent against it and use it for support while standing up. At first, the fence was made of chain link, but today it is covered with vinyl, which is safer for the skin. The modern Octagon is about nine meters across."
+      },
+      "B": {
+        "title": "Gloves and Hand Wraps",
+        "text": "MMA fighters wear gloves, but they are very different from boxing gloves. A boxing glove weighs about eight to ten ounces in a fight and covers the whole hand with thick padding. An MMA glove is much smaller, usually about four ounces, and the fingers are left open. This is necessary because fighters must grab, hold and escape on the ground, and a thick boxing glove would make this impossible. The small glove protects the fighter’s own hand more than it protects the opponent’s head, so cuts are common in MMA, and fighters often use their hands carefully. Underneath the gloves, fighters wear hand wraps, long strips of cloth that support the wrist and the small bones of the hand. Officials of the athletic commission inspect the wraps before a fight to check that nothing hard or illegal is hidden in them."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The UFC uses a cage because it has no corners and keeps fighters inside.",
+        "The UFC uses a cage because it makes the fights shorter.",
+        "The UFC uses a cage because the first fighters asked for it.",
+        "The text explains that the cage was built to solve problems of the ring, such as corners and falling out.",
+        [
+          "The cage was built to solve problems of the ring",
+          "In a cage with no corners, there is nowhere to hide"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How many sides does the Octagon have?",
+        "Eight.",
+        "Six.",
+        "Ten.",
+        "The text says that the cage is eight-sided, which is why it is called the Octagon.",
+        "an eight-sided cage"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “differ” means…",
+        "are not the same.",
+        "are all the same.",
+        "are very short.",
+        "The text says that accounts differ about who thought of it first, which means that the accounts are not the same.",
+        "although accounts differ about who thought of it first"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “who” in “who was a friend and student” refers to…",
+        "John Milius.",
+        "the organizers.",
+        "a Gracie fighter.",
+        "The sentence says that the idea is credited to the film director John Milius, who was a friend and student of the Gracie family.",
+        "the film director John Milius, who was a friend and student of the Gracie family"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the cage costs to build.",
+        "What the fence was first made of.",
+        "How wide the modern Octagon is.",
+        "The text does not say how much the cage costs. It says that the fence was first chain link and that the Octagon is about nine meters across.",
+        [
+          "At first, the fence was made of chain link",
+          "The modern Octagon is about nine meters across"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about a square ring?",
+        "A fighter can be trapped in its corners.",
+        "It is safer than a cage in every way.",
+        "It has no ropes at all.",
+        "The text says that in a square boxing ring fighters can be trapped in a corner, and that a cage has no corners.",
+        "In a square boxing ring, fighters can be trapped in a corner"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "MMA gloves are small with open fingers so that fighters can grab and grapple.",
+        "MMA gloves are large and thick so that fighters cannot be hurt.",
+        "MMA gloves are the same as boxing gloves and cover the fingers.",
+        "The text explains that MMA gloves are small and leave the fingers open because fighters must grab, hold and escape on the ground.",
+        [
+          "An MMA glove is much smaller, usually about four ounces, and the fingers are left open",
+          "fighters must grab, hold and escape on the ground"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "About how heavy is an MMA glove?",
+        "About four ounces.",
+        "About eight ounces.",
+        "About twelve ounces.",
+        "The text says that an MMA glove is usually about four ounces.",
+        "usually about four ounces"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “impossible” means…",
+        "not able to be done.",
+        "very easy.",
+        "more fun.",
+        "The text says that a thick boxing glove would make grabbing impossible, which means that it could not be done.",
+        "would make this impossible"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “would make this impossible” refers to…",
+        "grabbing, holding and escaping on the ground.",
+        "wearing a pair of gloves in a fight.",
+        "hitting the opponent’s head with the fist.",
+        "The sentence says that fighters must grab, hold and escape on the ground, and a thick boxing glove would make this impossible.",
+        "fighters must grab, hold and escape on the ground, and a thick boxing glove would make this impossible"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who invented the MMA glove.",
+        "What hand wraps support.",
+        "Who inspects the wraps.",
+        "The text does not say who invented the MMA glove. It says what the hand wraps support and that officials inspect them.",
+        [
+          "support the wrist and the small bones of the hand",
+          "Officials of the athletic commission inspect the wraps"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the small MMA glove?",
+        "It gives the opponent’s head little protection.",
+        "It protects the opponent’s head better than a boxing glove.",
+        "It is heavier than a boxing glove.",
+        "The text says that the small glove protects the fighter’s own hand more than it protects the opponent’s head, so cuts are common.",
+        "The small glove protects the fighter’s own hand more than it protects the opponent’s head, so cuts are common in MMA"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "organizers",
+          "people who plan an event"
+        ],
+        [
+          "credited",
+          "said to be the one who did something"
+        ],
+        [
+          "trapped",
+          "caught in a place and unable to escape"
+        ],
+        [
+          "support",
+          "help that stops something from falling"
+        ],
+        [
+          "vinyl",
+          "a smooth, strong plastic material"
+        ]
+      ],
+      "B": [
+        [
+          "padding",
+          "soft material that protects"
+        ],
+        [
+          "grab",
+          "to take hold of something suddenly"
+        ],
+        [
+          "escape",
+          "to get free from someone or something"
+        ],
+        [
+          "inspect",
+          "to look at something carefully to check it"
+        ],
+        [
+          "illegal",
+          "not allowed by law or by the rules"
         ]
       ]
     }
