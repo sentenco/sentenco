@@ -1,8 +1,8 @@
-// Data for the Unseen Reading hub (Reading > Unseen Reading). It reads the lesson
-// configs for Parts 6-29 and adds a subject shelf and a one-line "how the two texts
-// connect" for each. Parts 1-4 are older lessons written before the texts were
-// paired by topic, so they are listed by hand. Part 5 (Doriel) is not in the hub.
+// Data for the Unseen Reading hub (Reading > Unseen Reading). It reads the lesson configs and adds a
+// one-line "how the two texts connect" for each; the shelf comes from unseenShelfByPart.js.
+// Part 5 (Doriel) is not in the hub.
 
+import { UNSEEN_PARTS_0 } from "./unseenPartsData0.js";
 import { UNSEEN_PARTS_1 } from "./unseenPartsData1.js";
 import { UNSEEN_PARTS_2 } from "./unseenPartsData2.js";
 import { UNSEEN_PARTS_3 } from "./unseenPartsData3.js";
@@ -16,7 +16,6 @@ export const UNSEEN_SHELVES = [
   { id: "nature", name: "Nature and Earth" },
   { id: "tech", name: "Tech and Daily Life" },
   { id: "lang", name: "Language and Sound" },
-  { id: "older", name: "Older lessons" },
 ];
 
 // [part, one line on how the two texts connect]. The shelf comes from unseenShelfByPart.js; order inside a shelf follows this list.
@@ -29,6 +28,11 @@ const META = [
   [28, "Repair and renewal: a cut closes, cells rebuild"],
   [15, "How the brain reacts: to a new bed, to a smell"],
   [16, "Two food debates: where meat comes from, how long it lasts"],
+  [2, "Two city problems and two ideas: heat, and food grown in layers"],
+  [3, "Memory in the body and in the mind: vaccines and forgetting"],
+  [4, "Two jobs for satellites: weather warnings and directions"],
+  [30, "Plastic after we throw it away: tiny pieces, recycling that falls short"],
+  [31, "Climbing: a first time on the wall, and the rope that keeps you safe"],
   [23, "Plants that make food, plants that catch it"],
   [24, "Two ways animals face winter: sleep through it or fly away"],
   [25, "Hide or warn: two defences made of color"],
@@ -43,34 +47,22 @@ const META = [
   [9, "Two apps that quietly steer what you do next"],
   [10, "Two ways things move around a city"],
   [11, "Making and owning less: a printed house, shared tools"],
+  [1, "Sharing books with people who have none: a van and street boxes"],
   [8, "Two ways media can help you learn English"],
   [17, "Two ways sound reaches us: translated, and felt as chills"],
-];
-
-const NOT_LINKED = "These two texts are not linked";
-const OLD = [
-  { part: 1, level: "A2 to low B1", title: "A Library Van and a Climbing Diary", a: "The Library Van", b: "Climbing Diary" },
-  { part: 2, title: "Hot Cities and GPS", a: "Why Cities Are Hotter", b: "How GPS Works" },
-  { part: 3, title: "Vaccines and Microplastics", a: "How a Vaccine Trains the Body", b: "Microplastics" },
-  { part: 4, title: "Weather Warnings and Forgetting", a: "How Weather Warnings Work", b: "Why We Forget" },
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
 
 export function buildUnseenHubLessons() {
-  const configs = [...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6];
+  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6];
   const byPart = new Map(configs.map((c) => [c.part, c]));
-  const paired = META.map(([part, link]) => {
+  return META.map(([part, link]) => {
     const c = byPart.get(part);
     return {
-      part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, level: "B1+ to low B2",
+      part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, level: c.level || "B1+ to low B2",
       a: c.texts.A.title, b: c.texts.B.title,
       wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
     };
   });
-  const older = OLD.map((o) => ({
-    part: o.part, shelf: "older", link: NOT_LINKED, slug: unseenSlug(o.part), title: o.title,
-    level: o.level || "B1+ to low B2", a: o.a, b: o.b, older: true,
-  }));
-  return [...paired, ...older];
 }

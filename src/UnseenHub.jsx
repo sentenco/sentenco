@@ -3,7 +3,7 @@ import { UNSEEN_SHELVES, buildUnseenHubLessons } from "./unseenHubData.js";
 import { openCustomLessonPopup } from "./customLessonsRegistry";
 import "./unseenHub.css";
 
-const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", older: "#D9D1F2" };
+const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E" };
 
 // The Unseen Reading room: topic tiles, each showing its pair of texts.
 // `canOpen(slug)` limits the list to lessons this person may open.
@@ -29,7 +29,6 @@ export default function UnseenHub({ canOpen }) {
       .sort((x, y) => order.get(x.l.shelf) - order.get(y.l.shelf) || x.i - y.i)
       .map((x) => x.l);
   }, [canOpen]);
-  const paired = all.filter((l) => !l.older);
 
   const needle = q.trim().toLowerCase();
   const list = all.filter((l) => {
@@ -40,9 +39,9 @@ export default function UnseenHub({ canOpen }) {
   const shelfName = (id) => UNSEEN_SHELVES.find((s) => s.id === id)?.name || "";
 
   function surprise() {
-    if (!paired.length) return;
+    if (!all.length) return;
     setShelf("all"); setQ("");
-    const pick = paired[Math.floor(Math.random() * paired.length)];
+    const pick = all[Math.floor(Math.random() * all.length)];
     setPopped(null);
     setTimeout(() => {
       setPopped(pick.part);
@@ -87,7 +86,7 @@ export default function UnseenHub({ canOpen }) {
               <div className="uh-strip"><b>A</b><span>{l.a}</span></div>
               <div className="uh-strip"><b>B</b><span>{l.b}</span></div>
             </div>
-            <p className={`uh-link ${l.older ? "is-none" : ""}`}>{l.link}</p>
+            <p className="uh-link">{l.link}</p>
             {peek[l.part] && (
               <div className="uh-words">
                 <div><b>A</b><span>{l.wordsA.join(", ")}</span></div>
@@ -95,12 +94,10 @@ export default function UnseenHub({ canOpen }) {
               </div>
             )}
             <div className="uh-foot">
-              <span className="uh-count">{l.older ? "Older format" : "8 questions · 10 words"}</span>
-              {!l.older && (
-                <button type="button" className="uh-flip" aria-expanded={!!peek[l.part]} onClick={() => setPeek((p) => ({ ...p, [l.part]: !p[l.part] }))}>
-                  {peek[l.part] ? "Hide the words" : "Peek at the words"}
-                </button>
-              )}
+              <span className="uh-count">8 questions · 10 words</span>
+              <button type="button" className="uh-flip" aria-expanded={!!peek[l.part]} onClick={() => setPeek((p) => ({ ...p, [l.part]: !p[l.part] }))}>
+                {peek[l.part] ? "Hide the words" : "Peek at the words"}
+              </button>
               <button type="button" className="uh-play" onClick={() => openCustomLessonPopup(`/library/customized-lessons/${l.slug}`, "sentencoCustomLesson", 1200, 780)}>Play</button>
             </div>
           </article>

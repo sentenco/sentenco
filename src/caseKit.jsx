@@ -411,7 +411,7 @@ const CSS = `
 .cf-opt.bad { background: var(--bad); color: #fff; border-color: var(--bad); }
 .cf-opt.dim { opacity: .45; }
 .cf-opt:disabled { cursor: default; }
-.cf-qf { min-height: 64px; display: flex; align-items: center; }
+.cf-qf { min-height: 58px; display: flex; align-items: center; }
 .cf-chk { font: 700 15px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--deep); border: none; border-radius: 12px; padding: 12px 30px; cursor: pointer; }
 .cf-chk:disabled { opacity: .35; cursor: default; }
 .cf-why { width: 100%; border: 2px solid var(--c); background: var(--tint); border-radius: 14px; padding: 11px 190px 11px 18px; font-size: 15px; line-height: 1.5; font-weight: 600; display: grid; gap: 7px; }

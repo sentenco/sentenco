@@ -37,7 +37,7 @@ export const UNSEEN_PARTS_2 = [
         ["require", "to make something necessary"],
       ],
       B: [
-        ["station", "a place where bikes or trains stop"],
+        ["stations", "places where bikes or trains stop"],
         ["evenly", "in the same way everywhere"],
         ["imbalance", "a situation in which things are not equally shared"],
         ["reward", "something you are given for doing something good"],

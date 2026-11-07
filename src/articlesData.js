@@ -10146,6 +10146,7 @@ const ALL_ARTICLES = [
   {
     slug: "planet-born-after-its-star-died",
     ready: true,
+    publishWithoutImage: true,
     publishedAt: "2026-10-16",
     emoji: "🌌",
     variant: "planet",
@@ -10181,7 +10182,7 @@ const ALL_ARTICLES = [
         label: "Polished Edition",
         range: "B1–B2",
         readTime: "2 min read",
-        wordCount: 236,
+        wordCount: 243,
         blocks: [
           { type: "p", parts: [
             { t: "Astronomers think they may have found a planet that was born after its star died." },
@@ -10213,8 +10214,9 @@ const ALL_ARTICLES = [
             { g: "enriched", pos: "adjective", def: "containing extra amounts of certain substances" },
             { t: " material, and that some of it gathered into a planet." },
             { c: 1 },
+            { t: " Lead author Jamie Williams puts it this way:" },
           ] },
-          { type: "quote", text: "“…the systems we are familiar with only being the first chapter of a potentially much longer tale.” Jamie Williams, University of Warwick" },
+          { type: "quote", text: "…the systems we are familiar with only being the first chapter of a potentially much longer tale." },
           { type: "p", parts: [
             { t: "Today the white dwarf's heat may be stripping gas from the planet and forming a comet-like tail. Some of that gas could settle into a disc and fall onto the star, which would explain the niobium Hubble detected." },
             { c: 1 },
@@ -10233,7 +10235,7 @@ const ALL_ARTICLES = [
         label: "Precise Edition",
         range: "C1–C2",
         readTime: "2 min read",
-        wordCount: 263,
+        wordCount: 270,
         blocks: [
           { type: "p", parts: [
             { t: "Astronomers have put forward evidence that a planet may have formed after its parent star had already died, a finding that, if " },
@@ -10264,8 +10266,9 @@ const ALL_ARTICLES = [
             { t: " into the planet while the remainder dispersed." },
             { c: 1 },
             { c: 2 },
+            { t: " Lead author Jamie Williams puts it this way:" },
           ] },
-          { type: "quote", text: "“…the systems we are familiar with only being the first chapter of a potentially much longer tale.” Jamie Williams, University of Warwick" },
+          { type: "quote", text: "…the systems we are familiar with only being the first chapter of a potentially much longer tale." },
           { type: "p", parts: [
             { t: "The white dwarf's heat may now be stripping gas from the planet, producing a comet-like tail, some of which settles into a disc and rains onto the star, which would account for the niobium Hubble detected." },
             { c: 1 },
@@ -10304,7 +10307,8 @@ const ALL_ARTICLES = [
 // Articles show up in the app only once their picture exists. Add an `image`
 // to an article above and it appears everywhere (Gazette, reader, syllabus
 // maker) with no other change.
-export const ARTICLES = ALL_ARTICLES.filter((a) => a.image);
+// An article can opt in with publishWithoutImage: true (shows its emoji cover) until its picture arrives.
+export const ARTICLES = ALL_ARTICLES.filter((a) => a.image || a.publishWithoutImage);
 
 export function getArticle(slug) {
   return ARTICLES.find((a) => a.slug === slug) || null;
