@@ -2,6 +2,7 @@ import { CasePlayer, CTitle, CArticle, CQuestion, CVocab, CEnd } from "./caseKit
 import { vocabId } from "./caseKitData.js";
 import { buildLesson } from "./unseenPartsBuild.js";
 import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
+import { unseenCaseNo } from "./unseenHubData.js";
 
 // One Unseen Reading lesson, built from the data in unseenPartsData*.js and shown in the Case file player:
 // title page, then for each of the two texts the article (with tap-for-meaning words) and its questions,
@@ -12,6 +13,7 @@ export default function UnseenLesson({ config }) {
   const lesson = buildLesson(config);
   const { part, texts, items, matches } = lesson;
   const topic = UNSEEN_SHELF_BY_PART[part] || "older";
+  const caseNo = unseenCaseNo(part);
   const label = (k) => (k === "A" ? "Text 1" : "Text 2");
   const itemId = (idx) => `u${part}-${idx + 1}`;
   const mids = (k) => matches[k].pairs.map((_, i) => vocabId((k === "A" ? 0 : 5) + i));
@@ -50,7 +52,7 @@ export default function UnseenLesson({ config }) {
 
   const allIds = [...qids("A"), ...qids("B"), ...mids("A"), ...mids("B")];
   const slides = [
-    { stage: "Unseen Reading", body: <CTitle caseNo={part} theme={lesson.theme} titleA={texts.A.title} titleB={texts.B.title} /> },
+    { stage: "Unseen Reading", body: <CTitle caseNo={caseNo} theme={lesson.theme} titleA={texts.A.title} titleB={texts.B.title} /> },
     articleSlide("A"),
     ...questionSlides("A"),
     articleSlide("B"),
@@ -68,7 +70,7 @@ export default function UnseenLesson({ config }) {
       stage: "The End",
       body: (
         <CEnd
-          caseNo={part}
+          caseNo={caseNo}
           total={allIds.length}
           parts={[
             { label: "Text 1", title: texts.A.title, ids: qids("A") },
@@ -80,5 +82,5 @@ export default function UnseenLesson({ config }) {
     },
   ];
 
-  return <CasePlayer slides={slides} caseNo={part} theme={lesson.theme} topic={topic} />;
+  return <CasePlayer slides={slides} caseNo={caseNo} theme={lesson.theme} topic={topic} />;
 }
