@@ -1,7 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { UNSEEN_SHELVES, buildUnseenHubLessons } from "./unseenHubData.js";
 import { openCustomLessonPopup } from "./customLessonsRegistry";
 import "./unseenHub.css";
+
+const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", older: "#D9D1F2" };
 
 // The Unseen Reading room: topic tiles, each showing its pair of texts.
 // `canOpen(slug)` limits the list to lessons this person may open.
@@ -10,6 +12,14 @@ export default function UnseenHub({ canOpen }) {
   const [q, setQ] = useState("");
   const [peek, setPeek] = useState({});
   const [popped, setPopped] = useState(null);
+  const tabsRef = useRef(null);
+
+  // On a narrow screen the tabs scroll sideways; keep the chosen one in view.
+  useEffect(() => {
+    const box = tabsRef.current;
+    const on = box?.querySelector('[aria-pressed="true"]');
+    if (box && on) box.scrollTo({ left: on.offsetLeft - (box.clientWidth - on.offsetWidth) / 2, behavior: "smooth" });
+  }, [shelf]);
 
   const all = useMemo(() => {
     const order = new Map(UNSEEN_SHELVES.map((s, i) => [s.id, i]));
@@ -42,24 +52,24 @@ export default function UnseenHub({ canOpen }) {
 
   return (
     <div className="uh">
-      <div className="uh-tools">
-        <div className="uh-row">
+      <div className="uh-deck" style={{ "--cur": DECK_COLOR[shelf] }}>
+        <div className="uh-tabs" role="group" aria-label="Topics" ref={tabsRef}>
+          {[{ id: "all", name: "Everything" }, ...UNSEEN_SHELVES].map((s) => {
+            const n = s.id === "all" ? all.length : all.filter((l) => l.shelf === s.id).length;
+            if (s.id !== "all" && n === 0) return null;
+            return (
+              <button key={s.id} type="button" className="uh-tab" data-s={s.id} aria-pressed={shelf === s.id} onClick={() => setShelf(s.id)}>
+                {s.name}<i>{n}</i>
+              </button>
+            );
+          })}
+        </div>
+        <div className="uh-panel">
           <label className="uh-search">
             <span className="uh-sr">Search Unseen Reading</span>
             <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a topic or a word, like wolves or jet lag" autoComplete="off" />
           </label>
           <button type="button" className="uh-big" onClick={surprise}>Surprise me</button>
-        </div>
-        <div className="uh-chips">
-          {[{ id: "all", name: "Everything" }, ...UNSEEN_SHELVES].map((s) => {
-            const n = s.id === "all" ? all.length : all.filter((l) => l.shelf === s.id).length;
-            if (s.id !== "all" && n === 0) return null;
-            return (
-              <button key={s.id} type="button" className="uh-chip" aria-pressed={shelf === s.id} onClick={() => setShelf(s.id)}>
-                {s.name}<i>{n}</i>
-              </button>
-            );
-          })}
         </div>
       </div>
 
