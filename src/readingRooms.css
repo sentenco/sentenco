@@ -1,0 +1,15 @@
+.rr-rooms { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px auto 0; max-width: 760px; }
+.rr-room {
+  text-align: left; background: #fff; color: #1F3A5F; border: 2.5px solid #1F3A5F; border-radius: 18px; padding: 14px 18px 15px;
+  cursor: pointer; display: grid; gap: 2px; box-shadow: 4px 4px 0 #1F3A5F; transition: transform .12s, box-shadow .12s;
+}
+.rr-room strong { font-family: 'Lilita One', cursive; font-weight: 400; font-size: 24px; line-height: 1.1; }
+.rr-room span { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13.5px; color: #4E7099; }
+.rr-room:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1F3A5F; }
+.rr-room:focus-visible { outline: 3px solid #FF6B5B; outline-offset: 3px; }
+.rr-room[aria-selected="true"] { background: #1F3A5F; color: #fff; box-shadow: none; transform: translate(4px, 4px); }
+.rr-room[aria-selected="true"] span { color: #BFD0E8; }
+.rr-room--unseen[aria-selected="true"] { background: #FF6B5B; }
+.rr-room--unseen[aria-selected="true"] span { color: #fff; }
+@media (prefers-reduced-motion: reduce) { .rr-room { transition: none; } }
+@media (max-width: 560px) { .rr-rooms { grid-template-columns: 1fr; } }

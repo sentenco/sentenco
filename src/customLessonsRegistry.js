@@ -58,6 +58,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-1",
+    hub: "unseen",
     added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 1",
@@ -67,6 +68,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-2",
+    hub: "unseen",
     added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 2",
@@ -76,6 +78,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-3",
+    hub: "unseen",
     added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 3",
@@ -85,6 +88,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-4",
+    hub: "unseen",
     added: "2026-10-14",
     popup: [1200, 780],
     title: "Unseen Reading: Part 4",
@@ -197,6 +201,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-29",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 29",
@@ -206,6 +211,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-28",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 28",
@@ -215,6 +221,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-27",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 27",
@@ -224,6 +231,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-26",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 26",
@@ -233,6 +241,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-25",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 25",
@@ -242,6 +251,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-24",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 24",
@@ -251,6 +261,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-23",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 23",
@@ -260,6 +271,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-22",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 22",
@@ -269,6 +281,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-21",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 21",
@@ -278,6 +291,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-20",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 20",
@@ -287,6 +301,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-19",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 19",
@@ -296,6 +311,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-18",
+    hub: "unseen",
     added: "2026-11-06",
     popup: [1200, 780],
     title: "Unseen Reading: Part 18",
@@ -305,6 +321,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-17",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 17",
@@ -314,6 +331,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-16",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 16",
@@ -323,6 +341,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-15",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 15",
@@ -332,6 +351,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-14",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 14",
@@ -341,6 +361,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-13",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 13",
@@ -350,6 +371,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-12",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 12",
@@ -359,6 +381,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-11",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 11",
@@ -368,6 +391,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-10",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 10",
@@ -377,6 +401,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-9",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 9",
@@ -386,6 +411,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-8",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 8",
@@ -395,6 +421,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-7",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 7",
@@ -404,6 +431,7 @@ export const CUSTOM_LESSONS = [
   },
   {
     slug: "unseen-reading-part-6",
+    hub: "unseen",
     added: "2026-11-04",
     popup: [1200, 780],
     title: "Unseen Reading: Part 6",

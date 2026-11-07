@@ -1,7 +1,7 @@
 import { CUSTOM_LESSONS_NEWEST_FIRST, openCustomLessonPopup } from "./customLessonsRegistry";
 import { SHOW_LETTER_BOARD } from "./featureFlags.js";
 import useCustomLessonAccess from "./useCustomLessonAccess";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { SUPPORT_EMAIL } from "./siteConfig.js";
 import { useNavigate, useParams, useLocation, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
@@ -128,6 +128,11 @@ import LandingPage from "./LandingPage.jsx";
 import AccountMenu from "./AccountMenu.jsx";
 import { fetchOwnProfile } from "./profileFields.js";
 import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
+import ReadingRoomSwitch from "./ReadingRoomSwitch.jsx";
+import { UNSEEN_HUB_SLUGS } from "./unseenHubSlugs.js";
+
+// The Unseen Reading room is loaded only when opened (it carries the lesson texts).
+const UnseenHub = lazy(() => import("./UnseenHub.jsx"));
 import { useCanSeeTeensAdultsStories } from "./audienceAccess";
 import FORGE_TRACKS from "./forgeTracks";
 import SHIFT_TRACKS from "./shiftTracks";
@@ -896,7 +901,7 @@ function BookshelfRows({ books, navigate, colorOffset }) {
   ));
 }
 
-function BookshelfFeature({ items, navigate, query }) {
+function BookshelfFeature({ items, navigate, query, roomSwitch = null }) {
   const canSeeAllAges = useCanSeeTeensAdultsStories();
   const [searchParams, setSearchParams] = useSearchParams();
   const [level, setLevel] = useState(() => {
@@ -930,6 +935,7 @@ function BookshelfFeature({ items, navigate, query }) {
         <h1 className="bkshf-nameplate">Library</h1>
         <p className="bkshf-tagline">{canSeeAllAges ? "Each book below is organized by CEFR level and age group, so you can read at the right difficulty." : "Each story below is organized by CEFR level, so you can read at the right difficulty."}</p>
       </div>
+      {roomSwitch}
 
       {!isSearching && (
         <div className="bkshf-level-tabs">
@@ -1373,9 +1379,18 @@ export default function Library() {
   const [query, setQuery] = useState(() => searchParams.get("q") || "");
   const [clTab, setClTab] = useState(() => searchParams.get("clTab") || "All");
   // Custom lessons are private: show only the ones this teacher owns, or that another teacher shared on a post they can see.
-  const clAccess = useCustomLessonAccess(category === "Customized Lessons");
+  const clAccess = useCustomLessonAccess(category === "Customized Lessons" || category === "Reading");
   // The site owner always sees every lesson; everyone else sees what the database says is theirs or shared with them.
-  const clVisible = CUSTOM_LESSONS_NEWEST_FIRST.filter((l) => clAccess.access.has(l.slug) || clAccess.isOwnerEmail);
+  const clVisible = CUSTOM_LESSONS_NEWEST_FIRST.filter((l) => !l.hub && (clAccess.access.has(l.slug) || clAccess.isOwnerEmail));
+  // Reading has two rooms (Story Books, Unseen Reading). The Unseen room shows only for people who can open those lessons.
+  const canOpenUnseen = React.useCallback((slug) => clAccess.isOwnerEmail || clAccess.access.has(slug), [clAccess.isOwnerEmail, clAccess.access]);
+  const unseenAllowed = category === "Reading" && UNSEEN_HUB_SLUGS.some(canOpenUnseen);
+  const readingRoom = unseenAllowed && searchParams.get("rView") === "unseen" ? "unseen" : "books";
+  const changeReadingRoom = (r) => {
+    const next = new URLSearchParams(searchParams);
+    if (r === "unseen") next.set("rView", "unseen"); else next.delete("rView");
+    setSearchParams(next, { replace: true });
+  };
   const clRelation = (slug) => (clAccess.access.get(slug)?.relation) || "mine";
   // Owned = lessons that are mine; Saved = lessons other teachers shared that I bookmarked on the post.
   const [clView, setClView] = useState(() => searchParams.get("clView") || "all");
@@ -2136,7 +2151,22 @@ export default function Library() {
         ) : category === "Grammar" ? (
           <GrammarFeature navigate={navigate} query={query} />
         ) : category === "Reading" ? (
-          <BookshelfFeature items={filtered} navigate={navigate} query={query} />
+          readingRoom === "unseen" ? (
+            <div className="bkshf-page" style={{ backgroundImage: `url(${bkshfBgImg})` }}>
+              <div className="bkshf-masthead">
+                <span className="bkshf-eyebrow">Sentenco · Reading</span>
+                <h1 className="bkshf-nameplate">Library</h1>
+                <p className="bkshf-tagline">Pick a topic. Each lesson pairs two texts that talk to each other.</p>
+              </div>
+              <ReadingRoomSwitch room="unseen" onChange={changeReadingRoom} />
+              <div className="bkshf-row"></div>
+              <Suspense fallback={<p style={{ textAlign: "center", fontFamily: "'Nunito', sans-serif", fontWeight: 700, color: "#4E7099" }}>Loading the lessons...</p>}>
+                <UnseenHub canOpen={canOpenUnseen} />
+              </Suspense>
+            </div>
+          ) : (
+            <BookshelfFeature items={filtered} navigate={navigate} query={query} roomSwitch={unseenAllowed ? <ReadingRoomSwitch room="books" onChange={changeReadingRoom} /> : null} />
+          )
         ) : category === "Speaking" ? (
           <div
             className="spklab-page"
