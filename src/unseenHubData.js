@@ -10,6 +10,7 @@ import { UNSEEN_PARTS_4 } from "./unseenPartsData4.js";
 import { UNSEEN_PARTS_5 } from "./unseenPartsData5.js";
 import { UNSEEN_PARTS_6 } from "./unseenPartsData6.js";
 import { UNSEEN_PARTS_7 } from "./unseenPartsData7.js";
+import { UNSEEN_PARTS_8 } from "./unseenPartsData8.js";
 import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
 
 export const UNSEEN_SHELVES = [
@@ -65,12 +66,24 @@ const META = [
   [41, "Volcanoes: why they erupt and the eruption that cooled the planet"],
   [42, "Taste and heat: how chili tricks your sensors and why a cold ruins flavor"],
   [43, "Moving the body: why muscles ache and how exercise may help the brain"],
+  [44, "The life of a star: how it begins in a cloud and how it ends"],
+  [45, "The Moon: how it began and why it always shows us the same face"],
+  [46, "Seeing far: looking back in time with Webb, and measuring how far away stars are"],
+  [47, "Black holes: what they are, and how we finally saw one"],
+  [48, "Our neighbors: why Mars is red and why Venus is hotter than Mercury"],
+  [49, "Eclipses: when the Moon covers the Sun, and when the Earth’s shadow covers the Moon"],
+  [50, "How MMA began: an ancient sport, a Brazilian tradition and one night in Denver"],
+  [51, "Two ways to win on the ground: leverage from the back, control from the feet"],
+  [52, "Striking: boxing against Muay Thai, and what a knockout does to the brain"],
+  [53, "Making weight: why classes exist and what it costs to reach the limit"],
+  [54, "Choke and score: how a choke works and how judges decide a fight"],
+  [55, "Staying safe: how a concussion happens and how the sport tries to protect fighters"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
 
 export function buildUnseenHubLessons() {
-  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7];
+  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8];
   const byPart = new Map(configs.map((c) => [c.part, c]));
   return META.map(([part, link]) => {
     const c = byPart.get(part);
