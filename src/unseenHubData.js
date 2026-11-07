@@ -9,6 +9,7 @@ import { UNSEEN_PARTS_3 } from "./unseenPartsData3.js";
 import { UNSEEN_PARTS_4 } from "./unseenPartsData4.js";
 import { UNSEEN_PARTS_5 } from "./unseenPartsData5.js";
 import { UNSEEN_PARTS_6 } from "./unseenPartsData6.js";
+import { UNSEEN_PARTS_7 } from "./unseenPartsData7.js";
 import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
 
 export const UNSEEN_SHELVES = [
@@ -16,6 +17,8 @@ export const UNSEEN_SHELVES = [
   { id: "nature", name: "Nature and Earth" },
   { id: "tech", name: "Tech and Daily Life" },
   { id: "lang", name: "Language and Sound" },
+  { id: "space", name: "Space and Astronomy" },
+  { id: "mma", name: "MMA and Combat Sports" },
 ];
 
 // [part, one line on how the two texts connect]. The shelf comes from unseenShelfByPart.js; order inside a shelf follows this list.
@@ -50,17 +53,29 @@ const META = [
   [1, "Sharing books with people who have none: a van and street boxes"],
   [8, "Two ways media can help you learn English"],
   [17, "Two ways sound reaches us: translated, and felt as chills"],
+  [32, "How English changes: new words and shifting accents"],
+  [33, "Learning more than one language: the young brain and the bilingual brain"],
+  [34, "Languages that do not use speech: whistles and hands"],
+  [35, "Money that can be trusted: paper that is hard to fake, payments that are watched"],
+  [36, "The life of a battery: how it wears out and where its lithium comes from"],
+  [37, "Maps: what a flat map hides and how an app knows the traffic"],
+  [38, "Counting time: atoms that never lose a second, and a calendar that needed fixing"],
+  [39, "The sea: why it is salty and why it rises and falls"],
+  [40, "Light in the sky: why it is blue and how a rainbow forms"],
+  [41, "Volcanoes: why they erupt and the eruption that cooled the planet"],
+  [42, "Taste and heat: how chili tricks your sensors and why a cold ruins flavor"],
+  [43, "Moving the body: why muscles ache and how exercise may help the brain"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
 
 export function buildUnseenHubLessons() {
-  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6];
+  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7];
   const byPart = new Map(configs.map((c) => [c.part, c]));
   return META.map(([part, link]) => {
     const c = byPart.get(part);
     return {
-      part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, level: c.level || "B1+ to low B2",
+      part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, 
       a: c.texts.A.title, b: c.texts.B.title,
       wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
     };

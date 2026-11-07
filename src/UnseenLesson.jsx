@@ -6,7 +6,7 @@ import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
 // One Unseen Reading lesson, built from the data in unseenPartsData*.js and shown in the Case file player:
 // title page, then for each of the two texts the article (with tap-for-meaning words) and its questions,
 // then one vocabulary matching page for both texts, then the score.
-// Level: B1+ to low B2 unless the config says otherwise. The texts are written by Sentenco.
+// The texts are written by Sentenco and are for everyone, so no level is shown.
 
 export default function UnseenLesson({ config }) {
   const lesson = buildLesson(config);
@@ -80,5 +80,5 @@ export default function UnseenLesson({ config }) {
     },
   ];
 
-  return <CasePlayer slides={slides} caseNo={part} theme={lesson.theme} topic={topic} level={lesson.level || "B1+ to low B2"} />;
+  return <CasePlayer slides={slides} caseNo={part} theme={lesson.theme} topic={topic} />;
 }

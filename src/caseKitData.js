@@ -8,6 +8,8 @@ export const CASE_TOPICS = {
   nature: { c: "#7BE3AA", deep: "#178A52", tint: "#E3F8EC" },
   tech: { c: "#8FBBFF", deep: "#2F62C4", tint: "#E6F0FF" },
   lang: { c: "#FFD25E", deep: "#A86C00", tint: "#FFF4D1" },
+  space: { c: "#B7A6FF", deep: "#5B3FD0", tint: "#EFEAFF" },
+  mma: { c: "#FFA45C", deep: "#B04A00", tint: "#FFEEDC" },
   older: { c: "#D9D1F2", deep: "#6554A6", tint: "#F1EEFB" },
 };
 

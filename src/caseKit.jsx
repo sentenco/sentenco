@@ -21,7 +21,7 @@ function useFitScale() {
 }
 
 // slides: [{ stage: string | ({ store, results }) => string, body }]
-export function CasePlayer({ slides, caseNo, theme, topic = "older", level = "B1+ to low B2" }) {
+export function CasePlayer({ slides, caseNo, theme, topic = "older" }) {
   const [i, setI] = useState(0);
   const [results, setResults] = useState({});
   const [store, setStore] = useState({});
@@ -50,7 +50,7 @@ export function CasePlayer({ slides, caseNo, theme, topic = "older", level = "B1
               <button type="button" className="cf-x" onClick={() => window.close()} aria-label="Close">&times;</button>
               <div className="cf-sheet" key={i}>
                 <div className="cf-dossier">
-                  <span>Subject: {theme}</span><span>Level: {level}</span><span>Case No. {caseNo}</span>
+                  <span>Subject: {theme}</span><span>Case No. {caseNo}</span>
                 </div>
                 {s.body}
               </div>

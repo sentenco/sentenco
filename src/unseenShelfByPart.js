@@ -10,4 +10,6 @@ export const UNSEEN_SHELF_BY_PART = {
   23: "nature", 24: "nature", 25: "nature", 26: "nature", 27: "nature",
   28: "body",
   29: "nature", 30: "nature", 31: "body",
+  32: "lang", 33: "lang", 34: "lang", 35: "tech", 36: "tech", 37: "tech", 38: "tech",
+  39: "nature", 40: "nature", 41: "nature", 42: "body", 43: "body",
 };
