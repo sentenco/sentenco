@@ -1,4 +1,5 @@
 import { UNSEEN_FIFTH } from "./unseenFifthQuestions.js";
+import { UNSEEN_SIX } from "./unseenSixQuestions.js";
 
 // Turns the short lesson data in unseenPartsData*.js into what the Unseen player needs.
 // A question is written with the RIGHT answer first; it is moved to a different place for each question,
@@ -15,11 +16,14 @@ export const rotateOptions = (right, wrong, index) => {
 export const defsOrder = (multiplier, shift) => [0, 1, 2, 3, 4].map((k) => (multiplier * k + shift) % 5);
 
 export function buildLesson(cfg) {
-  // The fifth question of each text lives in unseenFifthQuestions.js.
+  // Lessons in unseenSixQuestions.js use the standard six questions per text (Detail, Vocabulary, Reference, Not stated, Inference, Main idea).
+  const six = UNSEEN_SIX[cfg.part];
   const extra = UNSEEN_FIFTH[cfg.part];
-  const base = extra
-    ? [...cfg.items.filter((i) => i[0] === "A"), ["A", ...extra.A], ...cfg.items.filter((i) => i[0] === "B"), ["B", ...extra.B]]
-    : cfg.items;
+  const base = six
+    ? [...six.A.map((t) => ["A", ...t]), ...six.B.map((t) => ["B", ...t])]
+    : extra
+      ? [...cfg.items.filter((i) => i[0] === "A"), ["A", ...extra.A], ...cfg.items.filter((i) => i[0] === "B"), ["B", ...extra.B]]
+      : cfg.items;
   const items = base.map(([text, kind, prompt, right, w1, w2, explain, evidence], i) => ({
     text,
     kind,

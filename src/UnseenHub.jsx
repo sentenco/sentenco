@@ -93,7 +93,7 @@ export default function UnseenHub({ canOpen }) {
               </div>
             )}
             <div className="uh-foot">
-              <span className="uh-count">10 questions · 10 words</span>
+              <span className="uh-count">{l.questions} questions · 10 words</span>
               <button type="button" className="uh-flip" aria-expanded={!!peek[l.part]} onClick={() => setPeek((p) => ({ ...p, [l.part]: !p[l.part] }))}>
                 {peek[l.part] ? "Hide the words" : "Peek at the words"}
               </button>

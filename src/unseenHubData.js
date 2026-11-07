@@ -12,6 +12,7 @@ import { UNSEEN_PARTS_6 } from "./unseenPartsData6.js";
 import { UNSEEN_PARTS_7 } from "./unseenPartsData7.js";
 import { UNSEEN_PARTS_8 } from "./unseenPartsData8.js";
 import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
+import { buildLesson } from "./unseenPartsBuild.js";
 
 export const UNSEEN_SHELVES = [
   { id: "body", name: "Body and Health" },
@@ -90,7 +91,7 @@ export function buildUnseenHubLessons() {
     return {
       part, shelf: UNSEEN_SHELF_BY_PART[part], link, slug: unseenSlug(part), title: c.theme, 
       a: c.texts.A.title, b: c.texts.B.title,
-      wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
+      questions: buildLesson(c).items.length, wordsA: c.matches.A.map((m) => m[0]), wordsB: c.matches.B.map((m) => m[0]),
     };
   });
 }
