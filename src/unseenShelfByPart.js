@@ -14,4 +14,8 @@ export const UNSEEN_SHELF_BY_PART = {
   39: "nature", 40: "nature", 41: "nature", 42: "body", 43: "body",
   44: "space", 45: "space", 46: "space", 47: "space", 48: "space", 49: "space",
   50: "mma", 51: "mma", 52: "mma", 53: "mma", 54: "mma", 55: "mma",
+  56: "safety", 57: "safety", 58: "safety", 59: "safety",
+  60: "money", 61: "money", 62: "money", 63: "money",
+  64: "mind", 65: "mind", 66: "mind", 67: "mind",
+  68: "history", 69: "history", 70: "history", 71: "history",
 };
