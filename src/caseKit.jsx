@@ -399,12 +399,12 @@ const CSS = `
 .cf-pop b { display: block; font: 700 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--c) 80%, #fff); margin-bottom: 3px; }
 .cf-pop span { font: 700 16px/1.35 var(--sans); }
 
-.cf-q { width: 100%; max-width: 820px; display: grid; gap: 13px; }
+.cf-q { width: 100%; max-width: 820px; display: grid; gap: 12px; }
 .cf-qh { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .cf-see { font: 700 13px var(--mono); background: #fff; border: 2px solid var(--c); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
 .cf-prompt { margin: 0; font: 700 28px/1.3 var(--soft); }
 .cf-opts { display: grid; gap: 10px; }
-.cf-opt { display: flex; align-items: center; gap: 14px; text-align: left; font: 700 17.5px/1.35 var(--sans); background: #fff; border: 2px solid color-mix(in srgb, var(--c) 75%, #fff); border-radius: 14px; padding: 12px 18px; cursor: pointer; }
+.cf-opt { display: flex; align-items: center; gap: 14px; text-align: left; font: 700 17.5px/1.35 var(--sans); background: #fff; border: 2px solid color-mix(in srgb, var(--c) 75%, #fff); border-radius: 14px; padding: 11px 18px; cursor: pointer; }
 .cf-opt .l { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font: 700 14px var(--mono); background: var(--c); }
 .cf-opt.pick { border-color: var(--deep); background: var(--tint); }
 .cf-opt.ok { background: #2FBF71; color: #fff; border-color: #2FBF71; }
