@@ -916,7 +916,7 @@ const CSS = `
 .lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
 .lb-ov.lb-ov-story { z-index: 51; }
 .lb-ov > .lb-card { margin: auto; zoom: var(--lb-scale, 1); }
-.lbr-card { position: relative; width: 100%; max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; overflow: clip; isolation: isolate; background: linear-gradient(180deg, #FFFAF6 0%, #FFF0E8 100%); border: 1.5px solid #F3DED3; border-radius: 32px; box-shadow: 0 1px 0 #fff inset, 0 26px 50px -22px rgba(27,42,74,.34), 0 4px 10px -4px rgba(27,42,74,.08); animation: lbr-rise .45s ease-out both; }
+.lbr-card { container-type: inline-size; position: relative; width: 100%; max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; overflow: clip; isolation: isolate; background: linear-gradient(180deg, #FFFAF6 0%, #FFF0E8 100%); border: 1.5px solid #F3DED3; border-radius: 32px; box-shadow: 0 1px 0 #fff inset, 0 26px 50px -22px rgba(27,42,74,.34), 0 4px 10px -4px rgba(27,42,74,.08); animation: lbr-rise .45s ease-out both; }
 .lbr-card::before { content: ''; position: absolute; z-index: -1; width: 340px; height: 340px; right: -110px; top: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,160,.75) 0, rgba(255,217,160,0) 68%); }
 .lbr-card::after { content: ''; position: absolute; z-index: -1; width: 380px; height: 380px; left: -150px; bottom: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,170,.55) 0, rgba(255,190,170,0) 68%); }
 .lbr-pop { margin: auto; }
@@ -940,20 +940,21 @@ const CSS = `
 .lbr-w.cur { color: #1B2A4A; background: linear-gradient(180deg, #FFE0D4, #FFD2C2); box-shadow: 0 6px 12px -6px rgba(242,89,58,.55), 0 0 0 1.5px rgba(242,89,58,.35) inset; }
 .lbr-stamp { position: absolute; right: 14px; bottom: -14px; z-index: 2; transform: rotate(-6deg) scale(.5); opacity: 0; background: #F2593A; color: #fff; border-radius: 999px; padding: 7px 18px; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 17px; box-shadow: 0 10px 18px -8px rgba(242,89,58,.7); transition: opacity .2s, transform .35s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
 .lbr-stamp.on { opacity: 1; transform: rotate(-6deg) scale(1); }
-.lbr-player { display: flex; align-items: center; gap: 14px; margin: 8px 1cm 0; padding: 9px 16px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: wrap; }
-.lbr-ring { width: 62px; height: 62px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#F2593A calc(var(--p, 0) * 1%), #F2E3DA 0); transition: background .15s; }
+.lbr-player { display: flex; align-items: center; gap: 12px; margin: 8px 1cm 0; padding: 9px 14px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: nowrap; }
+.lbr-ring { flex: none; width: 62px; height: 62px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#F2593A calc(var(--p, 0) * 1%), #F2E3DA 0); transition: background .15s; }
 .lbr-play { position: relative; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; background: #F2593A; padding: 0; cursor: pointer; box-shadow: 0 6px 12px -5px rgba(226,74,43,.8); transition: transform .12s; }
 .lbr-play:hover { background: #E24A2B; }
 .lbr-play:active { transform: scale(.94); }
 .lbr-play::before { content: ''; position: absolute; left: 53%; top: 50%; width: 15px; height: 17px; transform: translate(-50%, -50%); background: #fff; clip-path: polygon(0 0, 100% 50%, 0 100%); border-radius: 2px; }
 .lbr-play.on::before { left: 50%; width: 5px; height: 16px; clip-path: none; border-radius: 2px; box-shadow: 8px 0 0 #fff; transform: translate(-9px, -50%); }
-.lbr-count { flex: 1; min-width: 70px; line-height: 1.25; color: #1B2A4A; }
+.lbr-count { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.25; color: #1B2A4A; }
 .lbr-count b { display: block; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .lbr-count small { font-size: 12px; color: #7A5A4E; font-weight: 500; }
-.lbr-seg { display: inline-flex; background: #F7ECE6; border-radius: 999px; padding: 3px; gap: 2px; }
+@container (max-width: 540px) { .lbr-count small { display: none; } }
+.lbr-seg { flex: none; display: inline-flex; background: #F7ECE6; border-radius: 999px; padding: 3px; gap: 2px; }
 .lbr-seg button { border: 0; background: transparent; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 700; color: #7A5A4E; cursor: pointer; transition: background .15s, color .15s; }
 .lbr-seg button.on { background: #fff; color: #1B2A4A; box-shadow: 0 2px 6px rgba(27,42,74,.14); }
-.lbr-voice { display: inline-flex; align-items: center; gap: 8px; background: #F7ECE6; border: 0; border-radius: 999px; padding: 8px 14px 8px 9px; font-size: 12.5px; font-weight: 700; color: #1B2A4A; cursor: pointer; }
+.lbr-voice { flex: none; display: inline-flex; align-items: center; gap: 8px; background: #F7ECE6; border: 0; border-radius: 999px; padding: 8px 14px 8px 9px; font-size: 12.5px; font-weight: 700; color: #1B2A4A; cursor: pointer; }
 .lbr-voice b { width: 28px; height: 17px; border-radius: 999px; background: #D8CDD0; position: relative; transition: background .15s; }
 .lbr-voice b::after { content: ''; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(27,42,74,.3); transition: transform .15s; }
 .lbr-voice[aria-pressed="true"] b { background: #F2593A; }
