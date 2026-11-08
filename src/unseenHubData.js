@@ -170,6 +170,20 @@ const META = [
   [137, "A debate: is social media harming teenagers? The case for concern, and the case for caution about the evidence"],
   [138, "A debate: can a machine catch a liar? How a polygraph works, and why experts doubt it"],
   [139, "A debate: why do conspiracy theories attract people? The psychology behind them, and how to check claims"],
+  [140, "The rules of the world’s favorite game: how they were first written down, and how offside and VAR work"],
+  [141, "From Olympia to Athens: the ancient Games, and how they were brought back in 1896"],
+  [142, "Faster through water: the swimsuits that changed records, and the technique that beats drag"],
+  [143, "Tennis behind the scenes: the odd scoring system, and the cameras that call the lines"],
+  [144, "The science of cycling: why riding in a group saves energy, and how gears work"],
+  [145, "Hurt and healing: how the body repairs a sprain or tear, and how athletes protect themselves"],
+  [146, "A debate: why do home teams win more often, and do scoring streaks really exist?"],
+  [147, "Two cycles in our sky: why the year has seasons, and why the Moon changes shape"],
+  [148, "Two giants: Jupiter and its great storm, and Saturn and its rings of ice"],
+  [149, "Visitors and threats: why comets grow tails, and the asteroid that changed life on Earth"],
+  [150, "Our galactic home: the Milky Way, and its possible meeting with the Andromeda Galaxy"],
+  [151, "The first steps beyond Earth: Sputnik and Gagarin, and the first people on the Moon"],
+  [152, "Robots on the red planet: the rovers that explore Mars, and the search for signs of life"],
+  [153, "The biggest questions: how we know that the universe began, and what most of it is made of"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }

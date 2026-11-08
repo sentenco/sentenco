@@ -16489,5 +16489,2752 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 140,
+    "slug": "unseen-reading-part-140",
+    "theme": "Football",
+    "blurb": "how football’s rules were written down, how offside and VAR work",
+    "texts": {
+      "A": {
+        "title": "How Football’s Rules Were First Written Down",
+        "text": "Games with a ball and a goal are very old, but for many centuries each town and school played football in its own way. Some versions allowed players to carry the ball and to kick the legs of opponents, and some forbade both. This caused arguments when teams from different schools met. On 26 October 1863, representatives of London clubs and schools met at the Freemasons’ Tavern and founded the Football Association, or FA. A lawyer named Ebenezer Cobb Morley, the first secretary of the FA, helped to write the first set of rules. The most important debate was about carrying the ball and hacking, which means kicking an opponent’s legs. Clubs that wanted to keep both left, and later they formed the sport of rugby. The clubs that stayed created the game that we know as association football. Over the next years, the rules changed to add the crossbar, the corner kick and later the referee’s whistle."
+      },
+      "B": {
+        "title": "The Offside Rule and VAR",
+        "text": "The offside rule is one of the most discussed rules of football. Its idea is simple: an attacker should not wait near the opponents’ goal to receive an easy pass. A player is in an offside position if, when a teammate passes the ball, the player is nearer to the opponents’ goal line than both the ball and the second-last opponent, usually the last defender in front of the goalkeeper. Being in that position is not a foul in itself. The player is penalized only if he or she takes part in the play, for example by receiving the ball. Offside decisions are difficult, because they depend on a moment that lasts a fraction of a second, and an assistant referee must watch both the pass and the position of the players. Since 2018, the video assistant referee, or VAR, has helped the referee to review important decisions, such as goals, penalties and direct red cards. Many fans argue that VAR makes the game fairer, while others say that it interrupts the flow of the game."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In 1863, the FA wrote common rules to replace many local versions.",
+        "In 1863, the FA invented football as a completely new game.",
+        "In 1863, the FA made all clubs play rugby instead of football.",
+        "The text explains that each town played football in its own way, and that in 1863 the FA wrote common rules.",
+        [
+          "each town and school played football in its own way",
+          "founded the Football Association, or FA"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was the most important debate?",
+        "Whether players could carry the ball and hack.",
+        "Whether players could wear boots.",
+        "Whether games could be played at night.",
+        "The text says that the most important debate was about carrying the ball and hacking.",
+        "The most important debate was about carrying the ball and hacking"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “arguments” means…",
+        "disagreements.",
+        "celebrations.",
+        "agreements.",
+        "The text says that different rules caused arguments when teams from different schools met, which means disagreements.",
+        "This caused arguments when teams from different schools met"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “later they formed the sport of rugby” refers to…",
+        "the clubs that wanted to carry the ball.",
+        "the clubs that stayed with the new FA.",
+        "the London schools that were closed.",
+        "The sentence says that the clubs that wanted to keep carrying and hacking left, and later those clubs formed rugby.",
+        "Clubs that wanted to keep both left, and later they formed the sport of rugby"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who won the first FA match.",
+        "Where the FA was founded.",
+        "Who helped to write the first rules.",
+        "The text does not say who won the first FA match. It says where the FA was founded and who helped to write the rules.",
+        [
+          "met at the Freemasons’ Tavern",
+          "Ebenezer Cobb Morley, the first secretary of the FA"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the early rules?",
+        "They changed over the years.",
+        "They have never changed.",
+        "They were never written down.",
+        "The text says that over the next years the rules changed to add the crossbar, the corner kick and the whistle.",
+        "Over the next years, the rules changed"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The offside rule is hard to judge, and VAR now helps referees check it.",
+        "The offside rule was removed when VAR was introduced.",
+        "The offside rule applies only to goalkeepers in the penalty area.",
+        "The text explains the offside rule, says that offside decisions are difficult, and says that VAR helps to review them.",
+        [
+          "Offside decisions are difficult",
+          "Since 2018, the video assistant referee, or VAR"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "When is a player penalized for being in an offside position?",
+        "When the player takes part in the play.",
+        "As soon as the player is in that position.",
+        "When the ball goes out of play.",
+        "The text says that the player is penalized only if he or she takes part in the play.",
+        "penalized only if he or she takes part in the play"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fraction” means…",
+        "a very small part.",
+        "a very long time.",
+        "a full number.",
+        "The text says that a decision depends on a fraction of a second, which means a very small part of a second.",
+        "a fraction of a second"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “that it interrupts the flow” refers to…",
+        "VAR.",
+        "the offside rule.",
+        "the game.",
+        "The sentence says that others think that VAR interrupts the flow of the game.",
+        "others say that it interrupts the flow of the game"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many offside goals are scored each season.",
+        "Which decisions VAR can review.",
+        "Who must watch the pass and the players.",
+        "The text does not say how many offside goals are scored each season. It says which decisions VAR reviews and who must watch the pass.",
+        [
+          "such as goals, penalties and direct red cards",
+          "an assistant referee must watch both the pass and the position"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about VAR?",
+        "People disagree about whether it improves the game.",
+        "Everyone agrees that it improves the game.",
+        "Nobody has an opinion about it.",
+        "The text says that many fans argue that VAR makes the game fairer, while others say that it interrupts the game.",
+        "Many fans argue that VAR makes the game fairer, while others say"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "forbade",
+          "did not allow"
+        ],
+        [
+          "representatives",
+          "people who speak or act for a group"
+        ],
+        [
+          "founded",
+          "started an organization"
+        ],
+        [
+          "hacking",
+          "kicking another player’s legs"
+        ],
+        [
+          "whistle",
+          "a small instrument that makes a high, loud sound"
+        ]
+      ],
+      "B": [
+        [
+          "attacker",
+          "a player who tries to score"
+        ],
+        [
+          "penalized",
+          "given a punishment for breaking a rule"
+        ],
+        [
+          "assistant",
+          "a person who helps someone"
+        ],
+        [
+          "review",
+          "to look at again carefully"
+        ],
+        [
+          "interrupts",
+          "stops something for a short time"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 141,
+    "slug": "unseen-reading-part-141",
+    "theme": "The Olympic Games",
+    "blurb": "the ancient Olympic Games, how the modern Games were revived",
+    "texts": {
+      "A": {
+        "title": "The Ancient Olympic Games",
+        "text": "The Olympic Games began in ancient Greece. According to tradition, the first Games took place in 776 BC at Olympia, a sacred place in the western part of the country, and they were held every four years in honor of Zeus, the chief god. The Games were more than sport: they were a religious festival, and a sacred truce was announced, so that athletes and visitors could travel safely, even when cities were at war. The first events were running races, and later the program added wrestling, boxing, the pankration, which was a mix of boxing and wrestling, and chariot racing. Competitors were free Greek men, and they usually competed without clothes. The winner received an olive wreath, and he was honored in his home city, sometimes with money or free meals. The Games continued for more than a thousand years, until the Roman emperor Theodosius I banned pagan festivals, around the year 393."
+      },
+      "B": {
+        "title": "The Modern Olympic Games",
+        "text": "After the ancient Games ended, they were almost forgotten for about fifteen centuries. In the nineteenth century, a French teacher and educator, Pierre de Coubertin, became convinced that sport could educate young people and bring nations together. In 1894, he helped to found the International Olympic Committee, or IOC, and two years later the first modern Olympic Games opened in Athens, in 1896. About two hundred and forty athletes from fourteen countries took part, all of them men, and the program included athletics, cycling, swimming, fencing, gymnastics and the first modern marathon. Women were allowed to compete from 1900, although in small numbers. The Games have grown enormously. Today, more than ten thousand athletes from over two hundred countries compete in the Summer Games, and the Winter Games, started in 1924, have added sports on snow and ice. The Olympic symbol of five rings represents the continents."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The ancient Olympics were a sport and religious festival held at Olympia.",
+        "The ancient Olympics were a military training held in Rome.",
+        "The ancient Olympics were a festival for women and children.",
+        "The text explains that the ancient Games were held at Olympia in honor of Zeus, as a sport and religious festival.",
+        [
+          "The Olympic Games began in ancient Greece",
+          "they were a religious festival"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the winner receive?",
+        "An olive wreath.",
+        "A gold medal.",
+        "A silver cup.",
+        "The text says that the winner received an olive wreath.",
+        "The winner received an olive wreath"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “in honor of” means…",
+        "to show respect for.",
+        "to compete against.",
+        "to forget.",
+        "The text says that the Games were held in honor of Zeus, which means to show respect for Zeus.",
+        "in honor of Zeus"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they usually competed” refers to…",
+        "the competitors.",
+        "the judges.",
+        "the gods.",
+        "The sentence says that competitors were free Greek men, and the competitors usually competed without clothes.",
+        "Competitors were free Greek men, and they usually competed without clothes"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes took part.",
+        "Who banned pagan festivals.",
+        "What the truce allowed.",
+        "The text does not say how many athletes took part. It says who banned pagan festivals and what the truce allowed.",
+        [
+          "the Roman emperor Theodosius I banned pagan festivals",
+          "so that athletes and visitors could travel safely"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the truce suggest about the Games?",
+        "They were very important to the Greeks.",
+        "They were played only in wartime.",
+        "They were not important to anyone.",
+        "The text says that a sacred truce was announced so that athletes could travel safely, even when cities were at war.",
+        "a sacred truce was announced, so that athletes and visitors could travel safely, even when cities were at war"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The modern Olympics were revived in 1896 and have grown into a global event.",
+        "The modern Olympics were invented by the Romans and ended in 1896.",
+        "The modern Olympics have stayed small with the same athletes since 1896.",
+        "The text explains that Coubertin revived the Games in 1896 and that they have grown enormously.",
+        [
+          "the first modern Olympic Games opened in Athens, in 1896",
+          "The Games have grown enormously"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many countries took part in 1896?",
+        "Fourteen.",
+        "Forty.",
+        "Two hundred.",
+        "The text says that athletes from fourteen countries took part.",
+        "from fourteen countries"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “program” means…",
+        "the list of events.",
+        "the cost of tickets.",
+        "the team of judges.",
+        "The text says that the program included athletics, cycling and swimming, which means the list of events.",
+        "the program included athletics, cycling"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “he” in “he helped to found” refers to…",
+        "Pierre de Coubertin.",
+        "a Greek athlete.",
+        "the IOC.",
+        "The sentence says that in 1894 Pierre de Coubertin helped to found the IOC.",
+        "In 1894, he helped to found the International Olympic Committee"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country won the most medals in 1896.",
+        "When women were allowed to compete.",
+        "When the Winter Games started.",
+        "The text does not say which country won the most medals in 1896. It says when women could compete and when the Winter Games started.",
+        [
+          "Women were allowed to compete from 1900",
+          "started in 1924"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the number of athletes today suggest?",
+        "The Games have become much larger than in 1896.",
+        "The Games have become smaller since then.",
+        "The Games have not changed at all since then.",
+        "The text says that today more than ten thousand athletes from over two hundred countries compete.",
+        "more than ten thousand athletes from over two hundred countries"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "sacred",
+          "connected with a god or religion"
+        ],
+        [
+          "truce",
+          "an agreement to stop fighting"
+        ],
+        [
+          "festival",
+          "a special event with celebrations"
+        ],
+        [
+          "chariot",
+          "a light vehicle pulled by horses"
+        ],
+        [
+          "wreath",
+          "a ring of leaves worn as a prize"
+        ]
+      ],
+      "B": [
+        [
+          "convinced",
+          "completely sure"
+        ],
+        [
+          "educate",
+          "to teach"
+        ],
+        [
+          "committee",
+          "a group chosen to make decisions"
+        ],
+        [
+          "enormously",
+          "very greatly"
+        ],
+        [
+          "continents",
+          "the large areas of land on Earth"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 142,
+    "slug": "unseen-reading-part-142",
+    "theme": "Swimming",
+    "blurb": "how swimsuit technology changed world records, how swimmers cut through the water",
+    "texts": {
+      "A": {
+        "title": "How Swimsuit Technology Changed World Records",
+        "text": "In 2008, swimmers broke world records at an astonishing rate. The reason was partly a new kind of swimsuit. The Speedo LZR Racer was made of a very light material that repelled water, and it compressed the body so that the swimmer became more streamlined. Seams were welded instead of stitched, to reduce drag, which is the force of water that slows a swimmer. At the Beijing Olympic Games in 2008, the suit was worn by many winners, and a large number of world records fell, including the records of Michael Phelps, who won eight gold medals. Soon, other companies made similar suits, some covering the whole body and even helping swimmers float. Many people felt that the suits mattered more than the athletes. In 2010, the international swimming federation, FINA, banned the full-body suits and limited the materials, to keep the contest about the swimmers’ skills."
+      },
+      "B": {
+        "title": "How Swimmers Cut Through the Water",
+        "text": "Water is about eight hundred times denser than air, so a swimmer must push against much more resistance than a runner. Good technique is therefore as important as strength. The main enemy is drag. There are three kinds that matter. Form drag depends on the shape of the body: a swimmer who is flat and straight and whose hips stay high meets less water than one whose hips sink. Wave drag comes from the waves that the swimmer makes on the surface, and it increases quickly with speed. Friction drag is the rubbing of water against the skin and swimsuit. Swimmers reduce it by wearing smooth suits and caps, and some shave their body hair, although the effect is small. Power comes mostly from the arms: the hand enters the water, catches the water and pulls it backward, while the body rolls from side to side, which makes the stroke longer and easier. After each turn, swimmers glide underwater, because they move faster below the surface than on it."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "New swimsuits helped swimmers to break many records until they were banned.",
+        "New swimsuits made swimmers slower, so they were banned.",
+        "New swimsuits were worn only by coaches and judges.",
+        "The text explains that new suits helped swimmers to break records in 2008, and that full-body suits were banned in 2010.",
+        [
+          "swimmers broke world records at an astonishing rate",
+          "banned the full-body suits"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does drag mean in the text?",
+        "The force of water that slows a swimmer.",
+        "The speed of a swimmer in a race.",
+        "The material of a swimsuit.",
+        "The text says that drag is the force of water that slows a swimmer.",
+        "which is the force of water that slows a swimmer"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “limited” means…",
+        "set a limit on.",
+        "made more of.",
+        "gave away.",
+        "The text says that FINA limited the materials, which means that it set a limit on them.",
+        "limited the materials"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it compressed the body” refers to…",
+        "the swimsuit.",
+        "the swimmer.",
+        "the water.",
+        "The sentence says that the Speedo LZR Racer was made of a light material, and the suit compressed the body.",
+        "The Speedo LZR Racer was made of a very light material that repelled water, and it compressed the body"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the swimsuit cost.",
+        "What happened in 2010.",
+        "What the seams were instead of.",
+        "The text does not say how much the swimsuit cost. It says what happened in 2010 and what the seams were instead of.",
+        [
+          "In 2010, the international swimming federation, FINA, banned",
+          "Seams were welded instead of stitched"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does “the suits mattered more than the athletes” suggest?",
+        "Some people thought that the technology was unfair.",
+        "Some people thought that the swimmers were lazy.",
+        "Some people thought that the suits were too cheap.",
+        "The text says that many people felt that the suits mattered more than the athletes, which suggests that they thought the technology was unfair.",
+        "Many people felt that the suits mattered more than the athletes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Swimmers go faster by reducing drag and using good technique.",
+        "Swimmers go faster only by being taller than their rivals.",
+        "Swimmers go faster because water pushes them forward.",
+        "The text explains that technique is as important as strength, and that reducing drag is the main way to go faster.",
+        [
+          "Good technique is therefore as important as strength",
+          "The main enemy is drag"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do swimmers do after each turn?",
+        "They glide underwater.",
+        "They stop to breathe.",
+        "They swim on the surface.",
+        "The text says that after each turn swimmers glide underwater.",
+        "swimmers glide underwater"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “rolls” means…",
+        "turns slightly.",
+        "falls down.",
+        "stops moving.",
+        "The text says that the body rolls from side to side, which means that it turns slightly.",
+        "the body rolls from side to side"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it increases quickly with speed” refers to…",
+        "wave drag.",
+        "form drag.",
+        "friction drag.",
+        "The sentence says that wave drag comes from waves on the surface, and wave drag increases quickly with speed.",
+        "Wave drag comes from the waves that the swimmer makes on the surface, and it increases quickly with speed"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which stroke is the fastest in competition.",
+        "What form drag depends on.",
+        "Why swimmers glide after turns.",
+        "The text does not say which stroke is the fastest. It says what form drag depends on and why swimmers glide after turns.",
+        [
+          "Form drag depends on the shape of the body",
+          "they move faster below the surface than on it"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the first sentence suggest about swimming and running?",
+        "Swimmers meet more resistance than runners.",
+        "Runners meet more resistance than swimmers.",
+        "Both meet exactly the same resistance.",
+        "The text says that a swimmer must push against much more resistance than a runner.",
+        "a swimmer must push against much more resistance than a runner"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "astonishing",
+          "very surprising"
+        ],
+        [
+          "repelled",
+          "pushed away"
+        ],
+        [
+          "streamlined",
+          "shaped to move easily through air or water"
+        ],
+        [
+          "drag",
+          "the force that slows something moving through water or air"
+        ],
+        [
+          "federation",
+          "an organization of groups with a shared aim"
+        ]
+      ],
+      "B": [
+        [
+          "denser",
+          "heavier for its size"
+        ],
+        [
+          "resistance",
+          "a force that works against movement"
+        ],
+        [
+          "technique",
+          "a way of doing something with skill"
+        ],
+        [
+          "friction",
+          "the rubbing of one surface on another"
+        ],
+        [
+          "glide",
+          "to move smoothly without effort"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 143,
+    "slug": "unseen-reading-part-143",
+    "theme": "Tennis",
+    "blurb": "why tennis scores 15, 30, 40, how Hawk-Eye line calling works",
+    "texts": {
+      "A": {
+        "title": "Why Tennis Scores 15, 30, 40",
+        "text": "Tennis has one of the strangest scoring systems in sport. A player who wins the first point has “fifteen”, the second point makes “thirty”, the third point “forty”, and the fourth wins the game, unless both players have forty. In that case, called deuce, one player must win two points in a row. Nobody knows for certain why the numbers are fifteen, thirty and forty. One popular explanation is that the first tennis-like game, played in medieval France, used a clock face to keep the score, with the hand moved by quarters, fifteen, thirty, forty-five and sixty. Later, forty-five may have been shortened to forty, which is easier to say. Another idea is that the numbers come from old coins. Historians point out that there is little evidence for either story. The word love is used for no points, and some people think that it comes from the French word for egg, l’oeuf, because zero looks like an egg. This is also uncertain."
+      },
+      "B": {
+        "title": "How Hawk-Eye Line Calling Works",
+        "text": "In tennis, a ball can travel at more than two hundred kilometers an hour, and a line judge has to decide in a fraction of a second whether it touched the line. Human eyes make mistakes, so in 2007 Wimbledon began to use an electronic system called Hawk-Eye to review disputed calls. Several high-speed cameras around the court film the ball from different angles. A computer combines the images, uses geometry to find the position of the ball in three dimensions in each frame, and then predicts the path of the ball, including the point where it bounced. The result is shown on a screen as a computer image. The makers say that the average error is about three or four millimeters, which is small, although critics note that it is not perfect. Under the challenge system, players can ask to review a decision a limited number of times in a set. Some tournaments now use the system for all line calls, with no human line judges."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Tennis scoring is unusual, and the reason for its numbers is uncertain.",
+        "Tennis scoring was invented in England in the last century.",
+        "Tennis scoring is simple and follows the numbers one, two, three.",
+        "The text explains the unusual scoring and says that historians have little evidence for the explanations of the numbers.",
+        [
+          "Tennis has one of the strangest scoring systems in sport",
+          "Historians point out that there is little evidence for either story"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is deuce?",
+        "When both players have forty points.",
+        "When a player wins a game without losing a point.",
+        "When a player serves two faults.",
+        "The text says that when both players have forty, this is called deuce.",
+        "unless both players have forty. In that case, called deuce"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “for certain” means…",
+        "completely sure.",
+        "very worried.",
+        "very late.",
+        "The text says that nobody knows for certain why the numbers are used, which means that nobody is completely sure.",
+        "Nobody knows for certain"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “that it comes from the French word for egg” refers to…",
+        "the word love.",
+        "the word deuce.",
+        "the clock face.",
+        "The sentence says that some people think that the word love comes from the French word for egg.",
+        "some people think that it comes from the French word for egg"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who invented the first tennis ball.",
+        "What happens at deuce.",
+        "What the clock face explanation says.",
+        "The text does not say who invented the first tennis ball. It says what happens at deuce and what the clock face explanation says.",
+        [
+          "one player must win two points in a row",
+          "used a clock face to keep the score"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about the egg idea?",
+        "It is not proved.",
+        "It is proved by documents.",
+        "It is the only explanation.",
+        "The text says that this is also uncertain.",
+        "This is also uncertain."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Hawk-Eye uses cameras and a computer to judge where a ball landed.",
+        "Hawk-Eye uses a loud sound to show where the ball landed.",
+        "Hawk-Eye is used only to count the number of points.",
+        "The text explains that several cameras film the ball and a computer calculates its position and path.",
+        [
+          "Wimbledon began to use an electronic system called Hawk-Eye",
+          "Several high-speed cameras around the court film the ball"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "When did Wimbledon begin to use Hawk-Eye?",
+        "In 2007.",
+        "In 1977.",
+        "In 2017.",
+        "The text says that in 2007 Wimbledon began to use the electronic system.",
+        "in 2007 Wimbledon began to use an electronic system"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “bounced” means…",
+        "hit the ground and rose again.",
+        "stopped in the air.",
+        "broke into pieces.",
+        "The text says that the computer finds the point where the ball bounced, which means where it hit the ground and rose again.",
+        "the point where it bounced"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “whether it touched the line” refers to…",
+        "the ball.",
+        "the line.",
+        "the court.",
+        "The sentence says that a line judge must decide whether the ball touched the line.",
+        "whether it touched the line"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many challenges each player has in a match.",
+        "What the makers say about the average error.",
+        "What the computer predicts.",
+        "The text does not say how many challenges each player has in a match. It gives the makers’ claim about error and says what the computer predicts.",
+        [
+          "The makers say that the average error is about three or four millimeters",
+          "predicts the path of the ball"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Technology can replace some human judges.",
+        "Human judges are always more accurate.",
+        "Technology is not used in tournaments.",
+        "The text says that some tournaments now use the system for all line calls, with no human line judges.",
+        "Some tournaments now use the system for all line calls, with no human line judges"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "deuce",
+          "a score of forty each in tennis"
+        ],
+        [
+          "medieval",
+          "from the Middle Ages"
+        ],
+        [
+          "explanation",
+          "a statement that makes something clear"
+        ],
+        [
+          "evidence",
+          "facts that show that something is true"
+        ],
+        [
+          "shortened",
+          "made shorter"
+        ]
+      ],
+      "B": [
+        [
+          "disputed",
+          "argued about"
+        ],
+        [
+          "electronic",
+          "using electricity and computers"
+        ],
+        [
+          "angles",
+          "the directions from which something is seen"
+        ],
+        [
+          "geometry",
+          "the mathematics of shapes and space"
+        ],
+        [
+          "predicts",
+          "says what will happen"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 144,
+    "slug": "unseen-reading-part-144",
+    "theme": "Cycling",
+    "blurb": "drafting and why cyclists ride in a group, how bicycle gears work",
+    "texts": {
+      "A": {
+        "title": "Drafting: Why Cyclists Ride in a Group",
+        "text": "At high speed, most of the effort of a cyclist is used to push air out of the way. Air resistance grows quickly with speed, so the faster a rider goes, the more of the effort is wasted on the air. This is why a cyclist who rides directly behind another rider uses less energy. The rider in front opens a path through the air, and the rider behind moves in the calm air that is left, a technique called drafting. Studies suggest that riders in a group can save as much as thirty percent of their effort, and more in a large pack. In a race, teams use this on purpose. The leading rider works hard for a time, then moves aside and lets someone else take the front, a system called a paceline. When there is a strong wind from the side, riders form a diagonal line called an echelon to find shelter. Drafting is also one reason why strong riders sometimes wait in the pack and attack only near the end."
+      },
+      "B": {
+        "title": "How Bicycle Gears Work",
+        "text": "A bicycle gear system lets the rider choose how hard to push and how fast to turn the pedals. The pedals turn a large toothed wheel at the front, called a chainring, and the chain connects it to a set of smaller toothed wheels at the back, called the cassette. When the chain is on a small chainring and a large rear sprocket, one turn of the pedals makes the back wheel turn only a little. This is a low gear. It is easy to push, and it is useful for hills, because the rider can keep a comfortable rhythm. When the chain is on a large chainring and a small rear sprocket, one turn of the pedals makes the back wheel turn many times. This is a high gear, which is good for speed on flat roads or downhill, although it needs more force. A device called the derailleur moves the chain from one sprocket to another when the rider shifts. Most cyclists feel most comfortable pedaling about eighty to ninety times a minute, so they change gear to keep that rhythm."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Riding behind another cyclist saves energy because of less air resistance.",
+        "Riding behind another cyclist wastes energy because the air is thicker.",
+        "Riding behind another cyclist is useful only in the rain.",
+        "The text explains that a rider behind another rider uses less energy because the front rider opens a path through the air.",
+        [
+          "a cyclist who rides directly behind another rider uses less energy",
+          "a technique called drafting"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is an echelon?",
+        "A diagonal line of riders that avoids the wind.",
+        "A straight line of riders at the front.",
+        "A group of riders who stop to rest.",
+        "The text says that riders form a diagonal line called an echelon to find shelter from the wind.",
+        "a diagonal line called an echelon to find shelter"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “pack” means…",
+        "a large group of riders.",
+        "a bag for equipment.",
+        "a set of cards.",
+        "The text says that riders can save more effort in a large pack, which means a large group of riders.",
+        "more in a large pack"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “this” in “teams use this on purpose” refers to…",
+        "riding in a group to save effort.",
+        "riding at the front alone.",
+        "attacking near the end.",
+        "The sentence before says that riders in a group can save a lot of effort, and in a race teams use this saving on purpose.",
+        "Studies suggest that riders in a group can save as much as thirty percent of their effort, and more in a large pack. In a race, teams use this on purpose"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many riders ride in a typical pack.",
+        "What a paceline is.",
+        "How much effort riders can save.",
+        "The text does not say how many riders ride in a typical pack. It explains what a paceline is and how much effort riders can save.",
+        [
+          "a system called a paceline",
+          "as much as thirty percent of their effort"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about strong riders?",
+        "They may save energy in the pack.",
+        "They never ride in the pack at all.",
+        "They always lead from the very start.",
+        "The text says that strong riders sometimes wait in the pack and attack only near the end.",
+        "strong riders sometimes wait in the pack and attack only near the end"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Bicycle gears let riders keep a comfortable pace on hills and on flat roads.",
+        "Bicycle gears let riders go faster without turning the pedals.",
+        "Bicycle gears make the chain longer on hills.",
+        "The text explains that gears let the rider choose how hard to push, so that the rider can keep a comfortable rhythm.",
+        [
+          "lets the rider choose how hard to push and how fast to turn the pedals",
+          "so they change gear to keep that rhythm"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which gear is useful for hills?",
+        "A low gear.",
+        "A high gear.",
+        "No gear at all.",
+        "The text says that a low gear is easy to push and is useful for hills.",
+        "This is a low gear. It is easy to push, and it is useful for hills"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “shifts” means…",
+        "changes gear.",
+        "falls off.",
+        "stops pedaling.",
+        "The text says that the derailleur moves the chain when the rider shifts, which means when the rider changes gear.",
+        "when the rider shifts"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “the chain connects it” refers to…",
+        "the chainring.",
+        "the cassette.",
+        "the pedal.",
+        "The sentence says that the pedals turn a toothed wheel called a chainring, and the chain connects the chainring to the cassette.",
+        "called a chainring, and the chain connects it to a set of smaller toothed wheels"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a derailleur costs.",
+        "What a high gear is good for.",
+        "How many times a minute most cyclists pedal.",
+        "The text does not say how much a derailleur costs. It says what a high gear is good for and how many times a minute most cyclists pedal.",
+        [
+          "good for speed on flat roads or downhill",
+          "about eighty to ninety times a minute"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a high gear?",
+        "It needs more force from the rider.",
+        "It is the easiest gear on a hill.",
+        "It makes the back wheel turn less.",
+        "The text says that a high gear is good for speed, although it needs more force.",
+        "although it needs more force"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "resistance",
+          "a force that works against movement"
+        ],
+        [
+          "wasted",
+          "used without a good result"
+        ],
+        [
+          "calm",
+          "not moving much, still"
+        ],
+        [
+          "shelter",
+          "protection from wind or weather"
+        ],
+        [
+          "attack",
+          "to start a strong effort to get ahead"
+        ]
+      ],
+      "B": [
+        [
+          "chainring",
+          "the large toothed wheel at the pedals"
+        ],
+        [
+          "cassette",
+          "a group of toothed wheels on the back wheel"
+        ],
+        [
+          "sprocket",
+          "a wheel with teeth that holds a chain"
+        ],
+        [
+          "derailleur",
+          "the part that moves the chain between gears"
+        ],
+        [
+          "rhythm",
+          "a regular pattern of movement"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 145,
+    "slug": "unseen-reading-part-145",
+    "theme": "Sports Injuries",
+    "blurb": "how a sprain or muscle tear heals, how athletes prevent injuries",
+    "texts": {
+      "A": {
+        "title": "How a Sprain or Muscle Tear Heals",
+        "text": "Athletes often suffer two kinds of soft-tissue injury. A sprain is damage to a ligament, the tough band that connects two bones. A strain is damage to a muscle or to a tendon, which connects muscle to bone. Doctors describe them in three grades: grade one is a small stretch, grade two is a partial tear and grade three is a complete tear. Healing happens in three overlapping phases. First comes inflammation, in the first days: blood flows to the injury and brings cells that clean the damaged area, and the area becomes red, warm, swollen and painful. Next comes repair, which lasts for several weeks: the body builds new tissue, but it is weaker and disorganized. Last is remodeling, which can last for months: the new tissue becomes stronger and organized along the lines of force, if it is gradually loaded with exercise. Because the process takes time, an injured player who returns too early is likely to be injured again."
+      },
+      "B": {
+        "title": "How Athletes Prevent Injuries",
+        "text": "Not every injury can be prevented, but research shows that the risk can be reduced. A good warm-up is the first step: five to fifteen minutes of light running, followed by dynamic movements such as leg swings, lunges and short sprints, prepares the muscles and joints. Programs such as the “FIFA 11+”, a structured warm-up for football, have been shown in studies to reduce injuries by about a third when teams follow them regularly. Strength training also protects the body, because strong muscles support the joints, and balance exercises can lower the risk of ankle sprains. Another important factor is load: injuries often happen when training increases too suddenly, so coaches build volume gradually. Rest and sleep give the body time to adapt, and a tired athlete makes more mistakes. Good equipment, such as shoes that fit and protective gear, also helps. Finally, athletes should report pain early instead of playing through it, because a small problem that is treated quickly is easier to fix than a large one."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sprains and strains heal in phases, and returning too early is risky.",
+        "Sprains and strains heal in one day if the athlete rests.",
+        "Sprains and strains heal only with surgery.",
+        "The text explains the three phases of healing and says that an injured player who returns too early is likely to be injured again.",
+        [
+          "Healing happens in three overlapping phases",
+          "an injured player who returns too early is likely to be injured again"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is a sprain?",
+        "Damage to a ligament.",
+        "Damage to a muscle only.",
+        "Damage to the skin only.",
+        "The text says that a sprain is damage to a ligament.",
+        "A sprain is damage to a ligament"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “partial” means…",
+        "not complete.",
+        "very large.",
+        "very old.",
+        "The text says that grade two is a partial tear, which means that the tear is not complete.",
+        "grade two is a partial tear"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “but it is weaker” refers to…",
+        "the new tissue.",
+        "the injury.",
+        "the repair phase.",
+        "The sentence says that the body builds new tissue, but the new tissue is weaker and disorganized.",
+        "the body builds new tissue, but it is weaker and disorganized"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes suffer a sprain each year.",
+        "What the three grades are.",
+        "What happens during inflammation.",
+        "The text does not say how many athletes suffer a sprain each year. It says what the three grades are and what happens during inflammation.",
+        [
+          "grade one is a small stretch, grade two is a partial tear and grade three is a complete tear",
+          "the area becomes red, warm, swollen and painful"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A player needs patience during recovery.",
+        "A player should return as soon as possible.",
+        "A player should never exercise again.",
+        "The text says that because the process takes time, a player who returns too early is likely to be injured again.",
+        "Because the process takes time"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Injuries can be reduced with warm-ups, strength, rest and gradual training.",
+        "Injuries cannot be reduced, so athletes should only hope for luck.",
+        "Injuries are reduced only by wearing very expensive shoes.",
+        "The text explains several ways to reduce the risk of injury, such as warm-ups, strength training, gradual loading, rest and early care.",
+        [
+          "research shows that the risk can be reduced",
+          "report pain early instead of playing through it"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long is a good warm-up in the text?",
+        "Five to fifteen minutes of light running.",
+        "One hour of heavy lifting.",
+        "Thirty seconds of stretching.",
+        "The text says that a good warm-up starts with five to fifteen minutes of light running.",
+        "five to fifteen minutes of light running"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “load” means…",
+        "the amount of training.",
+        "the weight of equipment.",
+        "the number of fans.",
+        "The text says that injuries often happen when training increases too suddenly, so load means the amount of training.",
+        "Another important factor is load"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “playing through it” refers to…",
+        "pain.",
+        "the warm-up.",
+        "the game.",
+        "The sentence says that athletes should report pain early instead of playing through the pain.",
+        "report pain early instead of playing through it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes use the FIFA 11+.",
+        "What strong muscles do for the joints.",
+        "What can lower the risk of ankle sprains.",
+        "The text does not say how many athletes use the FIFA 11+. It says what strong muscles do and what lowers the risk of ankle sprains.",
+        [
+          "strong muscles support the joints",
+          "balance exercises can lower the risk of ankle sprains"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about reporting pain?",
+        "Early treatment of a small problem is better.",
+        "Pain should always be ignored.",
+        "Only big injuries should be reported.",
+        "The text says that a small problem that is treated quickly is easier to fix than a large one.",
+        "a small problem that is treated quickly is easier to fix than a large one"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "ligament",
+          "a strong band that joins two bones"
+        ],
+        [
+          "tendon",
+          "a strong band that joins muscle to bone"
+        ],
+        [
+          "inflammation",
+          "redness and swelling caused by the body’s defense"
+        ],
+        [
+          "swollen",
+          "bigger than normal because of fluid"
+        ],
+        [
+          "remodeling",
+          "changing the shape or form of something again"
+        ]
+      ],
+      "B": [
+        [
+          "dynamic",
+          "involving movement"
+        ],
+        [
+          "structured",
+          "organized in a clear plan"
+        ],
+        [
+          "joints",
+          "places where two bones meet"
+        ],
+        [
+          "gradually",
+          "slowly, little by little"
+        ],
+        [
+          "equipment",
+          "the things needed for an activity"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 146,
+    "slug": "unseen-reading-part-146",
+    "theme": "Winning and Streaks",
+    "blurb": "why teams win at home, the hot hand debate",
+    "texts": {
+      "A": {
+        "title": "Home Advantage: Why Teams Win at Home",
+        "text": "In almost every team sport, home teams win more often than away teams. In football, about forty-five to fifty percent of matches have historically been won by the home team, compared with around twenty-five to thirty percent by the away team, with the rest drawn, and the difference is similar in many other sports. Researchers have suggested several reasons. The first is the crowd: supporters create energy for the home team and may also influence referees, who are human and may unconsciously favor the team that the crowd supports. The second is travel: away teams may be tired after long journeys and sleep worse. The third is familiarity with the pitch, the climate and local conditions. A fourth is the motivation of players who feel that they are defending their home. During the COVID-19 pandemic, many matches were played in empty stadiums, and studies found that home advantage became smaller in several leagues. This supports the idea that the crowd matters, although other factors remain."
+      },
+      "B": {
+        "title": "The Hot Hand: Do Scoring Streaks Exist?",
+        "text": "Every basketball fan has seen it: a player scores several shots in a row and seems to be “on fire”. Fans and players believe in the “hot hand”, the idea that success makes the next success more likely. In 1985, the psychologists Thomas Gilovich, Robert Vallone and Amos Tversky studied shooting records of professional basketball players. They found that a player’s chance of scoring after a hit was not higher than after a miss, and they concluded that the hot hand was an illusion: people see patterns in random sequences. Their paper became famous, and for years the “hot hand fallacy” was a classic example of a mistake in thinking. But in 2018, the economists Joshua Miller and Adam Sanjurjo showed that the old method contained a subtle statistical bias that hid real streaks. After correction, the data pointed to a small hot-hand effect. Today, most researchers accept that streaks may exist but are weaker than fans think, and the debate continues."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Home teams win more often, and the crowd is one important reason.",
+        "Home teams win less often because the crowd makes them nervous.",
+        "Home teams win more only because their pitches are larger.",
+        "The text explains that home teams win more often and gives several reasons, including the crowd.",
+        [
+          "home teams win more often than away teams",
+          "home advantage became smaller in several leagues"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What happened to home advantage in empty stadiums?",
+        "It became smaller in several leagues.",
+        "It became larger in all leagues.",
+        "It disappeared in every league.",
+        "The text says that studies found that home advantage became smaller in several leagues.",
+        "home advantage became smaller in several leagues"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “favor” means…",
+        "treat in a better way.",
+        "treat in a worse way.",
+        "forget about.",
+        "The text says that referees may unconsciously favor the team that the crowd supports, which means that they may treat it in a better way.",
+        "unconsciously favor the team that the crowd supports"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “who” in “referees, who are human” refers to…",
+        "the referees.",
+        "the supporters.",
+        "the away players.",
+        "The sentence says that supporters may influence referees, and the referees are human and may unconsciously favor the home team.",
+        "influence referees, who are human and may unconsciously favor"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which team has the strongest home advantage.",
+        "What the third reason is.",
+        "What travel can do to away teams.",
+        "The text does not say which team has the strongest home advantage. It names the third reason and says what travel can do to away teams.",
+        [
+          "familiarity with the pitch, the climate and local conditions",
+          "away teams may be tired after long journeys and sleep worse"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The crowd matters, but it is not the only factor.",
+        "The crowd is the only real factor at all.",
+        "The crowd has no effect on any match.",
+        "The text says that this supports the idea that the crowd matters, although other factors remain.",
+        "although other factors remain"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The hot hand was called an illusion, but newer work suggests a small effect.",
+        "The hot hand has been proved to be a very large effect.",
+        "The hot hand has been shown to be impossible by every study.",
+        "The text explains that the 1985 study called the hot hand an illusion, but a 2018 reanalysis found a small effect.",
+        [
+          "the hot hand was an illusion",
+          "After correction, the data pointed to a small hot-hand effect"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the 1985 study find about scoring after a hit?",
+        "The chance was not higher than after a miss.",
+        "The chance was much higher than after a miss.",
+        "The chance was zero.",
+        "The text says that the chance of scoring after a hit was not higher than after a miss.",
+        "a player’s chance of scoring after a hit was not higher than after a miss"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “classic” means…",
+        "typical and well known.",
+        "new and unknown.",
+        "very rare.",
+        "The text says that the fallacy was a classic example of a mistake in thinking, which means a typical and well-known example.",
+        "a classic example of a mistake in thinking"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “Every basketball fan has seen it” refers to…",
+        "a player scoring several shots in a row.",
+        "a player missing a free throw.",
+        "a team losing a game.",
+        "The sentence explains after the colon what fans have seen: a player who scores several shots in a row.",
+        "Every basketball fan has seen it: a player scores several shots in a row"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many shots the players took in the 1985 study.",
+        "What Miller and Sanjurjo found in the old method.",
+        "What most researchers accept today.",
+        "The text does not say how many shots the players took. It says what Miller and Sanjurjo found and what most researchers accept today.",
+        [
+          "the old method contained a subtle statistical bias",
+          "streaks may exist but are weaker than fans think"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The question is not fully settled.",
+        "The question was closed in 1985.",
+        "Fans were right about everything.",
+        "The text says that the debate continues.",
+        "the debate continues"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "historically",
+          "over a long period of the past"
+        ],
+        [
+          "supporters",
+          "fans who help a team by cheering"
+        ],
+        [
+          "unconsciously",
+          "without knowing or intending"
+        ],
+        [
+          "familiarity",
+          "good knowledge of something"
+        ],
+        [
+          "motivation",
+          "the reason or desire to do something"
+        ]
+      ],
+      "B": [
+        [
+          "illusion",
+          "something that seems real but is not"
+        ],
+        [
+          "sequences",
+          "series of things that follow each other"
+        ],
+        [
+          "fallacy",
+          "a mistaken belief"
+        ],
+        [
+          "subtle",
+          "small and hard to notice"
+        ],
+        [
+          "bias",
+          "a mistake that pushes results in one direction"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 147,
+    "slug": "unseen-reading-part-147",
+    "theme": "Earth and Moon Cycles",
+    "blurb": "why we have seasons, why the Moon has phases",
+    "texts": {
+      "A": {
+        "title": "Why We Have Seasons",
+        "text": "Many people think that we have summer when the Earth is closer to the Sun and winter when it is farther away. This is a common mistake. In fact, the Earth is closest to the Sun in early January, in the middle of winter in the northern half of the world. The real reason is the tilt of the Earth’s axis. The Earth spins around an imaginary line that is tilted by about 23.5 degrees, and the tilt always points toward the same direction in space while the Earth travels around the Sun in one year. In June, the northern half leans toward the Sun, so the Sun climbs high in the sky, the days are longer and the sunlight is more direct, which heats the ground more. At the same time, the southern half has winter. Six months later, the situation is reversed. Near the equator, the tilt changes the seasons very little, so many tropical countries, such as the Philippines, have mainly a wet and a dry season rather than four seasons."
+      },
+      "B": {
+        "title": "Why the Moon Has Phases",
+        "text": "The Moon does not make its own light. It shines because it reflects sunlight, and at any moment, half of the Moon is lit by the Sun. The phases that we see depend on how much of the lit half faces the Earth. When the Moon is between the Earth and the Sun, the lit half faces away from us, and we see a new moon, which is almost invisible. As the Moon moves in its orbit, a thin crescent appears, then the first quarter, when we see half of the disk, then a gibbous moon and finally the full moon, when the Earth is between the Moon and the Sun and the whole lit face is toward us. After that, the light shrinks again, through the last quarter and the crescent, back to a new moon. The cycle takes about twenty-nine and a half days, which is where the word month comes from. Phases are not caused by the shadow of the Earth. The Earth’s shadow falls on the Moon only in a lunar eclipse."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Seasons come from the Earth’s tilt, not from its distance from the Sun.",
+        "Seasons come from the Sun becoming hotter and colder every year.",
+        "Seasons come from the Moon moving closer to the Earth.",
+        "The text explains that the seasons are caused by the tilt of the Earth’s axis, and not by the Earth’s distance from the Sun.",
+        [
+          "The real reason is the tilt of the Earth’s axis",
+          "This is a common mistake"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "When is the Earth closest to the Sun?",
+        "In early January.",
+        "In June.",
+        "In September.",
+        "The text says that the Earth is closest to the Sun in early January.",
+        "the Earth is closest to the Sun in early January"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “leans toward” means…",
+        "tilts toward.",
+        "moves away from.",
+        "spins around.",
+        "The text says that in June the northern half leans toward the Sun, which means that it tilts toward the Sun.",
+        "the northern half leans toward the Sun"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “when it is farther away” refers to…",
+        "the Earth.",
+        "the Sun.",
+        "summer.",
+        "The sentence says that many people think that we have winter when the Earth is farther away from the Sun.",
+        "winter when it is farther away"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many days a year have equal day and night.",
+        "How big the tilt is.",
+        "Which countries have two main seasons.",
+        "The text does not say how many days a year have equal day and night. It says how big the tilt is and which countries have two main seasons.",
+        [
+          "tilted by about 23.5 degrees",
+          "many tropical countries, such as the Philippines, have mainly a wet and a dry season"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about December in the southern half of the world?",
+        "It is summer there.",
+        "It is winter there.",
+        "It has no seasons at all.",
+        "The text says that in June the southern half has winter, and that six months later the situation is reversed, so December is summer there.",
+        [
+          "At the same time, the southern half has winter",
+          "Six months later, the situation is reversed"
+        ]
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Moon’s phases depend on how much of its lit half faces the Earth.",
+        "The Moon’s phases are caused by the shadow of the Earth.",
+        "The Moon’s phases are caused by clouds passing in front of it.",
+        "The text explains that the phases depend on how much of the lit half of the Moon faces the Earth, and not on the shadow of the Earth.",
+        [
+          "The phases that we see depend on how much of the lit half faces the Earth",
+          "Phases are not caused by the shadow of the Earth"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long does the cycle of phases take?",
+        "About twenty-nine and a half days.",
+        "About seven days of the week.",
+        "About one whole year.",
+        "The text says that the cycle takes about twenty-nine and a half days.",
+        "about twenty-nine and a half days"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “invisible” means…",
+        "very hard to see.",
+        "very easy to see.",
+        "very far away.",
+        "The text says that a new moon is almost invisible, which means very hard to see.",
+        "which is almost invisible"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “It shines because it reflects sunlight” refers to…",
+        "the Moon.",
+        "the Sun.",
+        "the Earth.",
+        "The sentence says that the Moon does not make its own light, and the Moon shines because it reflects sunlight.",
+        "It shines because it reflects sunlight"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How far the Moon is from the Earth.",
+        "What a full moon is.",
+        "Where the word month comes from.",
+        "The text does not say how far the Moon is from the Earth. It explains what a full moon is and where the word month comes from.",
+        [
+          "when the Earth is between the Moon and the Sun and the whole lit face is toward us",
+          "which is where the word month comes from"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A lunar eclipse is different from the phases.",
+        "Lunar eclipses happen every night.",
+        "The phases are a kind of eclipse.",
+        "The text says that phases are not caused by the Earth’s shadow, and that the shadow falls on the Moon only in a lunar eclipse.",
+        "The Earth’s shadow falls on the Moon only in a lunar eclipse."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "imaginary",
+          "existing only in the mind, not real"
+        ],
+        [
+          "tilted",
+          "leaning to one side"
+        ],
+        [
+          "direct",
+          "straight, not at an angle"
+        ],
+        [
+          "reversed",
+          "turned the opposite way"
+        ],
+        [
+          "tropical",
+          "relating to the hot regions near the equator"
+        ]
+      ],
+      "B": [
+        [
+          "reflects",
+          "sends light back from a surface"
+        ],
+        [
+          "crescent",
+          "a thin curved shape"
+        ],
+        [
+          "disk",
+          "a flat round shape"
+        ],
+        [
+          "gibbous",
+          "more than half, but not all, of the Moon lit"
+        ],
+        [
+          "shrinks",
+          "becomes smaller"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 148,
+    "slug": "unseen-reading-part-148",
+    "theme": "The Giant Planets",
+    "blurb": "Jupiter and its Great Red Spot, Saturn and its rings",
+    "texts": {
+      "A": {
+        "title": "Jupiter and Its Great Red Spot",
+        "text": "Jupiter is the largest planet of the Solar System: more than eleven Earths could fit across its width, and its mass is more than twice that of all the other planets together. It is a gas giant, which means that it has no solid surface like the Earth. Its atmosphere is made mostly of hydrogen and helium, and it shows colored bands of clouds, because strong winds blow in opposite directions at different latitudes. Jupiter’s most famous feature is the Great Red Spot, a giant storm that has been seen for at least one hundred and fifty years, and possibly longer. It is an anticyclone, a huge area of high pressure that turns counterclockwise, with winds of more than four hundred kilometers an hour. At one time it was wide enough to hold about three Earths. Today it is much smaller, and it is slowly changing shape. Scientists do not yet know exactly why it is shrinking, or whether it will disappear."
+      },
+      "B": {
+        "title": "Saturn and Its Rings",
+        "text": "Saturn is the second-largest planet, and it is famous for its rings, which are the most spectacular in the Solar System. Galileo saw them in 1610 with an early telescope, but he thought that they were strange arms or moons. Later, astronomers understood that the rings are made of countless pieces of ice, from tiny grains of dust to blocks as big as houses, all orbiting Saturn. The ice is mostly water. From one edge to the other, the main rings are about 280,000 kilometers wide, but they are extremely thin, in most places only about ten meters thick, which is like a sheet of paper made as wide as a city. The rings reflect a lot of sunlight, so they are bright and easy to see even in a small telescope. Their origin is a mystery. Some scientists think that they are young, perhaps only a few hundred million years old, and that they formed when a moon or a comet was torn apart. Others think that they are as old as the planet. The rings may also be slowly falling into Saturn."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Jupiter is a huge gas giant with a giant storm that is slowly shrinking.",
+        "Jupiter is a small rocky planet with a solid surface.",
+        "Jupiter is a planet that has no atmosphere and no storms.",
+        "The text describes Jupiter as the largest planet, a gas giant with a great storm that is getting smaller.",
+        [
+          "Jupiter is the largest planet of the Solar System",
+          "Today it is much smaller"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is Jupiter’s atmosphere mostly made of?",
+        "Hydrogen and helium.",
+        "Oxygen and nitrogen.",
+        "Carbon dioxide and water.",
+        "The text says that Jupiter’s atmosphere is made mostly of hydrogen and helium.",
+        "made mostly of hydrogen and helium"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “mass” means…",
+        "the amount of matter.",
+        "the length of its day.",
+        "the color of its clouds.",
+        "The text says that Jupiter’s mass is more than twice that of all the other planets together, which means that it has that much matter.",
+        "its mass is more than twice that of all the other planets together"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “whether it will disappear” refers to…",
+        "the Great Red Spot.",
+        "Jupiter.",
+        "the atmosphere.",
+        "The sentence says that scientists do not know why the Great Red Spot is shrinking, or whether the Spot will disappear.",
+        "why it is shrinking, or whether it will disappear"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many moons Jupiter has.",
+        "What kind of planet Jupiter is.",
+        "How fast the winds in the storm blow.",
+        "The text does not say how many moons Jupiter has. It says what kind of planet Jupiter is and how fast the winds in the storm blow.",
+        [
+          "It is a gas giant",
+          "winds of more than four hundred kilometers an hour"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The future of the Great Red Spot is uncertain.",
+        "The Great Red Spot will certainly disappear.",
+        "The Great Red Spot will certainly grow again.",
+        "The text says that scientists do not yet know exactly why the Spot is shrinking, or whether it will disappear.",
+        "Scientists do not yet know exactly why it is shrinking"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Saturn’s rings are made of ice and are thin, bright and of uncertain age.",
+        "Saturn’s rings are made of solid rock and are as old as the Sun.",
+        "Saturn’s rings are solid sheets that Galileo saw as moons.",
+        "The text explains that Saturn’s rings are made of ice, are very thin and bright, and that their origin is a mystery.",
+        [
+          "the rings are made of countless pieces of ice",
+          "Their origin is a mystery"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How thick are the rings in most places?",
+        "About ten meters.",
+        "About ten kilometers.",
+        "About ten centimeters.",
+        "The text says that in most places the rings are only about ten meters thick.",
+        "in most places only about ten meters thick"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “torn apart” means…",
+        "broken into pieces.",
+        "joined together.",
+        "moved away.",
+        "The text says that a moon or a comet may have been torn apart, which means broken into pieces.",
+        "a moon or a comet was torn apart"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “that they formed” refers to…",
+        "the rings.",
+        "the scientists.",
+        "the planets.",
+        "The sentence says that some scientists think that the rings are young, and that the rings formed when a moon or comet was torn apart.",
+        "Some scientists think that they are young, perhaps only a few hundred million years old, and that they formed"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many rings Saturn has.",
+        "Who saw the rings in 1610.",
+        "What the ice is mostly made of.",
+        "The text does not say how many rings Saturn has. It says who saw the rings in 1610 and what the ice is mostly made of.",
+        [
+          "Galileo saw them in 1610",
+          "The ice is mostly water"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The rings may not last forever.",
+        "The rings will always stay the same.",
+        "The rings are growing larger.",
+        "The text says that the rings may be slowly falling into Saturn.",
+        "The rings may also be slowly falling into Saturn."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "atmosphere",
+          "the layer of gases around a planet"
+        ],
+        [
+          "bands",
+          "long, narrow strips"
+        ],
+        [
+          "feature",
+          "an important or noticeable part"
+        ],
+        [
+          "counterclockwise",
+          "in the direction opposite to the hands of a clock"
+        ],
+        [
+          "disappear",
+          "to stop being seen"
+        ]
+      ],
+      "B": [
+        [
+          "spectacular",
+          "very impressive to see"
+        ],
+        [
+          "countless",
+          "too many to count"
+        ],
+        [
+          "grains",
+          "very small pieces"
+        ],
+        [
+          "orbiting",
+          "moving around a planet in a path"
+        ],
+        [
+          "origin",
+          "the place or time where something began"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 149,
+    "slug": "unseen-reading-part-149",
+    "theme": "Comets and Asteroids",
+    "blurb": "comets and their tails, the asteroid that ended the dinosaurs",
+    "texts": {
+      "A": {
+        "title": "Comets and Their Tails",
+        "text": "A comet is a ball of ice, dust and rock, often called a dirty snowball, that is usually only a few kilometers wide. Most comets spend their lives in the cold outer Solar System, far beyond Neptune. Sometimes the pull of a planet or a passing star sends a comet on a long path toward the Sun. As it comes closer, the Sun’s heat turns the ice on its surface directly into gas, which carries dust with it. This creates a huge glowing cloud around the comet, called the coma, and one or two tails. The dust tail is usually curved and white or yellow, and the ion tail is thin, straight and bluish. Both tails point away from the Sun, because the Sun’s light and the solar wind push the material back, so a comet moving away from the Sun travels tail-first. A tail can be millions of kilometers long. The best-known comet, Halley’s Comet, returns about every seventy-six years, and was last seen in 1986. Its next visit is expected in 2061."
+      },
+      "B": {
+        "title": "The Asteroid That Ended the Dinosaurs",
+        "text": "About sixty-six million years ago, an asteroid about ten kilometers wide hit the Earth near what is now the Yucatán Peninsula in Mexico. The impact made a crater about one hundred and eighty kilometers wide, called Chicxulub. The energy was billions of times greater than an atomic bomb. A giant fireball, huge waves, wildfires and enormous clouds of dust and sulfur changed the climate. The sunlight was blocked for months or longer, plants died, and food chains collapsed. About three quarters of all species disappeared, including all the large dinosaurs, in what is called a mass extinction. Birds, which descended from small dinosaurs, survived, and so did small mammals, which later spread. Today, astronomers search for asteroids that could threaten the Earth. In 2022, NASA’s DART spacecraft hit a small asteroid, Dimorphos, on purpose. The impact made the asteroid’s orbit shorter by about thirty-two minutes, which showed that a spacecraft can change the path of an asteroid. No known large asteroid is expected to hit the Earth in the next hundred years."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A comet grows a glowing cloud and tails when it comes near the Sun.",
+        "A comet is a burning rock that makes its tail by moving fast.",
+        "A comet is a small planet that always faces the Sun.",
+        "The text explains that a comet is a ball of ice, dust and rock, and that the Sun’s heat and wind create its cloud and tails.",
+        [
+          "A comet is a ball of ice, dust and rock",
+          "Both tails point away from the Sun"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which way do a comet’s tails point?",
+        "Away from the Sun.",
+        "Toward the Sun.",
+        "In the direction of travel.",
+        "The text says that both tails point away from the Sun.",
+        "Both tails point away from the Sun"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “passing” in “a passing star” means…",
+        "moving by.",
+        "staying still.",
+        "disappearing.",
+        "The text says that the pull of a passing star can send a comet toward the Sun, which means a star that is moving by.",
+        "a passing star"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “As it comes closer” refers to…",
+        "the comet.",
+        "the Sun.",
+        "the planet.",
+        "The sentence says that as the comet comes closer to the Sun, the Sun’s heat turns the ice on its surface into gas.",
+        "As it comes closer, the Sun’s heat turns the ice"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many comets have been discovered.",
+        "When Halley’s Comet was last seen.",
+        "What the coma is.",
+        "The text does not say how many comets have been discovered. It says when Halley’s Comet was last seen and what the coma is.",
+        [
+          "was last seen in 1986",
+          "a huge glowing cloud around the comet, called the coma"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the sentence about traveling tail-first suggest?",
+        "A comet’s tail is pushed by the Sun, not left behind.",
+        "A comet’s tail always shows its direction of travel.",
+        "A comet’s tail is made by its engines.",
+        "The text says that a comet moving away from the Sun travels tail-first, because the Sun’s light and wind push the material back.",
+        "so a comet moving away from the Sun travels tail-first"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "An asteroid ended the dinosaurs, and now we can test how to deflect asteroids.",
+        "A volcano ended the dinosaurs, and nothing can be done about it.",
+        "An asteroid ended the dinosaurs, and no asteroid has been found since.",
+        "The text explains the impact that ended the dinosaurs and the DART test that showed that a spacecraft can change an asteroid’s path.",
+        [
+          "an asteroid about ten kilometers wide hit the Earth",
+          "a spacecraft can change the path of an asteroid"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How wide was the Chicxulub crater?",
+        "About 180 kilometers.",
+        "About 18 kilometers.",
+        "About 1,800 kilometers.",
+        "The text says that the crater was about one hundred and eighty kilometers wide.",
+        "a crater about one hundred and eighty kilometers wide"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “collapsed” means…",
+        "broke down completely.",
+        "became stronger.",
+        "were built.",
+        "The text says that after plants died, food chains collapsed, which means that they broke down completely.",
+        "food chains collapsed"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which showed that a spacecraft can change the path” refers to…",
+        "the change in the orbit.",
+        "the size of the asteroid.",
+        "the launch of the spacecraft.",
+        "The sentence says that the impact made the orbit shorter by thirty-two minutes, and this change showed that a spacecraft can change the path of an asteroid.",
+        "The impact made the asteroid’s orbit shorter by about thirty-two minutes, which showed that a spacecraft can change the path of an asteroid"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many asteroids have been found.",
+        "Which animals survived.",
+        "What DART did in 2022.",
+        "The text does not say how many asteroids have been found. It says which animals survived and what DART did in 2022.",
+        [
+          "Birds, which descended from small dinosaurs, survived",
+          "NASA’s DART spacecraft hit a small asteroid, Dimorphos, on purpose"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the DART test suggest?",
+        "Humans might one day protect the Earth from an asteroid.",
+        "Humans can already destroy any asteroid.",
+        "Humans can never affect asteroids.",
+        "The text says that the test showed that a spacecraft can change the path of an asteroid.",
+        "a spacecraft can change the path of an asteroid"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "outer",
+          "farthest from the center"
+        ],
+        [
+          "surface",
+          "the outside layer of something"
+        ],
+        [
+          "glowing",
+          "giving out a steady light"
+        ],
+        [
+          "curved",
+          "bent, not straight"
+        ],
+        [
+          "expected",
+          "thought likely to happen"
+        ]
+      ],
+      "B": [
+        [
+          "crater",
+          "a large round hole in the ground"
+        ],
+        [
+          "enormous",
+          "extremely large"
+        ],
+        [
+          "extinction",
+          "when a kind of living thing disappears completely"
+        ],
+        [
+          "descended",
+          "came from earlier forms through a line of ancestors"
+        ],
+        [
+          "threaten",
+          "to be a danger to"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 150,
+    "slug": "unseen-reading-part-150",
+    "theme": "Our Galaxy",
+    "blurb": "the Milky Way, the coming collision with Andromeda",
+    "texts": {
+      "A": {
+        "title": "The Milky Way",
+        "text": "The Milky Way is the galaxy that contains the Sun and the Earth. A galaxy is a huge system of stars, gas, dust and dark matter held together by gravity. The Milky Way holds somewhere between one hundred and four hundred billion stars, and it is about one hundred thousand light-years across. From above, it would look like a spiral, with a bright bulge in the center and several curved arms. The Sun is in one of the smaller arms, about twenty-six thousand light-years from the center, and it takes about two hundred and thirty million years to go once around. From the inside, we see the galaxy as a faint pale band of light across the night sky. The word galaxy comes from the Greek word for milk. At the center of the Milky Way there is a supermassive black hole called Sagittarius A*, with a mass about four million times that of the Sun. In 2022, astronomers published the first image of it."
+      },
+      "B": {
+        "title": "The Coming Collision With Andromeda",
+        "text": "The nearest large galaxy to the Milky Way is the Andromeda Galaxy, about two and a half million light-years away. On a dark night, it can be seen without a telescope as a faint smudge in the constellation Andromeda. Andromeda is about the same size as the Milky Way, or slightly larger, and it contains about one trillion stars. Measurements with the Hubble Space Telescope and the European Gaia mission show that Andromeda is moving toward the Milky Way at about one hundred and ten kilometers every second. Astronomers have long predicted that the two galaxies will collide and merge in about four to five billion years, to form a new, larger elliptical galaxy that people have jokingly called Milkomeda. More recent studies suggest that the timing and even the result are less certain than once thought: the collision could happen later, or possibly not at all in the next ten billion years. Even if the galaxies merge, the stars are so far apart that few stars would actually crash into each other."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Milky Way is our galaxy, a huge spiral with a black hole in the center.",
+        "The Milky Way is a single star that we see as a pale band.",
+        "The Milky Way is a small cloud of gas near the Sun.",
+        "The text describes the Milky Way as the galaxy that contains the Sun, a huge spiral with a supermassive black hole in the center.",
+        [
+          "The Milky Way is the galaxy that contains the Sun and the Earth",
+          "At the center of the Milky Way there is a supermassive black hole"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long does the Sun take to go once around the galaxy?",
+        "About 230 million years.",
+        "About 230 years.",
+        "About 230 days.",
+        "The text says that the Sun takes about two hundred and thirty million years to go once around.",
+        "it takes about two hundred and thirty million years to go once around"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “held together” means…",
+        "kept joined as one group.",
+        "pushed far apart.",
+        "made to spin faster.",
+        "The text says that a galaxy is held together by gravity, which means that gravity keeps it joined as one group.",
+        "held together by gravity"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “the first image of it” refers to…",
+        "the supermassive black hole.",
+        "the Milky Way’s arms.",
+        "the Sun.",
+        "The sentence says that at the center of the Milky Way there is a supermassive black hole, and astronomers published the first image of the black hole in 2022.",
+        "In 2022, astronomers published the first image of it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many galaxies the universe has.",
+        "Where the Sun is in the Milky Way.",
+        "What the word galaxy comes from.",
+        "The text does not say how many galaxies the universe has. It says where the Sun is in the Milky Way and where the word galaxy comes from.",
+        [
+          "The Sun is in one of the smaller arms",
+          "comes from the Greek word for milk"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do we see the Milky Way as a band across the sky?",
+        "We are inside the galaxy and look along its disk.",
+        "The galaxy is a long, thin cloud near the Earth.",
+        "The galaxy is shaped like a ribbon.",
+        "The text says that from the inside we see the galaxy as a faint pale band of light across the night sky.",
+        "From the inside, we see the galaxy as a faint pale band of light across the night sky"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Andromeda is approaching us, but a collision is not certain.",
+        "Andromeda is moving away and will never come near us.",
+        "Andromeda is much smaller than the Milky Way and will disappear.",
+        "The text explains that Andromeda is moving toward the Milky Way, but that newer studies are less certain about the timing and result of a collision.",
+        [
+          "Andromeda is moving toward the Milky Way",
+          "the timing and even the result are less certain than once thought"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How far away is Andromeda?",
+        "About two and a half million light-years.",
+        "About twenty-five light-years.",
+        "About two and a half billion light-years.",
+        "The text says that Andromeda is about two and a half million light-years away.",
+        "about two and a half million light-years away"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “jokingly” means…",
+        "in a playful way.",
+        "in a serious way.",
+        "in a secret way.",
+        "The text says that people have jokingly called the new galaxy Milkomeda, which means in a playful way.",
+        "people have jokingly called Milkomeda"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it can be seen without a telescope” refers to…",
+        "the Andromeda Galaxy.",
+        "the Milky Way.",
+        "the constellation.",
+        "The sentence says that on a dark night the Andromeda Galaxy can be seen without a telescope.",
+        "On a dark night, it can be seen without a telescope"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first saw Andromeda.",
+        "How many stars Andromeda contains.",
+        "What the two galaxies might form.",
+        "The text does not say who first saw Andromeda. It says how many stars it contains and what the two galaxies might form.",
+        [
+          "it contains about one trillion stars",
+          "to form a new, larger elliptical galaxy"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence about the stars being far apart suggest?",
+        "Most stars would not hit each other.",
+        "Most stars would crash into each other.",
+        "The Earth would be destroyed at once.",
+        "The text says that the stars are so far apart that few stars would actually crash into each other.",
+        "few stars would actually crash into each other"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "galaxy",
+          "a huge group of stars, gas and dust"
+        ],
+        [
+          "spiral",
+          "a shape that curves around a center"
+        ],
+        [
+          "bulge",
+          "a round part that sticks out"
+        ],
+        [
+          "faint",
+          "not strong or clear"
+        ],
+        [
+          "supermassive",
+          "extremely heavy and huge"
+        ]
+      ],
+      "B": [
+        [
+          "smudge",
+          "a blurry mark"
+        ],
+        [
+          "constellation",
+          "a group of stars that makes a pattern"
+        ],
+        [
+          "merge",
+          "to join together into one"
+        ],
+        [
+          "elliptical",
+          "shaped like a flattened circle"
+        ],
+        [
+          "certain",
+          "sure or definite"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 151,
+    "slug": "unseen-reading-part-151",
+    "theme": "The Space Race",
+    "blurb": "Sputnik and Gagarin, Apollo 11",
+    "texts": {
+      "A": {
+        "title": "Sputnik and Gagarin",
+        "text": "The space age began on 4 October 1957, when the Soviet Union launched Sputnik 1, the first artificial satellite. It was a metal sphere about the size of a beach ball, and it sent simple radio beeps that people could hear around the world. The launch surprised many in the United States and led to a “space race” between the two countries, with each trying to show its technology. In November 1957, a dog named Laika became the first animal to orbit the Earth. On 12 April 1961, Yuri Gagarin, a Soviet pilot, became the first person in space. His spacecraft, Vostok 1, circled the Earth once in about 108 minutes, and Gagarin landed by parachute after ejecting from the capsule, as the rules of the time required. He said that the Earth looked blue and very beautiful. Less than a month later, on 5 May, the American Alan Shepard flew into space for a short flight. In 1963, Valentina Tereshkova became the first woman in space."
+      },
+      "B": {
+        "title": "Apollo 11: The First People on the Moon",
+        "text": "On 16 July 1969, a giant Saturn V rocket launched Apollo 11 from Florida with three astronauts: Neil Armstrong, Buzz Aldrin and Michael Collins. The spacecraft traveled for about three days to reach lunar orbit. Then Armstrong and Aldrin entered the lunar module, called Eagle, and flew down to the Moon, while Collins stayed in orbit in the command module, Columbia. At the last moment, Armstrong took manual control to avoid a field of large rocks, and Eagle landed with very little fuel left, on 20 July. When Armstrong stepped onto the surface, he said, “That’s one small step for man, one giant leap for mankind.” The two men spent about two and a half hours outside, collected about twenty-one kilograms of rock and soil, placed scientific instruments and planted a flag. Hundreds of millions of people around the world watched on television. After about twenty-one hours on the Moon, Eagle returned to orbit, and on 24 July the crew splashed down safely in the Pacific Ocean."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sputnik and Gagarin opened the space age and started the space race.",
+        "Sputnik and Gagarin were both first flights to the Moon.",
+        "Sputnik and Gagarin were American missions to Mars.",
+        "The text explains that Sputnik began the space age, led to a space race, and that Gagarin became the first person in space.",
+        [
+          "The space age began on 4 October 1957",
+          "Yuri Gagarin, a Soviet pilot, became the first person in space"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long did Vostok 1 take to circle the Earth once?",
+        "About 108 minutes.",
+        "About 108 seconds.",
+        "About 108 hours.",
+        "The text says that Vostok 1 circled the Earth once in about 108 minutes.",
+        "circled the Earth once in about 108 minutes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “led to” means…",
+        "caused.",
+        "stopped.",
+        "followed.",
+        "The text says that the launch led to a space race, which means that it caused a space race.",
+        "led to a “space race”"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It was a metal sphere” refers to…",
+        "Sputnik 1.",
+        "the Soviet Union.",
+        "the launch.",
+        "The sentence says that the Soviet Union launched Sputnik 1, and Sputnik 1 was a metal sphere about the size of a beach ball.",
+        "Sputnik 1, the first artificial satellite. It was a metal sphere"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much Sputnik 1 weighed.",
+        "Which animal first orbited the Earth.",
+        "Who was the first woman in space.",
+        "The text does not say how much Sputnik 1 weighed. It says which animal first orbited the Earth and who was the first woman in space.",
+        [
+          "a dog named Laika became the first animal to orbit the Earth",
+          "Valentina Tereshkova became the first woman in space"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the space race?",
+        "Both countries wanted to show their technology.",
+        "Both countries refused to compete.",
+        "Only one country was interested in space.",
+        "The text says that the launch led to a space race, with each country trying to show its technology.",
+        "with each trying to show its technology"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Apollo 11 took the first people to walk on the Moon and returned them safely.",
+        "Apollo 11 took the first animals to walk on the Moon and lost them.",
+        "Apollo 11 took astronauts to the Moon, but nobody left the spacecraft.",
+        "The text describes how Apollo 11 took three astronauts to the Moon, two of them walked on it, and the crew returned safely.",
+        [
+          "Neil Armstrong, Buzz Aldrin and Michael Collins",
+          "the crew splashed down safely in the Pacific Ocean"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Who stayed in orbit while two astronauts landed?",
+        "Michael Collins.",
+        "Buzz Aldrin.",
+        "Neil Armstrong.",
+        "The text says that Collins stayed in orbit in the command module.",
+        "while Collins stayed in orbit in the command module"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “planted” means…",
+        "fixed firmly in place.",
+        "thrown away.",
+        "painted.",
+        "The text says that the astronauts planted a flag, which means that they fixed it firmly in place.",
+        "planted a flag"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “he” in “he said” refers to…",
+        "Neil Armstrong.",
+        "Buzz Aldrin.",
+        "Michael Collins.",
+        "The sentence says that when Armstrong stepped onto the surface, Armstrong said the famous words.",
+        "When Armstrong stepped onto the surface, he said"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the astronauts ate on the Moon.",
+        "How long the astronauts stayed outside.",
+        "What Armstrong did at the last moment.",
+        "The text does not say what the astronauts ate on the Moon. It says how long they stayed outside and what Armstrong did at the last moment.",
+        [
+          "spent about two and a half hours outside",
+          "Armstrong took manual control to avoid a field of large rocks"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the landing with little fuel suggest?",
+        "The landing was risky.",
+        "The landing was easy and planned.",
+        "The landing happened by accident.",
+        "The text says that Eagle landed with very little fuel left, which suggests that the landing was risky.",
+        "Eagle landed with very little fuel left"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "artificial",
+          "made by people, not natural"
+        ],
+        [
+          "sphere",
+          "a round shape like a ball"
+        ],
+        [
+          "parachute",
+          "a large piece of cloth that slows a fall"
+        ],
+        [
+          "capsule",
+          "a small closed space for a person in a spacecraft"
+        ],
+        [
+          "orbit",
+          "to travel around a planet"
+        ]
+      ],
+      "B": [
+        [
+          "lunar",
+          "related to the Moon"
+        ],
+        [
+          "module",
+          "a separate unit of a spacecraft"
+        ],
+        [
+          "manual",
+          "done by a person, not by a machine"
+        ],
+        [
+          "instruments",
+          "tools used for measuring or testing"
+        ],
+        [
+          "splashed",
+          "landed in water with force"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 152,
+    "slug": "unseen-reading-part-152",
+    "theme": "Mars",
+    "blurb": "the Mars rovers, the search for life on Mars",
+    "texts": {
+      "A": {
+        "title": "The Mars Rovers",
+        "text": "Rovers are robotic vehicles that explore the surface of Mars. The first, Sojourner, landed in 1997 as part of the Mars Pathfinder mission. It was the size of a microwave oven and moved only a few meters from its lander. In 2004, two larger rovers, Spirit and Opportunity, arrived. They were meant to work for ninety days, but Spirit worked for six years and Opportunity for almost fifteen. They found clear evidence that water once shaped the surface. In 2012, Curiosity, the size of a small car, landed in Gale Crater. It has a drill, a laser and a small laboratory that analyzes rocks and soil, and it found that the area once had conditions that could have supported microbial life. In 2021, Perseverance landed in Jezero Crater, where a lake once existed. It carries a helicopter named Ingenuity, which made the first powered flight on another planet and completed dozens of flights before it was retired. Rovers are controlled from Earth with a delay of several minutes, so they must be able to make some decisions alone."
+      },
+      "B": {
+        "title": "The Search for Life on Mars",
+        "text": "Is there, or was there, life on Mars? Today, the surface of Mars is cold, dry and exposed to strong radiation, so scientists think that life is unlikely there now. But billions of years ago, Mars was warmer and wetter, with rivers, lakes and perhaps an ocean. Life on Earth began early, so it is possible that microbes appeared on Mars too. Perseverance is searching for signs of ancient life in Jezero Crater, where a river once built a delta, a place where mud and sediment collect and where, on Earth, remains of life can be preserved. The rover studies rocks with cameras, lasers and instruments, and it stores promising samples in sealed tubes. Planned missions would bring these samples to Earth for study in laboratories, but the plans are being reviewed because of cost and schedule, so the timing is uncertain. Some rocks have shown features that scientists call potential biosignatures, which could be signs of life, although non-living processes can also explain them. Scientists are careful: extraordinary claims need extraordinary evidence."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Mars rovers have shown that Mars once had water and possible habitats.",
+        "Mars rovers have shown that Mars has no water and never had any.",
+        "Mars rovers have carried astronauts across the surface of Mars.",
+        "The text explains that the rovers have explored Mars and found evidence that water once shaped the surface.",
+        [
+          "Rovers are robotic vehicles that explore the surface of Mars",
+          "evidence that water once shaped the surface"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long did Opportunity work?",
+        "Almost fifteen years.",
+        "Almost fifteen days.",
+        "Almost fifteen months.",
+        "The text says that Opportunity worked for almost fifteen years.",
+        "Opportunity for almost fifteen"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “retired” means…",
+        "taken out of service.",
+        "sent back to Earth.",
+        "given a new name.",
+        "The text says that the helicopter completed dozens of flights before it was retired, which means that it was taken out of service.",
+        "before it was retired"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It carries a helicopter” refers to…",
+        "Perseverance.",
+        "Curiosity.",
+        "Jezero Crater.",
+        "The sentence says that Perseverance landed in Jezero Crater, and Perseverance carries a helicopter named Ingenuity.",
+        "Perseverance landed in Jezero Crater, where a lake once existed. It carries a helicopter"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much each rover cost.",
+        "How big Sojourner was.",
+        "What Curiosity carries.",
+        "The text does not say how much each rover cost. It says how big Sojourner was and what Curiosity carries.",
+        [
+          "It was the size of a microwave oven",
+          "It has a drill, a laser and a small laboratory"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about the rovers?",
+        "They must work on their own for part of the time.",
+        "They are driven in real time from Earth.",
+        "They never make decisions.",
+        "The text says that because of the delay, rovers must be able to make some decisions alone.",
+        "they must be able to make some decisions alone"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Scientists look for ancient life on Mars, but there is no proof yet.",
+        "Scientists have proved that life exists on Mars today.",
+        "Scientists have stopped searching for life on Mars.",
+        "The text explains that Perseverance is searching for signs of ancient life, but that scientists are careful and no proof has been found.",
+        [
+          "Perseverance is searching for signs of ancient life in Jezero Crater",
+          "Scientists are careful: extraordinary claims need extraordinary evidence"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What was Mars like billions of years ago?",
+        "Warmer and wetter, with rivers and lakes.",
+        "Colder and drier than today.",
+        "Covered only by thick ice.",
+        "The text says that billions of years ago Mars was warmer and wetter, with rivers, lakes and perhaps an ocean.",
+        "Mars was warmer and wetter, with rivers, lakes and perhaps an ocean"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “exposed to” means…",
+        "not protected from.",
+        "very far from.",
+        "used to.",
+        "The text says that the surface is exposed to strong radiation, which means that it is not protected from it.",
+        "exposed to strong radiation"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “can also explain them” refers to…",
+        "the features in the rocks.",
+        "the sealed tubes.",
+        "the laboratories.",
+        "The sentence says that some rocks have shown features called potential biosignatures, and non-living processes can also explain these features.",
+        "Some rocks have shown features that scientists call potential biosignatures, which could be signs of life, although non-living processes can also explain them"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many samples Perseverance has stored in total.",
+        "Where the rover is searching.",
+        "Why the timing of the sample return is uncertain.",
+        "The text does not say how many samples Perseverance has stored. It says where the rover is searching and why the timing is uncertain.",
+        [
+          "in Jezero Crater",
+          "because of cost and schedule"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about scientists?",
+        "They want strong proof before claiming life.",
+        "They already claim that life exists.",
+        "They do not trust their instruments.",
+        "The text says that extraordinary claims need extraordinary evidence, which suggests that scientists want strong proof.",
+        "extraordinary claims need extraordinary evidence"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "robotic",
+          "operated by a robot or machine"
+        ],
+        [
+          "lander",
+          "a spacecraft that lands on a planet"
+        ],
+        [
+          "laser",
+          "a very narrow, strong beam of light"
+        ],
+        [
+          "microbial",
+          "relating to tiny living things"
+        ],
+        [
+          "delay",
+          "a period of waiting"
+        ]
+      ],
+      "B": [
+        [
+          "radiation",
+          "energy that travels in rays or waves"
+        ],
+        [
+          "microbes",
+          "very small living things"
+        ],
+        [
+          "delta",
+          "land formed where a river meets a lake or sea"
+        ],
+        [
+          "sediment",
+          "small pieces of rock and mud carried by water"
+        ],
+        [
+          "promising",
+          "showing signs of being good or successful"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 153,
+    "slug": "unseen-reading-part-153",
+    "theme": "The Whole Universe",
+    "blurb": "how we know about the Big Bang, dark matter and dark energy",
+    "texts": {
+      "A": {
+        "title": "How We Know About the Big Bang",
+        "text": "The Big Bang theory says that the universe began about 13.8 billion years ago from an extremely hot and dense state, and that it has been expanding ever since. The name is misleading: it was not an explosion in space, but an expansion of space itself. Two main observations support the theory. The first came in the 1920s. The astronomer Edwin Hubble, using the work of Vesto Slipher and Henrietta Leavitt, found that distant galaxies are moving away from us, and that the farther a galaxy is, the faster it recedes. This fits an expanding universe, like dots on a balloon that is being blown up. The second is the cosmic microwave background, a faint glow of radiation that fills the whole sky, discovered by accident in 1965 by Arno Penzias and Robert Wilson. It is the afterglow of the young universe, when it cooled enough for light to travel freely. The theory also predicts the right amounts of hydrogen and helium that we see in the oldest stars."
+      },
+      "B": {
+        "title": "Dark Matter and Dark Energy",
+        "text": "When astronomers add up everything that we can see in the universe, the stars, gas and planets, they find that it is not enough to explain how the universe behaves. Galaxies spin so fast that they should fly apart if only visible matter held them together. In the 1970s, Vera Rubin measured the speeds of stars in galaxies and found this problem clearly. The most popular explanation is dark matter, an invisible substance that has gravity but does not give out or absorb light. In the 1990s, observations of distant exploding stars showed that the expansion of the universe is speeding up, not slowing down. Scientists use the name dark energy for whatever causes this acceleration. According to current measurements, ordinary matter makes up only about five percent of the universe, dark matter about twenty-seven percent and dark energy about sixty-eight percent. These names show that we do not know what they are. Some scientists look for new particles in underground laboratories, and others test whether gravity itself needs to be changed. This is one of the biggest open questions in science."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Big Bang theory is supported by two main observations.",
+        "The Big Bang theory is only a guess with no observations.",
+        "The Big Bang theory says that space exploded into an empty room.",
+        "The text explains that two main observations, the movement of galaxies and the background glow, support the Big Bang theory.",
+        [
+          "Two main observations support the theory",
+          "it was not an explosion in space, but an expansion of space itself"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did Hubble find about distant galaxies?",
+        "They move away, and farther ones move faster.",
+        "They move toward us, and farther ones move slower.",
+        "They stay still, and nearer ones move faster.",
+        "The text says that distant galaxies are moving away from us, and that the farther a galaxy is, the faster it recedes.",
+        "the farther a galaxy is, the faster it recedes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “misleading” means…",
+        "giving a wrong idea.",
+        "giving a clear idea.",
+        "giving a funny idea.",
+        "The text says that the name Big Bang is misleading, which means that it gives a wrong idea, because it was not an explosion in space.",
+        "The name is misleading"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It is the afterglow” refers to…",
+        "the cosmic microwave background.",
+        "the balloon that is blown up.",
+        "the accident of the discovery.",
+        "The sentence before describes the cosmic microwave background, and the background is the afterglow of the young universe.",
+        "discovered by accident in 1965 by Arno Penzias and Robert Wilson. It is the afterglow"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many galaxies Hubble measured.",
+        "Who discovered the background radiation.",
+        "What the balloon comparison shows.",
+        "The text does not say how many galaxies Hubble measured. It says who discovered the background radiation and what the balloon comparison shows.",
+        [
+          "Arno Penzias and Robert Wilson",
+          "like dots on a balloon that is being blown up"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the balloon comparison suggest?",
+        "Space itself expands, carrying galaxies apart.",
+        "Galaxies are moving through a fixed space.",
+        "The universe is a real balloon.",
+        "The text compares the galaxies to dots on a balloon that is being blown up, which suggests that space itself expands.",
+        "like dots on a balloon that is being blown up"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Dark matter and dark energy are unknown, yet they make up most of the universe.",
+        "Dark matter and dark energy are visible, and they make up a small part.",
+        "Dark matter and dark energy were fully explained in the 1970s.",
+        "The text explains that visible matter is not enough to explain the universe, so scientists use the names dark matter and dark energy for things that they do not understand.",
+        [
+          "it is not enough to explain how the universe behaves",
+          "This is one of the biggest open questions in science"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "About what share of the universe is ordinary matter?",
+        "About five percent.",
+        "About fifty percent.",
+        "About ninety-five percent.",
+        "The text says that ordinary matter makes up only about five percent of the universe.",
+        "ordinary matter makes up only about five percent of the universe"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fly apart” means…",
+        "break apart quickly.",
+        "grow together.",
+        "turn off.",
+        "The text says that galaxies should fly apart if only visible matter held them together, which means that they should break apart quickly.",
+        "they should fly apart"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “what they are” refers to…",
+        "dark matter and dark energy.",
+        "stars and planets.",
+        "scientists.",
+        "The sentence says that the names dark matter and dark energy show that we do not know what these things are.",
+        "These names show that we do not know what they are"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first named dark matter.",
+        "What Vera Rubin measured.",
+        "What some scientists look for in underground laboratories.",
+        "The text does not say who first named dark matter. It says what Vera Rubin measured and what some scientists look for underground.",
+        [
+          "Vera Rubin measured the speeds of stars in galaxies",
+          "look for new particles in underground laboratories"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Science still has major unanswered questions.",
+        "Science has answered all major questions.",
+        "Science is no longer studying the universe.",
+        "The text says that this is one of the biggest open questions in science.",
+        "one of the biggest open questions in science"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "dense",
+          "closely packed together"
+        ],
+        [
+          "expanding",
+          "growing larger"
+        ],
+        [
+          "recedes",
+          "moves farther away"
+        ],
+        [
+          "accident",
+          "something that happens by chance"
+        ],
+        [
+          "afterglow",
+          "light that stays after a bright event"
+        ]
+      ],
+      "B": [
+        [
+          "visible",
+          "able to be seen"
+        ],
+        [
+          "substance",
+          "a kind of matter"
+        ],
+        [
+          "absorb",
+          "to take in"
+        ],
+        [
+          "acceleration",
+          "an increase in speed"
+        ],
+        [
+          "particles",
+          "very small pieces of matter"
+        ]
+      ]
+    }
   }
 ];
