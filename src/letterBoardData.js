@@ -278,8 +278,8 @@ export const PAROL_MAKER_ITEMS = [
 export function openLetterBoard(id, start) {
   const screenW = window.screen.availWidth || 1400;
   const screenH = window.screen.availHeight || 900;
-  const w = Math.min(920, screenW - 40);
   const h = Math.min(840, screenH - 60);
+  const w = Math.min(Math.round(h * 0.74), screenW - 40); // tall and narrow like the card, so only a thin margin is left at the sides
   const left = Math.max(0, Math.floor((screenW - w) / 2));
   const top = Math.max(0, Math.floor((screenH - h) / 2));
   window.open(
