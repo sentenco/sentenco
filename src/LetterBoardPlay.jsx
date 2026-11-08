@@ -921,14 +921,14 @@ const CSS = `
 .lbr-card::after { content: ''; position: absolute; z-index: -1; width: 380px; height: 380px; left: -150px; bottom: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,170,.55) 0, rgba(255,190,170,0) 68%); }
 .lbr-pop { margin: auto; }
 @keyframes lbr-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-.lbr-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 22px 0; }
+.lbr-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px 0; }
 .lbr-chip { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; background: rgba(255,255,255,.9); border-radius: 999px; padding: 7px 13px; box-shadow: 0 2px 10px -3px rgba(27,42,74,.18); color: #1B2A4A; }
 .lbr-title, .lbr-ohead { text-align: center; padding: 22px 24px 2px; }
 .lbr-ohead { padding-top: 26px; }
 .lbr-title h1, .lbr-ohead b { display: block; margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 42px; line-height: 1.08; letter-spacing: -.02em; color: #1B2A4A; text-wrap: balance; }
 .lbr-title h1 span, .lbr-ohead b span { background-image: linear-gradient(transparent 64%, #FFD9CC 64% 90%, transparent 90%); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.lbr-pad { padding: 16px 26px 12px; }
-.lbr-paper { position: relative; background: rgba(255,255,255,.94); border: 1px solid #F6E6DD; border-radius: 26px; padding: 22px 28px; box-shadow: 0 14px 30px -16px rgba(27,42,74,.28), 0 2px 0 #fff inset; font-family: 'Fraunces', Georgia, serif; font-size: 20.5px; line-height: 1.85; }
+.lbr-pad { padding: 14px 12px 10px; }
+.lbr-paper { position: relative; background: rgba(255,255,255,.94); border: 1px solid #F6E6DD; border-radius: 26px; padding: 20px 20px 20px 22px; box-shadow: 0 14px 30px -16px rgba(27,42,74,.28), 0 2px 0 #fff inset; font-family: 'Fraunces', Georgia, serif; font-size: 20.5px; line-height: 1.85; }
 .lbr-text { position: relative; margin: 0 -6px 0 0; padding-right: 6px; max-height: clamp(150px, calc(100vh - 430px), 360px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #E8CFC3 transparent; }
 .lbr-text::-webkit-scrollbar { width: 6px; }
 .lbr-text::-webkit-scrollbar-thumb { background: #E8CFC3; border-radius: 999px; }
@@ -940,7 +940,7 @@ const CSS = `
 .lbr-w.cur { color: #1B2A4A; background: linear-gradient(180deg, #FFE0D4, #FFD2C2); box-shadow: 0 6px 12px -6px rgba(242,89,58,.55), 0 0 0 1.5px rgba(242,89,58,.35) inset; }
 .lbr-stamp { position: absolute; right: 14px; bottom: -14px; z-index: 2; transform: rotate(-6deg) scale(.5); opacity: 0; background: #F2593A; color: #fff; border-radius: 999px; padding: 7px 18px; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 17px; box-shadow: 0 10px 18px -8px rgba(242,89,58,.7); transition: opacity .2s, transform .35s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
 .lbr-stamp.on { opacity: 1; transform: rotate(-6deg) scale(1); }
-.lbr-player { display: flex; align-items: center; gap: 14px; margin: 8px 1cm 0; padding: 9px 16px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: wrap; }
+.lbr-player { display: flex; align-items: center; gap: 14px; margin: 8px 12px 0; padding: 9px 16px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: wrap; }
 .lbr-ring { width: 62px; height: 62px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#F2593A calc(var(--p, 0) * 1%), #F2E3DA 0); transition: background .15s; }
 .lbr-play { position: relative; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; background: #F2593A; padding: 0; cursor: pointer; box-shadow: 0 6px 12px -5px rgba(226,74,43,.8); transition: transform .12s; }
 .lbr-play:hover { background: #E24A2B; }
@@ -958,7 +958,7 @@ const CSS = `
 .lbr-voice b::after { content: ''; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(27,42,74,.3); transition: transform .15s; }
 .lbr-voice[aria-pressed="true"] b { background: #F2593A; }
 .lbr-voice[aria-pressed="true"] b::after { transform: translateX(11px); }
-.lbr-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px 10px; padding: 16px 26px 20px; flex-wrap: wrap; }
+.lbr-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px 10px; padding: 14px 12px 18px; flex-wrap: wrap; }
 .lbr-note { order: 3; flex-basis: 100%; margin: 0; text-align: center; font-size: 12.5px; line-height: 1.5; color: #7A5A4E; }
 .lbr-ghost { height: 48px; padding: 0 20px; border: 0; background: rgba(255,255,255,.95); border-radius: 999px; font-weight: 700; font-size: 14.5px; color: #1B2A4A; cursor: pointer; box-shadow: 0 6px 16px -10px rgba(27,42,74,.4); transition: transform .12s; }
 .lbr-go { margin-left: auto; height: 52px; min-width: 132px; padding: 0 30px; border: 0; background: linear-gradient(180deg, #F76B4D, #EE5436); color: #fff; border-radius: 999px; font-weight: 700; font-size: 17px; cursor: pointer; box-shadow: 0 12px 20px -10px rgba(226,74,43,.85), 0 1px 0 rgba(255,255,255,.4) inset; transition: transform .12s; }
