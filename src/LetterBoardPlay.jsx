@@ -180,9 +180,8 @@ function useFitScale(ref, screen) {
       const w = el.offsetWidth + 8;
       const h = el.offsetHeight + 8;
       const m = 14;
-      const fitW = (window.innerWidth - 2 * m) / w;
-      // the story page keeps a readable size and scrolls; every other screen shrinks or grows to fill the window
-      const next = screen === "reading" ? Math.max(0.5, Math.min(1, fitW)) : Math.max(0.5, Math.min(3, fitW, (window.innerHeight - 2 * m) / h));
+      const k = Math.min((window.innerWidth - 2 * m) / w, (window.innerHeight - 2 * m) / h);
+      const next = Math.max(0.5, Math.min(3, k));
       document.documentElement.style.setProperty("--lb-scale", String(next));
       // a shrunken screen keeps its full-size layout box, so pull the margins in to keep it centered and unscrolled
       document.documentElement.style.setProperty("--lb-pad", `${next < 1 ? (el.offsetHeight * (1 - next)) / 2 : 0}px`);
@@ -571,6 +570,7 @@ function StoryReader({ story, children }) {
   const timer = useRef(null);
   const watch = useRef(null);
   const gen = useRef(0);
+  const textRef = useRef(null);
   const wordRefs = useRef([]);
 
   const go = (i) => { cur.current = i; setWi(i); };
@@ -623,10 +623,11 @@ function StoryReader({ story, children }) {
 
   // keep the word being read in view on longer stories
   useEffect(() => {
-    const el = wordRefs.current[wi];
-    if (!playing || !el) return;
-    const r = el.getBoundingClientRect();
-    if (r.top < 70 || r.bottom > window.innerHeight - 190) el.scrollIntoView({ block: "center", behavior: "smooth" });
+    const box = textRef.current, el = wordRefs.current[wi];
+    if (!playing || !box || !el) return;
+    if (el.offsetTop < box.scrollTop + 8 || el.offsetTop + el.offsetHeight > box.scrollTop + box.clientHeight - 8) {
+      box.scrollTo({ top: Math.max(0, el.offsetTop - box.clientHeight / 2), behavior: "smooth" });
+    }
   }, [wi]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const finished = wi >= last && !playing && words.length > 0;
@@ -640,7 +641,7 @@ function StoryReader({ story, children }) {
     <>
       <div className="lbr-pad">
         <div className="lbr-paper">
-          <div className="lbr-text">
+          <div className="lbr-text" ref={textRef}>
             {paras.map((pw, pi) => (
               <p key={pi}>
                 {pw.map((w, k) => {
@@ -928,7 +929,9 @@ const CSS = `
 .lbr-title h1 span, .lbr-ohead b span { background-image: linear-gradient(transparent 64%, #FFD9CC 64% 90%, transparent 90%); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .lbr-pad { padding: 16px 26px 12px; }
 .lbr-paper { position: relative; background: rgba(255,255,255,.94); border: 1px solid #F6E6DD; border-radius: 26px; padding: 22px 28px; box-shadow: 0 14px 30px -16px rgba(27,42,74,.28), 0 2px 0 #fff inset; font-family: 'Fraunces', Georgia, serif; font-size: 20.5px; line-height: 1.85; }
-.lbr-text { margin: 0; }
+.lbr-text { position: relative; margin: 0 -6px 0 0; padding-right: 6px; max-height: clamp(150px, calc(100vh - 430px), 360px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #E8CFC3 transparent; }
+.lbr-text::-webkit-scrollbar { width: 6px; }
+.lbr-text::-webkit-scrollbar-thumb { background: #E8CFC3; border-radius: 999px; }
 .lbr-text p { margin: 0 0 10px; color: #1B2A4A; text-indent: 1.6em; text-align: justify; text-justify: inter-word; }
 .lbr-text p:last-child { margin: 0; }
 .lbr-w { position: relative; border-radius: 10px; padding: 2px 4px; cursor: pointer; color: #838BA3; transition: color .15s, background .15s, box-shadow .15s; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
@@ -937,7 +940,6 @@ const CSS = `
 .lbr-w.cur { color: #1B2A4A; background: linear-gradient(180deg, #FFE0D4, #FFD2C2); box-shadow: 0 6px 12px -6px rgba(242,89,58,.55), 0 0 0 1.5px rgba(242,89,58,.35) inset; }
 .lbr-stamp { position: absolute; right: 14px; bottom: -14px; z-index: 2; transform: rotate(-6deg) scale(.5); opacity: 0; background: #F2593A; color: #fff; border-radius: 999px; padding: 7px 18px; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 17px; box-shadow: 0 10px 18px -8px rgba(242,89,58,.7); transition: opacity .2s, transform .35s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
 .lbr-stamp.on { opacity: 1; transform: rotate(-6deg) scale(1); }
-.lbr-dock { position: sticky; bottom: 0; z-index: 3; padding-top: 14px; background: linear-gradient(180deg, rgba(255,240,232,0), rgba(255,240,232,.97) 24%); }
 .lbr-player { display: flex; align-items: center; gap: 14px; margin: 8px 26px 0; padding: 9px 16px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: wrap; }
 .lbr-ring { width: 62px; height: 62px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#F2593A calc(var(--p, 0) * 1%), #F2E3DA 0); transition: background .15s; }
 .lbr-play { position: relative; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; background: #F2593A; padding: 0; cursor: pointer; box-shadow: 0 6px 12px -5px rgba(226,74,43,.8); transition: transform .12s; }
