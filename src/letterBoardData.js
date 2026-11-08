@@ -210,7 +210,7 @@ export const SAMPLE_STORY_ITEMS = [
 // ---- story set: "The Secret Map" (an adventure for a 10-year-old boy, level A2, simple past, one cover picture) ----
 export const SECRET_MAP_STORY = {
   title: "The Secret Map",
-  text: "On Sunday, Dan was bored. It was raining, so he could not play football outside. He went up to the attic and opened his grandpa's old wooden box.\n\nInside the box, Dan found a small compass and a map. The map had a red X and a message: \"Ten steps north of the garden gate.\"\n\nDan took the compass and ran outside, even in the rain. He stood at the gate and walked ten steps north. Then he stopped under the old oak tree and dug in the wet ground with his hands. After a few minutes, he found a metal tin.\n\nDan opened the tin. Inside there was a photo of Grandpa and a note: \"Dear Dan, a good explorer is brave and kind. Now it is your turn. Love, Grandpa.\" Dan smiled. He put the note in his pocket and went inside to show his mom.",
+  text: "On Sunday, Dan was bored. It was raining, so he could not play football outside. He went up to the attic and opened his grandpa's old wooden box.\n\nInside the box, Dan found a small compass and a map with a red X. It said: \"Ten steps north of the gate.\"\n\nDan took the compass and ran outside. He walked ten steps north and dug under the old oak tree. He found a metal tin.\n\nDan opened the tin. Inside there was a photo and a note from Grandpa: \"A good explorer is brave and kind. Now it is your turn.\"",
   image: "/curriculum/letter-board/secret-map-cover.jpg",
 };
 
@@ -243,7 +243,7 @@ export const SECRET_MAP_ITEMS = [
 // ---- story set: "The Parol Maker" (a fiesta story for a 10-year-old, level A2, simple past, one cover picture) ----
 export const PAROL_MAKER_STORY = {
   title: "The Parol Maker",
-  text: "In December, Ana's town had a big fiesta. Every house made a parol, a bright star lantern, for the night parade. Ana wanted to make the best parol on her street.\n\nOn Saturday morning, she went to her grandpa's house. Lolo had thin bamboo sticks, colored paper and a pot of glue on the table. \"Today we will build a star together,\" he said.\n\nFirst, they tied five bamboo sticks into a star. Then Ana cut red, yellow and blue paper and glued it on the frame. At noon, the glue was still wet, so they ate rice and fried fish for lunch.\n\nIn the evening, Lolo put a small light inside the parol. The star glowed like a tiny sun! Ana hung it on the gate, and her neighbors stopped to look. \"It's beautiful,\" said Mrs. Cruz. Ana smiled. She was very proud.",
+  text: "In December, Ana's town had a big fiesta. Everyone made a parol, a bright star lantern. On Saturday, Ana went to her grandpa's house. Lolo had bamboo sticks, colored paper and glue on the table.\n\nFirst, they tied five bamboo sticks into a star. Then Ana cut red, yellow and blue paper and glued it on the frame. At noon, the glue was still wet, so they ate rice and fried fish.\n\nIn the evening, Lolo put a small light inside the parol, and it glowed! Ana hung it on the gate. Her neighbors stopped to look. It was beautiful! Ana was very proud.",
   image: "/curriculum/letter-board/parol-maker-cover.jpg",
 };
 

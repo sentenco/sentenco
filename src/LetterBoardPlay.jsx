@@ -180,8 +180,9 @@ function useFitScale(ref, screen) {
       const w = el.offsetWidth + 8;
       const h = el.offsetHeight + 8;
       const m = 14;
-      const k = Math.min((window.innerWidth - 2 * m) / w, (window.innerHeight - 2 * m) / h);
-      const next = Math.max(0.5, Math.min(3, k));
+      const fitW = (window.innerWidth - 2 * m) / w;
+      // the story page keeps a readable size and scrolls; every other screen shrinks or grows to fill the window
+      const next = screen === "reading" ? Math.max(0.5, Math.min(1, fitW)) : Math.max(0.5, Math.min(3, fitW, (window.innerHeight - 2 * m) / h));
       document.documentElement.style.setProperty("--lb-scale", String(next));
       // a shrunken screen keeps its full-size layout box, so pull the margins in to keep it centered and unscrolled
       document.documentElement.style.setProperty("--lb-pad", `${next < 1 ? (el.offsetHeight * (1 - next)) / 2 : 0}px`);
@@ -550,7 +551,7 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
 // to jump there, and an optional voice that reads the story aloud (where the browser has one).
 const READ_SPEEDS = [["Slow", 1.5], ["Normal", 2.3], ["Fast", 3.2]];
 
-function StoryReader({ story }) {
+function StoryReader({ story, children }) {
   const paras = useMemo(
     () => String(story.text || "").split(/\n{2,}/).map((t) => t.trim()).filter(Boolean).map((p) => p.split(/\s+/)),
     [story.text]
@@ -570,7 +571,6 @@ function StoryReader({ story }) {
   const timer = useRef(null);
   const watch = useRef(null);
   const gen = useRef(0);
-  const textRef = useRef(null);
   const wordRefs = useRef([]);
 
   const go = (i) => { cur.current = i; setWi(i); };
@@ -623,12 +623,11 @@ function StoryReader({ story }) {
 
   // keep the word being read in view on longer stories
   useEffect(() => {
-    const box = textRef.current, el = wordRefs.current[wi];
-    if (!box || !el) return;
-    if (el.offsetTop < box.scrollTop + 10 || el.offsetTop + el.offsetHeight > box.scrollTop + box.clientHeight - 10) {
-      box.scrollTo({ top: Math.max(0, el.offsetTop - box.clientHeight / 2), behavior: "smooth" });
-    }
-  }, [wi]);
+    const el = wordRefs.current[wi];
+    if (!playing || !el) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < 70 || r.bottom > window.innerHeight - 190) el.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [wi]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const finished = wi >= last && !playing && words.length > 0;
   const pct = words.length ? Math.round(((wi + 1) / words.length) * 100) : 0;
@@ -641,7 +640,7 @@ function StoryReader({ story }) {
     <>
       <div className="lbr-pad">
         <div className="lbr-paper">
-          <div className="lbr-text" ref={textRef}>
+          <div className="lbr-text">
             {paras.map((pw, pi) => (
               <p key={pi}>
                 {pw.map((w, k) => {
@@ -656,6 +655,7 @@ function StoryReader({ story }) {
           <div className={`lbr-stamp${finished ? " on" : ""}`}>Well read!</div>
         </div>
       </div>
+      <div className="lbr-dock">
       <div className="lbr-player">
         <div className="lbr-ring" style={{ "--p": pct }}>
           <button type="button" className={`lbr-play${playing ? " on" : ""}`} onClick={onPlay} aria-label={playing ? "Pause the story" : finished ? "Read the story again" : "Play the story"} />
@@ -666,37 +666,25 @@ function StoryReader({ story }) {
         </span>
         {canSpeak && <button type="button" className="lbr-voice" aria-pressed={voice} onClick={onVoice}><b />Voice</button>}
       </div>
+      {children}
+      </div>
     </>
   );
 }
 
 // Peek at the story while playing (does not change coins or tiles).
 function StoryOverlay({ story, onClose, onSetup }) {
-  const cardRef = useRef(null);
-  // size the card to the window: as big as fits, never cut off
-  useLayoutEffect(() => {
-    const el = cardRef.current;
-    if (!el) return undefined;
-    const fit = () => {
-      el.style.zoom = "1";
-      const k = Math.min(1.3, (window.innerHeight - 28) / el.offsetHeight, (window.innerWidth - 28) / el.offsetWidth);
-      el.style.zoom = String(Math.max(0.5, k));
-    };
-    fit();
-    window.addEventListener("resize", fit);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-    return () => window.removeEventListener("resize", fit);
-  }, []);
   return createPortal(
     <div className="lb-ov lb-ov-story">
-      <div className="lbr-card lbr-pop" ref={cardRef}>
+      <div className="lbr-card lbr-pop">
         <div className="lbr-ohead"><b><span>{story.title || "The story"}</span></b></div>
-        <StoryReader story={story} />
-        <div className="lbr-actions">
-          <button type="button" className="lbr-ghost" onClick={onSetup}>Back to setup</button>
-          <button type="button" className="lbr-go" onClick={onClose}>Play</button>
-          <p className="lbr-note">Reading again does not change your coins or tiles.</p>
-        </div>
+        <StoryReader story={story}>
+          <div className="lbr-actions">
+            <button type="button" className="lbr-ghost" onClick={onSetup}>Back to setup</button>
+            <button type="button" className="lbr-go" onClick={onClose}>Play</button>
+            <p className="lbr-note">Reading again does not change your coins or tiles.</p>
+          </div>
+        </StoryReader>
       </div>
     </div>,
     document.body
@@ -712,12 +700,13 @@ function StoryRead({ title, story, onStart, onBack }) {
         <span className="lbr-chip">Read the story first</span>
       </div>
       <div className="lbr-title"><h1><span>{story.title || title}</span></h1></div>
-      <StoryReader story={story} />
-      <div className="lbr-actions">
-        <button type="button" className="lbr-ghost" onClick={onBack}>Back to setup</button>
-        <button type="button" className="lbr-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>Play</button>
-        <p className="lbr-note">The questions are about this story. Open it again any time with the Story button.</p>
-      </div>
+      <StoryReader story={story}>
+        <div className="lbr-actions">
+          <button type="button" className="lbr-ghost" onClick={onBack}>Back to setup</button>
+          <button type="button" className="lbr-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>Play</button>
+          <p className="lbr-note">The questions are about this story. Open it again any time with the Story button.</p>
+        </div>
+      </StoryReader>
     </div>
   );
 }
@@ -926,7 +915,7 @@ const CSS = `
 .lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
 .lb-ov.lb-ov-story { z-index: 51; }
 .lb-ov > .lb-card { margin: auto; zoom: var(--lb-scale, 1); }
-.lbr-card { position: relative; width: 100%; max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, #FFFAF6 0%, #FFF0E8 100%); border: 1.5px solid #F3DED3; border-radius: 32px; box-shadow: 0 1px 0 #fff inset, 0 26px 50px -22px rgba(27,42,74,.34), 0 4px 10px -4px rgba(27,42,74,.08); animation: lbr-rise .45s ease-out both; }
+.lbr-card { position: relative; width: 100%; max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; overflow: clip; isolation: isolate; background: linear-gradient(180deg, #FFFAF6 0%, #FFF0E8 100%); border: 1.5px solid #F3DED3; border-radius: 32px; box-shadow: 0 1px 0 #fff inset, 0 26px 50px -22px rgba(27,42,74,.34), 0 4px 10px -4px rgba(27,42,74,.08); animation: lbr-rise .45s ease-out both; }
 .lbr-card::before { content: ''; position: absolute; z-index: -1; width: 340px; height: 340px; right: -110px; top: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,160,.75) 0, rgba(255,217,160,0) 68%); }
 .lbr-card::after { content: ''; position: absolute; z-index: -1; width: 380px; height: 380px; left: -150px; bottom: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,170,.55) 0, rgba(255,190,170,0) 68%); }
 .lbr-pop { margin: auto; }
@@ -939,7 +928,7 @@ const CSS = `
 .lbr-title h1 span, .lbr-ohead b span { background-image: linear-gradient(transparent 64%, #FFD9CC 64% 90%, transparent 90%); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .lbr-pad { padding: 16px 26px 12px; }
 .lbr-paper { position: relative; background: rgba(255,255,255,.94); border: 1px solid #F6E6DD; border-radius: 26px; padding: 22px 28px; box-shadow: 0 14px 30px -16px rgba(27,42,74,.28), 0 2px 0 #fff inset; font-family: 'Fraunces', Georgia, serif; font-size: 20.5px; line-height: 1.85; }
-.lbr-text { max-height: 560px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #EBD3C8 transparent; margin: -6px -8px; padding: 6px 8px; }
+.lbr-text { margin: 0; }
 .lbr-text p { margin: 0 0 10px; color: #1B2A4A; text-indent: 1.6em; text-align: justify; text-justify: inter-word; }
 .lbr-text p:last-child { margin: 0; }
 .lbr-w { position: relative; border-radius: 10px; padding: 2px 4px; cursor: pointer; color: #838BA3; transition: color .15s, background .15s, box-shadow .15s; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
@@ -948,6 +937,7 @@ const CSS = `
 .lbr-w.cur { color: #1B2A4A; background: linear-gradient(180deg, #FFE0D4, #FFD2C2); box-shadow: 0 6px 12px -6px rgba(242,89,58,.55), 0 0 0 1.5px rgba(242,89,58,.35) inset; }
 .lbr-stamp { position: absolute; right: 14px; bottom: -14px; z-index: 2; transform: rotate(-6deg) scale(.5); opacity: 0; background: #F2593A; color: #fff; border-radius: 999px; padding: 7px 18px; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 17px; box-shadow: 0 10px 18px -8px rgba(242,89,58,.7); transition: opacity .2s, transform .35s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
 .lbr-stamp.on { opacity: 1; transform: rotate(-6deg) scale(1); }
+.lbr-dock { position: sticky; bottom: 0; z-index: 3; padding-top: 14px; background: linear-gradient(180deg, rgba(255,240,232,0), rgba(255,240,232,.97) 24%); }
 .lbr-player { display: flex; align-items: center; gap: 14px; margin: 8px 26px 0; padding: 9px 16px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: wrap; }
 .lbr-ring { width: 62px; height: 62px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#F2593A calc(var(--p, 0) * 1%), #F2E3DA 0); transition: background .15s; }
 .lbr-play { position: relative; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; background: #F2593A; padding: 0; cursor: pointer; box-shadow: 0 6px 12px -5px rgba(226,74,43,.8); transition: transform .12s; }
