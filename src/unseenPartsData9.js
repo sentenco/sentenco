@@ -28837,5 +28837,1573 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 203,
+    "slug": "unseen-reading-part-203",
+    "theme": "Sleep",
+    "blurb": "what happens during sleep, why we dream",
+    "texts": {
+      "A": {
+        "title": "What Happens While We Sleep",
+        "text": "Sleep is not a long, quiet switch-off. During the night, the brain moves through repeating cycles of about ninety minutes, and most people have four to six cycles. Each cycle has two main kinds of sleep. In non-REM sleep, the body relaxes, the heart slows and the brain waves become slow and large. The deepest part, early in the night, helps the body to repair itself and release growth hormone. In REM sleep, named for rapid eye movement, the eyes move under the eyelids and the brain is almost as active as when awake. REM periods become longer toward the morning. Sleep also helps memory: the brain replays the day, strengthens important connections and sorts out unimportant details. This is why a student who sleeps after studying usually remembers more. Most adults need seven to nine hours, and teenagers need about eight to ten. Regular lack of sleep harms attention, mood and health."
+      },
+      "B": {
+        "title": "Why Do We Dream?",
+        "text": "Most vivid dreams happen in REM sleep, although simpler dreams can also happen in other stages. During REM sleep, the muscles of the body are almost paralyzed, which stops people from acting out their dreams. Scientists still do not agree on why we dream. One idea is that dreams help the brain to process memories and to practice emotions, which may explain why dreams often contain worries and strong feelings. Another idea says that dreams are the brain’s attempt to make a story from random electrical signals. A third idea suggests that dreams simply have no function and are a by-product of an active sleeping brain. Dreams are often strange because the part of the brain that plans and checks logic is less active during sleep. Most dreams are forgotten within minutes of waking unless we write them down."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sleep is an active process of repeating cycles that helps the body and memory.",
+        "Sleep is a time when the brain and body switch off completely.",
+        "Sleep is the same all night, with no stages or cycles.",
+        "The text explains that sleep has repeating cycles and stages, and that it helps the body and memory.",
+        [
+          "Sleep is not a long, quiet switch-off",
+          "Sleep also helps memory"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "About how long is one sleep cycle?",
+        "About ninety minutes.",
+        "About ten minutes.",
+        "About five hours.",
+        "The text says that the brain moves through repeating cycles of about ninety minutes.",
+        "repeating cycles of about ninety minutes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “repair” means…",
+        "fix damage.",
+        "cause damage.",
+        "hide damage.",
+        "The text says that deep sleep helps the body to repair itself, which means that it fixes damage.",
+        "helps the body to repair itself"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “This” in “This is why a student” refers to…",
+        "the fact that sleep helps memory.",
+        "the fact that teenagers need more sleep.",
+        "the fact that REM periods get longer.",
+        "The sentence before says that sleep helps memory, and this is why a student who sleeps after studying remembers more.",
+        "Sleep also helps memory: the brain replays the day, strengthens important connections and sorts out unimportant details. This is why a student who sleeps after studying usually remembers more"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people in the world sleep badly.",
+        "How many hours adults need.",
+        "What REM stands for.",
+        "The text does not say how many people sleep badly. It says how many hours adults need and what REM stands for.",
+        [
+          "Most adults need seven to nine hours",
+          "named for rapid eye movement"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about lack of sleep?",
+        "It can harm both the mind and the body.",
+        "It helps the body to grow faster.",
+        "It makes memory stronger.",
+        "The text says that regular lack of sleep harms attention, mood and health.",
+        "Regular lack of sleep harms attention, mood and health"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Dreams happen mostly in REM sleep, and scientists have several ideas about their purpose.",
+        "Dreams happen only in deep sleep, and everyone agrees about their purpose.",
+        "Dreams are caused only by what we eat before bed.",
+        "The text explains where dreams happen and describes three ideas about why we dream.",
+        [
+          "Most vivid dreams happen in REM sleep",
+          "Scientists still do not agree on why we dream"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Why are the muscles almost paralyzed during REM sleep?",
+        "It stops people from acting out their dreams.",
+        "It helps the muscles to grow bigger.",
+        "It makes dreams easier to remember.",
+        "The text says that the paralysis stops people from acting out their dreams.",
+        "which stops people from acting out their dreams"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “by-product” means…",
+        "a result that comes with another thing.",
+        "a product that is made to be sold.",
+        "a tool that is used for sleep.",
+        "The text says that dreams may be a by-product of an active sleeping brain, which means a result that comes along with something else.",
+        "a by-product of an active sleeping brain"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “unless we write them down” refers to…",
+        "dreams.",
+        "minutes.",
+        "muscles.",
+        "The sentence says that most dreams are forgotten within minutes unless we write the dreams down.",
+        "Most dreams are forgotten within minutes of waking unless we write them down"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which animals dream the most.",
+        "Why dreams are often strange.",
+        "What one idea says dreams help the brain to do.",
+        "The text does not say which animals dream the most. It says why dreams are often strange and what one idea says dreams help the brain to do.",
+        [
+          "the part of the brain that plans and checks logic is less active during sleep",
+          "help the brain to process memories and to practice emotions"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the science of dreams?",
+        "Several explanations are still being tested.",
+        "The question was answered long ago.",
+        "Dreams cannot be studied.",
+        "The text says that scientists still do not agree and then describes three different ideas.",
+        "Scientists still do not agree on why we dream"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "cycles",
+          "series of events that repeat in the same order"
+        ],
+        [
+          "hormone",
+          "a chemical made by the body that controls growth or activity"
+        ],
+        [
+          "rapid",
+          "very fast"
+        ],
+        [
+          "connections",
+          "links between brain cells"
+        ],
+        [
+          "attention",
+          "the ability to focus on something"
+        ]
+      ],
+      "B": [
+        [
+          "vivid",
+          "clear and detailed"
+        ],
+        [
+          "paralyzed",
+          "unable to move"
+        ],
+        [
+          "process",
+          "to deal with and understand"
+        ],
+        [
+          "random",
+          "without a pattern or plan"
+        ],
+        [
+          "function",
+          "the purpose of something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 204,
+    "slug": "unseen-reading-part-204",
+    "theme": "Breathing",
+    "blurb": "how the lungs take in oxygen, how the body adapts to high altitude",
+    "texts": {
+      "A": {
+        "title": "How the Lungs Take In Oxygen",
+        "text": "When you breathe in, a large muscle under the lungs called the diaphragm moves down, and the air rushes into your nose and mouth, down the windpipe and into two tubes that branch again and again like an upside-down tree. At the ends of the smallest branches are hundreds of millions of tiny air sacs called alveoli. Their walls are so thin that oxygen can pass through into the blood vessels that wrap around them. In the blood, oxygen attaches to a protein called hemoglobin inside the red blood cells, and the heart pumps the blood to every part of the body. At the same time, carbon dioxide, a waste gas produced by the cells, moves in the opposite direction and leaves the body when you breathe out. At rest, an adult breathes about twelve to twenty times a minute, and the rate rises during exercise because the muscles need more oxygen."
+      },
+      "B": {
+        "title": "Breathing at High Altitude",
+        "text": "The air on a mountain contains the same 21 percent oxygen as air at sea level, but the air pressure is lower, so each breath brings in fewer oxygen molecules. At 5,500 meters, the pressure is about half of that at sea level, and near the summit of Mount Everest, at 8,849 meters, it is about one third. A climber who goes up too fast may get altitude sickness, with headache, nausea and tiredness, which in rare cases becomes dangerous. The body adapts if it has time. At first, breathing becomes faster and deeper. Over days and weeks, the body makes more red blood cells, which can carry more oxygen. This process is called acclimatization. For this reason, climbers go up slowly, rest at intermediate camps and sleep lower than the highest point they reached. Some people who live high in the Andes or the Himalayas have inherited traits that help them to use oxygen efficiently. Anyone with severe symptoms should go down at once."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Air travels through the airways to tiny sacs, where oxygen enters the blood.",
+        "Air stays in the windpipe, and oxygen enters the stomach.",
+        "Air enters through the skin and goes straight to the muscles.",
+        "The text follows the air from the nose to the alveoli, where oxygen passes into the blood.",
+        [
+          "into two tubes that branch again and again like an upside-down tree",
+          "oxygen can pass through into the blood vessels"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does oxygen attach to in the blood?",
+        "Hemoglobin inside red blood cells.",
+        "Carbon dioxide inside the lungs.",
+        "The walls of the windpipe.",
+        "The text says that oxygen attaches to a protein called hemoglobin inside the red blood cells.",
+        "oxygen attaches to a protein called hemoglobin inside the red blood cells"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “waste” in “a waste gas” means…",
+        "a useless product to remove.",
+        "a very valuable material.",
+        "a source of heat.",
+        "The text says that carbon dioxide is a waste gas produced by the cells, which means a useless product that the body must remove.",
+        "a waste gas produced by the cells"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “Their” in “Their walls are so thin” refers to…",
+        "the alveoli.",
+        "the blood vessels.",
+        "the muscles.",
+        "The sentence before names the alveoli, and their walls are so thin that oxygen can pass through.",
+        "tiny air sacs called alveoli. Their walls are so thin"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much air the lungs can hold.",
+        "What the diaphragm does.",
+        "Why the breathing rate rises in exercise.",
+        "The text does not say how much air the lungs can hold. It says what the diaphragm does and why the rate rises during exercise.",
+        [
+          "a large muscle under the lungs called the diaphragm moves down",
+          "the muscles need more oxygen"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does breathing speed up during exercise?",
+        "The muscles need more oxygen.",
+        "The lungs need to be cleaned.",
+        "The windpipe becomes narrower.",
+        "The text says that the rate rises during exercise because the muscles need more oxygen.",
+        "the rate rises during exercise because the muscles need more oxygen"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "At high altitude each breath has less oxygen, but the body can adapt over time.",
+        "At high altitude the air has no oxygen at all.",
+        "At high altitude the body cannot adapt and everyone gets sick.",
+        "The text explains that thin air has fewer oxygen molecules per breath and that the body can adapt if it has time.",
+        [
+          "each breath brings in fewer oxygen molecules",
+          "The body adapts if it has time"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What percentage of the air is oxygen on a mountain?",
+        "The same 21 percent as at sea level.",
+        "About 10 percent of the total air.",
+        "About 50 percent of the total air.",
+        "The text says that the air on a mountain contains the same 21 percent oxygen as air at sea level.",
+        "contains the same 21 percent oxygen as air at sea level"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “severe” means…",
+        "very serious.",
+        "very mild.",
+        "very short.",
+        "The text says that anyone with severe symptoms should go down at once, which means symptoms that are very serious.",
+        "Anyone with severe symptoms should go down at once"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which can carry more oxygen” refers to…",
+        "the extra red blood cells.",
+        "the mountain air.",
+        "the climbers’ camps.",
+        "The sentence says that the body makes more red blood cells, and the cells can carry more oxygen.",
+        "the body makes more red blood cells, which can carry more oxygen"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people climb Mount Everest each year.",
+        "What happens to the pressure on Everest.",
+        "What symptoms altitude sickness has.",
+        "The text does not say how many people climb Everest each year. It says what happens to the pressure there and what symptoms altitude sickness has.",
+        [
+          "it is about one third",
+          "headache, nausea and tiredness"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why do climbers sleep lower than the highest point they reached?",
+        "It gives the body a chance to recover while it adapts.",
+        "It makes the climb shorter.",
+        "It increases the air pressure around them.",
+        "The text says that climbers go up slowly and sleep lower than the highest point, which helps the body adapt over days.",
+        "climbers go up slowly, rest at intermediate camps and sleep lower than the highest point they reached"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "diaphragm",
+          "the large muscle under the lungs that helps breathing"
+        ],
+        [
+          "windpipe",
+          "the tube that carries air to the lungs"
+        ],
+        [
+          "alveoli",
+          "tiny air sacs in the lungs"
+        ],
+        [
+          "hemoglobin",
+          "the protein in red blood cells that carries oxygen"
+        ],
+        [
+          "vessels",
+          "tubes that carry blood around the body"
+        ]
+      ],
+      "B": [
+        [
+          "molecules",
+          "the tiny groups of atoms that make up gases"
+        ],
+        [
+          "summit",
+          "the highest point of a mountain"
+        ],
+        [
+          "acclimatization",
+          "the process of getting used to new conditions"
+        ],
+        [
+          "intermediate",
+          "in the middle between two stages"
+        ],
+        [
+          "inherited",
+          "passed down from parents"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 205,
+    "slug": "unseen-reading-part-205",
+    "theme": "Frame and Cover",
+    "blurb": "bones and joints, skin as an organ",
+    "texts": {
+      "A": {
+        "title": "Bones and Joints",
+        "text": "A newborn baby has about 300 bones or pieces of bone, but an adult has 206. The difference exists because many of a baby’s bones are partly made of soft, flexible cartilage and later join together as the child grows. Cartilage is why babies can fold into small positions and why a head can pass through the birth canal more safely. Bones are not dead sticks. They are living tissue that constantly breaks down and rebuilds. Bone density, or strength, peaks around the age of thirty, and then slowly declines. Calcium, vitamin D and exercise that puts weight on the bones, such as walking, running and jumping, help to keep them strong. Bones meet at joints, where smooth cartilage covers the ends and a liquid called synovial fluid works like oil in a machine. In a ball-and-socket joint, such as the hip, the bone can move in many directions; in a hinge joint, such as the knee, it moves mainly back and forth."
+      },
+      "B": {
+        "title": "Skin: The Body’s Largest Organ",
+        "text": "The skin covers about two square meters in an adult, which makes it the body’s largest organ. It has two main layers. The outer layer, the epidermis, is waterproof and constantly renews itself; the cells at the surface are dead and fall off, and the skin replaces them about once a month. Under it, the dermis contains blood vessels, nerves, sweat glands and hair roots. The skin keeps germs out, stops the body from losing water, senses touch and temperature, and helps to cool us down when sweat evaporates. In sunlight, ultraviolet rays can damage the skin cells. Cells called melanocytes make a dark pigment, melanin, which absorbs some of the rays, and this is what we call a tan. A tan is therefore a sign of damage and not of health. Sunburn and too much sun raise the risk of skin cancer. Sunscreen with SPF 30 blocks about 97 percent of the burning rays, but only if enough is used and it is applied again every two hours."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Bones are living tissue that changes, and joints let them move.",
+        "Bones are dead sticks that never change at all.",
+        "Bones are exactly the same in babies and adults.",
+        "The text explains that bones are living and change, and describes how joints work.",
+        [
+          "Bones are not dead sticks",
+          "Bones meet at joints"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How many bones does an adult have?",
+        "206.",
+        "300.",
+        "106.",
+        "The text says that an adult has 206 bones.",
+        "an adult has 206"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “declines” means…",
+        "slowly gets lower.",
+        "quickly gets higher.",
+        "stays the same.",
+        "The text says that bone density peaks around thirty and then slowly declines, which means that it slowly gets lower.",
+        "then slowly declines"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it moves mainly back and forth” refers to…",
+        "the bone in a hinge joint.",
+        "the hip.",
+        "the oil in a machine.",
+        "The sentence says that in a hinge joint, such as the knee, the bone moves mainly back and forth.",
+        "in a hinge joint, such as the knee, it moves mainly back and forth"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which bone is the longest in the body.",
+        "What helps to keep bones strong.",
+        "What synovial fluid does.",
+        "The text does not say which bone is the longest. It says what helps to keep bones strong and what synovial fluid does.",
+        [
+          "Calcium, vitamin D and exercise",
+          "works like oil in a machine"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why can a baby fold into small positions?",
+        "Many of its bones are still soft cartilage.",
+        "Its bones are harder than an adult’s.",
+        "It has fewer joints than an adult.",
+        "The text says that many of a baby’s bones are partly made of soft, flexible cartilage, which is why babies can fold into small positions.",
+        "Cartilage is why babies can fold into small positions"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The skin does many jobs, and sun can damage it.",
+        "The skin is only a cover with no other jobs.",
+        "The skin cannot be harmed by the sun at all.",
+        "The text describes the layers and jobs of the skin and warns about sun damage.",
+        [
+          "The skin keeps germs out, stops the body from losing water",
+          "A tan is therefore a sign of damage and not of health"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How often does the skin replace its surface cells?",
+        "About once a month.",
+        "About once a day.",
+        "About once a year.",
+        "The text says that the skin replaces the surface cells about once a month.",
+        "the skin replaces them about once a month"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “organ” means…",
+        "a part of the body with a special job.",
+        "a type of musical instrument.",
+        "a layer of dust.",
+        "The text calls the skin the body’s largest organ, which means a part of the body with a special job.",
+        "the body’s largest organ"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which absorbs some of the rays” refers to…",
+        "melanin.",
+        "the dermis.",
+        "the sunscreen.",
+        "The sentence says that melanocytes make a dark pigment, melanin, which absorbs some of the rays.",
+        "a dark pigment, melanin, which absorbs some of the rays"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country has the most skin cancer.",
+        "What the dermis contains.",
+        "How much of the rays SPF 30 blocks.",
+        "The text does not say which country has the most skin cancer. It says what the dermis contains and how much SPF 30 blocks.",
+        [
+          "blood vessels, nerves, sweat glands and hair roots",
+          "blocks about 97 percent of the burning rays"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text call a tan a sign of damage?",
+        "The skin darkens in reaction to harm.",
+        "The skin gets stronger and much safer.",
+        "A tan makes the skin lose its water.",
+        "The text says that melanin absorbs some of the rays that can damage skin cells, and this is what we call a tan.",
+        "ultraviolet rays can damage the skin cells"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "cartilage",
+          "a firm, flexible tissue that is softer than bone"
+        ],
+        [
+          "flexible",
+          "able to bend easily"
+        ],
+        [
+          "density",
+          "how tightly the material is packed"
+        ],
+        [
+          "calcium",
+          "a mineral that makes bones and teeth hard"
+        ],
+        [
+          "synovial",
+          "relating to the liquid that lubricates joints"
+        ]
+      ],
+      "B": [
+        [
+          "epidermis",
+          "the outer layer of the skin"
+        ],
+        [
+          "dermis",
+          "the inner layer of the skin"
+        ],
+        [
+          "evaporates",
+          "changes from liquid into vapor"
+        ],
+        [
+          "pigment",
+          "a substance that gives color"
+        ],
+        [
+          "ultraviolet",
+          "invisible light that can burn the skin"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 206,
+    "slug": "unseen-reading-part-206",
+    "theme": "Fuel and Water",
+    "blurb": "the journey of a meal, water in the body",
+    "texts": {
+      "A": {
+        "title": "The Journey of a Meal",
+        "text": "Digestion starts in the mouth, where teeth cut and grind food and saliva begins to break down starch. When you swallow, muscles in the tube called the esophagus squeeze the food down in waves, so you could even swallow upside down. In the stomach, strong acid and churning muscles turn the food into a thick liquid, a process that takes two to four hours. The liquid then enters the small intestine, a tube about six meters long. There the liver and the pancreas add juices that break down fats, proteins and carbohydrates into tiny molecules, and millions of small finger-like folds absorb these nutrients into the blood. What cannot be digested, such as fiber, goes on to the large intestine, which absorbs water and forms waste. The whole trip usually takes between one and three days, depending on the person and the food."
+      },
+      "B": {
+        "title": "Water and the Body",
+        "text": "Water makes up about 50 to 60 percent of an adult’s body weight. It is found in every cell, and it carries nutrients in the blood, cools the body through sweat, protects the joints and helps the kidneys to remove waste. Every day, we lose water through urine, sweat, breathing and even tears. If we do not replace it, we become dehydrated. Mild dehydration causes thirst, a dry mouth, dark yellow urine, headache and tiredness, and it can make it harder to concentrate. Severe dehydration, which can happen after heavy sweating, vomiting or diarrhea, is dangerous and may need medical care. How much water a person needs depends on body size, weather and activity, but a common estimate is about two to three liters of total fluids from drinks and food per day, and more in hot weather or during exercise. For most healthy people, thirst is a good guide, and pale yellow urine is a sign of good hydration."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Food is broken down step by step as it travels along.",
+        "Food stays in the mouth until it is fully digested.",
+        "Food is digested only in the large intestine.",
+        "The text follows a meal from the mouth through the stomach and intestines.",
+        [
+          "Digestion starts in the mouth",
+          "The whole trip usually takes between one and three days"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long does food usually stay in the stomach?",
+        "Two to four hours.",
+        "About one minute.",
+        "Three days.",
+        "The text says that the stomach process takes two to four hours.",
+        "a process that takes two to four hours"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “grind” means…",
+        "crush into small pieces.",
+        "swallow whole.",
+        "pour out slowly.",
+        "The text says that teeth cut and grind food, which means that they crush it into small pieces.",
+        "teeth cut and grind food"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which absorbs water” refers to…",
+        "the large intestine.",
+        "the small intestine.",
+        "the stomach.",
+        "The sentence says that what cannot be digested goes on to the large intestine, which absorbs water and forms waste.",
+        "goes on to the large intestine, which absorbs water and forms waste"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much food a person eats in a lifetime.",
+        "How long the small intestine is.",
+        "What the liver and pancreas add.",
+        "The text does not say how much food a person eats in a lifetime. It says how long the small intestine is and what the liver and pancreas add.",
+        [
+          "a tube about six meters long",
+          "the liver and the pancreas add juices"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does the small intestine have many small folds?",
+        "They give more surface for absorbing nutrients.",
+        "They make the food move backward.",
+        "They store the food for a week.",
+        "The text says that millions of small finger-like folds absorb these nutrients into the blood.",
+        "millions of small finger-like folds absorb these nutrients into the blood"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The body needs water for many jobs, and losing too much of it is harmful.",
+        "The body needs water only when it is hot.",
+        "The body needs a fixed amount of water that is the same for everyone.",
+        "The text explains the jobs of water, the signs of dehydration and how much water people need.",
+        [
+          "Water makes up about 50 to 60 percent of an adult’s body weight",
+          "If we do not replace it, we become dehydrated"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What color of urine is a sign of good hydration?",
+        "Pale yellow.",
+        "Dark yellow.",
+        "Bright red.",
+        "The text says that pale yellow urine is a sign of good hydration.",
+        "pale yellow urine is a sign of good hydration"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “estimate” means…",
+        "an approximate amount.",
+        "an exact law.",
+        "a type of medicine.",
+        "The text says that a common estimate is about two to three liters, which means an approximate amount.",
+        "a common estimate is about two to three liters"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “If we do not replace it” refers to…",
+        "the water that we lose.",
+        "the urine.",
+        "the weather.",
+        "The sentence before says that we lose water every day, and if we do not replace the water we become dehydrated.",
+        "we lose water through urine, sweat, breathing and even tears. If we do not replace it, we become dehydrated"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which drink is best for hydration.",
+        "What mild dehydration causes.",
+        "What can cause severe dehydration.",
+        "The text does not say which drink is best. It says what mild dehydration causes and what can cause severe dehydration.",
+        [
+          "thirst, a dry mouth, dark yellow urine, headache and tiredness",
+          "heavy sweating, vomiting or diarrhea"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the amount of water a person needs?",
+        "It changes with size, weather and activity.",
+        "It is exactly the same every day.",
+        "It depends only on age.",
+        "The text says that the amount depends on body size, weather and activity, and is higher in hot weather or during exercise.",
+        "depends on body size, weather and activity"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "saliva",
+          "the liquid in the mouth that starts digestion"
+        ],
+        [
+          "esophagus",
+          "the tube from the mouth to the stomach"
+        ],
+        [
+          "churning",
+          "moving and mixing with force"
+        ],
+        [
+          "absorb",
+          "to take in"
+        ],
+        [
+          "fiber",
+          "plant material that the body cannot digest"
+        ]
+      ],
+      "B": [
+        [
+          "nutrients",
+          "substances that living things need to grow"
+        ],
+        [
+          "kidneys",
+          "organs that clean the blood and make urine"
+        ],
+        [
+          "dehydrated",
+          "lacking enough water"
+        ],
+        [
+          "diarrhea",
+          "frequent loose and watery waste"
+        ],
+        [
+          "hydration",
+          "having enough water in the body"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 207,
+    "slug": "unseen-reading-part-207",
+    "theme": "Sight and Sound",
+    "blurb": "how the eye makes a picture, how the ear hears and keeps balance",
+    "texts": {
+      "A": {
+        "title": "How the Eye Makes a Picture",
+        "text": "The eye works like a camera. Light enters through the clear front window, the cornea, and passes through the pupil, the dark opening in the middle of the colored iris, which gets smaller in bright light and larger in dim light. Behind the pupil, the lens bends the light again and focuses it into a sharp image on the retina, a thin layer at the back of the eye. The image on the retina is upside down, but the brain flips it. The retina contains about 120 million rods, which work in dim light, and about 6 million cones, which detect color and fine detail. Some eyes do not focus correctly. In nearsightedness, or myopia, the eyeball is slightly too long, so distant objects look blurry. In farsightedness, close objects are blurry. Glasses and contact lenses bend the light before it enters the eye, so that the image falls in the right place. Spending time outdoors seems to lower the risk of myopia in children."
+      },
+      "B": {
+        "title": "How the Ear Hears and Keeps Balance",
+        "text": "Sound is a vibration of the air. The outer ear collects sound waves and sends them through the ear canal to the eardrum, a thin skin that vibrates. Behind the eardrum, three tiny bones, the smallest in the body, pass and strengthen the vibrations to the cochlea, a snail-shaped tube in the inner ear. The cochlea is filled with liquid and thousands of hair cells. When the liquid moves, the hair cells bend and send electrical signals through the nerve to the brain, which understands them as sound. The inner ear also has three small loops filled with liquid, the semicircular canals, which sense head movement and help us to keep our balance. Hair cells do not grow back once they are destroyed, so loud noise, such as music at a high volume through headphones, can cause permanent hearing loss. A good rule is to lower the volume until you can still talk to a person next to you, and to give your ears a rest."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The eye focuses light into an image, and glasses can correct focus.",
+        "The eye makes pictures of things without using light.",
+        "The eye focuses light in the brain, not in the eyeball.",
+        "The text explains how the parts of the eye form an image and how glasses correct focusing problems.",
+        [
+          "The eye works like a camera",
+          "Glasses and contact lenses bend the light before it enters the eye"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do the cones detect?",
+        "Color and fine detail.",
+        "Only dim light.",
+        "Only movement.",
+        "The text says that cones detect color and fine detail.",
+        "about 6 million cones, which detect color and fine detail"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “blurry” means…",
+        "not clear.",
+        "very bright.",
+        "very small.",
+        "The text says that in nearsightedness distant objects look blurry, which means that they do not look clear.",
+        "distant objects look blurry"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which gets smaller in bright light” refers to…",
+        "the pupil.",
+        "the iris.",
+        "the cornea.",
+        "The sentence says that light passes through the pupil, which gets smaller in bright light and larger in dim light.",
+        "the pupil, the dark opening in the middle of the colored iris, which gets smaller in bright light"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which color of eyes is the most common.",
+        "What the retina contains.",
+        "What causes nearsightedness.",
+        "The text does not say which eye color is the most common. It says what the retina contains and what causes nearsightedness.",
+        [
+          "The retina contains about 120 million rods",
+          "the eyeball is slightly too long"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do glasses help a nearsighted person?",
+        "They bend light so the image falls correctly.",
+        "They make the whole eyeball shorter in size.",
+        "They stop light from entering the eye.",
+        "The text says that glasses bend the light before it enters the eye, so that the image falls in the right place.",
+        "so that the image falls in the right place"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The ear turns vibrations into signals and also helps balance, but loud noise can harm it.",
+        "The ear makes sound inside the head and has no link to balance.",
+        "The ear heals itself completely after loud noise.",
+        "The text explains how the ear hears and keeps balance and warns that loud noise can cause permanent damage.",
+        [
+          "Sound is a vibration of the air",
+          "loud noise, such as music at a high volume through headphones, can cause permanent hearing loss"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Where is the cochlea?",
+        "In the inner ear.",
+        "In the outer ear.",
+        "Behind the eyes.",
+        "The text says that the cochlea is a snail-shaped tube in the inner ear.",
+        "a snail-shaped tube in the inner ear"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “destroyed” means…",
+        "completely damaged.",
+        "slightly cleaned.",
+        "carefully moved.",
+        "The text says that hair cells do not grow back once they are destroyed, which means completely damaged.",
+        "once they are destroyed"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “understands them as sound” refers to…",
+        "the electrical signals.",
+        "the hair cells.",
+        "the bones.",
+        "The sentence says that the hair cells send electrical signals to the brain, which understands the signals as sound.",
+        "send electrical signals through the nerve to the brain, which understands them as sound"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people have hearing loss.",
+        "What the semicircular canals sense.",
+        "What a good rule about volume is.",
+        "The text does not say how many people have hearing loss. It says what the semicircular canals sense and what a good rule about volume is.",
+        [
+          "which sense head movement",
+          "lower the volume until you can still talk to a person next to you"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about the hair cells?",
+        "They matter because they cannot be replaced.",
+        "They can be replaced after a short rest.",
+        "They matter only for keeping balance.",
+        "The text says that hair cells do not grow back once destroyed, so loud noise can cause permanent hearing loss.",
+        "Hair cells do not grow back once they are destroyed"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "cornea",
+          "the clear front part of the eye"
+        ],
+        [
+          "pupil",
+          "the dark opening in the middle of the eye"
+        ],
+        [
+          "retina",
+          "the layer at the back of the eye that senses light"
+        ],
+        [
+          "nearsightedness",
+          "a condition in which distant things look blurry"
+        ],
+        [
+          "lenses",
+          "curved pieces of glass or plastic that bend light"
+        ]
+      ],
+      "B": [
+        [
+          "vibration",
+          "a fast back-and-forth movement"
+        ],
+        [
+          "eardrum",
+          "the thin skin inside the ear that vibrates with sound"
+        ],
+        [
+          "cochlea",
+          "the snail-shaped part of the inner ear"
+        ],
+        [
+          "balance",
+          "the ability to stay upright"
+        ],
+        [
+          "permanent",
+          "lasting for ever"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 208,
+    "slug": "unseen-reading-part-208",
+    "theme": "Flowers and Seeds",
+    "blurb": "pollination, how seeds travel",
+    "texts": {
+      "A": {
+        "title": "Pollination: Flowers and Their Helpers",
+        "text": "Most flowering plants cannot make seeds without pollen, a fine powder made in the male part of the flower. To form a seed, pollen must reach the female part of another flower of the same kind. This transfer is called pollination. Many plants use animals as couriers. Flowers attract bees, butterflies, birds and bats with bright colors, sweet smells and nectar, a sugary liquid. While an insect drinks, pollen sticks to its body, and when it visits the next flower, some pollen rubs off. Different flowers fit different visitors: red tubular flowers often suit hummingbirds, and pale, strongly scented flowers that open at night often suit bats and moths. Other plants, such as grasses and many trees, rely on the wind, and they make huge amounts of light pollen, which is why they often cause hay fever. Experts estimate that about three quarters of the main food crops benefit, at least partly, from animal pollination."
+      },
+      "B": {
+        "title": "How Seeds Travel",
+        "text": "A plant cannot walk, so its seeds must travel to find space and light away from the parent. Plants have many solutions. Some seeds fly: dandelion seeds hang under a tiny parachute of hairs, and maple seeds spin like small helicopters. Some seeds float: coconuts can drift on the sea for months and start growing on a distant beach. Some seeds hitchhike: burrs have tiny hooks that stick to animal fur and to socks. Others are hidden inside tasty fruit. Birds and mammals eat the fruit, and the seeds pass through their bodies and fall to the ground far away, often with a little natural fertilizer. A few plants simply shoot their seeds. When the pods of some plants dry, they twist and burst, throwing the seeds several meters. Each method solves the same problem: to avoid competing with the parent for water, light and soil."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many plants rely on animals or wind to move pollen.",
+        "Flowers make seeds without needing any pollen.",
+        "Pollen is moved only by water in rivers.",
+        "The text explains that pollination moves pollen between flowers, often with the help of animals or wind.",
+        [
+          "This transfer is called pollination",
+          "Many plants use animals as couriers"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does nectar attract?",
+        "Insects, birds and bats.",
+        "Only the wind.",
+        "Only fish.",
+        "The text says that flowers attract bees, butterflies, birds and bats with bright colors, sweet smells and nectar.",
+        "Flowers attract bees, butterflies, birds and bats"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “rely on” means…",
+        "depend on.",
+        "be afraid of.",
+        "stay far from.",
+        "The text says that other plants rely on the wind, which means that they depend on it.",
+        "rely on the wind"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they often cause hay fever” refers to…",
+        "grasses and many trees.",
+        "bats and moths.",
+        "food crops.",
+        "The sentence says that grasses and many trees rely on the wind and make huge amounts of light pollen, which is why they often cause hay fever.",
+        "grasses and many trees, rely on the wind, and they make huge amounts of light pollen, which is why they often cause hay fever"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many flowers a bee visits in a day.",
+        "What attracts visitors to flowers.",
+        "Which flowers suit bats and moths.",
+        "The text does not say how many flowers a bee visits in a day. It says what attracts visitors and which flowers suit bats and moths.",
+        [
+          "bright colors, sweet smells and nectar",
+          "pale, strongly scented flowers that open at night"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does the last sentence matter for people?",
+        "Many of our crops depend on animal pollinators.",
+        "Animals eat most food crops.",
+        "Wind pollination feeds the world.",
+        "The text says that about three quarters of the main food crops benefit, at least partly, from animal pollination.",
+        "about three quarters of the main food crops benefit, at least partly, from animal pollination"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Seeds travel in many ways to grow away from the parent.",
+        "Seeds always grow directly under the parent plant.",
+        "Seeds can travel only by wind and by nothing else.",
+        "The text describes several ways in which seeds travel away from the parent plant.",
+        [
+          "its seeds must travel to find space and light away from the parent",
+          "Each method solves the same problem"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How do coconuts travel?",
+        "They drift on the sea.",
+        "They fly under a parachute.",
+        "They stick to socks.",
+        "The text says that coconuts can drift on the sea for months.",
+        "coconuts can drift on the sea for months"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “competing” means…",
+        "trying to get the same thing.",
+        "working together.",
+        "moving away.",
+        "The text says that seeds avoid competing with the parent for water, light and soil, which means trying to get the same things.",
+        "to avoid competing with the parent for water, light and soil"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “their” in “pass through their bodies” refers to…",
+        "birds and mammals.",
+        "the seeds.",
+        "the burrs.",
+        "The sentence says that birds and mammals eat the fruit, and the seeds pass through the animals’ bodies.",
+        "Birds and mammals eat the fruit, and the seeds pass through their bodies"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which seed is the largest in the world.",
+        "How burrs travel.",
+        "What some pods do when they dry.",
+        "The text does not say which seed is the largest. It says how burrs travel and what some pods do when they dry.",
+        [
+          "burrs have tiny hooks that stick to animal fur and to socks",
+          "they twist and burst, throwing the seeds several meters"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why do some plants make tasty fruit?",
+        "Animals that eat it carry the seeds away.",
+        "Tasty fruit keeps insects away.",
+        "Tasty fruit makes the seeds heavier.",
+        "The text says that animals eat the fruit, and the seeds fall to the ground far away.",
+        "the seeds pass through their bodies and fall to the ground far away"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "pollen",
+          "the fine powder that flowers make for reproduction"
+        ],
+        [
+          "couriers",
+          "messengers who carry things from place to place"
+        ],
+        [
+          "nectar",
+          "the sweet liquid that flowers make"
+        ],
+        [
+          "tubular",
+          "shaped like a tube"
+        ],
+        [
+          "estimate",
+          "to guess an amount based on information"
+        ]
+      ],
+      "B": [
+        [
+          "parachute",
+          "a wide cover that slows something falling through air"
+        ],
+        [
+          "drift",
+          "to be carried slowly by water or air"
+        ],
+        [
+          "hitchhike",
+          "to travel by attaching to something that moves"
+        ],
+        [
+          "fertilizer",
+          "a substance that helps plants to grow"
+        ],
+        [
+          "pods",
+          "the cases in which some plants hold their seeds"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 209,
+    "slug": "unseen-reading-part-209",
+    "theme": "Moving Water",
+    "blurb": "the water cycle, how a river shapes land",
+    "texts": {
+      "A": {
+        "title": "The Water Cycle",
+        "text": "The water on Earth is always moving, and it is the same water that has circulated for billions of years. The Sun’s heat makes water evaporate from oceans, lakes and rivers and turns it into an invisible gas called water vapor. Plants also release vapor from their leaves in a process called transpiration. The warm vapor rises, cools and condenses into tiny droplets, which form clouds. When the droplets become heavy enough, they fall as precipitation: rain, snow, sleet or hail. Some of the water runs over the ground into streams and rivers, and some soaks into the soil and becomes groundwater. All of it eventually flows back to the sea, and the cycle begins again. About 97 percent of Earth’s water is salty ocean water, and most of the fresh water is frozen in glaciers and ice sheets, so only a very small share is easily available for people."
+      },
+      "B": {
+        "title": "How a River Shapes the Land",
+        "text": "A river is not only a stream of water; it is also a tool that shapes the land. Near its source in the mountains, a river is fast and steep, and it cuts a narrow V-shaped valley by carrying away rocks and soil. This process is called erosion. Farther downstream, the slope becomes gentler and the river slows down. It begins to swing from side to side in wide curves called meanders, wearing away the outside of each bend and leaving sand and mud on the inside. In a flood, the river spreads over a flat floodplain and leaves a rich layer of mud that makes farmland fertile. Finally, when the river enters the sea or a lake, it slows down and drops the sediment that it carries. Over thousands of years, this builds a fan-shaped area of new land called a delta, named after the Greek letter delta. The Nile, the Mekong and the Mississippi all have large deltas."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Water moves in a cycle between the sea, the air and the land.",
+        "Water is used up and replaced by new water each year.",
+        "Water stays in the ocean and never moves.",
+        "The text explains that water evaporates, forms clouds, falls and returns to the sea in a cycle.",
+        [
+          "The water on Earth is always moving",
+          "the cycle begins again"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is transpiration?",
+        "The release of vapor from plant leaves.",
+        "The freezing of water in glaciers.",
+        "The falling of rain on the ground.",
+        "The text says that plants release vapor from their leaves in a process called transpiration.",
+        "Plants also release vapor from their leaves in a process called transpiration"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “circulated” means…",
+        "moved around and around.",
+        "stayed in one place.",
+        "disappeared.",
+        "The text says that it is the same water that has circulated for billions of years, which means that it has moved around and around.",
+        "has circulated for billions of years"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which form clouds” refers to…",
+        "the tiny droplets.",
+        "the Sun.",
+        "the plants.",
+        "The sentence says that the vapor condenses into tiny droplets, which form clouds.",
+        "condenses into tiny droplets, which form clouds"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many liters fall as rain each year.",
+        "What heats the water in the oceans.",
+        "What the word precipitation includes.",
+        "The text does not say how many liters of water fall as rain each year. It says what heats the water and what precipitation includes.",
+        [
+          "The Sun’s heat makes water evaporate",
+          "rain, snow, sleet or hail"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why is only a small share of water easily available to people?",
+        "Most water is salty or frozen.",
+        "Most water is in the clouds.",
+        "Most water is under cities.",
+        "The text says that about 97 percent is salty ocean water and most fresh water is frozen in glaciers and ice sheets.",
+        "most of the fresh water is frozen in glaciers and ice sheets"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A river changes the land along its whole path to the sea.",
+        "A river flows over the land without ever changing it.",
+        "A river changes the land only high in the mountains.",
+        "The text describes how a river shapes valleys, bends, floodplains and deltas.",
+        [
+          "it is also a tool that shapes the land",
+          "this builds a fan-shaped area of new land called a delta"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What shape of valley does a fast river in the mountains cut?",
+        "A narrow V-shaped valley.",
+        "A wide flat valley.",
+        "A round lake.",
+        "The text says that near its source the river cuts a narrow V-shaped valley.",
+        "it cuts a narrow V-shaped valley"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “gentler” means…",
+        "less steep.",
+        "more steep.",
+        "more crowded.",
+        "The text says that farther downstream the slope becomes gentler, which means that it is less steep.",
+        "the slope becomes gentler"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it carries” refers to…",
+        "the river.",
+        "the sea.",
+        "the delta.",
+        "The sentence says that when the river enters the sea, it slows down and drops the sediment that the river carries.",
+        "it slows down and drops the sediment that it carries"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How long the longest river in the world is.",
+        "What a flood leaves on the floodplain.",
+        "What a delta is named after.",
+        "The text does not say how long the longest river is. It says what a flood leaves and what a delta is named after.",
+        [
+          "leaves a rich layer of mud",
+          "named after the Greek letter delta"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why is a floodplain good for farming?",
+        "Floods leave a rich layer of mud.",
+        "Floods remove all the soil.",
+        "The ground is always dry there.",
+        "The text says that in a flood the river leaves a rich layer of mud that makes farmland fertile.",
+        "leaves a rich layer of mud that makes farmland fertile"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "evaporate",
+          "to change from liquid into gas"
+        ],
+        [
+          "vapor",
+          "water in the form of gas"
+        ],
+        [
+          "condenses",
+          "changes from gas into liquid"
+        ],
+        [
+          "precipitation",
+          "water that falls from clouds"
+        ],
+        [
+          "groundwater",
+          "water that is stored under the ground"
+        ]
+      ],
+      "B": [
+        [
+          "erosion",
+          "the slow wearing away of rock and soil"
+        ],
+        [
+          "meanders",
+          "wide curves in a river"
+        ],
+        [
+          "floodplain",
+          "flat land beside a river that floods"
+        ],
+        [
+          "sediment",
+          "small pieces of rock and soil carried by water"
+        ],
+        [
+          "fertile",
+          "good for growing crops"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 210,
+    "slug": "unseen-reading-part-210",
+    "theme": "Weather",
+    "blurb": "how clouds form and why it rains, how a typhoon forms",
+    "texts": {
+      "A": {
+        "title": "How Clouds Form and Why It Rains",
+        "text": "A cloud is a large group of tiny water droplets or ice crystals floating in the air. It forms when warm, moist air rises. As it goes up, the air cools, and the water vapor in it condenses on tiny particles of dust or salt and becomes droplets. Billions of droplets together make a cloud that we can see. A cloud droplet is too small to fall; it is about a hundred times smaller than a raindrop and is held up by rising air. Inside the cloud, droplets collide and join, and ice crystals in cold clouds grow by collecting vapor. When they become heavy enough, they fall. In cold clouds, many raindrops begin as ice crystals that melt on the way down. Air can be forced upward by heating from the Sun, by mountains or by the meeting of warm and cold air, which is why rain often falls in these places."
+      },
+      "B": {
+        "title": "How a Typhoon Forms",
+        "text": "A typhoon is a powerful tropical storm that forms over warm ocean water in the northwest Pacific. The same kind of storm is called a hurricane in the Atlantic and a cyclone in the Indian Ocean. A typhoon needs sea water warmer than about 26 degrees Celsius. Warm, moist air rises over the ocean, and as the vapor condenses into clouds, it releases heat that powers the storm. Low pressure at the surface pulls in more air, and because of the Earth’s rotation, the air spirals around a calm center, the eye. The strongest winds and the heaviest rain are in the eyewall, the ring of towering clouds around the eye. A storm is called a typhoon when its winds reach at least about 120 kilometers per hour. Strong winds, heavy rain and a storm surge, a rise of the sea that floods the coast, make typhoons dangerous. A storm weakens when it moves over land or cooler water, because it loses its supply of warm moist air. On average, about twenty tropical cyclones enter the Philippine area of responsibility each year."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Clouds form from rising moist air, and rain falls when drops become heavy.",
+        "Clouds form from smoke, and rain falls when they get cold.",
+        "Clouds form only over the sea, and rain falls at night.",
+        "The text explains how rising air cools, forms droplets and clouds, and how drops grow heavy enough to fall.",
+        [
+          "It forms when warm, moist air rises",
+          "When they become heavy enough, they fall"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do vapor molecules condense on?",
+        "Tiny particles of dust or salt.",
+        "Large pieces of ice.",
+        "Plants.",
+        "The text says that the vapor condenses on tiny particles of dust or salt.",
+        "condenses on tiny particles of dust or salt"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “forced” in “forced upward” means…",
+        "pushed by something.",
+        "pulled by gravity.",
+        "held completely still.",
+        "The text says that air can be forced upward by heating, mountains or the meeting of warm and cold air, which means that it is pushed up.",
+        "Air can be forced upward"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “It forms when warm, moist air rises” refers to…",
+        "a cloud.",
+        "a raindrop.",
+        "a mountain.",
+        "The sentence before says that a cloud is a large group of tiny droplets, and the cloud forms when warm, moist air rises.",
+        "A cloud is a large group of tiny water droplets or ice crystals floating in the air. It forms when warm, moist air rises"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which cloud brings the most rain.",
+        "How big a cloud droplet is compared with a raindrop.",
+        "Where air can be forced upward.",
+        "The text does not say which cloud brings the most rain. It says how big a droplet is compared with a raindrop and where air can be forced upward.",
+        [
+          "about a hundred times smaller than a raindrop",
+          "by heating from the Sun, by mountains or by the meeting of warm and cold air"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does rain often fall near mountains?",
+        "Mountains force the air upward, where it cools.",
+        "Mountains make the Sun shine much hotter.",
+        "Mountains never have any clouds above them.",
+        "The text says that air forced upward by mountains cools and forms clouds, which is why rain often falls in these places.",
+        "Air can be forced upward by heating from the Sun, by mountains"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A typhoon forms over warm sea and grows strong from warm, moist air.",
+        "A typhoon forms over cold land and grows strong from dry air.",
+        "A typhoon forms in the desert and ends over the sea.",
+        "The text explains that a typhoon needs warm ocean water and that warm moist air powers it.",
+        [
+          "A typhoon is a powerful tropical storm that forms over warm ocean water",
+          "it releases heat that powers the storm"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is the calm center of the storm called?",
+        "The eye.",
+        "The surge.",
+        "The eyewall.",
+        "The text says that the air spirals around a calm center, the eye.",
+        "a calm center, the eye"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “supply” means…",
+        "an amount that is available.",
+        "a heavy rain.",
+        "a broken machine.",
+        "The text says that a storm weakens because it loses its supply of warm moist air, which means the amount that is available to it.",
+        "it loses its supply of warm moist air"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it releases heat” refers to…",
+        "the vapor.",
+        "the ocean.",
+        "the eye.",
+        "The sentence says that as the vapor condenses into clouds, the vapor releases heat that powers the storm.",
+        "as the vapor condenses into clouds, it releases heat that powers the storm"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which typhoon was the strongest ever.",
+        "What the same storm is called in the Atlantic.",
+        "What a storm surge is.",
+        "The text does not say which typhoon was the strongest ever. It says what the same storm is called in the Atlantic and what a storm surge is.",
+        [
+          "a hurricane in the Atlantic",
+          "a rise of the sea that floods the coast"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does a typhoon weaken over land?",
+        "It loses its supply of warm moist air.",
+        "It gets more heat from the ground.",
+        "The land makes the winds stronger.",
+        "The text says that a storm weakens when it moves over land or cooler water, because it loses its supply of warm moist air.",
+        "because it loses its supply of warm moist air"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "moist",
+          "slightly wet"
+        ],
+        [
+          "particles",
+          "very small pieces of matter"
+        ],
+        [
+          "condenses",
+          "changes from gas into liquid"
+        ],
+        [
+          "collide",
+          "to crash into each other"
+        ],
+        [
+          "crystals",
+          "small pieces of solid ice with a regular shape"
+        ]
+      ],
+      "B": [
+        [
+          "tropical",
+          "relating to the hot regions near the equator"
+        ],
+        [
+          "spirals",
+          "moves in a curve that gets closer to a center"
+        ],
+        [
+          "eyewall",
+          "the ring of strongest winds around a storm’s center"
+        ],
+        [
+          "surge",
+          "a sudden rise of the sea"
+        ],
+        [
+          "weakens",
+          "becomes less strong"
+        ]
+      ]
+    }
   }
 ];

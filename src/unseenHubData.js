@@ -233,6 +233,14 @@ const META = [
   [200, "Water and streets in ancient cities: how Rome brought in water, and how the first cities were laid out"],
   [201, "Fabrics and images: how silk, cotton and denim reached us, and how a still picture became a film"],
   [202, "Two tubes of glass that changed science: what the first microscopes showed, and what Galileo saw with a telescope"],
+  [203, "The busy night: the stages of sleep and memory, and what science says about dreams"],
+  [204, "Every breath: how oxygen gets into the blood, and what happens when the air is thin"],
+  [205, "Frame and cover: why a baby has more bones than an adult, and what the skin does besides covering us"],
+  [206, "Inside and out: how a meal is broken down, and why the body needs water"],
+  [207, "Sight and sound: how eyes form an image and why glasses help, and how ears hear and what loud noise does"],
+  [208, "The life of a plant: how flowers get help from animals, and the ways seeds travel"],
+  [209, "Water on the move: how it rises, falls and returns, and how a river carves valleys and builds deltas"],
+  [210, "Sky and storm: how a cloud becomes rain, and how a typhoon builds its strength"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
