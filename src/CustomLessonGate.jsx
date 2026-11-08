@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 
@@ -26,16 +26,20 @@ function Screen({ title, text, action }) {
 export default function CustomLessonGate({ slug, children }) {
   const { user, loading } = useAuth();
   const [state, setState] = useState("checking"); // checking | ok | denied | signin
+  const openFor = useRef(""); // "account:slug" this gate has already let in
 
   useEffect(() => {
     if (loading) return undefined;
-    if (!user) { setState("signin"); return undefined; }
+    if (!user) { openFor.current = ""; setState("signin"); return undefined; }
     let off = false;
-    setState("checking");
+    const key = `${user.id}:${slug}`;
+    // A lesson that is already open stays open while the check quietly repeats (the player must never be rebuilt under the student).
+    if (openFor.current !== key) setState("checking");
     supabase.rpc("can_open_custom_lesson", { p_slug: slug }).then(({ data, error }) => {
       if (off) return;
-      if (error) setState(user.email?.toLowerCase() === OWNER_EMAIL ? "ok" : "denied");
-      else setState(data ? "ok" : "denied");
+      const ok = error ? user.email?.toLowerCase() === OWNER_EMAIL : !!data;
+      openFor.current = ok ? key : "";
+      setState(ok ? "ok" : "denied");
     });
     return () => { off = true; };
   }, [slug, user, loading]);

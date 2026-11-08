@@ -21,6 +21,13 @@ function newToken() {
   return Array.from(a, (b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+// The auth library announces "signed in" again every time a window regains focus, with a brand new user
+// object for the same account. Keep the object we already have unless something about the account really
+// changed, otherwise every lesson player on the page is rebuilt (and restarts) whenever you switch windows.
+function sameAccount(a, b) {
+  return !!a && !!b && a.id === b.id && a.email === b.email && a.updated_at === b.updated_at;
+}
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -43,7 +50,8 @@ export function AuthProvider({ children }) {
     });
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
+      const next = session?.user ?? null;
+      setUser((prev) => (sameAccount(prev, next) ? prev : next));
     });
 
     return () => {
@@ -51,16 +59,20 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
+  const savePlan = useCallback((next) => {
+    setPlanInfo((p) => (p.plan === next.plan && p.source === next.source && p.endsAt === next.endsAt && p.trialAvailable === next.trialAvailable && !!p.notSetUp === !!next.notSetUp ? p : next));
+  }, []);
+
   const refreshPlan = useCallback(async () => {
     const u = userRef.current;
-    if (!u) { setPlanInfo({ plan: "free", source: "none", endsAt: null, trialAvailable: false }); return; }
+    if (!u) { savePlan({ plan: "free", source: "none", endsAt: null, trialAvailable: false }); return; }
     if (u.email?.toLowerCase() === OWNER_EMAIL) {
-      setPlanInfo({ plan: "pro_plus", source: "owner", endsAt: null, trialAvailable: false });
+      savePlan({ plan: "pro_plus", source: "owner", endsAt: null, trialAvailable: false });
       return;
     }
     const { data, error } = await supabase.rpc("my_plan");
     if (!error && data) {
-      setPlanInfo({
+      savePlan({
         plan: data.plan || "free",
         source: data.source || "base",
         endsAt: data.ends_at || null,
@@ -70,8 +82,8 @@ export function AuthProvider({ children }) {
     }
     // The trial tables are not set up yet (or the call failed): fall back to the plain profile plan.
     const { data: prof } = await supabase.from("profiles").select("plan").eq("id", u.id).maybeSingle();
-    setPlanInfo({ plan: prof?.plan || "free", source: "base", endsAt: null, trialAvailable: false, notSetUp: true });
-  }, []);
+    savePlan({ plan: prof?.plan || "free", source: "base", endsAt: null, trialAvailable: false, notSetUp: true });
+  }, [savePlan]);
 
   useEffect(() => {
     userRef.current = user;

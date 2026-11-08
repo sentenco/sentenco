@@ -10,7 +10,7 @@ import { CF_W, CF_H, CASE_TOPICS, vocabId } from "./caseKitData.js";
 const ScaleCtx = createContext(1);
 
 function useFitScale() {
-  const calc = () => Math.min(1, (window.innerWidth - 24) / CF_W, (window.innerHeight - 24) / CF_H);
+  const calc = () => Math.min(2, (window.innerWidth - 24) / CF_W, (window.innerHeight - 24) / CF_H);
   const [scale, setScale] = useState(calc);
   useEffect(() => {
     const on = () => setScale(calc());
@@ -344,7 +344,7 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,600;0,700;0,800;1,700&display=swap');
 
 .cf-wrap { --navy: #1F3A5F; --blue: #4E7099; --coral: #FF6B5B; --bad: #D9453A; --mono: 'Courier Prime', 'Courier New', monospace; --soft: 'Fredoka', 'Arial Rounded MT Bold', sans-serif; --sans: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
-  min-height: 100vh; width: 100%; background: #EEF1F6; color: var(--navy); font-family: var(--sans); font-weight: 700; padding: 12px; display: flex; align-items: center; justify-content: center; }
+  position: fixed; inset: 0; overflow: hidden; box-sizing: border-box; background: #EEF1F6; color: var(--navy); font-family: var(--sans); font-weight: 700; padding: 12px; display: flex; align-items: center; justify-content: center; }
 .cf-wrap * { box-sizing: border-box; }
 .cf-wrap button { font-family: inherit; color: inherit; }
 .cf-wrap :focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
