@@ -56,12 +56,22 @@
 .uh-flip:hover { background: #fff; }
 .uh-play { font-family: 'Lilita One', cursive; font-weight: 400; font-size: 17px; background: var(--navy); color: #fff; border: 2.5px solid var(--navy); border-radius: 999px; padding: 6px 20px; cursor: pointer; box-shadow: 3px 3px 0 rgba(31, 58, 95, .3); }
 .uh-play:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 rgba(31, 58, 95, .3); }
+.uh-pager { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; }
+.uh-pgs { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.uh-pg { font-family: 'Lilita One', cursive; font-weight: 400; font-size: 16px; color: var(--navy); background: #fff; border: 2.5px solid var(--navy); border-radius: 999px; padding: 6px 16px; cursor: pointer; box-shadow: 3px 3px 0 var(--navy); transition: transform .12s, box-shadow .12s; }
+.uh-pg-n { min-width: 42px; padding: 6px 10px; }
+.uh-pg:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--navy); }
+.uh-pg:active:not(:disabled) { transform: translate(3px, 3px); box-shadow: none; }
+.uh-pg[aria-current="page"] { background: var(--navy); color: #fff; }
+.uh-pg:disabled { opacity: .4; cursor: default; box-shadow: none; }
+.uh-pg-gap { font-family: 'Lilita One', cursive; font-size: 18px; color: var(--navy); padding: 0 2px; }
+.uh-pg-info { flex-basis: 100%; text-align: center; font: 700 14px 'Nunito', sans-serif; color: var(--navy); opacity: .75; }
 .uh-empty { grid-column: 1 / -1; background: #fff; border: 2.5px dashed var(--navy); border-radius: 22px; padding: 30px 18px; text-align: center; font-family: 'Lilita One', cursive; font-weight: 400; font-size: 22px; }
 
 .uh-c-body { --bg: #FF9DB0; } .uh-c-nature { --bg: #7BE3AA; } .uh-c-tech { --bg: #8FBBFF; } .uh-c-lang { --bg: #FFD25E; } .uh-c-space { --bg: #B7A6FF; } .uh-c-mma { --bg: #FFA45C; } .uh-c-safety { --bg: #5CD6E6; } .uh-c-money { --bg: #C6E75F; } .uh-c-mind { --bg: #EBA6F2; } .uh-c-history { --bg: #E5BE8E; } .uh-c-sports { --bg: #FF8266; } .uh-c-psych { --bg: #2FC4B2; } .uh-c-older { --bg: #D9D1F2; }
 
 @media (prefers-reduced-motion: reduce) {
-  .uh-tile, .uh-big, .uh-tab, .uh-panel, .uh-play { transition: none; }
+  .uh-tile, .uh-big, .uh-tab, .uh-panel, .uh-play, .uh-pg { transition: none; }
   .uh-tile.is-pop { animation: none; }
 }
 @media (max-width: 560px) { .uh-strip:nth-child(2) { margin-left: 0; } .uh-lvl { margin-left: 0; } }
