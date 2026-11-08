@@ -16489,5 +16489,6865 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 140,
+    "slug": "unseen-reading-part-140",
+    "theme": "Football",
+    "blurb": "how football’s rules were written down, how offside and VAR work",
+    "texts": {
+      "A": {
+        "title": "How Football’s Rules Were First Written Down",
+        "text": "Games with a ball and a goal are very old, but for many centuries each town and school played football in its own way. Some versions allowed players to carry the ball and to kick the legs of opponents, and some forbade both. This caused arguments when teams from different schools met. On 26 October 1863, representatives of London clubs and schools met at the Freemasons’ Tavern and founded the Football Association, or FA. A lawyer named Ebenezer Cobb Morley, the first secretary of the FA, helped to write the first set of rules. The most important debate was about carrying the ball and hacking, which means kicking an opponent’s legs. Clubs that wanted to keep both left, and later they formed the sport of rugby. The clubs that stayed created the game that we know as association football. Over the next years, the rules changed to add the crossbar, the corner kick and later the referee’s whistle."
+      },
+      "B": {
+        "title": "The Offside Rule and VAR",
+        "text": "The offside rule is one of the most discussed rules of football. Its idea is simple: an attacker should not wait near the opponents’ goal to receive an easy pass. A player is in an offside position if, when a teammate passes the ball, the player is nearer to the opponents’ goal line than both the ball and the second-last opponent, usually the last defender in front of the goalkeeper. Being in that position is not a foul in itself. The player is penalized only if he or she takes part in the play, for example by receiving the ball. Offside decisions are difficult, because they depend on a moment that lasts a fraction of a second, and an assistant referee must watch both the pass and the position of the players. Since 2018, the video assistant referee, or VAR, has helped the referee to review important decisions, such as goals, penalties and direct red cards. Many fans argue that VAR makes the game fairer, while others say that it interrupts the flow of the game."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In 1863, the FA wrote common rules to replace many local versions.",
+        "In 1863, the FA invented football as a completely new game.",
+        "In 1863, the FA made all clubs play rugby instead of football.",
+        "The text explains that each town played football in its own way, and that in 1863 the FA wrote common rules.",
+        [
+          "each town and school played football in its own way",
+          "founded the Football Association, or FA"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was the most important debate?",
+        "Whether players could carry the ball and hack.",
+        "Whether players could wear boots.",
+        "Whether games could be played at night.",
+        "The text says that the most important debate was about carrying the ball and hacking.",
+        "The most important debate was about carrying the ball and hacking"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “arguments” means…",
+        "disagreements.",
+        "celebrations.",
+        "agreements.",
+        "The text says that different rules caused arguments when teams from different schools met, which means disagreements.",
+        "This caused arguments when teams from different schools met"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “later they formed the sport of rugby” refers to…",
+        "the clubs that wanted to carry the ball.",
+        "the clubs that stayed with the new FA.",
+        "the London schools that were closed.",
+        "The sentence says that the clubs that wanted to keep carrying and hacking left, and later those clubs formed rugby.",
+        "Clubs that wanted to keep both left, and later they formed the sport of rugby"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who won the first FA match.",
+        "Where the FA was founded.",
+        "Who helped to write the first rules.",
+        "The text does not say who won the first FA match. It says where the FA was founded and who helped to write the rules.",
+        [
+          "met at the Freemasons’ Tavern",
+          "Ebenezer Cobb Morley, the first secretary of the FA"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the early rules?",
+        "They changed over the years.",
+        "They have never changed.",
+        "They were never written down.",
+        "The text says that over the next years the rules changed to add the crossbar, the corner kick and the whistle.",
+        "Over the next years, the rules changed"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The offside rule is hard to judge, and VAR now helps referees check it.",
+        "The offside rule was removed when VAR was introduced.",
+        "The offside rule applies only to goalkeepers in the penalty area.",
+        "The text explains the offside rule, says that offside decisions are difficult, and says that VAR helps to review them.",
+        [
+          "Offside decisions are difficult",
+          "Since 2018, the video assistant referee, or VAR"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "When is a player penalized for being in an offside position?",
+        "When the player takes part in the play.",
+        "As soon as the player is in that position.",
+        "When the ball goes out of play.",
+        "The text says that the player is penalized only if he or she takes part in the play.",
+        "penalized only if he or she takes part in the play"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fraction” means…",
+        "a very small part.",
+        "a very long time.",
+        "a full number.",
+        "The text says that a decision depends on a fraction of a second, which means a very small part of a second.",
+        "a fraction of a second"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “that it interrupts the flow” refers to…",
+        "VAR.",
+        "the offside rule.",
+        "the game.",
+        "The sentence says that others think that VAR interrupts the flow of the game.",
+        "others say that it interrupts the flow of the game"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many offside goals are scored each season.",
+        "Which decisions VAR can review.",
+        "Who must watch the pass and the players.",
+        "The text does not say how many offside goals are scored each season. It says which decisions VAR reviews and who must watch the pass.",
+        [
+          "such as goals, penalties and direct red cards",
+          "an assistant referee must watch both the pass and the position"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about VAR?",
+        "People disagree about whether it improves the game.",
+        "Everyone agrees that it improves the game.",
+        "Nobody has an opinion about it.",
+        "The text says that many fans argue that VAR makes the game fairer, while others say that it interrupts the game.",
+        "Many fans argue that VAR makes the game fairer, while others say"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "forbade",
+          "did not allow"
+        ],
+        [
+          "representatives",
+          "people who speak or act for a group"
+        ],
+        [
+          "founded",
+          "started an organization"
+        ],
+        [
+          "hacking",
+          "kicking another player’s legs"
+        ],
+        [
+          "whistle",
+          "a small instrument that makes a high, loud sound"
+        ]
+      ],
+      "B": [
+        [
+          "attacker",
+          "a player who tries to score"
+        ],
+        [
+          "penalized",
+          "given a punishment for breaking a rule"
+        ],
+        [
+          "assistant",
+          "a person who helps someone"
+        ],
+        [
+          "review",
+          "to look at again carefully"
+        ],
+        [
+          "interrupts",
+          "stops something for a short time"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 141,
+    "slug": "unseen-reading-part-141",
+    "theme": "The Olympic Games",
+    "blurb": "the ancient Olympic Games, how the modern Games were revived",
+    "texts": {
+      "A": {
+        "title": "The Ancient Olympic Games",
+        "text": "The Olympic Games began in ancient Greece. According to tradition, the first Games took place in 776 BC at Olympia, a sacred place in the western part of the country, and they were held every four years in honor of Zeus, the chief god. The Games were more than sport: they were a religious festival, and a sacred truce was announced, so that athletes and visitors could travel safely, even when cities were at war. The first events were running races, and later the program added wrestling, boxing, the pankration, which was a mix of boxing and wrestling, and chariot racing. Competitors were free Greek men, and they usually competed without clothes. The winner received an olive wreath, and he was honored in his home city, sometimes with money or free meals. The Games continued for more than a thousand years, until the Roman emperor Theodosius I banned pagan festivals, around the year 393."
+      },
+      "B": {
+        "title": "The Modern Olympic Games",
+        "text": "After the ancient Games ended, they were almost forgotten for about fifteen centuries. In the nineteenth century, a French teacher and educator, Pierre de Coubertin, became convinced that sport could educate young people and bring nations together. In 1894, he helped to found the International Olympic Committee, or IOC, and two years later the first modern Olympic Games opened in Athens, in 1896. About two hundred and forty athletes from fourteen countries took part, all of them men, and the program included athletics, cycling, swimming, fencing, gymnastics and the first modern marathon. Women were allowed to compete from 1900, although in small numbers. The Games have grown enormously. Today, more than ten thousand athletes from over two hundred countries compete in the Summer Games, and the Winter Games, started in 1924, have added sports on snow and ice. The Olympic symbol of five rings represents the continents."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The ancient Olympics were a sport and religious festival held at Olympia.",
+        "The ancient Olympics were a military training held in Rome.",
+        "The ancient Olympics were a festival for women and children.",
+        "The text explains that the ancient Games were held at Olympia in honor of Zeus, as a sport and religious festival.",
+        [
+          "The Olympic Games began in ancient Greece",
+          "they were a religious festival"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the winner receive?",
+        "An olive wreath.",
+        "A gold medal.",
+        "A silver cup.",
+        "The text says that the winner received an olive wreath.",
+        "The winner received an olive wreath"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “in honor of” means…",
+        "to show respect for.",
+        "to compete against.",
+        "to forget.",
+        "The text says that the Games were held in honor of Zeus, which means to show respect for Zeus.",
+        "in honor of Zeus"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they usually competed” refers to…",
+        "the competitors.",
+        "the judges.",
+        "the gods.",
+        "The sentence says that competitors were free Greek men, and the competitors usually competed without clothes.",
+        "Competitors were free Greek men, and they usually competed without clothes"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes took part.",
+        "Who banned pagan festivals.",
+        "What the truce allowed.",
+        "The text does not say how many athletes took part. It says who banned pagan festivals and what the truce allowed.",
+        [
+          "the Roman emperor Theodosius I banned pagan festivals",
+          "so that athletes and visitors could travel safely"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the truce suggest about the Games?",
+        "They were very important to the Greeks.",
+        "They were played only in wartime.",
+        "They were not important to anyone.",
+        "The text says that a sacred truce was announced so that athletes could travel safely, even when cities were at war.",
+        "a sacred truce was announced, so that athletes and visitors could travel safely, even when cities were at war"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The modern Olympics were revived in 1896 and have grown into a global event.",
+        "The modern Olympics were invented by the Romans and ended in 1896.",
+        "The modern Olympics have stayed small with the same athletes since 1896.",
+        "The text explains that Coubertin revived the Games in 1896 and that they have grown enormously.",
+        [
+          "the first modern Olympic Games opened in Athens, in 1896",
+          "The Games have grown enormously"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many countries took part in 1896?",
+        "Fourteen.",
+        "Forty.",
+        "Two hundred.",
+        "The text says that athletes from fourteen countries took part.",
+        "from fourteen countries"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “program” means…",
+        "the list of events.",
+        "the cost of tickets.",
+        "the team of judges.",
+        "The text says that the program included athletics, cycling and swimming, which means the list of events.",
+        "the program included athletics, cycling"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “he” in “he helped to found” refers to…",
+        "Pierre de Coubertin.",
+        "a Greek athlete.",
+        "the IOC.",
+        "The sentence says that in 1894 Pierre de Coubertin helped to found the IOC.",
+        "In 1894, he helped to found the International Olympic Committee"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country won the most medals in 1896.",
+        "When women were allowed to compete.",
+        "When the Winter Games started.",
+        "The text does not say which country won the most medals in 1896. It says when women could compete and when the Winter Games started.",
+        [
+          "Women were allowed to compete from 1900",
+          "started in 1924"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the number of athletes today suggest?",
+        "The Games have become much larger than in 1896.",
+        "The Games have become smaller since then.",
+        "The Games have not changed at all since then.",
+        "The text says that today more than ten thousand athletes from over two hundred countries compete.",
+        "more than ten thousand athletes from over two hundred countries"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "sacred",
+          "connected with a god or religion"
+        ],
+        [
+          "truce",
+          "an agreement to stop fighting"
+        ],
+        [
+          "festival",
+          "a special event with celebrations"
+        ],
+        [
+          "chariot",
+          "a light vehicle pulled by horses"
+        ],
+        [
+          "wreath",
+          "a ring of leaves worn as a prize"
+        ]
+      ],
+      "B": [
+        [
+          "convinced",
+          "completely sure"
+        ],
+        [
+          "educate",
+          "to teach"
+        ],
+        [
+          "committee",
+          "a group chosen to make decisions"
+        ],
+        [
+          "enormously",
+          "very greatly"
+        ],
+        [
+          "continents",
+          "the large areas of land on Earth"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 142,
+    "slug": "unseen-reading-part-142",
+    "theme": "Swimming",
+    "blurb": "how swimsuit technology changed world records, how swimmers cut through the water",
+    "texts": {
+      "A": {
+        "title": "How Swimsuit Technology Changed World Records",
+        "text": "In 2008, swimmers broke world records at an astonishing rate. The reason was partly a new kind of swimsuit. The Speedo LZR Racer was made of a very light material that repelled water, and it compressed the body so that the swimmer became more streamlined. Seams were welded instead of stitched, to reduce drag, which is the force of water that slows a swimmer. At the Beijing Olympic Games in 2008, the suit was worn by many winners, and a large number of world records fell, including the records of Michael Phelps, who won eight gold medals. Soon, other companies made similar suits, some covering the whole body and even helping swimmers float. Many people felt that the suits mattered more than the athletes. In 2010, the international swimming federation, FINA, banned the full-body suits and limited the materials, to keep the contest about the swimmers’ skills."
+      },
+      "B": {
+        "title": "How Swimmers Cut Through the Water",
+        "text": "Water is about eight hundred times denser than air, so a swimmer must push against much more resistance than a runner. Good technique is therefore as important as strength. The main enemy is drag. There are three kinds that matter. Form drag depends on the shape of the body: a swimmer who is flat and straight and whose hips stay high meets less water than one whose hips sink. Wave drag comes from the waves that the swimmer makes on the surface, and it increases quickly with speed. Friction drag is the rubbing of water against the skin and swimsuit. Swimmers reduce it by wearing smooth suits and caps, and some shave their body hair, although the effect is small. Power comes mostly from the arms: the hand enters the water, catches the water and pulls it backward, while the body rolls from side to side, which makes the stroke longer and easier. After each turn, swimmers glide underwater, because they move faster below the surface than on it."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "New swimsuits helped swimmers to break many records until they were banned.",
+        "New swimsuits made swimmers slower, so they were banned.",
+        "New swimsuits were worn only by coaches and judges.",
+        "The text explains that new suits helped swimmers to break records in 2008, and that full-body suits were banned in 2010.",
+        [
+          "swimmers broke world records at an astonishing rate",
+          "banned the full-body suits"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does drag mean in the text?",
+        "The force of water that slows a swimmer.",
+        "The speed of a swimmer in a race.",
+        "The material of a swimsuit.",
+        "The text says that drag is the force of water that slows a swimmer.",
+        "which is the force of water that slows a swimmer"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “limited” means…",
+        "set a limit on.",
+        "made more of.",
+        "gave away.",
+        "The text says that FINA limited the materials, which means that it set a limit on them.",
+        "limited the materials"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it compressed the body” refers to…",
+        "the swimsuit.",
+        "the swimmer.",
+        "the water.",
+        "The sentence says that the Speedo LZR Racer was made of a light material, and the suit compressed the body.",
+        "The Speedo LZR Racer was made of a very light material that repelled water, and it compressed the body"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the swimsuit cost.",
+        "What happened in 2010.",
+        "What the seams were instead of.",
+        "The text does not say how much the swimsuit cost. It says what happened in 2010 and what the seams were instead of.",
+        [
+          "In 2010, the international swimming federation, FINA, banned",
+          "Seams were welded instead of stitched"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does “the suits mattered more than the athletes” suggest?",
+        "Some people thought that the technology was unfair.",
+        "Some people thought that the swimmers were lazy.",
+        "Some people thought that the suits were too cheap.",
+        "The text says that many people felt that the suits mattered more than the athletes, which suggests that they thought the technology was unfair.",
+        "Many people felt that the suits mattered more than the athletes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Swimmers go faster by reducing drag and using good technique.",
+        "Swimmers go faster only by being taller than their rivals.",
+        "Swimmers go faster because water pushes them forward.",
+        "The text explains that technique is as important as strength, and that reducing drag is the main way to go faster.",
+        [
+          "Good technique is therefore as important as strength",
+          "The main enemy is drag"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do swimmers do after each turn?",
+        "They glide underwater.",
+        "They stop to breathe.",
+        "They swim on the surface.",
+        "The text says that after each turn swimmers glide underwater.",
+        "swimmers glide underwater"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “rolls” means…",
+        "turns slightly.",
+        "falls down.",
+        "stops moving.",
+        "The text says that the body rolls from side to side, which means that it turns slightly.",
+        "the body rolls from side to side"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it increases quickly with speed” refers to…",
+        "wave drag.",
+        "form drag.",
+        "friction drag.",
+        "The sentence says that wave drag comes from waves on the surface, and wave drag increases quickly with speed.",
+        "Wave drag comes from the waves that the swimmer makes on the surface, and it increases quickly with speed"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which stroke is the fastest in competition.",
+        "What form drag depends on.",
+        "Why swimmers glide after turns.",
+        "The text does not say which stroke is the fastest. It says what form drag depends on and why swimmers glide after turns.",
+        [
+          "Form drag depends on the shape of the body",
+          "they move faster below the surface than on it"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the first sentence suggest about swimming and running?",
+        "Swimmers meet more resistance than runners.",
+        "Runners meet more resistance than swimmers.",
+        "Both meet exactly the same resistance.",
+        "The text says that a swimmer must push against much more resistance than a runner.",
+        "a swimmer must push against much more resistance than a runner"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "astonishing",
+          "very surprising"
+        ],
+        [
+          "repelled",
+          "pushed away"
+        ],
+        [
+          "streamlined",
+          "shaped to move easily through air or water"
+        ],
+        [
+          "drag",
+          "the force that slows something moving through water or air"
+        ],
+        [
+          "federation",
+          "an organization of groups with a shared aim"
+        ]
+      ],
+      "B": [
+        [
+          "denser",
+          "heavier for its size"
+        ],
+        [
+          "resistance",
+          "a force that works against movement"
+        ],
+        [
+          "technique",
+          "a way of doing something with skill"
+        ],
+        [
+          "friction",
+          "the rubbing of one surface on another"
+        ],
+        [
+          "glide",
+          "to move smoothly without effort"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 143,
+    "slug": "unseen-reading-part-143",
+    "theme": "Tennis",
+    "blurb": "why tennis scores 15, 30, 40, how Hawk-Eye line calling works",
+    "texts": {
+      "A": {
+        "title": "Why Tennis Scores 15, 30, 40",
+        "text": "Tennis has one of the strangest scoring systems in sport. A player who wins the first point has “fifteen”, the second point makes “thirty”, the third point “forty”, and the fourth wins the game, unless both players have forty. In that case, called deuce, one player must win two points in a row. Nobody knows for certain why the numbers are fifteen, thirty and forty. One popular explanation is that the first tennis-like game, played in medieval France, used a clock face to keep the score, with the hand moved by quarters, fifteen, thirty, forty-five and sixty. Later, forty-five may have been shortened to forty, which is easier to say. Another idea is that the numbers come from old coins. Historians point out that there is little evidence for either story. The word love is used for no points, and some people think that it comes from the French word for egg, l’oeuf, because zero looks like an egg. This is also uncertain."
+      },
+      "B": {
+        "title": "How Hawk-Eye Line Calling Works",
+        "text": "In tennis, a ball can travel at more than two hundred kilometers an hour, and a line judge has to decide in a fraction of a second whether it touched the line. Human eyes make mistakes, so in 2007 Wimbledon began to use an electronic system called Hawk-Eye to review disputed calls. Several high-speed cameras around the court film the ball from different angles. A computer combines the images, uses geometry to find the position of the ball in three dimensions in each frame, and then predicts the path of the ball, including the point where it bounced. The result is shown on a screen as a computer image. The makers say that the average error is about three or four millimeters, which is small, although critics note that it is not perfect. Under the challenge system, players can ask to review a decision a limited number of times in a set. Some tournaments now use the system for all line calls, with no human line judges."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Tennis scoring is unusual, and the reason for its numbers is uncertain.",
+        "Tennis scoring was invented in England in the last century.",
+        "Tennis scoring is simple and follows the numbers one, two, three.",
+        "The text explains the unusual scoring and says that historians have little evidence for the explanations of the numbers.",
+        [
+          "Tennis has one of the strangest scoring systems in sport",
+          "Historians point out that there is little evidence for either story"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is deuce?",
+        "When both players have forty points.",
+        "When a player wins a game without losing a point.",
+        "When a player serves two faults.",
+        "The text says that when both players have forty, this is called deuce.",
+        "unless both players have forty. In that case, called deuce"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “for certain” means…",
+        "completely sure.",
+        "very worried.",
+        "very late.",
+        "The text says that nobody knows for certain why the numbers are used, which means that nobody is completely sure.",
+        "Nobody knows for certain"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “that it comes from the French word for egg” refers to…",
+        "the word love.",
+        "the word deuce.",
+        "the clock face.",
+        "The sentence says that some people think that the word love comes from the French word for egg.",
+        "some people think that it comes from the French word for egg"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who invented the first tennis ball.",
+        "What happens at deuce.",
+        "What the clock face explanation says.",
+        "The text does not say who invented the first tennis ball. It says what happens at deuce and what the clock face explanation says.",
+        [
+          "one player must win two points in a row",
+          "used a clock face to keep the score"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about the egg idea?",
+        "It is not proved.",
+        "It is proved by documents.",
+        "It is the only explanation.",
+        "The text says that this is also uncertain.",
+        "This is also uncertain."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Hawk-Eye uses cameras and a computer to judge where a ball landed.",
+        "Hawk-Eye uses a loud sound to show where the ball landed.",
+        "Hawk-Eye is used only to count the number of points.",
+        "The text explains that several cameras film the ball and a computer calculates its position and path.",
+        [
+          "Wimbledon began to use an electronic system called Hawk-Eye",
+          "Several high-speed cameras around the court film the ball"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "When did Wimbledon begin to use Hawk-Eye?",
+        "In 2007.",
+        "In 1977.",
+        "In 2017.",
+        "The text says that in 2007 Wimbledon began to use the electronic system.",
+        "in 2007 Wimbledon began to use an electronic system"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “bounced” means…",
+        "hit the ground and rose again.",
+        "stopped in the air.",
+        "broke into pieces.",
+        "The text says that the computer finds the point where the ball bounced, which means where it hit the ground and rose again.",
+        "the point where it bounced"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “whether it touched the line” refers to…",
+        "the ball.",
+        "the line.",
+        "the court.",
+        "The sentence says that a line judge must decide whether the ball touched the line.",
+        "whether it touched the line"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many challenges each player has in a match.",
+        "What the makers say about the average error.",
+        "What the computer predicts.",
+        "The text does not say how many challenges each player has in a match. It gives the makers’ claim about error and says what the computer predicts.",
+        [
+          "The makers say that the average error is about three or four millimeters",
+          "predicts the path of the ball"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Technology can replace some human judges.",
+        "Human judges are always more accurate.",
+        "Technology is not used in tournaments.",
+        "The text says that some tournaments now use the system for all line calls, with no human line judges.",
+        "Some tournaments now use the system for all line calls, with no human line judges"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "deuce",
+          "a score of forty each in tennis"
+        ],
+        [
+          "medieval",
+          "from the Middle Ages"
+        ],
+        [
+          "explanation",
+          "a statement that makes something clear"
+        ],
+        [
+          "evidence",
+          "facts that show that something is true"
+        ],
+        [
+          "shortened",
+          "made shorter"
+        ]
+      ],
+      "B": [
+        [
+          "disputed",
+          "argued about"
+        ],
+        [
+          "electronic",
+          "using electricity and computers"
+        ],
+        [
+          "angles",
+          "the directions from which something is seen"
+        ],
+        [
+          "geometry",
+          "the mathematics of shapes and space"
+        ],
+        [
+          "predicts",
+          "says what will happen"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 144,
+    "slug": "unseen-reading-part-144",
+    "theme": "Cycling",
+    "blurb": "drafting and why cyclists ride in a group, how bicycle gears work",
+    "texts": {
+      "A": {
+        "title": "Drafting: Why Cyclists Ride in a Group",
+        "text": "At high speed, most of the effort of a cyclist is used to push air out of the way. Air resistance grows quickly with speed, so the faster a rider goes, the more of the effort is wasted on the air. This is why a cyclist who rides directly behind another rider uses less energy. The rider in front opens a path through the air, and the rider behind moves in the calm air that is left, a technique called drafting. Studies suggest that riders in a group can save as much as thirty percent of their effort, and more in a large pack. In a race, teams use this on purpose. The leading rider works hard for a time, then moves aside and lets someone else take the front, a system called a paceline. When there is a strong wind from the side, riders form a diagonal line called an echelon to find shelter. Drafting is also one reason why strong riders sometimes wait in the pack and attack only near the end."
+      },
+      "B": {
+        "title": "How Bicycle Gears Work",
+        "text": "A bicycle gear system lets the rider choose how hard to push and how fast to turn the pedals. The pedals turn a large toothed wheel at the front, called a chainring, and the chain connects it to a set of smaller toothed wheels at the back, called the cassette. When the chain is on a small chainring and a large rear sprocket, one turn of the pedals makes the back wheel turn only a little. This is a low gear. It is easy to push, and it is useful for hills, because the rider can keep a comfortable rhythm. When the chain is on a large chainring and a small rear sprocket, one turn of the pedals makes the back wheel turn many times. This is a high gear, which is good for speed on flat roads or downhill, although it needs more force. A device called the derailleur moves the chain from one sprocket to another when the rider shifts. Most cyclists feel most comfortable pedaling about eighty to ninety times a minute, so they change gear to keep that rhythm."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Riding behind another cyclist saves energy because of less air resistance.",
+        "Riding behind another cyclist wastes energy because the air is thicker.",
+        "Riding behind another cyclist is useful only in the rain.",
+        "The text explains that a rider behind another rider uses less energy because the front rider opens a path through the air.",
+        [
+          "a cyclist who rides directly behind another rider uses less energy",
+          "a technique called drafting"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is an echelon?",
+        "A diagonal line of riders that avoids the wind.",
+        "A straight line of riders at the front.",
+        "A group of riders who stop to rest.",
+        "The text says that riders form a diagonal line called an echelon to find shelter from the wind.",
+        "a diagonal line called an echelon to find shelter"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “pack” means…",
+        "a large group of riders.",
+        "a bag for equipment.",
+        "a set of cards.",
+        "The text says that riders can save more effort in a large pack, which means a large group of riders.",
+        "more in a large pack"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “this” in “teams use this on purpose” refers to…",
+        "riding in a group to save effort.",
+        "riding at the front alone.",
+        "attacking near the end.",
+        "The sentence before says that riders in a group can save a lot of effort, and in a race teams use this saving on purpose.",
+        "Studies suggest that riders in a group can save as much as thirty percent of their effort, and more in a large pack. In a race, teams use this on purpose"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many riders ride in a typical pack.",
+        "What a paceline is.",
+        "How much effort riders can save.",
+        "The text does not say how many riders ride in a typical pack. It explains what a paceline is and how much effort riders can save.",
+        [
+          "a system called a paceline",
+          "as much as thirty percent of their effort"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about strong riders?",
+        "They may save energy in the pack.",
+        "They never ride in the pack at all.",
+        "They always lead from the very start.",
+        "The text says that strong riders sometimes wait in the pack and attack only near the end.",
+        "strong riders sometimes wait in the pack and attack only near the end"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Bicycle gears let riders keep a comfortable pace on hills and on flat roads.",
+        "Bicycle gears let riders go faster without turning the pedals.",
+        "Bicycle gears make the chain longer on hills.",
+        "The text explains that gears let the rider choose how hard to push, so that the rider can keep a comfortable rhythm.",
+        [
+          "lets the rider choose how hard to push and how fast to turn the pedals",
+          "so they change gear to keep that rhythm"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which gear is useful for hills?",
+        "A low gear.",
+        "A high gear.",
+        "No gear at all.",
+        "The text says that a low gear is easy to push and is useful for hills.",
+        "This is a low gear. It is easy to push, and it is useful for hills"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “shifts” means…",
+        "changes gear.",
+        "falls off.",
+        "stops pedaling.",
+        "The text says that the derailleur moves the chain when the rider shifts, which means when the rider changes gear.",
+        "when the rider shifts"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “the chain connects it” refers to…",
+        "the chainring.",
+        "the cassette.",
+        "the pedal.",
+        "The sentence says that the pedals turn a toothed wheel called a chainring, and the chain connects the chainring to the cassette.",
+        "called a chainring, and the chain connects it to a set of smaller toothed wheels"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a derailleur costs.",
+        "What a high gear is good for.",
+        "How many times a minute most cyclists pedal.",
+        "The text does not say how much a derailleur costs. It says what a high gear is good for and how many times a minute most cyclists pedal.",
+        [
+          "good for speed on flat roads or downhill",
+          "about eighty to ninety times a minute"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a high gear?",
+        "It needs more force from the rider.",
+        "It is the easiest gear on a hill.",
+        "It makes the back wheel turn less.",
+        "The text says that a high gear is good for speed, although it needs more force.",
+        "although it needs more force"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "resistance",
+          "a force that works against movement"
+        ],
+        [
+          "wasted",
+          "used without a good result"
+        ],
+        [
+          "calm",
+          "not moving much, still"
+        ],
+        [
+          "shelter",
+          "protection from wind or weather"
+        ],
+        [
+          "attack",
+          "to start a strong effort to get ahead"
+        ]
+      ],
+      "B": [
+        [
+          "chainring",
+          "the large toothed wheel at the pedals"
+        ],
+        [
+          "cassette",
+          "a group of toothed wheels on the back wheel"
+        ],
+        [
+          "sprocket",
+          "a wheel with teeth that holds a chain"
+        ],
+        [
+          "derailleur",
+          "the part that moves the chain between gears"
+        ],
+        [
+          "rhythm",
+          "a regular pattern of movement"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 145,
+    "slug": "unseen-reading-part-145",
+    "theme": "Sports Injuries",
+    "blurb": "how a sprain or muscle tear heals, how athletes prevent injuries",
+    "texts": {
+      "A": {
+        "title": "How a Sprain or Muscle Tear Heals",
+        "text": "Athletes often suffer two kinds of soft-tissue injury. A sprain is damage to a ligament, the tough band that connects two bones. A strain is damage to a muscle or to a tendon, which connects muscle to bone. Doctors describe them in three grades: grade one is a small stretch, grade two is a partial tear and grade three is a complete tear. Healing happens in three overlapping phases. First comes inflammation, in the first days: blood flows to the injury and brings cells that clean the damaged area, and the area becomes red, warm, swollen and painful. Next comes repair, which lasts for several weeks: the body builds new tissue, but it is weaker and disorganized. Last is remodeling, which can last for months: the new tissue becomes stronger and organized along the lines of force, if it is gradually loaded with exercise. Because the process takes time, an injured player who returns too early is likely to be injured again."
+      },
+      "B": {
+        "title": "How Athletes Prevent Injuries",
+        "text": "Not every injury can be prevented, but research shows that the risk can be reduced. A good warm-up is the first step: five to fifteen minutes of light running, followed by dynamic movements such as leg swings, lunges and short sprints, prepares the muscles and joints. Programs such as the “FIFA 11+”, a structured warm-up for football, have been shown in studies to reduce injuries by about a third when teams follow them regularly. Strength training also protects the body, because strong muscles support the joints, and balance exercises can lower the risk of ankle sprains. Another important factor is load: injuries often happen when training increases too suddenly, so coaches build volume gradually. Rest and sleep give the body time to adapt, and a tired athlete makes more mistakes. Good equipment, such as shoes that fit and protective gear, also helps. Finally, athletes should report pain early instead of playing through it, because a small problem that is treated quickly is easier to fix than a large one."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sprains and strains heal in phases, and returning too early is risky.",
+        "Sprains and strains heal in one day if the athlete rests.",
+        "Sprains and strains heal only with surgery.",
+        "The text explains the three phases of healing and says that an injured player who returns too early is likely to be injured again.",
+        [
+          "Healing happens in three overlapping phases",
+          "an injured player who returns too early is likely to be injured again"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is a sprain?",
+        "Damage to a ligament.",
+        "Damage to a muscle only.",
+        "Damage to the skin only.",
+        "The text says that a sprain is damage to a ligament.",
+        "A sprain is damage to a ligament"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “partial” means…",
+        "not complete.",
+        "very large.",
+        "very old.",
+        "The text says that grade two is a partial tear, which means that the tear is not complete.",
+        "grade two is a partial tear"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “but it is weaker” refers to…",
+        "the new tissue.",
+        "the injury.",
+        "the repair phase.",
+        "The sentence says that the body builds new tissue, but the new tissue is weaker and disorganized.",
+        "the body builds new tissue, but it is weaker and disorganized"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes suffer a sprain each year.",
+        "What the three grades are.",
+        "What happens during inflammation.",
+        "The text does not say how many athletes suffer a sprain each year. It says what the three grades are and what happens during inflammation.",
+        [
+          "grade one is a small stretch, grade two is a partial tear and grade three is a complete tear",
+          "the area becomes red, warm, swollen and painful"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A player needs patience during recovery.",
+        "A player should return as soon as possible.",
+        "A player should never exercise again.",
+        "The text says that because the process takes time, a player who returns too early is likely to be injured again.",
+        "Because the process takes time"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Injuries can be reduced with warm-ups, strength, rest and gradual training.",
+        "Injuries cannot be reduced, so athletes should only hope for luck.",
+        "Injuries are reduced only by wearing very expensive shoes.",
+        "The text explains several ways to reduce the risk of injury, such as warm-ups, strength training, gradual loading, rest and early care.",
+        [
+          "research shows that the risk can be reduced",
+          "report pain early instead of playing through it"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long is a good warm-up in the text?",
+        "Five to fifteen minutes of light running.",
+        "One hour of heavy lifting.",
+        "Thirty seconds of stretching.",
+        "The text says that a good warm-up starts with five to fifteen minutes of light running.",
+        "five to fifteen minutes of light running"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “load” means…",
+        "the amount of training.",
+        "the weight of equipment.",
+        "the number of fans.",
+        "The text says that injuries often happen when training increases too suddenly, so load means the amount of training.",
+        "Another important factor is load"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “playing through it” refers to…",
+        "pain.",
+        "the warm-up.",
+        "the game.",
+        "The sentence says that athletes should report pain early instead of playing through the pain.",
+        "report pain early instead of playing through it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes use the FIFA 11+.",
+        "What strong muscles do for the joints.",
+        "What can lower the risk of ankle sprains.",
+        "The text does not say how many athletes use the FIFA 11+. It says what strong muscles do and what lowers the risk of ankle sprains.",
+        [
+          "strong muscles support the joints",
+          "balance exercises can lower the risk of ankle sprains"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about reporting pain?",
+        "Early treatment of a small problem is better.",
+        "Pain should always be ignored.",
+        "Only big injuries should be reported.",
+        "The text says that a small problem that is treated quickly is easier to fix than a large one.",
+        "a small problem that is treated quickly is easier to fix than a large one"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "ligament",
+          "a strong band that joins two bones"
+        ],
+        [
+          "tendon",
+          "a strong band that joins muscle to bone"
+        ],
+        [
+          "inflammation",
+          "redness and swelling caused by the body’s defense"
+        ],
+        [
+          "swollen",
+          "bigger than normal because of fluid"
+        ],
+        [
+          "remodeling",
+          "changing the shape or form of something again"
+        ]
+      ],
+      "B": [
+        [
+          "dynamic",
+          "involving movement"
+        ],
+        [
+          "structured",
+          "organized in a clear plan"
+        ],
+        [
+          "joints",
+          "places where two bones meet"
+        ],
+        [
+          "gradually",
+          "slowly, little by little"
+        ],
+        [
+          "equipment",
+          "the things needed for an activity"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 146,
+    "slug": "unseen-reading-part-146",
+    "theme": "Winning and Streaks",
+    "blurb": "why teams win at home, the hot hand debate",
+    "texts": {
+      "A": {
+        "title": "Home Advantage: Why Teams Win at Home",
+        "text": "In almost every team sport, home teams win more often than away teams. In football, about forty-five to fifty percent of matches have historically been won by the home team, compared with around twenty-five to thirty percent by the away team, with the rest drawn, and the difference is similar in many other sports. Researchers have suggested several reasons. The first is the crowd: supporters create energy for the home team and may also influence referees, who are human and may unconsciously favor the team that the crowd supports. The second is travel: away teams may be tired after long journeys and sleep worse. The third is familiarity with the pitch, the climate and local conditions. A fourth is the motivation of players who feel that they are defending their home. During the COVID-19 pandemic, many matches were played in empty stadiums, and studies found that home advantage became smaller in several leagues. This supports the idea that the crowd matters, although other factors remain."
+      },
+      "B": {
+        "title": "The Hot Hand: Do Scoring Streaks Exist?",
+        "text": "Every basketball fan has seen it: a player scores several shots in a row and seems to be “on fire”. Fans and players believe in the “hot hand”, the idea that success makes the next success more likely. In 1985, the psychologists Thomas Gilovich, Robert Vallone and Amos Tversky studied shooting records of professional basketball players. They found that a player’s chance of scoring after a hit was not higher than after a miss, and they concluded that the hot hand was an illusion: people see patterns in random sequences. Their paper became famous, and for years the “hot hand fallacy” was a classic example of a mistake in thinking. But in 2018, the economists Joshua Miller and Adam Sanjurjo showed that the old method contained a subtle statistical bias that hid real streaks. After correction, the data pointed to a small hot-hand effect. Today, most researchers accept that streaks may exist but are weaker than fans think, and the debate continues."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Home teams win more often, and the crowd is one important reason.",
+        "Home teams win less often because the crowd makes them nervous.",
+        "Home teams win more only because their pitches are larger.",
+        "The text explains that home teams win more often and gives several reasons, including the crowd.",
+        [
+          "home teams win more often than away teams",
+          "home advantage became smaller in several leagues"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What happened to home advantage in empty stadiums?",
+        "It became smaller in several leagues.",
+        "It became larger in all leagues.",
+        "It disappeared in every league.",
+        "The text says that studies found that home advantage became smaller in several leagues.",
+        "home advantage became smaller in several leagues"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “favor” means…",
+        "treat in a better way.",
+        "treat in a worse way.",
+        "forget about.",
+        "The text says that referees may unconsciously favor the team that the crowd supports, which means that they may treat it in a better way.",
+        "unconsciously favor the team that the crowd supports"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “who” in “referees, who are human” refers to…",
+        "the referees.",
+        "the supporters.",
+        "the away players.",
+        "The sentence says that supporters may influence referees, and the referees are human and may unconsciously favor the home team.",
+        "influence referees, who are human and may unconsciously favor"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which team has the strongest home advantage.",
+        "What the third reason is.",
+        "What travel can do to away teams.",
+        "The text does not say which team has the strongest home advantage. It names the third reason and says what travel can do to away teams.",
+        [
+          "familiarity with the pitch, the climate and local conditions",
+          "away teams may be tired after long journeys and sleep worse"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The crowd matters, but it is not the only factor.",
+        "The crowd is the only real factor at all.",
+        "The crowd has no effect on any match.",
+        "The text says that this supports the idea that the crowd matters, although other factors remain.",
+        "although other factors remain"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The hot hand was called an illusion, but newer work suggests a small effect.",
+        "The hot hand has been proved to be a very large effect.",
+        "The hot hand has been shown to be impossible by every study.",
+        "The text explains that the 1985 study called the hot hand an illusion, but a 2018 reanalysis found a small effect.",
+        [
+          "the hot hand was an illusion",
+          "After correction, the data pointed to a small hot-hand effect"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the 1985 study find about scoring after a hit?",
+        "The chance was not higher than after a miss.",
+        "The chance was much higher than after a miss.",
+        "The chance was zero.",
+        "The text says that the chance of scoring after a hit was not higher than after a miss.",
+        "a player’s chance of scoring after a hit was not higher than after a miss"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “classic” means…",
+        "typical and well known.",
+        "new and unknown.",
+        "very rare.",
+        "The text says that the fallacy was a classic example of a mistake in thinking, which means a typical and well-known example.",
+        "a classic example of a mistake in thinking"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “Every basketball fan has seen it” refers to…",
+        "a player scoring several shots in a row.",
+        "a player missing a free throw.",
+        "a team losing a game.",
+        "The sentence explains after the colon what fans have seen: a player who scores several shots in a row.",
+        "Every basketball fan has seen it: a player scores several shots in a row"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many shots the players took in the 1985 study.",
+        "What Miller and Sanjurjo found in the old method.",
+        "What most researchers accept today.",
+        "The text does not say how many shots the players took. It says what Miller and Sanjurjo found and what most researchers accept today.",
+        [
+          "the old method contained a subtle statistical bias",
+          "streaks may exist but are weaker than fans think"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The question is not fully settled.",
+        "The question was closed in 1985.",
+        "Fans were right about everything.",
+        "The text says that the debate continues.",
+        "the debate continues"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "historically",
+          "over a long period of the past"
+        ],
+        [
+          "supporters",
+          "fans who help a team by cheering"
+        ],
+        [
+          "unconsciously",
+          "without knowing or intending"
+        ],
+        [
+          "familiarity",
+          "good knowledge of something"
+        ],
+        [
+          "motivation",
+          "the reason or desire to do something"
+        ]
+      ],
+      "B": [
+        [
+          "illusion",
+          "something that seems real but is not"
+        ],
+        [
+          "sequences",
+          "series of things that follow each other"
+        ],
+        [
+          "fallacy",
+          "a mistaken belief"
+        ],
+        [
+          "subtle",
+          "small and hard to notice"
+        ],
+        [
+          "bias",
+          "a mistake that pushes results in one direction"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 147,
+    "slug": "unseen-reading-part-147",
+    "theme": "Earth and Moon Cycles",
+    "blurb": "why we have seasons, why the Moon has phases",
+    "texts": {
+      "A": {
+        "title": "Why We Have Seasons",
+        "text": "Many people think that we have summer when the Earth is closer to the Sun and winter when it is farther away. This is a common mistake. In fact, the Earth is closest to the Sun in early January, in the middle of winter in the northern half of the world. The real reason is the tilt of the Earth’s axis. The Earth spins around an imaginary line that is tilted by about 23.5 degrees, and the tilt always points toward the same direction in space while the Earth travels around the Sun in one year. In June, the northern half leans toward the Sun, so the Sun climbs high in the sky, the days are longer and the sunlight is more direct, which heats the ground more. At the same time, the southern half has winter. Six months later, the situation is reversed. Near the equator, the tilt changes the seasons very little, so many tropical countries, such as the Philippines, have mainly a wet and a dry season rather than four seasons."
+      },
+      "B": {
+        "title": "Why the Moon Has Phases",
+        "text": "The Moon does not make its own light. It shines because it reflects sunlight, and at any moment, half of the Moon is lit by the Sun. The phases that we see depend on how much of the lit half faces the Earth. When the Moon is between the Earth and the Sun, the lit half faces away from us, and we see a new moon, which is almost invisible. As the Moon moves in its orbit, a thin crescent appears, then the first quarter, when we see half of the disk, then a gibbous moon and finally the full moon, when the Earth is between the Moon and the Sun and the whole lit face is toward us. After that, the light shrinks again, through the last quarter and the crescent, back to a new moon. The cycle takes about twenty-nine and a half days, which is where the word month comes from. Phases are not caused by the shadow of the Earth. The Earth’s shadow falls on the Moon only in a lunar eclipse."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Seasons come from the Earth’s tilt, not from its distance from the Sun.",
+        "Seasons come from the Sun becoming hotter and colder every year.",
+        "Seasons come from the Moon moving closer to the Earth.",
+        "The text explains that the seasons are caused by the tilt of the Earth’s axis, and not by the Earth’s distance from the Sun.",
+        [
+          "The real reason is the tilt of the Earth’s axis",
+          "This is a common mistake"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "When is the Earth closest to the Sun?",
+        "In early January.",
+        "In June.",
+        "In September.",
+        "The text says that the Earth is closest to the Sun in early January.",
+        "the Earth is closest to the Sun in early January"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “leans toward” means…",
+        "tilts toward.",
+        "moves away from.",
+        "spins around.",
+        "The text says that in June the northern half leans toward the Sun, which means that it tilts toward the Sun.",
+        "the northern half leans toward the Sun"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “when it is farther away” refers to…",
+        "the Earth.",
+        "the Sun.",
+        "summer.",
+        "The sentence says that many people think that we have winter when the Earth is farther away from the Sun.",
+        "winter when it is farther away"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many days a year have equal day and night.",
+        "How big the tilt is.",
+        "Which countries have two main seasons.",
+        "The text does not say how many days a year have equal day and night. It says how big the tilt is and which countries have two main seasons.",
+        [
+          "tilted by about 23.5 degrees",
+          "many tropical countries, such as the Philippines, have mainly a wet and a dry season"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about December in the southern half of the world?",
+        "It is summer there.",
+        "It is winter there.",
+        "It has no seasons at all.",
+        "The text says that in June the southern half has winter, and that six months later the situation is reversed, so December is summer there.",
+        [
+          "At the same time, the southern half has winter",
+          "Six months later, the situation is reversed"
+        ]
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Moon’s phases depend on how much of its lit half faces the Earth.",
+        "The Moon’s phases are caused by the shadow of the Earth.",
+        "The Moon’s phases are caused by clouds passing in front of it.",
+        "The text explains that the phases depend on how much of the lit half of the Moon faces the Earth, and not on the shadow of the Earth.",
+        [
+          "The phases that we see depend on how much of the lit half faces the Earth",
+          "Phases are not caused by the shadow of the Earth"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long does the cycle of phases take?",
+        "About twenty-nine and a half days.",
+        "About seven days of the week.",
+        "About one whole year.",
+        "The text says that the cycle takes about twenty-nine and a half days.",
+        "about twenty-nine and a half days"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “invisible” means…",
+        "very hard to see.",
+        "very easy to see.",
+        "very far away.",
+        "The text says that a new moon is almost invisible, which means very hard to see.",
+        "which is almost invisible"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “It shines because it reflects sunlight” refers to…",
+        "the Moon.",
+        "the Sun.",
+        "the Earth.",
+        "The sentence says that the Moon does not make its own light, and the Moon shines because it reflects sunlight.",
+        "It shines because it reflects sunlight"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How far the Moon is from the Earth.",
+        "What a full moon is.",
+        "Where the word month comes from.",
+        "The text does not say how far the Moon is from the Earth. It explains what a full moon is and where the word month comes from.",
+        [
+          "when the Earth is between the Moon and the Sun and the whole lit face is toward us",
+          "which is where the word month comes from"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A lunar eclipse is different from the phases.",
+        "Lunar eclipses happen every night.",
+        "The phases are a kind of eclipse.",
+        "The text says that phases are not caused by the Earth’s shadow, and that the shadow falls on the Moon only in a lunar eclipse.",
+        "The Earth’s shadow falls on the Moon only in a lunar eclipse."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "imaginary",
+          "existing only in the mind, not real"
+        ],
+        [
+          "tilted",
+          "leaning to one side"
+        ],
+        [
+          "direct",
+          "straight, not at an angle"
+        ],
+        [
+          "reversed",
+          "turned the opposite way"
+        ],
+        [
+          "tropical",
+          "relating to the hot regions near the equator"
+        ]
+      ],
+      "B": [
+        [
+          "reflects",
+          "sends light back from a surface"
+        ],
+        [
+          "crescent",
+          "a thin curved shape"
+        ],
+        [
+          "disk",
+          "a flat round shape"
+        ],
+        [
+          "gibbous",
+          "more than half, but not all, of the Moon lit"
+        ],
+        [
+          "shrinks",
+          "becomes smaller"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 148,
+    "slug": "unseen-reading-part-148",
+    "theme": "The Giant Planets",
+    "blurb": "Jupiter and its Great Red Spot, Saturn and its rings",
+    "texts": {
+      "A": {
+        "title": "Jupiter and Its Great Red Spot",
+        "text": "Jupiter is the largest planet of the Solar System: more than eleven Earths could fit across its width, and its mass is more than twice that of all the other planets together. It is a gas giant, which means that it has no solid surface like the Earth. Its atmosphere is made mostly of hydrogen and helium, and it shows colored bands of clouds, because strong winds blow in opposite directions at different latitudes. Jupiter’s most famous feature is the Great Red Spot, a giant storm that has been seen for at least one hundred and fifty years, and possibly longer. It is an anticyclone, a huge area of high pressure that turns counterclockwise, with winds of more than four hundred kilometers an hour. At one time it was wide enough to hold about three Earths. Today it is much smaller, and it is slowly changing shape. Scientists do not yet know exactly why it is shrinking, or whether it will disappear."
+      },
+      "B": {
+        "title": "Saturn and Its Rings",
+        "text": "Saturn is the second-largest planet, and it is famous for its rings, which are the most spectacular in the Solar System. Galileo saw them in 1610 with an early telescope, but he thought that they were strange arms or moons. Later, astronomers understood that the rings are made of countless pieces of ice, from tiny grains of dust to blocks as big as houses, all orbiting Saturn. The ice is mostly water. From one edge to the other, the main rings are about 280,000 kilometers wide, but they are extremely thin, in most places only about ten meters thick, which is like a sheet of paper made as wide as a city. The rings reflect a lot of sunlight, so they are bright and easy to see even in a small telescope. Their origin is a mystery. Some scientists think that they are young, perhaps only a few hundred million years old, and that they formed when a moon or a comet was torn apart. Others think that they are as old as the planet. The rings may also be slowly falling into Saturn."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Jupiter is a huge gas giant with a giant storm that is slowly shrinking.",
+        "Jupiter is a small rocky planet with a solid surface.",
+        "Jupiter is a planet that has no atmosphere and no storms.",
+        "The text describes Jupiter as the largest planet, a gas giant with a great storm that is getting smaller.",
+        [
+          "Jupiter is the largest planet of the Solar System",
+          "Today it is much smaller"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is Jupiter’s atmosphere mostly made of?",
+        "Hydrogen and helium.",
+        "Oxygen and nitrogen.",
+        "Carbon dioxide and water.",
+        "The text says that Jupiter’s atmosphere is made mostly of hydrogen and helium.",
+        "made mostly of hydrogen and helium"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “mass” means…",
+        "the amount of matter.",
+        "the length of its day.",
+        "the color of its clouds.",
+        "The text says that Jupiter’s mass is more than twice that of all the other planets together, which means that it has that much matter.",
+        "its mass is more than twice that of all the other planets together"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “whether it will disappear” refers to…",
+        "the Great Red Spot.",
+        "Jupiter.",
+        "the atmosphere.",
+        "The sentence says that scientists do not know why the Great Red Spot is shrinking, or whether the Spot will disappear.",
+        "why it is shrinking, or whether it will disappear"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many moons Jupiter has.",
+        "What kind of planet Jupiter is.",
+        "How fast the winds in the storm blow.",
+        "The text does not say how many moons Jupiter has. It says what kind of planet Jupiter is and how fast the winds in the storm blow.",
+        [
+          "It is a gas giant",
+          "winds of more than four hundred kilometers an hour"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The future of the Great Red Spot is uncertain.",
+        "The Great Red Spot will certainly disappear.",
+        "The Great Red Spot will certainly grow again.",
+        "The text says that scientists do not yet know exactly why the Spot is shrinking, or whether it will disappear.",
+        "Scientists do not yet know exactly why it is shrinking"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Saturn’s rings are made of ice and are thin, bright and of uncertain age.",
+        "Saturn’s rings are made of solid rock and are as old as the Sun.",
+        "Saturn’s rings are solid sheets that Galileo saw as moons.",
+        "The text explains that Saturn’s rings are made of ice, are very thin and bright, and that their origin is a mystery.",
+        [
+          "the rings are made of countless pieces of ice",
+          "Their origin is a mystery"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How thick are the rings in most places?",
+        "About ten meters.",
+        "About ten kilometers.",
+        "About ten centimeters.",
+        "The text says that in most places the rings are only about ten meters thick.",
+        "in most places only about ten meters thick"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “torn apart” means…",
+        "broken into pieces.",
+        "joined together.",
+        "moved away.",
+        "The text says that a moon or a comet may have been torn apart, which means broken into pieces.",
+        "a moon or a comet was torn apart"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “that they formed” refers to…",
+        "the rings.",
+        "the scientists.",
+        "the planets.",
+        "The sentence says that some scientists think that the rings are young, and that the rings formed when a moon or comet was torn apart.",
+        "Some scientists think that they are young, perhaps only a few hundred million years old, and that they formed"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many rings Saturn has.",
+        "Who saw the rings in 1610.",
+        "What the ice is mostly made of.",
+        "The text does not say how many rings Saturn has. It says who saw the rings in 1610 and what the ice is mostly made of.",
+        [
+          "Galileo saw them in 1610",
+          "The ice is mostly water"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The rings may not last forever.",
+        "The rings will always stay the same.",
+        "The rings are growing larger.",
+        "The text says that the rings may be slowly falling into Saturn.",
+        "The rings may also be slowly falling into Saturn."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "atmosphere",
+          "the layer of gases around a planet"
+        ],
+        [
+          "bands",
+          "long, narrow strips"
+        ],
+        [
+          "feature",
+          "an important or noticeable part"
+        ],
+        [
+          "counterclockwise",
+          "in the direction opposite to the hands of a clock"
+        ],
+        [
+          "disappear",
+          "to stop being seen"
+        ]
+      ],
+      "B": [
+        [
+          "spectacular",
+          "very impressive to see"
+        ],
+        [
+          "countless",
+          "too many to count"
+        ],
+        [
+          "grains",
+          "very small pieces"
+        ],
+        [
+          "orbiting",
+          "moving around a planet in a path"
+        ],
+        [
+          "origin",
+          "the place or time where something began"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 149,
+    "slug": "unseen-reading-part-149",
+    "theme": "Comets and Asteroids",
+    "blurb": "comets and their tails, the asteroid that ended the dinosaurs",
+    "texts": {
+      "A": {
+        "title": "Comets and Their Tails",
+        "text": "A comet is a ball of ice, dust and rock, often called a dirty snowball, that is usually only a few kilometers wide. Most comets spend their lives in the cold outer Solar System, far beyond Neptune. Sometimes the pull of a planet or a passing star sends a comet on a long path toward the Sun. As it comes closer, the Sun’s heat turns the ice on its surface directly into gas, which carries dust with it. This creates a huge glowing cloud around the comet, called the coma, and one or two tails. The dust tail is usually curved and white or yellow, and the ion tail is thin, straight and bluish. Both tails point away from the Sun, because the Sun’s light and the solar wind push the material back, so a comet moving away from the Sun travels tail-first. A tail can be millions of kilometers long. The best-known comet, Halley’s Comet, returns about every seventy-six years, and was last seen in 1986. Its next visit is expected in 2061."
+      },
+      "B": {
+        "title": "The Asteroid That Ended the Dinosaurs",
+        "text": "About sixty-six million years ago, an asteroid about ten kilometers wide hit the Earth near what is now the Yucatán Peninsula in Mexico. The impact made a crater about one hundred and eighty kilometers wide, called Chicxulub. The energy was billions of times greater than an atomic bomb. A giant fireball, huge waves, wildfires and enormous clouds of dust and sulfur changed the climate. The sunlight was blocked for months or longer, plants died, and food chains collapsed. About three quarters of all species disappeared, including all the large dinosaurs, in what is called a mass extinction. Birds, which descended from small dinosaurs, survived, and so did small mammals, which later spread. Today, astronomers search for asteroids that could threaten the Earth. In 2022, NASA’s DART spacecraft hit a small asteroid, Dimorphos, on purpose. The impact made the asteroid’s orbit shorter by about thirty-two minutes, which showed that a spacecraft can change the path of an asteroid. No known large asteroid is expected to hit the Earth in the next hundred years."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A comet grows a glowing cloud and tails when it comes near the Sun.",
+        "A comet is a burning rock that makes its tail by moving fast.",
+        "A comet is a small planet that always faces the Sun.",
+        "The text explains that a comet is a ball of ice, dust and rock, and that the Sun’s heat and wind create its cloud and tails.",
+        [
+          "A comet is a ball of ice, dust and rock",
+          "Both tails point away from the Sun"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which way do a comet’s tails point?",
+        "Away from the Sun.",
+        "Toward the Sun.",
+        "In the direction of travel.",
+        "The text says that both tails point away from the Sun.",
+        "Both tails point away from the Sun"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “passing” in “a passing star” means…",
+        "moving by.",
+        "staying still.",
+        "disappearing.",
+        "The text says that the pull of a passing star can send a comet toward the Sun, which means a star that is moving by.",
+        "a passing star"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “As it comes closer” refers to…",
+        "the comet.",
+        "the Sun.",
+        "the planet.",
+        "The sentence says that as the comet comes closer to the Sun, the Sun’s heat turns the ice on its surface into gas.",
+        "As it comes closer, the Sun’s heat turns the ice"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many comets have been discovered.",
+        "When Halley’s Comet was last seen.",
+        "What the coma is.",
+        "The text does not say how many comets have been discovered. It says when Halley’s Comet was last seen and what the coma is.",
+        [
+          "was last seen in 1986",
+          "a huge glowing cloud around the comet, called the coma"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the sentence about traveling tail-first suggest?",
+        "A comet’s tail is pushed by the Sun, not left behind.",
+        "A comet’s tail always shows its direction of travel.",
+        "A comet’s tail is made by its engines.",
+        "The text says that a comet moving away from the Sun travels tail-first, because the Sun’s light and wind push the material back.",
+        "so a comet moving away from the Sun travels tail-first"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "An asteroid ended the dinosaurs, and now we can test how to deflect asteroids.",
+        "A volcano ended the dinosaurs, and nothing can be done about it.",
+        "An asteroid ended the dinosaurs, and no asteroid has been found since.",
+        "The text explains the impact that ended the dinosaurs and the DART test that showed that a spacecraft can change an asteroid’s path.",
+        [
+          "an asteroid about ten kilometers wide hit the Earth",
+          "a spacecraft can change the path of an asteroid"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How wide was the Chicxulub crater?",
+        "About 180 kilometers.",
+        "About 18 kilometers.",
+        "About 1,800 kilometers.",
+        "The text says that the crater was about one hundred and eighty kilometers wide.",
+        "a crater about one hundred and eighty kilometers wide"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “collapsed” means…",
+        "broke down completely.",
+        "became stronger.",
+        "were built.",
+        "The text says that after plants died, food chains collapsed, which means that they broke down completely.",
+        "food chains collapsed"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which showed that a spacecraft can change the path” refers to…",
+        "the change in the orbit.",
+        "the size of the asteroid.",
+        "the launch of the spacecraft.",
+        "The sentence says that the impact made the orbit shorter by thirty-two minutes, and this change showed that a spacecraft can change the path of an asteroid.",
+        "The impact made the asteroid’s orbit shorter by about thirty-two minutes, which showed that a spacecraft can change the path of an asteroid"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many asteroids have been found.",
+        "Which animals survived.",
+        "What DART did in 2022.",
+        "The text does not say how many asteroids have been found. It says which animals survived and what DART did in 2022.",
+        [
+          "Birds, which descended from small dinosaurs, survived",
+          "NASA’s DART spacecraft hit a small asteroid, Dimorphos, on purpose"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the DART test suggest?",
+        "Humans might one day protect the Earth from an asteroid.",
+        "Humans can already destroy any asteroid.",
+        "Humans can never affect asteroids.",
+        "The text says that the test showed that a spacecraft can change the path of an asteroid.",
+        "a spacecraft can change the path of an asteroid"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "outer",
+          "farthest from the center"
+        ],
+        [
+          "surface",
+          "the outside layer of something"
+        ],
+        [
+          "glowing",
+          "giving out a steady light"
+        ],
+        [
+          "curved",
+          "bent, not straight"
+        ],
+        [
+          "expected",
+          "thought likely to happen"
+        ]
+      ],
+      "B": [
+        [
+          "crater",
+          "a large round hole in the ground"
+        ],
+        [
+          "enormous",
+          "extremely large"
+        ],
+        [
+          "extinction",
+          "when a kind of living thing disappears completely"
+        ],
+        [
+          "descended",
+          "came from earlier forms through a line of ancestors"
+        ],
+        [
+          "threaten",
+          "to be a danger to"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 150,
+    "slug": "unseen-reading-part-150",
+    "theme": "Our Galaxy",
+    "blurb": "the Milky Way, the coming collision with Andromeda",
+    "texts": {
+      "A": {
+        "title": "The Milky Way",
+        "text": "The Milky Way is the galaxy that contains the Sun and the Earth. A galaxy is a huge system of stars, gas, dust and dark matter held together by gravity. The Milky Way holds somewhere between one hundred and four hundred billion stars, and it is about one hundred thousand light-years across. From above, it would look like a spiral, with a bright bulge in the center and several curved arms. The Sun is in one of the smaller arms, about twenty-six thousand light-years from the center, and it takes about two hundred and thirty million years to go once around. From the inside, we see the galaxy as a faint pale band of light across the night sky. The word galaxy comes from the Greek word for milk. At the center of the Milky Way there is a supermassive black hole called Sagittarius A*, with a mass about four million times that of the Sun. In 2022, astronomers published the first image of it."
+      },
+      "B": {
+        "title": "The Coming Collision With Andromeda",
+        "text": "The nearest large galaxy to the Milky Way is the Andromeda Galaxy, about two and a half million light-years away. On a dark night, it can be seen without a telescope as a faint smudge in the constellation Andromeda. Andromeda is about the same size as the Milky Way, or slightly larger, and it contains about one trillion stars. Measurements with the Hubble Space Telescope and the European Gaia mission show that Andromeda is moving toward the Milky Way at about one hundred and ten kilometers every second. Astronomers have long predicted that the two galaxies will collide and merge in about four to five billion years, to form a new, larger elliptical galaxy that people have jokingly called Milkomeda. More recent studies suggest that the timing and even the result are less certain than once thought: the collision could happen later, or possibly not at all in the next ten billion years. Even if the galaxies merge, the stars are so far apart that few stars would actually crash into each other."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Milky Way is our galaxy, a huge spiral with a black hole in the center.",
+        "The Milky Way is a single star that we see as a pale band.",
+        "The Milky Way is a small cloud of gas near the Sun.",
+        "The text describes the Milky Way as the galaxy that contains the Sun, a huge spiral with a supermassive black hole in the center.",
+        [
+          "The Milky Way is the galaxy that contains the Sun and the Earth",
+          "At the center of the Milky Way there is a supermassive black hole"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long does the Sun take to go once around the galaxy?",
+        "About 230 million years.",
+        "About 230 years.",
+        "About 230 days.",
+        "The text says that the Sun takes about two hundred and thirty million years to go once around.",
+        "it takes about two hundred and thirty million years to go once around"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “held together” means…",
+        "kept joined as one group.",
+        "pushed far apart.",
+        "made to spin faster.",
+        "The text says that a galaxy is held together by gravity, which means that gravity keeps it joined as one group.",
+        "held together by gravity"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “the first image of it” refers to…",
+        "the supermassive black hole.",
+        "the Milky Way’s arms.",
+        "the Sun.",
+        "The sentence says that at the center of the Milky Way there is a supermassive black hole, and astronomers published the first image of the black hole in 2022.",
+        "In 2022, astronomers published the first image of it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many galaxies the universe has.",
+        "Where the Sun is in the Milky Way.",
+        "What the word galaxy comes from.",
+        "The text does not say how many galaxies the universe has. It says where the Sun is in the Milky Way and where the word galaxy comes from.",
+        [
+          "The Sun is in one of the smaller arms",
+          "comes from the Greek word for milk"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do we see the Milky Way as a band across the sky?",
+        "We are inside the galaxy and look along its disk.",
+        "The galaxy is a long, thin cloud near the Earth.",
+        "The galaxy is shaped like a ribbon.",
+        "The text says that from the inside we see the galaxy as a faint pale band of light across the night sky.",
+        "From the inside, we see the galaxy as a faint pale band of light across the night sky"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Andromeda is approaching us, but a collision is not certain.",
+        "Andromeda is moving away and will never come near us.",
+        "Andromeda is much smaller than the Milky Way and will disappear.",
+        "The text explains that Andromeda is moving toward the Milky Way, but that newer studies are less certain about the timing and result of a collision.",
+        [
+          "Andromeda is moving toward the Milky Way",
+          "the timing and even the result are less certain than once thought"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How far away is Andromeda?",
+        "About two and a half million light-years.",
+        "About twenty-five light-years.",
+        "About two and a half billion light-years.",
+        "The text says that Andromeda is about two and a half million light-years away.",
+        "about two and a half million light-years away"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “jokingly” means…",
+        "in a playful way.",
+        "in a serious way.",
+        "in a secret way.",
+        "The text says that people have jokingly called the new galaxy Milkomeda, which means in a playful way.",
+        "people have jokingly called Milkomeda"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it can be seen without a telescope” refers to…",
+        "the Andromeda Galaxy.",
+        "the Milky Way.",
+        "the constellation.",
+        "The sentence says that on a dark night the Andromeda Galaxy can be seen without a telescope.",
+        "On a dark night, it can be seen without a telescope"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first saw Andromeda.",
+        "How many stars Andromeda contains.",
+        "What the two galaxies might form.",
+        "The text does not say who first saw Andromeda. It says how many stars it contains and what the two galaxies might form.",
+        [
+          "it contains about one trillion stars",
+          "to form a new, larger elliptical galaxy"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence about the stars being far apart suggest?",
+        "Most stars would not hit each other.",
+        "Most stars would crash into each other.",
+        "The Earth would be destroyed at once.",
+        "The text says that the stars are so far apart that few stars would actually crash into each other.",
+        "few stars would actually crash into each other"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "galaxy",
+          "a huge group of stars, gas and dust"
+        ],
+        [
+          "spiral",
+          "a shape that curves around a center"
+        ],
+        [
+          "bulge",
+          "a round part that sticks out"
+        ],
+        [
+          "faint",
+          "not strong or clear"
+        ],
+        [
+          "supermassive",
+          "extremely heavy and huge"
+        ]
+      ],
+      "B": [
+        [
+          "smudge",
+          "a blurry mark"
+        ],
+        [
+          "constellation",
+          "a group of stars that makes a pattern"
+        ],
+        [
+          "merge",
+          "to join together into one"
+        ],
+        [
+          "elliptical",
+          "shaped like a flattened circle"
+        ],
+        [
+          "certain",
+          "sure or definite"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 151,
+    "slug": "unseen-reading-part-151",
+    "theme": "The Space Race",
+    "blurb": "Sputnik and Gagarin, Apollo 11",
+    "texts": {
+      "A": {
+        "title": "Sputnik and Gagarin",
+        "text": "The space age began on 4 October 1957, when the Soviet Union launched Sputnik 1, the first artificial satellite. It was a metal sphere about the size of a beach ball, and it sent simple radio beeps that people could hear around the world. The launch surprised many in the United States and led to a “space race” between the two countries, with each trying to show its technology. In November 1957, a dog named Laika became the first animal to orbit the Earth. On 12 April 1961, Yuri Gagarin, a Soviet pilot, became the first person in space. His spacecraft, Vostok 1, circled the Earth once in about 108 minutes, and Gagarin landed by parachute after ejecting from the capsule, as the rules of the time required. He said that the Earth looked blue and very beautiful. Less than a month later, on 5 May, the American Alan Shepard flew into space for a short flight. In 1963, Valentina Tereshkova became the first woman in space."
+      },
+      "B": {
+        "title": "Apollo 11: The First People on the Moon",
+        "text": "On 16 July 1969, a giant Saturn V rocket launched Apollo 11 from Florida with three astronauts: Neil Armstrong, Buzz Aldrin and Michael Collins. The spacecraft traveled for about three days to reach lunar orbit. Then Armstrong and Aldrin entered the lunar module, called Eagle, and flew down to the Moon, while Collins stayed in orbit in the command module, Columbia. At the last moment, Armstrong took manual control to avoid a field of large rocks, and Eagle landed with very little fuel left, on 20 July. When Armstrong stepped onto the surface, he said, “That’s one small step for man, one giant leap for mankind.” The two men spent about two and a half hours outside, collected about twenty-one kilograms of rock and soil, placed scientific instruments and planted a flag. Hundreds of millions of people around the world watched on television. After about twenty-one hours on the Moon, Eagle returned to orbit, and on 24 July the crew splashed down safely in the Pacific Ocean."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sputnik and Gagarin opened the space age and started the space race.",
+        "Sputnik and Gagarin were both first flights to the Moon.",
+        "Sputnik and Gagarin were American missions to Mars.",
+        "The text explains that Sputnik began the space age, led to a space race, and that Gagarin became the first person in space.",
+        [
+          "The space age began on 4 October 1957",
+          "Yuri Gagarin, a Soviet pilot, became the first person in space"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long did Vostok 1 take to circle the Earth once?",
+        "About 108 minutes.",
+        "About 108 seconds.",
+        "About 108 hours.",
+        "The text says that Vostok 1 circled the Earth once in about 108 minutes.",
+        "circled the Earth once in about 108 minutes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “led to” means…",
+        "caused.",
+        "stopped.",
+        "followed.",
+        "The text says that the launch led to a space race, which means that it caused a space race.",
+        "led to a “space race”"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It was a metal sphere” refers to…",
+        "Sputnik 1.",
+        "the Soviet Union.",
+        "the launch.",
+        "The sentence says that the Soviet Union launched Sputnik 1, and Sputnik 1 was a metal sphere about the size of a beach ball.",
+        "Sputnik 1, the first artificial satellite. It was a metal sphere"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much Sputnik 1 weighed.",
+        "Which animal first orbited the Earth.",
+        "Who was the first woman in space.",
+        "The text does not say how much Sputnik 1 weighed. It says which animal first orbited the Earth and who was the first woman in space.",
+        [
+          "a dog named Laika became the first animal to orbit the Earth",
+          "Valentina Tereshkova became the first woman in space"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the space race?",
+        "Both countries wanted to show their technology.",
+        "Both countries refused to compete.",
+        "Only one country was interested in space.",
+        "The text says that the launch led to a space race, with each country trying to show its technology.",
+        "with each trying to show its technology"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Apollo 11 took the first people to walk on the Moon and returned them safely.",
+        "Apollo 11 took the first animals to walk on the Moon and lost them.",
+        "Apollo 11 took astronauts to the Moon, but nobody left the spacecraft.",
+        "The text describes how Apollo 11 took three astronauts to the Moon, two of them walked on it, and the crew returned safely.",
+        [
+          "Neil Armstrong, Buzz Aldrin and Michael Collins",
+          "the crew splashed down safely in the Pacific Ocean"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Who stayed in orbit while two astronauts landed?",
+        "Michael Collins.",
+        "Buzz Aldrin.",
+        "Neil Armstrong.",
+        "The text says that Collins stayed in orbit in the command module.",
+        "while Collins stayed in orbit in the command module"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “planted” means…",
+        "fixed firmly in place.",
+        "thrown away.",
+        "painted.",
+        "The text says that the astronauts planted a flag, which means that they fixed it firmly in place.",
+        "planted a flag"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “he” in “he said” refers to…",
+        "Neil Armstrong.",
+        "Buzz Aldrin.",
+        "Michael Collins.",
+        "The sentence says that when Armstrong stepped onto the surface, Armstrong said the famous words.",
+        "When Armstrong stepped onto the surface, he said"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the astronauts ate on the Moon.",
+        "How long the astronauts stayed outside.",
+        "What Armstrong did at the last moment.",
+        "The text does not say what the astronauts ate on the Moon. It says how long they stayed outside and what Armstrong did at the last moment.",
+        [
+          "spent about two and a half hours outside",
+          "Armstrong took manual control to avoid a field of large rocks"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the landing with little fuel suggest?",
+        "The landing was risky.",
+        "The landing was easy and planned.",
+        "The landing happened by accident.",
+        "The text says that Eagle landed with very little fuel left, which suggests that the landing was risky.",
+        "Eagle landed with very little fuel left"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "artificial",
+          "made by people, not natural"
+        ],
+        [
+          "sphere",
+          "a round shape like a ball"
+        ],
+        [
+          "parachute",
+          "a large piece of cloth that slows a fall"
+        ],
+        [
+          "capsule",
+          "a small closed space for a person in a spacecraft"
+        ],
+        [
+          "orbit",
+          "to travel around a planet"
+        ]
+      ],
+      "B": [
+        [
+          "lunar",
+          "related to the Moon"
+        ],
+        [
+          "module",
+          "a separate unit of a spacecraft"
+        ],
+        [
+          "manual",
+          "done by a person, not by a machine"
+        ],
+        [
+          "instruments",
+          "tools used for measuring or testing"
+        ],
+        [
+          "splashed",
+          "landed in water with force"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 152,
+    "slug": "unseen-reading-part-152",
+    "theme": "Mars",
+    "blurb": "the Mars rovers, the search for life on Mars",
+    "texts": {
+      "A": {
+        "title": "The Mars Rovers",
+        "text": "Rovers are robotic vehicles that explore the surface of Mars. The first, Sojourner, landed in 1997 as part of the Mars Pathfinder mission. It was the size of a microwave oven and moved only a few meters from its lander. In 2004, two larger rovers, Spirit and Opportunity, arrived. They were meant to work for ninety days, but Spirit worked for six years and Opportunity for almost fifteen. They found clear evidence that water once shaped the surface. In 2012, Curiosity, the size of a small car, landed in Gale Crater. It has a drill, a laser and a small laboratory that analyzes rocks and soil, and it found that the area once had conditions that could have supported microbial life. In 2021, Perseverance landed in Jezero Crater, where a lake once existed. It carries a helicopter named Ingenuity, which made the first powered flight on another planet and completed dozens of flights before it was retired. Rovers are controlled from Earth with a delay of several minutes, so they must be able to make some decisions alone."
+      },
+      "B": {
+        "title": "The Search for Life on Mars",
+        "text": "Is there, or was there, life on Mars? Today, the surface of Mars is cold, dry and exposed to strong radiation, so scientists think that life is unlikely there now. But billions of years ago, Mars was warmer and wetter, with rivers, lakes and perhaps an ocean. Life on Earth began early, so it is possible that microbes appeared on Mars too. Perseverance is searching for signs of ancient life in Jezero Crater, where a river once built a delta, a place where mud and sediment collect and where, on Earth, remains of life can be preserved. The rover studies rocks with cameras, lasers and instruments, and it stores promising samples in sealed tubes. Planned missions would bring these samples to Earth for study in laboratories, but the plans are being reviewed because of cost and schedule, so the timing is uncertain. Some rocks have shown features that scientists call potential biosignatures, which could be signs of life, although non-living processes can also explain them. Scientists are careful: extraordinary claims need extraordinary evidence."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Mars rovers have shown that Mars once had water and possible habitats.",
+        "Mars rovers have shown that Mars has no water and never had any.",
+        "Mars rovers have carried astronauts across the surface of Mars.",
+        "The text explains that the rovers have explored Mars and found evidence that water once shaped the surface.",
+        [
+          "Rovers are robotic vehicles that explore the surface of Mars",
+          "evidence that water once shaped the surface"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long did Opportunity work?",
+        "Almost fifteen years.",
+        "Almost fifteen days.",
+        "Almost fifteen months.",
+        "The text says that Opportunity worked for almost fifteen years.",
+        "Opportunity for almost fifteen"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “retired” means…",
+        "taken out of service.",
+        "sent back to Earth.",
+        "given a new name.",
+        "The text says that the helicopter completed dozens of flights before it was retired, which means that it was taken out of service.",
+        "before it was retired"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It carries a helicopter” refers to…",
+        "Perseverance.",
+        "Curiosity.",
+        "Jezero Crater.",
+        "The sentence says that Perseverance landed in Jezero Crater, and Perseverance carries a helicopter named Ingenuity.",
+        "Perseverance landed in Jezero Crater, where a lake once existed. It carries a helicopter"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much each rover cost.",
+        "How big Sojourner was.",
+        "What Curiosity carries.",
+        "The text does not say how much each rover cost. It says how big Sojourner was and what Curiosity carries.",
+        [
+          "It was the size of a microwave oven",
+          "It has a drill, a laser and a small laboratory"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about the rovers?",
+        "They must work on their own for part of the time.",
+        "They are driven in real time from Earth.",
+        "They never make decisions.",
+        "The text says that because of the delay, rovers must be able to make some decisions alone.",
+        "they must be able to make some decisions alone"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Scientists look for ancient life on Mars, but there is no proof yet.",
+        "Scientists have proved that life exists on Mars today.",
+        "Scientists have stopped searching for life on Mars.",
+        "The text explains that Perseverance is searching for signs of ancient life, but that scientists are careful and no proof has been found.",
+        [
+          "Perseverance is searching for signs of ancient life in Jezero Crater",
+          "Scientists are careful: extraordinary claims need extraordinary evidence"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What was Mars like billions of years ago?",
+        "Warmer and wetter, with rivers and lakes.",
+        "Colder and drier than today.",
+        "Covered only by thick ice.",
+        "The text says that billions of years ago Mars was warmer and wetter, with rivers, lakes and perhaps an ocean.",
+        "Mars was warmer and wetter, with rivers, lakes and perhaps an ocean"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “exposed to” means…",
+        "not protected from.",
+        "very far from.",
+        "used to.",
+        "The text says that the surface is exposed to strong radiation, which means that it is not protected from it.",
+        "exposed to strong radiation"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “can also explain them” refers to…",
+        "the features in the rocks.",
+        "the sealed tubes.",
+        "the laboratories.",
+        "The sentence says that some rocks have shown features called potential biosignatures, and non-living processes can also explain these features.",
+        "Some rocks have shown features that scientists call potential biosignatures, which could be signs of life, although non-living processes can also explain them"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many samples Perseverance has stored in total.",
+        "Where the rover is searching.",
+        "Why the timing of the sample return is uncertain.",
+        "The text does not say how many samples Perseverance has stored. It says where the rover is searching and why the timing is uncertain.",
+        [
+          "in Jezero Crater",
+          "because of cost and schedule"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about scientists?",
+        "They want strong proof before claiming life.",
+        "They already claim that life exists.",
+        "They do not trust their instruments.",
+        "The text says that extraordinary claims need extraordinary evidence, which suggests that scientists want strong proof.",
+        "extraordinary claims need extraordinary evidence"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "robotic",
+          "operated by a robot or machine"
+        ],
+        [
+          "lander",
+          "a spacecraft that lands on a planet"
+        ],
+        [
+          "laser",
+          "a very narrow, strong beam of light"
+        ],
+        [
+          "microbial",
+          "relating to tiny living things"
+        ],
+        [
+          "delay",
+          "a period of waiting"
+        ]
+      ],
+      "B": [
+        [
+          "radiation",
+          "energy that travels in rays or waves"
+        ],
+        [
+          "microbes",
+          "very small living things"
+        ],
+        [
+          "delta",
+          "land formed where a river meets a lake or sea"
+        ],
+        [
+          "sediment",
+          "small pieces of rock and mud carried by water"
+        ],
+        [
+          "promising",
+          "showing signs of being good or successful"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 153,
+    "slug": "unseen-reading-part-153",
+    "theme": "The Whole Universe",
+    "blurb": "how we know about the Big Bang, dark matter and dark energy",
+    "texts": {
+      "A": {
+        "title": "How We Know About the Big Bang",
+        "text": "The Big Bang theory says that the universe began about 13.8 billion years ago from an extremely hot and dense state, and that it has been expanding ever since. The name is misleading: it was not an explosion in space, but an expansion of space itself. Two main observations support the theory. The first came in the 1920s. The astronomer Edwin Hubble, using the work of Vesto Slipher and Henrietta Leavitt, found that distant galaxies are moving away from us, and that the farther a galaxy is, the faster it recedes. This fits an expanding universe, like dots on a balloon that is being blown up. The second is the cosmic microwave background, a faint glow of radiation that fills the whole sky, discovered by accident in 1965 by Arno Penzias and Robert Wilson. It is the afterglow of the young universe, when it cooled enough for light to travel freely. The theory also predicts the right amounts of hydrogen and helium that we see in the oldest stars."
+      },
+      "B": {
+        "title": "Dark Matter and Dark Energy",
+        "text": "When astronomers add up everything that we can see in the universe, the stars, gas and planets, they find that it is not enough to explain how the universe behaves. Galaxies spin so fast that they should fly apart if only visible matter held them together. In the 1970s, Vera Rubin measured the speeds of stars in galaxies and found this problem clearly. The most popular explanation is dark matter, an invisible substance that has gravity but does not give out or absorb light. In the 1990s, observations of distant exploding stars showed that the expansion of the universe is speeding up, not slowing down. Scientists use the name dark energy for whatever causes this acceleration. According to current measurements, ordinary matter makes up only about five percent of the universe, dark matter about twenty-seven percent and dark energy about sixty-eight percent. These names show that we do not know what they are. Some scientists look for new particles in underground laboratories, and others test whether gravity itself needs to be changed. This is one of the biggest open questions in science."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Big Bang theory is supported by two main observations.",
+        "The Big Bang theory is only a guess with no observations.",
+        "The Big Bang theory says that space exploded into an empty room.",
+        "The text explains that two main observations, the movement of galaxies and the background glow, support the Big Bang theory.",
+        [
+          "Two main observations support the theory",
+          "it was not an explosion in space, but an expansion of space itself"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did Hubble find about distant galaxies?",
+        "They move away, and farther ones move faster.",
+        "They move toward us, and farther ones move slower.",
+        "They stay still, and nearer ones move faster.",
+        "The text says that distant galaxies are moving away from us, and that the farther a galaxy is, the faster it recedes.",
+        "the farther a galaxy is, the faster it recedes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “misleading” means…",
+        "giving a wrong idea.",
+        "giving a clear idea.",
+        "giving a funny idea.",
+        "The text says that the name Big Bang is misleading, which means that it gives a wrong idea, because it was not an explosion in space.",
+        "The name is misleading"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It is the afterglow” refers to…",
+        "the cosmic microwave background.",
+        "the balloon that is blown up.",
+        "the accident of the discovery.",
+        "The sentence before describes the cosmic microwave background, and the background is the afterglow of the young universe.",
+        "discovered by accident in 1965 by Arno Penzias and Robert Wilson. It is the afterglow"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many galaxies Hubble measured.",
+        "Who discovered the background radiation.",
+        "What the balloon comparison shows.",
+        "The text does not say how many galaxies Hubble measured. It says who discovered the background radiation and what the balloon comparison shows.",
+        [
+          "Arno Penzias and Robert Wilson",
+          "like dots on a balloon that is being blown up"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the balloon comparison suggest?",
+        "Space itself expands, carrying galaxies apart.",
+        "Galaxies are moving through a fixed space.",
+        "The universe is a real balloon.",
+        "The text compares the galaxies to dots on a balloon that is being blown up, which suggests that space itself expands.",
+        "like dots on a balloon that is being blown up"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Dark matter and dark energy are unknown, yet they make up most of the universe.",
+        "Dark matter and dark energy are visible, and they make up a small part.",
+        "Dark matter and dark energy were fully explained in the 1970s.",
+        "The text explains that visible matter is not enough to explain the universe, so scientists use the names dark matter and dark energy for things that they do not understand.",
+        [
+          "it is not enough to explain how the universe behaves",
+          "This is one of the biggest open questions in science"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "About what share of the universe is ordinary matter?",
+        "About five percent.",
+        "About fifty percent.",
+        "About ninety-five percent.",
+        "The text says that ordinary matter makes up only about five percent of the universe.",
+        "ordinary matter makes up only about five percent of the universe"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fly apart” means…",
+        "break apart quickly.",
+        "grow together.",
+        "turn off.",
+        "The text says that galaxies should fly apart if only visible matter held them together, which means that they should break apart quickly.",
+        "they should fly apart"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “what they are” refers to…",
+        "dark matter and dark energy.",
+        "stars and planets.",
+        "scientists.",
+        "The sentence says that the names dark matter and dark energy show that we do not know what these things are.",
+        "These names show that we do not know what they are"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first named dark matter.",
+        "What Vera Rubin measured.",
+        "What some scientists look for in underground laboratories.",
+        "The text does not say who first named dark matter. It says what Vera Rubin measured and what some scientists look for underground.",
+        [
+          "Vera Rubin measured the speeds of stars in galaxies",
+          "look for new particles in underground laboratories"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Science still has major unanswered questions.",
+        "Science has answered all major questions.",
+        "Science is no longer studying the universe.",
+        "The text says that this is one of the biggest open questions in science.",
+        "one of the biggest open questions in science"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "dense",
+          "closely packed together"
+        ],
+        [
+          "expanding",
+          "growing larger"
+        ],
+        [
+          "recedes",
+          "moves farther away"
+        ],
+        [
+          "accident",
+          "something that happens by chance"
+        ],
+        [
+          "afterglow",
+          "light that stays after a bright event"
+        ]
+      ],
+      "B": [
+        [
+          "visible",
+          "able to be seen"
+        ],
+        [
+          "substance",
+          "a kind of matter"
+        ],
+        [
+          "absorb",
+          "to take in"
+        ],
+        [
+          "acceleration",
+          "an increase in speed"
+        ],
+        [
+          "particles",
+          "very small pieces of matter"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 154,
+    "slug": "unseen-reading-part-154",
+    "theme": "Gender and Numbers",
+    "blurb": "why some languages have grammatical gender, how languages count",
+    "texts": {
+      "A": {
+        "title": "Why Some Languages Have Grammatical Gender",
+        "text": "In English, only a few words have gender: we say “he” for a man and “she” for a woman, but a table or a chair is just “it”. Many other languages give gender to all nouns. In French and Spanish, every noun is masculine or feminine, so a table is feminine in French (la table) and a book is masculine (le livre). German has three genders, masculine, feminine and neuter, and Hebrew and Arabic have two. The gender of an object often seems to have no logic. A key is feminine in French and masculine in German, and the sun is feminine in German but masculine in French. Gender is not only a label. It affects other words: adjectives, articles and verbs often change to agree with the noun, which makes grammar harder for learners. Linguists think that the system comes from very old groupings of nouns. Some experiments suggest that gender may slightly affect how speakers describe objects, but the evidence is mixed."
+      },
+      "B": {
+        "title": "How Languages Count",
+        "text": "Most languages count in tens, because we have ten fingers, but not all do. Some use other bases. French shows a trace of an older system based on twenty: eighty is quatre-vingts, which means “four twenties”, and ninety-seven is quatre-vingt-dix-sept, “four twenties and ten and seven”. Scholars think that this twenty-based system, called vigesimal, came from ancient Celtic languages. In Belgium and Switzerland, many French speakers use simpler words, septante for seventy and nonante for ninety. Danish also counts partly in twenties, and the Mayan peoples used base twenty for their numbers. Some languages have few number words. The Pirahã people of the Amazon are described as having words only for approximate amounts, such as “small amount” and “larger amount”, although researchers still debate this claim. Languages also vary in how regular their numbers are: Chinese and Vietnamese say eleven as “ten-one” and twenty-one as “two-ten-one”, which many researchers think helps children to learn to count faster."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many languages give every noun a gender, and this often has no clear logic.",
+        "All languages give every noun a gender based on size.",
+        "English gives gender to every noun, just like French.",
+        "The text explains that many languages give gender to all nouns, and that the gender of an object often seems to have no logic.",
+        [
+          "Many other languages give gender to all nouns",
+          "The gender of an object often seems to have no logic"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How many genders does German have?",
+        "Three.",
+        "Two.",
+        "Four.",
+        "The text says that German has three genders.",
+        "German has three genders"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “mixed” means…",
+        "not clear in one direction.",
+        "completely clear.",
+        "very strong.",
+        "The text says that the evidence is mixed, which means that it does not point clearly in one direction.",
+        "the evidence is mixed"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It affects other words” refers to…",
+        "gender.",
+        "an adjective.",
+        "a key.",
+        "The sentence says that gender is not only a label, and gender affects other words.",
+        "Gender is not only a label. It affects other words"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many languages have grammatical gender.",
+        "What the gender of a key is in French.",
+        "Which languages have two genders.",
+        "The text does not say how many languages have grammatical gender. It says what the gender of a key is in French and which languages have two genders.",
+        [
+          "A key is feminine in French and masculine in German",
+          "Hebrew and Arabic have two"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the example of the key and the sun suggest?",
+        "The gender of a word is not decided by its meaning.",
+        "The gender of a word is the same in all languages.",
+        "The gender of a word always shows its size.",
+        "The text says that the sun is feminine in German but masculine in French, so the gender is not decided by meaning.",
+        "the sun is feminine in German but masculine in French"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Languages count in different ways, and some still show old systems of twenty.",
+        "All languages count in tens because of the same ancient rule.",
+        "French counts in tens, and nothing in French is based on twenty.",
+        "The text explains that most languages count in tens, but others use different bases, such as twenty in French.",
+        [
+          "Most languages count in tens, because we have ten fingers, but not all do",
+          "French shows a trace of an older system based on twenty"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does quatre-vingts mean?",
+        "Four twenties.",
+        "Eight tens.",
+        "Forty twos.",
+        "The text says that quatre-vingts means “four twenties”.",
+        "quatre-vingts, which means “four twenties”"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “simpler” means…",
+        "easier.",
+        "stranger.",
+        "older.",
+        "The text says that many French speakers in Belgium and Switzerland use simpler words, which means easier words.",
+        "many French speakers use simpler words"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this claim” refers to…",
+        "that the Pirahã have only approximate number words.",
+        "that Chinese numbers are very regular today.",
+        "that French counts partly in twenties today.",
+        "The sentence before says that the Pirahã are described as having words only for approximate amounts, and researchers still debate this claim.",
+        "although researchers still debate this claim"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many languages count in twenties.",
+        "What Belgian and Swiss French speakers say for seventy.",
+        "Which peoples used base twenty.",
+        "The text does not say how many languages count in twenties. It says what Belgian and Swiss speakers say for seventy and which peoples used base twenty.",
+        [
+          "septante for seventy and nonante for ninety",
+          "the Mayan peoples used base twenty"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why may Chinese numbers help children?",
+        "They follow a regular pattern that is easy to learn.",
+        "They have more words than other languages.",
+        "They are written in a very different script.",
+        "The text says that Chinese numbers are regular, which many researchers think helps children to learn to count faster.",
+        "which many researchers think helps children to learn to count faster"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "neuter",
+          "neither masculine nor feminine"
+        ],
+        [
+          "adjectives",
+          "words that describe nouns"
+        ],
+        [
+          "agree",
+          "to match in form"
+        ],
+        [
+          "label",
+          "a word used to name or describe something"
+        ],
+        [
+          "evidence",
+          "facts that show that something is true"
+        ]
+      ],
+      "B": [
+        [
+          "trace",
+          "a small sign of something from the past"
+        ],
+        [
+          "scholars",
+          "people who study a subject in depth"
+        ],
+        [
+          "vigesimal",
+          "based on the number twenty"
+        ],
+        [
+          "approximate",
+          "close to exact, but not exact"
+        ],
+        [
+          "regular",
+          "following a clear and even pattern"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 155,
+    "slug": "unseen-reading-part-155",
+    "theme": "Learning to Speak",
+    "blurb": "how babies learn to talk, the critical period",
+    "texts": {
+      "A": {
+        "title": "How Babies Learn to Talk",
+        "text": "Babies begin to learn language long before they say a word. Even in the womb, they hear their mother’s voice, and newborns prefer the sounds of their mother’s language. In the first months, a baby cries, coos and smiles. At about six months, babbling begins: the baby repeats sounds such as “ba-ba” and “ma-ma”, and the sounds slowly become more like the language that the baby hears. By about twelve months, most babies say their first real words, usually names of people and things around them. At eighteen months, a typical child knows about fifty words and may start to combine two words, such as “more milk”. Then comes a burst: many children learn several new words every day, and by about the age of three, they speak in sentences. Children learn best from live interaction: when adults talk with them, point, respond and use simple, slow speech. Television alone is much less effective. Children’s speed varies, and a late start is often not a problem, but doctors suggest a check if a child does not babble or has very few words."
+      },
+      "B": {
+        "title": "The Critical Period: Can Adults Still Learn Languages?",
+        "text": "Many people believe that there is a critical period for learning a language, a time in childhood after which it becomes much harder. The idea became popular in the 1960s, and there is evidence for it. Children who move to a new country often learn the language more easily and with a more native-like accent than adults. In a large study in 2018, researchers collected data from about 670,000 people who took an online grammar quiz, and they found that the ability to learn grammar stays high until about the age of seventeen or eighteen, and then declines. They concluded that it is very hard to reach native-like grammar unless learning begins in childhood. But the picture is not simple. The study measured only grammar, not vocabulary or everyday communication, and adults have important advantages: they understand how language works, they can study methods and they have better memory strategies. Many adults reach high levels of fluency, even if they keep an accent. The best advice is to start early if possible, but never to think that it is too late."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Babies learn language step by step, and they learn best from talking with people.",
+        "Babies learn language only when they start to say words.",
+        "Babies learn language best from television.",
+        "The text explains the steps of early language learning and says that children learn best from live interaction.",
+        [
+          "Babies begin to learn language long before they say a word",
+          "Children learn best from live interaction"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "At about what age do most babies say their first real words?",
+        "About twelve months.",
+        "About three months.",
+        "About three years.",
+        "The text says that by about twelve months most babies say their first real words.",
+        "By about twelve months, most babies say their first real words"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “burst” in “Then comes a burst” means…",
+        "a sudden, fast increase.",
+        "a slow decrease.",
+        "a long pause.",
+        "The text says that after eighteen months many children learn several new words every day, which means a sudden, fast increase.",
+        "Then comes a burst"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “when adults talk with them” refers to…",
+        "children.",
+        "adults.",
+        "the mothers.",
+        "The sentence says that children learn best from live interaction, when adults talk with the children.",
+        "when adults talk with them, point, respond and use simple, slow speech"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many languages a baby can learn at once.",
+        "What babbling sounds like in early months.",
+        "What doctors suggest about a late start.",
+        "The text does not say how many languages a baby can learn at once. It says what babbling sounds like in early months and what doctors suggest about a late start.",
+        [
+          "repeats sounds such as “ba-ba” and “ma-ma”",
+          "doctors suggest a check"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about a late start?",
+        "It is often normal, but a check can be useful.",
+        "It always means a serious problem.",
+        "It never needs any attention.",
+        "The text says that a late start is often not a problem, but doctors suggest a check in some cases.",
+        "a late start is often not a problem, but doctors suggest a check"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Children learn languages more easily, but adults can still reach a high level.",
+        "Adults cannot learn a new language at all after childhood.",
+        "Children and adults learn languages in exactly the same way.",
+        "The text explains that there is evidence for a critical period, but that adults have advantages and many reach high levels of fluency.",
+        [
+          "Many people believe that there is a critical period",
+          "Many adults reach high levels of fluency"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many people took part in the 2018 study?",
+        "About 670,000.",
+        "About 670.",
+        "About 6,700.",
+        "The text says that data came from about 670,000 people.",
+        "about 670,000 people"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “fluency” means…",
+        "the ability to speak smoothly.",
+        "the habit of speaking loudly.",
+        "the knowledge of grammar rules only.",
+        "The text says that many adults reach high levels of fluency, which means that they can speak smoothly.",
+        "high levels of fluency"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “They” in “They concluded” refers to…",
+        "the researchers.",
+        "the adults.",
+        "the children.",
+        "The sentence says that researchers collected data, and the researchers concluded that it is very hard to reach native-like grammar unless learning begins in childhood.",
+        "They concluded that it is very hard to reach native-like grammar"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which language the quiz tested.",
+        "What the study measured.",
+        "What advantages adults have.",
+        "The text does not say which language the quiz tested. It says what the study measured and what advantages adults have.",
+        [
+          "The study measured only grammar",
+          "adults have important advantages"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Learning a language is worth trying at any age.",
+        "Adults should not try to learn a language.",
+        "Only children can become fluent.",
+        "The text says never to think that it is too late to learn.",
+        "never to think that it is too late"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "womb",
+          "the organ where a baby grows before birth"
+        ],
+        [
+          "prefer",
+          "to like one thing more than another"
+        ],
+        [
+          "babbling",
+          "making repeated baby sounds"
+        ],
+        [
+          "combine",
+          "to put together"
+        ],
+        [
+          "interaction",
+          "talking or acting with another person"
+        ]
+      ],
+      "B": [
+        [
+          "critical",
+          "very important at a certain stage"
+        ],
+        [
+          "evidence",
+          "facts that show that something is true"
+        ],
+        [
+          "declines",
+          "becomes smaller or worse"
+        ],
+        [
+          "advantages",
+          "things that help you do better"
+        ],
+        [
+          "strategies",
+          "plans for achieving something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 156,
+    "slug": "unseen-reading-part-156",
+    "theme": "English Spelling",
+    "blurb": "why English spelling is so strange, why spelling reforms mostly failed",
+    "texts": {
+      "A": {
+        "title": "Why English Spelling Is So Strange",
+        "text": "English spelling is famous for being difficult. The same sound can be spelled in many ways, as in “see”, “sea” and “key”, and the same letters can be pronounced in different ways, as in “though”, “through” and “tough”. The main reason is history. English was first written down about 1,300 years ago, when its sounds and spelling matched fairly well. Then the language changed. Between about 1400 and 1700, in the Great Vowel Shift, the pronunciation of long vowels changed greatly, but the spelling stayed the same. The printing press, which reached England in 1476, helped to fix the spellings of that time. English also borrowed thousands of words from French, Latin and Greek, and writers often kept the foreign spelling, so “knight” and “debt” keep letters that are no longer pronounced. In some cases, scholars even added letters to show a word’s origin, such as the b in “debt”. The result is a spelling system that reflects a thousand years of history more than the sounds of today."
+      },
+      "B": {
+        "title": "Why Spelling Reforms Mostly Failed",
+        "text": "Many people have tried to make English spelling simpler. In the United States, Noah Webster, who published a famous dictionary in 1828, succeeded in changing some spellings, such as “color” instead of “colour” and “center” instead of “centre”. But his bigger plans, for example “tung” for “tongue” and “wimmen” for “women”, did not spread. In 1906, the industrialist Andrew Carnegie financed a group, the Simplified Spelling Board, which proposed changing about three hundred words, and even President Theodore Roosevelt ordered the government to use the new spellings. The public, newspapers and Congress rejected the idea, and the order was withdrawn. There are several reasons why reforms fail. Millions of books are written in the old spelling, and a change would make them look strange. English is spoken with many accents, so it is hard to decide which pronunciation should guide the new spelling. Many people also dislike change, and some think that spelling shows the history and relations of words. Today, spelling changes come slowly, mainly through everyday use, such as “donut” and “thru” in informal writing."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "English spelling is strange mainly because of its history.",
+        "English spelling is strange because no one has ever written rules.",
+        "English spelling is strange because English has no vowels.",
+        "The text explains that English spelling reflects history, such as the Great Vowel Shift, the printing press and borrowed words.",
+        [
+          "The main reason is history",
+          "a spelling system that reflects a thousand years of history"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What changed between about 1400 and 1700?",
+        "The pronunciation of long vowels.",
+        "The alphabet of English.",
+        "The grammar of English.",
+        "The text says that in the Great Vowel Shift the pronunciation of long vowels changed greatly.",
+        "the pronunciation of long vowels changed greatly"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “fairly well” means…",
+        "quite well.",
+        "not at all.",
+        "perfectly.",
+        "The text says that sounds and spelling matched fairly well, which means quite well.",
+        "matched fairly well"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which reached England in 1476” refers to…",
+        "the printing press.",
+        "the Great Vowel Shift.",
+        "English spelling.",
+        "The sentence says that the printing press reached England in 1476.",
+        "The printing press, which reached England in 1476"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who first invented English spelling.",
+        "When English was first written down.",
+        "Why “knight” keeps silent letters.",
+        "The text does not say who first invented English spelling. It says when English was first written down and why “knight” keeps silent letters.",
+        [
+          "English was first written down about 1,300 years ago",
+          "writers often kept the foreign spelling"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the example of “debt” suggest?",
+        "Some spellings were changed to look like Latin.",
+        "All spellings follow the sounds of today.",
+        "Spellings were chosen at random by printers.",
+        "The text says that scholars even added letters to show a word’s origin, such as the b in “debt”.",
+        "scholars even added letters to show a word’s origin"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Most spelling reforms failed because people did not accept the changes.",
+        "Most spelling reforms worked because everyone liked the new words.",
+        "Most spelling reforms failed because nobody tried to make any.",
+        "The text explains that many attempts to simplify spelling failed, and gives reasons why reforms fail.",
+        [
+          "Many people have tried to make English spelling simpler",
+          "There are several reasons why reforms fail"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which of Webster’s changes did spread?",
+        "“Color” instead of “colour”.",
+        "“Tung” instead of “tongue”.",
+        "“Wimmen” instead of “women”.",
+        "The text says that Webster succeeded in changing spellings such as “color” and “center”.",
+        "such as “color” instead of “colour” and “center” instead of “centre”"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “financed” means…",
+        "paid for.",
+        "closed down.",
+        "led against.",
+        "The text says that Carnegie financed a group, which means that he paid for it.",
+        "financed a group, the Simplified Spelling Board"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “look strange” refers to…",
+        "the books written in the old spelling.",
+        "the new words that were proposed.",
+        "the accents of English speakers.",
+        "The sentence says that millions of books are written in the old spelling, and a change would make the books look strange.",
+        "Millions of books are written in the old spelling, and a change would make them look strange"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many words Webster changed.",
+        "Who ordered the government to use the new spellings.",
+        "How spelling changes now.",
+        "The text does not say how many words Webster changed. It says who ordered the new spellings and how spelling changes now.",
+        [
+          "President Theodore Roosevelt ordered the government to use the new spellings",
+          "spelling changes come slowly, mainly through everyday use"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Informal use can change spelling slowly.",
+        "Spelling can only be changed by governments.",
+        "Spelling never changes.",
+        "The text says that today spelling changes come slowly, mainly through everyday use, such as “donut” and “thru”.",
+        "spelling changes come slowly, mainly through everyday use"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "pronunciation",
+          "the way a word is said"
+        ],
+        [
+          "vowels",
+          "the sounds a, e, i, o, u and similar ones"
+        ],
+        [
+          "foreign",
+          "from another country or language"
+        ],
+        [
+          "origin",
+          "the place or time where something began"
+        ],
+        [
+          "reflects",
+          "shows or is a sign of"
+        ]
+      ],
+      "B": [
+        [
+          "succeeded",
+          "managed to do something"
+        ],
+        [
+          "proposed",
+          "suggested for others to consider"
+        ],
+        [
+          "rejected",
+          "refused to accept"
+        ],
+        [
+          "withdrawn",
+          "taken back or canceled"
+        ],
+        [
+          "informal",
+          "relaxed and not official"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 157,
+    "slug": "unseen-reading-part-157",
+    "theme": "Words on the Move",
+    "blurb": "where English words come from, borrowed words that travel the world",
+    "texts": {
+      "A": {
+        "title": "Where English Words Come From",
+        "text": "English is a Germanic language, but most of its words come from other sources. The core of the language, the most common words such as “be”, “house”, “water” and “mother”, came from the Anglo-Saxons, who brought a Germanic language to Britain in the fifth century. Later, the Vikings added words such as “sky”, “egg” and “knife”. The biggest change came after 1066, when the Normans, who spoke French, conquered England. For about three hundred years, French was the language of the court, law and the upper classes, and thousands of French words entered English: “justice”, “beauty”, “royal” and “government”. This explains pairs such as “cow” and “beef”: English farmers kept the cow, a Germanic word, but the French-speaking nobles ate beef, from French. Later, scholars borrowed many words directly from Latin and Greek, especially for science, such as “biology” and “telephone”. Estimates differ, but more than half of English vocabulary has French or Latin origin, although the basic words are mostly Germanic."
+      },
+      "B": {
+        "title": "Borrowed Words That Travel the World",
+        "text": "Every language borrows words, and borrowed words are called loanwords. They show how people meet and trade. English has borrowed from many languages: “pajamas” from Hindi, “tycoon” from Japanese, “algebra” from Arabic, “kindergarten” from German and “boomerang” from an Aboriginal language of Australia. English is also a giver. Words such as “okay”, “internet” and “taxi” are used in many languages around the world. The Philippines shows a rich mix of loanwords. Filipino, or Tagalog, borrowed hundreds of words from Spanish after more than three centuries of Spanish rule, such as mesa for table, silya for chair, kutsara for spoon, kamusta, from “¿cómo está?”, for hello, and the numbers and the days of the week. Words from English entered later, such as “computer” and “basketball”. Filipino has also lent words to English, for example “boondocks”, from bundok, which means mountain. Loanwords are a sign that a language is alive, and a language that borrows does not lose its identity, but grows."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "English is Germanic at its core, but it borrowed many words, especially from French.",
+        "English is a Romance language, and it has no Germanic words.",
+        "English has stayed unchanged since the fifth century.",
+        "The text explains that English has a Germanic core, but that it borrowed many words, especially after the Norman conquest.",
+        [
+          "English is a Germanic language, but most of its words come from other sources",
+          "The biggest change came after 1066"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the Vikings add to English?",
+        "Words such as “sky”, “egg” and “knife”.",
+        "Words such as “justice” and “beauty”.",
+        "Words such as “biology” and “telephone”.",
+        "The text says that the Vikings added words such as “sky”, “egg” and “knife”.",
+        "the Vikings added words such as “sky”, “egg” and “knife”"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “court” means…",
+        "the household of a king or queen.",
+        "a sports field.",
+        "a place where food is sold.",
+        "The text says that French was the language of the court, law and the upper classes, so the court means the household of a king or queen.",
+        "the language of the court, law and the upper classes"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “who” in “who spoke French” refers to…",
+        "the Normans.",
+        "the Anglo-Saxons.",
+        "the Vikings.",
+        "The sentence says that the Normans, who spoke French, conquered England.",
+        "the Normans, who spoke French, conquered England"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many words English has.",
+        "Where “beef” comes from.",
+        "What the core of English came from.",
+        "The text does not say how many words English has. It says where “beef” comes from and what the core of English came from.",
+        [
+          "ate beef, from French",
+          "came from the Anglo-Saxons"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the pair “cow” and “beef” suggest?",
+        "Farmers and nobles used different languages.",
+        "All animals in England have French names.",
+        "Cows were not eaten by anyone in England.",
+        "The text says that English farmers kept the cow, a Germanic word, while the French-speaking nobles ate beef, which suggests that they used different languages.",
+        "English farmers kept the cow, a Germanic word, but the French-speaking nobles ate beef, from French"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Languages borrow words from each other, and Filipino and English both do.",
+        "Languages never borrow words from other languages.",
+        "Only English borrows words, and it never lends them.",
+        "The text explains that every language borrows words and gives examples in English and Filipino.",
+        [
+          "Every language borrows words",
+          "Loanwords are a sign that a language is alive"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does the Filipino word mesa mean?",
+        "Table.",
+        "Chair.",
+        "Spoon.",
+        "The text says that mesa means table.",
+        "mesa for table"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “rich” in “a rich mix” means…",
+        "full of variety.",
+        "very expensive.",
+        "very small.",
+        "The text says that the Philippines shows a rich mix of loanwords, which means a mix that is full of variety.",
+        "a rich mix of loanwords"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “They” in “They show how people meet and trade” refers to…",
+        "loanwords.",
+        "languages.",
+        "traders.",
+        "The sentence before says that borrowed words are called loanwords, and loanwords show how people meet and trade.",
+        "borrowed words are called loanwords. They show how people meet and trade"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many Filipino words are in English dictionaries.",
+        "Which language “algebra” was borrowed from.",
+        "Which Filipino word “boondocks” comes from.",
+        "The text does not say how many Filipino words are in English dictionaries. It says which language “algebra” was borrowed from and which Filipino word “boondocks” comes from.",
+        [
+          "“algebra” from Arabic",
+          "“boondocks”, from bundok, which means mountain"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Borrowing words can help a language to grow.",
+        "Borrowing words makes a language disappear.",
+        "Only dead languages borrow words.",
+        "The text says that a language that borrows does not lose its identity, but grows.",
+        "a language that borrows does not lose its identity, but grows"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "conquered",
+          "took control of a country by force"
+        ],
+        [
+          "upper",
+          "higher in rank or position"
+        ],
+        [
+          "nobles",
+          "people of high social rank"
+        ],
+        [
+          "directly",
+          "without passing through something else"
+        ],
+        [
+          "vocabulary",
+          "all the words of a language"
+        ]
+      ],
+      "B": [
+        [
+          "loanwords",
+          "words taken from another language"
+        ],
+        [
+          "trade",
+          "the buying and selling of goods"
+        ],
+        [
+          "lent",
+          "gave something to be used for a time"
+        ],
+        [
+          "identity",
+          "who or what someone or something is"
+        ],
+        [
+          "alive",
+          "full of life, still used and changing"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 158,
+    "slug": "unseen-reading-part-158",
+    "theme": "Translation",
+    "blurb": "how a human translator works, how machine translation learns",
+    "texts": {
+      "A": {
+        "title": "How a Human Translator Works",
+        "text": "A translator does much more than replace words one by one. A good translation must keep the meaning, the tone and the effect of the original. First, the translator reads the whole text to understand what the writer wants to say, who the readers are and in what situation it will be used. A contract, a poem and a hotel menu require very different choices. Next comes the hard part, finding equivalents. Some words have no exact match. The Portuguese saudade, a deep longing for something absent, is usually explained with several English words. Idioms must be changed: the English “it’s raining cats and dogs” becomes, in French, “il pleut des cordes”, which means “it is raining ropes”. Culture also matters, for example in jokes, names of foods and forms of address. Finally, the translator revises the text, reads it aloud and often asks another person to check it. Translators and interpreters are different: translators work with written texts and have time, while interpreters work with speech, in real time."
+      },
+      "B": {
+        "title": "How Machine Translation Learns",
+        "text": "Machine translation, such as the tools on phones and websites, has improved greatly. The first systems, in the 1950s, used dictionaries and grammar rules written by people, and they produced poor, funny results. Later, statistical systems learned from millions of translated sentences. Since about 2016, most tools use neural networks, computer systems that learn patterns from huge amounts of text. They do not translate word by word. They read the whole sentence, and they predict the most probable translation. For common language pairs and everyday topics, the results are often good enough to understand the meaning. But machines still make mistakes. They can miss idioms, jokes and cultural references, confuse words with several meanings and choose a wrong tone. For languages with little data, the quality is lower. Machines can also invent text that sounds natural but is wrong. For important texts, such as medical or legal documents, a human check remains essential. A sensible way to use these tools is to get the general meaning, and to ask a professional when accuracy matters."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A translator must keep meaning and tone, not only replace words one by one.",
+        "A translator only needs a good dictionary to replace each word.",
+        "A translator works only with speech and never with texts.",
+        "The text explains that a good translation keeps the meaning, tone and effect of the original.",
+        [
+          "A translator does much more than replace words one by one",
+          "A good translation must keep the meaning, the tone and the effect of the original"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the French idiom “il pleut des cordes” mean literally?",
+        "It is raining ropes.",
+        "It is raining cats.",
+        "It is raining knives.",
+        "The text says that “il pleut des cordes” means “it is raining ropes”.",
+        "which means “it is raining ropes”"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “the effect of the original” means…",
+        "the impression made on readers.",
+        "the cost of printing.",
+        "the length of the text.",
+        "The text says that a good translation must keep the effect of the original, which means the impression that it makes on readers.",
+        "the effect of the original"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “in what situation it will be used” refers to…",
+        "the text.",
+        "the dictionary.",
+        "the translator.",
+        "The sentence says that the translator reads the whole text to understand in what situation the text will be used.",
+        "who the readers are and in what situation it will be used"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much translators earn.",
+        "What saudade means.",
+        "How interpreters differ from translators.",
+        "The text does not say how much translators earn. It says what saudade means and how interpreters differ from translators.",
+        [
+          "a deep longing for something absent",
+          "interpreters work with speech, in real time"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the saudade example suggest?",
+        "Some words cannot be translated with one word.",
+        "Every word has an exact match.",
+        "Portuguese has no words for feelings.",
+        "The text says that saudade is usually explained with several English words.",
+        "is usually explained with several English words"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Machine translation is useful but still makes mistakes, so checks matter.",
+        "Machine translation is perfect, so humans are no longer needed.",
+        "Machine translation has not improved since the 1950s.",
+        "The text explains that machine translation has improved greatly, but still makes mistakes, so a human check matters for important texts.",
+        [
+          "Machine translation, such as the tools on phones and websites, has improved greatly",
+          "But machines still make mistakes"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the first systems of the 1950s use?",
+        "Dictionaries and grammar rules written by people.",
+        "Millions of translated sentences from books.",
+        "Neural networks.",
+        "The text says that the first systems used dictionaries and grammar rules written by people.",
+        "used dictionaries and grammar rules written by people"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “invent” means…",
+        "make up.",
+        "copy exactly.",
+        "delete.",
+        "The text says that machines can invent text that sounds natural but is wrong, which means that they can make up text.",
+        "invent text that sounds natural but is wrong"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “They” in “They do not translate word by word” refers to…",
+        "neural networks.",
+        "dictionaries.",
+        "people.",
+        "The sentence before describes neural networks, and neural networks do not translate word by word.",
+        "neural networks, computer systems that learn patterns from huge amounts of text. They do not translate word by word"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many languages a machine can translate.",
+        "What errors machines can make.",
+        "What to do when accuracy matters.",
+        "The text does not say how many languages a machine can translate. It says what errors machines make and what to do when accuracy matters.",
+        [
+          "They can miss idioms, jokes and cultural references",
+          "ask a professional when accuracy matters"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Machine translation is best for a general idea.",
+        "Machine translation is best for legal contracts.",
+        "Machine translation should never be used.",
+        "The text says that these tools are useful to get the general meaning, and that a professional should be asked when accuracy matters.",
+        "get the general meaning, and to ask a professional when accuracy matters"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "tone",
+          "the attitude or feeling expressed in writing or speech"
+        ],
+        [
+          "equivalents",
+          "things that have the same meaning or value"
+        ],
+        [
+          "longing",
+          "a strong wish for something"
+        ],
+        [
+          "revises",
+          "changes in order to improve"
+        ],
+        [
+          "interpreters",
+          "people who translate speech as it is spoken"
+        ]
+      ],
+      "B": [
+        [
+          "statistical",
+          "based on numbers and patterns in data"
+        ],
+        [
+          "neural",
+          "related to the brain or to brain-like computer systems"
+        ],
+        [
+          "probable",
+          "likely to be true or to happen"
+        ],
+        [
+          "references",
+          "mentions of other things"
+        ],
+        [
+          "accuracy",
+          "the quality of being correct"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 159,
+    "slug": "unseen-reading-part-159",
+    "theme": "Body Language",
+    "blurb": "gestures and body language, eye contact and personal space",
+    "texts": {
+      "A": {
+        "title": "Gestures and Body Language: Universal or Cultural?",
+        "text": "A large part of communication is not words. Smiles, frowns, shrugs and hand movements all carry meaning. Are they the same everywhere? The psychologist Paul Ekman studied facial expressions in many countries, including remote communities in Papua New Guinea. He found that people everywhere recognize basic emotions such as happiness, sadness, anger, fear, surprise and disgust from faces, which suggests that some expressions are universal. Some researchers, however, argue that the picture is more complicated, and that culture influences how strongly and when people show feelings. Hand gestures are much more cultural. The thumbs-up means “good” in many countries but can be rude in some places. The “OK” sign, a circle with the thumb and finger, means “fine” in English-speaking countries, “zero” in France, and an insult in parts of Brazil and Turkey. Even a simple head movement changes: in most places a nod means “yes” and a shake means “no”, but in Bulgaria and parts of Greece the meanings are reversed or confusing. When we travel, it is safest to learn local gestures and to avoid gestures that we are not sure about."
+      },
+      "B": {
+        "title": "Eye Contact and Personal Space Around the World",
+        "text": "Rules about eye contact and personal space are not written down, but people feel them strongly. In the 1960s, the anthropologist Edward Hall called the study of personal space proxemics. He described four zones: an intimate zone for close family, a personal zone for friends, a social zone for acquaintances and a public zone for strangers and speakers. The size of each zone varies by culture. In many Latin American and Middle Eastern countries, people stand closer when they talk than in Northern Europe or North America, where an arm’s length is common. Someone who stands too close may seem pushy, and someone who stands too far may seem cold. Eye contact also varies. In many Western countries, looking at a person’s eyes shows honesty and attention. In some East Asian, African and Indigenous cultures, long eye contact with a superior or elder may seem rude, and looking down is a sign of respect. These are general tendencies, not rules for every person. The best approach is to watch, to adapt and, if needed, to ask politely."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Some facial expressions are universal, but many gestures depend on culture.",
+        "All gestures mean the same thing in every country.",
+        "Facial expressions are different in every culture without exception.",
+        "The text explains that some basic facial expressions seem universal, but hand gestures are much more cultural.",
+        [
+          "He found that people everywhere recognize basic emotions",
+          "Hand gestures are much more cultural"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the OK sign mean in France?",
+        "Zero.",
+        "Fine.",
+        "Thank you.",
+        "The text says that the OK sign means “zero” in France.",
+        "“zero” in France"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “complicated” means…",
+        "not simple.",
+        "very short.",
+        "very old.",
+        "The text says that the picture is more complicated, which means that it is not simple.",
+        "the picture is more complicated"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “Are they the same everywhere?” refers to…",
+        "smiles, frowns, shrugs and hand movements.",
+        "the words that people speak aloud.",
+        "the countries that Ekman visited.",
+        "The sentence before lists smiles, frowns, shrugs and hand movements, and then asks whether they are the same everywhere.",
+        "Smiles, frowns, shrugs and hand movements all carry meaning. Are they the same everywhere?"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which gesture is the most common in the world.",
+        "Which emotions people recognize everywhere.",
+        "Where Ekman studied remote communities.",
+        "The text does not say which gesture is the most common in the world. It says which emotions people recognize and where Ekman studied remote communities.",
+        [
+          "happiness, sadness, anger, fear, surprise and disgust",
+          "remote communities in Papua New Guinea"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest for travelers?",
+        "Be careful with gestures that you are not sure about.",
+        "Use as many hand gestures as you can.",
+        "Never use any facial expressions at all.",
+        "The text says that it is safest to avoid gestures that we are not sure about.",
+        "avoid gestures that we are not sure about"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Personal space and eye contact rules differ between cultures.",
+        "Personal space and eye contact rules are the same all over the world.",
+        "Personal space and eye contact rules matter only in business.",
+        "The text explains that the size of personal zones and the meaning of eye contact vary by culture.",
+        [
+          "The size of each zone varies by culture",
+          "Eye contact also varies"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did Hall call the study of personal space?",
+        "Proxemics.",
+        "Kinetics.",
+        "Semantics.",
+        "The text says that Hall called the study of personal space proxemics.",
+        "called the study of personal space proxemics"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “superior” means…",
+        "a person of higher rank.",
+        "a person of lower age.",
+        "a person from a different town.",
+        "The text says that long eye contact with a superior or elder may seem rude, which means a person of higher rank.",
+        "with a superior or elder"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “These” in “These are general tendencies” refers to…",
+        "the differences between cultures.",
+        "Hall’s four zones.",
+        "the rules of politeness.",
+        "The sentences before describe the differences between cultures in eye contact and space, and these differences are general tendencies, not rules for every person.",
+        "looking down is a sign of respect. These are general tendencies, not rules for every person"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many centimeters of space people prefer.",
+        "What the four zones of space are called.",
+        "What looking down can show in some cultures.",
+        "The text does not say how many centimeters of space people prefer. It names the four zones and says what looking down can show in some cultures.",
+        [
+          "an intimate zone for close family, a personal zone for friends, a social zone for acquaintances and a public zone",
+          "looking down is a sign of respect"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Careful observation helps us to behave politely.",
+        "Rules are exactly the same for everybody.",
+        "Asking questions is never considered polite.",
+        "The text says that the best approach is to watch, to adapt and, if needed, to ask politely.",
+        "The best approach is to watch, to adapt and, if needed, to ask politely."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "frowns",
+          "looks of displeasure with the eyebrows pulled together"
+        ],
+        [
+          "shrugs",
+          "lifts of the shoulders to show doubt"
+        ],
+        [
+          "remote",
+          "far from other places"
+        ],
+        [
+          "universal",
+          "the same everywhere"
+        ],
+        [
+          "insult",
+          "a rude or offensive remark or action"
+        ]
+      ],
+      "B": [
+        [
+          "anthropologist",
+          "a scientist who studies human societies"
+        ],
+        [
+          "zones",
+          "areas that have a particular use or feature"
+        ],
+        [
+          "acquaintances",
+          "people you know a little but not well"
+        ],
+        [
+          "pushy",
+          "too eager to get what you want"
+        ],
+        [
+          "tendencies",
+          "ways in which something is likely to be"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 160,
+    "slug": "unseen-reading-part-160",
+    "theme": "Scripts",
+    "blurb": "writing directions, the world’s writing systems",
+    "texts": {
+      "A": {
+        "title": "Left to Right, Right to Left",
+        "text": "Writing has no single direction. English, Spanish, Russian, Hindi and many other languages are written from left to right. Hebrew, Arabic, Persian and Urdu are written from right to left. Traditional Chinese, Japanese and Korean were written in vertical columns from top to bottom, with the columns going from right to left, and today they are often written horizontally from left to right. Some ancient scripts, such as early Greek, used boustrophedon, which means “as the ox turns”: one line goes from right to left, and the next goes from left to right, like a farmer plowing a field. Why do directions differ? Scholars think that it depended partly on the writing tool. Writers who carved letters into stone with a chisel held in the left hand and a hammer in the right often worked from right to left, while writers who used ink and a pen on paper often preferred left to right, to avoid smudging. Interestingly, in Hebrew and Arabic, numbers are still written from left to right inside right-to-left text, so readers move in two directions at once."
+      },
+      "B": {
+        "title": "The World’s Writing Systems",
+        "text": "There are several types of writing systems. An alphabet has letters for both consonants and vowels, such as the Latin, Greek and Cyrillic alphabets. An abjad writes mainly consonants, and the reader supplies the vowels from knowledge of the language: Hebrew and Arabic are abjads, although small marks can show vowels in children’s books and sacred texts. An abugida, such as the scripts of India and Thailand, writes a consonant with a built-in vowel, which marks can change. A syllabary has one sign for each syllable, as in the Japanese kana. A logographic system uses a symbol for a word or a meaningful part of a word, as in Chinese characters, which number in the tens of thousands, though about three thousand are enough to read a newspaper. Many languages mix types: Japanese uses Chinese characters, called kanji, together with two syllabaries, hiragana and katakana, and sometimes Latin letters. Each system suits its language: for a language with few syllables, a syllabary is efficient, while a language with many homophones benefits from characters that show meaning."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Writing directions differ across languages, and there are historical reasons.",
+        "All languages are written from left to right in the same way.",
+        "Writing direction was decided by one world meeting in the past.",
+        "The text explains that writing has no single direction and that the writing tool may help to explain the differences.",
+        [
+          "Writing has no single direction",
+          "Scholars think that it depended partly on the writing tool"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which of these languages is written from right to left?",
+        "Hebrew.",
+        "Russian.",
+        "Hindi.",
+        "The text says that Hebrew, Arabic, Persian and Urdu are written from right to left.",
+        "Hebrew, Arabic, Persian and Urdu are written from right to left"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “carved” means…",
+        "cut.",
+        "painted.",
+        "printed.",
+        "The text says that some writers carved letters into stone, which means that they cut the letters into stone.",
+        "carved letters into stone"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “that it depended partly on the writing tool” refers to…",
+        "the direction of writing.",
+        "the ancient script.",
+        "the stone.",
+        "The sentence asks why directions differ, and scholars think that the direction depended partly on the writing tool.",
+        "Why do directions differ? Scholars think that it depended partly on the writing tool"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which direction was used by the first writers in history.",
+        "What boustrophedon means.",
+        "In which direction numbers are written in Hebrew.",
+        "The text does not say which direction the first writers used. It says what boustrophedon means and which direction numbers are written in Hebrew.",
+        [
+          "which means “as the ox turns”",
+          "numbers are still written from left to right"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about readers of Hebrew?",
+        "They read text and numbers in different directions.",
+        "They read everything from left to right.",
+        "They never read numbers.",
+        "The text says that numbers are written from left to right inside right-to-left text, so readers move in two directions at once.",
+        "readers move in two directions at once"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Writing systems are of several types, and each suits its language.",
+        "All writing systems work in exactly the same way.",
+        "Only the Latin alphabet can write every language well.",
+        "The text describes several types of writing systems and says that each system suits its language.",
+        [
+          "There are several types of writing systems",
+          "Each system suits its language"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does an abjad write mainly?",
+        "Consonants.",
+        "Vowels.",
+        "Whole words.",
+        "The text says that an abjad writes mainly consonants.",
+        "An abjad writes mainly consonants"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “efficient” means…",
+        "working well without waste.",
+        "very old-fashioned.",
+        "very decorative.",
+        "The text says that a syllabary is efficient for a language with few syllables, which means that it works well without waste.",
+        "a syllabary is efficient"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which marks can change” refers to…",
+        "the built-in vowel.",
+        "the consonant.",
+        "the script.",
+        "The sentence says that an abugida writes a consonant with a built-in vowel, and marks can change the vowel.",
+        "a consonant with a built-in vowel, which marks can change"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people use each writing system.",
+        "What a syllabary has one sign for.",
+        "What Japanese uses together with kanji.",
+        "The text does not say how many people use each writing system. It says what a syllabary has a sign for and what Japanese uses with kanji.",
+        [
+          "A syllabary has one sign for each syllable",
+          "two syllabaries, hiragana and katakana"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A script is often chosen to match the sounds of the language.",
+        "A script is chosen at random by each writer.",
+        "A script is always the same for all languages.",
+        "The text says that each system suits its language, for example a syllabary for few syllables.",
+        "Each system suits its language"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "vertical",
+          "going straight up and down"
+        ],
+        [
+          "columns",
+          "tall narrow sections of text"
+        ],
+        [
+          "plowing",
+          "turning over soil with a tool before planting"
+        ],
+        [
+          "chisel",
+          "a tool with a sharp edge for cutting stone"
+        ],
+        [
+          "smudging",
+          "making a dirty mark by rubbing"
+        ]
+      ],
+      "B": [
+        [
+          "consonants",
+          "speech sounds that are not vowels"
+        ],
+        [
+          "supplies",
+          "provides"
+        ],
+        [
+          "built-in",
+          "already included as a part"
+        ],
+        [
+          "symbol",
+          "a sign that stands for something"
+        ],
+        [
+          "homophones",
+          "words that sound the same but have different meanings"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 161,
+    "slug": "unseen-reading-part-161",
+    "theme": "Taekwondo",
+    "blurb": "what taekwondo is, taekwondo at the Olympics",
+    "texts": {
+      "A": {
+        "title": "Taekwondo: The Way of the Foot and the Fist",
+        "text": "Taekwondo is a Korean martial art that is famous for its kicks. The name has three parts: tae means foot, kwon means fist and do means the way, so taekwondo is “the way of the foot and the fist”. It developed in Korea in the middle of the twentieth century from older Korean fighting traditions and was influenced by other martial arts. Students learn kicks to the body and head, including high, jumping and spinning kicks, together with blocks, punches, forms and self-control. Because the legs are longer and stronger than the arms, kicks can reach an opponent from a distance. Students wear a white uniform and a belt, and they move up through colored belts as they pass tests. Black belt holders also have degrees, called dan. Taekwondo teaches respect, discipline and courtesy, and many schools begin and end each class with a bow. Today, millions of people practice it in almost every part of the world."
+      },
+      "B": {
+        "title": "Taekwondo at the Olympics",
+        "text": "Taekwondo was shown as a demonstration sport at the Olympic Games in Seoul in 1988 and Barcelona in 1992, and it became an official medal sport at the Sydney Games in 2000. Matches have three rounds of two minutes. Fighters wear a chest protector, a helmet and other protective gear, and sensors in the equipment help to record valid kicks and punches electronically. A kick to the head earns more points than a kick to the body, and spinning kicks earn extra points, so athletes train to be fast, flexible and precise. Fighters can win by points, by a large point gap or when the opponent cannot continue. The sport is popular because its action is quick and easy to follow, and it has produced Olympic champions from many countries, not only Korea."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Taekwondo is a Korean martial art that is famous for its kicks.",
+        "Taekwondo is a Japanese martial art that is famous for throws.",
+        "Taekwondo is a Korean sport that uses only the fists.",
+        "The text explains what taekwondo is, where it comes from and what students learn.",
+        "Taekwondo is a Korean martial art that is famous for its kicks"
+      ],
+      [
+        "A",
+        "Detail",
+        "What does kwon mean?",
+        "Fist.",
+        "Foot.",
+        "Way.",
+        "The text says that kwon means fist.",
+        "kwon means fist"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “self-control” means…",
+        "the ability to manage your own behavior.",
+        "the power to hit very hard.",
+        "the speed of a fast kick.",
+        "The text lists self-control among the things that students learn, which means managing their own behavior.",
+        "blocks, punches, forms and self-control"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “as they pass tests” refers to…",
+        "the students.",
+        "the kicks.",
+        "the black belts.",
+        "The sentence says that students wear a belt, and the students move up through colored belts as they pass tests.",
+        "Students wear a white uniform and a belt, and they move up through colored belts as they pass tests"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "The name of the person who invented taekwondo.",
+        "What the three parts of the name mean.",
+        "What color uniform students usually wear.",
+        "The text does not give the name of any inventor. It explains the parts of the name and says what students wear.",
+        [
+          "tae means foot, kwon means fist and do means the way",
+          "Students wear a white uniform and a belt"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about taekwondo schools?",
+        "They teach good behavior as well as fighting skills.",
+        "They teach only the physical skills of fighting.",
+        "They are found only in Korea and nowhere else.",
+        "The text says that taekwondo teaches respect, discipline and courtesy, so schools teach behavior as well as fighting.",
+        "Taekwondo teaches respect, discipline and courtesy"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Taekwondo became an Olympic sport, and its rules reward fast and precise kicks.",
+        "Taekwondo has always been an Olympic sport with very simple rules.",
+        "Taekwondo was removed from the Olympics soon after the Seoul Games.",
+        "The text explains the Olympic history of taekwondo and how its scoring rewards fast and precise kicks.",
+        [
+          "it became an official medal sport at the Sydney Games in 2000",
+          "athletes train to be fast, flexible and precise"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "In which year did taekwondo become an official medal sport?",
+        "2000.",
+        "1988.",
+        "1992.",
+        "The text says that it became an official medal sport at the Sydney Games in 2000.",
+        "Sydney Games in 2000"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “gear” means…",
+        "equipment.",
+        "a score.",
+        "a rule.",
+        "The text says that fighters wear a chest protector, a helmet and other protective gear, which means equipment.",
+        "other protective gear"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it became an official medal sport” refers to…",
+        "taekwondo.",
+        "Barcelona.",
+        "the Olympic Games.",
+        "The sentence says that taekwondo was shown as a demonstration sport and that it became an official medal sport.",
+        "Taekwondo was shown as a demonstration sport at the Olympic Games in Seoul in 1988 and Barcelona in 1992, and it became an official medal sport"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many Olympic medals Korea has won.",
+        "How long each round of a match lasts.",
+        "What fighters wear to protect themselves.",
+        "The text does not say how many medals Korea has won. It says how long the rounds are and what fighters wear.",
+        [
+          "three rounds of two minutes",
+          "a chest protector, a helmet and other protective gear"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about taekwondo today?",
+        "It is a truly international sport.",
+        "It is practiced only by Korean athletes.",
+        "It is too slow for most spectators.",
+        "The text says that it has produced Olympic champions from many countries, not only Korea, and that its action is easy to follow.",
+        "it has produced Olympic champions from many countries, not only Korea"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "courtesy",
+          "polite and respectful behavior"
+        ],
+        [
+          "degrees",
+          "levels of rank or achievement"
+        ],
+        [
+          "opponent",
+          "the person you compete against"
+        ],
+        [
+          "influenced",
+          "had an effect on how something developed"
+        ],
+        [
+          "spinning",
+          "turning round and round quickly"
+        ]
+      ],
+      "B": [
+        [
+          "demonstration",
+          "a public show of how something is done"
+        ],
+        [
+          "sensors",
+          "devices that detect and record something"
+        ],
+        [
+          "valid",
+          "correct and accepted by the rules"
+        ],
+        [
+          "precise",
+          "exact and accurate"
+        ],
+        [
+          "flexible",
+          "able to bend and stretch easily"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 162,
+    "slug": "unseen-reading-part-162",
+    "theme": "Wrestling",
+    "blurb": "freestyle and Greco-Roman wrestling, sambo",
+    "texts": {
+      "A": {
+        "title": "Freestyle and Greco-Roman Wrestling",
+        "text": "Wrestling is one of the oldest sports in the world, and it was part of the ancient Olympic Games. Today two styles appear at the Olympics: freestyle and Greco-Roman. Both are decided by throws, takedowns and holds, and a wrestler wins by points or by pinning the opponent’s shoulders to the mat. The difference is in the rules about the legs. In freestyle, wrestlers can attack the opponent’s legs and use their own legs to trip and lift. In Greco-Roman, holds are allowed only above the waist, and wrestlers may not grab the legs or use their own legs for attack. As a result, Greco-Roman wrestling often has big throws that lift opponents high into the air, while freestyle looks faster and more varied. Women compete only in freestyle at the Olympics. Wrestlers train for strength, balance, flexibility and endurance, and they must also control their weight, because competitors fight in weight classes."
+      },
+      "B": {
+        "title": "Sambo: A Fighting Art From the Soviet Union",
+        "text": "Sambo is a martial art that was developed in the Soviet Union in the 1920s and 1930s. Its name is a Russian abbreviation that means “self-defense without weapons”. Sambo combines techniques from judo and from traditional wrestling styles of many peoples across the country, and it was designed to be practical and effective. There are two main forms. Sport sambo looks like judo with leg locks, and fighters wear a jacket and shorts. Combat sambo also allows strikes, such as punches and kicks, so it is closer to mixed martial arts. Sambo is popular in Russia and many nearby countries, and several famous mixed martial arts fighters have a sambo background. It is not an Olympic sport, but it has a world championship and an international federation."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Freestyle and Greco-Roman wrestling differ mainly in what the legs may do.",
+        "Freestyle and Greco-Roman wrestling are exactly the same sport.",
+        "Freestyle and Greco-Roman wrestling differ mainly in the ring size.",
+        "The text explains that the difference between the two styles is in the rules about the legs.",
+        [
+          "The difference is in the rules about the legs",
+          "In Greco-Roman, holds are allowed only above the waist"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "In which style are holds allowed only above the waist?",
+        "Greco-Roman.",
+        "Freestyle.",
+        "Both styles.",
+        "The text says that in Greco-Roman, holds are allowed only above the waist.",
+        "In Greco-Roman, holds are allowed only above the waist"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “appear” in “Today two styles appear” means…",
+        "take part.",
+        "disappear.",
+        "become heavier.",
+        "The text says that two styles appear at the Olympics, which means that they take part in the Games.",
+        "Today two styles appear at the Olympics"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “their” in “their own legs” refers to…",
+        "the wrestlers.",
+        "the judges.",
+        "the opponents’ coaches.",
+        "The sentence says that wrestlers can attack the opponent’s legs and use their own legs to trip and lift.",
+        "wrestlers can attack the opponent’s legs and use their own legs to trip and lift"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people watch wrestling each year.",
+        "Which style looks faster and more varied.",
+        "What wrestlers train for.",
+        "The text does not say how many people watch wrestling. It says which style looks faster and what wrestlers train for.",
+        [
+          "freestyle looks faster and more varied",
+          "Wrestlers train for strength, balance, flexibility and endurance"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about weight classes?",
+        "They help to make matches fairer.",
+        "They are used only for women.",
+        "They make the sport slower.",
+        "The text says that competitors fight in weight classes, so wrestlers must control their weight, which suggests that classes keep matches fair.",
+        "they must also control their weight, because competitors fight in weight classes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sambo is a Soviet martial art that combines judo and wrestling.",
+        "Sambo is an ancient Greek wrestling style from the first Olympics.",
+        "Sambo is a Japanese art that uses weapons.",
+        "The text explains that sambo was developed in the Soviet Union from judo and traditional wrestling.",
+        [
+          "Sambo is a martial art that was developed in the Soviet Union",
+          "Sambo combines techniques from judo and from traditional wrestling styles"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does combat sambo allow that sport sambo does not?",
+        "Strikes such as punches and kicks.",
+        "Leg locks.",
+        "A jacket and shorts.",
+        "The text says that combat sambo also allows strikes, such as punches and kicks.",
+        "Combat sambo also allows strikes, such as punches and kicks"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “effective” means…",
+        "working well.",
+        "very old.",
+        "fairly cheap.",
+        "The text says that sambo was designed to be practical and effective, which means that it works well.",
+        "practical and effective"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It is not an Olympic sport” refers to…",
+        "sambo.",
+        "judo.",
+        "the world championship.",
+        "The sentence is about sambo, which is popular in Russia, and says that it is not an Olympic sport.",
+        "several famous mixed martial arts fighters have a sambo background. It is not an Olympic sport"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who invented sambo.",
+        "What the name of sambo means.",
+        "When sambo was developed.",
+        "The text does not say who invented sambo. It says what the name means and when sambo was developed.",
+        [
+          "self-defense without weapons",
+          "in the 1920s and 1930s"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about combat sambo?",
+        "It is similar to mixed martial arts.",
+        "It is only for beginners.",
+        "It is the same as sport sambo.",
+        "The text says that combat sambo allows strikes, so it is closer to mixed martial arts.",
+        "so it is closer to mixed martial arts"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "takedowns",
+          "moves that bring an opponent to the ground"
+        ],
+        [
+          "pinning",
+          "holding an opponent’s shoulders against the mat"
+        ],
+        [
+          "trip",
+          "to make someone fall by catching their foot"
+        ],
+        [
+          "endurance",
+          "the ability to keep going for a long time"
+        ],
+        [
+          "varied",
+          "with many different kinds of things"
+        ]
+      ],
+      "B": [
+        [
+          "abbreviation",
+          "a short form of a longer name"
+        ],
+        [
+          "practical",
+          "useful in real situations"
+        ],
+        [
+          "strikes",
+          "hits with a fist, foot, knee or elbow"
+        ],
+        [
+          "background",
+          "a person’s earlier experience or training"
+        ],
+        [
+          "federation",
+          "an organization that governs a sport"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 163,
+    "slug": "unseen-reading-part-163",
+    "theme": "Bruce Lee",
+    "blurb": "Bruce Lee and Jeet Kune Do, why fighters mix styles",
+    "texts": {
+      "A": {
+        "title": "Bruce Lee and Jeet Kune Do",
+        "text": "Bruce Lee was born in San Francisco in 1940 and grew up in Hong Kong, where he studied the martial art Wing Chun and also became a child actor. As a young man he returned to the United States, taught martial arts and later became a film star. His films, especially Enter the Dragon in 1973, introduced martial arts to audiences around the world. Lee also created his own approach, called Jeet Kune Do, which means “the way of the intercepting fist”. He believed that traditional styles had become too rigid, with fixed patterns that students repeated without thinking. Jeet Kune Do is based on simplicity, speed and directness: a fighter should move economically and respond to what the opponent does. Lee’s famous advice was to absorb what is useful, reject what is not and add what is specifically your own. He also wrote that a fighter should be like water, able to change shape. Lee died in 1973 at the age of 32, but his ideas still influence martial artists today."
+      },
+      "B": {
+        "title": "Why Fighters Mix Styles",
+        "text": "In the early 1990s, the first Ultimate Fighting Championship events matched fighters from different martial arts to see which style was best. The winner of several early events was Royce Gracie, who used Brazilian jiu-jitsu, a style that focuses on grappling and submission holds on the ground. His results showed that striking arts alone could be in trouble if a fight went to the ground. Over the following years, fighters learned from this lesson. Strikers learned wrestling to avoid takedowns, grapplers learned boxing and kicking, and gyms began to teach several arts together. This blend became known as mixed martial arts. Today a modern fighter usually studies boxing or kickboxing for striking, wrestling for control and jiu-jitsu for the ground. Many people compare this idea to Bruce Lee’s teaching that a fighter should use whatever works. Mixed training also has a clear advantage in a fight, because a fighter who knows many situations is less likely to be surprised."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Bruce Lee became famous and created his own flexible approach to fighting.",
+        "Bruce Lee spent his whole life in Hong Kong and never made a film.",
+        "Bruce Lee taught that students should repeat fixed patterns exactly.",
+        "The text describes Lee’s life and his Jeet Kune Do approach, which rejected fixed patterns.",
+        [
+          "Lee also created his own approach, called Jeet Kune Do",
+          "traditional styles had become too rigid"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where was Bruce Lee born?",
+        "San Francisco.",
+        "Hong Kong.",
+        "Beijing.",
+        "The text says that Lee was born in San Francisco in 1940.",
+        "Bruce Lee was born in San Francisco in 1940"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “approach” means…",
+        "a way of doing something.",
+        "a type of film.",
+        "a place for training.",
+        "The text says that Lee created his own approach, called Jeet Kune Do, which means his own way of fighting and training.",
+        "his own approach, called Jeet Kune Do"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “he” in “where he studied” refers to…",
+        "Bruce Lee.",
+        "a Wing Chun teacher.",
+        "a film director.",
+        "The sentence says that Lee grew up in Hong Kong, where he studied Wing Chun.",
+        "grew up in Hong Kong, where he studied the martial art Wing Chun"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many films Bruce Lee made as a child.",
+        "Which film Lee made in 1973.",
+        "How old Lee was when he died.",
+        "The text does not say how many films Lee made as a child. It says which film he made in 1973 and how old he was when he died.",
+        [
+          "Enter the Dragon in 1973",
+          "at the age of 32"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the advice about water suggest?",
+        "A good fighter should adapt to each situation.",
+        "A good fighter should avoid training near water.",
+        "A good fighter should stay in one position.",
+        "The text says that a fighter should be like water, able to change shape, which suggests adapting to each situation.",
+        "a fighter should be like water, able to change shape"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Early fights showed that fighters needed several styles, so mixed martial arts began.",
+        "Early cage fights proved that one style always wins, so fighters stopped mixing.",
+        "Early cage fights were stopped because jiu-jitsu was banned from all gyms.",
+        "The text explains that early events showed the value of grappling, so fighters began to mix several styles.",
+        [
+          "His results showed that striking arts alone could be in trouble",
+          "This blend became known as mixed martial arts"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which style did Royce Gracie use?",
+        "Brazilian jiu-jitsu.",
+        "Boxing.",
+        "Taekwondo.",
+        "The text says that Gracie used Brazilian jiu-jitsu.",
+        "Royce Gracie, who used Brazilian jiu-jitsu"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “focuses on” means…",
+        "pays special attention to.",
+        "stays away from.",
+        "is afraid of.",
+        "The text says that jiu-jitsu focuses on grappling and submission holds, which means that it pays special attention to them.",
+        "focuses on grappling and submission holds on the ground"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this lesson” refers to…",
+        "the discovery that striking alone could fail.",
+        "the rules of boxing in the early 1990s.",
+        "the history of Brazil in the early 1990s.",
+        "The sentence before says that the results showed that striking arts alone could be in trouble, and fighters learned from this lesson.",
+        "could be in trouble if a fight went to the ground. Over the following years, fighters learned from this lesson"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much money the first winners earned.",
+        "What strikers learned.",
+        "What a modern fighter studies for control.",
+        "The text does not say how much money winners earned. It says what strikers learned and what a modern fighter studies for control.",
+        [
+          "Strikers learned wrestling to avoid takedowns",
+          "wrestling for control"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why do modern fighters train in several arts?",
+        "Knowing many situations makes them harder to surprise.",
+        "One art is enough to win all fights.",
+        "Rules say that they must study three arts.",
+        "The text says that a fighter who knows many situations is less likely to be surprised.",
+        "a fighter who knows many situations is less likely to be surprised"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "rigid",
+          "not able to change or bend"
+        ],
+        [
+          "simplicity",
+          "the quality of being simple"
+        ],
+        [
+          "economically",
+          "without wasting effort or movement"
+        ],
+        [
+          "absorb",
+          "to take in and learn"
+        ],
+        [
+          "intercepting",
+          "stopping something on its way"
+        ]
+      ],
+      "B": [
+        [
+          "grappling",
+          "fighting by holding and controlling an opponent"
+        ],
+        [
+          "submission",
+          "a hold that forces an opponent to give up"
+        ],
+        [
+          "striking",
+          "hitting with fists, feet, knees or elbows"
+        ],
+        [
+          "blend",
+          "a mixture of different things"
+        ],
+        [
+          "advantage",
+          "something that puts you in a better position"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 164,
+    "slug": "unseen-reading-part-164",
+    "theme": "Women Fighters",
+    "blurb": "women in combat sports, Ronda Rousey and the first UFC women’s fight",
+    "texts": {
+      "A": {
+        "title": "Women in Combat Sports",
+        "text": "For a long time, women were not allowed to compete in many combat sports, and the change has been slow. Women’s judo had a full Olympic medal event in 1992, women’s taekwondo joined in 2000, women’s wrestling in 2004, and women’s boxing in 2012. Today women compete in all of these Olympic combat sports. Women’s professional boxing and mixed martial arts have also grown, with large audiences and well-known stars. Women have often had to overcome doubts about whether they could compete safely, as well as lower pay and fewer chances to fight. Supporters say that training in a combat sport can build confidence, fitness and discipline for girls and women, as it does for boys and men. Safety rules, such as weight classes, medical checks and protective equipment, follow the same principles for women and men. Many young women now learn judo, boxing or kickboxing, both for competition and for self-defense."
+      },
+      "B": {
+        "title": "Ronda Rousey and the First UFC Women’s Fight",
+        "text": "Ronda Rousey, born in 1987, won a bronze medal in judo at the 2008 Olympic Games, the first Olympic medal in judo for an American woman. After the Games, she turned to mixed martial arts, where her judo throws and armbars made her famous. For years, the head of the UFC, Dana White, said that women would never fight in the UFC. However, Rousey’s skill and personality changed his mind. In February 2013, at UFC 157, she faced Liz Carmouche in the first women’s fight in UFC history. Rousey won in the first round with an armbar, a hold that puts painful pressure on the opponent’s elbow. The UFC soon opened a women’s division, and Rousey became the first women’s bantamweight champion. Her success inspired many girls to take up combat sports, and women’s divisions are now a normal part of the sport."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Women have gradually entered combat sports, though challenges remain.",
+        "Women have always competed in all combat sports on equal terms.",
+        "Women are not allowed to compete in any combat sports today.",
+        "The text explains how women gradually entered Olympic and professional combat sports, and describes the challenges.",
+        [
+          "the change has been slow",
+          "Today women compete in all of these Olympic combat sports"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "In which year did women’s boxing join the Olympics?",
+        "2012.",
+        "1992.",
+        "2004.",
+        "The text says that women’s boxing joined in 2012.",
+        "women’s boxing in 2012"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “slow” in “the change has been slow” means…",
+        "gradual.",
+        "sudden.",
+        "complete.",
+        "The text says that the change has been slow, which means that it has happened gradually, step by step.",
+        "the change has been slow"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “as it does for boys and men” refers to…",
+        "training in a combat sport.",
+        "the Olympic Games.",
+        "the lower pay.",
+        "The sentence says that training in a combat sport can build confidence, fitness and discipline for girls and women, as it does for boys and men.",
+        "training in a combat sport can build confidence, fitness and discipline for girls and women, as it does for boys and men"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many women train in combat sports today.",
+        "Which women’s sport joined the Olympics in 2004.",
+        "What safety rules are used.",
+        "The text does not say how many women train today. It says which sport joined in 2004 and which safety rules are used.",
+        [
+          "women’s wrestling in 2004",
+          "weight classes, medical checks and protective equipment"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the future of women’s combat sports?",
+        "They will probably keep growing.",
+        "They will probably disappear.",
+        "They will be allowed only at the Olympics.",
+        "The text says that these sports have grown and that many young women now learn them, which suggests that they will keep growing.",
+        "Many young women now learn judo, boxing or kickboxing"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Ronda Rousey helped to open the UFC to women.",
+        "Ronda Rousey retired before the first women’s fight.",
+        "Ronda Rousey lost the first women’s fight in the UFC.",
+        "The text explains that Rousey’s success led to the first women’s fight and a women’s division in the UFC.",
+        [
+          "she faced Liz Carmouche in the first women’s fight in UFC history",
+          "The UFC soon opened a women’s division"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How did Rousey win her first UFC fight?",
+        "With an armbar in the first round.",
+        "By a judge’s decision after three rounds.",
+        "With a punch in the second round.",
+        "The text says that Rousey won in the first round with an armbar.",
+        "Rousey won in the first round with an armbar"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “normal” means…",
+        "usual.",
+        "strange.",
+        "expensive.",
+        "The text says that women’s divisions are now a normal part of the sport, which means that they are usual.",
+        "a normal part of the sport"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “his” in “changed his mind” refers to…",
+        "Dana White.",
+        "Liz Carmouche.",
+        "the Olympic judge.",
+        "The sentence says that Dana White said that women would never fight in the UFC, and that Rousey changed his mind.",
+        "Dana White, said that women would never fight in the UFC. However, Rousey’s skill and personality changed his mind"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much money Rousey earned from her fights.",
+        "Which medal Rousey won in 2008.",
+        "Whom Rousey fought in 2013.",
+        "The text does not say how much money Rousey earned. It says which medal she won in 2008 and whom she fought in 2013.",
+        [
+          "won a bronze medal in judo at the 2008 Olympic Games",
+          "she faced Liz Carmouche"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about Dana White’s opinion?",
+        "It changed after he saw Rousey’s skill.",
+        "It never changed.",
+        "It was based on Olympic rules.",
+        "The text says that for years he said that women would never fight in the UFC, but that Rousey’s skill and personality changed his mind.",
+        "Rousey’s skill and personality changed his mind"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "overcome",
+          "to deal with a problem and defeat it"
+        ],
+        [
+          "doubts",
+          "feelings of not being sure"
+        ],
+        [
+          "confidence",
+          "belief in your own ability"
+        ],
+        [
+          "equipment",
+          "the tools or gear needed for an activity"
+        ],
+        [
+          "principles",
+          "basic rules or ideas"
+        ]
+      ],
+      "B": [
+        [
+          "bronze",
+          "the prize for third place"
+        ],
+        [
+          "division",
+          "a group of fighters of the same weight"
+        ],
+        [
+          "personality",
+          "the qualities that make a person unique"
+        ],
+        [
+          "inspired",
+          "made someone want to do something"
+        ],
+        [
+          "armbar",
+          "a hold that straightens the opponent’s arm"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 165,
+    "slug": "unseen-reading-part-165",
+    "theme": "Fight Plans",
+    "blurb": "strikers and grapplers, building a game plan",
+    "texts": {
+      "A": {
+        "title": "Strikers and Grapplers",
+        "text": "In mixed martial arts, fighters are often described as strikers or grapplers. A striker prefers to fight standing up. Strikers use punches, kicks, knees and elbows, and many come from boxing, kickboxing, Muay Thai or karate. A grappler prefers to hold and control the opponent. Grapplers come from wrestling, judo or Brazilian jiu-jitsu, and they use takedowns to bring the fight to the ground, where they try to control the opponent’s position or force a submission. The two styles create a natural contest. The striker wants distance and space to land clean shots, while the grappler wants to close the distance and clinch. To stop a takedown, a striker may use a sprawl, which means pushing the hips back and the legs away. A grappler who is stuck standing, on the other hand, must learn to cover up and move in without being hit. Most top fighters today are well-rounded, so the labels describe where someone starts, not what they can do."
+      },
+      "B": {
+        "title": "Building a Game Plan",
+        "text": "Before a fight, a fighter and the coaches build a game plan. First, they study video of the opponent to look for habits: which hand the opponent throws most, how often the opponent shoots for a takedown and whether the opponent gets tired in later rounds. Then they compare these habits with the fighter’s own strengths. A fighter with excellent wrestling may plan to take the opponent down early, while a fighter with sharp boxing may plan to keep the fight standing and win by points. Training camps usually last several weeks and include sparring partners who copy the opponent’s style. During the fight the plan changes. Between rounds, the corner team tells the fighter what is working and what to change. A good plan is flexible, because opponents do not behave exactly as predicted, and the best fighters adjust quickly. Game plans are based on strengths, not on fear: the aim is to make the opponent fight the fight that you want."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Strikers and grapplers have different styles, but most top fighters use both.",
+        "Strikers and grapplers use exactly the same techniques.",
+        "Only strikers are allowed to compete in mixed martial arts.",
+        "The text explains the two types of fighters and says that most top fighters today are well-rounded.",
+        [
+          "fighters are often described as strikers or grapplers",
+          "Most top fighters today are well-rounded"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which of these sports does a grappler often come from?",
+        "Wrestling.",
+        "Boxing.",
+        "Karate.",
+        "The text says that grapplers come from wrestling, judo or Brazilian jiu-jitsu.",
+        "Grapplers come from wrestling, judo or Brazilian jiu-jitsu"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “labels” means…",
+        "names that describe a type.",
+        "tools that fighters use.",
+        "places for training.",
+        "The text says that the labels describe where someone starts, which means the names striker and grappler.",
+        "the labels describe where someone starts"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “where” in “where they try to control” refers to…",
+        "the ground.",
+        "the ring.",
+        "the gym.",
+        "The sentence says that grapplers bring the fight to the ground, where they try to control the opponent’s position or force a submission.",
+        "bring the fight to the ground, where they try to control the opponent’s position"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How long a fighter needs to learn a sprawl.",
+        "What a sprawl means in a fight.",
+        "What kinds of attacks strikers use.",
+        "The text does not say how long a fighter needs to learn a sprawl. It says what a sprawl means in a fight and what kinds of attacks strikers use.",
+        [
+          "pushing the hips back and the legs away",
+          "punches, kicks, knees and elbows"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Fighters often learn skills outside their original style.",
+        "Fighters never change the style they started with.",
+        "Fighters must choose only one skill and stay with it.",
+        "The text says that most top fighters are well-rounded and that the labels describe only where someone starts.",
+        "the labels describe where someone starts, not what they can do"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A game plan uses the opponent’s habits and the fighter’s own strengths.",
+        "A game plan is a fixed list that can never change.",
+        "A game plan is made only after a fight is over.",
+        "The text explains how a fighter and the coaches build a plan from the opponent’s habits and their own strengths.",
+        [
+          "First, they study video of the opponent",
+          "Then they compare these habits with the fighter’s own strengths"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do sparring partners do in a training camp?",
+        "Copy the opponent’s style.",
+        "Tell the referee the plan.",
+        "Judge the fighter’s weight.",
+        "The text says that sparring partners copy the opponent’s style.",
+        "sparring partners who copy the opponent’s style"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “excellent” means…",
+        "extremely good.",
+        "fairly weak.",
+        "very new.",
+        "The text says that a fighter with excellent wrestling may plan to take the opponent down, which means a fighter who is extremely good at wrestling.",
+        "A fighter with excellent wrestling"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “they study video” refers to…",
+        "the fighter and the coaches.",
+        "the opponents.",
+        "the referees.",
+        "The sentence before says that a fighter and the coaches build a game plan, and they study video of the opponent.",
+        "a fighter and the coaches build a game plan. First, they study video of the opponent"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which coach is the best in the world.",
+        "What the corner team does between rounds.",
+        "What habits coaches look for.",
+        "The text does not say which coach is the best. It says what the corner team does and what habits coaches look for.",
+        [
+          "the corner team tells the fighter what is working and what to change",
+          "whether the opponent gets tired in later rounds"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A fighter should use a plan that fits his or her strengths.",
+        "A fighter should copy the plan of the opponent exactly.",
+        "A fighter should avoid making any plan before a fight.",
+        "The text says that plans are based on strengths and that the aim is to make the opponent fight the fight that you want.",
+        "Game plans are based on strengths, not on fear"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "striker",
+          "a fighter who mainly uses punches and kicks"
+        ],
+        [
+          "grappler",
+          "a fighter who mainly holds and controls"
+        ],
+        [
+          "clinch",
+          "a close hold while standing"
+        ],
+        [
+          "sprawl",
+          "a move that defends against a takedown"
+        ],
+        [
+          "submission",
+          "a hold that forces an opponent to give up"
+        ]
+      ],
+      "B": [
+        [
+          "habits",
+          "things that someone does regularly"
+        ],
+        [
+          "sparring",
+          "practice fighting with a partner"
+        ],
+        [
+          "corner",
+          "the team that helps a fighter between rounds"
+        ],
+        [
+          "predicted",
+          "said that something would happen"
+        ],
+        [
+          "adjust",
+          "to change slightly to fit a situation"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 166,
+    "slug": "unseen-reading-part-166",
+    "theme": "Traditional Arts",
+    "blurb": "capoeira, sumo",
+    "texts": {
+      "A": {
+        "title": "Capoeira: Fighting That Looks Like Dance",
+        "text": "Capoeira is a Brazilian art that combines martial arts, dance, acrobatics and music. It was developed by enslaved Africans in Brazil, and an old tradition says that they disguised their training as dance so that their owners would not understand it, although historians are not sure about all of the details. Capoeira is practiced in a circle called a roda, where people stand around, sing and clap. Two players enter the circle and move in a playful “conversation”, using low movements, cartwheels, sweeps and kicks without touching each other too much. The music is led by the berimbau, a wooden bow with a metal string and a gourd that makes a twanging sound, together with drums and tambourines. The rhythm tells the players how fast to move. In the 1930s, teachers such as Mestre Bimba helped to make capoeira legal and respected. In 2014, UNESCO added capoeira to its list of intangible cultural heritage. Today it is taught in many countries as a sport and a cultural art."
+      },
+      "B": {
+        "title": "Sumo: The Traditional Sport of Japan",
+        "text": "Sumo is the national sport of Japan, and it has a very long history. Two wrestlers, called rikishi, face each other in a ring called the dohyo, which is made of clay covered with a thin layer of sand and is about 4.5 meters across. A wrestler wins by pushing the opponent out of the ring or by making the opponent touch the ground with any part of the body other than the soles of the feet. Most bouts last only a few seconds. Sumo has no weight classes, so a small wrestler can face a very heavy one, and skill and balance matter as much as size. The sport is closely connected with Shinto traditions: before a bout, wrestlers throw salt into the ring to purify it. Professional wrestlers live in training stables, where they follow strict rules about food, sleep and behavior. There are six major tournaments a year, and the top rank is yokozuna, or grand champion."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Capoeira combines fighting, dance and music, and it has a rich history.",
+        "Capoeira is a modern sport that was invented in the twenty-first century.",
+        "Capoeira is a silent art that uses no music at all.",
+        "The text describes capoeira as a mix of martial arts, dance and music with a long history in Brazil.",
+        [
+          "Capoeira is a Brazilian art that combines martial arts, dance, acrobatics and music",
+          "an old tradition says"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the circle of capoeira players called?",
+        "A roda.",
+        "A berimbau.",
+        "A dohyo.",
+        "The text says that capoeira is practiced in a circle called a roda.",
+        "a circle called a roda"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “playful” means…",
+        "light-hearted and friendly.",
+        "very angry.",
+        "slow and heavy.",
+        "The text describes the movements as a playful conversation, which means that they are light-hearted rather than aggressive.",
+        "a playful “conversation”"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “that they disguised their training” refers to…",
+        "the enslaved Africans.",
+        "the historians.",
+        "the teachers.",
+        "The sentence says that capoeira was developed by enslaved Africans, and that they disguised their training as dance.",
+        "enslaved Africans in Brazil, and an old tradition says that they disguised their training as dance"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people practice capoeira in Brazil.",
+        "What instrument leads the music.",
+        "When UNESCO added capoeira to its list.",
+        "The text does not say how many people practice capoeira in Brazil. It says which instrument leads the music and when UNESCO added capoeira.",
+        [
+          "The music is led by the berimbau",
+          "In 2014, UNESCO added capoeira"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does UNESCO’s decision suggest?",
+        "Capoeira is valued as an important part of culture.",
+        "Capoeira is a dangerous sport.",
+        "Capoeira is only practiced in Brazil.",
+        "The text says that UNESCO added capoeira to its list of intangible cultural heritage, which shows that capoeira is valued as part of culture.",
+        "UNESCO added capoeira to its list of intangible cultural heritage"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Sumo is a traditional Japanese sport with its own rules and customs.",
+        "Sumo is a new sport from Europe with weight classes.",
+        "Sumo is a Japanese sport that uses weapons.",
+        "The text describes sumo as the national sport of Japan, with its own rules, traditions and training.",
+        [
+          "Sumo is the national sport of Japan",
+          "before a bout, wrestlers throw salt into the ring to purify it"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many major tournaments are there in a year?",
+        "Six.",
+        "Two.",
+        "Twelve.",
+        "The text says that there are six major tournaments a year.",
+        "There are six major tournaments a year"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “strict” means…",
+        "very firm and clear.",
+        "very relaxed.",
+        "very short.",
+        "The text says that wrestlers follow strict rules about food, sleep and behavior, which means firm and clear rules.",
+        "strict rules about food, sleep and behavior"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “to purify it” refers to…",
+        "the ring.",
+        "the salt.",
+        "the bout.",
+        "The sentence says that wrestlers throw salt into the ring to purify the ring.",
+        "throw salt into the ring to purify it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the heaviest wrestler weighs.",
+        "What the dohyo is made of.",
+        "What the top rank is called.",
+        "The text does not say how much the heaviest wrestler weighs. It says what the dohyo is made of and what the top rank is called.",
+        [
+          "made of clay covered with a thin layer of sand",
+          "the top rank is yokozuna"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the lack of weight classes suggest?",
+        "Technique can help a smaller wrestler.",
+        "Only the heaviest wrestlers can win.",
+        "Size is the only thing that matters.",
+        "The text says that there are no weight classes and that skill and balance matter as much as size.",
+        "skill and balance matter as much as size"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "enslaved",
+          "forced to work for others without freedom"
+        ],
+        [
+          "disguised",
+          "hidden by looking like something else"
+        ],
+        [
+          "acrobatics",
+          "skilled jumps, flips and body movements"
+        ],
+        [
+          "gourd",
+          "a hard round fruit shell, used as a container"
+        ],
+        [
+          "heritage",
+          "traditions passed down from the past"
+        ]
+      ],
+      "B": [
+        [
+          "rikishi",
+          "a professional sumo wrestler"
+        ],
+        [
+          "dohyo",
+          "the ring where sumo is fought"
+        ],
+        [
+          "soles",
+          "the bottom surfaces of the feet"
+        ],
+        [
+          "purify",
+          "to make clean, especially in a ritual way"
+        ],
+        [
+          "stables",
+          "training houses where sumo wrestlers live"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 167,
+    "slug": "unseen-reading-part-167",
+    "theme": "Martial Arts Culture",
+    "blurb": "self-defense (awareness, avoidance, escape), belts and bowing",
+    "texts": {
+      "A": {
+        "title": "Self-Defense: Awareness, Avoidance, Escape",
+        "text": "Many self-defense teachers say that the best fight is the one that never happens. They teach three steps in order. The first is awareness: pay attention to your surroundings, keep your phone in your pocket when walking at night, and trust your feeling when a place or person seems wrong. The second is avoidance: choose well-lit and busy streets, leave a situation early and stay away from arguments. A calm voice and a firm “no” can also prevent a conflict. The third is escape: if someone grabs or threatens you, the goal is not to win, but to get away and reach safety. This may mean making a lot of noise, running to people and calling for help. Physical techniques are the last choice, and they are useful mainly to create a chance to escape. Learning from a qualified teacher helps because regular practice builds confidence, and confident people usually look less like easy targets. If a person demands your wallet or phone, most experts say that safety is more important than property."
+      },
+      "B": {
+        "title": "Belts and Bowing",
+        "text": "In many martial arts, students wear colored belts that show their level. Many historians credit Jigoro Kano, the founder of judo, with introducing the belt system in the 1880s, and other arts later copied it. Beginners usually start with a white belt, and they move up through several colors as they learn and pass tests. The black belt is the most famous, but it does not mean that the student is a master. In most schools it means that the student has mastered the basics and is ready to begin deeper learning. Colors and their order differ from school to school. Bowing is another common custom. Students bow when they enter and leave the training hall, to their teacher and to their partners. The bow is not worship. It shows respect, thanks and humility, and it reminds students that they are training together and that each person can help the others to improve. These customs came from Japan and Korea, but they are now part of martial arts around the world."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Good self-defense begins with awareness, avoidance and escape, not with fighting.",
+        "Good self-defense means starting a fight as early as possible.",
+        "Good self-defense means staying at home after dark.",
+        "The text explains three steps, awareness, avoidance and escape, and says that physical techniques are the last choice.",
+        [
+          "They teach three steps in order",
+          "Physical techniques are the last choice"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the goal of the third step, escape?",
+        "To get away and reach safety.",
+        "To win the fight.",
+        "To teach the attacker a lesson.",
+        "The text says that the goal is not to win, but to get away and reach safety.",
+        "the goal is not to win, but to get away and reach safety"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “threatens” means…",
+        "warns that harm may be done.",
+        "gives a gift.",
+        "asks for directions.",
+        "The text says that if someone grabs or threatens you, you should get away, which shows that threatening means warning that harm may be done.",
+        "if someone grabs or threatens you"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they are useful mainly to create a chance to escape” refers to…",
+        "physical techniques.",
+        "qualified teachers.",
+        "busy streets.",
+        "The sentence says that physical techniques are the last choice, and they are useful mainly to create a chance to escape.",
+        "Physical techniques are the last choice, and they are useful mainly to create a chance to escape"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which martial art is the best for self-defense.",
+        "What to do about a demand for your phone.",
+        "What the second step is.",
+        "The text does not say which martial art is best. It says what to do about a demand for a phone and what the second step is.",
+        [
+          "safety is more important than property",
+          "The second is avoidance"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why is it good to avoid arguments?",
+        "They can lead to a conflict.",
+        "They make people stronger.",
+        "They help to find the way home.",
+        "The text says that staying away from arguments is part of avoidance, and that a calm voice can prevent a conflict.",
+        "stay away from arguments. A calm voice and a firm “no” can also prevent a conflict"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Belts and bowing are customs that show level and respect.",
+        "Belts and bowing are used only in judo.",
+        "Belts and bowing are rules about how to win.",
+        "The text explains that belts show a student’s level and that bowing shows respect, thanks and humility.",
+        [
+          "students wear colored belts that show their level",
+          "It shows respect, thanks and humility"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Whom do many historians credit with introducing the belt system?",
+        "Jigoro Kano.",
+        "Bruce Lee.",
+        "Ronda Rousey.",
+        "The text says that many historians credit Jigoro Kano with introducing the belt system.",
+        "credit Jigoro Kano"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “improve” means…",
+        "get better.",
+        "get older.",
+        "get louder.",
+        "The text says that each person can help the others to improve, which means to get better.",
+        "each person can help the others to improve"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it does not mean that the student is a master” refers to…",
+        "the black belt.",
+        "the white belt.",
+        "the training hall.",
+        "The sentence says that the black belt is the most famous, but it does not mean that the student is a master.",
+        "The black belt is the most famous, but it does not mean that the student is a master"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How long it takes to earn a black belt.",
+        "Which color most beginners start with.",
+        "Where bowing happens.",
+        "The text does not say how long it takes to earn a black belt. It says which color beginners start with and where bowing happens.",
+        [
+          "Beginners usually start with a white belt",
+          "when they enter and leave the training hall"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a black belt?",
+        "It marks the start of deeper learning.",
+        "It marks the end of all learning.",
+        "It is awarded only to teachers.",
+        "The text says that a black belt means that the student has mastered the basics and is ready to begin deeper learning.",
+        "ready to begin deeper learning"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "awareness",
+          "paying attention to what is around you"
+        ],
+        [
+          "surroundings",
+          "the things and places around you"
+        ],
+        [
+          "avoidance",
+          "staying away from something"
+        ],
+        [
+          "qualified",
+          "trained and approved to teach"
+        ],
+        [
+          "property",
+          "things that belong to someone"
+        ]
+      ],
+      "B": [
+        [
+          "historians",
+          "people who study the past"
+        ],
+        [
+          "mastered",
+          "learned completely"
+        ],
+        [
+          "humility",
+          "not thinking that you are better than others"
+        ],
+        [
+          "custom",
+          "a traditional way of behaving"
+        ],
+        [
+          "partners",
+          "the people you train or work with"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 168,
+    "slug": "unseen-reading-part-168",
+    "theme": "Road Protection",
+    "blurb": "seat belts and child car seats, helmets",
+    "texts": {
+      "A": {
+        "title": "Seat Belts and Car Seats",
+        "text": "A seat belt is one of the simplest and most effective safety devices ever made. In a crash, a car stops suddenly, but the people inside keep moving at the same speed until something stops them. Without a belt, that “something” may be the windshield, the dashboard or another passenger. A belt spreads the force over the strongest parts of the body. According to the United States traffic safety agency, a lap and shoulder belt reduces the risk of death for people in the front seat of a car by about 45 percent. To wear a belt correctly, the lap part should lie low across the hips, and the shoulder part should cross the chest and collarbone, never the neck or the soft belly. Children need special seats. Babies ride in a rear-facing seat for as long as the seat allows, young children use a harness seat, and older children use a booster seat until the belt fits them properly, often between the ages of eight and twelve. Children are safest in the back seat."
+      },
+      "B": {
+        "title": "Helmets: A Few Centimeters of Protection",
+        "text": "A helmet cannot prevent every injury, but it greatly reduces the risk of serious head injury when a rider falls or crashes. The inside of a helmet is made of a soft foam that crushes slowly during an impact, which gives the head more time to stop and reduces the force on the brain. For motorcycle riders, the United States traffic safety agency estimates that helmets reduce the risk of death by about 37 percent. Helmets also matter for cyclists, scooter riders, skateboarders and skiers. A helmet works only if it fits well. It should sit level on the head, with the front edge about two fingers above the eyebrows. The side straps should form a V under each ear, and the chin strap should be snug, with room for only one finger. A loose helmet can slide off in a fall. After a hard impact, a helmet should be replaced even if it looks fine, because the foam may be damaged. Choose a helmet that meets a recognized safety standard."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Seat belts and the right child seats greatly improve safety in a car.",
+        "Seat belts are needed only for children in a car.",
+        "Seat belts are less useful than a strong windshield.",
+        "The text explains how seat belts work and how children should be protected in a car.",
+        [
+          "A seat belt is one of the simplest and most effective safety devices ever made",
+          "Children need special seats"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where should the shoulder part of the belt cross the body?",
+        "Over the chest and collarbone.",
+        "Over the neck.",
+        "Over the soft belly.",
+        "The text says that the shoulder part should cross the chest and collarbone, never the neck or the soft belly.",
+        "the shoulder part should cross the chest and collarbone, never the neck or the soft belly"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “properly” means…",
+        "in the right way.",
+        "in a hurry.",
+        "for a short time.",
+        "The text says that older children use a booster seat until the belt fits them properly, which means in the right way.",
+        "until the belt fits them properly"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “that ‘something’” refers to…",
+        "whatever stops a person without a belt.",
+        "the traffic safety agency’s report.",
+        "a special type of child seat.",
+        "The sentence says that people keep moving until something stops them, and that without a belt this something may be the windshield, the dashboard or another passenger.",
+        "Without a belt, that “something” may be the windshield, the dashboard or another passenger"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which car brand has the safest belts.",
+        "Which seat is safest for children.",
+        "How belts spread the force of a crash.",
+        "The text does not say which car brand has the safest belts. It says which seat is safest for children and how belts spread the force.",
+        [
+          "Children are safest in the back seat",
+          "A belt spreads the force over the strongest parts of the body"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does a person without a belt face danger in a crash?",
+        "The body keeps moving after the car stops.",
+        "The car keeps moving after the body stops.",
+        "The belt makes the car stop more slowly.",
+        "The text says that the car stops suddenly, but the people inside keep moving until something stops them.",
+        "the people inside keep moving at the same speed until something stops them"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A well-fitting helmet greatly lowers head injury risk.",
+        "A helmet guarantees that no rider is ever hurt.",
+        "A helmet matters only for motorcycle riders.",
+        "The text explains how helmets protect riders and how to choose and fit one.",
+        [
+          "it greatly reduces the risk of serious head injury",
+          "A helmet works only if it fits well"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many fingers of space should the chin strap leave?",
+        "One finger.",
+        "Two fingers.",
+        "Three fingers.",
+        "The text says that the chin strap should be snug, with room for only one finger.",
+        "with room for only one finger"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “standard” means…",
+        "an official level of quality.",
+        "a type of paint.",
+        "a kind of strap.",
+        "The text says that a helmet should meet a recognized safety standard, which means an official level of quality.",
+        "meets a recognized safety standard"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which gives the head more time to stop” refers to…",
+        "the foam crushing slowly during an impact.",
+        "the strap that holds the helmet on.",
+        "the agency that tests the helmets.",
+        "The sentence says that the foam crushes slowly during an impact, which gives the head more time to stop.",
+        "a soft foam that crushes slowly during an impact, which gives the head more time to stop"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a good helmet costs.",
+        "Where the front edge should sit.",
+        "When a helmet should be replaced.",
+        "The text does not say how much a good helmet costs. It says where the front edge should sit and when a helmet should be replaced.",
+        [
+          "about two fingers above the eyebrows",
+          "After a hard impact, a helmet should be replaced"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should a helmet be replaced after a hard impact?",
+        "The foam may be damaged even if it looks fine.",
+        "The helmet becomes too small for the head.",
+        "The straps always break after one crash.",
+        "The text says that a helmet should be replaced even if it looks fine, because the foam may be damaged.",
+        "even if it looks fine, because the foam may be damaged"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "windshield",
+          "the front window of a car"
+        ],
+        [
+          "dashboard",
+          "the panel in front of the driver"
+        ],
+        [
+          "collarbone",
+          "the bone between the neck and the shoulder"
+        ],
+        [
+          "harness",
+          "a set of straps that holds a person in place"
+        ],
+        [
+          "booster",
+          "a raised seat that helps a belt fit a child"
+        ]
+      ],
+      "B": [
+        [
+          "impact",
+          "a hard hit or collision"
+        ],
+        [
+          "snug",
+          "fitting closely and comfortably"
+        ],
+        [
+          "recognized",
+          "accepted officially by experts"
+        ],
+        [
+          "estimates",
+          "gives a rough calculation of an amount"
+        ],
+        [
+          "crushes",
+          "is squeezed flat"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 169,
+    "slug": "unseen-reading-part-169",
+    "theme": "Home Chemicals",
+    "blurb": "what to do about a poisoning, why cleaning products must never be mixed",
+    "texts": {
+      "A": {
+        "title": "Poison First Aid",
+        "text": "Poisoning can happen when someone swallows, breathes or touches a harmful substance, such as cleaning products, medicines taken in the wrong amount, pesticides or certain plants. Signs may include vomiting, stomach pain, trouble breathing, burns around the mouth, sleepiness or confusion, but sometimes there are no signs at first. If you suspect poisoning, act quickly and stay calm. Call your local poison center or emergency number straight away, and have the container or label ready, so that you can tell them what the substance was, how much and when. Do not make the person vomit, and do not give food or drink unless a professional tells you to. If a chemical is on the skin, remove the contaminated clothes and rinse the skin with running water for about fifteen minutes. If it is in the eyes, rinse them with clean water. If fumes were breathed in, move the person to fresh air. If the person is unconscious or not breathing, call emergency services at once."
+      },
+      "B": {
+        "title": "Never Mix Cleaning Products",
+        "text": "Many people think that mixing two cleaning products will make a stronger cleaner. In fact, it can be dangerous. Some chemicals react with each other and produce toxic gases. The most common mistake is mixing bleach with ammonia, which is found in some glass and floor cleaners. The two produce harmful vapors that can damage the lungs. Mixing bleach with an acid, such as vinegar or some toilet cleaners, can release chlorine gas, which irritates the eyes, nose and throat and can cause coughing and trouble breathing. Even products that seem harmless can become dangerous together. To stay safe, use one product at a time, and rinse the surface with water before you use another. Open windows and doors for fresh air. Read the labels, and never pour a product into a different bottle without marking it. If you smell a strong, sharp odor while cleaning, leave the room and go outside for fresh air at once, and call a poison center if you feel unwell."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "In a poisoning, act quickly and get professional advice.",
+        "In a poisoning, wait a day to see whether signs appear.",
+        "In a poisoning, always make the person vomit at once.",
+        "The text explains what to do when poisoning is suspected and which actions to avoid.",
+        [
+          "If you suspect poisoning, act quickly and stay calm",
+          "Do not make the person vomit"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long should chemicals be rinsed from the skin?",
+        "About fifteen minutes.",
+        "About one minute.",
+        "About three hours.",
+        "The text says to rinse the skin with running water for about fifteen minutes.",
+        "rinse the skin with running water for about fifteen minutes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “straight away” means…",
+        "immediately.",
+        "slowly.",
+        "much later.",
+        "The text says to call a poison center straight away, which means immediately.",
+        "straight away"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “so that you can tell them” refers to…",
+        "the poison center or emergency staff.",
+        "the people who made the product.",
+        "the neighbors.",
+        "The sentence says to call the poison center or emergency number, and to be ready to tell them what the substance was.",
+        "Call your local poison center or emergency number straight away, and have the container or label ready, so that you can tell them"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which plants are the most poisonous.",
+        "Which signs may appear.",
+        "What to do if fumes were breathed in.",
+        "The text does not say which plants are the most poisonous. It says which signs may appear and what to do about fumes.",
+        [
+          "vomiting, stomach pain, trouble breathing, burns around the mouth",
+          "move the person to fresh air"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why should you have the container or label ready?",
+        "It tells the professionals what the substance was.",
+        "It can be used to treat the person.",
+        "It makes the person feel better.",
+        "The text says that you can tell them what the substance was, how much and when, so the label helps professionals to give correct advice.",
+        "have the container or label ready, so that you can tell them what the substance was"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Mixing cleaning products can make toxic gases, so use one product at a time.",
+        "Mixing cleaning products always makes a safer cleaner.",
+        "Cleaning products should never be used at home.",
+        "The text explains that mixing some cleaning products produces harmful gases, and gives rules to stay safe.",
+        [
+          "it can be dangerous",
+          "use one product at a time"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Bleach mixed with ammonia produces what?",
+        "Harmful vapors.",
+        "A stronger cleaner.",
+        "A pleasant smell.",
+        "The text says that bleach and ammonia produce harmful vapors that can damage the lungs.",
+        "The two produce harmful vapors that can damage the lungs"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “react” means…",
+        "change when combined.",
+        "stay exactly the same.",
+        "become colder.",
+        "The text says that some chemicals react with each other and produce toxic gases, which means that they change when combined.",
+        "Some chemicals react with each other and produce toxic gases"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which is found in some glass and floor cleaners” refers to…",
+        "ammonia.",
+        "bleach.",
+        "vinegar.",
+        "The sentence says that bleach should not be mixed with ammonia, which is found in some glass and floor cleaners.",
+        "mixing bleach with ammonia, which is found in some glass and floor cleaners"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which brand of bleach is the safest.",
+        "What chlorine gas does to the body.",
+        "What to do if you smell a sharp odor.",
+        "The text does not say which brand is the safest. It says what chlorine gas does and what to do about a sharp odor.",
+        [
+          "irritates the eyes, nose and throat",
+          "leave the room and go outside for fresh air at once"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about products that seem harmless?",
+        "They can become dangerous when combined.",
+        "They are always safe to mix.",
+        "They are never sold in shops.",
+        "The text says that even products that seem harmless can become dangerous together.",
+        "Even products that seem harmless can become dangerous together"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "substance",
+          "a particular kind of material"
+        ],
+        [
+          "pesticides",
+          "chemicals that kill insects or plants"
+        ],
+        [
+          "suspect",
+          "to think that something is probably true"
+        ],
+        [
+          "contaminated",
+          "made dirty or harmful by a chemical"
+        ],
+        [
+          "fumes",
+          "strong gases or smoke that smell bad"
+        ]
+      ],
+      "B": [
+        [
+          "toxic",
+          "poisonous"
+        ],
+        [
+          "vapors",
+          "gases made from a liquid"
+        ],
+        [
+          "irritates",
+          "makes a body part sore or uncomfortable"
+        ],
+        [
+          "harmless",
+          "not able to cause harm"
+        ],
+        [
+          "odor",
+          "a smell"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 170,
+    "slug": "unseen-reading-part-170",
+    "theme": "Staying Cool",
+    "blurb": "heat exhaustion and heatstroke, safe habits in a heat wave",
+    "texts": {
+      "A": {
+        "title": "Heat Exhaustion and Heatstroke",
+        "text": "Heat can make people very ill, and the two main conditions are heat exhaustion and heatstroke. Heat exhaustion usually comes first. Its signs include heavy sweating, weakness, dizziness, headache, nausea and cool, damp skin. A person with these signs should rest in a cool place, loosen tight clothes, sip water and cool the skin with wet cloths. If the person vomits or does not feel better within about an hour, medical help is needed. Heatstroke is much more serious and can be deadly. The body temperature rises above about 40 degrees Celsius, or 104 degrees Fahrenheit. The person may be confused, may speak strangely, may faint and may have hot skin. This is an emergency. Call your local emergency number immediately, and while you wait, move the person into shade or a cool room and cool the body with water, wet cloths or ice packs on the neck, armpits and groin. Do not give the person anything to drink if he or she is confused or unconscious."
+      },
+      "B": {
+        "title": "Staying Safe in Extreme Heat",
+        "text": "During a heat wave, a few simple habits can protect your health. Drink water regularly during the day, even before you feel thirsty, and avoid drinks with a lot of sugar or alcohol, which can make you lose more water. Wear light, loose clothes and a hat, and use sunscreen. Plan outdoor work, sports and exercise for the early morning or the evening, and avoid the hottest hours around midday. Spend time in shade or in air-conditioned places, such as a library or shopping mall, and take cool showers. Never leave children or pets in a parked car, even for a few minutes, because the inside of a car can become dangerously hot very quickly. Check on older neighbors, babies and people with illnesses, because they are at higher risk. Warning signs, such as headache, dizziness and strong thirst, mean that it is time to stop, rest and cool down."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Heat exhaustion is serious, but heatstroke is an emergency.",
+        "Heat exhaustion and heatstroke are exactly the same condition.",
+        "Heat illnesses can be cured only by drinking cold tea.",
+        "The text compares heat exhaustion with heatstroke and says that heatstroke is an emergency.",
+        [
+          "the two main conditions are heat exhaustion and heatstroke",
+          "Heatstroke is much more serious and can be deadly"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "At about what temperature does heatstroke begin?",
+        "Above 40 degrees Celsius.",
+        "Above 30 degrees Celsius.",
+        "Above 25 degrees Celsius.",
+        "The text says that the body temperature rises above about 40 degrees Celsius, or 104 degrees Fahrenheit.",
+        "above about 40 degrees Celsius"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “deadly” means…",
+        "able to cause death.",
+        "very slow.",
+        "hard to see.",
+        "The text says that heatstroke is much more serious and can be deadly, which means that it can cause death.",
+        "can be deadly"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “Its signs include” refers to…",
+        "heat exhaustion.",
+        "heatstroke.",
+        "the emergency number.",
+        "The sentence before says that heat exhaustion usually comes first, and its signs include heavy sweating and weakness.",
+        "Heat exhaustion usually comes first. Its signs include"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which countries have the most heatstroke cases.",
+        "What signs heat exhaustion has.",
+        "Where to cool the body of a person with heatstroke.",
+        "The text does not say which countries have the most heatstroke cases. It says what signs heat exhaustion has and where to cool the body.",
+        [
+          "heavy sweating, weakness, dizziness, headache, nausea",
+          "ice packs on the neck, armpits and groin"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why should a person with heatstroke get no drink if confused?",
+        "A confused person may not swallow safely.",
+        "Drinks are always harmful in the heat.",
+        "Water causes a higher body temperature.",
+        "The text says not to give anything to drink if the person is confused or unconscious, which suggests that swallowing could be unsafe.",
+        "Do not give the person anything to drink if he or she is confused or unconscious"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Simple habits can protect you during extreme heat.",
+        "Extreme heat can be avoided only by traveling.",
+        "Extreme heat is dangerous only for older people.",
+        "The text gives simple habits for staying safe during a heat wave.",
+        [
+          "a few simple habits can protect your health",
+          "it is time to stop, rest and cool down"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which hours of the day should you avoid for outdoor exercise?",
+        "Around midday.",
+        "Early morning.",
+        "The evening.",
+        "The text says to avoid the hottest hours around midday.",
+        "avoid the hottest hours around midday"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “risk” means…",
+        "the chance of harm.",
+        "a type of drink.",
+        "a rule of the road.",
+        "The text says that older neighbors, babies and people with illnesses are at higher risk, which means that they have a greater chance of harm.",
+        "they are at higher risk"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “because they are at higher risk” refers to…",
+        "older neighbors, babies and sick people.",
+        "all of the neighbors in the building.",
+        "the pets left behind in a parked car.",
+        "The sentence says to check on older neighbors, babies and people with illnesses, because they are at higher risk.",
+        "Check on older neighbors, babies and people with illnesses, because they are at higher risk"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which brand of sunscreen is the best.",
+        "Which places can offer cool air.",
+        "Why a parked car is dangerous.",
+        "The text does not say which brand of sunscreen is the best. It says which places offer cool air and why a parked car is dangerous.",
+        [
+          "a library or shopping mall",
+          "the inside of a car can become dangerously hot very quickly"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the advice about drinking water suggest?",
+        "Thirst may come after the body lacks water.",
+        "Thirst always begins much too early in the day.",
+        "Water is dangerous to drink in hot weather.",
+        "The text says to drink water even before you feel thirsty, which suggests that waiting for thirst is too late.",
+        "even before you feel thirsty"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "dizziness",
+          "a feeling that you may fall"
+        ],
+        [
+          "nausea",
+          "a feeling that you may vomit"
+        ],
+        [
+          "loosen",
+          "to make less tight"
+        ],
+        [
+          "faint",
+          "to lose consciousness for a short time"
+        ],
+        [
+          "groin",
+          "the area where the legs join the body"
+        ]
+      ],
+      "B": [
+        [
+          "regularly",
+          "again and again at fixed times"
+        ],
+        [
+          "sunscreen",
+          "a cream that protects the skin from the sun"
+        ],
+        [
+          "dangerously",
+          "in a way that may cause harm"
+        ],
+        [
+          "neighbors",
+          "people who live near you"
+        ],
+        [
+          "illnesses",
+          "conditions of being sick"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 171,
+    "slug": "unseen-reading-part-171",
+    "theme": "Injury First Aid",
+    "blurb": "stopping serious bleeding, broken bones and splints",
+    "texts": {
+      "A": {
+        "title": "Stopping Serious Bleeding",
+        "text": "Heavy bleeding can become life-threatening in just a few minutes, so quick action matters. First, call your local emergency number or ask someone else to call. Then press firmly and directly on the wound with a clean cloth, a bandage or, if nothing else is available, your hand. Keep pressing hard without stopping. If blood soaks through, do not remove the cloth. Add more material on top and keep pressing. If the bleeding is from an arm or leg and does not stop, or is very heavy, a tourniquet can be used. A tourniquet is a strong band that is tied tightly above the wound, between the wound and the heart, until the bleeding stops. It can be painful, but it can save a life. Note the time when it was applied, and do not remove it; leave that to medical staff. Training is very helpful, and many communities offer short first aid courses."
+      },
+      "B": {
+        "title": "Broken Bones and Splints",
+        "text": "A broken bone, also called a fracture, usually causes strong pain, swelling, bruising and difficulty in moving the injured part. The part may look bent or twisted. Do not move the person if you suspect an injury to the head, neck or back, unless there is immediate danger such as fire. Call for medical help, and keep the person still and calm. Support the injured part in the position in which you found it, and do not try to straighten it. If help will be far away, a splint can keep the area from moving. A splint is a firm object, such as a board, a thick magazine or a rolled newspaper, that is padded with cloth and tied above and below the break, but not too tightly. Check regularly that the fingers or toes below the splint are warm and a normal color. Cold packs wrapped in cloth can reduce swelling. If bone is sticking out through the skin, cover the wound with a clean cloth and do not push the bone back."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "To stop serious bleeding, call for help and press firmly on the wound.",
+        "To stop serious bleeding, wash the wound and wait.",
+        "To stop serious bleeding, remove the cloth every minute.",
+        "The text explains the steps for stopping serious bleeding, starting with calling for help and pressing on the wound.",
+        [
+          "First, call your local emergency number",
+          "press firmly and directly on the wound"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What should you do if blood soaks through the cloth?",
+        "Add more material on top.",
+        "Remove the cloth at once.",
+        "Stop pressing.",
+        "The text says that if blood soaks through, you should not remove the cloth, but add more material on top and keep pressing.",
+        "Add more material on top and keep pressing"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “life-threatening” means…",
+        "able to cause death.",
+        "very slow.",
+        "easy to treat.",
+        "The text says that heavy bleeding can become life-threatening in a few minutes, which means that it may cause death.",
+        "Heavy bleeding can become life-threatening in just a few minutes"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “do not remove it” refers to…",
+        "the tourniquet.",
+        "the wound.",
+        "the cloth.",
+        "The sentence says to note the time when the tourniquet was applied, and not to remove the tourniquet.",
+        "Note the time when it was applied, and do not remove it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much blood a person has in the body.",
+        "Where a tourniquet goes.",
+        "Who should remove a tourniquet.",
+        "The text does not say how much blood a person has. It says where a tourniquet goes and who should remove it.",
+        [
+          "tied tightly above the wound, between the wound and the heart",
+          "leave that to medical staff"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why should you note the time a tourniquet was applied?",
+        "Medical staff need to know how long it has been on.",
+        "The tourniquet must be removed after one minute.",
+        "The time helps to clean the wound.",
+        "The text says to note the time and to leave removal to medical staff, which suggests that they need this information.",
+        "Note the time when it was applied, and do not remove it; leave that to medical staff"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A person with a broken bone should be kept still while help is called.",
+        "A person with a broken bone should be moved quickly to a car.",
+        "A person with a broken bone should try to straighten the injured part.",
+        "The text explains how to recognize a broken bone and how to care for the person.",
+        [
+          "Call for medical help, and keep the person still and calm",
+          "do not try to straighten it"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which of these can be used to make a splint?",
+        "A rolled newspaper.",
+        "A wet towel only.",
+        "A glass bottle.",
+        "The text says that a splint is a firm object, such as a board, a thick magazine or a rolled newspaper.",
+        "such as a board, a thick magazine or a rolled newspaper"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “suspect” means…",
+        "think that something may be true.",
+        "know for certain that it is true.",
+        "forget completely about an injury.",
+        "The text says not to move the person if you suspect an injury to the head, neck or back, which means if you think that there may be one.",
+        "if you suspect an injury to the head, neck or back"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “do not try to straighten it” refers to…",
+        "the injured part.",
+        "the splint.",
+        "the newspaper.",
+        "The sentence says to support the injured part in the position in which you found it, and not to straighten the injured part.",
+        "Support the injured part in the position in which you found it, and do not try to straighten it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How long a broken bone takes to heal.",
+        "What a fracture usually causes.",
+        "What to do if bone sticks out of the skin.",
+        "The text does not say how long a broken bone takes to heal. It says what a fracture causes and what to do if bone sticks out.",
+        [
+          "strong pain, swelling, bruising",
+          "cover the wound with a clean cloth"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why check the fingers or toes below the splint?",
+        "A splint that is too tight may cut off blood flow.",
+        "Fingers and toes are the only parts that can break.",
+        "A splint always makes them cold.",
+        "The text says that the splint should not be tied too tightly and that fingers or toes should be warm and a normal color, which shows that blood flow matters.",
+        "but not too tightly. Check regularly that the fingers or toes below the splint are warm and a normal color"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "tourniquet",
+          "a tight band used to stop heavy bleeding"
+        ],
+        [
+          "soaks",
+          "passes through and makes very wet"
+        ],
+        [
+          "applied",
+          "put on or used"
+        ],
+        [
+          "bandage",
+          "a strip of cloth used to cover a wound"
+        ],
+        [
+          "firmly",
+          "with strong, steady pressure"
+        ]
+      ],
+      "B": [
+        [
+          "fracture",
+          "a break in a bone"
+        ],
+        [
+          "bruising",
+          "dark marks on the skin after an injury"
+        ],
+        [
+          "splint",
+          "a support that keeps a broken bone still"
+        ],
+        [
+          "padded",
+          "covered with soft material"
+        ],
+        [
+          "swelling",
+          "a part of the body becoming larger"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 172,
+    "slug": "unseen-reading-part-172",
+    "theme": "Electrical Safety",
+    "blurb": "electricity safety at home, lightning myths",
+    "texts": {
+      "A": {
+        "title": "Electricity Safety at Home",
+        "text": "Electricity makes modern life possible, but it can seriously injure or kill. Water conducts electricity, so never touch switches, plugs or appliances with wet hands, and keep devices away from sinks and bathtubs. Do not overload a socket by plugging in too many devices, because the wires can overheat and start a fire. Replace damaged cords at once, and pull a plug out by the plug itself, not by the cord. Keep metal objects such as keys and forks out of sockets, and use safety covers if small children live in the home. Never climb a tree or fly a kite near power lines, and if a line falls, stay far away, warn others and call the emergency number. If someone is stuck to a live wire or device, do not touch the person. Turn off the power at the main switch if you can do so safely, or call for help. If you touch the person, you may become a victim as well."
+      },
+      "B": {
+        "title": "Lightning: Myths and Facts",
+        "text": "Lightning is a powerful electrical discharge that can seriously injure or kill. Many beliefs about it are wrong. The first myth is that lightning never strikes the same place twice. In fact, tall buildings such as the Empire State Building are hit many times a year. The second myth is that rubber shoes or car tires protect you. What protects you in a car is the metal body of a hard-topped vehicle, which carries the current around the people inside. The third myth is that lightning strikes only when it is raining. It can strike several kilometers from a storm, even when the sky above you is blue. The safest place is inside a solid building, away from windows and plumbing. If you hear thunder, you are close enough to be struck, so go indoors and wait about thirty minutes after the last thunder. A person who has been struck is not electrically charged, so it is safe to touch them and give first aid."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Simple habits keep electricity safe at home.",
+        "Electricity at home is always harmless.",
+        "Electricity is dangerous only outdoors.",
+        "The text gives simple habits for staying safe around electricity.",
+        [
+          "Electricity makes modern life possible, but it can seriously injure or kill",
+          "Turn off the power at the main switch"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How should a plug be pulled out of a socket?",
+        "By the plug itself.",
+        "By the cord.",
+        "With wet hands.",
+        "The text says to pull a plug out by the plug itself, not by the cord.",
+        "pull a plug out by the plug itself, not by the cord"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “live” in “live wire” means…",
+        "carrying electricity.",
+        "very old.",
+        "broken in two.",
+        "The text says that someone is stuck to a live wire, which means a wire that is carrying electricity.",
+        "stuck to a live wire or device"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it can seriously injure or kill” refers to…",
+        "electricity.",
+        "modern life.",
+        "a socket.",
+        "The sentence says that electricity makes modern life possible, but it can seriously injure or kill.",
+        "Electricity makes modern life possible, but it can seriously injure or kill"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volts a home socket carries.",
+        "What can happen when a socket is overloaded.",
+        "What to do if a power line falls.",
+        "The text does not say how many volts a socket carries. It says what can happen when a socket is overloaded and what to do about a fallen line.",
+        [
+          "the wires can overheat and start a fire",
+          "stay far away, warn others and call the emergency number"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why should you not touch a person stuck to a live wire?",
+        "The electricity could pass to you.",
+        "The person will feel pain.",
+        "The wire will break.",
+        "The text says that if you touch the person, you may become a victim as well, which suggests that electricity could pass to you.",
+        "If you touch the person, you may become a victim as well"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Lightning myths are common, and a solid building is safest.",
+        "Lightning is harmless and cannot hurt anyone in any place.",
+        "Lightning strikes only when it is raining outside.",
+        "The text corrects several myths about lightning and says that a solid building is the safest place.",
+        [
+          "Many beliefs about it are wrong",
+          "The safest place is inside a solid building"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long should you wait after the last thunder?",
+        "About thirty minutes.",
+        "About three minutes.",
+        "About three hours.",
+        "The text says to wait about thirty minutes after the last thunder.",
+        "wait about thirty minutes after the last thunder"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “struck” means…",
+        "hit.",
+        "missed.",
+        "warmed.",
+        "The text says that if you hear thunder you are close enough to be struck, which means hit by lightning.",
+        "you are close enough to be struck"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which carries the current around the people inside” refers to…",
+        "the metal body of a hard-topped vehicle.",
+        "the thick rubber tires of the vehicle.",
+        "the thunderstorm over the vehicle.",
+        "The sentence says that the metal body of a hard-topped vehicle carries the current around the people inside.",
+        "the metal body of a hard-topped vehicle, which carries the current around the people inside"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people lightning hurts each year.",
+        "Which building is hit many times.",
+        "How far lightning can strike from a storm.",
+        "The text does not say how many people lightning hurts each year. It says which building is hit many times and how far lightning can strike.",
+        [
+          "the Empire State Building",
+          "several kilometers from a storm"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the third myth suggest?",
+        "Lightning can strike even when the sky looks clear.",
+        "Lightning is dangerous only during the night.",
+        "Lightning never travels far from a storm.",
+        "The text says that lightning can strike several kilometers from a storm, even when the sky above you is blue.",
+        "even when the sky above you is blue"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "conducts",
+          "allows electricity or heat to pass through"
+        ],
+        [
+          "appliances",
+          "machines used in the home, such as a fridge"
+        ],
+        [
+          "overload",
+          "to put too much on something"
+        ],
+        [
+          "overheat",
+          "to become too hot"
+        ],
+        [
+          "victim",
+          "a person who is harmed"
+        ]
+      ],
+      "B": [
+        [
+          "discharge",
+          "a sudden release of electricity"
+        ],
+        [
+          "myth",
+          "a common belief that is not true"
+        ],
+        [
+          "plumbing",
+          "the pipes that carry water in a building"
+        ],
+        [
+          "current",
+          "a flow of electricity"
+        ],
+        [
+          "charged",
+          "carrying an electric force"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 173,
+    "slug": "unseen-reading-part-173",
+    "theme": "Online Safety",
+    "blurb": "strong passwords and privacy, staying safe with strangers online",
+    "texts": {
+      "A": {
+        "title": "Strong Passwords and Privacy",
+        "text": "Your online accounts hold messages, photos, money and personal details, so protecting them matters. A strong password is long, unique and hard to guess. A good method is to join several unrelated words into a passphrase, such as a sentence that only you would remember. Do not use your name, birthday or simple patterns like 123456. Use a different password for every important account, because if one site is attacked, criminals try the same password on other sites. A password manager can create and store strong passwords for you. Turn on two-step verification wherever possible, so that a code or an app is needed as well as a password. Never share your passwords, even with friends. Be careful with messages that ask you to click a link or enter a password, because they may be phishing attempts. Check the sender and the address of the website first. Also review your privacy settings, and think before posting your address, school, phone number or location."
+      },
+      "B": {
+        "title": "Staying Safe With Strangers Online",
+        "text": "The internet lets us meet people from all over the world, but not everyone online is who they say they are. A stranger may use a false name, a fake photo or an invented age to gain your trust. Keep personal details private: do not share your full name, address, school, phone number or daily schedule with someone you have met only online. Be careful with photos too, because once an image is sent, you cannot control where it goes. Be suspicious of anyone who asks you to keep secrets, offers gifts, asks for money or pushes you to move to a private chat. Never agree to meet an online friend alone. If you ever do meet, tell a trusted adult and choose a public place. If a conversation makes you uncomfortable, stop, block the person, keep a screenshot and report it to the platform. Tell a parent, teacher or another trusted adult. You are never in trouble for asking for help."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Strong, separate passwords protect your accounts.",
+        "One simple password is enough for every account.",
+        "Sharing passwords with friends keeps accounts safe.",
+        "The text explains how to make strong passwords and protect personal information online.",
+        [
+          "A strong password is long, unique and hard to guess",
+          "Use a different password for every important account"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does two-step verification need besides a password?",
+        "A code or an app.",
+        "A longer username.",
+        "A phone call from a friend.",
+        "The text says that a code or an app is needed as well as a password.",
+        "a code or an app is needed as well as a password"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “review” means…",
+        "check again carefully.",
+        "delete forever.",
+        "share with friends.",
+        "The text says to review your privacy settings, which means to check them again carefully.",
+        "review your privacy settings"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they may be phishing attempts” refers to…",
+        "messages that ask you to click a link.",
+        "the strong passwords you create.",
+        "the privacy settings of a site.",
+        "The sentence says to be careful with messages that ask you to click a link or enter a password, because they may be phishing attempts.",
+        "Be careful with messages that ask you to click a link or enter a password, because they may be phishing attempts"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which password manager is the best.",
+        "What a passphrase can be.",
+        "Why one password for many sites is risky.",
+        "The text does not say which password manager is best. It says what a passphrase can be and why one password for many sites is risky.",
+        [
+          "a sentence that only you would remember",
+          "if one site is attacked, criminals try the same password on other sites"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why is a different password for each account useful?",
+        "One stolen password cannot open every account.",
+        "It is always easier to remember them.",
+        "It makes most websites load faster.",
+        "The text says that criminals try the same password on other sites, so different passwords limit the damage.",
+        "criminals try the same password on other sites"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Be careful with online strangers, protect your details and ask for help.",
+        "Share your daily schedule so that friends can find you.",
+        "Meet online friends alone as soon as possible.",
+        "The text explains how to stay safe with strangers online and says to tell a trusted adult.",
+        [
+          "not everyone online is who they say they are",
+          "Tell a parent, teacher or another trusted adult"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What should you do if you ever meet an online friend?",
+        "Tell a trusted adult and choose a public place.",
+        "Go alone to a quiet place far from home.",
+        "Keep the meeting a secret from your parents.",
+        "The text says to tell a trusted adult and choose a public place.",
+        "tell a trusted adult and choose a public place"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “gain” in “gain your trust” means…",
+        "get.",
+        "lose.",
+        "break.",
+        "The text says that a stranger may use a false name to gain your trust, which means to get it.",
+        "to gain your trust"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “report it to the platform” refers to…",
+        "the conversation.",
+        "the screenshot.",
+        "the photo.",
+        "The sentence says that if a conversation makes you uncomfortable you should stop, block the person, keep a screenshot and report the conversation.",
+        "If a conversation makes you uncomfortable, stop, block the person, keep a screenshot and report it to the platform"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many young people meet strangers online.",
+        "What personal details to keep private.",
+        "Whom to tell about a problem online.",
+        "The text does not say how many young people meet strangers online. It says what details to keep private and whom to tell.",
+        [
+          "do not share your full name, address, school, phone number or daily schedule",
+          "Tell a parent, teacher or another trusted adult"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Asking for help is always the right thing to do.",
+        "Asking for help usually leads to trouble.",
+        "Only adults are allowed to ask for help.",
+        "The text says that you are never in trouble for asking for help.",
+        "You are never in trouble for asking for help"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "unique",
+          "different from all others"
+        ],
+        [
+          "passphrase",
+          "a long password made of several words"
+        ],
+        [
+          "phishing",
+          "tricking people to give away private information"
+        ],
+        [
+          "verification",
+          "a check that you are who you say you are"
+        ],
+        [
+          "criminals",
+          "people who commit crimes"
+        ]
+      ],
+      "B": [
+        [
+          "invented",
+          "made up and not real"
+        ],
+        [
+          "suspicious",
+          "feeling that something is not right"
+        ],
+        [
+          "platform",
+          "a website or app where people communicate"
+        ],
+        [
+          "screenshot",
+          "a picture of what is on a screen"
+        ],
+        [
+          "uncomfortable",
+          "feeling uneasy or worried"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 174,
+    "slug": "unseen-reading-part-174",
+    "theme": "Bites",
+    "blurb": "dengue and mosquito bites, animal bites and rabies",
+    "texts": {
+      "A": {
+        "title": "Dengue: Preventing Mosquito Bites",
+        "text": "Dengue is a disease that is spread by Aedes mosquitoes. Unlike many other mosquitoes, they bite during the day, mostly in the early morning and late afternoon. They lay eggs in clean standing water, even in a small amount, such as in flower pots, old tires, buckets and cans. Symptoms usually start four to ten days after a bite and include sudden high fever, severe headache, pain behind the eyes, pain in the muscles and joints, and sometimes a rash. Most people recover with rest and fluids, but some become seriously ill. Warning signs include strong belly pain, repeated vomiting, bleeding from the nose or gums, and extreme tiredness or restlessness, and they need urgent medical care. The Philippine Department of Health promotes the “4S” strategy: Search and destroy mosquito breeding places, use Self-protection such as repellent and long sleeves, Seek early consultation, and Support fogging or spraying only in hotspot areas where an outbreak is likely. Empty and scrub water containers once a week."
+      },
+      "B": {
+        "title": "Animal Bites and Rabies",
+        "text": "Rabies is a deadly disease that spreads through the saliva of an infected animal, usually through a bite or a deep scratch. Most human cases around the world come from dog bites, but cats, bats and other animals can also carry the virus. Once symptoms appear, rabies is almost always fatal, but it is almost entirely preventable if the right steps are taken quickly. After any bite or scratch from an animal, wash the wound at once with soap and running water for about fifteen minutes. Then go to a doctor or an animal bite center as soon as possible, even if the wound looks small, to get a rabies vaccine and, when needed, an antibody treatment. Do not wait to see whether the animal gets sick. Try to remember what the animal looked like and where it lives, and tell the authorities. To prevent rabies, vaccinate dogs and cats on schedule, keep pets on a leash, and do not touch, feed or tease stray animals or wild animals, especially those that act strangely."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Dengue is spread by mosquitoes and can be prevented.",
+        "Dengue is spread by food and cannot be prevented.",
+        "Dengue is spread only by night-biting insects.",
+        "The text explains how dengue spreads and how to prevent it, including removing breeding places.",
+        [
+          "Dengue is a disease that is spread by Aedes mosquitoes",
+          "Search and destroy mosquito breeding places"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "When do Aedes mosquitoes bite most?",
+        "In the early morning and late afternoon.",
+        "Only in the middle of the night.",
+        "Only when it is raining heavily.",
+        "The text says that they bite during the day, mostly in the early morning and late afternoon.",
+        "mostly in the early morning and late afternoon"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “urgent” means…",
+        "needing quick action.",
+        "not important.",
+        "very cheap.",
+        "The text says that the warning signs need urgent medical care, which means care that is needed quickly.",
+        "they need urgent medical care"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they bite during the day” refers to…",
+        "Aedes mosquitoes.",
+        "dengue patients.",
+        "flower pots.",
+        "The sentence says that dengue is spread by Aedes mosquitoes, and they bite during the day.",
+        "Aedes mosquitoes. Unlike many other mosquitoes, they bite during the day"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people catch dengue every year.",
+        "Where the mosquitoes lay their eggs.",
+        "What the 4S strategy includes.",
+        "The text does not say how many people catch dengue each year. It says where the mosquitoes lay eggs and what the 4S strategy includes.",
+        [
+          "They lay eggs in clean standing water",
+          "Search and destroy mosquito breeding places"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why should water containers be emptied and scrubbed weekly?",
+        "It removes mosquito eggs and breeding places.",
+        "It keeps the water cooler.",
+        "It makes the containers lighter.",
+        "The text says that mosquitoes lay eggs in standing water, so emptying and scrubbing containers removes breeding places.",
+        "They lay eggs in clean standing water"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Rabies is deadly but preventable if a bite is treated quickly.",
+        "Rabies is harmless and does not need treatment.",
+        "Rabies spreads only through the air.",
+        "The text explains that rabies is almost always fatal after symptoms appear, but is preventable with quick treatment.",
+        [
+          "Rabies is a deadly disease",
+          "it is almost entirely preventable if the right steps are taken quickly"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "For how long should a bite wound be washed?",
+        "About fifteen minutes.",
+        "About fifteen seconds.",
+        "About fifteen hours.",
+        "The text says to wash the wound with soap and running water for about fifteen minutes.",
+        "for about fifteen minutes"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “preventable” means…",
+        "able to be stopped before it happens.",
+        "extremely painful for the person.",
+        "hard to see without a microscope.",
+        "The text says that rabies is almost entirely preventable, which means that it can be stopped before it happens.",
+        "almost entirely preventable"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “those” in “especially those that act strangely” refers to…",
+        "stray animals and wild animals.",
+        "owners of pets and farm animals.",
+        "doctors at the animal bite center.",
+        "The sentence says not to touch stray animals or wild animals, especially those that act strangely.",
+        "do not touch, feed or tease stray animals or wild animals, especially those that act strangely"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many dogs live in each city.",
+        "Which animals can carry the virus.",
+        "How long to wash a wound.",
+        "The text does not say how many dogs live in each city. It says which animals can carry the virus and how long to wash a wound.",
+        [
+          "cats, bats and other animals can also carry the virus",
+          "for about fifteen minutes"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should you go to a doctor even if the wound looks small?",
+        "A small wound can still pass on the virus.",
+        "Small wounds are always the most painful.",
+        "Doctors only treat small wounds.",
+        "The text says to go to a doctor even if the wound looks small, which suggests that a small wound can still pass on the virus.",
+        "even if the wound looks small"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "recover",
+          "to become well again"
+        ],
+        [
+          "outbreak",
+          "a sudden increase of a disease in an area"
+        ],
+        [
+          "repellent",
+          "a product that keeps insects away"
+        ],
+        [
+          "consultation",
+          "a meeting with a doctor for advice"
+        ],
+        [
+          "breeding",
+          "producing young animals or insects"
+        ]
+      ],
+      "B": [
+        [
+          "saliva",
+          "the liquid in the mouth"
+        ],
+        [
+          "fatal",
+          "causing death"
+        ],
+        [
+          "vaccine",
+          "a medicine that protects against a disease"
+        ],
+        [
+          "antibody",
+          "a substance in the body that fights disease"
+        ],
+        [
+          "stray",
+          "without a home or an owner"
+        ]
+      ]
+    }
   }
 ];
