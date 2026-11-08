@@ -149,4 +149,12 @@ export const UNSEEN_SHELF_BY_PART = {
   200: "history",
   201: "history",
   202: "history",
+  203: "body",
+  204: "body",
+  205: "body",
+  206: "body",
+  207: "body",
+  208: "nature",
+  209: "nature",
+  210: "nature",
 };
