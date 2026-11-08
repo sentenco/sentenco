@@ -329,7 +329,7 @@ export default function LetterBoardHub() {
               <dl>
                 <div><dt>Ticket</dt><dd>No. {pad2(HUB_SETS.indexOf(set) + 1)}</dd></div>
                 <div><dt>Tiles</dt><dd>{level.n}</dd></div>
-                <div><dt>Worth</dt><dd>{preset ? `${preset.name} (${cfg.c} / ${cfg.b} / ${cfg.x})` : `Custom (${cfg.c} / ${cfg.b} / ${cfg.x})`}</dd></div>
+                <div><dt>Worth</dt><dd>{preset ? `${preset.name} (${cfg.c} / ${cfg.c * 2} / ${cfg.c * 3})` : `Custom (${cfg.c} / ${cfg.c * 2} / ${cfg.c * 3})`}</dd></div>
                 <div><dt>Letters</dt><dd>{inOrder ? "In order" : "Mixed"}</dd></div>
                 <div><dt>Starts with</dt><dd>{story ? "The story" : "The board"}</dd></div>
               </dl>
