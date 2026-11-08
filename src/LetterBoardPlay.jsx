@@ -24,8 +24,16 @@ const TYPES = {
 
 const VALUE_OPTIONS = Array.from({ length: 20 }, (_, i) => (i + 1) * 5);
 
-function amountFor(type, cfg) {
-  return type === "d" ? cfg.c * 2 : cfg[type];
+// A question is worth more the harder it is: easy x1, average x2, difficult x3.
+// The bomb can sit behind any question. It wins or loses the same as plain coins would for that question (10, 20 or 30 at the standard size).
+const DIFF_MULT = [1, 2, 3];
+function multOf(itemIndex) {
+  const gi = GROUPS.findIndex((G) => itemIndex >= G.from && itemIndex < G.to);
+  return DIFF_MULT[gi < 0 ? 0 : gi];
+}
+function amountFor(type, cfg, mult = 1) {
+  const base = type === "d" ? cfg.c * 2 : type === "x" ? cfg.c : cfg[type];
+  return base * mult;
 }
 
 function shuffle(arr) {
@@ -276,8 +284,8 @@ const BURST_CLIP = (() => {
 })();
 const BURST_WORD = { c: "POW!", d: "WOW!", x: "BOOM!", b: "BONUS!" };
 
-function Face({ type, cfg }) {
-  const v = amountFor(type, cfg);
+function Face({ type, cfg, mult }) {
+  const v = amountFor(type, cfg, mult);
   return (
     <span className="lb-b">
       <span className="lb-bst" style={{ background: "#1B2A4A", clipPath: BURST_CLIP }} />
@@ -332,7 +340,8 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
 
   const finish = (ok, chosen) => {
     const type = g.types[cur];
-    const gain = ok ? amountFor(type, cfg) : type === "x" ? -Math.min(cfg.x, g.coins) : 0;
+    const worth = amountFor(type, cfg, multOf(g.pool[cur]));
+    const gain = ok ? worth : type === "x" ? -Math.min(worth, g.coins) : 0;
     const done = g.done.slice();
     done[cur] = { ok, g: gain };
     setG({ ...g, done, coins: Math.max(0, g.coins + gain) });
@@ -423,7 +432,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
               <button key={i} type="button" className={cls} style={style} onClick={() => pick(i)} aria-label={`Letter ${ch}`}>
                 <span className="lb-in">
                   <span className="lb-f" style={{ background: bg }}>{ch}</span>
-                  <Face type={g.types[i]} cfg={cfg} />
+                  <Face type={g.types[i]} cfg={cfg} mult={multOf(g.pool[i])} />
                 </span>
               </button>
             );
@@ -437,6 +446,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
             letter={String.fromCharCode(65 + cur)}
             type={g.types[cur]}
             cfg={cfg}
+            mult={multOf(g.pool[cur])}
             item={item}
             picked={picked}
             res={res}
@@ -475,7 +485,7 @@ function splitQuestion(item) {
   return { text: q, fix: false };
 }
 
-function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, onKey, onChoose, onMark, onBack, last }) {
+function QuestionCard({ letter, type, cfg, mult, item, picked, res, delta, showKey, onKey, onChoose, onMark, onBack, last }) {
   const isChoice = item.kind === "choice";
   const marked = picked >= 0;
   const cls = res ? "ok" : delta < 0 ? "bad" : "zero";
@@ -487,7 +497,7 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
   }
   const { text, fix } = splitQuestion(item);
   const inst = fix && !isChoice ? { text: "Fix it", icon: "pencil" } : instructionFor(item);
-  const v = amountFor(type, cfg);
+  const v = amountFor(type, cfg, mult);
   const burst = type === "x" ? `\u00B1${v}` : `+${v}`;
   return createPortal(
     <div className="lb-ov">
@@ -767,7 +777,7 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
         </div>
 
         <div className="lb-vals">
-          {[["c", "Coins"], ["b", "Bonus"], ["x", "Bomb"]].map(([k, label]) => (
+          {[["c", "Coins"], ["b", "Bonus"]].map(([k, label]) => (
             <label key={k}>{label}
               <select value={cfg[k]} onChange={(e) => update({ [k]: Number(e.target.value) })}>
                 {VALUE_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
@@ -785,6 +795,8 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
             </select>
           </label>
         </div>
+
+        <p className="lb-note lb-nomt">Easy questions pay the amount shown. Average questions pay double and difficult ones triple. A bomb wins or loses the same as coins would for its question.</p>
 
         {!anyReady && <p className="lb-note">Fill in all 9 easy items in the editor to play this set.</p>}
 
@@ -881,7 +893,7 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
 .lb-sbq { display: flex; flex-direction: column; gap: 16px; min-height: 445px; padding: 10px 10px 12px; }
 .lb-sbq .lb-sti { font-size: 34px; margin: 6px 0 0; }
-.lb-vals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.lb-vals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .lb-vals label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 700; }
 .lb-vals select { height: 42px; width: 100%; font-size: 14px; border: 3px solid #1B2A4A; border-radius: 10px; padding: 0 6px; background: #fff; color: #1B2A4A; font-family: inherit; font-weight: 500; }
 .lb-start { width: 100%; margin-top: auto; }
