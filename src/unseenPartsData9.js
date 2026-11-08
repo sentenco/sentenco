@@ -10211,5 +10211,6283 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 108,
+    "slug": "unseen-reading-part-108",
+    "theme": "Exercise and Health",
+    "blurb": "how much exercise we need, why sitting too long harms the body",
+    "texts": {
+      "A": {
+        "title": "How Much Exercise Do We Really Need?",
+        "text": "The World Health Organization gives simple advice about exercise. Adults should do at least 150 to 300 minutes of moderate activity a week, such as brisk walking, cycling or swimming at an easy pace. People who prefer harder exercise, such as running, can do 75 to 150 minutes of vigorous activity instead. Muscle-strengthening exercises, such as push-ups or lifting weights, are recommended on at least two days a week. Children and teenagers need more: about an hour of activity a day on average. Regular exercise strengthens the heart, helps to control weight, builds bones and muscles, improves sleep and mood, and lowers the risk of several diseases. Yet about three in ten adults in the world do not reach these levels. The good news is that every minute counts. Short walks, using the stairs and playing games all add up, and even a small amount of activity is better than none."
+      },
+      "B": {
+        "title": "Why Sitting for Too Long Harms the Body",
+        "text": "Many people sit for most of the day: at school, at a desk, in a car and in front of a screen. Researchers have found that long periods of sitting are linked to health problems, even in people who are not overweight. When we sit for hours, the large muscles in the legs do very little work, and the body handles sugar and fat less well. Studies link a lot of sitting with higher blood pressure, more fat in the blood and a higher risk of heart disease and type 2 diabetes. The harm is slow: it builds up over years. The World Health Organization says that people who sit for long periods should try to be more active than the minimum, because exercise can reduce part of the harm. Experts also suggest breaking up long periods of sitting: stand up, stretch or walk for a few minutes about every half hour. A standing desk can help, but moving matters more than the position. The best habit is to combine regular exercise with short breaks during the day."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Regular physical activity brings many health benefits, and any amount helps.",
+        "Only young people need to exercise, and only with heavy weights.",
+        "Exercise is useful only if you do it for several hours a day.",
+        "The text gives the WHO advice on exercise, explains its benefits and says that every minute counts.",
+        [
+          "The World Health Organization gives simple advice about exercise",
+          "every minute counts"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How much moderate activity do adults need each week?",
+        "150 to 300 minutes.",
+        "15 to 30 minutes.",
+        "1,500 to 3,000 minutes.",
+        "The text says that adults should do at least 150 to 300 minutes of moderate activity a week.",
+        "at least 150 to 300 minutes of moderate activity a week"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “add up” means…",
+        "together make a large amount.",
+        "disappear one by one.",
+        "cost more money.",
+        "The text says that short walks, stairs and games all add up, which means that together they make a large amount of activity.",
+        "all add up"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “these levels” in “do not reach these levels” refers to…",
+        "the recommended amounts of exercise.",
+        "the levels of heart disease.",
+        "the ages of children and adults.",
+        "The text gives recommended amounts of exercise and then says that about three in ten adults do not reach these levels.",
+        "about three in ten adults in the world do not reach these levels"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which sport burns the most calories.",
+        "How much activity children need.",
+        "Which exercises strengthen muscles.",
+        "The text does not say which sport burns the most calories. It says how much activity children need and which exercises strengthen muscles.",
+        [
+          "about an hour of activity a day on average",
+          "push-ups or lifting weights"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Small amounts of activity are still worth doing.",
+        "Only long workouts bring any benefit.",
+        "Activity is useful only in the morning.",
+        "The text says that even a small amount of activity is better than none.",
+        "even a small amount of activity is better than none"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Long sitting harms health, but exercise and short breaks reduce the harm.",
+        "Long sitting is harmless as long as you sit on a good chair.",
+        "Long sitting harms only people who are overweight and old.",
+        "The text explains that long periods of sitting are linked to health problems and suggests exercise and short breaks.",
+        [
+          "long periods of sitting are linked to health problems",
+          "combine regular exercise with short breaks during the day"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How often do experts suggest breaking up long periods of sitting?",
+        "About every half hour.",
+        "About once a day.",
+        "About every five hours.",
+        "The text says that experts suggest standing up, stretching or walking for a few minutes about every half hour.",
+        "about every half hour"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “stretch” means…",
+        "extend your muscles.",
+        "close your eyes.",
+        "turn off the lights.",
+        "The text says to stand up, stretch or walk, which means to extend your muscles.",
+        "stand up, stretch or walk"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it builds up over years” refers to…",
+        "the harm from sitting.",
+        "the standing desk.",
+        "the exercise.",
+        "The text says that the harm is slow, and the harm builds up over years.",
+        "The harm is slow: it builds up over years."
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours the average person sits.",
+        "What a standing desk can and cannot do.",
+        "What the WHO says about people who sit a lot.",
+        "The text does not say how many hours the average person sits. It says what a standing desk can do and what the WHO says about people who sit a lot.",
+        [
+          "A standing desk can help, but moving matters more than the position",
+          "people who sit for long periods should try to be more active than the minimum"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about exercise and sitting?",
+        "Exercise can reduce some of the harm of sitting.",
+        "Exercise removes all the harm of sitting.",
+        "Exercise makes sitting more harmful.",
+        "The text says that the WHO advises more activity for people who sit a lot, because exercise can reduce part of the harm.",
+        "exercise can reduce part of the harm"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "moderate",
+          "not too strong and not too weak"
+        ],
+        [
+          "vigorous",
+          "done with great energy"
+        ],
+        [
+          "brisk",
+          "quick and energetic"
+        ],
+        [
+          "recommended",
+          "advised as a good thing to do"
+        ],
+        [
+          "risk",
+          "the chance that something bad will happen"
+        ]
+      ],
+      "B": [
+        [
+          "linked",
+          "connected to something"
+        ],
+        [
+          "overweight",
+          "heavier than is healthy"
+        ],
+        [
+          "handles",
+          "deals with"
+        ],
+        [
+          "minimum",
+          "the smallest amount"
+        ],
+        [
+          "position",
+          "the way that a body is placed"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 109,
+    "slug": "unseen-reading-part-109",
+    "theme": "Muscles and Training",
+    "blurb": "how the heart and lungs adapt to training, fast-twitch and slow-twitch muscles",
+    "texts": {
+      "A": {
+        "title": "How the Heart and Lungs Adapt to Training",
+        "text": "The body adapts to the demands that we place on it. When a person trains for endurance, for example by running or cycling several times a week, the heart becomes stronger. Its main chamber grows slightly larger and pushes out more blood with each beat, so the heart does not need to beat as often. This is why trained athletes often have a low resting heart rate. The muscles also change: they grow more tiny blood vessels, called capillaries, and more mitochondria, the structures inside cells that use oxygen to make energy. As a result, the body can take in, carry and use more oxygen, which scientists measure as VO2 max. These changes take weeks or months, and the improvements are larger in people who begin from a low level. They also fade when training stops, so regular exercise is important. Rest is part of the process, because adaptation happens during recovery, not during the workout."
+      },
+      "B": {
+        "title": "Fast-Twitch and Slow-Twitch Muscles",
+        "text": "Muscles are made of two main kinds of fibers. Slow-twitch fibers contract slowly, but they use oxygen well and do not get tired easily. They are important for long, steady efforts, such as running a marathon or cycling for hours. Fast-twitch fibers contract quickly and with great force, but they tire quickly. They are important for short, explosive efforts, such as sprinting, jumping or lifting a heavy weight. Most people have a mix of both kinds, about half and half in many muscles, but the mix differs from person to person. Studies of athletes show that sprinters usually have more fast-twitch fibers, while marathon runners usually have more slow-twitch fibers. Part of this difference is inherited, which is one reason why some people seem to be born for a certain sport. Training also matters: endurance training makes fast-twitch fibers more resistant to tiredness, and strength training makes all fibers stronger."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Training changes the heart and muscles so that the body uses oxygen better.",
+        "Training makes the heart weaker so that it works less.",
+        "Training changes only the size of the lungs and nothing else.",
+        "The text explains that endurance training strengthens the heart and changes the muscles so that the body can use more oxygen.",
+        [
+          "The body adapts to the demands that we place on it",
+          "the body can take in, carry and use more oxygen"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the result of a larger heart chamber?",
+        "More blood is pushed out with each beat.",
+        "The heart beats faster at rest.",
+        "The heart needs more oxygen to beat.",
+        "The text says that the larger chamber pushes out more blood with each beat.",
+        "pushes out more blood with each beat"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “demands” means…",
+        "tasks that require effort.",
+        "gifts that we receive.",
+        "mistakes that we make.",
+        "The text says that the body adapts to the demands that we place on it, which means the tasks that require effort from it.",
+        "the demands that we place on it"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “They” in “They also fade when training stops” refers to…",
+        "the improvements.",
+        "the people.",
+        "the weeks.",
+        "The sentence before says that the improvements are larger in people who begin from a low level, and the improvements also fade when training stops.",
+        "the improvements are larger in people who begin from a low level. They also fade when training stops"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How fast the best athletes run.",
+        "What mitochondria do inside cells.",
+        "What VO2 max is used to measure.",
+        "The text does not say how fast the best athletes run. It says what mitochondria do and what VO2 max measures.",
+        [
+          "the structures inside cells that use oxygen to make energy",
+          "which scientists measure as VO2 max"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about rest?",
+        "The body becomes stronger while it recovers.",
+        "Rest makes training useless.",
+        "Rest is needed only after an injury.",
+        "The text says that adaptation happens during recovery, not during the workout.",
+        "adaptation happens during recovery, not during the workout"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Muscles have two kinds of fibers, which suit different kinds of sport.",
+        "Muscles have one kind of fiber, which is the same in every person.",
+        "Muscles have fibers that cannot be changed by any kind of training.",
+        "The text explains the two kinds of muscle fibers and which sports they suit.",
+        [
+          "Muscles are made of two main kinds of fibers",
+          "sprinters usually have more fast-twitch fibers"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which fibers do marathon runners usually have more of?",
+        "Slow-twitch fibers.",
+        "Fast-twitch fibers.",
+        "Fibers that cannot contract.",
+        "The text says that marathon runners usually have more slow-twitch fibers.",
+        "marathon runners usually have more slow-twitch fibers"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “steady” means…",
+        "regular and even.",
+        "short and sudden.",
+        "weak and slow.",
+        "The text says that slow-twitch fibers are important for long, steady efforts, which means efforts that are regular and even.",
+        "long, steady efforts"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this difference” in “Part of this difference is inherited” refers to…",
+        "the difference between sprinters and marathoners.",
+        "the difference between men and women.",
+        "the difference between two kinds of sport.",
+        "The sentence before says that sprinters and marathon runners have different kinds of fibers, and part of this difference is inherited.",
+        "sprinters usually have more fast-twitch fibers, while marathon runners usually have more slow-twitch fibers. Part of this difference is inherited"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which athlete has the most fast-twitch fibers.",
+        "What fast-twitch fibers are good for.",
+        "What most people have.",
+        "The text does not say which athlete has the most fast-twitch fibers. It says what fast-twitch fibers are good for and what most people have.",
+        [
+          "important for short, explosive efforts",
+          "Most people have a mix of both kinds"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence about inheritance suggest?",
+        "Some people have a natural advantage in certain sports.",
+        "Training has no effect on muscles at all.",
+        "Everyone can reach the same speed with practice.",
+        "The text says that part of the difference is inherited, which is one reason why some people seem to be born for a certain sport.",
+        "one reason why some people seem to be born for a certain sport"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "adapts",
+          "changes to fit new conditions"
+        ],
+        [
+          "chamber",
+          "a closed space inside the body, such as in the heart"
+        ],
+        [
+          "resting",
+          "when the body is not active"
+        ],
+        [
+          "structures",
+          "parts that make up something"
+        ],
+        [
+          "fade",
+          "to become weaker slowly"
+        ]
+      ],
+      "B": [
+        [
+          "fibers",
+          "long thin parts that make up muscles"
+        ],
+        [
+          "contract",
+          "to become shorter and tighter"
+        ],
+        [
+          "explosive",
+          "very sudden and powerful"
+        ],
+        [
+          "inherited",
+          "passed from parents to children"
+        ],
+        [
+          "resistant",
+          "able to stand against something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 110,
+    "slug": "unseen-reading-part-110",
+    "theme": "Food and Water",
+    "blurb": "eating for sport, staying hydrated",
+    "texts": {
+      "A": {
+        "title": "Eating for Sport",
+        "text": "Food is the fuel of an athlete, and different nutrients do different jobs. Carbohydrates, found in rice, bread, pasta, fruit and potatoes, are the main fuel for the muscles and brain. The body stores some carbohydrate as glycogen in the muscles and liver, but this store is limited, so athletes who train hard or long need to eat enough of it. Protein, found in fish, meat, eggs, beans and milk, helps to repair and build muscles, and it is useful to eat some after training. Fat provides energy for long, easy efforts and helps the body to use some vitamins. Most athletes do not need special powders or expensive supplements, because a varied diet gives them what they need. A good rule is to eat regular meals, include some carbohydrate and some protein at each, and eat a snack before and after hard training. Sports drinks are mainly useful for exercise longer than about an hour."
+      },
+      "B": {
+        "title": "Staying Hydrated",
+        "text": "During exercise, the body makes heat, and sweat helps to cool it. But sweat is made of water and salts, so exercise causes a loss of fluid. If an athlete loses about two percent of body weight in sweat, performance often falls: the person feels tired sooner, the effort feels harder, and concentration gets worse. Stronger dehydration can cause dizziness, headaches and cramps, and in hot weather it can be dangerous. A simple way to check is the color of the urine. Pale yellow, like straw, usually means good hydration, and dark yellow, like apple juice, suggests that the body needs more water. Thirst is also a signal, although it comes a little late. Athletes should drink regularly before, during and after exercise, and for long or very hot sessions a drink with some salt and sugar can help. But too much water can also be a problem, because it can lower the level of salt in the blood. The goal is to drink enough, not as much as possible."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Athletes get what they need from a varied diet with carbohydrate and protein.",
+        "Athletes need special powders because normal food has no protein.",
+        "Athletes should eat only protein and avoid all carbohydrates.",
+        "The text explains the jobs of carbohydrate, protein and fat, and says that a varied diet gives athletes what they need.",
+        [
+          "different nutrients do different jobs",
+          "a varied diet gives them what they need"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is glycogen?",
+        "Stored carbohydrate in the muscles and liver.",
+        "A kind of protein found in eggs and milk.",
+        "A vitamin found in oranges and other fruit.",
+        "The text says that the body stores some carbohydrate as glycogen in the muscles and liver.",
+        "stores some carbohydrate as glycogen in the muscles and liver"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “varied” means…",
+        "made of many different foods.",
+        "made of only one food.",
+        "made of expensive foods.",
+        "The text says that a varied diet gives athletes what they need, which means a diet of many different foods.",
+        "a varied diet gives them what they need"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “this store” in “this store is limited” refers to…",
+        "the glycogen in the body.",
+        "the rice and bread.",
+        "the protein for muscles.",
+        "The sentence says that the body stores carbohydrate as glycogen, but this glycogen store is limited.",
+        "stores some carbohydrate as glycogen in the muscles and liver, but this store is limited"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much protein an athlete needs each day.",
+        "Which foods contain carbohydrate.",
+        "When sports drinks are useful.",
+        "The text does not say how much protein an athlete needs each day. It names foods with carbohydrate and says when sports drinks are useful.",
+        [
+          "found in rice, bread, pasta, fruit and potatoes",
+          "Sports drinks are mainly useful for exercise longer than about an hour"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about expensive supplements?",
+        "Most athletes do not need them.",
+        "Every athlete must use them.",
+        "They are better than normal food.",
+        "The text says that most athletes do not need special powders or expensive supplements.",
+        "Most athletes do not need special powders or expensive supplements"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Athletes lose water in sweat and should drink enough, but not too much.",
+        "Athletes should drink as much water as possible during exercise.",
+        "Athletes lose no water when they exercise in cool places.",
+        "The text explains that exercise causes a loss of fluid, that dehydration hurts performance, and that the goal is to drink enough, not too much.",
+        [
+          "exercise causes a loss of fluid",
+          "The goal is to drink enough, not as much as possible"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does dark yellow urine suggest?",
+        "The body needs more water.",
+        "The body has too much water.",
+        "The body is perfectly hydrated.",
+        "The text says that dark yellow urine suggests that the body needs more water.",
+        "dark yellow, like apple juice, suggests that the body needs more water"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “concentration” means…",
+        "the ability to focus.",
+        "the amount of sweat.",
+        "the speed of running.",
+        "The text says that when an athlete loses water, concentration gets worse, which means that the ability to focus gets worse.",
+        "concentration gets worse"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it can be dangerous” refers to…",
+        "stronger dehydration.",
+        "hot weather.",
+        "a headache.",
+        "The sentence says that stronger dehydration can cause dizziness, headaches and cramps, and in hot weather dehydration can be dangerous.",
+        "Stronger dehydration can cause dizziness, headaches and cramps, and in hot weather it can be dangerous"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many liters an athlete should drink.",
+        "What sweat is made of.",
+        "What too much water can do.",
+        "The text does not say how many liters an athlete should drink. It says what sweat is made of and what too much water can do.",
+        [
+          "sweat is made of water and salts",
+          "it can lower the level of salt in the blood"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about thirst?",
+        "It is useful, but it may arrive after the body needs water.",
+        "It always comes before any loss of water.",
+        "It should be ignored.",
+        "The text says that thirst is a signal, although it comes a little late.",
+        "Thirst is also a signal, although it comes a little late."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "fuel",
+          "something that gives energy"
+        ],
+        [
+          "nutrients",
+          "substances in food that the body needs"
+        ],
+        [
+          "stores",
+          "keeps for later"
+        ],
+        [
+          "repair",
+          "to fix something that is damaged"
+        ],
+        [
+          "supplements",
+          "extra products taken in addition to normal food"
+        ]
+      ],
+      "B": [
+        [
+          "fluid",
+          "a liquid"
+        ],
+        [
+          "performance",
+          "how well someone does an activity"
+        ],
+        [
+          "dehydration",
+          "a lack of enough water in the body"
+        ],
+        [
+          "cramps",
+          "sudden painful tightening of a muscle"
+        ],
+        [
+          "signal",
+          "a sign that tells you something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 111,
+    "slug": "unseen-reading-part-111",
+    "theme": "Fair Play",
+    "blurb": "why doping is banned and how it is caught, why athletes are tempted",
+    "texts": {
+      "A": {
+        "title": "Why Doping Is Banned and How It Is Caught",
+        "text": "Doping means using banned substances or methods to improve performance, such as steroids, blood boosters or hormones. Sport organizations ban doping for three main reasons. It is unfair, because an athlete who dopes gets an advantage that others do not have. It is dangerous, because many drugs can damage the heart, liver and mind. And it goes against the spirit of sport, which is about effort, skill and honesty. In 1999, governments and sport organizations created the World Anti-Doping Agency, or WADA, to set common rules around the world. Athletes can be tested at competitions and also without warning at home. Labs analyze urine and blood for banned substances. Another tool is the Athlete Biological Passport, which records an athlete’s blood values over time and shows unusual changes, even when no banned substance is found directly. Samples are also stored for years, so they can be tested again when new methods are developed."
+      },
+      "B": {
+        "title": "Why Athletes Are Tempted",
+        "text": "If doping is unfair and dangerous, why do some athletes still do it? There is no single answer. One reason is pressure. At the top level, a tiny difference decides who wins a medal, and winning can bring fame, prizes, sponsors and a way out of poverty, while careers are short. Another reason is the belief that others are doing it too, so that clean athletes feel that they must also cheat to compete. In the 20th century, some countries ran state programs that gave drugs to their athletes. One famous case is the Canadian sprinter Ben Johnson, who won the 100 meters at the 1988 Olympic Games and then tested positive for a steroid. He lost his gold medal and the world record, and the case shocked the world. Experts say that testing is only part of the answer. Education, honest coaches, support for athletes and strong penalties also help to protect clean sport and the athletes who play by the rules."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Doping is banned as unfair and dangerous, and athletes are tested for it.",
+        "Doping is allowed if the athlete tells the officials first.",
+        "Doping is banned only in the Olympic Games and nowhere else.",
+        "The text explains why doping is banned and how athletes are tested to catch it.",
+        [
+          "Sport organizations ban doping for three main reasons",
+          "Athletes can be tested at competitions and also without warning at home"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "When was WADA created?",
+        "In 1999.",
+        "In 1899.",
+        "In 2019.",
+        "The text says that in 1999 governments and sport organizations created the World Anti-Doping Agency.",
+        "In 1999, governments and sport organizations created the World Anti-Doping Agency"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “without warning” means…",
+        "without telling them in advance.",
+        "with a loud signal.",
+        "with a doctor present.",
+        "The text says that athletes can be tested without warning at home, which means that they are not told in advance.",
+        "without warning at home"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “so they can be tested again” refers to…",
+        "the stored samples.",
+        "the athletes.",
+        "the labs.",
+        "The sentence says that samples are stored for years, so the samples can be tested again when new methods are developed.",
+        "Samples are also stored for years, so they can be tested again"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes were caught last year.",
+        "What the Athlete Biological Passport records.",
+        "Why doping is considered dangerous.",
+        "The text does not say how many athletes were caught last year. It says what the passport records and why doping is dangerous.",
+        [
+          "records an athlete’s blood values over time",
+          "many drugs can damage the heart, liver and mind"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why are samples stored for years?",
+        "New tests may find substances that old tests missed.",
+        "Labs have no space to throw them away.",
+        "Athletes ask for them back.",
+        "The text says that samples are stored so that they can be tested again when new methods are developed.",
+        "so they can be tested again when new methods are developed"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Athletes dope because of pressure and rewards, and testing alone is not enough.",
+        "Athletes dope only because they do not know the rules.",
+        "Athletes dope because doping is allowed in some sports.",
+        "The text explains several reasons why athletes dope and says that testing is only part of the answer.",
+        [
+          "There is no single answer",
+          "Experts say that testing is only part of the answer"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What happened to Ben Johnson after the 1988 race?",
+        "He lost his gold medal and the world record.",
+        "He won a second medal.",
+        "He was given a prize for honesty.",
+        "The text says that Johnson lost his gold medal and the world record.",
+        "He lost his gold medal and the world record"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “shocked” means…",
+        "greatly surprised and upset.",
+        "greatly pleased and amused.",
+        "slightly interested.",
+        "The text says that the case shocked the world, which means that it greatly surprised and upset people.",
+        "the case shocked the world"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “He” in “He lost his gold medal” refers to…",
+        "Ben Johnson.",
+        "the officials.",
+        "a coach.",
+        "The sentence before describes Ben Johnson, who won the 100 meters and then tested positive, and he lost his gold medal.",
+        "Ben Johnson, who won the 100 meters at the 1988 Olympic Games and then tested positive for a steroid. He lost his gold medal"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes dope each year.",
+        "What clean athletes may feel.",
+        "What state programs did.",
+        "The text does not say how many athletes dope each year. It says what clean athletes may feel and what state programs did.",
+        [
+          "clean athletes feel that they must also cheat to compete",
+          "gave drugs to their athletes"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about protecting clean sport?",
+        "Several different actions are needed together.",
+        "Only much stronger tests are needed at races.",
+        "Nothing can be done to protect clean sport.",
+        "The text says that education, honest coaches, support for athletes and strong penalties also help, so many actions are needed.",
+        "Education, honest coaches, support for athletes and strong penalties also help"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "banned",
+          "not allowed"
+        ],
+        [
+          "advantage",
+          "something that puts you in a better position"
+        ],
+        [
+          "spirit",
+          "the main ideas and feeling behind something"
+        ],
+        [
+          "analyze",
+          "to examine carefully"
+        ],
+        [
+          "unusual",
+          "different from what is normal"
+        ]
+      ],
+      "B": [
+        [
+          "pressure",
+          "a strong feeling of being forced to do something"
+        ],
+        [
+          "sponsors",
+          "companies that pay athletes or events for advertising"
+        ],
+        [
+          "steroid",
+          "a type of drug that can build muscle"
+        ],
+        [
+          "penalties",
+          "punishments for breaking a rule"
+        ],
+        [
+          "clean",
+          "free from banned drugs"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 112,
+    "slug": "unseen-reading-part-112",
+    "theme": "Women in Sport",
+    "blurb": "Kathrine Switzer and the Boston Marathon, Title IX",
+    "texts": {
+      "A": {
+        "title": "Kathrine Switzer and the Boston Marathon",
+        "text": "In the 1960s, many people believed that women could not run long distances. Some officials said that it was dangerous, and women were not allowed to enter marathons. In 1967, a young American student named Kathrine Switzer registered for the Boston Marathon with the name “K. V. Switzer”, so the organizers did not know that she was a woman. She received bib number 261. During the race, a race official saw that she was a woman and tried to pull her out of the race and tear off her number. Her friends and teammates blocked him, and she continued and finished the marathon in about four hours and twenty minutes. The photographs of the incident appeared in newspapers all around the world. Women were not officially allowed in the Boston Marathon until 1972, when a women’s division was started. Switzer later helped to organize races for women and campaigned for the sport. In 2017, she ran the Boston Marathon again, 50 years later, at the age of 70."
+      },
+      "B": {
+        "title": "How Title IX Changed Women’s Sport",
+        "text": "In 1972, the United States passed a law called Title IX. It says that no person may be excluded from an education program that receives money from the federal government because of sex. The law does not mention sport directly, but sport at schools and universities is part of education, so it also applies there. Before Title IX, girls had far fewer chances to play. Many schools had few or no teams for girls, and universities gave women very little money for sport. After the law, schools had to offer fair opportunities, and participation grew very quickly. In 1972, fewer than 300,000 girls played high school sport in the United States; today the number is more than three million. More women also won scholarships, and American women became stronger in international competition. Challenges remain: women’s teams often still have smaller budgets, less coverage on television and lower pay in many professional sports. The story shows how a law can change a whole culture of sport."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Kathrine Switzer ran the Boston Marathon in 1967 and helped to open it to women.",
+        "Kathrine Switzer won the first Boston Marathon held for men.",
+        "Kathrine Switzer ran a marathon in 1967 that was already open to women.",
+        "The text explains that Switzer entered the Boston Marathon in 1967 when women were not allowed, and that women were officially allowed in 1972.",
+        [
+          "registered for the Boston Marathon with the name “K. V. Switzer”",
+          "a women’s division was started"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was Switzer’s bib number?",
+        "261.",
+        "126.",
+        "162.",
+        "The text says that she received bib number 261.",
+        "She received bib number 261"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “tear off” means…",
+        "pull off.",
+        "write on.",
+        "polish.",
+        "The text says that an official tried to tear off her number, which means that he tried to pull it off.",
+        "tear off her number"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “him” in “Her friends and teammates blocked him” refers to…",
+        "the race official.",
+        "a teammate.",
+        "the organizer of the marathon.",
+        "The sentence before says that a race official tried to pull her out, and her friends and teammates blocked the official.",
+        "tried to pull her out of the race and tear off her number. Her friends and teammates blocked him"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who won the 1967 Boston Marathon.",
+        "Why she used the name “K. V. Switzer”.",
+        "When women were officially allowed.",
+        "The text does not say who won the 1967 marathon. It says why she used her initials and that women were officially allowed in 1972.",
+        [
+          "so the organizers did not know that she was a woman",
+          "until 1972"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why did the photographs matter?",
+        "They showed many people how women runners were treated.",
+        "They proved that Switzer set a new record.",
+        "They were used to hide her name from the race.",
+        "The text says that the photographs appeared in newspapers all around the world, so many people saw what happened to her.",
+        "The photographs of the incident appeared in newspapers all around the world."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Title IX gave girls and women more chances in sport, though gaps remain.",
+        "Title IX banned women from playing on teams with men.",
+        "Title IX gave all sports teams exactly the same budget.",
+        "The text explains that Title IX opened school sport to girls and that participation grew, but that challenges remain.",
+        [
+          "Before Title IX, girls had far fewer chances to play",
+          "Challenges remain"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many girls played high school sport in 1972?",
+        "Fewer than 300,000.",
+        "More than three million.",
+        "About 30 million.",
+        "The text says that in 1972 fewer than 300,000 girls played high school sport.",
+        "fewer than 300,000 girls played high school sport"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “remain” means…",
+        "still exist.",
+        "have disappeared.",
+        "were solved.",
+        "The text says that challenges remain, which means that they still exist.",
+        "Challenges remain"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “so it also applies there” refers to…",
+        "the law.",
+        "the money.",
+        "the sport.",
+        "The sentence says that the law does not mention sport, but because sport is part of education, the law also applies there.",
+        "The law does not mention sport directly, but sport at schools and universities is part of education, so it also applies there"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many women coaches there are today.",
+        "What the law says about education programs.",
+        "What problems still remain.",
+        "The text does not say how many women coaches there are. It says what the law says about education programs and what problems remain.",
+        [
+          "no person may be excluded from an education program",
+          "smaller budgets, less coverage on television and lower pay"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Laws can change how a society treats sport.",
+        "Laws never change what people do.",
+        "Culture changes only through television.",
+        "The text says that the story shows how a law can change a whole culture of sport.",
+        "a law can change a whole culture of sport"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "registered",
+          "put your name on an official list"
+        ],
+        [
+          "organizers",
+          "people who plan an event"
+        ],
+        [
+          "blocked",
+          "stopped from moving forward"
+        ],
+        [
+          "division",
+          "a separate group in a competition"
+        ],
+        [
+          "campaigned",
+          "worked to bring about a change"
+        ]
+      ],
+      "B": [
+        [
+          "excluded",
+          "kept out"
+        ],
+        [
+          "directly",
+          "in a clear and open way"
+        ],
+        [
+          "opportunities",
+          "chances to do something"
+        ],
+        [
+          "scholarships",
+          "money given to a student to pay for study"
+        ],
+        [
+          "budgets",
+          "plans for how much money can be spent"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 113,
+    "slug": "unseen-reading-part-113",
+    "theme": "Paralympic Sport",
+    "blurb": "how the Paralympics began, technology in adaptive sport",
+    "texts": {
+      "A": {
+        "title": "How the Paralympics Began",
+        "text": "The Paralympic Games began in a hospital. During the Second World War, many soldiers came home with spinal injuries, and at that time many doctors thought that they would live only a short time. A German-born doctor, Ludwig Guttmann, worked at Stoke Mandeville Hospital in England and believed that sport could help his patients to regain strength, confidence and a purpose in life. In 1948, on the day that the London Olympic Games opened, he organized a small sports competition for wheelchair users, and the first event was archery. It was called the Stoke Mandeville Games. Each year, the games grew, and athletes from other countries joined. In 1960, the Games were held in Rome after the Olympic Games, with about four hundred athletes from 23 countries, and they are now counted as the first Paralympic Games. The name “Paralympics” was approved officially later. Today, thousands of athletes with many types of disabilities compete, and the Games are held in the same cities as the Olympic Games."
+      },
+      "B": {
+        "title": "Technology in Adaptive Sport",
+        "text": "Technology has changed sport for athletes with disabilities. A sprinter with a leg amputation can use a running blade, a curved prosthesis made of carbon fiber. The blade acts like a spring: it stores energy when it hits the ground and returns part of it, so the runner moves forward. Racing wheelchairs are very light, with a low seat, large wheels that tilt inward, and a front wheel for steering, which helps the athlete to push efficiently and turn corners. Other devices include special swimming prostheses, adapted bicycles and sports wheelchairs for basketball, which turn quickly. Designing this equipment requires engineers, doctors and the athletes themselves, because each person’s body is different. The technology also raises questions. Some people ask whether a prosthesis can give an unfair advantage, and sports organizations use rules and tests to keep competition fair. Many of the ideas, such as lighter materials and better wheels, later help ordinary people in daily life."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Paralympics grew from a small hospital competition for wheelchair users.",
+        "The Paralympics began as a hospital competition for doctors.",
+        "The Paralympics began at the Olympic Games in London in 1948.",
+        "The text explains that Guttmann started a small competition for wheelchair users in a hospital, and that it grew into the Paralympic Games.",
+        [
+          "The Paralympic Games began in a hospital",
+          "they are now counted as the first Paralympic Games"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was the first event of 1948?",
+        "Archery.",
+        "Swimming.",
+        "Basketball.",
+        "The text says that the first event was archery.",
+        "the first event was archery"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “organized” means…",
+        "arranged and planned.",
+        "canceled.",
+        "watched.",
+        "The text says that Guttmann organized a small sports competition, which means that he arranged and planned it.",
+        "he organized a small sports competition"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It was called the Stoke Mandeville Games” refers to…",
+        "the sports competition.",
+        "the hospital.",
+        "the archery event.",
+        "The sentence before says that he organized a small sports competition, and the competition was called the Stoke Mandeville Games.",
+        "he organized a small sports competition for wheelchair users, and the first event was archery. It was called the Stoke Mandeville Games"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many patients Guttmann treated in his life.",
+        "Where the 1960 Games were held.",
+        "What Guttmann believed sport could do.",
+        "The text does not say how many patients Guttmann treated. It says where the 1960 Games were held and what Guttmann believed about sport.",
+        [
+          "In 1960, the Games were held in Rome",
+          "sport could help his patients to regain strength, confidence and a purpose in life"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the first sentence suggest?",
+        "The idea began as a treatment for patients.",
+        "The idea began in a large sports stadium in London.",
+        "The idea began as a television show for children.",
+        "The text says that the Paralympic Games began in a hospital, as a way to help patients.",
+        "The Paralympic Games began in a hospital."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Special equipment helps adaptive athletes, and rules keep competition fair.",
+        "Special equipment makes adaptive sport easier than any other sport.",
+        "Special equipment is used only by engineers and never by athletes.",
+        "The text explains the technology used in adaptive sport and says that rules and tests keep competition fair.",
+        [
+          "Technology has changed sport for athletes with disabilities",
+          "sports organizations use rules and tests to keep competition fair"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is a running blade made of?",
+        "Carbon fiber.",
+        "Solid wood.",
+        "Heavy steel.",
+        "The text says that a running blade is a curved prosthesis made of carbon fiber.",
+        "a curved prosthesis made of carbon fiber"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “efficiently” means…",
+        "with little wasted effort.",
+        "with great noise.",
+        "with a lot of delay.",
+        "The text says that the design helps the athlete to push efficiently, which means with little wasted effort.",
+        "push efficiently"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it stores energy when it hits the ground” refers to…",
+        "the blade.",
+        "the runner.",
+        "the ground.",
+        "The sentence says that the blade acts like a spring, and the blade stores energy when it hits the ground.",
+        "The blade acts like a spring: it stores energy when it hits the ground"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a running blade costs.",
+        "Who helps to design the equipment.",
+        "What wheelchairs for basketball can do.",
+        "The text does not say how much a running blade costs. It says who helps to design the equipment and that basketball wheelchairs turn quickly.",
+        [
+          "requires engineers, doctors and the athletes themselves",
+          "sports wheelchairs for basketball, which turn quickly"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about adaptive technology?",
+        "Its ideas can benefit people outside sport.",
+        "Its ideas are useful only in sport.",
+        "Its ideas are never shared.",
+        "The text says that ideas such as lighter materials and better wheels later help ordinary people in daily life.",
+        "later help ordinary people in daily life"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "injuries",
+          "damage to the body"
+        ],
+        [
+          "regain",
+          "get back something that was lost"
+        ],
+        [
+          "confidence",
+          "belief in your own ability"
+        ],
+        [
+          "purpose",
+          "a reason for living or doing something"
+        ],
+        [
+          "disabilities",
+          "conditions that make some activities harder for the body or mind"
+        ]
+      ],
+      "B": [
+        [
+          "amputation",
+          "the removal of part of the body"
+        ],
+        [
+          "prosthesis",
+          "an artificial body part"
+        ],
+        [
+          "spring",
+          "a coil that returns to its shape after being pushed"
+        ],
+        [
+          "tilt",
+          "to lean to one side"
+        ],
+        [
+          "adapted",
+          "changed to suit a particular need"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 114,
+    "slug": "unseen-reading-part-114",
+    "theme": "The Marathon",
+    "blurb": "how the marathon got its distance, why runners hit the wall",
+    "texts": {
+      "A": {
+        "title": "How the Marathon Got Its Distance",
+        "text": "According to a famous legend, in 490 BC a Greek messenger ran from the town of Marathon to Athens, about 40 kilometers, to announce that the Greeks had won a battle against the Persians, and then he collapsed and died. Historians are not sure that this really happened, but the story inspired the first modern Olympic Games in Athens in 1896, which included a race from Marathon to Athens of about 40 kilometers. The exact distance was not fixed. It changed at the next Olympic Games, until 1908, when the Games were held in London. The race started at Windsor Castle and finished in the Olympic stadium, in front of the royal box, and the distance measured 26 miles and 385 yards, or 42.195 kilometers. The distance was used again in later races, and in 1921 it became the official length of a marathon. Today, more than a thousand marathons are held each year, and millions of people run them."
+      },
+      "B": {
+        "title": "Why Runners Hit the Wall",
+        "text": "Many marathon runners describe a moment called “the wall”. Somewhere around the thirtieth kilometer, a runner who felt strong suddenly feels very heavy and tired, the legs seem to slow down, and the mind fills with doubt. The main reason is fuel. The muscles burn a mixture of carbohydrate and fat, and the carbohydrate is stored as glycogen. The glycogen store is enough for about one and a half to two hours of hard running. When it runs out, the body must rely more on fat, which cannot supply energy as quickly, so the runner has to slow down. Tiredness of the brain, the heat and dehydration can also play a part. Runners can reduce the risk in several ways. They can start at a steady pace instead of running too fast at the beginning, eat carbohydrates before the race, take gels or drinks during the race and train for long runs, which teaches the body to use fat better. Hitting the wall is common, but it is not inevitable."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The marathon got its 42.195 km distance from the 1908 London Olympic course.",
+        "The marathon got its 42.195 km distance from the road to Athens.",
+        "The marathon got its 42.195 km distance from a vote in 1896.",
+        "The text explains that the 1908 London course measured 42.195 kilometers and that this distance became official in 1921.",
+        [
+          "the distance measured 26 miles and 385 yards, or 42.195 kilometers",
+          "in 1921 it became the official length of a marathon"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where did the 1908 race finish?",
+        "In the Olympic stadium, by the royal box.",
+        "At the gate of Windsor Castle.",
+        "In the old town of Marathon in Greece.",
+        "The text says that the 1908 race finished in the Olympic stadium, in front of the royal box.",
+        "finished in the Olympic stadium, in front of the royal box"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “collapsed” means…",
+        "fell down suddenly.",
+        "stood up quickly.",
+        "ran faster.",
+        "The text says that the messenger collapsed and died, which means that he fell down suddenly.",
+        "he collapsed and died"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It changed at the next Olympic Games” refers to…",
+        "the exact distance.",
+        "the first race.",
+        "the Olympic Games.",
+        "The sentence before says that the exact distance was not fixed, and the distance changed at the next Olympic Games.",
+        "The exact distance was not fixed. It changed at the next Olympic Games"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who won the first modern Olympic marathon.",
+        "Where the 1908 race started.",
+        "In which year the length became official.",
+        "The text does not say who won the first Olympic marathon. It says where the 1908 race started and when the length became official.",
+        [
+          "The race started at Windsor Castle",
+          "in 1921 it became the official length"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the word “legend” suggest about the story of the messenger?",
+        "It may not be completely true.",
+        "It was recorded in modern newspapers.",
+        "It is proved by many documents.",
+        "The text says that historians are not sure that the story really happened.",
+        "Historians are not sure that this really happened"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Runners hit the wall when fuel runs low, and good planning can help.",
+        "Runners hit the wall only because of the weather on race day.",
+        "Runners hit the wall because their shoes become too heavy.",
+        "The text explains that runners hit the wall when their glycogen runs out, and describes ways to reduce the risk.",
+        [
+          "The main reason is fuel",
+          "Runners can reduce the risk in several ways"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "About how long does the glycogen store last in hard running?",
+        "About one and a half to two hours.",
+        "About ten or fifteen minutes.",
+        "About one whole day of running.",
+        "The text says that the glycogen store is enough for about one and a half to two hours of hard running.",
+        "enough for about one and a half to two hours of hard running"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “rely on” means…",
+        "depend on.",
+        "give up.",
+        "stay away from.",
+        "The text says that the body must rely more on fat, which means that it must depend more on fat.",
+        "rely more on fat"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “When it runs out” refers to…",
+        "the glycogen store.",
+        "the race.",
+        "the mind.",
+        "The sentence says that the glycogen store is enough for about two hours, and when the glycogen store runs out the body relies on fat.",
+        "The glycogen store is enough for about one and a half to two hours of hard running. When it runs out"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many runners hit the wall each year.",
+        "What a runner can eat before the race.",
+        "What long runs teach the body.",
+        "The text does not say how many runners hit the wall each year. It says what a runner can eat before the race and what long runs teach the body.",
+        [
+          "eat carbohydrates before the race",
+          "train for long runs, which teaches the body to use fat better"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The wall can often be avoided with preparation.",
+        "The wall always happens to everyone.",
+        "The wall cannot be avoided in any way.",
+        "The text says that hitting the wall is common, but it is not inevitable.",
+        "Hitting the wall is common, but it is not inevitable."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "messenger",
+          "a person who carries a message"
+        ],
+        [
+          "announce",
+          "to tell something to the public"
+        ],
+        [
+          "inspired",
+          "gave someone the idea or wish to do something"
+        ],
+        [
+          "measured",
+          "found the size or length of something"
+        ],
+        [
+          "official",
+          "approved by those in authority"
+        ]
+      ],
+      "B": [
+        [
+          "doubt",
+          "a feeling of not being sure"
+        ],
+        [
+          "supply",
+          "to provide something that is needed"
+        ],
+        [
+          "pace",
+          "the speed at which you move"
+        ],
+        [
+          "gels",
+          "soft, sticky foods used for quick energy"
+        ],
+        [
+          "inevitable",
+          "certain to happen and impossible to avoid"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 115,
+    "slug": "unseen-reading-part-115",
+    "theme": "Basketball",
+    "blurb": "how basketball was invented, basketball in the Philippines",
+    "texts": {
+      "A": {
+        "title": "How Basketball Was Invented",
+        "text": "Basketball is one of the few sports whose inventor and invention date are known. In the winter of 1891, a Canadian teacher named James Naismith worked at a training school of the YMCA in Springfield, Massachusetts. His students got bored and restless indoors, because football and baseball were played outside and the winter was cold. His boss asked him to invent a new indoor game that would keep them fit, and that would be less rough than football. Naismith wrote 13 rules. Players passed a soccer ball and tried to throw it into a basket, and at first they could not run while holding the ball. Since the janitor had no boxes, he found two peach baskets and nailed them to the balcony, about ten feet above the floor, which is still the height of a hoop today. After each goal, somebody had to climb up and take the ball out, because the baskets still had bottoms. The game spread quickly through the YMCA network and to schools and universities in many countries."
+      },
+      "B": {
+        "title": "How Basketball Became a Passion in the Philippines",
+        "text": "In the Philippines, basketball is more than a sport: it is part of everyday life. Walk through almost any town and you will see a hoop on a street corner, a barangay court or a school yard, often with a game going on. Historians say that Americans introduced basketball to the Philippines in the early 1900s, when American teachers, soldiers and YMCA workers taught the game in schools and clubs. Filipinos adopted it very quickly. Basketball needs little equipment, a ball, a hoop and a small space, and it can be played by a few people at a time, which suits crowded neighborhoods. In 1975, the Philippine Basketball Association, or PBA, started, and it is often described as the first professional basketball league in Asia. Games of the PBA, the college leagues and the national team draw large crowds and television audiences. Filipino fans are known for their passion, and many families follow the sport together. For many young Filipinos, a basketball court is also a place to make friends."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "James Naismith invented basketball in 1891 as an indoor winter game.",
+        "James Naismith invented basketball in 1891 to replace football.",
+        "James Naismith invented basketball in Canada as a summer game.",
+        "The text explains that Naismith invented basketball in the winter of 1891 as a new indoor game.",
+        [
+          "In the winter of 1891, a Canadian teacher named James Naismith",
+          "invent a new indoor game"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the first players throw the ball into?",
+        "Peach baskets.",
+        "Metal nets.",
+        "Cardboard boxes.",
+        "The text says that the janitor found two peach baskets and nailed them to the balcony.",
+        "he found two peach baskets"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “fit” in “keep them fit” means…",
+        "healthy and strong.",
+        "tired and sad.",
+        "busy and rich.",
+        "The text says that the new game would keep the students fit, which means healthy and strong.",
+        "would keep them fit"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “he” in “he found two peach baskets” refers to…",
+        "the janitor.",
+        "Naismith.",
+        "the boss.",
+        "The sentence says that since the janitor had no boxes, the janitor found two peach baskets.",
+        "Since the janitor had no boxes, he found two peach baskets"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students were in the first game.",
+        "How high the baskets were.",
+        "How many rules Naismith wrote.",
+        "The text does not say how many students were in the first game. It says how high the baskets were and how many rules Naismith wrote.",
+        [
+          "about ten feet above the floor",
+          "Naismith wrote 13 rules"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why did somebody have to climb up after each goal?",
+        "The baskets were closed at the bottom.",
+        "The ball had to be washed.",
+        "The players were not allowed to touch it.",
+        "The text says that somebody had to take the ball out because the baskets still had bottoms.",
+        "because the baskets still had bottoms"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Basketball, brought by Americans, became part of everyday Filipino life.",
+        "Basketball began in the Philippines and was later taken to America.",
+        "Basketball is played in the Philippines only in big stadiums.",
+        "The text explains that Americans introduced basketball in the early 1900s and that it became part of everyday life in the Philippines.",
+        [
+          "Historians say that Americans introduced basketball to the Philippines in the early 1900s",
+          "In the Philippines, basketball is more than a sport"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "When did the PBA start?",
+        "In 1975.",
+        "In 1905.",
+        "In 1995.",
+        "The text says that the PBA started in 1975.",
+        "In 1975, the Philippine Basketball Association, or PBA, started"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “draw” means…",
+        "attract.",
+        "frighten.",
+        "ignore.",
+        "The text says that games draw large crowds, which means that they attract large crowds.",
+        "draw large crowds and television audiences"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it is often described as the first professional basketball league” refers to…",
+        "the PBA.",
+        "the national team.",
+        "the game.",
+        "The sentence says that the PBA started in 1975, and the PBA is often described as the first professional basketball league in Asia.",
+        "the Philippine Basketball Association, or PBA, started, and it is often described as the first professional basketball league in Asia"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many basketball courts there are in the Philippines.",
+        "What basketball needs to be played.",
+        "Who taught the game in schools and clubs.",
+        "The text does not say how many courts there are. It says what basketball needs and who taught the game.",
+        [
+          "a ball, a hoop and a small space",
+          "American teachers, soldiers and YMCA workers taught the game"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does basketball suit crowded neighborhoods, according to the text?",
+        "It needs little space and few players.",
+        "It needs a large field and many players.",
+        "It is too expensive to play in streets.",
+        "The text says that basketball can be played by a few people in a small space, which suits crowded neighborhoods.",
+        "it can be played by a few people at a time, which suits crowded neighborhoods"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "restless",
+          "unable to stay still because of boredom or energy"
+        ],
+        [
+          "rough",
+          "violent and not gentle"
+        ],
+        [
+          "rules",
+          "official instructions for how to play"
+        ],
+        [
+          "nailed",
+          "fixed with a nail"
+        ],
+        [
+          "balcony",
+          "a raised platform with a rail"
+        ]
+      ],
+      "B": [
+        [
+          "introduced",
+          "brought something to a place for the first time"
+        ],
+        [
+          "adopted",
+          "started to use as one’s own"
+        ],
+        [
+          "equipment",
+          "the things needed for an activity"
+        ],
+        [
+          "professional",
+          "done for money as a job"
+        ],
+        [
+          "audiences",
+          "groups of people who watch or listen"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 116,
+    "slug": "unseen-reading-part-116",
+    "theme": "The Athlete’s Mind",
+    "blurb": "how elite athletes read the game, why athletes choke",
+    "texts": {
+      "A": {
+        "title": "How Elite Athletes Read the Game",
+        "text": "A tennis player has less than half a second to return a fast serve, and a goalkeeper has even less time to react to a penalty kick. Yet top athletes often seem to have all the time in the world. Research shows that part of the secret is anticipation. Experts do not wait to see the ball. They read small signals from the opponent’s body, such as the position of the hips, the shoulders and the arm, and they predict where the ball will go before it is hit. Eye-tracking studies show that experts look at different places from beginners: they focus on the most useful parts of the body instead of following only the ball. This skill comes from experience, because the brain learns the patterns after thousands of repetitions. Coaches now use video training to help young athletes to learn these patterns faster. The skill is usually specific to a sport, so an expert in tennis is not necessarily better than average at predicting cricket."
+      },
+      "B": {
+        "title": "Why Athletes Choke Under Pressure",
+        "text": "Almost every fan has seen it: a champion misses an easy penalty or a simple shot at a decisive moment. In sport psychology this is called choking, a drop in performance under pressure, even for a skill that the athlete knows very well. Researchers describe two main explanations. The first is explicit monitoring. Skills that were once automatic, such as swinging a golf club, run smoothly when the athlete does not think about every step. Under pressure, the athlete starts to watch and control each movement, and this interrupts the smooth routine. The second is distraction. Worry about the result, the crowd or the consequences uses attention that the athlete needs for the task. Probably both explanations are true in different situations. Athletes can prepare in several ways. They can practice under pressure, for example in competitions with small prizes, use a short routine before each shot, focus on one simple cue instead of many details, and breathe slowly. Choking is normal, and even the best athletes experience it."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Elite athletes seem fast because they anticipate actions from body signals.",
+        "Elite athletes seem fast because their eyes follow the ball faster.",
+        "Elite athletes seem fast because they guess every move at random.",
+        "The text explains that experts read small signals from the opponent’s body and predict what will happen before it happens.",
+        [
+          "part of the secret is anticipation",
+          "They read small signals from the opponent’s body"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where do experts look, according to eye-tracking studies?",
+        "At the most useful parts of the body.",
+        "Only at the ball in the air.",
+        "At the crowd in the stands.",
+        "The text says that experts focus on the most useful parts of the body instead of following only the ball.",
+        "they focus on the most useful parts of the body instead of following only the ball"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “react” means…",
+        "respond quickly.",
+        "ignore.",
+        "remember.",
+        "The text says that a goalkeeper has little time to react to a penalty kick, which means to respond quickly.",
+        "less time to react to a penalty kick"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “They” in “They read small signals” refers to…",
+        "the experts.",
+        "the beginners.",
+        "the signals.",
+        "The sentence before says that experts do not wait to see the ball, and the experts read small signals from the opponent’s body.",
+        "Experts do not wait to see the ball. They read small signals"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much experts earn in a year.",
+        "How the brain learns the patterns.",
+        "What coaches use to teach young athletes.",
+        "The text does not say how much experts earn. It says how the brain learns the patterns and that coaches use video training.",
+        [
+          "the brain learns the patterns after thousands of repetitions",
+          "Coaches now use video training"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about anticipation?",
+        "It is a skill that is learned for a particular sport.",
+        "It is the same in every sport.",
+        "It is a talent that cannot be trained.",
+        "The text says that the skill is usually specific to a sport, so an expert in tennis may not predict cricket well.",
+        "The skill is usually specific to a sport"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Athletes choke because pressure disturbs automatic skills, but preparation helps.",
+        "Athletes choke because they have not practiced their skills enough.",
+        "Athletes choke only because they are not good enough.",
+        "The text explains two explanations for choking and ways to prepare for pressure.",
+        [
+          "Researchers describe two main explanations",
+          "Athletes can prepare in several ways"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is explicit monitoring?",
+        "Controlling each movement under pressure.",
+        "Looking at the crowd for support.",
+        "Practicing a skill many times.",
+        "The text says that under pressure the athlete starts to watch and control each movement.",
+        "Under pressure, the athlete starts to watch and control each movement"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “smoothly” means…",
+        "without problems or breaks.",
+        "with many mistakes.",
+        "with great noise.",
+        "The text says that automatic skills run smoothly when the athlete does not think about each step, which means without problems or breaks.",
+        "run smoothly when the athlete does not think about every step"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “Almost every fan has seen it” refers to…",
+        "a champion missing an easy shot at a key moment.",
+        "a goalkeeper stopping a penalty in a final.",
+        "a team winning a prize at the end.",
+        "The sentence explains after the colon what fans have seen: a champion who misses an easy penalty or a simple shot at a decisive moment.",
+        "Almost every fan has seen it: a champion misses an easy penalty or a simple shot at a decisive moment"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes choke each year.",
+        "What the second explanation is.",
+        "How athletes can breathe.",
+        "The text does not say how many athletes choke each year. It names the second explanation and says that athletes can breathe slowly.",
+        [
+          "The second is distraction",
+          "breathe slowly"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Choking does not mean that an athlete is weak.",
+        "Choking happens only to beginners.",
+        "Choking can never be reduced.",
+        "The text says that choking is normal and that even the best athletes experience it.",
+        "Choking is normal, and even the best athletes experience it."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "anticipation",
+          "expecting what will happen before it happens"
+        ],
+        [
+          "signals",
+          "signs that give information"
+        ],
+        [
+          "predict",
+          "to say what will happen"
+        ],
+        [
+          "patterns",
+          "regular ways that things happen"
+        ],
+        [
+          "specific",
+          "belonging to one particular thing"
+        ]
+      ],
+      "B": [
+        [
+          "decisive",
+          "very important in deciding the result"
+        ],
+        [
+          "interrupts",
+          "stops something for a short time"
+        ],
+        [
+          "consequences",
+          "results of an action"
+        ],
+        [
+          "routine",
+          "a fixed set of actions that you do regularly"
+        ],
+        [
+          "cue",
+          "a signal that tells you what to do"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 117,
+    "slug": "unseen-reading-part-117",
+    "theme": "Israel at the Olympics",
+    "blurb": "Gal Fridman’s gold in windsurfing, Artem Dolgopyat’s gold in gymnastics",
+    "texts": {
+      "A": {
+        "title": "Gal Fridman: Israel’s First Olympic Gold",
+        "text": "Israel first competed in the Olympic Games in 1952, and for more than fifty years its athletes won medals but no gold. This changed in August 2004, in Athens, when a windsurfer named Gal Fridman won the gold medal. Fridman was born in 1975 in the town of Hadera and began to windsurf as a boy. In windsurfing, the athlete stands on a board with a sail and steers by tilting the sail and shifting the body, so skill, strength and an understanding of wind and waves are all important. Fridman had already won a bronze medal at the 1996 Olympic Games in Atlanta, which made him a leading Israeli sailor. In Athens, he sailed in the Mistral class, a competition of several races, and he finished at the top of the standings. Many Israelis watched his victory on television, and many hoped that it would inspire a new generation of young athletes."
+      },
+      "B": {
+        "title": "Artem Dolgopyat: Gold on the Floor",
+        "text": "The second Olympic gold medal in Israel’s history came 17 years after the first, in gymnastics. At the Tokyo Games, held in 2021, the Israeli gymnast Artem Dolgopyat competed in the floor exercise, an event in which a gymnast performs a series of jumps, flips, turns and balance moves on a square mat, in a routine of about one minute without music and without any equipment. Judges give two scores: the difficulty of the elements and the quality of the performance. In the final, on 1 August 2021, Dolgopyat and the Spanish gymnast Rayderley Zapata ended with the same total score. According to the rules, the tie was broken by comparing the difficulty scores, and Dolgopyat’s routine was harder, so he won the gold medal. The Chinese gymnast Xiao Ruoteng took the bronze. For gymnasts, floor exercise demands power for the jumps, flexibility, balance and courage, and years of daily practice. Dolgopyat’s success showed that Israel can compete with the best in artistic gymnastics."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Gal Fridman won Israel’s first Olympic gold medal, in windsurfing, in 2004.",
+        "Gal Fridman won Israel’s first Olympic medal, a bronze, in 1952.",
+        "Gal Fridman won a gold medal in swimming at the Atlanta Games.",
+        "The text explains that Fridman won Israel’s first Olympic gold medal in windsurfing at Athens in 2004.",
+        [
+          "a windsurfer named Gal Fridman won the gold medal",
+          "August 2004, in Athens"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where was Gal Fridman born?",
+        "In the town of Hadera.",
+        "In the city of Athens.",
+        "In the town of Atlanta.",
+        "The text says that Fridman was born in 1975 in the town of Hadera.",
+        "born in 1975 in the town of Hadera"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “leading” in “a leading Israeli sailor” means…",
+        "one of the best.",
+        "the oldest.",
+        "the newest.",
+        "The text says that Fridman became a leading Israeli sailor, which means one of the best.",
+        "a leading Israeli sailor"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which made him a leading Israeli sailor” refers to…",
+        "his bronze medal at the 1996 Games.",
+        "his birth in the town of Hadera.",
+        "the Mistral class in Athens.",
+        "The sentence says that Fridman had already won a bronze medal at the 1996 Games, and the bronze medal made him a leading Israeli sailor.",
+        "Fridman had already won a bronze medal at the 1996 Olympic Games in Atlanta, which made him a leading Israeli sailor"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much prize money Fridman received.",
+        "What class he sailed in Athens.",
+        "When Israel first competed.",
+        "The text does not say how much prize money Fridman received. It says what class he sailed in Athens and when Israel first competed.",
+        [
+          "he sailed in the Mistral class",
+          "Israel first competed in the Olympic Games in 1952"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the first sentence suggest about the 2004 victory?",
+        "It was a historic first for Israel.",
+        "It was one of many Israeli gold medals.",
+        "It was a medal that nobody noticed.",
+        "The text says that for more than fifty years Israeli athletes won medals but no gold, so the 2004 gold was a historic first.",
+        "for more than fifty years its athletes won medals but no gold"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Artem Dolgopyat won gold in the floor exercise at the Tokyo Games after a tie.",
+        "Artem Dolgopyat won gold in a swimming race at the Tokyo Games.",
+        "Artem Dolgopyat won bronze in the floor exercise at the Tokyo Games.",
+        "The text explains that Dolgopyat won the floor exercise gold after a tie, which was broken by the difficulty score.",
+        [
+          "Artem Dolgopyat competed in the floor exercise",
+          "the tie was broken by comparing the difficulty scores"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How was the tie broken?",
+        "By comparing the difficulty scores.",
+        "By a coin toss before the final.",
+        "By a second final the next day.",
+        "The text says that the tie was broken by comparing the difficulty scores.",
+        "the tie was broken by comparing the difficulty scores"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “demands” means…",
+        "requires.",
+        "refuses.",
+        "forgets.",
+        "The text says that floor exercise demands power, flexibility and courage, which means that it requires them.",
+        "floor exercise demands power"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “he” in “so he won the gold medal” refers to…",
+        "Dolgopyat.",
+        "Zapata.",
+        "Xiao Ruoteng.",
+        "The sentence says that Dolgopyat’s routine was harder, so Dolgopyat won the gold medal.",
+        "Dolgopyat’s routine was harder, so he won the gold medal"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How old Dolgopyat is today.",
+        "Who won the bronze medal.",
+        "What the two scores measure.",
+        "The text does not say how old Dolgopyat is today. It says who won the bronze medal and what the two scores measure.",
+        [
+          "The Chinese gymnast Xiao Ruoteng took the bronze",
+          "the difficulty of the elements and the quality of the performance"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A small country can reach the top in gymnastics.",
+        "Only large countries can win in gymnastics.",
+        "Gymnastics is not an Olympic sport.",
+        "The text says that Dolgopyat’s success showed that Israel can compete with the best in artistic gymnastics.",
+        "Israel can compete with the best in artistic gymnastics"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "competed",
+          "took part in a contest"
+        ],
+        [
+          "sail",
+          "a large piece of cloth that catches the wind"
+        ],
+        [
+          "steers",
+          "controls the direction of a vehicle"
+        ],
+        [
+          "tilting",
+          "leaning to one side"
+        ],
+        [
+          "standings",
+          "the list that shows who is ahead"
+        ]
+      ],
+      "B": [
+        [
+          "flips",
+          "movements in which the body turns over in the air"
+        ],
+        [
+          "mat",
+          "a soft piece of material on the floor for sport"
+        ],
+        [
+          "elements",
+          "the separate parts of something"
+        ],
+        [
+          "tie",
+          "a result in which two competitors have the same score"
+        ],
+        [
+          "flexibility",
+          "the ability to bend and stretch easily"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 118,
+    "slug": "unseen-reading-part-118",
+    "theme": "Fear and Anxiety",
+    "blurb": "what happens in the body when we feel fear, anxiety and normal worry",
+    "texts": {
+      "A": {
+        "title": "What Happens in the Body When We Feel Fear",
+        "text": "Fear is one of the oldest and most useful emotions. When the brain senses danger, a small region called the amygdala acts very fast, often before we think about what is happening. It sends a signal that activates the body’s alarm system. The heart beats faster, breathing speeds up, and the muscles receive more blood and tense. The body releases adrenaline, a hormone that prepares us to fight, run away or freeze. Digestion slows down, because it is not needed in a crisis, and the pupils open wider to let in more light. This is called the fight-or-flight response, and it helped our ancestors to survive threats such as dangerous animals. Today, the same response can be triggered by an exam, a speech or a scary film, even though there is no physical danger. After the danger passes, the body calms down slowly, and this can take some time."
+      },
+      "B": {
+        "title": "Anxiety and Normal Worry",
+        "text": "Everyone worries sometimes. Worry before an exam or a job interview is normal and can even be useful, because it makes us prepare. Anxiety becomes a problem when it is very strong, lasts for a long time, and starts to affect daily life, for example when a person avoids school, friends or activities because of constant fear. People with anxiety may have a fast heartbeat, shaky hands, trouble sleeping, and thoughts that are hard to stop. Anxiety problems are common, and many people experience one at some point in life. It is not a weakness, and it can be treated. Some helpful habits are slow breathing, regular exercise, enough sleep, and talking about feelings with a friend or family member. A well-known talking therapy called cognitive behavioral therapy teaches people to notice and change unhelpful thoughts. This text gives general information only. A person who often feels very anxious should talk to a doctor or a counselor."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Fear starts a body alarm that prepares us to fight, flee or freeze.",
+        "Fear is a feeling that has no effect on the body.",
+        "Fear is a feeling that appears only when we are asleep.",
+        "The text explains that fear starts an alarm system in the body that prepares us to fight, run away or freeze.",
+        [
+          "Fear is one of the oldest and most useful emotions",
+          "prepares us to fight, run away or freeze"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which part of the brain acts first when danger is sensed?",
+        "The amygdala.",
+        "The stomach.",
+        "The skin.",
+        "The text says that a small region called the amygdala acts very fast.",
+        "a small region called the amygdala acts very fast"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “tense” means…",
+        "become tight.",
+        "become soft.",
+        "become cold.",
+        "The text says that the muscles receive more blood and tense, which means that they become tight.",
+        "the muscles receive more blood and tense"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it helped our ancestors to survive” refers to…",
+        "the fight-or-flight response.",
+        "digestion in a crisis.",
+        "the amygdala in the brain.",
+        "The sentence says that the fight-or-flight response helped our ancestors to survive threats.",
+        "This is called the fight-or-flight response, and it helped our ancestors to survive threats"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people are afraid of exams.",
+        "What adrenaline does.",
+        "What happens to digestion in a crisis.",
+        "The text does not say how many people are afraid of exams. It says what adrenaline does and what happens to digestion.",
+        [
+          "a hormone that prepares us to fight, run away or freeze",
+          "Digestion slows down"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about fear before an exam?",
+        "The body reacts as if there were physical danger.",
+        "The body does not react at all to an exam.",
+        "The body reacts only to dangerous animals.",
+        "The text says that the same response can be triggered by an exam, a speech or a scary film, even though there is no physical danger.",
+        "the same response can be triggered by an exam, a speech or a scary film, even though there is no physical danger"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Everyone worries, but strong anxiety is a treatable problem.",
+        "Anxiety is a weakness that cannot be changed.",
+        "Anxiety is a feeling that only children have.",
+        "The text explains that worry is normal, that strong anxiety is a problem, and that it can be treated.",
+        [
+          "Everyone worries sometimes",
+          "It is not a weakness, and it can be treated"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "When does anxiety become a problem?",
+        "When it is very strong, lasts long and affects daily life.",
+        "When it happens only once before a school exam.",
+        "When it makes a person prepare for a task.",
+        "The text says that anxiety becomes a problem when it is very strong, lasts for a long time and affects daily life.",
+        "Anxiety becomes a problem when it is very strong, lasts for a long time, and starts to affect daily life"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “avoids” means…",
+        "stays away from.",
+        "goes to often.",
+        "pays for.",
+        "The text says that a person avoids school, friends or activities, which means that the person stays away from them.",
+        "avoids school, friends or activities"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it can be treated” refers to…",
+        "anxiety.",
+        "weakness.",
+        "daily life.",
+        "The sentence says that anxiety is not a weakness, and anxiety can be treated.",
+        "It is not a weakness, and it can be treated"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people are treated for anxiety each year.",
+        "What cognitive behavioral therapy teaches.",
+        "Who a person with strong anxiety should talk to.",
+        "The text does not say how many people are treated each year. It says what the therapy teaches and who a person should talk to.",
+        [
+          "teaches people to notice and change unhelpful thoughts",
+          "should talk to a doctor or a counselor"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last part suggest about anxiety?",
+        "A person who often feels very anxious can get help.",
+        "A person should never talk about it.",
+        "A person must deal with it alone.",
+        "The text says that a person who often feels very anxious should talk to a doctor or a counselor, so help is available.",
+        "A person who often feels very anxious should talk to a doctor or a counselor."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "senses",
+          "becomes aware of"
+        ],
+        [
+          "activates",
+          "starts to work"
+        ],
+        [
+          "adrenaline",
+          "a hormone that gives the body quick energy"
+        ],
+        [
+          "ancestors",
+          "family members who lived long ago"
+        ],
+        [
+          "triggered",
+          "caused to start"
+        ]
+      ],
+      "B": [
+        [
+          "constant",
+          "happening all the time"
+        ],
+        [
+          "shaky",
+          "moving in an unsteady way"
+        ],
+        [
+          "weakness",
+          "a lack of strength or a flaw"
+        ],
+        [
+          "therapy",
+          "treatment for a problem"
+        ],
+        [
+          "counselor",
+          "a person trained to give advice and support"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 119,
+    "slug": "unseen-reading-part-119",
+    "theme": "Sleep and Dreams",
+    "blurb": "what happens in the brain while we sleep, why we dream",
+    "texts": {
+      "A": {
+        "title": "What Happens in the Brain While We Sleep",
+        "text": "Sleep is not a time when the brain switches off. During the night, the brain goes through cycles of about ninety minutes, and a healthy adult usually has four to six cycles. Each cycle has several stages. In light sleep, the heartbeat and breathing slow down. In deep sleep, the brain produces slow waves, the body repairs itself, and it is hard to wake the person. Then comes REM sleep, named after the rapid eye movements that happen under the closed eyelids. In REM sleep, the brain is very active, almost as in waking, and most vivid dreams happen, while the muscles are mostly relaxed, so that we do not act out our dreams. Early in the night there is more deep sleep, and later there is more REM sleep. Researchers think that sleep helps the brain to store memories and to clear away waste. Lack of sleep makes it harder to concentrate, learn and control emotions."
+      },
+      "B": {
+        "title": "Why Do We Dream?",
+        "text": "Everyone dreams, but nobody knows exactly why. Scientists have several ideas, and probably more than one of them is partly true. One idea is that dreams help with memory and emotions. During REM sleep, the brain replays the events of the day, connects them with older memories and may help to calm strong feelings, which is why a problem can seem smaller in the morning. A second idea, called the activation-synthesis theory, says that dreams begin with random signals from the brain stem, and the cortex tries to make a story out of them. Critics say that dreams are too meaningful to be completely random, because they often reflect what matters to us. A third idea says that dreams are a safe practice for danger, for example when we dream about being chased. Tests of this idea are difficult. Another thing is certain: most dreams are forgotten quickly, unless we wake up during or right after them. A dream diary by the bed can help us to remember more."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "During sleep the brain goes through active cycles that help the body and mind.",
+        "During sleep the brain switches off completely until morning.",
+        "During sleep the brain stays in one stage all night long.",
+        "The text explains that the brain is active during sleep, goes through cycles and stages, and that sleep helps memory.",
+        [
+          "Sleep is not a time when the brain switches off",
+          "Researchers think that sleep helps the brain to store memories"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "About how long is one sleep cycle?",
+        "About ninety minutes.",
+        "About nine minutes.",
+        "About nine hours.",
+        "The text says that the brain goes through cycles of about ninety minutes.",
+        "cycles of about ninety minutes"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “relaxed” means…",
+        "loose and not tense.",
+        "very strong and tight.",
+        "painful and sore.",
+        "The text says that in REM sleep the muscles are mostly relaxed, which means loose and not tense.",
+        "the muscles are mostly relaxed"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “that” in “the rapid eye movements that happen” refers to…",
+        "the rapid eye movements.",
+        "the closed eyelids.",
+        "REM sleep.",
+        "The sentence says that REM sleep is named after the rapid eye movements, and the movements happen under the closed eyelids.",
+        "named after the rapid eye movements that happen under the closed eyelids"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours a teenager should sleep.",
+        "What happens in deep sleep.",
+        "When REM sleep is more common.",
+        "The text does not say how many hours a teenager should sleep. It says what happens in deep sleep and when REM sleep is more common.",
+        [
+          "the body repairs itself",
+          "later there is more REM sleep"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about sleeping badly?",
+        "It can make learning and emotions harder to manage.",
+        "It has no effect on learning or emotions.",
+        "It makes all dreams impossible at night.",
+        "The text says that lack of sleep makes it harder to concentrate, learn and control emotions.",
+        "Lack of sleep makes it harder to concentrate, learn and control emotions."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Scientists have several ideas about why we dream, and none is fully proved.",
+        "Scientists know exactly why we dream, and the answer is simple.",
+        "Scientists agree that dreams have no meaning at all.",
+        "The text explains that nobody knows exactly why we dream and describes three ideas that are partly true.",
+        [
+          "nobody knows exactly why",
+          "Scientists have several ideas"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does the activation-synthesis theory say about dreams?",
+        "They start with random signals and become a story.",
+        "They are messages sent by other people.",
+        "They are exact copies of the day’s events.",
+        "The text says that dreams begin with random signals from the brain stem, and the cortex makes a story out of them.",
+        "dreams begin with random signals from the brain stem, and the cortex tries to make a story out of them"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “chased” means…",
+        "followed to be caught.",
+        "welcomed warmly.",
+        "asked to dance.",
+        "The text says that a dream about being chased is a dream about danger, which means being followed in order to be caught.",
+        "when we dream about being chased"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “make a story out of them” refers to…",
+        "the random signals.",
+        "the critics.",
+        "the memories.",
+        "The sentence says that dreams begin with random signals, and the cortex tries to make a story out of the signals.",
+        "the cortex tries to make a story out of them"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many dreams a person has in a year.",
+        "What the dream diary can help with.",
+        "What critics say about random signals.",
+        "The text does not say how many dreams a person has in a year. It says what a dream diary can help with and what critics say.",
+        [
+          "A dream diary by the bed can help us to remember more",
+          "dreams are too meaningful to be completely random"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence about the morning suggest?",
+        "Sleep may help to calm strong feelings.",
+        "Sleep always makes problems bigger.",
+        "Sleep removes all memories.",
+        "The text says that REM sleep may help to calm strong feelings, which is why a problem can seem smaller in the morning.",
+        "may help to calm strong feelings, which is why a problem can seem smaller in the morning"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "cycles",
+          "series of events that repeat"
+        ],
+        [
+          "stages",
+          "separate steps in a process"
+        ],
+        [
+          "waves",
+          "patterns that rise and fall"
+        ],
+        [
+          "vivid",
+          "very clear and strong"
+        ],
+        [
+          "concentrate",
+          "to focus your attention"
+        ]
+      ],
+      "B": [
+        [
+          "replays",
+          "plays again"
+        ],
+        [
+          "connects",
+          "joins together"
+        ],
+        [
+          "random",
+          "happening without a plan or pattern"
+        ],
+        [
+          "critics",
+          "people who say what is wrong with something"
+        ],
+        [
+          "reflect",
+          "to show or be a sign of something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 120,
+    "slug": "unseen-reading-part-120",
+    "theme": "Stress",
+    "blurb": "what stress does to the body, evidence-based ways to manage it",
+    "texts": {
+      "A": {
+        "title": "What Stress Does to the Body",
+        "text": "Stress is the body’s reaction to a demand or a threat. Short stress can be useful: before a race or a test, it sharpens attention and gives energy. The body releases hormones such as adrenaline and cortisol, which raise the heart rate and blood pressure and send sugar into the blood. The problem begins when stress lasts for weeks or months, which is called chronic stress. Then the hormones stay high, and the body pays a price. People may have headaches, muscle pain, stomach problems, and trouble sleeping. They may feel irritable, sad or unable to concentrate, and they get sick more easily, because long stress can weaken the immune system. Over many years, chronic stress is linked to a higher risk of heart disease and other illnesses. Stress is not the same for everyone. Two people can face the same situation, and one feels challenged while the other feels overwhelmed."
+      },
+      "B": {
+        "title": "Evidence-Based Ways to Manage Stress",
+        "text": "Stress cannot be removed from life, but there are well-tested ways to reduce its effect. Regular exercise is one of the best: it lowers stress hormones and improves mood. Sleep matters too, because tired people react more strongly to problems. Slow breathing, for example breathing in for four seconds and out for six, can calm the body within minutes. Many studies show benefits of mindfulness, which means paying attention to the present moment without judging it, and of keeping a diary to put worries into words. Talking to a friend, a family member or a counselor helps, because shared problems feel lighter. Planning also helps: a list of small tasks is less frightening than one big pile. It is wise to limit caffeine and to take breaks from screens and news. If stress feels too heavy for too long, it is important to seek professional help. This text gives general information, not medical advice."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Short stress can help, but long-lasting stress can harm the body and mind.",
+        "Stress is always harmful and never helps in any situation.",
+        "Stress affects only the mind and never the body.",
+        "The text explains that short stress can be useful, but chronic stress affects the body and mind.",
+        [
+          "Short stress can be useful",
+          "The problem begins when stress lasts for weeks or months"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which hormones does the body release in stress?",
+        "Adrenaline and cortisol.",
+        "Insulin and calcium.",
+        "Iron and vitamin C.",
+        "The text says that the body releases hormones such as adrenaline and cortisol.",
+        "hormones such as adrenaline and cortisol"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “sharpens” means…",
+        "makes more clear.",
+        "makes dull.",
+        "makes shorter.",
+        "The text says that short stress sharpens attention, which means that it makes attention more clear.",
+        "it sharpens attention"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which raise the heart rate” refers to…",
+        "the hormones.",
+        "the race.",
+        "the test.",
+        "The sentence says that the body releases hormones, and the hormones raise the heart rate and blood pressure.",
+        "adrenaline and cortisol, which raise the heart rate"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people suffer from chronic stress.",
+        "What chronic stress may do to the immune system.",
+        "Which symptoms stress can cause.",
+        "The text does not say how many people suffer from chronic stress. It says what it may do to the immune system and which symptoms it causes.",
+        [
+          "long stress can weaken the immune system",
+          "headaches, muscle pain, stomach problems, and trouble sleeping"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about stress?",
+        "How we see a situation changes how stressful it feels.",
+        "Stress depends only on the situation itself.",
+        "Stress feels exactly the same to all people.",
+        "The text says that two people can face the same situation, and one feels challenged while the other feels overwhelmed.",
+        "one feels challenged while the other feels overwhelmed"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Several simple habits can reduce the effect of stress.",
+        "Stress can be removed from life with one simple trick.",
+        "Only medicine can reduce the effect of stress.",
+        "The text explains that there are well-tested habits that reduce stress, and that professional help is important if stress is too heavy.",
+        [
+          "there are well-tested ways to reduce its effect",
+          "If stress feels too heavy for too long, it is important to seek professional help"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does the text say about slow breathing?",
+        "It can calm the body within minutes.",
+        "It makes the heart beat faster.",
+        "It works only after one hour.",
+        "The text says that slow breathing can calm the body within minutes.",
+        "can calm the body within minutes"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “limit” means…",
+        "use less of.",
+        "use more of.",
+        "stop making.",
+        "The text says that it is wise to limit caffeine, which means to use less of it.",
+        "limit caffeine"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it lowers stress hormones” refers to…",
+        "regular exercise.",
+        "stress.",
+        "mood.",
+        "The sentence says that regular exercise is one of the best ways, and exercise lowers stress hormones and improves mood.",
+        "Regular exercise is one of the best: it lowers stress hormones and improves mood"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours a person should exercise.",
+        "What mindfulness means.",
+        "Why talking to someone helps.",
+        "The text does not say how many hours a person should exercise. It says what mindfulness means and why talking helps.",
+        [
+          "paying attention to the present moment without judging it",
+          "shared problems feel lighter"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last part of the text suggest?",
+        "Some stress may need help from a professional.",
+        "Stress can always be handled alone.",
+        "Professionals can cure stress in one day.",
+        "The text says that if stress feels too heavy for too long, it is important to seek professional help.",
+        "If stress feels too heavy for too long, it is important to seek professional help"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "threat",
+          "something that may cause harm"
+        ],
+        [
+          "hormones",
+          "chemicals that tell the body what to do"
+        ],
+        [
+          "chronic",
+          "lasting for a long time"
+        ],
+        [
+          "irritable",
+          "easily annoyed"
+        ],
+        [
+          "overwhelmed",
+          "feeling that there is too much to deal with"
+        ]
+      ],
+      "B": [
+        [
+          "effect",
+          "a change caused by something"
+        ],
+        [
+          "mood",
+          "the way a person feels at a particular time"
+        ],
+        [
+          "mindfulness",
+          "paying careful attention to the present moment"
+        ],
+        [
+          "judging",
+          "forming an opinion about something"
+        ],
+        [
+          "professional",
+          "trained and paid to do a job"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 121,
+    "slug": "unseen-reading-part-121",
+    "theme": "Motivation and Mindset",
+    "blurb": "inner and outer motivation, fixed and growth mindset",
+    "texts": {
+      "A": {
+        "title": "Inner and Outer Motivation",
+        "text": "Motivation is the reason why we act. Psychologists describe two main kinds. Intrinsic motivation comes from inside: we do something because it is interesting or enjoyable, such as playing a game, reading a story or learning a song. Extrinsic motivation comes from outside: we act to get a reward or to avoid a punishment, such as studying for a good grade or practicing to win a prize. Both kinds are useful, and many activities have a mix. But research shows that they work differently. Intrinsic motivation is usually linked with more creativity, more effort over time and greater enjoyment. External rewards can help to start a difficult task, but sometimes they reduce interest in an activity that was enjoyable before. In one famous study, children who loved drawing were promised a prize for drawing, and later they drew less on their own than children who had no prize. To keep motivation strong, people can choose goals that matter to them, build skill, and feel some control over their choices."
+      },
+      "B": {
+        "title": "Fixed and Growth Mindset",
+        "text": "The psychologist Carol Dweck describes two ways in which people think about ability. People with a fixed mindset believe that intelligence and talent are mostly inborn and cannot change much. When a task is hard, they may think, “I am not good at this,” and they often avoid challenges to avoid failing. People with a growth mindset believe that abilities can develop through effort, good strategies and help from others. They see mistakes as information and challenges as chances to learn. Studies in schools have found that students who learned about the growth mindset sometimes improved their grades, especially those who were struggling, although the effects were often small and depended on the school and the teacher. Praise also matters. Praising effort and strategy (“You worked hard on this”) encourages learning more than praising only talent (“You are so smart”). Nobody has a pure mindset; most of us have a mix that changes with the situation."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Motivation can come from inside or outside, and the two work differently.",
+        "Motivation always comes from rewards, and nothing else matters.",
+        "Motivation is the same for everyone and never changes.",
+        "The text explains the two kinds of motivation and says that they work differently.",
+        [
+          "Psychologists describe two main kinds",
+          "they work differently"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which kind of motivation comes from inside?",
+        "Intrinsic motivation.",
+        "Extrinsic motivation.",
+        "Social motivation.",
+        "The text says that intrinsic motivation comes from inside.",
+        "Intrinsic motivation comes from inside"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “promised” means…",
+        "told that they would get.",
+        "forced to give up.",
+        "asked to buy.",
+        "The text says that the children were promised a prize, which means that they were told that they would get a prize.",
+        "were promised a prize for drawing"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they drew less on their own” refers to…",
+        "the children who were promised a prize.",
+        "the children without a prize.",
+        "the teachers.",
+        "The sentence says that children who loved drawing were promised a prize, and later those children drew less on their own.",
+        "children who loved drawing were promised a prize for drawing, and later they drew less on their own"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many children took part in the study.",
+        "What extrinsic motivation means.",
+        "What the children in the study loved to do.",
+        "The text does not say how many children took part. It explains extrinsic motivation and says that the children loved drawing.",
+        [
+          "we act to get a reward or to avoid a punishment",
+          "children who loved drawing"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the drawing study suggest about rewards?",
+        "A reward can sometimes reduce natural interest.",
+        "A reward always increases natural interest.",
+        "A reward has no effect on behavior.",
+        "The text says that external rewards sometimes reduce interest in an activity that was enjoyable before, as in the drawing study.",
+        "sometimes they reduce interest in an activity that was enjoyable before"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A growth mindset sees ability as something that can develop through effort.",
+        "A growth mindset means that everyone has exactly the same talent.",
+        "A growth mindset means avoiding every difficult task.",
+        "The text explains that people with a growth mindset believe that abilities can develop, unlike people with a fixed mindset.",
+        [
+          "Carol Dweck describes two ways in which people think about ability",
+          "People with a growth mindset believe that abilities can develop"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do people with a fixed mindset often do when a task is hard?",
+        "They avoid challenges.",
+        "They ask for harder tasks.",
+        "They practice for many hours.",
+        "The text says that people with a fixed mindset often avoid challenges to avoid failing.",
+        "they often avoid challenges to avoid failing"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “encourages” means…",
+        "supports and increases.",
+        "stops and delays.",
+        "ignores.",
+        "The text says that praising effort encourages learning more than praising talent, which means that it supports and increases learning.",
+        "encourages learning more than praising only talent"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “those” in “especially those who were struggling” refers to…",
+        "students.",
+        "teachers.",
+        "schools.",
+        "The sentence says that students who learned about the growth mindset improved their grades, especially those students who were struggling.",
+        "especially those who were struggling"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students Dweck has studied.",
+        "What a growth mindset sees mistakes as.",
+        "What kind of praise helps learning.",
+        "The text does not say how many students Dweck has studied. It says how a growth mindset sees mistakes and which praise helps learning.",
+        [
+          "They see mistakes as information",
+          "Praising effort and strategy"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about mindsets?",
+        "Most people have both, depending on the situation.",
+        "Every person has only one fixed mindset.",
+        "Mindsets never change.",
+        "The text says that nobody has a pure mindset and that most people have a mix that changes with the situation.",
+        "most of us have a mix that changes with the situation"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "motivation",
+          "the reason why someone does something"
+        ],
+        [
+          "enjoyable",
+          "giving pleasure"
+        ],
+        [
+          "reward",
+          "something given for good work"
+        ],
+        [
+          "punishment",
+          "something unpleasant given for doing wrong"
+        ],
+        [
+          "creativity",
+          "the ability to make new ideas"
+        ]
+      ],
+      "B": [
+        [
+          "ability",
+          "the power to do something"
+        ],
+        [
+          "inborn",
+          "present from birth"
+        ],
+        [
+          "strategies",
+          "plans for achieving something"
+        ],
+        [
+          "struggling",
+          "having difficulty"
+        ],
+        [
+          "praising",
+          "saying that someone did well"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 122,
+    "slug": "unseen-reading-part-122",
+    "theme": "Emotions and People",
+    "blurb": "emotional intelligence, empathy and why bullying hurts",
+    "texts": {
+      "A": {
+        "title": "Emotional Intelligence",
+        "text": "Emotional intelligence is the ability to notice, understand and manage emotions, our own and other people’s. Researchers often describe several parts. The first is self-awareness: knowing what we feel and why, for example realizing that we are angry because we are tired and hungry. The second is self-control: pausing before we react, so that we do not say or do something that we will regret. The third is empathy, understanding how another person feels. The fourth is social skill, such as listening, cooperating and solving conflicts. People with higher emotional intelligence often have better relationships and handle stress better, and the skills are useful in teamwork and school. Emotional intelligence is not the same as intelligence measured by IQ tests, and it can be learned. Simple practices help: naming our feelings (“I feel nervous”), taking a slow breath before answering, and asking questions to understand others."
+      },
+      "B": {
+        "title": "Empathy and Why Bullying Hurts",
+        "text": "Empathy is the ability to understand and share another person’s feelings. Psychologists distinguish two kinds. Cognitive empathy means understanding how another person thinks and feels, and emotional empathy means feeling something similar to what the other person feels. Brain studies show that when we see someone in pain, some of the same brain areas become active as when we feel pain ourselves. Bullying is the opposite of empathy: repeated unkind behavior, such as insults, threats, spreading rumors or leaving someone out, by a person or group with more power. Its effects can be serious. Students who are bullied are more likely to feel anxious, sad and lonely, to have trouble sleeping and to find it hard to concentrate at school, and some effects can last into adulthood. Programs that teach empathy and encourage bystanders to support the victim can reduce bullying. Anyone who is bullied should tell a trusted adult, and anyone who sees it can help by being kind to the victim and not joining in."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Emotional intelligence is a set of skills that can be learned.",
+        "Emotional intelligence is the same as the score on an IQ test.",
+        "Emotional intelligence is a feeling that people cannot control.",
+        "The text explains that emotional intelligence is the ability to understand and manage emotions, and that it can be learned.",
+        [
+          "Emotional intelligence is the ability to notice, understand and manage emotions",
+          "it can be learned"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is empathy, according to the text?",
+        "Understanding how another person feels.",
+        "Knowing what we feel and why.",
+        "Pausing before we react.",
+        "The text says that empathy is understanding how another person feels.",
+        "empathy, understanding how another person feels"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “pausing” means…",
+        "stopping for a moment.",
+        "running away.",
+        "speaking louder.",
+        "The text says that self-control is pausing before we react, which means stopping for a moment.",
+        "pausing before we react"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “and it can be learned” refers to…",
+        "emotional intelligence.",
+        "an IQ test.",
+        "stress.",
+        "The sentence says that emotional intelligence is not the same as IQ, and emotional intelligence can be learned.",
+        "Emotional intelligence is not the same as intelligence measured by IQ tests, and it can be learned"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people take IQ tests.",
+        "What self-control means.",
+        "Which practices can help.",
+        "The text does not say how many people take IQ tests. It explains self-control and names practices that help.",
+        [
+          "pausing before we react, so that we do not say or do something that we will regret",
+          "naming our feelings"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about teamwork?",
+        "Emotional skills can help a team to work well.",
+        "Emotional skills make teamwork impossible.",
+        "Teamwork needs only high IQ scores.",
+        "The text says that the skills are useful in teamwork and school.",
+        "the skills are useful in teamwork and school"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Empathy means understanding others’ feelings, and bullying hurts people seriously.",
+        "Empathy is the ability to hide feelings, and bullying is harmless.",
+        "Empathy exists only in adults, and bullying happens only online.",
+        "The text explains what empathy is and says that bullying can have serious effects on students.",
+        [
+          "Empathy is the ability to understand and share another person’s feelings",
+          "Its effects can be serious"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What are the two kinds of empathy?",
+        "Cognitive and emotional empathy.",
+        "Loud and quiet empathy.",
+        "Physical and mental empathy.",
+        "The text says that the two kinds are cognitive empathy and emotional empathy.",
+        "Cognitive empathy means understanding how another person thinks and feels, and emotional empathy means feeling something similar"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “repeated” means…",
+        "happening again and again.",
+        "happening only once.",
+        "happening in secret.",
+        "The text says that bullying is repeated unkind behavior, which means that it happens again and again.",
+        "repeated unkind behavior"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “anyone who sees it” refers to…",
+        "bullying.",
+        "empathy.",
+        "a program.",
+        "The sentence says that anyone who sees bullying can help by being kind to the victim.",
+        "anyone who sees it can help by being kind to the victim"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students are bullied in a year.",
+        "What kinds of bullying are mentioned.",
+        "What programs can do.",
+        "The text does not say how many students are bullied in a year. It names kinds of bullying and says what programs can do.",
+        [
+          "insults, threats, spreading rumors or leaving someone out",
+          "can reduce bullying"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about bystanders?",
+        "They can help to reduce bullying.",
+        "They have no role in bullying.",
+        "They should join the bully.",
+        "The text says that programs that encourage bystanders to support the victim can reduce bullying.",
+        "encourage bystanders to support the victim"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "emotions",
+          "strong feelings such as joy or anger"
+        ],
+        [
+          "regret",
+          "to feel sorry about something you did"
+        ],
+        [
+          "cooperating",
+          "working together with others"
+        ],
+        [
+          "conflicts",
+          "serious disagreements"
+        ],
+        [
+          "practices",
+          "things that you do regularly to improve"
+        ]
+      ],
+      "B": [
+        [
+          "distinguish",
+          "to see the difference between things"
+        ],
+        [
+          "rumors",
+          "stories that may not be true"
+        ],
+        [
+          "victim",
+          "a person who is harmed"
+        ],
+        [
+          "bystanders",
+          "people who are present but not involved"
+        ],
+        [
+          "adulthood",
+          "the time of being an adult"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 123,
+    "slug": "unseen-reading-part-123",
+    "theme": "Groups and Helping",
+    "blurb": "conformity and Asch’s experiment, the bystander effect",
+    "texts": {
+      "A": {
+        "title": "Conformity: Asch’s Line Experiment",
+        "text": "Do we say what we really see, or what the group says? In the 1950s, the psychologist Solomon Asch tested this question. In his famous experiment, a student sat in a room with several other people and looked at a line. Then he had to say which of three other lines had the same length. The answer was clear, and when people were tested alone, they almost never made a mistake. But the other people in the room were actors, and Asch had told them to give the same wrong answer on certain rounds. When the real participant heard everybody else give the wrong answer, about a third of his answers followed the group, and many people conformed at least once. Afterward, some said that they went along because they did not want to look different, and others said that they started to doubt their own eyes. The effect became much weaker when even one person in the group gave the correct answer. Asch’s results show how strong social pressure can be, and how important it is to have the courage to be the first to disagree."
+      },
+      "B": {
+        "title": "The Bystander Effect",
+        "text": "In 1964, a young woman named Kitty Genovese was attacked in New York, and newspapers reported that 38 neighbors saw or heard it and did nothing. The story shocked the public, and later researchers questioned many of its details, but it led psychologists to study a real phenomenon. In 1968, John Darley and Bibb Latané ran experiments in which people believed that someone needed help. They found that people were less likely to help when other people were present than when they were alone. This is called the bystander effect. Two main reasons were suggested. The first is diffusion of responsibility: when many people are present, each person feels less responsible, because they think that someone else will act. The second is that people look at one another to decide whether the situation is serious, and if nobody reacts, everybody thinks that it is not an emergency. The effect is not universal: people often help in clear emergencies, and training can make helping more likely. Simple steps include noticing, deciding that it is an emergency, and giving a clear instruction, such as “You, call an ambulance.”"
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Asch showed that many people go along with a group even when it is wrong.",
+        "Asch showed that people never change their answers because of others.",
+        "Asch showed that groups are always right about what they see.",
+        "The text explains that many participants followed the group’s wrong answers, which shows how strong social pressure can be.",
+        [
+          "Asch tested this question",
+          "Asch’s results show how strong social pressure can be"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the real participant have to do?",
+        "Say which line had the same length.",
+        "Draw a new line on a paper.",
+        "Measure the lines with a ruler.",
+        "The text says that the participant had to say which of three other lines had the same length.",
+        "say which of three other lines had the same length"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “went along” means…",
+        "agreed with the group.",
+        "walked beside the group.",
+        "left the group.",
+        "The text says that some people went along because they did not want to look different, which means that they agreed with the group.",
+        "went along because they did not want to look different"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they almost never made a mistake” refers to…",
+        "the people tested alone.",
+        "the actors.",
+        "the groups.",
+        "The sentence says that when people were tested alone, those people almost never made a mistake.",
+        "when people were tested alone, they almost never made a mistake"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students Asch tested in total.",
+        "Who the other people in the room really were.",
+        "What happened when one person gave the correct answer.",
+        "The text does not say how many students Asch tested. It says who the others were and what happened when one person was correct.",
+        [
+          "the other people in the room were actors",
+          "The effect became much weaker when even one person"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "It takes courage to disagree with a group.",
+        "Disagreeing with a group is always easy.",
+        "Groups are never wrong.",
+        "The text says that it is important to have the courage to be the first to disagree.",
+        "the courage to be the first to disagree"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The bystander effect means that people help less when others are around.",
+        "The bystander effect means that people never help in any emergency.",
+        "The bystander effect means that people help only strangers.",
+        "The text explains that people are less likely to help when others are present, though the effect is not universal.",
+        [
+          "They found that people were less likely to help when other people were present",
+          "The effect is not universal"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is diffusion of responsibility?",
+        "Each person feels less responsible when many are present.",
+        "One person takes all the responsibility.",
+        "People give their duties to the police.",
+        "The text says that when many people are present, each person feels less responsible.",
+        "when many people are present, each person feels less responsible"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “questioned” means…",
+        "doubted and checked.",
+        "praised and repeated.",
+        "copied and sold.",
+        "The text says that later researchers questioned many of the details, which means that they doubted and checked them.",
+        "later researchers questioned many of its details"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “saw or heard it” refers to…",
+        "the attack.",
+        "the newspaper.",
+        "the city.",
+        "The sentence says that Kitty Genovese was attacked, and 38 neighbors reportedly saw or heard the attack.",
+        "38 neighbors saw or heard it and did nothing"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people were tested.",
+        "What the second reason is.",
+        "What simple steps can help.",
+        "The text does not say how many people were tested. It gives the second reason and the simple steps that can help.",
+        [
+          "people look at one another to decide whether the situation is serious",
+          "noticing, deciding that it is an emergency, and giving a clear instruction"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the example “You, call an ambulance” work?",
+        "A direct instruction makes one person feel responsible.",
+        "It makes the ambulance come faster by itself.",
+        "It makes everybody leave.",
+        "The text says that in a group each person feels less responsible, and that giving a clear instruction is a simple step.",
+        [
+          "each person feels less responsible",
+          "giving a clear instruction"
+        ]
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "experiment",
+          "a test to find out something"
+        ],
+        [
+          "participant",
+          "a person who takes part in something"
+        ],
+        [
+          "conformed",
+          "behaved in the same way as others"
+        ],
+        [
+          "doubt",
+          "to feel unsure about something"
+        ],
+        [
+          "pressure",
+          "a strong influence to do something"
+        ]
+      ],
+      "B": [
+        [
+          "phenomenon",
+          "something that happens and can be studied"
+        ],
+        [
+          "responsible",
+          "having a duty to do something"
+        ],
+        [
+          "universal",
+          "true or happening everywhere"
+        ],
+        [
+          "emergency",
+          "a sudden dangerous situation"
+        ],
+        [
+          "instruction",
+          "words that tell someone what to do"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 124,
+    "slug": "unseen-reading-part-124",
+    "theme": "The Teenage Brain",
+    "blurb": "why teenagers take more risks, why friends’ opinions matter so much",
+    "texts": {
+      "A": {
+        "title": "Why Teenagers Take More Risks",
+        "text": "Teenagers are often described as careless, but scientists see another reason. The brain keeps developing until about the age of twenty-five. The parts that react to rewards and excitement develop earlier and are very active in the teenage years, while the prefrontal cortex, the part behind the forehead that plans, controls impulses and thinks about consequences, matures later. This creates a gap: the “accelerator” is strong, but the “brakes” are still developing. Studies find that teenagers are not worse than adults at understanding risks in calm situations, but they are more likely to take risks when they feel excited or when friends are watching. Some risks can be positive, such as trying a new sport, speaking in public or meeting new people, because they help young people to learn and become independent. Other risks, such as dangerous driving or drugs, can be harmful. Understanding the teenage brain can help families to guide young people with patience instead of only criticism."
+      },
+      "B": {
+        "title": "Why Teens Care About Friends’ Opinions",
+        "text": "For a teenager, friends can feel as important as family. This is not a weakness; it has a biological and social reason. During adolescence, the brain becomes more sensitive to social information, such as being accepted, praised or left out. Experiments show that the brain’s reward areas respond more strongly to approval from peers in teenagers than in adults. Friends also help teenagers to build an identity, because with friends they try new ideas, styles and roles, and learn how to cooperate and solve conflicts. Good friendships are linked to better mental health and school success. But the same sensitivity has a risk. A teenager may follow the group in order to belong, even when the choice is wrong, and social media can increase the pressure to compare and to seek likes. Families and teachers can help by listening, by respecting friendships, and by talking about how to resist pressure and still stay true to one’s values."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The teenage brain is still developing, which helps to explain more risk-taking.",
+        "The teenage brain is fully developed, so risk-taking has no explanation.",
+        "The teenage brain works worse than the adult brain in every way.",
+        "The text explains that the reward areas develop earlier than the prefrontal cortex, which helps to explain teenage risk-taking.",
+        [
+          "The brain keeps developing until about the age of twenty-five",
+          "the “accelerator” is strong, but the “brakes” are still developing"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which part of the brain plans and controls impulses?",
+        "The prefrontal cortex.",
+        "The amygdala.",
+        "The spinal cord.",
+        "The text says that the prefrontal cortex plans, controls impulses and thinks about consequences.",
+        "the prefrontal cortex, the part behind the forehead that plans, controls impulses"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “guide” means…",
+        "lead and help.",
+        "punish and warn.",
+        "ignore and avoid.",
+        "The text says that understanding the teenage brain can help families to guide young people, which means to lead and help them.",
+        "to guide young people with patience"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “This” in “This creates a gap” refers to…",
+        "the reward areas developing first.",
+        "teenagers being careless about rules.",
+        "reaching the age of twenty-five.",
+        "The sentence before says that the reward areas develop earlier and the prefrontal cortex matures later, and this creates a gap.",
+        "matures later. This creates a gap"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teenagers take dangerous risks.",
+        "When teenagers take more risks.",
+        "Which risks can be positive.",
+        "The text does not say how many teenagers take dangerous risks. It says when teenagers take more risks and which risks can be positive.",
+        [
+          "when they feel excited or when friends are watching",
+          "trying a new sport, speaking in public or meeting new people"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Understanding the brain can help families support teens.",
+        "Families should criticize teens much more often.",
+        "Teenage behavior cannot be understood by science.",
+        "The text says that understanding the teenage brain can help families to guide young people with patience.",
+        "Understanding the teenage brain can help families to guide young people with patience"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Teens care about friends because their brains are sensitive to acceptance.",
+        "Teens care about friends because they do not love their families.",
+        "Teens care about friends only because of social media.",
+        "The text explains that during adolescence the brain becomes more sensitive to social information, so friends matter a lot.",
+        [
+          "it has a biological and social reason",
+          "the brain becomes more sensitive to social information"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do friendships help teenagers to build?",
+        "An identity.",
+        "A fortune.",
+        "A family tree.",
+        "The text says that friends also help teenagers to build an identity.",
+        "Friends also help teenagers to build an identity"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “belong” means…",
+        "feel part of a group.",
+        "leave a group.",
+        "lead a group.",
+        "The text says that a teenager may follow the group in order to belong, which means to feel part of the group.",
+        "in order to belong"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “the same sensitivity” refers to…",
+        "the brain’s sensitivity to social information.",
+        "the strength of the love in a family.",
+        "the risk of using social media too much.",
+        "The sentences before describe the brain’s sensitivity to social information, and the text says that this same sensitivity has a risk.",
+        "But the same sensitivity has a risk"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many friends a teenager needs.",
+        "What good friendships are linked to.",
+        "How families can help.",
+        "The text does not say how many friends a teenager needs. It says what good friendships are linked to and how families can help.",
+        [
+          "better mental health and school success",
+          "by listening, by respecting friendships"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about peer pressure?",
+        "It can be a risk, but it can be handled.",
+        "It is always harmless to every teenager.",
+        "It cannot be changed by anyone at all.",
+        "The text says that families and teachers can help by talking about how to resist pressure.",
+        "talking about how to resist pressure"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "careless",
+          "not paying enough attention to avoid harm"
+        ],
+        [
+          "impulses",
+          "sudden strong wishes to do something"
+        ],
+        [
+          "matures",
+          "becomes fully developed"
+        ],
+        [
+          "independent",
+          "able to do things without help"
+        ],
+        [
+          "criticism",
+          "saying what is wrong with someone"
+        ]
+      ],
+      "B": [
+        [
+          "biological",
+          "relating to living things and the body"
+        ],
+        [
+          "adolescence",
+          "the time between childhood and adulthood"
+        ],
+        [
+          "approval",
+          "a positive opinion of someone"
+        ],
+        [
+          "identity",
+          "who a person is"
+        ],
+        [
+          "resist",
+          "to refuse to give in to something"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 125,
+    "slug": "unseen-reading-part-125",
+    "theme": "Happiness",
+    "blurb": "what a long study says makes us happy, the science of gratitude",
+    "texts": {
+      "A": {
+        "title": "What a Long Study Says Makes Us Happy",
+        "text": "What makes a good life? One of the longest studies in history tried to answer this question. In 1938, researchers at Harvard University began to follow 268 male students, and later added a group of boys from poor families in Boston, and then the spouses and children of the participants. For more than eighty years, they asked them about their health, work and relationships, took medical tests, and sometimes interviewed their families. The result was surprising. It was not money, fame or a high career position that predicted who was happy and healthy in old age. The strongest predictor was the quality of relationships. People who had warm, trusting relationships with family, friends and community lived longer, had better health and kept clearer memories. Loneliness and constant conflict, on the other hand, were harmful to health. The researchers say that it is never too late to invest in relationships: call a friend, spend time with family and listen carefully."
+      },
+      "B": {
+        "title": "The Science of Gratitude",
+        "text": "Gratitude means noticing and appreciating the good things in life and the people who help us. Many studies suggest that practicing gratitude can have small but real benefits. In one well-known experiment, some people wrote a few sentences each week about things for which they were grateful, while others wrote about daily problems or neutral events. After several weeks, the grateful group reported more optimism, felt better about their lives, and even said that they exercised more and had fewer physical complaints. Other studies link gratitude to better sleep, stronger relationships and lower levels of stress. Scientists are careful: the effects are modest, and gratitude does not remove real problems. It works best when it is sincere and specific, for example “I am thankful that my friend listened to me yesterday,” instead of a general phrase. Simple practices include a gratitude journal, writing a thank-you letter, or saying thank you to someone every day."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A long study found that good relationships matter most for a happy life.",
+        "A long study found that money is the only key to happiness.",
+        "A long study found that fame protects people from loneliness.",
+        "The text explains that the Harvard study found that the quality of relationships was the strongest predictor of happiness and health.",
+        [
+          "It was not money, fame or a high career position that predicted who was happy and healthy in old age",
+          "The strongest predictor was the quality of relationships"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How long did the study continue?",
+        "For more than eighty years.",
+        "For about eight months.",
+        "For about eighteen years.",
+        "The text says that the researchers followed the participants for more than eighty years.",
+        "For more than eighty years"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “spouses” means…",
+        "husbands or wives.",
+        "teachers or doctors.",
+        "friends or neighbors.",
+        "The text says that the study added the spouses and children of the participants, which means their husbands or wives and children.",
+        "the spouses and children of the participants"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “they asked them” refers to…",
+        "the participants.",
+        "the researchers.",
+        "the families.",
+        "The sentence says that the researchers asked the participants about their health, work and relationships.",
+        "they asked them about their health, work and relationships"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many participants are still alive.",
+        "Which groups of people were added later.",
+        "What was harmful to health.",
+        "The text does not say how many participants are still alive. It says which groups were added later and what was harmful to health.",
+        [
+          "later added a group of boys from poor families in Boston",
+          "Loneliness and constant conflict, on the other hand, were harmful to health"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Relationships can be improved at any age.",
+        "Relationships cannot change after youth.",
+        "Only family relationships matter.",
+        "The text says that it is never too late to invest in relationships.",
+        "it is never too late to invest in relationships"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Practicing gratitude can bring small but real benefits to well-being.",
+        "Practicing gratitude removes all real problems from life.",
+        "Practicing gratitude works only for people who are rich.",
+        "The text explains that gratitude can bring small but real benefits, but that it does not remove real problems.",
+        [
+          "practicing gratitude can have small but real benefits",
+          "gratitude does not remove real problems"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did one group write about each week?",
+        "Things for which they were grateful.",
+        "Their daily problems.",
+        "Their plans for the future.",
+        "The text says that one group wrote a few sentences each week about things for which they were grateful.",
+        "wrote a few sentences each week about things for which they were grateful"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “neutral” means…",
+        "neither good nor bad.",
+        "very exciting.",
+        "very sad.",
+        "The text says that another group wrote about daily problems or neutral events, which means events that were neither good nor bad.",
+        "daily problems or neutral events"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It works best when it is sincere” refers to…",
+        "gratitude.",
+        "the experiment.",
+        "the thank-you letter.",
+        "The sentence before says that gratitude does not remove real problems, and gratitude works best when it is sincere.",
+        "gratitude does not remove real problems. It works best when it is sincere and specific"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people took part in the experiment.",
+        "What other studies link to gratitude.",
+        "What practices can help.",
+        "The text does not say how many people took part. It says what other studies link to gratitude and what practices help.",
+        [
+          "better sleep, stronger relationships and lower levels of stress",
+          "a gratitude journal, writing a thank-you letter"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the sentence “Scientists are careful” suggest?",
+        "They do not claim that gratitude solves everything.",
+        "They believe that gratitude is useless.",
+        "They believe that gratitude cures illnesses.",
+        "The text says that scientists are careful because the effects are modest.",
+        "Scientists are careful: the effects are modest"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "participants",
+          "people who take part in a study"
+        ],
+        [
+          "predicted",
+          "said in advance what will happen"
+        ],
+        [
+          "quality",
+          "how good something is"
+        ],
+        [
+          "trusting",
+          "believing that others are honest and reliable"
+        ],
+        [
+          "invest",
+          "to put time or money into something for a benefit"
+        ]
+      ],
+      "B": [
+        [
+          "appreciating",
+          "recognizing the value of something"
+        ],
+        [
+          "grateful",
+          "feeling thankful"
+        ],
+        [
+          "optimism",
+          "a hopeful way of thinking about the future"
+        ],
+        [
+          "modest",
+          "small in size or amount"
+        ],
+        [
+          "sincere",
+          "honest and meant truly"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 126,
+    "slug": "unseen-reading-part-126",
+    "theme": "How We See",
+    "blurb": "how optical illusions trick the brain, the invisible gorilla",
+    "texts": {
+      "A": {
+        "title": "How Optical Illusions Trick the Brain",
+        "text": "We feel that we see the world as it is, but the brain actively builds what we see. The eyes send light signals, and the brain interprets them quickly using experience, expectations and shortcuts. Most of the time this works well, but optical illusions reveal the shortcuts. In the Müller-Lyer illusion, two lines of the same length look different because of the arrowheads at their ends. In the Ebbinghaus illusion, a circle surrounded by big circles looks smaller than the same circle surrounded by small ones. In the famous picture of a rabbit and a duck, the same drawing can be seen in two ways, and the brain switches between them. Illusions show that the brain looks for patterns, compares each object with its surroundings, and fills in missing information. Knowing about illusions does not stop them: even when we measure the lines and know the truth, we still see the difference. This is an important lesson: what we see is not always the same as what is there."
+      },
+      "B": {
+        "title": "The Invisible Gorilla",
+        "text": "In 1999, psychologists Daniel Simons and Christopher Chabris showed volunteers a short video of two teams passing basketballs. The volunteers had to count how many times the players in white shirts passed the ball. In the middle of the video, a person in a gorilla suit walked into the scene, stopped in the middle, beat its chest and walked out, a total of about nine seconds. About half of the volunteers did not see the gorilla at all. This effect is called inattentional blindness: when attention is focused on one task, people can miss even very obvious things. Most people are sure that they would notice the gorilla, which shows that we often overestimate how much we see. The phenomenon has real-life importance. A driver who is looking for a certain sign may fail to see a cyclist, and a doctor who is searching for one problem in an X-ray may miss another. The lesson is not that people are careless, but that attention is limited, and that we should build habits and tools that help us to check what we might miss."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Optical illusions show that the brain builds what we see using shortcuts.",
+        "Optical illusions show that the eyes are always perfect cameras.",
+        "Optical illusions happen only to people with poor eyesight.",
+        "The text explains that the brain builds what we see using experience and shortcuts, and that optical illusions reveal them.",
+        [
+          "the brain actively builds what we see",
+          "optical illusions reveal the shortcuts"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What happens in the Müller-Lyer illusion?",
+        "Two equal lines look different.",
+        "A circle looks bigger than it is.",
+        "A drawing turns into a rabbit.",
+        "The text says that two lines of the same length look different because of the arrowheads at their ends.",
+        "two lines of the same length look different because of the arrowheads"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “fills in” means…",
+        "adds what is missing.",
+        "removes what is clear.",
+        "hides what is true.",
+        "The text says that the brain fills in missing information, which means that it adds what is missing.",
+        "fills in missing information"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “the brain switches between them” refers to…",
+        "the rabbit and the duck.",
+        "the two circles.",
+        "the arrowheads.",
+        "The sentence says that the same drawing can be seen in two ways, and the brain switches between the two ways, the rabbit and the duck.",
+        "the same drawing can be seen in two ways, and the brain switches between them"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who discovered the Ebbinghaus illusion.",
+        "How the brain compares objects.",
+        "What happens even when we measure the lines.",
+        "The text does not say who discovered the Ebbinghaus illusion. It says how the brain compares objects and what happens when we measure the lines.",
+        [
+          "compares each object with its surroundings",
+          "even when we measure the lines and know the truth, we still see the difference"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Our experience of seeing is not a perfect copy of reality.",
+        "What we see is always exactly what is there.",
+        "Illusions are caused by dirty glasses.",
+        "The text says that what we see is not always the same as what is there.",
+        "what we see is not always the same as what is there"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "When attention is focused, people can miss very obvious things.",
+        "When attention is focused, people notice everything around them.",
+        "When attention is low, people never see anything at all.",
+        "The text explains that inattentional blindness means that people can miss obvious things when their attention is focused elsewhere.",
+        [
+          "This effect is called inattentional blindness",
+          "attention is limited"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the volunteers have to count?",
+        "The passes made by the players in white.",
+        "The players in black shirts.",
+        "The goals scored by each team.",
+        "The text says that the volunteers counted how many times the players in white shirts passed the ball.",
+        "count how many times the players in white shirts passed the ball"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “beat” in “beat its chest” means…",
+        "hit again and again.",
+        "washed carefully.",
+        "pointed at.",
+        "The text says that the gorilla beat its chest, which means that it hit its chest again and again.",
+        "beat its chest"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which shows that we often overestimate” refers to…",
+        "most people’s belief that they would notice the gorilla.",
+        "the number of volunteers who counted the passes.",
+        "the fact that the gorilla suit was black.",
+        "The sentence says that most people are sure that they would notice the gorilla, and this belief shows that we often overestimate how much we see.",
+        "Most people are sure that they would notice the gorilla, which shows that we often overestimate how much we see"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the volunteers said afterward about the video.",
+        "What the person in the gorilla suit did.",
+        "What the effect is called.",
+        "The text does not say what the volunteers said afterward. It says what the person in the gorilla suit did and what the effect is called.",
+        [
+          "walked into the scene, stopped in the middle, beat its chest and walked out",
+          "This effect is called inattentional blindness"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the driver example suggest?",
+        "Looking for one thing can make us miss another.",
+        "Drivers always notice cyclists on the road.",
+        "Cyclists are completely invisible at night.",
+        "The text says that a driver who is looking for a certain sign may fail to see a cyclist.",
+        "A driver who is looking for a certain sign may fail to see a cyclist"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "interprets",
+          "explains the meaning of something"
+        ],
+        [
+          "expectations",
+          "beliefs about what will happen"
+        ],
+        [
+          "reveal",
+          "to show something hidden"
+        ],
+        [
+          "surroundings",
+          "the things around something"
+        ],
+        [
+          "illusions",
+          "false appearances that trick the senses"
+        ]
+      ],
+      "B": [
+        [
+          "volunteers",
+          "people who offer to take part"
+        ],
+        [
+          "scene",
+          "a part of a film or a view of a place"
+        ],
+        [
+          "obvious",
+          "easy to see or understand"
+        ],
+        [
+          "overestimate",
+          "to think that something is bigger or better than it is"
+        ],
+        [
+          "limited",
+          "small in amount, not unlimited"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 127,
+    "slug": "unseen-reading-part-127",
+    "theme": "Mind and Health",
+    "blurb": "the placebo effect, how expectations change what we feel",
+    "texts": {
+      "A": {
+        "title": "The Placebo Effect",
+        "text": "A placebo is a treatment that has no active medicine in it, such as a sugar pill or a saline injection. Surprisingly, many people who receive a placebo feel better. This is the placebo effect. It does not mean that the person is lying or that the pain is imaginary. Expectations and beliefs can change real processes in the brain: for example, the brain can release its own natural pain-relieving chemicals when a person expects relief. The placebo effect is strongest for symptoms that depend on the brain, such as pain, nausea, tiredness and low mood, and it is much weaker for conditions like broken bones or bacterial infections. This is why new medicines are tested against placebos in clinical trials: if the medicine works, the group taking it must improve more than the group taking the placebo. Even the color, price and size of a pill, and the kindness of the doctor, can change how well a treatment seems to work. Some studies suggest that a placebo can help even when people know that it is a placebo, although the research is still developing."
+      },
+      "B": {
+        "title": "How Expectations Change What We Feel",
+        "text": "The placebo effect is part of a larger idea: what we expect often changes what we experience. In one well-known type of study, people drank the same wine, but were told that it cost either five dollars or ninety dollars, and they rated the expensive one as tastier. Brain scans showed more activity in areas linked to pleasure when they believed the wine was expensive. In sports, athletes who believe that a drink will improve their performance sometimes perform slightly better even when the drink is plain. In medicine, a doctor’s words matter: patients who were told that a medicine is strong often reported stronger effects than patients who were told nothing. The opposite also exists, called the nocebo effect: when people expect side effects, they may feel them, even from a sugar pill. Expectations do not replace real treatment, but they are part of the experience of health and illness. Doctors increasingly try to give honest, hopeful and clear information, because words can influence the body as well as the mind."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A placebo can make people feel better because expectations change the brain.",
+        "A placebo can make people feel better because it contains strong medicine.",
+        "A placebo can heal a broken bone as well as real medicine.",
+        "The text explains that a placebo can help because expectations and beliefs change real processes in the brain.",
+        [
+          "Surprisingly, many people who receive a placebo feel better",
+          "Expectations and beliefs can change real processes in the brain"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Why are new medicines tested against placebos?",
+        "To see if the medicine beats a placebo.",
+        "To save money on making the medicine.",
+        "To make the pills look much better.",
+        "The text says that if the medicine works, the group taking it must improve more than the group taking the placebo.",
+        "the group taking it must improve more than the group taking the placebo"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “active” means…",
+        "that works on the body.",
+        "that is very old.",
+        "that is very expensive.",
+        "The text says that a placebo has no active medicine in it, which means no medicine that works on the body.",
+        "no active medicine in it"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It does not mean that the person is lying” refers to…",
+        "the placebo effect.",
+        "the pain.",
+        "the pill.",
+        "The sentence before says that this is the placebo effect, and the placebo effect does not mean that the person is lying.",
+        "This is the placebo effect. It does not mean that the person is lying"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people respond to placebos.",
+        "Which symptoms the placebo effect helps most.",
+        "What the brain can release when a person expects relief.",
+        "The text does not say how many people respond to placebos. It names the symptoms that it helps most and what the brain can release.",
+        [
+          "pain, nausea, tiredness and low mood",
+          "natural pain-relieving chemicals"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about a placebo for a broken bone?",
+        "It would not repair the bone.",
+        "It would repair the bone quickly.",
+        "It would be more useful than a cast.",
+        "The text says that the placebo effect is much weaker for conditions like broken bones.",
+        "much weaker for conditions like broken bones"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "What we expect can change what we feel, in taste, sport and medicine.",
+        "What we feel is never affected by what we expect.",
+        "What we feel depends only on the price of things.",
+        "The text gives examples from wine, sport and medicine that show that expectations can change what we experience.",
+        [
+          "what we expect often changes what we experience",
+          "words can influence the body as well as the mind"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which wine did people rate as tastier?",
+        "The one they thought was expensive.",
+        "The one they thought was cheap.",
+        "The one with the best color.",
+        "The text says that people rated the expensive wine as tastier, although the wine was the same.",
+        "they rated the expensive one as tastier"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “slightly” means…",
+        "a little.",
+        "a lot.",
+        "never.",
+        "The text says that athletes sometimes perform slightly better, which means a little better.",
+        "perform slightly better"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “that it cost” refers to…",
+        "the wine.",
+        "the study.",
+        "the price.",
+        "The sentence says that people drank the same wine, but were told that the wine cost either five or ninety dollars.",
+        "people drank the same wine, but were told that it cost either five dollars or ninety dollars"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many athletes took part in the drink studies.",
+        "What the nocebo effect is.",
+        "What doctors increasingly try to give.",
+        "The text does not say how many athletes took part. It explains the nocebo effect and says what doctors try to give.",
+        [
+          "when people expect side effects, they may feel them",
+          "give honest, hopeful and clear information"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the nocebo effect suggest?",
+        "Negative expectations can cause real discomfort.",
+        "Sugar pills always cure every side effect.",
+        "Medicines never have any side effects at all.",
+        "The text says that when people expect side effects, they may feel them, even from a sugar pill.",
+        "when people expect side effects, they may feel them, even from a sugar pill"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "placebo",
+          "a harmless treatment with no medicine in it"
+        ],
+        [
+          "imaginary",
+          "existing only in the mind"
+        ],
+        [
+          "relief",
+          "the feeling of less pain or worry"
+        ],
+        [
+          "trials",
+          "tests to see how well something works"
+        ],
+        [
+          "symptoms",
+          "signs of an illness"
+        ]
+      ],
+      "B": [
+        [
+          "experience",
+          "to feel or go through something"
+        ],
+        [
+          "pleasure",
+          "a feeling of enjoyment"
+        ],
+        [
+          "plain",
+          "ordinary, with nothing added"
+        ],
+        [
+          "reported",
+          "said or told what happened"
+        ],
+        [
+          "increasingly",
+          "more and more over time"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 128,
+    "slug": "unseen-reading-part-128",
+    "theme": "Games and Aggression",
+    "blurb": "do violent video games make people violent, what critics say",
+    "texts": {
+      "A": {
+        "title": "Violent Video Games: What Studies Say",
+        "text": "Many parents worry that violent video games make children violent. Psychologists have studied this question for more than thirty years. In typical experiments, volunteers play a violent or a non-violent game for a short time, and then researchers measure aggression, for example by offering a chance to give an unpleasant noise to another person. Some studies find that players of violent games show slightly more aggressive thoughts, feelings or behavior right afterward. In 2015, a task force of the American Psychological Association reviewed the research and concluded that violent games are linked with higher aggression in players. The same report said that there was not enough evidence to link the games to criminal violence, and that violence has many causes, such as family problems, bullying and mental health. In 2020, the association repeated that the link with aggression is small but reliable, and it warned that it is wrong to say that games cause violent crimes."
+      },
+      "B": {
+        "title": "Violent Video Games: What Critics Say",
+        "text": "Not all researchers accept the idea that violent games increase aggression. Critics make several points. First, many experiments measure aggression with artificial tasks, such as loud noises, which may not show real violence. Second, an effect found in the laboratory right after a game may last only a few minutes. Third, some large studies that follow teenagers over time find little or no link between playing violent games and later aggression once other factors, such as family background and personality, are considered. Critics also note that violent crime fell in many countries while video games became more popular, although this does not prove that games have no effect. Some researchers also question the way in which studies were selected for the reviews and say that published results may be biased, because studies with clear effects are easier to publish. Supporters of a link answer that even small effects can matter across millions of players. Both sides agree that more careful research is needed, and that no single factor explains violent behavior."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Studies link violent games to small aggression, not to crime.",
+        "Studies prove that violent games turn children into criminals.",
+        "Studies show that violent games reduce all aggression.",
+        "The text explains that studies find a small link with aggression, but not enough evidence to link games to criminal violence.",
+        [
+          "violent games are linked with higher aggression in players",
+          "not enough evidence to link the games to criminal violence"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How do experiments often measure aggression?",
+        "By a chance to give someone an unpleasant noise.",
+        "By counting the hours that volunteers play at home.",
+        "By asking teachers to rate how kind each player is.",
+        "The text says that researchers measure aggression, for example by offering a chance to give an unpleasant noise to another person.",
+        "by offering a chance to give an unpleasant noise to another person"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “reviewed” means…",
+        "examined carefully.",
+        "ignored completely.",
+        "paid for.",
+        "The text says that a task force reviewed the research, which means that it examined the research carefully.",
+        "reviewed the research"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “and it warned” refers to…",
+        "the American Psychological Association.",
+        "the research that was reviewed.",
+        "a popular violent video game.",
+        "The sentence says that the association repeated that the link is small but reliable, and the association warned that it is wrong to say that games cause violent crimes.",
+        "and it warned that it is wrong to say that games cause violent crimes"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours a day children play.",
+        "What the 2015 task force concluded.",
+        "What causes violence besides games.",
+        "The text does not say how many hours a day children play. It says what the task force concluded and what else causes violence.",
+        [
+          "violent games are linked with higher aggression in players",
+          "family problems, bullying and mental health"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Aggression is not the same as violent crime.",
+        "Games are proven to cause violent crimes.",
+        "There is no link of any kind at all.",
+        "The text says that the link with aggression is small but reliable, and that it is wrong to say that games cause violent crimes.",
+        "it is wrong to say that games cause violent crimes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Critics doubt that violent games cause real violence.",
+        "Critics agree that violent games cause crime.",
+        "Critics prove that video games have no effect on anyone.",
+        "The text explains that critics question the evidence for a link, while both sides agree that more careful research is needed.",
+        [
+          "Not all researchers accept the idea that violent games increase aggression",
+          "Both sides agree that more careful research is needed"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do some large studies of teenagers find?",
+        "Little or no link after other factors.",
+        "A strong link in every single case.",
+        "That games make all teenagers kinder.",
+        "The text says that some large studies find little or no link once other factors are considered.",
+        "find little or no link between playing violent games and later aggression once other factors"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “question” means…",
+        "doubt.",
+        "praise.",
+        "repeat.",
+        "The text says that some researchers question the way in which studies were selected, which means that they doubt it.",
+        "question the way in which studies were selected"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “although this does not prove” refers to…",
+        "the fall in violent crime.",
+        "the popularity of video games alone.",
+        "the criticism of the studies.",
+        "The sentence says that violent crime fell while games became more popular, although this fall does not prove that games have no effect.",
+        "although this does not prove that games have no effect"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teenagers took part in the studies.",
+        "Why published results may be biased.",
+        "What supporters of a link answer.",
+        "The text does not say how many teenagers took part. It says why results may be biased and what supporters of a link answer.",
+        [
+          "studies with clear effects are easier to publish",
+          "even small effects can matter across millions of players"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The question is not settled.",
+        "The question has been settled by critics.",
+        "Researchers have stopped studying it.",
+        "The text says that both sides agree that more careful research is needed, so the question is not settled.",
+        "more careful research is needed"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "aggression",
+          "angry or violent behavior toward others"
+        ],
+        [
+          "measure",
+          "to find the size or amount of something"
+        ],
+        [
+          "reliable",
+          "giving the same result when tested again"
+        ],
+        [
+          "criminal",
+          "relating to crime"
+        ],
+        [
+          "causes",
+          "things that make something happen"
+        ]
+      ],
+      "B": [
+        [
+          "artificial",
+          "not natural, made by people"
+        ],
+        [
+          "personality",
+          "the way a person usually thinks, feels and acts"
+        ],
+        [
+          "background",
+          "a person’s family and experience"
+        ],
+        [
+          "biased",
+          "unfairly favoring one result"
+        ],
+        [
+          "factor",
+          "one of the things that cause a result"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 129,
+    "slug": "unseen-reading-part-129",
+    "theme": "Free Will",
+    "blurb": "the Libet experiment, why many scientists doubt its conclusion",
+    "texts": {
+      "A": {
+        "title": "The Libet Experiment",
+        "text": "Do we really choose our actions? In the 1980s, the neuroscientist Benjamin Libet did an experiment that surprised many people. Volunteers watched a fast clock and were told to move a finger whenever they felt like it, and to note the clock time when they first felt the wish to move. Libet recorded brain activity with electrodes on the scalp. He found that a slow build-up of electrical activity, called the readiness potential, began about a third of a second before the volunteers said that they decided to move. Libet and many others concluded that the brain starts to prepare an action before we are aware of choosing it. Some people called this proof that free will is an illusion. Libet himself disagreed. He thought that people could still veto the action in the last fraction of a second, which he called free “won’t”. The experiment became one of the most famous in neuroscience, and it is still discussed in books and classes."
+      },
+      "B": {
+        "title": "Why Many Scientists Doubt the Conclusion",
+        "text": "Libet’s result looks like a strong argument against free will, but many scientists and philosophers are not convinced. One problem is the task. The volunteers made a meaningless choice, moving a finger at a random moment, which is very different from a real decision such as choosing a university. Another problem is the timing: people had to estimate the moment when they decided by looking at a clock, and such estimates are not very accurate. A third criticism came from a team led by Aaron Schurger in 2012. They suggested that the readiness potential may not be a decision signal at all. In their model, the brain produces constant random fluctuations in electrical activity, and a movement happens when these fluctuations cross a threshold. Looking back at the data from the moment of the movement then creates a pattern that looks like a build-up. If this idea is correct, the experiment does not show that the brain decides before we do. Many researchers now say that the question about free will remains open, and that it needs both science and philosophy."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Libet found brain activity before people felt that they had decided to move.",
+        "Libet found that the brain does nothing before a person moves.",
+        "Libet found that people cannot move their fingers at all.",
+        "The text explains that Libet found a readiness potential in the brain before volunteers said that they had decided to move.",
+        [
+          "Do we really choose our actions?",
+          "readiness potential, began about a third of a second before"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the volunteers have to note?",
+        "The clock time of their first wish to move.",
+        "The number of times that they moved.",
+        "The color of the clock in the room.",
+        "The text says that volunteers had to note the clock time when they first felt the wish to move.",
+        "note the clock time when they first felt the wish to move"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “build-up” means…",
+        "gradual increase.",
+        "sudden stop.",
+        "complete loss.",
+        "The text says that a slow build-up of electrical activity began before the decision, which means a gradual increase.",
+        "a slow build-up of electrical activity"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “before we are aware of choosing it” refers to…",
+        "the action.",
+        "the brain.",
+        "the experiment.",
+        "The sentence says that the brain starts to prepare an action before we are aware of choosing the action.",
+        "the brain starts to prepare an action before we are aware of choosing it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volunteers Libet tested.",
+        "What Libet recorded brain activity with.",
+        "What Libet himself thought people could still do.",
+        "The text does not say how many volunteers Libet tested. It says what he used to record brain activity and what he thought people could still do.",
+        [
+          "electrodes on the scalp",
+          "people could still veto the action"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the word “illusion” suggest about the people who used it?",
+        "They thought that free will might not be real.",
+        "They thought that free will was proved.",
+        "They thought that the experiment was useless.",
+        "The text says that some people called the result proof that free will is an illusion, which means that they thought free will might not be real.",
+        "free will is an illusion"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many experts doubt that Libet’s experiment disproves free will.",
+        "Many experts agree that Libet’s experiment proves free will is false.",
+        "Many experts think that Libet’s experiment was never done.",
+        "The text explains several criticisms of Libet’s conclusion and says that the question remains open.",
+        [
+          "many scientists and philosophers are not convinced",
+          "the question about free will remains open"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What was the volunteers’ choice in the experiment?",
+        "To move a finger at a random moment.",
+        "To choose a university.",
+        "To decide which hand to use for a day.",
+        "The text says that the volunteers made a meaningless choice, moving a finger at a random moment.",
+        "moving a finger at a random moment"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “convinced” means…",
+        "persuaded to believe it.",
+        "interested in it.",
+        "angry about it.",
+        "The text says that many scientists are not convinced, which means that they are not persuaded to believe the conclusion.",
+        "are not convinced"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this idea” in “If this idea is correct” refers to…",
+        "the idea that random fluctuations cross a threshold.",
+        "the idea that volunteers use clocks.",
+        "Libet’s belief in free will.",
+        "The sentences before describe the model in which random fluctuations cross a threshold, and the text says that if this idea is correct, the experiment does not show that the brain decides first.",
+        "If this idea is correct, the experiment does not show that the brain decides before we do"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many scientists signed the 2012 paper.",
+        "Why the timing is a problem.",
+        "What the model proposes about fluctuations.",
+        "The text does not say how many scientists signed the 2012 paper. It explains the problem of timing and what the model proposes.",
+        [
+          "estimates are not very accurate",
+          "the brain produces constant random fluctuations in electrical activity"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The answer may need ideas from science and philosophy.",
+        "Science alone has solved the question.",
+        "Philosophy has no role in the question.",
+        "The text says that the question needs both science and philosophy.",
+        "it needs both science and philosophy"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "neuroscientist",
+          "a scientist who studies the brain"
+        ],
+        [
+          "electrodes",
+          "small metal sensors that measure electrical signals"
+        ],
+        [
+          "scalp",
+          "the skin on top of the head"
+        ],
+        [
+          "illusion",
+          "something that seems real but is not"
+        ],
+        [
+          "veto",
+          "to stop or refuse something"
+        ]
+      ],
+      "B": [
+        [
+          "meaningless",
+          "having no importance or purpose"
+        ],
+        [
+          "estimate",
+          "to make a careful guess about an amount"
+        ],
+        [
+          "fluctuations",
+          "small changes that go up and down"
+        ],
+        [
+          "threshold",
+          "the level at which something starts to happen"
+        ],
+        [
+          "philosophers",
+          "people who study basic questions about life and thinking"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 130,
+    "slug": "unseen-reading-part-130",
+    "theme": "Obedience",
+    "blurb": "Milgram’s obedience experiments, the criticisms of Milgram",
+    "texts": {
+      "A": {
+        "title": "Milgram’s Obedience Experiments",
+        "text": "In 1961, after the trial of a Nazi official, Adolf Eichmann, who said that he had only followed orders, the psychologist Stanley Milgram at Yale University asked a troubling question: how far would ordinary people go in obeying an authority? Volunteers were told that they were taking part in a study on learning. A “teacher” had to give an electric shock to a “learner” in another room each time that the learner made a mistake, and the shocks grew stronger, up to 450 volts. In fact, the learner was an actor, and there were no real shocks. When a volunteer hesitated, the experimenter, in a gray coat, answered with fixed phrases such as “Please continue” and “The experiment requires that you continue”. In the best-known version, about two thirds of the volunteers continued to the highest level. Many sweated, laughed nervously or protested, but they went on. Milgram concluded that ordinary people can do harmful things when an authority tells them to, and his study became famous around the world."
+      },
+      "B": {
+        "title": "Criticisms of Milgram",
+        "text": "Milgram’s experiments are famous, but they are also strongly criticized. One criticism is ethical. Volunteers were deceived, and many felt severe stress, so today a study like this would have to pass a strict ethics review. Another criticism is scientific. The author Gina Perry studied Milgram’s archives and found that the experimenters sometimes pushed volunteers much harder than the script allowed, and that some volunteers suspected that the shocks were not real. The “two thirds” figure also came from one version of the experiment; in other versions, obedience was much lower, and in some, most people refused. A third criticism concerns the explanation. The psychologists Alexander Haslam and Stephen Reicher argue that people did not simply obey like machines. In their view, volunteers believed in the value of science and wanted to help the researchers, so they identified with the experiment. When the experimenter used the order “You have no other choice”, almost everyone stopped. This suggests that obedience depends on how people see the cause, not only on authority."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Milgram found that many ordinary people obeyed an authority to the end.",
+        "Milgram found that almost nobody obeyed the experimenter.",
+        "Milgram found that only angry people give electric shocks.",
+        "The text explains that many volunteers continued to the highest shock level, and that Milgram concluded that ordinary people can do harmful things when told to.",
+        [
+          "how far would ordinary people go in obeying an authority",
+          "ordinary people can do harmful things when an authority tells them to"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was the highest shock level?",
+        "450 volts.",
+        "45 volts.",
+        "4,500 volts.",
+        "The text says that the shocks grew stronger, up to 450 volts.",
+        "up to 450 volts"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “fixed phrases” means…",
+        "set and always the same.",
+        "new and different each time.",
+        "very long and secret.",
+        "The text says that the experimenter answered with fixed phrases such as “Please continue”, which means phrases that were set and always the same.",
+        "answered with fixed phrases"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “but they went on” refers to…",
+        "the volunteers.",
+        "the actors.",
+        "the learners.",
+        "The sentence says that many volunteers sweated, laughed nervously or protested, but the volunteers went on.",
+        "Many sweated, laughed nervously or protested, but they went on"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volunteers were paid.",
+        "What the learner really was.",
+        "What the experimenter said when a volunteer hesitated.",
+        "The text does not say how many volunteers were paid. It says what the learner really was and what the experimenter said.",
+        [
+          "the learner was an actor",
+          "“Please continue”"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about Milgram’s conclusion?",
+        "Authority can strongly influence behavior.",
+        "Only evil people can cause harm.",
+        "Authority has no influence on behavior.",
+        "The text says that Milgram concluded that ordinary people can do harmful things when an authority tells them to.",
+        "ordinary people can do harmful things when an authority tells them to"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Milgram’s experiments are criticized for ethics, accuracy and how they are explained.",
+        "Milgram’s experiments are praised by all scientists for being perfect.",
+        "Milgram’s experiments are criticized only because of their name.",
+        "The text lists ethical, scientific and explanatory criticisms of Milgram’s experiments.",
+        [
+          "Milgram’s experiments are famous, but they are also strongly criticized",
+          "This suggests that obedience depends on how people see the cause"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did Gina Perry find in the archives?",
+        "The experimenters sometimes went beyond the script.",
+        "The volunteers were all professional actors.",
+        "The shocks were really strong and dangerous.",
+        "The text says that Perry found that the experimenters sometimes pushed volunteers much harder than the script allowed.",
+        "found that the experimenters sometimes pushed volunteers much harder than the script allowed"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “suspected” means…",
+        "thought it likely.",
+        "knew for certain.",
+        "felt happy.",
+        "The text says that some volunteers suspected that the shocks were not real, which means that they thought it likely.",
+        "some volunteers suspected that the shocks were not real"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “This” in “This suggests that obedience depends” refers to…",
+        "the fact that nearly everyone stopped after that order.",
+        "the idea that science is important.",
+        "the high number of obeying volunteers.",
+        "The sentence before says that almost everyone stopped when the experimenter said “You have no other choice”, and this suggests that obedience depends on how people see the cause.",
+        "almost everyone stopped. This suggests"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volunteers refused in each version.",
+        "What kind of review a study would need today.",
+        "What Haslam and Reicher argue.",
+        "The text does not say how many volunteers refused in each version. It says what kind of review a study would need today and what Haslam and Reicher argue.",
+        [
+          "would have to pass a strict ethics review",
+          "people did not simply obey like machines"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about obedience?",
+        "People may obey when they believe in the goal.",
+        "People obey anyone who gives a command.",
+        "People obey only when they are afraid.",
+        "The text says that volunteers believed in the value of science and wanted to help the researchers.",
+        "volunteers believed in the value of science and wanted to help the researchers"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "obeying",
+          "doing what you are told to do"
+        ],
+        [
+          "authority",
+          "a person with the power to give orders"
+        ],
+        [
+          "hesitated",
+          "paused because of doubt"
+        ],
+        [
+          "protested",
+          "said that you disagree strongly"
+        ],
+        [
+          "harmful",
+          "causing damage or pain"
+        ]
+      ],
+      "B": [
+        [
+          "criticized",
+          "said to be wrong or bad"
+        ],
+        [
+          "ethical",
+          "relating to what is morally right or wrong"
+        ],
+        [
+          "deceived",
+          "made to believe something untrue"
+        ],
+        [
+          "script",
+          "written instructions for what to say"
+        ],
+        [
+          "identified",
+          "felt closely connected"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 131,
+    "slug": "unseen-reading-part-131",
+    "theme": "The Prison Study",
+    "blurb": "the Stanford Prison Experiment, why it is now doubted",
+    "texts": {
+      "A": {
+        "title": "The Stanford Prison Experiment",
+        "text": "In August 1971, the psychologist Philip Zimbardo and his team at Stanford University built a mock prison in the basement of a university building. Twenty-four male students were chosen, and by chance some became “guards” and some “prisoners”. The guards received uniforms and sunglasses, the prisoners received smocks and numbers, and the study was planned to last two weeks. According to Zimbardo, the situation changed the students quickly. Some guards became cruel and humiliated the prisoners, and some prisoners became depressed or panicked. After only six days, the study was stopped. Zimbardo concluded that the roles and the situation, not the personalities of the students, explained the behavior, and he said that good people can do bad things in bad situations. The study appeared in textbooks, films and television programs for decades, and it became one of the best-known experiments in psychology."
+      },
+      "B": {
+        "title": "Why the Experiment Is Now Doubted",
+        "text": "In recent years, researchers have looked again at the Stanford Prison Experiment, and many now doubt its message. First, recordings and documents from the archive show that the guards did not simply act on their own. The researchers gave instructions: the guards were told to create feelings of fear and powerlessness in the prisoners. One guard, who became famous for his cruelty, later said that he was acting like a character from a film, and that he wanted to help the experiment to be successful. Second, some prisoners later said that they acted out of distress to leave the study, not because they had really broken down. Third, the study had no control group, only 24 participants, and it was never repeated in a similar form. A 2002 study in Britain, the BBC Prison Study, found very different results: the guards did not become cruel. Today, many psychologists regard the Stanford experiment as a demonstration of how people follow expectations, not as proof of what everyone does, and textbooks have started to say so."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Zimbardo claimed that roles in a prison situation changed students’ behavior.",
+        "Zimbardo claimed that prisoners are always more violent than guards.",
+        "Zimbardo claimed that the study lasted for six months.",
+        "The text explains that Zimbardo concluded that the roles and the situation explained the behavior of the students.",
+        [
+          "Zimbardo concluded that the roles and the situation",
+          "good people can do bad things in bad situations"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How did students become guards or prisoners?",
+        "By chance.",
+        "By their own choice.",
+        "By their exam results.",
+        "The text says that by chance some became guards and some became prisoners.",
+        "by chance some became “guards” and some “prisoners”"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “cruel” means…",
+        "unkind and hurtful.",
+        "kind and helpful.",
+        "lazy and tired.",
+        "The text says that some guards became cruel and humiliated the prisoners, which means that they became unkind and hurtful.",
+        "Some guards became cruel"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it became one of the best-known experiments” refers to…",
+        "the study.",
+        "the prison.",
+        "the television program.",
+        "The sentence says that the study appeared in textbooks, films and television programs for decades, and the study became one of the best-known experiments.",
+        "The study appeared in textbooks, films and television programs for decades, and it became one of the best-known experiments"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many guards worked each night.",
+        "Where the prison was built.",
+        "How long the study was planned to last.",
+        "The text does not say how many guards worked each night. It says where the prison was built and how long the study was planned to last.",
+        [
+          "in the basement of a university building",
+          "planned to last two weeks"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The study had a very large influence outside science.",
+        "The study was never discussed by the public.",
+        "The study was forgotten quickly.",
+        "The text says that the study appeared in textbooks, films and television programs for decades.",
+        "appeared in textbooks, films and television programs for decades"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Recent evidence suggests that the guards were influenced and coached.",
+        "Recent evidence proves that the Stanford experiment was perfect.",
+        "Recent evidence shows that the guards never wore uniforms.",
+        "The text explains that the researchers gave instructions to the guards, so many now doubt the message of the experiment.",
+        [
+          "many now doubt its message",
+          "the guards were told to create feelings of fear and powerlessness in the prisoners"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the 2002 BBC Prison Study find?",
+        "The guards did not become cruel.",
+        "The guards became even crueler.",
+        "The prisoners became guards.",
+        "The text says that in the BBC Prison Study the guards did not become cruel.",
+        "the guards did not become cruel"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “distress” means…",
+        "great worry or pain.",
+        "great happiness.",
+        "careful planning.",
+        "The text says that some prisoners acted out of distress to leave the study, which means out of great worry or pain.",
+        "acted out of distress to leave the study"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it was never repeated” refers to…",
+        "the study.",
+        "the guard.",
+        "the prison.",
+        "The sentence says that the study had no control group and only 24 participants, and the study was never repeated in a similar form.",
+        "the study had no control group, only 24 participants, and it was never repeated"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours the guards worked.",
+        "What the guards were told to create.",
+        "What many psychologists now call the experiment.",
+        "The text does not say how many hours the guards worked. It says what the guards were told to create and what many psychologists now call the experiment.",
+        [
+          "create feelings of fear and powerlessness",
+          "a demonstration of how people follow expectations"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about textbooks?",
+        "They are changing how they describe the study.",
+        "They have removed psychology completely.",
+        "They still describe it as perfect proof.",
+        "The text says that many psychologists regard the experiment differently now, and that textbooks have started to say so.",
+        "textbooks have started to say so"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "mock",
+          "not real, made for practice"
+        ],
+        [
+          "humiliated",
+          "made to feel ashamed in front of others"
+        ],
+        [
+          "depressed",
+          "very sad and without hope"
+        ],
+        [
+          "roles",
+          "parts that people play"
+        ],
+        [
+          "personalities",
+          "the ways that people usually think and act"
+        ]
+      ],
+      "B": [
+        [
+          "recordings",
+          "sound or video that was saved"
+        ],
+        [
+          "instructions",
+          "words that tell someone what to do"
+        ],
+        [
+          "powerlessness",
+          "the feeling of having no control"
+        ],
+        [
+          "demonstration",
+          "an example that shows something clearly"
+        ],
+        [
+          "expectations",
+          "beliefs about what should happen"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 132,
+    "slug": "unseen-reading-part-132",
+    "theme": "The Replication Crisis",
+    "blurb": "famous findings that failed when repeated, how psychology is reforming",
+    "texts": {
+      "A": {
+        "title": "When Famous Findings Fail",
+        "text": "Science depends on repeating results. If a finding is true, other researchers who follow the same method should find it again. In 2015, a large team of researchers called the Open Science Collaboration tried to repeat 100 studies that had been published in good psychology journals. The results worried many people. While almost all of the original studies had reported clear results, only about one third of the repeated studies found them again, and the effects were on average about half as large. This became known as the replication crisis. One example is “power posing”. In 2010, a study reported that standing in a strong pose for two minutes raised confidence and changed hormones. Larger studies later failed to find the hormone effect, and the first author said in 2016 that she no longer believed that the effect was real. Researchers think that several things contributed: small samples, pressure to publish exciting results, and flexible ways of analyzing data."
+      },
+      "B": {
+        "title": "How Psychology Is Reforming",
+        "text": "The replication crisis was painful, but it has also led to important reforms. Many psychologists now believe that the field is becoming more reliable. One reform is preregistration. Researchers write down their questions, methods and plan for the analysis before they collect the data, and they publish this plan publicly. This makes it harder to change the analysis after seeing the results. Another reform is registered reports, in which a journal agrees to publish a study before the results are known, so that careful work is published even when the result is not exciting. Researchers also share their data and materials openly, so that others can check them, and they run larger studies with more participants. Teams in many countries now work together to repeat important experiments. The crisis also taught a general lesson: a single surprising study is only the beginning, and strong claims need strong evidence from many studies. This is how science corrects itself."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many famous psychology findings could not be repeated, which raised concern.",
+        "All psychology findings were repeated successfully in 2015.",
+        "Psychology experiments have never been published in journals.",
+        "The text explains that only about one third of the repeated studies found the original results again, which became known as the replication crisis.",
+        [
+          "If a finding is true, other researchers who follow the same method should find it again",
+          "only about one third of the repeated studies found them again"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How many studies did the Open Science Collaboration try to repeat?",
+        "100.",
+        "10.",
+        "1,000.",
+        "The text says that the team tried to repeat 100 studies.",
+        "tried to repeat 100 studies"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “contributed” means…",
+        "helped to cause it.",
+        "tried to stop it.",
+        "had no part.",
+        "The text says that several things contributed to the problem, which means that they helped to cause it.",
+        "several things contributed"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “she” in “she no longer believed” refers to…",
+        "the first author of the study.",
+        "the head of the large team.",
+        "a participant in the study.",
+        "The sentence says that the first author said in 2016 that the first author no longer believed that the effect was real.",
+        "the first author said in 2016 that she no longer believed that the effect was real"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hormones power posing changed.",
+        "What the 2010 study reported.",
+        "What researchers think contributed.",
+        "The text does not say how many hormones power posing changed. It says what the 2010 study reported and what researchers think contributed.",
+        [
+          "standing in a strong pose for two minutes raised confidence",
+          "small samples, pressure to publish exciting results"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the first paragraph suggest about a result found only once?",
+        "It should be treated with some caution.",
+        "It is certainly true in every case.",
+        "It is certainly false in every case.",
+        "The text says that if a finding is true, other researchers should find it again, so a result found only once should be treated with caution.",
+        "If a finding is true, other researchers who follow the same method should find it again."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Psychology is reforming with open plans, shared data and repeats.",
+        "Psychology has stopped doing experiments because of the crisis.",
+        "Psychology has solved every problem in a single year.",
+        "The text explains that the crisis led to reforms such as preregistration, registered reports, open data and larger studies.",
+        [
+          "it has also led to important reforms",
+          "This is how science corrects itself"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do researchers do in preregistration?",
+        "They publish their plan before collecting data.",
+        "They hide their results until the end.",
+        "They change the plan after the results.",
+        "The text says that researchers write down their questions, methods and plan before they collect the data, and publish the plan.",
+        "Researchers write down their questions, methods and plan for the analysis before they collect the data"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “painful” means…",
+        "difficult and unpleasant.",
+        "easy and pleasant.",
+        "short and cheap.",
+        "The text says that the replication crisis was painful, which means that it was difficult and unpleasant.",
+        "The replication crisis was painful"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “so that others can check them” refers to…",
+        "the data and materials.",
+        "the researchers.",
+        "the journals.",
+        "The sentence says that researchers share their data and materials openly, so that others can check the data and materials.",
+        "share their data and materials openly, so that others can check them"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many journals use registered reports.",
+        "What a registered report is.",
+        "What the general lesson is.",
+        "The text does not say how many journals use registered reports. It explains what a registered report is and what the general lesson is.",
+        [
+          "a journal agrees to publish a study before the results are known",
+          "a single surprising study is only the beginning"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about science?",
+        "Science improves by fixing its mistakes.",
+        "Science never makes any mistakes at all.",
+        "Science cannot be trusted by anyone.",
+        "The text says that this is how science corrects itself.",
+        "This is how science corrects itself."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "published",
+          "printed or released for the public"
+        ],
+        [
+          "reported",
+          "told or described"
+        ],
+        [
+          "effects",
+          "changes caused by something"
+        ],
+        [
+          "samples",
+          "small groups chosen to represent a bigger group"
+        ],
+        [
+          "flexible",
+          "able to change easily"
+        ]
+      ],
+      "B": [
+        [
+          "reforms",
+          "changes made to improve something"
+        ],
+        [
+          "reliable",
+          "able to be trusted"
+        ],
+        [
+          "publicly",
+          "in a way that anyone can see"
+        ],
+        [
+          "openly",
+          "in a way that is not hidden"
+        ],
+        [
+          "evidence",
+          "facts that show that something is true"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 133,
+    "slug": "unseen-reading-part-133",
+    "theme": "Intelligence",
+    "blurb": "what IQ measures and whether it is stable, the Flynn effect",
+    "texts": {
+      "A": {
+        "title": "IQ: What It Measures and Whether It Changes",
+        "text": "An IQ test is a set of problems that measure reasoning, memory, vocabulary and speed of thinking. The result is compared with the results of many other people of the same age, and the average score is set at 100. IQ scores predict some important things: school results, years of education and, to a smaller degree, job performance and health. They are also fairly stable. A person who scores high as a child usually scores high as an adult, although the score can change by several points from year to year, and it changes more in young children. Researchers who stress stability point out that the link between scores at age 11 and in old age is moderate to strong in some long studies. But IQ is not everything. It does not measure creativity, motivation, kindness or practical skills, and it is only one part of what leads to success. Scientists also disagree about what it means to say that intelligence is one general ability."
+      },
+      "B": {
+        "title": "The Flynn Effect: Can Intelligence Rise?",
+        "text": "In the 1980s, the New Zealand researcher James Flynn noticed something strange. Over the twentieth century, raw scores on IQ tests rose in many countries, by about three points every ten years. Test makers had to make the tests harder from time to time to keep the average at 100. This is called the Flynn effect. A rise so fast cannot be explained by genes, because genes do not change that quickly in a few generations. Researchers suggest environmental causes: better nutrition and health, fewer childhood diseases, more years of schooling, smaller families, and a world with more abstract thinking, such as maps, numbers and screens. Some experts think that real reasoning skills improved, and others think that people mainly became better at the kinds of problems that tests contain. In several rich countries, the rise slowed down or stopped in recent decades. The Flynn effect shows that IQ scores respond to the environment, but it does not show that one person can easily change his or her own score."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "IQ measures some thinking skills and is fairly stable, but it is not everything.",
+        "IQ measures every important human quality and never changes.",
+        "IQ tests measure kindness and creativity better than anything else.",
+        "The text explains what IQ tests measure, that scores are fairly stable, and that IQ is not everything.",
+        [
+          "IQ scores predict some important things",
+          "IQ is not everything"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the average IQ score set at?",
+        "100.",
+        "50.",
+        "200.",
+        "The text says that the average score is set at 100.",
+        "the average score is set at 100"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “compared” means…",
+        "checked against.",
+        "added to.",
+        "hidden from.",
+        "The text says that the result is compared with the results of many other people, which means that it is checked against them.",
+        "is compared with the results of many other people"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it changes more in young children” refers to…",
+        "the IQ score.",
+        "the test.",
+        "the child.",
+        "The sentence says that the score can change by several points from year to year, and the score changes more in young children.",
+        "the score can change by several points from year to year, and it changes more in young children"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country scores highest.",
+        "What IQ scores can predict.",
+        "What IQ does not measure.",
+        "The text does not say which country scores highest. It says what IQ scores can predict and what IQ does not measure.",
+        [
+          "school results, years of education",
+          "It does not measure creativity, motivation, kindness or practical skills"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Scientists are still discussing what intelligence is.",
+        "Scientists agree completely about intelligence.",
+        "Scientists have stopped studying intelligence.",
+        "The text says that scientists disagree about what it means to say that intelligence is one general ability.",
+        "Scientists also disagree about what it means to say that intelligence is one general ability."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "IQ scores rose over time, which suggests that environment matters.",
+        "IQ scores rose because genes changed very quickly.",
+        "IQ scores fell steadily during the twentieth century.",
+        "The text explains that raw IQ scores rose during the twentieth century, which suggests that the environment influences them.",
+        [
+          "raw scores on IQ tests rose in many countries, by about three points every ten years",
+          "The Flynn effect shows that IQ scores respond to the environment"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "By about how much did IQ test scores rise every ten years?",
+        "About three points.",
+        "About thirty points.",
+        "About half a point.",
+        "The text says that raw scores rose by about three points every ten years.",
+        "by about three points every ten years"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “strange” means…",
+        "unusual and unexpected.",
+        "familiar and expected.",
+        "pleasant and quiet.",
+        "The text says that Flynn noticed something strange, which means something unusual and unexpected.",
+        "noticed something strange"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “This” in “This is called the Flynn effect” refers to…",
+        "the rise in raw test scores.",
+        "the making of harder tests.",
+        "the average score of 100.",
+        "The sentences before say that raw scores rose over time, and this rise is called the Flynn effect.",
+        "raw scores on IQ tests rose in many countries, by about three points every ten years"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country had the largest rise.",
+        "Why genes cannot explain the rise.",
+        "What happened in several rich countries recently.",
+        "The text does not say which country had the largest rise. It says why genes cannot explain the rise and what happened recently in some rich countries.",
+        [
+          "genes do not change that quickly in a few generations",
+          "the rise slowed down or stopped in recent decades"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A rise for a whole society is not the same as a change for one person.",
+        "Every person can raise IQ by three points a year.",
+        "IQ scores respond to nothing.",
+        "The text says that it does not show that one person can easily change his or her own score.",
+        "it does not show that one person can easily change his or her own score"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "reasoning",
+          "thinking in a logical way"
+        ],
+        [
+          "average",
+          "the usual or middle amount"
+        ],
+        [
+          "predict",
+          "to say what will happen"
+        ],
+        [
+          "stable",
+          "not changing much"
+        ],
+        [
+          "creativity",
+          "the ability to produce new ideas"
+        ]
+      ],
+      "B": [
+        [
+          "raw",
+          "not yet adjusted or changed"
+        ],
+        [
+          "generations",
+          "groups of people born at around the same time"
+        ],
+        [
+          "environmental",
+          "related to the conditions around a person"
+        ],
+        [
+          "nutrition",
+          "the food that the body needs to grow and stay healthy"
+        ],
+        [
+          "abstract",
+          "about ideas rather than real things"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 134,
+    "slug": "unseen-reading-part-134",
+    "theme": "Nature and Nurture",
+    "blurb": "what twin studies show, why genes and environment work together",
+    "texts": {
+      "A": {
+        "title": "What Twin Studies Show",
+        "text": "Are we shaped more by our genes or by our environment? One way to study this old question is to compare twins. Identical twins share almost all of their genes, while non-identical twins share about half, like ordinary brothers and sisters. If identical twins are more similar than non-identical twins in a trait, such as height, personality or intelligence, genes probably play a role. Studies of thousands of twin pairs find that many traits are partly inherited. For adult intelligence, estimates of heritability are often around 50 percent or higher, and for personality traits they are often around 40 percent. Studies of twins who grew up in different families, who were separated at birth, show that they are often similar in surprising ways. Heritability does not mean that a trait is fixed or that it works the same for each person. It is a statistic about differences in a group at a certain time and place, and it can change when the environment changes."
+      },
+      "B": {
+        "title": "Why Genes and Environment Work Together",
+        "text": "Nature or nurture? Today most scientists say that the question is wrongly asked, because genes and environment work together all the time. A well-known example is the disease phenylketonuria, or PKU. Babies with a certain gene cannot process a part of protein called phenylalanine, and without treatment they can develop brain damage. But if they eat a special diet from birth, they develop normally. The gene is the same, and the outcome depends on the environment. Another idea is that people with certain genes often seek or create certain environments, for example a child who loves music may ask for lessons and listen to more music, and this strengthens the original talent. Genes can also be switched on or off by experience, a field called epigenetics, although scientists are careful about how strongly it affects behavior. Environment is also not only the family: friends, schools, nutrition, culture and chance events matter. The result is that nobody is shaped by genes alone or by environment alone."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Twin studies suggest that genes influence many traits, though they do not fix them.",
+        "Twin studies prove that genes decide everything about a person.",
+        "Twin studies show that genes have no effect on any trait.",
+        "The text explains that twin studies find that many traits are partly inherited, but that heritability does not mean that a trait is fixed.",
+        [
+          "Are we shaped more by our genes or by our environment?",
+          "Heritability does not mean that a trait is fixed"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What fraction of their genes do non-identical twins share?",
+        "About half.",
+        "Almost all.",
+        "None.",
+        "The text says that non-identical twins share about half of their genes.",
+        "non-identical twins share about half"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “similar” means…",
+        "alike.",
+        "different.",
+        "distant.",
+        "The text says that identical twins are more similar than non-identical twins, which means that they are more alike.",
+        "more similar than non-identical twins"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “show that they are often similar” refers to…",
+        "twins who grew up apart.",
+        "ordinary brothers and sisters.",
+        "the families.",
+        "The sentence says that studies of twins who grew up in different families show that those twins are often similar in surprising ways.",
+        "show that they are often similar in surprising ways"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many twin pairs have been studied in Israel.",
+        "What heritability means.",
+        "What can change a statistic about heritability.",
+        "The text does not say how many twin pairs have been studied in Israel. It explains what heritability is and what can change it.",
+        [
+          "a statistic about differences in a group at a certain time and place",
+          "it can change when the environment changes"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A high heritability does not mean that a trait cannot change.",
+        "A high heritability means that nothing can change a trait.",
+        "Heritability is the same everywhere.",
+        "The text says that heritability can change when the environment changes.",
+        "it can change when the environment changes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Genes and environment work together, so nature versus nurture is too simple.",
+        "Genes alone decide who a person will become.",
+        "The environment alone decides who a person will become.",
+        "The text explains that genes and environment work together all the time, so nobody is shaped by only one of them.",
+        [
+          "genes and environment work together all the time",
+          "nobody is shaped by genes alone or by environment alone"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What helps babies with PKU develop normally?",
+        "A special diet from birth.",
+        "A special school from birth.",
+        "A new gene from birth.",
+        "The text says that if the babies eat a special diet from birth, they develop normally.",
+        "if they eat a special diet from birth, they develop normally"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “talent” means…",
+        "natural ability.",
+        "hidden problem.",
+        "school subject.",
+        "The text says that lessons strengthen the original talent of a child, which means a natural ability for music.",
+        "strengthens the original talent"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “this strengthens the original talent” refers to…",
+        "asking for lessons and listening to more music.",
+        "loving music before the child was born.",
+        "having a natural talent for music.",
+        "The sentence says that a child who loves music may ask for lessons and listen to more music, and this strengthens the talent.",
+        "may ask for lessons and listen to more music, and this strengthens the original talent"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many genes affect intelligence.",
+        "What epigenetics is called.",
+        "What counts as environment besides family.",
+        "The text does not say how many genes affect intelligence. It names epigenetics and says what counts as environment besides family.",
+        [
+          "a field called epigenetics",
+          "friends, schools, nutrition, culture and chance events matter"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the PKU example suggest?",
+        "The same gene can have different outcomes.",
+        "Genes never have any effect on health.",
+        "Diet has no effect on how a gene acts.",
+        "The text says that the gene is the same, and the outcome depends on the environment.",
+        "The gene is the same, and the outcome depends on the environment."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "genes",
+          "parts of cells that pass features from parents to children"
+        ],
+        [
+          "trait",
+          "a characteristic of a person"
+        ],
+        [
+          "inherited",
+          "passed from parents to children"
+        ],
+        [
+          "heritability",
+          "the part of differences between people that is due to genes"
+        ],
+        [
+          "statistic",
+          "a number that describes data"
+        ]
+      ],
+      "B": [
+        [
+          "process",
+          "to break down and use"
+        ],
+        [
+          "outcome",
+          "the result of something"
+        ],
+        [
+          "seek",
+          "to look for"
+        ],
+        [
+          "strengthens",
+          "makes stronger"
+        ],
+        [
+          "chance",
+          "luck, something that happens without a plan"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 135,
+    "slug": "unseen-reading-part-135",
+    "theme": "Learning Styles",
+    "blurb": "why the learning styles idea feels true, what research finds",
+    "texts": {
+      "A": {
+        "title": "Visual, Auditory, Kinesthetic?",
+        "text": "Many people believe that they have a learning style. They say, “I am a visual learner,” or “I learn best by listening.” The idea is popular in schools and teacher training, and surveys find that most teachers believe it. It sounds sensible because people do have preferences: some like pictures, others like to listen, and others like to try things. The idea of learning styles goes further. It says that students learn better when teaching is matched to their style, for example when visual learners get pictures and auditory learners get lectures. This is called the matching hypothesis. It is attractive because it seems fair and personal. It also suggests that students who struggle simply have not received the right style. Many students and teachers say that the idea feels true from their own experience. But is it supported by evidence? Researchers have tested this question carefully, and in the next text we look at what they found."
+      },
+      "B": {
+        "title": "What Research Finds About Learning Styles",
+        "text": "In 2008, a group of psychologists led by Harold Pashler reviewed the research on learning styles. They asked a precise question: do students learn better when the teaching is matched to their style? To prove this, a study needs to put students into groups, teach some in the style they prefer and others in a different style, and then test everyone on the same material. The matching idea predicts that each style should do best with its own teaching. The reviewers found very few studies of this kind, and the ones that were well designed did not support the idea. Other research shows what does work: practicing recall, spreading study over time, mixing examples, and using pictures, words and explanations for everyone, because most content is better learned with several formats. The content matters too: geometry needs diagrams for everybody, and music needs listening. This does not mean that preferences are unimportant, because liking a method can keep a student motivated. But the best advice is to try different methods and to choose them by the material, not by a label."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The learning styles idea is popular because it feels true and fair.",
+        "The learning styles idea is popular because every study proved it.",
+        "The learning styles idea is popular only among students.",
+        "The text explains that many people believe in learning styles because the idea seems sensible, fair and personal.",
+        [
+          "Many people believe that they have a learning style",
+          "It is attractive because it seems fair and personal"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the matching hypothesis say?",
+        "Students learn better when teaching matches their style.",
+        "Students learn better when teaching ignores their style.",
+        "Students learn better when they study alone.",
+        "The text says that students learn better when teaching is matched to their style.",
+        "students learn better when teaching is matched to their style"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “sensible” means…",
+        "reasonable.",
+        "silly.",
+        "boring.",
+        "The text says that the idea sounds sensible, which means that it sounds reasonable.",
+        "It sounds sensible"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It says that students learn better” refers to…",
+        "the idea of learning styles.",
+        "the preference for pictures.",
+        "the survey.",
+        "The sentence says that the idea of learning styles goes further, and the idea says that students learn better when teaching is matched.",
+        "The idea of learning styles goes further. It says that students learn better when teaching is matched"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which style is the most common among students.",
+        "What the matching hypothesis is called.",
+        "What most teachers believe.",
+        "The text does not say which style is the most common. It says what the hypothesis is called and what most teachers believe.",
+        [
+          "This is called the matching hypothesis",
+          "surveys find that most teachers believe it"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The idea will now be tested.",
+        "The idea has already been proved.",
+        "The idea cannot be tested.",
+        "The text asks whether the idea is supported by evidence and says that researchers have tested this question carefully.",
+        "But is it supported by evidence?"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Research does not support teaching students by a learning style.",
+        "Research proves that every student has exactly one learning style.",
+        "Research shows that students should never use pictures.",
+        "The text explains that well-designed studies did not support the matching idea and suggests trying different methods.",
+        [
+          "the ones that were well designed did not support the idea",
+          "the best advice is to try different methods"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What kind of study would show that matching works?",
+        "Teaching groups in different styles and testing everyone.",
+        "Asking students which style they like best.",
+        "Giving every student the same style of teaching.",
+        "The text says that a study needs to teach some students in their preferred style and others in a different style, and then test everyone.",
+        "teach some in the style they prefer and others in a different style, and then test everyone on the same material"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “motivated” means…",
+        "interested and willing to work.",
+        "tired and bored.",
+        "afraid and silent.",
+        "The text says that liking a method can keep a student motivated, which means interested and willing to work.",
+        "can keep a student motivated"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “choose them by the material” refers to…",
+        "the methods of study.",
+        "the students.",
+        "the labels.",
+        "The sentence says to try different methods and to choose the methods by the material.",
+        "try different methods and to choose them by the material"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teachers Pashler interviewed.",
+        "What kinds of study are needed.",
+        "What does work in learning.",
+        "The text does not say how many teachers Pashler interviewed. It says what kinds of study are needed and what does work.",
+        [
+          "a study needs to put students into groups",
+          "practicing recall, spreading study over time, mixing examples"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the geometry example suggest?",
+        "The subject can decide the best way to teach.",
+        "Students should always choose by style.",
+        "Geometry should be taught by listening only.",
+        "The text says that geometry needs diagrams for everybody, so the subject decides the best method.",
+        "geometry needs diagrams for everybody"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "preferences",
+          "things that you like better than others"
+        ],
+        [
+          "matched",
+          "made to fit together"
+        ],
+        [
+          "hypothesis",
+          "an idea that can be tested"
+        ],
+        [
+          "attractive",
+          "interesting and appealing"
+        ],
+        [
+          "struggle",
+          "to have difficulty doing something"
+        ]
+      ],
+      "B": [
+        [
+          "reviewed",
+          "examined carefully"
+        ],
+        [
+          "precise",
+          "exact and clear"
+        ],
+        [
+          "designed",
+          "planned in a particular way"
+        ],
+        [
+          "recall",
+          "the act of remembering"
+        ],
+        [
+          "label",
+          "a word used to describe a person or thing"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 136,
+    "slug": "unseen-reading-part-136",
+    "theme": "Left Brain, Right Brain",
+    "blurb": "the left-brain right-brain idea, what brain scans really show",
+    "texts": {
+      "A": {
+        "title": "The Left-Brain, Right-Brain Idea",
+        "text": "Many people say, “I am a right-brain person,” meaning that they are creative, or “I am a left-brain person,” meaning that they are logical. The idea has a basis in real science. The brain has two halves, called hemispheres, joined by a bundle of nerve fibers. In the 1960s, the scientist Roger Sperry studied patients whose two halves had been separated by surgery to treat severe epilepsy, and found that each half is better at some tasks. In most people, the left hemisphere is more involved in language, and the right in tasks such as noticing faces and where things are in space. Sperry received a Nobel Prize in 1981 for this work. Popular books and courses then turned the finding into a simple story: creative right-brain people versus logical left-brain people, and they offered exercises to “unlock the right brain”. The story is easy to remember and it fits stereotypes about artists and scientists."
+      },
+      "B": {
+        "title": "What Brain Scans Really Show",
+        "text": "If people were left-brained or right-brained, one side of their brain should be stronger or more active all the time. In 2013, a team at the University of Utah tested this. They analyzed brain scans of more than a thousand people, and measured activity in many areas of both hemispheres. They found that, as expected, some functions were stronger on one side, language mainly on the left, for example. But there was no sign that a person is mostly left-sided or right-sided. A person with stronger activity in some left areas did not have stronger activity in all left areas. The two halves also communicate constantly through a large bundle of nerve fibers, and almost every activity, from reading to drawing, uses both sides. Creativity, for example, uses many networks across the brain. Scientists therefore call the idea a myth. This does not mean that the brain has no specialization, only that the popular division of people into two types is not supported. A better statement is that everybody uses the whole brain, even if some tasks use some regions more."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The idea began with real science, but popular books simplified it.",
+        "The idea began as a joke and has no connection to science.",
+        "The idea was invented by Roger Sperry as a type of test.",
+        "The text explains that Sperry’s real findings were turned by popular books and courses into a simple story.",
+        [
+          "The idea has a basis in real science",
+          "turned the finding into a simple story"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the left hemisphere more involved in, in most people?",
+        "Language.",
+        "Noticing faces.",
+        "Finding places in space.",
+        "The text says that the left hemisphere is more involved in language.",
+        "the left hemisphere is more involved in language"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “separated” means…",
+        "cut apart.",
+        "joined together.",
+        "painted.",
+        "The text says that the patients’ two halves had been separated by surgery, which means that they had been cut apart.",
+        "had been separated by surgery"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they offered exercises” refers to…",
+        "the popular books and courses.",
+        "the patients in the study.",
+        "the scientists who did the surgery.",
+        "The sentence says that popular books and courses turned the finding into a simple story, and the books and courses offered exercises.",
+        "Popular books and courses then turned the finding into a simple story: creative right-brain people versus logical left-brain people, and they offered exercises"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people take creativity tests.",
+        "What Sperry received in 1981.",
+        "What the hemispheres are joined by.",
+        "The text does not say how many people take creativity tests. It says what Sperry received and what joins the hemispheres.",
+        [
+          "Sperry received a Nobel Prize in 1981",
+          "joined by a bundle of nerve fibers"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why is the story easy to accept?",
+        "It fits stereotypes about artists and scientists.",
+        "It was proved by many experiments.",
+        "It is told only in scientific journals.",
+        "The text says that the story is easy to remember and fits stereotypes about artists and scientists.",
+        "it fits stereotypes about artists and scientists"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Brain scans show that people are not mainly left-brained or right-brained.",
+        "Brain scans show that people use only one half of the brain.",
+        "Brain scans show that the two halves never communicate.",
+        "The text explains that brain scans of more than a thousand people showed no sign of left-sided or right-sided people.",
+        [
+          "there was no sign that a person is mostly left-sided or right-sided",
+          "everybody uses the whole brain"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many people were in the Utah study?",
+        "More than a thousand.",
+        "About ten.",
+        "About a hundred.",
+        "The text says that the team analyzed brain scans of more than a thousand people.",
+        "more than a thousand people"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “constantly” means…",
+        "all the time.",
+        "once a year.",
+        "never.",
+        "The text says that the two halves communicate constantly, which means all the time.",
+        "communicate constantly"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “This” in “This does not mean” refers to…",
+        "calling the idea a myth.",
+        "using both sides of the brain.",
+        "the scans of more than a thousand people.",
+        "The sentence before says that scientists call the idea a myth, and this does not mean that the brain has no specialization.",
+        "Scientists therefore call the idea a myth. This does not mean"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which half of the brain is better for drawing.",
+        "Which function is mainly on the left.",
+        "What the two halves use to communicate.",
+        "The text does not say which half is better for drawing. It says which function is mainly on the left and what the halves use to communicate.",
+        [
+          "language mainly on the left",
+          "a large bundle of nerve fibers"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the example of creativity suggest?",
+        "Complex skills use many parts of the brain.",
+        "Creativity uses only the right hemisphere.",
+        "Creativity uses no part of the brain.",
+        "The text says that creativity uses many networks across the brain.",
+        "Creativity, for example, uses many networks across the brain."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "hemispheres",
+          "the two halves of the brain"
+        ],
+        [
+          "bundle",
+          "a group of things tied or held together"
+        ],
+        [
+          "epilepsy",
+          "a disease of the brain that causes seizures"
+        ],
+        [
+          "tasks",
+          "jobs or pieces of work"
+        ],
+        [
+          "stereotypes",
+          "fixed ideas about a type of person"
+        ]
+      ],
+      "B": [
+        [
+          "analyzed",
+          "examined carefully in order to understand"
+        ],
+        [
+          "functions",
+          "special jobs of parts of the body"
+        ],
+        [
+          "communicate",
+          "to send information to each other"
+        ],
+        [
+          "networks",
+          "groups of connected parts"
+        ],
+        [
+          "specialization",
+          "when a part has a particular job"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 137,
+    "slug": "unseen-reading-part-137",
+    "theme": "Social Media and Teens",
+    "blurb": "the case that social media harms teens, the case that the effect is small or mixed",
+    "texts": {
+      "A": {
+        "title": "The Case That Social Media Harms Teens",
+        "text": "Since about 2012, rates of anxiety, depression and self-harm among teenagers have risen in several countries, especially among girls, according to health statistics. The social psychologist Jonathan Haidt and others argue that smartphones and social media are a main reason. They point to several mechanisms. Social media can take time from sleep, face-to-face friendship, exercise and homework. It encourages constant comparison with the best moments of other people’s lives and with filtered images, which can hurt body image and self-esteem. It also makes bullying and exclusion easier and more public, and its designs, such as endless scrolling and notifications, are built to hold attention. Some experiments in which people reduced social media for a few weeks found small improvements in mood or well-being. Supporters of this view say that parents and schools should delay smartphones, limit social media for younger teens and keep phones out of classrooms, as a precaution while research continues."
+      },
+      "B": {
+        "title": "The Case for Caution About the Evidence",
+        "text": "Other researchers think that the picture is more complicated. In 2019, Amy Orben and Andrew Przybylski analyzed data from more than 350,000 adolescents. They found that the link between digital technology use and well-being was negative but very small, explaining at most about 0.4 percent of the differences in well-being, which was less than the link with some everyday factors. Critics of the strong claim, such as Candice Odgers, say that most studies are correlational, which means that they cannot show cause and effect. A teenager who is already sad might use social media more, and not the reverse. Mental health problems also rose or did not rise in different ways across countries, and other causes, such as economic pressure, school stress and changes in how problems are reported, could be involved. The effect also seems to depend on the person and the use: connecting with friends can help, while passive scrolling and bullying may harm. Supporters of the strong view reply that small average effects can hide large harm for some young people. Both sides agree that more high-quality research is needed."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Some experts argue that social media harms teen mental health.",
+        "Some experts argue that social media improves every teen’s health.",
+        "Some experts argue that teens do not use social media at all.",
+        "The text explains that some experts argue that smartphones and social media are a main reason for rising mental health problems among teens.",
+        [
+          "argue that smartphones and social media are a main reason",
+          "as a precaution while research continues"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Among whom have rates especially risen, according to the text?",
+        "Among girls.",
+        "Among older adults.",
+        "Among young boys only.",
+        "The text says that rates have risen especially among girls.",
+        "especially among girls"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “filtered” in “filtered images” means…",
+        "changed by editing tools.",
+        "printed on paper.",
+        "taken in the dark.",
+        "The text says that social media encourages comparison with filtered images, which means images changed by editing tools.",
+        "with filtered images"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “its” in “its designs” refers to…",
+        "social media.",
+        "bullying.",
+        "sleep.",
+        "The sentence says that social media makes bullying easier, and the designs of social media are built to hold attention.",
+        "It also makes bullying and exclusion easier and more public, and its designs"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours teens spend on phones each day.",
+        "What social media can take time from.",
+        "What experiments found about reducing social media.",
+        "The text does not say how many hours teens spend on phones. It says what social media takes time from and what experiments found.",
+        [
+          "take time from sleep, face-to-face friendship, exercise and homework",
+          "found small improvements in mood or well-being"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the phrase “as a precaution” suggest?",
+        "Supporters want to act before the research is complete.",
+        "Supporters believe the research is finished.",
+        "Supporters want to stop all research.",
+        "The text says that supporters want these steps as a precaution while research continues.",
+        "as a precaution while research continues"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Some researchers find that the effect of social media is small or mixed.",
+        "Some researchers find that social media always improves well-being.",
+        "Some researchers find that teens never use social media.",
+        "The text explains that other researchers find a small effect, mostly correlational evidence and effects that depend on the person and the use.",
+        [
+          "the picture is more complicated",
+          "The effect also seems to depend on the person and the use"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How much of the differences in well-being did the link explain, at most?",
+        "About 0.4 percent.",
+        "About 40 percent.",
+        "About 4 percent.",
+        "The text says that the link explained at most about 0.4 percent of the differences in well-being.",
+        "explaining at most about 0.4 percent of the differences in well-being"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “reported” means…",
+        "described to others.",
+        "hidden from others.",
+        "cured by others.",
+        "The text says that changes in how problems are reported could be involved, which means how problems are described to others.",
+        "changes in how problems are reported"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “which means that they cannot show cause and effect” refers to…",
+        "most studies.",
+        "the teenagers.",
+        "the critics.",
+        "The sentence says that most studies are correlational, which means that those studies cannot show cause and effect.",
+        "most studies are correlational, which means that they cannot show cause and effect"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teenagers use social media worldwide.",
+        "What a sad teenager might do.",
+        "What supporters of the strong view reply.",
+        "The text does not say how many teenagers use social media worldwide. It says what a sad teenager might do and what supporters reply.",
+        [
+          "A teenager who is already sad might use social media more",
+          "small average effects can hide large harm for some young people"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The question is still open.",
+        "Both sides have stopped arguing.",
+        "The question was solved in 2019.",
+        "The text says that both sides agree that more high-quality research is needed.",
+        "Both sides agree that more high-quality research is needed."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "rates",
+          "how often something happens"
+        ],
+        [
+          "mechanisms",
+          "ways in which something works or happens"
+        ],
+        [
+          "comparison",
+          "looking at how things are alike or different"
+        ],
+        [
+          "self-esteem",
+          "how much you like and respect yourself"
+        ],
+        [
+          "precaution",
+          "an action taken to prevent a problem"
+        ]
+      ],
+      "B": [
+        [
+          "complicated",
+          "not simple, with many parts"
+        ],
+        [
+          "adolescents",
+          "young people between childhood and adulthood"
+        ],
+        [
+          "correlational",
+          "showing a link between two things"
+        ],
+        [
+          "reverse",
+          "the opposite"
+        ],
+        [
+          "passive",
+          "taking no active part"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 138,
+    "slug": "unseen-reading-part-138",
+    "theme": "Lie Detectors",
+    "blurb": "how a polygraph works, why scientists and courts doubt it",
+    "texts": {
+      "A": {
+        "title": "How a Polygraph Works",
+        "text": "A polygraph, often called a lie detector, does not detect lies. It records body signals while a person answers questions: heart rate, blood pressure, breathing and sweating on the fingers. Sensors are placed on the chest, the arm and the fingers, and the examiner asks simple questions first, then relevant ones. The idea is that lying causes stress, and stress changes these signals. In one common method, the examiner compares the reactions to “control” questions, such as “Have you ever lied to someone who trusted you?”, with the reactions to questions about the crime. If the person reacts more strongly to the crime questions, the examiner suggests that the person may be lying. Polygraph tests have been used by police, by some governments and by some employers, and many people believe that they work like a machine that shows the truth. In reality, they measure emotion and arousal, and an examiner must interpret the lines on the paper."
+      },
+      "B": {
+        "title": "Why Scientists and Courts Doubt the Polygraph",
+        "text": "Most scientists do not trust polygraph tests. The main problem is that there is no special body signal for lying. Fear, anger, embarrassment or worry about being wrongly accused can cause the same reactions as lying, so an innocent, nervous person can look guilty. Meanwhile, a calm or practiced person can look truthful. In 2003, the United States National Academy of Sciences reviewed the evidence and found that polygraph tests can discriminate lying from truth-telling at rates well above chance, but well below perfection. It also found that people can learn to use countermeasures, such as controlling breathing or thinking exciting thoughts, to beat the test. For these reasons, polygraph results are not accepted as evidence in most courts, and many countries restrict their use by employers. Some researchers are looking at new methods, such as brain scans and analysis of speech, but these also have limits. The best lie detection still depends on checking facts and evidence, not on reading the body."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A polygraph records body signals, and an examiner interprets them.",
+        "A polygraph reads thoughts and shows the exact truth.",
+        "A polygraph measures how fast a person speaks.",
+        "The text explains that a polygraph records body signals and that an examiner must interpret them.",
+        [
+          "It records body signals while a person answers questions",
+          "an examiner must interpret the lines on the paper"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What are control questions used for?",
+        "To compare reactions with those to the crime questions.",
+        "To relax the person at the end of the test.",
+        "To test the battery of the machine.",
+        "The text says that the examiner compares the reactions to control questions with the reactions to questions about the crime.",
+        "compares the reactions to “control” questions"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “arousal” means…",
+        "a state of excitement.",
+        "a state of sleep.",
+        "a state of silence.",
+        "The text says that polygraphs measure emotion and arousal, which means a state of excitement in the body.",
+        "they measure emotion and arousal"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “that they work like a machine” refers to…",
+        "polygraph tests.",
+        "the police.",
+        "the employers.",
+        "The sentence says that many people believe that polygraph tests work like a machine that shows the truth.",
+        "many people believe that they work like a machine that shows the truth"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a polygraph costs.",
+        "Where the sensors are placed.",
+        "Who has used polygraph tests.",
+        "The text does not say how much a polygraph costs. It says where the sensors are placed and who has used polygraph tests.",
+        [
+          "Sensors are placed on the chest, the arm and the fingers",
+          "used by police, by some governments and by some employers"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the first sentence suggest?",
+        "A polygraph measures the body, not the truth.",
+        "A polygraph always finds the truth.",
+        "A polygraph is a type of camera.",
+        "The text says that a polygraph does not detect lies, but records body signals.",
+        "does not detect lies. It records body signals"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Polygraph tests are doubted because body signals do not prove lying.",
+        "Polygraph tests are trusted because they always find the truth.",
+        "Polygraph tests are doubted only because they are old.",
+        "The text explains that there is no special body signal for lying, so scientists and courts doubt polygraph tests.",
+        [
+          "there is no special body signal for lying",
+          "lie detection still depends on checking facts and evidence"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the 2003 review find about accuracy?",
+        "Above chance, but well below perfection.",
+        "Perfect in every case.",
+        "No better than a coin toss.",
+        "The text says that the tests can discriminate lying from truth-telling at rates well above chance, but well below perfection.",
+        "well above chance, but well below perfection"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “nervous” means…",
+        "worried and tense.",
+        "calm and relaxed.",
+        "proud and happy.",
+        "The text says that an innocent, nervous person can look guilty, which means a person who is worried and tense.",
+        "an innocent, nervous person can look guilty"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It also found” refers to…",
+        "the National Academy of Sciences.",
+        "the polygraph used in the test.",
+        "the court that hears the case.",
+        "The sentence before says that the National Academy of Sciences reviewed the evidence, and the Academy also found that people can use countermeasures.",
+        [
+          "the United States National Academy of Sciences reviewed the evidence",
+          "It also found that people can learn to use countermeasures"
+        ]
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people have beaten the test.",
+        "What courts do with polygraph results.",
+        "What new methods researchers are looking at.",
+        "The text does not say how many people have beaten the test. It says what courts do with polygraph results and what new methods researchers study.",
+        [
+          "polygraph results are not accepted as evidence in most courts",
+          "brain scans and analysis of speech"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the first sentence suggest?",
+        "Experts are not confident about polygraph tests.",
+        "Experts use polygraph tests in all cases.",
+        "Experts have never studied polygraph tests.",
+        "The text says that most scientists do not trust polygraph tests.",
+        "Most scientists do not trust polygraph tests."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "records",
+          "saves information so that it can be used later"
+        ],
+        [
+          "sensors",
+          "devices that detect something"
+        ],
+        [
+          "relevant",
+          "connected to the matter being discussed"
+        ],
+        [
+          "examiner",
+          "a person who tests or checks"
+        ],
+        [
+          "interpret",
+          "to explain the meaning of something"
+        ]
+      ],
+      "B": [
+        [
+          "accused",
+          "said to have done something wrong"
+        ],
+        [
+          "innocent",
+          "not guilty of a crime"
+        ],
+        [
+          "chance",
+          "luck, a result without a pattern"
+        ],
+        [
+          "perfection",
+          "the state of being without any faults"
+        ],
+        [
+          "restrict",
+          "to limit"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 139,
+    "slug": "unseen-reading-part-139",
+    "theme": "Conspiracy Beliefs",
+    "blurb": "why people believe conspiracy theories, how people can learn to check claims",
+    "texts": {
+      "A": {
+        "title": "Why Do People Believe Conspiracy Theories?",
+        "text": "A conspiracy theory is a belief that a secret group is behind important events, for example that a disaster was planned by powerful people. Some real conspiracies have existed in history, so the existence of conspiracies is not the issue. The psychological question is why some people believe unlikely or unproven theories. Researchers have found three main kinds of motives. The first is the need to understand. When the world feels confusing, a theory offers a clear story with someone to blame. The second is the need for safety and control: after a frightening event, people look for explanations that make the event seem less random. The third is the need to belong to a group and to feel special, because knowing a “secret truth” can create identity. Belief is also linked to low trust in institutions and to feeling powerless. Conspiracy beliefs are common: surveys in many countries find that a large part of the population believes at least one. They are not limited to any single type of person."
+      },
+      "B": {
+        "title": "How People Can Learn to Check Claims",
+        "text": "Researchers do not only study why people believe theories, they also study how to reduce harmful misinformation. Arguing angrily rarely works, because it makes people defend their view. Several methods have better evidence. One is “prebunking”: teaching people in advance the common tricks of misinformation, such as fake experts, emotional language and cherry-picked facts, so that they recognize them later. Another is lateral reading, which means leaving a page and checking what other sources say. A third is asking simple questions: Who says this? What is the evidence? Could there be another explanation? A theory that cannot be tested, because every piece of evidence against it is seen as part of the plot, deserves extra caution. Talking with respect also matters: people change their minds more when they feel listened to. Finally, a healthy habit is to accept uncertainty, because sometimes the honest answer is “we do not know yet”."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Psychological needs help to explain why people believe conspiracy theories.",
+        "Conspiracy theories are always true, so everyone believes them.",
+        "Only unintelligent people believe in conspiracy theories.",
+        "The text explains three kinds of psychological motives that help to explain why some people believe conspiracy theories.",
+        [
+          "The psychological question is why some people believe unlikely or unproven theories",
+          "Researchers have found three main kinds of motives"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the second motive?",
+        "The need for safety and control.",
+        "The need to understand.",
+        "The need to belong.",
+        "The text says that the second motive is the need for safety and control.",
+        "The second is the need for safety and control"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “confusing” means…",
+        "hard to understand.",
+        "easy to explain.",
+        "full of friends.",
+        "The text says that when the world feels confusing, a theory offers a clear story, which means that the world feels hard to understand.",
+        "When the world feels confusing"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “They” in “They are not limited to any single type of person” refers to…",
+        "conspiracy beliefs.",
+        "surveys.",
+        "institutions.",
+        "The sentence before says that conspiracy beliefs are common, and those beliefs are not limited to any single type of person.",
+        "Conspiracy beliefs are common"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which theory is most popular.",
+        "What the first motive is.",
+        "What belief is linked to.",
+        "The text does not say which theory is most popular. It says what the first motive is and what belief is linked to.",
+        [
+          "The first is the need to understand",
+          "low trust in institutions and to feeling powerless"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Many different kinds of people can believe in theories.",
+        "Only one kind of person believes in theories.",
+        "Nobody believes in theories.",
+        "The text says that conspiracy beliefs are not limited to any single type of person.",
+        "not limited to any single type of person"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "People can reduce misinformation by learning tricks and by checking sources.",
+        "People can reduce misinformation by arguing angrily with others.",
+        "People can reduce misinformation by trusting every new claim.",
+        "The text explains methods such as prebunking, lateral reading and asking simple questions to reduce misinformation.",
+        [
+          "they also study how to reduce harmful misinformation",
+          "Several methods have better evidence"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is prebunking?",
+        "Teaching people common tricks of misinformation in advance.",
+        "Deleting all false pages from the internet.",
+        "Arguing with people after they believe.",
+        "The text says that prebunking is teaching people in advance the common tricks of misinformation.",
+        "teaching people in advance the common tricks of misinformation"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “deserves” means…",
+        "should receive.",
+        "refuses to give.",
+        "tries to hide.",
+        "The text says that a theory that cannot be tested deserves extra caution, which means that it should receive extra caution.",
+        "deserves extra caution"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “because it makes people defend their view” refers to…",
+        "arguing angrily.",
+        "misinformation.",
+        "prebunking.",
+        "The sentence says that arguing angrily rarely works, because arguing angrily makes people defend their view.",
+        "Arguing angrily rarely works, because it makes people defend their view"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people use prebunking.",
+        "What simple questions to ask.",
+        "What helps people change their minds.",
+        "The text does not say how many people use prebunking. It gives simple questions to ask and says what helps people change their minds.",
+        [
+          "Who says this? What is the evidence?",
+          "people change their minds more when they feel listened to"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Saying “I do not know yet” can be honest and wise.",
+        "Experts should always give a final answer.",
+        "Not knowing means giving up.",
+        "The text says that sometimes the honest answer is “we do not know yet”.",
+        "sometimes the honest answer is “we do not know yet”"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "conspiracy",
+          "a secret plan by a group to do something harmful"
+        ],
+        [
+          "motives",
+          "reasons for doing or believing something"
+        ],
+        [
+          "blame",
+          "to say that someone is responsible for something bad"
+        ],
+        [
+          "random",
+          "happening without any plan or pattern"
+        ],
+        [
+          "institutions",
+          "large organizations such as governments and schools"
+        ]
+      ],
+      "B": [
+        [
+          "misinformation",
+          "false or misleading information"
+        ],
+        [
+          "experts",
+          "people with great knowledge of a subject"
+        ],
+        [
+          "plot",
+          "a secret plan"
+        ],
+        [
+          "caution",
+          "great care to avoid danger or mistakes"
+        ],
+        [
+          "uncertainty",
+          "the state of not being sure"
+        ]
+      ]
+    }
   }
 ];
