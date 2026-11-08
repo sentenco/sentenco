@@ -23349,5 +23349,5493 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 175,
+    "slug": "unseen-reading-part-175",
+    "theme": "Networks",
+    "blurb": "how the internet moves information, how Wi-Fi and mobile signals work",
+    "texts": {
+      "A": {
+        "title": "How the Internet Moves Information",
+        "text": "When you send a message or open a video, the information does not travel in one piece. The internet breaks it into thousands of small parts called packets. Each packet carries a label with its destination, like an address on an envelope. The packets are sent through a network of cables, many of them under the sea, and routers, which are machines that decide the next step of the journey. Different packets of the same message may take different routes, depending on which paths are free, and they may arrive in a different order. When they arrive, your device puts them back together and asks for any missing parts again. This design makes the internet strong: if one cable or router fails, the packets simply find another way. It also lets millions of people share the same cables at the same time. Most international data travels through undersea cables, thin cables that lie on the ocean floor, rather than through satellites."
+      },
+      "B": {
+        "title": "How Wi-Fi and Mobile Signals Work",
+        "text": "Wi-Fi and mobile phones send information through the air using radio waves, the same kind of invisible waves that carry radio and television. A Wi-Fi router connects to the internet by a cable and then broadcasts the data as radio waves over a short distance, usually inside one home or building. Walls, floors and even water can weaken the signal, which is why the connection is better near the router. Mobile networks cover much larger areas by dividing them into cells. In the middle of each cell stands a tower with antennas. Your phone connects to the nearest tower, and as you travel, it hands over from one tower to the next without ending the call. Cells are small in crowded cities, so more people can use the network, and large in empty regions. The towers are linked to the rest of the network by cables or by radio links. Newer generations, such as 4G and 5G, can carry more data at higher speeds."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The internet sends information in small packets that find their own routes.",
+        "The internet sends information in one large piece through a single cable.",
+        "The internet sends information only through satellites above the Earth.",
+        "The text explains that the internet breaks information into packets that travel by different routes and are put back together.",
+        [
+          "The internet breaks it into thousands of small parts called packets",
+          "Different packets of the same message may take different routes"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do routers do?",
+        "They decide the next step of the journey.",
+        "They store all the messages forever.",
+        "They put the packets back together.",
+        "The text says that routers are machines that decide the next step of the journey.",
+        "routers, which are machines that decide the next step of the journey"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “label” means…",
+        "a small note that shows information.",
+        "a type of cable under the sea.",
+        "a machine that chooses a route.",
+        "The text says that each packet carries a label with its destination, like an address on an envelope, which means a small note that shows information.",
+        "Each packet carries a label with its destination"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It also lets millions of people” refers to…",
+        "the design of the internet.",
+        "a single router in the network.",
+        "the label on each packet.",
+        "The sentence before says that this design makes the internet strong, and the design also lets millions of people share the same cables.",
+        "This design makes the internet strong: if one cable or router fails, the packets simply find another way. It also lets millions of people share the same cables at the same time"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much it costs to lay one undersea cable.",
+        "What each packet carries with its destination.",
+        "How most international data travels.",
+        "The text does not say how much an undersea cable costs. It says what each packet carries and how most international data travels.",
+        [
+          "Each packet carries a label with its destination",
+          "Most international data travels through undersea cables"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about the order in which packets arrive?",
+        "It may differ, so the device puts them in order.",
+        "It is always the same as the order sent.",
+        "It does not matter because lost parts are ignored.",
+        "The text says that packets may arrive in a different order and that the device puts them back together.",
+        "they may arrive in a different order. When they arrive, your device puts them back together"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Wi-Fi and mobile phones use radio waves, and mobile networks use cells.",
+        "Wi-Fi and mobile networks send data only through thin cables.",
+        "Wi-Fi and mobile networks use only signals from satellites.",
+        "The text explains that both use radio waves and that mobile networks are divided into cells with towers.",
+        [
+          "send information through the air using radio waves",
+          "dividing them into cells"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What stands in the middle of each cell?",
+        "A tower with antennas.",
+        "A Wi-Fi router.",
+        "An undersea cable.",
+        "The text says that in the middle of each cell stands a tower with antennas.",
+        "In the middle of each cell stands a tower with antennas"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “crowded” means…",
+        "full of people.",
+        "very quiet.",
+        "far from the sea.",
+        "The text says that cells are small in crowded cities, so more people can use the network, which means cities full of people.",
+        "Cells are small in crowded cities"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it hands over from one tower to the next” refers to…",
+        "your phone.",
+        "the tower.",
+        "the cell.",
+        "The sentence says that your phone connects to the nearest tower, and as you travel, the phone hands over to the next tower.",
+        "Your phone connects to the nearest tower, and as you travel, it hands over from one tower to the next"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many towers exist in the world.",
+        "What can weaken a Wi-Fi signal.",
+        "What newer generations can carry.",
+        "The text does not say how many towers exist. It says what can weaken a Wi-Fi signal and what newer generations can carry.",
+        [
+          "Walls, floors and even water can weaken the signal",
+          "Newer generations, such as 4G and 5G, can carry more data"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the text suggest about a Wi-Fi connection?",
+        "It works best close to the router.",
+        "It works equally well in every room.",
+        "It works best far from the router.",
+        "The text says that walls and floors weaken the signal, which is why the connection is better near the router.",
+        "which is why the connection is better near the router"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "packets",
+          "small parts of data sent across a network"
+        ],
+        [
+          "routers",
+          "machines that send data along its way"
+        ],
+        [
+          "destination",
+          "the place where something is going"
+        ],
+        [
+          "routes",
+          "the paths taken from one place to another"
+        ],
+        [
+          "undersea",
+          "below the surface of the sea"
+        ]
+      ],
+      "B": [
+        [
+          "broadcasts",
+          "sends out a signal in all directions"
+        ],
+        [
+          "antennas",
+          "metal parts that send and receive signals"
+        ],
+        [
+          "weaken",
+          "to make less strong"
+        ],
+        [
+          "cells",
+          "the small areas of a mobile network"
+        ],
+        [
+          "generations",
+          "successive versions of a technology"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 176,
+    "slug": "unseen-reading-part-176",
+    "theme": "Search and Storage",
+    "blurb": "how a search engine finds pages, what the cloud is",
+    "texts": {
+      "A": {
+        "title": "How a Search Engine Finds Pages",
+        "text": "Search engines work in three steps. First, programs called crawlers travel from link to link and visit billions of pages on the web. Second, the search engine builds an index, a giant list that records the words and topics found on each page, a bit like the index at the back of a book. Third, when you type a question, the engine does not search the whole internet at that moment. It looks in its index, finds the pages that match, and ranks them in a fraction of a second. Ranking uses hundreds of signals, such as whether the words match your question, how recent the page is, whether other trusted pages link to it and whether the page loads fast on a phone. Results can differ from person to person, because the engine may also consider your language and location. The top result is usually useful, but it is not always the most accurate, so it is wise to compare several sources."
+      },
+      "B": {
+        "title": "What Is the Cloud?",
+        "text": "When people say that their photos are in the cloud, they do not mean that they float in the sky. The cloud is a way of using computers that belong to someone else. Your files are stored on powerful machines, called servers, in large buildings called data centers, which can be hundreds or thousands of kilometers away. Each data center has thousands of servers, strong cooling systems, backup power and guards. The same file is usually copied to more than one place, so that it is not lost if one machine breaks. The cloud has clear benefits: you can open your files from any device, share them easily and pay only for the space that you use. It also has costs. You need an internet connection to reach your files, data centers use a great deal of electricity and water for cooling, and your private information is in the hands of a company, so a strong password matters."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A search engine collects pages in advance and ranks them for you.",
+        "A search engine searches the whole internet only after you type.",
+        "A search engine shows pages in a random order every time.",
+        "The text explains that a search engine visits pages, builds an index and ranks the matching pages.",
+        [
+          "Search engines work in three steps",
+          "It looks in its index, finds the pages that match, and ranks them"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do crawlers do?",
+        "They travel from link to link and visit pages.",
+        "They rank the pages in a fraction of a second.",
+        "They record the language and location of users.",
+        "The text says that crawlers travel from link to link and visit billions of pages.",
+        "programs called crawlers travel from link to link and visit billions of pages"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “a fraction of a second” means…",
+        "a very small part of a second.",
+        "a very long time.",
+        "a whole number of seconds.",
+        "The text says that the engine ranks pages in a fraction of a second, which means a very small part of a second.",
+        "a fraction of a second"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “link to it” refers to…",
+        "the page.",
+        "the question.",
+        "the engine.",
+        "The sentence says that one signal is whether other trusted pages link to the page.",
+        "whether other trusted pages link to it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which search engine people use the most.",
+        "What an index records about each page.",
+        "What may make results differ between people.",
+        "The text does not say which search engine is used the most. It says what an index records and what may make results differ.",
+        [
+          "records the words and topics found on each page",
+          "the engine may also consider your language and location"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why is it wise to compare several sources?",
+        "The top result may not be the most accurate.",
+        "The top result is never useful to anyone.",
+        "The index is deleted after each search.",
+        "The text says that the top result is usually useful, but not always the most accurate.",
+        "it is not always the most accurate"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The cloud means files kept on distant computers, with pros and cons.",
+        "The cloud means files stored in the sky, far from any machine.",
+        "The cloud means files stored only inside your own phone at home.",
+        "The text explains that the cloud means using other people’s computers, and lists benefits and costs.",
+        [
+          "The cloud is a way of using computers that belong to someone else",
+          "The cloud has clear benefits"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Why is the same file often copied to more than one place?",
+        "So that it is not lost if one machine breaks.",
+        "So that it loads faster on every phone.",
+        "So that it uses less electricity.",
+        "The text says that the same file is copied so that it is not lost if one machine breaks.",
+        "so that it is not lost if one machine breaks"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “float” means…",
+        "stay up in the air.",
+        "fall quickly down.",
+        "break into parts.",
+        "The text says that photos do not float in the sky, which means that they do not stay up in the air.",
+        "they float in the sky"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “that they float in the sky” refers to…",
+        "the photos.",
+        "the servers.",
+        "the people.",
+        "The sentence says that people mean their photos are in the cloud, not that the photos float in the sky.",
+        "their photos are in the cloud, they do not mean that they float in the sky"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which company has the most data centers.",
+        "What data centers have for safety.",
+        "What the user pays for in the cloud.",
+        "The text does not say which company has the most data centers. It says what data centers have for safety and what the user pays for.",
+        [
+          "strong cooling systems, backup power and guards",
+          "pay only for the space that you use"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does a strong password matter for cloud files?",
+        "A company holds your private information.",
+        "The cloud is disconnected from the internet.",
+        "Servers cannot copy files without one.",
+        "The text says that private information is in the hands of a company, so a strong password matters.",
+        "your private information is in the hands of a company, so a strong password matters"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "crawlers",
+          "programs that visit web pages automatically"
+        ],
+        [
+          "index",
+          "an organized list of where things can be found"
+        ],
+        [
+          "ranks",
+          "puts in order of importance"
+        ],
+        [
+          "signals",
+          "pieces of information used to make a decision"
+        ],
+        [
+          "accurate",
+          "correct and true"
+        ]
+      ],
+      "B": [
+        [
+          "servers",
+          "powerful computers that store and send data"
+        ],
+        [
+          "cooling",
+          "making something less hot"
+        ],
+        [
+          "backup",
+          "a second copy or supply kept in case of failure"
+        ],
+        [
+          "benefits",
+          "good or useful results"
+        ],
+        [
+          "electricity",
+          "the energy that powers machines"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 177,
+    "slug": "unseen-reading-part-177",
+    "theme": "Clean Energy",
+    "blurb": "electric cars, solar panels",
+    "texts": {
+      "A": {
+        "title": "Electric Cars",
+        "text": "An electric car has no fuel tank and no engine that burns petrol. Instead, a large battery stores electricity and sends it to an electric motor that turns the wheels. Electric motors are very efficient: they turn most of the energy from the battery into movement, while a petrol engine loses much of its energy as heat. An electric car is also quiet and has no exhaust pipe, so it produces no smoke on the street. When the driver brakes, the motor can work in reverse and send a little energy back to the battery, a trick called regenerative braking. To charge the battery, the car is plugged into a socket at home or into a fast charger at a station. Charging takes from a few minutes to several hours, depending on the charger. Electric cars are cleaner in the city, but how clean they are overall also depends on how the electricity is made and on how the battery is produced."
+      },
+      "B": {
+        "title": "How Solar Panels Work",
+        "text": "A solar panel is made of many solar cells, thin slices of a material such as silicon. When sunlight hits a cell, it knocks tiny particles called electrons loose, and the movement of these electrons is an electric current. This is called the photovoltaic effect. The current from the panels is direct current, so a device called an inverter changes it into the alternating current that homes use. Panels work best in direct sunlight, but they also produce some electricity on cloudy days. Their output falls when they are covered with dust or shade, and it is lower in the evening and zero at night. For this reason, some homes store extra electricity in batteries or sell it to the grid. A panel usually works for twenty-five years or more, and the cost of panels has fallen greatly over the past decades. Solar power produces no pollution while it works, although making the panels takes energy."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Electric cars use a battery and motor, and they are cleaner in the city.",
+        "Electric cars burn petrol more slowly than other cars.",
+        "Electric cars must always be charged for many hours.",
+        "The text explains how an electric car works and says that it is cleaner in the city, but overall cleanliness depends on other factors.",
+        [
+          "a large battery stores electricity and sends it to an electric motor",
+          "Electric cars are cleaner in the city"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does regenerative braking send back to the battery?",
+        "A little energy.",
+        "A little petrol.",
+        "A little smoke.",
+        "The text says that when the driver brakes, the motor can send a little energy back to the battery.",
+        "send a little energy back to the battery"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “quiet” means…",
+        "making little noise.",
+        "moving very fast.",
+        "costing little money.",
+        "The text says that an electric car is quiet, which means that it makes little noise.",
+        "An electric car is also quiet"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it produces no smoke” refers to…",
+        "the electric car.",
+        "the petrol engine.",
+        "the charger.",
+        "The sentence says that an electric car is quiet and has no exhaust pipe, so the car produces no smoke on the street.",
+        "An electric car is also quiet and has no exhaust pipe, so it produces no smoke on the street"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which electric car is the cheapest.",
+        "Where the car can be plugged in.",
+        "What a petrol engine loses as heat.",
+        "The text does not say which electric car is the cheapest. It says where the car can be plugged in and that a petrol engine loses energy as heat.",
+        [
+          "into a socket at home or into a fast charger at a station",
+          "a petrol engine loses much of its energy as heat"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does the text say that cleanliness “depends on how the electricity is made”?",
+        "Power plants can pollute even if the car does not.",
+        "The car burns the electricity as it moves.",
+        "Electricity from any source is the same.",
+        "The text says that how clean an electric car is overall depends on how the electricity is made, which suggests that making it can cause pollution.",
+        "how clean they are overall also depends on how the electricity is made"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Solar panels turn sunlight into electricity, with limits.",
+        "Solar panels make heat for cooking food and nothing else.",
+        "Solar panels work only at night when it is dark.",
+        "The text explains how solar cells make a current from sunlight and describes what affects the output.",
+        [
+          "When sunlight hits a cell",
+          "Their output falls when they are covered with dust or shade"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does an inverter do?",
+        "It changes direct current into alternating current.",
+        "It stores electricity for the night.",
+        "It cleans dust from the panels.",
+        "The text says that an inverter changes direct current into the alternating current that homes use.",
+        "a device called an inverter changes it into the alternating current that homes use"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “greatly” in “fallen greatly” means…",
+        "by a large amount.",
+        "by a tiny amount.",
+        "for a short time.",
+        "The text says that the cost of panels has fallen greatly, which means by a large amount.",
+        "the cost of panels has fallen greatly"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it is lower in the evening” refers to…",
+        "the output of the panels.",
+        "the cost of the panels.",
+        "the dust on the panels.",
+        "The sentence says that the output of panels falls with dust or shade, and the output is lower in the evening.",
+        "Their output falls when they are covered with dust or shade, and it is lower in the evening"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a home panel costs today.",
+        "What solar cells are made of.",
+        "What some homes do with extra electricity.",
+        "The text does not say how much a home panel costs. It says what solar cells are made of and what homes do with extra electricity.",
+        [
+          "thin slices of a material such as silicon",
+          "store extra electricity in batteries or sell it to the grid"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Solar power is clean in use but not free of impact.",
+        "Solar power makes no impact at any stage of its life.",
+        "Solar power is the most polluting kind of energy.",
+        "The text says that solar power produces no pollution while it works, although making the panels takes energy.",
+        "Solar power produces no pollution while it works, although making the panels takes energy"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "efficient",
+          "using little energy to do a lot of work"
+        ],
+        [
+          "exhaust",
+          "the gases that leave an engine"
+        ],
+        [
+          "regenerative",
+          "able to make energy again"
+        ],
+        [
+          "reverse",
+          "the opposite direction"
+        ],
+        [
+          "overall",
+          "taking everything into account"
+        ]
+      ],
+      "B": [
+        [
+          "silicon",
+          "a material used to make solar cells and chips"
+        ],
+        [
+          "electrons",
+          "tiny particles that carry electric charge"
+        ],
+        [
+          "inverter",
+          "a device that changes the type of electric current"
+        ],
+        [
+          "output",
+          "the amount that something produces"
+        ],
+        [
+          "grid",
+          "the network that carries electricity to homes"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 178,
+    "slug": "unseen-reading-part-178",
+    "theme": "Smart Machines",
+    "blurb": "robots in factories and warehouses, self-driving cars",
+    "texts": {
+      "A": {
+        "title": "Robots in Factories and Warehouses",
+        "text": "The first industrial robot, called Unimate, began work in a car factory in the United States in 1961. It lifted hot metal parts, a dangerous job for people. Today, millions of robots work in factories. Most are robotic arms that weld, paint, lift or screw parts together, repeating the same movement thousands of times with great precision and without getting tired. In warehouses, small robots carry shelves to workers, so that people do not have to walk long distances. Robots are best at tasks that are repetitive, heavy or dangerous. People are still better at tasks that need judgment, flexibility and care, such as solving unexpected problems. Robots change jobs rather than simply removing them: some tasks disappear, but new jobs appear in design, programming, maintenance and supervision. Researchers disagree about the final effect on employment, which is likely to differ between countries and industries. Many economists say that workers will need to keep learning new skills."
+      },
+      "B": {
+        "title": "How Self-Driving Cars See the Road",
+        "text": "A self-driving car must see, decide and act. To see, it uses several sensors together. Cameras read road signs, lane lines and traffic lights. Radar measures the distance and speed of objects, even in rain or fog. Lidar sends out thousands of laser pulses and measures how long they take to return, making a three-dimensional map of the surroundings. A computer combines all this information, identifies cars, people and cyclists, predicts how they will move and chooses when to steer, brake or accelerate. Engineers describe six levels of driving automation, from zero, in which the human does everything, to five, in which the car drives itself anywhere. Most cars on sale today are at level two or lower, which means that the driver must still pay attention at all times. Fully driverless taxis exist in a few cities, but rare events, such as unusual weather and strange road works, remain difficult."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Robots do repetitive and dangerous work well, and they change jobs.",
+        "Robots do every kind of work better than people.",
+        "Robots have not changed factories since 1961.",
+        "The text explains what robots do best and says that they change jobs rather than simply removing them.",
+        [
+          "Robots are best at tasks that are repetitive, heavy or dangerous",
+          "Robots change jobs rather than simply removing them"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the first industrial robot, Unimate, lift?",
+        "Hot metal parts.",
+        "Boxes of food.",
+        "Shelves in a warehouse.",
+        "The text says that Unimate lifted hot metal parts.",
+        "It lifted hot metal parts"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “judgment” means…",
+        "the ability to make good decisions.",
+        "the speed of a movement.",
+        "the strength of a machine.",
+        "The text says that people are better at tasks that need judgment, such as solving unexpected problems, which means making good decisions.",
+        "tasks that need judgment, flexibility and care"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which is likely to differ” refers to…",
+        "the final effect on employment.",
+        "the work of the researchers.",
+        "the number of robots.",
+        "The sentence says that researchers disagree about the final effect on employment, which is likely to differ between countries and industries.",
+        "the final effect on employment, which is likely to differ between countries and industries"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many robots exist in each country.",
+        "What robots do in warehouses.",
+        "Which new jobs appear.",
+        "The text does not say how many robots each country has. It says what robots do in warehouses and which new jobs appear.",
+        [
+          "small robots carry shelves to workers",
+          "design, programming, maintenance and supervision"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Workers may need to update their skills.",
+        "Workers will never need training.",
+        "Workers should avoid all machines.",
+        "The text says that many economists think that workers will need to keep learning new skills.",
+        "workers will need to keep learning new skills"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Self-driving cars use several sensors and a computer, but full automation is still limited.",
+        "Self-driving cars use only cameras and need no computer.",
+        "Self-driving cars are available everywhere at the highest level.",
+        "The text explains how the car sees, decides and acts, and says that most cars are at level two or lower.",
+        [
+          "A self-driving car must see, decide and act",
+          "Most cars on sale today are at level two or lower"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does radar do even in rain or fog?",
+        "It measures the distance and speed of objects.",
+        "It reads road signs and traffic lights.",
+        "It sends out thousands of laser pulses.",
+        "The text says that radar measures the distance and speed of objects, even in rain or fog.",
+        "Radar measures the distance and speed of objects, even in rain or fog"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “surroundings” means…",
+        "the things and places around you.",
+        "the engine of a car.",
+        "the speed of a vehicle.",
+        "The text says that lidar makes a three-dimensional map of the surroundings, which means the things and places around the car.",
+        "a three-dimensional map of the surroundings"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “how long they take to return” refers to…",
+        "the laser pulses.",
+        "the cameras.",
+        "the cyclists.",
+        "The sentence says that lidar sends out laser pulses and measures how long the pulses take to return.",
+        "thousands of laser pulses and measures how long they take to return"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which company made the first self-driving car.",
+        "What cameras read.",
+        "How many levels of automation engineers describe.",
+        "The text does not say which company made the first self-driving car. It says what cameras read and how many levels engineers describe.",
+        [
+          "Cameras read road signs, lane lines and traffic lights",
+          "Engineers describe six levels of driving automation"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does level two suggest about the driver?",
+        "The driver must still watch the road.",
+        "The driver can sleep during the trip.",
+        "The driver is not needed at all.",
+        "The text says that cars at level two or lower need a driver who pays attention at all times.",
+        "the driver must still pay attention at all times"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "weld",
+          "to join pieces of metal using heat"
+        ],
+        [
+          "precision",
+          "the quality of being exact"
+        ],
+        [
+          "repetitive",
+          "done again and again in the same way"
+        ],
+        [
+          "maintenance",
+          "work done to keep machines in good condition"
+        ],
+        [
+          "employment",
+          "paid work"
+        ]
+      ],
+      "B": [
+        [
+          "sensors",
+          "devices that detect things around them"
+        ],
+        [
+          "radar",
+          "a system that uses radio waves to find objects"
+        ],
+        [
+          "pulses",
+          "short bursts of light or energy"
+        ],
+        [
+          "automation",
+          "the use of machines to do work"
+        ],
+        [
+          "accelerate",
+          "to go faster"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 179,
+    "slug": "unseen-reading-part-179",
+    "theme": "Inside a Phone",
+    "blurb": "how a touchscreen works, how a phone camera takes pictures",
+    "texts": {
+      "A": {
+        "title": "How a Touchscreen Knows Where You Touch",
+        "text": "Most phone screens are capacitive touchscreens. Under the glass there is a thin grid of tiny electrical sensors that carry a weak electric field. The human body conducts electricity, so when a finger touches the glass, it changes the field at that exact spot. The phone detects the change, and a processor calculates the position of the touch many times every second. Because the screen senses electricity, not pressure, a light touch is enough, and several fingers can be tracked at once, which makes movements like pinching to zoom possible. This also explains why an ordinary plastic pen does not work on a phone, and why many screens ignore touches from fingers in thick gloves. Special pens and gloves with a conductive tip or thread can solve the problem. Older touchscreens, often seen on ticket machines, used pressure and needed a firm press."
+      },
+      "B": {
+        "title": "How a Phone Camera Takes a Picture",
+        "text": "A phone camera has a small lens that focuses light onto a sensor, a chip with millions of tiny light detectors called pixels. Each pixel measures how much light reaches it and in which color, and together the pixels form an image. Because a phone is thin, its sensor and lens are very small, so the camera collects less light than a large camera, especially in dark places. To make up for this, the phone uses software. It takes several pictures within a fraction of a second and combines them to reduce noise, brighten dark areas and keep bright areas from turning white. Some phones have two or three lenses, such as a wide-angle lens and a zoom lens, so the user can choose how much of the scene appears. This kind of processing is called computational photography, and it is the main reason why modern phone pictures look so good."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A touchscreen detects the small change that a finger makes in an electric field.",
+        "A touchscreen measures how hard a finger presses the glass.",
+        "A touchscreen works by taking a picture of the finger.",
+        "The text explains that a capacitive screen senses a change in the electric field caused by a finger.",
+        [
+          "when a finger touches the glass, it changes the field at that exact spot",
+          "the screen senses electricity, not pressure"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Why does an ordinary plastic pen not work on a phone?",
+        "The screen senses electricity, which plastic cannot carry.",
+        "The screen senses only the heat from a warm hand.",
+        "The pen is too heavy for the thin glass screen.",
+        "The text says that the screen senses electricity, not pressure, which explains why an ordinary plastic pen does not work.",
+        "Because the screen senses electricity, not pressure"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “firm” means…",
+        "strong and steady.",
+        "soft and light.",
+        "quick and short.",
+        "The text says that older touchscreens needed a firm press, which means a strong and steady one.",
+        "needed a firm press"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it changes the field” refers to…",
+        "the finger.",
+        "the glass.",
+        "the processor.",
+        "The sentence says that when a finger touches the glass, the finger changes the field at that exact spot.",
+        "when a finger touches the glass, it changes the field at that exact spot"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "When the first touchscreen was invented.",
+        "Why several fingers can be tracked.",
+        "What older touchscreens needed.",
+        "The text does not say when the first touchscreen was invented. It says why several fingers can be tracked and what older touchscreens needed.",
+        [
+          "several fingers can be tracked at once",
+          "used pressure and needed a firm press"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why might gloves with a conductive thread work on a phone?",
+        "The thread conducts electricity like a finger.",
+        "The thread makes the glass warmer.",
+        "The thread presses harder on the screen.",
+        "The text says that gloves with a conductive tip or thread can solve the problem, because the body conducts electricity and the screen senses it.",
+        "Special pens and gloves with a conductive tip or thread can solve the problem"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A phone camera is small, so software helps it to make good pictures.",
+        "A phone camera has a very large lens and sensor.",
+        "A phone camera takes only one picture each time.",
+        "The text explains that a thin phone has a small sensor and lens, and that software improves the pictures.",
+        [
+          "its sensor and lens are very small",
+          "To make up for this, the phone uses software"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do pixels measure?",
+        "How much light reaches them and in which color.",
+        "How far the lens is from the scene.",
+        "How warm the sensor is.",
+        "The text says that each pixel measures how much light reaches it and in which color.",
+        "Each pixel measures how much light reaches it and in which color"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “scene” means…",
+        "the view that the camera shows.",
+        "the screen of a phone.",
+        "the price of a camera.",
+        "The text says that the user can choose how much of the scene appears, which means how much of the view appears in the picture.",
+        "how much of the scene appears"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “combines them to reduce noise” refers to…",
+        "several pictures.",
+        "the lenses.",
+        "the dark places.",
+        "The sentence says that the phone takes several pictures within a fraction of a second and combines the pictures to reduce noise.",
+        "It takes several pictures within a fraction of a second and combines them to reduce noise"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many pixels the best phone sensor has.",
+        "Why a phone collects less light.",
+        "What kinds of lenses some phones have.",
+        "The text does not say how many pixels the best sensor has. It says why a phone collects less light and what kinds of lenses some phones have.",
+        [
+          "Because a phone is thin, its sensor and lens are very small",
+          "a wide-angle lens and a zoom lens"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Software is as important as hardware in a phone camera.",
+        "Software has no effect on a phone picture.",
+        "Phone pictures look good only in the dark.",
+        "The text says that computational photography is the main reason why modern phone pictures look so good.",
+        "it is the main reason why modern phone pictures look so good"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "capacitive",
+          "working by detecting changes in electric charge"
+        ],
+        [
+          "grid",
+          "a pattern of crossing lines"
+        ],
+        [
+          "conducts",
+          "allows electricity to pass through"
+        ],
+        [
+          "processor",
+          "the part of a device that does calculations"
+        ],
+        [
+          "pinching",
+          "pressing two fingers together"
+        ]
+      ],
+      "B": [
+        [
+          "lens",
+          "a curved piece of glass that bends light"
+        ],
+        [
+          "sensor",
+          "a device that detects light or movement"
+        ],
+        [
+          "pixels",
+          "the tiny dots that make up a picture"
+        ],
+        [
+          "noise",
+          "unwanted grainy spots in a picture"
+        ],
+        [
+          "combines",
+          "joins several things into one"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 180,
+    "slug": "unseen-reading-part-180",
+    "theme": "Squeezing Data",
+    "blurb": "how compression shrinks videos and music, how a QR code stores information",
+    "texts": {
+      "A": {
+        "title": "How Compression Shrinks Videos and Music",
+        "text": "A single minute of uncompressed video could fill several gigabytes, which would make streaming almost impossible. Compression solves this by making files smaller. One method removes repetition. In a video, most of the picture stays the same from one frame to the next, so the file stores only what changes. Another method removes details that people are unlikely to notice. For example, MP3 music files leave out sounds that are too quiet or too close to louder sounds for the ear to hear, and picture formats such as JPEG simplify small color differences. Because some data is thrown away, this is called lossy compression, and a very strong setting makes pictures blurry or sounds thin. Lossless compression, used in ZIP files, makes a file smaller without losing any data. Streaming services also adjust the quality to your connection, so a slow connection gets a smaller, blurrier video that does not stop to load."
+      },
+      "B": {
+        "title": "How a QR Code Stores Information",
+        "text": "A QR code is a square pattern of small black and white blocks that a camera can read quickly. It was invented in 1994 by the Japanese company Denso Wave, to track car parts in factories. Unlike an ordinary barcode, which holds information in only one direction, a QR code stores data in two directions, so it can hold much more, such as a long web address, text or contact details. The three large squares in the corners tell the camera where the code begins and which way it is turned, so it can be scanned from any angle. The rest of the pattern is the data, written as a sequence of dark and light blocks. A QR code also contains extra information for error correction, which allows it to be read even when part of it is dirty or damaged. For safety, check the address that appears before you open a link from a code that you do not know."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Compression makes files smaller by removing repetition and unnoticed details.",
+        "Compression makes files larger so that they look better.",
+        "Compression is used only for ZIP files and never for video.",
+        "The text explains that compression makes files smaller by removing repetition and details that people do not notice.",
+        [
+          "Compression solves this by making files smaller",
+          "One method removes repetition"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does lossless compression do?",
+        "It makes a file smaller without losing data.",
+        "It throws away sounds that are too quiet.",
+        "It makes pictures blurry.",
+        "The text says that lossless compression makes a file smaller without losing any data.",
+        "Lossless compression, used in ZIP files, makes a file smaller without losing any data"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “thin” in “sounds thin” means…",
+        "weak and lacking richness.",
+        "loud and full.",
+        "long and slow.",
+        "The text says that a strong setting makes sounds thin, which means that they sound weak and poor.",
+        "a very strong setting makes pictures blurry or sounds thin"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “this” in “this is called lossy compression” refers to…",
+        "throwing away some data.",
+        "a ZIP file.",
+        "a slow connection.",
+        "The sentence says that some data is thrown away, and this is called lossy compression.",
+        "Because some data is thrown away, this is called lossy compression"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a streaming service costs.",
+        "What MP3 files leave out.",
+        "What a slow connection gets.",
+        "The text does not say how much a streaming service costs. It says what MP3 files leave out and what a slow connection gets.",
+        [
+          "MP3 music files leave out sounds that are too quiet",
+          "a slow connection gets a smaller, blurrier video"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does a slow connection get a blurrier video?",
+        "A smaller file loads without stopping.",
+        "The service wants to hide the picture.",
+        "Blurry videos use more data.",
+        "The text says that the service adjusts quality so that a slow connection gets a smaller, blurrier video that does not stop to load.",
+        "a smaller, blurrier video that does not stop to load"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A QR code stores data in a square pattern that a camera can read from any angle.",
+        "A QR code stores data only in one direction like a barcode.",
+        "A QR code is a short password that opens every door.",
+        "The text explains how a QR code stores data in two directions and can be scanned from any angle.",
+        [
+          "a QR code stores data in two directions",
+          "so it can be scanned from any angle"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Why was the QR code invented?",
+        "To track car parts in factories.",
+        "To pay in shops.",
+        "To send photos to friends.",
+        "The text says that it was invented in 1994 by Denso Wave to track car parts in factories.",
+        "to track car parts in factories"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “angle” means…",
+        "the direction from which you look.",
+        "the size of a code.",
+        "the color of a pattern.",
+        "The text says that a code can be scanned from any angle, which means from any direction.",
+        "it can be scanned from any angle"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it can hold much more” refers to…",
+        "a QR code.",
+        "an ordinary barcode.",
+        "a camera.",
+        "The sentence says that a QR code stores data in two directions, so the code can hold much more.",
+        "a QR code stores data in two directions, so it can hold much more"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people use QR codes each day.",
+        "What the corner squares tell the camera.",
+        "What the extra information is for.",
+        "The text does not say how many people use QR codes. It says what the corner squares tell the camera and what the extra information is for.",
+        [
+          "tell the camera where the code begins and which way it is turned",
+          "extra information for error correction"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "An unknown code could lead to a harmful link.",
+        "All QR codes are completely safe to scan.",
+        "QR codes cannot contain any web addresses.",
+        "The text says that you should check the address before you open a link from a code that you do not know, which suggests that some links can be unsafe.",
+        "check the address that appears before you open a link from a code that you do not know"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "compression",
+          "making data take up less space"
+        ],
+        [
+          "repetition",
+          "something done or shown again"
+        ],
+        [
+          "frame",
+          "one still picture in a video"
+        ],
+        [
+          "lossy",
+          "losing some information in the process"
+        ],
+        [
+          "lossless",
+          "keeping all the information"
+        ]
+      ],
+      "B": [
+        [
+          "pattern",
+          "an arrangement of shapes or lines"
+        ],
+        [
+          "barcode",
+          "a set of lines that a machine reads to identify a product"
+        ],
+        [
+          "scanned",
+          "read by a machine that looks at an image"
+        ],
+        [
+          "sequence",
+          "a set of things in a fixed order"
+        ],
+        [
+          "damaged",
+          "harmed or broken in some way"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 181,
+    "slug": "unseen-reading-part-181",
+    "theme": "Old Devices",
+    "blurb": "what is inside an old phone and electronic waste, repairing or replacing devices",
+    "texts": {
+      "A": {
+        "title": "Electronic Waste: What Is Inside an Old Phone",
+        "text": "A smartphone is made of much more than glass and plastic. Inside there are metals such as copper, aluminum, silver, gold and small amounts of rare materials used in screens, magnets and batteries. A tonne of old phones contains much more gold than the same weight of ore from a mine, so recycling is a rich source of materials. However, e-waste, the name for broken or unwanted electronic devices, is also a problem. The United Nations reports that the world produced a record 62 million tonnes of e-waste in 2022, and that only about 22 percent was documented as collected and recycled properly. The rest may sit in drawers, go to landfills or be processed informally, and burning or breaking devices without protection can release toxic substances, such as lead and mercury, into the soil, water and air. Throwing old devices in the ordinary bin is the worst choice; the best choice is to use them longer, and to hand them in at an authorized collection point."
+      },
+      "B": {
+        "title": "Repair or Replace?",
+        "text": "When a phone or a laptop stops working well, many people buy a new one. Repairing it is often better for the environment, because a large share of the pollution from a device comes from making it, not from using it. Replacing a battery or a screen can give a phone several more years of life, and it usually costs less than a new phone. However, repair is not always easy. Some devices are glued shut, use special screws or need parts that only the maker sells, and some manufacturers limit repairs by software. For this reason, some places have introduced right-to-repair rules, which require makers to provide parts, tools and manuals. Before you decide, compare the cost of repair with the price of a new device, think about how old the device is, and check whether it still receives security updates. If you do replace it, selling or donating the old one gives it a second life."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Old phones contain valuable materials, but most e-waste is not recycled properly.",
+        "Old phones contain nothing of value and should be thrown away.",
+        "Old phones are all recycled properly in every country.",
+        "The text explains that phones contain valuable metals, but only a small share of e-waste is documented as properly recycled.",
+        [
+          "recycling is a rich source of materials",
+          "only about 22 percent was documented as collected and recycled properly"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How much e-waste did the world produce in 2022?",
+        "A record 62 million tonnes.",
+        "About 22 million tonnes.",
+        "About 6 million tonnes.",
+        "The text says that the world produced a record 62 million tonnes of e-waste in 2022.",
+        "a record 62 million tonnes of e-waste in 2022"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “informally” means…",
+        "outside official rules.",
+        "with great care.",
+        "in a short time.",
+        "The text says that some e-waste is processed informally, and that burning or breaking devices without protection is dangerous, which means outside official and safe rules.",
+        "be processed informally"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “use them longer” refers to…",
+        "old devices.",
+        "landfills.",
+        "collection points.",
+        "The sentence says that throwing old devices in the bin is the worst choice, and the best choice is to use the devices longer.",
+        "Throwing old devices in the ordinary bin is the worst choice; the best choice is to use them longer"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country recycles the most phones.",
+        "Which toxic substances can be released.",
+        "What the best choice is.",
+        "The text does not say which country recycles the most phones. It says which toxic substances can be released and what the best choice is.",
+        [
+          "toxic substances, such as lead and mercury",
+          "the best choice is to use them longer"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why can recycling phones be a “rich source of materials”?",
+        "Phones contain valuable metals such as gold.",
+        "Phones are made only of plastic.",
+        "Phones are cheap to make.",
+        "The text says that a tonne of old phones contains much more gold than the same weight of ore, so recycling is a rich source of materials.",
+        "A tonne of old phones contains much more gold than the same weight of ore from a mine"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Repairing a device is often better, but it is not always easy.",
+        "Repairing a device is always cheaper and simple.",
+        "Replacing a device is always better for the environment.",
+        "The text explains that repair is often better for the environment and cost, but that some devices are hard to repair.",
+        [
+          "Repairing it is often better for the environment",
+          "However, repair is not always easy"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do right-to-repair rules require makers to provide?",
+        "Parts, tools and manuals.",
+        "Free new phones.",
+        "Longer guarantees only.",
+        "The text says that right-to-repair rules require makers to provide parts, tools and manuals.",
+        "require makers to provide parts, tools and manuals"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “limit” means…",
+        "restrict.",
+        "increase.",
+        "explain.",
+        "The text says that some manufacturers limit repairs by software, which means that they restrict them.",
+        "some manufacturers limit repairs by software"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “selling or donating the old one gives it a second life” refers to…",
+        "the old device.",
+        "the new device.",
+        "the repair shop.",
+        "The sentence says that selling or donating the old one gives the old device a second life.",
+        "selling or donating the old one gives it a second life"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a new phone costs in each country.",
+        "What replacing a battery can give.",
+        "What to check before you decide.",
+        "The text does not say how much a new phone costs in each country. It says what replacing a battery can give and what to check.",
+        [
+          "can give a phone several more years of life",
+          "check whether it still receives security updates"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should you check for security updates?",
+        "A device without updates may not be safe to keep using.",
+        "Updates make a device look newer.",
+        "Updates are needed only for new devices.",
+        "The text says to check whether the device still receives security updates, which suggests that a device without them may not be safe.",
+        "check whether it still receives security updates"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "aluminum",
+          "a light silver-colored metal"
+        ],
+        [
+          "ore",
+          "rock that contains metal"
+        ],
+        [
+          "landfills",
+          "places where waste is buried"
+        ],
+        [
+          "toxic",
+          "poisonous"
+        ],
+        [
+          "authorized",
+          "officially approved"
+        ]
+      ],
+      "B": [
+        [
+          "environment",
+          "the natural world around us"
+        ],
+        [
+          "glued",
+          "stuck together with a sticky substance"
+        ],
+        [
+          "manufacturers",
+          "companies that make products"
+        ],
+        [
+          "manuals",
+          "books that explain how to use or repair something"
+        ],
+        [
+          "donating",
+          "giving something without asking for payment"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 182,
+    "slug": "unseen-reading-part-182",
+    "theme": "Prices and Choices",
+    "blurb": "supply and demand, opportunity cost",
+    "texts": {
+      "A": {
+        "title": "Supply and Demand",
+        "text": "Prices in a market are shaped by two forces. Supply is how much of something sellers can offer, and demand is how much buyers want. When supply is small and demand is high, the price rises. When supply is large and demand is low, the price falls. Mangoes show this well. During the harvest season, farms produce huge amounts of fruit, so supply is high and the price is low. Outside the season, there are fewer mangoes, so the price goes up. Demand changes too. Concert tickets for a famous singer cost more than tickets for a small band, because many more people want them, and the number of seats is limited. Prices also act as signals: a high price tells producers to make more, and it tells buyers to think carefully. Not all prices are set freely, however. Governments sometimes control the prices of items such as medicine or rent, to protect buyers."
+      },
+      "B": {
+        "title": "Opportunity Cost",
+        "text": "Every choice has a price that does not appear on a price tag. Economists call it opportunity cost: the value of the best thing that you give up when you choose something else. If you spend Saturday working at a shop and earn money, the opportunity cost is the football game that you could have played. If you spend 2,000 pesos on a new game, the opportunity cost is the other things that you could have bought with the same money. Time works the same way, because an hour has only sixty minutes and cannot be saved for later. Thinking about opportunity cost helps people to make better decisions. Instead of asking only whether something is good, they can ask whether it is the best use of limited money or time. A student who studies for an exam gives up an evening with friends, but may gain a better result. The cost is real even when no money changes hands."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Prices are shaped by how much is offered and how much people want.",
+        "Prices are set only by governments for every product.",
+        "Prices rise whenever sellers have more goods.",
+        "The text explains that prices depend on supply and demand.",
+        [
+          "Prices in a market are shaped by two forces",
+          "When supply is small and demand is high, the price rises"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Why is the price of mangoes low in the harvest season?",
+        "Farms produce huge amounts, so supply is high.",
+        "Fewer people want mangoes in that season.",
+        "Governments control the price of mangoes.",
+        "The text says that during the harvest season farms produce huge amounts of fruit, so supply is high and the price is low.",
+        "farms produce huge amounts of fruit, so supply is high and the price is low"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “control” in “control the prices” means…",
+        "set limits on.",
+        "give away free.",
+        "make a copy of.",
+        "The text says that governments sometimes control the prices of items such as medicine or rent, which means that they set limits on them.",
+        "Governments sometimes control the prices of items such as medicine or rent"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it tells buyers to think carefully” refers to…",
+        "a high price.",
+        "a producer.",
+        "a concert.",
+        "The sentence says that a high price tells producers to make more and tells buyers to think carefully.",
+        "a high price tells producers to make more, and it tells buyers to think carefully"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the cheapest fruit is in the Philippines.",
+        "Why concert tickets for a famous singer cost more.",
+        "Which items governments may control.",
+        "The text does not say what the cheapest fruit is. It says why famous concert tickets cost more and which items governments may control.",
+        [
+          "because many more people want them",
+          "items such as medicine or rent"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about tickets for a small band?",
+        "They cost less because fewer people want them.",
+        "They cost more because there are fewer seats.",
+        "They cost the same as every other ticket.",
+        "The text says that tickets for a famous singer cost more because many more people want them, which suggests that a small band has lower demand.",
+        "tickets for a famous singer cost more than tickets for a small band"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Every choice has a hidden cost: the best thing that you give up.",
+        "Every choice costs only the money on the price tag.",
+        "Every choice is free if you do not spend any money.",
+        "The text explains opportunity cost as the value of the best choice that you give up.",
+        [
+          "Every choice has a price that does not appear on a price tag",
+          "the value of the best thing that you give up"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is the opportunity cost of working on Saturday in the example?",
+        "The football game that you could have played.",
+        "The salary that you earn at the shop.",
+        "The tickets that you could have sold.",
+        "The text says that the opportunity cost is the football game that you could have played.",
+        "the opportunity cost is the football game that you could have played"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “hands” in “money changes hands” means…",
+        "moves from one person to another.",
+        "becomes smaller in size.",
+        "is counted by machines.",
+        "The text says that the cost is real even when no money changes hands, which means that money does not pass from one person to another.",
+        "no money changes hands"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “Economists call it opportunity cost” refers to…",
+        "the hidden price of a choice.",
+        "the price tag on a product.",
+        "the shop where you work.",
+        "The sentence before says that every choice has a price that does not appear on a price tag, and economists call that price opportunity cost.",
+        "Every choice has a price that does not appear on a price tag. Economists call it opportunity cost"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a new game costs in each country.",
+        "How many minutes an hour has.",
+        "What a student gives up to study.",
+        "The text does not say how much a game costs in each country. It says how many minutes an hour has and what a student gives up.",
+        [
+          "an hour has only sixty minutes",
+          "gives up an evening with friends"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text mention that time cannot be saved?",
+        "Because time is also a limited resource with a cost.",
+        "Because time is always cheaper than money.",
+        "Because time has no value at all.",
+        "The text says that time works the same way, because an hour has only sixty minutes and cannot be saved for later, so it is limited.",
+        "Time works the same way"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "supply",
+          "the amount of something that is available"
+        ],
+        [
+          "demand",
+          "how much people want something"
+        ],
+        [
+          "harvest",
+          "the time when crops are gathered"
+        ],
+        [
+          "limited",
+          "not more than a certain number"
+        ],
+        [
+          "signals",
+          "signs that give information"
+        ]
+      ],
+      "B": [
+        [
+          "economists",
+          "experts who study money, trade and choices"
+        ],
+        [
+          "value",
+          "how important or useful something is"
+        ],
+        [
+          "decisions",
+          "choices that you make after thinking"
+        ],
+        [
+          "gain",
+          "to get something good"
+        ],
+        [
+          "limited",
+          "not more than a certain amount"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 183,
+    "slug": "unseen-reading-part-183",
+    "theme": "Protecting the Future",
+    "blurb": "insurance and sharing risk, saving for retirement",
+    "texts": {
+      "A": {
+        "title": "Insurance: Sharing Risk",
+        "text": "Life is unpredictable. A house can burn, a person can fall ill, a motorbike can be stolen. Insurance is a way of sharing these risks. Many people pay a small amount of money regularly, called a premium. The insurance company collects the premiums in a large fund, and it pays a large sum to the few people who have a loss. Because the company can calculate how many people are likely to have an accident each year, it can set the premium at a price that covers the claims, the cost of running the business and a profit. You can see the idea in car insurance: most drivers never have a serious accident, but those who do receive money for repairs. Before buying a policy, read what it covers and what it does not, check the deductible, which is the amount you pay yourself, and compare offers. Insurance cannot prevent bad events, but it can prevent a bad event from becoming a financial disaster."
+      },
+      "B": {
+        "title": "Saving for Retirement",
+        "text": "Retirement may last twenty or thirty years, but a person earns a salary for only part of their life, so planning is essential. Many countries have pension systems, in which workers and employers pay part of the salary into a fund and receive a monthly payment after a certain age. Because a pension alone is often not enough, many people also save and invest by themselves. The most powerful ally is time. Thanks to compound interest, the money that you save earns interest, and later the interest earns interest as well. Someone who saves a small amount from the age of twenty-five may end with more than someone who saves a larger amount but starts at forty-five. A simple rule is to start early, save regularly, even if the amount is small, and increase it whenever your income rises. Long-term investments rise and fall, so diversification and patience matter. It is never too early to begin, and it is rarely too late."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Insurance lets many people share the cost of rare, large losses.",
+        "Insurance stops accidents and other bad events from happening.",
+        "Insurance pays everyone back the premium at the end of each year.",
+        "The text explains that many people pay small premiums so that the few who have a loss can be paid.",
+        [
+          "Insurance is a way of sharing these risks",
+          "it pays a large sum to the few people who have a loss"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is a premium?",
+        "A small amount of money paid regularly.",
+        "A large sum paid after an accident.",
+        "The amount that you pay yourself after a loss.",
+        "The text says that many people pay a small amount of money regularly, called a premium.",
+        "pay a small amount of money regularly, called a premium"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “unpredictable” means…",
+        "impossible to know in advance.",
+        "easy to plan for.",
+        "pleasant and calm.",
+        "The text says that life is unpredictable and gives examples of bad events that no one can know in advance.",
+        "Life is unpredictable"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “those” in “those who do receive money” refers to…",
+        "drivers who have a serious accident.",
+        "drivers who never have an accident.",
+        "people who work at the insurance company.",
+        "The sentence says that most drivers never have a serious accident, but those who do receive money for repairs.",
+        "most drivers never have a serious accident, but those who do receive money for repairs"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which company has the lowest premiums.",
+        "What a deductible is in insurance.",
+        "What a premium must pay for in the end.",
+        "The text does not say which company has the lowest premiums. It says what a deductible is and what a premium must cover.",
+        [
+          "the deductible, which is the amount you pay yourself",
+          "covers the claims, the cost of running the business and a profit"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why should you read the policy before you buy it?",
+        "It tells you what is covered and what is not.",
+        "It lowers the price of the premium.",
+        "It prevents the bad event from happening.",
+        "The text says to read what a policy covers and what it does not, which suggests that some losses may not be paid.",
+        "read what it covers and what it does not"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Saving early and regularly helps to provide for a long retirement.",
+        "Saving for retirement is useful only after the age of fifty.",
+        "Saving for retirement is not needed in countries with pensions.",
+        "The text explains that people should plan for retirement, and that starting early gives the best result.",
+        [
+          "so planning is essential",
+          "A simple rule is to start early, save regularly"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does compound interest mean in the text?",
+        "The interest earns interest as well.",
+        "The interest is paid only once.",
+        "The interest is paid by employers.",
+        "The text says that the money earns interest, and later the interest earns interest as well.",
+        "the interest earns interest as well"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “essential” means…",
+        "absolutely necessary.",
+        "not important.",
+        "very expensive.",
+        "The text says that planning is essential, which means that it is absolutely necessary.",
+        "so planning is essential"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “increase it whenever your income rises” refers to…",
+        "the amount that you save.",
+        "the pension.",
+        "the age of retirement.",
+        "The sentence says to save regularly, even if the amount is small, and to increase the amount whenever your income rises.",
+        "save regularly, even if the amount is small, and increase it whenever your income rises"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which bank pays the highest interest.",
+        "How long retirement may last.",
+        "What matters for long-term investments.",
+        "The text does not say which bank pays the highest interest. It says how long retirement may last and what matters for long-term investments.",
+        [
+          "Retirement may last twenty or thirty years",
+          "diversification and patience matter"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the comparison between ages twenty-five and forty-five suggest?",
+        "Time can matter more than the size of the amount.",
+        "Only young people can save money.",
+        "Large amounts are always better than small ones.",
+        "The text says that someone who saves a small amount from twenty-five may end with more than someone who saves more but starts at forty-five.",
+        "may end with more than someone who saves a larger amount but starts at forty-five"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "premium",
+          "the regular payment for insurance"
+        ],
+        [
+          "fund",
+          "a large amount of money kept for a purpose"
+        ],
+        [
+          "claims",
+          "requests for payment after a loss"
+        ],
+        [
+          "policy",
+          "a written insurance contract"
+        ],
+        [
+          "deductible",
+          "the part of a loss that you pay yourself"
+        ]
+      ],
+      "B": [
+        [
+          "pension",
+          "regular money paid to a retired person"
+        ],
+        [
+          "employers",
+          "people or companies that pay workers"
+        ],
+        [
+          "compound",
+          "made of interest added to interest"
+        ],
+        [
+          "ally",
+          "a helpful partner"
+        ],
+        [
+          "diversification",
+          "spreading money across different investments"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 184,
+    "slug": "unseen-reading-part-184",
+    "theme": "Business Basics",
+    "blurb": "revenue and profit, starting a small business",
+    "texts": {
+      "A": {
+        "title": "Revenue and Profit",
+        "text": "Many people confuse revenue with profit. Revenue is all the money that a business receives from its customers. Profit is what remains after paying all the costs. Imagine a small stall that sells fruit shakes. In one day, it sells 100 shakes at 50 pesos each, so the revenue is 5,000 pesos. But the owner must pay for fruit, milk, cups, ice, rent for the space, electricity and a helper. If these costs total 4,200 pesos, the profit for the day is 800 pesos. Costs are of two kinds. Fixed costs, such as rent, stay the same however many shakes are sold. Variable costs, such as fruit and cups, rise with each shake. A business can have high revenue and still lose money if its costs are too high. For this reason, owners must know both numbers, and they often watch the profit margin, the percentage of each sale that remains as profit."
+      },
+      "B": {
+        "title": "Starting a Small Business",
+        "text": "Starting a small business needs more than a good idea. First, the owner must find out whether people really want the product, by talking to possible customers and by testing a small version. Then comes the money. A new business has start-up costs, such as equipment, a place to work, permits and the first supply of materials, and it often loses money for months before customers arrive. Owners use their own savings, borrow from family, or take a loan, and they should keep a reserve for slow weeks. Records matter: write down every sale and every expense, and keep personal money and business money separate. Many small businesses close in their first years, often because of poor planning or because the owner runs out of cash, not because the idea was bad. A written plan with realistic numbers helps to avoid surprises."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Revenue is not the same as profit, because costs must be paid.",
+        "Revenue and profit mean exactly the same thing.",
+        "Profit is the money a business receives before costs.",
+        "The text explains that revenue is all the money received and profit is what remains after costs.",
+        [
+          "Revenue is all the money that a business receives from its customers",
+          "Profit is what remains after paying all the costs"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the profit of the fruit shake stall for the day?",
+        "800 pesos.",
+        "5,000 pesos.",
+        "4,200 pesos.",
+        "The text says that revenue is 5,000 pesos and costs are 4,200 pesos, so the profit is 800 pesos.",
+        "the profit for the day is 800 pesos"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “confuse” means…",
+        "mix up two things.",
+        "explain clearly.",
+        "count carefully.",
+        "The text says that many people confuse revenue with profit, which means that they mix up the two.",
+        "Many people confuse revenue with profit"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it sells 100 shakes” refers to…",
+        "the stall.",
+        "the helper.",
+        "the profit.",
+        "The sentence says that a small stall sells fruit shakes, and the stall sells 100 shakes in one day.",
+        "a small stall that sells fruit shakes. In one day, it sells 100 shakes"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many shakes the stall sells in a year.",
+        "What the owner must pay for.",
+        "Which costs stay the same.",
+        "The text does not say how many shakes the stall sells in a year. It says what the owner must pay for and which costs stay the same.",
+        [
+          "the owner must pay for fruit, milk, cups, ice, rent for the space, electricity and a helper",
+          "Fixed costs, such as rent, stay the same"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why can a business with high revenue still lose money?",
+        "Its costs may be higher than its revenue.",
+        "Its customers pay too much.",
+        "Its fixed costs rise with each sale.",
+        "The text says that a business can have high revenue and still lose money if its costs are too high.",
+        "A business can have high revenue and still lose money if its costs are too high"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A small business needs research, money and good records.",
+        "A small business needs only a good idea to succeed.",
+        "A small business should never borrow or keep records.",
+        "The text explains the steps for starting a small business: testing the idea, paying start-up costs and keeping records.",
+        [
+          "Starting a small business needs more than a good idea",
+          "Records matter"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do owners often keep for slow weeks?",
+        "A reserve.",
+        "A permit.",
+        "A loan.",
+        "The text says that owners should keep a reserve for slow weeks.",
+        "they should keep a reserve for slow weeks"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “run out of” means…",
+        "have no more of something.",
+        "find more of something.",
+        "give away something.",
+        "The text says that some owners run out of cash, which means that they have no more cash.",
+        "the owner runs out of cash"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it often loses money for months” refers to…",
+        "a new business.",
+        "a permit.",
+        "the first supply.",
+        "The sentence says that a new business has start-up costs, and the business often loses money for months before customers arrive.",
+        "A new business has start-up costs, such as equipment, a place to work, permits and the first supply of materials, and it often loses money for months"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Exactly how many businesses close in year one.",
+        "How owners can find money to start.",
+        "Why many small businesses close early.",
+        "The text does not say exactly how many businesses close in the first year. It says how owners can find money and why many close.",
+        [
+          "Owners use their own savings, borrow from family, or take a loan",
+          "often because of poor planning or because the owner runs out of cash"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text advise keeping personal and business money separate?",
+        "It makes the real situation of the business clear.",
+        "It lowers the taxes that the owner pays.",
+        "It makes the business grow faster.",
+        "The text lists this advice among records, which suggests that separate accounts show the real situation of the business.",
+        "keep personal money and business money separate"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "revenue",
+          "all the money a business receives from sales"
+        ],
+        [
+          "profit",
+          "money left after all costs are paid"
+        ],
+        [
+          "fixed",
+          "staying the same and not changing"
+        ],
+        [
+          "variable",
+          "able to change"
+        ],
+        [
+          "margin",
+          "the share of a sale that is kept as profit"
+        ]
+      ],
+      "B": [
+        [
+          "customers",
+          "people who buy from a business"
+        ],
+        [
+          "equipment",
+          "the tools and machines needed for a job"
+        ],
+        [
+          "permits",
+          "official papers that allow you to do something"
+        ],
+        [
+          "reserve",
+          "money kept for later use"
+        ],
+        [
+          "realistic",
+          "based on what is likely to happen"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 185,
+    "slug": "unseen-reading-part-185",
+    "theme": "Earning",
+    "blurb": "gross and take-home pay, freelance and gig work",
+    "texts": {
+      "A": {
+        "title": "Gross and Take-Home Pay",
+        "text": "When people talk about a salary, they may mean two different amounts. Gross pay is the total that an employer agrees to pay. Net pay, or take-home pay, is the smaller amount that the worker actually receives after deductions. Deductions can include income tax and contributions to social security and health insurance. For example, a worker with a gross monthly salary of 30,000 pesos may take home around 26,000 pesos, depending on the country and the rules. The exact amount differs from country to country. A pay slip shows how the amount was calculated. When you compare job offers, compare the net pay and also the benefits, such as paid leave, bonuses, health cover and transport help, because a lower salary with generous benefits can be worth more than a higher salary without them. Many countries also set a minimum wage, the lowest hourly or daily pay that employers are allowed to offer."
+      },
+      "B": {
+        "title": "Freelance and Gig Work",
+        "text": "A growing number of people work as freelancers or in gig jobs. A freelancer sells skills, such as writing, design or programming, to different clients, and a gig worker takes short jobs, such as delivering food or driving passengers, often through an app. These jobs offer flexibility: workers can choose their hours, work from different places and take as much work as they want. But there are costs. Income can change from week to week, so it is hard to plan a budget. Workers often pay for their own equipment, fuel and insurance, and may not receive paid leave, sick pay or a pension. They also have to organize their own taxes. Careful planning helps: keep a reserve for slow months, record income and expenses, and set aside money for taxes and retirement. People disagree about how gig workers should be treated, and rules differ from one country to another."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Gross pay and take-home pay are different, so compare carefully.",
+        "Gross pay and take-home pay are always the same amount.",
+        "Take-home pay is always larger than gross pay.",
+        "The text explains the difference between gross and net pay and says to compare job offers carefully.",
+        [
+          "they may mean two different amounts",
+          "compare the net pay and also the benefits"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is net pay?",
+        "The amount the worker receives after deductions.",
+        "The total agreed before deductions.",
+        "The lowest pay allowed by law.",
+        "The text says that net pay is the smaller amount that the worker receives after deductions.",
+        "Net pay, or take-home pay, is the smaller amount that the worker actually receives after deductions"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “generous” means…",
+        "giving more than expected.",
+        "giving very little.",
+        "hard to understand.",
+        "The text says that a lower salary with generous benefits can be worth more, which means benefits that give more than expected.",
+        "a lower salary with generous benefits"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “without them” refers to…",
+        "generous benefits.",
+        "job offers.",
+        "taxes.",
+        "The sentence says that a lower salary with generous benefits can be worth more than a higher salary without the benefits.",
+        "a lower salary with generous benefits can be worth more than a higher salary without them"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the highest salary in the world is.",
+        "What deductions can include.",
+        "What a pay slip shows.",
+        "The text does not say what the highest salary is. It says what deductions can include and what a pay slip shows.",
+        [
+          "income tax and contributions to social security and health insurance",
+          "A pay slip shows how the amount was calculated"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does the text suggest comparing benefits as well as salary?",
+        "Benefits can make a lower salary more valuable.",
+        "Benefits are always larger than salary.",
+        "Benefits reduce the net pay.",
+        "The text says that a lower salary with generous benefits can be worth more than a higher salary without them.",
+        "a lower salary with generous benefits can be worth more"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Freelance and gig work offer freedom but also costs and uncertainty.",
+        "Freelance and gig work give a fixed salary and paid leave.",
+        "Freelance and gig work are the same in every country.",
+        "The text explains the flexibility of freelance and gig jobs and their costs.",
+        [
+          "These jobs offer flexibility",
+          "But there are costs"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does a gig worker do?",
+        "Takes short jobs, often through an app.",
+        "Works only for one company for years.",
+        "Sells only programming skills.",
+        "The text says that a gig worker takes short jobs, often through an app.",
+        "a gig worker takes short jobs, such as delivering food or driving passengers, often through an app"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “set aside” means…",
+        "keep for a special purpose.",
+        "throw away.",
+        "give to a friend.",
+        "The text says to set aside money for taxes and retirement, which means to keep money for those purposes.",
+        "set aside money for taxes and retirement"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “They” in “They also have to organize their own taxes” refers to…",
+        "freelancers and gig workers.",
+        "clients and employers.",
+        "governments.",
+        "The sentence before talks about workers who pay for their equipment, and these workers also have to organize their own taxes.",
+        "Workers often pay for their own equipment, fuel and insurance, and may not receive paid leave, sick pay or a pension. They also have to organize their own taxes"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a freelancer earns on average.",
+        "What a freelancer sells.",
+        "What careful planning includes.",
+        "The text does not say how much a freelancer earns on average. It says what a freelancer sells and what careful planning includes.",
+        [
+          "A freelancer sells skills, such as writing, design or programming",
+          "keep a reserve for slow months"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why is it hard to plan a budget as a gig worker?",
+        "Income can change from week to week.",
+        "Workers receive too much paid leave.",
+        "Taxes are paid by the clients.",
+        "The text says that income can change from week to week, so it is hard to plan a budget.",
+        "Income can change from week to week, so it is hard to plan a budget"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "gross",
+          "the total before anything is taken out"
+        ],
+        [
+          "net",
+          "the amount left after deductions"
+        ],
+        [
+          "deductions",
+          "amounts taken away from pay"
+        ],
+        [
+          "benefits",
+          "extra things that a job gives besides pay"
+        ],
+        [
+          "employer",
+          "a person or company that pays workers"
+        ]
+      ],
+      "B": [
+        [
+          "freelancers",
+          "people who work for different clients, not for one employer"
+        ],
+        [
+          "clients",
+          "people who pay for a service"
+        ],
+        [
+          "flexibility",
+          "the freedom to choose or change"
+        ],
+        [
+          "budget",
+          "a plan for how to spend money"
+        ],
+        [
+          "retirement",
+          "the time of life after stopping work"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 186,
+    "slug": "unseen-reading-part-186",
+    "theme": "How We Pay",
+    "blurb": "barter and the birth of money, digital payments",
+    "texts": {
+      "A": {
+        "title": "Barter and the Birth of Payment",
+        "text": "Before money, people used barter: they exchanged goods directly, such as a basket of rice for a chicken. Barter works, but it has a problem called the double coincidence of wants. You must find someone who has what you want and also wants what you have. If a farmer needs shoes but the shoemaker does not want rice, no trade happens. Money solved this problem because everyone is willing to accept it, and it also gave people a way to measure value, to store value for later and to compare prices. Over time, people used shells, metals, coins and paper notes. Today barter has not disappeared. People swap services, exchange used items online and trade favors, but it remains a small part of the economy because it is slow and difficult to arrange."
+      },
+      "B": {
+        "title": "From Cash to Digital Payments",
+        "text": "Cash is still used, but more and more payments are digital. A card payment sends a message from the shop’s machine to the bank, which checks the money in the account and approves or rejects the payment within seconds. E-wallets, which are apps on a phone, go further: the user stores money in the app or links it to a bank account and pays by scanning a code or entering a number. Digital payments are fast, convenient and easy to record, and they lower the risk of carrying a lot of cash. They also have weaknesses. A phone can be lost, a battery can die, and criminals try to steal passwords and one-time codes. Protect yourself with a screen lock, two-step verification and a habit of checking each transaction. Cryptocurrencies are a different, riskier kind of digital money, whose price can change sharply in a day, so most experts advise using only money that you can afford to lose."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Money solved the problems of barter, which still exists in small ways.",
+        "Money was invented because people did not like rice.",
+        "Barter is now the main way to trade in every country.",
+        "The text explains the problems of barter and how money solved them, and says that barter still exists in a small way.",
+        [
+          "Money solved this problem because everyone is willing to accept it",
+          "Today barter has not disappeared"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the “double coincidence of wants”?",
+        "Finding someone who has what you want and wants what you have.",
+        "Finding two shops that sell the same goods.",
+        "Wanting two things at the same time.",
+        "The text says that you must find someone who has what you want and also wants what you have.",
+        "You must find someone who has what you want and also wants what you have"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “arrange” means…",
+        "organize and set up.",
+        "pay for in advance.",
+        "explain to others.",
+        "The text says that barter is slow and difficult to arrange, which means to organize and set up.",
+        "difficult to arrange"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “everyone is willing to accept it” refers to…",
+        "money.",
+        "barter.",
+        "rice.",
+        "The sentence says that money solved this problem because everyone is willing to accept money.",
+        "Money solved this problem because everyone is willing to accept it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who made the first coin.",
+        "What people did with shells and metals.",
+        "What a farmer needs in the example.",
+        "The text does not say who made the first coin. It says that people used shells and metals and that the farmer needs shoes.",
+        [
+          "people used shells, metals, coins and paper notes",
+          "If a farmer needs shoes"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does barter remain a small part of the economy?",
+        "It is slow and difficult to arrange.",
+        "It is forbidden by every government.",
+        "It is too fast to record.",
+        "The text says that barter remains a small part of the economy because it is slow and difficult to arrange.",
+        "it remains a small part of the economy because it is slow and difficult to arrange"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Digital payments are convenient but need careful protection.",
+        "Digital payments are always perfectly safe.",
+        "Digital payments cannot be used in shops.",
+        "The text explains how digital payments work and describes both benefits and weaknesses.",
+        [
+          "Digital payments are fast, convenient and easy to record",
+          "They also have weaknesses"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does the bank do during a card payment?",
+        "It checks the account and approves the payment.",
+        "It prints the paper receipt for the shop.",
+        "It chooses the price of the goods sold.",
+        "The text says that the bank checks the money in the account and approves or rejects the payment within seconds.",
+        "which checks the money in the account and approves or rejects the payment within seconds"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “weaknesses” means…",
+        "points that are not strong or safe.",
+        "special advantages.",
+        "prices that are fixed.",
+        "The text introduces the weaknesses of digital payments, such as a lost phone and stolen passwords, which means points that are not safe.",
+        "They also have weaknesses"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “links it to a bank account” refers to…",
+        "the app.",
+        "the phone.",
+        "the code.",
+        "The sentence says that the user stores money in the app or links the app to a bank account.",
+        "the user stores money in the app or links it to a bank account"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which e-wallet has the most users.",
+        "How a user can pay with an e-wallet.",
+        "How the user can protect themselves.",
+        "The text does not say which e-wallet has the most users. It says how a user can pay and how to protect themselves.",
+        [
+          "pays by scanning a code or entering a number",
+          "a screen lock, two-step verification and a habit of checking each transaction"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about cryptocurrencies?",
+        "They are risky, so only spare money should be used.",
+        "They are always safer than a bank account.",
+        "Their price never changes during a day.",
+        "The text says that their price can change sharply and that experts advise using only money that you can afford to lose.",
+        "so most experts advise using only money that you can afford to lose"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "barter",
+          "trading goods without using money"
+        ],
+        [
+          "directly",
+          "without anyone or anything in between"
+        ],
+        [
+          "willing",
+          "ready and happy to do something"
+        ],
+        [
+          "value",
+          "how much something is worth"
+        ],
+        [
+          "swap",
+          "to exchange one thing for another"
+        ]
+      ],
+      "B": [
+        [
+          "approves",
+          "officially agrees to"
+        ],
+        [
+          "convenient",
+          "easy and suitable to use"
+        ],
+        [
+          "transaction",
+          "one act of buying or paying"
+        ],
+        [
+          "cryptocurrencies",
+          "digital money that uses computer codes for security"
+        ],
+        [
+          "sharply",
+          "suddenly and by a large amount"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 187,
+    "slug": "unseen-reading-part-187",
+    "theme": "Smart Buying",
+    "blurb": "subscriptions and free trials, buying used and warranties",
+    "texts": {
+      "A": {
+        "title": "Subscriptions and Free Trials",
+        "text": "Many apps, music services and online shops offer a free trial: you can use the service free of charge for a week or a month. The trial is not a gift. Companies hope that you will enjoy the service and keep it. They often ask for card details at the start and then charge automatically when the trial ends, unless you cancel. Because small monthly amounts feel unimportant, people forget about them, and the cost builds up. Five subscriptions of 300 pesos each total 18,000 pesos a year. To stay in control, write down the date when the trial ends, set a reminder, and cancel early if you do not use the service. Review your bank or e-wallet statements every month, and ask yourself whether you really use each service. Some companies also make cancelling difficult, so check the terms before you sign up."
+      },
+      "B": {
+        "title": "Buying Used and Reading a Warranty",
+        "text": "Buying used goods can save a lot of money. A used phone, bicycle or book may cost half the price of a new one, and it also reduces waste. The risk is that you do not know the condition. Before buying, you should inspect the item carefully, test it before paying, ask why the seller is selling it, and compare prices for the same model. For expensive items, a warranty gives extra protection. A warranty is a promise from the maker or seller to repair or replace a product that fails within a certain period. Read what it covers, how long it lasts and what is excluded: warranties often do not cover damage caused by water, drops or misuse. Keep the receipt, because it is usually needed for any claim. Whether you buy new or used, the best price is not always the cheapest one; consider how long the item will last."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Free trials can turn into regular charges, so you should keep track of them.",
+        "Free trials are gifts that never cost anything.",
+        "Free trials should be avoided because they are illegal.",
+        "The text explains that trials often turn into charges and gives ways to stay in control.",
+        [
+          "The trial is not a gift",
+          "To stay in control, write down the date when the trial ends"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What do companies often ask for at the start of a trial?",
+        "Card details.",
+        "A photo of the user.",
+        "A list of friends.",
+        "The text says that companies often ask for card details at the start.",
+        "They often ask for card details at the start"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “builds up” means…",
+        "slowly becomes larger.",
+        "suddenly disappears.",
+        "stays the same.",
+        "The text says that people forget small amounts, and the cost builds up, which means that it slowly becomes larger.",
+        "the cost builds up"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “keep it” refers to…",
+        "the service.",
+        "the card.",
+        "the gift.",
+        "The sentence says that companies hope that you will enjoy the service and keep the service.",
+        "Companies hope that you will enjoy the service and keep it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which service has the longest free trial.",
+        "What five subscriptions of 300 pesos total in a year.",
+        "What to do before a trial ends.",
+        "The text does not say which service has the longest free trial. It says what five subscriptions total in a year and what to do before a trial ends.",
+        [
+          "Five subscriptions of 300 pesos each total 18,000 pesos a year",
+          "write down the date when the trial ends, set a reminder"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why do small monthly amounts cause a problem?",
+        "They feel unimportant, so people forget about them.",
+        "They are always charged twice.",
+        "They are not shown on any statement.",
+        "The text says that small monthly amounts feel unimportant, so people forget about them.",
+        "Because small monthly amounts feel unimportant, people forget about them"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Used goods save money if checked, and a warranty adds protection.",
+        "Used goods are always a bad choice because they fail soon.",
+        "A warranty covers every kind of damage for ever and ever.",
+        "The text explains the benefits and risks of buying used goods and how a warranty works.",
+        [
+          "Buying used goods can save a lot of money",
+          "a warranty gives extra protection"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is a warranty?",
+        "A promise to repair or replace a product that fails.",
+        "A discount for old products at a shop.",
+        "A receipt for a used product sold online.",
+        "The text says that a warranty is a promise from the maker or seller to repair or replace a product that fails within a certain period.",
+        "A warranty is a promise from the maker or seller to repair or replace a product that fails within a certain period"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “misuse” means…",
+        "using something in the wrong way.",
+        "using something very little.",
+        "selling something cheaply.",
+        "The text says that warranties often do not cover damage caused by water, drops or misuse, which means using a product in the wrong way.",
+        "water, drops or misuse"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it is usually needed for any claim” refers to…",
+        "the receipt.",
+        "the warranty period.",
+        "the phone.",
+        "The sentence says to keep the receipt, because the receipt is usually needed for any claim.",
+        "Keep the receipt, because it is usually needed for any claim"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which shops sell the cheapest used phones.",
+        "What warranties often do not cover.",
+        "What to ask a seller.",
+        "The text does not say which shops sell the cheapest used phones. It says what warranties do not cover and what to ask a seller.",
+        [
+          "warranties often do not cover damage caused by water, drops or misuse",
+          "ask why the seller is selling it"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The cheapest price may not be the best choice.",
+        "The cheapest item always lasts the longest.",
+        "Price is the only thing that matters.",
+        "The text says that the best price is not always the cheapest one, and that you should consider how long the item will last.",
+        "the best price is not always the cheapest one"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "trial",
+          "a short period of testing before buying"
+        ],
+        [
+          "automatically",
+          "without anyone doing it by hand"
+        ],
+        [
+          "subscriptions",
+          "regular payments for a service"
+        ],
+        [
+          "statements",
+          "records that list money received and spent"
+        ],
+        [
+          "terms",
+          "the rules of an agreement"
+        ]
+      ],
+      "B": [
+        [
+          "inspect",
+          "to look at something closely"
+        ],
+        [
+          "warranty",
+          "a promise to repair or replace a faulty product"
+        ],
+        [
+          "replace",
+          "to give a new one in place of an old one"
+        ],
+        [
+          "excluded",
+          "not included"
+        ],
+        [
+          "receipt",
+          "a paper that proves that you paid"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 188,
+    "slug": "unseen-reading-part-188",
+    "theme": "Trade and Bubbles",
+    "blurb": "why countries trade, the tulip bubble",
+    "texts": {
+      "A": {
+        "title": "Why Countries Trade",
+        "text": "No country has everything. Some have fertile land, some have oil, and others have skilled workers or factories. Countries exchange goods through trade: exports are goods sold to other countries, and imports are goods bought from them. In the early 1800s, the economist David Ricardo explained a surprising point. Even if one country is better at making everything, both countries can still gain if each focuses on what it does relatively best and trades for the rest. This is called comparative advantage. Think of a doctor who is also the fastest typist in the clinic. She still hires an assistant to type, because her time is better used treating patients. Trade lowers prices, gives consumers more choice and creates jobs in export industries. But it also has costs: some local producers lose against cheaper imports, and workers may need new jobs. For this reason, governments debate how to support those who are affected."
+      },
+      "B": {
+        "title": "The Tulip Bubble",
+        "text": "In the Netherlands in the 1630s, people paid large amounts for tulip bulbs. Tulips were new and fashionable, and rare patterns were special status symbols. The story often told is that, at the peak in early 1637, a single bulb could cost more than a house, and then the prices crashed. This is often used as the first example of a bubble: a situation in which the price of something rises far above its real value because people expect to sell it for more later. However, modern historians question the usual story. They say that the number of people involved was small, that the evidence comes mostly from critical pamphlets written afterward, and that few people were ruined. Whatever the truth, the lesson remains useful. When prices rise only because others are buying, and the buyers hope to sell to someone else at a higher price, the risk of a sudden fall is high."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Countries gain from trade by focusing on what they do relatively well.",
+        "Countries gain from trade only if they make everything themselves.",
+        "Countries lose from trade in every case.",
+        "The text explains comparative advantage and why trade can benefit both countries.",
+        [
+          "both countries can still gain if each focuses on what it does relatively best",
+          "Trade lowers prices"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What are imports?",
+        "Goods bought from other countries.",
+        "Goods sold to other countries.",
+        "Goods made by the government.",
+        "The text says that imports are goods bought from other countries.",
+        "imports are goods bought from them"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “fertile” means…",
+        "good for growing crops.",
+        "very dry and hot.",
+        "full of factories.",
+        "The text lists fertile land as something some countries have, which means land that is good for growing crops.",
+        "Some have fertile land"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “she” in “She still hires an assistant” refers to…",
+        "the doctor.",
+        "the assistant.",
+        "a patient.",
+        "The sentence says to think of a doctor who is also the fastest typist, and the doctor still hires an assistant to type.",
+        "a doctor who is also the fastest typist in the clinic. She still hires an assistant to type"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country trades the most in the world.",
+        "Who explained comparative advantage.",
+        "What trade can do to prices.",
+        "The text does not say which country trades the most. It says who explained comparative advantage and what trade does to prices.",
+        [
+          "the economist David Ricardo",
+          "Trade lowers prices"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does the doctor hire an assistant to type?",
+        "Her time is better used treating patients.",
+        "She cannot type at all.",
+        "The assistant is a better doctor.",
+        "The text says that the doctor’s time is better used treating patients.",
+        "her time is better used treating patients"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The tulip story shows the risk of prices that rise only because others buy.",
+        "The tulip story proves that flowers are worth more than houses.",
+        "The tulip story shows that prices never fall.",
+        "The text describes the tulip bubble and ends with a lesson about prices that rise only because others are buying.",
+        [
+          "This is often used as the first example of a bubble",
+          "When prices rise only because others are buying"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "In which country did tulip prices rise in the 1630s?",
+        "The Netherlands.",
+        "The Philippines.",
+        "Brazil.",
+        "The text says that in the Netherlands in the 1630s, people paid large amounts for tulip bulbs.",
+        "In the Netherlands in the 1630s"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “ruined” means…",
+        "lost all their money.",
+        "became very famous.",
+        "moved to another country.",
+        "The text says that few people were ruined, which means that few lost all their money.",
+        "few people were ruined"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “They” in “They say that the number of people involved was small” refers to…",
+        "modern historians.",
+        "the tulip sellers.",
+        "the Dutch buyers.",
+        "The sentence before says that modern historians question the usual story, and they say that the number of people was small.",
+        "modern historians question the usual story. They say that the number of people involved was small"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many tulip bulbs were sold in 1637.",
+        "What a bubble is.",
+        "Where much of the evidence comes from.",
+        "The text does not say how many bulbs were sold. It says what a bubble is and where much of the evidence comes from.",
+        [
+          "a situation in which the price of something rises far above its real value",
+          "the evidence comes mostly from critical pamphlets written afterward"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text say that the lesson remains useful?",
+        "Buying only to resell at a higher price is risky.",
+        "Tulips will always become cheaper.",
+        "Historians have proved the usual story.",
+        "The text says that when buyers hope to sell to someone else at a higher price, the risk of a sudden fall is high.",
+        "the risk of a sudden fall is high"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "exports",
+          "goods sold to other countries"
+        ],
+        [
+          "imports",
+          "goods bought from other countries"
+        ],
+        [
+          "relatively",
+          "when compared with other things"
+        ],
+        [
+          "consumers",
+          "people who buy goods and services"
+        ],
+        [
+          "industries",
+          "groups of businesses that make similar things"
+        ]
+      ],
+      "B": [
+        [
+          "bulbs",
+          "the round underground parts from which plants grow"
+        ],
+        [
+          "fashionable",
+          "popular at a certain time"
+        ],
+        [
+          "bubble",
+          "a price far above real value that may suddenly fall"
+        ],
+        [
+          "evidence",
+          "facts that show something is true"
+        ],
+        [
+          "pamphlets",
+          "short printed booklets"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 189,
+    "slug": "unseen-reading-part-189",
+    "theme": "Learning to Learn",
+    "blurb": "spaced practice and the forgetting curve, testing yourself",
+    "texts": {
+      "A": {
+        "title": "Spaced Practice and the Forgetting Curve",
+        "text": "In 1885, the German psychologist Hermann Ebbinghaus tested his own memory with lists of nonsense syllables. He found that he forgot most of what he had learned within days unless he reviewed it. His forgetting curve shows a fast drop at first and then a slower one. Later research showed that the timing of review matters. Studying the same material in several short sessions spread over days or weeks, called spaced practice, usually leads to better long-term memory than studying everything in one long session the night before an exam. The reason is that a little forgetting makes the brain work harder when it remembers again, and that effort strengthens the memory. Studying everything at the last minute, called cramming, can help for a test tomorrow, but the knowledge disappears quickly. A simple plan is to review new material after one day, then after three days, then after a week, and so on. Short sessions of 20 or 30 minutes are enough, and flashcard apps can schedule the reviews for you."
+      },
+      "B": {
+        "title": "Testing Yourself",
+        "text": "Many students study by reading their notes again and again, or by highlighting the text. These methods feel productive because the material looks familiar, but familiarity can be misleading. Recognizing something is not the same as remembering it. A more powerful method is retrieval practice: closing the book and trying to recall the information from memory, by answering questions, writing what you remember or using flashcards. In many experiments, students who tested themselves remembered more a week later than students who spent the same time re-reading. Retrieval works even when you make mistakes, as long as you check the correct answer afterwards. It also shows you honestly what you do not yet know, so you can focus on it. Mixing different kinds of problems in one session, instead of repeating one kind, can also help, although it feels harder. Learning that feels a little difficult is often learning that lasts."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Reviewing material over several days helps memory more than cramming.",
+        "Studying everything in one night is the best way to remember.",
+        "Forgetting happens at the same speed for ever.",
+        "The text explains the forgetting curve and says that spaced practice leads to better long-term memory.",
+        [
+          "Studying the same material in several short sessions spread over days or weeks",
+          "usually leads to better long-term memory"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "In what year did Ebbinghaus test his memory?",
+        "1885.",
+        "1985.",
+        "1685.",
+        "The text says that Ebbinghaus tested his memory in 1885.",
+        "In 1885, the German psychologist Hermann Ebbinghaus"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “schedule” means…",
+        "plan for a certain time.",
+        "forget completely.",
+        "write in secret.",
+        "The text says that flashcard apps can schedule the reviews, which means that they plan them for certain times.",
+        "flashcard apps can schedule the reviews for you"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “unless he reviewed it” refers to…",
+        "what he had learned.",
+        "the forgetting curve.",
+        "the exam.",
+        "The sentence says that he forgot most of what he had learned within days unless he reviewed what he had learned.",
+        "he forgot most of what he had learned within days unless he reviewed it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which flashcard app is the best.",
+        "What the forgetting curve looks like.",
+        "How long short sessions can be.",
+        "The text does not say which flashcard app is best. It says what the forgetting curve looks like and how long short sessions can be.",
+        [
+          "a fast drop at first and then a slower one",
+          "Short sessions of 20 or 30 minutes are enough"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does a little forgetting help memory?",
+        "Remembering again takes effort, which makes the memory stronger.",
+        "Forgetting removes the wrong facts from the brain.",
+        "Forgetting means that the lesson was too easy.",
+        "The text says that a little forgetting makes the brain work harder when it remembers again, and that effort strengthens the memory.",
+        "a little forgetting makes the brain work harder when it remembers again, and that effort strengthens the memory"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Testing yourself helps you to remember more than re-reading.",
+        "Re-reading notes is the most powerful way to learn.",
+        "Mistakes during practice make learning impossible.",
+        "The text explains that retrieval practice works better than re-reading.",
+        [
+          "A more powerful method is retrieval practice",
+          "students who tested themselves remembered more a week later"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is retrieval practice?",
+        "Trying to recall information from memory.",
+        "Highlighting the text again and again.",
+        "Copying the notes of a friend.",
+        "The text says that retrieval practice means closing the book and trying to recall the information from memory.",
+        "closing the book and trying to recall the information from memory"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “misleading” means…",
+        "giving a wrong idea.",
+        "giving great help.",
+        "giving a loud sound.",
+        "The text says that familiarity can be misleading, which means that it can give a wrong idea about what you know.",
+        "familiarity can be misleading"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It also shows you honestly” refers to…",
+        "retrieval practice.",
+        "the book.",
+        "the correct answer.",
+        "The sentence before talks about retrieval practice, and it also shows you honestly what you do not yet know.",
+        "Retrieval works even when you make mistakes, as long as you check the correct answer afterwards. It also shows you honestly what you do not yet know"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students took part in each experiment.",
+        "What retrieval practice can be done with.",
+        "What mixing different problems can do.",
+        "The text does not say how many students took part. It says what retrieval practice can be done with and what mixing different problems can do.",
+        [
+          "by answering questions, writing what you remember or using flashcards",
+          "Mixing different kinds of problems in one session"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Some difficulty during study can lead to better learning.",
+        "Easy study is always the most useful.",
+        "Difficult study should always be avoided.",
+        "The text says that learning that feels a little difficult is often learning that lasts.",
+        "Learning that feels a little difficult is often learning that lasts"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "psychologist",
+          "a scientist who studies the mind and behavior"
+        ],
+        [
+          "syllables",
+          "parts of a word, each with one vowel sound"
+        ],
+        [
+          "review",
+          "to look at again in order to remember"
+        ],
+        [
+          "cramming",
+          "studying a lot at the last minute"
+        ],
+        [
+          "strengthens",
+          "makes stronger"
+        ]
+      ],
+      "B": [
+        [
+          "highlighting",
+          "marking important words with a bright pen"
+        ],
+        [
+          "familiar",
+          "well known because you have seen it before"
+        ],
+        [
+          "retrieval",
+          "the act of getting something back from memory"
+        ],
+        [
+          "recall",
+          "to bring back to mind"
+        ],
+        [
+          "honestly",
+          "in a truthful way"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 190,
+    "slug": "unseen-reading-part-190",
+    "theme": "Creativity",
+    "blurb": "where creative ideas come from, why group brainstorming disappoints",
+    "texts": {
+      "A": {
+        "title": "Where Creative Ideas Come From",
+        "text": "Many people think that creative ideas arrive in a flash of inspiration, like a light bulb in a cartoon. Researchers see a different picture. Creativity usually begins with a lot of knowledge and practice, because new ideas are often new combinations of old ones. The inventor of the printing press in Europe, Johannes Gutenberg, is said to have combined a wine press with movable metal type. Creative people also produce many ideas, most of which are poor, so the number of ideas raises the chance of a good one. Another stage is rest. After hard work on a problem, a walk, a shower or sleep can allow the mind to wander and to make unexpected links, and this is why good ideas sometimes come when we are not trying. Finally, ideas need testing and improvement. Creative work is rarely finished in one step; it is usually made by trying, failing and trying again."
+      },
+      "B": {
+        "title": "Why Group Brainstorming Often Disappoints",
+        "text": "Brainstorming in a group seems like a perfect way to create ideas: many minds, no criticism, and a flood of suggestions. The method was popular in business from the 1950s. However, many experiments have found that people working alone usually produce more ideas, and often better ones, than the same number of people working in a group. Researchers have found several reasons. In a group, only one person can speak at a time, so others must wait and may forget their ideas. Some people hold back because they fear criticism, and others rely on the group to do the work. Groups also tend to copy each other and to follow the first ideas. A better method is to let people think and write alone first, then to share and combine the ideas, and finally to discuss which ones to develop. Groups remain useful for choosing, improving and carrying out ideas."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Creative ideas usually come from knowledge, many tries, rest and testing.",
+        "Creative ideas arrive only in a sudden flash with no work.",
+        "Creative ideas can be made only by famous inventors.",
+        "The text explains that creativity needs knowledge, many ideas, rest and testing.",
+        [
+          "Creativity usually begins with a lot of knowledge and practice",
+          "Creative work is rarely finished in one step"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is Gutenberg said to have combined?",
+        "A wine press with movable metal type.",
+        "A clock with a lamp.",
+        "Paper with a wooden wheel.",
+        "The text says that Gutenberg is said to have combined a wine press with movable metal type.",
+        "a wine press with movable metal type"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “unexpected” means…",
+        "not thought of beforehand.",
+        "carefully planned.",
+        "very ordinary.",
+        "The text says that rest can allow the mind to make unexpected links, which means links that were not thought of beforehand.",
+        "make unexpected links"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “most of which are poor” refers to…",
+        "the ideas.",
+        "the creative people.",
+        "the problems.",
+        "The sentence says that creative people produce many ideas, most of which are poor.",
+        "produce many ideas, most of which are poor"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who won the most prizes for creativity.",
+        "What can happen after hard work.",
+        "What the idea of a light bulb stands for.",
+        "The text does not say who won the most prizes. It says what can happen after hard work and what a light bulb in a cartoon stands for.",
+        [
+          "a walk, a shower or sleep can allow the mind to wander",
+          "a flash of inspiration, like a light bulb in a cartoon"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does producing many ideas raise the chance of a good one?",
+        "A larger number of tries includes more chances for a good idea.",
+        "Each idea is better than the one before.",
+        "Poor ideas turn into good ones by themselves.",
+        "The text says that most ideas are poor, so the number of ideas raises the chance of a good one.",
+        "the number of ideas raises the chance of a good one"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "People often produce more ideas alone than in a brainstorming group.",
+        "Groups always produce more ideas than people alone.",
+        "Brainstorming was invented in the twenty-first century.",
+        "The text explains that many experiments found that people working alone produce more ideas than groups.",
+        [
+          "many experiments have found that people working alone usually produce more ideas",
+          "A better method is to let people think and write alone first"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Why do some people hold back in a group?",
+        "They fear criticism.",
+        "They have too many ideas.",
+        "They do not like the topic.",
+        "The text says that some people hold back because they fear criticism.",
+        "Some people hold back because they fear criticism"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “hold back” means…",
+        "not say what you think.",
+        "speak very loudly.",
+        "move to the front.",
+        "The text says that some people hold back because they fear criticism, which means that they do not say what they think.",
+        "Some people hold back because they fear criticism"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “ones” in “and often better ones” refers to…",
+        "ideas.",
+        "experiments.",
+        "groups.",
+        "The sentence says that people working alone produce more ideas, and often better ideas, than people working in a group.",
+        "produce more ideas, and often better ones"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which company first used brainstorming.",
+        "Since when the method was popular in business.",
+        "What groups are still useful for.",
+        "The text does not say which company first used brainstorming. It says since when the method was popular and what groups are useful for.",
+        [
+          "The method was popular in business from the 1950s",
+          "Groups remain useful for choosing, improving and carrying out ideas"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the better method suggest about group work?",
+        "Thinking alone first can protect each person’s ideas.",
+        "Groups should never meet to share their ideas.",
+        "The first idea of the group is always the best.",
+        "The text says that people should think and write alone first, then share and combine, which protects ideas from being forgotten or copied.",
+        "let people think and write alone first, then to share and combine the ideas"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "inspiration",
+          "a sudden good idea or feeling of excitement"
+        ],
+        [
+          "combinations",
+          "mixtures of different things"
+        ],
+        [
+          "movable",
+          "able to be moved"
+        ],
+        [
+          "wander",
+          "to move without a fixed purpose"
+        ],
+        [
+          "improvement",
+          "the act of making something better"
+        ]
+      ],
+      "B": [
+        [
+          "criticism",
+          "remarks about what is wrong with something"
+        ],
+        [
+          "flood",
+          "a very large amount arriving quickly"
+        ],
+        [
+          "rely",
+          "to depend on"
+        ],
+        [
+          "combine",
+          "to join together"
+        ],
+        [
+          "develop",
+          "to make something grow or improve"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 191,
+    "slug": "unseen-reading-part-191",
+    "theme": "Decisions",
+    "blurb": "the sunk cost trap, the paradox of choice",
+    "texts": {
+      "A": {
+        "title": "The Sunk Cost Trap",
+        "text": "Imagine that you have paid for a movie ticket, but after twenty minutes you realize that the film is boring. Should you stay? Many people stay because they have already paid. But the money is gone whether you stay or leave. Economists call it a sunk cost, a cost that cannot be recovered. The best decision depends only on the future: would you prefer to spend the next two hours watching a boring film or doing something else? The sunk cost trap appears in many places. People keep a failing project because they have already worked on it for months, finish food they do not like or stay in a bad situation because they have invested so much. Companies and governments sometimes continue large projects for the same reason. A useful question is: if I had not yet started, would I begin this today? If the answer is no, it may be time to stop."
+      },
+      "B": {
+        "title": "Too Many Choices",
+        "text": "In a famous experiment from 2000, researchers set up a table of jam in a supermarket. On some days there were 24 kinds, and on others only 6. More people stopped at the large display, but those who saw only 6 kinds were much more likely to buy a jar. The idea that too many options can make choosing harder became known as the paradox of choice. Later studies have found mixed results, and the effect seems to depend on the situation: it is stronger when the choices are hard to compare and when people do not know what they want. Even so, many people feel tired after too many comparisons, and they may worry later that another option would have been better. Two habits help. Decide in advance what matters most to you, and accept a choice that is good enough instead of searching for the perfect one."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Past costs that cannot be recovered should not decide what you do next.",
+        "Past costs are the most important thing in any decision.",
+        "You should always finish whatever you have started.",
+        "The text explains the sunk cost trap and says that the best decision depends only on the future.",
+        [
+          "The best decision depends only on the future",
+          "The sunk cost trap appears in many places"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is a sunk cost?",
+        "A cost that cannot be recovered.",
+        "A cost that you expect next year.",
+        "A cost that is shared by two people.",
+        "The text says that a sunk cost is a cost that cannot be recovered.",
+        "a sunk cost, a cost that cannot be recovered"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “boring” means…",
+        "not interesting.",
+        "very exciting.",
+        "too expensive.",
+        "The text says that after twenty minutes you realize that the film is boring, which means that it is not interesting.",
+        "the film is boring"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “Economists call it a sunk cost” refers to…",
+        "the money that is already gone.",
+        "the film that you are watching now.",
+        "the future choice that you can make.",
+        "The sentence before says that the money is gone whether you stay or leave, and economists call that money a sunk cost.",
+        "But the money is gone whether you stay or leave. Economists call it a sunk cost"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a movie ticket costs.",
+        "What a useful question is.",
+        "Who may fall into the trap.",
+        "The text does not say how much a ticket costs. It says what a useful question is and who may fall into the trap.",
+        [
+          "if I had not yet started, would I begin this today",
+          "Companies and governments sometimes continue large projects for the same reason"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the final question help you to see?",
+        "Whether you would choose it freshly, without the past cost.",
+        "How much money you have already spent.",
+        "Which person is responsible for the cost.",
+        "The text asks whether you would begin the project today if you had not started, which removes the effect of the past cost.",
+        "if I had not yet started, would I begin this today"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Too many options can make choosing harder, but evidence is mixed.",
+        "More options always make people happier with their choice.",
+        "People always prefer a larger display of products in shops.",
+        "The text describes the jam experiment and says that later studies have found mixed results.",
+        [
+          "too many options can make choosing harder",
+          "Later studies have found mixed results"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many kinds of jam were on the table on some days?",
+        "24.",
+        "6.",
+        "2000.",
+        "The text says that on some days there were 24 kinds, and on others only 6.",
+        "On some days there were 24 kinds"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “mixed” in “mixed results” means…",
+        "not all the same.",
+        "completely clear.",
+        "very strong.",
+        "The text says that later studies have found mixed results, which means that the results were not all the same.",
+        "Later studies have found mixed results"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “those” in “those who saw only 6 kinds” refers to…",
+        "the shoppers.",
+        "the jars.",
+        "the researchers.",
+        "The sentence says that more people stopped at the large display, but the shoppers who saw only 6 kinds were more likely to buy.",
+        "More people stopped at the large display, but those who saw only 6 kinds were much more likely to buy a jar"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which jam sold best in the experiment.",
+        "When the experiment took place.",
+        "What two habits help.",
+        "The text does not say which jam sold best. It says when the experiment took place and what habits help.",
+        [
+          "In a famous experiment from 2000",
+          "Decide in advance what matters most to you"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the advice about “good enough” suggest?",
+        "Searching for the perfect choice can cause stress.",
+        "The first choice is always the best.",
+        "Choices should always be made quickly.",
+        "The text says that people may worry that another choice would have been better, so accepting a good-enough choice reduces this worry.",
+        "accept a choice that is good enough instead of searching for the perfect one"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "realize",
+          "to understand something suddenly"
+        ],
+        [
+          "recovered",
+          "gotten back"
+        ],
+        [
+          "prefer",
+          "to like one thing more than another"
+        ],
+        [
+          "invested",
+          "put money, time or effort into something"
+        ],
+        [
+          "projects",
+          "planned pieces of work"
+        ]
+      ],
+      "B": [
+        [
+          "experiment",
+          "a test made to find out something"
+        ],
+        [
+          "display",
+          "a collection of things shown for people to see"
+        ],
+        [
+          "paradox",
+          "a statement that seems to contradict itself"
+        ],
+        [
+          "comparisons",
+          "looking at things to see how they differ"
+        ],
+        [
+          "perfect",
+          "without any fault"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 192,
+    "slug": "unseen-reading-part-192",
+    "theme": "Chance",
+    "blurb": "the gambler’s fallacy, why a positive test can still be wrong",
+    "texts": {
+      "A": {
+        "title": "The Gambler’s Fallacy",
+        "text": "In August 1913, at a casino in Monte Carlo, the ball of a roulette wheel landed on black 26 times in a row. Gamblers lost millions of francs betting on red, because they believed that red was due. They were wrong. Each spin of a fair wheel is independent, which means that earlier results do not affect the next one. The chance of red is the same after one black or after twenty-six blacks. This mistake is called the gambler’s fallacy: the belief that a random event becomes more likely because it has not happened recently. It also appears outside casinos. A family with four daughters is not more likely to have a son next time; the chance is still about one in two. The mistake comes from our wish to see patterns, and from a false idea that random events should even out in a short time. In the long run, results do average out, but not by remembering the past."
+      },
+      "B": {
+        "title": "When a Positive Test Can Be Wrong",
+        "text": "Imagine a disease that affects 1 person in 100. A test for it catches 90 out of 100 sick people, but it also gives a false alarm for 9 out of 100 healthy people. You test positive. How likely is it that you are really sick? Many people say around 90 percent. In fact, the answer is only about 9 percent. Here is why. Take 1,000 people. About 10 of them are sick, and the test finds 9 of them. Of the 990 healthy people, about 89 receive a false alarm. So 98 people test positive, but only 9 of them are really sick. The key is the base rate, how common the disease is at the start. When a condition is rare, most positive results can be false alarms, even if the test is good. This is why doctors often repeat or confirm tests, and why we should always ask: out of how many people?"
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Past random results do not make the next result more likely.",
+        "Random results always balance out in the next round.",
+        "Roulette wheels remember the last result.",
+        "The text explains that each spin is independent, so earlier results do not affect the next one.",
+        [
+          "Each spin of a fair wheel is independent",
+          "the belief that a random event becomes more likely because it has not happened recently"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How many times in a row did the ball land on black?",
+        "26.",
+        "6.",
+        "13.",
+        "The text says that the ball landed on black 26 times in a row.",
+        "landed on black 26 times in a row"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “due” in “red was due” means…",
+        "expected to come soon.",
+        "very far away.",
+        "already finished.",
+        "The text says that gamblers believed that red was due, which means that they thought it was expected to come soon.",
+        "they believed that red was due"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “They” in “They were wrong” refers to…",
+        "the gamblers.",
+        "the roulette wheels.",
+        "the casino owners.",
+        "The sentence before says that gamblers lost money because they believed red was due, and the gamblers were wrong.",
+        "Gamblers lost millions of francs betting on red, because they believed that red was due. They were wrong"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much money the casino earned in total.",
+        "Where the casino was.",
+        "What the chance of a son is.",
+        "The text does not say how much the casino earned. It says where the casino was and what the chance of a son is.",
+        [
+          "at a casino in Monte Carlo",
+          "the chance is still about one in two"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the example of the family suggest?",
+        "Earlier children do not change the chance of the next child.",
+        "A family with daughters will have a son next.",
+        "A family should stop at four children.",
+        "The text says that a family with four daughters is not more likely to have a son next time.",
+        "A family with four daughters is not more likely to have a son next time"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "When a disease is rare, many positive results can be false alarms.",
+        "A positive test always means that you are sick.",
+        "A good test is wrong in half of all cases.",
+        "The text explains that a positive test for a rare disease is often a false alarm, because of the base rate.",
+        [
+          "only about 9 percent",
+          "When a condition is rare, most positive results can be false alarms"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "About how many of 1,000 people receive a false alarm in the example?",
+        "About 89.",
+        "About 9.",
+        "About 990.",
+        "The text says that of the 990 healthy people, about 89 receive a false alarm.",
+        "about 89 receive a false alarm"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “condition” means…",
+        "an illness or state of health.",
+        "a rule for a game.",
+        "a place to live.",
+        "The text says that when a condition is rare, most positive results can be false alarms, which means an illness or state of health.",
+        "When a condition is rare"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “A test for it” refers to…",
+        "the disease.",
+        "the percentage.",
+        "the doctor.",
+        "The sentence says that a disease affects 1 person in 100, and a test for the disease catches 90 out of 100 sick people.",
+        "a disease that affects 1 person in 100. A test for it"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the name of the disease is.",
+        "What the base rate is.",
+        "What doctors often do.",
+        "The text does not give a name for the disease. It says what the base rate is and what doctors often do.",
+        [
+          "the base rate, how common the disease is at the start",
+          "doctors often repeat or confirm tests"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why should we ask “out of how many people?”",
+        "The size of the group shows how common the problem is.",
+        "The number of people decides the price of the test.",
+        "The test works only for large groups.",
+        "The text says that the base rate, how common the disease is, is the key to understanding results.",
+        "The key is the base rate, how common the disease is at the start"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "roulette",
+          "a casino game with a spinning wheel and a ball"
+        ],
+        [
+          "independent",
+          "not affected by something else"
+        ],
+        [
+          "fallacy",
+          "a wrong belief based on faulty thinking"
+        ],
+        [
+          "random",
+          "happening by chance"
+        ],
+        [
+          "average",
+          "to become equal over time"
+        ]
+      ],
+      "B": [
+        [
+          "disease",
+          "an illness"
+        ],
+        [
+          "healthy",
+          "not sick"
+        ],
+        [
+          "alarm",
+          "a warning that turns out to be false"
+        ],
+        [
+          "rare",
+          "not often found"
+        ],
+        [
+          "confirm",
+          "to check that something is true"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 193,
+    "slug": "unseen-reading-part-193",
+    "theme": "How Science Works",
+    "blurb": "from question to experiment, why one study is not proof",
+    "texts": {
+      "A": {
+        "title": "From Question to Experiment",
+        "text": "Science begins with a question about the world, such as whether plants grow better with music. A scientist then forms a hypothesis, a possible answer that can be tested. A good hypothesis is specific and can be proven wrong. To test it, the scientist designs an experiment. The key idea is control: only one thing, the variable, should change, and everything else stays the same. For example, two groups of identical plants get the same soil, light and water, but only one group hears music. Without a control group, it is impossible to know what caused a change. Scientists also repeat measurements, use enough samples and write down their methods so that others can repeat the work. Then they analyze the data and decide whether it supports the hypothesis. If it does not, the hypothesis is rejected or changed, which is not a failure, because it teaches something."
+      },
+      "B": {
+        "title": "Why One Study Is Not Proof",
+        "text": "News headlines often say that a study has proved something. Real science is more careful. A single study can be wrong for many reasons: the sample may be small, chance may produce a pattern, the method may have a flaw, or the researchers may have made a mistake. This is why scientists value replication, which means that other teams repeat the study and see whether they get the same result. Before a study is published in a journal, other experts usually check it in a process called peer review, but peer review does not guarantee that the results are correct. Confidence grows when many independent studies, using different methods, point in the same direction. When you read a claim, ask how many people were studied, whether the result has been repeated, who paid for the work and whether the authors admit uncertainty. Words such as may and suggests are a sign of honest science."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A fair experiment changes one thing and keeps everything else the same.",
+        "A fair experiment changes every factor at the same time.",
+        "A fair experiment is never repeated by other scientists.",
+        "The text explains how a scientist moves from a question and hypothesis to a controlled experiment.",
+        [
+          "The key idea is control",
+          "only one thing, the variable, should change"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is a hypothesis?",
+        "A possible answer that can be tested.",
+        "A group of identical plants.",
+        "A final conclusion that cannot change.",
+        "The text says that a hypothesis is a possible answer that can be tested.",
+        "a hypothesis, a possible answer that can be tested"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “specific” means…",
+        "clear and exact.",
+        "vague and wide.",
+        "old and weak.",
+        "The text says that a good hypothesis is specific, which means that it is clear and exact.",
+        "A good hypothesis is specific"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “whether it supports the hypothesis” refers to…",
+        "the data.",
+        "the experiment.",
+        "the scientist.",
+        "The sentence says that scientists analyze the data and decide whether the data supports the hypothesis.",
+        "they analyze the data and decide whether it supports the hypothesis"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many plants a scientist should use.",
+        "What the control group is for.",
+        "What happens to a rejected hypothesis.",
+        "The text does not give a number of plants. It says what the control group is for and what happens to a rejected hypothesis.",
+        [
+          "Without a control group, it is impossible to know what caused a change",
+          "the hypothesis is rejected or changed"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why does the text say that a rejected hypothesis is not a failure?",
+        "It teaches the scientist something.",
+        "It proves that the method was wrong.",
+        "It means that the experiment can be skipped.",
+        "The text says that a rejected hypothesis is not a failure, because it teaches something.",
+        "which is not a failure, because it teaches something"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "One study is not proof, and confidence grows when results are repeated.",
+        "One study is enough to prove any claim.",
+        "Peer review guarantees that every result is correct.",
+        "The text explains that a single study can be wrong and that replication builds confidence.",
+        [
+          "A single study can be wrong for many reasons",
+          "Confidence grows when many independent studies"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does replication mean?",
+        "Other teams repeat the study.",
+        "The study is published in a newspaper.",
+        "The study is paid for by the government.",
+        "The text says that replication means that other teams repeat the study and see whether they get the same result.",
+        "other teams repeat the study and see whether they get the same result"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “flaw” means…",
+        "a fault.",
+        "a prize.",
+        "a rule.",
+        "The text says that the method may have a flaw, which means a fault.",
+        "the method may have a flaw"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “check it in a process” refers to…",
+        "the study.",
+        "the journal.",
+        "the sample.",
+        "The sentence says that before a study is published, other experts check the study in a process called peer review.",
+        "Before a study is published in a journal, other experts usually check it in a process called peer review"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which journal publishes the best studies.",
+        "What a single study can go wrong with.",
+        "What questions to ask about a claim.",
+        "The text does not say which journal is best. It says what can go wrong in a single study and what questions to ask.",
+        [
+          "the sample may be small, chance may produce a pattern",
+          "ask how many people were studied, whether the result has been repeated"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What do words such as “may” and “suggests” show?",
+        "The authors are honest about uncertainty.",
+        "The authors have not done the work.",
+        "The study is certainly wrong.",
+        "The text says that these words are a sign of honest science, because the authors admit uncertainty.",
+        "Words such as may and suggests are a sign of honest science"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "hypothesis",
+          "a possible explanation that can be tested"
+        ],
+        [
+          "variable",
+          "the one thing that is changed in an experiment"
+        ],
+        [
+          "control",
+          "a group kept the same for comparison"
+        ],
+        [
+          "samples",
+          "small amounts or groups taken for testing"
+        ],
+        [
+          "analyze",
+          "to study carefully in order to understand"
+        ]
+      ],
+      "B": [
+        [
+          "replication",
+          "repeating a study to check the result"
+        ],
+        [
+          "journal",
+          "a publication of scientific articles"
+        ],
+        [
+          "peer",
+          "a person of the same field or level"
+        ],
+        [
+          "independent",
+          "done separately by different people"
+        ],
+        [
+          "uncertainty",
+          "the state of not being completely sure"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 194,
+    "slug": "unseen-reading-part-194",
+    "theme": "Feelings",
+    "blurb": "what emotions are for, stress and how to manage it",
+    "texts": {
+      "A": {
+        "title": "What Emotions Are For",
+        "text": "Emotions such as fear, anger, joy and sadness can feel like interruptions, but they have jobs. Fear prepares the body to escape danger. It speeds up the heart and sends blood to the muscles. Anger gives energy to defend yourself or to correct something unfair. Disgust helps us to avoid spoiled food, and sadness often signals a loss and encourages others to help. Joy rewards activities that are good for us, such as spending time with friends. The psychologist Paul Ekman proposed that six basic emotions appear on faces in similar ways across cultures, although how people show them in public differs. Emotions are information: they tell us what matters. They are not always correct, however. A person may feel fear before a speech even though there is no danger. Emotional intelligence means noticing a feeling, naming it and choosing how to act, instead of simply being controlled by it."
+      },
+      "B": {
+        "title": "Stress and How to Manage It",
+        "text": "Stress is the body’s reaction to a demand or a threat. In a short time, it can help: the heart beats faster, breathing quickens and attention sharpens, a response often called fight or flight. The problem begins when stress continues for weeks or months, such as during long exams, family problems or constant worry. Then it can cause headaches, sleep problems, stomach pain, irritability and difficulty in concentrating. Fortunately, there are practical ways to manage it. Regular exercise, enough sleep and a balanced diet make the body stronger. Slow breathing, for example in for four seconds and out for six, calms the nervous system within minutes. Breaking a big task into small steps makes it less frightening. Talking to a friend, a family member or a counselor often helps more than keeping everything inside. If stress feels too heavy or lasts a long time, seek professional help."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Emotions have useful jobs, but they are not always correct.",
+        "Emotions are useless and should always be ignored.",
+        "Emotions are the same for every person in every situation.",
+        "The text explains what emotions are for and says that they are not always correct.",
+        [
+          "but they have jobs",
+          "They are not always correct, however"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does fear do to the body?",
+        "It speeds up the heart and sends blood to the muscles.",
+        "It slows down the heart and relaxes the muscles.",
+        "It makes the body hungry and sleepy.",
+        "The text says that fear speeds up the heart and sends blood to the muscles.",
+        "It speeds up the heart and sends blood to the muscles"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “defend” means…",
+        "protect from attack.",
+        "give a present to.",
+        "speak loudly to.",
+        "The text says that anger gives energy to defend yourself, which means to protect yourself from attack.",
+        "energy to defend yourself"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “being controlled by it” refers to…",
+        "a feeling.",
+        "a speech.",
+        "an emotion of a friend.",
+        "The sentence says that emotional intelligence means noticing a feeling, naming it and choosing how to act, instead of being controlled by the feeling.",
+        "noticing a feeling, naming it and choosing how to act, instead of simply being controlled by it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which emotion is the strongest of all.",
+        "What disgust helps us to do.",
+        "What emotional intelligence means.",
+        "The text does not say which emotion is the strongest. It says what disgust helps us to do and what emotional intelligence means.",
+        [
+          "Disgust helps us to avoid spoiled food",
+          "Emotional intelligence means noticing a feeling"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the example of a speech suggest?",
+        "A feeling can appear without real danger.",
+        "Fear is always a sign of real danger.",
+        "Speeches are always dangerous.",
+        "The text says that a person may feel fear before a speech even though there is no danger.",
+        "A person may feel fear before a speech even though there is no danger"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Short stress can help, but long stress harms, and it can be managed.",
+        "Stress is always harmful to the body and cannot be managed.",
+        "Stress helps people most when it lasts for many months.",
+        "The text explains short-term and long-term stress and gives ways to manage it.",
+        [
+          "In a short time, it can help",
+          "there are practical ways to manage it"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What does slow breathing calm?",
+        "The nervous system.",
+        "The stomach.",
+        "The sense of hearing.",
+        "The text says that slow breathing calms the nervous system within minutes.",
+        "calms the nervous system within minutes"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “concentrating” means…",
+        "keeping your attention on something.",
+        "moving very quickly from place to place.",
+        "speaking in front of a large group.",
+        "The text lists difficulty in concentrating among the effects of long stress, which means difficulty in keeping your attention on something.",
+        "difficulty in concentrating"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it can cause headaches” refers to…",
+        "long-lasting stress.",
+        "a friend.",
+        "a big task.",
+        "The sentence says that when stress continues for weeks or months, it can cause headaches and other problems.",
+        "when stress continues for weeks or months, such as during long exams, family problems or constant worry. Then it can cause headaches"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people feel stress each year.",
+        "What makes the body stronger.",
+        "Whom to talk to about stress.",
+        "The text does not say how many people feel stress each year. It says what makes the body stronger and whom to talk to.",
+        [
+          "Regular exercise, enough sleep and a balanced diet make the body stronger",
+          "a friend, a family member or a counselor"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text advise breaking a big task into small steps?",
+        "It makes the task feel less frightening.",
+        "It makes the task disappear.",
+        "It makes the task more difficult.",
+        "The text says that breaking a big task into small steps makes it less frightening.",
+        "Breaking a big task into small steps makes it less frightening"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "interruptions",
+          "things that stop what you are doing"
+        ],
+        [
+          "spoiled",
+          "gone bad and not safe to eat"
+        ],
+        [
+          "signals",
+          "gives a sign of"
+        ],
+        [
+          "cultures",
+          "groups of people with shared customs"
+        ],
+        [
+          "intelligence",
+          "the ability to understand and use knowledge"
+        ]
+      ],
+      "B": [
+        [
+          "threat",
+          "a sign of possible danger"
+        ],
+        [
+          "quickens",
+          "becomes faster"
+        ],
+        [
+          "irritability",
+          "a tendency to become annoyed easily"
+        ],
+        [
+          "balanced",
+          "with the right amounts of different parts"
+        ],
+        [
+          "counselor",
+          "a person trained to give advice about problems"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 195,
+    "slug": "unseen-reading-part-195",
+    "theme": "Perception",
+    "blurb": "optical illusions and how the brain fills gaps, the evidence on growth mindset",
+    "texts": {
+      "A": {
+        "title": "Optical Illusions and the Guessing Brain",
+        "text": "In the Müller-Lyer illusion, two lines have exactly the same length, but one has arrowheads at its ends pointing outward and the other has them pointing inward. Most people see one of the lines as clearly longer, and they keep seeing it that way even after measuring. Illusions show that perception is not a camera. The brain receives limited signals from the eyes and constantly makes guesses to build a useful picture. It uses past experience, context and shortcuts. For example, each eye has a blind spot where the nerve leaves the retina, but we never notice a hole because the brain fills the gap using the surroundings. Illusions appear when these guesses are wrong. They are not a sign that our eyes are bad; they reveal how a normally successful system works. They also remind us that two people can look at the same thing and perceive it differently."
+      },
+      "B": {
+        "title": "Growth Mindset: What the Evidence Says",
+        "text": "The psychologist Carol Dweck popularized the idea of two mindsets. People with a fixed mindset believe that abilities such as intelligence are mostly set at birth, while people with a growth mindset believe that abilities can develop through effort, good strategies and help from others. Early studies suggested that teaching students a growth mindset improved their grades. Later large studies found that the average effect is small, though it may be larger for some groups, such as students who are struggling, in schools that support the message. Critics also point out that praising effort alone is not enough. Students also need good teaching and useful strategies. A balanced conclusion is that beliefs about learning matter, but they are one factor among many, and they work best when they are combined with real support. Even small effects can be worth having when the method is cheap and easy to use."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Illusions show that the brain guesses to build a picture of the world.",
+        "Illusions show that the eyes always work badly.",
+        "Illusions show that the brain records everything like a camera.",
+        "The text explains that perception is not a camera, because the brain makes guesses.",
+        [
+          "Illusions show that perception is not a camera",
+          "The brain receives limited signals from the eyes and constantly makes guesses"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What happens at the blind spot?",
+        "The nerve leaves the retina.",
+        "The eye produces tears.",
+        "The brain stores memories.",
+        "The text says that each eye has a blind spot where the nerve leaves the retina.",
+        "a blind spot where the nerve leaves the retina"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “reveal” means…",
+        "show something hidden.",
+        "hide completely.",
+        "make worse.",
+        "The text says that illusions reveal how a normally successful system works, which means that they show something that is usually hidden.",
+        "they reveal how a normally successful system works"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “even after measuring” refers to…",
+        "the line that looks longer.",
+        "the blind spot.",
+        "the retina.",
+        "The sentence says that people keep seeing one line as longer even after measuring, so the line still looks longer to them.",
+        "they keep seeing it that way even after measuring"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who discovered the Müller-Lyer illusion.",
+        "What the brain uses to make guesses.",
+        "What fills the gap at the blind spot.",
+        "The text does not say who discovered the illusion. It says what the brain uses to make guesses and what fills the gap.",
+        [
+          "It uses past experience, context and shortcuts",
+          "the brain fills the gap using the surroundings"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "People may perceive the same thing in different ways.",
+        "All people see exactly the same picture.",
+        "Illusions work only on some people.",
+        "The text says that two people can look at the same thing and perceive it differently.",
+        "two people can look at the same thing and perceive it differently"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Growth mindset helps a little, but it is one factor among many.",
+        "Growth mindset has been proved to solve every problem in school.",
+        "Growth mindset has no effect on anyone at all.",
+        "The text explains that large studies found a small average effect and that beliefs matter alongside real support.",
+        [
+          "the average effect is small",
+          "they are one factor among many"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do people with a fixed mindset believe?",
+        "That abilities are mostly set at birth.",
+        "That abilities develop through effort.",
+        "That abilities do not exist.",
+        "The text says that people with a fixed mindset believe that abilities such as intelligence are mostly set at birth.",
+        "believe that abilities such as intelligence are mostly set at birth"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “struggling” means…",
+        "having difficulty.",
+        "winning easily.",
+        "traveling fast.",
+        "The text says that the effect may be larger for students who are struggling, which means students who are having difficulty.",
+        "students who are struggling"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “they work best” refers to…",
+        "beliefs about learning.",
+        "critics.",
+        "large studies.",
+        "The sentence says that beliefs about learning matter, but they are one factor among many, and they work best when combined with real support.",
+        "beliefs about learning matter, but they are one factor among many, and they work best"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many students took part in each study.",
+        "Who popularized the two mindsets.",
+        "What critics say about praising effort.",
+        "The text does not say how many students took part. It says who popularized the mindsets and what critics say about praise.",
+        [
+          "The psychologist Carol Dweck popularized the idea of two mindsets",
+          "praising effort alone is not enough"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why can a small effect still be worth having?",
+        "The method may be cheap and easy to use.",
+        "Small effects are always the most important.",
+        "The method is very difficult.",
+        "The text says that even small effects can be worth having when the method is cheap and easy to use.",
+        "Even small effects can be worth having when the method is cheap and easy to use"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "illusion",
+          "something that seems different from what it really is"
+        ],
+        [
+          "perception",
+          "the way the brain understands what the senses report"
+        ],
+        [
+          "context",
+          "the situation in which something appears"
+        ],
+        [
+          "retina",
+          "the layer at the back of the eye that senses light"
+        ],
+        [
+          "perceive",
+          "to notice through the senses"
+        ]
+      ],
+      "B": [
+        [
+          "popularized",
+          "made widely known"
+        ],
+        [
+          "intelligence",
+          "the ability to learn and understand"
+        ],
+        [
+          "strategies",
+          "plans for achieving something"
+        ],
+        [
+          "average",
+          "typical when many results are combined"
+        ],
+        [
+          "critics",
+          "people who point out faults"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 196,
+    "slug": "unseen-reading-part-196",
+    "theme": "The Start of Farming",
+    "blurb": "the first farmers and the plow, how animals were tamed",
+    "texts": {
+      "A": {
+        "title": "The First Farmers and the Plow",
+        "text": "For most of human history, people lived by hunting animals and gathering wild plants. Around 10,000 years ago, in several parts of the world, some groups began to plant seeds and to care for crops. One of the earliest regions was the Fertile Crescent, a curved area of land in the Middle East, where people grew wheat and barley. Farming meant that people could stay in one place, store extra grain and support larger villages. Early farmers dug the soil with sticks and hoes, but later they invented the plow, a tool that cuts and turns the soil so that seeds can grow more easily. The first plows, pulled by people and then by animals, appeared several thousand years ago. A plow lets a family farm much more land. The wheel, in use in Mesopotamia by about 3500 BCE, also changed farming and trade, because carts could carry heavy loads. Farming changed human life more than almost any other invention."
+      },
+      "B": {
+        "title": "How Animals Were Tamed",
+        "text": "Dogs were probably the first animals that people tamed, perhaps more than 15,000 years ago, when wolves came near human camps to eat leftover food and over many generations became friendlier. Scientists still debate when and where this happened. Later, in the time of the first farmers, people kept sheep, goats, cattle and pigs for meat, milk and skins. The process is called domestication: animals are bred over many generations so that they become calmer, easier to control and more useful to people. Cattle and horses were also trained to pull plows and carts, and the horse later made travel and messages much faster. Animals gave people not only food but also power for work, wool for clothes and manure for the fields. However, living close to animals had a cost: some diseases passed from animals to people, which is one reason why early villages could be unhealthy."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Farming allowed people to settle, and tools like the plow changed life.",
+        "Farming was invented in the twenty-first century.",
+        "Farming made people move to a new place every week.",
+        "The text explains how farming began and how the plow and the wheel changed life.",
+        [
+          "some groups began to plant seeds and to care for crops",
+          "Farming changed human life more than almost any other invention"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Which two crops did people grow in the Fertile Crescent?",
+        "Wheat and barley.",
+        "Rice and maize.",
+        "Potatoes and tomatoes.",
+        "The text says that people in the Fertile Crescent grew wheat and barley.",
+        "where people grew wheat and barley"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “support” in “support larger villages” means…",
+        "provide enough food for.",
+        "fall down on.",
+        "stay away from.",
+        "The text says that farming meant people could support larger villages, which means that they could provide enough food for more people.",
+        "support larger villages"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “later they invented the plow” refers to…",
+        "the early farmers.",
+        "the hoes.",
+        "the animals.",
+        "The sentence says that early farmers dug the soil with sticks and hoes, but later the farmers invented the plow.",
+        "Early farmers dug the soil with sticks and hoes, but later they invented the plow"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who invented the first plow.",
+        "What early farmers dug the soil with.",
+        "Where the wheel was used by about 3500 BCE.",
+        "The text does not say who invented the first plow. It says what early farmers used to dig and where the wheel was used.",
+        [
+          "Early farmers dug the soil with sticks and hoes",
+          "The wheel, in use in Mesopotamia by about 3500 BCE"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why did farming lead to larger villages?",
+        "Extra stored grain could feed more people in one place.",
+        "Wild animals no longer lived near the villages.",
+        "The plow made people travel more.",
+        "The text says that farming meant people could store extra grain and support larger villages.",
+        "store extra grain and support larger villages"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "People tamed animals, which gave food, work and also risks.",
+        "People tamed animals only to keep them as pets at home.",
+        "People never tamed any animals other than the dog.",
+        "The text explains domestication and describes both the benefits and the costs.",
+        [
+          "The process is called domestication",
+          "living close to animals had a cost"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Which animals were probably the first to be tamed?",
+        "Dogs.",
+        "Horses.",
+        "Pigs.",
+        "The text says that dogs were probably the first animals that people tamed.",
+        "Dogs were probably the first animals that people tamed"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “debate” means…",
+        "discuss with different opinions.",
+        "agree completely with each other.",
+        "forget quickly after hearing it.",
+        "The text says that scientists still debate when and where this happened, which means that they discuss it with different opinions.",
+        "Scientists still debate when and where this happened"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which is one reason” refers to…",
+        "diseases passing from animals to people.",
+        "the time when the first farmers lived.",
+        "the use of manure on the fields.",
+        "The sentence says that some diseases passed from animals to people, which is one reason why early villages could be unhealthy.",
+        "some diseases passed from animals to people, which is one reason why early villages could be unhealthy"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many dogs lived in the first villages.",
+        "What people kept animals for.",
+        "What cattle and horses were trained to do.",
+        "The text does not say how many dogs lived in the first villages. It says what people kept animals for and what cattle and horses were trained to do.",
+        [
+          "for meat, milk and skins",
+          "trained to pull plows and carts"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why did wolves become friendlier over generations?",
+        "The friendlier ones could stay near people.",
+        "People gave all the wolves a daily bath.",
+        "Wolves began to farm the land nearby.",
+        "The text says that wolves came near camps to eat leftover food and over many generations became friendlier.",
+        "wolves came near human camps to eat leftover food and over many generations became friendlier"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "gathering",
+          "collecting from nature"
+        ],
+        [
+          "crops",
+          "plants grown for food"
+        ],
+        [
+          "grain",
+          "the seeds of plants such as wheat"
+        ],
+        [
+          "plow",
+          "a farm tool that turns the soil"
+        ],
+        [
+          "loads",
+          "things that are carried"
+        ]
+      ],
+      "B": [
+        [
+          "tamed",
+          "made gentle and used to people"
+        ],
+        [
+          "leftover",
+          "remaining after a meal"
+        ],
+        [
+          "generations",
+          "groups of animals or people born at about the same time"
+        ],
+        [
+          "domestication",
+          "the process of making animals live with people"
+        ],
+        [
+          "manure",
+          "animal waste used to feed the soil"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 197,
+    "slug": "unseen-reading-part-197",
+    "theme": "Ancient Builders",
+    "blurb": "how the Great Pyramid was built, the Inca road system",
+    "texts": {
+      "A": {
+        "title": "How the Great Pyramid Was Built",
+        "text": "The Great Pyramid of Giza, built for the king Khufu around 2560 BCE, was the tallest human-made structure for nearly four thousand years. Its builders used simple tools and clever organization. Stone was cut in quarries with copper tools and wooden wedges, and large blocks were dragged on wooden sledges. Studies suggest that workers may have poured water on the sand in front of a sledge, which makes the sand firmer and reduces the effort of pulling. Ramps probably helped to raise the stones, although experts disagree about their exact shape. For a long time, many people thought that slaves built the pyramids. Archaeologists today have found workers’ towns near the pyramids, with bakeries, houses and tombs, which suggest that most of the builders were paid or supported laborers who worked in teams. The work needed thousands of people, careful planning and a good food supply."
+      },
+      "B": {
+        "title": "The Inca Road System",
+        "text": "The Inca Empire had no wheeled carts and no horses, yet it built one of the greatest road systems of the ancient world. The Qhapaq Ñan, as it is called in Quechua, ran along the Andes mountains and down to the coast, and in total covered more than 30,000 kilometers. The roads were made of stone paths, steps cut into steep slopes, drains and rope bridges woven from grass. The most famous, the Q’eswachaka bridge in Peru, is still rebuilt by local communities every year. Along the roads there were rest houses and storehouses. Trained runners called chasquis carried messages and small goods in relays: each runner ran a short stretch and passed the message to the next, so news could travel hundreds of kilometers in a few days. The system was used by llamas, travelers and officials. In 2014, UNESCO listed parts of the road system as a World Heritage Site shared by six countries."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Great Pyramid was built with simple tools and careful planning.",
+        "The Great Pyramid was built with modern machines and cranes.",
+        "The Great Pyramid was built by a single worker in one year.",
+        "The text explains the tools, methods and workforce used to build the Great Pyramid.",
+        [
+          "Its builders used simple tools and clever organization",
+          "The work needed thousands of people, careful planning and a good food supply"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What were large blocks dragged on?",
+        "Wooden sledges.",
+        "Metal wheels.",
+        "Cotton ropes only.",
+        "The text says that large blocks were dragged on wooden sledges.",
+        "large blocks were dragged on wooden sledges"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “firmer” means…",
+        "harder and more solid.",
+        "softer and looser.",
+        "hotter and drier.",
+        "The text says that water makes the sand firmer, which means harder and more solid, so a sledge slides more easily.",
+        "which makes the sand firmer"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “their” in “their exact shape” refers to…",
+        "the ramps.",
+        "the experts.",
+        "the stones.",
+        "The sentence says that ramps probably helped to raise the stones, although experts disagree about the exact shape of the ramps.",
+        "Ramps probably helped to raise the stones, although experts disagree about their exact shape"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many blocks the pyramid contains.",
+        "What the stone was cut with.",
+        "What archaeologists found near the pyramids.",
+        "The text does not say how many blocks the pyramid contains. It says what the stone was cut with and what archaeologists found.",
+        [
+          "cut in quarries with copper tools and wooden wedges",
+          "workers’ towns near the pyramids, with bakeries, houses and tombs"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What do the workers’ towns suggest?",
+        "The builders were cared for and not just slaves.",
+        "The pyramid was built in a single week.",
+        "The builders lived far away from the site.",
+        "The text says that workers’ towns with bakeries, houses and tombs suggest that most builders were paid or supported laborers.",
+        "which suggest that most of the builders were paid or supported laborers who worked in teams"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Inca built a huge road system without wheels or horses.",
+        "The Inca built roads only for wheeled carts.",
+        "The Inca roads were small and used by few people.",
+        "The text explains how the Inca built and used a large road system without wheeled carts or horses.",
+        [
+          "it built one of the greatest road systems of the ancient world",
+          "covered more than 30,000 kilometers"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What were the Inca bridges woven from?",
+        "Grass.",
+        "Iron.",
+        "Cotton and silk.",
+        "The text says that the rope bridges were woven from grass.",
+        "rope bridges woven from grass"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “stretch” in “a short stretch” means…",
+        "a part of a road.",
+        "a type of food.",
+        "a large building.",
+        "The text says that each runner ran a short stretch and passed the message on, which means a part of the road.",
+        "each runner ran a short stretch"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it built” refers to…",
+        "the Inca Empire.",
+        "the Andes.",
+        "the coast.",
+        "The sentence says that the Inca Empire had no wheeled carts and no horses, yet the empire built one of the greatest road systems.",
+        "The Inca Empire had no wheeled carts and no horses, yet it built one of the greatest road systems"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people worked on the roads.",
+        "What the chasquis carried.",
+        "How many countries share the World Heritage Site.",
+        "The text does not say how many people worked on the roads. It says what the chasquis carried and how many countries share the site.",
+        [
+          "carried messages and small goods",
+          "shared by six countries"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why could news travel so far in a few days?",
+        "Runners passed the message on to fresh runners.",
+        "One runner never stopped for days.",
+        "Horses carried the messages.",
+        "The text says that each runner ran a short stretch and passed the message to the next, so news could travel hundreds of kilometers in a few days.",
+        "each runner ran a short stretch and passed the message to the next"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "quarries",
+          "places where stone is cut from the ground"
+        ],
+        [
+          "wedges",
+          "pieces of material thick at one end and thin at the other"
+        ],
+        [
+          "sledges",
+          "flat vehicles pulled over the ground without wheels"
+        ],
+        [
+          "archaeologists",
+          "scientists who study the remains of the past"
+        ],
+        [
+          "laborers",
+          "people who do physical work"
+        ]
+      ],
+      "B": [
+        [
+          "relays",
+          "a way of working in which each person does one part and passes on"
+        ],
+        [
+          "storehouses",
+          "buildings where goods are kept"
+        ],
+        [
+          "steep",
+          "rising or falling very sharply"
+        ],
+        [
+          "woven",
+          "made by crossing threads over and under each other"
+        ],
+        [
+          "communities",
+          "groups of people living in the same area"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 198,
+    "slug": "unseen-reading-part-198",
+    "theme": "Power and Flight",
+    "blurb": "steam engines and the factory age, balloons and the Wright brothers",
+    "texts": {
+      "A": {
+        "title": "Steam and the Factory Age",
+        "text": "Before the 1700s, most work was done by muscles, water wheels and wind. In 1712, the English inventor Thomas Newcomen built a steam engine to pump water out of mines. Later, James Watt improved the design, and by the end of the century steam engines could turn wheels in factories and move machines. Steam power did not depend on rivers or wind, so factories could be built in cities and near coal. This was a key part of the Industrial Revolution, which began in Britain in the eighteenth century. Cloth, iron and pottery could be made faster and cheaper than by hand. Steam also moved trains and ships. The change brought wealth and new jobs, but also crowded cities, dirty air and long working hours, especially for children. Over time, laws and unions improved conditions. The age of steam shows how one invention can change how and where people live."
+      },
+      "B": {
+        "title": "Balloons and the Wright Brothers",
+        "text": "In 1783, the brothers Joseph and Étienne Montgolfier in France launched a hot-air balloon, and later that year the first people flew in one over Paris. The balloon rose because hot air is lighter than the cooler air around it. Balloons, however, drift with the wind and cannot be steered easily. The next step was a machine heavier than air. On December 17, 1903, at Kitty Hawk in North Carolina, Orville and Wilbur Wright made the first powered, controlled flights. The first lasted twelve seconds and covered about 36 meters. A plane stays up because of its wings: as the plane moves forward, the shape and angle of the wing push air downward, and the wing is pushed upward in response. This upward force is called lift. An engine and a propeller provide thrust to move the plane forward. In only about sixty-six years after Kitty Hawk, humans landed on the Moon."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The steam engine powered factories and changed how and where people lived.",
+        "The steam engine was used only to move ships.",
+        "The steam engine was invented before the 1700s by Watt.",
+        "The text explains how the steam engine helped to start the Industrial Revolution and changed life.",
+        [
+          "This was a key part of the Industrial Revolution",
+          "The age of steam shows how one invention can change how and where people live"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was Newcomen’s steam engine built to do?",
+        "Pump water out of mines.",
+        "Turn wheels in cotton factories.",
+        "Move trains along rails.",
+        "The text says that Newcomen built a steam engine to pump water out of mines.",
+        "to pump water out of mines"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “depend on” means…",
+        "need in order to work.",
+        "stay far from.",
+        "be bigger than.",
+        "The text says that steam power did not depend on rivers or wind, which means that it did not need them in order to work.",
+        "Steam power did not depend on rivers or wind"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “This” in “This was a key part of the Industrial Revolution” refers to…",
+        "building factories in cities and near coal.",
+        "the invention of water wheels.",
+        "the wind.",
+        "The sentence before says that factories could be built in cities and near coal, and this was a key part of the Industrial Revolution.",
+        "so factories could be built in cities and near coal. This was a key part of the Industrial Revolution"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many factories Britain had in 1800.",
+        "What most work was done by before the 1700s.",
+        "What the change brought besides wealth.",
+        "The text does not say how many factories Britain had in 1800. It says what most work was done by before the 1700s and what else the change brought.",
+        [
+          "most work was done by muscles, water wheels and wind",
+          "crowded cities, dirty air and long working hours"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the text suggest about progress?",
+        "It can bring both benefits and problems.",
+        "It brings only benefits to everyone.",
+        "It brings only problems to everyone.",
+        "The text says that the change brought wealth and new jobs, but also crowded cities, dirty air and long working hours.",
+        "The change brought wealth and new jobs, but also crowded cities, dirty air and long working hours"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "People flew in balloons first and in powered planes later.",
+        "People first flew in planes and later in balloons.",
+        "People have never been able to fly without a balloon.",
+        "The text describes the first balloon flights and the first powered flights by the Wright brothers.",
+        [
+          "the first people flew in one over Paris",
+          "Orville and Wilbur Wright made the first powered, controlled flights"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How long did the first flight of the Wright brothers last?",
+        "Twelve seconds.",
+        "Twelve minutes.",
+        "Twelve hours.",
+        "The text says that the first flight lasted twelve seconds.",
+        "The first lasted twelve seconds"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “drift” means…",
+        "move slowly without control.",
+        "fly very fast.",
+        "stay completely still.",
+        "The text says that balloons drift with the wind and cannot be steered easily, which means that they move slowly without control.",
+        "Balloons, however, drift with the wind"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “one” in “the first people flew in one” refers to…",
+        "a hot-air balloon.",
+        "a plane.",
+        "a boat.",
+        "The sentence says that the Montgolfier brothers launched a hot-air balloon, and later that year the first people flew in a hot-air balloon over Paris.",
+        "launched a hot-air balloon, and later that year the first people flew in one over Paris"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the Wright brothers’ plane weighed.",
+        "Why a hot-air balloon rises in the air.",
+        "What the force called lift is.",
+        "The text does not say how much the plane weighed. It says why a hot-air balloon rises and what lift is.",
+        [
+          "hot air is lighter than the cooler air around it",
+          "This upward force is called lift"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Flight developed very quickly after the first plane.",
+        "Flight developed very slowly for centuries.",
+        "People landed on the Moon in balloons.",
+        "The text says that only about sixty-six years after Kitty Hawk, humans landed on the Moon, which suggests rapid progress.",
+        "In only about sixty-six years after Kitty Hawk, humans landed on the Moon"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "muscles",
+          "the parts of the body that produce movement"
+        ],
+        [
+          "pump",
+          "to move liquid from one place to another"
+        ],
+        [
+          "coal",
+          "a black rock burned for fuel"
+        ],
+        [
+          "unions",
+          "organizations that protect the interests of workers"
+        ],
+        [
+          "conditions",
+          "the situation in which people live or work"
+        ]
+      ],
+      "B": [
+        [
+          "launched",
+          "sent into the air or into action"
+        ],
+        [
+          "steered",
+          "guided in a chosen direction"
+        ],
+        [
+          "controlled",
+          "directed by the person using it"
+        ],
+        [
+          "propeller",
+          "a set of turning blades that pushes a plane"
+        ],
+        [
+          "thrust",
+          "the force that pushes something forward"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 199,
+    "slug": "unseen-reading-part-199",
+    "theme": "Foods That Traveled",
+    "blurb": "how tea, coffee and chocolate crossed the world, how the potato and tomato reached new continents",
+    "texts": {
+      "A": {
+        "title": "Tea, Coffee and Chocolate",
+        "text": "Three popular drinks began in different parts of the world. Tea comes from the leaves of a plant that grew in southern China, and people there drank it for centuries before it reached Europe in the 1600s. Coffee comes from the seeds of a shrub that grew wild in Ethiopia. By the fifteenth century, people in Yemen were growing it and drinking it, and from there it spread through the Middle East to Europe. Chocolate comes from cacao seeds, first used in Mesoamerica more than three thousand years ago. The Maya and Aztecs drank it as a bitter, frothy drink, often with spices. Spanish travelers brought it to Europe in the 1500s, where people added sugar. Solid eating chocolate appeared only in the nineteenth century. Each drink spread along trade routes and created new habits, such as the coffeehouse and afternoon tea. Their farming also shaped history: all three were grown on large plantations, often using forced labor."
+      },
+      "B": {
+        "title": "The Potato and the Tomato",
+        "text": "Many foods that seem old in Europe and Asia came from the Americas. The potato was first grown in the Andes mountains of South America, thousands of years ago. When it reached Europe in the 1500s, many people distrusted it because it was unfamiliar and grew underground. Later it became a key crop, since it grew in poor soil and fed many people. The tomato was grown in Mexico and Central America. Europeans first thought that it might be poisonous, partly because it belongs to the same plant family as some poisonous plants, and for years it was grown mainly as an ornamental plant. Today it is hard to imagine Italian pasta sauce without tomatoes, or Irish and Polish dishes without potatoes. The movement of plants, animals and diseases between the Americas and the rest of the world after 1492 is called the Columbian Exchange. It changed diets everywhere, for example by bringing maize, peppers and cacao to Asia and Africa, and wheat, rice and horses to the Americas."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Tea, coffee and chocolate came from different regions and spread along trade routes.",
+        "Tea, coffee and chocolate all began in Europe.",
+        "Tea, coffee and chocolate were invented in the twentieth century.",
+        "The text explains where each drink began and how each spread along trade routes.",
+        [
+          "Three popular drinks began in different parts of the world",
+          "Each drink spread along trade routes"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Where did coffee grow wild?",
+        "Ethiopia.",
+        "Mexico.",
+        "Southern China.",
+        "The text says that coffee comes from a shrub that grew wild in Ethiopia.",
+        "a shrub that grew wild in Ethiopia"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “spread” means…",
+        "moved from one place to others.",
+        "stayed in one place.",
+        "became smaller.",
+        "The text says that coffee spread through the Middle East to Europe, which means that it moved from place to place.",
+        "from there it spread through the Middle East to Europe"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “brought it to Europe” refers to…",
+        "chocolate.",
+        "tea.",
+        "sugar.",
+        "The sentence is about chocolate, and Spanish travelers brought chocolate to Europe in the 1500s.",
+        "Spanish travelers brought it to Europe in the 1500s, where people added sugar"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which drink is the most popular today.",
+        "How the Maya and Aztecs drank chocolate.",
+        "When solid eating chocolate appeared.",
+        "The text does not say which drink is the most popular today. It says how the Maya and Aztecs drank chocolate and when solid chocolate appeared.",
+        [
+          "drank it as a bitter, frothy drink",
+          "Solid eating chocolate appeared only in the nineteenth century"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Growing these crops often involved hard and unfair work.",
+        "These crops were grown only in small gardens.",
+        "The farming of these crops had no effect on history.",
+        "The text says that all three were grown on large plantations, often using forced labor.",
+        "all three were grown on large plantations, often using forced labor"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Foods from the Americas, like the potato and the tomato, changed diets worldwide.",
+        "Foods from Europe were taken to the Americas only.",
+        "Foods from the Americas were accepted at once everywhere.",
+        "The text explains that the potato and the tomato came from the Americas and that the Columbian Exchange changed diets everywhere.",
+        [
+          "Many foods that seem old in Europe and Asia came from the Americas",
+          "It changed diets everywhere"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "Where was the potato first grown?",
+        "In the Andes mountains.",
+        "In Italy.",
+        "In Poland.",
+        "The text says that the potato was first grown in the Andes mountains of South America.",
+        "first grown in the Andes mountains of South America"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “key” in “a key crop” means…",
+        "very important.",
+        "very small.",
+        "very new.",
+        "The text says that the potato became a key crop because it grew in poor soil and fed many people, which means a very important crop.",
+        "Later it became a key crop"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “It changed diets everywhere” refers to…",
+        "the Columbian Exchange.",
+        "the potato.",
+        "the tomato.",
+        "The sentence before names the Columbian Exchange, and the exchange changed diets everywhere.",
+        "is called the Columbian Exchange. It changed diets everywhere"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many tomatoes are grown in Italy today.",
+        "Why Europeans distrusted the potato.",
+        "What was brought to the Americas.",
+        "The text does not say how many tomatoes are grown in Italy. It says why Europeans distrusted the potato and what was brought to the Americas.",
+        [
+          "because it was unfamiliar and grew underground",
+          "wheat, rice and horses to the Americas"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why did the potato become important in Europe?",
+        "It grew in poor soil and fed many people.",
+        "It was easy to turn into sugar.",
+        "It grew only in rich soil.",
+        "The text says that the potato became a key crop since it grew in poor soil and fed many people.",
+        "since it grew in poor soil and fed many people"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "shrub",
+          "a woody plant smaller than a tree"
+        ],
+        [
+          "cacao",
+          "the tree seed from which chocolate is made"
+        ],
+        [
+          "bitter",
+          "having a sharp, unsweet taste"
+        ],
+        [
+          "frothy",
+          "covered with small bubbles"
+        ],
+        [
+          "plantations",
+          "large farms that grow one main crop"
+        ]
+      ],
+      "B": [
+        [
+          "distrusted",
+          "did not trust"
+        ],
+        [
+          "underground",
+          "below the surface of the ground"
+        ],
+        [
+          "poisonous",
+          "able to harm or kill if eaten"
+        ],
+        [
+          "ornamental",
+          "grown for decoration"
+        ],
+        [
+          "diets",
+          "the kinds of food that people eat"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 200,
+    "slug": "unseen-reading-part-200",
+    "theme": "City Life Long Ago",
+    "blurb": "Roman aqueducts and baths, the first cities",
+    "texts": {
+      "A": {
+        "title": "Roman Aqueducts and Baths",
+        "text": "A big city needs large amounts of clean water. The Romans solved this with aqueducts, channels and bridges that carried water from springs and rivers, sometimes over many kilometers, into cities. The first aqueduct of Rome was built in 312 BCE, and eventually eleven aqueducts supplied the city. The Romans had no pumps, so they used gravity: the channel sloped downhill very gently, often only a few centimeters every hundred meters. Where a valley lay in the way, they built tall stone arches, like the Pont du Gard in France, which still stands. In the city, the water filled fountains, public baths and latrines, and wealthy houses had pipes. The public baths were more than places to wash: people exercised, met friends, did business and relaxed. Entry was cheap, so many people could use them. The Roman water system was a great achievement of engineering and public health."
+      },
+      "B": {
+        "title": "The First Cities",
+        "text": "The first cities appeared about 5,000 to 6,000 years ago. One of the earliest was Uruk in Mesopotamia, in today’s Iraq, which may have held tens of thousands of people. Cities needed farmers who produced extra food, so that other people could work as potters, builders, traders and officials. They also needed ways to manage the crowd: the people of Uruk used clay tablets to record goods, and this led to early writing. Around 2500 BCE, in the Indus Valley, the city of Mohenjo-daro was carefully planned, with straight streets in a grid, brick houses and drains for waste water. Many houses had their own wells and bathrooms. Cities brought trade, crafts and ideas together, but also crowding and disease. Historians do not know everything about these early cities, because the writing of the Indus Valley remains undeciphered, but the remains show that city planning is very old."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The Romans brought water into cities with aqueducts.",
+        "The Romans carried water into cities with big pumps.",
+        "The Romans did not bring water into their cities.",
+        "The text explains how Roman aqueducts worked and how the water was used in cities.",
+        [
+          "The Romans solved this with aqueducts",
+          "The Roman water system was a great achievement"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What force did the aqueducts use to move water?",
+        "Gravity.",
+        "Pumps.",
+        "Wind.",
+        "The text says that the Romans had no pumps, so they used gravity.",
+        "they used gravity"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “sloped” means…",
+        "went gently up or down.",
+        "stayed perfectly flat.",
+        "moved side to side.",
+        "The text says that the channel sloped downhill very gently, which means that it went gently down.",
+        "the channel sloped downhill very gently"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “which” in “which still stands” refers to…",
+        "the Pont du Gard.",
+        "the valley.",
+        "the water.",
+        "The sentence says that the Romans built tall stone arches, like the Pont du Gard in France, which still stands.",
+        "like the Pont du Gard in France, which still stands"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What the entry price of a bath was.",
+        "When the first aqueduct of Rome was built.",
+        "What people did in the public baths.",
+        "The text does not give the entry price. It says when the first aqueduct was built and what people did in the baths.",
+        [
+          "The first aqueduct of Rome was built in 312 BCE",
+          "people exercised, met friends, did business and relaxed"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why were baths popular with many people?",
+        "Entry was cheap, and they were also places to meet.",
+        "They were free only for wealthy people.",
+        "They were far outside the city.",
+        "The text says that baths were places to exercise, meet friends and relax, and that entry was cheap.",
+        "Entry was cheap, so many people could use them"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The first cities needed extra food and some were planned.",
+        "The first cities appeared only about 500 years ago.",
+        "The first cities had no streets or any houses.",
+        "The text explains what early cities needed and describes Uruk and Mohenjo-daro.",
+        [
+          "Cities needed farmers who produced extra food",
+          "the city of Mohenjo-daro was carefully planned"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the people of Uruk use clay tablets for?",
+        "To record goods.",
+        "To build houses.",
+        "To make pots.",
+        "The text says that the people of Uruk used clay tablets to record goods.",
+        "used clay tablets to record goods"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “manage” means…",
+        "organize and control.",
+        "forget completely.",
+        "build quickly.",
+        "The text says that cities needed ways to manage the crowd, which means to organize and control it.",
+        "ways to manage the crowd"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “which” in “which may have held tens of thousands” refers to…",
+        "Uruk.",
+        "Mesopotamia.",
+        "Iraq.",
+        "The sentence says that Uruk was one of the earliest cities, and Uruk may have held tens of thousands of people.",
+        "Uruk in Mesopotamia, in today’s Iraq, which may have held tens of thousands of people"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Who designed the streets of Mohenjo-daro.",
+        "What many houses had.",
+        "What the cities brought together.",
+        "The text does not say who designed the streets. It says what many houses had and what cities brought together.",
+        [
+          "Many houses had their own wells and bathrooms",
+          "Cities brought trade, crafts and ideas together"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Remains can teach us even if writing is unread.",
+        "The remains show nothing about early cities.",
+        "All early writing has now been read.",
+        "The text says that historians do not know everything because the Indus writing is undeciphered, but the remains show that city planning is very old.",
+        "but the remains show that city planning is very old"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "aqueducts",
+          "structures that carry water over long distances"
+        ],
+        [
+          "channels",
+          "long narrow paths for water"
+        ],
+        [
+          "gravity",
+          "the force that pulls things downward"
+        ],
+        [
+          "latrines",
+          "public toilets"
+        ],
+        [
+          "engineering",
+          "the use of science to design and build things"
+        ]
+      ],
+      "B": [
+        [
+          "potters",
+          "people who make pots from clay"
+        ],
+        [
+          "officials",
+          "people who hold public jobs"
+        ],
+        [
+          "tablets",
+          "flat pieces of clay or stone used for writing"
+        ],
+        [
+          "grid",
+          "a pattern of straight lines that cross each other"
+        ],
+        [
+          "undeciphered",
+          "not yet read or understood"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 201,
+    "slug": "unseen-reading-part-201",
+    "theme": "Cloth and Pictures",
+    "blurb": "cotton, silk and the story of jeans, the first photograph and moving pictures",
+    "texts": {
+      "A": {
+        "title": "Cotton, Silk and the Story of Jeans",
+        "text": "People have made cloth for thousands of years. Cotton, a soft fiber from a plant, was woven in the Indus Valley and in India more than 5,000 years ago. Silk comes from the cocoons of silkworms. Chinese weavers made silk cloth thousands of years ago and kept the method secret for a very long time, which is why silk was so valuable on the trade routes. Many modern clothes come from a later invention. In 1873, the tailor Jacob Davis and the businessman Levi Strauss received a patent for work trousers with metal rivets at the weak points, such as the corners of pockets. The cloth was a strong cotton fabric called denim, and the trousers were later called jeans. Their names probably come from the French city of Nîmes, where a similar fabric was made, and from the Italian city of Genoa, though experts debate the details. First worn by miners and farmers, jeans became a style for everyone."
+      },
+      "B": {
+        "title": "The First Photograph and Moving Pictures",
+        "text": "The first surviving photograph was made by the French inventor Nicéphore Niépce around 1826 or 1827. He placed a metal plate coated with a light-sensitive substance in a camera and pointed it out of a window. After a very long exposure, probably many hours, the plate showed a blurry view of rooftops. In 1839, Louis Daguerre announced a faster process that gave sharp pictures, called daguerreotypes. Moving pictures came later. In 1878, the photographer Eadweard Muybridge used a row of cameras to photograph a running horse, and the pictures showed how its legs move. The key idea is that the eye sees a quick series of still pictures as motion. In December 1895, the Lumière brothers showed short films to a paying audience in Paris. Within a few years, cinemas opened in many countries, and films became a new art form."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Cloth has a long history, and jeans began as work wear.",
+        "Cloth was invented only in the twentieth century.",
+        "Jeans were first made of silk for the very rich.",
+        "The text describes the early history of cotton and silk and the invention of jeans.",
+        [
+          "People have made cloth for thousands of years",
+          "jeans became a style for everyone"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does silk come from?",
+        "The cocoons of silkworms.",
+        "The seeds of a plant.",
+        "The wool of sheep.",
+        "The text says that silk comes from the cocoons of silkworms.",
+        "Silk comes from the cocoons of silkworms"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “valuable” means…",
+        "worth a lot.",
+        "worth little.",
+        "very rough.",
+        "The text says that silk was so valuable on the trade routes because the method was kept secret, which means that it was worth a lot.",
+        "silk was so valuable on the trade routes"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “Their” in “Their names probably come from” refers to…",
+        "the cloth and the trousers.",
+        "the miners and farmers.",
+        "the Chinese weavers.",
+        "The sentence before says that the cloth was called denim and the trousers jeans, and their names probably come from French and Italian cities.",
+        "a strong cotton fabric called denim, and the trousers were later called jeans. Their names probably come from"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many pairs of jeans are sold each year.",
+        "Why the metal rivets were added.",
+        "Who the first people to wear jeans were.",
+        "The text does not say how many pairs are sold each year. It says why rivets were added and who first wore jeans.",
+        [
+          "metal rivets at the weak points, such as the corners of pockets",
+          "First worn by miners and farmers"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why did the rivets make the trousers better?",
+        "They strengthened the places that wore out first.",
+        "They made the trousers lighter.",
+        "They changed the color of the cloth.",
+        "The text says that rivets were put at the weak points, such as the corners of pockets.",
+        "rivets at the weak points, such as the corners of pockets"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Photography began with slow pictures and led to films.",
+        "Photography began with fast pictures in color.",
+        "Films were invented long before photographs.",
+        "The text explains the first photograph, faster processes and the first moving pictures.",
+        [
+          "The first surviving photograph was made by the French inventor Nicéphore Niépce",
+          "films became a new art form"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did Muybridge photograph in 1878?",
+        "A running horse.",
+        "A rooftop view.",
+        "A group of dancers.",
+        "The text says that Muybridge used a row of cameras to photograph a running horse.",
+        "to photograph a running horse"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “blurry” means…",
+        "not clear.",
+        "very bright.",
+        "very small.",
+        "The text says that the plate showed a blurry view of rooftops, which means a view that was not clear.",
+        "a blurry view of rooftops"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “its” in “how its legs move” refers to…",
+        "the horse.",
+        "the camera.",
+        "the photographer.",
+        "The sentence says that the pictures showed how the horse’s legs move.",
+        "a running horse, and the pictures showed how its legs move"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the first camera cost.",
+        "What Daguerre announced in 1839.",
+        "Where the Lumière brothers showed films.",
+        "The text does not say how much the first camera cost. It says what Daguerre announced and where the Lumière brothers showed films.",
+        [
+          "Louis Daguerre announced a faster process that gave sharp pictures",
+          "showed short films to a paying audience in Paris"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why can still pictures look like motion in a film?",
+        "The eye sees a quick series of them as movement.",
+        "The pictures are drawn on a moving screen.",
+        "Each picture is a very long exposure.",
+        "The text says that the eye sees a quick series of still pictures as motion.",
+        "the eye sees a quick series of still pictures as motion"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "fiber",
+          "a thin thread used to make cloth"
+        ],
+        [
+          "cocoons",
+          "the cases that insects spin around themselves"
+        ],
+        [
+          "patent",
+          "an official right to be the only maker of an invention"
+        ],
+        [
+          "rivets",
+          "small metal pins that hold material together"
+        ],
+        [
+          "denim",
+          "a strong cotton cloth used for jeans"
+        ]
+      ],
+      "B": [
+        [
+          "coated",
+          "covered with a thin layer"
+        ],
+        [
+          "exposure",
+          "the time during which light reaches the film or plate"
+        ],
+        [
+          "process",
+          "a series of steps to make something"
+        ],
+        [
+          "series",
+          "a number of things that follow one another"
+        ],
+        [
+          "audience",
+          "the people who watch a show"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 202,
+    "slug": "unseen-reading-part-202",
+    "theme": "Seeing Small and Far",
+    "blurb": "the microscope and the tiny world, the telescope and the Moon",
+    "texts": {
+      "A": {
+        "title": "The Microscope: A New World",
+        "text": "In the 1660s, the English scientist Robert Hooke looked at a thin slice of cork through a microscope and saw many small boxes, which he called cells. Soon afterwards, in the 1670s, a Dutch cloth merchant, Antonie van Leeuwenhoek, made tiny lenses that could magnify things hundreds of times. He looked at pond water, rain water and even the plaque on his teeth, and found a world of tiny living things that he called animalcules. We now call them microorganisms. His letters to the Royal Society in London amazed scientists. The microscope later helped doctors to see bacteria and to understand that some diseases are caused by germs. Today, powerful microscopes can show viruses and even single atoms. Leeuwenhoek was not trained as a scientist, which shows that curiosity and careful observation can open a new field."
+      },
+      "B": {
+        "title": "The Telescope and the Moon",
+        "text": "The telescope was first made in the Netherlands in 1608, when the spectacle maker Hans Lipperhey applied for a patent for a device that made faraway things look nearer. In 1609, the Italian scientist Galileo Galilei heard about it and built a better one. He pointed it at the sky, which almost no one had done with such an instrument. He saw that the Moon was not a smooth, perfect ball but had mountains, valleys and craters. In 1610 he discovered four moons circling Jupiter and saw that the Milky Way is made of countless stars. These discoveries showed that the sky could be studied like any other part of nature. Telescopes grew larger, and in 1990 the Hubble Space Telescope began to send sharp images from orbit. Modern telescopes now look at galaxies billions of years old."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The microscope opened a hidden world, from cells to tiny living things.",
+        "The microscope was invented to study the stars.",
+        "The microscope showed that nothing exists below the size of an eye.",
+        "The text explains how early microscopes revealed cells and microorganisms and later helped medicine.",
+        [
+          "saw many small boxes, which he called cells",
+          "found a world of tiny living things"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did Hooke see in a thin slice of cork?",
+        "Many small boxes that he called cells.",
+        "Tiny living animals that he called animalcules.",
+        "A drop of pond water.",
+        "The text says that Hooke saw many small boxes, which he called cells.",
+        "saw many small boxes, which he called cells"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “amazed” means…",
+        "filled with great surprise.",
+        "made them feel quite bored.",
+        "made them feel quite angry.",
+        "The text says that his letters amazed scientists, which means that they filled scientists with great surprise.",
+        "His letters to the Royal Society in London amazed scientists"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “them” in “We now call them microorganisms” refers to…",
+        "the animalcules.",
+        "the lenses.",
+        "the scientists.",
+        "The sentence before says that he found tiny living things that he called animalcules, and we now call them microorganisms.",
+        "tiny living things that he called animalcules. We now call them microorganisms"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "What Leeuwenhoek paid for his lenses.",
+        "What work he did for a living.",
+        "What he looked at with the lenses.",
+        "The text does not say what Leeuwenhoek paid for his lenses. It says what his job was and what he looked at.",
+        [
+          "a Dutch cloth merchant",
+          "pond water, rain water and even the plaque on his teeth"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Curiosity matters more than formal training.",
+        "Only trained scientists can make discoveries.",
+        "Cloth merchants are the best scientists.",
+        "The text says that Leeuwenhoek was not trained as a scientist, which shows that curiosity and careful observation can open a new field.",
+        "curiosity and careful observation can open a new field"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Galileo’s telescope showed that the sky can be studied.",
+        "Galileo invented the telescope in the Netherlands.",
+        "Galileo’s telescope showed only a smooth, perfect Moon.",
+        "The text explains that Galileo built a better telescope and made discoveries that changed how the sky was studied.",
+        [
+          "He saw that the Moon was not a smooth, perfect ball",
+          "the sky could be studied like any other part of nature"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did Galileo find circling Jupiter?",
+        "Four moons.",
+        "A large crater.",
+        "A bright comet.",
+        "The text says that Galileo discovered four moons circling Jupiter.",
+        "he discovered four moons circling Jupiter"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “device” means…",
+        "a tool made for a purpose.",
+        "a kind of mountain.",
+        "a type of star.",
+        "The text says that Lipperhey applied for a patent for a device that made faraway things look nearer, which means a tool made for a purpose.",
+        "a device that made faraway things look nearer"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “one” in “built a better one” refers to…",
+        "a telescope.",
+        "a patent.",
+        "a moon.",
+        "The sentence says that Galileo heard about the telescope and built a better telescope.",
+        "Galileo Galilei heard about it and built a better one"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much the first telescope cost.",
+        "Where the telescope was first made.",
+        "What Galileo saw on the Moon.",
+        "The text does not say how much the first telescope cost. It says where the telescope was first made and what Galileo saw on the Moon.",
+        [
+          "first made in the Netherlands in 1608",
+          "mountains, valleys and craters"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "Why does the text mention the Hubble Space Telescope?",
+        "It shows that telescopes kept improving.",
+        "It shows that telescopes stopped changing.",
+        "It shows that Galileo built it.",
+        "The text says that telescopes grew larger and that Hubble began to send sharp images from orbit in 1990.",
+        "Telescopes grew larger, and in 1990 the Hubble Space Telescope began to send sharp images from orbit"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "cork",
+          "a light material from the bark of a tree"
+        ],
+        [
+          "magnify",
+          "to make something look larger"
+        ],
+        [
+          "pond",
+          "a small area of still water"
+        ],
+        [
+          "microorganisms",
+          "living things too small to see without help"
+        ],
+        [
+          "bacteria",
+          "tiny living things that can cause disease"
+        ]
+      ],
+      "B": [
+        [
+          "spectacle",
+          "a lens in a pair of glasses"
+        ],
+        [
+          "patent",
+          "an official right to be the only maker of an invention"
+        ],
+        [
+          "craters",
+          "round holes in the ground made by an impact"
+        ],
+        [
+          "circling",
+          "moving around something in a circle"
+        ],
+        [
+          "orbit",
+          "the curved path of an object around a planet"
+        ]
+      ]
+    }
   }
 ];
