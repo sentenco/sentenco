@@ -14134,5 +14134,2360 @@ export const UNSEEN_PARTS_9 = [
         ]
       ]
     }
+  },
+  {
+    "part": 128,
+    "slug": "unseen-reading-part-128",
+    "theme": "Games and Aggression",
+    "blurb": "do violent video games make people violent, what critics say",
+    "texts": {
+      "A": {
+        "title": "Violent Video Games: What Studies Say",
+        "text": "Many parents worry that violent video games make children violent. Psychologists have studied this question for more than thirty years. In typical experiments, volunteers play a violent or a non-violent game for a short time, and then researchers measure aggression, for example by offering a chance to give an unpleasant noise to another person. Some studies find that players of violent games show slightly more aggressive thoughts, feelings or behavior right afterward. In 2015, a task force of the American Psychological Association reviewed the research and concluded that violent games are linked with higher aggression in players. The same report said that there was not enough evidence to link the games to criminal violence, and that violence has many causes, such as family problems, bullying and mental health. In 2020, the association repeated that the link with aggression is small but reliable, and it warned that it is wrong to say that games cause violent crimes."
+      },
+      "B": {
+        "title": "Violent Video Games: What Critics Say",
+        "text": "Not all researchers accept the idea that violent games increase aggression. Critics make several points. First, many experiments measure aggression with artificial tasks, such as loud noises, which may not show real violence. Second, an effect found in the laboratory right after a game may last only a few minutes. Third, some large studies that follow teenagers over time find little or no link between playing violent games and later aggression once other factors, such as family background and personality, are considered. Critics also note that violent crime fell in many countries while video games became more popular, although this does not prove that games have no effect. Some researchers also question the way in which studies were selected for the reviews and say that published results may be biased, because studies with clear effects are easier to publish. Supporters of a link answer that even small effects can matter across millions of players. Both sides agree that more careful research is needed, and that no single factor explains violent behavior."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Studies link violent games to small aggression, not to crime.",
+        "Studies prove that violent games turn children into criminals.",
+        "Studies show that violent games reduce all aggression.",
+        "The text explains that studies find a small link with aggression, but not enough evidence to link games to criminal violence.",
+        [
+          "violent games are linked with higher aggression in players",
+          "not enough evidence to link the games to criminal violence"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How do experiments often measure aggression?",
+        "By a chance to give someone an unpleasant noise.",
+        "By counting the hours that volunteers play at home.",
+        "By asking teachers to rate how kind each player is.",
+        "The text says that researchers measure aggression, for example by offering a chance to give an unpleasant noise to another person.",
+        "by offering a chance to give an unpleasant noise to another person"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “reviewed” means…",
+        "examined carefully.",
+        "ignored completely.",
+        "paid for.",
+        "The text says that a task force reviewed the research, which means that it examined the research carefully.",
+        "reviewed the research"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “and it warned” refers to…",
+        "the American Psychological Association.",
+        "the research that was reviewed.",
+        "a popular violent video game.",
+        "The sentence says that the association repeated that the link is small but reliable, and the association warned that it is wrong to say that games cause violent crimes.",
+        "and it warned that it is wrong to say that games cause violent crimes"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours a day children play.",
+        "What the 2015 task force concluded.",
+        "What causes violence besides games.",
+        "The text does not say how many hours a day children play. It says what the task force concluded and what else causes violence.",
+        [
+          "violent games are linked with higher aggression in players",
+          "family problems, bullying and mental health"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Aggression is not the same as violent crime.",
+        "Games are proven to cause violent crimes.",
+        "There is no link of any kind at all.",
+        "The text says that the link with aggression is small but reliable, and that it is wrong to say that games cause violent crimes.",
+        "it is wrong to say that games cause violent crimes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Critics doubt that violent games cause real violence.",
+        "Critics agree that violent games cause crime.",
+        "Critics prove that video games have no effect on anyone.",
+        "The text explains that critics question the evidence for a link, while both sides agree that more careful research is needed.",
+        [
+          "Not all researchers accept the idea that violent games increase aggression",
+          "Both sides agree that more careful research is needed"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do some large studies of teenagers find?",
+        "Little or no link after other factors.",
+        "A strong link in every single case.",
+        "That games make all teenagers kinder.",
+        "The text says that some large studies find little or no link once other factors are considered.",
+        "find little or no link between playing violent games and later aggression once other factors"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “question” means…",
+        "doubt.",
+        "praise.",
+        "repeat.",
+        "The text says that some researchers question the way in which studies were selected, which means that they doubt it.",
+        "question the way in which studies were selected"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “although this does not prove” refers to…",
+        "the fall in violent crime.",
+        "the popularity of video games alone.",
+        "the criticism of the studies.",
+        "The sentence says that violent crime fell while games became more popular, although this fall does not prove that games have no effect.",
+        "although this does not prove that games have no effect"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teenagers took part in the studies.",
+        "Why published results may be biased.",
+        "What supporters of a link answer.",
+        "The text does not say how many teenagers took part. It says why results may be biased and what supporters of a link answer.",
+        [
+          "studies with clear effects are easier to publish",
+          "even small effects can matter across millions of players"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The question is not settled.",
+        "The question has been settled by critics.",
+        "Researchers have stopped studying it.",
+        "The text says that both sides agree that more careful research is needed, so the question is not settled.",
+        "more careful research is needed"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "aggression",
+          "angry or violent behavior toward others"
+        ],
+        [
+          "measure",
+          "to find the size or amount of something"
+        ],
+        [
+          "reliable",
+          "giving the same result when tested again"
+        ],
+        [
+          "criminal",
+          "relating to crime"
+        ],
+        [
+          "causes",
+          "things that make something happen"
+        ]
+      ],
+      "B": [
+        [
+          "artificial",
+          "not natural, made by people"
+        ],
+        [
+          "personality",
+          "the way a person usually thinks, feels and acts"
+        ],
+        [
+          "background",
+          "a person’s family and experience"
+        ],
+        [
+          "biased",
+          "unfairly favoring one result"
+        ],
+        [
+          "factor",
+          "one of the things that cause a result"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 129,
+    "slug": "unseen-reading-part-129",
+    "theme": "Free Will",
+    "blurb": "the Libet experiment, why many scientists doubt its conclusion",
+    "texts": {
+      "A": {
+        "title": "The Libet Experiment",
+        "text": "Do we really choose our actions? In the 1980s, the neuroscientist Benjamin Libet did an experiment that surprised many people. Volunteers watched a fast clock and were told to move a finger whenever they felt like it, and to note the clock time when they first felt the wish to move. Libet recorded brain activity with electrodes on the scalp. He found that a slow build-up of electrical activity, called the readiness potential, began about a third of a second before the volunteers said that they decided to move. Libet and many others concluded that the brain starts to prepare an action before we are aware of choosing it. Some people called this proof that free will is an illusion. Libet himself disagreed. He thought that people could still veto the action in the last fraction of a second, which he called free “won’t”. The experiment became one of the most famous in neuroscience, and it is still discussed in books and classes."
+      },
+      "B": {
+        "title": "Why Many Scientists Doubt the Conclusion",
+        "text": "Libet’s result looks like a strong argument against free will, but many scientists and philosophers are not convinced. One problem is the task. The volunteers made a meaningless choice, moving a finger at a random moment, which is very different from a real decision such as choosing a university. Another problem is the timing: people had to estimate the moment when they decided by looking at a clock, and such estimates are not very accurate. A third criticism came from a team led by Aaron Schurger in 2012. They suggested that the readiness potential may not be a decision signal at all. In their model, the brain produces constant random fluctuations in electrical activity, and a movement happens when these fluctuations cross a threshold. Looking back at the data from the moment of the movement then creates a pattern that looks like a build-up. If this idea is correct, the experiment does not show that the brain decides before we do. Many researchers now say that the question about free will remains open, and that it needs both science and philosophy."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Libet found brain activity before people felt that they had decided to move.",
+        "Libet found that the brain does nothing before a person moves.",
+        "Libet found that people cannot move their fingers at all.",
+        "The text explains that Libet found a readiness potential in the brain before volunteers said that they had decided to move.",
+        [
+          "Do we really choose our actions?",
+          "readiness potential, began about a third of a second before"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What did the volunteers have to note?",
+        "The clock time of their first wish to move.",
+        "The number of times that they moved.",
+        "The color of the clock in the room.",
+        "The text says that volunteers had to note the clock time when they first felt the wish to move.",
+        "note the clock time when they first felt the wish to move"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “build-up” means…",
+        "gradual increase.",
+        "sudden stop.",
+        "complete loss.",
+        "The text says that a slow build-up of electrical activity began before the decision, which means a gradual increase.",
+        "a slow build-up of electrical activity"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “before we are aware of choosing it” refers to…",
+        "the action.",
+        "the brain.",
+        "the experiment.",
+        "The sentence says that the brain starts to prepare an action before we are aware of choosing the action.",
+        "the brain starts to prepare an action before we are aware of choosing it"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volunteers Libet tested.",
+        "What Libet recorded brain activity with.",
+        "What Libet himself thought people could still do.",
+        "The text does not say how many volunteers Libet tested. It says what he used to record brain activity and what he thought people could still do.",
+        [
+          "electrodes on the scalp",
+          "people could still veto the action"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the word “illusion” suggest about the people who used it?",
+        "They thought that free will might not be real.",
+        "They thought that free will was proved.",
+        "They thought that the experiment was useless.",
+        "The text says that some people called the result proof that free will is an illusion, which means that they thought free will might not be real.",
+        "free will is an illusion"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many experts doubt that Libet’s experiment disproves free will.",
+        "Many experts agree that Libet’s experiment proves free will is false.",
+        "Many experts think that Libet’s experiment was never done.",
+        "The text explains several criticisms of Libet’s conclusion and says that the question remains open.",
+        [
+          "many scientists and philosophers are not convinced",
+          "the question about free will remains open"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What was the volunteers’ choice in the experiment?",
+        "To move a finger at a random moment.",
+        "To choose a university.",
+        "To decide which hand to use for a day.",
+        "The text says that the volunteers made a meaningless choice, moving a finger at a random moment.",
+        "moving a finger at a random moment"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “convinced” means…",
+        "persuaded to believe it.",
+        "interested in it.",
+        "angry about it.",
+        "The text says that many scientists are not convinced, which means that they are not persuaded to believe the conclusion.",
+        "are not convinced"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this idea” in “If this idea is correct” refers to…",
+        "the idea that random fluctuations cross a threshold.",
+        "the idea that volunteers use clocks.",
+        "Libet’s belief in free will.",
+        "The sentences before describe the model in which random fluctuations cross a threshold, and the text says that if this idea is correct, the experiment does not show that the brain decides first.",
+        "If this idea is correct, the experiment does not show that the brain decides before we do"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many scientists signed the 2012 paper.",
+        "Why the timing is a problem.",
+        "What the model proposes about fluctuations.",
+        "The text does not say how many scientists signed the 2012 paper. It explains the problem of timing and what the model proposes.",
+        [
+          "estimates are not very accurate",
+          "the brain produces constant random fluctuations in electrical activity"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The answer may need ideas from science and philosophy.",
+        "Science alone has solved the question.",
+        "Philosophy has no role in the question.",
+        "The text says that the question needs both science and philosophy.",
+        "it needs both science and philosophy"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "neuroscientist",
+          "a scientist who studies the brain"
+        ],
+        [
+          "electrodes",
+          "small metal sensors that measure electrical signals"
+        ],
+        [
+          "scalp",
+          "the skin on top of the head"
+        ],
+        [
+          "illusion",
+          "something that seems real but is not"
+        ],
+        [
+          "veto",
+          "to stop or refuse something"
+        ]
+      ],
+      "B": [
+        [
+          "meaningless",
+          "having no importance or purpose"
+        ],
+        [
+          "estimate",
+          "to make a careful guess about an amount"
+        ],
+        [
+          "fluctuations",
+          "small changes that go up and down"
+        ],
+        [
+          "threshold",
+          "the level at which something starts to happen"
+        ],
+        [
+          "philosophers",
+          "people who study basic questions about life and thinking"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 130,
+    "slug": "unseen-reading-part-130",
+    "theme": "Obedience",
+    "blurb": "Milgram’s obedience experiments, the criticisms of Milgram",
+    "texts": {
+      "A": {
+        "title": "Milgram’s Obedience Experiments",
+        "text": "In 1961, after the trial of a Nazi official, Adolf Eichmann, who said that he had only followed orders, the psychologist Stanley Milgram at Yale University asked a troubling question: how far would ordinary people go in obeying an authority? Volunteers were told that they were taking part in a study on learning. A “teacher” had to give an electric shock to a “learner” in another room each time that the learner made a mistake, and the shocks grew stronger, up to 450 volts. In fact, the learner was an actor, and there were no real shocks. When a volunteer hesitated, the experimenter, in a gray coat, answered with fixed phrases such as “Please continue” and “The experiment requires that you continue”. In the best-known version, about two thirds of the volunteers continued to the highest level. Many sweated, laughed nervously or protested, but they went on. Milgram concluded that ordinary people can do harmful things when an authority tells them to, and his study became famous around the world."
+      },
+      "B": {
+        "title": "Criticisms of Milgram",
+        "text": "Milgram’s experiments are famous, but they are also strongly criticized. One criticism is ethical. Volunteers were deceived, and many felt severe stress, so today a study like this would have to pass a strict ethics review. Another criticism is scientific. The author Gina Perry studied Milgram’s archives and found that the experimenters sometimes pushed volunteers much harder than the script allowed, and that some volunteers suspected that the shocks were not real. The “two thirds” figure also came from one version of the experiment; in other versions, obedience was much lower, and in some, most people refused. A third criticism concerns the explanation. The psychologists Alexander Haslam and Stephen Reicher argue that people did not simply obey like machines. In their view, volunteers believed in the value of science and wanted to help the researchers, so they identified with the experiment. When the experimenter used the order “You have no other choice”, almost everyone stopped. This suggests that obedience depends on how people see the cause, not only on authority."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Milgram found that many ordinary people obeyed an authority to the end.",
+        "Milgram found that almost nobody obeyed the experimenter.",
+        "Milgram found that only angry people give electric shocks.",
+        "The text explains that many volunteers continued to the highest shock level, and that Milgram concluded that ordinary people can do harmful things when told to.",
+        [
+          "how far would ordinary people go in obeying an authority",
+          "ordinary people can do harmful things when an authority tells them to"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What was the highest shock level?",
+        "450 volts.",
+        "45 volts.",
+        "4,500 volts.",
+        "The text says that the shocks grew stronger, up to 450 volts.",
+        "up to 450 volts"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “fixed phrases” means…",
+        "set and always the same.",
+        "new and different each time.",
+        "very long and secret.",
+        "The text says that the experimenter answered with fixed phrases such as “Please continue”, which means phrases that were set and always the same.",
+        "answered with fixed phrases"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “but they went on” refers to…",
+        "the volunteers.",
+        "the actors.",
+        "the learners.",
+        "The sentence says that many volunteers sweated, laughed nervously or protested, but the volunteers went on.",
+        "Many sweated, laughed nervously or protested, but they went on"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volunteers were paid.",
+        "What the learner really was.",
+        "What the experimenter said when a volunteer hesitated.",
+        "The text does not say how many volunteers were paid. It says what the learner really was and what the experimenter said.",
+        [
+          "the learner was an actor",
+          "“Please continue”"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest about Milgram’s conclusion?",
+        "Authority can strongly influence behavior.",
+        "Only evil people can cause harm.",
+        "Authority has no influence on behavior.",
+        "The text says that Milgram concluded that ordinary people can do harmful things when an authority tells them to.",
+        "ordinary people can do harmful things when an authority tells them to"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Milgram’s experiments are criticized for ethics, accuracy and how they are explained.",
+        "Milgram’s experiments are praised by all scientists for being perfect.",
+        "Milgram’s experiments are criticized only because of their name.",
+        "The text lists ethical, scientific and explanatory criticisms of Milgram’s experiments.",
+        [
+          "Milgram’s experiments are famous, but they are also strongly criticized",
+          "This suggests that obedience depends on how people see the cause"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did Gina Perry find in the archives?",
+        "The experimenters sometimes went beyond the script.",
+        "The volunteers were all professional actors.",
+        "The shocks were really strong and dangerous.",
+        "The text says that Perry found that the experimenters sometimes pushed volunteers much harder than the script allowed.",
+        "found that the experimenters sometimes pushed volunteers much harder than the script allowed"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “suspected” means…",
+        "thought it likely.",
+        "knew for certain.",
+        "felt happy.",
+        "The text says that some volunteers suspected that the shocks were not real, which means that they thought it likely.",
+        "some volunteers suspected that the shocks were not real"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “This” in “This suggests that obedience depends” refers to…",
+        "the fact that nearly everyone stopped after that order.",
+        "the idea that science is important.",
+        "the high number of obeying volunteers.",
+        "The sentence before says that almost everyone stopped when the experimenter said “You have no other choice”, and this suggests that obedience depends on how people see the cause.",
+        "almost everyone stopped. This suggests"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many volunteers refused in each version.",
+        "What kind of review a study would need today.",
+        "What Haslam and Reicher argue.",
+        "The text does not say how many volunteers refused in each version. It says what kind of review a study would need today and what Haslam and Reicher argue.",
+        [
+          "would have to pass a strict ethics review",
+          "people did not simply obey like machines"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about obedience?",
+        "People may obey when they believe in the goal.",
+        "People obey anyone who gives a command.",
+        "People obey only when they are afraid.",
+        "The text says that volunteers believed in the value of science and wanted to help the researchers.",
+        "volunteers believed in the value of science and wanted to help the researchers"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "obeying",
+          "doing what you are told to do"
+        ],
+        [
+          "authority",
+          "a person with the power to give orders"
+        ],
+        [
+          "hesitated",
+          "paused because of doubt"
+        ],
+        [
+          "protested",
+          "said that you disagree strongly"
+        ],
+        [
+          "harmful",
+          "causing damage or pain"
+        ]
+      ],
+      "B": [
+        [
+          "criticized",
+          "said to be wrong or bad"
+        ],
+        [
+          "ethical",
+          "relating to what is morally right or wrong"
+        ],
+        [
+          "deceived",
+          "made to believe something untrue"
+        ],
+        [
+          "script",
+          "written instructions for what to say"
+        ],
+        [
+          "identified",
+          "felt closely connected"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 131,
+    "slug": "unseen-reading-part-131",
+    "theme": "The Prison Study",
+    "blurb": "the Stanford Prison Experiment, why it is now doubted",
+    "texts": {
+      "A": {
+        "title": "The Stanford Prison Experiment",
+        "text": "In August 1971, the psychologist Philip Zimbardo and his team at Stanford University built a mock prison in the basement of a university building. Twenty-four male students were chosen, and by chance some became “guards” and some “prisoners”. The guards received uniforms and sunglasses, the prisoners received smocks and numbers, and the study was planned to last two weeks. According to Zimbardo, the situation changed the students quickly. Some guards became cruel and humiliated the prisoners, and some prisoners became depressed or panicked. After only six days, the study was stopped. Zimbardo concluded that the roles and the situation, not the personalities of the students, explained the behavior, and he said that good people can do bad things in bad situations. The study appeared in textbooks, films and television programs for decades, and it became one of the best-known experiments in psychology."
+      },
+      "B": {
+        "title": "Why the Experiment Is Now Doubted",
+        "text": "In recent years, researchers have looked again at the Stanford Prison Experiment, and many now doubt its message. First, recordings and documents from the archive show that the guards did not simply act on their own. The researchers gave instructions: the guards were told to create feelings of fear and powerlessness in the prisoners. One guard, who became famous for his cruelty, later said that he was acting like a character from a film, and that he wanted to help the experiment to be successful. Second, some prisoners later said that they acted out of distress to leave the study, not because they had really broken down. Third, the study had no control group, only 24 participants, and it was never repeated in a similar form. A 2002 study in Britain, the BBC Prison Study, found very different results: the guards did not become cruel. Today, many psychologists regard the Stanford experiment as a demonstration of how people follow expectations, not as proof of what everyone does, and textbooks have started to say so."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Zimbardo claimed that roles in a prison situation changed students’ behavior.",
+        "Zimbardo claimed that prisoners are always more violent than guards.",
+        "Zimbardo claimed that the study lasted for six months.",
+        "The text explains that Zimbardo concluded that the roles and the situation explained the behavior of the students.",
+        [
+          "Zimbardo concluded that the roles and the situation",
+          "good people can do bad things in bad situations"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How did students become guards or prisoners?",
+        "By chance.",
+        "By their own choice.",
+        "By their exam results.",
+        "The text says that by chance some became guards and some became prisoners.",
+        "by chance some became “guards” and some “prisoners”"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “cruel” means…",
+        "unkind and hurtful.",
+        "kind and helpful.",
+        "lazy and tired.",
+        "The text says that some guards became cruel and humiliated the prisoners, which means that they became unkind and hurtful.",
+        "Some guards became cruel"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it became one of the best-known experiments” refers to…",
+        "the study.",
+        "the prison.",
+        "the television program.",
+        "The sentence says that the study appeared in textbooks, films and television programs for decades, and the study became one of the best-known experiments.",
+        "The study appeared in textbooks, films and television programs for decades, and it became one of the best-known experiments"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many guards worked each night.",
+        "Where the prison was built.",
+        "How long the study was planned to last.",
+        "The text does not say how many guards worked each night. It says where the prison was built and how long the study was planned to last.",
+        [
+          "in the basement of a university building",
+          "planned to last two weeks"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The study had a very large influence outside science.",
+        "The study was never discussed by the public.",
+        "The study was forgotten quickly.",
+        "The text says that the study appeared in textbooks, films and television programs for decades.",
+        "appeared in textbooks, films and television programs for decades"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Recent evidence suggests that the guards were influenced and coached.",
+        "Recent evidence proves that the Stanford experiment was perfect.",
+        "Recent evidence shows that the guards never wore uniforms.",
+        "The text explains that the researchers gave instructions to the guards, so many now doubt the message of the experiment.",
+        [
+          "many now doubt its message",
+          "the guards were told to create feelings of fear and powerlessness in the prisoners"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the 2002 BBC Prison Study find?",
+        "The guards did not become cruel.",
+        "The guards became even crueler.",
+        "The prisoners became guards.",
+        "The text says that in the BBC Prison Study the guards did not become cruel.",
+        "the guards did not become cruel"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “distress” means…",
+        "great worry or pain.",
+        "great happiness.",
+        "careful planning.",
+        "The text says that some prisoners acted out of distress to leave the study, which means out of great worry or pain.",
+        "acted out of distress to leave the study"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “it was never repeated” refers to…",
+        "the study.",
+        "the guard.",
+        "the prison.",
+        "The sentence says that the study had no control group and only 24 participants, and the study was never repeated in a similar form.",
+        "the study had no control group, only 24 participants, and it was never repeated"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours the guards worked.",
+        "What the guards were told to create.",
+        "What many psychologists now call the experiment.",
+        "The text does not say how many hours the guards worked. It says what the guards were told to create and what many psychologists now call the experiment.",
+        [
+          "create feelings of fear and powerlessness",
+          "a demonstration of how people follow expectations"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about textbooks?",
+        "They are changing how they describe the study.",
+        "They have removed psychology completely.",
+        "They still describe it as perfect proof.",
+        "The text says that many psychologists regard the experiment differently now, and that textbooks have started to say so.",
+        "textbooks have started to say so"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "mock",
+          "not real, made for practice"
+        ],
+        [
+          "humiliated",
+          "made to feel ashamed in front of others"
+        ],
+        [
+          "depressed",
+          "very sad and without hope"
+        ],
+        [
+          "roles",
+          "parts that people play"
+        ],
+        [
+          "personalities",
+          "the ways that people usually think and act"
+        ]
+      ],
+      "B": [
+        [
+          "recordings",
+          "sound or video that was saved"
+        ],
+        [
+          "instructions",
+          "words that tell someone what to do"
+        ],
+        [
+          "powerlessness",
+          "the feeling of having no control"
+        ],
+        [
+          "demonstration",
+          "an example that shows something clearly"
+        ],
+        [
+          "expectations",
+          "beliefs about what should happen"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 132,
+    "slug": "unseen-reading-part-132",
+    "theme": "The Replication Crisis",
+    "blurb": "famous findings that failed when repeated, how psychology is reforming",
+    "texts": {
+      "A": {
+        "title": "When Famous Findings Fail",
+        "text": "Science depends on repeating results. If a finding is true, other researchers who follow the same method should find it again. In 2015, a large team of researchers called the Open Science Collaboration tried to repeat 100 studies that had been published in good psychology journals. The results worried many people. While almost all of the original studies had reported clear results, only about one third of the repeated studies found them again, and the effects were on average about half as large. This became known as the replication crisis. One example is “power posing”. In 2010, a study reported that standing in a strong pose for two minutes raised confidence and changed hormones. Larger studies later failed to find the hormone effect, and the first author said in 2016 that she no longer believed that the effect was real. Researchers think that several things contributed: small samples, pressure to publish exciting results, and flexible ways of analyzing data."
+      },
+      "B": {
+        "title": "How Psychology Is Reforming",
+        "text": "The replication crisis was painful, but it has also led to important reforms. Many psychologists now believe that the field is becoming more reliable. One reform is preregistration. Researchers write down their questions, methods and plan for the analysis before they collect the data, and they publish this plan publicly. This makes it harder to change the analysis after seeing the results. Another reform is registered reports, in which a journal agrees to publish a study before the results are known, so that careful work is published even when the result is not exciting. Researchers also share their data and materials openly, so that others can check them, and they run larger studies with more participants. Teams in many countries now work together to repeat important experiments. The crisis also taught a general lesson: a single surprising study is only the beginning, and strong claims need strong evidence from many studies. This is how science corrects itself."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Many famous psychology findings could not be repeated, which raised concern.",
+        "All psychology findings were repeated successfully in 2015.",
+        "Psychology experiments have never been published in journals.",
+        "The text explains that only about one third of the repeated studies found the original results again, which became known as the replication crisis.",
+        [
+          "If a finding is true, other researchers who follow the same method should find it again",
+          "only about one third of the repeated studies found them again"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "How many studies did the Open Science Collaboration try to repeat?",
+        "100.",
+        "10.",
+        "1,000.",
+        "The text says that the team tried to repeat 100 studies.",
+        "tried to repeat 100 studies"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “contributed” means…",
+        "helped to cause it.",
+        "tried to stop it.",
+        "had no part.",
+        "The text says that several things contributed to the problem, which means that they helped to cause it.",
+        "several things contributed"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “she” in “she no longer believed” refers to…",
+        "the first author of the study.",
+        "the head of the large team.",
+        "a participant in the study.",
+        "The sentence says that the first author said in 2016 that the first author no longer believed that the effect was real.",
+        "the first author said in 2016 that she no longer believed that the effect was real"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hormones power posing changed.",
+        "What the 2010 study reported.",
+        "What researchers think contributed.",
+        "The text does not say how many hormones power posing changed. It says what the 2010 study reported and what researchers think contributed.",
+        [
+          "standing in a strong pose for two minutes raised confidence",
+          "small samples, pressure to publish exciting results"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the first paragraph suggest about a result found only once?",
+        "It should be treated with some caution.",
+        "It is certainly true in every case.",
+        "It is certainly false in every case.",
+        "The text says that if a finding is true, other researchers should find it again, so a result found only once should be treated with caution.",
+        "If a finding is true, other researchers who follow the same method should find it again."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Psychology is reforming with open plans, shared data and repeats.",
+        "Psychology has stopped doing experiments because of the crisis.",
+        "Psychology has solved every problem in a single year.",
+        "The text explains that the crisis led to reforms such as preregistration, registered reports, open data and larger studies.",
+        [
+          "it has also led to important reforms",
+          "This is how science corrects itself"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What do researchers do in preregistration?",
+        "They publish their plan before collecting data.",
+        "They hide their results until the end.",
+        "They change the plan after the results.",
+        "The text says that researchers write down their questions, methods and plan before they collect the data, and publish the plan.",
+        "Researchers write down their questions, methods and plan for the analysis before they collect the data"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “painful” means…",
+        "difficult and unpleasant.",
+        "easy and pleasant.",
+        "short and cheap.",
+        "The text says that the replication crisis was painful, which means that it was difficult and unpleasant.",
+        "The replication crisis was painful"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “so that others can check them” refers to…",
+        "the data and materials.",
+        "the researchers.",
+        "the journals.",
+        "The sentence says that researchers share their data and materials openly, so that others can check the data and materials.",
+        "share their data and materials openly, so that others can check them"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many journals use registered reports.",
+        "What a registered report is.",
+        "What the general lesson is.",
+        "The text does not say how many journals use registered reports. It explains what a registered report is and what the general lesson is.",
+        [
+          "a journal agrees to publish a study before the results are known",
+          "a single surprising study is only the beginning"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest about science?",
+        "Science improves by fixing its mistakes.",
+        "Science never makes any mistakes at all.",
+        "Science cannot be trusted by anyone.",
+        "The text says that this is how science corrects itself.",
+        "This is how science corrects itself."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "published",
+          "printed or released for the public"
+        ],
+        [
+          "reported",
+          "told or described"
+        ],
+        [
+          "effects",
+          "changes caused by something"
+        ],
+        [
+          "samples",
+          "small groups chosen to represent a bigger group"
+        ],
+        [
+          "flexible",
+          "able to change easily"
+        ]
+      ],
+      "B": [
+        [
+          "reforms",
+          "changes made to improve something"
+        ],
+        [
+          "reliable",
+          "able to be trusted"
+        ],
+        [
+          "publicly",
+          "in a way that anyone can see"
+        ],
+        [
+          "openly",
+          "in a way that is not hidden"
+        ],
+        [
+          "evidence",
+          "facts that show that something is true"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 133,
+    "slug": "unseen-reading-part-133",
+    "theme": "Intelligence",
+    "blurb": "what IQ measures and whether it is stable, the Flynn effect",
+    "texts": {
+      "A": {
+        "title": "IQ: What It Measures and Whether It Changes",
+        "text": "An IQ test is a set of problems that measure reasoning, memory, vocabulary and speed of thinking. The result is compared with the results of many other people of the same age, and the average score is set at 100. IQ scores predict some important things: school results, years of education and, to a smaller degree, job performance and health. They are also fairly stable. A person who scores high as a child usually scores high as an adult, although the score can change by several points from year to year, and it changes more in young children. Researchers who stress stability point out that the link between scores at age 11 and in old age is moderate to strong in some long studies. But IQ is not everything. It does not measure creativity, motivation, kindness or practical skills, and it is only one part of what leads to success. Scientists also disagree about what it means to say that intelligence is one general ability."
+      },
+      "B": {
+        "title": "The Flynn Effect: Can Intelligence Rise?",
+        "text": "In the 1980s, the New Zealand researcher James Flynn noticed something strange. Over the twentieth century, raw scores on IQ tests rose in many countries, by about three points every ten years. Test makers had to make the tests harder from time to time to keep the average at 100. This is called the Flynn effect. A rise so fast cannot be explained by genes, because genes do not change that quickly in a few generations. Researchers suggest environmental causes: better nutrition and health, fewer childhood diseases, more years of schooling, smaller families, and a world with more abstract thinking, such as maps, numbers and screens. Some experts think that real reasoning skills improved, and others think that people mainly became better at the kinds of problems that tests contain. In several rich countries, the rise slowed down or stopped in recent decades. The Flynn effect shows that IQ scores respond to the environment, but it does not show that one person can easily change his or her own score."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "IQ measures some thinking skills and is fairly stable, but it is not everything.",
+        "IQ measures every important human quality and never changes.",
+        "IQ tests measure kindness and creativity better than anything else.",
+        "The text explains what IQ tests measure, that scores are fairly stable, and that IQ is not everything.",
+        [
+          "IQ scores predict some important things",
+          "IQ is not everything"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the average IQ score set at?",
+        "100.",
+        "50.",
+        "200.",
+        "The text says that the average score is set at 100.",
+        "the average score is set at 100"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “compared” means…",
+        "checked against.",
+        "added to.",
+        "hidden from.",
+        "The text says that the result is compared with the results of many other people, which means that it is checked against them.",
+        "is compared with the results of many other people"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “it” in “it changes more in young children” refers to…",
+        "the IQ score.",
+        "the test.",
+        "the child.",
+        "The sentence says that the score can change by several points from year to year, and the score changes more in young children.",
+        "the score can change by several points from year to year, and it changes more in young children"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country scores highest.",
+        "What IQ scores can predict.",
+        "What IQ does not measure.",
+        "The text does not say which country scores highest. It says what IQ scores can predict and what IQ does not measure.",
+        [
+          "school results, years of education",
+          "It does not measure creativity, motivation, kindness or practical skills"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Scientists are still discussing what intelligence is.",
+        "Scientists agree completely about intelligence.",
+        "Scientists have stopped studying intelligence.",
+        "The text says that scientists disagree about what it means to say that intelligence is one general ability.",
+        "Scientists also disagree about what it means to say that intelligence is one general ability."
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "IQ scores rose over time, which suggests that environment matters.",
+        "IQ scores rose because genes changed very quickly.",
+        "IQ scores fell steadily during the twentieth century.",
+        "The text explains that raw IQ scores rose during the twentieth century, which suggests that the environment influences them.",
+        [
+          "raw scores on IQ tests rose in many countries, by about three points every ten years",
+          "The Flynn effect shows that IQ scores respond to the environment"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "By about how much did IQ test scores rise every ten years?",
+        "About three points.",
+        "About thirty points.",
+        "About half a point.",
+        "The text says that raw scores rose by about three points every ten years.",
+        "by about three points every ten years"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “strange” means…",
+        "unusual and unexpected.",
+        "familiar and expected.",
+        "pleasant and quiet.",
+        "The text says that Flynn noticed something strange, which means something unusual and unexpected.",
+        "noticed something strange"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “This” in “This is called the Flynn effect” refers to…",
+        "the rise in raw test scores.",
+        "the making of harder tests.",
+        "the average score of 100.",
+        "The sentences before say that raw scores rose over time, and this rise is called the Flynn effect.",
+        "raw scores on IQ tests rose in many countries, by about three points every ten years"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which country had the largest rise.",
+        "Why genes cannot explain the rise.",
+        "What happened in several rich countries recently.",
+        "The text does not say which country had the largest rise. It says why genes cannot explain the rise and what happened recently in some rich countries.",
+        [
+          "genes do not change that quickly in a few generations",
+          "the rise slowed down or stopped in recent decades"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A rise for a whole society is not the same as a change for one person.",
+        "Every person can raise IQ by three points a year.",
+        "IQ scores respond to nothing.",
+        "The text says that it does not show that one person can easily change his or her own score.",
+        "it does not show that one person can easily change his or her own score"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "reasoning",
+          "thinking in a logical way"
+        ],
+        [
+          "average",
+          "the usual or middle amount"
+        ],
+        [
+          "predict",
+          "to say what will happen"
+        ],
+        [
+          "stable",
+          "not changing much"
+        ],
+        [
+          "creativity",
+          "the ability to produce new ideas"
+        ]
+      ],
+      "B": [
+        [
+          "raw",
+          "not yet adjusted or changed"
+        ],
+        [
+          "generations",
+          "groups of people born at around the same time"
+        ],
+        [
+          "environmental",
+          "related to the conditions around a person"
+        ],
+        [
+          "nutrition",
+          "the food that the body needs to grow and stay healthy"
+        ],
+        [
+          "abstract",
+          "about ideas rather than real things"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 134,
+    "slug": "unseen-reading-part-134",
+    "theme": "Nature and Nurture",
+    "blurb": "what twin studies show, why genes and environment work together",
+    "texts": {
+      "A": {
+        "title": "What Twin Studies Show",
+        "text": "Are we shaped more by our genes or by our environment? One way to study this old question is to compare twins. Identical twins share almost all of their genes, while non-identical twins share about half, like ordinary brothers and sisters. If identical twins are more similar than non-identical twins in a trait, such as height, personality or intelligence, genes probably play a role. Studies of thousands of twin pairs find that many traits are partly inherited. For adult intelligence, estimates of heritability are often around 50 percent or higher, and for personality traits they are often around 40 percent. Studies of twins who grew up in different families, who were separated at birth, show that they are often similar in surprising ways. Heritability does not mean that a trait is fixed or that it works the same for each person. It is a statistic about differences in a group at a certain time and place, and it can change when the environment changes."
+      },
+      "B": {
+        "title": "Why Genes and Environment Work Together",
+        "text": "Nature or nurture? Today most scientists say that the question is wrongly asked, because genes and environment work together all the time. A well-known example is the disease phenylketonuria, or PKU. Babies with a certain gene cannot process a part of protein called phenylalanine, and without treatment they can develop brain damage. But if they eat a special diet from birth, they develop normally. The gene is the same, and the outcome depends on the environment. Another idea is that people with certain genes often seek or create certain environments, for example a child who loves music may ask for lessons and listen to more music, and this strengthens the original talent. Genes can also be switched on or off by experience, a field called epigenetics, although scientists are careful about how strongly it affects behavior. Environment is also not only the family: friends, schools, nutrition, culture and chance events matter. The result is that nobody is shaped by genes alone or by environment alone."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Twin studies suggest that genes influence many traits, though they do not fix them.",
+        "Twin studies prove that genes decide everything about a person.",
+        "Twin studies show that genes have no effect on any trait.",
+        "The text explains that twin studies find that many traits are partly inherited, but that heritability does not mean that a trait is fixed.",
+        [
+          "Are we shaped more by our genes or by our environment?",
+          "Heritability does not mean that a trait is fixed"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What fraction of their genes do non-identical twins share?",
+        "About half.",
+        "Almost all.",
+        "None.",
+        "The text says that non-identical twins share about half of their genes.",
+        "non-identical twins share about half"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “similar” means…",
+        "alike.",
+        "different.",
+        "distant.",
+        "The text says that identical twins are more similar than non-identical twins, which means that they are more alike.",
+        "more similar than non-identical twins"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “show that they are often similar” refers to…",
+        "twins who grew up apart.",
+        "ordinary brothers and sisters.",
+        "the families.",
+        "The sentence says that studies of twins who grew up in different families show that those twins are often similar in surprising ways.",
+        "show that they are often similar in surprising ways"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many twin pairs have been studied in Israel.",
+        "What heritability means.",
+        "What can change a statistic about heritability.",
+        "The text does not say how many twin pairs have been studied in Israel. It explains what heritability is and what can change it.",
+        [
+          "a statistic about differences in a group at a certain time and place",
+          "it can change when the environment changes"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "A high heritability does not mean that a trait cannot change.",
+        "A high heritability means that nothing can change a trait.",
+        "Heritability is the same everywhere.",
+        "The text says that heritability can change when the environment changes.",
+        "it can change when the environment changes"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Genes and environment work together, so nature versus nurture is too simple.",
+        "Genes alone decide who a person will become.",
+        "The environment alone decides who a person will become.",
+        "The text explains that genes and environment work together all the time, so nobody is shaped by only one of them.",
+        [
+          "genes and environment work together all the time",
+          "nobody is shaped by genes alone or by environment alone"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What helps babies with PKU develop normally?",
+        "A special diet from birth.",
+        "A special school from birth.",
+        "A new gene from birth.",
+        "The text says that if the babies eat a special diet from birth, they develop normally.",
+        "if they eat a special diet from birth, they develop normally"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “talent” means…",
+        "natural ability.",
+        "hidden problem.",
+        "school subject.",
+        "The text says that lessons strengthen the original talent of a child, which means a natural ability for music.",
+        "strengthens the original talent"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “this” in “this strengthens the original talent” refers to…",
+        "asking for lessons and listening to more music.",
+        "loving music before the child was born.",
+        "having a natural talent for music.",
+        "The sentence says that a child who loves music may ask for lessons and listen to more music, and this strengthens the talent.",
+        "may ask for lessons and listen to more music, and this strengthens the original talent"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many genes affect intelligence.",
+        "What epigenetics is called.",
+        "What counts as environment besides family.",
+        "The text does not say how many genes affect intelligence. It names epigenetics and says what counts as environment besides family.",
+        [
+          "a field called epigenetics",
+          "friends, schools, nutrition, culture and chance events matter"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the PKU example suggest?",
+        "The same gene can have different outcomes.",
+        "Genes never have any effect on health.",
+        "Diet has no effect on how a gene acts.",
+        "The text says that the gene is the same, and the outcome depends on the environment.",
+        "The gene is the same, and the outcome depends on the environment."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "genes",
+          "parts of cells that pass features from parents to children"
+        ],
+        [
+          "trait",
+          "a characteristic of a person"
+        ],
+        [
+          "inherited",
+          "passed from parents to children"
+        ],
+        [
+          "heritability",
+          "the part of differences between people that is due to genes"
+        ],
+        [
+          "statistic",
+          "a number that describes data"
+        ]
+      ],
+      "B": [
+        [
+          "process",
+          "to break down and use"
+        ],
+        [
+          "outcome",
+          "the result of something"
+        ],
+        [
+          "seek",
+          "to look for"
+        ],
+        [
+          "strengthens",
+          "makes stronger"
+        ],
+        [
+          "chance",
+          "luck, something that happens without a plan"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 135,
+    "slug": "unseen-reading-part-135",
+    "theme": "Learning Styles",
+    "blurb": "why the learning styles idea feels true, what research finds",
+    "texts": {
+      "A": {
+        "title": "Visual, Auditory, Kinesthetic?",
+        "text": "Many people believe that they have a learning style. They say, “I am a visual learner,” or “I learn best by listening.” The idea is popular in schools and teacher training, and surveys find that most teachers believe it. It sounds sensible because people do have preferences: some like pictures, others like to listen, and others like to try things. The idea of learning styles goes further. It says that students learn better when teaching is matched to their style, for example when visual learners get pictures and auditory learners get lectures. This is called the matching hypothesis. It is attractive because it seems fair and personal. It also suggests that students who struggle simply have not received the right style. Many students and teachers say that the idea feels true from their own experience. But is it supported by evidence? Researchers have tested this question carefully, and in the next text we look at what they found."
+      },
+      "B": {
+        "title": "What Research Finds About Learning Styles",
+        "text": "In 2008, a group of psychologists led by Harold Pashler reviewed the research on learning styles. They asked a precise question: do students learn better when the teaching is matched to their style? To prove this, a study needs to put students into groups, teach some in the style they prefer and others in a different style, and then test everyone on the same material. The matching idea predicts that each style should do best with its own teaching. The reviewers found very few studies of this kind, and the ones that were well designed did not support the idea. Other research shows what does work: practicing recall, spreading study over time, mixing examples, and using pictures, words and explanations for everyone, because most content is better learned with several formats. The content matters too: geometry needs diagrams for everybody, and music needs listening. This does not mean that preferences are unimportant, because liking a method can keep a student motivated. But the best advice is to try different methods and to choose them by the material, not by a label."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The learning styles idea is popular because it feels true and fair.",
+        "The learning styles idea is popular because every study proved it.",
+        "The learning styles idea is popular only among students.",
+        "The text explains that many people believe in learning styles because the idea seems sensible, fair and personal.",
+        [
+          "Many people believe that they have a learning style",
+          "It is attractive because it seems fair and personal"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What does the matching hypothesis say?",
+        "Students learn better when teaching matches their style.",
+        "Students learn better when teaching ignores their style.",
+        "Students learn better when they study alone.",
+        "The text says that students learn better when teaching is matched to their style.",
+        "students learn better when teaching is matched to their style"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “sensible” means…",
+        "reasonable.",
+        "silly.",
+        "boring.",
+        "The text says that the idea sounds sensible, which means that it sounds reasonable.",
+        "It sounds sensible"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “It” in “It says that students learn better” refers to…",
+        "the idea of learning styles.",
+        "the preference for pictures.",
+        "the survey.",
+        "The sentence says that the idea of learning styles goes further, and the idea says that students learn better when teaching is matched.",
+        "The idea of learning styles goes further. It says that students learn better when teaching is matched"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which style is the most common among students.",
+        "What the matching hypothesis is called.",
+        "What most teachers believe.",
+        "The text does not say which style is the most common. It says what the hypothesis is called and what most teachers believe.",
+        [
+          "This is called the matching hypothesis",
+          "surveys find that most teachers believe it"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The idea will now be tested.",
+        "The idea has already been proved.",
+        "The idea cannot be tested.",
+        "The text asks whether the idea is supported by evidence and says that researchers have tested this question carefully.",
+        "But is it supported by evidence?"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Research does not support teaching students by a learning style.",
+        "Research proves that every student has exactly one learning style.",
+        "Research shows that students should never use pictures.",
+        "The text explains that well-designed studies did not support the matching idea and suggests trying different methods.",
+        [
+          "the ones that were well designed did not support the idea",
+          "the best advice is to try different methods"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What kind of study would show that matching works?",
+        "Teaching groups in different styles and testing everyone.",
+        "Asking students which style they like best.",
+        "Giving every student the same style of teaching.",
+        "The text says that a study needs to teach some students in their preferred style and others in a different style, and then test everyone.",
+        "teach some in the style they prefer and others in a different style, and then test everyone on the same material"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “motivated” means…",
+        "interested and willing to work.",
+        "tired and bored.",
+        "afraid and silent.",
+        "The text says that liking a method can keep a student motivated, which means interested and willing to work.",
+        "can keep a student motivated"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “them” in “choose them by the material” refers to…",
+        "the methods of study.",
+        "the students.",
+        "the labels.",
+        "The sentence says to try different methods and to choose the methods by the material.",
+        "try different methods and to choose them by the material"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teachers Pashler interviewed.",
+        "What kinds of study are needed.",
+        "What does work in learning.",
+        "The text does not say how many teachers Pashler interviewed. It says what kinds of study are needed and what does work.",
+        [
+          "a study needs to put students into groups",
+          "practicing recall, spreading study over time, mixing examples"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the geometry example suggest?",
+        "The subject can decide the best way to teach.",
+        "Students should always choose by style.",
+        "Geometry should be taught by listening only.",
+        "The text says that geometry needs diagrams for everybody, so the subject decides the best method.",
+        "geometry needs diagrams for everybody"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "preferences",
+          "things that you like better than others"
+        ],
+        [
+          "matched",
+          "made to fit together"
+        ],
+        [
+          "hypothesis",
+          "an idea that can be tested"
+        ],
+        [
+          "attractive",
+          "interesting and appealing"
+        ],
+        [
+          "struggle",
+          "to have difficulty doing something"
+        ]
+      ],
+      "B": [
+        [
+          "reviewed",
+          "examined carefully"
+        ],
+        [
+          "precise",
+          "exact and clear"
+        ],
+        [
+          "designed",
+          "planned in a particular way"
+        ],
+        [
+          "recall",
+          "the act of remembering"
+        ],
+        [
+          "label",
+          "a word used to describe a person or thing"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 136,
+    "slug": "unseen-reading-part-136",
+    "theme": "Left Brain, Right Brain",
+    "blurb": "the left-brain right-brain idea, what brain scans really show",
+    "texts": {
+      "A": {
+        "title": "The Left-Brain, Right-Brain Idea",
+        "text": "Many people say, “I am a right-brain person,” meaning that they are creative, or “I am a left-brain person,” meaning that they are logical. The idea has a basis in real science. The brain has two halves, called hemispheres, joined by a bundle of nerve fibers. In the 1960s, the scientist Roger Sperry studied patients whose two halves had been separated by surgery to treat severe epilepsy, and found that each half is better at some tasks. In most people, the left hemisphere is more involved in language, and the right in tasks such as noticing faces and where things are in space. Sperry received a Nobel Prize in 1981 for this work. Popular books and courses then turned the finding into a simple story: creative right-brain people versus logical left-brain people, and they offered exercises to “unlock the right brain”. The story is easy to remember and it fits stereotypes about artists and scientists."
+      },
+      "B": {
+        "title": "What Brain Scans Really Show",
+        "text": "If people were left-brained or right-brained, one side of their brain should be stronger or more active all the time. In 2013, a team at the University of Utah tested this. They analyzed brain scans of more than a thousand people, and measured activity in many areas of both hemispheres. They found that, as expected, some functions were stronger on one side, language mainly on the left, for example. But there was no sign that a person is mostly left-sided or right-sided. A person with stronger activity in some left areas did not have stronger activity in all left areas. The two halves also communicate constantly through a large bundle of nerve fibers, and almost every activity, from reading to drawing, uses both sides. Creativity, for example, uses many networks across the brain. Scientists therefore call the idea a myth. This does not mean that the brain has no specialization, only that the popular division of people into two types is not supported. A better statement is that everybody uses the whole brain, even if some tasks use some regions more."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "The idea began with real science, but popular books simplified it.",
+        "The idea began as a joke and has no connection to science.",
+        "The idea was invented by Roger Sperry as a type of test.",
+        "The text explains that Sperry’s real findings were turned by popular books and courses into a simple story.",
+        [
+          "The idea has a basis in real science",
+          "turned the finding into a simple story"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the left hemisphere more involved in, in most people?",
+        "Language.",
+        "Noticing faces.",
+        "Finding places in space.",
+        "The text says that the left hemisphere is more involved in language.",
+        "the left hemisphere is more involved in language"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “separated” means…",
+        "cut apart.",
+        "joined together.",
+        "painted.",
+        "The text says that the patients’ two halves had been separated by surgery, which means that they had been cut apart.",
+        "had been separated by surgery"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “they offered exercises” refers to…",
+        "the popular books and courses.",
+        "the patients in the study.",
+        "the scientists who did the surgery.",
+        "The sentence says that popular books and courses turned the finding into a simple story, and the books and courses offered exercises.",
+        "Popular books and courses then turned the finding into a simple story: creative right-brain people versus logical left-brain people, and they offered exercises"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people take creativity tests.",
+        "What Sperry received in 1981.",
+        "What the hemispheres are joined by.",
+        "The text does not say how many people take creativity tests. It says what Sperry received and what joins the hemispheres.",
+        [
+          "Sperry received a Nobel Prize in 1981",
+          "joined by a bundle of nerve fibers"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "Why is the story easy to accept?",
+        "It fits stereotypes about artists and scientists.",
+        "It was proved by many experiments.",
+        "It is told only in scientific journals.",
+        "The text says that the story is easy to remember and fits stereotypes about artists and scientists.",
+        "it fits stereotypes about artists and scientists"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Brain scans show that people are not mainly left-brained or right-brained.",
+        "Brain scans show that people use only one half of the brain.",
+        "Brain scans show that the two halves never communicate.",
+        "The text explains that brain scans of more than a thousand people showed no sign of left-sided or right-sided people.",
+        [
+          "there was no sign that a person is mostly left-sided or right-sided",
+          "everybody uses the whole brain"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How many people were in the Utah study?",
+        "More than a thousand.",
+        "About ten.",
+        "About a hundred.",
+        "The text says that the team analyzed brain scans of more than a thousand people.",
+        "more than a thousand people"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “constantly” means…",
+        "all the time.",
+        "once a year.",
+        "never.",
+        "The text says that the two halves communicate constantly, which means all the time.",
+        "communicate constantly"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “This” in “This does not mean” refers to…",
+        "calling the idea a myth.",
+        "using both sides of the brain.",
+        "the scans of more than a thousand people.",
+        "The sentence before says that scientists call the idea a myth, and this does not mean that the brain has no specialization.",
+        "Scientists therefore call the idea a myth. This does not mean"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which half of the brain is better for drawing.",
+        "Which function is mainly on the left.",
+        "What the two halves use to communicate.",
+        "The text does not say which half is better for drawing. It says which function is mainly on the left and what the halves use to communicate.",
+        [
+          "language mainly on the left",
+          "a large bundle of nerve fibers"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the example of creativity suggest?",
+        "Complex skills use many parts of the brain.",
+        "Creativity uses only the right hemisphere.",
+        "Creativity uses no part of the brain.",
+        "The text says that creativity uses many networks across the brain.",
+        "Creativity, for example, uses many networks across the brain."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "hemispheres",
+          "the two halves of the brain"
+        ],
+        [
+          "bundle",
+          "a group of things tied or held together"
+        ],
+        [
+          "epilepsy",
+          "a disease of the brain that causes seizures"
+        ],
+        [
+          "tasks",
+          "jobs or pieces of work"
+        ],
+        [
+          "stereotypes",
+          "fixed ideas about a type of person"
+        ]
+      ],
+      "B": [
+        [
+          "analyzed",
+          "examined carefully in order to understand"
+        ],
+        [
+          "functions",
+          "special jobs of parts of the body"
+        ],
+        [
+          "communicate",
+          "to send information to each other"
+        ],
+        [
+          "networks",
+          "groups of connected parts"
+        ],
+        [
+          "specialization",
+          "when a part has a particular job"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 137,
+    "slug": "unseen-reading-part-137",
+    "theme": "Social Media and Teens",
+    "blurb": "the case that social media harms teens, the case that the effect is small or mixed",
+    "texts": {
+      "A": {
+        "title": "The Case That Social Media Harms Teens",
+        "text": "Since about 2012, rates of anxiety, depression and self-harm among teenagers have risen in several countries, especially among girls, according to health statistics. The social psychologist Jonathan Haidt and others argue that smartphones and social media are a main reason. They point to several mechanisms. Social media can take time from sleep, face-to-face friendship, exercise and homework. It encourages constant comparison with the best moments of other people’s lives and with filtered images, which can hurt body image and self-esteem. It also makes bullying and exclusion easier and more public, and its designs, such as endless scrolling and notifications, are built to hold attention. Some experiments in which people reduced social media for a few weeks found small improvements in mood or well-being. Supporters of this view say that parents and schools should delay smartphones, limit social media for younger teens and keep phones out of classrooms, as a precaution while research continues."
+      },
+      "B": {
+        "title": "The Case for Caution About the Evidence",
+        "text": "Other researchers think that the picture is more complicated. In 2019, Amy Orben and Andrew Przybylski analyzed data from more than 350,000 adolescents. They found that the link between digital technology use and well-being was negative but very small, explaining at most about 0.4 percent of the differences in well-being, which was less than the link with some everyday factors. Critics of the strong claim, such as Candice Odgers, say that most studies are correlational, which means that they cannot show cause and effect. A teenager who is already sad might use social media more, and not the reverse. Mental health problems also rose or did not rise in different ways across countries, and other causes, such as economic pressure, school stress and changes in how problems are reported, could be involved. The effect also seems to depend on the person and the use: connecting with friends can help, while passive scrolling and bullying may harm. Supporters of the strong view reply that small average effects can hide large harm for some young people. Both sides agree that more high-quality research is needed."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Some experts argue that social media harms teen mental health.",
+        "Some experts argue that social media improves every teen’s health.",
+        "Some experts argue that teens do not use social media at all.",
+        "The text explains that some experts argue that smartphones and social media are a main reason for rising mental health problems among teens.",
+        [
+          "argue that smartphones and social media are a main reason",
+          "as a precaution while research continues"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "Among whom have rates especially risen, according to the text?",
+        "Among girls.",
+        "Among older adults.",
+        "Among young boys only.",
+        "The text says that rates have risen especially among girls.",
+        "especially among girls"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “filtered” in “filtered images” means…",
+        "changed by editing tools.",
+        "printed on paper.",
+        "taken in the dark.",
+        "The text says that social media encourages comparison with filtered images, which means images changed by editing tools.",
+        "with filtered images"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “its” in “its designs” refers to…",
+        "social media.",
+        "bullying.",
+        "sleep.",
+        "The sentence says that social media makes bullying easier, and the designs of social media are built to hold attention.",
+        "It also makes bullying and exclusion easier and more public, and its designs"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many hours teens spend on phones each day.",
+        "What social media can take time from.",
+        "What experiments found about reducing social media.",
+        "The text does not say how many hours teens spend on phones. It says what social media takes time from and what experiments found.",
+        [
+          "take time from sleep, face-to-face friendship, exercise and homework",
+          "found small improvements in mood or well-being"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the phrase “as a precaution” suggest?",
+        "Supporters want to act before the research is complete.",
+        "Supporters believe the research is finished.",
+        "Supporters want to stop all research.",
+        "The text says that supporters want these steps as a precaution while research continues.",
+        "as a precaution while research continues"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Some researchers find that the effect of social media is small or mixed.",
+        "Some researchers find that social media always improves well-being.",
+        "Some researchers find that teens never use social media.",
+        "The text explains that other researchers find a small effect, mostly correlational evidence and effects that depend on the person and the use.",
+        [
+          "the picture is more complicated",
+          "The effect also seems to depend on the person and the use"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "How much of the differences in well-being did the link explain, at most?",
+        "About 0.4 percent.",
+        "About 40 percent.",
+        "About 4 percent.",
+        "The text says that the link explained at most about 0.4 percent of the differences in well-being.",
+        "explaining at most about 0.4 percent of the differences in well-being"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “reported” means…",
+        "described to others.",
+        "hidden from others.",
+        "cured by others.",
+        "The text says that changes in how problems are reported could be involved, which means how problems are described to others.",
+        "changes in how problems are reported"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “they” in “which means that they cannot show cause and effect” refers to…",
+        "most studies.",
+        "the teenagers.",
+        "the critics.",
+        "The sentence says that most studies are correlational, which means that those studies cannot show cause and effect.",
+        "most studies are correlational, which means that they cannot show cause and effect"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many teenagers use social media worldwide.",
+        "What a sad teenager might do.",
+        "What supporters of the strong view reply.",
+        "The text does not say how many teenagers use social media worldwide. It says what a sad teenager might do and what supporters reply.",
+        [
+          "A teenager who is already sad might use social media more",
+          "small average effects can hide large harm for some young people"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "The question is still open.",
+        "Both sides have stopped arguing.",
+        "The question was solved in 2019.",
+        "The text says that both sides agree that more high-quality research is needed.",
+        "Both sides agree that more high-quality research is needed."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "rates",
+          "how often something happens"
+        ],
+        [
+          "mechanisms",
+          "ways in which something works or happens"
+        ],
+        [
+          "comparison",
+          "looking at how things are alike or different"
+        ],
+        [
+          "self-esteem",
+          "how much you like and respect yourself"
+        ],
+        [
+          "precaution",
+          "an action taken to prevent a problem"
+        ]
+      ],
+      "B": [
+        [
+          "complicated",
+          "not simple, with many parts"
+        ],
+        [
+          "adolescents",
+          "young people between childhood and adulthood"
+        ],
+        [
+          "correlational",
+          "showing a link between two things"
+        ],
+        [
+          "reverse",
+          "the opposite"
+        ],
+        [
+          "passive",
+          "taking no active part"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 138,
+    "slug": "unseen-reading-part-138",
+    "theme": "Lie Detectors",
+    "blurb": "how a polygraph works, why scientists and courts doubt it",
+    "texts": {
+      "A": {
+        "title": "How a Polygraph Works",
+        "text": "A polygraph, often called a lie detector, does not detect lies. It records body signals while a person answers questions: heart rate, blood pressure, breathing and sweating on the fingers. Sensors are placed on the chest, the arm and the fingers, and the examiner asks simple questions first, then relevant ones. The idea is that lying causes stress, and stress changes these signals. In one common method, the examiner compares the reactions to “control” questions, such as “Have you ever lied to someone who trusted you?”, with the reactions to questions about the crime. If the person reacts more strongly to the crime questions, the examiner suggests that the person may be lying. Polygraph tests have been used by police, by some governments and by some employers, and many people believe that they work like a machine that shows the truth. In reality, they measure emotion and arousal, and an examiner must interpret the lines on the paper."
+      },
+      "B": {
+        "title": "Why Scientists and Courts Doubt the Polygraph",
+        "text": "Most scientists do not trust polygraph tests. The main problem is that there is no special body signal for lying. Fear, anger, embarrassment or worry about being wrongly accused can cause the same reactions as lying, so an innocent, nervous person can look guilty. Meanwhile, a calm or practiced person can look truthful. In 2003, the United States National Academy of Sciences reviewed the evidence and found that polygraph tests can discriminate lying from truth-telling at rates well above chance, but well below perfection. It also found that people can learn to use countermeasures, such as controlling breathing or thinking exciting thoughts, to beat the test. For these reasons, polygraph results are not accepted as evidence in most courts, and many countries restrict their use by employers. Some researchers are looking at new methods, such as brain scans and analysis of speech, but these also have limits. The best lie detection still depends on checking facts and evidence, not on reading the body."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "A polygraph records body signals, and an examiner interprets them.",
+        "A polygraph reads thoughts and shows the exact truth.",
+        "A polygraph measures how fast a person speaks.",
+        "The text explains that a polygraph records body signals and that an examiner must interpret them.",
+        [
+          "It records body signals while a person answers questions",
+          "an examiner must interpret the lines on the paper"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What are control questions used for?",
+        "To compare reactions with those to the crime questions.",
+        "To relax the person at the end of the test.",
+        "To test the battery of the machine.",
+        "The text says that the examiner compares the reactions to control questions with the reactions to questions about the crime.",
+        "compares the reactions to “control” questions"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “arousal” means…",
+        "a state of excitement.",
+        "a state of sleep.",
+        "a state of silence.",
+        "The text says that polygraphs measure emotion and arousal, which means a state of excitement in the body.",
+        "they measure emotion and arousal"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “they” in “that they work like a machine” refers to…",
+        "polygraph tests.",
+        "the police.",
+        "the employers.",
+        "The sentence says that many people believe that polygraph tests work like a machine that shows the truth.",
+        "many people believe that they work like a machine that shows the truth"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How much a polygraph costs.",
+        "Where the sensors are placed.",
+        "Who has used polygraph tests.",
+        "The text does not say how much a polygraph costs. It says where the sensors are placed and who has used polygraph tests.",
+        [
+          "Sensors are placed on the chest, the arm and the fingers",
+          "used by police, by some governments and by some employers"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the first sentence suggest?",
+        "A polygraph measures the body, not the truth.",
+        "A polygraph always finds the truth.",
+        "A polygraph is a type of camera.",
+        "The text says that a polygraph does not detect lies, but records body signals.",
+        "does not detect lies. It records body signals"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Polygraph tests are doubted because body signals do not prove lying.",
+        "Polygraph tests are trusted because they always find the truth.",
+        "Polygraph tests are doubted only because they are old.",
+        "The text explains that there is no special body signal for lying, so scientists and courts doubt polygraph tests.",
+        [
+          "there is no special body signal for lying",
+          "lie detection still depends on checking facts and evidence"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What did the 2003 review find about accuracy?",
+        "Above chance, but well below perfection.",
+        "Perfect in every case.",
+        "No better than a coin toss.",
+        "The text says that the tests can discriminate lying from truth-telling at rates well above chance, but well below perfection.",
+        "well above chance, but well below perfection"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “nervous” means…",
+        "worried and tense.",
+        "calm and relaxed.",
+        "proud and happy.",
+        "The text says that an innocent, nervous person can look guilty, which means a person who is worried and tense.",
+        "an innocent, nervous person can look guilty"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “It” in “It also found” refers to…",
+        "the National Academy of Sciences.",
+        "the polygraph used in the test.",
+        "the court that hears the case.",
+        "The sentence before says that the National Academy of Sciences reviewed the evidence, and the Academy also found that people can use countermeasures.",
+        [
+          "the United States National Academy of Sciences reviewed the evidence",
+          "It also found that people can learn to use countermeasures"
+        ]
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people have beaten the test.",
+        "What courts do with polygraph results.",
+        "What new methods researchers are looking at.",
+        "The text does not say how many people have beaten the test. It says what courts do with polygraph results and what new methods researchers study.",
+        [
+          "polygraph results are not accepted as evidence in most courts",
+          "brain scans and analysis of speech"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the first sentence suggest?",
+        "Experts are not confident about polygraph tests.",
+        "Experts use polygraph tests in all cases.",
+        "Experts have never studied polygraph tests.",
+        "The text says that most scientists do not trust polygraph tests.",
+        "Most scientists do not trust polygraph tests."
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "records",
+          "saves information so that it can be used later"
+        ],
+        [
+          "sensors",
+          "devices that detect something"
+        ],
+        [
+          "relevant",
+          "connected to the matter being discussed"
+        ],
+        [
+          "examiner",
+          "a person who tests or checks"
+        ],
+        [
+          "interpret",
+          "to explain the meaning of something"
+        ]
+      ],
+      "B": [
+        [
+          "accused",
+          "said to have done something wrong"
+        ],
+        [
+          "innocent",
+          "not guilty of a crime"
+        ],
+        [
+          "chance",
+          "luck, a result without a pattern"
+        ],
+        [
+          "perfection",
+          "the state of being without any faults"
+        ],
+        [
+          "restrict",
+          "to limit"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 139,
+    "slug": "unseen-reading-part-139",
+    "theme": "Conspiracy Beliefs",
+    "blurb": "why people believe conspiracy theories, how people can learn to check claims",
+    "texts": {
+      "A": {
+        "title": "Why Do People Believe Conspiracy Theories?",
+        "text": "A conspiracy theory is a belief that a secret group is behind important events, for example that a disaster was planned by powerful people. Some real conspiracies have existed in history, so the existence of conspiracies is not the issue. The psychological question is why some people believe unlikely or unproven theories. Researchers have found three main kinds of motives. The first is the need to understand. When the world feels confusing, a theory offers a clear story with someone to blame. The second is the need for safety and control: after a frightening event, people look for explanations that make the event seem less random. The third is the need to belong to a group and to feel special, because knowing a “secret truth” can create identity. Belief is also linked to low trust in institutions and to feeling powerless. Conspiracy beliefs are common: surveys in many countries find that a large part of the population believes at least one. They are not limited to any single type of person."
+      },
+      "B": {
+        "title": "How People Can Learn to Check Claims",
+        "text": "Researchers do not only study why people believe theories, they also study how to reduce harmful misinformation. Arguing angrily rarely works, because it makes people defend their view. Several methods have better evidence. One is “prebunking”: teaching people in advance the common tricks of misinformation, such as fake experts, emotional language and cherry-picked facts, so that they recognize them later. Another is lateral reading, which means leaving a page and checking what other sources say. A third is asking simple questions: Who says this? What is the evidence? Could there be another explanation? A theory that cannot be tested, because every piece of evidence against it is seen as part of the plot, deserves extra caution. Talking with respect also matters: people change their minds more when they feel listened to. Finally, a healthy habit is to accept uncertainty, because sometimes the honest answer is “we do not know yet”."
+      }
+    },
+    "items": [
+      [
+        "A",
+        "Main idea",
+        "What is the main idea of the text?",
+        "Psychological needs help to explain why people believe conspiracy theories.",
+        "Conspiracy theories are always true, so everyone believes them.",
+        "Only unintelligent people believe in conspiracy theories.",
+        "The text explains three kinds of psychological motives that help to explain why some people believe conspiracy theories.",
+        [
+          "The psychological question is why some people believe unlikely or unproven theories",
+          "Researchers have found three main kinds of motives"
+        ]
+      ],
+      [
+        "A",
+        "Detail",
+        "What is the second motive?",
+        "The need for safety and control.",
+        "The need to understand.",
+        "The need to belong.",
+        "The text says that the second motive is the need for safety and control.",
+        "The second is the need for safety and control"
+      ],
+      [
+        "A",
+        "Vocabulary",
+        "In the text, “confusing” means…",
+        "hard to understand.",
+        "easy to explain.",
+        "full of friends.",
+        "The text says that when the world feels confusing, a theory offers a clear story, which means that the world feels hard to understand.",
+        "When the world feels confusing"
+      ],
+      [
+        "A",
+        "Reference",
+        "In the text, “They” in “They are not limited to any single type of person” refers to…",
+        "conspiracy beliefs.",
+        "surveys.",
+        "institutions.",
+        "The sentence before says that conspiracy beliefs are common, and those beliefs are not limited to any single type of person.",
+        "Conspiracy beliefs are common"
+      ],
+      [
+        "A",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "Which theory is most popular.",
+        "What the first motive is.",
+        "What belief is linked to.",
+        "The text does not say which theory is most popular. It says what the first motive is and what belief is linked to.",
+        [
+          "The first is the need to understand",
+          "low trust in institutions and to feeling powerless"
+        ]
+      ],
+      [
+        "A",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Many different kinds of people can believe in theories.",
+        "Only one kind of person believes in theories.",
+        "Nobody believes in theories.",
+        "The text says that conspiracy beliefs are not limited to any single type of person.",
+        "not limited to any single type of person"
+      ],
+      [
+        "B",
+        "Main idea",
+        "What is the main idea of the text?",
+        "People can reduce misinformation by learning tricks and by checking sources.",
+        "People can reduce misinformation by arguing angrily with others.",
+        "People can reduce misinformation by trusting every new claim.",
+        "The text explains methods such as prebunking, lateral reading and asking simple questions to reduce misinformation.",
+        [
+          "they also study how to reduce harmful misinformation",
+          "Several methods have better evidence"
+        ]
+      ],
+      [
+        "B",
+        "Detail",
+        "What is prebunking?",
+        "Teaching people common tricks of misinformation in advance.",
+        "Deleting all false pages from the internet.",
+        "Arguing with people after they believe.",
+        "The text says that prebunking is teaching people in advance the common tricks of misinformation.",
+        "teaching people in advance the common tricks of misinformation"
+      ],
+      [
+        "B",
+        "Vocabulary",
+        "In the text, “deserves” means…",
+        "should receive.",
+        "refuses to give.",
+        "tries to hide.",
+        "The text says that a theory that cannot be tested deserves extra caution, which means that it should receive extra caution.",
+        "deserves extra caution"
+      ],
+      [
+        "B",
+        "Reference",
+        "In the text, “it” in “because it makes people defend their view” refers to…",
+        "arguing angrily.",
+        "misinformation.",
+        "prebunking.",
+        "The sentence says that arguing angrily rarely works, because arguing angrily makes people defend their view.",
+        "Arguing angrily rarely works, because it makes people defend their view"
+      ],
+      [
+        "B",
+        "Not stated",
+        "Which of these is NOT mentioned in the text?",
+        "How many people use prebunking.",
+        "What simple questions to ask.",
+        "What helps people change their minds.",
+        "The text does not say how many people use prebunking. It gives simple questions to ask and says what helps people change their minds.",
+        [
+          "Who says this? What is the evidence?",
+          "people change their minds more when they feel listened to"
+        ]
+      ],
+      [
+        "B",
+        "Inference",
+        "What does the last sentence suggest?",
+        "Saying “I do not know yet” can be honest and wise.",
+        "Experts should always give a final answer.",
+        "Not knowing means giving up.",
+        "The text says that sometimes the honest answer is “we do not know yet”.",
+        "sometimes the honest answer is “we do not know yet”"
+      ]
+    ],
+    "matches": {
+      "A": [
+        [
+          "conspiracy",
+          "a secret plan by a group to do something harmful"
+        ],
+        [
+          "motives",
+          "reasons for doing or believing something"
+        ],
+        [
+          "blame",
+          "to say that someone is responsible for something bad"
+        ],
+        [
+          "random",
+          "happening without any plan or pattern"
+        ],
+        [
+          "institutions",
+          "large organizations such as governments and schools"
+        ]
+      ],
+      "B": [
+        [
+          "misinformation",
+          "false or misleading information"
+        ],
+        [
+          "experts",
+          "people with great knowledge of a subject"
+        ],
+        [
+          "plot",
+          "a secret plan"
+        ],
+        [
+          "caution",
+          "great care to avoid danger or mistakes"
+        ],
+        [
+          "uncertainty",
+          "the state of not being sure"
+        ]
+      ]
+    }
   }
 ];

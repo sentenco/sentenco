@@ -158,6 +158,18 @@ const META = [
   [125, "The science of a good life: what an 80-year study found, and what gratitude can do"],
   [126, "Seeing is not simple: how illusions trick the brain, and why we can miss what is right in front of us"],
   [127, "When belief changes the body: the placebo effect, and how expectations shape what we feel"],
+  [128, "A debate: what studies say about violent video games and aggression, and what critics reply"],
+  [129, "A debate: does the brain decide before we do? The famous experiment, and the doubts about it"],
+  [130, "A debate: how far would ordinary people obey? Milgram’s famous study, and the criticisms of it"],
+  [131, "A debate: the 1971 prison experiment that became famous, and the evidence that changed its story"],
+  [132, "A debate: when famous findings failed, and how psychology is trying to become more reliable"],
+  [133, "A debate: what IQ tests measure, and the surprising rise in scores through the twentieth century"],
+  [134, "A debate: genes or environment? What twin studies show, and why the question is too simple"],
+  [135, "A debate: “I am a visual learner”. Why the idea feels true, and what research finds when it is tested"],
+  [136, "A debate: are you a “right-brain” person? The idea, and what thousands of brain scans show"],
+  [137, "A debate: is social media harming teenagers? The case for concern, and the case for caution about the evidence"],
+  [138, "A debate: can a machine catch a liar? How a polygraph works, and why experts doubt it"],
+  [139, "A debate: why do conspiracy theories attract people? The psychology behind them, and how to check claims"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
