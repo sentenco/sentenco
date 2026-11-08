@@ -177,7 +177,7 @@ const RE = (q, sample) => ({ kind: "open", q, options: ["", "", ""], correct: 0,
 
 export const SAMPLE_STORY = {
   title: "The Lost Cat",
-  text: "Last Saturday, Mia woke up at seven o'clock. She went to the kitchen, but her cat Coco was not there. Mia was worried.\n\n\"Where is Coco?\" she asked her mom.\n\n\"Look in the garden,\" said her mom.\n\nMia ran to the garden. She looked behind the big tree and under the bench, but she did not see Coco. Then she heard a small sound: \"Meow!\" The sound came from a red box next to the door.\n\nMia opened the box and found Coco inside, with three tiny kittens! Mia smiled and said, \"Coco, you are a mom now!\" She gave Coco some milk and called her brother Tom to see the new family. They were all very happy.",
+  text: "Last Saturday, Mia woke up at seven o'clock. She went to the kitchen, but her cat Coco was not there. Mia was worried.\n\n\"Where is Coco?\" she asked her mom.\n\nMia ran to the garden. She looked behind the big tree. Then she heard a small sound: \"Meow!\" It came from a red box.\n\nMia opened the box and found Coco with three tiny kittens! \"Coco, you are a mom now!\" Mia gave her some milk and called her brother Tom.",
   image: PIC + "u9-l1/cat.jpg",
 };
 

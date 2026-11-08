@@ -171,7 +171,7 @@ function Icon({ name, size = 18, color, fill = false, className, style }) {
 }
 
 // Scales the whole player so it fills the window with only a thin margin, however big the screen is.
-function useFitScale(ref) {
+function useFitScale(ref, screen) {
   const [scale, setScale] = useState(1);
   useLayoutEffect(() => {
     const el = ref.current;
@@ -183,14 +183,19 @@ function useFitScale(ref) {
       const k = Math.min((window.innerWidth - 2 * m) / w, (window.innerHeight - 2 * m) / h);
       const next = Math.max(0.5, Math.min(3, k));
       document.documentElement.style.setProperty("--lb-scale", String(next));
+      // a shrunken screen keeps its full-size layout box, so pull the margins in to keep it centered and unscrolled
+      document.documentElement.style.setProperty("--lb-pad", `${next < 1 ? (el.offsetHeight * (1 - next)) / 2 : 0}px`);
       setScale(next);
     };
     calc();
+    // measure again once the new screen and its fonts have settled
+    const raf = requestAnimationFrame(calc);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(calc);
     window.addEventListener("resize", calc);
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(calc) : null;
     if (ro) ro.observe(el);
-    return () => { window.removeEventListener("resize", calc); if (ro) ro.disconnect(); document.documentElement.style.removeProperty("--lb-scale"); };
-  }, [ref]);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", calc); if (ro) ro.disconnect(); document.documentElement.style.removeProperty("--lb-scale"); document.documentElement.style.removeProperty("--lb-pad"); };
+  }, [ref, screen]);
   return scale;
 }
 
@@ -425,7 +430,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
           })}
         </div>
 
-        {showStory && <StoryOverlay story={story} onClose={() => setShowStory(false)} />}
+        {showStory && <StoryOverlay story={story} onClose={() => setShowStory(false)} onSetup={onSetup} />}
 
         {view === "q" && item && (
           <QuestionCard
@@ -541,27 +546,157 @@ function QuestionCard({ letter, type, cfg, item, picked, res, delta, showKey, on
 }
 
 // ---- the story --------------------------------------------------------------------
-function StoryBody({ story }) {
-  const paras = String(story.text || "").split(/\n{2,}/).map((t) => t.trim()).filter(Boolean);
+// Read along: the words light up one by one. Round button to play and pause, three speeds, tap a word
+// to jump there, and an optional voice that reads the story aloud (where the browser has one).
+const READ_SPEEDS = [["Slow", 1.5], ["Normal", 2.3], ["Fast", 3.2]];
+
+function StoryReader({ story }) {
+  const paras = useMemo(
+    () => String(story.text || "").split(/\n{2,}/).map((t) => t.trim()).filter(Boolean).map((p) => p.split(/\s+/)),
+    [story.text]
+  );
+  const words = useMemo(() => paras.flat(), [paras]);
+  const offs = useMemo(() => words.reduce((acc, w) => { acc.list.push(acc.at); acc.at += w.length + 1; return acc; }, { list: [], at: 0 }).list, [words]);
+  const full = useMemo(() => words.join(" "), [words]);
+  const starts = useMemo(() => paras.reduce((acc, pw) => { acc.list.push(acc.at); acc.at += pw.length; return acc; }, { list: [], at: 0 }).list, [paras]);
+  const last = Math.max(0, words.length - 1);
+  const canSpeak = typeof window !== "undefined" && "speechSynthesis" in window && typeof window.SpeechSynthesisUtterance !== "undefined";
+
+  const [wi, setWi] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [rate, setRate] = useState(2.3);
+  const [voice, setVoice] = useState(false);
+  const cur = useRef(0);
+  const timer = useRef(null);
+  const watch = useRef(null);
+  const gen = useRef(0);
+  const textRef = useRef(null);
+  const wordRefs = useRef([]);
+
+  const go = (i) => { cur.current = i; setWi(i); };
+  const halt = () => {
+    gen.current++;
+    clearInterval(timer.current); timer.current = null;
+    clearTimeout(watch.current);
+    try { if (canSpeak) window.speechSynthesis.cancel(); } catch { /* no speech here */ }
+    setPlaying(false);
+  };
+  const tick = (r) => {
+    clearInterval(timer.current);
+    timer.current = setInterval(() => {
+      if (cur.current < last) go(cur.current + 1); else halt();
+    }, 1000 / r);
+  };
+  const start = (from, r, withVoice) => {
+    halt();
+    const myGen = ++gen.current;
+    let i = from;
+    if (i >= last) i = 0;
+    go(i);
+    setPlaying(true);
+    if (withVoice && canSpeak) {
+      try {
+        const base = offs[i];
+        const u = new window.SpeechSynthesisUtterance(full.slice(base));
+        u.lang = "en-US";
+        u.rate = r < 2 ? 0.75 : r < 3 ? 0.92 : 1.1;
+        let heard = false;
+        u.onboundary = (e) => {
+          if (myGen !== gen.current) return;
+          heard = true;
+          const c = base + e.charIndex;
+          let k = 0;
+          for (let j = 0; j < offs.length; j++) { if (offs[j] <= c) k = j; else break; }
+          go(k);
+        };
+        u.onend = () => { if (myGen === gen.current) { go(last); halt(); } };
+        window.speechSynthesis.speak(u);
+        // some voices never report where they are: then the words follow a steady timer instead
+        watch.current = setTimeout(() => { if (myGen === gen.current && !heard) tick(r); }, 1500);
+        return;
+      } catch { /* fall back to the timer */ }
+    }
+    tick(r);
+  };
+
+  useEffect(() => () => { clearInterval(timer.current); clearTimeout(watch.current); try { if (canSpeak) window.speechSynthesis.cancel(); } catch { /* ignore */ } }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // keep the word being read in view on longer stories
+  useEffect(() => {
+    const box = textRef.current, el = wordRefs.current[wi];
+    if (!box || !el) return;
+    if (el.offsetTop < box.scrollTop + 10 || el.offsetTop + el.offsetHeight > box.scrollTop + box.clientHeight - 10) {
+      box.scrollTo({ top: Math.max(0, el.offsetTop - box.clientHeight / 2), behavior: "smooth" });
+    }
+  }, [wi]);
+
+  const finished = wi >= last && !playing && words.length > 0;
+  const pct = words.length ? Math.round(((wi + 1) / words.length) * 100) : 0;
+  const onPlay = () => { if (playing) halt(); else start(cur.current, rate, voice); };
+  const onWord = (i) => { const was = playing; halt(); go(i); if (was) start(i, rate, voice); };
+  const onSpeed = (r) => { setRate(r); if (playing) start(cur.current, r, voice); };
+  const onVoice = () => { const v = !voice; setVoice(v); if (playing) start(cur.current, rate, v); };
+
   return (
     <>
-      {story.image && <div className="lb-simg"><img src={story.image} alt="" /></div>}
-      {paras.map((t, i) => <p key={i} className="lb-sp">{t}</p>)}
+      <div className="lbr-pad">
+        <div className="lbr-paper">
+          <div className="lbr-text" ref={textRef}>
+            {paras.map((pw, pi) => (
+              <p key={pi}>
+                {pw.map((w, k) => {
+                  const i = starts[pi] + k;
+                  return (
+                    <span key={i} ref={(el) => { wordRefs.current[i] = el; }} className={`lbr-w${i < wi ? " done" : i === wi ? " cur" : ""}`} onClick={() => onWord(i)}>{w}</span>
+                  );
+                }).reduce((acc, el, k) => (k ? [...acc, " ", el] : [el]), [])}
+              </p>
+            ))}
+          </div>
+          <div className={`lbr-stamp${finished ? " on" : ""}`}>Well read!</div>
+        </div>
+      </div>
+      <div className="lbr-player">
+        <div className="lbr-ring" style={{ "--p": pct }}>
+          <button type="button" className={`lbr-play${playing ? " on" : ""}`} onClick={onPlay} aria-label={playing ? "Pause the story" : finished ? "Read the story again" : "Play the story"} />
+        </div>
+        <div className="lbr-count"><b>{Math.min(wi + 1, words.length)} of {words.length}</b><small>words read</small></div>
+        <span className="lbr-seg">
+          {READ_SPEEDS.map(([label, r]) => <button key={label} type="button" className={rate === r ? "on" : ""} onClick={() => onSpeed(r)}>{label}</button>)}
+        </span>
+        {canSpeak && <button type="button" className="lbr-voice" aria-pressed={voice} onClick={onVoice}><b />Voice</button>}
+      </div>
     </>
   );
 }
 
 // Peek at the story while playing (does not change coins or tiles).
-function StoryOverlay({ story, onClose }) {
+function StoryOverlay({ story, onClose, onSetup }) {
+  const cardRef = useRef(null);
+  // size the card to the window: as big as fits, never cut off
+  useLayoutEffect(() => {
+    const el = cardRef.current;
+    if (!el) return undefined;
+    const fit = () => {
+      el.style.zoom = "1";
+      const k = Math.min(1.3, (window.innerHeight - 28) / el.offsetHeight, (window.innerWidth - 28) / el.offsetWidth);
+      el.style.zoom = String(Math.max(0.5, k));
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
   return createPortal(
     <div className="lb-ov lb-ov-story">
-      <div className="lb-card lb-scard">
-        <div className="lb-qh">
-          <Icon name="book" size={26} color="#F2593A" />
-          <div><div className="lb-nm">{story.title || "The story"}</div><div className="lb-rl">Take your time, then go back to the board</div></div>
+      <div className="lbr-card lbr-pop" ref={cardRef}>
+        <div className="lbr-ohead"><b><span>{story.title || "The story"}</span></b></div>
+        <StoryReader story={story} />
+        <div className="lbr-actions">
+          <button type="button" className="lbr-ghost" onClick={onSetup}>Back to setup</button>
+          <button type="button" className="lbr-go" onClick={onClose}>Play</button>
+          <p className="lbr-note">Reading again does not change your coins or tiles.</p>
         </div>
-        <div className="lb-qb"><StoryBody story={story} /></div>
-        <div className="lb-end lb-end-pad"><button type="button" className="lb-go" onClick={onClose}>Back to the board</button></div>
       </div>
     </div>,
     document.body
@@ -571,20 +706,17 @@ function StoryOverlay({ story, onClose }) {
 // Shown before the board opens: the student reads (or hears) the story first.
 function StoryRead({ title, story, onStart, onBack }) {
   return (
-    <div className="lb-app lb-setup">
-      <div className="lb-tbar">
+    <div className="lbr-card">
+      <div className="lbr-tbar">
         <Brand />
-        <span className="lb-left">Read the story first</span>
+        <span className="lbr-chip">Read the story first</span>
       </div>
-      <div className="lb-sb">
-        <p className="lb-eyebrow">Story time</p>
-        <h1 className="lb-sti">{story.title || title}</h1>
-        <div className="lb-sec lb-read"><StoryBody story={story} /></div>
-        <p className="lb-note">The questions on the board are about this story. You can open it again any time with the Story button.</p>
-        <div className="lb-end lb-end-split">
-          <button type="button" className="lb-ghost" onClick={onBack}>Back to setup</button>
-          <button type="button" className="lb-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>I have read it, open the board</button>
-        </div>
+      <div className="lbr-title"><h1><span>{story.title || title}</span></h1></div>
+      <StoryReader story={story} />
+      <div className="lbr-actions">
+        <button type="button" className="lbr-ghost" onClick={onBack}>Back to setup</button>
+        <button type="button" className="lbr-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>Play</button>
+        <p className="lbr-note">The questions are about this story. Open it again any time with the Story button.</p>
       </div>
     </div>
   );
@@ -682,7 +814,8 @@ export default function LetterBoardPlay() {
   const [cfg, setCfg] = useState(loadCfg);
   const [session, setSession] = useState(null); // { level, key, reading } while a game is on
   const fitRef = useRef(null);
-  const scale = useFitScale(fitRef);
+  const screen = err ? "error" : !set ? "loading" : session ? (session.reading ? "reading" : "play") : "setup";
+  const scale = useFitScale(fitRef, screen);
 
   useEffect(() => {
     document.title = "sentenco";
@@ -755,19 +888,19 @@ export default function LetterBoardPlay() {
 }
 
 const CSS = `
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
 .lb-sbq { display: flex; flex-direction: column; gap: 16px; min-height: 445px; padding: 10px 10px 12px; }
 .lb-sbq .lb-sti { font-size: 34px; margin: 6px 0 0; }
 .lb-vals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
 .lb-vals label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 700; }
 .lb-vals select { height: 42px; width: 100%; font-size: 14px; border: 3px solid #1B2A4A; border-radius: 10px; padding: 0 6px; background: #fff; color: #1B2A4A; font-family: inherit; font-weight: 500; }
 .lb-start { width: 100%; margin-top: auto; }
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
 .lb-page { min-height: 100vh; background: #FBF4F1; display: flex; justify-content: center; align-items: center; padding: 10px; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-page *, .lb-page *::before, .lb-page *::after { box-sizing: border-box; }
 .lb-page button, .lb-ov button { font-family: inherit; }
 .lb-ov { font-family: 'Inter', sans-serif; color: #1B2A4A; }
 .lb-ov, .lb-ov *, .lb-ov *::before, .lb-ov *::after { box-sizing: border-box; }
-.lb-fit { width: 100%; max-width: 580px; transform-origin: center center; }
+.lb-fit { width: 100%; max-width: 580px; transform-origin: center center; margin-top: calc(var(--lb-pad, 0px) * -1); margin-bottom: calc(var(--lb-pad, 0px) * -1); }
 .lb-app { width: 100%; border-radius: 12px; overflow: hidden; background: #fff; border: 3px solid #1B2A4A; box-shadow: 4px 4px 0 #1B2A4A; position: relative; }
 .lb-app.lb-shake .lb-grid { animation: lb-shake .5s; }
 .lb-msgbox { padding: 40px; text-align: center; font-size: 16px; }
@@ -793,12 +926,54 @@ const CSS = `
 .lb-qimg img { max-width: 100%; max-height: 168px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
 .lb-ov.lb-ov-story { z-index: 51; }
 .lb-ov > .lb-card { margin: auto; zoom: var(--lb-scale, 1); }
-.lb-scard { max-width: 640px; }
-.lb-simg { display: flex; justify-content: center; margin: 12px 0 4px; }
-.lb-simg img { max-width: 100%; max-height: 190px; border-radius: 14px; border: 1.5px solid #EBD8CE; background: #fff; object-fit: contain; }
-.lb-sp { font-family: 'Fraunces', Georgia, serif; font-size: 19px; line-height: 1.6; margin: 10px 0; color: #1B2A4A; }
-.lb-read { padding: 8px 20px 14px; }
-.lb-storysec { background: #E4E9F5; }
+.lbr-card { position: relative; width: 100%; max-width: 580px; margin: 0 auto; display: flex; flex-direction: column; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, #FFFAF6 0%, #FFF0E8 100%); border: 1.5px solid #F3DED3; border-radius: 32px; box-shadow: 0 1px 0 #fff inset, 0 26px 50px -22px rgba(27,42,74,.34), 0 4px 10px -4px rgba(27,42,74,.08); animation: lbr-rise .45s ease-out both; }
+.lbr-card::before { content: ''; position: absolute; z-index: -1; width: 340px; height: 340px; right: -110px; top: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,160,.75) 0, rgba(255,217,160,0) 68%); }
+.lbr-card::after { content: ''; position: absolute; z-index: -1; width: 380px; height: 380px; left: -150px; bottom: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,170,.55) 0, rgba(255,190,170,0) 68%); }
+.lbr-pop { margin: auto; }
+@keyframes lbr-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.lbr-tbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 22px 0; }
+.lbr-chip { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; background: rgba(255,255,255,.9); border-radius: 999px; padding: 7px 13px; box-shadow: 0 2px 10px -3px rgba(27,42,74,.18); color: #1B2A4A; }
+.lbr-title, .lbr-ohead { text-align: center; padding: 22px 24px 2px; }
+.lbr-ohead { padding-top: 26px; }
+.lbr-title h1, .lbr-ohead b { display: block; margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 42px; line-height: 1.08; letter-spacing: -.02em; color: #1B2A4A; text-wrap: balance; }
+.lbr-title h1 span, .lbr-ohead b span { background-image: linear-gradient(transparent 64%, #FFD9CC 64% 90%, transparent 90%); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.lbr-pad { padding: 16px 26px 12px; }
+.lbr-paper { position: relative; background: rgba(255,255,255,.94); border: 1px solid #F6E6DD; border-radius: 26px; padding: 22px 28px; box-shadow: 0 14px 30px -16px rgba(27,42,74,.28), 0 2px 0 #fff inset; font-family: 'Fraunces', Georgia, serif; font-size: 20.5px; line-height: 1.85; }
+.lbr-text { max-height: 560px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #EBD3C8 transparent; margin: -6px -8px; padding: 6px 8px; }
+.lbr-text p { margin: 0 0 10px; color: #1B2A4A; text-indent: 1.6em; text-align: justify; text-justify: inter-word; }
+.lbr-text p:last-child { margin: 0; }
+.lbr-w { position: relative; border-radius: 10px; padding: 2px 4px; cursor: pointer; color: #838BA3; transition: color .15s, background .15s, box-shadow .15s; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.lbr-w:hover { background: #FFEDE4; }
+.lbr-w.done { color: #2D3D60; }
+.lbr-w.cur { color: #1B2A4A; background: linear-gradient(180deg, #FFE0D4, #FFD2C2); box-shadow: 0 6px 12px -6px rgba(242,89,58,.55), 0 0 0 1.5px rgba(242,89,58,.35) inset; }
+.lbr-stamp { position: absolute; right: 14px; bottom: -14px; z-index: 2; transform: rotate(-6deg) scale(.5); opacity: 0; background: #F2593A; color: #fff; border-radius: 999px; padding: 7px 18px; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 17px; box-shadow: 0 10px 18px -8px rgba(242,89,58,.7); transition: opacity .2s, transform .35s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
+.lbr-stamp.on { opacity: 1; transform: rotate(-6deg) scale(1); }
+.lbr-player { display: flex; align-items: center; gap: 14px; margin: 8px 26px 0; padding: 9px 16px 9px 9px; background: rgba(255,255,255,.96); border-radius: 999px; box-shadow: 0 12px 26px -14px rgba(27,42,74,.34), 0 1px 0 #fff inset; flex-wrap: wrap; }
+.lbr-ring { width: 62px; height: 62px; flex: none; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#F2593A calc(var(--p, 0) * 1%), #F2E3DA 0); transition: background .15s; }
+.lbr-play { position: relative; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; background: #F2593A; padding: 0; cursor: pointer; box-shadow: 0 6px 12px -5px rgba(226,74,43,.8); transition: transform .12s; }
+.lbr-play:hover { background: #E24A2B; }
+.lbr-play:active { transform: scale(.94); }
+.lbr-play::before { content: ''; position: absolute; left: 53%; top: 50%; width: 15px; height: 17px; transform: translate(-50%, -50%); background: #fff; clip-path: polygon(0 0, 100% 50%, 0 100%); border-radius: 2px; }
+.lbr-play.on::before { left: 50%; width: 5px; height: 16px; clip-path: none; border-radius: 2px; box-shadow: 8px 0 0 #fff; transform: translate(-9px, -50%); }
+.lbr-count { flex: 1; min-width: 70px; line-height: 1.25; color: #1B2A4A; }
+.lbr-count b { display: block; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.lbr-count small { font-size: 12px; color: #7A5A4E; font-weight: 500; }
+.lbr-seg { display: inline-flex; background: #F7ECE6; border-radius: 999px; padding: 3px; gap: 2px; }
+.lbr-seg button { border: 0; background: transparent; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 700; color: #7A5A4E; cursor: pointer; transition: background .15s, color .15s; }
+.lbr-seg button.on { background: #fff; color: #1B2A4A; box-shadow: 0 2px 6px rgba(27,42,74,.14); }
+.lbr-voice { display: inline-flex; align-items: center; gap: 8px; background: #F7ECE6; border: 0; border-radius: 999px; padding: 8px 14px 8px 9px; font-size: 12.5px; font-weight: 700; color: #1B2A4A; cursor: pointer; }
+.lbr-voice b { width: 28px; height: 17px; border-radius: 999px; background: #D8CDD0; position: relative; transition: background .15s; }
+.lbr-voice b::after { content: ''; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(27,42,74,.3); transition: transform .15s; }
+.lbr-voice[aria-pressed="true"] b { background: #F2593A; }
+.lbr-voice[aria-pressed="true"] b::after { transform: translateX(11px); }
+.lbr-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px 10px; padding: 16px 26px 20px; flex-wrap: wrap; }
+.lbr-note { order: 3; flex-basis: 100%; margin: 0; text-align: center; font-size: 12.5px; line-height: 1.5; color: #7A5A4E; }
+.lbr-ghost { height: 48px; padding: 0 20px; border: 0; background: rgba(255,255,255,.95); border-radius: 999px; font-weight: 700; font-size: 14.5px; color: #1B2A4A; cursor: pointer; box-shadow: 0 6px 16px -10px rgba(27,42,74,.4); transition: transform .12s; }
+.lbr-go { margin-left: auto; height: 52px; min-width: 132px; padding: 0 30px; border: 0; background: linear-gradient(180deg, #F76B4D, #EE5436); color: #fff; border-radius: 999px; font-weight: 700; font-size: 17px; cursor: pointer; box-shadow: 0 12px 20px -10px rgba(226,74,43,.85), 0 1px 0 rgba(255,255,255,.4) inset; transition: transform .12s; }
+.lbr-ghost:hover, .lbr-go:hover { transform: translateY(-1px); }
+.lbr-ghost:active, .lbr-go:active { transform: translateY(1px); }
+@media (prefers-reduced-motion: reduce) { .lbr-card, .lbr-w, .lbr-stamp, .lbr-ring, .lbr-play, .lbr-ghost, .lbr-go { animation: none; transition: none; } }
+@media (max-width: 520px) { .lbr-title h1, .lbr-ohead b { font-size: 34px; } .lbr-pad { padding: 14px 14px 10px; } .lbr-paper { padding: 20px 20px; font-size: 19px; } .lbr-player { margin: 8px 14px 0; border-radius: 28px; } .lbr-actions { padding: 14px 16px 18px; } .lbr-tbar { padding: 14px 16px 0; } }
 .lb-nomt { margin-top: 0; }
 .lb-end-pad { padding: 0 22px 20px; }
 .lb-end-split { justify-content: space-between; gap: 10px; flex-wrap: wrap; }
