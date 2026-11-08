@@ -3,7 +3,7 @@ import { UNSEEN_SHELVES, buildUnseenHubLessons } from "./unseenHubData.js";
 import { openCustomLessonPopup } from "./customLessonsRegistry";
 import "./unseenHub.css";
 
-const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E" };
+const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E", sports: "#FF8266", psych: "#2FC4B2" };
 
 // The Unseen Reading room: topic tiles, each showing its pair of texts.
 // `canOpen(slug)` limits the list to lessons this person may open.
