@@ -306,6 +306,138 @@ export const LAST_FIVE_ITEMS = [
   ST("open", "Do you play football? Who is your favorite player or team? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"My favorite team is Real Madrid. They play beautiful football.\""),
 ];
 
+// ---- story set: "The Talent Show" (music and stage fright, teens, A2 to B1, simple past) ----
+export const TALENT_SHOW_STORY = {
+  title: "The Talent Show",
+  text: "Lena was fourteen and she played the guitar every day, but she never played for other people. In March, her music teacher, Mr. Reyes, asked her to join the school talent show. Lena felt very nervous. \"I can't do it,\" she said.\n\nOn the night of the show, her hands shook. Her best friend Jade stood next to her and said, \"Just look at me.\" Lena walked onto the stage, took a deep breath and started to play. At first her voice was small, but soon it got stronger.\n\nWhen the song finished, the hall was quiet for a second. Then everybody clapped and shouted. Lena smiled. She was not scared anymore.",
+  image: "",
+};
+
+export const TALENT_SHOW_ITEMS = [
+  // easy (9)
+  ST("choice", "What instrument did Lena play?", ["the piano", "the guitar", "the drums"], 1),
+  ST("choice", "How old was Lena?", ["thirteen", "fifteen", "fourteen"], 2),
+  ST("choice", "Who asked Lena to join the talent show?", ["her mother", "her music teacher", "her best friend"], 1),
+  GR("choice", "Lena ___ the guitar every day.", ["play", "played", "playing"], 1),
+  ST("choice", "How did Lena feel when the teacher asked her?", ["nervous", "bored", "angry"], 0),
+  ST("choice", "What was the name of Lena's best friend?", ["Rosa", "Mia", "Jade"], 2),
+  GR("choice", "Lena ___ onto the stage.", ["walk", "walked", "walking"], 1),
+  ST("choice", "Where did Lena play at the end?", ["in the street", "on the stage", "in her room"], 1),
+  ST("open", "What did Jade tell Lena to do? Say her words.", ["", "", ""], 0, "\"Just look at me.\""),
+  // average (6)
+  ST("choice", "What did Lena say when the teacher asked her?", ["\"I can't do it.\"", "\"I love it!\"", "\"Maybe next year.\""], 0),
+  GR("choice", "Lena ___ a deep breath and started to play.", ["take", "took", "taking"], 1),
+  ST("choice", "How was Lena's voice at first?", ["very loud", "small", "angry"], 1),
+  GR("open", "Fix the sentence: \"Her hands shaked.\"", ["", "", ""], 0, "\"Her hands shook.\""),
+  ST("choice", "What happened when the song finished?", ["Everybody left the hall quickly.", "The teacher stopped the show.", "The hall was quiet, then everybody clapped."], 2),
+  RE("What happened on the night of the show? Tell me in your own words.", "Lena's hands shook, but Jade stood next to her. Lena walked onto the stage and started to play. At first her voice was small, then it got stronger."),
+  // difficult (5)
+  ST("choice", "Why did Jade say, \"Just look at me\"?", ["She wanted Lena to feel calmer.", "She wanted to play the guitar too.", "She was angry at Lena."], 0),
+  GR("choice", "When the song ___, the hall was quiet for a second.", ["finish", "finished", "finishes"], 1),
+  ST("open", "How did Lena feel at the end? Say why.", ["", "", ""], 0, "She felt happy and proud because everybody clapped and she was not scared anymore."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Lena's teacher asked her to join the talent show and she felt nervous. Then on the night of the show her hands shook, but Jade stood next to her. After that Lena walked onto the stage and played. Finally everybody clapped and Lena smiled."),
+  ST("open", "Do you feel nervous before you speak or perform? What helps you? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I feel nervous before a test. I take a deep breath and it helps.\""),
+];
+
+// ---- story set: "The Lost Phone" (a lost phone at the mall, teens, A2 to B1, simple past) ----
+export const LOST_PHONE_STORY = {
+  title: "The Lost Phone",
+  text: "On Saturday afternoon, Sofia went to the mall with her cousin Ben. They had burgers, looked at shoes and watched a movie trailer. At the bus stop, Sofia put her hand in her bag. Her phone wasn't there! \"It has all my photos,\" she said, and her face went white.\n\nThey ran back to the food court. A woman at the information desk smiled. \"A boy found a phone near the burger shop,\" she said. \"He left it with us.\" Sofia described her phone case, a blue one with a star, and the woman gave it back.\n\nSofia wanted to thank the boy, so she left a note at the desk. That night, she checked her bag twice before she went to sleep.",
+  image: "",
+};
+
+export const LOST_PHONE_ITEMS = [
+  // easy (9)
+  ST("choice", "Who went to the mall with Sofia?", ["her sister", "her cousin Ben", "her friend Ana"], 1),
+  ST("choice", "When did they go to the mall?", ["on Saturday afternoon", "on Friday night", "on Sunday morning"], 0),
+  GR("choice", "They ___ burgers at the mall.", ["has", "have", "had"], 2),
+  ST("choice", "What was missing from Sofia's bag?", ["her wallet", "her phone", "her keys"], 1),
+  ST("choice", "Where did they run back to?", ["the bus stop", "the shoe shop", "the food court"], 2),
+  GR("choice", "Her phone ___ in her bag.", ["wasn't", "weren't", "isn't"], 0),
+  ST("choice", "Who smiled at the information desk?", ["a boy", "a woman", "a teacher"], 1),
+  ST("choice", "What did Sofia's phone case look like?", ["red with a heart", "blue with a star", "black and plain"], 1),
+  ST("open", "What was on Sofia's phone that was important to her?", ["", "", ""], 0, "Her photos."),
+  // average (6)
+  ST("choice", "Why did Sofia's face go white?", ["She was cold.", "She felt sick from the burger.", "She was shocked about her phone."], 2),
+  ST("choice", "Where did the boy find the phone?", ["near the shoe shop", "near the burger shop", "near the bus stop"], 1),
+  GR("choice", "A boy ___ a phone near the burger shop.", ["found", "find", "finding"], 0),
+  GR("open", "Fix the sentence: \"Sofia lefted a note at the desk.\"", ["", "", ""], 0, "\"Sofia left a note at the desk.\""),
+  ST("choice", "What did the boy do with the phone?", ["He kept it.", "He left it at the information desk.", "He sold it."], 1),
+  RE("What happened after Sofia and Ben ran back to the food court? Tell me in your own words.", "A woman at the information desk said a boy found a phone. Sofia described her blue phone case with a star and the woman gave the phone back."),
+  // difficult (5)
+  ST("choice", "Why did Sofia leave a note?", ["She wanted to thank the boy.", "She wanted to buy a new phone.", "She wanted to call the police."], 0),
+  GR("choice", "Sofia wanted to say thank you, ___ she left a note.", ["but", "because", "so"], 2),
+  ST("open", "Why did Sofia check her bag twice that night? Say it in your own words.", ["", "", ""], 0, "Because she was still worried about losing her phone again."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Sofia and Ben had burgers and looked at shoes at the mall. Then Sofia could not find her phone at the bus stop. After that they ran back and a woman gave the phone back. Finally Sofia left a thank-you note for the boy."),
+  ST("open", "What would you do if you found a phone at the mall? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would take it to the information desk. The owner will look for it there.\""),
+];
+
+// ---- story set: "The Last Level" (video games, teens, A2 to B1, simple past) ----
+export const LAST_LEVEL_STORY = {
+  title: "The Last Level",
+  text: "Kai was fourteen and he played video games every evening. For one week, he tried to beat the last level of his favorite game, but he lost every time. He got angry and almost threw his controller.\n\nHis little sister, Mai, sat on the sofa and watched. \"The dragon always closes its eyes before it shoots fire,\" she said. \"Maybe you can hide then.\" Kai laughed, but he tried her idea. He hid behind a rock and, when the dragon closed its eyes, he attacked.\n\nAfter ten minutes, the dragon fell and the screen said, \"You win!\" Kai jumped up and hugged Mai. \"You're a genius!\" he said.",
+  image: "",
+};
+
+export const LAST_LEVEL_ITEMS = [
+  // easy (9)
+  ST("choice", "How old was Kai?", ["thirteen", "fourteen", "fifteen"], 1),
+  ST("choice", "When did Kai play video games?", ["every evening", "every morning", "only on Sundays"], 0),
+  ST("choice", "How long did Kai try to beat the last level?", ["one day", "two weeks", "one week"], 2),
+  GR("choice", "Kai ___ every time.", ["lose", "lost", "losing"], 1),
+  ST("choice", "Who watched Kai play?", ["his mother", "his little sister", "his best friend"], 1),
+  ST("choice", "Where did Mai sit?", ["on the floor", "on the sofa", "on the bed"], 1),
+  GR("choice", "Kai ___ angry.", ["gets", "get", "got"], 2),
+  ST("choice", "What was at the end of the last level?", ["a robot", "a dragon", "a giant spider"], 1),
+  ST("open", "What was the name of Kai's sister? Say the name.", ["", "", ""], 0, "Mai."),
+  // average (6)
+  ST("choice", "What does the dragon do before it shoots fire?", ["It jumps.", "It roars loudly.", "It closes its eyes."], 2),
+  GR("choice", "Mai ___ on the sofa and watched.", ["sit", "sat", "sitted"], 1),
+  ST("choice", "What did Mai say Kai could do?", ["stop playing", "hide when the dragon closes its eyes", "ask a friend for help"], 1),
+  GR("open", "Fix the sentence: \"Kai hided behind a rock.\"", ["", "", ""], 0, "\"Kai hid behind a rock.\""),
+  ST("choice", "How long did the last fight take?", ["ten minutes", "an hour", "two minutes"], 0),
+  RE("How did Mai help her brother? Tell me in your own words.", "Mai watched Kai play and saw that the dragon closes its eyes before it shoots fire. She told Kai to hide at that moment, and it worked."),
+  // difficult (5)
+  ST("choice", "Why did Kai laugh at first?", ["He thought her idea was funny.", "He was very happy.", "He wanted to play a different game."], 0),
+  GR("choice", "After ten minutes, the dragon ___.", ["fall", "fell", "falled"], 1),
+  ST("open", "How did Kai feel at the end? What did he do?", ["", "", ""], 0, "He felt happy. He jumped up and hugged Mai."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Kai tried to beat the last level for a week, but he lost every time. Then Mai watched and saw that the dragon closes its eyes. After that Kai hid behind a rock and attacked. Finally the dragon fell and Kai hugged Mai."),
+  ST("open", "Do you play video games? What is your favorite game? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"My favorite game is Minecraft. I like building houses with my friends.\""),
+];
+
+// ---- story set: "The Milk Tea Shop" (a first weekend job, teens, A2 to B1, simple past) ----
+export const MILK_TEA_STORY = {
+  title: "The Milk Tea Shop",
+  text: "Nico was sixteen and he wanted to buy new sneakers, so he found a weekend job at a milk tea shop. On his first Saturday, the shop was very busy. A girl ordered a mango tea with less sugar, but Nico made it with extra sugar by mistake. \"This is too sweet,\" she said. Nico's face turned red.\n\nHis manager, Ms. Santos, did not shout. She helped him make a new drink and said, \"Everyone makes mistakes on the first day. Just read the order again before you start.\"\n\nNico followed her advice. By the end of the day, he made forty drinks and only one more mistake. When he got home, he told his mom, \"I think I like my job.\"",
+  image: "",
+};
+
+export const MILK_TEA_ITEMS = [
+  // easy (9)
+  ST("choice", "How old was Nico?", ["fifteen", "sixteen", "seventeen"], 1),
+  ST("choice", "What did Nico want to buy?", ["a phone", "new sneakers", "a bike"], 1),
+  ST("choice", "Where was Nico's job?", ["at a pizza place", "at a bookstore", "at a milk tea shop"], 2),
+  GR("choice", "Nico ___ a weekend job.", ["find", "found", "finding"], 1),
+  ST("choice", "When did Nico work?", ["on weekdays", "on weekends", "every night"], 1),
+  ST("choice", "What did the girl order?", ["a chocolate tea", "a mango tea", "a coffee"], 1),
+  GR("choice", "The shop ___ very busy.", ["were", "is", "was"], 2),
+  ST("choice", "What was the manager's name?", ["Ms. Reyes", "Ms. Santos", "Ms. Lopez"], 1),
+  ST("open", "What color did Nico's face turn? Say the color.", ["", "", ""], 0, "Red."),
+  // average (6)
+  ST("choice", "What mistake did Nico make?", ["He forgot the ice.", "He used extra sugar.", "He gave the drink to the wrong person."], 1),
+  GR("choice", "The girl said, \"This ___ too sweet.\"", ["are", "is", "be"], 1),
+  ST("choice", "How did the manager act?", ["She shouted.", "She stayed calm and helped him.", "She sent him home."], 1),
+  GR("open", "Fix the sentence: \"Nico maked forty drinks.\"", ["", "", ""], 0, "\"Nico made forty drinks.\""),
+  ST("choice", "How many drinks did Nico make by the end of the day?", ["thirty", "forty", "fifty"], 1),
+  RE("What happened after the girl said the drink was too sweet? Tell me in your own words.", "Ms. Santos did not shout. She helped Nico make a new drink and told him to read the order again before he starts."),
+  // difficult (5)
+  ST("choice", "What advice did the manager give Nico?", ["Work faster.", "Read the order again before you start.", "Ask the customer to make the drink."], 1),
+  GR("choice", "Ms. Santos said, \"Everyone ___ mistakes on the first day.\"", ["make", "makes", "made"], 1),
+  ST("open", "Why do you think Nico said, \"I think I like my job\"? Say it in your own words.", ["", "", ""], 0, "Because his manager was kind, he learned from his mistake and he did a good job by the end of the day."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Nico got a weekend job at a milk tea shop and made a drink with extra sugar by mistake. Then his manager helped him and gave him advice. After that he read each order again. Finally he made forty drinks and told his mom he liked his job."),
+  ST("open", "Would you like a weekend job? What job would you choose? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would like to work in a bookstore. I love reading and I like quiet places.\""),
+];
+
 // Opens the game in a popup, like the Wheel and the lesson players.
 // `start` (1, 2 or 3) skips the setup screen and opens the board at that level.
 export function openLetterBoard(id, start) {
