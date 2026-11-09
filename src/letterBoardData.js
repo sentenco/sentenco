@@ -442,7 +442,7 @@ export const MILK_TEA_ITEMS = [
 export const MYSTERY_NOTES_STORY = {
   title: "The Mystery Notes",
   text: "Leo was sixteen and he was very stressed about his exams. He stayed at school until late every evening to study. One Monday morning, he opened his locker and found a yellow note: \"You can do it. Believe in yourself.\" There was no name on it. The next day there was another note, and on Wednesday there was a third one.\n\nLeo asked his friends, but nobody knew. He thought Maya, a girl from his class, wrote the notes because she always smiled at him. On Friday, he came to school very early and hid behind the stairs. At seven o'clock, a man with a mop walked to Leo's locker and put a note inside. It was Mr. Cruz, the school cleaner!\n\n\"I see you studying late every night,\" Mr. Cruz said with a smile. \"I was a student once, too.\"",
-  image: "",
+  image: "/curriculum/letter-board/mystery-notes-cover.jpg",
 };
 
 export const MYSTERY_NOTES_ITEMS = [
@@ -475,7 +475,7 @@ export const MYSTERY_NOTES_ITEMS = [
 export const ESCAPE_ROOM_STORY = {
   title: "The Escape Room",
   text: "Pia and her three friends, Jun, Rey and Cass, went to an escape room for Pia's sixteenth birthday. The guide closed the door and said, \"You have sixty minutes. Find the golden key and open the door.\"\n\nThey looked under the table, behind the paintings and inside an old clock. After forty minutes, they were tired and a little angry. \"We will never get out of here!\" said Rey. Then Cass solved the last puzzle and a note appeared: \"The key is closer than you think.\"\n\nEverybody looked at the floor, the walls and the ceiling. Pia looked at Jun. He was very quiet and he kept touching his jacket. \"Jun, check your pockets,\" she said. Jun put his hand in his pocket and found the golden key. \"I picked it up in the first minute,\" he said, and his face turned red. The door opened with only ten seconds left!",
-  image: "",
+  image: "/curriculum/letter-board/escape-room-cover.jpg",
 };
 
 export const ESCAPE_ROOM_ITEMS = [
@@ -508,7 +508,7 @@ export const ESCAPE_ROOM_ITEMS = [
 export const NIGHT_NOISE_STORY = {
   title: "The Noise at Night",
   text: "For three nights, Hana heard strange sounds from the garage under her bedroom. Tap, tap, tap. Then a long scrape. She was scared, but she did not tell her parents because she did not want to worry them. She thought a thief was in the house.\n\nOn the fourth night, she took a flashlight and walked down the stairs very slowly. Her heart was beating fast. She opened the garage door and the lights came on! Her dad and her little brother Tito stood there with sawdust in their hair. Behind them was a beautiful wooden bookshelf with a big red bow.\n\n\"Happy birthday, Hana!\" they shouted. The next day was her fifteenth birthday. She laughed and hugged them both.",
-  image: "",
+  image: "/curriculum/letter-board/noise-at-night-cover.jpg",
 };
 
 export const NIGHT_NOISE_ITEMS = [
@@ -541,7 +541,7 @@ export const NIGHT_NOISE_ITEMS = [
 export const BOOK_PHOTO_STORY = {
   title: "The Photo in the Book",
   text: "Alex loved old books, so on Saturday he went to a second-hand bookshop. Inside one book, he found an old photo of two girls. On the back, someone wrote: \"Meet me under the big clock, 5 o'clock, May 5th.\"\n\nAlex looked at his phone. Today was May 5th, and it was a quarter to five! He ran to the big clock in the town square. At exactly five o'clock, an old man with a white beard walked up to him and smiled. \"You came!\" he said. \"You are the first person to follow the clue.\"\n\nAlex felt confused. \"Is this your photo?\" he asked. The man laughed. \"No. I'm Mr. Tan, the owner of the bookshop. I hide a photo in a book every month. The person who follows the clue gets a free book!\"",
-  image: "",
+  image: "/curriculum/letter-board/photo-in-the-book-cover.jpg",
 };
 
 export const BOOK_PHOTO_ITEMS = [
