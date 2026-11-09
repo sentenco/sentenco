@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "./supabaseClient";
 import { useAuth } from "./AuthContext";
 import ConfirmDialog from "./ConfirmDialog";
+import { dailyTopics, randomTopics } from "./wheelTopics";
 
 const COLORS = ["#7C5CFC", "#FF8A4C", "#16BFAE", "#FFB648", "#FF6B8B", "#2B6FE0", "#3FCDAF", "#E4322B"];
 
@@ -35,6 +36,12 @@ export default function WheelPage() {
   const [result, setResult] = useState(null);
   const [winnerIndex, setWinnerIndex] = useState(null);
   const spinCountRef = useRef(0);
+
+  // Daily topics: which audience is loaded, whether it is today's set or a shuffle, and the full question for each slice.
+  const [topicAudience, setTopicAudience] = useState(null);
+  const [topicShuffled, setTopicShuffled] = useState(false);
+  const [prompts, setPrompts] = useState({});
+  const todayLabel = new Date().toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
 
   const [savedLists, setSavedLists] = useState([]);
   const [savedLoading, setSavedLoading] = useState(false);
@@ -128,6 +135,17 @@ export default function WheelPage() {
 
   function loadSavedList(list) {
     setRawText(list.content);
+    setTopicAudience(null);
+    setResult(null);
+    setWinnerIndex(null);
+  }
+
+  function loadTopics(audience, shuffle) {
+    const set = shuffle ? randomTopics(audience, words) : dailyTopics(audience);
+    setRawText(set.map((t) => t.label).join("\n"));
+    setPrompts(Object.fromEntries(set.map((t) => [t.label, t.prompt])));
+    setTopicAudience(audience);
+    setTopicShuffled(shuffle);
     setResult(null);
     setWinnerIndex(null);
   }
@@ -153,6 +171,7 @@ export default function WheelPage() {
 
   function handleTextChange(e) {
     setRawText(e.target.value);
+    setTopicAudience(null);
     setResult(null);
     setWinnerIndex(null);
   }
@@ -198,6 +217,23 @@ export default function WheelPage() {
             <span className="wp-eyebrow">Sentenco · Homeroom</span>
             <h1 className="wp-title">Spin the Wheel</h1>
             <p className="wp-blurb">Paste your list, one item per line. Each line becomes a slice.</p>
+          </div>
+
+          <div className="wp-topics-section">
+            <span className="wp-label">Daily speaking topics</span>
+            <div className="wp-topics-btns">
+              <button type="button" className={`wp-topics-btn ${topicAudience === "teens" ? "is-active" : ""}`} onClick={() => loadTopics("teens", false)}>Teens</button>
+              <button type="button" className={`wp-topics-btn ${topicAudience === "adults" ? "is-active" : ""}`} onClick={() => loadTopics("adults", false)}>Adults</button>
+            </div>
+            {topicAudience ? (
+              <div className="wp-topics-note">
+                <span>{topicShuffled ? "Extra set" : `Today, ${todayLabel}`}</span>
+                <button type="button" className="wp-topics-shuffle" onClick={() => loadTopics(topicAudience, true)}>Shuffle</button>
+                {topicShuffled && <button type="button" className="wp-topics-shuffle" onClick={() => loadTopics(topicAudience, false)}>Today's set</button>}
+              </div>
+            ) : (
+              <div className="wp-topics-note"><span>Pick a group for a fresh set of 8 impromptu topics each day.</span></div>
+            )}
           </div>
 
           <label className="wp-label" htmlFor="wp-words">Words</label>
@@ -299,6 +335,7 @@ export default function WheelPage() {
           <div className="wp-winner-banner">
             <span className="wp-winner-tag">Winner</span>
             <span className="wp-winner-name" style={{ fontSize: `${winnerFontSize}px` }}>🎉 {result}</span>
+            {topicAudience && prompts[result] && <span className="wp-winner-prompt">{prompts[result]}</span>}
           </div>
         )}
 
@@ -322,8 +359,8 @@ export default function WheelPage() {
                   const labelPos = pointAt(cx, cy, r * 0.62, mid);
                   let labelRotate = mid;
                   if (labelRotate > 90 && labelRotate < 270) labelRotate += 180;
-                  const fontSize = Math.max(9, Math.min(15, 130 / Math.max(n, 6)));
                   const label = word.length > 16 ? word.slice(0, 15) + "…" : word;
+                  const fontSize = Math.max(9, Math.min(15, 130 / Math.max(n, 6), 205 / label.length));
                   const isWinner = i === winnerIndex;
                   return (
                     <g key={i} className={isWinner ? "wp-slice-winner" : undefined}>
@@ -583,6 +620,29 @@ const CSS = `
   line-height: 1.2;
   overflow-wrap: break-word;
   max-width: 100%;
+}
+
+.wp-winner-prompt {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #E4E9F5;
+  text-align: center;
+  max-width: 100%;
+  margin-top: 4px;
+}
+
+.wp-topics-section { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #EDE1DB; }
+.wp-topics-btns { display: flex; gap: 8px; }
+.wp-topics-btn {
+  flex: 1; font-size: 13px; font-weight: 800; color: #1B2A4A; background: #FBF4F1;
+  border: 1px solid #EDE1DB; border-radius: 10px; padding: 10px 0; cursor: pointer;
+}
+.wp-topics-btn:hover { border-color: #FF6B4A; }
+.wp-topics-btn.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
+.wp-topics-note { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 11.5px; line-height: 1.5; color: #5A6B92; margin-top: 8px; }
+.wp-topics-shuffle {
+  font-size: 11.5px; font-weight: 800; color: #FF6B4A; background: #FDECE5;
+  border: none; border-radius: 999px; padding: 4px 12px; cursor: pointer;
 }
 
 @keyframes wp-pop-in {
