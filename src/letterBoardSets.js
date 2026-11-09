@@ -22,7 +22,6 @@ export const LETTER_BOARD_SETS = [
     blurb: "Read a short story first, then answer questions about it.",
     items: SAMPLE_STORY_ITEMS,
     story: SAMPLE_STORY,
-    coverFit: "contain",
   },
   {
     id: "secret-map",

@@ -178,7 +178,7 @@ const RE = (q, sample) => ({ kind: "open", q, options: ["", "", ""], correct: 0,
 export const SAMPLE_STORY = {
   title: "The Lost Cat",
   text: "Last Saturday, Mia woke up at seven o'clock. She went to the kitchen, but her cat Coco was not there. Mia was worried.\n\n\"Where is Coco?\" she asked her mom.\n\nMia ran to the garden. She looked behind the big tree. Then she heard a small sound: \"Meow!\" It came from a red box.\n\nMia opened the box and found Coco with three tiny kittens! \"Coco, you are a mom now!\" Mia gave her some milk and called her brother Tom.",
-  image: PIC + "u9-l1/cat.jpg",
+  image: "/curriculum/letter-board/lost-cat-cover.jpg",
 };
 
 export const SAMPLE_STORY_ITEMS = [
@@ -211,7 +211,7 @@ export const SAMPLE_STORY_ITEMS = [
 export const SECRET_MAP_STORY = {
   title: "The Secret Map",
   text: "On Sunday, Dan was bored. It was raining, so he could not play football outside. He went up to the attic and opened his grandpa's old wooden box.\n\nInside the box, Dan found a small compass and a map with a red X. It said: \"Ten steps north of the gate.\"\n\nDan took the compass and ran outside. He walked ten steps north and dug under the old oak tree. He found a metal tin.\n\nDan opened the tin. Inside there was a photo and a note from Grandpa: \"A good explorer is brave and kind. Now it is your turn.\"",
-  image: "/curriculum/letter-board/secret-map-cover.jpg",
+  image: "/curriculum/letter-board/secret-map-cover-v2.jpg",
 };
 
 export const SECRET_MAP_ITEMS = [
@@ -244,7 +244,7 @@ export const SECRET_MAP_ITEMS = [
 export const PAROL_MAKER_STORY = {
   title: "The Parol Maker",
   text: "In December, Ana's town had a big fiesta. Everyone made a parol, a bright star lantern. On Saturday, Ana went to her grandpa's house. Lolo had bamboo sticks, colored paper and glue on the table.\n\nFirst, they tied five bamboo sticks into a star. Then Ana cut red, yellow and blue paper and glued it on the frame. At noon, the glue was still wet, so they ate rice and fried fish.\n\nIn the evening, Lolo put a small light inside the parol, and it glowed! Ana hung it on the gate. Her neighbors stopped to look. It was beautiful! Ana was very proud.",
-  image: "/curriculum/letter-board/parol-maker-cover.jpg",
+  image: "/curriculum/letter-board/parol-maker-cover-v2.jpg",
 };
 
 export const PAROL_MAKER_ITEMS = [
