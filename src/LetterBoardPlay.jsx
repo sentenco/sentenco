@@ -22,7 +22,19 @@ const TYPES = {
   b: { name: "Bonus", bg: "#FFF4D6", fg: "#1B2A4A", bd: "#D9A62E", dk: "#D9A62E", ic: "#D9A62E", icon: "star", rule: (v) => `+${v.b} if correct` },
 };
 
-const VALUE_OPTIONS = Array.from({ length: 20 }, (_, i) => (i + 1) * 5);
+// Pastel colors for the keys (a letter always keeps its color) and the maths that cuts the story picture into pieces.
+const KEY_COLORS = ["#FFD6CB", "#FFEFB3", "#CDEFD9", "#CFE3FF", "#E3D8FF"];
+const TILE_ASPECT = 0.94; // a key is a little wider than tall
+const picUrl = (src) => `url("${String(src).replace(/"/g, "%22")}")`;
+// The picture is a square that covers the whole board; piece p (its place on the board) shows its own part of it.
+function pieceStyle(src, p, cols, rows) {
+  const c = p % cols;
+  const r = Math.floor(p / cols);
+  const k = cols / TILE_ASPECT;
+  const x = cols > 1 ? (c / (cols - 1)) * 100 : 50;
+  const y = k > 1 ? (((k - rows) / 2 + r) / (k - 1)) * 100 : 50;
+  return { backgroundImage: picUrl(src), backgroundSize: `${cols * 100}% ${k * 100}%`, backgroundPosition: `${x}% ${y}%`, backgroundRepeat: "no-repeat" };
+}
 
 // A question is worth more the harder it is: easy x1, average x2, difficult x3.
 // The bomb can sit behind any question. It wins or loses the same as plain coins would for that question (10, 20 or 30 at the standard size).
@@ -255,7 +267,7 @@ function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, onStory
       </div>
       {full && (
         <div className="lb-tr">
-          <span className="lb-left">{tilesLeft} tiles left</span>
+          <span className="lb-left">{tilesLeft} keys left</span>
           {onStory && (
             <button type="button" className="lb-ib lb-story-btn" onClick={onStory} aria-label="Read the story again">
               <Icon name="book" /><span>Story</span>
@@ -358,10 +370,16 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
 
   const item = cur >= 0 ? items[g.pool[cur]] : null;
 
-  const back = () => {
+  const hasPic = !!(story && story.image);
+  const next = () => {
     setMood("");
     if (tilesLeft === 0) { setView("result"); sfx.win(); }
     else setView("board");
+  };
+  // With a story picture, a finished question first shows the piece it unlocked.
+  const back = () => {
+    if (hasPic) { setMood(""); setView("reveal"); }
+    else next();
   };
 
   const toggleMute = () => {
@@ -382,6 +400,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
         <TopBar coins={g.coins} pulse="" mood="" tilesLeft={0} muted={muted} full={false} />
         <div className="lb-res">
           <div className="lb-card2">
+            {story && story.image && <div className="lb-rpic" style={{ backgroundImage: picUrl(story.image) }} role="img" aria-label="The finished story picture" />}
             <div style={{ display: "flex", justifyContent: "center", marginBottom: 6 }}><DollarCoin size={64} mood="happy" /></div>
             <div className="lb-eb">Game complete</div>
             <div className="lb-n">{g.coins}</div>
@@ -402,36 +421,62 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
   }
 
   const cols = n === 9 ? 3 : 5;
-  const gap = 8;
+  const rows = Math.ceil(n / cols);
+  const gap = 12;
   const tileW = `calc((100% - ${gap * (cols - 1)}px) / ${cols} - 0.5px)`;
-  const tileH = n === 9 ? 128 : n === 15 ? 110 : 100;
+  const played = n - tilesLeft;
+
+  if (view === "reveal") {
+    const ch = String.fromCharCode(65 + cur);
+    return (
+      <div className="lb-app">
+        <TopBar coins={g.coins} pulse="" mood="" tilesLeft={tilesLeft} muted={muted} onMute={toggleMute} onSetup={onSetup} onStory={null} full />
+        <div className="lb-stage lb-rv">
+          <h2 className="lb-rvh">{res ? `Piece ${ch} unlocked!` : `Not quite, but piece ${ch} is yours`}</h2>
+          <p className="lb-rvs">{res ? "Here is the story picture so far." : "The picture still grows."}</p>
+          <div className="lb-rvw" style={{ width: n === 9 ? 300 : 440 }}>
+            <div className="lb-rvp" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)`, aspectRatio: `${cols} / ${rows * TILE_ASPECT}` }}>
+              {g.ord.map((i, p) => {
+                const isNew = i === cur;
+                const open = g.done[i] !== null;
+                return <div key={i} className={`lb-rvc${isNew ? " new" : open ? "" : " locked"}`} style={pieceStyle(story.image, p, cols, rows)} data-l={isNew ? ch : undefined} />;
+              })}
+            </div>
+            <div className={`lb-rvb${delta === 0 ? " zero" : ""}${delta < 0 ? " neg" : ""}`}>
+              <span style={{ clipPath: BURST_CLIP }} />
+              <b>{delta > 0 ? `+${delta}` : delta < 0 ? delta : "0"}</b>
+            </div>
+          </div>
+          <button type="button" className="lb-go lb-next" onClick={next}>{tilesLeft === 0 ? "See results" : "Next key"}</button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`lb-app ${shake ? "lb-shake" : ""}`}>
       <TopBar coins={g.coins} pulse={pulse} mood={mood} tilesLeft={tilesLeft} muted={muted} onMute={toggleMute} onSetup={onSetup} onStory={hasStory(story) ? () => setShowStory(true) : null} full />
       <div className="lb-stage">
-        <div className="lb-grid" style={{ maxWidth: n === 9 ? 520 : "100%" }}>
+        <div className={`lb-grid${cols === 5 ? " lb-g5" : ""}`} style={{ maxWidth: n === 9 ? 440 : "100%" }}>
           {g.ord.map((i, p) => {
             const ch = String.fromCharCode(65 + i);
             const d = g.done[i];
-            const style = { width: tileW, height: tileH };
+            const style = { width: tileW, aspectRatio: `1 / ${TILE_ASPECT}`, "--k": KEY_COLORS[i % KEY_COLORS.length] };
             if (d) {
               return (
-                <div key={i} className="lb-c lb-done" style={style}>
-                  <div className="lb-dn">
+                <div key={i} className={`lb-c lb-done${hasPic ? " lb-pic" : ""}${cur === i ? " lb-fresh" : ""}`} style={style}>
+                  <div className="lb-dn" style={hasPic ? pieceStyle(story.image, p, cols, rows) : undefined}>
                     <span className="lb-lt">{ch}</span>
                     <span className={`lb-gv ${d.g > 0 ? "ok" : d.g < 0 ? "bad" : ""}`}>{d.g !== 0 && <i className="lb-mc">$</i>}{d.g > 0 ? `+${d.g}` : d.g < 0 ? d.g : "0"}</span>
                   </div>
                 </div>
               );
             }
-            const chk = (Math.floor(p / cols) + (p % cols)) % 2;
-            const bg = chk ? "#FFFFFF" : "#FFE9E1";
             const cls = `lb-c${busy ? " lb-locked" : ""}${cur === i && phase === "wob" ? " lb-wob" : ""}${cur === i && phase === "flip" ? " lb-flip" : ""}`;
             return (
               <button key={i} type="button" className={cls} style={style} onClick={() => pick(i)} aria-label={`Letter ${ch}`}>
                 <span className="lb-in">
-                  <span className="lb-f" style={{ background: bg }}>{ch}</span>
+                  <span className="lb-f">{ch}</span>
                   <Face type={g.types[i]} cfg={cfg} mult={multOf(g.pool[i])} />
                 </span>
               </button>
@@ -439,11 +484,18 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
           })}
         </div>
 
+        <div className="lb-meter">
+          <span>{hasPic ? "Picture" : "Progress"}</span>
+          <span className="lb-track"><span className="lb-fill" style={{ width: `${(played / n) * 100}%` }} /></span>
+          <span className="lb-pct">{played} of {n}</span>
+        </div>
+
         {showStory && <StoryOverlay story={story} onClose={() => setShowStory(false)} onSetup={onSetup} />}
 
         {view === "q" && item && (
           <QuestionCard
             letter={String.fromCharCode(65 + cur)}
+            tone={cur}
             type={g.types[cur]}
             cfg={cfg}
             mult={multOf(g.pool[cur])}
@@ -457,6 +509,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
             onMark={(ok) => picked < 0 && finish(ok, ok ? 1 : 0)}
             onBack={back}
             last={tilesLeft === 0}
+            pic={hasPic}
           />
         )}
       </div>
@@ -485,7 +538,7 @@ function splitQuestion(item) {
   return { text: q, fix: false };
 }
 
-function QuestionCard({ letter, type, cfg, mult, item, picked, res, delta, showKey, onKey, onChoose, onMark, onBack, last }) {
+function QuestionCard({ letter, tone, type, cfg, mult, item, picked, res, delta, showKey, onKey, onChoose, onMark, onBack, last, pic }) {
   const isChoice = item.kind === "choice";
   const marked = picked >= 0;
   const cls = res ? "ok" : delta < 0 ? "bad" : "zero";
@@ -511,7 +564,7 @@ function QuestionCard({ letter, type, cfg, mult, item, picked, res, delta, showK
           <span className="lb-tail" /><span className="lb-tail2" />
         </div>
         <div className="lb-sprow">
-          <div className="lb-lt2">{letter}</div>
+          <div className="lb-lt2" style={{ "--k": KEY_COLORS[tone % KEY_COLORS.length] }}>{letter}</div>
           {isChoice ? (
             <div className="lb-opts">
               {item.options.map((o, k) => {
@@ -519,7 +572,7 @@ function QuestionCard({ letter, type, cfg, mult, item, picked, res, delta, showK
                 if (marked) c += k === item.correct ? " right" : k === picked ? " wrong" : " dim";
                 return (
                   <button key={k} type="button" className={c} disabled={marked} onClick={() => onChoose(k)}>
-                    <span className="lb-ol">{OPTION_LETTERS[k]}</span>{o}
+                    <span className="lb-ol" style={{ "--k": KEY_COLORS[(tone + k + 1) % KEY_COLORS.length] }}>{OPTION_LETTERS[k]}</span>{o}
                   </button>
                 );
               })}
@@ -546,7 +599,7 @@ function QuestionCard({ letter, type, cfg, mult, item, picked, res, delta, showK
                 <span key={z} className="lb-cf" style={{ left: `${52 + z * 6}%`, animationDelay: `${z * 70}ms` }}><DollarCoin size={20} /></span>
               ))}
             </div>
-            <div className="lb-end"><button type="button" className="lb-go" onClick={onBack}>{last ? "See results" : "Back to board"}</button></div>
+            <div className="lb-end"><button type="button" className="lb-go" onClick={onBack}>{pic ? "Show my piece" : last ? "See results" : "Back to board"}</button></div>
           </>
         )}
       </div>
@@ -734,12 +787,27 @@ function loadCfg() {
   return DEFAULT_CFG;
 }
 
+function Stepper({ label, value, onChange, tint }) {
+  return (
+    <div className="lb-ctl">
+      <span className="lb-cl">{label}</span>
+      <div className="lb-step" style={{ "--k": tint }}>
+        <button type="button" aria-label={`Less ${label}`} onClick={() => onChange(Math.max(5, value - 5))}>{"\u2212"}</button>
+        <output>{value}</output>
+        <button type="button" aria-label={`More ${label}`} onClick={() => onChange(Math.min(100, value + 5))}>+</button>
+      </div>
+    </div>
+  );
+}
+
 function Setup({ title, items, story, cfg, setCfg, onStart }) {
   const status = useMemo(() => levelStatus(items), [items]);
   const ready = (k) => status.missing[k] === 0;
   const anyReady = ready(1);
   // If the saved level isn't playable for this set, fall back to the highest playable one.
   const effective = ready(cfg.lvl) ? cfg.lvl : ready(3) ? 3 : ready(2) ? 2 : ready(1) ? 1 : 0;
+  const chosen = LEVELS.find((L) => L.key === effective);
+  const mixed = effective !== 1 && !!cfg.mix;
 
   const update = (patch) => {
     const next = { ...cfg, ...patch };
@@ -754,59 +822,80 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
         <span className="lb-left">Teacher only</span>
       </div>
       <div className="lb-sb lb-sbq">
-        <h1 className="lb-sti">{title}</h1>
-        {hasStory(story) && <p className="lb-note lb-nomt">Story: <b>{story.title || "Untitled story"}</b></p>}
+        <div className="lb-story">
+          {story && story.image && <div className="lb-thumb" style={{ backgroundImage: picUrl(story.image) }} role="img" aria-label="Story cover" />}
+          <div>
+            <div className="lb-eyebrow2">{hasStory(story) ? "Story game" : "Letter Board"}</div>
+            <h1 className="lb-sti">{title}</h1>
+          </div>
+        </div>
 
+        <div className="lb-lab">How many keys?</div>
         <div className="lb-lv">
           {LEVELS.map((L) => {
             const ok = ready(L.key);
+            const c = L.n === 9 ? 3 : 5;
             return (
               <button
                 key={L.key}
                 type="button"
                 className={`lb-lvc${effective === L.key ? " sel" : ""}`}
                 disabled={!ok}
+                aria-pressed={effective === L.key}
                 onClick={() => update({ lvl: L.key })}
               >
-                <div className="lb-n">{L.n}</div>
-                <div className="lb-a">{L.name}</div>
-                {!ok && <div className="lb-s">Needs {status.missing[L.key]} more</div>}
+                <span className="lb-minibox">
+                  <span className="lb-mini" style={{ gridTemplateColumns: `repeat(${c}, 1fr)` }}>
+                    {Array.from({ length: L.n }, (_, k) => <i key={k} style={{ "--k": KEY_COLORS[k % KEY_COLORS.length] }} />)}
+                  </span>
+                </span>
+                <span className="lb-n">{L.n}</span>
+                <span className="lb-a">{L.name}</span>
+                <span className="lb-s">{ok ? L.sub : `Needs ${status.missing[L.key]} more`}</span>
               </button>
             );
           })}
         </div>
 
-        <div className="lb-vals">
-          {[["c", "Coins"], ["b", "Bonus"]].map(([k, label]) => (
-            <label key={k}>{label}
-              <select value={cfg[k]} onChange={(e) => update({ [k]: Number(e.target.value) })}>
-                {VALUE_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
-              </select>
-            </label>
-          ))}
-          <label>Letters
-            <select
-              value={effective === 1 || !cfg.mix ? "order" : "mixed"}
-              disabled={effective === 1}
-              onChange={(e) => update({ mix: e.target.value === "mixed" })}
-            >
-              <option value="mixed">Mixed</option>
-              <option value="order">In order</option>
-            </select>
-          </label>
+        <div className="lb-lab">What each question pays</div>
+        <div className="lb-points">
+          {[["Easy", 1], ["Average", 2], ["Difficult", 3]].map(([name, m]) => {
+            const on = m <= effective;
+            return (
+              <div key={name} className={`lb-pt${on ? "" : " off"}`}>
+                <span className="lb-ptb"><span style={{ clipPath: BURST_CLIP }} /><b>+{cfg.c * m}</b></span>
+                <div><strong>{name}</strong><small>x{m}{on ? "" : ", not in this game"}</small></div>
+              </div>
+            );
+          })}
         </div>
 
-        <p className="lb-note lb-nomt">Easy questions pay the amount shown. Average questions pay double and difficult ones triple. A bomb wins or loses the same as coins would for its question.</p>
+        <div className="lb-lab">Settings</div>
+        <div className="lb-ctrls">
+          <Stepper label="Coins" value={cfg.c} tint="#FFEFB3" onChange={(v) => update({ c: v })} />
+          <Stepper label="Bonus" value={cfg.b} tint="#CDEFD9" onChange={(v) => update({ b: v })} />
+          <div className="lb-ctl lb-wide">
+            <span className="lb-cl">Letters</span>
+            <div className={`lb-seg${effective === 1 ? " disabled" : ""}`}>
+              <button type="button" aria-pressed={mixed} onClick={() => update({ mix: true })}>Mixed</button>
+              <button type="button" aria-pressed={!mixed} onClick={() => update({ mix: false })}>In order</button>
+            </div>
+          </div>
+        </div>
+
+        <p className="lb-note lb-nomt">A double key pays twice. A bomb wins or loses the same as coins would for its question.</p>
 
         {!anyReady && <p className="lb-note">Fill in all 9 easy items in the editor to play this set.</p>}
 
-        <button type="button" className="lb-go lb-start" disabled={!anyReady} onClick={() => { ac(); sfx.pick(); onStart(effective); }}>Start game</button>
+        <button type="button" className="lb-go lb-start" disabled={!anyReady} onClick={() => { ac(); sfx.pick(); onStart(effective); }}>
+          Start game
+          {chosen && <small>{chosen.n} keys, {mixed ? "mixed letters" : "letters in order"}</small>}
+        </button>
       </div>
     </div>
   );
 }
 
-// ---- page ---------------------------------------------------------------------------
 export default function LetterBoardPlay() {
   const { id } = useParams();
   const [query] = useSearchParams();
@@ -890,7 +979,7 @@ export default function LetterBoardPlay() {
 }
 
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 .lb-sbq { display: flex; flex-direction: column; gap: 16px; min-height: 445px; padding: 10px 10px 12px; }
 .lb-sbq .lb-sti { font-size: 34px; margin: 6px 0 0; }
 .lb-vals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
@@ -1087,6 +1176,115 @@ const CSS = `
 .lb-dfc.easy { background: #FFE2D8; color: #7A2410; }
 .lb-dfc.avg { background: #F2593A; color: #fff; }
 .lb-dfc.hard { background: #1B2A4A; color: #FBF4F1; }
+/* ---- keys board, question, reveal and setup (arcade keys with the picture reveal) ---- */
+.lb-tbar .lb-left { white-space: nowrap; }
+.lb-stage { background: radial-gradient(circle at 20% 0%, #FFF 0, #EAF2FF 75%); padding: 20px 18px 56px; }
+.lb-grid { gap: 16px 12px; }
+.lb-grid .lb-c:nth-child(odd):not(.lb-done) { transform: rotate(-1.6deg); }
+.lb-grid .lb-c:nth-child(even):not(.lb-done) { transform: rotate(1.4deg); }
+.lb-f { background: var(--k, #FFD6CB); border-radius: 20px; box-shadow: 0 8px 0 #1B2A4A; font-family: 'Fredoka', 'Inter', sans-serif; font-weight: 700; font-size: 54px; line-height: 1; }
+.lb-g5 .lb-f { font-size: 40px; border-radius: 16px; box-shadow: 0 6px 0 #1B2A4A; }
+.lb-f::before { content: ''; position: absolute; left: 12%; right: 12%; top: 8%; height: 24%; border-radius: 999px; background: rgba(255,255,255,.55); }
+.lb-c:active:not(.lb-locked) .lb-in { transform: translateY(4px); }
+.lb-c:active:not(.lb-locked) .lb-f { box-shadow: 0 3px 0 #1B2A4A; }
+.lb-dn { border: 3px dashed #9AA6C4; border-radius: 20px; background: #F4F7FC; transform: translateY(8px); gap: 0; }
+.lb-g5 .lb-dn { border-radius: 16px; }
+.lb-lt { font-family: 'Fredoka', 'Inter', sans-serif; font-weight: 600; font-size: 20px; color: #8C99B8; line-height: 1; }
+.lb-gv { font-family: 'Fraunces', Georgia, serif; font-size: 26px; line-height: 1.1; }
+.lb-gv.ok { color: #F2593A; }
+.lb-pic .lb-dn { display: block; border: 3px solid #1B2A4A; border-radius: 14px; background-color: #fff; box-shadow: 0 4px 0 #1B2A4A; transform: none; }
+.lb-pic .lb-lt { position: absolute; left: 6px; top: 5px; font: 700 12px 'Inter', sans-serif; color: #1B2A4A; background: rgba(255,255,255,.9); border-radius: 6px; padding: 1px 6px; }
+.lb-pic .lb-gv { position: absolute; right: 6px; bottom: 6px; font-size: 16px; line-height: 1.5; color: #F2593A; background: rgba(255,255,255,.95); border: 2px solid #1B2A4A; border-radius: 999px; padding: 0 9px; }
+.lb-pic .lb-gv.bad { color: #C23B1B; }
+.lb-pic .lb-mc { display: none; }
+.lb-fresh .lb-dn { animation: lb-unlock .6s ease both; }
+.lb-meter { position: absolute; left: 18px; right: 18px; bottom: 16px; display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #5B6785; }
+.lb-track { flex: 1; height: 10px; border: 2px solid #1B2A4A; border-radius: 99px; background: #fff; overflow: hidden; }
+.lb-fill { display: block; height: 100%; background: #F2593A; transition: width .4s ease; }
+.lb-pct { color: #1B2A4A; font-variant-numeric: tabular-nums; }
+
+/* question */
+.lb-bub { border-radius: 18px; }
+.lb-tail, .lb-tail2 { display: none; }
+.lb-lt2 { width: 64px; height: 60px; border-radius: 16px; background: var(--k, #FFD6CB); box-shadow: 0 6px 0 #1B2A4A; transform: rotate(-4deg); font-family: 'Fredoka', 'Inter', sans-serif; font-weight: 700; font-size: 34px; margin-top: 4px; }
+.lb-opts { gap: 16px; }
+.lb-o { min-height: 58px; border-radius: 16px; box-shadow: 0 6px 0 #1B2A4A; transition: transform .1s ease, box-shadow .1s ease, background .15s; }
+.lb-o:hover:not(:disabled) { background: #fff; transform: translateY(-2px); box-shadow: 0 8px 0 #1B2A4A; }
+.lb-o:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 2px 0 #1B2A4A; }
+.lb-ol { width: 32px; height: 32px; border-radius: 10px; border: 2px solid #1B2A4A; background: var(--k, #CFE3FF); color: #1B2A4A; font-family: 'Fredoka', 'Inter', sans-serif; font-size: 16px; }
+.lb-o.right { background: #CDEFD9; color: #1B2A4A; }
+.lb-o.wrong { background: #FFD9D4; color: #1B2A4A; }
+.lb-o.right .lb-ol, .lb-o.wrong .lb-ol { background: #fff; color: #1B2A4A; }
+.lb-mk { border-radius: 16px; box-shadow: 0 6px 0 #1B2A4A; }
+.lb-mk:active { transform: translateY(4px); box-shadow: 0 2px 0 #1B2A4A; }
+.lb-mk.yes { background: #CDEFD9; }
+.lb-fb { border-radius: 16px; box-shadow: 0 5px 0 #1B2A4A; }
+.lb-fb.ok { background: #CDEFD9; }
+.lb-go { border-radius: 16px; box-shadow: 0 6px 0 #1B2A4A; font-family: 'Fredoka', 'Inter', sans-serif; font-weight: 700; font-size: 20px; transition: transform .1s ease, box-shadow .1s ease; }
+.lb-go:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 0 #1B2A4A; }
+.lb-go:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 2px 0 #1B2A4A; }
+.lb-go:disabled { box-shadow: 0 6px 0 #8A7A72; }
+
+/* piece unlocked */
+.lb-rv { padding: 22px 18px 24px; text-align: center; }
+.lb-rvh { font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 26px; margin: 0; line-height: 1.15; color: #1B2A4A; text-wrap: balance; }
+.lb-rvs { font-size: 14px; color: #5B6785; margin: 2px 0 14px; }
+.lb-rvw { position: relative; max-width: 100%; margin: 0 auto; }
+.lb-rvp { display: grid; border: 3px solid #1B2A4A; border-radius: 14px; box-shadow: 5px 5px 0 #1B2A4A; overflow: hidden; background: #fff; }
+.lb-rvc { position: relative; }
+.lb-rvc.locked::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,.82); }
+.lb-rvc.new { outline: 4px solid #F2593A; outline-offset: -4px; z-index: 2; animation: lb-unlock .6s ease both; }
+.lb-rvc.new::before { content: attr(data-l); position: absolute; left: 6px; top: 5px; z-index: 3; font: 700 12px 'Inter', sans-serif; color: #1B2A4A; background: #fff; border-radius: 6px; padding: 1px 6px; }
+.lb-rvb { position: absolute; right: -8px; bottom: -12px; width: 84px; height: 84px; display: grid; place-items: center; z-index: 5; animation: lb-pop .7s ease both; }
+.lb-rvb span { position: absolute; inset: 0; background: #F2593A; }
+.lb-rvb.zero span { background: #7C88A6; }
+.lb-rvb.neg span { background: #1B2A4A; }
+.lb-rvb b { position: relative; color: #fff; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 22px; font-variant-numeric: tabular-nums; }
+.lb-next { margin-top: 26px; padding: 0 34px; }
+.lb-rpic { width: 150px; aspect-ratio: 1; margin: 0 auto 14px; border: 3px solid #1B2A4A; border-radius: 14px; background-size: cover; background-position: center; box-shadow: 4px 4px 0 #1B2A4A; transform: rotate(-2deg); }
+
+/* setup */
+.lb-sbq { min-height: 0; gap: 0; padding: 18px 18px 20px; background: radial-gradient(circle at 15% 0%, #FFF 0, #EAF2FF 80%); }
+.lb-sbq .lb-sti { font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 28px; line-height: 1.1; margin: 0; text-wrap: balance; }
+.lb-story { display: flex; align-items: center; gap: 14px; }
+.lb-thumb { flex: none; width: 72px; height: 72px; border: 3px solid #1B2A4A; border-radius: 14px; background-size: cover; background-position: center; box-shadow: 0 5px 0 #1B2A4A; transform: rotate(-3deg); }
+.lb-eyebrow2 { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #5B6785; }
+.lb-lab { margin: 20px 0 10px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #5B6785; }
+.lb-lv { gap: 12px; margin: 0; }
+.lb-lvc { padding: 10px 8px 12px; border-radius: 18px; box-shadow: 0 6px 0 #1B2A4A; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: transform .12s ease, box-shadow .12s ease, background .15s; font-family: inherit; }
+.lb-lvc:hover:not(:disabled) { background: #fff; transform: translateY(-2px); box-shadow: 0 8px 0 #1B2A4A; }
+.lb-lvc:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 2px 0 #1B2A4A; }
+.lb-lvc.sel { background: #FFE2D8; border-color: #F2593A; box-shadow: 0 6px 0 #F2593A; }
+.lb-lvc.sel:hover { background: #FFE2D8; box-shadow: 0 8px 0 #F2593A; }
+.lb-minibox { height: 78px; width: 100%; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 4px; }
+.lb-mini { display: grid; gap: 3px; width: 100%; max-width: 74px; }
+.lb-mini i { display: block; aspect-ratio: 1; border-radius: 3px; border: 1.5px solid #1B2A4A; background: var(--k, #FFD6CB); }
+.lb-lvc .lb-n { font-size: 40px; display: block; }
+.lb-lvc .lb-a { font-size: 13px; font-weight: 600; line-height: 1.2; margin-top: 0; }
+.lb-lvc .lb-s { font-size: 11px; color: #5B6785; line-height: 1.25; margin-top: 0; }
+.lb-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.lb-pt { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 3px solid #1B2A4A; border-radius: 14px; background: #fff; text-align: left; transition: opacity .2s, background .2s; }
+.lb-pt.off { opacity: .35; background: #F1F3F8; }
+.lb-ptb { flex: none; position: relative; width: 44px; height: 44px; display: grid; place-items: center; }
+.lb-ptb span { position: absolute; inset: 0; background: #F2593A; }
+.lb-ptb b { position: relative; color: #fff; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 12px; font-variant-numeric: tabular-nums; }
+.lb-pt strong { display: block; font-size: 13px; line-height: 1.2; }
+.lb-pt small { display: block; font-size: 11px; color: #5B6785; line-height: 1.2; }
+.lb-ctrls { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 12px; align-items: start; }
+.lb-cl { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+.lb-step { display: flex; align-items: stretch; border: 3px solid #1B2A4A; border-radius: 14px; background: #fff; overflow: hidden; box-shadow: 0 4px 0 #1B2A4A; }
+.lb-step button { width: 34px; border: 0; padding: 0; cursor: pointer; font: 700 20px 'Fredoka', 'Inter', sans-serif; color: #1B2A4A; background: var(--k, #FFEFB3); }
+.lb-step button:hover { filter: brightness(.96); }
+.lb-step button:active { filter: brightness(.9); }
+.lb-step output { flex: 1; text-align: center; font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 20px; padding: 6px 0; font-variant-numeric: tabular-nums; }
+.lb-seg { display: grid; grid-template-columns: 1fr 1fr; border: 3px solid #1B2A4A; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 4px 0 #1B2A4A; }
+.lb-seg button { border: 0; background: #fff; padding: 9px 4px; font-size: 13px; font-weight: 600; color: #1B2A4A; cursor: pointer; }
+.lb-seg button[aria-pressed="true"] { background: #1B2A4A; color: #fff; }
+.lb-seg.disabled { opacity: .5; pointer-events: none; }
+.lb-sbq .lb-note { margin: 16px 0 0; }
+.lb-start { width: 100%; margin-top: 18px; height: auto; padding: 12px 14px; font-size: 24px; border-radius: 18px; box-shadow: 0 7px 0 #1B2A4A; }
+.lb-start small { display: block; font: 600 13px 'Inter', sans-serif; opacity: .9; margin-top: 1px; }
+@keyframes lb-unlock { 0% { transform: scale(.6) rotate(-8deg); filter: brightness(1.8); } 60% { transform: scale(1.08) rotate(2deg); } 100% { transform: scale(1); filter: none; } }
 @keyframes lb-pop { 0% { transform: scale(1); } 40% { transform: scale(1.15); } 100% { transform: scale(1); } }
 @keyframes lb-hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } }
 @keyframes lb-shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
