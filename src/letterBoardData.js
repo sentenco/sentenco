@@ -438,6 +438,138 @@ export const MILK_TEA_ITEMS = [
   ST("open", "Would you like a weekend job? What job would you choose? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would like to work in a bookstore. I love reading and I like quiet places.\""),
 ];
 
+// ---- story set: "The Mystery Notes" (secret notes in a locker, mystery with a surprise ending, teens, A2 to B1, simple past) ----
+export const MYSTERY_NOTES_STORY = {
+  title: "The Mystery Notes",
+  text: "Leo was sixteen and he was very stressed about his exams. He stayed at school until late every evening to study. One Monday morning, he opened his locker and found a yellow note: \"You can do it. Believe in yourself.\" There was no name on it. The next day there was another note, and on Wednesday there was a third one.\n\nLeo asked his friends, but nobody knew. He thought Maya, a girl from his class, wrote the notes because she always smiled at him. On Friday, he came to school very early and hid behind the stairs. At seven o'clock, a man with a mop walked to Leo's locker and put a note inside. It was Mr. Cruz, the school cleaner!\n\n\"I see you studying late every night,\" Mr. Cruz said with a smile. \"I was a student once, too.\"",
+  image: "",
+};
+
+export const MYSTERY_NOTES_ITEMS = [
+  // easy (9)
+  ST("choice", "How old was Leo?", ["fifteen", "sixteen", "seventeen"], 1),
+  ST("choice", "What was Leo worried about?", ["his birthday", "his exams", "a football game"], 1),
+  ST("choice", "What color was the note?", ["pink", "yellow", "blue"], 1),
+  ST("choice", "Where did Leo find the note?", ["in his bag", "in his locker", "on his desk"], 1),
+  GR("choice", "Leo ___ a yellow note in his locker.", ["finds", "find", "found"], 2),
+  ST("choice", "How many notes did Leo find from Monday to Wednesday?", ["two", "three", "four"], 1),
+  GR("choice", "There ___ no name on the note.", ["were", "are", "was"], 2),
+  ST("choice", "Who did Leo think wrote the notes?", ["his teacher", "Maya", "his mother"], 1),
+  ST("open", "What did the first note say? Say the words.", ["", "", ""], 0, "\"You can do it. Believe in yourself.\""),
+  // average (6)
+  ST("choice", "Why did Leo think Maya wrote the notes?", ["She always smiled at him.", "She was his best friend.", "She had a yellow pen."], 0),
+  GR("choice", "Leo ___ his friends, but nobody knew.", ["ask", "asked", "asking"], 1),
+  ST("choice", "What did Leo do on Friday?", ["He stayed home.", "He came early and hid behind the stairs.", "He asked the teacher."], 1),
+  GR("open", "Fix the sentence: \"He hided behind the stairs.\"", ["", "", ""], 0, "\"He hid behind the stairs.\""),
+  ST("choice", "What did the man carry?", ["a bag", "a mop", "a book"], 1),
+  RE("What happened on Friday morning? Tell me in your own words.", "Leo came to school early and hid behind the stairs. At seven o'clock a man walked to his locker and put a note inside. It was Mr. Cruz, the school cleaner."),
+  // difficult (5)
+  ST("choice", "Why did Mr. Cruz write the notes?", ["He saw Leo studying late and wanted to help.", "He wanted to test Leo.", "He wanted a new locker."], 0),
+  GR("choice", "Mr. Cruz said, \"I ___ a student once, too.\"", ["am", "was", "were"], 1),
+  ST("open", "How do you think Leo felt when he saw Mr. Cruz? Say why.", ["", "", ""], 0, "He felt surprised and happy because he did not expect the cleaner, and Mr. Cruz was kind."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Leo found a yellow note in his locker and there was no name on it. Then he found more notes and thought Maya wrote them. After that he hid behind the stairs on Friday. Finally he saw Mr. Cruz, the school cleaner, put a note in his locker."),
+  ST("open", "Who helps you when you feel stressed? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"My sister helps me. She listens and makes me laugh.\""),
+];
+
+// ---- story set: "The Escape Room" (a birthday escape room with a funny twist, teens, A2 to B1, simple past) ----
+export const ESCAPE_ROOM_STORY = {
+  title: "The Escape Room",
+  text: "Pia and her three friends, Jun, Rey and Cass, went to an escape room for Pia's sixteenth birthday. The guide closed the door and said, \"You have sixty minutes. Find the golden key and open the door.\"\n\nThey looked under the table, behind the paintings and inside an old clock. After forty minutes, they were tired and a little angry. \"We will never get out of here!\" said Rey. Then Cass solved the last puzzle and a note appeared: \"The key is closer than you think.\"\n\nEverybody looked at the floor, the walls and the ceiling. Pia looked at Jun. He was very quiet and he kept touching his jacket. \"Jun, check your pockets,\" she said. Jun put his hand in his pocket and found the golden key. \"I picked it up in the first minute,\" he said, and his face turned red. The door opened with only ten seconds left!",
+  image: "",
+};
+
+export const ESCAPE_ROOM_ITEMS = [
+  // easy (9)
+  ST("choice", "How many friends went with Pia?", ["two", "three", "four"], 1),
+  ST("choice", "Why did they go to the escape room?", ["a school trip", "Pia's birthday", "Christmas"], 1),
+  ST("choice", "Where did they go?", ["to a cinema", "to an escape room", "to a museum"], 1),
+  ST("choice", "How many minutes did they have?", ["thirty", "forty", "sixty"], 2),
+  GR("choice", "The guide ___ the door.", ["close", "closed", "closing"], 1),
+  ST("choice", "What did they need to find?", ["a map", "a golden key", "a secret code"], 1),
+  GR("choice", "They ___ under the table.", ["looked", "look", "looks"], 0),
+  ST("choice", "Who said, \"We will never get out of here!\"?", ["Pia", "Cass", "Rey"], 2),
+  ST("open", "Who solved the last puzzle? Say the name.", ["", "", ""], 0, "Cass."),
+  // average (6)
+  ST("choice", "What did the note say?", ["\"The key is closer than you think.\"", "\"The key is behind the door.\"", "\"The key is under the table.\""], 0),
+  GR("choice", "Cass ___ the last puzzle.", ["solve", "solved", "solving"], 1),
+  ST("choice", "How did the friends feel after forty minutes?", ["happy and excited", "tired and a little angry", "sleepy and bored"], 1),
+  GR("open", "Fix the sentence: \"Jun finded the key.\"", ["", "", ""], 0, "\"Jun found the key.\""),
+  ST("choice", "Where was the key?", ["in Jun's pocket", "inside the clock", "behind a painting"], 0),
+  RE("What happened after the note appeared? Tell me in your own words.", "Everybody looked around the room. Pia saw that Jun was quiet and kept touching his jacket. Jun checked his pocket and found the golden key."),
+  // difficult (5)
+  ST("choice", "Why did Pia look at Jun?", ["He was holding a map.", "He was very quiet and kept touching his jacket.", "He was sitting on the key."], 1),
+  GR("choice", "Jun said, \"I ___ it up in the first minute.\"", ["pick", "picked", "picking"], 1),
+  ST("open", "Why did Jun's face turn red? Say it in your own words.", ["", "", ""], 0, "He was embarrassed because the key was in his pocket the whole time."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First the friends went into the escape room and the guide closed the door. Then they looked everywhere for the golden key. After that Cass solved the last puzzle and Pia looked at Jun. Finally Jun found the key in his pocket and the door opened with ten seconds left."),
+  ST("open", "Would you like to try an escape room? Who would you go with? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"Yes, I would go with my cousins. We like puzzles.\""),
+];
+
+// ---- story set: "The Noise at Night" (strange sounds and a birthday surprise, teens, A2 to B1, simple past) ----
+export const NIGHT_NOISE_STORY = {
+  title: "The Noise at Night",
+  text: "For three nights, Hana heard strange sounds from the garage under her bedroom. Tap, tap, tap. Then a long scrape. She was scared, but she did not tell her parents because she did not want to worry them. She thought a thief was in the house.\n\nOn the fourth night, she took a flashlight and walked down the stairs very slowly. Her heart was beating fast. She opened the garage door and the lights came on! Her dad and her little brother Tito stood there with sawdust in their hair. Behind them was a beautiful wooden bookshelf with a big red bow.\n\n\"Happy birthday, Hana!\" they shouted. The next day was her fifteenth birthday. She laughed and hugged them both.",
+  image: "",
+};
+
+export const NIGHT_NOISE_ITEMS = [
+  // easy (9)
+  ST("choice", "For how many nights did Hana hear sounds before the fourth night?", ["four", "three", "two"], 1),
+  ST("choice", "Where did the sounds come from?", ["the kitchen", "the garage", "the garden"], 1),
+  GR("choice", "Hana ___ strange sounds.", ["hear", "heard", "hearing"], 1),
+  ST("choice", "What did Hana think was in the house?", ["a ghost", "a cat", "a thief"], 2),
+  ST("choice", "How did Hana feel?", ["scared", "happy", "bored"], 0),
+  ST("choice", "What did Hana take on the fourth night?", ["a hammer", "a flashlight", "a book"], 1),
+  GR("choice", "Her heart ___ beating fast.", ["were", "is", "was"], 2),
+  ST("choice", "Who was in the garage?", ["her mom and her sister", "her dad and her little brother", "a thief"], 1),
+  ST("open", "What was the name of Hana's little brother? Say the name.", ["", "", ""], 0, "Tito."),
+  // average (6)
+  ST("choice", "What was in the hair of Hana's dad and brother?", ["paint", "sawdust", "water"], 1),
+  GR("choice", "Hana ___ the garage door.", ["open", "opened", "opens"], 1),
+  ST("choice", "What was behind them?", ["a wooden bookshelf with a red bow", "a new bike", "a blue desk"], 0),
+  GR("open", "Fix the sentence: \"Hana taked a flashlight.\"", ["", "", ""], 0, "\"Hana took a flashlight.\""),
+  ST("choice", "Why did Hana not tell her parents about the sounds?", ["She was angry at them.", "She forgot.", "She did not want to worry them."], 2),
+  RE("What happened when Hana opened the garage door? Tell me in your own words.", "The lights came on. Her dad and her little brother stood there with sawdust in their hair, and behind them was a wooden bookshelf with a red bow."),
+  // difficult (5)
+  ST("choice", "Why were her dad and brother in the garage at night?", ["They were fixing the car.", "They were making a birthday present for her.", "They were hiding from her."], 1),
+  GR("choice", "The next day ___ her fifteenth birthday.", ["were", "is", "was"], 2),
+  ST("open", "How did Hana feel at the end? Say why.", ["", "", ""], 0, "She felt happy and surprised because the noise was a birthday present, not a thief."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Hana heard strange sounds from the garage for three nights and she thought a thief was there. Then on the fourth night she took a flashlight and went downstairs. After that she opened the garage door and the lights came on. Finally she saw her dad and brother with a bookshelf for her birthday."),
+  ST("open", "Have you ever had a surprise? What was it? Say two sentences.", ["", "", ""], 0, "Any two sentences, for example: \"My friends gave me a surprise party. I did not know about it.\""),
+];
+
+// ---- story set: "The Photo in the Book" (a clue in a second-hand book, teens, A2 to B1, simple past) ----
+export const BOOK_PHOTO_STORY = {
+  title: "The Photo in the Book",
+  text: "Alex loved old books, so on Saturday he went to a second-hand bookshop. Inside one book, he found an old photo of two girls. On the back, someone wrote: \"Meet me under the big clock, 5 o'clock, May 5th.\"\n\nAlex looked at his phone. Today was May 5th, and it was a quarter to five! He ran to the big clock in the town square. At exactly five o'clock, an old man with a white beard walked up to him and smiled. \"You came!\" he said. \"You are the first person to follow the clue.\"\n\nAlex felt confused. \"Is this your photo?\" he asked. The man laughed. \"No. I'm Mr. Tan, the owner of the bookshop. I hide a photo in a book every month. The person who follows the clue gets a free book!\"",
+  image: "",
+};
+
+export const BOOK_PHOTO_ITEMS = [
+  // easy (9)
+  ST("choice", "What did Alex love?", ["old cars", "old books", "old music"], 1),
+  ST("choice", "Where did Alex go on Saturday?", ["to a library", "to a second-hand bookshop", "to a school"], 1),
+  ST("choice", "What did Alex find in a book?", ["a letter", "money", "an old photo"], 2),
+  GR("choice", "Alex ___ an old photo.", ["found", "find", "finding"], 0),
+  ST("choice", "Who was in the photo?", ["two boys", "two girls", "a man and a dog"], 1),
+  ST("choice", "What was the date?", ["June 5th", "May 5th", "May 15th"], 1),
+  GR("choice", "Today ___ May 5th.", ["is", "were", "was"], 2),
+  ST("choice", "Where was the big clock?", ["at school", "in the park", "in the town square"], 2),
+  ST("open", "What time did the note say? Say the time.", ["", "", ""], 0, "5 o'clock."),
+  // average (6)
+  ST("choice", "What was written on the back of the photo?", ["\"Meet me under the big clock, 5 o'clock, May 5th.\"", "\"Call me tonight.\"", "\"Find the golden key.\""], 0),
+  GR("choice", "Someone ___ a message on the back.", ["write", "wrote", "writing"], 1),
+  ST("choice", "Who walked up to Alex at the clock?", ["an old man with a white beard", "a girl from the photo", "a police officer"], 0),
+  GR("open", "Fix the sentence: \"Alex runned to the big clock.\"", ["", "", ""], 0, "\"Alex ran to the big clock.\""),
+  ST("choice", "How did Alex feel when the man talked to him?", ["confused", "angry", "sleepy"], 0),
+  RE("What happened at the big clock? Tell me in your own words.", "At five o'clock an old man with a white beard walked up to Alex and said he was the first person to follow the clue."),
+  // difficult (5)
+  ST("choice", "Who was the old man?", ["a friend of the girls", "the owner of the bookshop", "Alex's grandfather"], 1),
+  GR("choice", "The person who ___ the clue gets a free book.", ["follow", "follows", "followed"], 1),
+  ST("open", "Why did Mr. Tan hide a photo in a book? Say it in your own words.", ["", "", ""], 0, "He wanted to find readers who are curious, and he gives a free book to the person who follows the clue."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Alex found an old photo with a note in a book at the bookshop. Then he saw it was May 5th and ran to the big clock. After that an old man with a white beard walked up to him. Finally the man said he was the bookshop owner and Alex won a free book."),
+  ST("open", "What kind of book would you choose? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would choose a mystery book. I like to guess the ending.\""),
+];
+
 // Opens the game in a popup, like the Wheel and the lesson players.
 // `start` (1, 2 or 3) skips the setup screen and opens the board at that level.
 export function openLetterBoard(id, start) {

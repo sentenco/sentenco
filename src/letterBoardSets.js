@@ -1,4 +1,4 @@
-import { SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, SECRET_MAP_STORY, SECRET_MAP_ITEMS, PAROL_MAKER_STORY, PAROL_MAKER_ITEMS, LAST_FIVE_STORY, LAST_FIVE_ITEMS, TALENT_SHOW_STORY, TALENT_SHOW_ITEMS, LOST_PHONE_STORY, LOST_PHONE_ITEMS, LAST_LEVEL_STORY, LAST_LEVEL_ITEMS, MILK_TEA_STORY, MILK_TEA_ITEMS } from "./letterBoardData";
+import { SAMPLE_ITEMS, SAMPLE_STORY, SAMPLE_STORY_ITEMS, SECRET_MAP_STORY, SECRET_MAP_ITEMS, PAROL_MAKER_STORY, PAROL_MAKER_ITEMS, LAST_FIVE_STORY, LAST_FIVE_ITEMS, TALENT_SHOW_STORY, TALENT_SHOW_ITEMS, LOST_PHONE_STORY, LOST_PHONE_ITEMS, LAST_LEVEL_STORY, LAST_LEVEL_ITEMS, MILK_TEA_STORY, MILK_TEA_ITEMS, MYSTERY_NOTES_STORY, MYSTERY_NOTES_ITEMS, ESCAPE_ROOM_STORY, ESCAPE_ROOM_ITEMS, NIGHT_NOISE_STORY, NIGHT_NOISE_ITEMS, BOOK_PHOTO_STORY, BOOK_PHOTO_ITEMS } from "./letterBoardData";
 
 // The Letter Board topics teachers can play. Each topic is a set of 20 items (see letterBoardData.js)
 // and can be about anything: no categories. Teachers can't add or edit these; new topics are added here,
@@ -72,6 +72,34 @@ export const LETTER_BOARD_SETS = [
     blurb: "A first weekend job, a very sweet mistake and a kind manager. Read the story, then play.",
     items: MILK_TEA_ITEMS,
     story: MILK_TEA_STORY,
+  },
+  {
+    id: "mystery-notes",
+    title: "The Mystery Notes",
+    blurb: "A yellow note, no name and a very early morning. Who is writing them? Read the story, then play.",
+    items: MYSTERY_NOTES_ITEMS,
+    story: MYSTERY_NOTES_STORY,
+  },
+  {
+    id: "escape-room",
+    title: "The Escape Room",
+    blurb: "Sixty minutes, one golden key and a big surprise. Read the story, then play.",
+    items: ESCAPE_ROOM_ITEMS,
+    story: ESCAPE_ROOM_STORY,
+  },
+  {
+    id: "noise-at-night",
+    title: "The Noise at Night",
+    blurb: "Tap, tap, tap in the garage. Is there a thief in the house? Read the story, then play.",
+    items: NIGHT_NOISE_ITEMS,
+    story: NIGHT_NOISE_STORY,
+  },
+  {
+    id: "photo-in-the-book",
+    title: "The Photo in the Book",
+    blurb: "An old photo, a secret message and a big clock. Read the story, then play.",
+    items: BOOK_PHOTO_ITEMS,
+    story: BOOK_PHOTO_STORY,
   },
 ];
 
