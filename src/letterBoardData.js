@@ -310,7 +310,7 @@ export const LAST_FIVE_ITEMS = [
 export const TALENT_SHOW_STORY = {
   title: "The Talent Show",
   text: "Lena was fourteen and she played the guitar every day, but she never played for other people. In March, her music teacher, Mr. Reyes, asked her to join the school talent show. Lena felt very nervous. \"I can't do it,\" she said.\n\nOn the night of the show, her hands shook. Her best friend Jade stood next to her and said, \"Just look at me.\" Lena walked onto the stage, took a deep breath and started to play. At first her voice was small, but soon it got stronger.\n\nWhen the song finished, the hall was quiet for a second. Then everybody clapped and shouted. Lena smiled. She was not scared anymore.",
-  image: "",
+  image: "/curriculum/letter-board/talent-show-cover.jpg",
 };
 
 export const TALENT_SHOW_ITEMS = [
@@ -343,7 +343,7 @@ export const TALENT_SHOW_ITEMS = [
 export const LOST_PHONE_STORY = {
   title: "The Lost Phone",
   text: "On Saturday afternoon, Sofia went to the mall with her cousin Ben. They had burgers, looked at shoes and watched a movie trailer. At the bus stop, Sofia put her hand in her bag. Her phone wasn't there! \"It has all my photos,\" she said, and her face went white.\n\nThey ran back to the food court. A woman at the information desk smiled. \"A boy found a phone near the burger shop,\" she said. \"He left it with us.\" Sofia described her phone case, a blue one with a star, and the woman gave it back.\n\nSofia wanted to thank the boy, so she left a note at the desk. That night, she checked her bag twice before she went to sleep.",
-  image: "",
+  image: "/curriculum/letter-board/lost-phone-cover.jpg",
 };
 
 export const LOST_PHONE_ITEMS = [
@@ -376,7 +376,7 @@ export const LOST_PHONE_ITEMS = [
 export const LAST_LEVEL_STORY = {
   title: "The Last Level",
   text: "Kai was fourteen and he played video games every evening. For one week, he tried to beat the last level of his favorite game, but he lost every time. He got angry and almost threw his controller.\n\nHis little sister, Mai, sat on the sofa and watched. \"The dragon always closes its eyes before it shoots fire,\" she said. \"Maybe you can hide then.\" Kai laughed, but he tried her idea. He hid behind a rock and, when the dragon closed its eyes, he attacked.\n\nAfter ten minutes, the dragon fell and the screen said, \"You win!\" Kai jumped up and hugged Mai. \"You're a genius!\" he said.",
-  image: "",
+  image: "/curriculum/letter-board/last-level-cover.jpg",
 };
 
 export const LAST_LEVEL_ITEMS = [
@@ -409,7 +409,7 @@ export const LAST_LEVEL_ITEMS = [
 export const MILK_TEA_STORY = {
   title: "The Milk Tea Shop",
   text: "Nico was sixteen and he wanted to buy new sneakers, so he found a weekend job at a milk tea shop. On his first Saturday, the shop was very busy. A girl ordered a mango tea with less sugar, but Nico made it with extra sugar by mistake. \"This is too sweet,\" she said. Nico's face turned red.\n\nHis manager, Ms. Santos, did not shout. She helped him make a new drink and said, \"Everyone makes mistakes on the first day. Just read the order again before you start.\"\n\nNico followed her advice. By the end of the day, he made forty drinks and only one more mistake. When he got home, he told his mom, \"I think I like my job.\"",
-  image: "",
+  image: "/curriculum/letter-board/milk-tea-shop-cover.jpg",
 };
 
 export const MILK_TEA_ITEMS = [
