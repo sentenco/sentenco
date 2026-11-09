@@ -40,6 +40,7 @@ export default function WheelPage() {
   // Daily topics: which audience is loaded, whether it is today's set or a shuffle, and the full question for each slice.
   const [topicAudience, setTopicAudience] = useState(null);
   const [topicShuffled, setTopicShuffled] = useState(false);
+  const [topicGender, setTopicGender] = useState("any"); // "any", "b" (boy or man) or "g" (girl or woman)
   const [prompts, setPrompts] = useState({});
   const todayLabel = new Date().toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
 
@@ -140,8 +141,8 @@ export default function WheelPage() {
     setWinnerIndex(null);
   }
 
-  function loadTopics(audience, shuffle) {
-    const set = shuffle ? randomTopics(audience, words) : dailyTopics(audience);
+  function loadTopics(audience, shuffle, gender = topicGender) {
+    const set = shuffle ? randomTopics(audience, gender, words) : dailyTopics(audience, gender);
     setRawText(set.map((t) => t.label).join("\n"));
     setPrompts(Object.fromEntries(set.map((t) => [t.label, t.prompt])));
     setTopicAudience(audience);
@@ -222,8 +223,21 @@ export default function WheelPage() {
           <div className="wp-topics-section">
             <span className="wp-label">Daily speaking topics</span>
             <div className="wp-topics-btns">
-              <button type="button" className={`wp-topics-btn ${topicAudience === "teens" ? "is-active" : ""}`} onClick={() => loadTopics("teens", false)}>Teens</button>
-              <button type="button" className={`wp-topics-btn ${topicAudience === "adults" ? "is-active" : ""}`} onClick={() => loadTopics("adults", false)}>Adults</button>
+              <button type="button" className={`wp-topics-btn ${topicAudience === "teens" ? "is-active" : ""}`} onClick={() => loadTopics("teens", false, topicGender)}>Teens</button>
+              <button type="button" className={`wp-topics-btn ${topicAudience === "adults" ? "is-active" : ""}`} onClick={() => loadTopics("adults", false, topicGender)}>Adults</button>
+            </div>
+            <div className="wp-topics-who">
+              <span className="wp-topics-who-label">Speaker</span>
+              {[["any", "Any"], ["b", topicAudience === "adults" ? "Man" : "Boy"], ["g", topicAudience === "adults" ? "Woman" : "Girl"]].map(([code, text]) => (
+                <button
+                  key={code}
+                  type="button"
+                  className={`wp-topics-chip ${topicGender === code ? "is-active" : ""}`}
+                  onClick={() => { setTopicGender(code); if (topicAudience) loadTopics(topicAudience, false, code); }}
+                >
+                  {text}
+                </button>
+              ))}
             </div>
             {topicAudience ? (
               <div className="wp-topics-note">
@@ -232,7 +246,7 @@ export default function WheelPage() {
                 {topicShuffled && <button type="button" className="wp-topics-shuffle" onClick={() => loadTopics(topicAudience, false)}>Today's set</button>}
               </div>
             ) : (
-              <div className="wp-topics-note"><span>Pick a group for a fresh set of 8 impromptu topics each day.</span></div>
+              <div className="wp-topics-note"><span>Pick a group and a speaker for a fresh set of 8 impromptu topics each day.</span></div>
             )}
           </div>
 
@@ -639,6 +653,14 @@ const CSS = `
 }
 .wp-topics-btn:hover { border-color: #FF6B4A; }
 .wp-topics-btn.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
+.wp-topics-who { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+.wp-topics-who-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #5A6B92; margin-right: 4px; }
+.wp-topics-chip {
+  font-size: 12px; font-weight: 700; color: #5A6B92; background: #FBF4F1;
+  border: 1px solid #EDE1DB; border-radius: 999px; padding: 5px 12px; cursor: pointer;
+}
+.wp-topics-chip:hover { border-color: #FF6B4A; }
+.wp-topics-chip.is-active { background: #FF6B4A; border-color: #FF6B4A; color: #fff; }
 .wp-topics-note { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 11.5px; line-height: 1.5; color: #5A6B92; margin-top: 8px; }
 .wp-topics-shuffle {
   font-size: 11.5px; font-weight: 800; color: #FF6B4A; background: #FDECE5;

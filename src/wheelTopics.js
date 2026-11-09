@@ -203,14 +203,132 @@ const ADULTS = [
   "Looking ahead|Where do you see yourself in ten years, and what will you do to get there?",
 ];
 
-function parse(list) {
+
+// Topics that suit a boy / man ("b") or a girl / woman ("g"). The Wheel adds these to the neutral bank
+// when the teacher picks the speaker; "Any" uses the neutral bank only, so nothing is ever a mismatch.
+const TEENS_B = [
+  "Favorite athlete|Which athlete do you admire most, and what can we learn from them?",
+  "Gaming setup|Describe your dream gaming setup. What would be in it?",
+  "Dream car|What car would you love to drive one day? Describe it.",
+  "Training|Do you train or play a sport regularly? Tell us how it helps you.",
+  "Team captain|Would you like to be a team captain? What would you do for your team?",
+  "Gadgets|Which gadget would you love to own, and what would you do with it?",
+  "Superhero|Which superhero are you most like, and why?",
+  "Camping trip|Describe an outdoor trip you would love to take, such as camping or fishing.",
+  "Martial arts|Would you like to learn a martial art? Which one, and why?",
+  "Building things|Have you ever built or fixed something? Tell us how you did it.",
+  "Esports|Should esports be treated like real sports? Give your opinion.",
+  "Boys, feelings|Is it hard for boys to talk about their feelings? Share your view.",
+  "New look|Tell us about a time you changed your look, like a haircut or a new style.",
+  "Dad and me|What is something your father or an older man taught you?",
+  "Losing a game|How do you feel when your team loses, and how do you handle it?",
+  "Best match|Describe the most exciting match you ever watched or played.",
+  "Robots|Would you like to build a robot? What would it do?",
+  "Skateboarding|Do you skate, bike or ride a scooter? Describe the best ride you have had.",
+  "Brothers|What is it like to have brothers, or to be an only child? Share your experience.",
+  "Strategy games|Is chess or another strategy game a real sport? Explain your view.",
+  "Real hero|Tell us about a real person you consider a hero.",
+  "Thrill rides|Do you like fast, exciting things? Describe something thrilling you did.",
+  "Learn to drive|Imagine you are learning to drive. What excites or worries you?",
+  "Sports day|Describe a sports day at your school and what you did.",
+];
+
+const TEENS_G = [
+  "Skincare|Do you have a skincare or beauty routine? Is it important to you?",
+  "Favorite singer|Which singer or band do you love, and what do their songs mean to you?",
+  "Dance|Do you like to dance? Describe a dance you know or want to learn.",
+  "Your style|How would you describe your style, and who inspires it?",
+  "Baking|Describe something you baked, or something you would love to bake.",
+  "Girl power|What does being a strong girl mean to you?",
+  "Sleepover|Describe the perfect sleepover with your friends.",
+  "Journaling|Do you keep a diary or journal? What do you write about?",
+  "Shopping day|Describe your perfect shopping day. Where would you go?",
+  "Makeup|Do you think teenagers wear too much makeup? Share your view.",
+  "Best friend time|What do you and your best friend do together that is special?",
+  "Girls in sport|Should girls play the same sports as boys? Explain.",
+  "Woman I admire|Which woman do you admire most, and what has she achieved?",
+  "Ballet or yoga|Have you tried ballet, gymnastics or yoga? Tell us about it.",
+  "Babysitting|Would you like to babysit younger kids? What would you do with them?",
+  "Mom and me|What is something your mother or an older woman taught you?",
+  "Online trends|Tell us about an online trend you like or dislike, like challenges or filters.",
+  "Room makeover|If you could decorate your room any way you like, what would it look like?",
+  "Confidence|Why do some girls feel less confident in class? How can we help?",
+  "Sisters|What is it like to have sisters, or to be an only child? Share your experience.",
+  "Book friend|Which book character would you like to be friends with, and why?",
+  "Relaxing|What do you do to relax after a hard week?",
+  "Selfies|Why do people take so many selfies? Do you like them?",
+  "Your charity|If you started a charity, who would you help?",
+];
+
+const ADULTS_B = [
+  "Being a dad|What does being a good father mean to you?",
+  "Men and feelings|Is it hard for men to talk about their feelings? Share your view.",
+  "Watching sport|Why do so many people love watching sport? Describe a match you remember.",
+  "Dream car|What car would you love to own, and why?",
+  "DIY projects|Do you enjoy fixing or building things yourself? Tell us about a project.",
+  "Exercise|What role does exercise play in your life? Share your routine.",
+  "Men at home|Should men share housework and childcare equally? Give your opinion.",
+  "Turning forty|How do a man's goals change in midlife? Share your thoughts.",
+  "Hobby room|What would your perfect hobby room or garage look like?",
+  "Male role model|Who was an important male role model in your life?",
+  "Men and looks|Do men care enough about how they look? Share your view.",
+  "Main earner|Should the man still be the main earner in a family? Explain.",
+  "Men's friends|How do men stay in touch with their friends as life gets busier?",
+  "Gaming adults|Do adults play video games too much, or just enough? Share your view.",
+  "Road trip|Describe the best road trip you took or would like to take.",
+  "Masculinity|What does a healthy idea of being a man look like today?",
+  "Sports heroes|Which athlete from your country do you admire, and why?",
+  "Doctor visits|Why do many men avoid going to the doctor? What should change?",
+  "Men cooking|Should every man learn to cook? Explain.",
+  "Advice for him|If you could advise a younger man, what would you say?",
+  "Male friendship|How important is friendship between men? Give an example.",
+  "Gadget fan|Which new gadget do you want most, and why?",
+];
+
+const ADULTS_G = [
+  "Women leaders|Why are there fewer women leaders in business and politics? Share your view.",
+  "Career and kids|How can women balance a career and a family? Share your opinion.",
+  "Being a mom|What does being a good mother mean to you?",
+  "Traveling alone|What advice would you give a woman traveling alone?",
+  "Beauty routine|Do beauty routines matter for adult women? Share your thoughts.",
+  "Who inspires|Which woman has inspired you most, and why?",
+  "Equal pay|Should men and women always get the same pay? Explain.",
+  "Women friends|Why are friendships between women so important? Describe yours.",
+  "Work wardrobe|How do you choose what to wear to work, and does it affect how you feel?",
+  "Self-care|What does self-care mean for you in a busy week?",
+  "Fashion|Do you follow fashion, or do you prefer comfort? Explain.",
+  "Housework|Do women still do more of the housework? What should change?",
+  "Own business|Would you like to start your own business? What would it be?",
+  "Family recipe|Describe a dish you learned from a woman in your family.",
+  "Confidence|When do you feel most confident? Share a moment.",
+  "Mothers at work|How should companies support women who become mothers?",
+  "Women's sport|Why does women's sport get less attention? Give your opinion.",
+  "For her|What do you want your daughter or a younger woman to know?",
+  "Beauty standards|Are beauty standards for women too high? Share your thoughts.",
+  "Dream home|Describe your dream home and how you would decorate it.",
+  "Wellness|Which wellness habit changed your life, like yoga or good sleep?",
+  "A woman's advice|What is the best advice a woman ever gave you?",
+];
+
+function parse(list, gender) {
   return list.map((line) => {
     const [label, prompt] = line.split("|");
-    return { label, prompt };
+    return { label, prompt, gender };
   });
 }
 
-export const TOPIC_BANKS = { teens: parse(TEENS), adults: parse(ADULTS) };
+// Neutral topics suit anyone; "b" and "g" topics are added when the speaker is a boy/man or girl/woman.
+const BANKS = {
+  teens: { any: parse(TEENS, "any"), b: parse(TEENS_B, "b"), g: parse(TEENS_G, "g") },
+  adults: { any: parse(ADULTS, "any"), b: parse(ADULTS_B, "b"), g: parse(ADULTS_G, "g") },
+};
+export const TOPIC_BANKS = { teens: BANKS.teens.any, adults: BANKS.adults.any };
+
+// gender is "any", "b" or "g"
+export function topicPool(audience, gender = "any") {
+  const { any, b, g } = BANKS[audience];
+  return gender === "b" ? [...any, ...b] : gender === "g" ? [...any, ...g] : any;
+}
 export const TOPICS_PER_WHEEL = 8;
 
 // Small seeded random generator so that everyone gets the same "today" set.
@@ -244,18 +362,18 @@ export function dayNumber(date = new Date()) {
 
 // The 8 topics for a given day: no repeats until the whole bank has been used,
 // then the bank is reshuffled so the next round is grouped differently.
-export function dailyTopics(audience, date = new Date()) {
-  const bank = TOPIC_BANKS[audience];
+export function dailyTopics(audience, gender = "any", date = new Date()) {
+  const bank = topicPool(audience, gender);
   const perCycle = Math.floor(bank.length / TOPICS_PER_WHEEL);
   const day = dayNumber(date);
   const cycle = Math.floor(day / perCycle);
   const slot = ((day % perCycle) + perCycle) % perCycle;
-  const order = shuffled(bank, 7919 * (cycle + 1) + (audience === "teens" ? 11 : 23));
+  const order = shuffled(bank, 7919 * (cycle + 1) + (audience === "teens" ? 11 : 23) + (gender === "b" ? 101 : gender === "g" ? 211 : 0));
   return order.slice(slot * TOPICS_PER_WHEEL, (slot + 1) * TOPICS_PER_WHEEL);
 }
 
 // A random set for the Shuffle button, so a class can keep going after today's set.
-export function randomTopics(audience, avoidLabels = []) {
-  const bank = TOPIC_BANKS[audience].filter((t) => !avoidLabels.includes(t.label));
+export function randomTopics(audience, gender = "any", avoidLabels = []) {
+  const bank = topicPool(audience, gender).filter((t) => !avoidLabels.includes(t.label));
   return shuffled(bank, Math.floor(Math.random() * 1e9)).slice(0, TOPICS_PER_WHEEL);
 }
