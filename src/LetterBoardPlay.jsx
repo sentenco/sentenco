@@ -267,7 +267,7 @@ function TopBar({ coins, pulse, mood, tilesLeft, muted, onMute, onSetup, onStory
       </div>
       {full && (
         <div className="lb-tr">
-          <span className="lb-left">{tilesLeft} keys left</span>
+          <span className="lb-left">{tilesLeft} items left</span>
           {onStory && (
             <button type="button" className="lb-ib lb-story-btn" onClick={onStory} aria-label="Read the story again">
               <Icon name="book" /><span>Story</span>
@@ -447,7 +447,7 @@ function Play({ items, story, cfg, level, onSetup, onAgain }) {
               <b>{delta > 0 ? `+${delta}` : delta < 0 ? delta : "0"}</b>
             </div>
           </div>
-          <button type="button" className="lb-go lb-next" onClick={next}>{tilesLeft === 0 ? "See results" : "Next key"}</button>
+          <button type="button" className="lb-go lb-next" onClick={next}>{tilesLeft === 0 ? "See results" : "Next item"}</button>
         </div>
       </div>
     );
@@ -756,18 +756,17 @@ function StoryOverlay({ story, onClose, onSetup }) {
 }
 
 // Shown before the board opens: the student reads (or hears) the story first.
-function StoryRead({ title, story, onStart, onBack }) {
+function StoryRead({ title, story, onStart }) {
   return (
     <div className="lbr-card">
       <div className="lbr-tbar">
         <Brand />
-        <span className="lbr-chip">Read the story first</span>
+        <span className="lbr-chip">Read the story</span>
       </div>
       <div className="lbr-title"><h1><span>{story.title || title}</span></h1></div>
       <StoryReader story={story}>
         <div className="lbr-actions">
-          <button type="button" className="lbr-ghost" onClick={onBack}>Back to setup</button>
-          <button type="button" className="lbr-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>Play</button>
+          <button type="button" className="lbr-go" onClick={() => { ac(); sfx.pick(); onStart(); }}>Choose the items</button>
           <p className="lbr-note">The questions are about this story. Open it again any time with the Story button.</p>
         </div>
       </StoryReader>
@@ -830,7 +829,7 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
           </div>
         </div>
 
-        <div className="lb-lab">How many keys?</div>
+        <div className="lb-lab">How many items?</div>
         <div className="lb-lv">
           {LEVELS.map((L) => {
             const ok = ready(L.key);
@@ -883,13 +882,13 @@ function Setup({ title, items, story, cfg, setCfg, onStart }) {
           </div>
         </div>
 
-        <p className="lb-note lb-nomt">A double key pays twice. A bomb wins or loses the same as coins would for its question.</p>
+        <p className="lb-note lb-nomt">A double item pays twice. A bomb wins or loses the same as coins would for its question.</p>
 
         {!anyReady && <p className="lb-note">Fill in all 9 easy items in the editor to play this set.</p>}
 
         <button type="button" className="lb-go lb-start" disabled={!anyReady} onClick={() => { ac(); sfx.pick(); onStart(effective); }}>
           Start game
-          {chosen && <small>{chosen.n} keys, {mixed ? "mixed letters" : "letters in order"}</small>}
+          {chosen && <small>{chosen.n} items, {mixed ? "mixed letters" : "letters in order"}</small>}
         </button>
       </div>
     </div>
@@ -903,9 +902,10 @@ export default function LetterBoardPlay() {
   const [set, setSet] = useState(null);
   const [err, setErr] = useState("");
   const [cfg, setCfg] = useState(loadCfg);
-  const [session, setSession] = useState(null); // { level, key, reading } while a game is on
+  const [session, setSession] = useState(null); // { level, key } while a game is on
+  const [storyDone, setStoryDone] = useState(false); // a story is read first, then the number of items is chosen
   const fitRef = useRef(null);
-  const screen = err ? "error" : !set ? "loading" : session ? (session.reading ? "reading" : "play") : "setup";
+  const screen = err ? "error" : !set ? "loading" : session ? "play" : hasStory(set.story) && !storyDone ? "reading" : "setup";
   const scale = useFitScale(fitRef, screen);
 
   useEffect(() => {
@@ -931,18 +931,19 @@ export default function LetterBoardPlay() {
       });
   }, [id, user, loading]);
 
-  // Opened from the Letter Board page with ?start=1|2|3: skip the setup screen and go straight to the game.
+  // A link with ?start=1|2|3 skips the item choice: once the story (if there is one) has been read it goes straight to the game.
   useEffect(() => {
     const lvl = Number(query.get("start"));
     if (!set || session || !lvl) return;
+    if (hasStory(set.story) && !storyDone) return;
     const level = LEVELS.find((L) => L.key === lvl);
-    if (level && levelStatus(set.items).missing[lvl] === 0) setSession({ level, key: Date.now(), reading: hasStory(set.story) });
+    if (level && levelStatus(set.items).missing[lvl] === 0) setSession({ level, key: Date.now() });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [set]);
+  }, [set, storyDone]);
 
   const start = (lvl) => {
     const level = LEVELS.find((L) => L.key === lvl);
-    if (level) setSession({ level, key: Date.now(), reading: hasStory(set && set.story) });
+    if (level) setSession({ level, key: Date.now() });
   };
 
   return (
@@ -953,12 +954,11 @@ export default function LetterBoardPlay() {
         <div className="lb-app lb-msgbox"><p>{err}</p></div>
       ) : !set ? (
         <div className="lb-app lb-msgbox"><p>Loading...</p></div>
-      ) : session && session.reading ? (
+      ) : screen === "reading" ? (
         <StoryRead
           title={set.title}
           story={set.story}
-          onStart={() => setSession({ ...session, reading: false })}
-          onBack={() => setSession(null)}
+          onStart={() => setStoryDone(true)}
         />
       ) : session ? (
         <Play
@@ -968,7 +968,7 @@ export default function LetterBoardPlay() {
           cfg={cfg}
           level={session.level}
           onSetup={() => setSession(null)}
-          onAgain={() => setSession({ level: session.level, key: Date.now(), reading: false })}
+          onAgain={() => setSession({ level: session.level, key: Date.now() })}
         />
       ) : (
         <Setup title={set.title} items={set.items} story={set.story} cfg={cfg} setCfg={setCfg} onStart={start} />

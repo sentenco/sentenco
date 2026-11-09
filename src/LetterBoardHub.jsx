@@ -4,35 +4,11 @@ import { HUB_SETS } from "./letterBoardSets";
 import { hasStory, openLetterBoard } from "./letterBoardData";
 
 // Letter Board page (inside the Library nav chrome): a fiesta hub. A picture of parols and banderitas sits at the top of
-// the page (public/curriculum/letter-board/hub-bg.jpg), then the title tiles, then one ticket per topic. Picking a ticket opens a ticket-shaped setup (how hard, what the tiles are worth,
-// the letter order) with a tear-off stub that sums up the game and holds the start button.
+// the page (public/curriculum/letter-board/hub-bg.jpg), then the title tiles, then one ticket per topic. Picking a ticket opens the game window: the story first, then the number of items.
 // Topics are built in; teachers ask for new ones through Custom Lessons.
 
-const CFG_KEY = "sentenco-letter-board-cfg";
-const DEFAULT_CFG = { lvl: 3, mix: true, c: 10, b: 30, x: 30 };
-const PRESETS = [
-  { key: "small", name: "Small", c: 5, b: 15, x: 15 },
-  { key: "standard", name: "Standard", c: 10, b: 30, x: 30 },
-  { key: "big", name: "Big", c: 20, b: 60, x: 60 },
-];
-const LEVELS = [
-  { key: 1, name: "Easy", n: 9, bar: [9, 0, 0], sub: "9 easy" },
-  { key: 2, name: "Easy and average", n: 15, bar: [9, 6, 0], sub: "9 easy, 6 average" },
-  { key: 3, name: "All levels", n: 20, bar: [9, 6, 5], sub: "9 easy, 6 average, 5 hard" },
-];
+const ALL_LEVELS = { name: "All levels", n: 20, bar: [9, 6, 5], sub: "9 easy, 6 average, 5 hard" };
 const TITLE_WORDS = "LETTER BOARD".split(" ");
-
-function loadCfg() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(CFG_KEY) || "null");
-    if (raw && typeof raw === "object") return { ...DEFAULT_CFG, ...raw };
-  } catch { /* fall through */ }
-  return DEFAULT_CFG;
-}
-
-function presetOf(cfg) {
-  return PRESETS.find((p) => p.c === cfg.c && p.b === cfg.b && p.x === cfg.x) || null;
-}
 
 const pad2 = (n) => (n < 10 ? "0" : "") + n;
 
@@ -170,20 +146,7 @@ export default function LetterBoardHub() {
   const sheetRef = useRef(null);
   const mode = useMode(sheetRef);
   const [tune, setTune] = useState(loadTune);
-  const [cfg, setCfg] = useState(loadCfg);
-  const [openId, setOpenId] = useState(null);
-  const closeRef = useRef(null);
-  const lastFocus = useRef(null);
-  const set = HUB_SETS.find((s) => s.id === openId) || null;
-  const level = LEVELS.find((l) => l.key === cfg.lvl) || LEVELS[2];
-  const preset = presetOf(cfg);
-  const all = LEVELS[2];
-
-  const update = (patch) => {
-    const next = { ...cfg, ...patch };
-    setCfg(next);
-    try { localStorage.setItem(CFG_KEY, JSON.stringify(next)); } catch { /* optional */ }
-  };
+  const all = ALL_LEVELS;
 
   const changeTune = (mode, key, value) => {
     const next = { ...tune, [mode]: { ...tune[mode], [key]: value } };
@@ -197,26 +160,6 @@ export default function LetterBoardHub() {
   };
   const tv = tune[mode];
   const tuneVars = tuning ? { "--ttop": tv.top, "--tsize": tv.size, "--rowgap": tv.rowgap, "--under": tv.under, "--after": tv.after, "--minh": tv.minh } : undefined;
-
-  const openTopic = (id) => {
-    lastFocus.current = document.activeElement;
-    setOpenId(id);
-  };
-  const close = () => setOpenId(null);
-
-  useEffect(() => {
-    if (!set) {
-      if (lastFocus.current && lastFocus.current.focus) lastFocus.current.focus();
-      return undefined;
-    }
-    if (closeRef.current) closeRef.current.focus();
-    const onKey = (e) => { if (e.key === "Escape") close(); };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [set]);
-
-  const story = set ? hasStory(set.story) : false;
-  const inOrder = !cfg.mix || cfg.lvl === 1;
 
   return (
     <div className="lbh3-shell" style={tuneVars}>
@@ -240,7 +183,7 @@ export default function LetterBoardHub() {
             const st = hasStory(s.story);
             return (
               <div key={s.id} className="lbh3-tk">
-                <button type="button" className="lbh3-card" aria-haspopup="dialog" onClick={() => openTopic(s.id)}>
+                <button type="button" className="lbh3-card" onClick={() => openLetterBoard(s.id)}>
                   {st && <span className="lbh3-badge">Story</span>}
                   <span className="lbh3-no lbh3-corner">No. {pad2(i + 1)}</span>
                   <Cover set={s} />
@@ -256,7 +199,7 @@ export default function LetterBoardHub() {
                       <span className="lbh3-dcap">{all.sub}</span>
                     </span>
                     <span className="lbh3-foot">
-                      <span className="lbh3-dcap lbh3-nm">Choose how hard inside</span>
+                      <span className="lbh3-dcap lbh3-nm">{st ? "Read it, then pick the items" : "Pick the items inside"}</span>
                       <span className="lbh3-tg">Play &rarr;</span>
                     </span>
                   </span>
@@ -280,65 +223,6 @@ export default function LetterBoardHub() {
        </div>
       </div>
 
-      {set && (
-        <div className="lbh3-veil" onMouseDown={(e) => { if (e.target === e.currentTarget) close(); }}>
-          <div className="lbh3-tpop" role="dialog" aria-modal="true" aria-labelledby="lbh3-dlg">
-            <div className="lbh3-main">
-              <div className="lbh3-head">
-                <Cover set={set} className="lbh3-th" />
-                <div>
-                  <h2 id="lbh3-dlg">{set.title}</h2>
-                  <p>{set.blurb}</p>
-                </div>
-              </div>
-              <div className="lbh3-inner">
-                <section className="lbh3-step">
-                  <h3><i>1</i>How hard?</h3>
-                  <div className="lbh3-levels">
-                    {LEVELS.map((l) => (
-                      <button type="button" key={l.key} className={`lbh3-lv${cfg.lvl === l.key ? " is-on" : ""}`} aria-pressed={cfg.lvl === l.key} onClick={() => update({ lvl: l.key })}>
-                        <div className="lbh3-n">{l.n}<small>tiles</small></div>
-                        <b>{l.name}</b>
-                        <Difficulty level={l} />
-                      </button>
-                    ))}
-                  </div>
-                </section>
-                <section className="lbh3-step">
-                  <h3><i>2</i>What are the tiles worth?</h3>
-                  <div className="lbh3-presets" role="group" aria-label="Reward size">
-                    {PRESETS.map((p) => (
-                      <button type="button" key={p.key} className={preset && preset.key === p.key ? "is-on" : ""} aria-pressed={!!preset && preset.key === p.key} onClick={() => update({ c: p.c, b: p.b, x: p.x })}>{p.name}</button>
-                    ))}
-                  </div>
-                </section>
-                <section className="lbh3-step">
-                  <h3><i>3</i>Letters</h3>
-                  <div className="lbh3-mix" role="group" aria-label="Letter order">
-                    <button type="button" className={inOrder ? "is-on" : ""} onClick={() => update({ mix: false })}>In order</button>
-                    <button type="button" className={!inOrder ? "is-on" : ""} disabled={cfg.lvl === 1} onClick={() => update({ mix: true })}>Mixed</button>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <aside className="lbh3-stub">
-              <div>
-                <span className="lbh3-lab">Your game</span>
-                <p className="lbh3-tt">{set.title}</p>
-              </div>
-              <dl>
-                <div><dt>Ticket</dt><dd>No. {pad2(HUB_SETS.indexOf(set) + 1)}</dd></div>
-                <div><dt>Tiles</dt><dd>{level.n}</dd></div>
-                <div><dt>Worth</dt><dd>{preset ? `${preset.name} (${cfg.c} / ${cfg.c * 2} / ${cfg.c * 3})` : `Custom (${cfg.c} / ${cfg.c * 2} / ${cfg.c * 3})`}</dd></div>
-                <div><dt>Letters</dt><dd>{inOrder ? "In order" : "Mixed"}</dd></div>
-                <div><dt>Starts with</dt><dd>{story ? "The story" : "The board"}</dd></div>
-              </dl>
-              <button type="button" className="lbh3-go" onClick={() => openLetterBoard(set.id, cfg.lvl)}>{story ? "Read the story" : "Start game"}</button>
-            </aside>
-            <button type="button" className="lbh3-x" ref={closeRef} onClick={close} aria-label="Close">&times;</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
