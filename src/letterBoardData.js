@@ -273,6 +273,39 @@ export const PAROL_MAKER_ITEMS = [
   ST("open", "Would you like to make a parol? What colors would you use? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"I would use pink and green. I like bright colors.\""),
 ];
 
+// ---- story set: "The Last Five Minutes" (a school football final for a teenage boy, level A2 to B1, simple past) ----
+export const LAST_FIVE_STORY = {
+  title: "The Last Five Minutes",
+  text: "Marco was fifteen and he loved football. On Saturday, his school team played the final against Green Hill. Marco sat on the bench for the whole first half. His team was losing 1-0.\n\nAfter the break, the coach called his name. \"Marco, you play now. Stay calm and pass quickly.\" With five minutes left, Marco won the ball and passed it to his friend Tom. Tom scored! Now it was 1-1.\n\nIn the last minute, Marco ran down the side and shot. The ball hit the net! His team won 2-1, and everyone shouted his name.",
+  image: "",
+};
+
+export const LAST_FIVE_ITEMS = [
+  // easy (9)
+  ST("choice", "What did Marco love?", ["basketball", "football", "tennis"], 1),
+  ST("choice", "How old was Marco?", ["fifteen", "fourteen", "sixteen"], 0),
+  ST("choice", "Who did Marco's school team play in the final?", ["Red Hill", "Blue Park", "Green Hill"], 2),
+  GR("choice", "Marco ___ football very much.", ["love", "loved", "loving"], 1),
+  ST("choice", "Where did Marco sit in the first half?", ["in the goal", "in the car", "on the bench"], 2),
+  ST("choice", "Who was winning in the first half?", ["Marco's team", "Green Hill", "Nobody"], 1),
+  GR("choice", "On Saturday, his team ___ the final.", ["played", "play", "plays"], 0),
+  ST("choice", "What did the coach tell Marco to do?", ["shoot every time", "run very fast", "stay calm and pass quickly"], 2),
+  ST("open", "Who scored the first goal for Marco's team? Say the name.", ["", "", ""], 0, "Tom."),
+  // average (6)
+  ST("choice", "When did the coach call Marco's name?", ["before the game", "after the break", "in the last minute"], 1),
+  GR("choice", "Marco ___ the ball and passed it to Tom.", ["won", "win", "winning"], 0),
+  ST("choice", "How many minutes were left when Marco won the ball?", ["ten", "one", "five"], 2),
+  GR("open", "Fix the sentence: \"Marco runned down the side.\"", ["", "", ""], 0, "\"Marco ran down the side.\""),
+  ST("choice", "What was the score after Tom's goal?", ["1-1", "2-1", "0-1"], 0),
+  RE("What happened after the break? Tell me in your own words.", "The coach called Marco. Marco won the ball and passed it to Tom. Tom scored and the game was 1-1."),
+  // difficult (5)
+  ST("choice", "Why did Marco go onto the pitch after the break?", ["The coach told him to play", "A player was hurt", "He wanted to go home"], 0),
+  GR("choice", "When Marco ___, the ball hit the net.", ["shoots", "shot", "shooting"], 1),
+  ST("open", "How do you think Marco felt at the end? Say why.", ["", "", ""], 0, "He felt happy and proud because he helped his team win."),
+  RE("Retell the whole story. Use first, then, after that and finally.", "First Marco sat on the bench. Then the coach called him after the break. After that he passed to Tom and Tom scored. Finally Marco shot, the ball hit the net and his team won 2-1."),
+  ST("open", "Do you play football? Who is your favorite player or team? Say two sentences.", ["", "", ""], 0, "Any two sentences with a reason, for example: \"My favorite team is Real Madrid. They play beautiful football.\""),
+];
+
 // Opens the game in a popup, like the Wheel and the lesson players.
 // `start` (1, 2 or 3) skips the setup screen and opens the board at that level.
 export function openLetterBoard(id, start) {
