@@ -9,6 +9,8 @@ const COLORS = ["#7C5CFC", "#FF8A4C", "#16BFAE", "#FFB648", "#FF6B8B", "#2B6FE0"
 const DEFAULT_TEXT = "Alex\nJordan\nSam\nCasey\nRiley\nMorgan";
 
 const TIMER_PRESETS = [30, 60, 120, 300];
+const PREP_SECONDS = 30;
+const SPEAK_SECONDS = 60;
 
 function formatTime(totalSeconds) {
   const m = Math.floor(totalSeconds / 60);
@@ -28,20 +30,38 @@ function slicePath(cx, cy, r, startAngle, endAngle) {
   return `M ${cx} ${cy} L ${start.x} ${start.y} A ${r} ${r} 0 ${largeArc} 1 ${end.x} ${end.y} Z`;
 }
 
+function beep() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = 880;
+    gain.gain.setValueAtTime(0.16, ctx.currentTime);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.5);
+  } catch {
+    // Web Audio unavailable -- the visual "Time's up" still shows.
+  }
+}
+
 export default function WheelPage() {
   const { user } = useAuth();
+
+  // "my" = the normal wheel with any words; "teens" / "adults" = daily impromptu speaking topics.
+  const [mode, setMode] = useState("my");
+  const [gender, setGender] = useState("any"); // "any", "b" (boy or man) or "g" (girl or woman)
   const [rawText, setRawText] = useState(DEFAULT_TEXT);
+  const [topicSet, setTopicSet] = useState([]);
+  const [topicShuffled, setTopicShuffled] = useState(false);
+  const [usedTopics, setUsedTopics] = useState([]);
+  const [removeWinner, setRemoveWinner] = useState(false);
+
   const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [result, setResult] = useState(null);
   const [winnerIndex, setWinnerIndex] = useState(null);
-  const spinCountRef = useRef(0);
-
-  // Daily topics: which audience is loaded, whether it is today's set or a shuffle, and the full question for each slice.
-  const [topicAudience, setTopicAudience] = useState(null);
-  const [topicShuffled, setTopicShuffled] = useState(false);
-  const [topicGender, setTopicGender] = useState("any"); // "any", "b" (boy or man) or "g" (girl or woman)
-  const [prompts, setPrompts] = useState({});
   const todayLabel = new Date().toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
 
   const [savedLists, setSavedLists] = useState([]);
@@ -54,7 +74,11 @@ export default function WheelPage() {
   const [timerDuration, setTimerDuration] = useState(60);
   const [timerRemaining, setTimerRemaining] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [timerPhase, setTimerPhase] = useState("Speak");
+  const speakQueueRef = useRef(0);
   const timerIntervalRef = useRef(null);
+
+  const isTopics = mode !== "my";
 
   useEffect(() => {
     if (!user) { setSavedLists([]); return; }
@@ -73,38 +97,39 @@ export default function WheelPage() {
   useEffect(() => {
     if (!timerRunning) return;
     timerIntervalRef.current = window.setInterval(() => {
-      setTimerRemaining((prev) => {
-        if (prev === null || prev <= 1) {
-          setTimerRunning(false);
-          return 0;
-        }
-        return prev - 1;
-      });
+      setTimerRemaining((prev) => (prev === null || prev <= 1 ? 0 : prev - 1));
     }, 1000);
     return () => window.clearInterval(timerIntervalRef.current);
   }, [timerRunning]);
 
+  // When the clock reaches zero: after prep time go straight into the speaking time, otherwise stop.
   useEffect(() => {
     if (timerRemaining !== 0) return;
-    try {
-      const ctx = new (window.AudioContext || window.webkitAudioContext)();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.frequency.value = 880;
-      gain.gain.setValueAtTime(0.16, ctx.currentTime);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.5);
-    } catch {
-      // Web Audio unavailable -- the visual "Time's Up!" badge still shows.
+    beep();
+    if (speakQueueRef.current > 0) {
+      const q = speakQueueRef.current;
+      speakQueueRef.current = 0;
+      setTimerPhase("Speak");
+      setTimerDuration(q);
+      setTimerRemaining(q);
+    } else {
+      setTimerRunning(false);
     }
   }, [timerRemaining]);
 
   function pickTimerDuration(sec) {
+    speakQueueRef.current = 0;
+    setTimerPhase("Speak");
     setTimerDuration(sec);
     setTimerRunning(false);
     setTimerRemaining(sec);
+  }
+  function pickPrepThenSpeak() {
+    speakQueueRef.current = SPEAK_SECONDS;
+    setTimerPhase("Prep");
+    setTimerDuration(PREP_SECONDS);
+    setTimerRunning(false);
+    setTimerRemaining(PREP_SECONDS);
   }
   function startTimer() {
     if (timerRemaining === null || timerRemaining === 0) setTimerRemaining(timerDuration);
@@ -114,6 +139,8 @@ export default function WheelPage() {
     setTimerRunning(false);
   }
   function resetTimer() {
+    speakQueueRef.current = 0;
+    setTimerPhase("Speak");
     setTimerRunning(false);
     setTimerRemaining(null);
   }
@@ -136,19 +163,8 @@ export default function WheelPage() {
 
   function loadSavedList(list) {
     setRawText(list.content);
-    setTopicAudience(null);
-    setResult(null);
-    setWinnerIndex(null);
-  }
-
-  function loadTopics(audience, shuffle, gender = topicGender) {
-    const set = shuffle ? randomTopics(audience, gender, words) : dailyTopics(audience, gender);
-    setRawText(set.map((t) => t.label).join("\n"));
-    setPrompts(Object.fromEntries(set.map((t) => [t.label, t.prompt])));
-    setTopicAudience(audience);
-    setTopicShuffled(shuffle);
-    setResult(null);
-    setWinnerIndex(null);
+    setMode("my");
+    clearWinner();
   }
 
   async function confirmDeleteList() {
@@ -159,9 +175,33 @@ export default function WheelPage() {
     await supabase.from("wheel_lists").delete().eq("id", id);
   }
 
+  function clearWinner() {
+    setResult(null);
+    setWinnerIndex(null);
+  }
+
+  function loadTopics(audience, shuffle, g = gender) {
+    const set = shuffle ? randomTopics(audience, g, topicSet.map((t) => t.label)) : dailyTopics(audience, g);
+    setTopicSet(set);
+    setTopicShuffled(shuffle);
+    setUsedTopics([]);
+    setMode(audience);
+    clearWinner();
+  }
+
+  function pickMode(next) {
+    if (next === "my") { setMode("my"); clearWinner(); return; }
+    loadTopics(next, false);
+  }
+
+  function pickGender(g) {
+    setGender(g);
+    if (isTopics) loadTopics(mode, false, g);
+  }
+
   const words = useMemo(
-    () => rawText.split("\n").map((w) => w.trim()).filter(Boolean),
-    [rawText]
+    () => (isTopics ? topicSet.map((t) => t.label) : rawText.split("\n").map((w) => w.trim()).filter(Boolean)),
+    [isTopics, topicSet, rawText]
   );
 
   const n = words.length;
@@ -172,25 +212,22 @@ export default function WheelPage() {
 
   function handleTextChange(e) {
     setRawText(e.target.value);
-    setTopicAudience(null);
-    setResult(null);
-    setWinnerIndex(null);
+    clearWinner();
   }
 
-  const winnerFontSize = result ? Math.max(18, Math.min(44, 620 / Math.max(result.length, 8))) : 44;
+  const winnerPrompt = isTopics && winnerIndex !== null ? topicSet[winnerIndex]?.prompt : "";
+  const winnerFontSize = result ? Math.max(22, Math.min(40, 560 / Math.max(result.length, 10))) : 40;
 
-  function spin() {
+  function spin(forcedIndex) {
     if (spinning || n < 2) return;
     setSpinning(true);
-    setResult(null);
-    setWinnerIndex(null);
+    clearWinner();
 
-    const targetIndex = Math.floor(Math.random() * n);
+    const targetIndex = typeof forcedIndex === "number" ? forcedIndex : Math.floor(Math.random() * n);
     const sliceCenter = targetIndex * sliceAngle + sliceAngle / 2;
     const jitterRange = sliceAngle * 0.6;
     const jitter = (Math.random() - 0.5) * jitterRange;
 
-    spinCountRef.current += 1;
     const fullSpins = 5;
     const targetOffset = ((360 - sliceCenter - jitter) % 360 + 360) % 360;
     const nextRotation = rotation - (rotation % 360) + fullSpins * 360 + targetOffset;
@@ -200,220 +237,249 @@ export default function WheelPage() {
       setSpinning(false);
       setResult(words[targetIndex]);
       setWinnerIndex(targetIndex);
+      if (isTopics) {
+        setUsedTopics((prev) => (prev.includes(words[targetIndex]) ? prev : [...prev, words[targetIndex]]));
+      } else if (removeWinner) {
+        // Take the winner off the wheel so nobody wins twice.
+        window.setTimeout(() => {
+          setRawText((text) => {
+            const lines = text.split("\n");
+            let seen = -1;
+            const at = lines.findIndex((l) => l.trim() && ++seen === targetIndex);
+            if (at < 0) return text;
+            lines.splice(at, 1);
+            return lines.join("\n");
+          });
+          setWinnerIndex(null);
+        }, 900);
+      }
     }, 4200);
   }
+
+  const timerShown = timerRemaining === null ? timerDuration : timerRemaining;
+  const timerPct = timerDuration > 0 ? Math.max(0, Math.min(100, (timerShown / timerDuration) * 100)) : 0;
+  const timerWarn = timerPhase === "Speak" && timerRunning && timerShown <= 10;
 
   return (
     <div className="wp-shell">
       <style>{CSS}</style>
 
-      <div className="wp-panel-zone">
-        <div className="wp-panel-tab">
-          <span className="wp-panel-tab-icon">📝</span>
-          <span className="wp-panel-tab-text">Words</span>
+      <header className="wp-top">
+        <div className="wp-brand">
+          <span className="wp-eyebrow">Sentenco · Homeroom</span>
+          <h1 className="wp-title">Spin the Wheel</h1>
+        </div>
+        <div className="wp-controls">
+          <button type="button" className={`wp-pill ${mode === "teens" ? "is-active" : ""}`} onClick={() => pickMode("teens")}>Teens</button>
+          <button type="button" className={`wp-pill ${mode === "adults" ? "is-active" : ""}`} onClick={() => pickMode("adults")}>Adults</button>
+          <button type="button" className={`wp-pill ${mode === "my" ? "is-active" : ""}`} onClick={() => pickMode("my")}>My list</button>
+          {isTopics && (
+            <>
+              <span className="wp-sep" />
+              {[["any", "Any"], ["b", mode === "adults" ? "Man" : "Boy"], ["g", mode === "adults" ? "Woman" : "Girl"]].map(([code, text]) => (
+                <button key={code} type="button" className={`wp-pill wp-pill--co ${gender === code ? "is-active" : ""}`} onClick={() => pickGender(code)}>{text}</button>
+              ))}
+            </>
+          )}
+        </div>
+      </header>
+
+      <main className="wp-main">
+        <div className="wp-wheel-col">
+          <div className="wp-wheel-wrap">
+            <div className="wp-pointer" />
+            <div
+              className="wp-disc"
+              style={{
+                transform: `rotate(${rotation}deg)`,
+                transition: spinning ? "transform 4.2s cubic-bezier(0.12, 0.67, 0.1, 1)" : "none",
+              }}
+            >
+              {n === 0 ? (
+                <div className="wp-empty-disc">Add words to build your wheel</div>
+              ) : (
+                <svg viewBox="0 0 400 400" className="wp-svg">
+                  {words.map((word, i) => {
+                    const start = i * sliceAngle;
+                    const end = (i + 1) * sliceAngle;
+                    const mid = start + sliceAngle / 2;
+                    const labelPos = pointAt(cx, cy, r * 0.6, mid);
+                    // Text runs along the slice (from the centre outward), flipped on the left half so it never reads upside down.
+                    const labelRotate = mid > 180 ? mid + 90 : mid - 90;
+                    const label = word.length > 16 ? word.slice(0, 15) + "…" : word;
+                    const fontSize = Math.max(9, Math.min(15, 130 / Math.max(n, 6), 200 / label.length));
+                    const isWinner = i === winnerIndex;
+                    return (
+                      <g key={i} className={isWinner ? "wp-slice-winner" : undefined}>
+                        <path
+                          d={slicePath(cx, cy, r, start, end)}
+                          fill={COLORS[i % COLORS.length]}
+                          stroke={isWinner ? "#FF6B4A" : "#FFFFFF"}
+                          strokeWidth={isWinner ? 5 : 2}
+                        />
+                        <text
+                          x={labelPos.x}
+                          y={labelPos.y}
+                          fontSize={fontSize}
+                          fill="#FFFFFF"
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          transform={`rotate(${labelRotate}, ${labelPos.x}, ${labelPos.y})`}
+                          className="wp-slice-label"
+                        >
+                          {label}
+                        </text>
+                      </g>
+                    );
+                  })}
+                </svg>
+              )}
+            </div>
+            <button
+              type="button"
+              className="wp-hub"
+              onClick={() => spin()}
+              disabled={spinning || n < 2}
+              title={n < 2 ? "Add at least 2 words to spin" : "Spin"}
+            >
+              <img src="/logo-sentenco.png" alt="" className="wp-hub-logo" />
+              <span className="wp-hub-label">{spinning ? "…" : "SPIN"}</span>
+            </button>
+          </div>
         </div>
 
-        <div className="wp-panel">
-          <div className="wp-panel-head">
-            <span className="wp-eyebrow">Sentenco · Homeroom</span>
-            <h1 className="wp-title">Spin the Wheel</h1>
-            <p className="wp-blurb">Paste your list, one item per line. Each line becomes a slice.</p>
-          </div>
-
-          <div className="wp-topics-section">
-            <span className="wp-label">Daily speaking topics</span>
-            <div className="wp-topics-btns">
-              <button type="button" className={`wp-topics-btn ${topicAudience === "teens" ? "is-active" : ""}`} onClick={() => loadTopics("teens", false, topicGender)}>Teens</button>
-              <button type="button" className={`wp-topics-btn ${topicAudience === "adults" ? "is-active" : ""}`} onClick={() => loadTopics("adults", false, topicGender)}>Adults</button>
-            </div>
-            <div className="wp-topics-who">
-              <span className="wp-topics-who-label">Speaker</span>
-              {[["any", "Any"], ["b", topicAudience === "adults" ? "Man" : "Boy"], ["g", topicAudience === "adults" ? "Woman" : "Girl"]].map(([code, text]) => (
-                <button
-                  key={code}
-                  type="button"
-                  className={`wp-topics-chip ${topicGender === code ? "is-active" : ""}`}
-                  onClick={() => { setTopicGender(code); if (topicAudience) loadTopics(topicAudience, false, code); }}
-                >
-                  {text}
-                </button>
-              ))}
-            </div>
-            {topicAudience ? (
-              <div className="wp-topics-note">
-                <span>{topicShuffled ? "Extra set" : `Today, ${todayLabel}`}</span>
-                <button type="button" className="wp-topics-shuffle" onClick={() => loadTopics(topicAudience, true)}>Shuffle</button>
-                {topicShuffled && <button type="button" className="wp-topics-shuffle" onClick={() => loadTopics(topicAudience, false)}>Today's set</button>}
-              </div>
+        <div className="wp-right">
+          <section className="wp-winner" aria-live="polite">
+            <span className="wp-winner-tag">{result ? (isTopics ? "Your topic" : "Winner") : "Ready"}</span>
+            {result ? (
+              <>
+                <span className="wp-winner-name" style={{ fontSize: `${winnerFontSize}px` }}>{result}</span>
+                {winnerPrompt && <p className="wp-winner-prompt">{winnerPrompt}</p>}
+                {winnerPrompt && <p className="wp-winner-hint">Try: your opinion, two reasons, one example.</p>}
+              </>
             ) : (
-              <div className="wp-topics-note"><span>Pick a group and a speaker for a fresh set of 8 impromptu topics each day.</span></div>
+              <>
+                <span className="wp-winner-name" style={{ fontSize: "34px" }}>{isTopics ? "Spin for a topic" : "Spin the wheel"}</span>
+                <p className="wp-winner-prompt">
+                  {n < 2 ? "Add at least 2 words to spin." : isTopics ? "Today's eight topics are below. The winner shows here in large type." : "The winner shows here in large type."}
+                </p>
+              </>
             )}
-          </div>
+          </section>
 
-          <label className="wp-label" htmlFor="wp-words">Words</label>
-          <textarea
-            id="wp-words"
-            className="wp-textarea"
-            value={rawText}
-            onChange={handleTextChange}
-            placeholder={"Alex\nJordan\nSam\n..."}
-            spellCheck={false}
-          />
-          <div className="wp-count">{n} {n === 1 ? "slice" : "slices"}{n < 2 ? " — add at least 2" : ""}</div>
-
-          {user ? (
-            <div className="wp-saved-section">
-              <div className="wp-saved-head">
-                <span className="wp-label" style={{ marginBottom: 0 }}>Saved Lists</span>
-                <button type="button" className="wp-save-toggle" onClick={() => setShowSaveInput((s) => !s)}>
-                  + Save current
-                </button>
+          <section className="wp-timer">
+            <div className="wp-timer-row">
+              <div className="wp-timer-time">
+                <span className="wp-timer-phase">{timerPhase}</span>
+                <span className={`wp-timer-digits ${timerRemaining === 0 ? "is-done" : ""}`}>
+                  {timerRemaining === 0 ? "Time's up" : formatTime(timerShown)}
+                </span>
               </div>
-              {showSaveInput && (
-                <div className="wp-save-row">
-                  <input
-                    type="text"
-                    className="wp-save-input"
-                    placeholder="Name this list…"
-                    value={saveNameInput}
-                    onChange={(e) => setSaveNameInput(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && saveCurrentList()}
-                    autoFocus
-                  />
-                  <button type="button" className="wp-save-confirm" onClick={saveCurrentList} disabled={savingList || !saveNameInput.trim()}>
-                    {savingList ? "…" : "Save"}
-                  </button>
-                </div>
+              <div className="wp-timer-bar"><i style={{ width: `${timerPct}%`, background: timerWarn ? "#E4322B" : timerPhase === "Prep" ? "#16BFAE" : "#FF6B4A" }} /></div>
+              {!timerRunning ? (
+                <button type="button" className="wp-timer-go" onClick={startTimer}>Start</button>
+              ) : (
+                <button type="button" className="wp-timer-go" onClick={pauseTimer}>Pause</button>
               )}
-              <div className="wp-saved-list">
-                {savedLoading ? (
-                  <div className="wp-saved-empty">Loading…</div>
-                ) : savedLists.length === 0 ? (
-                  <div className="wp-saved-empty">No saved lists yet.</div>
-                ) : (
-                  savedLists.map((l) => (
-                    <div key={l.id} className="wp-saved-item">
-                      <button type="button" className="wp-saved-item-name" onClick={() => loadSavedList(l)}>{l.name}</button>
-                      <button type="button" className="wp-saved-item-del" onClick={() => setDeleteTarget(l)} title="Delete list">×</button>
-                    </div>
-                  ))
-                )}
-              </div>
+              <button type="button" className="wp-timer-btn" onClick={resetTimer}>Reset</button>
             </div>
-          ) : (
-            <p className="wp-login-hint">Log in to save and reuse your topic lists.</p>
-          )}
-
-          <div className="wp-timer-section">
-            <span className="wp-label">Timer</span>
-            <div className="wp-timer-display">{formatTime(timerRemaining === null ? timerDuration : timerRemaining)}</div>
             <div className="wp-timer-presets">
+              <button type="button" className="wp-timer-preset" onClick={pickPrepThenSpeak}>Prep 30s, then speak 60s</button>
               {TIMER_PRESETS.map((sec) => (
                 <button
                   key={sec}
                   type="button"
-                  className={`wp-timer-preset ${timerDuration === sec && timerRemaining === null ? "is-active" : ""}`}
+                  className={`wp-timer-preset ${timerDuration === sec && timerPhase === "Speak" && timerRemaining === null ? "is-active" : ""}`}
                   onClick={() => pickTimerDuration(sec)}
                 >
-                  {sec < 60 ? `${sec}s` : `${sec / 60}m`}
+                  {sec < 60 ? `${sec}s` : `${sec / 60} min`}
                 </button>
               ))}
             </div>
-            <div className="wp-timer-controls">
-              {!timerRunning ? (
-                <button type="button" className="wp-timer-btn wp-timer-btn--start" onClick={startTimer}>▶ Start</button>
-              ) : (
-                <button type="button" className="wp-timer-btn" onClick={pauseTimer}>⏸ Pause</button>
-              )}
-              <button type="button" className="wp-timer-btn" onClick={resetTimer}>Reset</button>
+          </section>
+        </div>
+      </main>
+
+      <footer className="wp-bottom">
+        {isTopics ? (
+          <div className="wp-strip-wrap">
+            <span className="wp-strip-label">{topicShuffled ? "Extra set" : `Today, ${todayLabel}`}</span>
+            <div className="wp-strip">
+              {topicSet.map((t, i) => (
+                <button
+                  key={t.label}
+                  type="button"
+                  className={`wp-chip ${winnerIndex === i ? "is-win" : ""} ${usedTopics.includes(t.label) && winnerIndex !== i ? "is-used" : ""}`}
+                  onClick={() => spin(i)}
+                  disabled={spinning}
+                  title={t.prompt}
+                >
+                  <i style={{ background: COLORS[i % COLORS.length] }} />
+                  {t.label}
+                </button>
+              ))}
+              <button type="button" className="wp-chip wp-chip--action" onClick={() => loadTopics(mode, true)}>Shuffle</button>
+              {topicShuffled && <button type="button" className="wp-chip wp-chip--action" onClick={() => loadTopics(mode, false)}>Today's set</button>}
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="wp-stage">
-        <div className="wp-stage-timer">
-          <div className={`wp-timer-badge ${timerRemaining === 0 ? "is-done" : ""} ${timerRunning ? "is-running" : ""}`}>
-            {timerRemaining === 0 ? "⏰ Time's Up!" : formatTime(timerRemaining === null ? timerDuration : timerRemaining)}
-          </div>
-          <div className="wp-stage-timer-controls">
-            {!timerRunning ? (
-              <button type="button" className="wp-timer-btn wp-timer-btn--start" onClick={startTimer}>▶ Start</button>
-            ) : (
-              <button type="button" className="wp-timer-btn" onClick={pauseTimer}>⏸ Pause</button>
-            )}
-            <button type="button" className="wp-timer-btn" onClick={resetTimer}>Reset</button>
-          </div>
-        </div>
-        {result && (
-          <div className="wp-winner-banner">
-            <span className="wp-winner-tag">Winner</span>
-            <span className="wp-winner-name" style={{ fontSize: `${winnerFontSize}px` }}>🎉 {result}</span>
-            {topicAudience && prompts[result] && <span className="wp-winner-prompt">{prompts[result]}</span>}
+        ) : (
+          <div className="wp-editor">
+            <div className="wp-editor-main">
+              <textarea
+                id="wp-words"
+                className="wp-textarea"
+                value={rawText}
+                onChange={handleTextChange}
+                placeholder={"One word or name per line\nAlex\nJordan"}
+                spellCheck={false}
+                aria-label="Words, one per line"
+              />
+              <div className="wp-editor-side">
+                <span className="wp-count">{n} {n === 1 ? "slice" : "slices"}{n < 2 ? ", add at least 2" : ""}</span>
+                <label className="wp-check">
+                  <input type="checkbox" checked={removeWinner} onChange={(e) => setRemoveWinner(e.target.checked)} />
+                  Remove winner after each spin
+                </label>
+              </div>
+            </div>
+            <div className="wp-saved">
+              <span className="wp-strip-label">Saved lists</span>
+              {user ? (
+                <>
+                  {savedLoading && <span className="wp-saved-empty">Loading…</span>}
+                  {!savedLoading && savedLists.length === 0 && <span className="wp-saved-empty">None yet.</span>}
+                  {savedLists.map((l) => (
+                    <span key={l.id} className="wp-saved-chip">
+                      <button type="button" className="wp-saved-name" onClick={() => loadSavedList(l)}>{l.name}</button>
+                      <button type="button" className="wp-saved-del" onClick={() => setDeleteTarget(l)} title="Delete list" aria-label={`Delete ${l.name}`}>×</button>
+                    </span>
+                  ))}
+                  {showSaveInput ? (
+                    <span className="wp-save-row">
+                      <input
+                        type="text"
+                        className="wp-save-input"
+                        placeholder="Name this list…"
+                        value={saveNameInput}
+                        onChange={(e) => setSaveNameInput(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && saveCurrentList()}
+                        autoFocus
+                      />
+                      <button type="button" className="wp-chip wp-chip--action" onClick={saveCurrentList} disabled={savingList || !saveNameInput.trim()}>
+                        {savingList ? "…" : "Save"}
+                      </button>
+                    </span>
+                  ) : (
+                    <button type="button" className="wp-chip wp-chip--action" onClick={() => setShowSaveInput(true)}>+ Save current</button>
+                  )}
+                </>
+              ) : (
+                <span className="wp-saved-empty">Log in to save and reuse your lists.</span>
+              )}
+            </div>
           </div>
         )}
-
-        <div className="wp-wheel-wrap">
-          <div className="wp-pointer" />
-          <div
-            className="wp-disc"
-            style={{
-              transform: `rotate(${rotation}deg)`,
-              transition: spinning ? "transform 4.2s cubic-bezier(0.12, 0.67, 0.1, 1)" : "none",
-            }}
-          >
-            {n === 0 ? (
-              <div className="wp-empty-disc">Add words to build your wheel</div>
-            ) : (
-              <svg viewBox="0 0 400 400" className="wp-svg">
-                {words.map((word, i) => {
-                  const start = i * sliceAngle;
-                  const end = (i + 1) * sliceAngle;
-                  const mid = start + sliceAngle / 2;
-                  const labelPos = pointAt(cx, cy, r * 0.62, mid);
-                  let labelRotate = mid;
-                  if (labelRotate > 90 && labelRotate < 270) labelRotate += 180;
-                  const label = word.length > 16 ? word.slice(0, 15) + "…" : word;
-                  const fontSize = Math.max(9, Math.min(15, 130 / Math.max(n, 6), 205 / label.length));
-                  const isWinner = i === winnerIndex;
-                  return (
-                    <g key={i} className={isWinner ? "wp-slice-winner" : undefined}>
-                      <path
-                        d={slicePath(cx, cy, r, start, end)}
-                        fill={COLORS[i % COLORS.length]}
-                        stroke={isWinner ? "#FF6B4A" : "#FFFFFF"}
-                        strokeWidth={isWinner ? 5 : 2}
-                      />
-                      <text
-                        x={labelPos.x}
-                        y={labelPos.y}
-                        fontSize={fontSize}
-                        fill="#FFFFFF"
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                        transform={`rotate(${labelRotate}, ${labelPos.x}, ${labelPos.y})`}
-                        className="wp-slice-label"
-                      >
-                        {label}
-                      </text>
-                    </g>
-                  );
-                })}
-              </svg>
-            )}
-          </div>
-          <button
-            type="button"
-            className="wp-hub"
-            onClick={spin}
-            disabled={spinning || n < 2}
-            title={n < 2 ? "Add at least 2 words to spin" : "Spin"}
-          >
-            <img src="/logo-sentenco.png" alt="" className="wp-hub-logo" />
-            <span className="wp-hub-label">{spinning ? "…" : "SPIN"}</span>
-          </button>
-        </div>
-      </div>
+      </footer>
 
       <ConfirmDialog
         open={!!deleteTarget}
@@ -432,301 +498,59 @@ const CSS = `
 
 .wp-shell {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 26px 20px;
   background: #FBF4F1;
   font-family: 'Inter', sans-serif;
+  color: #1B2A4A;
 }
 .wp-shell * { box-sizing: border-box; }
 
-.wp-panel-zone {
-  position: relative;
-  flex-shrink: 0;
-  width: 54px;
-  height: 100%;
-  z-index: 30;
+.wp-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.wp-eyebrow { display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #FF6B4A; }
+.wp-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: #1B2A4A; margin: 2px 0 0; }
+.wp-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.wp-pill {
+  font-family: inherit; font-size: 13.5px; font-weight: 700; color: #1B2A4A; background: #FFFFFF;
+  border: 1px solid #EDE1DB; border-radius: 12px; padding: 10px 20px; cursor: pointer;
 }
+.wp-pill:hover { border-color: #FF6B4A; }
+.wp-pill.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #FFFFFF; }
+.wp-pill--co.is-active { background: #FF6B4A; border-color: #FF6B4A; }
+.wp-sep { width: 1px; height: 26px; background: #EDE1DB; margin: 0 4px; }
 
-.wp-panel-tab {
-  position: absolute;
-  inset: 0;
-  width: 54px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #FFFFFF;
-  border-right: 1px solid #EDE1DB;
-  cursor: default;
-  transition: opacity 0.15s ease;
-}
-.wp-panel-tab-icon { font-size: 18px; }
-.wp-panel-tab-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #FF6B4A;
-}
-.wp-panel-zone:hover .wp-panel-tab { opacity: 0; pointer-events: none; }
-
-.wp-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 320px;
-  height: 100%;
-  overflow-y: auto;
-  padding: 26px 24px;
-  background: #FFFFFF;
-  border-right: 1px solid #EDE1DB;
-  box-shadow: 12px 0 30px rgba(27,42,74,0.14);
-  display: flex;
-  flex-direction: column;
-  transform: translateX(-100%);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.22s ease, opacity 0.18s ease;
-}
-.wp-panel-zone:hover .wp-panel {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.wp-panel-head { margin-bottom: 18px; }
-.wp-eyebrow {
-  display: inline-block;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #FF6B4A;
-  background: #FDECE5;
-  border-radius: 999px;
-  padding: 4px 12px;
-  margin-bottom: 10px;
-}
-.wp-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #1B2A4A; margin: 0 0 6px; }
-.wp-blurb { font-size: 12.5px; line-height: 1.5; color: #5A6B92; margin: 0; }
-
-.wp-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #5A6B92; margin-bottom: 6px; }
-
-.wp-textarea {
+.wp-main {
   flex: 1;
-  min-height: 200px;
-  resize: none;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #1B2A4A;
-  background: #FBF4F1;
-  border: 1px solid #EDE1DB;
-  border-radius: 12px;
-  padding: 12px 14px;
-  line-height: 1.7;
-  outline: none;
-}
-.wp-textarea:focus { border-color: #FF6B4A; }
-
-.wp-count { font-size: 11.5px; color: #5A6B92; margin: 8px 0 16px; }
-
-.wp-login-hint { font-size: 12px; color: #5A6B92; background: #FBF4F1; border: 1px dashed #EDE1DB; border-radius: 10px; padding: 10px 12px; margin: 0 0 18px; }
-
-.wp-saved-section { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #EDE1DB; }
-.wp-saved-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.wp-save-toggle {
-  font-size: 11px; font-weight: 700; color: #FF6B4A; background: #FDECE5; border: none;
-  border-radius: 999px; padding: 5px 11px; cursor: pointer;
-}
-.wp-save-row { display: flex; gap: 6px; margin-bottom: 10px; }
-.wp-save-input {
-  flex: 1; min-width: 0; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; color: #1B2A4A;
-  background: #FBF4F1; border: 1px solid #EDE1DB; border-radius: 8px; padding: 7px 10px; outline: none;
-}
-.wp-save-input:focus { border-color: #FF6B4A; }
-.wp-save-confirm {
-  font-size: 11.5px; font-weight: 800; color: #fff; background: #FF6B4A; border: none;
-  border-radius: 8px; padding: 0 12px; cursor: pointer;
-}
-.wp-save-confirm:disabled { opacity: 0.5; cursor: default; }
-
-.wp-saved-list { display: flex; flex-direction: column; gap: 6px; max-height: 160px; overflow-y: auto; }
-.wp-saved-empty { font-size: 11.5px; color: #A6ADC7; padding: 4px 2px; }
-.wp-saved-item {
-  display: flex; align-items: center; justify-content: space-between; gap: 6px;
-  background: #FBF4F1; border: 1px solid #EDE1DB; border-radius: 8px; padding: 2px 4px 2px 10px;
-}
-.wp-saved-item-name {
-  flex: 1; min-width: 0; text-align: left; background: none; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; color: #1B2A4A;
-  padding: 7px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-.wp-saved-item-del {
-  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: none; background: transparent;
-  color: #A6ADC7; font-size: 16px; line-height: 1; cursor: pointer;
-}
-.wp-saved-item-del:hover { background: #FDECE5; color: #E4322B; }
-
-.wp-timer-section { display: flex; flex-direction: column; gap: 10px; }
-.wp-timer-display {
-  font-family: 'Fraunces', serif; font-weight: 600; font-size: 34px; color: #1B2A4A; text-align: center;
-  background: #FBF4F1; border: 1px solid #EDE1DB; border-radius: 12px; padding: 10px;
-}
-.wp-timer-presets { display: flex; gap: 6px; }
-.wp-timer-preset {
-  flex: 1; font-size: 12px; font-weight: 700; color: #5A6B92; background: #FBF4F1;
-  border: 1px solid #EDE1DB; border-radius: 8px; padding: 7px 0; cursor: pointer;
-}
-.wp-timer-preset.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
-.wp-timer-controls { display: flex; gap: 8px; }
-.wp-timer-btn {
-  flex: 1; font-size: 12.5px; font-weight: 800; color: #1B2A4A; background: #fff;
-  border: 1px solid #EDE1DB; border-radius: 8px; padding: 9px 0; cursor: pointer;
-}
-.wp-timer-btn--start { background: #FF6B4A; border-color: #FF6B4A; color: #fff; }
-
-.wp-stage {
-  flex: 1;
-  min-width: 0;
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 28px;
   align-items: center;
-  justify-content: center;
-  padding: 24px;
+  min-height: 0;
 }
-
-.wp-winner-banner {
-  position: absolute;
-  top: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 25;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  background: #1B2A4A;
-  border: none;
-  border-radius: 24px;
-  padding: 14px 36px;
-  box-shadow: 0 18px 40px rgba(27,42,74,0.32);
-  animation: wp-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  max-width: min(85vw, 620px);
-}
-.wp-winner-tag {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #FF6B4A;
-}
-.wp-winner-name {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 1.2;
-  overflow-wrap: break-word;
-  max-width: 100%;
-}
-
-.wp-winner-prompt {
-  font-size: 15px;
-  line-height: 1.45;
-  color: #E4E9F5;
-  text-align: center;
-  max-width: 100%;
-  margin-top: 4px;
-}
-
-.wp-topics-section { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #EDE1DB; }
-.wp-topics-btns { display: flex; gap: 8px; }
-.wp-topics-btn {
-  flex: 1; font-size: 13px; font-weight: 800; color: #1B2A4A; background: #FBF4F1;
-  border: 1px solid #EDE1DB; border-radius: 10px; padding: 10px 0; cursor: pointer;
-}
-.wp-topics-btn:hover { border-color: #FF6B4A; }
-.wp-topics-btn.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
-.wp-topics-who { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
-.wp-topics-who-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #5A6B92; margin-right: 4px; }
-.wp-topics-chip {
-  font-size: 12px; font-weight: 700; color: #5A6B92; background: #FBF4F1;
-  border: 1px solid #EDE1DB; border-radius: 999px; padding: 5px 12px; cursor: pointer;
-}
-.wp-topics-chip:hover { border-color: #FF6B4A; }
-.wp-topics-chip.is-active { background: #FF6B4A; border-color: #FF6B4A; color: #fff; }
-.wp-topics-note { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 11.5px; line-height: 1.5; color: #5A6B92; margin-top: 8px; }
-.wp-topics-shuffle {
-  font-size: 11.5px; font-weight: 800; color: #FF6B4A; background: #FDECE5;
-  border: none; border-radius: 999px; padding: 4px 12px; cursor: pointer;
-}
-
-@keyframes wp-pop-in {
-  0% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.85); }
-  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-}
-
-.wp-stage-timer {
-  position: absolute;
-  top: 28px;
-  left: 28px;
-  z-index: 25;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-.wp-timer-badge {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  font-size: 22px;
-  color: #1B2A4A;
-  background: #FFFFFF;
-  border: 2px solid #EDE1DB;
-  border-radius: 16px;
-  padding: 10px 20px;
-  box-shadow: 0 10px 24px rgba(27,42,74,0.16);
-}
-.wp-timer-badge.is-running { border-color: #FF6B4A; color: #FF6B4A; }
-.wp-stage-timer-controls { display: flex; gap: 6px; }
-.wp-stage-timer-controls .wp-timer-btn { flex: none; padding: 7px 14px; font-size: 12px; box-shadow: 0 6px 16px rgba(27,42,74,0.12); }
-.wp-timer-badge.is-done {
-  background: #E4322B; border-color: #E4322B; color: #fff; font-size: 18px;
-  animation: wp-timer-pulse 0.8s ease-in-out infinite;
-}
-@keyframes wp-timer-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-}
-
+.wp-wheel-col { display: flex; align-items: center; justify-content: center; padding-top: 10px; }
 .wp-wheel-wrap {
   position: relative;
-  width: min(70vh, 620px);
-  height: min(70vh, 620px);
-  max-width: 100%;
-  max-height: 100%;
+  width: clamp(240px, calc(100vh - 330px), 560px);
+  aspect-ratio: 1;
 }
 
 .wp-pointer {
   position: absolute;
-  top: -6px;
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left: 16px solid transparent;
   border-right: 16px solid transparent;
-  border-top: 26px solid #1B2A4A;
+  border-top: 26px solid #FF6B4A;
   z-index: 20;
   filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
 }
-
 .wp-disc {
   width: 100%;
   height: 100%;
@@ -735,74 +559,112 @@ const CSS = `
   border: 6px solid #FFFFFF;
   overflow: hidden;
 }
-
 .wp-svg { width: 100%; height: 100%; display: block; }
 .wp-slice-label { font-family: 'Inter', sans-serif; font-weight: 700; pointer-events: none; }
 .wp-slice-winner path { filter: drop-shadow(0 0 6px rgba(255,107,74,0.9)); }
-
 .wp-empty-disc {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #F5F1ED;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-  font-size: 14px;
-  color: #5A6B92;
-  font-weight: 600;
+  width: 100%; height: 100%; border-radius: 50%; background: #F5F1ED;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 40px; font-size: 14px; color: #5A6B92; font-weight: 600;
 }
-
 .wp-hub {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 15;
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  font-family: 'Fraunces', serif;
-  color: #1B2A4A;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 15;
+  width: 18%; aspect-ratio: 1; min-width: 70px; border-radius: 50%; background: #FFFFFF; border: none; padding: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font-family: 'Fraunces', serif; color: #1B2A4A;
   box-shadow: 0 6px 16px rgba(27,42,74,0.28), inset 0 0 0 3px #FDECE5;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.wp-hub:hover:not(:disabled) {
-  transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 8px 20px rgba(27,42,74,0.34), inset 0 0 0 3px #FDECE5;
-}
-.wp-hub:active:not(:disabled) {
-  transform: translate(-50%, -50%) scale(0.97);
-}
-.wp-hub:disabled {
-  cursor: default;
-  opacity: 0.65;
-}
-.wp-hub-logo {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  display: block;
-}
-.wp-hub-label {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #FF6B4A;
-}
+.wp-hub:hover:not(:disabled) { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 8px 20px rgba(27,42,74,0.34), inset 0 0 0 3px #FDECE5; }
+.wp-hub:active:not(:disabled) { transform: translate(-50%, -50%) scale(0.97); }
+.wp-hub:disabled { cursor: default; opacity: 0.65; }
+.wp-hub-logo { width: 38%; height: auto; object-fit: contain; display: block; }
+.wp-hub-label { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #FF6B4A; }
 
-@media (max-width: 760px) {
-  .wp-winner-banner { top: 12px; padding: 10px 20px; }
+.wp-right { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.wp-winner {
+  position: relative; overflow: hidden; background: #1B2A4A; color: #FFFFFF; border-radius: 22px;
+  padding: 22px 26px; min-height: 200px; display: flex; flex-direction: column; justify-content: center; gap: 6px;
+  box-shadow: 0 18px 40px rgba(27,42,74,0.22);
+}
+.wp-winner::before {
+  content: ""; position: absolute; right: -50px; top: -60px; width: 200px; height: 200px; border-radius: 50%;
+  background: #FF6B4A; opacity: 0.14; pointer-events: none;
+}
+.wp-winner > * { position: relative; }
+.wp-winner-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #FF6B4A; }
+.wp-winner-name { font-family: 'Fraunces', serif; font-weight: 600; color: #FFFFFF; line-height: 1.15; overflow-wrap: break-word; }
+.wp-winner-prompt { margin: 0; font-size: 17px; line-height: 1.5; color: #E4E9F5; }
+.wp-winner-hint { margin: 4px 0 0; font-size: 13px; color: #9FB0D6; }
+.wp-winner-name, .wp-winner-prompt { animation: wp-rise 0.35s ease; }
+@keyframes wp-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.wp-timer { background: #FFFFFF; border: 1px solid #EDE1DB; border-radius: 16px; padding: 12px 16px; }
+.wp-timer-row { display: flex; align-items: center; gap: 14px; }
+.wp-timer-time { display: flex; flex-direction: column; min-width: 96px; }
+.wp-timer-phase { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #5A6B92; }
+.wp-timer-digits { font-family: 'Fraunces', serif; font-weight: 600; font-size: 32px; line-height: 1.1; color: #1B2A4A; white-space: nowrap; }
+.wp-timer-digits.is-done { color: #E4322B; font-size: 24px; animation: wp-timer-pulse 0.8s ease-in-out infinite; }
+@keyframes wp-timer-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+.wp-timer-bar { flex: 1; height: 9px; border-radius: 999px; background: #FBF4F1; overflow: hidden; min-width: 40px; }
+.wp-timer-bar i { display: block; height: 100%; border-radius: 999px; transition: width 1s linear, background 0.3s; }
+.wp-timer-go {
+  font-family: inherit; font-size: 13px; font-weight: 800; color: #FFFFFF; background: #FF6B4A;
+  border: none; border-radius: 10px; padding: 9px 20px; cursor: pointer;
+}
+.wp-timer-btn {
+  font-family: inherit; font-size: 13px; font-weight: 700; color: #1B2A4A; background: #FFFFFF;
+  border: 1px solid #EDE1DB; border-radius: 10px; padding: 8px 14px; cursor: pointer;
+}
+.wp-timer-presets { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.wp-timer-preset {
+  font-family: inherit; font-size: 12px; font-weight: 700; color: #5A6B92; background: #FBF4F1;
+  border: 1px solid #EDE1DB; border-radius: 8px; padding: 6px 12px; cursor: pointer;
+}
+.wp-timer-preset:hover { border-color: #FF6B4A; }
+.wp-timer-preset.is-active { background: #1B2A4A; border-color: #1B2A4A; color: #FFFFFF; }
+
+.wp-bottom { min-height: 56px; }
+.wp-strip-wrap { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.wp-strip-label { font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #5A6B92; }
+.wp-strip { display: flex; gap: 8px; flex-wrap: wrap; }
+.wp-chip {
+  display: inline-flex; align-items: center; gap: 7px; font-family: inherit; font-size: 13px; font-weight: 600; color: #1B2A4A;
+  background: #FFFFFF; border: 1px solid #EDE1DB; border-radius: 999px; padding: 7px 14px; cursor: pointer;
+}
+.wp-chip i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.wp-chip:hover:not(:disabled) { border-color: #FF6B4A; }
+.wp-chip.is-win { border-color: #FF6B4A; background: #FDECE5; font-weight: 800; }
+.wp-chip.is-used { opacity: 0.5; }
+.wp-chip:disabled { cursor: default; }
+.wp-chip--action { color: #FF6B4A; background: #FDECE5; border-color: transparent; font-weight: 800; }
+
+.wp-editor { display: flex; flex-direction: column; gap: 10px; }
+.wp-editor-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; }
+.wp-textarea {
+  width: 100%; height: 84px; resize: none; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; color: #1B2A4A;
+  background: #FFFFFF; border: 1px solid #EDE1DB; border-radius: 14px; padding: 10px 14px; outline: none;
+}
+.wp-textarea:focus { border-color: #FF6B4A; }
+.wp-editor-side { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #5A6B92; }
+.wp-count { font-weight: 600; }
+.wp-check { display: flex; align-items: center; gap: 8px; cursor: pointer; white-space: nowrap; font-weight: 600; }
+.wp-saved { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.wp-saved-empty { font-size: 12.5px; color: #5A6B92; }
+.wp-saved-chip { display: inline-flex; align-items: center; background: #FFFFFF; border: 1px solid #EDE1DB; border-radius: 999px; overflow: hidden; }
+.wp-saved-name { font-family: inherit; font-size: 13px; font-weight: 600; color: #1B2A4A; background: none; border: none; padding: 7px 8px 7px 14px; cursor: pointer; }
+.wp-saved-name:hover { color: #FF6B4A; }
+.wp-saved-del { font-size: 16px; line-height: 1; color: #A6ADC7; background: none; border: none; padding: 0 12px 0 4px; cursor: pointer; }
+.wp-saved-del:hover { color: #E4322B; }
+.wp-save-row { display: inline-flex; align-items: center; gap: 6px; }
+.wp-save-input { font-family: inherit; font-size: 13px; color: #1B2A4A; background: #FFFFFF; border: 1px solid #EDE1DB; border-radius: 999px; padding: 7px 14px; outline: none; width: 170px; }
+.wp-save-input:focus { border-color: #FF6B4A; }
+
+@media (max-width: 820px) {
+  .wp-shell { padding: 14px 14px 18px; }
+  .wp-main { grid-template-columns: 1fr; gap: 16px; }
+  .wp-wheel-wrap { width: min(86vw, 420px); }
+  .wp-editor-main { grid-template-columns: 1fr; }
+  .wp-timer-row { flex-wrap: wrap; }
 }
 `;
