@@ -277,7 +277,7 @@ export const PAROL_MAKER_ITEMS = [
 export const LAST_FIVE_STORY = {
   title: "The Last Five Minutes",
   text: "Marco was fifteen and he loved football. On Saturday, his school team played the final against Green Hill. Marco sat on the bench for the whole first half. His team was losing 1-0.\n\nAfter the break, the coach called his name. \"Marco, you play now. Stay calm and pass quickly.\" With five minutes left, Marco won the ball and passed it to his friend Tom. Tom scored! Now it was 1-1.\n\nIn the last minute, Marco ran down the side and shot. The ball hit the net! His team won 2-1, and everyone shouted his name.",
-  image: "",
+  image: "/curriculum/letter-board/last-five-minutes-cover.jpg",
 };
 
 export const LAST_FIVE_ITEMS = [
