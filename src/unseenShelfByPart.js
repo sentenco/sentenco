@@ -1,5 +1,5 @@
 // Which topic shelf each Unseen Reading lesson belongs to. The hub groups lessons by it and the
-// lesson player takes its colors from it. Part 5 is Doriel's lesson (not in the hub). Parts 211 to 222 are the Kids shelf (one shelf, mixed topics).
+// lesson player takes its colors from it. Part 5 is Doriel's lesson (not in the hub). Parts 211 to 230 are the Kids shelf (one shelf, mixed topics).
 export const UNSEEN_SHELF_BY_PART = {
   1: "lang", 2: "nature", 3: "body", 4: "tech", 5: "lang",
   6: "tech", 7: "tech", 8: "lang", 9: "tech", 10: "tech", 11: "tech",
@@ -158,4 +158,5 @@ export const UNSEEN_SHELF_BY_PART = {
   209: "nature",
   210: "nature",
   211: "kids", 212: "kids", 213: "kids", 214: "kids", 215: "kids", 216: "kids", 217: "kids", 218: "kids", 219: "kids", 220: "kids", 221: "kids", 222: "kids",
+  223: "kids", 224: "kids", 225: "kids", 226: "kids", 227: "kids", 228: "kids", 229: "kids", 230: "kids",
 };
