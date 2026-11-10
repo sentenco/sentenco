@@ -17,6 +17,7 @@ export const CASE_TOPICS = {
   sports: { c: "#FF8266", deep: "#B3321B", tint: "#FFE9E3" },
   psych: { c: "#2FC4B2", deep: "#0A7468", tint: "#D7F5F1" },
   older: { c: "#D9D1F2", deep: "#6554A6", tint: "#F1EEFB" },
+  kids: { c: "#6FD3FF", deep: "#0B6E99", tint: "#E0F5FF" },
 };
 
 // Score id of the word in slot idx (0-4 are Text 1's words, 5-9 Text 2's).

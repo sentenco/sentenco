@@ -12,6 +12,7 @@ import { UNSEEN_PARTS_6 } from "./unseenPartsData6.js";
 import { UNSEEN_PARTS_7 } from "./unseenPartsData7.js";
 import { UNSEEN_PARTS_8 } from "./unseenPartsData8.js";
 import { UNSEEN_PARTS_9 } from "./unseenPartsData9.js";
+import { UNSEEN_PARTS_10 } from "./unseenPartsData10.js";
 import { UNSEEN_SHELF_BY_PART } from "./unseenShelfByPart.js";
 import { buildLesson } from "./unseenPartsBuild.js";
 
@@ -28,6 +29,7 @@ export const UNSEEN_SHELVES = [
   { id: "history", name: "History That Explains Today", short: "History" },
   { id: "sports", name: "Sports and Fitness", short: "Sports" },
   { id: "psych", name: "Psychology", short: "Psychology" },
+  { id: "kids", name: "Kids", short: "Kids" },
 ];
 
 // [part, one line on how the two texts connect]. The shelf comes from unseenShelfByPart.js; order inside a shelf follows this list.
@@ -241,6 +243,19 @@ const META = [
   [208, "The life of a plant: how flowers get help from animals, and the ways seeds travel"],
   [209, "Water on the move: how it rises, falls and returns, and how a river carves valleys and builds deltas"],
   [210, "Sky and storm: how a cloud becomes rain, and how a typhoon builds its strength"],
+  // Kids shelf (Cases 211 to 222): one shelf, mixed topics, easy words
+  [211, "Giants of the past: the biggest dinosaur ever, and the day most of them disappeared"],
+  [212, "Teeth and fear: how a shark keeps growing teeth, and why sharks are not as scary as the movies say"],
+  [213, "Up, down and very fast: how a coaster moves without an engine, and the ride that goes 240 kilometers per hour"],
+  [214, "Then and now: the first popular video game, and the tricks that keep you playing today"],
+  [215, "Life on a pirate ship: the terrible food, and the flag that made sailors give up"],
+  [216, "Ancient Egypt: how a mummy was made, and the boy king whose tomb was full of gold"],
+  [217, "Sticky science: why slime stretches, and the fish that uses slime to escape"],
+  [218, "Super animals: a shrimp that punches like a bullet, and an octopus that fits through a coin-sized hole"],
+  [219, "Record breakers: the tallest man who ever lived, and the fastest runner on Earth"],
+  [220, "Favorite foods: how pizza began in Naples, and the three secrets that keep ice cream soft"],
+  [221, "Robots at work: one cleans your floor, and one drives itself on Mars"],
+  [222, "Two famous mysteries: the monster of Loch Ness, and the sea where ships are said to disappear"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
@@ -256,7 +271,7 @@ const CASE_NO = new Map(HUB_ORDER.map((part, i) => [part, i + 1]));
 export function unseenCaseNo(part) { return CASE_NO.get(part) || CASE_NO.size + 1; }
 
 export function buildUnseenHubLessons() {
-  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8, ...UNSEEN_PARTS_9];
+  const configs = [...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8, ...UNSEEN_PARTS_9, ...UNSEEN_PARTS_10];
   const byPart = new Map(configs.map((c) => [c.part, c]));
   return META.map(([part, link]) => {
     const c = byPart.get(part);
