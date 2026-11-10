@@ -1,0 +1,390 @@
+// Unseen Reading for Kids (Cases 211 to 222): one Kids shelf with a mix of topics kids like, written for
+// children before their teens. Short sentences, everyday words, five questions per text (Main idea, Detail,
+// Vocabulary, Reference, Inference) and five words per text to match. Same item format as unseenPartsData9.js.
+
+export const UNSEEN_PARTS_10 = [
+  {
+    part: 211,
+    slug: "unseen-reading-part-211",
+    theme: "Dinosaurs",
+    blurb: "the biggest dinosaur, why the dinosaurs disappeared",
+    texts: {
+      A: {
+        title: "The Biggest Dinosaur",
+        text: "The biggest dinosaur we know is called Argentinosaurus. It lived about 95 million years ago in the place we now call Argentina. It was as long as three school buses. It was as heavy as ten elephants! This giant ate only plants. It needed a very long neck to reach the leaves on tall trees. Scientists found some of its bones in 1987. One bone was taller than a man. We do not have a full skeleton. So scientists use the bones they have to guess its size.",
+      },
+      B: {
+        title: "Why the Dinosaurs Disappeared",
+        text: "Dinosaurs lived on Earth for a very long time. Then, about 66 million years ago, most of them disappeared. What happened? Many scientists think a giant rock from space hit the Earth. The rock was about ten kilometers wide. It crashed near Mexico. The crash made a huge cloud of dust. The dust blocked the sun for a long time. Plants died because they had no sunlight. Then the animals that ate plants died too. Big dinosaurs could not find enough food. But not every animal died. Birds are the family of dinosaurs that is still alive today!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "A very big dinosaur that ate plants.", "A small dinosaur that ate meat.", "A dinosaur that could swim.", "The text is about Argentinosaurus, the biggest dinosaur we know, and it says this giant ate only plants.", ["The biggest dinosaur we know is called Argentinosaurus", "This giant ate only plants"]],
+      ["A", "Detail", "How heavy was Argentinosaurus?", "As heavy as ten elephants.", "As heavy as three buses.", "As heavy as one elephant.", "The text says it was as heavy as ten elephants.", "It was as heavy as ten elephants"],
+      ["A", "Vocabulary", "In the text, “reach” means…", "to get to something far away.", "to eat quickly.", "to run fast.", "The dinosaur needed a long neck to reach the leaves on tall trees, so reach means to get to something far away.", "to reach the leaves on tall trees"],
+      ["A", "Reference", "In the text, “It” in “It needed a very long neck” refers to…", "Argentinosaurus.", "a school bus.", "a scientist.", "The sentence before says this giant ate only plants. The giant is Argentinosaurus, and it needed a long neck.", "This giant ate only plants. It needed a very long neck"],
+      ["A", "Inference", "Why do scientists only guess the size of Argentinosaurus?", "They do not have all of its bones.", "They never found any bones.", "The bones are too small to see.", "The text says we do not have a full skeleton, so scientists use the bones they have to guess its size.", "We do not have a full skeleton"],
+      ["B", "Main idea", "What is the text mostly about?", "Why most dinosaurs died.", "How dinosaurs learned to fly.", "Where dinosaurs lived in Mexico.", "The text explains that most dinosaurs disappeared after a giant rock from space hit the Earth.", ["most of them disappeared", "a giant rock from space hit the Earth"]],
+      ["B", "Detail", "How wide was the rock from space?", "About ten kilometers.", "About ten meters.", "About sixty-six kilometers.", "The text says the rock was about ten kilometers wide.", "The rock was about ten kilometers wide"],
+      ["B", "Vocabulary", "In the text, “dust” means…", "very small dry pieces of dirt in the air.", "clean water.", "a bright light.", "The crash made a huge cloud of dust that blocked the sun, so dust means tiny dry pieces of dirt in the air.", "a huge cloud of dust"],
+      ["B", "Reference", "In the text, “It” in “It crashed near Mexico” refers to…", "the rock from space.", "the Earth.", "a plant.", "The sentence before talks about the rock, and the rock is what crashed near Mexico.", "The rock was about ten kilometers wide. It crashed near Mexico"],
+      ["B", "Inference", "Why did the plant-eating animals die?", "The plants they ate had died.", "The rock fell on them.", "The birds ate them.", "The text says plants died because they had no sunlight, and then the animals that ate plants died too.", ["Plants died because they had no sunlight", "Then the animals that ate plants died too"]],
+    ],
+    matches: {
+      A: [["giant", "something very, very big"], ["neck", "the part of the body between the head and the shoulders"], ["skeleton", "all the bones of an animal"], ["guess", "to say what you think is true without being sure"], ["heavy", "weighing a lot"]],
+      B: [["disappeared", "went away and could not be seen any more"], ["crashed", "hit something very hard"], ["huge", "very big"], ["blocked", "stopped something from passing"], ["enough", "as much as you need"]],
+    },
+  },
+  {
+    part: 212,
+    slug: "unseen-reading-part-212",
+    theme: "Sharks",
+    blurb: "a shark's teeth, why sharks are not as scary as you think",
+    texts: {
+      A: {
+        title: "A Shark's Teeth",
+        text: "A shark has many rows of teeth. When a tooth breaks or falls out, a new one moves forward. It is like a moving belt of teeth! A shark can lose a tooth and grow a new one in about a week. Some sharks use thousands of teeth in their lives. Different sharks have different teeth. A great white shark has wide teeth with sharp edges, like a saw. These are good for cutting. A mako shark has long, thin teeth. These are good for holding slippery fish. Shark teeth do not have roots, so they fall out easily.",
+      },
+      B: {
+        title: "Sharks Do Not Want to Eat You",
+        text: "Many people are scared of sharks. In movies, sharks chase swimmers. In real life, this almost never happens. There are more than 500 kinds of sharks. Most of them are small and shy. Some eat only tiny sea animals. The biggest shark is the whale shark. It is bigger than a bus. But it eats only tiny sea animals called plankton. Sharks bite people only about 70 times a year in the whole world. More people are hurt by dogs or by falling coconuts. Sharks do not like the taste of people. When a shark bites a person, it usually lets go and swims away. Sharks are important for the ocean, and they need our help.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Sharks keep growing new teeth, and different sharks have different teeth.", "Sharks have only one row of teeth that never changes.", "Sharks lose their teeth and never grow them back.", "The text says a new tooth moves forward when one falls out, and that different sharks have different teeth.", ["When a tooth breaks or falls out, a new one moves forward", "Different sharks have different teeth"]],
+      ["A", "Detail", "How long does it take a shark to grow a new tooth?", "About a week.", "About a year.", "About one day.", "The text says a shark can lose a tooth and grow a new one in about a week.", "grow a new one in about a week"],
+      ["A", "Vocabulary", "In the text, “sharp” means…", "able to cut things easily.", "very soft.", "very old.", "The great white shark has wide teeth with sharp edges, like a saw, which are good for cutting.", "wide teeth with sharp edges"],
+      ["A", "Reference", "In the text, “These” in “These are good for cutting” refers to…", "the great white shark's teeth.", "the mako shark's teeth.", "the rows of fish.", "The sentence before describes the great white shark's wide teeth with sharp edges, and these are good for cutting.", "A great white shark has wide teeth with sharp edges, like a saw. These are good for cutting"],
+      ["A", "Inference", "Why do shark teeth fall out easily?", "They do not have roots.", "Sharks brush them too hard.", "The water is too cold.", "The text says shark teeth do not have roots, so they fall out easily.", "Shark teeth do not have roots, so they fall out easily"],
+      ["B", "Main idea", "What is the text mostly about?", "Sharks are not as dangerous as people think.", "Sharks chase swimmers every day.", "All sharks are bigger than a bus.", "The text says sharks almost never chase swimmers in real life and bite people only about 70 times a year.", ["In real life, this almost never happens", "Sharks bite people only about 70 times a year"]],
+      ["B", "Detail", "What does the whale shark eat?", "Tiny sea animals called plankton.", "Swimmers.", "Dogs.", "The text says the whale shark is bigger than a bus, but it eats only tiny sea animals called plankton.", "it eats only tiny sea animals called plankton"],
+      ["B", "Vocabulary", "In the text, “chase” means…", "to run or swim after something to catch it.", "to sleep next to something.", "to feed something.", "In movies, sharks chase swimmers, which means they swim after them to catch them.", "sharks chase swimmers"],
+      ["B", "Reference", "In the text, “this” in “this almost never happens” refers to…", "sharks chasing swimmers.", "people watching movies.", "sharks eating plankton.", "The sentence before says that in movies sharks chase swimmers, and this is what almost never happens in real life.", "In movies, sharks chase swimmers. In real life, this almost never happens"],
+      ["B", "Inference", "Why does a shark usually let go after it bites a person?", "It does not like the taste of people.", "It is full after one bite.", "It is afraid of coconuts.", "The text says sharks do not like the taste of people, so a shark usually lets go and swims away.", ["Sharks do not like the taste of people", "it usually lets go and swims away"]],
+    ],
+    matches: {
+      A: [["rows", "lines of things, one behind another"], ["belt", "a long band that moves things along"], ["edges", "the sides of something sharp"], ["slippery", "hard to hold because it is smooth or wet"], ["roots", "the parts that hold something in place underneath"]],
+      B: [["scared", "feeling afraid"], ["shy", "not wanting to be near people or other animals"], ["tiny", "very small"], ["taste", "the feeling of food in your mouth"], ["usually", "most of the time"]],
+    },
+  },
+  {
+    part: 213,
+    slug: "unseen-reading-part-213",
+    theme: "Roller Coasters",
+    blurb: "how a roller coaster moves, the fastest roller coaster in the world",
+    texts: {
+      A: {
+        title: "How a Roller Coaster Moves",
+        text: "A roller coaster does not have an engine on the cars. So how does it move? First, a chain pulls the cars slowly up the first hill. This hill is the tallest part of the ride. At the top, the cars start to fall. Gravity pulls them down, and they go faster and faster. The speed from that first drop carries the cars over the other hills and loops. Each hill after the first one is a little lower. That is why the ride can keep going without an engine. At the end, strong brakes stop the cars safely.",
+      },
+      B: {
+        title: "The Fastest Roller Coaster",
+        text: "The fastest roller coaster in the world is called Formula Rossa. It is in Abu Dhabi, a city in the United Arab Emirates. The ride looks like a Formula 1 race car. It does not climb a hill slowly. Instead, it shoots forward like a plane taking off. In less than five seconds, it goes from 0 to 240 kilometers per hour. That is faster than a car on a highway! The ride is so fast that riders must wear special glasses. The glasses protect their eyes from the wind and from insects. The whole ride lasts about one and a half minutes.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "A roller coaster uses a tall first hill and gravity to move.", "A roller coaster has a big engine in every car.", "A roller coaster is pushed by the riders.", "The text explains that a chain pulls the cars up the first hill and gravity pulls them down for the rest of the ride.", ["a chain pulls the cars slowly up the first hill", "Gravity pulls them down, and they go faster and faster"]],
+      ["A", "Detail", "What pulls the cars up the first hill?", "A chain.", "A rope.", "An engine.", "The text says a chain pulls the cars slowly up the first hill.", "a chain pulls the cars slowly up the first hill"],
+      ["A", "Vocabulary", "In the text, “drop” means…", "a fall from a high place.", "a small amount of water.", "a slow turn.", "The first drop is when the cars fall from the top of the tallest hill, so drop means a fall from a high place.", "The speed from that first drop"],
+      ["A", "Reference", "In the text, “them” in “Gravity pulls them down” refers to…", "the cars.", "the riders' hands.", "the brakes.", "The sentence before says the cars start to fall, and gravity pulls the cars down.", "At the top, the cars start to fall. Gravity pulls them down"],
+      ["A", "Inference", "Why is each hill after the first one a little lower?", "The cars have less speed after each hill.", "The builders ran out of metal.", "The riders asked for small hills.", "The ride has no engine, so the cars can only use the speed from the first drop, and each hill must be lower to keep going.", ["Each hill after the first one is a little lower", "That is why the ride can keep going without an engine"]],
+      ["B", "Main idea", "What is the text mostly about?", "Formula Rossa is the fastest roller coaster, and it starts very fast.", "Formula Rossa is the tallest roller coaster.", "Formula Rossa is a real race car.", "The text says Formula Rossa is the fastest roller coaster in the world and goes from 0 to 240 kilometers per hour in seconds.", ["The fastest roller coaster in the world is called Formula Rossa", "it goes from 0 to 240 kilometers per hour"]],
+      ["B", "Detail", "Where is Formula Rossa?", "In Abu Dhabi.", "In Italy.", "In Mexico.", "The text says it is in Abu Dhabi, a city in the United Arab Emirates.", "It is in Abu Dhabi"],
+      ["B", "Vocabulary", "In the text, “lasts” means…", "goes on for a certain time.", "stops suddenly.", "costs money.", "The whole ride lasts about one and a half minutes, which means it goes on for that long.", "The whole ride lasts about one and a half minutes"],
+      ["B", "Reference", "In the text, “It” in “It does not climb a hill slowly” refers to…", "Formula Rossa.", "a Formula 1 race car.", "a plane.", "The text is about the ride, Formula Rossa, and the ride is what does not climb a hill slowly.", "The ride looks like a Formula 1 race car. It does not climb a hill slowly"],
+      ["B", "Inference", "Why do riders wear special glasses?", "The ride is so fast that wind and insects could hurt their eyes.", "The ride is in the dark.", "The glasses make the ride faster.", "The text says the ride is so fast that riders must wear glasses to protect their eyes from the wind and from insects.", ["riders must wear special glasses", "The glasses protect their eyes from the wind and from insects"]],
+    ],
+    matches: {
+      A: [["engine", "the part of a machine that makes it move"], ["chain", "a line of metal rings joined together"], ["gravity", "the force that pulls things down to the ground"], ["loops", "circles that the track goes around"], ["brakes", "the parts that make something slow down or stop"]],
+      B: [["fastest", "quicker than all the others"], ["shoots", "moves very fast and suddenly"], ["highway", "a wide road for fast cars"], ["protect", "to keep something safe"], ["insects", "small animals with six legs, like flies"]],
+    },
+  },
+  {
+    part: 214,
+    slug: "unseen-reading-part-214",
+    theme: "Video Games",
+    blurb: "the first video games, why it is hard to stop playing",
+    texts: {
+      A: {
+        title: "The First Video Games",
+        text: "Video games are not new. One of the first popular games was called Pong. It came out in 1972. Pong was very simple. Two players moved a line up and down to hit a small dot. It was like table tennis on a screen. At first, people played Pong on big machines in shops and restaurants. Players put a coin in the machine to play one game. Later, Pong came to homes on a small box that connected to the TV. Pong looks boring today, but it was exciting then. It showed people that a screen could be fun.",
+      },
+      B: {
+        title: "Why It Is Hard to Stop Playing",
+        text: "Have you ever said “one more level” and then played for an hour? Games are made to keep you playing. When you finish a level, the game gives you a prize. It can be a star or a new tool. Your brain likes prizes, so you want another one. Many games also let you play with friends. It is hard to leave when your friends are still playing. Some games give you a gift if you come back every day. These tricks are not bad, but it helps to know them. Set a timer before you play. When it rings, finish your level and stop. Your eyes and your body need a break.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Pong was one of the first popular video games.", "Pong is the most popular game today.", "Pong was played on phones.", "The text says one of the first popular games was Pong, which came out in 1972.", ["One of the first popular games was called Pong", "It came out in 1972"]],
+      ["A", "Detail", "How did people play one game on the big machines?", "They put a coin in the machine.", "They used a password.", "They asked the shop owner.", "The text says players put a coin in the machine to play one game.", "Players put a coin in the machine to play one game"],
+      ["A", "Vocabulary", "In the text, “dot” means…", "a very small round mark.", "a long line.", "a loud sound.", "Players moved a line to hit a small dot on the screen, so a dot is a very small round mark.", "to hit a small dot"],
+      ["A", "Reference", "In the text, “It” in “It was like table tennis on a screen” refers to…", "Pong.", "the coin.", "the restaurant.", "The text is describing the game Pong, where two players hit a dot, and Pong was like table tennis on a screen.", "Two players moved a line up and down to hit a small dot. It was like table tennis on a screen"],
+      ["A", "Inference", "Why does Pong look boring today?", "Games today have much more to see and do.", "Nobody liked Pong in 1972.", "Pong was too hard to play.", "The text says Pong was very simple and looks boring today, but it was exciting then, so games have changed a lot since 1972.", "Pong looks boring today, but it was exciting then"],
+      ["B", "Main idea", "What is the text mostly about?", "Games use tricks to keep you playing, so it helps to set limits.", "Playing games with friends is always bad.", "You should never finish a level.", "The text explains that games are made to keep you playing and says to set a timer before you play.", ["Games are made to keep you playing", "Set a timer before you play"]],
+      ["B", "Detail", "What does the game give you when you finish a level?", "A prize, like a star or a new tool.", "A longer timer.", "A new friend.", "The text says the game gives you a prize, and it can be a star or a new tool.", ["the game gives you a prize", "It can be a star or a new tool"]],
+      ["B", "Vocabulary", "In the text, “gift” means…", "something you are given for free.", "a hard level.", "a loud ring.", "Some games give you a gift if you come back every day, which is something you get for free.", "Some games give you a gift if you come back every day"],
+      ["B", "Reference", "In the text, “them” in “it helps to know them” refers to…", "the tricks that games use.", "your friends.", "your eyes.", "The sentence says these tricks are not bad, but it helps to know the tricks.", "These tricks are not bad, but it helps to know them"],
+      ["B", "Inference", "Why does the text say to set a timer before you play?", "Because it is hard to stop playing without help.", "Because games do not work without a timer.", "Because your friends will not play with you.", "The text says it is hard to leave a game, so a timer tells you when to finish your level and stop.", ["It is hard to leave when your friends are still playing", "When it rings, finish your level and stop"]],
+    ],
+    matches: {
+      A: [["popular", "liked by many people"], ["simple", "easy, not complicated"], ["screen", "the flat part of a TV or computer that shows pictures"], ["connected", "joined to something"], ["exciting", "making you feel very happy and interested"]],
+      B: [["level", "one part or stage of a game"], ["prize", "something you get for doing well"], ["brain", "the part inside your head that thinks"], ["tricks", "clever ways to make something happen"], ["timer", "a clock that rings after a set time"]],
+    },
+  },
+  {
+    part: 215,
+    slug: "unseen-reading-part-215",
+    theme: "Pirates",
+    blurb: "what pirates really ate, the pirate flag",
+    texts: {
+      A: {
+        title: "What Pirates Really Ate",
+        text: "Pirates in old movies eat big dinners. Real pirates did not eat so well. A ship could be at sea for many weeks. There was no fridge, so fresh food went bad fast. Pirates ate hard biscuits that were as hard as rocks. Often, little bugs lived inside the biscuits! They also ate salty meat and dried beans. They drank water mixed with a little rum, because clean water was hard to keep. Pirates did not eat fruit for weeks. Without fruit, many got a sickness called scurvy. Their teeth became loose and fell out. Being a pirate was not a tasty job.",
+      },
+      B: {
+        title: "The Pirate Flag",
+        text: "A pirate flag is called a Jolly Roger. The most famous one is black with a white skull and two crossed bones. Pirates flew this flag to scare other ships. When sailors saw the flag, they knew pirates were coming. Many sailors gave up without a fight. That was what the pirates wanted. A fight could hurt the pirates and damage the ship they wanted to take. Not every pirate used the same flag. Some flags showed a skeleton, a sword or an hourglass. The hourglass meant “your time is running out.” Each captain wanted a flag that people would remember.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Real pirates ate bad food and often got sick.", "Real pirates ate fresh fruit every day.", "Pirates cooked big dinners in a fridge.", "The text says real pirates did not eat so well and many got a sickness called scurvy.", ["Real pirates did not eat so well", "Without fruit, many got a sickness called scurvy"]],
+      ["A", "Detail", "What lived inside the biscuits?", "Little bugs.", "Dried beans.", "Small fish.", "The text says that often little bugs lived inside the biscuits.", "little bugs lived inside the biscuits"],
+      ["A", "Vocabulary", "In the text, “fresh” means…", "new and not old or bad.", "very cold.", "very salty.", "There was no fridge, so fresh food went bad fast, which means food that was new did not stay good.", "fresh food went bad fast"],
+      ["A", "Reference", "In the text, “They” in “They also ate salty meat” refers to…", "the pirates.", "the bugs.", "the biscuits.", "The text is about what pirates ate, and the pirates also ate salty meat and dried beans.", "Often, little bugs lived inside the biscuits! They also ate salty meat"],
+      ["A", "Inference", "Why did pirates' teeth become loose?", "They did not eat fruit for a long time.", "The biscuits were too soft.", "They drank too much water.", "The text says that without fruit many got scurvy, and their teeth became loose and fell out.", ["Without fruit, many got a sickness called scurvy", "Their teeth became loose and fell out"]],
+      ["B", "Main idea", "What is the text mostly about?", "Pirates used scary flags so ships would give up without a fight.", "Every pirate used the same black flag.", "Pirates flew flags to say hello to friends.", "The text says pirates flew the flag to scare other ships, and many sailors gave up without a fight.", ["Pirates flew this flag to scare other ships", "Many sailors gave up without a fight"]],
+      ["B", "Detail", "What did the hourglass on a flag mean?", "“Your time is running out.”", "“We want to trade.”", "“Come and have dinner.”", "The text says the hourglass meant “your time is running out.”", "The hourglass meant “your time is running out.”"],
+      ["B", "Vocabulary", "In the text, “famous” means…", "known by many people.", "very old.", "very small.", "The most famous flag is the black one with a skull, which means it is the one most people know.", "The most famous one is black"],
+      ["B", "Reference", "In the text, “That” in “That was what the pirates wanted” refers to…", "sailors giving up without a fight.", "the white skull.", "a long sea battle.", "The sentence before says many sailors gave up without a fight, and that is what the pirates wanted.", "Many sailors gave up without a fight. That was what the pirates wanted"],
+      ["B", "Inference", "Why did pirates not want a fight?", "A fight could hurt them and damage the ship they wanted.", "They did not have any swords.", "They were afraid of the flag.", "The text says a fight could hurt the pirates and damage the ship they wanted to take.", "A fight could hurt the pirates and damage the ship they wanted to take"],
+    ],
+    matches: {
+      A: [["fridge", "a cold box that keeps food fresh"], ["biscuits", "hard, dry, flat cakes"], ["salty", "full of salt"], ["loose", "not held tightly in place"], ["tasty", "nice to eat"]],
+      B: [["flag", "a piece of cloth with a picture or colors on it"], ["skull", "the bones of the head"], ["hourglass", "a glass with sand inside that shows time passing"], ["damage", "to hurt or break something"], ["captain", "the person in charge of a ship"]],
+    },
+  },
+  {
+    part: 216,
+    slug: "unseen-reading-part-216",
+    theme: "Mummies",
+    blurb: "how the Egyptians made a mummy, the boy king Tutankhamun",
+    texts: {
+      A: {
+        title: "How to Make a Mummy",
+        text: "The ancient Egyptians believed in life after death. They wanted to keep the body safe for a very long time. So they made mummies. First, they washed the body. Then they took out most of the organs, like the lungs and the stomach. They kept these in special jars. They left the heart inside, because they thought a person needed it after death. Next, they covered the body with a special salt for forty days. The salt dried the body out. Finally, they wrapped the body in long strips of cloth. The whole job took about seventy days.",
+      },
+      B: {
+        title: "The Boy King",
+        text: "Tutankhamun became king of Egypt when he was only about nine years old. He died when he was about nineteen. His tomb was hidden under the sand for more than 3,000 years. In 1922, a man named Howard Carter found it. Inside were more than 5,000 things: golden chairs, toys, food and even a chariot. The most famous thing was a golden mask that covered the king's face. The mask weighs about ten kilograms. Today, people call him King Tut. Scientists are still studying his body. They want to learn how the boy king died.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "How the Egyptians made a body last a very long time.", "How the Egyptians built the pyramids.", "What the Egyptians ate at dinner.", "The text explains the steps the Egyptians followed to keep a body safe for a very long time by making a mummy.", ["They wanted to keep the body safe for a very long time", "So they made mummies"]],
+      ["A", "Detail", "How long was the body covered with salt?", "Forty days.", "Seventy days.", "Four days.", "The text says they covered the body with a special salt for forty days.", "a special salt for forty days"],
+      ["A", "Vocabulary", "In the text, “dried” means…", "took the water out of something.", "made something wet.", "cut something into pieces.", "The salt dried the body out, which means it took the water out of the body.", "The salt dried the body out"],
+      ["A", "Reference", "In the text, “these” in “They kept these in special jars” refers to…", "the organs.", "the strips of cloth.", "the jars.", "The sentence before says they took out most of the organs, and the organs are what they kept in special jars.", "they took out most of the organs, like the lungs and the stomach. They kept these in special jars"],
+      ["A", "Inference", "Why did the Egyptians leave the heart inside the body?", "They thought a person needed it after death.", "It was too small to take out.", "They forgot to take it out.", "The text says they left the heart inside because they thought a person needed it after death.", "They left the heart inside, because they thought a person needed it after death"],
+      ["B", "Main idea", "What is the text mostly about?", "A young king's tomb was found full of treasures.", "A king built the biggest pyramid.", "A king lived to be very old.", "The text is about Tutankhamun, who became king as a boy, and the tomb full of golden things that Howard Carter found.", ["Tutankhamun became king of Egypt when he was only about nine years old", "In 1922, a man named Howard Carter found it"]],
+      ["B", "Detail", "How much does the golden mask weigh?", "About ten kilograms.", "About nineteen kilograms.", "About one kilogram.", "The text says the mask weighs about ten kilograms.", "The mask weighs about ten kilograms"],
+      ["B", "Vocabulary", "In the text, “chariot” means…", "a cart with two wheels pulled by horses.", "a small boat.", "a golden hat.", "A chariot is listed with the things in the tomb; it is a cart with two wheels that horses pulled.", "even a chariot"],
+      ["B", "Reference", "In the text, “it” in “Howard Carter found it” refers to…", "the tomb.", "the sand.", "the chariot.", "The sentence before says the tomb was hidden under the sand, and the tomb is what Howard Carter found.", "His tomb was hidden under the sand for more than 3,000 years. In 1922, a man named Howard Carter found it"],
+      ["B", "Inference", "Why are scientists still studying Tutankhamun's body?", "They do not know how he died.", "They want to make a new mask.", "They lost his tomb again.", "The text says scientists want to learn how the boy king died, so they do not know yet.", "They want to learn how the boy king died"],
+    ],
+    matches: {
+      A: [["ancient", "from a very long time ago"], ["believed", "thought something was true"], ["organs", "parts inside the body, like the heart and lungs"], ["wrapped", "covered something all around"], ["strips", "long, thin pieces"]],
+      B: [["tomb", "a place where a dead person is kept"], ["hidden", "put where people cannot see or find it"], ["golden", "made of gold or looking like gold"], ["mask", "a cover for the face"], ["studying", "looking at something carefully to learn about it"]],
+    },
+  },
+  {
+    part: 217,
+    slug: "unseen-reading-part-217",
+    theme: "Slime",
+    blurb: "what makes slime stretchy, the fish that makes slime",
+    texts: {
+      A: {
+        title: "What Makes Slime Stretchy",
+        text: "You can make slime at home with glue and a few other things. But why is slime stretchy? Glue is made of very long, thin chains. You cannot see them, but they are there. In the bottle, the chains slide past each other easily. That is why glue is runny. When you add the special slime liquid, the chains start to hold hands. Now they cannot slide away so easily. The glue becomes thick and stretchy. If you pull slime slowly, the chains have time to move. If you pull it fast, it breaks. Slime is a solid and a liquid at the same time!",
+      },
+      B: {
+        title: "The Fish That Makes Slime",
+        text: "Deep in the sea lives a strange fish called the hagfish. It is long and looks like an eel. The hagfish has a superpower: it makes slime. When a bigger fish tries to bite it, slime comes out of the hagfish's skin. The slime mixes with the water and grows very fast. One hagfish can turn a bucket of water into slime in less than a second. The slime fills the mouth of the attacker, and it cannot breathe. The attacker lets go and swims away. Then the hagfish ties itself in a knot to wipe the slime off. Scientists are studying the slime to make new materials.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Slime is stretchy because long chains in glue hold together.", "Slime is stretchy because it is very cold.", "Slime is made of tiny stones.", "The text explains that glue is made of long chains, and slime is stretchy when the chains start to hold hands.", ["Glue is made of very long, thin chains", "the chains start to hold hands"]],
+      ["A", "Detail", "What happens if you pull slime fast?", "It breaks.", "It gets longer.", "It turns to water.", "The text says if you pull it fast, it breaks.", "If you pull it fast, it breaks"],
+      ["A", "Vocabulary", "In the text, “thick” means…", "not runny, hard to pour.", "very long.", "very cold.", "The glue becomes thick and stretchy after the chains hold hands, so thick is the opposite of runny.", "The glue becomes thick and stretchy"],
+      ["A", "Reference", "In the text, “they” in “they cannot slide away so easily” refers to…", "the chains.", "the bottles.", "your hands.", "The sentence before says the chains start to hold hands, and now the chains cannot slide away so easily.", "the chains start to hold hands. Now they cannot slide away so easily"],
+      ["A", "Inference", "Why is glue runny in the bottle?", "The chains slide past each other easily.", "The bottle is too small.", "The glue is very old.", "The text says in the bottle the chains slide past each other easily, and that is why glue is runny.", ["the chains slide past each other easily", "That is why glue is runny"]],
+      ["B", "Main idea", "What is the text mostly about?", "The hagfish uses slime to stay safe from bigger fish.", "The hagfish eats slime for dinner.", "The hagfish is the fastest fish in the sea.", "The text says the hagfish makes slime when a bigger fish tries to bite it, and the attacker swims away.", ["The hagfish has a superpower: it makes slime", "The attacker lets go and swims away"]],
+      ["B", "Detail", "How fast can a hagfish turn a bucket of water into slime?", "In less than a second.", "In about an hour.", "In one day.", "The text says one hagfish can turn a bucket of water into slime in less than a second.", "in less than a second"],
+      ["B", "Vocabulary", "In the text, “wipe” means…", "to rub something to clean it off.", "to eat quickly.", "to hide under something.", "The hagfish ties itself in a knot to wipe the slime off, which means to rub the slime off its body.", "to wipe the slime off"],
+      ["B", "Reference", "In the text, “it” in “it cannot breathe” refers to…", "the attacker.", "the hagfish.", "the bucket.", "The slime fills the mouth of the attacker, so the attacker is the one that cannot breathe.", "The slime fills the mouth of the attacker, and it cannot breathe"],
+      ["B", "Inference", "Why does the hagfish tie itself in a knot?", "To get its own slime off its body.", "To sleep safely.", "To catch smaller fish.", "The text says the hagfish ties itself in a knot to wipe the slime off.", "the hagfish ties itself in a knot to wipe the slime off"],
+    ],
+    matches: {
+      A: [["stretchy", "can be pulled longer without breaking"], ["chains", "lines of small things joined together"], ["liquid", "something like water that you can pour"], ["runny", "like a liquid, not thick"], ["solid", "hard and keeping its shape"]],
+      B: [["strange", "unusual, not normal"], ["attacker", "an animal that tries to hurt another"], ["breathe", "to take air or water in and out"], ["knot", "a place where something is tied"], ["materials", "things that other things are made from"]],
+    },
+  },
+  {
+    part: 218,
+    slug: "unseen-reading-part-218",
+    theme: "Animal Superpowers",
+    blurb: "the shrimp with a super punch, the octopus escape artist",
+    texts: {
+      A: {
+        title: "The Shrimp with a Super Punch",
+        text: "The mantis shrimp is a small sea animal about the size of your hand. It has the fastest punch in the animal world. It hits with two arms shaped like hammers. The punch is as fast as a bullet from a small gun. The punch is so strong that it breaks the shell of a crab in one hit. Some mantis shrimp have even broken the glass of a fish tank! The mantis shrimp also has amazing eyes. Each eye can move on its own. It can see colors that people cannot see. Scientists are copying its arms to make stronger materials.",
+      },
+      B: {
+        title: "The Octopus Escape Artist",
+        text: "An octopus is one of the cleverest animals in the sea. It has eight arms and no bones at all. Because it has no bones, it can squeeze through very small holes. A big octopus can fit through a hole the size of a coin! An octopus can also change its color and its skin in one second. It can look like a rock, sand or seaweed. That helps it hide from enemies. An octopus has three hearts and blue blood. In zoos, octopuses have opened jars and escaped from their tanks. Some even climbed out at night and came back before morning!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "A small sea animal with a very strong punch and amazing eyes.", "A big fish that eats glass.", "A shrimp that people eat at parties.", "The text says the mantis shrimp has the fastest punch in the animal world and amazing eyes.", ["It has the fastest punch in the animal world", "The mantis shrimp also has amazing eyes"]],
+      ["A", "Detail", "What can the mantis shrimp break in one hit?", "The shell of a crab.", "A small boat.", "A bullet.", "The text says the punch is so strong that it breaks the shell of a crab in one hit.", "it breaks the shell of a crab in one hit"],
+      ["A", "Vocabulary", "In the text, “tank” means…", "a glass box for keeping fish.", "a big army car.", "a kind of crab.", "Some mantis shrimp have broken the glass of a fish tank, so here a tank is a glass box for fish.", "the glass of a fish tank"],
+      ["A", "Reference", "In the text, “It” in “It hits with two arms” refers to…", "the mantis shrimp.", "the fish tank.", "the crab.", "The text is about the mantis shrimp, and the mantis shrimp hits with two arms shaped like hammers.", "It has the fastest punch in the animal world. It hits with two arms"],
+      ["A", "Inference", "Why are scientists copying the arms of the mantis shrimp?", "The arms are very strong and do not break.", "The arms are very pretty.", "The arms can see colors.", "The text says scientists are copying its arms to make stronger materials, so the arms must be very strong.", "Scientists are copying its arms to make stronger materials"],
+      ["B", "Main idea", "What is the text mostly about?", "The octopus is clever and has many ways to hide and escape.", "The octopus is the biggest animal in the sea.", "The octopus has strong bones.", "The text says the octopus is one of the cleverest animals and describes how it hides, squeezes through holes and escapes.", ["An octopus is one of the cleverest animals in the sea", "In zoos, octopuses have opened jars and escaped from their tanks"]],
+      ["B", "Detail", "How many hearts does an octopus have?", "Three.", "Eight.", "One.", "The text says an octopus has three hearts and blue blood.", "An octopus has three hearts"],
+      ["B", "Vocabulary", "In the text, “fit” means…", "to be small enough to go through.", "to be healthy and strong.", "to fight.", "A big octopus can fit through a hole the size of a coin, which means it is small enough to go through it.", "can fit through a hole the size of a coin"],
+      ["B", "Reference", "In the text, “That” in “That helps it hide” refers to…", "changing its color and skin.", "having three hearts.", "opening jars.", "The sentences before say an octopus can change its color and look like a rock, sand or seaweed, and that helps it hide.", "It can look like a rock, sand or seaweed. That helps it hide from enemies"],
+      ["B", "Inference", "Why can an octopus go through a hole the size of a coin?", "It has no bones.", "It is very small.", "It has blue blood.", "The text says that because it has no bones, it can squeeze through very small holes.", "Because it has no bones, it can squeeze through very small holes"],
+    ],
+    matches: {
+      A: [["punch", "a hard hit with a closed hand or arm"], ["bullet", "the small metal piece that a gun shoots"], ["shell", "the hard outside of an animal like a crab"], ["amazing", "very surprising and wonderful"], ["materials", "things that other things are made from"]],
+      B: [["cleverest", "the most intelligent"], ["squeeze", "to push through a small space"], ["seaweed", "a plant that grows in the sea"], ["enemies", "animals that want to hurt or eat another"], ["escaped", "got away from a place"]],
+    },
+  },
+  {
+    part: 219,
+    slug: "unseen-reading-part-219",
+    theme: "World Records",
+    blurb: "the tallest man ever, the fastest human",
+    texts: {
+      A: {
+        title: "The Tallest Man Ever",
+        text: "The tallest man in history was Robert Wadlow. He was born in the United States in 1918. As a baby, he was a normal size. But his body kept growing and growing. At eight years old, he was already taller than his father. When he was twenty-two, he was 2.72 meters tall. He could touch a basketball hoop without jumping! His shoes were 47 centimeters long. Robert needed special clothes and a special bed. He was a kind and gentle man, and people called him the Gentle Giant. He died in 1940, when he was only twenty-two.",
+      },
+      B: {
+        title: "The Fastest Human",
+        text: "Usain Bolt from Jamaica is the fastest runner ever. In 2009, he ran 100 meters in 9.58 seconds. Nobody has beaten that time. At his fastest, Bolt ran at about 44 kilometers per hour. That is faster than a city bus! Bolt is very tall for a runner, almost two meters. Tall runners are usually slow at the start. But Bolt's long legs took huge steps. He needed only 41 steps to run 100 meters. Most runners need about 45. Bolt won eight Olympic gold medals. After every race, he did a famous pose, pointing to the sky like an arrow.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Robert Wadlow grew to be the tallest man ever.", "Robert Wadlow was a famous basketball player.", "Robert Wadlow was a small man with big shoes.", "The text says Robert Wadlow was the tallest man in history and grew to 2.72 meters.", ["The tallest man in history was Robert Wadlow", "he was 2.72 meters tall"]],
+      ["A", "Detail", "How long were Robert's shoes?", "47 centimeters.", "22 centimeters.", "72 centimeters.", "The text says his shoes were 47 centimeters long.", "His shoes were 47 centimeters long"],
+      ["A", "Vocabulary", "In the text, “special” means…", "made in a different way for one person.", "very cheap.", "very old.", "Robert needed special clothes and a special bed because normal ones did not fit him.", "Robert needed special clothes and a special bed"],
+      ["A", "Reference", "In the text, “he” in “he was already taller than his father” refers to…", "Robert Wadlow.", "Robert's father.", "a basketball player.", "The text is about Robert, and at eight years old Robert was already taller than his father.", "At eight years old, he was already taller than his father"],
+      ["A", "Inference", "Why did people call Robert the Gentle Giant?", "He was very tall and also very kind.", "He played a giant in movies.", "He was angry all the time.", "The text says he was a kind and gentle man, and he was also the tallest man in history.", "He was a kind and gentle man, and people called him the Gentle Giant"],
+      ["B", "Main idea", "What is the text mostly about?", "Usain Bolt is the fastest runner ever, thanks to his long steps.", "Usain Bolt is a bus driver in Jamaica.", "Usain Bolt is the tallest man in history.", "The text says Usain Bolt is the fastest runner ever and explains that his long legs took huge steps.", ["Usain Bolt from Jamaica is the fastest runner ever", "Bolt's long legs took huge steps"]],
+      ["B", "Detail", "How many steps did Bolt need to run 100 meters?", "41.", "45.", "100.", "The text says he needed only 41 steps to run 100 meters.", "He needed only 41 steps to run 100 meters"],
+      ["B", "Vocabulary", "In the text, “race” means…", "a contest to see who is fastest.", "a kind of medal.", "a long rest.", "After every race Bolt did a famous pose; a race is a contest to see who is fastest.", "After every race"],
+      ["B", "Reference", "In the text, “that time” in “Nobody has beaten that time” refers to…", "9.58 seconds.", "the year 2009.", "44 kilometers per hour.", "The sentence before says he ran 100 meters in 9.58 seconds, and nobody has beaten that time.", "he ran 100 meters in 9.58 seconds. Nobody has beaten that time"],
+      ["B", "Inference", "Why could Bolt use fewer steps than other runners?", "His legs were longer.", "He ran a shorter race.", "He started before the others.", "The text says Bolt is very tall and his long legs took huge steps, so he needed fewer steps.", ["Bolt is very tall for a runner", "Bolt's long legs took huge steps"]],
+    ],
+    matches: {
+      A: [["history", "everything that happened in the past"], ["normal", "usual, like most others"], ["growing", "getting bigger"], ["gentle", "kind and careful, not rough"], ["giant", "a very big person or thing"]],
+      B: [["beaten", "done better than"], ["usually", "most of the time"], ["huge", "very big"], ["medals", "round pieces of metal given to winners"], ["pose", "a way of standing for a picture"]],
+    },
+  },
+  {
+    part: 220,
+    slug: "unseen-reading-part-220",
+    theme: "Pizza and Ice Cream",
+    blurb: "where pizza came from, why ice cream is soft",
+    texts: {
+      A: {
+        title: "Where Pizza Came From",
+        text: "Pizza comes from Naples, a city in Italy. Two hundred years ago, Naples was a busy port. Poor workers needed food that was cheap and fast. Bakers made flat bread and put tomatoes, oil and cheese on top. People ate it with their hands in the street. A famous story says that in 1889, the queen of Italy visited Naples. A baker made her a pizza with red tomato, white cheese and green basil. Those are the colors of the Italian flag. The queen loved it. The pizza was named Margherita after her. Today, people eat about five billion pizzas a year around the world.",
+      },
+      B: {
+        title: "Why Ice Cream Is Soft",
+        text: "Ice cream is frozen, but it is not hard like an ice cube. Why? Ice cream has three secrets. The first secret is sugar. Sugar makes it harder for water to turn into ice. The second secret is fat from the cream. Fat makes ice cream smooth. The third secret is air. When ice cream is made, it is stirred all the time while it freezes. Stirring mixes in tiny bubbles of air and stops big pieces of ice from growing. Some ice cream is half air! If ice cream melts and freezes again, big ice pieces grow. That is why old ice cream feels crunchy.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Pizza started as cheap street food in Naples.", "Pizza was first made for the queen's birthday.", "Pizza comes from a famous shop in Rome.", "The text says pizza comes from Naples, where poor workers needed food that was cheap and fast.", ["Pizza comes from Naples, a city in Italy", "Poor workers needed food that was cheap and fast"]],
+      ["A", "Detail", "What were the colors on the queen's pizza?", "Red, white and green, like the Italian flag.", "Blue and yellow.", "Only white.", "The text says the pizza had red tomato, white cheese and green basil, and those are the colors of the Italian flag.", ["red tomato, white cheese and green basil", "Those are the colors of the Italian flag"]],
+      ["A", "Vocabulary", "In the text, “flat” means…", "thin and level, not tall.", "very hot.", "round and fat.", "Bakers made flat bread, which is bread that is thin and level.", "Bakers made flat bread"],
+      ["A", "Reference", "In the text, “her” in “named Margherita after her” refers to…", "the queen of Italy.", "the baker.", "the city of Naples.", "The sentences before say the queen loved the pizza, and the pizza was named after the queen.", "The queen loved it. The pizza was named Margherita after her"],
+      ["A", "Inference", "Why did people in Naples eat pizza with their hands in the street?", "It was fast food for busy, poor workers.", "There were no plates in Italy.", "The queen told them to.", "The text says poor workers needed food that was cheap and fast, and people ate it with their hands in the street.", ["Poor workers needed food that was cheap and fast", "People ate it with their hands in the street"]],
+      ["B", "Main idea", "What is the text mostly about?", "Sugar, fat and air keep ice cream soft.", "Ice cream is hard like an ice cube.", "Ice cream is made without any cold.", "The text explains three secrets, sugar, fat and air, that keep ice cream soft.", ["Ice cream has three secrets", "Some ice cream is half air"]],
+      ["B", "Detail", "What does fat from the cream do?", "It makes ice cream smooth.", "It makes ice cream cold.", "It makes ice cream brown.", "The text says fat makes ice cream smooth.", "Fat makes ice cream smooth"],
+      ["B", "Vocabulary", "In the text, “crunchy” means…", "hard and making a noise when you bite it.", "soft and warm.", "very sweet.", "Old ice cream feels crunchy because big ice pieces grow in it, so crunchy means hard and noisy to bite.", "old ice cream feels crunchy"],
+      ["B", "Reference", "In the text, “it” in “it is stirred all the time” refers to…", "ice cream.", "sugar.", "an ice cube.", "The sentence says when ice cream is made, the ice cream is stirred all the time while it freezes.", "When ice cream is made, it is stirred all the time while it freezes"],
+      ["B", "Inference", "Why does old ice cream feel crunchy?", "It melted and froze again, so big ice pieces grew.", "Someone added nuts to it.", "It has too much sugar.", "The text says that if ice cream melts and freezes again, big ice pieces grow, and that is why old ice cream feels crunchy.", ["If ice cream melts and freezes again, big ice pieces grow", "That is why old ice cream feels crunchy"]],
+    ],
+    matches: {
+      A: [["port", "a town by the sea where ships stop"], ["cheap", "not costing much money"], ["bakers", "people who make bread"], ["basil", "a green plant with leaves used in cooking"], ["billion", "a thousand million"]],
+      B: [["frozen", "turned into ice by cold"], ["smooth", "soft and even, with no bumps"], ["stirred", "mixed by moving a spoon around"], ["bubbles", "small balls of air"], ["melts", "changes from solid to liquid because of heat"]],
+    },
+  },
+  {
+    part: 221,
+    slug: "unseen-reading-part-221",
+    theme: "Robots",
+    blurb: "the robot that cleans your floor, a robot on Mars",
+    texts: {
+      A: {
+        title: "The Robot That Cleans Your Floor",
+        text: "Some homes have a small round robot that cleans the floor. It is called a robot vacuum. It moves around the room by itself. How does it know where to go? The robot has sensors. Sensors are like its eyes and ears. A bumper at the front feels when the robot hits a chair or a wall. Then the robot turns and goes another way. A sensor underneath looks for stairs, so the robot does not fall down them. Some robots make a map of your home. When the battery is low, the robot drives back to its charger by itself. Then it rests until the next cleaning.",
+      },
+      B: {
+        title: "A Robot on Mars",
+        text: "In 2021, a robot called Perseverance landed on Mars. It is as big as a small car and has six wheels. Mars is so far away that a message from Earth takes many minutes to arrive. So the robot has to make many choices by itself. It looks at the ground, finds a safe path and drives slowly. It moves about as fast as a tortoise. Perseverance has cameras, a drill and a laser. It collects small pieces of rock in tubes. One day, another spacecraft may bring the tubes back to Earth. Perseverance also carried a tiny helicopter. The helicopter made the first flight on another planet!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "A robot vacuum uses sensors to clean a room by itself.", "A robot vacuum is driven by a person.", "A robot vacuum can climb stairs.", "The text says the robot moves around the room by itself and uses sensors to know where to go.", ["It moves around the room by itself", "The robot has sensors"]],
+      ["A", "Detail", "What does the robot do when the battery is low?", "It drives back to its charger.", "It stops in the middle of the room.", "It asks you for help.", "The text says that when the battery is low, the robot drives back to its charger by itself.", "the robot drives back to its charger by itself"],
+      ["A", "Vocabulary", "In the text, “map” means…", "a picture that shows where things are.", "a kind of brush.", "a loud sound.", "Some robots make a map of your home so they know where everything is.", "Some robots make a map of your home"],
+      ["A", "Reference", "In the text, “them” in “so the robot does not fall down them” refers to…", "the stairs.", "the chairs.", "the sensors.", "The sentence says a sensor looks for stairs, so the robot does not fall down the stairs.", "A sensor underneath looks for stairs, so the robot does not fall down them"],
+      ["A", "Inference", "Why does the text say sensors are like the robot's eyes and ears?", "They help the robot notice what is around it.", "They are on the robot's head.", "They can hear music.", "The text says the sensors are like eyes and ears, and the bumper feels when the robot hits a chair or a wall.", ["Sensors are like its eyes and ears", "A bumper at the front feels when the robot hits a chair or a wall"]],
+      ["B", "Main idea", "What is the text mostly about?", "A robot explores Mars and makes its own choices.", "A robot drives very fast on Mars.", "People live on Mars with a robot.", "The text is about Perseverance, a robot on Mars that has to make many choices by itself.", ["a robot called Perseverance landed on Mars", "So the robot has to make many choices by itself"]],
+      ["B", "Detail", "What does Perseverance collect in tubes?", "Small pieces of rock.", "Water.", "Pictures.", "The text says it collects small pieces of rock in tubes.", "It collects small pieces of rock in tubes"],
+      ["B", "Vocabulary", "In the text, “arrive” means…", "to get to a place.", "to go away.", "to break.", "A message from Earth takes many minutes to arrive, which means to get to Mars.", "takes many minutes to arrive"],
+      ["B", "Reference", "In the text, “It” in “It is as big as a small car” refers to…", "Perseverance.", "Mars.", "the helicopter.", "The sentence before says a robot called Perseverance landed on Mars, and the robot is as big as a small car.", "a robot called Perseverance landed on Mars. It is as big as a small car"],
+      ["B", "Inference", "Why must the robot make many choices by itself?", "Messages from Earth take a long time to arrive.", "Nobody on Earth is watching it.", "It is faster than a car.", "The text says a message from Earth takes many minutes to arrive, so the robot has to make many choices by itself.", ["a message from Earth takes many minutes to arrive", "So the robot has to make many choices by itself"]],
+    ],
+    matches: {
+      A: [["vacuum", "a machine that sucks up dust and dirt"], ["sensors", "parts that feel or notice things, like light or touch"], ["bumper", "a soft part at the front that takes a hit"], ["underneath", "under something"], ["charger", "a thing that puts power back into a battery"]],
+      B: [["landed", "came down onto the ground from the air"], ["message", "words sent from one person or place to another"], ["path", "a way to go from one place to another"], ["tortoise", "a slow animal with a hard shell"], ["spacecraft", "a vehicle that travels in space"]],
+    },
+  },
+  {
+    part: 222,
+    slug: "unseen-reading-part-222",
+    theme: "Mysteries",
+    blurb: "the monster in the lake, the Bermuda Triangle",
+    texts: {
+      A: {
+        title: "The Monster in the Lake",
+        text: "Loch Ness is a long, deep lake in Scotland. Many people say a monster lives in it. They call the monster Nessie. The stories began a long time ago. In 1934, a photo showed a long neck coming out of the water. People all over the world were excited. Sixty years later, a man said the photo was a trick. The neck was a toy on a small toy submarine! Scientists have searched the lake with boats and cameras. They have not found a monster. Still, every year, thousands of visitors go to the lake. They watch the water and hope to see Nessie.",
+      },
+      B: {
+        title: "The Bermuda Triangle",
+        text: "The Bermuda Triangle is a part of the Atlantic Ocean near Florida. Some people say it is a dangerous place. They say ships and planes disappear there. Some books say a sea monster or aliens take them. What is the truth? It is a busy part of the ocean. Many ships and planes cross this area every day. The weather there changes fast, and big storms can start suddenly. Scientists have counted the lost ships and planes. The Bermuda Triangle is not more dangerous than other busy parts of the sea. The mystery makes a good story. But the sea is simply big, and storms are strong.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "People love the story of Nessie, but nobody has found a monster.", "Scientists found Nessie in 1934.", "Loch Ness is a small lake in Mexico.", "The text says many people say a monster lives in the lake, but scientists have not found a monster.", ["Many people say a monster lives in it", "They have not found a monster"]],
+      ["A", "Detail", "What was the neck in the 1934 photo?", "A toy on a toy submarine.", "A real monster.", "A big fish.", "The text says the neck was a toy on a small toy submarine.", "The neck was a toy on a small toy submarine"],
+      ["A", "Vocabulary", "In the text, “visitors” means…", "people who come to see a place.", "people who live by the lake.", "scientists with boats.", "Thousands of visitors go to the lake every year; visitors are people who come to see a place.", "thousands of visitors go to the lake"],
+      ["A", "Reference", "In the text, “They” in “They call the monster Nessie” refers to…", "many people.", "the scientists.", "the boats.", "The sentence before says many people say a monster lives in the lake, and these people call the monster Nessie.", "Many people say a monster lives in it. They call the monster Nessie"],
+      ["A", "Inference", "Why do thousands of people still go to Loch Ness every year?", "They hope to see the monster.", "They want to swim with the submarine.", "They want to work with the scientists.", "The text says the visitors watch the water and hope to see Nessie.", "They watch the water and hope to see Nessie"],
+      ["B", "Main idea", "What is the text mostly about?", "The Bermuda Triangle is not more dangerous than other busy seas.", "Aliens take ships in the Bermuda Triangle.", "No ships ever cross the Bermuda Triangle.", "The text says scientists counted the lost ships and found the Bermuda Triangle is not more dangerous than other busy parts of the sea.", ["The Bermuda Triangle is not more dangerous than other busy parts of the sea", "the sea is simply big, and storms are strong"]],
+      ["B", "Detail", "Where is the Bermuda Triangle?", "In the Atlantic Ocean near Florida.", "In a lake in Scotland.", "In the Pacific Ocean near Japan.", "The text says the Bermuda Triangle is a part of the Atlantic Ocean near Florida.", "a part of the Atlantic Ocean near Florida"],
+      ["B", "Vocabulary", "In the text, “cross” means…", "to go from one side to the other.", "to sink.", "to be angry.", "Many ships and planes cross this area every day, which means they go from one side of it to the other.", "Many ships and planes cross this area every day"],
+      ["B", "Reference", "In the text, “them” in “aliens take them” refers to…", "the ships and planes.", "the books.", "the storms.", "The sentence before says ships and planes disappear there, and some books say aliens take the ships and planes.", "They say ships and planes disappear there. Some books say a sea monster or aliens take them"],
+      ["B", "Inference", "Why are many ships lost in the Bermuda Triangle?", "Many ships go there, and storms start fast.", "A monster lives under the water.", "The sea there has no water.", "The text says it is a busy part of the ocean and big storms can start suddenly.", ["It is a busy part of the ocean", "big storms can start suddenly"]],
+    ],
+    matches: {
+      A: [["monster", "a large, scary animal that is not real"], ["neck", "the part between the head and the body"], ["trick", "something done to fool people"], ["submarine", "a boat that goes under the water"], ["searched", "looked carefully to find something"]],
+      B: [["dangerous", "able to hurt you"], ["aliens", "creatures from another planet"], ["truth", "what is real and true"], ["suddenly", "quickly and without warning"], ["mystery", "something that people cannot explain"]],
+    },
+  },
+];

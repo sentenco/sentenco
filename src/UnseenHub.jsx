@@ -14,11 +14,12 @@ function usePageSize() {
   }, []);
   return n;
 }
-const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E", sports: "#FF8266", psych: "#2FC4B2" };
+const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E", sports: "#FF8266", psych: "#2FC4B2", kids: "#6FD3FF" };
 
 // The Unseen Reading room: topic tiles, each showing its pair of texts.
 // `canOpen(slug)` limits the list to lessons this person may open.
 export default function UnseenHub({ canOpen }) {
+  const [aud, setAud] = useState("older"); // older = Teens and Adults (the topic shelves), kids = the Kids shelf
   const [shelf, setShelf] = useState("all");
   const [q, setQ] = useState("");
   const [peek, setPeek] = useState({});
@@ -43,8 +44,11 @@ export default function UnseenHub({ canOpen }) {
       .map((x) => x.l);
   }, [canOpen]);
 
+  const forAud = (l) => (aud === "kids") === (l.shelf === "kids");
+  const mine = all.filter(forAud);
+  const kidsCount = all.filter((l) => l.shelf === "kids").length;
   const needle = q.trim().toLowerCase();
-  const list = all.filter((l) => {
+  const list = mine.filter((l) => {
     if (shelf !== "all" && l.shelf !== shelf) return false;
     if (!needle) return true;
     return [l.title, l.a, l.b, l.link, ...(l.wordsA || []), ...(l.wordsB || [])].join(" ").toLowerCase().includes(needle);
@@ -56,7 +60,7 @@ export default function UnseenHub({ canOpen }) {
   const here = Math.min(Math.floor(start / size) + 1, pages);
   const shown = list.slice((here - 1) * size, here * size);
   const skipReset = useRef(false);
-  useEffect(() => { if (skipReset.current) { skipReset.current = false; return; } setStart(0); }, [shelf, q]);
+  useEffect(() => { if (skipReset.current) { skipReset.current = false; return; } setStart(0); }, [shelf, q, aud]);
   const gridRef = useRef(null);
   function goTo(n) {
     setStart((n - 1) * size);
@@ -64,11 +68,11 @@ export default function UnseenHub({ canOpen }) {
   }
 
   function surprise() {
-    if (!all.length) return;
+    if (!mine.length) return;
     if (shelf !== "all" || q) skipReset.current = true;
     setShelf("all"); setQ("");
-    const idx = Math.floor(Math.random() * all.length);
-    const pick = all[idx];
+    const idx = Math.floor(Math.random() * mine.length);
+    const pick = mine[idx];
     setStart(Math.floor(idx / size) * size);
     setPopped(null);
     setTimeout(() => {
@@ -79,10 +83,16 @@ export default function UnseenHub({ canOpen }) {
 
   return (
     <div className="uh">
-      <div className="uh-deck" style={{ "--cur": DECK_COLOR[shelf] }}>
-        <div className="uh-tabs" role="group" aria-label="Topics" ref={tabsRef}>
-          {[{ id: "all", name: "Everything" }, ...UNSEEN_SHELVES].map((s) => {
-            const n = s.id === "all" ? all.length : all.filter((l) => l.shelf === s.id).length;
+      {kidsCount > 0 && (
+        <div className="uh-aud" role="group" aria-label="Who the texts are for">
+          <button type="button" data-a="older" aria-pressed={aud === "older"} onClick={() => { setAud("older"); setShelf("all"); }}>Teens and Adults<i>{all.length - kidsCount}</i></button>
+          <button type="button" data-a="kids" aria-pressed={aud === "kids"} onClick={() => { setAud("kids"); setShelf("all"); }}>Kids<i>{kidsCount}</i></button>
+        </div>
+      )}
+      <div className="uh-deck" style={{ "--cur": aud === "kids" ? DECK_COLOR.kids : DECK_COLOR[shelf] }}>
+        {aud === "older" && <div className="uh-tabs" role="group" aria-label="Topics" ref={tabsRef}>
+          {[{ id: "all", name: "Everything" }, ...UNSEEN_SHELVES.filter((s) => s.id !== "kids")].map((s) => {
+            const n = s.id === "all" ? mine.length : mine.filter((l) => l.shelf === s.id).length;
             if (s.id !== "all" && n === 0) return null;
             return (
               <button key={s.id} type="button" className="uh-tab" data-s={s.id} aria-pressed={shelf === s.id} onClick={() => setShelf(s.id)}>
@@ -90,15 +100,16 @@ export default function UnseenHub({ canOpen }) {
               </button>
             );
           })}
-        </div>
+        </div>}
         <div className="uh-panel">
           <label className="uh-search">
             <span className="uh-sr">Search Unseen Reading</span>
-            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a topic or a word, like wolves or jet lag" autoComplete="off" />
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={aud === "kids" ? "Search a topic or a word, like sharks or robots" : "Search a topic or a word, like wolves or jet lag"} autoComplete="off" />
           </label>
           <button type="button" className="uh-big" onClick={surprise}>Surprise me</button>
         </div>
       </div>
+      {aud === "kids" && <p className="uh-kids-note">Short texts with easy words for children before their teens: five questions a text, then ten words to match.</p>}
 
       <div className="uh-grid" ref={gridRef}>
         {list.length === 0 && <div className="uh-empty">Nothing matches that. Try “sleep” or “plant”.</div>}

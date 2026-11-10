@@ -5,6 +5,18 @@
 .uh button:focus-visible, .uh input:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
 .uh-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
+/* Who the lessons are for: Teens and Adults (the topic shelves) or Kids (one shelf, mixed topics, easier words) */
+.uh-aud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.uh-aud button { font-family: 'Lilita One', cursive; font-weight: 400; font-size: 18px; color: var(--navy); background: #fff; border: 2.5px solid var(--navy); border-radius: 999px; padding: 9px 22px; cursor: pointer; box-shadow: 4px 4px 0 var(--navy); transition: transform .12s, box-shadow .12s; display: inline-flex; gap: 9px; align-items: center; }
+.uh-aud button i { font: 800 12px 'Nunito', sans-serif; font-style: normal; background: var(--navy); color: #fff; border-radius: 999px; padding: 1px 8px; min-width: 24px; text-align: center; }
+.uh-aud button:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--navy); }
+.uh-aud button[aria-pressed="true"] { background: var(--navy); color: #fff; box-shadow: none; transform: translate(4px, 4px); }
+.uh-aud button[aria-pressed="true"] i { background: #fff; color: var(--navy); }
+.uh-aud button[data-a="kids"][aria-pressed="true"] { background: #0B6E99; border-color: #0B6E99; }
+.uh-aud button[data-a="kids"][aria-pressed="true"] i { color: #0B6E99; }
+.uh-aud + .uh-deck { margin-top: 16px; }
+.uh-kids-note { margin: 14px 0 0; font-size: 15px; color: var(--blue); }
+
 /* Topic tabs joined to a search panel that takes the active tab's color */
 .uh-deck { display: flex; flex-direction: column; margin-top: 22px; }
 .uh-tabs { display: flex; align-items: flex-end; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 4px 4px 0; margin: -4px -4px 0; position: relative; z-index: 1; }
@@ -18,7 +30,7 @@
 }
 .uh-tab i { font: 800 12px 'Nunito', sans-serif; font-style: normal; background: var(--navy); color: #fff; border-radius: 999px; padding: 0 7px; min-width: 22px; text-align: center; }
 .uh-tab[data-s="all"] { --c: #FFFFFF; } .uh-tab[data-s="body"] { --c: #FF9DB0; } .uh-tab[data-s="nature"] { --c: #7BE3AA; }
-.uh-tab[data-s="tech"] { --c: #8FBBFF; } .uh-tab[data-s="lang"] { --c: #FFD25E; } .uh-tab[data-s="space"] { --c: #B7A6FF; } .uh-tab[data-s="mma"] { --c: #FFA45C; } .uh-tab[data-s="safety"] { --c: #5CD6E6; } .uh-tab[data-s="money"] { --c: #C6E75F; } .uh-tab[data-s="mind"] { --c: #EBA6F2; } .uh-tab[data-s="history"] { --c: #E5BE8E; } .uh-tab[data-s="sports"] { --c: #FF8266; } .uh-tab[data-s="psych"] { --c: #2FC4B2; } .uh-tab[data-s="older"] { --c: #D9D1F2; }
+.uh-tab[data-s="tech"] { --c: #8FBBFF; } .uh-tab[data-s="lang"] { --c: #FFD25E; } .uh-tab[data-s="space"] { --c: #B7A6FF; } .uh-tab[data-s="mma"] { --c: #FFA45C; } .uh-tab[data-s="safety"] { --c: #5CD6E6; } .uh-tab[data-s="money"] { --c: #C6E75F; } .uh-tab[data-s="mind"] { --c: #EBA6F2; } .uh-tab[data-s="history"] { --c: #E5BE8E; } .uh-tab[data-s="sports"] { --c: #FF8266; } .uh-tab[data-s="psych"] { --c: #2FC4B2; } .uh-tab[data-s="older"] { --c: #D9D1F2; } .uh-tab[data-s="kids"] { --c: #6FD3FF; }
 .uh-tab:hover { transform: translateY(2px); opacity: 1; }
 .uh-tab[aria-pressed="true"] { transform: none; opacity: 1; padding-top: 13px; padding-bottom: 12px; }
 .uh-panel { display: flex; flex-wrap: wrap; gap: 12px; background: var(--cur, #fff); border: 2.5px solid var(--navy); border-radius: 0 18px 18px 18px; padding: 16px; box-shadow: 6px 6px 0 var(--navy); position: relative; z-index: 0; transition: background .15s; }
@@ -68,7 +80,7 @@
 .uh-pg-info { flex-basis: 100%; text-align: center; font: 700 14px 'Nunito', sans-serif; color: var(--navy); opacity: .75; }
 .uh-empty { grid-column: 1 / -1; background: #fff; border: 2.5px dashed var(--navy); border-radius: 22px; padding: 30px 18px; text-align: center; font-family: 'Lilita One', cursive; font-weight: 400; font-size: 22px; }
 
-.uh-c-body { --bg: #FF9DB0; } .uh-c-nature { --bg: #7BE3AA; } .uh-c-tech { --bg: #8FBBFF; } .uh-c-lang { --bg: #FFD25E; } .uh-c-space { --bg: #B7A6FF; } .uh-c-mma { --bg: #FFA45C; } .uh-c-safety { --bg: #5CD6E6; } .uh-c-money { --bg: #C6E75F; } .uh-c-mind { --bg: #EBA6F2; } .uh-c-history { --bg: #E5BE8E; } .uh-c-sports { --bg: #FF8266; } .uh-c-psych { --bg: #2FC4B2; } .uh-c-older { --bg: #D9D1F2; }
+.uh-c-body { --bg: #FF9DB0; } .uh-c-nature { --bg: #7BE3AA; } .uh-c-tech { --bg: #8FBBFF; } .uh-c-lang { --bg: #FFD25E; } .uh-c-space { --bg: #B7A6FF; } .uh-c-mma { --bg: #FFA45C; } .uh-c-safety { --bg: #5CD6E6; } .uh-c-money { --bg: #C6E75F; } .uh-c-mind { --bg: #EBA6F2; } .uh-c-history { --bg: #E5BE8E; } .uh-c-sports { --bg: #FF8266; } .uh-c-psych { --bg: #2FC4B2; } .uh-c-older { --bg: #D9D1F2; } .uh-c-kids { --bg: #6FD3FF; }
 
 @media (prefers-reduced-motion: reduce) {
   .uh-tile, .uh-big, .uh-tab, .uh-panel, .uh-play, .uh-pg { transition: none; }
