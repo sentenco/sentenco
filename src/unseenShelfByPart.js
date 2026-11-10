@@ -1,5 +1,5 @@
 // Which topic shelf each Unseen Reading lesson belongs to. The hub groups lessons by it and the
-// lesson player takes its colors from it. Part 5 is Doriel's lesson (not in the hub). Parts 211 to 240 are for Kids, on six shelves whose ids start with "k-".
+// lesson player takes its colors from it. Part 5 is Doriel's lesson (not in the hub). Parts 211 to 270 are for Kids, on six shelves whose ids start with "k-".
 export const UNSEEN_SHELF_BY_PART = {
   1: "lang", 2: "nature", 3: "body", 4: "tech", 5: "lang",
   6: "tech", 7: "tech", 8: "lang", 9: "tech", 10: "tech", 11: "tech",
@@ -169,4 +169,11 @@ export const UNSEEN_SHELF_BY_PART = {
   219: "k-wow", 222: "k-wow", 229: "k-wow", 236: "k-wow", 237: "k-wow",
   // Yummy Food
   220: "k-food", 227: "k-food", 238: "k-food", 239: "k-food", 240: "k-food",
+  // Kids, second five of each shelf (Parts 241 to 270)
+  241: "k-animals", 242: "k-animals", 243: "k-animals", 244: "k-animals", 245: "k-animals",
+  246: "k-works", 247: "k-works", 248: "k-works", 249: "k-works", 250: "k-works",
+  251: "k-earth", 252: "k-earth", 253: "k-earth", 254: "k-earth", 255: "k-earth",
+  256: "k-past", 257: "k-past", 258: "k-past", 259: "k-past", 260: "k-past",
+  261: "k-wow", 262: "k-wow", 263: "k-wow", 264: "k-wow", 265: "k-wow",
+  266: "k-food", 267: "k-food", 268: "k-food", 269: "k-food", 270: "k-food",
 };

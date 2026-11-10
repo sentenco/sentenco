@@ -1,3 +1,3 @@
-// Slugs of the lessons that live in the Unseen Reading room (Parts 1-4, 6-210, and the Kids shelves 211-240).
+// Slugs of the lessons that live in the Unseen Reading room (Parts 1-4, 6-210, and the Kids shelves 211-270).
 // Part 5 is a student's own lesson and stays in Custom Lessons.
-export const UNSEEN_HUB_SLUGS = [1, 2, 3, 4, ...Array.from({ length: 235 }, (_, i) => i + 6)].map((n) => `unseen-reading-part-${n}`);
+export const UNSEEN_HUB_SLUGS = [1, 2, 3, 4, ...Array.from({ length: 265 }, (_, i) => i + 6)].map((n) => `unseen-reading-part-${n}`);
