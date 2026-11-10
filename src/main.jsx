@@ -23,6 +23,8 @@ import AdminTeachers from './AdminTeachers.jsx'
 import AdminReports from './AdminReports.jsx'
 import AdminAccess from './AdminAccess.jsx'
 import CustomLessonGate from './CustomLessonGate.jsx'
+import UnseenAccessGate from './UnseenAccessGate.jsx'
+import { UNSEEN_HUB_SLUGS } from './unseenHubSlugs.js'
 import TeacherProfile from './TeacherProfile.jsx'
 import TeacherNetwork from './TeacherNetwork.jsx'
 import ArticlePlayerPage from './ArticlePlayerPage.jsx'
@@ -443,7 +445,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/customized-lessons/e8-task-5-reactions" element={<CustomLessonGate slug="e8-task-5-reactions"><E8Task5Lesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/e8-task-6-dialogues" element={<CustomLessonGate slug="e8-task-6-dialogues"><E8Task6Lesson /></CustomLessonGate>} />
             {[...UNSEEN_PARTS_0, ...UNSEEN_PARTS_1, ...UNSEEN_PARTS_2, ...UNSEEN_PARTS_3, ...UNSEEN_PARTS_4, ...UNSEEN_PARTS_5, ...UNSEEN_PARTS_6, ...UNSEEN_PARTS_7, ...UNSEEN_PARTS_8, ...UNSEEN_PARTS_9, ...UNSEEN_PARTS_10].map((l) => (
-              <Route key={l.slug} path={`/library/customized-lessons/${l.slug}`} element={<CustomLessonGate slug={l.slug}><UnseenLesson config={l} /></CustomLessonGate>} />
+              <Route key={l.slug} path={`/library/customized-lessons/${l.slug}`} element={UNSEEN_HUB_SLUGS.includes(l.slug) ? <UnseenAccessGate slug={l.slug}><UnseenLesson config={l} /></UnseenAccessGate> : <CustomLessonGate slug={l.slug}><UnseenLesson config={l} /></CustomLessonGate>} />
             ))}
             <Route path="/library/customized-lessons/stative-vs-action-verbs" element={<CustomLessonGate slug="stative-vs-action-verbs"><StativeVsActionVerbsLesson /></CustomLessonGate>} />
             <Route path="/library/customized-lessons/present-simple" element={<CustomLessonGate slug="present-simple"><PresentSimpleLesson /></CustomLessonGate>} />

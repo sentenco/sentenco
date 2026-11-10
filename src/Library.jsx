@@ -130,6 +130,7 @@ import { fetchOwnProfile } from "./profileFields.js";
 import { BOOK_AGE_TRACK } from "./bookAgeTrack.js";
 import ReadingRoomSwitch from "./ReadingRoomSwitch.jsx";
 import { UNSEEN_HUB_SLUGS } from "./unseenHubSlugs.js";
+import { hasUnseenPlan } from "./unseenAccess.js";
 
 // The Unseen Reading room is loaded only when opened (it carries the lesson texts).
 const UnseenHub = lazy(() => import("./UnseenHub.jsx"));
@@ -1382,8 +1383,11 @@ export default function Library() {
   const clAccess = useCustomLessonAccess(category === "Customized Lessons" || category === "Reading");
   // The site owner always sees every lesson; everyone else sees what the database says is theirs or shared with them.
   const clVisible = CUSTOM_LESSONS_NEWEST_FIRST.filter((l) => !l.hub && (clAccess.access.has(l.slug) || clAccess.isOwnerEmail));
-  // Reading has two rooms (Story Books, Unseen Reading). The Unseen room shows only for people who can open those lessons.
-  const canOpenUnseen = React.useCallback((slug) => clAccess.isOwnerEmail || clAccess.access.has(slug), [clAccess.isOwnerEmail, clAccess.access]);
+  // Reading has two rooms (Story Books, Unseen Reading). The Unseen room is open to every Pro and Pro+ account (trial and codes count);
+  // on a free account it shows only if a lesson was shared with them.
+  const { plan: unseenPlan, planReady: unseenPlanReady } = useAuth();
+  const unseenForPlan = !!unseenPlanReady && hasUnseenPlan(unseenPlan);
+  const canOpenUnseen = React.useCallback((slug) => unseenForPlan || clAccess.isOwnerEmail || clAccess.access.has(slug), [unseenForPlan, clAccess.isOwnerEmail, clAccess.access]);
   const unseenAllowed = category === "Reading" && UNSEEN_HUB_SLUGS.some(canOpenUnseen);
   const readingRoom = unseenAllowed && searchParams.get("rView") === "unseen" ? "unseen" : "books";
   const changeReadingRoom = (r) => {
