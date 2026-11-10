@@ -30,7 +30,7 @@
 }
 .uh-tab i { font: 800 12px 'Nunito', sans-serif; font-style: normal; background: var(--navy); color: #fff; border-radius: 999px; padding: 0 7px; min-width: 22px; text-align: center; }
 .uh-tab[data-s="all"] { --c: #FFFFFF; } .uh-tab[data-s="body"] { --c: #FF9DB0; } .uh-tab[data-s="nature"] { --c: #7BE3AA; }
-.uh-tab[data-s="tech"] { --c: #8FBBFF; } .uh-tab[data-s="lang"] { --c: #FFD25E; } .uh-tab[data-s="space"] { --c: #B7A6FF; } .uh-tab[data-s="mma"] { --c: #FFA45C; } .uh-tab[data-s="safety"] { --c: #5CD6E6; } .uh-tab[data-s="money"] { --c: #C6E75F; } .uh-tab[data-s="mind"] { --c: #EBA6F2; } .uh-tab[data-s="history"] { --c: #E5BE8E; } .uh-tab[data-s="sports"] { --c: #FF8266; } .uh-tab[data-s="psych"] { --c: #2FC4B2; } .uh-tab[data-s="older"] { --c: #D9D1F2; } .uh-tab[data-s="kids"] { --c: #6FD3FF; }
+.uh-tab[data-s="tech"] { --c: #8FBBFF; } .uh-tab[data-s="lang"] { --c: #FFD25E; } .uh-tab[data-s="space"] { --c: #B7A6FF; } .uh-tab[data-s="mma"] { --c: #FFA45C; } .uh-tab[data-s="safety"] { --c: #5CD6E6; } .uh-tab[data-s="money"] { --c: #C6E75F; } .uh-tab[data-s="mind"] { --c: #EBA6F2; } .uh-tab[data-s="history"] { --c: #E5BE8E; } .uh-tab[data-s="sports"] { --c: #FF8266; } .uh-tab[data-s="psych"] { --c: #2FC4B2; } .uh-tab[data-s="older"] { --c: #D9D1F2; } .uh-tab[data-s="k-animals"] { --c: #8EE07A; } .uh-tab[data-s="k-works"] { --c: #8FBBFF; } .uh-tab[data-s="k-earth"] { --c: #6FD3FF; } .uh-tab[data-s="k-past"] { --c: #E5BE8E; } .uh-tab[data-s="k-wow"] { --c: #EBA6F2; } .uh-tab[data-s="k-food"] { --c: #FFB067; }
 .uh-tab:hover { transform: translateY(2px); opacity: 1; }
 .uh-tab[aria-pressed="true"] { transform: none; opacity: 1; padding-top: 13px; padding-bottom: 12px; }
 .uh-panel { display: flex; flex-wrap: wrap; gap: 12px; background: var(--cur, #fff); border: 2.5px solid var(--navy); border-radius: 0 18px 18px 18px; padding: 16px; box-shadow: 6px 6px 0 var(--navy); position: relative; z-index: 0; transition: background .15s; }
@@ -80,7 +80,7 @@
 .uh-pg-info { flex-basis: 100%; text-align: center; font: 700 14px 'Nunito', sans-serif; color: var(--navy); opacity: .75; }
 .uh-empty { grid-column: 1 / -1; background: #fff; border: 2.5px dashed var(--navy); border-radius: 22px; padding: 30px 18px; text-align: center; font-family: 'Lilita One', cursive; font-weight: 400; font-size: 22px; }
 
-.uh-c-body { --bg: #FF9DB0; } .uh-c-nature { --bg: #7BE3AA; } .uh-c-tech { --bg: #8FBBFF; } .uh-c-lang { --bg: #FFD25E; } .uh-c-space { --bg: #B7A6FF; } .uh-c-mma { --bg: #FFA45C; } .uh-c-safety { --bg: #5CD6E6; } .uh-c-money { --bg: #C6E75F; } .uh-c-mind { --bg: #EBA6F2; } .uh-c-history { --bg: #E5BE8E; } .uh-c-sports { --bg: #FF8266; } .uh-c-psych { --bg: #2FC4B2; } .uh-c-older { --bg: #D9D1F2; } .uh-c-kids { --bg: #6FD3FF; }
+.uh-c-body { --bg: #FF9DB0; } .uh-c-nature { --bg: #7BE3AA; } .uh-c-tech { --bg: #8FBBFF; } .uh-c-lang { --bg: #FFD25E; } .uh-c-space { --bg: #B7A6FF; } .uh-c-mma { --bg: #FFA45C; } .uh-c-safety { --bg: #5CD6E6; } .uh-c-money { --bg: #C6E75F; } .uh-c-mind { --bg: #EBA6F2; } .uh-c-history { --bg: #E5BE8E; } .uh-c-sports { --bg: #FF8266; } .uh-c-psych { --bg: #2FC4B2; } .uh-c-older { --bg: #D9D1F2; } .uh-c-k-animals { --bg: #8EE07A; } .uh-c-k-works { --bg: #8FBBFF; } .uh-c-k-earth { --bg: #6FD3FF; } .uh-c-k-past { --bg: #E5BE8E; } .uh-c-k-wow { --bg: #EBA6F2; } .uh-c-k-food { --bg: #FFB067; }
 
 @media (prefers-reduced-motion: reduce) {
   .uh-tile, .uh-big, .uh-tab, .uh-panel, .uh-play, .uh-pg { transition: none; }

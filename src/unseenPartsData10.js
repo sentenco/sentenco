@@ -1,4 +1,4 @@
-// Unseen Reading for Kids (Parts 211 to 230): one Kids shelf with a mix of topics kids like, written for
+// Unseen Reading for Kids (Parts 211 to 240), sorted into six Kids shelves in unseenShelfByPart.js: one Kids shelf with a mix of topics kids like, written for
 // children before their teens. Short sentences, everyday words, five questions per text (Main idea, Detail,
 // Vocabulary, Reference, Inference) and five words per text to match. Same item format as unseenPartsData9.js.
 
@@ -641,6 +641,326 @@ export const UNSEEN_PARTS_10 = [
     matches: {
       A: [["appears", "comes where you can see it"], ["raindrop", "one small drop of rain"], ["bends", "changes direction and is no longer straight"], ["spread", "move apart to cover a bigger space"], ["violet", "a light purple color"]],
       B: [["freezes", "turns into ice because of cold"], ["layer", "a flat part that covers another part"], ["hailstone", "one ball of hail"], ["onion", "a round vegetable with many thin rings inside"], ["pea", "a very small, round, green vegetable"]],
+    },
+  },
+  {
+    part: 231,
+    slug: "unseen-reading-part-231",
+    theme: "Planes",
+    blurb: "how planes stay in the air, the first flight",
+    texts: {
+      A: {
+        title: "How Planes Stay in the Air",
+        text: "A big plane can weigh more than 300,000 kilograms. So how does it stay up in the sky? The answer is the wings. A wing is curved on top and flatter underneath. When the plane moves fast, air rushes over and under the wings. The shape of the wing pushes air down. When air is pushed down, the wing is pushed up. This push is called lift. The engines move the plane forward very fast. A plane needs speed to make enough lift. That is why it runs fast along the runway before it takes off.",
+      },
+      B: {
+        title: "The First Flight",
+        text: "For a long time, people dreamed of flying like birds. Two brothers from the United States, Orville and Wilbur Wright, made that dream come true. They had a shop where they fixed and built bicycles. They used their tools to build a plane with an engine. On December 17, 1903, Orville flew it for the first time. The flight lasted only 12 seconds. The plane went about 37 meters, less than the length of a big plane today. But it was the first real flight with an engine. Later that day, Wilbur flew 260 meters in almost one minute.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "How the wings and speed keep a plane in the air.", "Why planes are very heavy.", "How pilots learn to fly.", "The text explains that the wings push air down, which pushes the plane up, and that a plane needs speed.", ["The answer is the wings", "A plane needs speed to make enough lift"]],
+      ["A", "Detail", "What is the push that keeps a plane up called?", "Lift.", "Speed.", "Runway.", "The text says this push is called lift.", "This push is called lift"],
+      ["A", "Vocabulary", "In the text, “flatter” means…", "less curved, more even.", "heavier.", "faster.", "A wing is curved on top and flatter underneath, so the bottom is more even than the top.", "A wing is curved on top and flatter underneath"],
+      ["A", "Reference", "In the text, “it” in “before it takes off” refers to…", "the plane.", "the wing.", "the runway.", "The plane runs fast along the runway before the plane takes off.", "That is why it runs fast along the runway before it takes off"],
+      ["A", "Inference", "Why does a plane run fast along the runway?", "It needs speed to make enough lift.", "The pilot is late.", "The runway is too short.", "The text says a plane needs speed to make enough lift, and that is why it runs fast along the runway.", ["A plane needs speed to make enough lift", "That is why it runs fast along the runway"]],
+      ["B", "Main idea", "What is the text mostly about?", "Two brothers made the first real flight with an engine.", "Two brothers built the first bicycle.", "Birds taught people how to fly.", "The text says the Wright brothers made the dream of flying come true with the first real flight with an engine.", ["Orville and Wilbur Wright, made that dream come true", "it was the first real flight with an engine"]],
+      ["B", "Detail", "How long did the first flight last?", "12 seconds.", "12 minutes.", "One hour.", "The text says the flight lasted only 12 seconds.", "The flight lasted only 12 seconds"],
+      ["B", "Vocabulary", "In the text, “dream” means…", "something you really want to happen.", "a bad night.", "a fast machine.", "People wanted to fly for a long time, and the brothers made that dream come true.", "made that dream come true"],
+      ["B", "Reference", "In the text, “it” in “Orville flew it” refers to…", "the plane.", "the shop.", "the bicycle.", "The sentence before says they built a plane with an engine, and Orville flew the plane.", "They used their tools to build a plane with an engine. On December 17, 1903, Orville flew it for the first time"],
+      ["B", "Inference", "How did fixing bicycles help the brothers?", "They had the tools and skills to build a plane.", "They sold bicycles to buy a plane.", "They rode bicycles into the sky.", "The text says they fixed and built bicycles, and they used their tools to build a plane.", ["They had a shop where they fixed and built bicycles", "They used their tools to build a plane with an engine"]],
+    ],
+    matches: {
+      A: [["curved", "bent like part of a circle"], ["underneath", "under something"], ["rushes", "moves very fast"], ["lift", "the push that keeps a plane up"], ["runway", "the long road where planes take off and land"]],
+      B: [["dreamed", "hoped for something for a long time"], ["fixed", "made something work again"], ["tools", "things you use to make or fix things"], ["flight", "a trip through the air"], ["length", "how long something is"]],
+    },
+  },
+  {
+    part: 232,
+    slug: "unseen-reading-part-232",
+    theme: "Colors of the Sky",
+    blurb: "why the sky is blue, why sunsets are red",
+    texts: {
+      A: {
+        title: "Why the Sky Is Blue",
+        text: "On a sunny day, the sky is bright blue. But sunlight looks white. Where does the blue come from? Sunlight is made of all the colors mixed together. When sunlight comes into the air around the Earth, it hits tiny bits of air. These tiny bits bounce the light around. Blue light bounces much more than red or yellow light. So blue light spreads all over the sky. When you look up, blue light comes to your eyes from every direction. That is why the sky looks blue. On the Moon there is no air, so the sky is black.",
+      },
+      B: {
+        title: "Why Sunsets Are Red",
+        text: "In the evening, the sky can turn orange, pink and red. Why does this happen? When the sun is low, its light travels through much more air to reach you. On the long way, most of the blue light bounces away. It never reaches your eyes. The red and orange light can travel farther. So at sunset, red and orange light fills the sky. Dust and tiny drops of water in the air can make the colors even stronger. The same thing happens at sunrise. Some people say a red evening sky means good weather tomorrow.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Air bounces blue light around, so the sky looks blue.", "The sea paints the sky blue.", "The sky is blue because the Sun is blue.", "The text explains that blue light bounces much more than other colors, and that is why the sky looks blue.", ["Blue light bounces much more than red or yellow light", "That is why the sky looks blue"]],
+      ["A", "Detail", "What color is the sky on the Moon?", "Black.", "Blue.", "Red.", "The text says on the Moon there is no air, so the sky is black.", "On the Moon there is no air, so the sky is black"],
+      ["A", "Vocabulary", "In the text, “bright” means…", "full of light.", "very dark.", "very cold.", "On a sunny day the sky is bright blue, which means it is full of light.", "the sky is bright blue"],
+      ["A", "Reference", "In the text, “it” in “it hits tiny bits of air” refers to…", "sunlight.", "the Earth.", "the Moon.", "The sentence says sunlight comes into the air, and the sunlight hits tiny bits of air.", "When sunlight comes into the air around the Earth, it hits tiny bits of air"],
+      ["A", "Inference", "Why is the sky black on the Moon?", "There is no air to bounce the blue light around.", "The Moon is too far from the Sun.", "The Moon is always at night.", "The text says tiny bits of air bounce the light around, and the Moon has no air.", ["These tiny bits bounce the light around", "On the Moon there is no air, so the sky is black"]],
+      ["B", "Main idea", "What is the text mostly about?", "At sunset, light travels through more air, so the sky looks red and orange.", "At sunset, the sun becomes red hot.", "At sunset, the clouds catch fire.", "The text explains that when the sun is low, its light travels through more air, and red and orange light fills the sky.", ["its light travels through much more air to reach you", "So at sunset, red and orange light fills the sky"]],
+      ["B", "Detail", "What can make sunset colors even stronger?", "Dust and tiny drops of water in the air.", "Strong wind.", "Cold weather.", "The text says dust and tiny drops of water in the air can make the colors even stronger.", "Dust and tiny drops of water in the air can make the colors even stronger"],
+      ["B", "Vocabulary", "In the text, “low” means…", "close to the ground.", "very bright.", "very small.", "In the evening the sun is low in the sky, which means it is close to the ground.", "When the sun is low"],
+      ["B", "Reference", "In the text, “It” in “It never reaches your eyes” refers to…", "the blue light.", "the sun.", "the red light.", "The sentence before says most of the blue light bounces away, so the blue light never reaches your eyes.", "most of the blue light bounces away. It never reaches your eyes"],
+      ["B", "Inference", "Why do we not see much blue in the sky at sunset?", "Most of the blue light bounces away before it reaches us.", "The blue light goes to sleep.", "The clouds eat the blue light.", "The text says that on the long way, most of the blue light bounces away and never reaches your eyes.", ["most of the blue light bounces away", "It never reaches your eyes"]],
+    ],
+    matches: {
+      A: [["mixed", "put together"], ["bits", "small pieces"], ["bounce", "to hit something and go back"], ["spreads", "goes over a big area"], ["direction", "the way something goes or points"]],
+      B: [["evening", "the end of the day"], ["travels", "goes from one place to another"], ["reach", "to get to"], ["farther", "a longer way"], ["sunset", "the time when the sun goes down"]],
+    },
+  },
+  {
+    part: 233,
+    slug: "unseen-reading-part-233",
+    theme: "Earthquakes",
+    blurb: "why the ground shakes, drop, cover and hold on",
+    texts: {
+      A: {
+        title: "Why the Ground Shakes",
+        text: "The ground under your feet feels very still. But the outside of the Earth is broken into huge pieces called plates. The plates move very slowly. They move about as fast as your fingernails grow! Sometimes two plates get stuck. They keep pushing, and the pressure builds up. Then, suddenly, they slip. The ground shakes, and that is an earthquake. Most earthquakes are small, and people do not feel them. Big earthquakes can break roads and buildings. The Philippines is in a place where plates meet. So it has many earthquakes every year.",
+      },
+      B: {
+        title: "Drop, Cover and Hold On",
+        text: "What should you do in an earthquake? Remember three words: drop, cover and hold on. First, drop down onto your hands and knees. This keeps you from falling. Next, cover your head and neck with your arms. If you can, crawl under a strong table. Then hold on to the table until the shaking stops. Stay away from windows, because glass can break. Do not run outside while the ground is shaking. When the shaking stops, walk out slowly and carefully with an adult. Schools in the Philippines practice this with earthquake drills.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Earthquakes happen when moving plates suddenly slip.", "Earthquakes happen when it rains a lot.", "Earthquakes only happen in the sea.", "The text explains that the Earth is broken into plates, and when stuck plates suddenly slip, the ground shakes.", ["the outside of the Earth is broken into huge pieces called plates", "Then, suddenly, they slip"]],
+      ["A", "Detail", "How fast do the plates move?", "About as fast as your fingernails grow.", "As fast as a car.", "They never move.", "The text says they move about as fast as your fingernails grow.", "They move about as fast as your fingernails grow"],
+      ["A", "Vocabulary", "In the text, “huge” means…", "very big.", "very hot.", "very new.", "The outside of the Earth is broken into huge pieces, which means very big pieces.", "huge pieces called plates"],
+      ["A", "Reference", "In the text, “they” in “they slip” refers to…", "the plates.", "people.", "roads.", "The sentences before talk about two plates that get stuck, and then the plates slip.", "Sometimes two plates get stuck. They keep pushing, and the pressure builds up. Then, suddenly, they slip"],
+      ["A", "Inference", "Why does the Philippines have many earthquakes?", "It is in a place where plates meet.", "It has many big buildings.", "It is very hot there.", "The text says the Philippines is in a place where plates meet, so it has many earthquakes.", "The Philippines is in a place where plates meet"],
+      ["B", "Main idea", "What is the text mostly about?", "There are three steps to stay safe in an earthquake.", "Run outside as fast as you can in an earthquake.", "Earthquakes only happen at school.", "The text teaches three words to remember in an earthquake: drop, cover and hold on.", ["Remember three words: drop, cover and hold on", "Then hold on to the table until the shaking stops"]],
+      ["B", "Detail", "What should you cover with your arms?", "Your head and neck.", "Your feet.", "The window.", "The text says to cover your head and neck with your arms.", "cover your head and neck with your arms"],
+      ["B", "Vocabulary", "In the text, “strong” means…", "hard to break.", "very small.", "very soft.", "You should crawl under a strong table, which means a table that is hard to break.", "crawl under a strong table"],
+      ["B", "Reference", "In the text, “This” in “This keeps you from falling” refers to…", "dropping onto your hands and knees.", "running outside.", "holding a window.", "The sentence before says to drop down onto your hands and knees, and this keeps you from falling.", "First, drop down onto your hands and knees. This keeps you from falling"],
+      ["B", "Inference", "Why should you stay away from windows?", "Glass can break and hurt you.", "Windows are cold.", "You cannot see the sky.", "The text says to stay away from windows, because glass can break.", "Stay away from windows, because glass can break"],
+    ],
+    matches: {
+      A: [["still", "not moving"], ["plates", "huge pieces of the outside of the Earth"], ["stuck", "not able to move"], ["slip", "to move suddenly and slide"], ["earthquake", "a time when the ground shakes"]],
+      B: [["knees", "the middle parts of your legs that bend"], ["crawl", "to move on your hands and knees"], ["shaking", "moving quickly up and down or side to side"], ["adult", "a grown-up person"], ["drills", "practice for what to do in an emergency"]],
+    },
+  },
+  {
+    part: 234,
+    slug: "unseen-reading-part-234",
+    theme: "Knights and Castles",
+    blurb: "life in a castle, how to become a knight",
+    texts: {
+      A: {
+        title: "Life in a Castle",
+        text: "Long ago in Europe, kings and lords lived in castles. A castle had thick stone walls to keep enemies out. Many castles had a moat, a deep ditch full of water around the walls. To get in, people crossed a bridge called a drawbridge. When enemies came, the drawbridge was pulled up. Life inside was not always comfortable. The rooms were cold and dark, and the windows were small. People warmed themselves by big fires. Hundreds of people lived and worked in a castle, like cooks, guards and blacksmiths.",
+      },
+      B: {
+        title: "How to Become a Knight",
+        text: "Becoming a knight took many years. A boy from a rich family started at about seven years old. First, he became a page. A page served a lord. He learned good manners, riding and how to use a small sword. At about fourteen, he became a squire. A squire helped a knight. He cleaned the knight's armor and took care of his horse. He also learned to fight. At about twenty-one, a squire could become a knight. In a special ceremony, the lord touched his shoulder with a sword. Knights promised to be brave and to protect the weak.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Castles were strong homes, but life inside was not easy.", "Castles were warm and bright inside.", "Only one person lived in a castle.", "The text says castles had thick walls to keep enemies out, but life inside was not always comfortable.", ["A castle had thick stone walls to keep enemies out", "Life inside was not always comfortable"]],
+      ["A", "Detail", "What was a moat?", "A deep ditch full of water around the walls.", "A big fire.", "A tall tower.", "The text says a moat was a deep ditch full of water around the walls.", "a deep ditch full of water around the walls"],
+      ["A", "Vocabulary", "In the text, “pulled up” means…", "lifted up.", "pushed down.", "broken into pieces.", "When enemies came, the drawbridge was pulled up, so it was lifted and nobody could cross.", "the drawbridge was pulled up"],
+      ["A", "Reference", "In the text, “themselves” in “People warmed themselves” refers to…", "the people in the castle.", "the fires.", "the enemies.", "The people in the castle warmed their own bodies by big fires.", "People warmed themselves by big fires"],
+      ["A", "Inference", "Why was the drawbridge pulled up when enemies came?", "So the enemies could not cross into the castle.", "So the water could get in.", "So the cooks could go out.", "The text says people crossed the drawbridge to get in, so pulling it up kept the enemies out.", ["To get in, people crossed a bridge called a drawbridge", "When enemies came, the drawbridge was pulled up"]],
+      ["B", "Main idea", "What is the text mostly about?", "A boy trained for many years to become a knight.", "Any boy could become a knight in one day.", "Knights were chosen by their horses.", "The text says becoming a knight took many years, from page to squire to knight.", ["Becoming a knight took many years", "At about twenty-one, a squire could become a knight"]],
+      ["B", "Detail", "At what age did a boy become a squire?", "At about fourteen.", "At about seven.", "At about twenty-one.", "The text says that at about fourteen, he became a squire.", "At about fourteen, he became a squire"],
+      ["B", "Vocabulary", "In the text, “brave” means…", "not afraid of danger.", "very rich.", "very tired.", "Knights promised to be brave and to protect the weak, which means not to be afraid.", "Knights promised to be brave"],
+      ["B", "Reference", "In the text, “his” in “took care of his horse” refers to…", "the knight's.", "the page's.", "the lord's.", "The squire cleaned the knight's armor and took care of the knight's horse.", "He cleaned the knight's armor and took care of his horse"],
+      ["B", "Inference", "Why did a squire clean a knight's armor?", "His job was to help the knight.", "He wanted to sell it.", "He was a lord.", "The text says a squire helped a knight, and cleaning the armor was part of that help.", ["A squire helped a knight", "He cleaned the knight's armor"]],
+    ],
+    matches: {
+      A: [["thick", "big from one side to the other"], ["moat", "a deep ditch full of water around a castle"], ["drawbridge", "a bridge that can be pulled up"], ["comfortable", "nice and easy to be in"], ["guards", "people who keep a place safe"]],
+      B: [["manners", "polite ways to behave"], ["squire", "a young man who helped a knight"], ["armor", "metal clothes that protect the body"], ["ceremony", "a special event for something important"], ["brave", "not afraid of danger"]],
+    },
+  },
+  {
+    part: 235,
+    slug: "unseen-reading-part-235",
+    theme: "Vikings",
+    blurb: "Viking ships, did Vikings wear horned helmets",
+    texts: {
+      A: {
+        title: "Viking Ships",
+        text: "The Vikings lived in the cold north of Europe more than 1,000 years ago. They were famous sailors. Their ships were called longships. A longship was long and thin, with a big square sail. When there was no wind, the men pulled long oars. The ships did not need deep water. They could sail on the sea and up narrow rivers too. Many longships had a carved dragon head at the front. Vikings sailed very far. About 1,000 years ago, a Viking named Leif Erikson reached North America. That was almost 500 years before Columbus!",
+      },
+      B: {
+        title: "Did Vikings Wear Horned Helmets?",
+        text: "In cartoons and movies, Vikings often wear helmets with horns. But real Vikings did not. Scientists have found only one full Viking helmet. It is round and made of iron, and it has no horns. Horns would be a bad idea in a fight. An enemy could grab them, and they could get stuck on things. So where did the horns come from? In 1876, a German opera told old stories from the north of Europe. The costume maker gave the singers helmets with horns. People loved the look, and the idea stayed in pictures and movies.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Vikings built special ships and sailed very far.", "Vikings were afraid of the sea.", "Vikings lived in hot countries.", "The text says the Vikings were famous sailors with longships, and they sailed very far.", ["They were famous sailors", "Vikings sailed very far"]],
+      ["A", "Detail", "Who reached North America about 1,000 years ago?", "Leif Erikson.", "Columbus.", "A dragon.", "The text says a Viking named Leif Erikson reached North America.", "a Viking named Leif Erikson reached North America"],
+      ["A", "Vocabulary", "In the text, “deep” means…", "going far down.", "very fast.", "very clean.", "The ships did not need deep water, which means water that goes far down.", "The ships did not need deep water"],
+      ["A", "Reference", "In the text, “They” in “They could sail on the sea” refers to…", "the longships.", "the Vikings' houses.", "the oars.", "The sentence before is about the ships, and the ships could sail on the sea and up rivers.", "The ships did not need deep water. They could sail on the sea"],
+      ["A", "Inference", "Why could longships go up narrow rivers?", "They did not need deep water.", "They had dragon heads.", "They were very wide.", "The text says the ships did not need deep water, so they could sail up narrow rivers too.", ["The ships did not need deep water", "They could sail on the sea and up narrow rivers too"]],
+      ["B", "Main idea", "What is the text mostly about?", "Real Vikings did not wear helmets with horns.", "All Vikings wore helmets with horns.", "Vikings sang in operas about horns.", "The text says real Vikings did not wear horns, and the only full Viking helmet has no horns.", ["But real Vikings did not", "it has no horns"]],
+      ["B", "Detail", "What is the Viking helmet that scientists found made of?", "Iron.", "Gold.", "Wood.", "The text says it is round and made of iron.", "It is round and made of iron"],
+      ["B", "Vocabulary", "In the text, “idea” means…", "a thought or plan.", "a kind of helmet.", "a song.", "Horns would be a bad idea in a fight, which means a bad plan.", "Horns would be a bad idea in a fight"],
+      ["B", "Reference", "In the text, “them” in “An enemy could grab them” refers to…", "the horns.", "the Vikings.", "the singers.", "The sentence before talks about horns, and an enemy could grab the horns.", "Horns would be a bad idea in a fight. An enemy could grab them"],
+      ["B", "Inference", "Why do many people today think Vikings wore horns?", "An opera costume had horns, and pictures and movies copied it.", "Scientists found many horned helmets.", "Vikings drew horns on their ships.", "The text says a costume maker gave opera singers horned helmets, and the idea stayed in pictures and movies.", ["The costume maker gave the singers helmets with horns", "the idea stayed in pictures and movies"]],
+    ],
+    matches: {
+      A: [["sailors", "people who work on ships"], ["square", "a shape with four equal sides"], ["oars", "long sticks used to move a boat through water"], ["narrow", "not wide"], ["carved", "cut into a shape"]],
+      B: [["helmets", "hard hats that protect the head"], ["horns", "hard, pointed parts on an animal's head"], ["iron", "a strong gray metal"], ["grab", "to take something quickly"], ["costume", "special clothes for a show"]],
+    },
+  },
+  {
+    part: 236,
+    slug: "unseen-reading-part-236",
+    theme: "Eye Tricks",
+    blurb: "when your eyes are fooled, the blind spot in your eye",
+    texts: {
+      A: {
+        title: "When Your Eyes Are Fooled",
+        text: "Draw two lines that are the same length. Add arrow ends that point out to one line. Add arrow ends that point in to the other line. Now the lines look different! One looks longer, but they are the same. This is called an optical illusion. Your eyes send pictures to your brain. Your brain works fast, so it makes guesses. Usually the guesses are right. But some pictures trick the brain, and it guesses wrong. Even when you know the trick, you still see it. Artists and magicians use illusions to surprise people.",
+      },
+      B: {
+        title: "The Blind Spot",
+        text: "Each of your eyes has a blind spot. It is a small place at the back of the eye. You cannot see anything there. Why? At the back of the eye, a nerve goes from the eye to the brain. In that spot, there is nothing to catch light. But you never see a dark hole. Your brain fills in the empty space with what is around it. You can find your blind spot. Draw a cross on the left of a paper and a dot on the right. Close your left eye and look at the cross. Move the paper slowly. At one moment, the dot will disappear!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Some pictures trick the brain into seeing something wrong.", "Your eyes cannot see lines.", "Magicians make lines longer.", "The text explains that an optical illusion tricks the brain, and it guesses wrong.", ["This is called an optical illusion", "some pictures trick the brain, and it guesses wrong"]],
+      ["A", "Detail", "Where do your eyes send pictures?", "To your brain.", "To your hands.", "To the artist.", "The text says your eyes send pictures to your brain.", "Your eyes send pictures to your brain"],
+      ["A", "Vocabulary", "In the text, “different” means…", "not the same.", "very long.", "very old.", "The lines are the same length but look different, which means they look not the same.", "Now the lines look different"],
+      ["A", "Reference", "In the text, “it” in “it makes guesses” refers to…", "your brain.", "the line.", "the picture.", "The sentence says your brain works fast, so your brain makes guesses.", "Your brain works fast, so it makes guesses"],
+      ["A", "Inference", "Why does the brain sometimes see something wrong?", "It works fast and makes guesses.", "It is lazy and sleepy.", "It cannot see lines at all.", "The text says the brain works fast and makes guesses, and some pictures make it guess wrong.", ["Your brain works fast, so it makes guesses", "it guesses wrong"]],
+      ["B", "Main idea", "What is the text mostly about?", "Everyone has a small blind spot that the brain fills in.", "Only some people have eyes.", "Your eyes see a dark hole all day.", "The text says each eye has a blind spot, and the brain fills in the empty space.", ["Each of your eyes has a blind spot", "Your brain fills in the empty space"]],
+      ["B", "Detail", "Which eye do you close to find your blind spot?", "The left eye.", "The right eye.", "Both eyes.", "The text says to close your left eye and look at the cross.", "Close your left eye and look at the cross"],
+      ["B", "Vocabulary", "In the text, “disappear” means…", "go away so you cannot see it.", "get bigger.", "turn red.", "At one moment the dot will disappear, which means you cannot see it any more.", "the dot will disappear"],
+      ["B", "Reference", "In the text, “It” in “It is a small place” refers to…", "the blind spot.", "the brain.", "the paper.", "The sentence before talks about the blind spot, and the blind spot is a small place at the back of the eye.", "Each of your eyes has a blind spot. It is a small place"],
+      ["B", "Inference", "Why do you not see a dark hole in what you look at?", "The brain fills in the space.", "The hole is always closed.", "The nerve catches the light.", "The text says your brain fills in the empty space with what is around it.", "Your brain fills in the empty space with what is around it"],
+    ],
+    matches: {
+      A: [["length", "how long something is"], ["arrow", "a line with a point at one end"], ["illusion", "something that tricks your eyes"], ["guesses", "ideas about what is true, without being sure"], ["surprise", "to make someone feel something they did not expect"]],
+      B: [["blind", "not able to see"], ["nerve", "a thin part that carries messages to the brain"], ["catch", "to take and hold"], ["empty", "with nothing inside"], ["cross", "a mark like a small plus sign"]],
+    },
+  },
+  {
+    part: 237,
+    slug: "unseen-reading-part-237",
+    theme: "Young Record Breakers",
+    blurb: "the boy on top of Mount Everest, the youngest chess grandmaster",
+    texts: {
+      A: {
+        title: "The Boy on Top of the World",
+        text: "Mount Everest is the highest mountain in the world. It is about 8,849 meters high. Climbing it is very hard. The air at the top has very little oxygen, and it is extremely cold. In 2010, a boy from the United States named Jordan Romero reached the top. He was only thirteen years old! He climbed with his father and a team of guides. Jordan trained for years. He carried heavy bags up hills to get strong. Before Everest, he had already climbed high mountains on other continents. He wanted to show that young people can do big things.",
+      },
+      B: {
+        title: "The Youngest Chess Grandmaster",
+        text: "Grandmaster is the highest title a chess player can get. Most grandmasters are adults. But in 2021, a boy named Abhimanyu Mishra became the youngest grandmaster ever. He was twelve years and four months old. Abhimanyu lives in the United States. He started playing chess when he was about two and a half. His father taught him the moves. Abhimanyu practiced for many hours every day. To get the title, he had to beat very strong players in big tournaments. He broke a record that stood for nineteen years.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "A thirteen-year-old boy climbed the highest mountain in the world.", "A boy built the highest mountain.", "Mount Everest is easy to climb.", "The text says Jordan Romero reached the top of Mount Everest when he was only thirteen.", ["a boy from the United States named Jordan Romero reached the top", "He was only thirteen years old"]],
+      ["A", "Detail", "How high is Mount Everest?", "About 8,849 meters.", "About 849 meters.", "About 88,490 meters.", "The text says it is about 8,849 meters high.", "It is about 8,849 meters high"],
+      ["A", "Vocabulary", "In the text, “trained” means…", "practiced to get ready.", "rode a train.", "slept a lot.", "Jordan trained for years by carrying heavy bags up hills, which means he practiced to get ready.", "Jordan trained for years"],
+      ["A", "Reference", "In the text, “He” in “He climbed with his father” refers to…", "Jordan Romero.", "his father.", "a guide.", "The sentences before are about Jordan Romero, and Jordan climbed with his father.", "He climbed with his father and a team of guides"],
+      ["A", "Inference", "Why did Jordan carry heavy bags up hills?", "To get strong for the climb.", "To sell the bags.", "Because his father was tired.", "The text says he carried heavy bags up hills to get strong.", "He carried heavy bags up hills to get strong"],
+      ["B", "Main idea", "What is the text mostly about?", "A boy became the youngest chess grandmaster ever.", "A boy made the game of chess.", "Grandmasters are always children.", "The text says Abhimanyu Mishra became the youngest grandmaster ever at twelve.", ["a boy named Abhimanyu Mishra became the youngest grandmaster ever", "He was twelve years and four months old"]],
+      ["B", "Detail", "Who taught Abhimanyu the moves?", "His father.", "His teacher.", "A grandmaster.", "The text says his father taught him the moves.", "His father taught him the moves"],
+      ["B", "Vocabulary", "In the text, “beat” means…", "to win against someone.", "to hit a drum.", "to help someone.", "To get the title, he had to beat very strong players, which means win against them.", "he had to beat very strong players"],
+      ["B", "Reference", "In the text, “He” in “He started playing chess” refers to…", "Abhimanyu.", "his father.", "a grandmaster.", "The sentence before is about Abhimanyu, and Abhimanyu started playing chess very young.", "Abhimanyu lives in the United States. He started playing chess"],
+      ["B", "Inference", "Why do you think Abhimanyu became so good so young?", "He started very early and practiced every day.", "Chess is very easy.", "He played only one game.", "The text says he started at about two and a half and practiced for many hours every day.", ["He started playing chess when he was about two and a half", "Abhimanyu practiced for many hours every day"]],
+    ],
+    matches: {
+      A: [["highest", "taller than all the others"], ["oxygen", "the part of the air we need to live"], ["extremely", "very, very"], ["guides", "people who show the way"], ["continents", "the very large pieces of land on Earth"]],
+      B: [["title", "a special name you win"], ["chess", "a board game for two players"], ["practiced", "did something again and again to get better"], ["tournaments", "big contests with many players"], ["record", "the best result ever"]],
+    },
+  },
+  {
+    part: 238,
+    slug: "unseen-reading-part-238",
+    theme: "Kitchen Science",
+    blurb: "why popcorn pops, why onions make you cry",
+    texts: {
+      A: {
+        title: "Why Popcorn Pops",
+        text: "Popcorn is a special kind of corn. Each kernel has a hard shell. Inside the shell, there is soft starch and a tiny drop of water. When you heat the kernel, the water turns into steam. The steam needs more space, but the hard shell holds it in. The pressure grows and grows. At about 180 degrees Celsius, the shell bursts open with a pop! The soft starch puffs out and becomes white and fluffy. The kernel turns inside out. Some kernels do not pop. Their shells may have a small crack, so the steam escapes.",
+      },
+      B: {
+        title: "Why Onions Make You Cry",
+        text: "Have you ever cut an onion and started to cry? You are not sad. The onion is protecting itself. When you cut an onion, you break its tiny cells. Chemicals inside the cells mix together. They make a special gas. The gas floats up into your eyes. Your eyes feel it and make tears to wash it away. That is why you cry. There are some tricks to cry less. Put the onion in the fridge before you cut it. Cold slows down the gas. You can also use a very sharp knife, because it breaks fewer cells.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Water inside a corn kernel turns to steam and makes it burst.", "Popcorn grows on trees.", "Popcorn pops because it is cold.", "The text explains that the water in the kernel turns into steam, and the shell bursts open with a pop.", ["the water turns into steam", "the shell bursts open with a pop"]],
+      ["A", "Detail", "At what heat does the shell burst?", "About 180 degrees Celsius.", "About 18 degrees Celsius.", "About 1,800 degrees Celsius.", "The text says that at about 180 degrees Celsius, the shell bursts open.", "At about 180 degrees Celsius, the shell bursts open"],
+      ["A", "Vocabulary", "In the text, “space” means…", "room for something.", "the sky with stars.", "a hard shell.", "The steam needs more space, which means more room.", "The steam needs more space"],
+      ["A", "Reference", "In the text, “it” in “the hard shell holds it in” refers to…", "the steam.", "the corn.", "the pop.", "The sentence says the steam needs more space, but the hard shell holds the steam in.", "The steam needs more space, but the hard shell holds it in"],
+      ["A", "Inference", "Why do some kernels not pop?", "Steam escapes through a crack in the shell.", "They are too big.", "They have no shell.", "The text says their shells may have a small crack, so the steam escapes.", "Their shells may have a small crack, so the steam escapes"],
+      ["B", "Main idea", "What is the text mostly about?", "Cutting an onion makes a gas that makes your eyes cry.", "Onions make people sad.", "Onions are full of tears.", "The text explains that cutting an onion makes a special gas, and your eyes make tears to wash it away.", ["They make a special gas", "Your eyes feel it and make tears to wash it away"]],
+      ["B", "Detail", "Where can you put an onion to cry less?", "In the fridge.", "In the sun.", "In hot water.", "The text says to put the onion in the fridge before you cut it.", "Put the onion in the fridge before you cut it"],
+      ["B", "Vocabulary", "In the text, “sharp” means…", "able to cut easily.", "very heavy.", "very old.", "A very sharp knife cuts easily and breaks fewer cells.", "a very sharp knife"],
+      ["B", "Reference", "In the text, “it” in “to wash it away” refers to…", "the gas.", "the onion.", "the knife.", "The gas floats into your eyes, and your eyes make tears to wash the gas away.", "Your eyes feel it and make tears to wash it away"],
+      ["B", "Inference", "Why does a sharp knife help?", "It breaks fewer cells, so less gas is made.", "It makes the onion cold.", "It cuts the gas.", "The text says cutting breaks the onion's cells to make the gas, and a sharp knife breaks fewer cells.", ["you break its tiny cells", "because it breaks fewer cells"]],
+    ],
+    matches: {
+      A: [["kernel", "one seed of corn"], ["starch", "a soft white food inside seeds"], ["steam", "the hot gas that comes from boiling water"], ["puffs", "grows bigger with air"], ["fluffy", "soft and light"]],
+      B: [["protecting", "keeping safe"], ["cells", "the tiny parts that living things are made of"], ["tears", "water that comes from your eyes"], ["slows", "makes something go less fast"], ["fewer", "not as many"]],
+    },
+  },
+  {
+    part: 239,
+    slug: "unseen-reading-part-239",
+    theme: "Bees and Honey",
+    blurb: "how bees make honey, honey that lasts a very long time",
+    texts: {
+      A: {
+        title: "How Bees Make Honey",
+        text: "Honeybees fly from flower to flower. They drink a sweet liquid called nectar. They carry it home to the hive in a special stomach. In the hive, other bees pass the nectar from mouth to mouth. Then they put it into small six-sided cells called honeycomb. The nectar is still very wet. So the bees fan it with their wings to dry it out. Slowly, it becomes thick, sweet honey. Then the bees close the cells with wax. In its whole life, one bee makes only a tiny bit of honey. It is about one twelfth of a teaspoon. A jar of honey needs the work of thousands of bees!",
+      },
+      B: {
+        title: "Honey That Lasts a Long Time",
+        text: "Most food goes bad after a few days or weeks. Honey is different. It can stay good for a very, very long time. Scientists found pots of honey in old tombs in Egypt. The honey was about 3,000 years old, and scientists say it was still good! Why does honey last so long? Honey has very little water. Germs need water to grow, so they cannot live in honey. Honey is also a little sour, which germs do not like. Keep honey in a closed jar so it stays dry. One warning: babies under one year old should not eat honey.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Bees turn flower nectar into honey.", "Bees buy honey from people.", "Honey grows inside flowers.", "The text explains how bees drink nectar and slowly turn it into thick, sweet honey.", ["They drink a sweet liquid called nectar", "Slowly, it becomes thick, sweet honey"]],
+      ["A", "Detail", "What shape are the cells in a honeycomb?", "Six-sided.", "Round.", "Square.", "The text says they put it into small six-sided cells called honeycomb.", "small six-sided cells called honeycomb"],
+      ["A", "Vocabulary", "In the text, “pass” means…", "give from one to another.", "walk past.", "throw away.", "Other bees pass the nectar from mouth to mouth, which means they give it from one bee to another.", "other bees pass the nectar from mouth to mouth"],
+      ["A", "Reference", "In the text, “it” in “to dry it out” refers to…", "the nectar.", "the wings.", "the flower.", "The sentence before says the nectar is still very wet, so the bees fan the nectar to dry it out.", "The nectar is still very wet. So the bees fan it with their wings to dry it out"],
+      ["A", "Inference", "Why does a jar of honey need thousands of bees?", "One bee makes only a tiny bit of honey.", "Bees are lazy.", "A jar is very small.", "The text says one bee makes only a tiny bit of honey in its whole life.", ["In its whole life, one bee makes only a tiny bit of honey", "A jar of honey needs the work of thousands of bees"]],
+      ["B", "Main idea", "What is the text mostly about?", "Honey can stay good for a very long time.", "Honey goes bad in a few days.", "Honey is made in Egypt.", "The text says honey is different from most food because it can stay good for a very long time.", ["Honey is different", "It can stay good for a very, very long time"]],
+      ["B", "Detail", "How old was the honey found in Egypt?", "About 3,000 years old.", "About 300 years old.", "About 30 years old.", "The text says the honey was about 3,000 years old.", "The honey was about 3,000 years old"],
+      ["B", "Vocabulary", "In the text, “goes bad” means…", "is no longer good to eat.", "becomes sweeter.", "gets bigger.", "Most food goes bad after a few days or weeks, which means it is no longer good to eat.", "Most food goes bad after a few days or weeks"],
+      ["B", "Reference", "In the text, “they” in “they cannot live in honey” refers to…", "germs.", "scientists.", "babies.", "The sentence says germs need water to grow, so germs cannot live in honey.", "Germs need water to grow, so they cannot live in honey"],
+      ["B", "Inference", "Why should you keep honey in a closed jar?", "So it stays dry and germs cannot grow.", "So bees cannot find it.", "So it turns into wax.", "The text says to keep honey in a closed jar so it stays dry, and germs need water to grow.", ["Keep honey in a closed jar so it stays dry", "Germs need water to grow"]],
+    ],
+    matches: {
+      A: [["nectar", "a sweet liquid inside flowers"], ["hive", "the home of bees"], ["honeycomb", "rows of six-sided wax cells in a hive"], ["fan", "to move air with something"], ["wax", "a soft material that bees make"]],
+      B: [["tombs", "places where dead people are kept"], ["germs", "tiny living things that can make you sick"], ["sour", "with a sharp taste like a lemon"], ["warning", "words that tell you about a danger"], ["jar", "a glass pot with a lid"]],
+    },
+  },
+  {
+    part: 240,
+    slug: "unseen-reading-part-240",
+    theme: "Food Around the World",
+    blurb: "rice around the world, eating with hands, chopsticks or a fork",
+    texts: {
+      A: {
+        title: "Rice Around the World",
+        text: "Rice is one of the most important foods on Earth. More than half of the people in the world eat rice. In the Philippines, many families eat rice at every meal, even breakfast! Rice grows in wet fields called paddies. Farmers plant small rice plants in water. After a few months, the plants turn gold, and farmers cut them. Every country cooks rice in its own way. In Japan, people roll rice with fish to make sushi. In Spain, people cook rice with seafood in a big flat pan. It is called paella.",
+      },
+      B: {
+        title: "Hands, Chopsticks or a Fork?",
+        text: "People around the world eat in different ways. In many places, people use a fork and a knife. In China, Japan and Korea, people often use chopsticks. Chopsticks are two thin sticks that you hold in one hand. In parts of India, the Middle East and Africa, people eat with their right hand. In the Philippines, there is a happy way to eat called kamayan. Food is put on big banana leaves on a long table. Everyone eats together with their hands. Each way has its own good manners. When you visit a new place, watch and learn!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Rice is eaten all over the world in many different ways.", "Rice is eaten only in Japan.", "Rice grows in dry deserts.", "The text says more than half of the people in the world eat rice, and every country cooks it in its own way.", ["More than half of the people in the world eat rice", "Every country cooks rice in its own way"]],
+      ["A", "Detail", "Where does rice grow?", "In wet fields called paddies.", "On tall trees.", "In the sea.", "The text says rice grows in wet fields called paddies.", "Rice grows in wet fields called paddies"],
+      ["A", "Vocabulary", "In the text, “meal” means…", "a time when you eat food.", "a kind of fish.", "a big field.", "Many families eat rice at every meal, even breakfast, so a meal is a time when you eat.", "eat rice at every meal"],
+      ["A", "Reference", "In the text, “them” in “farmers cut them” refers to…", "the rice plants.", "the families.", "the fish.", "The sentence says the plants turn gold, and farmers cut the plants.", "the plants turn gold, and farmers cut them"],
+      ["A", "Inference", "How do farmers know the rice is ready to cut?", "The plants turn gold.", "The water gets hot.", "The fish come.", "The text says that after a few months the plants turn gold, and then farmers cut them.", "After a few months, the plants turn gold, and farmers cut them"],
+      ["B", "Main idea", "What is the text mostly about?", "People eat in different ways around the world.", "Everyone in the world uses a fork.", "Chopsticks are made from banana leaves.", "The text says people around the world eat in different ways, and each way has its own manners.", ["People around the world eat in different ways", "Each way has its own good manners"]],
+      ["B", "Detail", "What is food put on in kamayan?", "Big banana leaves.", "Small plates.", "Chopsticks.", "The text says food is put on big banana leaves on a long table.", "Food is put on big banana leaves on a long table"],
+      ["B", "Vocabulary", "In the text, “visit” means…", "to go and see a place or person.", "to cook food.", "to clean a table.", "When you visit a new place, you go there to see it.", "When you visit a new place"],
+      ["B", "Reference", "In the text, “their” in “eat with their right hand” refers to…", "the people in those places.", "the chopsticks.", "the banana leaves.", "The sentence is about people in parts of India, the Middle East and Africa, who eat with their own right hand.", "people eat with their right hand"],
+      ["B", "Inference", "Why does the text say to watch and learn when you visit a new place?", "Each place has its own way to eat and its own manners.", "You should not eat in a new place.", "Food is the same everywhere.", "The text says each way has its own good manners, so watching helps you eat the right way.", ["Each way has its own good manners", "When you visit a new place, watch and learn"]],
+    ],
+    matches: {
+      A: [["important", "very useful or needed"], ["paddies", "wet fields where rice grows"], ["plant", "to put in the ground to grow"], ["seafood", "fish and other sea animals you can eat"], ["pan", "a flat metal pot for cooking"]],
+      B: [["chopsticks", "two thin sticks used to eat"], ["thin", "not thick or wide"], ["leaves", "the flat green parts of a plant"], ["together", "with other people"], ["manners", "polite ways to behave"]],
     },
   },
 ];
