@@ -1,4 +1,4 @@
-// Unseen Reading for Kids (Cases 211 to 222): one Kids shelf with a mix of topics kids like, written for
+// Unseen Reading for Kids (Parts 211 to 230): one Kids shelf with a mix of topics kids like, written for
 // children before their teens. Short sentences, everyday words, five questions per text (Main idea, Detail,
 // Vocabulary, Reference, Inference) and five words per text to match. Same item format as unseenPartsData9.js.
 
@@ -235,7 +235,7 @@ export const UNSEEN_PARTS_10 = [
     texts: {
       A: {
         title: "The Shrimp with a Super Punch",
-        text: "The mantis shrimp is a small sea animal about the size of your hand. It has the fastest punch in the animal world. It hits with two arms shaped like hammers. The punch is as fast as a bullet from a small gun. The punch is so strong that it breaks the shell of a crab in one hit. Some mantis shrimp have even broken the glass of a fish tank! The mantis shrimp also has amazing eyes. Each eye can move on its own. It can see colors that people cannot see. Scientists are copying its arms to make stronger materials.",
+        text: "The mantis shrimp is a small sea animal about the size of your hand. It has the fastest punch in the animal world. It hits with two arms shaped like hammers. The punch is as fast as a bullet from a small gun. The punch is very strong. It breaks the shell of a crab in one hit. Some mantis shrimp have even broken the glass of a fish tank! The mantis shrimp also has amazing eyes. Each eye can move on its own. It can see colors that people cannot see. Scientists are copying its arms to make stronger materials.",
       },
       B: {
         title: "The Octopus Escape Artist",
@@ -244,7 +244,7 @@ export const UNSEEN_PARTS_10 = [
     },
     items: [
       ["A", "Main idea", "What is the text mostly about?", "A small sea animal with a very strong punch and amazing eyes.", "A big fish that eats glass.", "A shrimp that people eat at parties.", "The text says the mantis shrimp has the fastest punch in the animal world and amazing eyes.", ["It has the fastest punch in the animal world", "The mantis shrimp also has amazing eyes"]],
-      ["A", "Detail", "What can the mantis shrimp break in one hit?", "The shell of a crab.", "A small boat.", "A bullet.", "The text says the punch is so strong that it breaks the shell of a crab in one hit.", "it breaks the shell of a crab in one hit"],
+      ["A", "Detail", "What can the mantis shrimp break in one hit?", "The shell of a crab.", "A small boat.", "A bullet.", "The text says the punch is very strong and breaks the shell of a crab in one hit.", "It breaks the shell of a crab in one hit"],
       ["A", "Vocabulary", "In the text, “tank” means…", "a glass box for keeping fish.", "a big army car.", "a kind of crab.", "Some mantis shrimp have broken the glass of a fish tank, so here a tank is a glass box for fish.", "the glass of a fish tank"],
       ["A", "Reference", "In the text, “It” in “It hits with two arms” refers to…", "the mantis shrimp.", "the fish tank.", "the crab.", "The text is about the mantis shrimp, and the mantis shrimp hits with two arms shaped like hammers.", "It has the fastest punch in the animal world. It hits with two arms"],
       ["A", "Inference", "Why are scientists copying the arms of the mantis shrimp?", "The arms are very strong and do not break.", "The arms are very pretty.", "The arms can see colors.", "The text says scientists are copying its arms to make stronger materials, so the arms must be very strong.", "Scientists are copying its arms to make stronger materials"],
@@ -385,6 +385,262 @@ export const UNSEEN_PARTS_10 = [
     matches: {
       A: [["monster", "a large, scary animal that is not real"], ["neck", "the part between the head and the body"], ["trick", "something done to fool people"], ["submarine", "a boat that goes under the water"], ["searched", "looked carefully to find something"]],
       B: [["dangerous", "able to hurt you"], ["aliens", "creatures from another planet"], ["truth", "what is real and true"], ["suddenly", "quickly and without warning"], ["mystery", "something that people cannot explain"]],
+    },
+  },
+  {
+    part: 223,
+    slug: "unseen-reading-part-223",
+    theme: "Space",
+    blurb: "life on a space station, footprints on the Moon",
+    texts: {
+      A: {
+        title: "Living on a Space Station",
+        text: "The International Space Station flies around the Earth. Astronauts live and work there for many months. Life in space is very different. Nothing stays on the floor, because everything floats. Astronauts sleep in sleeping bags tied to the wall. If they did not tie them, they would float around at night. Food comes in packets. Drinks come in bags with a straw. Salt and pepper are liquid. Small grains of salt could float into the machines or into an astronaut's eyes. The station goes around the Earth every ninety minutes. So astronauts see about sixteen sunrises every day!",
+      },
+      B: {
+        title: "Footprints on the Moon",
+        text: "In July 1969, Neil Armstrong became the first person to walk on the Moon. He stepped onto the gray dust and left a footprint. Since then, eleven more astronauts have walked on the Moon. Scientists think their footprints are still there today. Why have they not disappeared? On Earth, wind and rain soon wipe away footprints in sand. But the Moon has no air, so it has no wind. It has no rain either. Nothing moves the dust. The footprints could stay there for millions of years.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "What daily life is like for people on a space station.", "How to build a rocket.", "Why the Earth is round.", "The text explains how astronauts sleep, eat and drink on the space station.", ["Astronauts live and work there for many months", "Life in space is very different"]],
+      ["A", "Detail", "How do astronauts drink?", "From bags with a straw.", "From normal cups.", "From the machines.", "The text says drinks come in bags with a straw.", "Drinks come in bags with a straw"],
+      ["A", "Vocabulary", "In the text, “tied” means…", "held in place with a rope or string.", "cleaned with water.", "painted a new color.", "Astronauts sleep in sleeping bags tied to the wall, so the bags are held in place and do not float away.", "sleeping bags tied to the wall"],
+      ["A", "Reference", "In the text, “them” in “If they did not tie them” refers to…", "the sleeping bags.", "the machines.", "the drinks.", "The sentence before talks about sleeping bags tied to the wall, so them means the sleeping bags.", "Astronauts sleep in sleeping bags tied to the wall. If they did not tie them"],
+      ["A", "Inference", "Why is salt liquid on the space station?", "Dry grains of salt would float away.", "Astronauts do not like dry food.", "Liquid salt is cheaper.", "The text says small grains of salt could float into the machines or into an astronaut's eyes.", "Small grains of salt could float into the machines or into an astronaut's eyes"],
+      ["B", "Main idea", "What is the text mostly about?", "Footprints on the Moon can stay for a very long time.", "The Moon has strong winds and rain.", "Only one person has walked on the Moon.", "The text explains that nothing moves the dust on the Moon, so footprints could stay for millions of years.", ["Nothing moves the dust", "The footprints could stay there for millions of years"]],
+      ["B", "Detail", "Who was the first person to walk on the Moon?", "Neil Armstrong.", "Buzz Aldrin.", "Yuri Gagarin.", "The text says Neil Armstrong became the first person to walk on the Moon.", "Neil Armstrong became the first person to walk on the Moon"],
+      ["B", "Vocabulary", "In the text, “stepped” means…", "put a foot down.", "jumped very high.", "took a photo.", "Armstrong stepped onto the gray dust and left a footprint, so stepped means he put his foot down.", "He stepped onto the gray dust"],
+      ["B", "Reference", "In the text, “It” in “It has no rain either” refers to…", "the Moon.", "the Earth.", "the wind.", "The sentence before says the Moon has no air and no wind, and the Moon has no rain either.", "But the Moon has no air, so it has no wind. It has no rain either"],
+      ["B", "Inference", "Why do footprints in sand on Earth not last long?", "Wind and rain wipe them away.", "People clean the beach every day.", "The sand is too hot.", "The text says that on Earth, wind and rain soon wipe away footprints in sand.", "On Earth, wind and rain soon wipe away footprints in sand"],
+    ],
+    matches: {
+      A: [["astronauts", "people who travel and work in space"], ["floats", "stays up in the air and does not fall"], ["packets", "small closed bags"], ["grains", "very small pieces"], ["sunrises", "times when the sun comes up"]],
+      B: [["stepped", "put a foot down"], ["footprint", "the mark a foot or shoe leaves on the ground"], ["dust", "very small dry pieces of dirt"], ["wipe", "to rub something away"], ["millions", "very, very many"]],
+    },
+  },
+  {
+    part: 224,
+    slug: "unseen-reading-part-224",
+    theme: "Volcanoes",
+    blurb: "how a volcano erupts, the volcano that grew in a cornfield",
+    texts: {
+      A: {
+        title: "How a Volcano Erupts",
+        text: "A volcano is a mountain with a hole at the top. Deep under the ground, it is very hot. It is so hot that rock melts. Melted rock under the ground is called magma. Magma is full of gas, like a bottle of soda. The gas pushes up. When the pressure is too strong, the magma bursts out of the top. Now it is called lava. Lava can be hotter than 1,000 degrees Celsius. It glows red and orange. When lava cools down, it turns into hard black rock. Many islands, like Hawaii, were made by volcanoes.",
+      },
+      B: {
+        title: "The Volcano in the Cornfield",
+        text: "In 1943, a farmer in Mexico named Dionisio Pulido was working in his cornfield. Suddenly, the ground opened. Smoke and ash came out of a long crack. The farmer was very scared, and he ran away. The next day, there was a new hill in his field. It kept growing very fast. In one year, it grew more than 300 meters tall. It became a real volcano, called Parícutin. Lava covered two nearby towns, but the people had time to leave. The volcano stopped in 1952. Today, visitors can climb it. They can see a church tower sticking out of the old lava.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "How hot melted rock comes out of a volcano.", "How to climb a mountain safely.", "Why islands are always cold.", "The text explains that magma pushed by gas bursts out of the top of a volcano.", ["Melted rock under the ground is called magma", "the magma bursts out of the top"]],
+      ["A", "Detail", "What is melted rock called when it comes out of the top?", "Lava.", "Magma.", "Soda.", "The text says that when the magma bursts out of the top, it is called lava.", "Now it is called lava"],
+      ["A", "Vocabulary", "In the text, “cools down” means…", "becomes less hot.", "becomes faster.", "becomes bigger.", "When lava cools down, it turns into hard black rock, so cools down means it becomes less hot.", "When lava cools down, it turns into hard black rock"],
+      ["A", "Reference", "In the text, “It” in “It glows red and orange” refers to…", "lava.", "the gas.", "the island.", "The sentence before is about lava, and lava glows red and orange.", "Lava can be hotter than 1,000 degrees Celsius. It glows red and orange"],
+      ["A", "Inference", "Why does the text compare magma to a bottle of soda?", "Both have gas inside that pushes out.", "Both are sweet.", "Both are cold.", "The text says magma is full of gas, like a bottle of soda, and the gas pushes up.", ["Magma is full of gas, like a bottle of soda", "The gas pushes up"]],
+      ["B", "Main idea", "What is the text mostly about?", "A new volcano grew from a farmer's field.", "A farmer built a hill for his corn.", "A volcano in Mexico was always there.", "The text tells how the ground opened in a cornfield and a new volcano called Parícutin grew there.", ["Suddenly, the ground opened", "It became a real volcano, called Parícutin"]],
+      ["B", "Detail", "How tall did the volcano grow in one year?", "More than 300 meters.", "About 30 meters.", "More than 3,000 meters.", "The text says that in one year, it grew more than 300 meters tall.", "In one year, it grew more than 300 meters tall"],
+      ["B", "Vocabulary", "In the text, “suddenly” means…", "quickly and without warning.", "slowly and quietly.", "every morning.", "The ground opened while the farmer was working, without any warning.", "Suddenly, the ground opened"],
+      ["B", "Reference", "In the text, “It” in “It kept growing very fast” refers to…", "the new hill.", "the farmer.", "the corn.", "The sentence before says there was a new hill in his field, and the new hill kept growing very fast.", "there was a new hill in his field. It kept growing very fast"],
+      ["B", "Inference", "Why can visitors see a church tower sticking out of the lava?", "The lava covered the town, but the tower was taller.", "The church was built on top of the lava later.", "The tower fell from the sky.", "The text says lava covered two nearby towns, and today a church tower sticks out of the old lava.", ["Lava covered two nearby towns", "a church tower sticking out of the old lava"]],
+    ],
+    matches: {
+      A: [["melts", "changes from solid to liquid because of heat"], ["magma", "melted rock under the ground"], ["pressure", "the force of something pushing"], ["bursts", "breaks open suddenly"], ["glows", "gives out a soft light"]],
+      B: [["ash", "the gray powder left after something burns"], ["crack", "a long, thin opening"], ["nearby", "close, not far away"], ["covered", "was over the top of something"], ["tower", "a tall, narrow part of a building"]],
+    },
+  },
+  {
+    part: 225,
+    slug: "unseen-reading-part-225",
+    theme: "Pets",
+    blurb: "why cats purr, what a dog's tail says",
+    texts: {
+      A: {
+        title: "Why Cats Purr",
+        text: "Cats make a soft, low sound called a purr. They make it with small muscles in the throat. A cat can purr when it breathes in and when it breathes out. Most people think a purr means a cat is happy. Often that is true. A cat purrs when you pet it or when it sits on your lap. But cats also purr when they are hurt, scared or sick. The purr may help them feel calm. Kittens start to purr when they are only a few days old. The purr tells their mother, “I am fine.”",
+      },
+      B: {
+        title: "What a Dog's Tail Says",
+        text: "Dogs cannot talk, but their tails tell us a lot. A wagging tail does not always mean a happy dog. You need to look at how the tail moves. A loose tail that wags from side to side usually means the dog is friendly. Sometimes the whole back of the dog wiggles too! A tail held high and stiff can mean the dog is excited or not sure. A tail down between the back legs means the dog is scared. When you meet a new dog, look at its tail first. Then ask the owner before you touch it.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Cats purr for different reasons, not only when they are happy.", "Cats purr only when they are hungry.", "Only kittens can purr.", "The text says most people think a purr means a cat is happy, but cats also purr when they are hurt, scared or sick.", ["Most people think a purr means a cat is happy", "But cats also purr when they are hurt, scared or sick"]],
+      ["A", "Detail", "When do kittens start to purr?", "When they are only a few days old.", "When they are one year old.", "When they first catch a mouse.", "The text says kittens start to purr when they are only a few days old.", "Kittens start to purr when they are only a few days old"],
+      ["A", "Vocabulary", "In the text, “soft” means…", "quiet, not loud.", "very fast.", "very bright.", "A purr is a soft, low sound, which means it is quiet.", "Cats make a soft, low sound"],
+      ["A", "Reference", "In the text, “it” in “when you pet it” refers to…", "a cat.", "your lap.", "the sound.", "The sentence says a cat purrs when you pet the cat.", "A cat purrs when you pet it"],
+      ["A", "Inference", "Why might a sick cat purr?", "Purring may help it feel calm.", "It wants to go outside.", "It is happy to be sick.", "The text says cats also purr when they are sick, and the purr may help them feel calm.", ["cats also purr when they are hurt, scared or sick", "The purr may help them feel calm"]],
+      ["B", "Main idea", "What is the text mostly about?", "A dog's tail shows how the dog feels.", "Every wagging tail means a happy dog.", "Dogs use their tails to talk to cats.", "The text says a dog's tail tells us a lot, and you need to look at how it moves.", ["their tails tell us a lot", "You need to look at how the tail moves"]],
+      ["B", "Detail", "What does a tail down between the back legs mean?", "The dog is scared.", "The dog is hungry.", "The dog is friendly.", "The text says a tail down between the back legs means the dog is scared.", "A tail down between the back legs means the dog is scared"],
+      ["B", "Vocabulary", "In the text, “friendly” means…", "kind and happy to meet you.", "very tired.", "angry and loud.", "A loose tail that wags from side to side means the dog is kind and happy to meet you.", "usually means the dog is friendly"],
+      ["B", "Reference", "In the text, “it” in “before you touch it” refers to…", "the new dog.", "the owner.", "the tail.", "The sentence before is about meeting a new dog, so you ask the owner before you touch the dog.", "When you meet a new dog, look at its tail first. Then ask the owner before you touch it"],
+      ["B", "Inference", "Why should you look at a new dog's tail first?", "It can show if the dog is friendly or scared.", "The tail is the cleanest part.", "The dog wants you to hold its tail.", "The text says a dog's tail tells us a lot, so it helps you know how a new dog feels.", ["When you meet a new dog, look at its tail first", "their tails tell us a lot"]],
+    ],
+    matches: {
+      A: [["purr", "the soft, low sound a happy cat makes"], ["muscles", "parts of the body that help it move"], ["throat", "the inside of the neck"], ["lap", "the top of your legs when you sit"], ["calm", "quiet and not worried"]],
+      B: [["wagging", "moving from side to side"], ["loose", "not tight or stiff"], ["wiggles", "moves quickly from side to side"], ["stiff", "hard and not moving easily"], ["owner", "the person a pet belongs to"]],
+    },
+  },
+  {
+    part: 226,
+    slug: "unseen-reading-part-226",
+    theme: "Insects",
+    blurb: "super strong ants, why fireflies glow",
+    texts: {
+      A: {
+        title: "Super Strong Ants",
+        text: "Ants are tiny, but they are very strong. An ant can carry things 10 to 50 times heavier than its own body. That is like a child lifting a car! How can ants do it? Small animals are strong for their size. Their bodies are light, so their muscles can lift more. Ants also work as a team. When food is too big for one ant, many ants carry it together. They talk to each other with smells. One ant leaves a smell trail to the food. Then the other ants follow the trail.",
+      },
+      B: {
+        title: "Why Fireflies Glow",
+        text: "On summer nights, you may see little lights flying in the dark. They are fireflies. A firefly is not really a fly. It is a kind of beetle. Its body makes light by mixing special chemicals. The light comes from the end of its body. A light bulb gets hot, but a firefly's light is cool. Why do fireflies glow? They are looking for a partner. Each kind of firefly flashes its own pattern, like a secret code. A male flashes while it flies. A female answers with her own flash.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Ants are very strong, and they work together.", "Ants are bigger than they look.", "Ants only eat sweet food.", "The text says ants are tiny but very strong, and they also work as a team.", ["Ants are tiny, but they are very strong", "Ants also work as a team"]],
+      ["A", "Detail", "How heavy are the things an ant can carry?", "10 to 50 times heavier than its body.", "Two times heavier than its body.", "As heavy as a real car.", "The text says an ant can carry things that are 10 to 50 times heavier than its own body.", "10 to 50 times heavier than its own body"],
+      ["A", "Vocabulary", "In the text, “tiny” means…", "very small.", "very fast.", "very old.", "Ants are tiny but strong, which means they are very small.", "Ants are tiny"],
+      ["A", "Reference", "In the text, “it” in “many ants carry it together” refers to…", "the food.", "the smell.", "the car.", "The sentence says that when food is too big for one ant, many ants carry the food together.", "When food is too big for one ant, many ants carry it together"],
+      ["A", "Inference", "How do the other ants find the food?", "They follow the smell trail.", "They see it from far away.", "The food calls them.", "The text says one ant leaves a smell trail to the food, and the other ants follow the trail.", ["One ant leaves a smell trail to the food", "Then the other ants follow the trail"]],
+      ["B", "Main idea", "What is the text mostly about?", "Fireflies make their own light to find a partner.", "Fireflies are flies that eat light.", "Fireflies glow because they are hot.", "The text says a firefly's body makes light, and fireflies glow because they are looking for a partner.", ["Its body makes light", "They are looking for a partner"]],
+      ["B", "Detail", "What kind of animal is a firefly?", "A beetle.", "A fly.", "A bird.", "The text says a firefly is not really a fly. It is a kind of beetle.", "It is a kind of beetle"],
+      ["B", "Vocabulary", "In the text, “code” means…", "a secret way to send a message.", "a kind of food.", "a loud noise.", "Each kind of firefly flashes its own pattern, like a secret code, which is a secret way to send a message.", "like a secret code"],
+      ["B", "Reference", "In the text, “It” in “It is a kind of beetle” refers to…", "a firefly.", "a fly.", "the light.", "The sentence before says a firefly is not really a fly, and the firefly is a kind of beetle.", "A firefly is not really a fly. It is a kind of beetle"],
+      ["B", "Inference", "Why does each kind of firefly flash its own pattern?", "So it can find a partner of the same kind.", "So it can scare birds away.", "So it can make itself warm.", "The text says fireflies glow to find a partner, and each kind flashes its own pattern.", ["They are looking for a partner", "Each kind of firefly flashes its own pattern"]],
+    ],
+    matches: {
+      A: [["carry", "to hold something and take it somewhere"], ["lift", "to move something up"], ["team", "a group that works together"], ["trail", "a line or path that you can follow"], ["follow", "to go after someone or something"]],
+      B: [["beetle", "an insect with a hard shell on its back"], ["chemicals", "things that change when they are mixed"], ["bulb", "the glass part of a lamp that gives light"], ["partner", "another animal to live and have babies with"], ["pattern", "a way of doing something that repeats"]],
+    },
+  },
+  {
+    part: 227,
+    slug: "unseen-reading-part-227",
+    theme: "Chocolate",
+    blurb: "where chocolate comes from, why chocolate melts in your mouth",
+    texts: {
+      A: {
+        title: "Where Chocolate Comes From",
+        text: "Chocolate comes from a tree called the cacao tree. It grows in hot, wet places near the middle of the Earth. Big pods grow on the tree's trunk. Inside each pod are about 20 to 60 beans. Farmers take out the beans and leave them to dry in the sun. Then the beans are cooked and crushed. The ancient Maya and Aztec people in Mexico drank chocolate thousands of years ago. Their drink was bitter, not sweet. Sometimes they added chili! Sugar was added much later, in Europe. Today, most cacao beans come from West Africa.",
+      },
+      B: {
+        title: "Why Chocolate Melts in Your Mouth",
+        text: "Have you ever held chocolate in your hand on a hot day? It quickly gets soft and sticky. Chocolate has a kind of fat in it called cocoa butter. Cocoa butter is hard in a cool room. But it starts to melt at about 34 degrees Celsius. The inside of your mouth is about 37 degrees. So chocolate melts on your tongue, and the taste fills your mouth. That is why chocolate feels so smooth. Chocolate makers mix and heat it very carefully. This makes it shiny and gives it a nice snap when you break it.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Chocolate comes from the beans of the cacao tree.", "Chocolate comes from sugar plants in Europe.", "Chocolate was first made in West Africa.", "The text explains that chocolate comes from the beans inside the pods of the cacao tree.", ["Chocolate comes from a tree called the cacao tree", "Inside each pod are about 20 to 60 beans"]],
+      ["A", "Detail", "How many beans are in each pod?", "About 20 to 60.", "About 2 or 3.", "About 600.", "The text says that inside each pod are about 20 to 60 beans.", "Inside each pod are about 20 to 60 beans"],
+      ["A", "Vocabulary", "In the text, “dry” means…", "to lose the water inside.", "to get wet.", "to grow bigger.", "Farmers leave the beans to dry in the sun, so the water inside them goes away.", "leave them to dry in the sun"],
+      ["A", "Reference", "In the text, “Their” in “Their drink was bitter” refers to…", "the Maya and Aztec people.", "the farmers in Africa.", "the people in Europe.", "The sentence before says the ancient Maya and Aztec people drank chocolate, and it was their drink that was bitter.", "The ancient Maya and Aztec people in Mexico drank chocolate thousands of years ago. Their drink was bitter"],
+      ["A", "Inference", "Why did the first chocolate drink taste bitter?", "It had no sugar in it.", "It was too cold.", "It was made with milk.", "The text says the drink was bitter, not sweet, and sugar was added much later, in Europe.", ["Their drink was bitter, not sweet", "Sugar was added much later, in Europe"]],
+      ["B", "Main idea", "What is the text mostly about?", "Chocolate melts in your mouth because your mouth is warm enough.", "Chocolate melts only in the fridge.", "Chocolate never melts.", "The text explains that cocoa butter starts to melt at about 34 degrees, so chocolate melts on your tongue.", ["it starts to melt at about 34 degrees Celsius", "So chocolate melts on your tongue"]],
+      ["B", "Detail", "What is the fat in chocolate called?", "Cocoa butter.", "Cocoa milk.", "Cocoa sugar.", "The text says chocolate has a kind of fat in it called cocoa butter.", "a kind of fat in it called cocoa butter"],
+      ["B", "Vocabulary", "In the text, “carefully” means…", "slowly and with a lot of attention.", "very quickly and badly.", "without looking.", "Chocolate makers mix and heat it very carefully, which means they pay a lot of attention.", "Chocolate makers mix and heat it very carefully"],
+      ["B", "Reference", "In the text, “It” in “It quickly gets soft and sticky” refers to…", "the chocolate.", "your hand.", "the hot day.", "The question before is about holding chocolate on a hot day, and the chocolate gets soft and sticky.", "Have you ever held chocolate in your hand on a hot day? It quickly gets soft and sticky"],
+      ["B", "Inference", "Why is chocolate hard in a cool room?", "Cocoa butter does not melt until it is about 34 degrees.", "The room adds sugar to it.", "Chocolate is made of ice.", "The text says cocoa butter is hard in a cool room and starts to melt at about 34 degrees.", ["Cocoa butter is hard in a cool room", "it starts to melt at about 34 degrees Celsius"]],
+    ],
+    matches: {
+      A: [["pods", "long shells that hold seeds or beans"], ["trunk", "the thick main part of a tree"], ["crushed", "pressed into very small pieces"], ["ancient", "from a very long time ago"], ["bitter", "having a strong taste that is not sweet"]],
+      B: [["sticky", "staying on your fingers when you touch it"], ["melt", "to change from solid to liquid because of heat"], ["tongue", "the soft part in your mouth that tastes food"], ["shiny", "bright and smooth, so light shines on it"], ["snap", "the sharp sound when something breaks"]],
+    },
+  },
+  {
+    part: 228,
+    slug: "unseen-reading-part-228",
+    theme: "Ocean Life",
+    blurb: "lights in the deep sea, the biggest animal ever",
+    texts: {
+      A: {
+        title: "Lights in the Deep Sea",
+        text: "The deep sea is very dark. Sunlight cannot reach it. But it is not completely black. Many animals there make their own light. Some jellyfish glow blue or green. Some fish have lights along their bodies. The anglerfish has a very strange trick. A long spine grows from its head, like a fishing rod. At the end, there is a little glowing ball. Small fish swim toward the light because they think it is food. Then the anglerfish opens its huge mouth and eats them! The light comes from tiny bacteria that live inside the ball.",
+      },
+      B: {
+        title: "The Biggest Animal Ever",
+        text: "The blue whale is the biggest animal that has ever lived. It is heavier than any dinosaur. A blue whale can be about 30 meters long. That is longer than two buses in a line. Its heart weighs about 180 kilograms, as much as two big men. But this giant eats some of the smallest animals in the sea. It eats krill, which are tiny animals that look like shrimp. A blue whale can eat thousands of kilograms of krill in one day. A baby blue whale drinks its mother's milk. It gains about 90 kilograms every day!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Many deep sea animals make their own light.", "The deep sea is full of sunlight.", "Only one fish in the sea can glow.", "The text says the deep sea is very dark, but many animals there make their own light.", ["The deep sea is very dark", "Many animals there make their own light"]],
+      ["A", "Detail", "Where does the anglerfish's light come from?", "Tiny bacteria inside the ball.", "The sun.", "A jellyfish.", "The text says the light comes from tiny bacteria that live inside the ball.", "The light comes from tiny bacteria that live inside the ball"],
+      ["A", "Vocabulary", "In the text, “toward” means…", "in the direction of.", "away from.", "under.", "Small fish swim toward the light, which means they swim in its direction.", "Small fish swim toward the light"],
+      ["A", "Reference", "In the text, “them” in “eats them” refers to…", "the small fish.", "the jellyfish.", "the bacteria.", "The sentence before says small fish swim toward the light, and the anglerfish eats the small fish.", "Small fish swim toward the light because they think it is food. Then the anglerfish opens its huge mouth and eats them"],
+      ["A", "Inference", "Why does the anglerfish have a glowing ball?", "To bring small fish close so it can eat them.", "To see where it is going.", "To scare other anglerfish.", "The text says small fish swim toward the light, and then the anglerfish eats them.", ["Small fish swim toward the light", "Then the anglerfish opens its huge mouth and eats them"]],
+      ["B", "Main idea", "What is the text mostly about?", "The blue whale is the biggest animal ever, and it eats tiny animals.", "The blue whale is a small fish that eats sharks.", "The blue whale lived at the time of the dinosaurs.", "The text says the blue whale is the biggest animal that has ever lived, but it eats some of the smallest animals in the sea.", ["The blue whale is the biggest animal that has ever lived", "this giant eats some of the smallest animals in the sea"]],
+      ["B", "Detail", "How much does a blue whale's heart weigh?", "About 180 kilograms.", "About 18 kilograms.", "About 1,800 kilograms.", "The text says its heart weighs about 180 kilograms.", "Its heart weighs about 180 kilograms"],
+      ["B", "Vocabulary", "In the text, “heavier” means…", "weighing more.", "longer.", "faster.", "The blue whale is heavier than any dinosaur, which means it weighs more.", "It is heavier than any dinosaur"],
+      ["B", "Reference", "In the text, “It” in “It eats krill” refers to…", "the blue whale.", "the dinosaur.", "the bus.", "The sentence before calls the blue whale a giant, and the blue whale eats krill.", "this giant eats some of the smallest animals in the sea. It eats krill"],
+      ["B", "Inference", "Why does a baby blue whale grow so fast?", "It drinks a lot of its mother's milk.", "It eats big fish.", "It sleeps all day.", "The text says a baby blue whale drinks its mother's milk and gains about 90 kilograms every day.", ["A baby blue whale drinks its mother's milk", "It gains about 90 kilograms every day"]],
+    ],
+    matches: {
+      A: [["completely", "in every way, totally"], ["jellyfish", "a soft sea animal with long arms that can sting"], ["spine", "a long, thin, hard part of a body"], ["rod", "a long, thin stick"], ["bacteria", "very tiny living things"]],
+      B: [["giant", "something very, very big"], ["weighs", "is a certain amount heavy"], ["krill", "tiny sea animals that look like shrimp"], ["shrimp", "a small sea animal with a long body and many legs"], ["gains", "gets more of something"]],
+    },
+  },
+  {
+    part: 229,
+    slug: "unseen-reading-part-229",
+    theme: "Magic",
+    blurb: "how magicians fool you, the great escape artist Houdini",
+    texts: {
+      A: {
+        title: "How Magicians Fool You",
+        text: "A magician makes a coin disappear. Where did it go? The secret is often a trick called misdirection. The magician makes you look in the wrong place. Your eyes cannot watch everything at once. If the magician waves one hand, you look at that hand. Meanwhile, the other hand hides the coin. Magicians also use words. They say “Watch this!” and point. You follow their eyes and their hands. Good magicians practice for hours in front of a mirror. They want every move to look natural. When the trick works, it feels like real magic.",
+      },
+      B: {
+        title: "The Great Escape Artist",
+        text: "Harry Houdini was the most famous escape artist in the world. He was born in Hungary in 1874. He moved to the United States as a child. Houdini could get out of almost anything. Police locked him in handcuffs, and he escaped. He escaped from jail cells too. In one show, he was locked upside down in a glass tank full of water. The crowd held their breath. A few minutes later, Houdini stepped out! How did he do it? He was very strong and very fit. He practiced hiding keys and opening locks for many years.",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Magicians make you look in the wrong place.", "Magicians have real magic powers.", "Magicians never practice.", "The text says the secret is often misdirection, when the magician makes you look in the wrong place.", ["a trick called misdirection", "The magician makes you look in the wrong place"]],
+      ["A", "Detail", "Where do good magicians practice?", "In front of a mirror.", "In a dark box.", "On the street.", "The text says good magicians practice for hours in front of a mirror.", "Good magicians practice for hours in front of a mirror"],
+      ["A", "Vocabulary", "In the text, “hides” means…", "puts something where you cannot see it.", "throws something away.", "makes something bigger.", "The other hand hides the coin, which means it puts the coin where you cannot see it.", "the other hand hides the coin"],
+      ["A", "Reference", "In the text, “it” in “Where did it go?” refers to…", "the coin.", "the magician.", "your eyes.", "The sentence before says a magician makes a coin disappear, so it means the coin.", "A magician makes a coin disappear. Where did it go"],
+      ["A", "Inference", "Why does a magician wave one hand?", "So you do not watch the other hand.", "To say hello to the people.", "Because the hand is tired.", "The text says you look at the hand that waves, and meanwhile the other hand hides the coin.", ["If the magician waves one hand, you look at that hand", "Meanwhile, the other hand hides the coin"]],
+      ["B", "Main idea", "What is the text mostly about?", "Houdini was famous for escaping from almost anything.", "Houdini was a police officer in Hungary.", "Houdini was afraid of water.", "The text says Houdini was the most famous escape artist and could get out of almost anything.", ["Harry Houdini was the most famous escape artist in the world", "Houdini could get out of almost anything"]],
+      ["B", "Detail", "Where was Houdini born?", "In Hungary.", "In the United States.", "In Mexico.", "The text says he was born in Hungary in 1874.", "He was born in Hungary in 1874"],
+      ["B", "Vocabulary", "In the text, “fit” means…", "healthy and strong.", "very tired.", "very tall.", "He was very strong and very fit, which means his body was healthy and strong.", "He was very strong and very fit"],
+      ["B", "Reference", "In the text, “he” in “and he escaped” refers to…", "Houdini.", "a police officer.", "the crowd.", "The police locked Houdini in handcuffs, and Houdini escaped.", "Police locked him in handcuffs, and he escaped"],
+      ["B", "Inference", "Why did the crowd hold their breath?", "They were worried Houdini could not get out of the water.", "The room smelled bad.", "They were playing a game.", "The text says he was locked upside down in a tank of water, and the crowd held their breath.", ["he was locked upside down in a glass tank full of water", "The crowd held their breath"]],
+    ],
+    matches: {
+      A: [["magician", "a person who does magic tricks"], ["misdirection", "making people look at the wrong thing"], ["waves", "moves the hand from side to side"], ["meanwhile", "at the same time"], ["natural", "normal, not planned or strange"]],
+      B: [["handcuffs", "two metal rings that police lock on hands"], ["jail", "a place where police keep people locked in"], ["crowd", "a large group of people"], ["breath", "the air that goes in and out when you breathe"], ["locks", "things that keep doors or boxes closed"]],
+    },
+  },
+  {
+    part: 230,
+    slug: "unseen-reading-part-230",
+    theme: "Weather Wonders",
+    blurb: "how a rainbow is made, balls of ice from the sky",
+    texts: {
+      A: {
+        title: "How a Rainbow Is Made",
+        text: "A rainbow appears when the sun shines through rain. Sunlight looks white, but it is really made of many colors. When sunlight goes into a raindrop, the light bends. Each color bends a little differently. So the colors spread out, and we see them one by one. The order is always the same: red, orange, yellow, green, blue and violet. To see a rainbow, stand with the sun behind you. Look toward the rain. From the ground, a rainbow looks like a half circle. From a plane, you can sometimes see a full circle!",
+      },
+      B: {
+        title: "Balls of Ice from the Sky",
+        text: "Sometimes balls of ice fall from the sky. They are called hail. Hail grows inside big storm clouds. Strong winds carry tiny pieces of ice high up into the cold cloud. There, water freezes onto them. They fall a little, then the wind pushes them up again. Each trip adds a new layer of ice. If you cut a hailstone in half, you can see rings, like an onion. When the hailstones get too heavy, they fall to the ground. Most hail is as small as a pea. In 2010, a hailstone in South Dakota, in the United States, was 20 centimeters wide!",
+      },
+    },
+    items: [
+      ["A", "Main idea", "What is the text mostly about?", "Sunlight splits into colors in raindrops and makes a rainbow.", "Rainbows are made by the moon.", "Rainbows appear only when there is no rain.", "The text explains that a rainbow appears when sunlight goes through rain and the colors spread out.", ["A rainbow appears when the sun shines through rain", "So the colors spread out"]],
+      ["A", "Detail", "Where should the sun be when you look for a rainbow?", "Behind you.", "In front of you.", "Under you.", "The text says to stand with the sun behind you.", "stand with the sun behind you"],
+      ["A", "Vocabulary", "In the text, “shines” means…", "gives out light.", "falls down.", "makes a noise.", "A rainbow appears when the sun shines through rain, which means the sun gives out light.", "when the sun shines through rain"],
+      ["A", "Reference", "In the text, “them” in “we see them one by one” refers to…", "the colors.", "the raindrops.", "the planes.", "The sentence says the colors spread out, and we see the colors one by one.", "So the colors spread out, and we see them one by one"],
+      ["A", "Inference", "Why does white sunlight become many colors in a raindrop?", "Each color bends a little differently, so they spread out.", "The raindrop paints the light.", "The sun changes color in the rain.", "The text says each color bends a little differently, so the colors spread out.", ["Each color bends a little differently", "So the colors spread out"]],
+      ["B", "Main idea", "What is the text mostly about?", "Hail grows in storm clouds, one layer at a time.", "Hail is snow that melts on the way down.", "Hail falls only in South Dakota.", "The text explains that hail grows inside storm clouds and each trip adds a new layer of ice.", ["Hail grows inside big storm clouds", "Each trip adds a new layer of ice"]],
+      ["B", "Detail", "How wide was the hailstone in South Dakota?", "20 centimeters.", "2 centimeters.", "200 centimeters.", "The text says the hailstone in South Dakota was 20 centimeters wide.", "was 20 centimeters wide"],
+      ["B", "Vocabulary", "In the text, “trip” means…", "a journey from one place to another.", "a fall on the ground.", "a kind of cloud.", "Each trip up and down in the cloud adds a new layer, so a trip is a journey from one place to another.", "Each trip adds a new layer of ice"],
+      ["B", "Reference", "In the text, “them” in “water freezes onto them” refers to…", "the tiny pieces of ice.", "the strong winds.", "the storm clouds.", "The sentence before says strong winds carry tiny pieces of ice up, and water freezes onto the pieces of ice.", "Strong winds carry tiny pieces of ice high up into the cold cloud. There, water freezes onto them"],
+      ["B", "Inference", "Why does a hailstone have rings inside?", "It went up and down many times and got new layers.", "Someone drew rings on it.", "It was made from an onion.", "The text says each trip adds a new layer of ice, and if you cut a hailstone in half, you can see rings.", ["Each trip adds a new layer of ice", "If you cut a hailstone in half, you can see rings"]],
+    ],
+    matches: {
+      A: [["appears", "comes where you can see it"], ["raindrop", "one small drop of rain"], ["bends", "changes direction and is no longer straight"], ["spread", "move apart to cover a bigger space"], ["violet", "a light purple color"]],
+      B: [["freezes", "turns into ice because of cold"], ["layer", "a flat part that covers another part"], ["hailstone", "one ball of hail"], ["onion", "a round vegetable with many thin rings inside"], ["pea", "a very small, round, green vegetable"]],
     },
   },
 ];

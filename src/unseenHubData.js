@@ -243,7 +243,7 @@ const META = [
   [208, "The life of a plant: how flowers get help from animals, and the ways seeds travel"],
   [209, "Water on the move: how it rises, falls and returns, and how a river carves valleys and builds deltas"],
   [210, "Sky and storm: how a cloud becomes rain, and how a typhoon builds its strength"],
-  // Kids shelf (Cases 211 to 222): one shelf, mixed topics, easy words
+  // Kids shelf (Parts 211 to 230): one shelf, mixed topics, easy words
   [211, "Giants of the past: the biggest dinosaur ever, and the day most of them disappeared"],
   [212, "Teeth and fear: how a shark keeps growing teeth, and why sharks are not as scary as the movies say"],
   [213, "Up, down and very fast: how a coaster moves without an engine, and the ride that goes 240 kilometers per hour"],
@@ -256,6 +256,14 @@ const META = [
   [220, "Favorite foods: how pizza began in Naples, and the three secrets that keep ice cream soft"],
   [221, "Robots at work: one cleans your floor, and one drives itself on Mars"],
   [222, "Two famous mysteries: the monster of Loch Ness, and the sea where ships are said to disappear"],
+  [223, "Out in space: how astronauts eat and sleep, and why footprints on the Moon do not go away"],
+  [224, "Fire under the ground: how a volcano erupts, and the volcano that grew in a farmer's field"],
+  [225, "Our pets: why cats purr, and what a dog's tail tells you"],
+  [226, "Small but amazing: ants that carry huge loads, and fireflies that make their own light"],
+  [227, "Sweet science: where chocolate comes from, and why it melts in your mouth"],
+  [228, "Under the sea: animals that glow in the dark, and the biggest animal that ever lived"],
+  [229, "Magic and escapes: how magicians fool your eyes, and the man who could escape from anything"],
+  [230, "Wonders in the sky: how a rainbow is made, and how hail grows inside a storm"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
