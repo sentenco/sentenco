@@ -17,7 +17,12 @@ export const CASE_TOPICS = {
   sports: { c: "#FF8266", deep: "#B3321B", tint: "#FFE9E3" },
   psych: { c: "#2FC4B2", deep: "#0A7468", tint: "#D7F5F1" },
   older: { c: "#D9D1F2", deep: "#6554A6", tint: "#F1EEFB" },
-  kids: { c: "#6FD3FF", deep: "#0B6E99", tint: "#E0F5FF" },
+  "k-animals": { c: "#8EE07A", deep: "#2E7D1E", tint: "#E8F8E1" },
+  "k-works": { c: "#8FBBFF", deep: "#2F62C4", tint: "#E6F0FF" },
+  "k-earth": { c: "#6FD3FF", deep: "#0B6E99", tint: "#E0F5FF" },
+  "k-past": { c: "#E5BE8E", deep: "#8A5A1E", tint: "#F7EBDA" },
+  "k-wow": { c: "#EBA6F2", deep: "#9A3AA6", tint: "#FAE8FC" },
+  "k-food": { c: "#FFB067", deep: "#B35A00", tint: "#FFF0E0" },
 };
 
 // Score id of the word in slot idx (0-4 are Text 1's words, 5-9 Text 2's).

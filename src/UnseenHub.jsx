@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { UNSEEN_SHELVES, buildUnseenHubLessons } from "./unseenHubData.js";
+
+const isKidsShelf = (id) => String(id).startsWith("k-");
 import { openCustomLessonPopup } from "./customLessonsRegistry";
 import "./unseenHub.css";
 
@@ -14,12 +16,12 @@ function usePageSize() {
   }, []);
   return n;
 }
-const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E", sports: "#FF8266", psych: "#2FC4B2", kids: "#6FD3FF" };
+const DECK_COLOR = { all: "#FFFFFF", body: "#FF9DB0", nature: "#7BE3AA", tech: "#8FBBFF", lang: "#FFD25E", space: "#B7A6FF", mma: "#FFA45C", safety: "#5CD6E6", money: "#C6E75F", mind: "#EBA6F2", history: "#E5BE8E", sports: "#FF8266", psych: "#2FC4B2", kids: "#6FD3FF", "k-animals": "#8EE07A", "k-works": "#8FBBFF", "k-earth": "#6FD3FF", "k-past": "#E5BE8E", "k-wow": "#EBA6F2", "k-food": "#FFB067" };
 
 // The Unseen Reading room: topic tiles, each showing its pair of texts.
 // `canOpen(slug)` limits the list to lessons this person may open.
 export default function UnseenHub({ canOpen }) {
-  const [aud, setAud] = useState("older"); // older = Teens and Adults (the topic shelves), kids = the Kids shelf
+  const [aud, setAud] = useState("older"); // older = Teens and Adults shelves, kids = the six Kids shelves (ids start with "k-")
   const [shelf, setShelf] = useState("all");
   const [q, setQ] = useState("");
   const [peek, setPeek] = useState({});
@@ -44,9 +46,9 @@ export default function UnseenHub({ canOpen }) {
       .map((x) => x.l);
   }, [canOpen]);
 
-  const forAud = (l) => (aud === "kids") === (l.shelf === "kids");
+  const forAud = (l) => (aud === "kids") === isKidsShelf(l.shelf);
   const mine = all.filter(forAud);
-  const kidsCount = all.filter((l) => l.shelf === "kids").length;
+  const kidsCount = all.filter((l) => isKidsShelf(l.shelf)).length;
   const needle = q.trim().toLowerCase();
   const list = mine.filter((l) => {
     if (shelf !== "all" && l.shelf !== shelf) return false;
@@ -89,9 +91,9 @@ export default function UnseenHub({ canOpen }) {
           <button type="button" data-a="kids" aria-pressed={aud === "kids"} onClick={() => { setAud("kids"); setShelf("all"); }}>Kids<i>{kidsCount}</i></button>
         </div>
       )}
-      <div className="uh-deck" style={{ "--cur": aud === "kids" ? DECK_COLOR.kids : DECK_COLOR[shelf] }}>
-        {aud === "older" && <div className="uh-tabs" role="group" aria-label="Topics" ref={tabsRef}>
-          {[{ id: "all", name: "Everything" }, ...UNSEEN_SHELVES.filter((s) => s.id !== "kids")].map((s) => {
+      <div className="uh-deck" style={{ "--cur": aud === "kids" && shelf === "all" ? DECK_COLOR.kids : DECK_COLOR[shelf] }}>
+        <div className="uh-tabs" role="group" aria-label="Topics" ref={tabsRef}>
+          {[{ id: "all", name: "Everything" }, ...UNSEEN_SHELVES.filter((s) => !!s.kids === (aud === "kids"))].map((s) => {
             const n = s.id === "all" ? mine.length : mine.filter((l) => l.shelf === s.id).length;
             if (s.id !== "all" && n === 0) return null;
             return (
@@ -100,7 +102,7 @@ export default function UnseenHub({ canOpen }) {
               </button>
             );
           })}
-        </div>}
+        </div>
         <div className="uh-panel">
           <label className="uh-search">
             <span className="uh-sr">Search Unseen Reading</span>

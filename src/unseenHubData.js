@@ -29,7 +29,12 @@ export const UNSEEN_SHELVES = [
   { id: "history", name: "History That Explains Today", short: "History" },
   { id: "sports", name: "Sports and Fitness", short: "Sports" },
   { id: "psych", name: "Psychology", short: "Psychology" },
-  { id: "kids", name: "Kids", short: "Kids" },
+  { id: "k-animals", name: "Amazing Animals", short: "Animals", kids: true },
+  { id: "k-works", name: "How Things Work", short: "How It Works", kids: true },
+  { id: "k-earth", name: "Earth and Sky", short: "Earth and Sky", kids: true },
+  { id: "k-past", name: "Long, Long Ago", short: "Long Ago", kids: true },
+  { id: "k-wow", name: "Wow and Mystery", short: "Wow!", kids: true },
+  { id: "k-food", name: "Yummy Food", short: "Food", kids: true },
 ];
 
 // [part, one line on how the two texts connect]. The shelf comes from unseenShelfByPart.js; order inside a shelf follows this list.
@@ -243,7 +248,7 @@ const META = [
   [208, "The life of a plant: how flowers get help from animals, and the ways seeds travel"],
   [209, "Water on the move: how it rises, falls and returns, and how a river carves valleys and builds deltas"],
   [210, "Sky and storm: how a cloud becomes rain, and how a typhoon builds its strength"],
-  // Kids shelf (Parts 211 to 230): one shelf, mixed topics, easy words
+  // Kids (Parts 211 to 240): six shelves, easy words
   [211, "Giants of the past: the biggest dinosaur ever, and the day most of them disappeared"],
   [212, "Teeth and fear: how a shark keeps growing teeth, and why sharks are not as scary as the movies say"],
   [213, "Up, down and very fast: how a coaster moves without an engine, and the ride that goes 240 kilometers per hour"],
@@ -264,6 +269,16 @@ const META = [
   [228, "Under the sea: animals that glow in the dark, and the biggest animal that ever lived"],
   [229, "Magic and escapes: how magicians fool your eyes, and the man who could escape from anything"],
   [230, "Wonders in the sky: how a rainbow is made, and how hail grows inside a storm"],
+  [231, "Up in the air: how wings hold a heavy plane up, and the first flight with an engine"],
+  [232, "Colors overhead: why the sky is blue, and why sunsets turn red and orange"],
+  [233, "When the ground moves: why earthquakes happen, and how to stay safe in one"],
+  [234, "Stone walls and shining armor: life in a castle, and the long road to becoming a knight"],
+  [235, "Sailors of the north: Viking longships, and the truth about horned helmets"],
+  [236, "Your amazing eyes: pictures that fool the brain, and the blind spot everyone has"],
+  [237, "Young champions: a 13-year-old on top of Everest, and a 12-year-old chess grandmaster"],
+  [238, "Science in the kitchen: why popcorn pops, and why onions make you cry"],
+  [239, "Busy bees: how honey is made, and why it stays good for thousands of years"],
+  [240, "Eating around the world: rice in many countries, and hands, chopsticks or a fork"],
 ];
 
 export function unseenSlug(part) { return `unseen-reading-part-${part}`; }
