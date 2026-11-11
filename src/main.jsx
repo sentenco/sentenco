@@ -22,6 +22,7 @@ import MentorAdmin from './MentorAdmin.jsx'
 import AdminTeachers from './AdminTeachers.jsx'
 import AdminReports from './AdminReports.jsx'
 import AdminAccess from './AdminAccess.jsx'
+import AdminPayments from './AdminPayments.jsx'
 import CustomLessonGate from './CustomLessonGate.jsx'
 import UnseenAccessGate from './UnseenAccessGate.jsx'
 import { UNSEEN_HUB_SLUGS } from './unseenHubSlugs.js'
@@ -577,6 +578,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/admin/teachers" element={<AdminTeachers />} />
             <Route path="/library/admin/reports" element={<LibraryPageShell><AdminReports /></LibraryPageShell>} />
             <Route path="/library/admin/access" element={<AdminAccess />} />
+            <Route path="/library/admin/payments" element={<AdminPayments />} />
             <Route path="/library/teacher/:id" element={<LibraryPageShell><TeacherProfile /></LibraryPageShell>} />
             <Route path="/library/network" element={<LibraryPageShell><TeacherNetwork /></LibraryPageShell>} />
             <Route path="/library/forge" element={<LibraryPageShell><ForgeHub /></LibraryPageShell>} />

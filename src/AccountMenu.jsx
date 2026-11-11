@@ -94,6 +94,7 @@ export default function AccountMenu({ user, planInfo, isAdmin, navigate, onClose
           <>
             <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/teachers")}><span className="am-ic"><Icon name="users" /></span>Teachers</button>
             <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/access")}><span className="am-ic"><Icon name="key" /></span>Access codes</button>
+            <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/payments")}><span className="am-ic"><Icon name="card" /></span>Payments</button>
             <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/reports")}><span className="am-ic"><Icon name="flag" /></span>Reports</button>
             <a className="am-tile" role="menuitem" href={`mailto:${SUPPORT_EMAIL}`} onClick={onClose}><span className="am-ic"><Icon name="help" /></span>Help &amp; Support</a>
           </>

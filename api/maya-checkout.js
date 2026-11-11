@@ -34,11 +34,13 @@ export default async function handler(req, res) {
     return;
   }
 
-  const { data: payment, error: insertError } = await db
-    .from("payments")
-    .insert({ user_id: user.id, plan, period, amount, currency: "PHP", status: "pending" })
-    .select()
-    .single();
+  const row = { user_id: user.id, plan, period, amount, currency: "PHP", status: "pending", test_mode: sandbox };
+  let { data: payment, error: insertError } = await db.from("payments").insert(row).select().single();
+  if (insertError && /test_mode/.test(insertError.message || "")) {
+    // payments_admin_and_reminders.sql not run yet: save without the test flag.
+    delete row.test_mode;
+    ({ data: payment, error: insertError } = await db.from("payments").insert(row).select().single());
+  }
   if (insertError || !payment) {
     res.status(500).json({ error: "We couldn't start the payment. Please try again." });
     return;
