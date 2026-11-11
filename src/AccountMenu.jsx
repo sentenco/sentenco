@@ -14,6 +14,7 @@ function Icon({ name }) {
     help: <><circle cx="12" cy="12" r="10" /><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></>,
     shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />,
     flag: <><path d="M4 22V3" /><path d="M4 4h13l-2.5 4L17 12H4" /></>,
+    chat: <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />,
   };
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -96,6 +97,7 @@ export default function AccountMenu({ user, planInfo, isAdmin, navigate, onClose
             <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/access")}><span className="am-ic"><Icon name="key" /></span>Access codes</button>
             <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/payments")}><span className="am-ic"><Icon name="card" /></span>Payments</button>
             <button type="button" className="am-tile" role="menuitem" onClick={go("/library/admin/reports")}><span className="am-ic"><Icon name="flag" /></span>Reports</button>
+            <button type="button" className="am-tile" role="menuitem" onClick={go("/library/just-talk")}><span className="am-ic"><Icon name="chat" /></span>Just Talk</button>
             <a className="am-tile" role="menuitem" href={`mailto:${SUPPORT_EMAIL}`} onClick={onClose}><span className="am-ic"><Icon name="help" /></span>Help &amp; Support</a>
           </>
         ) : (
