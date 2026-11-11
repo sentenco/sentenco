@@ -139,7 +139,7 @@ export default function CurriculumOverview({ onSelectLevel }) {
                   <span className="co-level-tag">Private · Speaking</span>
                 </div>
                 <p className="co-row-desc">Your own speaking course for students who just want to talk. Only you can see this.</p>
-                <div className="co-row-meta"><b>33</b> topics · <b>99</b> classes</div>
+                <div className="co-row-meta"><b>33</b> modules · <b>99</b> lessons</div>
               </div>
               <div className="co-row-go" aria-hidden="true">&rarr;</div>
             </div>
