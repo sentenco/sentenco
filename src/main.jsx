@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { SHOW_LETTER_BOARD } from './featureFlags.js'
@@ -23,6 +23,7 @@ import AdminTeachers from './AdminTeachers.jsx'
 import AdminReports from './AdminReports.jsx'
 import AdminAccess from './AdminAccess.jsx'
 import AdminPayments from './AdminPayments.jsx'
+import { JustTalkHub, JustTalkClass, JustTalkCard } from './justTalkLazy.js'
 import CustomLessonGate from './CustomLessonGate.jsx'
 import UnseenAccessGate from './UnseenAccessGate.jsx'
 import { UNSEEN_HUB_SLUGS } from './unseenHubSlugs.js'
@@ -579,6 +580,11 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/admin/reports" element={<LibraryPageShell><AdminReports /></LibraryPageShell>} />
             <Route path="/library/admin/access" element={<AdminAccess />} />
             <Route path="/library/admin/payments" element={<AdminPayments />} />
+            <Route path="/library/just-talk" element={<Suspense fallback={null}><JustTalkHub /></Suspense>} />
+            <Route path="/library/just-talk/:stage/check-in" element={<Suspense fallback={null}><JustTalkClass check /></Suspense>} />
+            <Route path="/library/just-talk/:stage/check-in/card" element={<Suspense fallback={null}><JustTalkCard check /></Suspense>} />
+            <Route path="/library/just-talk/:topic/:n" element={<Suspense fallback={null}><JustTalkClass /></Suspense>} />
+            <Route path="/library/just-talk/:topic/:n/card" element={<Suspense fallback={null}><JustTalkCard /></Suspense>} />
             <Route path="/library/teacher/:id" element={<LibraryPageShell><TeacherProfile /></LibraryPageShell>} />
             <Route path="/library/network" element={<LibraryPageShell><TeacherNetwork /></LibraryPageShell>} />
             <Route path="/library/forge" element={<LibraryPageShell><ForgeHub /></LibraryPageShell>} />
