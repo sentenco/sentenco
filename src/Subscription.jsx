@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 import AuthForm from "./AuthForm";
@@ -11,18 +11,21 @@ function CheckIcon() {
   );
 }
 
+// What each plan unlocks (kept in line with the real gates: RouteAccessGate, audienceAccess, unseenAccess, Library).
+// Prices are in pesos; the server keeps its own copy in api/_maya.js and never trusts the browser's amount.
 const TIERS = [
   {
     key: "free",
     name: "Free",
     tagline: "Everything you need to start your day.",
-    price: "Free forever",
     cta: "You're already here",
     ctaDisabled: true,
     features: [
       "Homeroom: community, Teacher's Desk and clock",
       "Articles (the Gazette)",
-      "Full community: follow, connect and message teachers",
+      "Kids story books and the Letter Board games",
+      "Kids SPARK trial classes",
+      "Follow, connect and message other teachers",
       "Teacher's Desk unlocks daily with 3 posts, comments or likes",
     ],
   },
@@ -30,36 +33,36 @@ const TIERS = [
     key: "pro",
     name: "Pro",
     tagline: "Every category, unlocked.",
-    price: "₱299",
-    originalPrice: "₱499",
-    priceNote: "Early adopter price. It stays yours while you stay subscribed.",
-    cta: "Upgrade to Pro",
+    price: { month: 299, year: 2990 },
+    was: { month: 499, year: 5988 },
     highlighted: true,
     features: [
       "Everything in Free",
-      "Speaking, Reading, Grammar, Vocabulary, Writing, Listening",
+      "Every lesson in Speaking, Grammar, Vocabulary, Writing and Listening",
+      "All story books, for Kids, Teens and Adults",
+      "Unseen Reading: 269 reading cases, including 60 for Kids",
+      "Custom Lessons made for your students",
       "Teacher's Desk always unlocked",
     ],
   },
   {
     key: "pro_plus",
     name: "Pro+",
-    tagline: "Every level. AI tools built in.",
-    price: "₱350",
-    originalPrice: "₱599",
-    priceNote: "Early adopter price. It stays yours while you stay subscribed.",
-    cta: "Upgrade to Pro+",
+    tagline: "The full curriculum, Kids to Adults.",
+    price: { month: 350, year: 3500 },
+    was: { month: 599, year: 7188 },
     navy: true,
     features: [
       "Everything in Pro",
-      "Every CEFR level, A1 through C2",
-      "AI Dictionary",
-      "AI Grammar Checker",
-      "AI Translator",
+      "The full A1 and A2 curriculum: 384 ready-to-teach lessons",
+      "Kids (Discover, Soar), Teens (Ignite, Ablaze), Adults (Sprout, Bloom)",
+      "A teacher guide for every curriculum lesson",
+      "SPARK trial classes for Teens and Adults",
     ],
   },
 ];
 
+const peso = (n) => "₱" + Number(n).toLocaleString("en-PH", { maximumFractionDigits: 0 });
 
 const ERRORS = {
   trial_already_used: "You've already used your free trial.",
@@ -117,22 +120,25 @@ function AccessPanel({ onNotice }) {
   let headline; let sub; let action = null;
   if (!user) {
     headline = "Try everything free for 7 days";
-    sub = "Pro+ access: every category, every level and the AI tools. No card needed.";
+    sub = "Pro+ access: every category and the full curriculum. No card needed.";
     action = <button type="button" className="sub-access-btn" onClick={() => setAuthMode("signup")}>Create a free account to start</button>;
   } else if (planInfo.notSetUp) {
     headline = "Free trials are opening soon";
     sub = "We're setting up beta access. Check back in a little while.";
+  } else if (planInfo.source === "paid" && planInfo.endsAt) {
+    headline = `${PLAN_NAMES[plan]} is active`;
+    sub = `Paid until ${niceDate(planInfo.endsAt)} (${daysLeft(planInfo.endsAt)} day${daysLeft(planInfo.endsAt) === 1 ? "" : "s"} left). Buy another pass any time: it starts when this one ends.`;
   } else if (active) {
     const what = planInfo.source === "trial" ? "Free trial" : "Free access";
     headline = `${what} active: ${PLAN_NAMES[plan]}`;
     sub = `${daysLeft(planInfo.endsAt)} day${daysLeft(planInfo.endsAt) === 1 ? "" : "s"} left. Ends ${niceDate(planInfo.endsAt)}.`;
   } else if (planInfo.trialAvailable) {
     headline = "Try everything free for 7 days";
-    sub = "Pro+ access: every category, every level and the AI tools. No card needed. Your 7 days start when you press the button.";
+    sub = "Pro+ access: every category and the full curriculum. No card needed. Your 7 days start when you press the button.";
     action = <button type="button" className="sub-access-btn" disabled={busy} onClick={startTrial}>{busy ? "Starting..." : "Start my free trial"}</button>;
   } else if (plan === "free") {
     headline = "Your free trial has ended";
-    sub = "You still have Homeroom and Articles. Paid plans open after the beta. If you were invited, use your code.";
+    sub = "You still have Homeroom, Articles, Kids stories and the Letter Board. Pick a plan below to unlock the rest, or use a code if you were invited.";
   } else {
     headline = `You're on ${PLAN_NAMES[plan]}`;
     sub = "Everything in your plan is unlocked.";
@@ -144,10 +150,9 @@ function AccessPanel({ onNotice }) {
   return (
     <div className="sub-rib">
       <div className="sub-rib-text">
-        <p className="sub-rib-eyebrow">{active ? (planInfo.source === "trial" ? "Free trial" : "Free access") : "Beta access"}</p>
+        <p className="sub-rib-eyebrow">{planInfo.source === "paid" ? "Your plan" : active ? (planInfo.source === "trial" ? "Free trial" : "Free access") : "Beta access"}</p>
         <h3 className="sub-rib-title">{headline}</h3>
         <p className="sub-rib-sub">{sub}</p>
-        {planInfo.source === "trial" && <p className="sub-rib-fine">The AI tools allow 30 lookups a day during the trial.</p>}
       </div>
       {showRing && (
         <div className="sub-ring" style={{ "--p": ringPct }} aria-label={`${daysLeft(planInfo.endsAt)} days left`}>
@@ -174,12 +179,80 @@ function AccessPanel({ onNotice }) {
   );
 }
 
-export default function Subscription() {
-  const [notice, setNotice] = useState(null);
+const PAY_MESSAGES = {
+  cancelled: { kind: "info", text: "Payment cancelled. Nothing was charged." },
+  failed: { kind: "error", text: "The payment didn't go through. Nothing was charged. You can try again, or use another card or wallet." },
+  expired: { kind: "error", text: "The payment page expired before it was finished. Nothing was charged. You can start again." },
+  pending: { kind: "info", text: "Maya is still processing your payment. Your plan turns on as soon as it's confirmed; you can refresh this page in a minute." },
+};
 
-  function handleUpgrade(tierName) {
-    setNotice(`${tierName} isn't open for billing yet. During the beta you can try everything free for 7 days.`);
+async function callApi(path, body) {
+  const { data } = await supabase.auth.getSession();
+  const token = data?.session?.access_token;
+  const res = await fetch(path, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+    body: JSON.stringify(body),
+  });
+  let json = {};
+  try { json = await res.json(); } catch { /* empty */ }
+  return { ok: res.ok, json };
+}
+
+export default function Subscription() {
+  const { user, plan, planInfo, refreshPlan } = useAuth();
+  const [period, setPeriod] = useState("month");
+  const [notice, setNotice] = useState(null); // { kind: "ok" | "error" | "info", text }
+  const [busyTier, setBusyTier] = useState(null);
+  const [authMode, setAuthMode] = useState(null);
+  const handled = useRef(false);
+  const testMode = typeof window !== "undefined" && !/^(www\.)?sentenco\.com$/i.test(window.location.hostname);
+
+  // Back from Maya: /library/subscription?pay=done|failed|cancelled&ref=<payment id>
+  useEffect(() => {
+    if (handled.current || !user) return;
+    const params = new URLSearchParams(window.location.search);
+    const pay = params.get("pay");
+    const ref = params.get("ref");
+    if (!pay || !ref) return;
+    handled.current = true;
+    const clean = () => window.history.replaceState(null, "", window.location.pathname);
+    (async () => {
+      setNotice({ kind: "info", text: "Checking your payment with Maya..." });
+      let result = null;
+      for (let i = 0; i < 5; i++) {
+        const { ok, json } = await callApi("/api/maya-confirm", { ref });
+        result = ok ? json : { status: "error", error: json.error };
+        if (!ok || result.status !== "pending" || pay !== "done") break;
+        await new Promise((r) => setTimeout(r, 2500));
+      }
+      clean();
+      if (result?.status === "paid") {
+        await refreshPlan();
+        const until = result.ends_at ? ` until ${niceDate(result.ends_at)}` : "";
+        setNotice({ kind: "ok", text: `Payment received. ${PLAN_NAMES[result.plan] || "Your plan"} is active${until}. Thank you!` });
+      } else if (result?.status && PAY_MESSAGES[result.status]) {
+        setNotice(PAY_MESSAGES[pay === "cancelled" && result.status === "pending" ? "cancelled" : result.status]);
+      } else {
+        setNotice({ kind: "error", text: result?.error || "We couldn't check the payment just now. If you paid, your plan turns on shortly; refresh this page in a minute." });
+      }
+    })();
+  }, [user, refreshPlan]);
+
+  async function handleUpgrade(tier) {
+    if (!user) { setAuthMode("signup"); return; }
+    setBusyTier(tier.key);
+    setNotice(null);
+    const { ok, json } = await callApi("/api/maya-checkout", { plan: tier.key, period });
+    if (ok && json.redirectUrl) {
+      window.location.assign(json.redirectUrl);
+      return;
+    }
+    setBusyTier(null);
+    setNotice({ kind: "error", text: json.error || "We couldn't open the payment page. Please try again." });
   }
+
+  const paidOrTrial = planInfo.source === "paid" || planInfo.source === "grant" || planInfo.source === "trial";
 
   return (
     <div className="sub-shell">
@@ -188,47 +261,76 @@ export default function Subscription() {
         <div className="sub-intro">
           <p className="sub-eyebrow">Plans</p>
           <h2 className="sub-heading">Simple pricing, built around how you actually teach</h2>
-          <p className="sub-lede">Start free. Upgrade when the curriculum or the AI tools become part of your daily routine.</p>
+          <p className="sub-lede">Start free. Upgrade when the lessons or the curriculum become part of your daily routine.</p>
         </div>
 
         <AccessPanel />
 
         {notice && (
-          <div className="sub-notice" role="status">
-            {notice}
+          <div className={`sub-notice is-${notice.kind}`} role="status">
+            {notice.text}
             <button type="button" className="sub-notice-close" onClick={() => setNotice(null)} aria-label="Dismiss">&times;</button>
           </div>
         )}
 
-        <div className="sub-tiers">
-          {TIERS.map((t) => (
-            <div className={`sub-tier${t.highlighted ? " is-pro" : ""}${t.navy ? " is-navy" : ""}`} key={t.key}>
-              {t.highlighted && <span className="sub-tier-badge">Most popular</span>}
-              <h3 className="sub-tier-name">{t.name}</h3>
-              <p className="sub-tier-tagline">{t.tagline}</p>
-              <div className="sub-tier-price-row">
-                {t.originalPrice && <span className="sub-tier-price-was">{t.originalPrice}</span>}
-                <span className={`sub-tier-price${t.originalPrice ? "" : " is-small"}`}>{t.price}</span>
-                {t.originalPrice && <span className="sub-tier-per">/mo</span>}
-              </div>
-              <p className="sub-tier-price-note">{t.priceNote || "\u00A0"}</p>
-              <ul className="sub-tier-features">
-                {t.features.map((f, i) => (
-                  <li key={i}><span className="sub-check"><CheckIcon /></span>{f}</li>
-                ))}
-              </ul>
-              <button type="button" className="sub-tier-cta" disabled={t.ctaDisabled} onClick={() => handleUpgrade(t.name)}>
-                {t.cta}
-              </button>
-            </div>
-          ))}
+        <div className="sub-period" role="group" aria-label="Billing period">
+          <button type="button" aria-pressed={period === "month"} onClick={() => setPeriod("month")}>Monthly</button>
+          <button type="button" aria-pressed={period === "year"} onClick={() => setPeriod("year")}>Yearly <span className="sub-save">2 months free</span></button>
         </div>
+
+        <div className="sub-tiers">
+          {TIERS.map((t) => {
+            const isCurrent = plan === t.key && (t.key === "free" || paidOrTrial);
+            const price = t.price?.[period];
+            let cta = t.cta;
+            if (t.key !== "free") {
+              cta = busyTier === t.key ? "Opening Maya..." : isCurrent && planInfo.source === "paid"
+                ? `Add ${period === "year" ? "1 year" : "1 month"}`
+                : `Get ${t.name}, ${period === "year" ? "1 year" : "1 month"}`;
+            }
+            return (
+              <div className={`sub-tier${t.highlighted ? " is-pro" : ""}${t.navy ? " is-navy" : ""}`} key={t.key}>
+                {t.highlighted && <span className="sub-tier-badge">Most popular</span>}
+                <h3 className="sub-tier-name">{t.name}</h3>
+                <p className="sub-tier-tagline">{t.tagline}</p>
+                <div className="sub-tier-price-row">
+                  {price ? (
+                    <>
+                      <span className="sub-tier-price-was">{peso(t.was[period])}</span>
+                      <span className="sub-tier-price">{peso(price)}</span>
+                      <span className="sub-tier-per">{period === "year" ? "/yr" : "/mo"}</span>
+                    </>
+                  ) : (
+                    <span className="sub-tier-price is-small">Free forever</span>
+                  )}
+                </div>
+                <p className="sub-tier-price-note">
+                  {price ? (period === "year" ? `About ${peso(Math.round(price / 12))} a month. Pay once for 12 months.` : "Early adopter price. Pay once for 30 days, no auto-charge.") : "\u00A0"}
+                </p>
+                <ul className="sub-tier-features">
+                  {t.features.map((f, i) => (
+                    <li key={i}><span className="sub-check"><CheckIcon /></span>{f}</li>
+                  ))}
+                </ul>
+                <button type="button" className="sub-tier-cta" disabled={t.ctaDisabled || busyTier !== null} onClick={() => handleUpgrade(t)}>
+                  {cta}
+                </button>
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="sub-pay-note">
+          Pay on Maya's secure page with the Maya app, QR Ph (works with GCash and other banks) or a credit or debit card. Passes don't renew by themselves; we'll remind you before yours ends.
+          {testMode && <><br /><b>Test mode:</b> no real money moves here. Use Maya's test card 4123 4501 3100 1381, any name, 12/30, CVV 123, password mctest1.</>}
+        </p>
 
         <p className="sub-legal-note">
           By subscribing you agree to our <a href="/library/legal/terms">Terms of Service</a> and{" "}
           <a href="/library/legal/refund">Refund & Cancellation Policy</a>.
         </p>
       </div>
+      {authMode && <AuthForm mode={authMode} onClose={() => setAuthMode(null)} />}
     </div>
   );
 }
@@ -288,6 +390,17 @@ const CSS = `
 .sub-access-msg.is-error { background: #FBE3E0; color: #B3261E; }
 
 .sub-notice { position: relative; max-width: 780px; margin: -12px auto 22px; background: #FFF4D6; color: #7A5C0C; border-radius: 18px; padding: 12px 40px 12px 16px; font-size: 13.5px; font-weight: 700; line-height: 1.5; }
+.sub-notice.is-ok { background: #E3F5EA; color: #1F7A47; }
+.sub-notice.is-error { background: #FBE3E0; color: #B3261E; }
+.sub-notice.is-info { background: #EAF0FB; color: #2B3F6B; }
+.sub-period { display: flex; justify-content: center; gap: 4px; width: max-content; margin: 0 auto 22px; padding: 4px; background: #fff; border-radius: 999px; box-shadow: 0 1px 2px rgba(27,42,74,0.06), 0 10px 22px -18px rgba(27,42,74,0.4); }
+.sub-period button { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); background: none; border: none; border-radius: 999px; padding: 9px 18px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.sub-period button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.sub-period button:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+.sub-save { font-size: 11px; font-weight: 700; background: var(--coral-pale); color: var(--coral-deep); border-radius: 999px; padding: 2px 8px; }
+.sub-period button[aria-pressed="true"] .sub-save { background: var(--coral); color: #fff; }
+.sub-pay-note { text-align: center; font-size: 13px; font-weight: 600; color: var(--muted); line-height: 1.6; max-width: 640px; margin: 22px auto 0; }
+.sub-pay-note b { color: var(--ink); }
 .sub-notice-close { position: absolute; right: 8px; top: 8px; width: 26px; height: 26px; border: none; border-radius: 50%; background: none; color: inherit; font-size: 18px; cursor: pointer; }
 
 .sub-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; padding-top: 10px; }
