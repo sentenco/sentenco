@@ -506,6 +506,8 @@ const styles = `
 .bubble.right { border-radius: 18px 18px 4px 18px; box-shadow: 0 4px 0 var(--coral); }
 .bubble .fill { display: inline-block; min-width: 56px; border-bottom: 2px solid currentColor; }
 .avatar-pic .sp-tile { border-radius: 50%; border: 3px solid var(--navy); }
+/* Teens dialogues (Ignite A1, Ablaze A2): teacher in a white bubble, student in a soft yellow bubble, both with a navy outline */
+.track-ignite .bubble.right, .track-ablaze .bubble.right { background: #FFF1C2; box-shadow: 0 4px 0 var(--navy); }
 .bubble-col.is-long { gap: 6px; }
 .bubble-col.is-long .bubble { padding: 9px 16px; }
 .bubble-col.is-roomy { gap: 18px; max-width: 640px; }
