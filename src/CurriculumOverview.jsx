@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { TEENS_LEVELS } from "./teensCurriculumData";
 import { ADULTS_LEVELS } from "./adultsCurriculumData";
+import { useAuth } from "./AuthContext";
 
 const KIDS_LEVELS = {
   A1: {
@@ -40,6 +41,9 @@ export default function CurriculumOverview({ onSelectLevel }) {
   // A Teens/Adults link (or a plan that no longer includes them) falls back to Kids.
   const shownAudience = audiences.some((a) => a.id === audience) ? audience : "kids";
   const navigate = useNavigate();
+  const { user } = useAuth();
+  // The owner's private Just Talk speaking course shows here only for the owner account.
+  const isOwner = user?.email?.toLowerCase() === "caldrin1999@gmail.com";
 
   function selectAudience(id) {
     setAudience(id);
@@ -119,6 +123,27 @@ export default function CurriculumOverview({ onSelectLevel }) {
               <div className="co-row-go" aria-hidden="true">&rarr;</div>
             </div>
           ))}
+          {isOwner && (
+            <div
+              className="co-row co-row--coral"
+              style={{ "--img": "none" }}
+              onClick={() => navigate("/library/just-talk")}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && navigate("/library/just-talk")}
+            >
+              <div className="co-row-ring"><span>A1</span><small>A2</small></div>
+              <div className="co-row-text">
+                <div className="co-row-head">
+                  <span className="co-row-name">Just Talk</span>
+                  <span className="co-level-tag">Private · Speaking</span>
+                </div>
+                <p className="co-row-desc">Your own speaking course for students who just want to talk. Only you can see this.</p>
+                <div className="co-row-meta"><b>33</b> topics · <b>99</b> classes</div>
+              </div>
+              <div className="co-row-go" aria-hidden="true">&rarr;</div>
+            </div>
+          )}
         </div>
       </div>
     </div>

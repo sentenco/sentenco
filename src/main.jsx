@@ -580,7 +580,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/admin/reports" element={<LibraryPageShell><AdminReports /></LibraryPageShell>} />
             <Route path="/library/admin/access" element={<AdminAccess />} />
             <Route path="/library/admin/payments" element={<AdminPayments />} />
-            <Route path="/library/just-talk" element={<Suspense fallback={null}><JustTalkHub /></Suspense>} />
+            <Route path="/library/just-talk" element={<LibraryPageShell><Suspense fallback={null}><JustTalkHub /></Suspense></LibraryPageShell>} />
             <Route path="/library/just-talk/:stage/check-in" element={<Suspense fallback={null}><JustTalkClass check /></Suspense>} />
             <Route path="/library/just-talk/:stage/check-in/card" element={<Suspense fallback={null}><JustTalkCard check /></Suspense>} />
             <Route path="/library/just-talk/:topic/:n" element={<Suspense fallback={null}><JustTalkClass /></Suspense>} />
