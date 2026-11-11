@@ -54,6 +54,13 @@ function openCard(cls) {
 /* ---------- Room (hub): same layout as the curriculum level pages ---------- */
 
 const TOPIC_NUM = Object.fromEntries(STAGES.flatMap((st) => st.topics.map((t) => t.name)).map((name, i) => [name, i + 1]));
+// Just Talk lesson rows: name on line 1, question + pattern on line 2, so half-width windows stay tidy.
+const JT_LESSON_CSS = `
+.jt-lmain { flex-direction: column; align-items: flex-start; gap: 2px; }
+.jt-lmain .tlp-toc-lesson-title { white-space: normal; }
+.jt-lmain .tlp-toc-lesson-focus { line-height: 1.45; }
+.jt-lq { font-family: 'Source Serif 4', serif; font-style: italic; color: #8A85A0; margin-right: 8px; }
+`;
 const STAGE_COLORS = { A1: { color: "#FF6B4A", light: "#FFE6DD" }, A2: { color: "#1B2A4A", light: "#E7EAF3" } };
 const chevron = <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>;
 const arrow = <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>;
@@ -151,9 +158,9 @@ export function JustTalkHub() {
                             {t.classes.map(([title, pattern, task], i) => (
                               <div key={title} className={`tlp-toc-lesson-row ${ready ? "is-ready" : ""}`}>
                                 <span className="tlp-toc-lesson-bullet">{i + 1}</span>
-                                <div className="tlp-toc-lesson-main">
-                                  <span className="tlp-toc-lesson-title">{NAMES[t.name]?.[i] || title} <i style={{ fontStyle: "italic", fontWeight: 400, fontSize: "0.9em", color: "#8A85A0", marginLeft: 6 }}>&ldquo;{title}&rdquo;</i></span>
-                                  <span className="tlp-toc-lesson-focus" title={task}>{pattern}</span>
+                                <div className="tlp-toc-lesson-main jt-lmain">
+                                  <span className="tlp-toc-lesson-title">{NAMES[t.name]?.[i] || title}</span>
+                                  <span className="tlp-toc-lesson-focus" title={task}><i className="jt-lq">&ldquo;{title}&rdquo;</i>{pattern}</span>
                                 </div>
                                 {ready
                                   ? <button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Open {arrow}</button>
@@ -178,7 +185,7 @@ export function JustTalkHub() {
                       <div className="tlp-toc-panel-inner">
                         <div className={`tlp-toc-lesson-row is-test ${check ? "is-ready" : ""}`}>
                           <span className="tlp-toc-lesson-bullet">T</span>
-                          <div className="tlp-toc-lesson-main">
+                          <div className="tlp-toc-lesson-main jt-lmain">
                             <span className="tlp-toc-lesson-title">Stage {st.n} check-in</span>
                             <span className="tlp-toc-lesson-focus">{check ? check[0].goal : "Review"}</span>
                           </div>
@@ -199,7 +206,7 @@ export function JustTalkHub() {
   );
 }
 
-const JT_HUB_CSS = `.tlp-toc.jt-toc { margin-bottom: 22px; }`;
+const JT_HUB_CSS = `.tlp-toc.jt-toc { margin-bottom: 22px; }` + JT_LESSON_CSS;
 
 /* ---------- Class console ---------- */
 
