@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { STAGES, SCRIPTS, CARDS, NAMES } from "./justTalkData";
 import { TLP_STYLES } from "./trackLevelStyles";
+import { BOARDS } from "./justTalkBoards";
 
 // Just Talk A1-A2: the owner's private speaking course. Only the site owner's
 // account can open these pages; they are not linked anywhere else. Speaking
@@ -64,6 +65,15 @@ const JT_LESSON_CSS = `
 const STAGE_COLORS = { A1: { color: "#FF6B4A", light: "#FFE6DD" }, A2: { color: "#1B2A4A", light: "#E7EAF3" } };
 const chevron = <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>;
 const arrow = <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>;
+
+// The Just Talk Board (portrait, one window for the whole class) for lessons that have one.
+function openBoard(path) {
+  const sw = window.screen.availWidth || 1600;
+  const sh = window.screen.availHeight || 900;
+  const w = Math.min(1000, sw - 40);
+  const h = sh - 40;
+  window.open(`${path}/board`, "justTalkBoard", `width=${w},height=${h},left=${Math.max(0, Math.floor((sw - w) / 2))},top=10,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`);
+}
 
 function openClassPopup(path) {
   const sw = window.screen.availWidth || 1600;
@@ -163,7 +173,7 @@ export function JustTalkHub() {
                                   <span className="tlp-toc-lesson-focus" title={task}><i className="jt-lq">&ldquo;{title}&rdquo;</i>{pattern}</span>
                                 </div>
                                 {ready
-                                  ? <button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Open {arrow}</button>
+                                  ? <span style={{ display: "inline-flex", gap: 6 }}>{BOARDS[`${slug(t.name)}-${i + 1}`] && <button type="button" className="tlp-toc-lesson-open" style={{ background: "#3E5B3A" }} onClick={() => openBoard(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Board {arrow}</button>}<button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Script {arrow}</button></span>
                                   : <span className="tlp-toc-lesson-tag">Lesson</span>}
                               </div>
                             ))}
@@ -190,7 +200,7 @@ export function JustTalkHub() {
                             <span className="tlp-toc-lesson-focus">{check ? check[0].goal : "Review"}</span>
                           </div>
                           {check
-                            ? <button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/stage-${st.n}/check-in`)}>Open {arrow}</button>
+                            ? <span style={{ display: "inline-flex", gap: 6 }}>{BOARDS[`check-${st.n}`] && <button type="button" className="tlp-toc-lesson-open" style={{ background: "#3E5B3A" }} onClick={() => openBoard(`/library/just-talk/stage-${st.n}/check-in`)}>Board {arrow}</button>}<button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/stage-${st.n}/check-in`)}>Script {arrow}</button></span>
                             : <span className="tlp-toc-lesson-tag">Review</span>}
                         </div>
                       </div>
@@ -305,7 +315,10 @@ export function JustTalkClass({ check = false }) {
             <h1>{cls.name}</h1>
             {cls.name !== c.title && <p className="jt-sub">&ldquo;{c.title}&rdquo;</p>}
             <p className="jt-goal">{c.goal}</p>
-            <button type="button" className="jt-cardbtn" onClick={() => openCard(cls)}>Student card</button>
+            <div style={{ gridColumn: 2, gridRow: "1 / span 3", display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end", alignSelf: "center" }}>
+              {BOARDS[check ? cls.key : `${slug(cls.topic)}-${cls.n}`] && <button type="button" className="jt-cardbtn" style={{ background: "#3E5B3A", color: "#fff", borderColor: "#3E5B3A" }} onClick={() => openBoard(cls.path)}>Board</button>}
+              <button type="button" className="jt-cardbtn" onClick={() => openCard(cls)}>Student card</button>
+            </div>
           </header>
 
           <section className="jt-meta">
