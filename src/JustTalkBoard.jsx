@@ -16,7 +16,7 @@ import { fitBoardWindow } from "./justTalkWindow.js";
 // Look: "Flashcards" (questions on index cards from a stack, answers on sticky notes, soft green desk).
 // Translations are free: Hebrew and Polish are written in advance (justTalkTranslations.js); other
 // languages get a Google Translate link that opens in a new tab. Look: "On Air" in the A1-A2 banner colors
-// (coral, navy, peach, sparkle yellow), controls centered, no student picker. Boards save per lesson (student "A1-A2"),
+// (coral, navy, peach, sparkle yellow), one slim centered top bar, no student picker. Boards save per lesson (student "A1-A2"),
 // to Supabase (sql/just_talk_boards.sql); without that table they save in this browser only.
 //
 // ACTIVITY TYPES (justTalkBoards.js): wheel, dice, cards (+pic), sort, draw, showtell, truthlie, flipgrid, spotdiff, timer,
@@ -649,7 +649,6 @@ export default function JustTalkBoard({ check = false }) {
       <div className="jtb">
         <style>{CSS + teensGameStyles + zoomStyles}</style>
         <header className="bar">
-          <div className="mark"><span className="lamp"><i />ON AIR</span><span className="mark-t"><b>Just Talk · {STAGES.find((st) => st.n === L.stage)?.lv || "A1"}</b><span>{kicker}</span></span></div>
           <div className="right">
             <nav className="pages" aria-label="Pages">
               {[["warm", "Warm-up"], ["lesson", "Lesson"], ["more", "More questions"]].map(([id, label]) => (
@@ -667,7 +666,6 @@ export default function JustTalkBoard({ check = false }) {
             </label>
             <button type="button" className="fixbtn" onClick={openFix}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
           </div>
-          <div className="bar-end" />
         </header>
 
         <div className="stage">
@@ -1088,13 +1086,8 @@ const CSS = `
 /* ===== On Air (A1-A2 banner colors): overrides on top of the board styles above ===== */
 .jtb { font-family: var(--body); background: radial-gradient(ellipse 60% 40% at 55% 12%, #FFFFFF 0%, rgba(255,255,255,0) 70%), radial-gradient(ellipse 40% 40% at 100% 100%, #FFD9C9 0%, rgba(255,217,201,0) 70%), var(--stage); background-attachment: fixed; }
 .jtb button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
-.jtb .bar { max-width: 1000px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px 14px; margin-bottom: 14px; }
-.jtb .bar .mark { justify-self: start; gap: 12px; }
-.jtb .bar .right { justify-self: center; justify-content: center; align-items: center; flex-wrap: wrap; }
-.jtb .lamp { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; background: var(--red); color: #fff; font-family: var(--disp); font-weight: 800; font-size: 12.5px; letter-spacing: .14em; padding: 7px 11px; border-radius: 8px; box-shadow: 0 0 0 4px rgba(255,107,74,.16), 0 6px 18px rgba(255,107,74,.32); }
-.jtb .lamp i { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: jtbBlink 1.4s infinite; }
-@keyframes jtbBlink { 50% { opacity: .25; } }
-.jtb .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 17px; color: var(--ink); white-space: nowrap; }
+.jtb .bar { max-width: 1000px; display: flex; justify-content: center; margin-bottom: 14px; }
+.jtb .bar .right { justify-content: center; align-items: center; flex-wrap: wrap; }
 .jtb .pages { grid-column: auto; display: inline-flex; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 11px; padding: 3px; box-shadow: none; justify-self: auto; }
 .jtb .pg { padding: 5px 12px; border-radius: 8px; font-weight: 600; font-size: 13px; color: var(--muted); gap: 4px; }
 .jtb .pg.on { background: var(--green); color: #fff; }
@@ -1103,8 +1096,6 @@ const CSS = `
 .jtb .pill-sel.teal { color: var(--green); }
 .jtb .fixbtn { background: var(--gold); color: #3A2A00; }
 .jtb .fixbtn .badge { color: var(--ink); }
-@media (max-width: 1100px) { .jtb .bar { grid-template-columns: minmax(0, 1fr); justify-items: center; } .jtb .bar .mark { justify-self: center; } .jtb .bar-end { display: none; } }
-
 .jtb .stage { max-width: 1000px; }
 .jtb .rail { background: var(--card); border: 1px solid var(--line); box-shadow: 0 8px 22px rgba(120,60,40,.08); }
 .jtb .tl { color: var(--muted); font-weight: 600; }
@@ -1173,5 +1164,4 @@ const CSS = `
 .jtb .present .next { background: var(--red); }
 .jtb .steps i.cur { background: var(--gold); }
 .jtb .cap, .jtb .sv-q, .jtb .plan-ed, .jtb .tl-ed, .jtb .ord, .jtb .lc-words span, .jtb .lc-fix, .jtb .fl b, .jtb .fl-better, .jtb .fix-row { font-family: var(--body); font-weight: 600; }
-@media (prefers-reduced-motion: reduce) { .jtb .lamp i { animation: none; } }
 `;

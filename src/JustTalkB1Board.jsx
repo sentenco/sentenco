@@ -11,7 +11,7 @@ import { fitBoardWindow } from "./justTalkWindow.js";
 // Just Talk Board for B1-B2: a lighter board for students who can talk without a translator.
 // One step at a time (hook, facts, words, grammar, discuss, challenge, wrap-up), a "Fix it" drawer
 // for live corrections. Saved per lesson in just_talk_boards (student "B1-B2", key "b1/<lesson>"); no student picker.
-// Look: "On Air" in the B1-B2 banner colors (deep teal, mint, bulb yellow), controls and rundown centered (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars; Bricolage Grotesque + Outfit), 25-minute lessons,
+// Look: "On Air" in the B1-B2 banner colors (deep teal, mint, bulb yellow). One slim centered top bar; steps live in a floating bar at the bottom (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars; Bricolage Grotesque + Outfit), 25-minute lessons,
 // with the A1-A2 annotation rail on the left (pen, text, eraser, spotlight, stamps, picture). Drawings are kept per step.
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
@@ -213,7 +213,7 @@ export default function JustTalkB1Board() {
     const top = Math.max(40, window.scrollY - (sheetRef.current?.offsetTop || 0) + 80);
     readPhoto(file, (src) => { setItems([...pageItems, { id: uid(), type: "img", x: 40, y: top, w: 300, src }]); setTool("move"); });
   }
-  const goNext = step < steps.length - 1 && <button type="button" className="go" onClick={() => goStep(step + 1)}>Next: {steps[step + 1][1]} <Ms n="arrow_forward" /></button>;
+  const goNext = null; // moving on happens in the floating step bar at the bottom
 
   function Tr({ w }) {
     const he = w[4], pl = w[5];
@@ -530,7 +530,6 @@ export default function JustTalkB1Board() {
     <div className="jt1">
       <style>{CSS}</style>
       <div className="bar">
-        <div className="mark"><span className="lamp"><i />ON AIR</span><div className="mark-t"><b>Just Talk · {L.lv}</b><span>{kicker}{saveMsg ? ` · ${saveMsg}` : ""}</span></div></div>
         <div className="right">
           <nav className="pages" aria-label="Pages">
             <button type="button" className={`pg ${page === "lesson" ? "on" : ""}`} onClick={() => setPage("lesson")}>{isCheck ? "Check-in" : "Lesson"}</button>
@@ -538,8 +537,8 @@ export default function JustTalkB1Board() {
           </nav>
           <label className="pill-sel teal"><Ms n="translate" /><select value={lang} onChange={(e) => { setLang(e.target.value); lsSet("jt1-lang", e.target.value); }} aria-label="Backup language">{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
           <button type="button" className="tool fix" onClick={() => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); }}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
+          {saveMsg && <span className="saved" title={saveMsg}><Ms n="cloud_done" /></span>}
         </div>
-        <div className="bar-end" />
       </div>
 
       <div className="stage">
@@ -557,7 +556,6 @@ export default function JustTalkB1Board() {
         </div>
 
         <div className="sheet-wrap">
-          {page === "lesson" && <nav className="steps" aria-label="Rundown">{steps.map(([k, t, time], i) => <button key={k} type="button" className={`stp ${i === step ? "on" : i < step ? "done" : ""}`} onClick={() => goStep(i)}><i>{time.split("-")[0]}:00</i><span>{t}</span></button>)}</nav>}
           <section ref={sheetRef} className="sheet" onClick={onSheetClick} style={{ cursor: tool === "text" ? "text" : tool === "stamp" ? "copy" : tool === "spot" ? "zoom-in" : undefined }}>
             <div className="lesson anim" key={`${page}-${animKey}`}>
               {page === "lesson" ? (<>
@@ -570,6 +568,14 @@ export default function JustTalkB1Board() {
           </section>
         </div>
       </div>
+
+      {page === "lesson" && (
+        <div className="present" aria-label="Lesson steps">
+          <button type="button" disabled={step === 0} onClick={() => goStep(step - 1)}><Ms n="chevron_left" />Back</button>
+          <span className="dots">{steps.map(([k, t, time], i) => <button key={k} type="button" className={i === step ? "cur" : i < step ? "on" : ""} title={`${t} · ${time}`} aria-label={`${t}, ${time}`} onClick={() => goStep(i)}>{i === step && <b>{t}</b>}</button>)}</span>
+          <button type="button" className="next" disabled={step >= steps.length - 1} onClick={() => goStep(step + 1)}>{step >= steps.length - 1 ? "Last step" : <>Next: {steps[step + 1][1]}<Ms n="chevron_right" /></>}</button>
+        </div>
+      )}
 
       {fixOpen && <div className="scrim" onClick={() => setFixOpen(false)} />}
       <aside className={`fixd ${fixOpen ? "open" : ""}`} aria-label="Fix it" aria-hidden={!fixOpen}>
@@ -619,16 +625,19 @@ const CSS = `
 .jt1 .row { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
 
 /* top bar */
-.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px 14px; align-items: center; }
-.jt1 .bar .mark { justify-self: start; }
-.jt1 .bar .right { justify-self: center; justify-content: center; }
-.jt1 .mark { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.jt1 .lamp { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; background: var(--red); color: #fff; font-family: var(--disp); font-weight: 800; font-size: 12.5px; letter-spacing: .14em; padding: 7px 11px; border-radius: 8px; box-shadow: 0 0 0 4px rgba(44,122,110,.16), 0 6px 18px rgba(44,122,110,.3); }
-.jt1 .lamp i { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: jt1Blink 1.4s infinite; }
-@keyframes jt1Blink { 50% { opacity: .25; } }
-.jt1 .mark-t { display: grid; min-width: 0; line-height: 1.15; }
-.jt1 .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 17px; white-space: nowrap; }
-.jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: flex; justify-content: center; }
+.jt1 .bar .right { justify-content: center; }
+.jt1 .saved { color: var(--teal); display: inline-grid; place-items: center; }
+.jt1 .saved .ms { font-size: 19px; }
+.jt1 .present { position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 4px; background: var(--teal); color: #fff; border-radius: 14px; padding: 6px; box-shadow: 0 12px 28px rgba(21,48,42,.3); max-width: calc(100% - 28px); }
+.jt1 .present > button { display: inline-flex; align-items: center; gap: 2px; border-radius: 10px; padding: 9px 13px; font-weight: 600; font-size: 13.5px; color: #fff; white-space: nowrap; }
+.jt1 .present .next { background: var(--gold); color: #3A2A00; padding-right: 10px; }
+.jt1 .present > button:disabled { opacity: .4; background: none; color: #fff; }
+.jt1 .present .dots { display: flex; align-items: center; gap: 6px; padding: 0 8px; min-width: 0; }
+.jt1 .present .dots button { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.35); padding: 0; flex: 0 0 auto; }
+.jt1 .present .dots button.on { background: rgba(255,255,255,.75); }
+.jt1 .present .dots button.cur { width: auto; height: auto; border-radius: 999px; background: #fff; color: var(--teal); padding: 3px 10px; }
+.jt1 .present .dots b { font-size: 12.5px; font-weight: 700; white-space: nowrap; }
 .jt1 .right { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; align-items: center; }
 .jt1 .pill-sel { display: inline-flex; align-items: center; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px 6px 3px 9px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .jt1 .pill-sel select, .jt1 .pill-sel input { border: 0; background: none; font-weight: 600; color: var(--ink); padding: 4px 2px; max-width: 140px; outline: none; }
@@ -677,13 +686,6 @@ const CSS = `
 .jt1 .spot .lit { position: relative; z-index: 2; transform: scale(1.03); transition: transform .25s; }
 
 /* rundown */
-.jt1 .steps { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-.jt1 .stp { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px 6px 7px; font-weight: 600; font-size: 13px; color: var(--muted); }
-.jt1 .stp i { font-style: normal; font-size: 11.5px; font-variant-numeric: tabular-nums; background: var(--soft); border-radius: 6px; padding: 2px 6px; }
-.jt1 .stp.done { color: var(--ink); }
-.jt1 .stp.done i { background: var(--teal-wash); color: var(--teal); }
-.jt1 .stp.on { background: var(--red-wash); border-color: var(--red); color: var(--red); }
-.jt1 .stp.on i { background: var(--red); color: #fff; }
 
 .jt1 .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .jt1 .head h1 { font-family: var(--disp); font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -.02em; margin: 0; line-height: 1; }
@@ -694,7 +696,7 @@ const CSS = `
 @keyframes jt1Rise { from { opacity: 0; transform: translateY(10px); } }
 .jt1 .pop { animation: jt1Pop .3s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes jt1Pop { from { opacity: 0; transform: scale(.97); } }
-@media (prefers-reduced-motion: reduce) { .jt1 .anim .part, .jt1 .pop, .jt1 .lamp i, .jt1 .item.stamp { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .jt1 .anim .part, .jt1 .pop, .jt1 .item.stamp { animation: none; } }
 .jt1 .ph { display: flex; align-items: baseline; gap: 10px; }
 .jt1 .ph .n { font-family: var(--disp); font-weight: 800; font-size: 15px; color: #fff; background: var(--red); border-radius: 7px; padding: 2px 8px; }
 .jt1 .ph h2 { margin: 0; font-family: var(--disp); font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
@@ -884,16 +886,12 @@ const CSS = `
 .jt1 .fl.up { border-left: 4px solid var(--gold); }
 .jt1 .fl.fx0 { border-left: 4px solid var(--red); }
 
-@media (max-width: 860px) { .jt1 .bar { grid-template-columns: 1fr; justify-items: center; } .jt1 .bar .mark { justify-self: center; } .jt1 .bar-end { display: none; } }
 @media (max-width: 720px) {
-  .jt1 .right { justify-content: flex-start; }
   .jt1 .stage { grid-template-columns: 1fr; }
   .jt1 .rail { position: static; display: flex; flex-wrap: wrap; justify-content: center; }
   .jt1 .rail hr { display: none; }
   .jt1 .inks, .jt1 .stamps { display: flex; padding: 0 4px; align-items: center; }
   .jt1 .stmp { padding: 5px 8px; }
-  .jt1 .stp span { display: none; }
-  .jt1 .stp.on span { display: inline; }
   .jt1 .sides, .jt1 .checks { grid-template-columns: 1fr; }
   .jt1 .lower { grid-template-columns: 1fr; }
   .jt1 .lower > .spk { margin: 0 0 12px 16px; }
