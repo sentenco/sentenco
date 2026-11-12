@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "./AuthContext";
-import { STAGES, SCRIPTS, CARDS } from "./justTalkData";
+import { STAGES, SCRIPTS, CARDS, NAMES } from "./justTalkData";
 import { TLP_STYLES } from "./trackLevelStyles";
+import { BOARDS } from "./justTalkBoards";
 
 // Just Talk A1-A2: the owner's private speaking course. Only the site owner's
 // account can open these pages; they are not linked anywhere else. Speaking
@@ -21,10 +22,10 @@ function builtClasses() {
     for (const t of st.topics) {
       const sc = SCRIPTS[t.name];
       if (!sc) continue;
-      sc.forEach((c, i) => list.push({ stage: st.n, topic: t.name, n: i + 1, key: `${t.name}|${c.title}`, script: c, path: `/library/just-talk/${slug(t.name)}/${i + 1}` }));
+      sc.forEach((c, i) => list.push({ stage: st.n, topic: t.name, n: i + 1, name: NAMES[t.name]?.[i] || c.title, key: `${t.name}|${c.title}`, script: c, path: `/library/just-talk/${slug(t.name)}/${i + 1}` }));
     }
     const chk = SCRIPTS[`check-${st.n}`];
-    if (chk) list.push({ stage: st.n, topic: `Stage ${st.n} check-in`, n: 1, key: `check-${st.n}`, script: chk[0], path: `/library/just-talk/stage-${st.n}/check-in` });
+    if (chk) list.push({ stage: st.n, topic: `Stage ${st.n} check-in`, n: 1, name: chk[0].title, key: `check-${st.n}`, script: chk[0], path: `/library/just-talk/stage-${st.n}/check-in` });
   }
   return list;
 }
@@ -54,9 +55,25 @@ function openCard(cls) {
 /* ---------- Room (hub): same layout as the curriculum level pages ---------- */
 
 const TOPIC_NUM = Object.fromEntries(STAGES.flatMap((st) => st.topics.map((t) => t.name)).map((name, i) => [name, i + 1]));
+// Just Talk lesson rows: name on line 1, question + pattern on line 2, so half-width windows stay tidy.
+const JT_LESSON_CSS = `
+.jt-lmain { flex-direction: column; align-items: flex-start; gap: 2px; }
+.jt-lmain .tlp-toc-lesson-title { white-space: normal; }
+.jt-lmain .tlp-toc-lesson-focus { line-height: 1.45; }
+.jt-lq { font-family: 'Source Serif 4', serif; font-style: italic; color: #8A85A0; margin-right: 8px; }
+`;
 const STAGE_COLORS = { A1: { color: "#FF6B4A", light: "#FFE6DD" }, A2: { color: "#1B2A4A", light: "#E7EAF3" } };
 const chevron = <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>;
 const arrow = <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>;
+
+// The Just Talk Board (portrait, one window for the whole class) for lessons that have one.
+function openBoard(path) {
+  const sw = window.screen.availWidth || 1600;
+  const sh = window.screen.availHeight || 900;
+  const w = Math.min(1000, sw - 40);
+  const h = sh - 40;
+  window.open(`${path}/board`, "justTalkBoard", `width=${w},height=${h},left=${Math.max(0, Math.floor((sw - w) / 2))},top=10,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`);
+}
 
 function openClassPopup(path) {
   const sw = window.screen.availWidth || 1600;
@@ -91,6 +108,7 @@ export function JustTalkHub() {
           <button type="button" className="tlp-breadcrumb" onClick={() => navigate("/library/curriculum")}>
             Curriculum <span className="tlp-crumb-sep">&rsaquo;</span> Just Talk <span className="tlp-crumb-sep">&rsaquo;</span> <span style={{ color: "#FF6B4A" }}>A1-A2 &middot; Speaking</span>
           </button>
+          <div><div className="jt-levels"><button type="button" className="on">A1-A2</button><button type="button" onClick={() => navigate("/library/just-talk-b1")}>B1-B2</button></div></div>
 
           <div className="tlp-banner-hero" style={{ background: "#FFE6DD" }}>
             <div className="tlp-cefr-tag" style={{ color: "#FF6B4A" }}>Speaking &middot; CEFR A1-A2 &middot; Only you can see this</div>
@@ -104,7 +122,7 @@ export function JustTalkHub() {
           <div className="tlp-stats-strip">
             <div className="tlp-stat-item">
               <div className="tlp-stat-icon tlp-stat-icon--blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 7c-1.6-1.1-4.2-1.6-6.5-1.2v12.5c2.3-.4 4.9.1 6.5 1.2m0-12.5c1.6-1.1 4.2-1.6 6.5-1.2v12.5c-2.3-.4-4.9.1-6.5 1.2M12 7v11" /></svg></div>
-              <div><div className="tlp-stat-title">{topicCount} Topics</div><div className="tlp-stat-sub">{classCount} classes in 5 stages, plus a check-in after each stage</div></div>
+              <div><div className="tlp-stat-title">{topicCount} Modules</div><div className="tlp-stat-sub">{classCount} lessons in 5 stages, plus a check-in after each stage</div></div>
             </div>
             <div className="tlp-stat-item">
               <div className="tlp-stat-icon tlp-stat-icon--coral"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="0.7" fill="currentColor" /></svg></div>
@@ -125,7 +143,7 @@ export function JustTalkHub() {
                 <div className="tlp-toc-header" style={{ background: colors.color }}>
                   <div className="tlp-toc-eyebrow-row"><span className="tlp-toc-eyebrow-rule" /><span className="tlp-toc-eyebrow">Stage {st.n} &middot; {st.lv} &middot; {st.focus}</span></div>
                   <h2 className="tlp-toc-title">{st.name}</h2>
-                  <p className="tlp-toc-sub">{st.topics.length} topics &middot; {nClasses} classes &middot; 1 check-in</p>
+                  <p className="tlp-toc-sub">{st.topics.length} modules &middot; {nClasses} lessons &middot; 1 check-in</p>
                 </div>
                 <ul className="tlp-toc-list">
                   {st.topics.map((t) => {
@@ -135,14 +153,14 @@ export function JustTalkHub() {
                     return (
                       <li key={t.name} className={`tlp-toc-item ${isOpen ? "is-open" : ""}`}>
                         <div className="tlp-toc-row" onClick={() => setOpen(isOpen ? null : key)}>
-                          <span className="tlp-toc-unit-label" style={{ color: colors.color, background: colors.light }}>Topic {String(TOPIC_NUM[t.name]).padStart(2, "0")}</span>
+                          <span className="tlp-toc-unit-label" style={{ color: colors.color, background: colors.light }}>Module {String(TOPIC_NUM[t.name]).padStart(2, "0")}</span>
                           <div className="tlp-toc-main">
                             <div className="tlp-toc-title-row">
                               <span className="tlp-toc-item-title">{t.name}</span>
                               <span className="tlp-toc-leader" />
                               {!ready && <span className="tlp-toc-page-tag">Coming soon</span>}
                             </div>
-                            <div className="tlp-toc-focus">{t.classes.map((c) => c[0]).join(" · ")}</div>
+                            <div className="tlp-toc-focus">{t.classes.map((c, i) => NAMES[t.name]?.[i] || c[0]).join(" · ")}</div>
                           </div>
                           <span className="tlp-toc-chevron" style={isOpen ? { background: colors.color, color: "#fff" } : {}}>{chevron}</span>
                         </div>
@@ -151,13 +169,13 @@ export function JustTalkHub() {
                             {t.classes.map(([title, pattern, task], i) => (
                               <div key={title} className={`tlp-toc-lesson-row ${ready ? "is-ready" : ""}`}>
                                 <span className="tlp-toc-lesson-bullet">{i + 1}</span>
-                                <div className="tlp-toc-lesson-main">
-                                  <span className="tlp-toc-lesson-title">{title}</span>
-                                  <span className="tlp-toc-lesson-focus" title={task}>{pattern}</span>
+                                <div className="tlp-toc-lesson-main jt-lmain">
+                                  <span className="tlp-toc-lesson-title">{NAMES[t.name]?.[i] || title}</span>
+                                  <span className="tlp-toc-lesson-focus" title={task}><i className="jt-lq">&ldquo;{title}&rdquo;</i>{pattern}</span>
                                 </div>
                                 {ready
-                                  ? <button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Open {arrow}</button>
-                                  : <span className="tlp-toc-lesson-tag">Class</span>}
+                                  ? <span style={{ display: "inline-flex", gap: 6 }}>{BOARDS[`${slug(t.name)}-${i + 1}`] && <button type="button" className="tlp-toc-lesson-open" style={{ background: "#3E5B3A" }} onClick={() => openBoard(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Board {arrow}</button>}<button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/${slug(t.name)}/${i + 1}`)}>Script {arrow}</button></span>
+                                  : <span className="tlp-toc-lesson-tag">Lesson</span>}
                               </div>
                             ))}
                           </div>
@@ -178,12 +196,12 @@ export function JustTalkHub() {
                       <div className="tlp-toc-panel-inner">
                         <div className={`tlp-toc-lesson-row is-test ${check ? "is-ready" : ""}`}>
                           <span className="tlp-toc-lesson-bullet">T</span>
-                          <div className="tlp-toc-lesson-main">
+                          <div className="tlp-toc-lesson-main jt-lmain">
                             <span className="tlp-toc-lesson-title">Stage {st.n} check-in</span>
                             <span className="tlp-toc-lesson-focus">{check ? check[0].goal : "Review"}</span>
                           </div>
                           {check
-                            ? <button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/stage-${st.n}/check-in`)}>Open {arrow}</button>
+                            ? <span style={{ display: "inline-flex", gap: 6 }}>{BOARDS[`check-${st.n}`] && <button type="button" className="tlp-toc-lesson-open" style={{ background: "#3E5B3A" }} onClick={() => openBoard(`/library/just-talk/stage-${st.n}/check-in`)}>Board {arrow}</button>}<button type="button" className="tlp-toc-lesson-open" onClick={() => openClassPopup(`/library/just-talk/stage-${st.n}/check-in`)}>Script {arrow}</button></span>
                             : <span className="tlp-toc-lesson-tag">Review</span>}
                         </div>
                       </div>
@@ -199,7 +217,10 @@ export function JustTalkHub() {
   );
 }
 
-const JT_HUB_CSS = `.tlp-toc.jt-toc { margin-bottom: 22px; }`;
+const JT_HUB_CSS = `.tlp-toc.jt-toc { margin-bottom: 22px; }
+.jt-levels { display: inline-flex; gap: 4px; background: #fff; border-radius: 12px; padding: 4px; box-shadow: 0 1px 3px rgba(27,42,74,.10); margin: 0 0 16px; }
+.jt-levels button { border: 0; background: none; border-radius: 9px; padding: 7px 14px; font: 700 13px Inter, system-ui, sans-serif; color: #6B6880; cursor: pointer; }
+.jt-levels button.on { background: #1B2A4A; color: #fff; }` + JT_LESSON_CSS;
 
 /* ---------- Class console ---------- */
 
@@ -266,7 +287,7 @@ export function JustTalkClass({ check = false }) {
         <style>{CSS}</style>
         <div className="jt-top">
           {window.opener ? <button type="button" className="jt-back" onClick={() => window.close()}>Close</button> : <button type="button" className="jt-back" onClick={() => navigate("/library/just-talk")}>← Just Talk</button>}
-          <span className="jt-crumb">Stage {cls.stage} · {cls.topic}{check ? "" : ` · Class ${cls.n}`}</span>
+          <span className="jt-crumb">Stage {cls.stage} · {check ? cls.topic : `Module ${TOPIC_NUM[cls.topic]} · ${cls.topic} · Lesson ${cls.n}`}</span>
           <span className="jt-navbtns">
             <button type="button" disabled={!prev} onClick={() => prev && go(prev.path)}>Previous</button>
             <button type="button" disabled={!next} onClick={() => next && go(next.path)}>Next</button>
@@ -295,9 +316,13 @@ export function JustTalkClass({ check = false }) {
 
         <main className="jt-page jt-class">
           <header className="jt-chead">
-            <h1>{c.title}</h1>
+            <h1>{cls.name}</h1>
+            {cls.name !== c.title && <p className="jt-sub">&ldquo;{c.title}&rdquo;</p>}
             <p className="jt-goal">{c.goal}</p>
-            <button type="button" className="jt-cardbtn" onClick={() => openCard(cls)}>Student card</button>
+            <div style={{ gridColumn: 2, gridRow: "1 / span 3", display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end", alignSelf: "center" }}>
+              {BOARDS[check ? cls.key : `${slug(cls.topic)}-${cls.n}`] && <button type="button" className="jt-cardbtn" style={{ background: "#3E5B3A", color: "#fff", borderColor: "#3E5B3A" }} onClick={() => openBoard(cls.path)}>Board</button>}
+              <button type="button" className="jt-cardbtn" onClick={() => openCard(cls)}>Student card</button>
+            </div>
           </header>
 
           <section className="jt-meta">
@@ -334,8 +359,8 @@ export function JustTalkClass({ check = false }) {
           </section>
 
           <div className="jt-endnav">
-            {prev ? <button type="button" onClick={() => go(prev.path)}>← {prev.script.title}</button> : <span />}
-            {next ? <button type="button" onClick={() => go(next.path)}>{next.script.title} →</button> : <span />}
+            {prev ? <button type="button" onClick={() => go(prev.path)}>← {prev.name}</button> : <span />}
+            {next ? <button type="button" onClick={() => go(next.path)}>{next.name} →</button> : <span />}
           </div>
         </main>
       </div>
@@ -374,7 +399,7 @@ export function JustTalkCard({ check = false }) {
       <div className="jt-scard">
         <style>{CSS}</style>
         <div className="jt-scard-top">
-          <b>{c.title}</b>
+          <b>{cls.name}</b>
           <div className="jt-tabs" role="tablist">
             {views.map((x, i) => <button key={x.id} type="button" role="tab" aria-selected={i === view} className={i === view ? "is-on" : ""} onClick={() => setView(i)}>{x.label}</button>)}
           </div>
@@ -451,6 +476,7 @@ const CSS = `
 
 .jt-chead { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 6px 14px; align-items: center; }
 .jt-chead h1 { font-size: clamp(28px, 4vw, 38px); }
+.jt-sub { grid-column: 1; margin: -4px 0 0; color: #6F6A88; font-style: italic; }
 .jt-goal { grid-column: 1; margin: 0; color: #6F6A88; }
 .jt-cardbtn { grid-column: 2; grid-row: 1 / span 2; font: 700 14px 'Quicksand', sans-serif; background: #FFF1C2; color: #1B2A4A; border: 1.5px solid #1B2A4A; border-radius: 999px; padding: 9px 16px; cursor: pointer; }
 .jt-meta { background: #fff; border: 1px solid rgba(43,42,74,0.09); border-radius: 16px; padding: 16px 18px; display: grid; gap: 10px; }

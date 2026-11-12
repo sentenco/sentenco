@@ -1,0 +1,24 @@
+// Just Talk B1-B2 boards, keyed by lesson slug (b1Slug(title)) or "check-in-N".
+import { B1_S1A } from "./justTalkB1S1a.js";
+import { B1_S1B } from "./justTalkB1S1b.js";
+import { B1_S2A } from "./justTalkB1S2a.js";
+import { B1_S2B } from "./justTalkB1S2b.js";
+import { B1_S3A } from "./justTalkB1S3a.js";
+import { B1_S3B } from "./justTalkB1S3b.js";
+import { B1_S4A } from "./justTalkB1S4a.js";
+import { B1_S4B } from "./justTalkB1S4b.js";
+import { B1_S4C } from "./justTalkB1S4c.js";
+import { B1_S5A } from "./justTalkB1S5a.js";
+import { B1_S5B } from "./justTalkB1S5b.js";
+import { B1_S5C } from "./justTalkB1S5c.js";
+
+export const B1_BOARDS = { ...B1_S1A, ...B1_S1B, ...B1_S2A, ...B1_S2B, ...B1_S3A, ...B1_S3B, ...B1_S4A, ...B1_S4B, ...B1_S4C, ...B1_S5A, ...B1_S5B, ...B1_S5C };
+
+// Opinion phrases shown at the top of each discussion, rotated so lessons don't all look the same.
+export const B1_PHRASES = [
+  ["I'd say that...", "It depends on...", "To be honest,...", "That's a good point, but..."],
+  ["In my opinion,...", "I'm not sure, but...", "For example,...", "I see what you mean, but..."],
+  ["Personally, I...", "The thing is,...", "I agree, because...", "I don't agree, because..."],
+];
+
+export const B1_REACT = ["That's surprising because...", "I already knew that.", "I find that hard to believe because..."];

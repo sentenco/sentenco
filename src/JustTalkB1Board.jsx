@@ -1,0 +1,780 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useAuth } from "./AuthContext";
+import { supabase } from "./supabaseClient";
+import { B1_LESSONS } from "./justTalkB1Data";
+import { B1_BOARDS, B1_PHRASES, B1_REACT } from "./justTalkB1Boards";
+
+// Just Talk Board for B1-B2: a lighter board for students who can talk without a translator.
+// One step at a time (hook, facts, words, grammar, discuss, challenge, wrap-up), a "Fix it" drawer
+// for live corrections, and a "Words used" tracker. Saved per student in just_talk_boards (key "b1/<lesson>").
+
+const OWNER_EMAIL = "caldrin1999@gmail.com";
+const LESSON_STEPS = [["hook", "Hook", "0-3 min"], ["facts", "Facts", "3-6 min"], ["words", "Words", "6-9 min"], ["grammar", "Grammar", "9-13 min"], ["discuss", "Discuss", "13-21 min"], ["challenge", "Challenge", "21-27 min"], ["wrap", "Wrap-up", "27-30 min"]];
+const CHECK_STEPS = [["recap", "Recap", "0-6 min"], ["wordquiz", "Words", "6-10 min"], ["gmix", "Grammar", "10-15 min"], ["talk", "Talk", "15-22 min"], ["discuss", "Discuss", "22-27 min"], ["wrap", "Wrap-up", "27-30 min"]];
+const LANGS = ["Hebrew", "Polish", "Spanish", "Portuguese", "French", "German", "Italian", "Russian", "Ukrainian", "Turkish", "Arabic", "Chinese", "Japanese", "Korean"];
+const GT = { Hebrew: "iw", Polish: "pl", Spanish: "es", Portuguese: "pt", French: "fr", German: "de", Italian: "it", Russian: "ru", Ukrainian: "uk", Turkish: "tr", Arabic: "ar", Chinese: "zh-CN", Japanese: "ja", Korean: "ko" };
+const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
+const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage blocked */ } };
+const uid = () => Math.random().toString(36).slice(2, 9);
+const EMPTY = () => ({ step: 0, hookGuess: null, hookShown: false, fi: 0, wi: null, seen: {}, wtr: {}, ws: {}, gi: 0, gAns: {}, qi: 0, rev: {}, ci: 0, cg: {}, cr: {}, gs: {}, rk: [], rkShow: false, side: null, ideas: {}, sum: ["", "", ""], fixes: [], fixRev: {}, used: {}, mi: 0, mrev: {}, ri: 0, recRev: {}, qz: 0, qzRev: {}, topic: null, ticks: {} });
+
+function seededOrder(n, seed) {
+  let h = 0;
+  for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const a = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) { h = (h * 1103515245 + 12345) >>> 0; const j = h % (i + 1); [a[i], a[j]] = [a[j], a[i]]; }
+  if (a.every((v, i) => v === i) && n > 1) a.reverse();
+  return a;
+}
+function say(text) {
+  try { const u = new SpeechSynthesisUtterance(String(text).replace(/<[^>]+>/g, "")); u.lang = "en-US"; u.rate = 0.9; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u); } catch { /* no speech */ }
+}
+const Ms = ({ n }) => <span className="ms" aria-hidden="true">{n}</span>;
+const Html = ({ s, as: Tag = "span", className }) => <Tag className={className} dangerouslySetInnerHTML={{ __html: s }} />;
+const Blanks = ({ text }) => <>{String(text).split("___").map((p, i, arr) => <span key={i}>{p}{i < arr.length - 1 && <span className="blank" />}</span>)}</>;
+const Stress = ({ s }) => <span className="stress">{s.split(/[-\s]/).map((p, i) => <span key={i}>{i > 0 && "·"}{p === p.toUpperCase() ? <em>{p}</em> : p}</span>)}</span>;
+const Ph = ({ n, title, children }) => <div className="ph">{n !== undefined && n !== "" && <span className="n">{n}</span>}<h2>{title}</h2>{children}</div>;
+
+function StepNav({ i, n, onGo, noun = "" }) {
+  return (
+    <div className="stepnav">
+      <button type="button" disabled={i === 0} onClick={() => onGo(i - 1)}><Ms n="chevron_left" />Back</button>
+      <div className="sn-dots">{Array.from({ length: n }, (_, j) => <i key={j} className={j === i ? "cur" : j < i ? "on" : ""} />)}</div>
+      <button type="button" className="nx" disabled={i === n - 1} onClick={() => onGo(i + 1)}>Next{noun ? ` ${noun}` : ""}<Ms n="chevron_right" /></button>
+    </div>
+  );
+}
+
+function Timer({ secs }) {
+  const [left, setLeft] = useState(secs);
+  const [run, setRun] = useState(false);
+  useEffect(() => {
+    if (!run) return undefined;
+    const t = setInterval(() => setLeft((l) => { if (l <= 1) { setRun(false); return 0; } return l - 1; }), 1000);
+    return () => clearInterval(t);
+  }, [run]);
+  return (
+    <div className="timer">
+      <span className={`clock ${left === 0 ? "done" : ""}`}>{left === 0 ? "Time!" : `${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`}</span>
+      <button type="button" className="ans-btn ghost" onClick={() => { if (left === 0) setLeft(secs); setRun(!run); }}><Ms n={run ? "pause" : "play_arrow"} />{run ? "Pause" : "Start"}</button>
+      <button type="button" className="ans-btn ghost" onClick={() => { setRun(false); setLeft(secs); }}><Ms n="restart_alt" />Reset</button>
+    </div>
+  );
+}
+
+function Editable({ value, onChange, className, ph }) {
+  const ref = useRef(null);
+  useEffect(() => { if (ref.current && ref.current.textContent !== value) ref.current.textContent = value || ""; }, [value]);
+  return <span ref={ref} className={className} contentEditable suppressContentEditableWarning data-ph={ph} onInput={(e) => onChange(e.currentTarget.textContent)} />;
+}
+
+export default function JustTalkB1Board() {
+  const { user, loading } = useAuth();
+  const { lesson } = useParams();
+  const L = useMemo(() => B1_LESSONS.find((x) => x.key === lesson), [lesson]);
+  const B = B1_BOARDS[lesson];
+  const isCheck = !!B?.check;
+  const steps = isCheck ? CHECK_STEPS : LESSON_STEPS;
+  const docKey = `b1/${lesson}`;
+
+  const [students, setStudents] = useState(() => lsGet("jt-students", []));
+  const [student, setStudent] = useState(() => lsGet("jt-student", ""));
+  const [lang, setLang] = useState(() => lsGet("jt1-lang", "Hebrew"));
+  const [track, setTrack] = useState(() => lsGet("jt1-track", true));
+  const [doc, setDoc] = useState(EMPTY);
+  const [page, setPage] = useState("lesson");
+  const [saveMsg, setSaveMsg] = useState("");
+  const [online, setOnline] = useState(true);
+  const [newName, setNewName] = useState("");
+  const [fixOpen, setFixOpen] = useState(false);
+  const [fSaid, setFSaid] = useState("");
+  const [fBetter, setFBetter] = useState("");
+  const [fKind, setFKind] = useState("fix");
+  const [animKey, setAnimKey] = useState(0);
+  const loadedFor = useRef(null);
+  const saidRef = useRef(null);
+
+  const patch = useCallback((p) => setDoc((d) => ({ ...d, ...(typeof p === "function" ? p(d) : p) })), []);
+
+  useEffect(() => {
+    if (!user) return;
+    supabase.from("just_talk_boards").select("student").then(({ data, error }) => {
+      if (error) { setOnline(false); return; }
+      const names = [...new Set((data || []).map((r) => r.student))];
+      setStudents((s) => { const all = [...new Set([...s, ...names])].sort(); lsSet("jt-students", all); return all; });
+    });
+  }, [user]);
+
+  useEffect(() => {
+    if (!user || !B) return;
+    const forKey = `${student}|${docKey}`;
+    const apply = (data) => { loadedFor.current = forKey; setDoc({ ...EMPTY(), ...(data || {}) }); setSaveMsg(data ? "Opened saved board" : ""); setAnimKey((k) => k + 1); };
+    if (!student) { apply(null); return; }
+    const local = lsGet(`jt-board|${forKey}`, null);
+    supabase.from("just_talk_boards").select("data").eq("student", student).eq("lesson_key", docKey).maybeSingle().then(({ data, error }) => {
+      if (error) { setOnline(false); apply(local); return; }
+      apply(data?.data || local);
+    });
+  }, [user, B, student, docKey]);
+
+  const save = useCallback(async () => {
+    if (!student) return;
+    const forKey = `${student}|${docKey}`;
+    if (loadedFor.current !== forKey) return;
+    lsSet(`jt-board|${forKey}`, doc);
+    if (online) {
+      const { error } = await supabase.from("just_talk_boards").upsert({ student, lesson_key: docKey, data: doc, updated_at: new Date().toISOString() }, { onConflict: "owner_id,student,lesson_key" });
+      if (error) { setOnline(false); setSaveMsg("Saved in this browser only"); return; }
+    }
+    setSaveMsg(`Saved ${new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}${online ? "" : " in this browser"}`);
+  }, [student, docKey, doc, online]);
+
+  useEffect(() => {
+    if (!student) return undefined;
+    const t = setTimeout(save, 2500);
+    return () => clearTimeout(t);
+  }, [doc, student, save]);
+
+  const goStep = useCallback((i) => { patch({ step: Math.max(0, Math.min(steps.length - 1, i)) }); setAnimKey((k) => k + 1); window.scrollTo({ top: 0, behavior: "smooth" }); }, [patch, steps.length]);
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.target.closest?.("[contenteditable], input, select, textarea")) return;
+      if (e.key === "Escape") setFixOpen(false);
+      if (page !== "lesson") return;
+      if (e.key === "ArrowRight") goStep(doc.step + 1);
+      if (e.key === "ArrowLeft") goStep(doc.step - 1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [page, goStep, doc.step]);
+
+  if (loading) return null;
+  if (user?.email?.toLowerCase() !== OWNER_EMAIL) return <div className="jt1"><style>{CSS}</style><p className="denied">Not available.</p></div>;
+  if (!L || !B) return <div className="jt1"><style>{CSS}</style><p className="denied">This lesson doesn't have a board yet.</p></div>;
+
+  const step = Math.min(doc.step, steps.length - 1);
+  const stepKey = steps[step][0];
+  const words = isCheck ? B.wordquiz.map((w) => w[1]) : B.words.map((w) => w[0]);
+  const usedN = words.filter((w) => doc.used[w]).length;
+  const phrases = B.phrases || B1_PHRASES[((L.modNum || L.stage) + (L.n || 0)) % B1_PHRASES.length];
+  const kicker = isCheck ? `Stage ${L.stage} · ${L.lv} · Check-in` : `Stage ${L.stage} · Module ${String(L.modNum).padStart(2, "0")} ${L.module} · Lesson ${L.n}`;
+  const pickStudent = (v) => { setStudent(v); lsSet("jt-student", v); };
+  const addStudent = () => { const nm = newName.trim(); if (!nm) return; setStudents((s) => { const all = [...new Set([...s, nm])].sort(); lsSet("jt-students", all); return all; }); pickStudent(nm); setNewName(""); };
+  const addFix = () => {
+    const said = fSaid.trim();
+    if (!said) { saidRef.current?.focus(); return; }
+    patch((d) => ({ fixes: [...(d.fixes || []), { id: uid(), kind: fKind, said, better: fBetter.trim() }] }));
+    setFSaid(""); setFBetter(""); saidRef.current?.focus();
+  };
+  const goNext = step < steps.length - 1 && <button type="button" className="go" onClick={() => goStep(step + 1)}>Next: {steps[step + 1][1]} <Ms n="arrow_forward" /></button>;
+
+  function Tr({ w }) {
+    const he = w[4], pl = w[5];
+    const written = lang === "Hebrew" ? he : lang === "Polish" ? pl : null;
+    if (!written) return <a className="tr-btn" href={`https://translate.google.com/?sl=en&tl=${GT[lang] || "en"}&text=${encodeURIComponent(w[0])}&op=translate`} target="_blank" rel="noreferrer"><Ms n="open_in_new" />{lang} (Google)</a>;
+    if (doc.wtr[`${w[0]}|${lang}`]) return <span className="tr-out" dir={lang === "Hebrew" ? "rtl" : undefined}><Ms n="translate" />{written}</span>;
+    return <button type="button" className="tr-btn" onClick={() => patch((d) => ({ wtr: { ...d.wtr, [`${w[0]}|${lang}`]: true } }))}><Ms n="translate" />{lang} backup</button>;
+  }
+
+  /* ----- lesson steps ----- */
+  function Hook() {
+    const h = B.hook;
+    return (<>
+      <div className="part">
+        <div className="stack cover"><div className="icard cover-card"><small>{isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="menu_book" />Grammar: {B.grammar.name}</span></div></div>
+      </div>
+      <div className="part">
+        <Ph n="1" title="Guess first" />
+        <div className="stack"><div className="icard"><small>{h.opts.length === 2 && h.opts[0] === "True" ? "True or false?" : "What do you think?"}</small><p className="q">{h.q}</p>
+          <div className="q-tools">
+            {h.opts.map((o, i) => <button key={o} type="button" className={`ans-btn ${doc.hookGuess === i ? "on" : "ghost"}`} onClick={() => patch({ hookGuess: i })}>{o}</button>)}
+            {!doc.hookShown && <button type="button" className="ans-btn red" onClick={() => patch({ hookShown: true })}><Ms n="visibility" />Reveal</button>}
+          </div></div></div>
+        {doc.hookShown && <div className="sticky-wrap"><div className="sticky big pop"><small>{h.opts[h.a]}{doc.hookGuess === null ? "" : doc.hookGuess === h.a ? " · good guess!" : " · nice try!"}</small>{h.reveal}</div></div>}
+      </div>
+      {goNext}
+    </>);
+  }
+  function Facts() {
+    const fi = Math.min(doc.fi, B.facts.length - 1), f = B.facts[fi];
+    return (<>
+      <div className="part">
+        <Ph n={`${fi + 1}/${B.facts.length}`} title="Did you know?" />
+        <div className="stack"><div className="icard pop" key={fi}><small>Fact {fi + 1}</small><p className="q">{f[0]}</p><p className="d">{f[1]}</p></div></div>
+        <div className="notes">{B1_REACT.map((r) => <div key={r} className="sticky">{r}</div>)}</div>
+        <StepNav i={fi} n={B.facts.length} onGo={(i) => patch({ fi: i })} noun="fact" />
+      </div>
+      {goNext}
+    </>);
+  }
+  function Words() {
+    const w = doc.wi === null ? null : B.words[doc.wi];
+    return (<>
+      <div className="part">
+        <Ph n={B.words.length} title="New words" />
+        <div className="words">{B.words.map((x, i) => <button key={x[0]} type="button" className={`word ${doc.wi === i ? "on" : doc.seen[x[0]] ? "seen" : ""}`} onClick={() => patch((d) => ({ wi: d.wi === i ? null : i, seen: { ...d.seen, [x[0]]: true } }))}>{x[0]}</button>)}</div>
+        {w && (
+          <div className="wcard pop" key={w[0]}>
+            <div className="wtop"><b>{w[0]}</b><button type="button" className="spk" onClick={() => say(w[0])} aria-label="Listen"><Ms n="volume_up" /></button><Stress s={w[1]} /></div>
+            <p className="wmean">= {w[2]}</p>
+            <div className="wex-row"><Html as="p" className="wex" s={w[3]} /><button type="button" className="spk sm" onClick={() => say(w[3])} aria-label="Listen to the example"><Ms n="volume_up" /></button></div>
+            <div className="wfoot">
+              <span className="sticky mine">Your sentence: <Editable className="fill" ph="..." value={doc.ws[w[0]] || ""} onChange={(v) => patch((d) => ({ ws: { ...d.ws, [w[0]]: v } }))} /></span>
+              {Tr({ w })}
+            </div>
+          </div>
+        )}
+      </div>
+      {goNext}
+    </>);
+  }
+  function GrammarItems({ items, label }) {
+    const gi = Math.min(doc.gi, items.length - 1), it = items[gi];
+    const q = it.length === 3 ? it[1] : it[0], a = it.length === 3 ? it[2] : it[1];
+    return (<>
+      <div className="stack fu"><div className="icard pop" key={gi}><small>{it.length === 3 ? it[0] : label}</small><p className="q"><Blanks text={q} /></p>
+        <div className="q-tools">{!doc.gAns[gi] && <button type="button" className="ans-btn" onClick={() => patch((d) => ({ gAns: { ...d.gAns, [gi]: true } }))}><Ms n="visibility" />Show answer</button>}</div></div></div>
+      {doc.gAns[gi] && <div className="sticky-wrap"><div className="sticky green pop">{a}</div></div>}
+      <StepNav i={gi} n={items.length} onGo={(i) => patch({ gi: i })} />
+    </>);
+  }
+  function Grammar() {
+    const G = B.grammar;
+    return (<>
+      <div className="part">
+        <Ph n="★" title="Grammar takeaway" />
+        <div className="rule"><small>Today's grammar</small><h3>{G.name}</h3><p>{G.rule}</p><ul className="ex">{G.ex.map((e) => <Html as="li" key={e} s={e} />)}</ul></div>
+        <div className="sticky-wrap"><div className="sticky"><small>Watch out</small>{G.watch}</div></div>
+      </div>
+      <div className="part">
+        <Ph n={`${Math.min(doc.gi, G.items.length - 1) + 1}/${G.items.length}`} title="Your turn" />
+        {GrammarItems({ items: G.items, label: "Complete it" })}
+        {doc.gi >= G.items.length - 1 && <div className="sticky-wrap"><div className="sticky big"><small>Now you</small>{G.now}</div></div>}
+      </div>
+      {goNext}
+    </>);
+  }
+  function Discuss() {
+    const qi = Math.min(doc.qi, B.qs.length - 1), q = B.qs[qi];
+    const r = (k) => doc.rev[`${qi}${k}`];
+    const show = (k) => patch((d) => ({ rev: { ...d.rev, [`${qi}${k}`]: true } }));
+    return (<>
+      <div className="part">
+        <Ph title="Useful phrases" />
+        <div className="notes">{phrases.map((p) => <div key={p} className="sticky">{p}</div>)}</div>
+      </div>
+      <div className="part">
+        <Ph n={`${qi + 1}/${B.qs.length}`} title="Let's talk" />
+        <div className="stack"><div className="icard pop" key={qi}><small>Question {qi + 1}</small><p className="q">{q[0]}</p>
+          <div className="q-tools">
+            {!r("f") && <button type="button" className="ans-btn ghost" onClick={() => show("f")}><Ms n="help" />Why? Follow-up</button>}
+            {!r("p") && <button type="button" className="ans-btn ghost" onClick={() => show("p")}><Ms n="trending_up" />Push further</button>}
+            {!r("m") && <button type="button" className="ans-btn" onClick={() => show("m")}><Ms n="lightbulb" />My answer</button>}
+          </div></div></div>
+        {(r("f") || r("p")) && <div className="fu-wrap">
+          {r("f") && <div className="stack fu pop"><div className="icard"><small>Follow-up</small><p className="q">{q[1]}</p></div></div>}
+          {r("p") && <div className="stack fu push pop"><div className="icard"><small>Push further</small><p className="q">{q[2]}</p></div></div>}
+        </div>}
+        {r("m") && <div className="sticky-wrap"><div className="sticky pop"><small>Teacher's answer</small>{q[3]}</div></div>}
+        <StepNav i={qi} n={B.qs.length} onGo={(i) => patch({ qi: i })} noun="question" />
+      </div>
+      {goNext}
+    </>);
+  }
+  function Challenge() {
+    const C = B.challenge;
+    const head = <Ph n="★" title={`Challenge: ${C.name}`} />;
+    if (C.type === "rank") {
+      const order = seededOrder(C.items.length, lesson);
+      const pos = (i) => doc.rk.indexOf(i);
+      const tap = (i) => patch((d) => (d.rkShow ? {} : { rk: d.rk.includes(i) ? d.rk.slice(0, d.rk.indexOf(i)) : [...d.rk, i] }));
+      const right = doc.rk.filter((x, p) => x === p).length;
+      return (<>
+        <div className="part">{head}
+          <div className="act-box">
+            <p className="how">{C.how}</p>
+            <div className="order-list">{order.map((i) => <button key={i} type="button" className={`ord ${pos(i) >= 0 ? "on" : ""}`} onClick={() => tap(i)}><span className="ord-n">{pos(i) >= 0 ? pos(i) + 1 : ""}</span>{C.items[i][0]}</button>)}</div>
+            <div className="row">
+              {!doc.rkShow && <button type="button" className="ans-btn red" disabled={doc.rk.length < C.items.length} onClick={() => patch({ rkShow: true })}><Ms n="fact_check" />Check</button>}
+              <button type="button" className="ans-btn ghost" onClick={() => patch({ rk: [], rkShow: false })}><Ms n="restart_alt" />Start again</button>
+            </div>
+            {doc.rkShow && (<div className="answer-list pop">
+              <span className="score">{right} of {C.items.length} in the right place</span>
+              {C.items.map((it, i) => <div key={i} className={`ans-row ${doc.rk[i] === i ? "ok" : ""}`}><span className="ord-n">{i + 1}</span><b>{it[0]}</b><span className="note">{it[1]}</span><Ms n={doc.rk[i] === i ? "check_circle" : "close"} /></div>)}
+            </div>)}
+          </div>
+        </div>
+        {goNext}
+      </>);
+    }
+    if (C.type === "debate") {
+      const col = (k, title, list) => (
+        <div className={`side ${doc.side === k ? "on" : ""}`}>
+          <button type="button" className="side-h" onClick={() => patch({ side: doc.side === k ? null : k })}><Ms n={doc.side === k ? "radio_button_checked" : "radio_button_unchecked"} />{title}</button>
+          {doc.ideas[k] ? <ul>{list.map((x) => <li key={x}>{x}</li>)}</ul> : <button type="button" className="mini-btn" onClick={() => patch((d) => ({ ideas: { ...d.ideas, [k]: true } }))}><Ms n="lightbulb" />Show ideas</button>}
+        </div>
+      );
+      return (<>
+        <div className="part">{head}
+          <div className="act-box">
+            <p className="how">{C.how}</p>
+            <div className="stack fu"><div className="icard"><small>The motion</small><p className="q">{C.motion}</p></div></div>
+            <div className="sides">{col("for", "Agree", C.for)}{col("against", "Disagree", C.against)}</div>
+            <Timer secs={C.time || 60} />
+          </div>
+        </div>
+        {goNext}
+      </>);
+    }
+    const ci = Math.min(doc.ci, C.cards.length - 1), c = C.cards[ci];
+    const shown = doc.cr[ci];
+    let body;
+    if (C.type === "tf") {
+      const g = doc.cg[ci];
+      const done = C.cards.filter((x, i) => doc.cr[i]).length;
+      const right = C.cards.filter((x, i) => doc.cr[i] && doc.cg[i] === x[1]).length;
+      body = (<>
+        <div className="tf-card pop" key={ci}><small>{ci + 1} of {C.cards.length}</small><p className="q">{c[0]}</p>
+          {shown && <><div className={`verdict ${c[1] ? "t" : "f"}`}>{c[1] ? "True" : "Fake"}</div><p className="why">{c[2]}</p></>}</div>
+        <div className="row">
+          <button type="button" className={`ans-btn ${g === true ? "on" : "ghost"}`} onClick={() => patch((d) => ({ cg: { ...d.cg, [ci]: true } }))}><Ms n="check" />True</button>
+          <button type="button" className={`ans-btn ${g === false ? "on" : "ghost"}`} onClick={() => patch((d) => ({ cg: { ...d.cg, [ci]: false } }))}><Ms n="close" />Fake</button>
+          {!shown && <button type="button" className="ans-btn red" onClick={() => patch((d) => ({ cr: { ...d.cr, [ci]: true } }))}><Ms n="visibility" />Reveal</button>}
+        </div>
+        {done > 0 && <span className="score">{right} of {done} right</span>}
+      </>);
+    } else if (C.type === "guess") {
+      body = (<>
+        <div className="tf-card pop" key={ci}><small>{ci + 1} of {C.cards.length}</small><p className="q">{c[0]}</p>
+          {shown && <div className="verdict t">{c[1]}</div>}</div>
+        <div className="row">
+          <span className="sticky mine">My guess: <Editable className="fill" ph="..." value={doc.gs[ci] || ""} onChange={(v) => patch((d) => ({ gs: { ...d.gs, [ci]: v } }))} /></span>
+          {!shown && <button type="button" className="ans-btn red" onClick={() => patch((d) => ({ cr: { ...d.cr, [ci]: true } }))}><Ms n="visibility" />Reveal</button>}
+        </div>
+      </>);
+    } else {
+      body = (<>
+        <div className="tf-card pop" key={ci}><small>{ci + 1} of {C.cards.length}</small><p className="q">{c[0]}</p>
+          {c[1] && (shown ? <p className="why">{c[1]}</p> : <button type="button" className="mini-btn" onClick={() => patch((d) => ({ cr: { ...d.cr, [ci]: true } }))}><Ms n="lightbulb" />Tip</button>)}</div>
+        {C.time && <Timer key={`timer-${ci}`} secs={C.time} />}
+      </>);
+    }
+    return (<>
+      <div className="part">{head}
+        <div className="act-box">
+          <p className="how">{C.how}</p>
+          {body}
+        </div>
+        <StepNav i={ci} n={C.cards.length} onGo={(i) => patch({ ci: i })} />
+      </div>
+      {goNext}
+    </>);
+  }
+  function Wrap() {
+    const fixes = doc.fixes || [];
+    return (<>
+      <div className="part">
+        <Ph n="1" title="Sum it up" />
+        <div className="stack fu"><div className="icard"><small>Your turn</small><p className="q">{B.sum}</p></div></div>
+        <div className="lines">{doc.sum.map((t, i) => <div key={i} className="line"><i>{i + 1}</i><Editable className="ed" ph="..." value={t} onChange={(v) => patch((d) => { const s = [...d.sum]; s[i] = v; return { sum: s }; })} /></div>)}</div>
+        <div className="words small">{words.map((w) => <span key={w} className={`word ${doc.used[w] ? "on" : ""}`}>{w}</span>)}</div>
+      </div>
+      <div className="part">
+        <Ph n="2" title="Fix it together" />
+        <div className="fixes">
+          {fixes.length ? fixes.map((f) => (
+            <div key={f.id} className={`fx ${f.kind === "up" ? "up" : ""}`}>
+              <div className="fx-top"><span className="fx-kind">{f.kind === "up" ? "Upgrade it" : "Fix it"}</span>{!doc.fixRev[f.id] && f.better && <button type="button" className="ans-btn" onClick={() => patch((d) => ({ fixRev: { ...d.fixRev, [f.id]: true } }))}><Ms n="visibility" />Show better version</button>}</div>
+              <div className="fx-said">{f.said}</div>
+              {doc.fixRev[f.id] && f.better && <div className="fx-better pop"><Ms n="arrow_forward" />{f.better}</div>}
+            </div>
+          )) : <div className="empty">No notes yet. Tap <b>Fix it</b> at the top during the lesson to write down what the student says.</div>}
+        </div>
+      </div>
+      <div className="part">
+        <Ph n="3" title="At home" />
+        <div className="sticky-wrap"><div className="sticky big">{B.home}</div></div>
+      </div>
+      {typeof window !== "undefined" && window.opener && <button type="button" className="go" onClick={() => window.close()}><Ms n="done_all" />Finish and close</button>}
+    </>);
+  }
+
+  /* ----- check-in steps ----- */
+  function Recap() {
+    const ri = Math.min(doc.ri, B.recap.length - 1), m = B.recap[ri];
+    return (<>
+      <div className="part">
+        <div className="stack cover"><div className="icard cover-card"><small>{kicker}</small><h1>{L.title}</h1><span className="tag"><Ms n="flag" />{L.hook}</span></div></div>
+      </div>
+      <div className="part">
+        <Ph n={`${ri + 1}/${B.recap.length}`} title="What do you remember?" />
+        <div className="stack"><div className="icard pop" key={ri}><small>Module</small><p className="q">{m[0]}</p>
+          <div className="recap">{m[1].map(([t, fact], j) => {
+            const k = `${ri}-${j}`;
+            return (<div key={t} className="rc-row"><b>{t}</b>{doc.recRev[k] ? <span className="rc-fact pop">{fact}</span> : <button type="button" className="mini-btn" onClick={() => patch((d) => ({ recRev: { ...d.recRev, [k]: true } }))}><Ms n="lightbulb" />Show a fact</button>}</div>);
+          })}</div>
+        </div></div>
+        <StepNav i={ri} n={B.recap.length} onGo={(i) => patch({ ri: i })} noun="module" />
+      </div>
+      {goNext}
+    </>);
+  }
+  function WordQuiz() {
+    const qz = Math.min(doc.qz, B.wordquiz.length - 1), w = B.wordquiz[qz];
+    return (<>
+      <div className="part">
+        <Ph n={`${qz + 1}/${B.wordquiz.length}`} title="What's the word?" />
+        <div className="stack"><div className="icard pop" key={qz}><small>Meaning</small><p className="q">{w[0]}</p>
+          <div className="q-tools">{!doc.qzRev[qz] && <button type="button" className="ans-btn red" onClick={() => patch((d) => ({ qzRev: { ...d.qzRev, [qz]: true } }))}><Ms n="visibility" />Show the word</button>}</div></div></div>
+        {doc.qzRev[qz] && <div className="sticky-wrap"><div className="sticky big green pop">{w[1]}</div></div>}
+        <StepNav i={qz} n={B.wordquiz.length} onGo={(i) => patch({ qz: i })} noun="word" />
+      </div>
+      {goNext}
+    </>);
+  }
+  function GMix() {
+    return (<>
+      <div className="part">
+        <Ph n={`${Math.min(doc.gi, B.gmix.length - 1) + 1}/${B.gmix.length}`} title="Grammar review" />
+        {GrammarItems({ items: B.gmix, label: "Complete it" })}
+      </div>
+      {goNext}
+    </>);
+  }
+  function Talk() {
+    const T = B.talk;
+    return (<>
+      <div className="part">
+        <Ph n="★" title={`Talk for ${Math.round(T.time / 60)} minutes`} />
+        <div className="act-box">
+          <p className="how">Pick a topic. Talk about it for {Math.round(T.time / 60)} minutes without stopping. I tick each thing you use.</p>
+          <div className="chips-row">{T.topics.map((t) => <button key={t} type="button" className={`chip ${doc.topic === t ? "on" : ""}`} onClick={() => patch({ topic: doc.topic === t ? null : t })}>{t}</button>)}</div>
+          {doc.topic && <div className="stack fu pop"><div className="icard"><small>Your topic</small><p className="q">{doc.topic}</p></div></div>}
+          <Timer secs={T.time} />
+          <div className="checks">{T.checklist.map((c) => <button key={c} type="button" className={`ck ${doc.ticks[c] ? "on" : ""}`} onClick={() => patch((d) => ({ ticks: { ...d.ticks, [c]: !d.ticks[c] } }))}><Ms n={doc.ticks[c] ? "check_circle" : "radio_button_unchecked"} />{c}</button>)}</div>
+        </div>
+      </div>
+      {goNext}
+    </>);
+  }
+
+  function MorePage() {
+    const list = B.more || [];
+    const mi = Math.min(doc.mi, list.length - 1), q = list[mi];
+    if (!q) return null;
+    return (
+      <div className="part">
+        <Ph n={`${mi + 1}/${list.length}`} title="More questions" />
+        <div className="stack"><div className="icard pop" key={mi}><small>Question {mi + 1}</small><p className="q">{q[0]}</p>
+          <div className="q-tools">{!doc.mrev[mi] && <button type="button" className="ans-btn ghost" onClick={() => patch((d) => ({ mrev: { ...d.mrev, [mi]: true } }))}><Ms n="help" />Follow-up</button>}</div></div></div>
+        {doc.mrev[mi] && <div className="fu-wrap"><div className="stack fu pop"><div className="icard"><small>Follow-up</small><p className="q">{q[1]}</p></div></div></div>}
+        <StepNav i={mi} n={list.length} onGo={(i) => patch({ mi: i })} noun="question" />
+      </div>
+    );
+  }
+
+  const VIEWS = { hook: Hook, facts: Facts, words: Words, grammar: Grammar, discuss: Discuss, challenge: Challenge, wrap: Wrap, recap: Recap, wordquiz: WordQuiz, gmix: GMix, talk: Talk };
+  const View = VIEWS[stepKey];
+  const fixes = doc.fixes || [];
+
+  return (
+    <div className="jt1">
+      <style>{CSS}</style>
+      <div className="bar">
+        <div className="mark"><div className="logo"><Ms n="forum" /></div><div className="mark-t"><b>Just Talk Board · {L.lv}</b><span>{kicker}</span></div></div>
+        <div className="right">
+          <label className="pill-sel"><Ms n="person" />
+            <select value={student} onChange={(e) => pickStudent(e.target.value)} aria-label="Student"><option value="">Pick a student</option>{students.map((s) => <option key={s} value={s}>{s}</option>)}</select>
+          </label>
+          <label className="pill-sel add"><Ms n="person_add" /><input value={newName} onChange={(e) => setNewName(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addStudent()} placeholder="New student" aria-label="New student" /></label>
+          <label className="pill-sel teal"><Ms n="translate" /><select value={lang} onChange={(e) => { setLang(e.target.value); lsSet("jt1-lang", e.target.value); }} aria-label="Backup language">{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
+          <button type="button" className={`tool ${track ? "on" : ""}`} onClick={() => { setTrack(!track); lsSet("jt1-track", !track); }}><Ms n="checklist" />Words {usedN}/{words.length}</button>
+          <button type="button" className="tool fix" onClick={() => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); }}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
+        </div>
+        <nav className="pages">
+          <button type="button" className={`pg ${page === "lesson" ? "on" : ""}`} onClick={() => setPage("lesson")}><Ms n="school" />{isCheck ? "Check-in" : "Lesson"}</button>
+          {!isCheck && <button type="button" className={`pg ${page === "more" ? "on" : ""}`} onClick={() => setPage("more")}><Ms n="forum" />More questions</button>}
+          <span className="save-msg">{student ? saveMsg || "Autosaves" : "Pick a student to save"}</span>
+        </nav>
+      </div>
+
+      {track && page === "lesson" && (
+        <div className="track"><b>WORDS USED</b>{words.map((w) => <button key={w} type="button" className={`tw ${doc.used[w] ? "on" : ""}`} onClick={() => patch((d) => ({ used: { ...d.used, [w]: !d.used[w] } }))}><Ms n={doc.used[w] ? "check_circle" : "radio_button_unchecked"} />{w}</button>)}</div>
+      )}
+
+      <div className="sheet-wrap"><div className="sheet">
+        <div className="lesson anim" key={`${page}-${animKey}`}>
+          {page === "lesson" ? (<>
+            <nav className="steps">{steps.map(([k, t], i) => <button key={k} type="button" className={`stp ${i === step ? "on" : i < step ? "done" : ""}`} onClick={() => goStep(i)}><i>{i < step ? "✓" : i + 1}</i><span>{t}</span></button>)}</nav>
+            {stepKey !== "hook" && stepKey !== "recap" && <div className="head"><h1>{L.title}</h1><span className="tag"><Ms n="schedule" />{steps[step][2]}</span></div>}
+            {View()}
+          </>) : MorePage()}
+        </div>
+      </div></div>
+
+      {fixOpen && <div className="scrim" onClick={() => setFixOpen(false)} />}
+      <aside className={`fixd ${fixOpen ? "open" : ""}`} aria-label="Fix it" aria-hidden={!fixOpen}>
+        <div className="fixd-h"><h2>Fix it</h2><button type="button" onClick={() => setFixOpen(false)} aria-label="Close"><Ms n="close" /></button></div>
+        <div className="fform">
+          <label htmlFor="jt1-said">What they said</label>
+          <textarea id="jt1-said" ref={saidRef} rows={2} value={fSaid} onChange={(e) => setFSaid(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); document.getElementById("jt1-better")?.focus(); } }} placeholder="He don't like coffee." />
+          <label htmlFor="jt1-better">Better version (you can add it later)</label>
+          <input id="jt1-better" value={fBetter} onChange={(e) => setFBetter(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addFix()} placeholder="He doesn't like coffee." />
+          <div className="fadd">
+            <div className="fseg"><button type="button" className={fKind === "fix" ? "on" : ""} onClick={() => setFKind("fix")}>Fix</button><button type="button" className={`up ${fKind === "up" ? "on" : ""}`} onClick={() => setFKind("up")}>Upgrade</button></div>
+            <button type="button" className="add" onClick={addFix}><Ms n="add" />Add</button>
+          </div>
+        </div>
+        <div className="flist">
+          {fixes.length === 0 && <p className="flist-empty">Notes you add here show up in the wrap-up.</p>}
+          {[...fixes].reverse().map((f) => (
+            <div key={f.id} className={`fl ${f.kind === "up" ? "up" : "fx0"}`}>
+              <b>{f.said}</b>
+              <Editable className={`fl-better ${f.better ? "" : "none"}`} ph="add a better version" value={f.better ? f.better : ""} onChange={(v) => patch((d) => ({ fixes: d.fixes.map((x) => (x.id === f.id ? { ...x, better: v } : x)) }))} />
+              <button type="button" onClick={() => patch((d) => ({ fixes: d.fixes.filter((x) => x.id !== f.id) }))} aria-label="Delete"><Ms n="delete" /></button>
+            </div>
+          ))}
+        </div>
+      </aside>
+    </div>
+  );
+}
+
+const CSS = `
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Kalam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0,0&display=block');
+.jt1 { --desk: #EEF3EC; --desk-2: #E2EADF; --green: #3E5B3A; --green-2: #567553; --green-wash: #DCEBD8; --red: #F05D5E; --red-wash: #FDE7E7; --rule: #DCE8F5; --ink: #23305A; --muted: #7C8A78; --note: #FFF3B8; --note-edge: #F1DE84; --note-ink: #3A3320; --teal: #2C7A6E; --teal-wash: #E2F2EE;
+  min-height: 100vh; background: var(--desk); color: var(--ink); font-family: 'DM Sans', system-ui, sans-serif; font-size: 15px; box-sizing: border-box;
+  padding: 14px max(16px, env(safe-area-inset-right, 0px)) 110px max(16px, env(safe-area-inset-left, 0px)); }
+.jt1 *, .jt1 *::before, .jt1 *::after { box-sizing: border-box; }
+.jt1 button, .jt1 select, .jt1 input, .jt1 textarea { font: inherit; color: inherit; }
+.jt1 button { cursor: pointer; border: 0; background: none; }
+.jt1 button:disabled { opacity: .45; cursor: default; }
+.jt1 .ms { font-family: 'Material Symbols Rounded'; font-weight: normal; font-style: normal; font-size: 20px; line-height: 1; white-space: nowrap; direction: ltr; display: inline-block; vertical-align: middle; -webkit-font-smoothing: antialiased; }
+.jt1 .denied { padding: 40px; text-align: center; color: var(--muted); }
+.jt1 .row { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+.jt1 .bar { max-width: 900px; margin: 0 auto 12px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 14px; align-items: center; }
+.jt1 .mark { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.jt1 .logo { width: 38px; height: 38px; border-radius: 10px; background: var(--green); color: #fff; display: grid; place-items: center; transform: rotate(-4deg); flex: 0 0 auto; }
+.jt1 .mark-t { display: grid; min-width: 0; line-height: 1.2; }
+.jt1 .mark-t b { font-size: 16px; color: var(--green); }
+.jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.jt1 .right { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.jt1 .pill-sel { display: inline-flex; align-items: center; gap: 4px; background: #fff; border-radius: 10px; padding: 4px 6px 4px 9px; font-size: 13px; font-weight: 700; color: var(--green); box-shadow: 0 1px 3px rgba(40,60,40,.10); }
+.jt1 .pill-sel select, .jt1 .pill-sel input { border: 0; background: none; font-weight: 700; color: var(--ink); padding: 3px 2px; max-width: 140px; outline: none; }
+.jt1 .pill-sel.add input { width: 104px; }
+.jt1 .pill-sel.teal { color: var(--teal); }
+.jt1 .tool { display: inline-flex; align-items: center; gap: 6px; background: #fff; border-radius: 10px; padding: 7px 12px 7px 9px; font-weight: 700; font-size: 13px; color: var(--green); box-shadow: 0 1px 3px rgba(40,60,40,.10); }
+.jt1 .tool.on { background: var(--green); color: #fff; }
+.jt1 .tool.fix { background: var(--red); color: #fff; }
+.jt1 .tool .badge { background: #fff; color: var(--red); border-radius: 999px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; font-size: 12px; padding: 0 6px; }
+.jt1 .pages { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; justify-content: center; background: #fff; border-radius: 12px; padding: 4px; justify-self: center; box-shadow: 0 1px 3px rgba(40,60,40,.10); }
+.jt1 .pg { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border-radius: 9px; font-weight: 700; font-size: 13px; color: var(--muted); }
+.jt1 .pg.on { background: var(--green); color: #fff; }
+.jt1 .pg .ms { font-size: 17px; }
+.jt1 .save-msg { font-size: 12px; font-weight: 700; color: var(--muted); padding: 0 10px; }
+
+.jt1 .track { max-width: 780px; margin: 0 auto 12px; display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; justify-content: center; background: #fff; border-radius: 12px; padding: 8px 12px; box-shadow: 0 1px 3px rgba(40,60,40,.10); }
+.jt1 .track > b { font-size: 12px; color: var(--green); letter-spacing: .06em; margin-right: 4px; }
+.jt1 .tw { display: inline-flex; align-items: center; gap: 4px; border-radius: 8px; padding: 4px 10px 4px 6px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 17px; background: var(--desk); color: var(--ink); }
+.jt1 .tw .ms { font-size: 17px; color: #A9B8A5; }
+.jt1 .tw.on { background: var(--green); color: #fff; }
+.jt1 .tw.on .ms { color: #fff; }
+
+.jt1 .sheet-wrap { width: 100%; max-width: 780px; margin: 0 auto; container-type: inline-size; }
+.jt1 .sheet { position: relative; background: var(--desk-2); border-radius: 22px; min-height: 133.4cqw; box-shadow: inset 0 0 0 1px rgba(62,91,58,.08); }
+.jt1 .lesson { padding: 26px clamp(14px, 4vw, 44px) 50px; display: grid; gap: 30px; }
+.jt1 .steps { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.jt1 .stp { display: inline-flex; align-items: center; gap: 6px; background: #fff; border-radius: 10px; padding: 6px 11px 6px 7px; font-weight: 700; font-size: 12.5px; color: var(--muted); box-shadow: 0 1px 3px rgba(40,60,40,.08); }
+.jt1 .stp i { font-style: normal; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--desk); font-size: 11px; color: var(--green); }
+.jt1 .stp.done i { background: #9BB496; color: #fff; }
+.jt1 .stp.on { background: var(--green); color: #fff; }
+.jt1 .stp.on i { background: var(--red); color: #fff; }
+.jt1 .head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 2px dashed #C6D4C2; }
+.jt1 .head h1 { font-family: 'Kalam', cursive; font-weight: 700; font-size: 30px; margin: 0; color: var(--green); line-height: 1.1; }
+.jt1 .tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--green); background: var(--green-wash); border-radius: 8px; padding: 5px 10px; text-align: left; }
+.jt1 .tag .ms { font-size: 17px; }
+.jt1 .part { display: grid; gap: 16px; }
+.jt1 .anim .part { animation: jt1Rise .4s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes jt1Rise { from { opacity: 0; transform: translateY(10px); } }
+.jt1 .pop { animation: jt1Pop .3s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes jt1Pop { from { opacity: 0; transform: scale(.97); } }
+@media (prefers-reduced-motion: reduce) { .jt1 .anim .part, .jt1 .pop { animation: none; } }
+.jt1 .ph { display: flex; align-items: baseline; gap: 10px; }
+.jt1 .ph .n { font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; color: var(--red); }
+.jt1 .ph h2 { margin: 0; font-size: 18px; font-weight: 700; color: var(--green); letter-spacing: .02em; }
+.jt1 .ph::after { content: ""; flex: 1; height: 2px; background: repeating-linear-gradient(90deg, #C6D4C2 0 8px, transparent 8px 14px); align-self: center; }
+
+.jt1 .stack { position: relative; width: min(100%, 620px); justify-self: center; }
+.jt1 .stack::before, .jt1 .stack::after { content: ""; position: absolute; inset: 0; background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(40,60,40,.10); }
+.jt1 .stack::before { transform: rotate(-2.6deg) translate(-5px, 7px); }
+.jt1 .stack::after { transform: rotate(1.8deg) translate(5px, 4px); }
+.jt1 .stack.cover { width: min(100%, 580px); }
+.jt1 .stack.fu { width: min(100%, 540px); }
+.jt1 .stack.fu::before, .jt1 .stack.fu::after { display: none; }
+.jt1 .icard { position: relative; z-index: 1; background: #fff; border-radius: 12px; padding: 16px 20px 18px; display: grid; gap: 10px; box-shadow: 0 8px 20px rgba(40,60,40,.14); background-image: linear-gradient(var(--red) 0 0), linear-gradient(var(--rule) 1px, transparent 1px); background-size: 100% 2px, 100% 30px; background-repeat: no-repeat, repeat; background-position: 0 38px, 0 40px; }
+.jt1 .icard small { font-size: 11.5px; font-weight: 700; color: var(--red); letter-spacing: .12em; text-transform: uppercase; height: 22px; }
+.jt1 .icard .q { font-family: 'Kalam', cursive; font-weight: 700; font-size: clamp(25px, 3.6vw, 34px); line-height: 1.15; margin: 0; color: var(--ink); text-wrap: balance; }
+.jt1 .icard p.d { margin: 0; font-size: 17px; line-height: 30px; font-weight: 500; }
+.jt1 .stack.fu .icard .q { font-size: clamp(21px, 2.8vw, 27px); }
+.jt1 .stack.fu.push .icard { border-left: 4px solid var(--red); }
+.jt1 .q-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.jt1 .fu-wrap { display: grid; gap: 14px; padding-left: clamp(10px, 6vw, 70px); }
+.jt1 .cover-card { padding: 22px 26px 30px; text-align: center; justify-items: center; }
+.jt1 .cover-card h1 { font-family: 'Kalam', cursive; font-weight: 700; font-size: clamp(42px, 7vw, 64px); line-height: 1.02; margin: 6px 0 4px; color: var(--ink); text-wrap: balance; }
+
+.jt1 .sticky { display: inline-block; background: var(--note); color: var(--note-ink); padding: 12px 18px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; line-height: 1.3; box-shadow: 0 6px 14px rgba(40,60,40,.16), inset 0 -1px 0 var(--note-edge); transform: rotate(-1.2deg); max-width: 100%; text-align: left; }
+.jt1 .sticky.big { font-size: 26px; padding: 16px 22px; }
+.jt1 .sticky.green { background: var(--green-wash); color: var(--green); box-shadow: 0 6px 14px rgba(40,60,40,.12); }
+.jt1 .sticky.mine { font-size: 19px; padding: 8px 14px; }
+.jt1 .sticky small { display: block; font-family: 'DM Sans', sans-serif; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--red); margin-bottom: 2px; }
+.jt1 .sticky-wrap { display: grid; justify-items: center; gap: 6px; }
+.jt1 .notes { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.jt1 .notes .sticky { font-size: 18px; padding: 9px 14px; }
+.jt1 .notes .sticky:nth-child(even) { transform: rotate(1deg); }
+.jt1 .blank { display: inline-block; min-width: 80px; border-bottom: 2.5px solid rgba(35,48,90,.5); margin: 0 4px; transform: translateY(-4px); }
+.jt1 .fill { display: inline-block; min-width: 140px; padding: 0 6px; border-bottom: 2.5px dashed rgba(58,51,32,.5); color: var(--red); outline: none; }
+.jt1 [data-ph]:empty::before { content: attr(data-ph); color: #B5AE95; font-weight: 400; }
+.jt1 .ans-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 15px 9px 11px; font-weight: 700; font-size: 14px; color: var(--note-ink); background: var(--note); box-shadow: 0 3px 8px rgba(40,60,40,.12); transform: rotate(-1deg); }
+.jt1 .ans-btn.on { background: var(--green); color: #fff; }
+.jt1 .ans-btn.red { background: var(--red); color: #fff; }
+.jt1 .ans-btn.ghost { background: #fff; color: var(--green); }
+.jt1 .mini-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 700; color: var(--green); background: var(--green-wash); border-radius: 8px; padding: 6px 11px 6px 8px; justify-self: center; }
+.jt1 .mini-btn .ms { font-size: 17px; }
+
+.jt1 .words { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.jt1 .word { background: #fff; border-radius: 8px; padding: 10px 16px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; color: var(--ink); box-shadow: 0 3px 8px rgba(40,60,40,.12); border-top: 3px solid var(--red); transition: transform .15s; }
+.jt1 .word:nth-child(even) { transform: rotate(1deg); }
+.jt1 .word:nth-child(odd) { transform: rotate(-1deg); }
+.jt1 button.word:hover { transform: translateY(-2px); }
+.jt1 .word.seen { border-top-color: #9BB496; }
+.jt1 .word.on { background: var(--green); color: #fff; border-top-color: var(--green); }
+.jt1 .words.small .word { font-size: 17px; padding: 6px 12px; }
+.jt1 .wcard { justify-self: center; width: min(100%, 580px); display: grid; gap: 12px; background: #fff; border-radius: 12px; padding: 18px 22px 20px; box-shadow: 0 8px 20px rgba(40,60,40,.14); border-top: 3px solid var(--red); }
+.jt1 .wtop { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.jt1 .wtop b { font-family: 'Kalam', cursive; font-weight: 700; font-size: 46px; line-height: 1; color: var(--ink); }
+.jt1 .stress { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .04em; }
+.jt1 .stress em { font-style: normal; color: var(--red); }
+.jt1 .wmean { font-size: 19px; font-weight: 700; color: var(--green); margin: 0; }
+.jt1 .wex-row { display: flex; align-items: center; gap: 10px; }
+.jt1 .wex { font-family: 'Kalam', cursive; font-weight: 700; font-size: 23px; margin: 0; color: var(--ink); }
+.jt1 .wex b { color: var(--red); }
+.jt1 .wfoot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border-top: 1px dashed #D5DED2; padding-top: 12px; }
+.jt1 .spk { width: 36px; height: 36px; border-radius: 50%; background: var(--green); color: #fff; display: inline-grid; place-items: center; flex: 0 0 auto; }
+.jt1 .spk.sm { width: 30px; height: 30px; background: #fff; color: var(--green); box-shadow: inset 0 0 0 1.5px #C6D4C2; }
+.jt1 .spk.sm .ms { font-size: 17px; }
+.jt1 .tr-btn { display: inline-flex; align-items: center; gap: 5px; color: var(--teal); background: var(--teal-wash); border-radius: 8px; padding: 5px 10px 5px 7px; font-weight: 700; font-size: 12px; text-decoration: none; }
+.jt1 .tr-btn .ms, .jt1 .tr-out .ms { font-size: 16px; }
+.jt1 .tr-out { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-wash); color: #1F6157; border-radius: 8px; padding: 5px 11px 5px 8px; font-weight: 700; font-size: 16px; }
+
+.jt1 .rule { justify-self: center; width: min(100%, 620px); display: grid; gap: 12px; background: #fff; border-radius: 12px; padding: 18px 22px 20px; box-shadow: 0 8px 20px rgba(40,60,40,.14); border-left: 5px solid var(--green); }
+.jt1 .rule small { font-size: 11.5px; font-weight: 700; color: var(--green); letter-spacing: .12em; text-transform: uppercase; }
+.jt1 .rule h3 { margin: 0; font-family: 'Kalam', cursive; font-weight: 700; font-size: 32px; line-height: 1.1; color: var(--ink); }
+.jt1 .rule p { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.5; }
+.jt1 .ex { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.jt1 .ex li { font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; padding-left: 26px; position: relative; }
+.jt1 .ex li::before { content: ""; position: absolute; left: 6px; top: .6em; width: 9px; height: 9px; border-radius: 50%; background: #C6D4C2; }
+.jt1 .ex b { color: var(--red); }
+
+.jt1 .stepnav { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-radius: 12px; padding: 6px; box-shadow: 0 2px 6px rgba(40,60,40,.08); width: min(100%, 620px); justify-self: center; }
+.jt1 .stepnav button { display: inline-flex; align-items: center; gap: 2px; border-radius: 9px; padding: 9px 13px; font-weight: 700; font-size: 14px; color: var(--green); }
+.jt1 .stepnav .nx { background: var(--green); color: #fff; padding-right: 10px; }
+.jt1 .stepnav button:disabled { opacity: .35; background: none; color: var(--green); }
+.jt1 .sn-dots { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.jt1 .sn-dots i { width: 8px; height: 8px; border-radius: 50%; background: #C7D6C3; }
+.jt1 .sn-dots i.on { background: #9BB496; }
+.jt1 .sn-dots i.cur { background: var(--red); width: 20px; border-radius: 4px; }
+.jt1 .go { justify-self: center; display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; border-radius: 12px; padding: 13px 22px; font-weight: 700; font-size: 15.5px; box-shadow: 0 8px 18px rgba(240,93,94,.3); }
+
+.jt1 .act-box { display: grid; gap: 16px; justify-items: center; background: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 6px 16px rgba(40,60,40,.12); }
+.jt1 .how { margin: 0; text-align: center; font-size: 15px; font-weight: 500; color: var(--muted); max-width: 52ch; }
+.jt1 .tf-card { width: min(100%, 520px); min-height: 150px; display: grid; place-content: center; justify-items: center; text-align: center; gap: 10px; background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 6px 16px rgba(40,60,40,.14); border-top: 3px solid var(--red); }
+.jt1 .tf-card .q { font-family: 'Kalam', cursive; font-weight: 700; font-size: clamp(25px, 3.6vw, 32px); line-height: 1.15; margin: 0; text-wrap: balance; }
+.jt1 .tf-card small { font-size: 11.5px; font-weight: 700; color: var(--red); letter-spacing: .12em; text-transform: uppercase; }
+.jt1 .verdict { font-family: 'Kalam', cursive; font-weight: 700; font-size: 32px; line-height: 1.1; }
+.jt1 .verdict.t { color: var(--green); }
+.jt1 .verdict.f { color: var(--red); }
+.jt1 .why { margin: 0; font-size: 15.5px; font-weight: 500; color: var(--muted); max-width: 46ch; }
+.jt1 .score { font-size: 13px; font-weight: 700; color: var(--green); background: var(--green-wash); border-radius: 8px; padding: 5px 10px; justify-self: center; }
+.jt1 .timer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.jt1 .clock { font-family: 'Kalam', cursive; font-weight: 700; font-size: 48px; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; min-width: 110px; text-align: center; }
+.jt1 .clock.done { color: var(--red); }
+.jt1 .order-list, .jt1 .answer-list { display: grid; gap: 8px; width: min(100%, 500px); }
+.jt1 .ord { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 10px; padding: 10px 14px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 20px; text-align: left; box-shadow: 0 2px 6px rgba(40,60,40,.14); }
+.jt1 .ord-n { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--desk); color: var(--green); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; flex: 0 0 auto; }
+.jt1 .ord.on .ord-n { background: var(--red); color: #fff; }
+.jt1 .ans-row { display: flex; align-items: center; gap: 10px; background: var(--desk); border-radius: 10px; padding: 8px 12px; }
+.jt1 .ans-row b { font-family: 'Kalam', cursive; font-size: 19px; flex: 1; min-width: 0; }
+.jt1 .ans-row .note { font-size: 13px; font-weight: 700; color: var(--muted); }
+.jt1 .ans-row > .ms { color: var(--red); }
+.jt1 .ans-row.ok > .ms { color: var(--green); }
+.jt1 .sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; }
+.jt1 .side { display: grid; gap: 10px; align-content: start; background: var(--desk); border-radius: 12px; padding: 12px; border: 2px solid transparent; }
+.jt1 .side.on { border-color: var(--green); background: var(--green-wash); }
+.jt1 .side-h { display: inline-flex; align-items: center; gap: 6px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 24px; color: var(--green); }
+.jt1 .side ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15.5px; font-weight: 500; }
+.jt1 .chips-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.jt1 .chip { background: #fff; border-radius: 8px; padding: 7px 13px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 19px; color: var(--ink); box-shadow: 0 2px 6px rgba(40,60,40,.14); border-top: 3px solid var(--red); }
+.jt1 .chip.on { border-top-color: var(--green); background: var(--green-wash); }
+.jt1 .checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%; }
+.jt1 .ck { display: flex; align-items: center; gap: 8px; text-align: left; background: var(--desk); border-radius: 10px; padding: 9px 12px; font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.jt1 .ck .ms { color: #A9B8A5; }
+.jt1 .ck.on { background: var(--green); color: #fff; }
+.jt1 .ck.on .ms { color: #fff; }
+.jt1 .recap { display: grid; gap: 8px; }
+.jt1 .rc-row { display: grid; gap: 4px; justify-items: start; padding: 8px 0; border-top: 1px dashed #D5DED2; }
+.jt1 .rc-row b { font-size: 16px; color: var(--green); }
+.jt1 .rc-row .mini-btn { justify-self: start; }
+.jt1 .rc-fact { font-family: 'Kalam', cursive; font-weight: 700; font-size: 21px; color: var(--ink); }
+
+.jt1 .lines { justify-self: center; width: min(100%, 620px); display: grid; background: #fff; border-radius: 12px; padding: 10px 20px 14px; box-shadow: 0 6px 16px rgba(40,60,40,.12); }
+.jt1 .line { display: flex; gap: 10px; align-items: baseline; border-bottom: 1px solid var(--rule); padding: 8px 0 4px; }
+.jt1 .line i { font-style: normal; font-family: 'Kalam', cursive; font-weight: 700; color: var(--red); font-size: 20px; }
+.jt1 .line .ed { flex: 1; min-width: 0; font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; outline: none; min-height: 32px; }
+.jt1 .fixes { justify-self: center; width: min(100%, 620px); display: grid; gap: 10px; }
+.jt1 .fx { display: grid; gap: 8px; background: #fff; border-radius: 12px; padding: 12px 16px; box-shadow: 0 3px 8px rgba(40,60,40,.12); border-left: 4px solid var(--red); }
+.jt1 .fx.up { border-left-color: #E39B00; }
+.jt1 .fx-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.jt1 .fx-kind { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.jt1 .fx.up .fx-kind { color: #B87D00; }
+.jt1 .fx-said { font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: underline wavy var(--red); text-decoration-thickness: 1.5px; text-underline-offset: 5px; }
+.jt1 .fx.up .fx-said { text-decoration-color: #E39B00; }
+.jt1 .fx-better { font-family: 'Kalam', cursive; font-weight: 700; font-size: 22px; color: var(--green); display: flex; gap: 6px; align-items: center; }
+.jt1 .empty { text-align: center; color: var(--muted); font-size: 14px; background: #fff; border-radius: 12px; padding: 16px; }
+
+.jt1 .scrim { position: fixed; inset: 0; background: rgba(35,48,90,.18); z-index: 49; }
+.jt1 .fixd { position: fixed; top: 0; right: 0; bottom: 0; width: min(380px, 100vw); background: #fff; box-shadow: -10px 0 30px rgba(40,60,40,.18); transform: translateX(105%); transition: transform .25s; z-index: 50; display: grid; grid-template-rows: auto auto minmax(0, 1fr); gap: 14px; padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) 16px; visibility: hidden; }
+.jt1 .fixd.open { transform: none; visibility: visible; }
+.jt1 .fixd-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.jt1 .fixd-h h2 { margin: 0; font-family: 'Kalam', cursive; font-weight: 700; font-size: 28px; color: var(--red); }
+.jt1 .fixd-h button { width: 34px; height: 34px; border-radius: 50%; background: var(--desk); display: grid; place-items: center; color: var(--green); }
+.jt1 .fform { display: grid; gap: 8px; background: var(--desk); border-radius: 12px; padding: 12px; }
+.jt1 .fform label { font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: .04em; }
+.jt1 .fform textarea, .jt1 .fform input { width: 100%; border: 0; border-radius: 8px; padding: 9px 11px; background: #fff; font-family: 'Kalam', cursive; font-weight: 700; font-size: 19px; color: var(--ink); outline: none; resize: none; }
+.jt1 .fseg { display: inline-flex; background: #fff; border-radius: 9px; padding: 3px; gap: 3px; }
+.jt1 .fseg button { border-radius: 7px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: var(--muted); }
+.jt1 .fseg button.on { background: var(--red); color: #fff; }
+.jt1 .fseg button.up.on { background: #E39B00; }
+.jt1 .fadd { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.jt1 .fadd .add { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: #fff; border-radius: 9px; padding: 8px 14px 8px 10px; font-weight: 700; font-size: 14px; }
+.jt1 .flist { overflow-y: auto; display: grid; gap: 8px; align-content: start; }
+.jt1 .flist-empty { margin: 0; color: var(--muted); font-size: 13.5px; text-align: center; padding: 10px; }
+.jt1 .fl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; background: #fff; border: 1px solid #E3EAE0; border-radius: 10px; padding: 8px 10px; }
+.jt1 .fl b { font-family: 'Kalam', cursive; font-size: 18px; color: var(--ink); }
+.jt1 .fl-better { font-family: 'Kalam', cursive; font-weight: 700; font-size: 17px; color: var(--green); grid-column: 1; outline: none; }
+.jt1 .fl > button { grid-row: 1 / span 2; grid-column: 2; color: var(--muted); align-self: center; }
+.jt1 .fl.up { border-left: 3px solid #E39B00; }
+.jt1 .fl.fx0 { border-left: 3px solid var(--red); }
+
+@media (max-width: 600px) {
+  .jt1 .bar { grid-template-columns: 1fr; }
+  .jt1 .right { justify-content: flex-start; }
+  .jt1 .stp span { display: none; }
+  .jt1 .stp { padding: 6px; }
+  .jt1 .stp.on span { display: inline; }
+  .jt1 .stp.on { padding-right: 11px; }
+  .jt1 .sides, .jt1 .checks { grid-template-columns: 1fr; }
+}
+`;
