@@ -10,7 +10,7 @@ import { readPhoto } from "./justTalkPhoto.js";
 // Just Talk Board for B1-B2: a lighter board for students who can talk without a translator.
 // One step at a time (hook, facts, words, grammar, discuss, challenge, wrap-up), a "Fix it" drawer
 // for live corrections, and a "Words used" tracker. Saved per student in just_talk_boards (key "b1/<lesson>").
-// Look: "On Air" (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars),
+// Look: "On Air" (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars; Bricolage Grotesque + Outfit), 25-minute lessons,
 // with the A1-A2 annotation rail on the left (pen, text, eraser, spotlight, stamps, picture). Drawings are kept per step.
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
@@ -26,8 +26,8 @@ function HookPic({ name, alt }) {
     {ok && big && <div className="pic-big" onClick={() => setBig(false)}><img src={src} alt={alt} /></div>}
   </>);
 }
-const LESSON_STEPS = [["hook", "Hook", "0-3 min"], ["facts", "Facts", "3-6 min"], ["words", "Words", "6-9 min"], ["grammar", "Grammar", "9-13 min"], ["discuss", "Discuss", "13-21 min"], ["challenge", "Challenge", "21-27 min"], ["wrap", "Wrap-up", "27-30 min"]];
-const CHECK_STEPS = [["recap", "Recap", "0-6 min"], ["wordquiz", "Words", "6-10 min"], ["gmix", "Grammar", "10-15 min"], ["talk", "Talk", "15-22 min"], ["discuss", "Discuss", "22-27 min"], ["wrap", "Wrap-up", "27-30 min"]];
+const LESSON_STEPS = [["hook", "Hook", "0-2 min"], ["facts", "Facts", "2-5 min"], ["words", "Words", "5-8 min"], ["grammar", "Grammar", "8-11 min"], ["discuss", "Discuss", "11-18 min"], ["challenge", "Challenge", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
+const CHECK_STEPS = [["recap", "Recap", "0-5 min"], ["wordquiz", "Words", "5-8 min"], ["gmix", "Grammar", "8-12 min"], ["talk", "Talk", "12-18 min"], ["discuss", "Discuss", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const LANGS = ["Hebrew", "Polish", "Spanish", "Portuguese", "French", "German", "Italian", "Russian", "Ukrainian", "Turkish", "Arabic", "Chinese", "Japanese", "Korean"];
 const GT = { Hebrew: "iw", Polish: "pl", Spanish: "es", Portuguese: "pt", French: "fr", German: "de", Italian: "it", Russian: "ru", Ukrainian: "uk", Turkish: "tr", Arabic: "ar", Chinese: "zh-CN", Japanese: "ja", Korean: "ko" };
 const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
@@ -635,10 +635,10 @@ export default function JustTalkB1Board() {
 }
 
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0,0&display=block');
 .jt1 { --stage: #F4EFEA; --card: #FFFFFF; --ink: #23202B; --muted: #7A7380; --line: #E4DCD3; --soft: #F7F2EC; --red: #E8423F; --red-wash: #FCE9E8; --gold: #E9B44C; --gold-wash: #FFF4DC; --teal: #1E8C8A; --teal-wash: #E1F2F1; --plum: #6A4C93; --plum-2: #8E5FA8; --plum-wash: #F1EAF8;
-  --disp: 'Syne', system-ui, sans-serif; --body: 'Outfit', system-ui, sans-serif;
+  --disp: 'Bricolage Grotesque', system-ui, sans-serif; --body: 'Outfit', system-ui, sans-serif;
   min-height: 100vh; color: var(--ink); font-family: var(--body); font-size: 15px; box-sizing: border-box;
   background: radial-gradient(ellipse 60% 40% at 55% 12%, #FFFFFF 0%, rgba(255,255,255,0) 70%), radial-gradient(ellipse 40% 40% at 0% 100%, #FBE3D6 0%, rgba(251,227,214,0) 70%), var(--stage);
   background-attachment: fixed;

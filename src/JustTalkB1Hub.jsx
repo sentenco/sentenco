@@ -67,7 +67,7 @@ export default function JustTalkB1Hub() {
             <span className="tlp-level-code" style={{ color: "#2C7A6E" }}>B1-B2</span>
             <span className="tlp-level-name">Just Talk</span>
           </div>
-          <p className="tlp-description">For students who can already hold a conversation: a surprising new topic every lesson, a grammar takeaway, and 30 minutes of real talk.</p>
+          <p className="tlp-description">For students who can already hold a conversation: a surprising new topic every lesson, a grammar takeaway, and 25 minutes of real talk.</p>
           <JustTalkLevelTabs active="b1" />
         </div>
 
