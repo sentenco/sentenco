@@ -9,6 +9,7 @@ import { WheelBlock, DiceBlock, teensGameStyles } from "./TeensGames.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
 import { Ink, Items } from "./JustTalkInk.jsx";
 import { readPhoto } from "./justTalkPhoto.js";
+import { fitBoardWindow } from "./justTalkWindow.js";
 
 // Just Talk Board: the owner's one-window lesson board for A1 speaking classes.
 // Pages: Warm-up (new or regular student) > Lesson (parts revealed one at a time) > More questions > free pages.
@@ -370,6 +371,9 @@ export default function JustTalkBoard({ check = false }) {
     const t = setTimeout(() => { save(true); }, 2500);
     return () => clearTimeout(t);
   }, [doc, student, save]);
+
+  // Always sit in half the screen.
+  useEffect(() => { fitBoardWindow(); }, []);
 
   // Keep the drawing layer as tall as the page.
   useEffect(() => {

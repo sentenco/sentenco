@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import JustTalkLevelTabs from "./JustTalkLevelTabs.jsx";
+import { openBoardWindow } from "./justTalkWindow.js";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { TLP_STYLES } from "./trackLevelStyles";
@@ -14,12 +15,7 @@ const COLORS = { B1: { color: "#2C7A6E", light: "#DDF1EC" }, B2: { color: "#5B3F
 const chevron = <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>;
 const arrow = <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>;
 
-function openBoard(key) {
-  const sw = window.screen.availWidth || 1600;
-  const sh = window.screen.availHeight || 900;
-  const w = Math.min(1000, sw - 40);
-  window.open(`/library/just-talk-b1/${key}/board`, "justTalkBoard", `width=${w},height=${sh - 40},left=${Math.max(0, Math.floor((sw - w) / 2))},top=10,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`);
-}
+function openBoard(key) { openBoardWindow(`/library/just-talk-b1/${key}/board`); }
 
 const CSS = `
 .tlp-toc.jt-toc { margin-bottom: 22px; }

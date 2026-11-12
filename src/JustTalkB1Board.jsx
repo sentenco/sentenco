@@ -6,6 +6,7 @@ import { B1_LESSONS } from "./justTalkB1Data";
 import { B1_BOARDS, B1_PHRASES, B1_REACT } from "./justTalkB1Boards";
 import { Ink, Items } from "./JustTalkInk.jsx";
 import { readPhoto } from "./justTalkPhoto.js";
+import { fitBoardWindow } from "./justTalkWindow.js";
 
 // Just Talk Board for B1-B2: a lighter board for students who can talk without a translator.
 // One step at a time (hook, facts, words, grammar, discuss, challenge, wrap-up), a "Fix it" drawer
@@ -161,6 +162,9 @@ export default function JustTalkB1Board() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [page, goStep, doc.step]);
+
+  // Always sit in half the screen.
+  useEffect(() => { fitBoardWindow(); }, []);
 
   // Keep the drawing layer as tall as the sheet.
   useEffect(() => {

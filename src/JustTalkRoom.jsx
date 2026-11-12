@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import JustTalkLevelTabs from "./JustTalkLevelTabs.jsx";
+import { openBoardWindow } from "./justTalkWindow.js";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { STAGES, NAMES } from "./justTalkData";
@@ -39,14 +40,8 @@ const STAGE_COLORS = { A1: { color: "#FF6B4A", light: "#FFE6DD" }, A2: { color: 
 const chevron = <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>;
 const arrow = <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>;
 
-// The Just Talk Board (portrait, one window for the whole class) for lessons that have one.
-function openBoard(path) {
-  const sw = window.screen.availWidth || 1600;
-  const sh = window.screen.availHeight || 900;
-  const w = Math.min(1000, sw - 40);
-  const h = sh - 40;
-  window.open(`${path}/board`, "justTalkBoard", `width=${w},height=${h},left=${Math.max(0, Math.floor((sw - w) / 2))},top=10,toolbar=no,location=no,menubar=no,status=no,scrollbars=yes,resizable=yes`);
-}
+// The Just Talk Board opens in half the screen (justTalkWindow.js).
+function openBoard(path) { openBoardWindow(`${path}/board`); }
 
 export function JustTalkHub() {
   const navigate = useNavigate();
