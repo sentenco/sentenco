@@ -23,7 +23,7 @@ import AdminTeachers from './AdminTeachers.jsx'
 import AdminReports from './AdminReports.jsx'
 import AdminAccess from './AdminAccess.jsx'
 import AdminPayments from './AdminPayments.jsx'
-import { JustTalkHub, JustTalkClass, JustTalkCard, JustTalkBoard } from './justTalkLazy.js'
+import { JustTalkHub, JustTalkClass, JustTalkCard, JustTalkBoard, JustTalkB1Hub, JustTalkB1Board } from './justTalkLazy.js'
 import CustomLessonGate from './CustomLessonGate.jsx'
 import UnseenAccessGate from './UnseenAccessGate.jsx'
 import { UNSEEN_HUB_SLUGS } from './unseenHubSlugs.js'
@@ -587,6 +587,8 @@ createRoot(document.getElementById('root')).render(
             <Route path="/library/just-talk/:topic/:n/card" element={<Suspense fallback={null}><JustTalkCard /></Suspense>} />
             <Route path="/library/just-talk/:topic/:n/board" element={<Suspense fallback={null}><JustTalkBoard /></Suspense>} />
             <Route path="/library/just-talk/:stage/check-in/board" element={<Suspense fallback={null}><JustTalkBoard check /></Suspense>} />
+            <Route path="/library/just-talk-b1" element={<LibraryPageShell><Suspense fallback={null}><JustTalkB1Hub /></Suspense></LibraryPageShell>} />
+            <Route path="/library/just-talk-b1/:lesson/board" element={<Suspense fallback={null}><JustTalkB1Board /></Suspense>} />
             <Route path="/library/teacher/:id" element={<LibraryPageShell><TeacherProfile /></LibraryPageShell>} />
             <Route path="/library/network" element={<LibraryPageShell><TeacherNetwork /></LibraryPageShell>} />
             <Route path="/library/forge" element={<LibraryPageShell><ForgeHub /></LibraryPageShell>} />

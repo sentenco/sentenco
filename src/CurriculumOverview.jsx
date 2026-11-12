@@ -144,6 +144,27 @@ export default function CurriculumOverview({ onSelectLevel }) {
               <div className="co-row-go" aria-hidden="true">&rarr;</div>
             </div>
           )}
+          {isOwner && (
+            <div
+              className="co-row co-row--coral"
+              style={{ "--img": "none" }}
+              onClick={() => navigate("/library/just-talk-b1")}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && navigate("/library/just-talk-b1")}
+            >
+              <div className="co-row-ring"><span>B1</span><small>B2</small></div>
+              <div className="co-row-text">
+                <div className="co-row-head">
+                  <span className="co-row-name">Just Talk</span>
+                  <span className="co-level-tag">Private · Speaking</span>
+                </div>
+                <p className="co-row-desc">For students who can already hold a conversation: a new topic, a grammar takeaway and real talk every lesson. Only you can see this.</p>
+                <div className="co-row-meta"><b>33</b> modules · <b>99</b> lessons</div>
+              </div>
+              <div className="co-row-go" aria-hidden="true">&rarr;</div>
+            </div>
+          )}
         </div>
       </div>
     </div>
