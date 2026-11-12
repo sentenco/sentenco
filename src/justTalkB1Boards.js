@@ -1,8 +1,10 @@
 // Just Talk B1-B2 boards, keyed by lesson slug (b1Slug(title)) or "check-in-N".
 import { B1_S1A } from "./justTalkB1S1a.js";
 import { B1_S1B } from "./justTalkB1S1b.js";
+import { B1_S2A } from "./justTalkB1S2a.js";
+import { B1_S2B } from "./justTalkB1S2b.js";
 
-export const B1_BOARDS = { ...B1_S1A, ...B1_S1B };
+export const B1_BOARDS = { ...B1_S1A, ...B1_S1B, ...B1_S2A, ...B1_S2B };
 
 // Opinion phrases shown at the top of each discussion, rotated so lessons don't all look the same.
 export const B1_PHRASES = [

@@ -211,7 +211,7 @@ export const B1_STAGES = [
      },
      {
       "title": "Why Prices Go Up",
-      "hook": "A coffee cost 10 cents in 1950.",
+      "hook": "In 1950, a cup of coffee in the US cost about 10 cents.",
       "grammar": "Present continuous for change: Prices are going up."
      },
      {
@@ -232,7 +232,7 @@ export const B1_STAGES = [
      },
      {
       "title": "A Day on Mars",
-      "hook": "A day on Mars is 37 minutes longer than on Earth.",
+      "hook": "A day on Mars is about 40 minutes longer than on Earth.",
       "grammar": "Will for predictions: People will..., it won't be easy."
      },
      {
@@ -279,7 +279,7 @@ export const B1_STAGES = [
      },
      {
       "title": "Travel Before Planes",
-      "hook": "In 1850, crossing the Atlantic took about 6 weeks.",
+      "hook": "In the early 1800s, crossing the Atlantic by sailing ship took about 6 weeks.",
       "grammar": "Had to / didn't have to."
      }
     ]
