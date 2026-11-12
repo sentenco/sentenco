@@ -7,6 +7,8 @@ import { BOARDS, WARM } from "./justTalkBoards";
 import { writtenTranslation } from "./justTalkTranslations";
 import { WheelBlock, DiceBlock, teensGameStyles } from "./TeensGames.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
+import { Ink, Items } from "./JustTalkInk.jsx";
+import { readPhoto } from "./justTalkPhoto.js";
 
 // Just Talk Board: the owner's one-window lesson board for A1 speaking classes.
 // Pages: Warm-up (new or regular student) > Lesson (parts revealed one at a time) > More questions > free pages.
@@ -120,20 +122,6 @@ function StepNav({ i, n, onGo, noun = "question" }) {
   );
 }
 function Sticky({ children, className = "", ...rest }) { return <div className={`sticky ${className}`} {...rest}>{children}</div>; }
-
-function readPhoto(file, cb) {
-  const url = URL.createObjectURL(file);
-  const img = new Image();
-  img.onload = () => {
-    const k = Math.min(1, 900 / Math.max(img.width, img.height));
-    const cv = document.createElement("canvas");
-    cv.width = Math.round(img.width * k); cv.height = Math.round(img.height * k);
-    cv.getContext("2d").drawImage(img, 0, 0, cv.width, cv.height);
-    URL.revokeObjectURL(url);
-    cb(cv.toDataURL("image/jpeg", 0.8));
-  };
-  img.src = url;
-}
 
 /* ---------- activities ---------- */
 function Activity({ a, folder, act, setAct, addPage }) {
@@ -309,82 +297,6 @@ function TimerAct({ a }) {
 }
 
 /* ---------- ink + items on a page ---------- */
-function Ink({ strokes, tool, color, onStroke, height }) {
-  const ref = useRef(null);
-  const cur = useRef(null);
-  const draw = useCallback(() => {
-    const c = ref.current;
-    if (!c) return;
-    const dpr = window.devicePixelRatio || 1;
-    const w = c.parentElement.clientWidth;
-    if (c.width !== Math.round(w * dpr) || c.height !== Math.round(height * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(height * dpr); }
-    const ctx = c.getContext("2d");
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, c.width, c.height);
-    for (const s of [...strokes, ...(cur.current ? [cur.current] : [])]) {
-      if (!s.pts.length) continue;
-      ctx.save();
-      ctx.globalCompositeOperation = s.erase ? "destination-out" : "source-over";
-      ctx.strokeStyle = s.color; ctx.lineWidth = s.erase ? 28 : 4; ctx.lineCap = "round"; ctx.lineJoin = "round";
-      ctx.beginPath();
-      ctx.moveTo(s.pts[0][0], s.pts[0][1]);
-      for (const [x, y] of s.pts.slice(1)) ctx.lineTo(x, y);
-      if (s.pts.length === 1) ctx.lineTo(s.pts[0][0] + 0.1, s.pts[0][1]);
-      ctx.stroke();
-      ctx.restore();
-    }
-  }, [strokes, height]);
-  useEffect(() => { draw(); }, [draw]);
-  useEffect(() => { const r = () => draw(); window.addEventListener("resize", r); return () => window.removeEventListener("resize", r); }, [draw]);
-  const pt = (e) => { const r = ref.current.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
-  const drawing = tool === "pen" || tool === "eraser";
-  return (
-    <canvas
-      ref={ref}
-      className="ink"
-      style={{ height, pointerEvents: drawing ? "auto" : "none", cursor: drawing ? "crosshair" : undefined }}
-      onPointerDown={(e) => { if (!drawing) return; e.currentTarget.setPointerCapture(e.pointerId); cur.current = { color, erase: tool === "eraser", pts: [pt(e)] }; draw(); }}
-      onPointerMove={(e) => { if (!cur.current) return; cur.current.pts.push(pt(e)); draw(); }}
-      onPointerUp={() => { if (cur.current) { onStroke(cur.current); cur.current = null; } }}
-      onPointerCancel={() => { cur.current = null; draw(); }}
-    />
-  );
-}
-function Items({ items, tool, onChange }) {
-  const set = (id, patch) => onChange(items.map((it) => (it.id === id ? { ...it, ...patch } : it)));
-  const del = (id) => onChange(items.filter((it) => it.id !== id));
-  function drag(e, it, mode) {
-    if (tool !== "move") return;
-    if (mode === "move" && it.type === "txt" && document.activeElement === e.currentTarget) return;
-    e.stopPropagation();
-    const sx = e.clientX, sy = e.clientY, ox = it.x, oy = it.y, ow = it.w;
-    let moved = false;
-    const mv = (ev) => {
-      if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) > 4) moved = true;
-      if (!moved) return;
-      if (mode === "move") set(it.id, { x: ox + ev.clientX - sx, y: oy + ev.clientY - sy });
-      else set(it.id, { w: Math.max(80, ow + ev.clientX - sx) });
-    };
-    const up = () => { window.removeEventListener("pointermove", mv); window.removeEventListener("pointerup", up); };
-    window.addEventListener("pointermove", mv);
-    window.addEventListener("pointerup", up);
-  }
-  const off = tool === "pen" || tool === "eraser";
-  return (
-    <div className="items">
-      {items.map((it) => (
-        <div key={it.id} className={`item ${it.type}`} style={{ left: it.x, top: it.y, width: it.type === "img" ? it.w : undefined, background: it.type === "stamp" ? it.bg : undefined, pointerEvents: off ? "none" : "auto" }} onPointerDown={(e) => drag(e, it, "move")}>
-          {it.type === "txt" && <span contentEditable suppressContentEditableWarning className="txt-ed" onBlur={(e) => { const t = e.currentTarget.textContent; if (!t.trim()) del(it.id); else set(it.id, { text: t }); }} ref={(el) => { if (el && it.focus) { el.focus(); set(it.id, { focus: false }); } }}>{it.text}</span>}
-          {it.type === "stamp" && it.text}
-          {it.type === "img" && <img src={it.src} alt="Added" draggable={false} />}
-          {it.type === "img" && <button type="button" className="grip" aria-label="Resize" onPointerDown={(e) => drag(e, it, "size")}><Ms n="open_in_full" /></button>}
-          <button type="button" className="del" aria-label="Delete" onPointerDown={(e) => e.stopPropagation()} onClick={() => del(it.id)}><Ms n="close" /></button>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 /* ---------- the board ---------- */
 // A contentEditable span that keeps the caret: text is written through a ref, never re-rendered by React.
 function Editable({ value, onChange, className, ph }) {
