@@ -481,7 +481,7 @@ export const B1_STAGES = [
      },
      {
       "title": "Why We Fear the Wrong Things",
-      "hook": "Vending machines hurt more people than sharks do.",
+      "hook": "Mosquitoes kill far more people than sharks do.",
       "grammar": "Be more / less likely to."
      },
      {
