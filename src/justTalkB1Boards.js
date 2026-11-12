@@ -8,8 +8,11 @@ import { B1_S3B } from "./justTalkB1S3b.js";
 import { B1_S4A } from "./justTalkB1S4a.js";
 import { B1_S4B } from "./justTalkB1S4b.js";
 import { B1_S4C } from "./justTalkB1S4c.js";
+import { B1_S5A } from "./justTalkB1S5a.js";
+import { B1_S5B } from "./justTalkB1S5b.js";
+import { B1_S5C } from "./justTalkB1S5c.js";
 
-export const B1_BOARDS = { ...B1_S1A, ...B1_S1B, ...B1_S2A, ...B1_S2B, ...B1_S3A, ...B1_S3B, ...B1_S4A, ...B1_S4B, ...B1_S4C };
+export const B1_BOARDS = { ...B1_S1A, ...B1_S1B, ...B1_S2A, ...B1_S2B, ...B1_S3A, ...B1_S3B, ...B1_S4A, ...B1_S4B, ...B1_S4C, ...B1_S5A, ...B1_S5B, ...B1_S5C };
 
 // Opinion phrases shown at the top of each discussion, rotated so lessons don't all look the same.
 export const B1_PHRASES = [

@@ -616,7 +616,7 @@ export const B1_STAGES = [
      },
      {
       "title": "Why Rome Fell",
-      "hook": "Rome didn't fall in a day. It took about 300 years.",
+      "hook": "Rome didn't fall in a day. Its decline took centuries.",
       "grammar": "Narrative tenses: past simple, continuous and perfect."
      },
      {
@@ -700,7 +700,7 @@ export const B1_STAGES = [
      },
      {
       "title": "How AI Learns",
-      "hook": "An AI can read more in a day than you will in your lifetime.",
+      "hook": "AI is trained on more text than one person could read in thousands of lifetimes.",
       "grammar": "Passive with modals: It can be trained, it should be checked."
      },
      {
@@ -721,12 +721,12 @@ export const B1_STAGES = [
      },
      {
       "title": "Why Diamonds Cost So Much",
-      "hook": "Diamonds aren't rare. Marketing made them expensive.",
+      "hook": "Diamonds are less rare than most people think. Marketing made them precious.",
       "grammar": "Passive with by: They were made popular by..."
      },
      {
       "title": "Does Money Buy Happiness?",
-      "hook": "After a certain income, more money adds very little happiness.",
+      "hook": "Scientists still argue about whether more money keeps adding happiness.",
       "grammar": "Cleft sentences: It's not money that..., what matters is..."
      }
     ]
@@ -737,7 +737,7 @@ export const B1_STAGES = [
     "lessons": [
      {
       "title": "Languages That Are Disappearing",
-      "hook": "One language disappears about every two weeks.",
+      "hook": "Around 40% of the world's 7,000 languages are endangered.",
       "grammar": "Passive continuous: are being lost, is being taught."
      },
      {
@@ -747,7 +747,7 @@ export const B1_STAGES = [
      },
      {
       "title": "Why Some Songs Become Hits",
-      "hook": "Most hit songs reach the chorus in under a minute.",
+      "hook": "Song intros have shrunk from over 20 seconds to about 5.",
       "grammar": "It's said that / it's claimed that."
      }
     ]

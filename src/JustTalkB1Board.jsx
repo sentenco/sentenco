@@ -446,9 +446,9 @@ export default function JustTalkB1Board() {
     const T = B.talk;
     return (<>
       <div className="part">
-        <Ph n="★" title="Talk for 2 minutes" />
+        <Ph n="★" title={`Talk for ${Math.round(T.time / 60)} minutes`} />
         <div className="act-box">
-          <p className="how">Pick a module. Talk about it for 2 minutes without stopping. I tick each thing you use.</p>
+          <p className="how">Pick a topic. Talk about it for {Math.round(T.time / 60)} minutes without stopping. I tick each thing you use.</p>
           <div className="chips-row">{T.topics.map((t) => <button key={t} type="button" className={`chip ${doc.topic === t ? "on" : ""}`} onClick={() => patch({ topic: doc.topic === t ? null : t })}>{t}</button>)}</div>
           {doc.topic && <div className="stack fu pop"><div className="icard"><small>Your topic</small><p className="q">{doc.topic}</p></div></div>}
           <Timer secs={T.time} />
