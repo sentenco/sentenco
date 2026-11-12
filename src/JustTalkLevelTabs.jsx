@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-// A1-A2 / B1-B2 switch inside the Just Talk banner, same look as the Kids / Teens / Adults
+// A1-A2 / B1-B2 / C1-C2 switch inside the Just Talk banner, same look as the Kids / Teens / Adults
 // tabs on the curriculum level pages (AudienceSwitchTabs, banner variant).
 const LEVELS = [
   { id: "a1", label: "A1-A2", sub: "Beginner", dot: "#FF6B4A", path: "/library/just-talk" },
   { id: "b1", label: "B1-B2", sub: "Intermediate", dot: "#2C7A6E", path: "/library/just-talk-b1" },
+  { id: "c1", label: "C1-C2", sub: "Advanced", dot: "#5B3F8C", path: "/library/just-talk-c1" },
 ];
 
 export default function JustTalkLevelTabs({ active }) {
