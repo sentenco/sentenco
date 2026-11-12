@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import JustTalkLevelTabs from "./JustTalkLevelTabs.jsx";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { TLP_STYLES } from "./trackLevelStyles";
@@ -26,9 +27,6 @@ const CSS = `
 .jt-lmain .tlp-toc-lesson-title { white-space: normal; }
 .jt-lmain .tlp-toc-lesson-focus { line-height: 1.45; white-space: normal; }
 .jt-gram { color: #2C7A6E; font-weight: 700; }
-.jt-levels { display: inline-flex; gap: 4px; background: #fff; border-radius: 12px; padding: 4px; box-shadow: 0 1px 3px rgba(27,42,74,.10); margin: 0 0 16px; }
-.jt-levels button { border: 0; background: none; border-radius: 9px; padding: 7px 14px; font: 700 13px Inter, system-ui, sans-serif; color: #6B6880; cursor: pointer; }
-.jt-levels button.on { background: #1B2A4A; color: #fff; }
 .jt-theme { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .04em; color: #6B6880; background: #F1EFF7; border-radius: 6px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
 `;
 
@@ -62,15 +60,15 @@ export default function JustTalkB1Hub() {
         <button type="button" className="tlp-breadcrumb" onClick={() => navigate("/library/curriculum")}>
           Curriculum <span className="tlp-crumb-sep">&rsaquo;</span> Just Talk <span className="tlp-crumb-sep">&rsaquo;</span> <span style={{ color: "#2C7A6E" }}>B1-B2 &middot; Speaking</span>
         </button>
-        <div><div className="jt-levels"><button type="button" onClick={() => navigate("/library/just-talk")}>A1-A2</button><button type="button" className="on">B1-B2</button></div></div>
 
-        <div className="tlp-banner-hero" style={{ background: "#DDF1EC" }}>
+        <div className="tlp-banner-hero" style={{ background: "#DDF1EC url(/curriculum/just-talk-b1-banner.png) right center / cover no-repeat" }}>
           <div className="tlp-cefr-tag" style={{ color: "#2C7A6E" }}>Speaking &middot; CEFR B1-B2 &middot; Only you can see this</div>
           <div className="tlp-banner-title">
             <span className="tlp-level-code" style={{ color: "#2C7A6E" }}>B1-B2</span>
             <span className="tlp-level-name">Just Talk</span>
           </div>
           <p className="tlp-description">For students who can already hold a conversation: a surprising new topic every lesson, a grammar takeaway, and 30 minutes of real talk.</p>
+          <JustTalkLevelTabs active="b1" />
         </div>
 
         <div className="tlp-stats-strip">

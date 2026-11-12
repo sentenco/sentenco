@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import JustTalkLevelTabs from "./JustTalkLevelTabs.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { STAGES, SCRIPTS, CARDS, NAMES } from "./justTalkData";
@@ -108,15 +109,15 @@ export function JustTalkHub() {
           <button type="button" className="tlp-breadcrumb" onClick={() => navigate("/library/curriculum")}>
             Curriculum <span className="tlp-crumb-sep">&rsaquo;</span> Just Talk <span className="tlp-crumb-sep">&rsaquo;</span> <span style={{ color: "#FF6B4A" }}>A1-A2 &middot; Speaking</span>
           </button>
-          <div><div className="jt-levels"><button type="button" className="on">A1-A2</button><button type="button" onClick={() => navigate("/library/just-talk-b1")}>B1-B2</button></div></div>
 
-          <div className="tlp-banner-hero" style={{ background: "#FFE6DD" }}>
+          <div className="tlp-banner-hero" style={{ background: "#FFE6DD url(/curriculum/just-talk-a1-banner.png) right center / cover no-repeat" }}>
             <div className="tlp-cefr-tag" style={{ color: "#FF6B4A" }}>Speaking &middot; CEFR A1-A2 &middot; Only you can see this</div>
             <div className="tlp-banner-title">
               <span className="tlp-level-code" style={{ color: "#FF6B4A" }}>A1-A2</span>
               <span className="tlp-level-name">Just Talk</span>
             </div>
             <p className="tlp-description">For students who just want to talk: from their first English sentence to the end of A2, one 25-minute class at a time.</p>
+            <JustTalkLevelTabs active="a1" />
           </div>
 
           <div className="tlp-stats-strip">
@@ -217,10 +218,7 @@ export function JustTalkHub() {
   );
 }
 
-const JT_HUB_CSS = `.tlp-toc.jt-toc { margin-bottom: 22px; }
-.jt-levels { display: inline-flex; gap: 4px; background: #fff; border-radius: 12px; padding: 4px; box-shadow: 0 1px 3px rgba(27,42,74,.10); margin: 0 0 16px; }
-.jt-levels button { border: 0; background: none; border-radius: 9px; padding: 7px 14px; font: 700 13px Inter, system-ui, sans-serif; color: #6B6880; cursor: pointer; }
-.jt-levels button.on { background: #1B2A4A; color: #fff; }` + JT_LESSON_CSS;
+const JT_HUB_CSS = `.tlp-toc.jt-toc { margin-bottom: 22px; }` + JT_LESSON_CSS;
 
 /* ---------- Class console ---------- */
 
