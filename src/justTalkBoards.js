@@ -1,5 +1,6 @@
 import { BOARDS_S2 } from "./justTalkBoardsS2.js";
 import { BOARDS_S3 } from "./justTalkBoardsS3.js";
+import { BOARDS_S4 } from "./justTalkBoardsS4.js";
 
 // Just Talk Board content, Stage 1 (Modules 01-06 + check-in). Owner-only.
 // One ready-made board per lesson, keyed "<module-slug>-<lesson>" (same as the class URL).
@@ -619,4 +620,4 @@ export const BOARDS = {
 };
 
 // Later stages live in their own files and are merged here.
-Object.assign(BOARDS, BOARDS_S2, BOARDS_S3);
+Object.assign(BOARDS, BOARDS_S2, BOARDS_S3, BOARDS_S4);
