@@ -4,13 +4,15 @@ import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 import { STAGES, NAMES } from "./justTalkData";
 import { BOARDS, WARM } from "./justTalkBoards";
+import { writtenTranslation } from "./justTalkTranslations";
 import { WheelBlock, DiceBlock, teensGameStyles } from "./TeensGames.jsx";
 import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
 
 // Just Talk Board: the owner's one-window lesson board for A1 speaking classes.
 // Pages: Warm-up (new or regular student) > Lesson (parts revealed one at a time) > More questions > free pages.
 // Look: "Flashcards" (questions on index cards from a stack, answers on sticky notes, soft green desk).
-// Translations are live (Sentenco's /api/translate), cached in this browser. Boards save per student
+// Translations are free: Hebrew and Polish are written in advance (justTalkTranslations.js); other
+// languages get a Google Translate link that opens in a new tab. Boards save per student
 // to Supabase (sql/just_talk_boards.sql); without that table they save in this browser only.
 //
 // ACTIVITY TYPES (justTalkBoards.js): wheel, dice, cards, sort, draw, showtell, truthlie, flipgrid, spotdiff, timer.
@@ -41,44 +43,18 @@ function findLesson(topicSlug, n, stageParam) {
   return { ...me, modNum: modNum[me.module] || 0, next: order[idx + 1]?.name || null, folder: stageParam ? `stage-${me.stage}` : topicSlug };
 }
 
-/* ---------- translation (live, cached) ---------- */
-const trMem = new Map();
-async function translate(text, lang) {
-  const k = `${lang}|${text}`;
-  if (trMem.has(k)) return trMem.get(k);
-  const cache = lsGet("jt-tr-cache", {});
-  if (cache[k]) { trMem.set(k, cache[k]); return cache[k]; }
-  const { data } = await supabase.auth.getSession();
-  const token = data?.session?.access_token;
-  const res = await fetch("/api/translate", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-    body: JSON.stringify({ text: text.replace(/___/g, "...").replace(/\s*\/\s*/g, " / "), sourceLang: "English", targetLang: lang }),
-  });
-  const json = await res.json().catch(() => null);
-  if (!res.ok || !json?.translation) throw new Error(json?.error || "Translation failed.");
-  trMem.set(k, json.translation);
-  const c2 = lsGet("jt-tr-cache", {});
-  c2[k] = json.translation;
-  lsSet("jt-tr-cache", c2);
-  return json.translation;
-}
+/* ---------- translation (free: written in advance, else a Google Translate link) ---------- */
+const GT_CODE = { Hebrew: "iw", Polish: "pl", Spanish: "es", Portuguese: "pt", French: "fr", German: "de", Italian: "it", Russian: "ru", Ukrainian: "uk", Turkish: "tr", Arabic: "ar", Chinese: "zh-CN", Japanese: "ja", Korean: "ko", Vietnamese: "vi", Thai: "th" };
+const googleLink = (text, lang) => `https://translate.google.com/?sl=en&tl=${GT_CODE[lang] || "en"}&text=${encodeURIComponent(String(text).replace(/___/g, "..."))}&op=translate`;
 
 function Tr({ text, lang, small }) {
-  const [state, setState] = useState({ for: null, out: null, err: null, busy: false });
-  const mine = state.for === `${lang}|${text}`;
-  async function go() {
-    setState({ for: `${lang}|${text}`, out: null, err: null, busy: true });
-    try {
-      const out = await translate(text, lang);
-      setState({ for: `${lang}|${text}`, out, err: null, busy: false });
-    } catch (e) {
-      setState({ for: `${lang}|${text}`, out: null, err: e.message, busy: false });
-    }
+  const [shownFor, setShownFor] = useState(null);
+  const written = writtenTranslation(text, lang);
+  if (!written) {
+    return <a className={`tr-btn${small ? " sm" : ""}`} href={googleLink(text, lang)} target="_blank" rel="noreferrer" title="Opens Google Translate in a new tab"><Ms n="open_in_new" />Google Translate</a>;
   }
-  if (mine && state.out) return <span className={`tr-out${small ? " sm" : ""}`}><Ms n="translate" /><span dir={RTL.has(lang) ? "rtl" : "ltr"}>{state.out}</span></span>;
-  if (mine && state.err) return <button type="button" className={`tr-btn err${small ? " sm" : ""}`} onClick={go} title={state.err}><Ms n="error" />Try again</button>;
-  return <button type="button" className={`tr-btn${small ? " sm" : ""}`} onClick={go} disabled={mine && state.busy}><Ms n="translate" />{mine && state.busy ? "Translating..." : "Translate"}</button>;
+  if (shownFor === `${lang}|${text}`) return <span className={`tr-out${small ? " sm" : ""}`}><Ms n="translate" /><span dir={RTL.has(lang) ? "rtl" : "ltr"} lang={GT_CODE[lang]}>{written}</span></span>;
+  return <button type="button" className={`tr-btn${small ? " sm" : ""}`} onClick={() => setShownFor(`${lang}|${text}`)}><Ms n="translate" />Translate</button>;
 }
 
 /* ---------- small pieces ---------- */
@@ -912,6 +888,7 @@ const CSS = `
 .jtb .spk.sm { width: 30px; height: 30px; }
 .jtb .spk.sm .ms { font-size: 17px; }
 .jtb .spk.playing { box-shadow: 0 0 0 6px rgba(62,91,58,.2); }
+.jtb a.tr-btn { text-decoration: none; }
 .jtb .tr-btn { display: inline-flex; align-items: center; gap: 5px; color: #2C7A6E; background: #E2F2EE; border-radius: 8px; padding: 6px 12px 6px 9px; font-weight: 700; font-size: 13px; }
 .jtb .tr-btn.err { color: var(--red); background: #FDE7E7; }
 .jtb .tr-btn.sm { padding: 4px 10px 4px 7px; font-size: 12px; }
