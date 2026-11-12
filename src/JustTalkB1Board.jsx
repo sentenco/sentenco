@@ -530,6 +530,7 @@ export default function JustTalkB1Board() {
     <div className="jt1">
       <style>{CSS}</style>
       <div className="bar">
+        <div className="mark-t"><b>Just Talk · {L.lv}</b><span>{kicker}</span></div>
         <div className="right">
           <nav className="pages" aria-label="Pages">
             <button type="button" className={`pg ${page === "lesson" ? "on" : ""}`} onClick={() => setPage("lesson")}>{isCheck ? "Check-in" : "Lesson"}</button>
@@ -625,7 +626,10 @@ const CSS = `
 .jt1 .row { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
 
 /* top bar */
-.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: flex; justify-content: center; }
+.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 22px; }
+.jt1 .mark-t { display: grid; min-width: 0; max-width: 100%; line-height: 1.15; text-align: left; }
+.jt1 .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; }
+.jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .jt1 .bar .right { justify-content: center; }
 .jt1 .saved { color: var(--teal); display: inline-grid; place-items: center; }
 .jt1 .saved .ms { font-size: 19px; }

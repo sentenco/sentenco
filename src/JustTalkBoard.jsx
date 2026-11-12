@@ -649,6 +649,7 @@ export default function JustTalkBoard({ check = false }) {
       <div className="jtb">
         <style>{CSS + teensGameStyles + zoomStyles}</style>
         <header className="bar">
+          <div className="mark-t"><b>Just Talk · {STAGES.find((st) => st.n === L.stage)?.lv || "A1"}</b><span>{kicker}</span></div>
           <div className="right">
             <nav className="pages" aria-label="Pages">
               {[["warm", "Warm-up"], ["lesson", "Lesson"], ["more", "More questions"]].map(([id, label]) => (
@@ -1086,7 +1087,10 @@ const CSS = `
 /* ===== On Air (A1-A2 banner colors): overrides on top of the board styles above ===== */
 .jtb { font-family: var(--body); background: radial-gradient(ellipse 60% 40% at 55% 12%, #FFFFFF 0%, rgba(255,255,255,0) 70%), radial-gradient(ellipse 40% 40% at 100% 100%, #FFD9C9 0%, rgba(255,217,201,0) 70%), var(--stage); background-attachment: fixed; }
 .jtb button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
-.jtb .bar { max-width: 1000px; display: flex; justify-content: center; margin-bottom: 14px; }
+.jtb .bar { max-width: 1000px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 22px; margin-bottom: 14px; }
+.jtb .bar .mark-t { display: grid; min-width: 0; max-width: 100%; line-height: 1.15; }
+.jtb .bar .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; color: var(--ink); white-space: nowrap; }
+.jtb .bar .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .jtb .bar .right { justify-content: center; align-items: center; flex-wrap: wrap; }
 .jtb .pages { grid-column: auto; display: inline-flex; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 11px; padding: 3px; box-shadow: none; justify-self: auto; }
 .jtb .pg { padding: 5px 12px; border-radius: 8px; font-weight: 600; font-size: 13px; color: var(--muted); gap: 4px; }
