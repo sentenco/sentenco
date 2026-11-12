@@ -386,7 +386,14 @@ function Items({ items, tool, onChange }) {
 }
 
 /* ---------- the board ---------- */
-const EMPTY_DOC = () => ({ step: 0, word: null, seen: [], qi: 0, gi: 0, yi: 0, built: {}, mine: [], fixBad: "", fixGood: "", act: {}, wi: 0, mi: 0, ans: {}, mode: "regular", pages: [], strokes: {}, items: {} });
+// A contentEditable span that keeps the caret: text is written through a ref, never re-rendered by React.
+function Editable({ value, onChange, className, ph }) {
+  const ref = useRef(null);
+  useEffect(() => { if (ref.current && ref.current.textContent !== value) ref.current.textContent = value || ""; }, [value]);
+  return <span ref={ref} className={className} contentEditable suppressContentEditableWarning data-ph={ph} onInput={(e) => onChange(e.currentTarget.textContent)} />;
+}
+
+const EMPTY_DOC = () => ({ step: 0, word: null, seen: [], qi: 0, gi: 0, yi: 0, built: {}, mine: [], fixBad: "", fixGood: "", fixes: [], act: {}, wi: 0, mi: 0, ans: {}, mode: "regular", pages: [], strokes: {}, items: {} });
 
 export default function JustTalkBoard({ check = false }) {
   const { user, loading } = useAuth();
@@ -409,6 +416,11 @@ export default function JustTalkBoard({ check = false }) {
   const [online, setOnline] = useState(true);
   const [newName, setNewName] = useState("");
   const [height, setHeight] = useState(1200);
+  const [fixOpen, setFixOpen] = useState(false);
+  const [fSaid, setFSaid] = useState("");
+  const [fBetter, setFBetter] = useState("");
+  const [fKind, setFKind] = useState("fix");
+  const saidRef = useRef(null);
   const sheetRef = useRef(null);
   const loadedFor = useRef(null);
 
@@ -470,6 +482,7 @@ export default function JustTalkBoard({ check = false }) {
   const go = useCallback((d) => patch((x) => ({ step: Math.max(0, Math.min(steps.length - 1, x.step + d)) })), [patch, steps.length]);
   useEffect(() => {
     const onKey = (e) => {
+      if (e.key === "Escape") setFixOpen(false);
       if (e.target.closest?.("[contenteditable], input, select, textarea")) return;
       if (e.key === "Escape") { setTool("move"); setStamp(null); clearSpot(); }
       if (page !== "lesson") return;
@@ -494,6 +507,21 @@ export default function JustTalkBoard({ check = false }) {
   const pageStrokes = doc.strokes[page] || [];
   const setItems = (list) => patch((d) => ({ items: { ...d.items, [page]: list } }));
   const kicker = L.n ? `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}` : `Stage ${L.stage} · Check-in`;
+
+  const fixes = doc.fixes || [];
+  const legacyFix = !fixes.length && (doc.fixBad?.trim() || doc.fixGood?.trim());
+  const openFix = () => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); };
+  const addFix = () => {
+    const said = fSaid.trim();
+    if (!said) { saidRef.current?.focus(); return; }
+    patch((d) => ({ fixes: [...(d.fixes || []), { id: uid(), kind: fKind, said, better: fBetter.trim() }] }));
+    setFSaid(""); setFBetter(""); saidRef.current?.focus();
+  };
+  const FixList = () => (
+    <div className="fx-list">
+      {fixes.map((f) => <div key={f.id} className={`lc-fix${f.kind === "up" ? " up" : ""}`}><s>{f.said}</s>{f.better && <><Ms n="arrow_forward" /><b>{f.better}</b></>}</div>)}
+    </div>
+  );
 
   function clearSpot() { sheetRef.current?.classList.remove("spot"); sheetRef.current?.querySelectorAll(".lit").forEach((x) => x.classList.remove("lit")); }
   function onSheetClick(e) {
@@ -673,9 +701,9 @@ export default function JustTalkBoard({ check = false }) {
             </div>
             <StepNav i={yi} n={B.yours.frames.length} noun="sentence" onGo={(dd) => patch({ yi: Math.max(0, Math.min(B.yours.frames.length - 1, yi + dd)) })} />
             <div className="fix">
-              <div className="cb-k"><Ms n="auto_fix_high" />Today's fix</div>
-              <div className="fix-row bad"><span className="ic"><Ms n="close" /></span><span className="ed" contentEditable suppressContentEditableWarning data-ph="The mistake" onBlur={(e) => patch({ fixBad: e.currentTarget.textContent })}>{doc.fixBad}</span></div>
-              <div className="fix-row good"><span className="ic"><Ms n="check" /></span><span className="ed" contentEditable suppressContentEditableWarning data-ph="The right way" onBlur={(e) => patch({ fixGood: e.currentTarget.textContent })}>{doc.fixGood}</span></div>
+              <div className="cb-k"><Ms n="edit_note" />Today's fixes</div>
+              {fixes.length ? FixList() : legacyFix ? <div className="lc-fix">{doc.fixBad.trim() && <s>{doc.fixBad}</s>}<Ms n="arrow_forward" /><b>{doc.fixGood}</b></div> : <span className="muted">Mistakes you note in Fix it show here.</span>}
+              <button type="button" className="mini fx-add" onClick={openFix}><Ms n="add" />Add a fix</button>
             </div>
           </Part>
         )}
@@ -687,7 +715,8 @@ export default function JustTalkBoard({ check = false }) {
               <div className="lc-body">
                 {B.words.length > 0 && <div><div className="cb-k"><Ms n="style" />Today's words</div><div className="lc-words">{(doc.seen.length ? doc.seen : B.words.map((w) => w.w)).map((w) => <span key={w}>{w}</span>)}</div></div>}
                 <div><div className="cb-k"><Ms n="record_voice_over" />You said</div><div className="lc-said">{said.length ? said.map((x) => <p key={x}>{x}</p>) : <p className="none">Your sentences show here.</p>}</div></div>
-                {(doc.fixBad.trim() || doc.fixGood.trim()) && <div><div className="cb-k"><Ms n="auto_fix_high" />Today's fix</div><div className="lc-fix">{doc.fixBad.trim() && <s>{doc.fixBad}</s>}<Ms n="arrow_forward" /><b>{doc.fixGood}</b></div></div>}
+                {fixes.length > 0 && <div><div className="cb-k"><Ms n="edit_note" />Today's fixes</div>{FixList()}</div>}
+                {legacyFix && <div><div className="cb-k"><Ms n="auto_fix_high" />Today's fix</div><div className="lc-fix">{doc.fixBad.trim() && <s>{doc.fixBad}</s>}<Ms n="arrow_forward" /><b>{doc.fixGood}</b></div></div>}
                 <div className="lc-two">
                   <div className="lc-box"><div className="cb-k"><Ms n="home" />Practice at home</div>{B.home}</div>
                   {L.next && <div className="lc-box next"><div className="cb-k"><Ms n="east" />Next lesson</div><b>{L.next}</b></div>}
@@ -739,6 +768,7 @@ export default function JustTalkBoard({ check = false }) {
             <label className="pill-sel teal"><Ms n="translate" />
               <select value={lang} onChange={(e) => { setLang(e.target.value); lsSet("jt-lang", e.target.value); }} aria-label="Student's language">{LANGS.map((l) => <option key={l}>{l}</option>)}</select>
             </label>
+            <button type="button" className="fixbtn" onClick={openFix}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
             <button type="button" className="save" onClick={() => save(false)}><Ms n="bookmark" />Save</button>
           </div>
           <nav className="pages" aria-label="Pages">
@@ -788,6 +818,31 @@ export default function JustTalkBoard({ check = false }) {
             <button type="button" className="next" onClick={() => go(1)} disabled={step >= steps.length - 1}>{step >= steps.length - 1 ? "Lesson done" : <>Next: {steps[step + 1]}<Ms n="chevron_right" /></>}</button>
           </div>
         )}
+
+        {fixOpen && <div className="scrim" onClick={() => setFixOpen(false)} />}
+        <aside className={`fixd ${fixOpen ? "open" : ""}`} aria-label="Fix it" aria-hidden={!fixOpen}>
+          <div className="fixd-h"><h2>Fix it</h2><button type="button" onClick={() => setFixOpen(false)} aria-label="Close"><Ms n="close" /></button></div>
+          <div className="fform">
+            <label htmlFor="jt-said">What they said</label>
+            <textarea id="jt-said" ref={saidRef} rows={2} value={fSaid} onChange={(e) => setFSaid(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); document.getElementById("jt-better")?.focus(); } }} placeholder="I am go to work." />
+            <label htmlFor="jt-better">The right way (you can add it later)</label>
+            <input id="jt-better" value={fBetter} onChange={(e) => setFBetter(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addFix()} placeholder="I go to work." />
+            <div className="fadd">
+              <div className="fseg"><button type="button" className={fKind === "fix" ? "on" : ""} onClick={() => setFKind("fix")}>Fix</button><button type="button" className={`up ${fKind === "up" ? "on" : ""}`} onClick={() => setFKind("up")}>Upgrade</button></div>
+              <button type="button" className="add" onClick={addFix}><Ms n="add" />Add</button>
+            </div>
+          </div>
+          <div className="flist">
+            {fixes.length === 0 && <p className="flist-empty">Notes you add here show up in Your sentences and on the lesson card.</p>}
+            {[...fixes].reverse().map((f) => (
+              <div key={f.id} className={`fl ${f.kind === "up" ? "up" : "fx0"}`}>
+                <b>{f.said}</b>
+                <Editable className="fl-better" ph="add the right way" value={f.better || ""} onChange={(v) => patch((d) => ({ fixes: (d.fixes || []).map((x) => (x.id === f.id ? { ...x, better: v } : x)) }))} />
+                <button type="button" onClick={() => patch((d) => ({ fixes: (d.fixes || []).filter((x) => x.id !== f.id) }))} aria-label="Delete"><Ms n="delete" /></button>
+              </div>
+            ))}
+          </div>
+        </aside>
         <ZoomOverlay zoom={zoom} onClose={() => setZoom(null)} />
       </div>
     </ZoomContext.Provider>
@@ -1079,6 +1134,36 @@ const CSS = `
 .jtb .lc-said { display: grid; gap: 6px; justify-items: start; }
 .jtb .lc-said p { margin: 0; background: var(--note); padding: 6px 12px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 19px; box-shadow: 0 2px 5px rgba(40,60,40,.12); }
 .jtb .lc-said .none { background: none; box-shadow: none; padding: 0; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; }
+.jtb .fixbtn { display: inline-flex; align-items: center; gap: 6px; background: var(--red); color: #fff; border-radius: 10px; padding: 8px 12px 8px 10px; font-weight: 700; font-size: 13.5px; }
+.jtb .fixbtn .badge { background: #fff; color: var(--red); border-radius: 999px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; font-size: 12px; padding: 0 6px; }
+.jtb .fx-list { display: grid; gap: 6px; }
+.jtb .lc-fix.up s { text-decoration-color: #E39B00; color: #8A6A1F; }
+.jtb .fix .fx-add { justify-self: start; display: inline-flex; align-items: center; gap: 4px; background: var(--desk); color: var(--green); border-radius: 9px; padding: 6px 11px; font-weight: 700; font-size: 13px; }
+.jtb .scrim { position: fixed; inset: 0; background: rgba(35,48,90,.18); z-index: 49; }
+.jtb .fixd { position: fixed; top: 0; right: 0; bottom: 0; width: min(380px, 100vw); background: #fff; box-shadow: -10px 0 30px rgba(40,60,40,.18); transform: translateX(105%); transition: transform .25s; z-index: 50; display: grid; grid-template-rows: auto auto minmax(0, 1fr); gap: 14px; padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) 16px; visibility: hidden; box-sizing: border-box; }
+.jtb .fixd.open { transform: none; visibility: visible; }
+.jtb .fixd-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.jtb .fixd-h h2 { margin: 0; font-family: 'Kalam', cursive; font-weight: 700; font-size: 28px; color: var(--red); }
+.jtb .fixd-h button { width: 34px; height: 34px; border-radius: 50%; background: var(--desk); display: grid; place-items: center; color: var(--green); }
+.jtb .fform { display: grid; gap: 8px; background: var(--desk); border-radius: 12px; padding: 12px; }
+.jtb .fform label { font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: .04em; }
+.jtb .fform textarea, .jtb .fform input { width: 100%; box-sizing: border-box; border: 0; border-radius: 8px; padding: 9px 11px; background: #fff; font-family: 'Kalam', cursive; font-weight: 700; font-size: 19px; color: var(--ink); outline: none; resize: none; }
+.jtb .fform textarea:focus, .jtb .fform input:focus { box-shadow: 0 0 0 2px var(--green-wash); }
+.jtb .fseg { display: inline-flex; background: #fff; border-radius: 9px; padding: 3px; gap: 3px; }
+.jtb .fseg button { border-radius: 7px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: var(--muted); }
+.jtb .fseg button.on { background: var(--red); color: #fff; }
+.jtb .fseg button.up.on { background: #E39B00; }
+.jtb .fadd { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.jtb .fadd .add { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: #fff; border-radius: 9px; padding: 8px 14px 8px 10px; font-weight: 700; font-size: 14px; }
+.jtb .flist { overflow-y: auto; display: grid; gap: 8px; align-content: start; }
+.jtb .flist-empty { margin: 0; color: var(--muted); font-size: 13.5px; text-align: center; padding: 10px; }
+.jtb .fl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; background: #fff; border: 1px solid #E3EAE0; border-radius: 10px; padding: 8px 10px; }
+.jtb .fl b { font-family: 'Kalam', cursive; font-size: 18px; color: var(--ink); }
+.jtb .fl-better { font-family: 'Kalam', cursive; font-weight: 700; font-size: 17px; color: var(--green); grid-column: 1; outline: none; }
+.jtb .fl-better:empty::before { content: attr(data-ph); color: #B5AE95; font-weight: 400; }
+.jtb .fl > button { grid-row: 1 / span 2; grid-column: 2; color: var(--muted); align-self: center; }
+.jtb .fl.up { border-left: 3px solid #E39B00; }
+.jtb .fl.fx0 { border-left: 3px solid var(--red); }
 .jtb .lc-fix { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-family: 'Kalam', cursive; font-size: 19px; font-weight: 700; }
 .jtb .lc-fix s { color: var(--red); }
 .jtb .lc-fix b { color: var(--green); }
