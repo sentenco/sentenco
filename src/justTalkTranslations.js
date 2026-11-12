@@ -1,4 +1,5 @@
 import { T2 } from "./justTalkTranslationsS2.js";
+import { T3 } from "./justTalkTranslationsS3.js";
 
 // Just Talk Board: translations written in advance (free, instant). English text -> [Hebrew, Polish].
 // Hebrew uses the את/ה style for "you" (male/female); Polish uses (-a) for female forms.
@@ -484,7 +485,7 @@ const T = {
   "Tell me 3 sentences about you. Use new words!": ["אמור/אמרי לי 3 משפטים על עצמך. השתמש/י במילים חדשות!", "Powiedz mi 3 zdania o sobie. Użyj nowych słów!"],
 };
 
-Object.assign(T, T2);
+Object.assign(T, T2, T3);
 
 const COL = { Hebrew: 0, Polish: 1 };
 
