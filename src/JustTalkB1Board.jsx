@@ -529,7 +529,7 @@ export default function JustTalkB1Board() {
   return (
     <div className="jt1">
       <style>{CSS}</style>
-      <div className="bar">
+      <div className="bar"><div className="bar-in">
         <div className="mark-t"><b>Just Talk · {L.lv}</b><span>{kicker}</span></div>
         <div className="right">
           <nav className="pages" aria-label="Pages">
@@ -540,7 +540,7 @@ export default function JustTalkB1Board() {
           <button type="button" className="tool fix" onClick={() => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); }}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
           {saveMsg && <span className="saved" title={saveMsg}><Ms n="cloud_done" /></span>}
         </div>
-      </div>
+      </div></div>
 
       <div className="stage">
         <div className="rail" role="toolbar" aria-label="Board tools">
@@ -626,7 +626,9 @@ const CSS = `
 .jt1 .row { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
 
 /* top bar */
-.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 22px; }
+/* the top bar sits on the same grid as the rail + sheet below, so it lines up with the board */
+.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 14px; }
+.jt1 .bar-in { grid-column: 2; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; }
 .jt1 .mark-t { display: grid; min-width: 0; max-width: 100%; line-height: 1.15; text-align: left; }
 .jt1 .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; }
 .jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -891,6 +893,8 @@ const CSS = `
 .jt1 .fl.fx0 { border-left: 4px solid var(--red); }
 
 @media (max-width: 720px) {
+  .jt1 .bar { grid-template-columns: 1fr; }
+  .jt1 .bar-in { grid-column: 1; justify-content: center; }
   .jt1 .stage { grid-template-columns: 1fr; }
   .jt1 .rail { position: static; display: flex; flex-wrap: wrap; justify-content: center; }
   .jt1 .rail hr { display: none; }

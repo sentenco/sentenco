@@ -648,7 +648,7 @@ export default function JustTalkBoard({ check = false }) {
     <ZoomContext.Provider value={setZoom}>
       <div className="jtb">
         <style>{CSS + teensGameStyles + zoomStyles}</style>
-        <header className="bar">
+        <header className="bar"><div className="bar-in">
           <div className="mark-t"><b>Just Talk · {STAGES.find((st) => st.n === L.stage)?.lv || "A1"}</b><span>{kicker}</span></div>
           <div className="right">
             <nav className="pages" aria-label="Pages">
@@ -667,7 +667,7 @@ export default function JustTalkBoard({ check = false }) {
             </label>
             <button type="button" className="fixbtn" onClick={openFix}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
           </div>
-        </header>
+        </div></header>
 
         <div className="stage">
           <div className="rail" role="toolbar" aria-label="Board tools">
@@ -1087,7 +1087,10 @@ const CSS = `
 /* ===== On Air (A1-A2 banner colors): overrides on top of the board styles above ===== */
 .jtb { font-family: var(--body); background: radial-gradient(ellipse 60% 40% at 55% 12%, #FFFFFF 0%, rgba(255,255,255,0) 70%), radial-gradient(ellipse 40% 40% at 100% 100%, #FFD9C9 0%, rgba(255,217,201,0) 70%), var(--stage); background-attachment: fixed; }
 .jtb button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
-.jtb .bar { max-width: 1000px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 22px; margin-bottom: 14px; }
+/* the top bar sits on the same grid as the rail + sheet below, so it lines up with the board */
+.jtb .bar { max-width: 1000px; display: grid; grid-template-columns: 66px minmax(0, 1fr); gap: 14px; margin-bottom: 14px; }
+.jtb .bar-in { grid-column: 2; width: 100%; max-width: 780px; justify-self: center; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; }
+@media (max-width: 720px) { .jtb .bar { grid-template-columns: minmax(0, 1fr); } .jtb .bar-in { grid-column: 1; justify-content: center; } }
 .jtb .bar .mark-t { display: grid; min-width: 0; max-width: 100%; line-height: 1.15; }
 .jtb .bar .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; color: var(--ink); white-space: nowrap; }
 .jtb .bar .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
