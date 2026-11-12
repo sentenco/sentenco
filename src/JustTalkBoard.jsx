@@ -1089,7 +1089,9 @@ const CSS = `
 .jtb button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
 /* the top bar sits on the same grid as the rail + sheet below, so it lines up with the board */
 .jtb .bar { max-width: 1000px; display: grid; grid-template-columns: 66px minmax(0, 1fr); gap: 14px; margin-bottom: 14px; }
-.jtb .bar-in { grid-column: 2; width: 100%; max-width: 780px; justify-self: center; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; }
+.jtb .bar-in { grid-column: 2; width: 100%; max-width: 780px; justify-self: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.jtb .bar-in .mark-t { text-align: center; }
+.jtb .bar-in .right { justify-content: center; }
 @media (max-width: 720px) { .jtb .bar { grid-template-columns: minmax(0, 1fr); } .jtb .bar-in { grid-column: 1; justify-content: center; } }
 .jtb .bar .mark-t { display: grid; min-width: 0; max-width: 100%; line-height: 1.15; }
 .jtb .bar .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; color: var(--ink); white-space: nowrap; }
@@ -1167,7 +1169,8 @@ const CSS = `
 .jtb .avatar { background: var(--red); }
 .jtb .fixd-h h2 { color: var(--ink); font-weight: 800; }
 .jtb .fform textarea, .jtb .fform input { font-family: var(--body); font-weight: 500; font-size: 17px; }
-.jtb .present { background: var(--green); box-shadow: 0 12px 28px rgba(27,42,74,.3); }
+.jtb .present { background: var(--green); box-shadow: 0 12px 28px rgba(27,42,74,.3); left: calc(50% + 40px); }
+@media (max-width: 720px) { .jtb .present { left: 50%; } }
 .jtb .present .next { background: var(--red); }
 .jtb .steps i.cur { background: var(--gold); }
 .jtb .cap, .jtb .sv-q, .jtb .plan-ed, .jtb .tl-ed, .jtb .ord, .jtb .lc-words span, .jtb .lc-fix, .jtb .fl b, .jtb .fl-better, .jtb .fix-row { font-family: var(--body); font-weight: 600; }

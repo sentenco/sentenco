@@ -628,14 +628,16 @@ const CSS = `
 /* top bar */
 /* the top bar sits on the same grid as the rail + sheet below, so it lines up with the board */
 .jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 14px; }
-.jt1 .bar-in { grid-column: 2; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; }
+.jt1 .bar-in { grid-column: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.jt1 .bar-in .mark-t { text-align: center; }
+.jt1 .bar-in .right { justify-content: center; }
 .jt1 .mark-t { display: grid; min-width: 0; max-width: 100%; line-height: 1.15; text-align: left; }
 .jt1 .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; }
 .jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .jt1 .bar .right { justify-content: center; }
 .jt1 .saved { color: var(--teal); display: inline-grid; place-items: center; }
 .jt1 .saved .ms { font-size: 19px; }
-.jt1 .present { position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 4px; background: var(--teal); color: #fff; border-radius: 14px; padding: 6px; box-shadow: 0 12px 28px rgba(21,48,42,.3); max-width: calc(100% - 28px); }
+.jt1 .present { position: fixed; left: calc(50% + 42px); bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 4px; background: var(--teal); color: #fff; border-radius: 14px; padding: 6px; box-shadow: 0 12px 28px rgba(21,48,42,.3); max-width: calc(100% - 28px); }
 .jt1 .present > button { display: inline-flex; align-items: center; gap: 2px; border-radius: 10px; padding: 9px 13px; font-weight: 600; font-size: 13.5px; color: #fff; white-space: nowrap; }
 .jt1 .present .next { background: var(--gold); color: #3A2A00; padding-right: 10px; }
 .jt1 .present > button:disabled { opacity: .4; background: none; color: #fff; }
@@ -893,6 +895,7 @@ const CSS = `
 .jt1 .fl.fx0 { border-left: 4px solid var(--red); }
 
 @media (max-width: 720px) {
+  .jt1 .present { left: 50%; }
   .jt1 .bar { grid-template-columns: 1fr; }
   .jt1 .bar-in { grid-column: 1; justify-content: center; }
   .jt1 .stage { grid-template-columns: 1fr; }
