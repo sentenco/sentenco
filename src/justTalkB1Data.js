@@ -351,7 +351,7 @@ export const B1_STAGES = [
      },
      {
       "title": "How Much Trash Is in the Ocean?",
-      "hook": "There's a trash island bigger than France.",
+      "hook": "The biggest patch of ocean trash is about three times the size of France.",
       "grammar": "Too much / too many / not enough."
      }
     ]
@@ -367,7 +367,7 @@ export const B1_STAGES = [
      },
      {
       "title": "How GPS Knows Where You Are",
-      "hook": "Your phone talks to at least 4 satellites to find you.",
+      "hook": "Your phone listens to at least 4 satellites to find you.",
       "grammar": "As ... as / not as ... as."
      },
      {
