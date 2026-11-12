@@ -15,7 +15,8 @@ import { SoarPic, ZoomContext, ZoomOverlay, zoomStyles } from "./SoarPic.jsx";
 // languages get a Google Translate link that opens in a new tab. Boards save per student
 // to Supabase (sql/just_talk_boards.sql); without that table they save in this browser only.
 //
-// ACTIVITY TYPES (justTalkBoards.js): wheel, dice, cards, sort, draw, showtell, truthlie, flipgrid, spotdiff, timer.
+// ACTIVITY TYPES (justTalkBoards.js): wheel, dice, cards (+pic), sort, draw, showtell, truthlie, flipgrid, spotdiff, timer,
+// order (tap in order), survey (yes/no per question), clues (reveal clues, then answer), rate (1-5 stars), plan (time slots).
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -139,7 +140,7 @@ function Activity({ a, folder, act, setAct, addPage }) {
   if (!a) return null;
   if (a.type === "wheel") return <div className="act-game"><WheelBlock heading="" items={a.items.map((label) => ({ label }))} size={230} /></div>;
   if (a.type === "dice") return <div className="act-game"><DiceBlock heading="" dice={a.dice} /></div>;
-  if (a.type === "cards") return <CardsAct a={a} />;
+  if (a.type === "cards") return <>{a.pic && <div className="pics"><Pic folder={folder} label={a.pic} size={300} /></div>}<CardsAct a={a} /></>;
   if (a.type === "sort") {
     const place = act.place || {};
     const cycle = (w) => setAct({ place: { ...place, [w]: ((place[w] ?? -1) + 2) % (a.cols.length + 1) - 1 } });
@@ -147,7 +148,7 @@ function Activity({ a, folder, act, setAct, addPage }) {
     return (
       <div className="sort">
         <div className="sort-pool">{col(-1).map((w) => <button type="button" key={w} className="chip" onClick={() => cycle(w)}>{w}</button>)}{col(-1).length === 0 && <span className="muted">All sorted!</span>}</div>
-        <div className="sort-cols">{a.cols.map((c, ci) => (
+        <div className="sort-cols" style={{ gridTemplateColumns: `repeat(${a.cols.length}, minmax(0, 1fr))` }}>{a.cols.map((c, ci) => (
           <div key={c} className="sort-col"><b>{c}</b>{col(ci).map((w) => <button type="button" key={w} className="chip on" onClick={() => cycle(w)}>{w}</button>)}</div>
         ))}</div>
       </div>
@@ -204,6 +205,67 @@ function Activity({ a, folder, act, setAct, addPage }) {
     );
   }
   if (a.type === "timer") return <TimerAct a={a} />;
+  if (a.type === "order") {
+    const ord = act.order || [];
+    const tap = (w) => setAct({ order: ord.includes(w) ? ord.filter((x) => x !== w) : [...ord, w] });
+    return (
+      <div className="order-act">
+        <div className="order-list">{(act.shuffled || a.items).map((w) => {
+          const k = ord.indexOf(w);
+          return <button type="button" key={w} className={`ord${k >= 0 ? " on" : ""}`} onClick={() => tap(w)}><span className="ord-n">{k >= 0 ? k + 1 : ""}</span>{w}</button>;
+        })}</div>
+        <div className="row"><button type="button" className="mini" onClick={() => setAct({ order: [], shuffled: shuffle(a.items) })}>Mix and start again</button></div>
+      </div>
+    );
+  }
+  if (a.type === "survey") {
+    const ans = act.ans || {};
+    const cols = a.cols || ["Yes", "No"];
+    return (
+      <div className="survey">{a.items.map((q) => (
+        <div key={q} className="sv-row"><span className="sv-q">{q}</span>
+          <span className="sv-btns">{cols.map((c) => <button type="button" key={c} className={ans[q] === c ? "on" : ""} onClick={() => setAct({ ans: { ...ans, [q]: ans[q] === c ? null : c } })}>{c}</button>)}</span>
+        </div>
+      ))}</div>
+    );
+  }
+  if (a.type === "clues") {
+    const si = act.set || 0;
+    const set = a.sets[si % a.sets.length];
+    const shown = act.shown || 0;
+    return (
+      <div className="clues">
+        <div className="clue-list">{set.clues.slice(0, shown).map((c, i) => <div key={c} className="clue"><span>{i + 1}</span>{c}</div>)}</div>
+        {act.answer === si ? <div className="clue-answer">{set.answer}</div> : null}
+        <div className="row">
+          <button type="button" className="big-btn" disabled={shown >= set.clues.length} onClick={() => setAct({ shown: shown + 1 })}><Ms n="lightbulb" />{shown === 0 ? "First clue" : "Next clue"}</button>
+          <button type="button" className="mini" onClick={() => setAct({ answer: si })}>Show the answer</button>
+          <button type="button" className="mini" onClick={() => setAct({ set: si + 1, shown: 0, answer: null })}>New one</button>
+        </div>
+        <span className="muted">{si % a.sets.length + 1} of {a.sets.length}</span>
+      </div>
+    );
+  }
+  if (a.type === "rate") {
+    const stars = act.stars || {};
+    return (
+      <div className="survey">{a.items.map((q) => (
+        <div key={q} className="sv-row"><span className="sv-q">{q}</span>
+          <span className="stars-row">{[1, 2, 3, 4, 5].map((n) => <button type="button" key={n} aria-label={`${n} stars`} className={(stars[q] || 0) >= n ? "on" : ""} onClick={() => setAct({ stars: { ...stars, [q]: n } })}>★</button>)}</span>
+        </div>
+      ))}</div>
+    );
+  }
+  if (a.type === "plan") {
+    const vals = act.vals || {};
+    return (
+      <div className="plan">{a.slots.map((sl) => (
+        <div key={sl} className="plan-row"><b>{sl}</b>
+          <span className="plan-ed" contentEditable suppressContentEditableWarning data-ph="type the plan" onBlur={(e) => setAct({ vals: { ...vals, [sl]: e.currentTarget.textContent } })}>{vals[sl] || ""}</span>
+        </div>
+      ))}</div>
+    );
+  }
   return null;
 }
 function CardsAct({ a }) {
@@ -971,6 +1033,27 @@ const CSS = `
 .jtb .cards-act .icard { min-height: 150px; align-content: center; text-align: center; }
 .jtb .cards-act .icard.shown { animation: jtbPop .3s cubic-bezier(.2,.7,.2,1) both; }
 .jtb .cards-act .icard .q.muted { color: #B5AE95; font-size: 24px; }
+
+.jtb .order-act, .jtb .clues { width: 100%; display: grid; gap: 14px; justify-items: center; }
+.jtb .order-list { display: grid; gap: 8px; width: min(100%, 480px); }
+.jtb .ord { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 10px; padding: 10px 14px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 20px; text-align: left; box-shadow: 0 2px 6px rgba(40,60,40,.12); }
+.jtb .ord-n { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--desk); color: var(--green); font-family: 'DM Sans', sans-serif; font-size: 15px; flex: 0 0 auto; }
+.jtb .ord.on .ord-n { background: var(--red); color: #fff; }
+.jtb .survey, .jtb .plan { width: 100%; display: grid; gap: 8px; }
+.jtb .sv-row, .jtb .plan-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--desk); border-radius: 10px; padding: 8px 12px; flex-wrap: wrap; }
+.jtb .sv-q { font-family: 'Kalam', cursive; font-weight: 700; font-size: 19px; }
+.jtb .sv-btns { display: inline-flex; gap: 6px; }
+.jtb .sv-btns button { background: #fff; border-radius: 8px; padding: 6px 12px; font-weight: 700; font-size: 13px; color: var(--green); }
+.jtb .sv-btns button.on { background: var(--green); color: #fff; }
+.jtb .stars-row button { font-size: 24px; color: #CFD8CC; padding: 0 2px; }
+.jtb .stars-row button.on { color: #E39B00; }
+.jtb .plan-row b { font-size: 13px; color: var(--green); min-width: 150px; }
+.jtb .plan-ed { flex: 1; min-width: 160px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 19px; outline: none; border-bottom: 1.5px dashed #B9C8B5; padding: 2px 0; }
+.jtb .clue-list { display: grid; gap: 8px; width: min(100%, 520px); }
+.jtb .clue { display: flex; align-items: center; gap: 10px; background: var(--note); padding: 10px 14px; font-family: 'Kalam', cursive; font-weight: 700; font-size: 21px; box-shadow: 0 3px 8px rgba(40,60,40,.12); animation: jtbPop .3s both; }
+.jtb .clue span { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--red); }
+.jtb .clue-answer { font-family: 'Kalam', cursive; font-weight: 700; font-size: 40px; color: var(--green); animation: jtbPop .3s both; }
+.jtb .big-btn:disabled { opacity: .45; cursor: default; }
 
 /* fix + lesson card */
 .jtb .cb-k { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }

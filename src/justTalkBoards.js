@@ -1,3 +1,5 @@
+import { BOARDS_S2 } from "./justTalkBoardsS2.js";
+
 // Just Talk Board content, Stage 1 (Modules 01-06 + check-in). Owner-only.
 // One ready-made board per lesson, keyed "<module-slug>-<lesson>" (same as the class URL).
 // Translations are NOT stored here: the board translates live with Sentenco's translator.
@@ -614,3 +616,6 @@ export const BOARDS = {
     home: "Say 5 sentences about you in English to yourself. You are ready for Stage 2!",
   },
 };
+
+// Later stages live in their own files and are merged here.
+Object.assign(BOARDS, BOARDS_S2);
