@@ -10,7 +10,7 @@ import { readPhoto } from "./justTalkPhoto.js";
 // Just Talk Board for B1-B2: a lighter board for students who can talk without a translator.
 // One step at a time (hook, facts, words, grammar, discuss, challenge, wrap-up), a "Fix it" drawer
 // for live corrections. Saved per lesson in just_talk_boards (student "B1-B2", key "b1/<lesson>"); no student picker.
-// Look: "On Air" (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars; Bricolage Grotesque + Outfit), 25-minute lessons,
+// Look: "On Air" in the B1-B2 banner colors (deep teal, mint, bulb yellow), controls and rundown centered (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars; Bricolage Grotesque + Outfit), 25-minute lessons,
 // with the A1-A2 annotation rail on the left (pen, text, eraser, spotlight, stamps, picture). Drawings are kept per step.
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
@@ -35,8 +35,8 @@ const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } ca
 const uid = () => Math.random().toString(36).slice(2, 9);
 const EMPTY = () => ({ step: 0, hookGuess: null, hookShown: false, fi: 0, wi: null, seen: {}, wtr: {}, ws: {}, gi: 0, gAns: {}, qi: 0, rev: {}, ci: 0, cg: {}, cr: {}, gs: {}, rk: [], rkShow: false, side: null, ideas: {}, sum: ["", "", ""], fixes: [], fixRev: {}, used: {}, mi: 0, mrev: {}, ri: 0, recRev: {}, qz: 0, qzRev: {}, topic: null, ticks: {}, strokes: {}, items: {} });
 const BOARD_STUDENT = "B1-B2";
-const STAMPS = [["Great point!", "#E8423F"], ["Nice phrase!", "#D9962B"], ["Wow!", "#1E8C8A"]];
-const INKS = ["#23202B", "#E8423F", "#1E8C8A"];
+const STAMPS = [["Great point!", "#2C7A6E"], ["Nice phrase!", "#E0A21F"], ["Wow!", "#1F5E55"]];
+const INKS = ["#15302A", "#2C7A6E", "#E0A21F"];
 
 function seededOrder(n, seed) {
   let h = 0;
@@ -535,6 +535,7 @@ export default function JustTalkB1Board() {
           <label className="pill-sel teal"><Ms n="translate" /><select value={lang} onChange={(e) => { setLang(e.target.value); lsSet("jt1-lang", e.target.value); }} aria-label="Backup language">{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
           <button type="button" className="tool fix" onClick={() => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); }}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
         </div>
+        <div className="bar-end" />
       </div>
 
       <div className="stage">
@@ -597,10 +598,11 @@ export default function JustTalkB1Board() {
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0,0&display=block');
-.jt1 { --stage: #F4EFEA; --card: #FFFFFF; --ink: #23202B; --muted: #7A7380; --line: #E4DCD3; --soft: #F7F2EC; --red: #E8423F; --red-wash: #FCE9E8; --gold: #E9B44C; --gold-wash: #FFF4DC; --teal: #1E8C8A; --teal-wash: #E1F2F1; --plum: #6A4C93; --plum-2: #8E5FA8; --plum-wash: #F1EAF8;
+/* Colors come from the B1-B2 banner: deep teal (--red is the main accent), mint stage, bulb yellow (--gold). */
+.jt1 { --stage: #E3F3EE; --card: #FFFFFF; --ink: #15302A; --muted: #5E7871; --line: #CFE5DD; --soft: #EDF7F3; --red: #2C7A6E; --red-wash: #DDF1EC; --gold: #F2B93B; --gold-wash: #FFF4D6; --teal: #1F5E55; --teal-wash: #E2F2EC; --plum: #1F5E55; --plum-2: #2C7A6E; --plum-wash: #E2F2EC; --fold: #CFE2DA; --rule-line: #E5F1EC;
   --disp: 'Bricolage Grotesque', system-ui, sans-serif; --body: 'Outfit', system-ui, sans-serif;
   min-height: 100vh; color: var(--ink); font-family: var(--body); font-size: 15px; box-sizing: border-box;
-  background: radial-gradient(ellipse 60% 40% at 55% 12%, #FFFFFF 0%, rgba(255,255,255,0) 70%), radial-gradient(ellipse 40% 40% at 0% 100%, #FBE3D6 0%, rgba(251,227,214,0) 70%), var(--stage);
+  background: radial-gradient(ellipse 60% 40% at 55% 12%, #FFFFFF 0%, rgba(255,255,255,0) 70%), radial-gradient(ellipse 40% 40% at 100% 100%, #CDEBE1 0%, rgba(205,235,225,0) 70%), var(--stage);
   background-attachment: fixed;
   padding: 14px max(16px, env(safe-area-inset-right, 0px)) 110px max(16px, env(safe-area-inset-left, 0px)); }
 .jt1 *, .jt1 *::before, .jt1 *::after { box-sizing: border-box; }
@@ -613,9 +615,11 @@ const CSS = `
 .jt1 .row { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
 
 /* top bar */
-.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 14px; align-items: center; }
+.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px 14px; align-items: center; }
+.jt1 .bar .mark { justify-self: start; }
+.jt1 .bar .right { justify-self: center; justify-content: center; }
 .jt1 .mark { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.jt1 .lamp { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; background: var(--red); color: #fff; font-family: var(--disp); font-weight: 800; font-size: 12.5px; letter-spacing: .14em; padding: 7px 11px; border-radius: 8px; box-shadow: 0 0 0 4px rgba(232,66,63,.15), 0 6px 18px rgba(232,66,63,.32); }
+.jt1 .lamp { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; background: var(--red); color: #fff; font-family: var(--disp); font-weight: 800; font-size: 12.5px; letter-spacing: .14em; padding: 7px 11px; border-radius: 8px; box-shadow: 0 0 0 4px rgba(44,122,110,.16), 0 6px 18px rgba(44,122,110,.3); }
 .jt1 .lamp i { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: jt1Blink 1.4s infinite; }
 @keyframes jt1Blink { 50% { opacity: .25; } }
 .jt1 .mark-t { display: grid; min-width: 0; line-height: 1.15; }
@@ -627,7 +631,7 @@ const CSS = `
 .jt1 .pill-sel.teal { color: var(--teal); }
 .jt1 .tool { display: inline-flex; align-items: center; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px 6px 9px; font-weight: 600; font-size: 13px; }
 .jt1 .tool.on { background: var(--teal-wash); border-color: var(--teal); color: var(--teal); }
-.jt1 .tool.fix { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
+.jt1 .tool.fix { background: var(--gold); border-color: var(--gold); color: #3A2A00; font-weight: 700; }
 .jt1 .tool .badge { background: #fff; color: var(--ink); border-radius: 999px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; font-size: 12px; padding: 0 6px; }
 .jt1 .pages { display: inline-flex; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 11px; padding: 3px; }
 .jt1 .pg { padding: 5px 12px; border-radius: 8px; font-weight: 600; font-size: 13px; color: var(--muted); }
@@ -636,7 +640,7 @@ const CSS = `
 
 /* stage: rail + sheet */
 .jt1 .stage { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 14px; align-items: start; }
-.jt1 .rail { position: sticky; top: 14px; display: grid; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 6px; box-shadow: 0 8px 22px rgba(80,50,30,.08); }
+.jt1 .rail { position: sticky; top: 14px; display: grid; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 6px; box-shadow: 0 8px 22px rgba(20,60,50,.08); }
 .jt1 .tl { display: grid; justify-items: center; gap: 3px; padding: 9px 2px 7px; border-radius: 11px; color: var(--muted); font-size: 10.5px; font-weight: 600; cursor: pointer; }
 .jt1 .tl:hover { background: var(--soft); color: var(--ink); }
 .jt1 .tl.on { background: var(--ink); color: #fff; }
@@ -656,9 +660,9 @@ const CSS = `
 .jt1 .item.txt { min-width: 60px; padding: 4px 8px; border: 1.5px dashed transparent; border-radius: 6px; font-family: var(--disp); font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1.3; }
 .jt1 .item.txt:hover, .jt1 .item.txt:focus-within { border-color: var(--line); }
 .jt1 .txt-ed { outline: none; display: inline-block; min-width: 40px; }
-.jt1 .item.img { background: #fff; padding: 8px; border-radius: 6px; box-shadow: 0 10px 24px rgba(80,50,30,.18); }
+.jt1 .item.img { background: #fff; padding: 8px; border-radius: 6px; box-shadow: 0 10px 24px rgba(20,60,50,.18); }
 .jt1 .item.img img { display: block; width: 100%; height: auto; pointer-events: none; border-radius: 3px; }
-.jt1 .item.stamp { font-family: var(--disp); font-weight: 800; font-size: 17px; letter-spacing: .02em; color: #fff; padding: 8px 16px; border-radius: 8px; transform: rotate(-6deg); box-shadow: 0 8px 18px rgba(80,50,30,.25); white-space: nowrap; animation: jt1Stamp .35s cubic-bezier(.2,1.6,.4,1) both; }
+.jt1 .item.stamp { font-family: var(--disp); font-weight: 800; font-size: 17px; letter-spacing: .02em; color: #fff; padding: 8px 16px; border-radius: 8px; transform: rotate(-6deg); box-shadow: 0 8px 18px rgba(20,60,50,.25); white-space: nowrap; animation: jt1Stamp .35s cubic-bezier(.2,1.6,.4,1) both; }
 @keyframes jt1Stamp { from { opacity: 0; transform: rotate(-6deg) scale(1.6); } }
 .jt1 .item .del, .jt1 .item .grip { position: absolute; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; opacity: 0; transition: opacity .15s; }
 .jt1 .item .del { top: -10px; right: -10px; }
@@ -669,7 +673,7 @@ const CSS = `
 .jt1 .spot .lit { position: relative; z-index: 2; transform: scale(1.03); transition: transform .25s; }
 
 /* rundown */
-.jt1 .steps { display: flex; flex-wrap: wrap; gap: 6px; }
+.jt1 .steps { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
 .jt1 .stp { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px 6px 7px; font-weight: 600; font-size: 13px; color: var(--muted); }
 .jt1 .stp i { font-style: normal; font-size: 11.5px; font-variant-numeric: tabular-nums; background: var(--soft); border-radius: 6px; padding: 2px 6px; }
 .jt1 .stp.done { color: var(--ink); }
@@ -696,9 +700,9 @@ const CSS = `
 .jt1 .stack { position: relative; width: min(100%, 640px); justify-self: center; }
 .jt1 .stack.cover { width: 100%; }
 .jt1 .stack.fu { width: min(100%, 580px); }
-.jt1 .icard { position: relative; z-index: 1; background: var(--card); border-radius: 8px; padding: 18px 22px 20px; display: grid; gap: 10px; box-shadow: 0 14px 30px rgba(80,50,30,.11); border-top: 8px solid var(--teal); transform: rotate(-.5deg);
-  background-image: linear-gradient(transparent 31px, #F0E9E0 32px); background-size: 100% 32px; background-position: 0 50px; }
-.jt1 .icard::after { content: ""; position: absolute; right: 0; bottom: 0; width: 30px; height: 30px; background: linear-gradient(135deg, var(--stage) 50%, #E8E0D6 50%); border-radius: 0 0 8px 0; }
+.jt1 .icard { position: relative; z-index: 1; background: var(--card); border-radius: 8px; padding: 18px 22px 20px; display: grid; gap: 10px; box-shadow: 0 14px 30px rgba(20,60,50,.11); border-top: 8px solid var(--gold); transform: rotate(-.5deg);
+  background-image: linear-gradient(transparent 31px, var(--rule-line) 32px); background-size: 100% 32px; background-position: 0 50px; }
+.jt1 .icard::after { content: ""; position: absolute; right: 0; bottom: 0; width: 30px; height: 30px; background: linear-gradient(135deg, var(--stage) 50%, var(--fold) 50%); border-radius: 0 0 8px 0; }
 .jt1 .icard small { font-family: var(--disp); font-size: 11.5px; font-weight: 700; color: var(--teal); letter-spacing: .14em; text-transform: uppercase; }
 .jt1 .icard .q { font-family: var(--disp); font-weight: 700; font-size: clamp(23px, 3.2vw, 32px); line-height: 1.15; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
 .jt1 .icard p.d { margin: 0; font-size: 17px; line-height: 32px; font-weight: 500; }
@@ -715,13 +719,13 @@ const CSS = `
 .jt1 .cover-card::after { display: none; }
 .jt1 .cover-card small { color: var(--red); }
 .jt1 .cover-card h1 { font-family: var(--disp); font-weight: 800; font-size: clamp(44px, 7.4vw, 84px); line-height: .92; letter-spacing: -.035em; margin: 4px 0 8px; text-wrap: balance; }
-.jt1 .hook-pic { display: block; width: min(100%, 420px); aspect-ratio: 1; object-fit: cover; border-radius: 14px; margin: 6px 0 0; cursor: zoom-in; box-shadow: 0 10px 24px rgba(80,50,30,.14); }
+.jt1 .hook-pic { display: block; width: min(100%, 420px); aspect-ratio: 1; object-fit: cover; border-radius: 14px; margin: 6px 0 0; cursor: zoom-in; box-shadow: 0 10px 24px rgba(20,60,50,.14); }
 .jt1 .hook-pic.off { display: none; }
-.jt1 .pic-big { position: fixed; inset: 0; z-index: 80; background: rgba(35,32,43,.72); display: flex; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+.jt1 .pic-big { position: fixed; inset: 0; z-index: 80; background: rgba(21,48,42,.72); display: flex; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
 .jt1 .pic-big img { max-width: min(92vw, 900px); max-height: 88vh; border-radius: 16px; background: #fff; }
 
 /* captions (answers, notes, reveals) */
-.jt1 .sticky { display: inline-block; background: var(--card); color: var(--ink); padding: 12px 18px 12px 16px; font-weight: 600; font-size: 19px; line-height: 1.35; border-radius: 10px; box-shadow: 0 8px 20px rgba(80,50,30,.10); border-left: 6px solid var(--red); max-width: 100%; text-align: left; }
+.jt1 .sticky { display: inline-block; background: var(--card); color: var(--ink); padding: 12px 18px 12px 16px; font-weight: 600; font-size: 19px; line-height: 1.35; border-radius: 10px; box-shadow: 0 8px 20px rgba(20,60,50,.10); border-left: 6px solid var(--red); max-width: 100%; text-align: left; }
 .jt1 .sticky.big { font-size: 21px; padding: 16px 22px 16px 18px; }
 .jt1 .sticky.green { border-left-color: var(--teal); }
 .jt1 .sticky.mine { font-size: 16px; padding: 8px 14px; box-shadow: none; background: var(--soft); border-left-color: var(--gold); }
@@ -749,7 +753,7 @@ const CSS = `
 .jt1 .word.on { background: var(--red); border-color: var(--red); color: #fff; }
 .jt1 .words.small .word { font-size: 14px; padding: 5px 12px; }
 .jt1 .wcard { justify-self: center; width: min(100%, 680px); display: grid; gap: 12px; }
-.jt1 .lower { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: stretch; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 26px rgba(80,50,30,.14); background: var(--card); }
+.jt1 .lower { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: stretch; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 26px rgba(20,60,50,.14); background: var(--card); }
 .jt1 .lt-tag { background: var(--red); color: #fff; padding: 14px 20px; display: grid; align-content: center; gap: 4px; }
 .jt1 .lt-tag b { font-family: var(--disp); font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -.02em; line-height: 1; }
 .jt1 .lt-tag .stress { color: rgba(255,255,255,.85); }
@@ -771,7 +775,7 @@ const CSS = `
 .jt1 .tr-out { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-wash); color: #166B69; border-radius: 8px; padding: 5px 11px 5px 8px; font-weight: 600; font-size: 16px; }
 
 /* grammar */
-.jt1 .rule { justify-self: center; width: min(100%, 640px); display: grid; gap: 12px; background: var(--card); border-radius: 14px; padding: 20px 22px; box-shadow: 0 12px 26px rgba(80,50,30,.10); border-top: 8px solid var(--gold); }
+.jt1 .rule { justify-self: center; width: min(100%, 640px); display: grid; gap: 12px; background: var(--card); border-radius: 14px; padding: 20px 22px; box-shadow: 0 12px 26px rgba(20,60,50,.10); border-top: 8px solid var(--gold); }
 .jt1 .rule small { font-family: var(--disp); font-size: 11.5px; font-weight: 700; color: #B07D12; letter-spacing: .14em; text-transform: uppercase; }
 .jt1 .rule h3 { margin: 0; font-family: var(--disp); font-weight: 800; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.1; letter-spacing: -.01em; }
 .jt1 .rule p { margin: 0; font-size: 16.5px; line-height: 1.5; }
@@ -789,12 +793,12 @@ const CSS = `
 .jt1 .sn-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
 .jt1 .sn-dots i.on { background: var(--teal); }
 .jt1 .sn-dots i.cur { background: var(--red); width: 20px; border-radius: 4px; }
-.jt1 .go { justify-self: end; display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; border-radius: 12px; padding: 13px 22px; font-family: var(--disp); font-weight: 700; font-size: 15px; box-shadow: 0 10px 22px rgba(35,32,43,.18); }
+.jt1 .go { justify-self: end; display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; border-radius: 12px; padding: 13px 22px; font-family: var(--disp); font-weight: 700; font-size: 15px; box-shadow: 0 10px 22px rgba(21,48,42,.18); }
 
 /* challenge */
 .jt1 .act-box { display: grid; gap: 16px; justify-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
 .jt1 .how { margin: 0; text-align: center; font-size: 15px; color: var(--muted); max-width: 54ch; }
-.jt1 .tf-card { width: min(100%, 560px); min-height: 150px; display: grid; place-content: center; justify-items: center; text-align: center; gap: 10px; background: var(--card); border-radius: 8px; padding: 20px; box-shadow: 0 12px 26px rgba(80,50,30,.11); border-top: 8px solid var(--plum); }
+.jt1 .tf-card { width: min(100%, 560px); min-height: 150px; display: grid; place-content: center; justify-items: center; text-align: center; gap: 10px; background: var(--card); border-radius: 8px; padding: 20px; box-shadow: 0 12px 26px rgba(20,60,50,.11); border-top: 8px solid var(--plum); }
 .jt1 .tf-card .q { font-family: var(--disp); font-weight: 700; font-size: clamp(22px, 3vw, 30px); line-height: 1.15; margin: 0; text-wrap: balance; }
 .jt1 .tf-card small { font-family: var(--disp); font-size: 11.5px; font-weight: 700; color: var(--plum); letter-spacing: .14em; text-transform: uppercase; }
 .jt1 .verdict { font-family: var(--disp); font-weight: 800; font-size: 30px; line-height: 1.1; }
@@ -835,12 +839,12 @@ const CSS = `
 .jt1 .rc-fact { font-size: 17px; font-weight: 500; }
 
 /* wrap-up */
-.jt1 .lines { justify-self: center; width: min(100%, 640px); display: grid; background: var(--card); border-radius: 14px; padding: 10px 20px 14px; box-shadow: 0 10px 24px rgba(80,50,30,.08); }
+.jt1 .lines { justify-self: center; width: min(100%, 640px); display: grid; background: var(--card); border-radius: 14px; padding: 10px 20px 14px; box-shadow: 0 10px 24px rgba(20,60,50,.08); }
 .jt1 .line { display: flex; gap: 10px; align-items: baseline; border-bottom: 1px solid var(--line); padding: 8px 0 4px; }
 .jt1 .line i { font-style: normal; font-family: var(--disp); font-weight: 800; color: var(--red); font-size: 17px; }
 .jt1 .line .ed { flex: 1; min-width: 0; font-size: 18px; font-weight: 500; outline: none; min-height: 30px; }
 .jt1 .fixes { justify-self: center; width: min(100%, 640px); display: grid; gap: 10px; }
-.jt1 .fx { display: grid; gap: 8px; background: var(--card); border-radius: 12px; padding: 12px 16px; box-shadow: 0 6px 14px rgba(80,50,30,.08); border-left: 6px solid var(--red); }
+.jt1 .fx { display: grid; gap: 8px; background: var(--card); border-radius: 12px; padding: 12px 16px; box-shadow: 0 6px 14px rgba(20,60,50,.08); border-left: 6px solid var(--red); }
 .jt1 .fx.up { border-left-color: var(--gold); }
 .jt1 .fx-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
 .jt1 .fx-kind { font-family: var(--disp); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
@@ -851,8 +855,8 @@ const CSS = `
 .jt1 .empty { text-align: center; color: var(--muted); font-size: 14px; background: var(--card); border-radius: 12px; padding: 16px; }
 
 /* Fix it drawer */
-.jt1 .scrim { position: fixed; inset: 0; background: rgba(35,32,43,.2); z-index: 49; }
-.jt1 .fixd { position: fixed; top: 0; right: 0; bottom: 0; width: min(380px, 100vw); background: var(--card); box-shadow: -10px 0 30px rgba(80,50,30,.18); transform: translateX(105%); transition: transform .25s; z-index: 50; display: grid; grid-template-rows: auto auto minmax(0, 1fr); gap: 14px; padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) 16px; visibility: hidden; }
+.jt1 .scrim { position: fixed; inset: 0; background: rgba(21,48,42,.2); z-index: 49; }
+.jt1 .fixd { position: fixed; top: 0; right: 0; bottom: 0; width: min(380px, 100vw); background: var(--card); box-shadow: -10px 0 30px rgba(20,60,50,.18); transform: translateX(105%); transition: transform .25s; z-index: 50; display: grid; grid-template-rows: auto auto minmax(0, 1fr); gap: 14px; padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) 16px; visibility: hidden; }
 .jt1 .fixd.open { transform: none; visibility: visible; }
 .jt1 .fixd-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .jt1 .fixd-h h2 { margin: 0; font-family: var(--disp); font-weight: 800; font-size: 26px; }
@@ -876,6 +880,7 @@ const CSS = `
 .jt1 .fl.up { border-left: 4px solid var(--gold); }
 .jt1 .fl.fx0 { border-left: 4px solid var(--red); }
 
+@media (max-width: 860px) { .jt1 .bar { grid-template-columns: 1fr; justify-items: center; } .jt1 .bar .mark { justify-self: center; } .jt1 .bar-end { display: none; } }
 @media (max-width: 720px) {
   .jt1 .right { justify-content: flex-start; }
   .jt1 .stage { grid-template-columns: 1fr; }
