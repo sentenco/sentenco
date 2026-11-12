@@ -83,10 +83,10 @@ function Blanks({ text }) {
   const parts = String(text).split("___");
   return <>{parts.map((p, i) => <span key={i}>{p}{i < parts.length - 1 && <span className="blank" />}</span>)}</>;
 }
-function Pic({ folder, label, size }) {
+function Pic({ label, size }) {
   return (
     <div className="pic">
-      <div className="photo"><SoarPic src={`/curriculum/just-talk/${folder}/${slug(label)}.jpeg`} label={label} size={size} /></div>
+      <div className="photo"><SoarPic src={`/curriculum/just-talk/pics/${slug(label)}.jpeg`} label={label} size={size} /></div>
       <span className="cap">{label}</span>
     </div>
   );
@@ -187,7 +187,7 @@ function Activity({ a, folder, act, setAct, addPage }) {
       <div className="flipgrid">
         <div className="fg-grid">{a.people.map((p) => (
           <button type="button" key={p} className={`fg-card${down[p] ? " down" : ""}`} onClick={() => setAct({ down: { ...down, [p]: !down[p] } })}>
-            <SoarPic src={`/curriculum/just-talk/${folder}/guess-${slug(p)}.jpeg`} label={p} size={96} zoom="off" />
+            <SoarPic src={`/curriculum/just-talk/pics/guess-${slug(p)}.jpeg`} label={p} size={96} zoom="off" />
             <b>{p}</b>
           </button>
         ))}</div>

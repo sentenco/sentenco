@@ -13,7 +13,7 @@ import { BOARDS_S5 } from "./justTalkBoardsS5.js";
 //   more:      More questions page: { q, f (follow-up) }
 //   yours:     Your sentences: { ask, frames }
 //   home:      practice at home: easy, 2-3 minutes, nothing to send, sets up the next lesson
-// Picture files live at /curriculum/just-talk/<module-slug>/<label-slug>.jpeg and show a labelled
+// Picture files live at /curriculum/just-talk/pics/<label-slug>.jpeg (one shared folder) and show a labelled
 // placeholder until they exist.
 
 export const WARM = {

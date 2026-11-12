@@ -10,6 +10,18 @@ import { B1_BOARDS, B1_PHRASES, B1_REACT } from "./justTalkB1Boards";
 // for live corrections, and a "Words used" tracker. Saved per student in just_talk_boards (key "b1/<lesson>").
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
+
+// The lesson's picture (public/curriculum/just-talk/pics/b1-<lesson key>.jpeg). Hidden until the file
+// exists; click it to see it big.
+function HookPic({ name, alt }) {
+  const [ok, setOk] = useState(false);
+  const [big, setBig] = useState(false);
+  const src = `/curriculum/just-talk/pics/b1-${name}.jpeg`;
+  return (<>
+    <img className={`hook-pic ${ok ? "" : "off"}`} src={src} alt={alt} onLoad={() => setOk(true)} onError={() => setOk(false)} onClick={() => setBig(true)} />
+    {ok && big && <div className="pic-big" onClick={() => setBig(false)}><img src={src} alt={alt} /></div>}
+  </>);
+}
 const LESSON_STEPS = [["hook", "Hook", "0-3 min"], ["facts", "Facts", "3-6 min"], ["words", "Words", "6-9 min"], ["grammar", "Grammar", "9-13 min"], ["discuss", "Discuss", "13-21 min"], ["challenge", "Challenge", "21-27 min"], ["wrap", "Wrap-up", "27-30 min"]];
 const CHECK_STEPS = [["recap", "Recap", "0-6 min"], ["wordquiz", "Words", "6-10 min"], ["gmix", "Grammar", "10-15 min"], ["talk", "Talk", "15-22 min"], ["discuss", "Discuss", "22-27 min"], ["wrap", "Wrap-up", "27-30 min"]];
 const LANGS = ["Hebrew", "Polish", "Spanish", "Portuguese", "French", "German", "Italian", "Russian", "Ukrainian", "Turkish", "Arabic", "Chinese", "Japanese", "Korean"];
@@ -182,7 +194,7 @@ export default function JustTalkB1Board() {
     const h = B.hook;
     return (<>
       <div className="part">
-        <div className="stack cover"><div className="icard cover-card"><small>{isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="menu_book" />Grammar: {B.grammar.name}</span></div></div>
+        <div className="stack cover"><div className="icard cover-card"><small>{isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="menu_book" />Grammar: {B.grammar.name}</span>{!isCheck && <HookPic name={L.key} alt={L.title} />}</div></div>
       </div>
       <div className="part">
         <Ph n="1" title="Guess first" />
@@ -542,6 +554,10 @@ export default function JustTalkB1Board() {
 }
 
 const CSS = `
+.jt1 .hook-pic { display: block; width: min(100%, 420px); aspect-ratio: 1; object-fit: cover; border-radius: 14px; margin: 6px auto 0; cursor: zoom-in; box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+.jt1 .hook-pic.off { display: none; }
+.jt1 .pic-big { position: fixed; inset: 0; z-index: 80; background: rgba(27,42,74,.75); display: flex; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+.jt1 .pic-big img { max-width: min(92vw, 900px); max-height: 88vh; border-radius: 16px; background: #fff; }
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Kalam:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0,0&display=block');
 .jt1 { --desk: #EEF3EC; --desk-2: #E2EADF; --green: #3E5B3A; --green-2: #567553; --green-wash: #DCEBD8; --red: #F05D5E; --red-wash: #FDE7E7; --rule: #DCE8F5; --ink: #23305A; --muted: #7C8A78; --note: #FFF3B8; --note-edge: #F1DE84; --note-ink: #3A3320; --teal: #2C7A6E; --teal-wash: #E2F2EE;
