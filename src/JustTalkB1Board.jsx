@@ -9,7 +9,7 @@ import { readPhoto } from "./justTalkPhoto.js";
 
 // Just Talk Board for B1-B2: a lighter board for students who can talk without a translator.
 // One step at a time (hook, facts, words, grammar, discuss, challenge, wrap-up), a "Fix it" drawer
-// for live corrections, and a "Words used" tracker. Saved per student in just_talk_boards (key "b1/<lesson>").
+// for live corrections. Saved per lesson in just_talk_boards (student "B1-B2", key "b1/<lesson>"); no student picker.
 // Look: "On Air" (a talk-show studio: ON AIR light, rundown of steps, cue cards, prompter, caption bars; Bricolage Grotesque + Outfit), 25-minute lessons,
 // with the A1-A2 annotation rail on the left (pen, text, eraser, spotlight, stamps, picture). Drawings are kept per step.
 
@@ -34,6 +34,7 @@ const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JS
 const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage blocked */ } };
 const uid = () => Math.random().toString(36).slice(2, 9);
 const EMPTY = () => ({ step: 0, hookGuess: null, hookShown: false, fi: 0, wi: null, seen: {}, wtr: {}, ws: {}, gi: 0, gAns: {}, qi: 0, rev: {}, ci: 0, cg: {}, cr: {}, gs: {}, rk: [], rkShow: false, side: null, ideas: {}, sum: ["", "", ""], fixes: [], fixRev: {}, used: {}, mi: 0, mrev: {}, ri: 0, recRev: {}, qz: 0, qzRev: {}, topic: null, ticks: {}, strokes: {}, items: {} });
+const BOARD_STUDENT = "B1-B2";
 const STAMPS = [["Great point!", "#E8423F"], ["Nice phrase!", "#D9962B"], ["Wow!", "#1E8C8A"]];
 const INKS = ["#23202B", "#E8423F", "#1E8C8A"];
 
@@ -81,22 +82,6 @@ function Timer({ secs }) {
   );
 }
 
-// The show clock in the top bar: counts the class time up; click to start or pause, double-click to reset.
-function LiveClock() {
-  const [sec, setSec] = useState(0);
-  const [run, setRun] = useState(false);
-  useEffect(() => {
-    if (!run) return undefined;
-    const t = setInterval(() => setSec((x) => x + 1), 1000);
-    return () => clearInterval(t);
-  }, [run]);
-  return (
-    <button type="button" className={`showclock ${run ? "run" : ""}`} onClick={() => setRun(!run)} onDoubleClick={() => { setRun(false); setSec(0); }} title="Click to start or pause, double-click to reset">
-      <Ms n={run ? "pause" : "play_arrow"} />{String(Math.floor(sec / 60)).padStart(2, "0")}:{String(sec % 60).padStart(2, "0")}
-    </button>
-  );
-}
-
 function Editable({ value, onChange, className, ph }) {
   const ref = useRef(null);
   useEffect(() => { if (ref.current && ref.current.textContent !== value) ref.current.textContent = value || ""; }, [value]);
@@ -112,15 +97,12 @@ export default function JustTalkB1Board() {
   const steps = isCheck ? CHECK_STEPS : LESSON_STEPS;
   const docKey = `b1/${lesson}`;
 
-  const [students, setStudents] = useState(() => lsGet("jt-students", []));
-  const [student, setStudent] = useState(() => lsGet("jt-student", ""));
+  const student = BOARD_STUDENT;
   const [lang, setLang] = useState(() => lsGet("jt1-lang", "Hebrew"));
-  const [track, setTrack] = useState(() => lsGet("jt1-track", true));
   const [doc, setDoc] = useState(EMPTY);
   const [page, setPage] = useState("lesson");
   const [saveMsg, setSaveMsg] = useState("");
   const [online, setOnline] = useState(true);
-  const [newName, setNewName] = useState("");
   const [fixOpen, setFixOpen] = useState(false);
   const [fSaid, setFSaid] = useState("");
   const [fBetter, setFBetter] = useState("");
@@ -136,14 +118,6 @@ export default function JustTalkB1Board() {
 
   const patch = useCallback((p) => setDoc((d) => ({ ...d, ...(typeof p === "function" ? p(d) : p) })), []);
 
-  useEffect(() => {
-    if (!user) return;
-    supabase.from("just_talk_boards").select("student").then(({ data, error }) => {
-      if (error) { setOnline(false); return; }
-      const names = [...new Set((data || []).map((r) => r.student))];
-      setStudents((s) => { const all = [...new Set([...s, ...names])].sort(); lsSet("jt-students", all); return all; });
-    });
-  }, [user]);
 
   useEffect(() => {
     if (!user || !B) return;
@@ -204,11 +178,8 @@ export default function JustTalkB1Board() {
   const step = Math.min(doc.step, steps.length - 1);
   const stepKey = steps[step][0];
   const words = isCheck ? B.wordquiz.map((w) => w[1]) : B.words.map((w) => w[0]);
-  const usedN = words.filter((w) => doc.used[w]).length;
   const phrases = B.phrases || B1_PHRASES[((L.modNum || L.stage) + (L.n || 0)) % B1_PHRASES.length];
   const kicker = isCheck ? `Stage ${L.stage} · ${L.lv} · Check-in` : `Stage ${L.stage} · Module ${String(L.modNum).padStart(2, "0")} ${L.module} · Lesson ${L.n}`;
-  const pickStudent = (v) => { setStudent(v); lsSet("jt-student", v); };
-  const addStudent = () => { const nm = newName.trim(); if (!nm) return; setStudents((s) => { const all = [...new Set([...s, nm])].sort(); lsSet("jt-students", all); return all; }); pickStudent(nm); setNewName(""); };
   const addFix = () => {
     const said = fSaid.trim();
     if (!said) { saidRef.current?.focus(); return; }
@@ -555,27 +526,16 @@ export default function JustTalkB1Board() {
     <div className="jt1">
       <style>{CSS}</style>
       <div className="bar">
-        <div className="mark"><span className="lamp"><i />ON AIR</span><div className="mark-t"><b>Just Talk · {L.lv}</b><span>{kicker}</span></div></div>
+        <div className="mark"><span className="lamp"><i />ON AIR</span><div className="mark-t"><b>Just Talk · {L.lv}</b><span>{kicker}{saveMsg ? ` · ${saveMsg}` : ""}</span></div></div>
         <div className="right">
-          <LiveClock />
-          <label className="pill-sel"><Ms n="person" />
-            <select value={student} onChange={(e) => pickStudent(e.target.value)} aria-label="Student"><option value="">Pick a student</option>{students.map((s) => <option key={s} value={s}>{s}</option>)}</select>
-          </label>
-          <label className="pill-sel add"><Ms n="person_add" /><input value={newName} onChange={(e) => setNewName(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addStudent()} placeholder="New student" aria-label="New student" /></label>
+          <nav className="pages" aria-label="Pages">
+            <button type="button" className={`pg ${page === "lesson" ? "on" : ""}`} onClick={() => setPage("lesson")}>{isCheck ? "Check-in" : "Lesson"}</button>
+            {!isCheck && <button type="button" className={`pg ${page === "more" ? "on" : ""}`} onClick={() => setPage("more")}>More questions</button>}
+          </nav>
           <label className="pill-sel teal"><Ms n="translate" /><select value={lang} onChange={(e) => { setLang(e.target.value); lsSet("jt1-lang", e.target.value); }} aria-label="Backup language">{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
-          <button type="button" className={`tool ${track ? "on" : ""}`} onClick={() => { setTrack(!track); lsSet("jt1-track", !track); }}><Ms n="checklist" />Words {usedN}/{words.length}</button>
           <button type="button" className="tool fix" onClick={() => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); }}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
         </div>
-        <nav className="pages">
-          <button type="button" className={`pg ${page === "lesson" ? "on" : ""}`} onClick={() => setPage("lesson")}><Ms n="live_tv" />{isCheck ? "Check-in" : "Lesson"}</button>
-          {!isCheck && <button type="button" className={`pg ${page === "more" ? "on" : ""}`} onClick={() => setPage("more")}><Ms n="forum" />More questions</button>}
-          <span className="save-msg">{student ? saveMsg || "Autosaves" : "Pick a student to save"}</span>
-        </nav>
       </div>
-
-      {track && page === "lesson" && (
-        <div className="track"><b>WORDS USED</b>{words.map((w) => <button key={w} type="button" className={`tw ${doc.used[w] ? "on" : ""}`} onClick={() => patch((d) => ({ used: { ...d.used, [w]: !d.used[w] } }))}><Ms n={doc.used[w] ? "check_circle" : "radio_button_unchecked"} />{w}</button>)}</div>
-      )}
 
       <div className="stage">
         <div className="rail" role="toolbar" aria-label="Board tools">
@@ -653,7 +613,7 @@ const CSS = `
 .jt1 .row { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
 
 /* top bar */
-.jt1 .bar { max-width: 980px; margin: 0 auto 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 14px; align-items: center; }
+.jt1 .bar { max-width: 980px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 14px; align-items: center; }
 .jt1 .mark { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .jt1 .lamp { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; background: var(--red); color: #fff; font-family: var(--disp); font-weight: 800; font-size: 12.5px; letter-spacing: .14em; padding: 7px 11px; border-radius: 8px; box-shadow: 0 0 0 4px rgba(232,66,63,.15), 0 6px 18px rgba(232,66,63,.32); }
 .jt1 .lamp i { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: jt1Blink 1.4s infinite; }
@@ -662,32 +622,17 @@ const CSS = `
 .jt1 .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 17px; white-space: nowrap; }
 .jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .jt1 .right { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; align-items: center; }
-.jt1 .showclock { display: inline-flex; align-items: center; gap: 4px; font-family: var(--disp); font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px 11px 3px 6px; }
-.jt1 .showclock .ms { font-size: 18px; color: var(--muted); }
-.jt1 .showclock.run { border-color: var(--red); color: var(--red); }
-.jt1 .showclock.run .ms { color: var(--red); }
 .jt1 .pill-sel { display: inline-flex; align-items: center; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px 6px 3px 9px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .jt1 .pill-sel select, .jt1 .pill-sel input { border: 0; background: none; font-weight: 600; color: var(--ink); padding: 4px 2px; max-width: 140px; outline: none; }
-.jt1 .pill-sel.add input { width: 104px; }
 .jt1 .pill-sel.teal { color: var(--teal); }
 .jt1 .tool { display: inline-flex; align-items: center; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px 6px 9px; font-weight: 600; font-size: 13px; }
 .jt1 .tool.on { background: var(--teal-wash); border-color: var(--teal); color: var(--teal); }
 .jt1 .tool.fix { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
 .jt1 .tool .badge { background: #fff; color: var(--ink); border-radius: 999px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; font-size: 12px; padding: 0 6px; }
-.jt1 .pages { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; justify-content: center; }
-.jt1 .pages > * { flex: 0 0 auto; }
-.jt1 .pg { display: inline-flex; align-items: center; gap: 5px; padding: 6px 13px; border-radius: 9px; font-weight: 600; font-size: 13px; color: var(--muted); background: var(--card); border: 1px solid var(--line); }
-.jt1 .pg.on { background: var(--ink); border-color: var(--ink); color: #fff; }
-.jt1 .pg .ms { font-size: 17px; }
-.jt1 .save-msg { font-size: 12px; font-weight: 600; color: var(--muted); padding: 0 10px; }
+.jt1 .pages { display: inline-flex; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 11px; padding: 3px; }
+.jt1 .pg { padding: 5px 12px; border-radius: 8px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.jt1 .pg.on { background: var(--ink); color: #fff; }
 
-/* words used */
-.jt1 .track { max-width: 980px; margin: 0 auto 12px; display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; justify-content: center; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
-.jt1 .track > b { font-family: var(--disp); font-size: 11.5px; color: var(--muted); letter-spacing: .14em; margin-right: 4px; }
-.jt1 .tw { display: inline-flex; align-items: center; gap: 4px; border-radius: 999px; padding: 4px 11px 4px 7px; font-weight: 600; font-size: 14px; background: var(--soft); }
-.jt1 .tw .ms { font-size: 16px; color: #BDB3A8; }
-.jt1 .tw.on { background: var(--red); color: #fff; }
-.jt1 .tw.on .ms { color: #fff; }
 
 /* stage: rail + sheet */
 .jt1 .stage { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 14px; align-items: start; }
