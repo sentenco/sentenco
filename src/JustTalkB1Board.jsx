@@ -16,17 +16,6 @@ import { fitBoardWindow } from "./justTalkWindow.js";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 
-// The lesson's picture (public/curriculum/just-talk/pics/b1-<lesson key>.jpeg). Hidden until the file
-// exists; click it to see it big.
-function HookPic({ name, alt }) {
-  const [ok, setOk] = useState(false);
-  const [big, setBig] = useState(false);
-  const src = `/curriculum/just-talk/pics/b1-${name}.jpeg`;
-  return (<>
-    <img className={`hook-pic ${ok ? "" : "off"}`} src={src} alt={alt} onLoad={() => setOk(true)} onError={() => setOk(false)} onClick={() => setBig(true)} />
-    {ok && big && <div className="pic-big" onClick={() => setBig(false)}><img src={src} alt={alt} /></div>}
-  </>);
-}
 const LESSON_STEPS = [["hook", "Hook", "0-2 min"], ["facts", "Facts", "2-5 min"], ["words", "Words", "5-8 min"], ["grammar", "Grammar", "8-11 min"], ["discuss", "Discuss", "11-18 min"], ["challenge", "Challenge", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const CHECK_STEPS = [["recap", "Recap", "0-5 min"], ["wordquiz", "Words", "5-8 min"], ["gmix", "Grammar", "8-12 min"], ["talk", "Talk", "12-18 min"], ["discuss", "Discuss", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const LANGS = ["Hebrew", "Polish", "Spanish", "Portuguese", "French", "German", "Italian", "Russian", "Ukrainian", "Turkish", "Arabic", "Chinese", "Japanese", "Korean"];
@@ -235,7 +224,7 @@ export default function JustTalkB1Board() {
     const h = B.hook;
     return (<>
       <div className="part">
-        <div className="stack cover"><div className="icard cover-card"><small>Tonight's topic · {isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="menu_book" />Grammar: {B.grammar.name}</span>{!isCheck && <HookPic name={L.key} alt={L.title} />}</div></div>
+        <div className="stack cover"><div className="icard cover-card"><small>Tonight's topic · {isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="menu_book" />Grammar: {B.grammar.name}</span></div></div>
       </div>
       <div className="part">
         <Ph n="1" title="Guess first" />
@@ -754,10 +743,6 @@ const CSS = `
 .jt1 .cover-card::after { display: none; }
 .jt1 .cover-card small { color: var(--red); }
 .jt1 .cover-card h1 { font-family: var(--disp); font-weight: 800; font-size: clamp(44px, 7.4vw, 84px); line-height: .92; letter-spacing: -.035em; margin: 4px 0 8px; text-wrap: balance; }
-.jt1 .hook-pic { display: block; width: min(100%, 420px); aspect-ratio: 1; object-fit: cover; border-radius: 14px; margin: 6px 0 0; cursor: zoom-in; box-shadow: 0 10px 24px rgba(20,60,50,.14); }
-.jt1 .hook-pic.off { display: none; }
-.jt1 .pic-big { position: fixed; inset: 0; z-index: 80; background: rgba(21,48,42,.72); display: flex; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
-.jt1 .pic-big img { max-width: min(92vw, 900px); max-height: 88vh; border-radius: 16px; background: #fff; }
 
 /* captions (answers, notes, reveals) */
 .jt1 .sticky { display: inline-block; background: var(--card); color: var(--ink); padding: 12px 18px 12px 16px; font-weight: 600; font-size: 19px; line-height: 1.35; border-radius: 10px; box-shadow: 0 8px 20px rgba(20,60,50,.10); border-left: 6px solid var(--red); max-width: 100%; text-align: left; }
