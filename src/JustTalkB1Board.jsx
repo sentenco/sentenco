@@ -102,6 +102,8 @@ export default function JustTalkB1Board() {
   const [lang, setLang] = useState(() => lsGet("jt1-lang", "Hebrew"));
   const [doc, setDoc] = useState(EMPTY);
   const [page, setPage] = useState("lesson");
+  // Blank pages live only in this window: they keep their writing while you switch pages and are gone when the board is closed.
+  const [scratch, setScratch] = useState({ pages: [], strokes: {}, items: {} });
   const [saveMsg, setSaveMsg] = useState("");
   const [online, setOnline] = useState(true);
   const [fixOpen, setFixOpen] = useState(false);
@@ -191,9 +193,14 @@ export default function JustTalkB1Board() {
     setFSaid(""); setFBetter(""); saidRef.current?.focus();
   };
   const ak = page === "lesson" ? `s${step}` : page;
-  const pageItems = (doc.items || {})[ak] || [];
-  const pageStrokes = (doc.strokes || {})[ak] || [];
-  const setItems = (list) => patch((d) => ({ items: { ...(d.items || {}), [ak]: list } }));
+  const free = page.startsWith("p-");
+  const layer = free ? scratch : doc;
+  const pageItems = (layer.items || {})[ak] || [];
+  const pageStrokes = (layer.strokes || {})[ak] || [];
+  const setLayer = (fn) => (free ? setScratch((x) => ({ ...x, ...fn(x) })) : patch(fn));
+  const setItems = (list) => setLayer((d) => ({ items: { ...(d.items || {}), [ak]: list } }));
+  const addPage = () => { const id = `p-${uid()}`; setScratch((x) => ({ ...x, pages: [...x.pages, id] })); setPage(id); setAnimKey((k) => k + 1); };
+  const closePage = (id) => { setScratch((x) => { const strokes = { ...x.strokes }, items = { ...x.items }; delete strokes[id]; delete items[id]; return { pages: x.pages.filter((p) => p !== id), strokes, items }; }); if (page === id) setPage("lesson"); };
   function clearSpot() { sheetRef.current?.classList.remove("spot"); sheetRef.current?.querySelectorAll(".lit").forEach((x) => x.classList.remove("lit")); }
   function pickTool(id) { setTool(tool === id && id !== "move" ? "move" : id); setStamp(null); if (id !== "spot") clearSpot(); }
   function onSheetClick(e) {
@@ -535,6 +542,12 @@ export default function JustTalkB1Board() {
           <nav className="pages" aria-label="Pages">
             <button type="button" className={`pg ${page === "lesson" ? "on" : ""}`} onClick={() => setPage("lesson")}>{isCheck ? "Check-in" : "Lesson"}</button>
             {!isCheck && <button type="button" className={`pg ${page === "more" ? "on" : ""}`} onClick={() => setPage("more")}>More questions</button>}
+            {scratch.pages.map((id, i) => (
+              <button type="button" key={id} className={`pg ${page === id ? "on" : ""}`} onClick={() => setPage(id)}>Page {i + 1}
+                <span className="pg-x" role="button" aria-label={`Close page ${i + 1}`} onClick={(e) => { e.stopPropagation(); closePage(id); }}><Ms n="close" /></span>
+              </button>
+            ))}
+            <button type="button" className="pg add" onClick={addPage} aria-label="Add a blank page" title="Add a blank page"><Ms n="add" /></button>
           </nav>
           <label className="pill-sel teal"><Ms n="translate" /><select value={lang} onChange={(e) => { setLang(e.target.value); lsSet("jt1-lang", e.target.value); }} aria-label="Backup language">{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
           <button type="button" className="tool fix" onClick={() => { setFixOpen(true); setTimeout(() => saidRef.current?.focus(), 200); }}><Ms n="edit_note" />Fix it <span className="badge">{fixes.length}</span></button>
@@ -553,18 +566,18 @@ export default function JustTalkB1Board() {
           <div className="stamps">{STAMPS.map((st) => <button type="button" key={st[0]} className={`stmp${stamp?.[0] === st[0] ? " on" : ""}`} style={{ background: st[1] }} onClick={() => { setStamp(st); setTool("stamp"); }}>{st[0].replace(" point!", "!").replace(" phrase!", "!")}</button>)}</div>
           <hr />
           <label className="tl"><Ms n="add_photo_alternate" />Picture<input type="file" accept="image/*" hidden onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ""; if (f) addPicture(f); }} /></label>
-          <button type="button" className="tl" onClick={() => patch((d) => ({ strokes: { ...(d.strokes || {}), [ak]: [] }, items: { ...(d.items || {}), [ak]: [] } }))}><Ms n="mop" />Clear</button>
+          <button type="button" className="tl" onClick={() => setLayer((d) => ({ strokes: { ...(d.strokes || {}), [ak]: [] }, items: { ...(d.items || {}), [ak]: [] } }))}><Ms n="mop" />Clear</button>
         </div>
 
         <div className="sheet-wrap">
-          <section ref={sheetRef} className="sheet" onClick={onSheetClick} style={{ cursor: tool === "text" ? "text" : tool === "stamp" ? "copy" : tool === "spot" ? "zoom-in" : undefined }}>
+          <section ref={sheetRef} className={`sheet${free ? " free" : ""}`} onClick={onSheetClick} style={{ cursor: tool === "text" ? "text" : tool === "stamp" ? "copy" : tool === "spot" ? "zoom-in" : undefined }}>
             <div className="lesson anim" key={`${page}-${animKey}`}>
               {page === "lesson" ? (<>
                 {stepKey !== "hook" && stepKey !== "recap" && <div className="head"><h1>{L.title}</h1><span className="tag"><Ms n="schedule" />{steps[step][2]}</span></div>}
                 {View()}
-              </>) : MorePage()}
+              </>) : page === "more" ? MorePage() : <div className="free-hint"><b>A blank page</b><span>Write, draw or add stamps and pictures here. It stays while you switch pages and is cleared when you close the board.</span></div>}
             </div>
-            <Ink strokes={pageStrokes} tool={tool} color={color} height={height} onStroke={(st) => patch((d) => ({ strokes: { ...(d.strokes || {}), [ak]: [...((d.strokes || {})[ak] || []), st] } }))} />
+            <Ink strokes={pageStrokes} tool={tool} color={color} height={height} onStroke={(st) => setLayer((d) => ({ strokes: { ...(d.strokes || {}), [ak]: [...((d.strokes || {})[ak] || []), st] } }))} />
             <Items items={pageItems} tool={tool} onChange={setItems} />
           </section>
         </div>
@@ -635,6 +648,14 @@ const CSS = `
 .jt1 .mark-t b { font-family: var(--disp); font-weight: 800; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; }
 .jt1 .mark-t span { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .jt1 .bar .right { justify-content: center; }
+.jt1 .pg { display: inline-flex; align-items: center; gap: 4px; }
+.jt1 .pg.add { color: var(--red); padding: 5px 9px; }
+.jt1 .pg .ms { font-size: 17px; }
+.jt1 .pg-x { display: inline-grid; place-items: center; margin-right: -4px; opacity: .7; }
+.jt1 .pg-x .ms { font-size: 15px; }
+.jt1 .sheet.free { background-color: #fff; background-image: linear-gradient(var(--rule-line) 1px, transparent 1px); background-size: 100% 32px; }
+.jt1 .free-hint { display: grid; justify-items: center; gap: 4px; text-align: center; padding: 80px 20px; color: var(--muted); pointer-events: none; }
+.jt1 .free-hint b { font-family: var(--disp); font-size: 26px; color: var(--ink); }
 .jt1 .saved { color: var(--teal); display: inline-grid; place-items: center; }
 .jt1 .saved .ms { font-size: 19px; }
 .jt1 .present { position: fixed; left: calc(50% + 42px); bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 4px; background: var(--teal); color: #fff; border-radius: 14px; padding: 6px; box-shadow: 0 12px 28px rgba(21,48,42,.3); max-width: calc(100% - 28px); }
