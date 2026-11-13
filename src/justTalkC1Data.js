@@ -57,6 +57,12 @@ export const C1_WHEEL = {
     three: ["a letter", "a storm", "my first job", "a mistake", "a train station", "a promise", "an old friend", "a key"],
     simple: ["How a museum gets its objects", "What a pension is", "How news gets made", "Why people dub films", "What a whistleblower is", "How self-driving cars see", "What a referendum is", "Why stories have heroes"],
   },
+  4: {
+    topic: ["A risk that paid off", "Something you'd never do for money", "A piece of technology you couldn't live without", "A rule that changed your life", "The best decision you almost didn't make", "Something you'd tell your 18-year-old self", "A secret talent you have", "What fame would cost you"],
+    flip: ["AI will create more jobs than it destroys", "Privacy is dead, and that's fine", "Everyone should start a business once", "Prisons should be comfortable", "Family should always come first", "Being famous is a job like any other", "English should be the world's only second language", "Playing it safe is the smart choice"],
+    three: ["a robot", "a password", "a coffee shop", "a judge", "a suitcase full of money", "a microphone", "a dictionary", "a parachute"],
+    simple: ["How AI learns", "What cookies on websites do", "How a startup gets money", "What a jury does", "What compound interest is", "How a celebrity makes money", "How languages die", "What insurance is"],
+  },
 };
 
 const B = (n) => C1_BLOCKS.findIndex((b) => n >= b.mods[0] && n <= b.mods[1]);
@@ -85,10 +91,15 @@ export const C1_STAGES = [
     { name: "Culture", f: "Steelman", lessons: [["Returning Treasures", "Museums should return objects taken from other countries."], ["When in Rome", "Tourists should follow local customs, even ones they disagree with."], ["Original or Dubbed?", "Films should always be shown in their original language."]] },
     { name: "Media", f: "Data", lessons: [["Who Pays for News", "Who pays for online news, country by country (Reuters Institute)."], ["Cinemas After the Pandemic", "US and Canada box office, 2019 to 2023."], ["The Trust Gap", "How much people trust the news (Reuters Institute)."]] },
   ] },
-  { n: 4, lv: "C2", name: "Persuade with nuance", modules: [
-    { name: "Artificial intelligence", f: "Debate", lessons: [] }, { name: "Privacy", f: "Dilemma", lessons: [] }, { name: "Business", f: "Solve", lessons: [] },
-    { name: "Law and justice", f: "Steelman", lessons: [] }, { name: "Life choices", f: "Dilemma", lessons: [] }, { name: "Fame", f: "Summarize", lessons: [] },
-    { name: "Language", f: "Data", lessons: [] }, { name: "Risk", f: "Solve", lessons: [] },
+  { n: 4, lv: "C2", name: "Persuade with nuance", check: "3-minute flip-side impromptu, a short debate, then a hot seat.", modules: [
+    { name: "Artificial intelligence", f: "Debate", lessons: [["AI Art Prizes", "Motion: AI-made art should be allowed in art competitions."], ["AI Homework", "Motion: students should be allowed to use AI for homework."], ["Is It a Bot?", "Motion: it should be illegal for AI to pretend to be human."]] },
+    { name: "Privacy", f: "Dilemma", lessons: [["The Unlocked Phone", "Your partner's phone shows a message from a name you don't know."], ["The Neighbor's Camera", "A neighbor's new camera points straight into your garden."], ["The DNA Surprise", "A DNA test shows you have a half-sibling nobody told you about."]] },
+    { name: "Business", f: "Solve", lessons: [["Save the Coffee Shop", "A much-loved coffee shop loses $2,000 a month. Fix it in three steps."], ["The Tiny Launch", "Launch a new product with only $500."], ["Too Many Meetings", "Staff spend half their week in meetings. Plan the cure."]] },
+    { name: "Law and justice", f: "Steelman", lessons: [["Punish or Change?", "Prisons should focus on changing people, not punishing them."], ["Jury Duty", "Jury duty should be optional."], ["Parents Pay", "Parents should be fined for their children's crimes."]] },
+    { name: "Life choices", f: "Dilemma", lessons: [["The Move Abroad", "Your dream job is abroad, and your parents are getting older."], ["The Promotion", "A big promotion means much less time with your young family."], ["The Lottery Win", "You win $2 million, and nobody knows yet."]] },
+    { name: "Fame", f: "Summarize", lessons: [["Role Models", "A short piece arguing celebrities owe us nothing."], ["Licensed Influencers", "A short piece arguing influencers should need a license."], ["The Price of Fame", "A former teen star on what fame took away."]] },
+    { name: "Language", f: "Data", lessons: [["The Most Spoken Languages", "The world's most spoken languages, all speakers (Ethnologue)."], ["Languages Online", "The languages of the web compared with the languages people speak (W3Techs)."], ["Where Languages Live", "The countries with the most living languages (Ethnologue)."]] },
+    { name: "Risk", f: "Solve", lessons: [["Safer Streets", "Plan how your town cuts road accidents by half."], ["Three Days Without Power", "A storm could cut power and water for three days. Get ready."], ["The Safe Leap", "Plan leaving a safe job to start a business, with a safety net."]] },
   ] },
   { n: 5, lv: "C2", name: "Think on your feet", modules: [
     { name: "The future", f: "Debate", lessons: [] }, { name: "Relationships", f: "Dilemma", lessons: [] }, { name: "Leadership", f: "Steelman", lessons: [] },

@@ -6,6 +6,7 @@ import { C1_LESSONS, C1_BLOCKS, C1_WHEEL, C1_FORMATS } from "./justTalkC1Data";
 import { C1_S1, C1_PHRASES_S1 } from "./justTalkC1S1";
 import { C1_S2, C1_PHRASES_S2 } from "./justTalkC1S2";
 import { C1_S3, C1_PHRASES_S3 } from "./justTalkC1S3";
+import { C1_S4, C1_PHRASES_S4 } from "./justTalkC1S4";
 import { Ink, Items } from "./JustTalkInk.jsx";
 import { readPhoto } from "./justTalkPhoto.js";
 import { fitBoardWindow } from "./justTalkWindow.js";
@@ -21,8 +22,8 @@ import { ONAIR_CSS } from "./justTalkOnAirCss.js";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 const BOARD_STUDENT = "C1-C2";
-const CONTENT = { ...C1_S1, ...C1_S2, ...C1_S3 };
-const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2, ...C1_PHRASES_S3 };
+const CONTENT = { ...C1_S1, ...C1_S2, ...C1_S3, ...C1_S4 };
+const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2, ...C1_PHRASES_S3, ...C1_PHRASES_S4 };
 const LESSON_STEPS = [["impromptu", "Impromptu speech", "0-6 min"], ["power", "Power language", "6-8 min"], ["main", "Main task", "8-20 min"], ["hot", "Hot seat", "20-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const CHECK_STEPS = [["impromptu", "Impromptu speech", "0-5 min"], ["review", "Review", "5-8 min"], ["main", "Debate", "8-18 min"], ["hot", "Hot seat", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const WHEEL_COLORS = ["#5B3F8C", "#F2B93B", "#E8735A", "#2C7A6E", "#7A55A0", "#3E2A63", "#E0A21F", "#8C6BB8"];
@@ -181,7 +182,7 @@ export default function JustTalkC1Board() {
   const block = C1_BLOCKS[L.block];
   const phrases = PHRASES[L.module] || [];
   const wheel = C1_WHEEL[L.stage] || C1_WHEEL[1];
-  const mode = doc.mode || L.wheel;
+  const mode = doc.mode || C?.wheel || L.wheel;
   const fixes = doc.fixes || [];
   const fmt = isCheck ? C.format || "Debate" : L.format;
   const kicker = isCheck ? `Stage ${L.stage} · ${L.lv} · Check-in` : `Stage ${L.stage} · Module ${String(L.modNum).padStart(2, "0")} ${L.module} · Lesson ${L.n}`;
