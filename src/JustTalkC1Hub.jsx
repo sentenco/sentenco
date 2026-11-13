@@ -7,6 +7,7 @@ import { openBoardWindow } from "./justTalkWindow.js";
 import { C1_STAGES, C1_BLOCKS, C1_FORMATS, c1Slug } from "./justTalkC1Data";
 import { C1_S1 } from "./justTalkC1S1";
 import { C1_S2 } from "./justTalkC1S2";
+import { C1_S3 } from "./justTalkC1S3";
 
 // Just Talk C1-C2: the owner's private speaking course for advanced students.
 // Lesson pattern: Impromptu speech (wheel) > power language (trick, sound, phrases) > main task (6 formats)
@@ -14,7 +15,7 @@ import { C1_S2 } from "./justTalkC1S2";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 const PLUM = "#5B3F8C";
-const CONTENT = { ...C1_S1, ...C1_S2 };
+const CONTENT = { ...C1_S1, ...C1_S2, ...C1_S3 };
 const COLORS = { C1: { color: "#5B3F8C", light: "#EEE8F6" }, C2: { color: "#3E2A63", light: "#ECE6F5" } };
 const chevron = <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>;
 const arrow = <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>;

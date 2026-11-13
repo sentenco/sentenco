@@ -51,6 +51,12 @@ export const C1_WHEEL = {
     three: ["a suitcase", "a secret", "the last train", "a cat", "an old photo", "the rain", "a wrong number", "a wedding"],
     simple: ["How a loan works", "Why planes can fly", "What a carbon footprint is", "How the internet reaches your phone", "What an algorithm is", "Why prices go up", "How a vaccine is tested", "What a credit score is"],
   },
+  3: {
+    topic: ["A day that didn't go to plan", "The best stranger you ever met", "A time you were completely wrong", "Your grandparents' best story", "A lesson you learned the hard way", "The most beautiful place you've seen", "A tradition you love", "A moment you were proud of yourself"],
+    flip: ["Old people are wiser than young people", "Museums should be free for everyone", "Lying is never acceptable", "Subtitles ruin films", "Things were better in the past", "Tourists should stay in hotels, not homes", "Every story needs a happy ending", "The news does more harm than good"],
+    three: ["a letter", "a storm", "my first job", "a mistake", "a train station", "a promise", "an old friend", "a key"],
+    simple: ["How a museum gets its objects", "What a pension is", "How news gets made", "Why people dub films", "What a whistleblower is", "How self-driving cars see", "What a referendum is", "Why stories have heroes"],
+  },
 };
 
 const B = (n) => C1_BLOCKS.findIndex((b) => n >= b.mods[0] && n <= b.mods[1]);
@@ -72,9 +78,12 @@ export const C1_STAGES = [
     { name: "Social media", f: "Dilemma", lessons: [["The Unflattering Photo", "A friend posts a photo of you that you hate, and it's popular."], ["The Paid Post", "A brand offers to pay you to promote a product you don't like."], ["The First Account", "Your 12-year-old niece begs you to help set up social media."]] },
     { name: "Science", f: "Data", lessons: [["Eight Billion People", "How fast the world added each billion people (UN)."], ["The World Online", "Who uses the internet in 2024, and who doesn't (ITU)."], ["Space Budgets", "What NASA and ESA spent in 2024."]] },
   ] },
-  { n: 3, lv: "C1", name: "Tell it well", modules: [
-    { name: "Life stories", f: "Summarize", lessons: [] }, { name: "Generations", f: "Debate", lessons: [] }, { name: "Ethics", f: "Dilemma", lessons: [] },
-    { name: "Culture", f: "Steelman", lessons: [] }, { name: "Media", f: "Data", lessons: [] },
+  { n: 3, lv: "C1", name: "Tell it well", check: "3-minute story impromptu, a short text to summarize and answer, then a hot seat.", modules: [
+    { name: "Life stories", f: "Summarize", lessons: [["The Late Bloomer", "A short piece: it's never too late to start."], ["In Praise of Quitting", "A short piece arguing that quitting is a skill."], ["Talent or Practice?", "A short piece claiming practice beats talent."]] },
+    { name: "Generations", f: "Debate", lessons: [["Who Has It Easier?", "Motion: young people today have it easier than their parents did."], ["Voting at 16", "Motion: the voting age should be 16."], ["Retiring Later", "Motion: the retirement age should rise to 70."]] },
+    { name: "Ethics", f: "Dilemma", lessons: [["The Self-Driving Car", "A driverless car must choose who to protect in a crash. Who decides?"], ["The Reference", "A friend who was a weak employee asks you for a job reference."], ["The Safety Secret", "You discover your company is hiding a safety problem."]] },
+    { name: "Culture", f: "Steelman", lessons: [["Returning Treasures", "Museums should return objects taken from other countries."], ["When in Rome", "Tourists should follow local customs, even ones they disagree with."], ["Original or Dubbed?", "Films should always be shown in their original language."]] },
+    { name: "Media", f: "Data", lessons: [["Who Pays for News", "Who pays for online news, country by country (Reuters Institute)."], ["Cinemas After the Pandemic", "US and Canada box office, 2019 to 2023."], ["The Trust Gap", "How much people trust the news (Reuters Institute)."]] },
   ] },
   { n: 4, lv: "C2", name: "Persuade with nuance", modules: [
     { name: "Artificial intelligence", f: "Debate", lessons: [] }, { name: "Privacy", f: "Dilemma", lessons: [] }, { name: "Business", f: "Solve", lessons: [] },

@@ -5,6 +5,7 @@ import { supabase } from "./supabaseClient";
 import { C1_LESSONS, C1_BLOCKS, C1_WHEEL, C1_FORMATS } from "./justTalkC1Data";
 import { C1_S1, C1_PHRASES_S1 } from "./justTalkC1S1";
 import { C1_S2, C1_PHRASES_S2 } from "./justTalkC1S2";
+import { C1_S3, C1_PHRASES_S3 } from "./justTalkC1S3";
 import { Ink, Items } from "./JustTalkInk.jsx";
 import { readPhoto } from "./justTalkPhoto.js";
 import { fitBoardWindow } from "./justTalkWindow.js";
@@ -20,13 +21,13 @@ import { ONAIR_CSS } from "./justTalkOnAirCss.js";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 const BOARD_STUDENT = "C1-C2";
-const CONTENT = { ...C1_S1, ...C1_S2 };
-const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2 };
+const CONTENT = { ...C1_S1, ...C1_S2, ...C1_S3 };
+const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2, ...C1_PHRASES_S3 };
 const LESSON_STEPS = [["impromptu", "Impromptu speech", "0-6 min"], ["power", "Power language", "6-8 min"], ["main", "Main task", "8-20 min"], ["hot", "Hot seat", "20-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const CHECK_STEPS = [["impromptu", "Impromptu speech", "0-5 min"], ["review", "Review", "5-8 min"], ["main", "Debate", "8-18 min"], ["hot", "Hot seat", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const WHEEL_COLORS = ["#5B3F8C", "#F2B93B", "#E8735A", "#2C7A6E", "#7A55A0", "#3E2A63", "#E0A21F", "#8C6BB8"];
 const MODES = { topic: ["Topic", "chat", "Think for 30 seconds, then talk for 2-3 minutes without stopping."], flip: ["Flip side", "swap_horiz", "Defend the side you disagree with. 30 seconds to think, then 2-3 minutes."], three: ["Three words", "auto_stories", "Spin three times, then tell one 2-3 minute story that uses all three words."], simple: ["Explain it simply", "lightbulb", "Explain it so a 10-year-old would understand. 30 seconds to think, then 2-3 minutes."] };
-const SUMS = { Debate: ["My strongest argument", "A trick or phrase I used well", "Something I'd say better next time"], Dilemma: ["What I decided and why", "Did the twist change my mind?", "Something I'd say better next time"], Solve: ["My plan in one sentence", "The weakest part of my plan", "Something I'd say better next time"], Data: ["The most surprising number", "My best explanation", "Something I'd say better next time"], Summarize: ["The writer's main point in one sentence", "Where I agree, and where I don't", "Something I'd say better next time"] };
+const SUMS = { Debate: ["My strongest argument", "A trick or phrase I used well", "Something I'd say better next time"], Dilemma: ["What I decided and why", "Did the twist change my mind?", "Something I'd say better next time"], Solve: ["My plan in one sentence", "The weakest part of my plan", "Something I'd say better next time"], Data: ["The most surprising number", "My best explanation", "Something I'd say better next time"], Summarize: ["The writer's main point in one sentence", "Where I agree, and where I don't", "Something I'd say better next time"], Steelman: ["The other side's best argument", "My answer to it", "Something I'd say better next time"] };
 const STAMPS = [["Great point!", "#5B3F8C"], ["Nice phrase!", "#E0A21F"], ["Wow!", "#3E2A63"]];
 const INKS = ["#241B33", "#5B3F8C", "#E0A21F"];
 const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
@@ -431,7 +432,46 @@ export default function JustTalkC1Board() {
       </div>
     </>);
   }
-  const MAIN = { Debate, Dilemma, Solve, Data: DataTask, Summarize };
+  function Steelman() {
+    const M = C.main;
+    const real = doc.side, other = real === "for" ? "against" : real === "against" ? "for" : null;
+    const label = { for: "Agree", against: "Disagree" };
+    const f = M.brief?.length ? M.brief[Math.min(doc.fi, M.brief.length - 1)] : null;
+    return (<>
+      {f && (
+        <div className="part">
+          <Ph n="3" title="The brief" />
+          <div className="stack"><div className="icard pop" key={doc.fi}><small>Fact {Math.min(doc.fi, M.brief.length - 1) + 1} of {M.brief.length} · {f[0]}</small><p className="d">{f[1]}</p></div></div>
+          {M.brief.length > 1 && <StepNav i={Math.min(doc.fi, M.brief.length - 1)} n={M.brief.length} onGo={(i) => patch({ fi: i })} noun="fact" />}
+        </div>
+      )}
+      <div className="part">
+        <Ph n={f ? "" : "3"} title="What do you really think?" />
+        <div className="stack fu"><div className="icard"><small>The statement</small><p className="q">{M.motion}</p></div></div>
+        <div className="row">{["for", "against"].map((k) => <button key={k} type="button" className={`chip ${real === k ? "on" : ""}`} onClick={() => patch({ side: real === k ? null : k, hq: 0 })}>I really {k === "for" ? "agree" : "disagree"}</button>)}</div>
+      </div>
+      {other && (<>
+        <div className="part">
+          <Ph title={`Steelman: make the best case for "${label[other]}"`} />
+          <p className="how">Argue the side you don't believe, as well as its best supporter would. Fair, calm, strongest point first.</p>
+          <div className="act-box">
+            {doc.ideas[other] ? <ul className="steel-list">{M[other].map((x) => <li key={x}>{x}</li>)}</ul> : <button type="button" className="mini" onClick={() => patch((d) => ({ ideas: { ...d.ideas, [other]: true } }))}><Ms n="lightbulb" />Their ideas</button>}
+            <SpeechClock talk={M.time || 90} label="Their best case" />
+            <button type="button" className={`upr ${doc.ideas.signed ? "on" : ""}`} onClick={() => patch((d) => ({ ideas: { ...d.ideas, signed: !d.ideas.signed } }))}><Ms n={doc.ideas.signed ? "check_circle" : "radio_button_unchecked"} />The other side would sign this</button>
+          </div>
+        </div>
+        <div className="part">
+          <Ph title="Now answer it" />
+          <p className="how">Start with "Having said that..." and answer their best point, not a weak one.</p>
+          <div className="act-box">
+            {doc.ideas[real] ? <ul className="steel-list">{M[real].map((x) => <li key={x}>{x}</li>)}</ul> : <button type="button" className="mini" onClick={() => patch((d) => ({ ideas: { ...d.ideas, [real]: true } }))}><Ms n="lightbulb" />Your side's ideas</button>}
+            <SpeechClock key="answer" talk={120} label="Your answer" />
+          </div>
+        </div>
+      </>)}
+    </>);
+  }
+  const MAIN = { Debate, Dilemma, Solve, Data: DataTask, Summarize, Steelman };
 
   /* ----- 4. Hot seat ----- */
   function Hot() {
@@ -439,7 +479,7 @@ export default function JustTalkC1Board() {
     let list, sides = null;
     if (H.all) list = H.all;
     else {
-      sides = fmt === "Debate" ? [["for", "Agree"], ["against", "Disagree"]] : fmt === "Summarize" ? [["agree", "Agrees with the text"], ["disagree", "Disagrees with the text"]] : C.main.options.map(([k, label]) => [k, label]);
+      sides = fmt === "Debate" ? [["for", "Agree"], ["against", "Disagree"]] : fmt === "Steelman" ? [["for", "Really agrees"], ["against", "Really disagrees"]] : fmt === "Summarize" ? [["agree", "Agrees with the text"], ["disagree", "Disagrees with the text"]] : C.main.options.map(([k, label]) => [k, label]);
       list = doc.side && H[doc.side] ? [...H[doc.side], ...H.neutral] : H.neutral;
     }
     const i = Math.min(doc.hq, list.length - 1);
@@ -644,6 +684,7 @@ const CSS = ONAIR_CSS + `
 .jt1 .text-card h3 { margin: 6px 0 10px; font-family: var(--disp); font-weight: 800; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -.015em; line-height: 1.1; }
 .jt1 .text-card p { margin: 0 0 12px; font-size: 18px; line-height: 1.6; }
 .jt1 .text-card p:last-child { margin-bottom: 0; }
+.jt1 .steel-list { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 16px; width: min(100%, 520px); }
 .jt1 .limits { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .jt1 .limits span { display: inline-flex; align-items: center; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-weight: 600; font-size: 14px; }
 .jt1 .limits .ms { font-size: 16px; color: var(--red); }
