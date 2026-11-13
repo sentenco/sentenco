@@ -4,6 +4,7 @@ import { useAuth } from "./AuthContext";
 import { supabase } from "./supabaseClient";
 import { C1_LESSONS, C1_BLOCKS, C1_WHEEL, C1_FORMATS } from "./justTalkC1Data";
 import { C1_S1, C1_PHRASES_S1 } from "./justTalkC1S1";
+import { C1_S2, C1_PHRASES_S2 } from "./justTalkC1S2";
 import { Ink, Items } from "./JustTalkInk.jsx";
 import { readPhoto } from "./justTalkPhoto.js";
 import { fitBoardWindow } from "./justTalkWindow.js";
@@ -19,13 +20,13 @@ import { ONAIR_CSS } from "./justTalkOnAirCss.js";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 const BOARD_STUDENT = "C1-C2";
-const CONTENT = { ...C1_S1 };
-const PHRASES = { ...C1_PHRASES_S1 };
+const CONTENT = { ...C1_S1, ...C1_S2 };
+const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2 };
 const LESSON_STEPS = [["impromptu", "Impromptu speech", "0-6 min"], ["power", "Power language", "6-8 min"], ["main", "Main task", "8-20 min"], ["hot", "Hot seat", "20-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const CHECK_STEPS = [["impromptu", "Impromptu speech", "0-5 min"], ["review", "Review", "5-8 min"], ["main", "Debate", "8-18 min"], ["hot", "Hot seat", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const WHEEL_COLORS = ["#5B3F8C", "#F2B93B", "#E8735A", "#2C7A6E", "#7A55A0", "#3E2A63", "#E0A21F", "#8C6BB8"];
 const MODES = { topic: ["Topic", "chat", "Think for 30 seconds, then talk for 2-3 minutes without stopping."], flip: ["Flip side", "swap_horiz", "Defend the side you disagree with. 30 seconds to think, then 2-3 minutes."], three: ["Three words", "auto_stories", "Spin three times, then tell one 2-3 minute story that uses all three words."], simple: ["Explain it simply", "lightbulb", "Explain it so a 10-year-old would understand. 30 seconds to think, then 2-3 minutes."] };
-const SUMS = { Debate: ["My strongest argument", "A trick or phrase I used well", "Something I'd say better next time"], Dilemma: ["What I decided and why", "Did the twist change my mind?", "Something I'd say better next time"], Solve: ["My plan in one sentence", "The weakest part of my plan", "Something I'd say better next time"], Data: ["The most surprising number", "My best explanation", "Something I'd say better next time"] };
+const SUMS = { Debate: ["My strongest argument", "A trick or phrase I used well", "Something I'd say better next time"], Dilemma: ["What I decided and why", "Did the twist change my mind?", "Something I'd say better next time"], Solve: ["My plan in one sentence", "The weakest part of my plan", "Something I'd say better next time"], Data: ["The most surprising number", "My best explanation", "Something I'd say better next time"], Summarize: ["The writer's main point in one sentence", "Where I agree, and where I don't", "Something I'd say better next time"] };
 const STAMPS = [["Great point!", "#5B3F8C"], ["Nice phrase!", "#E0A21F"], ["Wow!", "#3E2A63"]];
 const INKS = ["#241B33", "#5B3F8C", "#E0A21F"];
 const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
@@ -90,7 +91,7 @@ export default function JustTalkC1Board() {
   const L = useMemo(() => C1_LESSONS.find((x) => x.key === lesson), [lesson]);
   const C = CONTENT[lesson];
   const isCheck = !!L?.check;
-  const steps = isCheck ? CHECK_STEPS : LESSON_STEPS.map((s) => (s[0] === "main" && L ? [s[0], C1_FORMATS[L.format], s[2]] : s));
+  const steps = isCheck ? CHECK_STEPS.map((s) => (s[0] === "main" ? [s[0], C1_FORMATS[C?.format || "Debate"], s[2]] : s)) : LESSON_STEPS.map((s) => (s[0] === "main" && L ? [s[0], C1_FORMATS[L.format], s[2]] : s));
   const docKey = `c1/${lesson}`;
 
   const [doc, setDoc] = useState(EMPTY);
@@ -181,7 +182,7 @@ export default function JustTalkC1Board() {
   const wheel = C1_WHEEL[L.stage] || C1_WHEEL[1];
   const mode = doc.mode || L.wheel;
   const fixes = doc.fixes || [];
-  const fmt = isCheck ? "Debate" : L.format;
+  const fmt = isCheck ? C.format || "Debate" : L.format;
   const kicker = isCheck ? `Stage ${L.stage} · ${L.lv} · Check-in` : `Stage ${L.stage} · Module ${String(L.modNum).padStart(2, "0")} ${L.module} · Lesson ${L.n}`;
   const ak = page === "lesson" ? `s${step}` : page;
   const free = page.startsWith("p-");
@@ -404,7 +405,33 @@ export default function JustTalkC1Board() {
       </div>
     </>);
   }
-  const MAIN = { Debate, Dilemma, Solve, Data: DataTask };
+  function Summarize() {
+    const M = C.main;
+    const col = (k, title, list) => (
+      <div className={`side ${doc.side === k ? "on" : ""}`}>
+        <button type="button" className="side-h" onClick={() => patch({ side: doc.side === k ? null : k, hq: 0 })}><Ms n={doc.side === k ? "radio_button_checked" : "radio_button_unchecked"} />{title}</button>
+        {doc.ideas[k] ? <ul>{list.map((x) => <li key={x}>{x}</li>)}</ul> : <button type="button" className="mini" onClick={() => patch((d) => ({ ideas: { ...d.ideas, [k]: true } }))}><Ms n="lightbulb" />Ideas</button>}
+      </div>
+    );
+    return (<>
+      <div className="part">
+        <Ph n="3" title="Read it" />
+        <article className="text-card"><small>{M.byline}</small><h3>{M.title}</h3>{M.text.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}</article>
+      </div>
+      <div className="part">
+        <Ph title="Sum it up in 30 seconds" />
+        <div className="speak"><SpeechClock talk={30} label="30 seconds" /><p className="how">Say the writer's main point and two details, in your own words.</p></div>
+        {doc.ideas.points ? <div className="sticky-wrap"><div className="sticky green pop"><small>Key points</small>{M.points.join(" · ")}</div></div> : <button type="button" className="mini" onClick={() => patch((d) => ({ ideas: { ...d.ideas, points: true } }))}><Ms n="checklist" />Key points</button>}
+      </div>
+      <div className="part">
+        <Ph title="Do you agree?" />
+        <p className="how">Tap the student's answer. The hot seat will push against it.</p>
+        <div className="sides">{col("agree", "Agree", M.agree)}{col("disagree", "Disagree", M.disagree)}</div>
+        <div className="speak"><SpeechClock talk={120} label="Respond" /></div>
+      </div>
+    </>);
+  }
+  const MAIN = { Debate, Dilemma, Solve, Data: DataTask, Summarize };
 
   /* ----- 4. Hot seat ----- */
   function Hot() {
@@ -412,14 +439,14 @@ export default function JustTalkC1Board() {
     let list, sides = null;
     if (H.all) list = H.all;
     else {
-      sides = fmt === "Debate" ? [["for", "Agree"], ["against", "Disagree"]] : C.main.options.map(([k, label]) => [k, label]);
+      sides = fmt === "Debate" ? [["for", "Agree"], ["against", "Disagree"]] : fmt === "Summarize" ? [["agree", "Agrees with the text"], ["disagree", "Disagrees with the text"]] : C.main.options.map(([k, label]) => [k, label]);
       list = doc.side && H[doc.side] ? [...H[doc.side], ...H.neutral] : H.neutral;
     }
     const i = Math.min(doc.hq, list.length - 1);
     return (
       <div className="part">
         <Ph n="4" title="Hot seat" />
-        {sides && <div className="row"><span className="how">The student {fmt === "Debate" ? "argued" : "chose"}:</span>{sides.map(([k, label]) => <button key={k} type="button" className={`chip ${doc.side === k ? "on" : ""}`} onClick={() => patch({ side: k, hq: 0 })}>{label}</button>)}</div>}
+        {sides && <div className="row"><span className="how">The student {fmt === "Dilemma" ? "chose" : "argued"}:</span>{sides.map(([k, label]) => <button key={k} type="button" className={`chip ${doc.side === k ? "on" : ""}`} onClick={() => patch({ side: k, hq: 0 })}>{label}</button>)}</div>}
         {sides && !doc.side && <p className="how">Pick the side the student took to get questions that push against it. Until then, two neutral ones.</p>}
         <div className="fu-wrap"><div className="stack fu pop" key={`${doc.side}-${i}`}><div className="icard"><small>Hot seat · {i + 1} of {list.length}{sides && doc.side && i >= list.length - H.neutral.length ? " · either side" : ""}</small><p className="q">{list[i]}</p></div></div></div>
         <div className="speak"><SpeechClock key={`hs${doc.side}${i}`} talk={30} label="30 seconds" /></div>
@@ -612,6 +639,11 @@ const CSS = ONAIR_CSS + `
 .jt1 .round { display: inline-flex; align-items: center; gap: 6px; background: var(--red-wash); color: var(--red); border-radius: 8px; padding: 5px 10px; font-weight: 700; font-size: 13px; }
 .jt1 .opts-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; width: min(100%, 680px); justify-self: center; }
 .jt1 .go-mid { justify-self: center; display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; border-radius: 12px; padding: 12px 20px; font-family: var(--disp); font-weight: 700; font-size: 15px; }
+.jt1 .text-card { width: min(100%, 680px); justify-self: center; background: var(--card); border: 1px solid var(--line); border-top: 8px solid var(--gold); border-radius: 12px; padding: 20px 24px; box-shadow: 0 12px 26px rgba(50,30,80,.08); }
+.jt1 .text-card small { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.jt1 .text-card h3 { margin: 6px 0 10px; font-family: var(--disp); font-weight: 800; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -.015em; line-height: 1.1; }
+.jt1 .text-card p { margin: 0 0 12px; font-size: 18px; line-height: 1.6; }
+.jt1 .text-card p:last-child { margin-bottom: 0; }
 .jt1 .limits { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .jt1 .limits span { display: inline-flex; align-items: center; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-weight: 600; font-size: 14px; }
 .jt1 .limits .ms { font-size: 16px; color: var(--red); }

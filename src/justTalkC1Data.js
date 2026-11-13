@@ -45,6 +45,12 @@ export const C1_WHEEL = {
     three: ["an airport", "a lie", "my grandmother", "a broken phone", "the wrong bus", "a stranger", "midnight", "a birthday"],
     simple: ["Inflation", "Jet lag", "A mortgage", "How vaccines work", "The stock market", "Why the sky is blue", "A VPN", "Climate change"],
   },
+  2: {
+    topic: ["A decision you'd make differently now", "The most useful thing you learned outside school", "Something you'd never spend money on", "A place that surprised you", "A habit you'd like to break", "The best gift you've ever given", "What you'd change about your town", "A small thing that makes a big difference"],
+    flip: ["Travel is overrated", "Grades are the best way to measure learning", "Saving money is more important than enjoying it", "Children should have smartphones by age 10", "Everyone should go to university", "Fashion doesn't matter", "Online friends are as real as offline ones", "Planes are better than trains"],
+    three: ["a suitcase", "a secret", "the last train", "a cat", "an old photo", "the rain", "a wrong number", "a wedding"],
+    simple: ["How a loan works", "Why planes can fly", "What a carbon footprint is", "How the internet reaches your phone", "What an algorithm is", "Why prices go up", "How a vaccine is tested", "What a credit score is"],
+  },
 };
 
 const B = (n) => C1_BLOCKS.findIndex((b) => n >= b.mods[0] && n <= b.mods[1]);
@@ -58,9 +64,13 @@ export const C1_STAGES = [
     { name: "Health", f: "Data", lessons: [["Steps Around the World", "How many steps people take a day, country by country."], ["Sleep Around the World", "How long people sleep in different countries."], ["How Long We Live", "World life expectancy from 1950 to today."]] },
     { name: "Friendship", f: "Dilemma", lessons: [["The Copied Project", "A close friend copied your work and got the better grade."], ["The Loan", "A good friend asks to borrow a large amount of money."], ["The Clash", "Your best friend's wedding falls on the day of a big job interview."]] },
   ] },
-  { n: 2, lv: "C1", name: "Weigh it up", modules: [
-    { name: "Education", f: "Debate", lessons: [] }, { name: "Money", f: "Dilemma", lessons: [] }, { name: "Travel", f: "Summarize", lessons: [] },
-    { name: "Environment", f: "Debate", lessons: [] }, { name: "Social media", f: "Dilemma", lessons: [] }, { name: "Science", f: "Data", lessons: [] },
+  { n: 2, lv: "C1", name: "Weigh it up", check: "3-minute impromptu, a new dilemma, then a hot seat.", modules: [
+    { name: "Education", f: "Debate", lessons: [["Is University Worth It?", "Motion: university is no longer worth the cost."], ["Homework", "Motion: homework should be banned."], ["Life Without Grades", "Motion: schools should stop giving grades."]] },
+    { name: "Money", f: "Dilemma", lessons: [["The Envelope", "You find an envelope with $2,000 inside and no name on it."], ["The Wrong Price", "A shop charges you far too little for something expensive."], ["Passion or Pay", "You're offered a job you'd love for half your salary."]] },
+    { name: "Travel", f: "Summarize", lessons: [["Against Bucket Lists", "A short opinion piece: must-see lists are ruining travel."], ["Too Many Tourists", "A resident of a crowded city asks visitors to come gently."], ["Slow Travel", "A short piece arguing the train can be part of the holiday."]] },
+    { name: "Environment", f: "Debate", lessons: [["A Flight Limit", "Motion: every person should have a yearly limit on flights."], ["Warning Labels on Meat", "Motion: meat should carry health and climate warnings."], ["Fast Fashion", "Motion: clothes should cost more so that we buy less."]] },
+    { name: "Social media", f: "Dilemma", lessons: [["The Unflattering Photo", "A friend posts a photo of you that you hate, and it's popular."], ["The Paid Post", "A brand offers to pay you to promote a product you don't like."], ["The First Account", "Your 12-year-old niece begs you to help set up social media."]] },
+    { name: "Science", f: "Data", lessons: [["Eight Billion People", "How fast the world added each billion people (UN)."], ["The World Online", "Who uses the internet in 2024, and who doesn't (ITU)."], ["Space Budgets", "What NASA and ESA spent in 2024."]] },
   ] },
   { n: 3, lv: "C1", name: "Tell it well", modules: [
     { name: "Life stories", f: "Summarize", lessons: [] }, { name: "Generations", f: "Debate", lessons: [] }, { name: "Ethics", f: "Dilemma", lessons: [] },
