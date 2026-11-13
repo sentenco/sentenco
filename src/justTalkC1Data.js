@@ -63,6 +63,12 @@ export const C1_WHEEL = {
     three: ["a robot", "a password", "a coffee shop", "a judge", "a suitcase full of money", "a microphone", "a dictionary", "a parachute"],
     simple: ["How AI learns", "What cookies on websites do", "How a startup gets money", "What a jury does", "What compound interest is", "How a celebrity makes money", "How languages die", "What insurance is"],
   },
+  5: {
+    topic: ["Something you'd tell world leaders", "The best compliment you've received", "A belief you've had since childhood", "The hardest goodbye", "Your idea of a perfect weekend", "Something you'd like to be remembered for", "A small act of kindness you never forgot", "What you'd do with an extra hour a day"],
+    flip: ["Teachers should be paid more than doctors", "Children should choose their own school subjects", "The internet should switch off for one day a year", "Holidays are better at home", "Leaders should have a maximum age", "Sport on TV is a waste of time", "Art should never be sold", "Honesty is overrated"],
+    three: ["a statue", "a referee", "a river", "a lie detector", "a ballot box", "a portrait", "a smartphone", "a goodbye"],
+    simple: ["How elections are counted", "What a carbon tax is", "How doping tests work", "What a central bank does", "How a vaccine reaches a country", "What a trade deal is", "Why some countries are richer", "What the United Nations does"],
+  },
 };
 
 const B = (n) => C1_BLOCKS.findIndex((b) => n >= b.mods[0] && n <= b.mods[1]);
@@ -101,10 +107,15 @@ export const C1_STAGES = [
     { name: "Language", f: "Data", lessons: [["The Most Spoken Languages", "The world's most spoken languages, all speakers (Ethnologue)."], ["Languages Online", "The languages of the web compared with the languages people speak (W3Techs)."], ["Where Languages Live", "The countries with the most living languages (Ethnologue)."]] },
     { name: "Risk", f: "Solve", lessons: [["Safer Streets", "Plan how your town cuts road accidents by half."], ["Three Days Without Power", "A storm could cut power and water for three days. Get ready."], ["The Safe Leap", "Plan leaving a safe job to start a business, with a safety net."]] },
   ] },
-  { n: 5, lv: "C2", name: "Think on your feet", modules: [
-    { name: "The future", f: "Debate", lessons: [] }, { name: "Relationships", f: "Dilemma", lessons: [] }, { name: "Leadership", f: "Steelman", lessons: [] },
-    { name: "Sport", f: "Debate", lessons: [] }, { name: "Art and history", f: "Dilemma", lessons: [] }, { name: "Global issues", f: "Solve", lessons: [] },
-    { name: "Big questions", f: "Steelman", lessons: [] }, { name: "Final lessons", f: "Mixed", lessons: [] },
+  { n: 5, lv: "C2", name: "Think on your feet", check: "Final: a 3-minute impromptu, a big dilemma, then a 5-minute hot seat.", modules: [
+    { name: "The future", f: "Debate", lessons: [["Basic Income", "Motion: everyone should get a basic income from the government."], ["Empty City Centers", "Motion: remote work will empty city centers, and that's a good thing."], ["The End of Petrol Cars", "Motion: new petrol cars should be banned by 2035."]] },
+    { name: "Relationships", f: "Dilemma", lessons: [["The Friend's New Partner", "You can't stand your friend's new partner, and they ask what you think."], ["The Holiday Split", "Both families expect you for the same holiday dinner."], ["The Awkward Reunion", "Your ex will be at a friend's party, with their new partner."]] },
+    { name: "Leadership", f: "Steelman", lessons: [["Born or Made?", "Great leaders are born, not made."], ["The Boss You Like", "A good boss doesn't need to be liked."], ["Flat Teams", "Companies don't need managers."]] },
+    { name: "Sport", f: "Debate", lessons: [["Esports at the Olympics", "Motion: esports belong in the Olympics."], ["Supervised Doping", "Motion: performance drugs should be allowed under medical supervision."], ["Athletes' Pay", "Motion: top athletes are paid far too much."]] },
+    { name: "Art and history", f: "Dilemma", lessons: [["The Painting Gift", "A friend paints you a portrait you dislike and asks where you'll hang it."], ["The Classic Novel", "A school board asks whether to remove a classic book with offensive language."], ["The Statue", "Your town votes on a statue of a controversial historical figure."]] },
+    { name: "Global issues", f: "Solve", lessons: [["Unlimited Money", "Pick one world problem and plan how you'd solve it."], ["Clean Water", "Bring clean water to a town of 10,000 in one year."], ["Food Waste", "Halve food waste in your city."]] },
+    { name: "Big questions", f: "Steelman", lessons: [["The Right Lie", "Lying is sometimes the right thing to do."], ["Free Will", "Our choices are not really free."], ["Must We Vote?", "Voting should be compulsory."]] },
+    { name: "Final lessons", f: "Mixed", lessons: [["The Final Debate", "Debate: the student picks one of three motions."], ["An Unpopular Opinion", "Steelman: tipping should be banned."], ["My Next Six Months", "Solve it: plan the next six months of your English."]] },
   ] },
 ];
 

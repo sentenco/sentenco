@@ -7,6 +7,7 @@ import { C1_S1, C1_PHRASES_S1 } from "./justTalkC1S1";
 import { C1_S2, C1_PHRASES_S2 } from "./justTalkC1S2";
 import { C1_S3, C1_PHRASES_S3 } from "./justTalkC1S3";
 import { C1_S4, C1_PHRASES_S4 } from "./justTalkC1S4";
+import { C1_S5, C1_PHRASES_S5 } from "./justTalkC1S5";
 import { Ink, Items } from "./JustTalkInk.jsx";
 import { readPhoto } from "./justTalkPhoto.js";
 import { fitBoardWindow } from "./justTalkWindow.js";
@@ -22,8 +23,8 @@ import { ONAIR_CSS } from "./justTalkOnAirCss.js";
 
 const OWNER_EMAIL = "caldrin1999@gmail.com";
 const BOARD_STUDENT = "C1-C2";
-const CONTENT = { ...C1_S1, ...C1_S2, ...C1_S3, ...C1_S4 };
-const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2, ...C1_PHRASES_S3, ...C1_PHRASES_S4 };
+const CONTENT = { ...C1_S1, ...C1_S2, ...C1_S3, ...C1_S4, ...C1_S5 };
+const PHRASES = { ...C1_PHRASES_S1, ...C1_PHRASES_S2, ...C1_PHRASES_S3, ...C1_PHRASES_S4, ...C1_PHRASES_S5 };
 const LESSON_STEPS = [["impromptu", "Impromptu speech", "0-6 min"], ["power", "Power language", "6-8 min"], ["main", "Main task", "8-20 min"], ["hot", "Hot seat", "20-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const CHECK_STEPS = [["impromptu", "Impromptu speech", "0-5 min"], ["review", "Review", "5-8 min"], ["main", "Debate", "8-18 min"], ["hot", "Hot seat", "18-23 min"], ["wrap", "Wrap-up", "23-25 min"]];
 const WHEEL_COLORS = ["#5B3F8C", "#F2B93B", "#E8735A", "#2C7A6E", "#7A55A0", "#3E2A63", "#E0A21F", "#8C6BB8"];
@@ -93,7 +94,7 @@ export default function JustTalkC1Board() {
   const L = useMemo(() => C1_LESSONS.find((x) => x.key === lesson), [lesson]);
   const C = CONTENT[lesson];
   const isCheck = !!L?.check;
-  const steps = isCheck ? CHECK_STEPS.map((s) => (s[0] === "main" ? [s[0], C1_FORMATS[C?.format || "Debate"], s[2]] : s)) : LESSON_STEPS.map((s) => (s[0] === "main" && L ? [s[0], C1_FORMATS[L.format], s[2]] : s));
+  const steps = isCheck ? CHECK_STEPS.map((s) => (s[0] === "main" ? [s[0], C1_FORMATS[C?.format || "Debate"], s[2]] : s)) : LESSON_STEPS.map((s) => (s[0] === "main" && L ? [s[0], C1_FORMATS[C?.format || L.format], s[2]] : s));
   const docKey = `c1/${lesson}`;
 
   const [doc, setDoc] = useState(EMPTY);
@@ -184,7 +185,7 @@ export default function JustTalkC1Board() {
   const wheel = C1_WHEEL[L.stage] || C1_WHEEL[1];
   const mode = doc.mode || C?.wheel || L.wheel;
   const fixes = doc.fixes || [];
-  const fmt = isCheck ? C.format || "Debate" : L.format;
+  const fmt = C.format || (isCheck ? "Debate" : L.format);
   const kicker = isCheck ? `Stage ${L.stage} · ${L.lv} · Check-in` : `Stage ${L.stage} · Module ${String(L.modNum).padStart(2, "0")} ${L.module} · Lesson ${L.n}`;
   const ak = page === "lesson" ? `s${step}` : page;
   const free = page.startsWith("p-");
@@ -252,7 +253,7 @@ export default function JustTalkC1Board() {
     if (doc.trickUsed) bits.push("trick used");
     return (<>
       <div className="part">
-        <div className="stack cover"><div className="icard cover-card"><small>Tonight's topic · {isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="forum" />{isCheck ? "Check-in" : `Today: ${C1_FORMATS[L.format]}`}{L.checkpoint ? " · Checkpoint lesson" : ""}</span></div></div>
+        <div className="stack cover"><div className="icard cover-card"><small>Tonight's topic · {isCheck ? kicker : `Module ${String(L.modNum).padStart(2, "0")} · ${L.module} · Lesson ${L.n}`}</small><h1>{L.title}</h1><span className="tag"><Ms n="forum" />{isCheck ? "Check-in" : `Today: ${C1_FORMATS[fmt]}`}{L.checkpoint ? " · Checkpoint lesson" : ""}</span></div></div>
       </div>
       <div className="part">
         <Ph n="1" title={L.checkpoint ? "Impromptu speech · checkpoint" : "Impromptu speech"} />
@@ -318,7 +319,9 @@ export default function JustTalkC1Board() {
 
   /* ----- 3. Main task ----- */
   function Debate() {
-    const M = C.main;
+    const M0 = C.main;
+    const mi = Math.min(doc.ideas.mi || 0, (M0.choices?.length || 1) - 1);
+    const M = M0.choices ? { ...M0, ...M0.choices[mi] } : M0;
     const f = M.brief[Math.min(doc.fi, M.brief.length - 1)];
     const col = (k, title, list) => (
       <div className={`side ${doc.side === k ? "on" : ""}`}>
@@ -338,7 +341,8 @@ export default function JustTalkC1Board() {
         <Ph n={M.brief.length ? "" : "3"} title="Debate" />
         <div className="act-box">
           <span className="round"><Ms n="sync_alt" />Round {doc.round} of 2{doc.round === 2 ? ": now argue the other side" : ""}</span>
-          <div className="stack fu"><div className="icard"><small>The motion</small><p className="q">{M.motion}</p></div></div>
+          {M0.choices && <div className="row">{M0.choices.map((c, i) => <button key={c.motion} type="button" className={`chip ${mi === i ? "on" : ""}`} onClick={() => patch({ side: null, ideas: { mi: i } })}>Motion {i + 1}</button>)}</div>}
+          <div className="stack fu"><div className="icard"><small>{M0.choices ? `The motion · the student picks one of ${M0.choices.length}` : "The motion"}</small><p className="q">{M.motion}</p></div></div>
           <p className="how">Tap the side the student takes in round 1. The hot seat will push against it.</p>
           <div className="sides">{col("for", "Agree", M.for)}{col("against", "Disagree", M.against)}</div>
           <SpeechClock key={`deb${doc.round}`} talk={M.time || 120} label="Each side" />
